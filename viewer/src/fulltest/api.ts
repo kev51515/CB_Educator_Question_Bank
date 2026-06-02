@@ -66,6 +66,7 @@ export async function submitModule(
   runId: string,
   position: number,
   answers: Record<string, string | null>,
+  eliminated: Record<string, string[]> = {},
 ): Promise<SubmitModuleResult> {
   let lastErr: unknown;
   for (let attempt = 0; attempt < 3; attempt++) {
@@ -73,6 +74,7 @@ export async function submitModule(
       p_run_id: runId,
       p_position: position,
       p_answers: answers,
+      p_eliminated: eliminated,
     });
     if (!error) return data as SubmitModuleResult;
     lastErr = mapError(error);
@@ -100,12 +102,14 @@ export async function saveProgress(
   runId: string,
   position: number,
   answers: Record<string, string | null>,
+  eliminated: Record<string, string[]> = {},
 ): Promise<void> {
   try {
     await supabase.rpc("save_test_progress", {
       p_run_id: runId,
       p_position: position,
       p_answers: answers,
+      p_eliminated: eliminated,
     });
   } catch {
     /* non-fatal — localStorage cache is the backup of the backup */

@@ -54,6 +54,8 @@ export interface GetModuleResult {
   seconds_remaining: number;
   /** Server-persisted drafts for cross-device resume (chosen only, no key). */
   saved_answers: Record<string, string | null>;
+  /** Server-persisted eliminated (struck) choices per question, for resume. */
+  saved_eliminations?: Record<string, Letter[]>;
   questions: TestQuestion[];
 }
 
@@ -84,6 +86,8 @@ export interface ResultQuestion {
   correct_answer: string | null;
   accepted: string[] | null;
   is_correct: boolean | null;
+  /** Choices the student crossed out during the test. */
+  eliminated: Letter[];
 }
 
 export interface TestResult {

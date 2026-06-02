@@ -48,6 +48,18 @@ function fmt(seconds: number): string {
   return `${m}:${String(s % 60).padStart(2, "0")}`;
 }
 
+/** Serialize the per-question eliminated-choice sets into the RPC payload
+ *  shape ({ "<question_id>": ["A","C"] }), dropping empty entries. */
+function elimToPayload(
+  elim: Record<string, Set<Letter>>,
+): Record<string, Letter[]> {
+  const out: Record<string, Letter[]> = {};
+  for (const [qid, set] of Object.entries(elim)) {
+    if (set && set.size > 0) out[qid] = Array.from(set);
+  }
+  return out;
+}
+
 export function FullTestApp() {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
@@ -138,6 +150,15 @@ export function FullTestApp() {
         const seed: Record<string, string | null> = {};
         for (const q of m.questions) seed[q.id] = merged[q.id] ?? null;
         setAnswers(seed);
+        // Rehydrate eliminated (struck) choices saved on the server so a
+        // resume restores them — and so they're re-submitted at section end.
+        const savedElim = m.saved_eliminations ?? {};
+        const elimSeed: Record<string, Set<Letter>> = {};
+        for (const q of m.questions) {
+          const letters = savedElim[q.id];
+          if (letters && letters.length > 0) elimSeed[q.id] = new Set(letters);
+        }
+        setEliminated(elimSeed);
         const dl = Date.now() + m.seconds_remaining * 1000;
         setDeadline(dl);
         setRemaining(m.seconds_remaining);
@@ -157,7 +178,12 @@ export function FullTestApp() {
     submittingRef.current = true;
     setPhase("submitting");
     try {
-      const res = await submitModule(runId, moduleMeta.position, answers);
+      const res = await submitModule(
+        runId,
+        moduleMeta.position,
+        answers,
+        elimToPayload(eliminated),
+      );
       clearCachedAnswers(runId, moduleMeta.position);
       if (res.finished) {
         // Finished: the "result" phase render branches by role. Staff get the
@@ -177,7 +203,7 @@ export function FullTestApp() {
     } finally {
       submittingRef.current = false;
     }
-  }, [runId, moduleMeta, answers, toast]);
+  }, [runId, moduleMeta, answers, eliminated, toast]);
 
   // --- staff-only result fetch ---------------------------------------------
   // Students never fetch results (the server also locks get_test_result for
@@ -228,10 +254,10 @@ export function FullTestApp() {
     if (phase !== "module" || !runId || !moduleMeta) return;
     const pos = moduleMeta.position;
     const t = window.setTimeout(() => {
-      void saveProgress(runId, pos, answers);
+      void saveProgress(runId, pos, answers, elimToPayload(eliminated));
     }, 2500);
     return () => window.clearTimeout(t);
-  }, [answers, phase, runId, moduleMeta]);
+  }, [answers, eliminated, phase, runId, moduleMeta]);
 
   const setAnswer = useCallback(
     (qid: string, value: string | null) => {

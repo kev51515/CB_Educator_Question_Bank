@@ -213,6 +213,14 @@ function ReviewCard({ rq }: { rq: ResultQuestion }) {
             <span className="text-emerald-700 dark:text-emerald-300">{correctText}</span>
           </div>
         )}
+        {rq.eliminated && rq.eliminated.length > 0 && (
+          <div className="sm:col-span-2">
+            <span className="text-slate-500 dark:text-slate-400">Eliminated: </span>
+            <span className="font-medium text-slate-700 line-through decoration-rose-400 dark:text-slate-300">
+              {rq.eliminated.join(", ")}
+            </span>
+          </div>
+        )}
       </div>
     </div>
   );
