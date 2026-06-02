@@ -62,7 +62,16 @@ score_percent` instead). See `docs/SESSION_RECAP.md` Wave 21B section.
 - **Question bank viewer — mature.** Out of scope.
 - **Teacher console — mature.** Gradebook, calendar, course duplication + templates (mig 0018), bulk roster import, materials (mig 0016 + Storage bucket), announcements (mig 0015), portfolio (mig 0017), discussions (mig 0025), inbox/DM (mig 0026), in-app notifications (mig 0029) all shipped.
 - **Production hardening — largely done.** Rate limiting (mig 0021 + 0023 prune), audit log (mig 0022 + 0027 + 0028 cleanup), GDPR export (mig 0023), anonymous-user cleanup (edge function `cleanup-anon-users` + pg_cron in mig 0031), assignment-due-reminders edge function + pg_cron scheduled, Sentry + PostHog wired (env-var-gated).
-- **Analytics — partial.** Skill mastery tracking (mig 0024) live. **Score predictions are a STUB** — `linear-v1` is a placeholder, not a real SAT scaled-score model.
+- **Analytics — partial.** Skill mastery tracking (mig 0024) live.
+  **Full-length test scaled scoring SHIPPED (Jun 2026)** —
+  `viewer/src/fulltest/satScore.ts` converts each section's raw correct count
+  to the official 200–800 band (R&W /54, Math /44) via an interpolated,
+  representative Digital SAT curve, composite 400–1600. Surfaced on the
+  full-test `ResultView` hero, clearly labelled "estimated" (our form is
+  non-adaptive, so it's a practice estimate, not an official conversion).
+  **The skill-mastery *predictor* (`linear-v1`) is still a STUB** — predicting a
+  score from practice-question mastery (vs. scoring a completed full test)
+  remains the open differentiation gap.
 
 ## 2. Canvas feature audit
 
