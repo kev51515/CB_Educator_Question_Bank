@@ -114,6 +114,7 @@ export function FullTestApp() {
 
   const [result, setResult] = useState<TestResult | null>(null);
   const [calcOpen, setCalcOpen] = useState(false);
+  const [confirmExit, setConfirmExit] = useState(false);
   const [marked, setMarked] = useState<Set<string>>(new Set());
   const [navOpen, setNavOpen] = useState(false);
   const [timerHidden, setTimerHidden] = useState(false);
@@ -534,6 +535,18 @@ export function FullTestApp() {
           )}
         </div>
         <div className="flex basis-1/3 items-center justify-end gap-3">
+          <button
+            type="button"
+            onClick={() => setConfirmExit(true)}
+            className="flex items-center gap-1.5 rounded-lg border border-slate-300 px-3 py-1.5 text-sm font-medium text-slate-600 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800"
+            title="Save your progress and leave — the section timer keeps running"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <path d="m16 17 5-5-5-5M21 12H9" />
+            </svg>
+            Save &amp; exit
+          </button>
           {moduleMeta?.section === "math" && (
             <button
               type="button"
@@ -718,6 +731,27 @@ export function FullTestApp() {
             await doSubmitModule();
           }}
           onCancel={() => setPendingSectionSubmit(null)}
+        />
+      )}
+
+      {confirmExit && (
+        <ConfirmDialog
+          title="Leave the test?"
+          body={
+            <p>
+              Your answers are saved — you can come back and pick up where you
+              left off.{" "}
+              <span className="font-semibold text-slate-900 dark:text-slate-100">
+                The section timer keeps running while you're away.
+              </span>
+            </p>
+          }
+          confirmLabel="Save &amp; exit"
+          onConfirm={() => {
+            setConfirmExit(false);
+            navigate(ROUTES.HOME);
+          }}
+          onCancel={() => setConfirmExit(false)}
         />
       )}
     </div>
