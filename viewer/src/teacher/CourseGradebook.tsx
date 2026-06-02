@@ -55,6 +55,7 @@ interface AttemptRow {
 interface Student {
   student_id: string;
   display_name: string;
+  email: string;
 }
 
 function getErrorMessage(error: unknown, fallback: string): string {
@@ -135,11 +136,21 @@ function cellToneClass(cell: Cell): string {
 }
 
 function todayStamp(): string {
+  // ISO-style yyyy-mm-dd for sortable, parser-friendly filenames.
   const d = new Date();
   const y = d.getFullYear();
   const m = String(d.getMonth() + 1).padStart(2, "0");
   const day = String(d.getDate()).padStart(2, "0");
-  return `${y}${m}${day}`;
+  return `${y}-${m}-${day}`;
+}
+
+/** Format a percent score with one decimal of precision, no trailing `%`,
+ *  so a downstream spreadsheet/script can parse it as a number. */
+function formatScoreCell(value: number): string {
+  // Round to 1 decimal; strip a trailing `.0` so 87.0 → "87" but 87.5 → "87.5".
+  const rounded = Math.round(value * 10) / 10;
+  const s = rounded.toFixed(1);
+  return s.endsWith(".0") ? s.slice(0, -2) : s;
 }
 
 function csvEscape(value: string): string {
@@ -310,6 +321,7 @@ export function CourseGradebook() {
             row.profiles?.display_name ??
             row.profiles?.email ??
             "Unknown student",
+          email: row.profiles?.email ?? "",
         }));
 
         const assignmentIds = asnRows.map((a) => a.id);
@@ -565,18 +577,29 @@ export function CourseGradebook() {
 
   const onExportCsv = (): void => {
     try {
+      // Header: Student | Email | <assignment titles…> | Average
       const headerCells = [
         "Student",
+        "Email",
         ...orderedAssignments.map((a) => a.title),
         "Average",
       ];
       const lines: string[] = [headerCells.map(csvEscape).join(",")];
-      for (const s of sortedStudents) {
-        const row: string[] = [s.display_name];
+      // Export the VISIBLE rows in the order the table renders them, so the
+      // user's current sort + behind-filter + name-search are preserved. If
+      // the user has filtered to a non-empty set, only those rows are shipped
+      // — this matches the on-screen view.
+      for (const s of searchFilteredStudents) {
+        const row: string[] = [s.display_name, s.email];
         for (const a of orderedAssignments) {
           const cell = pickCell(attemptMap.get(`${s.student_id}|${a.id}`));
           if (cell.kind === "score") {
-            row.push(`${Math.round(cell.score ?? 0)}%`);
+            const score = formatScoreCell(cell.score ?? 0);
+            // Mark teacher-applied overrides so admins can see at a glance
+            // which cells were touched. The numeric prefix stays parseable
+            // — a downstream sheet/script that wants just the number can
+            // strip everything from the first space.
+            row.push(cell.adjusted ? `${score} (override)` : score);
           } else if (cell.kind === "draft") {
             row.push("draft");
           } else {
@@ -585,16 +608,21 @@ export function CourseGradebook() {
         }
         const avg = studentAverages.get(s.student_id);
         row.push(
-          avg === null || avg === undefined ? "" : `${Math.round(avg)}%`,
+          avg === null || avg === undefined ? "" : formatScoreCell(avg),
         );
         lines.push(row.map(csvEscape).join(","));
       }
-      const csv = lines.join("\r\n");
+      // CRLF line endings + UTF-8 BOM for Excel friendliness on Windows and
+      // for non-ASCII names. Excel sniffs the BOM and opens as UTF-8 instead
+      // of guessing (and mangling) the encoding.
+      const csv = "﻿" + lines.join("\r\n") + "\r\n";
       const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `gradebook-${cls.name}-${todayStamp()}.csv`;
+      // Filename uses the course short_code (stable 6-char slug, CLAUDE.md
+      // §"Short codes") instead of the mutable course name + ISO date.
+      a.download = `gradebook-${courseShortCode}-${todayStamp()}.csv`;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -683,9 +711,37 @@ export function CourseGradebook() {
         <button
           type="button"
           onClick={onExportCsv}
-          disabled={!hasData}
-          className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2"
+          // Disabled when no students would land in the CSV — either the
+          // course has nothing to export, or the current filter/search has
+          // narrowed the view to zero rows. Disabling on an empty view is
+          // honest: clicking would have produced a header-only file.
+          disabled={!hasData || searchFilteredStudents.length === 0}
+          title={
+            !hasData
+              ? "Nothing to export yet"
+              : searchFilteredStudents.length === 0
+                ? "No students match the current filter"
+                : "Download the visible gradebook as CSV"
+          }
+          aria-label="Export gradebook as CSV"
+          // Slate ghost button matching surrounding controls (filter pills,
+          // sort buttons). 40px+ tap target via min-h-[40px]. Dark-mode pair
+          // mirrors the sortPillClass scheme.
+          className="inline-flex items-center gap-2 rounded-lg min-h-[40px] px-4 py-2 text-sm font-medium ring-1 transition bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 ring-slate-200 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-indigo-700 dark:hover:text-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white dark:disabled:hover:bg-slate-900 disabled:hover:text-slate-700 dark:disabled:hover:text-slate-200"
         >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+            aria-hidden="true"
+            className="h-4 w-4"
+          >
+            <path
+              fillRule="evenodd"
+              d="M10 3a.75.75 0 0 1 .75.75v7.69l2.22-2.22a.75.75 0 1 1 1.06 1.06l-3.5 3.5a.75.75 0 0 1-1.06 0l-3.5-3.5a.75.75 0 1 1 1.06-1.06l2.22 2.22V3.75A.75.75 0 0 1 10 3Zm-6.25 11.25a.75.75 0 0 1 .75.75v.75c0 .414.336.75.75.75h9.5a.75.75 0 0 0 .75-.75V15a.75.75 0 0 1 1.5 0v.75A2.25 2.25 0 0 1 14.75 18h-9.5A2.25 2.25 0 0 1 3 15.75V15a.75.75 0 0 1 .75-.75Z"
+              clipRule="evenodd"
+            />
+          </svg>
           Export CSV
         </button>
       </div>

@@ -289,6 +289,8 @@ interface PostNodeProps {
   canManage: (post: DiscussionPost) => boolean;
   onSubmitReply: (body: string, parentPostId: string | null) => Promise<boolean>;
   onDeletePost: (post: DiscussionPost) => void;
+  collapsedIds: Set<string>;
+  onToggleCollapsed: (postId: string) => void;
 }
 
 function PostNode({
@@ -298,6 +300,8 @@ function PostNode({
   canManage,
   onSubmitReply,
   onDeletePost,
+  collapsedIds,
+  onToggleCollapsed,
 }: PostNodeProps) {
   const [replying, setReplying] = useState(false);
   const indent = Math.min(depth, 4);
@@ -309,6 +313,12 @@ function PostNode({
         : indent === 2
           ? "pl-4 sm:pl-6 border-l border-slate-200 dark:border-slate-800"
           : "pl-4 border-l border-slate-200 dark:border-slate-800";
+
+  const hasChildren = node.children.length > 0;
+  const collapsed = hasChildren && collapsedIds.has(node.post.id);
+  const childCount = node.children.length;
+  const childrenContainerId = `post-children-${node.post.id}`;
+  const replyLabel = childCount === 1 ? "reply" : "replies";
 
   return (
     <div className={indentClass}>
@@ -341,44 +351,95 @@ function PostNode({
           html={node.post.body}
           className="prose prose-sm dark:prose-invert max-w-none text-slate-700 dark:text-slate-300"
         />
-        {!topicLocked && (
-          <div className="pt-1">
-            {replying ? (
-              <ReplyForm
-                placeholder={`Reply to ${node.post.author_name}…`}
-                onCancel={() => setReplying(false)}
-                onSubmitReply={async (body) => {
-                  const ok = await onSubmitReply(body, node.post.id);
-                  if (ok) setReplying(false);
-                  return ok;
-                }}
-              />
-            ) : (
+        {(!topicLocked || hasChildren) && (
+          <div className="pt-1 flex items-center gap-3 flex-wrap">
+            {!topicLocked && (
+              <>
+                {replying ? (
+                  <ReplyForm
+                    placeholder={`Reply to ${node.post.author_name}…`}
+                    onCancel={() => setReplying(false)}
+                    onSubmitReply={async (body) => {
+                      const ok = await onSubmitReply(body, node.post.id);
+                      if (ok) setReplying(false);
+                      return ok;
+                    }}
+                  />
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => setReplying(true)}
+                    className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
+                  >
+                    Reply
+                  </button>
+                )}
+              </>
+            )}
+            {hasChildren && !replying && (
               <button
                 type="button"
-                onClick={() => setReplying(true)}
-                className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline"
+                onClick={() => onToggleCollapsed(node.post.id)}
+                aria-expanded={!collapsed}
+                aria-controls={childrenContainerId}
+                aria-label={`${collapsed ? "Expand" : "Collapse"} ${childCount} ${replyLabel}`}
+                className="inline-flex items-center gap-1 min-h-[40px] -my-2 px-1.5 text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 rounded-md"
               >
-                Reply
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 12 12"
+                  width="10"
+                  height="10"
+                  className={`motion-safe:transition-transform ${collapsed ? "" : "rotate-90"}`}
+                >
+                  <path
+                    d="M3.5 2 L8 6 L3.5 10"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span>
+                  {collapsed
+                    ? `Show ${childCount} ${replyLabel}`
+                    : `Collapse ${childCount} ${replyLabel}`}
+                </span>
               </button>
             )}
           </div>
         )}
       </article>
 
-      {node.children.length > 0 && (
-        <div className="mt-2 space-y-2">
-          {node.children.map((child) => (
-            <PostNode
-              key={child.post.id}
-              node={child}
-              topicLocked={topicLocked}
-              depth={depth + 1}
-              canManage={canManage}
-              onSubmitReply={onSubmitReply}
-              onDeletePost={onDeletePost}
-            />
-          ))}
+      {hasChildren && (
+        <div id={childrenContainerId} className="mt-2 space-y-2">
+          {collapsed ? (
+            <button
+              type="button"
+              onClick={() => onToggleCollapsed(node.post.id)}
+              aria-expanded={false}
+              aria-controls={childrenContainerId}
+              aria-label={`Show ${childCount} hidden ${replyLabel}`}
+              className={`${indent === 0 ? "" : "ml-1"} block w-full text-left text-xs text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 min-h-[40px] px-3 py-2 rounded-lg ring-1 ring-dashed ring-slate-200 dark:ring-slate-800 hover:ring-indigo-300 dark:hover:ring-indigo-700 bg-slate-50/60 dark:bg-slate-900/40`}
+            >
+              {childCount} {replyLabel} hidden — click to show
+            </button>
+          ) : (
+            node.children.map((child) => (
+              <PostNode
+                key={child.post.id}
+                node={child}
+                topicLocked={topicLocked}
+                depth={depth + 1}
+                canManage={canManage}
+                onSubmitReply={onSubmitReply}
+                onDeletePost={onDeletePost}
+                collapsedIds={collapsedIds}
+                onToggleCollapsed={onToggleCollapsed}
+              />
+            ))
+          )}
         </div>
       )}
     </div>
@@ -437,6 +498,19 @@ export function DiscussionTopicView() {
 
   const tree = useMemo(() => buildTree(combinedPosts), [combinedPosts]);
 
+  // Transient collapsed state for reply subtrees. Per CLAUDE.md we don't
+  // persist this — it resets per visit so users always see the full thread
+  // by default.
+  const [collapsedIds, setCollapsedIds] = useState<Set<string>>(new Set());
+  const onToggleCollapsed = (postId: string): void => {
+    setCollapsedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(postId)) next.delete(postId);
+      else next.add(postId);
+      return next;
+    });
+  };
+
   const location = useLocation();
   const lastScrolledHashRef = useRef<string | null>(null);
   useEffect(() => {
@@ -444,6 +518,15 @@ export function DiscussionTopicView() {
     const hash = location.hash;
     if (!hash || !hash.startsWith("#post-")) return;
     if (lastScrolledHashRef.current === hash) return;
+    // The deeplink target may live inside a collapsed subtree. Simplest
+    // correct fix: clear all collapse state so the target post is mounted
+    // and `getElementById` can find it on this tick.
+    if (collapsedIds.size > 0) {
+      setCollapsedIds(new Set());
+      // Effect will re-run on the next render with collapsedIds empty;
+      // the target post will then be mounted in the DOM.
+      return;
+    }
     const el = document.getElementById(hash.slice(1));
     if (!el) return;
     lastScrolledHashRef.current = hash;
@@ -463,7 +546,7 @@ export function DiscussionTopicView() {
       );
     }, 2400);
     return () => window.clearTimeout(t);
-  }, [combinedPosts, location.hash]);
+  }, [combinedPosts, location.hash, collapsedIds]);
 
   if (notFound) {
     return <Navigate to={courseDiscussionsPath(cls.short_code)} replace />;
@@ -691,6 +774,8 @@ export function DiscussionTopicView() {
                       canManage={canManagePost}
                       onSubmitReply={handleSubmitReply}
                       onDeletePost={(post) => setConfirmDeletePost(post)}
+                      collapsedIds={collapsedIds}
+                      onToggleCollapsed={onToggleCollapsed}
                     />
                   ))}
                 </div>
