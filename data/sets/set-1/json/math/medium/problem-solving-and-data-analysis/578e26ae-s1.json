@@ -1,0 +1,39 @@
+{
+  "questionId": "578e26ae-s1",
+  "originalId": "578e26ae",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set A consists of <math><mn>13</mn></math> values. Data set B is created by adding <math><mn>20</mn></math> to each value in data set A. Which of the following correctly compares the medians and the ranges of data sets A and B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The median of data set B is equal to the median of data set A, and the range of data set B is greater than the range of data set A.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The median of data set B is greater than the median of data set A, and the range of data set B is greater than the range of data set A.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The median of data set B is greater than the median of data set A, and the range of data set B is equal to the range of data set A.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The median of data set B is equal to the median of data set A, and the range of data set B is equal to the range of data set A.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Adding the same constant to every value shifts the median by that constant: median(B) = median(A) + 20. The range, max \u2212 min, is unchanged because both endpoints increase by the same amount.</p><p>Choices A and D say the median is unchanged, but it shifts. Choice B says the range changes, but it does not.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T10.medium"
+}

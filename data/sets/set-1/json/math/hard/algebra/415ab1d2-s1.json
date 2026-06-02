@@ -1,0 +1,39 @@
+{
+  "questionId": "415ab1d2-s1",
+  "originalId": "415ab1d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the graph of the linear function y = f(x) + 14 has a y-intercept at (0, 5) and slants down from left to right. It is given that f(x) = cx + d, where c and d are constants. Which of the following must be true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>c > 0 and d > 0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>c < 0 and d > 0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>c > 0 and d < 0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>c < 0 and d < 0</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The graph of y = f(x) + 14 is a downward-slanting line, so its slope is negative; therefore c < 0. The y-intercept of y = f(x) + 14 is 5, so when x = 0, y = f(0) + 14 = d + 14 = 5, giving d = -9. Since d = -9 < 0, both c < 0 and d < 0.</p><p>Choices A, B, and C are inconsistent with one or both of these conditions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A4.T3.hard"
+}

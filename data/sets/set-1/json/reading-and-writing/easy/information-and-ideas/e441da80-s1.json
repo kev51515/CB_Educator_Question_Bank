@@ -1,0 +1,39 @@
+{
+  "questionId": "e441da80-s1",
+  "originalId": "e441da80",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Annual Editorials Published in the <em>Riverside Chronicle</em>, 2008–2017</strong></p><ul><li>2008: approximately 800</li><li>2009: approximately 920</li><li>2010: approximately 1,150</li><li>2011: approximately 1,250</li><li>2012: approximately 1,400</li><li>2013: approximately 1,050</li><li>2014: approximately 990</li><li>2015: approximately 1,080</li><li>2016: approximately 760</li><li>2017: approximately 400</li></ul><p>Editorial writers offer opinion and analysis on public affairs. The graph shows the number of editorials published in the <em>Riverside Chronicle</em> newspaper from 2008 to 2017. According to a media analyst, although the number of editorials published has fluctuated considerably over the period shown, <u>the number overall has fallen since 2008</u>.</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to justify the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The greatest annual number of editorials published in the newspaper during the period shown is approximately 1,080 in 2015.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The newspaper published approximately 800 editorials in 2008 and approximately 1,400 in 2012.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The smallest annual number of editorials published in the newspaper during the period shown is approximately 1,400 in 2012.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The newspaper published approximately 800 editorials in 2008 and approximately 400 in 2017.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Comparing the number of editorials in 2008 (about 800) to 2017 (about 400) demonstrates the overall decline claimed.</p><p>Choice A focuses on a single year's peak and 1,080 was not the maximum (1,400 was). Choice B describes an increase from 2008 to 2012, contradicting the claim. Choice C misreads the data — 1,400 in 2012 was the largest, not smallest.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.easy"
+}

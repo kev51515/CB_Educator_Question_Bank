@@ -1,0 +1,22 @@
+[
+  {"id": "b0ea8c28-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "4a2b2535-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "9cdcd902-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "8a47383f-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "82b7c3b2-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "45a109a3-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "constraint_violation", "detail": "Target word 'disturbed' is in the stem only, not visibly marked in the passage (the passage shows a blank '______' instead). Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'. This also confuses A1 (given word) with A2 (fill-in)."},
+  {"id": "5179fd36-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "daaed806-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "0ee67e09-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "53542eb5-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "5514fd1f-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "97ab5669-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "f6d1f735-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "a4ca92fd-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "cb526866-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "ok"},
+  {"id": "9e501aaf-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "03f5a9b7-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "a1139ff8-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "e5e7f264-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "b92c13fa-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"}
+]

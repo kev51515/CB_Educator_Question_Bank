@@ -1,0 +1,25 @@
+{
+  "questionId": "b7f79059-s1",
+  "originalId": "b7f79059",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T8.medium",
+  "stimulus": "<p>The following text is from a 1902 poem by the American writer Edith Hollowell, titled &ldquo;The Lamp.&rdquo;</p>\n<p style=\"padding-left:1em;\">As a small and steady lamp keeps its slender flame<br>&ensp;in the chamber&rsquo;s quiet air, if<br>&ensp;the patient hand pour in fresh oil at evening;<br>So doth my listening soul give light, if it be tended with the<br>&ensp;steady oil of friendship,<br>Lacking this, it presently grows wan and falters,<br>&ensp;even as a lamp left dry upon the table, if the<br>&ensp;hand of the keeper attend it not.</p>",
+  "stem": "<p>Based on the text, in what way is the listening soul like a lamp?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It grows steadier and brighter with the passage of years.</p>"},
+    {"id": "b", "content": "<p>It depends on regular care if it is to keep giving light.</p>"},
+    {"id": "c", "content": "<p>It draws its strength from sudden gusts of air.</p>"},
+    {"id": "d", "content": "<p>It endures unchanged through every kind of neglect.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text says the lamp keeps its flame only if a patient hand pours in fresh oil, and the soul gives light only if it is tended with the &ldquo;steady oil of friendship&rdquo;; lacking this care, both grow wan and falter. Both therefore depend on regular care to keep giving light.</p><p>Choice A is incorrect because the text does not address the passage of years or claim that the soul grows brighter over time. Choice C is incorrect because the text never describes gusts of air as a source of strength. Choice D is incorrect because the text says the opposite — without tending, both lamp and soul falter at once.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

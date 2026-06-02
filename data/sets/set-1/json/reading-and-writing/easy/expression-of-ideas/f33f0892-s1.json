@@ -1,0 +1,25 @@
+{
+  "questionId": "f33f0892-s1",
+  "originalId": "f33f0892",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Although memoirs and novels are considered distinct literary forms, many authors have created hybrid works that incorporate elements of both. Maxine Hong Kingston's <em>The Woman Warrior</em>, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> is an autobiographical work that weaves real memories of the author's Chinese American girlhood together with reimagined folktales and dreamlike scenes that resemble fiction.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by contrast,</p>"},
+    {"id": "b", "content": "<p>for example,</p>"},
+    {"id": "c", "content": "<p>consequently,</p>"},
+    {"id": "d", "content": "<p>secondly,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"For example\" logically signals that the information in this sentence&mdash;that <em>The Woman Warrior</em> blends memoir and fiction&mdash;exemplifies the previous claim about hybrid literary works.</p><p>Choice A is incorrect because \"by contrast\" illogically signals contrast; instead, the sentence supports the claim. Choice C is incorrect because \"consequently\" illogically signals consequence. Choice D is incorrect because \"secondly\" illogically signals a separate second point in a series.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "c01f4a95-s1",
+  "originalId": "c01f4a95",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>k</em>(<em>x</em>) = <em>mx</em> + 200</p><p>For the linear function <em>k</em>, <em>m</em> is a constant and <em>k</em>(10) = 50. What is the value of <em>k</em>(8)?</p>",
+  "answerOptions": [],
+  "keys": [
+    "80"
+  ],
+  "rationale": "<p>The correct answer is 80. Substituting <em>x</em> = 10 and <em>k</em>(<em>x</em>) = 50 into <em>k</em>(<em>x</em>) = <em>mx</em> + 200 yields 50 = 10<em>m</em> + 200, so 10<em>m</em> = \u2212150 and <em>m</em> = \u221215. Substituting <em>m</em> = \u221215 and <em>x</em> = 8 into the original equation: <em>k</em>(8) = \u221215(8) + 200 = \u2212120 + 200 = 80.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T4.medium"
+}

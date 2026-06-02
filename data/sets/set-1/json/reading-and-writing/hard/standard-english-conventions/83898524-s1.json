@@ -1,0 +1,25 @@
+{
+  "questionId": "83898524-s1",
+  "originalId": "83898524",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A2.T4.hard",
+  "type": "mcq",
+  "stimulus": "<p>In addition to championing women&rsquo;s education in two widely read essays, <em>On Improving the Status of Women</em> and <em>The Domestic Tyranny of Custom,</em> Pandita Ramabai personally led campaigns across India, establishing four women&rsquo;s shelters and schools&mdash;the Sharada Sadan (in Pune), the Mukti Mission (in Kedgaon), the Krishnabai Home (in Bombay, present-day ______ during the late nineteenth century.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Mumbai)&mdash;</p>"},
+    {"id": "b", "content": "<p>Mumbai)</p>"},
+    {"id": "c", "content": "<p>Mumbai),</p>"},
+    {"id": "d", "content": "<p>Mumbai,)</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The dash after the closing parenthesis pairs with the dash after \"schools\" to enclose the supplementary element listing the four institutions, signaling that this element could be removed without affecting the grammatical structure of the sentence.</p><p>Choice B is incorrect because no closing punctuation is supplied to balance the opening dash. Choice C is incorrect because a comma cannot be paired with a dash to enclose a supplementary element. Choice D is incorrect because no punctuation belongs between the proper noun \"Mumbai\" and the closing parenthesis, and no closing dash is provided.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

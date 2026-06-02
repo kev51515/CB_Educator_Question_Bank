@@ -1,0 +1,39 @@
+{
+  "questionId": "6c5c2a81-s1",
+  "originalId": "6c5c2a81",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>For the linear function <em>h</em>, the graph of y = h(x) in the <em>xy</em>-plane passes through the points (4, 10) and (7, 19). Which equation defines <em>h</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>h(x) = (1/3)x + 26/3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>h(x) = 3x + 10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>h(x) = 4x + 10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>h(x) = 3x - 2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Slope = (19 - 10)/(7 - 4) = 9/3 = 3. Using (4, 10): 10 = 3(4) + b \u2192 b = -2. So h(x) = 3x - 2. Verify: h(7) = 21 - 2 = 19 \u2713. Choice A uses the reciprocal slope. Choice B uses one of the y-values as the intercept. Choice C has the wrong slope (using x-coordinate) and wrong intercept.</p>",
+  "templateId": "linear-functions.A3.T2.medium"
+}

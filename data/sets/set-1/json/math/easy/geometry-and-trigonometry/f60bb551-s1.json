@@ -1,0 +1,39 @@
+{
+  "questionId": "f60bb551-s1",
+  "originalId": "f60bb551",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The area of a rectangle is 540 square inches. The length of the rectangle is 60 inches. What is the width, in inches, of this rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>270</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>480</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A = lw, so 540 = 60w, giving w = 9 inches.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

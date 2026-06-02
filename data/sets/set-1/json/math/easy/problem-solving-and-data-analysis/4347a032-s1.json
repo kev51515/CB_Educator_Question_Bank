@@ -1,0 +1,39 @@
+{
+  "questionId": "4347a032-s1",
+  "originalId": "4347a032",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>How many teaspoons are equivalent to 56 tablespoons? (3 teaspoons = 1 tablespoon)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>59</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>112</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>186</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>168</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since 1 tablespoon = 3 teaspoons, 56 tablespoons = 56 \u00d7 3 = 168 teaspoons.</p><p>Choice A is incorrect; it results from adding 3 to 56. Choice B is incorrect; it results from multiplying by 2. Choice C is incorrect and may result from a calculation error.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

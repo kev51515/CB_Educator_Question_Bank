@@ -1,0 +1,39 @@
+{
+  "questionId": "428cd2c1-s1",
+  "originalId": "428cd2c1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Some people have argued that an iron dagger discovered in King Tutankhamun's tomb in 1925 must have been crafted by Egyptian smiths, but scholars have long suspected an extraterrestrial origin. Geochemist Tomoko Arai and colleagues recently analyzed the dagger's composition, and their findings <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> scholars' suspicion: the iron's chemistry matches that of a meteorite that fell in the Egyptian desert.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>justify</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>anticipate</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>reveal</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>inspect</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the chemical match supports the long-standing suspicion that the iron is from a meteorite. \"Justify\" means to show something to be reasonable or correct, which fits the support the findings give to the suspicion. Choice B is incorrect because \"anticipate\" would suggest the findings came before the suspicion. Choice C is incorrect because the suspicion already existed; the findings confirm it rather than reveal it. Choice D is incorrect because \"inspect\" describes examining, not supporting a claim.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "9b22bf7b-s1",
+    "templateId": "words-in-context.A1.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve stem wording for A1.T1 is 'As used in the text, what does the word \"X\" most nearly mean?' but clone uses A2-style stem 'Which choice completes the text with the most logical and precise word or phrase?'. The target 'determine' is underlined in the passage (not a blank), so the answer logic still works toward 'Control', but the stem is mismatched to A1.T1."
+  },
+  {
+    "id": "6286dd96-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates A1.T1 must_preserve: target word not visibly marked in passage. Stem asks about word 'invent' but passage contains a blank '______' instead of an underlined/quoted 'invent'. Structure is fill-in (A2), not A1.T1."
+  },
+  {
+    "id": "5d48f889-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Target word 'mingled' is not visible in the passage; the stimulus shows a blank placeholder (______) where the word should be. Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'."
+  },
+  {
+    "id": "1695391a-s1",
+    "templateId": "words-in-context.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates T2 must_preserve stem wording 'As used in the text, what does the phrase \"X\" most nearly mean?' Clone uses 'what does the author most nearly mean by ...' Options are full sentences rather than short paraphrases, drifting toward a central-idea question."
+  },
+  {
+    "id": "417f8dfa-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates T1 must_preserve 'Target word visibly marked (underline/quote) in the passage.' The stimulus contains a blank '______' instead of the target word 'featured', converting an A1 disambiguation item into an A2-style fill-in-the-blank."
+  },
+  {
+    "id": "45a109a3-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Target word 'disturbed' is in the stem only, not visibly marked in the passage (the passage shows a blank '______' instead). Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'. This also confuses A1 (given word) with A2 (fill-in)."
+  }
+]

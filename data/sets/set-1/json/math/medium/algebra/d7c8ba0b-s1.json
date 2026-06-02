@@ -1,0 +1,39 @@
+{
+  "questionId": "d7c8ba0b-s1",
+  "originalId": "d7c8ba0b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>In the <em>xy</em>-plane, line <em>m</em> passes through the points (0, 4) and (1, 10). Which equation defines line <em>m</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 6x + 4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 4x + 6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = x + 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = (1/6)x + 4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (10 - 4)/(1 - 0) = 6. Since the line passes through (0, 4), the y-intercept is 4. Therefore y = 6x + 4. Choice B swaps slope and intercept. Choice C uses the difference of y-values as the intercept and slope 1. Choice D uses the reciprocal of the slope.</p>",
+  "templateId": "linear-equations-in-two-variables.A4.T6.medium"
+}

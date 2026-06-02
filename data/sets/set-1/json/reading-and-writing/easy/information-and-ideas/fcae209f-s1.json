@@ -1,0 +1,39 @@
+{
+  "questionId": "fcae209f-s1",
+  "originalId": "fcae209f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The Highland Coffee Tree is a rare variety of arabica coffee. Highland Coffee Trees were thought to have gone extinct by the mid-twentieth century due to a soil-borne bacterium. This bacterium can spread from tree to nearby tree through shared root systems and causes disease. But around 2018, botanist Awit Pranata located a small grove of Highland Coffee Trees. The grove sat on a remote rocky outcrop in central Sulawesi, separated from any neighboring plantations by miles of bare rock. Conservationists inferred that the Highland Coffee Trees on the outcrop might have avoided the disease that wiped out the others because ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the coffee made from their beans was highly valued.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>their root systems were too separated from the roots of other Highland Coffee Trees for the bacterium to spread.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>mid-twentieth-century scientists did not know why so many Highland Coffee Trees were becoming infected.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the bacterium's mode of spreading through soil was only recently discovered.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The bacterium spreads through connected root systems; the outcrop's isolation \u2014 separated by bare rock \u2014 would have prevented root contact with infected trees.</p><p>Choice A is irrelevant: bean value doesn't affect disease spread. Choice C is irrelevant to the physical isolation explanation. Choice D doesn't explain past avoidance; recent discovery wouldn't have protected the trees decades earlier.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A1.T2.easy"
+}

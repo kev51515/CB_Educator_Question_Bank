@@ -1,0 +1,22 @@
+[
+  {"id": "47e238be-s1", "templateId": "transitions.A4.T11.hard", "verdict": "ok"},
+  {"id": "c071eca2-s1", "templateId": "transitions.A1.T1.hard", "verdict": "type_drift", "detail": "Tagged T1 (direct contrast between two paired items) but stem is single-subject expectation reversal (Villa-Lobos's conventional surface vs. his innovation within it). Fits T2 (expectation reversal with 'nevertheless') better than T1."},
+  {"id": "2b08f514-s1", "templateId": "transitions.A4.T11.hard", "verdict": "type_drift", "detail": "T11 requires an intensifier (in fact/indeed) reinforcing the same claim. Keyed 'Again and again' signals repetition/frequency, not intensification. Does not match T11's core_skill_demand or must_preserve 'intensifier transition as unique correct option.'"},
+  {"id": "fc95a352-s1", "templateId": "transitions.A1.T2.hard", "verdict": "ok"},
+  {"id": "480ade7e-s1", "templateId": "transitions.A1.T1.hard", "verdict": "ok"},
+  {"id": "f5a00eff-s1", "templateId": "transitions.A2.T4.hard", "verdict": "ok"},
+  {"id": "8112b7e3-s1", "templateId": "transitions.A2.T5.hard", "verdict": "ok"},
+  {"id": "9dc4e640-s1", "templateId": "transitions.A1.T3.hard", "verdict": "ok"},
+  {"id": "ad729337-s1", "templateId": "transitions.A1.T2.hard", "verdict": "ok"},
+  {"id": "4d2736f0-s1", "templateId": "transitions.A6.T17.hard", "verdict": "ok"},
+  {"id": "e3edc138-s1", "templateId": "transitions.A3.T9.hard", "verdict": "ok"},
+  {"id": "a2bff07e-s1", "templateId": "transitions.A2.T6.hard", "verdict": "type_drift", "detail": "T6 (reasoning chain) requires chain-step markers like 'in turn,' 'as such,' 'accordingly,' typically mid-sentence parentheticals. Keyed answer 'Consequently,' is a terminal-result marker (T4), not an intermediate chain link. Stem also lacks multi-step downstream chain; it's a single cause→conclusion."},
+  {"id": "2df7b582-s1", "templateId": "transitions.A3.T9.hard", "verdict": "ok"},
+  {"id": "00e0170f-s1", "templateId": "transitions.A4.T11.hard", "verdict": "ok"},
+  {"id": "9502ec65-s1", "templateId": "transitions.A4.T10.hard", "verdict": "type_drift", "detail": "T10 requires additive transitions (in addition/additionally/moreover/furthermore) on parallel independent points. Keyed 'Alternatively,' signals alternation (one option vs another), not addition. Violates T10 must_preserve 'additive transition as unique correct option.'"},
+  {"id": "ecb31049-s1", "templateId": "transitions.A1.T3.hard", "verdict": "type_drift", "detail": "T3 (concession with caveat) requires three-part claim→concession→restoration structure with markers like 'Granted,' 'That said,' 'Of course,' 'Admittedly.' Stem is two-part expectation reversal (engineers believed X; even so, reality is Y) with no restoration. Fits T2 better than T3."},
+  {"id": "4b7a84b0-s1", "templateId": "transitions.A3.T8.hard", "verdict": "ok"},
+  {"id": "7ce14583-s1", "templateId": "transitions.A4.T10.hard", "verdict": "ok"},
+  {"id": "a965c6ed-s1", "templateId": "transitions.A2.T4.hard", "verdict": "ok"},
+  {"id": "176edca6-s1", "templateId": "transitions.A1.T3.hard", "verdict": "ok"}
+]

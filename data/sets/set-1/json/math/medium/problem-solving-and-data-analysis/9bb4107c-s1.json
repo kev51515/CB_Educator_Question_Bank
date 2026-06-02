@@ -1,0 +1,20 @@
+{
+  "questionId": "9bb4107c-s1",
+  "originalId": "9bb4107c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A graph shows momentum, in newton-seconds, on the vertical axis and time, in seconds, on the horizontal axis. The curve passes through (0, 1) and (8, 7). What is the average rate of change of momentum, in newton-seconds per second, between time 0 and time 8?</p>",
+  "answerOptions": null,
+  "keys": ["0.75", "3/4"],
+  "rationale": "<p>The correct answer is 0.75. The average rate of change is (7 − 1)/(8 − 0) = 6/8 = 0.75 newton-seconds per second. Equivalent forms include 3/4 and 0.75.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

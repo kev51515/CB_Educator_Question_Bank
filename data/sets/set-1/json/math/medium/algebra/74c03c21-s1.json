@@ -1,0 +1,39 @@
+{
+  "questionId": "74c03c21-s1",
+  "originalId": "74c03c21",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A delivery truck traveled on the freeway and on city streets to complete a route of 220 miles. The trip took 5 hours. The truck traveled at an average speed of 65 miles per hour (mph) on the freeway and an average speed of 30 mph on city streets. If x is the time, in hours, the truck traveled on the freeway and y is the time, in hours, it traveled on city streets, which system of equations represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>65x + 30y = 5<br>x + y = 220</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30x + 65y = 220<br>x + y = 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30x + 65y = 5<br>x + y = 220</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>65x + 30y = 220<br>x + y = 5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Total distance equals the sum of the distances on the freeway (65x) and on city streets (30y), so 65x + 30y = 220. Total time equals x + y = 5. Choice D matches. The correct answer is choice D.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.medium"
+}

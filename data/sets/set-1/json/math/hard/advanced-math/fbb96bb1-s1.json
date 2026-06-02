@@ -1,0 +1,39 @@
+{
+  "questionId": "fbb96bb1-s1",
+  "originalId": "fbb96bb1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>x</i> &minus; 17 = (<i>x</i> &minus; <i>b</i>)(<i>x</i> &minus; 17)</p><p>Which of the following are solutions to the given equation, where <i>b</i> is a constant and <i>b</i> &gt; 18? I. <i>b</i> II. <i>b</i> + 1 III. 17</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I and II only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I and III only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>II and III only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>I, II, and III</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Rewriting: (<i>x</i> &minus; 17) &minus; (<i>x</i> &minus; <i>b</i>)(<i>x</i> &minus; 17) = 0, so (<i>x</i> &minus; 17)[1 &minus; (<i>x</i> &minus; <i>b</i>)] = 0. This gives <i>x</i> = 17 or <i>x</i> = <i>b</i> + 1. So solutions are <i>b</i> + 1 (II) and 17 (III). I (<i>b</i>) is not a solution.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.hard"
+}

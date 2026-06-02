@@ -1,0 +1,39 @@
+{
+  "questionId": "84b5125b-s1",
+  "originalId": "84b5125b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Artist Wei Chen’s detailed, woven tapestries are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> raw silk and dyed cotton. Following a technique that originated in eastern China, Chen carefully threads the silk through a wooden loom alongside the cotton to create patterns that tell stories from her grandmother’s village.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>indicated by</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>collected near</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>crafted from</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>shown beside</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"crafted from\" describes how the materials are used to make the tapestries. Choice A is incorrect because \"indicated by\" doesn’t describe physical creation. Choice B is incorrect because being collected near doesn’t describe being made of the materials. Choice D is incorrect because the materials are used in the tapestries, not displayed beside them.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

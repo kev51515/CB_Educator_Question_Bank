@@ -1,0 +1,39 @@
+{
+  "questionId": "e9ef0e6b-s1",
+  "originalId": "e9ef0e6b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A model estimates that birds of a certain species fly between 45 and 55 miles each day during their migration. Based on this model, which inequality represents the estimated total number of miles, <em>x</em>, a bird of this species could fly in 20 days of its migration?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>45 + 20 \u2264 <em>x</em> \u2264 55 + 20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>45 \u2264 20<em>x</em> \u2264 55</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(45)(20) \u2264 <em>x</em> \u2264 (55)(20)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>45 \u2264 20 + <em>x</em> \u2264 55</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total miles flown in 20 days is between (45 miles/day)(20 days) = 900 miles and (55 miles/day)(20 days) = 1,100 miles. So (45)(20) \u2264 <em>x</em> \u2264 (55)(20).</p><p>Choices A, B, and D are incorrect; they confuse addition with multiplication.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium"
+}

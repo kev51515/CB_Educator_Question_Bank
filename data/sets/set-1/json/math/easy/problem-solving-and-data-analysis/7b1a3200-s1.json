@@ -1,0 +1,39 @@
+{
+  "questionId": "7b1a3200-s1",
+  "originalId": "7b1a3200",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Researchers measured the wingspan, to the nearest centimeter, of butterflies in a meadow. The table shows the wingspans recorded.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Wingspan (cm)</th><th>13</th><th>14</th><th>15</th><th>16</th><th>17</th></tr><tr><td>Number of butterflies</td><td>4</td><td>2</td><td>3</td><td>1</td><td>5</td></tr></table><p>Based on the table, how many butterflies had a wingspan, to the nearest centimeter, of 14 centimeters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. According to the table, there are 2 butterflies with a wingspan of 14 cm.</p><p>Choice A is incorrect. This is the number of butterflies with a wingspan of 13 cm.</p><p>Choice B is incorrect. This is the number of butterflies with a wingspan of 17 cm.</p><p>Choice C is incorrect. This is the number of butterflies with a wingspan of 15 cm.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "73c091d2-s1",
+  "originalId": "73c091d2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Many trees can be dated by counting their annual growth rings, with each ring representing one year of life. But a researcher claims that this method often can&rsquo;t be used to identify the age of mangrove trees.</p>",
+  "stem": "<p>Which detail, if true, would most directly support the researcher&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Mangrove trees grow in warm, salty coastal environments around the world.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Many mangrove trees produce growth rings that are extremely faint or do not appear at all.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Some mangrove forests have been used as fishing grounds by local communities for centuries.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Narrow growth rings can suggest that a tree experienced harsh seasonal conditions.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because if many mangrove trees produce growth rings that are extremely faint or don&rsquo;t appear at all, then the standard ring-counting method couldn&rsquo;t reliably be used to identify their age, directly supporting the claim.</p><p>Choice A is incorrect: where mangroves grow says nothing about whether their age can be determined by rings. Choice C is incorrect: their use by communities doesn&rsquo;t address ring detection. Choice D is incorrect: narrow rings could still be counted, so this doesn&rsquo;t support the claim.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "fde6f3bb-s1",
+  "originalId": "fde6f3bb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": "<p>g(x) = (1/2)x + 3/5</p><p>h(x) = 10x &minus; 4</p>",
+  "stem": "<p>The functions g and h are defined by the equations shown. Which expression is equivalent to g(x) &middot; h(x)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5x<sup>2</sup> &minus; 12/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5x<sup>2</sup> + (3/5)x &minus; 12/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5x<sup>2</sup> + 4x &minus; 12/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5x<sup>2</sup> &minus; 4x &minus; 12/5</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>g(x)&middot;h(x) = ((1/2)x + 3/5)(10x &minus; 4) = (1/2)x(10x) + (1/2)x(&minus;4) + (3/5)(10x) + (3/5)(&minus;4) = 5x<sup>2</sup> &minus; 2x + 6x &minus; 12/5 = 5x<sup>2</sup> + 4x &minus; 12/5. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A1.T10.medium"
+}

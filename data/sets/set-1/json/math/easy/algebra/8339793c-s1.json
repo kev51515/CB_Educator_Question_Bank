@@ -1,0 +1,22 @@
+{
+  "questionId": "8339793c-s1",
+  "originalId": "8339793c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Priya bought <math><mn>8</mn></math> identical mugs at the same price. She used a coupon for <math><mo>$</mo><mn>54</mn></math> off the entire purchase. The total purchase cost after using the coupon was <math><mo>$</mo><mn>42</mn></math>. What was the original price, in dollars, for <math><mn>1</mn></math> mug?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>12</mn></math>. The pre-coupon total is <math><mn>42</mn><mo>+</mo><mn>54</mn><mo>=</mo><mn>96</mn></math> dollars. Dividing 96 by 8 mugs yields 12 dollars per mug.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

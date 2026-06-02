@@ -1,0 +1,39 @@
+{
+  "questionId": "843f92af-s1",
+  "originalId": "843f92af",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Darkness lasts for many weeks during the Antarctic winter at high latitudes. In response, emperor penguins must shift their behavior. Instead of fishing in open water, they huddle together when they need <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> warmth.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>conserve</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>will conserve</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>conserving</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to conserve</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The verb &ldquo;need&rdquo; combines with the to-infinitive &ldquo;to conserve&rdquo; to form a subordinate clause indicating what the penguins need to do.</p><p>Choice A (bare infinitive) is ungrammatical after &ldquo;need&rdquo; in this context. Choice B (future) cannot complement &ldquo;need.&rdquo; Choice C (present participle) cannot follow &ldquo;need&rdquo; in this construction.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

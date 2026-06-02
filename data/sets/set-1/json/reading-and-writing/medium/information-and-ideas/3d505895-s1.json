@@ -1,0 +1,25 @@
+{
+  "questionId": "3d505895-s1",
+  "originalId": "3d505895",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T3.medium",
+  "stimulus": "<p>Apomixis is a form of reproduction in which a plant produces seeds without pollination. The resulting seed contains an embryo whose DNA, or genetic material, comes entirely from the parent plant. Among flowering plants, apomixis has been documented in a small number of species, including dandelions and some blackberries. When botanists at the Royal Adelaide Botanic Garden analyzed the DNA of the garden's collection of Hieracium plants (a genus of hawkweeds), they discovered that two individuals were not genetically similar enough to any of the pollen-producing plants in the surrounding bed to be their offspring. However, both had grown from seeds produced by parent plants in that bed. Thus, the botanists concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>at least one of those individuals' parents was produced through apomixis.</p>"},
+    {"id": "b", "content": "<p>the parent plants of the two individuals probably reproduced through apomixis.</p>"},
+    {"id": "c", "content": "<p>Hieracium plants may reproduce through apomixis in cultivation but not in the wild.</p>"},
+    {"id": "d", "content": "<p>Hieracium plants reproduce through apomixis only when pollinators are absent.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is best. The two individuals do not match the surrounding pollen donors but grew from seeds produced by the parent plants in that bed. Given that apomixis yields seeds whose DNA comes entirely from the parent plant, the most logical inference is that the parent plants reproduced through apomixis. Choice A misplaces the inference one generation back. Choice C goes beyond the evidence about cultivation vs. wild. Choice D introduces a pollinator-absence condition that is not supported.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

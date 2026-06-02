@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows selected values from function f.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>x</th><th>f(x)</th></tr>\n<tr><td>\u22122</td><td>8</td></tr><tr><td>\u22121</td><td>4</td></tr><tr><td>0</td><td>2</td></tr><tr><td>1</td><td>1</td></tr></table>\n<p style=\"text-align: left;\">Which of the following is the best description of function f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Increasing linear</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Decreasing linear</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Decreasing exponential</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Increasing exponential</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The values are halved as x increases by 1 (8, 4, 2, 1), indicating exponential decay (decreasing exponential).</p><p>A linear function would decrease by a constant amount each step. The function is decreasing, ruling out the increasing options.</p>",
+  "questionId": "a03b7e02-s1",
+  "originalId": "a03b7e02",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy"
+}

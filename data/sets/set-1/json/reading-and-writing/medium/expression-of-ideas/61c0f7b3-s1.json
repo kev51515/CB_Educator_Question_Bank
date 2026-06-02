@@ -1,0 +1,25 @@
+{
+  "questionId": "61c0f7b3-s1",
+  "originalId": "61c0f7b3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A1.T2.medium",
+  "stimulus": "<ul>\n<li>In 2019, a research team led by Jian Li measured the average wingspans of adult individuals from various bat species.</li>\n<li><em>Pipistrellus pipistrellus</em> is a species of bat in the family Vespertilionidae.</li>\n<li><em>Pipistrellus pipistrellus</em> adults had an average wingspan of 21.3 cm.</li>\n<li><em>Pteropus vampyrus</em> is a species of bat in the family Pteropodidae.</li>\n<li><em>Pteropus vampyrus</em> adults had an average wingspan of 152.4 cm.</li>\n</ul>",
+  "stem": "<p>Which choice most effectively uses information from the given sentences to emphasize a difference between the wingspans of the two species?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>While <em>Pipistrellus pipistrellus</em> adults had an average wingspan of 21.3 cm, <em>Pteropus vampyrus</em> adults had an average wingspan of 152.4 cm.</p>"},
+    {"id": "b", "content": "<p>The research team led by Jian Li measured the average wingspans of adult bats from various species.</p>"},
+    {"id": "c", "content": "<p><em>Pipistrellus pipistrellus</em> belongs to the family Vespertilionidae, while <em>Pteropus vampyrus</em> belongs to the family Pteropodidae.</p>"},
+    {"id": "d", "content": "<p><em>Pteropus vampyrus</em> adults had an average wingspan of 152.4 cm.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The sentence emphasizes a difference between the wingspans of the two species by stating each species’ average wingspan side by side.</p><p>Choice B is incorrect. The sentence describes the study but doesn’t state the wingspans of either species. Choice C is incorrect. The sentence emphasizes a difference in family, not in wingspan. Choice D is incorrect. The sentence reports only one species’ wingspan, so it cannot emphasize a difference between the two species.</p>",
+  "generatedAt": "2026-05-27T12:00:00Z"
+}

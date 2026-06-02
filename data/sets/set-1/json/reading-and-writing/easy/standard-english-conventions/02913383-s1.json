@@ -1,0 +1,39 @@
+{
+  "questionId": "02913383-s1",
+  "originalId": "02913383",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>\"All that is gold does not glitter, not all those who wander are lost.\" This line is from J. R. R. Tolkien's novel <em>The Fellowship of the Ring</em> (1954). It's an example of chiasmus, a literary technique that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> contrast by reversing the structure of two related phrases.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>are creating</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>have created</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>create</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>creates</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The subject of the relative clause is the singular relative pronoun \"that,\" referring to the singular noun \"technique.\" A singular verb (\"creates\") is therefore required.</p><p>Choice A is incorrect because the plural progressive \"are creating\" doesn't agree with the singular antecedent. Choice B is incorrect because the plural \"have created\" doesn't agree with the singular antecedent. Choice C is incorrect because the plural \"create\" doesn't agree with the singular antecedent.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "form-structure-and-sense.A2.T4.easy"
+}

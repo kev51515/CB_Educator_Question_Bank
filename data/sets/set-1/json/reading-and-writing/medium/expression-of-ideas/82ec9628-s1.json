@@ -1,0 +1,25 @@
+{
+  "questionId": "82ec9628-s1",
+  "originalId": "82ec9628",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>Anthropologist Joaquín Herrera explains why the seventh-century stepped platform at El Pinar in northern Honduras was likely the funerary monument of a regional ruler. First, the imported jadeite ornaments arranged on the platform suggest that the person interred there was a wealthy and influential leader. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the enormous labor required to quarry and stack the platform's limestone blocks would almost certainly have been mustered only for a ruler.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Instead,</p>"},
+    {"id": "b", "content": "<p>Still,</p>"},
+    {"id": "c", "content": "<p>Second,</p>"},
+    {"id": "d", "content": "<p>Specifically,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Second\" logically signals that the information in this sentence—that the labor required to build the platform would only have been mustered for a ruler—joins the previous sentence (introduced by \"First\") in supporting Herrera's claim that the monument was likely the funerary site of a regional ruler.</p><p>Choice A is incorrect because \"instead\" illogically signals that this sentence presents an alternative to the previous information about the jadeite ornaments, when it actually adds a second piece of supporting evidence. Choice B is incorrect because \"still\" illogically signals a contrast with the previous information, when this sentence in fact reinforces Herrera's claim. Choice D is incorrect because \"specifically\" illogically signals that this sentence elaborates on the previous one about the ornaments, when it instead introduces a separate, additional piece of evidence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

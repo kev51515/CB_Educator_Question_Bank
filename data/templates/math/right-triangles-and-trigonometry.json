@@ -1,0 +1,606 @@
+{
+  "section": "Math",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "originals_count": 57,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Pythagorean theorem",
+      "description": "Apply the Pythagorean relationship a^2 + b^2 = c^2 to find a missing side of a right triangle, or to recognize/write the equation form of that relationship.",
+      "boundary_with_other_aspects": "A1 differs from A2/A3 in that no trigonometric ratio (sine/cosine/tangent) appears in the stem or answer; only side lengths and the squared-sum relationship are at issue. If the stem invokes a 30-60-90 or 45-45-90 to obtain the side without computing a square root via a^2+b^2, route to A4.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Find missing side given two sides",
+          "description": "Two side lengths of a right triangle (legs or one leg and hypotenuse) are given numerically; the student finds the missing side either exactly (radical form) or as a decimal approximation.",
+          "core_skill_demand": "Identify which sides are legs vs. hypotenuse, set up a^2+b^2=c^2 correctly (do not swap hypotenuse with a leg), and evaluate the resulting square root either to an exact radical or to the closest decimal among answer choices.",
+          "example_originals": ["379ffefb", "e6f2ace7", "7700d098", "9ec76b54", "498d6795", "f811d345"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "small integer legs (single digits or low double digits)",
+                "answer is either a simple integer/decimal approximation or a small radical such as sqrt(202)",
+                "hypotenuse is the unknown (forward Pythagorean direction)"
+              ],
+              "example_stem": "A right triangle has legs 11 cm and 9 cm. What is the hypotenuse?",
+              "example_ids": ["379ffefb", "e6f2ace7"]
+            },
+            "medium": {
+              "characteristics": [
+                "hypotenuse and one leg given; solve for the other leg (reverse direction)",
+                "non-trivial numbers (e.g., 196.8 and 43.2, or 28 and 20) that do not reduce to common Pythagorean triples without scaling",
+                "exact answer requires simplifying a radical such as 4*sqrt(74)"
+              ],
+              "example_stem": "One leg is 43.2 mm and the hypotenuse is 196.8 mm. What is the other leg?",
+              "example_ids": ["7700d098", "9ec76b54"]
+            },
+            "hard": {
+              "characteristics": [
+                "side lengths already contain radical factors (e.g., 10*sqrt(37) and 24*sqrt(37))",
+                "answer must be expressed in the form k*sqrt(d) and student must extract d",
+                "Pythagorean triple is hidden by a common irrational factor (10, 24, 26 scaled by sqrt(37))"
+              ],
+              "example_stem": "AB = 10*sqrt(37), BC = 24*sqrt(37). Find AC. (Or: hypotenuse = 3*sqrt(d); find d.)",
+              "example_ids": ["498d6795", "f811d345"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "right-triangle context with two known sides and one unknown",
+              "no trig ratio appears in stem or correct answer",
+              "the relationship a^2+b^2=c^2 is the only tool needed"
+            ],
+            "must_vary": [
+              "which side is unknown (leg vs. hypotenuse)",
+              "numerical values of the given sides",
+              "answer form (decimal approximation vs. exact radical vs. integer)"
+            ],
+            "common_bugs": [
+              "swapping leg and hypotenuse in the equation (a^2+b^2 = c^2 becomes a^2 = b^2+c^2)",
+              "producing an easy clone that accidentally yields a clean Pythagorean triple, collapsing difficulty",
+              "for hard-tier, dropping the common radical factor so the answer becomes a plain integer — destroys the lever"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Identify Pythagorean equation form",
+          "description": "Stem labels sides a, b, c (or numerical sides) and asks which equation, or which expression for the unknown side, correctly represents the Pythagorean relationship.",
+          "core_skill_demand": "Recognize that the squared hypotenuse equals the sum of the squared legs and translate that into either an equation (a^2+b^2=c^2 with labels), or an expression sqrt(c^2 - a^2) for a missing leg.",
+          "example_originals": ["b0c5ece5", "c9f8d1e9", "de550be0"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "forward direction: hypotenuse expressed as sqrt(a^2 + b^2)",
+                "distractors include linear / non-squared combinations (4+5, sqrt(4+5), sqrt(4*5))",
+                "small integer side labels"
+              ],
+              "example_stem": "Right triangle with legs a=4 and b=5, hypotenuse c. Which expression equals c?",
+              "example_ids": ["c9f8d1e9", "b0c5ece5"]
+            },
+            "medium": {
+              "characteristics": [
+                "reverse direction: missing leg expressed as sqrt(c^2 - a^2)",
+                "distractors include c^2 - a^2 without the radical, and linear c - a forms",
+                "hypotenuse is the larger known number, leg is unknown"
+              ],
+              "example_stem": "Hypotenuse 21, leg 6, other leg a. Which expression equals a?",
+              "example_ids": ["de550be0"]
+            },
+            "hard": {
+              "characteristics": [
+                "no hard examples in this bank; if produced, would combine reverse direction with radical-coefficient sides"
+              ],
+              "example_stem": "(no example in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "answer is an equation or expression, not a numerical value",
+              "all distractors offer plausible mis-applications (sum without squares, product, subtraction without radical)"
+            ],
+            "must_vary": [
+              "which side is the unknown",
+              "specific numbers or letter labels"
+            ],
+            "common_bugs": [
+              "writing distractors that are mathematically equivalent to the key (e.g., (a^2+b^2)^0.5 vs sqrt(a^2+b^2))",
+              "letting all distractors share an obvious tell so the question reduces to a one-step elimination"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Trig ratio from given sides",
+      "description": "Given the side lengths (or labels) of a right triangle, compute the value of sin, cos, or tan of a specific acute angle by selecting the correct opposite/adjacent/hypotenuse pair (SOH-CAH-TOA).",
+      "boundary_with_other_aspects": "A2 differs from A3 in direction: A2 starts from sides and produces a ratio value; A3 starts from a given ratio value (or a derived constraint) and produces a side, angle, or other measurement. If a ratio is given in the stem and used to derive a side, route to A3.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Compute trig ratio from two sides",
+          "description": "Two side lengths of a right triangle are labeled (often with figure) and the student computes sin/cos/tan of an indicated angle as a fraction (or decimal).",
+          "core_skill_demand": "Identify which side is opposite, adjacent, or hypotenuse relative to the named angle, then form the correct SOH-CAH-TOA ratio without inverting numerator and denominator.",
+          "example_originals": ["64c1f044", "87a9a2d4", "a6097ec2", "2bddbc1b", "1429dcdf", "1bf809b5", "a67b9f88"],
+          "frequency": { "easy": 3, "medium": 1, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "two of the three sides given explicitly with clear opposite/adjacent labeling in the prompt",
+                "ratio asked is the one whose two sides are directly given (no need to compute third side first)",
+                "distractors are simple swaps (numerator/denominator inversion)"
+              ],
+              "example_stem": "Right triangle with opposite=63, hypotenuse=73 to angle x. What is sin x?",
+              "example_ids": ["64c1f044", "87a9a2d4", "a6097ec2"]
+            },
+            "medium": {
+              "characteristics": [
+                "two sides given but the student must select correct side labels using a vertex naming convention (angle A vs angle B)",
+                "ratio choice and side selection both contribute to the answer",
+                "no missing side computation required"
+              ],
+              "example_stem": "Triangle ABC right-angled at C, AB=42, AC=41. What is cos A?",
+              "example_ids": ["2bddbc1b"]
+            },
+            "hard": {
+              "characteristics": [
+                "the missing side must first be computed via Pythagoras before the trig ratio can be formed (e.g., RS = sqrt(105), RT = 53, find sin R)",
+                "answer is given as decimal AND fractional form (SPR format) or requires simplifying a non-trivial fraction",
+                "may involve a perpendicular subdividing the original triangle (auxiliary right triangle) before identifying the ratio"
+              ],
+              "example_stem": "Right triangle with hypotenuse 23, opposite-x leg 16. Find sin x (decimal).",
+              "example_ids": ["1429dcdf", "1bf809b5", "a67b9f88", "603c18ad"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "right-triangle setup with a named acute angle whose trig ratio is sought",
+              "answer is the value of a trig ratio (fraction, simplified radical, or decimal)",
+              "if hard-tier, the missing side requirement OR auxiliary right triangle must remain"
+            ],
+            "must_vary": [
+              "which ratio is asked (sin, cos, tan)",
+              "specific side lengths and which is unknown",
+              "whether figure is shown or sides are described in prose"
+            ],
+            "common_bugs": [
+              "agent picks a side opposite the wrong angle (e.g., for tan W in triangle RST, confuses W with R)",
+              "drops the third-side computation in a hard clone, regressing difficulty to easy",
+              "produces answer choices that are not all in lowest terms, allowing elimination by format alone"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Trig ratio via similar triangle scaling",
+          "description": "A right triangle's three side lengths are given, and the student must find a trig ratio of an angle in a similar triangle (different vertex labels) using the fact that corresponding angles share trig ratios.",
+          "core_skill_demand": "Identify corresponding angles across the two similarity statements, locate the matching opposite/adjacent/hypotenuse in the labeled original, and report the ratio (which is invariant under similarity).",
+          "example_originals": ["0e709a29", "c9931030"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["not observed at medium in this bank"], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "three side lengths given as a Pythagorean triple variant (e.g., 20-48-52, 384-440-584)",
+                "ratio is in the similar triangle, requiring two layers of mapping (RST -> UVW, then SOH-CAH-TOA)",
+                "tangent (rather than sin/cos) is the most common ask, forcing student to identify the correct leg pair"
+              ],
+              "example_stem": "RST: RS=20, ST=48, TR=52, right triangle, similar to UVW with S<->V and T<->W. Find tan W.",
+              "example_ids": ["0e709a29", "c9931030"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "two triangles related by similarity with explicit vertex correspondence",
+              "all three sides of the original triangle given numerically",
+              "ratio is invariant under similarity (same value in both triangles)"
+            ],
+            "must_vary": [
+              "specific triple used and which vertex is the right angle",
+              "which acute angle's ratio is asked"
+            ],
+            "common_bugs": [
+              "matching the wrong correspondence (e.g., using W as if it corresponded to S instead of T)",
+              "computing the ratio for the wrong angle within the named triangle (sin instead of tan, or tan of the complementary angle)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Ratio-to-side or ratio-to-quantity",
+      "description": "A trig ratio (numeric, or a side ratio implied by similarity) is given as a constraint, and the student must compute a side length, an angle measure, a perimeter, an area, or another derived numerical quantity.",
+      "boundary_with_other_aspects": "A3 differs from A2 in starting point: here the ratio is an input, not an output. A3 differs from A4 in that the special-angle relationships are not the central tool — the student uses general SOH-CAH-TOA and (often) the Pythagorean theorem.",
+      "types": [
+        {
+          "id": "T5",
+          "name": "Find a side given a trig ratio and one side",
+          "description": "Stem provides one side and one trig ratio (e.g., cos A = 3/5, BC = 136); the student finds another side, sometimes via a multi-step chain involving the third side.",
+          "core_skill_demand": "Translate the ratio into a relationship between two sides, identify which side is given (opposite, adjacent, or hypotenuse) relative to the named angle, and solve for the requested side; may require Pythagoras to find a third side or to compute a perimeter.",
+          "example_originals": ["5a7e3b46", "94f7c9e2", "a4c0547f", "6ab30ce3"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "single ratio (e.g., cos A = 3/5) plus one numerical side",
+                "requested side is directly obtainable from the ratio (one step of multiplication)",
+                "answer is a clean integer"
+              ],
+              "example_stem": "Right angle at B, BC = 136, cos A = 3/5. Find AB.",
+              "example_ids": ["5a7e3b46"]
+            },
+            "hard": {
+              "characteristics": [
+                "requested quantity is a derived value (perimeter, area expression, or a side in a similar triangle)",
+                "requires using the ratio to recover both legs, then Pythagoras for the hypotenuse, then sum (perimeter) or product (area)",
+                "may involve abstract / symbolic answer such as 'k tan 33°' where k is a constant"
+              ],
+              "example_stem": "Right angle at Z, YZ = 24, tan X = 12/35. Find perimeter of triangle XYZ.",
+              "example_ids": ["94f7c9e2", "a4c0547f", "6ab30ce3", "85f1892d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "the ratio appears in the stem (not the answer)",
+              "the requested quantity is a length, perimeter, area, or constant coefficient"
+            ],
+            "must_vary": [
+              "which trig ratio is given (sin, cos, tan)",
+              "which side is provided numerically",
+              "whether the request is a single side, perimeter, or area"
+            ],
+            "common_bugs": [
+              "using the given ratio's numerator/denominator as actual side lengths without scaling",
+              "for hard-tier perimeter, forgetting to compute the hypotenuse via Pythagoras",
+              "agent treats tan = opp/adj as if it were sin = opp/hyp"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Find acute angle in 45-45-90 isosceles",
+          "description": "Right triangle figure with two equal legs is shown; the student must recognize the 45-45-90 case and report the acute angle measure (typically 45°).",
+          "core_skill_demand": "Identify that equal legs in a right triangle imply 45° acute angles by isosceles + angle-sum reasoning; report x = 45.",
+          "example_originals": ["9823f279", "a71617d3", "145337bc"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "explicit '45° 45°' shown in figure or the prompt asks for a side equal to its partner",
+                "answer is one of the two equal sides (numerical equality)"
+              ],
+              "example_stem": "Right triangle with 45-45 acute angles, one leg 24, the other leg x. Find x.",
+              "example_ids": ["145337bc"]
+            },
+            "medium": {
+              "characteristics": [
+                "figure shows two equal legs but does not state the acute angles",
+                "student must infer isosceles right triangle and conclude x = 45",
+                "answer is the acute angle measure (SPR format)"
+              ],
+              "example_stem": "Right triangle, two legs both 15, second acute angle x°. Find x.",
+              "example_ids": ["9823f279", "a71617d3"]
+            },
+            "hard": { "characteristics": ["not observed at hard in this bank"], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "isosceles right triangle setup (two equal legs)",
+              "request is for the acute angle (or the equal-leg length)"
+            ],
+            "must_vary": [
+              "actual leg length",
+              "whether figure shows angles, sides, or both"
+            ],
+            "common_bugs": [
+              "agent produces a 30-60-90 in the stem but asks for 45, mismatching answer to figure",
+              "easy/medium drift: writing the leg lengths unequal turns it into a generic trig problem"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Special right triangles & inscribed figures",
+      "description": "Use the fixed 30-60-90 (1 : sqrt(3) : 2) or 45-45-90 (1 : 1 : sqrt(2)) side ratios, often inside a larger figure (equilateral triangle, rectangle/square inscribed in a circle, isosceles right triangle), to find a length, perimeter, area, or radius.",
+      "boundary_with_other_aspects": "A4 differs from A1 in that the answer is obtained from the fixed ratio of a 30-60-90 or 45-45-90 triangle (often involving sqrt(2) or sqrt(3)), not from a generic Pythagorean computation. A4 differs from A3 in that the constraint is a special-angle structural property (equilateral triangle, square in circle), not a trig-ratio value.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "45-45-90 perimeter/leg/hypotenuse conversion",
+          "description": "Given the perimeter, hypotenuse, or one leg of an isosceles right triangle, find another quantity using the 1 : 1 : sqrt(2) ratio.",
+          "core_skill_demand": "Recognize the 1 : 1 : sqrt(2) relationship between legs and hypotenuse, set up an equation involving sqrt(2), and solve for the requested length.",
+          "example_originals": ["568d66a7", "58c26db8", "ffe862a3"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["not observed at medium in this bank"], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "perimeter or hypotenuse is given in the form k + k*sqrt(2) — student must factor out the structure",
+                "answer choices are deliberately close in form (k, k*sqrt(2), 2k, k+k*sqrt(2))",
+                "distractors test confusion between leg and hypotenuse"
+              ],
+              "example_stem": "Isosceles right triangle perimeter 94 + 94*sqrt(2). Find one leg.",
+              "example_ids": ["568d66a7", "58c26db8", "ffe862a3"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "isosceles right triangle / 45-45-90 setup",
+              "input or output involves sqrt(2)",
+              "the 1 : 1 : sqrt(2) ratio is the load-bearing tool"
+            ],
+            "must_vary": [
+              "which quantity is given (leg, hypotenuse, perimeter) and which is asked",
+              "specific numerical value of the given quantity"
+            ],
+            "common_bugs": [
+              "treating the perimeter as 2L + L*sqrt(2)/2 instead of 2L + L*sqrt(2)",
+              "swapping leg and hypotenuse expressions (multiplying by sqrt(2) when dividing was needed)"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "30-60-90 / equilateral triangle metrics",
+          "description": "Equilateral triangle (or a 30-60-90 obtained by bisecting it) appears in the figure or stem; the student finds height, area, perimeter, circumradius, or a specific side using the 1 : sqrt(3) : 2 ratio.",
+          "core_skill_demand": "Bisect the equilateral triangle to obtain a 30-60-90, apply the 1 : sqrt(3) : 2 ratio to the appropriate side, and combine with perimeter / area / circumradius formulas as needed.",
+          "example_originals": ["25da87f8", "4c95c7d4", "54df8076", "a4bd60a3", "52f7b898"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 5 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["not observed at medium in this bank"], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "answer is expressed in the form k*sqrt(3) where k is a constant the student must isolate",
+                "stem combines perimeter, circumradius, height, or area in a single multi-step chain",
+                "30-60-90 inside a labeled right-triangle figure where one acute angle is 30°"
+              ],
+              "example_stem": "Equilateral triangle perimeter 624 cm; height is k*sqrt(3). Find k.",
+              "example_ids": ["25da87f8", "54df8076", "a4bd60a3", "52f7b898"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "30-60-90 or equilateral-triangle setup",
+              "1 : sqrt(3) : 2 ratio is the load-bearing tool",
+              "answer is a length, area, or coefficient — not a trig-ratio value"
+            ],
+            "must_vary": [
+              "which quantity is given (side, perimeter, height, circumradius)",
+              "which quantity is requested",
+              "specific numerical inputs"
+            ],
+            "common_bugs": [
+              "swapping the short-leg and long-leg multipliers (using sqrt(3)/2 for the wrong side)",
+              "for circumradius problems, confusing circumradius (= side/sqrt(3)) with apothem/inradius"
+            ]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Inscribed rectangle/square in circle",
+          "description": "A square or rectangle is inscribed in a circle; the diagonal of the rectangle equals the circle's diameter. Often combined with a 30-60-90 (when diagonal = 2 * short side) or with a 45-45-90 (square).",
+          "core_skill_demand": "Use the property 'diagonal of inscribed rectangle = diameter' together with the special-triangle ratios to relate radius/diameter to side lengths or area.",
+          "example_originals": ["44b2b894", "ae041e52"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["not observed at medium in this bank"], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "the relationship 'diagonal = 2 * short side' implies a 30-60-90 inscribed rectangle (hard mode)",
+                "area given in form k*sqrt(3); student must back out the side, then diagonal/diameter",
+                "for the square variant, the radius given as 20*sqrt(2)/2 and the student converts to side length 20"
+              ],
+              "example_stem": "Rectangle inscribed in circle, diagonal = 2 * short side, area = 1089*sqrt(3). Find diameter.",
+              "example_ids": ["44b2b894", "ae041e52"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "inscribed quadrilateral with diagonal = diameter",
+              "involvement of sqrt(2) or sqrt(3) in either input or output"
+            ],
+            "must_vary": [
+              "shape (square vs. rectangle), given quantity (radius vs. area), and asked quantity"
+            ],
+            "common_bugs": [
+              "treating the diagonal as a side instead of using diagonal = diameter",
+              "for the 'diagonal = 2*short side' case, failing to recognize this forces a 30-60-90 inside the rectangle"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Similarity-invariance of trig ratios",
+      "description": "Two triangles are similar; the student uses the fact that corresponding angles have equal sine, cosine, and tangent values to transfer a ratio (or to compute a side via the ratio and a corresponding length).",
+      "boundary_with_other_aspects": "A5 differs from A2/A3 in that the central inference is the invariance of trig ratios under similarity, not a SOH-CAH-TOA computation in a single triangle. A5 differs from A4 (T4 in A2) in that A5 explicitly poses the question across two triangles with corresponding-angle statements; if the second triangle is only nominal and the work is done in one triangle, route to A2/T4 vs A5 based on whether the question asks 'what is sin(B)' with B in the other triangle.",
+      "types": [
+        {
+          "id": "T10",
+          "name": "Same ratio in similar triangle",
+          "description": "A trig ratio is given in one triangle and the corresponding ratio is asked in the similar triangle; the answer equals the given ratio because corresponding angles are equal.",
+          "core_skill_demand": "Recognize that similar triangles have equal corresponding angles, which means corresponding sin/cos/tan values are identical; map the asked-for angle to its correspondent and report the same value.",
+          "example_originals": ["bbaac300", "bcb66188", "2be01bd9", "c6dff223"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "answer is identical to the given ratio (one-step recognition)",
+                "distractors include the reciprocal and the supplement-style ratio"
+              ],
+              "example_stem": "Triangle ABC ~ DEF with A<->D and right angles at C and F. cos B = 1/22. Find cos E.",
+              "example_ids": ["bbaac300"]
+            },
+            "medium": {
+              "characteristics": [
+                "answer is identical but distractors are more carefully aligned to common Pythagorean triples",
+                "the given ratio is a 'ugly' fraction (e.g., 308/317) that resists computational simplification"
+              ],
+              "example_stem": "Triangle FGH ~ JKL with F<->J and right angles at G and K. sin F = 308/317. Find sin J.",
+              "example_ids": ["bcb66188"]
+            },
+            "hard": {
+              "characteristics": [
+                "asked ratio differs from given (e.g., tan A given, sin D asked) and student must derive sin from tan via Pythagoras within the original triangle, then transfer",
+                "additional similarity ratio (e.g., AB = 2.9 * DE) is provided but is a red herring for the ratio itself",
+                "answer is the same ratio for the corresponding angle, possibly after recomputing"
+              ],
+              "example_stem": "Similar triangles, tan A = 21/20, AB = 2.9 * DE. Find sin D.",
+              "example_ids": ["2be01bd9", "c6dff223"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "explicit similarity statement with vertex correspondence",
+              "right angles at corresponding vertices",
+              "a trig ratio is given in one triangle and a (same or related) ratio asked in the other"
+            ],
+            "must_vary": [
+              "ratio in stem vs. in question (same trig vs. cross-trig)",
+              "presence/absence of a side-length scaling factor"
+            ],
+            "common_bugs": [
+              "agent applies the similarity scale factor to the ratio itself (ratios are scale-invariant — do not multiply by 2.9)",
+              "for hard-tier cross-trig clones, simplifies the question to same-trig and skips the Pythagorean step"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "Cofunction / complementary identity",
+      "description": "Use the identity sin(theta) = cos(90° - theta) (or equivalent) to equate or transform trig expressions, often inside a single right triangle where the two acute angles sum to 90°.",
+      "boundary_with_other_aspects": "A6 differs from A2/A3 in that no specific side lengths are needed — the question turns entirely on the complementary-angle identity. A6 differs from A5 in that the relationship is between two angles in the same right triangle (or two abstract acute angles), not between two similar triangles.",
+      "types": [
+        {
+          "id": "T11",
+          "name": "Cofunction value swap within one triangle",
+          "description": "Two angles in a right triangle (or two abstract acute angles) are complementary; given the value of one trig function of one angle, find the matching cofunction of the other.",
+          "core_skill_demand": "Apply sin(x) = cos(90 - x) (or tan(x) = cot(90 - x)) to transfer the given value to the cofunction of the complementary angle.",
+          "example_originals": ["33e29881", "659cb706", "8027db3f"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "explicit statement that the two angles sum to 90° (or that they are the two acute angles of a right triangle)",
+                "answer equals the given ratio because sin = cos of complement",
+                "distractors include reciprocals and obvious fraction inversions"
+              ],
+              "example_stem": "Right triangle RST, R+S = 90°, sin R = sqrt(15)/4. Find cos S.",
+              "example_ids": ["33e29881", "659cb706"]
+            },
+            "hard": {
+              "characteristics": [
+                "given a ratio in non-canonical form (e.g., cos K = 24/51) and student must simplify, recognize the (8,15,17)-type triple inside, then apply the cofunction identity",
+                "answer is a decimal AND fraction (SPR) requiring the Pythagorean step before identity"
+              ],
+              "example_stem": "Triangle JKL with right angle at J, cos K = 24/51. Find cos L.",
+              "example_ids": ["8027db3f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "complementary-angle relationship explicit or implied by right-triangle structure",
+              "answer leverages sin(x) = cos(90 - x) (or equivalent) identity"
+            ],
+            "must_vary": [
+              "which function is given (sin/cos/tan)",
+              "the specific ratio value",
+              "whether the cofunction identity is direct (Medium) or requires Pythagorean preprocessing (Hard)"
+            ],
+            "common_bugs": [
+              "agent reports the reciprocal (cos = adj/hyp confused with hyp/adj)",
+              "for hard-tier, fails to recompute via Pythagoras and simply reports the given ratio"
+            ]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Cofunction equation with variable angles",
+          "description": "Two angle expressions in x are set equal via sin = cos identity (cos Q = sin R with Q and R given as linear expressions in x); the student solves for x using Q + R = 90.",
+          "core_skill_demand": "Translate cos(Q) = sin(R) into Q + R = 90 (or Q = 90 - R), set up and solve a linear equation in x.",
+          "example_originals": ["14e7c1f4"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["not observed at medium in this bank"], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Q and R given as linear expressions (e.g., x+61 and 4x+4)",
+                "answer x is an integer that may not be among obvious candidates without solving the equation"
+              ],
+              "example_stem": "For acute Q, R: cos Q = sin R. Q = x+61, R = 4x+4. Find x.",
+              "example_ids": ["14e7c1f4"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "cofunction equation (cos = sin) between two angle expressions",
+              "linear-in-x angle expressions"
+            ],
+            "must_vary": [
+              "specific coefficients of x and constants",
+              "which side of the equation is sin vs. cos"
+            ],
+            "common_bugs": [
+              "setting Q = R instead of Q + R = 90 (forgets that sin = cos requires complementary angles)",
+              "producing coefficients that make the answer non-integer (drift from the source style)"
+            ]
+          }
+        },
+        {
+          "id": "T13",
+          "name": "Cofunction identity for sin/cos expressions",
+          "description": "Expressions of the form sin(a)cos(b) + cos(a)sin(b) (or equivalent) where a + b = 90 are simplified using the cofunction identity — typically recognized as sin^2 + cos^2 or as sin(a + b).",
+          "core_skill_demand": "Recognize that when a + b = 90°, sin(a) = cos(b) and cos(a) = sin(b), so the expression collapses to sin^2(a) + cos^2(a) or to a simpler equivalent.",
+          "example_originals": ["16d66178", "92eb236a"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["not observed at easy in this bank"], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["not observed at medium in this bank"], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "two complementary angles (e.g., 24° and 66°) appear inside a trig expression",
+                "student must use cofunction identity to rewrite the expression in an equivalent form",
+                "answer choices include several plausible algebraic look-alikes"
+              ],
+              "example_stem": "(sin 24)(cos 66) + (cos 24)(sin 66) = ?",
+              "example_ids": ["16d66178", "92eb236a"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "two angles summing to 90° inside the expression",
+              "expression is algebraic (not numeric value) — answer is an equivalent expression"
+            ],
+            "must_vary": [
+              "the specific complementary pair of angles",
+              "whether the expression resolves to sin^2 + cos^2 or other identity-derived form"
+            ],
+            "common_bugs": [
+              "agent computes a numerical value instead of leaving the expression in symbolic form",
+              "swaps sin and cos within the rewriting step, producing a near-miss distractor as the key"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Difficulty climb is dominated by (1) reverse-direction problems (hypotenuse-and-leg -> leg, ratio -> side), (2) layered structure where the student must first apply Pythagoras to recover a missing side before forming or transferring a trig ratio, and (3) answers expressed in non-decimal form (k*sqrt(d), k*sqrt(3), k+k*sqrt(2)). Several SPR (free-response) items request both decimal and fraction acceptable answers — clones at hard difficulty should preserve this dual-format ask where appropriate. A small number of figure-dependent originals (e.g., 6933b3d9, bd87bc09, dba6a25a, 55bb437a, 902dc959, bf8d843e, 13d9a1c3) lost their figure detail during extraction; their stems suggest involvement of similar right triangles or altitude-on-hypotenuse setups and most plausibly belong to A2/A3/A5."
+}

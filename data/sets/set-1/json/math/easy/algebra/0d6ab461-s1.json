@@ -1,0 +1,39 @@
+{
+  "questionId": "0d6ab461-s1",
+  "originalId": "0d6ab461",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A3.T3.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Marcus deposits $40 in a savings account at the end of each week. At the beginning of the 1st week of a year there was $750 in that savings account. How much money, in dollars, will be in the account at the end of the 5th week of that year?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>790</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>950</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1,150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,750</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. After 5 weeks, 5 deposits of 40 have been added: 750 + 5(40) = 950.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

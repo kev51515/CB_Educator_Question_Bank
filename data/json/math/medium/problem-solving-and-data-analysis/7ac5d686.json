@@ -1,0 +1,62 @@
+{
+  "questionId": "7ac5d686",
+  "externalId": null,
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.D.",
+  "scoreBand": 5,
+  "ibn": "11102-DC",
+  "updateDate": 1691007959638,
+  "createDate": 1691007959638,
+  "scrapedAt": "2026-05-25T12:25:01.499529+00:00",
+  "source": "ibn-legacy",
+  "type": "mcq",
+  "stem": "<p class=\"stem_paragraph \">An inspector begins a day of work with a large sample of shirts that need to be checked for defects. The inspector works at a constant rate throughout the morning. What type of model is best to model the number of shirts remaining to be checked for&nbsp;defects at any given time throughout the morning? </p>\n",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p class=\"choice_paragraph \">A linear model with a positive slope </p>\n"
+    },
+    {
+      "id": "b",
+      "content": "<p class=\"choice_paragraph \">A linear model with a negative slope </p>\n"
+    },
+    {
+      "id": "c",
+      "content": "<p class=\"choice_paragraph \">An exponential growth model</p>\n"
+    },
+    {
+      "id": "d",
+      "content": "<p class=\"choice_paragraph \">An exponential decay model</p>\n"
+    }
+  ],
+  "keys": [],
+  "rationale": "<p>Choice B is correct. Since the work is done at a constant rate, a linear model best models the situation. The number of shirts remaining is dependent on the length of time the inspector has worked; therefore, if the relationship were graphed, time would be the variable of the horizontal axis and the number of remaining shirts would be the variable of the <span class=\"italic\"></span>vertical axis. Since the number of shirts decreases as the time worked increases, it follows that the slope of this graph is negative.<p>Choice A is incorrect and may result from incorrectly reasoning about the slope. Choices C and D are incorrect and may result from not identifying the constant rate of work as a characteristic of a linear model.</p></p>\n",
+  "raw": {
+    "item_id": "11102-DC",
+    "section": "Math",
+    "prompt": "<p class=\"stem_paragraph \">An inspector begins a day of work with a large sample of shirts that need to be checked for defects. The inspector works at a constant rate throughout the morning. What type of model is best to model the number of shirts remaining to be checked for&nbsp;defects at any given time throughout the morning? </p>\n",
+    "answer": {
+      "style": "Multiple Choice",
+      "choices": {
+        "a": {
+          "body": "<p class=\"choice_paragraph \">A linear model with a positive slope </p>\n"
+        },
+        "b": {
+          "body": "<p class=\"choice_paragraph \">A linear model with a negative slope </p>\n"
+        },
+        "c": {
+          "body": "<p class=\"choice_paragraph \">An exponential growth model</p>\n"
+        },
+        "d": {
+          "body": "<p class=\"choice_paragraph \">An exponential decay model</p>\n"
+        }
+      },
+      "rationale": "<p>Choice B is correct. Since the work is done at a constant rate, a linear model best models the situation. The number of shirts remaining is dependent on the length of time the inspector has worked; therefore, if the relationship were graphed, time would be the variable of the horizontal axis and the number of remaining shirts would be the variable of the <span class=\"italic\"></span>vertical axis. Since the number of shirts decreases as the time worked increases, it follows that the slope of this graph is negative.<p>Choice A is incorrect and may result from incorrectly reasoning about the slope. Choices C and D are incorrect and may result from not identifying the constant rate of work as a characteristic of a linear model.</p></p>\n"
+    }
+  }
+}

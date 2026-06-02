@@ -1,0 +1,39 @@
+{
+  "questionId": "83fd3cf4-s1",
+  "originalId": "83fd3cf4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Despite claims of comprehensive scope, much major research on global trade flows performed in the 1990s suffered from a narrow focus on a handful of large economies in North America and Western Europe, partly because customs data from elsewhere were difficult to obtain. Researchers would later <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> this shortcoming after gaining access to digitized customs archives from countries in Southeast Asia, such as Vietnam, and South America, such as Chile.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>validate</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>remedy</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>presuppose</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>categorize</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Remedy\" means to correct or improve. The text describes a shortcoming and explains how access to new data later enabled researchers to address it.</p><p>Choice A is incorrect. \"Validate\" means to confirm; researchers wouldn't seek to confirm a shortcoming. Choice C is incorrect. \"Presuppose\" means to assume in advance; the shortcoming had already been identified, not assumed. Choice D is incorrect. \"Categorize\" means to sort, which doesn't describe what new data would enable researchers to do about a recognized weakness.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

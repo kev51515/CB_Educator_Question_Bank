@@ -1,0 +1,25 @@
+{
+  "questionId": "6916c8e5-s1",
+  "originalId": "6916c8e5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Edible art is Hiro Tanaka's passion. Inspired by traditional Japanese carving techniques, the chef uses small knives to transform vegetables into intricate shapes. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> he once carved a single daikon radish into the shape of a blooming cherry blossom tree&mdash;complete with delicate petals!</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Soon,</p>"},
+    {"id": "b", "content": "<p>For example,</p>"},
+    {"id": "c", "content": "<p>Elsewhere,</p>"},
+    {"id": "d", "content": "<p>However,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"For example\" logically signals that the information about Tanaka carving a daikon into a cherry blossom is an example supporting the previous statement that he transforms vegetables into intricate shapes.</p><p>Choice A is incorrect because \"soon\" illogically signals chronological sequence rather than exemplification. Choice C is incorrect because \"elsewhere\" illogically signals a different location, but the sentence provides an example. Choice D is incorrect because \"however\" illogically signals contrast, when the sentence supports the previous claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

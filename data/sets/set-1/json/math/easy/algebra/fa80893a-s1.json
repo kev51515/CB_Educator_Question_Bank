@@ -1,0 +1,22 @@
+{
+  "questionId": "fa80893a-s1",
+  "originalId": "fa80893a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If 4<i>n</i> &minus; 5 = 11, what is the value of 8<i>n</i> + 3?</p>",
+  "answerOptions": null,
+  "keys": [
+    "35"
+  ],
+  "rationale": "<p>From 4<i>n</i> &minus; 5 = 11, doubling both sides gives 8<i>n</i> &minus; 10 = 22. Adding 13 to both sides yields 8<i>n</i> + 3 = 35. Therefore, the value of 8<i>n</i> + 3 is 35.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

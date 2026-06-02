@@ -1,0 +1,37 @@
+{
+  "questionId": "f6d454c1-s1",
+  "originalId": "f6d454c1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A2.T5.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>When a massive star exhausts its nuclear fuel, its core can collapse and trigger a supernova explosion.</li>\n<li>In a 2021 study, astronomers proposed that a star they named Vega-7 underwent such a collapse roughly 12,000 years ago.</li>\n<li>Their simulations indicated that Vega-7&rsquo;s core would have collapsed first, releasing a burst of neutrinos.</li>\n<li>Shortly afterward, a shock wave would have torn through the star&rsquo;s outer layers.</li>\n<li>The astronomers hypothesized that the ejected gas later formed the nebula now observed in that region.</li>\n</ul>",
+  "stem": "<p>The student wants to recount the sequence of events proposed by the astronomers. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Around 12,000 years ago, the core of a massive star (Vega-7) collapsed and released a burst of neutrinos; a shock wave then tore through the star&rsquo;s outer layers, and the ejected gas later formed the nebula now observed in that region.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>When a massive star (like Vega-7) exhausts its nuclear fuel, its core can collapse and trigger a supernova explosion.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>According to astronomers&rsquo; simulations, two events likely occurred roughly 12,000 years ago: first, a shock wave tore through Vega-7&rsquo;s outer layers, and second, the resulting neutrinos caused the core to collapse.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>First, astronomers proposed that Vega-7 underwent a core collapse; next, they ran simulations; and, finally, they formed a hypothesis about the nebula.</p>"
+    }
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The sentence recounts the sequence of events proposed by the astronomers: a massive star&rsquo;s core collapsed, releasing neutrinos, a shock wave then tore through its outer layers, and the ejected gas later formed the nebula.</p><p>Choice B is incorrect. The sentence offers information relevant to the 2021 study but doesn&rsquo;t recount the sequence of events proposed by the astronomers. Choice C is incorrect because the sentence misrepresents information from the notes; according to the notes, the core collapse released neutrinos, not the other way around. Choice D is incorrect. The sentence recounts a sequence, but it&rsquo;s a sequence of the astronomers&rsquo; activities, not the sequence of events proposed by the astronomers.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

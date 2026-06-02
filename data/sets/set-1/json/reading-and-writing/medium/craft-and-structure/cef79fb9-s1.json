@@ -1,0 +1,25 @@
+{
+  "questionId": "cef79fb9-s1",
+  "originalId": "cef79fb9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>The Tirumalai Nayak murals, from seventeenth-century South India, depict more than 60 court scenes across the long inner walls of a palace audience hall. They were likely produced by teams of painters working in vertical sections and then aligning the resulting panels along the wall. It&rsquo;s plausible that the workshop had not previously executed murals on so long a wall, and some art historians claim that a close examination of the seams&mdash;the places where the panels meet&mdash;suggests that the painters refined their alignment process over the course of production. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">For instance, the earliest seam completed shows a clear mismatch of the painted border between the two panels, whereas the later seams are nearly imperceptible.</span></p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It identifies the figures and events depicted in the Tirumalai Nayak murals.</p>"},
+    {"id": "b", "content": "<p>It compares the Tirumalai Nayak murals with other murals from seventeenth-century South India.</p>"},
+    {"id": "c", "content": "<p>It supports an argument about the painters who produced the Tirumalai Nayak murals.</p>"},
+    {"id": "d", "content": "<p>It describes how researchers determined where the Tirumalai Nayak murals were produced.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes the function of the underlined sentence in the text as a whole. The text discusses the Tirumalai Nayak murals, suggesting that the painters who produced them may not have worked on so long a wall before and refined their alignment process over time. The last sentence provides an example that supports this argument: the earliest seam shows a clear mismatch, whereas later seams are nearly imperceptible. The underlined sentence thus supports an argument about the painters.</p><p>Choice A is incorrect because the example in the last sentence concerns the seams between panels, not the people or events depicted. Choice B is incorrect because the last sentence compares early and late seams within the same set of murals, not different murals from the same period. Choice D is incorrect because the last sentence does not address how researchers determined the murals&rsquo; location.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

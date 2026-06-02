@@ -1,0 +1,25 @@
+{
+  "questionId": "c8a2af72-s1",
+  "originalId": "c8a2af72",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A2.T4.medium",
+  "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>Japanese woodblock printmaker Katsushika Hokusai insisted that the proofs of his designs be inspected against his own carefully chosen pigment mixtures before any commercial edition was issued. Like many ukiyo-e artists of his generation, Hokusai used custom-blended hues that stood apart from the brighter, formulaic palettes favored by the major publishing houses. These artists likely embraced their distinctive color schemes in order to set their works apart from what mass-market production at the time treated as standard.</p><p>&nbsp;</p><p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>Ukiyo-e printmakers often concentrated on the interplay of line and atmosphere in their compositions. Those who selected custom-blended pigments instead of the more conventional publisher palettes likely did so for aesthetic reasons: a particular shade was chosen because it would harmonize with the mood or subject of a given print. Stock pigment mixtures, by contrast, could overwhelm the subtleties an artist had carefully built into a design.</p>",
+  "stem": "<p>Based on the texts, both authors would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Many ukiyo-e printmakers were deliberate about the pigments they selected for their works.</p>"},
+    {"id": "b", "content": "<p>Hokusai&rsquo;s preferred color choices differed from those of most ukiyo-e printmakers.</p>"},
+    {"id": "c", "content": "<p>The lines in an ukiyo-e print were often drawn to complement the pigments it would be printed with.</p>"},
+    {"id": "d", "content": "<p>Stock publisher pigments were regarded as especially desirable by those who purchased ukiyo-e prints.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. Text 1 describes Hokusai&rsquo;s insistence on inspecting proofs against his chosen pigments and attributes ukiyo-e artists&rsquo; preference for custom-blended hues to a desire to stand apart from mass-market norms. Text 2 also notes that printmakers selected custom-blended pigments, though it attributes the choice to aesthetic harmony with mood and subject. The two texts differ on motive but both portray the printmakers as deliberate about pigment choice.</p><p>Choice B is incorrect because Text 1 presents Hokusai&rsquo;s practice as typical of ukiyo-e artists of his generation rather than as a departure. Choice C is incorrect because neither text claims that lines were drawn to match pigments; Text 2 implies pigments were chosen for an existing design. Choice D is incorrect because neither text suggests that stock pigments were especially desired by buyers.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

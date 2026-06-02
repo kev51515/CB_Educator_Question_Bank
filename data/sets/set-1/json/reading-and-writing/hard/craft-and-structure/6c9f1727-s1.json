@@ -1,0 +1,39 @@
+{
+  "questionId": "6c9f1727-s1",
+  "originalId": "6c9f1727",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>One leading theory of the origin of Saturn's rings holds that a moderate-sized icy moon spiraled inward and was shredded by tidal forces, leaving a halo of debris that settled into the ring plane. Until recently, this lost moon was <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, but researcher Jacob Wisdom and colleagues now claim to have identified its likely orbital signature in the precession of Saturn's spin axis.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>discredited</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>desultory</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>hypothetical</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>veritable</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Hypothetical\" means proposed by reasoning but not directly observed. Until the Wisdom team's findings, the lost moon was only theorized—proposed by the theory but not connected to direct evidence.</p><p>Choice A is incorrect. \"Discredited\" means rejected; if the moon had been discredited, the theory wouldn't be \"leading.\" Choice B is incorrect. \"Desultory\" means unmethodical, and one cannot describe a hypothesized object that way. Choice D is incorrect. \"Veritable\" means truly so, the opposite of what the text needs—a thing claimed only in theory.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T4.hard"
+}

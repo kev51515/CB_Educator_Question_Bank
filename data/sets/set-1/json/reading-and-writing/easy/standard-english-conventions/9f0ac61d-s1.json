@@ -1,0 +1,39 @@
+{
+  "questionId": "9f0ac61d-s1",
+  "originalId": "9f0ac61d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Patsy Mink's career in public service was shaped by her experiences as a young attorney in Honolulu, Hawai\u02bbi, during the late 1950s. Hoping to expand opportunities for women in the workforce outside the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Mink later helped draft Title IX, the landmark federal law banning sex-based discrimination in education.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>courtroom.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>courtroom,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>courtroom;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>courtroom</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation between a supplementary introductory phrase and a main clause. A comma is needed after the introductory participial phrase (\"Hoping to expand...outside the courtroom\") to separate it from the main clause (\"Mink later helped draft Title IX...\").</p><p>Choice A is incorrect because a period creates a sentence fragment from the introductory phrase. Choice C is incorrect because a semicolon cannot be used to separate an introductory phrase from a main clause. Choice D is incorrect because some punctuation is required between the introductory phrase and the main clause.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A2.T4.easy"
+}

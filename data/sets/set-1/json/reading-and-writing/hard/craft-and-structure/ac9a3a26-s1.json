@@ -1,0 +1,39 @@
+{
+  "questionId": "ac9a3a26-s1",
+  "originalId": "ac9a3a26",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>According to historian Lan Nguyen, Vietnamese American women played a pivotal role in the West Coast electronics-assembly industry during the late Cold War. At the time, major contractors had committed to delivering circuit boards on tight timelines to defense and telecommunications customers, and increased production targets handed considerable leverage to employees on the lines&mdash;a substantial portion of whom were Vietnamese American women: <u>workers demanded paid sick leave and on-site language classes, and supervisors, fearful of missed shipments, frequently agreed.</u></p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It offers an example of a wartime trend in the broader West Coast economy discussed earlier in the text.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It notes a possible exception to the historical narrative of labor activism sketched earlier in the text.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It elaborates on a claim about labor relations in a particular industry made earlier in the text.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It provides further details about the identities of the workers discussed earlier in the text.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. Earlier in the text, Nguyen claims that increased production targets gave workers&mdash;many of them Vietnamese American women&mdash;greater bargaining leverage. The underlined portion fleshes out that claim with specifics: workers pressed for paid sick leave and on-site language classes, and anxious supervisors often conceded.</p><p>Choice A is incorrect because the underlined material remains inside the electronics-assembly industry. Choice B is incorrect because the example confirms rather than complicates the narrative. Choice D is incorrect because the workers' identities are already given before the underlined portion; the new information concerns their demands and management's response.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

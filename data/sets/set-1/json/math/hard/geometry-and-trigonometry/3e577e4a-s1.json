@@ -1,0 +1,39 @@
+{
+  "questionId": "3e577e4a-s1",
+  "originalId": "3e577e4a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle in the xy-plane has its center at (3, &minus;2). Line k is tangent to this circle at the point (5, 5). What is the slope of line k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7/2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;7/2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2/7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;2/7</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope of the radius from (3, &minus;2) to (5, 5) is (5 &minus; (&minus;2))/(5 &minus; 3) = 7/2. The tangent at a point is perpendicular to the radius, so its slope is the negative reciprocal: &minus;2/7.</p><p>Choice A gives the radius's slope. Choices B and C have wrong signs or reciprocals.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A5.T11.medium"
+}

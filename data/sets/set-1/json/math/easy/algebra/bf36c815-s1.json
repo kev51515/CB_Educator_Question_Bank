@@ -1,0 +1,39 @@
+{
+  "questionId": "bf36c815-s1",
+  "originalId": "bf36c815",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = &minus;<i>x</i> + 11. What is the value of <i>f</i>(0)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;1</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. <i>f</i>(0) = &minus;(0) + 11 = 11.</p><p>Other choices result from arithmetic or sign errors.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z"
+}

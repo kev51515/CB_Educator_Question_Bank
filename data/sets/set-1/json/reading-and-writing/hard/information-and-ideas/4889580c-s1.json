@@ -1,0 +1,39 @@
+{
+  "questionId": "4889580c-s1",
+  "originalId": "4889580c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Until recently, many historians believed that the city-states of the ancient Hittite world lacked formal craft markets during the Late Bronze Age (roughly 1400&ndash;1200 BCE). Part of the reason for this belief was that these historians mistook the workshops of the region as roughly interchangeable in what they could produce. Markets generally develop because individuals or groups want to acquire goods that they themselves do not produce. Historians substantially overlooked the technical diversity of Hittite craftsmanship and so assumed that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>markets would not have offered Hittite communities access to many goods different from those they were already making.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>markets would likely have failed to draw traders from outside the territories controlled by the Hittite city-states.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>artisans would have traded their wares only after meeting their own household needs.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>workshop practices would have varied little across Hittite lands even if the goods being produced were strikingly different.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the historians' chain of reasoning. The text states that markets typically form when people want goods they don't already produce, and that historians wrongly believed Hittite workshops produced roughly the same things. If the workshops produced roughly the same goods, then markets would not have offered communities much that they couldn't already make&mdash;and without that motive, there would have been little reason for markets to develop, which would explain the historians' belief that no formal markets existed.</p><p>Choice B is incorrect because the focus of the reasoning is on internal demand among Hittite communities, not on whether outside traders would have been attracted. Choice C is incorrect because nothing in the text concerns whether artisans first met their own household needs. Choice D is incorrect because it reverses the situation: the text says historians underestimated how much the products of workshops varied, not how much workshop practices varied.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T9.hard"
+}

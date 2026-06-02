@@ -1,0 +1,39 @@
+{
+  "questionId": "7ba694f3-s1",
+  "originalId": "7ba694f3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number of cells in a yeast culture triples every hour. There are 28,000 cells in the culture at the start of an experiment. Which of the following represents the number of cells, <em>y</em>, in the culture <em>t</em> hours after the start of the experiment?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> = (1/3)(28,000)<sup><em>t</em></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> = 28,000(3)<sup><em>t</em></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> = 3(28,000)<sup><em>t</em></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> = 28,000(1/3)<sup><em>t</em></sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since the number of cells triples every hour, the relationship between <em>t</em> and <em>y</em> can be represented by an exponential equation of the form <em>y</em> = <em>a</em>(<em>b</em>)<sup><em>t</em></sup>, where <em>a</em> is the initial number of cells and <em>b</em> is the growth factor per hour. The initial value is 28,000 and the growth factor is 3, so <em>y</em> = 28,000(3)<sup><em>t</em></sup>. Choice A swaps the initial value and the growth factor. Choice C multiplies an exponential by the wrong base. Choice D represents an exponential decay.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

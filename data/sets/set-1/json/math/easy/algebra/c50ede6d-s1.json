@@ -1,0 +1,39 @@
+{
+  "questionId": "c50ede6d-s1",
+  "originalId": "c50ede6d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The total cost, in dollars, to rent a paddleboard consists of a $15 service fee and an $8 per hour rental fee. A person rents a paddleboard for t hours. Which of the following inequalities represents the situation in which the total cost is no more than $60?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15 + 8t &le; 60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8 + 15t &le; 60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8t &le; 60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15t &le; 60</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The fixed service fee is $15 and the variable cost is $8 per hour, so the total cost is 15 + 8t &le; 60.</p><p>Choices B, C, and D swap or omit components.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z"
+}

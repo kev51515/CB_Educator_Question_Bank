@@ -1,0 +1,25 @@
+{
+  "questionId": "9502ec65-s1",
+  "originalId": "9502ec65",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>When groundwater wells become contaminated by nitrate runoff, the polluted water can be pumped to the surface and processed through an industrial ion-exchange treatment plant. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the contaminated aquifer can be remediated through bioaugmentation: specialized denitrifying bacteria introduced into the wells consume the nitrates as an energy source and convert them into harmless nitrogen gas, which then escapes into the atmosphere without disturbing the surrounding ecosystem.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In particular,</p>"},
+    {"id": "b", "content": "<p>Consequently,</p>"},
+    {"id": "c", "content": "<p>Alternatively,</p>"},
+    {"id": "d", "content": "<p>For instance,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Alternatively\" logically signals that bioaugmentation is offered as a different option for cleaning contaminated groundwater—an alternative to the ion-exchange treatment described in the first sentence. The second sentence introduces a parallel but distinct method, not an example or consequence of the first.</p><p>Choice A is incorrect because \"in particular\" would imply that bioaugmentation is a specific instance of the previously described ion-exchange method, but the two are independent approaches. Choice B is incorrect because \"consequently\" would signal cause and effect, yet bioaugmentation is not a result of pumping and treating water. Choice D is incorrect because \"for instance\" would frame bioaugmentation as an example of the prior method, but it is a separate alternative.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T1.hard"
+}

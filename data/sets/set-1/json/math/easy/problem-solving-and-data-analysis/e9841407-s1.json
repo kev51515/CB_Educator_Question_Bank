@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Marisol has 9 yellow tokens and 36 green tokens. What is the ratio of yellow tokens to green tokens that Marisol has?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4 to 1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1 to 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1 to 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9 to 1</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The ratio of yellow tokens to green tokens is 9 to 36. Dividing both parts by 9 gives 1 to 4.</p><p>Choice A is the inverted ratio. Choices C and D result from calculation errors when reducing.</p>",
+  "questionId": "e9841407-s1",
+  "originalId": "e9841407",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy"
+}

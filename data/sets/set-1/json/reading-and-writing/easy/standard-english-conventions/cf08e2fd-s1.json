@@ -1,0 +1,25 @@
+{
+  "questionId": "cf08e2fd-s1",
+  "originalId": "cf08e2fd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>From 1898 to 1934, Robert Sengstacke Abbott published and edited the newspaper <em>The Chicago Defender</em>. While it was under Abbott's editorship, <em>The Defender</em> <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a leading voice for Black communities across the United States.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>served as</p>"},
+    {"id": "b", "content": "<p>is serving as</p>"},
+    {"id": "c", "content": "<p>to serve as</p>"},
+    {"id": "d", "content": "<p>will serve as</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The conventions being tested are the use of verbs to express tense and the use of verb forms within a sentence. In this choice, the past tense verb \"served as\" is consistent with the other past tense verbs (\"published\" and \"edited\") used to indicate a period of time in the past, and it supplies the main clause with a finite verb.</p><p>Choice B is incorrect because the present progressive verb \"is serving as\" isn't consistent with the other past tense verbs. Choice C is incorrect because the nonfinite to-infinitive \"to serve as\" doesn't supply the main clause with a finite verb. Choice D is incorrect because the future tense verb \"will serve as\" isn't consistent with the other past tense verbs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

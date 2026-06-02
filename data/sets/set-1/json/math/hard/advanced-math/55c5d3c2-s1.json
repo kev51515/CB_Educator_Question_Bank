@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "55c5d3c2-s1",
+  "originalId": "55c5d3c2",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = a<sup>x</sup> + b, where a and b are constants and a &gt; 0. In the xy-plane, the graph of y = f(x) has a y-intercept at (0, &minus;10) and passes through the point (2, 53). What is the value of a + b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-3"
+  ],
+  "rationale": "<p>The correct answer is &minus;3. From the y-intercept: f(0) = a<sup>0</sup> + b = 1 + b = &minus;10, so b = &minus;11. From (2, 53): f(2) = a<sup>2</sup> &minus; 11 = 53, so a<sup>2</sup> = 64, giving a = 8 (taking the positive root since a &gt; 0). Therefore a + b = 8 + (&minus;11) = &minus;3.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

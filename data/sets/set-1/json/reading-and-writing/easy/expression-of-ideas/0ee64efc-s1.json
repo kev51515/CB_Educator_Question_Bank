@@ -1,0 +1,39 @@
+{
+  "questionId": "0ee64efc-s1",
+  "originalId": "0ee64efc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In the 1860s, Robert Smalls was instrumental in helping enslaved people escape to freedom by piloting a Confederate transport ship out of Charleston Harbor, earning widespread recognition as a Civil War hero. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> despite the fame of his actions during his lifetime, Smalls is discussed far less today than other prominent Black Civil War figures from his era, such as Frederick Douglass and Harriet Tubman.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Similarly,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"However\" is used to indicate a contrast between two ideas. The first sentence describes how Smalls used to be famous. This sentence describes how Smalls is not very famous today, so the transition \"however\" fits perfectly.</p><p>Choice A is incorrect. This choice introduces an example, but the second sentence doesn't provide an example of Smalls's famous wartime actions. Instead, it changes the subject to how his fame has faded over time. Choice B is incorrect. This choice introduces an elaboration or continuation, but the second sentence doesn't elaborate on his fame. Instead, it describes how his fame has faded. Choice D is incorrect. This choice indicates agreement between two ideas, but this sentence shows a contrast with the first sentence\u2014namely, that Smalls used to be famous but now isn't.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

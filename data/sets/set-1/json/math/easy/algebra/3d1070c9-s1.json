@@ -1,0 +1,39 @@
+{
+  "questionId": "3d1070c9-s1",
+  "originalId": "3d1070c9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = 15x + 20. What is the value of f(3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>65</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. f(3) = 15(3) + 20 = 45 + 20 = 65.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

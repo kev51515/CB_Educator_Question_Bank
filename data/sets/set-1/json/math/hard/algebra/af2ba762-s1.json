@@ -1,0 +1,39 @@
+{
+  "questionId": "af2ba762-s1",
+  "originalId": "af2ba762",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function w(d) = 3.18d + 8.45 models the weight w, in kilograms, of a young animal that is d months old. The constant 8.45 in this function estimates which of the following?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The animal's weight gain per month, in kilograms.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The animal's age, in months, when its weight reaches zero.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The animal's weight, in kilograms, at birth (when d = 0).</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The total weight, in kilograms, after one year.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The constant term in a linear function w(d) = md + b represents the initial value, w(0) = b. Therefore 8.45 estimates the animal's weight, in kilograms, at birth.</p><p>Choice A describes the slope (3.18), not the constant. Choice B inverts the meaning. Choice D would be calculated by evaluating w(12), not by the constant alone.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A2.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "dddfa043-s1",
+  "originalId": "dddfa043",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Before the Panama Canal opened in 1914, ships traveling between New York and San Francisco had to sail around the southern tip of South America, a journey of more than two months. By connecting the Atlantic Ocean to the Pacific <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> canal reduced travel time to just a few weeks.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Ocean; the</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Ocean (the</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ocean: the</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Ocean, the</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of a comma to set off an introductory prepositional/participial phrase from the main clause. A comma is needed after \"the Pacific Ocean\" to separate the introductory phrase (\"By connecting...the Pacific Ocean\") from the main clause (\"the canal reduced travel time...\").</p><p>Choice A is incorrect because a semicolon can't separate an introductory phrase from a main clause. Choice B is incorrect because an opening parenthesis is unmatched and results in an ungrammatical sentence. Choice C is incorrect because a colon can't be used in this way.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T3.easy"
+}

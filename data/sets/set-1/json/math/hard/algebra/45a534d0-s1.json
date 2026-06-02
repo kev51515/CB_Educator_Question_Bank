@@ -1,0 +1,22 @@
+{
+  "questionId": "45a534d0-s1",
+  "originalId": "45a534d0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>36</mn><mi>x</mi><mo>-</mo><mn>60</mn><mi>y</mi><mo>=</mo><mn>24</mn><mi>y</mi><mo>+</mo><mn>18</mn></math></p>\n<p style=\"text-align: center;\"><math><mi>r</mi><mi>y</mi><mo>=</mo><mn>20</mn><mo>-</mo><mn>18</mn><mi>x</mi></math></p>\n<p>In the given system of equations, <math><mi>r</mi></math> is a constant. If the system has no solution, what is the value of <math><mi>r</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "-42"
+  ],
+  "rationale": "<p>The correct answer is \u221242. Rewriting the first equation: 36x \u2212 84y = 18, or 6x \u2212 14y = 3. Rewriting the second: 18x + ry = 20. For no solution, the coefficient ratios must match: 6/18 = \u221214/r, giving r = \u221242. With r = \u221242, the constant ratio 3/20 differs from 1/3, so the lines are parallel and distinct.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

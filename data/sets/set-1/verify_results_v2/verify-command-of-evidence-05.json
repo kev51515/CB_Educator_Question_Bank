@@ -1,0 +1,11 @@
+[
+  {"id": "df8caadd-s1", "templateId": "command-of-evidence.A5.T8.medium", "verdict": "ok"},
+  {"id": "e1546fd6-s1", "templateId": "command-of-evidence.A5.T8.medium", "verdict": "ok"},
+  {"id": "e2829dd7-s1", "templateId": "command-of-evidence.A5.T9.medium", "verdict": "ok"},
+  {"id": "e99a38ec-s1", "templateId": "command-of-evidence.A5.T9.medium", "verdict": "ok"},
+  {"id": "ed586475-s1", "templateId": "command-of-evidence.A1.T1.medium", "verdict": "ok"},
+  {"id": "f2b3b53b-s1", "templateId": "command-of-evidence.A3.T4.medium", "verdict": "ok"},
+  {"id": "f8244f7c-s1", "templateId": "command-of-evidence.A5.T9.medium", "verdict": "ok"},
+  {"id": "fbb84fb0-s1", "templateId": "command-of-evidence.A1.T1.medium", "verdict": "ok"},
+  {"id": "ff18829b-s1", "templateId": "command-of-evidence.A5.T8.medium", "verdict": "ok"}
+]

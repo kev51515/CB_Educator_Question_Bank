@@ -1,0 +1,24 @@
+{
+  "questionId": "565428e1-s1",
+  "originalId": "565428e1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><sup>4</sup>&radic;(<i>p</i>&sup3;) = <i>t</i><sup>8/5</sup></p><p>In the given equation, <i>p</i> &gt; 1 and <i>t</i> &gt; 1. If <i>t</i> = <i>p</i><sup>3<i>n</i>&minus;2</sup>, where <i>n</i> is a constant, what is the value of <i>n</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "79/96",
+    ".8229",
+    ".8230"
+  ],
+  "rationale": "<p>The left side equals <i>p</i><sup>3/4</sup>. Substituting <i>t</i> = <i>p</i><sup>3<i>n</i>&minus;2</sup> on the right gives <i>p</i><sup>(8/5)(3<i>n</i>&minus;2)</sup>. Equating exponents: 3/4 = (8/5)(3<i>n</i> &minus; 2). Multiply both sides by 5/8: 15/32 = 3<i>n</i> &minus; 2. Add 2 (=64/32): 79/32 = 3<i>n</i>, so <i>n</i> = 79/96.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A3.T7.hard"
+}

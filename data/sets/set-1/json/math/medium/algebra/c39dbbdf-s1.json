@@ -1,0 +1,39 @@
+{
+  "questionId": "c39dbbdf-s1",
+  "originalId": "c39dbbdf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>Line <em>p</em> is defined by the equation 7x - 5y = 12. Line <em>q</em> is parallel to line <em>p</em> in the <em>xy</em>-plane. What is the slope of line <em>q</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5/7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-7/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-5/7</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Rewriting 7x - 5y = 12 in slope-intercept form: -5y = -7x + 12, so y = (7/5)x - 12/5. The slope of line <em>p</em> is 7/5. Parallel lines share the same slope, so the slope of line <em>q</em> is also 7/5. Choice B is the reciprocal. Choices C and D have the wrong sign \u2014 those would describe perpendicular slopes (with sign flipped).</p>",
+  "templateId": "linear-equations-in-two-variables.A6.T13.medium"
+}

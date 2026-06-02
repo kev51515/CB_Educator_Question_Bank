@@ -1,0 +1,25 @@
+{
+  "questionId": "4830ab87-s1",
+  "originalId": "4830ab87",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>The tempo a conductor selects for a symphonic movement strongly shapes how audiences experience it: a quicker pace tends to produce excitement, a slower pace tends to invite contemplation, and dramatic shifts between the two tend to emphasize emotional turning points in the score. What a performance conveys is therefore largely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the tempos that the conductor chooses.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>concealed by</p>"},
+    {"id": "b", "content": "<p>indebted to</p>"},
+    {"id": "c", "content": "<p>determined by</p>"},
+    {"id": "d", "content": "<p>indifferent to</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. \"Determined by\" means caused or fixed by. The text shows that different tempo choices yield different audience experiences (excitement, contemplation, emphasis on turning points), so what a performance conveys is set by the conductor's tempo selections.</p><p>Choice A is incorrect because \"concealed by\" means hidden by, but the text says tempo shapes what is conveyed, not what is hidden. Choice B is incorrect because \"indebted to\" suggests gratitude or origin in a credit-giving sense, which mismatches the mechanical relationship described. Choice D is incorrect because \"indifferent to\" means unaffected by, directly contradicting the strong relationship described.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

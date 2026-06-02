@@ -1,0 +1,25 @@
+{
+  "questionId": "757077f9-s1",
+  "originalId": "757077f9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>During a 2017 excavation in northern Peru, archaeologist Daniela Bocanegra and her team uncovered the tomb of a Moche-era woman buried with elaborate ceremonial weapons signaling that she had held a leading military role. This finding may persuade scholars who have long maintained that pre-Columbian Andean warfare was conducted exclusively by men to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that assumption and consider a broader range of evidence regarding women's participation in combat leadership.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>defend</p>"},
+    {"id": "b", "content": "<p>relinquish</p>"},
+    {"id": "c", "content": "<p>certify</p>"},
+    {"id": "d", "content": "<p>obscure</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Relinquish\" means to give up. The new finding directly conflicts with the long-held assumption that Andean warfare was exclusively male, so scholars persuaded by the discovery would set that assumption aside and weigh broader evidence, as the text suggests.</p><p>Choice A is incorrect; defending the assumption is what these scholars would stop doing in light of the new finding. Choice C is incorrect because \"certify\" means to formally confirm, which contradicts the persuasive effect described. Choice D is incorrect because \"obscure\" the assumption does not match the scholarly reconsideration the text describes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

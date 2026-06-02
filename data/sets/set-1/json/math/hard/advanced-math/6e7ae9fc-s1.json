@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "6e7ae9fc-s1",
+  "originalId": "6e7ae9fc",
+  "templateId": "nonlinear-functions.A3.T4.hard",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function g is defined by g(x) = x(x &minus; 3)(x + 4)<sup>2</sup>. The value of g(10 &minus; w) is 0, where w is a constant. What is the sum of all possible values of w?</p>",
+  "answerOptions": null,
+  "keys": [
+    "31"
+  ],
+  "rationale": "<p>The correct answer is 31. Substituting 10 &minus; w for x: g(10 &minus; w) = (10 &minus; w)(7 &minus; w)(14 &minus; w)<sup>2</sup>. Setting this equal to 0 means one factor is zero. From 10 &minus; w = 0, w = 10; from 7 &minus; w = 0, w = 7; from (14 &minus; w)<sup>2</sup> = 0, w = 14. The sum is 10 + 7 + 14 = 31.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z"
+}

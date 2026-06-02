@@ -1,0 +1,25 @@
+{
+  "questionId": "190857f0-s1",
+  "originalId": "190857f0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>Why do mountain bluebirds hover before striking at prey but eastern bluebirds dart from a perch? Researchers suggest that this difference between the two songbird species may be partly due to a small muscle group in the chest called the supracoracoideus. Mountain bluebirds, which often forage over open meadows, have a relatively large supracoracoideus that powers the rapid upstroke needed for hovering. By contrast, eastern bluebirds, which usually hunt from low branches, have a smaller version of this muscle group and rely instead on quick lateral movement. These traits allow eastern bluebirds and several other woodland species to dart efficiently between perches. The same traits may also make sustained hovering more difficult for them.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The text raises a question about two species, then offers a possible answer.</p>"},
+    {"id": "b", "content": "<p>The text proposes an explanation about two species, then provides evidence that undermines it.</p>"},
+    {"id": "c", "content": "<p>The text compares the diets of two species, then describes how their diets have changed.</p>"},
+    {"id": "d", "content": "<p>The text identifies a hunting behavior shared by two species, then notes additional shared behaviors.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text opens with a question about why two bluebird species hunt differently, and the remainder of the text develops a hypothesis about the supracoracoideus muscle group to answer that question. The two main moves are therefore posing a question and offering a possible answer.</p><p>Choice B is incorrect because the text does not present evidence that undermines its proposed explanation; the discussion of muscle differences supports rather than weakens the hypothesis. Choice C is incorrect because the text says nothing about the diets of the two species or about changes in diet. Choice D is incorrect because the text emphasizes a behavioral difference (hovering versus darting) rather than describing shared behaviors.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

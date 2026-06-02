@@ -1,0 +1,39 @@
+{
+  "questionId": "fc1259dd-s1",
+  "originalId": "fc1259dd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologist Lucia Ramos and her team excavated the burial chamber of Lady Ahbal, the wife of a Late Classic Maya king. Some scholars claim that she also held political power on her own and likely served as a co-ruler. The team uncovered a carved stela in Lady Ahbal's chamber with inscriptions suggesting that she presided over diplomatic missions and major court ceremonies. Whether Lady Ahbal was a co-ruler or not, this discovery supports the idea that Lady Ahbal likely ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>lived after rather than during the Late Classic period.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>traveled beyond the city's borders often.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>created a new system of writing among the Maya.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>had an important role in her city's government.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The inscriptions show she presided over diplomatic missions and major court ceremonies \u2014 concrete signs of a significant governmental role.</p><p>Choice A contradicts the text, which places her in the Late Classic. Choice B is unsupported \u2014 no travel is mentioned. Choice C is unsupported \u2014 the inscriptions use existing Maya script, not a new system.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T9.easy"
+}

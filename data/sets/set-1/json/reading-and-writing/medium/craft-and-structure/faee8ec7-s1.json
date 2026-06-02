@@ -1,0 +1,39 @@
+{
+  "questionId": "faee8ec7-s1",
+  "originalId": "faee8ec7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p><u>It seems clear that adults can become fluent in a new language only through constant immersive interaction with native speakers.</u> Studies of immigrants, for example, repeatedly show that those who live and work daily among speakers of the local language tend to acquire it more quickly than those who do not. Likewise, students who participate in study-abroad programs are found to make faster gains in conversational fluency than students who do not.</p><p><strong>Text 2</strong></p><p>In a long-term study, researchers Mei Park and Daniel Ortega tracked adult learners who used a spaced-repetition app for forty minutes a day but had no in-person contact with native speakers. After eighteen months, more than half of the learners reached conversational fluency in the target language, as measured by independent oral assessments. The researchers concluded that immersive interaction is not required for adult learners to reach high levels of fluency.</p>",
+  "stem": "<p>Based on the texts, what would the researchers in Text 2 most likely say about the claim underlined in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is broadly accurate, because studies of solitary learners have so far yielded inconclusive results about fluency.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It reflects an incomplete view of adult language learning, because fluency can be achieved even without immersive interaction.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It overstates the importance of immersion, because the researchers\u2019 app-based learners failed to reach fluency overall.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is largely correct, because the study confirmed that immersive interaction is the only path to fluency for most adults.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Text 1 asserts that fluency for adult learners requires constant immersive interaction. Text 2 describes a study in which more than half of solitary, app-based learners reached conversational fluency, and the researchers explicitly conclude that immersive interaction is not required. They would therefore disagree with Text 1\u2019s claim that immersion is necessary, viewing it as an incomplete picture of how adults can learn languages.</p><p>Choice A is incorrect because the researchers\u2019 results were clear, not inconclusive. Choice C is incorrect because the study found that more than half of learners did reach fluency. Choice D is incorrect because it contradicts the explicit finding of Text 2.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "cross-text-connections.A1.T2.medium"
+}

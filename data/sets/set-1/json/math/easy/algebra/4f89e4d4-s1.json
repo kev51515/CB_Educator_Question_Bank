@@ -1,0 +1,22 @@
+{
+  "questionId": "4f89e4d4-s1",
+  "originalId": "4f89e4d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A booster club is selling souvenir banners for a fundraiser. They use the function p(x) = 6x - 150 to model the profit, in dollars, when x banners are sold. What is the profit, in dollars, when 64 banners are sold?</p>",
+  "answerOptions": null,
+  "keys": [
+    "234"
+  ],
+  "rationale": "<p>p(64) = 6(64) - 150 = 384 - 150 = 234.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

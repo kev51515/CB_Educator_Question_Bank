@@ -1,0 +1,68 @@
+[
+  {
+    "id": "7d6928bd-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Stem says 'at most 20 events', so w+p \u2264 20 = Choice A. Keyed 'b' is w+p \u2265 20 (wrong direction). Rationale text even says 'at most 20 means \u2264 20: w+p \u2264 20' but picks B \u2014 rationale_inconsistent with keyed answer. Also no per-unit costs/weights, violating A1.T1 must_preserve."
+  },
+  {
+    "id": "00ec9102-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Notebooks $2.15, pens $1.30 \u2192 2.15n + 1.30p \u2264 20 = Choice A. Keyed 'b' (1.30n + 2.15p \u2264 20) swaps coefficients with items. Rationale text says '2.15n notebooks and 1.30p pens' which matches Choice A, not Choice B \u2014 rationale_inconsistent."
+  },
+  {
+    "id": "c9355dec-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "A4.T1 must_preserve requires 'graph-based stem (a shaded half-plane image)'. Clone replaces the graph with a text description of two points and shading direction \u2014 categorical drift toward A3/A5 per template's documented common_bug. Math otherwise correct (Choice B)."
+  },
+  {
+    "id": "2c121b25-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Total blue marbles = 0.4x + 0.6y \u2265 500 = Choice A. Keyed 'b' (40x + 60y \u2265 500) fails to convert percents to decimals. Rationale even contradicts itself by saying 'Choice A doesn't convert percents' though Choice A does convert; rationale_inconsistent."
+  },
+  {
+    "id": "2869fe95-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Lowest 42, highest 78 \u2192 42 \u2264 t \u2264 78 = choice C. Keyed 'd' (t \u2265 78) is incorrect. Rationale text correctly derives 42 \u2264 t \u2264 78 but key doesn't match (rationale_inconsistent also)."
+  },
+  {
+    "id": "4a090a46-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "150 \u2212 118 = 32 = choice C. Keyed 'd' (118) is incorrect; rationale correctly computes 32 but key is d (rationale_inconsistent)."
+  },
+  {
+    "id": "744ee7d7-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Vertical line x=24 with shading to right \u2192 x \u2265 24 = choice B. Keyed 'c' (y \u2265 24) describes a horizontal line and is incorrect. Rationale text matches B but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "563407e5-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "5\u00d730=150 min, 5\u00d740=200 max. Only 180 (choice B) lies in [150, 200]. Keyed 'c' (125) is below the minimum and is incorrect. Rationale text correctly identifies 180 but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "59a49431-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "y > 2x \u2212 3. (0,5): 5 > \u22123 TRUE = choice A. (0,\u22125): \u22125 > \u22123 FALSE. Keyed 'b' is incorrect; correct is A. Rationale substitutes (0,5) and verifies it works but then attributes it to choice B (rationale_inconsistent)."
+  },
+  {
+    "id": "84d0d07e-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Snacks 3a + drinks 5b \u2264 40 = choice C. Keyed 'd' (3a + 5b \u2265 40) reverses the inequality. Rationale text says '3a + 5b \u2264 40' but key is d (rationale_inconsistent)."
+  },
+  {
+    "id": "4047cfa7-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "800 \u2212 624 = 176 = choice B. Keyed 'c' (624) is the current total, not the additional hours. Rationale text computes 176 but key is c (rationale_inconsistent)."
+  }
+]

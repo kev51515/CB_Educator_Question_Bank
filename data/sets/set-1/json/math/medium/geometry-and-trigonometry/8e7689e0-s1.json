@@ -1,0 +1,22 @@
+{
+  "questionId": "8e7689e0-s1",
+  "originalId": "8e7689e0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The number of radians in a 540-degree angle can be written as b&pi;, where b is a constant. What is the value of b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3"
+  ],
+  "rationale": "<p>The correct answer is 3. There are &pi; radians in a 180&deg; angle, so 540&deg; = (540/180)&pi; = 3&pi; radians. Therefore b = 3.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A4.T9.easy"
+}

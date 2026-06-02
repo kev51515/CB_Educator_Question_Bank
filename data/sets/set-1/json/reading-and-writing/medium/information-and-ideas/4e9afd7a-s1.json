@@ -1,0 +1,25 @@
+{
+  "questionId": "4e9afd7a-s1",
+  "originalId": "4e9afd7a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T9.medium",
+  "stimulus": "<p>The Etruscan civilization flourished in what is now central Italy from approximately 900 BCE to 100 BCE. Many examples of the civilization's inscriptions exist, but scholars have only partially deciphered the Etruscan language and remain uncertain about much of its grammar. Nevertheless, archaeologists have recovered material remains, such as painted tomb walls and bronze utensils, that provide information about the civilization's funerary practices and trade networks. The archaeologists' findings therefore suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>examining the civilization's material remains has resolved the debate about Etruscan grammar.</p>"},
+    {"id": "b", "content": "<p>fully understanding an ancient civilization's language is not required to learn details about that civilization.</p>"},
+    {"id": "c", "content": "<p>investigating an ancient civilization is easier without knowledge of the civilization's language.</p>"},
+    {"id": "d", "content": "<p>archaeological work should prioritize recovering further artifacts over deciphering ancient languages.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is best. Despite only partial decipherment of Etruscan, archaeologists have learned about funerary practices and trade through material remains, so fully understanding the language is not required to learn details about the civilization. Choice A overreaches; the language is still only partially understood. Choice C makes a stronger claim about ease that the text does not support. Choice D is a policy recommendation the text does not make.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "c071eca2-s1",
+    "templateId": "transitions.A1.T1.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged T1 (direct contrast between two paired items) but stem is single-subject expectation reversal (Villa-Lobos's conventional surface vs. his innovation within it). Fits T2 (expectation reversal with 'nevertheless') better than T1."
+  },
+  {
+    "id": "2b08f514-s1",
+    "templateId": "transitions.A4.T11.hard",
+    "verdict": "type_drift",
+    "detail": "T11 requires an intensifier (in fact/indeed) reinforcing the same claim. Keyed 'Again and again' signals repetition/frequency, not intensification. Does not match T11's core_skill_demand or must_preserve 'intensifier transition as unique correct option.'"
+  },
+  {
+    "id": "a2bff07e-s1",
+    "templateId": "transitions.A2.T6.hard",
+    "verdict": "type_drift",
+    "detail": "T6 (reasoning chain) requires chain-step markers like 'in turn,' 'as such,' 'accordingly,' typically mid-sentence parentheticals. Keyed answer 'Consequently,' is a terminal-result marker (T4), not an intermediate chain link. Stem also lacks multi-step downstream chain; it's a single cause\u2192conclusion."
+  },
+  {
+    "id": "9502ec65-s1",
+    "templateId": "transitions.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "T10 requires additive transitions (in addition/additionally/moreover/furthermore) on parallel independent points. Keyed 'Alternatively,' signals alternation (one option vs another), not addition. Violates T10 must_preserve 'additive transition as unique correct option.'"
+  },
+  {
+    "id": "ecb31049-s1",
+    "templateId": "transitions.A1.T3.hard",
+    "verdict": "type_drift",
+    "detail": "T3 (concession with caveat) requires three-part claim\u2192concession\u2192restoration structure with markers like 'Granted,' 'That said,' 'Of course,' 'Admittedly.' Stem is two-part expectation reversal (engineers believed X; even so, reality is Y) with no restoration. Fits T2 better than T3."
+  },
+  {
+    "id": "3a715eca-s1",
+    "templateId": "transitions.A2.T6.hard",
+    "verdict": "type_drift",
+    "detail": "Template T6 (reasoning chain) requires chain-step markers like 'in turn', 'as such', 'accordingly' placed mid-sentence as parenthetical. Clone's keyed answer 'Consequently' is a terminal result marker characteristic of T4, placed sentence-initially. Matches common_bug: 'Cloner uses Therefore (terminal) when In turn (intermediate) is needed.' Stem is two-step, not multi-step chain."
+  },
+  {
+    "id": "37ec26e7-s1",
+    "templateId": "transitions.A5.T15.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A5.T15 (Earlier/Previously flashback) but clone has no date inversion and keyed answer is 'Ultimately,' \u2014 this is T16 culmination, not T15 backward-pointing temporal. Violates must_preserve: 'Two events with explicit dates whose order is reversed' and 'Backward-pointing temporal marker as unique correct option.'"
+  },
+  {
+    "id": "25361ec6-s1",
+    "templateId": "transitions.A5.T13.medium",
+    "verdict": "type_drift",
+    "detail": "Tagged T13 (ordinal list First/Second/Finally), but stimulus has no N-item enumeration or anchor ordinals; correct answer 'At last' marks culmination/resolution of a long debate, which fits T16 (culmination/ultimately), not T13."
+  },
+  {
+    "id": "b8eec031-s1",
+    "templateId": "transitions.A4.T11.medium",
+    "verdict": "type_drift",
+    "detail": "Correct answer 'Increasingly' is a temporal/trend modifier, not an intensifier from T11's family (In fact / Indeed / What's more). Second clause elaborates the shift rather than supplying stronger evidence of the same claim; better fits A3 specification or general elaboration."
+  },
+  {
+    "id": "f114cbf0-s1",
+    "templateId": "transitions.A1.T1.medium",
+    "verdict": "type_drift",
+    "detail": "T1 requires two paired entities differing on a single dimension. Clone uses a single entity (bombardier beetle) with two opposing process states (reaction occurring vs ceasing), violating must_preserve 'Two clearly paired entities'. Better fits T2 expectation reversal."
+  }
+]

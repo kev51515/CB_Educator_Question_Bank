@@ -1,0 +1,39 @@
+{
+  "questionId": "dc5edbf6-s1",
+  "originalId": "dc5edbf6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Polychlorinated biphenyls, or PCBs, are industrial chemicals that linger for decades in soils, rivers, and forest litter. These compounds are found in large amounts in wooded floodplains. Soil scientist Marisol Aguilar and her team are studying the role that earthworms play in absorbing PCBs from contaminated floodplain soils. Through field experiments, her team has found that these earthworms may be locking up to 4 million kilograms of PCBs each year in their tissues and the casings around their burrows.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>PCBs are industrial chemicals that linger in soils, rivers, and forest litter.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Soil scientists are interested in how certain earthworms build their burrows.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Soil scientists predict that earthworms store large amounts of PCBs from contaminated floodplain soils.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Questions remain about the impact certain earthworms have on forest ecosystems.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text describes Aguilar's study showing that earthworms may be locking up millions of kilograms of PCBs each year in their tissues and burrow casings.</p><p>Choice A is incorrect; this is a supporting detail about PCBs, not the main idea. Choice B is incorrect; the study is about absorbing PCBs, not about burrow construction. Choice D is incorrect; the text reports specific findings rather than open questions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

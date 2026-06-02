@@ -1,0 +1,22 @@
+[
+  {"id": "a3e87535-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "ok"},
+  {"id": "a427a52c-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "type_drift", "detail": "Stem is intro participial phrase + main clause ('Cooled with ___ the absorbent mats...'), not an inserted supplementary element with a fixed opposite edge. This is A1-style boundary, not T4 paired-mark appositive."},
+  {"id": "a5079e0d-s1", "templateId": "boundaries.A1.T3.medium", "verdict": "difficulty_drift", "detail": "Uses '; conjunctive adverb,' pattern ('; for instance,') which is the T3 hard lever ('Conjunctive adverb sits at the join'). Medium lever calls for subordinator (while/whenever/because)."},
+  {"id": "ac5536c1-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "type_drift", "detail": "Blank sits between 'study of rocks' and a participial phrase 'mapping...'; no fixed opposite edge of an insertion is present. This is a main-clause + participial boundary (A1.T3 hard pattern), not a T4 paired-mark appositive."},
+  {"id": "ace95f84-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "ok"},
+  {"id": "ad046778-s1", "templateId": "boundaries.A1.T3.medium", "verdict": "difficulty_drift", "detail": "Uses '; instead,' (semicolon + conjunctive adverb + comma) which is the T3 hard lever pattern; medium lever requires a subordinator beginning the second clause."},
+  {"id": "b0a525be-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "ok"},
+  {"id": "b6560e5a-s1", "templateId": "boundaries.A1.T2.medium", "verdict": "ok"},
+  {"id": "be34a3df-s1", "templateId": "boundaries.A2.T5.medium", "verdict": "type_drift", "detail": "Question tests subject-verb separation ('Beinecke Library at Yale acquired'), not restrictive vs nonrestrictive modifier choice. No modifier follows 'Yale' to be classified as restrictive or nonrestrictive; rationale itself says it is about subject-verb separation."},
+  {"id": "c04e9136-s1", "templateId": "boundaries.A4.T9.medium", "verdict": "ok"},
+  {"id": "c101fc44-s1", "templateId": "boundaries.A4.T10.medium", "verdict": "ok"},
+  {"id": "c8540a5b-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "ok"},
+  {"id": "cdbbbf94-s1", "templateId": "boundaries.A1.T3.medium", "verdict": "ok"},
+  {"id": "cfe23776-s1", "templateId": "boundaries.A2.T4.medium", "verdict": "ok"},
+  {"id": "d198997b-s1", "templateId": "boundaries.A1.T3.medium", "verdict": "ok"},
+  {"id": "da53d726-s1", "templateId": "boundaries.A4.T10.medium", "verdict": "ok"},
+  {"id": "eef91a50-s1", "templateId": "boundaries.A1.T1.medium", "verdict": "ok"},
+  {"id": "fcab3630-s1", "templateId": "boundaries.A1.T1.medium", "verdict": "ok"},
+  {"id": "fcaff694-s1", "templateId": "boundaries.A3.T6.medium", "verdict": "ok"},
+  {"id": "fe41f258-s1", "templateId": "boundaries.A1.T3.medium", "verdict": "ok"}
+]

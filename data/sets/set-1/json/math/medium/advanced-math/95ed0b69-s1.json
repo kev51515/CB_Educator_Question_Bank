@@ -1,0 +1,25 @@
+{
+  "questionId": "95ed0b69-s1",
+  "originalId": "95ed0b69",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p>q = m/(7n + 5)</p>",
+  "stem": "<p>The given equation relates positive numbers q, m, and n. Which equation correctly expresses 7n + 5 in terms of q and m?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>7n + 5 = qm</p>"},
+    {"id": "b", "content": "<p>7n + 5 = q/m</p>"},
+    {"id": "c", "content": "<p>7n + 5 = m &minus; q</p>"},
+    {"id": "d", "content": "<p>7n + 5 = m/q</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Multiply both sides by (7n + 5): q(7n + 5) = m. Divide by q: 7n + 5 = m/q. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

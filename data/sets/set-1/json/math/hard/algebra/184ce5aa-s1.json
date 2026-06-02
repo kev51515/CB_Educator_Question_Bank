@@ -1,0 +1,39 @@
+{
+  "questionId": "184ce5aa-s1",
+  "originalId": "184ce5aa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line <i>h</i> is defined by (1/4)<i>x</i> + (1/9)<i>y</i> &minus; 30 = 0. Line <i>j</i> is perpendicular to line <i>h</i> in the <i>xy</i>-plane. What is the slope of line <i>j</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4/9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;4/9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;9/4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Solving (1/4)<i>x</i> + (1/9)<i>y</i> &minus; 30 = 0 for <i>y</i>: (1/9)<i>y</i> = &minus;(1/4)<i>x</i> + 30, so <i>y</i> = &minus;(9/4)<i>x</i> + 270. The slope of line <i>h</i> is &minus;9/4. The slope of a perpendicular line is the negative reciprocal: 4/9.</p><p>Choice B is the reciprocal without sign change. Choice C uses the wrong sign. Choice D is the slope of <i>h</i> itself.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.hard"
+}

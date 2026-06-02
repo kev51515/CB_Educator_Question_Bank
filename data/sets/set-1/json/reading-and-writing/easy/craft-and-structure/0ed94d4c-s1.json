@@ -1,0 +1,25 @@
+{
+  "questionId": "0ed94d4c-s1",
+  "originalId": "0ed94d4c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Zora Neale Hurston's novel <em>Their Eyes Were Watching God</em> (1937) is among the first major novels by a Black woman to draw extensively on Southern folk dialect. The book tells the story of Janie, a Black woman in Florida who searches for love and self-knowledge across three marriages. Janie's story reflects the experiences of many Black women in the rural South in the early twentieth century. <em>Their Eyes Were Watching God</em> thus shows how Hurston used fiction to portray the inner lives of Black Southern women, which she continued to do throughout her career.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To claim that several characters in <em>Their Eyes Were Watching God</em> were based on people Hurston knew personally</p>"},
+    {"id": "b", "content": "<p>To illustrate how the subjects Hurston addressed in her writing changed over the course of her career</p>"},
+    {"id": "c", "content": "<p>To show how Hurston's novel inspired other Black women to write fiction in the 1930s</p>"},
+    {"id": "d", "content": "<p>To give an example of how Hurston portrayed the experiences of Black Southern women in her fiction</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text describes how <em>Their Eyes Were Watching God</em> depicted the life of a Black Southern woman and states that Hurston continued to portray such experiences throughout her career.</p><p>Choice A is incorrect. The text never mentions inspirations for any characters. Choice B is incorrect. The text never describes changes in Hurston's subject matter. Choice C is incorrect. The text never mentions other Black women writers.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7d68096f-s1",
+  "originalId": "7d68096f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "skillCode": "Q.G.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A research lab wanted to study the relationship between the height of tomato plants and the type of fertilizer used. For the study, the lab selected 60 tomato plants at random from all tomato plants in a certain greenhouse. The following table displays the information for the 45 plants in the sample that received Fertilizer X.</p><figure><table><thead><tr><th>Weeks of growth</th><th colspan=\"2\">Height of plant</th><th>Total</th></tr><tr><th></th><th>Less than 30 cm</th><th>30 cm or more</th><th></th></tr></thead><tbody><tr><th>4 to 6 weeks</th><td>9</td><td>3</td><td>12</td></tr><tr><th>More than 6 weeks</th><td>5</td><td>28</td><td>33</td></tr><tr><th>Total</th><td>14</td><td>31</td><td>45</td></tr></tbody></table></figure><p>Which of the following is the largest population to which the results of the study can be generalized?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The 45 tomato plants in the sample that received Fertilizer X</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The 60 tomato plants in the sample</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>All tomato plants in the greenhouse</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>All tomato plants in the greenhouse that grew to 30 cm or more</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The lab selected 60 plants at random from all tomato plants in the greenhouse. Results from a random sample can be generalized to the population from which the sample was drawn, but not beyond it. Thus the largest population is all tomato plants in the greenhouse.</p><p>Choice A is incorrect because results from a random sample apply to the entire source population, not just the subset that received a particular treatment. Choice B is incorrect because the conclusion applies to the population, not just the sample. Choice D is incorrect because the sample was drawn from all plants in the greenhouse, not just those over 30 cm.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A1.T1.hard"
+}

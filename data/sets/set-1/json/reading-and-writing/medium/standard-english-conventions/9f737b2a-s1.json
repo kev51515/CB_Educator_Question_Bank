@@ -1,0 +1,25 @@
+{
+  "questionId": "9f737b2a-s1",
+  "originalId": "9f737b2a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>In Yellowstone National Park&rsquo;s Mammoth Hot Springs, a steaming travertine terrace, are dozens of geothermal pools&mdash;some only a few meters wide but others spanning hundreds of meters&mdash;whose vivid colors shift as conditions change. The mineral deposits in the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> dramatic transformations.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>terrace&rsquo;s rock record the pools&rsquo;</p>"},
+    {"id": "b", "content": "<p>terrace&rsquo;s rock record the pool&rsquo;s</p>"},
+    {"id": "c", "content": "<p>terraces rock record the pool&rsquo;s</p>"},
+    {"id": "d", "content": "<p>terraces&rsquo; rock record the pools&rsquo;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of plural and possessive nouns. The singular possessive noun \"terrace&rsquo;s\" and the plural possessive noun \"pools&rsquo;\" correctly indicate that the rock belongs to one terrace (Mammoth Hot Springs) and that there are multiple pools whose transformations are recorded.</p><p>Choice B is incorrect because the context requires the plural possessive noun \"pools&rsquo;,\" not the singular possessive noun \"pool&rsquo;s.\" Choice C is incorrect because the context requires the singular possessive noun \"terrace&rsquo;s\" and the plural possessive noun \"pools&rsquo;,\" not the plural noun \"terraces\" and the singular possessive \"pool&rsquo;s.\" Choice D is incorrect because the context requires the singular possessive noun \"terrace&rsquo;s,\" not the plural possessive noun \"terraces&rsquo;.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5733ce30-s1",
+  "originalId": "5733ce30",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle LMP, side LM extends to point N. The exterior angle LMN at vertex M measures 124\u00b0. If the interior angles MLP and MPL are equal, what is the measure of angle MLP, in degrees?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>124</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>62</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>56</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>28</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The interior angle LMP equals 180 \u2212 124 = 56\u00b0 (linear pair). Since the other two interior angles of the triangle are equal and sum to 180 \u2212 56 = 124, each measures 62\u00b0. Therefore angle MLP = 62.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A3.T1.easy"
+}

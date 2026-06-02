@@ -1,0 +1,39 @@
+{
+  "questionId": "3ac09984-s1",
+  "originalId": "3ac09984",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Diego has 8,000 reais he will convert to US dollars using a currency exchange service. At this time, the exchange rate is 1 real = 0.20 US dollars. The exchange service will charge Diego a 5% fee on the converted US dollar amount. How many US dollars will Diego receive after the fee is applied?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$1,440.00</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$1,500.00</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$1,608.00</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$1,520.00</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The converted amount is 8,000 \u00d7 0.20 = 1,600 US dollars. After the 5% fee, Diego receives 95% of 1,600, which is 0.95 \u00d7 1,600 = $1,520.</p><p>Choice A is incorrect and may result from taking a 10% fee. Choice B is incorrect and may result from rounding too aggressively. Choice C is incorrect and may result from adding the fee instead of subtracting it.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A5.T1.easy"
+}

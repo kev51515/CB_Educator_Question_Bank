@@ -1,0 +1,25 @@
+{
+  "questionId": "de3dd17d-s1",
+  "originalId": "de3dd17d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Geochemist Cassandra Reyes and her colleagues have estimated that as much as 18 percent of the dust on Venus consists of volcanic ash. These airborne particles arise when explosive eruptions release fragments of magma into the dense atmosphere that, after cooling and crystallizing into mineral grains, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> slowly down through the cloud layers.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>to drift</p>"},
+    {"id": "b", "content": "<p>drift</p>"},
+    {"id": "c", "content": "<p>having drifted</p>"},
+    {"id": "d", "content": "<p>drifting</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The relative pronoun &ldquo;that&rdquo; refers to the plural noun &ldquo;fragments of magma&rdquo; and heads a relative clause whose main verb must be finite and agree with that plural subject. &ldquo;Drift&rdquo; is the present-tense plural form and supplies the required finite main verb.</p><p>Choice A is incorrect because &ldquo;to drift&rdquo; is an infinitive and cannot serve as the main verb of a clause; the relative clause would lack a finite predicate. Choice C is incorrect because &ldquo;having drifted&rdquo; is a perfect participle and likewise cannot function as the main verb of the clause on its own. Choice D is incorrect because &ldquo;drifting&rdquo; is a present participle and, without an auxiliary, cannot serve as the finite main verb the relative clause requires.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "aa43b41f-s1",
+  "originalId": "aa43b41f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "domainCode": "Q",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At the end of a popular radio program, the host asked listeners to call in and answer the question, &ldquo;Do you support the proposed change to local zoning laws?&rdquo; The host later announced that of the calls received, 32% answered &ldquo;Yes&rdquo; and 65% answered &ldquo;No.&rdquo; Which of the following best explains why these results are unlikely to represent the views of the entire city's residents?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The percentages do not add up to 100%, so any conclusions are invalid.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The host did not allow listeners enough time to call in.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Those who called in were not a random sample of the city's residents.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>There were not 50% &ldquo;Yes&rdquo; and 50% &ldquo;No&rdquo; responses.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Call-in polls produce self-selected samples that are not random. Only listeners with strong opinions choose to call, so the responses do not reliably represent the broader population. Choice A is wrong because percentages need not sum to 100 if some declined to choose. Choice B is irrelevant. Choice D is a misuse of expected vote splits.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A2.T1.hard"
+}

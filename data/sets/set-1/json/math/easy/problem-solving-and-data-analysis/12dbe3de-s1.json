@@ -1,0 +1,39 @@
+{
+  "questionId": "12dbe3de-s1",
+  "originalId": "12dbe3de",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A warehouse received a shipment of 2,500 phones, 5 of which were defective. If a phone is randomly selected from this shipment, what is the probability that it is defective?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.0002</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.002</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.02</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.2</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The probability is the number of defective phones divided by the total: 5 \u00f7 2,500 = 0.002.</p><p>Choice A is incorrect. This is the probability shifted by one decimal place.</p><p>Choice C is incorrect. This is the probability shifted by one decimal place in the other direction.</p><p>Choice D is incorrect. This is the probability shifted by two decimal places.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

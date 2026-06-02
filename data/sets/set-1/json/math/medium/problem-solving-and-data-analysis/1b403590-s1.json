@@ -1,0 +1,39 @@
+{
+  "questionId": "1b403590-s1",
+  "originalId": "1b403590",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An object has a mass of 240 grams and a volume of 30 cubic centimeters. What is the density, in grams per cubic centimeter, of the object?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>210</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>270</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7,200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Density equals mass divided by volume: 240 grams &divide; 30 cubic centimeters = 8 grams per cubic centimeter. Choice A is incorrect because 210 = 240 - 30 results from subtracting volume from mass instead of dividing. Choice B is incorrect because 270 = 240 + 30 results from adding mass and volume. Choice C is incorrect because 7,200 = 240 &times; 30 results from multiplying mass by volume rather than dividing.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.medium"
+}

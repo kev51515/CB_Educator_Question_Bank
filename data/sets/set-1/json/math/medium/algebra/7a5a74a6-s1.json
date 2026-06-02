@@ -1,0 +1,39 @@
+{
+  "questionId": "7a5a74a6-s1",
+  "originalId": "7a5a74a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 4(z - 3) = 26, what is the value of z - 3?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>13/2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>23/2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>26</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Divide both sides by 4: z - 3 = 26/4 = 13/2. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.medium"
+}

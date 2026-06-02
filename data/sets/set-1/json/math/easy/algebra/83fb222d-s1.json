@@ -1,0 +1,20 @@
+{
+  "questionId": "83fb222d-s1",
+  "originalId": "83fb222d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>9</mn><mi>m</mi><mo>=</mo><mn>27</mn></math>, what is the value of <math><mi>m</mi><mo>+</mo><mn>5</mn></math>?</p>",
+  "answerOptions": null,
+  "keys": ["8"],
+  "rationale": "<p>The correct answer is <math><mn>8</mn></math>. Dividing both sides of <math><mn>9</mn><mi>m</mi><mo>=</mo><mn>27</mn></math> by 9 yields <math><mi>m</mi><mo>=</mo><mn>3</mn></math>. Substituting into <math><mi>m</mi><mo>+</mo><mn>5</mn></math> yields <math><mn>3</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>8</mn></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

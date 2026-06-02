@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 12 data points trending up from left to right, with a line of best fit passing through the approximate coordinates (300, 3), (600, 6), and (1,200, 12). At x = 900, which of the following is closest to the y-value predicted by the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Slope = (6 − 3)/(600 − 300) = 0.01. At x = 900, y = 3 + 0.01·(900 − 300) = 3 + 6 = 9.</p><p>Choices B, C, and D correspond to other x-values.</p>",
+  "questionId": "ae32cc3c-s1",
+  "originalId": "ae32cc3c",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

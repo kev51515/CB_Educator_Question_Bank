@@ -1,0 +1,23 @@
+{
+  "questionId": "465c73ad-s1",
+  "originalId": "465c73ad",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mi>x</mi><mo>=</mo><mn>62</mn></math></p><p>What value of <math><mi>x</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12.4",
+    "62/5"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>12.4</mn></math>. Dividing both sides of the given equation by 5 yields <math><mi>x</mi><mo>=</mo><mn>12.4</mn></math>. Note that 12.4 and 62/5 are equivalent.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

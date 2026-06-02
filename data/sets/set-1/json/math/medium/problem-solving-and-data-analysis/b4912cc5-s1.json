@@ -1,0 +1,39 @@
+{
+  "questionId": "b4912cc5-s1",
+  "originalId": "b4912cc5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population density of Estonia, in people per square kilometer of land area, decreased from 32.0 in 1990 to 30.5 in 2014. During this time period, the land area of Estonia was 42,400 square kilometers. By how many people did Estonia's population decrease from 1990 to 2014?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1,292,200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,356,800</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>63,600</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>21,200</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The decrease in population equals the change in density times the land area. The decrease in density is 32.0 \u2212 30.5 = 1.5 people per km\u00b2. Thus the population decrease is 1.5 \u00b7 42,400 = 63,600.</p><p>Choices A and B give 1990 and 2014 populations, not the change. Choice D is incorrect and may result from dividing by 2 or other errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium"
+}

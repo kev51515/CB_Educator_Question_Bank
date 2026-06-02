@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}}</title>
+  <meta name="set-uid" content="{{setUid}}">
+  <meta name="set-total" content="{{questionCount}}">
+  <meta name="set-key-href" content="">
+  {{supabaseMetaTags}}
+  <style>{{styles}}</style>
+  <style>
+    /* Per-set footer crumb (bottom-left of every page after the cover) */
+    @page { @bottom-left { content: "{{pageFooter}}"; } }
+    @page :first { @bottom-left { content: none; } }
+  </style>
+</head>
+<body class="density-compact" data-mode="study">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-card">
+      <div class="cover-chips">
+        <span class="chip chip--{{difficultyKey}}">
+          <span class="chip__dot"></span>{{difficultyLabel}}
+        </span>
+        <span class="chip">
+          <span class="chip__dot"></span>{{domainLabel}}
+        </span>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-text">
+          <h1 class="cover-title">{{skillFull}}</h1>
+          <div class="cover-meta">
+            <span>{{questionCount}} questions</span>
+            <span>~{{estMinutes}} min</span>
+            <span>Set {{setId}}</span>
+          </div>
+        </div>
+      </div>
+
+      {{canonicalStemCallout}}
+
+      <div class="cover-footer">
+        <span class="cover-footer__brand">SAT Question Bank</span>
+        <span class="cover-footer__date">{{generatedDate}}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <main class="sheet">
+    <header class="strip">
+      {{stripCrumbs}}
+      <div class="strip__title">{{stripTitle}}</div>
+      <div class="strip__actions">
+        <div class="strip__mode" role="group" aria-label="Mode">
+          <button type="button" class="strip__mode-btn" data-mode="study" aria-pressed="true">Study</button>
+          <button type="button" class="strip__mode-btn" data-mode="test" aria-pressed="false">Test</button>
+        </div>
+        <span class="strip__timer" hidden>00:00</span>
+        <div class="strip__pos">Q<span data-current-q>1</span> / {{questionCount}}</div>
+      </div>
+    </header>
+
+    {{cards}}
+  </main>
+
+  <!-- Floating submit button (only visible in test mode with answers staged) -->
+  <button type="button" class="test-submit" id="test-submit" hidden>
+    <span class="test-submit__label">Submit</span>
+    <span class="test-submit__count" id="test-submit-count">0 / {{questionCount}}</span>
+  </button>
+
+  <!-- Density toolbar removed — PDFs are pre-generated and printing is
+       Cmd/Ctrl+P. Keep the body class so any legacy `.density-compact`
+       CSS rules still apply for spacing. -->
+  <script defer src="{{assetsRel}}/test-runner.js"></script>
+</body>
+</html>

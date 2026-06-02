@@ -1,0 +1,25 @@
+{
+  "questionId": "39de2206-s1",
+  "originalId": "39de2206",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p><em>The Lantern Hour</em> is a 1908 play by Sarojini Bose, originally written in Bengali. The character Nilu is a bedridden young girl who imagines that the people she sees passing her window are joyful even when burdened by chores or errands, as is evident when she says to a young boy carrying a basket of fish, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>The Lantern Hour</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“I see you must hurry on; there is little to keep me here in this room either.”</p>"},
+    {"id": "b", "content": "<p>“Oh, fish for the evening market? That is why your bare feet seem to dance along the lane, and your little tin bell rings so cheerfully as you go.”</p>"},
+    {"id": "c", "content": "<p>“I shall repay you, every coin, when I am older—after I have left this house to go look for work past the river.”</p>"},
+    {"id": "d", "content": "<p>“If only I could go with you. Then I would catch the brightest, silver-finned fish of all, from the very deepest part of the river.”</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most effectively illustrates the claim that Nilu imagines the people she sees passing her window as joyful even when they are doing ordinary work. The young boy is in the middle of carrying fish to market—a chore—yet Nilu describes his bare feet as if they “dance along the lane” and his tin bell as “ringing so cheerfully,” attributing dance-like joy to him in the middle of his task.</p><p>Choice A is incorrect because it expresses Nilu's own restlessness and dissatisfaction rather than a perception of the passer-by as joyful at work. Choice C is incorrect because it concerns a future repayment and her own future plans for leaving home, not a portrayal of the boy as carefree while working. Choice D is incorrect because it expresses Nilu's own wish to be outdoors and to catch fish herself; it does not characterize the boy's current work as joyful.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

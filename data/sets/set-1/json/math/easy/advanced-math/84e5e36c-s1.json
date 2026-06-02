@@ -1,0 +1,39 @@
+{
+  "questionId": "84e5e36c-s1",
+  "originalId": "84e5e36c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mi>y</mi><mo>=</mo><mn>45</mn></math></p><p><math><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn></math></p><p>The graphs of the given equations in the <em>xy</em>-plane intersect at the point <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is a possible value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-45/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-7</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting 45 for <em>y</em> in the second equation gives <math><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn><mo>=</mo><mn>45</mn></math>, so <math><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>49</mn></math> and <em>x</em> = \u00b17. Of the choices, -7 is given.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "58dcc59f-s1",
+  "originalId": "58dcc59f",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A contractor is designing a rectangular swimming pool. The length of the pool is to be 3 feet longer than the width. If the area of the pool will be 70 square feet, what will be the length, in feet, of the pool?</p>",
+  "answerOptions": null,
+  "keys": [
+    "10"
+  ],
+  "rationale": "<p>The correct answer is 10. Let w represent the width of the pool, in feet. Then the length is (w + 3) feet, and the area is w(w + 3) = 70. Expanding gives w<sup>2</sup> + 3w &minus; 70 = 0, which factors as (w &minus; 7)(w + 10) = 0. Since w must be positive, w = 7. The length is w + 3 = 10 feet.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T3.medium"
+}

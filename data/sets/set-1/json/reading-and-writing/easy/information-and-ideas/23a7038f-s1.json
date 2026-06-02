@@ -1,0 +1,39 @@
+{
+  "questionId": "23a7038f-s1",
+  "originalId": "23a7038f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Drumming is a coordinated alarm behavior that researchers have recorded in colonies of leaf-cutter ants. When drumming, sentry ants strike the ground rapidly with their abdomens, producing a sharp vibration that runs through the nest. The signal is set off when army ants begin scouting near a colony, and it warns nestmates to retreat before being raided. Researchers suggest that the behavior is a specialized warning aimed at army ants, since the ants do not drum when other, larger predators approach the colony.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Several species of ant are known to use drumming as a way of defending against army ants.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Researchers are not sure how leaf-cutter ants defend against predators that are larger than army ants.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Researchers think that drumming in leaf-cutter ants is a specialized warning aimed at army ants.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Army ants are known to be the most common predator of leaf-cutter ant colonies.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text describes drumming as a coordinated alarm behavior and explicitly states that researchers think it is a specialized warning aimed at army ants because the ants do not drum in response to other predators.</p><p>Choice A is incorrect; the text discusses only leaf-cutter ants, not other ant species. Choice B is incorrect; the text only notes that drumming isn't used against other predators, not that researchers are uncertain about defenses against them. Choice D is incorrect; the text says army ants are one predator but never claims they are the most common.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

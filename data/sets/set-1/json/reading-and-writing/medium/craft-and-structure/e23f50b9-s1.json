@@ -1,0 +1,25 @@
+{
+  "questionId": "e23f50b9-s1",
+  "originalId": "e23f50b9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>The people of Edo-period Japan have sometimes been seen as indifferent to popular reading and the spread of new ideas, but recent research has shown that this is largely a misconception. According to historian Mary Elizabeth Berry, most Edo-period cities had at least one circulating lending library, which often offered both expensive bound volumes and&mdash;more affordably&mdash;loose printed sheets. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">While such services were available mainly to city residents</span>, regular borrowing of books from itinerant peddlers or sharing of pamphlets among neighbors was common practice throughout rural Japan.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It asserts that in Edo-period Japan loose printed sheets were more popular in rural areas than in urban ones.</p>"},
+    {"id": "b", "content": "<p>It describes a limitation of earlier historians&rsquo; studies of Edo-period reading habits.</p>"},
+    {"id": "c", "content": "<p>It concedes that not all people in Edo-period Japan had access to circulating lending libraries.</p>"},
+    {"id": "d", "content": "<p>It explains why Berry decided to study the popularity of circulating lending libraries in Edo-period Japan.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively describes the function of the underlined portion. The text addresses the misconception that Edo-period Japanese were indifferent to popular reading. As evidence that this is false, the text cites Berry&rsquo;s assertion that most Edo-period cities had at least one circulating lending library. The underlined portion then notes that mainly city residents had access to these libraries. The remainder of the text explains that those who lacked such access nonetheless borrowed books from peddlers or shared pamphlets with neighbors.</p><p>Choice A is incorrect because the underlined portion implies that loose printed sheets were largely unavailable to people in rural areas, not more popular there. Choice B is incorrect because the underlined portion addresses a limitation of life in Edo-period Japan, not of historical research. Choice D is incorrect because the underlined portion does not address Berry&rsquo;s motivations for her research.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

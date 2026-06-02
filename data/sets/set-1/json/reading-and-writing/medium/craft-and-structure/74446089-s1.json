@@ -1,0 +1,25 @@
+{
+  "questionId": "74446089-s1",
+  "originalId": "74446089",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>For her 1979 album <em>Mirror Garden</em>, vocalist Linda Sharrock wrote songs grounded in traditional blues and gospel, then layered them with then-unusual tape loops, prepared piano, and free-jazz horn arrangements. The result was so unfamiliar, so out of step with the era's mainstream, that the album attracted little attention when first released. In recent years, however, a younger generation of singers has embraced the genre-blending experimentation of <em>Mirror Garden</em>. <span role=\"region\" aria-label=\"Referenced Content\"><u>Avant-soul vocalists Yves Tumor and Serpentwithfeet, among other contemporary artists, point to the album as a touchstone.</u></span></p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It urges contemporary singers to adopt the genre-blending sound of <em>Mirror Garden</em>.</p>"},
+    {"id": "b", "content": "<p>It contrasts <em>Mirror Garden</em> with the recordings of two younger vocalists.</p>"},
+    {"id": "c", "content": "<p>It offers examples of younger singers whose work has been impacted by <em>Mirror Garden</em>.</p>"},
+    {"id": "d", "content": "<p>It responds to criticism of <em>Mirror Garden</em> from some younger singers.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text's subject is Sharrock's 1979 album, which initially attracted little attention but in recent years has been embraced by younger singers. The underlined sentence cites two contemporary vocalists, Yves Tumor and Serpentwithfeet, who point to the album as a touchstone. The underlined sentence therefore offers examples of younger singers whose work has been impacted by <em>Mirror Garden</em>.</p><p>Choice A is incorrect because the underlined sentence reports influence rather than urging anyone to adopt a style. Choice B is incorrect because the underlined sentence does not describe differences between the album and the named artists' work. Choice D is incorrect because no criticism from younger singers is mentioned in the text.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

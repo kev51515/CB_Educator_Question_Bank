@@ -1,0 +1,22 @@
+[
+  {"id": "0d402146-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "d2eb1df1-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "1695391a-s1", "templateId": "words-in-context.A1.T2.easy", "verdict": "constraint_violation", "detail": "Violates T2 must_preserve stem wording 'As used in the text, what does the phrase \"X\" most nearly mean?' Clone uses 'what does the author most nearly mean by ...' Options are full sentences rather than short paraphrases, drifting toward a central-idea question."},
+  {"id": "479c7e82-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "4d1a9c0d-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "afd2a9eb-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "4b8244ca-s1", "templateId": "words-in-context.A2.T8.easy", "verdict": "ok"},
+  {"id": "84a7fbca-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "47955354-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "417f8dfa-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "constraint_violation", "detail": "Violates T1 must_preserve 'Target word visibly marked (underline/quote) in the passage.' The stimulus contains a blank '______' instead of the target word 'featured', converting an A1 disambiguation item into an A2-style fill-in-the-blank."},
+  {"id": "9b2fbb2e-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "type_drift", "detail": "T6 requires an adjective slot describing a noun's quality. Clone's blank is a verb ('provided') with object 'surprising clarity', matching T5 (cause/effect/function verb) rather than T6."},
+  {"id": "afd48140-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "bcc91b1e-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "16f2d678-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "ok"},
+  {"id": "ca47273b-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "fa014d2d-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "f773a56b-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "d8d33cc5-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "428cd2c1-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "01de46bb-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "667a0587-s1",
+  "originalId": "667a0587",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>For much of the nineteenth century, it was difficult for inventors in the United States to protect new designs from being copied. That changed in 1842 with the passing of the Patent <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> introduced a system specifically for protecting ornamental designs of manufactured items.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Act; which</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Act, which</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Act. Which</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Act&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation between a main clause and a supplementary element. In this choice, the comma is used correctly to mark the boundary between the main clause (\"That...Act\") and the supplementary relative clause (\"which...items\") that provides additional information about the Patent Act.</p><p>Choice A is incorrect because a semicolon can't be used to mark the boundary between a main clause and a supplementary relative clause. Choice C is incorrect because it results in a sentence fragment. Choice D is incorrect because joining the main clause and the additional information without a comma and relative pronoun results in an ungrammatical sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T3.easy"
+}

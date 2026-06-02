@@ -1,0 +1,39 @@
+{
+  "questionId": "35360da9-s1",
+  "originalId": "35360da9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The National Park Service is creating a comprehensive photographic archive of every trail in the system, and it is asking hikers to help. Daniel Okafor and Priya Singh are just two of the many volunteer photographers who <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the archive since it launched in 2018.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>have submitted</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>submit</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>will be submitting</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>will submit</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The convention being tested is the use of verbs to express tense. The present perfect &ldquo;have submitted&rdquo; correctly expresses an action that began in the past (&ldquo;since it launched in 2018&rdquo;) and continues into the present.</p><p>Choice B (simple present) doesn&rsquo;t capture the continuing time span. Choices C and D (future forms) don&rsquo;t fit a time frame that started in the past.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

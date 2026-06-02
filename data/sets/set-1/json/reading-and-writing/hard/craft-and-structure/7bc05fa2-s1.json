@@ -1,0 +1,39 @@
+{
+  "questionId": "7bc05fa2-s1",
+  "originalId": "7bc05fa2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Whether the rule of a Roman emperor such as Hadrian or Antoninus Pius was marked by sweeping reforms or by quiet stability, its character was shaped by questions of succession and therefore cannot be understood without a corollary understanding of the factors that allowed the emperor to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his claim to the throne.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>reciprocate</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>annotate</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>disengage</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>shore up</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Shore up\" means to support, strengthen, or buttress. Questions of succession threaten a ruler's claim, so the relevant factors are those that allowed the emperor to strengthen—shore up—his claim.</p><p>Choice A is incorrect. \"Reciprocate\" means to give in return, which doesn't make sense applied to one's own claim to power. Choice B is incorrect. \"Annotate\" means to add notes; one does not annotate a claim to the throne. Choice C is incorrect. \"Disengage\" means to withdraw, the opposite of what the emperor would want to do with his claim.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

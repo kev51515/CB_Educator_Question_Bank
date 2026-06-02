@@ -1,0 +1,39 @@
+{
+  "questionId": "ebf8d2b7-s1",
+  "originalId": "ebf8d2b7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A printer prints color posters or black-and-white flyers, one at a time, for a total of 600 minutes each day. It takes the printer 8 minutes to print a color poster or 4 minutes to print a black-and-white flyer. Which equation represents the possible number of color posters, x, and flyers, y, the printer can produce each day?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8x + 4y = 600</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4x + 8y = 600</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x + y)(8 + 4) = 600</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(8 + x)(4 + y) = 600</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Time on posters is 8x minutes; time on flyers is 4y minutes. The total is 8x + 4y = 600.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

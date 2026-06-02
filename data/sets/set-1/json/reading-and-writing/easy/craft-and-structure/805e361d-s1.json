@@ -1,0 +1,39 @@
+{
+  "questionId": "805e361d-s1",
+  "originalId": "805e361d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Subscription meal-kit services are giving home cooks more options to receive ready-to-prepare ingredients than ever before. Whether ordering kits for weeknight dinners, quick lunches, or weekend recipes, customers can choose meals that match their schedules and tastes. Companies profit too: studies have shown that subscribers are willing to pay a premium for the convenience of pre-portioned ingredients. Still, it can be hard for companies to keep meal kits both fresh and affordable, as standard food-distribution systems may not handle small, customized orders efficiently.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It describes a company's recent success with new products and then explains multiple factors that may have contributed.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It presents two contrasting product-marketing techniques and then provides examples of one of those techniques.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It discusses several recent innovations in food preparation and then suggests some potential applications.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It introduces a trend in consumer products and then explains how the trend both benefits and poses a challenge to companies.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text introduces the trend of subscription meal kits, explains that the trend benefits companies (subscribers pay a premium), and then explains a challenge (keeping kits fresh and affordable using standard distribution).</p><p>Choice A is incorrect. The text doesn't focus on a particular company. Choice B is incorrect. The text doesn't present contrasting marketing techniques. Choice C is incorrect. The text doesn't describe recent innovations in food preparation or potential applications.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.easy"
+}

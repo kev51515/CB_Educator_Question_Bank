@@ -1,0 +1,39 @@
+{
+  "questionId": "53542eb5-s1",
+  "originalId": "53542eb5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Families can help cut waste by donating gently used toys to local exchanges instead of throwing them away. Some communities are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> programs to encourage this behavior, setting up neighborhood swap days and other incentives for sharing toys.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>underestimating</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>encountering</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>occupying</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>instituting</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the sentence describes communities setting up programs to encourage toy sharing, which matches \"instituting\" (establishing or starting). The other choices describe underestimating, meeting, or filling, none of which fits the setting up of programs.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c78bb2b8-s1",
+  "originalId": "c78bb2b8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>A scientist measured the wingspans of 180 birds from Park P and 270 birds from Park Q. The mean wingspan of the 180 birds from Park P was 60 centimeters and the mean wingspan of the 270 birds from Park Q was 75 centimeters. What was the mean wingspan of all 450 birds the scientist measured?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>67</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>68</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>69</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>70</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The mean wingspan of all 450 birds equals the total wingspan divided by 450. The total wingspan of the 180 birds from Park P is 180 \u00d7 60 = 10,800 centimeters. The total wingspan of the 270 birds from Park Q is 270 \u00d7 75 = 20,250 centimeters. Therefore, the combined total is 10,800 + 20,250 = 31,050 centimeters, and the mean wingspan is 31,050 \u00f7 450 = 69 centimeters.</p><p>Choices A, B, and D are incorrect and result from arithmetic errors.</p>",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T11.hard"
+}

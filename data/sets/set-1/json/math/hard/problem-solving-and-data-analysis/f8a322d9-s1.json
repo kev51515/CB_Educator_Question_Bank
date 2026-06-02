@@ -1,0 +1,39 @@
+{
+  "questionId": "f8a322d9-s1",
+  "originalId": "f8a322d9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two histograms (Data Set A and Data Set B) have the same shape and frequencies. Data Set A contains 18 integer values in bins [30, 40), [40, 50), [50, 60), and [60, 70) with frequencies 2, 5, 6, and 5 respectively. Data Set B contains 18 integer values in bins [20, 30), [30, 40), [40, 50), and [50, 60) with the same frequencies 2, 5, 6, and 5. What is the smallest possible positive difference between the mean of Data Set A and the mean of Data Set B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>23</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Each bin in Data Set B corresponds to a bin in Data Set A that is exactly 10 units higher. So for any specific assignment of integer values, replacing every value in A with its B-counterpart 10 less produces the smaller mean. The minimum positive difference of means is achieved when A's mean is as small as possible and B's mean is as large as possible, but with the bins shifted by exactly 10, the difference of means is exactly 10 regardless of which integers are chosen within each bin (since each pair of bins is offset by 10). Therefore the smallest possible positive difference is 10.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.hard"
+}

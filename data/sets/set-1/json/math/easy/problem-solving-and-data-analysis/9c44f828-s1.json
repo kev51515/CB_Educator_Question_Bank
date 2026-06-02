@@ -1,0 +1,39 @@
+{
+  "questionId": "9c44f828-s1",
+  "originalId": "9c44f828",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are a total of 660 seats in a theater. During a performance, audience members occupied 50% of the seats in the theater. How many seats did the audience members occupy during this performance?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>330</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>610</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 50% of 660 is 0.50 \u00d7 660 = 330.</p><p>Choice B is incorrect. This is just the percent value, not applied to 660.</p><p>Choice C is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This is the number of empty seats if only 50 were occupied.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

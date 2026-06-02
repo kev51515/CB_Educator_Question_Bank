@@ -1,0 +1,39 @@
+{
+  "questionId": "58c26db8-s1",
+  "originalId": "58c26db8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The perimeter of an isosceles right triangle is 26 + 26&radic;2 inches. What is the length, in inches, of the hypotenuse of this triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13&radic;2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>26&radic;2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>For an isosceles right triangle with leg L, the hypotenuse equals L&radic;2 and the perimeter equals 2L + L&radic;2. Setting 2L + L&radic;2 = 26 + 26&radic;2 and matching coefficients gives L = 13&radic;2 (since 2&middot;13&radic;2 = 26&radic;2 and 13&radic;2 &middot; &radic;2 = 26). Thus the hypotenuse is L&radic;2 = 13&radic;2 &middot; &radic;2 = 26 inches. Choice B is the leg length; C is half a leg; D would result from doubling the hypotenuse.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T7.hard"
+}

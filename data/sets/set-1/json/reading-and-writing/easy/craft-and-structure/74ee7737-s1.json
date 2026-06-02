@@ -1,0 +1,39 @@
+{
+  "questionId": "74ee7737-s1",
+  "originalId": "74ee7737",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Whether sculptor Ruth Asawa is creating small wire sculptures or large public installations\u2014such as the wire-mesh fountain in San Francisco\u2019s Ghirardelli Square\u2014she is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> personal experience, drawing on memories of crafting baskets as a child in California.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>guided by</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>puzzled by</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>ignored by</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>displeased with</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"guided by\" means using something as a source of direction, fitting the idea that Asawa drew on memories of her childhood. Choice B is incorrect because the text doesn\u2019t suggest she was confused. Choice C is incorrect because she actively uses these memories. Choice D is incorrect because nothing suggests displeasure.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

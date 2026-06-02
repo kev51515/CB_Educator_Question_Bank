@@ -1,0 +1,14 @@
+[
+  {
+    "id": "3f8d5876-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "wrong_answer",
+    "detail": "Solving y=x+1, y=x^2-5 with x>0: x^2-x-6=0, x=3, y=4. Solution is (3,4) which is option a. Rationale correctly derives (3,4) but key is 'b' = (1,2), which does not even satisfy the system. Key/option mismatch; correct key is 'a'. Also type_drift (graph removed from T10) but wrong_answer takes priority."
+  },
+  {
+    "id": "568aaf27-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium",
+    "verdict": "wrong_answer",
+    "detail": "x+y=6, y=x^2 gives x^2+x-6=0, so x=2 or x=-3. Both 2 (B) and -3 (A) are listed as choices. Question asks 'a possible value of x' \u2014 both A and B are valid, making the keyed single answer ambiguous."
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "questionId": "8fbed1cb-s1",
+  "originalId": "8fbed1cb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T9.medium",
+  "stimulus": "<p>When the Saint-Denis Chronicle, a parchment manuscript purported to date to the early 1300s, came to light in 1962, some historians believed it demonstrated that French scholarly knowledge of certain Byzantine court ceremonies predated the fall of Constantinople in 1453. In 2019, a team including conservators Iona MacLeod and Pierre Caron and materials scientist Yuna Halevi conducted a thorough analysis of the manuscript and the ink used. They found that the ink contains synthetic indigo, a compound that was first introduced in ink manufacturing in the late 1800s. Therefore, the team concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>fourteenth-century French scholars could not have known about Byzantine court ceremonies.</p>"},
+    {"id": "b", "content": "<p>medieval scribes must have used synthetic indigo in their ink during the 1300s.</p>"},
+    {"id": "c", "content": "<p>there isn't enough information to determine when the ink was produced.</p>"},
+    {"id": "d", "content": "<p>the Saint-Denis Chronicle could not have been written by fourteenth-century scribes.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. Synthetic indigo first entered ink manufacturing in the late 1800s, so ink containing it could not have been available in the 1300s—and the manuscript that was written with that ink could not have been produced by fourteenth-century scribes. Choice A overreaches: the ink finding does not preclude scholars' having other knowledge of Byzantine ceremonies. Choice B contradicts the text. Choice C is unsupported; the late-1800s introduction date does provide a clear lower bound on when the ink was produced.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5ad9eff0-s1",
+  "originalId": "5ad9eff0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The width of a rectangular patio is w meters. The length of the patio is 9 meters longer than its width. Which of the following expresses the perimeter, in meters, of the patio in terms of w?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4w + 18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2w + 9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>w\u00b2 + 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>w\u00b2 + 9w</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The length is w + 9. The perimeter of a rectangle is 2(length + width) = 2(w + 9 + w) = 2(2w + 9) = 4w + 18. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.medium"
+}

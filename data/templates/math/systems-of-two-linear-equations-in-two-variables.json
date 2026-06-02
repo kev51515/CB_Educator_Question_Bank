@@ -1,0 +1,401 @@
+{
+  "section": "Math",
+  "domain": "Algebra",
+  "skill": "Systems of two linear equations in two variables",
+  "originals_count": 116,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Solve the system",
+      "description": "Given a concrete numeric system of two linear equations, find x, y, the ordered pair (x,y), or a combined expression of them. The cognitive demand is purely procedural algebra — substitution or elimination — with no real-world context and no parameter to determine.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 hands the student the system already symbolic; A2 requires modeling words into a system. A1 differs from A4 in that A1's coefficients are all numeric (the system has a unique solution and the student computes it); A4 leaves a parameter unknown or asks about how many solutions exist.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Trivial one-equation isolates a variable",
+          "description": "One equation already gives x = c (or y = c), so the system is solved by substitution in a single step into the other equation. Stem asks for y, x, x+y, or the ordered pair.",
+          "core_skill_demand": "Recognize that one equation already isolates a variable, substitute that value into the second equation, perform one arithmetic step, and report the requested quantity.",
+          "example_originals": ["3409707e", "4fb8adf7", "aacc834b", "aff28230", "608eeb6e", "9db5b5c1"],
+          "frequency": { "easy": 12, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one equation is x = integer or y = integer or kx = integer with integer quotient", "second equation has small integer coefficients", "answer is a small positive integer"],
+              "example_stem": "x = 8; x + 3y = 26. Find y.",
+              "example_ids": ["aacc834b", "4fb8adf7", "f5563c26", "e0177f5f", "d1aeb6f1"]
+            },
+            "medium": {
+              "characteristics": ["one variable is isolated via y = ax (proportional form) rather than y = constant; requires substitution producing a linear equation to solve"],
+              "example_stem": "y = -2x; 3x + y = 40. Find x.",
+              "example_ids": ["38a43902", "4ec95eab"]
+            },
+            "hard": {
+              "characteristics": ["rare at this skill — direct substitution stays in easy/medium tier"],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["one equation must already isolate a single variable (numeric value or simple y=ax form)", "system has a unique solution"],
+            "must_vary": ["which variable is isolated", "which quantity is requested (x, y, x+y, ordered pair)", "sign and magnitude of coefficients"],
+            "common_bugs": ["substituting the value of x for y or vice versa", "reporting the isolated variable's value when the question asks for the other", "skipping the final requested expression and reporting only one component"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Two-equation solve for x, y, or ordered pair",
+          "description": "Both equations involve both variables; student must eliminate or substitute to find the unique intersection. Stem asks for x, y, or the ordered pair.",
+          "core_skill_demand": "Choose substitution or elimination, execute 2-3 algebraic steps, and report the specific component requested.",
+          "example_originals": ["317e80f9", "ca9bb527", "092ad67d", "2875ba81", "65833256", "b00ad7f2"],
+          "frequency": { "easy": 4, "medium": 8, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["both equations have integer coefficients ≤ 5", "one variable's coefficient is already 1 so substitution is one step", "answer is a small integer"],
+              "example_stem": "x + y = 18; 5y = x. Find (x,y).",
+              "example_ids": ["317e80f9", "ca9bb527", "cdec4c87", "939fc21b"]
+            },
+            "medium": {
+              "characteristics": ["coefficients up to ~10, may require multiplying one equation before elimination", "may produce a fractional intermediate or negative solution", "may need substitution into y = mx + b form"],
+              "example_stem": "y = 6x + 16; -7x - y = 36. Find (x,y).",
+              "example_ids": ["65833256", "b00ad7f2", "79be5180", "092ad67d", "2875ba81", "e3bbde69"]
+            },
+            "hard": {
+              "characteristics": ["coefficients are large or non-coprime so multiple scalings are needed before elimination", "solution involves fractions or requires solving for product xy", "answer requires combining x and y (e.g., xy, 30x)"],
+              "example_stem": "5x + 14y = 45; 10x + 7y = 27. Find xy.",
+              "example_ids": ["f718c9cf", "73b3b7d8", "adb0c96c"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["both equations contain both variables", "unique solution exists", "asked-for quantity is a direct component of the solution (x, y, or ordered pair)"],
+            "must_vary": ["which method is most efficient (substitution vs elimination)", "sign of solution components", "complexity of coefficients"],
+            "common_bugs": ["sign error during elimination (subtracting instead of adding)", "solving for the wrong variable and not back-substituting", "simplifying a hard system by halving all coefficients into a trivial pair (difficulty regression)"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Solve and evaluate combined expression",
+          "description": "Same two-equation system as T2, but the stem asks for a non-trivial expression of x and y (e.g., x - y, x + y, 2x, 5x, 30x, x+y, 3x+3y, 6(x-2)) rather than a raw component. This tests whether the student can solve AND apply the result to the asked expression.",
+          "core_skill_demand": "Solve the system, then substitute solved values into the requested combined expression — distinguishing the asked expression from the solution itself.",
+          "example_originals": ["608eeb6e", "9db5b5c1", "7efe5495", "8a87c2c8", "bd45df49", "a94ed4e0", "1362ccde", "3a84f885", "570b5a5d", "52cb8ea4", "ed92fb68", "edc1b7b7"],
+          "frequency": { "easy": 2, "medium": 4, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one equation isolates a variable; asked expression is x+y or a simple sum", "small integer coefficients"],
+              "example_stem": "5x = 15; -4x + y = -2. Find x + y.",
+              "example_ids": ["608eeb6e", "9db5b5c1"]
+            },
+            "medium": {
+              "characteristics": ["needs full substitution/elimination then evaluate expression like 2x, 5x, or x+y", "coefficients moderate, asked expression is a small multiple"],
+              "example_stem": "y = 3x; 2x + y = 12. Find 5x.",
+              "example_ids": ["7efe5495", "8a87c2c8", "bd45df49", "ed92fb68"]
+            },
+            "hard": {
+              "characteristics": ["asked expression is itself a non-obvious combination (x-y, 30x, 39x, (17/2)x+18y, 6(x-2)) that may admit a shortcut via adding/subtracting the equations", "system may use grouped expressions like (x-2) and (y+7) as compound variables", "fractional or large coefficients"],
+              "example_stem": "(7/2)x + 6y = 25; (5/2)x + 6y = 23. Find (17/2)x + 18y.",
+              "example_ids": ["1362ccde", "3a84f885", "570b5a5d", "52cb8ea4", "edc1b7b7", "a94ed4e0", "73b3b7d8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["system has a unique numeric solution", "asked quantity is a function of x and y beyond a single component"],
+            "must_vary": ["which combination is asked", "whether a shortcut (sum/difference of equations) yields the answer without fully solving"],
+            "common_bugs": ["reporting x or y alone instead of the combined expression", "computing the expression with the asked variable instead of the asked expression", "structurally simplifying compound variables like (x-2) into x, destroying the shortcut"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Model context as a system",
+      "description": "Translate a real-world word problem into a system of two linear equations in two variables — either by selecting the correct system from choices, or by solving the implicit system and reporting a quantity from the scenario.",
+      "boundary_with_other_aspects": "A2 differs from A1 in requiring the student to construct the equations from prose before any algebra is possible. A2 differs from A3 in that A2's input is textual; A3's is graphical. A clone that strips the context and presents only the equations is a categorical drift from A2 to A1.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Choose the system that models the situation",
+          "description": "Stem describes a two-quantity scenario (counts plus totals, prices plus quantities, mixtures, distances/times) and asks which system of equations correctly represents it. No solving required.",
+          "core_skill_demand": "Identify the two unknown quantities, write a count/identity equation and a value/rate equation, and match the constructed system to the answer choices — distinguishing swapped totals, swapped coefficients, and swapped variables.",
+          "example_originals": ["17f176ec", "44d65912", "7d89376f", "b86123af", "dba8d38a", "ee031767", "ece00725", "6e50ce28", "74c03c21", "9a216c0f"],
+          "frequency": { "easy": 8, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["two-step modeling: one count equation and one money/total equation", "linear in both variables, all positive integer coefficients"],
+              "example_stem": "Standard $5 and premium $12 tickets, 250 total, $2,300 collected. Which system finds s and p?",
+              "example_ids": ["17f176ec", "7d89376f", "b86123af", "dba8d38a", "ee031767", "ece00725"]
+            },
+            "medium": {
+              "characteristics": ["one variable defined relationally (e.g., 'x is 3 more than 2y'), requiring rearrangement, OR percent/discount converts to multiplier coefficients like 0.75 and 0.55", "rate × time = distance modeling with mixed units"],
+              "example_stem": "Bus traveled 160 mi in 4 hr: 55 mph highway (x hr), 25 mph local (y hr). Which system?",
+              "example_ids": ["74c03c21", "9a216c0f", "6e50ce28"]
+            },
+            "hard": {
+              "characteristics": ["rare — modeling-only items stay in easy/medium tier"],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two distinct real-world quantities with two distinct relationships (count + value, or rate × time, etc.)", "stem ends asking which system represents the situation"],
+            "must_vary": ["which variable maps to which quantity", "which equation is the count vs the value/rate", "answer-choice distractors that swap coefficients or totals"],
+            "common_bugs": ["swapping which total goes with which equation (count total vs money total)", "swapping coefficients onto wrong variables", "writing 0.25m + 0.45v instead of 0.75m + 0.55v after a discount"]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Solve a word problem via implicit system",
+          "description": "Stem describes a two-quantity scenario and directly asks for the value of one quantity (number of items, dollars, hours). Student must set up the system mentally and solve it.",
+          "core_skill_demand": "Translate the scenario into two linear equations, solve via elimination or substitution, and report the specific quantity asked (which may be neither x nor y directly).",
+          "example_originals": ["0df106df", "0c541d87", "686b7cad", "71189542", "bf4a8b6a", "9f6f96ff", "1e11190a", "4f1342d6", "70feb725", "7866a908", "a71b1bc1", "d7bf55e1"],
+          "frequency": { "easy": 1, "medium": 4, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["small total counts and small prices, integer answer ≤ 10", "single-step substitution after setup"],
+              "example_stem": "Novels $4, magazines $1; 11 items for $20 total. How many novels?",
+              "example_ids": ["0df106df"]
+            },
+            "medium": {
+              "characteristics": ["prices may be decimals or three-figure totals", "one relationship is a ratio ('3 times as many') and one is a difference or sum", "asks for the smaller or larger quantity by inference"],
+              "example_stem": "3× as many voted in favor as against; 15,000 more voted in favor. How many against?",
+              "example_ids": ["686b7cad", "71189542", "bf4a8b6a", "9f6f96ff", "0c541d87"]
+            },
+            "hard": {
+              "characteristics": ["mixture / weighted-percent problems requiring two compositional equations", "two parallel scenarios (cost at Store A vs Store B) generate the two equations", "rate × time setup where the asked output is computed FROM x and y (e.g., total miles biked = 10×b_hours)", "answer requires multiplication/back-conversion after the solve"],
+              "example_stem": "Alloy 50 g, 50% Si, mixed from 30% Si and 80% Si pieces. Mass of Si in second piece?",
+              "example_ids": ["1e11190a", "4f1342d6", "70feb725", "7866a908", "a71b1bc1", "d7bf55e1"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["scenario yields exactly two linear equations in two unknowns", "asked quantity follows from the unique solution"],
+            "must_vary": ["domain of the scenario (tickets, prices, mixture, rate/time, ratio)", "which quantity is asked", "whether one equation is sum or ratio"],
+            "common_bugs": ["reporting the OTHER quantity (the one not asked) — e.g., reporting children when adults were asked", "skipping the back-conversion step (reporting hours when miles were asked)", "structurally simplifying away the second equation by guessing one quantity"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Graphical representation of a system",
+      "description": "Read the solution to a system off a graph of two lines, OR identify the graph/equivalent system that corresponds to a given algebraic system. The cognitive operation centers on the geometric meaning of 'solution = intersection point'.",
+      "boundary_with_other_aspects": "A3 differs from A1 in that the system is delivered (or answered) graphically rather than purely algebraically. A3 differs from A2 in that the input medium is a plotted graph, not prose. A clone that replaces the graph with the explicit equations and asks for the solution is a categorical drift from A3 to A1.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Read intersection point from graph",
+          "description": "A graph of two lines is shown; stem asks for the solution of the system, identified as the intersection point's coordinates.",
+          "core_skill_demand": "Locate the visual intersection of two plotted lines and report its (x,y) coordinates, distinguishing it from other labeled points like axis intercepts.",
+          "example_originals": ["1006cad7", "4b06557b", "5f46fc76", "b0fc3166", "ccc3ad6b", "e6545fa8", "f6b055dc"],
+          "frequency": { "easy": 7, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["intersection has integer coordinates on the visible grid", "lines have clearly distinguishable slopes", "distractors are nearby labeled points (intercepts) rather than far-off"],
+              "example_stem": "Two lines plotted; find their intersection point.",
+              "example_ids": ["1006cad7", "b0fc3166", "ccc3ad6b", "e6545fa8", "f6b055dc"]
+            },
+            "medium": {
+              "characteristics": ["intersection has fractional coordinates requiring careful estimation, OR negative-coordinate intersection requiring reading a partial-quadrant graph"],
+              "example_stem": "Two lines in third quadrant; find intersection.",
+              "example_ids": ["5f46fc76", "4b06557b"]
+            },
+            "hard": {
+              "characteristics": ["not observed at hard tier — graph-reading items stay easy/medium"],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["graph of exactly two lines shown", "stem asks for the solution / intersection coordinates"],
+            "must_vary": ["quadrant of intersection", "slopes (one positive one negative, both negative, etc.)", "distractor choices (axis intercepts of either line)"],
+            "common_bugs": ["confusing a y-intercept on one line with the intersection", "swapping x and y coordinates in the chosen ordered pair", "removing the graph and just listing line equations (categorical drift to A1)"]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Match system to graph or equivalent system",
+          "description": "Stem either (a) gives an algebraic system and asks which of four graphs represents it, or (b) gives a graph and asks which algebraic system (or which simplified equivalent system) shares its solution.",
+          "core_skill_demand": "Translate between algebraic form (slope, intercepts, constraints) and the geometric features of the plotted lines; or recognize that two systems with the same intersection are equivalent solution-wise.",
+          "example_originals": ["36f068e2", "2704399f", "6e6a3241", "3f5a3602", "e1259a5a"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["very few candidate intersections to test", "lines have simple slopes and intercepts"],
+              "example_stem": "Which of the points is the solution of the system?",
+              "example_ids": ["e1259a5a"]
+            },
+            "medium": {
+              "characteristics": ["graphs differ subtly in slope sign or intercept location", "contextual constraints (x≥0, y≥0) narrow the correct graph", "equivalent system swaps representation (e.g., x=3/2, y=0)"],
+              "example_stem": "x+y=53, 11x+18y=730 with x,y ≥ 0. Which graph?",
+              "example_ids": ["36f068e2", "2704399f", "6e6a3241"]
+            },
+            "hard": {
+              "characteristics": ["lines must be reconstructed from two listed points each, then matched to algebraic forms with mixed-sign coefficients", "distractor systems differ by sign or by which axis-intercept they hit"],
+              "example_stem": "Two lines through given point pairs. Which system represents them?",
+              "example_ids": ["3f5a3602"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["one side of the question is graphical, the other algebraic", "exactly two lines"],
+            "must_vary": ["which side is the prompt vs answer", "slopes and intercepts of the lines", "form of equations (slope-intercept vs standard)"],
+            "common_bugs": ["matching by intercept only and ignoring slope sign", "picking a graph whose lines have the right slopes but a context-violating intersection", "treating the system as already solved (categorical drift to A1)"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Solution-count and parameter analysis",
+      "description": "Reason about HOW MANY solutions a system has (zero / exactly one / infinitely many) based on coefficient relationships, OR determine the value of a parameter / second equation such that the system has a stated solution behavior, OR parametrize the infinite solution set.",
+      "boundary_with_other_aspects": "A4 differs from A1 in that A4 either contains a literal parameter to determine or asks about solution structure rather than a specific numeric solution. A4 differs from A2/A3 in that the focus is the abstract relationship between the two equations (parallel, coincident, intersecting) rather than the scenario or graph.",
+      "types": [
+        {
+          "id": "T8",
+          "name": "Classify how many solutions",
+          "description": "Stem gives a concrete numeric system (or a graph) and asks how many points of intersection / solutions it has: zero, exactly one, exactly two, or infinitely many.",
+          "core_skill_demand": "Compare slopes and intercepts (or apply elimination to detect 0=k contradictions or 0=0 identities) to classify the system as inconsistent, unique, or dependent.",
+          "example_originals": ["0dd6227f", "6a87902f", "b3c7ca1d", "e77a76ce", "1e0a46e4", "27f5fff3", "797a81fb"],
+          "frequency": { "easy": 0, "medium": 4, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["uncommon at this skill — solution-counting items skew medium/hard"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["both equations in slope-intercept form so slope comparison is immediate", "or four answer-choice systems where one pair is clearly parallel"],
+              "example_stem": "y = 2x + 10; y = 2x − 1. How many intersection points?",
+              "example_ids": ["0dd6227f", "6a87902f", "b3c7ca1d", "e77a76ce"]
+            },
+            "hard": {
+              "characteristics": ["equations in standard form Ax+By=C requiring slope extraction or proportionality check", "may need to detect dependent vs inconsistent by checking ratio A1/A2 = B1/B2 vs C1/C2", "graph version where lines look nearly parallel and intersection truth depends on slopes"],
+              "example_stem": "-12x+14y=36; -6x+7y=-18. How many solutions?",
+              "example_ids": ["1e0a46e4", "797a81fb", "27f5fff3"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["system has no free parameter (all coefficients numeric)", "answer is a categorical choice about solution count"],
+            "must_vary": ["which classification is correct (0, 1, infinite)", "form of equations (slope-intercept vs standard)"],
+            "common_bugs": ["confusing inconsistent (parallel, different intercepts → 0) with dependent (same line → infinite)", "ignoring slope sign when comparing", "computing the intersection and reporting its coordinates instead of the count"]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Find parameter for no solution / infinite solutions",
+          "description": "Stem gives a system in which one or more coefficients are literal constants (a, b, c, h, p, r, t, w, k, g); stipulates 'has no solution' or 'has infinitely many solutions'; asks for the value of the constant(s).",
+          "core_skill_demand": "Translate the solution-count condition into a coefficient relationship — for infinite solutions, every coefficient ratio matches (A1/A2 = B1/B2 = C1/C2); for no solution, slope ratios match but constant ratio differs — then solve for the parameter.",
+          "example_originals": ["4b76c7f1", "14360f84", "36fd6752", "45a534d0", "59352689", "466b87e3", "571174f3", "b5f62071", "e1248a5c", "e2e3942f", "f75bd744", "ff501705", "dcc4886a"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 11 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["both equations in y = mx+b form so 'infinite solutions' means b matches and m matches — single one-step computation", "single parameter only"],
+              "example_stem": "y = (2/7)x + 3; y = mx + b with infinite solutions. Find b.",
+              "example_ids": ["4b76c7f1"]
+            },
+            "medium": {
+              "characteristics": ["one equation in standard form, one with parameter as coefficient of y; compute slope ratio after one rearrangement"],
+              "example_stem": "y = (2/7)x + 3 has infinite solutions with y = mx + b. Find b.",
+              "example_ids": ["dcc4886a"]
+            },
+            "hard": {
+              "characteristics": ["both equations need rearrangement (combining like terms, expanding parentheses) before extracting coefficients", "parameter sits inside a y- or x-coefficient on opposite sides", "fractional coefficients require multiplying through", "may ask for ratio g/k of two parameters rather than a single constant", "negative-coefficient parameter answer"],
+              "example_stem": "4x − 9y = 9y + 5; hy = 2 + 4x. If no solution, find h.",
+              "example_ids": ["14360f84", "36fd6752", "45a534d0", "59352689", "571174f3", "b5f62071", "e1248a5c", "e2e3942f", "f75bd744", "ff501705", "466b87e3"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["at least one literal parameter in the coefficients", "explicit solution-count condition (no solution / infinite solutions)", "exactly one numeric answer for the parameter"],
+            "must_vary": ["which parameter slot is unknown (slope position vs intercept position)", "whether the condition is 'no solution' or 'infinite solutions'", "whether rearrangement is needed before applying the proportionality test"],
+            "common_bugs": ["confusing the no-solution condition (slopes match, intercepts differ) with the infinite condition (everything matches)", "extracting slope without first putting both equations in comparable form", "simplifying away the rearrangement step so the parameter is trivially visible (difficulty regression)", "sign error when collecting terms across the equals sign"]
+          }
+        },
+        {
+          "id": "T10",
+          "name": "Choose second equation for stated solution behavior",
+          "description": "One equation is given; stem asks which of four candidate equations, paired with it, yields a system with the stated behavior (no solution, infinite solutions, at least one solution). Tests recognition of parallel vs coincident vs intersecting lines.",
+          "core_skill_demand": "Detect which candidate has the same slope but different intercept (no solution), or the same slope AND intercept up to scaling (infinite solutions), or a different slope (intersecting).",
+          "example_originals": ["79784c23", "d909cd31", "4becad44", "5e08a055", "567ac7ab", "58477a6c"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["uncommon — candidate-selection items skew medium/hard"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["choices are obvious scalar multiples or shifts of the given equation", "given equation is in slope-intercept form"],
+              "example_stem": "y = 6x + 3, infinite solutions. Which equation works?",
+              "example_ids": ["79784c23", "d909cd31"]
+            },
+            "hard": {
+              "characteristics": ["given equation in standard form; choices use different scalings and standard-form variants", "for 'no solution', choices differ in intercept only after scaling — student must compare A/B ratios AND C ratios", "Roman-numeral or 'at least one solution' phrasing that requires evaluating multiple candidates"],
+              "example_stem": "3x = 36y − 45, no solution. Which equation could be the second?",
+              "example_ids": ["4becad44", "5e08a055", "567ac7ab", "58477a6c"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["one given equation plus four candidate equations", "stated solution-behavior condition"],
+            "must_vary": ["form of the given equation (slope-intercept vs standard)", "the kind of perturbation that distinguishes correct from incorrect choices (intercept only vs slope only)"],
+            "common_bugs": ["picking a candidate that is a scalar multiple of the given equation when 'no solution' is asked (that's infinite solutions)", "picking a candidate with a different slope when 'infinite solutions' is asked", "ignoring whether the constants scale proportionally with the variable coefficients"]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Parameter from a stated solution or intersection point",
+          "description": "System has one or two literal constants and a specified intersection point (often partially specified like (4, y) or (q, 19)); ask for a constant such that the system passes through that point.",
+          "core_skill_demand": "Substitute the known coordinate(s) into each equation, generating equations in the unknown constants, and solve.",
+          "example_originals": ["1b1deebe", "fb5e7f59"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["only one coordinate of the intersection is given; the other is itself a constant to be eliminated", "two literal constants in the system requiring a coupled substitution"],
+              "example_stem": "ax+by=72; 6x+2by=56; intersect at (4, y). Find a.",
+              "example_ids": ["1b1deebe", "fb5e7f59"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["partially specified intersection point", "one or two literal constants in coefficients"],
+            "must_vary": ["which coordinate is known", "which constant is asked"],
+            "common_bugs": ["assuming the unknown coordinate is zero", "substituting into only one equation", "computing a numeric solution to the system rather than honoring its parametric form"]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Parametrize the infinite solution set",
+          "description": "System turns out to be dependent (one equation is a scalar multiple of the other). Stem asks: for each real number r, which expression of r gives all points on the common line?",
+          "core_skill_demand": "Recognize the system reduces to one line, then express its general solution as (r, f(r)) or (g(r), r) by solving the line for one variable in terms of the other.",
+          "example_originals": ["75012ee7", "979c6ebc", "f03465dc"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["coefficients are non-trivial (e.g., 2x+3y=7 and 10x+15y=35); requires confirming the equations are proportional before parametrizing", "distractor choices swap which slot holds r vs the function of r, or use the wrong line"],
+              "example_stem": "2x+3y=7; 10x+15y=35. For each real r, which point lies on both?",
+              "example_ids": ["75012ee7", "979c6ebc", "f03465dc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["system is dependent (one equation a scalar multiple of the other)", "answer choices are (r, …) or (…, r) parametrizations"],
+            "must_vary": ["whether r appears in the first or second slot", "form of the function of r (with or without fraction coefficient)"],
+            "common_bugs": ["solving as if it were a unique-solution system and reporting one point", "placing r in the wrong slot relative to the line's equation form", "using a slope that doesn't match the original line"]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Difficulty correlates strongly with which aspect and type the item belongs to: A1.T1 (trivial substitution) is almost exclusively Easy; A4.T9 (parameter for no/infinite solutions, with rearrangement) is almost exclusively Hard. Hard items in A1.T3 are characterized by combined-expression targets that admit elimination shortcuts (sum/difference of equations directly yields the asked quantity). Hard items in A4 frequently use literal constants on BOTH sides of the equation requiring an algebraic rearrangement before the slope/intercept comparison can be applied. The A3 (graph-based) items never appear at the Hard tier in this bank, so cloners producing Hard A3 items risk drifting toward A4 (graph + solution count) or A1 (graph as decoration with algebraic stem)."
+}

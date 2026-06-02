@@ -1,0 +1,39 @@
+{
+  "questionId": "431c3038-s1",
+  "originalId": "431c3038",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a fitness magazine, a 150-pound adult is estimated to use 180 calories for every 30 minutes of jogging and 240 calories for every 30 minutes of swimming. A 150-pound adult has completed 1 hour of jogging. Based on the magazine, how many hours should the adult swim to use a total of 1,800 calories from jogging and swimming?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>One hour of jogging uses 2 \u00d7 180 = 360 calories. The remaining 1,800 - 360 = 1,440 calories must come from swimming. Each hour of swimming uses 2 \u00d7 240 = 480 calories, so the swimming time is 1,440 / 480 = 3 hours. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.medium"
+}

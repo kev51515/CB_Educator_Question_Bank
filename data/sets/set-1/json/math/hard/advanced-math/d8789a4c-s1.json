@@ -1,0 +1,39 @@
+{
+  "questionId": "d8789a4c-s1",
+  "originalId": "d8789a4c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The expression (y<sup>2</sup> &minus; k) / (y &minus; m) is equivalent to y + m for all y &ne; m, where m and k are positive integers. If k = 25, what is the value of m?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>If (y<sup>2</sup> &minus; k) / (y &minus; m) = y + m, then y<sup>2</sup> &minus; k = (y &minus; m)(y + m) = y<sup>2</sup> &minus; m<sup>2</sup>. So k = m<sup>2</sup>. With k = 25, m<sup>2</sup> = 25, and since m is positive, m = 5. The other choices correspond to misapplying the difference-of-squares identity.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A2.T5.hard"
+}

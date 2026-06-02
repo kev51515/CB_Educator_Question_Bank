@@ -1,0 +1,39 @@
+{
+  "questionId": "e15c50b2-s1",
+  "originalId": "e15c50b2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>A standard ocean glider, a type of autonomous underwater vehicle, records temperature and currents along set routes. More advanced gliders can collect a broader range of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and operate in polar regions.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>data, dive to greater depths,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>data: dive to greater depths</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>data dive to greater depths,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>data, dive to greater depths;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Notice that \"collect a broader range of data,\" \"dive to greater depths,\" and \"operate in polar regions\" form a list of three verb phrases. Each item in the list must be separated by a comma, just as a comma separates the second and third items.</p><p>Choice B is incorrect because a colon cannot be used to separate items within a list. Choice C is incorrect because a comma is needed between the first two items. Choice D is incorrect because the list uses commas throughout and shouldn't switch to a semicolon between items.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A4.T8.easy"
+}

@@ -1,0 +1,519 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Information and Ideas",
+  "skill": "Command of Evidence",
+  "originals_count": 258,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Textual evidence (literary)",
+      "description": "Student must select the quotation drawn FROM a specified literary work (poem, novel, short story, play, essay) that best illustrates a stated claim about that work. The four options are all real-sounding quotations from the same source; only one matches the claim.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that the quotation must come from the primary literary work being described, not from an external commentator. A1 differs from A4 in that A1 always asks 'which quotation illustrates' a claim about a specific text; A4 asks for a finding/event that would support or weaken a generalizing claim.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Quote-illustrates-character-trait",
+          "description": "Stem introduces a literary work and asserts a claim about a named character's trait, feeling, attitude, or behavior; options are four quotations from the work. Correct choice depicts the trait through action, speech, or interior monologue.",
+          "core_skill_demand": "Match a paraphrased character description in the stem to the single quotation that enacts or explicitly states that description; reject quotations that touch the character but illustrate a different trait.",
+          "example_originals": ["2a5aa08a", "72c7dafd", "16a4a83b", "29cde5fa", "ed586475", "dc87adf4"],
+          "frequency": { "easy": 8, "medium": 7, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Claim names a concrete, single-axis trait (e.g., 'frightened of the sailor')",
+                "Correct quotation contains explicit emotional or descriptive language matching the claim",
+                "Distractors are clearly off-topic (describe setting, other characters, neutral actions)"
+              ],
+              "example_stem": "The narrator was frightened of the sailor — which quotation illustrates the claim?",
+              "example_ids": ["2a5aa08a", "72c7dafd", "0fc0a773_not_lit"]
+            },
+            "medium": {
+              "characteristics": [
+                "Claim mixes two ideas (e.g., 'admires ambition to the exclusion of all other qualities')",
+                "At least one distractor is partially relevant (mentions the trait but not its exclusivity/intensity)",
+                "Correct quotation requires inferring the trait from indirect language"
+              ],
+              "example_stem": "Joanna admires ambition in other people to the exclusion of all other qualities — which quotation illustrates this?",
+              "example_ids": ["ed586475", "29cde5fa", "16a4a83b"]
+            },
+            "hard": {
+              "characteristics": [
+                "Claim uses abstract, multi-clause descriptors (e.g., 'exaggerated sense of his own abilities', 'pleasant appearance contrasted with unpleasant attitude')",
+                "Multiple distractors superficially address the trait; correct answer requires inference from archaic or formal diction",
+                "Quotation excerpts are longer and more syntactically complex"
+              ],
+              "example_stem": "Trollope's portrayal of Dr. Proudie underscores the character's exaggerated sense of his own abilities — which quotation illustrates the claim?",
+              "example_ids": ["dc87adf4", "37e15265", "825dc766"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Source-attributed quotation options (all from the same literary work)",
+              "A descriptive claim about character/trait/attitude that one quotation enacts",
+              "Stem ending in 'Which quotation … most effectively illustrates the claim?'"
+            ],
+            "must_vary": [
+              "The literary work title, author, century, and genre",
+              "Character name and trait described",
+              "Surface diction of each option"
+            ],
+            "common_bugs": [
+              "Cloning a stem where the correct quotation is a literal restatement of the claim (kills inferential demand)",
+              "Distractors that are obvious filler (setting descriptions only) — easy regression",
+              "Switching to a quotation-about-the-text by a critic — drifts to A2"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Quote-illustrates-theme-or-mood",
+          "description": "Stem makes a thematic, atmospheric, or speaker-stance claim about a poem/short prose work (not tied to one character); options are quotations from the work, one of which embodies the theme/mood.",
+          "core_skill_demand": "Recognize which quotation enacts an abstract claim about the speaker's stance, the work's mood, or its central idea, distinguishing it from quotations that merely contain related imagery.",
+          "example_originals": ["0770b53d", "47f2cddd", "6f626ae5", "abbea24d", "1f3be847", "25290c8d", "9e5ce27c", "66fd248a", "783d1388", "20583752", "af9e3240"],
+          "frequency": { "easy": 7, "medium": 6, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Claim is a single concrete idea (e.g., 'predicts future success', 'feels protected by the mountain')",
+                "Correct quotation contains a near-paraphrase of the claim",
+                "Poem is short and the diction is direct"
+              ],
+              "example_stem": "The speaker predicts future success — which quotation illustrates this?",
+              "example_ids": ["6df33868", "abbea24d", "47f2cddd"]
+            },
+            "medium": {
+              "characteristics": [
+                "Claim is a compound mood/feeling ('contradictory feelings while experiencing spring', 'contrasting feelings about NYC and his home country')",
+                "Multiple distractors touch the topic but lack the compound element",
+                "Requires inferring from figurative language"
+              ],
+              "example_stem": "The poem conveys McKay's contrasting feelings about NYC and his home country — which quotation illustrates this?",
+              "example_ids": ["99fdf71c", "9e5ce27c", "2ef8e367"]
+            },
+            "hard": {
+              "characteristics": [
+                "Claim is highly abstract or philosophical (e.g., 'a society's spiritual well-being depends on its literary culture', 'ambivalence acknowledging merits while expressing displeasure')",
+                "Distractors all use the same elevated diction; correct answer requires parsing argument structure",
+                "Source is from an older or translated work (pre-1900, translations of Greek/Latin/Bengali)"
+              ],
+              "example_stem": "Martí argues that a society's spiritual well-being depends on the character of its literary culture — which quotation illustrates this?",
+              "example_ids": ["20583752", "66fd248a", "af9e3240", "783d1388"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Quotations all drawn from the same poem/short work",
+              "Thematic or mood-level claim (not character-trait specific)",
+              "Stem 'Which quotation … most effectively illustrates the claim?'"
+            ],
+            "must_vary": [
+              "Work title, author, year, genre (poem vs. essay vs. play)",
+              "Theme/mood described",
+              "Length and difficulty of each option's quotation"
+            ],
+            "common_bugs": [
+              "Confusing T2 with T1 — writing about a character makes it T1, not T2",
+              "Choosing distractors that share imagery but not stance, accidentally over-easy",
+              "Using a quotation that explicitly names the theme (gives away the answer)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "External-source quotation evidence",
+      "description": "Student must select a quotation from an external commentator (historian, critic, scholar, art journalist, article) that best supports a student/researcher claim made in the stimulus. The quotation is NOT from the primary subject but ABOUT it.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that quotations are by a third party (historian, critic) commenting ON a subject, not drawn from a primary literary text. A2 differs from A3 in that A2 quotations are from scholars or articles, while A3 quotations are from survey respondents/participants giving first-person testimony.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Historian/critic-quote-supports-claim",
+          "description": "Stem describes an artist, historical figure, or cultural artifact and presents a student or scholar claim about its significance, influences, or origins. Options are four quotations from a historian/critic/article; the correct one provides direct evidence for the specific claim.",
+          "core_skill_demand": "Identify which expert quotation gives DIRECT causal/evidentiary support for the stated claim, rejecting quotations that are merely topical, biographical, or about the subject's reception.",
+          "example_originals": ["0113152f", "08ff903e", "1d08c7ee", "7cbb9764", "b4cda84d", "33b1b285", "04cbeca3", "ca9dc00f", "94c54577", "f9c4bdab", "eaf22802", "e946a32e", "f38b40ac"],
+          "frequency": { "easy": 6, "medium": 7, "hard": 9 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Claim names a single concrete cause (e.g., 'inspired by his childhood observations of women in his family')",
+                "Correct quotation explicitly names the same cause",
+                "Distractors describe peer influence, unrelated biographical facts, or general acclaim"
+              ],
+              "example_stem": "Kelly's use of buttons was inspired by his childhood observations of women in his family — which historian's quotation supports this?",
+              "example_ids": ["0113152f", "08ff903e", "f38b40ac"]
+            },
+            "medium": {
+              "characteristics": [
+                "Claim has a structural element (e.g., 'inspired by the BBC', 'applied journalism techniques to fiction')",
+                "At least one distractor is about the related domain but doesn't connect the two elements",
+                "Quotations are 1-2 sentences with embedded clauses"
+              ],
+              "example_stem": "Tobar blends his areas of expertise by applying journalism techniques to his creation of works of fiction — which quotation supports this?",
+              "example_ids": ["1d08c7ee", "7cbb9764", "b4cda84d"]
+            },
+            "hard": {
+              "characteristics": [
+                "Claim involves a contested interpretation or a 'not X but Y' structure (e.g., 'remedied deficiency not by focusing on modern African art exclusively but by curating in dialogue')",
+                "All four quotations describe the subject's career; only one matches the specific claim's logical form",
+                "Quotations are dense academic prose with multiple clauses; distractors are designed to share keywords but differ in the relation among them"
+              ],
+              "example_stem": "Enwezor sought to remedy the deficiency not by focusing solely on modern African art but by curating exhibitions that placed African art in dialogue with other movements — which finding supports this?",
+              "example_ids": ["94c54577", "ca9dc00f", "04cbeca3", "33b1b285", "eaf22802"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An external claim (student/scholar/critic) about a primary subject",
+              "All four options are scholar/historian/article quotations",
+              "One quotation gives direct, specific evidence for the claim's content"
+            ],
+            "must_vary": [
+              "Subject (artist, era, cultural artifact)",
+              "Specific claim formulation",
+              "Distractor quotation topics (background, reception, related works)"
+            ],
+            "common_bugs": [
+              "Distractor that is merely topical and not evidentiary — easy regression",
+              "Correct answer that is too explicitly aligned (paraphrases the claim verbatim)",
+              "Cloning into A1 by accidentally using quotations from the primary work instead of from a critic"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Survey/anecdotal testimony evidence",
+      "description": "Student must select a first-person quotation from a survey respondent, interview participant, or anecdotal witness that best illustrates or supports a researcher/student claim about a population. The quotation reports lived experience, not third-party analysis.",
+      "boundary_with_other_aspects": "A3 differs from A2 in that the quotation is first-person testimony (e.g., a bike rider, a music streamer, a participant) rather than a scholar's analysis. A3 differs from A4 in that A3 always uses 'which response/quotation/statement from a participant', while A4 asks for a hypothetical finding.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Survey-respondent-quote-supports-claim",
+          "description": "Stem presents a researcher's conclusion or claim about a population's behavior/preferences and asks which survey/interview quotation best illustrates that claim. Options are four first-person testimonies.",
+          "core_skill_demand": "Map the abstract researcher claim onto the specific lived behavior or preference described in one of the testimonies, rejecting testimonies that describe related but distinct phenomena.",
+          "example_originals": ["08b28c1a", "ac7166f7", "7254379e", "29f5c8c2", "f2b3b53b", "d52fca9f", "7f293254"],
+          "frequency": { "easy": 4, "medium": 5, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Claim is one concrete behavior or feeling (e.g., 'people benefit from feeling frightened')",
+                "Correct testimony directly states the benefit (e.g., 'I felt accomplished and less stressed')",
+                "Distractors describe related but distinct experiences (laughter, gradual habituation)"
+              ],
+              "example_stem": "Researchers claim people may benefit from feeling frightened — which participant quotation illustrates this?",
+              "example_ids": ["08b28c1a", "ac7166f7"]
+            },
+            "medium": {
+              "characteristics": [
+                "Claim ties two variables ('rearranging layout disrupts plans and causes spontaneous purchases')",
+                "Correct testimony narrates the causal chain explicitly",
+                "Distractors describe other purchase motivations (coupon, selection, convenience)"
+              ],
+              "example_stem": "Trying to navigate a rearranged store may disrupt shopping plans and produce spontaneous purchases — which survey response supports this?",
+              "example_ids": ["f2b3b53b", "d52fca9f", "7254379e"]
+            },
+            "hard": {
+              "characteristics": [
+                "Claim describes a counter-intuitive or paradoxical outcome (e.g., 'individuality undermined by collaboration')",
+                "Multiple testimonies describe related collective dynamics; correct one isolates the paradox",
+                "Testimonies are longer with embedded clauses and qualifications"
+              ],
+              "example_stem": "Members of art collectives report individuality undermined by collaboration — which interview quotation illustrates this?",
+              "example_ids": ["7f293254", "29f5c8c2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Researcher/student/journalist claim about a population",
+              "All four options are first-person 'I/we' testimonies",
+              "One testimony provides direct lived evidence for the claim"
+            ],
+            "must_vary": [
+              "Population studied (shoppers, riders, museumgoers, etc.)",
+              "Domain (commerce, recreation, education, etc.)",
+              "Specific behavior described"
+            ],
+            "common_bugs": [
+              "Drafting testimonies that sound like scholar quotations — drifts to A2",
+              "Making the correct testimony a verbatim paraphrase of the claim — over-easy",
+              "Distractors that don't share thematic vocabulary — accidentally too easy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Hypothetical finding supports/weakens claim",
+      "description": "Student must select a hypothetical finding, statement, or experimental result that would most directly support, weaken, illustrate, or challenge a stated hypothesis, claim, or conclusion. Options are propositions ('Researchers discover that…', 'X is found to…'), not quotations.",
+      "boundary_with_other_aspects": "A4 differs from A2/A3 in that options are propositional findings rather than quotations attributable to someone. A4 differs from A5 in that the stem does not include a table or graph and does not require completing a sentence with a numeric value. A4 is the most populous aspect for Hard items.",
+      "types": [
+        {
+          "id": "T5",
+          "name": "Finding-supports-research-hypothesis",
+          "description": "Stem presents a researcher's hypothesis or claim (often introducing a study setup). Options are hypothetical findings; the correct one provides direct positive evidence for the specific causal claim, ruling out alternative explanations.",
+          "core_skill_demand": "Identify which of four plausible findings most directly confirms the claim's specific mechanism, excluding findings that confirm the topic generally but not the specific causal link or that are consistent with rival hypotheses.",
+          "example_originals": ["0021d326", "0fc0a773", "26ee16ba", "40578580", "5f6adeee", "85439572", "c384987b", "73c091d2", "7fdba7ad", "22e4d633", "67b59a67", "8af0c099", "9aa5efc4", "a9390104", "0198240a", "22e4d633", "31ad8024", "0d7f4966", "3d91c973", "44da37eb", "63e7799d", "8584f3ce", "860803dd", "c2c61e7d", "ec93e52c", "df91532e", "4a07be59", "5d122d45", "6536183b", "6d69ab93", "98d0a5d7", "a44bbd6b", "dd1757fd", "8391a002", "4987f743", "9c407117"],
+          "frequency": { "easy": 12, "medium": 11, "hard": 22 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Hypothesis is a single causal claim ('giraffes help each other care for newborns', 'olms come to surface to find food')",
+                "Correct finding is a direct observational confirmation of the behavior",
+                "Distractors invoke unrelated traits or general background facts"
+              ],
+              "example_stem": "Muller and Harris claim giraffes may help care for one another's newborns — which finding supports this?",
+              "example_ids": ["40578580", "5f6adeee", "0021d326", "c384987b"]
+            },
+            "medium": {
+              "characteristics": [
+                "Hypothesis involves a specific mechanism or scope ('something other than star-orbit calls helps midges locate frogs')",
+                "Correct finding requires controlling out an alternative (e.g., comparing two trap conditions)",
+                "Distractors describe related correlations that don't isolate the mechanism"
+              ],
+              "example_stem": "Bernal and de Silva conclude midges use carbon dioxide as an additional cue — which experimental finding supports this?",
+              "example_ids": ["60c6b64d", "67b59a67", "8af0c099", "a9390104", "22e4d633"]
+            },
+            "hard": {
+              "characteristics": [
+                "Hypothesis involves a multi-step or contested mechanism with named alternative explanations",
+                "Correct finding either rules out a specific named alternative or supplies the precise missing link",
+                "Distractors are highly plausible but support the wrong specific link (e.g., support the rival hypothesis, are consistent with both)",
+                "Stems are dense (>100 words) and use technical vocabulary (e.g., chemistry, evolutionary biology)"
+              ],
+              "example_stem": "Bergner and colleagues' explanation that warming caused embedded hydrogen pockets in 'Oumuamua's water ice to vent — which statement supports this?",
+              "example_ids": ["6d69ab93", "0198240a", "31ad8024", "44da37eb", "5d122d45", "a44bbd6b", "6536183b", "dd1757fd", "8391a002", "63e7799d", "4a07be59"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stimulus presents a researcher/scholar hypothesis with at least one named alternative or implicit alternative",
+              "Options are propositional findings ('X is observed', 'researchers find that…'), not quotations",
+              "Correct finding directly confirms the specific mechanism in the claim"
+            ],
+            "must_vary": [
+              "Domain (biology, astronomy, archaeology, social science, history)",
+              "Hypothesis structure (single cause vs. comparative vs. mechanism)",
+              "Distractor strategy (support rival, irrelevant correlation, partial support)"
+            ],
+            "common_bugs": [
+              "Distractor that supports the hypothesis equally well (kills uniqueness)",
+              "Correct finding that merely restates the hypothesis (over-easy)",
+              "For hard items: omitting the named alternative explanation, reducing the question to a medium",
+              "Edit-without-recompute: changing the hypothesis but not the distractors, breaking validity"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Finding-weakens-or-challenges-claim",
+          "description": "Stem presents a claim or hypothesis; options are findings, and the correct one most directly weakens, undermines, or challenges the claim. Tests negation logic.",
+          "core_skill_demand": "Identify which finding contradicts the claim's specific mechanism or undermines a necessary premise, distinguishing it from findings that support the claim or are merely irrelevant.",
+          "example_originals": ["2584bcfb", "73d457b6", "dc47c2ac", "d76ea360", "0045c234", "0d7f4966", "156ff681", "378c66d5", "8545ccfe", "8584f3ce", "9c407117", "a15b3219", "5b74feb9"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Not typically observed as 'Easy' — this type clusters at Medium and Hard",
+                "If easy: claim is simple and the correct finding directly negates one element"
+              ],
+              "example_stem": "(no easy exemplars in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Claim has one mechanism; correct finding shows the opposite outcome under the same conditions",
+                "Distractors include findings that support the claim (the most attractive wrong answers)"
+              ],
+              "example_stem": "Many ecologists assume domed nests give wider ranges — which finding from the study challenges this?",
+              "example_ids": ["dc47c2ac", "73d457b6", "d76ea360", "2584bcfb"]
+            },
+            "hard": {
+              "characteristics": [
+                "Claim has a multi-step mechanism; correct finding shows the conclusion fails even when premises hold (counterexample at the critical step)",
+                "Multiple distractors are findings that support the claim or weaken a different (unstated) claim",
+                "Stem distinguishes between an underlined explanation and a surrounding context — only the underlined claim must be weakened"
+              ],
+              "example_stem": "Some scholars argue the older Chinese/US fossils were of ctenophores (not jellyfish) — which statement weakens that claim?",
+              "example_ids": ["0d7f4966", "8584f3ce", "8545ccfe", "9c407117", "a15b3219", "5b74feb9", "156ff681", "378c66d5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem signals weaken/challenge/undermine explicitly",
+              "Options are propositional findings, not quotations",
+              "Correct finding contradicts a specific premise or outcome of the claim"
+            ],
+            "must_vary": [
+              "Domain and study design",
+              "Whether the target claim is the main one or an underlined subordinate one"
+            ],
+            "common_bugs": [
+              "Confusing weaken with support — the correct answer must move evidence against the claim",
+              "Distractor that is technically neutral but reads as weakening (ambiguous)",
+              "Cloning a 'weaken' stem but writing a 'support' correct answer — categorical error"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Data evidence (table/graph)",
+      "description": "Stimulus contains a table or graph (figure). Student must use specific values or relationships from the data to either (a) answer a direct read-out question, (b) complete a stated comparison/sentence, or (c) identify which choice best describes data that support a stated conclusion.",
+      "boundary_with_other_aspects": "A5 is the only aspect where the stimulus contains explicit numeric or graphical data the student must read. If the question references a researcher's hypothesis but the answer doesn't require pulling specific values from a table/graph, it belongs in A4. If the stem describes a hypothetical study WITHOUT a presented dataset, it belongs in A4 even if it mentions an experiment.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Direct-data-readout",
+          "description": "Stem asks a simple factual question whose answer is a single cell from the table or a single labeled bar/point on the graph (e.g., 'According to the table, in what year was X recorded?').",
+          "core_skill_demand": "Locate the row/column intersection or the labeled data point specified in the stem and report its value verbatim.",
+          "example_originals": ["0cf13ece", "b71861fc", "b8199d5a", "e18d75ea", "239d3535", "e37f79a7"],
+          "frequency": { "easy": 6, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stem asks 'According to the table/graph, what is X?' or 'what is the value of Y?'",
+                "Single look-up with no comparison or computation",
+                "Options are four distinct values directly from the table"
+              ],
+              "example_stem": "According to the table, in which year was the dolphin with ID FB43 recorded?",
+              "example_ids": ["0cf13ece", "b71861fc", "b8199d5a", "e18d75ea"]
+            },
+            "medium": { "characteristics": ["Rarely appears at Medium — readouts are signature Easy items"], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": ["Does not appear at Hard"], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem explicitly asks 'According to the table/graph…' (signals direct readout)",
+              "Table or graph contains the requested value",
+              "Options are four cell-values, only one being the true value"
+            ],
+            "must_vary": [
+              "Subject domain (geography, biology, sports, history)",
+              "Table structure (rows/columns or labeled bars)"
+            ],
+            "common_bugs": [
+              "Adding a comparison or compound clause turns it into T8/T9 — categorical type drift",
+              "Distractors that aren't all values from the table (kills realism)"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Data-completes-sentence-with-value",
+          "description": "Stimulus ends with a blanked-out sentence ('______ blank' or 'is ______'). Options are short noun phrases or values. Correct option is the value/entity that correctly completes the partial statement using the data.",
+          "core_skill_demand": "Read the unfinished claim in the stimulus, identify which row/column/bar satisfies the constraints implied by the surrounding text (e.g., 'native to North America AND under 60 feet'), and select the matching value.",
+          "example_originals": ["0014477f", "0147b080", "0b96fa93", "11c00ab9", "23b5cb59", "25b70215", "303bcc41", "38e79659", "5c73f0cc", "6177abc5", "75e07a4d", "81498c6a", "89f71526", "94c726fb", "b29c520a", "b470d853", "bc1b8a42", "c4bee178", "e37f79a7", "ede3f942", "f452410b", "faaf484f", "0ec15b5a", "7c21b4b5", "84136d69", "a0203977", "df8caadd", "cebfb2c6", "55df0275", "626a1308", "bc7b1a04", "3fc06a91", "54be8f96", "9452092c", "a16128e2"],
+          "frequency": { "easy": 22, "medium": 10, "hard": 9 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Constraint in stimulus selects exactly one row of a small table",
+                "Options are single values; one matches the selected row's value",
+                "No two-step reasoning needed"
+              ],
+              "example_stem": "The student wants a maple native to NA that doesn't exceed 60 feet — Which choice completes the text?",
+              "example_ids": ["0b96fa93", "0014477f", "11c00ab9", "23b5cb59", "c4bee178"]
+            },
+            "medium": {
+              "characteristics": [
+                "Constraint involves combining two columns (e.g., 'highest rate AND lowest cost')",
+                "One distractor satisfies one of the two constraints (partial-match trap)",
+                "Sentence is a comparison structure ('whereas X, in contrast Y was…')"
+              ],
+              "example_stem": "Indigenous Japanese workers showed the highest rate of X — Which choice completes the text?",
+              "example_ids": ["7c21b4b5", "84136d69", "0ec15b5a", "df8caadd", "a0203977"]
+            },
+            "hard": {
+              "characteristics": [
+                "Constraint involves a multi-row inference or counterintuitive interpretation across 4-5 columns",
+                "Options are complete clauses (not simple values) requiring evaluation of which clause is data-supported",
+                "Stimulus contains a contested or technical claim that the data must adjudicate"
+              ],
+              "example_stem": "Comparing the Navajo-Churro to the mouflon and Merino, the selection process resulted in inner fiber that, at its softest… — Which choice completes the text?",
+              "example_ids": ["4411e15b", "55df0275", "54be8f96", "9452092c", "a16128e2", "626a1308", "3fc06a91"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stimulus ends with a blank ('______') or stops mid-sentence",
+              "Options can be plugged grammatically into the blank",
+              "Exactly one option uses correct values from the data"
+            ],
+            "must_vary": [
+              "Table topic",
+              "Number of columns (constraint complexity)",
+              "Whether options are values or clauses"
+            ],
+            "common_bugs": [
+              "Distractor values that don't appear in the table at all (loses realism)",
+              "Edit-without-recompute: changing the blank's constraint but not regenerating distractors",
+              "Replacing the blank with an explicit question turns this into T7 (categorical drift)"
+            ]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Best-describes-data-supporting-conclusion",
+          "description": "Stimulus presents a researcher's conclusion or claim. Stem asks 'Which choice best describes data from the table/graph that support [conclusion]?' Options are sentence-length descriptions of data patterns; only one accurately uses the data AND substantively supports the conclusion.",
+          "core_skill_demand": "Cross-check each option against the data for factual accuracy AND against the conclusion for logical relevance; the correct option satisfies both, while distractors fail one (true but irrelevant, or relevant but factually wrong).",
+          "example_originals": ["0b634641", "145da981", "ab94d40a", "1db1a9a6", "224428ac", "2df730d0", "5d453dcc", "6af80ff3", "742fd8ba", "7edfb2c5", "94978129", "ccf414c9", "b30a2613", "d5b9ed0d", "d83c3d54", "e99a38ec", "010fa3f0", "014b3394", "02848335", "040583a5", "24c1b7e4", "2c06139b", "3233c162", "3430be35", "53c6c179", "56f477fb", "627d93e3", "645fd11a", "6a6bbac3", "7a1877be", "7dab4d5d", "82bdf676", "a7c52fa4", "b2e54b50", "be19faa1", "ccb1ab92", "d102706f", "d5da74be", "da438257", "df37c087", "f71802d6", "df9c5a1d", "cca6fae9"],
+          "frequency": { "easy": 6, "medium": 14, "hard": 22 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Conclusion is one comparison ('drawings contained more mammals than other groups')",
+                "Correct option restates a single bar comparison directly visible in the graph",
+                "Distractors are either factually wrong about the data or describe unrelated subsets"
+              ],
+              "example_stem": "Researchers conclude UK schoolchildren are more familiar with mammals — Which choice describes data that support this?",
+              "example_ids": ["0b634641", "145da981", "ab94d40a"]
+            },
+            "medium": {
+              "characteristics": [
+                "Conclusion involves two variables varying together (e.g., 'plants treated with X had greater yield')",
+                "Correct option uses one defining comparison across all relevant rows/years",
+                "Distractors cherry-pick one row that doesn't generalize, or invert the direction"
+              ],
+              "example_stem": "Researchers conclude nitrogen fertilizer reliably increases yield — which choice describes data supporting this?",
+              "example_ids": ["1db1a9a6", "224428ac", "742fd8ba", "94978129", "d5b9ed0d", "d83c3d54"]
+            },
+            "hard": {
+              "characteristics": [
+                "Conclusion contains multiple sub-claims or a contrast (e.g., 'similarly low scores from related methods, but divergent estimates from other methods')",
+                "Correct option must accurately characterize a multi-row pattern AND tie it to all sub-claims",
+                "Multiple distractors are factually accurate descriptions of the data but support a DIFFERENT conclusion than the one in the stem",
+                "Tables/graphs have ≥4 rows × ≥3 columns or multi-series graphs"
+              ],
+              "example_stem": "Barrett & Rayfield suggest muscular-and-skeletal modeling estimates cluster while other methods diverge — Which choice describes data supporting this?",
+              "example_ids": ["d102706f", "a7c52fa4", "2c06139b", "010fa3f0", "627d93e3", "82bdf676", "df9c5a1d", "f71802d6", "b2e54b50", "be19faa1", "ccb1ab92", "d5da74be", "7a1877be", "56f477fb", "24c1b7e4", "3233c162", "cca6fae9", "7dab4d5d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stimulus contains a researcher's conclusion/claim/hypothesis",
+              "Stimulus contains a complete table or graph with explicit values",
+              "Stem 'Which choice best describes data from the table/graph that support…'",
+              "All four options are factual-pattern descriptions; only one is both accurate AND supports the conclusion"
+            ],
+            "must_vary": [
+              "Domain",
+              "Data dimensionality (2-col table vs multi-series graph)",
+              "Distractor strategy mix (factually wrong vs. irrelevant-but-accurate vs. inverted-direction)"
+            ],
+            "common_bugs": [
+              "Distractor accidentally also supports the conclusion (kills uniqueness)",
+              "Correct option that is just a restatement of one cell value, not a pattern",
+              "Edit-without-recompute: changing the conclusion but not recomputing which distractors now also support it",
+              "For Hard: simplifying multi-row pattern into one bar comparison silently demotes to Medium"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Aspect–difficulty distribution: Easy items cluster heavily in A1/A2/A5 (literary illustration and data lookup/completion); Hard items cluster in A4 (hypothesis support/weaken) and A5.T9 (multi-clause data-supports-conclusion). The clearest signal for Hard is (a) presence of a named alternative explanation in the stimulus, or (b) multi-sub-claim conclusions that demand multi-cell pattern recognition. Stimuli at Hard typically exceed 100 words and include technical vocabulary. Every Hard A4 item contains either a 'rule out alternative' move or a 'fill in the missing causal link' move. The stem signal words ('illustrates' for A1/A2 illustration, 'supports' for A2 evidence and A4 support, 'weakens/challenges/undermines' for A4 T6, 'best describes data' for A5 T9) reliably predict aspect/type. A clone that drops the data figure for an A5 item but keeps the stem wording produces a categorical aspect-drift (A5→A4). A clone that switches a critic quotation for a participant-style 'I' testimony produces an A2→A3 drift."
+}

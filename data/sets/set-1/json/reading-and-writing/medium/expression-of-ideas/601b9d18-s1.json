@@ -1,0 +1,25 @@
+{
+  "questionId": "601b9d18-s1",
+  "originalId": "601b9d18",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>Several members of the city planning commission have pushed back against proposals to livestream zoning hearings, worried that participants would play to the camera and shift the deliberations toward soundbites. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the commissioners fear that most residents would never watch the full hearings, viewing only brief excerpts that could be edited to distort the discussion.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For example,</p>"},
+    {"id": "b", "content": "<p>Furthermore,</p>"},
+    {"id": "c", "content": "<p>However,</p>"},
+    {"id": "d", "content": "<p>By comparison,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Furthermore\" logically signals that the claim in this sentence—that commissioners worry viewers would watch only brief, edited excerpts—adds a second, independent concern to the one raised in the previous sentence about participants playing to the camera.</p><p>Choice A is incorrect because \"for example\" illogically signals that this sentence exemplifies the previous concern about participants performing for cameras, when in fact it raises a distinct concern about audiences. Choice C is incorrect because \"however\" illogically signals that this concern contrasts with the previous one, when both concerns point in the same direction. Choice D is incorrect because \"by comparison\" illogically signals that the two concerns are being compared along a shared measurable dimension, when the sentence simply adds another worry.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

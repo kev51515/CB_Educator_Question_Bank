@@ -1,0 +1,25 @@
+{
+  "questionId": "be44fea0-s1",
+  "originalId": "be44fea0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>While studying lionfish, a striped predatory species originally from the Indo-Pacific, University of Florida researchers wondered whether the rapid spread of the fish across the Caribbean reflected unusually voracious feeding behavior. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they discovered that lionfish are surprisingly patient hunters that often spend long stretches hovering nearly motionless along the reef, waiting for prey to drift within range.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Therefore,</p>"},
+    {"id": "b", "content": "<p>Instead,</p>"},
+    {"id": "c", "content": "<p>For example,</p>"},
+    {"id": "d", "content": "<p>In other words,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Instead\" logically signals that the information about the researchers' discovery in this sentence—that lionfish are patient hunters that hover motionless while waiting for prey—contradicts their initial hypothesis about voracious feeding behavior described in the previous sentence.</p><p>Choice A is incorrect because \"therefore\" illogically signals that the discovery is a result of the initial hypothesis, when it actually contradicts that hypothesis. Choice C is incorrect because \"for example\" illogically signals that the discovery exemplifies the initial hypothesis, when it instead presents a contrary finding. Choice D is incorrect because \"in other words\" illogically signals that the discovery is merely a restatement of the initial hypothesis, when it actually overturns it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "948087f2-s1",
+  "originalId": "948087f2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>y</em> \u2264 <em>x</em> \u2212 1<br><em>y</em> \u2265 \u22122</p><p>Which of the following ordered pairs (<em>x</em>, <em>y</em>) satisfies the system of inequalities above?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(\u22123, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, \u22123)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(4, 1)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(1, \u22123)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting (4, 1): is 1 \u2264 4 \u2212 1 = 3? Yes. Is 1 \u2265 \u22122? Yes. So (4, 1) satisfies both inequalities.</p><p>Choice A fails the first inequality. Choices B and D fail the second.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium"
+}

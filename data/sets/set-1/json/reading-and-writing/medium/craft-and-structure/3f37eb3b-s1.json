@@ -1,0 +1,25 @@
+{
+  "questionId": "3f37eb3b-s1",
+  "originalId": "3f37eb3b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>Readers sometimes assess an article more favorably when they recognize the author's name, but from a strictly logical perspective, an author's reputation is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: it has no direct bearing on whether the argument that the article advances is actually sound.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>incoherent</p>"},
+    {"id": "b", "content": "<p>immaterial</p>"},
+    {"id": "c", "content": "<p>indisputable</p>"},
+    {"id": "d", "content": "<p>indirect</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Immaterial\" means having no relevance to the matter at hand. The text states that the author's reputation \"has no direct bearing on whether the argument...is actually sound,\" which is exactly what immaterial means.</p><p>Choice A is incorrect because \"incoherent\" would mean the reputation itself lacks logical consistency, not that it is unrelated to the argument's soundness. Choice C is incorrect because \"indisputable\" means beyond question, which contradicts the text's claim that reputation should not influence assessment. Choice D is incorrect because \"indirect\" suggests an oblique connection still exists, but the text says there is no bearing at all.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

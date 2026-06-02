@@ -1,0 +1,39 @@
+{
+  "questionId": "7355b9d9-s1",
+  "originalId": "7355b9d9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <i>m</i> &minus; <i>y</i> is a factor of the expression &minus;<i>y</i>&sup2; + (1/37)<i>n</i><i>m</i>&sup2;, where <i>n</i> and <i>m</i> are constants and <i>m</i> &gt; 0, what is the value of <i>n</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>37</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/37</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;1/37</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;37</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>If <i>m</i> &minus; <i>y</i> is a factor of the polynomial, then substituting <i>y</i> = <i>m</i> makes the expression equal to 0. This gives &minus;<i>m</i>&sup2; + (1/37)<i>n</i><i>m</i>&sup2; = 0. Factoring out <i>m</i>&sup2; and using <i>m</i> &gt; 0 gives &minus;1 + <i>n</i>/37 = 0, so <i>n</i> = 37. The other choices come from sign errors or omitting the factor of 37.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A4.T9.hard"
+}

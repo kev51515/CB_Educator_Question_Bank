@@ -1,0 +1,25 @@
+{
+  "questionId": "a3e87535-s1",
+  "originalId": "a3e87535",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Edwidge Danticat&rsquo;s 2007 memoir <em>Brother, I&rsquo;m Dying</em>, an account of the deaths of her father and her uncle Joseph <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> offers readers a personal entry point into the broader history of Haitian migration to the United States during the twentieth century.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Dantica,</p>"},
+    {"id": "b", "content": "<p>Dantica and</p>"},
+    {"id": "c", "content": "<p>Dantica, and</p>"},
+    {"id": "d", "content": "<p>Dantica</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The comma after \"Dantica\" pairs with the comma after \"<em>Dying</em>\" to enclose the supplementary appositive \"an account of the deaths of her father and her uncle Joseph Dantica.\" Removing the insertion leaves a grammatical sentence.</p><p>Choice B is incorrect because it fails to close the supplementary element and inserts a conjunction that does not belong. Choice C is incorrect because adding the conjunction \"and\" treats the appositive as part of a coordinated structure rather than a parenthetical insertion. Choice D is incorrect because omitting punctuation fails to close the supplementary element opened by the comma after \"<em>Dying</em>.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "b8e13a74-s1",
+  "originalId": "b8e13a74",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Beatrice Wood and Henrietta Reiss were among the 200 women artists who participated in the 1917 Society of Independent Artists exhibition, a landmark New York City show that welcomed any artist willing to pay a small fee. Though dismissed at the time, an unsigned porcelain urinal submitted by Marcel Duchamp&mdash;one of several works that drew confused reactions from visitors&mdash;<span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the modernist canon more than a century later.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>were entering</p>"},
+    {"id": "b", "content": "<p>has entered</p>"},
+    {"id": "c", "content": "<p>have entered</p>"},
+    {"id": "d", "content": "<p>enter</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"has entered\" agrees in number with the singular subject \"an unsigned porcelain urinal.\"</p><p>Choice A is incorrect because the plural verb \"were entering\" doesn&rsquo;t agree in number with the singular subject. Choice C is incorrect because the plural verb \"have entered\" doesn&rsquo;t agree in number with the singular subject. Choice D is incorrect because the plural verb \"enter\" doesn&rsquo;t agree in number with the singular subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

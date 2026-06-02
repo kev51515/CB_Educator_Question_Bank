@@ -1,0 +1,25 @@
+{
+  "questionId": "7c3f0145-s1",
+  "originalId": "7c3f0145",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T9.medium",
+  "stimulus": "<p>In a 2021 review of 320 case histories, clinicians observed a broad pattern of stimulus-driven plasticity in which musicians showed faster cross-modal recruitment—<span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the recruitment of brain regions ordinarily devoted to one sense in the processing of input from another. String players (e.g., violinists) showed the largest effect; vocalists (e.g., choristers), meanwhile, showed the smallest.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>in addition,</p>"},
+    {"id": "b", "content": "<p>that is,</p>"},
+    {"id": "c", "content": "<p>likewise,</p>"},
+    {"id": "d", "content": "<p>for example,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"That is\" logically signals that the information that follows in the sentence clarifies the term \"cross-modal recruitment\" used in the previous discussion of the clinicians' findings.</p><p>Choice A is incorrect because \"in addition\" illogically signals that the information that follows merely adds a new fact to the findings, when in fact it defines a term introduced earlier in the sentence. Choice C is incorrect because \"likewise\" illogically signals that the information that follows is parallel to the findings, when it actually clarifies a term used in the description of those findings. Choice D is incorrect because \"for example\" illogically signals that the information provides a specific example of the findings, when it instead defines the technical term introduced earlier in the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

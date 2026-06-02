@@ -1,0 +1,22 @@
+[
+  {"id": "4becad44-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard", "verdict": "ok"},
+  {"id": "a71b1bc1-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard", "verdict": "ok"},
+  {"id": "ff501705-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "979c6ebc-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T12.hard", "verdict": "ok"},
+  {"id": "73b3b7d8-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard", "verdict": "ok"},
+  {"id": "b5f62071-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "adb0c96c-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard", "verdict": "ok"},
+  {"id": "f75bd744-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "75012ee7-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T12.hard", "verdict": "ok"},
+  {"id": "7866a908-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard", "verdict": "ok"},
+  {"id": "1e0a46e4-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard", "verdict": "ok"},
+  {"id": "59352689-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "570b5a5d-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "3f5a3602-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.hard", "verdict": "type_drift", "detail": "T7 requires one side of the question to be graphical (matching a graph to a system or vice versa). Clone presents two pairs of points (purely algebraic) and asks for the solution (x,y) directly—this is A1.T2 behavior (solve the system), not T7 (match system to graph)."},
+  {"id": "567ac7ab-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard", "verdict": "ok"},
+  {"id": "f718c9cf-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard", "verdict": "ok"},
+  {"id": "d7bf55e1-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard", "verdict": "ok"},
+  {"id": "edc1b7b7-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "fb5e7f59-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.hard", "verdict": "ok"},
+  {"id": "70feb725-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard", "verdict": "ok"}
+]

@@ -1,0 +1,20 @@
+{
+  "questionId": "dba6a25a-s1",
+  "originalId": "dba6a25a",
+  "templateId": "right-triangles-and-trigonometry.misc.hard",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In triangle CDE, point P lies on side CD and point Q lies on side CE so that segment PQ is parallel to side DE. The lengths are CP = 9, PD = 12, and PQ = 15. What is the length of side DE?</p>",
+  "answerOptions": [],
+  "keys": ["35"],
+  "rationale": "<p>Because PQ is parallel to DE, triangle CPQ is similar to triangle CDE by the basic proportionality (AA) theorem. The ratio of corresponding sides equals CP/CD = 9/(9 + 12) = 9/21 = 3/7. Therefore PQ/DE = 3/7, so DE = PQ &middot; 7/3 = 15 &middot; 7/3 = 35.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z"
+}

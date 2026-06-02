@@ -1,0 +1,25 @@
+{
+  "questionId": "44076c7d-s1",
+  "originalId": "44076c7d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A6.T1.medium",
+  "type": "mcq",
+  "stimulus": "<table border=\"1\"><thead><tr><th>x</th><th>f(x)</th></tr></thead><tbody><tr><td>−1</td><td>8</td></tr><tr><td>0</td><td>10</td></tr><tr><td>1</td><td>14</td></tr></tbody></table>",
+  "stem": "<p>For the quadratic function f, the table shows three values of x and their corresponding values of f(x). Which equation defines f?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>f(x) = x² + 3x + 10</p>"},
+    {"id": "b", "content": "<p>f(x) = 3x² + x + 10</p>"},
+    {"id": "c", "content": "<p>f(x) = x² + x + 10</p>"},
+    {"id": "d", "content": "<p>f(x) = 2x² + x + 10</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. Since f(0) = 10, the constant term is 10. Then f(x) = ax² + bx + 10 for some a, b. f(−1) = a − b + 10 = 8, so a − b = −2. f(1) = a + b + 10 = 14, so a + b = 4. Adding these two equations: 2a = 2, so a = 1. Then b = 3. Therefore f(x) = x² + 3x + 10. Verification: f(−1) = 1 − 3 + 10 = 8 ✓ and f(1) = 1 + 3 + 10 = 14 ✓. The other choices fail one or more table values.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

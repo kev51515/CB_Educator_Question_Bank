@@ -1,0 +1,25 @@
+{
+  "questionId": "b0a525be-s1",
+  "originalId": "b0a525be",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Cherokee weaver Shan Goshorn&rsquo;s basket <em>Educational Genocide</em> is woven from strips of paper printed with archival photographs of nineteenth-century boarding schools; each strip carries a different image of a different student. The arrangement of the strips, according to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> embodies her conviction that &ldquo;every face deserves to be remembered, name by name.&rdquo;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Goshorn&mdash;</p>"},
+    {"id": "b", "content": "<p>Goshorn,</p>"},
+    {"id": "c", "content": "<p>Goshorn</p>"},
+    {"id": "d", "content": "<p>Goshorn:</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The phrase \"according to Goshorn\" is a parenthetical aside interrupting the sentence and must be enclosed in matched punctuation. Since a comma already precedes \"according,\" the closing mark must also be a comma.</p><p>Choice A is incorrect because a dash cannot pair with an opening comma to enclose a parenthetical aside. Choice C is incorrect because no punctuation fails to close the aside opened by the comma. Choice D is incorrect because \"The arrangement of the strips, according to Goshorn\" is not an independent clause and cannot precede a colon.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

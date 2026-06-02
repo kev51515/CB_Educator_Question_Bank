@@ -1,0 +1,39 @@
+{
+  "questionId": "1724dac2-s1",
+  "originalId": "1724dac2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "stimulus": "<p>A nowcast in meteorology attempts to describe weather conditions over the next zero to six ______ its forecasts are therefore much more immediate than those of a short-range forecast, which attempts to describe weather conditions for the following one to three days.</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>hours;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>hours and</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>hours,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>hours</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A semicolon properly joins the two independent clauses (\"A nowcast...hours\" and \"its forecasts...days\").</p><p>Choice B creates a run-on; \"and\" without a preceding comma can't join two independent clauses here. Choice C creates a comma splice. Choice D creates a run-on with no punctuation or conjunction.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A1.T1.easy"
+}

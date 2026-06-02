@@ -1,0 +1,25 @@
+{
+  "questionId": "80fd9454-s1",
+  "originalId": "80fd9454",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Table: Percentage of Available Eggs Eaten by Invasive Bullfrog Tadpoles. Columns: amphibian species (common name), percentage of eggs eaten, native to Pacific Northwest, produces alkaloid X. Rows: Pacific tree frog—2%, yes, no; American bullfrog—88%, no, yes; Cascades frog—9%, yes, no; northern red-legged frog—12%, yes, no; western toad—2%, yes, no.]</p>\n<p>Native to the eastern United States, the American bullfrog was introduced to the Pacific Northwest in the early twentieth century. In recent decades, bullfrog tadpoles in this region have been shown to consume eggs of their own species. A 2024 study showed that when presented with bullfrog eggs alongside eggs of native Pacific Northwest amphibians, bullfrog tadpoles disproportionately consumed eggs of their own species. This behavior has been attributed to the tadpoles&rsquo; attraction to alkaloid X, a chemical produced by the eggs of American bullfrogs but not by the eggs of native amphibians. However, using data from this study, a student wishes to argue that the presence of alkaloid X does not entirely explain the bullfrog tadpoles&rsquo; preference for certain eggs over others.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the student&rsquo;s argument?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The tadpoles consumed a lower percentage of the Cascades frog eggs than they did of the eggs of their own species.</p>"},
+    {"id": "b", "content": "<p>The tadpoles consumed the same percentage of Pacific tree frog eggs as they did of western toad eggs.</p>"},
+    {"id": "c", "content": "<p>The tadpoles consumed a higher percentage of the northern red-legged frog eggs than they did of the eggs of the Pacific tree frog.</p>"},
+    {"id": "d", "content": "<p>The tadpoles left a certain percentage of the eggs of each of the five species unharmed, thus ultimately allowing them to hatch.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it isolates two species&mdash;the northern red-legged frog (12% eaten) and the Pacific tree frog (2% eaten)&mdash;that differ in how often their eggs were consumed but that share the property of <em>not</em> producing alkaloid X. Because alkaloid X cannot account for this difference, the data support the student&rsquo;s argument that the presence or absence of alkaloid X does not entirely explain the tadpoles&rsquo; egg preferences.</p><p>Choice A is incorrect because the comparison between bullfrog eggs (which produce alkaloid X) and Cascades frog eggs (which do not) is precisely the comparison alkaloid X can explain, so the data are consistent with the standard hypothesis rather than weakening it. Choice B is incorrect because two species with equal consumption percentages neither show alkaloid X to be insufficient nor reveal any differentiation that requires a second factor. Choice D is incorrect because some unharmed eggs are irrelevant to the question of <em>preferences</em> across species.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

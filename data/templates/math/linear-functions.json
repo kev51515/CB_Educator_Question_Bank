@@ -1,0 +1,757 @@
+{
+  "section": "Math",
+  "domain": "Algebra",
+  "skill": "Linear functions",
+  "originals_count": 157,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Evaluate / compute from equation",
+      "description": "Student is given a linear function (in equation form, or implied by a single context) and must produce a numeric output: f(c), the x that makes f(x)=k, an intercept, a slope, or an unknown parameter. The cognitive operation is procedural arithmetic on a known linear form.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 outputs a number, while A2 outputs a verbal interpretation of what a constant or coefficient means; differs from A3 in that the equation is already provided rather than constructed; differs from A4 in that the linear object is supplied as an equation, not a graph or stand-alone data table.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Evaluate f(c) at a given input",
+          "description": "An explicit linear function f(x)=ax+b (or a context-equation like d=16t) is given; the student substitutes a specified input value and computes the output.",
+          "core_skill_demand": "Substitute a numeric value into a linear expression and evaluate using order of operations.",
+          "example_originals": ["13909d78", "361f97c7", "2e379126", "4e97f862", "70d9516e", "88e13c8c", "2f34cd1c", "c81f1c2f"],
+          "frequency": { "easy": 22, "medium": 4, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Small positive integer coefficients and inputs (single-digit a, single-digit b, single-digit input)",
+                "Equation is presented in standard f(x)=ax+b or simple context (d=rt, c=…); no rearrangement needed before substituting",
+                "Output is a small positive integer obtainable in one or two arithmetic steps"
+              ],
+              "example_stem": "The function f is defined by f(x)=4x-3. What is the value of f(10)?",
+              "example_ids": ["361f97c7", "13909d78", "4e97f862", "f79fffba", "a73a5c22"]
+            },
+            "medium": {
+              "characteristics": [
+                "Coefficients are decimals or fractions (e.g., -0.16x, 9/7 x + 8/7) or input is multi-digit",
+                "Context constrains the input domain (e.g., 220 ≤ x ≤ 360) so the student must locate the correct value before substituting",
+                "Multi-digit arithmetic or a negative coefficient that risks sign errors"
+              ],
+              "example_stem": "f(x)=55.20-0.16x gives surface water temperature on day x. What is f(326)?",
+              "example_ids": ["2f34cd1c", "c81f1c2f", "441558e7", "271f7e3f"]
+            },
+            "hard": {
+              "characteristics": [
+                "Not represented at hard in this bank: pure substitution is below SAT-hard difficulty."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Linear form f(x)=ax+b (or equivalent context-equation) supplied directly",
+              "A single numeric input value is given for the student to substitute",
+              "Answer is a single numeric output (no equation construction or interpretation)"
+            ],
+            "must_vary": [
+              "Function name (f, g, h, p, …) and variable letter",
+              "Sign and magnitude of slope and intercept",
+              "Whether the wrapper is bare equation or a thin one-sentence context",
+              "MCQ distractors corresponding to: forgot to multiply, used wrong sign, evaluated f(b) instead of f(input)"
+            ],
+            "common_bugs": [
+              "Cloner adds a parameter to be solved first — that turns T1 into T4 (difficulty drift up)",
+              "Cloner replaces evaluation with interpretation — that drifts to A2.T1 (categorical error)",
+              "Distractors are random nearby integers rather than mirrors of substitution mistakes"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Solve f(x)=k for x",
+          "description": "An explicit linear function is given along with a target output value k; the student solves the resulting linear equation in one variable for x.",
+          "core_skill_demand": "Set the linear expression equal to the target value and solve a one- or two-step linear equation in one variable.",
+          "example_originals": ["0b332f00", "0d391910", "73b5f330", "bd9eb2b5", "4f89e4d4", "346d5c2e", "0cadb20e", "1f0966db"],
+          "frequency": { "easy": 9, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Function is of the form ax or ax+b with single-digit integer coefficients",
+                "Solving requires at most two inverse operations",
+                "Solution is a positive integer"
+              ],
+              "example_stem": "f(x)=5x+8. For what value of x does f(x)=58?",
+              "example_ids": ["73b5f330", "0d391910", "bd9eb2b5", "aeaba0b6"]
+            },
+            "medium": {
+              "characteristics": [
+                "Function has a fractional coefficient or constant requiring a clearing step (e.g., (x+15)/5, 9x/7 + 8/7)",
+                "Or function is wrapped in distributed parentheses requiring expansion first",
+                "Solution may be a multi-digit integer or simple decimal/fraction"
+              ],
+              "example_stem": "f(x)=(x+15)/5. f(a)=10. What is the value of a?",
+              "example_ids": ["0cadb20e", "1f0966db", "c8fb6bcb"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at hard in this bank for the pure solve-for-x form."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Linear function is supplied explicitly",
+              "A target output value k is given",
+              "Student must solve for the input x"
+            ],
+            "must_vary": [
+              "Coefficient/intercept values",
+              "Whether equation is bare or wrapped in light context (popsicles, perimeter, etc.)",
+              "Whether k > b (positive solution) or k < b (potentially negative)"
+            ],
+            "common_bugs": [
+              "Cloner produces a non-integer solution where MCQ distractors expect integers (answer leaks)",
+              "Cloner inverts the operations order, raising it to T4 difficulty",
+              "Cloner uses f(c) instead of f(x)=k, drifting to T1 (categorical type drift)"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Read slope or intercept from equation",
+          "description": "An explicit linear function f(x)=ax+b is given; the student names the slope, the y-intercept, or the x-intercept of its graph.",
+          "core_skill_demand": "Recognize that in f(x)=ax+b the slope is a and the y-intercept is (0,b); for x-intercept, solve ax+b=0.",
+          "example_originals": ["aad7e1b9", "e470e19d", "a91a2b75", "548a4929", "3ce92ce8", "17d80dc3"],
+          "frequency": { "easy": 1, "medium": 5, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Question asks for y-intercept directly visible as the constant term",
+                "Coefficients are single-digit integers or simple fractions"
+              ],
+              "example_stem": "f(x)=(1/10)x-2. What is the y-intercept of the graph of y=f(x)?",
+              "example_ids": ["aad7e1b9"]
+            },
+            "medium": {
+              "characteristics": [
+                "Question asks for x-intercept (requires solving ax+b=0)",
+                "Or asks for a combined quantity like a+b given two intercepts",
+                "Or asks for slope of a parallel line (one extra concept)",
+                "Coefficients may be larger or negative"
+              ],
+              "example_stem": "h(x)=4x+28 has x-intercept (a,0) and y-intercept (0,b). What is a+b?",
+              "example_ids": ["e470e19d", "548a4929", "17d80dc3", "3ce92ce8", "a91a2b75"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at hard in this bank as a standalone type."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Function supplied in explicit form (or solvable for slope-intercept form)",
+              "Question is a single intercept/slope read, not a contextual interpretation"
+            ],
+            "must_vary": [
+              "Whether the asked quantity is slope, y-intercept, x-intercept, or combination",
+              "Sign of intercept (positive vs negative)"
+            ],
+            "common_bugs": [
+              "Cloner writes the function in non-standard form without rearrangement cue, accidentally raising difficulty",
+              "Cloner drifts to A2.T3 by asking 'what does the intercept represent in context' instead of its value (categorical drift)",
+              "x-intercept clone allows non-integer answer that doesn't match MCQ distractor structure"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Solve for an unknown parameter",
+          "description": "A linear function contains one or two unknown constants (a, b, c, k, m); the student is given a condition such as f(input)=value or two such conditions, then must solve for the parameter (or for a follow-up quantity computed from it).",
+          "core_skill_demand": "Substitute the known input/output pair(s) into the parameterized linear form, generate a one- or two-equation system in the unknown parameter(s), and solve.",
+          "example_originals": ["1480dd5c", "5907e072", "0d5495a6", "c01f4a95", "e3cf671f", "0b0fa68b", "50f4cb9c", "a5882327", "63d03c0b", "b988eeec", "0bd33265"],
+          "frequency": { "easy": 3, "medium": 5, "hard": 11 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Single unknown parameter (usually b in ax+b) with a single direct condition like f(0)=k or f(small integer)=k",
+                "One substitution and one inverse operation yields the parameter",
+                "Numbers are small positive integers"
+              ],
+              "example_stem": "f(x)=4x+b. f(7)=28. What is b?",
+              "example_ids": ["1480dd5c", "5907e072", "a1696f3e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Parameter is the slope m or appears inside a sub-expression (e.g., k(x-1)) so substitution leaves a multi-step solve",
+                "Or the question asks not for the parameter itself but for a derived value like f(another input)",
+                "Two parameters with two conditions may be needed"
+              ],
+              "example_stem": "f(x)=4x+k(x-1), f(5)=32. What is f(10)?",
+              "example_ids": ["0d5495a6", "c01f4a95", "e3cf671f", "8a6de407", "4fe4fd7c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Parameter is embedded in a transformed argument (f(cx)=…) or a temperature-conversion formula requiring full rearrangement",
+                "Conditions involve symbolic constants (e.g., g(c+7)=c/4) so the answer is an expression in another variable",
+                "Or the question chains operations: derive parameter, then derive another quantity (e.g., a-b, x-intercept of f+g, change in F per Δkelvin)",
+                "Requires multi-step algebraic manipulation before any substitution; multiple rearrangement steps before isolating the unknown"
+              ],
+              "example_stem": "f(cx)=x-8 for all x, c is a positive constant, f(2)=35. What is c?",
+              "example_ids": ["0b0fa68b", "50f4cb9c", "a5882327", "b988eeec", "63d03c0b", "e25f0807", "0bd33265"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "At least one unknown constant inside the linear form",
+              "Sufficient (and only sufficient) information to determine that constant",
+              "Final answer is a numeric value (or, at hard, a symbolic expression in another stated constant)"
+            ],
+            "must_vary": [
+              "Which letter is the unknown (a, b, c, k, m)",
+              "Whether the unknown is the slope, the intercept, or inside a sub-expression",
+              "Whether the answer asked for is the parameter itself or a derived quantity"
+            ],
+            "common_bugs": [
+              "Cloner over-constrains the problem (two parameters, one condition) producing an unsolvable item",
+              "Cloner removes the embedded sub-expression at hard tier, collapsing difficulty to easy",
+              "Cloner replaces f(input) condition with a graph reference, drifting to A4 (categorical error)"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Combine multiple linear functions",
+          "description": "Two linear functions are given (e.g., f and g, or f from a table); the student must evaluate a composite expression such as 4f(2)-g(2) or read tabular f-values to find a missing one.",
+          "core_skill_demand": "Evaluate two separate linear outputs and combine via the stated arithmetic operation, or use the linearity of a tabulated function to compute an unstated value.",
+          "example_originals": ["042aa429", "68f343c9", "78391fcc"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at easy in this bank."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Both functions are given as explicit equations",
+                "Same input value is plugged into each, then combined by addition/subtraction/scaling",
+                "Coefficients and inputs are small integers"
+              ],
+              "example_stem": "f(x)=x+7, g(x)=7x. What is 4f(2)-g(2)?",
+              "example_ids": ["042aa429", "68f343c9"]
+            },
+            "hard": {
+              "characteristics": [
+                "One function is given as a table with a missing row; linearity must be inferred to extrapolate",
+                "Or composite question asks for an x-intercept of (f+g) requiring solving an equation after combining"
+              ],
+              "example_stem": "Some values of linear f are shown in the table. What is the x-intercept of the graph of y=f(x)?",
+              "example_ids": ["78391fcc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Either two functions are combined OR one function is given partially (table with gap)",
+              "Final operation is a numeric evaluation, not an interpretation"
+            ],
+            "must_vary": [
+              "Which combination (sum, difference, scaled difference)",
+              "Whether functions are equations or one is a table"
+            ],
+            "common_bugs": [
+              "Cloner combines functions that aren't both linear (categorical drift out of this skill)",
+              "Cloner makes coefficients large enough that arithmetic becomes the difficulty driver rather than function logic"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Interpret in real-world context",
+      "description": "A linear function (or its graph) is embedded in a real-world scenario; the student must verbally interpret what a specific constant, coefficient, intercept, or slope represents in that scenario. The output is a sentence-level meaning, not a number.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that the answer is a verbal interpretation rather than a computed number; differs from A3 in that the equation is already given (no construction); differs from A4 in that the focus is the meaning of a particular piece of the model, not reading values off a graph.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Interpret the constant term (initial value)",
+          "description": "A contextual linear function f(x)=ax+b (or equivalent) is given; the student must select the best verbal description of b in context (e.g., 'the starting height,' 'the one-time fee').",
+          "core_skill_demand": "Identify the constant term as the value of the function when the input is zero and translate that into the scenario's units and meaning.",
+          "example_originals": ["27198699", "9d9fe1e6", "bc638f2d", "adf60b28", "8643d906", "af2ba762", "daad7c32", "e86a06fe"],
+          "frequency": { "easy": 5, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Linear form is given directly as f(x)=ax+b with explicit context narrative",
+                "MCQ choices differ along clear dimensions (initial vs rate, correct vs wrong units)",
+                "Constant has direct real-world meaning (initial height, starting balance, sign-on bonus, baseline length)"
+              ],
+              "example_stem": "f(x)=33-0.18x gives liquid height x days after start. Best interpretation of 33?",
+              "example_ids": ["27198699", "9d9fe1e6", "bc638f2d", "adf60b28"]
+            },
+            "medium": {
+              "characteristics": ["Not strongly represented at medium for the constant-term variant."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Function is given in non-standard form (e.g., l=mw+2, y-5x=6) requiring rearrangement to identify the constant",
+                "Or the constant appears as a coefficient of an embedded factor (e.g., '2.74' inside a nested formula)",
+                "MCQ choices are close paraphrases where unit precision distinguishes correct from wrong"
+              ],
+              "example_stem": "Kaylani used 5 yards per suit; y-5x=6. Best interpretation of 6 in this context?",
+              "example_ids": ["af2ba762", "daad7c32", "e86a06fe"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Linear model with explicit context and units",
+              "Question asks for meaning of a single numeric constant in the equation",
+              "Correct answer is a sentence describing initial value / baseline / fixed term"
+            ],
+            "must_vary": [
+              "Scenario domain (biology, finance, physics, manufacturing)",
+              "Sign of the slope (so the constant can be 'starting amount before it decreases' or 'before it grows')",
+              "Distractor choices that swap rate-vs-initial, swap units, or describe the wrong quantity"
+            ],
+            "common_bugs": [
+              "Cloner makes only one distractor plausibly different — leaks the answer by elimination",
+              "Cloner replaces interpretation with computation, drifting to A1.T1 (categorical drift)",
+              "Cloner forgets to anchor units in the answer choices"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Interpret the slope / rate of change",
+          "description": "A contextual linear function is given; the student must verbally interpret the coefficient of x (or the slope of the graph) as a rate in the scenario.",
+          "core_skill_demand": "Identify the slope coefficient and translate it into per-unit change of the dependent variable in the scenario's units.",
+          "example_originals": ["3462d850", "776cfa7c", "1bc11c4e", "56dc8045", "5cf1bbc9", "f0773a55"],
+          "frequency": { "easy": 2, "medium": 4, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Slope appears as a single positive integer coefficient in equation form",
+                "Stem explicitly tags the slope number ('best interpretation of 25')",
+                "Distractors differ along clear axes"
+              ],
+              "example_stem": "f(t)=100+25t gives Hana's bank balance after t monthly deposits. Best interpretation of 25?",
+              "example_ids": ["776cfa7c", "3462d850"]
+            },
+            "medium": {
+              "characteristics": [
+                "Slope is a small decimal or negative (e.g., -0.05, -4 per second)",
+                "Or the slope is read from a graph rather than an equation",
+                "Or the question asks for a derived rate ('how many gallons per mile') needing a sign flip or unit conversion"
+              ],
+              "example_stem": "g(m)=-0.05m+12.1 gives gas remaining after m miles. About how many gallons are used per mile?",
+              "example_ids": ["1bc11c4e", "56dc8045", "5cf1bbc9", "f0773a55"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at hard in this bank for the slope-interpretation variant."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Linear contextual model with explicit units on both variables",
+              "Question asks about meaning of the rate/slope, not the value of the function"
+            ],
+            "must_vary": [
+              "Sign of slope (gain vs loss)",
+              "Whether slope is integer, decimal, or fraction",
+              "Whether equation is in f(x)= form or read off a graph"
+            ],
+            "common_bugs": [
+              "Cloner uses an integer slope where the scenario logically requires a decimal (e.g., dollars per mile of $5)",
+              "Cloner produces distractors that all use the correct units, eliminating discrimination",
+              "Cloner mixes up the dependent and independent variables in the distractors"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Interpret an intercept in context",
+          "description": "A contextual linear function is given; the student must verbally interpret the x-intercept or y-intercept (often after locating it) in scenario terms.",
+          "core_skill_demand": "Recognize the intercept as the moment when one variable equals zero and translate that into a real-world milestone ('when she stopped,' 'the break-even point,' 'when there are zero items').",
+          "example_originals": ["113b938e", "3e9eaffc", "620fe971", "e103300e"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at easy in this bank for intercept-interpretation."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Intercept is supplied (or trivially read) and the question asks for its meaning",
+                "Context is everyday (popsicles, braking, conveyor belt) with clear units",
+                "Distractors confuse x- with y-intercept or rate with intercept"
+              ],
+              "example_stem": "f(x)=-5x+30 approximates juice remaining after x popsicles. Best interpretation of the y-intercept?",
+              "example_ids": ["113b938e", "3e9eaffc", "620fe971"]
+            },
+            "hard": {
+              "characteristics": [
+                "Function described in words rather than equation form, requiring construction before interpretation",
+                "Or distractors include subtle reversals (e.g., 'number x when y=0' vs 'value of y when x=0')"
+              ],
+              "example_stem": "f(x) is 19 more than 4 times x. Best interpretation of the x-intercept of y=f(x)?",
+              "example_ids": ["e103300e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Linear contextual model with units",
+              "Question targets the meaning of an intercept (x or y) specifically"
+            ],
+            "must_vary": [
+              "Which intercept is asked for",
+              "Whether equation is given directly or must be inferred",
+              "Whether intercept corresponds to a start, an end, or a break-even"
+            ],
+            "common_bugs": [
+              "Cloner sets the intercept at zero, making the interpretation trivial",
+              "Cloner produces a scenario where the intercept has no physical meaning (e.g., negative time)",
+              "Distractors all describe slope-like quantities, breaking the discrimination on intercept-vs-slope"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Construct the linear equation",
+      "description": "Student must build a linear function/equation from supplied features: a slope and a point, two points or a table, or a verbal scenario describing an initial value and a rate. The cognitive operation is synthesis: choose the correct form and fill in the right constants.",
+      "boundary_with_other_aspects": "A3 differs from A1/A2 in that the equation does not exist yet — the student writes it; differs from A4 in that the input is verbal/tabular/parameter-based rather than a finished graph (though A3.T2 can use a table). If a graph IS the only input, that is A4.T3.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Build from slope + point (or slope + intercept)",
+          "description": "Stem supplies a slope and either the y-intercept or another point on the line; the student selects the equation that defines f.",
+          "core_skill_demand": "Apply point-slope or slope-intercept form by directly substituting the given slope and intercept (or computing the intercept from a non-origin point).",
+          "example_originals": ["1993561d", "343aaff6", "b51c173d", "bf883fde", "979b0b8d", "2eef7e61", "6efcc0a3", "fe6f9678", "23dedddd", "4b0c156b", "946ab892"],
+          "frequency": { "easy": 8, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Slope is a small integer or simple fraction and the supplied point is on the y-axis (so b is immediate)",
+                "Or the two known function values are f(0) and f(1), revealing slope and intercept directly",
+                "Stem maps one-to-one to f(x)=ax+b with no computation"
+              ],
+              "example_stem": "f has slope 7 and passes through (0,5). Which equation defines f?",
+              "example_ids": ["343aaff6", "1993561d", "b51c173d", "979b0b8d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Supplied point is NOT on the y-axis, so the student must compute b from y-mx=b",
+                "Or the two given f-values are at non-trivial inputs (e.g., f(28)=15 and f(26)=22), requiring slope computation",
+                "Slope may be negative or fractional"
+              ],
+              "example_stem": "For linear h, h(28)=15 and h(26)=22. Which equation defines h?",
+              "example_ids": ["4b0c156b", "946ab892", "23dedddd"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at hard in this bank for this type — the construction is too direct."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Inputs are a slope and a single anchoring feature (point or intercept)",
+              "Answer is a complete linear equation, not a value"
+            ],
+            "must_vary": [
+              "Sign of slope",
+              "Whether the supplied point is on the y-axis (easy) or off (medium)",
+              "Whether slope is integer or fraction"
+            ],
+            "common_bugs": [
+              "Cloner generates an MCQ where all distractors share the slope, eliminating the slope discrimination",
+              "Cloner shifts to two distinct off-axis points (drifts to T2)",
+              "Cloner uses a graph to supply slope+point — that's A4.T3 (categorical drift)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Build from two points or a data table",
+          "description": "Stem provides two ordered pairs (often via a table of x and f(x) values, or a paired context table); the student constructs the linear function.",
+          "core_skill_demand": "Compute slope from rise/run between two pairs, compute the intercept by back-substitution, and write the resulting equation in the requested form.",
+          "example_originals": ["12983c1e", "97eab129", "a9039591", "a130fcdc", "23c5d458", "6c5c2a81", "7e1bff94", "7e3f8363", "8ad64841", "9551cd91", "a775af14", "af711d1b", "c22b5f25", "f7e39fe9", "3122fc7b", "16889ef3", "2b15d65f"],
+          "frequency": { "easy": 4, "medium": 17, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Table contains a row at x=0 so b is read directly; remaining rows give a clean integer slope",
+                "Numbers are small integers and slope is a positive integer"
+              ],
+              "example_stem": "Table with (0,29),(1,32),(2,35). Which equation defines f?",
+              "example_ids": ["a9039591", "12983c1e", "a130fcdc", "97eab129"]
+            },
+            "medium": {
+              "characteristics": [
+                "Neither row is at x=0; student must compute slope (rise/run) then back-solve for the intercept",
+                "Numbers may be decimals or have unit conversions baked in (kilojoules, kilometers, plumber dollars per hour)",
+                "Slope may be a non-unit fraction or a decimal like 0.67",
+                "Stem may ask for a single parameter (m or b) rather than the full equation"
+              ],
+              "example_stem": "Linear h: h(7)=21 and h(9)=25. Which equation defines h?",
+              "example_ids": ["6c5c2a81", "7e1bff94", "23c5d458", "8ad64841", "9551cd91", "a775af14", "af711d1b", "b2fe7ab6", "f7e39fe9"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two non-trivial points are derived from a narrative (year+population, sales-year+production) requiring identification of which numbers are x vs f(x)",
+                "Function form is mandated as a+bx with a≠b at x=0, forcing both parameter computations",
+                "Slope is fractional and rounding/interpolation may be needed"
+              ],
+              "example_stem": "Oil production dropped from 4 million in 2000 to 1.9 million in 2013; assume constant rate of decrease — which linear f best models production t years after 2000?",
+              "example_ids": ["16889ef3", "2b15d65f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "At least two paired (x, f(x)) values are supplied",
+              "Linearity is asserted",
+              "Student must write or identify the full linear equation (or a stated parameter of it)"
+            ],
+            "must_vary": [
+              "Format of input (numeric table vs narrative pair vs context table)",
+              "Whether one of the points has x=0 (easy) or both are off-axis (medium/hard)",
+              "Slope magnitude/sign"
+            ],
+            "common_bugs": [
+              "Cloner picks points whose slope is not an integer and not in the answer choices, producing an unsolvable item",
+              "Cloner has both points with x=0 (degenerate)",
+              "Cloner drifts to A3.T3 by hiding the second point behind a verbal rate description"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Build from a real-world rate + initial value",
+          "description": "A scenario describes a baseline amount and a constant per-unit change (or two scenario quantities that imply both); the student writes the linear equation modeling the scenario.",
+          "core_skill_demand": "Translate 'starts at b' and 'changes by a per unit x' into f(x)=ax+b, picking the correct variable for the independent quantity and the correct sign of a.",
+          "example_originals": ["1d18794b", "520c8177", "84664a7c", "a396ed75", "b8cbe394", "cee5b352", "de6fe450", "fe287f7e", "0eae6be1", "1c29bfd1", "dae126d7", "e62cfe5f", "ebd457f4", "a309803e", "d1f50dbe"],
+          "frequency": { "easy": 9, "medium": 4, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stem states both the fixed fee/initial amount and the per-unit rate explicitly with words like 'plus' or 'per'",
+                "Variables and units are named in the stem",
+                "Form is bare cost-plus-rate (c=at+b) with integer constants"
+              ],
+              "example_stem": "Contract has $35 activation plus $23 per month. Which equation gives total cost c after t months?",
+              "example_ids": ["1d18794b", "520c8177", "b8cbe394", "84664a7c", "fe287f7e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Rate is implicit (computed from a ratio in the scenario, e.g., 'lowered by X per 550 feet')",
+                "Decimal coefficients or unit conversions required",
+                "Stem may require selecting the right interpretation of which quantity is independent"
+              ],
+              "example_stem": "Sea-level boiling point is 212°F; for every 550 ft above sea level, boiling point drops by N°F. Equation for B in terms of x?",
+              "example_ids": ["dae126d7", "1c29bfd1", "e62cfe5f", "ebd457f4"]
+            },
+            "hard": {
+              "characteristics": [
+                "Linear equation requires the introduction of a derived rate (e.g., coverage twice, gallons per square foot doubled)",
+                "Or the rate sign is negative and the model includes a domain restriction",
+                "Or the stem expresses the rate as a ratio that must be inverted (paint covers 220 sq ft per gallon → gallons per sq ft)"
+              ],
+              "example_stem": "One gallon of paint covers 220 sq ft. A room has wall area w sq ft. Equation for paint P needed to paint twice?",
+              "example_ids": ["a309803e", "d1f50dbe"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Scenario specifies (explicitly or implicitly) an initial value AND a rate",
+              "Variables and their units are defined in the stem",
+              "Answer is the full equation in the variables named by the stem"
+            ],
+            "must_vary": [
+              "Scenario domain",
+              "Sign of rate",
+              "Whether rate is stated as 'per' or implied via ratio"
+            ],
+            "common_bugs": [
+              "Cloner drops the initial value, leaving only proportional rate (collapses model to f(x)=ax, drifting toward easier territory)",
+              "Cloner swaps the dependent and independent variables in the answer",
+              "Cloner adds a piecewise component for the first day — that drifts to T4 (different cognitive demand)"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Build a tiered / first-N-different model",
+          "description": "Scenario charges a different rate for the first N units (or first day) and a different rate per additional unit thereafter; student writes a linear function valid for inputs ≥ N.",
+          "core_skill_demand": "Recognize that the function is linear in the additional units, set up f(x)=fixed_base + per_additional_rate*(x-N), and represent it in the requested variable.",
+          "example_originals": ["67d63e19", "8c5e6702", "a7e2859a", "bbf9e5ce", "be9cb6a2"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 5 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Stem specifies a flat charge for the first N units (often 1 day, 2 hours, 25 people) and a different per-unit rate thereafter, with a domain restriction (x ≥ N or x ≤ 10)",
+                "Student must construct f(x) = (first-N cost) + (per-additional rate)*(x-N) and pick from MCQ alternatives that differ in subtle ways (using x vs x-N, scaling the first-N cost, missing the offset)",
+                "All originals of this type are tagged Hard in the bank",
+                "MCQ distractors include plausible-but-wrong forms (multiplied first-day cost by d, dropped the -N adjustment)"
+              ],
+              "example_stem": "Carpet cleaner: $52 for first day, $26 each additional day. Which function gives total cost C(d) for d days?",
+              "example_ids": ["67d63e19", "8c5e6702", "a7e2859a", "bbf9e5ce", "be9cb6a2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "First-N cost is distinct from per-additional cost",
+              "Domain restriction x ≥ N (or equivalent)",
+              "MCQ distractors include the 'forgot the -N offset' and 'multiplied first cost by x' variants"
+            ],
+            "must_vary": [
+              "Value of N (first 1, first 2, first 25)",
+              "Whether quantity is days, hours, or people",
+              "First-N cost vs additional-unit cost magnitudes"
+            ],
+            "common_bugs": [
+              "Cloner produces a uniform rate (drops the first-N distinction), collapsing to A3.T3 with severe difficulty drift",
+              "Cloner forgets to specify the domain restriction, making all distractors potentially valid",
+              "Cloner makes per-additional rate equal to first-N rate, eliminating discrimination"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Read or analyze a graph",
+      "description": "Primary input is a graph (a line on the xy-plane), occasionally with a brief context; the student must read a value, identify an intercept or slope, or match the graph to an equation. The cognitive operation is visual-to-symbolic translation.",
+      "boundary_with_other_aspects": "A4 differs from A1 in that the function is supplied visually, not in equation form; differs from A2 in that the question asks for a number or equation, not a verbal interpretation; differs from A3 in that the line is shown rather than described in words.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Read x- or y-intercept from a graph",
+          "description": "A line is drawn on the xy-plane; the student names the y-intercept or x-intercept as a value or ordered pair.",
+          "core_skill_demand": "Identify where the line crosses an axis and report the coordinate.",
+          "example_originals": ["3174f07d", "33e4af6b", "c10ad793", "d11910d6"],
+          "frequency": { "easy": 4, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Intercept is at a clearly labeled integer coordinate visible in the figure description (e.g., passes through (0,8), (0,-4))",
+                "No transformation language — graph IS y=f(x) directly"
+              ],
+              "example_stem": "Line passes through (0,8) and (11/2,0). What is the y-intercept of f?",
+              "example_ids": ["3174f07d", "33e4af6b", "c10ad793", "d11910d6"]
+            },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Graph is the primary input (not a graph-equation hybrid)",
+              "Question asks for an axis intercept by value or coordinate"
+            ],
+            "must_vary": [
+              "Which axis intercept is asked",
+              "Whether intercept is at a positive or negative coordinate"
+            ],
+            "common_bugs": [
+              "Cloner produces a graph whose intercept isn't on integer coordinates, making the read ambiguous",
+              "Cloner asks for slope instead of intercept (drifts to T3 logic without setup)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Read a value from graph or context-graph",
+          "description": "A line models a real-world quantity (cost, distance, temperature) on a labeled grid; the student reads f(input) at a specified x or reads the per-unit rate from the line's slope.",
+          "core_skill_demand": "Locate the supplied x on the horizontal axis, trace up to the line, and read the corresponding y; or compute slope from two visible labeled points.",
+          "example_originals": ["0ea7ef01", "2ecce641", "13294295", "720e51ac", "930c2990", "d0cb49e8", "3f5375d9"],
+          "frequency": { "easy": 7, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Specified input falls exactly on a labeled point of the graph",
+                "Or the slope is asked and two labeled points yield an integer rate",
+                "Real-world units in axis labels match the question wording"
+              ],
+              "example_stem": "Graph passes through (0,0),(2,80),(4,160),(6,240). Candy bars wrapped per second?",
+              "example_ids": ["13294295", "720e51ac", "0ea7ef01", "d0cb49e8", "930c2990"]
+            },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Graph is the primary input with at least two clearly labeled points",
+              "Question asks for a numeric value (function value or rate)"
+            ],
+            "must_vary": [
+              "Domain of context (temperature, distance, balance)",
+              "Whether the asked quantity is f(specific x) or the slope"
+            ],
+            "common_bugs": [
+              "Cloner provides a graph whose labeled points don't include the target input — answer becomes ambiguous",
+              "Cloner uses non-integer slopes that don't match MCQ distractors"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Identify equation from graph (incl. transformed graph)",
+          "description": "A graph is shown — sometimes labeled as y=f(x)+k or y=g(x)-c — and the student selects the equation that defines f (or describes f given the transformation).",
+          "core_skill_demand": "Read the slope and intercept from the displayed graph, and (if the graph is of a transformed function) undo the transformation to recover the underlying f.",
+          "example_originals": ["a8e6bd75", "11e1ab81", "295a41f0", "415ab1d2"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Graph is y=f(x) directly (no transformation)",
+                "Slope and intercept are unambiguous integers"
+              ],
+              "example_stem": "Which graph corresponds to the equation y=…?",
+              "example_ids": ["a8e6bd75"]
+            },
+            "medium": {
+              "characteristics": [
+                "Graph is y=f(x) directly but units are context-bound (conveyor belt minutes vs feet)",
+                "Or graph is a translated version y=f(x)-k where k is given and the student must shift the intercept up by k",
+                "Numbers are integer but require slope computation from labeled points"
+              ],
+              "example_stem": "Graph of y=f(x)-11 passes through (-1,-2),(0,-4). Which equation defines f?",
+              "example_ids": ["11e1ab81", "295a41f0"]
+            },
+            "hard": {
+              "characteristics": [
+                "Graph shows y=f(x)+k for a non-trivial constant k, and the answer must be in a parameterized form involving constants c, d",
+                "Distractors include sign-flipped slopes and intercept-shift-direction errors"
+              ],
+              "example_stem": "Graph of y=f(x)+19 shown passing through (-1,7),(0,3). If c,d are positive constants, which equation could define f?",
+              "example_ids": ["415ab1d2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Graph is shown as the primary referent",
+              "Student must produce the equation of f (not interpret a coefficient)",
+              "If transformed, the transformation k is explicitly stated"
+            ],
+            "must_vary": [
+              "Whether transformation is +k, -k, or none",
+              "Sign of slope on the visible graph",
+              "Whether constants in the answer are numeric or symbolic"
+            ],
+            "common_bugs": [
+              "Cloner forgets to undo the transformation, producing an equation that matches the visible graph rather than f",
+              "Cloner shows a graph whose slope isn't computable from the labeled points (no integer rise/run)",
+              "Cloner drifts to A2.T2 by asking for slope's meaning rather than equation of f"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Across all 157 originals, A1 (evaluate/compute) and A3 (construct equation) account for the majority of items at all difficulties. Hard items concentrate in A1.T4 (unknown-parameter problems with embedded sub-expressions or symbolic constants) and A3.T4 (tiered first-N rate models) — these two patterns supply roughly 60% of all hard originals. Easy items concentrate in A1.T1 / A1.T2 (direct evaluate or solve) and A3.T3 (rate + initial from context). Medium items broaden across A3.T2 (two-point/table construction) and A1.T4 (parameter solves). A2 (interpretation) is consistently a verbal-answer aspect with MCQ distractors that target slope-vs-intercept confusion. A4 (graph) is small (≤15 originals total) and clusters at Easy."
+}

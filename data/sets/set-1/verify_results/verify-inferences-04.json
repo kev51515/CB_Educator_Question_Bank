@@ -1,0 +1,19 @@
+[
+  {"id": "6bc0e595-s1", "templateId": "inferences.A4.T8.easy", "verdict": "ok"},
+  {"id": "9077be25-s1", "templateId": "inferences.A4.T10.easy", "verdict": "ok"},
+  {"id": "4603d1f7-s1", "templateId": "inferences.A2.T4.easy", "verdict": "ok"},
+  {"id": "5b4829d2-s1", "templateId": "inferences.A4.T8.easy", "verdict": "ok"},
+  {"id": "b4da6aaf-s1", "templateId": "inferences.A3.T5.easy", "verdict": "ok"},
+  {"id": "8a3ecac6-s1", "templateId": "inferences.A2.T4.easy", "verdict": "ok"},
+  {"id": "ead0fd9b-s1", "templateId": "inferences.A1.T1.easy", "verdict": "ok"},
+  {"id": "787729be-s1", "templateId": "inferences.A2.T3.easy", "verdict": "ok"},
+  {"id": "4025e00c-s1", "templateId": "inferences.A4.T10.easy", "verdict": "ok"},
+  {"id": "c4d43991-s1", "templateId": "inferences.A4.T9.easy", "verdict": "ok"},
+  {"id": "1d0b5bf4-s1", "templateId": "inferences.A3.T7.easy", "verdict": "ok"},
+  {"id": "01989d77-s1", "templateId": "inferences.A4.T8.easy", "verdict": "ok"},
+  {"id": "25893fc7-s1", "templateId": "inferences.A4.T8.easy", "verdict": "aspect_drift", "detail": "Stem reads as principle-application (A1.T1): eye contact signals attentiveness/respect, therefore engineers want natural eye contact to put customers at ease. No measured empirical comparison/observation as A4.T8 requires; correct answer is a forward deductive prediction, not a study-finding generalization."},
+  {"id": "20000f5f-s1", "templateId": "inferences.A2.T3.easy", "verdict": "ok"},
+  {"id": "72cbdbc6-s1", "templateId": "inferences.A2.T3.easy", "verdict": "ok"},
+  {"id": "dbbbc5dd-s1", "templateId": "inferences.A3.T7.easy", "verdict": "ok"},
+  {"id": "eca09a92-s1", "templateId": "inferences.A4.T8.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "72ebc024-s1",
+  "originalId": "72ebc024",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>20</mn><msup><mi>p</mi><mn>3</mn></msup><msup><mi>q</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>p</mi><mi>q</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>4</mn><mi>p</mi><mi>q</mi><mfenced><mrow><mn>5</mn><msup><mi>p</mi><mn>2</mn></msup><mi>q</mi><mo>+</mo><mn>3</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>2</mn><mi>p</mi><mi>q</mi><mfenced><mrow><mn>10</mn><msup><mi>p</mi><mn>2</mn></msup><mi>q</mi><mo>+</mo><mn>6</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>4</mn><mfenced><mrow><mn>5</mn><msup><mi>p</mi><mn>3</mn></msup><msup><mi>q</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>p</mi><mi>q</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>32</mn><msup><mi>p</mi><mn>4</mn></msup><msup><mi>q</mi><mn>3</mn></msup></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The greatest common factor of 20p\u00b3q\u00b2 and 12pq is 4pq. Factoring gives 4pq(5p\u00b2q + 3).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

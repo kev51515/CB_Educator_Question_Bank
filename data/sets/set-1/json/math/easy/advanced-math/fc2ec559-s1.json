@@ -1,0 +1,39 @@
+{
+  "questionId": "fc2ec559-s1",
+  "originalId": "fc2ec559",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mi>x</mi><mo>-</mo><mn>3</mn><mo>=</mo><mn>8</mn></math></p><p><math><mi>y</mi><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></math></p><p>At what point <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> do the graphs of the given equations intersect in the <em>xy</em>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(11, 38)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(11, 363)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(8, 197)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(11, 368)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. From the first equation, <em>x</em> = 11. Substituting into <math><mi>y</mi><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></math> gives <math><mi>y</mi><mo>=</mo><mn>3</mn><mfenced><mn>121</mn></mfenced><mo>+</mo><mn>5</mn><mo>=</mo><mn>368</mn></math>. The point is (11, 368).</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

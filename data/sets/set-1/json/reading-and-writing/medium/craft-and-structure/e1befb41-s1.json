@@ -1,0 +1,25 @@
+{
+  "questionId": "e1befb41-s1",
+  "originalId": "e1befb41",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><span aria-level=\"2\" role=\"heading\"><strong>Text 1</strong></span></p><p>In a study of the effects of solitude on well-being, Camille Renard reported that participants&rsquo; sense of contentment tended to rise when they spent up to one hour alone each day and began to fall when daily solitude exceeded three hours. After further analysis, Renard concluded that this drop in contentment occurred mainly when individuals filled their solitary time with activities she defined as passive, such as scrolling through social media or watching streaming videos.</p><p>&nbsp;</p><p><span aria-level=\"2\" role=\"heading\"><strong>Text 2</strong></span></p><p>Psychologist Idris Hammond warns against prescribing an ideal amount of time alone. The human need for both companionship and quiet reflection is universal, but Hammond stresses that individuals differ in what they find restorative. Furthermore, he points out that there is no objective definition of what counts as a passive activity; scrolling through social media might function as restorative connection for some people and as draining distraction for others.</p>",
+  "stem": "<p>Based on the texts, how would Hammond (Text 2) most likely respond to the conclusion Renard (Text 1) reached after her further analysis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By acknowledging that solitude is more likely to enhance contentment when it is spent actively than when it is spent passively</p>"},
+    {"id": "b", "content": "<p>By warning against an overly broad generalization, since there is no clear consensus on how to distinguish active from passive uses of solitary time</p>"},
+    {"id": "c", "content": "<p>By disputing the reasoning in Text 1 on the grounds that active engagement has not been shown to contribute to contentment</p>"},
+    {"id": "d", "content": "<p>By claiming that the specific activities named in Text 1 are in fact active rather than passive uses of solitary time</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Text 1 reports Renard&rsquo;s conclusion that the dip in contentment occurs mainly when solitude is filled with activities she classifies as passive, naming social-media scrolling as an example. Text 2 holds that there is no objective definition of passive activity and explicitly cites social-media scrolling as restorative for some and draining for others. Hammond would therefore caution against an overly broad generalization that depends on a contested active/passive distinction.</p><p>Choice A is incorrect because Hammond denies a universal ranking of activity types. Choice C is incorrect because Renard&rsquo;s study concerns solitude, not active engagement in general, and Hammond does not contest that engagement can be restorative for some people. Choice D is incorrect because Hammond&rsquo;s point is that the active/passive label is subjective, not that the listed activities are objectively active.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

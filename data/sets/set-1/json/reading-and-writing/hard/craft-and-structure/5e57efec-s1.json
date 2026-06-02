@@ -1,0 +1,39 @@
+{
+  "questionId": "5e57efec-s1",
+  "originalId": "5e57efec",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Researcher Linh Pham and colleagues showed that processing fees\u2014the charges merchants must pay to accept card payments\u2014reduce the appeal of accepting small purchases. Retailers can absorb these fees to encourage card use, but those fees, though variable, are largely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> transaction size, so retailers that absorb the fees will likely focus on attracting a few large purchases over many small ones.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>predictive of</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>unrelated to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>absorbed by</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>additive to</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Unrelated to\" most logically completes the text. Because processing fees do not scale meaningfully with transaction size, retailers can dilute the fixed cost of a fee over a larger purchase\u2014so they prefer large purchases. This only follows if the fee is roughly unrelated to size.</p><p>Choice A is incorrect. If fees were predictive of size, they would scale with size, and large purchases would carry similarly large fees\u2014undermining the conclusion. Choice C is incorrect. \"Absorbed by\" doesn't fit grammatically or semantically with the rest of the sentence. Choice D is incorrect. \"Additive to\" is awkward and does not explain why retailers would favor large transactions.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

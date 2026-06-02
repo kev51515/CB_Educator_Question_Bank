@@ -1,0 +1,22 @@
+[
+  {"id": "7f0be746-s1", "templateId": "central-ideas-and-details.A1.T2.hard", "verdict": "difficulty_drift", "detail": "Hard T2 requires pre-twentieth-century literary prose or poem with figurative language and inverted syntax; this Ishiguro 2005 excerpt is modern prose with straightforward syntax, missing the diction/syntactic friction that defines T2 Hard."},
+  {"id": "d0f51067-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "35b46381-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "aa0968dd-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "881ba6f1-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "e80ba20d-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "34c2e387-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "7c9a65bb-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "aspect_drift", "detail": "Answer C ('permits scanning without subjecting surfaces to as much wear from contact') is essentially a paraphrase of the explicit sentence stating the coating absorbs wear rather than the sample. The item functions as A2 factual lookup rather than a one-step inference; no qualifier-discrimination characteristic of T6 Hard is present."},
+  {"id": "8f3a200e-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "251e5281-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "5eda42a3-s1", "templateId": "central-ideas-and-details.A1.T3.hard", "verdict": "ok"},
+  {"id": "4d3e3c52-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "9731a22b-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "2df56712-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Hard T1 must_preserve requires an 'although/however/long thought… but' pivot in the stimulus that the correct option mirrors. This stimulus presents sequential facts leading to a conclusion without a corrective/contrastive pivot, and the correct option B is a straight summary rather than mirroring a pivot."},
+  {"id": "1c69ff20-s1", "templateId": "central-ideas-and-details.A2.T4.hard", "verdict": "ok"},
+  {"id": "1a2b29c9-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "ok"},
+  {"id": "ed314256-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "d2e0cba5-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "16ce90d9-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "db2da2bf-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "aspect_drift", "detail": "The elongated asteroid's direction (same as majority) and shape (elongated) are explicitly stated in the final sentence; answer B is direct factual lookup, not a one-step inference. Functions as A2.T4, not A3.T6, and lacks Hard T6's hedged/qualifier-discrimination feature."}
+]

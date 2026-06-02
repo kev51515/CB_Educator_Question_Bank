@@ -1,0 +1,39 @@
+{
+  "questionId": "1b9b29f1-s1",
+  "originalId": "1b9b29f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A team of plant biologists led by Hana Okabe, Diego Ramirez, and L\u00e9a Fontaine studied the mechanism by which <em>Lemna minor</em> (common duckweed) accelerates its rate of vegetative reproduction under increased levels of dissolved nitrogen. They replaced the regulatory protein NRX2 in the duckweed with a structurally similar protein from a closely related species, <em>Spirodela polyrhiza</em>, which does not show accelerated reproduction at elevated nitrogen levels. At low nitrogen concentrations, unmodified and modified <em>L. minor</em> plants reproduced at the same rate, but at high nitrogen concentrations, the unmodified plants reproduced markedly faster while the modified plants did not, which suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>nitrogen-sensitive accelerated reproduction is unique to <em>L. minor</em> among all aquatic plants.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>NRX2 enables <em>L. minor</em> to respond to increased levels of dissolved nitrogen.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>L. minor</em> produces more NRX2 protein as dissolved nitrogen levels rise.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>certain minimum levels of dissolved nitrogen are required for <em>L. minor</em> to reproduce at all.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The only experimental variable changed was the identity of the regulatory protein (NRX2 versus the version from <em>S. polyrhiza</em>). Plants with native NRX2 sped up reproduction at high nitrogen; plants in which NRX2 was replaced did not. The most direct inference is that NRX2 is what allows <em>L. minor</em> to respond to elevated nitrogen.</p><p>Choice A is incorrect because the experiment compared only two species; it does not justify a claim about all aquatic plants. Choice C is incorrect because the study did not measure the amount of NRX2 produced \u2014 only the effects of swapping it out. Choice D is incorrect because both plant groups reproduced normally at low nitrogen, so nitrogen is not shown to be required for reproduction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

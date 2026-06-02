@@ -1,0 +1,39 @@
+{
+  "questionId": "ba61d95f-s1",
+  "originalId": "ba61d95f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population of Lakeside increased by 12% from 2017 to 2018. If the 2018 population is <em>k</em> times the 2017 population, what is the value of <em>k</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1.12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.88</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2.12</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A 12% increase means the 2018 population is 100% + 12% = 112% of the 2017 population, which equals 1.12 times the 2017 population. Therefore <em>k</em> = 1.12. Choice B is incorrect because 0.12 would mean the 2018 population is only 12% of (not 12% greater than) the 2017 population. Choice C is incorrect because 0.88 corresponds to a 12% <em>decrease</em>. Choice D is incorrect because 2.12 would represent a 112% increase, not 12%.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T4.medium"
+}

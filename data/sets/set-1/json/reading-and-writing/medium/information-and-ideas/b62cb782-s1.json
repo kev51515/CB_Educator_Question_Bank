@@ -1,0 +1,25 @@
+{
+  "questionId": "b62cb782-s1",
+  "originalId": "b62cb782",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Ethnomusicologist Bel&eacute;m Mart&iacute;n-Quintero may be known for her years of fieldwork in Andean radio broadcasting, but her book <em>Currents and Coplas: Listening Along the High Mountain Trade Routes</em> is probably her most influential project. The 1988 book, whose title refers to the muleteer trails that connect Peru and Bolivia, was strikingly unconventional for its moment. It blended memoir, transcribed songs, route maps, and ecological commentary and challenged settled assumptions about what scholarly writing on music could look like. Long admired by many practitioners, the book and its author have shaped present-day approaches to writing about regional music.</p>",
+  "stem": "<p>Which choice best describes the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Mart&iacute;n-Quintero held many different positions during her career, including radio producer and ethnomusicologist.</p>"},
+    {"id": "b", "content": "<p>Mart&iacute;n-Quintero&rsquo;s groundbreaking book <em>Currents and Coplas</em> failed to receive the recognition it deserved when it was first published in 1988.</p>"},
+    {"id": "c", "content": "<p>Mart&iacute;n-Quintero was a gifted performer whose work prompted many listeners to take up regional instruments themselves.</p>"},
+    {"id": "d", "content": "<p>Mart&iacute;n-Quintero&rsquo;s unconventional book <em>Currents and Coplas</em> is an important contribution to writing about music.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text calls the book her most influential project, describes it as strikingly unconventional for its moment, and explains that it shaped present-day approaches to writing about regional music — making it an important contribution to writing about music.</p><p>Choice A is incorrect because the text mentions her radio fieldwork only briefly to contrast it with her central project. Choice B is incorrect because the text says the book is long admired, not that it was overlooked at publication. Choice C is incorrect because the text never describes Mart&iacute;n-Quintero as a performer or claims her work inspired listeners to take up instruments.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

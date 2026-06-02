@@ -1,0 +1,25 @@
+{
+  "questionId": "db24ecc9-s1",
+  "originalId": "db24ecc9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T9.hard",
+  "stimulus": "<p>The Royal Tyrrell Museum in Canada and the Museo Egizio in Italy are two of many institutions around the world devoted to curating extensive collections of fragile <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> training the next generation of specialized conservators; and engaging the public through traveling exhibitions on cultural heritage.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>artifacts, both ancient and recent,</p>"},
+    {"id": "b", "content": "<p>artifacts both ancient and recent,</p>"},
+    {"id": "c", "content": "<p>artifacts; both ancient and recent,</p>"},
+    {"id": "d", "content": "<p>artifacts, both ancient and recent;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the punctuation of items in a complex series with internal punctuation. The semicolon after \"recent\" separates the first item (\"curating...recent\") from the second (\"training...conservators\") in a series of activities. The comma after \"artifacts\" correctly separates the noun phrase \"extensive collections of fragile artifacts\" from the supplementary phrase \"both ancient and recent\" that modifies it.</p><p>Choice A is incorrect because a comma cannot separate the first and second items of a complex series with internal punctuation. Choice B is incorrect because it fails to separate the noun phrase from its supplementary phrase and uses a comma in place of the required semicolon. Choice C is incorrect because a semicolon cannot separate the noun phrase from its supplementary phrase, and a comma cannot separate complex series items.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

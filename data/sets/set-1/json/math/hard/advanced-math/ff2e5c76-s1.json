@@ -1,0 +1,39 @@
+{
+  "questionId": "ff2e5c76-s1",
+  "originalId": "ff2e5c76",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>x</i>&sup2; &minus; 56<i>x</i> &minus; 13 = 0</p><p>What is the sum of the solutions to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>56</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>13</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. By Vieta's formulas, the sum of the roots of <i>ax</i>&sup2; + <i>bx</i> + <i>c</i> = 0 equals &minus;<i>b</i>/<i>a</i>. Here that's &minus;(&minus;56)/1 = 56.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

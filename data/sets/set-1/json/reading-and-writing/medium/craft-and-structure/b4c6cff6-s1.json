@@ -1,0 +1,25 @@
+{
+  "questionId": "b4c6cff6-s1",
+  "originalId": "b4c6cff6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from George Bernard Shaw's 1903 play <em>Man and Superman</em>. Tanner and Ramsden are debating the place of tradition in raising the next generation.</p>\n<p style=\"padding-left:1em\">TANNER: The household, sir, has become an indolent institution. Ramsden, the parental hand was wholly <em>unequal</em> to the task. It had to be set aside sooner or later.</p>\n<p style=\"padding-left:1em\">RAMSDEN: It was too sentimental.</p>\n<p style=\"padding-left:1em\">TANNER: It was not <em>efficient</em>. It no longer <span role=\"region\" aria-label=\"Referenced Content\"><u>meets</u></span> the demands of <em>modern citizenship</em>. Custom has no notion of keeping step with <em>modern progress</em>.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;meets&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Encounters</p>"},
+    {"id": "b", "content": "<p>Satisfies</p>"},
+    {"id": "c", "content": "<p>Confronts</p>"},
+    {"id": "d", "content": "<p>Assembles</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. In context, \"meets\" means satisfies&mdash;that is, fulfills or measures up to. Tanner argues that the household is unequal and inefficient and \"no longer meets the demands of modern citizenship,\" meaning it can no longer fulfill the requirements that modern life imposes.</p><p>Choice A is incorrect. \"Encounters\" means runs into or comes across, but Tanner is discussing the household's inability to fulfill demands, not its physical or accidental contact with them. Choice C is incorrect. \"Confronts\" suggests facing opposition; the topic is failure to satisfy requirements, not resistance. Choice D is incorrect. \"Assembles\" means gathers together, a sense unrelated to demands and requirements.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

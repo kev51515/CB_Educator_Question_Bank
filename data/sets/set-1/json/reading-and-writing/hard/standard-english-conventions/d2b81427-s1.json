@@ -1,0 +1,25 @@
+{
+  "questionId": "d2b81427-s1",
+  "originalId": "d2b81427",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>In evaluating the compositions of Brazilian musician Hermeto Pascoal, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> have overlooked his equally profound engagement with Indigenous Amazonian musical traditions such as Kuarup chants.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Pascoal's use of jazz harmonic vocabulary has been the focus of many scholars, who</p>"},
+    {"id": "b", "content": "<p>there are many scholars who have focused on Pascoal's use of jazz harmonic vocabulary, but they</p>"},
+    {"id": "c", "content": "<p>the focus of many scholars has been on Pascoal's use of jazz harmonic vocabulary; they</p>"},
+    {"id": "d", "content": "<p>many scholars have focused on Pascoal's use of jazz harmonic vocabulary but</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"many scholars\" the subject of the sentence and places it immediately after the modifying phrase \"In evaluating&hellip;Pascoal.\" In doing so, this choice clearly establishes that it is the scholars&mdash;and not another noun in the sentence&mdash;who evaluate Pascoal's compositions.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of the noun phrase \"Pascoal's&hellip;vocabulary\" immediately after the modifying phrase illogically suggests that his use of jazz harmonic vocabulary is what evaluates Pascoal's compositions. Choice B is incorrect because it results in a dangling modifier. The placement of the function word \"there\" immediately after the modifying phrase illogically suggests that \"there\" is what evaluates Pascoal's compositions. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase \"the focus&hellip;scholars\" immediately after the modifying phrase illogically suggests that the scholars' focus is what evaluates Pascoal's compositions.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

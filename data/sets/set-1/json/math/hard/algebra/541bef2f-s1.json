@@ -1,0 +1,39 @@
+{
+  "questionId": "541bef2f-s1",
+  "originalId": "541bef2f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>y</mi><mo>&#8804;</mo><mi>x</mi><mo>+</mo><mn>5</mn></math></p>\n<p style=\"text-align: center;\"><math><mi>y</mi><mo>&#8805;</mo><mo>-</mo><mn>3</mn><mi>x</mi><mo>-</mo><mn>2</mn></math></p>\n<p>Which point <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> is a solution to the given system of inequalities in the <em>xy</em>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mn>9</mn><mo>,</mo><mn>0</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mrow><mo>-</mo><mn>9</mn></mrow><mo>,</mo><mn>0</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mn>0</mn><mo>,</mo><mn>9</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mn>0</mn><mo>,</mo><mrow><mo>-</mo><mn>9</mn></mrow></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Substituting <math><mn>9</mn></math> for <math><mi>x</mi></math> and <math><mn>0</mn></math> for <math><mi>y</mi></math> in the first inequality gives <math><mn>0</mn><mo>&#8804;</mo><mn>14</mn></math>, which is true; substituting into the second gives <math><mn>0</mn><mo>&#8805;</mo><mo>-</mo><mn>29</mn></math>, which is true. Therefore, (9, 0) is a solution. Choice B fails the first inequality (0 \u2264 -4 is false). Choice C fails the first inequality (9 \u2264 5 is false). Choice D fails the second inequality (-9 \u2265 -2 is false).</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9b22bf7b-s1",
+  "originalId": "9b22bf7b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from the 1990 novel <em>So Far from God</em> by Chicana writer Ana Castillo. The main character has become widely sought after for her culinary creations.</p><blockquote><p>More and more often she was asked to alter her recipes, to lighten this, to omit that, to make her dishes acceptable to one diner or another, and more often than not she did so, for she was eager to please and slow to refuse; it was difficult for her to disappoint a customer. Those who praised her cooking, who recommended her to friends, and who arranged for her catering began to <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">determine</span> it.</p></blockquote><p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1990 by Ana Castillo</span></p>",
+  "stem": "<p>As used in the text, what does the word \"determine\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Conclude</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Control</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Evaluate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Select</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The passage describes how the cook keeps yielding to her customers' requests until the customers, in effect, dictate what she makes. In this context, \"determine\" most nearly means to control—the customers exert control over her cooking by reshaping her recipes.</p><p>Choice A is incorrect. \"Conclude\" means to bring to an end or to infer, neither of which fits the context of customers shaping her work. Choice C is incorrect. \"Evaluate\" means to judge; the customers are doing more than judging—they are dictating the substance of the dishes. Choice D is incorrect. \"Select\" implies picking among existing options, but the customers go further by reshaping the dishes themselves.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.hard"
+}

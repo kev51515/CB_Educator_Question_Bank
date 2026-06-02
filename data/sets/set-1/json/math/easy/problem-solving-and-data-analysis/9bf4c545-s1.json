@@ -1,0 +1,39 @@
+{
+  "questionId": "9bf4c545-s1",
+  "originalId": "9bf4c545",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "skillCode": "Q.G.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The members of a school board wanted to assess the opinions of all students at the high school about building a new gymnasium. The board surveyed a sample of 400 students who are members of school sports teams. The survey showed that the majority of those sampled were in favor of building the new gymnasium. Which of the following is true about the school board\u2019s survey?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The survey sample is biased because it is not representative of all students at the high school.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It shows that the majority of all students at the high school are in favor of building the new gymnasium.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The survey sample should have included more students who are members of sports teams.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The survey sample should have consisted entirely of students who are not members of sports teams.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. To gather an unbiased sample, the school board should have used a random sample drawn from all students. The given survey is biased because all 400 students surveyed were members of sports teams, who are likely to favor athletic facilities. This sample is not representative of all students at the high school, so its results cannot be generalized to the full population.</p><p>Choice B is incorrect because biased samples cannot be used to generalize to the broader population. Choice C is incorrect because adding more students from the same biased subgroup does not remove the bias. Choice D is incorrect because surveying only non-athletes would simply introduce a different bias.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A2.T1.easy"
+}

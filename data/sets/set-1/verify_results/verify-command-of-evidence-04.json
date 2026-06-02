@@ -1,0 +1,22 @@
+[
+  {"id": "c2c61e7d-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "24c1b7e4-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "02848335-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "difficulty_drift", "detail": "Hard A5.T9 requires multi-sub-claim conclusion and multi-row pattern with ≥4 rows × ≥3 columns, plus distractors that accurately describe data but support a different conclusion. This clone uses only a 2×3 table with a single-claim conclusion ('pyrolysis more robust') resolved by one worst-case-vs-best-case comparison; closer to Medium-level."},
+  {"id": "5b74feb9-s1", "templateId": "command-of-evidence.A4.T6.hard", "verdict": "ok"},
+  {"id": "d102706f-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "3d91c973-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "0240d11c-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "cca6fae9-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "09f9edb0-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "c83e0b43-s1", "templateId": "command-of-evidence.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Hard A1.T1 requires abstract multi-clause descriptors and inference from archaic/formal diction with multiple superficially relevant distractors. This clone has a single-axis trait ('draws steady comfort from intimate knowledge of the natural world'), and Choice C explicitly paraphrases it ('content among things she knew so well'). Distractors A, B, D are clearly off-topic (bad news, unfamiliarity, hurrying away). Reads as Easy/Medium."},
+  {"id": "ec93e52c-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "39e440e4-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "difficulty_drift", "detail": "Hard A4.T5 requires a named alternative explanation and highly plausible distractors that support a rival hypothesis or the wrong specific link. The stimulus mentions the prior 'small fishing villages' view but the distractors (B small dwellings, C inland footpaths, D scattered garden plots) are obvious anti-urbanism scenarios that don't competitively support a rival; correct answer is a direct match to 'monumental planned urbanism'. Closer to Easy/Medium."},
+  {"id": "a04807d8-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "89f71526-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "c384987b-s1", "templateId": "command-of-evidence.A4.T5.easy", "verdict": "ok"},
+  {"id": "eb775f90-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "ede3f942-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "0cf13ece-s1", "templateId": "command-of-evidence.A5.T7.easy", "verdict": "ok"},
+  {"id": "bc1b8a42-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "6f626ae5-s1", "templateId": "command-of-evidence.A1.T2.easy", "verdict": "ok"}
+]

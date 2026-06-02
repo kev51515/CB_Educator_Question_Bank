@@ -1,0 +1,39 @@
+{
+  "questionId": "49bbe4d7-s1",
+  "originalId": "49bbe4d7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>For photographer Dorothea Lange, being <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> was an important part of the artistic process. Because she paid close attention to the faces and gestures of the migrant families she photographed, Lange's images captured the dignity and hardship of working people during the Great Depression.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>observant</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>confident</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>skeptical</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>critical</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the text supports the chosen word with the detail that Lange paid close attention to the faces and gestures of the families she photographed. \"Observant\" means paying close attention, which directly matches. Choices B, C, and D describe other personal qualities (self-assurance, doubt, harsh judgment) that the text does not connect to her practice of paying attention.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

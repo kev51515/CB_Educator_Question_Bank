@@ -1,0 +1,39 @@
+{
+  "questionId": "c8d60e48-s1",
+  "originalId": "c8d60e48",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <em>GHI</em> is similar to triangle <em>JKL</em>, where angle <em>G</em> corresponds to angle <em>J</em>, and angle <em>H</em> corresponds to angle <em>K</em>. The measure of angle <em>J</em> is 128 degrees, and the measure of angle <em>K</em> is x degrees. If the measure of angle <em>I</em> is 35 degrees, what is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>128</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>52</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>17</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Because the triangles are similar, the measure of angle <em>G</em> equals the measure of angle <em>J</em> = 128 degrees. The interior angles of triangle <em>GHI</em> sum to 180 degrees, so the measure of angle <em>H</em> is 180 minus 128 minus 35 = 17 degrees. By similarity, angle <em>K</em> has the same measure as angle <em>H</em>, so x = 17.</p><p>Choice A is incorrect: 35 is the measure of angle <em>I</em>.</p><p>Choice B is incorrect: 128 is the measure of angle <em>J</em>.</p><p>Choice C is incorrect: 52 is the sum of the other two angles.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c54b92a2-s1",
+  "originalId": "c54b92a2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number of widgets a machine produced during each of 9 one-hour periods is shown.</p><p>12, 14, 15, 11, 17, 13, 12, 16, 11</p><p>What is the range of the number of widgets produced for the 9 one-hour periods?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The range is the difference between the maximum value (17) and the minimum value (11): 17 \u2212 11 = 6.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T4.easy"
+}

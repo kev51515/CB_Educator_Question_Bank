@@ -1,0 +1,22 @@
+{
+  "questionId": "5c94e6fa-s1",
+  "originalId": "5c94e6fa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mi>x</mi><mo>+</mo><mn>34</mn><mo>=</mo><mn>5</mn><mi>x</mi><mo>+</mo><mi>k</mi></math></p><p>In the given equation, <math><mi>k</mi></math> is a constant. The equation has infinitely many solutions. What is the value of <math><mi>k</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "34"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>34</mn></math>. For an equation in one variable to have infinitely many solutions, it must be true for any value of the variable. Subtracting <math><mn>5</mn><mi>x</mi></math> from both sides yields <math><mi>k</mi><mo>=</mo><mn>34</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.easy"
+}

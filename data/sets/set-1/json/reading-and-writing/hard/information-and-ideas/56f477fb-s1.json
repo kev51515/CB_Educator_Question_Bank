@@ -1,0 +1,39 @@
+{
+  "questionId": "56f477fb-s1",
+  "originalId": "56f477fb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Reported uses of freshwater withdrawals in five river basins of Kenya (% of total reported uses)</strong></p><table border=\"1\"><thead><tr><th>Basin</th><th>Agricultural use</th><th>Domestic use</th><th>Industrial use</th></tr></thead><tbody><tr><td>Tana</td><td>78%</td><td>15%</td><td>7%</td></tr><tr><td>Lake Victoria North</td><td>62%</td><td>27%</td><td>11%</td></tr><tr><td>Athi</td><td>40%</td><td>48%</td><td>12%</td></tr><tr><td>Ewaso Ng'iro North</td><td>82%</td><td>14%</td><td>4%</td></tr><tr><td>Rift Valley</td><td>71%</td><td>22%</td><td>7%</td></tr><tr><td><strong>Overall</strong></td><td><strong>69%</strong></td><td><strong>23%</strong></td><td><strong>8%</strong></td></tr></tbody></table><p>Hydrologist Wanjiru Kamau and her colleagues analyzed water-use surveys from Kenya's major river basins. They argue that every Kenyan river basin reports at least some agricultural use of freshwater and that, taken together, agricultural use accounts for the majority of all reported freshwater uses across the country.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Kamau and colleagues' argument?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>None of the percentages shown for agricultural use are lower than 40%, and the overall percentage shown for agricultural use is 69%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The highest percentage shown for agricultural use is 82% for Ewaso Ng'iro North, and the lowest shown for agricultural use is 40% for Athi.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Agricultural use is shown for every basin, while industrial use is not shown for some basins.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Agricultural use represents 78% of reported uses in Tana and 40% of reported uses in Athi, but it represents 69% of reported uses overall.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The argument has two parts: (1) every basin reports some agricultural use, and (2) agricultural use is the majority overall. The fact that no basin's percentage is below 40% (so every basin shows some agricultural use) supports part 1, and the overall 69% (well over half) supports part 2.</p><p>Choice B is incorrect: it gives high and low values but does not establish that agricultural use is the majority overall. Choice C is incorrect: the table actually shows industrial use for every basin (the claim is factually wrong), and even if true, it would not demonstrate overall majority. Choice D is incorrect: showing percentages for just two basins does not support the claim that every basin reports agricultural use.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

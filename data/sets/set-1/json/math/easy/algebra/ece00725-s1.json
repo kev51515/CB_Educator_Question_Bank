@@ -1,0 +1,39 @@
+{
+  "questionId": "ece00725-s1",
+  "originalId": "ece00725",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Sam has s dollars and Aiden has a dollars. Sam has 5 times as many dollars as Aiden, and together they have a total of $36.00. Which system of equations represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a = 5s and s + a = 36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>s = 5a and s + a = 36</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>s = 36a and s + a = 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a = 36s and s + a = 5</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. s = 5a represents Sam having 5 times as many dollars as Aiden, and s + a = 36 is the total.</p><p>Choice A swaps who has more. Choices C and D mix the multiplier and total.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

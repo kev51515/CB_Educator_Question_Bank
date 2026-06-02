@@ -1,0 +1,39 @@
+{
+  "questionId": "6e3ab4bf-s1",
+  "originalId": "6e3ab4bf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In May, there were 50 volunteers in a park cleanup project. Each volunteer was asked to choose a small thank-you gift labeled A, B, C, or D. A bar graph shows the number of volunteers who chose each gift: A: 12, B: 9, C: 22, D: 7. How many volunteers chose gift B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The bar for gift B has a height of 9, so 9 volunteers chose gift B.</p><p>Choice A is incorrect: 22 is the number who chose gift C.</p><p>Choice B is incorrect: 12 is the number who chose gift A.</p><p>Choice D is incorrect: 7 is the number who chose gift D.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

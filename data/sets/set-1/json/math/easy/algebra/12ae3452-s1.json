@@ -1,0 +1,22 @@
+{
+  "questionId": "12ae3452-s1",
+  "originalId": "12ae3452",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The equation 58 = 2<i>p</i> + 2<i>q</i> gives the relationship between the side lengths <i>p</i> and <i>q</i> of a certain parallelogram. If <i>p</i> = 11, what is the value of <i>q</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "18"
+  ],
+  "rationale": "<p>Substituting 11 for <i>p</i> in 58 = 2<i>p</i> + 2<i>q</i> gives 58 = 22 + 2<i>q</i>. Subtracting 22 from each side yields 36 = 2<i>q</i>, so <i>q</i> = 18.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

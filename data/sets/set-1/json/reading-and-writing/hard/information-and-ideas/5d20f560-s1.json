@@ -1,0 +1,39 @@
+{
+  "questionId": "5d20f560-s1",
+  "originalId": "5d20f560",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Standard accounts of persuasive communication hold that information attributed to credentialed authorities is judged to be more credible than information from non-experts. When health-communication researcher Maya Adekoya and her colleagues tested public-service announcements promoting routine cancer screenings, however, they found that study participants rated announcements featuring former screening patients as substantially more credible than announcements featuring oncologists (that is, credentialed experts). One explanation may be that the oncologists&rsquo; status as credentialed experts wasn&rsquo;t disregarded but was instead outweighed by another factor: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>announcements from former patients depicted screening visits as being more pleasant experiences than the oncologists&rsquo; announcements did.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>participants did not have enough background knowledge to evaluate the credibility of the oncologists&rsquo; announcements but did have enough to evaluate the former patients&rsquo; announcements.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the fact that former patients had personally gone through the screening process that participants were contemplating, while oncologists had not, mattered more to participants than expert credentials did.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>participants considered the experiences of both oncologists and former patients to be relevant to the subject of cancer screening but were skeptical of the oncologists&rsquo; motives.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the discussion. The text says the experts' credentials weren't ignored but were outweighed by another factor. A natural candidate is firsthand experience with the very decision the participants were considering: former patients had been through screening themselves, while oncologists had not. If participants prioritized that lived experience over credentials, the announcement from a former patient would be judged more credible.</p><p>Choice A is incorrect because the text gives no information about how the announcements depicted the screening experience. Choice B is incorrect because lack of background knowledge would call into question how participants could weigh credentials at all; the text presents participants as actively evaluating and assigning credibility. Choice D is incorrect because the text does not mention participants questioning oncologists' motives; the explanation is about what outweighed credentials, not about distrust.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

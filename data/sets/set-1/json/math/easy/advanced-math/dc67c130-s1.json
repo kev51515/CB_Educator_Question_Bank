@@ -1,0 +1,39 @@
+{
+  "questionId": "dc67c130-s1",
+  "originalId": "dc67c130",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>30</mn><msup><mi>m</mi><mn>3</mn></msup><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mn>18</mn><msup><mi>m</mi><mn>2</mn></msup><msup><mi>n</mi><mn>3</mn></msup></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>6</mn><msup><mi>m</mi><mn>3</mn></msup><msup><mi>n</mi><mn>3</mn></msup><mfenced><mrow><mn>5</mn><mo>−</mo><mn>3</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>6</mn><mi>m</mi><mi>n</mi><mfenced><mrow><mn>5</mn><msup><mi>m</mi><mn>2</mn></msup><mi>n</mi><mo>−</mo><mn>3</mn><mi>m</mi><msup><mi>n</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>6</mn><msup><mi>m</mi><mn>2</mn></msup><msup><mi>n</mi><mn>2</mn></msup><mfenced><mrow><mn>5</mn><mi>m</mi><mo>−</mo><mn>3</mn><mi>n</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>12</mn><msup><mi>m</mi><mn>2</mn></msup><msup><mi>n</mi><mn>2</mn></msup></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The greatest common factor of 30m³n² and 18m²n³ is 6m²n² (gcd(30, 18) = 6; minimum power of m is 2; minimum power of n is 2). Factoring gives 6m²n²(5m − 3n). Choice (c) is correct.</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

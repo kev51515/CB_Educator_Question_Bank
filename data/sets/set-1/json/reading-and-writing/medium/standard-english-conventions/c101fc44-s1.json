@@ -1,0 +1,25 @@
+{
+  "questionId": "c101fc44-s1",
+  "originalId": "c101fc44",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.medium",
+  "stimulus": "<p>How do paleobotanists estimate which plant communities surrounded ancient lake basins? Historically, researchers were confined to identifying fossilized leaves and seeds, but in 2018 a group led by Diego Mora of the Universidad Aut&oacute;noma de Madrid tried something <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the pollen DNA trapped inside layered lakebed sediments.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>different. Extracting</p>"},
+    {"id": "b", "content": "<p>different: extracting</p>"},
+    {"id": "c", "content": "<p>different; extracting</p>"},
+    {"id": "d", "content": "<p>different, extracting:</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"A group led by Diego Mora...tried something different\" is a complete independent clause that promises an elaboration of what \"different\" thing was tried. A colon correctly introduces that elaboration.</p><p>Choice A is incorrect because \"Extracting...sediments\" has no subject and cannot stand alone as a sentence. Choice C is incorrect because a semicolon can only join two independent clauses, and \"extracting...sediments\" is not independent. Choice D is incorrect because the colon is misplaced; a colon must end an independent clause, not appear after the elaboration begins.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

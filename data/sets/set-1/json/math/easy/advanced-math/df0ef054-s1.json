@@ -1,0 +1,39 @@
+{
+  "questionId": "df0ef054-s1",
+  "originalId": "df0ef054",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which of the following is equivalent to the expression <math><mfenced><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mfenced><mfenced><mrow><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>12</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn><mi>x</mi><mo>+</mo><mn>7</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>12</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Using FOIL: (x + 3)(x + 4) = x\u00b7x + x\u00b74 + 3\u00b7x + 3\u00b74 = x\u00b2 + 4x + 3x + 12 = x\u00b2 + 7x + 12.</p>",
+  "templateId": "equivalent-expressions.A2.T6.medium"
+}

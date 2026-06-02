@@ -1,0 +1,39 @@
+{
+  "questionId": "7b950fc2-s1",
+  "originalId": "7b950fc2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In 2005, Yvonne Tagoe, herself the founder of a thriving design studio, sought to expand opportunities for Black women in the fashion <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> launched the Stitch Forward Collective, an international group that for nearly two decades has connected emerging designers with mentors and industry resources.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>industry. She</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>industry, she</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>industry and she</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>industry she</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. It appropriately uses a period to mark the end of one independent clause (\"In 2005...fashion industry\") and the start of another (\"She launched...resources\").</p><p>Choice B is incorrect because it results in a comma splice. Choice C is incorrect because a comma is needed in addition to the coordinating conjunction \"and\" when joining two independent clauses. Choice D is incorrect because it results in a run-on sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T1.easy"
+}

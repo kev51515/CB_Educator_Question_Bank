@@ -1,0 +1,39 @@
+{
+  "questionId": "b4887dae-s1",
+  "originalId": "b4887dae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Engineer and computer scientist Grace Hopper is widely viewed as a foundational figure in early software design. Her best-known paper, \"The Education of a Computer,\" published in 1952 while she was working at Remington Rand, articulated the idea of a \"compiler\"&mdash;a program that translates human-readable instructions into the machine's own code&mdash;allowing programmers to write in something far closer to English than to raw binary. Computer historian Janet Abbate has called Hopper's compiler work one of the conceptual breakthroughs that turned computing from an arcane craft into a profession.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It presents a theoretical concept, traces how the name of the concept changed, and shows how the name became common usage.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It introduces a respected researcher, describes an aspect of her work, and suggests why the work is historically significant.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It names the company where an important computer scientist worked, details her career there, and lists honors she received.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It mentions a paper, summarizes its findings, and presents a researcher's commentary on the paper.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text first identifies Grace Hopper as a foundational figure in software design; it then describes one specific contribution&mdash;the 1952 paper proposing the compiler&mdash;and finally cites Abbate's judgment that this work helped turn computing into a profession, suggesting why the contribution mattered historically.</p><p>Choice A is incorrect because no evolution of the concept's name is traced. Choice C is incorrect because the focus is the compiler idea, not a career chronology with honors. Choice D is incorrect because the text introduces Hopper as a figure first; the paper and commentary are stages within that introduction, not the whole structure.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.hard"
+}

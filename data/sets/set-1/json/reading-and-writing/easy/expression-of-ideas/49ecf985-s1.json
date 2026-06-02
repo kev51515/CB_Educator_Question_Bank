@@ -1,0 +1,25 @@
+{
+  "questionId": "49ecf985-s1",
+  "originalId": "49ecf985",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 2009, the city of Bogot&aacute;, Colombia, opened over 75 miles of new bicycle lanes that connected previously isolated neighborhoods. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> thousands of residents began commuting to work by bike, which reduced traffic congestion in the city center.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>In comparison,</p>"},
+    {"id": "c", "content": "<p>Likewise,</p>"},
+    {"id": "d", "content": "<p>As a result,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"As a result\" logically signals that the information that follows&mdash;thousands of residents began commuting by bike&mdash;is a consequence of the city opening new bicycle lanes described in the previous sentence.</p><p>Choice A is incorrect because \"however\" illogically signals contrast, but residents commuting by bike is a direct consequence of new lanes, not a contrast. Choice B is incorrect because \"in comparison\" illogically signals a comparison, but no comparison is being made; the second sentence describes a consequence. Choice C is incorrect because \"likewise\" illogically signals similarity, but commuting by bike is a result of the new lanes, not a similar idea.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

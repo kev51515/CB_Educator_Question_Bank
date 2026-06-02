@@ -1,0 +1,25 @@
+{
+  "questionId": "f878693b-s1",
+  "originalId": "f878693b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T2.medium",
+  "stimulus": "<p><strong><span role=\"heading\" aria-level=\"2\">Text 1</span></strong></p><p>In 1961 director Franco Zeffirelli mounted an influential production of Verdi&rsquo;s opera <em>Aida</em> that has since served as a template for hundreds of opera houses around the world, which continue to stage <em>Aida</em> in lavish nineteenth-century style each season. <span role=\"region\" aria-label=\"Referenced Content\"><u>But the work is mired in an outdated and stereotyped image of ancient Egypt, so it should no longer be performed.</u></span> Opera needs to invent new traditions if it hopes to remain meaningful to contemporary audiences.</p><p>&nbsp;</p><p><strong><span role=\"heading\" aria-level=\"2\">Text 2</span></strong></p><p><em>Aida</em> is indeed dated, but it should be retained because it remains a perennial favorite and provides essential income for many opera companies. Although the work&rsquo;s imagery can feel anachronistic, there are inventive ways to reframe it. For example, conductor Soraya Mukami successfully reimagined the opera in a contemporary setting. Her staging, <em>Aida Reimagined</em>, places the story in a modern museum and has gained steady acclaim since opening in 2018.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By proposing that opera companies should consider offering reframed versions of Aida rather than abandoning the work entirely</p>"},
+    {"id": "b", "content": "<p>By agreeing that contemporary audiences have largely stopped attending performances of Aida because of its outdated imagery</p>"},
+    {"id": "c", "content": "<p>By questioning the idea that the imagery of Aida is mired in stereotype and by rejecting the suggestion that contemporary audiences would respond to a reframed version</p>"},
+    {"id": "d", "content": "<p>By pointing out that most opera companies could increase their revenue by offering reimagined versions of Aida</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The underlined claim in Text 1 holds that <em>Aida</em> should no longer be performed because its imagery is outdated. Text 2 concedes that the work is dated but argues that it should be kept and points to Mukami&rsquo;s <em>Aida Reimagined</em> as evidence that the opera can be reframed in modern settings. The author of Text 2 would therefore propose that opera companies offer reframed versions rather than abandon the work.</p><p>Choice B is incorrect because Text 2 calls <em>Aida</em> a perennial favorite and an essential source of income, not a work audiences have stopped attending. Choice C is incorrect because Text 2 accepts that the imagery is dated and advocates reframing for contemporary audiences. Choice D is incorrect because Text 2 frames reimagined versions as a way to update <em>Aida</em>&rsquo;s relevance, not as a general revenue strategy for most opera companies.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

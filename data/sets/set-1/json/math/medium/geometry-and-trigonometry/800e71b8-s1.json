@@ -1,0 +1,39 @@
+{
+  "questionId": "800e71b8-s1",
+  "originalId": "800e71b8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a circle, the measure of minor arc <em>XY</em> is 60&deg; and the length of minor arc <em>XY</em> is 18. What is the length of major arc <em>XZY</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>108</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The measure of major arc XZY is 360&deg; &minus; 60&deg; = 300&deg;. Arc length is proportional to arc measure, so the length of the major arc equals (300/60)(18) = 5(18) = 90. Choices A, B, and D are incorrect and result from incorrect ratio computation.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A3.T7.medium"
+}

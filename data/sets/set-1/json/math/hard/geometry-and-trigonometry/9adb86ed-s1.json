@@ -1,0 +1,39 @@
+{
+  "questionId": "9adb86ed-s1",
+  "originalId": "9adb86ed",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Points J and K lie on a circle with center M. The radius of this circle is 14 centimeters. Triangle MJK has a perimeter of 41 centimeters. What is the length, in centimeters, of JK?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14\u221a2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>13\u221a2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Since M is the center of the circle and J and K lie on the circle, MJ and MK each have length 14. Let the length of JK be x. The perimeter equation 14 + 14 + x = 41 gives x = 13.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A5.T12.hard"
+}

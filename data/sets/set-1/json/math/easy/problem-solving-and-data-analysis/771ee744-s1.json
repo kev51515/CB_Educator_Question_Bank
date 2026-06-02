@@ -1,0 +1,39 @@
+{
+  "questionId": "771ee744-s1",
+  "originalId": "771ee744",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are 480 marbles in a container. Of these marbles, 10% are blue. How many marbles in the container are blue?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>432</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>480</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>528</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. 10% of 480 is 0.10 \u00d7 480 = 48.</p><p>Choice A is incorrect. This is 90% of 480, not 10%.</p><p>Choice C is incorrect. This is the total number of marbles.</p><p>Choice D is incorrect. This is 110% of 480, not 10%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

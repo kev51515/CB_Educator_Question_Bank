@@ -1,0 +1,39 @@
+{
+  "questionId": "674e59a3-s1",
+  "originalId": "674e59a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Following her breakout role in 1995, Brazilian actress Fernanda Montenegro quickly became internationally known. By 2010, she <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> one of the most decorated performers in Latin American cinema, having starred in twenty-five films and won multiple international awards&mdash;more than any other Brazilian actress at the time.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>will become</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>becomes</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>will have become</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>had become</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The past perfect verb &ldquo;had become&rdquo; correctly indicates that her becoming widely decorated was completed by a specified past point (2010), before the present moment of writing.</p><p>Choice A (future) and Choice C (future perfect) don&rsquo;t fit a past time frame. Choice B (present) doesn&rsquo;t capture the completed-by-2010 sense.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

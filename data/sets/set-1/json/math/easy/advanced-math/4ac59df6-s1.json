@@ -1,0 +1,39 @@
+{
+  "questionId": "4ac59df6-s1",
+  "originalId": "4ac59df6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mfenced><mrow><mn>5</mn><mi>a</mi><mi>b</mi></mrow></mfenced><mfenced><mi>a</mi></mfenced><mfenced><mrow><mn>3</mn><mi>b</mi></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>15</mn><mi>a</mi><mi>b</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>8</mn><msup><mi>a</mi><mn>2</mn></msup><msup><mi>b</mi><mn>2</mn></msup></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>15</mn><msup><mi>a</mi><mn>2</mn></msup><msup><mi>b</mi><mn>2</mn></msup></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>8</mn><mi>a</mi><mi>b</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Multiplying the numerical coefficients: 5\u00b71\u00b73 = 15. Multiplying the variables: a\u00b7a = a\u00b2 and b\u00b7b = b\u00b2. So the product is 15a\u00b2b\u00b2.</p>",
+  "templateId": "equivalent-expressions.A3.T7.easy"
+}

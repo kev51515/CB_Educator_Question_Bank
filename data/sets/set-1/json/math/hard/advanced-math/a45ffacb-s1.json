@@ -1,0 +1,20 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "a45ffacb-s1",
+  "originalId": "a45ffacb",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i><sup><i>x</i></sup> &minus; <i>b</i>, where <i>a</i> and <i>b</i> are constants with <i>a</i> &gt; 1. In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) has an <i>x</i>-intercept at (3, 0) and a <i>y</i>-intercept at (0, &minus;7). What is the value of <i>a</i>?</p>",
+  "answerOptions": [],
+  "keys": ["2"],
+  "rationale": "<p>From the <i>y</i>-intercept: <i>f</i>(0) = <i>a</i><sup>0</sup> &minus; <i>b</i> = 1 &minus; <i>b</i> = &minus;7, so <i>b</i> = 8. From the <i>x</i>-intercept: <i>f</i>(3) = <i>a</i><sup>3</sup> &minus; <i>b</i> = 0, so <i>a</i><sup>3</sup> = <i>b</i> = 8, giving <i>a</i> = 2. Since 2 &gt; 1, this is consistent. The value of <i>a</i> is 2.</p>",
+  "generatedAt": "2026-05-27T00:00:09Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

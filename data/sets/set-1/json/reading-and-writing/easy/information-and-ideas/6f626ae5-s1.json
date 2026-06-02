@@ -1,0 +1,39 @@
+{
+  "questionId": "6f626ae5-s1",
+  "originalId": "6f626ae5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;The Mirror&rdquo; is a 1908 poem by Cordelia Hayes. In the poem, Hayes suggests that her readers, whom she addresses directly, have not fully recognized their own strength, writing, ______</p>",
+  "stem": "<p>Which quotation from &ldquo;The Mirror&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;The river runs deep and wide before you, / Sing now to its waters as you pass / Beside its banks at the close of day.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;You have not known your own measure, you have stood blind / before the glass, / Your hand has been a stranger to its own shape and use.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;I will praise your name in every song I make, / I shall write nothing but of you and your kind.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;The fields will yield their grain at season&rsquo;s end, / And the hills will hold the snow in winter still.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the lines directly tell the reader &ldquo;You have not known your own measure&rdquo; and stood &ldquo;blind / before the glass,&rdquo; clearly conveying that the reader has not fully recognized themselves or their own strength.</p><p>Choice A is incorrect: it describes a river, not the reader&rsquo;s self-knowledge. Choice C is incorrect: it focuses on the speaker&rsquo;s praise, not the reader&rsquo;s lack of self-recognition. Choice D is incorrect: it describes fields and hills, not the reader.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "deee9063-s1",
+  "originalId": "deee9063",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line <em>m</em> is defined by y = 3x + 2. Line <em>n</em> is parallel to line <em>m</em> in the <em>xy</em>-plane and passes through the point (0, 7). Which equation defines line <em>n</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = -3x + 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 3x + 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 2x + 7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = -2x + 7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Parallel lines have equal slopes. Line m has slope 3, so line n also has slope 3. The point (0, 7) is the y-intercept, so b = 7. Therefore line n is y = 3x + 7.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-equations-in-two-variables.A6.T14.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "4d38c2ea-s1",
+  "originalId": "4d38c2ea",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>Engraved bronze mirrors with figural decoration were a hallmark of ritual life in many Iron Age communities in Western Europe. One of the earliest known examples, the Aberlawr Mirror, was unearthed in southern Wales in 1972. Its overall geometric framing resembles that of other Celtic metalwork from the La Tène period (450 BCE–50 CE). The central motif, however, is unmistakably a lion—a species that did not live in Britain at the time. Lions appear frequently in ancient Etruscan art, and the Etruscan heartland in central Italy fell well within the species' historical range. On these grounds, some scholars argue that <span style=\"text-decoration: underline;\">long-distance trade in Etruscan luxury objects carried the imagery as far as Wales, where a Celtic artist could have adopted the lion motif and worked it into the Aberlawr Mirror.</span></p>",
+  "stem": "<p>Which finding, if true, would most strongly support the underlined explanation?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Several contemporary Welsh artists draw on imagery from a wide range of ancient cultures, including Etruscan art, in their work today.</p>"},
+    {"id": "b", "content": "<p>An Etruscan bronze figurine has been discovered at a La Tène-period settlement located near where the Aberlawr Mirror was found.</p>"},
+    {"id": "c", "content": "<p>The historical range of the lion expanded substantially across Mediterranean coastlines after the close of the La Tène period.</p>"},
+    {"id": "d", "content": "<p>Recent reanalysis of the Aberlawr Mirror dates it not to the La Tène period but to a much earlier Bronze Age context, before 1000 BCE.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The explanation claims that Etruscan objects reached Wales via trade and could have inspired the lion motif on the Aberlawr Mirror. Finding an Etruscan figurine at a contemporary La Tène-period site near where the mirror was unearthed directly evidences such trade contact at the relevant time and place, supporting the scholars' explanation.</p><p>Choice A is incorrect: present-day artistic borrowing cannot establish that contact occurred more than two thousand years ago. Choice C is incorrect: an expansion of lion range after the La Tène period cannot explain Iron Age imagery; the relevant period precedes the expansion. Choice D is incorrect: redating the mirror to before the La Tène period would actually undermine the explanation, since it ties the mirror to Etruscan-era trade.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

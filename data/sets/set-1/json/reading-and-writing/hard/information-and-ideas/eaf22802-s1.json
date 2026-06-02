@@ -1,0 +1,39 @@
+{
+  "questionId": "eaf22802-s1",
+  "originalId": "eaf22802",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>A student in a philosophy course is writing a paper on Hobbes&rsquo;s <em>Leviathan</em>, in which Hobbes argues for the necessity of a strong central authority and offers advice on how civil order can be maintained. Hobbes acknowledges that different commonwealths can dissolve in different ways&mdash;for example, by foreign conquest or by internal division&mdash;but maintains that some safeguards apply to every form of commonwealth. The student claims in particular that Hobbes asserts that the sovereign&rsquo;s authority to interpret and enforce the laws must never be divided or shared, since even partial division of that authority invites the collapse of the commonwealth.</p>",
+  "stem": "<p>Which quotation from a philosopher&rsquo;s analysis of <em>Leviathan</em> would best support the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;When Hobbes discusses the dangers facing every commonwealth, he warns that &lsquo;Riches, Knowledge and Honour are but several sorts of Power,&rsquo; and that subjects who accumulate any of these in excess can come to rival the sovereign.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;When Hobbes considers what must be preserved within any commonwealth, he writes that &lsquo;A kingdome divided in it selfe cannot stand,&rsquo; reasoning that if the right to judge and enforce the laws is split among separate persons or bodies, the commonwealth is already in the process of dissolution.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;When Hobbes describes the obligations of subjects in <em>Leviathan</em>, he stresses that &lsquo;The end of obedience is protection,&rsquo; and that subjects owe loyalty to whichever authority can in fact secure their lives.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;When Hobbes contrasts forms of commonwealth, he holds that monarchy, aristocracy, and democracy differ chiefly in how they assemble counsel, with monarchy offering the swiftest deliberation under ordinary circumstances.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the student&rsquo;s claim is that, according to Hobbes, the authority to interpret and enforce the laws must remain undivided. A reviewer&rsquo;s observation that Hobbes invokes &lsquo;A kingdome divided in it selfe cannot stand&rsquo; to argue that splitting the right to judge and enforce the laws among separate bodies already constitutes dissolution directly supports that claim.</p><p>Choice A is incorrect because the warning about subjects accumulating riches, knowledge, or honor concerns rivals to the sovereign, not the indivisibility of the sovereign&rsquo;s legal authority. Choice C is incorrect because tying obedience to protection addresses subjects&rsquo; duties, not whether sovereign authority can be divided. Choice D is incorrect because comparing different forms of commonwealth is unrelated to the principle that legal authority must remain undivided.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982803+00:00",
+  "templateId": "command-of-evidence.A2.T3.hard"
+}

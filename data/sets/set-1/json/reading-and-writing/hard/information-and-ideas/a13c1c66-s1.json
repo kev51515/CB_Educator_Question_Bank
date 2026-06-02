@@ -1,0 +1,39 @@
+{
+  "questionId": "a13c1c66-s1",
+  "originalId": "a13c1c66",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Many birds, including songbirds, must molt their feathers periodically, and feather molting is known to have a role in everything from regulating body temperature to refreshing the bright plumage used in mating displays. But some scientists argue that, from an evolutionary standpoint, going several weeks with damaged or partially absent flight feathers leaves a bird so exposed to predators and so impaired in foraging that the known benefits of molting seem insufficient to explain why it became so widespread among bird species. These scientists therefore imply that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>many traits that confer significant benefits on an animal also likely impose comparable costs on that animal.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>periodic feather molting is likely beneficial in ways that have not yet been identified.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>most traits perform functions that are difficult to interpret from an evolutionary perspective.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>understanding how widespread feather molting is among birds matters more than understanding its function.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says that some scientists cannot explain why feather molting is so widespread among birds, given that its known benefits don't seem to outweigh how vulnerable the molting period makes the bird. The most logical inference is that molting probably has additional, currently unknown benefits that make up for that vulnerability and account for its evolutionary persistence.</p><p>Choice A is incorrect because the text discusses the benefits and risks of only one trait\u2014molting\u2014so there's no basis for a generalization about \"many traits.\" Choice C is incorrect for the same reason: the text only addresses molting, not most traits. Choice D is incorrect because the text accepts that molting is already known to be widespread; what the scientists can't explain is <em>why</em>, given its costs.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

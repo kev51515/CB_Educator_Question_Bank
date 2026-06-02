@@ -1,0 +1,39 @@
+{
+  "questionId": "820ad8e8-s1",
+  "originalId": "820ad8e8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a coding competition, each participant earns 2 points for each silver-tier problem the participant solves and 5 points for each gold-tier problem solved. A certain participant has earned 38 points. Which equation represents this situation, where <i>s</i> represents the number of silver-tier problems and <i>g</i> represents the number of gold-tier problems solved?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5<i>s</i> + 2<i>g</i> = 38</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2<i>s</i> + <i>g</i>/5 = 38</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2<i>s</i> + 5<i>g</i> = 38</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(<i>s</i>/2) + 5<i>g</i> = 38</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Each silver-tier problem contributes 2<i>s</i> total points and each gold-tier contributes 5<i>g</i>; together they total 38.</p><p>Choice A swaps the point values. Choices B and D mishandle the point coefficients as divisors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

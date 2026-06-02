@@ -1,0 +1,39 @@
+{
+  "questionId": "1ce9ffcd-s1",
+  "originalId": "1ce9ffcd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">&minus;4<i>x</i>&sup2; + 28<i>x</i> + <i>c</i> = 0</p><p>In the given equation, <i>c</i> is a constant. The equation has exactly one solution. What is the value of <i>c</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;49</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>49</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>A quadratic <i>a</i><i>x</i>&sup2; + <i>b</i><i>x</i> + <i>c</i> = 0 has exactly one solution when the discriminant is zero: <i>b</i>&sup2; &minus; 4<i>a</i><i>c</i> = 0. Here <i>a</i> = &minus;4, <i>b</i> = 28: 28&sup2; &minus; 4(&minus;4)<i>c</i> = 0, so 784 + 16<i>c</i> = 0, giving <i>c</i> = &minus;49.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

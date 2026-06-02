@@ -1,0 +1,39 @@
+{
+  "questionId": "3f5375d9-s1",
+  "originalId": "3f5375d9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph models the cost, in dollars, of a taxi ride for x miles. The line passes through the points (1, 7) and (3, 13). According to the graph, what is the cost for each additional mile traveled, in dollars, of a taxi ride?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$1.00</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$2.50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$3.50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$3.00</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (13 - 7)/(3 - 1) = 6/2 = 3, so each additional mile costs $3.00.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A4.T2.easy"
+}

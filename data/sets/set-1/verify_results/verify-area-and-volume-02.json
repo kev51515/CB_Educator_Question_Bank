@@ -1,0 +1,22 @@
+[
+  {"id": "ec5d4823-s1", "templateId": "area-and-volume.A2.T1.medium", "verdict": "difficulty_drift", "detail": "Medium A2.T1 requires cube-from-edge or reverse (V+base area->dim) or missing-face SA variant. Clone is plain 3-integer V=lwh with small integers — matches Easy lever, not Medium."},
+  {"id": "e86f0651-s1", "templateId": "area-and-volume.A1.T3.medium", "verdict": "ok"},
+  {"id": "a2659088-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "ok"},
+  {"id": "3b931fb0-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "ok"},
+  {"id": "96467fea-s1", "templateId": "area-and-volume.A1.T3.medium", "verdict": "ok"},
+  {"id": "aef4fd8a-s1", "templateId": "area-and-volume.A1.T1.medium", "verdict": "ok"},
+  {"id": "6ae1360d-s1", "templateId": "area-and-volume.A1.T3.medium", "verdict": "ok"},
+  {"id": "468613c0-s1", "templateId": "area-and-volume.A1.T2.medium", "verdict": "ok"},
+  {"id": "c0586eb5-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "ok"},
+  {"id": "ae33e0a1-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "ok"},
+  {"id": "9c0a0eca-s1", "templateId": "area-and-volume.A1.T2.medium", "verdict": "ok"},
+  {"id": "a2e76b60-s1", "templateId": "area-and-volume.A4.T3.medium", "verdict": "ok"},
+  {"id": "6708546e-s1", "templateId": "area-and-volume.A3.T1.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional scale, or reverse algebra. Clone gives integer scale factor 3 directly — this matches Medium lever, not Hard."},
+  {"id": "b2528e6b-s1", "templateId": "area-and-volume.A4.T2.hard", "verdict": "ok"},
+  {"id": "9966235e-s1", "templateId": "area-and-volume.A4.T1.hard", "verdict": "ok"},
+  {"id": "9f934297-s1", "templateId": "area-and-volume.A2.T1.hard", "verdict": "ok"},
+  {"id": "e5c57163-s1", "templateId": "area-and-volume.A3.T1.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T1 requires sqrt/percentage/fractional/reverse lever. Clone gives integer scale 247 directly and asks forward area ratio — matches Medium A3.T1 lever, not Hard."},
+  {"id": "9fec9d49-s1", "templateId": "area-and-volume.A3.T1.hard", "verdict": "ok"},
+  {"id": "502d9690-s1", "templateId": "area-and-volume.A3.T1.hard", "verdict": "ok"},
+  {"id": "5b2b8866-s1", "templateId": "area-and-volume.A3.T1.hard", "verdict": "ok"}
+]

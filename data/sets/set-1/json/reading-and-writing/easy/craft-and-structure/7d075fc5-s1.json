@@ -1,0 +1,25 @@
+{
+  "questionId": "7d075fc5-s1",
+  "originalId": "7d075fc5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Oral histories—whether they consist of conversations or recordings of traditional songs—can offer researchers a rich window into people's everyday experiences. For her book about textile workers in 1930s North Carolina, historian Maya Reynolds therefore drew in part on interviews with retired mill workers and their families. <u>Through these conversations, she gained meaningful insight into the daily routines of mill life.</u></p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It provides a little-known geographical fact about North Carolina.</p>"},
+    {"id": "b", "content": "<p>It describes how Maya Reynolds benefited from incorporating oral history in her book.</p>"},
+    {"id": "c", "content": "<p>It presents a major historical event that took place in the 1930s.</p>"},
+    {"id": "d", "content": "<p>It argues that Maya Reynolds is an expert on labor economics.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The first sentence states that oral histories offer rich views into daily life. The text then describes how Reynolds used oral histories for her book. The underlined sentence confirms that this approach gave her insight into the workers' daily routines—affirming the general advantage of oral histories.</p><p>Choice A is incorrect. The sentence offers no geographical fact. Choice C is incorrect. No historical event is presented. Choice D is incorrect. The sentence doesn't make Reynolds out as an expert in labor economics.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

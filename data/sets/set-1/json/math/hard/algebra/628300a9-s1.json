@@ -1,0 +1,39 @@
+{
+  "questionId": "628300a9-s1",
+  "originalId": "628300a9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A chemistry teacher is preparing the 8 stations of a chemistry laboratory. Each station will have either Experiment X materials or Experiment Y materials, but not both. Experiment X requires 5 grams of salt, and Experiment Y requires 3 grams of salt. If <i>x</i> is the number of stations that will be set up for Experiment X and the remaining stations will be set up for Experiment Y, which of the following equations indicates that a total of 40 grams of salt is needed for all 8 stations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5<i>x</i> + 3 = 40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5<i>x</i> = 40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5<i>x</i> + 3<i>x</i> = 40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5<i>x</i> + 3(8 &minus; <i>x</i>) = 40</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The number of Experiment Y stations is 8 &minus; <i>x</i>. Total salt = 5<i>x</i> (from Experiment X stations) + 3(8 &minus; <i>x</i>) (from Experiment Y stations) = 40.</p><p>Choices A, B, and C fail to correctly account for the 8 &minus; <i>x</i> Experiment Y stations.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.hard"
+}

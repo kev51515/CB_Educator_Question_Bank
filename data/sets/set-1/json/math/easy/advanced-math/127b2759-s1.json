@@ -1,0 +1,39 @@
+{
+  "questionId": "127b2759-s1",
+  "originalId": "127b2759",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>12</mn><mo>+</mo><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>84</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><msup><mi>n</mi><mn>2</mn></msup><mo>-</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><msup><mi>n</mi><mn>2</mn></msup><mo>+</mo><mn>19</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Adding the constant terms 12 and 7 gives 19. So the expression simplifies to n\u00b2 + 19.</p>",
+  "templateId": "equivalent-expressions.A1.T1.easy"
+}

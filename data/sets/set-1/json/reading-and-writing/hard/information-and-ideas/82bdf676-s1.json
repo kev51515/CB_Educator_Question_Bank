@@ -1,0 +1,25 @@
+{
+  "questionId": "82bdf676-s1",
+  "originalId": "82bdf676",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Line graph: Participants&rsquo; Trustworthiness Ratings for News Sources by Sources&rsquo; Bylines and Participants&rsquo; Skepticism Scores. X-axis: participants&rsquo; skepticism scores 1 (least skeptical) to 7 (most skeptical). Y-axis: source-trustworthiness score 0–100. Two lines: bylined-source line stays near 70 across all skepticism scores 1–7 (1:70, 2:70, 3:70, 4:70, 5:70, 6:71, 7:71). Anonymous-source line rises from 20 at skepticism 1, to 31 at 2, 42 at 3, 51 at 4, 62 at 5, 71 at 6, and 84 at 7.]</p>\n<p>Carmen Vidal <em>et al.</em> presented study participants with brief news items credited either to a named journalist with verifiable credentials (&ldquo;bylined&rdquo; sources) or to an unnamed contributor (&ldquo;anonymous&rdquo; sources). A survey recorded participants&rsquo; ratings of each source&rsquo;s trustworthiness and showed that across participants, anonymous sources were rated less trustworthy than bylined sources. However, when the researchers factored in participants&rsquo; own skepticism scores, on a scale of 1 (least skeptical) to 7 (most skeptical), they concluded that this relative ranking persisted except among the participants with the highest skepticism scores.</p>",
+  "stem": "<p>Which choice best describes data from the graph that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Across all skepticism scores, participants gave bylined sources a higher trustworthiness rating than they gave anonymous sources, and the gap remained roughly constant.</p>"},
+    {"id": "b", "content": "<p>There was a strong positive correlation between participants&rsquo; skepticism scores and bylined sources&rsquo; trustworthiness ratings, but no correlation between skepticism scores and anonymous sources&rsquo; ratings.</p>"},
+    {"id": "c", "content": "<p>Unlike participants with a skepticism score of 6, participants with a score either above or below 6 rated bylined and anonymous sources differently.</p>"},
+    {"id": "d", "content": "<p>Participants with a skepticism score of 5 or less rated bylined sources as more trustworthy than anonymous sources, whereas participants with a score of 6 or more rated anonymous sources as approximately equally or more trustworthy than bylined sources.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it captures the researchers&rsquo; conclusion: the trend of rating bylined sources as more trustworthy than anonymous sources persists across participants with low to medium-high skepticism but breaks down at high skepticism scores. The graph shows the bylined line steady near 70 across skepticism scores 1–7, while the anonymous line rises from 20 to 84; at skepticism 6 the two lines meet (~71), and at skepticism 7 the anonymous line (84) exceeds the bylined line (71).</p><p>Choice A is incorrect because the gap is not roughly constant: it narrows from about 50 points to zero (and then reverses) as skepticism rises. Choice B is incorrect because the correlation pattern is reversed&mdash;skepticism scores correlate positively with <em>anonymous</em>-source ratings, not bylined ratings. Choice C is incorrect because it merely notes that skepticism score 6 is a meeting point; it does not characterize the directional reversal that supports the researchers&rsquo; specific conclusion.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

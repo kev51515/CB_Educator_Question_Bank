@@ -1,0 +1,39 @@
+{
+  "questionId": "dd19befa-s1",
+  "originalId": "dd19befa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The familial structure of the laysan albatross (<em>Phoebastria immutabilis</em>) shows tremendous <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: long-paired males and females sometimes part for a season to rear chicks with another partner, and while female-male pairs are most common at some colonies, female-female pairs frequently rear chicks too, achieving a higher rate of fledging success than is sometimes observed at neighboring colonies.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>cohesion</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>affection</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>flexibility</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>reciprocity</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Flexibility\" most logically completes the text. The colon lists multiple variations in partnering arrangements (occasional separations, female-female pairs, etc.), all of which demonstrate that the family structure is not fixed but adaptable\u2014flexible.</p><p>Choice A is incorrect. \"Cohesion\" means togetherness or sticking together; the examples emphasize variation rather than togetherness. Choice B is incorrect. \"Affection\" describes warm feelings; the examples don't measure that. Choice D is incorrect. \"Reciprocity\" describes mutual exchange between partners, but the examples illustrate variation in family arrangements rather than mutual exchange.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "156ff681-s1",
+  "originalId": "156ff681",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Many large urban employers have long paid wages by direct electronic deposit, but in some regions of the world, employers have traditionally paid in physical cash and have only recently introduced electronic payroll systems. Researchers studied the introduction of an electronic payroll system at a manufacturing site in one such region and found that workers who received electronic deposits purchased a noticeably different mix of goods than workers who received cash for the same nominal pay. One potential explanation for this result is that workers conceive of and budget money differently when they hold physical cash than when they hold equivalent amounts of money in electronic form.</p>",
+  "stem": "<p>Which finding from the study, if true, would most directly weaken the potential explanation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Workers receiving electronic deposits tended to spend their pay more slowly across the month than workers receiving cash did.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Workers receiving cash made roughly the same number of separate purchases as workers receiving electronic deposits.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Some cash recipients were paid weekly while others were paid monthly.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Almost every recipient of an electronic deposit withdrew the full amount as cash within a few days of being paid.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the explanation assumes electronic-deposit workers were actually holding their money electronically when making purchases. If they immediately withdrew the whole amount as cash, they were holding cash too, just like the other group&mdash;so the &ldquo;cash vs. electronic&rdquo; conception cannot explain the spending difference. That weakens the proposed explanation. Choices A, B, and C describe other behaviors that don&rsquo;t bear on whether workers conceived of money differently by form.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A4.T6.hard"
+}

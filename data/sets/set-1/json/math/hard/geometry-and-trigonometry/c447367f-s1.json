@@ -1,0 +1,39 @@
+{
+  "questionId": "c447367f-s1",
+  "originalId": "c447367f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle in the xy-plane has its center at (\u22125, 12) and has a radius of 7m. Which equation represents this circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x + 5)<sup>2</sup> + (y \u2212 12)<sup>2</sup> = 7m</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x \u2212 5)<sup>2</sup> + (y + 12)<sup>2</sup> = 49m<sup>2</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x + 5)<sup>2</sup> + (y \u2212 12)<sup>2</sup> = 7m<sup>2</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x + 5)<sup>2</sup> + (y \u2212 12)<sup>2</sup> = 49m<sup>2</sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The standard form is (x \u2212 h)<sup>2</sup> + (y \u2212 k)<sup>2</sup> = r<sup>2</sup>. Substituting h = \u22125, k = 12, and r = 7m gives (x + 5)<sup>2</sup> + (y \u2212 12)<sup>2</sup> = (7m)<sup>2</sup> = 49m<sup>2</sup>.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A1.T2.hard"
+}

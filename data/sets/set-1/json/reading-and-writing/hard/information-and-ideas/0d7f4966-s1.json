@@ -1,0 +1,39 @@
+{
+  "questionId": "0d7f4966-s1",
+  "originalId": "0d7f4966",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Paleobotanist Vera Lindstrom and colleagues recently identified a set of fossilized leaves at a Carboniferous-period site in Scotland that they claim are the oldest known examples of a particular kind of fern. Over the past decade, two sites in Germany and Morocco have produced leaf fossils of comparable age that several other researchers have argued are most likely ferns of the same kind, based on the leaves&rsquo; vein patterns and outline shapes. But Lindstrom and colleagues argue that what appear to be diagnostic veins on the German and Moroccan fossils are in fact compression artifacts from sedimentation, and they conclude that those fossils belong to an unrelated plant lineage.</p>",
+  "stem": "<p>Which statement, if true, would most directly weaken Lindstrom and colleagues&rsquo; claim about the fossils found in Germany and Morocco?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The Scottish site has produced numerous well-preserved fossils from later periods that have been identified as the lineage of fern Lindstrom describes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The plant lineage Lindstrom proposes for the German and Moroccan fossils has been identified at several other Carboniferous sites in Europe.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Detailed microscopic analysis of the German and Moroccan fossils has revealed continuous vein networks that cannot be explained by sediment-compression artifacts.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The Scottish fossils Lindstrom identified are better preserved than the German and Moroccan fossils.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it directly undermines the basis of Lindstrom&rsquo;s argument&mdash;that the apparent veins on the German and Moroccan fossils are mere compression artifacts. If careful microscopy shows the veins are continuous networks rather than artifacts, that supports the fern interpretation and weakens Lindstrom&rsquo;s alternative. Choice A is about other Scottish fossils and doesn&rsquo;t address the contested fossils. Choice B is consistent with Lindstrom&rsquo;s view. Choice D is about preservation quality but doesn&rsquo;t address the artifact claim directly.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A4.T6.hard"
+}

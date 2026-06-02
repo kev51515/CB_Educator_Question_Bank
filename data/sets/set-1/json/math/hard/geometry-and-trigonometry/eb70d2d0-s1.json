@@ -1,0 +1,23 @@
+{
+  "questionId": "eb70d2d0-s1",
+  "originalId": "eb70d2d0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The points (&minus;2, 5), (3, &minus;2), and (6, 4) lie in the xy-plane. What is the area, in square units, of the triangle formed by connecting the three points?</p>",
+  "answerOptions": null,
+  "keys": [
+    "51/2",
+    "25.5"
+  ],
+  "rationale": "<p>The correct answer is 25.5 (equivalent to 51/2). Using the shoelace formula, Area = (1/2)|x&#8321;(y&#8322; &minus; y&#8323;) + x&#8322;(y&#8323; &minus; y&#8321;) + x&#8323;(y&#8321; &minus; y&#8322;)| = (1/2)|(&minus;2)(&minus;2 &minus; 4) + 3(4 &minus; 5) + 6(5 &minus; (&minus;2))| = (1/2)|12 &minus; 3 + 42| = (1/2)(51) = 25.5 square units.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A4.T2.hard"
+}

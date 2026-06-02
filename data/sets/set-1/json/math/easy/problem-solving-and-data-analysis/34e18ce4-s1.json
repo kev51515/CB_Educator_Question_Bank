@@ -1,0 +1,39 @@
+{
+  "questionId": "34e18ce4-s1",
+  "originalId": "34e18ce4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are 425 candies in a jar. Of these candies, 8% are sour. How many sour candies are in the jar?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>34</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>391</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 8% of 425 is 0.08 \u00d7 425 = 34.</p><p>Choice A is incorrect. This is just the percent value, not applied to 425.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This is the number of candies that are not sour (92%).</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

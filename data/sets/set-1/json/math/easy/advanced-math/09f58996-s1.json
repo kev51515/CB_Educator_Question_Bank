@@ -1,0 +1,22 @@
+{
+  "questionId": "09f58996-s1",
+  "originalId": "09f58996",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>4</mn><mo>+</mo><msqrt><mi>x</mi></msqrt></math>. What is the value of <math><mi>f</mi><mfenced><mn>49</mn></mfenced></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The correct answer is 11. Substituting 49 for <em>x</em>: <math><mi>f</mi><mfenced><mn>49</mn></mfenced><mo>=</mo><mn>4</mn><mo>+</mo><msqrt><mn>49</mn></msqrt><mo>=</mo><mn>4</mn><mo>+</mo><mn>7</mn><mo>=</mo><mn>11</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

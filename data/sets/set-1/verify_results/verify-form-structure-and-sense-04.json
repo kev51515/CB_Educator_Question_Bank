@@ -1,0 +1,22 @@
+[
+  {"id": "588887b9-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "difficulty_drift", "detail": "Past-perfect required by 'two decades earlier' sequencing with another past event matches the medium lever ('two competing time frames, past-perfect vs simple-past discrimination'), not easy. Answer 'had designed' is correct, but item belongs at medium."},
+  {"id": "988c78eb-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "type_drift", "detail": "Stem has no interrupting modifier between subject 'demonstration' and verb — the blank sits inside a 'that' relative clause whose subject is 'that' (=demonstration). This is T3-like (or arguably A1, since options mix tense AND number). Answer 'advances' is correct."},
+  {"id": "c102f9b0-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "f4fd123c-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "ok"},
+  {"id": "d47bb0a4-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "ok"},
+  {"id": "fff4c7f4-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "83617355-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "constraint_violation", "detail": "Violates must_preserve 'four options vary only in number/person'. Options mix tense AND form (lights, will be lighting, would light, lit) — this is A1, not A2. Answer 'lights' is grammatically correct, but the item tests tense/form selection, not number agreement."},
+  {"id": "975eda7c-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "e38b3e4f-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "ok"},
+  {"id": "f40ca576-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "12bd5b75-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "69f031ab-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "ec08463d-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "acf454af-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "ok"},
+  {"id": "035fd57e-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "35360da9-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "4a90a978-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "3580533b-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "cf08e2fd-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "e62241b7-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "ok"}
+]

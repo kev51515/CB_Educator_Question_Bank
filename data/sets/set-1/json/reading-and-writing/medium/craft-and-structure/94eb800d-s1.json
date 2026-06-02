@@ -1,0 +1,25 @@
+{
+  "questionId": "94eb800d-s1",
+  "originalId": "94eb800d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>For a 2019 gallery installation, choreographer and computer scientist Mira Bellweather <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a series of short dance films inspired by handwritten letters her grandmother had mailed from rural Louisiana in the 1950s. Bellweather filmed contemporary dancers performing motion-captured sequences that she then layered atop scans of the letters, producing what she described as \"choreography of memory.\"</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>verified</p>"},
+    {"id": "b", "content": "<p>contested</p>"},
+    {"id": "c", "content": "<p>produced</p>"},
+    {"id": "d", "content": "<p>recovered</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Produced\" means made or created. The text describes Bellweather drawing on her dual interests in choreography and computer science to make the films, layering captured movement over scanned letters to generate the installation pieces.</p><p>Choice A is incorrect. Nothing in the text suggests Bellweather \"verified,\" or confirmed the accuracy of, the films; the text addresses how she made them. Choice B is incorrect. There is no indication Bellweather \"contested,\" or disputed, the films. Choice D is incorrect. The text indicates Bellweather created the films from new footage and scans, not that she \"recovered\" them from a damaged or lost state.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

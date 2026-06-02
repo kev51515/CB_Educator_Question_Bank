@@ -1,0 +1,39 @@
+{
+  "questionId": "2a08d878-s1",
+  "originalId": "2a08d878",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are <em>k</em> apples and 9 oranges in a basket. If one of these pieces of fruit is selected at random, what is the probability of selecting an apple, in terms of <em>k</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9/k</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>k/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9/(k+9)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>k/(k+9)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The total number of pieces of fruit is k + 9, so the probability of selecting an apple is k/(k+9).</p><p>Choice A is incorrect; this is oranges divided by apples. Choice B is incorrect; this is apples divided by oranges. Choice C is incorrect; this is the probability of selecting an orange.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

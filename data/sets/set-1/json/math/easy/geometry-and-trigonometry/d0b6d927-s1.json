@@ -1,0 +1,39 @@
+{
+  "questionId": "d0b6d927-s1",
+  "originalId": "d0b6d927",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A rectangle has an area of 84 square meters and a length of 12 meters. What is the width, in meters, of the rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>96</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,008</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A = lw, so 84 = 12w, giving w = 7 meters. Choice A is A \u2212 l; choice B is A + l; choice D is A \u00d7 l.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

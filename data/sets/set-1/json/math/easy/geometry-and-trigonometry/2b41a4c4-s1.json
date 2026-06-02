@@ -1,0 +1,22 @@
+{
+  "questionId": "2b41a4c4-s1",
+  "originalId": "2b41a4c4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A right rectangular prism has a length of 7 meters, a width of 9 meters, and a height of 12 meters. What is the volume, in cubic meters, of the prism?</p>",
+  "answerOptions": null,
+  "keys": [
+    "756"
+  ],
+  "rationale": "<p>The volume V of a right rectangular prism is V = lwh. Substituting l = 7, w = 9, and h = 12 gives V = 7 \u00d7 9 \u00d7 12 = 756 cubic meters.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A2.T1.easy"
+}

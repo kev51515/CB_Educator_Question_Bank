@@ -1,0 +1,39 @@
+{
+  "questionId": "048811bd-s1",
+  "originalId": "048811bd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is 10% of 480?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>44</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>432</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 10% of 480 is 0.10 \u00d7 480 = 48.</p><p>Choice A is incorrect. This results from a computational error.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This is 90% of 480, not 10%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T1.easy"
+}

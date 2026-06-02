@@ -1,0 +1,39 @@
+{
+  "questionId": "08ff903e-s1",
+  "originalId": "08ff903e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>A museum curator is writing a biographical statement about Senegalese-born Cuban dancer, choreographer, and teacher Ana\u00eds Diatta for a new exhibit on Cuban dance. The curator claims that some of the pieces Diatta created shortly after arriving in Havana in 1956, such as the solo dance <em>Drums of Saint-Louis</em>, reflect a desire to represent the dances of local communities Diatta visited during her travels through coastal Senegal.</p>",
+  "stem": "<p>Which quotation from a work by a dance historian would be the most effective evidence for the curator to include in support of this claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"<em>Drums of Saint-Louis</em> was inspired by a fishermen's wedding dance Diatta watched during her time conducting field research among coastal communities near the city of Saint-Louis in 1953 or 1954.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"There is no sung accompaniment in <em>Drums of Saint-Louis</em>, only the steady beat of an open hand drum and the soft scrape of Diatta's bare feet across the wooden stage.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"Unlike some of the works Diatta created in the late 1950s, <em>Drums of Saint-Louis</em> does not feature a narrative arc, comic interludes, or references to current events.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"<em>Drums of Saint-Louis</em> is notable for its physical demands, with Diatta performing low spins, quick footwork, and broad sweeping arm gestures as she travels in a wide circle around the stage.\"</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. It directly connects <em>Drums of Saint-Louis</em> to a dance Diatta observed in a local Senegalese coastal community, supporting the curator's claim.</p><p>Choice B is incorrect; describing the sound design does not tie the piece to local community dances. Choice C is incorrect; it contrasts the work with Diatta's later pieces but does not connect it to local dances. Choice D is incorrect; describing the choreography does not establish a community source.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A2.T3.easy"
+}

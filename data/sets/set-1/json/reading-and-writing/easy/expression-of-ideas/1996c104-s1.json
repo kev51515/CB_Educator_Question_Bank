@@ -1,0 +1,39 @@
+{
+  "questionId": "1996c104-s1",
+  "originalId": "1996c104",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The hot gases in the Sun's outer atmosphere swirl continuously, and this motion generates magnetic fields that loop between the Sun's surface and corona. These magnetic fields, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> store enormous amounts of energy that can release as solar flares affecting communications on Earth.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>likewise,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>nevertheless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>in turn,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>in reality,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"In turn\" logically signals that the information in the sentence\u2014that the magnetic fields store energy that can release as solar flares\u2014is a result or consequence of the previous information about the swirling hot gases generating magnetic fields.</p><p>Choice A is incorrect because \"likewise\" illogically signals that the information in the sentence is similar to the previous information. Instead, the energy storage is a direct result or consequence. Choice B is incorrect because \"nevertheless\" illogically signals that the information in the sentence is true despite the previous information. Instead, it is a direct result of that information. Choice D is incorrect because \"in reality\" illogically signals that the information contradicts the previous information. Instead, it is a direct result of that information.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T6.easy"
+}

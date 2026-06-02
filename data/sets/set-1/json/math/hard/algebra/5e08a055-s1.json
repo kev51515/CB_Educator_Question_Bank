@@ -1,0 +1,39 @@
+{
+  "questionId": "5e08a055-s1",
+  "originalId": "5e08a055",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>y</mi><mo>=</mo><mo>-</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>7</mn></math></p>\n<p>One of the equations in a system of two linear equations is given. The system has no solution. Which equation could be the second equation in the system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2</mn><mi>y</mi><mo>=</mo><mo>-</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>16</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>7</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mo>-</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>7</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2</mn><mi>y</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>14</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. For no solution, the second equation must have the same slope as the given line (-2) but a different y-intercept. Choice A simplifies to y = -2x + 8, parallel and distinct. Choice B has slope 2. Choice C is the same line. Choice D simplifies to y = 2x + 7 (slope 2).</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard"
+}

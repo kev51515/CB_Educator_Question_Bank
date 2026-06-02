@@ -1,0 +1,39 @@
+{
+  "questionId": "ecbdbe84-s1",
+  "originalId": "ecbdbe84",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The table summarizes the number of employees at each of the 19 shops in a town.</p><figure class=\"table\"><table border=\"1\"><tbody><tr><th>Number of employees</th><th>Number of shops</th></tr><tr><td style=\"text-align:center;\">1 to 5</td><td style=\"text-align:center;\">3</td></tr><tr><td style=\"text-align:center;\">6 to 10</td><td style=\"text-align:center;\">4</td></tr><tr><td style=\"text-align:center;\">11 to 15</td><td style=\"text-align:center;\">5</td></tr><tr><td style=\"text-align:center;\">16 to 20</td><td style=\"text-align:center;\">4</td></tr><tr><td style=\"text-align:center;\">21 to 25</td><td style=\"text-align:center;\">3</td></tr></tbody></table></figure><p>Which of the following could be the median number of employees for the 19 shops in the town?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>22</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since there are 19 shops (an odd count), the median is the 10th value when the shops are listed in ascending order of employees. The cumulative counts are: 3 (\u22645), 7 (\u226410), 12 (\u226415), 16 (\u226420), 19 (\u226425). The 10th value falls within the '11 to 15' interval. Therefore, the median number of employees must be between 11 and 15, inclusive. Of the given options, only 12 lies in that range.</p><p>Choices B, C, and D are incorrect because 8, 17, and 22 fall outside the 11 to 15 range that contains the median.</p>",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.hard"
+}

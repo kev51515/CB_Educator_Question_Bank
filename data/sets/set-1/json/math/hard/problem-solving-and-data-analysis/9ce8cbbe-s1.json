@@ -1,0 +1,39 @@
+{
+  "questionId": "9ce8cbbe-s1",
+  "originalId": "9ce8cbbe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Set L consists of all the positive integers that are less than or equal to 200, where none of the integers are repeated. If a number is selected at random from set L, what is the probability of selecting a number that is odd and less than or equal to 60?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3/20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7/40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3/10</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Set L has 200 integers (1 through 200). The odd integers in L that are \u2264 60 are 1, 3, 5, \u2026, 59 \u2014 a total of 30 numbers. The probability is 30/200 = 3/20.</p><p>Choices A, C, and D are incorrect; they arise from miscounting odd numbers in the range.</p>",
+  "templateId": "probability-and-conditional-probability.A5.T14.hard"
+}

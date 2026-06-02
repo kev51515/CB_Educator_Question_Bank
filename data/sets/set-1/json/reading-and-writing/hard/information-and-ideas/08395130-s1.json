@@ -1,0 +1,25 @@
+{
+  "questionId": "08395130-s1",
+  "originalId": "08395130",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The James Webb Space Telescope (JWST) has rapidly become the most powerful infrared observatory ever launched, producing landmark images of distant galaxies and exoplanet atmospheres; even so, only a small fraction of its observing time is allotted to objects within our own solar system. Astrophysicist Pablo Restrepo and colleagues argue that a smaller, dedicated infrared telescope optimized for solar-system targets would allow continuous monitoring of icy moons and a comprehensive survey of trans-Neptunian objects. Restrepo and colleagues' recommendation therefore implies that the JWST <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>will likely be reconfigured so that its observing time is devoted mainly to solar-system bodies once the dedicated telescope is launched.</p>"},
+    {"id": "b", "content": "<p>is incapable of producing useful infrared observations of trans-Neptunian objects without significant hardware upgrades.</p>"},
+    {"id": "c", "content": "<p>will most likely continue to focus its observing time on targets beyond the solar system.</p>"},
+    {"id": "d", "content": "<p>has already provided enough data on icy moons to make additional infrared observations of them unnecessary.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text states that only a small fraction of JWST's observing time is allotted to solar-system objects, and that researchers are arguing for a separate, dedicated telescope to handle that work. The clearest implication is that the JWST will continue to be used primarily for objects beyond the solar system, leaving solar-system work to the proposed new instrument.</p><p>Choice A is incorrect: nothing in the text suggests JWST will be reconfigured; the argument is that a new telescope is needed precisely because JWST is occupied with other targets. Choice B is incorrect because the text does not claim JWST cannot observe trans-Neptunian objects — only that it does not devote much time to them. Choice D is incorrect: the researchers are calling for more, not less, observation of icy moons.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

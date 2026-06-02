@@ -1,0 +1,22 @@
+{
+  "questionId": "1f0966db-s1",
+  "originalId": "1f0966db",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The function <em>g</em> is defined by g(x) = (4/3)x + 5/3. For what value of <em>x</em> does g(x) = 7?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>Set (4/3)x + 5/3 = 7. Subtract 5/3 from both sides: (4/3)x = 7 - 5/3 = 21/3 - 5/3 = 16/3. Multiply both sides by 3/4: x = (16/3)(3/4) = 16/4 = 4.</p>",
+  "templateId": "linear-functions.A1.T2.medium"
+}

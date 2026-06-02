@@ -1,0 +1,39 @@
+{
+  "questionId": "4a07be59-s1",
+  "originalId": "4a07be59",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Cognitive scientists Mei Tanaka, Hugo Lemaire, and their team studied vocal-discrimination abilities in twenty-two domestic cats. The researchers used noninvasive EEG to record brain activity in cats including Pumpkin (a Maine Coon), Solomon (a Siamese), and others while each cat listened to three audio clips: one of a familiar caregiver reading a children's story in Japanese, a second of an unfamiliar speaker reading the same story in French, and a third that consisted of randomly resequenced sound fragments from the first two recordings\u2014a clip that no longer sounded like fluent human speech. Each cat had been raised hearing either Japanese or French, but not both. From the results, the team concluded that differences in cats' anatomical features may influence their ability to distinguish human speech from non-speech vocal sounds.</p>",
+  "stem": "<p>Which finding from the study, if true, would most directly support the team's conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The brain-activity pattern shown by upright-eared cats when hearing the scrambled clip differed from the pattern shown by flat-eared cats when hearing the language they were familiar with.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Upright-eared cats raised hearing Japanese tended to show more brain activity when hearing Japanese than upright-eared cats raised hearing French showed when hearing French.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Compared with flat-eared cats, upright-eared cats showed a greater difference in brain activity when hearing either Japanese or French than when hearing the scrambled recording.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Compared with flat-eared cats, upright-eared cats showed a greater difference in brain activity when hearing the language they were familiar with than when hearing the other language.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The team's conclusion links an anatomical feature (ear shape) to the ability to distinguish speech from non-speech. A finding that upright-eared cats show a larger speech-vs.-nonspeech contrast than flat-eared cats directly ties anatomy to that discrimination, supporting the conclusion.</p><p>Choice A is incorrect: it compares one group on nonspeech with another group on familiar speech\u2014an asymmetric comparison that doesn't isolate the speech/non-speech contrast across anatomical types. Choice B is incorrect: it concerns only upright-eared cats and compares familiar-language responses across language groups, not speech vs. non-speech. Choice D is incorrect: it addresses familiar-vs.-unfamiliar language, not speech vs. non-speech, which is what the conclusion is about.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

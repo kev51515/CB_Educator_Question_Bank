@@ -1,0 +1,22 @@
+{
+  "questionId": "4edecdba-s1",
+  "originalId": "4edecdba",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>9<i>x</i> + 7<i>y</i> = 150. The equation gives the possible combinations of the number of standard tokens, <i>x</i>, and the number of premium tokens, <i>y</i>, in a collection worth a total of 150 credits. If a collection contains 6 premium tokens, how many standard tokens does it contain?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>Substituting <i>y</i> = 6 into 9<i>x</i> + 7<i>y</i> = 150 gives 9<i>x</i> + 42 = 150. Subtracting 42 from both sides yields 9<i>x</i> = 108, and dividing by 9 gives <i>x</i> = 12.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

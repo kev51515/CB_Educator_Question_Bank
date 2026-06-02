@@ -1,0 +1,39 @@
+{
+  "questionId": "fa014d2d-s1",
+  "originalId": "fa014d2d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The release in 2007 of the first modern smartphone fundamentally changed the mobile communications industry. In fact, some analysts argue that the device essentially <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the industry by giving consumers a single handheld device for telephony, internet access, and software applications all at once.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>discouraged</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>reinvented</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>copied</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>distanced</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because \"reinvented\" means thoroughly changed in form or function, matching the description of the device combining several capabilities at once. Choice A is incorrect because \"discouraged\" suggests deterring development; the text describes positive, transformative change. Choice C is incorrect because \"copied\" means imitated; the device was a novel combination, not a copy. Choice D is incorrect because \"distanced\" means moved away from; the device acted on the industry rather than withdrawing from it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

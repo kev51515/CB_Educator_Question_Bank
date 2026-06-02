@@ -1,0 +1,39 @@
+{
+  "questionId": "79137c1b-s1",
+  "originalId": "79137c1b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the size x (in hundreds of square feet) and the sale price y (in thousands of dollars) of 22 condominiums in City T. The trend rises from approximately (5, 175) to (30, 525). Which of the following could be an equation for a line of best fit for the data?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 140 + 14x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 50 + 25x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 140 \u2212 14x</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 700 \u2212 5x</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Slope \u2248 (525 \u2212 175)/(30 \u2212 5) = 350/25 = 14 thousand dollars per hundred square feet. y-intercept \u2248 175 \u2212 14(5) = 105, roughly between answer choices; the equation y = 140 + 14x predicts y \u2248 210 at x = 5 and y \u2248 560 at x = 30, which is close to the data. Choice (a) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.hard"
+}

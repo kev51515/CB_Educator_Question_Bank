@@ -1,0 +1,39 @@
+{
+  "questionId": "6a5939c2-s1",
+  "originalId": "6a5939c2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Geologists once believed that all volcanoes formed in the same way, but recent research suggests that hotspot volcanoes form quite differently from subduction-zone volcanoes. Subduction-zone volcanoes erupt explosively and produce thick, slow-moving lava. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> hotspot volcanoes erupt gently and produce thin, fast-flowing lava.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In comparison,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Firstly,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In conclusion,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"In comparison\" logically signals that the description of hotspot volcanoes in this sentence&mdash;that they erupt gently and produce thin lava&mdash;forms a comparison with the description of subduction-zone volcanoes in the previous sentence.</p><p>Choice B is incorrect because \"for instance\" illogically signals that hotspot volcanoes exemplify subduction-zone volcanoes; instead, they form a contrast. Choice C is incorrect because \"firstly\" illogically signals a first item in a series. Choice D is incorrect because \"in conclusion\" illogically signals a summary, when the sentence introduces a new comparison.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A6.T18.easy"
+}

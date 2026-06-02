@@ -1,0 +1,39 @@
+{
+  "questionId": "56e373b3-s1",
+  "originalId": "56e373b3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A florist is responsible for ordering supplies for a bouquet shop. The shop's inventory starts with <math><mn>3,200</mn></math> ribbons, and the florist estimates that <math><mn>50</mn></math> ribbons are used each day. Based on this estimate, in how many days will the supply of ribbons reach <math><mn>1,200</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>20</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>30</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>50</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>40</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Let <math><mi>x</mi></math> represent the number of days. The equation <math><mn>3,200</mn><mo>-</mo><mn>50</mn><mi>x</mi><mo>=</mo><mn>1,200</mn></math> represents this situation. Subtracting 3,200 from both sides yields <math><mo>-</mo><mn>50</mn><mi>x</mi><mo>=</mo><mo>-</mo><mn>2,000</mn></math>. Dividing by -50 yields <math><mi>x</mi><mo>=</mo><mn>40</mn></math>.</p><p>Choices A, B, and C are incorrect; after 20, 30, or 50 days the supply would be 2,200, 1,700, or 700 respectively\u2014not 1,200.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

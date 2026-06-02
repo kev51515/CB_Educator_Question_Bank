@@ -1,0 +1,25 @@
+{
+  "questionId": "d9e55268-s1",
+  "originalId": "d9e55268",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from Tommy Orange&rsquo;s 2018 novel <em>There There</em>. Edwin Black is collecting interview pledges for an oral-history project from fellow members of his urban Native community in Oakland.</p>\n<blockquote>\n<p>Edwin Black tended the clipboard like a garden. He kept it with him at all times. Around the neighborhood, his eyes brightened when he spotted a community member who hadn&rsquo;t yet signed up. Wherever they were&mdash;at the laundromat, the corner store, at the powwow committee meeting, on the sidewalk, or outside the rec center&mdash;Edwin cornered them. If they were holding a sleeping baby, he&rsquo;d have them sign up. If they were laughing, if they were arguing. If they were walking a child home from after-school, they signed up.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;2018 by Tommy Orange</span></p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To suggest that some community members refuse to sign up because they dislike Edwin Black</p>"},
+    {"id": "b", "content": "<p>To portray Edwin Black&rsquo;s strong commitment to collecting interview pledges</p>"},
+    {"id": "c", "content": "<p>To show that attitudes toward the project within the community change over time</p>"},
+    {"id": "d", "content": "<p>To demonstrate that most community members are enthusiastic about signing up</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most accurately states the text&rsquo;s main purpose. The text indicates that Edwin always had his clipboard with him, sought out community members who hadn&rsquo;t signed up, and lists several comical circumstances in which he would press for a pledge. Thus, the main purpose is to portray Edwin&rsquo;s dedicated focus on collecting interview pledges.</p><p>Choice A is incorrect because the text addresses Edwin&rsquo;s pursuit, not how community members feel about him. Choice C is incorrect because the text does not trace any change in attitudes over time. Choice D is incorrect because the text does not say that members are enthusiastic; the word &ldquo;cornered&rdquo; suggests their enthusiasm was neither needed nor considered.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

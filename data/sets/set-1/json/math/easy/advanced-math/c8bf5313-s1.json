@@ -1,0 +1,39 @@
+{
+  "questionId": "c8bf5313-s1",
+  "originalId": "c8bf5313",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mi>x</mi><mo>=</mo><mn>6</mn></math></p><p><math><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></math></p><p>The graphs of the equations in the given system of equations intersect at the point <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> in the <em>xy</em>-plane. What is the value of <em>y</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>41</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting <em>x</em> = 6 into the second equation gives <math><mi>y</mi><mo>=</mo><msup><mn>6</mn><mn>2</mn></msup><mo>+</mo><mn>5</mn><mo>=</mo><mn>36</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>41</mn></math>.</p><p>Choices A, B, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

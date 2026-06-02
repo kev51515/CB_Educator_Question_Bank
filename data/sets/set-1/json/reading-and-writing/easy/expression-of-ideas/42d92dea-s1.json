@@ -1,0 +1,25 @@
+{
+  "questionId": "42d92dea-s1",
+  "originalId": "42d92dea",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Before it opened a major new wing in 2011, the Cleveland Museum of Art was only able to display about 10% of its permanent collection. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the museum is able to display close to 40% of its collection.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Additionally,</p>"},
+    {"id": "b", "content": "<p>For example,</p>"},
+    {"id": "c", "content": "<p>Today,</p>"},
+    {"id": "d", "content": "<p>Nevertheless,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Today\" logically signals that the information in the sentence—that the museum is able to display close to 40% of its collection—is true of the Cleveland Museum of Art as it exists in the present day, after the previously mentioned opening of the major new wing in 2011.</p><p>Choice A is incorrect because \"additionally\" illogically signals additional information about the museum before the new wing opened. Instead, the sentence is about the museum after the wing opened. Choice B is incorrect because \"for example\" illogically signals an example. Instead, the sentence is about the museum after the new wing opened. Choice D is incorrect because \"nevertheless\" illogically signals that the information is true despite the previous information. Instead, the sentence is about the museum in the present day after the new wing opened.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

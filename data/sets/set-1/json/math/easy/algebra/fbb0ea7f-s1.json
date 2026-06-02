@@ -1,0 +1,39 @@
+{
+  "questionId": "fbb0ea7f-s1",
+  "originalId": "fbb0ea7f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A water tank contained 28,500 liters of water. Exactly 15 minutes after a valve was opened, 22,455 liters of water remained in the tank. On average, approximately how much water, in liters, drained from the tank each minute?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1,497</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6,045</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>403</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>13,455</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total water that drained is 28,500 &minus; 22,455 = 6,045 liters over 15 minutes. The average rate is 6,045 &divide; 15 = 403 liters per minute.</p><p>Choice A is incorrect; it results from dividing 22,455 by 15. Choice B is incorrect; it is the total water drained, not the per-minute rate. Choice D is incorrect; it results from a subtraction error.</p>",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

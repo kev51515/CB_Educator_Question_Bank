@@ -1,0 +1,25 @@
+{
+  "questionId": "57303718-s1",
+  "originalId": "57303718",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p>“The River Road” is an 1899 short story by Margaret Calderwood. In the story, the narrator explains that, despite many years of traveling, she still prefers the small farming village in which she grew up over every other place she has been: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from “The River Road” most effectively illustrates this claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“There is always some new corner to wander into, some old wall whose stones invite a second look, some small detail that one is glad to carry away.”</p>"},
+    {"id": "b", "content": "<p>“Two narrow brooks come together a little above the mill, and joined with the steady waters of the river they form a broad, gleaming stream, fringed for half a mile with low pasture and rows of leaning birches.”</p>"},
+    {"id": "c", "content": "<p>“For all the ports and grand cities I have known, with their noise and quick fashions, I have never found anywhere a country so dear to me as this quiet village by the river where I was born.”</p>"},
+    {"id": "d", "content": "<p>“There is a quiet, unhurried pleasure in making oneself thoroughly familiar with a single stretch of countryside.”</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively illustrates the claim that the narrator, despite extensive travel, still prefers the small farming village of her childhood over every other place she has been. The narrator explicitly contrasts “all the ports and grand cities” she has known with the village by the river, and says she has “never found anywhere a country so dear” as her birthplace—a direct, comparative statement of preference that enacts the claim.</p><p>Choice A is incorrect because it praises ongoing discoveries in some unspecified place but does not establish a preference for the home village over other places. Choice B is incorrect because it describes the physical scenery near the village without comparing it to other locations or asserting a preference. Choice D is incorrect because it praises the pleasure of long familiarity with one stretch of countryside in general; it does not name the home village or compare it favorably with other places.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

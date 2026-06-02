@@ -1,0 +1,39 @@
+{
+  "questionId": "97df6650-s1",
+  "originalId": "97df6650",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The town of Macap&aacute; in Brazil <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> one of only a handful of state capitals in the world located on the equator.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>are</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>is</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>have been</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>are being</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The singular verb &ldquo;is&rdquo; agrees with the singular subject &ldquo;the town.&rdquo;</p><p>Choices A, C, and D are all plural or plural-progressive forms that don&rsquo;t agree with the singular subject.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

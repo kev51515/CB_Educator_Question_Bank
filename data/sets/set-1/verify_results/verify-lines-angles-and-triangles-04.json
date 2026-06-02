@@ -1,0 +1,22 @@
+[
+  {"id": "f9d40000-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "ok"},
+  {"id": "087cdcfd-s1", "templateId": "lines-angles-and-triangles.A6.T1.easy", "verdict": "ok"},
+  {"id": "5733ce30-s1", "templateId": "lines-angles-and-triangles.A3.T1.easy", "verdict": "ok"},
+  {"id": "36200a38-s1", "templateId": "lines-angles-and-triangles.A2.T2.easy", "verdict": "ok"},
+  {"id": "dfc420b2-s1", "templateId": "lines-angles-and-triangles.A6.T1.easy", "verdict": "aspect_drift", "detail": "A6 boundary: 'no triangle sum'. Clone's core work is triangle interior sum (180-45-60=75), with vertical angle as a trivial final step. Better fits A2.T1 (find third angle) than A6.T1 (vertical/linear pair at a point)."},
+  {"id": "d5f349b7-s1", "templateId": "lines-angles-and-triangles.A5.T1.easy", "verdict": "ok"},
+  {"id": "f1747a6a-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "ok"},
+  {"id": "9342ca50-s1", "templateId": "lines-angles-and-triangles.A2.T3.easy", "verdict": "aspect_drift", "detail": "A2.T3 requires a triangle interior-sum step plus a parallel transfer. Clone has no triangle: just BC∥AD with transversal AC and a single alternate-interior angle equality. Pure A1.T1 (parallels cut by transversal)."},
+  {"id": "410bdbe6-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "difficulty_drift", "detail": "Easy lever requires 'both given angles are explicit integer measures (no expressions)'. Clone gives one angle as the expression 2b° and asks for parameter b, which matches the medium lever 'one of the angles is given as a symbolic expression like (k/2)°'."},
+  {"id": "e0d2e21a-s1", "templateId": "lines-angles-and-triangles.A5.T1.easy", "verdict": "ok"},
+  {"id": "739f1bbc-s1", "templateId": "lines-angles-and-triangles.A3.T2.easy", "verdict": "ok"},
+  {"id": "9d078710-s1", "templateId": "lines-angles-and-triangles.A1.T3.easy", "verdict": "type_drift", "detail": "A1.T3 easy expects two parallel lines given with all four labeled angles and student picks the correct relationship statement. Clone reverses the logic: lines are NOT given parallel, and the task is to pick which equation proves they are parallel. This is a converse-of-parallel-postulate stem, not the templated relationship-statement stem."},
+  {"id": "0bb39de4-s1", "templateId": "lines-angles-and-triangles.A4.T1.easy", "verdict": "ok"},
+  {"id": "cbe8ca31-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "ok"},
+  {"id": "a6dbad6b-s1", "templateId": "lines-angles-and-triangles.A2.T3.easy", "verdict": "ok"},
+  {"id": "c24e1bda-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "9912e19f-s1", "templateId": "lines-angles-and-triangles.A4.T1.easy", "verdict": "ok"},
+  {"id": "3828f53d-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "wrong_answer", "detail": "The 145° angle is at the j-k intersection, so the interior triangle angle there is 180-145=35°. Triangle has 90° (j⊥q) + b° + 35° = 180°, giving b=55, not 35. The rationale even states 'two acute angles summing to 90°' which yields 35+b=90 → b=55, contradicting the keyed value 35. Correct answer is choice B (55)."},
+  {"id": "42b4493b-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "ok"},
+  {"id": "a456f28c-s1", "templateId": "lines-angles-and-triangles.A6.T1.easy", "verdict": "ok"}
+]

@@ -1,0 +1,25 @@
+{
+  "questionId": "5d6ab069-s1",
+  "originalId": "5d6ab069",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Petra Andersen, Robert Kaplan, and Ingrid Lund have hypothesized that the long, paddle-shaped tail of the marine reptile <em>Mosasaurus hoffmannii</em> primarily allowed the animal to accelerate rapidly when launching ambush attacks on fast-moving prey near the surface. To evaluate their hypothesis, a separate research team built two battery-powered mechanical models of <em>M. hoffmannii</em>—one with the paddle-shaped tail and one with a smooth, tapered eel-like tail of equal mass—and subjected both models to a series of identical trials in a large saltwater testing tank.</p>",
+  "stem": "<p>Which finding from the model trials, if true, would most strongly support Andersen and colleagues' hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The model with the paddle-shaped tail reached a target burst speed in significantly less time, starting from rest, than the model with the tapered tail did.</p>"},
+    {"id": "b", "content": "<p>The model with the paddle-shaped tail displaced significantly more water when fully submerged than the model with the tapered tail did.</p>"},
+    {"id": "c", "content": "<p>The model with the paddle-shaped tail used significantly more battery power across the full series of trials than the model with the tapered tail did.</p>"},
+    {"id": "d", "content": "<p>The model with the paddle-shaped tail took significantly longer to swim a steady fixed distance at constant speed than the model with the tapered tail did.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most directly supports Andersen and colleagues' hypothesis that the paddle-shaped tail of <em>M. hoffmannii</em> primarily allowed for rapid acceleration in ambush attacks. Reaching a target burst speed in significantly less time starting from rest is precisely a measure of rapid acceleration; that the paddle-tailed model outperforms the tapered model on this measure directly supports the hypothesized function.</p><p>Choice B is incorrect because water displacement reflects the model's volume, not its acceleration; it does not test the proposed function of the paddle tail. Choice C is incorrect because greater battery use says only that the paddle tail is energetically more demanding, not that it provides faster acceleration. Choice D is incorrect because slower steady-state swimming over a fixed distance would, if anything, suggest the paddle tail is worse at sustained cruising; the hypothesis is about acceleration in ambush, not about sustained-speed travel, so this finding does not support the hypothesis (and could even weaken claims about general locomotor superiority).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

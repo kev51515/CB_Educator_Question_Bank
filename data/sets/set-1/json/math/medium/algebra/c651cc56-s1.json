@@ -1,0 +1,39 @@
+{
+  "questionId": "c651cc56-s1",
+  "originalId": "c651cc56",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T5.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Some values of the linear function <em>f</em> are shown in the table.</p><table border=\"1\"><tr><th><em>x</em></th><th><em>f</em>(<em>x</em>)</th></tr><tr><td>1</td><td>5</td></tr><tr><td>2</td><td>8</td></tr><tr><td>4</td><td>14</td></tr></table><p>What is the value of <em>f</em>(3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A linear function has a constant rate of change. From (1, 5) to (2, 8), <em>f</em> increases by 3 for an increase of 1 in <em>x</em>. Thus <em>f</em>(3) = 8 + 3 = 11.</p><p>Choices A, B, and D are incorrect and may result from miscomputing the rate of change.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "5a97d9cd-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "5444db38-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "e35d481c-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "98364791-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "type_drift", "detail": "Tagged T8 (negation/scarcity/counterfactual frame) but stem has no negation around the blank: 'such ______ stimuli'. The blank is a plain adjective describing vibration/stroking, with 'less lasting relief' applying elsewhere. Structurally this is T6 (degree/quality descriptor), not T8."},
+  {"id": "e4f312c5-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "e459076b-s1", "templateId": "words-in-context.A1.T1.hard", "verdict": "ok"},
+  {"id": "bbb77c84-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "a5e747f0-s1", "templateId": "words-in-context.A2.T4.hard", "verdict": "ok"},
+  {"id": "83fd3cf4-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "c14daa3c-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "4fa7e50e-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "571cf537-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "b411eb09-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "type_drift", "detail": "Clone fits T8 (scarcity frame: 'there is a ______ studies') rather than T3 (restatement gloss). The blank is filled by 'scarcity of' — a paucity/scarcity frame is the canonical T8-hard pattern per template."},
+  {"id": "7b4dde72-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "a4f50d30-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "760ee1db-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "ok"},
+  {"id": "6286dd96-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "constraint_violation", "detail": "Violates A1.T1 must_preserve: target word not visibly marked in passage. Stem asks about word 'invent' but passage contains a blank '______' instead of an underlined/quoted 'invent'. Structure is fill-in (A2), not A1.T1."},
+  {"id": "06b96bfc-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "359b891c-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "a7991da1-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"}
+]

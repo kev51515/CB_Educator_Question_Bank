@@ -1,0 +1,22 @@
+[
+  {"id": "ca452900-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "ok"},
+  {"id": "bbb0359a-s1", "templateId": "linear-equations-in-two-variables.A4.T6.medium", "verdict": "ok"},
+  {"id": "9ed4c1a2-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "ok"},
+  {"id": "606cdce7-s1", "templateId": "linear-equations-in-two-variables.A4.T6.medium", "verdict": "ok"},
+  {"id": "637022d2-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "f81a0503-s1", "templateId": "linear-equations-in-two-variables.A4.T6.medium", "verdict": "ok"},
+  {"id": "0d1b1e35-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "a04190b7-s1", "templateId": "linear-equations-in-two-variables.A3.T3.medium", "verdict": "ok"},
+  {"id": "6f6dfe3e-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "difficulty_drift", "detail": "Clone uses a parametric table (n + 120, n + 60, n), which the template lists as a hard-level characteristic for T10 ('Table contains a parameter (e.g., n)'). Medium T10 characteristics call for standard-form rearrangement, two integer points, or distributive simplification — not symbolic parameters."},
+  {"id": "a4989860-s1", "templateId": "linear-equations-in-two-variables.A4.T5.medium", "verdict": "ok"},
+  {"id": "c39dbbdf-s1", "templateId": "linear-equations-in-two-variables.A6.T13.medium", "verdict": "ok"},
+  {"id": "99ea3715-s1", "templateId": "linear-equations-in-two-variables.A5.T11.medium", "verdict": "ok"},
+  {"id": "1087f6c4-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "aspect_drift", "detail": "Clone asks for the difference of two coefficients (32.90 - 32.40 = 0.50), which is interpreting per-unit rates from the equation (A3.T3/T4), not substituting a given value and solving (A2.T2). No value is supplied for either variable."},
+  {"id": "00b9bd37-s1", "templateId": "linear-equations-in-two-variables.A4.T7.medium", "verdict": "ok"},
+  {"id": "431c3038-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "2e1a7f66-s1", "templateId": "linear-equations-in-two-variables.A3.T3.medium", "verdict": "ok"},
+  {"id": "d62ad380-s1", "templateId": "linear-equations-in-two-variables.A4.T6.medium", "verdict": "ok"},
+  {"id": "63be6c9a-s1", "templateId": "linear-equations-in-two-variables.A6.T14.medium", "verdict": "ok"},
+  {"id": "92aa3a94-s1", "templateId": "linear-equations-in-two-variables.A6.T13.medium", "verdict": "ok"},
+  {"id": "483d208d-s1", "templateId": "linear-equations-in-two-variables.A3.T4.medium", "verdict": "ok"}
+]

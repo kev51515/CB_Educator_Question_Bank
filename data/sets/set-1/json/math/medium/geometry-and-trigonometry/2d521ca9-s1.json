@@ -1,0 +1,39 @@
+{
+  "questionId": "2d521ca9-s1",
+  "originalId": "2d521ca9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The measure of angle <em>W</em> is 45&deg;. What is the measure, in radians, of angle <em>W</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&pi;/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&pi;/8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&pi;/2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&pi;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. To convert degrees to radians, multiply by &pi;/180. So 45&deg; = 45 &middot; (&pi;/180) = &pi;/4 radians. Choice B is half the correct value. Choice C corresponds to 90&deg;. Choice D corresponds to 180&deg;.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A4.T9.easy"
+}

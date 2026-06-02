@@ -1,0 +1,25 @@
+{
+  "questionId": "63a4fa29-s1",
+  "originalId": "63a4fa29",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T11.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>In 2018, archaeologists examined dog bone fragments they had recovered from a settlement in northern Anatolia.</li>\n<li>The fragments were estimated to be about 9,000 years old.</li>\n<li>A chemical analysis of the fragments revealed that the dogs had consumed substantial amounts of grain and dairy products.</li>\n<li>The diet pattern is evidence that the dogs at the settlement may have been domesticated.</li>\n</ul>",
+  "stem": "<p>The student wants to present the Anatolia study and its conclusions. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Chemical analysis revealed that the dogs whose bone fragments were studied in Anatolia had consumed substantial amounts of grain and dairy products.</p>"},
+    {"id": "b", "content": "<p>The dog bone fragments studied by archaeologists in 2018 were recovered from a settlement in northern Anatolia.</p>"},
+    {"id": "c", "content": "<p>In 2018, archaeologists in northern Anatolia examined dog bone fragments estimated to be about 9,000 years old.</p>"},
+    {"id": "d", "content": "<p>In 2018, archaeologists chemically analyzed 9,000-year-old dog bone fragments from a settlement in northern Anatolia and found evidence of substantial grain and dairy consumption, suggesting the dogs may have been domesticated.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The sentence presents both the Anatolia study (2018 chemical analysis of 9,000-year-old dog bone fragments) and its conclusions (evidence of grain and dairy consumption suggesting possible domestication).</p><p>Choice A is incorrect. The sentence reports a finding but doesn’t present the conclusion about domestication. Choice B is incorrect. The sentence identifies the artifacts but doesn’t present the study’s analysis or conclusions. Choice C is incorrect. The sentence reports the date and age of the fragments but doesn’t present the chemical analysis or the conclusions.</p>",
+  "generatedAt": "2026-05-27T12:00:00Z"
+}

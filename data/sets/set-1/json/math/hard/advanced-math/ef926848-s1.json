@@ -1,0 +1,39 @@
+{
+  "questionId": "ef926848-s1",
+  "originalId": "ef926848",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Square <i>P</i> has a side length of <i>x</i> inches. Square <i>Q</i> has a perimeter that is 120 inches greater than the perimeter of square <i>P</i>. The function <i>f</i> gives the area of square <i>Q</i>, in square inches. Which of the following defines <i>f</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>f</i>(<i>x</i>) = (<i>x</i> + 120)&sup2;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>f</i>(<i>x</i>) = (<i>x</i> + 30)&sup2;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>f</i>(<i>x</i>) = (120<i>x</i> + 30)&sup2;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>f</i>(<i>x</i>) = (120<i>x</i> + 120)&sup2;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Square <i>P</i> has perimeter 4<i>x</i>, so square <i>Q</i> has perimeter 4<i>x</i> + 120. Then square <i>Q</i>'s side is (4<i>x</i> + 120)/4 = <i>x</i> + 30, and its area is (<i>x</i> + 30)&sup2;.</p><p>Choice A uses the perimeter difference as the side increase. Choices C and D mistakenly multiply <i>x</i> by 120.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

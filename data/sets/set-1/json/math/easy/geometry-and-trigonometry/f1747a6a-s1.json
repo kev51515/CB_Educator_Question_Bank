@@ -1,0 +1,39 @@
+{
+  "questionId": "f1747a6a-s1",
+  "originalId": "f1747a6a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>MNO</em>, the measure of angle <em>N</em> is 44 degrees and the measure of angle <em>O</em> is 29 degrees. What is the measure of angle <em>M</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>107 degrees</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>73 degrees</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>136 degrees</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15 degrees</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The interior angles of a triangle sum to 180 degrees. So the measure of angle <em>M</em> is 180 minus 44 minus 29 = 107 degrees.</p><p>Choice B is incorrect: 73 is the sum of the two given angles.</p><p>Choice C is incorrect: 136 ignores angle <em>O</em>.</p><p>Choice D is incorrect: 15 is the difference of the two given angles.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.easy"
+}

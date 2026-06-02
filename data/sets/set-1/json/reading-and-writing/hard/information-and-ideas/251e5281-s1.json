@@ -1,0 +1,39 @@
+{
+  "questionId": "251e5281-s1",
+  "originalId": "251e5281",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Research on the failure of granular materials has chiefly examined uniform shear flows, in which grains slide steadily past one another. To investigate a less-studied regime, Lena Vossberg and colleagues used a custom-built annular shear cell to generate and study collision spikes, brief vertical jets of grains that can erupt when two opposing horizontal flows collide. In ordinary shear flows, the material yields once the applied shear stress exceeds a critical value, capping the peak velocity. Vossberg's team found, however, that collision spikes can exceed this velocity cap, because additional factors\u2014such as local packing fraction and the curvature of the colliding fronts\u2014mediate the spike's yielding, not stress alone.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Earlier research suggested that shear stress controls failure in uniform flows, but Vossberg's study shows that packing fraction and front curvature also influence such flows.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Vossberg's study indicates that when opposing granular flows collide in particular ways, the resulting jet can reach velocities higher than those typical of uniform shear flows.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Yielding limits the peak velocity of uniform shear flows, but Vossberg's team suggests that collision spikes can surpass this limit if their shear stress reaches a critical threshold.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Vossberg's team proposes that collision spikes form when opposing granular flows intersect and that spikes are generally faster than uniform flows.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text contrasts standard uniform shear flows (limited by a stress-driven yielding cap) with collision spikes studied by Vossberg's team, which can exceed that cap because factors other than stress alone (packing fraction, front curvature) govern their behavior. The central point is that, under these specific colliding-flow conditions, the resulting jet reaches velocities beyond what uniform flows predict.</p><p>Choice A is incorrect because the team showed that packing fraction and front curvature affect spike yielding, not uniform shear flows. Choice C is incorrect because spikes exceed the cap due to additional mediating factors, not because their shear stress crosses a critical threshold. Choice D is incorrect because the formation of spikes from opposing flows is presented as a known starting premise, not a finding; and the text emphasizes exceeding a velocity cap, not a general comparison of typical speeds.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

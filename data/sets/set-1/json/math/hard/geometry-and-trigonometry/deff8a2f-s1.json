@@ -1,0 +1,39 @@
+{
+  "questionId": "deff8a2f-s1",
+  "originalId": "deff8a2f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The circumference of the base of a right circular cylinder is 18&pi; meters, and the height of the cylinder is 8 meters. What is the volume, in cubic meters, of the cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>144&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>81&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>648&pi;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. From 2&pi;r = 18&pi;, the radius is r = 9 meters. The volume is &pi;r&sup2;h = &pi;(81)(8) = 648&pi; cubic meters.</p><p>Choice A uses the diameter instead of r&sup2;. Choice B doubles A. Choice C gives only r&sup2;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T2.hard"
+}

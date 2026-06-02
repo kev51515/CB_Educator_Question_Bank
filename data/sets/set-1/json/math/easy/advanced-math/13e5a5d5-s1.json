@@ -1,0 +1,22 @@
+{
+  "questionId": "13e5a5d5-s1",
+  "originalId": "13e5a5d5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p style=\"text-align:center;\"><math><mn>4</mn><mfenced open=\"|\" close=\"|\"><mi>x</mi></mfenced><mo>=</mo><mn>28</mn></math></p><p>What is the positive solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>Dividing both sides by 4 gives |x| = 7. By the definition of absolute value, x = 7 or x = \u22127. The positive solution is 7.</p>",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.easy"
+}

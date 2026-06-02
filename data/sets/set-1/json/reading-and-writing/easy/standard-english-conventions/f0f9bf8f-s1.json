@@ -1,0 +1,39 @@
+{
+  "questionId": "f0f9bf8f-s1",
+  "originalId": "f0f9bf8f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Yayoi Kusama unveiled her installation <em>Infinity Mirrored Room</em> in Tokyo in 1965. The work surrounds visitors with mirrors and lights, a combination Kusama became known for. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> built dozens of additional installations using a variety of materials, like pumpkins, polka dots, and reflective spheres.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They all</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Both</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Those</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"she\" agrees in number with the singular antecedent \"Yayoi Kusama,\" and it clearly indicates that Kusama created the additional installations.</p><p>Choice A is incorrect because the plural noun phrase \"they all\" doesn't agree in number with the singular antecedent and doesn't clearly indicate that Kusama built the installations. Choice B is incorrect because the plural pronoun \"both\" doesn't agree in number with the singular antecedent. Choice D is incorrect because the plural pronoun \"those\" doesn't agree in number with the singular antecedent.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

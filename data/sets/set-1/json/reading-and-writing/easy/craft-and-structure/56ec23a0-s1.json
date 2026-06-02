@@ -1,0 +1,39 @@
+{
+  "questionId": "56ec23a0-s1",
+  "originalId": "56ec23a0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Dale Chihuly is known worldwide for his glass sculptures of sea forms. These sculptures are large and tend not to depict the entire creature. Instead, Chihuly focuses on just the curling shapes of tentacles and shells, leaving any suggestion of a face out of view. While Chihuly's sculptures are rooted in glassblowing techniques that developed in Italy, the artist uses bold American color choices and gestures that make his work instantly recognizable.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It describes a famous sculpture and then compares it to a lesser-known sculpture from the same time period.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It introduces an artist and then explains some common characteristics of well-known sculptures by that artist.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It gives an opinion on an artist and then suggests reasons why the artist's work has been largely overlooked.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It explains a specific sculpting technique and then provides examples of artists who use the technique.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The first sentence introduces Chihuly as a famous artist, and the rest of the text describes characteristics of his sculptures\u2014large scale, partial views, Italian techniques, bold American color.</p><p>Choice A is incorrect. No single famous sculpture is described or compared to another. Choice C is incorrect. The text gives facts, not an opinion, and says Chihuly is \"known worldwide,\" not overlooked. Choice D is incorrect. No other artists are mentioned.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.easy"
+}

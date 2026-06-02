@@ -1,0 +1,25 @@
+{
+  "questionId": "a3bf0a9d-s1",
+  "originalId": "a3bf0a9d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>In 2019, a simulation developed by climate scientist Priya Iyengar and her research group indicated that the same Atlantic meridional overturning currents responsible for moderating northwestern European winters—a circulation pattern stretching from the equator to the subpolar North Atlantic—are also likely responsible for shaping nutrient delivery to high-latitude fisheries. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the simulation traced how shifts in the circulation drew nutrient-rich deep water toward the surface in a handful of well-defined zones, fueling the plankton blooms on which those fisheries depend.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>Specifically,</p>"},
+    {"id": "c", "content": "<p>Hence,</p>"},
+    {"id": "d", "content": "<p>Admittedly,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Specifically\" logically signals that the information in this sentence—that the simulation traced shifts in circulation that brought nutrient-rich deep water to the surface and fueled plankton blooms—provides specific, precise details elaborating on the more general claim in the previous sentence about how the circulation shapes nutrient delivery to high-latitude fisheries.</p><p>Choice A is incorrect because \"however\" illogically signals a contrast, when this sentence elaborates on the previous claim. Choice C is incorrect because \"hence\" illogically signals a result, when this sentence specifies the previous claim rather than drawing a consequence from it. Choice D is incorrect because \"admittedly\" illogically signals an exception or caveat, when the sentence in fact provides the precise mechanism described more broadly in the previous sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

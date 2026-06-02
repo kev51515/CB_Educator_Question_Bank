@@ -1,0 +1,39 @@
+{
+  "questionId": "93779b53-s1",
+  "originalId": "93779b53",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A group of students voted on five hobbies. The table shows the number of students who voted for each hobby.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Hobby</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr><tr><td>Votes</td><td>20</td><td>35</td><td>42</td><td>18</td><td>27</td></tr></table><p>How many students chose hobby C?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>35</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. According to the table, 42 students chose hobby C.</p><p>Choice A is incorrect. This is the number of students who chose hobby D.</p><p>Choice B is incorrect. This is the number of students who chose hobby E.</p><p>Choice D is incorrect. This is the number of students who chose hobby B.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

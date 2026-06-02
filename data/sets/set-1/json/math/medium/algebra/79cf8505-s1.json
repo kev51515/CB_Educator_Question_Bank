@@ -1,0 +1,22 @@
+{
+  "questionId": "79cf8505-s1",
+  "originalId": "79cf8505",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A line segment that has a length of 138 centimeters is divided into three parts. One part is 56 centimeters long. The other two parts have lengths that are equal to each other. What is the length, in centimeters, of one of the other two parts of equal length?</p>",
+  "answerOptions": [],
+  "keys": [
+    "41"
+  ],
+  "rationale": "<p>The total length is 138 cm. After removing the 56 cm piece, 138 - 56 = 82 cm remains for two equal parts. Each equal part is 82 \u00f7 2 = 41 cm.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.medium"
+}

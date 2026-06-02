@@ -1,0 +1,22 @@
+{
+  "questionId": "a0cacec1-s1",
+  "originalId": "a0cacec1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>An angle has a measure of 7&pi;/10 radians. What is the measure of the angle, in degrees?</p>",
+  "answerOptions": null,
+  "keys": [
+    "126"
+  ],
+  "rationale": "<p>The correct answer is 126. To convert radians to degrees, multiply by 180/&pi;. So (7&pi;/10)(180/&pi;) = 7(18) = 126 degrees.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A4.T9.medium"
+}

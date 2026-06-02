@@ -1,0 +1,72 @@
+{
+  "questionId": "a20b7511",
+  "externalId": "a0c24ca5-51c5-452d-8ec0-5c2da945b392",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:57.391870+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "fa5a0f8c-744e-45e1-9f6b-01c81574c750",
+      "content": "<p>investigated</p>"
+    },
+    {
+      "id": "2f10eddb-2fcc-47dd-82ed-e5fd27ae9d9f",
+      "content": "<p>misinterpreted</p>"
+    },
+    {
+      "id": "7026061a-7ae3-461f-8833-80c9b4e747a6",
+      "content": "<p>anticipated</p>"
+    },
+    {
+      "id": "ecbcd5f4-8266-4af5-bd5e-a0f2ad6bc3f8",
+      "content": "<p>contradicted</p>"
+    }
+  ],
+  "keys": [
+    "ecbcd5f4-8266-4af5-bd5e-a0f2ad6bc3f8"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the initial spread of silk beyond China. In this context, &ldquo;contradicted&rdquo; means opposed or challenged. The text indicates that new archaeological evidence about silk use in South Asia has done something to a long-held thought about the initial spread of silk. According to the text, the new evidence reveals that people used silk in South Asia 1,000 years before the second century CE, which directly challenges the previous belief that silk first spread beyond China in the second century CE.</p><p>Choice A is incorrect because the text indicates that an archaeological finding about silk use has done something to a long-held thought about the initial spread of silk, and it wouldn&rsquo;t make sense to suggest that the finding could have &ldquo;investigated,&rdquo; or examined, a belief; evidence can&rsquo;t examine anything. Choice B is incorrect because the text indicates that an archaeological finding about silk use has done something to a long-held thought about the initial spread of silk, and it wouldn&rsquo;t make sense to suggest that the finding could have &ldquo;misinterpreted,&rdquo; or incorrectly understood, a belief; evidence can&rsquo;t try to understand anything. Choice C is incorrect. In this context, &ldquo;anticipated&rdquo; would mean expected or predicted. The text indicates that a new archaeological finding about silk use has done something to a long-held thought about the initial spread of silk, and a new finding can&rsquo;t predict a belief that is already established.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Scholars long thought that the initial spread of silk beyond China occurred in the second century CE, but this view has been <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by new archaeological evidence from South Asia that reveals that the people of the Indus Civilization made use of silk at least 1,000 years earlier.</p>",
+    "keys": [
+      "ecbcd5f4-8266-4af5-bd5e-a0f2ad6bc3f8"
+    ],
+    "answerOptions": [
+      {
+        "id": "fa5a0f8c-744e-45e1-9f6b-01c81574c750",
+        "content": "<p>investigated</p>"
+      },
+      {
+        "id": "2f10eddb-2fcc-47dd-82ed-e5fd27ae9d9f",
+        "content": "<p>misinterpreted</p>"
+      },
+      {
+        "id": "7026061a-7ae3-461f-8833-80c9b4e747a6",
+        "content": "<p>anticipated</p>"
+      },
+      {
+        "id": "ecbcd5f4-8266-4af5-bd5e-a0f2ad6bc3f8",
+        "content": "<p>contradicted</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the initial spread of silk beyond China. In this context, &ldquo;contradicted&rdquo; means opposed or challenged. The text indicates that new archaeological evidence about silk use in South Asia has done something to a long-held thought about the initial spread of silk. According to the text, the new evidence reveals that people used silk in South Asia 1,000 years before the second century CE, which directly challenges the previous belief that silk first spread beyond China in the second century CE.</p><p>Choice A is incorrect because the text indicates that an archaeological finding about silk use has done something to a long-held thought about the initial spread of silk, and it wouldn&rsquo;t make sense to suggest that the finding could have &ldquo;investigated,&rdquo; or examined, a belief; evidence can&rsquo;t examine anything. Choice B is incorrect because the text indicates that an archaeological finding about silk use has done something to a long-held thought about the initial spread of silk, and it wouldn&rsquo;t make sense to suggest that the finding could have &ldquo;misinterpreted,&rdquo; or incorrectly understood, a belief; evidence can&rsquo;t try to understand anything. Choice C is incorrect. In this context, &ldquo;anticipated&rdquo; would mean expected or predicted. The text indicates that a new archaeological finding about silk use has done something to a long-held thought about the initial spread of silk, and a new finding can&rsquo;t predict a belief that is already established.</p>",
+    "externalid": "a0c24ca5-51c5-452d-8ec0-5c2da945b392",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Scholars long thought that the initial spread of silk beyond China occurred in the second century CE, but this view has been <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by new archaeological evidence from South Asia that reveals that the people of the Indus Civilization made use of silk at least 1,000 years earlier.</p>"
+}

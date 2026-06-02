@@ -1,0 +1,39 @@
+{
+  "questionId": "7fe7cf26-s1",
+  "originalId": "7fe7cf26",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A5.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During the first part of an experiment, a model rocket was launched from a 12-meter-tall platform. A graph shows its height <i>y</i>, in meters, <i>x</i> seconds after launch, and the graph passes through (0, 12). During the second part, the same rocket was launched the same way but from a platform 3 meters shorter. Which of the following describes a graph that could represent the height <i>y</i>, in meters, of the rocket <i>x</i> seconds after launch during the second part?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A graph with the same shape as the first, shifted down 3 units, passing through (0, 9).</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A graph with the same shape as the first, shifted up 3 units, passing through (0, 15).</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A graph with the same shape as the first, shifted left 3 units.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A graph with the same shape as the first, shifted right 3 units.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The launch platform is 3 meters shorter, so the rocket starts 3 meters lower than before. Every height value is therefore 3 less than the corresponding height in the first part, giving a graph translated 3 units downward, with <i>y</i>-intercept (0, 9).</p><p>Choice B raises the height, the opposite of what is described. Choices C and D shift the graph horizontally, which would change the time of launch, not the initial height.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z"
+}

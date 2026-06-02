@@ -1,0 +1,39 @@
+{
+  "questionId": "d75d57a0-s1",
+  "originalId": "d75d57a0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.easy",
+  "type": "mcq",
+  "stimulus": "<p>While many photographers strive to capture images that look ever more <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> others look to the past, working with vintage film stocks and antique cameras to produce images with the soft, grainy feel of mid-century photography.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>polished but</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>polished</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>polished, but</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>polished,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of a comma to set off an introductory subordinate clause from the main clause. A comma is needed after the introductory clause (\"While many...polished\") to separate it from the main clause (\"others look to the past...\").</p><p>Choice A is incorrect because adding \"but\" creates an ungrammatical coordination. Choice B is incorrect because some punctuation is needed between the introductory clause and the main clause. Choice C is incorrect because the introductory clause is a subordinate clause, not a separate independent clause, so a coordinating conjunction isn't needed.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

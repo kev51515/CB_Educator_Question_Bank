@@ -1,0 +1,39 @@
+{
+  "questionId": "f5149550-s1",
+  "originalId": "f5149550",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Determined to expand access to higher education for Black women in the American South, Mary McLeod Bethune set out to build a school that would serve as a lasting institution for her community. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 1904, she opened the Daytona Literary and Industrial Training School for Negro Girls with just five students and a few donated supplies, laying the groundwork for what would become Bethune-Cookman University.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To this end,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In contrast,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"To this end\" logically signals that the action described in this sentence\u2014Bethune opening the Daytona Literary and Industrial Training School\u2014is a step she took to achieve the goal described in the previous sentence: building a lasting educational institution for her community.</p><p>Choice B is incorrect because \"nevertheless\" would illogically signal that opening the school contradicts or runs counter to Bethune's stated goal, when in fact it directly advances it. Choice C is incorrect because \"for example\" would signal that the school is one of several examples of Bethune's goal, but the text presents it as the specific founding act, not a representative instance. Choice D is incorrect because \"in contrast\" would illogically signal opposition between her goal and her action, when the action fulfills the goal.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T5.hard"
+}

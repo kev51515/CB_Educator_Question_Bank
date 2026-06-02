@@ -1,0 +1,39 @@
+{
+  "questionId": "a2162ea1-s1",
+  "originalId": "a2162ea1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A factory packages bags of coffee beans, each intended to contain approximately <math><mn>17</mn></math> ounces. To check the accuracy of the packaging, <math><mn>275</mn></math> bags were randomly selected and weighed. Based on the sample, it is estimated that the average weight of all bags packaged in a <math><mn>6</mn></math>-hour shift is <math><mn>17.5</mn></math> ounces, with an associated margin of error of <math><mn>0.22</mn></math> ounces. Which of the following is the most appropriate conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The average weight of all bags is exactly <math><mn>17.5</mn></math> ounces.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Plausible values for the average weight of all bags are less than <math><mn>17.28</mn></math> ounces or greater than <math><mn>17.72</mn></math> ounces.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Plausible values for the average weight of all bags are between <math><mn>17.28</mn></math> ounces and <math><mn>17.72</mn></math> ounces.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The average weight of all bags is greater than <math><mn>17.5</mn></math> ounces.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The plausible range for the population mean is 17.5 \u00b1 0.22, i.e., 17.28 to 17.72 ounces.</p><p>Choice A treats the sample mean as exact. Choice B inverts the plausible interval. Choice D draws an unsupported one-sided conclusion.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium"
+}

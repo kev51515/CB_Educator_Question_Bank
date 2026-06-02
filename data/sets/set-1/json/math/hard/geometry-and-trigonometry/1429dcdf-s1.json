@@ -1,0 +1,24 @@
+{
+  "questionId": "1429dcdf-s1",
+  "originalId": "1429dcdf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, one acute angle has measure x\u00b0. The length of the hypotenuse is 17, and the length of the leg opposite the angle with measure x\u00b0 is 8. What is the value of sin x\u00b0? (Note: figure not drawn to scale.)</p>",
+  "answerOptions": [],
+  "keys": [
+    "8/17",
+    ".4705",
+    ".4706"
+  ],
+  "rationale": "<p>In a right triangle, sine of an acute angle equals the length of the opposite leg divided by the length of the hypotenuse: sin x\u00b0 = 8/17 \u2248 0.4706.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.hard"
+}

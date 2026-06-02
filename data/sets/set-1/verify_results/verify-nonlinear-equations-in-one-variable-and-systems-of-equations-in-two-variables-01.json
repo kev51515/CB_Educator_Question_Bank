@@ -1,0 +1,22 @@
+[
+  {"id": "5ae186b4-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T5.medium", "verdict": "difficulty_drift", "detail": "T5 medium requires 'clearing the denominator produces a quadratic that factors over integers.' Clone −72/w = 8 yields a one-step linear solution (w = −9), no quadratic; difficulty regressed below T5 medium."},
+  {"id": "6bdcac03-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium", "verdict": "ok"},
+  {"id": "911383f2-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.medium", "verdict": "ok"},
+  {"id": "a5663025-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium", "verdict": "aspect_drift", "detail": "Clone asks how many solutions the system y=x²−4, y=0 has. This is A4 (system intersection count) or A2 (count for x²=4), not A3 — A3 requires a literal parameter controlling solution count. No parameter present."},
+  {"id": "062f86db-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "2926cc6d-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "type_drift", "detail": "Stem (3y+7)(4y−9)=0 is a factored zero-product form matching T6 (and the original 2926cc6d is listed under T6 example_ids), not T2 standard-form quadratic. Should be A2.T6.medium."},
+  {"id": "364a2d25-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium", "verdict": "ok"},
+  {"id": "faeae876-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.medium", "verdict": "difficulty_drift", "detail": "Clone uses cubic×quartic factored form (x³+27)(x⁴−16); T6 medium requires 'two or three linear factors.' Higher-degree factored form with discriminant reasoning is T6 hard (original faeae876 is listed in T6 hard example_ids)."},
+  {"id": "0980fcdd-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium", "verdict": "ok"},
+  {"id": "b4acba95-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "0380bbdc-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T4.medium", "verdict": "ok"},
+  {"id": "13e57f0a-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "652054da-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "difficulty_drift", "detail": "Clone n=(5/7)m → m=(7/5)n requires only one inverse operation (multiply by reciprocal), no context wrapper, no denominator unpacking. Fits easy lever ('1-2 inverse operations, pure symbolic form'), not medium ('2-3 inverse operations… real-world context… denominator')."},
+  {"id": "4b6f0a3f-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "630897df-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "75a32330-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.medium", "verdict": "type_drift", "detail": "T10 must_preserve requires 'presence of a graph-described scenario (the visual cue is the load-bearing feature).' Clone removes the graph entirely and is solved purely algebraically; this drifts to A4.T9. Listed common_bug: 'Removing the graph and asking purely algebraically… changes the type to T9.'"},
+  {"id": "3934dd0a-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium", "verdict": "ok"},
+  {"id": "876a731c-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium", "verdict": "ok"},
+  {"id": "2d2ab76b-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.medium", "verdict": "ok"},
+  {"id": "e8779461-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium", "verdict": "ok"}
+]

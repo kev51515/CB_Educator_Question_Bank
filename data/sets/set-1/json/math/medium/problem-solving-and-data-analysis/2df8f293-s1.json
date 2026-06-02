@@ -1,0 +1,23 @@
+{
+  "questionId": "2df8f293-s1",
+  "originalId": "2df8f293",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Each vertex of a 16-sided polygon is labeled with one of the 16 letters A through P, with a different letter at each vertex. If one vertex is selected at random, what is the probability that the letter F will be at the selected vertex? (Express your answer as a decimal or fraction, not as a percent.)</p>",
+  "answerOptions": null,
+  "keys": [
+    ".0625",
+    "1/16"
+  ],
+  "rationale": "<p>The correct answer is 1/16 (equivalently 0.0625). There are 16 vertices, each labeled with a different letter A through P, so exactly one vertex is labeled F. The probability of selecting that vertex at random is 1/16, or 0.0625.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.medium"
+}

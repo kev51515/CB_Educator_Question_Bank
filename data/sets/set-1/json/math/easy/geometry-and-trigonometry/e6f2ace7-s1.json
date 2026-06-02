@@ -1,0 +1,39 @@
+{
+  "questionId": "e6f2ace7-s1",
+  "originalId": "e6f2ace7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the lengths of the legs are 4 and 9. What is the length of the hypotenuse, to the nearest tenth?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9.8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>13.0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>65.0</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. By the Pythagorean theorem, hypotenuse squared = 16 + 81 = 97, so the hypotenuse equals the square root of 97, which is approximately 9.8.</p><p>Choice B is incorrect: 4.5 has no connection to the theorem.</p><p>Choice C is incorrect: 13.0 incorrectly adds the legs.</p><p>Choice D is incorrect: 65.0 is not the square root of 97.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "e0656211-s1",
+  "originalId": "e0656211",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>In <em>Brittle Joints</em> (2020), Diné essayist Sahar Begaye conveys her <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the practice of long-distance running by celebrating its place within her clan's coming-of-age rituals while at the same time describing her own physical exhaustion and frustration with training.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>command of</p>"},
+    {"id": "b", "content": "<p>attentiveness to</p>"},
+    {"id": "c", "content": "<p>mixed feelings about</p>"},
+    {"id": "d", "content": "<p>withdrawal from</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Mixed feelings about\" captures Begaye's stance: she both celebrates running's cultural place and expresses personal frustration with the practice. The blank must name that combination of positive and negative feeling.</p><p>Choice A is incorrect. \"Command of\" suggests mastery, which the text does not describe; she expresses exhaustion. Choice B is incorrect. \"Attentiveness to\" suggests careful observation, but the text describes evaluative feelings, not heightened observation. Choice D is incorrect. \"Withdrawal from\" means abandonment; the text shows she still engages with running, even as she struggles with it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "20ea68b7-s1",
+  "originalId": "20ea68b7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>Ratifying a constitutional amendment in the United States can be a slow process. For instance, the Twenty-Seventh Amendment, which delays the effective date of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can take, was first proposed in 1789 but wasn't ratified by the required three-fourths of state legislatures until 1992.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>raise's legislator's</p>"},
+    {"id": "b", "content": "<p>raises legislator's</p>"},
+    {"id": "c", "content": "<p>raise's legislators</p>"},
+    {"id": "d", "content": "<p>raises legislators</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of plural nouns. The plural nouns \"raises\" and \"legislators\" correctly indicate that the amendment concerns multiple pay raises and applies to legislators in general.</p><p>Choice A is incorrect because the context requires the plural nouns \"raises\" and \"legislators,\" not the singular possessive nouns \"raise's\" and \"legislator's.\" Choice B is incorrect because the context requires the plural noun \"legislators,\" not the singular possessive noun \"legislator's.\" Choice C is incorrect because the context requires the plural noun \"raises,\" not the singular possessive noun \"raise's.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "a12e3b8a-s1",
+  "originalId": "a12e3b8a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T2.medium",
+  "stimulus": "<p>Employees who feel that their input is valued by management tend to report higher engagement than peers who feel ignored, even after controlling for compensation. This effect is known as the participation <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recent studies suggest that it predicts long-term retention better than salary alone.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>premium,</p>"},
+    {"id": "b", "content": "<p>premium and,</p>"},
+    {"id": "c", "content": "<p>premium</p>"},
+    {"id": "d", "content": "<p>premium, and</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The two clauses (\"This effect...premium\" and \"recent studies...alone\") are independent. A comma plus the coordinating conjunction \"and\" correctly joins them.</p><p>Choice A is incorrect because a comma alone yields a comma splice. Choice B is incorrect because the comma must precede the coordinating conjunction, not follow it. Choice C is incorrect because the unpunctuated junction creates a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

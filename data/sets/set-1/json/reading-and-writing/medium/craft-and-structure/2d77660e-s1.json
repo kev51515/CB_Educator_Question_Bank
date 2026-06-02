@@ -1,0 +1,25 @@
+{
+  "questionId": "2d77660e-s1",
+  "originalId": "2d77660e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>In the early 1900s, Yiddish-language theaters thrived in cities across the northeastern United States. Philadelphia alone supported seven major Yiddish theaters between 1905 and 1915. But New York City eclipsed every other city in the region. This city supported more than twenty Yiddish theaters during that period. New York City was home to the country's largest population of Yiddish speakers and a dense network of Jewish cultural organizations. Thus, it is unsurprising that this city became such a vibrant center for Yiddish drama.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To compare Yiddish theaters operating in the northeastern United States today with those operating in the same region during the early 1900s</p>"},
+    {"id": "b", "content": "<p>To argue that Yiddish theaters in New York City shaped those in Philadelphia during the early 1900s</p>"},
+    {"id": "c", "content": "<p>To explain why Yiddish theaters in the northeastern United States drew large audiences from abroad during the early 1900s</p>"},
+    {"id": "d", "content": "<p>To explain that Yiddish-language theaters flourished in the northeastern United States, and especially in New York City, during the early 1900s</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text first states that Yiddish theaters thrived in northeastern cities, illustrating with Philadelphia's seven theaters. It then notes that New York City supported more than twenty Yiddish theaters in the same period and explains this dominance by citing the city's large Yiddish-speaking population and dense Jewish cultural networks. The main purpose is to explain that Yiddish-language theaters flourished across the region and especially in New York City.</p><p>Choice A is incorrect because the text does not discuss Yiddish theaters operating today. Choice B is incorrect because the text does not claim that New York's theaters influenced Philadelphia's. Choice C is incorrect because the text does not address audiences from abroad.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "710799ae-s1",
+  "originalId": "710799ae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>Common ravens turn out to be unexpectedly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> at handling tools they have not seen before: in a 2020 study by cognitive ethologist Mira Lindqvist, the birds repeatedly modified twigs to the precise length needed for retrieving food from a narrow shaft, swapping in different twigs when the first proved too short and discarding ones that splintered.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>clumsy</p>"},
+    {"id": "b", "content": "<p>cooperative</p>"},
+    {"id": "c", "content": "<p>adept</p>"},
+    {"id": "d", "content": "<p>passive</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. \"Adept\" means highly skilled. The details that follow show the birds choosing and modifying twigs successfully, swapping in better options, and discarding flawed ones&mdash;clear evidence of skilled tool handling.</p><p>Choice A is incorrect because the birds' careful, successful modifications show skill, not clumsiness. Choice B is incorrect because the study describes individual problem-solving, not joint action with other birds. Choice D is incorrect because the ravens are described as actively selecting and adjusting tools, the opposite of passive behavior.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

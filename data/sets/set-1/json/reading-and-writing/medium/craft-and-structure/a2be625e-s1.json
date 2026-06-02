@@ -1,0 +1,25 @@
+{
+  "questionId": "a2be625e-s1",
+  "originalId": "a2be625e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is from Mary E. Wilkins Freeman&rsquo;s 1891 short story &ldquo;A New England Nun.&rdquo; Louisa Ellis has been keeping house alone for many years.</p>\n<blockquote>\n<p>Louisa stood at the front window, her white apron unstained, her hands folded gently before her. The supper-table was laid in the kitchen with its single china cup, the bread freshly cut, the preserves in their old glass dish. Out in the lane the boy who brought the mail was whistling on his slow way home, and the bees still hummed in the lilac by the gate. Down the dusty road, a buggy at last appeared in the distance, raising a thin gold cloud against the evening sun.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To depict the setting as Louisa awaits an approaching arrival</p>"},
+    {"id": "b", "content": "<p>To convey the worries brought about by an unfamiliar caller</p>"},
+    {"id": "c", "content": "<p>To describe how Louisa&rsquo;s household has changed over the years</p>"},
+    {"id": "d", "content": "<p>To contrast the calm indoors with the commotion outdoors</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most accurately reflects the main purpose of the text. The text portrays Louisa standing at the window as she waits, with the supper laid and small sounds of the lane around her, while at last a buggy appears down the road. The details depict the setting and convey what Louisa is doing as she awaits the arrival.</p><p>Choice B is incorrect because nothing in the text suggests worry; Louisa stands &ldquo;gently&rdquo; with hands folded, which conflicts with the idea of unease. Choice C is incorrect because the text describes a single moment rather than changes over time. Choice D is incorrect because the text does not contrast indoor calm with outdoor commotion; it presents quiet activity both inside and outside.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

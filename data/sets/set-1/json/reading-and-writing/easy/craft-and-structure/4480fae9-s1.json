@@ -1,0 +1,39 @@
+{
+  "questionId": "4480fae9-s1",
+  "originalId": "4480fae9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Edith Maude Eaton's 1909 short story \"The Inferior Woman.\" Mrs. Carman is at home in the evening.</p><p>Mrs. Carman did not realize that her husband, weary from the long day at the office, had stretched out on the parlor sofa, and that although his eyes were occupied with the columns of the evening newspaper, his ears could not help <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the conversation that drifted in to him through the half-open door.</p>",
+  "stem": "<p>As used in the text, what does the word \"receiving\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Carrying</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Entering</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Hearing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Denying</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text says the husband's ears are taking in a conversation drifting through the door, which matches the meaning of \"hearing.\" Choice A is incorrect because his ears do not transport the sound to someone else. Choice B is incorrect because \"entering\" describes physical movement of a body, not sound being heard. Choice D is incorrect because the text says his ears could not help receiving the words, indicating he hears them whether he wants to or not.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b93428a6-s1",
+  "originalId": "b93428a6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Animal researcher Daniel Cho led a 2020 study about a wild crow that used twigs as tools to dig insects out of bark. Skeptical colleagues had initially suggested to Cho that the crow’s interactions with the twigs might simply be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, but Cho and his team showed through repeated trials that the crow consistently chose specific twig shapes for specific tasks.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>intriguing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>random</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>obvious</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>observable</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"random\" matches the skeptical suggestion that the crow’s actions had no intentional pattern, which Cho then disproved through repeated trials. Choice A is incorrect because intriguing supports rather than dismisses the behavior. Choice C is incorrect because the actions weren’t simple or expected. Choice D is incorrect because observable just describes visibility, not intent.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

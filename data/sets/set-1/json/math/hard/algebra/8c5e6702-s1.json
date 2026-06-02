@@ -1,0 +1,39 @@
+{
+  "questionId": "8c5e6702-s1",
+  "originalId": "8c5e6702",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A plumber charges $180 for the first two hours of work plus an hourly fee for each additional hour. The total cost for 6 hours of work is $420. Which function f gives the total cost, in dollars, for x hours of work, where x \u2265 2?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = 180 + 90x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = 90 + 60(x - 2)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = 180 + 60(x - 2)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = 60x + 180</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The hourly fee for hours beyond the first two is (420 - 180)/(6 - 2) = 240/4 = 60 dollars per hour. So f(x) = 180 + 60(x - 2). Verify: f(6) = 180 + 60(4) = 420 \u2713; f(2) = 180 \u2713.</p><p>Choice A applies $90 per hour to all hours. Choice B uses the wrong base fee. Choice D incorrectly charges $60 starting at x = 0.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T4.hard"
+}

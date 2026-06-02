@@ -1,0 +1,22 @@
+[
+  {"id": "b74f2feb-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "ok"},
+  {"id": "ffdbcad4-s1", "templateId": "equivalent-expressions.A2.T5.hard", "verdict": "ok"},
+  {"id": "2c88af4d-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "wrong_answer", "detail": "Expression simplifies to y^(5/3)/x^(7/2). Choice B = y·∛(y²)/(x³·√x) = y^(5/3)/x^(7/2). Choice A = ∛(y⁵)/√(x⁷) = y^(5/3)/x^(7/2). Both A and B are mathematically equivalent to the original expression. Rationale claims A is 'not equivalent' which is false. Two correct answer choices."},
+  {"id": "e51bf5b1-s1", "templateId": "equivalent-expressions.A2.T5.hard", "verdict": "ok"},
+  {"id": "ad038c19-s1", "templateId": "equivalent-expressions.A1.T3.hard", "verdict": "type_drift", "detail": "T3 requires 'single outside factor times a parenthesised polynomial' (must_preserve). Clone is (p-q/3)² which is squaring a binomial — polynomial-times-polynomial, fitting T6 (multiply binomials), not T3 (distribute single factor). Answer B is mathematically correct, but stem structure violates T3 must_preserve."},
+  {"id": "7355b9d9-s1", "templateId": "equivalent-expressions.A4.T9.hard", "verdict": "ok"},
+  {"id": "c3b116d7-s1", "templateId": "equivalent-expressions.A2.T5.hard", "verdict": "ok"},
+  {"id": "d8789a4c-s1", "templateId": "equivalent-expressions.A2.T5.hard", "verdict": "ok"},
+  {"id": "34847f8a-s1", "templateId": "equivalent-expressions.A3.T8.hard", "verdict": "ok"},
+  {"id": "5355c0ef-s1", "templateId": "equivalent-expressions.A4.T9.hard", "verdict": "ok"},
+  {"id": "c6e85cd7-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "ok"},
+  {"id": "c8a5c221-s1", "templateId": "equivalent-expressions.A1.T2.hard", "verdict": "ok"},
+  {"id": "89fc23af-s1", "templateId": "equivalent-expressions.A3.T8.hard", "verdict": "ok"},
+  {"id": "12e7faf8-s1", "templateId": "equivalent-expressions.A3.T8.hard", "verdict": "ok"},
+  {"id": "22fd3e1f-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "type_drift", "detail": "Clone tests rational expression simplification via polynomial factoring and cancellation, which is T8 (rational expression simplification). T7 must_preserve requires 'exponent or radical structure as the core operation'; clone has no exponent/radical rules — it's straight factor-and-cancel. Answer A is mathematically correct."},
+  {"id": "967ef685-s1", "templateId": "equivalent-expressions.A3.T8.hard", "verdict": "ok"},
+  {"id": "e117d3b8-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "ok"},
+  {"id": "20291f47-s1", "templateId": "equivalent-expressions.A3.T8.hard", "verdict": "ok"},
+  {"id": "433184f1-s1", "templateId": "equivalent-expressions.A3.T8.hard", "verdict": "ok"},
+  {"id": "c81b6c57-s1", "templateId": "equivalent-expressions.A2.T6.hard", "verdict": "ok"}
+]

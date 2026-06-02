@@ -1,0 +1,537 @@
+{
+  "section": "Math",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Lines, angles, and triangles",
+  "originals_count": 84,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Parallel lines cut by transversal",
+      "description": "Apply angle relationships created when one (or more) transversals cross two parallel lines: corresponding, alternate interior/exterior, co-interior (same-side), and linear-pair relationships. The defining cue is the explicit assertion that two lines are parallel and a transversal intersects both.",
+      "boundary_with_other_aspects": "A1 differs from A6 in that A1 always involves at least two parallel lines plus a transversal; A6 involves only intersecting lines (vertical angles) without parallelism. A1 differs from A2 in that the unknown is found through transversal angle rules, not the triangle angle-sum.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Solve for unknown angle (single transversal, parallels)",
+          "description": "Stem shows two parallel lines crossed by one transversal; one angle is given numerically (or in a simple expression) and the student must report the measure of another labeled angle.",
+          "core_skill_demand": "Identify which angle relationship (corresponding equal, alternate-interior equal, co-interior supplementary, vertical equal, linear pair) connects the given and target angles, then compute the missing measure.",
+          "example_originals": ["0d3f51dc", "3b4b5b1e", "5b918ebb", "afa3c48b", "c24e1bda", "cf0d3050", "5207e508", "3828f53d", "992f4e93"],
+          "frequency": { "easy": 9, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one known angle and one unknown angle", "single transversal", "relationship is corresponding, alternate-interior, or co-interior with a clearly labeled diagram", "arithmetic limited to one subtraction (180 - g) or direct equality", "may be a figure-only stem where the angle measure is shown in the diagram, not the prose"],
+              "example_stem": "Lines m and n are parallel; transversal t makes a 134° angle at m. Find w at n.",
+              "example_ids": ["c24e1bda", "5207e508", "afa3c48b", "3828f53d", "992f4e93"]
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit parallel statement", "single transversal", "exactly one given numeric angle and one unknown"],
+            "must_vary": ["which relationship is used (corresponding vs alt-interior vs co-interior)", "diagram orientation (top-left vs bottom-right of labeled angle)", "numeric value (avoid 90° which trivializes)"],
+            "common_bugs": ["agent computes 180 - g when the angles are actually equal (and vice versa)", "agent forgets the figure-not-drawn-to-scale note and reasons from apparent size", "agent treats the transversal as parallel to one of the lines"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Algebraic angle equations from parallels",
+          "description": "Two parallel lines and a transversal produce two angle measures expressed as linear expressions in a parameter (k, x); student must set them equal or supplementary and solve, then often report a derived quantity (e.g., x + 142, the other angle, or a value comparison).",
+          "core_skill_demand": "Translate the geometric relationship (equal vs supplementary) into an equation in the parameter, solve for it, then plug back to compute the requested quantity.",
+          "example_originals": ["3b44439b", "2adbf1b1", "686b5212", "a4c05a1b"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one angle numeric, one in form x or simple x + c", "answer is x or x + given-number with no extra step"],
+              "example_stem": "Lines p, q parallel; one angle is 142°, the other is x°. Find x + 142.",
+              "example_ids": ["3b44439b"]
+            },
+            "medium": {
+              "characteristics": ["both angles given as linear expressions in k (e.g., 6k+13 and 8k-29), or one expression set against a numeric angle", "answer requires solving for k first then computing a different angle (e.g., z)", "may include an inequality interpretation (which of the following must be true if y<65)"],
+              "example_stem": "Lines m, n parallel; x = 6k+13, y = 8k-29. What is z?",
+              "example_ids": ["2adbf1b1", "686b5212", "a4c05a1b"]
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["parallel-lines configuration", "linear expressions in one parameter", "the requested quantity is derived (not just the parameter itself)"],
+            "must_vary": ["which two angles are expression-bearing", "coefficients/constants of the linear expressions", "whether the relationship invoked is equality or supplementarity"],
+            "common_bugs": ["agent sets equal when the geometry calls for supplementary (or vice versa)", "agent solves for k and reports it as the final answer instead of plugging back", "agent simplifies coefficients to trivial values that produce non-integer k"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Multi-transversal / counting-relationships",
+          "description": "Figure has two transversals (or four lines: two parallels + two transversals) so several labeled angles exist; stem asks which statement among several must be true, or to find an angle whose value depends on routing through multiple relationships.",
+          "core_skill_demand": "Apply parallel-line and intersecting-line angle rules across two transversals, including angle-bisector or sum-of-angles substeps; eliminate distractor statements that are not forced by the geometry.",
+          "example_originals": ["43236565", "9d078710", "17912810", "f67255ea", "fecc446d"],
+          "frequency": { "easy": 2, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["two parallel lines, one transversal, with all four angles labeled; pick the correct relationship statement"],
+              "example_stem": "Lines m, n parallel; line k a transversal forms 145° and x°. Which statement is true?",
+              "example_ids": ["43236565", "9d078710"]
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["four lines forming nested transversal/parallel configurations, possibly with an angle bisector", "stem gives one acute or obtuse angle as a linear expression and asks for an algebraic sum of multiple angles (e.g., one acute + three obtuse)", "answer requires identifying that the sum equals a fixed number of straight-angle worths (180°, 360°, 540°) regardless of x"],
+              "example_stem": "A transversal cuts two parallel lines: one acute angle is (9x-560)°; sum of one acute + three obtuse = (-18x + w)°. Find w.",
+              "example_ids": ["17912810", "f67255ea", "fecc446d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["multi-transversal or angle-bisector configuration in the hard variant", "answer depends on a symbolic identity (independent of the parameter)"],
+            "must_vary": ["which angle is acute vs obtuse", "coefficients in the linear expression", "how many angles are being summed"],
+            "common_bugs": ["agent collapses to a single-transversal problem and loses the parameter cancellation", "agent counts the wrong number of acute vs obtuse angles in the sum", "agent assumes the parameter has a specific value rather than treating it symbolically"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Triangle angle sum / exterior angle",
+      "description": "Apply the interior-angle sum (180°) of a triangle, the exterior-angle theorem, or both, to find an unknown angle. Typically two angle measures (or expressions for them) are supplied directly or implicitly via a linear-pair / vertical-angle / parallels relationship adjacent to the triangle.",
+      "boundary_with_other_aspects": "A2 hinges on the 180°-sum (or its exterior-angle corollary) inside one triangle. A1 uses transversal/parallel rules without invoking a triangle interior sum; A3 requires the extra isosceles/equilateral side-equality step before the angle sum can be solved.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Find third angle given two",
+          "description": "Stem names a triangle (often by vertices) and gives two of its interior angle measures (as numbers or simple expressions); ask for the third.",
+          "core_skill_demand": "Compute 180 minus the sum of the two given angles to find the third.",
+          "example_originals": ["cbe8ca31", "f1747a6a", "f9d40000", "42b4493b", "b434e103", "69f4bbdc", "95ca2683", "fd8745fc", "410bdbe6"],
+          "frequency": { "easy": 7, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["both given angles are explicit integer measures (no expressions)", "answer is direct: 180 - g1 - g2", "may be a right triangle so one angle is 90° and the task is 90 - g", "may be figure-only stem where two interior angles are read from the diagram"],
+              "example_stem": "In triangle XYZ, angle X = 23°, angle Y = 66°. Find angle Z.",
+              "example_ids": ["cbe8ca31", "f1747a6a", "f9d40000", "42b4493b", "69f4bbdc", "410bdbe6"]
+            },
+            "medium": {
+              "characteristics": ["one of the angles is given as a symbolic expression like (k/2)° and student must solve for k", "or the prompt asks which of several values 'could be' the third angle, requiring an inequality check (third > 0)", "or the third angle is given by an expression of two equal angles (e.g., K and L both measure 48°, find J)"],
+              "example_stem": "In triangle ABC, angle A = 54°, angle B = 90°, angle C = (k/2)°. Find k.",
+              "example_ids": ["95ca2683", "b434e103", "fd8745fc"]
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["all three angles belong to one triangle", "two of them are supplied (possibly with one of them being 90° if right triangle)"],
+            "must_vary": ["vertex labels", "whether one angle is given symbolically as a coefficient/parameter", "whether the question asks for the angle value or a parameter k"],
+            "common_bugs": ["agent forgets to halve or otherwise undo the (k/2) expression and reports the angle rather than k", "agent inserts a non-triangle constraint (sum > 180)", "agent makes the two given angles already sum to >180 in a clone, producing an impossible triangle"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Exterior angle / linear-pair extension",
+          "description": "A side of a triangle is extended past a vertex (forming a linear pair with one interior angle), or two sides are extended creating a vertical angle outside. Stem gives some adjacent angles and asks for an interior or exterior angle.",
+          "core_skill_demand": "Use the exterior angle = sum of two remote interior angles, or convert exterior to interior via the linear pair (interior = 180 - exterior), then close with the 180° triangle sum.",
+          "example_originals": ["36200a38", "014edcb7"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one side extended past one vertex; two interior angles supplied; answer is exterior angle = sum of two given interior angles, or a vertical-angle read off two extended sides"],
+              "example_stem": "Two sides of a triangle are extended past the apex. Bottom angles are 70° and 50°. Find x at the apex.",
+              "example_ids": ["36200a38"]
+            },
+            "medium": {
+              "characteristics": ["one side extended and the given quantities include an angle adjacent to the extension (e.g., PRS = 163°) plus another interior angle; student must use linear pair to recover one interior angle, then the 180° sum"],
+              "example_stem": "QR extended to S; angle PQR = 132°, angle PRS = 163°. Find angle QPR.",
+              "example_ids": ["014edcb7"]
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["an explicit extension of a side (or sides) of the triangle", "exactly one unknown reachable via exterior-angle reasoning"],
+            "must_vary": ["which vertex's side is extended", "whether the given angle is interior or exterior", "numeric values"],
+            "common_bugs": ["agent treats the extended-side angle as an interior angle directly", "agent misses that two extended sides produce a vertical angle equal to the apex angle", "agent computes 180 - g when it should add (exterior-angle theorem)"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Combined transversal + triangle (parallels inside/outside triangle)",
+          "description": "Triangle interacts with parallel lines: a transversal of two parallel lines also forms a triangle, OR a segment parallel to one side of a triangle creates a smaller triangle, OR a parallel + extended-side situation requires both transversal and 180°-sum logic.",
+          "core_skill_demand": "Use one parallel-line angle equality (corresponding or alternate-interior) to transfer an angle into the triangle, then apply the 180° sum to find the unknown.",
+          "example_originals": ["9342ca50", "a6dbad6b", "6dd463ca", "48fb6483", "f731d88b"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["a transversal segment from one parallel line to another forms a triangle with one obvious leg parallel to a base; one or two angles given and the unknown is reachable in one alt-int + one triangle-sum step"],
+              "example_stem": "Segment BC parallel to AD, line t passes through A and C, x = 22°. Find y.",
+              "example_ids": ["9342ca50", "a6dbad6b"]
+            },
+            "medium": {
+              "characteristics": ["two segments meet at a point between parallels with two angles at the base specified; unknown is at the apex via two alt-int transfers + triangle sum (or polygon angle sum)"],
+              "example_stem": "AE and BD parallel; angle BDC = 58°, angle ACE = 62°. Find angle CAE.",
+              "example_ids": ["6dd463ca"]
+            },
+            "hard": {
+              "characteristics": ["right triangle with a segment parallel to one leg creating a similar smaller triangle and the question asks for an angle inside the smaller triangle", "or a convex polygon with two non-adjacent parallel sides forcing a 540°-style angle sum"],
+              "example_stem": "Right triangle XYZ with angle Y = 90°. PQ parallel to XY. Angle XZY = 63°. Find angle XPQ.",
+              "example_ids": ["48fb6483", "f731d88b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["one explicit parallel statement that produces an angle transfer", "a triangle (or polygon) interior-sum step required to finish"],
+            "must_vary": ["which side is parallel to which", "which angle is given vs requested", "right-triangle vs general configuration"],
+            "common_bugs": ["agent skips the parallel transfer and tries to compute the unknown directly from the triangle alone", "agent applies the triangle 180°-sum to a quadrilateral (or vice versa)", "agent confuses corresponding with alternate-interior, getting supplementary instead of equal angle"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Isosceles / equilateral triangles",
+      "description": "Exploit the side-equality of an isosceles triangle (base angles equal) or the all-equal property of an equilateral triangle to recover an unknown angle or to select a sufficient-information statement.",
+      "boundary_with_other_aspects": "A3 always invokes a side-equality (AB = AC, or all three sides equal). A2's triangle-sum problems give all but one angle directly; A3 problems give fewer angles and require the side-equality to recover a base-angle equality before summing.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Find angle in isosceles triangle",
+          "description": "Stem states (or shows) that two sides of a triangle are equal (or equivalently that two angles are equal) and gives one angle measure; ask for another angle or for x in an algebraic angle expression.",
+          "core_skill_demand": "Identify which two angles are the base angles (opposite the equal sides), then use base-angles-equal plus the 180°-sum to find the unknown.",
+          "example_originals": ["c8d60e48", "7268586c", "5733ce30", "901e3285", "947a3cde", "bd7f6e30"],
+          "frequency": { "easy": 3, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["isosceles flagged by equal-side notation (AB = AC) or by congruence of two angles in the figure", "one given angle is one of the base angles or the apex; the unknown is a base angle"],
+              "example_stem": "AB = AC and angle ABC = 67°. Find x.",
+              "example_ids": ["c8d60e48", "7268586c"]
+            },
+            "medium": {
+              "characteristics": ["a real-world / dilation context wrapper that still reduces to isosceles", "OR a 'NOT a possible measure of angle B' twist (multiple isosceles configurations to enumerate: apex vs base)"],
+              "example_stem": "In triangle ABC, angle A = 50° and ABC is isosceles. Which is NOT a possible measure of angle B?",
+              "example_ids": ["901e3285"]
+            },
+            "hard": {
+              "characteristics": ["two overlapping/intersecting triangles share a vertical-angle pair AND each have an equal-side property, so two isosceles arguments must be combined", "or an isosceles triangle nested inside a configuration requiring exterior-angle and angle-sum steps"],
+              "example_stem": "MQ and NR intersect at P; NP = QP, MP = PR. Find angle QMR.",
+              "example_ids": ["947a3cde", "bd7f6e30"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["an explicit side-equality (or its angle equivalent) so the base-angles-equal step is necessary", "the 180°-sum closure step"],
+            "must_vary": ["which pair of sides is equal", "whether the given angle is apex or base", "numeric values"],
+            "common_bugs": ["agent assumes the given angle is a base angle when it is the apex (or vice versa) and produces the wrong base value", "agent forgets the 'NOT possible' twist and reports a value that IS possible", "agent treats two equal angles as the apex pair, violating triangle geometry"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Sufficient information for equilateral / specific triangle",
+          "description": "Stem gives a partial side-equality (e.g., AB = BC = 4680 mm) and asks which additional statement is sufficient to prove the triangle is equilateral (or otherwise specific).",
+          "core_skill_demand": "Reason from the given equal-sides condition: equilateral requires all three sides equal OR all three angles equal OR a third condition that forces this (60° angle plus the existing equality).",
+          "example_originals": ["739f1bbc"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["two of three sides already equal; pick the answer choice that supplies the third side equality or a 60° angle"],
+              "example_stem": "AB = BC = 4680 mm. Which statement proves ABC is equilateral?",
+              "example_ids": ["739f1bbc"]
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a partial equality already stated in the stem", "answer choices include both sufficient and insufficient conditions"],
+            "must_vary": ["which two sides are equal", "which property (third side equal, 60° angle, two angles equal) is the correct sufficient one"],
+            "common_bugs": ["agent picks a condition that is consistent but not sufficient (e.g., 'angle B is 70°')", "agent picks a condition that re-states existing info", "agent forgets that one 60° angle plus two equal sides forces equilateral"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Triangle congruence",
+      "description": "Use a stated congruence between two triangles (with explicit correspondence) to transfer angle (or side) measures from one triangle to the other, or determine what additional information is needed to establish congruence.",
+      "boundary_with_other_aspects": "A4 hinges on a congruence statement (sides AND angles all equal, with a stated correspondence). A5 (similarity) preserves angles but scales sides; A4 preserves both.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Transfer angle via congruence",
+          "description": "Two triangles are stated to be congruent with a specified vertex correspondence; one or two angles in the first triangle are given (often including a right angle); ask for an angle in the second.",
+          "core_skill_demand": "Identify the corresponding vertex in the second triangle, then either copy the matching angle directly (if it corresponds to a given one) or use the 180°-sum to derive it from the corresponding angles in the first.",
+          "example_originals": ["0bb39de4", "9912e19f", "585a9138", "7a8ad237"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["correspondence given as 'A↔D, B↔E, C↔F'", "two angles given directly (e.g., A = 45°, F = 20°) so target angle is just 180 - (a + b)", "or both triangles have a stated right angle (B = E = 90°) so target = 90 - a"],
+              "example_stem": "Triangles ABC and DEF congruent; A↔D; B and E are right angles; A = 18°. Find F.",
+              "example_ids": ["0bb39de4", "9912e19f"]
+            },
+            "medium": {
+              "characteristics": ["same right-angle + correspondence setup but A's value is less standard (e.g., 27°, 69°), requiring 90 - a", "vertex labels harder to map (E↔J, F↔K, G↔L)"],
+              "example_stem": "Triangles ABC and DEF congruent; A↔D; B and E right angles; A = 69°. Find F.",
+              "example_ids": ["585a9138", "7a8ad237"]
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit congruence statement with named correspondence", "all the data needed to pin all three angles of one triangle (often via a right angle)"],
+            "must_vary": ["which vertex is the right angle", "numeric value of the given acute angle", "which target vertex's angle is asked"],
+            "common_bugs": ["agent maps the wrong corresponding vertex and reports the wrong angle", "agent ignores the right-angle clue and tries to compute without enough data", "agent simplifies away the correspondence and gives a generic third-angle answer"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Determine sufficient information for congruence",
+          "description": "Two triangles share some equal parts (e.g., two corresponding angles each); ask which additional piece of information would prove (or fail to prove) congruence.",
+          "core_skill_demand": "Recognize that two equal corresponding angles do NOT establish congruence (only similarity); the additional piece must be a corresponding side (AAS / ASA) — not just any side that already pairs with equal angles in similarity.",
+          "example_originals": ["901c3215"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["two angle equalities already given (so triangles are similar)", "answer choices include sides that don't pin the scale plus the one side that does"],
+              "example_stem": "Triangles ABC and DEF: angles B and E both 27°, C and F both 41°. Which extra fact proves congruence?",
+              "example_ids": ["901c3215"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two angle equalities already supplied", "answer must distinguish a corresponding-side fact from an unrelated-side fact"],
+            "must_vary": ["which two angles are stated equal", "which side becomes the correct discriminator"],
+            "common_bugs": ["agent treats AA as sufficient for congruence", "agent picks a side equality between non-corresponding sides", "agent picks 'a third angle is equal' which is redundant"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Triangle similarity",
+      "description": "Use a stated or implied similarity between two triangles (or two figures) to relate angles (equal) and corresponding sides (proportional). Includes shadow / real-world proportional reasoning, dilation, side-ratio problems, and 'segment parallel to one side' configurations.",
+      "boundary_with_other_aspects": "A5 always involves proportional sides with equal corresponding angles. A4 preserves both angles AND lengths (no scale factor). A2's parallel-line-inside-triangle problems that ask for angles are A2; A5's parallel-inside-triangle problems ask for lengths or use similarity explicitly.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Angle transfer via similarity",
+          "description": "Two triangles (or figures) stated similar with a specified correspondence; ask for a corresponding angle.",
+          "core_skill_demand": "Recognize that similar figures preserve angles, then transfer the named angle directly to its corresponding vertex.",
+          "example_originals": ["d5f349b7", "e0d2e21a", "4ff7b652", "1c3d613c", "3b225698", "322a6dfe"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["right-triangle similarity with vertex correspondence explicit; one acute angle given, find the corresponding acute angle in the other triangle", "or a dilation with scale factor that does not affect the requested angle"],
+              "example_stem": "Right triangles PQR and STU similar; P↔S; angle Q = 18°. Find angle S.",
+              "example_ids": ["d5f349b7", "e0d2e21a"]
+            },
+            "medium": {
+              "characteristics": ["scale factor or side-ratio is stated (e.g., k=3) but angle target requires the AA-correspondence reasoning + maybe 180°-sum"],
+              "example_stem": "Triangles ABC and DEF similar; sides in ratio 1:3; angle BAC = 20°. Find angle EDF.",
+              "example_ids": ["4ff7b652", "1c3d613c"]
+            },
+            "hard": {
+              "characteristics": ["correspondence is non-obvious or the question requires combining the similarity with another angle relationship (e.g., 2XY = RS distractor that does NOT change angles)", "quadrilaterals rather than triangles, where the unstated fourth angle must be found via polygon sum"],
+              "example_stem": "Similar quadrilaterals PQRS and WXYZ; angle S = 135°; PS = 45, WZ = 9. Find angle Z.",
+              "example_ids": ["3b225698", "322a6dfe"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit similarity statement with correspondence", "answer relies on angle preservation under similarity (not on scale)"],
+            "must_vary": ["which angle is given vs asked", "whether the figures are triangles or quadrilaterals", "whether a misleading side-ratio is provided"],
+            "common_bugs": ["agent scales the angle by the side ratio (e.g., reports 60° instead of 20° when k=3)", "agent maps to the wrong vertex of the similar figure", "agent omits the polygon-sum step when the requested angle is the fourth angle of a quadrilateral"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Find side via proportional reasoning",
+          "description": "Two similar triangles (or a real-world shadow scenario) with corresponding sides; one pair of corresponding sides is fully known (giving the scale factor) and another partial pair lets the student solve for a missing length.",
+          "core_skill_demand": "Set up corresponding-side ratio AB/DE = BC/EF, substitute the three known lengths, and solve the proportion.",
+          "example_originals": ["3563d76d", "94364a79", "055aafe7", "d3fe472f", "5b4757df", "b1e1c2f5", "adae6543", "010243e6"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["real-world shadow / proportional context with three of four lengths given", "scale factor is a clean integer or simple rational"],
+              "example_stem": "Monument 555 ft tall casts a 300 ft shadow; tree casts a 16 ft shadow. Find tree height.",
+              "example_ids": ["3563d76d", "94364a79"]
+            },
+            "medium": {
+              "characteristics": ["abstract similar triangles with vertex correspondence; one pair of corresponding sides gives scale (e.g., AB=16, XY=?, factor 2); answer is direct multiplication or division"],
+              "example_stem": "Triangle ABC similar to XYZ; XY = 2·AB; AB = 16. Find XY.",
+              "example_ids": ["055aafe7", "d3fe472f"]
+            },
+            "hard": {
+              "characteristics": ["a segment parallel to one side of a right or general triangle creates a similar sub-triangle; only an area or one extra length is given, forcing 2-step reasoning (use scale to find one length, then area or proportion to find another)", "or a 'butterfly' / X-shape with two triangles sharing a vertex and stated parallel sides", "or a coordinate-plane variant where two triangles share a vertex and corresponding vertices differ by a parameter k along one axis (asks for k that gives a stated side ratio)"],
+              "example_stem": "Right triangle RST; LK parallel to RT, RT = 72, LK = 24, area RST = 792. Find KT.",
+              "example_ids": ["5b4757df", "b1e1c2f5", "adae6543", "010243e6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit similarity or parallel-line-inside-triangle that forces similarity", "exactly enough data so a single scale factor can be pinned"],
+            "must_vary": ["which side pair carries the scale", "real-world wrapper vs abstract", "whether the requested side is in the larger or smaller triangle"],
+            "common_bugs": ["agent inverts the ratio (uses larger/smaller when smaller/larger is needed)", "agent maps non-corresponding sides into the proportion", "agent simplifies away the area constraint and produces an under-determined problem in the hard variant"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Similarity in overlapping / shared-vertex figures",
+          "description": "Two triangles share a vertex (or intersect) with equal marked angles indicating similarity; one or more side lengths given; ask for a missing length or angle via the implied similar correspondence.",
+          "core_skill_demand": "Identify the AA-similarity (often using vertical angles at the shared vertex plus a stated equal angle), establish the correspondence carefully (which vertex maps to which), then proportion the sides.",
+          "example_originals": ["2f7c92ad", "51f26ce8", "1318dfea", "2d2cb85e", "345cc36a", "6d99b141", "694b7fce", "a0369739", "e10d8313"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["two right triangles sharing a vertex with one matching acute angle", "one full proportion to set up (one ratio of sides given, e.g., AE = 26·BD); answer is the unknown ratio"],
+              "example_stem": "Triangle CAE similar to CBD; right angles at E and D; angle CBD = 57°; AE = 26·BD. Find a ratio.",
+              "example_ids": ["2f7c92ad", "51f26ce8"]
+            },
+            "hard": {
+              "characteristics": ["bow-tie / X configuration where line segments WZ and XY intersect at Q with angle-at-W equal to angle-at-Y, forcing AA similarity via vertical angles", "four side lengths given, find a fifth via proportional + sometimes Pythagorean step", "or an isosceles + similar nested config requiring identification of the correspondence", "or a right-triangle-altitude configuration where altitude to the hypotenuse creates two similar sub-triangles", "or two overlapping triangles on a common base line with intersecting cevians, requiring identifying which sub-triangles are similar"],
+              "example_stem": "WZ and XY intersect at Q; angle W = angle Y = a°; YQ=21, WQ=70, WX=39. Find XY.",
+              "example_ids": ["1318dfea", "345cc36a", "2d2cb85e", "6d99b141", "694b7fce", "a0369739", "e10d8313"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["shared vertex or intersection that creates the AA similarity", "exactly the data needed to set up one solvable proportion (no extras)"],
+            "must_vary": ["which two triangles overlap (bow-tie vs nested)", "which side is the unknown", "whether the equal-angle cue is explicit or via parallel-line transfer"],
+            "common_bugs": ["agent pairs non-corresponding sides because the figure is mirrored", "agent forgets to add the shared segment when reporting the full length (XQ + QY)", "agent treats the configuration as congruent rather than similar"]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Dilation / scale-factor reasoning",
+          "description": "One figure is dilated by scale factor k to produce another; ask about a side length, or which value of k is admissible given a size constraint.",
+          "core_skill_demand": "Apply k to multiply lengths (or divide if going from larger to smaller), and interpret k > 1 or k < 1 inequalities for admissibility questions.",
+          "example_originals": ["d7a8aa9c", "c7bed21d"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["explicit scale-factor question (k > 1 for an enlargement) or 'each side of P'Q'R'S' is 3 times each side of PQRS' style asking for an angle (trick: angles preserved)"],
+              "example_stem": "Equilateral T = k·S; sides of T greater than S. Which could be k?",
+              "example_ids": ["d7a8aa9c", "c7bed21d"]
+            },
+            "hard": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a stated scale factor or 'each side is k times' phrasing", "a quantity (length or angle) to report"],
+            "must_vary": ["whether the answer is a length (scaled) or angle (unscaled)", "direction of dilation (enlargement vs reduction)"],
+            "common_bugs": ["agent scales the angle by k", "agent reports k < 1 when an enlargement is required", "agent confuses 'each side k times' with 'perimeter k times'"]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Sufficient info for similarity",
+          "description": "Two triangles share two pairs of equal angles (and so are similar by AA), or share other partial info; stem asks which extra fact is needed to determine similarity (or congruence is asked among similarity setups).",
+          "core_skill_demand": "Recognize that AA already forces similarity; if the question is whether more is needed, the answer is 'none' or a side fact that doesn't reverse the conclusion. For sufficiency in non-AA configurations, identify whether SAS-similarity or SSS-similarity applies.",
+          "example_originals": ["2085e10e", "f7dbde16"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["two angle equalities already given so AA covers similarity; answer choice must reflect 'no additional info needed' or equivalent"],
+              "example_stem": "DEF and RST: D=R=47°, E=S=97°. Which info is needed for similarity?",
+              "example_ids": ["2085e10e"]
+            },
+            "hard": {
+              "characteristics": ["one angle equality + one side ratio; answer must supply the second side ratio that makes SAS-similarity work, or a second angle for AA"],
+              "example_stem": "LMN, RST: L = R = 60°, LN = 10, RT = 30. Which extra fact proves similarity?",
+              "example_ids": ["f7dbde16"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["enough partial info to make exactly one choice sufficient", "distractors that are consistent but not sufficient"],
+            "must_vary": ["whether AA, SAS-sim, or SSS-sim is the operative criterion", "which side or angle is the discriminator"],
+            "common_bugs": ["agent picks a redundant fact (third angle equality after two already match)", "agent picks a side equality (which would suggest congruence) when only similarity is asked", "agent misidentifies which sides are corresponding"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "Intersecting lines & angle relationships at a point",
+      "description": "Single intersection (or three lines through one point) without parallelism: vertical angles equal, linear pairs sum to 180°, full turn sums to 360°. May include algebraic expressions for the angles or constraints on possible sums.",
+      "boundary_with_other_aspects": "A6 involves only lines meeting at a single point (no parallel lines, no triangle sum). A1 requires parallelism; A2 requires a triangle.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Vertical / linear-pair angle measure",
+          "description": "Two lines (or three) intersect at a point; one angle is given numerically; ask for a vertical-pair partner, the linear-pair partner, or — for three concurrent lines — the third angle so the half-turn sums to 180°.",
+          "core_skill_demand": "Use vertical angles equal, linear pairs sum to 180°, or three angles on one side of a line sum to 180°.",
+          "example_originals": ["087cdcfd", "64d1f49f", "a456f28c", "dfc420b2", "c41eb616", "f88f27e5", "740bf79f", "eeb4143c", "933fee1a", "6a3fbec3", "81b664bc"],
+          "frequency": { "easy": 4, "medium": 2, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["two lines crossing or three lines through a point", "the unknown is directly the vertical or supplementary partner of a given numeric angle"],
+              "example_stem": "Two lines meet; w = 136°. Find vertical-pair z.",
+              "example_ids": ["64d1f49f", "a456f28c", "dfc420b2", "087cdcfd"]
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["one of the angles is an expression in x (e.g., 9x - 140); identify which possible sums (of pairs of the four angles) cannot be produced", "or geometry-grab-bag: figure-only stems with no readable text where the diagram supplies trapezoid / quadrilateral / right-triangle angle data", "or area-constrained problems where the area inequality plus integer-side constraint pins a unique x"],
+              "example_stem": "Two intersecting lines; one angle is (9x - 140)°. Which sum could NOT be a sum of two of the four angles?",
+              "example_ids": ["c41eb616", "f88f27e5", "740bf79f", "eeb4143c", "933fee1a", "6a3fbec3", "81b664bc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["intersection at a single point", "no parallel-line invocation"],
+            "must_vary": ["whether the answer is a specific value or a NOT-possible / could-be choice", "whether one angle is symbolic"],
+            "common_bugs": ["agent treats the two acute angles as supplementary instead of equal (and vice versa for obtuse pair)", "agent solves for x but reports x instead of the requested angle sum", "agent counts sums that cannot occur because the lines are not parallel (vs two lines vs two parallel lines distinction)"]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Across the 84 originals: easy items lean heavily on direct angle-measure questions (find the partner angle / find the third angle / transfer a single angle through congruence or alternate-interior). Medium items add a single algebraic step (solve for k, then back-substitute) or a real-world wrapper. Hard items either (a) require chaining 2-3 angle-rule steps across multiple figures, (b) use similarity proportions in bow-tie / shared-vertex configurations, or (c) demand symbolic reasoning that an answer is independent of a parameter (the (9x - 140)°-style problems). Several hard originals (740bf79f, f88f27e5, 6a3fbec3, 933fee1a, eeb4143c, 81b664bc) have figure-only stems where the diagram, not the prose, carries the geometric data — clones must preserve that figure-dependence rather than verbalize all measurements."
+}

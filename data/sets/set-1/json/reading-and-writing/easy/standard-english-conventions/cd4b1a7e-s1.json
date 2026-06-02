@@ -1,0 +1,25 @@
+{
+  "questionId": "cd4b1a7e-s1",
+  "originalId": "cd4b1a7e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>How did giraffes, once smaller forest-dwelling mammals, evolve to become the tallest animals on land? Kenyan paleontologist Fredrick Kyalo Manthi believes the answer lies in their ancient ancestors. In April 2024, Manthi and his team <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> findings showing changes over millions of years in the neck vertebrae of early giraffe relatives.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>presenting</p>"},
+    {"id": "b", "content": "<p>presented</p>"},
+    {"id": "c", "content": "<p>to present</p>"},
+    {"id": "d", "content": "<p>having presented</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. A main clause requires a finite (tensed) verb to perform the action of the subject (Manthi and his team), and this choice supplies the finite past tense verb \"presented\" to indicate that these researchers shared their findings.</p><p>Choice A is incorrect because the nonfinite participle \"presenting\" doesn't supply the main clause with a finite verb. Choice C is incorrect because the nonfinite to-infinitive \"to present\" doesn't supply the main clause with a finite verb. Choice D is incorrect because the nonfinite participle \"having presented\" doesn't supply the main clause with a finite verb.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

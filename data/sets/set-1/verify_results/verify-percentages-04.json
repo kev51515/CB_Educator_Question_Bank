@@ -1,0 +1,21 @@
+[
+  {"id": "194ae3b1-s1", "templateId": "percentages.A1.T2.easy", "verdict": "aspect_drift", "detail": "Stem describes a 35% increase from 2010 to 2025 (before/after percent change), which is A3.T1 (find new value after stated percent change), not A1.T2 (percent of a whole). Common-bug warned against in A1.T2 must_preserve."},
+  {"id": "191d167b-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "77cf4fa6-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "a8fabad0-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "58a71e06-s1", "templateId": "percentages.A2.T1.easy", "verdict": "ok"},
+  {"id": "273b7f37-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "771ee744-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "284303f1-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "3a6ed720-s1", "templateId": "percentages.A2.T1.easy", "verdict": "ok"},
+  {"id": "7ed0d098-s1", "templateId": "percentages.A1.T2.medium", "verdict": "ok"},
+  {"id": "34e18ce4-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "8705ecba-s1", "templateId": "percentages.A1.T3.easy", "verdict": "ok"},
+  {"id": "eaab8bc1-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "bb7c8186-s1", "templateId": "percentages.A1.T1.easy", "verdict": "ok"},
+  {"id": "93724cc6-s1", "templateId": "percentages.A2.T2.easy", "verdict": "ok"},
+  {"id": "e9fb7774-s1", "templateId": "percentages.A2.T1.easy", "verdict": "ok"},
+  {"id": "048811bd-s1", "templateId": "percentages.A1.T1.easy", "verdict": "ok"},
+  {"id": "8784bc84-s1", "templateId": "percentages.A1.T1.easy", "verdict": "ok"},
+  {"id": "73362607-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"}
+]

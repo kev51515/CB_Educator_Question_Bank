@@ -1,0 +1,39 @@
+{
+  "questionId": "603c18ad-s1",
+  "originalId": "603c18ad",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle PQR, angle P is a right angle. Point S lies on segment QR, and segment SP is perpendicular to segment QR. The length of segment SQ is 700, and the length of segment SP is 525. What is the value of tan R?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4/5</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>In a right triangle with the altitude to the hypotenuse, the altitude SP creates two smaller triangles similar to the original. In triangle PSQ, angle SPQ is right; tan Q = SP/SQ = 525/700 = 3/4. Since angles Q and R are complementary, tan R = 1/tan Q = 4/3. Choice A is sin or cos confusion; choice B is tan Q; choice D is cos Q in the 3-4-5 triple.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.hard"
+}

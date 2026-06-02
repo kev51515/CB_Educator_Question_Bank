@@ -1,0 +1,39 @@
+{
+  "questionId": "7e1bff94-s1",
+  "originalId": "7e1bff94",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The table gives the number of hours, <em>h</em>, of labor and an electrician's total charge f(h), in dollars, for two different jobs:</p><p>h: 2, 5<br>f(h): 170, 320</p><p>There is a linear relationship between <em>h</em> and f(h). Which equation represents this relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(h) = 30h + 110</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(h) = 50h + 70</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(h) = 70h + 50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(h) = 170h + 50</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Slope = (320 - 170)/(5 - 2) = 150/3 = 50. Using (2, 170): 170 = 50(2) + b \u2192 b = 70. So f(h) = 50h + 70. Verify: f(5) = 250 + 70 = 320 \u2713. The other choices use incorrect slope or intercept values.</p>",
+  "templateId": "linear-functions.A3.T2.medium"
+}

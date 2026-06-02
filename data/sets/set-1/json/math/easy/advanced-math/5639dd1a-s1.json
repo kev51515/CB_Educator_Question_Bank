@@ -1,0 +1,22 @@
+{
+  "questionId": "5639dd1a-s1",
+  "originalId": "5639dd1a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p><math><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mfenced><mn>17</mn></mfenced><mfenced><mn>17</mn></mfenced></math></p><p>What is the positive solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "17"
+  ],
+  "rationale": "<p>The correct answer is 17. The given equation is equivalent to <math><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><msup><mn>17</mn><mn>2</mn></msup></math>. Taking the square root yields <em>x</em> = \u00b117, so the positive solution is 17.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy"
+}

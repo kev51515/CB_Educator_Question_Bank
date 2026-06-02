@@ -1,0 +1,25 @@
+{
+  "questionId": "b15724fc-s1",
+  "originalId": "b15724fc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>Vietnamese American author Viet Thanh Nguyen, who arrived in the United States as a refugee in 1975, has received international praise for his sweeping novels, story collections, and <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his unsparing yet deeply personal portraits of displaced communities, critic Maxine Hong Kingston has likened Nguyen&rsquo;s prose to the work of novelist Joseph Conrad.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>memoirs. Admiring</p>"},
+    {"id": "b", "content": "<p>memoirs, admiring</p>"},
+    {"id": "c", "content": "<p>memoirs and admiring</p>"},
+    {"id": "d", "content": "<p>memoirs admiring</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation between sentences. The period after \"memoirs\" marks the boundary between one sentence (\"Vietnamese American...memoirs\") and another (\"Admiring...Conrad\"). The participial phrase beginning with \"Admiring\" modifies the subject of the second sentence, \"critic Maxine Hong Kingston.\"</p><p>Choice B is incorrect because it results in a comma splice. Choice C is incorrect because, without a comma preceding it, \"and\" cannot join two sentences. Choice D is incorrect because the two sentences are fused without punctuation or a conjunction, producing a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

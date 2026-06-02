@@ -1,0 +1,39 @@
+{
+  "questionId": "a44c7bd4-s1",
+  "originalId": "a44c7bd4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Some legal theorists hold that the justice of a court's decision depends solely on whether the ruling follows from established rules, irrespective of the particular relationships and obligations that bound the parties before the dispute arose. Scholar Adaeze Nwosu has shown that surviving records of pre-colonial Igbo customary law express a very different view. Nwosu reveals that these records describe a legal system in which a person's actions are evaluated in light of the kinship bonds the person was party to and the way the outcome affects the cohesion of the wider lineage. To the extent that these records are representative of pre-colonial Igbo legal thought, Nwosu's analysis suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>pre-colonial Igbo elders would have rejected the notion that the justice of a person's actions can be fairly evaluated by people who do not belong to the same lineage as that person.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>similar actions performed by people occupying different kinship positions in pre-colonial Igbo society would have been judged as legally equivalent unless they affected the lineage in different ways.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>actions by members of pre-colonial Igbo society who contributed greatly to their lineage's cohesion could be judged as just even if they conflicted with conduct the Igbo regarded as just in all contexts.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>pre-colonial Igbo legal practice would have disputed the idea that the justice of a person's actions can be assessed by appealing to abstract rules that are independent of the kinship bonds and lineage effects at stake.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text indicates that, according to Nwosu, the pre-colonial Igbo legal system judged a person's actions in relation to the person's kinship bonds and the effects on lineage cohesion. The text contrasts this with the view of some legal theorists that justice depends only on whether rulings follow from established rules irrespective of context. Thus, Nwosu's analysis supports the inference that the Igbo would have rejected assessments of justice that ignore the kinship and lineage context altogether.</p><p>Choice A is incorrect because, although Igbo justice depends on understanding kinship context, the text does not specify that only members of the lineage can acquire that understanding. Choice B is incorrect because Igbo evaluation depends on both kinship position and lineage effect; two actions with the same effect could still be judged differently if they involved different kinship positions. Choice C is incorrect because it implies that some actions could be judged just regardless of context, which contradicts the text's claim that justice depends on context.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

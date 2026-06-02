@@ -1,0 +1,39 @@
+{
+  "questionId": "01989d77-s1",
+  "originalId": "01989d77",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Bacteria living in coastal wetland soils produce nitrous oxide, a potent greenhouse gas. Marine biologist Lin Chen and her team wanted to learn how different types of wetland vegetation might influence the amount of nitrous oxide released from these soils. The team set up outdoor plots filled with sediment and bacteria from a local estuary. Some plots were planted with cordgrass, a tall reed-like plant rooted in the sediment. Other plots contained either common eelgrass, a thin submerged plant, or open water with mats of cyanobacteria. The researchers found that plots with cyanobacteria and eelgrass released higher amounts of nitrous oxide than plots with cordgrass did. This finding suggests that ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the presence of certain rooted wetland plants like cordgrass may help limit the release of nitrous oxide from coastal wetland soils.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>coastal wetland soils release more nitrous oxide than upland soils because coastal soils usually contain more plants than upland soils do.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>coastal wetlands are more likely to host cyanobacteria mats than to host either cordgrass or eelgrass.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>combining cordgrass, eelgrass, and cyanobacteria together is the most effective way to reduce nitrous oxide in coastal wetlands.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Plots with cordgrass (rooted) released less nitrous oxide than plots with eelgrass or cyanobacteria, suggesting cordgrass helps limit emissions.</p><p>Choice B introduces upland soils, which the text never discusses. Choice C makes a comparison about prevalence the study did not measure. Choice D imagines a mixed-plant condition that wasn't tested.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T8.easy"
+}

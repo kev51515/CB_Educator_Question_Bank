@@ -1,0 +1,39 @@
+{
+  "questionId": "7efe5495-s1",
+  "originalId": "7efe5495",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 4x</p><p>3x + y = 14</p><p>The solution to the given system of equations is (x, y). What is the value of 7x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>28</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Substituting y = 4x into 3x + y = 14 gives 3x + 4x = 14, so 7x = 14. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium"
+}

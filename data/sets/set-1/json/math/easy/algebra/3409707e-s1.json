@@ -1,0 +1,22 @@
+{
+  "questionId": "3409707e-s1",
+  "originalId": "3409707e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>x + y = 160</p><p>x + 2y = 215</p><p>The solution to the given system of equations is (x, y). What is the value of y?</p>",
+  "answerOptions": null,
+  "keys": [
+    "55"
+  ],
+  "rationale": "<p>The correct answer is 55. Subtracting the first equation from the second yields y = 215 - 160 = 55.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy"
+}

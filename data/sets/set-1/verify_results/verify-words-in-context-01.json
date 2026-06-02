@@ -1,0 +1,22 @@
+[
+  {"id": "9b22bf7b-s1", "templateId": "words-in-context.A1.T1.hard", "verdict": "constraint_violation", "detail": "must_preserve stem wording for A1.T1 is 'As used in the text, what does the word \"X\" most nearly mean?' but clone uses A2-style stem 'Which choice completes the text with the most logical and precise word or phrase?'. The target 'determine' is underlined in the passage (not a blank), so the answer logic still works toward 'Control', but the stem is mismatched to A1.T1."},
+  {"id": "3f753a8e-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "e7d37666-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "0462dac3-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "aaa3ee7c-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "f83f0aab-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "0ed8f24f-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "dba9eaf8-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "6017ae31-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "d5ad34f0-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "4b54bbf0-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "3566120b-s1", "templateId": "words-in-context.A1.T1.hard", "verdict": "ok"},
+  {"id": "b35e2fdc-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "dd19befa-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "be94c9fc-s1", "templateId": "words-in-context.A1.T2.hard", "verdict": "type_drift", "detail": "Tagged as A1.T2 (multi-word phrase meaning) but only a single word 'contesting' is underlined — this is structurally A1.T1 (single-word meaning). Also violates A1.T2 must_preserve stem wording: clone uses A2-style 'Which choice completes the text with the most logical and precise word or phrase?' instead of 'As used in the text, what does the phrase \"X\" most nearly mean?'. Answer 'Obstructing' is reasonable for 'contesting our passage'."},
+  {"id": "f99847ed-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "7afb470b-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "76e4c51d-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "a60b0004-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "54804e10-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"}
+]

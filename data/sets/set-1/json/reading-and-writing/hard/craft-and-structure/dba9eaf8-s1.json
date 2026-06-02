@@ -1,0 +1,39 @@
+{
+  "questionId": "dba9eaf8-s1",
+  "originalId": "dba9eaf8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Within certain deep-sea fish species, some individuals develop an enlarged swim bladder\u2014an apparent overdevelopment of the gas-filled organ used to control buoyancy. Given the bladder's greater prevalence among fish that make rapid vertical ascents, some researchers hypothesize that its role isn't <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>; rather, the enlarged bladder may actively assist with quick depth changes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>dormant</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>operative</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>predetermined</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>replicable</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Dormant\" most logically completes the text. The researchers' hypothesis is that the enlarged bladder actively assists with rapid ascents; the sentence introduces this idea by saying that the bladder's role \"isn't ______\"\u2014it isn't inactive or unused. \"Dormant\" (inactive, unused) sets up the contrast with \"actively assist.\"</p><p>Choice B is incorrect. \"Operative\" means functioning, but the hypothesis is that the bladder IS operative, not that it isn't. The negation makes \"operative\" the opposite of what the sentence needs. Choice C is incorrect. \"Predetermined\" means decided in advance and doesn't pair with \"rather, the bladder may actively assist.\" Choice D is incorrect. \"Replicable\" means able to be reproduced; the text concerns whether the bladder is doing something, not whether the structure can be reproduced.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

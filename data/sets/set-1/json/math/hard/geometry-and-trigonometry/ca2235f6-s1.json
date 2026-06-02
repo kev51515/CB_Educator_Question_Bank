@@ -1,0 +1,39 @@
+{
+  "questionId": "ca2235f6-s1",
+  "originalId": "ca2235f6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle has center O, and points A and B lie on the circle. The measure of arc AB is 60\u00b0 and the length of arc AB is 5 inches. What is the circumference, in inches, of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The full circle has central angle 360\u00b0. The proportion 60/360 = 5/C gives 1/6 = 5/C, so C = 30 inches.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A3.T7.hard"
+}

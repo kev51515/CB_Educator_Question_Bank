@@ -1,0 +1,39 @@
+{
+  "questionId": "916ffe9b-s1",
+  "originalId": "916ffe9b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Inference from sample statistics and margin of error ",
+  "domainCode": "Q",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A poll of 720 randomly selected voters asked which of two candidates, Lopez or Patel, they would vote for in an upcoming election. Lopez received 432 responses and Patel received 288 responses. According to the poll, if 5,400 people vote in the election, by how many votes would Lopez be expected to win?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>144</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3,240</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1,080</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4,320</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The poll proportions are 432/720 = 60% for Lopez and 288/720 = 40% for Patel. Applied to 5,400 voters: Lopez gets 3,240 and Patel gets 2,160. The margin is 3,240 &minus; 2,160 = 1,080 votes. Choice A is the difference in poll responses (432&minus;288). Choice B is Lopez's projected total. Choice D is the combined poll vote scaled.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "66bce0c1-s1",
+  "originalId": "66bce0c1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the solution set of the equation &radic;(3x + 4) + 2 = x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>{0}</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>{0, 7}</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>{7}</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>{0, 7, &minus;0}</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Isolate the radical: &radic;(3x + 4) = x &minus; 2. Square both sides: 3x + 4 = x<sup>2</sup> &minus; 4x + 4, so x<sup>2</sup> &minus; 7x = 0, i.e. x(x &minus; 7) = 0. The candidates are x = 0 and x = 7. Check x = 0: &radic;4 + 2 = 2 + 2 = 4 &ne; 0, extraneous. Check x = 7: &radic;25 + 2 = 5 + 2 = 7 &check;. The solution set is {7}.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.hard"
+}

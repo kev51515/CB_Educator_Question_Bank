@@ -1,0 +1,72 @@
+{
+  "questionId": "7c766ceb",
+  "externalId": "b7676098-167d-4382-a6fa-0433eb35a466",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:24.586750+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "1f97087d-f13a-477f-a82b-de6e0d6c7400",
+      "content": "<p>create</p>"
+    },
+    {
+      "id": "22868f3e-8092-49c6-a1b3-d73f9b60731e",
+      "content": "<p>to create</p>"
+    },
+    {
+      "id": "c5ce15f9-d576-4cfe-84b0-2c698dfcbb18",
+      "content": "<p>creating</p>"
+    },
+    {
+      "id": "11efdfce-c28d-47c4-9d90-ca56937c87ac",
+      "content": "<p>created</p>"
+    }
+  ],
+  "keys": [
+    "22868f3e-8092-49c6-a1b3-d73f9b60731e"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite to-infinitive verb &ldquo;to create&rdquo; is correctly used to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps (by analyzing and arranging certain data).</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite verb &ldquo;create&rdquo; can&rsquo;t be used in this way to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps. Choice C is incorrect because it results in an ungrammatical sentence. The nonfinite participle &ldquo;creating&rdquo; can&rsquo;t be used in this way to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps. Choice D is incorrect because it results in an ungrammatical sentence. The finite verb &ldquo;created&rdquo; can&rsquo;t be used in this way to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>A popular suite of mapping and spatial analysis software, ArcGIS enables cartographers like Karachi Cartography founder Namra Khalid <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> maps by analyzing and arranging raw geospatial data.&nbsp;</p>",
+    "keys": [
+      "22868f3e-8092-49c6-a1b3-d73f9b60731e"
+    ],
+    "answerOptions": [
+      {
+        "id": "1f97087d-f13a-477f-a82b-de6e0d6c7400",
+        "content": "<p>create</p>"
+      },
+      {
+        "id": "22868f3e-8092-49c6-a1b3-d73f9b60731e",
+        "content": "<p>to create</p>"
+      },
+      {
+        "id": "c5ce15f9-d576-4cfe-84b0-2c698dfcbb18",
+        "content": "<p>creating</p>"
+      },
+      {
+        "id": "11efdfce-c28d-47c4-9d90-ca56937c87ac",
+        "content": "<p>created</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite to-infinitive verb &ldquo;to create&rdquo; is correctly used to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps (by analyzing and arranging certain data).</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite verb &ldquo;create&rdquo; can&rsquo;t be used in this way to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps. Choice C is incorrect because it results in an ungrammatical sentence. The nonfinite participle &ldquo;creating&rdquo; can&rsquo;t be used in this way to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps. Choice D is incorrect because it results in an ungrammatical sentence. The finite verb &ldquo;created&rdquo; can&rsquo;t be used in this way to form a subordinate clause that expresses how ArcGIS facilitates the creation of maps.</p>",
+    "externalid": "b7676098-167d-4382-a6fa-0433eb35a466",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>A popular suite of mapping and spatial analysis software, ArcGIS enables cartographers like Karachi Cartography founder Namra Khalid <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> maps by analyzing and arranging raw geospatial data.&nbsp;</p>"
+}

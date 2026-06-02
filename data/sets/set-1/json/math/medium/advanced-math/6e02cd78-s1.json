@@ -1,0 +1,20 @@
+{
+  "questionId": "6e02cd78-s1",
+  "originalId": "6e02cd78",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": "<p>y = (x &minus; 2)<sup>2</sup></p><p>y = 3x &minus; 6</p>",
+  "stem": "<p>The system of equations above has solutions (x, y). What is one possible value of x?</p>",
+  "answerOptions": [],
+  "keys": ["2", "5"],
+  "rationale": "<p>Setting (x &minus; 2)<sup>2</sup> = 3x &minus; 6 = 3(x &minus; 2). Let u = x &minus; 2: u<sup>2</sup> = 3u, so u(u &minus; 3) = 0. Thus u = 0 (x = 2) or u = 3 (x = 5).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

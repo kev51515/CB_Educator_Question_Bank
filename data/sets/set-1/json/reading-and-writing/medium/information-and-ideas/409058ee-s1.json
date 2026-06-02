@@ -1,0 +1,25 @@
+{
+  "questionId": "409058ee-s1",
+  "originalId": "409058ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>When threatened, certain species of sea cucumbers expel sticky, thread-like tubes from their bodies that quickly tangle and immobilize attackers. Because these tubes are remarkably elastic and adhesive even underwater, materials scientist Naledi Okafor and her colleagues have been working to reproduce them in the laboratory as a biodegradable alternative to the synthetic adhesives commonly used in medical wound closures. The researchers prefer a lab-made version because harvesting sea cucumbers at the scale that would be needed would be costly and likely damaging to wild populations of the animals.</p>",
+  "stem": "<p>Which choice best states the text's main idea?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The sticky tubes that sea cucumbers expel could enable researchers to develop a new kind of medical adhesive.</p>"},
+    {"id": "b", "content": "<p>Sea cucumbers have inspired researchers to develop a new synthetic adhesive that is widely used in medicine.</p>"},
+    {"id": "c", "content": "<p>Sea cucumbers are poorly suited to being raised in captivity for commercial purposes.</p>"},
+    {"id": "d", "content": "<p>Sea cucumbers' ability to expel sticky tubes compensates for their lack of hard protective shells.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text first describes the sea cucumbers' sticky, elastic tubes, then transitions to Okafor's effort to reproduce them in a lab as a biodegradable alternative to synthetic medical adhesives.</p><p>Choice B reverses the relationship: the researchers want an alternative to synthetic adhesives, not to invent a new synthetic one. Choice C is too narrow; the text mentions concerns about harvesting only briefly and not about captivity. Choice D is unsupported; the text never discusses whether sea cucumbers have protective shells or what their lack would imply.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

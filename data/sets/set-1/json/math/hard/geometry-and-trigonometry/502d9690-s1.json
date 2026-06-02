@@ -1,0 +1,39 @@
+{
+  "questionId": "502d9690-s1",
+  "originalId": "502d9690",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Rectangle JKLM is similar to rectangle NPQR. The area of rectangle JKLM is 800 square inches, and the area of rectangle NPQR is 50 square inches. The length of the longest side of rectangle JKLM is 48 inches. What is the length, in inches, of the longest side of rectangle NPQR?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The ratio of the areas is 800:50 = 16:1, so the linear scale factor is &radic;16 = 4. The longest side of NPQR is 48 &divide; 4 = 12 inches.</p><p>Choice A divides by 16. Choice B uses scale factor 8. Choice C uses an incorrect linear scaling.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.hard"
+}

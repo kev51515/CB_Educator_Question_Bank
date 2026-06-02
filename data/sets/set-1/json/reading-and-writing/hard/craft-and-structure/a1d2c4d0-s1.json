@@ -1,0 +1,39 @@
+{
+  "questionId": "a1d2c4d0-s1",
+  "originalId": "a1d2c4d0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Bryozoans are tiny colonial filter-feeders that build delicate calcareous skeletons by secreting calcium carbonate. These animals are widely considered vulnerable to ocean acidification, since calcium carbonate dissolves more readily at lower pH. Marisol Aldana and colleagues, however, recently demonstrated that a thin organic veneer covering the skeleton of the common bryozoan <em>Membranipora membranacea</em> shields the underlying mineral from dissolution. The team was further surprised to find that even when this veneer was experimentally damaged, colonies in seawater chemistries projected for the year 2100 nonetheless laid down new skeleton at rates indistinguishable from those in present-day controls&mdash;suggesting that the acidification threat to this bryozoan, at least, has likely been overstated.</p>",
+  "stem": "<p>Which choice best describes the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To call for additional research on biological mechanisms that improve bryozoan survival rates.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To discuss a conclusion drawn in a study of calcium carbonate's role in protecting the organic veneer of bryozoans.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To present findings that suggest a concern about the effects of ocean acidification on bryozoan skeletons may be unwarranted.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To address some of the ways ocean acidification has altered bryozoan behavior over time.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The passage opens by laying out the standard worry that bryozoans should be vulnerable to acidification, then describes Aldana and colleagues' results showing protection by an organic veneer and undiminished skeleton growth even in 2100-style seawater&mdash;leading to the explicit conclusion that the acidification threat has likely been overstated for this species.</p><p>Choice A is incorrect because the text reports a finding, not a call for more research. Choice B is incorrect because calcium carbonate's role is to be protected, not protective. Choice D is incorrect because behavioral changes are not at issue.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

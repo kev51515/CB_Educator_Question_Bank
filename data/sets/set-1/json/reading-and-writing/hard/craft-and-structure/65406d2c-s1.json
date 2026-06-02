@@ -1,0 +1,39 @@
+{
+  "questionId": "65406d2c-s1",
+  "originalId": "65406d2c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p><em>Cyanea kohalae</em> is a species in a family of flowering plants known collectively as the rosette lobelias, all of which grow only in the Hawaiian Islands. Members of this family show an unusual breadth of form, with some species developing into low rosettes barely six inches across and others into multi-branched candelabra-shaped trees more than twenty feet tall. All these species descended from a single ancestral bellflower that reached the islands roughly three million years ago. The bellflower's descendants spread into separate species as they settled into different elevations, soils, and pollinator communities across the archipelago.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To identify the specific bellflower ancestor of all Hawaiian flowering plants and explain why the plants vary so dramatically.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To describe the rosette lobelia family and explain how that family came to be so morphologically varied.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To describe the habitat of <em>Cyanea kohalae</em> in detail and name other plants that share its common ancestor.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To advance the claim that every plant in the Hawaiian Islands belongs to the rosette lobelia family and list possible ancestors.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text introduces the rosette lobelias and the extraordinary range of forms within the family, then explains that they descend from a single bellflower ancestor and diversified as they encountered different ecological conditions across the islands. The main purpose is to describe the family and account for its variety.</p><p>Choice A is incorrect because the text discusses only the rosette lobelias, not all Hawaiian flowering plants. Choice C is incorrect because <em>Cyanea kohalae</em>'s specific habitat is not detailed, and no roster of related species is provided. Choice D is incorrect because the text makes no claim about other plant families in Hawaii and lists no candidate ancestors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

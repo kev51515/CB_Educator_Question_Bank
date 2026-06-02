@@ -1,0 +1,25 @@
+{
+  "questionId": "fcaff694-s1",
+  "originalId": "fcaff694",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A3.T6.medium",
+  "stimulus": "<p>The fortified town of Carcassonne, which has been continuously inhabited since the Roman era, continues to draw the attention of medievalists. Unfortunately, as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> have observed, nineteenth-century restorations introduced ornamental features that obscure earlier defensive design, causing valuable evidence about military architecture to be misread.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>historians, Marc Bouchard and Camille Veron,</p>"},
+    {"id": "b", "content": "<p>historians, Marc Bouchard and Camille Veron</p>"},
+    {"id": "c", "content": "<p>historians Marc Bouchard, and Camille Veron</p>"},
+    {"id": "d", "content": "<p>historians Marc Bouchard and Camille Veron</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The common-noun role \"historians\" is indefinite (no \"the\" or prior unique reference), so the coordinated proper-noun pair \"Marc Bouchard and Camille Veron\" functions restrictively as essential identification. No punctuation should separate the role from the names.</p><p>Choice A is incorrect because setting off the names with paired commas illogically implies that historians in general bear those specific names. Choice B is incorrect because the opening comma similarly disrupts the restrictive role-and-name pair. Choice C is incorrect because no comma is needed within the coordinated noun phrase \"Marc Bouchard and Camille Veron.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

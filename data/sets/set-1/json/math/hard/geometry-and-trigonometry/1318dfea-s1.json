@@ -1,0 +1,39 @@
+{
+  "questionId": "1318dfea-s1",
+  "originalId": "1318dfea",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the figure (not drawn to scale), segments WZ and XY intersect at point Q, with \u2220W and \u2220Y each having measure a\u00b0. Given YQ = 12, WQ = 40, WX = 30, and XQ = 50, what is the length of YZ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>100</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>\u2220WQX and \u2220YQZ are vertical angles and therefore congruent. Combined with \u2220W \u2245 \u2220Y, triangles QWX and QYZ are similar (AA), with correspondence W\u2194Y, X\u2194Z, Q\u2194Q. The similarity ratio is YQ/WQ = 12/40 = 3/10, so YZ = WX \u00d7 3/10 = 30 \u00d7 3/10 = 9.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.hard"
+}

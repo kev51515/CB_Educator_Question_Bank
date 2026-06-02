@@ -1,0 +1,39 @@
+{
+  "questionId": "1f0b582e-s1",
+  "originalId": "1f0b582e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Square X has a side length of 15 centimeters. The perimeter of square Y is 3 times the perimeter of square X. What is the length, in centimeters, of one side of square Y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Perimeter of square X is 4(15) = 60 cm. Perimeter of square Y is 3(60) = 180 cm. Each side of Y is 180/4 = 45 cm. The correct answer is choice B.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A1.T1.medium"
+}

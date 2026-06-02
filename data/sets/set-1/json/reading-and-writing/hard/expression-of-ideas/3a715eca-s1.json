@@ -1,0 +1,39 @@
+{
+  "questionId": "3a715eca-s1",
+  "originalId": "3a715eca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>One of the central insights of modern soil science is that the microbial community surrounding a plant's roots\u2014the rhizosphere\u2014exerts a profound influence on the plant's ability to absorb nutrients from the surrounding earth. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> instead of evaluating crop varieties solely by their genetic traits, agronomists are increasingly assessing how those varieties interact with the diverse microbes that colonize their root systems.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Consequently,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To put it another way,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Consequently\" logically introduces a result of the insight presented in the first sentence: because the rhizosphere influences nutrient uptake, agronomists are now evaluating crop varieties differently. The second sentence states a direct consequence of the first.</p><p>Choice B is incorrect because \"for instance\" would signal that the second sentence offers an example of the prior claim, but it actually describes an outcome that follows from that claim. Choice C is incorrect because \"nevertheless\" would signal contrast, yet the two sentences agree and the second extends the first. Choice D is incorrect because \"to put it another way\" would signal that the second sentence merely restates the first, but it instead identifies a new practical implication.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T4.hard"
+}

@@ -1,0 +1,452 @@
+[
+  {
+    "id": "f718c9cf",
+    "path": "json/math/hard/algebra/f718c9cf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "f75bd744",
+    "path": "json/math/hard/algebra/f75bd744.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "fb5e7f59",
+    "path": "json/math/hard/algebra/fb5e7f59.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "ff501705",
+    "path": "json/math/hard/algebra/ff501705.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "099526fc",
+    "path": "json/math/hard/geometry-and-trigonometry/099526fc.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "167aff9e",
+    "path": "json/math/hard/geometry-and-trigonometry/167aff9e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "1be8b6b2",
+    "path": "json/math/hard/geometry-and-trigonometry/1be8b6b2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "310c87fe",
+    "path": "json/math/hard/geometry-and-trigonometry/310c87fe.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "459dd6c5",
+    "path": "json/math/hard/geometry-and-trigonometry/459dd6c5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "502d9690",
+    "path": "json/math/hard/geometry-and-trigonometry/502d9690.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "5b2b8866",
+    "path": "json/math/hard/geometry-and-trigonometry/5b2b8866.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "62ec6574",
+    "path": "json/math/hard/geometry-and-trigonometry/62ec6574.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "6708546e",
+    "path": "json/math/hard/geometry-and-trigonometry/6708546e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "899c6042",
+    "path": "json/math/hard/geometry-and-trigonometry/899c6042.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "8c1aa743",
+    "path": "json/math/hard/geometry-and-trigonometry/8c1aa743.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "93de3f84",
+    "path": "json/math/hard/geometry-and-trigonometry/93de3f84.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "983412ea",
+    "path": "json/math/hard/geometry-and-trigonometry/983412ea.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "9966235e",
+    "path": "json/math/hard/geometry-and-trigonometry/9966235e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "9f934297",
+    "path": "json/math/hard/geometry-and-trigonometry/9f934297.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "9fec9d49",
+    "path": "json/math/hard/geometry-and-trigonometry/9fec9d49.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "a07ed090",
+    "path": "json/math/hard/geometry-and-trigonometry/a07ed090.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "b0dc920d",
+    "path": "json/math/hard/geometry-and-trigonometry/b0dc920d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "b2528e6b",
+    "path": "json/math/hard/geometry-and-trigonometry/b2528e6b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "ba8ca563",
+    "path": "json/math/hard/geometry-and-trigonometry/ba8ca563.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "c984f1a5",
+    "path": "json/math/hard/geometry-and-trigonometry/c984f1a5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "dc71597b",
+    "path": "json/math/hard/geometry-and-trigonometry/dc71597b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "deff8a2f",
+    "path": "json/math/hard/geometry-and-trigonometry/deff8a2f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "e5c57163",
+    "path": "json/math/hard/geometry-and-trigonometry/e5c57163.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "eb70d2d0",
+    "path": "json/math/hard/geometry-and-trigonometry/eb70d2d0.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "spr"
+  },
+  {
+    "id": "f243c383",
+    "path": "json/math/hard/geometry-and-trigonometry/f243c383.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "f329442c",
+    "path": "json/math/hard/geometry-and-trigonometry/f329442c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "f7e626b2",
+    "path": "json/math/hard/geometry-and-trigonometry/f7e626b2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  },
+  {
+    "id": "0acfddb5",
+    "path": "json/math/hard/geometry-and-trigonometry/0acfddb5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "196e8e6e",
+    "path": "json/math/hard/geometry-and-trigonometry/196e8e6e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "1b2b20b9",
+    "path": "json/math/hard/geometry-and-trigonometry/1b2b20b9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "1efd7ef3",
+    "path": "json/math/hard/geometry-and-trigonometry/1efd7ef3.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "2266984b",
+    "path": "json/math/hard/geometry-and-trigonometry/2266984b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "244ff6c4",
+    "path": "json/math/hard/geometry-and-trigonometry/244ff6c4.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "249d3f80",
+    "path": "json/math/hard/geometry-and-trigonometry/249d3f80.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "24cec8d1",
+    "path": "json/math/hard/geometry-and-trigonometry/24cec8d1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "2855cb58",
+    "path": "json/math/hard/geometry-and-trigonometry/2855cb58.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "35d37640",
+    "path": "json/math/hard/geometry-and-trigonometry/35d37640.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "3e577e4a",
+    "path": "json/math/hard/geometry-and-trigonometry/3e577e4a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "6585d841",
+    "path": "json/math/hard/geometry-and-trigonometry/6585d841.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "69b0d79d",
+    "path": "json/math/hard/geometry-and-trigonometry/69b0d79d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "6b4707aa",
+    "path": "json/math/hard/geometry-and-trigonometry/6b4707aa.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "76c73dbf",
+    "path": "json/math/hard/geometry-and-trigonometry/76c73dbf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "858fd1cf",
+    "path": "json/math/hard/geometry-and-trigonometry/858fd1cf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "89661424",
+    "path": "json/math/hard/geometry-and-trigonometry/89661424.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "981275d2",
+    "path": "json/math/hard/geometry-and-trigonometry/981275d2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  }
+]

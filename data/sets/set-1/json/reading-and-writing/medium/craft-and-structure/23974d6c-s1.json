@@ -1,0 +1,25 @@
+{
+  "questionId": "23974d6c-s1",
+  "originalId": "23974d6c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>There are many notable cases of weather forecasters making faulty predictions about the trajectories of tropical storms. But meteorologist and forecaster Hina Patel has said that these prediction failures should not lead emergency planners to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the models that produced them: even imperfect models give planners a useful starting point for staging supplies and coordinating evacuations.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>conceal</p>"},
+    {"id": "b", "content": "<p>publicize</p>"},
+    {"id": "c", "content": "<p>discard</p>"},
+    {"id": "d", "content": "<p>refine</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. \"Discard\" means to throw away or abandon. The text says Patel argues that even faulty models are useful for staging supplies and coordinating evacuations; she would therefore caution planners against abandoning them in response to past failures.</p><p>Choice A is incorrect because there is no suggestion that planners might hide the models. Choice B is incorrect because publicizing the models is unrelated to whether planners should keep using them after failures. Choice D is incorrect because \"refine\" means to improve, which Patel would endorse rather than caution against.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

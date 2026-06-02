@@ -1,0 +1,39 @@
+{
+  "questionId": "da2e9202-s1",
+  "originalId": "da2e9202",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>12</mn><mi>x</mi><mo>+</mo><mn>25</mn><mo>=</mo><mn>145</mn></math></p><p>Which equation has the same solution as the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>12</mn><mi>x</mi><mo>=</mo><mn>25</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>12</mn><mi>x</mi><mo>=</mo><mn>120</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>12</mn><mi>x</mi><mo>=</mo><mn>170</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>12</mn><mi>x</mi><mo>=</mo><mn>145</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Subtracting 25 from each side of <math><mn>12</mn><mi>x</mi><mo>+</mo><mn>25</mn><mo>=</mo><mn>145</mn></math> yields <math><mn>12</mn><mi>x</mi><mo>=</mo><mn>120</mn></math>.</p><p>Choices A, C, and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T7.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "e6b1e12c-s1",
+  "originalId": "e6b1e12c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Long considered strictly nocturnal, the desert-dwelling rodent <em>Dipodomys spectabilis</em>, or banner-tailed kangaroo rat, has been observed making brief excursions above ground during daylight hours—a pattern that biologists had attributed to disturbance by predators or accidental disorientation. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a recent telemetry study revealed that these daytime trips closely tracked peak flowering periods of certain ephemeral wildflowers and that returning rats carried fresh pollen on their fur, behavior consistent with deliberate, resource-driven foraging.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Supporting this explanation,</p>"},
+    {"id": "b", "content": "<p>In keeping with this view,</p>"},
+    {"id": "c", "content": "<p>Casting doubt on this account,</p>"},
+    {"id": "d", "content": "<p>Contrary to this finding,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Casting doubt on this account\" logically signals that the telemetry findings—tying the daytime trips to flowering schedules and pollen transport—undermine the prior explanation that the daytime activity was incidental. The new evidence weakens the old account rather than confirming or simply contrasting with the behavior itself.</p><p>Choice A is incorrect because \"supporting this explanation\" would frame the new findings as confirming the disturbance/disorientation account, but they actually weaken it. Choice B is incorrect for the same reason: \"in keeping with this view\" would make the new findings consistent with the prior view, when they undermine it. Choice D is incorrect because \"contrary to this finding\" would oppose the observed behavior itself, but the sentence challenges the prior explanation for the behavior, not the behavior itself.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T2.hard"
+}

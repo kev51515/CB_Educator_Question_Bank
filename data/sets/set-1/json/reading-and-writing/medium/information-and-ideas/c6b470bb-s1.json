@@ -1,0 +1,25 @@
+{
+  "questionId": "c6b470bb-s1",
+  "originalId": "c6b470bb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p>&ldquo;The Yellow Wall-Room&rdquo; is an 1894 short story by Mary E. Wilkins Freeman. In the story, a young woman named Cordelia spends the summer at the country estate of her elderly aunt, Mrs. Whitman. Freeman portrays Cordelia as restless and longing for stimulation she cannot find in her quiet surroundings: <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which quotation from &ldquo;The Yellow Wall-Room&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;The lawn beyond the parlor window stretched broad and green, dotted here and there with white peonies that Aunt Whitman had planted when she was a young bride.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;The long mornings, the longer afternoons, and the hours after supper with only the ticking clock for company seemed to Cordelia an unbearable trial, and she found herself ready to welcome any interruption, however slight.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;Aunt Whitman remarked over her embroidery that the village band would play on the green that evening, and Cordelia answered that perhaps she might go.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;The aunt&rsquo;s house was old and stately, its rooms cool even in midsummer, and the staircase creaked pleasantly underfoot as one ascended to the bedrooms.&rdquo;</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it shows Cordelia experiencing the long, monotonous hours as &ldquo;an unbearable trial&rdquo; and being ready to welcome any interruption — a direct depiction of restless longing for stimulation. Choice A is incorrect because it describes the lawn, not Cordelia&rsquo;s feelings. Choice C is incorrect because Cordelia merely says she might go to the band, with no indication of her restlessness. Choice D is incorrect because it characterizes the house, not Cordelia&rsquo;s state of mind.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

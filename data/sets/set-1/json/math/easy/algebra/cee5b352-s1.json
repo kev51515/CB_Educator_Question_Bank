@@ -1,0 +1,39 @@
+{
+  "questionId": "cee5b352-s1",
+  "originalId": "cee5b352",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A juvenile pine tree had a height <i>y</i> of 95 centimeters when it was first measured and grew an average of 6.3 centimeters per month for the first 12 months. Which equation best represents this situation, where <i>x</i> is the number of months after it was first measured and <i>y</i> is the height, in cm, of the tree?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = 6.3<i>x</i> + 95</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = 95<i>x</i> + 6.3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = 95<i>x</i> + 95</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = 6.3<i>x</i> + 6.3</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The initial value is 95, and the rate of growth is 6.3 cm/month, so <i>y</i> = 6.3<i>x</i> + 95.</p><p>Other choices swap or repeat the constants incorrectly.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A3.T3.easy"
+}

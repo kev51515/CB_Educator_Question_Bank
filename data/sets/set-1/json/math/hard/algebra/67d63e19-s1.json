@@ -1,0 +1,39 @@
+{
+  "questionId": "67d63e19-s1",
+  "originalId": "67d63e19",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The cost of renting a power washer is $68 for the first day and $32 for each additional day. Which of the following functions gives the cost C(d), in dollars, of renting the power washer for d days, where d is a positive integer?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>C(d) = 68 + 32d</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>C(d) = 68 + 32(d - 1)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>C(d) = 32 + 68d</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>C(d) = 68d + 32(d - 1)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The first day costs $68 and each of the remaining (d - 1) days costs $32, giving C(d) = 68 + 32(d - 1). At d = 1: C(1) = 68 \u2713. At d = 2: C(2) = 68 + 32 = 100 \u2713.</p><p>Choice A double-counts the first day by charging $32 for it as well. Choice C swaps the rates. Choice D charges $68 per day instead of just for the first day.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T4.hard"
+}

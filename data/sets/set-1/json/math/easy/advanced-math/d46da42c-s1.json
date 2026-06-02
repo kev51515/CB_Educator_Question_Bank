@@ -1,0 +1,39 @@
+{
+  "questionId": "d46da42c-s1",
+  "originalId": "d46da42c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> &minus; 1)(<i>x</i> + 1)(<i>x</i> &minus; 3). Which of the following describes the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A graph that crosses the <i>x</i>-axis only at (0, 0).</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A graph that crosses the <i>x</i>-axis at (&minus;1, 0), (1, 0), and (3, 0) only, with no <i>y</i>-intercept.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A graph that crosses the <i>x</i>-axis at (&minus;1, 0), (1, 0), and (3, 0), and the <i>y</i>-axis at (0, 3).</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A graph that crosses the <i>x</i>-axis at (1, 0) and (3, 0) only.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Setting <i>f</i>(<i>x</i>) = 0 gives <i>x</i> = &minus;1, 1, or 3, so the graph crosses the <i>x</i>-axis at (&minus;1, 0), (1, 0), and (3, 0). Substituting <i>x</i> = 0 gives <i>f</i>(0) = (&minus;1)(1)(&minus;3) = 3, so the <i>y</i>-intercept is (0, 3).</p><p>Choices A, B, and D are inconsistent with one or more of these features of the graph.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A3.T2.easy"
+}

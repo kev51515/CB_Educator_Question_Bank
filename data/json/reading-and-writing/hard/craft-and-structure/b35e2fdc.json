@@ -1,0 +1,72 @@
+{
+  "questionId": "b35e2fdc",
+  "externalId": "ce55ecd0-6a7f-4cdc-901a-b03c4e6182fd",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:22:16.318384+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "c01625db-a1a7-4cbb-9c23-0343d636a24b",
+      "content": "<p>unassuming</p>"
+    },
+    {
+      "id": "4fe1f2f3-4fae-4322-bedc-40992346383f",
+      "content": "<p>shrewd</p>"
+    },
+    {
+      "id": "4627b4dc-e897-4fa7-bae6-c4f179c5643d",
+      "content": "<p>incongruous</p>"
+    },
+    {
+      "id": "62967af4-bbae-4c18-baa1-5af5b1491a92",
+      "content": "<p>pretentious</p>"
+    }
+  ],
+  "keys": [
+    "c01625db-a1a7-4cbb-9c23-0343d636a24b"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of Scherezade Garc&iacute;a&rsquo;s mural <em>Blame It on the Bean: The Power of Coffee</em>. In this context, &ldquo;unassuming&rdquo; means ordinary or unremarkable. The text draws a contrast between a &ldquo;casual description&rdquo; of the mural&rsquo;s ordinary location (a coffee shop) and subject matter (three women drinking coffee)&mdash;details that would make it seem relatively unambitious&mdash;and a characterization of the painting as a &ldquo;dynamic meditation&rdquo; on gender and colonialism deserving of &ldquo;serious attention.&rdquo; This context suggests that the mural has significant depth and complexity, but a superficial description of it might make the mural seem ordinary and unremarkable&mdash;that is, unassuming.</p><p>Choice B is incorrect because in this context, &ldquo;shrewd&rdquo; would mean clever or astute, and there&rsquo;s nothing in the text to suggest that a casual yet misleading description that only mentions the apparent simplicity of the mural&rsquo;s location and subject matter would make the mural seem particularly clever or astute. Though it&rsquo;s possible that the text&rsquo;s assertion that the mural is a &ldquo;complex, dynamic meditation&rdquo; demanding &ldquo;serious attention&rdquo; might convey the idea that it&rsquo;s a particularly clever or astute&mdash;that is, shrewd&mdash;artwork, the text wouldn&rsquo;t suggest that a casual description that fails to account for the work&rsquo;s complexity would likewise characterize the work as shrewd. Choice C is incorrect because in this context, &ldquo;incongruous&rdquo; would mean unsuitable for its surroundings or internally inconsistent. The &ldquo;casual description&rdquo; presented in the text indicates that the painting is housed in a coffee shop and depicts women drinking coffee, which would imply that the mural may in fact be well suited to its surroundings, not that it&rsquo;s ill suited to its location. Moreover, none of the details mentioned in this description would suggest that the painting contains internal inconsistencies of any kind. Choice D is incorrect because in this context, &ldquo;pretentious&rdquo; would mean expressive of exaggerated importance, which wouldn&rsquo;t fit the contrast established in the text between a &ldquo;casual description&rdquo; of the painting and the work&rsquo;s deeper themes. Though the text argues that the painting is worthy of &ldquo;serious attention,&rdquo; which would suggest its importance, the text doesn&rsquo;t suggest that the casual description would by contrast imply that the painting&rsquo;s importance is exaggerated. Rather, by merely mentioning the mural&rsquo;s relatively ordinary location and subject matter without reference to this complexity, the casual description conveys that the painting is more unassuming and understated than it actually is, not that it expresses an exaggerated self-importance.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>A casual description of Scherezade Garc&iacute;a&rsquo;s 2019 mural <em>Blame It on the Bean: The Power of Coffee</em> can make the work seem <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>&mdash;a painting that is housed in a coffee shop and that depicts three women drinking coffee may not sound particularly ambitious&mdash;but in fact the work is a complex, dynamic meditation on gender and the legacy of colonialism that demands serious attention. &nbsp;</p>",
+    "keys": [
+      "c01625db-a1a7-4cbb-9c23-0343d636a24b"
+    ],
+    "answerOptions": [
+      {
+        "id": "c01625db-a1a7-4cbb-9c23-0343d636a24b",
+        "content": "<p>unassuming</p>"
+      },
+      {
+        "id": "4fe1f2f3-4fae-4322-bedc-40992346383f",
+        "content": "<p>shrewd</p>"
+      },
+      {
+        "id": "4627b4dc-e897-4fa7-bae6-c4f179c5643d",
+        "content": "<p>incongruous</p>"
+      },
+      {
+        "id": "62967af4-bbae-4c18-baa1-5af5b1491a92",
+        "content": "<p>pretentious</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of Scherezade Garc&iacute;a&rsquo;s mural <em>Blame It on the Bean: The Power of Coffee</em>. In this context, &ldquo;unassuming&rdquo; means ordinary or unremarkable. The text draws a contrast between a &ldquo;casual description&rdquo; of the mural&rsquo;s ordinary location (a coffee shop) and subject matter (three women drinking coffee)&mdash;details that would make it seem relatively unambitious&mdash;and a characterization of the painting as a &ldquo;dynamic meditation&rdquo; on gender and colonialism deserving of &ldquo;serious attention.&rdquo; This context suggests that the mural has significant depth and complexity, but a superficial description of it might make the mural seem ordinary and unremarkable&mdash;that is, unassuming.</p><p>Choice B is incorrect because in this context, &ldquo;shrewd&rdquo; would mean clever or astute, and there&rsquo;s nothing in the text to suggest that a casual yet misleading description that only mentions the apparent simplicity of the mural&rsquo;s location and subject matter would make the mural seem particularly clever or astute. Though it&rsquo;s possible that the text&rsquo;s assertion that the mural is a &ldquo;complex, dynamic meditation&rdquo; demanding &ldquo;serious attention&rdquo; might convey the idea that it&rsquo;s a particularly clever or astute&mdash;that is, shrewd&mdash;artwork, the text wouldn&rsquo;t suggest that a casual description that fails to account for the work&rsquo;s complexity would likewise characterize the work as shrewd. Choice C is incorrect because in this context, &ldquo;incongruous&rdquo; would mean unsuitable for its surroundings or internally inconsistent. The &ldquo;casual description&rdquo; presented in the text indicates that the painting is housed in a coffee shop and depicts women drinking coffee, which would imply that the mural may in fact be well suited to its surroundings, not that it&rsquo;s ill suited to its location. Moreover, none of the details mentioned in this description would suggest that the painting contains internal inconsistencies of any kind. Choice D is incorrect because in this context, &ldquo;pretentious&rdquo; would mean expressive of exaggerated importance, which wouldn&rsquo;t fit the contrast established in the text between a &ldquo;casual description&rdquo; of the painting and the work&rsquo;s deeper themes. Though the text argues that the painting is worthy of &ldquo;serious attention,&rdquo; which would suggest its importance, the text doesn&rsquo;t suggest that the casual description would by contrast imply that the painting&rsquo;s importance is exaggerated. Rather, by merely mentioning the mural&rsquo;s relatively ordinary location and subject matter without reference to this complexity, the casual description conveys that the painting is more unassuming and understated than it actually is, not that it expresses an exaggerated self-importance.</p>",
+    "externalid": "ce55ecd0-6a7f-4cdc-901a-b03c4e6182fd",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>A casual description of Scherezade Garc&iacute;a&rsquo;s 2019 mural <em>Blame It on the Bean: The Power of Coffee</em> can make the work seem <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>&mdash;a painting that is housed in a coffee shop and that depicts three women drinking coffee may not sound particularly ambitious&mdash;but in fact the work is a complex, dynamic meditation on gender and the legacy of colonialism that demands serious attention. &nbsp;</p>"
+}

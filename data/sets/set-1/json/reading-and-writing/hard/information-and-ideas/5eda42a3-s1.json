@@ -1,0 +1,39 @@
+{
+  "questionId": "5eda42a3-s1",
+  "originalId": "5eda42a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1908 poem. The speaker is addressing the painter Henry Ossawa Tanner, an American artist celebrated for his religious and landscape paintings.</p><p style='padding-left: 1em;'>Thou, with brush of patient skill,<br>&emsp;Hast caught the sigh of prayer,<br>And searched the hush of human will<br>&emsp;That trembles unaware.</p><p style='padding-left: 1em;'>The whisper of the leaves,<br>&emsp;The murmur of the stream,<br>Have laid their secrets at thy hand<br>&emsp;And lingered in thy dream.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To establish that a certain artist has studied many subjects in great depth before painting them</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To call attention to the careful and methodical techniques a certain artist uses when painting</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To recall a pleasant afternoon spent observing a certain artist at work in nature</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To praise a certain artist for being unusually attentive to both human feeling and the natural world</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The poem's first stanza praises Tanner's insight into human spiritual experience (\"the sigh of prayer,\" \"the hush of human will\"), while the second praises his sensitivity to the natural world (\"whisper of the leaves,\" \"murmur of the stream\"). The text's central purpose is therefore to celebrate Tanner's attentiveness to both human feeling and nature.</p><p>Choice A is incorrect because the figurative language describes the artist's <em>perceptiveness</em>, not literal study of many subjects. Choice B is incorrect because, although the speaker mentions Tanner's brush, the text does not describe his techniques in any detail. Choice C is incorrect because nothing in the text indicates a shared experience or anecdote; the focus is on Tanner's qualities as observed through his art.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T3.hard"
+}

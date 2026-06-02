@@ -1,0 +1,25 @@
+{
+  "questionId": "75208874-s1",
+  "originalId": "75208874",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Online streaming platforms have given musicologists an unprecedented opportunity to observe stylistic shifts in popular music as they happen. A striking recent case involves the chord pattern known as the \"plagal cadence,\" which surged in indie pop tracks uploaded to streaming services beginning around 2017. Musicologists watched the cadence first appear in short demo recordings shared by independent artists; from there, it spread to full studio releases distributed on the same platforms, and within a few years it had begun appearing in live performances by major touring acts. Researchers have documented comparable patterns in other genres, suggesting that streaming platforms <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are more useful for studying independent music than for studying mainstream or commercial music.</p>"},
+    {"id": "b", "content": "<p>appear to be exerting an exceptionally strong influence on the development of indie pop specifically.</p>"},
+    {"id": "c", "content": "<p>do not merely document trends in music but can actively propel those trends forward.</p>"},
+    {"id": "d", "content": "<p>may give musicologists a somewhat distorted impression of how musical styles are evolving.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text's discussion of musicologists using streaming platforms to observe stylistic shifts in real time, with the plagal cadence as a specific example. The text traces the cadence from independent demos on streaming services to studio releases on the same platforms and then to live performances by major acts. This progression from online sharing to mainstream live performance suggests that streaming platforms do more than passively register changes in music—they can actively help drive those changes by giving new patterns a venue to be discovered and adopted.</p><p>Choice A is incorrect because the text doesn't compare streaming's usefulness for studying independent versus mainstream music; it merely traces a single stylistic feature across both. Choice B is incorrect because while the example focuses on indie pop, the text explicitly notes \"comparable patterns in other genres,\" suggesting streaming's influence isn't unique to indie pop. Choice D is incorrect because nothing in the text indicates that streaming gives a distorted picture; if anything, the text suggests it offers a clear, real-time window into musical change.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1e8d7183-s1",
+  "originalId": "1e8d7183",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>144</mn><msup><mi>k</mi><mn>2</mn></msup><mo>-</mo><mn>196</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mn>12</mn><mi>k</mi><mo>-</mo><mn>14</mn></mrow></mfenced><mfenced><mrow><mn>12</mn><mi>k</mi><mo>+</mo><mn>14</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mn>12</mn><mi>k</mi><mo>+</mo><mn>14</mn></mrow></mfenced><mfenced><mrow><mn>12</mn><mi>k</mi><mo>+</mo><mn>14</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mn>6</mn><mi>k</mi><mo>-</mo><mn>7</mn></mrow></mfenced><mfenced><mrow><mn>6</mn><mi>k</mi><mo>+</mo><mn>7</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mn>6</mn><mi>k</mi><mo>-</mo><mn>7</mn></mrow></mfenced><mfenced><mrow><mn>6</mn><mi>k</mi><mo>-</mo><mn>7</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Both terms are perfect squares: 144k\u00b2 = (12k)\u00b2 and 196 = 14\u00b2. Using the difference of squares a\u00b2 \u2212 b\u00b2 = (a \u2212 b)(a + b), the expression factors as (12k \u2212 14)(12k + 14).</p>",
+  "templateId": "equivalent-expressions.A2.T5.easy"
+}

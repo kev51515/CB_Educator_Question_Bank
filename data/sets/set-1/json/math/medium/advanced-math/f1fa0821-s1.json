@@ -1,0 +1,39 @@
+{
+  "questionId": "f1fa0821-s1",
+  "originalId": "f1fa0821",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A3.T5.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph gives the estimated population <em>y</em>, in thousands, of a town <em>x</em> years since 2007, where 0 &le; <em>x</em> &le; 5. The graph passes through (0, 4) and (1, 5). Which of the following best describes the increase in the estimated population from <em>x</em> = 0 to <em>x</em> = 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The estimated population at <em>x</em> = 1 is 1.25 times the estimated population at <em>x</em> = 0.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The estimated population at <em>x</em> = 1 is 0.25 times the estimated population at <em>x</em> = 0.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The estimated population at <em>x</em> = 1 is 2 times the estimated population at <em>x</em> = 0.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The estimated population at <em>x</em> = 1 is 0.8 times the estimated population at <em>x</em> = 0.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. From the graph, at <em>x</em> = 0 the population is 4 thousand, and at <em>x</em> = 1 the population is 5 thousand. The ratio is 5/4 = 1.25, so the population at <em>x</em> = 1 is 1.25 times the population at <em>x</em> = 0. Choice B gives the increase relative to <em>x</em> = 0 (which would be 0.25 of the original). Choice C describes a doubling. Choice D reverses the ratio.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z"
+}

@@ -1,0 +1,18 @@
+[
+  {"id": "ee031767-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "e6545fa8-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "constraint_violation", "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone has no stimulus/graph and presents only the algebraic equations y=x+1, y=-x+5. This is the categorical drift to A1 explicitly warned about in common_bugs."},
+  {"id": "d1aeb6f1-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "b0fc3166-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "constraint_violation", "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone provides only equations y=2x-1, y=-x+8 with no graph (stimulus is null). Categorical drift from A3 to A1."},
+  {"id": "cdec4c87-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy", "verdict": "type_drift", "detail": "T2 description requires that 'both equations involve both variables', but the clone's second equation y=17 is a single-variable equation that already isolates y. This is T1 (trivial one-equation isolates a variable) structure, not T2."},
+  {"id": "9db5b5c1-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "b86123af-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "ca9bb527-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy", "verdict": "type_drift", "detail": "T2 requires both equations involve both variables; here y=22 already isolates y, making this a T1 (trivial one-equation isolates a variable) structure rather than T2."},
+  {"id": "ccc3ad6b-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "constraint_violation", "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph (stimulus null) and presents only equations y=-2x+3, y=x-6. Categorical drift to A1."},
+  {"id": "aff28230-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "ffb371f5-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "7d89376f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "e0177f5f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "dba8d38a-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "44d65912-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "f6b055dc-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "constraint_violation", "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph and only lists equations y=x, y=-x+6. Categorical drift to A1."}
+]

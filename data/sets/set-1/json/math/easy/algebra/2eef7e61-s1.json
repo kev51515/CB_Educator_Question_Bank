@@ -1,0 +1,39 @@
+{
+  "questionId": "2eef7e61-s1",
+  "originalId": "2eef7e61",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of the function f is a line in the xy-plane. If the line has slope 2/5 and f(0) = 4, which of the following defines f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = (2/5)x - 4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = 5x - 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = 5x + 4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = (2/5)x + 4</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. f(0) = 4 gives the y-intercept 4. Slope 2/5 gives f(x) = (2/5)x + 4.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T1.easy"
+}

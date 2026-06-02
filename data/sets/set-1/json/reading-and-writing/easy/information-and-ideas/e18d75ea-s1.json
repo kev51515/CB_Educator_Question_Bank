@@ -1,0 +1,39 @@
+{
+  "questionId": "e18d75ea-s1",
+  "originalId": "e18d75ea",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Elevations at Which Four Alpine Plant Species Grow</p></caption><thead><tr><th scope=\"col\">Species</th><th scope=\"col\">Elevation above sea level</th></tr></thead><tbody><tr><th scope=\"row\">Alpine forget-me-not</th><td>2,500\u20133,500 meters</td></tr><tr><th scope=\"row\">Edelweiss</th><td>1,800\u20133,400 meters</td></tr><tr><th scope=\"row\">Snow buttercup</th><td>2,800\u20134,000 meters</td></tr><tr><th scope=\"row\">Glacier lily</th><td>1,500\u20133,000 meters</td></tr></tbody></table></figure></p><p>Certain plant species grow only at high mountain elevations. Botanists collected data about the elevations at which various alpine species grow.</p>",
+  "stem": "<p>Based on the information in the table, at what elevation does the edelweiss grow?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2,500 to 3,500 meters above sea level</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,800 to 3,400 meters above sea level</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2,800 to 4,000 meters above sea level</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,500 to 3,000 meters above sea level</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The table shows the edelweiss grows at 1,800\u20133,400 meters above sea level.</p><p>Choice A gives the elevation range for the alpine forget-me-not. Choice C gives the range for the snow buttercup. Choice D gives the range for the glacier lily.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T7.easy"
+}

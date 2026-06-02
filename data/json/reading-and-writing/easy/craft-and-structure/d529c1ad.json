@@ -1,0 +1,72 @@
+{
+  "questionId": "d529c1ad",
+  "externalId": "1aff86ca-a9d5-4205-8ff4-c9fe42e6a26e",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:21:43.443919+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "7881c6a3-7671-43ee-afc3-1bccc66d419f",
+      "content": "<p>comprehend</p>"
+    },
+    {
+      "id": "3ec4385c-2225-4bfd-93b7-5c2a0d6b9a36",
+      "content": "<p>dislike</p>"
+    },
+    {
+      "id": "e386a5d8-a24e-4c52-b47b-78b368d316cd",
+      "content": "<p>interrupt</p>"
+    },
+    {
+      "id": "3040ebe7-eb44-4f81-93fb-f59626721050",
+      "content": "<p>overlook</p>"
+    }
+  ],
+  "keys": [
+    "7881c6a3-7671-43ee-afc3-1bccc66d419f"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of Ezra Pound&rsquo;s poetry. In this context, &ldquo;comprehend&rdquo; would mean to understand or grasp the meaning of something. The text describes Pound&rsquo;s poetry as &ldquo;dense&rdquo; and &ldquo;experimental,&rdquo; with many references that readers may not understand. The text also states that many readers may not even be able to identify a poem&rsquo;s subject. This context clearly suggests that readers struggle to understand Pound&rsquo;s poetry as a result of its complexity and obscure references.</p><p>Choice B is incorrect. To say that Pound&rsquo;s poetry is &ldquo;hard to dislike&rdquo; would suggest that people generally like it, but the text doesn&rsquo;t focus on how likeable or enjoyable the poems are; rather, it focuses on how challenging many readers find it to understand them. Choice C is incorrect. To say that Pound&rsquo;s poetry is &ldquo;hard to interrupt&rdquo; would mean that it is hard to stop or break into it while it&rsquo;s being read or recited, but the text doesn&rsquo;t discuss any such breaks; instead, the text focuses on the challenge of understanding the content of Pound&rsquo;s poems. Choice D is incorrect. In this context, &ldquo;overlook&rdquo; would mean look past or fail to notice, so to say that Pound&rsquo;s poetry is &ldquo;hard to overlook&rdquo; would mean that it is very likely to be noticed. The text focuses on the difficulty people have in understanding Pound&rsquo;s poems when reading them, not how noticeable his poetry is in the first place.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Ezra Pound&rsquo;s poetry can be hard to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: it is dense, experimental, and so full of references and allusions that many readers have a difficult time even identifying the poems&rsquo; subjects.&nbsp;</p>",
+    "keys": [
+      "7881c6a3-7671-43ee-afc3-1bccc66d419f"
+    ],
+    "answerOptions": [
+      {
+        "id": "7881c6a3-7671-43ee-afc3-1bccc66d419f",
+        "content": "<p>comprehend</p>"
+      },
+      {
+        "id": "3ec4385c-2225-4bfd-93b7-5c2a0d6b9a36",
+        "content": "<p>dislike</p>"
+      },
+      {
+        "id": "e386a5d8-a24e-4c52-b47b-78b368d316cd",
+        "content": "<p>interrupt</p>"
+      },
+      {
+        "id": "3040ebe7-eb44-4f81-93fb-f59626721050",
+        "content": "<p>overlook</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of Ezra Pound&rsquo;s poetry. In this context, &ldquo;comprehend&rdquo; would mean to understand or grasp the meaning of something. The text describes Pound&rsquo;s poetry as &ldquo;dense&rdquo; and &ldquo;experimental,&rdquo; with many references that readers may not understand. The text also states that many readers may not even be able to identify a poem&rsquo;s subject. This context clearly suggests that readers struggle to understand Pound&rsquo;s poetry as a result of its complexity and obscure references.</p><p>Choice B is incorrect. To say that Pound&rsquo;s poetry is &ldquo;hard to dislike&rdquo; would suggest that people generally like it, but the text doesn&rsquo;t focus on how likeable or enjoyable the poems are; rather, it focuses on how challenging many readers find it to understand them. Choice C is incorrect. To say that Pound&rsquo;s poetry is &ldquo;hard to interrupt&rdquo; would mean that it is hard to stop or break into it while it&rsquo;s being read or recited, but the text doesn&rsquo;t discuss any such breaks; instead, the text focuses on the challenge of understanding the content of Pound&rsquo;s poems. Choice D is incorrect. In this context, &ldquo;overlook&rdquo; would mean look past or fail to notice, so to say that Pound&rsquo;s poetry is &ldquo;hard to overlook&rdquo; would mean that it is very likely to be noticed. The text focuses on the difficulty people have in understanding Pound&rsquo;s poems when reading them, not how noticeable his poetry is in the first place.</p>",
+    "externalid": "1aff86ca-a9d5-4205-8ff4-c9fe42e6a26e",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Ezra Pound&rsquo;s poetry can be hard to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: it is dense, experimental, and so full of references and allusions that many readers have a difficult time even identifying the poems&rsquo; subjects.&nbsp;</p>"
+}

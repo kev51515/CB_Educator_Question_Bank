@@ -1,0 +1,39 @@
+{
+  "questionId": "1ba5ad7a-s1",
+  "originalId": "1ba5ad7a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Many music theorists analyze a composition by distinguishing between <em>structure</em>\u2014the underlying harmonic and melodic relations that govern the piece\u2014and <em>form</em>, the surface ordering of sections that the listener actually hears. In Beethoven's <em>Symphony No. 5</em>, the <em>structure</em> rests on the famous four-note motif and its harmonic implications, while the <em>form</em> consists of four movements traditionally labeled allegro, andante, scherzo, and finale. Theorist Heinrich Schenker, however, argued that these two analytic categories cannot fully account for a musical work: in his view, neat technical distinctions overlook the dynamic exchange between composer, performer, and listener through which musical meaning actually emerges.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Beethoven's <em>Symphony No. 5</em> is more difficult to analyze than other symphonies because of its unusual structure and form.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Theorist Heinrich Schenker maintained that two analytic concepts widely used by other theorists fail to capture important aspects of musical works.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Schenker insisted that the meaning of a musical work depends entirely on how listeners individually interpret what they hear.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Compositions whose forms diverge sharply from their underlying structures tend to be more challenging for audiences than those whose forms align with their structures.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text introduces two widely used analytic concepts (structure and form), illustrates them with Beethoven's Fifth, and then reports Schenker's argument that those two categories cannot fully describe a musical work because they neglect the interactions among composer, performer, and listener that generate meaning. That central claim is captured by Choice B.</p><p>Choice A is incorrect because Beethoven's symphony is used only as an illustrative example; the text does not claim it is harder to analyze than other works. Choice C is incorrect because Schenker, per the text, locates meaning in the interaction among composer, performer, and listener\u2014not solely in the listener. Choice D is incorrect because the text does not compare difficulty levels among different compositions; it is about the limits of two analytic categories.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

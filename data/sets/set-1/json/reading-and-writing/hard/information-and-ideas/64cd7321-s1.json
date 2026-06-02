@@ -1,0 +1,25 @@
+{
+  "questionId": "64cd7321-s1",
+  "originalId": "64cd7321",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>As workplace learning has become increasingly app-based and notification-driven, deliberate professional development has given way to an attitude known as \"updates find me\" (UFM), in which employees passively rely on push alerts and colleagues' posts to keep up with developments in their field. Educational psychologists Aditi Rao and Carlos Mendoza analyzed survey data from a representative sample of mid-career engineers to measure strength of UFM attitude, technical knowledge, and engagement with their professional community. Although no major professional credentialing exam took place close enough to the study to allow Rao and Mendoza to establish a causal link between UFM and credential renewal, they nevertheless posited that UFM may lower the probability of credential renewal through an indirect effect.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the idea advanced by Rao and Mendoza?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>UFM attitude tends to strengthen as credential renewal deadlines approach, and engineers are significantly more likely to renew their credentials in the year of a major exam than in other years.</p>"},
+    {"id": "b", "content": "<p>Engagement with one's professional community is known to have a strong positive effect on likelihood of credential renewal but only a weak effect on technical knowledge, and UFM attitude shows little correlation with either professional engagement or technical knowledge.</p>"},
+    {"id": "c", "content": "<p>The likelihood of credential renewal increases as technical knowledge increases, and the link between UFM attitude and technical knowledge tends to strengthen as the size of an engineer's online network grows.</p>"},
+    {"id": "d", "content": "<p>UFM attitude has a strong negative effect on technical knowledge and professional engagement, and there is a strong positive correlation between technical knowledge and professional engagement and the likelihood of credential renewal.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. Rao and Mendoza posit that UFM reduces credential renewal indirectly. A finding that UFM lowers technical knowledge and professional engagement, and that those two factors in turn strongly predict credential renewal, provides exactly the indirect causal chain (UFM → ↓ knowledge/engagement → ↓ renewal) that their idea requires.</p><p>Choice A is incorrect: it concerns how UFM changes near deadlines and how renewal rates vary across years, neither of which establishes the indirect mechanism by which UFM affects renewal. Choice B is incorrect: a finding that UFM has little correlation with knowledge or engagement directly undercuts the proposed indirect pathway. Choice C is incorrect: this finding focuses on network size, a factor the text does not connect to the researchers' hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5b74feb9-s1",
+  "originalId": "5b74feb9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Researchers who favor the conventional view of jury participation argue that serving as a juror in a criminal trial does not change a juror's overall confidence in the criminal justice system. Drawing on records from Massachusetts felony trials between 1998 and 2010, sociologists Renata Costa and James Healey tested this claim by distinguishing between citizens whose names had just become eligible for jury selection (roughly half of whom were ultimately empaneled) and otherwise similar citizens whose names had been selected just before their eligibility began (and thus none of whom served). Costa and Healey then compared the two groups' confidence in the criminal justice system three years after each trial.</p>",
+  "stem": "<p>Which finding from Costa and Healey's study, if true, would most directly weaken the claim made by researchers who favor the conventional view of jury participation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Three years after a given trial, subjects who served on a jury and subjects who did not serve were both significantly more likely to express low confidence in the criminal justice system than to express high confidence.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Subjects who served on a jury in a given trial expressed significantly more polarized levels of confidence in the criminal justice system three years later than did subjects who were ineligible to serve in that trial.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Subjects' confidence in the criminal justice system three years after a given trial was strongly predicted by their general civic engagement, regardless of whether they were eligible to serve at the time of the trial.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Subjects who were ineligible to serve on a jury in a given trial expressed significantly higher confidence in the criminal justice system three years later than they had at the time of the trial.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The conventional claim is that jury service does not change a juror's confidence in the criminal justice system. A finding that, three years out, jurors' confidence levels were significantly more polarized than those of comparable nonjurors would indicate that jury service did shift opinions\u2014away from a neutral middle, regardless of direction\u2014directly undermining the conventional claim.</p><p>Choice A is incorrect: it describes both groups together at one moment, so it cannot show whether jury service itself changed jurors' attitudes. Choice C is incorrect: a relationship between attitudes and general civic engagement, holding across both groups, says nothing about a change caused by serving. Choice D is incorrect: it concerns only the nonjuror group, so it does not show any effect of actually serving.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T6.hard"
+}

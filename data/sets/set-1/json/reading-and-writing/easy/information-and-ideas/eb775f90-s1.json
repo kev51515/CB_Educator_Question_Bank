@@ -1,0 +1,25 @@
+{
+  "questionId": "eb775f90-s1",
+  "originalId": "eb775f90",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T8.easy",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Annual Radio Production in Country X, 1935–1950</p></caption><thead><tr><th scope=\"col\">Year</th><th scope=\"col\">Number of radios produced</th><th scope=\"col\">Number of companies producing radios</th></tr></thead><tbody><tr><th scope=\"row\">1935</th><td>89,400</td><td>275</td></tr><tr><th scope=\"row\">1940</th><td>412,800</td><td>198</td></tr><tr><th scope=\"row\">1945</th><td>1,287,500</td><td>112</td></tr><tr><th scope=\"row\">1950</th><td>2,640,300</td><td>54</td></tr></tbody></table></figure></p><p>A student is preparing a presentation on the radio industry of Country X in the mid-twentieth century. The student observes that, according to the table, from 1935 to 1950 ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>both the number of radios produced and the number of companies producing radios increased.</p>"},
+    {"id": "b", "content": "<p>both the number of radios produced and the number of companies producing radios remained unchanged.</p>"},
+    {"id": "c", "content": "<p>the number of radios produced increased but the number of companies producing radios decreased.</p>"},
+    {"id": "d", "content": "<p>the number of radios produced decreased but the number of companies producing radios remained unchanged.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The table shows production rose from 89,400 to 2,640,300 while company count fell from 275 to 54 — production up, company count down.</p><p>Choice A is wrong: the number of companies decreased, not increased. Choice B is wrong: both values changed substantially. Choice D is wrong: production rose dramatically, and the company count changed (didn't remain unchanged).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

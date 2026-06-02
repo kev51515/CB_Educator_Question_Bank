@@ -1,0 +1,22 @@
+[
+  {"id": "ba61d95f-s1", "templateId": "percentages.A3.T4.medium", "verdict": "ok"},
+  {"id": "d72a2b4d-s1", "templateId": "percentages.A2.T1.medium", "verdict": "ok"},
+  {"id": "022e9894-s1", "templateId": "percentages.A4.T1.medium", "verdict": "ok"},
+  {"id": "94c65646-s1", "templateId": "percentages.A2.T2.medium", "verdict": "ok"},
+  {"id": "63573fea-s1", "templateId": "percentages.A4.T1.medium", "verdict": "ok"},
+  {"id": "c256b723-s1", "templateId": "percentages.A1.T3.medium", "verdict": "ok"},
+  {"id": "05195d8a-s1", "templateId": "percentages.A2.T2.medium", "verdict": "ok"},
+  {"id": "ad1d6adb-s1", "templateId": "percentages.A3.T3.medium", "verdict": "ok"},
+  {"id": "dccdb20c-s1", "templateId": "percentages.A1.T2.medium", "verdict": "ok"},
+  {"id": "7f84b136-s1", "templateId": "percentages.A2.T1.medium", "verdict": "aspect_drift", "detail": "Stem asks 'what percent greater' (percent change between two values), which is A3.T3, not A2.T1 ('what percent of N is M'). Answer 540% is mathematically correct for the percent-greater interpretation, but the tagged aspect/type doesn't match the cognitive operation."},
+  {"id": "8a714fa1-s1", "templateId": "percentages.A3.T5.medium", "verdict": "ok"},
+  {"id": "7b731fc3-s1", "templateId": "percentages.A3.T1.medium", "verdict": "ok"},
+  {"id": "b2f6f17d-s1", "templateId": "percentages.A3.T3.medium", "verdict": "ok"},
+  {"id": "e9f4521a-s1", "templateId": "percentages.A2.T1.medium", "verdict": "ok"},
+  {"id": "121dc44f-s1", "templateId": "percentages.A3.T4.medium", "verdict": "ok"},
+  {"id": "8e2e424e-s1", "templateId": "percentages.A3.T4.medium", "verdict": "ok"},
+  {"id": "96a45430-s1", "templateId": "percentages.A3.T2.medium", "verdict": "ok"},
+  {"id": "d693f563-s1", "templateId": "percentages.A3.T1.medium", "verdict": "ok"},
+  {"id": "8cbf1415-s1", "templateId": "percentages.A4.T4.medium", "verdict": "ok"},
+  {"id": "709e04de-s1", "templateId": "percentages.A3.T4.medium", "verdict": "ok"}
+]

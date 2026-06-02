@@ -1,0 +1,39 @@
+{
+  "questionId": "2c50ed1a-s1",
+  "originalId": "2c50ed1a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Scholars studying the films of Brazilian director Glauber Rocha have grappled with the sprawling nature of his work, which spans more than a dozen feature films. It is most useful, however, to consider Rocha's career as a director in three distinct periods, each with its own thematic and stylistic identity: his early experimental work in the 1960s, the politically driven films of the 1970s, and the more reflective late films from the 1980s onward.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>It is tempting to organize the body of Glauber Rocha's films into tidy stages. However, critics who sort Rocha's films into clear-cut phases miss possible threads that run through his entire career. Such an approach can also flatten meaningful contrasts between films made close together in time.</p>",
+  "stem": "<p>Which choice best describes a difference in how the author of Text 1 and the author of Text 2 view the study of Rocha's films?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The author of Text 1 considers Rocha's early films to be his most innovative, whereas the author of Text 2 argues that his later films are more important.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>While the author of Text 1 believes that thinking about Rocha's films in periods is helpful, the author of Text 2 considers such an approach reductive.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Although the author of Text 1 says Rocha's style changed over time, the author of Text 2 argues that his style remained mostly constant.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The author of Text 1 finds Rocha's films most powerful as political statements, whereas the author of Text 2 emphasizes their visual style.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Text 1 advocates dividing Rocha's career into three periods; Text 2 warns that such division obscures continuities and contrasts\u2014exactly the disagreement Choice B captures.</p><p>Choices A, C, and D introduce claims that aren't actually made in either text.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A3.T5.easy"
+}

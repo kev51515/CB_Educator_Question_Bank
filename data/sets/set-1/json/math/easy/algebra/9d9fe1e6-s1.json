@@ -1,0 +1,25 @@
+{
+  "questionId": "9d9fe1e6-s1",
+  "originalId": "9d9fe1e6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a science fair, Mira measured the water level in a tank over time. The function <i>h</i>(<i>x</i>) = 24 &minus; 0.12<i>x</i> gives the estimated water level, in centimeters, of the tank <i>x</i> days after the start of the measurement. Which of the following is the best interpretation of 24 in this context?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The estimated change in water level, in centimeters, each day</p>"},
+    {"id": "b", "content": "<p>The estimated water level, in centimeters, of the tank at the start of the measurement</p>"},
+    {"id": "c", "content": "<p>The estimated number of days for all the water to drain</p>"},
+    {"id": "d", "content": "<p>The estimated water level, in centimeters, of the tank at the end of the measurement period</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. In <i>h</i>(<i>x</i>) = 24 &minus; 0.12<i>x</i>, the constant 24 is the value of <i>h</i>(0), which represents the water level at the start of the measurement (when <i>x</i> = 0 days).</p><p>Choice A is the daily rate of change (0.12). Choice C is unrelated. Choice D confuses initial with final.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A2.T1.easy"
+}

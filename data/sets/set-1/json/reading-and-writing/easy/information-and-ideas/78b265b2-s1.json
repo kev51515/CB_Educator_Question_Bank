@@ -1,0 +1,39 @@
+{
+  "questionId": "78b265b2-s1",
+  "originalId": "78b265b2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In 2017, Daniel Park and his team at a robotics lab set out to design a drone capable of operating beneath the ocean surface. Because seawater is roughly eight hundred times denser than air, the propellers used on standard aerial drones would experience far too much drag to spin properly. For three years, Park's team tested designs in tanks that recreated deep-sea pressure and currents. The vehicle the team eventually produced can move through the ocean because its propellers are shorter and turn more slowly than those of an aerial drone of the same size.</p>",
+  "stem": "<p>According to the text, why would a drone built for the air be unable to operate beneath the ocean surface?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Because the gravity at the bottom of the ocean is stronger than gravity in the air</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Because seawater and air have very different densities</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Because the propellers of aerial drones are too short to push through water</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Because aerial drones are too large to fit inside underwater testing tanks</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says seawater is roughly eight hundred times denser than air, so aerial propellers experience too much drag, an explanation directly tied to the difference in densities.</p><p>Choice A is incorrect; the text does not discuss gravity. Choice C is incorrect; the text says the underwater drone actually has shorter propellers than an aerial drone, not that aerial propellers are too short. Choice D is incorrect; the text mentions tanks that recreate ocean conditions, not size limits inside the tanks.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

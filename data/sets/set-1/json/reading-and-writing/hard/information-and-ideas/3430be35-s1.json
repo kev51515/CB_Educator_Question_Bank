@@ -1,0 +1,39 @@
+{
+  "questionId": "3430be35-s1",
+  "originalId": "3430be35",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Mean chosen donation amounts in two studies testing three messaging prompts for a charitable cause.</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Study</th><th>&ldquo;Give what you can spare&rdquo; ($)</th><th>&ldquo;Give what you think it&rsquo;s worth&rdquo; ($)</th><th>&ldquo;Give what feels right&rdquo; ($)</th></tr>\n<tr><td>Study 1 (general adults)</td><td>22.10</td><td>43.80</td><td>26.50</td></tr>\n<tr><td>Study 2 (alumni donors)</td><td>34.70</td><td>71.40</td><td>30.20</td></tr>\n</table>\n<p>Pay-what-you-want pricing, in which donors choose how much to give, can let organizations capitalize on heterogeneous valuations of the same cause, but it requires careful messaging. Anya Reyes and Devon Ito recruited 195 general-adult participants for an initial study and 92 alumni donors for a second study to test three messages&mdash;&ldquo;give what you can spare,&rdquo; &ldquo;give what you think it&rsquo;s worth,&rdquo; and &ldquo;give what feels right&rdquo;&mdash;on how much participants would donate. Their results illustrate both the heterogeneity of donor valuations and how organizations can benefit by prompting donors to consider their own valuations: ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>within each group of participants, there was wide variation in the amount that individuals chose to donate, but alumni tended to choose higher amounts than general adults did.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>alumni donors tended to value the cause more highly than general adults did, but both groups tended to choose a higher amount when considering the cause&rsquo;s worth than when considering what they could spare or what felt right.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>in all three messaging conditions, alumni donors tended to choose higher amounts than general adults did, but both groups tended to choose amounts closest to a typical contribution when prompted with &ldquo;give what feels right.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>alumni donors tended to value the cause more highly than general adults did, but when considering what they could spare, alumni tended to choose lower amounts than general adults did.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it captures both elements the text emphasizes: heterogeneity (alumni systematically give more than general adults) and the prompt-to-value effect (in both groups, &ldquo;give what you think it&rsquo;s worth&rdquo; produces the highest donation). The data show $43.80 and $71.40 are far above the other two amounts in each study. Choice A captures heterogeneity but misses the prompting effect. Choice C is contradicted by the data (the highest amounts are with the worth-prompt, not the feels-right one). Choice D is contradicted: alumni choose more in the spare condition too ($34.70 vs $22.10).</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a9647302-s1",
+  "originalId": "a9647302",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For quality control, a factory inspected five batches of 500 batteries each. The table shows the number of defective batteries found in each batch. What is the mean number of defective batteries for the five batches?</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Batch</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr><tr><td>Defective batteries</td><td>3</td><td>5</td><td>4</td><td>6</td><td>2</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3.8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4.0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.4</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The mean is the sum of the values divided by the number of values: (3+5+4+6+2) \u00f7 5 = 20 \u00f7 5 = 4.0.</p><p>Choice A is incorrect. This results from a computational error.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

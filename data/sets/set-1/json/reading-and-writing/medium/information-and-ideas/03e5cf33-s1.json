@@ -1,0 +1,25 @@
+{
+  "questionId": "03e5cf33-s1",
+  "originalId": "03e5cf33",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Many tree frogs in tropical rainforests possess vivid skin patterns that combine reds, yellows, and blacks. Biologists have long assumed that these striking markings serve mainly as a warning signal to potential predators, advertising the frogs' toxicity. Researcher Mireia Solano and colleagues, however, proposed an alternative function: against the dappled light filtering through the rainforest canopy, the bold patterns may visually fragment the frog's outline, making the animal harder for predators to detect. To investigate, the team mounted model frogs on tree bark in a Costa Rican forest. Some models bore the natural high-contrast pattern, while others were painted in a single solid color drawn from the frog's palette, such as plain yellow or plain red. The team then recorded how often free-ranging birds attacked each type of model.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Solano's team's hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>On average, birds attacked the solid yellow and solid red models substantially more often than they attacked the high-contrast patterned models.</p>"},
+    {"id": "b", "content": "<p>On average, birds approached the high-contrast patterned models more quickly than they approached the solid yellow or solid red models.</p>"},
+    {"id": "c", "content": "<p>Some observers reported that the solid red models were easier to spot from a distance than the solid yellow models.</p>"},
+    {"id": "d", "content": "<p>Some birds attacked every model of every type placed within their territory.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it directly supports Solano's team's hypothesis that bold high-contrast patterns make tree frogs harder for predators to detect. If birds attacked the solid-colored (and presumably more conspicuous against bark) models far more often than the patterned models, that pattern of behavior would suggest the high-contrast markings genuinely impair detection by predators, rather than merely warn them.</p><p>Choice B is incorrect because if birds approached the patterned models more quickly, that would suggest the patterned models were more, not less, conspicuous, weakening the hypothesis. Choice C is incorrect because a comparison between two solid colors is irrelevant; both solid models lack the disruptive pattern that the hypothesis concerns. Choice D is incorrect because if birds eventually located every model, that would suggest the high-contrast pattern provides no detection advantage, undermining rather than supporting the hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

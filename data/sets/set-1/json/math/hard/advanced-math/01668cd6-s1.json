@@ -1,0 +1,39 @@
+{
+  "questionId": "01668cd6-s1",
+  "originalId": "01668cd6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The functions <i>f</i> and <i>g</i> are defined by the given equations, where <i>x</i> &ge; 0. Which of the following equations displays, as a constant or coefficient, the maximum value of the function it defines, where <i>x</i> &ge; 0?</p><p>I. <i>f</i>(<i>x</i>) = 27(0.5)<sup><i>x</i>/4</sup></p><p>II. <i>g</i>(<i>x</i>) = 27(0.5)<sup>(<i>x</i> + 8)/4</sup></p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neither I nor II</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Both functions are decreasing on <i>x</i> &ge; 0, so each attains its maximum at <i>x</i> = 0. For I: <i>f</i>(0) = 27(0.5)&sup0; = 27, which is the displayed coefficient. For II: <i>g</i>(0) = 27(0.5)&sup2; = 6.75, but 27 is not the maximum (the maximum is 6.75), so II does not display its maximum. Only I works.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A5.T2.hard"
+}

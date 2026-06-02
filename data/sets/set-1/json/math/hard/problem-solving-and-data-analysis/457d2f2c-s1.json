@@ -1,0 +1,39 @@
+{
+  "questionId": "457d2f2c-s1",
+  "originalId": "457d2f2c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A data set of 35 different numbers has a mean of 50 and a median of 50. A new data set is created by adding 9 to each number in the original data set that is greater than the median, and subtracting 9 from each number in the original data set that is less than the median. Which of the following measures does NOT have the same value in both the original and new data sets?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Median</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mean</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Standard deviation</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Sum of the numbers</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Since 35 is odd, 17 numbers are above the median and 17 are below (with one equal to the median). Adding 9 to 17 numbers and subtracting 9 from 17 numbers leaves the total sum unchanged, so the mean and the sum are unchanged. The median (the middle value) is unchanged. Standard deviation measures spread; making large values larger and small values smaller increases the spread, so the standard deviation is the only measure that changes.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard"
+}

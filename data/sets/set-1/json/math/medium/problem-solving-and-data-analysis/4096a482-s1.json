@@ -1,0 +1,39 @@
+{
+  "questionId": "4096a482-s1",
+  "originalId": "4096a482",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Based on a random sample from a population, a researcher estimated that the mean value of a certain variable for the population is <math><mn>32.4</mn></math>, with an associated margin of error of <math><mn>2</mn></math>. Which of the following is the most appropriate conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The mean value of the variable for the population is exactly <math><mn>32.4</mn></math>.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Every value of the variable in the population is between <math><mn>30.4</mn></math> and <math><mn>34.4</mn></math>.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is plausible that the actual mean value of the variable for the population is between <math><mn>30.4</mn></math> and <math><mn>34.4</mn></math>.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is not possible that the mean value of the variable for the population is less than <math><mn>30.4</mn></math> or greater than <math><mn>34.4</mn></math>.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The estimate \u00b1 margin of error gives a plausible range for the population mean: 32.4 - 2 to 32.4 + 2, i.e., 30.4 to 34.4.</p><p>Choice A treats the estimate as exact. Choice B confuses range of plausible means with range of individual values. Choice D incorrectly rules out values outside the interval, but margin of error gives plausibility, not impossibility.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium"
+}

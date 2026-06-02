@@ -1,0 +1,39 @@
+{
+  "questionId": "1ffd60ce-s1",
+  "originalId": "1ffd60ce",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A metallurgical analysis by Sergio Trujillo and colleagues of coins minted in the Iberian city of Gadir during the third and second centuries BCE shows a steady change in their composition: a coin from approximately 260 BCE contains about 96% silver and 2% tin, while a coin from 195 BCE (toward the close of the rule of magistrate Bodmilkar) contains 71.4% silver and 26.8% tin, giving it a noticeably duller sheen that merchants would have detected. Because coins with a silver content below 80% were widely regarded as unfit for long-distance trade, Trujillo <span data-ssml-sub-alias=\"et al\">et al.</span> argue that a confidence crisis in the Gadiran currency emerged around 195 BCE \u2014 one that was eventually eased, despite Gadir's ongoing tribute obligations, by Bodmilkar's successor Hannobaal's decision to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>announce that the silver content required for coins to be considered suitable for trade would be raised above 80%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>begin minting heavier coins in which the proportion of silver to tin matched that of coins from 195 BCE.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>keep the amount of silver in Gadiran coins consistent with the amount in coins from 195 BCE but reduce the weight of those coins.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>fund the working of tin deposits that had not been accessible under Bodmilkar's administration.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The crisis was triggered because each coin contained less silver than the trade standard required, while still appearing dull. Because Gadir's heavy tribute obligations made it impossible to put more silver back into coins, the most realistic fix is one that preserves the existing silver content per coin but reduces each coin's overall weight: that way the silver-to-coin proportion rises above the 80% threshold without committing additional silver.</p><p>Choice A is incorrect: raising the threshold above 80% would make matters worse, not relieve the confidence crisis. Choice B is incorrect because making the same-composition coins heavier consumes <em>more</em> silver per coin, which the city's finances cannot support. Choice D is incorrect because mining more tin would do nothing to address the silver-content problem that is the source of the crisis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

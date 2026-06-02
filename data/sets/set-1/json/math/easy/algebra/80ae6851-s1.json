@@ -1,0 +1,39 @@
+{
+  "questionId": "80ae6851-s1",
+  "originalId": "80ae6851",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A technician schedules a 60-minute shift consisting of tasks that are 2 minutes long and tasks that are 5 minutes long. Which equation represents this situation, where <i>x</i> represents the number of 2-minute tasks and <i>y</i> represents the number of 5-minute tasks?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2<i>x</i> + 5<i>y</i> = 60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5<i>x</i> + 2<i>y</i> = 60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10<i>xy</i> = 60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7(<i>x</i> + <i>y</i>) = 60</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The total time is 2 minutes per short task times <i>x</i> tasks plus 5 minutes per long task times <i>y</i> tasks, equal to 60 minutes: 2<i>x</i> + 5<i>y</i> = 60.</p><p>Choice B swaps the lengths. Choice C multiplies rather than weighting. Choice D adds before multiplying.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

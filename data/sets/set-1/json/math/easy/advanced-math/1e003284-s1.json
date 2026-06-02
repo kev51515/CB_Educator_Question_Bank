@@ -1,0 +1,39 @@
+{
+  "questionId": "1e003284-s1",
+  "originalId": "1e003284",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p style=\"text-align:center;\"><math><mi>x</mi><mo>=</mo><mn>36</mn></math></p><p style=\"text-align:center;\"><math><mi>y</mi><mo>=</mo><msqrt><mi>x</mi></msqrt><mo>+</mo><mn>5</mn></math></p><p>The graphs of the given equations intersect at the point <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> in the xy-plane. What is the value of <math><mi>y</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>23</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>41</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>17</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>11</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Substituting x = 36 into y = \u221ax + 5 gives y = \u221a36 + 5 = 6 + 5 = 11.</p>",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

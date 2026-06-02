@@ -1,0 +1,25 @@
+{
+  "questionId": "684b8bd2-s1",
+  "originalId": "684b8bd2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>Contrary to popular belief, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> more than 7,000 years ago.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the production of woven textiles by Neolithic farmers in central Europe occurred</p>"},
+    {"id": "b", "content": "<p>Neolithic farmers in central Europe wove textiles</p>"},
+    {"id": "c", "content": "<p>central Europe was home to Neolithic farmers who wove textiles</p>"},
+    {"id": "d", "content": "<p>woven textiles were produced by Neolithic farmers in central Europe</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Modifiers and their subjects must go next to each other. The modifier \"contrary to popular belief\" describes the surprising fact about \"woven textiles,\" because the popular belief in question concerns when textiles first appeared. Only choice D places \"woven textiles\" as the subject immediately after the modifier in a construction that grammatically logs the time \"more than 7,000 years ago\" as the period in which the textiles were produced.</p><p>Choice A is incorrect. The placement of \"the production of woven textiles\" immediately after the modifier produces a grammatically clean but awkward subject, and it shifts the focus from the textiles themselves to the abstract act of \"production.\" Choice B is incorrect. The placement of \"Neolithic farmers\" immediately after the modifier illogically makes the farmers, rather than the textiles, the surprising entity contrary to popular belief about when textile-weaving emerged. Choice C is incorrect. The placement of \"central Europe\" immediately after the modifier illogically makes a place, rather than the textiles, the entity contrary to popular belief.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

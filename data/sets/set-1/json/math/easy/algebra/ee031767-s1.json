@@ -1,0 +1,39 @@
+{
+  "questionId": "ee031767-s1",
+  "originalId": "ee031767",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A coach ordered jerseys for players for a soccer team. Jerseys for forwards cost $32, and jerseys for goalkeepers cost $48. The coach ordered a total of 20 jerseys for $740. Which system of equations can be used to determine the number of forward jerseys, f, and the number of goalkeeper jerseys, g, ordered?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32f + 48g = 20 and f + g = 740</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>48f + 32g = 740 and f + g = 20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>32f + 48g = 740 and f + g = 20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f + g = 32 and 740f + 20g = 48</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Total jerseys: f + g = 20; total cost: 32f + 48g = 740.</p><p>Other choices swap totals, prices, or coefficients.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ff1a2e5e-s1",
+  "originalId": "ff1a2e5e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Music historians agree that the rock guitarist Chuck Berry was exaggerating when he claimed to have single-handedly invented rock and roll. No one can dispute, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that Berry's distinctive guitar riffs and energetic stage presence helped define rock and roll as a genre during its formative years.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>therefore,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>in other words,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>though,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>in the second place,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Though\" logically signals that the claim in the sentence&mdash;that Berry's distinctive style helped define rock and roll&mdash;is true despite the previous information about Berry's exaggerated claim to have invented the genre.</p><p>Choice A is incorrect because \"therefore\" illogically signals consequence. Choice B is incorrect because \"in other words\" illogically signals a restatement. Choice D is incorrect because \"in the second place\" illogically signals a second separate point.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T3.easy"
+}

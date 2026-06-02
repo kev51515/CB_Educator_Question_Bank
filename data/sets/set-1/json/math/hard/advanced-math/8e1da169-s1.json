@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "8e1da169-s1",
+  "originalId": "8e1da169",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = (x &minus; 26)(x &minus; 32)</p><p>The function f is defined by the given equation. For what value of x does f(x) reach its minimum?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>29</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;29</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The graph of f is a parabola opening upward, so f reaches its minimum at the vertex. The x-coordinate of the vertex is the midpoint of the two x-intercepts x = 26 and x = 32: (26 + 32)/2 = 29.</p><p>Choice B is the average of the wrong endpoints. Choice C is one x-intercept. Choice D has the wrong sign.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

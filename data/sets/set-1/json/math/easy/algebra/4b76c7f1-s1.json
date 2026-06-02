@@ -1,0 +1,39 @@
+{
+  "questionId": "4b76c7f1-s1",
+  "originalId": "4b76c7f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>3x + 5y = 4</p><p>12x + ay = 16</p><p>In the given system of equations, a is a constant. If the system has infinitely many solutions, what is the value of a?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The multiplier between the equations is 12/3 = 4 and 16/4 = 4. So a = 5 &middot; 4 = 20.</p><p>Other choices use the wrong multiplier or no scaling.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.easy"
+}

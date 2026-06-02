@@ -1,0 +1,39 @@
+{
+  "questionId": "fc5ef8d3-s1",
+  "originalId": "fc5ef8d3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table below gives the perimeters of similar triangles MNO and RST, where MN corresponds to RS. The length of MN is 5.</p><table><tr><th></th><th>Perimeter</th></tr><tr><td>Triangle MNO</td><td>40</td></tr><tr><td>Triangle RST</td><td>120</td></tr></table><p>What is the length of RS?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The ratio of perimeters of similar triangles equals the ratio of corresponding sides. Since 120/40 = 3, RS = 3 \u00d7 5 = 15.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A3.T3.easy"
+}

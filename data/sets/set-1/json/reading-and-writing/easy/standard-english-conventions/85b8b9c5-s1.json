@@ -1,0 +1,39 @@
+{
+  "questionId": "85b8b9c5-s1",
+  "originalId": "85b8b9c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Mechanical typewriters dominated office work for most of the twentieth ______ these once-essential machines have largely been replaced by computers and word processors.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>century</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>century,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>century, but</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>century that</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The convention being tested is the joining of two independent clauses. A comma plus the coordinating conjunction \"but\" correctly joins the first independent clause (\"Mechanical typewriters... century\") to the second (\"these once-essential machines... word processors\").</p><p>Choice A creates a run-on sentence because the two independent clauses are fused without punctuation or a conjunction. Choice B creates a comma splice (a comma alone cannot join two independent clauses). Choice D produces an ungrammatical construction with \"century that\" attempting to subordinate the second clause.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "boundaries.A1.T2.easy"
+}

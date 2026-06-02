@@ -1,0 +1,25 @@
+{
+  "questionId": "f2b3b53b-s1",
+  "originalId": "f2b3b53b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A3.T4.medium",
+  "stimulus": "<p>External listening cues are a type of marketing that uses obvious messaging — a featured product banner, for example, or a &ldquo;limited-time offer&rdquo; — to encourage consumers to make impulsive purchases. In a study, data scientist Renata Esteves and colleagues found that this effect can also be achieved with a less obvious cue: reorganizing the categories of an online streaming service&rsquo;s home screen. The researchers explain that trying to locate familiar titles in new positions leads viewers to scroll through more of the catalogue, exposing them to more programs and increasing the likelihood that they&rsquo;ll watch something they hadn&rsquo;t intended to.</p>",
+  "stem": "<p>Which response from a survey given to subscribers who watched a program on the streaming service best supports the researchers&rsquo; explanation?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;I logged in to find a comedy series I&rsquo;d been watching, but it wasn&rsquo;t in its usual category. While I was scrolling around for it, I noticed an intriguing nature documentary and ended up watching that instead.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;I didn&rsquo;t get to watch everything on my list this weekend. I just couldn&rsquo;t find a couple of the titles, even though I searched everywhere for them.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;The service sent me an email promoting a new cooking program, so I logged in to check it out. I watched a few episodes because I&rsquo;d gotten the recommendation.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;This service has a deeper library than the one I used to subscribe to, so I subscribe in order to watch documentaries and foreign films I can&rsquo;t find elsewhere.&rdquo;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because the researchers&rsquo; explanation is that a rearranged interface causes viewers to scroll and discover unplanned content. The user reports searching for a familiar show in its new position and then watching a documentary they hadn&rsquo;t intended to — exactly the mechanism described. Choice B is incorrect because the user simply couldn&rsquo;t find titles and watched less, not more. Choice C is incorrect because the user watched because of a promotional email, not because of layout changes. Choice D is incorrect because the user&rsquo;s subscription is driven by catalog depth, not by a reorganization of the interface.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

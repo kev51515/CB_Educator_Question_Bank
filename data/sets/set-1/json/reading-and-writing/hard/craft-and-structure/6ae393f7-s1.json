@@ -1,0 +1,39 @@
+{
+  "questionId": "6ae393f7-s1",
+  "originalId": "6ae393f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Comet 21P/Giacobini-Zinner has shown repeated, irregular outbursts of activity since at least the late 1990s. Unlike many comets with recurring outbursts, however, its episodes do not cluster near perihelion, where solar heating is greatest, so direct sublimation of surface ices is unlikely to be the cause. And as Mira Adachi and colleagues observe, the inherently one-off nature of a violent collision with another body cannot plausibly account for multiple outbursts of similar duration and intensity spaced years apart. Some researchers have suggested that gradual cracking of an icy crust could occasionally expose fresh volatiles to space, but Adachi and colleagues conclude that, for now, no proposed mechanism convincingly fits the full pattern.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It presents a scientific observation, notes a contrast with other observations, and then explains why those other observations should be disregarded.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It introduces a natural phenomenon, refutes two potential explanations, and then advances a third explanation that the author endorses.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It discusses a physical process, evaluates possible causes, and then states that a persuasive account of the process has yet to be put forward.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It describes an astronomical finding, discusses competing theories that the author considers flawed, and then offers new supporting evidence for an alternative.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The passage introduces the irregular outbursts of comet 21P/Giacobini-Zinner, then weighs two possible causes (solar heating and one-off collision) and finds each insufficient, mentions a third (crustal cracking), and finally states explicitly that no proposed mechanism convincingly fits the full pattern. That is exactly the discuss-evaluate-and-leave-open structure described in C.</p><p>Choice A is incorrect because the other observations are not dismissed; they are simply set aside as poor fits. Choice B is incorrect because the third explanation is not endorsed&mdash;the author leaves the question open. Choice D is incorrect because no new supporting evidence is offered.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T8.hard"
+}

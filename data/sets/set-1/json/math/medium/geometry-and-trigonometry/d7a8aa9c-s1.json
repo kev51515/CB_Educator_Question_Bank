@@ -1,0 +1,39 @@
+{
+  "questionId": "d7a8aa9c-s1",
+  "originalId": "d7a8aa9c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each side of equilateral triangle <math><mi>P</mi></math> is multiplied by a scale factor of <math><mi>r</mi></math> to create equilateral triangle <math><mi>Q</mi></math>. The length of each side of triangle <math><mi>Q</mi></math> is greater than the length of each side of triangle <math><mi>P</mi></math>. Which of the following could be the value of <math><mi>r</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>0</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>1</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mn>17</mn><mn>18</mn></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mn>18</mn><mn>17</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. For triangle Q's sides to be longer than P's, the scale factor r must be greater than 1. The value 18/17 is greater than 1.</p><p>Choice A would shrink to length 0. Choice B would keep lengths the same. Choice C is less than 1, so it would shrink the triangle.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A5.T4.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "8de51658-s1",
+  "originalId": "8de51658",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><span role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>The everyday sense that information cannot travel faster than light is one of the firmest commitments of modern physics, yet it sits uneasily with quantum mechanics. Pairs of particles can be prepared so that measuring one instantly determines the state of the other, regardless of how far apart they are. Most physicists believe that this correlation cannot be used to send a signal, but exactly which feature of nature prevents it remains, in the standard theory, a matter of interpretation rather than derivation.</p><p>&nbsp;</p><p><span role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>In 2022, researchers led by Hiroto Kawaguchi devised a tabletop test of whether subtle modifications of standard quantum measurements could be used to transmit information between separated detectors. After thousands of trials with entangled photon pairs, no transmission was observed: the correlations behaved exactly as standard theory predicts. As Kawaguchi noted, however, &ldquo;the result confirms the limit without telling us where the limit comes from.&rdquo;</p>",
+  "stem": "<p>Based on the texts, what would the author of Text 1 most likely say about the experiment described in Text 2?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It provides empirical support for the view that current understanding of an aspect of quantum theory remains incomplete.</p>"},
+    {"id": "b", "content": "<p>It would be a promising line of inquiry were it not the case that two of the physicists who performed it disagree on what its findings mean.</p>"},
+    {"id": "c", "content": "<p>It is consistent with the current understanding of physics at large scales but not at the scale of individual particles.</p>"},
+    {"id": "d", "content": "<p>It supports a claim about an isolated set of photons in a laboratory, but that claim should not be generalized to broader physical theory.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The author of Text 1 stresses that standard quantum theory cannot itself explain why entangled correlations fail to transmit information. The experiment in Text 2 confirms that no transmission occurs but, as Kawaguchi notes, does not show where the limit comes from. This directly supports Text 1&rsquo;s point that an aspect of current quantum understanding remains incomplete.</p><p>Choice B is incorrect because nothing in Text 2 indicates that the researchers disagree about what their findings mean. Choice C is incorrect because the experiment supports, rather than challenges, the standard expectation at small scales. Choice D is incorrect because neither text restricts the result to a single isolated system or warns against generalizing it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

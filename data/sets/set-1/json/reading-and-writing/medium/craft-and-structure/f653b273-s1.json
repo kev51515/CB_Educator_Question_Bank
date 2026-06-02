@@ -1,0 +1,25 @@
+{
+  "questionId": "f653b273-s1",
+  "originalId": "f653b273",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T3.medium",
+  "stimulus": "<p>&nbsp;</p><p><span aria-level=\"2\" role=\"heading\"><strong>Text 1</strong></span></p><p>A small, unusual fossil preserved in 110-million-year-old lake sediments belongs to the extinct species <em>Cretolepia volans</em>. The <em>C. volans</em> fossil consists of a delicate ribcage flanked by two narrow, blade-shaped projections that extend outward from the sides of the trunk. Because these projections resemble the wing membranes of certain modern reptiles, researchers initially proposed that the animal might be the earliest known gliding lizard.</p><p>&nbsp;</p><p><span aria-level=\"2\" role=\"heading\"><strong>Text 2</strong></span></p><p>Paleontologists were intrigued to recover a second small fossil similar to the strange <em>C. volans</em> specimen, this one preserving impressions of the tissue surrounding the blade-shaped projections. Detailed examination of both fossils revealed soft-tissue features that are characteristic of certain small fish rather than gliding reptiles. Therefore, paleontologists now think that the two specimens were probably unusual fish whose stiffened side fins happened to give their bodies a winglike outline.</p>",
+  "stem": "<p>Based on the texts, what would the paleontologists in Text 2 most likely say about the researchers&rsquo; initial proposal in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It is confusing because it is unclear what led the researchers to think that C. volans might be a gliding lizard.</p>"},
+    {"id": "b", "content": "<p>It is flawed because the researchers mistakenly assumed that C. volans must be a fish.</p>"},
+    {"id": "c", "content": "<p>It is reasonable because the C. volans fossil is about the same length as the second fossil but is preserved in finer sediments.</p>"},
+    {"id": "d", "content": "<p>It is understandable because the projections do look like wing membranes, even though C. volans is probably a fish.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Text 2 explains that detailed examination of soft tissue indicates the two specimens are unusual fish whose side projections gave them a winglike outline. By acknowledging that the projections happen to mimic wing membranes, the paleontologists implicitly accept that the researchers&rsquo; initial reptile interpretation was understandable&mdash;even though, on the new evidence, <em>C. volans</em> is probably a fish.</p><p>Choice A is incorrect because Text 2 itself notes the winglike resemblance, so the initial proposal is not confusing. Choice B is incorrect because Text 1 makes no assumption that the animal was a fish. Choice C is incorrect because Text 2 says nothing about a sediment difference between the two specimens.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

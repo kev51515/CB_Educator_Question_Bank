@@ -1,0 +1,25 @@
+{
+  "questionId": "870ae7ec-s1",
+  "originalId": "870ae7ec",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T2.medium",
+  "stimulus": "<p>Marine biologist Halima Said and her research team have devoted their careers to studying coral reefs off the coast of Tanzania. In 2019, the team mapped a previously undocumented reef near Mafia <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in the seasons that followed they identified twelve additional reef systems and catalogued more than 80 endemic species.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Island, and</p>"},
+    {"id": "b", "content": "<p>Island,</p>"},
+    {"id": "c", "content": "<p>Island and</p>"},
+    {"id": "d", "content": "<p>Island</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. Both sides of the blank are independent clauses (\"the team mapped...Island\" and \"in the seasons that followed they identified...species\"). A comma plus the coordinating conjunction \"and\" correctly joins two independent clauses.</p><p>Choice B is incorrect because a comma alone produces a comma splice. Choice C is incorrect because the coordinating conjunction \"and\" needs a preceding comma to join two independent clauses. Choice D is incorrect because the two independent clauses are fused without any punctuation, creating a run-on sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

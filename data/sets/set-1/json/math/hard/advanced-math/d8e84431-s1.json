@@ -1,0 +1,39 @@
+{
+  "questionId": "d8e84431-s1",
+  "originalId": "d8e84431",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The area of a rectangular tile is 1,972 square centimeters. The tile's length <i>x</i>, in centimeters, is 16 centimeters longer than its width, in centimeters. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0 = <i>x</i>&sup2; + 16<i>x</i> &minus; 1,972</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0 = <i>x</i>&sup2; + 16<i>x</i> + 1,972</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0 = <i>x</i>&sup2; &minus; 16<i>x</i> &minus; 1,972</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0 = <i>x</i>&sup2; &minus; 16<i>x</i> + 1,972</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. If the length is <i>x</i> and the width is 16 less, the width is <i>x</i> &minus; 16. Area = length &middot; width gives <i>x</i>(<i>x</i> &minus; 16) = 1,972, or <i>x</i>&sup2; &minus; 16<i>x</i> &minus; 1,972 = 0.</p><p>Choices A and B reverse the relationship between length and width. Choice D incorrectly adds 1,972 to <i>x</i>(<i>x</i> &minus; 16) instead of subtracting.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

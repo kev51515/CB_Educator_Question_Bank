@@ -1,0 +1,39 @@
+{
+  "questionId": "97b62fab-s1",
+  "originalId": "97b62fab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Smaller than grains of sand, water bears (tardigrades) are among the toughest creatures known. These minuscule organisms can survive years of complete dehydration, and <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can endure radiation doses that would kill most other life forms.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>they</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>that</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>he</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>it</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The plural pronoun &ldquo;they&rdquo; agrees with the plural antecedent &ldquo;organisms&rdquo; (referring to tardigrades).</p><p>Choices B, C, and D are all singular pronouns that don&rsquo;t agree with the plural antecedent.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

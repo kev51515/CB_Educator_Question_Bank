@@ -1,0 +1,25 @@
+{
+  "questionId": "4c4db685-s1",
+  "originalId": "4c4db685",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>On composer Florence Beatrice Price's move from Chicago to Saint Louis in 1931, her musical style underwent an abrupt shift. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Setting aside dense, late-Romantic orchestral writing&mdash;a style that often involves richly chromatic harmonies and tightly interwoven counterpoint to express the composer's sense of inherited European tradition&mdash;Price began crafting concert works rooted in Black American spirituals in a strikingly new way.</span> Drawing on the rhythmic patterns of juba dance and the modal melodies of southern hymns, these works feature lean orchestrations and a deliberately limited harmonic palette that highlight a single, singing voice within the ensemble.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It presents evidence that calls into question the previous sentence's characterization of Price's stylistic development.</p>"},
+    {"id": "b", "content": "<p>It provides information about Price's travels in support of a claim about her musical influences, which is advanced in the following sentence.</p>"},
+    {"id": "c", "content": "<p>It recounts a moment in Price's personal life that enabled the success of her subsequent career, which is summarized in the following sentence.</p>"},
+    {"id": "d", "content": "<p>It elaborates on the previous sentence's statement about a transitional moment in Price's musical career.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The first sentence states that Price's musical style underwent an abrupt shift after her move to Saint Louis in 1931. The underlined sentence then specifies that shift, contrasting her earlier dense late-Romantic orchestral style with her new concert works rooted in Black American spirituals. The underlined sentence therefore elaborates on the previous sentence's statement about a transitional moment in Price's musical career.</p><p>Choice A is incorrect because the underlined sentence supports rather than questions the prior characterization. Choice B is incorrect because the text does not discuss any travels beyond the move itself, and the following sentence describes the new style rather than advancing a separate claim about influences requiring travel as support. Choice C is incorrect because the text does not address Price's personal life or her career's eventual success.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

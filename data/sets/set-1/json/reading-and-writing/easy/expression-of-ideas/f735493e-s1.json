@@ -1,0 +1,39 @@
+{
+  "questionId": "f735493e-s1",
+  "originalId": "f735493e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Renowned Japanese ceramicist Sh&#333;ji Hamada (1894&ndash;1978) created his signature high-gloss stoneware using a glazing technique called salt firing. This technique involves throwing rock salt into the kiln at peak temperatures. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the vapor settles on the clay surface, creating a glossy, mottled glaze.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>On the contrary,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As a result,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Previously,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"As a result\" logically signals that the information in this sentence&mdash;the salt vapor creating a glossy glaze&mdash;is a result of the salt-firing technique described in the previous sentence.</p><p>Choice A is incorrect because \"on the contrary\" illogically signals opposition. Choice C is incorrect because \"for example\" illogically signals exemplification. Choice D is incorrect because \"previously\" illogically signals that the glazing occurs before the salt is thrown, when in fact it follows.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

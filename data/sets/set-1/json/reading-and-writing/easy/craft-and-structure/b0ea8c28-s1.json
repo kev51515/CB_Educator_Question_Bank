@@ -1,0 +1,39 @@
+{
+  "questionId": "b0ea8c28-s1",
+  "originalId": "b0ea8c28",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Raíces is an exhibition of paintings, weavings, and ceramics that explores the artistic heritage of US-based artist Marcela Vega. The exhibition <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> four generations, featuring works by Vega’s grandfather, mother, sister, and her own most recent pieces displayed together for the first time.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>covers</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>borrows</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>judges</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>neglects</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"covers\" means extends across, matching an exhibition that includes works from four generations. Choice B is incorrect because borrowing doesn’t describe scope. Choice C is incorrect because judging doesn’t fit a display context. Choice D is incorrect because neglecting contradicts featuring works.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

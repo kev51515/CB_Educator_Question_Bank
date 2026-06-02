@@ -1,0 +1,39 @@
+{
+  "questionId": "2554b413-s1",
+  "originalId": "2554b413",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, a line has a slope of 8 and passes through the point (0, &minus;3). Which of the following is an equation of this line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = 8<i>x</i> + 3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = &minus;3<i>x</i> + 8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = &minus;3<i>x</i> &minus; 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = 8<i>x</i> &minus; 3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. In slope-intercept form, <i>y</i> = <i>mx</i> + <i>b</i>, the slope is <i>m</i> = 8 and the <i>y</i>-intercept is (0, &minus;3), so <i>b</i> = &minus;3. Therefore, <i>y</i> = 8<i>x</i> &minus; 3.</p><p>Choices A, B, and C are incorrect because they confuse the slope with the <i>y</i>-intercept or use incorrect signs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T5.easy"
+}

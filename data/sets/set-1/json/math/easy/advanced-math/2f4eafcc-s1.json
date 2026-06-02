@@ -1,0 +1,22 @@
+{
+  "questionId": "2f4eafcc-s1",
+  "originalId": "2f4eafcc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></math>. What is the value of <math><mi>f</mi><mfenced><mn>2</mn></mfenced></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The correct answer is 7. Substituting 2 for <em>x</em>: f(2) = 2^2 + 3 = 4 + 3 = 7.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

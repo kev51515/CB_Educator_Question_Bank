@@ -1,0 +1,39 @@
+{
+  "questionId": "e26d23c4-s1",
+  "originalId": "e26d23c4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Proposals to extend the duration of paid parental leave are generally discussed in terms of the effects on new parents, but Diane Carrington has argued that lengthening such leave could <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> savings rates among working adults by shortening the period during which they are simultaneously earning income and contributing to retirement accounts.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>outstrip</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>disparage</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>compound</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>hamper</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Hamper\" most logically completes the text. The argument is that longer leave means fewer earning years available for saving; this would obstruct\u2014hamper\u2014the accumulation of savings.</p><p>Choice A is incorrect. \"Outstrip\" means to exceed; lengthening leave would not cause savings to exceed something. Choice B is incorrect. \"Disparage\" means to belittle, which doesn't apply to savings rates. Choice C is incorrect. \"Compound\" suggests growth or increase, the opposite of what shorter earning periods would do.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

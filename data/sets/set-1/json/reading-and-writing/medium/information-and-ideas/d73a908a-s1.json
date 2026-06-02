@@ -1,0 +1,25 @@
+{
+  "questionId": "d73a908a-s1",
+  "originalId": "d73a908a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Convinced that working in an awkward room can sharpen concentration and even improve cognition, architects Henri Vasseur and Luna Ostrowski designed an experimental office building in Belgium to be more playful than practical. One workstation tilts gently toward a window; a corridor narrows so steeply that two coworkers cannot pass without turning sideways. The effect is disorienting but stimulating: after three years there, software engineer Tomasz Bergmann reported sustained gains in his focus and mood.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Designing disorienting workspaces like those by Vasseur and Ostrowski is the most effective way to sharpen workers&rsquo; concentration.</p>"},
+    {"id": "b", "content": "<p>Although impractical, the design of Vasseur and Ostrowski&rsquo;s office building may improve the cognitive well-being of those who work there.</p>"},
+    {"id": "c", "content": "<p>Although working in an awkwardly arranged building such as Vasseur and Ostrowski&rsquo;s can be invigorating, doing so cannot be sustained for long.</p>"},
+    {"id": "d", "content": "<p>As a software engineer, Bergmann has long advocated for the work of unconventional architects such as Vasseur and Ostrowski.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text describes the building&rsquo;s impractical features and reports that Bergmann experienced sustained gains in focus and mood — supporting the idea that the impractical design may improve cognitive well-being.</p><p>Choice A is incorrect because the text never claims this design is the most effective approach to sharpening concentration. Choice C is incorrect because Bergmann sustained gains over three years rather than reporting unsustainability. Choice D is incorrect because the text does not indicate that Bergmann advocates for other unconventional architects.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

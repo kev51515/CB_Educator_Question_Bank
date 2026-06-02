@@ -1,0 +1,72 @@
+{
+  "questionId": "f5149550",
+  "externalId": "544458e0-8ddf-44f9-afc2-94b9af641d31",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:28.451616+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "aeab1f30-2a7a-4d1f-8bd7-02a1d084ecf3",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "535b5ceb-6bd8-4f25-8c4a-77f8d3009585",
+      "content": "<p>Conversely,</p>"
+    },
+    {
+      "id": "3b86f7cb-b583-47f2-8f21-e6df00ebb67a",
+      "content": "<p>To that end,&nbsp;</p>"
+    },
+    {
+      "id": "898d5f24-11e8-4473-9501-ce94fab9457f",
+      "content": "<p>Alternatively,</p>"
+    }
+  ],
+  "keys": [
+    "3b86f7cb-b583-47f2-8f21-e6df00ebb67a"
+  ],
+  "rationale": "<p>Choice C is the best answer. &ldquo;To that end&rdquo; logically signals that the information in this sentence&mdash;that Dowsett founded the National Women&rsquo;s Equal Suffrage Association of Hawai&lsquo;i&mdash;describes an action Dowsett took to achieve the goal stated in the previous sentence: to coordinate the efforts of suffragists in Hawai&lsquo;i.</p><p>Choice A is incorrect because &ldquo;in other words&rdquo; illogically signals that the information in this sentence about Dowsett founding a women&rsquo;s suffrage association is a paraphrase or restatement of the previous information about Dowsett seeking to coordinate suffragists&rsquo; efforts. Instead, the sentence describes a specific action Dowsett took to achieve this goal. Choice B is incorrect because &ldquo;conversely&rdquo; illogically signals that the information in this sentence about Dowsett founding a women&rsquo;s suffrage association contrasts with the previous information about Dowsett seeking to coordinate suffragists&rsquo; efforts. Instead, the sentence describes a specific action Dowsett took to achieve this goal. Choice D is incorrect because &ldquo;alternatively&rdquo; illogically signals that the information in this sentence about Dowsett founding a women&rsquo;s suffrage association presents an alternative to her seeking to coordinate suffragists&rsquo; efforts. Instead, the sentence describes a specific action Dowsett took to achieve this goal.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>A staunch supporter of women&rsquo;s voting rights, Wilhelmina Kekelaokalaninui Widemann Dowsett sought to coordinate the efforts of suffragists in her native Hawai&lsquo;i. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 1912, she founded the National Women&rsquo;s Equal Suffrage Association of Hawai&lsquo;i, an organization that lobbied for women&rsquo;s voting rights in the US territory.</p>",
+    "keys": [
+      "3b86f7cb-b583-47f2-8f21-e6df00ebb67a"
+    ],
+    "answerOptions": [
+      {
+        "id": "aeab1f30-2a7a-4d1f-8bd7-02a1d084ecf3",
+        "content": "<p>In other words,</p>"
+      },
+      {
+        "id": "535b5ceb-6bd8-4f25-8c4a-77f8d3009585",
+        "content": "<p>Conversely,</p>"
+      },
+      {
+        "id": "3b86f7cb-b583-47f2-8f21-e6df00ebb67a",
+        "content": "<p>To that end,&nbsp;</p>"
+      },
+      {
+        "id": "898d5f24-11e8-4473-9501-ce94fab9457f",
+        "content": "<p>Alternatively,</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer. &ldquo;To that end&rdquo; logically signals that the information in this sentence&mdash;that Dowsett founded the National Women&rsquo;s Equal Suffrage Association of Hawai&lsquo;i&mdash;describes an action Dowsett took to achieve the goal stated in the previous sentence: to coordinate the efforts of suffragists in Hawai&lsquo;i.</p><p>Choice A is incorrect because &ldquo;in other words&rdquo; illogically signals that the information in this sentence about Dowsett founding a women&rsquo;s suffrage association is a paraphrase or restatement of the previous information about Dowsett seeking to coordinate suffragists&rsquo; efforts. Instead, the sentence describes a specific action Dowsett took to achieve this goal. Choice B is incorrect because &ldquo;conversely&rdquo; illogically signals that the information in this sentence about Dowsett founding a women&rsquo;s suffrage association contrasts with the previous information about Dowsett seeking to coordinate suffragists&rsquo; efforts. Instead, the sentence describes a specific action Dowsett took to achieve this goal. Choice D is incorrect because &ldquo;alternatively&rdquo; illogically signals that the information in this sentence about Dowsett founding a women&rsquo;s suffrage association presents an alternative to her seeking to coordinate suffragists&rsquo; efforts. Instead, the sentence describes a specific action Dowsett took to achieve this goal.</p>",
+    "externalid": "544458e0-8ddf-44f9-afc2-94b9af641d31",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>A staunch supporter of women&rsquo;s voting rights, Wilhelmina Kekelaokalaninui Widemann Dowsett sought to coordinate the efforts of suffragists in her native Hawai&lsquo;i. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 1912, she founded the National Women&rsquo;s Equal Suffrage Association of Hawai&lsquo;i, an organization that lobbied for women&rsquo;s voting rights in the US territory.</p>"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "62ef6f73-s1",
+  "originalId": "62ef6f73",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A total of 3 regular pentagons each have side length a. A total of 5 regular hexagons each have side length b. None of these pentagons and hexagons shares a side. The sum of the perimeters of all these pentagons and hexagons is 240. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5a + 6b = 240</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15a + 30b = 240</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3a + 5b = 240</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8a + 11b = 240</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Each pentagon has perimeter 5a, so three pentagons contribute 3 \u00d7 5a = 15a. Each hexagon has perimeter 6b, so five contribute 5 \u00d7 6b = 30b. Total: 15a + 30b = 240. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.hard"
+}

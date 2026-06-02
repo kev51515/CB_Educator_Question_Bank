@@ -1,0 +1,39 @@
+{
+  "questionId": "91fbd59d-s1",
+  "originalId": "91fbd59d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Renowned cinematographer Conrad Hall was admired for his bold approach to natural light. While filming a desert sequence for the movie <em>Cool Hand Luke</em> <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Hall used reflectors instead of artificial lights. This allowed him to capture the harshness of the sun and give the scene a raw, lived-in quality.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(1967), and</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(1967) and</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(1967)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(1967),</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of punctuation to mark the boundary between a supplementary element and a main clause. A comma is needed after the parenthetical year \"(1967)\" to separate the introductory subordinate clause from the main clause that follows (\"Hall used reflectors...\").</p><p>Choice A is incorrect because adding \"and\" turns the structure into a coordination that doesn't fit the sentence. Choice B is incorrect for the same reason. Choice C is incorrect because no punctuation between the introductory subordinate clause and the main clause results in a confusing, ungrammatical sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T3.easy"
+}

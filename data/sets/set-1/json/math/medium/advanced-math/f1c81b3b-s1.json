@@ -1,0 +1,22 @@
+{
+  "questionId": "f1c81b3b-s1",
+  "originalId": "f1c81b3b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The exponential function <em>g</em> is defined by <em>g</em>(<em>x</em>) = 11&middot;<em>a</em><sup><em>x</em></sup>, where <em>a</em> is a positive constant. If <em>g</em>(2) = 1,331, what is the value of <em>g</em>(3)?</p>",
+  "answerOptions": [],
+  "keys": [
+    "14641"
+  ],
+  "rationale": "<p>From <em>g</em>(2) = 11&middot;<em>a</em><sup>2</sup> = 1,331, dividing both sides by 11 gives <em>a</em><sup>2</sup> = 121, so <em>a</em> = 11 (since <em>a</em> &gt; 0). Then <em>g</em>(3) = 11&middot;11<sup>3</sup> = 11&middot;1,331 = 14,641.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A6.T1.medium"
+}

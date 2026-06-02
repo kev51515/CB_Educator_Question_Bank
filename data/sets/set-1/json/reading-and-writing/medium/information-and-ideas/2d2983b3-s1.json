@@ -1,0 +1,25 @@
+{
+  "questionId": "2d2983b3-s1",
+  "originalId": "2d2983b3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T4.medium",
+  "stimulus": "<p>Pigments give pottery glazes their color. Cobalt is a metal-based pigment used to produce several hues, including deep blue. Cobalt-blue glaze gets its color from cobalt oxide. Glazes can also be ash-based; ash-based glazes contain a high level of potassium. In a 2022 study, archaeologists tested the blue pigment on decorated stoneware shards produced by potters of the Joseon dynasty in Korea roughly 500 years ago. The test showed that the pigment on several shards contained no cobalt but had a high level of potassium. This finding led the researchers to conclude that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the Joseon potters preferred ash-based glazes because they are far more vibrant than metal-based glazes are.</p>"},
+    {"id": "b", "content": "<p>the Joseon stoneware shards examined in the study are the oldest surviving examples of ash-based glazing.</p>"},
+    {"id": "c", "content": "<p>the pigments used by the Joseon potters likely came from plant ash because cobalt was difficult to obtain.</p>"},
+    {"id": "d", "content": "<p>the Joseon potters used ash-based glazes rather than cobalt to decorate some of the shards examined in the study.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. Cobalt-blue glaze gets its color from cobalt oxide; ash-based glazes have high potassium. Because the analyzed shards contained no cobalt but high potassium, the researchers can conclude that the potters used ash-based glazes (not cobalt) on those shards. Choice A is unsupported—brightness is not compared. Choice B overreaches; nothing addresses whether these are the oldest examples. Choice C invokes a motive (cobalt being hard to find) the text never supports.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

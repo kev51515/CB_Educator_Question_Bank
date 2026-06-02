@@ -1,0 +1,22 @@
+{
+  "questionId": "7f84b136-s1",
+  "originalId": "7f84b136",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table summarizes the number of objects in each group.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th>Group</th><th>Number of objects</th></tr></thead><tbody><tr><td style=\"text-align: center;\">A</td><td style=\"text-align: center;\">480</td></tr><tr><td style=\"text-align: center;\">B</td><td style=\"text-align: center;\">75</td></tr></tbody></table></figure><p>The number of objects in group A is what percent greater than the number of objects in group B? (Round to the nearest whole number.)</p>",
+  "answerOptions": null,
+  "keys": [
+    "540"
+  ],
+  "rationale": "<p>The correct answer is 540. The percent by which group A exceeds group B is computed as ((A - B)/B) &times; 100% = ((480 - 75)/75) &times; 100% = (405/75) &times; 100% = 5.4 &times; 100% = 540%. Therefore, the number of objects in group A is 540% greater than the number in group B.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T3.medium"
+}

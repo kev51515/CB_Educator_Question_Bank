@@ -1,0 +1,39 @@
+{
+  "questionId": "6c086e70-s1",
+  "originalId": "6c086e70",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Independent musicians normally seize opportunities for visibility, but research by Dana Lopez and Hari Patel suggests that some do not fully <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> their distribution. The researchers tracked indie artists who uploaded their music to a widely used free streaming service and found that those who did so saw an average 9 percent increase in concert-ticket sales, but roughly 28 percent of the artists studied never uploaded their music to the service.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>maximize</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>ornament</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>endorse</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>counteract</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Maximize\" means to use to fullest advantage. The research describes artists who skip a free, beneficial channel of distribution\u2014so they do not maximize their distribution.</p><p>Choice B is incorrect. \"Ornament\" means decorate, which doesn't match the practical idea of using a distribution channel. Choice C is incorrect. \"Endorse\" means publicly approve; artists not endorsing their own distribution is not what the data shows. Choice D is incorrect. \"Counteract\" means to oppose or neutralize, which is the opposite of what the text describes; artists are not actively working against their distribution.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

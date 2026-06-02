@@ -1,0 +1,25 @@
+{
+  "questionId": "c15069eb-s1",
+  "originalId": "c15069eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>Japan is known to host hundreds of distinct regional festivals throughout the calendar year. Only four of these are designated as nationally significant intangible cultural <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Gion Matsuri, Awa Odori, Nebuta Matsuri, and Kanda Matsuri&mdash;the last of which is celebrated within central Tokyo despite many older claimants in the surrounding prefectures.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>properties, however;</p>"},
+    {"id": "b", "content": "<p>properties, however:</p>"},
+    {"id": "c", "content": "<p>properties; however,</p>"},
+    {"id": "d", "content": "<p>properties, however,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the punctuation of supplementary elements within a sentence. This choice correctly uses a comma to separate the supplementary adverb \"however\" from the preceding main clause (\"Only four...properties\") and a colon to introduce the list of festivals that follows. Placing the colon after \"however\" rather than before signals that the preceding clause is contrary to what might be assumed from the previous sentence.</p><p>Choice A is incorrect because a semicolon cannot introduce a series of items. Choice C is incorrect because placing the semicolon after \"properties\" illogically attaches \"however\" to the list of festivals. Choice D is incorrect because a comma after \"however\" cannot introduce the series.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

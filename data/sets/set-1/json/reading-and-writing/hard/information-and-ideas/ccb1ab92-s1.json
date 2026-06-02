@@ -1,0 +1,25 @@
+{
+  "questionId": "ccb1ab92-s1",
+  "originalId": "ccb1ab92",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Slow-Wave Sleep on Land after Extended Foraging at Sea (mean % of baseline; values within 25% of baseline were not statistically significant)</p></caption><thead><tr><th>Animal</th><th>Day 1</th><th>Day 2</th></tr></thead><tbody><tr><td>Sea lion P</td><td>108</td><td>92</td></tr><tr><td>Sea lion Q</td><td>104</td><td>96</td></tr><tr><td>Sea lion R</td><td>118</td><td>98</td></tr></tbody></table></figure><p>Research suggests that slow-wave sleep in marine mammals is homeostatically regulated: animals compensate for periods of slow-wave sleep deprivation by increasing subsequent slow-wave sleep. When on land, California sea lions get ample slow-wave sleep, but during the weeks they spend foraging at sea, they sleep only with one cerebral hemisphere at a time and rarely show full slow-wave activity. In a study of California sea lions&rsquo; sleep habits, researchers recorded slow-wave sleep (as a percentage of baseline) once the animals had returned to land. They concluded that slow-wave sleep may not be homeostatically regulated in California sea lions, citing as evidence the fact that the sea lions in the study ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>did not show significantly less slow-wave sleep on the second day after returning to land than on the first day.</p>"},
+    {"id": "b", "content": "<p>showed no significant differences from one another in baseline levels of slow-wave sleep.</p>"},
+    {"id": "c", "content": "<p>showed no significant difference between slow-wave sleep on land and slow-wave sleep while at sea.</p>"},
+    {"id": "d", "content": "<p>did not consistently demonstrate a significant increase in slow-wave sleep after their period of deprivation at sea.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. If slow-wave sleep were homeostatically regulated, the sea lions should have shown sleep levels well above baseline for an extended time after weeks of deprivation at sea. The table shows that all three sea lions&rsquo; Day 1 values (108%, 104%, 118%) fall within the 25%-of-baseline window the researchers identify as not statistically significant, and the Day 2 values cluster near baseline. The absence of a consistent significant rebound is precisely the evidence the researchers cite. Choice A is incorrect because whether Day 2 values fall below Day 1 values does not address whether sleep rose significantly above baseline, which is the relevant comparison. Choice B is incorrect because the table reports values as a percentage of each sea lion&rsquo;s own baseline; it does not allow comparison of baseline levels across animals. Choice C is incorrect because the table does not report slow-wave sleep at sea, only after return to land.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6675c5c3-s1",
+  "originalId": "6675c5c3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a 2002 novel by a Caribbean American author. The eight-year-old narrator lives with her family in Trinidad. T\u00eda Beatriz is the narrator's aunt.</p><p>T\u00eda Beatriz, who was the eldest of my mother's sisters, had moved to Canada five years before, when I was only three, and I could not picture her face at all. I climbed onto the chair by the hall cabinet and pulled out the old album of family photographs. But every picture was from long ago, taken when T\u00eda Beatriz was still a teenager. However hard I tried, I could not put together what she might look like today. My imagination, though, rushed in to fill the empty space.</p>",
+  "stem": "<p>According to the text, why does the narrator pull out the old album of family photographs?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She wants to remind her aunt of an event captured in one of the pictures.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She hopes the photographs will help her recall what her aunt looked like.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She is curious about the clothes her mother wore as a teenager.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She wants to use the photographs as inspiration for a school assignment.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says the narrator cannot picture her aunt's face and pulls out the album in an attempt to put together what she might look like.</p><p>Choice A is incorrect; the text does not mention any event the narrator wants her aunt to remember. Choice C is incorrect; the text does not discuss what the narrator's mother wore. Choice D is incorrect; the text does not mention a school assignment.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

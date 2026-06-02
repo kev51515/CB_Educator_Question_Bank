@@ -1,0 +1,39 @@
+{
+  "questionId": "01de46bb-s1",
+  "originalId": "01de46bb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The Quechua and Aymara peoples have been cultivating native potato varieties in the high Andean valleys for centuries, but warming temperatures are now reducing the area in which these plants can grow, thereby threatening traditional potato farming. These plants are extremely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to temperature during the early tuber-formation stage of development, and if the soil is too warm, the developing tubers can fail to enlarge, resulting in a poor harvest.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>sensitive</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>indifferent</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>resistant</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>welcoming</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because, as used in this context, \"sensitive\" means easily affected. The text states that warmer soil during the early tuber-formation stage can cause the tubers to fail to enlarge, indicating that the plants are easily harmed by warmth at that stage. Choice B is incorrect because \"indifferent\" would suggest the plants are unaffected, which contradicts the text. Choice C is incorrect because \"resistant\" would mean the plants are unharmed by warm soil. Choice D is incorrect because \"welcoming\" suggests a positive response to warmth, which contradicts the harm described.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

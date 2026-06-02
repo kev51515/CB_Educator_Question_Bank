@@ -1,0 +1,39 @@
+{
+  "questionId": "e1ad3d41-s1",
+  "originalId": "e1ad3d41",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The data on coat color and eye color for 40 puppies available for adoption were collected and summarized in the table below.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th>Coat color</th><th>Brown eyes</th><th>Hazel eyes</th><th>Total</th></tr></thead><tbody><tr><td>Black</td><td style=\"text-align: center;\">7</td><td style=\"text-align: center;\">3</td><td style=\"text-align: center;\">10</td></tr><tr><td>Brown</td><td style=\"text-align: center;\">8</td><td style=\"text-align: center;\">4</td><td style=\"text-align: center;\">12</td></tr><tr><td>Cream</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">3</td><td style=\"text-align: center;\">8</td></tr><tr><td>Gray</td><td style=\"text-align: center;\">6</td><td style=\"text-align: center;\">4</td><td style=\"text-align: center;\">10</td></tr><tr><td>Total</td><td style=\"text-align: center;\">26</td><td style=\"text-align: center;\">14</td><td style=\"text-align: center;\">40</td></tr></tbody></table></figure><p>What fraction of the brown-coated puppies has hazel eyes?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4/40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4/12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4/14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12/40</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Among the 12 brown-coated puppies, 4 have hazel eyes. Therefore the fraction with hazel eyes is 4/12 (which simplifies to 1/3). Choice A is incorrect because 4/40 uses all 40 puppies as the denominator instead of conditioning on brown-coated puppies. Choice C is incorrect because 4/14 is the fraction of all hazel-eyed puppies that are brown-coated. Choice D is incorrect because 12/40 is the fraction of all puppies that are brown-coated.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A3.T8.medium"
+}

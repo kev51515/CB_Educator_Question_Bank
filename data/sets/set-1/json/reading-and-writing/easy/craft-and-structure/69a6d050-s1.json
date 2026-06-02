@@ -1,0 +1,39 @@
+{
+  "questionId": "69a6d050-s1",
+  "originalId": "69a6d050",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the early 1820s, the missionary Henry ʻŌpukahaʻia helped develop the first standardized writing system for the Hawaiian language. Because it represented the sounds of spoken Hawaiian so clearly, the script was easy to learn and quickly came into <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> use: within a decade, a large portion of the Native Hawaiian population could read and write it.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>private</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>questionable</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>common</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>uncertain</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"common\" means frequent and widely shared, fitting the description of a writing system used by many people within a decade. Choice A is incorrect because the text describes broad, not private, use. Choice B is incorrect because nothing in the text suggests the use was questionable. Choice D is incorrect because the timeline shows definite, not uncertain, use.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

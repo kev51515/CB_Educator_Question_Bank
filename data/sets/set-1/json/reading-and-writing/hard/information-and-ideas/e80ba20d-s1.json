@@ -1,0 +1,39 @@
+{
+  "questionId": "e80ba20d-s1",
+  "originalId": "e80ba20d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Philosophers note that many people share an intuitive sense that while breaking promises is generally wrong, there are circumstances in which doing so seems clearly permissible. If this intuition is correct and we lack an absolute duty to keep our promises, what underlies our general opposition to breaking them in the first place? Mira Halpern offers a response: she argues that promises function less as inviolable rules and more as commitments that generate strong but defeasible expectations in others. On her view, breaking a promise is wrong primarily because&mdash;and to the extent that&mdash;it betrays the reasonable expectations the promise was understood to create. When other moral considerations override those expectations, breaking the promise can be justified without contradicting the original commitment&rsquo;s ordinary force.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Promises are generally morally binding, but most are also frequently broken in ordinary life.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Philosophers have failed to explain why people share the intuition that some promise-breaking is permissible.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Halpern argues that the wrongness of breaking a promise lies in betraying the reasonable expectations a promise creates, which other moral considerations can sometimes override.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>According to Halpern, promises are best understood as personal preferences rather than as genuine moral commitments.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text presents Halpern&rsquo;s view that promises generate strong but defeasible expectations and that breaking a promise is wrong because it betrays those expectations&mdash;though other moral considerations can override them.</p><p>Choice A is incorrect because the text focuses on Halpern&rsquo;s explanation, not on how often promises are broken. Choice B is incorrect because Halpern is presented as offering, not failing to offer, an explanation. Choice D is incorrect because Halpern treats promises as moral commitments, not mere preferences.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

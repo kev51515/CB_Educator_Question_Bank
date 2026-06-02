@@ -1,0 +1,39 @@
+{
+  "questionId": "ab7740a8-s1",
+  "originalId": "ab7740a8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In which of the following tables is the relationship between the values of <em>x</em> and their corresponding <em>y</em>-values nonlinear?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x: 1, 2, 3, 4 / y: 5, 8, 11, 14</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x: 1, 2, 3, 4 / y: 7, 10, 13, 16</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x: 1, 2, 3, 4 / y: 2, 4, 6, 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x: 1, 2, 3, 4 / y: 3, 6, 12, 24</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. In choice D, y doubles at each step (\u00d72), which is exponential \u2014 not linear. Choices A, B, and C all have constant differences (3, 3, 2), making them linear.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T10.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c14daa3c-s1",
+  "originalId": "c14daa3c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Close analysis of the painting <em>Mountain Lake at Dusk</em>, long attributed to the nineteenth-century landscape painter Caroline Whitford, has revealed subtle departures from the artist's well-documented brushwork. These differences suggest that the work may be that of an apprentice working under Whitford's supervision—potentially <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> our understanding of Whitford as a wholly self-sufficient painter.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>entrenching</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>substantiating</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>prefiguring</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>undermining</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Undermining\" most logically completes the text. If a painting attributed to Whitford was actually made by an apprentice, the view that she worked entirely alone would be weakened—undermined—by this evidence.</p><p>Choice A is incorrect. \"Entrenching\" means firmly establishing; an apprentice's contribution would weaken, not strengthen, the view of Whitford as wholly self-sufficient. Choice B is incorrect. \"Substantiating\" means confirming, again contradicting the implications of the apprentice hypothesis. Choice C is incorrect. \"Prefiguring\" means foreshadowing, which doesn't match the relationship of new evidence to an existing view.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

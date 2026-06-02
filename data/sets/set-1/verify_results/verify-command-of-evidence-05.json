@@ -1,0 +1,22 @@
+[
+  {"id": "0014477f-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "239d3535-s1", "templateId": "command-of-evidence.A5.T7.easy", "verdict": "ok"},
+  {"id": "e37f79a7-s1", "templateId": "command-of-evidence.A5.T7.easy", "verdict": "type_drift", "detail": "Tagged as T7 (direct-data-readout, expects 'According to the table, what is X?' question). Clone's stimulus ends with blank '______' and stem asks 'Which choice most effectively uses data from the table to complete the statement?'—this is T8 (data-completes-sentence-with-value) structure, not T7."},
+  {"id": "df34b586-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "25b70215-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "303bcc41-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "7fdba7ad-s1", "templateId": "command-of-evidence.A4.T5.easy", "verdict": "ok"},
+  {"id": "5c73f0cc-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "72c7dafd-s1", "templateId": "command-of-evidence.A1.T1.easy", "verdict": "ok"},
+  {"id": "145da981-s1", "templateId": "command-of-evidence.A5.T9.easy", "verdict": "ok"},
+  {"id": "c088a9a9-s1", "templateId": "command-of-evidence.A4.T5.easy", "verdict": "ok"},
+  {"id": "3f7f35ea-s1", "templateId": "command-of-evidence.A1.T1.easy", "verdict": "ok"},
+  {"id": "0113152f-s1", "templateId": "command-of-evidence.A2.T3.easy", "verdict": "ok"},
+  {"id": "23b5cb59-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "e1ee5f5c-s1", "templateId": "command-of-evidence.A1.T1.easy", "verdict": "ok"},
+  {"id": "38e79659-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"},
+  {"id": "6df33868-s1", "templateId": "command-of-evidence.A1.T2.easy", "verdict": "ok"},
+  {"id": "0021d326-s1", "templateId": "command-of-evidence.A4.T5.easy", "verdict": "ok"},
+  {"id": "e7dc27dc-s1", "templateId": "command-of-evidence.A4.T5.easy", "verdict": "ok"},
+  {"id": "8af28416-s1", "templateId": "command-of-evidence.A5.T8.easy", "verdict": "ok"}
+]

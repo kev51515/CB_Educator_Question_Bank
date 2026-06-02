@@ -1,0 +1,39 @@
+{
+  "questionId": "4b376902-s1",
+  "originalId": "4b376902",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Oceanographers use traditional research ships to study the open ocean.</li>\n<li>Research ships are expensive to operate and cannot be deployed in many locations at once.</li>\n<li>Research ships are also limited to areas safely navigable by large vessels.</li>\n<li>Argo floats, autonomous drifting sensors that weigh only about 60 pounds, can collect ocean data continuously and travel freely on currents.</li>\n<li>Argo floats have been proposed as a complement to traditional research ships.</li>\n</ul>",
+  "stem": "<p>The student wants to explain an advantage of Argo floats. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Argo floats, which weigh only about 60 pounds, can collect ocean data continuously in areas that are unsafe for the large vessels oceanographers traditionally use.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Oceanographers currently use research ships, but Argo floats have been proposed as a complement.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Though they are different sizes, both Argo floats and research ships can be used to study the ocean.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Despite their cost, traditional research ships continue to be useful for ocean study.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it explains a specific advantage of Argo floats&mdash;continuous data collection in places too risky for large vessels&mdash;and ties it to their light weight. Choice B is incorrect because it states that Argo floats complement ships without explaining an advantage. Choice C is incorrect because it emphasizes similarity, not advantage. Choice D is incorrect because it describes a virtue of research ships rather than Argo floats.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A3.T9.easy"
+}

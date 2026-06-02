@@ -1,0 +1,25 @@
+{
+  "questionId": "95d1c344-s1",
+  "originalId": "95d1c344",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph below models the number of active subscriptions, in thousands, that a service had <i>x</i> months after the end of May 2018, for 0 &le; <i>x</i> &le; 8. Based on the graph, after how many months did the service reach its greatest number of active subscriptions?</p><p style=\"text-align: center;\"><figure class='image'><svg role=\"img\" version=\"1.1\" viewBox=\"0 0 360 320\" width=\"360\" height=\"320\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"Graph of a downward-opening parabola with vertex at (4, 12) passing through (0, 4) and (8, 4).\"><defs><style>.ax{stroke:#333;stroke-width:1.2;fill:none}.gr{stroke:#ddd;stroke-width:0.6;fill:none}.cv{stroke:#1f77b4;stroke-width:2;fill:none}.pt{fill:#1f77b4}.lb{font-family:Arial,sans-serif;font-size:12px;fill:#222}</style></defs><rect x=\"0\" y=\"0\" width=\"360\" height=\"320\" fill=\"#fff\"/><g class=\"gr\"><line x1=\"50\" y1=\"40\" x2=\"50\" y2=\"280\"/><line x1=\"85\" y1=\"40\" x2=\"85\" y2=\"280\"/><line x1=\"120\" y1=\"40\" x2=\"120\" y2=\"280\"/><line x1=\"155\" y1=\"40\" x2=\"155\" y2=\"280\"/><line x1=\"190\" y1=\"40\" x2=\"190\" y2=\"280\"/><line x1=\"225\" y1=\"40\" x2=\"225\" y2=\"280\"/><line x1=\"260\" y1=\"40\" x2=\"260\" y2=\"280\"/><line x1=\"295\" y1=\"40\" x2=\"295\" y2=\"280\"/><line x1=\"330\" y1=\"40\" x2=\"330\" y2=\"280\"/><line x1=\"50\" y1=\"40\" x2=\"330\" y2=\"40\"/><line x1=\"50\" y1=\"80\" x2=\"330\" y2=\"80\"/><line x1=\"50\" y1=\"120\" x2=\"330\" y2=\"120\"/><line x1=\"50\" y1=\"160\" x2=\"330\" y2=\"160\"/><line x1=\"50\" y1=\"200\" x2=\"330\" y2=\"200\"/><line x1=\"50\" y1=\"240\" x2=\"330\" y2=\"240\"/><line x1=\"50\" y1=\"280\" x2=\"330\" y2=\"280\"/></g><g class=\"ax\"><line x1=\"50\" y1=\"280\" x2=\"340\" y2=\"280\"/><line x1=\"50\" y1=\"30\" x2=\"50\" y2=\"280\"/></g><path class=\"cv\" d=\"M 50 240 Q 190 -40 330 240\"/><circle class=\"pt\" cx=\"190\" cy=\"40\" r=\"3.5\"/><circle class=\"pt\" cx=\"50\" cy=\"240\" r=\"3.5\"/><circle class=\"pt\" cx=\"330\" cy=\"240\" r=\"3.5\"/><text class=\"lb\" x=\"32\" y=\"285\">O</text><text class=\"lb\" x=\"196\" y=\"38\">(4, 12)</text><text class=\"lb\" x=\"55\" y=\"250\">(0, 4)</text><text class=\"lb\" x=\"310\" y=\"262\">(8, 4)</text><text class=\"lb\" x=\"160\" y=\"305\">Months after May 2018</text><text class=\"lb\" x=\"5\" y=\"170\" transform=\"rotate(-90 15,170)\">Subscriptions (thousands)</text></svg></figure></p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>4</p>"},
+    {"id": "b", "content": "<p>8</p>"},
+    {"id": "c", "content": "<p>12</p>"},
+    {"id": "d", "content": "<p>5</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The greatest number of active subscriptions corresponds to the maximum value of the function, which occurs at the vertex of the downward-opening parabola. From the graph, the vertex is at (4, 12), so the maximum occurs at <i>x</i> = 4 months.</p><p>Choice B is the right endpoint of the domain, not the vertex. Choice C is the <i>y</i>-coordinate of the vertex (peak value), not the time. Choice D is unrelated to the labeled vertex.</p>",
+  "generatedAt": "2026-05-27T00:00:08Z",
+  "templateId": "nonlinear-functions.A3.T1.medium"
+}

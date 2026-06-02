@@ -1,0 +1,39 @@
+{
+  "questionId": "1fe10d97-s1",
+  "originalId": "1fe10d97",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>p</i>(<i>t</i>) = 150,000(1.04)<sup><i>t</i></sup></p><p>The given function <i>p</i> models the population of Riverton <i>t</i> years after a census. Which of the following functions best models the population of Riverton <i>m</i> months after the census?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>r</i>(<i>m</i>) = (150,000/12)(1.04)<sup><i>m</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>r</i>(<i>m</i>) = 150,000(1.04)<sup><i>m</i>/12</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>r</i>(<i>m</i>) = 150,000(1.04/12)<sup><i>m</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>r</i>(<i>m</i>) = 150,000(1.04/12)<sup><i>m</i>/12</sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since 1 year = 12 months, <i>t</i> = <i>m</i>/12. Substituting into <i>p</i>(<i>t</i>) gives <i>r</i>(<i>m</i>) = 150,000(1.04)<sup><i>m</i>/12</sup>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

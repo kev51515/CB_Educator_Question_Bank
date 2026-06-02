@@ -1,0 +1,39 @@
+{
+  "questionId": "01c8c433-s1",
+  "originalId": "01c8c433",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Before the widespread adoption of the standardized shipping container in the 1950s, dockworkers loaded ships piece by piece, packing each individual crate, barrel, or sack into the hold by hand. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> loading a single ship could take days or even weeks, and labor costs for shipping companies were enormous.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Consequently,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Regardless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>On the contrary,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Consequently\" logically signals that the slow loading times and high labor costs described in this sentence were a consequence of the piece-by-piece loading method described in the previous sentence.</p><p>Choice B is incorrect because \"regardless\" illogically signals that the loading delays and labor costs occurred despite the method described in the previous sentence. Instead, they were a consequence of that method. Choice C is incorrect because \"on the contrary\" illogically signals that the information in this sentence contrasts with the previous sentence. Instead, it describes a consequence of the previous information. Choice D is incorrect because \"for example\" illogically signals that this sentence provides an example of the loading method. Instead, it describes a consequence of that method.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a68239ed-s1",
+  "originalId": "a68239ed",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1903 nonfiction essay.</p><blockquote><p>Those who chase happiness as the sole purpose of life never know when they have arrived. They cannot know. In one sense it is of course necessary to seek joy, for that is a basic pursuit of every age. But to acknowledge that contentment itself is fleeting and unsteady is the wiser truth. The final puzzle is the heart. When one has counted every coin in the chest, named every star in the dome of night, and traced every road on every map, there still remains the heart. <u>Who can chart the weather of his own joy?</u></p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined question in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It speculates that some readers will share the doubts expressed in the text about the value of happiness.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It cautions readers that the text's directions for how to find happiness are hard to follow.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It concedes that the definition of happiness advanced in the text is unpopular.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It reinforces the text's skepticism about the possibility of fully predicting one's own happiness.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text repeatedly suggests that happiness can't be fully captured or known, and the rhetorical question emphasizes that point.</p><p>Choice A is incorrect. The text doesn't doubt happiness's value, only its predictability. Choice B is incorrect. The text gives no directions to follow. Choice C is incorrect. The text doesn't define happiness or mention popularity.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T6.easy"
+}

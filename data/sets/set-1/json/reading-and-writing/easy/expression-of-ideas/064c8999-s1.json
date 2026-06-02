@@ -1,0 +1,39 @@
+{
+  "questionId": "064c8999-s1",
+  "originalId": "064c8999",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The contact process is an industrial process used to manufacture sulfuric acid (H<sub>2</sub>SO<sub>4</sub>).</li>\n<li>It was developed by British vinegar merchant Peregrine Phillips in 1831.</li>\n<li>The process's key reaction combines sulfur dioxide (SO<sub>2</sub>) with oxygen (O<sub>2</sub>).</li>\n<li>It requires a vanadium oxide catalyst and elevated temperatures.</li>\n<li>Most of the sulfuric acid produced by this process is used in the manufacture of phosphate fertilizers.</li>\n</ul>",
+  "stem": "<p>The student wants to provide an overview of the contact process. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The contact process uses a vanadium oxide catalyst and elevated temperatures to manufacture sulfuric acid from sulfur dioxide and oxygen.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The contact process needs sulfur dioxide, oxygen, and a vanadium oxide catalyst.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>British vinegar merchant Peregrine Phillips developed an industrial process to manufacture sulfuric acid for use in fertilizers.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In 1831, Peregrine Phillips developed the contact process, which requires elevated temperatures.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it gives a complete overview: it names the inputs (sulfur dioxide and oxygen), the conditions (catalyst and elevated temperatures), and the output (sulfuric acid). Choice B is incorrect because it lists ingredients without explaining the output or conditions. Choice C is incorrect because it omits the ingredients and conditions. Choice D is incorrect because it mentions the inventor and conditions but does not state the product or ingredients.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A4.T11.easy"
+}

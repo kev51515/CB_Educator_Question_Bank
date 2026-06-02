@@ -1,0 +1,39 @@
+{
+  "questionId": "051d3065-s1",
+  "originalId": "051d3065",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Mangrove forests grow along tropical coastlines around the world. These coastal forests are important to crabs, fish, and many other animals. Ocean waves and storm surges can be powerful and damaging, making it difficult for small animals to find safe places to hide from rough water. The dense roots of mangrove trees slow down the waves. This creates a more <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> environment with calmer waters where animals can take shelter.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>dangerous</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>colorful</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>tranquil</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>distant</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because \"tranquil\" means calm and peaceful, and the text describes mangroves slowing down waves and producing calmer waters where animals can take shelter. Choice A is incorrect because the environment is described as safer, not more dangerous. Choice B is incorrect because the text does not mention color. Choice D is incorrect because \"distant\" describes location rather than calmness.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

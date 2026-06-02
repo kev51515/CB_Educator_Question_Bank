@@ -1,0 +1,22 @@
+{
+  "questionId": "873d2838-s1",
+  "originalId": "873d2838",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The population density of Birchwood County is 145 people per square mile. The county has a population of 52,200 people. What is the area, in square miles, of Birchwood County?</p>",
+  "answerOptions": null,
+  "keys": [
+    "360"
+  ],
+  "rationale": "<p>The correct answer is 360. Given a population of 52,200 and density of 145 people per square mile, the area is 52,200 \u00f7 145 = 360 square miles.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "346d5c2e-s1",
+  "originalId": "346d5c2e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = 8(2x + 5). For what value of x does f(x) = 56?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. 8(2x + 5) = 56 implies 2x + 5 = 7, so x = 1.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e7343559-s1",
+  "originalId": "e7343559",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = -3x + 24</p><p>Which table gives three values of x and their corresponding values of y for the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x: 0, 1, 2; y: 0, -3, -6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x: 0, 1, 2; y: 24, 27, 30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x: 0, 1, 2; y: 0, 3, 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x: 0, 1, 2; y: 24, 21, 18</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting x = 0 gives y = 24. x = 1 gives y = 21. x = 2 gives y = 18.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-equations-in-two-variables.A4.T9.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c9f8d1e9-s1",
+  "originalId": "c9f8d1e9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the lengths of the legs are 6 and 8 and the length of the hypotenuse is <em>c</em>. Which expression gives the value of <em>c</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6 + 8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the square root of (6 squared + 8 squared)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the square root of (6 + 8)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the square root of (6 squared minus 8 squared)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. By the Pythagorean theorem, c squared = 6 squared + 8 squared, so c equals the square root of (6 squared + 8 squared).</p><p>Choice A is incorrect: this adds the legs instead of using the theorem.</p><p>Choice C is incorrect: the theorem squares the legs before adding.</p><p>Choice D is incorrect: the theorem adds the squares of the legs, not subtracts them.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T2.easy"
+}

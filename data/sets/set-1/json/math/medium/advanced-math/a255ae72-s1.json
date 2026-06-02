@@ -1,0 +1,39 @@
+{
+  "questionId": "a255ae72-s1",
+  "originalId": "a255ae72",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If u = 2x + 3 and v = x \u2212 1, which of the following is equal to u\u00b7v?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2x\u00b2 + 5x \u2212 3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2x\u00b2 \u2212 5x \u2212 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2x\u00b2 + x \u2212 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2x\u00b2 \u2212 x \u2212 3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>u\u00b7v = (2x + 3)(x \u2212 1) = 2x\u00b2 \u2212 2x + 3x \u2212 3 = 2x\u00b2 + x \u2212 3. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A1.T10.medium"
+}

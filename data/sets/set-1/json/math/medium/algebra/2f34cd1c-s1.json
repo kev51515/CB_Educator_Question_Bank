@@ -1,0 +1,39 @@
+{
+  "questionId": "2f34cd1c-s1",
+  "originalId": "2f34cd1c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The function f(x) = 42.50 - 0.12x gives the estimated surface water temperature f(x), in degrees Celsius, of a body of water on the <em>x</em>th day of the year, where 1 \u2264 x \u2264 365. According to the model, what is the estimated surface water temperature, in degrees Celsius, of the body of water on the 300th day of the year?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>42.50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-0.12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>36.00</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6.50</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting x = 300: f(300) = 42.50 - 0.12(300) = 42.50 - 36.00 = 6.50 degrees Celsius. Choice A is the y-intercept (temperature on day 0). Choice B is the slope. Choice C is the magnitude of the temperature change from day 0 to day 300.</p>",
+  "templateId": "linear-functions.A1.T1.medium"
+}

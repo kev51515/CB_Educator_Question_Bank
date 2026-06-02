@@ -1,0 +1,39 @@
+{
+  "questionId": "37930b2a-s1",
+  "originalId": "37930b2a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Members of a fitness club were surveyed to determine whether they are satisfied with the locker rooms at the club. A random sample of <math><mn>150</mn></math> members was selected. All <math><mn>150</mn></math> responded, and <math><mn>62</mn><mo>%</mo></math> said they are satisfied. Based on this information, which of the following statements must be true?</p><p>I. Of all members of the fitness club, <math><mn>62</mn><mo>%</mo></math> would say they are satisfied with the locker rooms.<br>II. If another random sample of <math><mn>150</mn></math> members were surveyed, <math><mn>62</mn><mo>%</mo></math> would say they are satisfied.</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Neither</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>I and II</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The 62% figure is a sample statistic, used to estimate the true population proportion. The population proportion need not be exactly 62%, and a second random sample need not yield exactly 62% satisfied. So neither statement must be true.</p><p>Choices A, B, and D incorrectly treat the sample statistic as a guaranteed exact match for the population or another sample.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A3.T1.medium"
+}

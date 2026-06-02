@@ -1,0 +1,25 @@
+{
+  "questionId": "c4d49134-s1",
+  "originalId": "c4d49134",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>v</i> = 25 + 4<i>t</i>. The equation gives the speed <i>v</i>, in miles per hour, of a car <i>t</i> seconds after it began to accelerate. What is the speed, in miles per hour, of the car 8 seconds after it began to accelerate?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>25</p>"},
+    {"id": "b", "content": "<p>32</p>"},
+    {"id": "c", "content": "<p>100</p>"},
+    {"id": "d", "content": "<p>57</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. Substituting <i>t</i> = 8: <i>v</i> = 25 + 4(8) = 25 + 32 = 57.</p><p>Choice A is the initial value at <i>t</i> = 0. Choice B is only 4(8). Choice C results from multiplying 25 by 4 instead of using the linear formula.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

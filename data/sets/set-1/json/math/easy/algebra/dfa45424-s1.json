@@ -1,0 +1,39 @@
+{
+  "questionId": "dfa45424-s1",
+  "originalId": "dfa45424",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Maria spends $120 per month on lunch. A multi-meal pass costs $15.00 and a single meal costs $2.50. If p represents the number of multi-meal passes Maria buys in a month and s represents the number of single meals she buys in a month, which of the following equations best represents the relationship between p and s?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>p + s = 120</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>p + s = 2.50 + 15.00</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15.00 p + 2.50 s = 120</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2.50 p + 15.00 s = 120</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The amount spent on multi-meal passes is 15.00 p; on single meals is 2.50 s. Total: 15.00 p + 2.50 s = 120.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

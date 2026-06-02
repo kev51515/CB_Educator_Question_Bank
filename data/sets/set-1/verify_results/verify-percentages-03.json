@@ -1,0 +1,22 @@
+[
+  {"id": "a0b165f8-s1", "templateId": "percentages.A3.T2.hard", "verdict": "ok"},
+  {"id": "623dbebb-s1", "templateId": "percentages.A4.T2.hard", "verdict": "ok"},
+  {"id": "58ba7239-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "ad911622-s1", "templateId": "percentages.A4.T2.hard", "verdict": "ok"},
+  {"id": "2afd3cec-s1", "templateId": "percentages.A2.T2.hard", "verdict": "ok"},
+  {"id": "2e92cc21-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "8213b1b3-s1", "templateId": "percentages.A1.T1.hard", "verdict": "ok"},
+  {"id": "5267c3c7-s1", "templateId": "percentages.A3.T2.hard", "verdict": "ok"},
+  {"id": "86684ce9-s1", "templateId": "percentages.A3.T2.hard", "verdict": "ok"},
+  {"id": "8c5dbd3e-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "954943a4-s1", "templateId": "percentages.A2.T3.hard", "verdict": "ok"},
+  {"id": "9c44f828-s1", "templateId": "percentages.A1.T2.easy", "verdict": "ok"},
+  {"id": "6e4a60dd-s1", "templateId": "percentages.A1.T2.easy", "verdict": "type_drift", "detail": "Stem is a tip-on-bill scenario (surcharge add-on context), matching A1.T3 (tax/tip add-on) rather than A1.T2 generic 'p% of N' wrapper. Asks for surcharge amount alone, exactly matching T3 easy lever."},
+  {"id": "28c6bd8c-s1", "templateId": "percentages.A1.T4.easy", "verdict": "ok"},
+  {"id": "2d31caae-s1", "templateId": "percentages.A1.T4.easy", "verdict": "aspect_drift", "detail": "Stem asks 'what percent of customers gave 2 stars' (part=20, whole=200, find percent). This is A2.T1 (find percent from part/whole), not A1 (compute part from given percent). A1 requires the percent to be given."},
+  {"id": "bd90f87e-s1", "templateId": "percentages.A3.T3.easy", "verdict": "ok"},
+  {"id": "41b71b4e-s1", "templateId": "percentages.A3.T1.easy", "verdict": "ok"},
+  {"id": "949cd96b-s1", "templateId": "percentages.A2.T3.easy", "verdict": "ok"},
+  {"id": "29c177e6-s1", "templateId": "percentages.A1.T1.easy", "verdict": "ok"},
+  {"id": "1c2f50a6-s1", "templateId": "percentages.A1.T2.easy", "verdict": "aspect_drift", "detail": "Stem describes a 25% price reduction (before/after change), which is A3.T1 (find new value after percent decrease), not A1.T2 (single p%-of-N in real-world context). A3 boundary: 'two states of the same quantity are compared'."}
+]

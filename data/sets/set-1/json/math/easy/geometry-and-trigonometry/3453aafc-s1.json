@@ -1,0 +1,39 @@
+{
+  "questionId": "3453aafc-s1",
+  "originalId": "3453aafc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the area, in square centimeters, of a rectangle with a length of 28 centimeters and a width of 25 centimeters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>700</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>106</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>53</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>75</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The area A of a rectangle is A = lw. Substituting l = 28 and w = 25 gives A = 28 \u00d7 25 = 700 square centimeters. Choice B is the perimeter; choice C is half the perimeter.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

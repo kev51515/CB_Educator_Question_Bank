@@ -1,0 +1,39 @@
+{
+  "questionId": "c17d9ba9",
+  "externalId": "f74b2e01-3db6-4f1e-ab96-71e8146de67d",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "scoreBand": 5,
+  "ibn": null,
+  "updateDate": 1691007959819,
+  "createDate": 1691007959819,
+  "scrapedAt": "2026-05-25T12:08:07.352739+00:00",
+  "type": "spr",
+  "stem": "<p style=\"text-align: left;\">A number <math alttext=\"x\"><mi>x</mi>\n</math> is at most <math alttext=\"17\"><mn>17</mn>\n</math> less than <math alttext=\"5\"><mn>5</mn>\n</math> times the value of <math alttext=\"y\"><mi>y</mi>\n</math>. If the value of <math alttext=\"y\"><mi>y</mi>\n</math> is <math alttext=\"3\"><mn>3</mn>\n</math>, what is the greatest possible value of <math alttext=\"x\"><mi>x</mi>\n</math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-2"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"negative 2\"><mo>-</mo><mn>2</mn>\n</math>. It's given that a number <math alttext=\"x\"><mi>x</mi>\n</math> is at most <math alttext=\"17\"><mn>17</mn>\n</math> less than <math alttext=\"5\"><mn>5</mn>\n</math> times the value of <math alttext=\"y\"><mi>y</mi>\n</math>, or&nbsp;<math alttext=\"x less than or equals 5 y minus 17\"><mi>x</mi><mo>&#8804;</mo><mn>5</mn><mi>y</mi><mo>-</mo><mn>17</mn></math>. Substituting <math alttext=\"3\"><mn>3</mn>\n</math> for <math alttext=\"y\"><mi>y</mi>\n</math> in this inequality yields <math alttext=\"x less than or equals 5 left parenthesis 3 right parenthesis minus 17\"><mi>x</mi><mo>&#8804;</mo><mn>5</mn><mfenced><mn>3</mn></mfenced><mo>-</mo><mn>17</mn></math>, or&nbsp;<math alttext=\"x less than or equals negative 2\"><mi>x</mi><mo>&#8804;</mo><mo>-</mo><mn>2</mn></math>. Thus, if the value of <math alttext=\"y\"><mi>y</mi>\n</math> is <math alttext=\"3\"><mn>3</mn>\n</math>, the greatest possible value of <math alttext=\"x\"><mi>x</mi>\n</math> is <math alttext=\"negative 2\"><mo>-</mo><mn>2</mn>\n</math>.</p>",
+  "raw": {
+    "keys": [
+      "-2"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"negative 2\"><mo>-</mo><mn>2</mn>\n</math>. It's given that a number <math alttext=\"x\"><mi>x</mi>\n</math> is at most <math alttext=\"17\"><mn>17</mn>\n</math> less than <math alttext=\"5\"><mn>5</mn>\n</math> times the value of <math alttext=\"y\"><mi>y</mi>\n</math>, or&nbsp;<math alttext=\"x less than or equals 5 y minus 17\"><mi>x</mi><mo>&#8804;</mo><mn>5</mn><mi>y</mi><mo>-</mo><mn>17</mn></math>. Substituting <math alttext=\"3\"><mn>3</mn>\n</math> for <math alttext=\"y\"><mi>y</mi>\n</math> in this inequality yields <math alttext=\"x less than or equals 5 left parenthesis 3 right parenthesis minus 17\"><mi>x</mi><mo>&#8804;</mo><mn>5</mn><mfenced><mn>3</mn></mfenced><mo>-</mo><mn>17</mn></math>, or&nbsp;<math alttext=\"x less than or equals negative 2\"><mi>x</mi><mo>&#8804;</mo><mo>-</mo><mn>2</mn></math>. Thus, if the value of <math alttext=\"y\"><mi>y</mi>\n</math> is <math alttext=\"3\"><mn>3</mn>\n</math>, the greatest possible value of <math alttext=\"x\"><mi>x</mi>\n</math> is <math alttext=\"negative 2\"><mo>-</mo><mn>2</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">A number <math alttext=\"x\"><mi>x</mi>\n</math> is at most <math alttext=\"17\"><mn>17</mn>\n</math> less than <math alttext=\"5\"><mn>5</mn>\n</math> times the value of <math alttext=\"y\"><mi>y</mi>\n</math>. If the value of <math alttext=\"y\"><mi>y</mi>\n</math> is <math alttext=\"3\"><mn>3</mn>\n</math>, what is the greatest possible value of <math alttext=\"x\"><mi>x</mi>\n</math>?</p>",
+    "externalid": "f74b2e01-3db6-4f1e-ab96-71e8146de67d",
+    "templateid": "50bc0db6-a9aa-4beb-b063-cda3d3150de6",
+    "vaultid": "4330be35-52c5-47ed-be1c-da32b6c6f267",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "-2"
+    ]
+  }
+}

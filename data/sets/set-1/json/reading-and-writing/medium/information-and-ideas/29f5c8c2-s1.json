@@ -1,0 +1,25 @@
+{
+  "questionId": "29f5c8c2-s1",
+  "originalId": "29f5c8c2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A2.T3.medium",
+  "stimulus": "<p>Mammals whose DNA has been modified to include genetic material from other species are known as transgenic. Some transgenic goats have been engineered to carry a spider gene that causes their milk to contain spider-silk proteins, which can be processed into a strong, lightweight fiber. Although the goats were initially developed in research facilities in the late 1990s, individual animals have since been sold privately, and small unregulated populations have reportedly escaped onto pastures in rural parts of South America. A graduate student writing a paper on these goats argues that escapes of transgenic spider-silk goats from research farms into rural pastures may produce significant negative long-term ecological effects.</p>",
+  "stem": "<p>Which quotation from a researcher would best support the student's argument?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“At one rural site where escaped transgenic goats were observed, the herd contained more adult females than adult males, while at another the sex ratio was roughly even.”</p>"},
+    {"id": "b", "content": "<p>“Although some presence of escaped transgenic goats in rural pastures has been documented, there have been very few systematic studies of their impact on those pasture ecosystems.”</p>"},
+    {"id": "c", "content": "<p>“The pastures where escaped transgenic goats have been reported probably represent only a fraction of the pastures into which such goats have actually escaped.”</p>"},
+    {"id": "d", "content": "<p>“Through cross-breeding, transgenic goats could introduce the spider-silk-protein trait into wild and semi-domesticated goat populations, potentially altering the milk chemistry of those herds and disrupting the local microbial communities that depend on them.”</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it most directly supports the student's argument that escapes of transgenic spider-silk goats may produce significant negative long-term ecological effects. The quotation describes a concrete mechanism—cross-breeding spreading the spider-silk-protein trait into wild and semi-domesticated populations—and ties that mechanism to specific ecological consequences (altered milk chemistry, disrupted microbial communities), which is exactly the kind of long-term ecological effect the student is worried about.</p><p>Choice A is incorrect because it merely reports observed sex ratios at two sites and does not address ecological impact. Choice B is incorrect because acknowledging a lack of studies does not support the claim that the impact is significantly negative; it only notes uncertainty. Choice C is incorrect because saying the documented escapes are an underestimate of total escapes speaks to scope but does not, by itself, establish that the impact is ecologically harmful.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

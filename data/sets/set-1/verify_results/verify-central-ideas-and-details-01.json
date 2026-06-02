@@ -1,0 +1,22 @@
+[
+  {"id": "659c6c1d-s1", "templateId": "central-ideas-and-details.A2.T5.medium", "verdict": "ok"},
+  {"id": "daa90829-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "ok"},
+  {"id": "70aacc03-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "d0fbf1ae-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "303537cf-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "ok"},
+  {"id": "16025337-s1", "templateId": "central-ideas-and-details.A1.T2.hard", "verdict": "ok"},
+  {"id": "a12a83ce-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "type_drift", "detail": "Stem 'which point does Nora most directly make about herself' is T7-style (what point/question the text makes about a referent), not T8 character-trait inference. Answer B is correct and defensible, but the type tag should be T7."},
+  {"id": "6762772f-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "458b4a11-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "f7bd14de-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "b69d821d-s1", "templateId": "central-ideas-and-details.A1.T2.hard", "verdict": "ok"},
+  {"id": "a3fb5e77-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "2fdfe002-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "ok"},
+  {"id": "7812801f-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "701126bc-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "ok"},
+  {"id": "d1b8a9ad-s1", "templateId": "central-ideas-and-details.A3.T6.hard", "verdict": "aspect_drift", "detail": "Stem 'most strongly suggest about the reggaeton genre' targets the whole-passage thesis (genre underestimated despite substantive engagement). Correct answer B paraphrases the passage's overall claim, fitting A1 main-idea synthesis rather than A3 single-detail inference. Answer is correct."},
+  {"id": "96802cc0-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "36e2868f-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "ok"},
+  {"id": "1ba5ad7a-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "dcca0dfc-s1", "templateId": "central-ideas-and-details.A3.T8.hard", "verdict": "difficulty_drift", "detail": "T8.hard requires 'pre-twentieth-century prose with elaborate syntax and elevated diction.' Mantel's 2009 Wolf Hall is modern prose; the syntactic friction defining T8.hard is absent. Inference is otherwise plausible and answer B is correct."}
+]

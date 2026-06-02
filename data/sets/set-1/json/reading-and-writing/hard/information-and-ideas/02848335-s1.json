@@ -1,0 +1,39 @@
+{
+  "questionId": "02848335-s1",
+  "originalId": "02848335",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Recyclable Plastic Yield (kg per tonne of input) from Pyrolysis and Solvolysis Methods at Two Plants</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Method</th><th>Lowest-yielding plant (kg/tonne)</th><th>Highest-yielding plant (kg/tonne)</th></tr>\n<tr><td>Pyrolysis</td><td>612</td><td>684</td></tr>\n<tr><td>Solvolysis</td><td>465</td><td>540</td></tr>\n</table>\n<p>Recycling mixed plastics into reusable material remains a challenge, in part because traditional mechanical processes degrade plastic quality. Two emerging chemical methods&mdash;pyrolysis and solvolysis&mdash;can break plastics down to their building blocks. Engineer Mariana Costa and colleagues compared the two methods at multiple commercial plants and concluded that pyrolysis is a more robust option for industrial-scale recycling of mixed plastics.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Costa and colleagues&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Even the lowest-yielding pyrolysis plant produced more recyclable plastic per tonne than the highest-yielding solvolysis plant did.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The highest-yielding pyrolysis plant produced approximately 684 kg of recyclable plastic per tonne, while the highest-yielding solvolysis plant produced approximately 540 kg per tonne.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Both methods showed a substantial difference between their lowest- and highest-yielding plants.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The lowest-yielding plant overall used solvolysis, while the highest-yielding plant overall used pyrolysis.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it shows that pyrolysis outperforms solvolysis even in worst-case versus best-case comparison: the weakest pyrolysis plant (612 kg/tonne) still beat the strongest solvolysis plant (540 kg/tonne). This robustly supports the conclusion that pyrolysis is more dependable industrially. Choice B reports values without comparing methods directly in the way needed. Choice C describes within-method variation, not between-method advantage. Choice D restates extremes without showing the lowest pyrolysis exceeds the highest solvolysis.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T9.medium"
+}

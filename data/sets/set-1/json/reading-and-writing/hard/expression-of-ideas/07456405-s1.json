@@ -1,0 +1,39 @@
+{
+  "questionId": "07456405-s1",
+  "originalId": "07456405",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Malapportionment is the over- or underrepresentation (relative to population size) of electoral districts in a governing body.</li><li>It occurs in many representative legislatures.</li><li>There are 100 seats in the Senate of the Argentine Congress.</li><li>Seats are distributed by a formula that allocates exactly three senators to each of the 23 provinces and the autonomous city of Buenos Aires, regardless of population.</li><li>Densely populated provinces, such as Buenos Aires Province, receive the same number of senators as sparsely populated provinces, such as Tierra del Fuego.</li></ul>",
+  "stem": "<p>The student wants to refute a claim that malapportionment in the Argentine Senate favors densely populated provinces. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Densely populated provinces are disproportionally underrepresented in the Argentine Senate, creating an unfair advantage for sparsely populated provinces.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Allocating an equal number of senators to each province regardless of population, the formula used to distribute seats in the Argentine Senate overrepresents sparsely populated provinces such as Tierra del Fuego.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A common feature of representative legislatures, malapportionment occurs when electoral districts are over- or underrepresented relative to population size.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It's untrue that malapportionment in the 100-seat Argentine Senate favors densely populated provinces; rather, the seat-allocation formula favors highly urbanized provinces.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. By noting that allocating an equal number of senators to each province regardless of population overrepresents sparsely populated provinces, the sentence directly refutes the claim that malapportionment in the Argentine Senate favors densely populated provinces.</p><p>Choice A is incorrect because, while it correctly says densely populated provinces are underrepresented, it doesn't use the relevant detail from the notes about the seat-allocation formula. Choice C is incorrect because it defines malapportionment generally rather than addressing the Argentine Senate. Choice D is incorrect because, although it appears to refute the claim, it misrepresents the notes\u2014the formula overrepresents sparsely populated provinces, not highly urbanized ones.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "rhetorical-synthesis.A2.T6.hard"
+}

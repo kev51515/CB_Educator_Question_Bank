@@ -1,0 +1,25 @@
+{
+  "questionId": "3cc2eacc-s1",
+  "originalId": "3cc2eacc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A1.T1.medium",
+  "stimulus": "<p>In a study of the mechanisms underlying motor learning—or the ability to acquire and refine new physical skills through practice—neuroscientists Tomás Reyes, Hana Park, and others observed rats running through obstacle courses. The team discovered that Purkinje cells, a type of cell found in the cerebellum, are required for the consolidation of newly learned motor sequences. They also found that Purkinje cell activity requires serotonin, a chemical the brain produces in response to rhythmic exercise. Consequently, engaging in rhythmic exercise should likely help to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>decrease an individual's capacity to produce Purkinje cells.</p>"},
+    {"id": "b", "content": "<p>decrease an individual's capacity to utilize serotonin.</p>"},
+    {"id": "c", "content": "<p>increase an individual's capacity to consolidate motor learning.</p>"},
+    {"id": "d", "content": "<p>increase an individual's capacity to detect differences between unrelated physical movements.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is best. Purkinje cells are needed for consolidating motor learning, and their activity requires serotonin, which the brain produces in response to rhythmic exercise. By the stated principle, rhythmic exercise should support the cell activity that supports consolidation, increasing an individual's capacity to consolidate motor learning. Choice A is unsupported; the text never discusses how Purkinje cells are created. Choice B reverses the relationship the text describes. Choice D introduces a capacity (detecting differences) that the text does not associate with motor learning.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "c19b2f77-s1",
+  "originalId": "c19b2f77",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T2.medium",
+  "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>Relatively little is known about when Mars lost most of its early atmosphere&mdash;a transition that turned a once temperate planet into the cold, thin-aired world observed today. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Some scientists maintain</span> that the bulk of this loss occurred about 4 billion years ago, often citing simulations of Martian magnetic field decay that predict rapid stripping of atmospheric gases by the solar wind once the planet&rsquo;s magnetic dynamo shut down.</p><p>&nbsp;</p><p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>Ultimately, any plausible account of when Mars lost its atmosphere must rest on direct chemical evidence from the planet itself. Researcher Diego Hurtado and his team measured ratios of light to heavy isotopes of argon trapped in ancient Martian meteorites and, based on the data, compellingly argue that substantial atmospheric loss was already well underway approximately 4.4 billion years ago&mdash;considerably earlier than the dynamo-decay scenario allows.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to what &ldquo;some scientists maintain&rdquo; as described in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By suggesting that the strength of Mars&rsquo;s early magnetic field was likely insufficient to delay atmospheric loss as long as the simulations predict</p>"},
+    {"id": "b", "content": "<p>By asserting that a more direct form of evidence than the simulations points to a different timeline for Martian atmospheric loss</p>"},
+    {"id": "c", "content": "<p>By distinguishing between simulations of magnetic field decay that reliably reproduce atmospheric loss and those that do not</p>"},
+    {"id": "d", "content": "<p>By indicating that newer simulations of magnetic field decay tend to be considerably more reliable than their predecessors</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The underlined claim relies on simulations of magnetic field decay to date atmospheric loss to roughly 4 billion years ago. Text 2 insists that any plausible account must rest on direct chemical evidence and presents Hurtado&rsquo;s isotopic measurements of Martian meteorites as such evidence, supporting a substantially earlier timeline. The author of Text 2 would therefore respond by asserting that a more direct form of evidence than the simulations points to a different timeline.</p><p>Choice A is incorrect because Text 2 makes no claim about the strength of Mars&rsquo;s magnetic field. Choice C is incorrect because Text 2&rsquo;s objection is not to which simulations are reliable but to the reliance on simulations as the basis for dating. Choice D is incorrect because Text 2 does not argue that improved simulations would settle the question.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

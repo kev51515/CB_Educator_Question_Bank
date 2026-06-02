@@ -1,0 +1,39 @@
+{
+  "questionId": "10c448d6-s1",
+  "originalId": "10c448d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line in the <i>xy</i>-plane has a slope of &frac17; and passes through the point (0, 12). Which equation represents this line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = &minus;&frac17;<i>x</i> &minus; 12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = &frac17;<i>x</i> &minus; 12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = &frac17;<i>x</i> + 12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = &minus;&frac17;<i>x</i> + 12</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The line has the form <i>y</i> = <i>mx</i> + <i>b</i> with slope <i>m</i> = &frac17; and <i>y</i>-intercept (0, 12), so <i>b</i> = 12. Thus <i>y</i> = &frac17;<i>x</i> + 12.</p><p>Choices A, B, and D are incorrect: each uses the wrong sign for the slope or the wrong sign for the <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T5.easy"
+}

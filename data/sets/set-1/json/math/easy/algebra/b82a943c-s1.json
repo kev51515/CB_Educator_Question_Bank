@@ -1,0 +1,39 @@
+{
+  "questionId": "b82a943c-s1",
+  "originalId": "b82a943c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>6</mn><mi>y</mi><mo>=</mo><mn>42</mn></math>, what is the value of <math><mn>9</mn><mi>y</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>27</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>54</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>252</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>63</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Dividing both sides of <math><mn>6</mn><mi>y</mi><mo>=</mo><mn>42</mn></math> by 6 yields <math><mi>y</mi><mo>=</mo><mn>7</mn></math>. Substituting into <math><mn>9</mn><mi>y</mi></math> yields <math><mn>9</mn><mo>(</mo><mn>7</mn><mo>)</mo><mo>=</mo><mn>63</mn></math>.</p><p>Choices A, B, and C are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

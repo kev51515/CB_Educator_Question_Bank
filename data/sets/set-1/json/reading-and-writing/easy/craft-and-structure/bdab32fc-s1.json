@@ -1,0 +1,39 @@
+{
+  "questionId": "bdab32fc-s1",
+  "originalId": "bdab32fc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Avocados depended on now-extinct giant ground sloths to scatter their large seeds. After these animals disappeared at the end of the last Ice Age, avocados might have vanished as well. Around this time, however, ancestors of Mesoamerican peoples began cultivating avocado trees, thus <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the plants' continued existence.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>securing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>checking</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>multiplying</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>soothing</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because \"securing\" means guaranteeing or making certain, which fits the text's account of cultivation preventing the plant's extinction. Choice B is incorrect because \"checking\" means halting or restraining, the opposite of what cultivation accomplished. Choice C is incorrect because while the trees themselves grew in number, it does not make sense to describe their survival as \"multiplying.\" Choice D is incorrect because \"soothing\" means easing distress and does not apply to ensuring a species' continued existence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

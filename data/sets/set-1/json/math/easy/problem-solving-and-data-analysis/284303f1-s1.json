@@ -1,0 +1,39 @@
+{
+  "questionId": "284303f1-s1",
+  "originalId": "284303f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are 450 books on a shelf. Of these books, 8% are nonfiction. How many of the books are nonfiction?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>414</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 8% of 450 is 0.08 \u00d7 450 = 36.</p><p>Choice A is incorrect. This is just the percentage value, not applied to 450.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This is the number of books that are not nonfiction (92%).</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

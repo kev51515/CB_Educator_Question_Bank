@@ -1,0 +1,39 @@
+{
+  "questionId": "c3b116d7-s1",
+  "originalId": "c3b116d7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is(are) a factor of 2<i>x</i>&sup2; + 11<i>x</i> &minus; 21?</p><p>I. <i>x</i> &minus; 7</p><p>II. 2<i>x</i> &minus; 3</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neither I nor II</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Factor 2<i>x</i>&sup2; + 11<i>x</i> &minus; 21 by looking for two numbers whose product is 2(&minus;21) = &minus;42 and whose sum is 11; these are 14 and &minus;3. Splitting the middle term and factoring by grouping gives 2<i>x</i>&sup2; + 14<i>x</i> &minus; 3<i>x</i> &minus; 21 = 2<i>x</i>(<i>x</i> + 7) &minus; 3(<i>x</i> + 7) = (<i>x</i> + 7)(2<i>x</i> &minus; 3). So II is a factor, but I (<i>x</i> &minus; 7) is not. The answer is II only.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A2.T5.hard"
+}

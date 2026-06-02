@@ -1,0 +1,25 @@
+{
+  "questionId": "b13378c8-s1",
+  "originalId": "b13378c8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>During the Bracero Program of 1942&ndash;1964, which brought millions of Mexican workers to the United States on temporary agricultural contracts, labor organizer and <em>El Malcriado</em> writer Ernesto Galarza was instrumental in helping returning braceros establish themselves once their contracts ended. Many men hoped for steadier work back home because, on the U.S. side of the border, they faced exploitative wages and growers often dismissed them at the end of the harvest. To aid with this transition, Galarza connected returning workers with cooperatives and legal aid groups before their journeys south of the border had even begun.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To establish that Galarza used his professional connections to arrange jobs for braceros at <em>El Malcriado</em></p>"},
+    {"id": "b", "content": "<p>To demonstrate that the factors motivating the Bracero Program differed between Mexican workers and U.S. growers</p>"},
+    {"id": "c", "content": "<p>To provide an overview of the wage and dismissal practices faced by braceros in the United States</p>"},
+    {"id": "d", "content": "<p>To introduce and illustrate Galarza&rsquo;s integral role in supporting returning braceros as their circumstances changed during part of the Bracero Program</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it most accurately describes the text&rsquo;s purpose, which is to discuss the important role Galarza played in supporting returning braceros as they re-established themselves at the end of their contracts. After introducing Galarza, the text describes how he connected returning workers with cooperatives and legal aid groups to ease their transition.</p><p>Choice A is incorrect because, although the text mentions Galarza&rsquo;s work as a writer for <em>El Malcriado</em>, it does not indicate that he placed braceros in jobs at that publication. Choice B is incorrect because the text does not compare the motivations of workers and growers, nor does it claim such factors caused the program. Choice C is incorrect because, although the text mentions wages and dismissal practices, its main purpose is to highlight Galarza&rsquo;s supporting role, not to survey those practices.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

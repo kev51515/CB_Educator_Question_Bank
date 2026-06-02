@@ -1,0 +1,39 @@
+{
+  "questionId": "e006209c-s1",
+  "originalId": "e006209c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A botanist needs to collect at least 145 samples of leaves from a forest. If the botanist has already collected 138 samples, what is the minimum number of additional samples the botanist needs to collect?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>138</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>283</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The botanist needs at least 145 - 138 = 7 more samples.</p><p>Choice A means none, but more are needed. Choice B is samples already collected. Choice C is the sum, not the difference.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy"
+}

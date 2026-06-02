@@ -1,0 +1,39 @@
+{
+  "questionId": "988c78eb-s1",
+  "originalId": "988c78eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Civil rights leader Bayard Rustin and labor organizer A. Philip Randolph worked together to plan the 1963 March on Washington, a demonstration that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the goals of racial justice and economic equality for all Americans.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>advances</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>have advanced</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>were advancing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>advance</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The singular verb \"advances\" agrees in number with the singular subject \"demonstration.\"</p><p>Choice B is incorrect because the plural verb \"have advanced\" doesn't agree in number with the singular subject \"demonstration.\" Choice C is incorrect because the plural verb \"were advancing\" doesn't agree in number with the singular subject \"demonstration.\" Choice D is incorrect because the plural verb \"advance\" doesn't agree in number with the singular subject \"demonstration.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

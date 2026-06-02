@@ -1,0 +1,39 @@
+{
+  "questionId": "2edd7ffe-s1",
+  "originalId": "2edd7ffe",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologist Tom\u00e1s Rivera visited the Cerro Blanco rock shelter in northern Peru. While surveying the floor of the shelter, Rivera noticed long rows of small grooves worn into the flat stone. Rivera believed the grooves could have been used as a board for early versions of patolli, a strategy game once played widely in the region. Some newer grooves had been worn directly over older, fainter ones. This led Rivera to think that the game had been played at the site for many generations.</p>",
+  "stem": "<p>According to the text, why does Rivera think that patolli was played at the site for many generations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She found the grooves inside the Cerro Blanco rock shelter.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Some of the grooves were very deep and others were shallow.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She noticed long rows of small grooves worn into the flat stone.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Some of the newer grooves had been worn over older, fainter ones.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text states explicitly that newer grooves worn over older ones led Rivera to think the game had been played at the site for many generations.</p><p>Choice A is incorrect; the location of the find tells where the game was played, not how long it was played. Choice B is incorrect; the text never mentions a contrast in groove depth. Choice C is incorrect; the rows of grooves suggested that the surface was a game board, not how long it had been used.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

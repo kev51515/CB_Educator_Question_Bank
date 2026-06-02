@@ -1,0 +1,25 @@
+{
+  "questionId": "3882ddf6-s1",
+  "originalId": "3882ddf6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T9.medium",
+  "stimulus": "<p>To investigate the history of continental glaciation—when massive ice sheets repeatedly advanced across landmasses—Mei-Ling Chao and colleagues compared ancient sediments from the Vaalbara Craton in southern Africa to modern glacial deposits. Using mineral grain analysis, the researchers found that Vaalbara sediments dating to about 2.9 billion years ago (bya) most strongly resemble modern sediments deposited in warm, shallow seas. By contrast, they found that Vaalbara sediments dating to about 2.4 bya and 2.2 bya have a grain composition that closely matches that of modern glacial till. Chao's team therefore concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>continental-glaciation processes had begun affecting some regions no later than 2.4 bya.</p>"},
+    {"id": "b", "content": "<p>glaciation replaced warm-sea deposition as the most common geological process by about 2.9 bya.</p>"},
+    {"id": "c", "content": "<p>most of the sediments in the Vaalbara Craton were deposited by glaciers.</p>"},
+    {"id": "d", "content": "<p>the sediments in the Vaalbara Craton are more recent in origin than scientists previously believed.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is best. Because sediments at 2.4 and 2.2 bya match modern glacial till, continental glaciation must have begun affecting that region by 2.4 bya at the latest. Choice B conflates dates and overgeneralizes; the 2.9 bya layer reflects warm shallow seas, not glaciation. Choice C is unsupported; the proportion of glacial vs. non-glacial sediment is not given. Choice D is unsupported; no claim is made that prior dating was wrong.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

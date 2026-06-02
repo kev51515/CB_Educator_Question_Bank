@@ -1,0 +1,39 @@
+{
+  "questionId": "1d0b5bf4-s1",
+  "originalId": "1d0b5bf4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>To compose the songs in her 2019 album <em>Roots Replanted</em>, songwriter Mira Cortez used a method she calls \"melodic borrowing.\" This method involves taking a single melodic phrase from a traditional folk song and weaving a wholly new song around it, line by line. Cortez wanted the songs on <em>Roots Replanted</em> to celebrate the work of overlooked Latin American folk musicians of the twentieth century, so she chose phrases by artists such as Atahualpa Yupanqui and Violeta Parra. Writing this way is technically demanding and might be expected to produce music that sounds awkward or derivative. Nevertheless, music critics praised <em>Roots Replanted</em> as a heartfelt and skillful homage to the musicians who inspired it. This reception suggests that ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Cortez inspired many other songwriters to use melodic borrowing in their own work.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Yupanqui and Parra are two of Cortez's favorite musicians.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>most critics didn't understand Cortez's intention for <em>Roots Replanted</em>.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Cortez successfully used melodic borrowing to achieve her goal for <em>Roots Replanted</em>.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Critics praised the album as a heartfelt homage to the inspiring musicians \u2014 which was precisely Cortez's stated goal \u2014 so the method worked.</p><p>Choice A speculates about influence on others, which the text doesn't address. Choice B speculates about Cortez's personal favorites, which isn't established. Choice C contradicts the praise the text reports.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A3.T7.easy"
+}

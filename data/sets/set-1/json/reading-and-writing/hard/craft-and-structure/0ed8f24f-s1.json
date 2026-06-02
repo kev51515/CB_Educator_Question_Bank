@@ -1,0 +1,25 @@
+{
+  "questionId": "0ed8f24f-s1",
+  "originalId": "0ed8f24f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Sara Tehrani and colleagues found that small, repeated tremors detected high in a volcano's flank can serve as an early warning of a major eruption&mdash;explosive events that originate deep in the magma chamber and can disrupt aviation thousands of kilometers away. In the hours before an eruption, the upper-flank tremor count rises sharply above the very region where the discharge is ______.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>antecedent</p>"},
+    {"id": "b", "content": "<p>perpetual</p>"},
+    {"id": "c", "content": "<p>innocuous</p>"},
+    {"id": "d", "content": "<p>imminent</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The sentence describes tremor activity that appears \"in the hours before an eruption\" as an early warning of that eruption. \"Imminent\" means about to happen, which matches the temporal relationship between the tremor signal and the impending eruption.</p><p>Choice A is incorrect because the tremors come before the eruption, so the eruption itself is not antecedent. Choice B is incorrect because the eruption is described as an episodic event, not a perpetual one. Choice C is incorrect because the text emphasizes the eruption's disruption of aviation, hardly innocuous.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

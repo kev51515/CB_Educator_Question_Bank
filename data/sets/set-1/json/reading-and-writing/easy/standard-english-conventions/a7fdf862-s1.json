@@ -1,0 +1,39 @@
+{
+  "questionId": "a7fdf862-s1",
+  "originalId": "a7fdf862",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Talavera pottery, ceramics painted with bold blue and yellow designs, can be found across central Mexico. These pieces decorate places such as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> markets, and government buildings.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>cathedrals, town</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>cathedrals town</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>cathedrals: town</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>cathedrals&mdash;town</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Notice that \"cathedrals\" is the first item in a list of three things. A comma must be used to separate the first two items in the list, just as a comma is used to separate \"markets\" and \"government buildings.\"</p><p>Choice B is incorrect because the list requires punctuation between items. Choice C is incorrect because a colon cannot be used to separate items within a list. Choice D is incorrect because a dash creates an interruption inconsistent with the rest of the list.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A4.T8.easy"
+}

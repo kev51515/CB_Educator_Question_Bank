@@ -1,0 +1,39 @@
+{
+  "questionId": "e7d48c8a-s1",
+  "originalId": "e7d48c8a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A dot plot shows the number of chirps observed for 11 crickets in a one-second interval. The data values, in order, are: 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3. If a 12th observation with 9 chirps is added to the data set, consider the following statements: I. The mean of the new data set equals the mean of the original data set. II. The median of the new data set equals the median of the original data set. Which statement(s) must be true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Neither I nor II</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>II only</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The original median (11 values) is the 6th value, which is 2. With 12 values, the median is the average of the 6th and 7th values; since both are 2, the new median is still 2. So statement II is true. The original mean is (1&middot;3 + 2&middot;5 + 3&middot;3)/11 = (3 + 10 + 9)/11 = 22/11 = 2. Adding a value of 9 changes the sum to 31 and the count to 12, giving a new mean of 31/12 &asymp; 2.58, not equal to 2. Statement I is false. So only II is true.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard"
+}

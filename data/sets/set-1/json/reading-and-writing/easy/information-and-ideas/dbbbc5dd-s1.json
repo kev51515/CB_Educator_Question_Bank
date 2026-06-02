@@ -1,0 +1,39 @@
+{
+  "questionId": "dbbbc5dd-s1",
+  "originalId": "dbbbc5dd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Small storefront galleries emerged in the 1970s as a counterpoint to large established museums in major cities, freeing curators to mount exhibitions that were far more experimental than typical museum shows. One such curator was painter and gallerist Kazuko Tanaka. Working with small storefront galleries enabled Tanaka not only to assemble her own shows but to mount them exactly as she envisioned them, no matter how unconventional the results might have seemed to museumgoers used to traditional gallery layouts. In this way, Tanaka ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>recognized that mounting a storefront gallery show was more complicated than a museum exhibition.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>illustrates the artistic opportunity offered by small storefront galleries.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>curated shows that would have been too expensive to mount if someone else had been in charge.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>would have been more famous if she had curated mainstream shows instead of experimental ones.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The text establishes that storefront galleries enabled experimental work, then describes Tanaka exercising that exact freedom \u2014 so she exemplifies the opportunity those spaces offered.</p><p>Choice A speculates about complexity, not addressed. Choice C imagines costs, not discussed. Choice D speculates about fame, not raised.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A3.T7.easy"
+}

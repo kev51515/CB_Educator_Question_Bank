@@ -1,0 +1,39 @@
+{
+  "questionId": "9fc31513-s1",
+  "originalId": "9fc31513",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The perimeter of an isosceles triangle is <math><mn>52</mn></math> inches. Each of the two congruent sides has a length of <math><mn>14</mn></math> inches. What is the length, in inches, of the third side?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>14</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>20</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>26</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>24</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The equation <math><mn>14</mn><mo>+</mo><mn>14</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>52</mn></math> gives <math><mn>28</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>52</mn></math>. Subtracting 28 yields <math><mi>x</mi><mo>=</mo><mn>24</mn></math>.</p><p>Choices A, B, and C are incorrect; they correspond to incorrect perimeters.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

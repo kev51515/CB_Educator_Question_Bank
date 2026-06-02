@@ -1,0 +1,22 @@
+{
+  "questionId": "9f934297-s1",
+  "originalId": "9f934297",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A right rectangular prism has a length of 18 centimeters (cm), a width of 24 cm, and a height of 30 cm. What is the surface area, in cm&sup2;, of the right rectangular prism?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3384"
+  ],
+  "rationale": "<p>The correct answer is 3384. The surface area of a right rectangular prism is 2(LW + LH + WH) = 2(18&times;24 + 18&times;30 + 24&times;30) = 2(432 + 540 + 720) = 2(1,692) = 3,384 cm&sup2;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T1.hard"
+}

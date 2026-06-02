@@ -1,0 +1,39 @@
+{
+  "questionId": "7f2524bf-s1",
+  "originalId": "7f2524bf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph shows the estimated value, in dollars, of an e-reader as a function of the number of months since it was purchased. The <i>y</i>-intercept of the graph is (0, 310). What is the best interpretation of the <i>y</i>-intercept of the graph in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The estimated value of the e-reader 30 months after it was purchased was $310.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The estimated value of the e-reader decreased by $310 over the period shown.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The estimated value of the e-reader was $310 when it was purchased.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The estimated value of the e-reader decreased by approximately 3.10% each month after it was purchased.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The <i>x</i>-coordinate represents the number of months after purchase, so <i>x</i> = 0 corresponds to the time of purchase. The <i>y</i>-intercept (0, 310) therefore tells us the estimated value was $310 when the e-reader was purchased.</p><p>Choices A, B, and D are incorrect interpretations of the <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A2.T2.easy"
+}

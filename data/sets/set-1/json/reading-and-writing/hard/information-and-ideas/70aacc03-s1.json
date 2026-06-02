@@ -1,0 +1,39 @@
+{
+  "questionId": "70aacc03-s1",
+  "originalId": "70aacc03",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Economist Renata Okonkwo has documented a negative correlation between the share of a mid-sized city's labor force employed in tourism and the city's ability to attract long-term private capital from outside the region. This finding may seem unexpected\u2014large-scale tourism infrastructure (hotels, transit hubs, convention venues) typically requires upfront capital of the kind that interregional investors are well positioned to provide\u2014but Okonkwo observes that the strongly seasonal nature of tourism revenue, combined with the industry's acute sensitivity to broader macroeconomic shocks, tends to produce volatile local economies, generating just the sort of uncertainty that interregional investors generally seek to avoid.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Although mid-sized cities tend to become less dependent on outside capital as tourism becomes a larger share of their employment, this change may not occur if tourism's seasonality destabilizes the local economy.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Although interregional investors tend to avoid initial investments in tourism in mid-sized cities, such investment may grow significantly as the industry stabilizes and its risks decline.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Although one might expect interregional investment to rise as tourism's share of a mid-sized city's labor force grows, the opposite occurs because reliance on tourism tends to create economic conditions that investors find unappealing.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Although it may seem counterintuitive that interregional investment declines as tourism's share of a city's workforce grows, the decline occurs because the upfront capital required is too great for interregional investors to provide.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text identifies the counterintuitive observation (more tourism employment \u2192 less long-term outside investment), and explains it by citing the volatility induced by tourism's seasonality and macro-sensitivity\u2014conditions that interregional investors dislike. This is the central claim Choice C captures.</p><p>Choice A is incorrect because the text never frames lower dependence on outside capital as a normal outcome that fails to materialize; it argues investment is simply driven away by volatility. Choice B is incorrect because the text does not discuss long-term industry stabilization or any rebound in investment. Choice D is incorrect because the text actually concedes the upfront capital is the kind interregional investors typically supply; it locates the deterrent in volatility, not in capital scale.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

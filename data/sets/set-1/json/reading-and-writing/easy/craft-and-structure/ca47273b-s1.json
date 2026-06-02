@@ -1,0 +1,25 @@
+{
+  "questionId": "ca47273b-s1",
+  "originalId": "ca47273b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Mycologist Suzanne Simard and colleagues have documented an extensive underground fungal network in the temperate forests of British Columbia. The network is formed by mycorrhizal fungi, and it <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> hundreds of hectares of forest floor, connecting the roots of many tree species.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>announces</p>"},
+    {"id": "b", "content": "<p>covers</p>"},
+    {"id": "c", "content": "<p>delivers</p>"},
+    {"id": "d", "content": "<p>approaches</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because \"covers\" means extends across, which fits the description of a fungal network spanning a wide area of forest floor. Choice A is incorrect because \"announces\" means makes known and does not describe spatial extent. Choice C is incorrect because \"delivers\" means hands over and does not describe how a network occupies an area. Choice D is incorrect because \"approaches\" means moves toward; the network already occupies the area rather than moving toward it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

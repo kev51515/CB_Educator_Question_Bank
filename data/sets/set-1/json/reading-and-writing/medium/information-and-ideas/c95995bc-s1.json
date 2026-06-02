@@ -1,0 +1,25 @@
+{
+  "questionId": "c95995bc-s1",
+  "originalId": "c95995bc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T11.medium",
+  "stimulus": "<p>Settled by Portuguese mariners in the late 1400s, the Cabo Verde islands developed a creole language, Kabuverdianu, whose vocabulary preserves many sixteenth-century Portuguese forms that mainland Portuguese has long since reshaped. Why would Kabuverdianu have preserved them? The islands lay far from the main Atlantic shipping lanes that connected Lisbon to Brazil and West Africa, so few new colonists arrived after the initial settlement. That separation in turn limited speakers&rsquo; exposure to the shifts in pronunciation and grammar spreading through Portuguese in Europe. Thus, the present-day distinctiveness of Kabuverdianu suggests the extent to which <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>contact between island and mainland speakers eventually erases all linguistic differences.</p>"},
+    {"id": "b", "content": "<p>relative geographic isolation can shape how a language develops over time.</p>"},
+    {"id": "c", "content": "<p>the vocabulary of any given language is replaced every few generations.</p>"},
+    {"id": "d", "content": "<p>speakers of related languages can ordinarily understand one another without difficulty.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text explains that Kabuverdianu retains older Portuguese features and attributes that retention to the islands&rsquo; remoteness from busy shipping routes, which limited contact with newer mainland speech. The most logical generalization is that relative geographic isolation can shape how a language develops.</p><p>Choice A is incorrect because the text describes effects of separation, not of renewed contact. Choice C is incorrect because the text emphasizes what has been preserved across generations, not how quickly vocabulary turns over. Choice D is incorrect because the text never addresses mutual intelligibility between related varieties.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

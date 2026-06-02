@@ -1,0 +1,25 @@
+{
+  "questionId": "db2e480a-s1",
+  "originalId": "db2e480a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T1.medium",
+  "stimulus": "<p>By the time Maori chief Te Rauparaha <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the haka known as \"Ka Mate,\" trade networks linking the South Island to whaling vessels, first established in the early 1800s, had grown considerably, and so too had the demand for skilled negotiators to mediate exchanges across the coastal villages then dotting the shoreline.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>will compose</p>"},
+    {"id": "b", "content": "<p>is composing</p>"},
+    {"id": "c", "content": "<p>composes</p>"},
+    {"id": "d", "content": "<p>composed</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Composed\" is in the simple past tense. Since Te Rauparaha composed the haka in the past, this makes the most sense.</p><p>Choice A is incorrect. \"Will compose\" is in the future tense, but we wouldn&rsquo;t know about the composition if it hadn&rsquo;t happened yet. The information in the sentence, as well as the tense of other verbs (\"had grown\"), tells us that the events described happened in the past. Choice B is incorrect. \"Is composing\" is in the present-progressive tense, which doesn&rsquo;t fit the past-tense context. Choice C is incorrect. \"Composes\" is in the simple present tense, which doesn&rsquo;t fit the past-tense context.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

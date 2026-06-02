@@ -1,0 +1,25 @@
+{
+  "questionId": "742fd8ba-s1",
+  "originalId": "742fd8ba",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Average Mineral Content of Seedlings With and Without Streptomycin Exposure (mg/kg)</p></caption><thead><tr><th>Experimental condition</th><th>Calcium</th><th>Magnesium</th></tr></thead><tbody><tr><td>without streptomycin (control)</td><td>520</td><td>340</td></tr><tr><td>with streptomycin</td><td>180</td><td>220</td></tr></tbody></table></figure><p>Many young plants lose chlorophyll when exposed to streptomycin, an antibiotic produced by certain soil bacteria. Howard University botanist Dorian Akinyi and her colleagues hypothesized that this response involves a change in how the plants take up minerals such as calcium and magnesium. The researchers grew two groups of <em>Brassica rapa</em> seedlings, one exposed to streptomycin and one a control group without exposure, and measured the seedlings&rsquo; mineral content seven days after germination.</p>",
+  "stem": "<p>Which choice best describes data in the table that support Akinyi and her colleagues&rsquo; hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The control seedlings contained higher levels of magnesium than calcium, but the seedlings exposed to streptomycin contained higher levels of calcium than magnesium.</p>"},
+    {"id": "b", "content": "<p>Both groups of seedlings contained more than 100 mg/kg of both calcium and magnesium.</p>"},
+    {"id": "c", "content": "<p>Calcium levels were around 180 mg/kg in the control seedlings but nearly 520 mg/kg in the seedlings exposed to streptomycin.</p>"},
+    {"id": "d", "content": "<p>The seedlings exposed to streptomycin showed lower levels of calcium and magnesium than the control seedlings did.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The hypothesis is that streptomycin exposure alters mineral uptake. The table shows that streptomycin-exposed seedlings had lower calcium (180 vs. 520) and lower magnesium (220 vs. 340) than controls, supporting altered uptake. Choice A is incorrect because the control seedlings actually had higher calcium than magnesium, not the reverse, and the streptomycin group also had higher calcium than magnesium is false (180 < 220), so the description is doubly wrong. Choice B is incorrect because, while accurate, it does not contrast the two groups and so does not bear on the hypothesis. Choice C is incorrect because it inverts the actual control and treated values.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

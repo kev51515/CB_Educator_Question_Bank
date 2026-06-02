@@ -1,0 +1,39 @@
+{
+  "questionId": "066a3295-s1",
+  "originalId": "066a3295",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists have found a roughly 9,000-year-old stone tool from a member of an early human community on a small island off the coast of Greece, suggesting that these communities reached more distant locations than earlier evidence indicated. <u>Before the discovery, these communities were thought to have stayed close to the mainland, traveling only short distances along sheltered coastlines</u>, but the discovery of the tool on the island suggests that they may have crossed open sea over significant distances as well.</p>",
+  "stem": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It provides context that clarifies the significance of the information that follows in the rest of the sentence.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It dismisses as untrue the research presented in the previous sentence.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It defines a term used in the description that follows in the rest of the sentence.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It emphasizes the main goal of the research introduced in the previous sentence.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The underlined portion describes what was previously believed about these early communities, helping the reader understand why the discovery of the tool on a distant island is significant: it suggests they traveled farther than once thought.</p><p>Choice B is incorrect. The underlined portion doesn't dismiss research; it explains what was previously believed. Choice C is incorrect. No term is defined. Choice D is incorrect. The text never describes the goal of the research.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

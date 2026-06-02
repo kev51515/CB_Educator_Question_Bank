@@ -1,0 +1,22 @@
+{
+  "questionId": "b96ff36e-s1",
+  "originalId": "b96ff36e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the <em>xy</em>-plane, the graph of the equation (x &minus; 4)<sup>2</sup> + (y &minus; 8)<sup>2</sup> = 25 is a circle. What is the y-coordinate of the center of the circle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>The correct answer is 8. The standard form of a circle in the xy-plane is (x &minus; h)<sup>2</sup> + (y &minus; k)<sup>2</sup> = r<sup>2</sup>, where (h, k) is the center. Comparing this to (x &minus; 4)<sup>2</sup> + (y &minus; 8)<sup>2</sup> = 25 shows h = 4 and k = 8, so the y-coordinate of the center is 8.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A1.T1.medium"
+}

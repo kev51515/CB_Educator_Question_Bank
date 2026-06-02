@@ -1,0 +1,25 @@
+{
+  "questionId": "356ad646-s1",
+  "originalId": "356ad646",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Auckland, New Zealand, has armored roughly 65% of its central harbor coastline with engineered structures to protect roads and seawalls from wave erosion and storm surge, a practice known as coastal armoring. To evaluate the responses of small reef fishes to two common types of armoring—rock revetments and concrete seawalls—Hana Te Whaiti and colleagues surveyed reef-fish communities including the spotty, the parore, and 47 other species at various sites along the harbor. Using the Reef Fish Community Health Index (RFCHI), on which a high score corresponds to high community health, the researchers found that concrete seawalls are more strongly negatively correlated with reef-fish community health than are rock revetments.</p>",
+  "stem": "<p>Which finding, if true, would most directly illustrate the researchers' finding?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The difference in average RFCHI scores for reef-fish communities at Pier 21 and Pier 28, two sites with a higher percentage of shoreline consisting of concrete seawalls than of rock revetments, was statistically insignificant.</p>"},
+    {"id": "b", "content": "<p>Reef-fish communities at Pier 28, a site with a relatively high percentage of shoreline consisting of concrete seawalls, had lower average RFCHI scores than did reef-fish communities at Mission Cove, a site with a relatively high percentage of shoreline consisting of rock revetments.</p>"},
+    {"id": "c", "content": "<p>Reef-fish communities at Hobson Point, a site with a high percentage of shoreline consisting of both concrete seawalls and rock revetments, had lower average RFCHI scores than did reef-fish communities at Manukau Bay, a site with a low percentage of shoreline consisting of either type of armoring.</p>"},
+    {"id": "d", "content": "<p>Reef-fish communities at Hobson Point, a site with equal percentages of shoreline consisting of concrete seawalls and rock revetments, had higher average RFCHI scores than did reef-fish communities at Mission Cove, a site with different percentages of those two types of armoring.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most directly illustrates the researchers' finding that concrete seawalls are more strongly negatively correlated with reef-fish community health than are rock revetments—that is, that concrete seawalls reduce reef-fish community health more than rock revetments do. Finding that a site dominated by concrete seawalls (Pier 28) had lower average RFCHI scores than a site dominated by rock revetments (Mission Cove) is a clear, site-level example of exactly that pattern.</p><p>Choice A is incorrect because two sites both dominated by concrete seawalls cannot illustrate a contrast between seawalls and rock revetments. Choice C is incorrect because contrasting a heavily armored site (both armoring types) with a lightly armored site only shows that armoring in general lowers community health; it does not isolate seawalls vs. revetments. Choice D is incorrect because it compares one site with equal seawall and revetment coverage to another with unequal coverage; that comparison does not isolate the relative effect of seawalls versus revetments.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e744499e-s1",
+  "originalId": "e744499e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A summer camp coordinator is ordering c crafts kits and t T-shirts for the camp. The coordinator must order at least 30 items, and the total cost of the order cannot exceed $400. Each crafts kit costs $7, and each T-shirt costs $10. Which of the following systems of inequalities represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7c + 10t &ge; 30 and c + t &le; 400</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>c + t &ge; 30 and 7c + 10t &le; 400</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>c + t &le; 30 and 7c + 10t &ge; 400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10c + 7t &ge; 30 and c + t &le; 400</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The total items is c + t &ge; 30, and total cost is 7c + 10t &le; 400.</p><p>Choices A, C, and D mix counts with costs or use wrong directions.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy"
+}

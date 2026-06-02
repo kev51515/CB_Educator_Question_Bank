@@ -1,0 +1,39 @@
+{
+  "questionId": "02fd3da7-s1",
+  "originalId": "02fd3da7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Researcher Mei Tanaka examined hybrid work policies in companies across Japan. She argues that allowing employees to work some days from home leads to a noticeable improvement in productivity, since workers can focus during quiet hours and avoid stressful commutes. Therefore, companies that permit hybrid schedules tend to outperform those that require workers to be in the office every day.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>Workplaces are more efficient when teams can communicate face-to-face. However, allowing employees to work from home some days may have hidden costs. A 2023 study by economists Lin Park and Diego Alvarez found that, when employees work remotely, they often miss informal hallway conversations that help solve problems quickly. As a result, productivity gains measured in isolation may not capture the full picture of a team's performance.</p>",
+  "stem": "<p>Based on the texts, how would Park and Alvarez (Text 2) most likely respond to the claim made in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Productivity gains from hybrid work may overlook the value of informal team interactions that occur only in the office.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Companies should require all employees to return to the office five days a week.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Hybrid work policies are more effective in some industries than in others.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Reducing commute time is the most important factor in worker satisfaction.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Park and Alvarez argue that productivity measures miss the value of informal in-person interactions, so they would push back on Tanaka's positive conclusion about hybrid work by noting that the productivity picture is incomplete.</p><p>Choices B, C, and D are not supported by Text 2's specific argument.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.easy"
+}

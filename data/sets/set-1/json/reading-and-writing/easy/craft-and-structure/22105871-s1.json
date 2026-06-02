@@ -1,0 +1,39 @@
+{
+  "questionId": "22105871-s1",
+  "originalId": "22105871",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>In a study of bird intelligence, researcher Alex Taylor and colleagues observed New Caledonian crows bending wire into hooks to retrieve food from narrow tubes. The crows had not been shown how to do this, and they often invented new tool shapes when an existing tool didn\u2019t work. <u>The crows appeared to be genuinely creative \u2014 inventing solutions in much the way that human problem-solvers do</u>.</p><p><strong>Text 2</strong></p><p>Crows do not have a neocortex of the kind associated with human creative thought. Still, Taylor and his team have shown that crows can flexibly modify tools to fit new problems. If we are willing to call this kind of behavior \u201ccreative,\u201d we should also be careful: the cognitive processes that underlie it are almost certainly far simpler than those involved in human invention.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the underlined portion of Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By objecting that the crows were probably not solving the problem at all, but merely repeating a learned action</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By arguing that other corvids besides crows may also be capable of similar tool-making behavior</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By noting that even human problem-solvers sometimes fail to find creative solutions to simple problems</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By granting that the crows show a form of creativity but pointing out that the underlying cognitive processes are likely much simpler than those of humans</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The author of Text 2 accepts that crows can flexibly modify tools to solve new problems, which is consistent with the underlined claim that crows are creative. However, the author qualifies the claim by emphasizing that the cognitive processes are \u201calmost certainly far simpler than those involved in human invention.\u201d Choice D captures both this partial agreement and the qualification.</p><p>Choice A is incorrect because Text 2 does not contest that the crows were solving a problem. Choice B is incorrect because Text 2 doesn\u2019t shift the discussion to other corvid species. Choice C is incorrect because Text 2 doesn\u2019t draw the comparison about humans failing.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "cross-text-connections.A1.T2.easy"
+}

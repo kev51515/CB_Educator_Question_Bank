@@ -1,0 +1,39 @@
+{
+  "questionId": "660d50dc-s1",
+  "originalId": "660d50dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Yuri Kochiyama was a Japanese American civil rights activist who worked alongside many leaders of the 1960s movements. The daughter of Japanese immigrants who experienced wartime internment, Kochiyama drew connections between many struggles for justice. For instance, she joined African American organizations fighting for racial equality. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she advocated for Puerto Rican independence and reparations for Japanese Americans.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Actually,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Regardless,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In addition,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"In addition\" logically signals that the detail in this sentence&mdash;that Kochiyama advocated for Puerto Rican independence and Japanese American reparations&mdash;adds to the information in the previous sentence about her joining African American organizations. The previous sentence indicates one way she connected struggles for justice, and this sentence indicates additional ways.</p><p>Choice A is incorrect because \"however\" illogically signals contrast; instead, the second action complements the first. Choice B is incorrect because \"actually\" illogically signals a surprising modification of the previous claim. Choice C is incorrect because \"regardless\" illogically signals the information is true despite the previous fact, when it actually adds to that fact.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T10.easy"
+}

@@ -1,0 +1,14 @@
+[
+  {"id": "911c7a87-s1", "templateId": "transitions.A5.T13.easy", "verdict": "ok"},
+  {"id": "dd087f31-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "7f20374f-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "5c58cec0-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "4154a7a3-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "37957752-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "1ccfcea4-s1", "templateId": "transitions.A4.T11.easy", "verdict": "ok"},
+  {"id": "b5972710-s1", "templateId": "transitions.A1.T1.easy", "verdict": "ok"},
+  {"id": "d3898d32-s1", "templateId": "transitions.A3.T8.easy", "verdict": "ok"},
+  {"id": "b6ebadf6-s1", "templateId": "transitions.A5.T13.easy", "verdict": "ok"},
+  {"id": "6081831f-s1", "templateId": "transitions.A5.T15.easy", "verdict": "ok"},
+  {"id": "0ee64efc-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"}
+]

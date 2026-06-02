@@ -1,0 +1,39 @@
+{
+  "questionId": "2592e0de-s1",
+  "originalId": "2592e0de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Sewing machines were first produced for home use in the mid-nineteenth century across the United States and parts of Europe, dramatically changing how families could make and mend clothing. With a sewing machine, a household could finish in an hour what had previously taken a full day by hand, and the affordable price of newer models made the technology accessible to working families. People used the time saved to take on side work as seamstresses, sew goods for sale at local markets, and form neighborhood sewing circles that shared patterns and traded fabric.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The popularity of home sewing machines in the mid-nineteenth century led directly to the creation of the first sewing circles.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The introduction of the home sewing machine in the mid-nineteenth century opened up new opportunities for families.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The mass production of sewing machines in the mid-nineteenth century made hand-sewing safer for people to do.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The low price of the home sewing machine in the mid-nineteenth century made it the preferred way to mend clothing.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text describes a series of new opportunities the home sewing machine created for families, including paid side work, selling sewn goods, and joining sewing circles.</p><p>Choice A is incorrect; sewing circles are only one detail in the text, not its main idea. Choice C is incorrect; the text says nothing about safety. Choice D is incorrect; the text never claims that the sewing machine became the preferred way to mend clothing over any alternative.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

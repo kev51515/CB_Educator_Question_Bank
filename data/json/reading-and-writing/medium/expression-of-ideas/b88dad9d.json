@@ -1,0 +1,72 @@
+{
+  "questionId": "b88dad9d",
+  "externalId": "075003df-5e06-4b3f-88b4-1a859b06ea0d",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:22.080712+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "aded8720-0d42-4254-ae1d-84883db308e9",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "4bce628d-c873-475a-bae6-a69aa823b0ce",
+      "content": "<p>Instead,</p>"
+    },
+    {
+      "id": "2ed7b190-42eb-4b86-9c04-108931e2cadc",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "061bfb10-cfe0-4d62-9edd-07afeacacc8f",
+      "content": "<p>Consequently,</p>"
+    }
+  ],
+  "keys": [
+    "061bfb10-cfe0-4d62-9edd-07afeacacc8f"
+  ],
+  "rationale": "<p>Choice D is the best answer. &ldquo;Consequently&rdquo; logically signals that the information in this sentence&mdash;that many Arabic words entered the Spanish language&mdash;is a result or consequence of the previous information about Arabic-speaking Muslim states ruling Al-Andalus for centuries.</p><p>Choice A is incorrect because &ldquo;for example&rdquo; illogically signals that the information about Arabic words entering Spanish exemplifies the Arabic-speaking history of Al-Andalus mentioned in the previous sentence. Instead, Arabic words entering Spanish is a consequence of that history. Choice B is incorrect because &ldquo;instead&rdquo; illogically signals that the information about Arabic words entering Spanish provides an alternative to the Arabic-speaking history of Al-Andalus mentioned in the previous sentence. The information about Arabic words entering Spanish is a consequence of that history. Choice C is incorrect because &ldquo;specifically&rdquo; illogically signals that the information about Arabic words entering Spanish provides specific details elaborating on the Arabic-speaking history of Al-Andalus mentioned in the previous sentence. Instead, Arabic words entering Spanish is a consequence of that history.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>Al-Andalus, the historical region of the Iberian Peninsula that includes most of modern-day Spain, was ruled by various Arabic-speaking Muslim states between the eighth and fifteenth centuries. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many Arabic words, such as &ldquo;alacr&aacute;n&rdquo;&mdash;meaning &ldquo;scorpion&rdquo;&mdash;made their way into the Spanish language.</p>",
+    "keys": [
+      "061bfb10-cfe0-4d62-9edd-07afeacacc8f"
+    ],
+    "answerOptions": [
+      {
+        "id": "aded8720-0d42-4254-ae1d-84883db308e9",
+        "content": "<p>For example,</p>"
+      },
+      {
+        "id": "4bce628d-c873-475a-bae6-a69aa823b0ce",
+        "content": "<p>Instead,</p>"
+      },
+      {
+        "id": "2ed7b190-42eb-4b86-9c04-108931e2cadc",
+        "content": "<p>Specifically,</p>"
+      },
+      {
+        "id": "061bfb10-cfe0-4d62-9edd-07afeacacc8f",
+        "content": "<p>Consequently,</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. &ldquo;Consequently&rdquo; logically signals that the information in this sentence&mdash;that many Arabic words entered the Spanish language&mdash;is a result or consequence of the previous information about Arabic-speaking Muslim states ruling Al-Andalus for centuries.</p><p>Choice A is incorrect because &ldquo;for example&rdquo; illogically signals that the information about Arabic words entering Spanish exemplifies the Arabic-speaking history of Al-Andalus mentioned in the previous sentence. Instead, Arabic words entering Spanish is a consequence of that history. Choice B is incorrect because &ldquo;instead&rdquo; illogically signals that the information about Arabic words entering Spanish provides an alternative to the Arabic-speaking history of Al-Andalus mentioned in the previous sentence. The information about Arabic words entering Spanish is a consequence of that history. Choice C is incorrect because &ldquo;specifically&rdquo; illogically signals that the information about Arabic words entering Spanish provides specific details elaborating on the Arabic-speaking history of Al-Andalus mentioned in the previous sentence. Instead, Arabic words entering Spanish is a consequence of that history.</p>",
+    "externalid": "075003df-5e06-4b3f-88b4-1a859b06ea0d",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Al-Andalus, the historical region of the Iberian Peninsula that includes most of modern-day Spain, was ruled by various Arabic-speaking Muslim states between the eighth and fifteenth centuries. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many Arabic words, such as &ldquo;alacr&aacute;n&rdquo;&mdash;meaning &ldquo;scorpion&rdquo;&mdash;made their way into the Spanish language.</p>"
+}

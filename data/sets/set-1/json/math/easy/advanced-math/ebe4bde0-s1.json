@@ -1,0 +1,39 @@
+{
+  "questionId": "ebe4bde0-s1",
+  "originalId": "ebe4bde0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A quadratic function models the yield of a certain crop, in kilograms per hectare, as a function of the average soil moisture (in percent) in a region. The function has its maximum value at a moisture level of 18%. According to the model, which of the following is closest to the soil moisture level, in percent, at which the crop yield is greatest?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. For a quadratic function whose graph is a parabola, the maximum (or minimum) value occurs at the vertex. The model has its maximum at a moisture level of 18%, so yield is greatest at 18% soil moisture.</p><p>Choices A, B, and C do not correspond to the location of the vertex of the model.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A2.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "25893fc7-s1",
+  "originalId": "25893fc7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In many cultures, eye contact during conversation can signal attentiveness and respect. Engineer Priya Ranjan and her team are designing a service robot that can make and break eye contact with humans in order to improve customer interactions in shops. The robot's cameras and sensors adjust where it appears to look based on the person's movements and speech, mimicking the patterns of a human listener. The researchers want the robot's eye contact to feel natural because ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>it's easier to program a robot to make eye contact than to program it to perform some other gestures.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>people are less likely to interact with robots that don't resemble humans.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>natural-feeling eye contact may make customers more at ease interacting with robots.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the robot in the researchers' study may have uses other than interacting with humans.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The text says eye contact signals attentiveness and respect, and the engineers' goal is to improve customer interactions \u2014 so natural eye contact would help put customers at ease.</p><p>Choice A speculates about programming ease, never raised in the text. Choice B raises appearance-of-robots, not discussed. Choice D speculates about uses beyond human interaction, also not discussed.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A1.T1.easy"
+}

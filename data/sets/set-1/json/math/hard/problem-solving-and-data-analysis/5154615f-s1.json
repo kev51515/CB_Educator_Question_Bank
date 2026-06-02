@@ -1,0 +1,22 @@
+{
+  "questionId": "5154615f-s1",
+  "originalId": "5154615f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>To analyze variations in mineral composition, samples of basalt were collected from 34 sites and cut into cubes. One such cube has an edge length of 4.000 centimeters and a density of 0.185 grams per cubic centimeter. What is the mass of this cube, in grams?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11.84"
+  ],
+  "rationale": "<p>The volume of the cube is (4.000 cm)<sup>3</sup> = 64 cubic centimeters. Since the density is 0.185 grams per cubic centimeter, the mass is (0.185 g/cm\u00b3)(64 cm\u00b3) = 11.84 grams.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard"
+}

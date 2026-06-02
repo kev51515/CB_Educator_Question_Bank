@@ -1,0 +1,39 @@
+{
+  "questionId": "aeeaec96-s1",
+  "originalId": "aeeaec96",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>How many yards are equivalent to 504 inches? (1 yard = 36 inches)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.071</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>468</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18,144</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since 1 yard = 36 inches, 504 inches = 504 \u00f7 36 = 14 yards.</p><p>Choice A is incorrect; it reverses the division. Choice B is incorrect; it results from subtracting. Choice D is incorrect; it multiplies instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

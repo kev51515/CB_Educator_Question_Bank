@@ -1,0 +1,39 @@
+{
+  "questionId": "7f935017-s1",
+  "originalId": "7f935017",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Virginia Woolf's 1925 novel <em>Mrs. Dalloway</em>. The narrator is describing London at dusk.</p><blockquote><p>The day was sliding now into that translucent half-light that precedes the lamps, and the river beneath the bridge had begun to take on the colors of the hour. The sun, already low behind the warehouses, was <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">apparent</span> only in the streaks of copper laid across the water, brightening and fading and brightening again, each gleam thinner and more weary than the last, and condemned no sooner kindled to be extinguished.</p></blockquote><p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1925 by Virginia Woolf</span></p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Visible</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Acknowledged</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Situated</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Fading</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. In this passage, the sun is described as below the warehouses and indirectly detected only through reflected color on the water. \"Apparent\" most clearly means \"visible,\" since the streaks of copper are what allow the sun to be seen at all.</p><p>Choice B is incorrect. \"Acknowledged\" means recognized in a social or formal sense, which does not match the visual experience the passage describes. Choice C is incorrect. \"Situated\" means located, which doesn't fit\u2014\"apparent\" describes how the sun was perceived, not where it sat. Choice D is incorrect. \"Fading\" describes a process; \"apparent\" denotes presence to the senses, not change over time.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A1.T1.hard"
+}

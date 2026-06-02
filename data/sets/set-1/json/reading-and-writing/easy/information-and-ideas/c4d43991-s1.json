@@ -1,0 +1,39 @@
+{
+  "questionId": "c4d43991-s1",
+  "originalId": "c4d43991",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists have been debating the origin of an unusual variety of tin found in Bronze Age artifacts from the eastern Mediterranean since its presence was identified in the 1980s. Different researchers have proposed theories on which mining regions would have supplied the raw materials containing this specific tin, but no conclusive evidence has emerged. What is intriguing is that bronze artifacts from the same region dated after the Late Bronze Age do not contain this form of tin, suggesting that ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Late Bronze Age artifacts are rare and therefore more valuable than those from later periods.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>methods used to analyze bronze artifacts are not useful on pieces dated after the Late Bronze Age.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>bronze was used only briefly during the Late Bronze Age before different metals replaced it.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the source of some of the raw materials used to make bronze was exploited only until the end of the Late Bronze Age.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The unusual tin is present only in artifacts up to the end of the Late Bronze Age, suggesting that source stopped being used after that period.</p><p>Choice A speaks of rarity/value, not implied. Choice B introduces analytical methods, not raised. Choice C contradicts the text \u2014 bronze artifacts continued to be made afterwards (they just lacked the unusual tin).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T9.easy"
+}

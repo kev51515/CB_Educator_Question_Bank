@@ -1,0 +1,25 @@
+{
+  "questionId": "a44bbd6b-s1",
+  "originalId": "a44bbd6b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "stimulus": "<p>Several studies of pebble shape in mountain rivers have shown that pebbles become more rounded the farther they travel from their bedrock source, suggesting that downstream transport progressively rounds pebbles through abrasion. In a study of pebbles sampled at more than a dozen sites in rivers draining the Tian Shan range of Central Asia, however, geologists Aigerim Bektur and Faisal Qureshi found no consistent correlation between pebble roundness and downstream distance from the sampling sites&rsquo; presumed bedrock source. Bektur and Qureshi concluded that, in these particular rivers, much of the pebble supply must enter the rivers at points well downstream of the bedrock source, thereby disrupting the expected rounding-with-distance pattern.</p>",
+  "stem": "<p>Which finding about the rivers in the study, if true, would most directly support Bektur and Qureshi&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The rivers contain several types of pebble lithologies not typically found in rivers where the rounding-with-distance pattern has been demonstrated.</p>"},
+    {"id": "b", "content": "<p>The rivers regularly experience portions of their banks collapsing into the water at multiple points downstream of the bedrock source but upstream of the sampling sites.</p>"},
+    {"id": "c", "content": "<p>The rivers are fed by multiple tributaries that carry significant volumes of pebbles and that enter the rivers downstream of the sampling sites.</p>"},
+    {"id": "d", "content": "<p>The rivers mostly originate from the same bedrock source, but their lengths vary considerably due to the different courses they take.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because Bektur and Qureshi&rsquo;s specific conclusion is that pebbles enter the rivers at points well downstream of the bedrock source. Bank collapse occurring at multiple downstream points (but upstream of the sampling sites) injects fresh, unrounded pebbles into the rivers between source and sampling site, thereby disrupting the expected rounding-with-distance pattern at precisely the locations the conclusion requires.</p><p>Choice A is incorrect because unusual pebble lithologies do not, by themselves, indicate where in the river the pebbles enter. Choice C is incorrect because tributaries entering downstream of the sampling sites cannot affect the pebbles already sampled upstream, so they fail to explain the observed pattern at the sampling sites. Choice D is incorrect because shared bedrock origin and varying river length are background facts that do not specifically establish downstream pebble entry.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

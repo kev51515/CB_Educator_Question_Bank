@@ -1,0 +1,39 @@
+{
+  "questionId": "d94018fd-s1",
+  "originalId": "d94018fd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number of books read last month by each of 10 students in club X is: 1, 2, 2, 3, 5, 7, 9, 10, 10, 11. The number of books read last month by each of 10 students in club Y is: 5, 5, 6, 6, 6, 6, 6, 6, 7, 7. Both data sets have the same mean. Which of the following statements correctly compares the standard deviation of the number of books read by students in club X to the standard deviation of the number of books read by students in club Y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The standard deviation of the number of books read by students in club X is greater than the standard deviation of the number of books read by students in club Y.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The standard deviation of the number of books read by students in club X is less than the standard deviation of the number of books read by students in club Y.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The standard deviation of the number of books read by students in club X is equal to the standard deviation of the number of books read by students in club Y.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>There is not enough information to compare these standard deviations.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Standard deviation measures the spread of data around the mean. The values in club X range from 1 to 11 and are widely scattered, while the values in club Y are tightly clustered between 5 and 7 (most equal to 6). Because both data sets have the same mean but the data in club X are much more spread out, the standard deviation of club X must be greater than the standard deviation of club Y. Choices B, C, and D are incorrect because there is sufficient information from the two lists to conclude that club X has the greater spread.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium"
+}

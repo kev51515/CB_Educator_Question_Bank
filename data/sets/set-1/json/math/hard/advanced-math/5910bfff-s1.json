@@ -1,0 +1,39 @@
+{
+  "questionId": "5910bfff-s1",
+  "originalId": "5910bfff",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A temperature scale S is defined by the equation S &minus; B = &minus;(4/25)(100 &minus; F), where B is a constant and F is the temperature on a second scale. Which of the following correctly expresses F in terms of S and B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>F = &minus;(25/4)(S &minus; B) &minus; 100</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>F = &minus;(25/4)(S &minus; B) + 100</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>F = (4/25)(S &minus; B) + 100</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>F = (25/4)(S &minus; B) + 100</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Starting from S &minus; B = &minus;(4/25)(100 &minus; F), multiply both sides by 25/4 to obtain (25/4)(S &minus; B) = &minus;(100 &minus; F) = F &minus; 100. Therefore F = (25/4)(S &minus; B) + 100. Choices A and B reverse the sign in front of the (25/4) factor, and choice C uses the reciprocal coefficient.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard"
+}

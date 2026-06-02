@@ -1,0 +1,22 @@
+[
+  {"id": "4d037075-s1", "templateId": "nonlinear-functions.A3.T5.hard", "verdict": "ok"},
+  {"id": "a9084ca4-s1", "templateId": "nonlinear-functions.A2.T2.hard", "verdict": "ok"},
+  {"id": "ce508fb0-s1", "templateId": "nonlinear-functions.A1.T1.hard", "verdict": "ok"},
+  {"id": "270cf326-s1", "templateId": "nonlinear-functions.A3.T5.hard", "verdict": "ok"},
+  {"id": "58dcc59f-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "difficulty_drift", "detail": "Clone is single-variable area=w(w+3)=70 (medium lever: 'one dimension in terms of the other; given area, solve for width'). Hard requires 3D volume, two simultaneous constraints, or KE-style application."},
+  {"id": "4a0d0399-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "84dd43f8-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "difficulty_drift", "detail": "Stem is medium-style value-after-n-periods with percent-change phrasing. Hard requires non-annual period rewrite, 150%-more vs 150%-OF distractor, or doubling-time recovery."},
+  {"id": "b0543157-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "ebed7dc6-s1", "templateId": "nonlinear-functions.A2.T2.hard", "verdict": "aspect_drift", "detail": "Stem asks for the numeric x-value that produces the maximum revenue (vertex of quadratic). That is A3.T3 (vertex/extreme value), not A2 interpretation. No 'best interpretation' phrasing or symbol-to-meaning mapping is required."},
+  {"id": "128c75e2-s1", "templateId": "nonlinear-functions.A1.T1.hard", "verdict": "ok"},
+  {"id": "2d1614a1-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "ok"},
+  {"id": "f678483b-s1", "templateId": "nonlinear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "08d03fe4-s1", "templateId": "nonlinear-functions.A5.T2.hard", "verdict": "constraint_violation", "detail": "Violates must_preserve 'multiple equivalent forms among answer choices'. Computing f(1) in each: A=189, B=63, C=63, D=21. Options are NOT equivalent forms of one function f. Rationale is also internally contradictory ('f(1)=21 in all forms' then shows differing values)."},
+  {"id": "7eed640d-s1", "templateId": "nonlinear-functions.A2.T2.hard", "verdict": "ok"},
+  {"id": "2c6f214f-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "difficulty_drift", "detail": "Basic geometric-sequence formula w=ar^(n-1) is medium-level at most. Hard requires period rewrite, 150% trap, base-rebased exponential, or doubling-time analysis."},
+  {"id": "9afe2370-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "aspect_drift", "detail": "Stem builds an exponential decay model from a verbal percent-decrease description with no unknown parameter to solve. This is A4.T1 (build exponential growth/decay model), not A6.T1 (solve for parameter from structural condition)."},
+  {"id": "6d9e01a2-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "91e7ea5e-s1", "templateId": "nonlinear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "5a74f696-s1", "templateId": "nonlinear-functions.A4.T1.easy", "verdict": "ok"},
+  {"id": "5377d9cf-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"}
+]

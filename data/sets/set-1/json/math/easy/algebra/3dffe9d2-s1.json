@@ -1,0 +1,39 @@
+{
+  "questionId": "3dffe9d2-s1",
+  "originalId": "3dffe9d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T2.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Adam purchased a pass that cost $24.50 to enter a state fair. He also purchased 8 identical wristbands for his friends. The pass and the wristbands cost $60.50 total. What was the cost of one wristband?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$4.50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$5.50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$7.50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$10.62</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 8 wristbands cost 60.50 - 24.50 = 36.00, so each costs 36.00/8 = $4.50.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

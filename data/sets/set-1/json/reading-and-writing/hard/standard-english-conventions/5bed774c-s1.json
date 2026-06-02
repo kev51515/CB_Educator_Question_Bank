@@ -1,0 +1,39 @@
+{
+  "questionId": "5bed774c-s1",
+  "originalId": "5bed774c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Architect Lina Bo Bardi was a central figure in Brazilian ______ illustrated by her insistence that buildings should respond not to abstract aesthetic doctrine but to the daily rhythms and materials of the communities they served, Bo Bardi&rsquo;s designs were unmistakably populist.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>modernism. As</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>modernism, as</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>modernism and as</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>modernism as</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The period correctly marks the boundary between one complete sentence (\"Architect&hellip;modernism\") and another (\"As&hellip;populist\"). The long adverbial element \"as illustrated&hellip;served\" appropriately modifies the claim in the following clause about Bo Bardi&rsquo;s populist designs.</p><p>Choice B is incorrect because it produces a comma splice: a comma cannot mark a boundary between two independent clauses without a coordinating conjunction. Choice C is incorrect because, without a comma preceding it, the conjunction \"and\" cannot grammatically join the two sentences here. Choice D is incorrect because it creates a run-on; the two independent clauses are fused with no punctuation or conjunction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T1.hard"
+}

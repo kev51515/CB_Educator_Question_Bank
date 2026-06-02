@@ -1,0 +1,39 @@
+{
+  "questionId": "b2f6f17d-s1",
+  "originalId": "b2f6f17d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A customer's monthly internet bill was $92.50. Due to a rate increase, her monthly bill is now $97.00. To the nearest tenth of a percent, by what percent did the amount of the customer's internet bill increase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4.6%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.8%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4.9%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5.0%</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The percent increase is (new - old)/old &times; 100% = ($97.00 - $92.50)/$92.50 &times; 100% = $4.50/$92.50 &times; 100% &asymp; 0.04865 &times; 100% &asymp; 4.86%, which rounds to 4.9%. Choices A, B, and D are incorrect; they reflect small computational or rounding errors but do not equal the actual percent increase rounded to the nearest tenth.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T3.medium"
+}

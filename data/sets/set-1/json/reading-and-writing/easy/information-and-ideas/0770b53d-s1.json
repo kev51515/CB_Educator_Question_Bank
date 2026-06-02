@@ -1,0 +1,39 @@
+{
+  "questionId": "0770b53d-s1",
+  "originalId": "0770b53d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><em>The Country of the Pointed Firs</em> is an 1896 novel by Sarah Orne Jewett. In the novel, Jewett portrays Almira Todd as having a deep emotional connection to the coastal landscape of her home: <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which quotation from <em>The Country of the Pointed Firs</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"Almira spoke with the captain about the price of mackerel that season, and listened carefully as he described the boats that had gone out from the harbor that week.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"It was Almira who kept the small ledger of herb sales, and who knew almost to the penny what each parcel of dried tansy or pennyroyal had cost her to gather and prepare.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"Almira drove the cart down to the wharf alone, the wheels rattling over the worn planks, her shawl drawn close against a wind that was rising off the cold gray water.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"She had never known until that hour how much the shore had meant to her. The cry of the gulls along the rocks was like a familiar voice. She felt as if her whole heart were laid out on the warm flat ledges with the sea lavender and the gulls' grass; below the hush of the firs, she felt the seasons turning.\"</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The quotation says directly how much the shore meant to Almira, compares the gulls' cry to a familiar voice, places her heart on the rocks among the sea lavender, and connects her feelings to the turning of the seasons, all of which illustrate a deep emotional connection to the coastal landscape.</p><p>Choice A is incorrect; talking with the captain about mackerel prices is practical, not emotional. Choice B is incorrect; the ledger details show business sense, not emotional connection. Choice C is incorrect; the wagon ride to the wharf describes action and weather, not emotion.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A1.T2.easy"
+}

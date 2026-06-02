@@ -1,0 +1,39 @@
+{
+  "questionId": "11b06e35-s1",
+  "originalId": "11b06e35",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The density of a certain solid substance is 945 kilograms per cubic meter. A sample of this substance is in the shape of a cube, where each edge has a length of 0.40 meters. To the nearest whole number, what is the mass, in kilograms, of this sample?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>151</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>378</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2,363</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The volume of a cube with edge length 0.40 m is 0.40\u00b3 = 0.064 m\u00b3. The mass is density \u00d7 volume = 945 \u00d7 0.064 = 60.48 kilograms, which rounds to 60.</p><p>Choices A, B, and D result from squaring instead of cubing the edge length or using the edge length itself rather than its cube.</p>",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard"
+}

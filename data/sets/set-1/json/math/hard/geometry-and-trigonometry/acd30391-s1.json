@@ -1,0 +1,39 @@
+{
+  "questionId": "acd30391-s1",
+  "originalId": "acd30391",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle in the xy-plane has equation (x \u2212 3)<sup>2</sup> + (y + 2)<sup>2</sup> = 36. Which of the following points does NOT lie in the interior of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(4, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(10, 2)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(3, 3)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The circle has center (3, \u22122) and radius 6. A point lies in the interior exactly when its distance to (3, \u22122) is less than 6. For (10, 2), the distance is \u221a((10\u22123)<sup>2</sup> + (2+2)<sup>2</sup>) = \u221a(49 + 16) = \u221a65 \u2248 8.06, which is greater than 6, so this point is NOT in the interior. The other three points all have distance less than 6.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A1.T3.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "1a8126aa-s1",
+  "originalId": "1a8126aa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>In 2020, archaeologist Beatrice Lim and ethnobotanist Daniel Okafor reconstructed a beverage from a 2,500-year-old residue scraped from a clay vessel uncovered in West Africa. When they sampled the drink, known locally as <em>sòkà</em> (\"to gather strength\"), they found that it had a warming taste and reportedly heightened alertness. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the researchers, aware that beverages of that era were sometimes named after the effects they produced on drinkers, proposed that the drink's name, \"to gather strength,\" pointed to its likely use as a stimulant given to laborers before long journeys.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Nevertheless,</p>"},
+    {"id": "b", "content": "<p>Conversely,</p>"},
+    {"id": "c", "content": "<p>Accordingly,</p>"},
+    {"id": "d", "content": "<p>Similarly,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Accordingly\" logically signals that the action described in this sentence—the researchers proposing that the drink's name pointed to its use as a stimulant—is a result or consequence of their observation that the drink had a warming taste and heightened alertness.</p><p>Choice A is incorrect because \"nevertheless\" illogically signals that the proposal was made despite the observation, when in fact it follows directly from that observation. Choice B is incorrect because \"conversely\" illogically signals that the proposal contrasts with the observation, when it is actually based on it. Choice D is incorrect because \"similarly\" illogically signals that this sentence merely adds a parallel detail, when it instead describes an inference drawn from the previous observation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

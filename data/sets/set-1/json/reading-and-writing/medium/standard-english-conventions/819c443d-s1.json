@@ -1,0 +1,25 @@
+{
+  "questionId": "819c443d-s1",
+  "originalId": "819c443d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>In <span data-ssml-say-as=\"date\">1791</span>, Olympe de Gouges published the <em>Declaration of the Rights of Woman and of the Female Citizen</em>, a pointed response to the French revolutionary government's exclusion of women from new civic protections. After her execution two years later, supporters in exile circulated her writings, and the daring <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> would influence later movements for women's suffrage across Europe.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>playwrights political pamphlets</p>"},
+    {"id": "b", "content": "<p>playwrights' political pamphlets'</p>"},
+    {"id": "c", "content": "<p>playwright's political pamphlet's</p>"},
+    {"id": "d", "content": "<p>playwright's political pamphlets</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The conventions being tested are the use of plural and possessive nouns. The singular possessive noun \"playwright's\" correctly indicates that the political pamphlets are those of Olympe de Gouges, and the plural noun \"pamphlets\" correctly indicates that multiple works by de Gouges are being discussed.</p><p>Choice A is incorrect because the context requires the singular possessive noun \"playwright's,\" not the plural noun \"playwrights.\" Choice B is incorrect because the context requires the singular possessive noun \"playwright's\" and the plural noun \"pamphlets,\" not the plural possessive nouns \"playwrights'\" and \"pamphlets'.\" Choice C is incorrect because the context requires the plural noun \"pamphlets,\" not the singular possessive noun \"pamphlet's.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

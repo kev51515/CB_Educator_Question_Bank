@@ -1,0 +1,22 @@
+{
+  "questionId": "40f0ee70-s1",
+  "originalId": "40f0ee70",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table shows the amount of time, in minutes, it took Daniela to complete each of 5 tasks in a project: Task I \u2014 4 minutes; Task II \u2014 7 minutes; Task III \u2014 10 minutes; Task IV \u2014 12 minutes; Task V \u2014 17 minutes. What was the mean time, in minutes, for Daniela to complete a task for this project?</p>",
+  "answerOptions": [],
+  "keys": [
+    "10"
+  ],
+  "rationale": "<p>The correct answer is 10. The mean of a data set is the sum of the values divided by the number of values. The sum of the times is 4 + 7 + 10 + 12 + 17 = 50, and there are 5 tasks, so the mean is 50 divided by 5 = 10.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

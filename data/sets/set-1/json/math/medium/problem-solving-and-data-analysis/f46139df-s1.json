@@ -1,0 +1,39 @@
+{
+  "questionId": "f46139df-s1",
+  "originalId": "f46139df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows a line of best fit passing through (24, 3) and (35, 9). According to the line of best fit, what is the predicted value of <em>y</em> when <em>x</em> = 30?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7.2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6.3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Slope = (9 − 3)/(35 − 24) = 6/11 ≈ 0.545. Line: y − 3 = (6/11)(x − 24). At x = 30: y = 3 + (6/11)(6) = 3 + 36/11 ≈ 3 + 3.27 = 6.27 ≈ 6.3.</p><p>Choices A, B, and C reflect arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

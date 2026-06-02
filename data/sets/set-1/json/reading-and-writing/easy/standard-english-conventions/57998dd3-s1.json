@@ -1,0 +1,39 @@
+{
+  "questionId": "57998dd3-s1",
+  "originalId": "57998dd3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Pumice is a kind of volcanic rock formed when frothy lava cools so quickly that gas bubbles become trapped inside it. You <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> more about pumice&rsquo;s low density, which allows it to float on water, in a later section.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>will read</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>had read</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>had been reading</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>have read</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The convention being tested is the use of verbs to express tense. The future tense &ldquo;will read,&rdquo; together with the phrase &ldquo;in a later section,&rdquo; correctly indicates that the reader will encounter this information later.</p><p>Choices B, C, and D are all past or perfect forms inconsistent with a future event in &ldquo;a later section.&rdquo;</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

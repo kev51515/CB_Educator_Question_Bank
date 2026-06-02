@@ -1,0 +1,39 @@
+{
+  "questionId": "175df826-s1",
+  "originalId": "175df826",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In a 2015 essay collection, journalist Dana Holloway describes how her grandmother&rsquo;s small grocery store in Detroit, Michigan, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as a gathering place for neighbors during the 1960s.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>functioned</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>functioning</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>having functioned</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to function</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The relative clause introduced by &ldquo;how&rdquo; requires a finite verb. The finite past tense verb &ldquo;functioned&rdquo; correctly indicates what the grocery store did during the 1960s.</p><p>Choice B is the nonfinite present participle and cannot serve as the main verb of the clause. Choice C is the nonfinite perfect participle and cannot serve as the main verb. Choice D is the nonfinite to-infinitive and cannot serve as the main verb.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

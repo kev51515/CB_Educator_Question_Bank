@@ -1,0 +1,39 @@
+{
+  "questionId": "ca50de52-s1",
+  "originalId": "ca50de52",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p><u>\"Does it sound real?\"</u> Many sound designers for video games make this question their organizing concern as they engineer everything from the ring of footsteps on stone to the snap of a closing door. As a rule, while the speech of game characters is exaggerated for legibility, ambient and incidental sounds are crafted to mimic the physical world. Some sound designers, however, such as Akira Watanabe at studio Tsuru, are guided by a different question altogether. Rather than asking first whether a sound matches its real-world counterpart, Watanabe asks whether it carries the emotion the scene is supposed to deliver&mdash;designing footsteps that are physically wrong but dramatically inevitable.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined question in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It reflects a primary goal that many sound designers have for certain components of their work.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It illustrates a reaction that gamers typically have to in-game sound effects.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It represents a concern of sound designers more interested in original soundscapes than realistic ones.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It conveys uncertainty among sound designers about whether current technology can produce realistic sounds.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text presents \"Does it sound real?\" as the question that organizes the practice of many sound designers, particularly for ambient and incidental sounds that are crafted to mimic the physical world. The underlined question functions as a shorthand for the realism-first goal that the passage will then contrast with Watanabe's emotion-first approach.</p><p>Choice B is incorrect because the question characterizes designers' priorities, not gamers' reactions. Choice C is incorrect because the passage treats this question as the conventional, not the original, route. Choice D is incorrect because the text does not portray designers as uncertain about technological capacity.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T6.hard"
+}

@@ -1,0 +1,24 @@
+{
+  "section": "Math",
+  "difficulty": "Hard",
+  "dcode": "H",
+  "domain": "Advanced Math",
+  "domain_code": "P",
+  "skill": "Equivalent expressions",
+  "skill_code": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mfrac><mroot><msup><mi>x</mi><mn>5</mn></msup><mn>4</mn></mroot><mroot><msup><mi>x</mi><mn>4</mn></msup><mn>3</mn></mroot></mfrac><mo>=</mo><msup><mi>x</mi><mrow><mi>a</mi><mo>/</mo><mi>b</mi></mrow></msup></math></p>\n<p>If the equation above holds for all positive values of <em>x</em>, what is the value of <math><mi>a</mi><mo>/</mo><mi>b</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-1/12",
+    "-.083",
+    "-.0833"
+  ],
+  "rationale": "<p>The correct answer is \u22121/12. Write the roots as fractional exponents: \u221c(x\u2075) = x^(5/4) and \u221b(x\u2074) = x^(4/3). So x^(5/4) / x^(4/3) = x^(5/4 \u2212 4/3) = x^(15/12 \u2212 16/12) = x^(\u22121/12). Therefore a/b = \u22121/12 \u2248 \u22120.0833.</p>",
+  "questionId": "40c09d66-s1",
+  "originalId": "40c09d66",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:28:54.548681+00:00",
+  "templateId": "equivalent-expressions.A3.T7.hard"
+}

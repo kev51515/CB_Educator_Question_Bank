@@ -1,0 +1,39 @@
+{
+  "questionId": "d1aeb6f1-s1",
+  "originalId": "d1aeb6f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>8x = 72</p><p>4x - 25 = y</p><p>The solution to the given system of equations is (x, y). What is the value of y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. x = 9. Then y = 4(9) - 25 = 11.</p><p>Choice B is x. Choice C is a constant. Choice D is 4x.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "cb4894f9-s1",
+  "originalId": "cb4894f9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A long-distance cyclist completed a leg of a tour with an average speed of 22.500 miles per hour. What was this average speed, in <u>yards</u> per hour? (1 mile = 1,760 yards)</p>",
+  "answerOptions": null,
+  "keys": [
+    "39600"
+  ],
+  "rationale": "<p>The correct answer is 39,600. Since 1 mile = 1,760 yards, 22.500 miles per hour is equivalent to 22.500 \u00b7 1,760 = 39,600 yards per hour.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium"
+}

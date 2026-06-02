@@ -1,0 +1,39 @@
+{
+  "questionId": "f5e8ccf1-s1",
+  "originalId": "f5e8ccf1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>h</em> is defined by <em>h</em>(<em>x</em>) = (<em>x</em> &minus; 2)(<em>x</em> + 5)(3<em>x</em> + 1). Which of the following is NOT an <em>x</em>-intercept of the graph of <em>h</em> in the <em>xy</em>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(&minus;5, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(&minus;1/3, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(&minus;2, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(2, 0)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The <em>x</em>-intercepts of <em>h</em> occur when <em>h</em>(<em>x</em>) = 0. Setting each factor equal to zero gives <em>x</em> = 2, <em>x</em> = &minus;5, and 3<em>x</em> + 1 = 0, so <em>x</em> = &minus;1/3. Therefore the <em>x</em>-intercepts are (2, 0), (&minus;5, 0), and (&minus;1/3, 0). The point (&minus;2, 0) is not an <em>x</em>-intercept. Choices A, B, and D are all <em>x</em>-intercepts of <em>h</em>.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "nonlinear-functions.A3.T4.medium"
+}

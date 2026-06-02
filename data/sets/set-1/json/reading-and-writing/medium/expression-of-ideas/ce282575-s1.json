@@ -1,0 +1,25 @@
+{
+  "questionId": "ce282575-s1",
+  "originalId": "ce282575",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A1.T2.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Ursula K. Le Guin&rsquo;s 1968 novel <em>A Wizard of Earthsea</em> features two appendices.</li>\n<li>The novel opens with a chronological list of major historical events in the fictional archipelago of Earthsea.</li>\n<li>This timeline orients readers to the long arc of history before they enter the story.</li>\n<li>The novel closes with a glossary defining terms in the invented Old Speech language.</li>\n<li>That glossary lets readers revisit and reflect on the meaning of phrases the characters used.</li>\n</ul>",
+  "stem": "<p>The student wants to contrast the purposes of the two appendices in <em>A Wizard of Earthsea</em>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>A Wizard of Earthsea</em>, a 1968 novel by Ursula K. Le Guin, features a chronological timeline at the start and a glossary at the end.</p>"},
+    {"id": "b", "content": "<p><em>A Wizard of Earthsea</em>&rsquo;s two appendices, one opening and one closing the novel, each serve a purpose for readers.</p>"},
+    {"id": "c", "content": "<p><em>A Wizard of Earthsea</em>&rsquo;s opening timeline orients readers to the long arc of Earthsea&rsquo;s history, while the closing glossary lets them revisit and reflect on the meaning of phrases the characters used.</p>"},
+    {"id": "d", "content": "<p>In 1968, author Ursula K. Le Guin published <em>A Wizard of Earthsea</em>, a novel featuring both an opening timeline and a closing glossary.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The sentence contrasts the purposes of the two appendices, noting that the opening timeline orients readers to Earthsea&rsquo;s history, while the closing glossary lets them revisit the meaning of phrases. The word &ldquo;while&rdquo; signals a contrast between the purposes.</p><p>Choice A is incorrect. While the sentence mentions the two appendices, it doesn&rsquo;t contrast their purposes. Choice B is incorrect. While the sentence mentions the two appendices and notes that each has a purpose, it doesn&rsquo;t specify what those purposes are or how they contrast. Choice D is incorrect. While the sentence mentions the two appendices, it doesn&rsquo;t contrast their purposes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

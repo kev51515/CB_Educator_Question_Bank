@@ -1,0 +1,25 @@
+{
+  "questionId": "f27559d4-s1",
+  "originalId": "f27559d4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T11.hard",
+  "stimulus": "<p>Mentoring, or freely sharing professional expertise with a less-experienced colleague, is widely regarded as a valuable form of workplace engagement because supporting individual development tends to strengthen entire organizations as well. In a recent survey of mid-career professionals across several industries in Canada, most respondents agreed that mentoring is a good way to help an individual mentee grow. Meanwhile, only about 8% of the respondents said that mentoring is a meaningful way to address larger organizational problems such as turnover or inequity. These replies suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>mentoring may benefit organizations even more substantially than many professionals currently recognize.</p>"},
+    {"id": "b", "content": "<p>many professionals believe that mentoring can occur only between people in the same department.</p>"},
+    {"id": "c", "content": "<p>mentoring tends to help organizations more than it can help any individual employee.</p>"},
+    {"id": "d", "content": "<p>many professionals may not know how to find appropriate mentees within their workplaces.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text takes as given that mentoring strengthens organizations as a whole. Yet only 8% of surveyed professionals see mentoring as a way to address organizational problems. If mentoring really does help at the organizational level, but few professionals recognize that benefit, the most reasonable inference is that mentoring is more helpful to organizations than many professionals currently realize.</p><p>Choice B is incorrect because the text never discusses where or with whom mentoring can occur. Choice C is incorrect because the text does not compare benefits to organizations against benefits to individuals. Choice D is incorrect because the text concerns beliefs about mentoring&rsquo;s effects, not the practical question of finding mentees.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

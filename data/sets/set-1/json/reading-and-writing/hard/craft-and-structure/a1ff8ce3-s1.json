@@ -1,0 +1,39 @@
+{
+  "questionId": "a1ff8ce3-s1",
+  "originalId": "a1ff8ce3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>As discussed by scholar Daniela Marques, many digital artworks produced for early gaming consoles in the late 1980s and early 1990s, such as Kenji Aoki's <em>Reverie</em> (1991), have become inaccessible because viewing them requires the use of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> hardware (most notably specialty cartridges that are no longer manufactured or supported).</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>extraneous</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>obsolete</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>ubiquitous</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>nascent</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Obsolete\" most logically completes the text. The parenthetical explains that the relevant hardware (cartridges) is no longer manufactured or supported—that is, no longer in use—so it is obsolete.</p><p>Choice A is incorrect. \"Extraneous\" means unnecessary or unrelated; this fails to capture the hardware's discontinuation. Choice C is incorrect. \"Ubiquitous\" means widespread—the opposite of what the parenthetical describes. Choice D is incorrect. \"Nascent\" means newly emerging, which contradicts the hardware's discontinuation.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 10 data points trending up from left to right. A line of best fit passes through the approximate coordinates (0, 2), (4, 10), and (8, 18). Which of the following equations best represents the line of best fit shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = \u22122 + 2x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 2 \u2212 2x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 2 + 2x</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = \u22122 \u2212 2x</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Slope = (10 \u2212 2)/(4 \u2212 0) = 2; y-intercept = 2. The line is y = 2 + 2x.</p><p>The other choices have wrong signs of the slope or y-intercept.</p>",
+  "questionId": "d230e963-s1",
+  "originalId": "d230e963",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy"
+}

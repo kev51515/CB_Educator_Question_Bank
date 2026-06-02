@@ -1,0 +1,39 @@
+{
+  "questionId": "6177abc5-s1",
+  "originalId": "6177abc5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Black-and-White Films Available for Streaming by Initial Release Years</caption><thead><tr><th>Initial release years</th><th>Percentage of films still available</th></tr></thead><tbody><tr><td>1920&ndash;1924</td><td>4%</td></tr><tr><td>1930&ndash;1934</td><td>12%</td></tr><tr><td>1940&ndash;1944</td><td>28%</td></tr><tr><td>1950&ndash;1954</td><td>61%</td></tr></tbody></table></figure><p>A film historian analyzed the availability of older black-and-white feature films on streaming platforms. The historian found that the highest percentage of still-available films were initially released in ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1950&ndash;1954.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1940&ndash;1944.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1930&ndash;1934.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1920&ndash;1924.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because 61% of films from 1950&ndash;1954 are still available, the highest percentage in the table.</p><p>Choice B is incorrect: 1940&ndash;1944 has 28% available, lower than 1950&ndash;1954. Choice C is incorrect: 1930&ndash;1934 has only 12% available. Choice D is incorrect: 1920&ndash;1924 has only 4% available, the lowest.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

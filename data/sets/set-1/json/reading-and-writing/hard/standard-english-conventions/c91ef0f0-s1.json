@@ -1,0 +1,25 @@
+{
+  "questionId": "c91ef0f0-s1",
+  "originalId": "c91ef0f0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>During the Great Depression, Dorothea Lange traveled the dust-stricken farmlands of California as a documentary photographer for the Farm Security Administration. Recording the dignity and hardships of migrant agricultural workers <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of central importance to Lange, who later helped found a major center for the study of photography in Oakland.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>was</p>"},
+    {"id": "c", "content": "<p>were</p>"},
+    {"id": "d", "content": "<p>have been</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"recording.\" Gerunds such as \"recording\" are always singular.</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"recording.\" Choice C is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject \"recording.\" Choice D is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"recording.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

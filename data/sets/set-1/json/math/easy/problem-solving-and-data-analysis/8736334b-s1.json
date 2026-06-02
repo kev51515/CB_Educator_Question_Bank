@@ -1,0 +1,39 @@
+{
+  "questionId": "8736334b-s1",
+  "originalId": "8736334b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set P: 81, 82, 83, 86, 88</p><p>Data set Q: 75, 78, 90, 92, x</p><p>Data set P and data set Q each contain 5 numbers. If the mean of data set P is equal to the mean of data set Q, what is the value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>85</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>92</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>95</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The mean of data set P is (81+82+83+86+88) \u00f7 5 = 420 \u00f7 5 = 84. For the mean of data set Q to equal 84, the sum of its values must equal 420. Thus 75 + 78 + 90 + 92 + x = 420, so x = 420 \u2212 335 = 85.</p><p>Choice A is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This is one of the values already in data set Q, not the value of x.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.easy"
+}

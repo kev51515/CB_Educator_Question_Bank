@@ -1,0 +1,22 @@
+{
+  "questionId": "c362c210-s1",
+  "originalId": "c362c210",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A vendor sells two types of fruit: apples and pears. The total cost to buy a apples and p pears is given by a linear equation. If buying 20 apples (and no pears) costs $25.00, what is the price, in dollars, of one apple?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1.25"
+  ],
+  "rationale": "<p>If 20 apples cost $25.00, then one apple costs 25.00 / 20 = $1.25.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9f3cb472-s1",
+  "originalId": "9f3cb472",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>Line <em>m</em> in the <em>xy</em>-plane has a slope of -1/4 and passes through the point (8, 7). Which equation defines line <em>m</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 8x + 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = -x/4 + 9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 7x - 1/4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = -x/4 + 7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A line with slope m passing through (x\u2081, y\u2081) can be written y = m(x - x\u2081) + y\u2081. Here y = (-1/4)(x - 8) + 7 = -x/4 + 2 + 7 = -x/4 + 9. Choices A and C use the point's coordinates as slope. Choice D ignores the contribution of x\u2081 to the y-intercept.</p>",
+  "templateId": "linear-equations-in-two-variables.A4.T8.medium"
+}

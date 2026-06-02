@@ -1,0 +1,39 @@
+{
+  "questionId": "d5ad34f0-s1",
+  "originalId": "d5ad34f0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The results of controlled laboratory experiments testing the effectiveness of certain educational interventions sometimes fail to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> conclusions that teachers reach based on their day-to-day observations of students. While there are several possible reasons for this, one is that teachers may overlook background variables that account for the gains they attribute to the interventions in question.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>circumvent</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>implement</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>confirm</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>disseminate</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Confirm\" most logically completes the text. The text describes a mismatch between controlled experimental results and teacher observations, attributing it to overlooked variables. The natural reading is that the experiments fail to confirm—that is, back up—what teachers conclude from observation.</p><p>Choice A is incorrect. \"Circumvent\" means to bypass; experiments are not trying to bypass teachers' conclusions. Choice B is incorrect. \"Implement\" means to put into action; experiments don't put conclusions into action. Choice D is incorrect. \"Disseminate\" means to spread widely; the text is about agreement between two ways of knowing, not about distribution.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

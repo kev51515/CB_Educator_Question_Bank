@@ -1,0 +1,39 @@
+{
+  "questionId": "3f7f35ea-s1",
+  "originalId": "3f7f35ea",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;The Necklace&rdquo; is an 1884 short story by Guy de Maupassant. In the story, a young woman named Mathilde is described as being very dissatisfied with her life: ______</p>",
+  "stem": "<p>Which quotation from &ldquo;The Necklace&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;She had no dresses, no jewels, nothing; and these were the only things she loved.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;She suffered ceaselessly, feeling herself born for all the delicacies and luxuries; she suffered from the poverty of her dwelling, from the wretched look of the walls, from the worn-out chairs, from the ugliness of the curtains.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;She let her husband sleep in his chair for an hour before they walked the long streets home in the cold.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;Her friend received her with open arms and embraced her warmly, as she did every visit.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the quotation explicitly says Mathilde &ldquo;suffered ceaselessly&rdquo; and details her sources of dissatisfaction (her dwelling, walls, chairs, curtains), strongly conveying her unhappiness with her life.</p><p>Choice A is incorrect: although it mentions what she loved, it does not directly express dissatisfaction with her life. Choice C is incorrect: it describes a brief moment after an event without conveying ongoing dissatisfaction. Choice D is incorrect: it describes a friend&rsquo;s warm greeting and says nothing about dissatisfaction.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T1.easy"
+}

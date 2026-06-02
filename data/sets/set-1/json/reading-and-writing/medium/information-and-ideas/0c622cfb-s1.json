@@ -1,0 +1,25 @@
+{
+  "questionId": "0c622cfb-s1",
+  "originalId": "0c622cfb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Although geologists agree that Saturn's moon Titan still has surface lakes of liquid methane today, they have long debated whether these lakes formed through a single dramatic process—such as a sudden cryovolcanic eruption that flash-flooded an existing depression—or through a slow, sustained climate cycle in which methane rain repeatedly filled and drained low-lying terrain over hundreds of thousands of years. Planetary scientists Aiko Mori and Daniel Beauregard recently entered this debate by using radar data from the Cassini mission to map the sediment layering and shoreline terraces of Ligeia Mare, one of Titan's largest northern lakes. Mori and Beauregard concluded that the sustained-cycle scenario is likely correct.</p>",
+  "stem": "<p>Which finding about Ligeia Mare, if true, would most directly support Mori and Beauregard's conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Its overall dimensions and shape suggest that it could not have been carved out by a single meteoroid impact event.</p>"},
+    {"id": "b", "content": "<p>Its shoreline preserves a long series of stacked terraces, each consistent with a separate, gradual rise or fall in methane level over geologic time.</p>"},
+    {"id": "c", "content": "<p>Its physical features most closely match those produced by a single brief outburst of liquid that quickly filled the basin and then evaporated.</p>"},
+    {"id": "d", "content": "<p>It is bordered by channels whose features cannot reliably distinguish between erosion by flowing methane and erosion by flowing ammonia-water slurry.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it directly supports Mori and Beauregard's conclusion. A long series of stacked shoreline terraces, each linked to a gradual rise or fall in methane level, would be precisely the kind of evidence one would expect if the lake had been filled and drained repeatedly over hundreds of thousands of years—the sustained-cycle scenario.</p><p>Choice A is incorrect because ruling out an impact origin does not distinguish between the two competing scenarios (sudden cryovolcanic flooding versus a sustained methane cycle); both involve liquid, not impact. Choice C is incorrect because evidence of a single brief outburst would support the rival sudden-eruption scenario, not Mori and Beauregard's sustained-cycle conclusion. Choice D is incorrect because channels whose origin is ambiguous between two erosion agents provide no exclusive support for either competing scenario.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

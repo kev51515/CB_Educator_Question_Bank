@@ -1,0 +1,25 @@
+{
+  "questionId": "25176ff8-s1",
+  "originalId": "25176ff8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p>“A Bowl of Hyacinths” is a 1923 short story by Anita Singh. In the story, Mrs. Pratima Joshi, an Indian immigrant living in Vancouver, has traveled to Toronto to visit relatives. In letters to her husband and elder sister, she repeatedly expresses concern about how her household is faring without her: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from Mrs. Joshi's letters most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“My honorable mother-in-law plans an elaborate <em>puja</em> for the new moon, and she has asked me to bring back a tin of Toronto's famous shortbread biscuits, which, when offered by my unskilled hands at home, have sometimes met with your gentle teasing.”</p>"},
+    {"id": "b", "content": "<p>“Next week I shall journey with Mira-didi to the charming town of Niagara-on-the-Lake, where we are to be met by the youngest son of the most learned Pandit-ji.”</p>"},
+    {"id": "c", "content": "<p>“I beseech you, do not neglect the rose-bush by the side gate, nor the small green parrot, nor my elderly mother's chair, which must be carried indoors before each evening rain; eat your supper slowly, and do not let the windows stand open at night now that the air carries the breath of autumn.”</p>"},
+    {"id": "d", "content": "<p>“I am passing a most pleasant fortnight here, and our Canadian friends, as well as our own people, work with kindly determination toward the success of every small pleasure of my visit.”</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively illustrates the claim that Mrs. Joshi repeatedly expresses concern about how her household is faring without her. In this quotation, she names specific dependents—the rose-bush, the parrot, her elderly mother's chair—and gives careful instructions about each, along with reminders about her husband's habits and the open windows at home, directly conveying her concern for what is happening at home in her absence.</p><p>Choice A is incorrect because it concerns her mother-in-law's religious preparations and a gift of biscuits, not her household's well-being in her absence. Choice B is incorrect because it describes upcoming travel plans, not concerns about her home. Choice D is incorrect because it conveys her general enjoyment of the visit, not concern about what is happening back home.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

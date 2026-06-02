@@ -1,0 +1,72 @@
+{
+  "questionId": "4dcedc31",
+  "externalId": "2b2c783d-0fb5-4589-bfab-c94cee0c2768",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:57.540435+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "577b43af-06a5-4194-bc5b-f15d101b9858",
+      "content": "<p>professor Yugang Sun</p>"
+    },
+    {
+      "id": "60358e1d-1870-41ba-bd59-c9704c152d7b",
+      "content": "<p>professor Yugang Sun<span data-ssml-say-as=\"characters\">,</span></p>"
+    },
+    {
+      "id": "faa08d95-2b3d-4ca3-a3a1-2c5687968999",
+      "content": "<p>professor<span data-ssml-say-as=\"characters\">,</span> Yugang Sun<span data-ssml-say-as=\"characters\">,</span></p>"
+    },
+    {
+      "id": "2a0567f7-b1b9-4c4c-abe4-9c41095b7fe4",
+      "content": "<p>professor<span data-ssml-say-as=\"characters\">,</span> Yugang Sun</p>"
+    }
+  ],
+  "keys": [
+    "577b43af-06a5-4194-bc5b-f15d101b9858"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of punctuation between titles and proper nouns. No punctuation is needed between the proper noun &ldquo;Yugang Sun&rdquo; and the title that describes Sun, &ldquo;chemistry professor.&rdquo; Furthermore, no punctuation is needed after &ldquo;Sun&rdquo; because &ldquo;chemistry professor Yugang Sun and his colleagues at Temple University&rdquo; functions as the coordinated subject of the sentence, and together Sun and colleagues performed the action of developing a new approach to producing iron nanoparticles.</p><p>Choice B is incorrect because no punctuation is needed between the proper noun &ldquo;Yugang Sun&rdquo; and the coordinated noun phrase &ldquo;and his colleagues at Temple University.&rdquo; Choice C is incorrect because no punctuation is needed before or after the proper noun &ldquo;Yugang Sun.&rdquo; Setting off the professor&rsquo;s name with commas suggests that it could be removed without affecting the coherence of the sentence, which isn&rsquo;t the case. Choice D is incorrect because no punctuation is needed between the title &ldquo;chemistry professor&rdquo; and the proper noun &ldquo;Yugang Sun.&rdquo;</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>For scientists to produce new iron nanoparticles of a specific size or strength, they must first be able to monitor reactions between oxygen and existing iron nanoparticles at a near-atomic level of detail. Fortunately, chemistry <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and his colleagues at Temple University recently developed a new approach that does just that.</p>",
+    "keys": [
+      "577b43af-06a5-4194-bc5b-f15d101b9858"
+    ],
+    "answerOptions": [
+      {
+        "id": "577b43af-06a5-4194-bc5b-f15d101b9858",
+        "content": "<p>professor Yugang Sun</p>"
+      },
+      {
+        "id": "60358e1d-1870-41ba-bd59-c9704c152d7b",
+        "content": "<p>professor Yugang Sun<span data-ssml-say-as=\"characters\">,</span></p>"
+      },
+      {
+        "id": "faa08d95-2b3d-4ca3-a3a1-2c5687968999",
+        "content": "<p>professor<span data-ssml-say-as=\"characters\">,</span> Yugang Sun<span data-ssml-say-as=\"characters\">,</span></p>"
+      },
+      {
+        "id": "2a0567f7-b1b9-4c4c-abe4-9c41095b7fe4",
+        "content": "<p>professor<span data-ssml-say-as=\"characters\">,</span> Yugang Sun</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The convention being tested is the use of punctuation between titles and proper nouns. No punctuation is needed between the proper noun &ldquo;Yugang Sun&rdquo; and the title that describes Sun, &ldquo;chemistry professor.&rdquo; Furthermore, no punctuation is needed after &ldquo;Sun&rdquo; because &ldquo;chemistry professor Yugang Sun and his colleagues at Temple University&rdquo; functions as the coordinated subject of the sentence, and together Sun and colleagues performed the action of developing a new approach to producing iron nanoparticles.</p><p>Choice B is incorrect because no punctuation is needed between the proper noun &ldquo;Yugang Sun&rdquo; and the coordinated noun phrase &ldquo;and his colleagues at Temple University.&rdquo; Choice C is incorrect because no punctuation is needed before or after the proper noun &ldquo;Yugang Sun.&rdquo; Setting off the professor&rsquo;s name with commas suggests that it could be removed without affecting the coherence of the sentence, which isn&rsquo;t the case. Choice D is incorrect because no punctuation is needed between the title &ldquo;chemistry professor&rdquo; and the proper noun &ldquo;Yugang Sun.&rdquo;</p>",
+    "externalid": "2b2c783d-0fb5-4589-bfab-c94cee0c2768",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>For scientists to produce new iron nanoparticles of a specific size or strength, they must first be able to monitor reactions between oxygen and existing iron nanoparticles at a near-atomic level of detail. Fortunately, chemistry <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and his colleagues at Temple University recently developed a new approach that does just that.</p>"
+}

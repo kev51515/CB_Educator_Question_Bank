@@ -1,0 +1,25 @@
+{
+  "questionId": "a2816c7f-s1",
+  "originalId": "a2816c7f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Brazilian conceptual artist Marcela <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her exhibitions to draw visitors' attention to how the ambient sound of a gallery shapes their perception of objects on display, arranges suspended metal sheets into installations that resonate gently with the movements of passersby.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Cordeiro is designing</p>"},
+    {"id": "b", "content": "<p>Cordeiro, designing</p>"},
+    {"id": "c", "content": "<p>Cordeiro, designs</p>"},
+    {"id": "d", "content": "<p>Cordeiro designs</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. This choice pairs the comma after \"Cordeiro\" with the comma after \"display\" and uses the nonfinite present participle \"designing\" to correctly form a supplementary phrase describing what Cordeiro intends her exhibitions to do. This supplementary phrase appears between the noun phrase that it modifies (\"Brazilian conceptual artist Marcela Cordeiro\") and the finite present tense verb (\"arranges\"), which functions as the sentence's main verb.</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite present continuous tense verb \"is designing\" can't be used in this way in conjunction with the finite present tense verb \"arranges,\" which already functions as the main verb in the sentence. Choice C is incorrect because it results in an ungrammatical sentence. The finite present tense verb \"designs\" can't be used in this way to supplement the noun phrase \"Brazilian conceptual artist Marcela Cordeiro.\" Choice D is incorrect because it results in an ungrammatical sentence. The finite present tense verb \"designs\" can't be used in this way in conjunction with the finite present tense verb \"arranges.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

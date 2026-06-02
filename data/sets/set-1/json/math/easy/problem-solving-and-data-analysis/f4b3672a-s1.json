@@ -1,0 +1,39 @@
+{
+  "questionId": "f4b3672a-s1",
+  "originalId": "f4b3672a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A nature preserve is 200 acres. To estimate the number of birds in the preserve, a ranger randomly selects 5 different 1-acre parcels in the preserve and counts the number of birds in each parcel. The numbers of birds in the sample acres are 32, 41, 38, 45, and 49. Based on the mean of the sample, which of the following ranges contains the best estimate for the number of birds in the entire preserve?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8,000 to 8,500</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6,000 to 7,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9,000 to 10,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10,500 to 11,500</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The mean number of birds per acre in the sample is (32 + 41 + 38 + 45 + 49) divided by 5 = 41. The best estimate for the total number of birds in the 200-acre preserve is 41 times 200 = 8,200, which lies in the range 8,000 to 8,500.</p><p>Choice B is incorrect: 6,000 to 7,000 corresponds to a smaller mean.</p><p>Choice C is incorrect: 9,000 to 10,000 corresponds to a larger mean.</p><p>Choice D is incorrect: 10,500 to 11,500 corresponds to a much larger mean.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.easy"
+}

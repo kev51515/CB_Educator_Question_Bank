@@ -1,0 +1,39 @@
+{
+  "questionId": "4d2736f0-s1",
+  "originalId": "4d2736f0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In his novel sequence <em>The Border Trilogy</em>, Cormac McCarthy weaves the lives of his young protagonists into larger currents of twentieth-century North American history. He frames John Grady Cole's 1949 ride into Mexico against the slow collapse of the cattle-ranching economy of the American Southwest. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> McCarthy positions Billy Parham's later wanderings against the shifting boundary politics and modernization of the postwar borderlands.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By contrast,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In the same way,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In particular,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"In the same way\" logically signals that the second sentence is a parallel example to the first: both illustrate how McCarthy ties his protagonists' personal stories to broader historical forces in the borderlands. The two sentences agree, with the second offering a similar instance of the same pattern.</p><p>Choice A is incorrect because \"by contrast\" would signal opposition, yet the two sentences describe analogous cases. Choice C is incorrect because \"therefore\" would signal cause and effect, but Billy's storyline is not a consequence of John Grady's. Choice D is incorrect because \"in particular\" would mark the second sentence as a more specific instance of the first; instead, it offers a separate, parallel example.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A6.T17.hard"
+}

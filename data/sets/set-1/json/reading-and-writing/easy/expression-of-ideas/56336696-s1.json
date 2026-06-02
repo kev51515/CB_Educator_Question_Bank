@@ -1,0 +1,39 @@
+{
+  "questionId": "56336696-s1",
+  "originalId": "56336696",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>To make sourdough bread, bakers first mix flour and water and let the mixture rest for several days until wild yeast develops. Next, they combine this starter with more flour, water, and salt and knead the dough thoroughly. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they will bake the loaf, at which point the crust will have turned a deep golden brown.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Eventually,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Nevertheless,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Eventually\" logically signals that baking the loaf is the final step in the chronological sequence of bread-making described in the previous sentences.</p><p>Choice A is incorrect because \"likewise\" illogically signals that baking is similar to combining and kneading the dough; instead, it is the final step. Choice C is incorrect because \"in other words\" illogically signals a restatement of the previous step. Choice D is incorrect because \"nevertheless\" illogically signals that the information is true despite the previous step; the baking is the next and final stage.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane shows 6 data points trending up from left to right, with a line of best fit passing through the approximate coordinates (0, 0.3) and (5, 3). Which of the following is closest to the slope of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22122.7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.54</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u22120.54</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2.7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Slope = (3 \u2212 0.3) / (5 \u2212 0) = 2.7 / 5 = 0.54.</p><p>Choices A and C are negative, inconsistent with an upward trend. Choice D is the result of dividing 5/2.7 incorrectly inverted.</p>",
+  "questionId": "39aa146d-s1",
+  "originalId": "39aa146d",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.easy"
+}

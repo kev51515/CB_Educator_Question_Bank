@@ -1,0 +1,39 @@
+{
+  "questionId": "5cd55c77-s1",
+  "originalId": "5cd55c77",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>During their larval phase, many species of intertidal sea anemone are attracted to surfaces with elevated levels of trace metals. To better understand how trace-metal pollution from coastal runoff might affect such species, researchers studied the effect of exposure to low levels of dissolved copper on the reproductive success of the starlet sea anemone (<em>Nematostella vectensis</em>). While exposure to low levels of dissolved copper had no significant effect on adult spawning rates or egg fertilization in <em>N. vectensis</em>, the development of fertilized eggs in the presence of dissolved copper was completely arrested before the larval stage. These findings suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the reproductive success of <em>N. vectensis</em> would be at risk if larvae preferentially settled in areas regularly exposed to low levels of dissolved copper.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>N. vectensis</em> adults that settle in areas with low levels of dissolved copper achieve significantly higher rates of egg fertilization than do adults that settle in areas without copper pollution.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the spawning rate of <em>N. vectensis</em> is more strongly affected by the presence of low levels of dissolved copper than egg fertilization is, although both processes are sensitive to copper pollution.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the reproductive success of <em>N. vectensis</em> is more strongly affected by the presence of low levels of dissolved copper during egg development than the reproductive success of other intertidal anemone species is.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the discussion. The text says larvae are drawn to surfaces with elevated trace metals, and that dissolved copper completely arrests embryonic development before the larval stage. If adults of this species preferentially settle and spawn in copper-polluted areas, their offspring would not survive embryonic development&mdash;so the species' reproductive success would be at risk.</p><p>Choice B is incorrect because the text states that copper exposure has no significant effect on egg fertilization, so settlement in copper-rich areas would not increase fertilization rates. Choice C is incorrect because the text says copper exposure had no significant effect on spawning rate; the contrast is between fertilization/spawning (unaffected) and embryonic development (arrested). Choice D is incorrect because the text gives no data on other anemone species, so no comparison can be drawn.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

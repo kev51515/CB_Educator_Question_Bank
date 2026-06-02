@@ -1,0 +1,39 @@
+{
+  "questionId": "24ad9dcb-s1",
+  "originalId": "24ad9dcb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The weight of an object on Mars is approximately 0.38 of its weight on Earth. The weight of an object on Saturn is approximately 1.06 of its weight on Earth. If an object weighs 200 pounds on Earth, approximately how many more pounds does the object weigh on Saturn than it weighs on Mars?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>68</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>136</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>212</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>288</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The object weighs 200 \u00d7 0.38 = 76 pounds on Mars and 200 \u00d7 1.06 = 212 pounds on Saturn. The difference is 212 \u2212 76 = 136 pounds.</p><p>Choice A is incorrect; this is half the correct answer. Choice C is incorrect; this is the weight on Saturn alone. Choice D is incorrect; this is the sum of the two weights.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A5.T1.easy"
+}

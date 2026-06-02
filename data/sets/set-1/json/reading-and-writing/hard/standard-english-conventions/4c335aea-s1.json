@@ -1,0 +1,39 @@
+{
+  "questionId": "4c335aea-s1",
+  "originalId": "4c335aea",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In a recent examination of stylistic trends across 220,000 paintings, art historians point to changes in certain measures, such as the ratio of warm to cool colors on each canvas, as evidence that modern works are growing more emotionally charged. For example, from 1900 to 2020, ______ warm-to-cool color ratios shifted similarly, with each movement's data showing that relative to the cool palette of background washes, the proportion of warm-toned highlights in paintings increased.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>impressionism and expressionism's</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>impressionisms and expressionisms</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>impressionisms and expressionism's</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>impressionism's and expressionism's</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of possessive nouns. The singular possessive nouns \"impressionism's\" and \"expressionism's\" correctly indicate that the warm-to-cool color ratios belong individually to the movements of impressionism and expressionism.</p><p>Choice A is incorrect because the context requires the singular possessive noun \"impressionism's,\" not the non-possessive singular noun \"impressionism.\" The choice incorrectly implies a single shared ratio rather than one ratio per movement. Choice B is incorrect because the context requires singular possessive forms, not the plural nouns \"impressionisms\" and \"expressionisms.\" Choice C is incorrect because the context requires the singular possessive \"impressionism's,\" not the plural \"impressionisms.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T8.hard"
+}

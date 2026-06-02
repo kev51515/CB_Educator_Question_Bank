@@ -1,0 +1,39 @@
+{
+  "questionId": "720e51ac-s1",
+  "originalId": "720e51ac",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The cost y, in dollars, for a manufacturer to make x bracelets is represented by a line that passes through the points (0, 150), (50, 225), and (100, 300). What is the cost, in dollars, for the manufacturer to make 50 bracelets?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>225</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>175</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>300</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The point (50, 225) lies on the line, so the cost is $225.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A4.T2.easy"
+}

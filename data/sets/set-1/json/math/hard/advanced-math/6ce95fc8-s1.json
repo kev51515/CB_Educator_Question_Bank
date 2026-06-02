@@ -1,0 +1,39 @@
+{
+  "questionId": "6ce95fc8-s1",
+  "originalId": "6ce95fc8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is a solution to the equation 3x<sup>2</sup> &minus; 6x &minus; 4 = 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(1 &minus; &radic;21)/3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1 &minus; &radic;21</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(3 + &radic;21)/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3 + &radic;21</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Apply the quadratic formula to 3x<sup>2</sup> &minus; 6x &minus; 4 = 0 with a = 3, b = &minus;6, c = &minus;4: x = (6 &plusmn; &radic;(36 + 48))/6 = (6 &plusmn; &radic;84)/6 = (6 &plusmn; 2&radic;21)/6 = (3 &plusmn; &radic;21)/3. The positive-root branch gives (3 + &radic;21)/3.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.hard"
+}

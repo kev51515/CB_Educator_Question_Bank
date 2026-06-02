@@ -1,0 +1,22 @@
+[
+  {"id": "fba5d8d1-s1", "templateId": "boundaries.A4.T10.hard", "verdict": "ok"},
+  {"id": "5bed774c-s1", "templateId": "boundaries.A2.T5.hard", "verdict": "aspect_drift", "detail": "Clone tests A1.T1 clause-join (period vs comma vs run-on between two independent clauses: 'Bo Bardi was central figure in Brazilian modernism. As illustrated...Bo Bardi's designs were unmistakably populist'), not A2.T5 nonrestrictive/restrictive modifier punctuation."},
+  {"id": "707461d8-s1", "templateId": "boundaries.A1.T1.hard", "verdict": "ok"},
+  {"id": "78e978b5-s1", "templateId": "boundaries.A3.T6.hard", "verdict": "ok"},
+  {"id": "5aa171de-s1", "templateId": "boundaries.A2.T4.hard", "verdict": "aspect_drift", "detail": "Clone tests A1.T3 hard (conjunctive adverb 'however' at clause boundary requiring semicolon+comma combo per hard lever), not A2.T4 appositive/parenthetical set-off."},
+  {"id": "f78997cf-s1", "templateId": "boundaries.A1.T3.hard", "verdict": "ok"},
+  {"id": "eb95235b-s1", "templateId": "boundaries.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Stem lacks hard-tier characteristics: second clause ('performers use it...') is not a participial/prepositional phrase resembling a fragment; options do not differ on micro-punctuation/capitalization of the same form. Reads as easy/medium T1."},
+  {"id": "73a6603c-s1", "templateId": "boundaries.A1.T1.hard", "verdict": "ok"},
+  {"id": "f30a478e-s1", "templateId": "boundaries.A3.T7.medium", "verdict": "aspect_drift", "detail": "Clone tests A4.T10 colon-introduces-elaboration (complete clause 'Research...Ocean' followed by noun-phrase elaboration 'enormous reservoirs...'), not A3.T7 unique-title+name appositive. No proper-noun name is being set off."},
+  {"id": "83898524-s1", "templateId": "boundaries.A2.T4.hard", "verdict": "ok"},
+  {"id": "6ea8c23f-s1", "templateId": "boundaries.A4.T8.hard", "verdict": "constraint_violation", "detail": "Violates must_preserve 'Three or more parallel items in the series'. Clone has only two coordinate elements joined by 'and' (where tremors cluster / how clusters correlate); rationale itself states 'only two such elements (not a series of three or more)'. Not a T8 series."},
+  {"id": "5ee7fb04-s1", "templateId": "boundaries.A1.T1.hard", "verdict": "ok"},
+  {"id": "8a264a54-s1", "templateId": "boundaries.A1.T3.hard", "verdict": "ok"},
+  {"id": "6e071432-s1", "templateId": "boundaries.A2.T4.hard", "verdict": "ok"},
+  {"id": "109d5bbb-s1", "templateId": "boundaries.A2.T4.hard", "verdict": "ok"},
+  {"id": "9f0ac61d-s1", "templateId": "boundaries.A2.T4.easy", "verdict": "ok"},
+  {"id": "96499989-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Clone tests verb-object boundary (no punctuation between 'will recognize' and its object), not T5 nonrestrictive/restrictive modifier punctuation at a noun-modifier boundary. Rationale itself frames it as verb-object, not modifier."},
+  {"id": "a7c85001-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "6fece68e-s1", "templateId": "boundaries.A4.T8.easy", "verdict": "ok"},
+  {"id": "ea8f4658-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"}
+]

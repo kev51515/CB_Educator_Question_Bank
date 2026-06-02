@@ -1,0 +1,39 @@
+{
+  "questionId": "9d078710-s1",
+  "originalId": "9d078710",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>j</em> and <em>k</em> are cut by a transversal. One angle formed at line <em>j</em> has measure 55 degrees. At line <em>k</em>, the four angles formed by the transversal have measures p, q, r, and s degrees, where p corresponds to the 55-degree angle, q is supplementary to p, r is vertical to p, and s is vertical to q. Which of the following equations alone is sufficient to prove that lines <em>j</em> and <em>k</em> are parallel?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>q = 55</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>s = 55</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>p = 55</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>q = 35</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Two lines cut by a transversal are parallel if and only if a pair of corresponding angles are congruent. The angle of measure p degrees corresponds to the given 55-degree angle, so p = 55 forces the lines to be parallel.</p><p>Choice A is incorrect: q is supplementary to p, so q = 55 would force p = 125.</p><p>Choice B is incorrect: s is vertical to q, not corresponding to the 55-degree angle.</p><p>Choice D is incorrect: q = 35 does not match the supplement of a 55-degree corresponding angle.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.misc.easy"
+}

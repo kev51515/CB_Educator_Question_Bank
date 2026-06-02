@@ -1,0 +1,25 @@
+{
+  "questionId": "a40c7aa3-s1",
+  "originalId": "a40c7aa3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Most of the exoplanets confirmed by transit photometry orbit relatively close to their host stars, with orbital periods of only a few days. In 2018, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> researchers confirmed a planet orbiting Kepler-1654, a Sun-like star, with an orbital period stretching beyond two Earth years. Called Kepler-1654 b, it is one of the longest-period planets confirmed by the Kepler mission.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by contrast,</p>"},
+    {"id": "b", "content": "<p>likewise,</p>"},
+    {"id": "c", "content": "<p>therefore,</p>"},
+    {"id": "d", "content": "<p>for example,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"By contrast\" logically signals that the information about Kepler-1654 b—that it orbits its star with a period of more than two Earth years—contrasts with the previous information about most confirmed exoplanets, which orbit close to their host stars with periods of only a few days.</p><p>Choice B is incorrect because \"likewise\" illogically signals that Kepler-1654 b's orbit is similar to those of most exoplanets, when it actually represents a striking contrast. Choice C is incorrect because \"therefore\" illogically signals that the discovery is a result of the previous information, when it actually presents a contrasting case. Choice D is incorrect because \"for example\" illogically signals that Kepler-1654 b exemplifies the typical short-period exoplanet pattern, when it actually contrasts with it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

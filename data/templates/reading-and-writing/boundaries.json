@@ -1,0 +1,616 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Standard English Conventions",
+  "skill": "Boundaries",
+  "originals_count": 189,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Punctuation between clauses",
+      "description": "The student must choose punctuation at the boundary where two independent clauses, or an independent and a dependent clause, meet. The cognitive operation is identifying whether each side of the blank is a complete sentence and applying the correct joiner: period, semicolon, comma+coordinating conjunction, comma+subordinator, or no punctuation.",
+      "boundary_with_other_aspects": "A1 governs the junction between full clauses; A2 governs boundaries around inserted non-essential material within one clause; turning a comma-splice/run-on test into an appositive-set-off test is a categorical drift.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Independent + Independent join",
+          "description": "Two independent clauses flank the blank with no conjunction. Correct answer is a period (new sentence) or a semicolon; distractors include comma alone (splice), no punctuation (run-on), and comma+subordinator.",
+          "core_skill_demand": "Recognize that both sides of the blank are complete clauses with no conjunction supplied, then select either a period or semicolon and reject comma-only or unpunctuated options.",
+          "example_originals": ["1724dac2", "7b950fc2", "8a3998f1", "01a32c84", "2c84f96a", "73a6603c"],
+          "frequency": { "easy": 8, "medium": 10, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both clauses are short and syntactically simple",
+                "Period vs semicolon is the only correct form; three distractors are obvious errors (no punct, lone comma, 'and' tacked on)",
+                "Capitalization of the next word cues sentence boundary"
+              ],
+              "example_stem": "...weather conditions three to four weeks in ______ its predictions are therefore more short-term...",
+              "example_ids": ["1724dac2", "7b950fc2", "8a3998f1"]
+            },
+            "medium": {
+              "characteristics": [
+                "One or both clauses contain an intervening prepositional or participial phrase before the main verb",
+                "Distractors include a plausible comma+coordinator that doesn't match meaning or a semicolon misused before a fragment",
+                "Adjacent transition words (Prior to, According to, In a ___) may obscure clause boundary"
+              ],
+              "example_stem": "...updating all calculations dependent on these ______ to VisiCalc's release, changing a paper spreadsheet often required redoing the entire sheet...",
+              "example_ids": ["01a32c84", "2c84f96a", "267a13e2", "36868920", "6df020e6", "73a6603c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Second clause begins with a participial or prepositional phrase that resembles a fragment, increasing risk of choosing comma",
+                "All four options differ only in punctuation/capitalization micro-choices (e.g., 'plant. By' vs 'plant, by' vs 'plant) by')",
+                "Subject of second clause may be far from the boundary"
+              ],
+              "example_stem": "...inside a host ______ researching 120 endophytic fungi–produced compounds, she found...",
+              "example_ids": ["707461d8", "73a6603c", "1b97cce9", "f45ae404", "886dc9f9", "aab74a3b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Both sides of the blank must be syntactically independent clauses",
+              "No coordinating conjunction may appear in the stimulus around the blank",
+              "Correct answer must be period (new sentence) or semicolon"
+            ],
+            "must_vary": [
+              "Topic domain (science, arts, history, biography)",
+              "Length and internal complexity of each clause",
+              "Whether period or semicolon is the keyed answer"
+            ],
+            "common_bugs": [
+              "Cloner inserts a coordinating conjunction in the second clause, converting T1 into T2",
+              "Cloner shortens second clause to a fragment, accidentally enabling comma+appositive answer (A2 drift)",
+              "Cloner duplicates the original's exact joiner choices in distractors, breaking distractor parallelism"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Comma + coordinating conjunction join",
+          "description": "Two independent clauses are joined by a coordinating conjunction (and/but/so/yet/for/or) that already appears in the stem or option, and the student must place a comma before the conjunction (or recognize no comma before 'and' when the subject is shared).",
+          "core_skill_demand": "Identify that a coordinating conjunction will join two independent clauses and place a comma before it; or recognize that the second side lacks its own subject and reject the comma.",
+          "example_originals": ["148be4da", "155239cf", "85b8b9c5", "9902d2de", "8b002b08", "083a35dc", "59094d87", "7ce4ee13", "aecdb820"],
+          "frequency": { "easy": 9, "medium": 4, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both clauses are short and have explicit different subjects",
+                "Coordinating conjunction is overt in two of four options",
+                "Distractors include no comma, lone comma without 'but/and', and 'and' without comma"
+              ],
+              "example_stem": "...are more durable than most natural plant ______ the manufacture of synthetic fibers requires toxic chemical solvents...",
+              "example_ids": ["148be4da", "155239cf", "9902d2de", "85b8b9c5"]
+            },
+            "medium": {
+              "characteristics": [
+                "Distractors include semicolon+conjunction or comma-only without conjunction",
+                "Second clause's subject is a pronoun referring back, making clause-vs-phrase boundary subtler"
+              ],
+              "example_stem": "Po'Pay... was instrumental in organizing the Pueblo Revolt of ______ as a result of his leadership, the Spanish colonizers were expelled...",
+              "example_ids": ["083a35dc", "8790d061", "a12e3b8a", "870ae7ec", "6b49f5f1"]
+            },
+            "hard": {
+              "characteristics": [
+                "Stem also contains a parenthetical or modifier that could be mistaken as the clause boundary",
+                "Choice of 'and' vs no conjunction hinges on whether the second predicate shares the first clause's subject",
+                "Options differ in placement of comma vs presence of 'and' across four near-identical strings"
+              ],
+              "example_stem": "...founded in 1931 with the goal of showcasing the culture and history of the Mohegan ______ today, nearly a century later, it is the oldest Native-owned and -operated museum...",
+              "example_ids": ["59094d87", "7ce4ee13", "aecdb820"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one coordinating conjunction available adjacent to the blank",
+              "Both clauses must have explicit, distinct grammatical subjects",
+              "Correct answer pairs a comma with the conjunction"
+            ],
+            "must_vary": [
+              "Choice of coordinating conjunction (and/but/so/yet)",
+              "Topic, named entities, dates",
+              "Whether the second clause begins with a transitional adverb"
+            ],
+            "common_bugs": [
+              "Cloner uses 'and' to join compound predicate (shared subject), making the comma+and answer incorrect",
+              "Cloner drops the explicit second subject, demoting to T3 with a dependent clause",
+              "Cloner picks both 'and' and 'but' in distractors without keeping the meaning relation consistent with the stem"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Independent + dependent / subordinate join",
+          "description": "An independent clause is followed (or preceded) by a dependent clause, relative clause, or subordinated phrase. The student must select the appropriate comma (often none, sometimes comma+relative/subordinator) and reject semicolon/period that would create a fragment.",
+          "core_skill_demand": "Recognize that one side of the blank is a dependent or restrictive element and select punctuation that ties it to the main clause without creating a fragment; reject period or semicolon that would orphan the dependent piece.",
+          "example_originals": ["64a40675", "667a0587", "cabe71d4", "ea8f4658", "cdbbbf94", "d198997b", "ce81d0b7", "be37d4ae"],
+          "frequency": { "easy": 6, "medium": 5, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Relative clause beginning with 'which', 'who', 'that' immediately follows the blank",
+                "Correct answer is comma (nonrestrictive) or no punctuation (restrictive 'that')",
+                "Distractors include semicolon and period that obviously break the relative"
+              ],
+              "example_stem": "...with the passage of the Engravers' Copyright ______ gave engravers control over the distribution and sale...",
+              "example_ids": ["667a0587", "cabe71d4", "ea8f4658", "64a40675"]
+            },
+            "medium": {
+              "characteristics": [
+                "Subordinator ('while', 'whenever', 'because', 'so that') begins the second clause",
+                "Distractors offer plausible semicolon or comma-and-subordinator combos",
+                "Correct answer omits or places comma based on restrictive/nonrestrictive contrast"
+              ],
+              "example_stem": "...for instance, the colorful calico rockfish... can survive for a little over a ______ the rougheye rockfish... boasts a maximum life span of about two centuries.",
+              "example_ids": ["ce81d0b7", "cdbbbf94", "d198997b", "fcab3630"]
+            },
+            "hard": {
+              "characteristics": [
+                "Dependent element is participial phrase or absolute construction that mimics a clause",
+                "Conjunctive adverb ('however', 'though', 'rather') sits at the join and is itself surrounded by punctuation choices",
+                "Correct answer often a semicolon+comma combination (e.g., '; however,' or ', though;')"
+              ],
+              "example_stem": "Scott-Heron himself resisted the godfather ______ feeling that it didn't encapsulate his devotion...",
+              "example_ids": ["be37d4ae", "1ee4485c", "21e58a83", "790fc366", "c06af4d8", "c15069eb"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "One side of blank must be a dependent/subordinate/relative element, not a free-standing clause",
+              "Correct answer must avoid period/semicolon when keyed answer is comma or no punctuation",
+              "If a conjunctive adverb is present, its function as transition (not coordinator) must be preserved"
+            ],
+            "must_vary": [
+              "The subordinator or relative pronoun chosen",
+              "Whether the relative clause is restrictive or nonrestrictive",
+              "Position of the dependent element (before or after main clause)"
+            ],
+            "common_bugs": [
+              "Cloner converts 'that' to 'which' or vice versa, flipping restrictive/nonrestrictive and breaking the key",
+              "Cloner drops the subordinator, accidentally creating two independent clauses (T1 drift)",
+              "Cloner mismatches conjunctive-adverb punctuation: uses comma where semicolon required because second side is independent"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Supplementary elements within a clause",
+      "description": "The student must punctuate a non-essential insertion inside a clause: an appositive, parenthetical phrase, nonrestrictive modifier, or interrupter. The cognitive operation is identifying the boundaries of the inserted element and choosing matched commas, paired dashes, or parentheses to set it off symmetrically.",
+      "boundary_with_other_aspects": "A2 inserts material into a single clause without breaking it; A1 joins two clauses. Treating an appositive as a clause break (or vice versa) is a categorical drift.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Set off an appositive or parenthetical",
+          "description": "A descriptive phrase renaming or elaborating a noun is inserted before/after the blank. The student selects matched punctuation (paired commas, paired dashes, or paired parentheses) to enclose the insertion symmetrically.",
+          "core_skill_demand": "Identify the left and right edges of the supplementary phrase and choose the punctuation that matches at both edges; reject options with mismatched openers and closers.",
+          "example_originals": ["91fbd59d", "1aa3f174", "c8540a5b", "2b512e65", "7f48b098", "a3e87535", "9c3630b9"],
+          "frequency": { "easy": 6, "medium": 8, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Insertion is a short noun phrase (one to three words) appositive",
+                "One edge of the insertion is already given in the stem; only the second edge varies",
+                "Distractors include no punctuation, comma+'and', and lone semicolon"
+              ],
+              "example_stem": "While filming a boxing match for the movie Body and Soul ______ Howe had a handheld camera operator wear roller skates.",
+              "example_ids": ["91fbd59d", "9f0ac61d", "b35cefb7", "9091458d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Insertion includes its own embedded comma list, requiring outer dashes or parens",
+                "One given edge is a dash or parenthesis, forcing the matching mark on the other side",
+                "Distractors mix dash/paren/comma to expose mismatch-detection"
+              ],
+              "example_stem": "Teotihuacan housed its residents (as many as 200,000, by some ______ in a complex of comfortable apartments...",
+              "example_ids": ["1aa3f174", "c8540a5b", "74ce2f05", "a153ad6a", "7f48b098", "a3e87535", "a427a52c", "fcaff694"]
+            },
+            "hard": {
+              "characteristics": [
+                "Insertion is a long descriptive clause containing its own commas",
+                "Stimulus contains multiple potential insertion edges, forcing identification of the actual span",
+                "Correct answer requires paired dashes around the entire span, with all comma-based options being incorrect"
+              ],
+              "example_stem": "...have a special genetic ability... that ______ ocean dwellers that include the squid, the octopus, and the cuttlefish ______ confers evolutionary advantages.",
+              "example_ids": ["2b512e65", "626a1642", "6e071432", "59a246dc", "5aa171de", "fdb16e20"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The blank must enclose a supplementary, non-essential element",
+              "The opposite edge of the insertion (whether a dash, paren, or comma) must remain fixed in the stem",
+              "Removing the insertion must leave a grammatical sentence"
+            ],
+            "must_vary": [
+              "Length and internal punctuation of the supplementary phrase",
+              "Choice of paired marks (commas vs dashes vs parentheses)",
+              "Position of insertion (mid-clause vs at clause edge)"
+            ],
+            "common_bugs": [
+              "Cloner flips the fixed opposite edge to a different mark, making no option produce a valid pair",
+              "Cloner inserts a verb into the supplementary phrase, accidentally turning it into a clause (A1 drift)",
+              "Cloner forgets that internal commas in the insertion force outer dashes/parens"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Nonrestrictive vs restrictive modifier punctuation",
+          "description": "A modifying phrase (often beginning with 'which', 'a [noun]', participial) sits at the boundary of a noun, and the student must decide whether to set it off with comma/dash (nonrestrictive) or leave unpunctuated (restrictive).",
+          "core_skill_demand": "Determine whether the modifier supplies essential identifying information (no commas) or supplementary information (set off with commas/dashes); reject options that confuse the two patterns.",
+          "example_originals": ["a2293b3f", "60dd03bc", "60713427", "603755a5", "0fa289a7", "3a2d77d7", "ace95f84"],
+          "frequency": { "easy": 5, "medium": 4, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Modifier is unambiguously restrictive: removing it changes meaning",
+                "Correct answer is no punctuation; distractors include comma, dash, colon"
+              ],
+              "example_stem": "The element carbon has the highest melting point ______ all the elements on the periodic table—3,500 degrees Celsius.",
+              "example_ids": ["a2293b3f", "60dd03bc", "603755a5", "60713427", "b5ff8f8e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Modifier could be read either way; rationale relies on whether antecedent is fully specified",
+                "Distractor set includes both 'comma only' and 'no punctuation' to force the contrast"
+              ],
+              "example_stem": "...artists Isabel and Ruben Toledo redesigned the costumes and sets for The Miami City Ballet's production of The ______ to reviewers, the Toledos' designs helped infuse...",
+              "example_ids": ["ace95f84", "8790d061", "a3e87535", "5cc85f01"]
+            },
+            "hard": {
+              "characteristics": [
+                "Modifier follows a proper noun and itself contains internal punctuation",
+                "Choice between comma+appositive vs no punctuation hinges on definite-article cue ('a [noun]' vs '[noun]')",
+                "Stimulus contains two potential antecedents at different distances"
+              ],
+              "example_stem": "...Ray released his first movie, Pather ______ quiet black-and-white drama about a family in rural India, Ray's film was quite different...",
+              "example_ids": ["0fa289a7", "3a2d77d7", "a872c60a", "5bed774c", "be37d4ae"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The relationship between the noun and modifier must remain restrictive or nonrestrictive as keyed",
+              "Antecedent specificity (definite/indefinite, proper/common) must be preserved"
+            ],
+            "must_vary": [
+              "The modifier's surface form (participial, appositive, prepositional)",
+              "The proper noun referenced"
+            ],
+            "common_bugs": [
+              "Cloner adds 'the' or 'a' in front of the modifier and inadvertently flips restrictive to nonrestrictive",
+              "Cloner uses a different antecedent that already implies uniqueness, breaking the restrictive justification",
+              "Cloner introduces an extra comma elsewhere that creates a false parallel insertion"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Titles, names, and noun-noun appositive pairs",
+      "description": "The student must choose punctuation around a proper-noun title-and-name pair (e.g., 'linguist Diane Massam' vs 'linguist, Diane Massam,'). The cognitive operation is determining whether the name is restrictive (the title alone is insufficient identification) or nonrestrictive (the title already uniquely identifies the person/thing).",
+      "boundary_with_other_aspects": "A3 is a specialized appositive case where the test is exclusively about job-title-plus-name (or category-plus-instance) pairs; A2's broader appositive type covers all other inserted material. A3 questions universally feature a person's profession or role followed by a proper noun.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Role/title + proper noun (restrictive name)",
+          "description": "A common-noun role (linguist, professor, sociologist, sculptor, biologist) is immediately followed by a proper name. The student must decide that the name is restrictive (no commas) because the role alone does not uniquely identify the individual.",
+          "core_skill_demand": "Recognize that an indefinite role identifier requires the proper name as essential identification, and therefore reject all comma-bracketed options.",
+          "example_originals": ["4dcedc31", "5aae2475", "6d4b2e1e", "80aa7690", "960dec02", "594b4a94", "fcaff694", "0a114526", "d4fe8f03"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Role is a generic professional title with one proper name following",
+                "Correct answer is no punctuation; only one distractor is plausible"
+              ],
+              "example_stem": "...chemistry ______ and his colleagues at Temple University recently developed a new approach...",
+              "example_ids": ["4dcedc31", "fcaff694"]
+            },
+            "medium": {
+              "characteristics": [
+                "Stem includes a modifier before the role (pioneering, plant cell, materials scientist)",
+                "Distractors include comma-before-only and comma-around to test partial-application errors"
+              ],
+              "example_stem": "...Critics have noted the way pioneering ______ compares the experiences of issei and nisei.",
+              "example_ids": ["6d4b2e1e", "5aae2475", "80aa7690", "594b4a94"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two-of-four distractors set off the name with commas; one wraps in 'a [role]'",
+                "Stimulus mentions only one instance, so role-uniqueness analysis is non-obvious",
+                "Multiple roles named earlier in the paragraph could imply set membership"
+              ],
+              "example_stem": "...quotes critic ______ claims [the film] 'expanded the range of possibilities for Asian images on screen.'",
+              "example_ids": ["0a114526", "960dec02", "d4fe8f03", "59a246dc", "5aae2475"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Role term must be indefinite (no 'the', not preceded by previous unique mention)",
+              "Exactly one proper name follows the role",
+              "Correct answer must be no punctuation between role and name"
+            ],
+            "must_vary": [
+              "Profession or role used",
+              "Length of any modifying adjective before the role",
+              "Topic (sciences, arts, law)"
+            ],
+            "common_bugs": [
+              "Cloner adds 'the' before the role, making nonrestrictive valid and breaking the key",
+              "Cloner introduces a second name later in the paragraph that overlaps the role, undermining restrictiveness",
+              "Cloner uses a unique role ('the fourteenth US librarian of Congress') where commas would be correct (T7 drift)"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Unique title/work + name (nonrestrictive)",
+          "description": "A definite, uniquely-identifying noun phrase (e.g., 'his autobiography', 'the painting', 'her first novel') precedes a specific name; the name is a nonrestrictive appositive and must be set off with commas (or matched dashes).",
+          "core_skill_demand": "Recognize that the descriptor already uniquely picks out the referent, so the name is supplementary and must be set off with paired commas or dashes.",
+          "example_originals": ["486f03da", "dddfa043", "9f0ac61d", "f2eaaf5d", "a153ad6a", "c468db1c"],
+          "frequency": { "easy": 4, "medium": 3, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Definite article or possessive precedes the descriptor",
+                "Correct answer is a single comma before the name (with sentence end after) or comma-name-comma"
+              ],
+              "example_stem": "The short story 'Rogue Enchantments' by Isabel Ibañez appears in Reclaim the ______ anthology of fantasy and science fiction...",
+              "example_ids": ["486f03da", "dddfa043", "f2eaaf5d", "9f0ac61d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Following appositive contains its own modifiers, requiring single comma not paired dashes",
+                "Distractors include colon and dash variants"
+              ],
+              "example_stem": "...one such type of matter is a form of cooled, condensed gas called a Bose-Einstein condensate ______ Dutch physicist Lene Hau famously used a BEC...",
+              "example_ids": ["a153ad6a", "c468db1c", "f30a478e"]
+            },
+            "hard": {
+              "characteristics": [
+                "Choice between dash and colon for emphasis at a list-introducing position",
+                "Stimulus introduces a uniquely identified concept ('the chemical compound', 'two varieties of the sweet potato plant') followed by named instances",
+                "Correct answer often a colon or dash, not a comma"
+              ],
+              "example_stem": "...examined the defensive responses of two varieties of the sweet potato ______ TN57, which is known for its insect resistance, and TN66...",
+              "example_ids": ["c468db1c", "f30a478e", "59a246dc", "e9aee0d8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The descriptor must be definite or possessive (the/her/his/this/that)",
+              "The name must follow the descriptor and be the only instance referenced",
+              "Correct answer must set the name off with comma, dash, or colon depending on position"
+            ],
+            "must_vary": [
+              "Type of descriptor (work, person, concept)",
+              "Position relative to sentence end"
+            ],
+            "common_bugs": [
+              "Cloner drops the definite article, demoting to T6 restrictive",
+              "Cloner places the descriptor after the name, reversing the structure",
+              "Cloner mismatches: uses 'a' but keeps comma punctuation, conflicting with the rule"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Items in a series or list",
+      "description": "The student must punctuate a sequence of three or more parallel items. The cognitive operation is determining whether items are simple (use commas) or themselves contain internal commas (use semicolons), and whether the sequence is preceded by a colon-worthy introductory clause.",
+      "boundary_with_other_aspects": "A4 always involves three or more parallel elements; A2's appositive is a single insertion. Reducing a three-item list to a single appositive is a categorical drift.",
+      "types": [
+        {
+          "id": "T8",
+          "name": "Comma-separated parallel series",
+          "description": "Three or more short, comma-free items are listed; the student selects the comma after the item before the blank and rejects colons, semicolons, or omitted commas.",
+          "core_skill_demand": "Identify the items as parallel simple elements and apply comma separators consistently across the series.",
+          "example_originals": ["6fece68e", "577b09fa", "a7fdf862", "e15c50b2", "77e06a09"],
+          "frequency": { "easy": 5, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "All items are single nouns or short noun phrases",
+                "List position in the stem is unambiguous",
+                "Distractors include colon, semicolon, dash"
+              ],
+              "example_stem": "...enforcing a moral code... which established the sanctity of animal ______ the just treatment of the elderly, and the abolition of the slave trade.",
+              "example_ids": ["6fece68e", "577b09fa", "a7fdf862"]
+            },
+            "medium": {
+              "characteristics": [
+                "Items are verb phrases or longer parallel constituents",
+                "Stem has a wider context that pushes attention away from the list",
+                "Distractors include comma + extra word ('and')"
+              ],
+              "example_stem": "More advanced floats can measure a wider range of ______ and monitor seasonal ice zones.",
+              "example_ids": ["e15c50b2", "77e06a09", "ac5536c1"]
+            },
+            "hard": {
+              "characteristics": [
+                "Items contain longer descriptive phrases; commas inside might be mistaken for series separators",
+                "Distractors include semicolons that would be valid if items had internal commas"
+              ],
+              "example_stem": "...divergent strategies for preserving milk ______ whereas rennet-coagulated cheesemaking became key... acid-heat coagulation methods became common...",
+              "example_ids": ["9579581e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Three or more parallel items in the series",
+              "Each item must be free of internal commas",
+              "Correct answer must be a simple comma"
+            ],
+            "must_vary": [
+              "Number of items (3 vs 4)",
+              "Grammatical category of items (nouns, verbs, infinitives)"
+            ],
+            "common_bugs": [
+              "Cloner adds a comma inside one item, breaking the simple-list condition (T9 drift)",
+              "Cloner reduces to two items, eliminating the series",
+              "Cloner introduces colon-style introducer, demanding T10 instead"
+            ]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Semicolon-separated complex series",
+          "description": "Three or more items each containing internal commas (parenthetical, dates, or descriptive phrases) require semicolons as the outer separators. The student selects semicolon at the blank to maintain parallel separation.",
+          "core_skill_demand": "Detect that at least one item in the series contains an internal comma and therefore mandates semicolon separators across all items.",
+          "example_originals": ["78b88c04", "9c3630b9", "a8fa749a", "aaa1907f", "c49e946e", "db24ecc9", "c04e9136"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(rare at this difficulty in the bank)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Two of three items contain internal commas; remaining option mixes semicolon/comma to test consistency"
+              ],
+              "example_stem": "...awarded to three pioneers...: two-time Nobel laureate Barry Sharpless, who coined the term...; Carolyn Bertozzi, founder of the Bertozzi Group at ______ and Morten Meldal, a professor...",
+              "example_ids": ["c04e9136"]
+            },
+            "hard": {
+              "characteristics": [
+                "All items have internal modifiers (dates, parenthetical descriptions, appositives)",
+                "Distractors mix semicolon-comma-comma orderings to force full-series consistency check",
+                "Stem often spans many words across two sentences, increasing parsing load"
+              ],
+              "example_stem": "...includes The Joys of Motherhood, a novel about the changing roles of women in 1950s ______ A Kind of Marriage, a television play...; and Head Above Water, her autobiography.",
+              "example_ids": ["78b88c04", "9c3630b9", "a8fa749a", "aaa1907f", "c49e946e", "db24ecc9"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "At least one item in the series must contain an internal comma",
+              "Outer separator must be semicolon at the blank",
+              "Series must have three or more items"
+            ],
+            "must_vary": [
+              "Type of internal modifier (date, descriptor, parenthetical)",
+              "Number of items beyond three"
+            ],
+            "common_bugs": [
+              "Cloner removes internal commas, removing the justification for semicolons",
+              "Cloner makes only one item complex, but accepts mixed comma/semicolon answer",
+              "Cloner shortens to two items, eliminating series structure entirely"
+            ]
+          }
+        },
+        {
+          "id": "T10",
+          "name": "Colon or dash introducing a list/elaboration",
+          "description": "An independent clause introduces a list, definition, or elaboration that follows the blank. The student selects a colon (or sometimes a dash) to mark the introduction; commas and semicolons are rejected.",
+          "core_skill_demand": "Recognize that the material before the blank is a complete sentence that promises an elaboration, and the material after is a list or single elaborating phrase, then select colon (or dash for emphatic break).",
+          "example_originals": ["da53d726", "ace95f84", "c101fc44", "e9aee0d8", "f30a478e", "c468db1c", "2c4cd76d", "fba5d8d1", "6fac7f45", "8772475b", "bb4557cf", "9d4a701b", "e76e74e8", "3a2d77d7", "9579581e"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 11 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(rare at easy; bank shows colon-list mostly at medium/hard)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Pre-blank clause is short and clearly complete; post-blank is a named instance or short list",
+                "Distractors include period, semicolon, and comma"
+              ],
+              "example_stem": "The conference's goals were ______ ensure women's participation in the proceedings... to secure the right of women to serve... and to advocate for human rights.",
+              "example_ids": ["da53d726", "c101fc44", "fba5d8d1"]
+            },
+            "hard": {
+              "characteristics": [
+                "Pre-blank clause itself contains an embedded modifier or appositive",
+                "Post-blank elaboration is a single named instance or a longer descriptive explanation",
+                "Distractors include dashes and semicolons that mimic the rhythm but are technically wrong"
+              ],
+              "example_stem": "Quantum particles... an unhackable means of transmitting encryption keys... attempts to observe particles will alter the particles ______ dismantle any information they transmit.",
+              "example_ids": ["e9aee0d8", "f30a478e", "c468db1c", "2c4cd76d", "8772475b", "bb4557cf", "9d4a701b", "e76e74e8", "3a2d77d7", "6fac7f45", "9579581e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Material before blank must be a grammatically complete sentence",
+              "Material after blank must function as a list, definition, or elaboration of something promised before",
+              "Correct answer must be colon (or dash) — not comma or semicolon"
+            ],
+            "must_vary": [
+              "Whether the elaboration is a single phrase or a multi-item list",
+              "Topic and named referents"
+            ],
+            "common_bugs": [
+              "Cloner makes the pre-blank a fragment, breaking the colon-requires-complete-sentence rule",
+              "Cloner adds 'such as' before blank, removing colon-licensing need",
+              "Cloner provides a coordinator after the blank, demoting to T1 or T8"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "End-of-sentence punctuation and question vs statement",
+      "description": "The student must choose the terminating punctuation and word order at the end of a sentence: period for declarative, question mark for direct question. The cognitive operation is determining whether the sentence reports an indirect question (declarative, period, subject-then-verb) or asks a direct question (interrogative, question mark, verb-then-subject inversion).",
+      "boundary_with_other_aspects": "A5 governs only sentence-final boundary plus subject-verb order in question/statement contrast; other aspects govern internal punctuation. A clone that swaps a comma question for a sentence-final question is a categorical drift.",
+      "types": [
+        {
+          "id": "T11",
+          "name": "Direct question vs indirect/embedded question",
+          "description": "The blank ends a sentence that may be either a reported indirect question (declarative, period) or a direct quoted-style question (interrogative, '?'). Word order (subject-verb vs verb-subject inversion) and the framing verb determine which is correct.",
+          "core_skill_demand": "Detect whether the sentence frames the question as something being asked directly (use inversion and '?') or as something embedded inside a reporting clause (use normal order and '.').",
+          "example_originals": ["02871a0d", "1f39ab8b", "39ac6498", "4565a53c", "75eb5242", "8459dc2f", "9091458d", "a7c85001", "aab78b25", "b0115ef6", "fa07bcb6", "5aa1fffd", "4b0c7b62"],
+          "frequency": { "easy": 13, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Sentence opens with 'How', 'Where', 'Why', or 'Which' as direct question; or with 'Researchers investigated how/whether' as indirect",
+                "Four options differ only on '.'/' ?' and S-V order",
+                "Context paragraph cues which framing the sentence intends"
+              ],
+              "example_stem": "How ______ A layer of microbubbles on their plumage reduces friction as the penguins speed to the surface.",
+              "example_ids": ["02871a0d", "1f39ab8b", "39ac6498", "4565a53c", "75eb5242", "8459dc2f", "9091458d", "a7c85001", "aab78b25", "b0115ef6", "fa07bcb6", "5aa1fffd", "4b0c7b62"]
+            },
+            "medium": {
+              "characteristics": [
+                "(bank shows this type concentrated at Easy; no medium originals present)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "(bank shows this type concentrated at Easy; no hard originals present)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The framing word before the blank must license either direct (How/Where/Why with no prior reporting verb) or indirect (X investigated how/Y wondered whether) reading, and the keyed answer matches",
+              "Four options must span the 2x2 of period/question mark × normal/inverted word order"
+            ],
+            "must_vary": [
+              "Question word (How/Where/Why/Which/Whether)",
+              "Topic of the underlying question"
+            ],
+            "common_bugs": [
+              "Cloner replaces the framing verb so both indirect and direct readings become possible, ambiguating the key",
+              "Cloner inverts only one option's word order, breaking the 2x2 distractor pattern",
+              "Cloner places the blank mid-sentence rather than at terminal position, demoting to A1/A3"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Across all 189 originals, every stem is the canonical 'Which choice completes the text so that it conforms to the conventions of Standard English?' MCQ with four punctuation/word-order variants. Difficulty rises (a) from single-issue choices at Easy (period vs comma, restrictive vs nonrestrictive name) to (b) compound issues at Hard where the four options vary on multiple axes (e.g., '; however,' vs ', however;' vs ', however,' vs ', however'). Hard items disproportionately combine A1+A3 (clause boundary involving named expert) or A4 T10 (colon-introduced elaboration); easy items skew to A1 T1/T2 (clean clause joins) and A5 (direct/indirect question). Cloners must check that exactly one option satisfies all conventions simultaneously and that distractors each fail on a single identifiable rule."
+}

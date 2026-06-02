@@ -1,0 +1,24 @@
+{
+  "questionId": "54df8076-s1",
+  "originalId": "54df8076",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The perimeter of an equilateral triangle is 561 centimeters. The three vertices of the triangle lie on a circle. The radius of the circle is k&radic;3 centimeters. What is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "187/3",
+    "62.33",
+    "62.34"
+  ],
+  "rationale": "<p>Each side of the equilateral triangle has length 561/3 = 187 cm. Drop a perpendicular from the center O to a side, meeting at midpoint M of side AB. Then AM = 187/2. In right triangle AMO, angle OAM = 30&deg;, so AO is the hypotenuse and AM = AO &middot; cos 30&deg; = AO &middot; (&radic;3/2). With AO = k&radic;3, AM = k&radic;3 &middot; &radic;3/2 = 3k/2. Setting 3k/2 = 187/2 gives k = 187/3 &asymp; 62.33.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T8.hard"
+}

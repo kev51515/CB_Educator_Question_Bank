@@ -1,0 +1,6 @@
+[
+  {"id": "3563d76d-s1", "templateId": "lines-angles-and-triangles.A5.T2.easy", "verdict": "ok"},
+  {"id": "43236565-s1", "templateId": "lines-angles-and-triangles.A1.T3.easy", "verdict": "aspect_drift", "detail": "Clone has only two intersecting lines (no parallel lines, no transversal). A1 requires explicit parallel-lines + transversal; this is A6 (vertical angles at a single intersection). T3 easy lever requires 'two parallel lines, one transversal, all four angles labeled.'"},
+  {"id": "5207e508-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "b434e103-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "difficulty_drift", "detail": "Easy lever requires 'both given angles are explicit integer measures' with answer = 180 - g1 - g2. Clone gives only one angle (J=48) and asks 'which could be K,' requiring an inequality check (K<132) — that matches the medium lever, not easy."}
+]

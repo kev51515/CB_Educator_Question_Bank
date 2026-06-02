@@ -1,0 +1,39 @@
+{
+  "questionId": "4a90a978-s1",
+  "originalId": "4a90a978",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 1965, Indian native and engineer Kalpana Chawla left her teaching position at the Punjab Engineering College <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a graduate program in aerospace engineering at the University of Texas.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>to pursue</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>pursued</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>is pursuing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>pursues</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The convention being tested is the use of nonfinite verb forms. The to-infinitive &ldquo;to pursue&rdquo; correctly forms a subordinate clause expressing why Chawla left her position (to pursue a graduate program).</p><p>Choices B, C, and D are all finite verb forms that would create either a comma splice or a run-on by joining two independent clauses without proper punctuation or conjunction.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

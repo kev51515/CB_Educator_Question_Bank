@@ -1,0 +1,39 @@
+{
+  "questionId": "85439572-s1",
+  "originalId": "85439572",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Traditional drying of harvested cocoa beans uses fossil-fuel furnaces, which produces greenhouse gas emissions. To investigate whether solar drying could be a faster alternative, engineer Anika Patel and her team dried batches of cocoa beans using between 60 and 80 large parabolic mirrors that concentrate sunlight. The team successfully dried the beans in about ten minutes per batch and now hypothesizes that adding more mirrors would shorten the drying time even further.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Patel&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The temperature inside the drying chamber is distributed more evenly when drying cocoa beans with solar power than with a furnace.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Cocoa-tasting experts prefer the flavor of solar-dried cocoa beans over the flavor of furnace-dried cocoa beans.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The shells of solar-dried cocoa beans are easier to remove than the shells of furnace-dried cocoa beans.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Attempts to dry cocoa beans using 100 mirrors yields results in fewer than seven minutes per batch.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because if using more mirrors (100) shortens drying time to under seven minutes, that directly supports the hypothesis that adding more mirrors would shorten drying time.</p><p>Choice A is incorrect: even heat distribution doesn&rsquo;t address speed. Choice B is incorrect: flavor preference is unrelated to drying time. Choice C is incorrect: ease of shell removal is unrelated to drying time.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "e5c57163-s1",
+  "originalId": "e5c57163",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Square A has side lengths that are 247 times the side lengths of square B. The area of square A is k times the area of square B. What is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "61009"
+  ],
+  "rationale": "<p>The correct answer is 61009. For similar figures, the ratio of areas equals the square of the ratio of linear dimensions. Since the side-length ratio is 247, the area ratio is 247&sup2; = 61,009. So k = 61,009.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.medium"
+}

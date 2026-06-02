@@ -1,0 +1,39 @@
+{
+  "questionId": "1695391a-s1",
+  "originalId": "1695391a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Maxine Hong Kingston's 1976 memoir <em>The Woman Warrior</em>.</p><blockquote><p>Once I started reading, <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">I could not be pulled away from a book.</span> In second grade, the teachers grew impatient with me at recess. I read straight through every break, refusing to look up.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the phrase \"I could not be pulled away from a book\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She often switched between books.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She struggled to follow what she read.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She enjoyed sharing books with teachers.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She read continuously, ignoring everything else.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the following sentences describe the author reading straight through every recess and refusing to look up, which supports the meaning that she read continuously and could not be drawn away from her book.</p><p>Choice A is incorrect because the text does not describe her switching books. Choice B is incorrect because nothing suggests she struggled with comprehension. Choice C is incorrect because the text describes the teachers as impatient with her, not as people with whom she shared books.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "words-in-context.A1.T2.easy"
+}

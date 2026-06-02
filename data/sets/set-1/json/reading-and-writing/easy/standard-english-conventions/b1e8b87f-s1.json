@@ -1,0 +1,39 @@
+{
+  "questionId": "b1e8b87f-s1",
+  "originalId": "b1e8b87f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.misc.easy",
+  "type": "mcq",
+  "stimulus": "<p>Crossing the desert dunes of southern Egypt is the Darb el-Arbain, an ancient trade route that connected sub-Saharan Africa with the Mediterranean for centuries before its eventual decline. In recent decades, archaeologists have <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> pottery, copper tools, woven baskets, and many other artifacts buried along the route.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>uncovered:</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>uncovered</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>uncovered,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>uncovered&mdash;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between a verb and its object. No punctuation is needed between the verb \"uncovered\" and its object (\"pottery, copper tools, woven baskets, and many other artifacts...\"). The object completes the idea of the verb, and any punctuation between the two results in an ungrammatical sentence.</p><p>Choice A is incorrect because no punctuation is needed between the verb and its object. Choice C is incorrect because no punctuation is needed between the verb and its object. Choice D is incorrect because no punctuation is needed between the verb and its object.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

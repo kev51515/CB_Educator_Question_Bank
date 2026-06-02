@@ -1,0 +1,25 @@
+{
+  "questionId": "dd428136-s1",
+  "originalId": "dd428136",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>Hanna Kokko and her collaborators at the University of Zurich recently conducted experiments to evaluate the extent to which individual ant <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> influence the routes a colony takes when foraging in unfamiliar terrain.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>scout&rsquo;s behavioral tendencies&rsquo;</p>"},
+    {"id": "b", "content": "<p>scouts behavioral tendencies</p>"},
+    {"id": "c", "content": "<p>scouts&rsquo; behavioral tendencies</p>"},
+    {"id": "d", "content": "<p>scouts&rsquo; behavioral tendency&rsquo;s</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of plural and possessive nouns. The plural possessive noun \"scouts&rsquo;\" and the plural noun \"tendencies\" correctly indicate that the experiments involved multiple ant scouts and that those scouts had several behavioral tendencies.</p><p>Choice A is incorrect because the context requires the plural possessive noun \"scouts&rsquo;\" and the plural noun \"tendencies,\" not the singular possessive \"scout&rsquo;s\" and the plural possessive \"tendencies&rsquo;.\" Choice B is incorrect because the context requires the plural possessive noun \"scouts&rsquo;,\" not the plural noun \"scouts.\" Choice D is incorrect because the context requires the plural noun \"tendencies,\" not the singular possessive noun \"tendency&rsquo;s.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

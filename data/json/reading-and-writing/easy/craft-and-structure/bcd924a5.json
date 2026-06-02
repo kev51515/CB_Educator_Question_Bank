@@ -1,0 +1,72 @@
+{
+  "questionId": "bcd924a5",
+  "externalId": "8ec1be26-3414-4bbe-a886-6cc14889c7e2",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:00.823769+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "128666b0-8dee-4ae3-b72c-0f5a64f33ab5",
+      "content": "<p>outmoded</p>"
+    },
+    {
+      "id": "94144b23-7950-4563-8fe9-a743f68f674e",
+      "content": "<p>informal</p>"
+    },
+    {
+      "id": "37bb628f-b140-4b4e-8604-f3a27eb18e19",
+      "content": "<p>interconnected</p>"
+    },
+    {
+      "id": "d8d95528-e969-4302-9a14-ec8e05e5fede",
+      "content": "<p>optional</p>"
+    }
+  ],
+  "keys": [
+    "37bb628f-b140-4b4e-8604-f3a27eb18e19"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of Bali&rsquo;s <em>subak </em>water management system. In this context, &ldquo;interconnected&rdquo; would mean joined or linked together. The text describes the various components of the<em> </em>subak system&mdash;&ldquo;terraces, canals, and water temples&rdquo;&mdash;and then states that they are &ldquo;joined together into a single cohesive unit.&rdquo; This context indicates that these elements are connected with one another in an integrated system.</p><p>Choice A is incorrect because &ldquo;outmoded&rdquo; would mean outdated or no longer in use. While the text does indicate that the subak<em> </em>system has &ldquo;rich cultural, philosophical, and historical significance,&rdquo; the text doesn&rsquo;t suggest that the subak<em> </em>system is obsolete or not currently used. Choice B is incorrect because &ldquo;informal&rdquo; would suggest that the subak<em> </em>system lacks structure or organization. The text contradicts this by describing a complex system with specific components (&ldquo;terraces, canals, and water temples&rdquo;) that are &ldquo;joined together into a single cohesive unit,&rdquo; indicating formal organization rather than informality. Choice D is incorrect because &ldquo;optional&rdquo; would suggest that the various elements of the subak<em> </em>system are not necessary or required. The text indicates the opposite by stating that these elements are &ldquo;joined together into a single cohesive unit,&rdquo; suggesting that each component plays a necessary role in the functioning of the integrated system.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>The unique <em>subak</em> water management system used to irrigate the rice paddy fields of the Indonesian island of Bali has a rich cultural, philosophical, and historical significance dating back to the ninth century. The many elements of subak&mdash;terraces, canals, and water temples&mdash;are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: they are joined together into a single cohesive unit.</p>",
+    "keys": [
+      "37bb628f-b140-4b4e-8604-f3a27eb18e19"
+    ],
+    "answerOptions": [
+      {
+        "id": "128666b0-8dee-4ae3-b72c-0f5a64f33ab5",
+        "content": "<p>outmoded</p>"
+      },
+      {
+        "id": "94144b23-7950-4563-8fe9-a743f68f674e",
+        "content": "<p>informal</p>"
+      },
+      {
+        "id": "37bb628f-b140-4b4e-8604-f3a27eb18e19",
+        "content": "<p>interconnected</p>"
+      },
+      {
+        "id": "d8d95528-e969-4302-9a14-ec8e05e5fede",
+        "content": "<p>optional</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of Bali&rsquo;s <em>subak </em>water management system. In this context, &ldquo;interconnected&rdquo; would mean joined or linked together. The text describes the various components of the<em> </em>subak system&mdash;&ldquo;terraces, canals, and water temples&rdquo;&mdash;and then states that they are &ldquo;joined together into a single cohesive unit.&rdquo; This context indicates that these elements are connected with one another in an integrated system.</p><p>Choice A is incorrect because &ldquo;outmoded&rdquo; would mean outdated or no longer in use. While the text does indicate that the subak<em> </em>system has &ldquo;rich cultural, philosophical, and historical significance,&rdquo; the text doesn&rsquo;t suggest that the subak<em> </em>system is obsolete or not currently used. Choice B is incorrect because &ldquo;informal&rdquo; would suggest that the subak<em> </em>system lacks structure or organization. The text contradicts this by describing a complex system with specific components (&ldquo;terraces, canals, and water temples&rdquo;) that are &ldquo;joined together into a single cohesive unit,&rdquo; indicating formal organization rather than informality. Choice D is incorrect because &ldquo;optional&rdquo; would suggest that the various elements of the subak<em> </em>system are not necessary or required. The text indicates the opposite by stating that these elements are &ldquo;joined together into a single cohesive unit,&rdquo; suggesting that each component plays a necessary role in the functioning of the integrated system.</p>",
+    "externalid": "8ec1be26-3414-4bbe-a886-6cc14889c7e2",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>The unique <em>subak</em> water management system used to irrigate the rice paddy fields of the Indonesian island of Bali has a rich cultural, philosophical, and historical significance dating back to the ninth century. The many elements of subak&mdash;terraces, canals, and water temples&mdash;are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: they are joined together into a single cohesive unit.</p>"
+}

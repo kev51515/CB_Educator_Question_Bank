@@ -1,0 +1,39 @@
+{
+  "questionId": "9d0396d4-s1",
+  "originalId": "9d0396d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, a line passes through the points (0, -5) and (8, 3). What is the x-coordinate of the x-intercept of the line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5/8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40/3</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (3 - (-5))/(8 - 0) = 8/8 = 1. The y-intercept is -5, so the line is y = x - 5. Setting y = 0: x = 5.</p><p>Choices B, C, and D result from miscomputing the slope or confusing the x- and y-intercepts.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

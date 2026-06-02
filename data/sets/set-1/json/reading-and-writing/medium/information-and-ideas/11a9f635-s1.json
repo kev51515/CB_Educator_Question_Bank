@@ -1,0 +1,25 @@
+{
+  "questionId": "11a9f635-s1",
+  "originalId": "11a9f635",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Geologists studying ancient sea-floor life have catalogued thousands of trilobite specimens from limestone beds in Morocco's Anti-Atlas range, including many dated to the late Ordovician period. To investigate the rise of the earliest complex animal communities, however, researchers must look to older sites, such as the Avalonian shales at Charnwood Forest in the United Kingdom. Protected as a Site of Special Scientific Interest, the Charnwood outcrops contain more than 1,000 frondlike Ediacaran fossils that together capture an early chapter in animal evolution.</p>",
+  "stem": "<p>What does the text indicate about the Charnwood Forest geological formation?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It contains a larger number of fossils but represents fewer species than the formation in the Anti-Atlas range does.</p>"},
+    {"id": "b", "content": "<p>It is widely recognized by geologists as the most informative source of data on ancient sea-floor life.</p>"},
+    {"id": "c", "content": "<p>It preserves specimens from an earlier time period than those found in the Anti-Atlas formation.</p>"},
+    {"id": "d", "content": "<p>It has yielded evidence that the earliest trilobites may have appeared before the Ordovician period.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text indicates that the Anti-Atlas beds contain late Ordovician trilobites, while the Charnwood outcrops preserve Ediacaran fossils representing the \"earliest complex animal communities.\" The Ediacaran period predates the Ordovician, so the Charnwood specimens are from an earlier time than those at the Anti-Atlas range.</p><p>Choice A is incorrect because the text mentions \"more than 1,000\" fossils at Charnwood but does not compare this number, or the number of species, to those in the Anti-Atlas range. Choice B is incorrect because the text never claims that Charnwood is the most informative site for ancient sea-floor life; it simply notes its importance for studying early animal communities. Choice D is incorrect because the text says the Charnwood fossils are frondlike Ediacaran organisms, not trilobites.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

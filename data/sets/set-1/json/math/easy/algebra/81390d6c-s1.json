@@ -1,0 +1,39 @@
+{
+  "questionId": "81390d6c-s1",
+  "originalId": "81390d6c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>p</i> is defined by <i>p</i>(<i>x</i>) = <i>x</i> + 150. What is the value of <i>p</i>(40)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>190</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40,150</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Substituting 40 for <i>x</i> yields <i>p</i>(40) = 40 + 150 = 190.</p><p>Choice B is the value of <i>p</i>(0). Choice C is the result of multiplying 40 by 150. Choice D is the result of concatenating 40 and 150.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z"
+}

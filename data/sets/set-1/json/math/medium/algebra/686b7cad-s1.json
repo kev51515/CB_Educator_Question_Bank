@@ -1,0 +1,39 @@
+{
+  "questionId": "686b7cad-s1",
+  "originalId": "686b7cad",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bond measure for a new community center was on the local ballot. A news anchor reported that 5 times as many people voted against the measure as voted in favor of it. A newspaper article stated that 20,000 more people voted against the measure than voted in favor of it. Based on these data, how many people voted against the measure?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>25,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>30,000</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Let f be the number who voted in favor and a be the number who voted against. Then a = 5f and a \u2212 f = 20,000. Substituting gives 5f \u2212 f = 20,000, so 4f = 20,000 and f = 5,000. Therefore a = 5(5,000) = 25,000. The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium"
+}

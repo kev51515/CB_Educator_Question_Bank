@@ -1,0 +1,39 @@
+{
+  "questionId": "6fa593f1-s1",
+  "originalId": "6fa593f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mi>y</mi><mo>=</mo><mn>35</mn></math>, what is the value of <math><mi>y</mi><mo>+</mo><mn>8</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>27</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>43</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>35</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>59</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Adding 8 to both sides yields <math><mi>y</mi><mo>+</mo><mn>8</mn><mo>=</mo><mn>43</mn></math>.</p><p>Choice A is the value of <math><mi>y</mi><mo>-</mo><mn>8</mn></math>. Choice C is the value of <math><mi>y</mi></math>. Choice D is the value of <math><mi>y</mi><mo>+</mo><mn>24</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A4.T11.easy"
+}

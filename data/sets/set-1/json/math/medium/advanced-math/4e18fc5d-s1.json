@@ -1,0 +1,25 @@
+{
+  "questionId": "4e18fc5d-s1",
+  "originalId": "4e18fc5d",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p>v = &minus;t/(200u)</p>",
+  "stem": "<p>The given equation relates positive numbers v, t, and u. Which equation correctly expresses t in terms of v and u?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>t = &minus;200v/u</p>"},
+    {"id": "b", "content": "<p>t = &minus;u/(200v)</p>"},
+    {"id": "c", "content": "<p>t = v + 200u</p>"},
+    {"id": "d", "content": "<p>t = &minus;200vu</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Multiplying both sides by 200u gives 200uv = &minus;t. Thus t = &minus;200vu. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

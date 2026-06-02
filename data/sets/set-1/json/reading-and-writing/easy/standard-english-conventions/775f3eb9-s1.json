@@ -1,0 +1,39 @@
+{
+  "questionId": "775f3eb9-s1",
+  "originalId": "775f3eb9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In her landmark book <em>Voices from the Caribbean Diaspora</em>, Marisol Almeida draws on letters, immigration records, ships&rsquo; manifests, and oral histories to tell the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> who built new lives in Brooklyn during the mid-twentieth century.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>story&rsquo;s of the Afro-Caribbean migrants</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>story&rsquo;s of the Afro-Caribbean migrants&rsquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>stories of the Afro-Caribbean migrants</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>stories&rsquo; of the Afro-Caribbean migrant&rsquo;s</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The plural nouns &ldquo;stories&rdquo; and &ldquo;migrants&rdquo; correctly indicate that the book tells multiple stories of multiple migrants.</p><p>Choices A, B, and D all incorrectly use singular possessive forms (&ldquo;story&rsquo;s,&rdquo; &ldquo;migrant&rsquo;s&rdquo;) or add unnecessary apostrophes to the plural noun.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T8.easy"
+}

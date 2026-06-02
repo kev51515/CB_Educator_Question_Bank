@@ -1,0 +1,25 @@
+{
+  "questionId": "e3ffb854-s1",
+  "originalId": "e3ffb854",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Willa Cather's 1918 novel <em>My &Aacute;ntonia</em>.</p>\n<blockquote>\n<p>The wagon trail wound down the slope, and at its lowest point the old wooden footbridge, <span role=\"region\" aria-label=\"Referenced Content\"><u>borne</u></span> by hefty stone piers, sturdy, as when first laid down to carry settlers across the swollen creek, stood half-submerged in the muddy water of the spring thaw.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;borne&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Endured</p>"},
+    {"id": "b", "content": "<p>Carried away</p>"},
+    {"id": "c", "content": "<p>Produced</p>"},
+    {"id": "d", "content": "<p>Held up</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because \"held up\" most nearly matches the physical sense of being supported by piers, which is the structural relationship the text describes. Choice A is incorrect because \"endured\" means tolerated suffering; piers do not endure a bridge in that sense. Choice B is incorrect because \"carried away\" means swept off; the bridge is still standing, half-submerged. Choice C is incorrect because \"produced\" means created; the piers do not create the bridge.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

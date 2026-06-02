@@ -1,0 +1,25 @@
+{
+  "questionId": "d3ca5d59-s1",
+  "originalId": "d3ca5d59",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T4.medium",
+  "stimulus": "<p>Hilma af Klint's serene, symmetrical abstract paintings have long delighted general audiences but have attracted relatively little sustained engagement from academic critics, a circumstance that may stem from the very fact that her compositions appear so <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. Many critics direct their attention to art that is fragmentary or visibly disruptive.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>orderly</p>"},
+    {"id": "b", "content": "<p>experimental</p>"},
+    {"id": "c", "content": "<p>elusive</p>"},
+    {"id": "d", "content": "<p>defiant</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Orderly\" means arranged in a regular, harmonious way. The contrast in the next sentence (\"art that is fragmentary or visibly disruptive\") signals that her paintings present the opposite quality&mdash;serene, organized form.</p><p>Choice B is incorrect. \"Experimental\" art would likely attract academic attention; that contradicts the explanation given. Choice C is incorrect. \"Elusive\" art is hard to pin down, which would also tend to invite, not deter, critical commentary. Choice D is incorrect. \"Defiant\" suggests rebellious art, which would likewise attract the kinds of critics described.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "403fb4e4-s1",
+  "originalId": "403fb4e4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "type": "mcq",
+  "stimulus": "<p><strong>Percentage of Beekeepers in Three Provinces of Hidalgo Who Are Indigenous, by Honey Type Produced</strong></p><table border=\"1\"><thead><tr><th>Province</th><th>wildflower honey</th><th>avocado honey</th><th>mesquite honey</th></tr></thead><tbody><tr><td>north Hidalgo</td><td>32.1%</td><td>17.4%</td><td>61.2%</td></tr><tr><td>central Hidalgo</td><td>38.2%</td><td>21.7%</td><td>46.5%</td></tr><tr><td>south Hidalgo</td><td>34.6%</td><td>19.1%</td><td>54.8%</td></tr></tbody></table><p>Anthropologist Mariana Vargas and her colleagues surveyed small-scale beekeepers in three provinces of Hidalgo, Mexico—which features a forested north, a populated center, and an arid southern plain—to study their honey production. In several provinces, Indigenous beekeepers were notably prominent in producing specific honey varieties, sometimes accounting for a majority of those producing such varieties; for example, ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Indigenous beekeepers represented a relatively similar share of wildflower honey producers across the three provinces of Hidalgo.</p>"},
+    {"id": "b", "content": "<p>most of the mesquite honey producers in north and south Hidalgo were Indigenous beekeepers.</p>"},
+    {"id": "c", "content": "<p>more Indigenous beekeepers in central Hidalgo produced avocado honey than produced wildflower honey.</p>"},
+    {"id": "d", "content": "<p>most of the wildflower honey producers and most of the mesquite honey producers in south Hidalgo were Indigenous beekeepers.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The table shows that of mesquite honey producers, about 61.2% in north Hidalgo and about 54.8% in south Hidalgo are Indigenous—both majorities. That directly supports the claim that Indigenous beekeepers can constitute a majority of producers of specific honey varieties in certain provinces.</p><p>Choice A is incorrect: although wildflower percentages are similar across provinces (32.1%, 38.2%, 34.6%), none exceeds 50%, so this doesn't illustrate a majority. Choice C is incorrect: in central Hidalgo, more Indigenous beekeepers produce wildflower honey (38.2%) than avocado honey (21.7%)—the comparison is reversed. Choice D is incorrect: in south Hidalgo only 34.6% of wildflower producers are Indigenous, not a majority.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

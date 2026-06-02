@@ -1,0 +1,39 @@
+{
+  "questionId": "ac7166f7-s1",
+  "originalId": "ac7166f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Researchers Maya Lindqvist and Olivia Carr studied scooter-sharing behavior in Stockholm, Sweden. They asked adult riders about their experience, reasons for riding, and route preferences. The researchers claim that <u>experienced riders who mainly ride scooters to commute tend to prefer dedicated bike paths over scooter-share-friendly streets</u>.</p>",
+  "stem": "<p>Which survey response from a scooter rider in Stockholm would best support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;I just downloaded the scooter-share app last week, and I&rsquo;m looking forward to trying it on weekends.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;I ride a shared scooter to my office every weekday. There is a wider road I could take, but I always use the dedicated bike path through the riverside park because I feel safer with no cars near me.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;I usually scooter to work, but I&rsquo;m taking the metro this week because the weather has been too rainy for scootering.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;I sometimes use a scooter to go meet friends after dinner. I don&rsquo;t really pay attention to which roads I take.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the rider is both experienced (rides every weekday), commutes (to office), and explicitly prefers the dedicated bike path over the wider road &mdash; exactly the combination described in the underlined claim.</p><p>Choice A is incorrect: a new user riding for fun isn&rsquo;t an experienced commuter. Choice C is incorrect: although the rider is a commuter, the response doesn&rsquo;t address route preferences. Choice D is incorrect: this rider isn&rsquo;t commuting and doesn&rsquo;t prefer particular routes.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A3.T4.easy"
+}

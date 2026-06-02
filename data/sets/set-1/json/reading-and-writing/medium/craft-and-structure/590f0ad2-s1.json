@@ -1,0 +1,25 @@
+{
+  "questionId": "590f0ad2-s1",
+  "originalId": "590f0ad2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>Urban infrastructure is often assumed to be hostile to wildlife, but that isn't always the case. <span role=\"region\" aria-label=\"Referenced Content\"><u>Consider the peregrine falcon (<em>Falco peregrinus</em>)</u></span>: as old-growth cliffs have become scarce along the eastern seaboard of North America, many of these falcons have abandoned remote cliff habitats and are now nesting on tall office towers and bridge piers. In a survey of multiple downtown high-rises and patches of preserved coastal cliff, an ornithologist found peregrine falcons on 96% of the high-rises but only 41% of the cliff patches. Moreover, broods raised on the high-rises were on average larger than those raised on the cliffs.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It introduces discussion of a specific example that supports the general claim made in the previous sentence.</p>"},
+    {"id": "b", "content": "<p>It challenges a common assumption about the species under investigation in the research referred to in the text.</p>"},
+    {"id": "c", "content": "<p>It suggests that a certain species should be included in additional studies like the one mentioned later in the text.</p>"},
+    {"id": "d", "content": "<p>It provides a definition for an unfamiliar term that is central to the main argument in the text.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The first sentence presents the general claim that urban infrastructure is not always hostile to wildlife. The underlined portion introduces the peregrine falcon, and the sentence that follows shows how peregrines now thrive on office towers and bridge piers&mdash;structures usually thought of as hostile habitat. The underlined portion therefore introduces a specific example that supports the general claim in the previous sentence.</p><p>Choice B is incorrect because the text does not describe an assumption specifically about peregrine falcons that it then challenges. Choice C is incorrect because the text describes one survey and does not propose additional studies. Choice D is incorrect because the underlined portion names a species rather than defining a term central to the argument.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "37219ba2-s1",
+  "originalId": "37219ba2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Henry David Thoreau's 1854 book <em>Walden</em>. Thoreau is describing a small pond.</p><p>The water was so clear that the bottom seemed only a few feet below me, and when I floated my boat across it, I could count every pebble and watch the slow movement of fishes among the stones.</p>",
+  "stem": "<p>As used in the text, what does the word \"clear\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Simple</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Transparent</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Obvious</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Understandable</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the narrator describes being able to see pebbles and fishes through the water, indicating that the water lets light pass through it. \"Transparent\" captures this meaning. Choices A, C, and D describe ideas that are easy to understand, not water that can be seen through.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "a05cc490-s1",
+  "originalId": "a05cc490",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>With the rollout of more fuel-efficient aircraft engines, total fuel consumption across an airline&rsquo;s fleet might be expected to drop. Aviation analysts have noticed that gains in per-flight efficiency frequently correlate negatively with overall fuel <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> though, cheaper operating costs tend to encourage carriers to schedule additional flights, raising total demand for jet fuel.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>savings,</p>"},
+    {"id": "b", "content": "<p>savings</p>"},
+    {"id": "c", "content": "<p>savings;</p>"},
+    {"id": "d", "content": "<p>savings:</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. &ldquo;Gains&hellip;savings&rdquo; is one independent clause; &ldquo;cheaper operating costs&hellip;jet fuel&rdquo; is another. The conjunctive adverb &ldquo;though,&rdquo; flanked by its required comma, sits at the head of the second clause; a semicolon after &ldquo;savings&rdquo; correctly marks the boundary between the two independent clauses.</p><p>Choice A is incorrect because a comma alone before &ldquo;though,&rdquo; produces a comma splice between the two independent clauses. Choice B is incorrect because no punctuation between the clauses creates a run-on. Choice D is incorrect because a colon must be preceded by a complete clause that introduces what follows, and &ldquo;though&rdquo; here is a transitional adverb, not the start of a list or explanation that a colon would license.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

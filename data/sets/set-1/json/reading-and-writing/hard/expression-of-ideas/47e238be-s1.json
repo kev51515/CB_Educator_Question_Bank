@@ -1,0 +1,39 @@
+{
+  "questionId": "47e238be-s1",
+  "originalId": "47e238be",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Oceanographers Naoto Hirano and Yuka Sato have argued that the unusually warm seawater circulating through the hydrothermal vents along the South Pacific's petit-spot volcanoes is drawn from depths far greater than those typically associated with such systems. The vents tap reservoirs nearly 500 meters below the seafloor\u2014an unusual figure that marks these vents as clear outliers; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the vast majority of hydrothermal vents around the world draw on reservoirs less than 100 meters deep.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>therefore,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>in fact,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>moreover,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>still,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The second clause elaborates on and reinforces the first clause's claim that the South Pacific vents are outliers by specifying how shallow most other vents are. \"In fact\" is the transition used to strengthen or elaborate a preceding claim, which fits the relationship here.</p><p>Choice A is incorrect because \"therefore\" signals cause and effect, but the South Pacific vents being outliers does not cause other vents to be shallow. Choice C is incorrect because \"moreover\" adds a new and separate idea, while the second clause is restating and elaborating the same idea. Choice D is incorrect because \"still\" signals contrast or concession, but the two clauses agree.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A4.T11.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "ec3d7605-s1",
+  "originalId": "ec3d7605",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T11.medium",
+  "stimulus": "<p>Acclaimed nature documentarian Aroha Tane regards the field notebooks she keeps while observing wildlife in remote habitats to be a rewarding pursuit in their own right. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Tane confesses that she finds the note-taking phase of her fieldwork just as captivating and absorbing as filming the animals themselves.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Indeed,</p>"},
+    {"id": "b", "content": "<p>Likewise,</p>"},
+    {"id": "c", "content": "<p>However,</p>"},
+    {"id": "d", "content": "<p>Besides,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Indeed\" logically signals that the information in this sentence—that Tane finds the note-taking phase of her fieldwork to be just as captivating as filming animals—emphasizes and elaborates on the previous sentence's point that Tane regards her field notebooks as a rewarding pursuit.</p><p>Choice B is incorrect because \"likewise\" illogically signals that this sentence merely adds a second, similar point, when in fact it reinforces and strengthens the same point. Choice C is incorrect because \"however\" illogically signals that the information contrasts with the previous sentence, when it actually confirms it. Choice D is incorrect because \"besides\" illogically signals that the sentence provides a separate point in addition to the previous one, when in fact it intensifies the same claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

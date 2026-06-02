@@ -1,0 +1,23 @@
+{
+  "questionId": "158591f0-s1",
+  "originalId": "158591f0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><i>x</i>(<i>x</i> + 2) &minus; 60 = 3<i>x</i>(<i>x</i> &minus; 9)</p><p>What is the sum of the solutions to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "29/2",
+    "14.5"
+  ],
+  "rationale": "<p>Expand both sides: <i>x</i>&sup2; + 2<i>x</i> &minus; 60 = 3<i>x</i>&sup2; &minus; 27<i>x</i>. Bring everything to one side: 2<i>x</i>&sup2; &minus; 29<i>x</i> + 60 = 0. The sum of the roots of <i>ax</i>&sup2; + <i>bx</i> + <i>c</i> = 0 is &minus;<i>b</i>/<i>a</i> = 29/2 = 14.5.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "196e8e6e-s1",
+  "originalId": "196e8e6e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, a circle has center C with coordinates (h, k). Points A and B lie on the circle. Point A has coordinates (h + &radic;75, k + 1), and &ang;ACB is a right angle. What is the length of segment AB?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&radic;76</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2&radic;38</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>38&radic;2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2&radic;76</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The radius is CA = &radic;((&radic;75)&sup2; + 1&sup2;) = &radic;76. Since &ang;ACB is a right angle, triangle ACB is right-isosceles with legs equal to the radius. The hypotenuse AB = r&radic;2 = &radic;76 &middot; &radic;2 = &radic;152 = 2&radic;38.</p><p>Choice A gives the radius only. Choices C and D are arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A5.T10.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3174f07d-s1",
+  "originalId": "3174f07d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A linear function f has a graph that passes through the points (0, 12) and (9/2, 0). What is the y-intercept of the graph of f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 12)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, -24/9)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, -12)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, 0)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The point (0, 12) is on the graph, so the y-intercept is (0, 12).</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A4.T1.easy"
+}

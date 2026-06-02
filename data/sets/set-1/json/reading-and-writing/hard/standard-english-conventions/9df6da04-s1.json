@@ -1,0 +1,25 @@
+{
+  "questionId": "9df6da04-s1",
+  "originalId": "9df6da04",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Marine biologists Aditi Khanna and Lukas Berger have sought to explain why certain reef fish hover motionless near bioluminescent algae after dusk. Aware that small fish typically orient their backs toward the brightest patch of sky during daylight hours, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the biologists' proposal is that the fish confuse algal glow for the sky, repeatedly attempting to align their bodies relative to such glow.</p>"},
+    {"id": "b", "content": "<p>reef fish confuse algal glow for the sky and repeatedly attempt to align their bodies relative to such glow, the biologists propose.</p>"},
+    {"id": "c", "content": "<p>reef fish repeatedly attempt to align their bodies relative to algal glow, the biologists propose, mistaking such glow for the sky.</p>"},
+    {"id": "d", "content": "<p>the biologists propose that reef fish, mistaking algal glow for the sky, repeatedly attempt to align their bodies relative to such glow.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the biologists\" the subject of the sentence and places it immediately after the modifying phrase \"Aware&hellip;hours.\" In doing so, this choice clearly establishes that the biologists&mdash;and not another noun in the sentence&mdash;are aware that small fish typically orient their backs toward the brightest patch of sky during daylight hours.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of the noun phrase \"the biologists' proposal\" immediately after the modifying phrase illogically suggests that the proposal is aware. Choice B is incorrect because it results in a dangling modifier. The placement of the noun \"reef fish\" immediately after the modifying phrase illogically suggests that reef fish are aware of small fish's daytime orientation. Choice C is incorrect because it results in a dangling modifier. The placement of the noun \"reef fish\" immediately after the modifying phrase illogically suggests that reef fish are aware of small fish's daytime orientation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d139cf4b-s1",
+  "originalId": "d139cf4b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>t</i>) = 36<i>t</i> &minus; 3<i>t</i>&sup2;</p><p>The function <i>f</i> is defined by the given equation. The function <i>g</i> is defined by <i>g</i>(<i>t</i>) = <i>f</i>(<i>t</i>) + 5. Which expression represents the maximum value of <i>g</i>(<i>t</i>)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5 + (36/3)&sup2;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5 + 3(36/6)&sup2;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5 &minus; 3(36/6)&sup2;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5 &minus; (36/3)&sup2;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The function <i>f</i>(<i>t</i>) = &minus;3<i>t</i>&sup2; + 36<i>t</i> is a downward-opening parabola with vertex at <i>t</i> = 36/(2&middot;3) = 6. The maximum value is <i>f</i>(6) = 36(6) &minus; 3(6)&sup2; = 216 &minus; 108 = 108, which can be written as 3(36/6)&sup2;. Since <i>g</i>(<i>t</i>) = <i>f</i>(<i>t</i>) + 5, the maximum of <i>g</i> is 5 + 3(36/6)&sup2;.</p><p>Choices A and D use a wrong vertex location 36/3. Choice C subtracts instead of adds the positive maximum of <i>f</i>.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

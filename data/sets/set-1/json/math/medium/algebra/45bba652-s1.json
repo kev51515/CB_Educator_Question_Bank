@@ -1,0 +1,39 @@
+{
+  "questionId": "45bba652-s1",
+  "originalId": "45bba652",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 4(y - 3) + 5(y - 3) = 27, what is the value of y - 3?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Combining like terms: (4 + 5)(y - 3) = 9(y - 3) = 27, so y - 3 = 3. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.medium"
+}

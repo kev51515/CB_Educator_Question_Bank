@@ -1,0 +1,22 @@
+[
+  {"id": "50801257-s1", "templateId": "form-structure-and-sense.A1.T2.hard", "verdict": "ok"},
+  {"id": "1a61e2ae-s1", "templateId": "form-structure-and-sense.A3.T8.hard", "verdict": "aspect_drift", "detail": "Tagged A3.T8 (apostrophe/possessive) but options ('paintings were' / 'paintings,' / 'paintings, were' / 'paintings had been') vary in punctuation and finite-vs-nonfinite verb form, not in apostrophe placement. This tests A1.T2 (finite vs non-finite form) — main clause already has 'had been...overlooked,' so the blank must leave 'celebrated' as a non-finite participle inside a supplementary element offset by commas."},
+  {"id": "3daf126e-s1", "templateId": "form-structure-and-sense.A1.T2.hard", "verdict": "ok"},
+  {"id": "18382e67-s1", "templateId": "form-structure-and-sense.A3.T6.hard", "verdict": "ok"},
+  {"id": "512f0ac9-s1", "templateId": "form-structure-and-sense.A1.T2.hard", "verdict": "ok"},
+  {"id": "3bceeb93-s1", "templateId": "form-structure-and-sense.A3.T6.hard", "verdict": "ok"},
+  {"id": "2784cbaf-s1", "templateId": "form-structure-and-sense.A3.T8.hard", "verdict": "ok"},
+  {"id": "37e5c794-s1", "templateId": "form-structure-and-sense.A4.T9.hard", "verdict": "ok"},
+  {"id": "188f7e3c-s1", "templateId": "form-structure-and-sense.A4.T9.hard", "verdict": "ok"},
+  {"id": "3a1239d2-s1", "templateId": "form-structure-and-sense.A1.T2.hard", "verdict": "ok"},
+  {"id": "2b6e1c06-s1", "templateId": "form-structure-and-sense.A4.T9.hard", "verdict": "ok"},
+  {"id": "0fe5ce68-s1", "templateId": "form-structure-and-sense.A2.T4.hard", "verdict": "ok"},
+  {"id": "1c65db8f-s1", "templateId": "form-structure-and-sense.A2.T4.hard", "verdict": "ok"},
+  {"id": "4c335aea-s1", "templateId": "form-structure-and-sense.A3.T8.hard", "verdict": "ok"},
+  {"id": "2bca654a-s1", "templateId": "form-structure-and-sense.A4.T9.hard", "verdict": "ok"},
+  {"id": "329255db-s1", "templateId": "form-structure-and-sense.A2.T4.hard", "verdict": "ok"},
+  {"id": "2dd1b8bf-s1", "templateId": "form-structure-and-sense.A4.T9.hard", "verdict": "ok"},
+  {"id": "e2759b92-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "aspect_drift", "detail": "Tagged A2.T3 (subject-verb agreement) but the four options ('was' / 'is' / 'has been' / 'will be') all share singular number and differ only in tense. This is A1.T1 (tense selection from time cues) — answered correctly via the 1312-1337 date anchor, not via number agreement."},
+  {"id": "bce9910f-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "ok"},
+  {"id": "f339ee39-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "aspect_drift", "detail": "Tagged A2.T3 (subject-verb agreement) but options ('broadcasting' / 'having broadcast' / 'to broadcast' / 'broadcast to') vary in finite vs non-finite verb form, not in number. This is A1.T2 (finite vs non-finite form) — the main clause lacks a finite verb, so only the finite 'broadcast to' fits."}
+]

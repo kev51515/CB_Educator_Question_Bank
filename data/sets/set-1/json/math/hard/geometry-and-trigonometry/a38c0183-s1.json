@@ -1,0 +1,39 @@
+{
+  "questionId": "a38c0183-s1",
+  "originalId": "a38c0183",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Circle A is defined by the equation (x \u2212 3)<sup>2</sup> + y<sup>2</sup> = 16. Circle B is the result of shifting circle A up 5 units and tripling the radius. Which equation defines circle B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3(x \u2212 3)<sup>2</sup> + 3(y \u2212 5)<sup>2</sup> = 16</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x \u2212 3)<sup>2</sup> + (y + 5)<sup>2</sup> = 144</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x \u2212 3)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 144</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3(x \u2212 3)<sup>2</sup> + 3(y + 5)<sup>2</sup> = 16</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Circle A has center (3, 0) and radius 4. Shifting up 5 units moves the center to (3, 5); tripling the radius gives a new radius of 12, so r<sup>2</sup> = 144. The equation is (x \u2212 3)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 144.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T5.hard"
+}

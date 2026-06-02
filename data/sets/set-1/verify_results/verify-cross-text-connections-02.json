@@ -1,0 +1,21 @@
+[
+  {"id": "c4737d6a-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "ok"},
+  {"id": "5e101c70-s1", "templateId": "cross-text-connections.A1.T3.hard", "verdict": "ok"},
+  {"id": "f7c02e89-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "ok"},
+  {"id": "5a4b147c-s1", "templateId": "cross-text-connections.A2.T4.easy", "verdict": "ok"},
+  {"id": "eb89dcc8-s1", "templateId": "cross-text-connections.A1.T2.easy", "verdict": "ok"},
+  {"id": "9645f55e-s1", "templateId": "cross-text-connections.A1.T1.easy", "verdict": "type_drift", "detail": "Stem uses 'how would the author of Text 2 most likely regard the perspective of...' and answer options open with evaluative labels ('As shortsighted', 'As mistaken', 'As inconsistent', 'As unrealistic') followed by 'because' clauses. This is the T3 (characterize claim with evaluative label) structure, not T1 (respond to entire argument)."},
+  {"id": "ed52a093-s1", "templateId": "cross-text-connections.A1.T1.easy", "verdict": "ok"},
+  {"id": "02fd3da7-s1", "templateId": "cross-text-connections.A1.T1.easy", "verdict": "ok"},
+  {"id": "835d1ae6-s1", "templateId": "cross-text-connections.A1.T1.easy", "verdict": "type_drift", "detail": "Stem explicitly references 'the interpretation presented in the underlined portion of Text 1' and Text 1 contains an underlined sentence. This is T2 (respond to underlined/specific claim), not T1 (respond to entire argument with no underlined portion). T1 must_preserve requires 'no underlined portion'."},
+  {"id": "88bb0f6f-s1", "templateId": "cross-text-connections.A3.T5.easy", "verdict": "ok"},
+  {"id": "81da17d3-s1", "templateId": "cross-text-connections.A1.T2.easy", "verdict": "ok"},
+  {"id": "159ef46d-s1", "templateId": "cross-text-connections.A1.T2.easy", "verdict": "type_drift", "detail": "Stem verb is 'regard' and answer options open with evaluative labels ('As surprising', 'As unfair', 'As problematic', 'As predictable') followed by 'because' clauses. This is the T3 (characterize with evaluative label) structure, not T2. T3 stem-verb marker (characterize/regard/describe) is explicit in template."},
+  {"id": "7b55e895-s1", "templateId": "cross-text-connections.A2.T4.easy", "verdict": "ok"},
+  {"id": "22105871-s1", "templateId": "cross-text-connections.A1.T2.easy", "verdict": "ok"},
+  {"id": "2c50ed1a-s1", "templateId": "cross-text-connections.A3.T5.easy", "verdict": "ok"},
+  {"id": "c68ceeff-s1", "templateId": "cross-text-connections.A2.T4.easy", "verdict": "ok"},
+  {"id": "c106b9f7-s1", "templateId": "cross-text-connections.A2.T4.easy", "verdict": "ok"},
+  {"id": "8d802289-s1", "templateId": "cross-text-connections.A2.T4.easy", "verdict": "ok"},
+  {"id": "dc043599-s1", "templateId": "cross-text-connections.A3.T5.easy", "verdict": "ok"}
+]

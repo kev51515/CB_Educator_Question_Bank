@@ -1,0 +1,25 @@
+{
+  "questionId": "0b005ae2-s1",
+  "originalId": "0b005ae2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.hard",
+  "stimulus": "<p>Sediment cores extracted from the floor of Lake Suigetsu in central Japan and dated by counting annual varves may yield a calibration of radiocarbon ages that is more precise than any previously <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> result that, if confirmed, would refine the chronology of late-Pleistocene climate events.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>achieved; a</p>"},
+    {"id": "b", "content": "<p>achieved. A</p>"},
+    {"id": "c", "content": "<p>achieved, a</p>"},
+    {"id": "d", "content": "<p>achieved a</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. A comma correctly marks the boundary between the main clause (\"Sediment cores&hellip;achieved\") and the supplementary noun phrase (\"a result&hellip;events\") that elaborates on the implications of the new calibration.</p><p>Choice A is incorrect because a semicolon cannot join a main clause and a supplementary noun phrase. Choice B is incorrect because it creates a sentence fragment beginning with \"A result.\" Choice D is incorrect because it produces a run-on, fusing the two parts without punctuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1bc11c4e-s1",
+  "originalId": "1bc11c4e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The function h(d) = -0.08d + 14.4 models the number of gallons of gasoline that remains from a full gas tank in a vehicle after driving <em>d</em> miles. According to the model, about how many gallons of gasoline are used to drive each mile?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.08</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.0556</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope of the function h(d) = -0.08d + 14.4 is -0.08, meaning the tank loses 0.08 gallons per mile driven. The magnitude 0.08 represents the gallons used per mile. Choice A is the initial amount in the tank. Choice C is the total miles before the tank is empty (14.4/0.08 = 180). Choice D is the reciprocal of the slope.</p>",
+  "templateId": "linear-functions.A2.T2.medium"
+}

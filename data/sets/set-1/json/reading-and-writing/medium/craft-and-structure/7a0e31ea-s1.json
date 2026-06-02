@@ -1,0 +1,25 @@
+{
+  "questionId": "7a0e31ea-s1",
+  "originalId": "7a0e31ea",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is from Zora Neale Hurston's 1948 novel <em>Seraph on the Suwanee</em>. Lila, a young girl, often visits the music room of a neighbor's house.</p>\n<blockquote>\n<p>Lila thought that all the music in the world lived inside that piano bench and she had a plan about playing every piece in the world. She was working through the music a piece a day in the order the bench held it, and not skipping the dull ones. She remembered that the first piece had been an Andante. She had been playing one piece a day for many months now and she was still in the B pieces. Already she had practiced about Bourrees and Berceuses, Barcaroles and Bagatelles. For all her eagerness, she had to admit that some of the B pieces had been tough sledding. But Lila was a player.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To describe a piece of music that Lila greatly admires</p>"},
+    {"id": "b", "content": "<p>To explain why Lila prefers piano over other activities</p>"},
+    {"id": "c", "content": "<p>To illustrate Lila's enjoyment of an unusual subject</p>"},
+    {"id": "d", "content": "<p>To portray Lila's determination to meet a goal</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text shows that Lila has set a goal of playing every piece in the music bench and is working through them one a day in order. Even as she progresses slowly (still in the B pieces after many months) and finds some pieces &ldquo;tough sledding,&rdquo; she does not give up because she is &ldquo;a player.&rdquo; The purpose is to portray her determination to reach a goal.</p><p>Choice A is incorrect because the text does not single out a piece she admires; she even works through dull ones. Choice B is incorrect because the text does not compare playing to other activities. Choice C is incorrect because the text does not present any of the pieces as unusual or as objects of special enjoyment.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

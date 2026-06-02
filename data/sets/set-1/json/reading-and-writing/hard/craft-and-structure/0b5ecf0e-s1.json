@@ -1,0 +1,39 @@
+{
+  "questionId": "0b5ecf0e-s1",
+  "originalId": "0b5ecf0e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In Edo-period Japan, prior to the mid-nineteenth century, lending libraries were operated mostly by traveling booksellers who carried bundles of titles from house to house and charged subscribers per volume. Beginning in the 1870s, however, a wave of state-sponsored public reading rooms opened in major cities, intended to spread literacy and civic knowledge. As modern scholar Aiko Tanizaki points out, the two systems are less opposed than they appear, since both the traveling booksellers and the new public reading rooms operated, in essence, as instruments of cultivation, differing chiefly in whom each was cultivating and on what scale.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To give a brief overview of literacy efforts during the Edo period.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To question the claim that traveling booksellers continued to operate after the 1870s.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To argue that early Meiji officials had too much control over what citizens could read.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To assert that traveling lending libraries and early public reading rooms in Japan shared a fundamental purpose.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The passage sets up an apparent contrast between Edo-period traveling lending libraries and the public reading rooms that emerged in the 1870s, then uses Tanizaki's observation to argue that both systems served, at base, as instruments of cultivation. The main purpose is to assert that essential similarity.</p><p>Choice A is incorrect because the text moves beyond an overview to make a comparative claim. Choice B is incorrect because the passage does not question the survival of traveling booksellers. Choice C is incorrect because the text takes no stance on official control over reading materials.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

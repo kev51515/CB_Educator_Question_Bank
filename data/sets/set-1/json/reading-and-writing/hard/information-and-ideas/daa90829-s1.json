@@ -1,0 +1,39 @@
+{
+  "questionId": "daa90829-s1",
+  "originalId": "daa90829",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from an 1820s epistolary novel. The text is an excerpt from a letter by Lady Cresswell to her cousin, Mr. Pendry, the tutor of her young niece, Cecily, regarding an invitation to accompany Lady Cresswell\u2019s family on a season in Bath.</p><blockquote><p>It is most earnestly our wish to enliven our small party by the addition of dear Cecily, who would share, equally with my own daughters, the affection and care of our household. Do not protest before you have weighed the matter; it is time that the child be permitted to see something beyond the parsonage. When the young are kept too closely from the world, their lively fancy paints it to them as a place of wonders from which they have been wrongfully shut out; but when they are shown it gently, and in proper season, they come to see it as it is, a place at once of consolation and of trial, of hope as much as of disappointment.</p></blockquote>",
+  "stem": "<p>Based on the text, Lady Cresswell would most likely agree with which statement about Mr. Pendry?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>His care for Cecily, though admirable in many respects, has been misdirected toward shielding her from young people of her own age.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>He has communicated to Cecily his own romantic notions about the world, leaving her ill-prepared for ordinary disappointments.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>His worthy effort to protect Cecily from morally questionable people has made him unduly suspicious of Lady Cresswell\u2019s family in particular.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>He is overly cautious in keeping Cecily at home, when she would benefit from a wider range of experience than she has so far had.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Lady Cresswell urges Mr. Pendry to let Cecily come with her family. Her opening line \u2014 \u201cDo not protest before you have weighed the matter\u201d \u2014 suggests she expects him to object to the proposal. She goes on to argue that keeping young people too closely from the world creates unrealistic fantasies of it, while gentle, well-timed exposure produces a more balanced view. This implies she sees Mr. Pendry as overly cautious and believes Cecily would benefit from wider experience.</p><p>Choice A is incorrect because the text speaks broadly about exposure to \u201cthe world,\u201d not specifically about contact with other young people. Choice B is incorrect because Lady Cresswell does not attribute romantic notions to Pendry himself; she describes the romantic fantasies of young people who are kept apart from the world. Choice C is incorrect because the text gives no indication that Pendry is suspicious of Lady Cresswell\u2019s family in particular.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "central-ideas-and-details.A3.T8.hard"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "edbc6cca",
+  "externalId": "3a426293-3d0c-4938-8e24-6def7aeb6b41",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:00.236354+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "586588de-d5c0-4bde-9a7a-b67704fda2ab",
+      "content": "<p>It states the reasons why Adam and his great-uncle Richard decide to sleep on the ship rather than finding lodging on land.</p>"
+    },
+    {
+      "id": "f38e81d1-1c66-492e-ab09-799c9c8ea411",
+      "content": "<p>It showcases how Adam&rsquo;s flexibility and consideration strengthen his relationship with his great-uncle Richard.</p>"
+    },
+    {
+      "id": "1f95fc68-4478-4963-a308-3c46a6f3f551",
+      "content": "<p>It describes why Adam and his great-uncle Richard are excited for their upcoming journey on the ship.&nbsp;</p>"
+    },
+    {
+      "id": "0eb2903c-db1d-48ac-91b1-e88369e54df8",
+      "content": "<p>It contrasts great-uncle Richard&rsquo;s wary first impressions of Adam with his ultimate affection toward him.</p>"
+    }
+  ],
+  "keys": [
+    "f38e81d1-1c66-492e-ab09-799c9c8ea411"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most accurately describes the main purpose of the text, which is to showcase how Adam&rsquo;s flexibility and consideration strengthen his relationship with his great-uncle Richard. The text begins by stating that the meeting between the two characters is proceeding well and then describes Adam&rsquo;s thoughtful behavior: noticing his great-uncle&rsquo;s interest in the ship, Adam suggests staying on board overnight and expresses willingness to accommodate his great-uncle&rsquo;s schedule and destination preferences. The text goes on to describe the positive effect of Adam&rsquo;s thoughtfulness and flexibility, indicating that Adam&rsquo;s &ldquo;affectionate willingness&rdquo; to accommodate Richard&rsquo;s preferences &ldquo;quite won the old man&rsquo;s heart.&rdquo; The text concludes by suggesting that Adam&rsquo;s ability to anticipate his great-uncle&rsquo;s wishes and willingness to accommodate them result in the rapid development of affection and intimacy between them, stating that they soon became &ldquo;almost like old friends.&rdquo; Therefore, the text&rsquo;s main purpose is to demonstrate how Adam&rsquo;s flexibility and consideration strengthened his and his great-uncle&rsquo;s relationship.</p><p>Choice A is incorrect. Although the text explains Adam&rsquo;s reason for suggesting that Richard spend the night on the ship rather than finding lodging on land (which is that Adam perceives Richard&rsquo;s interest in the ship), this isn&rsquo;t the text&rsquo;s main purpose. Rather, Adam&rsquo;s suggestion about where to sleep for the night serves as an example of the consideration Adam shows toward Richard, and the text mentions it mainly to explain how an affectionate relationship developed so quickly between them. Moreover, the text only states that Adam encourages Richard to stay on the ship; it doesn&rsquo;t specify where Adam plans to spend the night. Choice C is incorrect because the text doesn&rsquo;t describe why Adam and his great-uncle Richard are excited about their journey. While the text mentions that Adam is willing to &ldquo;start at any hour and go anywhere,&rdquo; it provides no details about any planned journey, its destination, or even whether they will be continuing by ship or some other mode of transportation, nor does the text mention anything about either character&rsquo;s feelings of excitement about their plans. We learn only that Adam is accommodating about potential travel plans, not that either character is particularly eager about the journey itself. The text&rsquo;s main focus is on Adam and Richard&rsquo;s developing relationship, not on any anticipated travel experiences. Choice D is incorrect because the text doesn&rsquo;t show a contrast between initial wariness and later affection. On the contrary, the text begins by stating that the meeting between Adam and his great-uncle Richard has begun in an &ldquo;auspicious,&rdquo; or promising, manner and is &ldquo;proceed[ing] well,&rdquo; suggesting that Richard&rsquo;s impression is positive from the outset. There&rsquo;s no indication of any initial suspicion, caution, or reserve on Richard&rsquo;s part that later changes to affection. Instead, the text describes a consistently positive interaction that deepens from a good first impression into a stronger, more familiar relationship because of Adam&rsquo;s considerate behavior.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the main purpose of the text?</p>",
+    "stimulus": "<p>The following text is from Bram Stoker&rsquo;s 1911 novel <em>The Lair of the White Worm</em>. Adam is meeting his great-uncle Richard at a port.</p>\n<blockquote>\n<p>The meeting so auspiciously begun proceeded well. Adam, seeing that the old man was interested in the novelty of the ship, suggested that he should stay the night on board, and that he would himself be ready to start at any hour and go anywhere that the other suggested. This affectionate willingness to fall in with his own plans quite won the old man&rsquo;s heart. He warmly accepted the invitation, and at once they became not only on terms of affectionate relationship, but almost like old friends.</p>\n</blockquote>",
+    "keys": [
+      "f38e81d1-1c66-492e-ab09-799c9c8ea411"
+    ],
+    "answerOptions": [
+      {
+        "id": "586588de-d5c0-4bde-9a7a-b67704fda2ab",
+        "content": "<p>It states the reasons why Adam and his great-uncle Richard decide to sleep on the ship rather than finding lodging on land.</p>"
+      },
+      {
+        "id": "f38e81d1-1c66-492e-ab09-799c9c8ea411",
+        "content": "<p>It showcases how Adam&rsquo;s flexibility and consideration strengthen his relationship with his great-uncle Richard.</p>"
+      },
+      {
+        "id": "1f95fc68-4478-4963-a308-3c46a6f3f551",
+        "content": "<p>It describes why Adam and his great-uncle Richard are excited for their upcoming journey on the ship.&nbsp;</p>"
+      },
+      {
+        "id": "0eb2903c-db1d-48ac-91b1-e88369e54df8",
+        "content": "<p>It contrasts great-uncle Richard&rsquo;s wary first impressions of Adam with his ultimate affection toward him.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most accurately describes the main purpose of the text, which is to showcase how Adam&rsquo;s flexibility and consideration strengthen his relationship with his great-uncle Richard. The text begins by stating that the meeting between the two characters is proceeding well and then describes Adam&rsquo;s thoughtful behavior: noticing his great-uncle&rsquo;s interest in the ship, Adam suggests staying on board overnight and expresses willingness to accommodate his great-uncle&rsquo;s schedule and destination preferences. The text goes on to describe the positive effect of Adam&rsquo;s thoughtfulness and flexibility, indicating that Adam&rsquo;s &ldquo;affectionate willingness&rdquo; to accommodate Richard&rsquo;s preferences &ldquo;quite won the old man&rsquo;s heart.&rdquo; The text concludes by suggesting that Adam&rsquo;s ability to anticipate his great-uncle&rsquo;s wishes and willingness to accommodate them result in the rapid development of affection and intimacy between them, stating that they soon became &ldquo;almost like old friends.&rdquo; Therefore, the text&rsquo;s main purpose is to demonstrate how Adam&rsquo;s flexibility and consideration strengthened his and his great-uncle&rsquo;s relationship.</p><p>Choice A is incorrect. Although the text explains Adam&rsquo;s reason for suggesting that Richard spend the night on the ship rather than finding lodging on land (which is that Adam perceives Richard&rsquo;s interest in the ship), this isn&rsquo;t the text&rsquo;s main purpose. Rather, Adam&rsquo;s suggestion about where to sleep for the night serves as an example of the consideration Adam shows toward Richard, and the text mentions it mainly to explain how an affectionate relationship developed so quickly between them. Moreover, the text only states that Adam encourages Richard to stay on the ship; it doesn&rsquo;t specify where Adam plans to spend the night. Choice C is incorrect because the text doesn&rsquo;t describe why Adam and his great-uncle Richard are excited about their journey. While the text mentions that Adam is willing to &ldquo;start at any hour and go anywhere,&rdquo; it provides no details about any planned journey, its destination, or even whether they will be continuing by ship or some other mode of transportation, nor does the text mention anything about either character&rsquo;s feelings of excitement about their plans. We learn only that Adam is accommodating about potential travel plans, not that either character is particularly eager about the journey itself. The text&rsquo;s main focus is on Adam and Richard&rsquo;s developing relationship, not on any anticipated travel experiences. Choice D is incorrect because the text doesn&rsquo;t show a contrast between initial wariness and later affection. On the contrary, the text begins by stating that the meeting between Adam and his great-uncle Richard has begun in an &ldquo;auspicious,&rdquo; or promising, manner and is &ldquo;proceed[ing] well,&rdquo; suggesting that Richard&rsquo;s impression is positive from the outset. There&rsquo;s no indication of any initial suspicion, caution, or reserve on Richard&rsquo;s part that later changes to affection. Instead, the text describes a consistently positive interaction that deepens from a good first impression into a stronger, more familiar relationship because of Adam&rsquo;s considerate behavior.</p>",
+    "externalid": "3a426293-3d0c-4938-8e24-6def7aeb6b41",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>The following text is from Bram Stoker&rsquo;s 1911 novel <em>The Lair of the White Worm</em>. Adam is meeting his great-uncle Richard at a port.</p>\n<blockquote>\n<p>The meeting so auspiciously begun proceeded well. Adam, seeing that the old man was interested in the novelty of the ship, suggested that he should stay the night on board, and that he would himself be ready to start at any hour and go anywhere that the other suggested. This affectionate willingness to fall in with his own plans quite won the old man&rsquo;s heart. He warmly accepted the invitation, and at once they became not only on terms of affectionate relationship, but almost like old friends.</p>\n</blockquote>"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "35ec767c-s1",
+  "originalId": "35ec767c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "type": "mcq",
+  "stimulus": "<p>Coffee-Related Vocabulary in Various East African Languages</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Language family</th><th>Word (language)</th><th>English translation</th><th>Proposed origin in Cushitic vocabulary?</th></tr>\n<tr><td>Nilotic</td><td><em>kahawa</em> (Luo); <em>kafu</em> (Acholi)</td><td>coffee</td><td>no</td></tr>\n<tr><td>Bantu</td><td><em>kahawa</em> (Swahili)</td><td>coffee</td><td>no</td></tr>\n<tr><td>Cushitic</td><td><em>buna</em> (Oromo)</td><td>coffee berry</td><td>yes (source)</td></tr>\n<tr><td>Omotic</td><td><em>buno</em> (Wolaytta)</td><td>roasted coffee</td><td>yes</td></tr>\n</table>\n<p>In Wolaytta, a language spoken in southern Ethiopia, vocabulary related to coffee production resembles equivalent vocabulary in the neighboring Cushitic language family. This resemblance may be attributable to cultural contact: such words could have entered Wolaytta through nearby Cushitic-speaking communities, concurrent with the spread of coffee cultivation across the highlands. That vocabulary about domesticated crops travels with them is a well-documented global pattern. Crops may also become detached from their original vocabulary altogether: coffee cultivation has spread widely among Nilotic-speaking groups, yet ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the region is linguistically diverse, hosting not only Cushitic and Omotic languages but also Nilotic languages (such as Luo and Acholi) and Bantu languages (such as Swahili).</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>words for coffee in Bantu languages have a common root, with Swahili&rsquo;s <em>kahawa</em> showing close ties to corresponding terms in other Bantu languages.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the origins of coffee-related vocabulary differ across languages in the region, with the words for coffee in Luo, Acholi, and Swahili showing no demonstrable derivation from Cushitic vocabulary.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>coffee-related vocabulary changed when entering other unrelated languages, as shown by the divergence of the Omotic word from the Cushitic word it originated in.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text&rsquo;s point is that crops can spread without their original vocabulary&mdash;and the table&rsquo;s &ldquo;no&rdquo; column for Luo, Acholi, and Swahili directly shows that. Even though those groups grow coffee, their coffee words don&rsquo;t come from Cushitic vocabulary. That illustrates the decoupling claim. Choice A merely describes the region&rsquo;s diversity. Choice B is about within-Bantu inheritance, not decoupling. Choice D is about phonological change, not decoupling.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

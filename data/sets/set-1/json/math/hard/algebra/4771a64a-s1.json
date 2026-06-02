@@ -1,0 +1,22 @@
+{
+  "questionId": "4771a64a-s1",
+  "originalId": "4771a64a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If 3 &minus; 5(4 &minus; 6<i>x</i>) = 9 &minus; 4(4 &minus; 6<i>x</i>), what is the value of 4 &minus; 6<i>x</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "-6"
+  ],
+  "rationale": "<p>Let <i>u</i> = 4 &minus; 6<i>x</i>. The equation becomes 3 &minus; 5<i>u</i> = 9 &minus; 4<i>u</i>, so &minus;<i>u</i> = 6, which gives <i>u</i> = &minus;6. Therefore 4 &minus; 6<i>x</i> = &minus;6.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.hard"
+}

@@ -1,0 +1,705 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Percentages",
+  "originals_count": 79,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Compute percent of a number",
+      "description": "Student is given an explicit percent p and a whole N and must produce the part: p% of N. The cognitive operation is a single multiplication (or proportion) yielding a numeric answer.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that the percent is given and the part is unknown (here the student multiplies forward), whereas A2 has the part given and the percent or whole unknown (the student divides or back-solves). A1 differs from A3 because no comparison/change between two values is involved.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Direct 'what is p% of N'",
+          "description": "Bare-stem or thin-context question asking for p% of a given whole N. Answer is a single numeric value.",
+          "core_skill_demand": "Convert p% to a decimal (or fraction) and multiply by N to produce the part.",
+          "example_originals": ["048811bd", "29c177e6", "8784bc84", "bb7c8186", "8213b1b3"],
+          "frequency": { "easy": 4, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "p is a friendly integer percent (10, 20, 23, etc.) and N is a 2-3 digit integer",
+                "Stem is one short sentence with no context wrapper",
+                "Answer is a clean integer or simple decimal"
+              ],
+              "example_stem": "What is 10% of 470?",
+              "example_ids": ["048811bd", "29c177e6", "8784bc84", "bb7c8186"]
+            },
+            "medium": {
+              "characteristics": [
+                "Not represented at medium in this bank: bare 'p% of N' is below SAT-medium when difficulty levers are absent."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "p is sub-1% with a decimal (e.g., 0.001%), forcing careful decimal place handling",
+                "N is multi-digit and answer demands awareness of small magnitudes / unit conversion"
+              ],
+              "example_stem": "A substance can contain a maximum of 0.001% phosphorus by mass. If the sample has mass 140 grams, what is the maximum mass of phosphorus?",
+              "example_ids": ["8213b1b3"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Single forward computation: percent given, whole given, part unknown",
+              "Stem stays context-light (no sequential operations or comparisons)"
+            ],
+            "must_vary": [
+              "Numeric values of p and N",
+              "Surface wording (vary 'what is' / 'find' phrasing)"
+            ],
+            "common_bugs": [
+              "Cloner introduces a second operation (e.g., 'then increases by 5%') and drifts into A4",
+              "Cloner picks an N that does not divide cleanly and inflates difficulty above target"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Percent of a whole in a real-world context",
+          "description": "Short real-world setup specifies a whole (people, items, dollars, minutes) and a percentage; student finds the corresponding part.",
+          "core_skill_demand": "Translate a one-clause real-world setup into the multiplication p% × N and compute the part.",
+          "example_originals": ["191d167b", "194ae3b1", "1c2f50a6", "273b7f37", "284303f1", "34e18ce4", "6e4a60dd", "771ee744", "9c44f828", "a8fabad0", "dccdb20c"],
+          "frequency": { "easy": 14, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Whole is a clean integer (50, 200, 250, 320, 350, 760, 840)",
+                "Percent is a small integer (4%, 6%, 10%, 15%, 20%, 50%)",
+                "Single sentence wrapper: 'There are N items; p% are X. How many X?'",
+                "Computation requires no unit conversion"
+              ],
+              "example_stem": "There are 250 trees in a park. Of these, 6% are birch. How many birch trees are in the park?",
+              "example_ids": ["284303f1", "34e18ce4", "771ee744", "9c44f828", "273b7f37", "eaab8bc1"]
+            },
+            "medium": {
+              "characteristics": [
+                "Whole is non-round or stated in different units than the answer requires (e.g., 8-hour workday → minutes)",
+                "Answer requires rounding, currency formatting, or 'closest to' multiple-choice judgment",
+                "Percent is included inside a slightly longer setup with a distractor sentence"
+              ],
+              "example_stem": "A waiter receives tips of 15% of the bill on average. Which is closest to the tip on a $78.20 bill?",
+              "example_ids": ["a8fabad0", "7ed0d098"]
+            },
+            "hard": {
+              "characteristics": [
+                "Not represented at hard in this bank: single-context p%-of-N below SAT-hard."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one whole, one percent, and one unknown part",
+              "Context introduces no second percent operation"
+            ],
+            "must_vary": [
+              "Domain of the setup (items, dollars, minutes, students, etc.)",
+              "Whole and percent values"
+            ],
+            "common_bugs": [
+              "Cloner adds a 'then increased by' clause, drifting into A3 or A4",
+              "Cloner changes 'how many' to 'what percent', drifting into A2",
+              "Easy clone uses a percent like 17% on N=83 — forcing arithmetic that pushes difficulty up"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Percent applied to value plus surcharge (tax/tip add-on)",
+          "description": "Question states a base value, applies a small additional percent (tax, tip, fee) and asks for the resulting total (base + p% of base).",
+          "core_skill_demand": "Compute p% of base and add it to the base — or equivalently multiply base by (1 + p/100).",
+          "example_originals": ["8705ecba", "6e4a60dd", "c256b723"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Single small percent (5%, 15%, 20%)",
+                "Base is a clean integer dollar amount",
+                "Stem asks either for the surcharge alone or the total — never both"
+              ],
+              "example_stem": "The cost of a shirt is $20 before a 5% sales tax. What is the total cost including tax?",
+              "example_ids": ["8705ecba", "6e4a60dd"]
+            },
+            "medium": {
+              "characteristics": [
+                "Slightly more elaborate context (multi-sentence setup) but still a single percent application",
+                "Answer asks for the dollar amount of the surcharge (not the total)"
+              ],
+              "example_stem": "Hanna's bill was $50. She gave a tip of 20% of the bill. What is the amount of the tip?",
+              "example_ids": ["c256b723"]
+            },
+            "hard": {
+              "characteristics": [
+                "Not represented at hard in this bank for single-percent add-on; hard variants fall under A4."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one base value and one surcharge percent",
+              "Surcharge is added (not subtracted)"
+            ],
+            "must_vary": [
+              "Domain wording (tax, tip, fee, gratuity, service charge)",
+              "Base and percent values"
+            ],
+            "common_bugs": [
+              "Cloner subtracts the percent (sale price), drifting toward A3 'decrease'",
+              "Cloner chains a second percent, drifting into A4"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Percent of a sub-total from a table",
+          "description": "A small table summarizes counts. Stem asks for a count (or sum of counts) corresponding to a stated percent of a total, or vice versa.",
+          "core_skill_demand": "Read a value from a table, then either multiply by a given percent or add table-cell sub-totals to form the answer.",
+          "example_originals": ["28c6bd8c", "2d31caae"],
+          "frequency": { "easy": 2, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Table has ≤ 6 cells the student must consult",
+                "Total is given explicitly in the table or stem",
+                "Computation is one multiplication or one addition"
+              ],
+              "example_stem": "The table shows a summary of 1,200 survey responses. Based on the table, how many of those surveyed get most of their medical information from either a doctor or the Internet?",
+              "example_ids": ["28c6bd8c", "2d31caae"]
+            },
+            "medium": { "characteristics": ["Not represented at medium in this bank."], "example_stem": "", "example_ids": [] },
+            "hard":   { "characteristics": ["Not represented at hard in this bank."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A small table is part of the stimulus",
+              "Total is either stated or trivially summed from the table"
+            ],
+            "must_vary": [
+              "Domain of the table (survey, ratings, populations)",
+              "Which cells the student must combine"
+            ],
+            "common_bugs": [
+              "Cloner builds a table whose values do not produce a clean integer answer",
+              "Cloner removes the explicit total, forcing an extra step that pushes difficulty above easy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Find percent or whole from a part",
+      "description": "The part is given and either the percent (p) or the whole (N) is unknown. The cognitive operation is the inverse of A1: divide rather than multiply, or set up and solve a one-step percent equation.",
+      "boundary_with_other_aspects": "A2 differs from A1 because A1 multiplies a known percent times a known whole, while A2 requires recovering an unknown by division. A2 differs from A3 because no before/after change is described — only a single 'part-of-whole' relationship.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "What percent of N is M",
+          "description": "Stem gives part M and whole N (often with a real-world wrapper) and asks for the percent p such that p% of N = M.",
+          "core_skill_demand": "Form the ratio M/N and convert to a percent.",
+          "example_originals": ["3a6ed720", "58a71e06", "e9fb7774", "7f84b136", "d72a2b4d", "e9f4521a"],
+          "frequency": { "easy": 3, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "M and N are both round numbers whose ratio is a familiar percent (e.g., 75/300=25%, 234,000/300,000=78%)",
+                "Stem is a single sentence",
+                "Answer is an integer percent"
+              ],
+              "example_stem": "Of 900,000 beads, 828,000 are silver. What percentage of the beads are silver?",
+              "example_ids": ["3a6ed720", "58a71e06", "e9fb7774"]
+            },
+            "medium": {
+              "characteristics": [
+                "Numbers force a non-trivial division (e.g., 54/375, 13/25, 17.36/15.50)",
+                "Setup uses dollars, prices, or a small table requiring an extra read",
+                "Answer is an integer or one-decimal percent and is the target variable p"
+              ],
+              "example_stem": "The number of objects in group C is p% of the number of objects in group A. What is p?",
+              "example_ids": ["7f84b136", "d72a2b4d", "e9f4521a"]
+            },
+            "hard": { "characteristics": ["Not represented at hard in this bank — hard 'find p' items involve change and live in A3."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Part M and whole N both stated (or readable from a small table)",
+              "Question explicitly asks for a percent value"
+            ],
+            "must_vary": [
+              "Domain wording",
+              "Values of M and N"
+            ],
+            "common_bugs": [
+              "Cloner makes M > N and produces a >100% answer where the stem expects ≤100%",
+              "Cloner phrases the question as 'increase' or 'change', drifting into A3"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "M is p% of what number",
+          "description": "Given part M and percent p, find the unknown whole N such that p% of N = M.",
+          "core_skill_demand": "Set up the equation (p/100)·N = M and solve N = 100M/p.",
+          "example_originals": ["93724cc6", "05195d8a", "94c65646", "2afd3cec"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "p and M are equal or share a friendly relationship (21 is 21% of …)",
+                "Stem is a single bare sentence"
+              ],
+              "example_stem": "21 is 21% of what number?",
+              "example_ids": ["93724cc6"]
+            },
+            "medium": {
+              "characteristics": [
+                "Modest context (sample of items, group) with one extra clause",
+                "M and p produce a non-trivial division (e.g., 88/0.80, 432/0.96)"
+              ],
+              "example_stem": "In a sample, 80% of the items are faulty. There are 88 faulty items. How many total items are in the sample?",
+              "example_ids": ["05195d8a", "94c65646"]
+            },
+            "hard": {
+              "characteristics": [
+                "Stem describes the part *remaining* after removal (the percent acts on a hidden original), forcing the student to recognize that 360 = (1 − 0.20)·N before solving",
+                "Question asks for the *removed* count, not N itself — extra final step after recovering the whole"
+              ],
+              "example_stem": "After 20% of the original marbles were removed, 360 remained. How many were removed?",
+              "example_ids": ["2afd3cec", "65c49824"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Percent and a part are given; the whole is the unknown",
+              "Single percent relationship (no chained percents)"
+            ],
+            "must_vary": [
+              "Context (samples, populations, prices)",
+              "Whether the question asks for N or for a derived quantity (N − M, N + M)"
+            ],
+            "common_bugs": [
+              "Cloner computes p% of M instead of M / (p/100)",
+              "Cloner reframes 'remaining after p% removed' as 'p% of original', collapsing the hard variant to medium"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Express percent relationship symbolically",
+          "description": "Stem describes a part-whole relationship in terms of a variable and asks for an algebraic expression (not a number).",
+          "core_skill_demand": "Translate 'p% of x' into 0.0p·x (or (p/100)·x), or build a multi-variable expression involving p% of one variable.",
+          "example_originals": ["949cd96b", "954943a4"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Single variable; single percent",
+                "Answer is one term of the form k·x"
+              ],
+              "example_stem": "The length of the base is 89% of the height h. Which expression represents the base in terms of h?",
+              "example_ids": ["949cd96b"]
+            },
+            "medium": { "characteristics": ["Not represented at medium in this bank."], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Multi-step context (servings, daily allowance) with several numeric constants",
+                "Answer is a multi-variable expression with at least one multiplicative chain (e.g., p = 5x, or more nested)"
+              ],
+              "example_stem": "Each serving provides 5% of an adult's daily allowance of potassium. If p% is provided by x servings, express p in terms of x.",
+              "example_ids": ["954943a4"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Answer is an algebraic expression, not a number",
+              "Question explicitly names the variables involved"
+            ],
+            "must_vary": [
+              "Variable letters and surface domain"
+            ],
+            "common_bugs": [
+              "Cloner provides a numeric value for the variable, collapsing the question into A1/A2",
+              "Cloner writes 89% as 89·h instead of 0.89·h"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Percent change (increase or decrease)",
+      "description": "Question involves a single before/after pair: a quantity is increased or decreased by a percent, or the student is asked to compute the percent change between two given values. Cognitive operation is to apply or recover the (1 ± p/100) multiplier.",
+      "boundary_with_other_aspects": "A3 differs from A1/A2 because two states of the same quantity are explicitly compared (before vs. after). A3 differs from A4 because exactly one change is described; chained or repeated changes belong in A4.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Find new value after a stated percent change",
+          "description": "Given a starting value v and a percent change p%, compute the resulting value v·(1 ± p/100).",
+          "core_skill_demand": "Choose the correct sign on the multiplier and compute v·(1 + p/100) for an increase or v·(1 − p/100) for a decrease.",
+          "example_originals": ["41b71b4e", "7b731fc3", "d693f563"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Single short sentence; small integer starting value (e.g., 60)",
+                "Simple integer percent (e.g., 20%)",
+                "Answer is a clean integer"
+              ],
+              "example_stem": "What number is 20% greater than 60?",
+              "example_ids": ["41b71b4e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Starting value 100–1,000 and percent is non-trivial (e.g., 40%, 60%)",
+                "Real-world wrapper (plants in garden, items in collection) requiring one parsing step before computation"
+              ],
+              "example_stem": "Last year, Cedric had 35 plants. This year, his garden is 60% greater. How many plants does he have this year?",
+              "example_ids": ["7b731fc3", "d693f563"]
+            },
+            "hard": { "characteristics": ["Not represented at hard in this bank — hard 'forward change' items always involve chaining and live in A4."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one percent change applied to one starting value",
+              "Direction of change (increase vs. decrease) stated unambiguously"
+            ],
+            "must_vary": [
+              "Domain wording and numeric values"
+            ],
+            "common_bugs": [
+              "Cloner replaces 'greater than' with 'of' and silently switches the question to A1",
+              "Cloner adds a second change (after which …), drifting into A4"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Find original value before a stated percent change",
+          "description": "Given the resulting value and the percent change, recover the original starting value.",
+          "core_skill_demand": "Divide the resulting value by (1 ± p/100) to recover the original.",
+          "example_originals": ["96a45430", "5267c3c7", "86684ce9", "a0b165f8"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Small percent (≤ 10%) and result is a clean integer",
+                "Single sentence; no real-world wrapper"
+              ],
+              "example_stem": "A number n is increased 6%. The result is 318. What is n?",
+              "example_ids": ["96a45430"]
+            },
+            "hard": {
+              "characteristics": [
+                "Percent is very large (400%, 1,800%) so the (1 + p/100) multiplier is non-intuitive",
+                "Or context contains a date sequence requiring the student to identify which value is 'after'",
+                "Result is given as a decimal or non-round number"
+              ],
+              "example_stem": "The result of increasing x by 1,800% is 684. What is x?",
+              "example_ids": ["5267c3c7", "86684ce9", "a0b165f8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Resulting (after) value and percent change are given",
+              "Original (before) value is the unknown"
+            ],
+            "must_vary": [
+              "Numeric values and direction of change"
+            ],
+            "common_bugs": [
+              "Cloner subtracts p% of the result instead of dividing by (1 + p/100)",
+              "Cloner reverses 'before' and 'after' in the wording, inverting the answer"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Find percent change from two values",
+          "description": "Stem supplies two values (often from a small table, graph, or before/after context) and asks for the percent increase or decrease between them.",
+          "core_skill_demand": "Compute (new − old)/old · 100, choosing the correct base (old).",
+          "example_originals": ["bd90f87e", "ad1d6adb", "b2f6f17d", "0231050d", "40e7a1a9", "ba0e23b0"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both values readable directly from a small table or two-sentence context",
+                "Values round cleanly (e.g., a ratio whose answer is an integer percent)"
+              ],
+              "example_stem": "What was the percent increase of the minimum wage from 1960 to 1970?",
+              "example_ids": ["bd90f87e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Ratio (new/old) is not clean — answer requires tenths or hundredths precision",
+                "Values are dollars-and-cents or non-round counts (e.g., 9→90, $75.74→$79.86)"
+              ],
+              "example_stem": "Monthly water bill rose from $75.74 to $79.86. By what percent (nearest tenth) did it increase?",
+              "example_ids": ["ad1d6adb", "b2f6f17d"]
+            },
+            "hard": {
+              "characteristics": [
+                "Answer percent p is large (>100% or >500%) — student must trust the formula",
+                "Values come from a graph or longer context, requiring an extra read step before computation",
+                "Result is taken from non-adjacent rows / years (decoy data nearby)"
+              ],
+              "example_stem": "210 is p% greater than 30. What is p?",
+              "example_ids": ["40e7a1a9", "ba0e23b0", "0231050d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two explicit numeric values and a single percent-change question",
+              "Direction (increase vs. decrease) implied unambiguously"
+            ],
+            "must_vary": [
+              "Source of the two values (sentence, table, graph)"
+            ],
+            "common_bugs": [
+              "Cloner uses new as the base instead of old",
+              "Cloner picks two values where the percent-change answer is fractional and unrealistic"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Translate a multiplicative ratio to a percent",
+          "description": "Stem expresses a relationship as a multiplier (e.g., 'z is 1.13 times 100' or 'A is 1.27 times B') and asks for the equivalent percent statement.",
+          "core_skill_demand": "Recognize that multiplier m corresponds to (m − 1)·100% greater or m·100% of, and translate accordingly.",
+          "example_originals": ["121dc44f", "ba61d95f", "709e04de", "54cb53cf", "1baffbcf"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Multiplier is a clean decimal (1.07, 1.13)",
+                "Both the % version and the multiplier version are stated; student matches them"
+              ],
+              "example_stem": "Population increased 7% from 2015 to 2016. If 2016 is k times 2015, what is k?",
+              "example_ids": ["121dc44f", "ba61d95f", "709e04de"]
+            },
+            "hard": {
+              "characteristics": [
+                "Multiplier is less than 1 (representing a decrease) or expressed as a fraction (e.g., 0.35x)",
+                "Answer is a percent of the *original* that must be solved via reciprocal (e.g., 'p% of A is B given A = 1.27·B')"
+              ],
+              "example_stem": "0.35x represents the result of decreasing x by what percent?",
+              "example_ids": ["1baffbcf", "54cb53cf"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Either the multiplier or the percent is explicitly stated and the other is the unknown",
+              "Single relationship between two quantities"
+            ],
+            "must_vary": [
+              "Variable names and surface context"
+            ],
+            "common_bugs": [
+              "Cloner confuses 'k times' with '(k−1) greater' and produces a wrong-by-1 answer",
+              "Cloner switches the direction (decrease vs. increase) without updating the multiplier"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Express percent change symbolically",
+          "description": "Stem asks for the expression (in terms of a variable) that represents increasing or decreasing a quantity by a stated percent.",
+          "core_skill_demand": "Translate 'increase x by p%' into x·(1 + p/100) (or equivalently x + (p/100)·x) and pick the matching algebraic form.",
+          "example_originals": ["7cab9fe1", "8a714fa1"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Single variable; single percent",
+                "Answer choices include common distractors (x + p, p·x, x·p/100)"
+              ],
+              "example_stem": "Which expression represents the result of increasing a positive quantity w by 43%?",
+              "example_ids": ["7cab9fe1", "8a714fa1"]
+            },
+            "hard": { "characteristics": ["Not represented at hard in this bank — hard symbolic items chain and live in A4."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Answer is an algebraic expression in one variable",
+              "Single percent change applied once"
+            ],
+            "must_vary": [
+              "Variable name and percent value"
+            ],
+            "common_bugs": [
+              "Cloner writes 1.p instead of 1 + p/100 (e.g., 1.43 vs. 1 + 0.43); both equivalent but distractor design must reflect this",
+              "Cloner adds a second change, drifting into A4"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Compound or chained percent applications",
+      "description": "Two or more percent operations are applied in sequence (e.g., increase then decrease, depreciation across years, two stacked discounts, or chained 'a is p% of b, b is q% of c') and the student must compose them. Cognitive operation is composition of multiplicative factors and careful base-tracking.",
+      "boundary_with_other_aspects": "A4 differs from A3 because two or more percent operations are composed rather than one. A4 differs from A1/A2 because the answer cannot be reached by a single multiplication or division.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Sequential percent on diminishing populations",
+          "description": "A starting population is reduced through successive percent retentions across stages, or a starting value is depreciated/grown across multiple periods.",
+          "core_skill_demand": "Multiply successive (p/100) factors together with the starting value, tracking that each percent applies to the previous (not the original) base.",
+          "example_originals": ["022e9894", "566759ef", "63573fea"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Exactly two or three stages",
+                "Each percent applies to the immediately preceding value (clearly stated)",
+                "Numeric answer is a clean integer or trivially rounded"
+              ],
+              "example_stem": "1,250 attended session 1. 72% of those attended session 2. 36% of those attended session 3. How many attended all three?",
+              "example_ids": ["022e9894", "566759ef", "63573fea"]
+            },
+            "hard": { "characteristics": ["Larger chain or non-monotonic chain — see T2/T3."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Each successive percent acts on the previous stage's value",
+              "Two or more sequential percent operations"
+            ],
+            "must_vary": [
+              "Domain (event attendance, depreciation, units returned, etc.)",
+              "Number of stages (2 vs. 3)"
+            ],
+            "common_bugs": [
+              "Cloner applies the second percent to the original value (drift to a single weighted percent)",
+              "Cloner phrases stages as overlapping subsets, making the chain ambiguous"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Increase then decrease (or vice versa) on a single quantity",
+          "description": "A value is first changed by p%, then by q% (often opposite direction); student finds the resulting value, the net percent change, or a starting value consistent with the chain.",
+          "core_skill_demand": "Form the product (1 ± p/100)·(1 ± q/100) and apply or invert it as required by the question.",
+          "example_originals": ["040f2a84", "3d73a58b", "623dbebb", "ad911622", "e635aede"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 5 },
+          "difficulty_levers": {
+            "easy":   { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["Not represented at medium in this bank."], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "At least one of p, q exceeds 100% or is a deep discount (>50%)",
+                "Question asks for net percent change or for an intermediate (cost) value given the final price",
+                "Real-world wrapper (retail markup → seasonal discount, year-over-year earnings)"
+              ],
+              "example_stem": "A shop marks souvenirs to 290% of wholesale, then discounts the remainder 80% off retail. What is the discounted price?",
+              "example_ids": ["040f2a84", "3d73a58b", "623dbebb", "ad911622", "e635aede"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two distinct percent operations applied in stated order to the same quantity",
+              "Direction (increase vs. decrease) for each operation specified"
+            ],
+            "must_vary": [
+              "Domain wording and direction pattern (up-then-down vs. down-then-up)"
+            ],
+            "common_bugs": [
+              "Cloner sums the two percents (e.g., +167% then −16% ≠ +151%)",
+              "Cloner applies the second percent to the original, not the intermediate value"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Chained 'a is p% of b, b is q% of c' relationships",
+          "description": "Multiple variables linked by percent relationships (a vs. b, b vs. c). The student must compose the relationships to find an unknown variable, a percent, or a ratio.",
+          "core_skill_demand": "Translate each 'a is p% greater/less than b' into a multiplicative equation, then chain to express a in terms of the most distant variable; finally answer for the requested form (value or percent).",
+          "example_originals": ["20845d36", "25faa756", "67c0200a", "1fbd3b67", "2e92cc21", "58ba7239", "8c5dbd3e", "4aaa9c42", "699af7b3", "993000da"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 10 },
+          "difficulty_levers": {
+            "easy":   { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["Not represented at medium in this bank."], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Three or more variables in the chain (a, b, c)",
+                "Mix of 'greater than' / 'less than' / 'is p% of' wording forces careful direction handling",
+                "At least one percent is very large (>100%) or very small (<1%); answer often a percent ('c is what percent of b')",
+                "Question requires recognizing that 'a is p% greater than b' ≡ a = (1 + p/100)b but 'a is p% of b' ≡ a = (p/100)b"
+              ],
+              "example_stem": "a is 70% less than positive b. c is 60% greater than a. c is how many times b?",
+              "example_ids": ["20845d36", "25faa756", "67c0200a", "1fbd3b67", "2e92cc21", "58ba7239"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two or more linked percent statements involving three or more named quantities",
+              "Wording mix of 'greater than' / 'less than' / 'of'"
+            ],
+            "must_vary": [
+              "Variable names and which percent is the unknown vs. which is given",
+              "Direction of each percent"
+            ],
+            "common_bugs": [
+              "Cloner treats 'p% greater than b' as 'p% of b' (drops the +1)",
+              "Cloner chains using the wrong base (applies q% to a instead of b)",
+              "Cloner produces a chain where the final answer is not a clean percent — inflates difficulty above target"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Multi-step compound percent in extended context",
+          "description": "A real-world projection or estimate that combines percent rates across categories (e.g., 'percent increase from year A to B would be double the percent increase from B to C', or 'p% of items are X, of those q% are Y, of those r% are Z').",
+          "core_skill_demand": "Translate each clause into a multiplication on the appropriate base, then combine — sometimes solving for an intermediate quantity before producing the final answer.",
+          "example_originals": ["8cbf1415", "0ea56bb2", "34f8cd89"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not represented at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Exactly two stages; each stage's percent is small (<50%) and integer",
+                "Answer is the joint percent (p1·p2/100)"
+              ],
+              "example_stem": "40% of items are red. 30% of red items have stripes. What percent of all items are red with stripes?",
+              "example_ids": ["8cbf1415"]
+            },
+            "hard": {
+              "characteristics": [
+                "Three or more nested percents, or an inverse step (compute complement, e.g., 'percentage that are NOT …')",
+                "Stem references an external projection ('would be double the previous percent increase')",
+                "Final step requires subtracting from 100% or solving a quadratic-like relationship in p"
+              ],
+              "example_stem": "37% of items are green, 37% of those are rectangular, 42% of those are metal. What percent are NOT rectangular green metal items?",
+              "example_ids": ["0ea56bb2", "34f8cd89"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "At least two percent operations composed inside a unified real-world context",
+              "Final question matches the stated cognitive demand (joint percent, complement, or projection)"
+            ],
+            "must_vary": [
+              "Domain (population, attributes, sales)",
+              "Whether the answer asks for the joint percent or its complement"
+            ],
+            "common_bugs": [
+              "Cloner adds the percents instead of multiplying",
+              "Cloner forgets to take the complement when the stem asks for 'NOT'"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Easy items in this skill are dominated by single-step computations of A1 (compute p% of N) and A2.T1 (what percent of N is M), with thin or no real-world wrappers. Medium adds inverse operations (A2.T2 'M is p% of what'), single percent changes (A3.T1–T3), and symbolic representation (A3.T5). Hard items almost exclusively live in A4 (chained percents) and in A3.T2 (find original from large-percent change) — the defining hard lever is composition of two or more multiplicative factors with at least one factor's base being a derived (not original) quantity. Cloners should treat A3↔A4 drift as the most common categorical failure mode: adding any second percent operation moves a question from A3 to A4 and typically pushes difficulty up by one level."
+}

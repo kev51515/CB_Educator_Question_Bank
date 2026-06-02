@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A model gives the predicted stopping distance, in feet, of a certain car at various speeds. According to the model:</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Speed (mph)</th><th>Stopping distance (ft)</th></tr>\n<tr><td>20</td><td>30</td></tr><tr><td>40</td><td>120</td></tr><tr><td>50</td><td>180</td></tr><tr><td>60</td><td>260</td></tr></table>\n<p>According to the model, which of the following is the best estimate for the stopping distance, in feet, if the car was traveling 50 miles per hour?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>260</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The table shows that at 50 mph, the predicted stopping distance is 180 feet.</p><p>Choices A, C, and D correspond to other speeds in the table.</p>",
+  "questionId": "5c24c861-s1",
+  "originalId": "5c24c861",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e5b5fbdd-s1",
+  "originalId": "e5b5fbdd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A playlist contains 12 songs, of which 5 are pop. If a student randomly selects 1 of the 12 songs to play, what is the probability that the selected song is pop?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7/12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5/7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5/12</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The probability is the number of pop songs divided by the total: 5/12.</p><p>Choice A is incorrect; this is the probability of selecting a non-pop song. Choice B is incorrect; this is the reciprocal of the correct fraction. Choice C is incorrect; this is the ratio of pop to non-pop songs.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3ec184af-s1",
+  "originalId": "3ec184af",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Many ancient ceramic vessels are missing their handles. This is because the handle is the most <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> part of a ceramic vessel. It is thin and sticks out from the body of the vessel, making it especially easy to snap off.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>recognizable</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>sophisticated</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>fragile</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>common</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text explains that the handle is thin and easily snapped off, which supports the meaning of \"fragile\" (easily broken). Choice A is incorrect because being recognizable does not explain why the handle would be missing. Choice B is incorrect because being sophisticated does not relate to breakage. Choice D is incorrect because being common does not explain why the part is missing from many vessels.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

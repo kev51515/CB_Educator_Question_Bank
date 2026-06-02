@@ -1,0 +1,39 @@
+{
+  "questionId": "95ca2683-s1",
+  "originalId": "95ca2683",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <math><mi>P</mi><mi>Q</mi><mi>R</mi></math>, the measure of angle <math><mi>P</mi></math> is <math><mn>38</mn><mo>&#176;</mo></math>, the measure of angle <math><mi>Q</mi></math> is <math><mn>90</mn><mo>&#176;</mo></math>, and the measure of angle <math><mi>R</mi></math> is <math><mo>(</mo><mfrac><mi>k</mi><mn>3</mn></mfrac><mo>)</mo><mo>&#176;</mo></math>. What is the value of <math><mi>k</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>26</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>52</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>104</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>156</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Angles in a triangle sum to 180\u00b0. So 38 + 90 + k/3 = 180, giving k/3 = 52, so k = 156.</p><p>Choice A is half of k/3. Choice B is k/3, not k. Choice C is k/3\u00b72.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.medium"
+}

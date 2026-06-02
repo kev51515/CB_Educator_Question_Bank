@@ -1,0 +1,39 @@
+{
+  "questionId": "c885c38b-s1",
+  "originalId": "c885c38b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Conventional wisdom in economic history has long claimed that systems of money evolved in clear stages, beginning with barter exchange among small face-to-face communities. The growth of trade about 5,000 years ago is said to have driven the emergence of commodity money, followed by metal coinage, and finally modern paper and electronic currencies issued by states.</p>\n<p><strong>Text 2</strong></p>\n<p>In a 2022 book, economic anthropologist Mei Lin Wu and historian Theo Halvorsen argue that human societies have always relied on a flexible mix of credit, gift, and tribute arrangements rather than progressing through fixed monetary stages. The authors cite evidence that as early as 4,000 years ago some Mesopotamian communities used elaborate ledger-based credit systems alongside, and not after, occasional barter, with shifts between these arrangements occurring at the level of individual households.</p>",
+  "stem": "<p>Based on the texts, how would Wu and Halvorsen (Text 2) most likely respond to the \"conventional wisdom\" presented in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By acknowledging that credit-based arrangements likely weren't a part of monetary systems before the growth of long-distance trade</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By conceding the importance of commodity money but asserting the greater significance of state-issued currencies</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By disputing the idea that developments in monetary systems have followed a linear progression through distinct stages</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By challenging the assumption that barter arrangements were among the earliest forms of economic exchange</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. According to Text 1, the conventional wisdom holds that monetary systems evolved through clear stages: barter, commodity money, coinage, and finally modern state currencies. Text 2 says Wu and Halvorsen argue that human societies have always relied on a flexible mix of arrangements rather than fixed stages, even within individual households. They would therefore dispute the idea that monetary systems have followed a linear stage-by-stage progression.</p><p>Choice A is incorrect because Text 2 says Mesopotamian credit systems existed alongside barter, not after long-distance trade developed. Choice B is incorrect because Text 2 doesn't rank the importance of commodity money against state-issued currencies. Choice D is incorrect because Text 2 doesn't challenge the assumption that barter was among the earliest forms of exchange.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.hard"
+}

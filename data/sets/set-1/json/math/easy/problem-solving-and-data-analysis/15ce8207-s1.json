@@ -1,0 +1,39 @@
+{
+  "questionId": "15ce8207-s1",
+  "originalId": "15ce8207",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot of seven data points plots y against x. The points are approximately (1, 3), (2, 5), (3, 6), (4, 9), (5, 10), (6, 13), and (7, 14). Which of the following best models the relationship between x and y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A decreasing linear model with negative slope.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>An increasing linear model with positive slope.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A constant model (horizontal line).</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A quadratic model that opens downward.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>As x increases from 1 to 7, the y-values rise steadily from about 3 to about 14, indicating a positive, roughly linear relationship. Therefore, an increasing linear model best fits the data. A decreasing or constant model would not capture the upward trend, and a downward-opening parabola would not match a steady increase.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy"
+}

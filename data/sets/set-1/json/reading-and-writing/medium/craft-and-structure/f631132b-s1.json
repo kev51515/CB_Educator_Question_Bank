@@ -1,0 +1,25 @@
+{
+  "questionId": "f631132b-s1",
+  "originalId": "f631132b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>In her 1934 treatise <em>Composition</em>, dance pioneer Doris Humphrey insisted that modern choreography should arise from the natural arc of fall and recovery rather than from imitations of classical ballet, since the body, she argued, gains expressive power from yielding to and resisting gravity. The clearest demonstration of this principle is her 1936 work <em>With My Red Fires</em>, in which dancers repeatedly collapse toward the floor only to rise again in surging diagonal lines. Critics have long observed that the piece&rsquo;s rhythmic alternation of descent and ascent translates Humphrey&rsquo;s theoretical writings directly into staged movement.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The text lists the technical innovations that distinguish modern dance from classical ballet and then identifies the choreographers most responsible for those innovations.</p>"},
+    {"id": "b", "content": "<p>The text presents a principle about how modern choreography should be composed and then describes a work that embodies that principle.</p>"},
+    {"id": "c", "content": "<p>The text summarizes a dispute between two choreographers about the role of gravity and then traces how that dispute influenced later dance theory.</p>"},
+    {"id": "d", "content": "<p>The text outlines a method of dance notation used in the 1930s and then explains why a contrasting method became more widely adopted.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text begins by introducing Humphrey&rsquo;s principle that modern choreography should be built on the cycle of fall and recovery rather than on classical imitation. It then describes <em>With My Red Fires</em>, a work whose alternation of collapse and rising lines embodies that principle.</p><p>Choice A is incorrect. The text mentions classical ballet only as a contrast and does not list multiple innovations or attribute them to multiple choreographers. Choice C is incorrect. Only one choreographer&rsquo;s view is presented; no dispute between two choreographers is described. Choice D is incorrect. The text never discusses dance notation or compares notation methods.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

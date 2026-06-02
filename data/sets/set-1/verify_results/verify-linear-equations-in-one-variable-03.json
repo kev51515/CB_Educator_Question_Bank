@@ -1,0 +1,22 @@
+[
+  {"id": "38bf4e04-s1", "templateId": "linear-equations-in-one-variable.A2.T5.hard", "verdict": "ok"},
+  {"id": "b7e6394d-s1", "templateId": "linear-equations-in-one-variable.A2.T5.hard", "verdict": "ok"},
+  {"id": "429fb7c0-s1", "templateId": "linear-equations-in-one-variable.A1.T3.hard", "verdict": "ok"},
+  {"id": "771bd0ca-s1", "templateId": "linear-equations-in-one-variable.A1.T3.hard", "verdict": "ok"},
+  {"id": "e6cb2402-s1", "templateId": "linear-equations-in-one-variable.A3.T9.hard", "verdict": "ok"},
+  {"id": "4771a64a-s1", "templateId": "linear-equations-in-one-variable.A4.T12.hard", "verdict": "ok"},
+  {"id": "9ff10b3b-s1", "templateId": "linear-equations-in-one-variable.A1.T3.easy", "verdict": "ok"},
+  {"id": "9b886541-s1", "templateId": "linear-equations-in-one-variable.A4.T12.easy", "verdict": "ok"},
+  {"id": "83fb222d-s1", "templateId": "linear-equations-in-one-variable.A4.T12.easy", "verdict": "ok"},
+  {"id": "da2e9202-s1", "templateId": "linear-equations-in-one-variable.A3.T7.easy", "verdict": "ok"},
+  {"id": "d9d83c02-s1", "templateId": "linear-equations-in-one-variable.A1.T3.easy", "verdict": "ok"},
+  {"id": "5c94e6fa-s1", "templateId": "linear-equations-in-one-variable.A3.T9.easy", "verdict": "ok"},
+  {"id": "4de87c9a-s1", "templateId": "linear-equations-in-one-variable.A2.T5.easy", "verdict": "ok"},
+  {"id": "d76ab4f5-s1", "templateId": "linear-equations-in-one-variable.A3.T7.easy", "verdict": "ok"},
+  {"id": "4f7981a0-s1", "templateId": "linear-equations-in-one-variable.A4.T12.easy", "verdict": "ok"},
+  {"id": "6ac23de7-s1", "templateId": "linear-equations-in-one-variable.A1.T1.easy", "verdict": "ok"},
+  {"id": "f305b5ca-s1", "templateId": "linear-equations-in-one-variable.A2.T5.easy", "verdict": "ok"},
+  {"id": "3c4ce699-s1", "templateId": "linear-equations-in-one-variable.A4.T12.easy", "verdict": "ok"},
+  {"id": "9fc31513-s1", "templateId": "linear-equations-in-one-variable.A2.T4.easy", "verdict": "ok"},
+  {"id": "eac739b2-s1", "templateId": "linear-equations-in-one-variable.A4.T12.easy", "verdict": "ok"}
+]

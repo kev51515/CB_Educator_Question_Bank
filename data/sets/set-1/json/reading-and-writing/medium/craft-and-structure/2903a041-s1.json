@@ -1,0 +1,25 @@
+{
+  "questionId": "2903a041-s1",
+  "originalId": "2903a041",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>Using the European Southern Observatory's powerful Very Large Telescope (VLT), Adriana Marcos and colleagues measured the spectra of light reflected from the surface of Polyhymnia, an unusual asteroid in the main belt. Different elements reflect different wavelengths of light, and the spectral measurements revealed unexpectedly heavy elements consistent with a dense metallic composition in Polyhymnia's interior. This finding not only offers the first direct spectral evidence of such material on a main-belt asteroid but also illustrates how the VLT could enable a new wave of compositional surveys of small bodies in the solar system.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It outlines the steps of a scientific study, then presents a hypothesis grounded in that study.</p>"},
+    {"id": "b", "content": "<p>It explains how researchers made a scientific finding, then describes why that finding matters.</p>"},
+    {"id": "c", "content": "<p>It examines how one group of scientists reached a conclusion, then shows how other scientists have disputed it.</p>"},
+    {"id": "d", "content": "<p>It discusses one technique used by researchers, then explains why an alternative technique is preferable.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text first describes how Marcos and colleagues used the VLT to measure Polyhymnia's spectra and arrive at the finding of dense metallic material in its interior. The text then explains the significance of this finding, both as the first direct spectral evidence on a main-belt asteroid and as a sign of broader survey potential for the VLT. The structure is description of a finding followed by an account of its importance.</p><p>Choice A is incorrect because the text reports findings rather than presenting a hypothesis based on the study. Choice C is incorrect because no other scientists are mentioned as disputing the conclusion. Choice D is incorrect because the text discusses only one technique and does not compare it to an alternative.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

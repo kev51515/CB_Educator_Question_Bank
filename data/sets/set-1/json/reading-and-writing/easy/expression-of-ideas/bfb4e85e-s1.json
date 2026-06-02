@@ -1,0 +1,39 @@
+{
+  "questionId": "bfb4e85e-s1",
+  "originalId": "bfb4e85e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Soccer player Megan Rapinoe has accomplished a lot. She has won two FIFA World Cup titles, claimed an Olympic gold medal, and even received the Presidential Medal of Freedom. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> according to Rapinoe, nothing in her career matches the impact of using her platform to advocate for equal pay in women's sports.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Thus,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Second of all,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"However\" logically signals that the information in this sentence&mdash;that nothing in Rapinoe's career matches her equal-pay advocacy&mdash;offers a contrast or exception to the previous information about her accomplishments.</p><p>Choice A is incorrect because \"thus\" illogically signals consequence. Choice B is incorrect because \"for example\" illogically signals exemplification. Choice D is incorrect because \"second of all\" illogically signals a second separate point in a list.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "714e4c10",
+  "externalId": "b07b52e9-c1ee-4177-bce8-9a5b35a6f12f",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:10:41.422622+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "29a44ddd-2ef7-4c59-b31a-4697d318cf69",
+      "content": "<p>Asawa inspired many other artists to share their work with students in public schools.</p>"
+    },
+    {
+      "id": "dfd0fbea-13a9-4dd4-a30f-4be87524b6c3",
+      "content": "<p>Asawa&rsquo;s unique sculptures were appreciated more by local art communities than they were nationwide.</p>"
+    },
+    {
+      "id": "c3c8c0ca-64d6-4b9f-bb90-4ff502da634d",
+      "content": "<p>Asawa&rsquo;s interest in art education prompted her to create art programs for students in San Francisco.</p>"
+    },
+    {
+      "id": "fbf814fb-fe85-4811-b030-e5e1c26441b1",
+      "content": "<p>Asawa left a promising career as a sculptor to work as an art teacher in San Francisco schools.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "c3c8c0ca-64d6-4b9f-bb90-4ff502da634d"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most accurately states the main idea of the text. The text begins by establishing Ruth Asawa as an artist who worked in several art forms but emphasizes that she was interested in art for reasons other than her desire to create it. The text mentions two ways in which Asawa brought art to children through public schools: cofounding the Alvarado School Arts Workshop in 1968 and helping found a public arts high school in 1982. Thus, the main idea is that Asawa&rsquo;s interest in art education motivated her to establish arts programs for students in San Francisco.</p><p>Choice A is incorrect because the text doesn&rsquo;t mention Asawa inspiring other artists to share their work with students. While the text does note that the Alvarado School Arts Workshop brought works of art and artists into public schools, it doesn&rsquo;t state that Asawa motivated these artists. Choice B is incorrect because the text makes no comparison between local and national appreciation of Asawa&rsquo;s sculptures. While the text does mention that Asawa created unique tied-wire sculptures and was connected to San Francisco, it does not contrast her local and national critical receptions. Choice D is incorrect. Although the text emphasizes Asawa&rsquo;s educational initiatives, it doesn&rsquo;t state or imply that she abandoned her career as a sculptor to work as an art teacher. Instead, the text portrays her educational work as a complement to her career as a successful artist.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the main idea of the text?</p>",
+    "stimulus": "<p>Ruth Asawa was an accomplished artist who worked in many art forms, including her unique tied-wire sculptures, but she was dedicated to more than the creation of art. Asawa also wanted to bring art to children in her hometown of San Francisco, California. To that end, in 1968 she cofounded the Alvarado School Arts Workshop, which brought works of art and artists into public schools, and in 1982 she helped found a San Francisco public arts high school, which was later named after her.</p>",
+    "keys": [
+      "c3c8c0ca-64d6-4b9f-bb90-4ff502da634d"
+    ],
+    "answerOptions": [
+      {
+        "id": "29a44ddd-2ef7-4c59-b31a-4697d318cf69",
+        "content": "<p>Asawa inspired many other artists to share their work with students in public schools.</p>"
+      },
+      {
+        "id": "dfd0fbea-13a9-4dd4-a30f-4be87524b6c3",
+        "content": "<p>Asawa&rsquo;s unique sculptures were appreciated more by local art communities than they were nationwide.</p>"
+      },
+      {
+        "id": "c3c8c0ca-64d6-4b9f-bb90-4ff502da634d",
+        "content": "<p>Asawa&rsquo;s interest in art education prompted her to create art programs for students in San Francisco.</p>"
+      },
+      {
+        "id": "fbf814fb-fe85-4811-b030-e5e1c26441b1",
+        "content": "<p>Asawa left a promising career as a sculptor to work as an art teacher in San Francisco schools.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most accurately states the main idea of the text. The text begins by establishing Ruth Asawa as an artist who worked in several art forms but emphasizes that she was interested in art for reasons other than her desire to create it. The text mentions two ways in which Asawa brought art to children through public schools: cofounding the Alvarado School Arts Workshop in 1968 and helping found a public arts high school in 1982. Thus, the main idea is that Asawa&rsquo;s interest in art education motivated her to establish arts programs for students in San Francisco.</p><p>Choice A is incorrect because the text doesn&rsquo;t mention Asawa inspiring other artists to share their work with students. While the text does note that the Alvarado School Arts Workshop brought works of art and artists into public schools, it doesn&rsquo;t state that Asawa motivated these artists. Choice B is incorrect because the text makes no comparison between local and national appreciation of Asawa&rsquo;s sculptures. While the text does mention that Asawa created unique tied-wire sculptures and was connected to San Francisco, it does not contrast her local and national critical receptions. Choice D is incorrect. Although the text emphasizes Asawa&rsquo;s educational initiatives, it doesn&rsquo;t state or imply that she abandoned her career as a sculptor to work as an art teacher. Instead, the text portrays her educational work as a complement to her career as a successful artist.</p>",
+    "externalid": "b07b52e9-c1ee-4177-bce8-9a5b35a6f12f",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>Ruth Asawa was an accomplished artist who worked in many art forms, including her unique tied-wire sculptures, but she was dedicated to more than the creation of art. Asawa also wanted to bring art to children in her hometown of San Francisco, California. To that end, in 1968 she cofounded the Alvarado School Arts Workshop, which brought works of art and artists into public schools, and in 1982 she helped found a San Francisco public arts high school, which was later named after her.</p>"
+}

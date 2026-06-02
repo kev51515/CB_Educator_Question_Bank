@@ -1,0 +1,25 @@
+{
+  "questionId": "f768090a-s1",
+  "originalId": "f768090a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Yvonne Rainer&rsquo;s <em>Trio A</em> first premiered in 1966 as a brief solo piece, but Rainer would rework and reinterpret it repeatedly over the following five decades. These continuous <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the substitution of new gestures for older sequences, the elimination of musical accompaniment, and the addition of spoken narration, transformed how audiences encountered the piece over time.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>revisions, involving</p>"},
+    {"id": "b", "content": "<p>revisions would involve</p>"},
+    {"id": "c", "content": "<p>revisions involved</p>"},
+    {"id": "d", "content": "<p>revisions, involve</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle &ldquo;involving&rdquo; is correctly used to form a supplementary element that interrupts the main clause &ldquo;These continuous revisions&hellip;transformed how audiences encountered the piece over time.&rdquo; This supplementary element, offset by commas after &ldquo;revisions&rdquo; and &ldquo;narration,&rdquo; provides examples of the revisions Rainer made to <em>Trio A</em>.</p><p>Choice B is incorrect because it results in an ungrammatical sentence. The finite modal verb &ldquo;would involve&rdquo; can&rsquo;t be used in this way to form a supplementary element within the main clause. Choice C is incorrect because it results in an ungrammatical sentence. The finite past tense verb &ldquo;involved&rdquo; can&rsquo;t be used in this way to form a supplementary element within the main clause. Choice D is incorrect because it results in an ungrammatical sentence. The finite present tense verb &ldquo;involve&rdquo; can&rsquo;t be used in this way to form a supplementary element within the main clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

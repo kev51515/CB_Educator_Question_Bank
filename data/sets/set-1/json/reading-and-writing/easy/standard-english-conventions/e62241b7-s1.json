@@ -1,0 +1,25 @@
+{
+  "questionId": "e62241b7-s1",
+  "originalId": "e62241b7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>What is the correct pronunciation of Worcestershire? In the British English spoken in much of the West Midlands, the spelling of place-names often differs from how they are voiced; as a result, the county's name <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> pronounced \"Wooster-sher.\"</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>have been</p>"},
+    {"id": "c", "content": "<p>is</p>"},
+    {"id": "d", "content": "<p>are being</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"the county's name.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"the county's name.\" Choice B is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"the county's name.\" Choice D is incorrect because the plural verb \"are being\" doesn't agree in number with the singular subject \"the county's name.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

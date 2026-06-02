@@ -1,0 +1,39 @@
+{
+  "questionId": "0301c5dc-s1",
+  "originalId": "0301c5dc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes information about 40 community recreation centers, indicating whether each has a swimming pool, a gym, both, or neither.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th></th><th>Has gym</th><th>No gym</th><th>Total</th></tr></thead><tbody><tr><td>Has pool</td><td style=\"text-align: center;\">8</td><td style=\"text-align: center;\">10</td><td style=\"text-align: center;\">18</td></tr><tr><td>No pool</td><td style=\"text-align: center;\">12</td><td style=\"text-align: center;\">10</td><td style=\"text-align: center;\">22</td></tr><tr><td>Total</td><td style=\"text-align: center;\">20</td><td style=\"text-align: center;\">20</td><td style=\"text-align: center;\">40</td></tr></tbody></table></figure><p>If one of these recreation centers is selected at random, what is the probability that it has a swimming pool but does not have a gym?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8/40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18/40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10/40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12/40</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. According to the table, 10 of the 40 recreation centers have a pool but no gym. Therefore, the probability of randomly selecting such a center is 10/40 (which equals 1/4 or 0.25). Choice A is incorrect because 8/40 is the probability that a center has both a pool and a gym. Choice B is incorrect because 18/40 is the probability that a center has a pool (regardless of whether it has a gym). Choice D is incorrect because 12/40 is the probability that a center has a gym but no pool.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A2.T5.medium"
+}

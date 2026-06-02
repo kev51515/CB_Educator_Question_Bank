@@ -1,0 +1,39 @@
+{
+  "questionId": "c602140f-s1",
+  "originalId": "c602140f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": "<p>(a &minus; 8b)(3a &minus; 2b) &minus; 10b(&minus;3a + 2b)</p>",
+  "stem": "<p>Which of the following is equivalent to the expression above?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3a<sup>2</sup> + 28ab + 36b<sup>2</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3a<sup>2</sup> &minus; 56ab + 76b<sup>2</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a &minus; 30b</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3a<sup>2</sup> + 4ab &minus; 4b<sup>2</sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Expanding (a &minus; 8b)(3a &minus; 2b) gives 3a<sup>2</sup> &minus; 2ab &minus; 24ab + 16b<sup>2</sup> = 3a<sup>2</sup> &minus; 26ab + 16b<sup>2</sup>. Expanding &minus;10b(&minus;3a + 2b) = 30ab &minus; 20b<sup>2</sup>. Sum: 3a<sup>2</sup> + (&minus;26 + 30)ab + (16 &minus; 20)b<sup>2</sup> = 3a<sup>2</sup> + 4ab &minus; 4b<sup>2</sup>. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A2.T6.medium"
+}

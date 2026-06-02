@@ -1,0 +1,24 @@
+{
+  "questionId": "7d5d1b32-s1",
+  "originalId": "7d5d1b32",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3(<i>m</i><i>x</i> + <i>p</i>) = (24/11)<i>x</i> + 5/7</p><p>In the given equation, <i>m</i> and <i>p</i> are constants and <i>p</i> &gt; 0. The equation has no solution. What is the value of <i>m</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "8/11",
+    "0.7272",
+    "0.7273"
+  ],
+  "rationale": "<p>Expanding the left side gives 3<i>m</i><i>x</i> + 3<i>p</i> = (24/11)<i>x</i> + 5/7. A linear equation has no solution exactly when the coefficients of <i>x</i> are equal while the constant terms differ. So 3<i>m</i> = 24/11, giving <i>m</i> = 8/11. The constant terms then satisfy 3<i>p</i> &ne; 5/7, which is consistent with <i>p</i> &gt; 0 (provided <i>p</i> &ne; 5/21).</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.hard"
+}

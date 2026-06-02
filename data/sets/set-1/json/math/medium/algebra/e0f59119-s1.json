@@ -1,0 +1,23 @@
+{
+  "questionId": "e0f59119-s1",
+  "originalId": "e0f59119",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>What is the slope of the graph of y = (1/2)(17x + 8) + 4x in the <em>xy</em>-plane?</p>",
+  "answerOptions": null,
+  "keys": [
+    "25/2",
+    "12.5"
+  ],
+  "rationale": "<p>Distribute and combine like terms: y = (17/2)x + 4 + 4x = (17/2 + 8/2)x + 4 = (25/2)x + 4. The slope is the coefficient of x, which is 25/2, or 12.5.</p>",
+  "templateId": "linear-equations-in-two-variables.A5.T10.medium"
+}

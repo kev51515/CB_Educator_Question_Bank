@@ -1,0 +1,39 @@
+{
+  "questionId": "a5663025-s1",
+  "originalId": "a5663025",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A system of equations consists of a quadratic equation y = x² − 4 and the linear equation y = 0. How many solutions does this system have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The solutions to the system correspond to points where the two graphs intersect. Setting x² − 4 = 0 gives x² = 4, so x = 2 or x = −2. The parabola y = x² − 4 has its vertex below the x-axis and opens upward, crossing the line y = 0 at exactly two points. Choice A: the graphs intersect. Choice B: the line is not tangent at the vertex. Choice D: a line cannot intersect a parabola more than twice.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium"
+}

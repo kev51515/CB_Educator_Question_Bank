@@ -1,0 +1,22 @@
+{
+  "questionId": "fd8745fc-s1",
+  "originalId": "fd8745fc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In triangle <math><mi>R</mi><mi>S</mi><mi>T</mi></math>, the measures of <math><mo>&#8736;</mo><mi>S</mi></math> and <math><mo>&#8736;</mo><mi>T</mi></math> are each <math><mn>39</mn><mo>&#176;</mo></math>. What is the measure of <math><mo>&#8736;</mo><mi>R</mi></math>, in degrees? (Disregard the degree symbol when entering your answer.)</p>",
+  "answerOptions": null,
+  "keys": [
+    "102"
+  ],
+  "rationale": "<p>The correct answer is 102. The interior angles of a triangle sum to 180\u00b0. So the measure of angle R is 180 - 39 - 39 = 102\u00b0.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.medium"
+}

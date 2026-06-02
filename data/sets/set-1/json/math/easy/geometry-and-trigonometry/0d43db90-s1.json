@@ -1,0 +1,39 @@
+{
+  "questionId": "0d43db90-s1",
+  "originalId": "0d43db90",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The perimeter of triangle PQR is 22 inches. The length of side PQ is 8 inches, and the length of side PR is 9 inches. What is the length, in inches, of side QR?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>17</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The perimeter of a triangle equals the sum of the lengths of its three sides. Let x be the length of QR. Then 8 + 9 + x = 22, so x = 5 inches.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T2.easy"
+}

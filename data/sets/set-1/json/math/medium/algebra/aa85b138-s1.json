@@ -1,0 +1,39 @@
+{
+  "questionId": "aa85b138-s1",
+  "originalId": "aa85b138",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A pond was 30 centimeters deep when its depth was first measured. The equation 30 + 3n = 51 can be used to find how many years n it took the pond to reach a depth of 51 centimeters. Which of the following is the best interpretation of the number 3 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The number of years it took the pond to gain 51 cm of depth</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The depth, in centimeters, of the pond when first measured</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The total depth gained, in centimeters</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The average number of centimeters the pond gained in depth per year</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The equation has the form (initial depth) + (rate per year) \u00b7 n = (final depth). The coefficient 3 multiplies n (years), so 3 represents the average yearly increase in depth, in centimeters. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T6.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "433184f1-s1",
+  "originalId": "433184f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to <i>3</i>/(2<i>x</i> &minus; 7) &minus; 1/(<i>x</i> + 4)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2/((<i>x</i> + 4)(2<i>x</i> &minus; 7))</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(<i>x</i> + 19)/((<i>x</i> + 4)(2<i>x</i> &minus; 7))</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(<i>x</i> &minus; 19)/((<i>x</i> + 4)(2<i>x</i> &minus; 7))</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2/(<i>x</i> &minus; 3)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Rewrite each fraction with the common denominator (<i>x</i> + 4)(2<i>x</i> &minus; 7). The first fraction becomes 3(<i>x</i> + 4)/((<i>x</i> + 4)(2<i>x</i> &minus; 7)) = (3<i>x</i> + 12)/((<i>x</i> + 4)(2<i>x</i> &minus; 7)). The second becomes (2<i>x</i> &minus; 7)/((<i>x</i> + 4)(2<i>x</i> &minus; 7)). Subtracting yields (3<i>x</i> + 12 &minus; 2<i>x</i> + 7)/((<i>x</i> + 4)(2<i>x</i> &minus; 7)) = (<i>x</i> + 19)/((<i>x</i> + 4)(2<i>x</i> &minus; 7)). Choices A, C, and D result from arithmetic or sign errors when combining numerators.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A3.T8.hard"
+}

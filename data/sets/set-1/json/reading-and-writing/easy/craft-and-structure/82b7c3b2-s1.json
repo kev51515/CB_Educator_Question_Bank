@@ -1,0 +1,39 @@
+{
+  "questionId": "82b7c3b2-s1",
+  "originalId": "82b7c3b2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a fictional 1925 short story. Mrs. Hayes had always been fond of china teapots, she said, and every year her sister’s birthday gift to her was a teapot of some kind—whatever the shopkeeper recommended, <u>tagged</u> at about eight or ten dollars.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;tagged&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Priced</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Marked with a label</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Stained</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Hidden</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because in this context, \"tagged at about eight or ten dollars\" means the teapot was priced at that amount. Choice B is incorrect because while \"tagged\" can mean labeled, the dollar amount specifically refers to price. Choice C is incorrect because staining doesn’t fit a dollar amount. Choice D is incorrect because hiding doesn’t fit either.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

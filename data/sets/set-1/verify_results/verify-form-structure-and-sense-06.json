@@ -1,0 +1,9 @@
+[
+  {"id": "3a35ddd1-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "6d247c13-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "e92a7ad3-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "ok"},
+  {"id": "e3b72630-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "constraint_violation", "detail": "T2 must_preserve requires distractors drawn from finite + at least two non-finite forms. Clone has only one non-finite option (to narrate) plus three finite forms (narrates, narrated, is narrating), violating the distractor-diversity constraint."},
+  {"id": "b5b74c3f-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "ok"},
+  {"id": "674e59a3-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "7c48a6dd-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"}
+]

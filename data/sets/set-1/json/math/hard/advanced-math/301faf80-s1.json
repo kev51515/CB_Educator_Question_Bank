@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "301faf80-s1",
+  "originalId": "301faf80",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The product of two positive integers is 275. If the first integer is 3 greater than twice the second integer, what is the smaller of the two integers?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The correct answer is 11. Let y represent the second integer and x = 2y + 3 represent the first. Their product is xy = (2y + 3)(y) = 275, or 2y<sup>2</sup> + 3y &minus; 275 = 0. Factoring gives (2y + 25)(y &minus; 11) = 0, so y = 11 (rejecting y = &minus;25/2, which is not a positive integer). Then x = 2(11) + 3 = 25. The two integers are 11 and 25; the smaller is 11.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

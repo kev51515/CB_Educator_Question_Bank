@@ -1,0 +1,39 @@
+{
+  "questionId": "beb86a0c-s1",
+  "originalId": "beb86a0c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>8</mn><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>15</mn><mi>y</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>23</mn><msup><mi>y</mi><mn>3</mn></msup></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>y</mi><mfenced><mrow><mn>8</mn><mi>y</mi><mo>+</mo><mn>15</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>23</mn><msup><mi>y</mi><mn>2</mn></msup></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mn>8</mn><mi>y</mi><mo>+</mo><mn>15</mn><mi>y</mi></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Each term has a factor of y. Factoring y from 8y² + 15y gives y(8y + 15). Choice (b) is correct.</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

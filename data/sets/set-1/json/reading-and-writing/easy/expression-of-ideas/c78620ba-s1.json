@@ -1,0 +1,39 @@
+{
+  "questionId": "c78620ba-s1",
+  "originalId": "c78620ba",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 1923, US Senator Charles Curtis introduced a resolution to grant US citizenship to all Native Americans born within US borders. The resolution failed in committee, but Curtis was determined. He worked with Representative Homer P. Snyder, and they reintroduced versions of the proposal repeatedly over the next year. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 1924, the Indian Citizenship Act passed.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Instead,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Finally,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Additionally,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Finally\" logically signals that the bill passing&mdash;after multiple failed attempts&mdash;is the final, concluding event in the sequence described in the previous sentences.</p><p>Choice A is incorrect because \"instead\" illogically signals an alternative. Choice C is incorrect because \"likewise\" illogically signals similarity to a prior event. Choice D is incorrect because \"additionally\" illogically signals merely another event added to the list, rather than the concluding event.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T13.easy"
+}

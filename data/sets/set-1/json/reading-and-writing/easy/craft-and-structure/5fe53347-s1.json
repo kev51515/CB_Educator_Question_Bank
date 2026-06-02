@@ -1,0 +1,39 @@
+{
+  "questionId": "5fe53347-s1",
+  "originalId": "5fe53347",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Botanist Pavel Kindlmann has pointed out that orchids of the genus <em>Dactylorhiza</em> already grow across a wide range of soil and moisture conditions and thus may <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> changes in climate better than some other plant groups do. The adjustments these orchids may need to make in response to a warming climate are likely to be relatively small and within their existing tolerance.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>refer to</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>adapt to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>originate from</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>relocate from</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the second sentence explains that the orchids would need to make only small adjustments within their existing tolerance. \"Adapt to\" matches this idea of adjusting to new conditions. Choices A, C, and D do not describe how a plant copes with changing climate.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

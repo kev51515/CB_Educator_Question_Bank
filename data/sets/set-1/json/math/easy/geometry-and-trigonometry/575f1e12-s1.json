@@ -1,0 +1,22 @@
+{
+  "questionId": "575f1e12-s1",
+  "originalId": "575f1e12",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>What is the area, in square centimeters, of a rectangle with a length of 41 centimeters (cm) and a width of 22 cm?</p>",
+  "answerOptions": null,
+  "keys": [
+    "902"
+  ],
+  "rationale": "<p>The area of a rectangle is A = lw. Substituting l = 41 and w = 22 gives A = 41 \u00d7 22 = 902 square centimeters.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

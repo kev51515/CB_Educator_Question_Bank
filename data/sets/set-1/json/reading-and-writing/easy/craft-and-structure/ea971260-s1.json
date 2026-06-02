@@ -1,0 +1,39 @@
+{
+  "questionId": "ea971260-s1",
+  "originalId": "ea971260",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1908 novel. Hannah, a teenager, is visiting her cousin Beatrice in the city.</p><blockquote><p>Beatrice's neighbors did not interest Hannah much; she was rather wary of them [because] they seemed so much more polished and worldly than herself, even those younger in years. They talked about things of which she knew little, and when Beatrice tried to explain, she didn't find them interesting; indeed, some of them rather alarmed and puzzled her.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To identify the topics Hannah talks about with Beatrice's neighbors</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To explain how Beatrice met some of her neighbors</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To illustrate how Beatrice's neighbors feel about Hannah</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To portray Hannah's reaction to Beatrice's neighbors</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text describes Hannah's wariness toward Beatrice's neighbors\u2014they seemed \"more polished and worldly\" and their topics \"alarmed and puzzled her.\" The main purpose is to portray Hannah's reaction.</p><p>Choice A is incorrect. The text doesn't specify topics. Choice B is incorrect. The text doesn't describe how Beatrice met her neighbors. Choice C is incorrect. The text focuses on Hannah's feelings, not the neighbors'.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

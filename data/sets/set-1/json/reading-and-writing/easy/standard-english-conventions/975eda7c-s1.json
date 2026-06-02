@@ -1,0 +1,39 @@
+{
+  "questionId": "975eda7c-s1",
+  "originalId": "975eda7c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>For thousands of years, communities throughout the Andes <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the quinoa seed, a tiny nutritious grain, to make porridges, beverages, and ceremonial offerings. Curiously, archaeological evidence shows that quinoa cultivation spread northward into Mesoamerica only relatively recently, indicating a much later transfer than was once assumed.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>to harvest</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>harvesting</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>having harvested</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>have harvested</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A main clause requires a finite verb. The present perfect &ldquo;have harvested&rdquo; correctly indicates an action that began in the past (&ldquo;for thousands of years&rdquo;) and continues into the present.</p><p>Choices A, B, and C are all nonfinite forms that cannot serve as the main verb of a clause.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

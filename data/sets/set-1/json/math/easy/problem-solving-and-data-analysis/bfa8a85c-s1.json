@@ -1,0 +1,39 @@
+{
+  "questionId": "bfa8a85c-s1",
+  "originalId": "bfa8a85c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>4, 4, 7, 7, 7, 9, 18</p><p>Which of the following lists represents a data set that has the same mean and the same median as the data set above?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3, 5, 6, 8, 9, 10, 15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5, 6, 7, 7, 7, 8, 10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5, 5, 7, 7, 7, 8, 17</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6, 6, 7, 9, 10, 12, 14</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The given data set has mean (4+4+7+7+7+9+18) \u00f7 7 = 56 \u00f7 7 = 8 and median 7. The data set 5, 5, 7, 7, 7, 8, 17 has sum 56, so its mean is 8, and its middle value (when ordered) is 7.</p><p>Choice A is incorrect. This data set has mean 8 but median 8, not 7.</p><p>Choice B is incorrect. This data set has median 7 but mean 50/7 \u2248 7.14, not 8.</p><p>Choice D is incorrect. This data set has neither the same mean nor the same median.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.easy"
+}

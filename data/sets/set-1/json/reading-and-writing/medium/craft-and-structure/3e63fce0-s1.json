@@ -1,0 +1,25 @@
+{
+  "questionId": "3e63fce0-s1",
+  "originalId": "3e63fce0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>A team of researchers found that naked mole-rats can detect when an injured colony member's wound is becoming infected and then treat that infection by applying a thin layer of saliva containing antimicrobial compounds the rodents produce in their salivary glands. The team reported that the mortality rate for naked mole-rats with infected injuries dropped by roughly 75 percent with this treatment, and the researchers are hopeful that this discovery could guide the development of new antimicrobial agents for use in human medicine.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It identifies a problem facing naked mole-rats and then proposes a solution to address that problem.</p>"},
+    {"id": "b", "content": "<p>It introduces a study of naked mole-rats and then explains the research methods that the study employed.</p>"},
+    {"id": "c", "content": "<p>It summarizes research findings on naked mole-rats and then identifies an area for further research.</p>"},
+    {"id": "d", "content": "<p>It describes distinctive properties of naked mole-rats and then speculates on how those properties developed.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text first presents the researchers' findings about naked mole-rats: they can detect and treat infected wounds in colony members using antimicrobial saliva, with sharply reduced mortality. The text then identifies the development of new antimicrobial agents for humans as a related area for further research. The structure is summary of findings followed by identification of an area for further research.</p><p>Choice A is incorrect because the text does not present anything about the rodents as a problem to be solved. Choice B is incorrect because no research methods are described. Choice D is incorrect because evolutionary or developmental origins of the trait are not discussed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

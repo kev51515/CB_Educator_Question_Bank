@@ -1,0 +1,25 @@
+{
+  "questionId": "28dfc05a-s1",
+  "originalId": "28dfc05a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T6.medium",
+  "stimulus": "<p>Despite the proliferation of digital recording software, many composers still prefer to sketch their orchestral scores with pencil on staff paper before later entering the final version into notation programs. It can be tempting to wonder how a composition created this way might have differed if it had been composed entirely on screen, but each score is a distinct artifact arising from a particular combination of working conditions. Consequently, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>there is no reliable way to assess how a finished work would have differed had it been composed by another method.</p>"},
+    {"id": "b", "content": "<p>composers who draft mainly by hand likely produce stronger scores than those who work only on a computer.</p>"},
+    {"id": "c", "content": "<p>scores produced by hand are completed more quickly, on average, than those entered directly into notation software.</p>"},
+    {"id": "d", "content": "<p>in order to increase output, composers who currently work mostly by hand should switch exclusively to notation software.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is best. After noting that each score is a distinct artifact arising from a particular combination of conditions, the text implies that the effect of any single condition (such as the medium of composition) cannot be isolated. Therefore, no reliable comparison of an alternative-medium version of the same work is possible. Choice B is unsupported—success or quality is never discussed. Choice C is unsupported—production time is not mentioned. Choice D is unsupported—the text does not address efficiency at all.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

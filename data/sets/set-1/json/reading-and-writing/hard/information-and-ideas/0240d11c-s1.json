@@ -1,0 +1,39 @@
+{
+  "questionId": "0240d11c-s1",
+  "originalId": "0240d11c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>In recent decades, scholars have investigated the origins of contemporary Japanese ramen culture, and they have offered competing accounts. Some, like food historian Lila Hartmann, argue that ramen is essentially a localized adaptation of nineteenth-century Chinese noodle traditions brought by immigrant cooks. Others, including ethnographer Daichi Okamoto, contend that while Chinese influence is undeniable, modern ramen owes its character primarily to twentieth-century Japanese postwar innovations in broth, machine-made noodles, and regional experimentation.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Okamoto&rsquo;s argument?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Several documented ramen shops in early twentieth-century port cities employed cooks who had trained in Chinese kitchens before immigrating to Japan.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Many ramen shops across Japan today display menus that share strikingly similar dish names and presentation styles.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The defining broths and noodle textures of most regional ramen styles can be traced to specific Japanese innovations developed between 1945 and 1970.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Ramen has become one of the most internationally recognized Japanese dishes, with restaurants in more than fifty countries.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it presents a finding that, if true, would directly support Okamoto&rsquo;s claim that modern ramen&rsquo;s defining characteristics emerged from postwar Japanese innovation. If the characteristic broths and noodle textures originated in 1945&ndash;1970 Japan, then modern ramen&rsquo;s character is primarily shaped by Japanese postwar developments rather than by the imported Chinese tradition. Choice A actually supports Hartmann&rsquo;s view by emphasizing Chinese origins. Choice B speaks to homogeneity, not origin. Choice D speaks to popularity, not origin.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

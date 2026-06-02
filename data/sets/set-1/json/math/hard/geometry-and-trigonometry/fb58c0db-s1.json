@@ -1,0 +1,22 @@
+{
+  "questionId": "fb58c0db-s1",
+  "originalId": "fb58c0db",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Points <i>P</i> and <i>Q</i> lie on a circle with radius 2, and arc <i>PQ</i> has length 2&pi;/5. What fraction of the circumference of the circle is the length of arc <i>PQ</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "1/10"
+  ],
+  "rationale": "<p>The correct answer is 1/10. The circumference of a circle with radius <i>r</i> is <i>C</i> = 2&pi;<i>r</i>. For <i>r</i> = 2, <i>C</i> = 4&pi;. To find what fraction of the circumference the length of arc <i>PQ</i> is, divide the arc length by the circumference: (2&pi;/5) &divide; (4&pi;) = (2&pi;/5) &times; (1/(4&pi;)) = 2/(20) = 1/10. Equivalent forms such as 0.1 are also acceptable.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "circles.A3.T7.hard"
+}

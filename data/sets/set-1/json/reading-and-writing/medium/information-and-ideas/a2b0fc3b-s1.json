@@ -1,0 +1,25 @@
+{
+  "questionId": "a2b0fc3b-s1",
+  "originalId": "a2b0fc3b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Percent of Population Living in Cities</p></caption><thead><tr><th>Country</th><th>1970</th><th>1980</th><th>1990</th><th>2000</th><th>2010</th><th>2020</th></tr></thead><tbody><tr><td>Indonesia</td><td>17</td><td>22</td><td>31</td><td>42</td><td>50</td><td>57</td></tr><tr><td>Germany</td><td>72</td><td>74</td><td>75</td><td>75</td><td>77</td><td>77</td></tr><tr><td>South Korea</td><td>41</td><td>57</td><td>74</td><td>79</td><td>82</td><td>81</td></tr><tr><td>Ethiopia</td><td>9</td><td>11</td><td>13</td><td>15</td><td>17</td><td>22</td></tr></tbody></table></figure><p>The share of the world&rsquo;s population living in cities has increased dramatically since 1970, but this change has not been uniform. Germany, for example, was already heavily urbanized in 1970, with more than 70% of the population living in cities. The main contributors to the world&rsquo;s urbanization since 1970 have been countries like Indonesia, whose population went from <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the assertion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>around 40% urban in 1970 to around 80% urban in 2020.</p>"},
+    {"id": "b", "content": "<p>less than 30% urban in 1970 to around 80% urban in 2020.</p>"},
+    {"id": "c", "content": "<p>less than 10% urban in 1970 to more than 50% urban in 2020.</p>"},
+    {"id": "d", "content": "<p>less than 20% urban in 1970 to more than 50% urban in 2020.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. According to the table, Indonesia&rsquo;s urban share was 17% in 1970 (less than 20%) and 57% in 2020 (more than 50%). Choice A is incorrect because Indonesia was not around 40% urban in 1970 (that figure describes South Korea). Choice B is incorrect because Indonesia&rsquo;s 2020 figure is 57%, not around 80%. Choice C is incorrect because Indonesia was at 17% in 1970, which is greater than 10%.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

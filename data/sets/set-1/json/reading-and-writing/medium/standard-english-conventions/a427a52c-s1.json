@@ -1,0 +1,25 @@
+{
+  "questionId": "a427a52c-s1",
+  "originalId": "a427a52c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.medium",
+  "stimulus": "<p>The QuietRoad pavement system, developed by Danish acoustic engineer Mette Vinther, consists of porous asphalt mats laid over the surface of urban highways. Cooled with <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the absorbent mats reduce tire roar by several decibels, thus lowering noise exposure for nearby residents without slowing traffic.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>water, channeled through buried pipes, each night,</p>"},
+    {"id": "b", "content": "<p>water channeled through buried pipes each night,</p>"},
+    {"id": "c", "content": "<p>water channeled, through buried pipes, each night</p>"},
+    {"id": "d", "content": "<p>water channeled through buried pipes each night</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. A single comma is needed to mark the boundary between the introductory supplementary phrase (\"Cooled with water channeled through buried pipes each night\") and the main clause (\"the absorbent mats...traffic\"). The internal information is essential and should not be set off with commas.</p><p>Choice A is incorrect because placing commas around \"channeled through buried pipes\" implies the phrase could be removed without affecting meaning, which isn't the case here. Choice C is incorrect because setting off \"through buried pipes\" with commas similarly distorts meaning. Choice D is incorrect because it omits the boundary comma between the supplementary phrase and the main clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

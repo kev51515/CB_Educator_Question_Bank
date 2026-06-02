@@ -1,0 +1,39 @@
+{
+  "questionId": "740bf79f-s1",
+  "originalId": "740bf79f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Right triangle ABC has legs of length 6 and 8 and a hypotenuse of length 10. Triangle DEF is similar to triangle ABC, where DE corresponds to AB, EF corresponds to BC, and DF corresponds to AC. The length of DF (the hypotenuse of triangle DEF) is 4. What is the length of EF (the leg of triangle DEF corresponding to the longer leg of triangle ABC)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2.8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3.0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3.2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3.6</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The ratio of similarity is DF/AC = 4/10 = 2/5. The longer leg of △ABC is 8, so the corresponding leg EF = 8 × 2/5 = 16/5 = 3.2.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.hard"
+}

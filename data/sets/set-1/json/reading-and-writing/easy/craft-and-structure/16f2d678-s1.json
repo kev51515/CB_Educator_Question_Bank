@@ -1,0 +1,39 @@
+{
+  "questionId": "16f2d678-s1",
+  "originalId": "16f2d678",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Although the authorities in Franco-era Spain attempted to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Camilo José Cela's novel <em>The Family of Pascual Duarte</em>, copies of the book circulated secretly among readers in several parts of the country.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>suppress</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>translate</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>reprint</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>celebrate</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because \"suppress\" means to prevent the circulation of something, which makes sense given that authorities are trying to stop the book but readers continued to share it secretly. Choice B is incorrect because translating the book would not require it to be circulated secretly. Choice C is incorrect because \"reprint\" would imply the authorities were producing more copies. Choice D is incorrect because celebrating would not require secret circulation.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T4.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "1ee4485c-s1",
+  "originalId": "1ee4485c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>Music writers have called Celia Cruz the &ldquo;queen of salsa,&rdquo; an epithet that has appeared in countless retrospectives since the 1980s. Cruz herself resisted the queen <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank\">blank</span> insisting that her career belonged to a tradition far larger than any one performer.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>label, however</p>"},
+    {"id": "b", "content": "<p>label, however;</p>"},
+    {"id": "c", "content": "<p>label; however,</p>"},
+    {"id": "d", "content": "<p>label, however,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The conjunctive adverb \"however\" interrupts a single clause and must be set off with paired commas. The main clause is \"Cruz herself resisted the queen label,\" and the participial phrase \"insisting&hellip;performer\" continues that clause.</p><p>Choice A is incorrect because it omits the closing comma after \"however.\" Choice B is incorrect because a semicolon after \"however\" wrongly suggests an independent clause follows. Choice C is incorrect because a semicolon before \"however\" is used only when an independent clause follows; here, \"insisting&hellip;\" is a participial phrase, not an independent clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

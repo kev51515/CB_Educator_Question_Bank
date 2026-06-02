@@ -1,0 +1,22 @@
+{
+  "questionId": "87071893-s1",
+  "originalId": "87071893",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>y</mi><mo>+</mo><mn>27</mn><mo>=</mo><mn>83</mn></math></p><p>What value of <math><mi>y</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "56"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>56</mn></math>. Subtracting 27 from both sides yields <math><mi>y</mi><mo>=</mo><mn>56</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

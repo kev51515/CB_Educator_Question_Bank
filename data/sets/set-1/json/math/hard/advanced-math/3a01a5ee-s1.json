@@ -1,0 +1,39 @@
+{
+  "questionId": "3a01a5ee-s1",
+  "originalId": "3a01a5ee",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">|&minus;3<i>x</i> + 8| = 47</p><p>What is the sum of the solutions to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16/3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;13</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>55/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The equation gives two cases. Case 1: &minus;3<i>x</i> + 8 = 47, so <i>x</i> = &minus;13. Case 2: &minus;3<i>x</i> + 8 = &minus;47, so <i>x</i> = 55/3. Sum = &minus;13 + 55/3 = &minus;39/3 + 55/3 = 16/3.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard"
+}

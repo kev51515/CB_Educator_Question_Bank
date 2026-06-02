@@ -1,0 +1,25 @@
+{
+  "questionId": "8a264a54-s1",
+  "originalId": "8a264a54",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.hard",
+  "type": "mcq",
+  "stimulus": "<p>By combining heritage materials, such as hand-hewn timber beams, with contemporary features, such as exposed steel ______ architecture borrows the warmth of old farmhouses while introducing the clean geometry of industrial design, a hybrid style increasingly popular in rural homes across Canada.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>trusses; rustic-modern</p>"},
+    {"id": "b", "content": "<p>trusses, rustic-modern</p>"},
+    {"id": "c", "content": "<p>trusses. Rustic-modern</p>"},
+    {"id": "d", "content": "<p>trusses&mdash;rustic-modern</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. A comma correctly marks the boundary between the introductory subordinate clause (\"By combining&hellip;trusses\") and the main clause (\"rustic-modern architecture&hellip;design\").</p><p>Choice A is incorrect because a semicolon cannot be used to separate a subordinate clause from a main clause; semicolons join two independent clauses. Choice C is incorrect because it produces a rhetorically unacceptable sentence fragment beginning with \"By.\" Choice D is incorrect because a dash cannot be used in this way to separate the subordinate clause from the main clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

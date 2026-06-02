@@ -1,0 +1,39 @@
+{
+  "questionId": "c3d65f93-s1",
+  "originalId": "c3d65f93",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Five robins each have a nest. The table shows an original data set of the number of eggs that each robin laid in its nest.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Nest</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr><tr><td>Eggs</td><td>8</td><td>9</td><td>10</td><td>9</td><td>9</td></tr></table><p>A sixth nest with 3 eggs is added to create a new data set. Which of the following correctly compares the means of the two data sets?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The means of both data sets are equal.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The mean of the original data set is less than the mean of the new data set.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>There is not enough information to compare the means.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The mean of the original data set is greater than the mean of the new data set.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The mean of the original data set is (8+9+10+9+9) \u00f7 5 = 45 \u00f7 5 = 9. The new data set adds a value of 3, so its mean is (45+3) \u00f7 6 = 48 \u00f7 6 = 8. Since 9 > 8, the original mean is greater than the new mean.</p><p>Choice A is incorrect. The means are not equal: the original mean is 9 and the new mean is 8.</p><p>Choice B is incorrect. Adding a value (3) below the original mean lowers the mean, so the original mean is greater, not less.</p><p>Choice C is incorrect. All needed values are given, so the means can be calculated and compared.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.easy"
+}

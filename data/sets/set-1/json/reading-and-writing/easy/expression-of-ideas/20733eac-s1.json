@@ -1,0 +1,25 @@
+{
+  "questionId": "20733eac-s1",
+  "originalId": "20733eac",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>It has long been thought that the first farming communities in East Asia emerged approximately 9,000 years ago in the Yellow River valley. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> based on plant remains uncovered in southern China, a research team recently suggested that East Asian farming may have begun more than 13,000 years ago—much earlier than previously thought.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As a result,</p>"},
+    {"id": "b", "content": "<p>However,</p>"},
+    {"id": "c", "content": "<p>Similarly,</p>"},
+    {"id": "d", "content": "<p>In conclusion,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"However\" logically signals that the theory discussed in this sentence—that East Asian farming may have begun over 13,000 years ago—contrasts with the previously discussed theory that it emerged 9,000 years ago.</p><p>Choice A is incorrect because \"as a result\" illogically signals that the new theory is a result of the previous theory. Instead, this theory contrasts with the previous one. Choice C is incorrect because \"similarly\" illogically signals that the new theory is similar to the previous one. Instead, it contrasts with that theory. Choice D is incorrect because \"in conclusion\" illogically signals that the new theory concludes or summarizes the previous theory. Instead, it contrasts with that theory.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

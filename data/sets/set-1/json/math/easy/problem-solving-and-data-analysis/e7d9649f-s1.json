@@ -1,0 +1,39 @@
+{
+  "questionId": "e7d9649f-s1",
+  "originalId": "e7d9649f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A random sample of 40 people from a town with a population of 12,000 were asked to name their favorite type of music. If 8 people in the sample named jazz as their favorite type of music, about how many people in the town would be expected to name jazz?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,200</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2,400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4,800</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Because the sample was selected at random, the proportion of people who name jazz is expected to be approximately the same in the sample and in the town. The sample proportion is 8 out of 40, or 0.2. Applying this to the town gives 0.2 times 12,000 = 2,400.</p><p>Choice A is incorrect: 200 has no statistical justification.</p><p>Choice B is incorrect: 1,200 uses the wrong proportion.</p><p>Choice D is incorrect: 4,800 overestimates the proportion.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy"
+}

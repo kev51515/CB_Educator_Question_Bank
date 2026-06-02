@@ -1,0 +1,39 @@
+{
+  "questionId": "6efcc0a3-s1",
+  "originalId": "6efcc0a3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the linear function h, h(0) = 29 and h(1) = 27. Which equation defines h?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>h(x) = -29x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>h(x) = -2x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>h(x) = -29</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>h(x) = -2x + 29</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (27 - 29)/(1 - 0) = -2, and h(0) = 29, so h(x) = -2x + 29.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T1.easy"
+}

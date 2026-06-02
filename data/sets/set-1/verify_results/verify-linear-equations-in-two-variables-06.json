@@ -1,0 +1,22 @@
+[
+  {"id": "174885f8-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "dd797fe2-s1", "templateId": "linear-equations-in-two-variables.A3.T4.easy", "verdict": "ok"},
+  {"id": "6a12efbb-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "eeebe166-s1", "templateId": "linear-equations-in-two-variables.A5.T11.easy", "verdict": "ok"},
+  {"id": "c8e0f511-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "8adf1335-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "type_drift", "detail": "T1 must_preserve requires 'two distinct per-unit rates attached to two distinct variables, summed to a stated total'. Clone is R = P + 38 (one variable plus a constant additive); no per-unit rate multipliers and only one variable on the right. Fits A2-style relation, not T1 two-rate equation."},
+  {"id": "deee9063-s1", "templateId": "linear-equations-in-two-variables.A6.T14.easy", "verdict": "ok"},
+  {"id": "c5479c1a-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "7038b587-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "029c2dc2-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "39617468-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "8c98c834-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "80ae6851-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "b8fa27db-s1", "templateId": "linear-equations-in-two-variables.A6.T13.easy", "verdict": "ok"},
+  {"id": "820ad8e8-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "789975b7-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "difficulty_drift", "detail": "Easy lever requires 'Small whole-number rates (1, 3, 5, 10) and whole-number total' with no unit conversion. Clone uses a percent-by-weight mixture (0.3, 0.7) with decimal coefficients — template explicitly lists 'percent-by-weight mixture where each variable carries a decimal fraction' as a HARD characteristic."},
+  {"id": "24854644-s1", "templateId": "linear-equations-in-two-variables.A6.T14.easy", "verdict": "ok"},
+  {"id": "e7343559-s1", "templateId": "linear-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "87322577-s1", "templateId": "linear-equations-in-two-variables.A3.T3.easy", "verdict": "type_drift", "detail": "T3 description: 'Interpret a coefficient as a per-unit rate' (the value of one unit of x). Clone asks to interpret the constant 90 (the total c in m + r = 90), not a per-unit rate coefficient. This task structure fits T4 (interpret a constant total) — not T3."},
+  {"id": "b52e5b6f-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"}
+]

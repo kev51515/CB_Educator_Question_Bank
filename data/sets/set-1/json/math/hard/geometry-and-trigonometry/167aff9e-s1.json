@@ -1,0 +1,22 @@
+{
+  "questionId": "167aff9e-s1",
+  "originalId": "167aff9e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Right rectangular prism X is similar to right rectangular prism Y. The surface area of right rectangular prism X is 72 square centimeters (cm&sup2;), and the surface area of right rectangular prism Y is 1,800 cm&sup2;. The volume of right rectangular prism Y is 2,000 cubic centimeters (cm&sup3;). What is the sum of the volumes, in cm&sup3;, of right rectangular prism X and right rectangular prism Y?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2016"
+  ],
+  "rationale": "<p>The correct answer is 2016. For similar solids, the ratio of surface areas equals the square of the linear scale factor, and the ratio of volumes equals the cube. The surface-area ratio of X to Y is 72/1800 = 1/25, so the linear scale factor is 1/5 and the volume ratio is 1/125. The volume of X is (1/125)(2000) = 16 cm&sup3;. The sum is 16 + 2000 = 2016 cm&sup3;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T2.hard"
+}

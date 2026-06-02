@@ -1,0 +1,39 @@
+{
+  "questionId": "014edcb7-s1",
+  "originalId": "014edcb7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a triangle <em>ABC</em>, point <em>D</em> lies on ray <em>BC</em> such that <em>C</em> is between <em>B</em> and <em>D</em>. The measure of angle <em>ABC</em> is 125&deg; and the measure of angle <em>ACD</em> is 148&deg;. What is the measure of angle <em>BAC</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32&deg;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>55&deg;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>23&deg;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>27&deg;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since B, C, and D are collinear, angles ACB and ACD are supplementary: m&ang;ACB = 180&deg; &minus; 148&deg; = 32&deg;. The interior angles of triangle ABC sum to 180&deg;, so m&ang;BAC = 180&deg; &minus; 125&deg; &minus; 32&deg; = 23&deg;. Choice A is the measure of angle ACB; Choice B mishandles the supplementary relationship; Choice D is a near-miss arithmetic error.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A2.T2.medium"
+}

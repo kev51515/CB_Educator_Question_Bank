@@ -1,0 +1,25 @@
+{
+  "questionId": "bd9eb2b5-s1",
+  "originalId": "bd9eb2b5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = 7<i>x</i>. For what value of <i>x</i> does <i>g</i>(<i>x</i>) = 84?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>7</p>"},
+    {"id": "b", "content": "<p>11</p>"},
+    {"id": "c", "content": "<p>12</p>"},
+    {"id": "d", "content": "<p>77</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. Setting 7<i>x</i> = 84 and dividing both sides by 7 gives <i>x</i> = 12.</p><p>Choice A is the slope coefficient. Choice B is 84 &minus; 7 + (close miscompute). Choice D is 84 &minus; 7.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A1.T2.easy"
+}

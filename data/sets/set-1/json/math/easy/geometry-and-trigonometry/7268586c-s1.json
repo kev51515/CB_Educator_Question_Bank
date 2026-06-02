@@ -1,0 +1,39 @@
+{
+  "questionId": "7268586c-s1",
+  "originalId": "7268586c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle XYZ, XY = YZ. The measure of angle X is 32\u00b0, the measure of angle Y is 116\u00b0, and the measure of angle Z is x\u00b0. What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>148</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>64</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>116</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The interior angles of a triangle sum to 180\u00b0: 32 + 116 + x = 180, giving x = 32. Equivalently, the base angles of an isosceles triangle with XY = YZ are equal, so angle Z = angle X = 32.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A3.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "b32c4b3a-s1",
+  "originalId": "b32c4b3a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "stimulus": "<p>The South Asian summer monsoon delivers seasonal rainfall whose intensity is thought to track shifts in ocean surface temperatures. Sediment cores from the Arabian Sea recovered by paleoclimatologist Mira Venkatesan suggest that during the Medieval Climate Anomaly (circa 900&ndash;1250 CE), the monsoon weakened over western India, an outcome that, if regionwide, should have left the Bay of Bengal coast also drier than reconstructions suggest it was. To address the discrepancy, Venkatesan and colleagues retrieved cores from Sundarbans mangrove sediments along the Bay of Bengal coast and compared them with the Arabian Sea record. They concluded that during the Medieval Climate Anomaly, the monsoon system may have reorganized into separate western and eastern branches rather than uniformly weakening.</p>",
+  "stem": "<p>Which finding from Venkatesan and colleagues&rsquo; study, if true, would most directly support their conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Neither the Sundarbans cores nor the Arabian Sea cores show appreciable changes in sea-surface temperature during the Medieval Climate Anomaly.</p>"},
+    {"id": "b", "content": "<p>The Sundarbans cores show evidence of sustained heavy rainfall during the same intervals of the Medieval Climate Anomaly in which the Arabian Sea cores indicate drought conditions over western India.</p>"},
+    {"id": "c", "content": "<p>Both the Sundarbans cores and the Arabian Sea cores indicate prolonged drought conditions and warmer-than-average waters during the Medieval Climate Anomaly.</p>"},
+    {"id": "d", "content": "<p>The Sundarbans cores and the Arabian Sea cores show closely synchronized patterns of low rainfall throughout the Medieval Climate Anomaly.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct because it provides evidence that the monsoon split into separate branches rather than uniformly weakened. If the Bay of Bengal coast received heavy rain at the same time the Arabian Sea record indicates drought over western India, the eastern and western branches must have behaved differently, matching the researchers&rsquo; reorganization hypothesis. Choice A is incorrect because the text describes the monsoon as a rainfall system; absence of sea-surface temperature change in both regions does not bear on whether the monsoon split or weakened. Choice C is incorrect because synchronized drought in both regions would suggest the monsoon weakened uniformly, the very hypothesis Venkatesan and colleagues sought to revise. Choice D is incorrect because synchronized low rainfall in both regions would again support a uniform weakening, not a reorganization into separate branches.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

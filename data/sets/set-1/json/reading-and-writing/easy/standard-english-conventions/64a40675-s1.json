@@ -1,0 +1,39 @@
+{
+  "questionId": "64a40675-s1",
+  "originalId": "64a40675",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In 1909, jazz cornetist Buddy Bolden retired from performing after his health declined. Many listeners who had once heard him recalled an improvisational <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> few of his peers could match.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>style that</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>style. That</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>style; that</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>style, that</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The convention being tested is punctuation between a noun and a restrictive relative clause that modifies it. The relative clause introduced by \"that\" restricts the meaning of \"style\" (specifying which style), so no punctuation should separate the noun from the relative pronoun.</p><p>Choice B is incorrect because a period after \"style\" leaves the relative clause as a sentence fragment. Choice C is incorrect because a semicolon also requires an independent clause after it. Choice D is incorrect because a restrictive \"that\" clause is not set off with a comma.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T3.easy"
+}

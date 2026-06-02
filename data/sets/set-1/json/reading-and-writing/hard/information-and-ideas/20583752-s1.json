@@ -1,0 +1,39 @@
+{
+  "questionId": "20583752-s1",
+  "originalId": "20583752",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;On Reading&rdquo; is a 1905 essay by Marcel Proust, originally published in French. In the essay, Proust reflects on the value of reading, arguing that the deepest worth of reading lies not in the conclusions a book provides but in the moments when, prompted by the text, the reader begins to think independently: ______</p>",
+  "stem": "<p>Which quotation from a translation of &ldquo;On Reading&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;A great writer&rsquo;s greatness shines especially when he has the courage to leave thoughts unfinished, so the reader must take them up and complete them.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Reading is at the threshold of the spiritual life; it can introduce us to it, but it does not constitute it&mdash;the wisdom we earn for ourselves at the end of our own pages, where the author&rsquo;s words have only led us, is what counts.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;In our childhood, certain volumes seemed to us so beautiful that to part from them at the end of the afternoon felt like the loss of a friend.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;The good translator of a foreign author renders not the words but the cadence of the original mind&mdash;and that is the most demanding craft of all.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it directly expresses the claim&rsquo;s key idea: the value of reading lies in the independent thinking the reader does <em>after</em> the author&rsquo;s words have led them to a threshold. The quote distinguishes between what the author provides (introduction) and what the reader must develop (their own wisdom). Choice A is close, but emphasizes the writer&rsquo;s craft rather than the reader&rsquo;s own thinking. Choice C is about emotional attachment to books. Choice D is about translation craft.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A1.T2.hard"
+}

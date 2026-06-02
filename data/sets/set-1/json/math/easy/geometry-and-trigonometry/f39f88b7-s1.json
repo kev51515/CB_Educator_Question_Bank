@@ -1,0 +1,22 @@
+{
+  "questionId": "f39f88b7-s1",
+  "originalId": "f39f88b7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A triangle has a base length of 60 centimeters and a height of 80 centimeters. What is the area, in square centimeters, of the triangle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2400"
+  ],
+  "rationale": "<p>The area of a triangle is A = (1/2)bh. Substituting b = 60 and h = 80 yields A = (1/2)(60)(80) = 2,400 square centimeters.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T2.easy"
+}

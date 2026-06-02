@@ -1,0 +1,25 @@
+{
+  "questionId": "e56b66e5-s1",
+  "originalId": "e56b66e5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>Set against a backdrop of monastic life in fifteenth-century Iberia, Bel&eacute;n Vargas&rsquo;s 2018 novel <em>The Hours of San Crist&oacute;bal</em> follows a young scribe whose days unfold according to fixed rituals. Because the routine that anchors the novel is so <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, with the scribe rising, praying, and copying manuscripts at precisely scheduled hours, the reader develops a steady, almost meditative sense of time&rsquo;s passage.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>impulsive</p>"},
+    {"id": "b", "content": "<p>perplexing</p>"},
+    {"id": "c", "content": "<p>regimented</p>"},
+    {"id": "d", "content": "<p>contentious</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because &ldquo;regimented&rdquo; means strictly ordered or organized according to fixed rules. The text describes the scribe rising, praying, and copying manuscripts at &ldquo;precisely scheduled hours,&rdquo; and notes that the routine produces &ldquo;a steady, almost meditative sense of time&rsquo;s passage&rdquo;&mdash;both cues entail strict order.</p><p>Choice A is incorrect because &ldquo;impulsive&rdquo; means acting on sudden inclination, which contradicts a precisely scheduled routine. Choice B is incorrect because &ldquo;perplexing&rdquo; means confusing, but the text indicates the routine&rsquo;s effect is steady and meditative, not bewildering. Choice D is incorrect because &ldquo;contentious&rdquo; means causing disagreement; nothing in the text suggests conflict over the scribe&rsquo;s schedule.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "46e45728-s1",
+  "originalId": "46e45728",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Daily Distance Traveled by Adult Red Foxes in Three Seasons</caption><thead><tr><th>Season</th><th>Kilometers per day traveled by adult females</th><th>Kilometers per day traveled by adult males</th></tr></thead><tbody><tr><td>winter</td><td>2.1</td><td>3.4</td></tr><tr><td>spring</td><td>4.6</td><td>5.8</td></tr><tr><td>summer</td><td>3.0</td><td>4.2</td></tr></tbody></table></figure><p>Wildlife biologists tracked red foxes year-round. According to the table, both adult female and adult male red foxes traveled the greatest distance per day during ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the winter for both females and males.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the spring for both females and males.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the winter for females and the spring for males.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the summer for females and the winter for males.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because females traveled 4.6 km/day in spring (their highest) and males traveled 5.8 km/day in spring (their highest).</p><p>Choice A is incorrect: in winter, females (2.1) and males (3.4) traveled the least, not the most. Choice C is incorrect: females traveled the most in spring (4.6), not winter. Choice D is incorrect: neither sex&rsquo;s maximum occurred in summer or in winter.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

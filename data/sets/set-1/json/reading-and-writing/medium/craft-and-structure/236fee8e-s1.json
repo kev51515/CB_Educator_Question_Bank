@@ -1,0 +1,25 @@
+{
+  "questionId": "236fee8e-s1",
+  "originalId": "236fee8e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>Archaeological excavation of Sonora Town, a nineteenth-century Mexican American neighborhood in Los Angeles, California, provided the first physical evidence that Mexican ceramic goods were imported to the United States in the mid-1800s: shards from a glazed earthenware jar style native to Jalisco. <u>Local <em>casas comisionistas</em>&mdash;San Diego&ndash;based commission-merchant houses&mdash;likely coordinated the jars' shipment from kilns in central Mexico, through Pacific coastal ports, to inland California markets.</u> This route reveals the (often overlooked) cross-border dimensions of the supply chains linking Mexican migrant communities.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It traces the steps that were taken to recover the objects described in the previous sentence.</p>"},
+    {"id": "b", "content": "<p>It explains why efforts to determine the place of origin of the items mentioned in the previous sentence remain inconclusive.</p>"},
+    {"id": "c", "content": "<p>It offers information that helps support a claim about a discovery's significance that is presented in the following sentence.</p>"},
+    {"id": "d", "content": "<p>It outlines a hypothesis that further evidence discussed in the following sentence casts doubt on.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The underlined sentence describes the commission-merchant houses that likely coordinated the jars' journey from Mexican kilns to California markets. The following sentence then claims that this route reveals the cross-border dimensions of the supply chains linking Mexican migrant communities. The underlined sentence thus provides supporting information for the claim about the discovery's significance that the next sentence advances.</p><p>Choice A is incorrect because the underlined sentence describes a presumed trade route, not steps taken to recover the artifacts. Choice B is incorrect because the underlined sentence presents an account of where the jars came from rather than questioning their origin. Choice D is incorrect because the following sentence reinforces, rather than casts doubt on, the underlined sentence's account.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

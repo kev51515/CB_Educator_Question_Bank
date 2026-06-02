@@ -1,0 +1,39 @@
+{
+  "questionId": "f88970cc-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy",
+  "originalId": "f88970cc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>x = 4</p><p>y = x + 6</p><p>Which of the following points (x, y) is the solution to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(4, -6)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(4, 6)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(4, 10)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. y = 4 + 6 = 10, so (4, 10).</p><p>Other choices result from sign or arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z"
+}

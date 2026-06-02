@@ -1,0 +1,25 @@
+{
+  "questionId": "d8d1ecaa-s1",
+  "originalId": "d8d1ecaa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Sleep researcher Idris Okonkwo and colleagues found that excessive exposure to evening blue light from screens may be less conducive to restorative sleep than minimal evening exposure. The researchers suspect that prolonged late-night exposure delays the onset of melatonin secretion, which may ultimately <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> physiological recovery during the night.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>endorse</p>"},
+    {"id": "b", "content": "<p>build</p>"},
+    {"id": "c", "content": "<p>fault</p>"},
+    {"id": "d", "content": "<p>hinder</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Hinder\" means to impede or slow down. The text says screen exposure is less conducive to restorative sleep, implying the delayed melatonin secretion impedes physiological recovery.</p><p>Choice A is incorrect. \"Endorse\" is positive and would imply screen exposure supports recovery, contradicting the passage. Choice B is incorrect. \"Build\" is also positive; the text describes a negative effect. Choice C is incorrect. \"Fault\" means to criticize, but delayed melatonin secretion cannot criticize anything.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

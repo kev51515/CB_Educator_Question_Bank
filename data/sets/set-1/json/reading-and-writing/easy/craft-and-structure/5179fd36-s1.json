@@ -1,0 +1,39 @@
+{
+  "questionId": "5179fd36-s1",
+  "originalId": "5179fd36",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Conservation researcher Aaron Wirsing and colleagues have argued that effective wolf management in the Pacific Northwest <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> coordination among federal, state, and tribal authorities. Since wolves regularly move across jurisdictional boundaries, actions taken by one agency can quickly affect populations under another agency's care, making joint planning essential.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>praises</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>requires</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>advises</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>reports</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the second sentence explains that joint planning is essential because wolves move across boundaries, supporting the meaning that coordination is necessary. \"Requires\" means makes necessary and fits this. Choice A is incorrect because the researchers are not praising coordination; they argue it must occur. Choice C is incorrect because \"advises\" suggests a recommendation, which is weaker than what the text claims (that joint planning is essential). Choice D is incorrect because the researchers are not reporting on coordination; they are arguing for it.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

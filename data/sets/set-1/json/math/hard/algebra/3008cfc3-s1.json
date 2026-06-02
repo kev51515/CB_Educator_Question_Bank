@@ -1,0 +1,22 @@
+{
+  "questionId": "3008cfc3-s1",
+  "originalId": "3008cfc3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table gives the coordinates of two points on a line in the <i>xy</i>-plane.</p><table><thead><tr><th><i>x</i></th><th><i>y</i></th></tr></thead><tbody><tr><td><i>m</i></td><td>8</td></tr><tr><td><i>m</i> + 5</td><td>&minus;12</td></tr></tbody></table><p>The point (<i>m</i> &minus; 3, <i>c</i>) is also on the line, where <i>m</i> and <i>c</i> are constants. What is the value of <i>c</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "20"
+  ],
+  "rationale": "<p>The slope is (&minus;12 &minus; 8)/((<i>m</i> + 5) &minus; <i>m</i>) = &minus;20/5 = &minus;4. Using point (<i>m</i>, 8), the equation of the line is <i>y</i> &minus; 8 = &minus;4(<i>x</i> &minus; <i>m</i>). Substituting <i>x</i> = <i>m</i> &minus; 3 gives <i>y</i> = 8 + (&minus;4)(&minus;3) = 8 + 12 = 20, so <i>c</i> = 20.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

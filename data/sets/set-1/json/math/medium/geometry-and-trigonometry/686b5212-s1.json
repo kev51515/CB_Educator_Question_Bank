@@ -1,0 +1,22 @@
+{
+  "questionId": "686b5212-s1",
+  "originalId": "686b5212",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Two parallel lines are cut by a transversal. One of the angles formed has a measure of (3x + 10)&deg;, and its corresponding angle on the other parallel line has a measure of (5x &minus; 12)&deg;. What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The correct answer is 11. Corresponding angles formed when a transversal cuts two parallel lines are congruent and therefore have equal measures: 3x + 10 = 5x &minus; 12. Solving for x: 22 = 2x, so x = 11.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A1.T2.medium"
+}

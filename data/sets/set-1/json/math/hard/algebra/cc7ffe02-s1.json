@@ -1,0 +1,39 @@
+{
+  "questionId": "cc7ffe02-s1",
+  "originalId": "cc7ffe02",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Lina made 45 liters of fruit punch. She then filled x small bottles and y large bottles with all the punch she made. The equation 2x + 7y = 45 represents this situation. What is the best interpretation of 7y in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The number of small bottles Lina filled.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of large bottles Lina filled.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The total liters of punch in the small bottles.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The total liters of punch in the large bottles.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Each large bottle holds 7 liters, and y is the number of large bottles, so 7y is the total liters of punch in the large bottles.</p><p>Choices A and B describe counts of bottles, not volume. Choice C describes the small-bottle volume, which is 2x.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A3.T4.medium"
+}

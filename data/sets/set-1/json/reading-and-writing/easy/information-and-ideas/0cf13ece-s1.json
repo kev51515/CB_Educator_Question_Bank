@@ -1,0 +1,39 @@
+{
+  "questionId": "0cf13ece-s1",
+  "originalId": "0cf13ece",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Recordings of Female Humpback Whales with Their Calves</p></caption><thead><tr><th>Whale ID</th><th>Recording year</th></tr></thead><tbody><tr><th>HW11</th><td>2007</td></tr><tr><th>HW34</th><td>1995</td></tr><tr><th>HW58</th><td>2001</td></tr><tr><th>HW82</th><td>2016</td></tr></tbody></table></figure></p><p>In a study of humpback whales, biologist Aiyana Reyes and a team of researchers analyzed recordings of female humpback whales interacting with their calves.</p>",
+  "stem": "<p>According to the table, in which year was the whale with the ID HW58 recorded with her calf?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1995</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2007</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2001</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2016</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. According to the table, whale HW58 was recorded with her calf in 2001.</p><p>Choice A is incorrect; 1995 is the recording year for HW34. Choice B is incorrect; 2007 is the recording year for HW11. Choice D is incorrect; 2016 is the recording year for HW82.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T7.easy"
+}

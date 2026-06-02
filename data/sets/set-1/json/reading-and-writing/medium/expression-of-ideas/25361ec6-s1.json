@@ -1,0 +1,25 @@
+{
+  "questionId": "25361ec6-s1",
+  "originalId": "25361ec6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A5.T16.medium",
+  "stimulus": "<p>Researchers long puzzled over the origin of tektites, small glassy stones found scattered across regions far from any obvious volcanic source. Over the decades, competing theories were advanced, ranging from cometary debris to volcanic glass ejected from deep within Earth's mantle, but none could account for all the chemical evidence. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> investigators uncovered convincing evidence that tektites form when large meteorite impacts melt and hurl terrestrial rock high into the atmosphere.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Likewise,</p>"},
+    {"id": "c", "content": "<p>At last,</p>"},
+    {"id": "d", "content": "<p>Hence,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"At last\" logically signals that the information in this sentence—that investigators uncovered convincing evidence linking tektites to meteorite impacts—indicates a conclusion to the long-running debate described in the previous sentences.</p><p>Choice A is incorrect because \"for instance\" illogically signals that this evidence is an example of the previous debate, when it actually resolves the debate. Choice B is incorrect because \"likewise\" illogically signals that the new evidence is similar to the prior theories, when in fact it overturns them. Choice D is incorrect because \"hence\" illogically signals that the new evidence is a consequence of the previous debate, when it instead marks the resolution of that debate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

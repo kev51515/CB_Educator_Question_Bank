@@ -1,0 +1,39 @@
+{
+  "questionId": "fbd5483f-s1",
+  "originalId": "fbd5483f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a set of four consecutive even integers, where the integers are ordered from least to greatest, the first integer is represented by <math><mi>y</mi></math>. The product of <math><mn>9</mn></math> and the fourth even integer is at most <math><mn>18</mn></math> less than the sum of the first and third even integers. Which inequality represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>9</mn><mfenced><mrow><mi>y</mi><mo>+</mo><mn>6</mn></mrow></mfenced><mo>&#8805;</mo><mn>18</mn><mo>-</mo><mfenced><mrow><mi>y</mi><mo>+</mo><mfenced><mrow><mi>y</mi><mo>+</mo><mn>4</mn></mrow></mfenced></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>9</mn><mfenced><mrow><mi>y</mi><mo>+</mo><mn>4</mn></mrow></mfenced><mo>&#8804;</mo><mi>y</mi><mo>+</mo><mfenced><mrow><mi>y</mi><mo>+</mo><mn>3</mn></mrow></mfenced><mo>-</mo><mn>18</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>9</mn><mfenced><mrow><mi>y</mi><mo>+</mo><mn>4</mn></mrow></mfenced><mo>&#8805;</mo><mn>18</mn><mo>-</mo><mfenced><mrow><mi>y</mi><mo>+</mo><mfenced><mrow><mi>y</mi><mo>+</mo><mn>3</mn></mrow></mfenced></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>9</mn><mfenced><mrow><mi>y</mi><mo>+</mo><mn>6</mn></mrow></mfenced><mo>&#8804;</mo><mi>y</mi><mo>+</mo><mfenced><mrow><mi>y</mi><mo>+</mo><mn>4</mn></mrow></mfenced><mo>-</mo><mn>18</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. With four consecutive even integers starting at y, they are y, y+2, y+4, y+6. The product of 9 and the fourth: 9(y+6). The sum of first and third: y + (y+4). 18 less than that sum: y + (y+4) - 18. The phrase \u201cat most\u201d gives the inequality 9(y+6) \u2264 y + (y+4) - 18. Other choices misidentify the integers or reverse the inequality.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard"
+}

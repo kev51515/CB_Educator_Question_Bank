@@ -1,0 +1,39 @@
+{
+  "questionId": "8112b7e3-s1",
+  "originalId": "8112b7e3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Chilean architect Cecilia Puga has long maintained that contemporary social housing is best understood not as a series of standardized units but as a layered, collaborative dialogue between resident, designer, and neighborhood (because residents themselves contribute decisively to a building's shape over time). <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Puga organized her recent design studio at the University of Santiago, which centered on participatory design workshops with prospective tenants, around the title \"Housing as Conversation.\"</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To summarize,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>That is,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>With this aim in mind,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Furthermore,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"With this aim in mind\" logically signals that Puga's decision to structure her studio around the title \"Housing as Conversation\" is a means of advancing the view introduced in the first sentence\u2014that housing should be approached as a collaborative dialogue. The studio is presented as a deliberate effort to act on that view.</p><p>Choice A is incorrect because \"to summarize\" would mark the second sentence as a recap of the first, but it actually describes an action taken in service of the first sentence's claim. Choice B is incorrect because \"that is\" would mark the second sentence as a clarification, yet it offers a concrete activity rather than a restatement. Choice D is incorrect because \"furthermore\" would mark the second sentence as merely adding another fact, missing the purposive relationship between the view and the studio title.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T5.hard"
+}

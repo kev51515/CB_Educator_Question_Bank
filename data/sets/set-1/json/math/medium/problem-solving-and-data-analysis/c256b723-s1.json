@@ -1,0 +1,22 @@
+{
+  "questionId": "c256b723-s1",
+  "originalId": "c256b723",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The amount of Marco's bill for a meal was $85. Marco gave a tip of 18% of the amount of the bill. What is the amount, in dollars, of the tip Marco gave?</p>",
+  "answerOptions": null,
+  "keys": [
+    "15.3"
+  ],
+  "rationale": "<p>The correct answer is 15.3. A tip of 18% of $85 equals 0.18 &times; 85 = $15.30. Therefore, the tip Marco gave is $15.30 (which can be entered as 15.3).</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A1.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ffe862a3-s1",
+  "originalId": "ffe862a3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An isosceles right triangle has a hypotenuse of length 46 inches. What is the perimeter, in inches, of this triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>23&radic;2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>46 + 46&radic;2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>46&radic;2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>46 + 92&radic;2</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>For an isosceles right triangle, the hypotenuse equals leg &middot; &radic;2, so each leg has length 46/&radic;2 = 23&radic;2. The perimeter equals 2(23&radic;2) + 46 = 46&radic;2 + 46. Choice A is one leg; choice C is the sum of the two legs only; choice D doubles the legs in error.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T7.hard"
+}

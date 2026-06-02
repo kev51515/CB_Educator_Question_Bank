@@ -1,0 +1,39 @@
+{
+  "questionId": "a2f64e58-s1",
+  "originalId": "a2f64e58",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p><u>Individual giraffes and many large modern antelopes tend to remain within stable home ranges over the course of their lives,</u> which had led some paleontologists to speculate that <em>Sivatherium giganteum</em>, an extinct giraffid of the Asian plains, might have behaved the same way. <em>Sivatherium</em> teeth grew in distinct enamel layers, incorporating dietary minerals as they formed, so each layer records the chemical fingerprint of the food the animal consumed during a particular interval of its life. By comparing the strontium isotope ratios across these layers to the ratios characteristic of various regional bedrocks, Mehmet Gunay and colleagues showed that several <em>Sivatherium</em> individuals had moved across hundreds of kilometers during their lifetimes, contrary to the assumption of a fixed range.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined statement in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It introduces a trait shared by certain animals in order to contextualize a hypothesis about the origin of that trait that is later advanced in the text.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes a behavioral pattern in modern animals in order to explain why researchers raised a possibility about <em>Sivatherium</em> that was not borne out by the data described later in the text.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It illustrates a pattern of behavior in order to introduce a theory about exceptions to that pattern that is weakened by findings described later in the text.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It describes a similarity in the behavior of certain animals in order to show why a method later described in the text could not reveal whether <em>Sivatherium</em> also showed that behavior.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The underlined sentence reports that giraffes and many large antelopes stay within stable home ranges, which is presented as the basis on which some paleontologists speculated that <em>Sivatherium</em> would have done likewise. The rest of the text then uses Gunay and colleagues' isotopic evidence to show that this expectation did not hold for <em>Sivatherium</em>. The underlined material thus explains why the hypothesis was raised before being undermined by later evidence.</p><p>Choice A is incorrect because no hypothesis about the origin of the trait is advanced. Choice C is incorrect because the text does not introduce a theory of exceptions to home-range behavior. Choice D is incorrect because the isotopic method clearly succeeds in revealing <em>Sivatherium</em>'s movement patterns.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T6.hard"
+}

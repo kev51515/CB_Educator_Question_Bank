@@ -1,0 +1,25 @@
+{
+  "questionId": "26f5c4ba-s1",
+  "originalId": "26f5c4ba",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In 2023, behavioral economist Marisol Ortega and her team examined how different decision-making styles affected commuters' willingness to enroll in a city's optional ride-sharing program, which lowered fares but required slightly longer travel times than driving alone. Commuters who described themselves as relying on a Values Mode or a Community Mode&mdash;styles that emphasize personal ideals or social belonging, respectively&mdash;were more likely to enroll in the program. By contrast, commuters using a Utility Mode&mdash;a style centered on minimizing both monetary expense and lost time&mdash;were more likely to keep driving alone, even though enrolling would have lowered their monthly fares. This pattern suggests that commuters using a Utility Mode <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>likely concluded that the longer travel time required by the program represented a cost that outweighed the program's fare savings.</p>"},
+    {"id": "b", "content": "<p>were equally unwilling as commuters using the Values or Community Modes to weigh the program's fare reductions when making their choice.</p>"},
+    {"id": "c", "content": "<p>may have been more strongly influenced by social belonging in their decision than they openly acknowledged.</p>"},
+    {"id": "d", "content": "<p>were less likely than commuters using either the Values or Community Modes to believe that the advertised fare reductions were genuine.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the discussion of how decision-making styles shape commuting choices. The Values Mode emphasizes ideals, the Community Mode emphasizes belonging, and the Utility Mode emphasizes minimizing monetary expense and lost time. Since Utility Mode commuters declined to enroll even though enrollment lowered fares, the deterrent must come from the other factor that mode weighs: time. The program required longer travel times, so it follows that those commuters judged the added time to be a cost that outweighed the fare savings.</p><p>Choice B is incorrect because the Utility Mode is defined as oriented toward both monetary expense and time, so it would clearly account for fare reductions, unlike Values or Community Modes. Choice C is incorrect because the text gives no indication that Utility Mode commuters secretly cared about social belonging&mdash;belonging is associated with the Community Mode. Choice D is incorrect because the text never suggests that Utility Mode commuters doubted the authenticity of the fare reductions or compared their beliefs about the program's truthfulness with those of other commuters.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "040583a5-s1",
+  "originalId": "040583a5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Tomato ripening time at four storage temperatures, with and without exposure to a ripening agent.</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Temperature</th><th>With ripening agent (days)</th><th>Without ripening agent (days)</th></tr>\n<tr><td>10&deg;C</td><td>9</td><td>14</td></tr>\n<tr><td>14&deg;C</td><td>7</td><td>11</td></tr>\n<tr><td>18&deg;C</td><td>6</td><td>9</td></tr>\n<tr><td>22&deg;C</td><td>5</td><td>6</td></tr>\n</table>\n<p>A horticulture student studied how temperature and ripening-agent exposure affect tomato ripening. She treated one batch of tomatoes with a ripening agent and left another batch untreated, then ripened both batches at each of four temperatures. Comparing the data, the student concluded that ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the student&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10&deg;C is the ideal temperature at which to store tomatoes to slow ripening time.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the ripening agent was associated with a greater absolute reduction in ripening time at 10&deg;C, 14&deg;C, and 18&deg;C than at 22&deg;C.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>tomatoes treated with the ripening agent ripened faster at 10&deg;C and 14&deg;C than at 18&deg;C and 22&deg;C.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>for tomatoes that were not treated, differences in temperature were not associated with differences in ripening time.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the table shows that the ripening agent reduced ripening time by 5 days at 10&deg;C, 4 days at 14&deg;C, 3 days at 18&deg;C, but only 1 day at 22&deg;C. The absolute reduction at the three cooler temperatures was larger than at 22&deg;C. Choice A misuses the data &mdash; cooler tomatoes ripen most slowly with or without agent, but no data identify an ideal storage temperature. Choice C is contradicted by the data (tomatoes still ripen more slowly at cooler temperatures). Choice D is contradicted by the data: ripening time without agent ranges from 6 to 14 days across temperatures.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

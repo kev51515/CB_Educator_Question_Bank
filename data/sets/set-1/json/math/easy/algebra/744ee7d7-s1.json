@@ -1,0 +1,39 @@
+{
+  "questionId": "744ee7d7-s1",
+  "originalId": "744ee7d7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph shows a horizontal solid line passing through the points (&minus;4, 16), (0, 16), and (5, 16). The region below the boundary is shaded. The shaded region represents all the solutions to which inequality?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> &le; 16</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>x</i> &le; 16</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> &ge; 16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>x</i> &ge; 16</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The boundary is a horizontal line at <i>y</i> = 16, so the inequality involves <i>y</i>. Because the line is solid, the boundary is included, so the inequality is non-strict (&le; or &ge;). Since the shaded region is below the line, the solutions are values of <i>y</i> less than or equal to 16, giving <i>y</i> &le; 16.</p><p>Choices B and D describe a vertical boundary (<i>x</i> = 16), not a horizontal one. Choice C reverses the shaded side (above instead of below).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy"
+}

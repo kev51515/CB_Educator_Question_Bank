@@ -1,0 +1,22 @@
+{
+  "questionId": "2d16d62c-s1",
+  "originalId": "2d16d62c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A scientific submersible is collecting samples underwater. When the submersible is at a depth of 73 fathoms, what is the submersible's depth in feet? (1 fathom = 6 feet)</p>",
+  "answerOptions": [],
+  "keys": [
+    "438"
+  ],
+  "rationale": "<p>Since 1 fathom = 6 feet, 73 fathoms is equivalent to 73 \u00d7 6 = 438 feet.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

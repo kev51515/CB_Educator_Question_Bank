@@ -1,0 +1,25 @@
+{
+  "questionId": "2bb7416a-s1",
+  "originalId": "2bb7416a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>In ornithology, the term &ldquo;ghost species&rdquo; refers to a bird population that genetic evidence shows once existed but that has left no clearly identifiable descendants today. Like a faint photograph that hints at a face without ever revealing it, a ghost species is not a living lineage, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> is a statistical trace left in the genomes of its modern relatives.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>however and it</p>"},
+    {"id": "b", "content": "<p>however. It</p>"},
+    {"id": "c", "content": "<p>however it</p>"},
+    {"id": "d", "content": "<p>however, it</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Cruz&hellip;is not a living lineage, however\" is an independent clause, and \"It is a statistical trace&hellip;relatives\" is also independent. A period correctly marks the boundary between them.</p><p>Choice A is incorrect because \"however and it\" is ungrammatical and fuses the clauses. Choice C is incorrect because it produces a run-on without punctuation. Choice D is incorrect because a comma alone between two independent clauses is a comma splice.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

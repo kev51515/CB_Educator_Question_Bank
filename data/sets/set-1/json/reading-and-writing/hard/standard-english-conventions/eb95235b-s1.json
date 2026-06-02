@@ -1,0 +1,25 @@
+{
+  "questionId": "eb95235b-s1",
+  "originalId": "eb95235b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T1.medium",
+  "type": "mcq",
+  "stimulus": "<p>The Graham technique, pioneered by American dancer and choreographer Martha Graham, is grounded in a principle called contraction and release, a rhythmic alternation between tension and ease in the torso. The principle pervades the entire body of the dance ______ performers use it to convey emotions ranging from grief to euphoria within a single phrase.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>dance;</p>"},
+    {"id": "b", "content": "<p>dance</p>"},
+    {"id": "c", "content": "<p>dance,</p>"},
+    {"id": "d", "content": "<p>dance which</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of punctuation between two main clauses. A semicolon is conventionally used to join the first main clause (\"The principle...dance\") with the second main clause (\"performers...phrase\").</p><p>Choice B is incorrect because it produces a run-on sentence: the two main clauses are fused without any punctuation or coordinating conjunction. Choice C is incorrect because a comma alone cannot join two main clauses, producing a comma splice. Choice D is incorrect because the relative pronoun \"which\" cannot be used in this way to link two independent clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

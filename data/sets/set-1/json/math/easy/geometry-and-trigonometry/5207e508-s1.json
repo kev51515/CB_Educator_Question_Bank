@@ -1,0 +1,39 @@
+{
+  "questionId": "5207e508-s1",
+  "originalId": "5207e508",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line m is parallel to line n, and line t is a transversal intersecting both. At the intersection of t and m, an angle measures 150\u00b0. At the intersection of t and n, an angle measuring w\u00b0 is in the corresponding position to the 150\u00b0 angle. What is the value of w?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. When parallel lines are cut by a transversal, corresponding angles are congruent. Therefore w = 150.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

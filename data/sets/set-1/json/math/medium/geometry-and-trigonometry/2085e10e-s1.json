@@ -1,0 +1,39 @@
+{
+  "questionId": "2085e10e-s1",
+  "originalId": "2085e10e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>ABC</em>, the measure of angle <em>A</em> is 38&deg; and the measure of angle <em>B</em> is 72&deg;. In triangle <em>PQR</em>, the measure of angle <em>P</em> is 38&deg; and the measure of angle <em>Q</em> is 72&deg;. Which of the following additional pieces of information, if any, is needed to determine whether triangle <em>ABC</em> is similar to triangle <em>PQR</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>No additional information is needed.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The measure of angle C</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The measure of angle R</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The measures of both angle C and angle R</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. By the angle-angle (AA) similarity criterion, if two angles of one triangle are congruent to two angles of another triangle, the triangles are similar. Here angle A is congruent to angle P (both 38&deg;) and angle B is congruent to angle Q (both 72&deg;), so triangles ABC and PQR are similar without further information. Choices B, C, and D are incorrect because the third pair of angles can be determined from the triangle angle-sum theorem and need not be given.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T5.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "a13541c0-s1",
+  "originalId": "a13541c0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Edwidge Marceau&rsquo;s 1991 novella <em>The Tamarind Yard</em> made a lasting impact on Caribbean literature. Its depiction of Haitian American family life inspired later authors to examine their own heritage within their fictional works. Also influential was the book&rsquo;s portrayal of the main character, Elise, during a transformative summer of her late childhood. <span style=\"text-decoration: underline;\">This insightful depiction of a young girl encouraged authors who, like Marceau herself, are Haitian American to use fictional works to explore experiences from their own childhood.</span></p>",
+  "stem": "<p>Which statement, if true, would most strongly support the claim in the underlined sentence?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In interviews, a number of Haitian American authors say that <em>The Tamarind Yard</em> inspired them to write about their own childhood in their novels.</p>"},
+    {"id": "b", "content": "<p>In published writings, several prominent authors who are not Haitian American say that reading <em>The Tamarind Yard</em> influenced their approach to writing fiction.</p>"},
+    {"id": "c", "content": "<p><em>The Tamarind Yard</em> has sold over four million copies and is one of the most commonly assigned books in introductory literature courses in the US.</p>"},
+    {"id": "d", "content": "<p>Since 1991, new novels about young Haitian American characters by Haitian American authors have often been compared to <em>The Tamarind Yard</em>.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The underlined claim is specifically that the novella encouraged Haitian American authors to write about their own childhood experiences in fiction. Testimony from Haitian American authors stating that <em>The Tamarind Yard</em> inspired them to write about their childhood directly supports that claim. Choice B is incorrect because non-Haitian American authors&rsquo; influence does not speak to the specific subgroup in the underlined claim. Choice C is incorrect because sales and assignment in courses do not establish influence on Haitian American authors&rsquo; writing about their childhood. Choice D is incorrect because comparisons by critics do not necessarily show influence; explicit testimony of influence is far stronger evidence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

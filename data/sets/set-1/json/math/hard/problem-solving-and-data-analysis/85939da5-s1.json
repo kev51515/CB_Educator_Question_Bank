@@ -1,0 +1,39 @@
+{
+  "questionId": "85939da5-s1",
+  "originalId": "85939da5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Inference from sample statistics and margin of error ",
+  "domainCode": "Q",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a study of social media use, 612 randomly selected US adults were asked how often they posted online. Based on the data, an estimate of the percent of US adults who post daily is 42% with a margin of error of 4%. Which of the following is a correct statement based on the given margin of error?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The percent of all US adults who post daily is exactly 42%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is doubtful that the percent of all US adults who post daily is 48%.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Approximately 4% of the adults in the study who are classified as daily posters are not actually daily posters.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is not possible that the percent of all US adults who post daily is less than 38%.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The margin of error gives an interval estimate of plausible values for the population percent: 42% &plusmn; 4%, or roughly 38% to 46%. A value of 48% lies outside this range and is therefore unlikely. Choice A asserts certainty the data do not support. Choice C misinterprets margin of error as a classification error. Choice D treats the interval as a hard bound rather than a confidence-based estimate.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.hard"
+}

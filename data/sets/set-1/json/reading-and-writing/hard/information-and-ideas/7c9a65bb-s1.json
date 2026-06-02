@@ -1,0 +1,39 @@
+{
+  "questionId": "7c9a65bb-s1",
+  "originalId": "7c9a65bb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Atomic force microscopes (AFMs) are precision instruments&mdash;widely used in materials science and nanotechnology&mdash;that drag an extremely sharp silicon tip across a surface to map its features at the atomic scale. The technique has produced remarkable advances over the past three decades, but the contact between tip and sample can subject the surface to significant frictional forces, sometimes deforming or scratching it. To minimize this risk of damage, researchers sometimes coat the tip with a thin layer of diamond-like carbon, so that the wear is absorbed by the coating rather than by the underlying sample.</p>",
+  "stem": "<p>Based on the text, what is one advantage of coating an atomic force microscope tip with diamond-like carbon?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It enables researchers to image samples at higher resolutions than would otherwise be possible.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It reduces the cost of producing the silicon tips used in atomic force microscopes.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It permits the scanning of surfaces without subjecting those surfaces to as much wear from contact.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It gives the tip a material that can absorb electrical charges that build up during scanning.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text explains that AFM tips can subject sample surfaces to friction that may deform or scratch them, and that a diamond-like carbon coating causes the wear to be absorbed by the coating rather than the sample. From this, we can infer that the coating allows samples to be scanned without absorbing as much damaging wear.</p><p>Choice A is incorrect because the text does not mention resolution. Choice B is incorrect because the text says nothing about the cost of the tips. Choice D is incorrect because the text discusses friction and wear, not electrical charges.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.medium"
+}

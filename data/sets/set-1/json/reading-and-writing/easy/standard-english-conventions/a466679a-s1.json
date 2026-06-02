@@ -1,0 +1,39 @@
+{
+  "questionId": "a466679a-s1",
+  "originalId": "a466679a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A2.T5.easy",
+  "type": "mcq",
+  "stimulus": "<p>In 1982, the Garifuna roots band Original Turtle Shell Band released the album <em>Wátina</em>. Though only their second record, it shows musicians already skilled at the difficult task of making complex rhythms sound effortless. On tracks like \"Naguya Nei,\" Andy Palacio's vocals smoothly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Aurelio Martinez's intricate guitar lines.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>flow, with</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>flow with</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>flow. With</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>flow; with</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between a verb and a prepositional phrase. No punctuation is needed between the verb \"flow\" and the prepositional phrase \"with Aurelio Martinez's intricate guitar lines.\" The phrase completes the idea of the verb, and any punctuation between the two creates an ungrammatical sentence or sentence fragment.</p><p>Choice A is incorrect because no punctuation is needed between the verb and the prepositional phrase. Choice C is incorrect because it produces a sentence fragment beginning with \"With.\" Choice D is incorrect because a semicolon can't be used in this way.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

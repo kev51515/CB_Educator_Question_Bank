@@ -1,0 +1,25 @@
+{
+  "questionId": "bc56170b-s1",
+  "originalId": "bc56170b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A2.T4.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Most, but not all, of the carbon stored in the deep ocean comes from sinking organic matter from surface waters.</li>\n<li>Oceanographer Lena Brandt from Stockholm University wondered if some of the unaccounted-for deep-ocean carbon could be coming from underwater volcanic vents.</li>\n<li>In 2017, she analyzed data from the deep-sea probe Nereid.</li>\n<li>Nereid measured dissolved gases and minerals it encountered while drifting near vents on the Mid-Atlantic Ridge.</li>\n<li>Based on the Nereid data, Brandt confirmed her suspicion that underwater vents contribute substantial carbon to the deep ocean.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize the aim of the research study. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Oceanographer Lena Brandt set out to determine whether some of the deep ocean&rsquo;s carbon was coming from underwater volcanic vents.</p>"},
+    {"id": "b", "content": "<p>Lena Brandt&rsquo;s study determined that underwater vents contribute a substantial amount of carbon to the deep ocean.</p>"},
+    {"id": "c", "content": "<p>As it drifted along the Mid-Atlantic Ridge, the Nereid probe collected data that was later analyzed by oceanographer Lena Brandt.</p>"},
+    {"id": "d", "content": "<p>Before 2017, Lena Brandt wondered if the deep ocean was receiving some of its carbon from underwater vents.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The sentence emphasizes the aim, or goal, of the research study, noting what Brandt set out to do: determine whether some of the deep ocean&rsquo;s carbon was coming from underwater volcanic vents.</p><p>Choice B is incorrect. The sentence presents the study&rsquo;s conclusion; it doesn&rsquo;t emphasize the aim. Choice C is incorrect. The sentence focuses on how the Nereid probe collected data; it doesn&rsquo;t emphasize the aim of the research study. Choice D is incorrect. While the sentence mentions what Brandt was curious about before the study, it doesn&rsquo;t emphasize her study&rsquo;s aim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

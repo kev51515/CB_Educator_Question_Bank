@@ -1,0 +1,22 @@
+{
+  "questionId": "d7bf55e1-s1",
+  "originalId": "d7bf55e1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A concert venue sells two types of tickets, student tickets for <math><mo>$</mo><mn>10</mn></math> and general admission tickets for <math><mo>$</mo><mn>15</mn></math>. If the venue sold 40 tickets for a total of <math><mo>$</mo><mn>510</mn></math>, how much, in dollars, was spent on general admission tickets? (Disregard the $ sign when gridding your answer.)</p>",
+  "answerOptions": [],
+  "keys": [
+    "330"
+  ],
+  "rationale": "<p>The correct answer is 330. Let s be student tickets and g be general tickets. Then s + g = 40 and 10s + 15g = 510. Substituting s = 40 \u2212 g: 10(40 \u2212 g) + 15g = 510, so 400 + 5g = 510 and g = 22. Total spent on general admission tickets is 22 \u00b7 15 = 330.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard"
+}

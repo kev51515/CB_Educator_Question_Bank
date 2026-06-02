@@ -1,0 +1,39 @@
+{
+  "questionId": "2992ac30-s1",
+  "originalId": "2992ac30",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>P</i>(<i>t</i>) = 320(1.05)<sup>(8/3)<i>t</i></sup></p><p>The function <i>P</i> models the population, in thousands, of a certain city <i>t</i> years after 2010. According to the model, the population is predicted to increase by 5% every <i>n</i> months. What is the value of <i>n</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>30</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The population multiplies by 1.05 each time the exponent increases by 1. The exponent (8/3)<i>t</i> increases by 1 when <i>t</i> increases by 3/8 of a year. In months, that is (3/8)(12) = 4.5 months.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

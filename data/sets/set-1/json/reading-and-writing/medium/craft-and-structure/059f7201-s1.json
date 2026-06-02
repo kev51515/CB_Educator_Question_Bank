@@ -1,0 +1,25 @@
+{
+  "questionId": "059f7201-s1",
+  "originalId": "059f7201",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><strong><span role=\"heading\" aria-level=\"2\">Text 1</span></strong></p><p>Video games have grown into a multibillion-dollar industry, but they shouldn&rsquo;t be considered a form of storytelling. Storytelling, by definition, conveys a fixed narrative through which a creator&rsquo;s vision is communicated to an audience; in video games, however, the player&rsquo;s choices determine what happens, so any resulting &ldquo;story&rdquo; is largely accidental. Games are better understood as toys: structured systems built to be played with rather than narratives meant to be received.</p><p>&nbsp;</p><p><strong><span role=\"heading\" aria-level=\"2\">Text 2</span></strong></p><p>The interactive elements of video games are precisely what allow them to tell stories impossible in other media. A designer arranges environments, characters, and consequences so that the player&rsquo;s decisions illuminate themes the designer has carefully prepared in advance. Games such as <em>Disco Elysium</em> and <em>What Remains of Edith Finch</em> deliver narratives whose meaning depends on the player&rsquo;s participation, not on the absence of authorial intent.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the overall argument presented in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By conceding that the narratives produced through gameplay are too unpredictable to be considered the work of any single creator</p>"},
+    {"id": "b", "content": "<p>By suggesting that the storylines of certain video games are far more difficult to follow than the author of Text 1 acknowledges</p>"},
+    {"id": "c", "content": "<p>By contending that the player&rsquo;s decisions in video games operate within structures deliberately shaped by a designer to convey meaning</p>"},
+    {"id": "d", "content": "<p>By agreeing with the author of Text 1 that most video games are less artistically ambitious than most works of traditional fiction</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately states how the author of Text 2 would respond to the argument in Text 1. Text 1 claims that the player&rsquo;s choices make any resulting story accidental, so games cannot count as storytelling. Text 2 directly counters this, arguing that designers &ldquo;arrange environments, characters, and consequences&rdquo; to ensure that the player&rsquo;s decisions illuminate themes &ldquo;carefully prepared in advance.&rdquo; The author of Text 2 would therefore say that interactivity does not eliminate authorial intent but channels it.</p><p>Choice A is incorrect because Text 2 explicitly attributes a single authorial vision (the designer&rsquo;s) to the narrative. Choice B is incorrect because neither text addresses the difficulty of following storylines. Choice D is incorrect because Text 2 highlights games that achieve sophisticated narratives, not games that fall short of traditional fiction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

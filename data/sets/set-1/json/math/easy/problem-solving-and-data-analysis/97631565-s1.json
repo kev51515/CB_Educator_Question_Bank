@@ -1,0 +1,39 @@
+{
+  "questionId": "97631565-s1",
+  "originalId": "97631565",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Linda selected 25 employees at random from all 500 employees at a company. She found that 15 of the employees in this sample take public transit to work. Based on Linda's findings, which of the following is the best estimate of the number of employees at the company who take public transit to work?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>300</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>375</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>485</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The proportion of the sample who take public transit is 15 out of 25, or 60%. Applying that proportion to all 500 employees gives 0.60 times 500 = 300.</p><p>Choice B is incorrect: 15 is the count in the sample.</p><p>Choice C is incorrect: 375 uses the wrong proportion.</p><p>Choice D is incorrect: 485 has no statistical meaning here.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy"
+}

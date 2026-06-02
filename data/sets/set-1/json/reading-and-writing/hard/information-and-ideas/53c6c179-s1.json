@@ -1,0 +1,39 @@
+{
+  "questionId": "53c6c179-s1",
+  "originalId": "53c6c179",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Adult Literacy Rate by Year and Sex, Portugal and Italy, 1900\u20132000</strong></p><table border=\"1\"><thead><tr><th>Year</th><th>Portugal, men</th><th>Portugal, women</th><th>Italy, men</th><th>Italy, women</th></tr></thead><tbody><tr><td>1900</td><td>34%</td><td>17%</td><td>48%</td><td>40%</td></tr><tr><td>1930</td><td>52%</td><td>34%</td><td>76%</td><td>71%</td></tr><tr><td>1950</td><td>61%</td><td>45%</td><td>89%</td><td>85%</td></tr><tr><td>1970</td><td>78%</td><td>65%</td><td>96%</td><td>94%</td></tr><tr><td>2000</td><td>95%</td><td>89%</td><td>99%</td><td>98%</td></tr></tbody></table><p>A student examining adult literacy in twentieth-century Europe concluded that country-specific factors shape how literacy rates change over time.</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to support the student's conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Between 1900 and 2000, the adult literacy rate for women in Portugal was consistently lower than for women in Italy, as was the case for men.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Between 1930 and 1970, the adult literacy rate for women rose more sharply in Portugal than it did in Italy.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In Portugal, the adult literacy rate was consistently higher for men than for women between 1900 and 2000, but this was not always the case in Italy.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The adult literacy rate for men in Portugal was lower in 1930 than in 1900 or in 1950.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The student's conclusion is that country-specific factors influence how literacy rates change. A finding that, during 1930\u20131970, female literacy rose more sharply in Portugal than in Italy describes a difference in the rate of change between the two countries during a defined period\u2014exactly the kind of evidence that points to country-specific factors driving the difference.</p><p>Choice A is incorrect: it compares overall levels across the entire century, not changes, so it doesn't speak to how rates evolved or to country-specific drivers of change. Choice C is incorrect: the table shows men's rates were consistently higher than women's in both Portugal and Italy, so this misreads the data. Choice D is incorrect: the table shows Portuguese male literacy rose steadily (34%\u219252%\u219261%), so 1930 was not lower than 1900 or 1950.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

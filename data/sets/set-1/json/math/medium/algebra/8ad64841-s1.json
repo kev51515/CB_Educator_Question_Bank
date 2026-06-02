@@ -1,0 +1,39 @@
+{
+  "questionId": "8ad64841-s1",
+  "originalId": "8ad64841",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A linear function <em>f</em> gives a vendor's revenue, in dollars, for selling <em>x</em> shirts. The vendor's revenue is $160 when 6 shirts are sold, and the revenue is $280 when 9 shirts are sold. Which equation defines <em>f</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>f</em>(<em>x</em>) = 120<em>x</em> \u2212 280</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>f</em>(<em>x</em>) = 30<em>x</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>f</em>(<em>x</em>) = 40<em>x</em> \u2212 80</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>f</em>(<em>x</em>) = 40<em>x</em> \u2212 240</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A linear function has the form <em>f</em>(<em>x</em>) = <em>mx</em> + <em>b</em>. The slope is (280 \u2212 160)/(9 \u2212 6) = 120/3 = 40, so <em>m</em> = 40. Substituting (6, 160): 160 = 40(6) + <em>b</em>, so <em>b</em> = \u221280. Therefore <em>f</em>(<em>x</em>) = 40<em>x</em> \u2212 80.</p><p>Choices A, B, and D are incorrect and may result from calculation errors.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T2.medium"
+}

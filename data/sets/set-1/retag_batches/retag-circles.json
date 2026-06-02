@@ -1,0 +1,68 @@
+[
+  {
+    "id": "95ba2d09-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks sum of central angles around a point (360\u00b0 \u2212 70 \u2212 85 \u2212 110 = 95). This is not a degree-radian conversion or combined-angle conversion (T9 core demand). Answer is correct (95\u00b0)."
+  },
+  {
+    "id": "b96ff36e-s1",
+    "templateId": "circles.A1.T3.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks for the y-coordinate of the center\u2014a direct read from standard form (T1). T3 requires substitute/inequality reasoning to test whether a point lies on/inside the circle. Answer (8) is correct."
+  },
+  {
+    "id": "0815a5af-s1",
+    "templateId": "circles.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks for sector AREA (100\u03c0/4 = 25\u03c0), not arc length or arc-fraction of circumference. T7 core demand is the arc/circumference = \u03b8/360 proportion. Answer (25\u03c0) is correct."
+  },
+  {
+    "id": "8e7689e0-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "difficulty_drift",
+    "detail": "540\u00b0 is one of the 'easy' lever angles (integer multiple of 180\u00b0); medium lever requires unusual numerator/denominator like 9\u03c0/20. Answer (b=3) is correct."
+  },
+  {
+    "id": "2d521ca9-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "difficulty_drift",
+    "detail": "45\u00b0 is explicitly an 'easy' lever angle (in {30,45,60,90,180,360}); medium lever requires unusual numerator/denominator. Answer (\u03c0/4) is correct."
+  },
+  {
+    "id": "24cec8d1-s1",
+    "templateId": "circles.A5.T12.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires perimeter-to-chord problem or distractor with apex value; clone is a straightforward apex\u2192base-angle computation matching medium lever."
+  },
+  {
+    "id": "1efd7ef3-s1",
+    "templateId": "circles.A4.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever specifies tangent (sign matters) or indirect angle via point coordinates; clone uses sine of integer-\u03c0/2 multiple, fitting the medium lever."
+  },
+  {
+    "id": "3e577e4a-s1",
+    "templateId": "circles.A5.T11.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires identifying a point on the tangent line or careful negative-sign handling; clone is a straightforward slope-then-negative-reciprocal task matching the medium lever."
+  },
+  {
+    "id": "fa2771d5-s1",
+    "templateId": "circles.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 requires radius scaling, coefficient-hidden form, or numeric-extract. Clone is a pure small-integer translation (down 5), satisfying only easy/medium levers."
+  },
+  {
+    "id": "2266984b-s1",
+    "templateId": "circles.A2.T4.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T4 requires leading coef \u22601, odd linear coef (fractions), or embedded constant. Clone has leading coef 1, even linear coefficients (6, -10), and asks center directly \u2014 matches medium lever."
+  },
+  {
+    "id": "ab176ad6-s1",
+    "templateId": "circles.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 requires non-perfect-square r\u00b2 (sqrt simplification), diameter (extra step), or symbolic parameter. Clone has r\u00b2=169 (perfect square) and asks radius directly \u2014 matches medium lever exactly."
+  }
+]

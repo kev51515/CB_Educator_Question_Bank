@@ -1,0 +1,39 @@
+{
+  "questionId": "96d1c1fe-s1",
+  "originalId": "96d1c1fe",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Marisol Aguilar and colleagues analyzed the genomes of more than 150 domesticated horses excavated from sites in the Andean highlands dating from 4,000 years ago to the present. They found that the horses formed a genetically isolated population of highland breeds until roughly 600 years ago, at which point there was substantial interbreeding with coastal horse breeds. Moreover, starting around 600 years ago, some sites began to contain artifacts consistent with a coastal lowland origin, such as carved seashell ornaments, but the people of these highland sites show no evidence of having traveled extensively to the coast. From this, Aguilar and colleagues concluded that around 600 years ago <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>seashell ornaments and other coastal lowland artifacts began to be exchanged for horses from the Andean highlands.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>horses from the coastal lowlands began to be exchanged for seashell ornaments and other artifacts from the Andean highlands.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>horses and artifacts such as carved seashell ornaments began to be transported from the coastal lowlands to the Andean highlands.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>people from the Andean highlands began to reach the coastal lowlands, where they obtained horses and seashell ornaments.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it presents the conclusion that most logically follows from the text. The text says that highland horses formed an isolated breeding population until about 600 years ago, when they began interbreeding with coastal breeds, and that around the same time the highland sites began to contain artifacts of coastal origin, even though the highland people apparently did not travel to the coast. Because the coastal horses and artifacts arrived in the highlands but the highland people themselves did not travel to the coast, the most reasonable conclusion is that the horses and artifacts were transported from the coast to the highlands.</p><p>Choice A is incorrect because the text doesn't address the purpose of the artifacts' arrival or suggest that highland horses were transported elsewhere through trade; it only describes the arrival of coastal items in the highlands. Choice B is incorrect for the same reason: the text gives no evidence of highland artifacts being exchanged. Choice D is incorrect because the text explicitly says there is no evidence that the highland people traveled extensively to the coast, ruling out the inference that they obtained the goods there themselves.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T9.hard"
+}

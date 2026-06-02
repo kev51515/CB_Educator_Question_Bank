@@ -1,0 +1,39 @@
+{
+  "questionId": "2390e956-s1",
+  "originalId": "2390e956",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Tomas Rivera vividly portrays the Mexican American farmworker experience in his novel <em>...and the Earth Did Not Devour Him</em> by telling the story through three <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> voices. The first sections follow a young boy's reflections, the middle sections present the voices of his family and neighbors, and the final sections give the boy's mature, looking-back perspective.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>required</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>distinct</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>unknown</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>unintended</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the rest of the sentence describes three clearly different voices: a young boy, his family and neighbors, and the older narrator. \"Distinct\" means clearly different and matches this structure. The other choices do not describe how three voices in a novel relate to one another.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

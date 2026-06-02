@@ -1,0 +1,22 @@
+{
+  "questionId": "983412ea-s1",
+  "originalId": "983412ea",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A right square prism has a height of 18 units. The volume of the prism is 4,050 cubic units. What is the length, in units, of an edge of the base?</p>",
+  "answerOptions": null,
+  "keys": [
+    "15"
+  ],
+  "rationale": "<p>The correct answer is 15. The volume of a right square prism with base edge s and height h is s&sup2;h. So 4,050 = s&sup2;(18), giving s&sup2; = 225 and s = 15 units.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T1.medium"
+}

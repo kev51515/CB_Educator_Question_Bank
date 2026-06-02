@@ -1,0 +1,39 @@
+{
+  "questionId": "0b96fa93-s1",
+  "originalId": "0b96fa93",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Maximum Height of Oak Trees When Fully Grown</p></caption><thead><tr><th>Tree type</th><th>Maximum height (feet)</th><th>Native to North America</th></tr></thead><tbody><tr><th>White oak</th><td>80</td><td>yes</td></tr><tr><th>Northern red oak</th><td>75</td><td>yes</td></tr><tr><th>Bur oak</th><td>55</td><td>yes</td></tr><tr><th>English oak</th><td>50</td><td>no</td></tr><tr><th>Holm oak</th><td>45</td><td>no</td></tr></tbody></table></figure></p><p>For a school project, a forestry student needs to recommend an oak tree that is native to North America and won't grow more than 60 feet in height. Based on the characteristics of five common oak trees, he has decided to select a <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>bur oak.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>northern red oak.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>white oak.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>English oak.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The bur oak is native to North America and has a maximum height of 55 feet, which is less than 60 feet, so it meets both of the student's requirements.</p><p>Choice B is incorrect; the northern red oak's maximum height is 75 feet, exceeding 60 feet. Choice C is incorrect; the white oak's maximum height is 80 feet, also exceeding 60 feet. Choice D is incorrect; the English oak is not native to North America.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

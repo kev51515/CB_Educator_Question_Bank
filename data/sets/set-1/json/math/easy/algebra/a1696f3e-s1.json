@@ -1,0 +1,25 @@
+{
+  "questionId": "a1696f3e-s1",
+  "originalId": "a1696f3e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>p</i> is defined by <i>p</i>(<i>x</i>) = 6<i>x</i> + <i>a</i>, where <i>a</i> is a constant. If <i>p</i>(3) = 20, what is the value of <i>a</i>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>2</p>"},
+    {"id": "b", "content": "<p>&minus;2</p>"},
+    {"id": "c", "content": "<p>20</p>"},
+    {"id": "d", "content": "<p>&minus;18</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. Substituting <i>x</i> = 3 gives <i>p</i>(3) = 6(3) + <i>a</i> = 18 + <i>a</i> = 20, so <i>a</i> = 2.</p><p>Choice B has the wrong sign. Choice C is the value of <i>p</i>(3). Choice D is 18 with a sign error.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.easy"
+}

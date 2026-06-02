@@ -1,0 +1,39 @@
+{
+  "questionId": "69b0d79d-s1",
+  "originalId": "69b0d79d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Point O is the center of a circle, and the measure of central angle XOY is 60&deg;. If the length of OX is 24, what is the length of arc XY?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12&pi;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The arc length is (central angle / 360&deg;)(circumference) = (60/360)(2&pi; &middot; 24) = (1/6)(48&pi;) = 8&pi;.</p><p>Choice A halves the answer. Choice B uses 30&deg; by mistake. Choice D doubles the answer.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A3.T7.hard"
+}

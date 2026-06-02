@@ -1,0 +1,25 @@
+{
+  "questionId": "25290c8d-s1",
+  "originalId": "25290c8d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p>“To Patience” is a 1789 poem by Anna Whitford. Whitford addresses the poem directly to the quality of patience, asking it to remain at her side and to help her endure a season of personal hardship: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from “To Patience” most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“Remain beside me, <em>Patience</em>, through these darkened hours, / Forsake me not, though grief should bid thee go, / But steady thou my heart till brighter days appear.”</p>"},
+    {"id": "b", "content": "<p>“I cease to question, and no longer strive / Thine secret depths to fathom or to know.”</p>"},
+    {"id": "c", "content": "<p>“O thou calm radiance whose long brow I see, / I try in vain to comprehend thy ways; / Such peace as thine is higher than I dare to claim.”</p>"},
+    {"id": "d", "content": "<p>“But, O my fainting soul, despair thou not, / <em>Patience</em>, with her unhurried hand, draws near, / And, mild and watchful, bends above thy head.”</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most effectively illustrates the claim that Whitford addresses the poem directly to patience, asking it to remain by her side and help her endure a season of personal hardship. The speaker addresses Patience by name, explicitly asks it to “remain beside me” and not to forsake her, and ties the request to enduring a difficult period (“through these darkened hours,” “till brighter days appear”). This combination of direct address and a request for sustained support during hardship precisely enacts the claim.</p><p>Choice B is incorrect because the speaker says she has ceased to question patience and given up trying to understand it, which contradicts the idea of actively asking it to remain at her side through hardship. Choice C is incorrect because, although the speaker addresses patience, she emphasizes her own inability to comprehend it rather than asking it to stay and help her endure hardship. Choice D is incorrect because it describes patience as something approaching the speaker on its own, rather than the speaker addressing patience and asking it to remain.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

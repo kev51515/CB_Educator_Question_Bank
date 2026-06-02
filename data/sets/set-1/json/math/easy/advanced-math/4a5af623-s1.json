@@ -1,0 +1,39 @@
+{
+  "questionId": "4a5af623-s1",
+  "originalId": "4a5af623",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>27</mn><mi>y</mi><mo>+</mo><mn>6</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mfenced><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>27</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>3</mn><mfenced><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>9</mn><mi>y</mi><mo>+</mo><mn>6</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>9</mn><mfenced><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>3</mn><mfenced><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>9</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The greatest common factor of 3y\u00b2, 27y, and 6 is 3. Factoring 3 from each term gives 3(y\u00b2 + 9y + 2).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

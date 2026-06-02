@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "9f2ecade-s1",
+  "originalId": "9f2ecade",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function h is defined by h(x) = a(x &minus; p)(x &minus; q)(x &minus; r), where a, p, q, and r are integer constants. If the zeros of the function are 2, 5, and 9, and h(0) = &minus;180, what is the value of a?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2"
+  ],
+  "rationale": "<p>The correct answer is 2. Substituting x = 0: h(0) = a(0 &minus; 2)(0 &minus; 5)(0 &minus; 9) = a(&minus;2)(&minus;5)(&minus;9) = &minus;90a. Setting this equal to &minus;180 gives &minus;90a = &minus;180, so a = 2.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T4.hard"
+}

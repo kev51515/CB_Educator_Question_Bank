@@ -1,0 +1,39 @@
+{
+  "questionId": "61b87506",
+  "externalId": "27dab70d-b227-496d-9793-7bbb537c6638",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "scoreBand": 5,
+  "ibn": null,
+  "updateDate": 1691007959831,
+  "createDate": 1691007959831,
+  "scrapedAt": "2026-05-25T12:09:48.070965+00:00",
+  "type": "spr",
+  "stem": "<p style=\"text-align: left;\">For the values <math alttext=\"j\"><mi>j</mi>\n</math> and <math alttext=\"k\"><mi>k</mi>\n</math>, the ratio of <math alttext=\"j\"><mi>j</mi>\n</math> to <math alttext=\"k\"><mi>k</mi>\n</math> is <math alttext=\"11\"><mn>11</mn>\n</math> to <math alttext=\"12\"><mn>12</mn>\n</math>. If <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>, what is <math alttext=\"k\"><mi>k</mi>\n</math> multiplied by in order to maintain the same ratio?</p>",
+  "answerOptions": null,
+  "keys": [
+    "17"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"17\"><mn>17</mn>\n</math>. If one value is multiplied by a number, then the other value must be multiplied by the same number in order to maintain the same ratio. It&rsquo;s given that <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>. Therefore, in order to maintain the same ratio, <math alttext=\"k\"><mi>k</mi>\n</math> must also be multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>.</p>",
+  "raw": {
+    "keys": [
+      "17"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"17\"><mn>17</mn>\n</math>. If one value is multiplied by a number, then the other value must be multiplied by the same number in order to maintain the same ratio. It&rsquo;s given that <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>. Therefore, in order to maintain the same ratio, <math alttext=\"k\"><mi>k</mi>\n</math> must also be multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>.</p>",
+    "origin": "manifold",
+    "stem": "<p style=\"text-align: left;\">For the values <math alttext=\"j\"><mi>j</mi>\n</math> and <math alttext=\"k\"><mi>k</mi>\n</math>, the ratio of <math alttext=\"j\"><mi>j</mi>\n</math> to <math alttext=\"k\"><mi>k</mi>\n</math> is <math alttext=\"11\"><mn>11</mn>\n</math> to <math alttext=\"12\"><mn>12</mn>\n</math>. If <math alttext=\"j\"><mi>j</mi>\n</math> is multiplied by <math alttext=\"17\"><mn>17</mn>\n</math>, what is <math alttext=\"k\"><mi>k</mi>\n</math> multiplied by in order to maintain the same ratio?</p>",
+    "externalid": "27dab70d-b227-496d-9793-7bbb537c6638",
+    "templateid": "2c49ba56-78d9-415a-8975-839d0a683157",
+    "vaultid": "11a94d16-ddcf-4f87-b385-eabee90e73c7",
+    "type": "spr",
+    "answerOptions": [],
+    "correct_answer": [
+      "17"
+    ]
+  }
+}

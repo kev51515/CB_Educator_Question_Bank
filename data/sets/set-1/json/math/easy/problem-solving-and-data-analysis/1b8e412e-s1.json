@@ -1,0 +1,39 @@
+{
+  "questionId": "1b8e412e-s1",
+  "originalId": "1b8e412e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">-7, 4, -2, 13</p><p>A data set of four numbers is shown. If a number from this data set is selected at random, what is the probability of selecting a positive number?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3/4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. There are 2 positive numbers in the data set (4 and 13) out of 4 total numbers, so the probability is 2/4 = 1/2.</p><p>Choice B is incorrect; this would be the probability of selecting one specific number. Choice C is incorrect; this is the probability of selecting a negative number. Choice D is incorrect; this would mean all numbers are positive.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

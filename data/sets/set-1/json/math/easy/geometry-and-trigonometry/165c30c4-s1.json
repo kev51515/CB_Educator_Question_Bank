@@ -1,0 +1,22 @@
+{
+  "questionId": "165c30c4-s1",
+  "originalId": "165c30c4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A rectangle has a length of 48 inches and a width of 25 inches. What is the area, in square inches, of the rectangle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1200"
+  ],
+  "rationale": "<p>The area A of a rectangle is A = lw. Substituting l = 48 and w = 25 gives A = 48 \u00d7 25 = 1,200 square inches.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "570b5a5d-s1",
+  "originalId": "570b5a5d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mfrac><mn>9</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>22</mn></math></p>\n<p style=\"text-align: center;\"><math><mfrac><mn>5</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>18</mn></math></p>\n<p>The solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mfrac><mn>21</mn><mn>2</mn></mfrac><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>84</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Subtracting the second equation from the first gives 2x = 4, so x = 2. Substituting into the first equation: 9 + 5y = 22, so y = 13/5. Then 21/2 (2) + 15(13/5) = 21 + 39 = 60. Alternatively, multiply the first equation by 3: 27/2 x + 15y = 66, and subtract 3x to get 21/2 x + 15y = 66 \u2212 3x = 66 \u2212 6 = 60.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard"
+}

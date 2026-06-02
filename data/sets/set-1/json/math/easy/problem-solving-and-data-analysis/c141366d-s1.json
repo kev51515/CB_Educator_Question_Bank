@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">In the xy-plane, the graph of function f passes through the points (\u22124, \u22122), (0, 0), and (4, 2). The graph is a straight line slanting up from left to right. Which of the following describes function f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Decreasing linear</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Increasing linear</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Increasing exponential</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Decreasing exponential</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A straight line through the origin that slants upward represents a linear function with positive slope \u2014 an increasing linear function.</p><p>An exponential function would curve, not be a straight line. The other options have wrong direction or shape.</p>",
+  "questionId": "c141366d-s1",
+  "originalId": "c141366d",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "bce627d9-s1",
+  "originalId": "bce627d9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T8.medium",
+  "stimulus": "<p>Chemical differences are detectable in soil cores extracted from two trenches at the Iron Age site of Tel Halafi, but such differences may not reflect significant variation across the site's overall layering. Archaeologist Yusra Bensalem and colleagues caution that at the narrow scale of the cores, the distribution of trace minerals is unlikely to be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>delayed</p>"},
+    {"id": "b", "content": "<p>even</p>"},
+    {"id": "c", "content": "<p>excessive</p>"},
+    {"id": "d", "content": "<p>continuous</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Even\" means uniformly distributed. The text says the cores are too narrow in scale to reflect the site's overall layering, implying that the trace minerals are unlikely to be distributed in a uniform, consistent way across such small samples.</p><p>Choice A is incorrect. \"Delayed\" applies to time, not the spatial distribution of minerals in a sample. Choice C is incorrect. \"Excessive\" is too strong; the text isn't claiming the minerals are in surplus, only that they vary unevenly. Choice D is incorrect. \"Continuous\" describes uninterrupted action over time and doesn't fit a distribution at a single moment.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

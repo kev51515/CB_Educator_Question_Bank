@@ -1,0 +1,39 @@
+{
+  "questionId": "1d18794b-s1",
+  "originalId": "1d18794b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A streaming service requires a one-time activation cost of $45 and a monthly cost of $18. Which equation represents this situation, where c is the total cost, in dollars, of this service for t months?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>c = t/18 + 45</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>c = 18t + 45</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>c = t/45 + 18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>c = 45t + 18</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Cost equals 18 dollars per month times t months plus a 45-dollar one-time fee: c = 18t + 45.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T3.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "fb96a5b3-s1",
+  "originalId": "fb96a5b3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which of the following expressions is equivalent to <math><mn>3</mn><mfenced><mrow><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfenced><mo>+</mo><mi>y</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>4</mn><mi>y</mi><mo>+</mo><mn>2</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>4</mn><mi>y</mi><mo>+</mo><mn>6</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>3</mn><mi>y</mi><mo>+</mo><mn>6</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>3</mn><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Distribute the 3: 3y + 6 + y. Combine like terms (3y + y): 4y + 6. Choice (b) is correct.</p>",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b8caaf84-s1",
+  "originalId": "b8caaf84",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If p = 2x + 3 and v = x + 7, which of the following is equivalent to pv &minus; 3p + v?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2x<sup>2</sup> + 18x + 28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2x<sup>2</sup> + 17x + 21</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2x<sup>2</sup> + 12x + 19</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2x<sup>2</sup> + 12x + 12</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Compute pv = (2x + 3)(x + 7) = 2x<sup>2</sup> + 17x + 21. Then &minus;3p = &minus;6x &minus; 9, and v = x + 7. Combine: 2x<sup>2</sup> + (17 &minus; 6 + 1)x + (21 &minus; 9 + 7) = 2x<sup>2</sup> + 12x + 19. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A1.T10.medium"
+}

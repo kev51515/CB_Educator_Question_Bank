@@ -1,0 +1,22 @@
+{
+  "questionId": "fdee0fbf-s1",
+  "originalId": "fdee0fbf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, line k intersects the y-axis at the point (0, -2) and passes through the point (5, 8). If the point (w, 20) lies on line k, what is the value of w?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The slope of line k is (8 - (-2))/(5 - 0) = 10/5 = 2. The equation is y = 2x - 2. Setting y = 20: 20 = 2w - 2, so 2w = 22 and w = 11.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5aae2475-s1",
+  "originalId": "5aae2475",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Mycorrhizal networks, the thread-like fungal connections that link the roots of neighboring trees, allow plants to exchange nutrients and chemical signals across an entire forest. In a landmark 1997 study, forest ecologist ______ demonstrated that carbon could move between paper birch and Douglas fir seedlings through these underground partnerships.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Suzanne Simard,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Suzanne Simard</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>, Suzanne Simard</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>, Suzanne Simard,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The convention tested is the use of punctuation between a title or descriptor and a proper noun. The phrase \"forest ecologist Suzanne Simard\" identifies one specific person; the proper noun is essential to the meaning and should not be set off by commas.</p><p>Choice A is incorrect because a comma after the name implies that other information has been parenthetically inserted, but no such structure exists here. Choice C is incorrect because the proper noun is restrictive and cannot be preceded by a comma. Choice D is incorrect because surrounding the proper noun with commas treats it as nonessential, which suggests it could be removed without altering meaning \u2014 but \"forest ecologist\" alone does not refer to a particular person.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A3.T6.hard"
+}

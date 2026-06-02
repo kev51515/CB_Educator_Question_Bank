@@ -1,0 +1,39 @@
+{
+  "questionId": "a04807d8-s1",
+  "originalId": "a04807d8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T8.easy",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Number of Concert Hall Attendees (in Thousands) from 2017 to 2020</caption><thead><tr><th>Concert Hall</th><th>2017</th><th>2018</th><th>2019</th><th>2020</th></tr></thead><tbody><tr><td>Roy Thomson Hall</td><td>340</td><td>360</td><td>410</td><td>120</td></tr><tr><td>Carnegie Hall</td><td>620</td><td>650</td><td>700</td><td>180</td></tr><tr><td>Symphony Hall (Boston)</td><td>290</td><td>305</td><td>340</td><td>95</td></tr></tbody></table></figure><p>A music journalist is examining annual attendance at three major concert halls. According to the table, the year in which all three halls had their highest attendance was ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2017.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2018.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2019.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2020.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because in 2019 every hall reached its highest attendance: Roy Thomson (410), Carnegie (700), and Symphony Hall (340).</p><p>Choice A is incorrect: 2017 totals (340, 620, 290) were lower at every hall. Choice B is incorrect: 2018 (360, 650, 305) was also lower at every hall. Choice D is incorrect: 2020 had the lowest attendance at every hall (120, 180, 95).</p>",
+  "generatedAt": "2026-05-26T02:15:13Z"
+}

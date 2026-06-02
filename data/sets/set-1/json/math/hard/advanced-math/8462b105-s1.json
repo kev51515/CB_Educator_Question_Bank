@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "8462b105-s1",
+  "originalId": "8462b105",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f gives the product of a number, n, and a number that is 17 less than n. Which equation defines f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(n) = n<sup>2</sup> + 17</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(n) = n<sup>2</sup> &minus; 17n</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(n) = n<sup>2</sup> &minus; 17n &minus; 17</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(n) = n<sup>2</sup> &minus; 17</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The number that is 17 less than n is (n &minus; 17). Their product is n(n &minus; 17) = n<sup>2</sup> &minus; 17n.</p><p>Choice A adds 17 instead of subtracting. Choices C and D include extraneous constant terms not present in the product.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.misc.hard"
+}

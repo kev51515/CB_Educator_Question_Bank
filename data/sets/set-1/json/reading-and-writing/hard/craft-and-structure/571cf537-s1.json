@@ -1,0 +1,39 @@
+{
+  "questionId": "571cf537-s1",
+  "originalId": "571cf537",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The historian's account of trade routes connecting medieval West Africa and the Mediterranean is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, as it overlooks several important archaeological discoveries from the past decade. To be persuasive, the account would need to address recent excavations of trans-Saharan caravan stations, such as those at Tadmekka and Sijilmasa.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>unsurprising</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>insightful</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>discursive</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>shaky</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Shaky\" means weak or insecurely supported. The text criticizes the account for failing to address important new evidence, which means the account rests on a shaky foundation and is open to challenge.</p><p>Choice A is incorrect because \"unsurprising\" does not address the strength of the account's claims. Choice B is incorrect because \"insightful\" describes a positive quality, but the text criticizes the account. Choice C is incorrect because \"discursive\" means rambling or digressive and does not match the text's criticism, which is about omitted evidence rather than wandering style.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

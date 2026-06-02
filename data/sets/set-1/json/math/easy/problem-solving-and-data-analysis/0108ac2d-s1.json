@@ -1,0 +1,39 @@
+{
+  "questionId": "0108ac2d-s1",
+  "originalId": "0108ac2d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At a university, 400 students were selected at random and surveyed about a proposed change to the academic calendar. All 400 students completed the survey. It was estimated that 42% of the students were in support of the change, with a margin of error of 4 percentage points. Which of the following is the best interpretation of the survey results?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The percent of all students at the university who support the change is exactly 42%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Plausible values of the percent of all students at the university who support the change are between 38% and 46%.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Plausible values of the number of all students at the university who support the change are between 38 and 46 students.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The percent of all students at the university who support the change is at most 42%.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. With an estimate of 42% and a margin of error of 4 percentage points, the plausible values for the population percent range from 38% to 46%.</p><p>Choice A is incorrect: a margin of error indicates a range, not a single exact value.</p><p>Choice C is incorrect: the units are percents, not students.</p><p>Choice D is incorrect: the margin of error gives both a lower and an upper bound.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy"
+}

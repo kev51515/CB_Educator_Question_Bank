@@ -1,0 +1,39 @@
+{
+  "questionId": "1d3c5c95-s1",
+  "originalId": "1d3c5c95",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\">g(t) = 2,500(0.80)<sup>t</sup></p>",
+  "stem": "<p>A biologist started a program to reduce a certain invasive fish population in a lake. The given function estimates this fish species' population t years after 2015, where t \u2264 6. Which of the following is the best interpretation of 2,500 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The estimated fish population for this species 6 years after 2015</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The estimated percent decrease in the fish population each year after 2015</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The estimated percent decrease in the fish population every 6 years after 2015</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The estimated initial fish population in 2015</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. For g(t) = a(b)<sup>t</sup>, the initial value g(0) equals a = 2,500, representing the population in 2015. Choice A: g(6) = 2,500(0.80)<sup>6</sup> \u2248 655, not 2,500. Choice B: the yearly decrease is 100(1 \u2212 0.80)% = 20%, not 2,500. Choice C: a 6-year decrease percent is much different.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A2.T2.medium"
+}

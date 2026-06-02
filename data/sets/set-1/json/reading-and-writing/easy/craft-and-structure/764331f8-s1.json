@@ -1,0 +1,39 @@
+{
+  "questionId": "764331f8-s1",
+  "originalId": "764331f8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2010 novel. The narrator discusses her relationship with her young nephew, Theo. Maren, the narrator's sister-in-law, is Theo's mother.</p><blockquote><p>Theo was as restless with babyhood as I had been. He tried at once to grow out of it. Maren never saw that, because she, and only she, took comfort in Theo's helpless softness. Only Maren was saddened by her son's fierce progress. Week by week, Theo grew stronger. <u>Strapped into his high chair, he reached and stretched until his arms tired, working again and again to grab the spoon for himself.</u></p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It expresses hope that Maren will adjust to Theo's growth.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explores some of the narrator's psychological characteristics.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It offers a detail that shows how Theo is growing stronger.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It indicates how sad Maren is by describing a behavior she engages in.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The narrator notes that Theo is growing stronger \"week by week,\" and the underlined sentence reinforces this by describing Theo's effortful reaching and grabbing in his high chair. It offers a specific detail of Theo's growing strength.</p><p>Choice A is incorrect. The sentence focuses on Theo, not Maren. Choice B is incorrect. The sentence describes Theo's behavior, not the narrator's psychology. Choice D is incorrect. The sentence describes Theo, not Maren's behavior.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

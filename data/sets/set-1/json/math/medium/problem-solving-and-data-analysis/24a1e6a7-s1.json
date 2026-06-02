@@ -1,0 +1,39 @@
+{
+  "questionId": "24a1e6a7-s1",
+  "originalId": "24a1e6a7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between two variables, <em>x</em> and <em>y</em>. A line of best fit passes through (0, 14) and (14, 0). Which of the following is closest to the slope of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22122.0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2.0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u22121.0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.0</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The slope is (0 \u2212 14)/(14 \u2212 0) = \u221214/14 = \u22121.0.</p><p>Choice D is wrong sign. Choices A and B come from misreading the rise/run as 2.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

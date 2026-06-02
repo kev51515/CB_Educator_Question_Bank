@@ -1,0 +1,39 @@
+{
+  "questionId": "81b664bc-s1",
+  "originalId": "81b664bc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <em>ABC</em> is similar to triangle <em>DEF</em>, with <em>A</em>, <em>B</em>, <em>C</em> corresponding to <em>D</em>, <em>E</em>, <em>F</em>, respectively. If AB = 8, DE = 10, and BC = 14, what is the length of <em>EF</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11.2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In similar triangles, corresponding sides are proportional. The scale factor from triangle ABC to triangle DEF is DE/AB = 10/8 = 1.25. Therefore EF = 1.25 &times; BC = 1.25(14) = 17.5. Choice B uses 8/10 instead of 10/8. Choices C and D result from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.medium"
+}

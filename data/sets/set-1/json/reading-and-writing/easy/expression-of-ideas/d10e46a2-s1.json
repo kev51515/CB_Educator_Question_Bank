@@ -1,0 +1,25 @@
+{
+  "questionId": "d10e46a2-s1",
+  "originalId": "d10e46a2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The diplomats of the Republic of Venice were famous for their sharp, witty rejoinders, a quality they maintained even when negotiating with hostile foreign powers. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when an Ottoman ambassador boasted that his sultan's army could march from sunrise to sunset across Venetian territory, a Venetian envoy calmly replied, \"Yes&mdash;but it would have to march at night.\"</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Rather,</p>"},
+    {"id": "c", "content": "<p>In other words,</p>"},
+    {"id": "d", "content": "<p>That said,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"For instance\" logically signals that the exchange between the Ottoman ambassador and the Venetian envoy is an example supporting the previous claim&mdash;that Venetian diplomats employed sharp wit even in hostile negotiations.</p><p>Choice B is incorrect because \"rather\" illogically signals contrast. Choice C is incorrect because \"in other words\" illogically signals restatement. Choice D is incorrect because \"that said\" illogically signals exception, when the exchange exemplifies the claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "f224df07-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium", "verdict": "difficulty_drift", "detail": "Clone has two unknown counts with two competing constraints (budget ≤470 AND minimum count ≥8) requiring algebraic solving of a system — this matches the A2.T2.hard lever, not medium."},
+  {"id": "dd875c97-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium", "verdict": "aspect_drift", "detail": "A2.T2 must produce a numeric extremum, but this clone asks 'which inequality represents...' and the keyed answer is an inequality (15x+40y≤2950). This is an A1.T1 two-variable budget setup, not A2.T2."},
+  {"id": "c17d9ba9-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.medium", "verdict": "difficulty_drift", "detail": "Clone substitutes y=5 to compute a single numeric bound (x=12). Per A5.T1, this is the hard lever ('requires substituting a specific value... answer is a single number'); medium should return an inequality form."},
+  {"id": "9e5863bd-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium", "verdict": "difficulty_drift", "detail": "Medium A1.T2 requires multiplying a per-unit range by a fixed quantity, or composing rates. This clone is a direct compound inequality on the same stated min/max with no rate conversion — matches easy lever, not medium."},
+  {"id": "ecca0603-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium", "verdict": "difficulty_drift", "detail": "Clone is a system of two inequalities with three rows per table — both characteristics of the A3.T2.hard lever. Medium requires a single inequality with two rows per table."},
+  {"id": "6daf8d70-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "b78cd5df-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "d9733ed9-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium", "verdict": "ok"},
+  {"id": "0b221d05-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium", "verdict": "aspect_drift", "detail": "Tagged A4 (match graph to inequality) but stem has no graph; it gives a textual inequality y<2x−3 and asks which ordered pair satisfies it. This is A3.T1 (point satisfies inequality)."},
+  {"id": "e723bd67-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium", "verdict": "difficulty_drift", "detail": "Clone uses 3x−y>50 with three rows per table — the larger-coefficient/3-row pattern characterizes A3.T2.hard, not medium (which is small positive-slope, two rows)."},
+  {"id": "74c98c82-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "c41e5688-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium", "verdict": "ok"},
+  {"id": "6cb9bf45-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium", "verdict": "ok"},
+  {"id": "d02193fb-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium", "verdict": "ok"},
+  {"id": "948087f2-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium", "verdict": "ok"},
+  {"id": "968e9e51-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium", "verdict": "ok"},
+  {"id": "b31c3117-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.medium", "verdict": "ok"},
+  {"id": "90bd9ef8-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.medium", "verdict": "ok"},
+  {"id": "f2bbd43d-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium", "verdict": "difficulty_drift", "detail": "Clone has a partially specified point (x, 22) requiring elimination of options against the system — this is the A3.T1.hard lever, not medium (medium uses fully specified candidate pairs)."},
+  {"id": "64c85440-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium", "verdict": "ok"}
+]

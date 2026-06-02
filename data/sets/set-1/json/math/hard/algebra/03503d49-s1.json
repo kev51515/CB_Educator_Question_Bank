@@ -1,0 +1,39 @@
+{
+  "questionId": "03503d49-s1",
+  "originalId": "03503d49",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A manager plans to purchase the same model of laptop for each of 64 employees. The total budget for these laptops is $52,000, which includes a 6% sales tax. Which of the following is closest to the maximum possible price per laptop, before sales tax, the manager could pay based on this budget?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$700</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$766</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$812</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$860</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Let p be the pre-tax price. The total cost is 64 \u00d7 1.06p = 52,000, so 67.84p = 52,000, giving p \u2248 $766.51. The closest option is $766.</p><p>Choice A underestimates the price. Choices C and D overestimate.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard"
+}

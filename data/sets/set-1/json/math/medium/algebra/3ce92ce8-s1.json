@@ -1,0 +1,22 @@
+{
+  "questionId": "3ce92ce8-s1",
+  "originalId": "3ce92ce8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>For the function f(x) = 7x - 4, the graph of y = f(x) in the <em>xy</em>-plane is parallel to line <em>k</em>. What is the slope of line <em>k</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The graph of f(x) = 7x - 4 is a line with slope 7 (the coefficient of x in y = mx + b form). Parallel lines share the same slope, so the slope of line <em>k</em> is also 7.</p>",
+  "templateId": "linear-functions.A1.T3.medium"
+}

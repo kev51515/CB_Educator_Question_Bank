@@ -1,0 +1,25 @@
+{
+  "questionId": "3e6ad72d-s1",
+  "originalId": "3e6ad72d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>A study by a team led by behavioral economist Priya Subramanian suggests that high indoor humidity in the hours before a negotiation can lead to noticeably more conciliatory offers. <u>Drawing on transaction-level data from 2007 to 2018 for a chain of mid-sized real-estate brokerages, the researchers paired more than 14,000 listed prices with the final agreed prices and matched each negotiation to weather-station humidity readings for that morning.</u> They found that bargainers who had worked in humid conditions accepted prices, on average, three to five percent farther from their initial demand than those in drier offices.</p>",
+  "stem": "<p>Which choice best states the function of the underlined sentence in the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To present a specific example that illustrates the study's findings.</p>"},
+    {"id": "b", "content": "<p>To summarize the conclusions the team drew from its data.</p>"},
+    {"id": "c", "content": "<p>To call out a limitation that the team faced in conducting its analysis.</p>"},
+    {"id": "d", "content": "<p>To describe part of the methodology used in the team's study.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The underlined sentence describes how the researchers built their dataset&mdash;the years covered, the kind of transactions, the number of negotiations, and the matching to weather records&mdash;all of which lays out the study's methodology. The conclusion is then stated in the following sentence.</p><p>Choice A is incorrect because no individual case is offered. Choice B is incorrect because the results appear only after the underlined portion. Choice C is incorrect because no limitation is acknowledged within the underlined sentence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.hard"
+}

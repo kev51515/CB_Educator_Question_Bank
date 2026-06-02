@@ -1,0 +1,39 @@
+{
+  "questionId": "16889ef3-s1",
+  "originalId": "16889ef3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Coal production in a certain region dropped from 6 million tons in 2005 to 2.4 million tons in 2017. Assuming production decreased at a constant rate, which of the following linear functions f best models the production, in millions of tons, t years after 2005?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(t) = 6t - 0.30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(t) = -0.30t + 6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(t) = 0.30t + 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(t) = -0.30t + 2.4</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope is (2.4 - 6)/(17 - 5) = -3.6/12 = -0.30 million tons per year. At t = 0 (year 2005), production is 6, so f(t) = -0.30t + 6. Verification at t = 12: f(12) = -3.6 + 6 = 2.4 \u2713.</p><p>Choice A has slope and intercept swapped. Choice C uses a positive slope instead of negative. Choice D uses the wrong y-intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T2.hard"
+}

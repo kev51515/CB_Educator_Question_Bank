@@ -1,0 +1,22 @@
+{
+  "questionId": "0366d965-s1",
+  "originalId": "0366d965",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table gives the coordinates of three points on a line in the <i>xy</i>-plane, where <i>a</i> and <i>n</i> are constants.</p><table><thead><tr><th><i>x</i></th><th><i>y</i></th></tr></thead><tbody><tr><td><i>a</i></td><td>7</td></tr><tr><td>5</td><td><i>n</i></td></tr><tr><td>8</td><td>19</td></tr></tbody></table><p>If the slope of the line is 2, what is the value of <i>a</i> + <i>n</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "15"
+  ],
+  "rationale": "<p>The slope between (<i>a</i>, 7) and (8, 19) equals 2: (19 &minus; 7)/(8 &minus; <i>a</i>) = 2, so 8 &minus; <i>a</i> = 6 and <i>a</i> = 2. The slope between (2, 7) and (5, <i>n</i>) equals 2: (<i>n</i> &minus; 7)/3 = 2, so <i>n</i> = 13. Therefore <i>a</i> + <i>n</i> = 15.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

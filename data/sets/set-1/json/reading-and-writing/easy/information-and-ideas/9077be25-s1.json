@@ -1,0 +1,39 @@
+{
+  "questionId": "9077be25-s1",
+  "originalId": "9077be25",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Lois Weber directed dozens of feature films between 1911 and 1934. She often wrote and produced her own films as well, and she wanted her stories to feel grounded in everyday life. She would encourage her actors to use small, restrained gestures and to deliver dialogue (when sound was eventually added) in plain, conversational tones. At the time, however, most filmmakers favored grand, sweeping gestures and dramatic facial expressions to communicate emotion in a silent or partially silent medium. The style of acting in Weber's films was therefore ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>very unusual for the period.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>familiar to actors who had worked on other directors' films.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>copied by many of Weber's peers.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>better than film acting today.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The text contrasts Weber's restrained style with the dominant grand-gesture style of the period \u2014 so her approach was unusual at the time.</p><p>Choice B is wrong: actors trained in the grand style would have found Weber's restrained style unfamiliar. Choice C contradicts the text's claim that other filmmakers worked differently. Choice D goes beyond the text, which never compares to acting today.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T10.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "3318d37b-s1",
+  "originalId": "3318d37b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A type of cheese costs 7.50 dollars per pound. What is the cost, in dollars, for 8 pounds of the cheese?</p>",
+  "answerOptions": [],
+  "keys": [
+    "60"
+  ],
+  "rationale": "<p>The cost is rate \u00d7 quantity = 7.50 \u00d7 8 = 60 dollars.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

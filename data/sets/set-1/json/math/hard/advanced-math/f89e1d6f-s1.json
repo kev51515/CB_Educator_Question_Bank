@@ -1,0 +1,39 @@
+{
+  "questionId": "f89e1d6f-s1",
+  "originalId": "f89e1d6f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Let n = p + q. Which of the following is equivalent to z<sup>2</sup> &minus; p<sup>2</sup> &minus; 2pq &minus; q<sup>2</sup>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(z &minus; n)(z + n)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(z + n)<sup>2</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(z &minus; n)<sup>2</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>z<sup>2</sup> &minus; nz &minus; n<sup>2</sup></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Note that p<sup>2</sup> + 2pq + q<sup>2</sup> = (p + q)<sup>2</sup> = n<sup>2</sup>. So z<sup>2</sup> &minus; p<sup>2</sup> &minus; 2pq &minus; q<sup>2</sup> = z<sup>2</sup> &minus; n<sup>2</sup> = (z &minus; n)(z + n). The other choices come from sign errors or from forgetting the middle term.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A2.T6.hard"
+}

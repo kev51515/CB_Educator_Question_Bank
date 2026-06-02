@@ -1,0 +1,25 @@
+{
+  "questionId": "adc8ea28-s1",
+  "originalId": "adc8ea28",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>The well-preserved hominin skeleton known as Skeleton-K, recovered from a cave in northern Spain in 2014, can help paleoanthropologists not only <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> regional patterns of Neanderthal migration but also clarify the late Middle Paleolithic more broadly, offering important details about the climate in which Skeleton-K lived.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>trace</p>"},
+    {"id": "b", "content": "<p>endure</p>"},
+    {"id": "c", "content": "<p>rank</p>"},
+    {"id": "d", "content": "<p>produce</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Trace\" means to follow or map out the course of something. The text indicates that the skeleton helps researchers map the patterns of Neanderthal movement and clarify the broader era; \"trace\" fits the action of charting those patterns.</p><p>Choice B is incorrect. \"Endure\" means to tolerate or last through, which makes no sense as something paleoanthropologists do to migration patterns. Choice C is incorrect. \"Rank\" would imply assigning relative importance to patterns, which the text does not describe. Choice D is incorrect. Researchers do not \"produce\" the migration patterns themselves; they detect and follow them in the evidence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

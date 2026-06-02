@@ -1,0 +1,39 @@
+{
+  "questionId": "52cb8ea4-s1",
+  "originalId": "52cb8ea4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>=</mo><mn>10</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>3</mn><mi>x</mi><mo>-</mo><mi>y</mi><mo>=</mo><mn>9</mn></math></p>\n<p>If <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> is the solution to the system of equations above, what is the value of <math><mi>x</mi><mo>+</mo><mi>y</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>11</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Solve by substitution. From the second equation, y = 3x - 9. Substituting into the first: x + 2(3x - 9) = 10, so 7x - 18 = 10, giving x = 4. Then y = 12 - 9 = 3. So x + y = 4 + 3 = 7.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium"
+}

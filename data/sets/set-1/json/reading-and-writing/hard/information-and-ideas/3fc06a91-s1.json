@@ -1,0 +1,39 @@
+{
+  "questionId": "3fc06a91-s1",
+  "originalId": "3fc06a91",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Energy Consumption by Source in Country A and Country B, 1900&ndash;2020 (% of total energy use)</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Year</th><th>Coal in A</th><th>Oil/Gas in A</th><th>Renewables in A</th><th>Coal in B</th><th>Oil/Gas in B</th><th>Renewables in B</th></tr>\n<tr><td>1900</td><td>70</td><td>20</td><td>10</td><td>72</td><td>18</td><td>10</td></tr>\n<tr><td>1950</td><td>50</td><td>40</td><td>10</td><td>60</td><td>30</td><td>10</td></tr>\n<tr><td>1980</td><td>30</td><td>55</td><td>15</td><td>40</td><td>50</td><td>10</td></tr>\n<tr><td>2020</td><td>10</td><td>30</td><td>60</td><td>20</td><td>40</td><td>40</td></tr>\n</table>\n<p>Rows may not add up to 100 due to rounding. Over the past century, the share of total energy use met by coal has fallen in both Country A and Country B, while the share met by renewables has risen. However, the transition occurred at very different rates in the two countries. This can be seen most clearly by comparing the energy mix in both countries in ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1900 with the energy mix in 1950.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1900 with the energy mix in 2020.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1980 with the energy mix in 2020.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1950 with the energy mix in 2020.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the period 1980&ndash;2020 is when the divergence in transition rates between A and B is sharpest: from 1980 to 2020, renewables in A jumped from 15% to 60% (a 45-point increase), while in B they grew only from 10% to 40% (a 30-point increase). Earlier comparisons (1900&ndash;1950, 1900&ndash;2020) show overall change but not where the rates most clearly diverged. The contrast that &ldquo;happened at very different rates&rdquo; is sharpest in the 1980&ndash;2020 window.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "5c58cec0-s1",
+  "originalId": "5c58cec0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>To ensure that scientific findings can be trusted, researchers must be able to reproduce each other's experiments using identical procedures. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many journals now require authors to publish detailed protocols alongside their results. These protocols allow other scientists to follow the exact same steps when attempting to verify the original findings.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For this reason,</p>"},
+    {"id": "b", "content": "<p>Regardless,</p>"},
+    {"id": "c", "content": "<p>In contrast,</p>"},
+    {"id": "d", "content": "<p>In addition,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"For this reason\" logically signals that the information that follows&mdash;that journals require authors to publish detailed protocols&mdash;is a result of the previous claim that researchers must be able to reproduce each other's experiments using identical procedures.</p><p>Choice B is incorrect because \"regardless\" illogically signals the information is true despite the previous claim, rather than a result of it. Choice C is incorrect because \"in contrast\" illogically signals a contrast where there is a causal relationship. Choice D is incorrect because \"in addition\" illogically signals an additional unrelated fact when the second sentence is a consequence of the first.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

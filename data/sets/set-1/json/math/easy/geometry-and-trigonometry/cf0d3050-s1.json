@@ -1,0 +1,22 @@
+{
+  "questionId": "cf0d3050-s1",
+  "originalId": "cf0d3050",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>u</em> and <em>v</em> are parallel and are cut by a transversal. One interior angle between the parallel lines has measure 105 degrees. On the opposite side of the transversal, a marked interior angle has measure x degrees, where the angle vertical to it lies on the same side of the transversal as the 105-degree angle. What is the value of x?</p>",
+  "answerOptions": [],
+  "keys": [
+    "75"
+  ],
+  "rationale": "<p>The correct answer is 75. The 105-degree angle and the angle vertical to the x-degree angle are same-side interior angles between parallel lines, so they are supplementary: x + 105 = 180, giving x = 75.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

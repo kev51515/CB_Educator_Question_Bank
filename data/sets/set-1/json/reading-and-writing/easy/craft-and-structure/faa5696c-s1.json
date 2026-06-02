@@ -1,0 +1,39 @@
+{
+  "questionId": "faa5696c-s1",
+  "originalId": "faa5696c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Bel Kaufman was committed to preserving the Yiddish-language stories and folk humor of her grandfather, Sholem Aleichem. To gather these accounts, Kaufman <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> relatives and family acquaintances, whom she interviewed at length about their memories of her grandfather's life and writings. Today, Kaufman's archive is an important resource for scholars of Yiddish literature.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>disregarded</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>turned to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>contradicted</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>discouraged</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because \"turned to\" means relied on for help, which fits the description of Kaufman interviewing relatives to gather material. Choice A is incorrect because \"disregarded\" means ignored, the opposite of consulting people for information. Choice C is incorrect because \"contradicted\" implies disputing the relatives' accounts, but the text describes information-gathering, not disagreement. Choice D is incorrect because \"discouraged\" means dissuaded; the text describes seeking out rather than discouraging.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

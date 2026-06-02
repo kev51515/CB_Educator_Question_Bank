@@ -1,0 +1,39 @@
+{
+  "questionId": "1bf2173e-s1",
+  "originalId": "1bf2173e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In a four-year study of <em>Strepsiptera</em> parasites infecting <em>Polistes dominula</em> paper wasps, entomologist L\u00e9a Carvalho and colleagues observed a counterintuitive pattern: rather than shortening its host's life, as parasites usually do, <em>Strepsiptera</em> infection markedly prolonged the lifespan of an infected worker wasp and appeared to delay the typical signs of aging. The infected wasps also stopped foraging, brood-tending, and nest-construction duties and were instead fed and groomed by their uninfected nestmates as they remained inside the nest. By contrast, the researchers found that uninfected workers in parasitized colonies had distinctly shorter lifespans than uninfected workers in colonies free of <em>Strepsiptera</em>, most likely because the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>uninfected workers face direct risk of catching <em>Strepsiptera</em> while grooming and feeding the infected workers in the nest.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>uninfected workers in parasitized colonies are physically more active than their counterparts in unparasitized colonies and so are better able to escape predators that attack the nest.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>typical lifespan of <em>P. dominula</em> worker wasps in unparasitized colonies is shorter than the four-year span of the researchers' study.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>burden of making up for the work no longer done by the infected wasps, on top of caring for them, is taxing for the uninfected workers.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The passage notes that infected wasps stop contributing to the colony's labor and instead consume care (feeding, grooming) from uninfected workers. The uninfected workers in parasitized colonies therefore both shoulder extra colony work and provide care for the parasitized individuals, which most plausibly explains their shortened lifespans.</p><p>Choice A is incorrect: although direct transmission risk is plausible at first glance, the passage offers no evidence that close contact with infected wasps spreads the parasite. Choice B is incorrect because higher activity would be evidence of vigor, not of shorter lifespan, and predator escape isn't introduced as a factor. Choice C is incorrect because the natural lifespan of unparasitized wasps does not by itself explain why uninfected workers in parasitized colonies live <em>shorter</em> than uninfected workers in colonies without parasites.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

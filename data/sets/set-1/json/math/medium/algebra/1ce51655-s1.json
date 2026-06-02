@@ -1,0 +1,39 @@
+{
+  "questionId": "1ce51655-s1",
+  "originalId": "1ce51655",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A pitcher contains 32 ounces of juice. When uncovered, the amount of juice decreases by 1 ounce every 5 days. If 18 ounces of juice remain in the pitcher, for how many days has it been uncovered?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>70</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>90</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The pitcher has lost 32 - 18 = 14 ounces. Each ounce lost takes 5 days, so the time uncovered is 14 \u00d7 5 = 70 days. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.medium"
+}

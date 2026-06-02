@@ -1,0 +1,39 @@
+{
+  "questionId": "b1b5300b-s1",
+  "originalId": "b1b5300b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes information about 12 smartphones available for sale at an electronics shop.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th></th><th>Waterproof</th><th>Not waterproof</th><th>Total</th></tr></thead><tbody><tr><td>$400 or less</td><td style=\"text-align: center;\">4</td><td style=\"text-align: center;\">2</td><td style=\"text-align: center;\">6</td></tr><tr><td>More than $400</td><td style=\"text-align: center;\">3</td><td style=\"text-align: center;\">3</td><td style=\"text-align: center;\">6</td></tr><tr><td>Total</td><td style=\"text-align: center;\">7</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">12</td></tr></tbody></table></figure><p>If one of the smartphones listed for sale is selected at random, what is the probability that the smartphone selected will be a waterproof smartphone priced at $400 or less?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4/7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4/6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4/12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7/12</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total number of smartphones is 12, and 4 of them are waterproof and priced at $400 or less. So the probability is 4/12 (equal to 1/3). Choice A is incorrect because 4/7 is the probability that a smartphone is $400 or less given that it is waterproof. Choice B is incorrect because 4/6 is the probability that a smartphone is waterproof given that it is $400 or less. Choice D is incorrect because 7/12 is the probability that a smartphone is waterproof (regardless of price).</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A2.T5.medium"
+}

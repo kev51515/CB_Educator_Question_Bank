@@ -1,0 +1,25 @@
+{
+  "questionId": "d5c2a4d4-s1",
+  "originalId": "d5c2a4d4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from Pierre Loti&rsquo;s nineteenth-century novel <em>Iceland Fisherman</em> (translated by Marius P&eacute;rard). The narrator is aboard a sailing vessel becalmed at midnight off the Icelandic coast.</p>\n<blockquote>\n<p>The coast has dropped from sight, and we are folded into a hush so deep that the rigging seems to forget its complaints. Around us the sea spreads itself out like a sheet of pale metal, and our own sail, struck by the high moon, hangs above us like the wing of some enormous still bird. We no longer call to one another, no longer reckon the watches; we drift along in a profound stillness. The air that holds us up has made of us all creatures resembling itself, mute, content, weightless beings, strangely attentive though without motion.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The narrator and his companions are wholly absorbed in the altered perception that the calm sea has given them.</p>"},
+    {"id": "b", "content": "<p>The narrator grows increasingly lonely even though his companions remain near him on the becalmed vessel.</p>"},
+    {"id": "c", "content": "<p>The narrator is unexpectedly delighted by his companions&rsquo; outspoken enthusiasm about the becalmed sea.</p>"},
+    {"id": "d", "content": "<p>The narrator and his companions are unsettled by the disorienting effects of the night air.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The narrator describes the sea as pale metal and the sail as a still wing, and says that he and his companions no longer call to one another, drift in profound stillness, and have become mute and strangely attentive — that is, wholly absorbed in their altered perception of the calm sea.</p><p>Choice B is incorrect because the narrator describes a shared experience rather than personal loneliness. Choice C is incorrect because the companions are described as mute and content, not as outspokenly enthusiastic. Choice D is incorrect because the narrator calls the company &ldquo;content&rdquo; and &ldquo;strangely attentive,&rdquo; not unsettled.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

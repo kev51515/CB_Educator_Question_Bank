@@ -1,0 +1,22 @@
+[
+  {"id": "9d4270fe-s1", "templateId": "linear-equations-in-one-variable.A2.T6.medium", "verdict": "ok"},
+  {"id": "1ce51655-s1", "templateId": "linear-equations-in-one-variable.A2.T4.medium", "verdict": "ok"},
+  {"id": "feb78194-s1", "templateId": "linear-equations-in-one-variable.A2.T4.medium", "verdict": "ok"},
+  {"id": "36ab4122-s1", "templateId": "linear-equations-in-one-variable.A2.T4.medium", "verdict": "ok"},
+  {"id": "12ee1edc-s1", "templateId": "linear-equations-in-one-variable.A3.T9.medium", "verdict": "ok"},
+  {"id": "5ad9eff0-s1", "templateId": "linear-equations-in-one-variable.A2.T5.medium", "verdict": "ok"},
+  {"id": "f09097b1-s1", "templateId": "linear-equations-in-one-variable.A2.T4.medium", "verdict": "ok"},
+  {"id": "45bba652-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "76f29fa5-s1", "templateId": "linear-equations-in-one-variable.A2.T5.medium", "verdict": "ok"},
+  {"id": "018a2704-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "8c515062-s1", "templateId": "linear-equations-in-one-variable.A2.T4.medium", "verdict": "ok"},
+  {"id": "79cf8505-s1", "templateId": "linear-equations-in-one-variable.A2.T4.medium", "verdict": "ok"},
+  {"id": "620abf36-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "ce314070-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "5ab9903f-s1", "templateId": "linear-equations-in-one-variable.A2.T5.medium", "verdict": "ok"},
+  {"id": "eafdbbbd-s1", "templateId": "linear-equations-in-one-variable.A1.T3.medium", "verdict": "ok"},
+  {"id": "7a5a74a6-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "4f669597-s1", "templateId": "linear-equations-in-one-variable.A1.T3.medium", "verdict": "ok"},
+  {"id": "aa85b138-s1", "templateId": "linear-equations-in-one-variable.A2.T6.medium", "verdict": "ok"},
+  {"id": "d0a2fed5-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"}
+]

@@ -1,0 +1,24 @@
+{
+  "questionId": "c6dff223-s1",
+  "originalId": "c6dff223",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangle PQR is similar to triangle XYZ, where angle P corresponds to angle X and angles R and Z are right angles. The length of segment PQ is 3.4 times the length of segment XY. If tan P = 8/15, what is the value of sin X?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8/17",
+    ".4705",
+    ".4706"
+  ],
+  "rationale": "<p>Because the triangles are similar, corresponding angles are equal: angle X equals angle P. The 3.4 scale factor does not affect angle measures. With tan X = 8/15, we have an 8-15-17 right triangle (since 8&sup2; + 15&sup2; = 64 + 225 = 289 = 17&sup2;). Therefore sin X = 8/17 &asymp; 0.4706.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A5.T10.hard"
+}

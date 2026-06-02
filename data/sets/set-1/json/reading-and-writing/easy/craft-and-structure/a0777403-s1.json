@@ -1,0 +1,39 @@
+{
+  "questionId": "a0777403-s1",
+  "originalId": "a0777403",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a fictional 2014 novella. While working on her translation of a poem written in Bengali into English, the narrator looks out the window at night to clear her thoughts. I tried to distract myself with these ordinary sights of the neighborhood before <u>completing</u> the final stanza of the poem.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;completing&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Destroying</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Advertising</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Finishing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Rejecting</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"completing\" the final stanza means finishing it. Choice A is incorrect because destroying contradicts working on a translation. Choice B is incorrect because advertising doesn\u2019t fit. Choice D is incorrect because rejecting contradicts the effort to translate.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

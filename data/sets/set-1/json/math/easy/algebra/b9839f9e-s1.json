@@ -1,0 +1,39 @@
+{
+  "questionId": "b9839f9e-s1",
+  "originalId": "b9839f9e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation <i>T</i> = 4.50<i>x</i> + 12.00<i>y</i> represents the total amount of money, in dollars, a gift shop charges for <i>x</i> mugs and <i>y</i> posters. The price, in dollars, of each mug is the same, and the price, in dollars, of each poster is the same. Which of the following is the best interpretation of 12.00 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The price, in dollars, of one mug</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of mugs sold during the day</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The number of posters sold during the day</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The price, in dollars, of one poster</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The total amount from posters is 12.00<i>y</i> dollars. When <i>y</i> = 1, this is 12.00 dollars, so 12.00 is the price of one poster.</p><p>Choice A is the role of 4.50, not 12.00. Choices B and C describe counts, not unit prices.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.easy"
+}

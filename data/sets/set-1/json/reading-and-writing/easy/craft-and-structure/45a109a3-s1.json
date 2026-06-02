@@ -1,0 +1,39 @@
+{
+  "questionId": "45a109a3-s1",
+  "originalId": "45a109a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Mary Shelley's 1818 novel <em>Frankenstein</em>. The narrator is traveling at night across a frozen plain.</p><blockquote><p>The cracking of the ice grew louder and closer, as though it were closing in on us from every direction. I grew dreadfully afraid, and the dogs shared my fear. The guide, however, was not in the least <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">disturbed</span>; he kept turning his head this way and that, but I could see nothing through the swirling snow.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the word \"disturbed\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Alarmed</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Offended</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Interrupted</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Disorganized</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the surrounding sentences describe a frightening situation in which the narrator and the dogs feel fear, while the guide does not share that fear. \"Alarmed\" means frightened or worried, which fits the contrast with the narrator's fear.</p><p>Choice B is incorrect because \"offended\" describes feeling insulted, not afraid. Choice C is incorrect because \"interrupted\" means halted in an activity, which does not fit the contrast with fear. Choice D is incorrect because \"disorganized\" means lacking order, which does not fit the emotional contrast set up by the passage.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

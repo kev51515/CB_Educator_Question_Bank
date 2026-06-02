@@ -1,0 +1,39 @@
+{
+  "questionId": "fe6a49d6-s1",
+  "originalId": "fe6a49d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the distribution of the number of apples per basket for 25 baskets at a market.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Apples per basket</th><th>22</th><th>23</th><th>24</th><th>25</th><th>26</th></tr><tr><td>Number of baskets</td><td>3</td><td>6</td><td>9</td><td>4</td><td>3</td></tr></table><p>How many of these baskets contain exactly 24 apples?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. According to the table, 9 baskets contain exactly 24 apples.</p><p>Choice B is incorrect. This is the number of baskets containing 25 apples.</p><p>Choice C is incorrect. This is the number of apples per basket asked about, not the count of baskets.</p><p>Choice D is incorrect. This is the total number of baskets, not the number that contain 24 apples.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

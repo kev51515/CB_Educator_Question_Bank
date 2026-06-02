@@ -1,0 +1,39 @@
+{
+  "questionId": "83687083-s1",
+  "originalId": "83687083",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Due to their dense imagery, fragmented syntax, and obscure references, many of Gertrude Stein’s poems can be quite difficult to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and thus continue to be the subject of debate among literary scholars.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>compose</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>decipher</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>translate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>publish</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"decipher\" means to figure out the meaning of something difficult, fitting the description of obscure poems that scholars debate. Choice A is incorrect because composing means creating, not understanding. Choice C is incorrect because translating refers to languages. Choice D is incorrect because publishing isn’t the issue.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "45c03837",
+  "externalId": "fcf354d9-b083-4427-8631-a2cca7e8d2b1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771171,
+  "createDate": 1776362771171,
+  "scrapedAt": "2026-05-25T12:21:15.372773+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "ce03b2e6-1393-45f9-8c74-ac7b0556cb2e",
+      "content": "<p>sonic pulses can be heard at significantly greater ocean depths than ship sounds can.</p>"
+    },
+    {
+      "id": "233a4a85-8a77-4dba-9b94-4d5db68bd5ac",
+      "content": "<p>ship sounds contribute so much to the overall sound level that the addition of sonic pulses has little effect on the narwhals&rsquo; auditory environment.</p>"
+    },
+    {
+      "id": "c8bb0c8b-420c-4182-b74d-86082019b030",
+      "content": "<p>narwhals forage at shallower depths in the presence of ship sounds alone than in the presence of ship sounds coupled with sonic pulses.</p>"
+    },
+    {
+      "id": "4423e323-90ae-4406-99f0-316159a984ac",
+      "content": "<p>the narwhals weren&rsquo;t as sensitive to human-caused sounds as the researchers had predicted.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "233a4a85-8a77-4dba-9b94-4d5db68bd5ac"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of human-caused noise and narwhal behavior. The text establishes that Outi Tervo and team found that while both ship sounds alone and ship sounds coupled with sonic pulses significantly affected narwhal foraging behaviors compared to natural conditions, there were negligible differences between the narwhals&rsquo; responses to the two sound exposure types (a somewhat surprising finding because one might expect that adding sonic pulses would have an even greater impact). It logically follows that if ship sounds are already so loud that adding sonic pulses to them doesn&rsquo;t substantially increase the level of human-caused sound exposure, the two conditions would produce essentially the same behavioral responses because the additional sonic pulses are essentially irrelevant.</p><p>Choice A is incorrect because the fact that sonic pulses are audible at greater depths than are ship sounds would be more likely to help explain a difference&mdash;not a similarity&mdash;in how the narwhals responded to the two types of sound exposure. If at some points during the study the narwhals were at depths where only sonic pulses (but not ship sounds) could be heard, then they might be expected to alter their diving behavior more dramatically in response to those pulses. But since the text reports negligible differences between diving behaviors in the two exposure types, the fact that sonic pulses reach greater depths than do ship sounds has little explanatory power in this context. Choice C is incorrect because the idea that the narwhals foraged at shallower depths in one of the two exposure conditions directly contradicts the information given in the text. The text states that there were negligible differences in the narwhals&rsquo; diving behaviors between the two conditions, meaning that the behaviors were essentially the same. Choice D is incorrect. Although the text states that two conditions with human-caused sounds (ship sounds alone and ship sounds coupled with sonic pulses) had essentially the same effect on narwhals&rsquo; deep dives, this indicates only that sonic pulses didn&rsquo;t meaningfully change the effect of ship sounds, not that the narwhals were less sensitive to human-caused sounds than predicted. Indeed, the text makes it clear that the sounds significantly altered the narwhals&rsquo; behavior.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>Outi Tervo and team studied the effect of human-caused noise on narwhals (<em>Monodon monoceros</em>), arctic marine mammals that are sensitive to acoustic changes in their environment. Hypothesizing that elevated sound levels affect foraging among narwhals, Tervo&rsquo;s team compared narwhal diving behaviors in natural sound conditions with those behaviors in two human-caused sound exposure conditions&mdash;ship sounds and ship sounds coupled with sonic pulses. Both exposure conditions resulted in significant decreases in the number and target depth of deep dives (associated with foraging) relative to natural conditions. However, differences between diving behaviors in the two exposure types were negligible, a finding that could be attributed to the fact that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "233a4a85-8a77-4dba-9b94-4d5db68bd5ac"
+    ],
+    "answerOptions": [
+      {
+        "id": "ce03b2e6-1393-45f9-8c74-ac7b0556cb2e",
+        "content": "<p>sonic pulses can be heard at significantly greater ocean depths than ship sounds can.</p>"
+      },
+      {
+        "id": "233a4a85-8a77-4dba-9b94-4d5db68bd5ac",
+        "content": "<p>ship sounds contribute so much to the overall sound level that the addition of sonic pulses has little effect on the narwhals&rsquo; auditory environment.</p>"
+      },
+      {
+        "id": "c8bb0c8b-420c-4182-b74d-86082019b030",
+        "content": "<p>narwhals forage at shallower depths in the presence of ship sounds alone than in the presence of ship sounds coupled with sonic pulses.</p>"
+      },
+      {
+        "id": "4423e323-90ae-4406-99f0-316159a984ac",
+        "content": "<p>the narwhals weren&rsquo;t as sensitive to human-caused sounds as the researchers had predicted.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of human-caused noise and narwhal behavior. The text establishes that Outi Tervo and team found that while both ship sounds alone and ship sounds coupled with sonic pulses significantly affected narwhal foraging behaviors compared to natural conditions, there were negligible differences between the narwhals&rsquo; responses to the two sound exposure types (a somewhat surprising finding because one might expect that adding sonic pulses would have an even greater impact). It logically follows that if ship sounds are already so loud that adding sonic pulses to them doesn&rsquo;t substantially increase the level of human-caused sound exposure, the two conditions would produce essentially the same behavioral responses because the additional sonic pulses are essentially irrelevant.</p><p>Choice A is incorrect because the fact that sonic pulses are audible at greater depths than are ship sounds would be more likely to help explain a difference&mdash;not a similarity&mdash;in how the narwhals responded to the two types of sound exposure. If at some points during the study the narwhals were at depths where only sonic pulses (but not ship sounds) could be heard, then they might be expected to alter their diving behavior more dramatically in response to those pulses. But since the text reports negligible differences between diving behaviors in the two exposure types, the fact that sonic pulses reach greater depths than do ship sounds has little explanatory power in this context. Choice C is incorrect because the idea that the narwhals foraged at shallower depths in one of the two exposure conditions directly contradicts the information given in the text. The text states that there were negligible differences in the narwhals&rsquo; diving behaviors between the two conditions, meaning that the behaviors were essentially the same. Choice D is incorrect. Although the text states that two conditions with human-caused sounds (ship sounds alone and ship sounds coupled with sonic pulses) had essentially the same effect on narwhals&rsquo; deep dives, this indicates only that sonic pulses didn&rsquo;t meaningfully change the effect of ship sounds, not that the narwhals were less sensitive to human-caused sounds than predicted. Indeed, the text makes it clear that the sounds significantly altered the narwhals&rsquo; behavior.</p>",
+    "externalid": "fcf354d9-b083-4427-8631-a2cca7e8d2b1",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Outi Tervo and team studied the effect of human-caused noise on narwhals (<em>Monodon monoceros</em>), arctic marine mammals that are sensitive to acoustic changes in their environment. Hypothesizing that elevated sound levels affect foraging among narwhals, Tervo&rsquo;s team compared narwhal diving behaviors in natural sound conditions with those behaviors in two human-caused sound exposure conditions&mdash;ship sounds and ship sounds coupled with sonic pulses. Both exposure conditions resulted in significant decreases in the number and target depth of deep dives (associated with foraging) relative to natural conditions. However, differences between diving behaviors in the two exposure types were negligible, a finding that could be attributed to the fact that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

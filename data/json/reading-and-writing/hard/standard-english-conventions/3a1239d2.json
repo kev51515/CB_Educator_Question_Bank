@@ -1,0 +1,72 @@
+{
+  "questionId": "3a1239d2",
+  "externalId": "56878c2f-bb61-4e08-91cf-80b1d17b0ac0",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:53.765253+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "75c51029-c087-4059-b801-b75557e81fea",
+      "content": "<p>searched</p>"
+    },
+    {
+      "id": "9f9b144b-869e-445f-b051-bef14c595bf5",
+      "content": "<p>searching</p>"
+    },
+    {
+      "id": "90506243-93f3-44a6-988b-e68806200271",
+      "content": "<p>were searching</p>"
+    },
+    {
+      "id": "5fe9ab42-f82d-4b06-b843-7b017b4363de",
+      "content": "<p>have searched</p>"
+    }
+  ],
+  "keys": [
+    "9f9b144b-869e-445f-b051-bef14c595bf5"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle &ldquo;searching&rdquo; is correctly used to form a supplementary element that modifies the subject &ldquo;scientists,&rdquo; indicating that the scientists who adapted the test were looking for evidence of self-awareness in snakes.</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite past tense verb &ldquo;searched&rdquo; can&rsquo;t be used in this way to form a supplementary element that indicates what evidence the scientists who adapted the test were looking for. Choice C is incorrect because it results in an ungrammatical sentence. The finite past progressive verb &ldquo;were searching&rdquo; can&rsquo;t be used in this way to form a supplementary element that indicates what evidence the scientists who adapted the test were looking for. Choice D is incorrect because it results in an ungrammatical sentence. The finite present perfect verb &ldquo;have searched&rdquo; can&rsquo;t be used in this way to form a supplementary element that indicates what evidence the scientists who adapted the test were looking for.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>If an animal can recognize itself in a reflective surface (&ldquo;the mirror test&rdquo;), it is considered to have self-awareness. In a recent study, scientists <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> for evidence of self-awareness in snakes, species that rely primarily on olfactory rather than visual processing, adapted the test to foreground smell, modifying the scent trails of North American eastern garter snakes and African ball pythons.</p>",
+    "keys": [
+      "9f9b144b-869e-445f-b051-bef14c595bf5"
+    ],
+    "answerOptions": [
+      {
+        "id": "75c51029-c087-4059-b801-b75557e81fea",
+        "content": "<p>searched</p>"
+      },
+      {
+        "id": "9f9b144b-869e-445f-b051-bef14c595bf5",
+        "content": "<p>searching</p>"
+      },
+      {
+        "id": "90506243-93f3-44a6-988b-e68806200271",
+        "content": "<p>were searching</p>"
+      },
+      {
+        "id": "5fe9ab42-f82d-4b06-b843-7b017b4363de",
+        "content": "<p>have searched</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle &ldquo;searching&rdquo; is correctly used to form a supplementary element that modifies the subject &ldquo;scientists,&rdquo; indicating that the scientists who adapted the test were looking for evidence of self-awareness in snakes.</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite past tense verb &ldquo;searched&rdquo; can&rsquo;t be used in this way to form a supplementary element that indicates what evidence the scientists who adapted the test were looking for. Choice C is incorrect because it results in an ungrammatical sentence. The finite past progressive verb &ldquo;were searching&rdquo; can&rsquo;t be used in this way to form a supplementary element that indicates what evidence the scientists who adapted the test were looking for. Choice D is incorrect because it results in an ungrammatical sentence. The finite present perfect verb &ldquo;have searched&rdquo; can&rsquo;t be used in this way to form a supplementary element that indicates what evidence the scientists who adapted the test were looking for.</p>",
+    "externalid": "56878c2f-bb61-4e08-91cf-80b1d17b0ac0",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>If an animal can recognize itself in a reflective surface (&ldquo;the mirror test&rdquo;), it is considered to have self-awareness. In a recent study, scientists <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> for evidence of self-awareness in snakes, species that rely primarily on olfactory rather than visual processing, adapted the test to foreground smell, modifying the scent trails of North American eastern garter snakes and African ball pythons.</p>"
+}

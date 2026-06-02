@@ -1,0 +1,39 @@
+{
+  "questionId": "f5c3e3b8-s1",
+  "originalId": "f5c3e3b8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mfenced><mrow><msup><mi>a</mi><mn>3</mn></msup><msup><mi>b</mi><mn>2</mn></msup><msup><mi>c</mi><mrow><mo>-</mo><mn>1</mn></mrow></msup></mrow></mfenced><mfenced><mrow><msup><mi>a</mi><mn>2</mn></msup><msup><mi>b</mi><mn>4</mn></msup><msup><mi>c</mi><mn>5</mn></msup></mrow></mfenced></math>, where <math><mi>a</mi><mo>,</mo><mi>b</mi><mo>,</mo><mi>c</mi></math> are positive ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><msup><mi>a</mi><mn>6</mn></msup><msup><mi>b</mi><mn>8</mn></msup><msup><mi>c</mi><mrow><mo>-</mo><mn>5</mn></mrow></msup></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><msup><mi>a</mi><mn>5</mn></msup><msup><mi>b</mi><mn>6</mn></msup><msup><mi>c</mi><mn>6</mn></msup></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><msup><mi>a</mi><mn>5</mn></msup><msup><mi>b</mi><mn>8</mn></msup><msup><mi>c</mi><mn>4</mn></msup></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><msup><mi>a</mi><mn>5</mn></msup><msup><mi>b</mi><mn>6</mn></msup><msup><mi>c</mi><mn>4</mn></msup></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Multiplying powers with the same base adds exponents: a^(3+2)=a^5, b^(2+4)=b^6, and c^(\u22121+5)=c^4. The product is a^5 b^6 c^4.</p>",
+  "templateId": "equivalent-expressions.A3.T7.easy"
+}

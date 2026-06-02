@@ -1,0 +1,25 @@
+{
+  "questionId": "e44db0a0-s1",
+  "originalId": "e44db0a0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Because a generation of cicada nymphs <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> seventeen years to mature underground, it&rsquo;s possible for an entire brood to emerge from the soil in a single summer, filling forests with their high-pitched calls.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>need</p>"},
+    {"id": "b", "content": "<p>needs</p>"},
+    {"id": "c", "content": "<p>are needing</p>"},
+    {"id": "d", "content": "<p>have needed</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"needs\" agrees in number with the singular subject \"a generation of cicada nymphs.\"</p><p>Choice A is incorrect because the plural verb \"need\" doesn&rsquo;t agree in number with the singular subject. Choice C is incorrect because the plural verb \"are needing\" doesn&rsquo;t agree in number with the singular subject. Choice D is incorrect because the plural verb \"have needed\" doesn&rsquo;t agree in number with the singular subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

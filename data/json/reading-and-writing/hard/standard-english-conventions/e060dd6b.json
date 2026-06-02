@@ -1,0 +1,72 @@
+{
+  "questionId": "e060dd6b",
+  "externalId": "bc1744e8-0f12-494e-9ed7-58cc89eacd1c",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:00.019209+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a0ce6c56-2707-4881-b498-439a75f48c7f",
+      "content": "<p>electrograms show that while responding to hypothetical match scenarios, the most highly skilled soccer players have</p>"
+    },
+    {
+      "id": "0eb9dce5-89f3-47d1-8972-c5c4b3c17daa",
+      "content": "<p>the most highly skilled soccer players responding to hypothetical match scenarios have electrograms that show</p>"
+    },
+    {
+      "id": "351d9e5a-8220-4375-90b4-5ba02fb32fad",
+      "content": "<p>responses to hypothetical match scenarios show that the most highly skilled soccer players have electrograms with</p>"
+    },
+    {
+      "id": "9f367917-0896-460f-b9d8-c65a190cba58",
+      "content": "<p>hypothetical match scenario responses show that the most highly skilled soccer players captured in electrograms have</p>"
+    }
+  ],
+  "keys": [
+    "a0ce6c56-2707-4881-b498-439a75f48c7f"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun &ldquo;electrograms&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;recordings of electrical activity in the brain.&rdquo; In doing so, this choice clearly establishes that electrograms&mdash;and not other nouns or noun phrases in the sentence&mdash;are recordings of electrical activity in the brain.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the most highly skilled soccer players&rdquo; immediately after the modifying phrase illogically suggests that the players are recordings of electrical activity in the brain. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;responses to hypothetical match scenarios&rdquo; immediately after the modifying phrase illogically suggests that these responses are recordings of electrical activity in the brain. Choice D is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;hypothetical match scenario responses&rdquo; immediately after the opening phrase illogically suggests that these responses are recordings of electrical activity in the brain.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Recordings of electrical activity in the brain, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> increased activity in brain areas associated with suppressing motor functions.</p>",
+    "keys": [
+      "a0ce6c56-2707-4881-b498-439a75f48c7f"
+    ],
+    "answerOptions": [
+      {
+        "id": "a0ce6c56-2707-4881-b498-439a75f48c7f",
+        "content": "<p>electrograms show that while responding to hypothetical match scenarios, the most highly skilled soccer players have</p>"
+      },
+      {
+        "id": "0eb9dce5-89f3-47d1-8972-c5c4b3c17daa",
+        "content": "<p>the most highly skilled soccer players responding to hypothetical match scenarios have electrograms that show</p>"
+      },
+      {
+        "id": "351d9e5a-8220-4375-90b4-5ba02fb32fad",
+        "content": "<p>responses to hypothetical match scenarios show that the most highly skilled soccer players have electrograms with</p>"
+      },
+      {
+        "id": "9f367917-0896-460f-b9d8-c65a190cba58",
+        "content": "<p>hypothetical match scenario responses show that the most highly skilled soccer players captured in electrograms have</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun &ldquo;electrograms&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;recordings of electrical activity in the brain.&rdquo; In doing so, this choice clearly establishes that electrograms&mdash;and not other nouns or noun phrases in the sentence&mdash;are recordings of electrical activity in the brain.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the most highly skilled soccer players&rdquo; immediately after the modifying phrase illogically suggests that the players are recordings of electrical activity in the brain. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;responses to hypothetical match scenarios&rdquo; immediately after the modifying phrase illogically suggests that these responses are recordings of electrical activity in the brain. Choice D is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;hypothetical match scenario responses&rdquo; immediately after the opening phrase illogically suggests that these responses are recordings of electrical activity in the brain.</p>",
+    "externalid": "bc1744e8-0f12-494e-9ed7-58cc89eacd1c",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Recordings of electrical activity in the brain, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> increased activity in brain areas associated with suppressing motor functions.</p>"
+}

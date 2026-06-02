@@ -1,0 +1,25 @@
+{
+  "questionId": "e8c26398-s1",
+  "originalId": "e8c26398",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>To design a more efficient cooling system for data centers, mechanical engineer Priya Anand drew on <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>; borrowing a strategy used by termite mounds to maintain a constant interior temperature, Anand engineered ventilation channels that passively redirect warm air upward and away from server racks.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>a delegation</p>"},
+    {"id": "b", "content": "<p>biomimicry</p>"},
+    {"id": "c", "content": "<p>a contradiction</p>"},
+    {"id": "d", "content": "<p>a precedent</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text after the semicolon explains that Anand &ldquo;borrow[ed] a strategy used by termite mounds&rdquo; to engineer her cooling system&mdash;exactly the practice of biomimicry, which means imitating biological designs to solve engineering problems.</p><p>Choice A is incorrect because &ldquo;a delegation&rdquo; refers to a group of representatives or the assigning of authority; nothing in the text describes Anand delegating tasks. Choice C is incorrect because &ldquo;a contradiction&rdquo; implies opposition or inconsistency, but the text describes a productive analogy between termite biology and engineering. Choice D is incorrect because &ldquo;a precedent&rdquo; is an earlier event that serves as an example; the text emphasizes copying a biological mechanism, not citing a prior human engineering decision.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

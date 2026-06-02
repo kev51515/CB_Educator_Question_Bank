@@ -1,0 +1,39 @@
+{
+  "questionId": "5fa165f7-s1",
+  "originalId": "5fa165f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the 1970s, Faith Ringgold, an African American artist, became one of the first to make large-scale painted story quilts that combined text, portraiture, and patchwork. She later explored a different style, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> soft-sculpture figures inspired by African dolls she had studied in museum collections.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>creating</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>refusing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>predicting</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>hiding</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the sentence states Ringgold explored a new style, and the items being described (soft-sculpture figures) are works she made herself. \"Creating\" matches the act of producing these works. The other choices would mean she did not make them or hid them, contradicting the description of her style.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

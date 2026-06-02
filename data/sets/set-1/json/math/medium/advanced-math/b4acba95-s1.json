@@ -1,0 +1,39 @@
+{
+  "questionId": "b4acba95-s1",
+  "originalId": "b4acba95",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\">y<sup>2</sup> + 10y + 25 = 0</p><p>How many distinct real solutions does the given equation have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For a quadratic equation in the form ay<sup>2</sup> + by + c = 0, the discriminant b<sup>2</sup> - 4ac determines the number of distinct real solutions. If positive, there are two; if zero, exactly one; if negative, none. Here a = 1, b = 10, c = 25, so b<sup>2</sup> - 4ac = 100 - 100 = 0. Therefore, the equation has exactly one distinct real solution. Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium"
+}

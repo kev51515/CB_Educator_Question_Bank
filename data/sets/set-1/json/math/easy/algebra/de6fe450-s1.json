@@ -1,0 +1,25 @@
+{
+  "questionId": "de6fe450-s1",
+  "originalId": "de6fe450",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>On January 1, 2020, a streaming service's monthly fee was $12. It will increase by $0.75 on the first day of the year for the next 5 years. Which of the following functions best models the monthly fee, in dollars, <i>x</i> years after January 1, 2020?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>f</i>(<i>x</i>) = 12 &minus; 0.75<i>x</i></p>"},
+    {"id": "b", "content": "<p><i>f</i>(<i>x</i>) = 12<i>x</i> + 0.75</p>"},
+    {"id": "c", "content": "<p><i>f</i>(<i>x</i>) = 12 + 0.75<i>x</i></p>"},
+    {"id": "d", "content": "<p><i>f</i>(<i>x</i>) = 0.75 &minus; 12<i>x</i></p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The initial fee is $12 and it grows by $0.75 each year, so the fee after <i>x</i> years is 12 + 0.75<i>x</i>.</p><p>Choice A subtracts instead of adds. Choices B and D swap the constant and the rate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T3.easy"
+}

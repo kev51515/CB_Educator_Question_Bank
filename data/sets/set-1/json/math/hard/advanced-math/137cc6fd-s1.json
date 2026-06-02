@@ -1,0 +1,24 @@
+{
+  "section": "Math",
+  "difficulty": "Hard",
+  "dcode": "H",
+  "domain": "Advanced Math",
+  "domain_code": "P",
+  "skill": "Equivalent expressions",
+  "skill_code": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mroot><mrow><mn>50</mn><mi>n</mi></mrow><mn>4</mn></mroot><msup><mfenced><mroot><mrow><mn>50</mn><mi>n</mi></mrow><mn>6</mn></mroot></mfenced><mn>3</mn></msup></math></p>\n<p style=\"text-align: left;\">For what value of <em>x</em> is the given expression equivalent to <math><msup><mfenced><mrow><mn>50</mn><mi>n</mi></mrow></mfenced><mrow><mn>24</mn><mi>x</mi></mrow></msup></math>, where <em>n</em> &gt; 1?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1/32",
+    ".0312",
+    ".0313"
+  ],
+  "rationale": "<p>The correct answer is 1/32. Rewrite the roots using fractional exponents: (50n)^(1/4) \u00b7 ((50n)^(1/6))\u00b3 = (50n)^(1/4) \u00b7 (50n)^(3/6) = (50n)^(1/4 + 1/2) = (50n)^(3/4). Setting (50n)^(3/4) = (50n)^(24x) gives 24x = 3/4, so x = 3/96 = 1/32 \u2248 0.0313.</p>",
+  "questionId": "137cc6fd-s1",
+  "originalId": "137cc6fd",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:28:54.548681+00:00",
+  "templateId": "equivalent-expressions.A3.T7.hard"
+}

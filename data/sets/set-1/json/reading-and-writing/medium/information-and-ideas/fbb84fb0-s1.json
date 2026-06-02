@@ -1,0 +1,25 @@
+{
+  "questionId": "fbb84fb0-s1",
+  "originalId": "fbb84fb0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p><em>The Awakening</em> is an 1899 novel by Kate Chopin. The novel&rsquo;s protagonist, Edna Pontellier, chafes against the social roles assigned to women of her time. Although she lacks the freedom to remake her external circumstances, she insists on a private inner life that belongs only to her, as is evident when she says, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>The Awakening</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;I would give up the unessential; I would give my money, I would give my life for my children; but I wouldn&rsquo;t give myself.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;The children appeared before her like antagonists who had overcome her; who had overpowered and sought to drag her into the soul&rsquo;s slavery for the rest of her days.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;I am no longer one of Mr. Pontellier&rsquo;s possessions to dispose of or not. I give myself where I choose.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;The voice of the sea is seductive; never ceasing, whispering, clamoring, murmuring, inviting the soul to wander for a spell in abysses of solitude.&rdquo;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it directly illustrates the claim that Edna insists on retaining a private inner life of her own. By declaring that she is no longer her husband&rsquo;s &ldquo;possession&rdquo; and that she &ldquo;gives [herself] where [she] choose[s],&rdquo; Edna asserts ownership over her inner self even though she cannot wholly remake her external circumstances. The phrase &ldquo;I give myself&rdquo; aligns with the claim that her inner life belongs to her alone.</p><p>Choice A is incorrect because the quotation distinguishes &ldquo;the unessential&rdquo; from the inner self, but it is framed around her children rather than around her insistence on a private self in her social situation. Choice B is incorrect because it dramatizes the threat to Edna&rsquo;s autonomy without showing her insistence on a private inner life. Choice D is incorrect because it describes the lure of the sea and solitude, not Edna&rsquo;s claim to her own inner life.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

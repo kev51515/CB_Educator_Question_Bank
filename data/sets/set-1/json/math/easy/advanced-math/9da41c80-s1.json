@@ -1,0 +1,39 @@
+{
+  "questionId": "9da41c80-s1",
+  "originalId": "9da41c80",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A ball is dropped from an initial height of 30 feet and bounces off the ground repeatedly. The function <i>h</i> estimates that the maximum height reached after each bounce is 70% of the maximum height after the previous bounce. Which equation defines <i>h</i>, where <i>h</i>(<i>n</i>) is the estimated maximum height of the ball after it has hit the ground <i>n</i> times, and <i>n</i> is a whole number greater than 1 and less than 10?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>h</i>(<i>n</i>) = 30(0.30)<sup><i>n</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>h</i>(<i>n</i>) = 70(0.30)<sup><i>n</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>h</i>(<i>n</i>) = 70(0.70)<sup><i>n</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>h</i>(<i>n</i>) = 30(0.70)<sup><i>n</i></sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The initial height is 30 feet, and after each bounce the maximum height is 70% (0.70 times) the previous maximum. After <i>n</i> bounces, the height is 30 multiplied by 0.70 <i>n</i> times, giving <i>h</i>(<i>n</i>) = 30(0.70)<sup><i>n</i></sup>.</p><p>Choices A and B use 0.30 (which would correspond to losing 70%, not retaining it). Choices B and C use the incorrect initial value 70 instead of 30.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A4.T1.easy"
+}

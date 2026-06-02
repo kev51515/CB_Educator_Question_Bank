@@ -1,0 +1,39 @@
+{
+  "questionId": "b52e5b6f-s1",
+  "originalId": "b52e5b6f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An alloy consisting of only silver and tin has a total mass of 240 grams. The mass of silver in the alloy is 90 grams. What is the mass, in grams, of tin in the alloy?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>240</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>330</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The total mass is the sum of silver and tin masses, so 240 = 90 + tin. Subtracting 90 from each side gives tin = 150 grams.</p><p>Choice A is the silver mass. Choice C is the total. Choice D incorrectly adds rather than subtracts.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

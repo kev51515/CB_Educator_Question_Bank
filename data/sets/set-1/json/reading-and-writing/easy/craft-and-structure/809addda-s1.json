@@ -1,0 +1,39 @@
+{
+  "questionId": "809addda-s1",
+  "originalId": "809addda",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a 1923 poem titled \"The Traveler.\"</p><blockquote><p>I walk among the streets of foreign towns<br>Where streetlamps stand in rows along the curb<br>And every doorway hums with passing crowds<br>And all the city's noises never cease.</p><p style=\"padding-left: 2em;\"><u>But deep within<br>The southern winds still spin\u2014<br>I feel the sun upon my native fields.</u></p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined lines in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It establishes that the speaker's enthusiasm about current travels conflicts with the urge to return home.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It conveys the speaker's sense of feeling a pull toward home while traveling in an unfamiliar place.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It reveals that, upon returning after an absence, the speaker longs for the way a place once felt.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It illustrates the speaker's uncertainty about maintaining strong links with relatives in distant places.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The opening lines establish that the speaker is in \"foreign towns.\" The underlined lines describe inner feelings\u2014southern winds spinning, sun on \"native fields\"\u2014that show a deep emotional pull toward home from the unfamiliar setting.</p><p>Choice A is incorrect. The text describes the busy crowds and noise but doesn't suggest enthusiasm; the underlined lines suggest pull, not conflicting enthusiasm. Choice C is incorrect. The speaker is traveling now, not returning. Choice D is incorrect. No mention of relatives or familial ties.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T6.easy"
+}

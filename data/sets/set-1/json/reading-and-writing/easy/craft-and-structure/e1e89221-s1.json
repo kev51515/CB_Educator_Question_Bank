@@ -1,0 +1,25 @@
+{
+  "questionId": "e1e89221-s1",
+  "originalId": "e1e89221",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Kate Chopin's 1899 novel <em>The Awakening</em>. Edna is walking outside in the early evening.</p>\n<blockquote>\n<p>The air was warm and a breeze was stirring&mdash;not a <span role=\"region\" aria-label=\"Referenced Content\"><u>sharp</u></span> breeze, but one that came in soft, intermittent currents and carried with it the scent of the sea. She walked along the wooden path that led away from the cottage.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;sharp&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Clever</p>"},
+    {"id": "b", "content": "<p>Pointed</p>"},
+    {"id": "c", "content": "<p>Sudden</p>"},
+    {"id": "d", "content": "<p>Biting</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because \"biting\" most nearly means harsh or piercingly cold, which is the meaning contrasted with the soft, intermittent breeze the text describes. Choice A is incorrect because \"clever\" describes intelligence and does not apply to wind. Choice B is incorrect because \"pointed\" refers to a tapered shape, which does not describe wind quality. Choice C is incorrect because \"sudden\" describes timing rather than the harshness the contrast requires.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

@@ -1,0 +1,24 @@
+{
+  "questionId": "014c47ab-s1",
+  "originalId": "014c47ab",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<figure class=\"table\"><table border=\"1\"><tbody><tr><td></td><th>Pond P</th><th>Pond Q</th><th>Total</th></tr><tr><th>Trout</th><td style=\"text-align:center;\">27</td><td style=\"text-align:center;\">18</td><td style=\"text-align:center;\">45</td></tr><tr><th>Bass</th><td style=\"text-align:center;\">22</td><td style=\"text-align:center;\">26</td><td style=\"text-align:center;\">48</td></tr><tr><th>Total</th><td style=\"text-align:center;\">49</td><td style=\"text-align:center;\">44</td><td style=\"text-align:center;\">93</td></tr></tbody></table></figure><p>The table shows the distribution of two types of fish at two different ponds. If a fish represented in the table is selected at random, what is the probability of selecting a fish from pond P, given that the fish is a trout? (Express your answer as a decimal or fraction, not as a percent.)</p>",
+  "answerOptions": null,
+  "keys": [
+    ".6",
+    "3/5",
+    "27/45"
+  ],
+  "rationale": "<p>The correct answer is 3/5 (or .6). From the table, there are 45 trout total, and 27 of them are from pond P. The probability of selecting a fish from pond P given that it is a trout is 27/45 = 3/5 = 0.6.</p>",
+  "templateId": "probability-and-conditional-probability.A3.T8.medium"
+}

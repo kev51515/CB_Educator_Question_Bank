@@ -1,0 +1,39 @@
+{
+  "questionId": "790fc366-s1",
+  "originalId": "790fc366",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Using drone-mounted thermal cameras, Dr. Tarun Iyer, director of India&rsquo;s Coastal Wetlands Watch program, collects detailed data on mangrove forest health. Iyer doesn&rsquo;t merely archive the ______ he also organizes the maps and shares them with village councils, empowering local fishers to defend the wetlands that protect their livelihoods.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>imagery; however</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>imagery, however,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>imagery however,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>imagery, however;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The semicolon correctly joins the two independent clauses (\"Iyer doesn&rsquo;t&hellip;however\" and \"he also&hellip;livelihoods\"), and \"however\" belongs in the first clause, where it logically signals the contrast that prepares the second clause.</p><p>Choice A is incorrect because placing \"however\" in the second clause makes that clause dependent, which a semicolon cannot conjoin in this way. Choice B is incorrect because it produces a comma splice: a comma alone cannot join two independent clauses. Choice C is incorrect for the same reason \u2014 it leaves the clauses joined only by a comma.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T3.hard"
+}

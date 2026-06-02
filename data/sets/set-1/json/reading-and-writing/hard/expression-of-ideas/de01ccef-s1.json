@@ -1,0 +1,39 @@
+{
+  "questionId": "de01ccef-s1",
+  "originalId": "de01ccef",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The background colors of US and Japanese highway exit signs are used to indicate each sign's purpose.</li>\n<li>Directional signs include information such as exit numbers, route names, and destination distances.</li>\n<li>Highways, major roadways, and minor roadways in the US generally use green for directional signs.</li>\n<li>Highways in Japan generally use green for directional signs.</li>\n<li>Major roadways in Japan generally use blue for directional signs.</li>\n</ul>",
+  "stem": "<p>The student wants to contrast how green backgrounds are used in US and Japanese road signs. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Blue backgrounds are generally used on directional signs on major roadways in Japan, in contrast to the green signs used in the US.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In the US, green signs indicate directional information on both highways and major roadways, but in Japan, directional signs of this color generally appear only on highways.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Green signs are used in both the US and Japan to indicate directional information on highways, including exit numbers, route names, and destinations.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Both Japan and the US use directional signs, which include exit numbers, route names, and destination distances.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it directly contrasts how green backgrounds are used: in both highways and major roadways in the US, but only on highways in Japan.</p><p>Choices A, C, and D either focus on blue, only the similarity, or do not address green.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A1.T2.hard"
+}

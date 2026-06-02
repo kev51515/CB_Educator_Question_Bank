@@ -1,0 +1,39 @@
+{
+  "questionId": "fa7a89f1-s1",
+  "originalId": "fa7a89f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Investigating how sleep schedules affect long-term memory, Dr. Matthew Walker and colleagues found that people who chose to nap during the early afternoon were more <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> compared to those who skipped naps. Brief midday rest gave participants improved consolidation of newly learned facts, and over weeks of testing nappers retained information more accurately than non-nappers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>retentive</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>elusive</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>indifferent</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>argumentative</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because \"retentive\" means good at retaining information, matching the text's report that nappers retained facts more accurately. Choice B is incorrect because \"elusive\" means hard to grasp; the text concerns memory storage in the participants, not their availability. Choice C is incorrect because \"indifferent\" means unconcerned; the text describes a measurable cognitive benefit, not an emotional state. Choice D is incorrect because \"argumentative\" describes disposition to dispute, which is unrelated to memory consolidation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

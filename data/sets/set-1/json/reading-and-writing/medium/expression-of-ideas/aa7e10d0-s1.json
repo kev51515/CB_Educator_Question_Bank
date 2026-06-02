@@ -1,0 +1,25 @@
+{
+  "questionId": "aa7e10d0-s1",
+  "originalId": "aa7e10d0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T11.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Lichens, organisms formed by a partnership between fungi and algae, grow in many climates, including tropical and polar regions.</li>\n<li>Lichen diversity has been poorly documented in the cold, windswept islands of the South Atlantic.</li>\n<li>Botanist Tomas Halvorsen led a study to determine how many lichen species inhabit the Falkland Islands.</li>\n<li>Halvorsen and his team sampled lichens at coastal and inland sites over twelve months.</li>\n<li>The team recorded 156 lichen species at the surveyed sites.</li>\n</ul>",
+  "stem": "<p>The student wants to present the study and its findings. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Lichens grow in many environments, and 156 lichen species inhabit the Falkland Islands.</p>"},
+    {"id": "b", "content": "<p>Tomas Halvorsen and his team wondered how many lichen species inhabit the Falkland Islands, so they conducted a study by sampling at coastal and inland sites.</p>"},
+    {"id": "c", "content": "<p>A study led by Tomas Halvorsen recorded a total of 156 lichen species at sampled sites in the Falkland Islands.</p>"},
+    {"id": "d", "content": "<p>The Falkland Islands, located in the South Atlantic, are home to 156 lichen species.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. This choice most effectively presents the study and its findings. It opens with the study and names its lead researcher, then reports the finding: 156 lichen species were recorded at sampled sites in the Falkland Islands.</p><p>Choice A is incorrect. The sentence doesn&rsquo;t mention that there was a study at all, so it fails to present the study. Choice B is incorrect. The sentence presents the aim and methodology of the study, but it omits the findings. Choice D is incorrect. The sentence reports a fact about the islands but doesn&rsquo;t mention that the figure came from a study.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

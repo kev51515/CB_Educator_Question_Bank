@@ -1,0 +1,39 @@
+{
+  "questionId": "16aa9758-s1",
+  "originalId": "16aa9758",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>x</i>) = &minus;4<i>x</i>&sup2; + 48<i>x</i> &minus; 108</p><p>The function <i>f</i> is defined by the given equation. Which of the following equivalent forms of the equation displays the maximum value of the function as a constant or coefficient?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;4(<i>x</i> &minus; 6)&sup2; + 36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;4<i>x</i>&sup2; + 36<i>x</i> + 12<i>x</i> &minus; 108</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;4(<i>x</i> &minus; 3)(<i>x</i> &minus; 9)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;4<i>x</i>(<i>x</i> &minus; 9) + 12(<i>x</i> &minus; 9)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Completing the square: <i>f</i>(<i>x</i>) = &minus;4(<i>x</i>&sup2; &minus; 12<i>x</i>) &minus; 108 = &minus;4[(<i>x</i> &minus; 6)&sup2; &minus; 36] &minus; 108 = &minus;4(<i>x</i> &minus; 6)&sup2; + 144 &minus; 108 = &minus;4(<i>x</i> &minus; 6)&sup2; + 36. The constant 36 is the maximum value of <i>f</i>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

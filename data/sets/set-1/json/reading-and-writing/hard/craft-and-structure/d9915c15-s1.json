@@ -1,0 +1,39 @@
+{
+  "questionId": "d9915c15-s1",
+  "originalId": "d9915c15",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In 2022, documentary filmmaker and historian Nasreen Aliyu released the first peer-reviewed scholarly film about West African market women, titled <em>Counters and Conversations</em>. Typically in peer review, experts evaluate scholarly articles before publication. For Aliyu's film, dubbed a \"film/essay/archive,\" peer review involved both academic historians and market traders who appear in the film. By weaving footage of daily market exchanges together with archival photographs and embedded scholarly essays that connect those exchanges to longer histories of West African trade, the film opens an entirely new mode for publishing historical research about everyday economic life.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To compare the relative public impact of scholarly articles and films.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To describe how each step of the peer-review process unfolds.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To capture one scholar's opinion of a new documentary film.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To explain why a particular documentary film is especially innovative.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text identifies <em>Counters and Conversations</em> as the first peer-reviewed scholarly film about West African market women, explains how its review process was unusual (academic historians and market traders both took part), and describes how it weaves footage, archival materials, and essays into a new format for historical publishing. Each of these moves accumulates a case for the film's innovativeness.</p><p>Choice A is incorrect because no comparison of public impact is undertaken. Choice B is incorrect because the peer-review process is mentioned only in broad strokes. Choice C is incorrect because the text is not framed as a single scholar's opinion of the film.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

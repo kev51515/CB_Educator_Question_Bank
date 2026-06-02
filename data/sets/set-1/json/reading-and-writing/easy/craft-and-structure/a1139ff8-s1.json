@@ -1,0 +1,39 @@
+{
+  "questionId": "a1139ff8-s1",
+  "originalId": "a1139ff8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the 2000s, conservationists began planting hundreds of thousands of native shrubs across coastal dunes to support a struggling shorebird population. This effort was clearly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: the shorebird population grew from fewer than 200 nesting pairs in the early 2000s to more than 1,200 nesting pairs today.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>amusing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>effective</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>expensive</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>disastrous</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"effective\" means achieving the intended result, matching the rise in nesting pairs. Choice A is incorrect because the project’s success isn’t about being amusing. Choice C is incorrect because cost isn’t discussed. Choice D is incorrect because the outcome was positive.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "97360a00-s1",
+  "originalId": "97360a00",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T9.medium",
+  "stimulus": "<p>The following text is adapted from Sara Teasdale&rsquo;s 1920 poem &ldquo;The Storm.&rdquo;</p>\n<p style=\"padding-left:1em;\">The Wind comes striding down the hill<br>In boots of leather and a cloak of grey,<br>And shakes the trees with restless hand<br>As though impatient with the day.<br>He stoops beside the silver pool<br>To wash the dust of distance from his brow,<br>And lifts his voice to call the rain<br>Like one who summons servants now.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It alternates descriptions of wind in a forest with descriptions of wind on a plain.</p>"},
+    {"id": "b", "content": "<p>It sketches an image of an approaching storm, then an image of its aftermath.</p>"},
+    {"id": "c", "content": "<p>It makes an extended comparison of wind to a human being.</p>"},
+    {"id": "d", "content": "<p>It portrays how wind changes from one season of the year to the next.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes the overall structure of the text. Throughout the poem, the speaker characterizes the wind as if it were a person who wears clothing (&ldquo;boots of leather and a cloak of grey&rdquo;), uses its hands to shake trees, washes its brow at a pool, and calls servants. The text is thus structured as an extended comparison of wind to a human being.</p><p>Choice A is incorrect because the text does not name particular locations like forest and plain; instead, it presents a single image of wind as a person. Choice B is incorrect because the text does not refer to a storm&rsquo;s aftermath. Choice D is incorrect because the text does not describe seasonal changes; it presents one continuous image.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

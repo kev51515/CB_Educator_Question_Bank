@@ -1,0 +1,39 @@
+{
+  "questionId": "c68ceeff-s1",
+  "originalId": "c68ceeff",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Today the tomato is central to Italian cooking, but its rise to popularity was gradual. Spanish traders brought tomatoes from Mexico to southern Italy in the 1500s. At that time, however, people in many regions had little contact with the southern coast, and traditional cooks distrusted unfamiliar plants. Thus, the tomato remained little used by most Italians until the late 1700s.</p><p><strong>Text 2</strong></p><p>The tomato's slow adoption in Italian kitchens is mainly due to the nature of the plant itself. The tomato belongs to the same family as several poisonous nightshades, and many Europeans assumed it must also be dangerous. Knowledge that ripe tomatoes were safe to eat needed to spread before the fruit could grow in popularity. The publication of widely shared cookbooks in the late 1700s directly fueled this shift.</p>",
+  "stem": "<p>Based on the texts, the author of Text 1 and the author of Text 2 would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The climate of southern Italy in the 1500s prevented the tomato's spread.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Several of the most common ingredients in Italian cooking originated in Mexico.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The most common recipes for tomato sauce today date to the 1500s.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The tomato did not become a significant ingredient in Italian cooking until long after it was first introduced.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. Text 1 says the tomato's \"rise to popularity was gradual\" and that it remained little used until the late 1700s. Text 2 describes the tomato's \"slow adoption.\" Although the texts identify different causes, both agree that the tomato took a long time to catch on.</p><p>Choice A is incorrect. Neither text mentions climate. Choice B is incorrect. The tomato is the only ingredient discussed, so the texts give no basis to claim several ingredients came from Mexico. Choice C is incorrect. Neither text describes when tomato sauce recipes were developed.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A2.T4.easy"
+}

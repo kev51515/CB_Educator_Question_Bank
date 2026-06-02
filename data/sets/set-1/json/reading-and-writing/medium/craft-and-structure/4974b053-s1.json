@@ -1,0 +1,25 @@
+{
+  "questionId": "4974b053-s1",
+  "originalId": "4974b053",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T4.medium",
+  "stimulus": "<p>Although mid-twentieth-century jazz composition was largely shaped by men when Mary Lou Williams, a Black woman, was at the height of her career, she did not regard the field as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: Williams established a major presence in the genre with a string of widely performed arrangements during the 1940s and continued to be a sought-after composer and arranger by leading bandleaders for the next several decades.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>esteemed</p>"},
+    {"id": "b", "content": "<p>inaccessible</p>"},
+    {"id": "c", "content": "<p>uninspiring</p>"},
+    {"id": "d", "content": "<p>incomprehensible</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Inaccessible\" means impossible to enter. The contrast signal \"Although\" pairs the male-dominated field with Williams's success, so the blank must name what the field looked like but actually was not for her. Despite male dominance, Williams clearly entered and thrived in the field, so she did not regard it as inaccessible to her.</p><p>Choice A is incorrect because the contrast does not concern whether the field was respected; that would not be undermined by her success. Choice C is incorrect because nothing in the text addresses whether the field was creatively dull. Choice D is incorrect because \"incomprehensible\" would address whether the music could be understood, not whether Williams could participate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "98d3393a-s1",
+  "originalId": "98d3393a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, line m is perpendicular to a line whose equation is y = 7. What is the slope of line m?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>undefined</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-1/7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The equation y = 7 represents a horizontal line (slope = 0). A line perpendicular to a horizontal line must be vertical. Vertical lines have an undefined slope.</p><p>Choice A gives the slope of the original horizontal line, not the perpendicular. Choices C and D compute reciprocals of a value that does not apply because the original slope is 0, so 1/0 and -1/0 are undefined rather than the listed fractions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.hard"
+}

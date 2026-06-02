@@ -1,0 +1,39 @@
+{
+  "questionId": "51f26ce8-s1",
+  "originalId": "51f26ce8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Right triangles <em>ABC</em> and <em>DEF</em> are similar, where angles <em>B</em> and <em>E</em> are the right angles and where <em>A</em>, <em>B</em>, <em>C</em> correspond to <em>D</em>, <em>E</em>, <em>F</em>, respectively. In triangle <em>ABC</em>, AB = 15, BC = 20, and AC = 25. In triangle <em>DEF</em>, DE = 12. Which expression gives the length of <em>DF</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>300/20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>300/15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>180/15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180/20</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since triangles ABC and DEF are similar with the stated correspondence, AB/DE = AC/DF. Substituting AB = 15, DE = 12, AC = 25 gives 15/12 = 25/DF, so DF = (25 &times; 12)/15 = 300/15. Choices A, C, and D use incorrect pairs of corresponding sides.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.medium"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "aacc834b-s1",
+  "originalId": "aacc834b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>x = 12</p><p>x + 4y = 28</p><p>The solution to the given system of equations is (x, y). What is the value of y?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>The correct answer is 4. Substituting x = 12 yields 4y = 16, so y = 4.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

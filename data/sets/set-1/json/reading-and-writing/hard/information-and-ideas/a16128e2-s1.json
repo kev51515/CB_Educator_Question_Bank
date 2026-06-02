@@ -1,0 +1,25 @@
+{
+  "questionId": "a16128e2-s1",
+  "originalId": "a16128e2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "stimulus": "<p>[Bar graph: Percentage of Per Capita Freshwater Withdrawal Attributed to Agricultural Demand Growth and Industrial Demand Growth in Two World Regions. Four data categories: Region A (1980&ndash;2000), Region A (2000&ndash;2020), Region B (1980&ndash;2000), Region B (2000&ndash;2020). Bars (agricultural / industrial): Region A 1980&ndash;2000: 48% / 32%; Region A 2000&ndash;2020: 67% / 13%; Region B 1980&ndash;2000: 41% / 28%; Region B 2000&ndash;2020: 33% / 47%.]</p>\n<p>In a 2024 study, Vyas et al. propose that the proportion of per capita freshwater withdrawal attributable to industrial growth, relative to agricultural growth, serves as an indirect measure of how effectively national governments have shifted public-sector water-policy investment from older irrigation infrastructure toward emerging industrial sectors. Based on this proposal, the data shown in the graph suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>countries in Region A and in Region B generally became more effective at policy investment in the period from 2000 to 2020 than they had been in the period from 1980 to 2000.</p>"},
+    {"id": "b", "content": "<p>countries in Region A experienced a slower rate of economic growth in the period from 2000 to 2020 than countries in Region B did, despite increasing agricultural output.</p>"},
+    {"id": "c", "content": "<p>national governments of most countries in Region A became more effective at policy investment in the period from 2000 to 2020 than they had been in the period from 1980 to 2000.</p>"},
+    {"id": "d", "content": "<p>national governments of countries in Region A became less effective at policy investment in the period from 2000 to 2020, relative to the period from 1980 to 2000.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because, by Vyas et al.&rsquo;s proposal, a larger share of withdrawal growth coming from industrial (rather than agricultural) demand reflects more effective shifting of policy investment. In Region A, the share from industrial growth fell from 32% (1980&ndash;2000) to 13% (2000&ndash;2020) while the share from agricultural growth rose from 48% to 67%. By the proposal&rsquo;s logic, this represents less effective policy investment in the later period.</p><p>Choice A is incorrect because the graph shows Region A moving in the direction associated with less effective investment by the proposal&rsquo;s logic, so a generalization to both regions becoming more effective is unsupported. Choice B is incorrect because the graph contains no data about rates of economic growth or agricultural output. Choice C is incorrect because it reverses the direction of change shown for Region A.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

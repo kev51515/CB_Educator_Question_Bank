@@ -1,0 +1,39 @@
+{
+  "questionId": "ad729337-s1",
+  "originalId": "ad729337",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>With its conventional storefronts, parking signs, and overcast sky, Stephen Shore's 1973 photograph <em>Beverly Boulevard and La Brea Avenue, Los Angeles</em> may strike viewers as offering little reward to anyone hunting for visual depth. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> art historian Britt Salvesen has built an entire chapter of her book around this single image, arguing that its careful geometry redefines what a vernacular American landscape can be.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To put it another way,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Accordingly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Even so,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Similarly,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Even so\" logically signals contrast: although the photograph looks unpromising for visual analysis, Salvesen nonetheless finds it richly rewarding. The second sentence overturns the expectation set up in the first.</p><p>Choice A is incorrect because \"to put it another way\" would mark the second sentence as a paraphrase of the first, but it contradicts rather than restates it. Choice B is incorrect because \"accordingly\" would signal cause and effect, but Salvesen's deep engagement is not a consequence of the image's apparent dullness. Choice D is incorrect because \"similarly\" would suggest the two sentences make the same point, but the second sentence contrasts with the first.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T2.hard"
+}

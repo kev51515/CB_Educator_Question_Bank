@@ -1,0 +1,39 @@
+{
+  "questionId": "eccbf957-s1",
+  "originalId": "eccbf957",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each face of a fair 20-sided die is labeled with a number from 1 through 20, with a different number on each face. If the die is rolled one time, what is the probability of rolling a 7?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7/20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>19/20</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. There is 1 face with a 7 out of 20 equally likely faces, so the probability is 1/20.</p><p>Choice A and B are incorrect and may result from confusing the labeled number with the count of favorable outcomes. Choice D is incorrect; this is the probability of NOT rolling a 7.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

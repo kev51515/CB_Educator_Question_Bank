@@ -1,0 +1,25 @@
+{
+  "questionId": "359902ae-s1",
+  "originalId": "359902ae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from Mary Shelley's 1818 novel <em>Frankenstein</em>. Victor reflects on his early years of study.</p><blockquote><p>Even when I had attained the age which permitted me freer rein in my pursuits, I could not <span role=\"region\" aria-label=\"Referenced Content\"><u>bring myself to</u></span> abandon the ancient authors whose works my father had so plainly scorned. Their pages, however discredited by modern science, retained for me an interest I could not justify to him.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the phrase &ldquo;bring myself to&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Force myself to</p>"},
+    {"id": "b", "content": "<p>Transport myself to</p>"},
+    {"id": "c", "content": "<p>Remember to</p>"},
+    {"id": "d", "content": "<p>Volunteer to</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The idiom \"bring oneself to\" do something means \"to compel or persuade oneself to do something one finds disagreeable.\" Victor cannot make himself stop reading the ancient authors his father scorns, even after gaining freedom to choose his own pursuits.</p><p>Choice B is incorrect because the phrase \"transport myself to\" reads \"bring\" too literally; Victor is not moving physically. Choice C is incorrect because \"remember to\" would suggest forgetfulness rather than reluctance. Choice D is incorrect because \"volunteer to\" implies eagerness, but the text emphasizes Victor's inability to relinquish what his father has dismissed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

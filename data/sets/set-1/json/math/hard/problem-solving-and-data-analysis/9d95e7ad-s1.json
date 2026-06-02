@@ -1,0 +1,39 @@
+{
+  "questionId": "9d95e7ad-s1",
+  "originalId": "9d95e7ad",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between hours studied per week and exam scores. A line of best fit passes through the points (0, 60) and (10, 84). Based on this line of best fit, what is the predicted increase in exam score, in points, for each additional hour studied per week?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3.0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2.4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.8</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The slope of the line of best fit is (84 − 60)/(10 − 0) = 24/10 = 2.4 points per hour. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

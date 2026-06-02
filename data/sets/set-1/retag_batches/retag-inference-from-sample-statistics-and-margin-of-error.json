@@ -1,0 +1,20 @@
+[
+  {
+    "id": "9ee22c16-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.medium",
+    "verdict": "type_drift",
+    "detail": "T2 requires the sample-level statistic (mean) to be computed from a list or two-way table. Clone gives a direct count (230 of 500) which is a simple proportion scale-up, matching T1 rather than T2. Medium T2 lever 'requires reading a two-way table' is not met."
+  },
+  {
+    "id": "9ba3e283-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T2 lever requires 'embedded percentage of a non-divisible class size (e.g., 34.6% of 26 must round to integer count).' Clone uses 40% of 25 = exactly 10, no rounding required. Also the per-class computation is trivial; only the complement step adds difficulty."
+  },
+  {
+    "id": "308084c5-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 lever requires 'sample-size comparison hidden in a multi-column table.' Clone provides no table or numeric sample sizes; the question is purely conceptual. Closer to the easy variant ('only one option mentions sample size')."
+  }
+]

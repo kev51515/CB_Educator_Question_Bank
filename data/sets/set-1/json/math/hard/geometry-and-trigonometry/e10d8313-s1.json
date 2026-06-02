@@ -1,0 +1,22 @@
+{
+  "questionId": "e10d8313-s1",
+  "originalId": "e10d8313",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Points A, B, C, D lie in order on a straight line. Two triangles are formed below the line: triangle ABE has vertex E off the line, and triangle CDF has vertex F off the line. Segments BE and CF cross at a point G strictly between the line and points E and F. The measure of angle ABE is 42° (on the side toward the line) and the measure of angle DCF is 70° (on the side toward the line). What is the measure, in degrees, of angle BGC?</p>",
+  "answerOptions": [],
+  "keys": [
+    "68"
+  ],
+  "rationale": "<p>In triangle BGC, the angle at B (∠GBC) equals ∠ABE because BE is a straight ray from B; from the description, ∠GBC = 42°. Similarly ∠GCB = 70°. The three interior angles of triangle BGC sum to 180°, so ∠BGC = 180 − 42 − 70 = 68°.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.hard"
+}

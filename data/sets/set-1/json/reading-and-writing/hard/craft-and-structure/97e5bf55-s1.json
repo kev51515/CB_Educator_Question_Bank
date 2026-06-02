@@ -1,0 +1,39 @@
+{
+  "questionId": "97e5bf55-s1",
+  "originalId": "97e5bf55",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>In 1924, scholar Ezra K. Maxwell challenged the prevailing view that the seventeenth-century play <em>The Witch of Edmonton</em> was the joint work of William Rowley and Thomas Dekker alone. Maxwell felt Rowley's contributions to the play were unmistakable&mdash;Rowley had a distinctive habit of metrical irregularity in his other works, and lines exhibiting that habit were regarded as sufficient proof of his hand. But for the lines not deemed to be by Rowley, Maxwell felt that their handling of comic peasant speech indicated that their author was not Dekker but John Ford.</p>\n<p><strong>Text 2</strong></p>\n<p>Scholars have generally accepted <em>The Witch of Edmonton</em> as the work of Rowley, Dekker, and Ford since the 1980s, and the play now appears in all major editions of early modern English drama. Although critics disagree about the precise division of labor, it is broadly held, on stylistic grounds, that Rowley wrote most of the comic scenes, Dekker most of the domestic-tragedy material, and Ford the witch-related subplot.</p>",
+  "stem": "<p>Based on the texts, both Maxwell in Text 1 and the scholars in Text 2 would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The comic peasant figures in William Rowley's plays resemble the comic peasant figures in Thomas Dekker's plays.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Thomas Dekker's style in the witch-related subplot of <em>The Witch of Edmonton</em> is an homage to John Ford's style.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>William Rowley's writing has a unique, readily identifiable style.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>The Witch of Edmonton</em> belongs in single-volume compilations of Thomas Dekker's complete plays.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. Text 1 states that Rowley's metrical irregularities in his other plays were so distinctive that lines exhibiting that habit were considered sufficient evidence of his hand. Text 2 states that scholars assign Rowley most of the comic scenes \"on stylistic grounds.\" Both texts imply that Rowley's writing has a unique, readily identifiable style.</p><p>Choice A is incorrect because while Text 1 mentions comic peasants in Dekker's work, it does not compare Rowley's and Dekker's peasants. Choice B is incorrect because nothing in either text indicates Dekker was imitating Ford's style. Choice D is incorrect because Maxwell argued Dekker wasn't a coauthor, so he would not agree that the play belongs in a Dekker compilation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A2.T4.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "b988eeec-s1",
+  "originalId": "b988eeec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The functions f and g are defined as f(x) = (1/5)x - 8 and g(x) = (4/5)x + 23. If the function h is defined as h(x) = f(x) + g(x), what is the x-coordinate of the x-intercept of the graph of y = h(x) in the xy-plane?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-15"
+  ],
+  "rationale": "<p>h(x) = (1/5)x - 8 + (4/5)x + 23 = x + 15. Setting h(x) = 0: x + 15 = 0, so x = -15.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

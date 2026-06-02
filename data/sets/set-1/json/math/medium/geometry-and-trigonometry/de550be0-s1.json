@@ -1,0 +1,39 @@
+{
+  "questionId": "de550be0-s1",
+  "originalId": "de550be0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right triangle has one leg of length <math><mn>8</mn></math>, another leg of length <math><mi>b</mi></math>, and a hypotenuse of length <math><mn>19</mn></math>. Which of the following gives the value of <math><mi>b</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>19</mn><mo>-</mo><mn>8</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><msqrt><msup><mn>19</mn><mn>2</mn></msup><mo>-</mo><msup><mn>8</mn><mn>2</mn></msup></msqrt></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><msqrt><msup><mn>19</mn><mn>2</mn></msup><mo>+</mo><msup><mn>8</mn><mn>2</mn></msup></msqrt></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><msup><mn>19</mn><mn>2</mn></msup><mo>-</mo><msup><mn>8</mn><mn>2</mn></msup></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. By the Pythagorean theorem, 8\u00b2 + b\u00b2 = 19\u00b2, so b\u00b2 = 19\u00b2 - 8\u00b2 and b = \u221a(19\u00b2 - 8\u00b2).</p><p>Choice A treats sides like lengths in a sum. Choice C would apply if b were the hypotenuse. Choice D omits the square root.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T2.medium"
+}

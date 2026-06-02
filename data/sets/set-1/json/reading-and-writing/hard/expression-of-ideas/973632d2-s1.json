@@ -1,0 +1,39 @@
+{
+  "questionId": "973632d2-s1",
+  "originalId": "973632d2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>In southern Australia, mallee shrublands have expanded into areas that were once heathlands.</li>\n<li>Aisha Khan and Liam O'Connor of the University of Adelaide investigated whether mallee expansion is linked to changes in fire regimes.</li>\n<li>Khan and O'Connor analyzed growth rings from mallee shrubs on a site that was previously heathland and matched the ring data to fire-history records.</li>\n<li>They found that periods of mallee population growth tended to follow long intervals between major fires.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize the aim of the research study. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Aisha Khan and Liam O'Connor, researchers at the University of Adelaide, wanted to know whether mallee expansion is linked to changes in fire regimes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Thanks to the work done by Aisha Khan and Liam O'Connor, we now know that long intervals between major fires may have contributed to mallee expansion.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>University of Adelaide researchers determined that mallee population growth was associated with longer fire-free intervals.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Aisha Khan and Liam O'Connor analyzed growth rings from mallee shrubs on a site that was previously heathland and matched the ring data to fire-history records.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it states the aim of the study\u2014to investigate whether mallee expansion is linked to fire regimes.</p><p>Choices B and C describe findings rather than the aim. Choice D describes methodology, not aim.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A2.T4.hard"
+}

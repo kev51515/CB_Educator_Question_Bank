@@ -1,0 +1,22 @@
+{
+  "questionId": "9823f279-s1",
+  "originalId": "9823f279",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, one angle is a right angle and the measure of a second angle is <math><mi>x</mi><mo>&#176;</mo></math>. The two legs of the triangle each have length <math><mn>22</mn></math>. What is the value of <math><mi>x</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "45"
+  ],
+  "rationale": "<p>The correct answer is 45. A right triangle with two equal legs is an isosceles right triangle, in which the two non-right angles measure 45\u00b0 each. Thus x = 45.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "right-triangles-and-trigonometry.A3.T6.medium"
+}

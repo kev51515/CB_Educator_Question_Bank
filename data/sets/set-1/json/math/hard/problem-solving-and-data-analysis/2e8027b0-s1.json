@@ -1,0 +1,39 @@
+{
+  "questionId": "2e8027b0-s1",
+  "originalId": "2e8027b0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows points (x, y) where x ranges from 0 to 20 and y ranges from 0 to 50. The data shows a moderate positive trend, with a y-intercept near 38 and y-values rising approximately to 44 at x = 20. Which of the following could be an equation of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 38 + 6.2x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 38 + 0.3x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 10 + 6.2x</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 10 + 0.3x</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The y-intercept is approximately 38 (eliminating c and d), and the slope is approximately (44 \u2212 38)/20 = 0.3 (eliminating a). So y = 38 + 0.3x is correct. Choice (b) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "dc043599-s1",
+  "originalId": "dc043599",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Most geologists agree that Saturn's rings were formed after the breakup of one of Saturn's moons. This event likely scattered ice and rock into orbit around the planet. Based on widely accepted models of ring formation, scientists believe the rings settled into their current shape over the course of hundreds of millions of years.</p><p><strong>Text 2</strong></p><p>Researchers at the University of Colorado recently used a new simulation to model how Saturn's rings could have formed. Although earlier simulations exist, the Colorado team's runs were far more detailed. They found that the rings were probably not the product of a slow process. Instead, it is likely that the ring system took shape within only a few decades after the moon's destruction.</p>",
+  "stem": "<p>Which choice best describes a difference in how the author of Text 1 and the author of Text 2 view the evidence for the formation of Saturn's rings?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The author of Text 1 believes that the rings formed more slowly than the author of Text 2 believes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The author of Text 1 claims that the composition of the rings is more uniform than the author of Text 2 claims.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The author of Text 1 argues that the rings formed much earlier in Saturn's history than the author of Text 2 argues.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The author of Text 1 suggests that there is more evidence for the existence of the original moon than the author of Text 2 suggests.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Text 1 says the rings settled over \"hundreds of millions of years,\" while Text 2 says the rings formed in only \"a few decades.\" This is a clear difference in how the authors view the speed of formation.</p><p>Choice B is incorrect. Neither text discusses the composition of the rings. Choice C is incorrect. Although the texts disagree about how long formation took, they do not date when formation occurred. Choice D is incorrect. Neither text disputes the existence of the original moon.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A3.T5.easy"
+}

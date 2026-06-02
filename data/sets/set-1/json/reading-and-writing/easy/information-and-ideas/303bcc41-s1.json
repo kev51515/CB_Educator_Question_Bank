@@ -1,0 +1,39 @@
+{
+  "questionId": "303bcc41-s1",
+  "originalId": "303bcc41",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Top Four Species of Migratory Birds by Estimated Global Population]</p><ul><li>European starling: 310 million</li><li>red-billed quelea: 1.5 billion</li><li>barn swallow: 290 million</li><li>common chaffinch: 130 million</li></ul><p>Researchers estimated the global population, by species, of several common migratory birds. The team found that the species with the highest estimated global population is the ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the sentence?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>European starling.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>barn swallow.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>red-billed quelea.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>common chaffinch.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the graph shows that the red-billed quelea has an estimated global population of about 1.5 billion, far higher than any of the other three species listed.</p><p>Choice A is incorrect: the European starling has only about 310 million. Choice B is incorrect: the barn swallow has about 290 million. Choice D is incorrect: the common chaffinch has about 130 million, the lowest of the four.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,20 @@
+{
+  "questionId": "3c4ce699-s1",
+  "originalId": "3c4ce699",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>4</mn><mo>+</mo><mi>y</mi><mo>=</mo><mn>11</mn></math>, what is the value of <math><mn>20</mn><mo>+</mo><mn>5</mn><mi>y</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": ["55"],
+  "rationale": "<p>The correct answer is <math><mn>55</mn></math>. Multiplying both sides of the given equation by 5 yields <math><mn>5</mn><mfenced><mrow><mn>4</mn><mo>+</mo><mi>y</mi></mrow></mfenced><mo>=</mo><mn>5</mn><mfenced><mn>11</mn></mfenced></math>, or <math><mn>20</mn><mo>+</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>55</mn></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

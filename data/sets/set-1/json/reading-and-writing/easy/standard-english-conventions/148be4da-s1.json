@@ -1,0 +1,39 @@
+{
+  "questionId": "148be4da-s1",
+  "originalId": "148be4da",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Electric vehicles used by delivery companies in busy urban areas tend to be cheaper to fuel and quieter than most gasoline-powered ______ the production of the lithium-ion batteries that power them requires mining processes that can damage local ecosystems.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>vans, but</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>vans but</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>vans</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>vans,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A comma with the coordinating conjunction \"but\" properly joins the two main clauses.</p><p>Choice B omits the comma before \"but\" between two longer main clauses. Choice C creates a run-on (no punctuation/conjunction). Choice D creates a comma splice (no conjunction).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A1.T2.easy"
+}

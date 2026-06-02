@@ -1,0 +1,39 @@
+{
+  "questionId": "f0773a55-s1",
+  "originalId": "f0773a55",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A plumber charges a onetime service-call fee plus an hourly labor rate. The graph of a linear function in the <em>xy</em>-plane models the total amount, <em>y</em> dollars, the plumber charges for <em>x</em> hours of work. What does the slope of the graph represent?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The plumber's onetime service-call fee</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The plumber's hourly labor rate</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The total amount the plumber charges</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The number of hours the plumber works</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For a linear graph <em>y</em> = <em>mx</em> + <em>b</em>, the slope <em>m</em> represents the rate of change in <em>y</em> per unit change in <em>x</em>. Since <em>x</em> is hours and <em>y</em> is total dollars, the slope is the dollar amount charged per hour \u2014 the plumber's hourly labor rate.</p><p>Choice A is incorrect; the onetime fee is the <em>y</em>-intercept. Choices C and D describe values, not rates.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A2.T2.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "82aaa0a1-s1",
+  "originalId": "82aaa0a1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot displays the relationship between two variables, x and y. As x increases from 0 to 10, the y-values rise quickly at first and then level off, approaching about 20. Of the following, which is the best model for the data in the scatterplot?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A linear model: y = 2x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A decreasing exponential model: y = 20 &minus; 18(0.5)<sup>x</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A logistic/saturating model that approaches y = 20 as x grows large.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A quadratic model: y = &minus;x<sup>2</sup> + 20</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The described pattern grows quickly at first and then approaches a horizontal asymptote at y = 20. A saturating (logistic-style) model captures both the initial rapid increase and the leveling off near 20. A linear model would keep growing without bound, the exponential decay model written here decreases over time rather than approaching 20 from below in the right shape, and the quadratic would eventually turn downward rather than leveling off.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T11.easy"
+}

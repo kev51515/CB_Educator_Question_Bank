@@ -1,0 +1,39 @@
+{
+  "questionId": "c88183f7-s1",
+  "originalId": "c88183f7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A rectangle has a length of 17 and a width of 9. What is the perimeter of the rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>34</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>52</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The perimeter of a rectangle is 2(l + w) = 2(17 + 9) = 52. Choice A is twice the width; choice B is twice the length; choice C is l + w.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f61c22f3-s1",
+  "originalId": "f61c22f3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Differences in coastal management practices&mdash;such as the construction of seawalls, the planting of dune grasses, and the routing of stormwater outlets&mdash;are known to affect levels of microplastic accumulation on beach surfaces, but whether these effects penetrate into deeper sand layers has remained unclear. Hypothesizing that contrasting management regimes would produce differences in microplastic loads not confined to the top 5 cm of sand, Beatriz Romero and colleagues sampled multiple cores from several beach types (e.g., armored beaches, grass-stabilized beaches, undeveloped reference beaches) at sites along the Iberian Atlantic coast. They found, however, that across virtually all of their sites, microplastic concentrations dropped sharply below the top 5 cm regardless of management regime, so that the management-related differences observable on the surface largely disappeared at depth.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It describes a phenomenon that scientists do not fully understand, explains a research team's hypothesis about it, and then describes a finding that led the team to confirm the hypothesis.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It introduces an unresolved scientific question, presents a research team's hypothesis about it, and then describes an observation that did not support the hypothesis.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It discusses a process that scientists are somewhat unclear about, introduces competing hypotheses, and then explains how a research team concluded that one of them was best supported.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It explains a hypothesis that has been the subject of debate, describes how a research team tested it, and then presents data that confirmed the hypothesis.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text opens with an unresolved question (whether coastal-management effects on microplastics reach below the surface), introduces Romero and colleagues' specific hypothesis that they do, and then reports findings that microplastic concentrations fell off sharply below 5 cm regardless of management&mdash;an observation that did not support the hypothesis.</p><p>Choice A is incorrect because the findings undermine rather than confirm the hypothesis. Choice C is incorrect because no competing hypotheses are presented. Choice D is incorrect because the data ultimately contradict the hypothesis.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T8.hard"
+}

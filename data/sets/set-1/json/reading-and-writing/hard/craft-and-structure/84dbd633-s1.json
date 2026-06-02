@@ -1,0 +1,39 @@
+{
+  "questionId": "84dbd633-s1",
+  "originalId": "84dbd633",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>The Late Devonian mass extinction is sometimes attributed solely to widespread oceanic anoxia. Other paleontologists argue that <u>massive eruptions of the Viluy Traps volcanic province were the true cause, since the extinctions occurred during an extended period of Viluy eruption that initially flooded the atmosphere with climate-altering gases.</u> These dissenters note that several other mass extinctions coincide with large volcanic provinces, whereas the link between extinction and anoxia events is far less consistent.</p>\n<p><strong>Text 2</strong></p>\n<p>In a 2022 study, paleoceanographer Tom\u00e1s Brice\u00f1o and his colleagues analyzed deep-sea sediment cores and modeled atmospheric chemistry across the Late Devonian. The team concluded that Viluy Traps gases did indeed alter global climate before the main extinction pulse, but that climate had largely stabilized well before the extinctions intensified&mdash;extinctions that instead align tightly with peak oceanic anoxia recorded in the cores.</p>",
+  "stem": "<p>Based on the texts, how would Brice\u00f1o's team (Text 2) most likely respond to the argument in the underlined portion of Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By agreeing that the oceanic anoxia event changed the climate and that the Viluy Traps eruption caused the Late Devonian extinction</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By questioning why those scientists assume that the oceanic anoxia event caused the Viluy Traps eruption</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By asserting that the Viluy Traps eruption had a more significant effect on global conditions than those scientists claim</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By declaring that the changes in climate caused by the Viluy Traps eruption weren't the main cause of the Late Devonian extinction</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. Text 2 reports that Brice\u00f1o's team found that Viluy gases altered the climate, but that climate had stabilized well before the extinctions intensified&mdash;the extinctions instead align with peak oceanic anoxia. Brice\u00f1o's team would therefore push back on the underlined claim by saying that climate changes from the Viluy Traps eruption weren't the main cause of the extinctions.</p><p>Choice A is incorrect because the team's findings argue against the Viluy Traps as the main cause. Choice B is incorrect because neither text suggests scientists assume anoxia caused the Viluy Traps eruption. Choice C is incorrect because Brice\u00f1o's team found Viluy effects were transient, not more significant than Text 1 claims.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.hard"
+}

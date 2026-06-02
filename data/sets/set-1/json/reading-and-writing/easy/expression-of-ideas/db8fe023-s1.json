@@ -1,0 +1,39 @@
+{
+  "questionId": "db8fe023-s1",
+  "originalId": "db8fe023",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>A woodworker choosing which type of wood to use for a piece considers two key factors: the desired appearance of the piece and how the piece will be used. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> walnut is often used for fine furniture because of its rich color and grain. This type of wood is rarely used outdoors, though, because it is less weather-resistant than other woods.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Regardless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In conclusion,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The previous sentence tells us that woodworkers think about look and use when selecting wood. This sentence provides a specific example (walnut for appearance), so \"for example\" fits perfectly.</p><p>Choice A is incorrect because \"in other words\" illogically signals a restatement. Choice B is incorrect because \"regardless\" illogically signals contrast, when the sentence supports the claim. Choice D is incorrect because \"in conclusion\" illogically signals summary; the sentence offers an example, not a conclusion.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "73caa3ab",
+  "externalId": "d6a68288-df99-46df-af06-1d642b22ed89",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:16.330753+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the text, what is notable about Schmidt&rsquo;s behavior?</p>",
+  "answerOptions": [
+    {
+      "id": "ea0272d4-0760-4dfd-9667-33c8ceb26010",
+      "content": "<p>Schmidt is only given to theatrical behavior when in the company of the narrator and his first wife.</p>"
+    },
+    {
+      "id": "d557f84f-04eb-43fd-82f5-426d0e506511",
+      "content": "<p>Schmidt&rsquo;s absentmindedness regarding his schedule is uncharacteristic of him.</p>"
+    },
+    {
+      "id": "bcd68876-1bee-4f40-8187-7529b46d88e3",
+      "content": "<p>Schmidt&rsquo;s departure is occasioned by the resumption of a previous disagreement with the narrator&rsquo;s first wife about a particular painting.</p>"
+    },
+    {
+      "id": "30f29273-b40d-4dee-be13-ca18c64a7795",
+      "content": "<p>Schmidt conveys his feelings about one of his dining companions without explicitly stating them.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "30f29273-b40d-4dee-be13-ca18c64a7795"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most accurately describes what is notable about Schmidt&rsquo;s behavior. According to the text, when the narrator&rsquo;s first wife admits she doesn&rsquo;t find art particularly compelling, Schmidt responds by wincing, sighing dramatically, and abruptly leaving dinner with an obviously false excuse about a remembered appointment. The narrator makes it clear that there is no actual appointment and that the excuse is merely a pretense. Through these actions&mdash;the physical reactions of wincing and sighing, followed by the transparent excuse to leave&mdash;Schmidt clearly communicates his disapproval of the wife without directly stating his feelings about her.</p><p>Choice A is incorrect because the text provides no evidence that Schmidt&rsquo;s theatrical behavior&mdash;wincing, sighing dramatically, and abruptly leaving dinner&mdash;is unique to situations involving the narrator and his first wife. The text describes only one interaction involving Schmidt, so there&rsquo;s no basis for determining whether his dramatic reactions are typical of him in all situations or limited to this particular social context. Choice B is incorrect because nothing in the text suggests that Schmidt is typically mindful of his schedule or that forgetting appointments would be uncharacteristic of him. Rather, the text makes it clear that Schmidt hasn&rsquo;t actually forgotten an appointment at all&mdash;the narrator indicates that Schmidt&rsquo;s reason for leaving is an obvious fabrication, not a genuine instance of absentmindedness. Choice C is incorrect because the text doesn&rsquo;t mention any previous disagreement between Schmidt and the narrator&rsquo;s first wife about a particular painting or any other topic. The text presents what appears to be a spontaneous reaction by Schmidt to the wife&rsquo;s statement about not finding art compelling, not the continuation of an earlier conversation or dispute.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the text, what is notable about Schmidt&rsquo;s behavior?</p>",
+    "stimulus": "<p>The following text is from Mark Haber&rsquo;s <span data-ssml-say-as=\"date\">2022</span> novel <em>Saint Sebastian&rsquo;s Abyss</em>. The narrator and Schmidt are both art critics.</p>\n<blockquote>\n<p>When my first wife admitted to Schmidt over dinner that she didn&rsquo;t find art, painting in particular, especially compelling, Schmidt winced, set down his fork, and sighed dramatically; he then excused himself, explaining an appointment he&rsquo;d forgotten about had suddenly and inexplicably been remembered, while making it abundantly clear there was no appointment at all.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;<span data-ssml-say-as=\"date\">2022</span> by Mark Haber</span></p>",
+    "keys": [
+      "30f29273-b40d-4dee-be13-ca18c64a7795"
+    ],
+    "answerOptions": [
+      {
+        "id": "ea0272d4-0760-4dfd-9667-33c8ceb26010",
+        "content": "<p>Schmidt is only given to theatrical behavior when in the company of the narrator and his first wife.</p>"
+      },
+      {
+        "id": "d557f84f-04eb-43fd-82f5-426d0e506511",
+        "content": "<p>Schmidt&rsquo;s absentmindedness regarding his schedule is uncharacteristic of him.</p>"
+      },
+      {
+        "id": "bcd68876-1bee-4f40-8187-7529b46d88e3",
+        "content": "<p>Schmidt&rsquo;s departure is occasioned by the resumption of a previous disagreement with the narrator&rsquo;s first wife about a particular painting.</p>"
+      },
+      {
+        "id": "30f29273-b40d-4dee-be13-ca18c64a7795",
+        "content": "<p>Schmidt conveys his feelings about one of his dining companions without explicitly stating them.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most accurately describes what is notable about Schmidt&rsquo;s behavior. According to the text, when the narrator&rsquo;s first wife admits she doesn&rsquo;t find art particularly compelling, Schmidt responds by wincing, sighing dramatically, and abruptly leaving dinner with an obviously false excuse about a remembered appointment. The narrator makes it clear that there is no actual appointment and that the excuse is merely a pretense. Through these actions&mdash;the physical reactions of wincing and sighing, followed by the transparent excuse to leave&mdash;Schmidt clearly communicates his disapproval of the wife without directly stating his feelings about her.</p><p>Choice A is incorrect because the text provides no evidence that Schmidt&rsquo;s theatrical behavior&mdash;wincing, sighing dramatically, and abruptly leaving dinner&mdash;is unique to situations involving the narrator and his first wife. The text describes only one interaction involving Schmidt, so there&rsquo;s no basis for determining whether his dramatic reactions are typical of him in all situations or limited to this particular social context. Choice B is incorrect because nothing in the text suggests that Schmidt is typically mindful of his schedule or that forgetting appointments would be uncharacteristic of him. Rather, the text makes it clear that Schmidt hasn&rsquo;t actually forgotten an appointment at all&mdash;the narrator indicates that Schmidt&rsquo;s reason for leaving is an obvious fabrication, not a genuine instance of absentmindedness. Choice C is incorrect because the text doesn&rsquo;t mention any previous disagreement between Schmidt and the narrator&rsquo;s first wife about a particular painting or any other topic. The text presents what appears to be a spontaneous reaction by Schmidt to the wife&rsquo;s statement about not finding art compelling, not the continuation of an earlier conversation or dispute.</p>",
+    "externalid": "d6a68288-df99-46df-af06-1d642b22ed89",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>The following text is from Mark Haber&rsquo;s <span data-ssml-say-as=\"date\">2022</span> novel <em>Saint Sebastian&rsquo;s Abyss</em>. The narrator and Schmidt are both art critics.</p>\n<blockquote>\n<p>When my first wife admitted to Schmidt over dinner that she didn&rsquo;t find art, painting in particular, especially compelling, Schmidt winced, set down his fork, and sighed dramatically; he then excused himself, explaining an appointment he&rsquo;d forgotten about had suddenly and inexplicably been remembered, while making it abundantly clear there was no appointment at all.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;<span data-ssml-say-as=\"date\">2022</span> by Mark Haber</span></p>"
+}

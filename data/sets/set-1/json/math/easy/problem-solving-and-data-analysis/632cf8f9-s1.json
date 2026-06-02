@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A function f passes through the points (0, 2), (1, 6), and (2, 18) in the xy-plane. The function increases more and more rapidly as x increases, and as x decreases, the values of f(x) approach 0. Which of the following best describes the function f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Decreasing linear</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Increasing linear</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Increasing exponential</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Decreasing exponential</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The values triple at each unit increase in x (2, 6, 18), characteristic of increasing exponential growth.</p><p>A linear function would increase by a constant amount each unit, not multiply. Decreasing options contradict the upward trend.</p>",
+  "questionId": "632cf8f9-s1",
+  "originalId": "632cf8f9",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy"
+}

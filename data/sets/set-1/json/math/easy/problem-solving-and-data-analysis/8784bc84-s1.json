@@ -1,0 +1,39 @@
+{
+  "questionId": "8784bc84-s1",
+  "originalId": "8784bc84",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is 25% of 320?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>64</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>80</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. 25% of 320 is 0.25 \u00d7 320 = 80.</p><p>Choice A is incorrect. This results from a computational error.</p><p>Choice B is incorrect. This is 20% of 320, not 25%.</p><p>Choice C is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T1.easy"
+}

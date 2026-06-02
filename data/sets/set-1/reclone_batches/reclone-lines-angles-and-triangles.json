@@ -1,0 +1,20 @@
+[
+  {
+    "id": "3b4b5b1e-s1",
+    "templateId": "lines-angles-and-triangles.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'explicit parallel statement' and 'single transversal' for A1.T1. Stem only describes two angles forming a straight line \u2014 pure linear-pair problem with no parallel lines or transversal. Belongs in A6."
+  },
+  {
+    "id": "3b44439b-s1",
+    "templateId": "lines-angles-and-triangles.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'parallel-lines configuration'. Clone has only a linear pair (no parallel lines, no transversal). Also fails to require solving for a parameter \u2014 the linear-pair sum is given directly. Belongs in A6."
+  },
+  {
+    "id": "3828f53d-s1",
+    "templateId": "lines-angles-and-triangles.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "The 145\u00b0 angle is at the j-k intersection, so the interior triangle angle there is 180-145=35\u00b0. Triangle has 90\u00b0 (j\u22a5q) + b\u00b0 + 35\u00b0 = 180\u00b0, giving b=55, not 35. The rationale even states 'two acute angles summing to 90\u00b0' which yields 35+b=90 \u2192 b=55, contradicting the keyed value 35. Correct answer is choice B (55)."
+  }
+]

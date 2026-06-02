@@ -1,0 +1,22 @@
+{
+  "questionId": "1362ccde-s1",
+  "originalId": "1362ccde",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>y</mi><mo>=</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>2</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>5</mn><mi>y</mi><mo>=</mo><mn>17</mn><mi>x</mi><mo>-</mo><mn>6</mn></math></p>\n<p>The solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mi>x</mi><mo>-</mo><mi>y</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>The correct answer is 6. Substituting y = 5x + 2 into 5y = 17x \u2212 6: 5(5x + 2) = 17x \u2212 6, so 25x + 10 = 17x \u2212 6, giving x = \u22122. Then y = 5(\u22122) + 2 = \u22128. So x \u2212 y = \u22122 \u2212 (\u22128) = 6.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium"
+}

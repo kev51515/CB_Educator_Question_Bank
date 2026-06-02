@@ -1,0 +1,39 @@
+{
+  "questionId": "ce940f80-s1",
+  "originalId": "ce940f80",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>9</mn></mfrac><mo>=</mo><mn>16</mn></math></p><p>What is a solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>144</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>225</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Multiplying both sides by 9 gives <math><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>144</mn></math>. Taking the square root yields <em>x</em> = \u00b112.</p><p>Choices B, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy"
+}

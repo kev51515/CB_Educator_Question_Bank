@@ -1,0 +1,25 @@
+{
+  "questionId": "9a94eb77-s1",
+  "originalId": "9a94eb77",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><span role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>One difficulty faced by researchers comparing rates of homelessness across countries is that nations may define homelessness differently. Some governments count only individuals sleeping in streets or shelters; others include people living temporarily with friends, in cars, or in informal settlements. Sweden, for example, uses four broad categories spanning short-term and long-term housing instability, while several other countries register only those who appear on shelter rolls. This variation makes cross-national comparisons of homelessness particularly difficult.</p><p>&nbsp;</p><p><span role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>Recently, a working group convened by several international housing agencies issued a unified framework for measuring homelessness across countries. The framework, known as the &ldquo;global homelessness typology,&rdquo; specifies common categories&mdash;rough sleeping, emergency accommodation, and severely insecure housing&mdash;and provides explicit criteria for placing individuals within them, enabling researchers to make more meaningful international comparisons.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the problem presented in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By recommending that a specific country should lead further investigation into the problem</p>"},
+    {"id": "b", "content": "<p>By proposing that researchers focus on social issues besides homelessness</p>"},
+    {"id": "c", "content": "<p>By indicating that a possible remedy for the problem is already in place</p>"},
+    {"id": "d", "content": "<p>By describing additional ways in which homelessness research is difficult</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. Text 1 identifies a difficulty in homelessness research: countries define homelessness differently, frustrating cross-national comparison. Text 2 describes the &ldquo;global homelessness typology,&rdquo; a unified framework with common categories and explicit criteria that lets researchers make more meaningful international comparisons. The author of Text 2 would respond by noting that a possible remedy for the problem of inconsistent definitions is already available.</p><p>Choice A is incorrect because Text 2 attributes the framework to a working group of agencies rather than singling out a country to lead further research. Choice B is incorrect because both texts concern homelessness; neither proposes redirecting attention to other issues. Choice D is incorrect because Text 2 offers a solution to the definitional problem rather than adding further difficulties.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

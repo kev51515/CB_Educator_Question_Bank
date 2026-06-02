@@ -1,0 +1,39 @@
+{
+  "questionId": "4bb25495-s1",
+  "originalId": "4bb25495",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A table shows the average annual rainfall, in inches, in five cities: 8.4, 12.2, 9.6, 11.0, and 13.8. Based on the table, what is the mean annual rainfall of the 5 cities, to the nearest inch?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>55</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The mean is the sum of the values divided by the number of values: (8.4 + 12.2 + 9.6 + 11.0 + 13.8) divided by 5 = 55.0 divided by 5 = 11.0, which rounds to 11.</p><p>Choice B is incorrect: 14 is approximately the largest value.</p><p>Choice C is incorrect: 5 is the number of cities.</p><p>Choice D is incorrect: 55 is the sum, not the mean.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

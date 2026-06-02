@@ -1,0 +1,39 @@
+{
+  "questionId": "1480dd5c-s1",
+  "originalId": "1480dd5c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = 6x + b. For the linear function f, b is a constant and f(4) = 30. What is the value of b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. f(4) = 6(4) + b = 24 + b = 30, so b = 6.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T4.easy"
+}

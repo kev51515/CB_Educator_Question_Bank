@@ -1,0 +1,39 @@
+{
+  "questionId": "3b02e88a-s1",
+  "originalId": "3b02e88a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The traditional Maltese <em>luzzu</em> is a small fishing boat recognizable by its bright paint and protective eye motifs on the bow.</li>\n<li><em>Luzzus</em> were used primarily for coastal fishing around the Maltese islands.</li>\n<li>Contemporary boatbuilders in Malta use both modern and traditional materials when constructing new <em>luzzus</em>.</li>\n<li>Most components used are traditional, such as locally cut wood and hand-stitched sailcloth.</li>\n<li>Some components, such as marine-grade epoxies and synthetic ropes, are modern.</li>\n</ul>",
+  "stem": "<p>The student wants to make a generalization about the materials used in new <em>luzzus</em>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Hand-stitched sailcloth, a traditional material long used in Maltese fishing boats, is still used by contemporary boatbuilders.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The Maltese <em>luzzu</em> is a small fishing boat used for coastal fishing and recognizable by its bright paint.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Although most materials used in new <em>luzzus</em> are traditional, some modern materials are used.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Contemporary boatbuilders in Malta build new <em>luzzus</em>, traditional small boats with protective eye motifs on the bow.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it captures the central generalization in the notes: the mix of mostly traditional materials with some modern ones.</p><p>Choices A and D give specific facts but not a generalization. Choice B describes the boats themselves rather than the materials.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A2.T6.hard"
+}

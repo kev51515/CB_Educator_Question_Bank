@@ -1,0 +1,39 @@
+{
+  "questionId": "a60b0004-s1",
+  "originalId": "a60b0004",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Scholarly discussions of class in Jane Austen's novels often celebrate the small rebellions of the writer's heroines against the rigid expectations <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by Regency-era English society. Most of the novels end in marriage, with the heroines settling into the established class roles after briefly straining against them, but there are some notable exceptions.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>imposed</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>committed</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>illustrated</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>interjected</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Imposed\" most logically completes the text. The text describes \"rigid expectations\" that Regency society placed on individuals; \"imposed by Regency-era English society\" captures the idea that society compelled people to live by those expectations.</p><p>Choice B is incorrect. \"Committed\" means done (in the sense of an act) or pledged; it doesn't fit \"expectations committed by society.\" Choice C is incorrect. \"Illustrated\" means depicted, but the text describes the source of the expectations, not a visual presentation. Choice D is incorrect. \"Interjected\" means inserted suddenly into speech, which does not match the broader social pressure described.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

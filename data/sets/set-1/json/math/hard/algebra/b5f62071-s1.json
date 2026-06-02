@@ -1,0 +1,22 @@
+{
+  "questionId": "b5f62071-s1",
+  "originalId": "b5f62071",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>50</mn><mi>x</mi><mo>-</mo><mn>64</mn><mi>y</mi><mo>=</mo><mn>36</mn><mi>y</mi><mo>+</mo><mn>25</mn></math></p>\n<p style=\"text-align: center;\"><math><mi>r</mi><mi>y</mi><mo>=</mo><mn>18</mn><mo>-</mo><mn>20</mn><mi>x</mi></math></p>\n<p>In the given system of equations, <math><mi>r</mi></math> is a constant. If the system has no solution, what is the value of <math><mi>r</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "-40"
+  ],
+  "rationale": "<p>The correct answer is \u221240. Rewrite the first equation: 50x \u2212 100y = 25, or after dividing by 25, 2x \u2212 4y = 1. Rewrite the second: 20x + ry = 18. For no solution, the coefficient ratios must match: 2/20 = \u22124/r, giving r = \u221240. With r = \u221240, the constants 1 and 18 don't fit the same ratio, so the lines are parallel and distinct.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

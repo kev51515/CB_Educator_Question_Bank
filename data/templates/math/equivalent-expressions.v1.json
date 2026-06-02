@@ -1,0 +1,515 @@
+{
+  "section": "Math",
+  "domain": "Advanced Math",
+  "skill": "Equivalent expressions",
+  "originals_count": 107,
+  "types": [
+    {
+      "id": "T1",
+      "name": "Combine like terms",
+      "description": "A polynomial in one variable (sometimes two) is given as a sum/difference of like or near-like monomials with no parentheses to distribute first; the student must combine like terms to a simplified form.",
+      "core_skill_demand": "Identify monomials that share both variable base and exponent, then add or subtract their coefficients without changing degree; avoid combining unlike degrees or different variables.",
+      "example_originals": ["18c7c3e0", "8452c42b", "70482e20", "fd4b2aa0", "127b2759", "67e866b5", "253985c2", "e597050f"],
+      "frequency": { "easy": 9, "medium": 0, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "2-4 monomials total, all in one or two variables",
+            "single power of the variable (e.g., x^2 only) so a single sum is required",
+            "all integer coefficients <100",
+            "no parentheses, no distribution required"
+          ],
+          "example_stem": "13x^2 - 7x^2",
+          "example_ids": ["18c7c3e0", "8452c42b", "70482e20", "fd4b2aa0"]
+        },
+        "medium": {
+          "characteristics": ["(rare at this difficulty - usually upgraded to T2 add/subtract polynomials)"],
+          "example_stem": "(not present)",
+          "example_ids": []
+        },
+        "hard": {
+          "characteristics": ["(does not appear at hard difficulty in this skill - hard items always combine combining with another operation)"],
+          "example_stem": "(not present)",
+          "example_ids": []
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "no parenthetical grouping that requires distribution",
+          "result must be a true simplification (fewer monomials than the stem)"
+        ],
+        "must_vary": [
+          "variable letter and exponent",
+          "number of like-term pairs (2-3)",
+          "sign pattern (mix of + and -)"
+        ],
+        "common_bugs": [
+          "agent multiplies exponents instead of keeping the exponent fixed (e.g., x^2*x^2 -> x^4 instead of 2x^2)",
+          "agent adds exponents of like terms (5x^3 + 6x^3 -> 11x^6)",
+          "agent merges unlike terms (9x + 6x + 2y -> 17xy) to fabricate a distractor that ends up being the correct option"
+        ]
+      }
+    },
+    {
+      "id": "T2",
+      "name": "Add or subtract two polynomials",
+      "description": "Two polynomials (each in parentheses) are joined by + or -; the student must remove parentheses (distributing the sign on the second when subtracting) and combine like terms.",
+      "core_skill_demand": "Correctly distribute the leading sign through the second polynomial (especially for subtraction) and then group/sum like terms across the two polynomials.",
+      "example_originals": ["075b29b0", "fd65f47f", "24016dee", "5805e747", "1e7a1deb", "1dd13816", "c8a5c221", "f237ccfc", "974d33dc", "c3a72da5", "b47419f4", "7348f046", "e312081b"],
+      "frequency": { "easy": 3, "medium": 6, "hard": 1 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "addition only (no sign distribution needed) or trivially short subtraction",
+            "polynomials of degree <=3 with 2-3 terms each",
+            "small integer coefficients"
+          ],
+          "example_stem": "(9x^3 + 5x + 7) + (6x^3 + 5x^2 - 5)",
+          "example_ids": ["075b29b0", "fd65f47f", "e312081b"]
+        },
+        "medium": {
+          "characteristics": [
+            "subtraction (requires distributing a negative sign to every term of the second polynomial)",
+            "answer is a specified constant from a structural rewrite (e.g., 'in the form bx^3 - 11, what is b?')",
+            "polynomials of degree 3 with 2-3 terms each"
+          ],
+          "example_stem": "(5x^3 - 3) - (-4x^3 + 8) is in the form bx^3 - 11; find b",
+          "example_ids": ["1dd13816", "24016dee", "5805e747", "1e7a1deb", "974d33dc", "c3a72da5"]
+        },
+        "hard": {
+          "characteristics": [
+            "three polynomials joined by signs (chained add/subtract)",
+            "result must be matched to a target form ax^4 + x^3 + ax^2 - x to solve for an unknown coefficient"
+          ],
+          "example_stem": "(9x^4 + 8x^3) - (7x^3 + 5x^2) - (3x^2 + x), find a in the matched form",
+          "example_ids": ["c8a5c221"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "parenthesised polynomial structure with explicit + or - between them",
+          "the operation (+ vs -) drives the sign distribution required"
+        ],
+        "must_vary": [
+          "variable letter, degrees (up to cubic typical), specific coefficients",
+          "whether subtraction or addition (within difficulty bounds)"
+        ],
+        "common_bugs": [
+          "agent forgets to distribute the negative sign to every term in the second polynomial when subtracting",
+          "agent collapses two parenthesised polynomials into a single sum without preserving the subtraction structure (downgrading difficulty)",
+          "agent picks small coefficients that make the easy and medium versions indistinguishable"
+        ]
+      }
+    },
+    {
+      "id": "T3",
+      "name": "Distribute a single factor",
+      "description": "A coefficient (integer, monomial, or binomial) multiplies a parenthesised polynomial; the student must apply the distributive property to produce an unparenthesised equivalent.",
+      "core_skill_demand": "Multiply the outside factor by every term inside the parentheses, preserving signs, and report the resulting sum.",
+      "example_originals": ["02489d55", "508344ac", "8f82ad81", "0354c7de", "1d3fee25", "294db8ec", "6e06a0a7", "fb96a5b3", "df0ef054", "3e9cc0c2", "8838a672", "ad038c19", "49efde89"],
+      "frequency": { "easy": 8, "medium": 3, "hard": 2 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "outside factor is an integer",
+            "binomial inside with two terms only",
+            "no follow-up combining required"
+          ],
+          "example_stem": "19(x^2 - 7)",
+          "example_ids": ["02489d55", "508344ac", "8f82ad81"]
+        },
+        "medium": {
+          "characteristics": [
+            "outside factor is a monomial with a variable (e.g., 2x) or a binomial-of-binomial setup",
+            "after distribution, like terms must still be combined",
+            "polynomial inside has 3+ terms"
+          ],
+          "example_stem": "Distribute and simplify a binomial-by-polynomial product (one factor outside, parenthesised sum inside)",
+          "example_ids": ["8838a672", "3e9cc0c2"]
+        },
+        "hard": {
+          "characteristics": [
+            "expression requires both distribution and a final coefficient match (find a so the expanded form equals ax^n + ...)",
+            "fractional/rational coefficients OR variables appearing as constants (e.g., the expression has the form x(x+a))"
+          ],
+          "example_stem": "If 7x(... ) = 14x^2 + ax, what is a?",
+          "example_ids": ["49efde89", "ad038c19"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "single outside factor times a parenthesised polynomial",
+          "no additional polynomial-by-polynomial multiplication unless explicitly upgrading to T6"
+        ],
+        "must_vary": [
+          "the outside factor (integer vs monomial)",
+          "the number of terms inside",
+          "sign of the inside terms"
+        ],
+        "common_bugs": [
+          "agent distributes only to the first inside term, leaving the others unchanged",
+          "agent fails to multiply integer constants together (e.g., 19 * 7 = 133 missed)",
+          "agent simplifies a hard variant (find-a) down to a plain distribution (no constant left to match), regressing difficulty"
+        ]
+      }
+    },
+    {
+      "id": "T4",
+      "name": "Factor out the greatest common factor",
+      "description": "A polynomial with 2-3 monomial terms is given, and one of the answer choices presents it as (gcf)(simpler polynomial). The student must identify the largest constant and variable factors common to every term.",
+      "core_skill_demand": "Find the GCF of integer coefficients AND of each variable (lowest exponent that appears in every term), then divide each term and write the factored form.",
+      "example_originals": ["499cb491", "50338a48", "5dd53f73", "72ebc024", "772de699", "bdb0aa23", "beb86a0c", "d4d513ff", "dc67c130", "26eb61c1", "3206b905", "b4a6ed81"],
+      "frequency": { "easy": 9, "medium": 3, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "two terms only; coefficients share an obvious small GCF (or GCF is 1 and only the variable is common)",
+            "single variable",
+            "answer requires identifying both the coefficient and the variable power to pull out"
+          ],
+          "example_stem": "Factor 5x^2 - 50xy^2 (GCF = 5x)",
+          "example_ids": ["499cb491", "50338a48", "5dd53f73", "d4d513ff"]
+        },
+        "medium": {
+          "characteristics": [
+            "two variables and exponents requiring picking the minimum power of each",
+            "three-term polynomial where the GCF leaves a trinomial",
+            "answer phrased as 'r * (already-factored form), find r'"
+          ],
+          "example_stem": "6x^8*y^2 + 12x^2*y^2 = 6x^2*y^2(x^6 + 2)",
+          "example_ids": ["26eb61c1", "3206b905", "b4a6ed81"]
+        },
+        "hard": {
+          "characteristics": ["GCF factoring alone does not appear at hard difficulty; hard items combine factoring with quadratic recognition (see T5) or coefficient matching"],
+          "example_stem": "(not present at hard as standalone)",
+          "example_ids": []
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "every term in the polynomial must share a non-trivial GCF (or the question loses force)",
+          "the answer choice must show the original expression in true factored form, not partially factored"
+        ],
+        "must_vary": [
+          "number of variables (1 or 2) and their exponents",
+          "the magnitude of the integer GCF",
+          "whether the result is a binomial or trinomial inside the parentheses"
+        ],
+        "common_bugs": [
+          "agent factors only the integer GCF and leaves the variables unfactored (or vice versa)",
+          "agent picks the WRONG minimum exponent (e.g., x^3 from x^2 and x^3 instead of x^2)",
+          "agent constructs distractors that algebraically don't equal the original (need to verify by re-expanding)"
+        ]
+      }
+    },
+    {
+      "id": "T5",
+      "name": "Factor quadratic / difference of squares / perfect square",
+      "description": "A quadratic-form polynomial (ax^2 + bx + c, a difference of squares, or a perfect-square trinomial) must be expressed as a product of binomials, or such factoring must be applied as a step before identifying a factor or another constant.",
+      "core_skill_demand": "Recognize the quadratic pattern (sum/product for trinomials, A^2 - B^2 = (A+B)(A-B) for difference of squares, A^2 +/- 2AB + B^2 = (A+/-B)^2 for perfect square) and produce or use the binomial factors.",
+      "example_originals": ["1e8d7183", "5d93c782", "df747160", "ad2ec615", "a05bd3a4", "dd4ab4c4", "42f8e4b4", "ffdbcad4", "c3b116d7", "d8789a4c", "a0b4103e", "e51bf5b1"],
+      "frequency": { "easy": 3, "medium": 3, "hard": 6 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "leading coefficient = 1 (or trivial)",
+            "small integer constants in the trinomial; integer roots",
+            "difference of squares with simple perfect-square coefficients"
+          ],
+          "example_stem": "x^2 + 3x - 40 factors as (x-?)(x+?)",
+          "example_ids": ["5d93c782", "1e8d7183", "df747160"]
+        },
+        "medium": {
+          "characteristics": [
+            "trinomial in disguise (e.g., x^4 - x^2 - 6 treated as quadratic in x^2)",
+            "perfect-square recognition required (a^2 +/- 2ab + b^2)",
+            "answer set asks for a specific factor among options rather than the full factorisation"
+          ],
+          "example_stem": "Which is a factor of x^4 - x^2 - 6?  (treat as (x^2)^2 - x^2 - 6)",
+          "example_ids": ["ad2ec615", "a05bd3a4", "dd4ab4c4"]
+        },
+        "hard": {
+          "characteristics": [
+            "leading coefficient != 1 with a parameter (find b in 4x^2 + bx - 45 given a factored form (hx+k)(x+j))",
+            "factoring after first pulling a common factor (a0b4103e: factor 2 then difference of squares)",
+            "factored form contains a parameter and student must match coefficients (e.g., 2x^3 + 42x^2 + 208x = (x+b) * stuff; find b)",
+            "binomial-times-quadratic where coefficient matching (compare ax^2+bx+c forms) yields the answer"
+          ],
+          "example_stem": "2x^3 + 42x^2 + 208x = ... (x + b) ..., what is b?",
+          "example_ids": ["42f8e4b4", "ffdbcad4", "c3b116d7", "d8789a4c", "a0b4103e", "e51bf5b1"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "the quadratic-style structure (or a substitution that reduces to one)",
+          "for hard variants: a parameter (b, c, k) that the student must solve for via matching"
+        ],
+        "must_vary": [
+          "the specific integer pair / perfect-square base",
+          "the sign of the middle term",
+          "whether the answer is the full factorisation or a single factor / parameter value"
+        ],
+        "common_bugs": [
+          "agent picks a factor pair that gives wrong sum (e.g., (x-4)(x+10) for x^2 + 3x - 40 instead of (x-5)(x+8))",
+          "agent confuses A^2 - B^2 with (A-B)^2 in distractors",
+          "agent simplifies hard parametric items by choosing parameter values that make the matching trivial (e.g., b=0), regressing difficulty",
+          "agent fails to factor out the leading coefficient before recognising difference of squares (e.g., misses the initial /2 in a0b4103e)"
+        ]
+      }
+    },
+    {
+      "id": "T6",
+      "name": "Multiply binomials/polynomials",
+      "description": "Two or more polynomial factors are given as a product; the student must expand fully (FOIL or distributive multi-step) and simplify, often matching to a specific form to solve for a constant.",
+      "core_skill_demand": "Apply distributive property across every term of the first polynomial and every term of the second, then sum like terms; for parametric variants, equate coefficients to find an unknown.",
+      "example_originals": ["482a445b", "5b6af6b1", "fde6f3bb", "c602140f", "a255ae72", "b8caaf84", "cc776a04", "26e83bbc", "a391ed22", "ea6d05bb", "371cbf6b", "911c415b", "c81b6c57", "f89e1d6f"],
+      "frequency": { "easy": 0, "medium": 8, "hard": 6 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": ["product-of-binomials does not appear at easy difficulty for this skill"],
+          "example_stem": "(not present)",
+          "example_ids": []
+        },
+        "medium": {
+          "characteristics": [
+            "product of two binomials, or square of a binomial plus another product",
+            "integer coefficients; degree of resulting polynomial <=3",
+            "answer is the full expanded form"
+          ],
+          "example_stem": "(d - 6)(8d^2 - 3)",
+          "example_ids": ["482a445b", "5b6af6b1", "c602140f", "fde6f3bb", "26e83bbc"]
+        },
+        "hard": {
+          "characteristics": [
+            "expansion produces a polynomial that must be matched against ax^2 + bx + c to solve for a single coefficient (often b)",
+            "negative coefficients across the binomials so signed-arithmetic mistakes are likely",
+            "the product involves a parameter (p, k, c+d) and the result is compared to a numeric expression",
+            "perfect-square trick required to recognise a polynomial inside the expansion (e.g., x^2 - c^2 - 2cd - d^2 = x^2 - (c+d)^2)"
+          ],
+          "example_stem": "(3x - 23)(19x + 6) = ax^2 + bx + c, what is b?",
+          "example_ids": ["ea6d05bb", "371cbf6b", "911c415b", "c81b6c57", "f89e1d6f"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "the multi-factor product structure",
+          "for hard variants, an unknown parameter that requires coefficient matching"
+        ],
+        "must_vary": [
+          "specific integer coefficients",
+          "whether the product yields a quadratic or cubic",
+          "which coefficient (a, b, or c) is the unknown"
+        ],
+        "common_bugs": [
+          "agent forgets one of the FOIL cross-terms",
+          "agent loses a sign on a negative coefficient inside one of the binomials",
+          "agent answers the wrong constant when multiple matches are required (returns a instead of b)",
+          "agent collapses a hard parametric variant to a plain expansion by choosing zero-valued parameters"
+        ]
+      }
+    },
+    {
+      "id": "T7",
+      "name": "Exponent and radical rules",
+      "description": "The student must rewrite an expression using exponent rules (product, quotient, power of a power, negative/fractional exponents) or convert between radical and exponent forms.",
+      "core_skill_demand": "Apply the laws of exponents and radicals (x^a * x^b = x^(a+b), x^a/x^b = x^(a-b), (x^a)^b = x^(ab), x^(1/n) = n-th root of x) and combine across multiple variable bases.",
+      "example_originals": ["290cdc2c", "4ac59df6", "f5c3e3b8", "1be909aa", "42f19012", "4eaf0a3a", "d9137a84", "a520ba07", "463eec13", "0b3d25c5", "2c88af4d", "22fd3e1f", "137cc6fd", "565428e1", "c6e85cd7", "40c09d66", "b74f2feb", "e117d3b8"],
+      "frequency": { "easy": 3, "medium": 4, "hard": 8 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "single rule application (e.g., x^a * x^b)",
+            "all positive integer exponents",
+            "no rational exponents or radicals beyond a simple n-th root"
+          ],
+          "example_stem": "(8yz)(y)(7z) -> 56y^2z^2",
+          "example_ids": ["4ac59df6", "f5c3e3b8", "290cdc2c"]
+        },
+        "medium": {
+          "characteristics": [
+            "rational exponent <-> radical conversion (e.g., a^(11/12) = 12th root of a^11)",
+            "multi-step rule chain (quotient AND power AND combination of bases)",
+            "two or three different variable bases"
+          ],
+          "example_stem": "h^15 * q^7 / (h^5 * q^21)",
+          "example_ids": ["1be909aa", "42f19012", "4eaf0a3a", "d9137a84"]
+        },
+        "hard": {
+          "characteristics": [
+            "fractional exponents on both sides of an equivalence, solving for an unknown exponent (e.g., 4^(8c) = cube root of 4^7, find c)",
+            "two radicals with different indices and the answer must be (70n)^(30x); solve for the rational exponent",
+            "involves matching the expression to a structural form (a * x^b) to find a + b",
+            "nested rationals / negative exponents inside a fraction that must be combined with restriction conditions (x > 0, etc.)"
+          ],
+          "example_stem": "5th root of (70n) * (6th root of (70n))^2 = (70n)^(30x); find x",
+          "example_ids": ["137cc6fd", "565428e1", "c6e85cd7", "40c09d66", "b74f2feb", "e117d3b8", "22fd3e1f", "2c88af4d"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "exponent or radical structure as the core operation",
+          "restriction conditions (e.g., variable > 0) when needed for the rule to apply"
+        ],
+        "must_vary": [
+          "the specific exponents/indices",
+          "the number of bases involved",
+          "whether the unknown is the exponent (hard) or the simplified form (easy/medium)"
+        ],
+        "common_bugs": [
+          "agent multiplies exponents when it should add (or vice versa)",
+          "agent drops the restriction condition that makes the rule valid",
+          "agent converts an n-th root of x^m to x^(n/m) instead of x^(m/n)",
+          "agent reduces a hard 'solve for exponent' item to a straightforward simplification, removing the matching step"
+        ]
+      }
+    },
+    {
+      "id": "T8",
+      "name": "Rational expression simplification",
+      "description": "The expression is a sum, difference, or quotient of rational expressions (fractions with polynomial numerator/denominator); the student must combine over a common denominator, simplify by factoring, or rewrite into a target form, often subject to domain restrictions.",
+      "core_skill_demand": "Find common factors in numerator and denominator (or build a common denominator), then combine and reduce, respecting the stated restriction (x != value).",
+      "example_originals": ["52931bfa", "6d04c89d", "20291f47", "433184f1", "967ef685", "34847f8a", "12e7faf8", "89fc23af"],
+      "frequency": { "easy": 0, "medium": 2, "hard": 6 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": ["does not appear at easy difficulty for this skill"],
+          "example_stem": "(not present)",
+          "example_ids": []
+        },
+        "medium": {
+          "characteristics": [
+            "single fraction with a numerator that can be factored to cancel the denominator",
+            "or two fractions where matching numerators/denominators yield a coefficient equation (find b in 4/(x+b))",
+            "no need to build a common denominator across two distinct denominators"
+          ],
+          "example_stem": "(8x(x-7) - 3(x-7)) / (2x - 14) simplifies to (8x-3)/2",
+          "example_ids": ["52931bfa", "6d04c89d"]
+        },
+        "hard": {
+          "characteristics": [
+            "two fractions with DIFFERENT polynomial denominators must be added/subtracted (build a common denominator and combine)",
+            "after combining, simplify and match to a structural form like p(x)/(q(x)) to solve for two constants (r and t) and report rt",
+            "denominators must be factored before LCD can be identified",
+            "domain restriction is non-trivial (multiple values excluded)"
+          ],
+          "example_stem": "4/(4x-5) - 1/(x+1)  simplified",
+          "example_ids": ["20291f47", "433184f1", "967ef685", "34847f8a", "12e7faf8", "89fc23af"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "rational (fraction-of-polynomials) structure",
+          "domain restriction stated explicitly (x > something, x != something)"
+        ],
+        "must_vary": [
+          "the polynomial degrees in numerator/denominator",
+          "whether the answer is a simplified rational or a constant to be matched",
+          "the specific factoring step required (GCF vs difference of squares vs trinomial)"
+        ],
+        "common_bugs": [
+          "agent fails to use a common denominator and just sums numerators/denominators separately",
+          "agent cancels terms that aren't factors (e.g., cancels x in (x+1)/x)",
+          "agent drops or weakens the domain restriction so a hard item becomes ambiguous",
+          "agent factors the numerator incorrectly, producing an answer choice that algebraically equals the wrong simplification"
+        ]
+      }
+    },
+    {
+      "id": "T9",
+      "name": "Coefficient matching / find the unknown constant",
+      "description": "An identity is stated to hold 'for all x' between a given expression and a target form containing one or more unknown constants; the student must expand, simplify, and equate coefficients (or another structural feature) to solve for the constant(s).",
+      "core_skill_demand": "Recognise that 'true for all x' implies coefficient-by-coefficient equality, expand the messier side, set corresponding coefficients equal, and solve the resulting small system.",
+      "example_originals": ["a391ed22", "5355c0ef", "ea6d05bb", "911c415b", "371cbf6b", "c81b6c57", "12e7faf8", "34847f8a", "7355b9d9", "ffdbcad4", "d8789a4c", "16de54c7", "f237ccfc", "1dd13816", "b4a6ed81", "42f8e4b4", "a0b4103e"],
+      "frequency": { "easy": 0, "medium": 5, "hard": 12 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": ["does not appear at easy difficulty for this skill"],
+          "example_stem": "(not present)",
+          "example_ids": []
+        },
+        "medium": {
+          "characteristics": [
+            "one unknown in the target form",
+            "the matched form is essentially the simplified version of an explicit operation (e.g., a polynomial sum reduced to bx^3 - 11; find b)",
+            "no factoring of the target form needed"
+          ],
+          "example_stem": "(5x^3 - 3) - (-4x^3 + 8) in the form bx^3 - 11; what is b?",
+          "example_ids": ["1dd13816", "b4a6ed81", "16de54c7", "f237ccfc", "a391ed22"]
+        },
+        "hard": {
+          "characteristics": [
+            "target form contains the unknown across more than one coefficient",
+            "expansion of the source side requires distributive AND combining steps before matching",
+            "answer is a derived quantity from multiple unknowns (e.g., ab, rt, a+b) not the unknown itself",
+            "fractional or decimal coefficients in the matching"
+          ],
+          "example_stem": "0.36x^2 + 0.63x + 1.17 = a(4x^2 + 7x + 13); find a",
+          "example_ids": ["5355c0ef", "ea6d05bb", "911c415b", "371cbf6b", "c81b6c57", "12e7faf8", "34847f8a", "7355b9d9", "ffdbcad4", "d8789a4c", "42f8e4b4", "a0b4103e"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "an explicit identity statement ('for all x' or 'equivalent to')",
+          "at least one named unknown constant in the target form",
+          "the requirement to return a derived value (not the full expanded expression)"
+        ],
+        "must_vary": [
+          "the specific structural rewrite (factoring, expansion, common-denominator combining)",
+          "whether the deliverable is a single constant or a derived product/sum"
+        ],
+        "common_bugs": [
+          "agent equates the wrong coefficient (e.g., matches constant term when the unknown lies in the x-coefficient)",
+          "agent simplifies the target form so the unknown is no longer matchable (e.g., picks parameter values that make distractors trivial)",
+          "agent returns the unknown itself when the question asked for a derived value (and vice versa)",
+          "agent skips the 'for all x' implication and just plugs in a single value"
+        ]
+      }
+    },
+    {
+      "id": "T10",
+      "name": "Substitute and simplify (composite expressions)",
+      "description": "Two or more expressions are defined (often as functions f(x), g(x), or labeled variables p, v, a, b); the student must substitute one definition into a target expression (sum, difference, product, or algebraic combination) and simplify.",
+      "core_skill_demand": "Carry out the indicated substitution faithfully (preserving parentheses), then apply combining/distributive/expansion rules to produce the simplified equivalent.",
+      "example_originals": ["fde6f3bb", "26e83bbc", "a255ae72", "b8caaf84", "1e7a1deb"],
+      "frequency": { "easy": 0, "medium": 5, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": ["does not appear at easy difficulty for this skill"],
+          "example_stem": "(not present)",
+          "example_ids": []
+        },
+        "medium": {
+          "characteristics": [
+            "two definitions and one combined expression to simplify",
+            "definitions involve integer coefficients (occasionally a single fraction)",
+            "the combination is a sum, difference, or product"
+          ],
+          "example_stem": "a = 4k + 5r; b = 7k - 12r + 3; find a - b",
+          "example_ids": ["1e7a1deb", "a255ae72", "b8caaf84", "fde6f3bb"]
+        },
+        "hard": {
+          "characteristics": ["substitute-and-simplify variants at hard difficulty are absorbed into T6 (with parametric matching) or T7 (with exponent rules)"],
+          "example_stem": "(not standalone at hard difficulty)",
+          "example_ids": []
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "two or more clearly defined sub-expressions",
+          "an explicit operation combining them"
+        ],
+        "must_vary": [
+          "whether definitions use letters (a, b) or function notation (f(x), g(x))",
+          "the combining operation (sum/difference/product)",
+          "complexity of the individual definitions"
+        ],
+        "common_bugs": [
+          "agent drops parentheses on substitution (so a - b loses the distribution of the minus sign over b)",
+          "agent multiplies fractional coefficients incorrectly (e.g., (3/5)x * 6x miscalculated)",
+          "agent simplifies by combining a definition with the wrong target variable"
+        ]
+      }
+    }
+  ],
+  "skill_wide_notes": "Hard items in this skill almost always layer a structural-rewrite step (factor, expand, common-denominator) with a coefficient-matching step (T9). Easy items typically involve a SINGLE operation (distribute, combine, factor GCF) with small integer coefficients. Medium items either add a second sub-step or introduce two-variable / parametric setups but still ask for a clean simplified form rather than a constant. Many image-only stems (e.g., 0354c7de, 1d3fee25, 6e06a0a7, df0ef054) are classified by reading the rationale, which describes the operation explicitly. The SPR (student-produced response) items are almost exclusively coefficient-matching (T9) variants."
+}

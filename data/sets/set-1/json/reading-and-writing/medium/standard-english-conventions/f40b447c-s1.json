@@ -1,0 +1,25 @@
+{
+  "questionId": "f40b447c-s1",
+  "originalId": "f40b447c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.medium",
+  "stimulus": "<p>Layering thin sheets of gold leaf over carved wooden panels, Tadahiko Nakamura&rsquo;s 1991 sculpture <em>Sunlit Pavilion</em> draws on the tradition of <em>kirikane</em>, a Japanese decorative practice <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by the application of finely cut metal leaf to depict shimmering, otherworldly surfaces.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>distinguished</p>"},
+    {"id": "b", "content": "<p>is distinguished</p>"},
+    {"id": "c", "content": "<p>has been distinguished</p>"},
+    {"id": "d", "content": "<p>will be distinguished</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite past participle \"distinguished\" is correctly used within a supplementary element that modifies the noun phrase \"a Japanese decorative practice,\" defining <em>kirikane</em> and explaining one of its identifying traits.</p><p>Choice B is incorrect because it results in a comma splice. Using the finite present-tense verb \"is distinguished\" creates a second main clause, and the two main clauses can&rsquo;t be joined this way by only the comma before \"a Japanese.\" Choice C is incorrect because it results in a comma splice. Using the finite present-perfect verb \"has been distinguished\" creates a second main clause. Choice D is incorrect because it results in a comma splice. Using the finite future-tense verb \"will be distinguished\" creates a second main clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

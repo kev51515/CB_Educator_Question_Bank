@@ -1,0 +1,39 @@
+{
+  "questionId": "de39858a-s1",
+  "originalId": "de39858a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>h</i> is defined by <i>h</i>(<i>x</i>) = <i>ab</i><sup><i>x</i></sup>, where <i>a</i> and <i>b</i> are positive constants. The graph of <i>y</i> = <i>h</i>(<i>x</i>) in the <i>xy</i>-plane passes through the points (0, 20) and (&minus;2, 5/4). What is the value of <i>ab</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1/2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since <i>h</i>(0) = <i>a</i> &middot; <i>b</i><sup>0</sup> = <i>a</i> = 20. Using <i>h</i>(&minus;2) = 20<i>b</i><sup>&minus;2</sup> = 5/4 gives <i>b</i><sup>&minus;2</sup> = 1/16, so <i>b</i>&sup2; = 16 and <i>b</i> = 4 (positive). Thus <i>ab</i> = 20 &middot; 4 = 80.</p><p>Choice B doubles <i>a</i> without solving for <i>b</i>. Choices C and D give <i>b</i>/<i>a</i> or 1/<i>b</i> instead of <i>ab</i>.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

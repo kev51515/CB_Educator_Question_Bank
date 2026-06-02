@@ -1,0 +1,39 @@
+{
+  "questionId": "95dbdf51-s1",
+  "originalId": "95dbdf51",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The musicologist Susan Carrow has argued that in dramatic theater, dialogue spoken in close physical proximity between two actors encourages audience members to perceive the characters as emotionally intimate. This effect is intensified by what she calls \"naturalistic blocking,\" in which the actors' movements appear so unforced that the staging seems to disappear. Conversely, Carrow proposes that dialogue exchanged across great physical distance or with stylized, mannered blocking would prompt audiences to view the characters as emotionally estranged. Consider, for example, the parlor confrontation in Henrik Ibsen's <em>Hedda Gabler</em> as staged in a recent production: the actors deliver their lines from opposite ends of a long room, with elaborate, ritualized gestures. According to Carrow's logic, this staging should affect viewers by <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>directing their focus away from the play's plot and toward its visual composition.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>encouraging them to side with the playwright, who serves as a proxy for the staging, rather than with the characters.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>concealing from them the high degree of deliberate artifice involved in the production's design.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>weakening their sense of intimacy between the two characters, if not making the characters seem actively estranged.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says that close physical proximity and naturalistic blocking make audiences see characters as emotionally intimate, while distance and stylized blocking have the opposite effect. The staging described\u2014actors far apart, using ritualized gestures\u2014falls into the second category, so according to Carrow's logic it should reduce viewers' sense of intimacy between the characters and may even make them feel estranged.</p><p>Choice A is incorrect because the text doesn't discuss whether stylistic features may distract viewers from a play's story, so there's no basis for this inference. Choice B is incorrect because the text never mentions the playwright, so there's no basis for inferring that viewers will side with the playwright. Choice C is incorrect because the text says nothing about viewers' awareness of artifice in the staging, so this inference has no support.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T1.hard"
+}

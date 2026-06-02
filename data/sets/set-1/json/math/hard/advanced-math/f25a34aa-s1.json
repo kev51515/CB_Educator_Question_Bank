@@ -1,0 +1,22 @@
+{
+  "questionId": "f25a34aa-s1",
+  "originalId": "f25a34aa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The area of a triangle is equal to <i>x</i>&sup2; square centimeters. The length of the base of the triangle is 2<i>x</i> + 30 centimeters, and the height of the triangle is <i>x</i> &minus; 12 centimeters. What is the value of <i>x</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "60"
+  ],
+  "rationale": "<p>The area is (1/2)(base)(height) = (1/2)(2<i>x</i> + 30)(<i>x</i> &minus; 12) = (<i>x</i> + 15)(<i>x</i> &minus; 12) = <i>x</i>&sup2; + 3<i>x</i> &minus; 180. Setting this equal to <i>x</i>&sup2; gives 3<i>x</i> &minus; 180 = 0, so <i>x</i> = 60.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

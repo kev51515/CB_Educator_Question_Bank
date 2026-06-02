@@ -1,0 +1,39 @@
+{
+  "questionId": "264e7415-s1",
+  "originalId": "264e7415",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The Cumberland Road was a federally built highway begun in 1811 and completed in 1837.</li>\n<li>It was the first major improved highway in the United States built by the federal government.</li>\n<li>It linked Cumberland, Maryland, with Vandalia, Illinois.</li>\n<li>It stretched 620 miles.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize the distance covered by the Cumberland Road. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The Cumberland Road was the first major improved highway in the United States built by the federal government.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A historic American highway, the Cumberland Road was completed in 1837.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Stretching 620 miles, the Cumberland Road linked Cumberland, Maryland, with Vandalia, Illinois.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The Cumberland Road, which linked Maryland and Illinois, was built between 1811 and 1837.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it emphasizes the road's length (620 miles) while naming the endpoints. Choice A is incorrect because it emphasizes historical significance, not distance. Choice B is incorrect because it emphasizes completion date, not distance. Choice D is incorrect because it mentions endpoints and construction period without stating distance.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A2.T4.easy"
+}

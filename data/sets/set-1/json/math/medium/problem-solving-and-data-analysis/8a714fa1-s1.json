@@ -1,0 +1,39 @@
+{
+  "questionId": "8a714fa1-s1",
+  "originalId": "8a714fa1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following represents the result of increasing the quantity <em>y</em> by 14%, where <em>y</em> &gt; 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.14<em>y</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.14<em>y</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.86<em>y</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>14<em>y</em></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Increasing a positive quantity <em>y</em> by 14% yields <em>y</em> + 0.14<em>y</em> = 1.14<em>y</em>. Choice A is incorrect because 0.14<em>y</em> is just 14% of <em>y</em>, not <em>y</em> increased by 14%. Choice C is incorrect because 0.86<em>y</em> represents decreasing <em>y</em> by 14%. Choice D is incorrect because 14<em>y</em> would be multiplying <em>y</em> by 14, an increase of 1,300%.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T5.medium"
+}

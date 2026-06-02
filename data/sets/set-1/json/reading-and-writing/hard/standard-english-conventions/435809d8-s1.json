@@ -1,0 +1,25 @@
+{
+  "questionId": "435809d8-s1",
+  "originalId": "435809d8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.hard",
+  "stimulus": "<p>On December 14, 2022, an unexpected cold front disrupted continental rail freight. A southbound coal train derailed in the Vrana Pass, a critical corridor linking the Adriatic coast with Central European refineries. Crews needed eleven days to clear <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the gradient of the pass and the volume of cars involved.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the wreckage, largely because of,</p>"},
+    {"id": "b", "content": "<p>the wreckage largely because of</p>"},
+    {"id": "c", "content": "<p>the wreckage, largely because of</p>"},
+    {"id": "d", "content": "<p>the wreckage, largely because of,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. A comma correctly marks the boundary between the main clause (\"Crews needed&hellip;wreckage\") and the supplementary prepositional phrase (\"largely because of&hellip;involved\") that explains the delay. No comma is needed inside \"because of.\"</p><p>Choice A is incorrect because the comma after \"of\" wrongly splits the preposition from its object. Choice B is incorrect because, with no comma after \"wreckage,\" the prepositional phrase reads as a restrictive modifier of an entire clause, which is awkward at the seam. Choice D duplicates the error in A.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

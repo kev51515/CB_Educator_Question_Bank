@@ -1,0 +1,22 @@
+{
+  "questionId": "1863e3be-s1",
+  "originalId": "1863e3be",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The <em>y</em>-intercept of the graph of <math><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>58</mn></math> in the <em>xy</em>-plane is <math><mfenced><mrow><mn>0</mn><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <em>y</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "58"
+  ],
+  "rationale": "<p>The correct answer is 58. Substituting 0 for <em>x</em> in the equation gives <em>y</em> = 0 + 58 = 58.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A3.T2.easy"
+}

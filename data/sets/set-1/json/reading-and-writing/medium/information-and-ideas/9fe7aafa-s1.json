@@ -1,0 +1,25 @@
+{
+  "questionId": "9fe7aafa-s1",
+  "originalId": "9fe7aafa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>The ancient script used by the Nabataean kingdom of present-day Jordan and northwest Arabia included a distinct numeral for fractional values. The earliest surviving inscription showing this fractional symbol dates to roughly 2,100 years ago. At that time, almost no other writing systems across the Mediterranean recorded fractions as a single character. The Nabataean use of such a symbol may be even older. Some scholars argue that Nabataean scribes adapted it from the Lihyanite civilization, which thrived in the same region between 2,500 and 3,200 years ago.</p>",
+  "stem": "<p>According to the text, what do some scholars suggest about the Nabataean kingdom?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The Nabataean kingdom valued its scribes more than it valued its merchants.</p>"},
+    {"id": "b", "content": "<p>The Nabataean kingdom kept the design of its numerals hidden from neighboring societies.</p>"},
+    {"id": "c", "content": "<p>The Nabataean kingdom attempted to spread its writing system across the Mediterranean.</p>"},
+    {"id": "d", "content": "<p>The Nabataean kingdom adopted its fractional numeral from the Lihyanite civilization.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text directly states that some scholars argue Nabataean scribes adapted the fractional symbol from the Lihyanite civilization.</p><p>Choice A is incorrect because the text does not compare how the kingdom valued its scribes versus its merchants. Choice B is incorrect because the text never indicates the Nabataeans hid their numerals — it simply says other writing systems lacked such a symbol. Choice C is incorrect because the text says nothing about the Nabataeans spreading their script; it discusses adoption from an earlier civilization.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "87aa7bab-s1",
+  "originalId": "87aa7bab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T6.medium",
+  "stimulus": "<p>A common assumption among music historians is that the spread of inexpensive radio receivers in the early twentieth century displaced the parlor piano in middle-class households. The declining popularity of the upright piano, which coincided with the rise of home radio, seems to support this claim. However, radio's effect on the parlor piano may be exaggerated. Although records of piano shipments to dealers in Belgium from 1898 to 1925 show a steady drop in the number of new uprights sold, this downward trend had been established before home radio broadcasting became widely available.</p>",
+  "stem": "<p>Based on the text, what can be concluded about the diminishing popularity of the parlor piano in the early twentieth century?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As demand for parlor pianos fell, piano builders likely shifted their efforts to manufacturing radios.</p>"},
+    {"id": "b", "content": "<p>Although parlor pianos became less common than radios, they were widely regarded as having more cultural prestige.</p>"},
+    {"id": "c", "content": "<p>Factors other than the rise of home radio may be more directly responsible for the parlor piano's decline.</p>"},
+    {"id": "d", "content": "<p>The popularity of the parlor piano likely lasted longer than music historians have assumed.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text reports that radio's effect on the parlor piano may be \"exaggerated\" because shipment records show a steady decline in upright sales that began before home radio became widely available. The text most strongly supports the conclusion that factors other than the rise of home radio may be more directly responsible for the parlor piano's decline.</p><p>Choice A is incorrect because the text does not suggest that piano builders shifted to making radios. Choice B is incorrect because the text never discusses the cultural prestige of either pianos or radios. Choice D is incorrect because the text implies the parlor piano's popularity began declining earlier than historians assumed, not that it lasted longer.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

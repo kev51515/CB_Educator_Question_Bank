@@ -1,0 +1,39 @@
+{
+  "questionId": "89fc23af-s1",
+  "originalId": "89fc23af",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is equivalent to (x<sup>2</sup> &minus; 4x &minus; 7) / (x &minus; 5), where x &ne; 5?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x + 1 &minus; 2/(x &minus; 5)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x &minus; 9 + 38/(x &minus; 5)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x + 5 &minus; 7/(x &minus; 5)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x &minus; 4 &minus; 7/(x &minus; 5)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Perform polynomial division: x<sup>2</sup> &minus; 4x &minus; 7 = (x &minus; 5)(x + 1) + (&minus;2). Therefore the expression equals (x + 1) + (&minus;2)/(x &minus; 5) = x + 1 &minus; 2/(x &minus; 5). The other options correspond to common errors (wrong quotient or wrong remainder).</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A3.T8.hard"
+}

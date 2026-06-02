@@ -1,0 +1,25 @@
+{
+  "questionId": "4703eafb-s1",
+  "originalId": "4703eafb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>Following the unification of Italy in the 1860s, regional cuisines on the peninsula underwent a sweeping reorganization, driven largely by surging urban demand for shelf-stable staples. The industrial production, branding, and rail distribution of dried pasta and canned tomatoes, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recast the country's loosely connected village foodways into a recognizably national table.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by comparison,</p>"},
+    {"id": "b", "content": "<p>in particular,</p>"},
+    {"id": "c", "content": "<p>alternatively,</p>"},
+    {"id": "d", "content": "<p>second of all,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"In particular\" logically signals that the information in this sentence—that pasta and canned tomatoes recast Italy's village foodways into a national table—provides specific, precise details elaborating on the more general previous claim about regional cuisines being reorganized by demand for shelf-stable staples.</p><p>Choice A is incorrect because \"by comparison\" illogically signals that the information in this sentence is being compared to the previous information about the reorganization of regional cuisines. Instead, the role of pasta and canned tomatoes is a specific elaboration of that reorganization. Choice C is incorrect because \"alternatively\" illogically signals that this information is an alternative to the previous claim, when it actually specifies it. Choice D is incorrect because \"second of all\" illogically signals a second, separate claim from the previous one, when the sentence is providing specific details elaborating on the previous claim rather than introducing a new one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

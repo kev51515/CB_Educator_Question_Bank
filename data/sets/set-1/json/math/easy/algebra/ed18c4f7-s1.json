@@ -1,0 +1,39 @@
+{
+  "questionId": "ed18c4f7-s1",
+  "originalId": "ed18c4f7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Mia has <math><mi>n</mi></math> books. Lila has 5 more than three times the number of books that Mia has. In terms of <math><mi>n</mi></math>, how many books does Lila have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mi>n</mi><mo>-</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>5</mn><mi>n</mi><mo>+</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>3</mn><mi>n</mi><mo>+</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>5</mn><mi>n</mi><mo>-</mo><mn>3</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. \"Three times the number of books Mia has\" is <math><mn>3</mn><mi>n</mi></math>. Adding 5 yields <math><mn>3</mn><mi>n</mi><mo>+</mo><mn>5</mn></math>.</p><p>Choices A, B, and D swap the operation or coefficients incorrectly.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.easy"
+}

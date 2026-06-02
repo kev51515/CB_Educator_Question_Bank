@@ -1,0 +1,25 @@
+{
+  "questionId": "bd11fe93-s1",
+  "originalId": "bd11fe93",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Dr. Aprille Ericsson is an aerospace engineer. This means that Dr. Ericsson doesn't just design satellites for use today. She applies advanced physics and engineering principles <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> spacecraft that will operate far into the future.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>builds</p>"},
+    {"id": "b", "content": "<p>has built</p>"},
+    {"id": "c", "content": "<p>to build</p>"},
+    {"id": "d", "content": "<p>built</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite to-infinitive verb \"to build\" is correctly used to form a subordinate clause that indicates what Dr. Ericsson uses advanced physics and engineering principles for.</p><p>Choice A is incorrect because the finite verb \"builds\" can't be used in this way to form a subordinate clause that indicates what Dr. Ericsson uses the principles for. Choice B is incorrect because the finite verb \"has built\" can't be used in this way to form a subordinate clause that indicates what Dr. Ericsson uses the principles for. Choice D is incorrect because the finite verb \"built\" can't be used in this way to form a subordinate clause that indicates what Dr. Ericsson uses the principles for.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

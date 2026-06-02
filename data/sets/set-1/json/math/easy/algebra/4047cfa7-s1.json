@@ -1,0 +1,39 @@
+{
+  "questionId": "4047cfa7-s1",
+  "originalId": "4047cfa7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A phone plan allows for no more than 1,000 minutes of talk time per month. So far this month, a customer has used 745 minutes. What is the maximum number of additional minutes the customer can use this month without exceeding the plan limit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,745</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>255</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>745</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The maximum additional minutes equals the cap minus what has already been used: 1,000 &minus; 745 = 255 minutes.</p><p>Choice A is the total cap, not the additional amount. Choice B is the sum 1,000 + 745 instead of the difference. Choice D is the minutes already used.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy"
+}

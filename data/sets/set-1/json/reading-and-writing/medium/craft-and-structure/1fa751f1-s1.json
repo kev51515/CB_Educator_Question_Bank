@@ -1,0 +1,25 @@
+{
+  "questionId": "1fa751f1-s1",
+  "originalId": "1fa751f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T8.medium",
+  "stimulus": "<p>Vocal learning, the capacity to imitate sounds heard from others, is straightforward to identify in songbirds. Because this ability is present but less <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in many mammals, animal-behavior researchers often design playback experiments specifically intended to coax subtle imitations from species in which the trait does not surface readily.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>conspicuous</p>"},
+    {"id": "b", "content": "<p>essential</p>"},
+    {"id": "c", "content": "<p>charming</p>"},
+    {"id": "d", "content": "<p>beneficial</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. \"Conspicuous\" means easily noticed. The text says the trait is \"straightforward to identify\" in songbirds but in mammals \"does not surface readily,\" so researchers must use special experiments to detect it. \"Less conspicuous\" precisely captures this contrast between obviously visible and hidden.</p><p>Choice B is incorrect because the text concerns how easily the trait can be observed, not its necessity to the animal. Choice C is incorrect because the trait's aesthetic appeal is irrelevant to the discussion. Choice D is incorrect because the text says nothing about whether vocal learning helps the animal; only its detectability is at issue.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

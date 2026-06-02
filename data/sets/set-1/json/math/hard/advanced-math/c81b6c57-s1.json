@@ -1,0 +1,39 @@
+{
+  "questionId": "c81b6c57-s1",
+  "originalId": "c81b6c57",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The expression 4x<sup>2</sup> &minus; 73x + 18 can be written in the form (4x &minus; r)(x &minus; s), where r and s are positive integers. What is the value of r + s?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>19</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>37</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>73</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>We need positive integers r and s with rs = 18 and r + 4s = 73. Trying s = 18, r = 1: r + 4s = 1 + 72 = 73 &check; and rs = 18 &check;. So (4x &minus; 1)(x &minus; 18) expands to 4x<sup>2</sup> &minus; 73x + 18. Therefore r + s = 1 + 18 = 19. The other choices arise from misfactoring (using r + s = 27 from s = 9, r = 3 fails the linear-term check, etc.).</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A2.T6.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "15617f62-s1",
+  "originalId": "15617f62",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population density of Greendale is 240 people per square mile. Greendale has a population of 72,000 people. What is the area, in square miles, of Greendale?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72,240</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>71,760</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>17,280,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>300</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Area = population \u00f7 density = 72,000 \u00f7 240 = 300 square miles.</p><p>Choices A, B, and C are incorrect and may result from adding, subtracting, or multiplying population and density instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.easy"
+}

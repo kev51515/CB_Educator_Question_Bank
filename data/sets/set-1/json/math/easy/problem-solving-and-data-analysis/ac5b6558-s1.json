@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot shows the average daily temperature (in degrees Fahrenheit) and the elevation (in feet) of 8 mountain locations. The line of best fit has equation y = \u22120.003x + 55, where x is elevation in feet and y is temperature in \u00b0F. According to the line of best fit, what temperature is predicted for a location with an elevation of 6,500 feet?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>33\u00b0F</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>34\u00b0F</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>36\u00b0F</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>38\u00b0F</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting x = 6,500 into y = \u22120.003x + 55 gives y = \u221219.5 + 55 = 35.5, which rounds to 36\u00b0F.</p><p>The other choices result from arithmetic errors.</p>",
+  "questionId": "ac5b6558-s1",
+  "originalId": "ac5b6558",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

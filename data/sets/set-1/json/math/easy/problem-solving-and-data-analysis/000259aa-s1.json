@@ -1,0 +1,39 @@
+{
+  "questionId": "000259aa-s1",
+  "originalId": "000259aa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A flock of migrating geese traveled a total of 1,440 kilometers from a wetland in Canada to a coastal preserve over a period of 90 days. On average, how many kilometers did the flock travel per day?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.0625</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12.96</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,350</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The average rate is total distance divided by total time: 1,440 \u00f7 90 = 16 kilometers per day.</p><p>Choice A is incorrect; this is days per kilometer. Choice C is incorrect; it results from multiplying instead of dividing. Choice D is incorrect; it results from subtracting instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

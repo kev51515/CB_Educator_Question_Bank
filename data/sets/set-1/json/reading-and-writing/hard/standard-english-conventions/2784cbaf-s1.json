@@ -1,0 +1,39 @@
+{
+  "questionId": "2784cbaf-s1",
+  "originalId": "2784cbaf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>To accurately classify the structure of a molecule requires identifying each of four ______ shape: bond length, bond angle, dihedral angle, and lone-pair geometry. These are referred to as geometric parameters.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>features that determine molecule's</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>features that determine molecules</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>features that determine molecules'</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>feature's that determine molecules'</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The conventions being tested are the use of plural and possessive nouns. The plural noun \"features\" correctly indicates that there are multiple features, and the plural possessive noun \"molecules'\" correctly indicates that the shape of molecules in general is being discussed.</p><p>Choice A is incorrect because the context requires the plural possessive noun \"molecules',\" not the singular possessive noun \"molecule's.\" Choice B is incorrect because the context requires the plural possessive noun \"molecules',\" not the plural noun \"molecules.\" Choice D is incorrect because the context requires the plural noun \"features,\" not the singular possessive noun \"feature's.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T8.hard"
+}

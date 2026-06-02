@@ -1,0 +1,39 @@
+{
+  "questionId": "018a2704-s1",
+  "originalId": "018a2704",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 58 = 22 + (3y - 7), what is the value of 3y - 7?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>29</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>43</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Subtract 22 from both sides: 58 - 22 = 3y - 7, so 3y - 7 = 36. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.medium"
+}

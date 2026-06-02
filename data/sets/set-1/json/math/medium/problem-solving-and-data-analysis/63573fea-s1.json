@@ -1,0 +1,39 @@
+{
+  "questionId": "63573fea-s1",
+  "originalId": "63573fea",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During the first month of sales, a publisher sold 800,000 copies of a certain novel. During the same month, 12% of the copies sold were returned. If sales and the return rate remain the same for each of the next 5 months, about how many copies of this novel will be returned to the publisher during this 6-month period?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>96,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>576,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>480,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4,224,000</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Of the 800,000 copies sold during the first month, 12% were returned: 0.12 &times; 800,000 = 96,000 copies returned in the first month. If sales and the return rate stay the same for each of the next 5 months, then over 6 months a total of 96,000 &times; 6 = 576,000 copies will be returned. Choice A is incorrect because 96,000 is the number returned in just 1 month, not 6. Choice C is incorrect because 480,000 is the number returned over 5 months, not 6. Choice D is incorrect because 4,224,000 is the number of copies sold and not returned during the 6-month period (88% of 800,000 &times; 6).</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A4.T1.medium"
+}

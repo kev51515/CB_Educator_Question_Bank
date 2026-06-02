@@ -1,0 +1,697 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "originals_count": 77,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Compute measure of center",
+      "description": "Student is given a one-variable data set (as a list, table, dot plot, box plot, or frequency table) and must compute or identify the mean or the median of that set. The cognitive operation is direct application of a measure-of-center definition: sum/count for mean, middle-value ordering for median.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 targets center (mean/median) only, never spread (range/SD). It differs from A3 in that A3's task is reading a single data value or count off a display, not computing a statistic that summarizes the whole distribution. It differs from A4 because A1 yields one number from one data set, while A4 compares statistics across two sets or before/after a change.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Mean from list or table",
+          "description": "A short list of numerical values is given (raw list, or one column of a small table) and the student is asked for the mean. Direct sum-divide-by-count.",
+          "core_skill_demand": "Sum the listed values and divide by the count to produce a single arithmetic mean.",
+          "example_originals": ["12dae628", "4b09f783", "4bb25495", "40f0ee70", "7760c516", "a9647302", "a29e89fc", "fa7a0164"],
+          "frequency": { "easy": 7, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "5-10 small one- or two-digit integer values listed explicitly",
+                "Sum divides evenly by the count, giving an integer or simple decimal mean",
+                "No extraneous context; stem says 'What is the mean of the data shown?'"
+              ],
+              "example_stem": "2, 9, 14, 23, 32. What is the mean of the data shown?",
+              "example_ids": ["12dae628", "4b09f783", "40f0ee70", "7760c516", "fa7a0164"]
+            },
+            "medium": {
+              "characteristics": [
+                "Values are 4-digit numbers or have one decimal place so arithmetic is non-trivial",
+                "5 values whose sum produces a non-round mean requiring careful division"
+              ],
+              "example_stem": "The list gives the mass, in grams, of 5 alpine marmots. 4,010; 4,010; 3,030; 4,050; 3,050. What is the mean mass, in grams, of these 5 alpine marmots?",
+              "example_ids": ["a29e89fc"]
+            },
+            "hard": {
+              "characteristics": ["Pure raw-list mean is not represented at Hard in this bank; Hard mean items always involve combining two groups (T11) or solving for a missing value (T12/T13)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "All raw data values explicitly listed (or in a tiny two-column table) so the count is unambiguous",
+              "Question literally asks for 'the mean' (or arithmetic mean / average)",
+              "Single data set, no comparison, no missing unknown"
+            ],
+            "must_vary": [
+              "Magnitude of the numbers (single-digit, two-digit, three- or four-digit, decimals)",
+              "Number of data values (5-10 typical)",
+              "Context surrounding the numbers (temperatures, masses, counts, lengths)"
+            ],
+            "common_bugs": [
+              "Cloner picks numbers whose sum is not divisible by the count, producing an ugly decimal that disagrees with the listed answer options",
+              "Cloner mistakenly asks for median while listing options like a mean problem, drifting into T2",
+              "Cloner adds a stray comparator or unknown, pushing the item into A4 or A5"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Median from list",
+          "description": "A short list of values (already ordered or trivially orderable) is given; student identifies the middle value (odd n) or the average of the two middle values (even n).",
+          "core_skill_demand": "Order the values if necessary and select the median by position; for even n, average the two middle values.",
+          "example_originals": ["35bec412", "66f03086", "7b65bb28", "a5b069b4", "f890dc20"],
+          "frequency": { "easy": 3, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Odd-count list (5, 7, or 9 values), already sorted in ascending order",
+                "Median is one of the listed values (no averaging step)",
+                "Whole-number values"
+              ],
+              "example_stem": "73, 74, 75, 77, 79, 82, 84, 85, 91. What is the median of the data shown?",
+              "example_ids": ["35bec412", "66f03086", "f890dc20"]
+            },
+            "medium": {
+              "characteristics": [
+                "List is NOT pre-sorted; student must sort first",
+                "OR values are decimals (e.g. dollar amounts to thousandths) making sorting and selection error-prone",
+                "Even count is also possible, forcing the two-middle-value average"
+              ],
+              "example_stem": "4, 10, 18, 4, 4, 5, 6, 5. What is the median of the data set shown?",
+              "example_ids": ["a5b069b4", "7b65bb28"]
+            },
+            "hard": {
+              "characteristics": ["Pure raw-list median items are not present at Hard; Hard median problems always require reading off a frequency table / display (T3) or using a constraint (A5)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "All values explicitly listed in the stem",
+              "Stem literally asks for 'the median'",
+              "Single data set, no comparison"
+            ],
+            "must_vary": [
+              "Whether the list is pre-sorted",
+              "Parity of the count (odd vs even)",
+              "Whether duplicates are present"
+            ],
+            "common_bugs": [
+              "Cloner forgets to sort and pre-positions the visual middle value as the median (incorrect when unsorted)",
+              "Cloner uses an even count but writes the median as one listed value instead of an average of the two middle values",
+              "Cloner upgrades difficulty by introducing a frequency table, drifting into T3"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Median from frequency table / dot plot / box plot",
+          "description": "The data set is presented compactly (frequency table, dot plot, histogram bin, or box plot) and the student must find the median by counting to the middle position of the implied ordered list, or read the median directly off the box-plot middle line.",
+          "core_skill_demand": "Determine n from the display (total frequency / total dots / stated count), locate the middle position, then identify which value occupies that position by cumulative counting — or read the median segment of a box plot directly.",
+          "example_originals": ["374b18f9", "57f45509", "4c774b00", "ecbdbe84", "9e2bf782"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Box plot with a single clearly labeled median tick, or a dot plot with small n where the middle dot is visually obvious",
+                "Question asks for median directly; no further computation"
+              ],
+              "example_stem": "The box plot summarizes 15 data values. What is the median of this data set?",
+              "example_ids": ["374b18f9", "57f45509"]
+            },
+            "medium": {
+              "characteristics": [
+                "Frequency table requires cumulative counting to locate the middle position",
+                "Question may bundle median with mean/mode in an ordering judgement",
+                "Possibly an open-ended scenario (e.g., three sub-groups defined by ranges) where the student must reason about which sub-group contains the median"
+              ],
+              "example_stem": "The table above shows the distribution of ages of the 20 students enrolled in a college class. Which of the following gives the correct order of the mean, median, and mode of the ages?",
+              "example_ids": ["4c774b00", "9e2bf782"]
+            },
+            "hard": {
+              "characteristics": [
+                "Grouped/binned frequency table where the median falls inside a range bin and the student must identify the bin (not a single value)",
+                "Distractors include nearby bin values, requiring the student to track cumulative frequencies precisely"
+              ],
+              "example_stem": "The table summarizes the number of employees at each of the 17 restaurants. Number of employees / Number of restaurants: 2-7/2, 8-13/4, 14-19/2, 20-25/7, 26-31/2. Which of the following could be the median number of employees?",
+              "example_ids": ["ecbdbe84"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Data is delivered through a display (frequency table, dot plot, histogram, or box plot), not as a raw list",
+              "Question asks for the median or for an ordering involving the median",
+              "Total count n is determinable from the display"
+            ],
+            "must_vary": [
+              "Display type (frequency table vs dot plot vs box plot vs binned histogram)",
+              "Parity of n",
+              "Whether the median falls inside a bin range or on a single value"
+            ],
+            "common_bugs": [
+              "Cloner builds a frequency table whose total n contradicts a stated n",
+              "Cloner places the median ambiguously between two bins/values without a unique correct answer",
+              "Cloner reduces the binned-table version to a single-value version, losing the Hard difficulty signature"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Measures of spread",
+      "description": "Student is asked about range or standard deviation of a one-variable data set. Either the student computes the range (max minus min), or — more commonly — qualitatively compares standard deviations between two data sets/displays by reasoning about how concentrated the values are around the center.",
+      "boundary_with_other_aspects": "A2 is the only aspect about spread (range/SD). A2 differs from A4 because A2 strictly asks about spread; even when it compares two sets, the question is purely 'which has greater/lesser spread?', not about means, medians, or mixed claims.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Range of a data set",
+          "description": "A list of values is provided and the student computes range = max − min.",
+          "core_skill_demand": "Identify the largest and smallest value in the data set and subtract.",
+          "example_originals": ["c54b92a2", "f52123e0"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Small list of integers, max and min visually obvious",
+                "Stem reads 'What is the range...'"
+              ],
+              "example_stem": "What is the range of the number of wheels made for the 11 one-hour periods?",
+              "example_ids": ["c54b92a2"]
+            },
+            "medium": {
+              "characteristics": [
+                "Values not pre-sorted; student must scan to identify max and min",
+                "Slightly larger or two-digit values"
+              ],
+              "example_stem": "23, 27, 27, 32, 35, 36, 52. What is the range of the 7 scores shown?",
+              "example_ids": ["f52123e0"]
+            },
+            "hard": {
+              "characteristics": ["Range alone is not represented at Hard in this bank; spread items at Hard are always SD-comparison (T5)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem asks specifically for 'range'",
+              "All values listed (or readable from a small display)"
+            ],
+            "must_vary": [
+              "Whether the list is sorted",
+              "Magnitude of the values"
+            ],
+            "common_bugs": [
+              "Cloner confuses range (max − min) with interquartile range",
+              "Cloner picks values where max − min equals one of the other answer-choice statistics, creating ambiguity"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Compare standard deviations",
+          "description": "Two distributions are shown (two histograms, two dot plots, two box plots, or a single dataset paired with a transformed version); the student selects the comparison statement about their standard deviations. Requires qualitative judgment of concentration around the mean, not numerical SD computation.",
+          "core_skill_demand": "Assess relative spread: a more peaked/tightly clustered distribution has smaller SD; a flatter or more dispersed distribution has greater SD. Constant shifts do not change SD.",
+          "example_originals": ["25fc031a", "d94018fd", "3f2ee20a", "d65b9a87", "f8a322d9"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["No Easy examples; SD comparison is always at least Medium in this bank."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Two distributions are visually different in obvious ways (one centered/tight, one spread out)",
+                "Equal sample sizes; comparison is direct one-step qualitative judgement",
+                "Both displays use the same scale or are easily compared by symmetry"
+              ],
+              "example_stem": "The histograms show units sold for Company A and Company B with equal totals. Which statement compares the standard deviations?",
+              "example_ids": ["25fc031a", "d94018fd", "3f2ee20a"]
+            },
+            "hard": {
+              "characteristics": [
+                "The two distributions are similar in shape but differ subtly (e.g., one slightly more peaked, or one skewed), requiring careful comparison",
+                "May involve combining the SD judgement with a median or mean judgement (multi-statement Roman-numeral format)",
+                "Skewed or asymmetric displays where the visual intuition can mislead"
+              ],
+              "example_stem": "The dot plots represent data sets A and B with similar centers but slightly different spreads. Based on the dot plots, which statements are true? I. The mean of A is less than B. II. The standard deviation of A is less than B.",
+              "example_ids": ["d65b9a87", "f8a322d9"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Question requires a qualitative SD comparison (greater, less, equal, or 'not enough information')",
+              "Two distributions are presented visually (histograms/dot plots/box plots) with comparable scales"
+            ],
+            "must_vary": [
+              "Display type",
+              "Whether the comparison is one-axis (SD only) or multi-axis (SD + mean/median)",
+              "Direction of the correct answer (A > B, A < B, equal, indeterminate)"
+            ],
+            "common_bugs": [
+              "Cloner draws two displays where the SD comparison cannot actually be inferred from the visual (introduces ambiguity)",
+              "Cloner accidentally creates identical distributions or distributions where 'not enough information' is the only defensible answer",
+              "Cloner conflates concentration around the median with SD when distributions are skewed"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Read data from displays",
+      "description": "Student reads or extracts a single value, frequency, count, or simple difference of counts directly from a bar graph, table, dot plot, frequency table, or histogram. The work is interpretation and lookup, not statistical computation across the whole data set.",
+      "boundary_with_other_aspects": "A3 differs from A1 and A2 because no statistic (mean, median, SD, range) is computed across the whole set — just a value or simple count subtraction. A3 differs from A4 because A3 reads from a single display and yields a count or difference, not a comparison of statistics across data sets.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Read value or count from bar graph / dot plot",
+          "description": "A bar graph or dot plot is shown with labeled categories on one axis and frequency/count on the other. The student is asked for a specific bar's value, an identification (which category has frequency X), or a simple difference between two named bars.",
+          "core_skill_demand": "Identify the bar(s) referenced by the stem, read their numeric heights, and (often) subtract one from the other or perform a one-step total.",
+          "example_originals": ["15d87c0f", "57481175", "a067c926", "79340403", "820d7a73", "6e3ab4bf", "29fa7970", "80f1f3a9", "93779b53", "fe6a49d6", "7b1a3200"],
+          "frequency": { "easy": 11, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Categorical bar graph or dot plot with 4-10 distinct categories",
+                "Stem asks for a single named bar's value OR a difference between two named bars OR an identification ('Which category has frequency 70?')",
+                "Whole-number bar heights readable directly off gridlines"
+              ],
+              "example_stem": "The bar graph shows the distribution of students in each of four extracurricular activities. How many more students are in drama than in chess?",
+              "example_ids": ["15d87c0f", "57481175", "a067c926", "6e3ab4bf", "79340403"]
+            },
+            "medium": {
+              "characteristics": ["Not represented at Medium; once the stem asks for a true statistic (mean/median) the item moves into A1 or A4."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Display shows discrete categorical bars (or dots) with clearly labeled heights",
+              "Task is direct lookup or one-step difference, NOT computation of a statistic across all bars"
+            ],
+            "must_vary": [
+              "Number of categories (4-10)",
+              "Whether the task is single-bar lookup, identification by frequency, or difference of two named bars",
+              "Context (students, animals, colors, etc.)"
+            ],
+            "common_bugs": [
+              "Cloner upgrades to 'mean' or 'median' across all bars, drifting from A3 into A1",
+              "Cloner uses fractional bar heights that cannot be unambiguously read off the gridlines",
+              "Cloner reuses identical bar heights, making distractor options non-distinct"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Read value or extreme from frequency table",
+          "description": "A frequency table is given (value | frequency columns); student is asked for a sum of named frequencies, the minimum value, the maximum value, or a simple difference of table entries.",
+          "core_skill_demand": "Locate the relevant rows of the frequency table; the minimum/maximum value is the smallest/largest value with nonzero frequency; sums require adding frequencies from the named rows.",
+          "example_originals": ["d1db8def", "ea95087d", "560fab82", "a456cfd2"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Direct row-lookup or sum of two named-row frequencies",
+                "All rows have nonzero frequency"
+              ],
+              "example_stem": "The table gives the results of a survey of 200 people. How many people responded either 'never' or 'almost never'?",
+              "example_ids": ["d1db8def", "ea95087d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Student must identify minimum or maximum value with nonzero frequency from a frequency table that may include a zero-frequency row (a trap distractor)",
+                "Student must recognize that 'maximum value' means the largest value column entry that has nonzero frequency"
+              ],
+              "example_stem": "Data value Frequency: 6/3, 7/3, 8/8, 9/8, 10/9, 11/11, 12/9, 13/0, 14/6. The frequency table summarizes 57 data values. What is the maximum data value in the data set?",
+              "example_ids": ["560fab82", "a456cfd2"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard for this type; harder items combine center/spread analysis (A1/A4)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Information presented as a value/frequency table (or equivalent)",
+              "Task is direct retrieval — min, max, or named-row sum — not a center/spread statistic"
+            ],
+            "must_vary": [
+              "Whether a zero-frequency row is present as a distractor",
+              "Whether the question asks min, max, or sum of named-rows",
+              "Number of rows (4-9 typical)"
+            ],
+            "common_bugs": [
+              "Cloner makes 'min' or 'max' ambiguous by removing the zero-frequency-row distractor (loses Medium signature)",
+              "Cloner labels the value column non-monotonically, confusing the meaning of 'maximum data value'"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Identify equivalent frequency representation",
+          "description": "A short raw list is given; the student selects the frequency table that correctly represents the same data.",
+          "core_skill_demand": "Count occurrences of each distinct value in the list and match the counts to the rows of one of the candidate frequency tables.",
+          "example_originals": ["52f9a246"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Very short raw list (≤10 values) with 2-4 distinct values",
+                "Distractors include a swapped value/frequency table and tables where the frequencies are multiplied/added incorrectly"
+              ],
+              "example_stem": "4, 4, 4, 4, 8, 8, 8, 13, 13. Which frequency table correctly represents the data listed?",
+              "example_ids": ["52f9a246"]
+            },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Raw list as input; candidate frequency tables as options",
+              "Exactly one option matches the list's tallies"
+            ],
+            "must_vary": [
+              "Number of distinct values",
+              "Type of distractor errors (swapped columns, multiplied counts, off-by-one)"
+            ],
+            "common_bugs": [
+              "Cloner builds multiple options that all sum to the correct n, but none of them tally correctly — no valid answer",
+              "Cloner uses a list whose tallies match two of the options"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Compare distributions or measures across data sets",
+      "description": "Two (or more) data sets, or one data set plus a modification, are presented; the student selects the true statement about how their means, medians, ranges, or other measures compare. Alternatively, the student computes a combined statistic (e.g., weighted mean of the union of two groups).",
+      "boundary_with_other_aspects": "A4 differs from A1/A2 because the task is comparison or combination across two sets, not a single-set statistic. A4 differs from A5 because A4 does not ask the student to solve for an unknown or reason about a specific manipulation's effect on a single statistic — A4 compares, A5 manipulates and asks 'what changes?'.",
+      "types": [
+        {
+          "id": "T9",
+          "name": "Compare means/medians/ranges across two data sets",
+          "description": "Two data sets (lists, tables, box plots, dot plots, or histograms) are shown side by side and the student selects the correct statement about their means, medians, ranges, or a combination thereof, possibly via Roman-numeral 'I and II' answers.",
+          "core_skill_demand": "Compute or visually compare the relevant statistics for each set and select the true comparison statement, accounting for sample-size effects.",
+          "example_originals": ["708590d7", "869a32f1", "55cfaf22", "c3d65f93", "6670e407", "bfa8a85c", "9110c120", "be00d896", "bf47ad54", "c178d4da", "d3b9c8d8", "6c9444cd", "94237701", "9d935bd8"],
+          "frequency": { "easy": 6, "medium": 2, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both data sets are short raw lists or small tables with obvious differences",
+                "Comparison is single-statistic (just means, or just medians)",
+                "One set is a simple extension of the other (e.g., X plus one extra value)"
+              ],
+              "example_stem": "Data set X: 5, 9, 9, 13. Data set Y: 5, 9, 9, 13, 27. Which statement correctly compares the means of X and Y?",
+              "example_ids": ["55cfaf22", "c3d65f93", "708590d7", "bfa8a85c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Asks for the data set with a specified property (e.g., mean > median) — student must mentally compute both for each option",
+                "Both sets equal size, modest spread differences"
+              ],
+              "example_stem": "For which of the following data sets is the mean greater than the median?",
+              "example_ids": ["9110c120", "be00d896"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two-statement (I/II) comparison combining different measures (mean AND median, or mean AND SD)",
+                "Box plots or histograms where the median can be read but means must be inferred from skew",
+                "Frequency tables with shifted frequencies that change the mean but not the order, requiring careful weighted computation",
+                "Hidden trap: equal medians despite different distributions, requiring SD reasoning"
+              ],
+              "example_stem": "The table shows the frequencies of two data sets with the same values but different counts. Which statement best compares the means?",
+              "example_ids": ["bf47ad54", "c178d4da", "d3b9c8d8", "9d935bd8", "6c9444cd", "94237701"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly two data sets (or one set + a modification) are described or displayed",
+              "The question asks for a comparative statement; the correct answer is uniquely determinable from the displays/lists"
+            ],
+            "must_vary": [
+              "Display format (lists vs tables vs box plots vs dot plots vs histograms)",
+              "Which measure is being compared (mean, median, range, SD, or combinations)",
+              "Direction of the answer (greater, less, equal, not enough information)"
+            ],
+            "common_bugs": [
+              "Cloner builds two sets whose mean differ but median ordering is ambiguous (no unique answer)",
+              "Cloner forgets that adding one outlier shifts the mean but not the median of an odd-sized list",
+              "Cloner reduces a multi-statement Hard question to a single-statement Easy question, regressing the difficulty",
+              "Cloner mishandles 'not enough information' option, making it the answer when distinct data should permit comparison"
+            ]
+          }
+        },
+        {
+          "id": "T10",
+          "name": "Effect of constant shift on median/range",
+          "description": "One data set is shown (typically as a dot plot); a second data set is created by adding (or subtracting) a constant to each value. Student compares the medians and ranges of the two sets.",
+          "core_skill_demand": "Recognize that a constant additive shift moves the median by that constant but leaves the range (and SD) unchanged.",
+          "example_originals": ["578e26ae", "4626102e"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Constant shift is positive (e.g., add 46) and student selects from 4 options crossing 'median greater/equal × range greater/equal'",
+                "Dot plot is small and clearly described"
+              ],
+              "example_stem": "Data set A is shown by a dot plot of 15 values. Data set B is created by adding 46 to each value of A. Which of the following correctly compares the medians and ranges of A and B?",
+              "example_ids": ["578e26ae"]
+            },
+            "hard": {
+              "characteristics": [
+                "Same structural setup but cleaner trap distractors that test whether the student knows range is invariant under shift AND median shifts by the constant",
+                "Often appears as a verbatim Hard variant of the Medium item"
+              ],
+              "example_stem": "The dot plot represents 15 values in data set A. Data set B is created by adding 56 to each value of A. Which of the following correctly compares the medians and the ranges?",
+              "example_ids": ["4626102e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Set B = Set A with the same additive constant applied to every value",
+              "Question asks about BOTH median and range (or median and SD) comparison",
+              "Answer options cross both axes (median greater/equal × range greater/equal)"
+            ],
+            "must_vary": [
+              "The shift constant (positive or negative integer)",
+              "The display type (dot plot, histogram, list)"
+            ],
+            "common_bugs": [
+              "Cloner applies a multiplicative scale instead of additive shift (changes range — different concept)",
+              "Cloner drops the range half of the comparison, losing the diagnostic for the type",
+              "Cloner picks a shift so small that the median answer is visually identical, creating ambiguity"
+            ]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Weighted mean of two combined groups",
+          "description": "Two groups with stated sizes and means are combined into a single data set; student computes the mean of the combined set.",
+          "core_skill_demand": "Apply weighted-mean formula: combined mean = (n1·m1 + n2·m2) / (n1 + n2).",
+          "example_originals": ["2a59eb45", "98958ae8", "c78bb2b8"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Two groups with unequal sample sizes (e.g., 75 and 50, or 240 and 120) and distinct means",
+                "Answer must be computed exactly (open-response SPR or 4-option MCQ with close distractors)",
+                "Common distractor: the unweighted average of the two means"
+              ],
+              "example_stem": "Data set A has 75 buildings with mean 32 meters. Data set B has 50 buildings with mean 62 meters. What is the mean of the combined 125 buildings?",
+              "example_ids": ["2a59eb45", "98958ae8", "c78bb2b8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly two groups with stated sizes and stated means",
+              "Question asks for the mean of the combined data set"
+            ],
+            "must_vary": [
+              "The two sample sizes (must be unequal to make weighting matter)",
+              "The two means",
+              "Context (heights, lengths, weights, scores)"
+            ],
+            "common_bugs": [
+              "Cloner picks equal sample sizes, collapsing the weighted mean to a simple average and losing the type's signature",
+              "Cloner picks numbers whose weighted mean is identical to the unweighted average, eliminating the canonical distractor"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Reason about effects on / solve constraints",
+      "description": "Either (a) the student is given a constraint on the mean or median of a data set containing one unknown value and must solve for the unknown, (b) the student is told a value was added/removed/changed and must determine the affected/unchanged measures, or (c) the student must reverse a mean computation to recover a single removed/added value.",
+      "boundary_with_other_aspects": "A5 differs from A1/A2 because the goal is not to compute a statistic from given data but to either solve for an unknown that makes a statistical condition hold, or to reason about how a manipulation changes specific statistics. A5 differs from A4 because A5 acts on one data set being modified, with the analysis focused on which statistic changes / what the unknown is — not on comparing two given sets directly.",
+      "types": [
+        {
+          "id": "T12",
+          "name": "Solve for unknown using mean/median constraint",
+          "description": "A data set contains a variable x (or two unknowns) and the student must find the value of the unknown so that the mean equals the median, equals a given number, or equals another set's mean.",
+          "core_skill_demand": "Set up an equation expressing the stated constraint (sum/count = stated mean, or sorted-position = stated median) and solve for the unknown.",
+          "example_originals": ["8736334b", "d0efc1dd", "54d93874", "8193e8cd", "881ef5f5"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Two equal-size data sets, one containing a single unknown x; constraint is 'mean of A = mean of B'",
+                "Single-step linear equation"
+              ],
+              "example_stem": "Data set A and data set B each contain 5 numbers. If the mean of A equals the mean of B, what is the value of x?",
+              "example_ids": ["8736334b"]
+            },
+            "medium": {
+              "characteristics": [
+                "Stem invokes a structural relationship (e.g., 'mean of nine consecutive integers' or 'the mean is what fraction of the sum')",
+                "OR 'mean = median' constraint with multiple option distractors; student must verify which value of x satisfies BOTH conditions",
+                "Requires algebra plus median reasoning"
+              ],
+              "example_stem": "The mean and the median of the five numbers above are equal. Which of the following is NOT a possible value of x?",
+              "example_ids": ["d0efc1dd", "8193e8cd", "881ef5f5"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two groups of values with a fractional/decimal mean offset between them (e.g., 'mean of Maria's is 0.1 kg greater than Andrew's')",
+                "Multi-step equation involving decimals and possibly fractional unknown"
+              ],
+              "example_stem": "Andrew and Maria each collected six rocks. The mean of Maria's masses is 0.1 kg greater than Andrew's. What is the value of x?",
+              "example_ids": ["54d93874"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one unknown (or one effective unknown) in the data set",
+              "A clearly stated statistical constraint (mean = , median = , mean of A = mean of B, mean = median, etc.)",
+              "Constraint has a unique solution (or a uniquely-NOT-possible value)"
+            ],
+            "must_vary": [
+              "The statistic being constrained (mean, median, both)",
+              "The form of the constraint (equality, offset, fraction-of-sum)",
+              "Magnitude/type of the unknown (integer, decimal, fraction)"
+            ],
+            "common_bugs": [
+              "Cloner sets up a constraint with no integer solution while options are integers",
+              "Cloner picks an x such that the median position changes when x changes, invalidating the equation (sorted-position reasoning breaks)",
+              "Cloner regresses Hard items to single-step Easy by removing the offset/decimal"
+            ]
+          }
+        },
+        {
+          "id": "T13",
+          "name": "Reverse mean: find removed or extra value",
+          "description": "A mean and sample size are given before and after one value is added or removed; student finds that single value.",
+          "core_skill_demand": "Use sum = mean × count for both before and after; the difference of sums equals the added or removed value.",
+          "example_originals": ["1e8ccffd", "4ff597db", "190be2fc"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Two states (before/after) each with stated mean and count; arithmetic with non-trivial decimals or large integers",
+                "Open-response SPR or close-distractor MCQ",
+                "May involve a list of 9 given values plus a stated 10th-value constraint requiring sum and integer-mean reasoning"
+              ],
+              "example_stem": "The mean score of 8 players was 14.5 points. If the highest score is removed, the mean of the remaining 7 becomes 12 points. What was the highest score?",
+              "example_ids": ["1e8ccffd", "4ff597db", "190be2fc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two states differing by exactly one value (added or removed)",
+              "Both states have stated means and counts",
+              "Question asks for the single distinguishing value"
+            ],
+            "must_vary": [
+              "Whether the value is added or removed",
+              "Decimal precision of the means",
+              "Context (sports scores, ages, salaries, weights)"
+            ],
+            "common_bugs": [
+              "Cloner picks means and counts that produce non-integer sums, contradicting integer-context constraints",
+              "Cloner reverses the direction (added vs removed) and gets a sign-flipped answer",
+              "Cloner over-simplifies to a single-state mean (regresses into T1)"
+            ]
+          }
+        },
+        {
+          "id": "T14",
+          "name": "Effect of value/transformation on statistics",
+          "description": "A data set is modified — by adding one new value, by shifting certain values, or by another structural change — and the student identifies which of the standard statistics (mean, median, range, SD, sum) change and which remain unchanged, often via Roman-numeral or NOT-style options.",
+          "core_skill_demand": "Reason about how each statistic responds to the specific manipulation: mean responds to sum and count; median responds only when the middle position's value changes; range responds only when an extreme changes; SD responds to dispersion changes.",
+          "example_originals": ["241f1db7", "391ae4b2", "457d2f2c", "608cf8e2", "e7d48c8a", "5c3c2e3c", "1142af44", "07f2829b", "c88e0663"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stem asks which statistic CAN be calculated given limited information (total + count given but not individual values)",
+                "Recognizing that only the mean is determinable from total + count"
+              ],
+              "example_stem": "10 students sold 90 boxes of cookies. Which can be calculated from this information?",
+              "example_ids": ["c88e0663"]
+            },
+            "medium": {
+              "characteristics": [
+                "One specific value is changed (e.g., 'the lowest weight was reported 10 lb low') and student identifies which of mean/median/range/SD is unchanged",
+                "OR the question requires recognizing that a single value change does not affect the median when the changed value is not the middle one",
+                "Or the prompt requires comparing tables before/after the addition of a row"
+              ],
+              "example_stem": "The horse with the lowest reported weight actually weighs 10 lb less than reported. What value remains unchanged among mean, median, range, SD?",
+              "example_ids": ["5c3c2e3c", "07f2829b"]
+            },
+            "hard": {
+              "characteristics": [
+                "Adding an extreme value (much smaller or larger than all existing values) to a frequency table or dot plot; student must reason that both mean and median change in specific directions",
+                "Symmetric paired manipulation (subtract 7 from below-median, add 7 to above-median) that preserves mean and median but changes SD",
+                "Histogram bin manipulation where a new player's score increases the count in one bin and student must reason about which of mean/median changes",
+                "Roman-numeral 'I, II, both, neither' format with two non-trivial measures to evaluate"
+              ],
+              "example_stem": "A data set of 27 different numbers has mean 33 and median 33. Add 7 to each number greater than the median and subtract 7 from each number less than the median. Which measure does NOT have the same value?",
+              "example_ids": ["241f1db7", "391ae4b2", "457d2f2c", "608cf8e2", "e7d48c8a", "1142af44"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A clearly described manipulation of the data set (add a value, change a value, paired shift, etc.)",
+              "Question asks which statistic(s) change (or remain unchanged), or asks for the magnitude of change",
+              "Multiple statistics referenced — at least two of {mean, median, range, SD, sum}"
+            ],
+            "must_vary": [
+              "Type of manipulation (single-value change, addition of an outlier, paired symmetric shift)",
+              "Which set of statistics is referenced",
+              "Answer format (Roman numeral, NOT-style, direct comparison)"
+            ],
+            "common_bugs": [
+              "Cloner picks a manipulation that changes a statistic ambiguously, breaking the uniqueness of the correct answer",
+              "Cloner accidentally chooses a manipulation that fails to change the median when the answer key says it does (off-by-one in the sorted position)",
+              "Cloner reduces the number of statistics under comparison from two to one, regressing the item from Hard to Medium",
+              "Cloner mishandles SD reasoning when the manipulation is symmetric around the mean"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Across the 77 originals, Easy items dominate A1.T1, A1.T2, A3.T6 (direct reads and one-step computations); Medium items appear in A1.T2-T3, A2.T5, A4.T9-T10, A5.T12 (multi-step reads, qualitative spread comparisons, simple constraint-solving); Hard items concentrate in A4.T9, A4.T11, A5.T13, A5.T14 (multi-axis distribution comparisons, weighted means, reverse-mean problems, and reasoning about effects of manipulations on multiple statistics simultaneously). Hard items almost always involve either (a) two distributions or two states, or (b) Roman-numeral multi-statement evaluation. A faithful Hard clone should not be reducible to a single-step mean/median lookup."
+}

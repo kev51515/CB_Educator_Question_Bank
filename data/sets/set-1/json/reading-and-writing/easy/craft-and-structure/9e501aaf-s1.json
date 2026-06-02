@@ -1,0 +1,39 @@
+{
+  "questionId": "9e501aaf-s1",
+  "originalId": "9e501aaf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Research by planetary scientist Hannah Goldberg suggests that Mars’s surface may not accurately <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> ancient volcanic events. When the planet was still young, its surface was much more pliable, and lava flows would have settled and reshaped the landscape; thus, evidence of early eruptions has likely been smoothed away.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>approve</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>imagine</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>capture</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>decline</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"capture\" here means to record or preserve, fitting the idea that the soft early surface failed to preserve evidence of early volcanic events. Choice A is incorrect because approving doesn’t make sense. Choice B is incorrect because imagining doesn’t fit a physical surface. Choice D is incorrect because declining doesn’t describe failing to record evidence.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

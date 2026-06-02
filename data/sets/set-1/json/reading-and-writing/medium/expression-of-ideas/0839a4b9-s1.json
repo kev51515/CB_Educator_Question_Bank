@@ -1,0 +1,25 @@
+{
+  "questionId": "0839a4b9-s1",
+  "originalId": "0839a4b9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>The Alpine Climate Observatory in Switzerland is known for translating glacier data into musical compositions. One such project pairs recordings of cracking ice with measurements of glacial retreat captured over a decade. As the rate of retreat accelerates, the pitch of the accompanying melody rises; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> audiences can \"hear\" the pace at which the glacier is shrinking.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by contrast,</p>"},
+    {"id": "b", "content": "<p>moreover,</p>"},
+    {"id": "c", "content": "<p>consequently,</p>"},
+    {"id": "d", "content": "<p>for example,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Consequently\" logically signals that the information in this clause—that audiences can \"hear\" the pace at which the glacier is shrinking—is a result of the previous information about the melody's pitch rising as the rate of retreat accelerates.</p><p>Choice A is incorrect because \"by contrast\" illogically signals that the audience's ability to hear the pace is being compared as a contrast with the melody rising; instead, it is a result of that rise. Choice B is incorrect because \"moreover\" illogically signals that the information merely adds to the previous claim, rather than identifying it as a consequence of the melody's design. Choice D is incorrect because \"for example\" illogically signals that the audience's experience exemplifies the rising melody, when the rising melody was created precisely for the purpose of producing that experience.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

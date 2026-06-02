@@ -1,0 +1,39 @@
+{
+  "questionId": "39617468-s1",
+  "originalId": "39617468",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>r</i> + <i>s</i> = 420. The given equation relates the total number of roses, <i>r</i>, and the total number of sunflowers, <i>s</i>, planted in a community garden. If 165 roses were planted in the garden, how many sunflowers were planted in the garden?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>165</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>420</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>185</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>255</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting <i>r</i> = 165 into <i>r</i> + <i>s</i> = 420 gives 165 + <i>s</i> = 420, so <i>s</i> = 255.</p><p>Choice A is the number of roses; choice B is the total; choice C results from an arithmetic error.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

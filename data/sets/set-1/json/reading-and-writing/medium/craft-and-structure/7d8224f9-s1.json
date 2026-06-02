@@ -1,0 +1,25 @@
+{
+  "questionId": "7d8224f9-s1",
+  "originalId": "7d8224f9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>In 1822, French scholar Jean-Fran&ccedil;ois Champollion completed an extensive notebook of hieroglyphic signs drawn from inscriptions in temples and tombs along the Nile. This volume, which he called the <em>Tableau des Hi&eacute;roglyphes</em>, was compiled at the request of the Duc de Blacas, who supported Champollion&rsquo;s research. To assemble the notebook, Champollion copied carvings from monuments brought to Paris and corresponded with travelers who had visited Egypt firsthand, recording their descriptions of the inscriptions they had seen. He arranged these sign drawings alongside short explanatory notes on each entry.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To outline the benefits of comparing ancient and modern languages</p>"},
+    {"id": "b", "content": "<p>To describe a notebook of Egyptian signs and how it was assembled</p>"},
+    {"id": "c", "content": "<p>To explain how travelers transcribed Egyptian inscriptions in the field</p>"},
+    {"id": "d", "content": "<p>To compare French and Egyptian methods of recording inscriptions</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most accurately states the main purpose of the text, which is to describe a notebook of Egyptian signs and how Champollion assembled it. The text opens by mentioning Champollion&rsquo;s notebook of hieroglyphic signs gathered from temple and tomb inscriptions. It then notes that the Duc de Blacas commissioned the work and details Champollion&rsquo;s methods of compilation: copying carvings on monuments brought to Paris and corresponding with travelers about what they had observed.</p><p>Choice A is incorrect because the text describes a notebook and its compilation but does not discuss the benefits of comparing ancient and modern languages. Choice C is incorrect because, although the text mentions that Champollion corresponded with travelers, it does not describe how those travelers transcribed inscriptions in the field. Choice D is incorrect because, although the text mentions French scholarship and Egyptian inscriptions, it does not compare French and Egyptian methods of recording inscriptions.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

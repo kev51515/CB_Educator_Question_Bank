@@ -1,0 +1,25 @@
+{
+  "questionId": "7f20374f-s1",
+  "originalId": "7f20374f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The 50 senators in the US Senate are designed to represent states equally, regardless of population. Each state, no matter its size, is assigned two senators. However, smaller states like Wyoming, which has fewer than 600,000 residents, end up with much greater per-capita representation than large states. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a Wyoming resident's vote carries roughly 65 times the weight of a California resident's vote in Senate elections.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Instead,</p>"},
+    {"id": "b", "content": "<p>Finally,</p>"},
+    {"id": "c", "content": "<p>For instance,</p>"},
+    {"id": "d", "content": "<p>As a result,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"As a result\" logically signals that the information in this sentence&mdash;that a Wyoming resident's vote carries 65 times the weight of a California resident's vote&mdash;is the result or consequence of smaller states having much greater per-capita representation.</p><p>Choice A is incorrect because \"instead\" illogically signals an alternative when the second statement is a consequence. Choice B is incorrect because \"finally\" illogically signals a final step in a process. Choice C is incorrect because \"for instance\" illogically signals exemplification, but the sentence describes a consequence, not just an example of greater representation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

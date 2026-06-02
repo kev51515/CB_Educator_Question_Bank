@@ -1,0 +1,22 @@
+{
+  "questionId": "2c288148-s1",
+  "originalId": "2c288148",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">&radic;(<i>k</i> &minus; <i>x</i>) = 42 &minus; <i>x</i></p><p>In the given equation, <i>k</i> is a constant. The equation has exactly one real solution. What is the minimum possible value of 4<i>k</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "167"
+  ],
+  "rationale": "<p>Squaring both sides: <i>k</i> &minus; <i>x</i> = (42 &minus; <i>x</i>)&sup2; = 1764 &minus; 84<i>x</i> + <i>x</i>&sup2;. Rearranging: <i>x</i>&sup2; &minus; 83<i>x</i> + (1764 &minus; <i>k</i>) = 0. For exactly one real solution, the discriminant must be 0: 83&sup2; &minus; 4(1764 &minus; <i>k</i>) = 0. That gives 6889 &minus; 7056 + 4<i>k</i> = 0, so 4<i>k</i> = 167.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T4.hard"
+}

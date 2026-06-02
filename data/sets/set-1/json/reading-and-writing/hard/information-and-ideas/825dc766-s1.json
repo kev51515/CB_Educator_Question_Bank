@@ -1,0 +1,25 @@
+{
+  "questionId": "825dc766-s1",
+  "originalId": "825dc766",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.hard",
+  "stimulus": "<p><em>The Duchess of Malfi</em> is a circa 1614 play by John Webster. In the play, the character of Bosola initially serves the Duchess&rsquo;s tyrannical brothers and helps to harm her, but after her murder he comes to disavow his own complicity in their schemes, as is evident when he <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses a quotation from <em>The Duchess of Malfi</em> to illustrate the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>says of his own future, &ldquo;I&rsquo;ll be mine own example. On, on, and look thou represent, for silence, / The thing thou bear&rsquo;st.&rdquo;</p>"},
+    {"id": "b", "content": "<p>says, while gazing on the slain Duchess, &ldquo;O, this gloomy world! / In what a shadow, or deep pit of darkness, / Doth, womanish and fearful, mankind live!&rdquo;</p>"},
+    {"id": "c", "content": "<p>says of the court, &ldquo;Places in the court are but like beds in the hospital, where this man&rsquo;s head lies at that man&rsquo;s foot, and so lower and lower.&rdquo;</p>"},
+    {"id": "d", "content": "<p>says, addressing his absent master, &ldquo;Off, my painted honour! / While with vain hopes our faculties we tire, / We seem to sweat in ice and freeze in fire.&rdquo;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the quotation enacts Bosola&rsquo;s repudiation of his own complicity. By casting off his &ldquo;painted honour&rdquo;&mdash;the false honor he wore while serving the Duchess&rsquo;s brothers&mdash;and condemning the &ldquo;vain hopes&rdquo; he pursued, Bosola disavows the role he played in their schemes. The paradox of sweating in ice and freezing in fire underscores his recognition that he was deceived about the nature of his service.</p><p>Choice A is incorrect because the quotation expresses a resolve about future self-direction (&ldquo;mine own example&rdquo;) and the silence of the thing borne, but does not specifically reject his past complicity. Choice B is incorrect because the quotation laments the general gloom of the world after the Duchess&rsquo;s death without disavowing his own role in causing it. Choice C is incorrect because it offers a generalized cynical metaphor about courtly hierarchy rather than a personal repudiation of complicity.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

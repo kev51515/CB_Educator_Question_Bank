@@ -1,0 +1,22 @@
+{
+  "questionId": "0b0fa68b-s1",
+  "originalId": "0b0fa68b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>For the function g, g(cx) = x - 5 for all values of x, where c is a positive constant. If g(3) = 50, what is the value of c?</p>",
+  "answerOptions": null,
+  "keys": [
+    ".0545"
+  ],
+  "rationale": "<p>Given g(cx) = x - 5, we need to find c so that g(3) = 50. Setting g(cx) = 50 gives x - 5 = 50, so x = 55. Then cx = 3 means c(55) = 3, so c = 3/55 \u2248 0.0545.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

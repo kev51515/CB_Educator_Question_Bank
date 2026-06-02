@@ -1,0 +1,22 @@
+[
+  {"id": "1f0b582e-s1", "templateId": "area-and-volume.A1.T1.medium", "verdict": "ok"},
+  {"id": "5afbdc8e-s1", "templateId": "area-and-volume.A1.T3.medium", "verdict": "ok"},
+  {"id": "cf53cb56-s1", "templateId": "area-and-volume.A4.T2.medium", "verdict": "ok"},
+  {"id": "e4b4e9ea-s1", "templateId": "area-and-volume.A2.T1.medium", "verdict": "ok"},
+  {"id": "03c6994f-s1", "templateId": "area-and-volume.A3.T1.medium", "verdict": "ok"},
+  {"id": "4b7bb316-s1", "templateId": "area-and-volume.A2.T1.medium", "verdict": "ok"},
+  {"id": "37dde49f-s1", "templateId": "area-and-volume.A4.T3.medium", "verdict": "ok"},
+  {"id": "151eda3c-s1", "templateId": "area-and-volume.A4.T3.medium", "verdict": "ok"},
+  {"id": "98c12e38-s1", "templateId": "area-and-volume.A1.T3.medium", "verdict": "ok"},
+  {"id": "e0874bc2-s1", "templateId": "area-and-volume.A3.T3.medium", "verdict": "ok"},
+  {"id": "c4e5e23c-s1", "templateId": "area-and-volume.A3.T1.medium", "verdict": "ok"},
+  {"id": "cecbdeba-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "ok"},
+  {"id": "d621cffb-s1", "templateId": "area-and-volume.A2.T3.medium", "verdict": "ok"},
+  {"id": "e9c5bfb2-s1", "templateId": "area-and-volume.A4.T1.medium", "verdict": "aspect_drift", "detail": "Tagged A4.T1 (composite/subtractive figures) but stem describes two similar rectangles with linear scale factor and asks for a corresponding side. This is A3.T3 (similar polygons, linear-side ratio). No combine/subtract operation present."},
+  {"id": "a4ed5285-s1", "templateId": "area-and-volume.A1.T2.medium", "verdict": "ok"},
+  {"id": "096c7ef5-s1", "templateId": "area-and-volume.A4.T2.medium", "verdict": "ok"},
+  {"id": "08b7a3f5-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "type_drift", "detail": "A2.T2 is cylinder volume/dimension. Clone uses a triangular prism with V=Bh. Stem structure (find base area from V and h via formula given) is correct geometry but wrong type — belongs under prism volume (A2.T1 family), not cylinder."},
+  {"id": "38517165-s1", "templateId": "area-and-volume.A1.T3.medium", "verdict": "ok"},
+  {"id": "f67e4efc-s1", "templateId": "area-and-volume.A2.T2.medium", "verdict": "ok"},
+  {"id": "e336a1d2-s1", "templateId": "area-and-volume.A2.T1.medium", "verdict": "ok"}
+]

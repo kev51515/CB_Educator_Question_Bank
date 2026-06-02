@@ -1,0 +1,25 @@
+{
+  "questionId": "17ec916d-s1",
+  "originalId": "17ec916d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T10.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Yaa Gyasi is a Ghanaian-born American author of novels.</li>\n<li>She published the novel <em>Homegoing</em> in 2016.</li>\n<li>A central character in the novel is a young woman living in eighteenth-century Ghana.</li>\n<li>Another central character is her half-sister, sold into slavery and taken to the American South.</li>\n</ul>",
+  "stem": "<p>The student wants to introduce the novel <em>Homegoing</em> to an audience already familiar with Yaa Gyasi. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Yaa Gyasi's novel <em>Homegoing</em> centers around two half-sisters, one living in eighteenth-century Ghana and the other sold into slavery and taken to the American South.</p>"},
+    {"id": "b", "content": "<p>Yaa Gyasi's settings include both eighteenth-century Ghana and the American South.</p>"},
+    {"id": "c", "content": "<p>In addition to her novel <em>Homegoing</em>, which was published in 2016, Ghanaian-born author Yaa Gyasi has written other novels.</p>"},
+    {"id": "d", "content": "<p><em>Homegoing</em> was not the only novel written by Ghanaian-born author Yaa Gyasi.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The sentence effectively introduces <em>Homegoing</em> to an audience already familiar with Gyasi, explaining that the novel centers on two half-sisters and mentioning the author without providing redundant background information.</p><p>Choice B is incorrect. The sentence provides a detail about Gyasi's settings; it does not introduce, or even mention, the novel. Choice C is incorrect. The sentence provides introductory information about Gyasi; it does not effectively introduce the novel to an audience already familiar with her. Choice D is incorrect. The sentence provides introductory information about Gyasi; it does not effectively introduce the novel to an audience already familiar with her.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

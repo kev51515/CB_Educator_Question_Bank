@@ -1,0 +1,25 @@
+{
+  "questionId": "5b4829d2-s1",
+  "originalId": "5b4829d2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Researchers wanted to examine how diners' impressions of a restaurant menu may be influenced by other menus they have just seen. The researchers began by showing study participants a menu from a sample restaurant; some participants saw a menu with shorter, simpler dish descriptions, while others saw a menu with longer, more elaborate descriptions. Next, all participants viewed the same second menu from a different restaurant and rated their interest in dining there based on this second menu. Participants who had first seen a menu with shorter descriptions rated their interest in the second restaurant higher than participants who had first seen a menu with longer descriptions. The researchers concluded that impressions of a menu may be affected by ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the time of day at which the menu is viewed.</p>"},
+    {"id": "b", "content": "<p>the level of description in previously viewed menus.</p>"},
+    {"id": "c", "content": "<p>the number of diners who view the menu.</p>"},
+    {"id": "d", "content": "<p>the length of time spent viewing previous menus.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The experiment varied only the level of description in the first menu, and that influenced reactions to the second menu — so prior description level affects impressions.</p><p>Choice A introduces time of day, never mentioned. Choice C mentions number of diners, not relevant. Choice D mentions duration, not varied in the experiment.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T8.easy"
+}

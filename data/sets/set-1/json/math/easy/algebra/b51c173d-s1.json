@@ -1,0 +1,39 @@
+{
+  "questionId": "b51c173d-s1",
+  "originalId": "b51c173d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function <i>g</i>, the graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane has a slope of 4 and a <i>y</i>-intercept at (0, &minus;3). Which equation defines <i>g</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>g</i>(<i>x</i>) = 4<i>x</i> &minus; 3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>g</i>(<i>x</i>) = &minus;4<i>x</i> &minus; 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>g</i>(<i>x</i>) = (1/4)<i>x</i> &minus; 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>g</i>(<i>x</i>) = 4<i>x</i> + 3</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Using slope-intercept form <i>g</i>(<i>x</i>) = <i>m</i><i>x</i> + <i>b</i> with <i>m</i> = 4 and <i>b</i> = &minus;3 gives <i>g</i>(<i>x</i>) = 4<i>x</i> &minus; 3.</p><p>Other choices have wrong slope or wrong sign on the intercept.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A3.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "df654a2b-s1",
+  "originalId": "df654a2b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T10.medium",
+  "stimulus": "<p>Mail art is a form of correspondence in which artists send original drawings, collages, and printed pieces through the postal system. The practice has been around since the New York Correspondance School, founded by Ray Johnson in the early 1960s. Since then, mail art has appealed to artists looking for an inexpensive form of expression to share with a chosen network of recipients. Mail artists often blend handmade imagery with social commentary and work outside the conventional gallery system. At first, email and social media seemed poised to replace the postal exchange, but this old form persists. Today, there are enough mail artists in North America to support annual mail-art exhibitions. This suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>artists can reach a much larger audience by posting their work online instead of mailing it.</p>"},
+    {"id": "b", "content": "<p>mail art is now a good source of mainstream cultural values.</p>"},
+    {"id": "c", "content": "<p>mail art remains a meaningful form of expression.</p>"},
+    {"id": "d", "content": "<p>mail artists are continuing to explore new artistic media.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text describes mail art as an old form that has endured despite the rise of digital alternatives and notes that enough mail artists remain active to support annual exhibitions. That continued participation most directly suggests that mail art still functions as a meaningful means of expression.</p><p>Choice A is incorrect because the text gives no information about online audience size. Choice B is incorrect because the text describes mail art as working outside conventional channels, not as representative of mainstream culture. Choice D is incorrect because exploring new media isn&rsquo;t logically connected to the text&rsquo;s point about the persistence of an existing form.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

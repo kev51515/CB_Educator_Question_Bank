@@ -1,0 +1,39 @@
+{
+  "questionId": "50338a48-s1",
+  "originalId": "50338a48",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>12</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn><mi>t</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>t</mi><mfenced><mrow><mn>12</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>t</mi><mfenced><mrow><mn>12</mn><mi>t</mi><mo>+</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>17</mn><msup><mi>t</mi><mn>3</mn></msup></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>17</mn><msup><mi>t</mi><mn>2</mn></msup></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Each term contains a factor of t. Factoring t from 12t\u00b2 + 5t yields t(12t + 5).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

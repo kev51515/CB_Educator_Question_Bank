@@ -1,0 +1,22 @@
+{
+  "questionId": "0d1dca87-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy",
+  "originalId": "0d1dca87",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>y = x - 8</p><p>x = 35</p><p>The solution to the given system of equations is (x, y). What is the value of y?</p>",
+  "answerOptions": null,
+  "keys": [
+    "27"
+  ],
+  "rationale": "<p>The correct answer is 27. Substituting x = 35 into y = x - 8 gives y = 27.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z"
+}

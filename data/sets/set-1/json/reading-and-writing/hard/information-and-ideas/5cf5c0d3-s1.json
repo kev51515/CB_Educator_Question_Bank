@@ -1,0 +1,25 @@
+{
+  "questionId": "5cf5c0d3-s1",
+  "originalId": "5cf5c0d3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "type": "mcq",
+  "stimulus": "<p><strong>Known recordings of four early jazz musicians</strong></p><table border=\"1\"><thead><tr><th>Musician</th><th>Years active</th><th>Known recordings as performer</th><th>Known recordings as bandleader</th></tr></thead><tbody><tr><td>Mamie Smith</td><td>1920–1942</td><td>71</td><td>22</td></tr><tr><td>Sara Martin</td><td>1922–1931</td><td>54</td><td>—</td></tr><tr><td>Lonnie Johnson</td><td>1925–1932</td><td>49</td><td>18</td></tr><tr><td>Sidney Bechet</td><td>1923–1938</td><td>38</td><td>26</td></tr></tbody></table><p>Many recordings made by African American musicians in the 1920s and early 1930s have been lost, and surviving session logs are often incomplete. For that reason, music historians treat the numbers of known recordings listed in the table as bare minimums—the musicians' real output was almost certainly higher. For example, ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Sara Martin actually recorded only 30 sessions as a performer, even though 54 are listed.</p>"},
+    {"id": "b", "content": "<p>Lonnie Johnson performed on fewer sessions than Mamie Smith, who is credited with 71 recordings as a performer.</p>"},
+    {"id": "c", "content": "<p>Mamie Smith's 22 known recordings as a bandleader include sessions made after 1942.</p>"},
+    {"id": "d", "content": "<p>Sara Martin likely recorded as a performer on far more than 54 sessions and Sidney Bechet likely recorded as a bandleader on more than 26.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. The example illustrates the idea that the numbers in the table are minimums and that actual output was probably higher. Suggesting that Sara Martin recorded as a performer on far more than 54 sessions and that Sidney Bechet led more than 26 recording sessions directly captures that idea.</p><p>Choice A is incorrect: it claims a lower true number than the table, the opposite of treating the figure as a minimum. Choice B is incorrect: comparing two musicians' known totals just restates table data; it does not show that totals are minimums. Choice C is incorrect: Mamie Smith's active years end in 1942, so 22 known bandleader recordings cannot include post-1942 sessions; this misreads the table.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

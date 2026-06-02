@@ -1,0 +1,72 @@
+{
+  "questionId": "631a1b64",
+  "externalId": "1af032f6-cab8-4e18-889f-5bf400804724",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:21:48.832995+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "d0e31730-2ab7-45ff-9661-ba699c1f19e4",
+      "content": "<p>straightening</p>"
+    },
+    {
+      "id": "c3f37f89-4c13-4ac7-93fb-f4ce5f00e754",
+      "content": "<p>forgetting about</p>"
+    },
+    {
+      "id": "90c37997-2426-4398-9297-d844763c90ed",
+      "content": "<p>relying on</p>"
+    },
+    {
+      "id": "41c59eaa-b542-4d44-a598-532b78607bbb",
+      "content": "<p>reducing</p>"
+    }
+  ],
+  "keys": [
+    "90c37997-2426-4398-9297-d844763c90ed"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of repairing the Hubble Space Telescope. In this context, &ldquo;relying on&rdquo; means depending on. The text states that astronauts have regularly had to go on missions to repair the Hubble Space Telescope but that robots might soon be able to make the repairs, which would be helpful because involving astronauts in the process is expensive. It is most reasonable to assume that it is the need to send astronauts on missions that is expensive; thus, the context suggests that employing robots for repairs will be helpful because depending on repeatedly sending humans to space is costly.</p><p>Choice A is incorrect. In this context, &ldquo;straightening&rdquo; would mean physically aligning or removing curves and bends. It&rsquo;s not clear how astronauts would be physically straightened to maintain the telescope or why that would be expensive. Choice B is incorrect because the text suggests that it is the ongoing involvement of astronauts&mdash;the need to send them to space regularly&mdash;that is expensive. Nothing in the text indicates that astronauts have been forgotten about or that forgetting about them would be expensive. Choice D is incorrect. In this context, &ldquo;reducing&rdquo; would most likely mean lowering in status, and nothing in the text suggests that astronauts are diminished in any way by repairing the telescope (indeed, they have regularly done repairs for years). Further, it isn&rsquo;t clear how a decrease in status would be expensive.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Since the Hubble Space Telescope was launched into space in 1990, astronauts have needed to complete regular missions to repair the telescope and keep it working smoothly. Researchers hope that robots will soon be able to make these repairs. Employing robots instead of humans to make repairs will be helpful, as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> astronauts to maintain the telescope can be expensive.&nbsp;</p>",
+    "keys": [
+      "90c37997-2426-4398-9297-d844763c90ed"
+    ],
+    "answerOptions": [
+      {
+        "id": "d0e31730-2ab7-45ff-9661-ba699c1f19e4",
+        "content": "<p>straightening</p>"
+      },
+      {
+        "id": "c3f37f89-4c13-4ac7-93fb-f4ce5f00e754",
+        "content": "<p>forgetting about</p>"
+      },
+      {
+        "id": "90c37997-2426-4398-9297-d844763c90ed",
+        "content": "<p>relying on</p>"
+      },
+      {
+        "id": "41c59eaa-b542-4d44-a598-532b78607bbb",
+        "content": "<p>reducing</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of repairing the Hubble Space Telescope. In this context, &ldquo;relying on&rdquo; means depending on. The text states that astronauts have regularly had to go on missions to repair the Hubble Space Telescope but that robots might soon be able to make the repairs, which would be helpful because involving astronauts in the process is expensive. It is most reasonable to assume that it is the need to send astronauts on missions that is expensive; thus, the context suggests that employing robots for repairs will be helpful because depending on repeatedly sending humans to space is costly.</p><p>Choice A is incorrect. In this context, &ldquo;straightening&rdquo; would mean physically aligning or removing curves and bends. It&rsquo;s not clear how astronauts would be physically straightened to maintain the telescope or why that would be expensive. Choice B is incorrect because the text suggests that it is the ongoing involvement of astronauts&mdash;the need to send them to space regularly&mdash;that is expensive. Nothing in the text indicates that astronauts have been forgotten about or that forgetting about them would be expensive. Choice D is incorrect. In this context, &ldquo;reducing&rdquo; would most likely mean lowering in status, and nothing in the text suggests that astronauts are diminished in any way by repairing the telescope (indeed, they have regularly done repairs for years). Further, it isn&rsquo;t clear how a decrease in status would be expensive.</p>",
+    "externalid": "1af032f6-cab8-4e18-889f-5bf400804724",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>Since the Hubble Space Telescope was launched into space in 1990, astronauts have needed to complete regular missions to repair the telescope and keep it working smoothly. Researchers hope that robots will soon be able to make these repairs. Employing robots instead of humans to make repairs will be helpful, as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> astronauts to maintain the telescope can be expensive.&nbsp;</p>"
+}

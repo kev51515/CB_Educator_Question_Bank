@@ -1,0 +1,39 @@
+{
+  "questionId": "6036ad0e-s1",
+  "originalId": "6036ad0e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 2008, Korean American chef Roy Choi launched a food truck called Kogi in Los Angeles, serving Korean-Mexican fusion tacos to long lines of customers. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 2013, Choi opened his first sit-down restaurant, Pot, to bring his innovative cuisine to a wider audience.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Instead,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Later,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Later\" logically signals that the event in this sentence&mdash;Choi opening his first sit-down restaurant in 2013&mdash;occurs later in a chronological sequence than the previous event about Choi launching the Kogi food truck in 2008.</p><p>Choice A is incorrect because \"for example\" illogically signals that opening Pot exemplifies launching the Kogi truck; instead, it is a separate later event. Choice B is incorrect because \"instead\" illogically signals an alternative; the second event is sequential, not a replacement. Choice C is incorrect because \"in other words\" illogically signals a restatement of the previous information.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

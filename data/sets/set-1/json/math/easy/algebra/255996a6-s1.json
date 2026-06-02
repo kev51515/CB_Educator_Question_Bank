@@ -1,0 +1,39 @@
+{
+  "questionId": "255996a6-s1",
+  "originalId": "255996a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T2.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation T = 800 + 22h gives Devon's total take-home pay, in dollars, for his first week of work, where h represents the number of hours he worked that week and 800 represents a sign-on bonus. If Devon's total take-home pay was $1,592, for how many hours was Devon paid for his first week of work?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>44</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>108</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 1592 = 800 + 22h, so 22h = 792 and h = 36.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

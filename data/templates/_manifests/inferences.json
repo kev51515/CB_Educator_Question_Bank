@@ -1,0 +1,751 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Information and Ideas",
+  "skill": "Inferences",
+  "originals": [
+    {
+      "id": "01989d77",
+      "path": "json/reading-and-writing/easy/information-and-ideas/01989d77.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1d0b5bf4",
+      "path": "json/reading-and-writing/easy/information-and-ideas/1d0b5bf4.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "20000f5f",
+      "path": "json/reading-and-writing/easy/information-and-ideas/20000f5f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "25893fc7",
+      "path": "json/reading-and-writing/easy/information-and-ideas/25893fc7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4025e00c",
+      "path": "json/reading-and-writing/easy/information-and-ideas/4025e00c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4603d1f7",
+      "path": "json/reading-and-writing/easy/information-and-ideas/4603d1f7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "493c46bc",
+      "path": "json/reading-and-writing/easy/information-and-ideas/493c46bc.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5b4829d2",
+      "path": "json/reading-and-writing/easy/information-and-ideas/5b4829d2.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "6bc0e595",
+      "path": "json/reading-and-writing/easy/information-and-ideas/6bc0e595.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "72cbdbc6",
+      "path": "json/reading-and-writing/easy/information-and-ideas/72cbdbc6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "787729be",
+      "path": "json/reading-and-writing/easy/information-and-ideas/787729be.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7a895def",
+      "path": "json/reading-and-writing/easy/information-and-ideas/7a895def.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "8a3ecac6",
+      "path": "json/reading-and-writing/easy/information-and-ideas/8a3ecac6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "9077be25",
+      "path": "json/reading-and-writing/easy/information-and-ideas/9077be25.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "93cad661",
+      "path": "json/reading-and-writing/easy/information-and-ideas/93cad661.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b4da6aaf",
+      "path": "json/reading-and-writing/easy/information-and-ideas/b4da6aaf.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c4d43991",
+      "path": "json/reading-and-writing/easy/information-and-ideas/c4d43991.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "dbbbc5dd",
+      "path": "json/reading-and-writing/easy/information-and-ideas/dbbbc5dd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ead0fd9b",
+      "path": "json/reading-and-writing/easy/information-and-ideas/ead0fd9b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "eca09a92",
+      "path": "json/reading-and-writing/easy/information-and-ideas/eca09a92.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "fc1259dd",
+      "path": "json/reading-and-writing/easy/information-and-ideas/fc1259dd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "fcae209f",
+      "path": "json/reading-and-writing/easy/information-and-ideas/fcae209f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "123bd312",
+      "path": "json/reading-and-writing/medium/information-and-ideas/123bd312.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "25fc2534",
+      "path": "json/reading-and-writing/medium/information-and-ideas/25fc2534.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "28dfc05a",
+      "path": "json/reading-and-writing/medium/information-and-ideas/28dfc05a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "299c5303",
+      "path": "json/reading-and-writing/medium/information-and-ideas/299c5303.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2d2983b3",
+      "path": "json/reading-and-writing/medium/information-and-ideas/2d2983b3.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3190835d",
+      "path": "json/reading-and-writing/medium/information-and-ideas/3190835d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "350e2336",
+      "path": "json/reading-and-writing/medium/information-and-ideas/350e2336.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3882ddf6",
+      "path": "json/reading-and-writing/medium/information-and-ideas/3882ddf6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3ae2638c",
+      "path": "json/reading-and-writing/medium/information-and-ideas/3ae2638c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3cc2eacc",
+      "path": "json/reading-and-writing/medium/information-and-ideas/3cc2eacc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3d505895",
+      "path": "json/reading-and-writing/medium/information-and-ideas/3d505895.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "420b82e2",
+      "path": "json/reading-and-writing/medium/information-and-ideas/420b82e2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "485962a6",
+      "path": "json/reading-and-writing/medium/information-and-ideas/485962a6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4a85fea6",
+      "path": "json/reading-and-writing/medium/information-and-ideas/4a85fea6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4e9afd7a",
+      "path": "json/reading-and-writing/medium/information-and-ideas/4e9afd7a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5105ca38",
+      "path": "json/reading-and-writing/medium/information-and-ideas/5105ca38.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "54057e3f",
+      "path": "json/reading-and-writing/medium/information-and-ideas/54057e3f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5432d1de",
+      "path": "json/reading-and-writing/medium/information-and-ideas/5432d1de.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "55688b3c",
+      "path": "json/reading-and-writing/medium/information-and-ideas/55688b3c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "575e67df",
+      "path": "json/reading-and-writing/medium/information-and-ideas/575e67df.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6409016a",
+      "path": "json/reading-and-writing/medium/information-and-ideas/6409016a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7ae8065c",
+      "path": "json/reading-and-writing/medium/information-and-ideas/7ae8065c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7afdcca2",
+      "path": "json/reading-and-writing/medium/information-and-ideas/7afdcca2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7c1e5880",
+      "path": "json/reading-and-writing/medium/information-and-ideas/7c1e5880.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "8fbed1cb",
+      "path": "json/reading-and-writing/medium/information-and-ideas/8fbed1cb.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a0b58ef0",
+      "path": "json/reading-and-writing/medium/information-and-ideas/a0b58ef0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b1fab3e1",
+      "path": "json/reading-and-writing/medium/information-and-ideas/b1fab3e1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bcbcc43f",
+      "path": "json/reading-and-writing/medium/information-and-ideas/bcbcc43f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bcf2f169",
+      "path": "json/reading-and-writing/medium/information-and-ideas/bcf2f169.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c95995bc",
+      "path": "json/reading-and-writing/medium/information-and-ideas/c95995bc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c9708e7d",
+      "path": "json/reading-and-writing/medium/information-and-ideas/c9708e7d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ca5a3fb4",
+      "path": "json/reading-and-writing/medium/information-and-ideas/ca5a3fb4.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "cac82f9b",
+      "path": "json/reading-and-writing/medium/information-and-ideas/cac82f9b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d047abca",
+      "path": "json/reading-and-writing/medium/information-and-ideas/d047abca.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d748c3fd",
+      "path": "json/reading-and-writing/medium/information-and-ideas/d748c3fd.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d8b78a2b",
+      "path": "json/reading-and-writing/medium/information-and-ideas/d8b78a2b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "db876fd5",
+      "path": "json/reading-and-writing/medium/information-and-ideas/db876fd5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "df654a2b",
+      "path": "json/reading-and-writing/medium/information-and-ideas/df654a2b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e1504a2a",
+      "path": "json/reading-and-writing/medium/information-and-ideas/e1504a2a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f3f444bc",
+      "path": "json/reading-and-writing/medium/information-and-ideas/f3f444bc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "fc57d569",
+      "path": "json/reading-and-writing/medium/information-and-ideas/fc57d569.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "03701ef3",
+      "path": "json/reading-and-writing/hard/information-and-ideas/03701ef3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "08395130",
+      "path": "json/reading-and-writing/hard/information-and-ideas/08395130.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "086dd8cc",
+      "path": "json/reading-and-writing/hard/information-and-ideas/086dd8cc.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "0dba14e6",
+      "path": "json/reading-and-writing/hard/information-and-ideas/0dba14e6.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "0dccbf17",
+      "path": "json/reading-and-writing/hard/information-and-ideas/0dccbf17.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1755eaf0",
+      "path": "json/reading-and-writing/hard/information-and-ideas/1755eaf0.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1b9b29f1",
+      "path": "json/reading-and-writing/hard/information-and-ideas/1b9b29f1.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1bf2173e",
+      "path": "json/reading-and-writing/hard/information-and-ideas/1bf2173e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1ffd60ce",
+      "path": "json/reading-and-writing/hard/information-and-ideas/1ffd60ce.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "22b3da87",
+      "path": "json/reading-and-writing/hard/information-and-ideas/22b3da87.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "26f5c4ba",
+      "path": "json/reading-and-writing/hard/information-and-ideas/26f5c4ba.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2a075bd1",
+      "path": "json/reading-and-writing/hard/information-and-ideas/2a075bd1.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "38facbad",
+      "path": "json/reading-and-writing/hard/information-and-ideas/38facbad.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3f236877",
+      "path": "json/reading-and-writing/hard/information-and-ideas/3f236877.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "45c03837",
+      "path": "json/reading-and-writing/hard/information-and-ideas/45c03837.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4802f6a5",
+      "path": "json/reading-and-writing/hard/information-and-ideas/4802f6a5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4889580c",
+      "path": "json/reading-and-writing/hard/information-and-ideas/4889580c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4b3d6062",
+      "path": "json/reading-and-writing/hard/information-and-ideas/4b3d6062.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4b8eda0a",
+      "path": "json/reading-and-writing/hard/information-and-ideas/4b8eda0a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4ba0695d",
+      "path": "json/reading-and-writing/hard/information-and-ideas/4ba0695d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4f9f8ea6",
+      "path": "json/reading-and-writing/hard/information-and-ideas/4f9f8ea6.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5632ffb4",
+      "path": "json/reading-and-writing/hard/information-and-ideas/5632ffb4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "58e9e497",
+      "path": "json/reading-and-writing/hard/information-and-ideas/58e9e497.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5c7e0d62",
+      "path": "json/reading-and-writing/hard/information-and-ideas/5c7e0d62.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5cd55c77",
+      "path": "json/reading-and-writing/hard/information-and-ideas/5cd55c77.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5d20f560",
+      "path": "json/reading-and-writing/hard/information-and-ideas/5d20f560.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "61228830",
+      "path": "json/reading-and-writing/hard/information-and-ideas/61228830.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "65502c46",
+      "path": "json/reading-and-writing/hard/information-and-ideas/65502c46.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6b8a7c74",
+      "path": "json/reading-and-writing/hard/information-and-ideas/6b8a7c74.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6e0e0de1",
+      "path": "json/reading-and-writing/hard/information-and-ideas/6e0e0de1.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "75208874",
+      "path": "json/reading-and-writing/hard/information-and-ideas/75208874.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9391b7cc",
+      "path": "json/reading-and-writing/hard/information-and-ideas/9391b7cc.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "95dbdf51",
+      "path": "json/reading-and-writing/hard/information-and-ideas/95dbdf51.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "96d1c1fe",
+      "path": "json/reading-and-writing/hard/information-and-ideas/96d1c1fe.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9869c261",
+      "path": "json/reading-and-writing/hard/information-and-ideas/9869c261.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9abc3ba5",
+      "path": "json/reading-and-writing/hard/information-and-ideas/9abc3ba5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9c591ff7",
+      "path": "json/reading-and-writing/hard/information-and-ideas/9c591ff7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a13c1c66",
+      "path": "json/reading-and-writing/hard/information-and-ideas/a13c1c66.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a44c7bd4",
+      "path": "json/reading-and-writing/hard/information-and-ideas/a44c7bd4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a68fd3e7",
+      "path": "json/reading-and-writing/hard/information-and-ideas/a68fd3e7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "aaddd60f",
+      "path": "json/reading-and-writing/hard/information-and-ideas/aaddd60f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ac285054",
+      "path": "json/reading-and-writing/hard/information-and-ideas/ac285054.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b5e9f3c2",
+      "path": "json/reading-and-writing/hard/information-and-ideas/b5e9f3c2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "cae97f58",
+      "path": "json/reading-and-writing/hard/information-and-ideas/cae97f58.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ce4448b7",
+      "path": "json/reading-and-writing/hard/information-and-ideas/ce4448b7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "cef77aa7",
+      "path": "json/reading-and-writing/hard/information-and-ideas/cef77aa7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "cf3acc50",
+      "path": "json/reading-and-writing/hard/information-and-ideas/cf3acc50.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d1539546",
+      "path": "json/reading-and-writing/hard/information-and-ideas/d1539546.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d95a0bb8",
+      "path": "json/reading-and-writing/hard/information-and-ideas/d95a0bb8.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e185a21f",
+      "path": "json/reading-and-writing/hard/information-and-ideas/e185a21f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e503ae04",
+      "path": "json/reading-and-writing/hard/information-and-ideas/e503ae04.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e6e6be2d",
+      "path": "json/reading-and-writing/hard/information-and-ideas/e6e6be2d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e9521fd1",
+      "path": "json/reading-and-writing/hard/information-and-ideas/e9521fd1.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f1bfbed3",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f1bfbed3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f2250478",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f2250478.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f27559d4",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f27559d4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f39507a3",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f39507a3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f495b554",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f495b554.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f942646f",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f942646f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f9bd4e61",
+      "path": "json/reading-and-writing/hard/information-and-ideas/f9bd4e61.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "fd1095d7",
+      "path": "json/reading-and-writing/hard/information-and-ideas/fd1095d7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

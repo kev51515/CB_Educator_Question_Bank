@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows the percent of items in stock at a warehouse by model year.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Model year</th><th>Percent of items (%)</th></tr>\n<tr><td>2015</td><td>13</td></tr><tr><td>2016</td><td>12</td></tr><tr><td>2017</td><td>3</td></tr><tr><td>2018</td><td>7</td></tr><tr><td>2019</td><td>10</td></tr></table>\n<p style=\"text-align: left;\">For what model year is the percent of items in stock the smallest?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2017</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2018</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2016</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2019</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The smallest percent is 3%, which occurs in 2017.</p><p>Choices B, C, and D give 7%, 12%, and 10% respectively, all larger.</p>",
+  "questionId": "4a2264b3-s1",
+  "originalId": "4a2264b3",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

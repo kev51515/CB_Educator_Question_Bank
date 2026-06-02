@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows the estimated number of finches counted at a state park each year from 2010 to 2019.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Year</th><th>Finches</th></tr>\n<tr><td>2010</td><td>42</td></tr><tr><td>2011</td><td>45</td></tr><tr><td>2012</td><td>96</td></tr><tr><td>2013</td><td>104</td></tr><tr><td>2014</td><td>57</td></tr><tr><td>2015</td><td>172</td></tr><tr><td>2016</td><td>49</td></tr><tr><td>2017</td><td>89</td></tr><tr><td>2018</td><td>94</td></tr><tr><td>2019</td><td>108</td></tr></table>\n<p style=\"text-align: left;\">Based on the table, in which year was the estimated number of finches at the state park the greatest?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2012</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2013</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2015</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2019</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The largest value in the table is 172, which occurs in 2015.</p><p>Choices A, B, and D give 96, 104, and 108, all smaller than 172.</p>",
+  "questionId": "2e511919-s1",
+  "originalId": "2e511919",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

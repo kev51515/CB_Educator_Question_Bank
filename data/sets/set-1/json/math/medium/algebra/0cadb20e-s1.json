@@ -1,0 +1,39 @@
+{
+  "questionId": "0cadb20e-s1",
+  "originalId": "0cadb20e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The function <em>g</em> is defined by g(x) = (x + 8)/4, and g(a) = 9, where <em>a</em> is a constant. What is the value of <em>a</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>28</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>44</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. g(a) = (a + 8)/4 = 9. Multiplying both sides by 4: a + 8 = 36. Subtracting 8: a = 28. Choice A is the divisor itself. Choice C results from adding rather than subtracting 8. Choice D is the value of a + 8 (the intermediate step).</p>",
+  "templateId": "linear-functions.A1.T2.medium"
+}

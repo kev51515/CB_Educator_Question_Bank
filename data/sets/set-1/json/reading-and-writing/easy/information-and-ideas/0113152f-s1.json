@@ -1,0 +1,39 @@
+{
+  "questionId": "0113152f-s1",
+  "originalId": "0113152f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>American jewelry designer Renaldo Tomas was known for his love of small, brightly colored beads. Many of his signature necklaces feature dense rows of beads woven across the entire piece. In a paper, a jewelry design student claims that Tomas's use of beads as decoration was inspired by his childhood observations of the crafts and traditions of the men in his family.</p>",
+  "stem": "<p>Which quotation from a work by a historian would be the most effective evidence for the student to include in support of this claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"Although some of the bead arrangements in Tomas's necklaces appear to be scattered, his most celebrated pieces feature carefully ordered patterns of matching beads.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"Tomas's grandfather, who taught him to make small leather pouches as a boy, often sewed colored beads onto every pouch he produced to mark the family that the pouch belonged to.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"Many of Tomas's contemporaries were inspired by his designs to incorporate beads, as well as feathers and shells, as decorative items in their own work.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"Tomas was destined to be a designer from a young age: he learned to weave from his uncle Carlos, and his love of color was developed by his father.\"</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. This quotation connects beads directly to a male relative in Tomas's family who used beads in his own craft, supporting the student's claim.</p><p>Choice A is incorrect; it discusses Tomas's use of beads but does not connect it to his family. Choice C is incorrect; it concerns other designers being inspired by Tomas, not Tomas being inspired by his family. Choice D is incorrect; it mentions male relatives but does not tie them to beads specifically.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A2.T3.easy"
+}

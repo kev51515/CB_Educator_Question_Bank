@@ -1,0 +1,72 @@
+{
+  "questionId": "33b1b285",
+  "externalId": "f42209ba-02ff-43a9-a852-dfd9f7ce56da",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:25.986492+00:00",
+  "type": "mcq",
+  "stem": "<p>Which quotation from the article would best illustrate the theater historian&rsquo;s claim?&nbsp;</p>",
+  "answerOptions": [
+    {
+      "id": "25d6b79d-c467-4897-958b-860ce4670de5",
+      "content": "<p>&ldquo;The company presented <span lang=\"es\"><em>actos</em></span>, short comedy sketches, that often relied on exaggerated physical humor to groups of agricultural workers, whose reactions&mdash;enthusiastic cheers of appreciation and, occasionally, loud boos of disapproval&mdash;promoted improvisation.&rdquo;</p>"
+    },
+    {
+      "id": "ecd06b48-1f18-48b2-8b5f-f0b865297c7a",
+      "content": "<p>&ldquo;The company was focused on the reality of the present situation and discovered that humor was often found in that reality; consequently, comedy became a tool to convey social critique while entertaining and inspiring audiences.&rdquo;&nbsp;</p>"
+    },
+    {
+      "id": "a06c0581-e322-4b14-a766-0201a0c16df6",
+      "content": "<p>&ldquo;The company relied heavily on satire, humor, and references to contemporary popular culture as well as a make-do aesthetic&mdash;often referred to as <span lang=\"es\"><em>rasquache</em></span>&mdash;that reflected not only the troupe&rsquo;s limited financial resources but also its sociopolitical message.&rdquo;</p>"
+    },
+    {
+      "id": "f80fc250-9767-4805-89fa-730f7b4f36d7",
+      "content": "<p>&ldquo;The members of the company, which in addition to founder Luis Valdez consisted entirely of nonprofessional actors, traveled into farm fields, where they, with minimal props and costumes, performed comedy in the form of brief humorous vignettes.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "25d6b79d-c467-4897-958b-860ce4670de5"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most effectively illustrates the theater historian&rsquo;s claim that El Teatro Campesino&rsquo;s early performances were influenced stylistically by <em>carpa</em> theater, vaudeville-style shows with &ldquo;audience-mediated slapstick comedy.&rdquo; The quotation indicates that El Teatro presented comedic sketches that often featured exaggerated physical humor and that the performers improvised based on the cheers and boos from the audience; thus, it illustrates that El Teatro&rsquo;s performances were similar to <em>carpa</em> theater in the physical, slapstick nature of their comedy and in the way the performances were mediated, or shaped, by the audience&rsquo;s reactions.</p><p>Choice B is incorrect. Although the quotation refers to El Teatro&rsquo;s use of comedy and mentions audiences, it focuses on the company&rsquo;s use of comedic aspects of reality as a tool to critique society while providing audiences with entertainment and inspiration; it doesn&rsquo;t give any indication that El Teatro&rsquo;s performances featured slapstick, or very physical, comedy or that they were directly shaped by the audience. Choice C is incorrect. Although the quotation refers to El Teatro&rsquo;s aesthetic, or style, and mentions comedy, it indicates only that the company relied on satire and humor and had a style that reflected their limited financial means and sociopolitical message; it doesn&rsquo;t give any indication that El Teatro&rsquo;s performances featured slapstick, or very physical, comedy or that they were directly shaped by the audience. Choice D is incorrect. Although the quotation refers to El Teatro&rsquo;s performance of comedy, it mentions only that the company performed brief humorous vignettes, or short humorous scenes, in farm fields; it doesn&rsquo;t give any indication that El Teatro&rsquo;s performances featured slapstick, or very physical, comedy or that they were directly shaped by the audience.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which quotation from the article would best illustrate the theater historian&rsquo;s claim?&nbsp;</p>",
+    "stimulus": "<p>Founded in 1965 and originally established as a cultural extension of the United Farm Workers&mdash;a union representing many Mexican American agricultural workers at the time&mdash;the theater troupe El Teatro Campesino has achieved recognition as a source of inspiration for subsequent Chicano theater companies and as a contributor to the dramatic arts. In an article about the company, a theater historian posits that a significant stylistic influence on El Teatro&rsquo;s early performances was the audience-mediated slapstick comedy of <span lang=\"es\"><em>carpa</em></span> theater, vaudeville-style shows popular in Mexico and the US Southwest in the 1920s and &rsquo;30s.</p>",
+    "keys": [
+      "25d6b79d-c467-4897-958b-860ce4670de5"
+    ],
+    "answerOptions": [
+      {
+        "id": "25d6b79d-c467-4897-958b-860ce4670de5",
+        "content": "<p>&ldquo;The company presented <span lang=\"es\"><em>actos</em></span>, short comedy sketches, that often relied on exaggerated physical humor to groups of agricultural workers, whose reactions&mdash;enthusiastic cheers of appreciation and, occasionally, loud boos of disapproval&mdash;promoted improvisation.&rdquo;</p>"
+      },
+      {
+        "id": "ecd06b48-1f18-48b2-8b5f-f0b865297c7a",
+        "content": "<p>&ldquo;The company was focused on the reality of the present situation and discovered that humor was often found in that reality; consequently, comedy became a tool to convey social critique while entertaining and inspiring audiences.&rdquo;&nbsp;</p>"
+      },
+      {
+        "id": "a06c0581-e322-4b14-a766-0201a0c16df6",
+        "content": "<p>&ldquo;The company relied heavily on satire, humor, and references to contemporary popular culture as well as a make-do aesthetic&mdash;often referred to as <span lang=\"es\"><em>rasquache</em></span>&mdash;that reflected not only the troupe&rsquo;s limited financial resources but also its sociopolitical message.&rdquo;</p>"
+      },
+      {
+        "id": "f80fc250-9767-4805-89fa-730f7b4f36d7",
+        "content": "<p>&ldquo;The members of the company, which in addition to founder Luis Valdez consisted entirely of nonprofessional actors, traveled into farm fields, where they, with minimal props and costumes, performed comedy in the form of brief humorous vignettes.&rdquo;</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most effectively illustrates the theater historian&rsquo;s claim that El Teatro Campesino&rsquo;s early performances were influenced stylistically by <em>carpa</em> theater, vaudeville-style shows with &ldquo;audience-mediated slapstick comedy.&rdquo; The quotation indicates that El Teatro presented comedic sketches that often featured exaggerated physical humor and that the performers improvised based on the cheers and boos from the audience; thus, it illustrates that El Teatro&rsquo;s performances were similar to <em>carpa</em> theater in the physical, slapstick nature of their comedy and in the way the performances were mediated, or shaped, by the audience&rsquo;s reactions.</p><p>Choice B is incorrect. Although the quotation refers to El Teatro&rsquo;s use of comedy and mentions audiences, it focuses on the company&rsquo;s use of comedic aspects of reality as a tool to critique society while providing audiences with entertainment and inspiration; it doesn&rsquo;t give any indication that El Teatro&rsquo;s performances featured slapstick, or very physical, comedy or that they were directly shaped by the audience. Choice C is incorrect. Although the quotation refers to El Teatro&rsquo;s aesthetic, or style, and mentions comedy, it indicates only that the company relied on satire and humor and had a style that reflected their limited financial means and sociopolitical message; it doesn&rsquo;t give any indication that El Teatro&rsquo;s performances featured slapstick, or very physical, comedy or that they were directly shaped by the audience. Choice D is incorrect. Although the quotation refers to El Teatro&rsquo;s performance of comedy, it mentions only that the company performed brief humorous vignettes, or short humorous scenes, in farm fields; it doesn&rsquo;t give any indication that El Teatro&rsquo;s performances featured slapstick, or very physical, comedy or that they were directly shaped by the audience.</p>",
+    "externalid": "f42209ba-02ff-43a9-a852-dfd9f7ce56da",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Founded in 1965 and originally established as a cultural extension of the United Farm Workers&mdash;a union representing many Mexican American agricultural workers at the time&mdash;the theater troupe El Teatro Campesino has achieved recognition as a source of inspiration for subsequent Chicano theater companies and as a contributor to the dramatic arts. In an article about the company, a theater historian posits that a significant stylistic influence on El Teatro&rsquo;s early performances was the audience-mediated slapstick comedy of <span lang=\"es\"><em>carpa</em></span> theater, vaudeville-style shows popular in Mexico and the US Southwest in the 1920s and &rsquo;30s.</p>"
+}

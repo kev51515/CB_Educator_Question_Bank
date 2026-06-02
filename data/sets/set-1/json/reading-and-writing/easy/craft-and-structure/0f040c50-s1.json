@@ -1,0 +1,39 @@
+{
+  "questionId": "0f040c50-s1",
+  "originalId": "0f040c50",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Willa Cather's 1918 novel <em>My Ántonia</em>. The narrator is recalling his family's farm.</p><p>Our wheat fields were vast, spread over many quarter-sections, broad enough that a man could ride from one fence-line to the other in a long afternoon, though they seemed somehow narrower as the years went on, that ride included.</p>",
+  "stem": "<p>As used in the text, what does the word \"spread\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Extended</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Discussed</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Coated</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Hidden</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the text is describing wheat fields that cover many quarter-sections, and \"extended\" means stretched out over an area, which captures that meaning. Choice B is incorrect because \"discussed\" refers to talking, not to physical extent. Choice C is incorrect because \"coated\" refers to a layer of substance, not the area covered by fields. Choice D is incorrect because the fields are described as vast and visible, not hidden.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

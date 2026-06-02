@@ -1,0 +1,25 @@
+{
+  "questionId": "8545ccfe-s1",
+  "originalId": "8545ccfe",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.hard",
+  "stimulus": "<p>Glacier-fed lakes typically appear turquoise or milky white. The milky-white tint comes from very fine rock particles, called &ldquo;glacial flour,&rdquo; which the glacier grinds from bedrock and which scatter incoming sunlight. When the particles are slightly larger or sparser, the lake tends to look turquoise because longer wavelengths are absorbed and shorter (blue-green) wavelengths are preferentially scattered. However, several glacier-fed lakes in the Karakoram range have recently been observed to look bright emerald green. One team of glaciologists has hypothesized that this unusual color is due to traces of dissolved iron-rich organic acids that wash into the lakes from surrounding soils each spring; the team proposes that these acids impart a faint yellow tint that, mixed with the lake&rsquo;s underlying blue, produces the observed green.</p>",
+  "stem": "<p>Which finding, if true, would most directly weaken the team&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Turquoise lakes and emerald-green lakes in the Karakoram range contain similarly small traces of dissolved iron-rich organic acids.</p>"},
+    {"id": "b", "content": "<p>Iron-rich organic acids have a stronger yellow color in Karakoram waters than they do in waters elsewhere.</p>"},
+    {"id": "c", "content": "<p>Milky-white lakes in the Karakoram do not change color when mixed with iron-rich organic acids because of the high concentration of glacial flour suspended in them.</p>"},
+    {"id": "d", "content": "<p>Turquoise lakes and emerald-green lakes in the Karakoram are rarely found near each other.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most directly weakens the team&rsquo;s hypothesis. The hypothesis attributes the unusual emerald-green color specifically to traces of dissolved iron-rich organic acids; if turquoise lakes (which lack the unusual color) contain similar amounts of those acids, then the acids cannot account for the difference, and the proposed mechanism fails.</p><p>Choice B is incorrect because a stronger yellow tint from these acids in Karakoram waters would, if anything, support rather than weaken the hypothesis. Choice C is incorrect because the hypothesis concerns lakes whose underlying color is blue rather than milky white, so the noted nonreaction in milky-white lakes is irrelevant. Choice D is incorrect because spatial separation between turquoise and emerald-green lakes is neither predicted nor precluded by the hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5dd53f73-s1",
+  "originalId": "5dd53f73",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>22</mn><mi>m</mi><mo>+</mo><mn>22</mn><mi>n</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>22</mn><mfenced><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>22</mn><mfenced><mrow><mi>m</mi><mo>-</mo><mi>n</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>44</mn><mfenced><mrow><mi>m</mi><mo>+</mo><mi>n</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>22</mn><mi>m</mi><mi>n</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>22 is a common factor of both terms. Factoring 22 gives 22(m + n).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

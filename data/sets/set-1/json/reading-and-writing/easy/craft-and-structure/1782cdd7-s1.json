@@ -1,0 +1,25 @@
+{
+  "questionId": "1782cdd7-s1",
+  "originalId": "1782cdd7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In many urban environments, strips of grass and shrubs are kept along roadways to filter rainwater runoff, but it has been unclear what effects these strips may have on local insect diversity. To investigate, entomologist Karim Ahmadi and colleagues studied parks in Toronto, comparing the species richness of strips with native plantings to that of strips with only mown grass. Ahmadi and colleagues found that species richness was significantly higher in the native-plant strips, a finding the researchers attribute to the role native flowers play in providing nectar and shelter for insects.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It describes findings that challenge a previously held view about how urban insects avoid predators.</p>"},
+    {"id": "b", "content": "<p>It presents a study that addresses an unresolved question about the role of vegetation strips along urban roads.</p>"},
+    {"id": "c", "content": "<p>It explains the differences between insect-conservation strategies used in city parks and those used in rural settings.</p>"},
+    {"id": "d", "content": "<p>It discusses research intended to settle a debate about how runoff filtration affects road maintenance costs.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The author first describes an unresolved question—what effect do roadside vegetation strips have on insect diversity?—and then presents a study that answers it.</p><p>Choice A is incorrect. The text never mentions predators. Choice C is incorrect. The text never mentions rural settings. Choice D is incorrect. The text never mentions road maintenance costs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

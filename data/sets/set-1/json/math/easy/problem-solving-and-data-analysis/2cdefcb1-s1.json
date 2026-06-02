@@ -1,0 +1,39 @@
+{
+  "questionId": "2cdefcb1-s1",
+  "originalId": "2cdefcb1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What length, in centimeters, is equivalent to a length of 47 meters? (1 meter = 100 centimeters)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4,700</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.47</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.047</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>47,000</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since 1 meter = 100 centimeters, 47 meters = 47 \u00d7 100 = 4,700 centimeters.</p><p>Choices B and C are incorrect; they result from dividing instead of multiplying. Choice D is incorrect; it results from multiplying by 1,000 instead of 100.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

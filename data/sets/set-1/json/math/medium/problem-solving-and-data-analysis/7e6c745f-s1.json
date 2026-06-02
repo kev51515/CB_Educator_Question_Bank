@@ -1,0 +1,25 @@
+{
+  "questionId": "7e6c745f-s1",
+  "originalId": "7e6c745f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table below shows the amount of fiber in two foods and the cost of each food. Based on the table, what is the ratio of the cost per gram of fiber in 1 serving of oats to the cost per gram of fiber in 1 serving of beans?</p><table border=\"1\"><tr><th>Food</th><th>Fiber</th><th>Cost</th></tr><tr><td>1 serving of oats</td><td>4 grams</td><td>$0.20</td></tr><tr><td>1 serving of beans</td><td>10 grams</td><td>$0.25</td></tr></table>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>2 : 1</p>"},
+    {"id": "b", "content": "<p>4 : 5</p>"},
+    {"id": "c", "content": "<p>5 : 4</p>"},
+    {"id": "d", "content": "<p>1 : 2</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The cost per gram of fiber in 1 serving of oats is $0.20 ÷ 4 = $0.05. The cost per gram of fiber in 1 serving of beans is $0.25 ÷ 10 = $0.025. The ratio of the cost per gram in oats to that in beans is 0.05 : 0.025, which simplifies to 2 : 1.</p><p>Choice D is incorrect; it gives the reciprocal ratio. Choices B and C result from incorrectly calculating the unit rates.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A5.T4.medium"
+}

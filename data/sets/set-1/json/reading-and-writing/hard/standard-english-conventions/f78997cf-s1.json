@@ -1,0 +1,25 @@
+{
+  "questionId": "f78997cf-s1",
+  "originalId": "f78997cf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.hard",
+  "type": "mcq",
+  "stimulus": "<p>Recent spectroscopic study of 19521 Chaos—a distant trans-Neptunian object orbiting the Sun beyond Neptune—has shown its surface to be unusually reddish, suggesting the presence of organic compounds. Such conclusions are admittedly ______ the object's reddish hue may instead be the product of cosmic ray bombardment, micrometeoroid impacts, or accumulated dust rather than evidence of its actual surface chemistry.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>tentative; however,</p>"},
+    {"id": "b", "content": "<p>tentative, however</p>"},
+    {"id": "c", "content": "<p>tentative, however;</p>"},
+    {"id": "d", "content": "<p>tentative, however,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of punctuation in a sentence. A comma correctly sets off the supplementary adverb \"however\" from the preceding main clause (\"Such conclusions are admittedly tentative\"), and a semicolon then joins the next main clause (\"the object's...chemistry\") to the rest of the sentence. Placing the semicolon after \"however\" appropriately indicates that the following clause qualifies the prior assertion.</p><p>Choice A is incorrect because placing the semicolon before \"however\" illogically attaches the qualifier to the wrong clause and the trailing comma creates ambiguity. Choice B is incorrect because it leaves the boundary between the two main clauses unpunctuated. Choice D is incorrect because it produces a comma splice; commas alone cannot join two main clauses around a supplementary adverb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

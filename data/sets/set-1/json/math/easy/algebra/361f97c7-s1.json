@@ -1,0 +1,39 @@
+{
+  "questionId": "361f97c7-s1",
+  "originalId": "361f97c7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = 6x - 5. What is the value of f(9)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-45</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>49</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>59</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. f(9) = 6(9) - 5 = 54 - 5 = 49.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

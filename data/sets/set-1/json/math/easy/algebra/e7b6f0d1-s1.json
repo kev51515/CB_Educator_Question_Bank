@@ -1,0 +1,39 @@
+{
+  "questionId": "e7b6f0d1-s1",
+  "originalId": "e7b6f0d1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mi>x</mi><mo>+</mo><mn>7</mn><mo>=</mo><mn>22</mn></math></p><p>Which equation has the same solution as the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>5</mn><mi>x</mi><mo>=</mo><mn>29</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>5</mn><mi>x</mi><mo>=</mo><mn>110</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>5</mn><mi>x</mi><mo>=</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>5</mn><mi>x</mi><mo>=</mo><mn>15</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Subtracting 7 from both sides yields <math><mn>5</mn><mi>x</mi><mo>=</mo><mn>15</mn></math>.</p><p>Choices A, B, and C are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T7.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "a2dd51c1-s1",
+  "originalId": "a2dd51c1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In most retail environments, returned electronics that are damaged are crushed and sent to landfills. City officials in Austin, Texas, wanted to reduce this waste. The officials passed a law requiring retailers to refurbish certain returned devices instead. Refurbishment involves carefully testing and repairing items so they can be resold or donated. Damage to the components is avoided so that they can be reused in working products. A 2022 study found that 34 percent of returned electronics in Austin were able to be refurbished. The remaining items were broken down for recycling instead of being landfilled.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To show that popular support for measures that reduce electronics waste has increased since 2022</p>"},
+    {"id": "b", "content": "<p>To explain an effort made by the city of Austin to reduce electronics waste and some results of that effort</p>"},
+    {"id": "c", "content": "<p>To argue that refurbishment is less effective than other measures at reducing electronics waste</p>"},
+    {"id": "d", "content": "<p>To discuss laws aimed at reducing electronics waste in Austin and compare them to similar laws elsewhere</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text describes Austin's law requiring refurbishment of returned electronics and then reports results: 34% were refurbished and the rest recycled.</p><p>Choice A is incorrect. The text doesn't discuss popularity. Choice C is incorrect. The text doesn't argue refurbishment is less effective. Choice D is incorrect. The text doesn't mention laws elsewhere.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

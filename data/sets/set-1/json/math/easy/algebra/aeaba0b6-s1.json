@@ -1,0 +1,22 @@
+{
+  "questionId": "aeaba0b6-s1",
+  "originalId": "aeaba0b6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>c</i>(<i>x</i>) = 9 + 3<i>x</i> represents the total cost, in dollars, of visiting a bowling alley when <i>x</i> games are bowled. How many games can be bowled for a total cost of $36?</p>",
+  "answerOptions": null,
+  "keys": [
+    "9"
+  ],
+  "rationale": "<p>The correct answer is 9. Set 9 + 3<i>x</i> = 36, so 3<i>x</i> = 27, and <i>x</i> = 9. Therefore, 9 games can be bowled for a total cost of $36.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A1.T2.easy"
+}

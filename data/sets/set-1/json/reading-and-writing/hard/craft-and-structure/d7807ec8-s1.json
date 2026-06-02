@@ -1,0 +1,39 @@
+{
+  "questionId": "d7807ec8-s1",
+  "originalId": "d7807ec8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Social media platforms with openly partisan moderation policies became a significant force in US public discourse during the 2010s. While some commentators welcomed this development, claiming that such platforms had a refreshing candor missing from traditional news, less <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> observers countered that such platforms tended toward ideological echo chambers that intensified political polarization to problematic levels.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>misanthropic</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>optimistic</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>recalcitrant</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>earnest</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Optimistic\" most logically completes the text. The text contrasts \"some commentators\" who welcomed the development with \"less ______ observers\" who criticized it. The first group was hopeful (optimistic) about the platforms; the second group was less so.</p><p>Choice A is incorrect. \"Misanthropic\" means hating humanity; this doesn't capture the difference in attitude toward a specific development. Choice C is incorrect. \"Recalcitrant\" means stubbornly resistant; resistance is more characteristic of the critics, not what they are described as being less of. Choice D is incorrect. \"Earnest\" means sincere; both groups could be earnest in their views.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T4.hard"
+}

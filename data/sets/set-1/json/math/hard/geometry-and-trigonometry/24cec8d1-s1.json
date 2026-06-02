@@ -1,0 +1,22 @@
+{
+  "questionId": "24cec8d1-s1",
+  "originalId": "24cec8d1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A circle has center O, and points U and V lie on the circle. In triangle OUV, the measure of &ang;UOV is 70&deg;. What is the measure of &ang;OUV, in degrees? (Disregard the degree symbol when entering your answer.)</p>",
+  "answerOptions": null,
+  "keys": [
+    "55"
+  ],
+  "rationale": "<p>The correct answer is 55. Since OU and OV are radii, triangle OUV is isosceles, so &ang;OUV = &ang;OVU. The angles sum to 180&deg;, so 70 + 2(&ang;OUV) = 180, giving &ang;OUV = 55&deg;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A5.T12.medium"
+}

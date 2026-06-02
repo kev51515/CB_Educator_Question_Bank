@@ -1,0 +1,39 @@
+{
+  "questionId": "29741ebc-s1",
+  "originalId": "29741ebc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In the past, scholars who wanted to study Harriet Tubman's letters and personal records had to travel to the National Archives in Washington, DC, to view them on microfiche <u>(small sheets of film containing tiny reproductions of documents)</u>. But traveling to the archives often added time and expense to a research project. Now, by visiting the archives' website, scholars can access digitized versions of Tubman's papers without leaving home.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It explains the meaning of a word.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It summarizes an unexpected finding.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It describes a debate among historians.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It gives information about a famous person.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The underlined portion is a parenthetical phrase directly following \"microfiche,\" and it describes what microfiche sheets are\u2014small sheets of film containing tiny reproductions of documents. Its placement and focus indicate that it is defining the term.</p><p>Choice B is incorrect. The text describes no specific finding. Choice C is incorrect. The text describes no debate. Choice D is incorrect. Though the text mentions Tubman, the underlined portion focuses on defining microfiche, not on Tubman.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

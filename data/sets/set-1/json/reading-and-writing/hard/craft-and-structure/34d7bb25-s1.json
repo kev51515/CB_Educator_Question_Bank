@@ -1,0 +1,39 @@
+{
+  "questionId": "34d7bb25-s1",
+  "originalId": "34d7bb25",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>According to the Brazilian sociologist Heloisa de Castro (1902&ndash;1981), the European frameworks underlying mid-twentieth-century urban planning&mdash;for instance, the assumption that residential, commercial, and industrial zones must be cleanly separated&mdash;had limited usefulness in Brazilian cities. Making urban planning genuinely responsive to Brazilian life, de Castro maintained, called for new analytic categories that reflected the dense, mixed-use neighborhoods historically rooted in the country's ports and hillsides. To put these convictions to work, she helped design a community-mapping project in central Salvador that catalogued how families actually used a single block&mdash;living, selling, repairing, and worshipping&mdash;and used the resulting maps to lobby municipal authorities against a planned demolition.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The text presents de Castro's critique of mid-century urban planning and then gives an example of how she tried to address the issues she identified.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The text describes de Castro's training as a sociologist and then lists the urban policies she went on to implement personally.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The text summarizes one of de Castro's planning theories and then traces its impact on later Brazilian sociologists.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The text explains a dominant European planning theory and then claims de Castro's work has been more influential than scholars admit.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The first portion of the text lays out de Castro's critique of European-derived urban planning frameworks; the second portion describes the Salvador community-mapping project as her attempt to act on that critique. The structure is critique followed by responsive example.</p><p>Choice B is incorrect because the text says nothing about her training and does not catalog implemented policies. Choice C is incorrect because subsequent sociologists are never mentioned. Choice D is incorrect because the text neither stages a defense of de Castro's reputation nor claims her influence has been underrated.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.hard"
+}

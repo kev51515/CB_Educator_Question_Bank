@@ -1,0 +1,22 @@
+{
+  "questionId": "04bbce67-s1",
+  "originalId": "04bbce67",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>x</i>) = (<i>x</i> &minus; 11)&sup2; + 6</p><p>The function <i>f</i> is defined by the given equation. For what value of <i>x</i> does <i>f</i>(<i>x</i>) reach its minimum?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The function is written in vertex form <i>f</i>(<i>x</i>) = (<i>x</i> &minus; <i>h</i>)&sup2; + <i>k</i>. The minimum of a squared term is 0 (achieved when <i>x</i> = <i>h</i>), so the function reaches its minimum at <i>x</i> = 11.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

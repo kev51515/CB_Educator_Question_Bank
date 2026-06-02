@@ -1,0 +1,22 @@
+{
+  "questionId": "190be2fc-s1",
+  "originalId": "190be2fc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Data set B consists of 10 positive integers less than 70. The list shown gives 9 of the integers from data set B.</p><p>52, 54, 53, 52, 47, 48, 49, 55, 49</p><p>The mean of these 9 integers is 51. If the mean of data set B is an integer that is greater than 51, what is the value of the largest integer from data set B?</p>",
+  "answerOptions": null,
+  "keys": [
+    "61"
+  ],
+  "rationale": "<p>The 9 listed integers sum to 9 &middot; 51 = 459. Let x be the tenth integer (largest, since the others are at most 55). The mean of all 10 is (459 + x)/10. For this to be an integer greater than 51, 459 + x must be divisible by 10 and (459 + x)/10 > 51, i.e., 459 + x > 510, so x > 51. The smallest x > 51 with 459 + x divisible by 10 is x = 61 (459 + 61 = 520, mean = 52, which is an integer). Therefore the largest integer is 61.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T13.hard"
+}

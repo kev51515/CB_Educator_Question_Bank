@@ -1,0 +1,39 @@
+{
+  "questionId": "4f2710ab-s1",
+  "originalId": "4f2710ab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Some animals have developed remarkable abilities to survive in extreme heat. Pocket mice (<em>Chaetodipus</em>), <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can lower their body temperature and enter a dormant state called torpor to conserve water during the hottest desert summers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>for example,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>nevertheless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>meanwhile,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>therefore,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"For example\" logically signals that the information about pocket mice&mdash;that they can enter torpor to survive desert heat&mdash;exemplifies the previous sentence's claim that some animals have developed remarkable abilities to survive in extreme heat.</p><p>Choice B is incorrect because \"nevertheless\" illogically signals that the pocket mice's behavior is true despite the previous claim. Instead, it exemplifies the claim. Choice C is incorrect because \"meanwhile\" illogically signals simultaneous but unrelated events. Choice D is incorrect because \"therefore\" illogically suggests the pocket mice's behavior is a consequence of the previous claim, but it is an illustration of that claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

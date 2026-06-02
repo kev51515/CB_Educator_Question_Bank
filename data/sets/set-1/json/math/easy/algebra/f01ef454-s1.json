@@ -1,0 +1,39 @@
+{
+  "questionId": "f01ef454-s1",
+  "originalId": "f01ef454",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A geologist estimates that the volume of a marble slab is greater than 8.4 cubic feet but less than 11.2 cubic feet. The geologist also estimates that the marble weighs 170 pounds per cubic foot. Based on these estimates, which of the following inequalities represents x, the possible weight, in pounds, of the slab?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>170 - 11.2 &lt; x &lt; 170 - 8.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>170(8.4) &lt; x &lt; 170(11.2)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>170 + 8.4 &lt; x &lt; 170 + 11.2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>170/11.2 &lt; x &lt; 170/8.4</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Weight = (weight per cubic foot) &times; volume, so x is bounded by 170(8.4) &lt; x &lt; 170(11.2).</p><p>Choices A, C, and D use incorrect operations.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy"
+}

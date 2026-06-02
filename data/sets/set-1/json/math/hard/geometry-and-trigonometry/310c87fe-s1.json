@@ -1,0 +1,39 @@
+{
+  "questionId": "310c87fe-s1",
+  "originalId": "310c87fe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A cube has a surface area of 96 square meters. What is the volume, in cubic meters, of the cube?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>64</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>256</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A cube with side length s has surface area 6s&sup2;. Setting 6s&sup2; = 96 gives s&sup2; = 16, so s = 4. The volume is s&sup3; = 64 cubic meters.</p><p>Choice A gives s&sup2;. Choice B doubles s&sup2;. Choice D is 4&sup4;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "25b70215-s1",
+  "originalId": "25b70215",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Effect of Cover Crop Species on Yields of Nearby Vegetable Crops</caption><thead><tr><th>Cover crop species</th><th>Vegetable crop</th><th>Effect value</th></tr></thead><tbody><tr><td>crimson clover</td><td>tomato</td><td>0.5128</td></tr><tr><td>winter rye</td><td>broccoli</td><td>&minus;0.4317</td></tr><tr><td>hairy vetch</td><td>squash</td><td>0.6402</td></tr></tbody></table></figure><p>Agricultural researchers studied how various cover crops grown alongside vegetable crops affected those vegetables' yields. For each pair, they identified a &ldquo;cover crop species&rdquo; planted near a &ldquo;vegetable crop&rdquo; and calculated a positive or negative value to show how the cover crop affected yield. One example of a cover crop species with a negative effect value is ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>winter rye.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>crimson clover.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>hairy vetch.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>broccoli.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the table shows that winter rye is the only cover crop species with a negative effect value (&minus;0.4317).</p><p>Choice B is incorrect: crimson clover has a positive effect value (0.5128). Choice C is incorrect: hairy vetch has a positive effect value (0.6402). Choice D is incorrect: broccoli is a vegetable crop, not a cover crop species.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

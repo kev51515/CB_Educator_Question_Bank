@@ -1,0 +1,25 @@
+{
+  "questionId": "772835db-s1",
+  "originalId": "772835db",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Most volcanic eruptions on Earth produce basaltic lava, characterized by low silica content and a fluid, fast-flowing texture. Rhyolitic eruptions, by contrast, are far rarer and generate magma that is thick and slow-moving. Marked by an exceptionally high silica concentration that gives it a viscous, sluggish flow, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>rhyolitic magma differs from basaltic magma in the way it travels across a landscape during an eruption.</p>"},
+    {"id": "b", "content": "<p>basaltic magma flows quickly, whereas rhyolitic magma, which contains far more silica, does not.</p>"},
+    {"id": "c", "content": "<p>the abundance of silica in rhyolitic magma accounts for why it moves much more slowly than basaltic magma.</p>"},
+    {"id": "d", "content": "<p>basaltic magma differs from rhyolitic magma in that it lacks the silica needed to slow its flow.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"rhyolitic magma\" the subject of the sentence and places it immediately after the modifying phrase \"Marked&hellip;flow.\" In doing so, this choice clearly establishes that rhyolitic magma&mdash;and not another noun in the sentence&mdash;is being described as having an exceptionally high silica concentration.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of \"basaltic magma\" immediately after the modifying phrase illogically suggests that basaltic magma has an exceptionally high silica concentration, whereas basaltic magma is previously described as having low silica content. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase \"the abundance of silica\" immediately after the modifying phrase illogically suggests that the abundance of silica itself has an exceptionally high silica concentration. Choice D is incorrect because it results in a dangling modifier. The placement of \"basaltic magma\" immediately after the modifying phrase illogically suggests that basaltic magma has an exceptionally high silica concentration.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

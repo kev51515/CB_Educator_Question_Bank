@@ -1,0 +1,461 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Expression of Ideas",
+  "skill": "Rhetorical Synthesis",
+  "originals_count": 192,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Comparison & Contrast Synthesis",
+      "description": "The student must pick the sentence that places two referents side-by-side and expresses either a likeness (similarity) or an unlikeness (difference/contrast/comparison) between them, using attributes drawn from the notes.",
+      "boundary_with_other_aspects": "A1 always requires that the chosen sentence reference both referents and articulate their relationship; a clone that emphasizes only one entity's attribute drifts into A2 (Targeted Emphasis).",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Emphasize a similarity",
+          "description": "Goal asks to 'emphasize a similarity between' two items, people, works, species, places, or processes. Correct choice names both and asserts a shared feature.",
+          "core_skill_demand": "Identify the one attribute that both referents share (often appearing in two notes that overlap), and select the sentence that explicitly attributes that property to both, while rejecting choices that mention only one or that name a difference.",
+          "example_originals": ["af76771f", "ba263620", "e3bbf2bf", "fbffb352", "114bbce6", "9551ef8b"],
+          "frequency": { "easy": 4, "medium": 11, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["shared attribute is a single concrete noun (e.g., medium, year, location)", "distractors mention only one of the two referents", "no negation or quantification required"],
+              "example_stem": "The student wants to emphasize a similarity between the Choctaw Code Talkers and the Navajo Code Talkers.",
+              "example_ids": ["af76771f", "ba263620", "e3bbf2bf", "fbffb352"]
+            },
+            "medium": {
+              "characteristics": ["shared attribute must be inferred by combining two notes", "distractors include a true-but-one-sided statement and a difference statement", "shared attribute is a process or behavior, not a static fact"],
+              "example_stem": "The student wants to emphasize a similarity between the two paintings.",
+              "example_ids": ["4f9ee1dc", "54c1b2dd", "6de02dfa", "7298633c", "7572131d", "88308a39", "92dec236", "bb43fc3c", "e876e395"]
+            },
+            "hard": {
+              "characteristics": ["shared attribute requires a negation framing (e.g., 'neither... nor...')", "distractors all reference both items but only one captures the shared property", "shared feature is abstract (mechanism, function, absence of trait)"],
+              "example_stem": "Neither of a magnificent frigatebird's two ways of acquiring food requires the bird to dive into the water.",
+              "example_ids": ["9551ef8b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["goal verb 'emphasize a similarity'", "two explicitly named referents in stem and key", "key sentence references both referents AND their shared attribute"],
+            "must_vary": ["domain (biology, art, history, geology, etc.)", "the shared attribute (origin, behavior, size, era, medium)", "named entities"],
+            "common_bugs": ["key sentence names only one referent (drifts to A2)", "key states a true difference instead of similarity", "distractor set lacks a 'difference' foil and a 'one-sided' foil, making the answer too obvious"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Emphasize a difference / contrast",
+          "description": "Goal asks to 'emphasize a difference between' or 'contrast' two items. Correct choice names both referents and articulates a way they differ, drawing on a contrasting attribute pair from the notes.",
+          "core_skill_demand": "Locate the paired contrasting attributes in the notes (typically presented in adjacent bullets), and select the sentence that names both referents and expresses the contrast explicitly, rejecting one-sided choices and similarity statements.",
+          "example_originals": ["ca4ff52d", "e3484c07", "113f16da", "1b94a80a", "25755def", "aec8d3e8"],
+          "frequency": { "easy": 3, "medium": 18, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["differing attribute is a directly stated, concrete feature in the notes (color, size, count)", "only one choice names both referents", "no quantitative comparison required"],
+              "example_stem": "The student wants to emphasize a difference between the two muslins.",
+              "example_ids": ["ca4ff52d", "e3484c07", "3150021d"]
+            },
+            "medium": {
+              "characteristics": ["differing attribute involves a relational property (mechanism, purpose, origin)", "multiple distractors reference both items but only one captures the actual contrast", "the contrast may require combining 2-3 notes per side"],
+              "example_stem": "The student wants to contrast first-class levers and second-class levers.",
+              "example_ids": ["113f16da", "1b94a80a", "25755def", "441f0505", "1bb4aec8", "3ea7372e", "56cad44a", "5888712f", "835b101b", "5bb7dc03", "a4366255", "aec8d3e8", "ce282575", "d7c5388f", "e2eb70b9", "efa2be4f", "f1631638"]
+            },
+            "hard": {
+              "characteristics": ["contrast requires interpreting comparative language (e.g., 'more X than Y') from notes", "distractor set includes plausible relational statements that don't capture the targeted contrast", "domain is technical (scientific, legal, statistical)"],
+              "example_stem": "The student wants to contrast how green backgrounds are used in US and UK road signs.",
+              "example_ids": ["de01ccef", "6c9df5d1"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two named referents", "explicit contrastive structure in key (X is..., whereas Y is...; or comparative form)", "both contrasting attributes drawn directly from the notes"],
+            "must_vary": ["domain", "polarity (size larger vs. smaller, older vs. newer, etc.)", "lexical form of the contrast (whereas, while, more...than, unlike)"],
+            "common_bugs": ["clone allows two valid-contrast keys (ambiguity)", "key mentions both items but conflates them into a similarity", "distractors all name only one referent, making the both-referent key trivially identifiable"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Direct compare of two parallel items",
+          "description": "Goal uses 'compare' (often with explicit quantitative or evaluative dimension). Correct choice gives a side-by-side statement of values for both referents along the named dimension.",
+          "core_skill_demand": "Extract the named dimension (length, risk, cause, disadvantage) and the two referents' values from notes; select the sentence that pairs both values along that dimension without adding irrelevant material.",
+          "example_originals": ["3067723b", "7f2781fd", "ff8d2125", "459df2ba", "c34d6bff", "e98b1690"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["dimension is a numeric attribute (length, risk level)", "both values stated explicitly in notes", "distractors mention one value or wrong dimension"],
+              "example_stem": "The student wants to compare the lengths of the two rail tunnels.",
+              "example_ids": ["3067723b", "7f2781fd"]
+            },
+            "medium": {
+              "characteristics": ["dimension is conceptual (cause, theory, hypothesis)", "comparison requires paraphrasing two notes into a single parallel structure"],
+              "example_stem": "The student wants to compare the causes of crown shyness proposed in the two theories.",
+              "example_ids": ["ff8d2125"]
+            },
+            "hard": {
+              "characteristics": ["comparison involves abstract entities (hypotheses, contributions, disadvantages)", "key must preserve the parallel structure across both sides without conflating", "distractors include statements true of only one side or that paraphrase incorrectly"],
+              "example_stem": "The student wants to compare Fodor's hypothesis with Carruthers's.",
+              "example_ids": ["459df2ba", "c34d6bff", "e98b1690"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["both referents named in key", "parallel grammatical structure across the two sides", "the named comparison dimension is the focus"],
+            "must_vary": ["the dimension (quantity, hypothesis, contribution, disadvantage)", "domain"],
+            "common_bugs": ["key reports only one side's value", "the dimension drifts (notes give lengths but key reports years)"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Targeted Emphasis on an Attribute",
+      "description": "The student must select the sentence that foregrounds a specific named attribute (magnitude, order, significance, role, advantage, location, achievement) of a single referent, expressed in a way the goal makes salient.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that A2 spotlights one entity along one named dimension; it differs from A5 (Single-Fact Identification) in that A2 demands rhetorical emphasis (the attribute is foregrounded as the most prominent claim), not merely a correct factual lookup.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Emphasize a quantitative or qualitative attribute",
+          "description": "Goal asks to 'emphasize' a specific named feature of one referent — its size, distance, duration, significance, uniqueness, location, etc. Correct choice leads with that feature, treating other note content as subordinate.",
+          "core_skill_demand": "Identify which note contains the targeted attribute, and select the sentence whose grammatical subject/predicate elevates that attribute as the central assertion rather than burying it in a subordinate clause.",
+          "example_originals": ["1792fa73", "25adba4e", "878f835a", "2bf05ae9", "24014c3f", "d8aa8ba2", "3fa48bf3", "5fa51c86", "9336f63b"],
+          "frequency": { "easy": 6, "medium": 14, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["attribute is a concrete numeric or descriptive value stated in one note", "distractors include the value but in subordinate position or omit it", "goal phrasing names the attribute directly ('how far', 'how thick')"],
+              "example_stem": "The student wants to emphasize how harsh the conditions can be in the tundra.",
+              "example_ids": ["1792fa73", "25adba4e", "264e7415", "878f835a", "d436a2b2", "d7f31e68"]
+            },
+            "medium": {
+              "characteristics": ["attribute is an abstract noun (significance, uniqueness, role, achievement)", "distractors are all factually accurate but place the targeted attribute in a subordinate clause", "requires recognizing that the attribute's foregrounding (not its mere mention) is what fulfills the goal"],
+              "example_stem": "The student wants to emphasize the significance of Ochoa's discovery.",
+              "example_ids": ["24014c3f", "2bf05ae9", "164a32e7", "45eaf7fb", "70538b9a", "94f4eecb", "d8aa8ba2", "d9d314d9", "dd11e5ab", "ed80971c", "f2f6009b", "2b89bfe5"]
+            },
+            "hard": {
+              "characteristics": ["attribute is historical or interpretive (significance, aim, duration-and-purpose paired)", "all four choices are accurate summaries; only one foregrounds the targeted attribute as the main clause", "may require ignoring contextually salient but rhetorically subordinate facts"],
+              "example_stem": "The student wants to emphasize the significance of the 1990 discovery to Plot's reputation.",
+              "example_ids": ["3fa48bf3", "5fa51c86", "9336f63b", "0fab0c90", "56b000d0", "973632d2", "c40a1964"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["single named referent", "specifically named attribute in the goal", "key sentence's main clause asserts the targeted attribute"],
+            "must_vary": ["attribute type (magnitude, significance, achievement, role, location)", "domain", "named entity"],
+            "common_bugs": ["clone produces multiple equally emphasizing choices", "key buries the attribute in a subordinate clause while a distractor foregrounds it (inverted-correctness bug)", "the targeted attribute isn't actually in the notes"]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Emphasize order or sequence",
+          "description": "Goal asks to 'emphasize the order in which' two or more events, productions, careers, or appointments occurred. Correct choice uses temporal connectives (before, after, first/then, prior to) to make the sequence explicit.",
+          "core_skill_demand": "Extract the chronological data points (dates, ordinals) and select the sentence that uses explicit ordering language to convey their relative sequence rather than merely listing facts.",
+          "example_originals": ["d2b52c50", "146233fc", "72ae9bca", "7c9d0e38", "b98b8f64", "f1d8550e", "f6d454c1"],
+          "frequency": { "easy": 1, "medium": 5, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["two events with clearly distinguishable years in notes", "distractors omit ordering or list non-chronologically"],
+              "example_stem": "The student wants to emphasize the order in which Alaska and Hawaii became US states.",
+              "example_ids": ["d2b52c50"]
+            },
+            "medium": {
+              "characteristics": ["three or more sequenced events, or sequences involving careers/processes", "distractors include a chronological misordering or merely state dates without explicit sequencing language"],
+              "example_stem": "The student wants to emphasize the order in which the two marches occurred.",
+              "example_ids": ["146233fc", "72ae9bca", "b98b8f64", "f1d8550e", "f6d454c1"]
+            },
+            "hard": {
+              "characteristics": ["abstract/procedural sequence (recount the sequence of events proposed by researchers); requires distinguishing causal from chronological ordering"],
+              "example_stem": "The student wants to recount the sequence of events proposed by the researchers.",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit ordering markers (before/after/then/first) in the key", "all sequenced events come from the notes", "goal language includes 'order' or 'sequence'"],
+            "must_vary": ["number of items (2-4)", "domain", "type of sequence (chronological events, career stages, procedural steps)"],
+            "common_bugs": ["key states dates without ordering language", "clone notes give ambiguous ordering"]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Make/refute/support a claim or generalization",
+          "description": "Goal asks the student to 'make a generalization,' 'make and support a generalization,' 'make and support a claim,' or 'refute a claim.' Correct choice states a general principle and grounds it in the specifics from the notes.",
+          "core_skill_demand": "Synthesize multiple note bullets into a general statement that is both supported by them and rhetorically structured as claim-plus-support; reject choices that report a single fact, that overgeneralize beyond the notes, or that support the wrong claim.",
+          "example_originals": ["77e3b3b3", "07456405", "81315093", "bb275f0d", "efc19153", "622a351d", "0acc26b2", "3dcc7140", "b0620764", "2c61e0b9", "3b02e88a"],
+          "frequency": { "easy": 0, "medium": 4, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "(none at this difficulty)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["generalization domain is concrete (honeybees, ultramarathons)", "supporting evidence is one or two notes", "distractors are accurate facts that fail to generalize"],
+              "example_stem": "The student wants to make and support a generalization about honeybees.",
+              "example_ids": ["77e3b3b3", "81315093", "bb275f0d", "efc19153"]
+            },
+            "hard": {
+              "characteristics": ["generalization is abstract or historical (kelp highway, Alta conflict, exoplanets, comets)", "key must combine evidence from 3+ notes into a generalization + support structure", "distractors include a specific-fact answer, an overgeneralization, and a generalization with mismatched support", "claim-refutation variants require recognizing which choice negates the false claim using note evidence"],
+              "example_stem": "The student wants to make and support a generalization about the Alta conflict.",
+              "example_ids": ["07456405", "622a351d", "0acc26b2", "3dcc7140", "b0620764", "2c61e0b9", "3b02e88a"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["claim/generalization is broader than any single note bullet", "key sentence contains both the claim and supporting detail drawn from notes", "for refutations, key must directly negate the named false claim"],
+            "must_vary": ["domain", "claim polarity (assertion vs. refutation)", "support structure (one supporting fact vs. multiple)"],
+            "common_bugs": ["key states a single fact without generalization", "key generalizes beyond what the notes support (over-extrapolation)", "for refutation tasks, key fails to explicitly negate the targeted claim", "distractor pool lacks a tempting over-generalization foil"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Description, Definition & Explanation",
+      "description": "The student must pick the sentence that conveys conceptual content about a single referent — defining a term, describing an object/process, or explaining a cause, mechanism, advantage, or example.",
+      "boundary_with_other_aspects": "A3 differs from A4 (Overview/Introduction) in that A3 targets a specific conceptual slot (definition, mechanism, advantage) rather than a holistic overview; it differs from A5 in that A3 demands explanatory/descriptive content (multi-part, often combining notes) rather than a single factual lookup.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Define a term and/or provide an example",
+          "description": "Goal asks to 'define,' 'provide an explanation and example of,' or 'provide an example of' a named term/category. Correct choice gives the definition (and example when requested) using note content.",
+          "core_skill_demand": "Locate the definition-bearing note and, if requested, the exemplifying note; select the sentence that combines them into a definition-plus-example structure (or definition only when no example is requested), excluding choices that give only example or only context.",
+          "example_originals": ["13f36b03", "4e063114", "54227b8e", "34e1124f", "3c925481", "7fa2b1ee", "64e88c58", "ec03f090", "db3ad406"],
+          "frequency": { "easy": 3, "medium": 3, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["definition is a single sentence in the notes", "example (when requested) is explicitly named in another bullet", "distractors include a definition without example or vice versa"],
+              "example_stem": "The student wants to define the term 'georeferencing.'",
+              "example_ids": ["13f36b03", "4e063114", "54227b8e"]
+            },
+            "medium": {
+              "characteristics": ["definition must be reconstructed from 2 notes", "the example is a specific instance that the student must connect to the general category", "distractors include factually adjacent but non-definitional statements"],
+              "example_stem": "The student wants to provide an explanation and an example of Aeolian landforms.",
+              "example_ids": ["34e1124f", "3c925481", "7fa2b1ee"]
+            },
+            "hard": {
+              "characteristics": ["term is abstract (quenched galaxy, Oliveros's Sonic Meditations, sestina form)", "definition requires interpretive paraphrase rather than direct quotation", "example must illustrate the defining feature, not merely belong to the category"],
+              "example_stem": "The student wants to explain what a quenched galaxy is.",
+              "example_ids": ["64e88c58", "ec03f090", "db3ad406"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["targeted term appears in the goal", "key sentence contains an explicit definition (and example when requested)", "definition is derivable from notes, not external knowledge"],
+            "must_vary": ["domain (science, art, literature)", "example explicit vs. implicit in notes", "complexity of definition (one-clause vs. multi-clause)"],
+            "common_bugs": ["key gives only the example without defining the category", "key relies on external knowledge of the term", "for combined define+example goals, key omits one element"]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Describe an object, place, or process",
+          "description": "Goal asks to 'describe' some feature: shape, fabric use, location, technique, or appearance. Correct choice gives a concrete descriptive statement that addresses the specifically named descriptive slot.",
+          "core_skill_demand": "Identify which descriptive attribute the goal targets (shape, location, technique), and select the sentence whose main content addresses that attribute using note details.",
+          "example_originals": ["00bb356a", "e2693197", "ff3865b3", "23da9791", "883493d5", "cfade68d", "b07a7634"],
+          "frequency": { "easy": 3, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["descriptive attribute is concrete (shape, material, fusion technique)", "notes contain one direct descriptive sentence", "distractors describe unrelated aspects"],
+              "example_stem": "The student wants to describe the wok's shape.",
+              "example_ids": ["00bb356a", "e2693197", "ff3865b3"]
+            },
+            "medium": {
+              "characteristics": ["description involves a process or evolution over time", "must synthesize 2 notes into the description"],
+              "example_stem": "The student wants to describe how scientific understanding about the glass's origin has evolved.",
+              "example_ids": ["23da9791", "883493d5"]
+            },
+            "hard": {
+              "characteristics": ["description is of a technical procedure (DLS cures 3D objects) or curated event", "distractors describe related but distinct aspects", "answer requires choosing a description that doesn't assume audience background"],
+              "example_stem": "The student wants to describe how DLS cures 3D objects.",
+              "example_ids": ["cfade68d", "b07a7634"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["the named descriptive slot from the goal", "concrete descriptive content in main clause"],
+            "must_vary": ["object/process type", "domain", "descriptive dimension (physical, procedural, temporal)"],
+            "common_bugs": ["key describes the wrong aspect of the referent", "key gives a general overview when a specific descriptive slot is requested"]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Explain a cause, mechanism, advantage, or reason",
+          "description": "Goal asks to 'explain' some causal or functional fact: origin of a name, advantage of a system, why X occurred, how X works. Correct choice states the relevant causal/explanatory content directly.",
+          "core_skill_demand": "Identify the explanandum (what needs explaining) and the explanans (the explanatory note content), and select the sentence that links them causally (because, due to, owing to, the advantage is...).",
+          "example_originals": ["4b376902", "eae29760", "f4b63a04", "49fe306b", "4b99b481", "4c43bf61", "94f48106", "84e108cf", "99183985", "8fe4f4ab", "16631d34"],
+          "frequency": { "easy": 3, "medium": 7, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["explanation is single-step and explicit in one note", "goal targets a clear slot (advantage, origin of name)", "distractors give related facts without causal link"],
+              "example_stem": "The student wants to explain an advantage of microprobes.",
+              "example_ids": ["4b376902", "eae29760", "f4b63a04"]
+            },
+            "medium": {
+              "characteristics": ["explanation requires connecting 2 notes via a causal connective", "distractors include a true statement with no causal link, or wrong-direction causality"],
+              "example_stem": "The student wants to explain why brine pools are toxic to most sea life.",
+              "example_ids": ["49fe306b", "4b99b481", "4c43bf61", "94f48106", "84e108cf", "99183985"]
+            },
+            "hard": {
+              "characteristics": ["explanation is technical or historical and involves abstract mechanism (House of Wisdom preservation, audio features predicting popularity)", "key must select among 4 plausible causal accounts the one that the notes support", "common foil: a true mechanism that is not what the goal targets (advantage vs. disadvantage)"],
+              "example_stem": "The student wants to explain how the House of Wisdom preserved the world's knowledge.",
+              "example_ids": ["8fe4f4ab", "16631d34"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explanatory slot from goal (advantage, reason, mechanism, origin)", "key sentence contains explicit causal or functional language"],
+            "must_vary": ["domain", "polarity (advantage vs. disadvantage)", "depth of causal chain"],
+            "common_bugs": ["key inverts polarity (states a disadvantage when advantage is asked)", "key gives a fact without causal link", "key relies on external knowledge of the mechanism"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Overview, Introduction & Holistic Synthesis",
+      "description": "The student must pick a sentence that synthesizes the notes into a high-level overview, introduction for a specified audience, summary, study-presentation, or quotation-anchored synthesis. The chosen sentence is the most comprehensive correctly-pitched statement.",
+      "boundary_with_other_aspects": "A4 differs from A3 in that A4 demands an audience-appropriate holistic statement that often combines 3+ notes; it differs from A2 in that A4 doesn't foreground one attribute but balances multiple pieces of information.",
+      "types": [
+        {
+          "id": "T10",
+          "name": "Introduce to an audience (familiar / unfamiliar)",
+          "description": "Goal specifies an audience that is either already familiar or unfamiliar with one of the topic's elements, and asks the student to 'introduce' a person, work, theory, or movement. Correct choice tailors the level of background information accordingly.",
+          "core_skill_demand": "Read the audience cue ('unfamiliar with X' vs. 'already familiar with X') and select the sentence that provides exactly the background needed — supplying introductory context for unfamiliar audiences, or omitting redundant background for familiar audiences.",
+          "example_originals": ["5a2a4b36", "eaded344", "04397a63", "1469d23a", "17ec916d", "28a46cb0", "48d0bb34", "58281fc4", "5d3177aa", "9e2d4ef7", "8432a140", "86b78078", "a1ca7ec4", "39ccb463", "96a86bce", "804928b6"],
+          "frequency": { "easy": 2, "medium": 14, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["audience cue is 'unfamiliar' with the person; key supplies a basic identification (who they were and what they did)", "distractors give either too much background or a single fact"],
+              "example_stem": "The student wants to introduce Kahlo to an audience unfamiliar with the artist.",
+              "example_ids": ["5a2a4b36", "eaded344"]
+            },
+            "medium": {
+              "characteristics": ["audience cue is positive ('already familiar with leporellos') and key must omit redundant info while still introducing the new entity", "distractors include a maximally informative sentence that fails to respect the audience-familiarity cue"],
+              "example_stem": "The student wants to describe Adnan's December from My Window to an audience already familiar with leporellos.",
+              "example_ids": ["1469d23a", "17ec916d", "9e2d4ef7", "86b78078"]
+            },
+            "hard": {
+              "characteristics": ["audience cue tests fine-grained calibration: the audience knows part of the context but not the new entity, requiring the answer to mention the known anchor and the new content without overlap", "all four choices are factually correct; only one matches the audience profile"],
+              "example_stem": "The student wants to introduce Cathryn Halverson's book to an audience already familiar with the Atlantic Monthly.",
+              "example_ids": ["39ccb463", "96a86bce", "804928b6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit audience-familiarity cue in the stem", "key sentence's information content matches that cue (no redundancy for familiar audience; full identification for unfamiliar)"],
+            "must_vary": ["domain", "polarity of familiarity cue", "named entity being introduced"],
+            "common_bugs": ["clone's key violates the audience cue (gives basic background to familiar audience or vice versa)", "key fails to introduce the named entity, focusing on the anchor instead", "distractor pool lacks a foil that ignores the audience cue"]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Overview / summary / present-the-study",
+          "description": "Goal asks to 'provide an overview of,' 'summarize,' 'present the study,' 'present the findings,' or 'present the aim and methodology.' Correct choice gives a balanced multi-element summary statement that captures all of the named slots (aim+findings, methodology, etc.).",
+          "core_skill_demand": "Identify which slots the goal requires (study + findings; aim; methodology; overview of a process) and select the sentence that covers all required slots without becoming a list of unrelated facts; reject choices that cover only one slot or that introduce a side detail.",
+          "example_originals": ["064c8999", "4223d4a6", "6249b173", "a0da8114", "aa7e10d0", "d6dec50e", "dede8260", "e1453c88", "e2d97f10", "fb3abe38", "5222ffab", "5645f119", "8d1ddd1b", "1773fa73", "b44141cf", "10cd0327", "afec1a70", "964c6055", "5b8b69a2"],
+          "frequency": { "easy": 1, "medium": 10, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["overview of a single named process or event; key states what it is and what it does"],
+              "example_stem": "The student wants to provide an overview of the Haber-Bosch process.",
+              "example_ids": ["064c8999"]
+            },
+            "medium": {
+              "characteristics": ["goal names two slots (study + findings, aim + methodology); key must hit both", "distractors give one slot only (just the aim, or just the result)", "study has multiple named entities (researchers, year, place) that must be selectively included"],
+              "example_stem": "The student wants to present the study and its findings.",
+              "example_ids": ["4223d4a6", "6249b173", "a0da8114", "aa7e10d0", "d6dec50e", "dede8260", "fb3abe38", "5a5e22b5", "63a4fa29", "e2d97f10"]
+            },
+            "hard": {
+              "characteristics": ["overview must integrate 3+ notes into a coherent summary", "key requires distinguishing the study's primary aim from its secondary observations", "distractors are partially correct summaries that omit the targeted element", "may involve audience-pitch (present to audience already familiar with...)"],
+              "example_stem": "The student wants to summarize the study's findings.",
+              "example_ids": ["5222ffab", "5645f119", "8d1ddd1b", "1773fa73", "b44141cf", "10cd0327", "afec1a70", "5b8b69a2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["each slot named in the goal (study/aim/findings/methodology) appears in the key", "key's information density matches goal request (overview, not deep dive)"],
+            "must_vary": ["domain", "slot combination", "number of supporting notes"],
+            "common_bugs": ["key omits one of the named slots (e.g., gives study description without findings)", "key includes irrelevant side content", "key generalizes too broadly, drifting toward T6"]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Quotation-anchored synthesis",
+          "description": "Goal asks the student to 'use a quotation' (often from a specific source) to support a claim, explain something, challenge a view, or emphasize a problem. Correct choice incorporates a direct quotation from the notes and embeds it in a frame that fulfills the rhetorical goal.",
+          "core_skill_demand": "Locate the quotation(s) in the notes and select the choice that quotes the relevant excerpt with proper attribution and embeds it in a sentence that performs the named rhetorical act (support, challenge, illustrate the goal); reject choices that paraphrase rather than quote, or that quote irrelevant content.",
+          "example_originals": ["2c7dced2", "35507eba", "570dd854", "bce57278", "e8494245", "fdd9a360"],
+          "frequency": { "easy": 0, "medium": 4, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "(none)", "example_ids": [] },
+            "medium": {
+              "characteristics": ["one quotation in notes; key embeds it with attribution to support a claim", "distractors paraphrase the quotation or omit the framing"],
+              "example_stem": "The student wants to use a quotation to support a claim about Tharpe's contribution to rock 'n' roll.",
+              "example_ids": ["2c7dced2", "35507eba", "570dd854", "bce57278"]
+            },
+            "hard": {
+              "characteristics": ["multiple quotations available; key must select the one that performs the specific rhetorical act (challenge, problem-emphasis)", "rhetorical frame must align with goal (challenge vs. support vs. emphasize)"],
+              "example_stem": "The student wants to use a quotation to challenge Thucydides's explanation of the conflict between Athens and Sparta.",
+              "example_ids": ["e8494245", "fdd9a360"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["literal quotation from the notes appears in the key", "attribution (speaker/source) preserved", "the named rhetorical act (support/challenge/explain/emphasize) framed correctly"],
+            "must_vary": ["domain", "rhetorical act", "number of available quotations in notes"],
+            "common_bugs": ["key paraphrases instead of quoting", "key quotes but uses a frame that doesn't fulfill the named rhetorical act", "key quotes the wrong segment of the notes"]
+          }
+        },
+        {
+          "id": "T13",
+          "name": "Historical context / narrative beginning",
+          "description": "Goal asks to 'place X within its historical context' or 'begin a narrative about X.' Correct choice frames the referent against contemporaneous events/conditions (for context) or opens a narrative with the appropriate starting event (for narrative).",
+          "core_skill_demand": "For context goals, identify the surrounding historical or biographical anchor in the notes and select the sentence that situates the referent against it. For narrative-begin goals, select the sentence that provides the chronologically/causally first event of the narrative.",
+          "example_originals": ["1d79a59d", "7d5c32e6", "4c26f18a", "af88c47a", "a1955620"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "(none)", "example_ids": [] },
+            "medium": {
+              "characteristics": ["narrative-begin task with a clearly first event in notes", "distractors include later narrative beats"],
+              "example_stem": "The student wants to begin a narrative about the creation of the robots.",
+              "example_ids": ["4c26f18a", "a1955620"]
+            },
+            "hard": {
+              "characteristics": ["context goal demands integration of biographical/historical evolution (Valle's changing political beliefs)", "key must show the referent embedded in the larger pattern, not just adjacent to it"],
+              "example_stem": "The student wants to place the 1821 Declaration of Independence in the context of Valle's changing political beliefs.",
+              "example_ids": ["1d79a59d", "7d5c32e6", "af88c47a"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit context/narrative framing in goal", "key situates referent against a backdrop or opens with a true starting event"],
+            "must_vary": ["domain", "context vs. narrative polarity"],
+            "common_bugs": ["key states the referent without context", "narrative-begin key picks a middle-of-narrative event"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Single-Fact Identification",
+      "description": "The student must pick the sentence that supplies one specific named factual answer (location, year, name, count, type, achievement) about the referent. The correct choice is a precise factual statement; the chief difficulty is filtering against true-but-irrelevant facts.",
+      "boundary_with_other_aspects": "A5 differs from A2 in that A5 demands a single bounded fact (the year, the location, the count) rather than rhetorical emphasis on an attribute; it differs from A3 in that A5 doesn't require explanation or description, just identification.",
+      "types": [
+        {
+          "id": "T14",
+          "name": "Identify / specify / indicate a named fact",
+          "description": "Goal asks the student to 'identify,' 'specify,' or 'indicate' a single specific piece of information (the setting, the year, the location, the number, the type, the name, the title). Correct choice states only that fact (often combined with the referent name).",
+          "core_skill_demand": "Match the goal's named slot to the corresponding bullet in the notes, and select the sentence that delivers exactly that fact without padding; reject choices that bury the fact, give a related but wrong fact, or omit the fact.",
+          "example_originals": ["00460c13", "02527f43", "25a197dd", "296801d2", "54f29331", "6b5bc97d", "79c6a01e", "8b2636ee", "9922b364", "a3204ab0", "b5cd28a7", "bc930940", "c6645cab", "e887dab1", "0778b4ac", "4b99b481", "31ac4d2c", "259d16ac", "31ac4d2c", "7aac173e", "74149724", "a86c0b1b", "c92ea686", "e6b57c9b", "87d34a39"],
+          "frequency": { "easy": 14, "medium": 8, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["fact is a single concrete value (year, place, count) stated in one note", "distractors give a wrong but related fact (different year, related location) and one or two padded answers"],
+              "example_stem": "The student wants to identify the setting of Cather's novel My Ántonia.",
+              "example_ids": ["00460c13", "02527f43", "25a197dd", "296801d2", "54f29331", "6b5bc97d", "79c6a01e", "8b2636ee", "9922b364", "a3204ab0", "b5cd28a7", "bc930940", "c6645cab", "e887dab1"]
+            },
+            "medium": {
+              "characteristics": ["fact requires combining 2 notes (e.g., 'specify the reason X happened' where the reason involves a contextual fact)", "distractors include the correct fact buried in a subordinate clause and a different fact foregrounded"],
+              "example_stem": "The student wants to specify the reason the Mayflower Compact was created.",
+              "example_ids": ["0778b4ac", "31ac4d2c", "259d16ac", "7aac173e", "74149724", "a86c0b1b", "c92ea686", "e6b57c9b"]
+            },
+            "hard": {
+              "characteristics": ["fact is an accomplishment or distinction (an accomplishment of an organization) requiring synthesis of context from multiple notes", "distractors include statements about adjacent organizations or related accomplishments"],
+              "example_stem": "The student wants to identify an accomplishment of the NCAI.",
+              "example_ids": ["87d34a39"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["the named fact-slot from the goal", "key sentence's main content is that fact and the referent", "fact is directly retrievable from one or two notes"],
+            "must_vary": ["fact type (year, location, count, name, title, type)", "domain", "referent"],
+            "common_bugs": ["key gives a related but wrong fact (different year, similar location)", "key gives the right fact but buries it under unrelated content (distractor-quality answer)", "clone has multiple choices that contain the named fact, making it ambiguous"]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "All items present a 'While researching a topic, a student has taken the following notes' stimulus with 4-7 bullet points, then a goal-bearing stem of the form 'The student wants to [GOAL]. Which choice most effectively uses relevant information from the notes to accomplish this goal?' The cognitive operation is always: parse the goal verb + named slot, then select the choice that uses note material to fulfill that exact rhetorical task. Difficulty across all types tracks: (a) how many notes must be combined into the key (1 → 3+), (b) how rhetorically demanding the operation is (factual lookup → emphasis → claim-and-support → audience-calibrated synthesis), (c) how many distractors are factually-correct-but-rhetorically-off (the harder the item, the more accurate-but-wrong choices). Common cross-type bugs: (i) key reports a true fact without performing the named rhetorical act (drift from A1/A2/A4 toward A5); (ii) distractor pool lacks the canonical foils for the type (one-sided foil for similarity; subordinate-clause foil for emphasis; paraphrase foil for quotation); (iii) clone uses external knowledge not present in the notes; (iv) goal phrasing and key sentence don't share the same rhetorical-act verb."
+}

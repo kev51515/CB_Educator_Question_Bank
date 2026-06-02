@@ -1,0 +1,25 @@
+{
+  "questionId": "cbdd5287-s1",
+  "originalId": "cbdd5287",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Average Survival of <em>Caenorhabditis elegans</em> Worms following Infection (% alive)</p></caption><thead><tr><th>Days after infection</th><th>type X worms</th><th>type Y worms</th><th>type XY worms</th></tr></thead><tbody><tr><td>0</td><td>100</td><td>100</td><td>100</td></tr><tr><td>2</td><td>98</td><td>97</td><td>100</td></tr><tr><td>6</td><td>92</td><td>40</td><td>44</td></tr><tr><td>10</td><td>88</td><td>6</td><td>10</td></tr><tr><td>14</td><td>85</td><td>0</td><td>0</td></tr></tbody></table></figure><p>In a study of the evolution of <em>cnc-X</em> and <em>cnc-Y</em>&mdash;genes encoding antimicrobial peptides that combat pathogens and foster beneficial microbes in the nematode <em>Caenorhabditis elegans</em>&mdash;researchers assessed worm resistance to infections by <em>Microbacterium nematophilum</em> and <em>Serratia marcescens</em>, two bacteria common in worm environments. Subjects included worms identified by mutations silencing <em>cnc-X</em>, <em>cnc-Y</em>, or both <em>cnc-X</em> and <em>cnc-Y</em> (termed types X, Y, and XY, respectively). In conjunction with the observation that resistance to <em>M. nematophilum</em> correlates with <em>cnc-Y</em> activity but is not significantly affected by <em>cnc-X</em> activity, data on survival rates following infection with <em>S. marcescens</em> suggest that ______</p>",
+  "stem": "<p>Which completion of the text is best supported by the data?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>cnc-X</em> may have developed as a specific defense against <em>S. marcescens</em>.</p>"},
+    {"id": "b", "content": "<p><em>cnc-Y</em> confers defense against <em>S. marcescens</em> regardless of the presence of <em>cnc-X</em>.</p>"},
+    {"id": "c", "content": "<p><em>cnc-X</em> protects against only one bacteria species, whereas <em>cnc-Y</em> protects against multiple species.</p>"},
+    {"id": "d", "content": "<p>defense against <em>S. marcescens</em> is strongest when both <em>cnc-X</em> and <em>cnc-Y</em> are present.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The text states that resistance to <em>M. nematophilum</em> tracks <em>cnc-Y</em> activity but not <em>cnc-X</em> activity. The table shows that after <em>S. marcescens</em> infection, type X worms (with <em>cnc-X</em> silenced but <em>cnc-Y</em> active) die rapidly, whereas type Y worms (with <em>cnc-Y</em> silenced but <em>cnc-X</em> active) survive at high rates; worms with both silenced (type XY) also die rapidly. This pattern indicates that <em>cnc-X</em> activity is required for resistance to <em>S. marcescens</em>, suggesting <em>cnc-X</em> may have evolved as a specific defense against that pathogen. Choice B is incorrect because the data show survival is poor whenever <em>cnc-X</em> is silenced, regardless of <em>cnc-Y</em>, so <em>cnc-Y</em> does not confer defense against <em>S. marcescens</em>. Choice C is incorrect because only two bacteria are discussed; the data do not support a count of multiple species. Choice D is incorrect because no group with both genes simultaneously active is presented; all groups in the table have one or both genes silenced.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

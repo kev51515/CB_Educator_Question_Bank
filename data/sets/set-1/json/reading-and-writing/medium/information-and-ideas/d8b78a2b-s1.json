@@ -1,0 +1,25 @@
+{
+  "questionId": "d8b78a2b-s1",
+  "originalId": "d8b78a2b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T6.medium",
+  "stimulus": "<p>Tarte Tatin has been a favorite French dessert for generations, but the recipe&rsquo;s origins are disputed. A small hotel in Lamotte-Beuvron, run by two sisters, asserted that one of them accidentally created the upside-down apple tart in the 1880s. A pastry chef working in Orl&eacute;ans claimed in the 1930s to have developed the recipe years earlier, citing handwritten notes. A Parisian caf&eacute; near Les Halles also publicly maintained that its kitchen had served an essentially identical tart since the 1870s. No clear documentary evidence has emerged to favor any one of these accounts over the others, however. It thus seems that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>tarte Tatin was probably first baked well before the 1870s.</p>"},
+    {"id": "b", "content": "<p>none of the supposed inventors of tarte Tatin can plausibly be credited with the recipe.</p>"},
+    {"id": "c", "content": "<p>the hotel in Lamotte-Beuvron most likely invented the dessert.</p>"},
+    {"id": "d", "content": "<p>we cannot say at present who actually baked the first tarte Tatin.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text presents three competing claims for the origin of tarte Tatin and explicitly states that no clear documentary evidence favors one over the others. Without evidence to settle the question, no party can be confidently identified as the inventor, so the most cautious and supported inference is that we cannot say who actually baked the first tarte Tatin.</p><p>Choice A is incorrect because the text never mentions evidence of a version preceding the 1870s claim. Choice B is incorrect because absence of evidence does not justify ruling all candidates out; one of them may well be correct. Choice C is incorrect because the text places all three claims on equal footing, with no extra support for the Lamotte-Beuvron account.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

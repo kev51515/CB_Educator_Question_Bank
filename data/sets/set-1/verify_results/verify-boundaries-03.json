@@ -1,0 +1,22 @@
+[
+  {"id": "c21df211-s1", "templateId": "boundaries.A2.T4.easy", "verdict": "type_drift", "detail": "Stem requires comma before 'such as' supplementary phrase, not paired punctuation around an appositive. T4 requires matched paired marks; only one edge needed here. Closer fit is A2 generic comma usage, not T4 appositive-pair."},
+  {"id": "9902d2de-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "26c8c88c-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"},
+  {"id": "a2293b3f-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests subject-verb non-separation (no modifier present). T5 requires restrictive/nonrestrictive modifier punctuation; this stem has no modifier element."},
+  {"id": "148be4da-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "b35cefb7-s1", "templateId": "boundaries.A2.T4.easy", "verdict": "type_drift", "detail": "Tests comma after introductory subordinate clause (A1.T3 territory), not setting off an appositive/parenthetical with paired marks per T4."},
+  {"id": "d75d57a0-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"},
+  {"id": "b1e8b87f-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests verb-object non-separation; no modifier present. T5 requires restrictive vs nonrestrictive modifier decision."},
+  {"id": "b5ff8f8e-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests preposition-complement non-separation, not restrictive/nonrestrictive modifier punctuation."},
+  {"id": "7b950fc2-s1", "templateId": "boundaries.A1.T1.easy", "verdict": "ok"},
+  {"id": "70ced8dc-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "eb03096e-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests preposition-complement non-separation; no modifier element to evaluate restrictive vs nonrestrictive."},
+  {"id": "60713427-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests paired-comma enclosure of supplementary phrase 'among other functions' (A2.T4 appositive/parenthetical), not restrictive vs nonrestrictive modifier choice."},
+  {"id": "831b55ec-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests verb-object non-separation, not restrictive/nonrestrictive modifier punctuation."},
+  {"id": "b6de636f-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "4565a53c-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "5aa1fffd-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "89ab0d46-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Tests preposition-complement non-separation; no modifier to evaluate."},
+  {"id": "f2eaaf5d-s1", "templateId": "boundaries.A3.T7.easy", "verdict": "type_drift", "detail": "Tests paired-dash appositive (A2.T4); 'Ecuador' followed by 'a country in South America' is general appositive, not unique-title+name pattern of T7."},
+  {"id": "603755a5-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "608cf8e2-s1",
+  "originalId": "608cf8e2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A histogram summarizes data set A, which records the number of points scored per player for 60 players. The histogram shows that every value in data set A is greater than 25 and that both the 30th and 31st values, when the data are sorted in ascending order, fall in the interval 60 to 70 points. A new player joins, scores 25 points, and this value is added to data set A to produce data set B, which has 61 values. Which of the following must be true?</p><p>I. The mean of data set B is less than the mean of data set A.<br>II. The median of data set B could equal the median of data set A.</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Neither I nor II</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>I and II</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Statement I: every value in data set A is strictly greater than 25, so adding the value 25 (strictly less than every existing value) must lower the sum of values divided by the new count. Equivalently, mean(B) = (60·mean(A) + 25)/61 < (60·mean(A) + mean(A))/61 = mean(A), because 25 < mean(A). So statement I MUST be true. Statement II: the median of A is the average of the 30th and 31st sorted values, both in 60–70. After adding 25 (which becomes the smallest value in B), the sorted positions shift by one, and the median of B (with 61 values) is the 31st sorted value of B, which equals the 30th sorted value of A. If the 30th and 31st sorted values of A are equal (a possibility consistent with both falling in 60–70), then median(B) = that common value = median(A), so II COULD be true. Both statements must hold, so the answer is I and II.</p><p>Choice A is wrong because I is certainly true. Choice B drops the necessarily true statement I. Choice C drops the possibility expressed in II, which is consistent with the histogram.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard"
+}

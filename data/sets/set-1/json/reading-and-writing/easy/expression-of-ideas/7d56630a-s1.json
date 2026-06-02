@@ -1,0 +1,39 @@
+{
+  "questionId": "7d56630a-s1",
+  "originalId": "7d56630a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In investigating whether plants can communicate underground, biologists Suzanne Simard, Daniel Beiler, and Kevin Beiler asked three questions. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> do trees share carbon with one another through fungal networks in the soil? Second, are mother trees more likely to share resources with their offspring? Finally, if these networks are disrupted, are the surrounding trees harmed?</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Additionally,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>First,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"First\" logically signals that the question in this sentence&mdash;whether trees share carbon through fungal networks&mdash;is the first in a sequence of three questions the researchers asked. The sequence is signaled by \"Second\" and \"Finally\" later in the passage.</p><p>Choice A is incorrect because \"however\" illogically signals contrast, but the question introduces the first item in a list. Choice B is incorrect because \"additionally\" illogically signals an additional question added to others, but this is the first question in the list. Choice D is incorrect because \"as a result\" illogically signals consequence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T13.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "bcf2f169-s1",
+  "originalId": "bcf2f169",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T7.medium",
+  "stimulus": "<p>Helena Mar&iacute;a Viramontes&rsquo;s 1995 novel <em>Under the Feet of Jesus</em> follows a teenage migrant farmworker in 1970s California through fragmented, image-heavy prose&mdash;a structure Viramontes has compared to a series of overlapping snapshots. Reading the novel in seminar, several students complained that the timeline felt confusing and the labor disputes it depicts seemed remote from their own lives. Their instructor, however, drew the class&rsquo;s attention to the novel&rsquo;s plain present-tense diction and to ongoing debates about farmworker conditions that Viramontes&rsquo;s scenes anticipate, suggesting that <em>Under the Feet of Jesus</em> <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>says more about working conditions than other novels written in the 1990s.</p>"},
+    {"id": "b", "content": "<p>is best appreciated by readers who rearrange its chapters into chronological order.</p>"},
+    {"id": "c", "content": "<p>is easier to follow than most contemporary novels about adolescence.</p>"},
+    {"id": "d", "content": "<p>speaks more directly to present-day readers than its fragmented structure may initially suggest.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The students perceive the novel as confusing in structure and distant in content; the instructor responds by pointing to its plain modern diction and to its anticipation of issues still being debated. Together, those replies imply the novel is more immediate and accessible to today&rsquo;s readers than the fragmented form initially suggests.</p><p>Choice A is incorrect because the instructor never compares the novel with other 1990s novels. Choice B is incorrect because the instructor never discusses re-ordering chapters. Choice C is incorrect because the instructor does not compare the novel with other contemporary novels about adolescence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

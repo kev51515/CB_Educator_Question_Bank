@@ -1,0 +1,39 @@
+{
+  "questionId": "23758540-s1",
+  "originalId": "23758540",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What value of <i>r</i> satisfies the equation 3<i>r</i> + 140 = 200?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Subtracting 140 from both sides gives 3<i>r</i> = 60. Dividing by 3 gives <i>r</i> = 20.</p><p>Choices A and B result from dividing incorrectly. Choice D results from solving as if the coefficient were 1.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A1.T2.easy"
+}

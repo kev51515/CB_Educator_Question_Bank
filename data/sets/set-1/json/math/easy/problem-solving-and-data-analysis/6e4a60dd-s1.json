@@ -1,0 +1,39 @@
+{
+  "questionId": "6e4a60dd-s1",
+  "originalId": "6e4a60dd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Lila\u2019s total bill at a restaurant was $40.00, including tax. If she left a tip of 18% of the total bill, what was the amount of the tip?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$7.20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$6.40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$5.60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$4.80</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 18% of $40.00 is 0.18 \u00d7 $40.00 = $7.20.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T3.easy"
+}

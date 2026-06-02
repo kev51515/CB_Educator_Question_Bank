@@ -1,0 +1,72 @@
+{
+  "questionId": "271a5017",
+  "externalId": "9cd9bd44-1c9d-4da9-b40a-e9c317cdd49d",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:51.048513+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "5c85d27e-3adb-4f5c-b312-49769980bf42",
+      "content": "<p>It indicates that Jam is more interested in music than in art.</p>"
+    },
+    {
+      "id": "1567213c-90c3-4e38-b32b-8b6a5606c970",
+      "content": "<p>It adds to the idea that Bitter&rsquo;s footsteps reveal something to Jam.</p>"
+    },
+    {
+      "id": "440bd83f-bd64-4352-bf55-f5a2e920fce7",
+      "content": "<p>It indicates that Bitter always sings when working on a painting.</p>"
+    },
+    {
+      "id": "25ad2e9e-9364-441d-b9cd-69500ca9a9b9",
+      "content": "<p>It describes Aloe&rsquo;s reaction upon seeing the painting for the first time.</p>"
+    }
+  ],
+  "keys": [
+    "1567213c-90c3-4e38-b32b-8b6a5606c970"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most accurately describes how the underlined sentence functions in the text as a whole. The text establishes that Jam hears Bitter&rsquo;s studio door open early in the morning, when it is still dark. Jam then listens to her mother&rsquo;s footsteps, which seem to create a song that runs through the floorboards. The text indicates that the sound of Bitter&rsquo;s footsteps convey to Jam that Bitter is done painting. The underlined sentence then builds on this idea, stating explicitly that Bitter&rsquo;s feet sing the news of her completion of a painting. Thus, the sentence stating that &ldquo;Bitter&rsquo;s feet were singing the news&rdquo; further emphasizes that Bitter&rsquo;s footsteps themselves reveal information to Jam.</p><p>Choice A is incorrect because the text provides no evidence that Jam prefers music to art. While the underlined sentence uses musical imagery to describe the vibrations Jam feels, this is figurative language that is describing the footsteps&rsquo; vibrations; it isn&rsquo;t an indication of Jam&rsquo;s personal interests. Choice C is incorrect because the text doesn&rsquo;t suggest that Bitter herself sings while working on paintings. The references to singing in the text are figurative descriptions of how Bitter&rsquo;s footsteps sound or feel to Jam, not literal statements about Bitter singing. Choice D is incorrect because the underlined sentence only describes Jam&rsquo;s perception of her mother&rsquo;s footsteps. It doesn&rsquo;t provide any details about Aloe or his reaction to the painting; in fact, the text doesn&rsquo;t mention Aloe seeing the painting at all.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the function of the underlined sentence in the text as a whole?</p>",
+    "stimulus": "<p>The following text is adapted from Akwaeke Emezi&rsquo;s 2019 novel <em>Pet</em>. Jam is a teenager who lives with her father, Aloe, and her mother, Bitter, who is a painter.</p>\n<blockquote>\n<p>Bitter finished the painting in the dark morning of a day&mdash;it was well past midnight when Jam heard the studio door creak open. She stared into the velvet black of her room and listened to her mother&rsquo;s footsteps walking in her [mother] and Aloe&rsquo;s bedroom. There was a weight thrumming through the floorboards in a low song, and that was how Jam knew the painting was done. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Bitter&rsquo;s feet were singing the news.</span></p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;2019 by Akwaeke Emezi</span></p>",
+    "keys": [
+      "1567213c-90c3-4e38-b32b-8b6a5606c970"
+    ],
+    "answerOptions": [
+      {
+        "id": "5c85d27e-3adb-4f5c-b312-49769980bf42",
+        "content": "<p>It indicates that Jam is more interested in music than in art.</p>"
+      },
+      {
+        "id": "1567213c-90c3-4e38-b32b-8b6a5606c970",
+        "content": "<p>It adds to the idea that Bitter&rsquo;s footsteps reveal something to Jam.</p>"
+      },
+      {
+        "id": "440bd83f-bd64-4352-bf55-f5a2e920fce7",
+        "content": "<p>It indicates that Bitter always sings when working on a painting.</p>"
+      },
+      {
+        "id": "25ad2e9e-9364-441d-b9cd-69500ca9a9b9",
+        "content": "<p>It describes Aloe&rsquo;s reaction upon seeing the painting for the first time.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most accurately describes how the underlined sentence functions in the text as a whole. The text establishes that Jam hears Bitter&rsquo;s studio door open early in the morning, when it is still dark. Jam then listens to her mother&rsquo;s footsteps, which seem to create a song that runs through the floorboards. The text indicates that the sound of Bitter&rsquo;s footsteps convey to Jam that Bitter is done painting. The underlined sentence then builds on this idea, stating explicitly that Bitter&rsquo;s feet sing the news of her completion of a painting. Thus, the sentence stating that &ldquo;Bitter&rsquo;s feet were singing the news&rdquo; further emphasizes that Bitter&rsquo;s footsteps themselves reveal information to Jam.</p><p>Choice A is incorrect because the text provides no evidence that Jam prefers music to art. While the underlined sentence uses musical imagery to describe the vibrations Jam feels, this is figurative language that is describing the footsteps&rsquo; vibrations; it isn&rsquo;t an indication of Jam&rsquo;s personal interests. Choice C is incorrect because the text doesn&rsquo;t suggest that Bitter herself sings while working on paintings. The references to singing in the text are figurative descriptions of how Bitter&rsquo;s footsteps sound or feel to Jam, not literal statements about Bitter singing. Choice D is incorrect because the underlined sentence only describes Jam&rsquo;s perception of her mother&rsquo;s footsteps. It doesn&rsquo;t provide any details about Aloe or his reaction to the painting; in fact, the text doesn&rsquo;t mention Aloe seeing the painting at all.</p>",
+    "externalid": "9cd9bd44-1c9d-4da9-b40a-e9c317cdd49d",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>The following text is adapted from Akwaeke Emezi&rsquo;s 2019 novel <em>Pet</em>. Jam is a teenager who lives with her father, Aloe, and her mother, Bitter, who is a painter.</p>\n<blockquote>\n<p>Bitter finished the painting in the dark morning of a day&mdash;it was well past midnight when Jam heard the studio door creak open. She stared into the velvet black of her room and listened to her mother&rsquo;s footsteps walking in her [mother] and Aloe&rsquo;s bedroom. There was a weight thrumming through the floorboards in a low song, and that was how Jam knew the painting was done. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Bitter&rsquo;s feet were singing the news.</span></p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;2019 by Akwaeke Emezi</span></p>"
+}

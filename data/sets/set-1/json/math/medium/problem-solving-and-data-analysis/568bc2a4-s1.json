@@ -1,0 +1,39 @@
+{
+  "questionId": "568bc2a4-s1",
+  "originalId": "568bc2a4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A distance of 285 furlongs is equivalent to how many feet? (1 furlong = 220 yards and 1 yard = 3 feet)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>188,100</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>62,700</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20,900</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>855</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Each furlong equals 220 yards, and each yard equals 3 feet, so 1 furlong = 220 &times; 3 = 660 feet. Therefore 285 furlongs = 285 &times; 660 = 188,100 feet. Choice B is incorrect because 62,700 = 285 &times; 220 converts to yards, not feet. Choice C is incorrect because 20,900 results from multiplying 95 &times; 220, not the given values. Choice D is incorrect because 855 = 285 &times; 3 ignores the yards-to-furlongs conversion.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium"
+}

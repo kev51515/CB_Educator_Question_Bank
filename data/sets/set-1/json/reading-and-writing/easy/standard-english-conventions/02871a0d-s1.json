@@ -1,0 +1,39 @@
+{
+  "questionId": "02871a0d-s1",
+  "originalId": "02871a0d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In her textile installation <em>Threads of Home</em>, artist Mei Lin drew on memories of her grandmother's workshop in Taipei. For example, the installation's woven panels feature a diamond motif borrowed from the embroidered cushions ______</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Lin remembered from her grandmother's home.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>would Lin remember from her grandmother's home?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Lin remembered from her grandmother's home?</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>would Lin remember from her grandmother's home.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The sentence is declarative \u2014 it requires a normal subject-verb order and a period at the end.</p><p>Choice B reorders into an interrogative form and uses a question mark, which doesn't fit the declarative context. Choice C wrongly uses a question mark on a declarative clause. Choice D wrongly uses interrogative word order in a declarative sentence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

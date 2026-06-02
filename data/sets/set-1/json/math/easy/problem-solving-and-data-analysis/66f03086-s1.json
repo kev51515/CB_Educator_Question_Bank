@@ -1,0 +1,39 @@
+{
+  "questionId": "66f03086-s1",
+  "originalId": "66f03086",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>12, 14, 17, 19, 23, 28, 31, 34, 40</p><p>What is the median of the data shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>19</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>23</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>26</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The median of a data set with an odd number of values, ordered from least to greatest, is the middle value. There are 9 values, so the median is the 5th value, which is 23.</p><p>Choice A is incorrect: 12 is the minimum.</p><p>Choice B is incorrect: 19 is the 4th value.</p><p>Choice D is incorrect: 26 is not in the set.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T2.easy"
+}

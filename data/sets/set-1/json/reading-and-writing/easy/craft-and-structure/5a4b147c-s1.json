@@ -1,0 +1,39 @@
+{
+  "questionId": "5a4b147c-s1",
+  "originalId": "5a4b147c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>In the winter of 1888, a young schoolteacher named Minnie Freeman led her students through a fierce blizzard to safety on the Nebraska prairie. Although she was only nineteen at the time, her quick thinking made her a celebrated figure across the American Midwest. In the decades that followed, Freeman's story was retold in songs, poems, and a memorial statue placed near the schoolhouse where she taught.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>Historian Carmen Diaz set out to verify the details of Minnie Freeman's famous walk and discovered that contemporary sources offered very different versions of events. Many later accounts seemed to add dramatic flourishes that older newspapers did not include. While Freeman remains a beloved figure in Nebraska memory, Diaz cautions that some of the most familiar details about her may be later inventions.</p>",
+  "stem": "<p>Based on the texts, both authors would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Minnie Freeman's actions changed the future of frontier education in Nebraska.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The story of Minnie Freeman has remained meaningful to many people over time.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Most details about Minnie Freeman's walk are fabricated.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Historians have now identified exactly which path Freeman took.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Text 1 emphasizes Freeman's enduring celebration, and Text 2 acknowledges she is \"a beloved figure in Nebraska memory.\" Both authors thus agree she remains meaningful to many.</p><p>Choices A, C, and D go beyond what either text actually says.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "bf5f80c6-s1",
+  "originalId": "bf5f80c6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>y</em> &lt; \u22122<em>x</em> + 5</p><p>Which point (<em>x</em>, <em>y</em>) is a solution to the given inequality in the <em>xy</em>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 6)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(4, \u22125)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(1, 3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(\u22121, 8)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Substituting (4, \u22125): is \u22125 &lt; \u22122(4) + 5 = \u22123? Yes.</p><p>Choice A: 6 &lt; 5? No. Choice C: 3 &lt; 3? No (not strict). Choice D: 8 &lt; 7? No.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium"
+}

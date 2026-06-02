@@ -1,0 +1,25 @@
+{
+  "questionId": "8a9d2f4e-s1",
+  "originalId": "8a9d2f4e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>Biologists cataloging the &ldquo;leaf gallery&rdquo;&mdash;the tens of thousands of pressed plant specimens collected during a century-long survey of Andean cloud forests&mdash;were astonished to confirm that the venation of each leaf's underside, like the venation of each twin leaf's surface, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> distinctive.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>were</p>"},
+    {"id": "c", "content": "<p>have been</p>"},
+    {"id": "d", "content": "<p>is</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"the venation.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"the venation.\" Choice B is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject \"the venation.\" Choice C is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"the venation.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

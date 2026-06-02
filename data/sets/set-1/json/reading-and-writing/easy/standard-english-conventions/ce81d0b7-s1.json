@@ -1,0 +1,39 @@
+{
+  "questionId": "ce81d0b7-s1",
+  "originalId": "ce81d0b7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The lifespans of tortoises vary dramatically by species. For example, the Egyptian tortoise (<em>Testudo kleinmanni</em>) typically lives for only a few <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the Aldabra giant tortoise (<em>Aldabrachelys gigantea</em>) can reach an age of more than 150 years.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>decades<span data-ssml-say-as=\"characters\">:</span> while</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>decades<span data-ssml-say-as=\"characters\">;</span> while</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>decades<span data-ssml-say-as=\"characters\">,</span> while</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>decades<span data-ssml-say-as=\"characters\">.</span> While</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of punctuation between an independent clause and a subordinate clause introduced by \"while.\" A comma is conventionally used to mark this kind of boundary when the subordinate clause follows the main clause and presents a contrast.</p><p>Choice A is incorrect because a colon can't be used to introduce a subordinate clause in this way. Choice B is incorrect because a semicolon would suggest two independent clauses, but \"while...\" is a dependent clause. Choice D is incorrect because, although it is grammatically possible to end the first clause with a period and start a new sentence, the choice as written keeps the subordinator \"While,\" which would awkwardly begin a new sentence treating a dependent clause as if it were independent.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T3.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c071eca2-s1",
+  "originalId": "c071eca2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Brazilian composer Heitor Villa-Lobos, often celebrated for bending European classical conventions to fit Brazilian folk traditions, did not abandon traditional forms outright; his <em>Bachianas Brasileiras No. 5</em> uses a chamber arrangement and adheres to standard movement structure. Even in this outwardly conventional piece, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Villa-Lobos was charting new territory by binding Bach-style counterpoint to the melodic contours of Brazilian modinha song.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>therefore,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>nevertheless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>indeed,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>furthermore,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The sentence contrasts the conventional surface of the work with Villa-Lobos's innovative practice within it. \"Nevertheless\" expresses precisely this contrastive relationship\u2014despite the traditional surface, he was nevertheless doing something new.</p><p>Choice A is incorrect because \"therefore\" would signal cause and effect, but the second clause does not result from the first. Choice C is incorrect because \"indeed\" would emphasize the prior claim, but the second clause works against rather than for the prior point. Choice D is incorrect because \"furthermore\" would add a parallel idea, but the second clause counters rather than extends the first.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "a7711fe8-s1",
+  "originalId": "a7711fe8",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the minimum value of the function f defined by f(x) = x<sup>2</sup> &minus; 8x + 21?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Completing the square: x<sup>2</sup> &minus; 8x + 21 = (x &minus; 4)<sup>2</sup> &minus; 16 + 21 = (x &minus; 4)<sup>2</sup> + 5. Since (x &minus; 4)<sup>2</sup> &ge; 0, the minimum of f is 5, attained at x = 4.</p><p>Choice A is f(0), not the minimum. Choice B is the x-coordinate of the vertex. Choice C is an arithmetic error.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3148fe3e-s1",
+  "originalId": "3148fe3e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p>x<sup>2</sup> + y + 6 = 6</p><p>10x + 25 &minus; y = 0</p>",
+  "stem": "<p>If (x, y) is a solution to the system of equations above, what is a possible value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>From the first equation, y = &minus;x<sup>2</sup>. From the second, y = 10x + 25. Setting equal: &minus;x<sup>2</sup> = 10x + 25, so x<sup>2</sup> + 10x + 25 = 0, which is (x + 5)<sup>2</sup> = 0. Thus x = &minus;5. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium"
+}

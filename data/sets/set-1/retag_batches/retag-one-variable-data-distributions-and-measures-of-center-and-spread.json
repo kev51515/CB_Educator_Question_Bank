@@ -1,0 +1,38 @@
+[
+  {
+    "id": "07f2829b-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem compares medians of two separate data sets (Year 2018 vs Year 2019). This is A4.T9 (compare measures across two data sets), not A5.T14 (effect of a manipulation on one set's statistics). No manipulation/transformation is described."
+  },
+  {
+    "id": "a456cfd2-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Question computes median from a frequency table (cumulative counting to middle position). A3.T7 is direct retrieval (min/max/sum of named rows), not computing a measure of center. This belongs in A1.T3 (median from frequency table)."
+  },
+  {
+    "id": "3f2ee20a-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium",
+    "verdict": "aspect_drift",
+    "detail": "A2.T5 requires qualitative SD comparison from two visual distributions. This stem compares two classes via min/max/median table and the keyed answer (B) is about which class contained the highest score \u2014 purely a min/max comparison. Belongs in A4.T9."
+  },
+  {
+    "id": "560fab82-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T7 medium specifically targets identifying the min/max value with nonzero frequency (often with a zero-frequency distractor row). This clone asks for the mode of a frequency table \u2014 a different task with no zero-frequency distractor; loses the type's medium signature."
+  },
+  {
+    "id": "f8a322d9-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.hard",
+    "verdict": "type_drift",
+    "detail": "T5 requires qualitative SD comparison between two distributions; clone asks for the smallest possible positive difference between MEANS of two binned histograms, which is a mean-comparison item (A4) rather than an SD comparison. The keyed answer (10) is also not strictly determinable since values can be any integer within each bin, allowing mean differences other than 10."
+  },
+  {
+    "id": "a29e89fc-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever for A1.T1 requires '4-digit numbers or one decimal place so arithmetic is non-trivial' and 'non-round mean requiring careful division'. Clone uses 5 two-digit integers (28,30,29,31,32) summing evenly to 150/5=30 \u2014 this is an Easy-level computation."
+  }
+]

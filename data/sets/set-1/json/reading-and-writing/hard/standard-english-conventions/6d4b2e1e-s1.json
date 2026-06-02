@@ -1,0 +1,39 @@
+{
+  "questionId": "6d4b2e1e-s1",
+  "originalId": "6d4b2e1e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The 1959 novel <em>Things Fall Apart</em> portrays the disruption of an Igbo village in southeastern Nigeria during the early period of British colonial expansion. Scholars often emphasize how acclaimed ______ contrasts the inner workings of precolonial Igbo society with the imposed structures of colonial administration.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>novelist, Chinua Achebe</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>novelist Chinua Achebe</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>novelist Chinua Achebe,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>novelist, Chinua Achebe,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. No punctuation is needed between the title \"acclaimed novelist\" and the proper noun \"Chinua Achebe.\" The name is essential to the meaning of the sentence \u2014 it identifies which novelist \u2014 so it should not be set off by commas.</p><p>Choice A is incorrect because placing a comma before \"Chinua Achebe\" implies that the name is nonessential, which it is not. Choice C is incorrect because no punctuation is needed between the proper noun and the verb \"contrasts.\" Choice D is incorrect because enclosing the name in commas treats it as parenthetical, suggesting it could be removed without affecting the sentence&rsquo;s meaning.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A3.T6.hard"
+}

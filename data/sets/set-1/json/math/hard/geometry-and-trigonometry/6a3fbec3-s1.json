@@ -1,0 +1,22 @@
+{
+  "questionId": "6a3fbec3-s1",
+  "originalId": "6a3fbec3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In right triangle XYZ, angle Y is a right angle. Point W lies on hypotenuse XZ such that YW is perpendicular to XZ. If XW = 4 and YW = 8, what is the length of WZ?</p>",
+  "answerOptions": [],
+  "keys": [
+    "16"
+  ],
+  "rationale": "<p>When an altitude is drawn from the right angle to the hypotenuse of a right triangle, it divides the triangle into two smaller similar triangles, and the altitude is the geometric mean of the two segments of the hypotenuse: YW² = XW · WZ. Therefore 8² = 4 · WZ, so WZ = 64/4 = 16.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.hard"
+}

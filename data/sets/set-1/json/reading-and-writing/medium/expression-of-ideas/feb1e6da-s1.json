@@ -1,0 +1,25 @@
+{
+  "questionId": "feb1e6da-s1",
+  "originalId": "feb1e6da",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T11.medium",
+  "stimulus": "<p>Scholar Yuki Tanaka observes that the poet Marianne Moore \"never regarded a poem as finished,\" routinely revising her verses years after their original appearance in print. However, the divergences between the 1924 first edition and the 1951 collected edition of her poem <em>Poetry</em> are striking, even by Moore's standards; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> some scholars treat the two versions as fundamentally separate works.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>conversely,</p>"},
+    {"id": "b", "content": "<p>nonetheless,</p>"},
+    {"id": "c", "content": "<p>that is,</p>"},
+    {"id": "d", "content": "<p>indeed,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Indeed\" logically signals that the scholars' claim at the end of this sentence—that the two versions are essentially separate works—offers additional emphasis in support of the previous claim that the divergences between the editions are striking.</p><p>Choice A is incorrect because \"conversely\" illogically signals that the claim contrasts with the previous claim about the differences between the editions. Instead, the scholars' opinion reinforces that claim. Choice B is incorrect because \"nonetheless\" illogically signals that the claim is true despite the previous claim, when in fact it strengthens it. Choice C is incorrect because \"that is\" illogically signals that the claim merely paraphrases the previous one, when in fact it adds new information that intensifies the original assertion.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "c5082ce3-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium",
+  "originalId": "c5082ce3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The score on a quiz show is obtained by subtracting twice the number of incorrect answers from three times the number of correct answers. If a contestant answered 25 questions and obtained a score of 50, how many questions did the contestant answer correctly?</p>",
+  "answerOptions": null,
+  "keys": [
+    "20"
+  ],
+  "rationale": "<p>Let c be the number of correct answers and i the number of incorrect answers. Then c + i = 25 and 3c − 2i = 50. From the first equation, i = 25 − c. Substituting: 3c − 2(25 − c) = 50, which gives 5c − 50 = 50, so c = 20.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

@@ -1,0 +1,452 @@
+[
+  {
+    "id": "9acd101f",
+    "path": "json/math/hard/geometry-and-trigonometry/9acd101f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "9adb86ed",
+    "path": "json/math/hard/geometry-and-trigonometry/9adb86ed.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "9d159400",
+    "path": "json/math/hard/geometry-and-trigonometry/9d159400.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "9e44284b",
+    "path": "json/math/hard/geometry-and-trigonometry/9e44284b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "a38c0183",
+    "path": "json/math/hard/geometry-and-trigonometry/a38c0183.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "ab176ad6",
+    "path": "json/math/hard/geometry-and-trigonometry/ab176ad6.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "acd30391",
+    "path": "json/math/hard/geometry-and-trigonometry/acd30391.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "b0a72bdc",
+    "path": "json/math/hard/geometry-and-trigonometry/b0a72bdc.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "b8a225ff",
+    "path": "json/math/hard/geometry-and-trigonometry/b8a225ff.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "c447367f",
+    "path": "json/math/hard/geometry-and-trigonometry/c447367f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "c8345903",
+    "path": "json/math/hard/geometry-and-trigonometry/c8345903.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "ca2235f6",
+    "path": "json/math/hard/geometry-and-trigonometry/ca2235f6.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "e50afdd3",
+    "path": "json/math/hard/geometry-and-trigonometry/e50afdd3.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "e80d62c6",
+    "path": "json/math/hard/geometry-and-trigonometry/e80d62c6.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "ebbf23ae",
+    "path": "json/math/hard/geometry-and-trigonometry/ebbf23ae.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "spr"
+  },
+  {
+    "id": "fa2771d5",
+    "path": "json/math/hard/geometry-and-trigonometry/fa2771d5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles",
+    "type": "mcq"
+  },
+  {
+    "id": "010243e6",
+    "path": "json/math/hard/geometry-and-trigonometry/010243e6.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "1318dfea",
+    "path": "json/math/hard/geometry-and-trigonometry/1318dfea.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "17912810",
+    "path": "json/math/hard/geometry-and-trigonometry/17912810.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "2d2cb85e",
+    "path": "json/math/hard/geometry-and-trigonometry/2d2cb85e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "322a6dfe",
+    "path": "json/math/hard/geometry-and-trigonometry/322a6dfe.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "345cc36a",
+    "path": "json/math/hard/geometry-and-trigonometry/345cc36a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "3b225698",
+    "path": "json/math/hard/geometry-and-trigonometry/3b225698.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "48fb6483",
+    "path": "json/math/hard/geometry-and-trigonometry/48fb6483.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "5b4757df",
+    "path": "json/math/hard/geometry-and-trigonometry/5b4757df.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "694b7fce",
+    "path": "json/math/hard/geometry-and-trigonometry/694b7fce.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "6a3fbec3",
+    "path": "json/math/hard/geometry-and-trigonometry/6a3fbec3.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "6d99b141",
+    "path": "json/math/hard/geometry-and-trigonometry/6d99b141.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "740bf79f",
+    "path": "json/math/hard/geometry-and-trigonometry/740bf79f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "901c3215",
+    "path": "json/math/hard/geometry-and-trigonometry/901c3215.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "947a3cde",
+    "path": "json/math/hard/geometry-and-trigonometry/947a3cde.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "a0369739",
+    "path": "json/math/hard/geometry-and-trigonometry/a0369739.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "adae6543",
+    "path": "json/math/hard/geometry-and-trigonometry/adae6543.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "b1e1c2f5",
+    "path": "json/math/hard/geometry-and-trigonometry/b1e1c2f5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "bd7f6e30",
+    "path": "json/math/hard/geometry-and-trigonometry/bd7f6e30.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "c41eb616",
+    "path": "json/math/hard/geometry-and-trigonometry/c41eb616.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "e10d8313",
+    "path": "json/math/hard/geometry-and-trigonometry/e10d8313.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "eeb4143c",
+    "path": "json/math/hard/geometry-and-trigonometry/eeb4143c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "f67255ea",
+    "path": "json/math/hard/geometry-and-trigonometry/f67255ea.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "f731d88b",
+    "path": "json/math/hard/geometry-and-trigonometry/f731d88b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "f7dbde16",
+    "path": "json/math/hard/geometry-and-trigonometry/f7dbde16.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "f88f27e5",
+    "path": "json/math/hard/geometry-and-trigonometry/f88f27e5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "fecc446d",
+    "path": "json/math/hard/geometry-and-trigonometry/fecc446d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "0e709a29",
+    "path": "json/math/hard/geometry-and-trigonometry/0e709a29.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "1429dcdf",
+    "path": "json/math/hard/geometry-and-trigonometry/1429dcdf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "14e7c1f4",
+    "path": "json/math/hard/geometry-and-trigonometry/14e7c1f4.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "16d66178",
+    "path": "json/math/hard/geometry-and-trigonometry/16d66178.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "1bf809b5",
+    "path": "json/math/hard/geometry-and-trigonometry/1bf809b5.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "25da87f8",
+    "path": "json/math/hard/geometry-and-trigonometry/25da87f8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "2be01bd9",
+    "path": "json/math/hard/geometry-and-trigonometry/2be01bd9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  }
+]

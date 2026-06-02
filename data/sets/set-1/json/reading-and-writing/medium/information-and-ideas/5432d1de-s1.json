@@ -1,0 +1,25 @@
+{
+  "questionId": "5432d1de-s1",
+  "originalId": "5432d1de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.medium",
+  "stimulus": "<p>It is common for flamenco performers and audiences to describe certain palos as having \"duende,\" indicating that the performances stir a powerful emotional response, such as a chill along the spine or sudden tears. The exact rhythmic properties that give a piece duende, however, have long been thought to be undefinable. To investigate duende, a team led by musicologist Esteban Vargas accelerated the contratiempos and tightened the compás patterns in flamenco guitar solos and asked flamenco performers to compare the intensity of duende in each modified piece with the intensity of duende in the original piece. They found that participants were nearly six times likelier to characterize the modified pieces as having duende than to characterize the original versions as having duende, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>flamenco pieces featuring the guitar are more likely to have duende than flamenco pieces that do not feature the guitar.</p>"},
+    {"id": "b", "content": "<p>the timing of contratiempos and compás patterns may play a crucial role in giving a piece duende.</p>"},
+    {"id": "c", "content": "<p>tightened compás patterns tend to give a piece duende regardless of whether contratiempos are accelerated.</p>"},
+    {"id": "d", "content": "<p>the rhythmic properties that give a piece duende are not easy for flamenco performers to manipulate.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is best. The modifications were rhythmic (faster contratiempos and tighter compás), and modified pieces were judged far more likely to have duende. The most defensible inference is that timing of those rhythmic elements plays a crucial role in producing duende. Choice C wrongly isolates one variable when both were changed jointly. Choice A is unsupported; the study did not compare guitar with non-guitar pieces. Choice D contradicts the finding, which shows the team successfully manipulated rhythmic properties.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

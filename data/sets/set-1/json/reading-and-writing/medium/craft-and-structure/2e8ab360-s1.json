@@ -1,0 +1,25 @@
+{
+  "questionId": "2e8ab360-s1",
+  "originalId": "2e8ab360",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Nineteenth-century critic Thomas Carlyle judged that the only failing of the English statesman William Gladstone was his cautious disposition&mdash;though the prime minister was widely regarded as principled, his overly deliberate manner led him to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> potentially transformative reforms, leaving many proposals stalled in committee long after their political moment had passed.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>accelerate</p>"},
+    {"id": "b", "content": "<p>delay</p>"},
+    {"id": "c", "content": "<p>endorse</p>"},
+    {"id": "d", "content": "<p>condemn</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Delay\" means to postpone or slow the progress of. The text describes Gladstone's \"overly deliberate manner\" and notes proposals were \"stalled in committee long after their political moment had passed,\" so the verb must name a slowing action consistent with his cautious disposition.</p><p>Choice A is incorrect because accelerating reforms contradicts both the description of his deliberation and the image of proposals stalling. Choice C is incorrect because endorsing reforms would not by itself leave them stalled. Choice D is incorrect because the text describes him as principled, not as someone who attacked reforms.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

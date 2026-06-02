@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "b73ee6cf-s1",
+  "originalId": "b73ee6cf",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population of a town is currently 32,000, and the population is estimated to increase each year by 5% from the previous year's population. Which of the following equations can be used to estimate the number of years, t, it will take for the population of the town to reach 40,000?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32,000(1.05)<sup>t</sup> = 40,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>32,000(0.05)<sup>t</sup> = 40,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>32,000 + 0.05t = 40,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>32,000(1.05t) = 40,000</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A 5% annual increase multiplies the population by 1.05 each year, so after t years the population is 32,000(1.05)<sup>t</sup>. Setting this equal to 40,000 gives the equation in Choice A.</p><p>Choice B treats 0.05 as the entire multiplier each year (a 95% drop). Choice C is linear, not exponential. Choice D incorrectly multiplies inside the exponent.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

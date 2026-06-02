@@ -1,0 +1,22 @@
+[
+  {"id": "01682aa5-s1", "templateId": "linear-equations-in-two-variables.A6.T13.medium", "verdict": "ok"},
+  {"id": "d7c8ba0b-s1", "templateId": "linear-equations-in-two-variables.A4.T6.medium", "verdict": "ok"},
+  {"id": "62ef6f73-s1", "templateId": "linear-equations-in-two-variables.A1.T1.hard", "verdict": "ok", "detail": "Math correct: 3 pentagons*5a + 5 hexagons*6b = 15a+30b = 240. Note: file is in 'medium' folder but templateId is hard; difficulty field in JSON says Medium, mismatching the hard templateId — minor metadata inconsistency."},
+  {"id": "df78b361-s1", "templateId": "linear-equations-in-two-variables.A3.T4.medium", "verdict": "ok"},
+  {"id": "51568fb9-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "ok"},
+  {"id": "7625073d-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "ok", "detail": "Math correct (w=73). Minor concern: both coefficients are 5 (common bug: 'rates equal collapses distinction'), but stem still asks for clean substitution with given p=47 yielding integer w. Acceptable."},
+  {"id": "400798d6-s1", "templateId": "linear-equations-in-two-variables.A3.T4.medium", "verdict": "difficulty_drift", "detail": "Interpreted piece is the constant 50 on the right side (T4-easy lever: 'Term is the constant on the right side (a total)'). Medium lever requires interpreting a variable product like 6y. Keyed answer (perimeter = sum of three sides) is correct, but variant matches T4 easy, not medium."},
+  {"id": "c307283c-s1", "templateId": "linear-equations-in-two-variables.A4.T6.medium", "verdict": "ok"},
+  {"id": "265f2a53-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "ok", "detail": "Math correct (slope = 50/9). Fits T10 hard characteristic ('x- and y-intercepts given as fractions; slope derived as -b/a') more than medium, but acceptable as medium given the modest computation."},
+  {"id": "e0f59119-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "ok"},
+  {"id": "fb43b85f-s1", "templateId": "linear-equations-in-two-variables.A5.T10.medium", "verdict": "ok"},
+  {"id": "038d87d7-s1", "templateId": "linear-equations-in-two-variables.A3.T3.medium", "verdict": "ok"},
+  {"id": "9c7741c6-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "9f3cb472-s1", "templateId": "linear-equations-in-two-variables.A4.T8.medium", "verdict": "ok"},
+  {"id": "2e0290c3-s1", "templateId": "linear-equations-in-two-variables.A4.T7.medium", "verdict": "ok", "detail": "Math correct (x+2y=50). T7 description specifies 'shown a line in the xy-plane'; this clone gives intercepts in text rather than via graph image — borderline type fit but within bank patterns."},
+  {"id": "3c03cbd8-s1", "templateId": "linear-equations-in-two-variables.A3.T3.medium", "verdict": "ok"},
+  {"id": "c5e38487-s1", "templateId": "linear-equations-in-two-variables.A2.T2.medium", "verdict": "difficulty_drift", "detail": "Stem reduces to w + 23 = 80 (one-step) with unit coefficients (w + a = 80). Matches T2 easy levers ('Simple sum constraint x+y=total or single-step substitution: only one inverse operation'), not medium ('Two-step linear equation after substitution; decimal or non-unit coefficients'). Answer correct."},
+  {"id": "002dba45-s1", "templateId": "linear-equations-in-two-variables.A6.T13.medium", "verdict": "ok"},
+  {"id": "9b0a4eae-s1", "templateId": "linear-equations-in-two-variables.A3.T3.medium", "verdict": "aspect_drift", "detail": "Question asks for interpretation of a point (5,9) on a graph, not interpretation of a coefficient in an equation. A3 description requires explaining what 'a specific number or term in the equation' represents (rate, total, count). Interpreting coordinates of a point fits A5-style coordinate reading rather than A3. T3 specifically requires recognizing a coefficient as per-unit rate; no coefficient is being interpreted here. Keyed answer (length 5, width 9) is correct."},
+  {"id": "0451d754-s1", "templateId": "linear-equations-in-two-variables.A6.T13.medium", "verdict": "ok"}
+]

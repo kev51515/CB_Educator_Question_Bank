@@ -1,0 +1,25 @@
+{
+  "questionId": "67614549-s1",
+  "originalId": "67614549",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T1.medium",
+  "stimulus": "<p>After being elected mayor of Cleveland in 1967, Carl B. Stokes invited engineers, civil rights leaders, and labor organizers to advise his administration. Stokes's choice was unconventional, since these advisers had often clashed with one another, but commentators have applauded it, noting that Stokes <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his advisers' competing perspectives to forge coalitions across the city.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>harnessed</p>"},
+    {"id": "b", "content": "<p>has harnessed</p>"},
+    {"id": "c", "content": "<p>will harness</p>"},
+    {"id": "d", "content": "<p>is harnessing</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The subject of the verb is \"Stokes,\" and the first sentence tells us that we're talking about something Stokes did in 1967. So the simple past tense \"harnessed\" fits the logic of the text.</p><p>Choice B is incorrect. \"Has harnessed\" is the present perfect tense, used for an action that began in the past and continues into the present. Stokes harnessed his advisers' perspectives in 1967&mdash;it's not still happening today. Choice C is incorrect. \"Will harness\" is the future tense, but Stokes acted in 1967, so the future tense isn't appropriate. Choice D is incorrect. \"Is harnessing\" is the present progressive tense, but Stokes acted in 1967, so the present tense isn't appropriate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

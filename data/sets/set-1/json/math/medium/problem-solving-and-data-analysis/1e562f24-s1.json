@@ -1,0 +1,39 @@
+{
+  "questionId": "1e562f24-s1",
+  "originalId": "1e562f24",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>To estimate the proportion of a population that has a certain characteristic, a random sample was selected from the population. Based on the sample, it is estimated that the proportion of the population that has the characteristic is <math><mn>0.62</mn></math>, with an associated margin of error of <math><mn>0.05</mn></math>. Based on this estimate and margin of error, which of the following is the most appropriate conclusion about the proportion of the population that has the characteristic?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is plausible that the proportion is less than <math><mn>0.57</mn></math>.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is plausible that the proportion is between <math><mn>0.57</mn></math> and <math><mn>0.67</mn></math>.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The proportion is exactly <math><mn>0.62</mn></math>.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is plausible that the proportion is greater than <math><mn>0.67</mn></math>.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The plausible range is the estimate \u00b1 the margin of error: 0.62 - 0.05 to 0.62 + 0.05, i.e., 0.57 to 0.67.</p><p>Choices A and D place the plausible value outside this interval. Choice C treats the point estimate as exact.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium"
+}

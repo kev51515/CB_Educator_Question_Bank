@@ -1,0 +1,22 @@
+{
+  "questionId": "9c7741c6-s1",
+  "originalId": "9c7741c6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>On a 240-mile trip, Tanya drove at an average speed of 70 miles per hour for the first <em>x</em> hours. She then completed the trip, driving at an average speed of 50 miles per hour for the remaining <em>y</em> hours. If 70x + 50y = 240 and x = 2, what is the value of <em>y</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2"
+  ],
+  "rationale": "<p>The distance traveled at 70 mph for <em>x</em> hours is 70<em>x</em> miles, and the distance traveled at 50 mph for <em>y</em> hours is 50<em>y</em> miles. The total distance is 70x + 50y = 240. Substituting x = 2 gives 70(2) + 50y = 240, or 140 + 50y = 240. Subtracting 140 from both sides gives 50y = 100. Dividing by 50 yields y = 2.</p>",
+  "templateId": "linear-equations-in-two-variables.A2.T2.medium"
+}

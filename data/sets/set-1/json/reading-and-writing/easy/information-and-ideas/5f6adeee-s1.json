@@ -1,0 +1,39 @@
+{
+  "questionId": "5f6adeee-s1",
+  "originalId": "5f6adeee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Marine biologists have generally believed that the diet of harbor seals consists mostly of small fish, but researchers studying a population of harbor seals in a northern coastal estuary claim that these seals can subsist on a diet of more crabs and other shellfish than fish.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Crabs in the estuary contain higher levels of certain trace minerals than the fish in the area contain.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Shellfish remains were detected more often than fish remains in an analysis of harbor seal scat collected in the area.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>When harbor seals in the area preyed on fish, they tended to prefer slower-swimming species like sculpins.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Unusually large populations of green crabs, an introduced species, were found in the estuary.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because analysis of scat showing shellfish remains more often than fish remains directly indicates the seals were eating more shellfish than fish, supporting the researchers&rsquo; claim.</p><p>Choice A is incorrect: mineral content is irrelevant to what the seals actually eat. Choice C is incorrect: it describes preferences when eating fish but doesn&rsquo;t show that shellfish dominated the diet. Choice D is incorrect: high crab populations alone don&rsquo;t show that seals were eating them.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

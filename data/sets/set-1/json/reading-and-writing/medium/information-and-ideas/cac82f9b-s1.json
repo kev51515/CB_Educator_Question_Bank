@@ -1,0 +1,25 @@
+{
+  "questionId": "cac82f9b-s1",
+  "originalId": "cac82f9b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T4.medium",
+  "stimulus": "<p>Microbiologist In&eacute;s Garc&iacute;a-Mart&iacute;n and colleagues sampled the naturally occurring fungal communities living on the bark and within the root tissue of wild <em>Quercus suber</em> (cork oak) trees. The researchers detected many of the same fungal genera both on the bark surface and inside the roots. To explain this, the researchers pointed to the cork oak&rsquo;s low, spreading canopy and noted that windblown soil particles could lift fungal spores onto the bark. Alternatively, they observed that decomposing leaf litter, which contains fungi shed from the canopy above, could be drawn down by rainfall into the rhizosphere where the roots grow. Either explanation suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>fungi that infect the bark are typically less beneficial to <em>Q. suber</em> than fungi found in the roots are.</p>"},
+    {"id": "b", "content": "<p>some fungi colonizing the bark and the roots may originate from the same source.</p>"},
+    {"id": "c", "content": "<p>most fungi found on cork oak bark must have been deposited by means other than wind.</p>"},
+    {"id": "d", "content": "<p>cork oak bark and roots are especially vulnerable to pathogenic fungi.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Both explanations imply that the fungi sampled on the bark and within the roots ultimately come from the same place: either wind moves soil-borne spores up to the bark, or rain moves canopy-shed fungi down to the roots. Either way, fungi in the two tissues share a common point of origin.</p><p>Choice A is incorrect because the text does not discuss the relative benefit of any fungi. Choice C is incorrect because one of the two explanations explicitly attributes bark fungi to wind, so &ldquo;means other than wind&rdquo; isn&rsquo;t supported. Choice D is incorrect because the text describes only &ldquo;naturally occurring&rdquo; fungi and never mentions pathogenicity.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

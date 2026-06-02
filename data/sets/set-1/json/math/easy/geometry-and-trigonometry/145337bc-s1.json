@@ -1,0 +1,39 @@
+{
+  "questionId": "145337bc-s1",
+  "originalId": "145337bc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the two acute angles each measure 45 degrees, the length of one leg is 15, and the length of the other leg is <em>x</em>. What is the value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>21</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A right triangle with two 45-degree acute angles is an isosceles right triangle, so its two legs have equal lengths. Therefore, x = 15.</p><p>Choice A is incorrect: 30 is twice the leg length.</p><p>Choice B is incorrect: 7.5 is half the leg length.</p><p>Choice D is incorrect: 21 is approximately the hypotenuse length, not the other leg.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A3.T6.easy"
+}

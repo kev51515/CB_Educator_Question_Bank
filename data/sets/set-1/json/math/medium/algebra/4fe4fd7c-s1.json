@@ -1,0 +1,22 @@
+{
+  "questionId": "4fe4fd7c-s1",
+  "originalId": "4fe4fd7c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A company's total cost C(x), in dollars, to produce <em>x</em> shirts is given by the function C(x) = mx + 200, where <em>m</em> is a constant. The total cost to produce 100 shirts is $800. What is the total cost, in dollars, to produce 1,000 shirts? (Disregard the dollar sign when entering your answer.)</p>",
+  "answerOptions": null,
+  "keys": [
+    "6200"
+  ],
+  "rationale": "<p>Use the given value C(100) = 800 to find m: 100m + 200 = 800, so 100m = 600 and m = 6. The cost function is C(x) = 6x + 200. Then C(1000) = 6(1000) + 200 = 6,200 dollars.</p>",
+  "templateId": "linear-functions.A1.T4.medium"
+}

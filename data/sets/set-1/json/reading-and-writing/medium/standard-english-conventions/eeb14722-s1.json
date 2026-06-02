@@ -1,0 +1,25 @@
+{
+  "questionId": "eeb14722-s1",
+  "originalId": "eeb14722",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T7.medium",
+  "stimulus": "<p>The score to Mira Nair&rsquo;s 2006 film <em>The Namesake</em> vividly captures the cultural negotiations that unfold when <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> (a Bengali couple raising their children in suburban New York) move between worlds. Featured throughout the film are pieces by Indian classical musicians Nitin Sawhney and Asha Bhosle alongside American jazz standards.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>its two leads</p>"},
+    {"id": "b", "content": "<p>it&rsquo;s two leads</p>"},
+    {"id": "c", "content": "<p>its two lead&rsquo;s</p>"},
+    {"id": "d", "content": "<p>it&rsquo;s two lead&rsquo;s</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The conventions being tested are the use of possessive determiners and the use of plural nouns. The singular possessive determiner \"its\"&mdash;which agrees in number with the singular noun phrase \"Mira Nair&rsquo;s 2006 film <em>The Namesake</em>\"&mdash;and the plural noun \"leads\" correctly indicate that the film has multiple lead characters.</p><p>Choice B is incorrect because \"it&rsquo;s\" is the contraction for \"it is,\" not a possessive determiner. Choice C is incorrect because the context requires the plural noun \"leads,\" not the singular possessive noun \"lead&rsquo;s.\" Choice D is incorrect because the context requires the possessive determiner \"its\" and the plural noun \"leads,\" not the contraction \"it&rsquo;s\" or the singular possessive \"lead&rsquo;s.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

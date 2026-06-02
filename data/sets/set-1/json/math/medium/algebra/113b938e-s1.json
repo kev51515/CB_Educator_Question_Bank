@@ -1,0 +1,39 @@
+{
+  "questionId": "113b938e-s1",
+  "originalId": "113b938e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The equation y = -3x + 24 represents the speed <em>y</em>, in feet per second, of Marcus's scooter <em>x</em> seconds after he applied the brakes at the end of a ride. If the equation is graphed in the <em>xy</em>-plane, which of the following is the best interpretation of the <em>x</em>-coordinate of the line's <em>x</em>-intercept in the context of the problem?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The speed of Marcus's scooter, in feet per second, before Marcus applied the brakes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of feet per second the speed of the scooter decreased each second after Marcus applied the brakes.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The number of feet Marcus's scooter traveled from the time he applied the brakes until the scooter stopped.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The number of seconds it took from the time Marcus began applying the brakes until the scooter came to a complete stop.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The x-intercept is where y = 0; in this context, y = 0 means the scooter has stopped. The x-coordinate of the x-intercept therefore represents the time (in seconds) from when the brakes were applied until the scooter came to rest. Choice A describes the y-intercept. Choice B describes the slope's magnitude. Choice C describes a distance, not a time.</p>",
+  "templateId": "linear-functions.A2.T3.medium"
+}

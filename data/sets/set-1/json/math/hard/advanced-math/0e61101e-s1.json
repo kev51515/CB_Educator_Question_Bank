@@ -1,0 +1,39 @@
+{
+  "questionId": "0e61101e-s1",
+  "originalId": "0e61101e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>x</i>) = 7(5)<sup><i>x</i></sup></p><p>The function <i>f</i> is defined by the given equation. If <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> + 3), which of the following equations defines the function <i>g</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>g</i>(<i>x</i>) = 21(5)<sup><i>x</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>g</i>(<i>x</i>) = 35(5)<sup><i>x</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>g</i>(<i>x</i>) = 875(5)<sup><i>x</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>g</i>(<i>x</i>) = 7(125)<sup><i>x</i></sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> + 3) = 7(5)<sup><i>x</i> + 3</sup> = 7&middot;5&sup3;&middot;5<sup><i>x</i></sup> = 7&middot;125&middot;5<sup><i>x</i></sup> = 875(5)<sup><i>x</i></sup>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A5.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5e63b9cf-s1",
+  "originalId": "5e63b9cf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A2.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph shows a paper airplane's height above the floor <i>y</i>, in inches, <i>x</i> seconds after it was thrown from a balcony. The graph is a parabola opening upward with vertex (5, 3) and passing through (0, 12). Which of the following is the best interpretation of the <i>y</i>-intercept of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The paper airplane's height was 0 inches above the floor 12 seconds after it was thrown.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The paper airplane's minimum height was 0 inches above the floor.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The paper airplane's minimum height was 12 inches above the floor.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The paper airplane's height was 12 inches above the floor when it was thrown.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The <i>y</i>-intercept of the graph is (0, 12), corresponding to <i>x</i> = 0 seconds. Since <i>x</i> represents the number of seconds after the plane was thrown, the <i>y</i>-intercept tells us the plane's height when it was thrown (12 inches).</p><p>Choices A, B, and C are incorrect; A swaps the coordinates, while B and C confuse the <i>y</i>-intercept with the minimum value of the function (which occurs at the vertex, not the <i>y</i>-intercept).</p>",
+  "generatedAt": "2026-05-26T00:23:37Z"
+}

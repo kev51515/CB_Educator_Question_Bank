@@ -1,0 +1,22 @@
+{
+  "questionId": "74d8b897-s1",
+  "originalId": "74d8b897",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>An angle has a measure of 7&pi;/15 radians. What is the measure of the angle, in degrees?</p>",
+  "answerOptions": [],
+  "keys": [
+    "84"
+  ],
+  "rationale": "<p>The correct answer is 84. To convert from radians to degrees, multiply by 180/&pi;. Multiplying (7&pi;/15) by (180/&pi;) yields (7 &times; 180)/15 = 1260/15 = 84. Therefore the angle measures 84 degrees.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "circles.A4.T9.medium"
+}

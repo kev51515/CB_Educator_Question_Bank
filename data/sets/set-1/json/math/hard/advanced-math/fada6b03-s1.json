@@ -1,0 +1,22 @@
+{
+  "questionId": "fada6b03-s1",
+  "originalId": "fada6b03",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3<i>x</i>&sup2; &minus; 18<i>x</i> &minus; 5 = 0</p><p>One solution to the given equation can be written as (18 &minus; &radic;<i>k</i>)/6, where <i>k</i> is a constant. What is the value of <i>k</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "384"
+  ],
+  "rationale": "<p>By the quadratic formula with <i>a</i> = 3, <i>b</i> = &minus;18, <i>c</i> = &minus;5: <i>x</i> = (18 &plusmn; &radic;(324 + 60))/6 = (18 &plusmn; &radic;384)/6. So <i>k</i> = 384.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

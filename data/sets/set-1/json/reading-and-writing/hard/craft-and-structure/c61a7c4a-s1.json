@@ -1,0 +1,39 @@
+{
+  "questionId": "c61a7c4a-s1",
+  "originalId": "c61a7c4a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Some studies have suggested that brief, controlled bursts of background noise can sharpen creative problem-solving, but we should not overstate this phenomenon. Consider, for instance, a 2017 study by Bo-Yeong Park and Hannah Voss in which participants worked on insight puzzles in silence, in a moderate-noise condition, and in a high-noise condition. Park and Voss expected that the moderate-noise group would solve the most puzzles, since some research suggests mild distraction can broaden attention. In the study, however, the moderate-noise group's mean number of solved puzzles was only marginally above that of the silent group, and well within the margin of statistical noise.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It discusses the study by Park and Voss to illustrate why caution is needed in making claims about the effects of background noise on cognition.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It argues that findings about background noise and cognition are often misunderstood by the public, as in the case of Park and Voss's study.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It explains a significant problem in the emerging understanding of background noise and how Park and Voss tried to solve that problem.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It presents the study by Park and Voss to critique the methods and results of earlier studies on noise and cognition.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The passage opens by warning against overstating the effect of background noise on creativity and then uses Park and Voss's study&mdash;in which the predicted advantage of moderate noise turned out to be statistically negligible&mdash;as an illustration of why such caution is warranted.</p><p>Choice B is incorrect because the text does not blame public misunderstanding; it cautions researchers themselves. Choice C is incorrect because the passage does not name a problem in the field that Park and Voss set out to solve. Choice D is incorrect because Park and Voss's methods are presented descriptively, not in critique of earlier work.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

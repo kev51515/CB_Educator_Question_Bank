@@ -1,0 +1,22 @@
+{
+  "questionId": "2a59eb45-s1",
+  "originalId": "2a59eb45",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Data set M consists of the lengths of 80 fish and has a mean of 22 centimeters. Data set N consists of the lengths of 40 fish and has a mean of 49 centimeters. Data set P consists of the lengths of all 120 fish from data sets M and N. What is the mean, in centimeters, of data set P?</p>",
+  "answerOptions": null,
+  "keys": [
+    "31"
+  ],
+  "rationale": "<p>Total length in M: 80 &middot; 22 = 1,760. Total length in N: 40 &middot; 49 = 1,960. Combined total: 1,760 + 1,960 = 3,720. Combined count: 120. Mean of P: 3,720 / 120 = 31.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T11.hard"
+}

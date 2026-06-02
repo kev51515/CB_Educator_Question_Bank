@@ -1,0 +1,39 @@
+{
+  "questionId": "a06c434d-s1",
+  "originalId": "a06c434d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The work of Cree composer Cris Derksen draws its power in part from the tension among her <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> influences: classical cello training, with its disciplined formality; contemporary electronic music, with its layered synthesizers and rhythmic loops; and traditional powwow drumming, with its communal vocals and ceremonial structure.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>complementary</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>interchangeable</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>obscure</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>dissimilar</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Dissimilar\" most logically completes the text. The colon lists three influences\u2014classical cello, electronic music, and powwow drumming\u2014that are quite different from one another, and the text says their tension fuels the work.</p><p>Choice A is incorrect. \"Complementary\" suggests the influences naturally fit together; the text says they generate tension, which implies they don't easily harmonize. Choice B is incorrect. \"Interchangeable\" suggests the influences are similar, contradicting the text. Choice C is incorrect. \"Obscure\" describes how well known something is, not how distinct the influences are from each other.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

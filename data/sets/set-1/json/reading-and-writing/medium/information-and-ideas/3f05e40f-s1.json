@@ -1,0 +1,25 @@
+{
+  "questionId": "3f05e40f-s1",
+  "originalId": "3f05e40f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>In much of his sculpture, artist Mateo Carrasco prefers suggestive forms over precise representation when evoking specific people or stories. In his early work <em>Daedalus Rising</em> (1971), Carrasco renders the inventor Daedalus by twisting and stacking aluminum sheets into a tall, winged figure that, while recognizably human, also resembles a half-finished machine. His large copper piece <em>The Singing River</em> (2018), which commemorates the poet Lucille Clifton, takes the form of curved, ribbon-like metal bands that read as flowing water rather than as a likeness of the poet herself.</p>",
+  "stem": "<p>Which choice best states the text's main idea about Carrasco?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>He has changed his approach to sculpture over the decades, and his recent works are more abstract than his earlier ones.</p>"},
+    {"id": "b", "content": "<p>He selects different metals for his sculptures depending on the type of subject he plans to portray.</p>"},
+    {"id": "c", "content": "<p>He frequently depicts the subjects of his sculptures in a style that avoids literal representation.</p>"},
+    {"id": "d", "content": "<p>He tends to base his sculptures on figures from real history rather than on mythical or literary characters.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it captures the main idea: Carrasco often portrays his subjects in a non-literal style. The text states that he prefers \"suggestive forms over precise representation,\" describes <em>Daedalus Rising</em> as resembling a half-finished machine, and describes <em>The Singing River</em> as reading like flowing water rather than as a likeness of Clifton.</p><p>Choice A is incorrect because the text does not compare Carrasco's earlier and later styles or claim a shift in his approach. Choice B is incorrect because the text mentions aluminum and copper without explaining why Carrasco chose them. Choice D is incorrect because the text features both a mythical figure (Daedalus) and a real person (Lucille Clifton), and it does not claim Carrasco favors one over the other.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

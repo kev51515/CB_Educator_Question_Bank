@@ -1,0 +1,39 @@
+{
+  "questionId": "967ef685-s1",
+  "originalId": "967ef685",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to 36<i>b</i>/<i>m</i> + 36<i>b</i><i>m</i>, where <i>m</i> &gt; 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72<i>b</i>/<i>m</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>36<i>b</i>(<i>m</i> + 1)/<i>m</i></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>36<i>b</i>(<i>m</i>&sup2; + 1)/<i>m</i></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>72<i>b</i><i>m</i>&sup2;/<i>m</i></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Write both terms over the common denominator <i>m</i>: 36<i>b</i>/<i>m</i> + 36<i>b</i><i>m</i> = 36<i>b</i>/<i>m</i> + 36<i>b</i><i>m</i>&sup2;/<i>m</i> = (36<i>b</i> + 36<i>b</i><i>m</i>&sup2;)/<i>m</i> = 36<i>b</i>(1 + <i>m</i>&sup2;)/<i>m</i>. The other choices result from incorrectly combining the terms.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A3.T8.hard"
+}

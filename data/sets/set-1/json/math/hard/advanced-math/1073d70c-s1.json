@@ -1,0 +1,39 @@
+{
+  "questionId": "1073d70c-s1",
+  "originalId": "1073d70c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>When a new video was first uploaded, it had 80 likes. An exponential model estimates that at the end of each hour after the upload, the number of likes had increased by 240% of the number at the start of that hour. Which of the following equations represents this model, where <i>L</i> is the estimated number of likes <i>t</i> hours after the upload and <i>t</i> &lt; 11?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>L</i> = 80(1.24)<sup><i>t</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>L</i> = 80(2.4)<sup><i>t</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>L</i> = 80(3.4)<sup><i>t</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>L</i> = 80(24)<sup><i>t</i></sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. If the number of likes increases by 240% each hour, the new total is 100% + 240% = 340% of the previous total. The growth factor is 3.4. So <i>L</i> = 80(3.4)<sup><i>t</i></sup>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

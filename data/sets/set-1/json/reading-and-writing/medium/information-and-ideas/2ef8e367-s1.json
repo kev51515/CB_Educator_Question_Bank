@@ -1,0 +1,25 @@
+{
+  "questionId": "2ef8e367-s1",
+  "originalId": "2ef8e367",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p>“Beyond the Window” is an 1872 poem by Lillian Hartwell. In the poem, Hartwell suggests that, although she has never met the person she is addressing, she nevertheless knows that person's hidden inner life intimately, writing, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from “Beyond the Window” most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“Your unspoken heart and your quiet years stand naked in my sight.”</p>"},
+    {"id": "b", "content": "<p>“Whoever you are, I lift this lamp toward you, that you may walk in its light.”</p>"},
+    {"id": "c", "content": "<p>“I should have crossed the threshold of your house in some far summer past.”</p>"},
+    {"id": "d", "content": "<p>“Whoever you are, I fear you wander where the morning never breaks.”</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most effectively illustrates the claim that Hartwell, although she has never met the addressee, nevertheless knows that person's hidden inner life intimately. The image of the addressee's “unspoken heart” and “quiet years” standing “naked” before the speaker's gaze directly portrays the speaker as having intimate, immediate access to inner aspects of another person's life—the very intimacy the claim describes.</p><p>Choice B is incorrect because it describes the speaker offering light to the addressee rather than perceiving the addressee's inner life. Choice C is incorrect because it expresses regret about a missed visit, not knowledge of the addressee's hidden inner life. Choice D is incorrect because it conveys fear about the addressee's circumstances rather than intimate knowledge of the addressee's interior life.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

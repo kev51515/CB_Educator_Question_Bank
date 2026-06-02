@@ -1,0 +1,39 @@
+{
+  "questionId": "b5972710-s1",
+  "originalId": "b5972710",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Argentina ratified the Convention on Biological Diversity, an international agreement with nearly 200 signing nations that aims to protect global biodiversity, on November 22, 1994. The United States, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> has yet to officially ratify the convention; it only signed it.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>specifically,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>for example,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>similarly,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>in contrast,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"In contrast\" logically signals that the information in this sentence&mdash;that the United States has yet to officially ratify the convention&mdash;contrasts with the previous information about Argentina having already ratified the convention.</p><p>Choice A is incorrect because \"specifically\" illogically signals that the sentence elaborates on the previous information about Argentina, but it discusses a different country. Choice B is incorrect because \"for example\" illogically signals that the United States exemplifies the previous information about ratification, when in fact it contrasts with it. Choice C is incorrect because \"similarly\" illogically signals similarity, when the two cases differ.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T1.easy"
+}

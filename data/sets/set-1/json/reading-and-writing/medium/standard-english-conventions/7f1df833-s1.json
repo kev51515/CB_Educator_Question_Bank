@@ -1,0 +1,25 @@
+{
+  "questionId": "7f1df833-s1",
+  "originalId": "7f1df833",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.medium",
+  "stimulus": "<p>In 1976, conductor Calvin Simmons became the first African American to lead a major US symphony orchestra. His expressive gestures shaping each crescendo and his habit of memorizing the entire score before the first rehearsal <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> elevate the Oakland Symphony's national profile during his five-year tenure.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>that helped</p>"},
+    {"id": "b", "content": "<p>, helping</p>"},
+    {"id": "c", "content": "<p>helped</p>"},
+    {"id": "d", "content": "<p>to help</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is finite verb use in a main clause. A main clause requires a finite verb to perform the action of the subject (in this case, Simmons's \"gestures\" and \"habit\"), and this choice supplies the finite past tense verb \"helped\" to indicate what Simmons's gestures and habit helped accomplish.</p><p>Choice A is incorrect because the relative clause \"that helped\" doesn't supply the main clause with a finite verb. Choice B is incorrect because the non-finite participle \"helping\" doesn't supply the main clause with a finite verb. Choice D is incorrect because the non-finite to-infinitive \"to help\" doesn't supply the main clause with a finite verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

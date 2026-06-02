@@ -1,0 +1,39 @@
+{
+  "questionId": "a2659088-s1",
+  "originalId": "a2659088",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right circular cylinder has a height of 6 meters (m) and a base with a radius of 10 m. What is the volume, in cubic meters, of the cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>60&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>360&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>600&pi;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The volume <i>V</i> of a right circular cylinder is given by <i>V</i> = &pi;<i>r</i>&sup2;<i>h</i>, where <i>r</i> is the radius of the circular base and <i>h</i> is the height. Substituting <i>r</i> = 10 and <i>h</i> = 6 yields <i>V</i> = &pi;(10)&sup2;(6) = &pi;(100)(6) = 600&pi; cubic meters.</p><p>Choice A results from adding the radius and the height (10 + 6) instead of using the formula. Choice B results from multiplying the radius and height without squaring the radius. Choice C results from using 2&pi;<i>rh</i> (the lateral surface area).</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "area-and-volume.A2.T2.medium"
+}

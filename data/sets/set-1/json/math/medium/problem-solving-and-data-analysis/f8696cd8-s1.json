@@ -1,0 +1,39 @@
+{
+  "questionId": "f8696cd8-s1",
+  "originalId": "f8696cd8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes the number of employees in the Engineering and Marketing departments of a company by their highest level of education completed.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th></th><th>Bachelor's</th><th>Master's</th><th>Doctorate</th><th>Total</th></tr></thead><tbody><tr><td>Engineering</td><td style=\"text-align: center;\">20</td><td style=\"text-align: center;\">15</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">40</td></tr><tr><td>Marketing</td><td style=\"text-align: center;\">25</td><td style=\"text-align: center;\">10</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">40</td></tr><tr><td>Total</td><td style=\"text-align: center;\">45</td><td style=\"text-align: center;\">25</td><td style=\"text-align: center;\">10</td><td style=\"text-align: center;\">80</td></tr></tbody></table></figure><p>A person from one of these departments is to be chosen at random. If the person chosen works in the Engineering department, what is the probability that the highest level of education the person completed is a master's degree?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15/80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15/25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15/40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25/80</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Conditioning on the chosen person being in Engineering means restricting attention to the 40 Engineering employees. Of those, 15 hold a master's degree, so the probability is 15/40 (equal to 3/8). Choice A is incorrect because 15/80 uses the total of 80 employees as the denominator. Choice B is incorrect because 15/25 is the probability that an employee with a master's degree is in Engineering. Choice D is incorrect because 25/80 is the overall probability of being in Engineering, ignoring education.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A3.T8.medium"
+}

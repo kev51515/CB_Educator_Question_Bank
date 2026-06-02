@@ -1,0 +1,25 @@
+{
+  "questionId": "a7c52fa4-s1",
+  "originalId": "a7c52fa4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Table: Mean Time (in Seconds) Spent per Inflorescence for Four Pollinator Genera Visiting Short-Style and Long-Style <em>Primula</em> Flowers. Columns: pollinator genus, seconds per intact short-style, seconds per damaged short-style, seconds per intact long-style, seconds per damaged long-style. Rows: <em>Bombus</em>—3.2, 5.1, 3.9, 6.0; <em>Anthidium</em>—2.4, 3.7, 3.5, 5.2; <em>Eristalis</em>—2.8, 2.6, 3.0, 4.8; <em>Vanessa</em>—2.1, 1.9, 3.4, 4.6.]</p>\n<p>Researchers Sofia Lindqvist and Tomás Reyes proposed that physical damage to <em>Primula</em> inflorescences (e.g., petal tears) alters how long pollinators linger at a flower, but in a way that depends jointly on the pollinator&rsquo;s genus and on the flower&rsquo;s style morph (short-style vs. long-style). In particular, they concluded from a 2024 study that floral damage increased the mean time spent per flower across pollinator genera for long-style <em>Primula</em>, but increased the mean time per flower in only some pollinator genera for short-style <em>Primula</em>.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Pollinators belonging to the genus <em>Eristalis</em> spent 2.8 seconds on intact short-style flowers and 3.0 seconds on intact long-style flowers.</p>"},
+    {"id": "b", "content": "<p>Compared with pollinators belonging to the genus <em>Anthidium</em>, pollinators belonging to the genus <em>Vanessa</em> spent less time on damaged short-style flowers.</p>"},
+    {"id": "c", "content": "<p>For long-style flowers, damage led to longer times per flower in all four pollinator genera, whereas for short-style flowers, damage led to longer times per flower only in <em>Bombus</em> and <em>Anthidium</em>.</p>"},
+    {"id": "d", "content": "<p>Damage led to shorter times per long-style flower in three pollinator genera (<em>Bombus</em>, <em>Anthidium</em>, and <em>Eristalis</em>), whereas it led to longer times per long-style flower in <em>Vanessa</em>.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it accurately characterizes the table data and matches both halves of the researchers&rsquo; conclusion. For long-style flowers, mean time increased with damage in all four genera (3.9→6.0, 3.5→5.2, 3.0→4.8, 3.4→4.6); for short-style flowers, time increased with damage only in <em>Bombus</em> (3.2→5.1) and <em>Anthidium</em> (2.4→3.7), while <em>Eristalis</em> (2.8→2.6) and <em>Vanessa</em> (2.1→1.9) showed slight decreases.</p><p>Choice A is incorrect because it merely reports two cell values and characterizes neither the role of damage nor the across-genus pattern. Choice B is incorrect because it compares two genera on a single condition and so does not bear on the joint genus-and-morph pattern in the conclusion. Choice D is incorrect because it misreads the table: damage did not lead to shorter times per long-style flower in those genera; long-style values rose under damage in all four genera.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

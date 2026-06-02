@@ -1,0 +1,25 @@
+{
+  "questionId": "940ff6f7-s1",
+  "originalId": "940ff6f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": "<p>Nigerian American artist Nnenna Okore is celebrated for her striking ______ Often spanning entire gallery walls and woven from burlap, dyed paper, and frayed rope, Okore&rsquo;s installations transform humble materials into shimmering, organic forms that suggest weathered landscapes and decaying foliage.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>textile sculptures and often</p>"},
+    {"id": "b", "content": "<p>textile sculptures.</p>"},
+    {"id": "c", "content": "<p>textile sculptures, often</p>"},
+    {"id": "d", "content": "<p>textile sculptures often</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The period correctly marks the boundary between one complete sentence (\"Nigerian&hellip;sculptures\") and another (\"Often&hellip;foliage\"). The supplementary participial phrase beginning with \"Often\" modifies the subject of the second sentence, \"Okore&rsquo;s installations.\"</p><p>Choice A is incorrect because, without a comma preceding it, \"and\" cannot join two independent clauses, and it would also misrepresent the relationship between the clauses. Choice C is incorrect because it produces a comma splice. Choice D is incorrect because it creates a run-on sentence with the two clauses fused.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

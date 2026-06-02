@@ -1,0 +1,22 @@
+{
+  "questionId": "a1fd2304-s1",
+  "originalId": "a1fd2304",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>How many liters of a 30% acid solution must be added to 4 liters of a 12% acid solution to obtain a 20% acid solution?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3.2"
+  ],
+  "rationale": "<p>Let x be the number of liters of the 30% solution added. The amount of acid is 0.30x + 0.12(4), and the total volume is x + 4. The mixture is 20% acid, so 0.30x + 0.48 = 0.20(x + 4) = 0.20x + 0.80. Solving: 0.10x = 0.32, so x = 3.2 liters.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.hard"
+}

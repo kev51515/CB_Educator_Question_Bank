@@ -1,0 +1,39 @@
+{
+  "questionId": "94f7c9e2-s1",
+  "originalId": "94f7c9e2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In right triangle <em>XYZ</em>, the right angle is at <em>Z</em>. The length of side <em>YZ</em> is 9, and <math><mi>tan</mi><mi>X</mi><mo>=</mo><mfrac><mn>9</mn><mn>40</mn></mfrac></math>. What is the perimeter of triangle <em>XYZ</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>58</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>98</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In right triangle XYZ with the right angle at Z, side YZ is opposite angle X and side XZ is adjacent to angle X. From tan X = YZ/XZ = 9/XZ = 9/40, it follows that XZ = 40. By the Pythagorean theorem, the hypotenuse XY = √(9² + 40²) = √(81 + 1600) = √1681 = 41. The perimeter is YZ + XZ + XY = 9 + 40 + 41 = 90.</p><p>Choice A (58) is 9 + 40 + 9, mistakenly reusing YZ as the hypotenuse. Choice B (120) is the perimeter scaled incorrectly. Choice D (98) adds a hypotenuse of 49 instead of 41 (treating 9 + 40 as the hypotenuse).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "right-triangles-and-trigonometry.A3.T5.hard"
+}

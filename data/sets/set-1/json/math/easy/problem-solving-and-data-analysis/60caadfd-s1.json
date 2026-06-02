@@ -1,0 +1,39 @@
+{
+  "questionId": "60caadfd-s1",
+  "originalId": "60caadfd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each mineral in a collection of 90 minerals was classified as quartz, feldspar, or mica, as shown in the frequency table.</p><table border=\"1\"><tr><th>Classification</th><th>Frequency</th></tr><tr><td>Quartz</td><td>12</td></tr><tr><td>Feldspar</td><td>40</td></tr><tr><td>Mica</td><td>38</td></tr></table><p>If one of these minerals is selected at random, what is the probability of selecting a mineral that is quartz?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12/38</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12/40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12/90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12/78</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The probability is the number of quartz minerals divided by the total: 12/90.</p><p>Choice A is incorrect; the denominator is the count of mica. Choice B is incorrect; the denominator is the count of feldspar. Choice D is incorrect; the denominator is the count of non-quartz minerals.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T2.easy"
+}

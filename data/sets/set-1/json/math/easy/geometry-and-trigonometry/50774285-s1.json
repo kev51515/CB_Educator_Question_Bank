@@ -1,0 +1,39 @@
+{
+  "questionId": "50774285-s1",
+  "originalId": "50774285",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each base of a right rectangular prism has a length of 15 inches and a width of 9 inches. The prism has a volume of 1,890 cubic inches. What is the height, in inches, of the prism?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>135</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>126</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The volume V of a rectangular prism is V = lwh. Substituting V = 1,890, l = 15, and w = 9 gives 1,890 = 135h. Dividing by 135 yields h = 14 inches.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A2.T1.easy"
+}

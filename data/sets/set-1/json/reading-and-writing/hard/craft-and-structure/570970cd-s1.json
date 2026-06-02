@@ -1,0 +1,39 @@
+{
+  "questionId": "570970cd-s1",
+  "originalId": "570970cd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1908 memoir by a Tlingit writer recalling how the women of the village preserved salmon during her childhood.</p>\n<p style='padding-left:1em;'>Now the women began to inspect the racks of fish set out in the morning sun&mdash;walking unhurriedly along the shore, knives in hand, and pressing a thumb just behind the gill to test the firmness of the flesh. <u>The salmon, like people, have their humors: some yielded readily under the touch and were carried to the smokehouse at once; others held tight and shining, scarcely changed from the moment they had been pulled from the river, and would need another half-day in the sun before they were ready.</u> The women spoke softly among themselves as they worked, and there was no haste in any of it.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It portrays the range of personalities among the women as they work.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It elaborates on a quality of the fish that the women are evaluating.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It foregrounds the beneficial relationship between humans and salmon.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It demonstrates how human behavior is shaped by the natural environment.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The sentence just before the underlined one describes the women pressing a thumb behind the gill \"to test the firmness of the flesh.\" The underlined sentence then elaborates on what that test reveals: some salmon yield easily and are ready for the smokehouse, while others remain firm and need more drying time. The function is to fill out the quality being assessed.</p><p>Choice A is incorrect because the comparison \"like people\" applies to the fish, not to the women. Choice C is incorrect because the focus is the women's evaluation of the catch rather than a broader relationship. Choice D is incorrect because no claim is made about the environment shaping human behavior.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.hard"
+}

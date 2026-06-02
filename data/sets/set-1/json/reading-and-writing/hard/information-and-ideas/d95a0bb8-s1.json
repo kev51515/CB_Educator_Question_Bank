@@ -1,0 +1,39 @@
+{
+  "questionId": "d95a0bb8-s1",
+  "originalId": "d95a0bb8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The ratio of dissolved oxygen to other gases in a body of water\u2014represented by a measure called the dissolved oxygen fraction\u2014influences a variety of marine biological phenomena, notably plankton productivity and the depth at which fish concentrate. For Europa, Jupiter's smallest Galilean moon, the in situ data that exist beneath the icy crust are too sparse and discrepant to fully constrain the range of the dissolved oxygen fraction at various depths within the subsurface ocean. Hiroshi Sato and colleagues point out that outputs of the EUR-SIM oceanographic model of Europa, which track closely to in situ measurements in some respects, reflect how the model's developers responded to this challenge: by prescribing a uniform dissolved oxygen fraction for the topmost level of the subsurface ocean. It is therefore important to note that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>inconsistencies across the model's simulations of Europa's plankton-analog productivity and fish-analog depth could be attributable to actual variations in the moon's dissolved oxygen fraction.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>further in situ measurements of Europa may clarify the moon's dissolved oxygen fraction sufficiently for the model to employ a single value rather than a range.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>some disagreements between the model's simulations of Europa's productivity and fish-analog depth and the moon's actual values are to be expected.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>even though the model's outputs sometimes agree with in situ data, Europa's real dissolved oxygen fraction is likely lower than the dissolved oxygen fraction used in the model.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text says that the dissolved oxygen fraction affects productivity and fish-analog depth and that in situ data on Europa are too sparse to constrain its range across depths. To work around this, the EUR-SIM model uses a uniform value at the topmost level of the ocean. Since the actual distribution of dissolved oxygen across the ocean is unlikely to be uniform, the model's simplified treatment will inevitably lead to some disagreements with observed values.</p><p>Choice A is incorrect because the model applies a single uniform value, so inconsistencies in its outputs cannot be attributable to actual variations in the dissolved oxygen fraction the model doesn't represent. Choice B is incorrect because the model already uses a single value, and the text implies the simplification understates real complexity, so a single value is not necessarily a goal. Choice D is incorrect because the text gives no indication of the direction in which the actual value differs from the model's value.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T6.hard"
+}

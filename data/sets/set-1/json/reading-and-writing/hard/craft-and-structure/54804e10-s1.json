@@ -1,0 +1,39 @@
+{
+  "questionId": "54804e10-s1",
+  "originalId": "54804e10",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Although researchers have long suspected that ancient Mediterranean civilizations exchanged building practices, concrete proof of such exchanges is hard to come by. However, recent fieldwork at a port settlement in Carthage uncovered a temple complex displaying striking <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Greek architecture—including a colonnade that closely mirrors examples from Corinth—providing tangible evidence of cultural exchange in parts of Carthage.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>resemblances to</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>antagonisms toward</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>precursors of</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>refinements of</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Resemblances to\" most logically completes the text. The temple complex shares features with Greek architecture (a colonnade mirroring Corinthian examples), so it displays resemblances to Greek architecture and constitutes evidence of cultural exchange.</p><p>Choice B is incorrect. \"Antagonisms toward\" would describe hostility, which the temple's mirroring of Greek forms contradicts. Choice C is incorrect. \"Precursors of\" would mean coming before Greek architecture, but the text describes the temple as influenced by, not predating, Greek styles. Choice D is incorrect. \"Refinements of\" would suggest improvements upon, but the text describes mirroring rather than improving.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

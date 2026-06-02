@@ -1,0 +1,39 @@
+{
+  "questionId": "1e7a1deb-s1",
+  "originalId": "1e7a1deb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If p = 6m + 9n and q = 11m \u2212 4n + 7, which expression is equivalent to p \u2212 q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22125m + 13n \u2212 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\u22125m + 13n + 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u22125m + 5n \u2212 7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u22125m + 5n + 7</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>p \u2212 q = (6m + 9n) \u2212 (11m \u2212 4n + 7) = 6m + 9n \u2212 11m + 4n \u2212 7 = (6m \u2212 11m) + (9n + 4n) \u2212 7 = \u22125m + 13n \u2212 7. Choice (a) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A1.T10.medium"
+}

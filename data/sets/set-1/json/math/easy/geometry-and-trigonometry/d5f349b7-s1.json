@@ -1,0 +1,39 @@
+{
+  "questionId": "d5f349b7-s1",
+  "originalId": "d5f349b7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Right triangles <em>DEF</em> and <em>GHI</em> are similar, where angle <em>D</em> corresponds to angle <em>G</em>. The angle at <em>F</em> in triangle <em>DEF</em> and the angle at <em>I</em> in triangle <em>GHI</em> are both right angles. If the measure of angle <em>E</em> is 27 degrees, what is the measure of angle <em>H</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>63 degrees</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>90 degrees</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>27 degrees</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>153 degrees</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In similar triangles, corresponding angles have equal measure. Because angle <em>D</em> corresponds to angle <em>G</em> and both <em>F</em> and <em>I</em> are right angles, angle <em>E</em> must correspond to angle <em>H</em>. Therefore, the measure of angle <em>H</em> is 27 degrees.</p><p>Choice A is incorrect: 63 is the third angle of the triangle, not angle <em>H</em>.</p><p>Choice B is incorrect: 90 is the right angle, not angle <em>H</em>.</p><p>Choice D is incorrect: 153 has no geometric meaning here.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.easy"
+}

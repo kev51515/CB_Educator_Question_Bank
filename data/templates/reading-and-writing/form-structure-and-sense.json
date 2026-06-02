@@ -1,0 +1,484 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Standard English Conventions",
+  "skill": "Form, Structure, and Sense",
+  "originals_count": 190,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Verb form and tense",
+      "description": "The student must choose the verb form (finite tense, participle, infinitive, gerund) that fits the sentence's grammatical slot and the surrounding time/aspect cues. The cognitive operation is selecting the correct conjugated form OR distinguishing finite from non-finite forms (participle, infinitive, gerund), without regard to subject-verb number agreement (A2's job).",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1's distractors vary in TENSE/MOOD/FINITENESS (e.g., 'used' vs 'using' vs 'to use' vs 'will use'), while A2's distractors vary in NUMBER (e.g., 'is' vs 'are', 'has' vs 'have') with a fixed tense. If the four options share the same person/number and differ in tense/form, it is A1.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Tense selection from time cues",
+          "description": "Stimulus contains explicit or implicit time anchors (dates, 'currently', 'by 2023', 'in the 1930s', 'will', historical narrative) and the four options are conjugated forms of one verb across tenses (simple past, present, future, present perfect, past perfect, etc.).",
+          "core_skill_demand": "Read the temporal context of the sentence, identify the time frame (single past event, ongoing present truth, completed-before-another-past-event, future), and pick the tense whose meaning matches.",
+          "example_originals": ["028752cd", "265e7f4c", "57998dd3", "52b61716", "588887b9", "674e59a3"],
+          "frequency": { "easy": 21, "medium": 5, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Explicit date or adverbial signal in same clause (e.g., 'during the 1930s', 'in 1613', 'currently')",
+                "Choice set spans obvious tense families: present / past / future / future-perfect — only one is plausible",
+                "No competing time frames in the stimulus"
+              ],
+              "example_stem": "During this time, dust storms ___ over 100 million acres of land.",
+              "example_ids": ["028752cd", "265e7f4c", "57998dd3", "52b61716", "35ae047d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Two competing time frames present (e.g., a past event and an even earlier past) requiring past-perfect vs simple-past discrimination",
+                "Time anchor is implicit (e.g., 'fifteen years earlier', 'By the time X happened') rather than a bare date"
+              ],
+              "example_stem": "Faure's design increased what the original battery, which Plante ___ fifteen years earlier, could hold.",
+              "example_ids": ["588887b9", "674e59a3", "1ee7b429", "4f2ff5f2", "db2e480a"]
+            },
+            "hard": {
+              "characteristics": [
+                "Time cue is buried across a long appositive or relative clause",
+                "Past-perfect or past-progressive required to mark sequencing in a multi-clause sentence with embedded modifiers"
+              ],
+              "example_stem": "Wataru Misaka ___ in World War II and won championships when he joined the Knicks, becoming the first non-white player.",
+              "example_ids": ["d46ac7e7"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A clearly identifiable time anchor (date, adverbial, or sequencing clause)",
+              "Four options that share subject-verb number (so number is not the issue) and differ only in tense/aspect",
+              "Exactly one tense whose meaning is consistent with the time anchor"
+            ],
+            "must_vary": [
+              "Subject content domain (science, history, arts, biography)",
+              "Which tense is correct (rotate through past, present, present-perfect, past-perfect)",
+              "Whether the time anchor is explicit (date) or implicit (sequencing clause)"
+            ],
+            "common_bugs": [
+              "Cloner introduces a number-agreement issue, turning the item into A2 (categorical drift)",
+              "Cloner adds a second time anchor that contradicts the intended answer",
+              "Cloner removes the time anchor entirely, leaving no way to discriminate tenses"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Finite vs non-finite form",
+          "description": "The blank sits in a structural slot whose grammaticality requires a particular form: a main verb (finite), an infinitive of purpose ('to X'), a participial modifier ('Xing' / 'Xed'), or a gerund. Distractors mix these forms.",
+          "core_skill_demand": "Diagnose the syntactic role of the blank (is it the main verb of a clause, a modifier on a preceding noun, an adverbial expressing purpose, etc.) and choose the form whose category fits — not just one that 'sounds okay'.",
+          "example_originals": ["29c9be28", "576b2c70", "4a90a978", "843f92af", "6d247c13", "898f182c"],
+          "frequency": { "easy": 16, "medium": 5, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Blank is obviously the main verb of a subject-verb sentence (only finite option fits)",
+                "Or blank follows a noun + comma where only a present-participial modifier fits ('Cave makes suits, ___ them carefully')",
+                "Choices include conspicuously non-finite forms (to-infinitive, gerund, present participle) alongside one finite verb"
+              ],
+              "example_stem": "embryos inside killifish eggs ___ a dormant state known as diapause.",
+              "example_ids": ["29c9be28", "576b2c70", "4a90a978", "59e41600", "5ad2a12c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Blank is in a participial-phrase position attached to a complex subject",
+                "Adverbial 'to + verb' (purpose) competes with finite forms",
+                "Subject is separated from the blank by an interrupting phrase, masking which slot is needed"
+              ],
+              "example_stem": "Featuring jagged peaks, Zhang Daqian's painting is inspired by a tradition ___ by blue and green pigments.",
+              "example_ids": ["7c766ceb", "f40b447c", "a30567fd", "b74f676f", "4f2ff5f2"]
+            },
+            "hard": {
+              "characteristics": [
+                "Sentence already contains a finite main verb elsewhere; the blank must be a non-finite modifier (-ing or -ed participle)",
+                "Long inserted appositive or relative clause hides the existing main verb",
+                "Choices include an attractive finite distractor that would create a comma splice / run-on"
+              ],
+              "example_stem": "Author Madeline L'Engle, ___ to create a suspenseful tone, begins her novel with descriptions of...",
+              "example_ids": ["61160f0a", "81f09e07", "3a1239d2", "aa443c4b", "a2816c7f", "c88ba1b7"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A clearly identifiable syntactic slot (main-verb slot vs participial-modifier slot vs purpose-infinitive slot)",
+              "Distractor set drawn from finite + at least two non-finite forms (-ing, -ed/past participle, to-infinitive)"
+            ],
+            "must_vary": [
+              "Which form (finite / -ing / -ed / to-infinitive) is correct",
+              "Whether the trap is a hidden main verb already present, or an absent main verb, or a non-restrictive modifier slot",
+              "Subject content domain"
+            ],
+            "common_bugs": [
+              "Cloner writes a stimulus that already has another finite verb, so the correct answer must be a participle — but then makes a finite option also grammatical (no longer a single best answer)",
+              "Cloner forgets the comma boundaries that signal a non-restrictive participial phrase",
+              "Cloner introduces a number-agreement conflict, drifting into A2"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Subject-verb agreement",
+      "description": "The student must select the verb whose NUMBER (and person) matches the grammatical subject, with the four options differing only in number/person ('is/are', 'has/have', 'was/were', 'serves/serve'). The cognitive operation is locating the actual subject across interrupting phrases and matching number.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that A2's distractors all share the same tense and differ only in number ('is' vs 'are', 'was' vs 'were'); if the choices vary in tense/form rather than only in number, it is A1. A2 differs from A3 in that A2's options are verbs while A3's are pronouns.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Agreement with simple/compound subject",
+          "description": "Subject is in clear position, possibly compound or a list, and the student matches verb number directly. Often the subject is plural by virtue of conjunction or naming several items.",
+          "core_skill_demand": "Identify the head noun(s) of the subject, determine singular vs plural, and pick the matching verb form.",
+          "example_originals": ["77bf77cd", "97df6650", "0aebdf5f", "e2759b92", "f339ee39", "d47bb0a4"],
+          "frequency": { "easy": 14, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Subject is a single concrete noun ('Farouk El-Baz', 'the village') or an obviously plural noun phrase",
+                "Subject adjacent to blank (≤3 words of separation)",
+                "Choices toggle is/was/are/were or has/have"
+              ],
+              "example_stem": "Farouk El-Baz, a geologist and space scientist, ___ part of the team.",
+              "example_ids": ["77bf77cd", "97df6650", "0aebdf5f", "e2759b92", "f339ee39"]
+            },
+            "medium": {
+              "characteristics": [
+                "Subject is compound or contains a list, and a short modifier separates it from the verb",
+                "One distractor would agree with a nearby non-subject noun"
+              ],
+              "example_stem": "The trefoil knot and the figure-eight knot, each with a crossing number below five, ___ among the simplest.",
+              "example_ids": ["28166dc6", "4c06427b"]
+            },
+            "hard": {
+              "characteristics": [
+                "Subject precedes verb but is plural-looking when actually singular (or vice versa) due to inverted order or post-modifier"
+              ],
+              "example_stem": "(see hard items)",
+              "example_ids": ["c91ef0f0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Four options that differ only in number (and possibly tense pairing within the same number contrast)",
+              "An unambiguous grammatical subject"
+            ],
+            "must_vary": [
+              "Whether the subject is singular or plural",
+              "Tense of the verb (past, present, perfect)"
+            ],
+            "common_bugs": [
+              "Cloner introduces tense variation across options, drifting into A1",
+              "Cloner places a more salient near-noun that matches the wrong option, but in fact two options become defensible"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Agreement across interrupting modifier",
+          "description": "An interrupting prepositional, participial, or relative clause sits between subject and verb, often containing a noun of the opposite number that lures the student to mismatch.",
+          "core_skill_demand": "Mentally bracket out the interrupter and match the verb to the true head noun of the subject; resist the proximate-noun trap.",
+          "example_originals": ["81ac953e", "83617355", "b8e13a74", "9994ae0d", "a75d5984", "0fe5ce68"],
+          "frequency": { "easy": 5, "medium": 5, "hard": 11 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Interrupter is a short appositive or one prepositional phrase",
+                "Head noun is obviously singular or plural"
+              ],
+              "example_stem": "The Arrhenius equation, named for its creator, ___ an important concept in modern chemistry.",
+              "example_ids": ["81ac953e", "83617355", "acf454af", "988c78eb", "f4fd123c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Interrupter is a long relative clause or stacked modifiers containing competing nouns",
+                "Subject head noun is abstract ('process', 'tool', 'language')"
+              ],
+              "example_stem": "Tracy Fullerton's Walden, a game, an unlikely fusion of writings with open-world video games, ___ players to explore...",
+              "example_ids": ["003f22c8", "ac7b8d04", "56315bd0", "b8e13a74", "97e7bedc"]
+            },
+            "hard": {
+              "characteristics": [
+                "Interrupter is multiple stacked clauses or a long appositive containing several plural nouns",
+                "Subject head is collective, abstract, or has a singular-looking plural form (each, every, one of)",
+                "Often features 'each one of', 'each X', 'the shape of each Y, like the shape of each Z, ___'"
+              ],
+              "example_stem": "the shape of each statue's ears, like the shape of each person's ears, ___ unique.",
+              "example_ids": ["0fe5ce68", "8a9d2f4e", "1c65db8f", "9994ae0d", "a75d5984", "b32eab9f", "ae439895", "b0fb36ad", "863065c7", "ea0aa676", "c91ef0f0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A real number conflict between the true subject and a noun inside the interrupter (the 'lure noun')",
+              "Four options that vary only in number/person",
+              "An interrupter that doesn't grammatically reassign the subject (no 'A along with B')"
+            ],
+            "must_vary": [
+              "Which side (true subject vs lure) is singular",
+              "Length and type of interrupter (appositive, relative clause, list)"
+            ],
+            "common_bugs": [
+              "Cloner places the lure noun adjacent to the verb but uses a structure that genuinely takes the lure as subject (e.g., a list or compound), making the 'wrong' option correct",
+              "Cloner makes the interrupter so short the lure has no force",
+              "Cloner inadvertently changes tense across options, drifting into A1"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Inverted-order / delayed-subject agreement",
+          "description": "Sentence uses inverted syntax — 'Among X are Y', 'Featured in Z is W', 'In the list ___ Y' — where the verb precedes its true subject, or the subject is a long phrase delayed by an opener.",
+          "core_skill_demand": "Recognize the inverted order, find the true subject (which appears after the verb or after a long fronted modifier), and match number.",
+          "example_originals": ["75f49353", "ecba68b5", "5fd86f4b"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["(rarely seen as easy in this bank)"], "example_stem": "—", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Standard 'Among X ___ Y' inversion with clearly singular or plural Y"
+              ],
+              "example_stem": "Among the clubs' leaders ___ Josephine St. Pierre Ruffin, founder of the Women's Era Club.",
+              "example_ids": ["75f49353"]
+            },
+            "hard": {
+              "characteristics": [
+                "Fronted modifier + inverted subject with embedded relative clauses",
+                "True subject is 'each one of X's Y', triggering singular despite plural neighbors"
+              ],
+              "example_stem": "each one of a ghazal's couplets, while adhering to patterns of rhyme and refrain, ___",
+              "example_ids": ["5fd86f4b", "ecba68b5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "True inversion (verb before subject, or subject after a long fronted phrase)",
+              "Four options differing only in number"
+            ],
+            "must_vary": ["Type of inversion ('Among X are Y', 'In X stands Y')"],
+            "common_bugs": [
+              "Cloner writes a normal SVO sentence and mislabels it as inversion",
+              "Cloner makes both options defensible by leaving subject number ambiguous"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Pronoun form, number, and case",
+      "description": "The student must choose the pronoun (or pronoun + possessive form) that matches its antecedent in number, person, and gender — or that fits the grammatical case (subject vs object vs possessive vs reflexive) of its slot. The cognitive operation is locating the antecedent and selecting the matching pronoun form.",
+      "boundary_with_other_aspects": "A3 differs from A2 in that A3's options are PRONOUNS or pronoun phrases ('it' vs 'they' vs 'one'; 'its' vs 'their' vs 'it's'), while A2's options are verbs. A3 differs from A4 in that A3 tests pronoun-antecedent fit at a fixed slot, while A4 tests where in the sentence a modifier (often introducing a noun-phrase subject) is placed.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Pronoun-antecedent agreement",
+          "description": "Stimulus contains a clear antecedent noun and the blank takes a personal pronoun (it / they / he / she / them / themselves). Distractors include wrong-number ('they' for a singular antecedent), wrong-form ('this/that/these/those' demonstrative), or shifted-person ('one', 'you') pronouns.",
+          "core_skill_demand": "Identify the antecedent (sometimes across a sentence boundary), determine its number/person/gender, and pick the pronoun whose features match.",
+          "example_originals": ["1448f43f", "166efaa2", "8df848c1", "97b62fab", "42cc9236", "fff4c7f4"],
+          "frequency": { "easy": 13, "medium": 4, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Antecedent is in the immediately preceding sentence and is a single concrete noun",
+                "Distractors include obvious wrong-number pronouns or non-matching demonstratives"
+              ],
+              "example_stem": "Multitask learning is another approach. ___ involves training computer models...",
+              "example_ids": ["1448f43f", "166efaa2", "8df848c1", "97b62fab", "fff4c7f4", "f0f9bf8f"]
+            },
+            "medium": {
+              "characteristics": [
+                "Antecedent is buried in earlier sentence or is a coordinated/collective noun",
+                "One distractor matches a nearby but wrong noun"
+              ],
+              "example_stem": "The North Atlantic Gyre... interference from landmasses causes ___ to swirl into a churning whirlpool.",
+              "example_ids": ["9eb43963", "b85c19ed", "c52652c9", "36944347"]
+            },
+            "hard": {
+              "characteristics": [
+                "Antecedent is a singular noun that 'feels' plural (a country, organization, species, market) or vice versa",
+                "Distractors include reasonable-sounding shifted-person pronouns ('they', 'one') with a singular antecedent"
+              ],
+              "example_stem": "When a given industry carries high start-up costs, ___ often consists of just one or two suppliers per municipality.",
+              "example_ids": ["908a76b8", "18382e67", "3bceeb93", "872a002e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A single unambiguous antecedent identifiable from the stimulus",
+              "Pronoun choices that genuinely differ in number/person/case (not just style)",
+              "Exactly one pronoun whose features match the antecedent"
+            ],
+            "must_vary": [
+              "Antecedent type (concrete noun, organization, species, abstract concept)",
+              "Distance between antecedent and pronoun (same clause vs prior sentence)"
+            ],
+            "common_bugs": [
+              "Cloner introduces two competing antecedents, making more than one option defensible",
+              "Cloner uses a collective noun (committee, team) where both singular and plural would be acceptable",
+              "Cloner mixes verb-form variation into the pronoun options, drifting toward A1/A2"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Possessive pronoun vs contraction (its/it's, their/they're/there)",
+          "description": "Distractors contrast the possessive determiner form against the contraction (its/it's, their/they're/there, whose/who's). Sometimes paired with another formality (number of antecedent).",
+          "core_skill_demand": "Distinguish possessive determiners from sound-alike contractions and choose the form whose meaning matches the slot.",
+          "example_originals": ["430d929a", "b7363ba2", "0bcb4417", "eeb14722", "d4f173ec", "3bceeb93"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Antecedent obvious, slot clearly takes a possessive ('___ findings', '___ wings')",
+                "Distractors include the obvious contraction error"
+              ],
+              "example_stem": "Watson and Crick... ___ findings were based on an X-ray image.",
+              "example_ids": ["430d929a", "b7363ba2"]
+            },
+            "medium": {
+              "characteristics": [
+                "Combined possessive-and-number test (its vs their as well as its/it's)",
+                "Antecedent is a collective or abstract noun"
+              ],
+              "example_stem": "With ___ eight panels stitched together, the poems present viewers with...",
+              "example_ids": ["0bcb4417", "eeb14722"]
+            },
+            "hard": {
+              "characteristics": [
+                "Four-way contrast across its / it's / their / they're with a moderately complex antecedent",
+                "Pronoun follows a fronted modifier that masks which noun is the antecedent"
+              ],
+              "example_stem": "The animal, which lays eggs but also nurses ___ young with milk, has since been classified...",
+              "example_ids": ["3bceeb93", "18382e67"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A real possessive slot (followed by a noun the pronoun modifies)",
+              "At least one contraction and one possessive among the choices",
+              "An antecedent of one specific number"
+            ],
+            "must_vary": [
+              "Singular vs plural antecedent",
+              "Whether 'there' (locative) is included as a distractor (vs only its/it's)"
+            ],
+            "common_bugs": [
+              "Cloner makes both 'its' and 'their' grammatical because the antecedent is ambiguous in number",
+              "Cloner uses a sentence where the slot could take either a possessive or a contraction, e.g., '___ a great day'"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Apostrophe / possessive noun form",
+          "description": "Stimulus tests the orthography of possessive and plural noun forms: singular possessive ('Austen's'), plural noun ('musicians'), plural possessive ('musicians''), and double / mismatched apostrophes ('peoples story's', 'musician's audience's'). Distractors are four spellings of essentially the same phrase.",
+          "core_skill_demand": "Determine, for each noun in the phrase, whether it is meant as plural, singular possessive, or plural possessive, then select the option whose apostrophes are placed accordingly.",
+          "example_originals": ["15d6d837", "1d971f75", "60a4c088", "6bc907c9", "775f3eb9", "b260c65a", "4c335aea"],
+          "frequency": { "easy": 8, "medium": 6, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Two-noun phrase, one of which is clearly plural and the other clearly singular possessive ('the Moon's gravitational pull')",
+                "Distractors include conspicuous double-apostrophe errors"
+              ],
+              "example_stem": "Earth bulges out due to the ___ gravitational pull (Moon's vs Moons vs Moons').",
+              "example_ids": ["15d6d837", "1d971f75", "6bc907c9", "b260c65a", "60a4c088", "775f3eb9", "b7363ba2", "856b495d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Two-noun phrase, one possessive nested inside another ('novel's protagonist' vs 'novels' protagonist's')",
+                "Both nouns ambiguous in number/possessive role"
+              ],
+              "example_stem": "composed of ___ protagonist, fifteen-year-old Xiomara Batista (poems-novel's vs poem's-novels').",
+              "example_ids": ["2c49940e", "20ea68b7", "8d53e7a0", "9f737b2a", "819c443d", "d2cf0e11", "dd428136"]
+            },
+            "hard": {
+              "characteristics": [
+                "Possessive of a regular plural ('objects'') vs singular possessive ('object's') in a phrase where the meaning forces one reading",
+                "Possessive applied to a coordinated pair ('rock's and rap's')",
+                "Phrase mixes possessive with relative-clause modifier, blurring number"
+              ],
+              "example_stem": "from 1970 to 2020, ___ chorus-to-verse ratios trended upward (rock's and rap's vs rocks and raps).",
+              "example_ids": ["4c335aea", "2784cbaf", "1a61e2ae", "d222f7d9"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one apostrophe placement that yields the intended meaning",
+              "Four orthographically distinct options that all share the same word stems",
+              "A sentence whose meaning forces a particular plural/possessive reading"
+            ],
+            "must_vary": [
+              "Whether the head noun is singular possessive, plural, or plural possessive",
+              "Whether a nested possessive is involved"
+            ],
+            "common_bugs": [
+              "Cloner writes options that are not all spellings of the same phrase (e.g., differ in word order)",
+              "Cloner picks a phrase whose meaning would accept two of the spellings (e.g., 'the artist's work' vs 'the artists' work' both make sense)",
+              "Cloner forgets to make plural-possessive an option, leaving only single-word changes"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Modifier placement / dangling-modifier resolution",
+      "description": "Stimulus opens with (or contains) a participial, prepositional, or appositive modifier and the four options are alternative MAIN CLAUSES whose subject either does or does not match what the modifier describes. The cognitive operation is matching the modifier's logical subject to the syntactic subject of the main clause that follows.",
+      "boundary_with_other_aspects": "A4 differs from the other aspects in that the choices are full clauses rewriting the main predicate's subject and structure, not single words or short phrases. If the four options differ only in pronoun, verb, or apostrophe — that is A1/A2/A3. If they differ in WHO/WHAT does the action (rephrasing the main clause's subject), it is A4.",
+      "types": [
+        {
+          "id": "T9",
+          "name": "Dangling participle / appositive resolution",
+          "description": "Sentence begins with (or pivots on) a modifying phrase — '-ing' participle, '-ed' participle, appositive, or 'Compared to...' — and the four choices are rewordings of the main clause. Only one choice supplies a subject that the modifier can sensibly describe.",
+          "core_skill_demand": "Determine what the introductory or trailing modifier logically describes (its implicit subject), then pick the main clause whose explicit subject is that same entity.",
+          "example_originals": ["1684b237", "59209b6d", "684b8bd2", "6f08641e", "c437dd53", "cd2443c0"],
+          "frequency": { "easy": 1, "medium": 8, "hard": 14 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Short fronted appositive ('One of the few... explorers, ___')",
+                "Three distractors obviously assign a non-human subject"
+              ],
+              "example_stem": "One of the few African American global explorers..., ___ (Henson made treks).",
+              "example_ids": ["1684b237"]
+            },
+            "medium": {
+              "characteristics": [
+                "Longer fronted participial phrase or 'In context of X, ___'",
+                "Distractors include passive constructions and inverted constructions that subtly mis-anchor the subject"
+              ],
+              "example_stem": "Far from being modern inventions, ___ more than 5,000 years ago (drinking straws were used by Sumerians).",
+              "example_ids": ["59209b6d", "684b8bd2", "6f08641e", "c437dd53", "cd2443c0", "96a904c5", "f1c5157d", "dd6a0326"]
+            },
+            "hard": {
+              "characteristics": [
+                "Fronted modifier is long, multi-clause, or trailing comparative ('Compared to that of...')",
+                "Several distractors are grammatically clean sentences but assign the wrong logical subject",
+                "Requires recognizing that an abstract entity (a finding, a hypothesis, a quality) must be the new subject — not a person or a tool"
+              ],
+              "example_stem": "Supported by biochemical analyses of skeletons, ___ (findings from a 2022 study suggested vegetables and grains were primary).",
+              "example_ids": ["2bca654a", "2dd1b8bf", "37e5c794", "5b8f9cf2", "8b017d4e", "9df6da04", "a14eef71", "b369d54c", "d2b81427", "dab8b8ee", "dfbf5d33", "ea0aa676", "fced396a", "f0864217", "e060dd6b", "188f7e3c", "2b6e1c06", "772835db"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A fronted (or otherwise positioned) modifying phrase whose logical subject is unambiguous",
+              "Four options that are full clauses (or near-full clauses) differing in their grammatical subject",
+              "Exactly one option whose subject matches the modifier's logical subject"
+            ],
+            "must_vary": [
+              "Type of modifier (-ing participle, -ed participle, appositive, comparative 'compared to')",
+              "Whether the correct subject is human (a researcher) or a thing (a finding, a study, an organism)",
+              "Length/complexity of the modifier"
+            ],
+            "common_bugs": [
+              "Cloner writes three distractors with subjects that COULD plausibly do the modifier's action (e.g., the modifier 'Working with X' could describe two of the four subjects)",
+              "Cloner reduces the modifier to a short adjective phrase that no longer has an implicit subject, so the dangling problem disappears",
+              "Cloner produces a 'best' answer that is itself awkward or has a subject mismatch (no clean correct option)"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Every original in this bank is a 4-option MCQ whose stem is invariant: 'Which choice completes the text so that it conforms to the conventions of Standard English?' Difficulty rises primarily by (1) increasing distance between the controlling element (subject, antecedent, modifier) and the blank, (2) adding interrupting modifiers that introduce a competing noun of the opposite number, (3) shifting from concrete to abstract or collective subjects, and (4) introducing multiple time anchors or multiple plausible subjects. The Hard set is dominated by T4 (interrupter-blocked subject-verb agreement) and T9 (dangling-modifier resolution at full-clause scale); Easy is dominated by T1, T3, T6, and T8. Aspects A1-A4 are mutually exclusive at the question level: a single original tests verb-form OR number OR pronoun OR modifier-subject, never two simultaneously, because the four options always vary along only one dimension."
+}

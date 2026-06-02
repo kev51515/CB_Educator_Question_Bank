@@ -1,0 +1,39 @@
+{
+  "questionId": "493c46bc-s1",
+  "originalId": "493c46bc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In parts of Southeast Asia, long-tailed macaques use two different kinds of stone tools. One tool is precise: the macaques select and shape a small, rounded stone that fits well in the hand. The other tool is rough: the macaques pick up any nearby stone of roughly the right size without modifying it. The shaped stone is harder to find and prepare but is much better than the rough stone at cracking open hard shellfish. While observing the macaques, primatologist Maya Iyer noticed that they carry the shaped stones in their cheek pouches or place them in secure rock crevices when not in use. The macaques don't behave the same way with the rough stones. This suggests to Iyer that the ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>macaques prefer to share their shaped stone tools but don't share the rough stones.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>shaped stone tools are easier for most of the macaques to grip than the rough stones.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>shaped stone tools are more valuable to the macaques than the rough stones are.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>macaques realize that both kinds of stones are less effective than their teeth at cracking shellfish.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The shaped stones are harder to make and more effective, and the macaques actively protect them by storing them carefully \u2014 both signs that the macaques treat these stones as more valuable.</p><p>Choice A is unsupported: the text doesn't mention sharing. Choice B speculates about ease of grip, which is not in the text. Choice D contradicts the text \u2014 the macaques rely on the tools, not their teeth.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T10.easy"
+}

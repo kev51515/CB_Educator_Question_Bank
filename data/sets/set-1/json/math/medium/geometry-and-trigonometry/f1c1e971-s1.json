@@ -1,0 +1,39 @@
+{
+  "questionId": "f1c1e971-s1",
+  "originalId": "f1c1e971",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The measure of angle <em>X</em> is 3&pi;/4 radians. The measure of angle <em>Y</em> is &pi;/6 radians greater than the measure of angle <em>X</em>. What is the measure of angle <em>Y</em>, in degrees?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>135</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>165</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The measure of angle Y in radians is 3&pi;/4 + &pi;/6. Using a common denominator: 9&pi;/12 + 2&pi;/12 = 11&pi;/12 radians. To convert to degrees, multiply by 180/&pi;: (11&pi;/12)(180/&pi;) = 11 &middot; 15 = 165 degrees. Choices A, B, and C are incorrect and result from arithmetic or unit-conversion errors.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A4.T9.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d4732483-s1",
+  "originalId": "d4732483",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Examining artifacts from an early twentieth-century cannery and adjacent boarding-house site in coastal Washington, archaeologist Mei-Lin Reyes documented that Japanese American women employed in the salmon-canning lines wore custom-sewn cotton tunics with concealed waist ties that produced a silhouette resembling the slim, belted dresses then in fashion in nearby Seattle&mdash;a silhouette normally achieved by garments far less practical for cannery work. Reyes argues that this sartorial choice shows that these women aspired to participate in mainstream urban fashion even as their daily labor demanded garments that could endure brine, knives, and long shifts on slick floors.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To describe an unexpected discovery that changed a researcher's view of how rapidly fashion trends spread in early twentieth-century Washington.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To summarize the findings of a study that explored factors influencing a fashion practice among Japanese American cannery workers in early twentieth-century Washington.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To evaluate a scholarly work that offers explanations for the impact of urban fashion ideals on Asian American workers nationwide.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To discuss research that investigated the ways in which Japanese American cannery workers used clothing to resist traditional gender roles.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text summarizes a single archaeological study: Reyes examines a specific site, identifies a sartorial practice (concealed waist ties producing a fashionable silhouette), and offers her interpretation of why these workers wore them. The main purpose is to report what shaped that fashion practice.</p><p>Choice A is incorrect because nothing in the text indicates that the finding overturned Reyes's prior view. Choice C is incorrect because the focus is one specific group at one specific site, not a generalizing evaluation. Choice D is incorrect because Reyes characterizes the practice as aspirational engagement with mainstream fashion, not as resistance to gender roles.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "69f6717f-s1",
+  "originalId": "69f6717f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A sample of maple has a density of 642 kilograms per cubic meter. The sample is in the shape of a cube, where each edge has a length of 0.85 meters. To the nearest whole number, what is the mass, in kilograms, of this sample?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>327</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>394</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>464</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>546</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The volume of the cube is (0.85 m)<sup>3</sup> = 0.614125 cubic meters. Mass = density \u00d7 volume = 642 \u00d7 0.614125 \u2248 394.27 kg, which rounds to 394. Choice (b) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard"
+}

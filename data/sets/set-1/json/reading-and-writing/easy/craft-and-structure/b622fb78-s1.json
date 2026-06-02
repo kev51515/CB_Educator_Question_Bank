@@ -1,0 +1,39 @@
+{
+  "questionId": "b622fb78-s1",
+  "originalId": "b622fb78",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a fictional 1908 short story. Sky-Walker, a young Cree guide, is leading a group of fur traders through a forest and suspects that they are being followed. He paused near a stream, kneeling to examine the soft mud, and at once noticed a faint <u>trace</u> of a moccasin print pressed into the earth.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;trace&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Blemish</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Amount</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Sketch</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Sign</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because, in context, a faint moccasin print pressed into the mud is a sign or piece of evidence of someone’s presence. Choice A is incorrect because a blemish suggests a flaw, not a clue. Choice B is incorrect because the text doesn’t describe a quantity. Choice C is incorrect because sketch implies a deliberate drawing, not an unintentional mark.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

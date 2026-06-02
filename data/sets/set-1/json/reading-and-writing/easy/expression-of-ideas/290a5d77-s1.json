@@ -1,0 +1,25 @@
+{
+  "questionId": "290a5d77-s1",
+  "originalId": "290a5d77",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Mitochondria are organelles that are part of a cell's energy production system. These organelles help generate the chemical energy a cell uses to power its functions. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they help regulate signaling pathways that determine when a cell should grow or die.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Additionally,</p>"},
+    {"id": "b", "content": "<p>Previously,</p>"},
+    {"id": "c", "content": "<p>In conclusion,</p>"},
+    {"id": "d", "content": "<p>Instead,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Additionally\" logically signals that mitochondria's role in regulating signaling pathways is an additional function of these organelles that is separate from the function of generating chemical energy.</p><p>Choice B is incorrect because \"previously\" illogically signals a chronological sequence. Instead, regulating signaling pathways is an additional function of mitochondria. Choice C is incorrect because \"in conclusion\" illogically signals that this sentence summarizes the previous information. Instead, this is one of two distinct functions of mitochondria. Choice D is incorrect because \"instead\" illogically signals that this activity happens in place of generating energy. Rather, regulating signaling is an additional function.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T10.easy"
+}

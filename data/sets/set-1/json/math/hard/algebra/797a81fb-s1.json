@@ -1,0 +1,39 @@
+{
+  "questionId": "797a81fb-s1",
+  "originalId": "797a81fb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>10</mn><mi>x</mi><mo>-</mo><mn>8</mn><mi>y</mi><mo>=</mo><mn>24</mn></math></p>\n<p style=\"text-align: center;\"><math><mo>-</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>=</mo><mo>-</mo><mn>16</mn></math></p>\n<p>How many solutions does the given system of equations have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Infinitely many</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Exactly two</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Dividing the first equation by 2 gives 5x - 4y = 12. Multiplying the second equation by -1 gives 5x - 4y = 16. The two equations have the same left side but different right sides, so the lines are parallel and distinct. The system has zero solutions.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard"
+}

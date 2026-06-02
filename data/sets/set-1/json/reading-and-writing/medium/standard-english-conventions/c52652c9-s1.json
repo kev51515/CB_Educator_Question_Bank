@@ -1,0 +1,25 @@
+{
+  "questionId": "c52652c9-s1",
+  "originalId": "c52652c9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T6.medium",
+  "stimulus": "<p>The honeybee colony is wired to coordinate large groups of workers&mdash;so much so that, through a process called swarm intelligence, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can solve problems such as nest selection, foraging routes, and temperature regulation without any central direction. Researcher Thomas Seeley has devoted his career to understanding this remarkable phenomenon.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>she</p>"},
+    {"id": "b", "content": "<p>they</p>"},
+    {"id": "c", "content": "<p>those</p>"},
+    {"id": "d", "content": "<p>it</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"It\" is a singular pronoun used to stand in for objects or collective entities. Since the antecedent here is the singular noun phrase \"the honeybee colony,\" \"it\" is the appropriate pronoun.</p><p>Choice A is incorrect. Although \"she\" is a singular pronoun, it is reserved for people and specific animals, not for a collective entity like \"the honeybee colony.\" Choice B is incorrect. \"They\" is a plural pronoun, but we need a singular pronoun to represent the antecedent \"the honeybee colony.\" Choice C is incorrect. \"Those\" is a plural pronoun, but we need a singular pronoun to represent the antecedent \"the honeybee colony.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

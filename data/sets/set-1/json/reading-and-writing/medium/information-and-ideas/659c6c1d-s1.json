@@ -1,0 +1,39 @@
+{
+  "questionId": "659c6c1d-s1",
+  "originalId": "659c6c1d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a short story published in 1899. Margaret is a schoolteacher who keeps a private notebook of poems she has written.</p><p>Each evening, after the last of her pupils had gone, Margaret would close the schoolhouse door and draw out the small black notebook she kept locked in her desk. At first her landlady, Mrs. Whittle, had thought it was the natural shyness of a young woman wanting an hour to herself. But as the weeks passed, Mrs. Whittle noticed something stranger: Margaret would push the notebook hastily beneath a stack of arithmetic papers whenever anyone approached, and once, when a visitor from the parish board called unannounced, Margaret turned quite pale before she could greet him. It was not the company of others that Margaret wished to avoid; it was that any one of them might discover what she wrote.</p>",
+  "stem": "<p>According to the text, why does Margaret regularly hide her notebook?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She is shy and prefers to spend time alone in the schoolhouse.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She is worried that the parish board will find out she has been writing during school hours.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She does not want anyone to discover the contents of what she has written.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She thinks Mrs. Whittle is likely to read the notebook without permission.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The narrator tells us that, although Mrs. Whittle initially attributed Margaret\u2019s behavior to shyness, it later became clear that Margaret was specifically afraid that someone would discover \u201cwhat she wrote.\u201d The final sentence states this explicitly.</p><p>Choice A is incorrect because the text directly rules out shyness: \u201cIt was not the company of others that Margaret wished to avoid.\u201d Choice B is incorrect because the text never connects her secrecy to school hours or board policy. Choice D is incorrect because the text doesn\u2019t single out Mrs. Whittle as the suspected reader; Margaret hides the notebook from anyone who approaches.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "central-ideas-and-details.A2.T5.medium"
+}

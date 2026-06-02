@@ -1,0 +1,39 @@
+{
+  "questionId": "55df0275-s1",
+  "originalId": "55df0275",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Dissolution rate (%) of selected minerals in glacial meltwater, by glacier flow speed</strong></p><table border=\"1\"><thead><tr><th>Mineral</th><th>SLW (slow)</th><th>MOD (slow)</th><th>FAS (fast)</th><th>EXP (fast)</th></tr></thead><tbody><tr><td>Calcite</td><td>22%</td><td>26%</td><td>84%</td><td>91%</td></tr><tr><td>Gypsum</td><td>31%</td><td>33%</td><td>72%</td><td>88%</td></tr><tr><td>Dolomite</td><td>17%</td><td>20%</td><td>65%</td><td>78%</td></tr></tbody></table><p>Researchers measuring chemical weathering in alpine catchments classified glacial meltwater by flow speed into four categories: SLW and MOD (both slow) and FAS and EXP (both fast). For any given mineral, the dissolution rate in slow-flowing SLW or MOD water was lower than the dissolution rate for that same mineral in faster-flowing FAS or EXP water. For instance, the dissolution rate of calcite in MOD meltwater was 26% while ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the dissolution rate of dolomite in FAS meltwater was 65%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the dissolution rate of calcite in SLW meltwater was 22%.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the dissolution rate of gypsum in EXP meltwater was 88%.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the dissolution rate of calcite in FAS meltwater was 84%.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The example sets up a comparison for one mineral (calcite) between a slow-flowing category and a fast-flowing one. The first half cites calcite in MOD (slow) at 26%; to illustrate the slow-vs.-fast pattern, the second half must give calcite in either FAS or EXP. The table shows calcite in FAS at 84%, much higher than 26%, which neatly illustrates the pattern.</p><p>Choice A is incorrect: it switches to a different mineral (dolomite), so it doesn't continue the comparison for calcite. Choice B is incorrect: it compares two slow-flow categories (MOD and SLW)\u2014the example needs a slow-vs.-fast contrast. Choice C is incorrect: it switches to a different mineral (gypsum), so it doesn't complete the calcite example.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

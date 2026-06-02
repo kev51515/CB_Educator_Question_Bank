@@ -1,0 +1,39 @@
+{
+  "questionId": "9c0a0eca-s1",
+  "originalId": "9c0a0eca",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A triangle has a base length of 8 centimeters and a corresponding height of 24 centimeters. What is the area, in square centimeters, of the triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>192</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>96</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The area A of a triangle is A = (1/2)bh, where b is the base length and h is the corresponding height. Substituting b = 8 and h = 24 yields A = (1/2)(8)(24) = 96. Therefore the area of the triangle is 96 square centimeters. Choice A is incorrect; it is the product of the base and the height (not divided by 2). Choices B and C are incorrect and result from conceptual or computation errors.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T2.medium"
+}

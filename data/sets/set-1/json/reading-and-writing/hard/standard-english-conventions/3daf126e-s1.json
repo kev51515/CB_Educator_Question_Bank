@@ -1,0 +1,25 @@
+{
+  "questionId": "3daf126e-s1",
+  "originalId": "3daf126e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>A simulation developed by ecologist Hana Park projects that the rate of pollination—the rate at which pollen is transferred between flowers—in a meadow situated approximately 8 kilometers from the nearest forest edge ______ roughly double the rate of pollination in a meadow only 800 meters from the forest edge.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>will be</p>"},
+    {"id": "b", "content": "<p>being</p>"},
+    {"id": "c", "content": "<p>to be</p>"},
+    {"id": "d", "content": "<p>to have been</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is finite and nonfinite verb forms within a sentence. Relative clauses, such as the one beginning with \"that,\" require a finite verb to serve as the main verb of the clause. This choice correctly supplies the clause with the finite future tense verb \"will be.\"</p><p>Choice B is incorrect because the nonfinite participle \"being\" does not supply the clause with a finite verb. Choice C is incorrect because the nonfinite to-infinitive \"to be\" does not supply the clause with a finite verb. Choice D is incorrect because the nonfinite to-infinitive \"to have been\" does not supply the clause with a finite verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.hard"
+}

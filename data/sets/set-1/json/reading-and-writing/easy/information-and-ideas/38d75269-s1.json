@@ -1,0 +1,39 @@
+{
+  "questionId": "38d75269-s1",
+  "originalId": "38d75269",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Maya Lin is a sculptor and environmental artist. She has created site-specific installations in parks and museums around the world. Lin often works with natural materials such as wood, stone, and water. <u>However, although her installations appear quiet and contemplative, they are also built to last through years of outdoor weather.</u></p><p>Which quotation from an article about Lin&rsquo;s work would best illustrate the underlined claim?</p>",
+  "stem": "<p>Which quotation from an article about Lin&rsquo;s installations, if true, would most effectively illustrate the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;The materials Lin selects for her outdoor pieces are chosen for both their beauty and their ability to withstand rain, snow, and shifting temperatures.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Lin often begins by sketching ideas on paper before turning to a computer to refine the final layout.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;Many of Lin&rsquo;s installations are designed to reflect the geography and history of the site where they are placed.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;Lin draws inspiration from rivers, hills, and other natural features that she observed during her childhood.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the claim is that Lin&rsquo;s installations are built to last outdoors, and Choice A directly supports this by stating that her materials are chosen for their ability to withstand weather.</p><p>Choice B is incorrect: it describes her design process, not durability. Choice C is incorrect: it describes site-specific design, not durability. Choice D is incorrect: it describes her sources of inspiration, not durability.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A2.T3.easy"
+}

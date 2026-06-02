@@ -1,0 +1,25 @@
+{
+  "questionId": "6081831f-s1",
+  "originalId": "6081831f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>When American astronaut Mae Jemison flew aboard the space shuttle <em>Endeavour</em> in 1992, she made NASA history. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> no Black woman had ever traveled to space, making Jemison the first Black woman astronaut and a trailblazer for future generations of scientists.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As a result,</p>"},
+    {"id": "b", "content": "<p>Likewise,</p>"},
+    {"id": "c", "content": "<p>Previously,</p>"},
+    {"id": "d", "content": "<p>However,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Previously\" logically signals that the situation described in this sentence&mdash;no Black woman having traveled to space&mdash;existed before Jemison's flight. This context highlights the significance of Jemison's achievement.</p><p>Choice A is incorrect because \"as a result\" illogically signals that the situation occurred because of Jemison's flight, but it existed before. Choice B is incorrect because \"likewise\" illogically signals a similar additional fact. Choice D is incorrect because \"however\" illogically signals contrast, but the previous absence of Black women astronauts gives context to, not opposition to, Jemison's accomplishment.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T15.easy"
+}

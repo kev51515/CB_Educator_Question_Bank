@@ -1,0 +1,14 @@
+[
+  {
+    "id": "83617355-s1",
+    "templateId": "form-structure-and-sense.A2.T4.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'four options vary only in number/person'. Options mix tense AND form (lights, will be lighting, would light, lit) \u2014 this is A1, not A2. Answer 'lights' is grammatically correct, but the item tests tense/form selection, not number agreement."
+  },
+  {
+    "id": "e3b72630-s1",
+    "templateId": "form-structure-and-sense.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "T2 must_preserve requires distractors drawn from finite + at least two non-finite forms. Clone has only one non-finite option (to narrate) plus three finite forms (narrates, narrated, is narrating), violating the distractor-diversity constraint."
+  }
+]

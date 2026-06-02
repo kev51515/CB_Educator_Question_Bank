@@ -1,0 +1,39 @@
+{
+  "questionId": "4025e00c-s1",
+  "originalId": "4025e00c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In the 1970s and '80s, plant breeders developed shorter varieties of sorghum and millet with improved harvest yields. Building on that work, Aisha Mensah, Pablo Reyes, and other agricultural scientists are now exploring the development of shorter sugarcane varieties. Greater height in sugarcane can allow each plant to store more sugar in its stalk. However, greater height also makes the stalks more likely to bend or topple in heavy rains before the cane can be harvested. Because of this trade-off, some scientists suggest that shorter sugarcane varieties will actually ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>be more likely to topple due to the weight of stored sugar in the stalks.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>require more land for planting than short varieties of sorghum and millet typically do.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>begin producing more sugar per stalk than the tallest variety of sugarcane currently does.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>help improve yields of harvested sugarcane by being more likely to withstand heavy rains.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The trade-off is between potential sugar per plant (taller is better) and harvest survival (shorter survives storms). Shorter varieties would have a survival advantage, leading to better harvest yields.</p><p>Choice A is wrong because the text says taller \u2014 not shorter \u2014 stalks are vulnerable to toppling. Choice B is unsupported: no land comparison is offered. Choice C contradicts the text's claim that taller plants produce more sugar per stalk.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T10.easy"
+}

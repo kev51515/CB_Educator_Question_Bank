@@ -1,0 +1,22 @@
+{
+  "questionId": "ce6b52d8-s1",
+  "originalId": "ce6b52d8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If 3(2u - 5) + u = 18 + 4u, what is the value of 4u?</p>",
+  "answerOptions": [],
+  "keys": [
+    "44"
+  ],
+  "rationale": "<p>Expand: 6u - 15 + u = 18 + 4u, so 7u - 15 = 18 + 4u. Subtract 4u: 3u - 15 = 18, so 3u = 33 and u = 11. Therefore 4u = 44.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.medium"
+}

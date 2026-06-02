@@ -1,0 +1,39 @@
+{
+  "questionId": "daad7c32-s1",
+  "originalId": "daad7c32",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An object hangs from a spring. The formula L(w) = 4w + 9 relates the length L, in centimeters, of the spring to the weight w, in newtons, of the object. Which of the following describes the meaning of the 4 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The number of centimeters the spring stretches for each additional newton of weight.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The natural length of the spring, in centimeters, when no weight is attached.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The maximum length, in centimeters, the spring can reach.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The weight, in newtons, of the object hanging from the spring.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In the linear function L(w) = 4w + 9, the slope 4 represents the change in L per unit increase in w \u2014 that is, the number of centimeters the spring stretches for each additional newton of weight.</p><p>Choice B describes the constant 9 (the y-intercept). Choices C and D do not correspond to the role of the slope coefficient.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A2.T2.medium"
+}

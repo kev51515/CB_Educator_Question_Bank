@@ -1,0 +1,25 @@
+{
+  "questionId": "be19faa1-s1",
+  "originalId": "be19faa1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Share of Sites Whose Local Electricity Demand Could Be Met by Rooftop Solar under Two Insolation Scenarios, by Coverage Band</p></caption><thead><tr><th>Coverage band</th><th>Current annual insolation: percent of sites</th><th>Maximum plausible insolation: percent of sites</th></tr></thead><tbody><tr><td>0% of demand</td><td>~85%</td><td>~15%</td></tr><tr><td>Up to 25% of demand</td><td>~8%</td><td>~10%</td></tr><tr><td>More than 25% of demand</td><td>~7%</td><td>~75%</td></tr></tbody></table></figure><p>Falling module costs and improved cell efficiency have expanded the potential for rooftop photovoltaics on commercial buildings. Engineer Aarav Talwar and colleagues modeled thousands of urban rooftops on four continents under one scenario in which annual insolation remains at present-day values and under another in which insolation reaches the maximum plausible value consistent with regional climate projections. They then sorted each site by the share of its local electricity demand that could be met by rooftop solar. The team concluded that if annual insolation approaches the maximum plausible level, the percentage of sites where rooftop solar could feasibly contribute to meeting local electricity demand will increase.</p>",
+  "stem": "<p>Which choice best describes data in the table that support Talwar and colleagues&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>At current annual insolation, roughly 85% of sites cannot use rooftop solar to meet any portion of local electricity demand, but at the maximum plausible insolation, that percentage falls to roughly 15%.</p>"},
+    {"id": "b", "content": "<p>Under both insolation scenarios, fewer than 15% of sites fell into the up-to-25% band, but at the maximum plausible insolation, nearly 75% of sites could have all of their local electricity demand met by rooftop solar.</p>"},
+    {"id": "c", "content": "<p>At current annual insolation, more than 80% of sites have no need for rooftop solar to supplement local electricity, but at the maximum plausible insolation, more than 70% of sites exhibit significantly higher local electricity demand.</p>"},
+    {"id": "d", "content": "<p>At current annual insolation, roughly 85% of sites can meet at most 25% of local electricity demand with rooftop solar, but at the maximum plausible insolation, roughly 85% of sites can meet more than 25% of local electricity demand.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct because it captures the central pattern needed to support the researchers&rsquo; conclusion: the share of sites unable to contribute any rooftop solar to local electricity demand falls dramatically (from ~85% to ~15%) when insolation reaches the maximum plausible level, while the share able to meet more than 25% of demand rises sharply. This is precisely the increase in feasible-contribution sites the researchers describe. Choice B is incorrect because the table does not show that any sites meet 100% of demand; the highest band is &ldquo;more than 25%,&rdquo; not &ldquo;all.&rdquo; Choice C is incorrect because the table reports the potential for rooftop solar to supply electricity, not the underlying electricity demand of sites. Choice D is incorrect because at current insolation only ~7% of sites (not ~85%) fall in the &ldquo;up-to-25%&rdquo; band; roughly 85% currently cannot meet any demand at all.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "4dd4efcf-s1",
+  "originalId": "4dd4efcf",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>g(<i>x</i>) = <i>a</i><i>x</i><sup>2</sup> + 10<i>x</i> + <i>c</i></p><p>In the given quadratic function, <i>a</i> and <i>c</i> are constants. The graph of <i>y</i> = g(<i>x</i>) in the <i>xy</i>-plane is a parabola that opens upward and has a vertex at the point (<i>h</i>, <i>k</i>), where <i>h</i> and <i>k</i> are constants. If <i>k</i> &lt; 0 and g(&minus;9) = g(1), which of the following must be true?</p><ol style=\"list-style-type: upper-roman;\"><li><i>c</i> &lt; 0</li><li><i>a</i> &ge; 1</li></ol>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Neither I nor II</p>"},
+    {"id": "b", "content": "<p>II only</p>"},
+    {"id": "c", "content": "<p>I only</p>"},
+    {"id": "d", "content": "<p>I and II</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. Since g(&minus;9) = g(1), the axis of symmetry is <i>x</i> = (&minus;9 + 1)/2 = &minus;4, so <i>h</i> = &minus;4. Writing g in vertex form: g(<i>x</i>) = <i>a</i>(<i>x</i> + 4)<sup>2</sup> + <i>k</i> = <i>a</i><i>x</i><sup>2</sup> + 8<i>a</i><i>x</i> + 16<i>a</i> + <i>k</i>. Matching the linear coefficient to 10 gives 8<i>a</i> = 10, so <i>a</i> = 10/8 = 5/4 = 1.25. Decimal-sanity: 1.25 &ge; 1, so Statement II is TRUE. For <i>c</i>: <i>c</i> = 16<i>a</i> + <i>k</i> = 20 + <i>k</i>. With <i>k</i> &lt; 0, all we can say is <i>c</i> &lt; 20; <i>c</i> need not be negative (for example, <i>k</i> = &minus;5 gives <i>c</i> = 15 &gt; 0). So Statement I is not forced. Only II must be true.</p><p>Choice A misses that <i>a</i> = 1.25 is greater than 1. Choice C confuses an upper bound on <i>c</i> with a sign restriction. Choice D claims both, but <i>c</i> &lt; 0 is not forced.</p>",
+  "generatedAt": "2026-05-27T00:00:10Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

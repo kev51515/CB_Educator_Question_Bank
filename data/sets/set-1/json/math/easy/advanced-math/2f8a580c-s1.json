@@ -1,0 +1,39 @@
+{
+  "questionId": "2f8a580c-s1",
+  "originalId": "2f8a580c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>h</em> is defined by <math><mi>h</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>75</mn></math>. What is the value of <math><mi>h</mi><mfenced><mi>x</mi></mfenced></math> when <em>x</em> = 4?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>87</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>91</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>139</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting 4 for <em>x</em>: <math><mi>h</mi><mfenced><mn>4</mn></mfenced><mo>=</mo><msup><mn>4</mn><mn>3</mn></msup><mo>+</mo><mn>75</mn><mo>=</mo><mn>64</mn><mo>+</mo><mn>75</mn><mo>=</mo><mn>139</mn></math>.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

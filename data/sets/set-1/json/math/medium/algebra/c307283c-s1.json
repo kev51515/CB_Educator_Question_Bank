@@ -1,0 +1,39 @@
+{
+  "questionId": "c307283c-s1",
+  "originalId": "c307283c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A line in the <em>xy</em>-plane passes through the points (-6, 0) and (0, -6). Which equation defines the line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = -x - 6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = x - 6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = -2x - 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 2x - 6</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (-6 - 0)/(0 - (-6)) = -6/6 = -1. The y-intercept is (0, -6), so b = -6. Therefore y = -x - 6. Choice B has the wrong sign for the slope. Choices C and D use slopes of \u00b12 rather than \u00b11.</p>",
+  "templateId": "linear-equations-in-two-variables.A4.T6.medium"
+}

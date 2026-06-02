@@ -1,0 +1,39 @@
+{
+  "questionId": "835d1ae6-s1",
+  "originalId": "835d1ae6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Researchers studying ancient Egyptian wall paintings have looked to scenes of daily life to understand the lives of farmers and craftspeople. These richly painted murals show people, animals, and crops in remarkable detail\u2014<u>scholars have interpreted differences in clothing as evidence of social class</u>. Some historians have even used these murals to identify potential occupations and family roles in ancient households.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>Egyptologist Sara Ahmed has argued that reading Egyptian wall paintings as faithful records of social class can overlook the choices of the artists who made them. The paintings, Ahmed suggests, follow visual conventions that exaggerate or stylize details, and many depictions of clothing reflect artistic tradition rather than what people actually wore.</p>",
+  "stem": "<p>Based on the texts, what would Sara Ahmed (Text 2) most likely say about the interpretation presented in the underlined portion of Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Many wall paintings have been damaged and so provide little useful information about ancient Egypt.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Differences in clothing shown in wall paintings may reflect artistic conventions rather than actual social class.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Wall paintings of farmers tend to be more accurate than those of craftspeople.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Most wall paintings were probably created by the same workshop in ancient Thebes.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Ahmed argues that clothing details often follow artistic convention, not real life, so she would caution against treating clothing differences as straightforward evidence of class.</p><p>Choices A, C, and D introduce claims unsupported by Text 2.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.easy"
+}

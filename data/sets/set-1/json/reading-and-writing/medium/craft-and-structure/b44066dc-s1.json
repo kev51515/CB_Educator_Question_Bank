@@ -1,0 +1,25 @@
+{
+  "questionId": "b44066dc-s1",
+  "originalId": "b44066dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Economist Priya Subramanian argues that the benefits of telecommuting policies may show uneven effects within metropolitan regions. For example, remote-work arrangements may reduce commuting time for the average employee, but for workers whose homes lack adequate broadband, unreliable connections could <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the time savings associated with such arrangements.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>misjudge</p>"},
+    {"id": "b", "content": "<p>belittle</p>"},
+    {"id": "c", "content": "<p>cancel out</p>"},
+    {"id": "d", "content": "<p>overstate</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Cancel out\" means to negate or offset. The text indicates that remote work normally reduces commuting time, but unreliable connections for some workers would offset those savings. \"Cancel out\" captures that negating relationship.</p><p>Choice A is incorrect. \"Misjudge\" means to assess incorrectly. An inanimate condition like a poor connection cannot itself make a judgment about time savings. Choice B is incorrect. \"Belittle\" means to disparage; unreliable connections are not capable of disparaging anything. Choice D is incorrect. \"Overstate\" means to exaggerate. Poor connections do not exaggerate the savings; they neutralize them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

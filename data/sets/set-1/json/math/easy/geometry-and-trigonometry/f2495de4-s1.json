@@ -1,0 +1,39 @@
+{
+  "questionId": "f2495de4-s1",
+  "originalId": "f2495de4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the value of cos(25\u03c0/4)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u22121</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u221a2/2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Cosine is periodic with period 2\u03c0. Since 25\u03c0/4 = 3(2\u03c0) + \u03c0/4, cos(25\u03c0/4) = cos(\u03c0/4) = \u221a2/2.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "circles.A4.T8.easy"
+}

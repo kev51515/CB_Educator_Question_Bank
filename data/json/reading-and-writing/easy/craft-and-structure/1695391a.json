@@ -1,0 +1,72 @@
+{
+  "questionId": "1695391a",
+  "externalId": "5ef55ec1-fac7-4795-a283-c2458b390a51",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:55.135088+00:00",
+  "type": "mcq",
+  "stem": "<p>As used in the text, what does the author most nearly mean by &ldquo;I couldn&rsquo;t be stopped&rdquo;?&nbsp;</p>",
+  "answerOptions": [
+    {
+      "id": "83956e59-506a-43a8-8045-57a73dd63840",
+      "content": "<p>She had a hard time sitting still.</p>"
+    },
+    {
+      "id": "7f2c8956-1097-4d62-ad46-d4acd4c9ccdc",
+      "content": "<p>She often changed her mind.</p>"
+    },
+    {
+      "id": "b86ae7cb-c312-4a38-baf9-45acde5cc515",
+      "content": "<p>She was well liked as a child.</p>"
+    },
+    {
+      "id": "76371d2f-f26a-4b93-8bf9-6ad8ea230bef",
+      "content": "<p>She seemed to talk all the time.</p>"
+    }
+  ],
+  "keys": [
+    "76371d2f-f26a-4b93-8bf9-6ad8ea230bef"
+  ],
+  "rationale": "<p>Choice D is the best answer because as used in the text, &ldquo;I couldn&rsquo;t be stopped&rdquo; most nearly means the author seemed to talk all the time. The text establishes that the author is discussing her early speaking habits, stating, &ldquo;When I started to talk on my own, I couldn&rsquo;t be stopped.&rdquo; The following sentences provide context that clarifies the significance of this statement: her sister&rsquo;s friends &ldquo;could hardly stand to ride to school&rdquo; with the author because she &ldquo;was loud and unrelenting.&rdquo; This suggests that once the author began speaking, she talked all the time&mdash;to the point of annoying others.</p><p>Choice A is incorrect because although the phrase &ldquo;I couldn&rsquo;t be stopped&rdquo; could potentially refer to physical movement, the context clearly establishes that the author is discussing her talking habits, not her inability to sit still. The text specifically mentions that she &ldquo;was loud and unrelenting&rdquo; and that her sister&rsquo;s friends disliked riding in the car with her, suggesting that the issue was excessive talking, not physical restlessness. Choice B is incorrect because nothing in the text suggests that the author was fickle or frequently changed her mind. In this context, the phrase &ldquo;I couldn&rsquo;t be stopped&rdquo; refers to the author&rsquo;s persistent talking, as signaled by her characterization as &ldquo;loud and unrelenting.&rdquo; Choice C is incorrect because the text doesn&rsquo;t indicate that the author was popular or well liked as a child. In fact, it suggests the opposite by stating that her sister&rsquo;s friends &ldquo;could hardly stand&rdquo; to ride in the car with her. Because of her excessive talking, in other words, people found the author annoying as a child.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>As used in the text, what does the author most nearly mean by &ldquo;I couldn&rsquo;t be stopped&rdquo;?&nbsp;</p>",
+    "stimulus": "<p>The following text is from Alice Kaplan&rsquo;s 1993 memoir <em>French Lessons</em>.&nbsp;&nbsp;</p>\n<blockquote>\n<p>When I started to talk on my own, <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">I couldn&rsquo;t be stopped.</span> When I was in first grade, my sister&rsquo;s friends could hardly stand to ride to school with me in the car. I was loud and unrelenting.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1993 by The University of Chicago</span></p>",
+    "keys": [
+      "76371d2f-f26a-4b93-8bf9-6ad8ea230bef"
+    ],
+    "answerOptions": [
+      {
+        "id": "83956e59-506a-43a8-8045-57a73dd63840",
+        "content": "<p>She had a hard time sitting still.</p>"
+      },
+      {
+        "id": "7f2c8956-1097-4d62-ad46-d4acd4c9ccdc",
+        "content": "<p>She often changed her mind.</p>"
+      },
+      {
+        "id": "b86ae7cb-c312-4a38-baf9-45acde5cc515",
+        "content": "<p>She was well liked as a child.</p>"
+      },
+      {
+        "id": "76371d2f-f26a-4b93-8bf9-6ad8ea230bef",
+        "content": "<p>She seemed to talk all the time.</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because as used in the text, &ldquo;I couldn&rsquo;t be stopped&rdquo; most nearly means the author seemed to talk all the time. The text establishes that the author is discussing her early speaking habits, stating, &ldquo;When I started to talk on my own, I couldn&rsquo;t be stopped.&rdquo; The following sentences provide context that clarifies the significance of this statement: her sister&rsquo;s friends &ldquo;could hardly stand to ride to school&rdquo; with the author because she &ldquo;was loud and unrelenting.&rdquo; This suggests that once the author began speaking, she talked all the time&mdash;to the point of annoying others.</p><p>Choice A is incorrect because although the phrase &ldquo;I couldn&rsquo;t be stopped&rdquo; could potentially refer to physical movement, the context clearly establishes that the author is discussing her talking habits, not her inability to sit still. The text specifically mentions that she &ldquo;was loud and unrelenting&rdquo; and that her sister&rsquo;s friends disliked riding in the car with her, suggesting that the issue was excessive talking, not physical restlessness. Choice B is incorrect because nothing in the text suggests that the author was fickle or frequently changed her mind. In this context, the phrase &ldquo;I couldn&rsquo;t be stopped&rdquo; refers to the author&rsquo;s persistent talking, as signaled by her characterization as &ldquo;loud and unrelenting.&rdquo; Choice C is incorrect because the text doesn&rsquo;t indicate that the author was popular or well liked as a child. In fact, it suggests the opposite by stating that her sister&rsquo;s friends &ldquo;could hardly stand&rdquo; to ride in the car with her. Because of her excessive talking, in other words, people found the author annoying as a child.</p>",
+    "externalid": "5ef55ec1-fac7-4795-a283-c2458b390a51",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>The following text is from Alice Kaplan&rsquo;s 1993 memoir <em>French Lessons</em>.&nbsp;&nbsp;</p>\n<blockquote>\n<p>When I started to talk on my own, <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">I couldn&rsquo;t be stopped.</span> When I was in first grade, my sister&rsquo;s friends could hardly stand to ride to school with me in the car. I was loud and unrelenting.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1993 by The University of Chicago</span></p>"
+}

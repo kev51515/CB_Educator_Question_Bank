@@ -1,0 +1,23 @@
+{
+  "questionId": "54d93874-s1",
+  "originalId": "54d93874",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Karim and Lena each measured five plants. The masses (in grams) of Karim's plants are 3.0, 3.4, 3.2, 3.8, and 3.1. The masses (in grams) of Lena's plants are x, 3.5, 3.0, 3.6, and 3.4. The mean mass of Lena's plants is 0.2 gram greater than the mean mass of Karim's plants. What is the value of x?</p>",
+  "answerOptions": [],
+  "keys": [
+    "4.0",
+    "4"
+  ],
+  "rationale": "<p>Karim's mean mass is (3.0 + 3.4 + 3.2 + 3.8 + 3.1)/5 = 16.5/5 = 3.3 grams. Lena's mean must therefore be 3.3 + 0.2 = 3.5 grams, so the sum of Lena's five masses is 5 &middot; 3.5 = 17.5. The known four values sum to 3.5 + 3.0 + 3.6 + 3.4 = 13.5, so x = 17.5 &minus; 13.5 = 4.0.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "776cfa7c-s1",
+  "originalId": "776cfa7c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Sofia deposited a fixed amount into her bank account each month. The function f(t) = 200 + 30t gives the amount, in dollars, in Sofia's bank account after t monthly deposits. What is the best interpretation of 30 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Sofia made a total of 30 monthly deposits.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Before Sofia made any monthly deposits, the amount in her bank account was $30.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>With each monthly deposit, the amount in Sofia's bank account increased by $30.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>After 1 monthly deposit, the amount in Sofia's bank account was $30.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In f(t) = 200 + 30t, 30 is the per-deposit rate; each deposit adds $30.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A2.T2.easy"
+}

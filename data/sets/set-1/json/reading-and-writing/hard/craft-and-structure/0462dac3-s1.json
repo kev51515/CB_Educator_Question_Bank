@@ -1,0 +1,39 @@
+{
+  "questionId": "0462dac3-s1",
+  "originalId": "0462dac3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Without the discovery of unburned correspondence or untranslated administrative records, we are unlikely to ever have ______ account of the brief reign of the Mongol regent T&ouml;regene Khatun in the thirteenth century, since the vast majority of internal palace documents from her time were destroyed by political rivals shortly after her death.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a thorough</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a creative</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a doubtful</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a shallow</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text explains that most internal palace records of T&ouml;regene's reign were destroyed, so the surviving record is fragmentary. \"A thorough account\" would be a complete, comprehensive one. The sentence's logic is that without major new discoveries of correspondence or records, a complete account is unlikely&mdash;which fits naturally.</p><p>Choice B is incorrect because \"creative\" describes the historian's approach, not how comprehensive the account would be; in fact, a lack of evidence tends to make accounts more rather than less imaginative. Choice C is incorrect because a lack of evidence already tends to make existing accounts somewhat questionable, so saying that new discoveries are needed before we could have one would be backwards. Choice D is incorrect for the same reason: a shallow account is what we are already likely to have, not what new evidence would suddenly enable.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

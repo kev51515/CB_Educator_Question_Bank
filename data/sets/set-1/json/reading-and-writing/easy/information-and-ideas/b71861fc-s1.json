@@ -1,0 +1,39 @@
+{
+  "questionId": "b71861fc-s1",
+  "originalId": "b71861fc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Percentage of Surveyed Patients Who Mentioned Various Factors. Three factors shown, vertical axis 0&ndash;80%.]</p><ul><li>wait time: about 65%</li><li>cost of treatment: about 40%</li><li>staff politeness: about 20%</li></ul>",
+  "stem": "<p>According to the graph, about what percentage of patients mentioned the cost of treatment in the interviews?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>20%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>65%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>85%</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the graph shows that about 40% of patients mentioned the cost of treatment.</p><p>Choice A is incorrect: 20% mentioned staff politeness, not cost. Choice C is incorrect: 65% mentioned wait time, not cost. Choice D is incorrect: no factor reached 85% in the graph.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T7.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "98364791-s1",
+  "originalId": "98364791",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In studying the use of external stimuli to reduce phantom limb pain experienced by amputees, Mateo Reyes and colleagues found that while gentle applications of vibration or stroking can provide a brief distraction, such <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> stimuli actually offer less lasting relief than a stimulus that feels less safe, like a mild electrical pulse.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>deceptive</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>novel</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>harmless</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>impractical</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Harmless\" most logically completes the text. The phrase is set in contrast with a stimulus that \"feels less safe\" (a mild electrical pulse), so the \"such ______ stimuli\" must denote those that feel safe\u2014that is, harmless\u2014stimuli like vibration and stroking.</p><p>Choice A is incorrect. \"Deceptive\" implies misleading, which doesn't capture the contrast with a more uncomfortable stimulus. Choice B is incorrect. \"Novel\" means new; both stimulus types could be unfamiliar, so novelty doesn't isolate vibration and stroking. Choice D is incorrect. \"Impractical\" describes feasibility, not safety, and isn't relevant to the contrast.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

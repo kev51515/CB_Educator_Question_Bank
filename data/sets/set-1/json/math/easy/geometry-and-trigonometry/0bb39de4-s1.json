@@ -1,0 +1,39 @@
+{
+  "questionId": "0bb39de4-s1",
+  "originalId": "0bb39de4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangles PQR and STU are congruent, where P corresponds to S, and Q and T are right angles. The measure of angle P is 24\u00b0. What is the measure of angle U?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>24\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>90\u00b0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>66\u00b0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>156\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since the triangles are congruent and P\u2194S, Q\u2194T, it follows R\u2194U. In triangle PQR, angle Q = 90\u00b0, so angle R = 180 \u2212 90 \u2212 24 = 66\u00b0. Therefore angle U = 66\u00b0.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A4.T1.easy"
+}

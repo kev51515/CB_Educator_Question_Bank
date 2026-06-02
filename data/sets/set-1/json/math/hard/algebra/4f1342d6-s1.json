@@ -1,0 +1,22 @@
+{
+  "questionId": "4f1342d6-s1",
+  "originalId": "4f1342d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In June, a phone dealer completed 12 more than 4 times the number of sales the dealer completed in May. In May and June, the dealer completed 467 sales. How many sales did the dealer complete in May?</p>",
+  "answerOptions": [],
+  "keys": [
+    "91"
+  ],
+  "rationale": "<p>The correct answer is 91. Let m be May sales; then June sales are 4m + 12. The total m + (4m + 12) = 467 gives 5m + 12 = 467, so m = 91.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium"
+}

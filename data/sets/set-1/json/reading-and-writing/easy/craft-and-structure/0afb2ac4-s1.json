@@ -1,0 +1,39 @@
+{
+  "questionId": "0afb2ac4-s1",
+  "originalId": "0afb2ac4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Ancient Roman engineers used aqueducts, long elevated channels that carried water from distant springs into cities, to supply households, baths, and fountains. This method of water delivery proved to be highly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, as evidenced by the large urban populations that Roman cities were able to support.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>uniform</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>effective</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>chaotic</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>burdensome</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because \"effective\" means producing a desired result. The text supports this by noting that Roman cities could support large populations, demonstrating that aqueducts successfully delivered enough water. Choice A is incorrect because \"uniform\" describes consistency, not success. Choice C is incorrect because the text describes orderly water delivery, not chaos. Choice D is incorrect because \"burdensome\" would imply that aqueducts were a problem, which the text contradicts.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

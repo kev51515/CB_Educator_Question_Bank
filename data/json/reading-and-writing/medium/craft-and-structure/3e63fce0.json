@@ -1,0 +1,72 @@
+{
+  "questionId": "3e63fce0",
+  "externalId": "df2f8a80-cb38-4733-85ce-1de0f98ed846",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:22:14.396316+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "80e4e141-c2f9-41ec-9706-4637b17e380c",
+      "content": "<p>It summarizes research findings on Matabele ants and then identifies an area for further research.&nbsp;</p>"
+    },
+    {
+      "id": "86dad7c7-e4cd-42c9-aeb4-0797d3ee2340",
+      "content": "<p>It introduces a study of Matabele ants and then explains the research methods used in the study.</p>"
+    },
+    {
+      "id": "72976f93-8d68-426f-9696-6bccc6fbfc3a",
+      "content": "<p>It describes unique properties of Matabele ants and then speculates on how those properties evolved.</p>"
+    },
+    {
+      "id": "86bccda7-72d3-4b46-854c-dad92c1ae8b5",
+      "content": "<p>It identifies an issue concerning Matabele ants and then proposes a solution to address the issue.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "80e4e141-c2f9-41ec-9706-4637b17e380c"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most accurately describes the overall structure of the text. The text first presents what researchers found from studying Matabele ants: the ants can tell when colony members have infected wounds and can largely successfully treat those infections with their antimicrobial secretions. The text then indicates that the findings about the ants could help with the future development of antibiotics for humans. Thus, the text summarizes research findings and then identifies an area for further research.</p><p>Choice B is incorrect. Although the text introduces a study about Matabele ants, it never discusses how the researchers did their work or any methods they used to produce their findings. Choice C is incorrect. Although the text does describe properties of Matabele ants&mdash;their ability to detect and largely successfully treat infected wounds in colony members&mdash;it never addresses evolution or how these properties might have changed. Choice D is incorrect because the text doesn&rsquo;t present anything about Matabele ants as an issue or problem to be solved. Instead, it discusses beneficial abilities the ants have (detecting and treating infected wounds) and suggests that understanding those abilities might be useful for human medicine.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+    "stimulus": "<p>A team of researchers discovered that Matabele ants can identify an infected wound in a member of the colony and then treat the infection by covering the wound with antimicrobial secretions that the ants produce. The team found that the mortality rate for Matabele ants with infected injuries was reduced by 90% with this treatment, and they are hopeful that this discovery could aid in the development of new antibiotics for human use.</p>",
+    "keys": [
+      "80e4e141-c2f9-41ec-9706-4637b17e380c"
+    ],
+    "answerOptions": [
+      {
+        "id": "80e4e141-c2f9-41ec-9706-4637b17e380c",
+        "content": "<p>It summarizes research findings on Matabele ants and then identifies an area for further research.&nbsp;</p>"
+      },
+      {
+        "id": "86dad7c7-e4cd-42c9-aeb4-0797d3ee2340",
+        "content": "<p>It introduces a study of Matabele ants and then explains the research methods used in the study.</p>"
+      },
+      {
+        "id": "72976f93-8d68-426f-9696-6bccc6fbfc3a",
+        "content": "<p>It describes unique properties of Matabele ants and then speculates on how those properties evolved.</p>"
+      },
+      {
+        "id": "86bccda7-72d3-4b46-854c-dad92c1ae8b5",
+        "content": "<p>It identifies an issue concerning Matabele ants and then proposes a solution to address the issue.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most accurately describes the overall structure of the text. The text first presents what researchers found from studying Matabele ants: the ants can tell when colony members have infected wounds and can largely successfully treat those infections with their antimicrobial secretions. The text then indicates that the findings about the ants could help with the future development of antibiotics for humans. Thus, the text summarizes research findings and then identifies an area for further research.</p><p>Choice B is incorrect. Although the text introduces a study about Matabele ants, it never discusses how the researchers did their work or any methods they used to produce their findings. Choice C is incorrect. Although the text does describe properties of Matabele ants&mdash;their ability to detect and largely successfully treat infected wounds in colony members&mdash;it never addresses evolution or how these properties might have changed. Choice D is incorrect because the text doesn&rsquo;t present anything about Matabele ants as an issue or problem to be solved. Instead, it discusses beneficial abilities the ants have (detecting and treating infected wounds) and suggests that understanding those abilities might be useful for human medicine.</p>",
+    "externalid": "df2f8a80-cb38-4733-85ce-1de0f98ed846",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>A team of researchers discovered that Matabele ants can identify an infected wound in a member of the colony and then treat the infection by covering the wound with antimicrobial secretions that the ants produce. The team found that the mortality rate for Matabele ants with infected injuries was reduced by 90% with this treatment, and they are hopeful that this discovery could aid in the development of new antibiotics for human use.</p>"
+}

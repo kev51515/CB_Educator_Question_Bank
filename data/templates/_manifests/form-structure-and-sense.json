@@ -1,0 +1,1147 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Standard English Conventions",
+  "skill": "Form, Structure, and Sense",
+  "originals": [
+    {
+      "id": "028752cd",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/028752cd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "02913383",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/02913383.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "035fd57e",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/035fd57e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "0aebdf5f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/0aebdf5f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "0ff8477b",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/0ff8477b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "100269ad",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/100269ad.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "12bd5b75",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/12bd5b75.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1448f43f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/1448f43f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "15d6d837",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/15d6d837.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "166efaa2",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/166efaa2.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1684b237",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/1684b237.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "175df826",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/175df826.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1d971f75",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/1d971f75.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "265e7f4c",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/265e7f4c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "29c9be28",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/29c9be28.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2ee50d41",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/2ee50d41.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "31362d2d",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/31362d2d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "35360da9",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/35360da9.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3580533b",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/3580533b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "35ae047d",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/35ae047d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3a35ddd1",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/3a35ddd1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "42cc9236",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/42cc9236.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "430d929a",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/430d929a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4a90a978",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/4a90a978.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4aa28ac3",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/4aa28ac3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4bed4658",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/4bed4658.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4c9a2aee",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/4c9a2aee.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "50445680",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/50445680.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "52b61716",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/52b61716.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "56770dda",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/56770dda.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "576b2c70",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/576b2c70.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "57998dd3",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/57998dd3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "588887b9",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/588887b9.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "59e41600",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/59e41600.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5ad2a12c",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/5ad2a12c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "60a4c088",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/60a4c088.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "674e59a3",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/674e59a3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "69f031ab",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/69f031ab.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "6bc907c9",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/6bc907c9.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "6d247c13",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/6d247c13.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "6e5bf3a8",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/6e5bf3a8.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "775f3eb9",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/775f3eb9.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "77bf77cd",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/77bf77cd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7b419faf",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/7b419faf.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7c48a6dd",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/7c48a6dd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "81ac953e",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/81ac953e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "83617355",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/83617355.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "843f92af",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/843f92af.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "856b495d",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/856b495d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "898f182c",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/898f182c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "8df848c1",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/8df848c1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "94de423a",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/94de423a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "96c720af",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/96c720af.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "96e5da01",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/96e5da01.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "975eda7c",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/975eda7c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "97b62fab",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/97b62fab.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "97df6650",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/97df6650.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "983d33fa",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/983d33fa.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "988c78eb",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/988c78eb.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "a94b7fd6",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/a94b7fd6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "acf454af",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/acf454af.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b260c65a",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/b260c65a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b5b74c3f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/b5b74c3f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b7363ba2",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/b7363ba2.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "bce9910f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/bce9910f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "bd11fe93",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/bd11fe93.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c102f9b0",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/c102f9b0.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c5d39bc7",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/c5d39bc7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "cd4b1a7e",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/cd4b1a7e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "cf08e2fd",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/cf08e2fd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d1482e27",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/d1482e27.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d47bb0a4",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/d47bb0a4.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d4f173ec",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/d4f173ec.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "db4e3819",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/db4e3819.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "dbd78791",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/dbd78791.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e2759b92",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e2759b92.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e31b0056",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e31b0056.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e38b3e4f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e38b3e4f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e3b72630",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e3b72630.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e62241b7",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e62241b7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e6f2dba6",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e6f2dba6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e8926747",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e8926747.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e92a7ad3",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/e92a7ad3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ec08463d",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/ec08463d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "eee7536f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/eee7536f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f0f9bf8f",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/f0f9bf8f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f339ee39",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/f339ee39.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f40ca576",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/f40ca576.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f4fd123c",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/f4fd123c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "fff4c7f4",
+      "path": "json/reading-and-writing/easy/standard-english-conventions/fff4c7f4.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "003f22c8",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/003f22c8.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0bcb4417",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/0bcb4417.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1ee7b429",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/1ee7b429.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1f8cd95f",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/1f8cd95f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "20a6a4ed",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/20a6a4ed.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "20ea68b7",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/20ea68b7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "28166dc6",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/28166dc6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2c49940e",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/2c49940e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3595a991",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/3595a991.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "36944347",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/36944347.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4c06427b",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/4c06427b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4f2ff5f2",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/4f2ff5f2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "56315bd0",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/56315bd0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "59209b6d",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/59209b6d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "67614549",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/67614549.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "684b8bd2",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/684b8bd2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6e193b19",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/6e193b19.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6f08641e",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/6f08641e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "75f49353",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/75f49353.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7a0d9031",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/7a0d9031.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7c766ceb",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/7c766ceb.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7f1df833",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/7f1df833.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "819c443d",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/819c443d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "8d53e7a0",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/8d53e7a0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "96a904c5",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/96a904c5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "97e7bedc",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/97e7bedc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9eb43963",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/9eb43963.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9f737b2a",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/9f737b2a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a03008de",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/a03008de.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a30567fd",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/a30567fd.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ac7b8d04",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/ac7b8d04.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b74f676f",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/b74f676f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b85c19ed",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/b85c19ed.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b8e13a74",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/b8e13a74.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c437dd53",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/c437dd53.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c52652c9",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/c52652c9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c8607bdf",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/c8607bdf.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "cd2443c0",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/cd2443c0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d073983d",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/d073983d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d2cf0e11",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/d2cf0e11.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "db2e480a",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/db2e480a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dd428136",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/dd428136.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dd6a0326",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/dd6a0326.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e44db0a0",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/e44db0a0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "eeb14722",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/eeb14722.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f1c5157d",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/f1c5157d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f40b447c",
+      "path": "json/reading-and-writing/medium/standard-english-conventions/f40b447c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0fe5ce68",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/0fe5ce68.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "18382e67",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/18382e67.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "188f7e3c",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/188f7e3c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1a61e2ae",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/1a61e2ae.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1c65db8f",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/1c65db8f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2784cbaf",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/2784cbaf.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2b6e1c06",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/2b6e1c06.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2bca654a",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/2bca654a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2dd1b8bf",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/2dd1b8bf.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "329255db",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/329255db.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "37e5c794",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/37e5c794.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3a1239d2",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/3a1239d2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3bceeb93",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/3bceeb93.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3daf126e",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/3daf126e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4c335aea",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/4c335aea.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "50801257",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/50801257.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "512f0ac9",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/512f0ac9.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5b8f9cf2",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/5b8f9cf2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5fd86f4b",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/5fd86f4b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "61160f0a",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/61160f0a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "772835db",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/772835db.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "81f09e07",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/81f09e07.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "863065c7",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/863065c7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "872a002e",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/872a002e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8a9d2f4e",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/8a9d2f4e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8b017d4e",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/8b017d4e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "908a76b8",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/908a76b8.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9994ae0d",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/9994ae0d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9df6da04",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/9df6da04.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a14eef71",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/a14eef71.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a2816c7f",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/a2816c7f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a75d5984",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/a75d5984.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "aa443c4b",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/aa443c4b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ae439895",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/ae439895.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b0fb36ad",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/b0fb36ad.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b32eab9f",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/b32eab9f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b369d54c",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/b369d54c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c88ba1b7",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/c88ba1b7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c91ef0f0",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/c91ef0f0.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d222f7d9",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/d222f7d9.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d2b81427",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/d2b81427.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d46ac7e7",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/d46ac7e7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "dab8b8ee",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/dab8b8ee.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "dc645172",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/dc645172.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "de3dd17d",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/de3dd17d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "dfbf5d33",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/dfbf5d33.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e060dd6b",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/e060dd6b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ea0aa676",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/ea0aa676.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ecba68b5",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/ecba68b5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f0864217",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/f0864217.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f10b7ce4",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/f10b7ce4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f768090a",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/f768090a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "fced396a",
+      "path": "json/reading-and-writing/hard/standard-english-conventions/fced396a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

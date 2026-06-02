@@ -1,0 +1,39 @@
+{
+  "questionId": "5518885d-s1",
+  "originalId": "5518885d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation <i>c</i> + <i>d</i> = 2,000 represents the number of completed orders, <i>c</i>, and the number of pending orders, <i>d</i>, at a fulfillment center on a particular day. If this day has 815 completed orders, how many pending orders does it have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>815</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1,085</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,185</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting <i>c</i> = 815 into <i>c</i> + <i>d</i> = 2,000 gives 815 + <i>d</i> = 2,000, so <i>d</i> = 1,185.</p><p>Choice A is the number of completed orders; choice B is the total; choice C results from a subtraction error.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

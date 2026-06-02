@@ -1,0 +1,72 @@
+{
+  "questionId": "e1453c88",
+  "externalId": "0b406856-4131-43d4-a343-4d2db939e35e",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:52.941757+00:00",
+  "type": "mcq",
+  "stem": "<p>The student wants to provide a historical overview of the Shackleton expedition. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "fa0ea600-af25-41f1-a469-f2de4bc75d80",
+      "content": "<p>Leaving in <span data-ssml-say-as=\"date\">1914</span> for Antarctica, Shackleton and his crew underwent many harrowing sea-ice adventures, including losing their ship in <span data-ssml-say-as=\"date\">1915</span>, before being rescued in <span data-ssml-say-as=\"date\">1916</span>.</p>"
+    },
+    {
+      "id": "c5f9b548-4ccc-4f7e-bcfd-5bcaccfc5043",
+      "content": "<p>In <span data-ssml-say-as=\"date\">1914</span>, the Shackleton expedition sailed to Antarctica, where, in <span data-ssml-say-as=\"date\">1916</span>, they rescued the crew of a ship that had sunk, <em>Endurance</em> (the wreckage of which was discovered in <span data-ssml-say-as=\"date\">2022</span>).</p>"
+    },
+    {
+      "id": "59b68ed8-1b74-4535-891c-84b1ca2c2a7f",
+      "content": "<p>Shackleton&rsquo;s expedition has inspired a <span data-ssml-say-as=\"date\">1959</span> book, a <span data-ssml-say-as=\"date\">2001</span> film, and a <span data-ssml-say-as=\"date\">2022</span> discovery.&nbsp;&nbsp;</p>"
+    },
+    {
+      "id": "82ff706e-e41b-49a6-bab7-73a736658a7a",
+      "content": "<p>Alfred Lansing wrote about the history of Shackleton&rsquo;s 1914<span data-ssml-sub-alias=\" to \">&ndash;</span>16 expedition in the book <em>Endurance: Shackleton&rsquo;s Incredible Voyage</em> (<span data-ssml-say-as=\"date\">1959</span>); years later, in <span data-ssml-say-as=\"date\">2001</span>, George Butler released a documentary about the expedition.</p>"
+    }
+  ],
+  "keys": [
+    "fa0ea600-af25-41f1-a469-f2de4bc75d80"
+  ],
+  "rationale": "<p>Choice A is the best answer. The sentence provides a historical overview of the Shackleton expedition, noting that the explorers left for Antarctica in 1914, lost their ship in 1915, and were rescued in 1916.</p><p>Choice B is incorrect. The sentence misrepresents information from the notes; Shackleton and his crew were themselves rescued in 1916&mdash;they weren&rsquo;t rescuing others. Choice C is incorrect. The sentence provides examples of works and discoveries inspired by the expedition; it doesn&rsquo;t provide an overview of the expedition itself. Choice D is incorrect. The sentence provides examples of works made about the expedition; it doesn&rsquo;t provide an overview of the expedition itself.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>The student wants to provide a historical overview of the Shackleton expedition. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "stimulus": "<p><p>While researching a topic, a student has taken the following notes:&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\n<ul>\n<li><span data-ssml-say-as=\"date\">1914</span>: British explorer Ernest Shackleton and a small crew embarked on an expedition to Antarctica.</li>\n<li><span data-ssml-say-as=\"date\">1915</span>: Shackleton&rsquo;s ship <em>Endurance</em> became stuck in ice before eventually breaking apart and sinking.</li>\n<li><span data-ssml-say-as=\"date\">1916</span>: After more harrowing sea-ice adventures, the entire crew was rescued.</li>\n<li><span data-ssml-say-as=\"date\">1959</span>: Historian Alfred Lansing wrote a book called <em>Endurance: Shackleton&rsquo;s Incredible Voyage</em><em>.</em>&nbsp;</li>\n<li><span data-ssml-say-as=\"date\">2001</span>: Filmmaker George Butler released a documentary called <em>The Endurance: Shackleton&rsquo;s Legendary Antarctic Expedition</em>.</li>\n<li><span data-ssml-say-as=\"date\">2022</span>: The wreckage of <em>Endurance</em> was discovered at the bottom of Antarctica&rsquo;s Weddell Sea.</li>\n</ul></p>",
+    "keys": [
+      "fa0ea600-af25-41f1-a469-f2de4bc75d80"
+    ],
+    "answerOptions": [
+      {
+        "id": "fa0ea600-af25-41f1-a469-f2de4bc75d80",
+        "content": "<p>Leaving in <span data-ssml-say-as=\"date\">1914</span> for Antarctica, Shackleton and his crew underwent many harrowing sea-ice adventures, including losing their ship in <span data-ssml-say-as=\"date\">1915</span>, before being rescued in <span data-ssml-say-as=\"date\">1916</span>.</p>"
+      },
+      {
+        "id": "c5f9b548-4ccc-4f7e-bcfd-5bcaccfc5043",
+        "content": "<p>In <span data-ssml-say-as=\"date\">1914</span>, the Shackleton expedition sailed to Antarctica, where, in <span data-ssml-say-as=\"date\">1916</span>, they rescued the crew of a ship that had sunk, <em>Endurance</em> (the wreckage of which was discovered in <span data-ssml-say-as=\"date\">2022</span>).</p>"
+      },
+      {
+        "id": "59b68ed8-1b74-4535-891c-84b1ca2c2a7f",
+        "content": "<p>Shackleton&rsquo;s expedition has inspired a <span data-ssml-say-as=\"date\">1959</span> book, a <span data-ssml-say-as=\"date\">2001</span> film, and a <span data-ssml-say-as=\"date\">2022</span> discovery.&nbsp;&nbsp;</p>"
+      },
+      {
+        "id": "82ff706e-e41b-49a6-bab7-73a736658a7a",
+        "content": "<p>Alfred Lansing wrote about the history of Shackleton&rsquo;s 1914<span data-ssml-sub-alias=\" to \">&ndash;</span>16 expedition in the book <em>Endurance: Shackleton&rsquo;s Incredible Voyage</em> (<span data-ssml-say-as=\"date\">1959</span>); years later, in <span data-ssml-say-as=\"date\">2001</span>, George Butler released a documentary about the expedition.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The sentence provides a historical overview of the Shackleton expedition, noting that the explorers left for Antarctica in 1914, lost their ship in 1915, and were rescued in 1916.</p><p>Choice B is incorrect. The sentence misrepresents information from the notes; Shackleton and his crew were themselves rescued in 1916&mdash;they weren&rsquo;t rescuing others. Choice C is incorrect. The sentence provides examples of works and discoveries inspired by the expedition; it doesn&rsquo;t provide an overview of the expedition itself. Choice D is incorrect. The sentence provides examples of works made about the expedition; it doesn&rsquo;t provide an overview of the expedition itself.</p>",
+    "externalid": "0b406856-4131-43d4-a343-4d2db939e35e",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p><p>While researching a topic, a student has taken the following notes:&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</p>\n<ul>\n<li><span data-ssml-say-as=\"date\">1914</span>: British explorer Ernest Shackleton and a small crew embarked on an expedition to Antarctica.</li>\n<li><span data-ssml-say-as=\"date\">1915</span>: Shackleton&rsquo;s ship <em>Endurance</em> became stuck in ice before eventually breaking apart and sinking.</li>\n<li><span data-ssml-say-as=\"date\">1916</span>: After more harrowing sea-ice adventures, the entire crew was rescued.</li>\n<li><span data-ssml-say-as=\"date\">1959</span>: Historian Alfred Lansing wrote a book called <em>Endurance: Shackleton&rsquo;s Incredible Voyage</em><em>.</em>&nbsp;</li>\n<li><span data-ssml-say-as=\"date\">2001</span>: Filmmaker George Butler released a documentary called <em>The Endurance: Shackleton&rsquo;s Legendary Antarctic Expedition</em>.</li>\n<li><span data-ssml-say-as=\"date\">2022</span>: The wreckage of <em>Endurance</em> was discovered at the bottom of Antarctica&rsquo;s Weddell Sea.</li>\n</ul></p>"
+}

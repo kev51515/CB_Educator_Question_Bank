@@ -1,0 +1,25 @@
+{
+  "questionId": "e31b0056-s1",
+  "originalId": "e31b0056",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Sarah Winnemucca of Nevada <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a tireless advocate for Indigenous rights in the late 1800s. Her efforts, including lectures across the country and a published memoir in 1883, helped bring national attention to the treatment of the Northern Paiute people.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>was</p>"},
+    {"id": "c", "content": "<p>were</p>"},
+    {"id": "d", "content": "<p>have been</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"Sarah Winnemucca of Nevada.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject. Choice C is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject. Choice D is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

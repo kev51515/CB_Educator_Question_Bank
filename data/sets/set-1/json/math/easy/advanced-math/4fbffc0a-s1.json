@@ -1,0 +1,39 @@
+{
+  "questionId": "4fbffc0a-s1",
+  "originalId": "4fbffc0a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A2.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A drone was launched upward from a rooftop. Its height above the ground (in meters) as a function of time (in seconds) is shown on the graph. The point (2.0, 36.5) is marked on the graph. Which statement is the best interpretation of this marked point in context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The drone reached a maximum height of 36.5 meters in 2.0 seconds.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2.0 seconds after being launched, the drone's height above the ground is 36.5 meters.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The drone was launched from a height of 2.0 meters with an initial velocity of 36.5 meters per second.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36.5 seconds after being launched, the drone's height above the ground is 2.0 meters.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The horizontal axis represents time in seconds and the vertical axis represents height in meters. The marked point (2.0, 36.5) therefore corresponds to a height of 36.5 meters at time 2.0 seconds after launch.</p><p>Choice A is incorrect because the point is a single data point, not stated to be the maximum. Choice C is incorrect because the coordinates do not give initial conditions. Choice D is incorrect because it swaps the coordinates.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z"
+}

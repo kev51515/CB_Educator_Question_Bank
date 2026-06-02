@@ -1,0 +1,14 @@
+[
+  {
+    "id": "5336f2e4-s1",
+    "templateId": "text-structure-and-purpose.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem reads 'function of the underlined sentences' (plural) and the underlined span covers two sentences; T3 must_preserve requires 'Exactly one complete sentence underlined'. Multi-sentence span fits T4 better."
+  },
+  {
+    "id": "b4887dae-s1",
+    "templateId": "text-structure-and-purpose.A3.T8.hard",
+    "verdict": "type_drift",
+    "detail": "T8 requires \u22653 distinct rhetorical moves; clone has only 2 moves (introduce Hopper + describe compiler work; Abbate's judgment is a coda to the second move, not a third distinct move). Correct answer B explicitly names just 2-3 vague steps. Closer to T7 two-move structure."
+  }
+]

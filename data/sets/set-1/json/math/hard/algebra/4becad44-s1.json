@@ -1,0 +1,39 @@
+{
+  "questionId": "4becad44-s1",
+  "originalId": "4becad44",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mi>x</mi><mo>=</mo><mn>30</mn><mi>y</mi><mo>+</mo><mn>60</mn></math></p>\n<p>One of the two equations in a system of linear equations is given. The system has no solution. Which equation could be the second equation in this system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2</mn><mi>y</mi><mo>=</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mn>3</mn></mrow></mfrac><mo>+</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>2</mn><mi>y</mi><mo>=</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mn>3</mn></mrow></mfrac><mo>-</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mo>-</mo><mfrac><mrow><mi>x</mi></mrow><mrow><mn>6</mn></mrow></mfrac><mo>-</mo><mn>2</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>6</mn><mi>x</mi><mo>+</mo><mn>12</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Rewriting 5x = 30y + 60 in slope-intercept form: y = x/6 - 2 (slope 1/6, intercept -2). For no solution, the second line must have the same slope but a different intercept. Choice A: 2y = x/3 + 4 simplifies to y = x/6 + 2, which has the same slope but a different intercept \u2014 parallel, no intersection. Choice B simplifies to y = x/6 - 2, the same line (infinite solutions). Choices C and D have different slopes (one intersection).</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard"
+}

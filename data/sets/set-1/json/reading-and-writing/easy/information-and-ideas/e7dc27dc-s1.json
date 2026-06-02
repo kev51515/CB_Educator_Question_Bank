@@ -1,0 +1,39 @@
+{
+  "questionId": "e7dc27dc-s1",
+  "originalId": "e7dc27dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Founded in 1972 by a small group of Black students at Howard University, the quarterly magazine <em>Tambour</em> raised awareness of cultural and political issues facing African American communities on campus and beyond. The magazine had a notable reach for its kind: roughly 3,500 copies were printed each quarter. A researcher writing a thesis, however, hypothesizes that <em>Tambour</em>'s reach cannot be measured by the quarterly print run alone.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researcher's hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The students who initially founded <em>Tambour</em> raised funds through a campus bake sale.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Single issues of <em>Tambour</em> were typically passed from reader to reader, with each copy reaching several additional people.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In addition to political commentary, <em>Tambour</em> also featured poetry and short fiction.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>Tambour</em> was initially housed in the Black Studies office at Howard University.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. If readers passed copies to others, the actual audience was much larger than the 3,500 print run, directly supporting the hypothesis that reach exceeds the print number.</p><p>Choice A relates to funding, not readership reach. Choice C addresses content variety, not audience size. Choice D concerns location, not how many people the magazine reached.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "3fd0ab63-s1",
+  "originalId": "3fd0ab63",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>Voting members of the 2016 World Music Awards were captivated by Tinariwen's album <em>Elwan</em> and its contribution to the desert blues genre, a form of West African guitar music featuring intertwining electric melodies and call-and-response vocals that first emerged among Tuareg communities along the Sahara's southern edge in the late twentieth century. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they presented the group with the Best World Album award.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As a result,</p>"},
+    {"id": "b", "content": "<p>Meanwhile,</p>"},
+    {"id": "c", "content": "<p>In contrast,</p>"},
+    {"id": "d", "content": "<p>Regardless,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"As a result\" logically signals that the information in this sentence—that the voting members presented Tinariwen with the Best World Album award—is a consequence of the previous information about the voters being captivated by Tinariwen's album.</p><p>Choice B is incorrect because \"meanwhile\" illogically signals that the award presentation is simply something that occurred at the same time as the voters' admiration, when in fact one follows from the other. Choice C is incorrect because \"in contrast\" illogically signals that the award presentation contrasts with the voters' admiration, when it is actually consistent with that admiration. Choice D is incorrect because \"regardless\" illogically signals that the award was given despite the voters' impression, when in fact it was given because of it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

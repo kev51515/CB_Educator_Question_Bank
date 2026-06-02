@@ -1,0 +1,39 @@
+{
+  "questionId": "74473be4-s1",
+  "originalId": "74473be4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which quadratic equation has no real solutions?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>x</i>&sup2; &minus; 12<i>x</i> + 36 = 0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3<i>x</i>&sup2; &minus; 12<i>x</i> + 36 = 0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>x</i>&sup2; + 12<i>x</i> &minus; 36 = 0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3<i>x</i>&sup2; &minus; 12<i>x</i> &minus; 36 = 0</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The discriminant <i>b</i>&sup2; &minus; 4<i>ac</i> determines the number of real solutions. For choice B (3, &minus;12, 36): (&minus;12)&sup2; &minus; 4(3)(36) = 144 &minus; 432 = &minus;288 &lt; 0, so no real solutions. Choice A has discriminant 0 (one solution). Choices C and D have positive discriminants (two real solutions).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "8b002b08-s1",
+  "originalId": "8b002b08",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Many people in Argentina enjoy a folk dance called peric\u00f3n. The dance was adapted from <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> peric\u00f3n differs from the contradanza in a few important ways.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>contradanza but:</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>contradanza but,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>contradanza, but</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>contradanza, but,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the coordination of independent clauses. This choice correctly uses a comma followed by the coordinating conjunction \"but\" to join the first independent clause (\"The dance...contradanza\") with the second independent clause (\"peric\u00f3n differs...important ways\").</p><p>Choice A is incorrect because a colon can't be used in this way and a comma is needed before the conjunction. Choice B is incorrect because the comma is misplaced after \"but.\" Choice D is incorrect because no comma should follow \"but.\"</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T2.easy"
+}

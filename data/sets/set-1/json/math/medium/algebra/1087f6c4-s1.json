@@ -1,0 +1,24 @@
+{
+  "questionId": "1087f6c4-s1",
+  "originalId": "1087f6c4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>32.40x + 32.90y = 819</p><p>Diego ordered mulch and gravel, which cost a total of $819, for his landscape project. The given equation represents the relationship between the number of cubic yards of mulch, x, and the number of tons of gravel, y, Diego ordered. How much more, in dollars, did a ton of gravel cost Diego than a cubic yard of mulch?</p>",
+  "answerOptions": [],
+  "keys": [
+    "0.50",
+    "1/2",
+    ".5"
+  ],
+  "rationale": "<p>The coefficient of x ($32.40) is the cost per cubic yard of mulch; the coefficient of y ($32.90) is the cost per ton of gravel. The difference is 32.90 - 32.40 = 0.50.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium"
+}

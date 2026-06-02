@@ -1,0 +1,39 @@
+{
+  "questionId": "830120b0-s1",
+  "originalId": "830120b0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>y</mi><mo>&#62;</mo><mn>3</mn><mi>x</mi><mo>-</mo><mn>2</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>3</mn><mi>x</mi><mo>&#62;</mo><mn>8</mn></math></p>\n<p>Which of the following consists of the <em>y</em>-coordinates of all the points that satisfy the system of inequalities above?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>y</mi><mo>&#62;</mo><mfrac><mn>8</mn><mn>3</mn></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>y</mi><mo>&#62;</mo><mn>8</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>y</mi><mo>&#62;</mo><mn>2</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>y</mi><mo>&#62;</mo><mn>6</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Subtracting 2 from both sides of 3x > 8 yields 3x - 2 > 6. Combined with y > 3x - 2, by transitivity y > 6. Choice A solves only for x. Choice B uses the wrong constant. Choice C is incorrect.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "2c5c22d0-s1",
+  "originalId": "2c5c22d0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Consider the system of equations: y = 2x &minus; 1 and y = x<sup>2</sup>. How many solutions are there to this system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Setting x<sup>2</sup> = 2x &minus; 1 gives x<sup>2</sup> &minus; 2x + 1 = 0, i.e. (x &minus; 1)<sup>2</sup> = 0. The discriminant is (&minus;2)<sup>2</sup> &minus; 4(1)(1) = 0, so there is exactly one (repeated) real solution, x = 1, corresponding to the tangent point (1, 1). Hence the system has exactly one solution.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

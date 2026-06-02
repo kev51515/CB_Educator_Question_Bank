@@ -1,0 +1,39 @@
+{
+  "questionId": "482a445b-s1",
+  "originalId": "482a445b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to (x\u00b2 + 9)\u00b2 + (x \u2212 4)(x + 4)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x<sup>4</sup> + 18x\u00b2 + 97</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x<sup>4</sup> + 19x\u00b2 + 97</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x<sup>4</sup> + 18x\u00b2 + 65</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x<sup>4</sup> + 19x\u00b2 + 65</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Expand (x\u00b2 + 9)\u00b2 = x<sup>4</sup> + 18x\u00b2 + 81. Expand (x \u2212 4)(x + 4) = x\u00b2 \u2212 16. Sum: x<sup>4</sup> + 18x\u00b2 + 81 + x\u00b2 \u2212 16 = x<sup>4</sup> + 19x\u00b2 + 65. Choice (d) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A2.T6.medium"
+}

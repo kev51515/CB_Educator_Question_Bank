@@ -1,0 +1,25 @@
+{
+  "questionId": "bce57278-s1",
+  "originalId": "bce57278",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T12.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Some 19th-century European reformers sought to redesign workplaces by founding cooperative villages.</li>\n<li>A cooperative village is a community in which workers jointly own factories and share the profits of their labor.</li>\n<li>One such community was New Lanark in southern Scotland.</li>\n<li>It was founded in 1786 and reorganized in 1800 by social reformer Robert Owen.</li>\n<li>Owen wrote in an 1816 address that his goal for New Lanark was &ldquo;to form a new character in the rising generation, by surrounding them from infancy with circumstances calculated to produce only good and useful habits.&rdquo;</li>\n</ul>",
+  "stem": "<p>The student wants to explain the goal of New Lanark using a quotation from Robert Owen. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Founded in 1786 in southern Scotland, New Lanark was part of a 19th-century movement of European reformers who built cooperative villages.</p>"},
+    {"id": "b", "content": "<p>Reorganized in 1800, New Lanark was a cooperative village created &ldquo;to form a new character in the rising generation, by surrounding them from infancy with circumstances calculated to produce only good and useful habits,&rdquo; according to its reformer Robert Owen.</p>"},
+    {"id": "c", "content": "<p>Cooperative villages, such as New Lanark, reorganized by Robert Owen in 1800, were communities in which workers jointly owned factories and shared profits.</p>"},
+    {"id": "d", "content": "<p>In an 1816 address, social reformer Robert Owen explained his goal &ldquo;to form a new character in the rising generation.&rdquo;</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. This choice explains the goal of New Lanark&mdash;to shape the character of the rising generation by surrounding them from infancy with good influences&mdash;using a quotation from Robert Owen.</p><p>Choice A is incorrect. This choice provides background information about New Lanark, but it doesn&rsquo;t explain its goals or include Owen&rsquo;s words. Choice C is incorrect. This choice defines what a cooperative village is but doesn&rsquo;t use Owen&rsquo;s words to describe his vision for New Lanark. Choice D is incorrect. This choice only mentions part of Owen&rsquo;s goal, and it doesn&rsquo;t mention New Lanark at all.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

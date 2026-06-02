@@ -1,0 +1,72 @@
+{
+  "questionId": "a1955620",
+  "externalId": "6e5f7212-59e5-4e7d-ac52-76fabf8563bf",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:27.866796+00:00",
+  "type": "mcq",
+  "stem": "<p>The student wants to explain the sculpture&rsquo;s specific historical context. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "769be612-7a86-44a0-993b-4d6107f99c53",
+      "content": "<p>According to art historian Kirsten Buick, <em>Forever Free</em>, which depicts a male figure and a female figure gazing upward, is a &ldquo;celebration of liberty.&rdquo;&nbsp;</p>"
+    },
+    {
+      "id": "e46a54e1-b66b-4f5d-848f-9abe2e55b792",
+      "content": "<p>The base of Edmonia Lewis&rsquo;s <span data-ssml-say-as=\"date\">1867</span> marble sculpture is inscribed with a historically significant phrase: &ldquo;forever free.&rdquo;&nbsp;</p>"
+    },
+    {
+      "id": "22672aac-cedc-4af8-8e6f-f8c38833ce76",
+      "content": "<p>Completed in <span data-ssml-say-as=\"date\">1867</span>, Lewis&rsquo;s sculpture <em>Forever Free</em> commemorates the Emancipation Proclamation, which had been issued four years previously.&nbsp;</p>"
+    },
+    {
+      "id": "8cb74fcb-7e61-42f8-941e-311144df166b",
+      "content": "<p><em>Forever Free</em> (<span data-ssml-say-as=\"date\">1867</span>) is a marble sculpture by Edmonia Lewis, an African American and Mississauga Ojibwe sculptor who lived from <span data-ssml-say-as=\"date\">1844</span> to <span data-ssml-say-as=\"date\">1907</span>.</p>"
+    }
+  ],
+  "keys": [
+    "22672aac-cedc-4af8-8e6f-f8c38833ce76"
+  ],
+  "rationale": "<p>Choice C is the best answer. The sentence explains the specific historical context of Lewis&rsquo;s sculpture, noting that it commemorates the Emancipation Proclamation, which was issued four years before the sculpture was completed in 1867.</p><p>Choice A is incorrect. The sentence quotes an art historian&rsquo;s general interpretation of the sculpture&rsquo;s meaning; it doesn&rsquo;t explain the sculpture&rsquo;s specific historical context. Choice B is incorrect. While the sentence mentions a historically significant phrase on the sculpture&rsquo;s base, it doesn&rsquo;t explain the specific historical context of the phrase or the sculpture. Choice D is incorrect. The sentence provides biographical information about Lewis; it doesn&rsquo;t explain the specific historical context of the sculpture.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>The student wants to explain the sculpture&rsquo;s specific historical context. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "stimulus": "<p><p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Edmonia Lewis (1844&ndash;1907) was an African American and Mississauga Ojibwe sculptor.</li>\n<li><em>Forever Free</em> (<span data-ssml-say-as=\"date\">1867</span>) is a marble sculpture by Lewis.</li>\n<li>It depicts a male figure and a female figure gazing upward.</li>\n<li>It commemorates the <span data-ssml-say-as=\"date\">1863</span> Emancipation Proclamation.</li>\n<li>The phrase &ldquo;forever free&rdquo; from the text of the Emancipation Proclamation is inscribed on the sculpture&rsquo;s base.</li>\n<li>Art historian Kirsten Buick describes the sculpture as a &ldquo;celebration of liberty.&rdquo;</li>\n</ul></p>",
+    "keys": [
+      "22672aac-cedc-4af8-8e6f-f8c38833ce76"
+    ],
+    "answerOptions": [
+      {
+        "id": "769be612-7a86-44a0-993b-4d6107f99c53",
+        "content": "<p>According to art historian Kirsten Buick, <em>Forever Free</em>, which depicts a male figure and a female figure gazing upward, is a &ldquo;celebration of liberty.&rdquo;&nbsp;</p>"
+      },
+      {
+        "id": "e46a54e1-b66b-4f5d-848f-9abe2e55b792",
+        "content": "<p>The base of Edmonia Lewis&rsquo;s <span data-ssml-say-as=\"date\">1867</span> marble sculpture is inscribed with a historically significant phrase: &ldquo;forever free.&rdquo;&nbsp;</p>"
+      },
+      {
+        "id": "22672aac-cedc-4af8-8e6f-f8c38833ce76",
+        "content": "<p>Completed in <span data-ssml-say-as=\"date\">1867</span>, Lewis&rsquo;s sculpture <em>Forever Free</em> commemorates the Emancipation Proclamation, which had been issued four years previously.&nbsp;</p>"
+      },
+      {
+        "id": "8cb74fcb-7e61-42f8-941e-311144df166b",
+        "content": "<p><em>Forever Free</em> (<span data-ssml-say-as=\"date\">1867</span>) is a marble sculpture by Edmonia Lewis, an African American and Mississauga Ojibwe sculptor who lived from <span data-ssml-say-as=\"date\">1844</span> to <span data-ssml-say-as=\"date\">1907</span>.</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer. The sentence explains the specific historical context of Lewis&rsquo;s sculpture, noting that it commemorates the Emancipation Proclamation, which was issued four years before the sculpture was completed in 1867.</p><p>Choice A is incorrect. The sentence quotes an art historian&rsquo;s general interpretation of the sculpture&rsquo;s meaning; it doesn&rsquo;t explain the sculpture&rsquo;s specific historical context. Choice B is incorrect. While the sentence mentions a historically significant phrase on the sculpture&rsquo;s base, it doesn&rsquo;t explain the specific historical context of the phrase or the sculpture. Choice D is incorrect. The sentence provides biographical information about Lewis; it doesn&rsquo;t explain the specific historical context of the sculpture.</p>",
+    "externalid": "6e5f7212-59e5-4e7d-ac52-76fabf8563bf",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p><p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Edmonia Lewis (1844&ndash;1907) was an African American and Mississauga Ojibwe sculptor.</li>\n<li><em>Forever Free</em> (<span data-ssml-say-as=\"date\">1867</span>) is a marble sculpture by Lewis.</li>\n<li>It depicts a male figure and a female figure gazing upward.</li>\n<li>It commemorates the <span data-ssml-say-as=\"date\">1863</span> Emancipation Proclamation.</li>\n<li>The phrase &ldquo;forever free&rdquo; from the text of the Emancipation Proclamation is inscribed on the sculpture&rsquo;s base.</li>\n<li>Art historian Kirsten Buick describes the sculpture as a &ldquo;celebration of liberty.&rdquo;</li>\n</ul></p>"
+}

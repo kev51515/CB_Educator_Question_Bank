@@ -1,0 +1,72 @@
+{
+  "questionId": "a266d876",
+  "externalId": "4ed2b7c1-cbad-481a-9974-80cdb6245839",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:29.686898+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "3e959e0f-7ea2-42cf-b55a-717d6d51d0ac",
+      "content": "<p>nevertheless,</p>"
+    },
+    {
+      "id": "9ac307e4-3f17-4d9c-a224-fdd644db119d",
+      "content": "<p>consequently,</p>"
+    },
+    {
+      "id": "a73d866b-c8b5-4ea2-a829-59bc31d81869",
+      "content": "<p>indeed,</p>"
+    },
+    {
+      "id": "2c80eba6-3f5d-40b2-8f19-ac82db2477ce",
+      "content": "<p>in addition,</p>"
+    }
+  ],
+  "keys": [
+    "a73d866b-c8b5-4ea2-a829-59bc31d81869"
+  ],
+  "rationale": "<p>Choice C is the best answer. &ldquo;Indeed&rdquo; logically signals that the information that follows&mdash;that the majority of jets reach heights of only 20 to 50 km&mdash;offers additional emphasis in support of the previous claim that jets reaching the ionosphere (about 80 km above Earth) are outliers.</p><p>Choice A is incorrect because &ldquo;nevertheless&rdquo; illogically signals that the information about most jets reaching heights of only 20 to 50 km contrasts with the previous claim that jets reaching the ionosphere are outliers. Instead, it provides additional emphasis in support of that claim. Choice B is incorrect because &ldquo;consequently&rdquo; illogically signals that the information about most jets reaching heights of only 20 to 50 km is a consequence, or result, of some jets being outliers. Instead, it offers additional emphasis in support of the claim that jets reaching the ionosphere are outliers. Choice D is incorrect because &ldquo;in addition&rdquo; illogically signals that the information about most jets reaching heights of only 20 to 50 km merely adds to the previous claim that jets reaching the ionosphere are considered outliers. Instead, it provides additional emphasis in support of that claim.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>Upper-atmospheric jets&mdash;phenomena whereby electrical discharges cause narrow cones of blue light to briefly burst upward from the tops of thunderclouds&mdash;have been observed reaching the ionosphere. The extreme altitudes involved (the ionosphere begins about 80 km above Earth) mark these gigantic jets as outliers; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the majority of jets reach heights of only 20 to 50 km.</p>",
+    "keys": [
+      "a73d866b-c8b5-4ea2-a829-59bc31d81869"
+    ],
+    "answerOptions": [
+      {
+        "id": "3e959e0f-7ea2-42cf-b55a-717d6d51d0ac",
+        "content": "<p>nevertheless,</p>"
+      },
+      {
+        "id": "9ac307e4-3f17-4d9c-a224-fdd644db119d",
+        "content": "<p>consequently,</p>"
+      },
+      {
+        "id": "a73d866b-c8b5-4ea2-a829-59bc31d81869",
+        "content": "<p>indeed,</p>"
+      },
+      {
+        "id": "2c80eba6-3f5d-40b2-8f19-ac82db2477ce",
+        "content": "<p>in addition,</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer. &ldquo;Indeed&rdquo; logically signals that the information that follows&mdash;that the majority of jets reach heights of only 20 to 50 km&mdash;offers additional emphasis in support of the previous claim that jets reaching the ionosphere (about 80 km above Earth) are outliers.</p><p>Choice A is incorrect because &ldquo;nevertheless&rdquo; illogically signals that the information about most jets reaching heights of only 20 to 50 km contrasts with the previous claim that jets reaching the ionosphere are outliers. Instead, it provides additional emphasis in support of that claim. Choice B is incorrect because &ldquo;consequently&rdquo; illogically signals that the information about most jets reaching heights of only 20 to 50 km is a consequence, or result, of some jets being outliers. Instead, it offers additional emphasis in support of the claim that jets reaching the ionosphere are outliers. Choice D is incorrect because &ldquo;in addition&rdquo; illogically signals that the information about most jets reaching heights of only 20 to 50 km merely adds to the previous claim that jets reaching the ionosphere are considered outliers. Instead, it provides additional emphasis in support of that claim.</p>",
+    "externalid": "4ed2b7c1-cbad-481a-9974-80cdb6245839",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>Upper-atmospheric jets&mdash;phenomena whereby electrical discharges cause narrow cones of blue light to briefly burst upward from the tops of thunderclouds&mdash;have been observed reaching the ionosphere. The extreme altitudes involved (the ionosphere begins about 80 km above Earth) mark these gigantic jets as outliers; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the majority of jets reach heights of only 20 to 50 km.</p>"
+}

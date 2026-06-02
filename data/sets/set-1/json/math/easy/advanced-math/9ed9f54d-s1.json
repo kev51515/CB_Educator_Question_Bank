@@ -1,0 +1,39 @@
+{
+  "questionId": "9ed9f54d-s1",
+  "originalId": "9ed9f54d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which of the following is equivalent to <math><mn>3</mn><mfenced><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced><mo>-</mo><mn>3</mn><mfenced><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>+</mo><mn>15</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>+</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>+</mo><mn>9</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>9</mn><mi>x</mi><mo>+</mo><mn>9</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Distributing gives 6x + 12 \u2212 3x \u2212 3. Combining like terms: 6x \u2212 3x = 3x and 12 \u2212 3 = 9. The result is 3x + 9.</p>",
+  "templateId": "equivalent-expressions.A1.T2.easy"
+}

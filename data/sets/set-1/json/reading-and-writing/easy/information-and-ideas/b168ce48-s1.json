@@ -1,0 +1,25 @@
+{
+  "questionId": "b168ce48-s1",
+  "originalId": "b168ce48",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The average age at which people in the United States buy their first home is 36. Economist Priya Nair studied why younger adults are relatively less likely to purchase homes and whether there are ways to raise homeownership in young adulthood. Nair found that one barrier is a lack of knowledge about how mortgages, down payments, and closing costs actually work; she further found that simply giving young adults clear written guides on these topics noticeably reduces this barrier.</p>",
+  "stem": "<p>Based on the text, what would Nair most likely say is a promising way to increase homeownership in young adulthood?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Setting up social groups of young adults who want to buy homes</p>"},
+    {"id": "b", "content": "<p>Providing young adults with clear, practical information about how mortgages and home purchases work</p>"},
+    {"id": "c", "content": "<p>Encouraging young adults to brainstorm dream-home features</p>"},
+    {"id": "d", "content": "<p>Offering young adults tours of model homes in various neighborhoods</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text says Nair identified clear written guides about mortgages, down payments, and closing costs as a way to reduce the barrier of insufficient knowledge, so practical information about home purchases is the obvious next step.</p><p>Choice A is incorrect; social groups would not necessarily provide practical information. Choice C is incorrect; brainstorming dream-home features is unrelated to the practical knowledge gap. Choice D is incorrect; touring model homes would not give information about mortgages and closing costs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.easy"
+}

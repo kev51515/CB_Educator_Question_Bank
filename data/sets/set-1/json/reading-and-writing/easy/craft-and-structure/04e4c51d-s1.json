@@ -1,0 +1,39 @@
+{
+  "questionId": "04e4c51d-s1",
+  "originalId": "04e4c51d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Listening to recorded music in the early 1900s required bulky, fragile equipment, but this changed with the 1948 introduction of the long-playing record, a durable disc that played up to 25 minutes per side. LP records helped to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recorded music: they made it easy and affordable for ordinary households to build music collections, and listeners at the time eagerly shared new albums with friends.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>weaken</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>popularize</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>complicate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>silence</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because \"popularize\" means to make widely known or enjoyed, and the text says LP records made building a music collection easy and affordable for ordinary households and that listeners eagerly shared albums. Choice A is incorrect because the text describes LPs spreading music, not weakening interest in it. Choice C is incorrect because LPs are described as easier, not more complicated. Choice D is incorrect because the text describes more listening, not less.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

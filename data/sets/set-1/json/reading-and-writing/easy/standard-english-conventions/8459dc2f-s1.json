@@ -1,0 +1,39 @@
+{
+  "questionId": "8459dc2f-s1",
+  "originalId": "8459dc2f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>When browsing online stores, many shoppers add items to their carts without checking reviews. Cart pause is the practice of waiting a few minutes before purchasing and evaluating which products <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>should you really need<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>you really need<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>should you really need<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>you really need<span data-ssml-say-as=\"characters\">?</span></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period after the declarative clause \"you really need.\" The phrase \"which products you really need\" is an embedded noun clause, not a direct question, so the sentence as a whole is a statement and should end with a period.</p><p>Choice A is incorrect because the inverted word order (\"should you\") is used in direct questions, not embedded clauses. Choice C is incorrect for the same reason. Choice D is incorrect because the sentence is a statement, not a direct question, and so should end with a period rather than a question mark.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

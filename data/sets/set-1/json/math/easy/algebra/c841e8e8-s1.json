@@ -1,0 +1,39 @@
+{
+  "questionId": "c841e8e8-s1",
+  "originalId": "c841e8e8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>n</mi><mo>+</mo><mn>18</mn><mo>=</mo><mn>425</mn></math></p><p>What is the solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>407</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>443</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>23</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>7,650</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Subtracting 18 from both sides of the equation yields <math><mi>n</mi><mo>=</mo><mn>407</mn></math>.</p><p>Choices B, C, and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

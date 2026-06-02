@@ -1,0 +1,15 @@
+data/sets/set-1/json/math/hard/advanced-math/43926bd9-s1.json
+data/sets/set-1/json/math/hard/advanced-math/7355b9d9-s1.json
+data/sets/set-1/json/math/hard/geometry-and-trigonometry/ba8ca563-s1.json
+data/sets/set-1/json/math/hard/algebra/50f4cb9c-s1.json
+data/sets/set-1/json/math/hard/advanced-math/5edc8c98-s1.json
+data/sets/set-1/json/math/hard/advanced-math/2c5c22d0-s1.json
+data/sets/set-1/json/math/hard/advanced-math/7e6ea718-s1.json
+data/sets/set-1/json/math/hard/geometry-and-trigonometry/f7dbde16-s1.json
+data/sets/set-1/json/math/hard/problem-solving-and-data-analysis/1e1027a7-s1.json
+data/sets/set-1/json/math/hard/geometry-and-trigonometry/25da87f8-s1.json
+data/sets/set-1/json/math/hard/geometry-and-trigonometry/8c1aa743-s1.json
+data/sets/set-1/json/math/hard/problem-solving-and-data-analysis/c7c6445f-s1.json
+data/sets/set-1/json/math/hard/advanced-math/4dd4efcf-s1.json
+data/sets/set-1/json/math/hard/advanced-math/35e05e19-s1.json
+data/sets/set-1/json/math/hard/advanced-math/e117d3b8-s1.json

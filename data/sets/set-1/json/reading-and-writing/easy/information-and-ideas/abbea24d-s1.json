@@ -1,0 +1,39 @@
+{
+  "questionId": "abbea24d-s1",
+  "originalId": "abbea24d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;The Old Oak&rdquo; is a 1920 poem by Sarah Wells. In the poem, the speaker visits a meadow next to a great oak tree. The speaker claims to feel safeguarded by the oak, saying ______</p>",
+  "stem": "<p>Which quotation from &ldquo;The Old Oak&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;I felt it like a shield / Above me, sheltering my head from the storm.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;The brook ran low beyond the stile / Into the field beyond.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;The oak stood there to be remarked upon.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;I climbed the rise and looked back down toward the village.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the speaker explicitly says he felt the oak &ldquo;like a shield&rdquo; &ldquo;sheltering [his] head from the storm,&rdquo; directly conveying that he felt safeguarded by it.</p><p>Choice B is incorrect: it describes the brook, not safeguarding. Choice C is incorrect: it describes how the oak appeared to others, not that the speaker felt safeguarded. Choice D is incorrect: it describes the speaker&rsquo;s movement, not safeguarding.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T2.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "36fd6752-s1",
+  "originalId": "36fd6752",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>9</mn><mo>+</mo><mn>5</mn><mi>r</mi><mo>=</mo><mi>q</mi><mi>w</mi></math></p>\n<p style=\"text-align: center;\"><math><mn>5</mn><mi>r</mi><mo>-</mo><mn>3</mn><mi>w</mi><mo>=</mo><mn>3</mn><mi>w</mi><mo>+</mo><mn>14</mn></math></p>\n<p>In the given system of equations, <math><mi>q</mi></math> is a constant. If the system has no solution, what is the value of <math><mi>q</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>The correct answer is 6. Rewrite the first equation as 5r \u2212 qw = \u22129, and the second as 5r \u2212 6w = 14. For no solution, the coefficient ratios must be equal but the constant ratio different: 5/5 = q/6 gives q = 6. With q = 6, the equations become 5r \u2212 6w = \u22129 and 5r \u2212 6w = 14, which are parallel and distinct.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "420b82e2-s1",
+  "originalId": "420b82e2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T4.medium",
+  "stimulus": "<p>In 2019 evolutionary biologist Yuki Tanaka and her team examined the evolution of the plica semilunaris, a small fold of tissue at the inner corner of the eye that is present in some mammals, including humans, but is widely considered vestigial. Studying 412 mammal species, the team found that the plica semilunaris has emerged independently across multiple lineages on separate occasions and, notably, has not disappeared after emerging in those lineages. Moreover, the team determined that species that possess the fold tend to have higher concentrations of mucin-secreting cells, which protect the corneal surface, at the inner eye. Therefore, the team hypothesized that the plica semilunaris likely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>will emerge in a greater number of mammal species because it may serve a necessary protective function.</p>"},
+    {"id": "b", "content": "<p>produced higher concentrations of mucin-secreting cells in the past than it does currently.</p>"},
+    {"id": "c", "content": "<p>was once present in many nonmammal species but has since disappeared from those lineages.</p>"},
+    {"id": "d", "content": "<p>has been preserved in certain mammal species because it benefits ocular protection.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. The two findings—repeated independent emergence with no subsequent disappearance, and a correlation with mucin-secreting cells that protect the cornea—jointly suggest the fold has been preserved because it benefits ocular protection. Choice A overreaches with a future prediction. Choice B is unsupported; no historical comparison of mucin levels is given. Choice C introduces nonmammal species not addressed in the text.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

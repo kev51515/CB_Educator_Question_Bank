@@ -1,0 +1,39 @@
+{
+  "questionId": "af125459-s1",
+  "originalId": "af125459",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Number and Type of Pottery Shards Found at Different Depths in Riverbank Site</caption><thead><tr><th>Depth below surface (meters)</th><th>Locally made shards</th><th>Imported shards</th></tr></thead><tbody><tr><td>1&ndash;2</td><td>8</td><td>3</td></tr><tr><td>2&ndash;3</td><td>14</td><td>5</td></tr><tr><td>3&ndash;4</td><td>22</td><td>9</td></tr><tr><td>4&ndash;5</td><td>16</td><td>4</td></tr></tbody></table></figure><p>Archaeologists found the greatest combined number of pottery shards at ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1&ndash;2 meters below the surface.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2&ndash;3 meters below the surface.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4&ndash;5 meters below the surface.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3&ndash;4 meters below the surface.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because at 3&ndash;4 meters the combined number of shards (22 + 9 = 31) is greater than at any other depth.</p><p>Choice A is incorrect: 1&ndash;2 m has 8 + 3 = 11 shards. Choice B is incorrect: 2&ndash;3 m has 14 + 5 = 19 shards. Choice C is incorrect: 4&ndash;5 m has 16 + 4 = 20 shards.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

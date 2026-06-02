@@ -1,0 +1,39 @@
+{
+  "questionId": "9f6f96ff-s1",
+  "originalId": "9f6f96ff",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A rope with a length of 132 inches is cut into two parts. One part has a length of a inches, and the other part has a length of b inches. The value of a is 12 more than 5 times the value of b. What is the value of a?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>112</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>From a = 5b + 12 and a + b = 132: substituting gives 5b + 12 + b = 132, so 6b = 120 and b = 20. Then a = 5(20) + 12 = 112. The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium"
+}

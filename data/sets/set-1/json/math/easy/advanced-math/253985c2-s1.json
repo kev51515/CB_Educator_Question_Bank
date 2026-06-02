@@ -1,0 +1,39 @@
+{
+  "questionId": "253985c2-s1",
+  "originalId": "253985c2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>4</mn><mi>p</mi><mo>+</mo><mn>3</mn><mi>p</mi><mo>+</mo><mn>9</mn><mi>q</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>7</mn><mi>p</mi><mo>+</mo><mn>9</mn><mi>q</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>16</mn><mi>p</mi><mi>q</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>7</mn><mi>p</mi></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>16</mn><mi>q</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Combining like terms: 4p + 3p = 7p; the 9q term has no like term. Result: 7p + 9q.</p>",
+  "templateId": "equivalent-expressions.A1.T1.easy"
+}

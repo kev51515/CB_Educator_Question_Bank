@@ -1,0 +1,25 @@
+{
+  "questionId": "668f75cb-s1",
+  "originalId": "668f75cb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from Machado de Assis's 1881 novel <em>The Posthumous Memoirs of Brás Cubas</em> (translated from the Portuguese in 2020 by Flora Thomson-DeVeaux).</p>\n<blockquote>\n<p>I may well be the most ordinary clerk who ever pushed a quill across a ledger, and, as my landlady used to mutter, the most distracted lodger any boarding house in Rio has had to suffer—at least before I came under his tutelage—but I did pass several seasons in the orbit of a singular old astronomer, a man with an unteachable instinct for the heavens. I sat beside his telescope through the cold of many evenings. I watched the patience with which he worked. I saw how a problem would settle into him like a stone into still water, then slowly raise the rings of an answer.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>A truly insightful person prefers to develop ideas in silence before sharing them with others.</p>"},
+    {"id": "b", "content": "<p>A speaker treasures the long stretch of time he spent in the company of a man he greatly admired.</p>"},
+    {"id": "c", "content": "<p>A particularly gifted person feigns ordinariness so as not to overshadow those around him.</p>"},
+    {"id": "d", "content": "<p>A person was lucky enough to win another's affection despite his evident shortcomings.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most accurately states the main idea. The speaker describes himself as an unremarkable, distracted clerk but then turns to recall \"several seasons\" beside a \"singular old astronomer\" with \"an unteachable instinct for the heavens.\" The phrases convey extended time and deep admiration.</p><p>Choice A is incorrect because the text does not describe how the astronomer expresses ideas to others; it depicts only his quiet method of work. Choice C is incorrect because the text presents the speaker, not the astronomer, as the humble figure and gives no sign the astronomer is hiding talent. Choice D is incorrect because the text concerns professional admiration, not affection or love.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "84dd43f8-s1",
+  "originalId": "84dd43f8",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>For the function f, f(0) = 80, and for each increase in x by 1, the value of f(x) decreases by 75%. What is the value of f(3)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1.25",
+    "5/4"
+  ],
+  "rationale": "<p>The correct answer is 1.25 (equivalently 5/4). A 75% decrease means each step retains 25% = 0.25 of the previous value. After three steps: f(3) = 80 &middot; (0.25)<sup>3</sup> = 80/64 = 1.25.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

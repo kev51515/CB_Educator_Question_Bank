@@ -1,0 +1,39 @@
+{
+  "questionId": "468613c0-s1",
+  "originalId": "468613c0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A triangle has a base length of 84 centimeters and a height of 60 centimeters. What is the area, in square centimeters, of the triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>144</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,260</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2,520</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The area of a triangle is (1/2)(base)(height) = (1/2)(84)(60) = 2,520 square centimeters. The correct answer is choice D.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A1.T2.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f38b40ac-s1",
+  "originalId": "f38b40ac",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>In addition to her musical talent and prolific output, jazz singer Hattie Boyd was known for charming the audiences who packed clubs to see her perform in the 1930s with her commanding stage presence. Throughout her career, she was intentional and deliberate about how she presented herself. A music historian has claimed that Boyd consciously challenged the conventions of the era by how she chose to appear on stage.</p>",
+  "stem": "<p>Which quotation from an article about Boyd would most directly support the music historian's claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"Boyd performed mostly in clubs across Chicago's South Side, often appearing six nights a week during her early career.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"Although women performers of the time were generally expected to wear long gowns and elaborate hairstyles, Boyd appeared on stage in tailored suits and slicked-back hair.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"While Boyd was adored by audiences, several bandleaders found her temperament difficult and her insistence on song selection frustrating.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"Boyd at one point considered moving into recording exclusively, believing studio work would give her more control over her sound.\"</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. It directly supports the claim of intentional challenge to conventions: women were expected to wear gowns, but Boyd wore tailored suits and slicked-back hair instead.</p><p>Choice A describes her performance schedule but says nothing about challenging conventions. Choice C describes her difficult professional relationships, not her public self-presentation. Choice D shows she was thoughtful about her career but says nothing about defying conventions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A2.T3.easy"
+}

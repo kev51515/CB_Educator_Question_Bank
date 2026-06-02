@@ -1,0 +1,23 @@
+{
+  "questionId": "429fb7c0-s1",
+  "originalId": "429fb7c0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>What value of <i>t</i> is the solution to the equation 0.5<i>t</i> + 0.2 = 3(<i>t</i> &minus; 0.1) + 0.05?</p>",
+  "answerOptions": [],
+  "keys": [
+    "0.18",
+    "9/50"
+  ],
+  "rationale": "<p>Distribute on the right: 3(<i>t</i> &minus; 0.1) + 0.05 = 3<i>t</i> &minus; 0.30 + 0.05 = 3<i>t</i> &minus; 0.25. Setting 0.5<i>t</i> + 0.2 = 3<i>t</i> &minus; 0.25 and isolating <i>t</i> gives &minus;2.5<i>t</i> = &minus;0.45, so <i>t</i> = 0.18, or 9/50.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "483d208d-s1",
+  "originalId": "483d208d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At a charity carnival, attendees win tokens worth a different number of points depending on the shape. One attendee won T triangle tokens and H hexagon tokens worth a total of 1,350 points. The equation 60T + 75H = 1,350 represents this situation. How many more points is a hexagon token worth than a triangle token?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,290</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The coefficient 60 is the points per triangle token; 75 is the points per hexagon token. The difference is 75 - 60 = 15. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A3.T4.medium"
+}

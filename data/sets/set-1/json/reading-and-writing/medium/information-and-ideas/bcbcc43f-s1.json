@@ -1,0 +1,25 @@
+{
+  "questionId": "bcbcc43f-s1",
+  "originalId": "bcbcc43f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T11.medium",
+  "stimulus": "<p>The Norte Chico civilization formed along the arid Pacific coast of present-day Peru around 3000 BCE, near the mouths of several river valleys. The dry desert climate made it nearly impossible to grow most food crops without irrigation, but the same dryness preserved harvested goods unusually well. To work around the climate, the Norte Chico people built canals from the rivers to their fields and farmed cotton, squash, and beans. That system performed so reliably that the harvests routinely exceeded what families needed in a season. As a result, the Norte Chico people <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>were able to trade their surplus produce with neighboring inland groups.</p>"},
+    {"id": "b", "content": "<p>limited their farming to the very wettest weeks of each year.</p>"},
+    {"id": "c", "content": "<p>began irrigated farming only several centuries after 3000 BCE.</p>"},
+    {"id": "d", "content": "<p>relied entirely on coastal fishing rather than on cultivated foods.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text says the Norte Chico people used canals to overcome the arid climate, and that this system reliably produced more food than a family needed in a season. A surplus that exceeds local demand most logically becomes the basis for trade with neighboring groups.</p><p>Choice B is incorrect because the text describes the climate as consistently dry, not as having distinct wet weeks. Choice C is incorrect because the text places the formation of the civilization, including its farming, around 3000 BCE. Choice D is incorrect because the text describes a productive irrigated agriculture, not exclusive reliance on fishing.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

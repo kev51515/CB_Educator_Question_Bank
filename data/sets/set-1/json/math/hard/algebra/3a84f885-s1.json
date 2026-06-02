@@ -1,0 +1,22 @@
+{
+  "questionId": "3a84f885-s1",
+  "originalId": "3a84f885",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mfenced><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mfenced><mo>-</mo><mfenced><mrow><mn>5</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfenced><mo>=</mo><mn>144</mn></math></p>\n<p style=\"text-align: center;\"><math><mfenced><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>5</mn><mi>y</mi><mo>+</mo><mn>2</mn></mrow></mfenced><mo>=</mo><mn>472</mn></math></p>\n<p>The solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mn>5</mn><mfenced><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow></mfenced></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "1540"
+  ],
+  "rationale": "<p>The correct answer is 1540. Adding the two equations eliminates (5y + 2): 2(x + 3) = 144 + 472 = 616, so x + 3 = 308. Therefore 5(x + 3) = 1540.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard"
+}

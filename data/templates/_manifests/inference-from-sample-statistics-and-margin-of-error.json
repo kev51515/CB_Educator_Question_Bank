@@ -1,0 +1,151 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Inference from sample statistics and margin of error ",
+  "originals": [
+    {
+      "id": "0108ac2d",
+      "path": "json/math/easy/problem-solving-and-data-analysis/0108ac2d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2c76bcce",
+      "path": "json/math/easy/problem-solving-and-data-analysis/2c76bcce.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "6a305cd0",
+      "path": "json/math/easy/problem-solving-and-data-analysis/6a305cd0.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "8173f32b",
+      "path": "json/math/easy/problem-solving-and-data-analysis/8173f32b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "90eed2e5",
+      "path": "json/math/easy/problem-solving-and-data-analysis/90eed2e5.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "97631565",
+      "path": "json/math/easy/problem-solving-and-data-analysis/97631565.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "affb2315",
+      "path": "json/math/easy/problem-solving-and-data-analysis/affb2315.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e7d9649f",
+      "path": "json/math/easy/problem-solving-and-data-analysis/e7d9649f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f4b3672a",
+      "path": "json/math/easy/problem-solving-and-data-analysis/f4b3672a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1e562f24",
+      "path": "json/math/medium/problem-solving-and-data-analysis/1e562f24.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4096a482",
+      "path": "json/math/medium/problem-solving-and-data-analysis/4096a482.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "53d97af5",
+      "path": "json/math/medium/problem-solving-and-data-analysis/53d97af5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "89f8d08a",
+      "path": "json/math/medium/problem-solving-and-data-analysis/89f8d08a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9bedc4a0",
+      "path": "json/math/medium/problem-solving-and-data-analysis/9bedc4a0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9ee22c16",
+      "path": "json/math/medium/problem-solving-and-data-analysis/9ee22c16.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "a2162ea1",
+      "path": "json/math/medium/problem-solving-and-data-analysis/a2162ea1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e03f3477",
+      "path": "json/math/medium/problem-solving-and-data-analysis/e03f3477.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f04d40b2",
+      "path": "json/math/medium/problem-solving-and-data-analysis/f04d40b2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f8f79e11",
+      "path": "json/math/medium/problem-solving-and-data-analysis/f8f79e11.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "fc46af57",
+      "path": "json/math/medium/problem-solving-and-data-analysis/fc46af57.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "308084c5",
+      "path": "json/math/hard/problem-solving-and-data-analysis/308084c5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "85939da5",
+      "path": "json/math/hard/problem-solving-and-data-analysis/85939da5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "916ffe9b",
+      "path": "json/math/hard/problem-solving-and-data-analysis/916ffe9b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9ba3e283",
+      "path": "json/math/hard/problem-solving-and-data-analysis/9ba3e283.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

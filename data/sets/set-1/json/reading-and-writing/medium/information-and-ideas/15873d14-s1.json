@@ -1,0 +1,25 @@
+{
+  "questionId": "15873d14-s1",
+  "originalId": "15873d14",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Percentage of Domestic Wheat Production Exported by Three Countries, 2016/2017–2020/2021 Marketing Years</p></caption><thead><tr><th scope=\"col\">Marketing year</th><th scope=\"col\">Canada</th><th scope=\"col\">Russia</th><th scope=\"col\">Ukraine</th></tr></thead><tbody><tr><th scope=\"row\">2016/2017</th><td>71%</td><td>33%</td><td>61%</td></tr><tr><th scope=\"row\">2017/2018</th><td>74%</td><td>50%</td><td>65%</td></tr><tr><th scope=\"row\">2018/2019</th><td>78%</td><td>52%</td><td>68%</td></tr><tr><th scope=\"row\">2019/2020</th><td>76%</td><td>46%</td><td>62%</td></tr><tr><th scope=\"row\">2020/2021</th><td>72%</td><td>53%</td><td>70%</td></tr></tbody></table></figure><p>Canada, Russia, and Ukraine are among the world's leading wheat-producing countries, and each country exports a substantial share of its annual wheat harvest. A student is comparing those export shares and notices that for the marketing year 2019/2020, the percentage of wheat exported by ______<span aria-hidden=\"true\"></span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Russia increased from the previous marketing year but remained lower than the percentage exported by Canada.</p>"},
+    {"id": "b", "content": "<p>Ukraine exceeded the percentage exported by Canada for the first time.</p>"},
+    {"id": "c", "content": "<p>Canada decreased from the previous marketing year but remained the highest among the three countries.</p>"},
+    {"id": "d", "content": "<p>Russia reached its highest point during the five marketing years.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively uses data from the table. According to the table, for the marketing year 2019/2020, the percentage of wheat exported by Canada decreased from 78% in the previous year to 76%; that 76% remained higher than the percentages exported by Russia (46%) and Ukraine (62%) in 2019/2020, making Canada the highest among the three countries.</p><p>Choice A is incorrect because the table shows that Russia's export share decreased from 52% in 2018/2019 to 46% in 2019/2020, not increased. Choice B is incorrect because the table shows that Ukraine never exceeded Canada's export share for any of the five marketing years; Canada is highest each year. Choice D is incorrect because Russia's highest export share over the five marketing years is 53% in 2020/2021, not its 2019/2020 value of 46%.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

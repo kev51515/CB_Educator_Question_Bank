@@ -1,0 +1,24 @@
+{
+  "questionId": "eb672707-s1",
+  "originalId": "eb672707",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>How many <u>tablespoons</u> are equivalent to 22 teaspoons? (3 teaspoons = 1 tablespoon)</p>",
+  "answerOptions": null,
+  "keys": [
+    "22/3",
+    "7.333",
+    "7.334"
+  ],
+  "rationale": "<p>The correct answer is 22/3. Since 3 teaspoons = 1 tablespoon, 22 teaspoons equals 22 \u00b7 (1/3) = 22/3 tablespoons (approximately 7.333). Equivalent forms include 22/3, 7.333, and 7.334.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.medium"
+}

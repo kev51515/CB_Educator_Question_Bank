@@ -1,0 +1,39 @@
+{
+  "questionId": "cfe67646-s1",
+  "originalId": "cfe67646",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The point (-3, 7) in the xy-plane is a solution to which of the following systems of inequalities?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x &gt; 0 and y &gt; 0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x &gt; 0 and y &lt; 0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x &lt; 0 and y &gt; 0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x &lt; 0 and y &lt; 0</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since -3 &lt; 0 and 7 &gt; 0, (-3, 7) satisfies x &lt; 0 and y &gt; 0.</p><p>Choices A, B, and D violate at least one condition.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy"
+}

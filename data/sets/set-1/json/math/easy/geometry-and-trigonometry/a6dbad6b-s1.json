@@ -1,0 +1,39 @@
+{
+  "questionId": "a6dbad6b-s1",
+  "originalId": "a6dbad6b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>n</em> and <em>p</em> are parallel and cut by two transversals that meet at a vertex above line <em>p</em>, forming a triangle. Two interior angles of that triangle have measures 35 degrees and 70 degrees, where the 70-degree angle is alternate-interior to a marked angle of measure x degrees on line <em>n</em>. What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>105</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>110</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>70</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The interior angles of the triangle sum to 180 degrees. Two of them measure 35 and 70 degrees, so the third measures 180 minus 35 minus 70 = 75 degrees. Because the lines are parallel, the marked angle on line <em>n</em> is alternate-interior to this third angle, so x = 75.</p><p>Choice A is incorrect: 105 is the sum of 35 and 70.</p><p>Choice B is incorrect: 110 is 180 minus 70.</p><p>Choice D is incorrect: 70 is one of the given angles, not the third one.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A2.T3.easy"
+}

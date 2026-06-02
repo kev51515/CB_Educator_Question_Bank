@@ -1,0 +1,39 @@
+{
+  "questionId": "57485f5e-s1",
+  "originalId": "57485f5e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a nineteenth-century children's novel. Seven-year-old Lina and her elderly cousin Augustina are turning the pages of a collection of illustrated nature books.</p><blockquote><p>Lina had drawn close to the table and was studying with wide and wondering eyes the brilliant plates in the large books Augustina was placing before her. All at once she gave a happy cry, for on one page she saw a meadow filled with bright wildflowers, with a small wooden bridge crossing a stream and a flock of swallows wheeling above. With shining eyes Lina seemed to drink in every line of the picture.</p></blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Lina is studying an illustration in one of Augustina's books because she has never seen a swallow before.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Lina is uneasy until she sees the peaceful meadow scene in one of Augustina's books.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Lina is first startled by an illustration in one of Augustina's books but soon comes to love its beauty.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Lina is delighted and absorbed by an illustration she sees in one of Augustina's books.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text describes Lina's happy cry, her shining eyes, and her drinking in every line of the picture, which together show that she is delighted and absorbed by the illustration.</p><p>Choice A is incorrect; the text never says whether Lina has seen swallows before, and the main idea is about her reaction to the illustration. Choice B is incorrect; nothing in the text shows Lina being uneasy before she sees the meadow. Choice C is incorrect; her happy cry is one of delight, not of being startled.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.easy"
+}

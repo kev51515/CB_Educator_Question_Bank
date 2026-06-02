@@ -1,0 +1,25 @@
+{
+  "questionId": "863065c7-s1",
+  "originalId": "863065c7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>Economists Priya Iyer and Dawit Asfaw's survey of municipal water-pricing policies and their effects across regions <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> four design principles that consistently reduce household consumption, including tiered rates and metered billing. Seoul's water utility incorporates three of these principles.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are highlighting</p>"},
+    {"id": "b", "content": "<p>have highlighted</p>"},
+    {"id": "c", "content": "<p>highlights</p>"},
+    {"id": "d", "content": "<p>highlight</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-verb agreement. The singular verb \"highlights\" agrees in number with the singular subject \"survey.\"</p><p>Choice A is incorrect because the plural verb \"are highlighting\" doesn't agree in number with the singular subject \"survey.\" Choice B is incorrect because the plural verb \"have highlighted\" doesn't agree in number with the singular subject \"survey.\" Choice D is incorrect because the plural verb \"highlight\" doesn't agree in number with the singular subject \"survey.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

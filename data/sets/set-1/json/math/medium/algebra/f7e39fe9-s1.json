@@ -1,0 +1,22 @@
+{
+  "questionId": "f7e39fe9-s1",
+  "originalId": "f7e39fe9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table shows four values of <em>x</em> and their corresponding values of <em>g</em>(<em>x</em>).</p><table border=\"1\"><tr><th><em>x</em></th><th>8</th><th>12</th><th>16</th><th>20</th></tr><tr><th><em>g</em>(<em>x</em>)</th><td>65</td><td>105</td><td>145</td><td>185</td></tr></table><p>There is a linear relationship between <em>x</em> and <em>g</em>(<em>x</em>) that is defined by the equation <em>g</em>(<em>x</em>) = <em>mx</em> \u2212 15, where <em>m</em> is a constant. What is the value of <em>m</em>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "10"
+  ],
+  "rationale": "<p>The correct answer is 10. Substituting <em>x</em> = 8 and <em>g</em>(<em>x</em>) = 65 into <em>g</em>(<em>x</em>) = <em>mx</em> \u2212 15 yields 65 = 8<em>m</em> \u2212 15, so 8<em>m</em> = 80 and <em>m</em> = 10.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T2.medium"
+}

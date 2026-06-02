@@ -1,0 +1,39 @@
+{
+  "questionId": "cae97f58-s1",
+  "originalId": "cae97f58",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Lichens can struggle in alpine tundra environments because they require enough sunlight for photosynthesis but not so much wind-driven exposure that they risk severe desiccation. Researchers Aila Lindstrom and Mei Tanaka found several patches of <em>Umbilicaria americana</em>, a leaf-like rock lichen, growing beneath thin slabs of weathered slate above the treeline in the Cascade Range. To evaluate whether these partially translucent rocks benefited the lichen, the researchers compared thallus surface area, a measure of lichen growth, when <em>U. americana</em> was growing exposed on bare granite versus when it was growing beneath the slate slabs. They found that thallus surface area was 58% greater for lichens growing beneath slate compared to lichens on exposed granite, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>U. americana</em> growing beneath slate slabs experience lower wind exposure and are thus able to retain more moisture.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>slate slabs do not transmit the necessary sunlight for photosynthesis in <em>U. americana</em>.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>slate slabs are capable of supporting <em>U. americana</em> growth if the slabs are not too thin.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>U. americana</em> is one of the few types of lichen that can survive beneath translucent rocks.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text explains that lichens need sufficient sunlight for photosynthesis but suffer from severe desiccation caused by wind exposure. The lichens beneath the slate slabs grew significantly more than those on exposed granite. Since the slate slabs are partially translucent, the most reasonable inference is that beneath the slate, the lichens were sheltered from wind, retained more moisture, and consequently grew larger.</p><p>Choice B is incorrect because lichens growing beneath the slate slabs grew significantly more than those on bare granite, which would not be the case if the slate transmitted insufficient light for photosynthesis. Choice C is incorrect because the text never compares lichen growth beneath slabs of different thicknesses. Choice D is incorrect because the text doesn't mention any other lichen species or how they fare beneath translucent rocks.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

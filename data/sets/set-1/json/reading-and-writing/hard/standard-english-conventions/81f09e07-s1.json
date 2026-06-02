@@ -1,0 +1,25 @@
+{
+  "questionId": "81f09e07-s1",
+  "originalId": "81f09e07",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Rather than relying on cushioned seats, traditional Korean households often gathered around low wooden floor tables, their construction <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> ease of cleaning, efficient use of heated ondol floors, and adaptability to multiple meals over decorative refinement.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>had emphasized</p>"},
+    {"id": "b", "content": "<p>emphasizing</p>"},
+    {"id": "c", "content": "<p>was emphasizing</p>"},
+    {"id": "d", "content": "<p>emphasized</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle \"emphasizing\" is correctly used to form a supplementary element that modifies \"their construction,\" describing what the tables' construction emphasized.</p><p>Choice A is incorrect because it results in a comma splice. The finite past perfect verb \"had emphasized\" creates a second main clause in the sentence, and the comma after \"tables\" can't be used in this way to join two main clauses. Choice C is incorrect because it results in a comma splice. The finite past progressive verb \"was emphasizing\" creates a second main clause in the sentence, and the comma after \"tables\" can't be used in this way to join two main clauses. Choice D is incorrect because it results in a comma splice. The finite past tense verb \"emphasized\" creates a second main clause in the sentence, and the comma after \"tables\" can't be used in this way to join two main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "6ba39da5-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "6ba39da5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3a + 10b = 215</p><p>3a + 4b = 95</p><p>The solution to the given system of equations is (a, b). What is the value of b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "20"
+  ],
+  "rationale": "<p>Subtracting the second equation from the first eliminates a: (3a − 3a) + (10b − 4b) = 215 − 95, so 6b = 120 and b = 20.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

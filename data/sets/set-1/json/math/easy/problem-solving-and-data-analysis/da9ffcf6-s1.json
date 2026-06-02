@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The ratio of the length of line segment PQ to the length of line segment MN is 4 to 1. If the length of line segment PQ is 92 centimeters, what is the length, in centimeters, of line segment MN?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>88</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>92</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>368</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>23</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The ratio PQ:MN = 4:1 means PQ = 4\u00b7MN. Given PQ = 92, MN = 92 \u00f7 4 = 23 cm.</p><p>Choice A is incorrect; this equals 92 \u2212 4.</p><p>Choice B is incorrect; this is the length of PQ.</p><p>Choice C is incorrect; this is 92 \u00d7 4, the result if the ratio were reversed.</p>",
+  "questionId": "da9ffcf6-s1",
+  "originalId": "da9ffcf6",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy"
+}

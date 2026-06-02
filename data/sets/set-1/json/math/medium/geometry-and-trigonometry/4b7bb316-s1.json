@@ -1,0 +1,22 @@
+{
+  "questionId": "4b7bb316-s1",
+  "originalId": "4b7bb316",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The length of each edge of a cube-shaped box is 17 centimeters. Each side of the box is in the shape of a square. The box does not have a top. What is the exterior surface area, in square centimeters, of this box without a top?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1445"
+  ],
+  "rationale": "<p>The correct answer is 1,445. The exterior surface area of a figure is the sum of the areas of all its faces. Since the box does not have a top and each face is a square, the box consists of 5 congruent square faces. With edge length 17 cm, each square face has area 17<sup>2</sup> = 289 square centimeters. Therefore the total exterior surface area is 5(289) = 1,445 square centimeters.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T1.medium"
+}

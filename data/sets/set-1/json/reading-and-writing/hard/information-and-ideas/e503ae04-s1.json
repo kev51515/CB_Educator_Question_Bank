@@ -1,0 +1,25 @@
+{
+  "questionId": "e503ae04-s1",
+  "originalId": "e503ae04",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>With the ongoing expansion of telehealth, patients are expecting shorter and shorter wait times for video consultations, but telehealth providers continue to struggle with intake-stage triage (the initial step in routing patients to the right clinician) due to challenges such as fragmented medical histories and inconsistent insurance information. Innovations to mitigate these challenges have been emerging—the use of AI-driven symptom checkers, for example—but these innovations tend to engender their own complications (e.g., regulatory uncertainty about AI making preliminary diagnostic decisions), leading researchers to conclude that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>a better understanding of patients' expectations for telehealth is needed so that providers can better plan for fluctuations in consultation volume.</p>"},
+    {"id": "b", "content": "<p>there may not be sufficient incentive for telehealth providers to attempt to solve the problems associated with intake-stage triage.</p>"},
+    {"id": "c", "content": "<p>patients' expectations for reduced wait times may be outstripping what is viable for telehealth providers to provide.</p>"},
+    {"id": "d", "content": "<p>fast consultation is a leading factor in patient satisfaction, and therefore telehealth providers would benefit from investing resources in reducing wait times.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text says that patients want ever-shorter wait times, but providers continue to struggle with intake-stage triage, and the innovations meant to address triage tend to introduce new complications of their own. Because patient demand for speed is paired with persistent obstacles and new problems arising from attempted solutions, it logically follows that patient expectations for wait times may be outstripping what providers can feasibly provide.</p><p>Choice A is incorrect because the text doesn't address fluctuations in consultation volume and makes clear that providers are already aware of patients' expectations. Choice B is incorrect because the text shows that providers are actively pursuing innovations to address triage problems, indicating that incentive is not lacking. Choice D is incorrect because the general benefit of investing in shorter wait times is the premise of the discussion, not a conclusion drawn from the new complications introduced by triage innovations.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

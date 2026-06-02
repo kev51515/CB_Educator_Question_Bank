@@ -1,0 +1,25 @@
+{
+  "questionId": "979b0b8d-s1",
+  "originalId": "979b0b8d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function <i>g</i>, the graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane has a slope of 24 and passes through the point (0, 0). Which equation defines <i>g</i>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>g</i>(<i>x</i>) = 24<i>x</i></p>"},
+    {"id": "b", "content": "<p><i>g</i>(<i>x</i>) = (1/24)<i>x</i></p>"},
+    {"id": "c", "content": "<p><i>g</i>(<i>x</i>) = &minus;24<i>x</i></p>"},
+    {"id": "d", "content": "<p><i>g</i>(<i>x</i>) = 24<i>x</i> + 24</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. A linear function with slope <i>m</i> and <i>y</i>-intercept (0, <i>b</i>) is <i>g</i>(<i>x</i>) = <i>m</i><i>x</i> + <i>b</i>. With <i>m</i> = 24 and <i>b</i> = 0, <i>g</i>(<i>x</i>) = 24<i>x</i>.</p><p>Choice B uses the reciprocal slope. Choice C has the wrong sign. Choice D adds a non-zero <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T1.easy"
+}

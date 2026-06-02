@@ -1,0 +1,39 @@
+{
+  "questionId": "26ee16ba-s1",
+  "originalId": "26ee16ba",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Project-based learning is a teaching approach gaining attention in schools. Instead of relying on textbook lessons, teachers ask students to investigate real-world problems and create original products to share their findings. For example, in Marisol Ortega&rsquo;s science class, students design and build small wind turbines and test them in a local park. Researchers claim that, in addition to deepening students&rsquo; problem-solving skills, <u>project-based learning improves student outcomes by boosting attendance and class participation</u>.</p>",
+  "stem": "<p>Which finding, if true, would most strongly support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Classes that use project-based learning report some of the highest attendance and participation rates in the school.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Students who already excel at problem-solving are usually the ones who enroll in project-based learning classes.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Teachers find that preparing project-based lessons is more time-consuming than preparing traditional lessons.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Some parents prefer project-based learning because it gives students more independence at home.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the claim specifically links project-based learning to better attendance and participation, and Choice A directly reports those higher rates as evidence.</p><p>Choice B is incorrect because it suggests the students were already engaged, which would weaken (not strengthen) the claim that the method itself boosts participation. Choice C is incorrect because teacher workload doesn&rsquo;t address student attendance or participation. Choice D is incorrect because parent preferences are unrelated to the claim about classroom outcomes.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

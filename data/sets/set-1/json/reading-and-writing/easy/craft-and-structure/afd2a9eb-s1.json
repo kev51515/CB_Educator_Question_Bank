@@ -1,0 +1,39 @@
+{
+  "questionId": "afd2a9eb-s1",
+  "originalId": "afd2a9eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Snow leopards are rare, secretive cats. They live mostly alone in remote parts of Central Asia, such as the high cliffs of the Himalayas. These cats have been hard to study because their habitats are so <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the regions where most humans live.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>full of</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>far from</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>drawn to</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>shaped by</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"far from\" matches the description of remote habitats in places like the Himalayas, which are difficult for humans to access. Choice A is incorrect because being full of humans contradicts the secretive nature of snow leopards. Choice C is incorrect because drawn to is the opposite. Choice D is incorrect because shape doesn’t describe distance.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

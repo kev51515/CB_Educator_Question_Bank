@@ -1,0 +1,39 @@
+{
+  "questionId": "0451d754-s1",
+  "originalId": "0451d754",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line k is defined by y = (9/4)x - 2. Line j is parallel to line k in the xy-plane. What is the slope of line j?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4/9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-9/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9/4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-2</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Parallel lines have equal slopes. The slope of k is 9/4, so the slope of j is also 9/4. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "968e9e51-s1",
+  "originalId": "968e9e51",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>y</em> &gt; 2<em>x</em> + 1<br><em>y</em> &lt; 5</p><p>Which of the following ordered pairs (<em>x</em>, <em>y</em>) is a solution to the system of inequalities above?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(\u22121, 2)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(3, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(2, 5)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Substituting (\u22121, 2): is 2 &gt; 2(\u22121) + 1 = \u22121? Yes. Is 2 &lt; 5? Yes. Both inequalities are satisfied.</p><p>Choice B fails the first inequality, Choice C fails the first inequality, and Choice D fails the second.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium"
+}

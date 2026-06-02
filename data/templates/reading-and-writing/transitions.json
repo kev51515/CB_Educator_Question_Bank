@@ -1,0 +1,963 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Expression of Ideas",
+  "skill": "Transitions",
+  "originals_count": 173,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Contrast / Concession",
+      "description": "The blank must signal that what follows REVERSES, QUALIFIES, or stands AGAINST the prior idea. The student infers an oppositional logical relation between the two clauses/sentences and selects a transition that flags reversal (however, by contrast, instead) or concession (granted, of course, that said, admittedly).",
+      "boundary_with_other_aspects": "A1 differs from A4 in directional polarity: A1 signals 'X, but Y' while A4 signals 'X, and additionally Y' — drifting an A1 contrast clone into an A4 'additionally' relation is a categorical error. A1 differs from A6 in that A6 requires the second clause to be a PARALLEL case, whereas A1 requires it to OPPOSE or QUALIFY the first.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Direct contrast between two items",
+          "description": "Two parallel subjects (people, places, species, theories) are described; the blank introduces a clause that highlights how the second DIFFERS from the first along the same dimension already named.",
+          "core_skill_demand": "Recognize that the two sentences/clauses present a paired comparison whose values move in opposite directions, and pick a transition meaning 'by contrast / however / in contrast' rather than 'similarly / additionally'.",
+          "example_originals": ["b5972710", "0205e563", "080a7b51", "11df9b99", "6d883838", "480ade7e"],
+          "frequency": { "easy": 6, "medium": 11, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Two short factual sentences with explicit subjects (e.g., Niger / Jordan) and a single measurable dimension (ratified or not)",
+                "Distractors are clearly mismatched in polarity (similarly, for example) — only one option signals contrast",
+                "Stimulus ≤45 words; named subjects appear in the same syntactic slot in both sentences"
+              ],
+              "example_stem": "Niger ratified the Outer Space Treaty … Jordan, ______ has yet to officially ratify the treaty.",
+              "example_ids": ["b5972710", "90117366"]
+            },
+            "medium": {
+              "characteristics": [
+                "Stimulus 50–65 words, with one of the two paired items receiving an intervening definition or modifier",
+                "Two distractors are valid English transitions of OTHER aspects (additionally / specifically) that a careless reader might pick based on surface cues",
+                "Contrast dimension is implicit (must be inferred from antonymic descriptors, not stated)"
+              ],
+              "example_stem": "Countries with single-ballot majoritarian elections … tend toward two-party systems. ______ countries with proportional-representation systems tend to support multi-partyism.",
+              "example_ids": ["6d883838", "11df9b99", "0205e563", "080a7b51"]
+            },
+            "hard": {
+              "characteristics": [
+                "Stimulus ≥65 words with a 3-clause structure (premise → contrasting evidence → elaboration); blank often sits between premise and evidence",
+                "Correct answer is a contrast SIGNAL embedded mid-sentence as a parenthetical (e.g., 'Bruno Morgado and colleagues, though, detected …')",
+                "All four options include at least one cause/effect or example transition that would yield a superficially coherent reading but inverts the intended logic"
+              ],
+              "example_stem": "Ring-debris orbiting outside the Roche limit would likely accrete into a satellite. Bruno Morgado and colleagues, ______ detected a dense ring … well outside the Roche limit … that has remained intact.",
+              "example_ids": ["a7a944ed", "c071eca2", "480ade7e", "2ba97187"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two clearly paired entities differing on a single dimension",
+              "Stem wording 'Which choice completes the text with the most logical transition?'",
+              "Exactly one option from the contrast family among four choices",
+              "Blank position immediately before or embedded inside the second (contrasting) clause"
+            ],
+            "must_vary": [
+              "Topic domain (geography, biology, history, art, policy)",
+              "Specific contrast transition (however / by contrast / in contrast / instead / conversely)",
+              "Which named entity sits in the first vs second sentence"
+            ],
+            "common_bugs": [
+              "Cloner inserts 'similarly' as the correct key because both sentences share grammatical parallelism — categorical drift to A6",
+              "Cloner rewrites paired sentences so the second extends the first instead of opposing it — drift to A4",
+              "Cloner makes the contrast EXPLICIT in the text (using 'unlike' or 'but') so the transition becomes redundant rather than load-bearing"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Expectation reversal (however/nevertheless)",
+          "description": "The first sentence(s) set up an expectation (success, fame, accomplishment, prediction); the blank introduces a clause whose content runs against that expectation. Correct answer is typically 'However,' 'Nevertheless,' 'Still,' or 'Yet,' placed sentence-initially.",
+          "core_skill_demand": "Identify the implicit expectation set by the first sentence and recognize that the post-blank clause violates it, then choose a single-word concessive/contrastive transition.",
+          "example_originals": ["bfb4e85e", "0ee64efc", "ad729337", "fc95a352", "4fde4454", "ddb77846"],
+          "frequency": { "easy": 7, "medium": 4, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "First sentence is a simple positive list (accomplishments, popularity, success)",
+                "Post-blank clause begins with a clearly opposite-valence claim (failure, exception, denial)",
+                "Distractors include 'thus' and 'for example' that would create a logical contradiction"
+              ],
+              "example_stem": "Misty Copeland has appeared on Broadway, toured with Prince, and served on the President's Council. ______ according to Copeland, nothing matches the honor of being the first African American principal at ABT.",
+              "example_ids": ["bfb4e85e", "0ee64efc", "92fe0ed7"]
+            },
+            "medium": {
+              "characteristics": [
+                "Expectation is established via a quantitative claim ('only 21 percent rated him the winner')",
+                "Reversal requires recognizing a domain shift (radio listeners vs television viewers) within the same topic",
+                "Two distractors are plausible-sounding non-contrast transitions (likewise, therefore)"
+              ],
+              "example_stem": "Only 21 percent of radio listeners rated Kennedy the winner. ______ the debate was ultimately considered a victory for Kennedy among television viewers.",
+              "example_ids": ["4fde4454", "ddb77846"]
+            },
+            "hard": {
+              "characteristics": [
+                "Expectation is hedged or layered ('may seem barren terrain for critical analysis')",
+                "Correct answer is 'Nonetheless' / 'Nevertheless' against a distractor 'Likewise' or 'In turn' that fits the discourse topic but inverts polarity",
+                "Stimulus passages contain literary or academic register with abstract subjects"
+              ],
+              "example_stem": "Ashbery's poem may seem barren terrain for critical analysis. ______ cultural critic Lauren Berlant finds fertile ground in just its first two stanzas.",
+              "example_ids": ["ad729337", "fc95a352"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Setup sentence establishes a clear expectation (positive or predictive)",
+              "Post-blank clause violates that expectation in the same topic frame",
+              "Sentence-initial blank with capitalization of correct transition",
+              "Single-word or short-phrase contrastive transition as correct answer"
+            ],
+            "must_vary": [
+              "Specific transition (However / Nevertheless / Still / Yet / Nonetheless)",
+              "Topic domain and named entities",
+              "Whether the expectation is positive (success → unexpected fact) or negative (low promise → unexpected payoff)"
+            ],
+            "common_bugs": [
+              "Cloner weakens the expectation so the post-blank clause merely extends rather than reverses — drift to A4",
+              "Cloner places the contrast transition non-initially, breaking the stem pattern",
+              "Cloner uses 'In contrast' (paired-entity contrast) when context calls for 'However' (expectation reversal) — within-aspect type drift T1→T2"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Concession with caveat (granted/that said/of course)",
+          "description": "The author concedes a point that complicates or qualifies the main argument before pivoting back. The blank introduces a concessive clause that ACKNOWLEDGES an exception or limitation without abandoning the original claim. Hallmark of harder items.",
+          "core_skill_demand": "Distinguish concession (admit a partial counter-point) from outright contrast (assert an opposing point), then select a concessive transition like 'Granted,' 'Of course,' 'That said,' or 'Admittedly,'.",
+          "example_originals": ["176edca6", "974b5a8c", "f5959727", "9dc4e640", "ecb31049", "335bbe3e"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Almost never appears at easy level; when it does, the concession is unmistakable (the post-blank clause directly admits a limitation)",
+                "Only one option is concessive; others are clearly cause or example"
+              ],
+              "example_stem": "(rare at easy)",
+              "example_ids": ["ff1a2e5e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Concession is signaled by hedge words ('technically doesn't', 'of course')",
+                "Post-blank clause begins with 'by depicting…' or similar restorative claim",
+                "Distractors include a strong-contrast option ('Moreover,' 'For example,') that misreads polarity"
+              ],
+              "example_stem": "Metzinger's painting doesn't technically represent a fourth dimension; humans can only see in three dimensions. ______ by depicting the race through multiple perspectives, Metzinger offers a fascinating glimpse.",
+              "example_ids": ["335bbe3e"]
+            },
+            "hard": {
+              "characteristics": [
+                "Three-clause structure: main claim → concession → restoration; blank sits at the concession or restoration boundary",
+                "Correct answer (Granted / Of course / That said / Admittedly) is uncommon in everyday usage, making it harder to recognize",
+                "Distractors include 'In fact' (which would intensify rather than concede) and 'For example' (which would illustrate rather than qualify)"
+              ],
+              "example_stem": "The study found the greater the iconicity of a sign, the more likely it was to have been learned. ______ the correlation … was lower than that between acquisition and sign frequency.",
+              "example_ids": ["176edca6", "974b5a8c", "f5959727", "9dc4e640", "ecb31049"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Three-part rhetorical movement (claim → conceded qualification → restoration or finding)",
+              "Concessive transition that admits without negating",
+              "Distractor set includes both a stronger contrast and an emphasis/example transition"
+            ],
+            "must_vary": [
+              "Choice of concessive marker (Granted / Of course / Admittedly / That said)",
+              "Topic — concessions appear in art, science, history equally",
+              "Whether the conceded point is quantitative or interpretive"
+            ],
+            "common_bugs": [
+              "Cloner swaps in 'However,' which works for direct contrast but loses the conceded-then-restored structure → flatten to T2",
+              "Cloner removes the restoration clause so the passage reads as a clean reversal — drifts to T2",
+              "Cloner places concession sentence-initially when the original embeds it mid-discourse"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Cause / Effect / Purpose",
+      "description": "The blank signals that the second clause is a CONSEQUENCE, RESULT, or PURPOSE of the first. The student must recognize a causal or means-end chain between the two sentences and pick a transition such as 'As a result,' 'Consequently,' 'For this reason,' 'Therefore,' or purpose markers like 'To that end,'.",
+      "boundary_with_other_aspects": "A2 differs from A5 (sequence) in that A2's relation is logical/causal while A5's is purely chronological — 'because of X, Y happened' (A2) vs 'X happened; then Y happened' (A5). A purpose marker 'To that end,' belongs to A2 (means-end) not A5 (temporal next).",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Cause-then-effect explanation",
+          "description": "The first sentence describes a condition, problem, or property; the blank introduces a clause stating the outcome it produces. Often follows the pattern 'X happens / X is true. ______ Y results.'",
+          "core_skill_demand": "Identify the directional causal link (first sentence causes second) and select a result transition, rejecting transitions that would invert direction (cause-from-effect) or replace causation with addition/example.",
+          "example_originals": ["20e4ff59", "072666a3", "f735493e", "34a5ba1c", "0c13dea9", "01c8c433"],
+          "frequency": { "easy": 13, "medium": 5, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Causal mechanism is explicit in the first sentence (heat → black hue; widening grooves → conductors pass through)",
+                "Effect sentence is short and concrete; correct answer is 'As a result,' or 'Consequently,'",
+                "Only one cause/effect option appears among four; three are clearly off-topic"
+              ],
+              "example_stem": "Maria Martinez … made her vessels using reduction firing. This technique involves smothering the flame surrounding the clay vessel. ______ the vessel takes on a shiny, black hue.",
+              "example_ids": ["f735493e", "20e4ff59", "072666a3"]
+            },
+            "medium": {
+              "characteristics": [
+                "Causal chain spans multiple intervening sentences before reaching the blank",
+                "Correct transition is less generic ('Accordingly,' 'Consequently,' 'Hence,') and may compete with an emphasis distractor ('In fact,')",
+                "Effect clause introduces a new named entity or action that was not stated in setup"
+              ],
+              "example_stem": "Voters were impressed by Banda Cuisillos's album … ______ they awarded the group the Best Banda Album award.",
+              "example_ids": ["3fd0ab63", "0c13dea9", "9e34720b", "b88dad9d", "0d088ae0"]
+            },
+            "hard": {
+              "characteristics": [
+                "Cause and effect are separated by a hedged or counterfactual interjection; correct answer 'Hence,' or 'Therefore,' must be identified despite intervening discourse markers",
+                "Distractors include 'For example,' or 'By contrast,' which would create surface-readable but logically incorrect connections",
+                "Cause may be implicit (a model's findings imply a consequence rather than stating it)"
+              ],
+              "example_stem": "Siderophiles are much more abundant in the mantle than predicted in that model, however. ______ extraterrestrial material containing siderophiles … almost certainly accreted to Earth.",
+              "example_ids": ["f5a00eff", "9f1a0d91", "a965c6ed"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Clear cause-then-effect direction (first sentence supplies the cause)",
+              "Blank introduces the effect clause (not embedded inside it)",
+              "Cause-and-effect transition as the unique correct option"
+            ],
+            "must_vary": [
+              "Specific result marker (As a result / Consequently / Thus / Hence / Therefore)",
+              "Topic and named entities",
+              "Length of cause description (one sentence vs multi-sentence)"
+            ],
+            "common_bugs": [
+              "Cloner reverses cause and effect across the blank, making the transition logically incorrect",
+              "Cloner replaces causal mechanism with a comparison, drifting to A6",
+              "Cloner uses 'For this reason,' when 'For example,' fits better — categorical drift A2→A3"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Goal-then-means (purpose: 'To that end')",
+          "description": "The first sentence states a goal, intent, or aspiration; the blank introduces a clause describing the specific action taken to achieve it. Correct transition is a purpose marker ('To that end,' 'To this end,') rather than a generic result marker.",
+          "core_skill_demand": "Distinguish purpose ('she did Y in order to achieve X') from generic result ('X happened, so Y followed') and select the purpose-specific transition over an also-plausible 'Consequently,'.",
+          "example_originals": ["4105f5ac", "8112b7e3", "f5149550"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Does not appear at easy level"
+              ],
+              "example_stem": "(no easy examples in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Goal explicitly named ('sought to coordinate', 'aimed to')",
+                "Distractor set includes one purpose-adjacent option but only 'To that end' fits precisely",
+                "Action follows immediately and is concrete (founded an organization, designed a course)"
+              ],
+              "example_stem": "Dowsett sought to coordinate the efforts of suffragists in Hawai'i. ______ in 1912, she founded the National Women's Equal Suffrage Association of Hawai'i.",
+              "example_ids": ["4105f5ac", "f5149550"]
+            },
+            "hard": {
+              "characteristics": [
+                "Goal is implicit in a complex multi-clause setup (e.g., a scholar's interpretation framing)",
+                "Correct 'To that end,' must be picked over 'In sum,' 'That is,' and 'In addition,' which superficially fit",
+                "Action sentence introduces an unexpected resolution (titling a course, designing an object)"
+              ],
+              "example_stem": "Nazareth believed Elvis's music is best understood as an anthology. ______ Nazareth entitled his college course on Elvis 'Elvis as Anthology.'",
+              "example_ids": ["8112b7e3"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Sentence-1 names a goal/aspiration/intent (not a passive outcome)",
+              "Sentence-2 describes a deliberate action by the same agent",
+              "Correct answer is a purpose marker, not a generic result marker"
+            ],
+            "must_vary": [
+              "Agent and domain (activist, scholar, scientist, artist)",
+              "Specific action taken (founding, writing, designing, organizing)"
+            ],
+            "common_bugs": [
+              "Cloner makes the agent's intent passive ('the situation led to…'), losing the goal-directedness — drift to T4",
+              "Cloner uses 'Consequently' or 'As a result' instead of 'To that end,' weakening the purpose signal",
+              "Cloner removes the explicit goal verb so the connection becomes generic causation"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Reasoning chain ('in turn', 'as such')",
+          "description": "An intermediate-step transition that places the second clause as the next logical link in a multi-step explanation. Correct answers are 'in turn,' 'as such,' 'in so doing,' or 'accordingly,' placed mid-sentence as parentheticals.",
+          "core_skill_demand": "Recognize that the relationship is a downstream consequence in a multi-step chain (not just a final outcome) and select a chain-step transition rather than a terminal-result marker.",
+          "example_originals": ["1996c104", "a2bff07e", "273c2f12", "3a715eca"],
+          "frequency": { "easy": 1, "medium": 4, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Chain has exactly two steps with explicit causal verbs ('generates', 'create')",
+                "'in turn,' is the only chain-step option among four",
+                "Subject of post-blank clause is the same as object of pre-blank clause"
+              ],
+              "example_stem": "These electrical currents, ______ create a barrier around Earth that protects us from radiation.",
+              "example_ids": ["1996c104"]
+            },
+            "medium": {
+              "characteristics": [
+                "Chain spans three or more steps; blank sits between step 2 and step 3",
+                "Transition is parenthetical (commas on both sides)",
+                "Distractors include forward-causal ('Hence,') and emphasis ('In fact,') that misread the chain position"
+              ],
+              "example_stem": "Trimethylamine N-oxide strengthens the bonds between water molecules in a fish's body. ______ these water molecules maintain their linked structure at extreme depths.",
+              "example_ids": ["0c13dea9", "273c2f12"]
+            },
+            "hard": {
+              "characteristics": [
+                "Chain is academic/abstract (genome → proteome; commons → property regimes)",
+                "Correct 'Accordingly,' or 'As such,' must be chosen over 'By contrast,' which fits a different reading of the discourse",
+                "Pre-blank sentence is long with embedded clauses"
+              ],
+              "example_stem": "Ostrom's studies demonstrated that common pool resources can be sustainably managed by users. ______ Ostrom's work is a repudiation of the 'tragedy of the commons.'",
+              "example_ids": ["a2bff07e", "3a715eca"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Multi-step chain with a clear directional flow",
+              "Blank introduces a downstream-but-not-final step (or a re-characterization of upstream content)",
+              "Chain-step transition as the unique correct option"
+            ],
+            "must_vary": [
+              "Specific marker (in turn / as such / accordingly / in so doing)",
+              "Domain (geophysics, economics, art, biology)"
+            ],
+            "common_bugs": [
+              "Cloner collapses chain to two steps, removing the 'next link' character of the relationship",
+              "Cloner uses 'Therefore,' (terminal) when 'In turn,' (intermediate) is needed",
+              "Cloner places the marker sentence-initially when original embeds it mid-clause"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Example / Specification / Restatement",
+      "description": "The blank signals that what follows ILLUSTRATES, SPECIFIES, or RESTATES the prior idea more precisely. The student selects 'For example,' 'For instance,' 'Specifically,' 'In particular,' 'To be exact,' 'That is,' or 'In other words,'.",
+      "boundary_with_other_aspects": "A3 differs from A4 in that A3 narrows or restates the prior claim (general → specific) while A4 adds a NEW point. An A3 clone that supplies an additional independent fact rather than an illustration drifts to A4.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Illustration with a concrete instance",
+          "description": "First sentence makes a general claim about a person, group, or phenomenon; the blank introduces a specific example. Correct answers: 'For example,' 'For instance,'.",
+          "core_skill_demand": "Recognize the general-to-specific movement and pick an example marker over a result, addition, or contrast transition.",
+          "example_originals": ["f07570bb", "e965fd73", "fc5e83cc", "1c6e1d55", "4f2710ab", "db8fe023"],
+          "frequency": { "easy": 9, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "General claim is short and unambiguous ('X often collaborates with other artists')",
+                "Example sentence names a specific instance with proper nouns ('he has worked with Jody Naranjo')",
+                "Distractors include 'However,' which would create contradiction"
+              ],
+              "example_stem": "Preston Singletary is a Tlingit glass artist who often collaborates with other artists. ______ he has worked with Tewa pottery artist Jody Naranjo several times.",
+              "example_ids": ["e965fd73", "f07570bb", "fc5e83cc"]
+            },
+            "medium": {
+              "characteristics": [
+                "General claim is hedged or multi-clause; specific example must be identified across longer discourse",
+                "Correct answer competes with 'Similarly' or 'Likewise' that fit the surface parallelism"
+              ],
+              "example_stem": "(rare at medium — illustrations more often use 'Specifically')",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Example sentence introduces multiple named entities and dates",
+                "Correct 'for instance,' is mid-sentence parenthetical",
+                "Distractor set includes 'in addition,' and 'lastly,' that fit list-structure but not illustration"
+              ],
+              "example_stem": "A new, more diverse generation of artists is stepping up to the podium. Alondra de la Parra took over … in 2017, ______ and Lina Gonzalez-Granados did the same for the LA Opera in 2022.",
+              "example_ids": ["1c6e1d55"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "General claim → specific example movement",
+              "Example sentence names at least one specific entity, date, or instance",
+              "Example-family transition as the unique correct option"
+            ],
+            "must_vary": [
+              "Topic (artist, scientist, animal, region)",
+              "Specific marker (For example / For instance)"
+            ],
+            "common_bugs": [
+              "Cloner makes the second sentence ANOTHER general claim, drifting to A4 (addition)",
+              "Cloner uses 'Specifically,' when the new sentence is a freestanding example, not a narrowing of the same claim — T7/T8 type drift",
+              "Cloner introduces a contrastive specific case ('but one collaborator was different…') — drift to A1"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Specification / narrowing (specifically, in particular)",
+          "description": "First sentence makes a broad or hedged claim; the blank introduces a clause that NARROWS to the precise mechanism, instance, or detail referred to. Correct answers: 'Specifically,' 'In particular,' 'To be exact,' 'Namely,'.",
+          "core_skill_demand": "Distinguish narrowing (same claim, sharper detail) from exemplification (one of many cases) and from addition (a new independent point).",
+          "example_originals": ["a3bf0a9d", "08be6347", "60917233", "855247c7", "8622320e", "0c0d50e1"],
+          "frequency": { "easy": 1, "medium": 6, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "General claim and specific detail share the same subject and named entities",
+                "Correct 'Specifically,' is the only example-family option",
+                "Very few easy items use this type — most easy specifications use 'For example,'"
+              ],
+              "example_stem": "(rare)",
+              "example_ids": ["d3898d32"]
+            },
+            "medium": {
+              "characteristics": [
+                "Broad claim contains an abstract noun ('mix of cultural influences', 'broader historical narratives') that the narrowing clause makes concrete",
+                "Distractors include 'Therefore,' and 'However,' that would create logical mismatches",
+                "Mechanism or detail in post-blank clause occupies 1–2 sentences"
+              ],
+              "example_stem": "Sauer challenged prevailing views about how natural landscapes influence cultures. ______ Sauer argued that cultures play an active role in their own development through environmental interactions.",
+              "example_ids": ["08be6347", "a3bf0a9d", "8622320e", "60917233"]
+            },
+            "hard": {
+              "characteristics": [
+                "Broad claim is itself a paraphrase of prior discourse, so narrowing must be inferred two layers deep",
+                "Correct answer is 'Specifically,' against 'In addition,' 'In contrast,' and 'Therefore,'",
+                "Stimulus contains specialized vocabulary (Spanish/Japanese loanwords, cultural references)"
+              ],
+              "example_stem": "de Larios's art reflects a mix of cultural influences. ______ her work is grounded in the artistic traditions of both Mexico and Japan.",
+              "example_ids": ["8e9677e6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "General-to-specific narrowing on the SAME claim (not a new claim)",
+              "Specification transition as unique correct option",
+              "At least one abstract noun in the broad claim that gets concretized after the blank"
+            ],
+            "must_vary": [
+              "Specific marker (Specifically / In particular / To be exact / Namely)",
+              "Topic and abstract noun being specified"
+            ],
+            "common_bugs": [
+              "Cloner makes the post-blank clause merely an EXAMPLE rather than a narrowing — drift T8→T7",
+              "Cloner picks 'For example,' as key in a narrowing context, mismatching the precise relation",
+              "Cloner inserts an additive new fact, drifting categorically to A4"
+            ]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Restatement / paraphrase (that is, in other words)",
+          "description": "The blank signals that what follows REPHRASES the immediately preceding claim in different words, often to clarify a technical or abstract idea. Correct answers: 'That is,' 'In other words,'.",
+          "core_skill_demand": "Recognize semantic equivalence between pre- and post-blank content; distinguish restatement from cause/contrast/example.",
+          "example_originals": ["2df7b582", "e3edc138", "7c3f0145"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Does not appear at easy level"
+              ],
+              "example_stem": "(no easy examples)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Restatement appears after a hyphen or em-dash as a gloss",
+                "Correct 'that is,' over 'for example,' 'likewise,' 'in addition,'",
+                "Topic is technical (linguistics, biology)"
+              ],
+              "example_stem": "Negative words saw a faster rate of cognate replacement— ______ the rate at which a word will be replaced over time with a noncognate form.",
+              "example_ids": ["7c3f0145"]
+            },
+            "hard": {
+              "characteristics": [
+                "Restatement is across a sentence break, requiring identification of conceptual equivalence between two different formulations of the same point",
+                "Correct answer competes with 'meanwhile,' or 'admittedly,' that would imply distinct claims",
+                "Pre-blank sentence is philosophical or definitional"
+              ],
+              "example_stem": "Aristotle posited that knowledge is best obtained through direct engagement with the material world; ______ sensory experience of the material is the ultimate source of knowledge.",
+              "example_ids": ["2df7b582", "e3edc138"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two adjacent statements expressing the SAME idea in different wording",
+              "Restatement marker as unique correct option",
+              "Punctuation pattern (semicolon or em-dash) that signals gloss"
+            ],
+            "must_vary": [
+              "Specific marker (That is / In other words)",
+              "Topic (philosophy, linguistics, science)"
+            ],
+            "common_bugs": [
+              "Cloner makes the post-blank clause add a NEW fact rather than restate — drift to A4",
+              "Cloner adds an inference or implication, drifting to A2 (consequence)",
+              "Cloner picks 'For example,' since both clauses are about the same topic, missing that no new instance is introduced"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Addition / Emphasis / Intensification",
+      "description": "The blank signals that what follows ADDS another point, INTENSIFIES the prior claim, or supplies confirming evidence. Markers: 'In addition,' 'Additionally,' 'Moreover,' 'Furthermore,' 'In fact,' 'Indeed,' 'What's more,'.",
+      "boundary_with_other_aspects": "A4 differs from A3 by adding a NEW independent point rather than restating or narrowing. A4 differs from A2 in that the new content is not caused by the prior content. A4 'In fact,'/'Indeed,' (intensification) requires the second clause to RESTATE or STRENGTHEN, not introduce a new fact (close to A3) — this is the most subtle within-skill distinction.",
+      "types": [
+        {
+          "id": "T10",
+          "name": "Listing additional points (additionally, in addition, moreover)",
+          "description": "First sentence makes one point; the blank introduces a SECOND independent point on the same general topic. Correct answers: 'In addition,' 'Additionally,' 'Moreover,' 'Furthermore,'.",
+          "core_skill_demand": "Identify that the two sentences supply parallel, independent contributions to the same overall topic (not one causing/illustrating/contrasting the other) and pick an additive transition.",
+          "example_originals": ["1b219d14", "660d50dc", "129089b5", "d9dad012", "1872cd6d", "eea351c4", "601b9d18", "39d1a519"],
+          "frequency": { "easy": 4, "medium": 6, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Two clearly distinct independent points share the same subject ('Naff conducted 450 interviews' / 'she collected photographs')",
+                "Distractors include result and contrast markers that would create logical errors",
+                "Stimulus ≤55 words"
+              ],
+              "example_stem": "Naff conducted more than 450 oral history interviews. ______ she collected photographs and other artifacts.",
+              "example_ids": ["1b219d14", "660d50dc"]
+            },
+            "medium": {
+              "characteristics": [
+                "Second point introduces a different but related subject or scope ('senators and representatives' added to 'presidential inaugurations')",
+                "Distractor 'Specifically,' offers narrowing trap when the new sentence is actually additive",
+                "Stimulus 55–70 words"
+              ],
+              "example_stem": "The Twentieth Amendment mandates that presidential inaugurations be held on January 20. ______ this amendment requires newly elected senators and representatives to be sworn in on January 3.",
+              "example_ids": ["129089b5", "d9dad012", "eea351c4", "601b9d18"]
+            },
+            "hard": {
+              "characteristics": [
+                "Both points are technical and the addition is to a complex multi-step procedure ('weaving threads' + 'stamping sage leaves' as anti-counterfeit measures)",
+                "Correct 'Moreover,' competes with 'Specifically,' 'For example,' and 'That said,'",
+                "Stimulus ≥70 words"
+              ],
+              "example_stem": "Franklin took steps to combat counterfeits, such as weaving blue threads into the paper. ______ he stamped the notes with detailed imprints of sage leaves.",
+              "example_ids": ["1872cd6d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two genuinely independent points on the same overarching topic",
+              "Additive transition as the unique correct option",
+              "Second point introduces new information not entailed by the first"
+            ],
+            "must_vary": [
+              "Specific marker (In addition / Additionally / Moreover / Furthermore)",
+              "Topic and whether the second point introduces a new subject"
+            ],
+            "common_bugs": [
+              "Cloner makes the second point a consequence of the first — drift to A2",
+              "Cloner makes the second point a specific instance of the first — drift to A3",
+              "Cloner uses 'Similarly,' implying parallel comparison rather than independent addition — drift to A6"
+            ]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Intensification / confirming claim (in fact, indeed)",
+          "description": "First sentence makes a claim; the blank introduces a clause that REINFORCES or STRENGTHENS the prior claim with a striking fact or extreme case. Correct answers: 'In fact,' 'Indeed,'.",
+          "core_skill_demand": "Recognize that the second clause does not just add a new point but ESCALATES the same point (most/all/even, surprising magnitude) and pick an intensifier.",
+          "example_originals": ["fc2bcc79", "1ccfcea4", "ec3d7605", "feb1e6da", "00e0170f", "47e238be", "a266d876", "249508d9"],
+          "frequency": { "easy": 4, "medium": 3, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Intensifying clause includes the actual etymology / extreme case that confirms the prior claim ('the name Phoenicia itself may have meant land of purple')",
+                "Only one intensifier among four options",
+                "Stimulus ≤55 words; subject continuity across sentences"
+              ],
+              "example_stem": "The Phoenicians were famous for using this dye to color their clothes a distinctive purple. ______ the name 'Phoenicia' itself may have meant 'land of purple.'",
+              "example_ids": ["fc2bcc79", "1ccfcea4", "0fd4df40", "42870a4e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Intensification requires recognizing equivalence between an abstract claim and its concrete confirmation ('research is its own reward' → 'finds research as engaging as travel')",
+                "Distractor 'Likewise,' tempts because both clauses concern the same agent",
+                "Stimulus 55–70 words"
+              ],
+              "example_stem": "McFerrin considers her background research to be its own reward. ______ McFerrin admits to finding research just as fascinating as exploring a location in person.",
+              "example_ids": ["ec3d7605", "feb1e6da", "249508d9", "b7c404d1"]
+            },
+            "hard": {
+              "characteristics": [
+                "Intensifier supports a counterintuitive claim with a sharp statistic or extreme case ('extreme outliers; indeed, many volcanoes are fed by shallow pockets less than 15 km below')",
+                "Correct 'Indeed,' / 'In fact,' must beat 'Nevertheless,' which would reverse polarity",
+                "Stimulus has dense scientific or academic register"
+              ],
+              "example_stem": "The great depths (nearly 3,000 km) mark Iceland's volcanoes as extreme outliers; ______ many of Earth's volcanoes are fed by shallow pockets less than 15 km below the surface.",
+              "example_ids": ["47e238be", "a266d876", "00e0170f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "First clause makes a claim; second clause provides STRONGER evidence of the same claim",
+              "Intensifier transition as the unique correct option",
+              "Polarity is consistent — no reversal across the blank"
+            ],
+            "must_vary": [
+              "Specific marker (In fact / Indeed / What's more / Of course-as-emphasis)",
+              "Topic and the kind of intensification (statistical, etymological, extreme case)"
+            ],
+            "common_bugs": [
+              "Cloner picks 'Nevertheless,' or 'However,' because the second sentence contains a surprising fact — flipping polarity",
+              "Cloner introduces an unrelated new point — drift to T10",
+              "Cloner makes the second clause narrow rather than escalate — drift to T8 (specification)"
+            ]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Topic-fitting epithet (fittingly)",
+          "description": "First sentences describe a phenomenon or person; the blank introduces a clause that reveals how a name, honor, or outcome APTLY matches the prior description. Correct answer: 'Fittingly,'.",
+          "core_skill_demand": "Recognize the appropriateness or aptness relationship between phenomenon and named outcome; reject markers of cause ('Therefore,'), contrast ('However,'), or example.",
+          "example_originals": ["42301836", "97e2e364", "1e31470f"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["does not appear at easy"], "example_stem": "(none)", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Aptness relationship is overt ('Miyake event' named for Miyake; outcome 'awestruck' after first quad axel)",
+                "'Fittingly,' is the only aptness option among four",
+                "Stimulus 55–65 words"
+              ],
+              "example_stem": "Miyake noted an anomalous carbon-14 spike, indicating a massive radiation burst. ______ this unprecedented surge was dubbed a 'Miyake event' in honor of its discoverer.",
+              "example_ids": ["42301836", "97e2e364"]
+            },
+            "hard": {
+              "characteristics": [
+                "Aptness is implicit — student must infer that achievement → audience reaction is fitting",
+                "Correct 'Fittingly,' must beat 'Moreover,' 'Next,' and 'However,'",
+                "Setup contains technical jargon ('quad axel', 'four and a half rotations')"
+              ],
+              "example_stem": "To perform a quad axel, a figure skater must complete four and a half rotations, an extreme feat. ______ in 2022 … the audience was left awestruck.",
+              "example_ids": ["1e31470f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "First clause sets up a phenomenon worth recognizing/naming",
+              "Second clause supplies the apt naming or response",
+              "'Fittingly,' as the unique correct option"
+            ],
+            "must_vary": [
+              "Domain (science discovery, athletic feat, art recognition)",
+              "Whether the aptness is overt (named for) or interpretive (apt reaction)"
+            ],
+            "common_bugs": [
+              "Cloner uses 'As a result,' when 'Fittingly,' is needed — drift A2",
+              "Cloner makes the second clause coincidentally simultaneous, drifting to A5 (sequence)",
+              "Cloner inserts a contrast that breaks the aptness frame"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Sequence / Temporal",
+      "description": "The blank signals a TEMPORAL or POSITIONAL relationship between events or items in a list. Markers: 'First,' 'Second,' 'Next,' 'Then,' 'Later,' 'Earlier,' 'Previously,' 'Eventually,' 'Finally,' 'Ultimately,' 'Subsequently,'.",
+      "boundary_with_other_aspects": "A5 differs from A2 in that the relation is chronological position, not logical causation. A5 differs from A4 (listing) in that the items must be ordered along time or sequence, not just enumerated as parallel facts.",
+      "types": [
+        {
+          "id": "T13",
+          "name": "Ordinal list (First / Second / Finally)",
+          "description": "Stimulus explicitly frames a list of N items or steps; the blank introduces one of the ordinal markers ('First,' 'Second,' 'Finally,') in a fixed sequence.",
+          "core_skill_demand": "Recognize that the stimulus enumerates discrete items and pick the ordinal that corresponds to the blank's position in the list.",
+          "example_originals": ["7d56630a", "911c7a87", "c78620ba", "e268c452", "25361ec6"],
+          "frequency": { "easy": 6, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stimulus explicitly names the number of items ('three questions', 'four steps')",
+                "Other ordinals appear elsewhere in the passage as anchors ('Second…', 'Finally…')",
+                "Correct ordinal is uniquely determined by position (the only un-introduced item)"
+              ],
+              "example_stem": "Researchers attempted to answer three questions. ______ is there a period each day when the pulse rates of jellyfish decline? Second, … Finally, …",
+              "example_ids": ["7d56630a", "911c7a87", "c78620ba", "e268c452"]
+            },
+            "medium": {
+              "characteristics": [
+                "List structure is implicit; ordinal must be inferred from surrounding 'first,' or 'then,' elsewhere in the passage",
+                "Distractors include non-ordinal transitions that fit polarity but break the enumeration"
+              ],
+              "example_stem": "After many stages of analysis … ______ the team published their findings.",
+              "example_ids": ["25361ec6"]
+            },
+            "hard": {
+              "characteristics": [
+                "Does not strongly appear at hard level — hard sequence items use 'ultimately,' or 'then,' (T14) rather than ordinals"
+              ],
+              "example_stem": "(rare)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Explicit or strongly implied N-item enumeration",
+              "Other ordinals visible in the passage as anchors",
+              "Ordinal transition as the unique correct option"
+            ],
+            "must_vary": [
+              "Domain (research methodology, recipe, historical events)",
+              "Which ordinal is blanked (First vs Second vs Finally)"
+            ],
+            "common_bugs": [
+              "Cloner removes the anchor ordinals elsewhere in the passage, leaving the ordinal underdetermined",
+              "Cloner picks 'First,' when context indicates 'Finally,' — within-type position error",
+              "Cloner replaces the list frame with a narrative, drifting to T14"
+            ]
+          }
+        },
+        {
+          "id": "T14",
+          "name": "Chronological next/then/later/eventually",
+          "description": "Stimulus describes a process or narrative with multiple time-stamped events; the blank introduces the next event with a non-ordinal temporal marker ('Then,' 'Next,' 'Later,' 'Eventually,' 'Subsequently,').",
+          "core_skill_demand": "Track the chronological order across multiple sentences and pick the marker that fits the temporal step indicated by the blank's position.",
+          "example_originals": ["56336696", "0d3ebdce", "47547d07", "a204d618", "b5a399f1", "63c73b50", "9c78f702", "e0bd4f8a", "2bda9edb", "4154a7a3", "6036ad0e"],
+          "frequency": { "easy": 14, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Process described in 2–4 steps with explicit verbs ('first soak,' 'then add,' '______ they will remove')",
+                "Correct marker ('Eventually,' 'Then,' 'Next,') only-option among four",
+                "Stimulus has cooking, dyeing, manufacturing, or simple narrative register"
+              ],
+              "example_stem": "Artists first soak sumac in water. Then, they add the cloth. ______ they will remove the cloth.",
+              "example_ids": ["56336696", "0d3ebdce", "47547d07", "b5a399f1"]
+            },
+            "medium": {
+              "characteristics": [
+                "Multiple time-stamped events span longer historical or biographical content",
+                "Distractors include logical-relation markers ('Therefore,' 'In addition,') that compete with the temporal one"
+              ],
+              "example_stem": "(few medium items use plain temporal markers)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Temporal next marker embedded mid-sentence as parenthetical ('It may not have been a coincidence, then, that…')",
+                "Correct 'then,' must be chosen over 'however,' 'moreover,' 'for example,'",
+                "Stimulus is academic/historical with dense argumentation"
+              ],
+              "example_stem": "Given the ideas circulating among British scientists in the 1800s, the theory of natural selection was an obvious next step. It may not have been a coincidence, ______ that Darwin and Wallace arrived at it independently.",
+              "example_ids": ["42e6cc83"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Explicit or strongly implied temporal sequence",
+              "Temporal marker (not ordinal, not logical) as unique correct option",
+              "Blank introduces or is embedded near the next event in time"
+            ],
+            "must_vary": [
+              "Specific marker (Then / Next / Later / Eventually / Subsequently)",
+              "Domain (craft process, history, biography)"
+            ],
+            "common_bugs": [
+              "Cloner uses 'As a result,' when 'Eventually,' is needed — drift A5→A2",
+              "Cloner condenses the time gap, making the marker redundant",
+              "Cloner adds extra events that break the sequence's clarity"
+            ]
+          }
+        },
+        {
+          "id": "T15",
+          "name": "Earlier/previously (flashback)",
+          "description": "Stimulus begins with a later event; the blank introduces an EARLIER event (a flashback). Correct answers: 'Earlier,' 'Previously,'.",
+          "core_skill_demand": "Recognize that the second clause describes content that occurred BEFORE the first (against the default forward direction) and pick a backward-pointing temporal marker.",
+          "example_originals": ["3831f2d7", "37ec26e7"],
+          "frequency": { "easy": 2, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Dates are explicit and clearly inverted (Aug 1929 first, Dec 1928 after blank)",
+                "Only one backward-temporal option among four",
+                "Stimulus ≤55 words"
+              ],
+              "example_stem": "Louise Thaden was already a record breaker when she won the … Derby in August of 1929. ______ in December of 1928, Thaden had set an aviation record reaching 20,269 feet.",
+              "example_ids": ["3831f2d7"]
+            },
+            "medium": { "characteristics": ["rare"], "example_stem": "(rare)", "example_ids": [] },
+            "hard": { "characteristics": ["rare"], "example_stem": "(rare)", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two events with explicit dates whose order is reversed (later → earlier)",
+              "Backward-pointing temporal marker as unique correct option"
+            ],
+            "must_vary": [
+              "Domain (aviation, art, science biography)",
+              "Specific marker (Earlier / Previously)"
+            ],
+            "common_bugs": [
+              "Cloner removes the date inversion — drift to T14",
+              "Cloner uses 'Next,' inverting time direction"
+            ]
+          }
+        },
+        {
+          "id": "T16",
+          "name": "Culmination / ultimately",
+          "description": "The blank introduces the FINAL outcome or culmination of an extended discussion. Correct answer: 'Ultimately,' (sometimes 'Finally,' or 'Eventually,').",
+          "core_skill_demand": "Distinguish culmination from generic 'Then,' — culmination requires that the post-blank clause be the resolution or final synthesis, not just the next event.",
+          "example_originals": ["00221c00", "332e75bf", "6e0c60da", "37ec26e7"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Brief narrative resolved by 'Ultimately,' or 'Eventually,'",
+                "Only one culmination option among four"
+              ],
+              "example_stem": "(only one easy example)",
+              "example_ids": ["37ec26e7"]
+            },
+            "medium": { "characteristics": ["none"], "example_stem": "(none)", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Culmination is interpretive synthesis of an artist's struggle or argument",
+                "Correct 'Ultimately,' must beat 'To that end,' 'Moreover,' 'Hence,' that fit fragments of the discourse",
+                "Stimulus ≥70 words with literary register"
+              ],
+              "example_stem": "Dillard struggles to reconcile juxtapositions of the natural world. ______ nature's mesmerizing intricacy and pitiless harshness prove inextricably linked for Dillard.",
+              "example_ids": ["00221c00", "332e75bf", "6e0c60da"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Setup discourse builds toward a culmination, not just a next event",
+              "'Ultimately,' (or close synonym) as the unique correct option",
+              "Post-blank clause synthesizes or resolves the prior content"
+            ],
+            "must_vary": [
+              "Domain (literary criticism, history, science)",
+              "Whether the culmination is a verdict, a final outcome, or a synthesis"
+            ],
+            "common_bugs": [
+              "Cloner makes the post-blank clause merely the next chronological step — drift to T14",
+              "Cloner uses 'Consequently,' losing the synthesis quality of 'Ultimately,'",
+              "Cloner removes the buildup so 'Ultimately,' becomes ungrounded"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "Comparison / Similarity",
+      "description": "The blank signals that the second clause is PARALLEL to the first along the same dimension — a similar case rather than a contrasting one. Markers: 'Similarly,' 'Likewise,' 'In the same way,' 'By comparison,' 'In comparison,'.",
+      "boundary_with_other_aspects": "A6 differs from A1 (contrast) by direction: A6 says 'X is like Y' while A1 says 'X differs from Y.' A6 differs from A4 (addition) in that A6 explicitly compares two cases on a shared dimension, while A4 merely adds independent points. 'By comparison,' / 'In comparison,' may be used even when the two cases are different — these often co-occur with contrast-like contexts; check whether the framing is 'similar mechanism' (A6) vs 'opposite outcome' (A1).",
+      "types": [
+        {
+          "id": "T17",
+          "name": "Parallel case (similarly, likewise)",
+          "description": "Stimulus introduces one case; the blank introduces a SECOND case that mirrors the first along the same dimension. Correct answers: 'Similarly,' 'Likewise,'.",
+          "core_skill_demand": "Recognize that the two cases share a dimension AND have the same direction or value, then pick a similarity marker.",
+          "example_originals": ["d54e16ee", "fd24f48f", "29ae4d48", "30438650", "4d2736f0"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Two short factual sentences with parallel structure",
+                "'Similarly,' / 'Likewise,' is the only parallel option among four",
+                "Stimulus ≤55 words"
+              ],
+              "example_stem": "(rare; most parallel-case items are medium)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Two cases share an abstract dimension that must be inferred (e.g., both authors / scientists doing analogous things)",
+                "Distractors include 'In addition,' 'Therefore,' that misread the relation",
+                "Stimulus 55–70 words"
+              ],
+              "example_stem": "Author A does X with subject α. ______ author B does X with subject β.",
+              "example_ids": ["d54e16ee", "fd24f48f", "29ae4d48", "30438650"]
+            },
+            "hard": {
+              "characteristics": [
+                "Parallel dimension is academic or interpretive ('places personal stories within broader historical narratives')",
+                "Correct 'Similarly,' must beat 'Specifically,' 'Thus,' 'Regardless,'",
+                "Stimulus ≥70 words"
+              ],
+              "example_stem": "Dove places Thomas's journey within the larger context of the Great Migration. ______ Dove sets events from Beulah's personal life against the backdrop of the Civil Rights Movement.",
+              "example_ids": ["4d2736f0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two distinct cases sharing one explicit or strongly implied dimension",
+              "Same directional value on that dimension (both positive, both increasing, both employing similar mechanism)",
+              "Parallel-case transition as the unique correct option"
+            ],
+            "must_vary": [
+              "Specific marker (Similarly / Likewise / In the same way)",
+              "Topic and the two cases being compared"
+            ],
+            "common_bugs": [
+              "Cloner makes the second case differ on the same dimension — drift A6→A1",
+              "Cloner makes the second case a consequence of the first — drift to A2",
+              "Cloner stacks unrelated additional facts — drift to A4"
+            ]
+          }
+        },
+        {
+          "id": "T18",
+          "name": "Quantitative juxtaposition (by/in comparison)",
+          "description": "Two items are compared along a measured dimension, often quantitatively. The blank introduces the second value. Correct answers: 'By comparison,' 'In comparison,'.",
+          "core_skill_demand": "Recognize that the two clauses present matched numerical or measured values to be compared and pick the comparison marker over 'Therefore,' or 'For example,'.",
+          "example_originals": ["1c36e3e1", "6a5939c2"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Two sentences with measured values in the same units ('180 sunspots' vs '2 sunspots')",
+                "'By comparison,' / 'In comparison,' is the only comparison option",
+                "Stimulus ≤55 words"
+              ],
+              "example_stem": "There were about 180 sunspots in November 2001. ______ there were only about 2 sunspots in December 2008.",
+              "example_ids": ["1c36e3e1", "6a5939c2"]
+            },
+            "medium": {
+              "characteristics": [
+                "Compared values are qualitative rather than quantitative ('humid with many trees' vs 'drier with fewer trees')",
+                "Distractor 'For instance,' would convert the comparison into an example"
+              ],
+              "example_stem": "Tropical forests are humid and have many trees spaced close together. ______ savannas are drier, and their trees are spaced further apart.",
+              "example_ids": ["6a5939c2"]
+            },
+            "hard": { "characteristics": ["does not strongly appear at hard"], "example_stem": "(none)", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two items with matched, measurable values on the same dimension",
+              "Comparison marker as unique correct option",
+              "Symmetry of sentence structure across the blank"
+            ],
+            "must_vary": [
+              "Domain (astronomy, ecology, demographics)",
+              "Whether the comparison is numeric or descriptive"
+            ],
+            "common_bugs": [
+              "Cloner makes one side qualitative and the other quantitative — breaking symmetry",
+              "Cloner reverses polarity so the cases actually contrast — drift to A1",
+              "Cloner uses 'Similarly,' when the values are opposite — within-aspect type confusion"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Stem is invariant across all 173 originals: 'Which choice completes the text with the most logical transition?' The stimulus is always a 2-4 sentence informational passage with a single blank (marked via aria-hidden span). The four answer options are always single transition words or short phrases ending in a comma (e.g., 'However,', 'For example,', 'As a result,'). Difficulty correlates with: (1) stimulus length (Easy ~50 words, Medium ~55, Hard ~60); (2) abstractness of subject matter (Easy = concrete narrative/process; Hard = academic/literary argumentation); (3) rarity of the correct transition (Easy uses high-frequency markers like 'As a result,' 'However,' 'For example,'; Hard requires uncommon markers like 'Granted,', 'Fittingly,', 'As such,', 'In so doing,'); (4) competing distractors of OTHER aspects whose surface plausibility is high (a Hard item typically has 2 of 4 options that read coherently for a careless reader, with only one being LOGICALLY correct). All originals follow these patterns; no items required a misc bucket."
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5dc386fb-s1",
+  "originalId": "5dc386fb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Of 50 districts, 32 administer a written exam. Of those, 4 districts do not administer an oral exam. To the nearest tenth of a percent, what percent of districts with a written exam do not administer an oral exam?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12.5%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8.0%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14.3%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.0%</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Of the 32 districts that administer a written exam, 4 do not administer an oral exam. The percentage is 4/32 = 0.125, or 12.5%.</p><p>Choice B (8.0%) is 4/50. Choice C (14.3%) uses 28 instead of 32. Choice D is the count itself read as a percent.</p>",
+  "templateId": "probability-and-conditional-probability.A3.T8.hard"
+}

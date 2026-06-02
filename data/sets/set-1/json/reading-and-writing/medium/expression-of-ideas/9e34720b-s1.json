@@ -1,0 +1,25 @@
+{
+  "questionId": "9e34720b-s1",
+  "originalId": "9e34720b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>Although those who flocked to the Klondike in 1897 imagined pulling nuggets from gravel bars with a simple pan, the region's richest gold lay frozen in permafrost layers far below the surface, well beyond the reach of solitary miners. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by 1900, most had abandoned their independent claims and hired on with one of the few syndicates capable of running the dredges and hydraulic operations the terrain demanded.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Furthermore,</p>"},
+    {"id": "b", "content": "<p>Still,</p>"},
+    {"id": "c", "content": "<p>As a result,</p>"},
+    {"id": "d", "content": "<p>Next,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"As a result\" logically signals that the information in this sentence—that many miners abandoned independent claims and joined syndicates—is a consequence of the previous information about the inaccessibility of the Klondike's richest gold to solitary miners.</p><p>Choice A is incorrect because \"furthermore\" illogically signals that this information merely adds another point, when it is in fact a consequence of the inaccessibility described earlier. Choice B is incorrect because \"still\" illogically signals a contrast or exception, when this sentence presents a direct outcome of the previous information. Choice D is incorrect because \"next\" illogically signals merely the next step in a process, when this sentence describes a consequence rather than a chronological continuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

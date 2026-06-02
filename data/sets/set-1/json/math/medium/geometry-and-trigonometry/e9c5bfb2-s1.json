@@ -1,0 +1,39 @@
+{
+  "questionId": "e9c5bfb2-s1",
+  "originalId": "e9c5bfb2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Rectangle <em>ABCD</em> is similar to rectangle <em>QRST</em>, where vertices <em>A</em>, <em>B</em>, <em>C</em>, <em>D</em> correspond to <em>Q</em>, <em>R</em>, <em>S</em>, <em>T</em>, respectively. In rectangle <em>ABCD</em>, AB = 8 and BC = 3. In rectangle <em>QRST</em>, QR = 40. What is the length of <em>RS</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since rectangles ABCD and QRST are similar with corresponding vertices, corresponding sides are proportional. AB corresponds to QR, so the scale factor from ABCD to QRST is 40/8 = 5. BC corresponds to RS, so RS = 5 &middot; BC = 5(3) = 15. Choice A is the product of QR and BC. Choice B is the scale factor. Choice C is the sum of the scale factor and BC squared. Therefore RS = 15.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A3.T3.medium"
+}

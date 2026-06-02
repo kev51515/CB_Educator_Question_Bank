@@ -1,0 +1,39 @@
+{
+  "questionId": "c2c61e7d-s1",
+  "originalId": "c2c61e7d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Researchers proposed that a decline in the population of harbor seals along the northern Pacific coast of North America led to a decline in the population of bull kelp in the region. Harbor seals do not graze on bull kelp but do prey on red sea urchins, which are the principal grazers of bull kelp.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Declines in the regional abundance of harbor seals&rsquo; prey other than red sea urchins are associated with regional declines in harbor seal abundance.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Red sea urchins have increased in regional abundance as harbor seals have decreased in regional abundance.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Bull kelp abundance tends to be greater in coastal areas with both harbor seals and red sea urchins than in areas with only harbor seals.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Grazing of bull kelp by red sea urchins in the region substantially increased before the regional decline in harbor seal abundance began.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it presents a finding that, if true, would most directly support the researchers&rsquo; hypothesis. The text states that harbor seals prey on red sea urchins, the principal grazers of bull kelp. An increase in red sea urchin abundance accompanying a decline in harbor seals would directly support the chain of cause and effect: fewer seals leads to more urchins, and more urchins consume more kelp, driving down the kelp population.</p><p>Choice A is incorrect because an association between declines in other prey species and declines in harbor seals would only help explain why seals are declining; it would say nothing about the link between seal decline and kelp decline. Choice C is incorrect because finding greater kelp abundance when urchins are present than when only seals are present would suggest that urchins do not suppress kelp, weakening the researchers&rsquo; hypothesis rather than supporting it. Choice D is incorrect because if urchin grazing rose before the seal decline began, that would point to a separate cause of the kelp decline, contradicting the hypothesized chain.</p>",
+  "generatedAt": "2026-05-26T15:09:53.049301+00:00",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

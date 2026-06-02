@@ -1,0 +1,25 @@
+{
+  "questionId": "4ba99a6f-s1",
+  "originalId": "4ba99a6f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>Inupiaq sculptor Aaka Niviaq&rsquo;s ivory carvings range widely in form and scale. In 2008, Niviaq carved a four-inch walrus tusk into an intricate <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 2018, she assembled hundreds of bleached whale bones into a sweeping installation more than thirty feet across, suspended above the floor of a Vancouver gallery.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>amulet,</p>"},
+    {"id": "b", "content": "<p>amulet later,</p>"},
+    {"id": "c", "content": "<p>amulet, later,</p>"},
+    {"id": "d", "content": "<p>amulet;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the coordination of main clauses within a sentence. A semicolon conventionally joins the first main clause (&ldquo;In 2008...amulet&rdquo;) and the second main clause (&ldquo;in 2018...gallery&rdquo;).</p><p>Choice A is incorrect because, without a conjunction following it, a comma can&rsquo;t join two main clauses. Choice B is incorrect because the adverb &ldquo;later&rdquo; can&rsquo;t link two main clauses without a coordinator. Choice C is incorrect because it results in a comma splice.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

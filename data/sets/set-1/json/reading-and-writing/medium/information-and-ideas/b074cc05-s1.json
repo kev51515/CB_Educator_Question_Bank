@@ -1,0 +1,25 @@
+{
+  "questionId": "b074cc05-s1",
+  "originalId": "b074cc05",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Approximate Employment in Hospitality Sectors in Maine, 2012 and 2021 (in thousands of jobs)</p></caption><thead><tr><th scope=\"col\">Year</th><th scope=\"col\">Restaurants</th><th scope=\"col\">Lodging</th><th scope=\"col\">Recreation services</th></tr></thead><tbody><tr><th scope=\"row\">2012</th><td>8</td><td>5</td><td>5</td></tr><tr><th scope=\"row\">2021</th><td>7</td><td>5</td><td>6</td></tr></tbody></table></figure></p><p>A student in Maine is researching employment trends in the state&rsquo;s hospitality industry. The student notices that the number of jobs in recreation services in 2012 was <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>higher than the number of jobs in lodging, and in 2021 was about the same as the number of jobs in restaurants.</p>"},
+    {"id": "b", "content": "<p>lower than the number of jobs in restaurants, but in 2021 was higher than the number of jobs in restaurants.</p>"},
+    {"id": "c", "content": "<p>about the same as the number of jobs in lodging, and in 2021 was about the same as the number of jobs in restaurants.</p>"},
+    {"id": "d", "content": "<p>about the same as the number of jobs in restaurants, but in 2021 was lower than the number of jobs in restaurants.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the table shows that in 2012 recreation services had 5,000 jobs, the same approximate number as lodging (5,000), and in 2021 recreation services had 6,000 jobs, about the same as restaurants (7,000 — closer than other comparisons). Choice A is incorrect because recreation services and lodging were equal in 2012, not different. Choice B is incorrect because recreation services jobs were lower than restaurants jobs in both 2012 and 2021. Choice D is incorrect because recreation services (5,000) and restaurants (8,000) were not about the same in 2012.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

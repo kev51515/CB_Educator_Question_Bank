@@ -1,0 +1,22 @@
+{
+  "questionId": "0bd33265-s1",
+  "originalId": "0bd33265",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The equation h = (9/5)(v - 273.15) + 32 gives the corresponding temperature h, in degrees Fahrenheit, of any substance that has a temperature of v kelvins, where v > 0. If a substance has a temperature of 134 degrees Fahrenheit, what is the corresponding temperature, in kelvins, of this substance?</p>",
+  "answerOptions": null,
+  "keys": [
+    "329.82"
+  ],
+  "rationale": "<p>Substituting 134 for h: 134 = (9/5)(v - 273.15) + 32. Subtract 32: 102 = (9/5)(v - 273.15). Multiply both sides by 5/9: 56.67 \u2248 v - 273.15. Adding 273.15: v \u2248 329.82 kelvins.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

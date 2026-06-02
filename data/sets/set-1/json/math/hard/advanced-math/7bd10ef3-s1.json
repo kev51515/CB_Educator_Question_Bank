@@ -1,0 +1,39 @@
+{
+  "questionId": "7bd10ef3-s1",
+  "originalId": "7bd10ef3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>2<i>x</i>&sup2; + 6<i>x</i> + <i>k</i> = 0</p><p>In the equation above, <i>k</i> is a constant. If the equation has no real solutions, which of the following could be the value of <i>k</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The discriminant is 6&sup2; &minus; 4(2)<i>k</i> = 36 &minus; 8<i>k</i>. For no real solutions, 36 &minus; 8<i>k</i> &lt; 0, so <i>k</i> &gt; 4.5. Only <i>k</i> = 5 satisfies this. Choices A, B, and D give discriminants that are non-negative.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "821e724e-s1",
+  "originalId": "821e724e",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function g is defined by g(x) = (x + 9)(t &minus; x), where t is a constant. In the xy-plane, the graph of y = g(x) passes through the point (15, 0). What is the value of g(0)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "135"
+  ],
+  "rationale": "<p>The correct answer is 135. Since the graph passes through (15, 0), g(15) = 0. Substituting: (15 + 9)(t &minus; 15) = 24(t &minus; 15) = 0, so t = 15. Then g(0) = (0 + 9)(15 &minus; 0) = 9 &middot; 15 = 135.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

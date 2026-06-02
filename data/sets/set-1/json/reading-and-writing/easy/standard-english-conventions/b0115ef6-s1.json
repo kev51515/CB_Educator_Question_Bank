@@ -1,0 +1,39 @@
+{
+  "questionId": "b0115ef6-s1",
+  "originalId": "b0115ef6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Devices such as ultrasound machines and medical sensors rely on piezoelectric crystals, which generate small electrical signals in response to pressure. The growing demand for these crystals recently prompted researchers at MIT to investigate how <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>could their supply be expanded sustainably<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>could their supply be expanded sustainably<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>their supply could be expanded sustainably<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>their supply could be expanded sustainably<span data-ssml-say-as=\"characters\">.</span></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is end-of-sentence punctuation. The sentence is a declarative statement about what the researchers chose to \"investigate.\" The embedded noun clause \"their supply could be expanded sustainably\" uses declarative word order, so the whole sentence must end with a period.</p><p>Choice A is incorrect because the inverted word order \"could their supply be\" belongs to a direct question, not an embedded one. Choice B is incorrect for the same reason. Choice C is incorrect because a question mark can't be used to end a declarative sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

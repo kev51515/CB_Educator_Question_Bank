@@ -1,0 +1,39 @@
+{
+  "questionId": "480ade7e-s1",
+  "originalId": "480ade7e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>During the cold months, many small mammals enter a state of torpor, in which their metabolic rates plummet and body temperatures drop to conserve energy. In most species, this hibernation-like dormancy lasts continuously for weeks at a time. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the Arctic ground squirrel <em>Urocitellus parryii</em> regularly interrupts its torpor with brief, energetically costly arousals during which its body temperature returns nearly to normal.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Furthermore,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As a result,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>However,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"However\" logically signals that the behavior of the Arctic ground squirrel contrasts with what most hibernating mammals do. The second sentence describes an exception to the pattern set up in the first.</p><p>Choice A is incorrect because \"furthermore\" would signal an addition to a previous claim, but the second sentence opposes rather than extends the first. Choice B is incorrect because \"as a result\" would signal a causal outcome, but the ground squirrel's interruptions are not caused by the general pattern. Choice C is incorrect because \"for instance\" would signal an example of the rule just described, but the ground squirrel violates rather than illustrates that rule.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1f353a9e-s1",
+  "originalId": "1f353a9e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>t</i>) = 5,000(0.8)<sup><i>t</i></sup></p><p>The given function <i>f</i> models the number of brochures a museum distributed at the end of each year, where <i>t</i> represents the number of years since the end of 2005, and 0 &le; <i>t</i> &le; 6. If <i>y</i> = <i>f</i>(<i>t</i>) is graphed in the <i>ty</i>-plane, which of the following is the best interpretation of the <i>y</i>-intercept of the graph in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The minimum estimated number of brochures the museum distributed during the 6 years was about 1,311.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The estimated number of brochures the museum distributed at the end of 2005 was 5,000.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The minimum estimated number of brochures the museum distributed during the 6 years was 5,000.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The estimated number of brochures the museum distributed at the end of 2005 was about 1,311.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The <i>y</i>-intercept is <i>f</i>(0) = 5,000(0.8)<sup>0</sup> = 5,000. Since <i>t</i> = 0 corresponds to the end of 2005, this represents the number of brochures distributed at the end of 2005.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A2.T2.hard"
+}

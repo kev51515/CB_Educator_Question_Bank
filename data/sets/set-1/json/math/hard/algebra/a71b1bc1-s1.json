@@ -1,0 +1,22 @@
+{
+  "questionId": "a71b1bc1-s1",
+  "originalId": "a71b1bc1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A piece of wire with a length of 45 inches is cut into two parts. One part has a length of <math><mi>x</mi></math> inches, and the other part has a length of <math><mi>y</mi></math> inches. The value of <math><mi>x</mi></math> is 6 more than 2 times the value of <math><mi>y</mi></math>. What is the value of <math><mi>x</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "32"
+  ],
+  "rationale": "<p>The correct answer is 32. Set up x + y = 45 and x = 2y + 6. Substituting: (2y + 6) + y = 45, so 3y = 39 and y = 13. Then x = 2(13) + 6 = 32.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard"
+}

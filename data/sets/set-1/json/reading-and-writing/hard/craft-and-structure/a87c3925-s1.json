@@ -1,0 +1,39 @@
+{
+  "questionId": "a87c3925-s1",
+  "originalId": "a87c3925",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Aged cheese, particularly Parmigiano-Reggiano, is celebrated for its intense savory taste. That savory quality&mdash;part of what scientists describe as the umami sensation&mdash;has been the subject of detailed chemical study since umami receptors were identified in the 2000s. In 2010, to characterize the savory profile of aged cheese, food scientists Ana Ruiz and Henri Lavoie prepared simplified extracts containing free glutamate and a small set of nucleotides, and two panels of Italian and French tasters described the resulting flavor in closely matching terms.</p>\n<p><strong>Text 2</strong></p>\n<p>A 2023 experiment by Wiebke Lange et al. extended the chemistry of aged cheese well beyond simple glutamate. The team first offered tasters a mixture of low-molecular-weight compounds that they found tasted thin and less complex than actual Parmigiano-Reggiano. Further fractionation of the cheese revealed several short peptides that enhanced savory taste while also intensifying the perception of saltiness and richness. The team then assembled a blend of 40 chemical compounds that successfully reproduced the flavor of aged cheese.</p>",
+  "stem": "<p>Based on the texts, if Ruiz and Lavoie (Text 1) and Lange et al. (Text 2) were aware of both sets of findings, they would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The extracts used in the 2010 experiment most likely did not contain a substantial amount of the short peptides that played a key part in the 2023 experiment.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>On average, the cuisines of Italy tend to feature fewer foods containing certain peptides than the cuisines of France do.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Chemical compounds that activate both the savory and salty taste receptors tend to have a higher molecular weight than those that activate only savory taste receptors.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Aging introduces proteins responsible for the increase of savory flavor in Parmigiano-Reggiano, and those proteins also increase the perception of saltiness.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Ruiz and Lavoie aimed to isolate the savory taste using simple extracts of free glutamate and nucleotides, while Lange et al. were trying to reproduce the full flavor of Parmigiano-Reggiano. Accordingly, the extracts in Text 1 wouldn't have included substantial amounts of the short peptides identified in Text 2 as essential to both umami and salty perception.</p><p>Choice B is incorrect because neither text discusses cuisines of Italy or France generally. Choice C is incorrect because Text 1 provides no information about molecular weights. Choice D is incorrect because Text 1 doesn't claim aging causes the savory flavor, and Text 2 never mentions aging directly.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A4.T6.hard"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "fa07bcb6",
+  "externalId": "a6fec74b-b685-46bf-b416-80f047cab9f3",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:23.293802+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "1ca3f7b0-6972-4f63-bfed-5368b1183742",
+      "content": "<p>ganga has been used as a communication method<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "79fb4285-d6e3-4c9e-aee4-cbfed34463ab",
+      "content": "<p>ganga has been used as a communication method<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "cdfee1e7-f242-47b2-8d61-203402800b8d",
+      "content": "<p>has ganga been used as a communication method<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "79cc5d54-1c15-4bfb-a978-5bb106b5d514",
+      "content": "<p>has ganga been used as a communication method<span data-ssml-say-as=\"characters\">?</span></p>"
+    }
+  ],
+  "keys": [
+    "79fb4285-d6e3-4c9e-aee4-cbfed34463ab"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period to punctuate a declarative sentence ending with a relative clause that presents an indirect question (&ldquo;why ganga has been used as a communication method.&rdquo;)</p><p>Choice A is incorrect. It&rsquo;s unconventional to use a question mark to punctuate a declarative sentence that presents an indirect question. Choice C is incorrect. The structure requires a declarative clause at the end of the sentence, not an interrogative clause that asks a direct question, such as &ldquo;has ganga been used as a communication method.&rdquo; Choice D is incorrect. The structure requires a declarative clause at the end of the sentence, not an interrogative clause that asks a direct question, such as &ldquo;has ganga been used as a communication method.&rdquo;</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Ganga is a folk singing tradition that originated in the Dinaric Alps in southern Europe. Ganga singers sing different melodies at the same time. The clashing notes can echo a long way across the mountains, which is why <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "79fb4285-d6e3-4c9e-aee4-cbfed34463ab"
+    ],
+    "answerOptions": [
+      {
+        "id": "1ca3f7b0-6972-4f63-bfed-5368b1183742",
+        "content": "<p>ganga has been used as a communication method<span data-ssml-say-as=\"characters\">?</span></p>"
+      },
+      {
+        "id": "79fb4285-d6e3-4c9e-aee4-cbfed34463ab",
+        "content": "<p>ganga has been used as a communication method<span data-ssml-say-as=\"characters\">.</span></p>"
+      },
+      {
+        "id": "cdfee1e7-f242-47b2-8d61-203402800b8d",
+        "content": "<p>has ganga been used as a communication method<span data-ssml-say-as=\"characters\">.</span></p>"
+      },
+      {
+        "id": "79cc5d54-1c15-4bfb-a978-5bb106b5d514",
+        "content": "<p>has ganga been used as a communication method<span data-ssml-say-as=\"characters\">?</span></p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period to punctuate a declarative sentence ending with a relative clause that presents an indirect question (&ldquo;why ganga has been used as a communication method.&rdquo;)</p><p>Choice A is incorrect. It&rsquo;s unconventional to use a question mark to punctuate a declarative sentence that presents an indirect question. Choice C is incorrect. The structure requires a declarative clause at the end of the sentence, not an interrogative clause that asks a direct question, such as &ldquo;has ganga been used as a communication method.&rdquo; Choice D is incorrect. The structure requires a declarative clause at the end of the sentence, not an interrogative clause that asks a direct question, such as &ldquo;has ganga been used as a communication method.&rdquo;</p>",
+    "externalid": "a6fec74b-b685-46bf-b416-80f047cab9f3",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Ganga is a folk singing tradition that originated in the Dinaric Alps in southern Europe. Ganga singers sing different melodies at the same time. The clashing notes can echo a long way across the mountains, which is why <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

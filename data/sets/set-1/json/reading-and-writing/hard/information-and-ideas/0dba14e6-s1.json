@@ -1,0 +1,25 @@
+{
+  "questionId": "0dba14e6-s1",
+  "originalId": "0dba14e6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The growing use of automated machinery in textile factories during the early decades of the twentieth century reduced the overall cost of manufacturing a garment. Those savings, however, were concentrated almost entirely in the cutting, sewing, and finishing stages, which take place after the garment's fabric has been produced and its pattern designed. This suggests that during the early decades of the twentieth century, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>textile factory workers were paid less for cutting and sewing tasks than for producing fabric or designing patterns.</p>"},
+    {"id": "b", "content": "<p>the costs of producing the fabric and designing the pattern for a garment were less affected by automated machinery than were the costs of cutting, sewing, and finishing it.</p>"},
+    {"id": "c", "content": "<p>customers generally expected the prices of garments to fall by the same amount as the prices of other manufactured goods.</p>"},
+    {"id": "d", "content": "<p>manufacturers expanded the range of garments offered while reducing the number of units produced of each design.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text says that automation lowered overall costs, but that the savings were \"concentrated almost entirely\" in the cutting, sewing, and finishing stages — the steps after fabric production and pattern design. The clearest implication is that automation had less effect on the earlier stages (fabric production and pattern design), so their costs were less affected.</p><p>Choice A is incorrect because the text discusses cost reductions from automation, not workers' relative wages. Choice C is incorrect because customer expectations about prices are not addressed. Choice D is incorrect because the variety or volume of garments produced is not mentioned.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T10.hard"
+}

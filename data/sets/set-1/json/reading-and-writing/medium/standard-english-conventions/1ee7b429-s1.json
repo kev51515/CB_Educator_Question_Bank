@@ -1,0 +1,25 @@
+{
+  "questionId": "1ee7b429-s1",
+  "originalId": "1ee7b429",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T1.medium",
+  "stimulus": "<p>Marine biologist Asha Devarajan of the Monterey Bay Aquarium <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> footage of bioluminescent jellyfish gathered by remotely operated submersibles when she noticed an unfamiliar pulsing pattern: a previously undocumented species, she eventually confirmed, communicates through rhythmic flashes of blue-green light.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>was reviewing</p>"},
+    {"id": "b", "content": "<p>reviews</p>"},
+    {"id": "c", "content": "<p>will review</p>"},
+    {"id": "d", "content": "<p>has been reviewing</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verbs to express tense. The past progressive tense verb \"was reviewing\" is consistent with the other past tense verbs (\"noticed,\" \"confirmed\") used to describe Devarajan's discovery and correctly indicates that an ongoing action in the past (she was reviewing) was interrupted by another past event (she noticed a pattern).</p><p>Choice B is incorrect because the present tense verb \"reviews\" isn't consistent with the past tense verbs used to describe Devarajan's discovery. Choice C is incorrect because the future tense verb \"will review\" isn't consistent with the past tense verbs used to describe Devarajan's discovery. Choice D is incorrect because the present perfect progressive tense verb \"has been reviewing\" isn't consistent with the past tense verbs used to describe Devarajan's discovery.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

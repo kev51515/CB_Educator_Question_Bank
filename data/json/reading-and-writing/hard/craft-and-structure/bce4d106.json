@@ -1,0 +1,72 @@
+{
+  "questionId": "bce4d106",
+  "externalId": "c8685aba-8be7-472a-b8de-550578033409",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:57.322102+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "3336ba49-9b18-4087-a374-fda630bf0a6b",
+      "content": "<p>heterogeneity</p>"
+    },
+    {
+      "id": "89409fee-2d5e-4348-b62e-f448d1f00419",
+      "content": "<p>ubiquity</p>"
+    },
+    {
+      "id": "17338846-782d-42d2-8afd-ae6d1d7e89d8",
+      "content": "<p>expediency</p>"
+    },
+    {
+      "id": "789b6f4b-0356-45f2-bdac-538c5764b66f",
+      "content": "<p>fecundity</p>"
+    }
+  ],
+  "keys": [
+    "89409fee-2d5e-4348-b62e-f448d1f00419"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of beads found in Middle Stone Age sites. In this context, &ldquo;ubiquity&rdquo; means widespread presence or commonness. The text states that archaeologists have encountered &ldquo;a plethora,&rdquo; or an abundance, of beads made from <em>Tritia gibbosula</em> shells &ldquo;in many Middle Stone Age (MSA) sites across western North Africa.&rdquo; In this context, the abundance of beads therefore suggests their ubiquity.</p><p>Choice A is incorrect because in this context, &ldquo;heterogeneity&rdquo; would mean variety or diversity among the beads. The text doesn&rsquo;t suggest that the beads varied significantly from one another; rather, it focuses on their widespread presence across multiple sites. Moreover, the text mentions that all the beads were &ldquo;fashioned from <em>Tritia gibbosula</em> shells,&rdquo; suggesting consistency rather than heterogeneity. Choice C is incorrect because the text doesn&rsquo;t emphasize the beads&rsquo; &ldquo;expediency,&rdquo; or convenience or practicality. The text doesn&rsquo;t support the idea of convenience (there&rsquo;s no indication, for example, that the beads were easy to use or make) but rather focuses on the beads&rsquo; abundant presence at MSA sites. Choice D is incorrect. While &ldquo;fecundity&rdquo; can suggest abundant production, it specifically refers to fertility, and the text doesn&rsquo;t connect the beads to this theme. Instead, the text attributes their widespread presence to the development of symbolic behavior in humans and the natural availability of <em>Tritia gibbosula</em> during the MSA.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Archaeologists have identified a plethora of beads fashioned from <em>Tritia gibbosula</em> shells in many Middle Stone Age (<span data-ssml-say-as=\"characters\">MSA</span>) sites across western North Africa, including El Mnasra Cave, Morocco. In a <span data-ssml-say-as=\"date\">2021</span> paper, El Mehdi Sehasseh <span data-ssml-sub-alias=\"et al\">et al.</span> attribute these artifacts&rsquo; apparent <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the evolution and propagation of symbolic behavior (<span data-ssml-sub-alias=\"e g\">e.g.</span>, use of personal ornaments) in humans and the widespread availability of <em><span data-ssml-sub-alias=\"T\">T.</span> gibbosula</em> during the MSA.</p>",
+    "keys": [
+      "89409fee-2d5e-4348-b62e-f448d1f00419"
+    ],
+    "answerOptions": [
+      {
+        "id": "3336ba49-9b18-4087-a374-fda630bf0a6b",
+        "content": "<p>heterogeneity</p>"
+      },
+      {
+        "id": "89409fee-2d5e-4348-b62e-f448d1f00419",
+        "content": "<p>ubiquity</p>"
+      },
+      {
+        "id": "17338846-782d-42d2-8afd-ae6d1d7e89d8",
+        "content": "<p>expediency</p>"
+      },
+      {
+        "id": "789b6f4b-0356-45f2-bdac-538c5764b66f",
+        "content": "<p>fecundity</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of beads found in Middle Stone Age sites. In this context, &ldquo;ubiquity&rdquo; means widespread presence or commonness. The text states that archaeologists have encountered &ldquo;a plethora,&rdquo; or an abundance, of beads made from <em>Tritia gibbosula</em> shells &ldquo;in many Middle Stone Age (MSA) sites across western North Africa.&rdquo; In this context, the abundance of beads therefore suggests their ubiquity.</p><p>Choice A is incorrect because in this context, &ldquo;heterogeneity&rdquo; would mean variety or diversity among the beads. The text doesn&rsquo;t suggest that the beads varied significantly from one another; rather, it focuses on their widespread presence across multiple sites. Moreover, the text mentions that all the beads were &ldquo;fashioned from <em>Tritia gibbosula</em> shells,&rdquo; suggesting consistency rather than heterogeneity. Choice C is incorrect because the text doesn&rsquo;t emphasize the beads&rsquo; &ldquo;expediency,&rdquo; or convenience or practicality. The text doesn&rsquo;t support the idea of convenience (there&rsquo;s no indication, for example, that the beads were easy to use or make) but rather focuses on the beads&rsquo; abundant presence at MSA sites. Choice D is incorrect. While &ldquo;fecundity&rdquo; can suggest abundant production, it specifically refers to fertility, and the text doesn&rsquo;t connect the beads to this theme. Instead, the text attributes their widespread presence to the development of symbolic behavior in humans and the natural availability of <em>Tritia gibbosula</em> during the MSA.</p>",
+    "externalid": "c8685aba-8be7-472a-b8de-550578033409",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Archaeologists have identified a plethora of beads fashioned from <em>Tritia gibbosula</em> shells in many Middle Stone Age (<span data-ssml-say-as=\"characters\">MSA</span>) sites across western North Africa, including El Mnasra Cave, Morocco. In a <span data-ssml-say-as=\"date\">2021</span> paper, El Mehdi Sehasseh <span data-ssml-sub-alias=\"et al\">et al.</span> attribute these artifacts&rsquo; apparent <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the evolution and propagation of symbolic behavior (<span data-ssml-sub-alias=\"e g\">e.g.</span>, use of personal ornaments) in humans and the widespread availability of <em><span data-ssml-sub-alias=\"T\">T.</span> gibbosula</em> during the MSA.</p>"
+}

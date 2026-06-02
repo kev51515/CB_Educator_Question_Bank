@@ -1,0 +1,22 @@
+{
+  "questionId": "5011b039-s1",
+  "originalId": "5011b039",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>What is the radius of the circle in the <em>xy</em>-plane defined by (x &minus; 3)<sup>2</sup> + (y &minus; 7)<sup>2</sup> = 144?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The correct answer is 12. The equation of a circle in the xy-plane can be written as (x &minus; h)<sup>2</sup> + (y &minus; k)<sup>2</sup> = r<sup>2</sup>, where (h, k) is the center and r is the radius. Here r<sup>2</sup> = 144, so r = 12.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A1.T1.medium"
+}

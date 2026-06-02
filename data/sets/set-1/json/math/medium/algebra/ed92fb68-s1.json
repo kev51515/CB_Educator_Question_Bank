@@ -1,0 +1,39 @@
+{
+  "questionId": "ed92fb68-s1",
+  "originalId": "ed92fb68",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>2x + y = 14</p><p>x + 2y = 13</p><p>If the system of equations above has solution (x, y), what is the value of x + y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>27</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Adding the two equations gives 3x + 3y = 27, so x + y = 9. The correct answer is choice B.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium"
+}

@@ -1,0 +1,462 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Information and Ideas",
+  "skill": "Central Ideas and Details",
+  "originals_count": 125,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Central idea / main claim",
+      "description": "The student must identify the holistic point of the entire passage — the single sentence that captures the author's overall claim, the text's main topic, or (in literary passages) the principal situation or feeling being conveyed. The cognitive operation is synthesis: weigh which option covers the whole passage rather than one sentence of it.",
+      "boundary_with_other_aspects": "A1 demands a whole-passage synthesis; A2/A3 target one stated fact or one inference about a specific detail. Turning a 'main idea' clone into a clone that hinges on one sentence (so a wrong option that paraphrases just that sentence becomes attractive) is a categorical drift toward A2/A3.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Main idea of expository/scientific text",
+          "description": "Stimulus is a single-paragraph nonfiction passage (research summary, biographical sketch, cultural/historical note). Stem: 'Which choice best states the main idea of the text?' Correct option restates the passage's overall thesis; distractors paraphrase a single supporting detail, overgeneralize, or invert a claim.",
+          "core_skill_demand": "Synthesize the passage's overall thesis and distinguish it from individually-true supporting details, true-but-overgeneralized claims, and reasonable-sounding statements not actually made by the text.",
+          "example_originals": ["0b696a0c", "2592e0de", "12030076", "602b47c7", "6762772f", "70aacc03"],
+          "frequency": { "easy": 13, "medium": 20, "hard": 15 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stimulus ≤5 sentences with a clearly stated thesis in the first or last sentence",
+                "Familiar concrete topic (an artist, an invention, an animal behavior)",
+                "Wrong options are obviously narrower restatements of one sentence or contradict the text",
+                "Correct option uses near-paraphrase of the stated thesis"
+              ],
+              "example_stem": "[Passage about Rhoden's research showing Mimas's wobble suggests a hidden ocean.] Which choice best states the main idea of the text?",
+              "example_ids": ["0b696a0c", "2592e0de", "23a7038f", "714e4c10", "c889e52e", "d8758c3b", "dc5edbf6", "ee41d7e0"]
+            },
+            "medium": {
+              "characteristics": [
+                "Stimulus 5-8 sentences with thesis embedded mid-passage or implied by accumulation",
+                "Topic involves a specialist study, contrast, or mechanism (CGM, hagfish slime, feather structure)",
+                "Two distractors are individually-true details that don't capture the whole",
+                "One distractor swaps the direction of a causal relationship"
+              ],
+              "example_stem": "[Passage on Aspera mission investigating CGM gas.] Which choice best states the main idea of the text?",
+              "example_ids": ["04dff083", "12030076", "2573d64b", "3f05e40f", "409058ee", "602b47c7", "6540a976", "923ebfe3", "995d55fd", "a59245a1", "ad680167", "b62cb782", "b7d51f84", "dc3ea63e", "f2208f98"]
+            },
+            "hard": {
+              "characteristics": [
+                "Stimulus is dense academic prose with multiple actors, hedges, and 'although/however/whereas' framing",
+                "Thesis is a corrective claim ('long thought X, but actually Y') requiring the student to track the pivot",
+                "Three distractors are partially true: each one captures only the setup, only one side of a contrast, or overstates a hedge",
+                "Correct option uses 'although' or names a counterintuitive finding to mirror the passage's argumentative structure"
+              ],
+              "example_stem": "[Passage: Smith is famed for the invisible-hand metaphor, but its modern reputation derives less from Smith and more from twentieth-century economists.] Which choice best states the main idea of the text?",
+              "example_ids": ["14189fbb", "1ba5ad7a", "23ecf625", "251e5281", "35b46381", "66c47028", "70aacc03", "881ba6f1", "96802cc0", "d0f51067", "d2e0cba5", "e80ba20d", "f7bd14de", "6762772f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Single-paragraph nonfiction stimulus with a unifying thesis",
+              "Stem phrasing 'Which choice best states the main idea of the text?' (or 'best describes the main idea')",
+              "Four options where exactly one captures whole-passage thesis and others are narrower details, overgeneralizations, or inversions",
+              "For Hard variants: an 'although/however/long thought… but' pivot in the stimulus that the correct option mirrors"
+            ],
+            "must_vary": [
+              "Topic domain (science, history, art, technology, economics)",
+              "Named researchers, places, dates, technical terminology",
+              "Position of the thesis sentence within the paragraph"
+            ],
+            "common_bugs": [
+              "Cloner promotes a supporting detail to the correct answer, leaving no real thesis sentence in the stimulus",
+              "Cloner removes the 'although/but' pivot in a Hard clone — collapsing it to Easy difficulty without intending to",
+              "Cloner writes a stimulus where two options are both whole-passage summaries (ambiguous correctness)",
+              "Distractors are too obviously off-topic instead of being individually-true sub-details (kills the discrimination)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Main idea of literary/poetic text",
+          "description": "Stimulus is an excerpt from a novel, short story, or poem (often prefaced with author and date). Stem: 'Which choice best states the main idea of the text?' or 'best describes what is happening in the text.' Correct option captures the passage's overall situation, character orientation, or emotional arc.",
+          "core_skill_demand": "Read narrative or poetic prose, identify the principal situation/feeling/action across the whole excerpt, and reject options that focus only on one moment, misread tone, or import details not in the text.",
+          "example_originals": ["1e85caa9", "3a1f02b0", "57485f5e", "7ffae38a", "adbcbce0", "b69d821d"],
+          "frequency": { "easy": 4, "medium": 5, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Short narrative excerpt with a single dominant feeling (delight, satisfaction, scared-but-excited)",
+                "Headnote explicitly sets up the situation",
+                "Distractors invert the feeling or describe an event not in the text"
+              ],
+              "example_stem": "[Excerpt from Burnett's The Secret Garden in which Mary tends an overgrown garden.] Which choice best states the main idea of the text?",
+              "example_ids": ["1e85caa9", "3a1f02b0", "57485f5e", "69d662af"]
+            },
+            "medium": {
+              "characteristics": [
+                "Excerpt with a relationship, comparison, or implicit feeling expressed through action rather than statement",
+                "Older or more elevated prose register",
+                "Two distractors capture a partially correct emotional read but miss the overall arc"
+              ],
+              "example_stem": "[Excerpt from London's Call of the Wild describing Buck's special bond with Thornton.] Which choice best states the main idea of the text?",
+              "example_ids": ["668f75cb", "7ffae38a", "adbcbce0", "d5c2a4d4", "e677fa6c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Poem or pre-twentieth-century literary prose with figurative language and inverted syntax",
+                "The 'main idea' is itself an interpretation (e.g., 'speaker thinks of friend instead of sleeping')",
+                "Each distractor is a plausible literal misreading of a single image or line"
+              ],
+              "example_stem": "[Sonnet in which the speaker, weary at night, finds his thoughts traveling to a distant friend.] What is the main idea of the text?",
+              "example_ids": ["16025337", "7f0be746", "b69d821d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Literary headnote ('The following text is [adapted] from [Author]'s [date] [novel/poem/story]…')",
+              "A single dominant situation, feeling, or characterization that spans the excerpt",
+              "Stem 'best states the main idea' or 'best describes what is happening'",
+              "Distractors that are plausible mis-takes (inverted tone, single-line literalism, imported event)"
+            ],
+            "must_vary": [
+              "Genre (novel, short story, poem) and historical period",
+              "Character names, setting, the specific emotion/situation",
+              "Whether the central idea is stated or only enacted"
+            ],
+            "common_bugs": [
+              "Cloner writes a literary passage that flatly states its theme — collapsing the inference demand and making the question trivial",
+              "Distractors describe events plainly absent from the excerpt rather than plausible misreadings — students rule them out instantly",
+              "Cloner introduces a second feeling or arc, making more than one option defensible",
+              "Hard clone uses modern prose, eliminating the syntax/diction friction that defines Hard difficulty"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Main topic / main purpose",
+          "description": "Stem variant: 'Which choice best states the main topic of the text?' or 'main purpose of the text.' Correct option names what the text is about (a noun phrase) or what the text is doing (an infinitive phrase: 'To praise…', 'To explain…').",
+          "core_skill_demand": "Pick the high-level subject (topic) or rhetorical function (purpose) that covers the whole passage, distinguishing it from secondary topics mentioned and from too-narrow or too-broad framings.",
+          "example_originals": ["b633cc4f", "8fb67890", "5eda42a3"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Topic stem with short concrete options (noun phrases)",
+                "Stimulus has one clear subject; distractors name minor entities mentioned in passing"
+              ],
+              "example_stem": "[Passage describing a previously unseen spitting behavior in gray seals.] Which choice best states the main topic of the text?",
+              "example_ids": ["b633cc4f"]
+            },
+            "medium": {
+              "characteristics": [
+                "Multiple entities/findings present; correct topic names the unifying subject",
+                "Distractors are tangentially-mentioned methods or persons"
+              ],
+              "example_stem": "[Passage on a Norwegian runestone possibly containing the earliest Scandinavian writing.] Which choice best states the main topic of the text?",
+              "example_ids": ["8fb67890"]
+            },
+            "hard": {
+              "characteristics": [
+                "Purpose stem with infinitive options ('To praise', 'To establish', 'To call attention')",
+                "Stimulus is a poem or stylized prose passage where the purpose is enacted, not declared",
+                "Distractors all describe something the text loosely does; only one captures the dominant intent"
+              ],
+              "example_stem": "[Poem addressed to Paul Laurence Dunbar praising his perceptiveness about ordinary people.] Which choice best states the main purpose of the text?",
+              "example_ids": ["5eda42a3"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem uses 'main topic' (noun-phrase options) or 'main purpose' (infinitive-phrase options) — not 'main idea'",
+              "A single dominant subject or rhetorical function in the stimulus",
+              "Distractor topics that appear in the text but are secondary"
+            ],
+            "must_vary": [
+              "Whether the stem is 'topic' or 'purpose'",
+              "Subject domain and form (expository vs. literary)"
+            ],
+            "common_bugs": [
+              "Cloner writes 'main idea' stem but supplies topic-style noun-phrase options (or vice versa) — formal mismatch",
+              "Purpose options drift into describing content ('Describes a person') rather than rhetorical action ('To praise a person')",
+              "Topic options are at wildly different levels of generality, making the question solvable by scope alone"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Explicit stated detail",
+      "description": "The student must locate a specific fact the text explicitly states and select the option that paraphrases it. Stems begin with 'According to the text…' or 'The text indicates / says / makes which point…' or 'What did X discover, do, observe?' The cognitive operation is targeted retrieval: find the sentence that answers the question and match its content to one option.",
+      "boundary_with_other_aspects": "A2 requires that the answer is explicitly stated in the text and verifiable by pointing to a sentence; if the student must combine information or move one step beyond what is stated, it's A3, not A2. A2 differs from A1 in that the question targets one specific fact rather than the whole passage's thesis.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Factual detail from expository text",
+          "description": "Stimulus is a nonfiction paragraph; stem asks for a specific stated fact: a date, an entity, a finding, a reason, a difference, a method. Correct option paraphrases the sentence that contains the fact.",
+          "core_skill_demand": "Scan for the cued referent in the stimulus, identify the sentence that answers the stem's wh-question, and match that sentence's content to the paraphrasing option without being misled by other true-but-irrelevant facts.",
+          "example_originals": ["04bcb7a9", "2287b040", "706046f7", "78b265b2", "8a8236e1", "92c2564d"],
+          "frequency": { "easy": 12, "medium": 12, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stem cues a clearly distinctive referent ('how old was the fossil', 'what did Gloria Richardson lead', 'why founded U-recycle')",
+                "Answer sentence uses near-identical wording to the correct option",
+                "Distractors are numbers/entities mentioned elsewhere in the text or plausibly related but not actually stated",
+                "Stimulus ≤5 sentences"
+              ],
+              "example_stem": "According to the text, how old was the fossil that Wang and colleagues discovered?",
+              "example_ids": ["04bcb7a9", "2287b040", "706046f7", "748995b3", "78b265b2", "7921b86b", "89961e26", "8a8236e1", "a842db60", "bbfa2bb6", "de0a5b4e", "2edd7ffe"]
+            },
+            "medium": {
+              "characteristics": [
+                "Stem requires distinguishing between two specific findings or comparing two entities discussed in the passage",
+                "Correct option paraphrases the answer sentence; distractors invert the relationship, swap entities, or contradict the text",
+                "Stimulus 6-9 sentences with multiple findings/actors",
+                "Wording in correct option diverges further from stimulus wording"
+              ],
+              "example_stem": "According to the text, why are ecologists worried about Pando?",
+              "example_ids": ["3cc7d73b", "64b6427a", "8c1be131", "92c2564d", "9fe7aafa", "a66f9b8d", "b38935ab", "c188a397", "e47d2524", "95146ebb", "11a9f635", "2312021b"]
+            },
+            "hard": {
+              "characteristics": [
+                "Stimulus is academic prose where the explicitly-stated reason is buried in a hedged or multi-clause sentence",
+                "Distractors all sound plausible from the passage's topic; only one matches the precise stated reason"
+              ],
+              "example_stem": "According to the text, why was Wang and his team's discovery of the Terropterus xiushanensis fossil significant?",
+              "example_ids": ["1c69ff20"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem opens with 'According to the text' (or 'The text indicates / makes which point / says')",
+              "The correct option is a paraphrase of one explicit sentence in the stimulus — verifiable by pointing",
+              "Distractors are either (a) other facts from the same passage misapplied to the stem, (b) plausible nonsense not actually stated, or (c) inversions/contradictions"
+            ],
+            "must_vary": [
+              "The specific cued referent (a person, an artifact, a number, a method, a reason)",
+              "Topic domain and stimulus length"
+            ],
+            "common_bugs": [
+              "Cloner writes a stem whose answer requires combining two sentences — drifts into A3 inference territory",
+              "Cloner makes the correct option a verbatim quote from the stimulus and distractors obviously wrong — collapses to trivial",
+              "Multiple options are individually true facts from the passage, making the question ambiguous (only one should answer the cued referent)",
+              "Cloner forgets to anchor the stem to a specific referent ('what does the text say about X?') and writes a stem so vague it functions as a main-idea question"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Factual detail from literary text",
+          "description": "Stimulus is a literary excerpt; stem asks 'According to the text, what does the narrator do / how does X feel / what is true about Y?' Correct option paraphrases a fact stated or directly enacted in the excerpt.",
+          "core_skill_demand": "Locate the stated narrative fact (what a character does, says, or is described as) and match it to an option without being lured by plausible inferences about character that the text doesn't actually state.",
+          "example_originals": ["3543e6e2", "40630cef", "487a05f8", "6675c5c3", "82d2436a", "c228bd45"],
+          "frequency": { "easy": 7, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Narrative explicitly states the fact (Mother creates stories; the narrator and Mario played games)",
+                "Stem targets a concrete action or feeling stated outright",
+                "Distractors describe actions/feelings the text does not state at all"
+              ],
+              "example_stem": "According to the text, what did the narrator and Mario do while riding in the car?",
+              "example_ids": ["3543e6e2", "40630cef", "487a05f8", "6675c5c3", "82d2436a", "baef99a5", "c228bd45"]
+            },
+            "medium": {
+              "characteristics": [
+                "Fact is stated but the supporting action is described in older or more elliptical prose",
+                "Distractor feelings/motives are plausible but not in the text"
+              ],
+              "example_stem": "According to the text, why does Bill regularly ask about 'seafaring men'?",
+              "example_ids": ["659c6c1d"]
+            },
+            "hard": {
+              "characteristics": [
+                "(No Hard literal-fact items in this bank — Hard literary items are inference-based; see T8/T9)"
+              ],
+              "example_stem": "n/a",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Literary headnote and excerpt",
+              "Stem begins 'According to the text' targeting a specific action/feeling/fact",
+              "Correct option paraphrases something stated/enacted in the excerpt, not inferred"
+            ],
+            "must_vary": [
+              "Character names, situation, the specific fact being asked",
+              "Genre and historical period"
+            ],
+            "common_bugs": [
+              "Cloner writes a stem whose answer requires inference about character motivation — drifts to T8 (literary inference)",
+              "Distractors are too far outside the text's situation, making them eliminable on plausibility alone",
+              "Cloner uses a literary stimulus where the relevant fact is only implied — making the 'According to the text' framing inappropriate"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Text-supported inference about a detail",
+      "description": "The student must select an option that is not directly stated but is best supported by the text — a one-step inference about a specific entity, finding, or character. Stems use 'Based on the text…', 'What does the text most strongly suggest…', 'Most likely…', 'Best supported by the text…', 'Can most reasonably be inferred…', 'Would most likely agree that…'. The cognitive operation is targeted single-step inference about a detail (not the whole text's thesis).",
+      "boundary_with_other_aspects": "A3 differs from A2 in that the correct answer is NOT explicitly stated — it must be derived in one step from what the text says. A3 differs from A1 in that the target is a specific detail/entity, not the passage's main idea. A clone that becomes solvable by literal lookup is A2 drift; a clone whose 'inference' covers the entire passage is A1 drift.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Inference about a finding or entity (expository)",
+          "description": "Stimulus presents research, an entity, or a phenomenon; stem asks what the text most strongly suggests / best supports / can be inferred about a specific aspect. Correct option is a logical one-step extension of what is stated.",
+          "core_skill_demand": "Identify the specific entity/finding the stem targets, locate the relevant evidence in the passage, and select the option that is logically supported by (but not identical to) the stated evidence — rejecting options that overstate, understate, or go beyond what the evidence licenses.",
+          "example_originals": ["16ce90d9", "34c2e387", "458b4a11", "4d3e3c52", "7c9a65bb", "d0fbf1ae"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 10 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "One-sentence gap between evidence and conclusion",
+                "Distractors plainly contradict the text",
+                "Domain is concrete (an event, an artifact)"
+              ],
+              "example_stem": "Based on the text, what would have been the most likely consequence if New had not begun using sewing machines?",
+              "example_ids": ["cf956802"]
+            },
+            "medium": {
+              "characteristics": [
+                "Inference relies on combining a stated relationship with a specific case",
+                "Two distractors are plausible from passage topic but not licensed by the evidence",
+                "Stimulus introduces hedged language ('may', 'suggests')"
+              ],
+              "example_stem": "Based on the text, which choice best describes the two previously unknown penguin species?",
+              "example_ids": ["0d81b7d9", "87aa7bab"]
+            },
+            "hard": {
+              "characteristics": [
+                "Stimulus is dense academic prose with multiple variables and a hedged finding",
+                "Inference requires recognizing which option is most strongly licensed (others are partially supported but overstate or import an unwarranted condition)",
+                "Distractors mirror the passage's vocabulary closely; discrimination hinges on a single qualifier ('only', 'more', 'first')",
+                "Topic is specialized science/economics/philosophy"
+              ],
+              "example_stem": "Based on the text, how are polarons believed to be involved in the superfluorescence observed in Biliroglu and colleagues' study?",
+              "example_ids": ["16ce90d9", "34c2e387", "458b4a11", "4d3e3c52", "7c9a65bb", "7812801f", "8f3a200e", "9731a22b", "d0fbf1ae", "db2da2bf", "701126bc", "ed314256", "d1b8a9ad", "aa0968dd"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem uses inferential language ('based on', 'most strongly suggests', 'best supported', 'can be inferred', 'most likely')",
+              "Correct answer is licensed by, but not identical to, an explicit statement in the passage",
+              "At least one distractor that paraphrases a stated fact (tempting students who pattern-match to A2-style lookup)",
+              "For Hard variants: hedged academic prose where the difference between correct and incorrect turns on a single qualifier"
+            ],
+            "must_vary": [
+              "The specific entity/finding being inferred about",
+              "Topic domain (biology, astronomy, economics, history, materials science, philosophy)",
+              "Whether the inference is causal, comparative, or about scope"
+            ],
+            "common_bugs": [
+              "Cloner makes the correct answer too explicit — turning it into A2 (factual lookup) and losing the inference demand",
+              "Cloner makes the inference require multiple steps or external knowledge — turning A3 into a logic puzzle the passage doesn't support",
+              "Distractors are unlicensed but on-topic enough that the correct answer ALSO feels unlicensed (loses defensibility)",
+              "Hard clone removes the qualifier that distinguishes correct from incorrect ('only', 'more than', 'despite') — collapses the discrimination"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Inference about an answered question / explained point",
+          "description": "Stem variant: 'Which question does the text most directly attempt to answer?' or 'What does the text most directly make about X?' The student must characterize what point the passage is making about a specific entity (not the main idea, but the particular claim the passage advances about one referent).",
+          "core_skill_demand": "Recognize the implicit question or specific claim a passage advances, distinguishing it from related questions the passage doesn't address.",
+          "example_originals": ["11c68ded", "2312021b", "87aa7bab"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Passage explicitly poses or answers the question"
+              ],
+              "example_stem": "n/a",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Passage states findings whose underlying question must be inferred",
+                "Two distractors are questions the passage touches on but doesn't directly address"
+              ],
+              "example_stem": "Which question does the text most directly attempt to answer? [About the rise of 'y'all']",
+              "example_ids": ["11c68ded", "2312021b", "87aa7bab"]
+            },
+            "hard": {
+              "characteristics": [
+                "(Rare in this bank — when present, behaves like T6 Hard with question-form stem)"
+              ],
+              "example_stem": "n/a",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem framed as 'which question does the text most directly attempt to answer' or 'what point does the text make about [specific referent]'",
+              "Distractors phrased as plausible neighboring questions",
+              "Correct option matches the passage's actual focus, not a related topic"
+            ],
+            "must_vary": [
+              "Topic domain and the specific question being targeted"
+            ],
+            "common_bugs": [
+              "Cloner writes options that are statements rather than questions (or vice versa), losing the structural cue",
+              "Distractor questions are too obviously off-topic, eliminating the discrimination"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Inference about a character or situation (literary)",
+          "description": "Literary excerpt; stem asks what the text suggests about a character ('what is true about', 'how does X most likely feel', 'what is notable about Y's behavior', 'Lady Howard would most likely agree that…'). Correct option captures a character trait, relationship, or feeling implied by enacted detail rather than direct statement.",
+          "core_skill_demand": "Read enacted behavior, dialogue, or description and infer a character trait, attitude, or relational fact that the text supports but doesn't state outright — rejecting options that misread tone or import qualities the text doesn't suggest.",
+          "example_originals": ["41d5c33e", "73caa3ab", "835545cd", "daa90829", "dcca0dfc", "1a2b29c9"],
+          "frequency": { "easy": 1, "medium": 4, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Excerpt clearly enacts the feeling/trait through one obvious cue (the old man doesn't put down his book when the postman arrives)",
+                "Three distractors describe feelings/traits not supported by any cue"
+              ],
+              "example_stem": "Based on the text, how did Zerviah Holme most likely feel when the letter was delivered?",
+              "example_ids": ["41d5c33e"]
+            },
+            "medium": {
+              "characteristics": [
+                "Inference requires reading multiple sentences of enacted behavior",
+                "One distractor captures a related but distinct trait; another overstates the cue",
+                "Modern prose register"
+              ],
+              "example_stem": "Based on the text, what is notable about Schmidt's behavior?",
+              "example_ids": ["73caa3ab", "835545cd", "d2c2a7ef", "f64ff4fb"]
+            },
+            "hard": {
+              "characteristics": [
+                "Pre-twentieth-century prose with elaborate syntax and elevated diction",
+                "Each distractor is a plausible misreading: imports a feeling not enacted, mistakes irony, or oversimplifies",
+                "Correct option uses 'although', 'despite', or another qualifier mirroring the excerpt's complexity",
+                "Character judgment requires holding two seemingly conflicting cues"
+              ],
+              "example_stem": "Based on the text, Lady Howard would most likely agree with which statement about Reverend Villars?",
+              "example_ids": ["1a2b29c9", "2fdfe002", "303537cf", "36e2868f", "a12a83ce", "daa90829", "dcca0dfc", "b7f79059"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Literary headnote and excerpt",
+              "Stem uses inferential language ('most likely feel', 'what is notable about', 'most likely agree with', 'what does the text suggest about [character]')",
+              "Correct answer rests on enacted behavior, dialogue, or imagery in the excerpt, not direct statement",
+              "Distractors that are plausible misreadings (wrong tone, wrong inferential step, oversimplification)"
+            ],
+            "must_vary": [
+              "Character, period, situation, the specific trait/feeling being inferred",
+              "Whether the cue is action, dialogue, or imagery"
+            ],
+            "common_bugs": [
+              "Cloner has the character openly declare the feeling — eliminating the inference and turning the item into T5 (literary lookup)",
+              "Cloner writes distractors that are flatly contradicted by the text, making the answer obvious",
+              "Hard clone modernizes the prose, losing the syntactic friction that defines Hard difficulty",
+              "Cloner introduces a second, equally-supported inference (multiple defensible answers)"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Stem language is the most reliable aspect-and-type signal: 'Which choice best states the main idea/topic/purpose' → A1; 'According to the text' → A2 (factual lookup); 'Based on the text / most strongly suggests / most likely / best supported / can be inferred / would most likely agree' → A3 (inference). Difficulty rises with: (1) passage register (modern science briefs → academic prose with hedges; modern fiction → pre-twentieth-century literature or verse); (2) presence of an 'although/however/long thought… but' pivot the correct answer must mirror; (3) proximity between distractors (in Hard items, distractors paraphrase passage vocabulary closely and discrimination turns on a single qualifier — 'only', 'more', 'first', 'despite'). The Hard band is dominated by Main-idea expository (T1.hard) and Inference expository (T6.hard); the Easy band is dominated by Factual-detail expository (T4.easy) and Main-idea expository (T1.easy). Literary items are concentrated at Easy (factual lookup) and Hard (character inference) — a Medium literary main-idea item is the most common Medium literary form."
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "31d0bd9a-s1",
+  "originalId": "31d0bd9a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The female fig wasp increases her reproductive success by laying eggs at exactly the same stage in the fig tree's flowering cycle. In 2019, biologist Lisa Ang and her colleagues determined that the tiny wasps achieve this <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> with their host trees by detecting and responding to chemical signals released by the figs as they become ready for pollination.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>hibernation</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>prediction</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>synchronization</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>moderation</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text describes the wasps matching their reproductive timing precisely to the tree's flowering cycle. \"Synchronization\" means to make events occur at the same time and fits this description. Choice A is incorrect because the wasps are described as active during this cycle, not dormant. Choice B is incorrect because the wasps are responding to a current signal, not forecasting events. Choice D is incorrect because \"moderation\" refers to limiting or reducing something, not matching timing.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

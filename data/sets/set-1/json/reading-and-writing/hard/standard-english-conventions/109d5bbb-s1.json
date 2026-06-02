@@ -1,0 +1,39 @@
+{
+  "questionId": "109d5bbb-s1",
+  "originalId": "109d5bbb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A2.T4.hard",
+  "type": "mcq",
+  "stimulus": "<p>With more than 12,000 delegates in attendance, the Eighth International Conference on Climate and Atmospheric ______ or ICCAI ’04, as the event was more commonly known—became the largest pan-Pacific climate gathering on record. ICCAI drew researchers from around the world to Auckland, New Zealand, for a two-week program of presentations, debates, and field workshops.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Inquiry</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Inquiry:</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Inquiry,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Inquiry—</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The sentence uses a dash to set off the nonessential element that explains the acronym ICCAI ’04; that dash must be matched by an earlier or later dash to enclose the nonessential element symmetrically. Here, the dash after “Inquiry” pairs with the existing dash after “known,” correctly bracketing the supplementary phrase “or ICCAI ’04, as the event was more commonly known.”</p><p>Choice A is incorrect because the supplementary element requires opening punctuation. Choice B is incorrect because a colon can only follow an independent clause, which is not the case here, and a colon cannot pair with a dash to enclose a nonessential element. Choice C is incorrect because a comma cannot pair with a dash to symmetrically bracket the nonessential element.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z"
+}

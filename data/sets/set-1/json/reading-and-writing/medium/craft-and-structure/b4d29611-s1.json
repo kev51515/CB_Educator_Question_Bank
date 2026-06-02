@@ -1,0 +1,25 @@
+{
+  "questionId": "b4d29611-s1",
+  "originalId": "b4d29611",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>Wilma Mankiller, a historian and citizen of the Cherokee Nation, has identified a difficulty inherent to research on the political role of Cherokee women in the 1700s and 1800s: the surviving primary sources from that era, treaty records and accounts by male U.S. agents, understate the influence Cherokee women held in clan councils and land decisions. Mankiller argues that Cherokee oral histories and recent ethnographic fieldwork in the tribe&rsquo;s eastern communities supplement the written record by recovering crucial evidence of those decision-making roles.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It details the shortcomings of certain historical sources, then argues that research should avoid those sources altogether.</p>"},
+    {"id": "b", "content": "<p>It describes a problem that arises in research on a particular topic, then sketches a historian&rsquo;s approach to addressing that problem.</p>"},
+    {"id": "c", "content": "<p>It lists the advantages of a particular research method, then acknowledges a historian&rsquo;s criticism of that method.</p>"},
+    {"id": "d", "content": "<p>It characterizes a particular topic as too challenging to research, then suggests a related topic for historians to pursue instead.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text begins by stating a problem in research on the political role of Cherokee women in the 1700s and 1800s: written primary sources understate their influence. It then presents Mankiller&rsquo;s solution: drawing on oral histories and ethnographic fieldwork to recover that evidence.</p><p>Choice A is incorrect because the text never argues that research should avoid the written sources, only that other sources should supplement them. Choice C is incorrect because the text does not list advantages of a research method or describe a criticism of it. Choice D is incorrect because the text does not characterize the topic as too challenging or suggest an alternative.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

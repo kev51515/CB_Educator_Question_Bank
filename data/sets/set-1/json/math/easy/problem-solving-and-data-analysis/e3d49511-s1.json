@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The number of deer in a 116-square-mile area is estimated to be 1,856. What is the estimated population density, in deer per square mile, of this area?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>116</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,872</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>148</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Population density = total \u00f7 area = 1,856 \u00f7 116 = 16 deer per square mile.</p><p>Choice A is incorrect; this is the area, not the density.</p><p>Choices B and D are incorrect and result from calculation errors.</p>",
+  "questionId": "e3d49511-s1",
+  "originalId": "e3d49511",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.easy"
+}

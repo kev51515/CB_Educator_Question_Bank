@@ -1,0 +1,571 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Two-variable data: Models and scatterplots",
+  "originals_count": 66,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Read values from graph",
+      "description": "Student reads literal values, identifies extremes, or compares quantities directly off a scatterplot, line graph, or table — no model construction or prediction beyond what is plotted is required. The cognitive operation is coordinate reading and visual comparison.",
+      "boundary_with_other_aspects": "A1 stops at what the plotted points/segments say; A4 differs because A4 requires using a model line/curve to extrapolate or compute a residual; A3 differs because A3 reasons about the parameters (slope/intercept) of the fitted line, not the raw data.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Identify extremum / greatest change from line or scatter plot",
+          "description": "A line graph or scatterplot is shown; student must identify the data point/interval with the maximum, minimum, fewest, or greatest year-over-year change.",
+          "core_skill_demand": "Scan plotted values, compare them pairwise (or compute consecutive differences) and pick the option that meets a stated criterion (max, min, greatest change).",
+          "example_originals": ["13f67ddc", "2e511919", "4a2264b3", "74dee52b", "a6b2fcce", "d112bc9d"],
+          "frequency": { "easy": 6, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Plot has ≤10 data points / years and the extreme value is visually obvious (clear peak or trough)",
+                "Single criterion (e.g., highest value, fewest grads) — no calculation required",
+                "Distractors are non-adjacent points so misreading the axis is unlikely"
+              ],
+              "example_stem": "The line graph shows the probability of snow each day. For which day is the probability highest?",
+              "example_ids": ["13f67ddc", "74dee52b", "a6b2fcce", "2e511919"]
+            },
+            "medium": {
+              "characteristics": [
+                "Asks about an INTERVAL (between two consecutive values) requiring two reads plus subtraction",
+                "Differences between adjacent intervals are close in magnitude — student must compute several differences before deciding",
+                "Axis units use decimals or large numbers so a careful read is required"
+              ],
+              "example_stem": "Between which consecutive days is the increase in temperature greatest?",
+              "example_ids": ["d112bc9d"]
+            },
+            "hard": {
+              "characteristics": [
+                "Not represented at Hard in this bank — pure extremum reading is too procedural."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Single plotted dataset (line graph or scatter) with a categorical/time x-axis",
+              "Question asks 'which X has the [greatest|least|fewest] Y' or '[greatest|smallest] change between consecutive'",
+              "All four MCQ options are points/intervals that appear on the plot"
+            ],
+            "must_vary": [
+              "Context (animals, sales, temperatures, sports stats, etc.)",
+              "Direction of trend (rising vs falling vs irregular)",
+              "Axis range/scale (small integers vs large counts vs percentages)"
+            ],
+            "common_bugs": [
+              "Cloner labels the plot but forgets to make distractors plausible — easy item becomes a giveaway",
+              "Cloner inserts a 'tie' for the extremum, making the answer non-unique",
+              "Cloner shifts to predicting a future value, drifting from A1 into A4"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Read or compare values from a contextual graph",
+          "description": "A non-scatter graph (line graph of speed vs time, temperature-vs-time curve, etc.) is given; the student must identify when a described behavior occurs (constant, decreasing, between which interval is X) — descriptive interpretation of plotted segments.",
+          "core_skill_demand": "Translate verbal descriptions ('decreased at constant rate', 'change between') into segments of the plotted curve and pick matching option.",
+          "example_originals": ["9d88a3e3", "83272c51", "d6121490", "c9dd92b1"],
+          "frequency": { "easy": 4, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Graph shape is piecewise-linear with clearly-distinguished segments",
+                "Question asks for a single property (where speed is constant, where greatest change occurs)",
+                "All distractors are explicit intervals labeled on the x-axis"
+              ],
+              "example_stem": "According to the graph, which of the following statements is NOT true about Theresa's run?",
+              "example_ids": ["9d88a3e3", "83272c51", "d6121490"]
+            },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Contextualized x-y graph (not a generic scatterplot)",
+              "Question targets a qualitative property of the graph (constant, decreasing, between which interval)",
+              "No equation is asked for"
+            ],
+            "must_vary": [
+              "Context (cooling, motion, sales, biology)",
+              "Number of segments / curvature"
+            ],
+            "common_bugs": [
+              "Cloner adds numerical computation, drifting into A4 (prediction)",
+              "Cloner makes two answer choices simultaneously true"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Choose best-fit line equation",
+      "description": "A scatterplot is shown; the student must pick from four MCQ candidate equations the one whose graph is the most appropriate linear (or in a few cases nonlinear) model for the displayed data. The cognitive operation is estimating slope sign+magnitude and y-intercept from the plot and matching to algebraic form.",
+      "boundary_with_other_aspects": "A2 requires evaluating an EQUATION as a candidate for the data set; A3 differs because A3 asks for the numeric value of slope/intercept of a line already drawn; A5 differs because A5 asks which FAMILY (linear vs exponential vs increasing/decreasing) of model is appropriate, not which specific equation.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Pick linear equation y = mx + b matching scatterplot",
+          "description": "Scatterplot shows points; four MCQ choices give candidate linear equations differing in slope sign and/or y-intercept sign. Student selects the equation whose slope direction and intercept match the visible trend.",
+          "core_skill_demand": "Determine sign of slope from trend direction (up/down) and sign/magnitude of y-intercept from where line would cross x=0; eliminate equations with wrong sign on slope or intercept, then choose remaining option closest in magnitude.",
+          "example_originals": ["16988f9c", "5f3ee607", "8baf2118", "c5ee6ac0", "d230e963", "50b2807e"],
+          "frequency": { "easy": 5, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Slope is an obvious integer or simple decimal (e.g., 0.9, 1, -1)",
+                "All four MCQ options share the same magnitudes but differ in signs of slope/intercept — pure sign elimination suffices",
+                "Trend is sharply monotonic with little scatter"
+              ],
+              "example_stem": "Which equation is the most appropriate linear model for the data shown in the scatterplot? A) y=-0.9x-2.2 B) y=-0.9x+2.2 C) y=-0.9x D) y=0.9x+2.2",
+              "example_ids": ["16988f9c", "5f3ee607", "8baf2118", "c5ee6ac0", "d230e963"]
+            },
+            "medium": {
+              "characteristics": [
+                "Options also vary the slope-intercept ROLES (which constant is slope vs intercept)",
+                "Slope is a non-integer decimal so estimating magnitude (not just sign) matters",
+                "Multiple options have correct slope sign — must pick correct intercept too"
+              ],
+              "example_stem": "Which equation best models the scatterplot? y=0.9+9.4x vs y=9.4+0.9x vs y=9.4-0.9x ...",
+              "example_ids": ["50b2807e"]
+            },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A scatterplot of 5-12 points with a clear linear trend",
+              "Exactly four MCQ candidate equations in y=mx+b (or y=b+mx) form",
+              "At least two distractors are sign-flipped versions of the correct equation"
+            ],
+            "must_vary": [
+              "Slope sign (positive vs negative trend)",
+              "Slope and intercept magnitudes",
+              "Order of constants (mx+b vs b+mx)"
+            ],
+            "common_bugs": [
+              "Cloner makes the correct option the only one with both correct signs — eliminating others is trivial; lower the discrimination by giving at least one distractor both signs correct but wrong magnitude",
+              "Cloner uses such a steep slope that the line would not fit the y-axis range shown"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Pick best-fit equation in real context (named axes)",
+          "description": "Like T3, but the scatterplot uses real-context axes (year, price, time, etc.) and the candidate equations use context variables. Slope and intercept must be estimated from the contextualized scale.",
+          "core_skill_demand": "Same as T3 but with renamed variables and large-scale axes; must convert visual slope (∆y/∆x in actual units) to the coefficient in the equation and verify intercept matches starting context value.",
+          "example_originals": ["3c5b19ef", "9eb896c5", "3d985614", "9296553d", "1e1027a7", "79137c1b", "2e8027b0"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Variables are x and y but axes use small integer ranges; equations expressed simply"
+              ],
+              "example_stem": "Which equation could be a line of best fit for the data?",
+              "example_ids": ["9296553d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Context variables (t years since 1968, n visitors; height x, jump y); coefficients are non-integer",
+                "Distractor equations are close in slope magnitude — must compute ∆y/∆x precisely",
+                "Slope value must be matched to an axis with large range (1000s) so coefficient is small"
+              ],
+              "example_stem": "t = years since 1968, n = visitors. Which equation could be a line of best fit?",
+              "example_ids": ["3c5b19ef", "9eb896c5", "3d985614"]
+            },
+            "hard": {
+              "characteristics": [
+                "Both slope magnitude AND intercept location are tested; one distractor has correct slope but extrapolated intercept value (line's y-value at the right end of plot, not at x=0)",
+                "Axis does not start at the origin so intercept inference requires extrapolation",
+                "Plausible options differ only in which numerical value is intercept vs slope coefficient"
+              ],
+              "example_stem": "Scatterplot passes through (0, 11.9) and (20, 42.6). Which equation could be the best fit? A) y=46.8+5.9x B) y=46.8+1.5x C) y=12+5.9x D) y=12+1.5x",
+              "example_ids": ["2e8027b0", "1e1027a7", "79137c1b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Real-context scatterplot with renamed variables in equations",
+              "Four equations differing in intercept value AND slope coefficient",
+              "Hard variants must include a distractor whose intercept equals the line's value at the RIGHT end of the plot, not at x=0"
+            ],
+            "must_vary": [
+              "Context domain",
+              "Scale of intercept (small vs large)",
+              "Whether trend is increasing or decreasing"
+            ],
+            "common_bugs": [
+              "Cloner uses an x-axis starting at 0 — collapses Hard back to Medium because intercept is directly visible",
+              "Cloner mismatches the equation's slope sign with the figure's trend direction"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Quantify slope or intercept of fitted line",
+      "description": "A scatterplot with an explicitly-drawn line of best fit is shown; the student must compute or estimate a single numerical parameter — the slope, the y-intercept, or the value of m or b — using two clearly indicated coordinates the line passes through.",
+      "boundary_with_other_aspects": "A3 produces ONE numerical value about the line itself; A2 differs because A2 picks a whole equation; A4 differs because A4 plugs the line into a prediction or residual question. The boundary test: if the answer is a single slope or intercept number and the equation is not yet assembled, it is A3.",
+      "types": [
+        {
+          "id": "T5",
+          "name": "Compute slope of given best-fit line",
+          "description": "Two coordinates the line of best fit passes through are described (e.g., (0, 5.6) and (12, 11)); student computes slope = ∆y/∆x and selects the value (often distractor options include the reciprocal, the negation, or the y-intercept value).",
+          "core_skill_demand": "Identify two points on the drawn line, apply slope formula (y2-y1)/(x2-x1), choose sign by trend direction, and match to MCQ.",
+          "example_originals": ["39aa146d", "24a1e6a7", "2e74e403", "4cc05491", "90ba8f98", "e9129a5c", "ae32cc3c", "03a16790"],
+          "frequency": { "easy": 2, "medium": 6, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Slope is a simple non-integer decimal computable from two integer-coordinate intersections (e.g., from (0,0) to (5,2.2) → 0.44)",
+                "Distractors include the sign-flipped slope and the reciprocal, so sign + direction matters",
+                "Trend is clearly monotonic"
+              ],
+              "example_stem": "What is the slope of the line of best fit shown?",
+              "example_ids": ["39aa146d", "ae32cc3c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Coordinates are decimal or use large axis ranges, so the student must compute ∆y/∆x where one or both differences are non-integer",
+                "Two distractors have correct slope magnitude but wrong sign, two have correct sign with wrong magnitude",
+                "Slope value is between 0 and 1 (or between -1 and 0), making sign+magnitude both diagnostic"
+              ],
+              "example_stem": "The line passes through (0, 9) and (10, 2). What is the slope of the line of best fit?",
+              "example_ids": ["24a1e6a7", "2e74e403", "4cc05491", "90ba8f98", "e9129a5c", "03a16790"]
+            },
+            "hard": {
+              "characteristics": [
+                "Not represented at Hard for pure slope: hard variants of this aspect move to T6 (slope interpretation in context)."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Scatterplot with one explicit drawn line of best fit",
+              "Two specific coordinates the line passes through must be either visible at grid intersections or stated in the figure description",
+              "Question asks for the SLOPE (not 'the equation', which is A2)"
+            ],
+            "must_vary": [
+              "Sign of slope (positive vs negative)",
+              "Whether the two reference points are at the axes or interior",
+              "Scale of y-axis (small vs large)"
+            ],
+            "common_bugs": [
+              "Cloner edits the figure but forgets to update one of the reference coordinates, making the 'correct' slope inconsistent",
+              "Cloner picks line-passes-through points that don't match the depicted scatter trend"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Interpret slope in context (units, per-unit change)",
+          "description": "Given a contextual line of best fit (often with the equation displayed), student must interpret the slope as the predicted change in y per unit change in x, sometimes scaled (e.g., per 5 units, per 10 years).",
+          "core_skill_demand": "Recognize slope = predicted ∆y per unit ∆x; if scaled, multiply slope by the requested step (e.g., 57 × 5 for a 5°C increase); express in correct units.",
+          "example_originals": ["9d95e7ad", "d6af3572", "d0430601"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Slope must be estimated from the figure first (no equation given) OR slope is given but must be scaled by a non-unit interval (e.g., per 5°C, per 10 years)",
+                "Distractors include the slope un-scaled, the slope scaled by the wrong factor, and the intercept value",
+                "Real-world interpretation phrasing makes literal application ambiguous"
+              ],
+              "example_stem": "Slope of best fit is ~57. How many additional visitors are predicted for each 5°C increase?",
+              "example_ids": ["9d95e7ad", "d6af3572", "d0430601"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Contextual scatterplot with line of best fit",
+              "Question targets the meaning of the slope (per-unit change, scaled change, or interpretation)",
+              "At least one distractor reflects un-scaled slope value"
+            ],
+            "must_vary": [
+              "Whether the slope is given or must be estimated",
+              "Scaling factor (per 1, per 5, per 10 units)"
+            ],
+            "common_bugs": [
+              "Cloner forgets to include a distractor for the un-scaled slope, making elimination trivial",
+              "Cloner mismatches units in answer with the slope's actual units"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Predict / use model & residuals",
+      "description": "Student uses the line of best fit (or model curve) to predict a y-value for a given x, or to compute the residual (actual minus predicted) at a specific data point. Requires applying the model, not merely describing it.",
+      "boundary_with_other_aspects": "A4 always produces a NUMERICAL prediction or difference; A1 differs because A1 only reads plotted values without a model; A3 differs because A3 returns a parameter of the line itself.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Predict y at given x from line of best fit",
+          "description": "Best-fit line drawn or equation given; student must use it to estimate y at a specified x-value (often an interpolated or modestly extrapolated x).",
+          "core_skill_demand": "Locate x on the horizontal axis, trace vertically to best-fit line (or substitute x into equation), read corresponding y; select the closest MCQ value.",
+          "example_originals": ["5c24c861", "cf0ae57a", "ac5b6558", "8d63b6f1", "bc59c2d9", "8156d446"],
+          "frequency": { "easy": 6, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Best-fit line is explicitly drawn; the x of interest lies inside the visible plot range",
+                "MCQ answers are spread far enough that small reading errors don't change the choice",
+                "Context uses everyday axes (temperature, distance, density)"
+              ],
+              "example_stem": "What temperature does the line of best fit predict for an elevation of 6,200 feet?",
+              "example_ids": ["5c24c861", "cf0ae57a", "ac5b6558", "8d63b6f1", "bc59c2d9"]
+            },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Scatterplot with a clearly drawn line of best fit, OR a context with an equation",
+              "Student is asked to predict y at a specific x (interpolation or near extrapolation)",
+              "MCQ values close enough that careless reading is penalized but careful reading wins"
+            ],
+            "must_vary": [
+              "Context (temperature, density, biology)",
+              "Whether x is inside or just outside the plotted range"
+            ],
+            "common_bugs": [
+              "Cloner extrapolates far beyond the data shown, making the question reduce to algebraic substitution into a stated equation (drifts toward T3/T4 logic without the figure)",
+              "Cloner makes two MCQ values equally close to the true value"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Compute residual between actual data point and best-fit line",
+          "description": "A specific data point on the scatterplot is identified (often by its x-coordinate or by being the maximum/minimum); student must compute the difference between its actual y and the y predicted by the line of best fit at that x.",
+          "core_skill_demand": "Read actual y of the identified point; read predicted y from the line of best fit at the same x; subtract and take absolute value; select closest MCQ.",
+          "example_originals": ["1adb39f0", "7fd284ac", "e17babed", "f46139df", "fdfc90e4"],
+          "frequency": { "easy": 0, "medium": 5, "hard": 0 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Specific point is identified by extreme property (e.g., 'data point with greatest x', 'largest charity by %')",
+                "Both readings (actual and predicted) require careful gridline interpolation",
+                "Distractors include the actual y, the predicted y, the sum, and the correct difference"
+              ],
+              "example_stem": "What is the difference between the y-value of the indicated point and the y predicted by the line of best fit?",
+              "example_ids": ["1adb39f0", "7fd284ac", "e17babed", "f46139df", "fdfc90e4"]
+            },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Scatterplot with line of best fit AND at least one data point that differs noticeably from the line",
+              "Question asks for the DIFFERENCE between actual and predicted y at a specific x",
+              "Targeted point can be unambiguously identified (e.g., 'greatest x', '5th data point', a labeled point)"
+            ],
+            "must_vary": [
+              "Whether the targeted point is above or below the line",
+              "Scale of axes",
+              "Magnitude of the residual"
+            ],
+            "common_bugs": [
+              "Cloner identifies a point by phrase that matches more than one point on the new scatter",
+              "Cloner reverses which value (actual vs predicted) is subtracted, flipping sign and breaking the MCQ"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Identify model type (linear vs exponential)",
+      "description": "Student classifies a relationship as linear vs exponential and (within that) as increasing vs decreasing, based on a context description, a table of values, or a graph. The cognitive operation is recognizing additive vs multiplicative growth and the sign of change.",
+      "boundary_with_other_aspects": "A5 is purely categorical (4 model families); A2 differs because A2 chooses a specific equation, not a family; A1/A4 differ because A1/A4 use a model that has already been chosen.",
+      "types": [
+        {
+          "id": "T9",
+          "name": "Classify model from verbal context",
+          "description": "A short context describes a process (constant-rate increase, percentage growth, depletion); student selects from {increasing linear, decreasing linear, increasing exponential, decreasing exponential}.",
+          "core_skill_demand": "Recognize 'constant rate / per unit' = linear; '% of previous / multiplied by factor' = exponential; sign of slope/growth-factor determines increasing vs decreasing.",
+          "example_originals": ["43744269", "58171b5e", "7ac5d686", "9b5b23fc", "af142f8d"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Verbatim 'constant rate' or 'every minute it drops by X' phrasing",
+                "Direction of change is explicit ('descends', 'increases')",
+                "Only one of the four options matches all conditions"
+              ],
+              "example_stem": "Airplane descends at a constant rate of 400 feet per minute. What models its altitude over time?",
+              "example_ids": ["43744269"]
+            },
+            "medium": {
+              "characteristics": [
+                "Growth rule uses a PERCENTAGE phrase ('increases by 0.49% of previous value') — must recognize multiplicative",
+                "Or describes depletion at constant rate (decreasing linear) with multiple distractors",
+                "Distractors include both wrong family AND wrong direction"
+              ],
+              "example_stem": "Each year the value of an investment increases by 0.49% of its previous year's value. Which model applies?",
+              "example_ids": ["58171b5e", "7ac5d686"]
+            },
+            "hard": {
+              "characteristics": [
+                "Wording obscures whether growth is multiplicative or additive (e.g., 'f(x) = 201% of x' — a linear function with slope 2.01, NOT exponential)",
+                "Compare two accounts (compound vs simple) — eventually crossover behavior, requires reasoning about long-run behavior",
+                "Multiple plausible options after surface reading"
+              ],
+              "example_stem": "For x > 0, f(x) = 201% of x. Which of these describes this function?",
+              "example_ids": ["9b5b23fc", "af142f8d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Pure verbal context (no graph or table required to answer)",
+              "Four MCQ options spanning the 2x2 grid {linear, exponential} × {increasing, decreasing}",
+              "Process description that unambiguously points to one cell of the grid"
+            ],
+            "must_vary": [
+              "Whether growth is described in absolute units vs percentage",
+              "Sign of change",
+              "Context (biology, finance, motion, depletion)"
+            ],
+            "common_bugs": [
+              "Cloner uses '% of x' phrasing (constant proportionality) confused with '% growth per period' (exponential) — produces wrong key",
+              "Cloner forgets to flip increasing/decreasing when sign of change is negative"
+            ]
+          }
+        },
+        {
+          "id": "T10",
+          "name": "Classify model from graph or table",
+          "description": "A graph (curve or line) or a 4-row table of (x,y) values is shown; student picks from {increasing linear, decreasing linear, increasing exponential, decreasing exponential} or judges nonlinearity.",
+          "core_skill_demand": "From a curve: identify whether it is straight (linear) or shows curvature/asymptote (exponential); from a table: check constant differences (linear) vs constant ratios (exponential).",
+          "example_originals": ["632cf8f9", "c141366d", "a03b7e02", "ab7740a8", "9a144a01"],
+          "frequency": { "easy": 3, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Graph is clearly a straight line OR clearly a curve with an asymptote",
+                "Table has only 3-4 rows with simple integer differences/ratios",
+                "Sign of change is obvious"
+              ],
+              "example_stem": "The table shows selected values from f. Which of the following best describes f?",
+              "example_ids": ["a03b7e02", "632cf8f9", "c141366d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Multiple tables shown; student must check which is nonlinear by computing differences",
+                "Compares two functions f and g across x ranges (when linear < exp, when linear > exp)",
+                "Distractors include reasonable misreadings (mistaking a slight curve for linear, or vice-versa)"
+              ],
+              "example_stem": "In which of the following tables is the relationship between x and y nonlinear?",
+              "example_ids": ["ab7740a8", "9a144a01"]
+            },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Visual representation (graph or table) showing the function",
+              "Option set covering the 2x2 model grid OR explicitly testing linearity",
+              "Decisive feature (constant difference, constant ratio, or visible curvature)"
+            ],
+            "must_vary": [
+              "Whether representation is a graph or a table",
+              "Sign of change",
+              "Whether the linear family or exponential family is correct"
+            ],
+            "common_bugs": [
+              "Cloner makes a table whose differences and ratios are both nearly constant — ambiguous answer",
+              "Cloner draws curve that is too subtle to distinguish from a straight line"
+            ]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Choose model family for given scatterplot",
+          "description": "Scatterplot is shown with strongly nonlinear (often exponential) shape; student selects from candidate models the most appropriate fit, where options vary by family (line vs curve) or by direction/coverage.",
+          "core_skill_demand": "Recognize that the data are not best modeled by a line; identify the curve type (exponential growth or decay) and pick the option whose described curve covers the data most appropriately.",
+          "example_originals": ["15ce8207", "82aaa0a1"],
+          "frequency": { "easy": 2, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Data are visibly exponential (sharp curvature)",
+                "Distractors include linear-of-best-fit (wrong family) and curves with wrong direction",
+                "Correct answer is a curve that touches/passes near most points"
+              ],
+              "example_stem": "Of the following, which is the best model for the data in the scatterplot?",
+              "example_ids": ["15ce8207", "82aaa0a1"]
+            },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Scatterplot with clearly nonlinear (typically exponential) trend",
+              "Four MCQ options differing in family (line vs curve) and orientation",
+              "Exactly one option is a well-fitting curve"
+            ],
+            "must_vary": [
+              "Direction (growth vs decay)",
+              "Steepness / scale"
+            ],
+            "common_bugs": [
+              "Cloner uses near-linear data, allowing two answers (line or curve) to fit equally",
+              "Cloner forgets that correct option must touch/be near most data points"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "Quantify nonlinear (exponential) model parameter",
+      "description": "Scatterplot has an explicit exponential curve of best fit. Student must identify a parameter (initial value, growth factor, or constant in y = a·b^x) by reading two points the curve passes through.",
+      "boundary_with_other_aspects": "A6 is the exponential analog of A3; differs from A5 because A5 only picks the family, while A6 finds a specific parameter; differs from A2 because A2 picks an equation form but rarely solves for a parameter.",
+      "types": [
+        {
+          "id": "T12",
+          "name": "Identify exponential parameter from curve of best fit",
+          "description": "Curve y = a·b^x is fitted to the scatterplot; student must select the numerical value of a parameter (initial y-value a, or growth factor b) by reading the curve at x=0 and one other x.",
+          "core_skill_demand": "Read y at x=0 (gives a); read y at another x and solve b = (y/a)^(1/x); pick closest option (or identify a directly if intercept is asked).",
+          "example_originals": ["fb866265", "e821a26d"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Curve uses non-integer initial value and growth/decay factor",
+                "Distractors include initial value (close to actual a), reciprocal of growth factor, and far-extrapolated values",
+                "Student must select among similar magnitudes (e.g., 0.83 vs 1.83 — both plausible as decay base)"
+              ],
+              "example_stem": "The curve of best fit passes through (0, 126) and (10, 20). Which of the following could be the growth factor?",
+              "example_ids": ["fb866265", "e821a26d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Scatterplot with an explicit exponential curve of best fit",
+              "Curve must pass through at least two clearly readable coordinates (one at x=0 ideally)",
+              "Question asks for a numerical parameter (initial value, growth/decay factor) NOT a whole equation"
+            ],
+            "must_vary": [
+              "Direction (growth vs decay)",
+              "Initial value scale"
+            ],
+            "common_bugs": [
+              "Cloner asks for a parameter that cannot be uniquely determined from the two stated points",
+              "Cloner provides distractor values that are not algebraically close (no plausible misstep produces them)"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "All originals fall into 6 aspects: (A1) read raw values, (A2) pick best-fit equation, (A3) quantify slope/intercept of fitted line, (A4) predict / residual, (A5) classify model family, (A6) quantify exponential parameter. Hard items concentrate in A2-T4 (context equations), A3-T6 (slope interpretation), A5-T9 (subtle linear-vs-exponential wording), and A6-T12 (exponential curves). All scatterplot-based items have a corresponding 'aria-label' SVG description; cloners should preserve the descriptive long-form (the verifier relies on it to extract trend direction and coordinates). One Easy SPR (b58dbf88) asks for a numerical predicted weight from a nectarine-tree growth scatterplot and fits T7."
+}

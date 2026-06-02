@@ -1,0 +1,39 @@
+{
+  "questionId": "9e2bf782-s1",
+  "originalId": "9e2bf782",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A fish hatchery uses three tanks for holding fish before release. Tank A holds <math><mn>12</mn></math> fish, each weighing less than <math><mn>6</mn></math> ounces. Tank B holds <math><mn>10</mn></math> fish, each weighing at least <math><mn>6</mn></math> ounces but no more than <math><mn>15</mn></math> ounces. Tank C holds <math><mn>11</mn></math> fish, each weighing more than <math><mn>15</mn></math> ounces. Which of the following could be the median of the weights, in ounces, of these <math><mn>33</mn></math> fish?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>4.5</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>16</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>5.5</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>9</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. With 33 fish ordered by weight, the median is the 17th value. Positions 1\u201312 are from Tank A (&lt; 6 oz), positions 13\u201322 are from Tank B ([6, 15] oz), and positions 23\u201333 are from Tank C (&gt; 15 oz). The 17th value falls in Tank B, so the median is between 6 and 15 ounces. Only 9 lies in this interval.</p><p>Choices A and C are below 6. Choice B is above 15.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.medium"
+}

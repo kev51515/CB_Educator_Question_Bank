@@ -1,0 +1,22 @@
+{
+  "questionId": "3a9d60b2-s1",
+  "originalId": "3a9d60b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3|7 &minus; x| + 4|7 &minus; x| = 49. What is the positive solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "14"
+  ],
+  "rationale": "<p>Combine like terms: 7|7 &minus; x| = 49, so |7 &minus; x| = 7. By the definition of absolute value, 7 &minus; x = 7 or 7 &minus; x = &minus;7. The first gives x = 0; the second gives x = 14. The positive solution greater than zero is x = 14.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard"
+}

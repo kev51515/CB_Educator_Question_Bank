@@ -1,0 +1,25 @@
+{
+  "questionId": "c188a397-s1",
+  "originalId": "c188a397",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Recently, climate scientists examined data collected by the European Space Agency&rsquo;s Aeolus satellite to learn more about the strongest atmospheric currents above the South Atlantic, sometimes called the polar jet there. The data show that, throughout the season studied, the jet&rsquo;s core never strayed more than a narrow band of latitude from its midwinter position. This finding surprised the scientists, as they had expected the core to drift broadly between latitudes because of the rapid warming of the surrounding stratosphere. Now, scientists believe that long-lived patterns of stratospheric pressure may anchor the jet&rsquo;s core in place.</p>",
+  "stem": "<p>According to the text, what was surprising to scientists studying the data from the Aeolus satellite?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The jet&rsquo;s core remained within a narrow band of latitudes throughout the season.</p>"},
+    {"id": "b", "content": "<p>The stratosphere above the South Atlantic has been cooling rather than warming.</p>"},
+    {"id": "c", "content": "<p>The Aeolus satellite returned fewer measurements than the scientists had expected.</p>"},
+    {"id": "d", "content": "<p>Several distinct types of atmospheric current were active in the South Atlantic.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text directly states that the jet&rsquo;s core never strayed more than a narrow band of latitude, and that this finding surprised the scientists, who had expected broad drift.</p><p>Choice B is incorrect because the text describes the stratosphere as warming, not cooling, and presents that as the reason for the scientists&rsquo; original expectation. Choice C is incorrect because the text does not discuss the amount of data Aeolus returned. Choice D is incorrect because the text mentions only the polar jet&rsquo;s core, not multiple distinct currents.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "4d7064a6-s1",
+  "originalId": "4d7064a6",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = (x &minus; 8)(x + 15)</p><p>The function f is defined by the given equation. For what value of x does f(x) reach its minimum?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;120</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;7/2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;23/2</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Because the parabola opens upward, f reaches its minimum at the vertex, whose x-coordinate is the midpoint of the two x-intercepts. The x-intercepts come from x &minus; 8 = 0 and x + 15 = 0, giving x = 8 and x = &minus;15. The midpoint is (8 + (&minus;15))/2 = &minus;7/2.</p><p>Choice A is the y-intercept &minus;120. Choice C is one x-intercept. Choice D uses (8 &minus; 15)/(... wrong arithmetic) and is incorrect.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

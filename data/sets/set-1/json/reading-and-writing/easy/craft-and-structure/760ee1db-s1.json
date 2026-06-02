@@ -1,0 +1,39 @@
+{
+  "questionId": "760ee1db-s1",
+  "originalId": "760ee1db",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Although the composers hoped that their symphony would be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when performed in concert, critics generally agreed that the performance had the opposite effect, putting listeners to sleep instead of stirring them.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>subtle</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>polished</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>realistic</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>exhilarating</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the contrast with \"putting listeners to sleep\" requires a word meaning lively or energizing. \"Exhilarating\" fits. Choice A is incorrect because subtle does not contrast with sleepy. Choice B is incorrect because polished and sleepy are not opposites. Choice C is incorrect because realistic does not contrast meaningfully here.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T4.easy"
+}

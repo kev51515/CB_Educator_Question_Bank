@@ -1,0 +1,25 @@
+{
+  "questionId": "4f2ff5f2-s1",
+  "originalId": "4f2ff5f2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T1.medium",
+  "stimulus": "<p>Crows appear in many works of folklore. For example, in Maxine Hong Kingston's 1976 memoir <em>The Woman Warrior</em>, there is a crow that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as a guide to the protagonist and reappears at key moments throughout the narrative. As a figure, the crow signifies the bond between memory and storytelling.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>had served</p>"},
+    {"id": "b", "content": "<p>served</p>"},
+    {"id": "c", "content": "<p>serves</p>"},
+    {"id": "d", "content": "<p>will have served</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of verbs to express tense. The present tense verb \"serves\" is consistent with the other present tense verbs (\"reappears\" and \"signifies\") used to describe the crow in Kingston's memoir. Furthermore, it's conventional to use the present tense when discussing a literary work.</p><p>Choice A is incorrect because the past perfect tense verb \"had served\" isn't consistent with the other present tense verbs used to describe the crow. Choice B is incorrect because the past tense verb \"served\" isn't consistent with the other present tense verbs used to describe the crow. Choice D is incorrect because the future perfect tense verb \"will have served\" isn't consistent with the other present tense verbs used to describe the crow.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

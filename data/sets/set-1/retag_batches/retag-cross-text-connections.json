@@ -1,0 +1,32 @@
+[
+  {
+    "id": "96f3accc-s1",
+    "templateId": "cross-text-connections.A4.T6.hard",
+    "verdict": "type_drift",
+    "detail": "Stem 'author of Text 2 would most likely agree with which statement about the description in Text 1' is a one-sided A1-style predicted-response, not T6 joint inference. T6 requires 'if both authors were aware of both findings' framing and a synthesis combining specific data from each text. Clone reads as A1.T1 (respond to overall description)."
+  },
+  {
+    "id": "e4e2aeb3-s1",
+    "templateId": "cross-text-connections.A1.T3.hard",
+    "verdict": "type_drift",
+    "detail": "T3 requires stem verb 'characterize/regard/describe/say about' and answer options opening with an evaluative adjective/label ('As questionable...', 'As illogical...'). Clone uses stem 'how would Mendoza most likely respond to the underlined claim' and options begin with action gerunds ('By insisting', 'By acknowledging', 'By cautioning', 'By proposing'). This is T2 structure (respond to underlined claim). Additionally, no underline markup is present in the stimulus, violating T2 must_preserve as well."
+  },
+  {
+    "id": "9645f55e-s1",
+    "templateId": "cross-text-connections.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem uses 'how would the author of Text 2 most likely regard the perspective of...' and answer options open with evaluative labels ('As shortsighted', 'As mistaken', 'As inconsistent', 'As unrealistic') followed by 'because' clauses. This is the T3 (characterize claim with evaluative label) structure, not T1 (respond to entire argument)."
+  },
+  {
+    "id": "835d1ae6-s1",
+    "templateId": "cross-text-connections.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem explicitly references 'the interpretation presented in the underlined portion of Text 1' and Text 1 contains an underlined sentence. This is T2 (respond to underlined/specific claim), not T1 (respond to entire argument with no underlined portion). T1 must_preserve requires 'no underlined portion'."
+  },
+  {
+    "id": "159ef46d-s1",
+    "templateId": "cross-text-connections.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Stem verb is 'regard' and answer options open with evaluative labels ('As surprising', 'As unfair', 'As problematic', 'As predictable') followed by 'because' clauses. This is the T3 (characterize with evaluative label) structure, not T2. T3 stem-verb marker (characterize/regard/describe) is explicit in template."
+  }
+]

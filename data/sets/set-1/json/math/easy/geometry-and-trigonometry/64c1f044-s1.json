@@ -1,0 +1,39 @@
+{
+  "questionId": "64c1f044-s1",
+  "originalId": "64c1f044",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the angle of measure x degrees is acute. The side opposite this angle has length 24 units, and the side adjacent to this angle (other than the hypotenuse) has length 7 units. What is the value of the tangent of x degrees?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>24 over 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7 over 24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>24 over 25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7 over 25</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The tangent of an acute angle in a right triangle equals the ratio of the length of the side opposite the angle to the length of the side adjacent to the angle: 24 over 7.</p><p>Choice B is incorrect: this is cotangent.</p><p>Choice C is incorrect: this is sine.</p><p>Choice D is incorrect: this is cosine.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "0fd96039",
+  "externalId": "92264ffd-d9d5-4e5f-b423-5c7112ae7b48",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:14.969198+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the text, what piece of knowledge about the Pledge of Allegiance has recently become uncertain?</p>",
+  "answerOptions": [
+    {
+      "id": "38d3c168-6be3-4a58-b7a4-03dffcb7ef86",
+      "content": "<p>How many changes were made to the pledge in the 1900s</p>"
+    },
+    {
+      "id": "98666e9f-79a2-44b1-a761-842bb732a913",
+      "content": "<p>The identity of the person who first wrote the pledge</p>"
+    },
+    {
+      "id": "63e5612e-2856-4681-98d4-d7eae525fd19",
+      "content": "<p>The name of the newspaper that first published the pledge</p>"
+    },
+    {
+      "id": "14e41818-f646-4d51-82c7-f518be2b5561",
+      "content": "<p>Which part of the pledge students liked best in <span data-ssml-say-as=\"date\">1892</span></p>"
+    }
+  ],
+  "keys": [
+    "98666e9f-79a2-44b1-a761-842bb732a913"
+  ],
+  "rationale": "<p>Choice B is the best answer because it presents a supposed fact about the Pledge of Allegiance that, as the text explains, has recently become uncertain. The text begins by explaining the long-held belief that the original author of the US Pledge of Allegiance was Francis Bellamy, who claimed to have written it in August 1892. The text then describes a historian&rsquo;s recent discovery of a newspaper article published several months before August 1892 that mentions students reciting the same pledge. The text concludes that this discovery suggests Bellamy may not have created the pledge after all. Thus, what has recently become uncertain is the identity of the person who first wrote the pledge.</p><p>Choice A is incorrect because the text doesn&rsquo;t address any changes made to the Pledge of Allegiance in the 1900s. The text focuses solely on the question of who originally authored the pledge in or before 1892 and doesn&rsquo;t mention any subsequent modifications to its wording. Choice C is incorrect. While the text does mention a historian&rsquo;s discovery of a newspaper article that described students reciting the pledge, it doesn&rsquo;t suggest that the pledge was published in its entirety within that article. Moreover, the text doesn&rsquo;t identify the newspaper by name or suggest the possibility of an earlier mention of the pledge in a different newspaper. Choice D is incorrect because the text doesn&rsquo;t mention which parts of the Pledge of Allegiance students preferred in 1892 or at any other time. The text only states that a newspaper article described students reciting the pledge, without providing any information about their preferences regarding different portions of it.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the text, what piece of knowledge about the Pledge of Allegiance has recently become uncertain?</p>",
+    "stimulus": "<p>It has long been thought that the original author of the US Pledge of Allegiance was Francis Bellamy, who said that he wrote the pledge one evening in August of <span data-ssml-say-as=\"date\">1892</span>. But a historian recently discovered a newspaper article that was published several months before August <span data-ssml-say-as=\"date\">1892</span>. The article describes students reciting the same pledge that Bellamy claims he first wrote in August. This means that Bellamy may not have created the pledge after all.</p>",
+    "keys": [
+      "98666e9f-79a2-44b1-a761-842bb732a913"
+    ],
+    "answerOptions": [
+      {
+        "id": "38d3c168-6be3-4a58-b7a4-03dffcb7ef86",
+        "content": "<p>How many changes were made to the pledge in the 1900s</p>"
+      },
+      {
+        "id": "98666e9f-79a2-44b1-a761-842bb732a913",
+        "content": "<p>The identity of the person who first wrote the pledge</p>"
+      },
+      {
+        "id": "63e5612e-2856-4681-98d4-d7eae525fd19",
+        "content": "<p>The name of the newspaper that first published the pledge</p>"
+      },
+      {
+        "id": "14e41818-f646-4d51-82c7-f518be2b5561",
+        "content": "<p>Which part of the pledge students liked best in <span data-ssml-say-as=\"date\">1892</span></p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it presents a supposed fact about the Pledge of Allegiance that, as the text explains, has recently become uncertain. The text begins by explaining the long-held belief that the original author of the US Pledge of Allegiance was Francis Bellamy, who claimed to have written it in August 1892. The text then describes a historian&rsquo;s recent discovery of a newspaper article published several months before August 1892 that mentions students reciting the same pledge. The text concludes that this discovery suggests Bellamy may not have created the pledge after all. Thus, what has recently become uncertain is the identity of the person who first wrote the pledge.</p><p>Choice A is incorrect because the text doesn&rsquo;t address any changes made to the Pledge of Allegiance in the 1900s. The text focuses solely on the question of who originally authored the pledge in or before 1892 and doesn&rsquo;t mention any subsequent modifications to its wording. Choice C is incorrect. While the text does mention a historian&rsquo;s discovery of a newspaper article that described students reciting the pledge, it doesn&rsquo;t suggest that the pledge was published in its entirety within that article. Moreover, the text doesn&rsquo;t identify the newspaper by name or suggest the possibility of an earlier mention of the pledge in a different newspaper. Choice D is incorrect because the text doesn&rsquo;t mention which parts of the Pledge of Allegiance students preferred in 1892 or at any other time. The text only states that a newspaper article described students reciting the pledge, without providing any information about their preferences regarding different portions of it.</p>",
+    "externalid": "92264ffd-d9d5-4e5f-b423-5c7112ae7b48",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>It has long been thought that the original author of the US Pledge of Allegiance was Francis Bellamy, who said that he wrote the pledge one evening in August of <span data-ssml-say-as=\"date\">1892</span>. But a historian recently discovered a newspaper article that was published several months before August <span data-ssml-say-as=\"date\">1892</span>. The article describes students reciting the same pledge that Bellamy claims he first wrote in August. This means that Bellamy may not have created the pledge after all.</p>"
+}

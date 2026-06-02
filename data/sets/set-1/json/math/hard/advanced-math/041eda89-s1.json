@@ -1,0 +1,22 @@
+{
+  "questionId": "041eda89-s1",
+  "originalId": "041eda89",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><i>x</i>&sup2; + 9<i>x</i> + 4 = 0</p><p>One solution to the given equation can be written as <i>x</i> = (&minus;9 + &radic;<i>k</i>)/2, where <i>k</i> is a constant. What is the value of <i>k</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "65"
+  ],
+  "rationale": "<p>By the quadratic formula, the solutions to <i>x</i>&sup2; + 9<i>x</i> + 4 = 0 are <i>x</i> = (&minus;9 &plusmn; &radic;(81 &minus; 16))/2 = (&minus;9 &plusmn; &radic;65)/2. Comparing with the given form, <i>k</i> = 65.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

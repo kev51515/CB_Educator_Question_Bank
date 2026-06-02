@@ -1,0 +1,72 @@
+{
+  "questionId": "cfe23776",
+  "externalId": "5aeac962-fa14-4491-8991-56ff0ec4b5c6",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:23:07.110754+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a8cb3434-f222-4e42-9cea-c063aad64856",
+      "content": "<p><span data-ssml-say-as=\"date\">1804</span><span data-ssml-say-as=\"characters\">&mdash;</span></p>"
+    },
+    {
+      "id": "e3cb1030-bc4e-4ff6-b1a3-7e205e758e25",
+      "content": "<p><span data-ssml-say-as=\"date\">1804</span><span data-ssml-say-as=\"characters\">,</span></p>"
+    },
+    {
+      "id": "7ba43701-b8ee-4a1c-b461-c8fdbb5bb652",
+      "content": "<p><span data-ssml-say-as=\"date\">1804</span><span data-ssml-say-as=\"characters\">:</span></p>"
+    },
+    {
+      "id": "22aacebf-7ddb-4a49-9b51-29d5e6b28066",
+      "content": "<p><span data-ssml-say-as=\"date\">1804</span></p>"
+    }
+  ],
+  "keys": [
+    "e3cb1030-bc4e-4ff6-b1a3-7e205e758e25"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;1804&rdquo; pairs with the comma after &ldquo;amendment&rdquo; to separate the supplementary element &ldquo;ratified in 1804&rdquo; from the rest of the sentence. This supplementary element functions to provide additional information on the term &ldquo;12th amendment,&rdquo; and the pair of commas indicates that this element could be removed without affecting the grammatical coherence of the sentence.</p><p>Choice A is incorrect because a dash can&rsquo;t be paired with a comma in this way to separate the supplementary element from the rest of the sentence. Choice C is incorrect because a colon can&rsquo;t be paired with a comma in this way to separate the supplementary element from the rest of the sentence. Choice D is incorrect because it fails to use appropriate punctuation to separate the supplemental element from the rest of the sentence.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>According to the original text of the US Constitution, written in <span data-ssml-say-as=\"date\">1787</span>, the presidential candidate receiving the second-most Electoral College votes becomes vice president. The 12th amendment, ratified in <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> separated the elections for the two offices.</p>",
+    "keys": [
+      "e3cb1030-bc4e-4ff6-b1a3-7e205e758e25"
+    ],
+    "answerOptions": [
+      {
+        "id": "a8cb3434-f222-4e42-9cea-c063aad64856",
+        "content": "<p><span data-ssml-say-as=\"date\">1804</span><span data-ssml-say-as=\"characters\">&mdash;</span></p>"
+      },
+      {
+        "id": "e3cb1030-bc4e-4ff6-b1a3-7e205e758e25",
+        "content": "<p><span data-ssml-say-as=\"date\">1804</span><span data-ssml-say-as=\"characters\">,</span></p>"
+      },
+      {
+        "id": "7ba43701-b8ee-4a1c-b461-c8fdbb5bb652",
+        "content": "<p><span data-ssml-say-as=\"date\">1804</span><span data-ssml-say-as=\"characters\">:</span></p>"
+      },
+      {
+        "id": "22aacebf-7ddb-4a49-9b51-29d5e6b28066",
+        "content": "<p><span data-ssml-say-as=\"date\">1804</span></p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;1804&rdquo; pairs with the comma after &ldquo;amendment&rdquo; to separate the supplementary element &ldquo;ratified in 1804&rdquo; from the rest of the sentence. This supplementary element functions to provide additional information on the term &ldquo;12th amendment,&rdquo; and the pair of commas indicates that this element could be removed without affecting the grammatical coherence of the sentence.</p><p>Choice A is incorrect because a dash can&rsquo;t be paired with a comma in this way to separate the supplementary element from the rest of the sentence. Choice C is incorrect because a colon can&rsquo;t be paired with a comma in this way to separate the supplementary element from the rest of the sentence. Choice D is incorrect because it fails to use appropriate punctuation to separate the supplemental element from the rest of the sentence.</p>",
+    "externalid": "5aeac962-fa14-4491-8991-56ff0ec4b5c6",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>According to the original text of the US Constitution, written in <span data-ssml-say-as=\"date\">1787</span>, the presidential candidate receiving the second-most Electoral College votes becomes vice president. The 12th amendment, ratified in <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> separated the elections for the two offices.</p>"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "947a3cde-s1",
+  "originalId": "947a3cde",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Two lines intersect at point P, forming four angles. One of these angles has measure 110°. A triangle MPN has its vertex at P, and the interior angle of triangle MPN at vertex P is one of the angles formed by the two lines and is supplementary to the 110° angle. If the measure of angle M in triangle MPN is 28°, what is the measure, in degrees, of angle N?</p>",
+  "answerOptions": [],
+  "keys": [
+    "82"
+  ],
+  "rationale": "<p>Two angles forming a straight line are supplementary, so the interior angle of triangle MPN at P measures 180 − 110 = 70°. The three interior angles of a triangle sum to 180°, so ∠N = 180 − 70 − 28 = 82°.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.hard"
+}

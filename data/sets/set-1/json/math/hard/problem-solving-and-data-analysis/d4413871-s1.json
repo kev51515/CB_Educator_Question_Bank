@@ -1,0 +1,22 @@
+{
+  "questionId": "d4413871-s1",
+  "originalId": "d4413871",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Human blood can be classified into four common blood types \u2014 A, B, AB, and O. Among a group of people who are rhesus negative (\u2212), there are 5 with blood type A, 3 with blood type B, 1 with blood type AB, and x with blood type O. If one of these rhesus-negative people is chosen at random, the probability that the person has blood type B is 1/5. What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>The correct answer is 6. The total number of rhesus-negative people is 5 + 3 + 1 + x = 9 + x. The probability that a randomly selected rhesus-negative person has blood type B is 3 / (9 + x) = 1/5. Cross-multiplying: 15 = 9 + x, so x = 6.</p>",
+  "templateId": "probability-and-conditional-probability.A3.T10.hard"
+}

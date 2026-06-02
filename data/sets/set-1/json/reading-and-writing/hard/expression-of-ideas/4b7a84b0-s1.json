@@ -1,0 +1,25 @@
+{
+  "questionId": "4b7a84b0-s1",
+  "originalId": "4b7a84b0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Long horizontal swaths of land set aside on city blocks for cultivation are known as allotment gardens, a term borrowed from late nineteenth-century British policy. As urban allotments have transitioned from emergency food production to a leisure pursuit, contemporary allotments are seldom managed strictly for caloric output. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> today's plot holders tend to prioritize variety and aesthetics, devoting space to ornamental flowers or unusual heirloom vegetables that hold cultural rather than nutritional value.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>More commonly,</p>"},
+    {"id": "b", "content": "<p>Conversely,</p>"},
+    {"id": "c", "content": "<p>Even so,</p>"},
+    {"id": "d", "content": "<p>Likewise,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"More commonly\" logically signals that the second sentence reinforces and elaborates on the first sentence's claim that allotments are seldom run for caloric output—it specifies what plot holders typically do instead. The two sentences agree, with the second sharpening and strengthening the first.</p><p>Choice B is incorrect because \"conversely\" would signal opposition, yet the two sentences agree. Choice C is incorrect because \"even so\" would concede the first sentence while contradicting it, but the second sentence supports the first. Choice D is incorrect because \"likewise\" would mean the second sentence describes something similar but separate; here, the second sentence is the more specific restatement of the first, not a parallel case.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A3.T8.hard"
+}

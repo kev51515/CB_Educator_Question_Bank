@@ -1,0 +1,39 @@
+{
+  "questionId": "e80d62c6-s1",
+  "originalId": "e80d62c6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation x<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 81 represents circle P. Circle Q is obtained by shifting circle P right 6 units in the xy-plane. Which of the following equations represents circle Q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x<sup>2</sup> + (y + 1)<sup>2</sup> = 81</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x + 6)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 81</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x<sup>2</sup> + (y + 5)<sup>2</sup> = 81</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x \u2212 6)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 81</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Circle P has center (0, 5) and radius 9. Shifting right 6 units moves the center to (6, 5), giving the equation (x \u2212 6)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 81.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T5.hard"
+}

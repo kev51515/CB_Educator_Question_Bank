@@ -1,0 +1,22 @@
+[
+  {"id": "4b8eda0a-s1", "templateId": "inferences.A3.T7.hard", "verdict": "ok"},
+  {"id": "38facbad-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "ac285054-s1", "templateId": "inferences.A1.T2.hard", "verdict": "ok"},
+  {"id": "e503ae04-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "1ffd60ce-s1", "templateId": "inferences.A2.T4.medium", "verdict": "difficulty_drift", "detail": "Clone file is in hard/ folder and difficulty='Hard', but templateId tags it as medium. Stimulus complexity (multi-step quantitative reasoning about silver percentage, tribute constraints, multiple distractors near-miss) matches hard levers, not medium."},
+  {"id": "75208874-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "3f236877-s1", "templateId": "inferences.A3.T6.hard", "verdict": "ok"},
+  {"id": "9869c261-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "ce4448b7-s1", "templateId": "inferences.A1.T1.hard", "verdict": "ok"},
+  {"id": "f2250478-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "b5e9f3c2-s1", "templateId": "inferences.A1.T2.hard", "verdict": "ok"},
+  {"id": "5632ffb4-s1", "templateId": "inferences.A3.T6.hard", "verdict": "ok"},
+  {"id": "1bf2173e-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "f1bfbed3-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"},
+  {"id": "e9521fd1-s1", "templateId": "inferences.A1.T2.hard", "verdict": "ok"},
+  {"id": "93cad661-s1", "templateId": "inferences.A1.T1.easy", "verdict": "ok"},
+  {"id": "7a895def-s1", "templateId": "inferences.A1.T1.easy", "verdict": "ok"},
+  {"id": "fc1259dd-s1", "templateId": "inferences.A4.T9.easy", "verdict": "ok"},
+  {"id": "fcae209f-s1", "templateId": "inferences.A1.T2.easy", "verdict": "ok"},
+  {"id": "493c46bc-s1", "templateId": "inferences.A4.T10.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "4ff7b652-s1",
+  "originalId": "4ff7b652",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Right triangles <em>XYZ</em> and <em>ABC</em> are similar, where <em>X</em> and <em>Y</em> correspond to <em>A</em> and <em>B</em>, respectively. If the measure of angle <em>Y</em> is 68&deg;, what is the measure of angle <em>B</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22&deg;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>32&deg;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>68&deg;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>112&deg;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In similar triangles, corresponding angles are congruent. Since angle Y in triangle XYZ corresponds to angle B in triangle ABC, the two angles must be congruent. Therefore m&ang;B = 68&deg;. Choice A is the complement of 68&deg;. Choice B and Choice D are incorrect angle computations.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.medium"
+}

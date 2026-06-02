@@ -1,0 +1,25 @@
+{
+  "questionId": "5325b3cc-s1",
+  "originalId": "5325b3cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Houston's Bayou Voices Theater Company, founded by director Naomi Etheridge, stages classic and contemporary plays, from well-known works by August Wilson to recent pieces by playwright Aleshea Harris. As part of the company's StageShare program, Etheridge invites neighborhood residents to attend short workshops on directing and then guide a Bayou Voices rehearsal of their own, working with the cast for a single scene from one of the season's productions.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Bayou Voices produces plays from many regions but mostly stages works by Houston-based playwrights.</p>"},
+    {"id": "b", "content": "<p>The Bayou Voices theater company offers neighborhood residents the opportunity both to watch and to take part in shaping its productions.</p>"},
+    {"id": "c", "content": "<p>Etheridge has residents direct rehearsals primarily to demonstrate how challenging the work of a stage director is.</p>"},
+    {"id": "d", "content": "<p>Etheridge founded Bayou Voices in order to produce contemporary plays by Aleshea Harris.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it captures the main idea. The text describes Bayou Voices as a company staging classic and contemporary plays and then explains that, through StageShare, neighborhood residents can both learn about directing and guide a rehearsal themselves. The main idea is that residents both watch and help shape the company's work.</p><p>Choice A is incorrect because the text never claims most of the company's work comes from Houston playwrights. Choice C is incorrect because the text does not state that the program is meant to show how difficult directing is. Choice D is incorrect because the text mentions Harris only as one playwright in the company's repertoire, not as the reason for the company's founding.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

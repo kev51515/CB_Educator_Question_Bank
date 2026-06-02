@@ -1,0 +1,39 @@
+{
+  "questionId": "768b2425-s1",
+  "originalId": "768b2425",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Last week, a tutor earned a total of $1,176 from <i>t</i> hours of tutoring and <i>g</i> hours of grading. The equation 45<i>t</i> + 28<i>g</i> = 1,176 represents this situation. Which of the following is the best interpretation of 45 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The tutor worked 45 hours grading last week.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The tutor earned $45 per hour tutoring last week.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The tutor earned $45 per hour grading last week.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The tutor worked 45 hours tutoring last week.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. In the expression 45<i>t</i>, the coefficient 45 is the dollars earned per hour tutoring, since <i>t</i> is in hours and 45<i>t</i> is the total tutoring earnings in dollars.</p><p>Choices A and D confuse a rate with a count of hours. Choice C attaches the tutoring rate to grading.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.easy"
+}

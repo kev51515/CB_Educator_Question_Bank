@@ -1,0 +1,39 @@
+{
+  "questionId": "6e06a0a7-s1",
+  "originalId": "6e06a0a7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which of the following expressions is equivalent to <math><mn>5</mn><mfenced><mrow><mi>a</mi><mo>+</mo><mn>3</mn></mrow></mfenced><mo>-</mo><mn>2</mn><mi>a</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mi>a</mi><mo>+</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>7</mn><mi>a</mi><mo>+</mo><mn>15</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>3</mn><mi>a</mi><mo>+</mo><mn>15</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>5</mn><mi>a</mi><mo>+</mo><mn>3</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Distributing: 5(a + 3) = 5a + 15. Then 5a + 15 \u2212 2a = 3a + 15.</p>",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

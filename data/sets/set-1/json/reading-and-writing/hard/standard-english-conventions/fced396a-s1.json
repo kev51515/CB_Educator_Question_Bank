@@ -1,0 +1,25 @@
+{
+  "questionId": "fced396a-s1",
+  "originalId": "fced396a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>The Gini coefficient, a widely cited measure of inequality in the distribution of income across a population, ranges from a score of zero to one. Compared with that of a highly unequal economy&mdash;that is, an economy in which wealth is concentrated in a tiny share of households&mdash;<span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>a more egalitarian economy will register a much lower Gini coefficient.</p>"},
+    {"id": "b", "content": "<p>when an economy is more egalitarian, its Gini coefficient will be much lower.</p>"},
+    {"id": "c", "content": "<p>an economy that is more egalitarian will produce a much lower Gini coefficient.</p>"},
+    {"id": "d", "content": "<p>the Gini coefficient of a more egalitarian economy will be much lower.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;the Gini coefficient of a more egalitarian economy&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;Compared with that of a highly unequal economy.&rdquo; In doing so, this choice clearly establishes that the Gini coefficient of a more egalitarian economy&mdash;and not another noun in the sentence&mdash;is being compared with the Gini coefficient of a highly unequal economy.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of &ldquo;a more egalitarian economy&rdquo; immediately after the modifying phrase illogically suggests that an economy is being compared with a Gini coefficient. Choice B is incorrect because it results in a confusing, illogical sentence. The placement of the modifier &ldquo;when an economy is more egalitarian&rdquo; after &ldquo;a highly unequal economy&rdquo; is contradictory, and &ldquo;its&rdquo; is ambiguous. Choice C is incorrect because it results in a dangling modifier. The placement of &ldquo;an economy that is more egalitarian&rdquo; immediately after the modifying phrase illogically suggests that an economy is being compared with a Gini coefficient.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "03080769-s1",
+  "originalId": "03080769",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><strong><span role=\"heading\" aria-level=\"2\">Text 1</span></strong></p><p>Philosopher Thomas Reid argued that human beings possess what he termed &ldquo;first principles&rdquo;&mdash;foundational beliefs, such as the reliability of memory and the existence of the physical world, that all people necessarily accept in practice even when they claim to doubt them. According to Reid, these convictions form the bedrock of all reasoning, and any philosophical system that attempts to deny them undermines itself, since the denial must rely on the very faculties it rejects.</p><p>&nbsp;</p><p><strong><span role=\"heading\" aria-level=\"2\">Text 2</span></strong></p><p>Radical skepticism holds that genuine knowledge of an external reality is impossible because every belief we hold could, in principle, be the product of deception or error. Proponents acknowledge that abandoning ordinary convictions feels strange, but they insist that no argument has ever been advanced to show why those convictions deserve to be trusted simply because we cannot help relying on them in daily life.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 1 most likely respond to proponents of the philosophical stance outlined in Text 2?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By granting that radical skeptics have offered a sufficiently rigorous case against the trustworthiness of ordinary convictions</p>"},
+    {"id": "b", "content": "<p>By noting that radical skeptics must employ the very faculties whose reliability they are attempting to deny</p>"},
+    {"id": "c", "content": "<p>By conceding that the strangeness of abandoning ordinary convictions is itself a sign that those convictions may be mistaken</p>"},
+    {"id": "d", "content": "<p>By recommending that Reid&rsquo;s notion of first principles be replaced with a more rigorous epistemic standard</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Text 1 describes Reid&rsquo;s position that any philosophical system denying foundational beliefs &ldquo;undermines itself, since the denial must rely on the very faculties it rejects.&rdquo; Applied directly to the radical skeptics of Text 2&mdash;who attempt to argue that ordinary convictions deserve no trust&mdash;Reid&rsquo;s author of Text 1 would point out that the skeptics&rsquo; very act of arguing requires the use of memory, reasoning, and other faculties whose reliability they are calling into question.</p><p>Choice A is incorrect because Text 1 explicitly holds that no such denial can succeed; the author would not grant that skeptics have made a rigorous case. Choice C is incorrect because Text 1 treats the universality of these convictions as evidence of their authority, not as a mistake. Choice D is incorrect because Text 1&rsquo;s author defends the notion of first principles rather than calling for it to be replaced.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

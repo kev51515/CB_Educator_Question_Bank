@@ -1,0 +1,39 @@
+{
+  "questionId": "b470d853-s1",
+  "originalId": "b470d853",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Line graph: Recreation Visits by Month to Four UK National Parks during the Peak Season in 2022 (June, July, August), in thousands.]</p><ul><li>Lake District: June 950, July 1,250, August 1,400</li><li>Snowdonia: June 480, July 690, August 760</li><li>Peak District: June 720, July 870, August 990</li><li>Brecon Beacons: June 310, July 420, August 470</li></ul><p>According to the graph, the UK national park with the most recreation visits in August 2022 was ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Peak District.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Lake District.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Snowdonia.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Brecon Beacons.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the Lake District had the most August visits at 1,400 thousand, more than any other park shown.</p><p>Choice A is incorrect: Peak District had 990 thousand in August. Choice C is incorrect: Snowdonia had 760 thousand. Choice D is incorrect: Brecon Beacons had only 470 thousand.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot shows the density (in grams per cubic centimeter) of objects in the solar system versus their average distances from the Sun in astronomical units (AU). The line of best fit has equation y = \u22120.5x + 5, where x is distance in AU and y is density in g/cm\u00b3. An astronomer has discovered a new object about 2 AU from the Sun. According to the line of best fit, which of the following best approximates the density of the object, in grams per cubic centimeter?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.0</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting x = 2 into y = \u22120.5x + 5 gives y = \u22121 + 5 = 4.0 g/cm\u00b3.</p><p>The other choices are from arithmetic errors.</p>",
+  "questionId": "cf0ae57a-s1",
+  "originalId": "cf0ae57a",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

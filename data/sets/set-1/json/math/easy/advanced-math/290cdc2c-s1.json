@@ -1,0 +1,39 @@
+{
+  "questionId": "290cdc2c-s1",
+  "originalId": "290cdc2c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><msup><mi>x</mi><mfrac><mn>1</mn><mn>9</mn></mfrac></msup></math> for <math><mi>x</mi><mo>&gt;</mo><mn>0</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The cube root of <math><mi>x</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The square root of <math><mi>x</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>9</mn><mi>x</mi></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The ninth root of <math><mi>x</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>A fractional exponent of the form 1/n corresponds to the n-th root. Thus x^(1/9) equals the ninth root of x.</p>",
+  "templateId": "equivalent-expressions.A3.T7.easy"
+}

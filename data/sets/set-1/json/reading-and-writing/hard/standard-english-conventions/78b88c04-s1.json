@@ -1,0 +1,39 @@
+{
+  "questionId": "78b88c04-s1",
+  "originalId": "78b88c04",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Mireya Soto, director of the cultural heritage program of the Pueblo of Acoma in New Mexico, helped develop the region&rsquo;s first dual-language children&rsquo;s book series, Keres ______ a community radio station, KACO 91.7, in 2012; and a high school Keres-language elective curriculum, in 2018.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Voices, in 2010, a community radio station,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Voices, in 2010; a community radio station,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Voices; in 2010, a community radio station;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Voices; in 2010, a community radio station,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The convention being tested is the punctuation of items in a complex series. A semicolon is conventionally used to separate items in a series when those items already contain internal commas. The semicolon after \"2010\" correctly separates the first item (\"the region&rsquo;s&hellip;2010\") from the second item (\"a community&hellip;2012\"), while the commas around \"Keres Voices\" and \"KACO 91.7\" set off the supplementary appositive names of the book series and the radio station.</p><p>Choice A is incorrect because it relies on commas alone, blurring the structure of the complex series. Choice C is incorrect because the semicolon after \"Voices\" misplaces the boundary between items: it splits the book series&rsquo; date (\"in 2010\") from the appositive title \"Keres Voices.\" Choice D has the same mispunctuation as C, treating \"in 2010\" as belonging to the second item rather than the first.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A4.T9.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "d047abca-s1",
+  "originalId": "d047abca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T5.medium",
+  "stimulus": "<p>Spotted hyenas are highly social carnivores that live in tightly organized clans across sub-Saharan Africa. Some clans hold elaborate &ldquo;greeting ceremonies&rdquo; in which individuals lift a hind leg, like dogs at a fire hydrant, in carefully chosen sequences. These ceremonies are familiar to researchers, but many clans never perform them and their function is unclear. One team proposed in 2018 that the greeting ceremony helps clan members confirm rank during periods when fights over food become unusually frequent. Behavioral ecologist Maya Dlamini disagrees with that idea, though. She reasons that if the greeting ceremony plays such an important role for hyenas, then it&rsquo;s most likely that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>more clans would perform the ceremony.</p>"},
+    {"id": "b", "content": "<p>some clans would relocate to new habitats.</p>"},
+    {"id": "c", "content": "<p>fewer related carnivores would also form clans.</p>"},
+    {"id": "d", "content": "<p>hyenas would become less aggressive over time.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text explains that some hyena clans perform the greeting ceremony and others do not, and that one team thinks the ceremony serves an important rank-confirming function. Dlamini disagrees: if the behavior were truly that important, she reasons, it should appear more widely across clans, so more clans would perform it.</p><p>Choice B is incorrect because there is no reason to think an important rank-confirming behavior would drive clans to leave their habitats. Choice C is incorrect because the text focuses on hyenas only and never compares them with other carnivores. Choice D is incorrect because the text never claims that the ceremony reduces aggression overall, only that it might help confirm rank during disputes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

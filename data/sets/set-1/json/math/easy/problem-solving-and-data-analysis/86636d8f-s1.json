@@ -1,0 +1,22 @@
+{
+  "questionId": "86636d8f-s1",
+  "originalId": "86636d8f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A customer spent $42 to purchase strawberries at $6 per pound. How many pounds of strawberries did the customer purchase?</p>",
+  "answerOptions": [],
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>Pounds = total cost \u00f7 cost per pound = 42 \u00f7 6 = 7 pounds.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

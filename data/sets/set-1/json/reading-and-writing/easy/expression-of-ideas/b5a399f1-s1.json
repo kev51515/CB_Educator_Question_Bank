@@ -1,0 +1,39 @@
+{
+  "questionId": "b5a399f1-s1",
+  "originalId": "b5a399f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Following traditional Japanese papermaking, artisan Hiroko Takagi begins by soaking kozo plant fibers in cold water for several days to soften them. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she beats the softened fibers with a wooden mallet to separate them into individual strands. Takagi then mixes the fibers with water in a large vat. At last, the pulp is ready to be formed into sheets of paper.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Next,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By contrast,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Next\" logically signals that the information in this sentence&mdash;which explains how Takagi beats the softened fibers&mdash;is the next step in the papermaking process. The sentences that follow continue the sequence.</p><p>Choice A is incorrect because \"for example\" illogically signals exemplification rather than sequence. Choice C is incorrect because \"however\" illogically signals contrast. Choice D is incorrect because \"by contrast\" illogically signals contrast; instead, the step continues the process.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

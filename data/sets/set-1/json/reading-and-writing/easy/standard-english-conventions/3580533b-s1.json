@@ -1,0 +1,39 @@
+{
+  "questionId": "3580533b-s1",
+  "originalId": "3580533b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In recent decades, statisticians across Europe have developed new indicators that capture aspects of public welfare. Officials in Norway, for instance, rely on a Better Life Index. This indicator <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> household income, environmental quality, and personal satisfaction.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>are tracking</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>tracks</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>had tracked</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>would have tracked</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The convention being tested is subject-verb agreement together with appropriate tense. The singular present tense verb &ldquo;tracks&rdquo; agrees with the singular subject &ldquo;this indicator&rdquo; and is consistent with the present tense established earlier.</p><p>Choice A uses a plural verb form that doesn&rsquo;t agree with the singular subject. Choices C and D use past or conditional tenses that don&rsquo;t match the present time frame.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

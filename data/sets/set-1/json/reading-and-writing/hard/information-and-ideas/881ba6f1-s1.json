@@ -1,0 +1,39 @@
+{
+  "questionId": "881ba6f1-s1",
+  "originalId": "881ba6f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Nineteenth-century philosopher John Stuart Mill is often credited with formulating the &ldquo;harm principle,&rdquo; the notion that the only legitimate justification for restricting an individual&rsquo;s liberty is to prevent harm to others. Note &ldquo;credited&rdquo;: as scholar Joel Feinberg has argued, Mill&rsquo;s presentation of the principle in <em>On Liberty</em> is in fact hedged with so many qualifications and exceptions&mdash;regarding children, debtors, and persons unable to govern themselves&mdash;that Mill cannot reasonably be said to have advanced the absolute, unqualified version of the principle that later commentators frequently attribute to him.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Mill&rsquo;s formulation of the harm principle has been broadly influential in political philosophy but is rejected by most modern philosophers.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The harm principle, properly applied, can resolve most disputes about when government may legitimately restrict individual liberty.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Feinberg&rsquo;s analysis of Mill represents a minority view that most scholars of nineteenth-century philosophy reject.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Although the harm principle is often associated with Mill in absolute form, his actual treatment of it includes qualifications that complicate that association.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text notes that Mill is &ldquo;credited&rdquo; with the principle but argues, via Feinberg, that Mill&rsquo;s actual presentation contains so many qualifications that he cannot be said to have advanced the absolute version often attributed to him.</p><p>Choice A is incorrect because the text doesn&rsquo;t describe modern reception. Choice B is incorrect because the text doesn&rsquo;t claim the principle resolves disputes. Choice C is incorrect because the text presents Feinberg&rsquo;s analysis approvingly, not as a minority view to be rejected.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

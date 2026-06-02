@@ -1,0 +1,39 @@
+{
+  "questionId": "d9137a84-s1",
+  "originalId": "d9137a84",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression represents the product of (a<sup>&minus;4</sup>b<sup>2</sup>c<sup>3</sup>) and (a<sup>6</sup>c<sup>3</sup> + b<sup>5</sup>c<sup>&minus;8</sup>)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a<sup>2</sup>c<sup>6</sup> + b<sup>7</sup>c<sup>&minus;5</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a<sup>2</sup>b<sup>2</sup>c<sup>6</sup> + a<sup>&minus;4</sup>b<sup>7</sup>c<sup>&minus;5</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a<sup>2</sup>b<sup>2</sup>c<sup>6</sup> + b<sup>5</sup>c<sup>&minus;8</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a<sup>2</sup>c<sup>6</sup> + a<sup>&minus;4</sup>c<sup>&minus;5</sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Distribute: (a<sup>&minus;4</sup>b<sup>2</sup>c<sup>3</sup>)(a<sup>6</sup>c<sup>3</sup>) + (a<sup>&minus;4</sup>b<sup>2</sup>c<sup>3</sup>)(b<sup>5</sup>c<sup>&minus;8</sup>). Adding exponents of like bases: a<sup>&minus;4+6</sup>b<sup>2</sup>c<sup>3+3</sup> + a<sup>&minus;4</sup>b<sup>2+5</sup>c<sup>3&minus;8</sup> = a<sup>2</sup>b<sup>2</sup>c<sup>6</sup> + a<sup>&minus;4</sup>b<sup>7</sup>c<sup>&minus;5</sup>. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A3.T7.medium"
+}

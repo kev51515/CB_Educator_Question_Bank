@@ -1,0 +1,39 @@
+{
+  "questionId": "4d8ccb96-s1",
+  "originalId": "4d8ccb96",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A barista combines <i>a</i> kilograms of a syrup that is 5% sugar by weight with <i>b</i> kilograms of a syrup that is 80% sugar by weight to create 30 kilograms of a syrup that is 10% sugar by weight. Which equation represents this situation in terms of the sugar content?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.80<i>a</i> + 0.05<i>b</i> = 30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.05<i>a</i> + 0.80<i>b</i> = 30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.80<i>a</i> + 0.05<i>b</i> = (0.10)(30)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.05<i>a</i> + 0.80<i>b</i> = (0.10)(30)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The mass of sugar contributed by each syrup is 0.05<i>a</i> and 0.80<i>b</i>; together they equal the sugar in 30 kg of a 10% mixture, which is (0.10)(30).</p><p>Choices A and B equate sugar content to 30 (the total mass), not the sugar mass. Choice C swaps which fraction goes with which syrup.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.hard"
+}

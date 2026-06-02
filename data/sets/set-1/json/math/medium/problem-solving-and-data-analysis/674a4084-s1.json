@@ -1,0 +1,39 @@
+{
+  "questionId": "674a4084-s1",
+  "originalId": "674a4084",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A turtle moves at a speed of 7/12 inches per second. What is this speed, in <u>feet</u> per second? (12 inches = 1 foot)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7/144</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7/24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since 12 inches equals 1 foot, a speed of 7/12 inches per second is equivalent to (7/12 inches / 1 second)(1 foot / 12 inches) = 7/(12\u00b712) = 7/144 feet per second.</p><p>Choice A is incorrect; this is the speed in inches per second multiplied by 12, the wrong conversion. Choice C is incorrect; it results from dividing by 2 instead of 12. Choice D is incorrect; this is the number of inches in a foot.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1e0a46e4-s1",
+  "originalId": "1e0a46e4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following systems of linear equations has no solution?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></math> and <math><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn></math> and <math><mi>y</mi><mo>=</mo><mo>-</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>2</mn></math> and <math><mi>y</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>-</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mi>x</mi><mo>+</mo><mn>7</mn></math> and <math><mi>y</mi><mo>=</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>7</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The lines y = 4x + 2 and y = 4x - 5 have equal slopes (4) but different y-intercepts (2 and -5), so they are parallel and never intersect \u2014 the system has no solution. Choice A has identical lines (infinitely many solutions). Choice B has lines that intersect at (0, 1). Choice D has lines that intersect at (0, 7).</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard"
+}

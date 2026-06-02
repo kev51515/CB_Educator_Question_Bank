@@ -1,0 +1,22 @@
+{
+  "questionId": "249d3f80-s1",
+  "originalId": "249d3f80",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Point O is the center of a circle. The measure of arc TU on this circle is 137&deg;. What is the measure, in degrees, of its associated central angle TOU?</p>",
+  "answerOptions": null,
+  "keys": [
+    "137"
+  ],
+  "rationale": "<p>The correct answer is 137. The measure of a central angle equals the measure of the arc it intercepts. Since arc TU is 137&deg;, the measure of central angle TOU is also 137&deg;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A4.T9.hard"
+}

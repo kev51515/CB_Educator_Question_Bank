@@ -1,0 +1,39 @@
+{
+  "questionId": "20291f47-s1",
+  "originalId": "20291f47",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to (<i>b</i> + 7)/(<i>a</i> &minus; 5) + <i>b</i>(<i>a</i> &minus; 5)/(<i>a</i>&sup2;<i>b</i> &minus; 5<i>ab</i>)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(<i>ab</i> + <i>b</i> + 2)/(<i>a</i>&sup3;<i>b</i> &minus; 10<i>a</i>&sup2;<i>b</i> + 25<i>ab</i>)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(<i>ab</i> + 6<i>b</i> + 7)/(<i>a</i>&sup2;<i>b</i> &minus; 5<i>ab</i> + <i>a</i> &minus; 5)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(<i>ab</i>&sup2; + 8<i>ab</i> &minus; 5<i>b</i>)/(<i>a</i>&sup2;<i>b</i> &minus; 5<i>ab</i>)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(<i>ab</i>&sup2; + 8<i>ab</i> &minus; 5<i>b</i>)/(<i>a</i>&sup3;<i>b</i> &minus; 10<i>a</i>&sup2;<i>b</i> + 25<i>ab</i>)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Factor the denominator of the second term: <i>a</i>&sup2;<i>b</i> &minus; 5<i>ab</i> = <i>ab</i>(<i>a</i> &minus; 5). The second term becomes <i>b</i>(<i>a</i> &minus; 5)/[<i>ab</i>(<i>a</i> &minus; 5)] = 1/<i>a</i>. Adding (<i>b</i> + 7)/(<i>a</i> &minus; 5) + 1/<i>a</i> with the common denominator <i>a</i>(<i>a</i> &minus; 5) gives [<i>a</i>(<i>b</i> + 7) + (<i>a</i> &minus; 5)] / [<i>a</i>(<i>a</i> &minus; 5)] = (<i>ab</i> + 8<i>a</i> &minus; 5)/(<i>a</i>&sup2; &minus; 5<i>a</i>). Multiplying numerator and denominator by <i>b</i> gives (<i>ab</i>&sup2; + 8<i>ab</i> &minus; 5<i>b</i>)/(<i>a</i>&sup2;<i>b</i> &minus; 5<i>ab</i>).</p><p>Choice A pairs the correct combined form with an incorrect (over-factored) denominator. Choice B fails to find a true common denominator. Choice D pairs the correct numerator with an incorrect denominator that includes an extra factor of (<i>a</i> &minus; 5).</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "equivalent-expressions.A3.T8.hard"
+}

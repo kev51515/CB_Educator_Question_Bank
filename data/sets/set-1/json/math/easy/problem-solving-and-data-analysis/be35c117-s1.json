@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A water pump completes 1,320 cycles in 40 minutes. At this rate, how many cycles per minute does this pump complete?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>33</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1,280</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,360</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Dividing the number of cycles by the number of minutes gives cycles per minute: 1,320 \u00f7 40 = 33. Therefore, the pump completes 33 cycles per minute.</p><p>Choices A, C, and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "questionId": "be35c117-s1",
+  "originalId": "be35c117",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

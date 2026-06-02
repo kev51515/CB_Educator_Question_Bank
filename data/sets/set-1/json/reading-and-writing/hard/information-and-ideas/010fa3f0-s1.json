@@ -1,0 +1,39 @@
+{
+  "questionId": "010fa3f0-s1",
+  "originalId": "010fa3f0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Some climate models for the southwestern United States predict that average growing-season temperatures will rise even if total summer precipitation stays roughly constant. To understand the agricultural implications, agronomist Linnea Vasquez and her colleagues modeled how a 2&deg;C rise in summer temperatures would affect the soil moisture available to alfalfa fields in three counties. Their simulations indicate that under the warmer scenario, alfalfa fields would experience meaningful reductions in plant-available soil moisture during the growing season, with the largest losses in counties whose soils have the lowest water-holding capacity. They concluded that warming alone, even without reduced rainfall, would force notable cutbacks in alfalfa yield.</p><figure class=\"table\"><table><caption>Modeled Plant-Available Soil Moisture in Three Counties Under Current and +2&deg;C Scenarios</caption><thead><tr><th>County (soil type)</th><th>Current (cm)</th><th>+2&deg;C (cm)</th><th>Change (%)</th></tr></thead><tbody><tr><td>Mariposa (sandy, low capacity)</td><td>14.2</td><td>9.6</td><td>&minus;32</td></tr><tr><td>Verde Vista (loam, medium capacity)</td><td>18.7</td><td>14.9</td><td>&minus;20</td></tr><tr><td>Cottonwood (clay, high capacity)</td><td>22.4</td><td>19.6</td><td>&minus;13</td></tr></tbody></table></figure>",
+  "stem": "<p>Which choice best describes data from the table that support Vasquez and her colleagues&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>All three counties show losses of more than 30% in plant-available soil moisture under the +2&deg;C scenario.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Under the +2&deg;C scenario, plant-available soil moisture falls in every modeled county, with the largest percentage loss occurring in the county whose soils have the lowest water-holding capacity.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Cottonwood County, which has the highest soil water-holding capacity, shows the largest percentage decline in plant-available soil moisture.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Under both the current and +2&deg;C scenarios, Mariposa County shows higher plant-available soil moisture than Cottonwood County.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The team concluded that warming alone would meaningfully reduce alfalfa yields and that losses would be largest where soil water-holding capacity is lowest. The table shows declines in all three counties (&minus;32%, &minus;20%, &minus;13%), with the largest percentage drop in Mariposa (sandy, low capacity)&mdash;directly supporting their conclusion.</p><p>Choice A is incorrect because only Mariposa shows a loss greater than 30%. Choice C is incorrect because Cottonwood, with the highest capacity, shows the smallest decline. Choice D is incorrect because Mariposa shows lower, not higher, soil moisture than Cottonwood in both scenarios.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

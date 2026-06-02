@@ -1,0 +1,25 @@
+{
+  "questionId": "27d9bb69-s1",
+  "originalId": "27d9bb69",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p>Text 1</p><p>Many studies in behavioral economics have shown that people will pay to reduce uncertainty about an outcome even when the additional information does not change the decisions available to them. Such findings have supported the prevailing view among researchers: that the aversion to uncertainty represents a fundamental preference for resolution itself, independent of any practical use to which the resolved information might be put.</p><p>Text 2</p><p>While accepting that uncertainty is uncomfortable, Mariana Acuña and colleagues conducted an experiment to test whether describing outcomes as relevant to future planning would alter participants&rsquo; willingness to pay for early information. They found that when an outcome was framed as bearing on a forthcoming decision, participants paid noticeably more to learn it in advance than when the same outcome was framed as unrelated to anything they would later choose.</p>",
+  "stem": "<p>Based on the texts, how would Acuña and colleagues (Text 2) most likely respond to the prevailing view discussed in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By conceding that participants pay for early information only when they expect that information to affect a forthcoming choice</p>"},
+    {"id": "b", "content": "<p>By observing that it is difficult to determine when participants&rsquo; demand for information is unconnected to any practical use</p>"},
+    {"id": "c", "content": "<p>By disputing the idea that aversion to uncertainty plays any role in shaping participants&rsquo; willingness to pay for information</p>"},
+    {"id": "d", "content": "<p>By noting that the desire to resolve uncertainty may not be entirely independent of how useful the resolved information is expected to be</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Text 1 describes the prevailing view that aversion to uncertainty is a preference for resolution itself, independent of usefulness. The researchers in Text 2 accept that uncertainty is uncomfortable but show that framing outcomes as relevant to future planning increases willingness to pay. This implies that expected usefulness can modulate the demand for resolution&mdash;so the prevailing view&rsquo;s claim of independence from usefulness is at least incomplete.</p><p>Choice A is incorrect because Text 2 begins by accepting that uncertainty itself is a motivator; the researchers do not argue payment occurs &ldquo;only when&rdquo; usefulness is expected. Choice B is incorrect because neither text discusses the difficulty of measuring purposeless information demand. Choice C is incorrect because Text 2 explicitly accepts the existence of aversion to uncertainty; it qualifies, rather than rejects, the prevailing view.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

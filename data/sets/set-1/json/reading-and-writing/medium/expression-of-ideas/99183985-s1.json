@@ -1,0 +1,25 @@
+{
+  "questionId": "99183985-s1",
+  "originalId": "99183985",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A3.T9.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Some marble fa&ccedil;ades on historic buildings in Florence have been damaged by graffiti.</li>\n<li>Conservators can erase some graffiti using chemical solvents.</li>\n<li>For deeply absorbed graffiti, solvents are not always feasible because they can discolor or weaken the marble.</li>\n<li>Conservators can use a laser-ablation technique, which removes pigment layer by layer using focused light pulses.</li>\n<li>This technique is precisely controlled and largely nondestructive.</li>\n</ul>",
+  "stem": "<p>The student wants to explain an advantage of the laser-ablation technique. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To remove graffiti from marble fa&ccedil;ades on historic buildings in Florence, chemical solvents are not always feasible.</p>"},
+    {"id": "b", "content": "<p>As methods for removing graffiti from marble, chemical solvents and laser ablation differ in their level of destructiveness.</p>"},
+    {"id": "c", "content": "<p>Conservators can use chemical solvents to erase graffiti or remove it layer by layer using focused light pulses.</p>"},
+    {"id": "d", "content": "<p>Removing pigment layer by layer with focused light pulses is more precisely controlled than dissolving it with chemical solvents, which can discolor or weaken the marble.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. It explains an advantage of laser ablation by causally linking the technique&rsquo;s precision to the avoidance of marble damage.</p><p>Choice A identifies a limitation of solvents but not an advantage of laser ablation. Choice B notes the methods differ without articulating laser ablation&rsquo;s advantage. Choice C lists both techniques without comparing them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

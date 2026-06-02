@@ -1,0 +1,529 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Probability and conditional probability",
+  "originals_count": 45,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Simple probability from counts",
+      "description": "Compute P(event) = favorable/total when both the favorable count and total count are directly given or trivially computed from a list, written description, or one-category frequency table. The student performs a single division (no row/column conditioning, no reverse algebra).",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 never requires reading a two-way (joint) table; A1 differs from A3 in that A1 reports an unconditional probability over the whole sample, with no 'given that ...' restriction; A1 differs from A4 in that A1 gives the counts and asks for the probability, not the reverse.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "List or text-described count",
+          "description": "Stem describes a finite collection in prose (or a short list) — a bag of marbles, items in a shipment, planets, houses, a labeled die, members of a group — and asks for the probability of selecting an item with a stated property.",
+          "core_skill_demand": "Identify favorable count k and total count n from the prose, then output k/n in the form requested (fraction, decimal, or symbolic in terms of n).",
+          "example_originals": ["0a99e5bb", "12dbe3de", "1b8e412e", "4e527894", "79201024", "b8150b17", "c943acba", "e5b5fbdd", "eccbf957", "2a08d878", "2df8f293", "46b2e169"],
+          "frequency": { "easy": 10, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["total is small (3-100) and stated explicitly", "favorable count is one digit and stated directly ('4 of which were defective', '11 members who play saxophone')", "answer is a clean fraction or decimal that matches a choice exactly", "no rearrangement or counting of categories needed"],
+              "example_stem": "A bag has 20 buttons: 8 white, 2 orange, 10 brown. Probability of selecting a white button?",
+              "example_ids": ["12dbe3de", "4e527894", "79201024", "c943acba", "e5b5fbdd", "b8150b17"]
+            },
+            "medium": {
+              "characteristics": ["favorable count is a single category with a less-common label, requiring careful reading (e.g., letter D at one of 14 vertices)", "answer is required as a decimal/fraction (SPR) rather than chosen from options", "total may be larger (>50) or requires light arithmetic to confirm"],
+              "example_stem": "A 14-sided polygon has vertices labeled A through N. What is the probability that vertex D is selected?",
+              "example_ids": ["2df8f293", "46b2e169"]
+            },
+            "hard": {
+              "characteristics": ["does not appear at hard level for this type — pure single-count probability questions cap at medium"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["single unconditional probability question", "favorable and total counts directly determinable without joint-table reasoning", "answer form k/n where k, n come from the prose"],
+            "must_vary": ["object domain (marbles, buttons, books, planets, animals, students, dice faces)", "surface descriptors of the favorable category", "answer format (fraction vs decimal vs symbolic-in-n)"],
+            "common_bugs": ["computing P(not event) instead of P(event) by listing the complement category", "using a wrong total (e.g., summing only some categories)", "treating a 'k of every n' rate as k/(n-k) instead of k/n", "outputting a percent when fraction/decimal is required (esp. on SPR)"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "One-category frequency table",
+          "description": "Stem provides a one-way frequency table (Category | Frequency) and asks for the probability of selecting an item in a stated category. Total is given in the table or stated in the prose.",
+          "core_skill_demand": "Read the favorable frequency from the table row, divide by the stated/summed total, and report as a fraction or decimal.",
+          "example_originals": ["1353b86e", "16cea46c", "60caadfd", "a478f9f5", "ecf8d15f"],
+          "frequency": { "easy": 5, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["3-5 category rows", "totals row provided or total stated in prose", "answer fraction simplifies cleanly or matches a decimal choice (e.g., 10/25 = 0.40)", "favorable category is named verbatim in the table"],
+              "example_stem": "Marbles in a bag: Red 8, Blue 10, Green 22, Total 40. P(blue)?",
+              "example_ids": ["1353b86e", "16cea46c", "60caadfd", "a478f9f5", "ecf8d15f"]
+            },
+            "medium": {
+              "characteristics": ["not observed at medium — one-way table simple-probability is consistently easy"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["not observed at hard"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["one-way (single-variable) frequency table", "favorable category is one row", "unconditional probability over full table total"],
+            "must_vary": ["context (rocks, gemstones, sandwiches, singers, marbles, …)", "number of categories (3-5)", "answer form (fraction vs decimal)"],
+            "common_bugs": ["adding wrong rows for the favorable count", "using a sub-total (e.g., excluding the favorable row) as the denominator", "selecting the complement probability (1 - P) when 'not X' wording appears"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Multi-category compound count",
+          "description": "Stem lists counts for several categories and asks for the probability of an event that spans multiple categories (e.g., 'neither X nor Y', 'X or Y').",
+          "core_skill_demand": "Sum the relevant favorable counts across categories, divide by the total of all categories, and simplify.",
+          "example_originals": ["0ae37ff3"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed at easy"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["4 named categories with counts, total not directly given (must be summed)", "favorable region defined by 'neither A nor B' or 'A or B' wording, requiring a union/complement step", "counts contain a distractor cluster (e.g., two equal large counts) that tempts mis-summing"],
+              "example_stem": "Bag has 7 red, 4 white, 33 blue, 33 yellow cubes. P(neither blue nor yellow)?",
+              "example_ids": ["0ae37ff3"]
+            },
+            "hard": {
+              "characteristics": ["not observed at hard for the prose-list form (hard compound questions migrate to A5 or A2)"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["multiple named categories with explicit counts", "favorable event defined by union or complement across categories"],
+            "must_vary": ["which categories form the favorable set", "phrasing ('neither X nor Y' vs 'X or Y' vs 'not X')", "context (cubes, books, animals, …)"],
+            "common_bugs": ["taking the union as the sum without checking 'neither' = complement", "summing all four categories as favorable (treating 'neither' as 'any')", "forgetting to compute the total denominator from all rows"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Two-way table — joint or marginal probability",
+      "description": "Compute an unconditional probability over the whole sample using a two-way (cross-classified) table. The favorable region is a single cell (joint) or a single row/column total (marginal); the denominator is the grand total.",
+      "boundary_with_other_aspects": "A2 differs from A3 in that A2's denominator is the grand total, with no 'given that' restriction; A3 restricts the denominator to a row or column subtotal. A2 differs from A1 in requiring a two-way table — collapsing the table to one dimension is categorical drift toward A1.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Marginal probability from two-way table",
+          "description": "Stem presents a two-way table and asks for the probability of a single row-or-column-defined property over the grand total (e.g., 'P(at least 40 years old)', 'P(talks on cell phone daily)').",
+          "core_skill_demand": "Identify the row or column marginal total for the favorable property, divide by the grand total.",
+          "example_originals": ["2905ded0", "dae79de4", "d89c1513", "ec7b0eb8", "47624288"],
+          "frequency": { "easy": 5, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["table includes Total row and column already computed", "favorable property is one entire row or column (marginal)", "answer is a fraction with the grand total in the denominator and matches a choice"],
+              "example_stem": "Members of an organization classified by age (<40 / ≥40) × side of river. P(at least 40)?",
+              "example_ids": ["2905ded0", "dae79de4", "47624288", "ec7b0eb8", "d89c1513"]
+            },
+            "medium": {
+              "characteristics": ["not observed — marginal-from-2x2 stays easy"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two-way table with both totals supplied", "denominator is the grand total", "favorable region is a row marginal or column marginal"],
+            "must_vary": ["context (age × location, behavior × demographic, purchase × purchase)", "table dimensions (2×2 up to 4×3)", "which marginal is asked"],
+            "common_bugs": ["picking a single cell instead of the row/column total", "dividing by a row/column subtotal instead of the grand total (this is the A3 drift)", "swapping favorable and complement rows"]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Joint cell probability",
+          "description": "Stem asks for the probability of an item satisfying two properties simultaneously (one cell of a two-way table), with denominator equal to the grand total.",
+          "core_skill_demand": "Locate the single cell at the intersection of the two stated properties, divide by the grand total.",
+          "example_originals": ["0301c5dc", "b1b5300b", "46545dd6"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["context narrows favorable region by year/group already stated", "denominator equals a sub-total that is explicitly labeled (so it feels like marginal reading)"],
+              "example_stem": "Of students who interned in 2010, what fraction were from Valley HS?",
+              "example_ids": ["46545dd6"]
+            },
+            "medium": {
+              "characteristics": ["two simultaneous conditions, both surface ('hybrid AND priced ≤ $25,000', 'has camping AND no bicycle paths')", "totals row and column present but the student must resist using either subtotal as the denominator", "table is 2×2 with a small grand total (12-14) and the joint cell is small (e.g., 2/14, 5/37)"],
+              "example_stem": "Of 14 cars (hybrid/nonhybrid × ≤$25k / >$25k), P(hybrid AND ≤$25k)?",
+              "example_ids": ["0301c5dc", "b1b5300b"]
+            },
+            "hard": {
+              "characteristics": ["not observed at hard — joint-cell questions don't escalate; hard variants migrate into A3 (conditional)"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two simultaneous conditions defining the cell", "denominator is the grand total of the table"],
+            "must_vary": ["context", "which two conditions intersect", "table size"],
+            "common_bugs": ["dividing the cell by a row or column subtotal (drifts to A3 conditional)", "summing both qualifying-row cells when only the intersection cell is favorable", "using the favorable row total instead of the joint cell as numerator"]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Read a single count from a two-way table",
+          "description": "Stem asks for a count (not a probability) read directly from a two-way table cell — typically as a setup or simpler variant of the joint-cell idea.",
+          "core_skill_demand": "Locate the cell described by the two stated conditions and report its count.",
+          "example_originals": ["b680e76d"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["question asks 'how many' not 'what probability'", "table is described in prose with explicit row/column labels", "single cell lookup"],
+              "example_stem": "Of 1,000 students surveyed (sport × gender), how many males do not play a school sport?",
+              "example_ids": ["b680e76d"]
+            },
+            "medium": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["count requested (not probability)", "two-way classification structure"],
+            "must_vary": ["context", "which cell is requested"],
+            "common_bugs": ["reporting a probability when a raw count is requested", "selecting the wrong cell when row/column labels are similar"]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Marginal probability with SPR output",
+          "description": "Same as T4 (marginal from two-way table) but the table layout is more elaborate (3+ row categories or 3+ column categories) and the answer must be entered as a decimal/fraction.",
+          "core_skill_demand": "Sum the favorable row or column total, divide by grand total, write as decimal or simplified fraction.",
+          "example_originals": ["e9ed719f"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed at easy"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["3-column or 3-row layout (e.g., 2×3 color × shape table)", "SPR answer entry (no choices to anchor the form)", "the marginal asked-for is one full row or column"],
+              "example_stem": "Color (R/B/Y) × Shape (Square/Pentagon) for 100 tiles. P(red)? SPR.",
+              "example_ids": ["e9ed719f"]
+            },
+            "hard": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two-way table with at least one dimension having 3+ categories", "marginal probability over grand total", "SPR answer form"],
+            "must_vary": ["context", "which marginal", "table dimensions"],
+            "common_bugs": ["entering as percent when fraction/decimal required", "dropping a category when summing the marginal", "using a cell instead of the marginal total"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Conditional probability (given subset)",
+      "description": "Compute P(A | B) where the 'given' restricts the denominator to a row, column, or other stated subset of the sample. The numerator is the count in the intersection of the favorable property with the conditioning subset.",
+      "boundary_with_other_aspects": "A3 differs from A2 in that the denominator is a row/column subtotal (or filtered subset), not the grand total; clones that divide by the grand total are categorical drift toward A2.",
+      "types": [
+        {
+          "id": "T8",
+          "name": "Conditional from two-way table — row/column given",
+          "description": "Stem presents a two-way table and asks 'P(A | B)?' or 'Of [subset B], what fraction/probability is A?' — the denominator is the subtotal for B.",
+          "core_skill_demand": "Locate the cell at A ∩ B and divide by the marginal total for B (not the grand total).",
+          "example_originals": ["912cd125", "f8696cd8", "e1ad3d41", "014c47ab", "5dc386fb", "6a715bed", "89f20d9e"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed at easy — conditional reading from a two-way table is always medium+"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["table is 2×2 or has clearly labeled totals", "conditioning subset is one explicit row or column (e.g., 'works in HR', 'chocolate-colored kittens', 'no-rain days')", "the two cells in the conditioning subset are small integers; division produces a clean fraction"],
+              "example_stem": "HR has 4 BA + 2 MA; given the chosen person works in HR, P(MA)?",
+              "example_ids": ["912cd125", "f8696cd8", "e1ad3d41"]
+            },
+            "hard": {
+              "characteristics": ["conditioning subset is the union of two or more rows/columns ('at least 10 years of age' = '10-19' ∪ '20+', 'rhesus-negative' = one row), forcing the student to sum cells for both the numerator and denominator", "table is 3×3 or larger so the favorable cell is not in the same simple position as the subtotal label", "answer requested as a non-percent decimal or fraction with SPR entry, or as a percent with tenth-of-a-percent precision", "or: conditional appears inside a reverse setup (given a probability, find a missing cell — see T9 hard)"],
+              "example_stem": "Group × Age (3×3, 90 total). P(Group A | age ≥ 10)? = (cells in A across 10-19 and 20+) / (total across 10-19 and 20+).",
+              "example_ids": ["014c47ab", "5dc386fb", "6a715bed", "89f20d9e", "d4413871"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["conditional structure with explicit 'given' clause", "denominator equals a row/column subtotal or a sum of such subtotals", "two-way (or higher) classification"],
+            "must_vary": ["context", "which dimension is the conditioning subset", "table size", "whether the conditioning subset is a single row/column or a union"],
+            "common_bugs": ["dividing by the grand total instead of the subset total (drift to A2)", "swapping numerator and denominator so reporting P(B|A) instead of P(A|B)", "when 'given' spans a union (e.g., 'at least 10 years old'), forgetting to sum two columns", "reporting count instead of probability", "outputting percent on SPR where decimal/fraction required"]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Conditional from rate/structure (no table)",
+          "description": "Stem describes a structured population in prose (rows × items per row, with sub-counts per row) and asks for a conditional probability — student must mentally build the cross-classification.",
+          "core_skill_demand": "Compute counts for each cell of the implied two-way table from the multiplicative prose ('6 rows × 8 tall + 6 rows × 6 short' …), identify the conditioning subset, and divide.",
+          "example_originals": ["e438ec3f"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["no table given — student must compute four products and group them", "two factors per category (rows of trees × trees per row, split by tall/short)", "conditional phrasing ('given that the tree is 20 feet or taller') requires re-grouping by the conditioning property"],
+              "example_stem": "6 rows birch (8 tall, 6 short per row); 5 rows maple (9 tall, 7 short per row). Given tree ≥ 20 ft, P(maple)?",
+              "example_ids": ["e438ec3f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["population described in multiplicative prose (rows × items, batches × per-batch counts, etc.)", "two cross-cutting categorical dimensions", "conditional phrasing"],
+            "must_vary": ["context (orchards, classrooms, factories)", "which dimension is asked vs given", "the multiplicative structure (rows × items vs batches × units)"],
+            "common_bugs": ["forgetting to multiply rows × per-row before classifying", "using the grand total as denominator instead of the conditioning subtotal", "only summing the favorable group without subtracting/intersecting with the conditioning property"]
+          }
+        },
+        {
+          "id": "T10",
+          "name": "Reverse conditional — solve for missing cell",
+          "description": "Stem presents a two-way table with one unknown cell (x), states a conditional probability (e.g., 'P(B | rhesus-negative) = 1/9'), and asks the student to solve for x or for a derived quantity.",
+          "core_skill_demand": "Express the stated conditional as cell/subtotal = stated probability, solve algebraically for the unknown cell, then answer the actual question (often a count or another probability).",
+          "example_originals": ["d4413871"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["table has an unknown cell labeled x", "stated conditional involves a subtotal that itself depends on x (denominator = 7 + 2 + 1 + x)", "answer may require an additional reverse step beyond solving for x"],
+              "example_stem": "Blood type × rhesus table with rhesus-negative row [7, 2, 1, x]; P(B | rhesus-negative) = 1/9 → find x.",
+              "example_ids": ["d4413871"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["unknown cell in two-way table", "stated conditional probability anchoring the algebra", "denominator depends on the unknown"],
+            "must_vary": ["context", "which cell is unknown", "the stated conditional fraction"],
+            "common_bugs": ["treating denominator as fixed (ignoring that subtotal includes x)", "solving for the wrong cell", "stopping at x when the question wants a different quantity"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Reverse — given probability, find count or total",
+      "description": "The probability (or several probabilities summing to a constraint) is given and the student must recover a count, a total, or a missing parameter. Direction is reversed compared to A1/A2: P is input, count/total is output.",
+      "boundary_with_other_aspects": "A4 differs from A1/A2/A3 in the direction of inference: instead of dividing counts to get a probability, the student multiplies (or solves) using a given probability to recover a count. A clone that ends up asking for P drifts categorically into A1.",
+      "types": [
+        {
+          "id": "T11",
+          "name": "P × total = count",
+          "description": "Stem gives a total population and a probability; asks for the count of the favorable category.",
+          "core_skill_demand": "Multiply the total by the probability to recover the favorable count.",
+          "example_originals": ["1dcea480"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["total is a clean integer (e.g., 60)", "probability is a one- or two-decimal value (e.g., 0.35)", "product is an integer matching a choice"],
+              "example_stem": "Bag of 60 marbles, P(blue) = 0.35. How many blue marbles?",
+              "example_ids": ["1dcea480"]
+            },
+            "medium": {
+              "characteristics": ["not observed at medium for this exact pattern (medium reverse problems move to T12)"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["total given, probability given, count asked", "single multiplication"],
+            "must_vary": ["context", "decimal vs fractional probability", "magnitude of total"],
+            "common_bugs": ["subtracting probability from total (mishandling decimal as count)", "reporting the complement count", "dividing instead of multiplying"]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Three-category constraint: probabilities sum to 1",
+          "description": "Stem gives a total and two of three probabilities; asks for the count in the third category.",
+          "core_skill_demand": "Compute P(third) = 1 − P(A) − P(B), then multiply by total to get the count.",
+          "example_originals": ["1fc4f47b", "30db8f77"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed at easy — two-step reverse pushes it to medium"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["three mutually-exclusive categories (A, B, C)", "two probabilities given as decimals; sum requires a complement-to-1 step", "total is a clean three-digit integer (e.g., 350, 275) so final product is an integer"],
+              "example_stem": "350 customers across theaters A, B, C with P(A)=0.48, P(B)=0.24. Count in C?",
+              "example_ids": ["1fc4f47b", "30db8f77"]
+            },
+            "hard": {
+              "characteristics": ["not observed at hard for this structure (hard reverse problems migrate to T13)"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["three mutually-exclusive exhaustive categories", "two probabilities supplied, third inferred via 1 − P1 − P2", "count of third category requested"],
+            "must_vary": ["context", "values of P1, P2 (must sum < 1)", "total population"],
+            "common_bugs": ["multiplying total by (P1 + P2) instead of by (1 − P1 − P2)", "reporting probability instead of count", "stopping at P(C) and forgetting the multiplication"]
+          }
+        },
+        {
+          "id": "T13",
+          "name": "Multi-step reverse with growth/change",
+          "description": "Stem describes a changing population (initial total → later total), gives a probability at the later time, and asks for a count (or rounded count) within the later population.",
+          "core_skill_demand": "Identify the relevant later-time total, multiply by the given probability, round as instructed.",
+          "example_originals": ["585de39a"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["population changes between two stated dates so two totals are present; only one is the correct denominator", "probability is a decimal (e.g., 0.43) and product is non-integer requiring rounding", "context is dense (multiple providers/categories mentioned) creating distractor totals", "SPR answer entry"],
+              "example_stem": "May: 83M subscribers; Sept: 97M. P(MTN on Sept) = 0.43. Find p (millions of MTN, Sept) to nearest integer.",
+              "example_ids": ["585de39a"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["two totals (only one applicable)", "given probability tied to one specific time/condition", "rounding step"],
+            "must_vary": ["context (subscribers, voters, attendees)", "magnitude of totals and probability", "rounding precision (nearest integer vs nearest tenth)"],
+            "common_bugs": ["using the wrong (earlier) total as the denominator", "forgetting the rounding step or rounding incorrectly", "treating 'p million' literally — outputting decimal millions instead of the requested integer"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Compound or abstract probability",
+      "description": "Probability questions whose favorable region is defined by a combination of conditions on an abstract set (integers, fractions of a stream), not a categorical table or list. Often requires counting integers in a constrained range or computing a ratio of cumulative quantities.",
+      "boundary_with_other_aspects": "A5 differs from A1 in that the sample is abstract (integers, time intervals) rather than a tangible list of items; differs from A2/A3 in that no two-way table is involved; differs from A4 in that a probability is reported, not a count.",
+      "types": [
+        {
+          "id": "T14",
+          "name": "Intersection on an integer set",
+          "description": "Stem defines a set of integers (e.g., positive integers ≤ N) and asks for the probability that a randomly chosen integer satisfies two or more conditions (e.g., 'even AND ≤ 50').",
+          "core_skill_demand": "Count the integers in the intersection of the conditions, divide by the size of the underlying set.",
+          "example_originals": ["9ce8cbbe"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["set is large (N ≥ 100) so counting is non-trivial", "favorable region is an intersection ('even AND ≤ 50') requiring two-condition counting", "answer reported as fraction or decimal (no choices to confirm)"],
+              "example_stem": "K = positive integers ≤ 160. P(even AND ≤ 50)?",
+              "example_ids": ["9ce8cbbe"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["abstract integer set definition", "favorable region defined by two intersecting numeric conditions", "exact counting (not estimation)"],
+            "must_vary": ["set bound N", "the two conditions (divisibility, range, etc.)", "answer form"],
+            "common_bugs": ["counting one condition only (e.g., all evens) and ignoring the second", "off-by-one when the bound is inclusive ('≤ 50' includes 50)", "using wrong denominator (e.g., evens in set instead of size of set)"]
+          }
+        },
+        {
+          "id": "T15",
+          "name": "Rate-based fraction of a stream",
+          "description": "Stem describes a constant arrival/registration rate per unit time and asks what fraction of a larger total accrues in a smaller time window.",
+          "core_skill_demand": "Compute the count for the smaller window (rate × time), divide by the larger total, simplify.",
+          "example_originals": ["38a9ac45"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed at easy — this rate-style framing skips easy"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["rate stated per day (or per unit)", "two totals involved (rate × small window vs. given large total) — student must keep them distinct", "answer is a simple fraction (e.g., 1/10)"],
+              "example_stem": "1,200 registrations/day. What fraction of first 60,000 are registered in the first 5 days?",
+              "example_ids": ["38a9ac45"]
+            },
+            "hard": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["constant rate per unit time", "fraction-of-total framing", "two-step computation (window count then ratio)"],
+            "must_vary": ["context (registrations, sales, deliveries)", "rate magnitude", "window size and total size"],
+            "common_bugs": ["dividing rate by total without multiplying by window length", "using window length as the denominator", "reporting an absolute count rather than a fraction"]
+          }
+        },
+        {
+          "id": "T16",
+          "name": "Compare sub-marginal to a target fraction",
+          "description": "Stem presents a one-way or two-way table and asks which category's count is closest to a specified fraction (e.g., one-third) of a marginal total.",
+          "core_skill_demand": "Compute the target value (fraction × marginal), then identify which category's count is closest.",
+          "example_originals": ["a3384df0", "b6569d0e"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["not observed at easy"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["target is a simple fraction (1/3, 1/2) of a marginal total", "candidate categories produce close counts so the student cannot eyeball — must compute", "may include a conditional restriction ('Of those who were at least 50 years old, what fraction were at least 60?')"],
+              "example_stem": "Penguin table by type × gender, total female = 180. Which type's female count is closest to one-third of 180?",
+              "example_ids": ["a3384df0", "b6569d0e"]
+            },
+            "hard": {
+              "characteristics": ["not observed"],
+              "example_stem": "(none in bank)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["target = fraction × marginal", "comparison across multiple candidate categories", "table-based input"],
+            "must_vary": ["target fraction (1/3, 1/4, 1/2)", "context", "whether the marginal is computed or stated"],
+            "common_bugs": ["using the grand total instead of the relevant marginal", "comparing raw counts to the fraction instead of to fraction × marginal", "selecting the largest category (mistaking 'closest to one-third' for 'biggest')"]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Easy items cluster in A1 (single-step counting) and A2/T4 (two-way marginal reading). Medium items introduce a complement-to-1 step (A4/T12), a joint cell with distractor subtotals (A2/T5), or the first conditional reading (A3/T8 medium). Hard items overwhelmingly live in A3 (conditional reading where the 'given' is a union of rows/columns, or a reverse conditional that solves for a missing cell) and in A5 (abstract integer sets, rate-based streams). Difficulty levers across the skill: (i) whether denominator is the grand total (easy) vs a single row/column subtotal (medium) vs a union of row/column subtotals (hard); (ii) whether counts are stated explicitly (easy) or must be assembled from prose multiplication (hard, A3/T9); (iii) whether the direction is forward (counts → P, easy/medium) or reverse (P → count, medium/hard); (iv) SPR vs MCQ — SPR variants tend to be one notch harder because the student cannot back-solve from choices."
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "70612a79",
+  "externalId": "3404cd91-3bc8-4067-91ef-f45e0f508b0b",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:56.427890+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "88a0738a-fc3c-4f71-a52a-37c5f5ff0f5a",
+      "content": "<p>It summarizes a problem that developed in Yellowstone National Park in the 1920s and then offers potential solutions to that problem.</p>"
+    },
+    {
+      "id": "eed7e96d-fcd7-4c33-b214-002e27978245",
+      "content": "<p>It mentions the elimination of the gray wolf from Yellowstone National Park and then explains why the wolf was eventually restored to the park.</p>"
+    },
+    {
+      "id": "d563648b-de30-4708-8ee8-d9d52458d7fe",
+      "content": "<p>It presents a claim about the health of the Yellowstone National Park gray wolf population and then gives specific examples to support that claim.</p>"
+    },
+    {
+      "id": "e3cefe99-51a9-4ff8-ad16-f975ca645b2e",
+      "content": "<p>It explains why Yellowstone National Park allowed the eradication of the gray wolf and then discusses the consequences of reintroducing the wolf to the park.</p>"
+    }
+  ],
+  "keys": [
+    "eed7e96d-fcd7-4c33-b214-002e27978245"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most accurately describes the overall structure of the text. The text begins by stating that the gray wolf was eradicated from Yellowstone National Park in 1926. It then explains the consequences of this elimination&mdash;namely that the elk population grew too large and overgrazing occurred, negatively affecting other animals in the area. The text then states that once scientists realized the importance of the gray wolf to the Yellowstone food chain, they undertook efforts leading to the wolves&rsquo; reintroduction to the park in 1996. Thus, the structure of the text can be accurately described as mentioning the elimination of the gray wolf from Yellowstone and then explaining why the wolf was later restored to the park.</p><p>Choice A is incorrect. While the text does summarize a problem associated with an event in the 1920s (the eradication of gray wolves from Yellowstone in 1926), the problems discussed arose after that event&mdash;namely, the subsequent elk overpopulation, resultant overgrazing, and then further impacts to other animals in Yellowstone. Furthermore, the text doesn&rsquo;t present multiple potential solutions. Instead, it describes one solution that was actually implemented: the reintroduction of gray wolves in 1996. Choice C is incorrect because the text doesn&rsquo;t make a claim about the health of the gray wolf population apart from pointing out that the wolves had been eradicated from, and then subsequently restored to, Yellowstone. Instead, the text focuses on outcomes associated with the gray wolf&rsquo;s eradication and reintroduction. Choice D is incorrect. Though the text does mention that the ecosystem of Yellowstone rebounded after the gray wolf was reintroduced in 1996, the text never explains why the park allowed the wolves to be eradicated in 1926. It simply states that this eradication occurred without elaborating on the decision-making process behind it.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+    "stimulus": "<p>Following the eradication of the gray wolf in Yellowstone National Park in 1926, the population of elk&mdash;a primary prey of the gray wolf&mdash;exceeded a healthy size for the park&rsquo;s ecosystem. Elk overpopulation led to overgrazing of areas that a multitude of other animals relied on for food and shelter. As scientists began to see how essential the gray wolf was to the Yellowstone food chain, ecological restoration strategies were employed to reintroduce the gray wolf to the park in 1996. The rebound effect in the park&rsquo;s natural ecosystem was noticed almost immediately.</p>",
+    "keys": [
+      "eed7e96d-fcd7-4c33-b214-002e27978245"
+    ],
+    "answerOptions": [
+      {
+        "id": "88a0738a-fc3c-4f71-a52a-37c5f5ff0f5a",
+        "content": "<p>It summarizes a problem that developed in Yellowstone National Park in the 1920s and then offers potential solutions to that problem.</p>"
+      },
+      {
+        "id": "eed7e96d-fcd7-4c33-b214-002e27978245",
+        "content": "<p>It mentions the elimination of the gray wolf from Yellowstone National Park and then explains why the wolf was eventually restored to the park.</p>"
+      },
+      {
+        "id": "d563648b-de30-4708-8ee8-d9d52458d7fe",
+        "content": "<p>It presents a claim about the health of the Yellowstone National Park gray wolf population and then gives specific examples to support that claim.</p>"
+      },
+      {
+        "id": "e3cefe99-51a9-4ff8-ad16-f975ca645b2e",
+        "content": "<p>It explains why Yellowstone National Park allowed the eradication of the gray wolf and then discusses the consequences of reintroducing the wolf to the park.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most accurately describes the overall structure of the text. The text begins by stating that the gray wolf was eradicated from Yellowstone National Park in 1926. It then explains the consequences of this elimination&mdash;namely that the elk population grew too large and overgrazing occurred, negatively affecting other animals in the area. The text then states that once scientists realized the importance of the gray wolf to the Yellowstone food chain, they undertook efforts leading to the wolves&rsquo; reintroduction to the park in 1996. Thus, the structure of the text can be accurately described as mentioning the elimination of the gray wolf from Yellowstone and then explaining why the wolf was later restored to the park.</p><p>Choice A is incorrect. While the text does summarize a problem associated with an event in the 1920s (the eradication of gray wolves from Yellowstone in 1926), the problems discussed arose after that event&mdash;namely, the subsequent elk overpopulation, resultant overgrazing, and then further impacts to other animals in Yellowstone. Furthermore, the text doesn&rsquo;t present multiple potential solutions. Instead, it describes one solution that was actually implemented: the reintroduction of gray wolves in 1996. Choice C is incorrect because the text doesn&rsquo;t make a claim about the health of the gray wolf population apart from pointing out that the wolves had been eradicated from, and then subsequently restored to, Yellowstone. Instead, the text focuses on outcomes associated with the gray wolf&rsquo;s eradication and reintroduction. Choice D is incorrect. Though the text does mention that the ecosystem of Yellowstone rebounded after the gray wolf was reintroduced in 1996, the text never explains why the park allowed the wolves to be eradicated in 1926. It simply states that this eradication occurred without elaborating on the decision-making process behind it.</p>",
+    "externalid": "3404cd91-3bc8-4067-91ef-f45e0f508b0b",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Following the eradication of the gray wolf in Yellowstone National Park in 1926, the population of elk&mdash;a primary prey of the gray wolf&mdash;exceeded a healthy size for the park&rsquo;s ecosystem. Elk overpopulation led to overgrazing of areas that a multitude of other animals relied on for food and shelter. As scientists began to see how essential the gray wolf was to the Yellowstone food chain, ecological restoration strategies were employed to reintroduce the gray wolf to the park in 1996. The rebound effect in the park&rsquo;s natural ecosystem was noticed almost immediately.</p>"
+}

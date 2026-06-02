@@ -1,0 +1,39 @@
+{
+  "questionId": "1180401d-s1",
+  "originalId": "1180401d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The total area of an island town is 50.5 square miles, of which 7.5 square miles is water. If the town had a population of 215,000 people in the year 2020, which of the following is closest to the population density, in people per square mile of land area, of the town at that time?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4,260</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>28,700</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>43,000</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Population density (per square mile of land) equals population divided by land area. The land area is 50.5 - 7.5 = 43 square miles, so the density is 215,000/43 = 5,000 people per square mile. Choice B is incorrect because it divides by the total area (50.5) rather than the land area. Choice C is incorrect because it divides population by the water area (7.5). Choice D is incorrect; 43,000 has no direct meaning and likely results from a misplaced decimal in division.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium"
+}

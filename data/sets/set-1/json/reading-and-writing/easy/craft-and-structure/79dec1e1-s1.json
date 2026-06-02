@@ -1,0 +1,39 @@
+{
+  "questionId": "79dec1e1-s1",
+  "originalId": "79dec1e1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Music researchers have noted that some chord progressions seem to be more <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> listeners than others. For example, audiences tend to find melodies built on familiar major chords more pleasing than melodies featuring unusual dissonant chords.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>confusing for</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>ignored by</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>pleasing to</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>borrowed from</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"pleasing to\" matches the example showing that audiences find certain progressions more enjoyable. Choice A is incorrect because the text says listeners enjoy these progressions, not that they’re confused. Choice B is incorrect because the text describes attention, not neglect. Choice D is incorrect because borrowing isn’t the topic.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

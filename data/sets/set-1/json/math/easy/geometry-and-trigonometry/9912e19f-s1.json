@@ -1,0 +1,39 @@
+{
+  "questionId": "9912e19f-s1",
+  "originalId": "9912e19f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangles RST and WXY are congruent, where R, S, and T correspond to W, X, and Y, respectively. The measure of angle R is 38\u00b0 and the measure of angle S is 65\u00b0. What is the measure of angle W?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>38\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>65\u00b0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>77\u00b0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>142\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Corresponding angles of congruent triangles are congruent. Since angle R corresponds to angle W and angle R = 38\u00b0, angle W = 38\u00b0.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A4.T1.easy"
+}

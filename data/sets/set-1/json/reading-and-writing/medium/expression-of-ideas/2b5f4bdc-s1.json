@@ -1,0 +1,25 @@
+{
+  "questionId": "2b5f4bdc-s1",
+  "originalId": "2b5f4bdc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>In the late nineteenth century, Mary Church Terrell worked to expand civil rights for African Americans through multiple channels. As a lecturer who traveled widely throughout the United States, she delivered speeches calling on white audiences to confront racial injustice in their own communities. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she helped found the National Association of Colored Women, an organization devoted to advancing the welfare of Black women across the country.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Furthermore,</p>"},
+    {"id": "c", "content": "<p>Conversely,</p>"},
+    {"id": "d", "content": "<p>In summary,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because \"furthermore\" logically signals that the information in this sentence—that Terrell helped found the National Association of Colored Women—is another instance of Terrell working to expand civil rights, this time through institution-building.</p><p>Choice A is incorrect because \"for instance\" illogically signals that founding the organization is an example of Terrell's lecturing to white audiences, when it is actually a separate channel through which she pursued civil rights. Choice C is incorrect because \"conversely\" illogically signals that founding the organization contrasts with her lecturing, when in fact it complements it. Choice D is incorrect because \"in summary\" illogically signals that this sentence concludes or sums up the discussion of Terrell's lecturing, when it instead introduces a distinct, additional activity.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

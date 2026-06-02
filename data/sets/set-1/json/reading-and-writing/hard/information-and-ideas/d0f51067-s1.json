@@ -1,0 +1,39 @@
+{
+  "questionId": "d0f51067-s1",
+  "originalId": "d0f51067",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Modern wheat varieties are largely the product of more than a century of breeders crossing certain plants to select for particular agricultural traits, such as high yield, short stature, and resistance to specific diseases. Farmers often say that some varieties are also more likely than others to express particular non-target traits&mdash;some are said to handle drought better; others, to produce flour with a sweeter taste. Yet recent work by plant geneticists studying field trials of dozens of widely planted varieties has found that the variation in such traits across varieties is, on average, smaller than the variation observed among individual plants of the same variety grown under different soil and weather conditions. In other words, where and how a variety is grown appears to influence these traits more than the variety itself does.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The traits of modern wheat varieties depend almost entirely on the agricultural selection decisions made by breeders.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Although farmers commonly attribute particular non-target traits to particular wheat varieties, recent research suggests that growing conditions exert a stronger influence on those traits than variety does.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Plant geneticists have been unable to identify any reliable differences among modern wheat varieties.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Breeders have prioritized agricultural traits such as yield at the expense of traits that affect flavor and drought tolerance.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text contrasts farmers&rsquo; common attribution of non-target traits to specific varieties with recent genetic research showing that within-variety variation across growing conditions is larger than across-variety variation&mdash;i.e., growing conditions influence the traits more than variety does.</p><p>Choice A is incorrect because the text emphasizes the role of growing conditions, not just breeders. Choice C is incorrect because the text doesn&rsquo;t claim varieties are indistinguishable. Choice D is incorrect because the text doesn&rsquo;t discuss tradeoffs in breeders&rsquo; priorities.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "22b3da87-s1",
+  "originalId": "22b3da87",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Under the constitutional monarchy of Sweden during the early nineteenth century, the right to vote in elections for the lower house of the Riksdag required, in part, that an individual pay at least a specified minimum in direct taxes to the crown. The four most common direct taxes were levied on agricultural land; on forested timberland; on the appraised value of dwellings; and on registered trades such as ironworking and milling. (Capital invested abroad was either entirely exempt or subject to only minimal duties.) Although relatively few people paid the tax on agricultural land, that tax served as the principal route to voter eligibility and accounted for more than two-thirds of the crown's tax revenue during this period, suggesting that during the early nineteenth century <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the number of registered trades operating in Sweden remained largely unchanged across the period in question.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Swedes who held large amounts of capital invested in foreign markets were unlikely to qualify for the right to vote.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the voting behavior of ironworkers and millers was effective at limiting taxes on registered trades.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Swedes who had the right to vote most likely held substantial amounts of agricultural land.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The passage states that the tax on agricultural land was the main means of voter qualification. Because only those paying enough in that tax qualified to vote, it follows that voters most likely held substantial amounts of agricultural land.</p><p>Choice A is incorrect because the passage gives no information about how the number of registered trades changed over time. Choice B is incorrect because, although foreign capital was exempted or lightly taxed, holders of foreign capital might also have owned domestic agricultural land \u2014 the passage doesn't establish that they couldn't qualify. Choice C is incorrect because nothing in the passage characterizes how ironworkers and millers voted or whether their votes affected trade taxes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T11.hard"
+}

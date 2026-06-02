@@ -1,0 +1,39 @@
+{
+  "questionId": "49800634-s1",
+  "originalId": "49800634",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows two values of <i>x</i> and their corresponding values of <i>y</i>.</p><table><thead><tr><th><i>x</i></th><th><i>y</i></th></tr></thead><tbody><tr><td>&minus;12</td><td>&minus;33</td></tr><tr><td>8</td><td>47</td></tr></tbody></table><p>In the <i>xy</i>-plane, the graph of the linear equation representing this relationship passes through the point (1/5, <i>a</i>). What is the value of <i>a</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;3/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>79/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>19</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope is (47 &minus; (&minus;33))/(8 &minus; (&minus;12)) = 80/20 = 4. Using point (8, 47): 47 = 4(8) + <i>b</i>, so <i>b</i> = 15 and the line is <i>y</i> = 4<i>x</i> + 15. At <i>x</i> = 1/5: <i>y</i> = 4/5 + 15 = 79/5.</p><p>Choices A, C, and D arise from arithmetic errors (wrong slope sign, omitting the intercept, or rounding).</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

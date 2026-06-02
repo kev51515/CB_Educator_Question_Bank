@@ -1,0 +1,39 @@
+{
+  "questionId": "99ea3715-s1",
+  "originalId": "99ea3715",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>If the graph of 14x + 21y = 252 is shifted down 3 units in the <em>xy</em>-plane, what is the <em>y</em>-intercept of the resulting graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 15)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 9)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 12)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, 3)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The y-intercept of 14x + 21y = 252 is found by setting x = 0: 21y = 252, so y = 12. Shifting the graph down 3 units subtracts 3 from the y-coordinate of the y-intercept, giving (0, 12 - 3) = (0, 9). Choice A is the original y-intercept plus 3, not minus 3. Choice C is the original y-intercept before the shift. Choice D is the magnitude of the shift, not the new y-intercept.</p>",
+  "templateId": "linear-equations-in-two-variables.A5.T11.medium"
+}

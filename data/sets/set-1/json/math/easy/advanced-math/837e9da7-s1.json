@@ -1,0 +1,39 @@
+{
+  "questionId": "837e9da7-s1",
+  "originalId": "837e9da7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = 1 / (4<i>x</i>). What is the value of <i>g</i>(<i>x</i>) when <i>x</i> = 5?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1/9</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. <i>g</i>(5) = 1 / (4 &middot; 5) = 1/20.</p><p>Choices A, B, and D result from arithmetic errors such as adding instead of multiplying or dropping a factor.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z"
+}

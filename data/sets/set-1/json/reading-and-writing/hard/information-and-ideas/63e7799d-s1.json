@@ -1,0 +1,39 @@
+{
+  "questionId": "63e7799d-s1",
+  "originalId": "63e7799d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>In vertical inheritance, organisms pass genes to their offspring; in horizontal transfer (HT), genetic material moves between unrelated species, often via microbes. In a 2024 study, ichthyologist Mariana Costa and her team investigated possible HT events between large freshwater predators and small prey fishes in the Amazon basin. The team detected <em>HTL-1</em>\u2014a transposable element transmitted vertically in piranhas\u2014in many tetra species that piranhas regularly consume. The apparent direction of transfer is puzzling: tetras rarely survive an encounter with a piranha and so would seem unable to pass an acquired element to their offspring. Nonetheless, the team concluded that <em>HTL-1</em> is genuinely transmitted from piranhas to tetras, either directly or indirectly, through HT.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the team's conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Tetra species that carry <em>HTL-1</em> show few discernible advantages compared with tetra species that do not carry it.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Skin parasites known to feed on both piranhas and tetras in the Amazon basin also carry <em>HTL-1</em>.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>HTL-1</em> can be transmitted across tetra species through HT.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>HTL-1</em> cannot be reliably transferred from a piranha species to bacteria that tetras commonly encounter.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The team argues that <em>HTL-1</em> moves from piranhas to tetras indirectly. A parasite that feeds on both species and carries <em>HTL-1</em> provides a plausible indirect route: the parasite could move the element from piranhas to tetras during separate feeding events, an interaction tetras can survive.</p><p>Choice A is incorrect: whether <em>HTL-1</em> confers advantages is unrelated to how it moves between species. Choice C is incorrect: transfer between tetras does not show that the element originated from piranhas, which is the team's claim. Choice D is incorrect: a finding that HT did not occur via bacteria would weaken, not support, the conclusion that piranha-to-tetra HT does occur.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot shows the growing season (in years after planting) and weight (in pounds) of plums produced by a plum tree. The data points are: (1, 0), (2, 12), (3, 25), (4, 36), (5, 50), (6, 65), (7, 78), (8, 90). What was the weight, to the nearest pound, of all plums produced by the tree during the 5th growing season after planting?</p>",
+  "answerOptions": null,
+  "keys": [
+    "50"
+  ],
+  "rationale": "<p>The correct answer is 50. According to the data, in the 5th growing season the tree produced 50 pounds of plums.</p>",
+  "questionId": "b58dbf88-s1",
+  "originalId": "b58dbf88",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1e85caa9-s1",
+  "originalId": "1e85caa9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Frances Hodgson Burnett's 1888 novel <em>Sara Crewe</em>. A family has just moved from a noisy city apartment to a rambling old farmhouse near a quiet village.</p><blockquote><p>The farmhouse was certainly nothing fine to look at; it leaned a little to one side, and Mr. Halford complained that the floors creaked at every step and that the kitchen chimney drew so poorly it filled the house with smoke. Mrs. Halford, for her part, was vexed that the windows did not match, and she said the parlor was the gloomiest room she had ever entered. Yet the children, who had spent their whole short lives in the close, crowded streets of the city, could not contain their joy. To them, the rambling old house, with its tangled garden and orchard beyond, seemed nothing less than an Enchanted Castle dropped down into a Land of Wonder.</p></blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The children appreciate different parts of the farmhouse than the parents do, but everyone agrees the house is charming.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The farmhouse is well constructed, but the children miss their lively city neighborhood.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Even though the parents find fault with the farmhouse, the children are delighted by it.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The children dislike the farmhouse just as much as their parents do.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text catalogs the parents' complaints about the house and then contrasts those complaints with the children's view that the house is an \"Enchanted Castle.\"</p><p>Choice A is incorrect; the parents are not described as appreciating the house at all. Choice B is incorrect; the text says the house is described as leaning and creaking, not well constructed, and the children are happy to leave the city. Choice D is incorrect; the text says the children are joyful about the house, not displeased.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.easy"
+}

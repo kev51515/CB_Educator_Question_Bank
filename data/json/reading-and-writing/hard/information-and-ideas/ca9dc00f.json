@@ -1,0 +1,72 @@
+{
+  "questionId": "ca9dc00f",
+  "externalId": "a48b7a71-d74f-4589-9010-e1a7a3afac2d",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:29.100126+00:00",
+  "type": "mcq",
+  "stem": "<p>Which quotation from an art historian would most directly support the claim made in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "ababe987-344d-4e6c-b4a9-f64ad5404442",
+      "content": "<p>&ldquo;While Stevens&rsquo;s ambassadorial sandpaintings are undoubtedly educative for audiences that have little exposure to <span lang=\"nv\">Din&eacute;</span> culture, they should not be confused with authentic <em><span lang=\"nv\">ikaah</span></em>, which cannot be extricated from a practice that is intentionally and necessarily transitory nor condensed into a single persistent object.&rdquo;</p>"
+    },
+    {
+      "id": "edb82a79-5c9b-4fc9-9189-338c055afed9",
+      "content": "<p>&ldquo;The most compelling way to reconcile the apparent tension between the temporary and performative nature of <em><span lang=\"nv\">ikaah</span></em> and the persistent and static nature of Stevens&rsquo;s ambassadorial sandpaintings is to recognize that Stevens was an ambassador not only of <span lang=\"nv\">Din&eacute;</span> culture but of a US art culture that tended to value permanent works over ephemeral ones.&rdquo;</p>"
+    },
+    {
+      "id": "2520ad72-8c74-4cd7-a0c9-f44f017b2e5b",
+      "content": "<p>&ldquo;Stevens&rsquo;s ambassadorial sandpaintings are best understood not as self-contained objects but as reminders of the public creations of the sandpaintings, during which Stevens conducted appropriate <em><span lang=\"nv\">ikaah</span></em> rituals and encouraged viewers to closely track his movements and subtle shifts in the sand throughout the process.&rdquo;</p>"
+    },
+    {
+      "id": "eaf29393-ef28-4c72-ab2c-bc8e28e00b67",
+      "content": "<p>&ldquo;It is important to recall Stevens&rsquo;s own actions as a gift-giver&mdash;a temporary and performative role&mdash;of the sandpaintings, for by taking those actions, Stevens publicly enacted the transmission of knowledge of both traditional <em><span lang=\"nv\">ikaah</span></em> practices and cutting-edge chemistry (in the form of the preservative additives), a hybrid that reflects the dynamism of <span lang=\"nv\">Din&eacute;</span> culture.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "2520ad72-8c74-4cd7-a0c9-f44f017b2e5b"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most directly supports the text&rsquo;s claim that Stevens strove to convey the ephemeral and dynamic characteristics of <em>ikaah</em> as a cultural practice. The text challenges the characterization of Stevens&rsquo;s preserved sandpaintings as mere &ldquo;static objects&rdquo; that cannot &ldquo;authentically represent&rdquo; a practice defined in part by the absence of an end product; it claims instead that this &ldquo;overly object-focused&rdquo; interpretation overlooks how Stevens preserved the essential characteristics of traditional <em>ikaah</em> practice. This quotation supports the claim by explaining that Stevens&rsquo;s sandpaintings should be understood &ldquo;not as self-contained objects but as reminders of the public creations of the sandpaintings,&rdquo; during which Stevens &ldquo;conducted appropriate <em>ikaah</em> rituals and encouraged viewers to closely track his movements and subtle shifts in the sand throughout the process.&rdquo; The fact that Stevens created the sandpaintings in a public setting and invited viewers to attentively engage with this process supports the claim that he sought to portray <em>ikaah</em> as a dynamic practice rather than as a static product. Further, the inherently impermanent nature of such a performance evokes the ephemerality that characterizes <em>ikaah</em>.</p><p>Choice A is incorrect because it contradicts rather than supports the text&rsquo;s claim that Stevens strove to convey the ephemeral and dynamic characteristics of <em>ikaah</em> as a cultural practice. This quotation argues that Stevens&rsquo;s preserved sandpaintings &ldquo;should not be confused with authentic <em>ikaah</em>&rdquo; and emphasizes that authentic <em>ikaah</em> &ldquo;cannot be extricated from a practice that is intentionally and necessarily transitory.&rdquo; This view aligns with the &ldquo;overly object-focused&rdquo; perspective that the text argues against, rather than supporting the claim that Stevens successfully conveyed <em>ikaah</em>&rsquo;s ephemeral and dynamic characteristics. Choice B is incorrect because it focuses on reconciling the tension between ephemeral and permanent forms rather than supporting the claim that Stevens actively conveyed <em>ikaah</em>&rsquo;s ephemeral and dynamic characteristics. While this quotation acknowledges an apparent contradiction, it suggests that Stevens was accommodating US preferences for permanent artworks; it doesn&rsquo;t demonstrate how he communicated the ephemeral and dynamic nature of traditional <em>ikaah</em> practice. Choice D is incorrect. Although the quotation mentions Stevens&rsquo;s &ldquo;temporary and performative role&rdquo; as a gift-giver, it doesn&rsquo;t address how Stevens conveyed the ephemeral and dynamic characteristics of <em>ikaah</em> itself during his ambassadorial activities. The quotation focuses on Stevens&rsquo;s role in transmitting knowledge and representing cultural dynamism but doesn&rsquo;t specifically support the claim about his efforts to communicate the essential characteristics of <em>ikaah</em> practice. Further, the quotation incorrectly implies that Stevens shared his knowledge of preservative additives; the text doesn&rsquo;t establish that he revealed how the sandpaintings were preserved.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which quotation from an art historian would most directly support the claim made in the text?</p>",
+    "stimulus": "<p>In <span lang=\"nv\">Din&eacute;</span> (Navajo) culture, <em><span lang=\"nv\">ikaah</span></em> (sandpaintings) are created and then erased as part of sacred healing ceremonies lasting no more than a few days, but <span lang=\"nv\">Din&eacute;</span> <em><span lang=\"nv\">hataa\u0142ii</span></em> (chanter, healer, cultural guide) Fred Stevens developed fixatives to preserve desacralized sandpaintings. While on a US-sponsored cultural ambassadorial trip in Europe and the Americas in the 1960s, Stevens produced several such sandpaintings and gave them to cultural institutions. This may seem in tension with the role of cultural ambassador&mdash;how could static objects authentically represent an inherently ephemeral and dynamic practice?&mdash;but such a view is itself overly object-focused and neglects how Stevens strove to convey exactly those characteristics of <em><span lang=\"nv\">ikaah</span></em> as a cultural practice.</p>",
+    "keys": [
+      "2520ad72-8c74-4cd7-a0c9-f44f017b2e5b"
+    ],
+    "answerOptions": [
+      {
+        "id": "ababe987-344d-4e6c-b4a9-f64ad5404442",
+        "content": "<p>&ldquo;While Stevens&rsquo;s ambassadorial sandpaintings are undoubtedly educative for audiences that have little exposure to <span lang=\"nv\">Din&eacute;</span> culture, they should not be confused with authentic <em><span lang=\"nv\">ikaah</span></em>, which cannot be extricated from a practice that is intentionally and necessarily transitory nor condensed into a single persistent object.&rdquo;</p>"
+      },
+      {
+        "id": "edb82a79-5c9b-4fc9-9189-338c055afed9",
+        "content": "<p>&ldquo;The most compelling way to reconcile the apparent tension between the temporary and performative nature of <em><span lang=\"nv\">ikaah</span></em> and the persistent and static nature of Stevens&rsquo;s ambassadorial sandpaintings is to recognize that Stevens was an ambassador not only of <span lang=\"nv\">Din&eacute;</span> culture but of a US art culture that tended to value permanent works over ephemeral ones.&rdquo;</p>"
+      },
+      {
+        "id": "2520ad72-8c74-4cd7-a0c9-f44f017b2e5b",
+        "content": "<p>&ldquo;Stevens&rsquo;s ambassadorial sandpaintings are best understood not as self-contained objects but as reminders of the public creations of the sandpaintings, during which Stevens conducted appropriate <em><span lang=\"nv\">ikaah</span></em> rituals and encouraged viewers to closely track his movements and subtle shifts in the sand throughout the process.&rdquo;</p>"
+      },
+      {
+        "id": "eaf29393-ef28-4c72-ab2c-bc8e28e00b67",
+        "content": "<p>&ldquo;It is important to recall Stevens&rsquo;s own actions as a gift-giver&mdash;a temporary and performative role&mdash;of the sandpaintings, for by taking those actions, Stevens publicly enacted the transmission of knowledge of both traditional <em><span lang=\"nv\">ikaah</span></em> practices and cutting-edge chemistry (in the form of the preservative additives), a hybrid that reflects the dynamism of <span lang=\"nv\">Din&eacute;</span> culture.&rdquo;</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most directly supports the text&rsquo;s claim that Stevens strove to convey the ephemeral and dynamic characteristics of <em>ikaah</em> as a cultural practice. The text challenges the characterization of Stevens&rsquo;s preserved sandpaintings as mere &ldquo;static objects&rdquo; that cannot &ldquo;authentically represent&rdquo; a practice defined in part by the absence of an end product; it claims instead that this &ldquo;overly object-focused&rdquo; interpretation overlooks how Stevens preserved the essential characteristics of traditional <em>ikaah</em> practice. This quotation supports the claim by explaining that Stevens&rsquo;s sandpaintings should be understood &ldquo;not as self-contained objects but as reminders of the public creations of the sandpaintings,&rdquo; during which Stevens &ldquo;conducted appropriate <em>ikaah</em> rituals and encouraged viewers to closely track his movements and subtle shifts in the sand throughout the process.&rdquo; The fact that Stevens created the sandpaintings in a public setting and invited viewers to attentively engage with this process supports the claim that he sought to portray <em>ikaah</em> as a dynamic practice rather than as a static product. Further, the inherently impermanent nature of such a performance evokes the ephemerality that characterizes <em>ikaah</em>.</p><p>Choice A is incorrect because it contradicts rather than supports the text&rsquo;s claim that Stevens strove to convey the ephemeral and dynamic characteristics of <em>ikaah</em> as a cultural practice. This quotation argues that Stevens&rsquo;s preserved sandpaintings &ldquo;should not be confused with authentic <em>ikaah</em>&rdquo; and emphasizes that authentic <em>ikaah</em> &ldquo;cannot be extricated from a practice that is intentionally and necessarily transitory.&rdquo; This view aligns with the &ldquo;overly object-focused&rdquo; perspective that the text argues against, rather than supporting the claim that Stevens successfully conveyed <em>ikaah</em>&rsquo;s ephemeral and dynamic characteristics. Choice B is incorrect because it focuses on reconciling the tension between ephemeral and permanent forms rather than supporting the claim that Stevens actively conveyed <em>ikaah</em>&rsquo;s ephemeral and dynamic characteristics. While this quotation acknowledges an apparent contradiction, it suggests that Stevens was accommodating US preferences for permanent artworks; it doesn&rsquo;t demonstrate how he communicated the ephemeral and dynamic nature of traditional <em>ikaah</em> practice. Choice D is incorrect. Although the quotation mentions Stevens&rsquo;s &ldquo;temporary and performative role&rdquo; as a gift-giver, it doesn&rsquo;t address how Stevens conveyed the ephemeral and dynamic characteristics of <em>ikaah</em> itself during his ambassadorial activities. The quotation focuses on Stevens&rsquo;s role in transmitting knowledge and representing cultural dynamism but doesn&rsquo;t specifically support the claim about his efforts to communicate the essential characteristics of <em>ikaah</em> practice. Further, the quotation incorrectly implies that Stevens shared his knowledge of preservative additives; the text doesn&rsquo;t establish that he revealed how the sandpaintings were preserved.</p>",
+    "externalid": "a48b7a71-d74f-4589-9010-e1a7a3afac2d",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>In <span lang=\"nv\">Din&eacute;</span> (Navajo) culture, <em><span lang=\"nv\">ikaah</span></em> (sandpaintings) are created and then erased as part of sacred healing ceremonies lasting no more than a few days, but <span lang=\"nv\">Din&eacute;</span> <em><span lang=\"nv\">hataa\u0142ii</span></em> (chanter, healer, cultural guide) Fred Stevens developed fixatives to preserve desacralized sandpaintings. While on a US-sponsored cultural ambassadorial trip in Europe and the Americas in the 1960s, Stevens produced several such sandpaintings and gave them to cultural institutions. This may seem in tension with the role of cultural ambassador&mdash;how could static objects authentically represent an inherently ephemeral and dynamic practice?&mdash;but such a view is itself overly object-focused and neglects how Stevens strove to convey exactly those characteristics of <em><span lang=\"nv\">ikaah</span></em> as a cultural practice.</p>"
+}

@@ -1,0 +1,24 @@
+{
+  "questionId": "5edc8c98-s1",
+  "originalId": "5edc8c98",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">81<i>x</i>&sup2; &minus; (27<i>c</i> + 3<i>d</i>)<i>x</i> + <i>c</i><i>d</i> = 0</p><p>In the given equation, <i>c</i> and <i>d</i> are positive constants. The sum of the solutions to the given equation is <i>k</i>(9<i>c</i> + <i>d</i>), where <i>k</i> is a constant. What is the value of <i>k</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1/27",
+    ".0370",
+    ".0371"
+  ],
+  "rationale": "<p>For a quadratic <i>a</i><i>x</i>&sup2; + <i>b</i><i>x</i> + <i>c</i> = 0, the sum of the roots is &minus;<i>b</i>/<i>a</i>. Here the sum is (27<i>c</i> + 3<i>d</i>)/81 = 3(9<i>c</i> + <i>d</i>)/81 = (9<i>c</i> + <i>d</i>)/27. Setting this equal to <i>k</i>(9<i>c</i> + <i>d</i>) gives <i>k</i> = 1/27.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T8.hard"
+}

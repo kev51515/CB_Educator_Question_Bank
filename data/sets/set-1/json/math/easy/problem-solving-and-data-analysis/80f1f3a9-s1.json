@@ -1,0 +1,39 @@
+{
+  "questionId": "80f1f3a9-s1",
+  "originalId": "80f1f3a9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A data set consists of 152 fruits. The table shows the number of times each type of fruit appears in the data set.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Fruit</th><th>Apple</th><th>Orange</th><th>Pear</th><th>Plum</th></tr><tr><td>Count</td><td>40</td><td>25</td><td>55</td><td>32</td></tr></table><p>Which fruit appears 55 times in the data set?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Pear</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Apple</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Plum</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Orange</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. According to the table, pear appears 55 times in the data set.</p><p>Choice B is incorrect. Apple appears 40 times, not 55.</p><p>Choice C is incorrect. Plum appears 32 times, not 55.</p><p>Choice D is incorrect. Orange appears 25 times, not 55.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

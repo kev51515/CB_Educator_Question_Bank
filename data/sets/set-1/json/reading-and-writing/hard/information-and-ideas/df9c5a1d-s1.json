@@ -1,0 +1,39 @@
+{
+  "questionId": "df9c5a1d-s1",
+  "originalId": "df9c5a1d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Juvenile Plants Found Growing on Open Sand and Beneath Shrub Canopies for Five Coastal Species</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;\">Species</th><th scope=\"col\" style=\"text-align: center;\">Open sand</th><th scope=\"col\" style=\"text-align: center;\">Beneath shrub canopies</th><th scope=\"col\" style=\"text-align: center;\">Total</th><th scope=\"col\" style=\"text-align: center;\">Percent found beneath shrub canopies</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\"><em>L. brevifolia</em></th><td style=\"text-align: center;\">14</td><td style=\"text-align: center;\">22</td><td style=\"text-align: center;\">36</td><td style=\"text-align: center;\">61.1%</td></tr><tr><th scope=\"row\" style=\"text-align: left;\"><em>L. coronata</em></th><td style=\"text-align: center;\">76</td><td style=\"text-align: center;\">118</td><td style=\"text-align: center;\">194</td><td style=\"text-align: center;\">60.8%</td></tr><tr><th scope=\"row\" style=\"text-align: left;\"><em>C. occidentalis</em></th><td style=\"text-align: center;\">88</td><td style=\"text-align: center;\">102</td><td style=\"text-align: center;\">190</td><td style=\"text-align: center;\">53.7%</td></tr><tr><th scope=\"row\" style=\"text-align: left;\"><em>C. nutans</em></th><td style=\"text-align: center;\">21</td><td style=\"text-align: center;\">29</td><td style=\"text-align: center;\">50</td><td style=\"text-align: center;\">58.0%</td></tr><tr><th scope=\"row\" style=\"text-align: left;\"><em>P. maritima</em></th><td style=\"text-align: center;\">48</td><td style=\"text-align: center;\">71</td><td style=\"text-align: center;\">119</td><td style=\"text-align: center;\">59.7%</td></tr></tbody></table></figure><p>On the coastal dune ecosystems of the southeastern Atlantic, researchers Imani Bates and Felipe Andrade hypothesized that established shrubs serve as \"nurse plants\" for juvenile herbs and grasses &mdash; that is, that the shaded, sheltered microclimate beneath shrub canopies promotes seedling survival relative to exposed open sand, which would be reflected in disproportionately many juveniles growing under canopies given how much open sand is available. They surveyed juvenile plants of five coastal species across paired open-sand and shrub-canopy patches and claimed that the resulting data supported their nurse-plant hypothesis.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers' claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The species with the greatest number of juvenile plants found beneath shrub canopies was <em>L. coronata</em>.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For each of the five species surveyed, the percentage of juvenile plants found beneath shrub canopies was greater than 50%, even though open sand covers a substantially larger area of the dune system than shrub canopies do.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For <em>L. brevifolia</em> and <em>L. coronata</em>, the percentage of juvenile plants found beneath shrub canopies was nearly the same.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For all five species, fewer than 75% of juvenile plants were growing beneath shrub canopies.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The researchers' nurse-plant claim depends on juveniles being disproportionately concentrated beneath shrubs &mdash; not just present there. The table shows that the percentage of juveniles beneath shrub canopies is above 50% for every one of the five species (53.7%, 58.0%, 59.7%, 60.8%, 61.1%), despite the fact that open sand is far more abundant than shrub-canopied ground. That combination &mdash; majority beneath canopies despite the smaller available canopy area &mdash; is exactly what the nurse-plant hypothesis predicts.</p><p>Choice A is incorrect because identifying which single species had the highest raw count under canopies does not address whether, across species, juveniles are disproportionately found in canopy patches. Choice C is incorrect because the close agreement between <em>L. brevifolia</em> and <em>L. coronata</em> is incidental; it doesn't demonstrate the broader canopy preference across all five species. Choice D is incorrect because pointing out that all values are below 75% only tells us juveniles aren't <em>almost entirely</em> beneath shrubs &mdash; that weakens rather than supports the nurse-plant claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

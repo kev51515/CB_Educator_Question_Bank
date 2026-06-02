@@ -1,0 +1,39 @@
+{
+  "questionId": "359b891c-s1",
+  "originalId": "359b891c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Painter Helen Frankenthaler was fascinated by the natural landscapes she encountered during her travels. The cliffs and coves she sketched on a 1952 trip to Nova Scotia <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her work. For example, Frankenthaler's signature soak-stain technique, in which thinned paint pools across raw canvas, was inspired by the way that seawater seeped into the porous shoreline rocks she observed.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>influenced</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>distracted</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>restricted</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>announced</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the text explains that a feature of Frankenthaler's work was inspired by something she observed in nature, supporting the meaning that the landscapes shaped her work. \"Influenced\" captures this meaning. The other choices describe interruption, limitation, or announcement, none of which fits the relationship between the landscapes and her artistic style.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

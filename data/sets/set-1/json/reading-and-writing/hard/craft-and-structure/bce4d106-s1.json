@@ -1,0 +1,39 @@
+{
+  "questionId": "bce4d106-s1",
+  "originalId": "bce4d106",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists have catalogued an enormous quantity of pendants fashioned from <em>Tridacna</em> shells in numerous Early Neolithic (EN) sites across the Persian Gulf coast, including Ras al-Hamra, Oman. In a 2023 paper, Layla Ibrahim et al. attribute these artifacts' apparent <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the emergence and spread of ornamental traditions (e.g., personal adornment) among coastal communities and the widespread availability of <em>Tridacna</em> shells along EN shorelines.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>heterogeneity</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>expediency</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>fecundity</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>pervasiveness</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Pervasiveness\" most logically completes the text. The text describes pendants found at many sites and explains this widespread distribution by appealing to the spread of ornamental traditions and the widespread availability of materials. Both supporting facts speak to how widespread\u2014how pervasive\u2014the pendants were.</p><p>Choice A is incorrect. \"Heterogeneity\" means variety of types; the text emphasizes wide distribution, not stylistic diversity. Choice B is incorrect. \"Expediency\" means usefulness or convenience; this doesn't match what the supporting facts explain. Choice C is incorrect. \"Fecundity\" means fertility or productivity; this is unrelated to wide geographic distribution.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

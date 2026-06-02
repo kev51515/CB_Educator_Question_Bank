@@ -1,0 +1,39 @@
+{
+  "questionId": "05575bca-s1",
+  "originalId": "05575bca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Louisa May Alcott's 1869 novel <em>Little Women</em>. Beth, a child, is speaking to her sister about a pet kitten.</p><p>\"Listen to her purring, Jo! How nice and soft it sounds! Just as if a tiny engine were humming inside her.\"</p>",
+  "stem": "<p>As used in the text, what does the word \"soft\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Bland</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Damp</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Shapeless</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Gentle</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because Beth is describing a quiet, pleasant purring sound that resembles humming. \"Gentle\" captures the mild, agreeable quality of the sound. Choice A is incorrect because \"bland\" would imply dullness, which is the opposite of the affectionate tone Beth uses. Choice B is incorrect because \"damp\" describes moisture, not a sound. Choice C is incorrect because \"shapeless\" refers to a lack of form, which does not apply to a sound.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "637022d2-s1",
+  "originalId": "637022d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>p + 4d = 60</p><p>The given equation describes the relationship between the number of parrots, p, and the number of dogs, d, that can be cared for at a pet care business on a given day. If the business cares for 14 dogs on a given day, how many parrots can it care for on this day?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>14</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Substitute d = 14: p + 4(14) = 60, so p + 56 = 60 and p = 4. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.medium"
+}

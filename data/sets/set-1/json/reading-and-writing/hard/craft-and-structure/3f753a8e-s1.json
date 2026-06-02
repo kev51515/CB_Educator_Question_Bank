@@ -1,0 +1,39 @@
+{
+  "questionId": "3f753a8e-s1",
+  "originalId": "3f753a8e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Investigating whether shared false auditory memories&mdash;specific but inaccurate recollections of widely heard sounds, such as the opening notes of well-known theme songs&mdash;are produced by listeners' prior ______ inaccurate renditions of those sounds, researchers Bao-Lin Yu and Marisa O'Hare found that, in fact, such memories are often not explained by familiarity with mistaken versions.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>compliance with</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>exposure to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>criteria for</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>forfeiture of</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The researchers are asking whether shared false memories come from listeners having previously encountered erroneous renditions of the sounds. \"Prior exposure to\" inaccurate versions captures that relationship between encountering material in the past and forming distorted memories of it.</p><p>Choice A is incorrect because \"compliance with\" inaccurate renditions implies obeying them, which is nonsensical in this context. Choice C is incorrect because \"criteria for\" inaccurate renditions would make the inaccurate renditions products of standards rather than influences on memory. Choice D is incorrect because \"forfeiture of\" reverses the causal direction the study is testing.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

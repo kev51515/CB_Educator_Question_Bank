@@ -1,0 +1,25 @@
+{
+  "questionId": "7e37affc-s1",
+  "originalId": "7e37affc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": "<p>That the deepest known cave system on Earth lay in the country of Georgia was accepted by every speleologist consulted ______ pinpointing the exact bottom of the Veryovkina cave required several additional expeditions.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>thereafter,</p>"},
+    {"id": "b", "content": "<p>thereafter;</p>"},
+    {"id": "c", "content": "<p>thereafter:</p>"},
+    {"id": "d", "content": "<p>thereafter</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The semicolon correctly joins the first main clause (\"That the&hellip;thereafter\") with the second main clause (\"pinpointing&hellip;expeditions\"). A semicolon is especially appropriate when joining two parallel statements where the second contrasts with the first.</p><p>Choice A is incorrect because it produces a comma splice. Choice C is incorrect because a colon would suggest that the second clause explains or amplifies the first; here the second clause contrasts with the first. Choice D is incorrect because it creates a run-on sentence with the two clauses fused.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

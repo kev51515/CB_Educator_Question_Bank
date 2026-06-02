@@ -1,0 +1,22 @@
+{
+  "questionId": "8193e8cd-s1",
+  "originalId": "8193e8cd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The mean of a list of six numbers is what fraction of the sum of the six numbers? Enter your answer as a decimal.</p>",
+  "answerOptions": null,
+  "keys": [
+    ".1666"
+  ],
+  "rationale": "<p>The correct answer is 1/6 (approximately .1666 or .1667). The mean of a list of six numbers is the sum divided by 6. So mean/sum = 1/6, which is approximately 0.1666 or 0.1667.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.medium"
+}

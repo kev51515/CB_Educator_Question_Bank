@@ -1,0 +1,39 @@
+{
+  "questionId": "dfc420b2-s1",
+  "originalId": "dfc420b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, two lines intersect at point <em>C</em>, forming triangle <em>ABC</em>. The measure of angle <em>A</em> is 45 degrees and the measure of angle <em>B</em> is 60 degrees. What is the measure of the angle that is vertical to angle <em>ACB</em>, in degrees?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>105</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The angles of triangle <em>ABC</em> sum to 180 degrees, so the measure of angle <em>ACB</em> is 180 minus 45 minus 60 = 75 degrees. Vertical angles are congruent, so the angle vertical to angle <em>ACB</em> also measures 75 degrees.</p><p>Choice A is incorrect: 105 is the sum of 45 and 60.</p><p>Choice B is incorrect: 60 is the measure of angle <em>B</em>.</p><p>Choice D is incorrect: 180 is the sum of all three angles.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.easy"
+}

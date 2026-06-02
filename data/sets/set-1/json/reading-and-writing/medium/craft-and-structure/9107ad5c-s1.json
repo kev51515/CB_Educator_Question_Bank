@@ -1,0 +1,25 @@
+{
+  "questionId": "9107ad5c-s1",
+  "originalId": "9107ad5c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T8.medium",
+  "stimulus": "<p>Deep-sea hydrothermal vents lie miles below the surface in conditions hostile to most observation equipment, but oceanographer Mireia Cantero argues that these ecosystems need not remain entirely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to biologists: she uses autonomous submersibles and pressure-tolerant cameras to record long-duration footage of organisms thriving near the vents.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>unobservable</p>"},
+    {"id": "b", "content": "<p>reversible</p>"},
+    {"id": "c", "content": "<p>solvable</p>"},
+    {"id": "d", "content": "<p>regrettable</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Unobservable\" means unable to be watched or recorded. The text emphasizes that the vents lie in inaccessible depths but that Cantero's submersibles and cameras enable researchers to record footage of them. Saying the vents need not remain unobservable fits the contrast.</p><p>Choice B is incorrect. \"Reversible\" describes processes that can be undone, which doesn't match an ecosystem one studies remotely. Choice C is incorrect. \"Solvable\" applies to problems or puzzles, not to ecosystems being viewed. Choice D is incorrect. \"Regrettable\" means unfortunate; the text does not suggest the vents are unfortunate, only difficult to access.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

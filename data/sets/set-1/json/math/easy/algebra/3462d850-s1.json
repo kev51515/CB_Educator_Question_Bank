@@ -1,0 +1,39 @@
+{
+  "questionId": "3462d850-s1",
+  "originalId": "3462d850",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation d = 60t models the distance d, in miles, that Jonas drove from City P to City Q after driving for t hours. Which of the following does 60 represent in the equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Jonas took 60 trips from City P to City Q.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Jonas drove at an average speed of about 60 miles per hour.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The distance between City P and City Q is 60 miles.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It took Jonas 60 hours to drive from City P to City Q.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. In d = 60t, the coefficient 60 represents miles per hour.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A2.T2.easy"
+}

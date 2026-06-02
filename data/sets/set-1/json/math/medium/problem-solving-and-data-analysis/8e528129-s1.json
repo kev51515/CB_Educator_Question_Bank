@@ -1,0 +1,22 @@
+{
+  "questionId": "8e528129-s1",
+  "originalId": "8e528129",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Pure honey has a density of 0.750 ounce per cubic inch. An online shop sells pure honey at a price of $6.00 per ounce. What is the selling price, in dollars per cubic inch, for pure honey purchased from this shop?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4.5"
+  ],
+  "rationale": "<p>The correct answer is 4.5. The selling price per cubic inch equals the density (oz/in\u00b3) times the price per ounce ($/oz): 0.750 \u00b7 6.00 = 4.50 dollars per cubic inch.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.medium"
+}

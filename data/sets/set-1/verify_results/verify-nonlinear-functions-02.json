@@ -1,0 +1,22 @@
+[
+  {"id": "f28944ff-s1", "templateId": "nonlinear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "4d425cef-s1", "templateId": "nonlinear-functions.A3.T4.medium", "verdict": "ok"},
+  {"id": "d71f6dbf-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "type_drift", "detail": "Stem asks interpretation of h(0.8)=16.16, a function-value evaluation. That matches A2.T1 (Interpret f(c)=v statement), not A2.T2 (Interpret coefficient or constant). Answer C is correct; tag is wrong."},
+  {"id": "0f9f8ea7-s1", "templateId": "nonlinear-functions.A6.T1.medium", "verdict": "ok", "detail": "Fits A6.T1 medium lever (one unknown a, identify initial value at x=0)."},
+  {"id": "c048055c-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "281a4f3b-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "45df91ee-s1", "templateId": "nonlinear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "7f87deff-s1", "templateId": "nonlinear-functions.A3.T4.medium", "verdict": "ok"},
+  {"id": "252a3b3a-s1", "templateId": "nonlinear-functions.A3.T5.medium", "verdict": "aspect_drift", "detail": "Stem asks f(-4) for f(x)=x^3-16x — direct substitution evaluation (A1.T1). Not graph-feature reasoning (A3.T5). f(-4)=-64+64=0, answer C correct, but aspect tag is wrong."},
+  {"id": "be0c419e-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok"},
+  {"id": "f1c81b3b-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "aspect_drift", "detail": "Stem gives g(x)=11·a^x with unknown a, condition g(2)=1331, asks g(3). This is parameter recovery + evaluation (A6.T1 medium lever), not building an exponential model from context (A4.T1). Answer 14641 = 11·11^3 is correct."},
+  {"id": "cbc4c163-s1", "templateId": "nonlinear-functions.A1.T1.medium", "verdict": "ok", "detail": "f(2/5) = 7(0)^2 + 9/5 = 9/5 = 1.8. Both keyed forms correct."},
+  {"id": "341ba5db-s1", "templateId": "nonlinear-functions.A3.T3.medium", "verdict": "ok"},
+  {"id": "100030d9-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "aspect_drift", "detail": "Geometric-decay bouncing-ball problem with iterative halving is closer to A4.T1 exponential decay context, but stem asks numeric height after 3 bounces (not building a model). Answer 4 ft correct (32→16→8→4)."},
+  {"id": "dd8ac009-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "dd3b1e1a-s1", "templateId": "nonlinear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "735a0a00-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok", "detail": "0.4(4)-12+110 = 99.6 ≈ 99. Interpretation D correct."},
+  {"id": "9ff88bb5-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "type_drift", "detail": "Stem asks interpretation of x-intercept (a coordinate/feature point) — matches A2.T1 (Interpret a specific point/value in context), not A2.T2 (interpret a structural constant such as initial value or growth factor). Answer D correct."},
+  {"id": "0aaef7aa-s1", "templateId": "nonlinear-functions.A1.T2.medium", "verdict": "ok", "detail": "9m^3=72 → m^3=8 → m=2. Matches medium lever (cube root, two-step inversion)."},
+  {"id": "4209aefe-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok", "detail": "g(8)=350·1.052^8 ≈ 526 ≈ 525. Interpretation C correct."}
+]

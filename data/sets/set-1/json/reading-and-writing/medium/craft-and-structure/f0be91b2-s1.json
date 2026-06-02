@@ -1,0 +1,25 @@
+{
+  "questionId": "f0be91b2-s1",
+  "originalId": "f0be91b2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>Residents who are convinced that the proposed extension of the Stillwater light-rail line through their neighborhood will lower property values are unlikely to be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a planner&rsquo;s presentation arguing that transit access generally raises home prices. Advocates for the extension would do better to focus their outreach on commuters and small-business owners who already see the route as an asset.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>indifferent to</p>"},
+    {"id": "b", "content": "<p>excluded from</p>"},
+    {"id": "c", "content": "<p>annoyed by</p>"},
+    {"id": "d", "content": "<p>swayed by</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because &ldquo;swayed by&rdquo; means persuaded or influenced by, and the text describes a planner trying to change residents&rsquo; minds. The residents are firmly convinced that the extension will hurt property values, and the second sentence contrasts them with a more &ldquo;persuadable&rdquo; audience the advocates should target instead&mdash;so the residents are unlikely to be persuaded.</p><p>Choice A is incorrect because &ldquo;indifferent to&rdquo; means uninterested; residents who hold strong convictions about a project that affects their property values would care about a presentation arguing against their position, not be indifferent to it. Choice B is incorrect because nothing suggests residents are barred from attending the presentation; the issue is persuasion, not access. Choice C is incorrect because residents who oppose the extension would likely be more annoyed&mdash;not less&mdash;by arguments in its favor, so the negation frame yields the wrong direction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

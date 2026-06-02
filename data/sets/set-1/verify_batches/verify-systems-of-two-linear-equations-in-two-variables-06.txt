@@ -1,0 +1,16 @@
+data/sets/set-1/json/math/easy/algebra/ee031767-s1.json
+data/sets/set-1/json/math/easy/algebra/e6545fa8-s1.json
+data/sets/set-1/json/math/easy/algebra/d1aeb6f1-s1.json
+data/sets/set-1/json/math/easy/algebra/b0fc3166-s1.json
+data/sets/set-1/json/math/easy/algebra/cdec4c87-s1.json
+data/sets/set-1/json/math/easy/algebra/9db5b5c1-s1.json
+data/sets/set-1/json/math/easy/algebra/b86123af-s1.json
+data/sets/set-1/json/math/easy/algebra/ca9bb527-s1.json
+data/sets/set-1/json/math/easy/algebra/ccc3ad6b-s1.json
+data/sets/set-1/json/math/easy/algebra/aff28230-s1.json
+data/sets/set-1/json/math/easy/algebra/ffb371f5-s1.json
+data/sets/set-1/json/math/easy/algebra/7d89376f-s1.json
+data/sets/set-1/json/math/easy/algebra/e0177f5f-s1.json
+data/sets/set-1/json/math/easy/algebra/dba8d38a-s1.json
+data/sets/set-1/json/math/easy/algebra/44d65912-s1.json
+data/sets/set-1/json/math/easy/algebra/f6b055dc-s1.json

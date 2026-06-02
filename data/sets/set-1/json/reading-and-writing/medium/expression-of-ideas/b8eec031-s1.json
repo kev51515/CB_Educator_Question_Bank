@@ -1,0 +1,25 @@
+{
+  "questionId": "b8eec031-s1",
+  "originalId": "b8eec031",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>Researchers Sven Ahlqvist, Karina Boateng, and Diego Reyes report that while astronomers may have traditionally produced research papers within small national teams, the available data point to a steady shift in the opposite direction. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> astronomers are forming sprawling international collaborations—a trend made vivid by a sharp rise in the number of astronomy publications with author lists drawn from more than ten countries.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Similarly,</p>"},
+    {"id": "b", "content": "<p>For this reason,</p>"},
+    {"id": "c", "content": "<p>Increasingly,</p>"},
+    {"id": "d", "content": "<p>Furthermore,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Increasingly\" logically signals that the claim in this sentence—that astronomers are forming sprawling international collaborations—marks a change relative to the older small-team norm. As the previous sentence explains, available data point to a shift away from that norm. The claim describes the shift: a rise in international collaboration.</p><p>Choice A is incorrect because \"similarly\" illogically signals that the claim is parallel to, but separate from, the previous statement about the shift, when it actually elaborates on that shift. Choice B is incorrect because \"for this reason\" illogically signals that the rise in international collaboration is a result of the previous statement about the shift, when in fact the rise is the shift being described. Choice D is incorrect because \"furthermore\" illogically signals an additional, independent claim, when this sentence describes the very shift mentioned in the previous one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

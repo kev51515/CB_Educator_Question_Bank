@@ -1,0 +1,25 @@
+{
+  "questionId": "617a8a10-s1",
+  "originalId": "617a8a10",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>Very little is known about the role nocturnal mammals, such as bats, play in cacao tree pollination because it is difficult to track them in dense canopy at night. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">To address this problem, a team of biologists installed infrared motion-triggered cameras to record visits to cacao flowers throughout the day and night.</span> The footage showed that while most pollinator visits were made by midges, nearly a quarter of visits were made by small fruit bats. Additionally, flowers visited by both bats and midges set more fruit than flowers visited only by midges.</p>",
+  "stem": "<p>Which choice best states the function of the underlined sentence?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To announce an unexpected research finding about cacao trees</p>"},
+    {"id": "b", "content": "<p>To question a claim biologists make about cacao pollinators</p>"},
+    {"id": "c", "content": "<p>To explain why fruit bats prefer cacao flowers to other plants</p>"},
+    {"id": "d", "content": "<p>To describe an approach a team of biologists used to study pollinators</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The underlined sentence describes how a team of biologists addressed the problem of monitoring nocturnal mammals in the canopy: they installed infrared motion-triggered cameras to record visits to cacao flowers around the clock. It therefore describes an approach the team used to study pollinators.</p><p>Choice A is incorrect because the underlined sentence describes a method, not a finding, and the text does not indicate that any findings were unexpected. Choice B is incorrect because nothing in the underlined sentence questions a claim about pollinators. Choice C is incorrect because the text does not address whether fruit bats prefer cacao flowers.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

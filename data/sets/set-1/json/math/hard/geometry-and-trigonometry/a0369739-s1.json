@@ -1,0 +1,39 @@
+{
+  "questionId": "a0369739-s1",
+  "originalId": "a0369739",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle ABC, the measure of angle B is 90\u00b0 and BD is an altitude of the triangle (with D on side AC). The length of AB is 20 and the length of AC is 12 greater than the length of AB. What is the value of BC/BD?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>20/12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12/20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20/32</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8/5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Because \u2220B = 90\u00b0 and BD is the altitude from the right angle to the hypotenuse AC, triangles ABC and DBC are similar, giving BC/BD = AC/AB. With AB = 20 and AC = 20 + 12 = 32, this ratio equals 32/20 = 8/5.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.hard"
+}

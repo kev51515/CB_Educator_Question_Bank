@@ -1,0 +1,39 @@
+{
+  "questionId": "19fdf387-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.hard",
+  "originalId": "19fdf387",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the graph of y = x + 3 intersects the graph of y = ax at the point (1, 4). What is the value of a?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Since the point (1, 4) lies on the graph of y = ax, substituting gives 4 = a(1), so a = 4. The correct answer is choice D.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

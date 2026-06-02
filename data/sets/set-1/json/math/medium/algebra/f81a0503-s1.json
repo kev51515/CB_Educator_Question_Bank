@@ -1,0 +1,39 @@
+{
+  "questionId": "f81a0503-s1",
+  "originalId": "f81a0503",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>In the <em>xy</em>-plane, line <em>t</em> passes through the points (0, -3) and (1, 4). Which equation defines line <em>t</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = -x + 1/7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 7x - 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = (1/7)x - 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = -x + 7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope is (4 - (-3))/(1 - 0) = 7. The line crosses the y-axis at (0, -3), so the y-intercept is -3. The equation is y = 7x - 3. The other choices use incorrect slope values.</p>",
+  "templateId": "linear-equations-in-two-variables.A4.T6.medium"
+}

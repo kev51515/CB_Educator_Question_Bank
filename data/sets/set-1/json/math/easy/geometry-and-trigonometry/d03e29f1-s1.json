@@ -1,0 +1,39 @@
+{
+  "questionId": "d03e29f1-s1",
+  "originalId": "d03e29f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>(x \u2212 4)\u00b2 + (y + 5)\u00b2 = 49</p><p>The graph of the given equation in the xy-plane is a circle. What is the length of the radius of this circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>49</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The standard form (x \u2212 h)\u00b2 + (y \u2212 k)\u00b2 = r\u00b2 has radius r. Here r\u00b2 = 49, so r = 7. Choice A is h; choice C is |k|; choice D is r\u00b2.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "circles.A1.T1.easy"
+}

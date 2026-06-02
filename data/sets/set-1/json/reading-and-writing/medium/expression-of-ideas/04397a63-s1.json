@@ -1,0 +1,25 @@
+{
+  "questionId": "04397a63-s1",
+  "originalId": "04397a63",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T10.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The Kingdom of Aksum was a powerful trading civilization in the Horn of Africa that flourished from roughly the first to the seventh century CE.</li>\n<li>Aksum issued its own gold and silver coinage and dominated commerce along the Red Sea.</li>\n<li>Some scholars endorse what is called the gateway hypothesis.</li>\n<li>The gateway hypothesis holds that Aksum served as the principal commercial link between the Roman Mediterranean and India.</li>\n<li>Archaeologist Stuart Munro-Hay cites finds of Roman amphorae and Indian beads at Aksumite sites as supporting evidence.</li>\n</ul>",
+  "stem": "<p>The student wants to present the gateway hypothesis to an audience unfamiliar with the Kingdom of Aksum. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The gateway hypothesis proposes that the Kingdom of Aksum, a trading civilization in the Horn of Africa that issued its own coinage, served as the main commercial link between the Roman Mediterranean and India.</p>"},
+    {"id": "b", "content": "<p>Archaeologist Stuart Munro-Hay believes that Aksum had an important role in long-distance commerce.</p>"},
+    {"id": "c", "content": "<p>The gateway hypothesis is supported by archaeological finds of Roman amphorae and Indian beads at Aksumite sites.</p>"},
+    {"id": "d", "content": "<p>African civilizations, including the Kingdom of Aksum, helped shape trade across the ancient world in many important ways.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The sentence effectively presents the gateway hypothesis to an audience unfamiliar with the Kingdom of Aksum, identifying Aksum as a trading civilization in the Horn of Africa and explaining the hypothesis's claim that Aksum linked the Roman Mediterranean and India.</p><p>Choice B is incorrect. The sentence broadly emphasizes Munro-Hay's view; it does not identify or present the gateway hypothesis. Choice C is incorrect. The sentence cites evidence offered in support of the hypothesis; it does not present the hypothesis to an audience unfamiliar with Aksum. Choice D is incorrect. The sentence makes a broad generalization about African civilizations and trade; it does not present the gateway hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

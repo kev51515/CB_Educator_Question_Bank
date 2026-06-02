@@ -1,0 +1,25 @@
+{
+  "questionId": "75f49353-s1",
+  "originalId": "75f49353",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T5.medium",
+  "stimulus": "<p>The Harlem Renaissance saw the founding of numerous Black-owned publishing ventures, small presses that printed essays, poetry, and political tracts. Among the ventures' founders <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Jessie Redmon Fauset, literary editor of <em>The Crisis</em> magazine.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>have been</p>"},
+    {"id": "c", "content": "<p>was</p>"},
+    {"id": "d", "content": "<p>were</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested here is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"Jessie Redmon Fauset.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"Jessie Redmon Fauset.\" Choice B is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"Jessie Redmon Fauset.\" Choice D is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject \"Jessie Redmon Fauset.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

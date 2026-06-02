@@ -1,0 +1,39 @@
+{
+  "questionId": "8e9677e6-s1",
+  "originalId": "8e9677e6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 2017, the Smithsonian's National Museum of African American History and Culture mounted a special program, <em>Sankofa/Kibo,</em> featuring the compositions of Memphis-born composer Bernadette Okuda. As the program's title suggests (<em>sankofa</em> and <em>kibo</em> mean \"returning to retrieve\" in Twi and \"hope\" in Japanese, respectively), Okuda's work bridges several musical lineages. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her compositions draw substantially on the gospel and blues traditions of the American South and on the techniques of traditional Japanese gagaku ensemble music.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>More precisely,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By contrast,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"More precisely\" logically signals that the second sentence specifies the general claim of the first\u2014identifying exactly which musical lineages are blended. The second sentence elaborates on the previous one with more particular detail.</p><p>Choice A is incorrect because \"likewise\" would mark the second sentence as a similar but parallel case rather than a more specific articulation of the same point. Choice C is incorrect because \"by contrast\" would signal opposition, but the two sentences agree. Choice D is incorrect because \"as a result\" would signal cause and effect, yet the second sentence does not describe a consequence of the first.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A3.T8.hard"
+}

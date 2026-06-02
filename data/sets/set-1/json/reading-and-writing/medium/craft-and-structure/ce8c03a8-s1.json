@@ -1,0 +1,25 @@
+{
+  "questionId": "ce8c03a8-s1",
+  "originalId": "ce8c03a8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p><em>A Pictorial Record of Monterey County</em>, published in 1881, contains numerous engravings by Edward Vischer showing the California county's ranches, missions, and small workshops. It was <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> for a workshop to be depicted, since inclusion signaled that an establishment held a respected position within the surrounding county.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>perilous</p>"},
+    {"id": "b", "content": "<p>routine</p>"},
+    {"id": "c", "content": "<p>beneficial</p>"},
+    {"id": "d", "content": "<p>deceptive</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Beneficial\" means producing favorable results. The text states that inclusion in the volume indicated that an establishment held a respected position in the county&mdash;an enhanced reputation that would benefit the workshop.</p><p>Choice A is incorrect. \"Perilous\" would imply being depicted had risks, but the text describes only a positive consequence. Choice B is incorrect. \"Routine\" would mean ordinary, but the text portrays inclusion as conferring distinction. Choice D is incorrect. \"Deceptive\" implies misleading, but the text does not suggest dishonesty in being depicted; it suggests genuine standing.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

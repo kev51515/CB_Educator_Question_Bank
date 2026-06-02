@@ -1,0 +1,39 @@
+{
+  "questionId": "ec7b0eb8-s1",
+  "originalId": "ec7b0eb8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A study of 600 randomly selected commuters recorded how often each commuter rode a bicycle and whether each commuter lived within 5 miles of work. The table summarizes the data.</p><table border=\"1\"><tr><th></th><th>Bicycles often</th><th>Does not bicycle often</th><th>Total</th></tr><tr><th>Lives within 5 miles</th><td>90</td><td>110</td><td>200</td></tr><tr><th>Lives more than 5 miles away</th><td>30</td><td>370</td><td>400</td></tr><tr><th>Total</th><td>120</td><td>480</td><td>600</td></tr></table><p>If one of the 600 commuters surveyed is selected at random, what is the probability that the commuter bicycles often?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>120/600</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>200/600</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>400/600</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>480/600</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The probability is the number of commuters who bicycle often divided by the total: 120/600.</p><p>Choice B is incorrect; this is the probability of living within 5 miles. Choice C is incorrect; this is the probability of living more than 5 miles away. Choice D is incorrect; this is the probability of not bicycling often.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A2.T4.easy"
+}

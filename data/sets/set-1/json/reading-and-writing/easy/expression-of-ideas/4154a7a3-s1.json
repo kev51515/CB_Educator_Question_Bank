@@ -1,0 +1,39 @@
+{
+  "questionId": "4154a7a3-s1",
+  "originalId": "4154a7a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 1903, the Wright brothers first achieved sustained powered flight with their Flyer, completing a 12-second flight that demonstrated heavier-than-air aviation was possible. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 1909, French aviator Louis Bl\u00e9riot made the first crossing of the English Channel by airplane, building on the principles the Wrights had established.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Later,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In conclusion,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In other words,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Later\" logically signals that the event discussed in this sentence\u2014Bl\u00e9riot's English Channel crossing\u2014is a related event that occurred after the event in the previous sentence (the Wrights' 1903 flight).</p><p>Choice B is incorrect because \"in conclusion\" illogically signals that this sentence concludes or summarizes the previous information. Instead, the Channel crossing is a related event that followed. Choice C is incorrect because \"however\" illogically signals a contrast. Instead, the Channel crossing built on the Wrights' work. Choice D is incorrect because \"in other words\" illogically signals a restatement. Instead, this sentence describes a different, later event.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

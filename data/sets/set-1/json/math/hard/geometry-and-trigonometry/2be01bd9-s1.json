@@ -1,0 +1,22 @@
+{
+  "questionId": "2be01bd9-s1",
+  "originalId": "2be01bd9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangle ABC is similar to triangle DEF, where angle A corresponds to angle D and angle C corresponds to angle F. Angles C and F are right angles. If tan A = 24/7, what is the value of tan E?</p>",
+  "answerOptions": [],
+  "keys": [
+    "7/24"
+  ],
+  "rationale": "<p>In similar triangles, tangents of corresponding angles are equal, so tan A = tan D = 24/7. Since \u2220F is a right angle in \u25b3DEF, the other two angles D and E are complementary, so tan E = 1/tan D = 7/24.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A5.T10.hard"
+}

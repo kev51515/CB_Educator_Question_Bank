@@ -1,0 +1,39 @@
+{
+  "questionId": "c3d78831-s1",
+  "originalId": "c3d78831",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At a music festival, the ratio of sound engineers to performers is 1 to 18. If there are <em>n</em> sound engineers at the festival, which of the following expressions represents the number of performers at the festival?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18<em>n</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>n</em>/18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>n</em> + 18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18/<em>n</em></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The ratio 1 to 18 means that for every sound engineer, there are 18 performers. Multiplying both parts of the ratio by <em>n</em> yields <em>n</em> sound engineers to 18<em>n</em> performers. Therefore the number of performers is 18<em>n</em>.</p><p>Choices B, C, and D do not preserve the ratio correctly.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.medium"
+}

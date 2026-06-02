@@ -1,0 +1,25 @@
+{
+  "questionId": "d54e16ee-s1",
+  "originalId": "d54e16ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A6.T17.medium",
+  "stimulus": "<p>First proposed by ecologist Robert Paine to describe species whose influence on their environment is disproportionate to their numbers, the term \"keystone species\" can apply to predators as well as to certain plants. In a predator keystone system, a single carnivore restrains the populations of multiple prey, keeping the community in balance. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in a plant keystone system, a single fruit-bearing tree sustains diverse animal populations through lean seasons.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Likewise,</p>"},
+    {"id": "b", "content": "<p>Previously,</p>"},
+    {"id": "c", "content": "<p>Specifically,</p>"},
+    {"id": "d", "content": "<p>Instead,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Likewise\" logically signals that the information in this sentence about a plant keystone system is parallel to the information in the previous sentence about a predator keystone system. In both systems, a single organism exerts an outsized influence on the surrounding community.</p><p>Choice B is incorrect because \"previously\" illogically signals a chronological relationship between the two systems, when the relationship is one of similarity. Choice C is incorrect because \"specifically\" illogically signals that the plant keystone description elaborates on the predator keystone description, when in fact it describes a parallel but distinct case. Choice D is incorrect because \"instead\" illogically signals that the plant keystone case replaces or opposes the predator keystone case, when the two cases share a common mechanism.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

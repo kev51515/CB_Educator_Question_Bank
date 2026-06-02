@@ -1,0 +1,39 @@
+{
+  "questionId": "df91532e-s1",
+  "originalId": "df91532e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>In the &ldquo;immersion school&rdquo; model, M&#257;ori children in Aotearoa (New Zealand) learn the M&#257;ori language by using it as the medium of all instruction and daily interaction from early childhood through primary school. In a 2018 study of one such school in a M&#257;ori community, scholars Te Rina Warren and Hemi Tuhoro (who are themselves M&#257;ori) found that the model produced not only conversational fluency but also a strengthened identification with M&#257;ori culture. Given these effects, Warren and Tuhoro predict that the model increases the likelihood that, as adults, former students will pass the language on to their own children and to younger members of their community.</p>",
+  "stem": "<p>Which finding, if true, would most strongly support the researchers&rsquo; prediction?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>New students who transfer into the school typically show measurable gains in both language fluency and general academic achievement within their first year.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As former students complete secondary and post-secondary education and enter adulthood, they retain their fluency in M&#257;ori and their strong identification with M&#257;ori culture.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>M&#257;ori adults who did not attend the school report cultural pride at levels comparable to those of the former students of the school.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Former students of the school are as likely as nonattendees to remain in their home community as adults.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the prediction is that former students will transmit the language as adults. That outcome depends on whether the fluency and cultural identification produced in primary school actually persist into adulthood. A finding that those gains are retained through later schooling and into adult life would most directly support the prediction.</p><p>Choice A is incorrect because gains during early years say nothing about long-term retention or transmission. Choice C is incorrect because if nonattendees feel similar cultural pride, that would weaken, not support, the case that the school&rsquo;s model is responsible for any transmission. Choice D is incorrect because remaining in the community does not by itself indicate that the language will be transmitted.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982613+00:00",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

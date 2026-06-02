@@ -1,0 +1,24 @@
+{
+  "questionId": "e6cb2402-s1",
+  "originalId": "e6cb2402",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>4(<i>m</i><i>x</i> + 9) = (35/12)<i>x</i> + 27</p><p>In the given equation, <i>m</i> is a constant. The equation has no solution. What is the value of <i>m</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "35/48",
+    "0.7291",
+    "0.7292"
+  ],
+  "rationale": "<p>Distribute on the left: 4<i>m</i><i>x</i> + 36 = (35/12)<i>x</i> + 27. A linear equation has no solution precisely when the coefficients of <i>x</i> are equal but the constants differ. Setting 4<i>m</i> = 35/12 gives <i>m</i> = 35/48. The constants 36 and 27 are unequal, so no solution exists.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.hard"
+}

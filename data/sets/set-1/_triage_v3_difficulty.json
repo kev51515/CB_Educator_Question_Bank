@@ -1,0 +1,32 @@
+[
+  {
+    "id": "a5079e0d-s1",
+    "templateId": "boundaries.A1.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Uses '; conjunctive adverb,' pattern ('; for instance,') which is the T3 hard lever ('Conjunctive adverb sits at the join'). Medium lever calls for subordinator (while/whenever/because)."
+  },
+  {
+    "id": "ad046778-s1",
+    "templateId": "boundaries.A1.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Uses '; instead,' (semicolon + conjunctive adverb + comma) which is the T3 hard lever pattern; medium lever requires a subordinator beginning the second clause."
+  },
+  {
+    "id": "9452092c-s1",
+    "templateId": "command-of-evidence.A5.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T8 requires multi-row inference across 4-5 columns with options as complete clauses requiring data adjudication of a contested claim. This clone uses a simple 3-row, 4-column table and a one-step comparison (soybean 22.4 vs 14.1); fits Easy/Medium rather than Hard."
+  },
+  {
+    "id": "98d0a5d7-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation that the correct finding rules out, or a precise missing causal link. The stimulus presents no named alternative; the correct finding (more bicycle references after 1885) is a direct correlation matching the hypothesis at the Easy/Medium level."
+  },
+  {
+    "id": "0ec15b5a-s1",
+    "templateId": "command-of-evidence.A5.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T8 requires a constraint combining two columns or a comparison structure; clone is a single-column max lookup of one rating (Texas sage = 9), matching T7 direct-readout easy pattern. No two-step reasoning or partial-match trap."
+  }
+]

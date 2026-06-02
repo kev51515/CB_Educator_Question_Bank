@@ -1,0 +1,39 @@
+{
+  "questionId": "a2bff07e-s1",
+  "originalId": "a2bff07e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Sociologist Mary Douglas's cross-cultural fieldwork has empirically demonstrated that the rules a community uses to classify foods as \"clean\" or \"unclean\" reflect deep social distinctions and are not, as earlier theorists had supposed, primarily reactions to hygiene or biological risk. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Douglas's work amounts to a forceful challenge to the long-standing assumption that dietary taboos arise mainly from a community's accumulated medical knowledge.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Consequently,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>That said,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Consequently\" logically signals that the second sentence's claim about Douglas's challenge to the hygiene-based view follows from the empirical findings in the first sentence. Because her fieldwork showed that classifications reflect social distinctions rather than medical concerns, her work necessarily challenges the older assumption.</p><p>Choice A is incorrect because \"however\" would signal contrast, but the two sentences agree. Choice B is incorrect because \"for instance\" would mark the second sentence as an example of the first, but it draws a broader conclusion from it. Choice D is incorrect because \"that said\" would frame the second sentence as a qualification, but it is a logical consequence of the prior claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T4.hard"
+}

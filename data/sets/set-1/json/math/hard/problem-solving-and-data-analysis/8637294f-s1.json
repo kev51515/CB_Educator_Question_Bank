@@ -1,0 +1,23 @@
+{
+  "questionId": "8637294f-s1",
+  "originalId": "8637294f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If 5p/q = 8.4 and p/(qm) = 33.6, what is the value of m?</p>",
+  "answerOptions": null,
+  "keys": [
+    ".05",
+    "1/20"
+  ],
+  "rationale": "<p>From 5p/q = 8.4, we get p/q = 1.68. From p/(qm) = 33.6, we get (p/q)(1/m) = 33.6, so 1.68/m = 33.6, giving m = 1.68/33.6 = 0.05 = 1/20.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T3.hard"
+}

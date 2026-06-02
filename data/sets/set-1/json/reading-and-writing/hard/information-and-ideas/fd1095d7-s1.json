@@ -1,0 +1,25 @@
+{
+  "questionId": "fd1095d7-s1",
+  "originalId": "fd1095d7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.hard",
+  "stimulus": "<p>To address the susceptibility of materials used in deep-sea pipeline coatings to cathodic disbondment (the loss of adhesion between a protective coating and a metallic substrate, which often occurs under prolonged seawater immersion and applied electrical potential), corrosion researchers have developed several types of carbon nanotube (CNT) reinforced epoxy coatings. Testing the long-term performance of several commercially available CNT&ndash;epoxy systems, Helena Vargas <span data-ssml-sub-alias=\"et al\">et al.</span> found that in comparison with two solvent-cast CNT&ndash;epoxy coatings, a vacuum-infused CNT&ndash;epoxy coating exhibited a smaller maximum disbondment radius, a measure of how far adhesion is lost around a coating defect at constant temperature and applied potential. The finding suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>unlike the two solvent-cast CNT&ndash;epoxy coatings, the vacuum-infused coating can entirely prevent disbondment, provided that temperature and applied potential are held constant.</p>"},
+    {"id": "b", "content": "<p>composites based on the two solvent-cast CNT&ndash;epoxy coatings likely hold similar potential for reducing the adhesion of coatings exposed to seawater, thereby extending the life of deep-sea pipelines.</p>"},
+    {"id": "c", "content": "<p>deep-sea pipeline coatings containing vacuum-infused CNT&ndash;epoxy may retain adhesion around coating defects across a larger area than coatings containing either of the two solvent-cast CNT&ndash;epoxy systems.</p>"},
+    {"id": "d", "content": "<p>coatings based on the two solvent-cast CNT&ndash;epoxy systems have chemical properties that may improve the long-term integrity of deep-sea pipelines to a greater extent than do coatings based on the vacuum-infused CNT&ndash;epoxy system.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text reports that the vacuum-infused CNT&ndash;epoxy coating exhibited a smaller maximum disbondment radius than the solvent-cast coatings did&mdash;meaning adhesion is lost over a smaller area around any defect. The most measured inference is that the vacuum-infused coating retains adhesion across a larger area around defects than the solvent-cast coatings do.</p><p>Choice A is incorrect because the measurement concerns how far disbondment spreads, not whether it can be entirely prevented. Choice B is incorrect because reducing adhesion would shorten, not extend, pipeline life; the text actually points in the opposite direction. Choice D is incorrect because the vacuum-infused system performed better, so the solvent-cast systems are not the more promising option.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7270d642-s1",
+  "originalId": "7270d642",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A racing drone can fly at an average speed of 22 meters per second. At this rate, how many meters would the drone fly in 5 seconds?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4.4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>110</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Distance = speed \u00d7 time = 22 \u00d7 5 = 110 meters.</p><p>Choice A is incorrect; this is the sum of 22 and 5. Choice B is incorrect; this is the difference. Choice C is incorrect; this is the ratio of the two values.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

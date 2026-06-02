@@ -1,0 +1,39 @@
+{
+  "questionId": "0d1b1e35-s1",
+  "originalId": "0d1b1e35",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A batch of fruit yogurt parfait consists of 3 cups of yogurt and 4 strawberries and has 802 milligrams (mg) of vitamin C. There are 250 mg of vitamin C in 1 cup of the yogurt used to make this batch of parfaits. How much vitamin C, in mg, is in 1 strawberry?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>52</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Let s be the milligrams of vitamin C in one strawberry. Then 3 \u00d7 250 + 4s = 802, so 750 + 4s = 802 and 4s = 52, giving s = 13. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.medium"
+}

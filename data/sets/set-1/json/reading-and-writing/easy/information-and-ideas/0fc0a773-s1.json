@@ -1,0 +1,39 @@
+{
+  "questionId": "0fc0a773-s1",
+  "originalId": "0fc0a773",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>The Cleveland Museum of Art in Cleveland, Ohio, has more than 60,000 works of art. High-resolution images of tens of thousands of those works have been put online through the museum's open-access program. One of the images is of <em>Spring Evening</em>, a watercolor by Charles Burchfield. In a paper, a student claims that <span style=\"text-decoration: underline;\">putting a work from the museum online increases the number of people who experience that work</span>.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The Cleveland Museum of Art holds several other watercolors by Burchfield.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Many visitors to Cleveland describe the museum as worth a visit.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Each year, more people view the online image of <em>Spring Evening</em> than visit the Cleveland Museum of Art in person.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>Spring Evening</em> has been praised by some art critics for its delicate handling of light.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. If more people view <em>Spring Evening</em> online than visit the entire museum in person, that directly supports the claim that putting a work online increases the number of people who experience it.</p><p>Choice A is incorrect; the number of works the museum holds does not address audience size from online access. Choice B is incorrect; opinions about the museum's overall worth do not address online access to specific works. Choice D is incorrect; praise from critics does not measure how many people experience the work.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "58a71e06-s1",
+  "originalId": "58a71e06",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Of 600,000 erasers, 432,000 are pink. What percentage of the erasers are pink?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>72%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>28%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>82%</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The percentage is (432,000 \u00f7 600,000) \u00d7 100 = 0.72 \u00d7 100 = 72%.</p><p>Choice A is incorrect. This is the percent of erasers that are NOT pink, written incorrectly.</p><p>Choice C is incorrect. This is the percent of erasers that are NOT pink.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A2.T1.easy"
+}

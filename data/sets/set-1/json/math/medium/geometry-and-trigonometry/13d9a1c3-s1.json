@@ -1,0 +1,22 @@
+{
+  "questionId": "13d9a1c3-s1",
+  "originalId": "13d9a1c3",
+  "templateId": "right-triangles-and-trigonometry.misc.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, one of the non-right angles measures <math><mn>30</mn><mo>&#176;</mo></math>. The length of the hypotenuse is <math><mn>14</mn></math>. What is the length of the side opposite the <math><mn>30</mn><mo>&#176;</mo></math> angle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The correct answer is 7. In a 30-60-90 right triangle, the side opposite the 30° angle is half the length of the hypotenuse. So the side opposite the 30° angle has length 14/2 = 7.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z"
+}

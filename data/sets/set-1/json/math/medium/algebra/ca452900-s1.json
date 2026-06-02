@@ -1,0 +1,24 @@
+{
+  "questionId": "ca452900-s1",
+  "originalId": "ca452900",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>What is the slope of the graph of y = (3x/7) - 14 in the <em>xy</em>-plane?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3/7",
+    ".4285",
+    ".4286"
+  ],
+  "rationale": "<p>The given equation is in slope-intercept form y = mx + b, where m is the slope. Here m = 3/7, so the slope of the graph is 3/7 (approximately 0.4286).</p>",
+  "templateId": "linear-equations-in-two-variables.A5.T10.medium"
+}

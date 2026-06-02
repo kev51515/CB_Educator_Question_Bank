@@ -1,0 +1,39 @@
+{
+  "questionId": "dcca0dfc-s1",
+  "originalId": "dcca0dfc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Hilary Mantel&rsquo;s 2009 novel <em>Wolf Hall</em>. The narrator is describing Stephen Gardiner, a senior advisor at the court of King Henry VIII.</p><blockquote><p>Gardiner came into the council chamber with the brisk, weary expression of a man who has already won an argument that no one else has yet been told they are having. He took his seat without greeting and laid out his papers as though placing pieces on a board, slow and certain. When he finally looked up, it was with the practiced patience of someone who had decided in advance to be unsurprised by whatever the others might say. Even before he spoke, the room seemed to have been arranged to suit him.</p></blockquote>",
+  "stem": "<p>Based on the text, which choice best describes Stephen Gardiner?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>He is overconfident in his political abilities and routinely misjudges the moods of his fellow advisors.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>He projects a calculated, controlled authority that shapes the council chamber&rsquo;s atmosphere even before he has spoken.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>He is preoccupied with the appearance of authority and ignores the substance of the council&rsquo;s deliberations.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>He resents the other council members and conceals that resentment behind a polite but cold demeanor.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The narrator describes Gardiner as already certain of his argument, deliberate in placing his papers, and practiced in being unsurprised&mdash;and notes that even before he speaks, the room seems arranged to suit him. The description portrays a man whose calculated authority shapes the chamber.</p><p>Choice A is incorrect because the text portrays Gardiner as confident and in control, not as misjudging others. Choice C is incorrect because the text doesn&rsquo;t suggest he ignores the substance. Choice D is incorrect because the text emphasizes control rather than resentment.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T8.medium"
+}

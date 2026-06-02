@@ -1,0 +1,39 @@
+{
+  "questionId": "a4f50d30-s1",
+  "originalId": "a4f50d30",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Scientists previously believed that all giraffes belonged to a single species, but a team led by geneticist Axel Janke proved this idea wrong by <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> through DNA analysis that there are in fact four distinct species of giraffes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>pretending</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>complaining</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>showing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>requiring</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"showing\" through DNA analysis matches how scientists prove a scientific claim. Choice A is incorrect because pretending is false. Choice B is incorrect because complaining isn’t a research action. Choice D is incorrect because requiring doesn’t fit proving a claim.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

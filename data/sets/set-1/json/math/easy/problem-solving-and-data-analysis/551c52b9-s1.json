@@ -1,0 +1,39 @@
+{
+  "questionId": "551c52b9-s1",
+  "originalId": "551c52b9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A worker earns <em>r</em> dollars for every <em>t</em> hours of work. Which expression represents the amount of money, in dollars, the worker earns for 24<em>t</em> hours of work?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>r/24</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>24r</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>r + 24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>r \u2212 24</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The worker earns r dollars per t hours. For 24t hours (which is 24 times t hours), the worker earns 24 \u00d7 r = 24r dollars.</p><p>Choice A is incorrect; it divides r by 24. Choices C and D are incorrect; they treat the relationship as additive rather than multiplicative.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.easy"
+}

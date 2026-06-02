@@ -1,0 +1,39 @@
+{
+  "questionId": "bc1b8a42-s1",
+  "originalId": "bc1b8a42",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Percentage of Playgrounds with Shade in a County by Areas&rsquo; Highest Average Summer Surface Temperature</caption><thead><tr><th>Highest average surface temperature (Fahrenheit)</th><th>Percentage of playgrounds with shade</th></tr></thead><tbody><tr><td>below 100&deg;</td><td>85%</td></tr><tr><td>100&deg;&ndash;110&deg;</td><td>62%</td></tr><tr><td>110&deg;&ndash;120&deg;</td><td>34%</td></tr><tr><td>above 120&deg;</td><td>22%</td></tr></tbody></table></figure><p>A student looking at the table claimed that, in this county, hotter areas have fewer shaded playgrounds. In areas where the highest average summer surface temperature was 110&deg;&ndash;120&deg; Fahrenheit, ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>62%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>85%.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>34%.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>22%.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the table shows 34% of playgrounds in 110&deg;&ndash;120&deg; areas have shade, supporting the student&rsquo;s claim that hotter areas have fewer shaded playgrounds.</p><p>Choice A is incorrect: 62% corresponds to 100&deg;&ndash;110&deg; areas. Choice B is incorrect: 85% corresponds to areas below 100&deg;. Choice D is incorrect: 22% corresponds to areas above 120&deg;.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "bd45df49-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium", "verdict": "ok"},
+  {"id": "1b1deebe-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.hard", "verdict": "ok"},
+  {"id": "14360f84-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "f03465dc-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T12.hard", "verdict": "ok"},
+  {"id": "d1b66ae6-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard", "verdict": "difficulty_drift", "detail": "T2.hard requires large/non-coprime coefficients or fractional solution or combined-expression target (e.g., xy, 30x). Clone uses small integer coefficients (2,3,4,-1), asks for y directly, integer solution — matches easy/medium characteristics, not hard."},
+  {"id": "58477a6c-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard", "verdict": "ok"},
+  {"id": "45a534d0-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "1362ccde-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard", "verdict": "difficulty_drift", "detail": "T3.hard requires non-obvious combined expression with shortcut via sum/difference of equations, or grouped compound variables, or fractional/large coefficients. Clone uses simple substitution on integer system asking x-y — matches medium characteristics."},
+  {"id": "27f5fff3-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard", "verdict": "type_drift", "detail": "T8 requires the stem to ask how many solutions (categorical: 0/1/infinite). Clone asks for the intersection coordinates (6,2) — that is an A1/A3 task (solve system / read graph), not solution-counting. Violates T8 must_preserve: 'answer is a categorical choice about solution count'."},
+  {"id": "3a84f885-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "571174f3-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "e1248a5c-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "797a81fb-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard", "verdict": "ok"},
+  {"id": "52cb8ea4-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard", "verdict": "difficulty_drift", "detail": "T3.hard requires non-obvious combined expression admitting elimination shortcut, compound-variable grouping, or fractional/large coefficients. Clone has small integer coefficients, asks for x+y — fits T3.medium ('asked expression is a small multiple/sum')."},
+  {"id": "36fd6752-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "5e08a055-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard", "verdict": "ok"},
+  {"id": "1e11190a-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard", "verdict": "ok"},
+  {"id": "4f1342d6-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard", "verdict": "difficulty_drift", "detail": "T5.hard requires mixture/weighted-percent, two parallel scenarios, or rate×time setup requiring back-conversion. Clone is a simple sum+ratio word problem (May/June sales) reducing to one linear equation in one variable — matches T5.medium ('one relationship is a ratio and one is a sum')."},
+  {"id": "466b87e3-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "e2e3942f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard", "verdict": "ok"}
+]

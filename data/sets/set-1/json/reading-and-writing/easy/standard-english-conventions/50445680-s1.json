@@ -1,0 +1,39 @@
+{
+  "questionId": "50445680-s1",
+  "originalId": "50445680",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In autumn, the diet of Eurasian red squirrels in northern forests depends more on what is available than on what they prefer. Although the squirrels favor pine seeds and hazelnuts, those food sources may be scarce because of poor cone crops, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the squirrels to forage for fungi and lichens in the surrounding undergrowth.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>compels</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>to compel</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>compelling</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>compelled</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The convention being tested is the use of nonfinite verb forms. The present participle &ldquo;compelling&rdquo; correctly forms a participial phrase that supplements the main clause and describes a consequence of the food shortage.</p><p>Choice A creates a comma splice (two independent clauses joined only by a comma). Choice B (to-infinitive) is ungrammatical here. Choice D (past participle) would suggest a passive sense incompatible with the squirrels as the agents of foraging.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

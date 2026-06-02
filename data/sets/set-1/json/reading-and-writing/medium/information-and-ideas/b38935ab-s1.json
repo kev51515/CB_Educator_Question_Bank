@@ -1,0 +1,25 @@
+{
+  "questionId": "b38935ab-s1",
+  "originalId": "b38935ab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Historians regard the reign of the Bagrationi dynasty as decisive in the consolidation of medieval Georgia. However, some draw a sharp line between members of the dynasty like Queen Tamar, whose rule from 1184 to 1213 CE is documented by multiple court chronicles, and less well-attested figures like King Adarnase, who is said to have ruled in the 9th century but whose historical existence remains contested. Adarnase appears in <em>The Life of Kartli</em>, a Georgian chronicle compiled between 1207 and 1213. However, the chronicle&rsquo;s account of Adarnase relies on legendary material, unlike its records of later monarchs.</p>",
+  "stem": "<p>According to the text, what is a difference between how historians view Adarnase and how they view Queen Tamar?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Historians believe that <em>The Life of Kartli</em> provides more evidence for Adarnase&rsquo;s existence than it does for Queen Tamar&rsquo;s existence.</p>"},
+    {"id": "b", "content": "<p>Historians find the legendary accounts of Queen Tamar more credible than similar accounts of Adarnase.</p>"},
+    {"id": "c", "content": "<p>Historians agree that Queen Tamar existed but disagree about whether Adarnase did.</p>"},
+    {"id": "d", "content": "<p>Historians agree that Adarnase ruled Georgia much later than Queen Tamar did.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text contrasts Queen Tamar, whose reign is documented by multiple chronicles, with Adarnase, whose historical existence remains contested and is supported only by legendary material. That contrast supports the claim that historians agree Tamar existed but disagree about Adarnase.</p><p>Choice A is incorrect because the text describes the chronicle&rsquo;s account of Adarnase as legendary, not as stronger than its records of later monarchs. Choice B is incorrect because the text discusses only legendary material about Adarnase, not legendary accounts of Tamar. Choice D is incorrect because the 9th century is far earlier than the 12th–13th century — Adarnase ruled before Tamar, not after.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

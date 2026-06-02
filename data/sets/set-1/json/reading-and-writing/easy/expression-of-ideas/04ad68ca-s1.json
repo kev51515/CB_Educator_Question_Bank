@@ -1,0 +1,25 @@
+{
+  "questionId": "04ad68ca-s1",
+  "originalId": "04ad68ca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In Roman engineering, the arch is a curved structure that helps support a building's weight. Before the development of the arch, Roman builders had to use closely spaced columns to hold up heavy roofs, but the introduction of the arch eliminated this need. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Roman buildings could be constructed with wider, more open interior spaces.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Nevertheless,</p>"},
+    {"id": "c", "content": "<p>Similarly,</p>"},
+    {"id": "d", "content": "<p>As a result,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"As a result\" logically signals that the wider, more open interior spaces in this sentence were a result of the introduction of the arch in the previous sentence.</p><p>Choice A is incorrect because \"for instance\" illogically signals that this sentence is an example supporting the previous statement. Instead, the wider interiors were a result of the arch's introduction. Choice B is incorrect because \"nevertheless\" illogically signals that the wider interiors occurred despite the introduction of the arch. Instead, they were a result of that introduction. Choice C is incorrect because \"similarly\" illogically signals that the wider interiors are similar to the introduction of the arch. Instead, they were a result of it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

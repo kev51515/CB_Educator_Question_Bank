@@ -1,0 +1,409 @@
+{
+  "section": "Math",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Circles",
+  "originals_count": 53,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Standard form: read and write",
+      "description": "Translate directly between the standard form (x-h)^2 + (y-k)^2 = r^2 and its geometric data (center, radius/diameter, points on the circle). No completing the square is required; the equation is already in standard form.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 keeps the equation in standard form already; A2 requires algebraic restructuring (complete the square, translate, scale, or rewrite into/from general form) before the geometry can be read.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Read center/radius from standard form",
+          "description": "Stem gives an equation already in (x-h)^2 + (y-k)^2 = r^2 form and asks for the center, radius, or diameter directly.",
+          "core_skill_demand": "Identify h, k, and r^2 from the standard form and report the center (h,k), radius sqrt(r^2), or diameter 2*sqrt(r^2).",
+          "example_originals": ["d03e29f1", "5011b039", "fc8aa563", "aa2d36fe", "ab176ad6", "b0a72bdc"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["r^2 is a perfect square (e.g., 81)", "integer h, k", "asks for radius only"],
+              "example_stem": "(x-6)^2 + (y-3)^2 = 81. What is the radius?",
+              "example_ids": ["d03e29f1"]
+            },
+            "medium": {
+              "characteristics": ["negative h or k inside the binomials so sign-flip needed", "r^2 may be non-square (e.g., 169) but still simple integer root", "asks for center coordinates or radius"],
+              "example_stem": "(x+2)^2 + (y+5)^2 = 169. What is the radius?",
+              "example_ids": ["5011b039", "fc8aa563", "aa2d36fe"]
+            },
+            "hard": {
+              "characteristics": ["r^2 is non-perfect square requiring sqrt simplification, OR the requested quantity is the diameter (extra step)", "may include a parameter (k) in the equation that must be carried through symbolically"],
+              "example_stem": "(x-5)^2 + (y-3)^2 = 16. What is the diameter?",
+              "example_ids": ["b0a72bdc", "ab176ad6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["equation already in standard form", "single direct read (no algebra to rearrange)"],
+            "must_vary": ["sign and magnitude of h, k", "value of r^2", "which quantity is asked (center vs radius vs diameter)"],
+            "common_bugs": ["sign error: writing center as (-h,-k) when equation is (x-h)^2+(y-k)^2", "confusing r with r^2 when r^2 is a perfect square", "reporting diameter when radius is asked or vice versa"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Write equation from given features",
+          "description": "Stem gives a center plus a radius (or a point on the circle, or diameter endpoints) and asks which standard-form equation represents the circle.",
+          "core_skill_demand": "Determine h, k, and r^2 from the supplied geometry, then assemble (x-h)^2 + (y-k)^2 = r^2 with correct signs.",
+          "example_originals": ["82c8325f", "856372ca", "2855cb58", "c447367f", "ebbf23ae"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["center has small positive integer coordinates", "radius given numerically"],
+              "example_stem": "Center (3, 4), radius 5. Write the equation.",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["center has at least one negative coordinate", "radius is integer or radius must be computed from one given point using distance formula"],
+              "example_stem": "Center (-4, 5); point (-8, 8) lies on the circle. Which equation represents the circle?",
+              "example_ids": ["82c8325f", "856372ca"]
+            },
+            "hard": {
+              "characteristics": ["radius given as a symbolic parameter (e.g., 7k or 9k) so r^2 must be expanded symbolically (49k^2)", "OR radius must be derived from diameter endpoints (midpoint for center, half-length for r)"],
+              "example_stem": "Center (16,17), radius 7k. Which equation represents the circle?",
+              "example_ids": ["2855cb58", "c447367f", "ebbf23ae"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["distractors that flip signs of h or k and that swap r vs r^2", "the question still asks for the equation (not a feature of it)"],
+            "must_vary": ["whether the radius is given directly, via a point on the circle, or via diameter endpoints", "sign and magnitude of center coordinates"],
+            "common_bugs": ["squaring a symbolic radius incorrectly (7k -> 7k^2 instead of 49k^2)", "midpoint vs endpoint confusion when diameter endpoints are given", "writing (x+h)^2 instead of (x-h)^2 for a center with positive h"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Point on/inside the circle",
+          "description": "Stem gives a standard-form equation and a point with a missing coordinate or asks which of several candidate points lies on, inside, or outside the circle.",
+          "core_skill_demand": "Substitute candidate coordinates into the standard-form equation and compare the LHS to r^2 (equal = on, less = inside, greater = outside), or solve for the missing coordinate that satisfies the equation.",
+          "example_originals": ["b96ff36e", "e50afdd3", "acd30391"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["candidate point is the center or a cardinal point (h±r, k)"],
+              "example_stem": "Does (3,0) lie on x^2+y^2=9?",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["one coordinate of a point on the circle is missing and equals k (so y - k = 0 at x = h+r), making substitution shortcut available"],
+              "example_stem": "The point (6,c) lies on (x-3)^2+(y-5)^2=9. Find c.",
+              "example_ids": ["b96ff36e"]
+            },
+            "hard": {
+              "characteristics": ["multiple candidate values must each be checked against an inequality (interior/exterior)", "OR the question asks for a possible coordinate so the student must consider the allowed range a in [h-r, h+r]"],
+              "example_stem": "(x+4)^2+(y-19)^2=121. Point (a,b) lies on the circle. Which is a possible value of a?",
+              "example_ids": ["e50afdd3", "acd30391"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["use of the standard-form equation as the constraint", "the substitution/inequality reasoning"],
+            "must_vary": ["which coordinate is missing, or whether the question asks 'on', 'inside', or 'NOT inside'", "magnitude of r relative to the candidate values"],
+            "common_bugs": ["forgetting the ± when solving for a missing coordinate (giving only one solution to a quadratic)", "off-by-one with strict vs non-strict interior (boundary points)", "misreading NOT in the stem and choosing an interior point"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Equation manipulation: general form, translations, scaling",
+      "description": "Recover or modify the standard form when the equation is given in general (expanded) form, or when the circle is shifted/scaled. Requires algebraic restructuring before geometric properties can be read.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that A2 requires at least one algebraic step (complete the square, expand, translate the center, double the radius) before any (h,k,r) reading; A1 is a direct read. A2 differs from A5 in that A2 stays inside circle-equation algebra, with no triangle/tangent geometry.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Complete the square / general form",
+          "description": "Equation is given in expanded/general form (Ax^2+Ay^2+Bx+Cy+D=0 or similar); student must group, complete the square, and read center or radius (or recover a, b, c).",
+          "core_skill_demand": "Group x-terms and y-terms, divide out a leading coefficient if present, complete the square on each variable, and identify h, k, r^2; or run the process in reverse to find a constant in the general form.",
+          "example_originals": ["ee540927", "6585d841", "76c73dbf", "9e44284b", "2266984b", "89661424"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["only one variable has a linear term (e.g., x^2+58x+y^2=0)", "leading coefficients already 1", "asks for center only"],
+              "example_stem": "x^2+58x+y^2=0. What is the center?",
+              "example_ids": ["ee540927"]
+            },
+            "medium": {
+              "characteristics": ["both variables have linear terms but small integer coefficients", "leading coefficients 1", "constant moved to RHS"],
+              "example_stem": "x^2+14x+y^2-6y=109. What is the radius?",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["leading coefficient ≠ 1 requires dividing whole equation first (e.g., 2x^2+...)", "OR linear coefficient is odd so completed square introduces a fraction (e.g., x^2+x+y^2+y=199/2)", "OR question asks for an embedded constant (the 'c' in x^2+y^2+ax+by+c=0)"],
+              "example_stem": "2x^2 - 6x + 2y^2 + 2y = 45. What is the radius?",
+              "example_ids": ["6585d841", "76c73dbf", "9e44284b", "2266984b", "89661424"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["equation in non-standard (expanded) form requiring completion of the square", "exactly one numerical answer (no parameters left)"],
+            "must_vary": ["which feature is asked (center, radius, embedded constant)", "whether leading coefficient is 1 or must be divided out", "parity of linear coefficients (drives whether fractions arise)"],
+            "common_bugs": ["forgetting to divide the RHS when removing a leading coefficient", "adding (b/2)^2 to the LHS only, not to RHS", "leaving r^2 instead of r when the stem asks for the radius"]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Translation and radius scaling",
+          "description": "A reference circle equation is given; a second circle is described as a translation (shift) and/or a radius scaling (e.g., 'twice the radius') of the first. Student must write the new equation or extract a feature.",
+          "core_skill_demand": "Apply geometric transformations to (h,k,r): translations shift h or k; radius doubling multiplies r^2 by 4. Combine these into the new standard form and read off the requested quantity.",
+          "example_originals": ["9acd101f", "e80d62c6", "fa2771d5", "1b2b20b9", "a38c0183", "6b4707aa", "b8a225ff"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["pure horizontal or vertical translation by a small integer", "asks for the new equation directly"],
+              "example_stem": "Shift x^2+y^2=9 right 2 units. Write the new equation.",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["translation by a small integer in one direction, original center already not at origin"],
+              "example_stem": "Shift (x+5)^2+(y-5)^2=25 right 3 units.",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["radius scaling (e.g., 'twice the radius') so r^2 changes by factor 4 — easy to forget to square the scale factor", "OR the question hides the result inside a coefficient (e.g., 2(x+2)^2 + 2y^2 = ?) by also scaling the equation form", "OR the question asks for an extracted numeric (just the new constant on the RHS) rather than the full equation"],
+              "example_stem": "Circle A: (x+5)^2+(y-5)^2=25. Circle B has the same center but twice the radius. The equation for B is (x+5)^2+(y-5)^2=___.",
+              "example_ids": ["6b4707aa", "b8a225ff", "a38c0183", "1b2b20b9", "9acd101f", "e80d62c6", "fa2771d5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a reference circle equation plus a transformation rule that produces the second circle", "the resulting form is still standard form"],
+            "must_vary": ["transformation type (horizontal shift, vertical shift, radius scaling, or combinations)", "whether the answer is the full equation or a single numeric piece"],
+            "common_bugs": ["doubling the radius but only doubling r^2 (forgot to square the factor)", "shifting down by k but writing (y - k) instead of (y + k)", "applying the transformation to (x-h) instead of to h alone"]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Special-point properties (tangent to axis, diameter endpoints)",
+          "description": "Stem describes a geometric property of the circle that constrains its equation — intersecting an axis at exactly one point (tangent), or one endpoint of a diameter — and asks for the matching equation or the other endpoint.",
+          "core_skill_demand": "Translate the geometric condition into an algebraic constraint (distance from center to axis equals radius; or center is the midpoint of the diameter) and pick / compute the answer.",
+          "example_originals": ["9d159400", "981275d2"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["circle visibly tangent to one axis with simple integers"],
+              "example_stem": "Which circle is tangent to the x-axis at (0,3)?",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["one direct condition (one endpoint plus center, find the other endpoint of the diameter)"],
+              "example_stem": "Diameter PQ has P=(10,-5); center is (6,-5). Find Q.",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["condition is 'intersects y-axis at exactly one point' so student must check |h| = r among four equations", "OR the diameter endpoint problem hides the center inside a general-form equation that must first be simplified"],
+              "example_stem": "Which equation represents a circle that intersects the y-axis at exactly one point?",
+              "example_ids": ["9d159400", "981275d2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a geometric property serving as the equation constraint", "candidates that differ only in h, k, or r^2"],
+            "must_vary": ["which axis is tangent, or which endpoint of a diameter is missing", "which feature is asked (equation vs missing endpoint)"],
+            "common_bugs": ["using |k| = r instead of |h| = r when checking tangency to the y-axis", "treating P as the center instead of as an endpoint", "double-counting the offset when reflecting through the center"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Arc length, central angle, circumference",
+      "description": "Reason proportionally between a central angle (in degrees, radians, or fraction of a full turn) and the arc length / fraction of circumference it subtends, possibly together with the radius.",
+      "boundary_with_other_aspects": "A3 differs from A4 in that A3 keeps the angle attached to a physical arc on a specific circle (length depends on radius); A4 manipulates angle measures and trig values in the abstract. A3 differs from A5 in that A3 uses no tangent lines, chords, or inscribed triangles — only arcs/sectors.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Arc-circumference proportion",
+          "description": "Stem provides any two of {arc length, circumference, radius, central angle (deg or fraction)}; student must use arc/circumference = angle/360° (or = arc-fraction) to find the missing piece.",
+          "core_skill_demand": "Set up arc/circumference = θ/360 (or equivalent radian relation s = rθ) and solve for the unknown, possibly after first finding the circumference from radius or from a sum of arcs.",
+          "example_originals": ["23c5fcce", "800e71b8", "ca2235f6", "c8345903", "69b0d79d", "fb58c0db", "0815a5af"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["central angle is a 'nice' fraction of 360° (e.g., a quarter)", "circumference given directly", "single-step proportion"],
+              "example_stem": "Circumference 36; minor arc subtends 90°. Find the arc length.",
+              "example_ids": ["23c5fcce"]
+            },
+            "medium": {
+              "characteristics": ["circumference must be assembled by adding minor + major arc, or by deriving from intersecting diameters / radius", "central angle is still an integer degree or simple fraction"],
+              "example_stem": "Minor arc MN = 39 cm; major arc MPN = 195 cm. Find the circumference.",
+              "example_ids": ["800e71b8", "0815a5af"]
+            },
+            "hard": {
+              "characteristics": ["central angle given via an inscribed/isosceles construction (so student must first convert to central angle)", "OR the answer is a fraction of the circumference rather than an explicit length", "OR mixed-units (degrees in stem, π-radian answer)"],
+              "example_stem": "Arc AB = 3 in, central angle 45°. Find the circumference.",
+              "example_ids": ["ca2235f6", "c8345903", "69b0d79d", "fb58c0db"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["arc-fraction / proportion structure", "central angle paired with arc on a specific circle"],
+            "must_vary": ["which quantity is unknown (arc, angle, circumference, radius, or fraction)", "units of the angle (degrees vs radians vs fraction)"],
+            "common_bugs": ["multiplying by π unnecessarily when the angle is already in radians", "using diameter in place of radius (or vice versa) in s = rθ", "subtracting major from total instead of adding minor+major to get circumference"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Angle measure conversion and trig values",
+      "description": "Convert between degrees and radians, evaluate trig functions at large or non-standard angles using coterminal reduction and the unit circle, or relate degree and radian measures within a single problem.",
+      "boundary_with_other_aspects": "A4 differs from A3 in that A4 manipulates angles or trig values in the abstract — no arc length, no specific circle radius enters the answer. A4 differs from A1/A2 in that it has no equation of a circle to read or rewrite.",
+      "types": [
+        {
+          "id": "T8",
+          "name": "Trig value at large/coterminal angle",
+          "description": "Stem asks for sin, cos, or tan of a large multiple of π (or an angle expressed as a multi-revolution radian measure); student must reduce by 2π and evaluate at a unit-circle reference angle.",
+          "core_skill_demand": "Reduce the angle modulo 2π to a reference angle in [0, 2π) (or by symmetry to [0, π/2]), determine the correct sign from the quadrant, and read the exact trig value from the unit circle.",
+          "example_originals": ["f2495de4", "1efd7ef3", "244ff6c4", "35d37640"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["denominator divides evenly with small numerator after reduction (e.g., 565π/6 -> π/6 family)", "function is cosine or sine of a 'nice' reference angle"],
+              "example_stem": "What is the value of cos(565π/6)?",
+              "example_ids": ["f2495de4"]
+            },
+            "medium": {
+              "characteristics": ["integer multiple of π (so answer is 0, ±1)", "single reduction step"],
+              "example_stem": "What is the value of sin(42π)?",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["tangent (so sign matters more, and denominators 3, 6 yield √3/3 type answers)", "OR the angle is described indirectly via a configuration on the unit circle (point coordinates) that must be converted into an angle measure first"],
+              "example_stem": "What is the value of tan(92π/3)?",
+              "example_ids": ["1efd7ef3", "244ff6c4", "35d37640"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a single trig function applied to one angle expression", "answer is an exact unit-circle value (0, ±1, ±1/2, ±√2/2, ±√3/2, ±√3, ±√3/3)"],
+            "must_vary": ["function (sin/cos/tan)", "size of the multiplier and denominator", "quadrant of the reduced angle (controls sign)"],
+            "common_bugs": ["reducing modulo π instead of 2π and getting the wrong sign", "forgetting tangent has period π (not 2π) and over-reducing", "mishandling negative quotients when the numerator is a large integer times π"]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Degree-radian conversion / combined angles",
+          "description": "Stem gives an angle in one unit and asks for it in the other, or composes two angles given in mixed units and asks for the result, or relates a central angle to an arc-measure equivalence.",
+          "core_skill_demand": "Use the conversion factor π rad = 180° to convert; when angles are combined, convert to a common unit first, add or subtract, and report in the requested unit.",
+          "example_originals": ["2d521ca9", "74d8b897", "8e7689e0", "a0cacec1", "f1c1e971", "95ba2d09", "249d3f80"],
+          "frequency": { "easy": 0, "medium": 6, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one of {30°, 45°, 60°, 90°, 180°, 360°} to radians (or vice versa)", "answer is a single π-rational"],
+              "example_stem": "60° in radians.",
+              "example_ids": ["2d521ca9"]
+            },
+            "medium": {
+              "characteristics": ["unusual numerator/denominator (9π/20, 16π/15) so cancellation matters", "OR answer is requested as 'a' in a·π form, requiring the student to extract the coefficient", "OR a small angle figure with two equal known central angles requires subtracting from 180° before converting"],
+              "example_stem": "9π/20 radians = ? degrees.",
+              "example_ids": ["74d8b897", "8e7689e0", "a0cacec1", "f1c1e971", "95ba2d09"]
+            },
+            "hard": {
+              "characteristics": ["uses the central-angle = arc-measure equivalence (in degrees), a one-line concept that students often overthink", "OR mixes a degree angle and a radian angle inside the same expression and asks for the final result in a third form"],
+              "example_stem": "Arc RS measures 100°; find the measure of central angle ROS, in degrees.",
+              "example_ids": ["249d3f80"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit unit (degrees vs radians) on both input and requested output", "no dependence on a specific radius"],
+            "must_vary": ["direction of the conversion", "whether the stem mixes units, asks for a coefficient of π, or invokes arc-measure equivalence"],
+            "common_bugs": ["multiplying by 180/π when going from degrees to radians (direction inverted)", "treating the coefficient a in a·π as the full radian measure", "forgetting to simplify the resulting fraction"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Tangent, chord, and inscribed-triangle properties",
+      "description": "Use circle-specific Euclidean facts — radius perpendicular to tangent at the point of tangency, all radii equal so a triangle formed by two radii is isosceles — to compute lengths, slopes, or angles.",
+      "boundary_with_other_aspects": "A5 differs from A1/A2 in that the standard-form equation, if present, is supporting context; the main work is Euclidean geometry on triangles, tangents, and chords. A5 differs from A3 in that the figures involve straight segments (chords, tangents, radii), not arcs.",
+      "types": [
+        {
+          "id": "T10",
+          "name": "Tangent length / radius right-angle setup",
+          "description": "Two tangent segments meet at an external point (or one tangent and one chord meet a radius at a right angle); the figure (often a quadrilateral or right triangle) has a known perimeter or side, and a tangent/chord length is requested.",
+          "core_skill_demand": "Use the fact that the radius is perpendicular to the tangent at the point of tangency to identify right angles, recognize equal tangent segments from a common external point, and apply perimeter/Pythagorean reasoning to extract the unknown length.",
+          "example_originals": ["0acfddb5", "196e8e6e"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["one tangent and one radius, classic right triangle with given hypotenuse"],
+              "example_stem": "Radius 5, tangent length 12. Find the distance to the external point.",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["two tangents from external point, quadrilateral perimeter given, radii numerical"],
+              "example_stem": "GM, GN are radii; HM, HN tangent. Perimeter of GMHN = P. Find HM.",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["large numerical values that obscure the structure (radius 168, perimeter 3856)", "OR a right angle is between two radii (ACB right) so chord AB is the hypotenuse of an isosceles right triangle"],
+              "example_stem": "Radius 168, perimeter of quadrilateral GMHN = 3856. Find HM.",
+              "example_ids": ["0acfddb5", "196e8e6e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["right-angle relationship between a tangent and a radius (or two radii meeting at a right angle)", "the unknown is a length, not an angle"],
+            "must_vary": ["which length is given vs unknown", "numerical scale (small vs large radius)"],
+            "common_bugs": ["forgetting the two tangent segments from a common external point are equal (perimeter then mis-split)", "treating the chord like the diameter when the central angle is not 180°", "applying Pythagorean theorem with radius as hypotenuse instead of leg"]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Tangent line slope / point on tangent",
+          "description": "A circle is given with its center, and a tangent line touches the circle at a specific point. Student must find the slope of the tangent line or identify another point on it.",
+          "core_skill_demand": "Compute the slope from the center to the point of tangency; the tangent line at that point is perpendicular, so its slope is the negative reciprocal. Use point-slope to check additional candidate points.",
+          "example_originals": ["3e577e4a", "858fd1cf"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["center at origin, tangent at an axis-aligned point so slope is 0 or undefined"],
+              "example_stem": "Tangent to x^2+y^2=25 at (5,0). Slope?",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["both center and point of tangency have integer coordinates, slope a small rational", "asks only for the slope"],
+              "example_stem": "Center (-4,-6), tangent at (-7,-7). Slope of tangent?",
+              "example_ids": ["3e577e4a"]
+            },
+            "hard": {
+              "characteristics": ["question asks which of four points also lies on the tangent line (so student must build the tangent equation, not just compute slope)", "OR slope reduces to require careful sign handling with negatives"],
+              "example_stem": "Center (-1,1), tangent at (5,-4). Which point also lies on the tangent line?",
+              "example_ids": ["858fd1cf"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["radius-perpendicular-to-tangent relationship", "tangent point given explicitly"],
+            "must_vary": ["whether the question asks for slope, equation, or another point on the tangent", "sign and magnitude of coordinates"],
+            "common_bugs": ["using the radius slope itself instead of the negative reciprocal", "sign error when taking negative reciprocal of a negative slope", "plugging a candidate point into the circle equation instead of the tangent equation"]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Isosceles triangle from two radii",
+          "description": "Two radii to points on the circle plus the chord between them form an isosceles triangle. The student must compute a base angle from the apex angle, or compute the chord length from the perimeter (or vice versa).",
+          "core_skill_demand": "Recognize OR ≅ OS (both radii), invoke isosceles base-angle theorem to get base angles = (180 − apex)/2, or set up perimeter = 2r + chord to solve for the chord.",
+          "example_originals": ["24cec8d1", "9adb86ed"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["apex angle a 'nice' value (60° or 90°)"],
+              "example_stem": "Apex angle 60° at center; find a base angle.",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["apex angle integer non-special, base-angle formula required"],
+              "example_stem": "ROS = 88°; find ORS or OSR.",
+              "example_ids": ["24cec8d1"]
+            },
+            "hard": {
+              "characteristics": ["perimeter of triangle given; student must subtract 2r from perimeter to get chord, distinguishing chord from a leg", "OR distractors include the apex-angle value to tempt students who don't apply the isosceles property"],
+              "example_stem": "Radius 9, perimeter of triangle PQR = 31. Find QR.",
+              "example_ids": ["9adb86ed"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a triangle formed by two radii and a chord", "use of equal-radii / isosceles property"],
+            "must_vary": ["whether the unknown is an angle (from apex) or a length (chord from perimeter)", "size of the apex angle / perimeter"],
+            "common_bugs": ["treating the triangle as equilateral and reporting apex/3 type values", "computing base angle as 180 − apex (forgetting to divide by 2)", "subtracting only one radius from the perimeter instead of two"]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "All 53 originals fit into exactly one type with no Tn-misc bucket required. Difficulty in this skill is dominated by algebraic restructuring (A2, especially T4 and T5) and by indirectness of the geometric data (A5). Easy items live almost entirely in A1.T1 (direct read) and A4.T9 (one-step conversion); hard items concentrate in A2.T4/T5 (general form, scaling) and across all of A5. Note that A3 and A4 share the underlying degree-radian relation, but A3 always anchors that relation to a specific circle's arc length while A4 keeps angle reasoning circle-agnostic."
+}

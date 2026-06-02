@@ -1,0 +1,549 @@
+{
+  "section": "Math",
+  "domain": "Algebra",
+  "skill": "Linear inequalities in one or two variables",
+  "originals_count": 74,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Translate context to inequality",
+      "description": "The student reads a real-world scenario and selects (or writes) the inequality that algebraically encodes the constraint(s). The answer is an inequality expression, not a number.",
+      "boundary_with_other_aspects": "A1 ends with an inequality as the answer; A2 ends with a numerical max/min derived from solving an inequality. If the question asks 'which inequality represents...' it is A1; if it asks 'what is the maximum/minimum...' it is A2.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Two-variable budget/capacity setup",
+          "description": "A context gives unit costs/weights/counts of two items and a total cap; the student picks the inequality in two variables (e.g., ax + by ≤ C).",
+          "core_skill_demand": "Map each per-item rate to its coefficient, identify the total cap as the right-hand constant, and choose the correct inequality direction (≤ for 'at most/no more than', ≥ for 'at least').",
+          "example_originals": ["00ec9102", "7d6928bd", "84d0d07e", "e744499e", "6daf8d70", "2c121b25"],
+          "frequency": { "easy": 5, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "single ≤ or ≥ constraint",
+                "small whole-number coefficients and a single bound",
+                "no compound or system structure"
+              ],
+              "example_stem": "Leo has $15. Each container costs $1.87 and each tape $2.40. Which inequality represents the relationship between number of containers c and rolls of tape t?",
+              "example_ids": ["00ec9102", "7d6928bd"]
+            },
+            "medium": {
+              "characteristics": [
+                "introduces a second constraint or a 'at most three times' multiplicative relation",
+                "involves comparing two quantities (e.g., a ≤ 3b) alongside a sum cap"
+              ],
+              "example_stem": "A city employee will plant azaleas a and boxwoods b; total ≤ 164 and a ≤ 3b. Which system of inequalities models this?",
+              "example_ids": ["6daf8d70", "e744499e"]
+            },
+            "hard": {
+              "characteristics": [
+                "(rare for this type) typically migrates to A1.T3 when multi-step structure is added"
+              ],
+              "example_stem": "(no pure hard examples; harder context-setup tasks appear under A1.T3.)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "two-variable structure ax + by [op] C",
+              "real-world context giving unit costs/weights/counts for two items",
+              "answer-form is an inequality, not a number"
+            ],
+            "must_vary": [
+              "the two items and their unit values",
+              "the cap and the inequality direction (≤ vs ≥)",
+              "which letter is which item (avoid always x = first noun)"
+            ],
+            "common_bugs": [
+              "swapping coefficients and totals (using cap as a coefficient)",
+              "flipping ≤ to ≥ when paraphrasing 'no more than'",
+              "collapsing the two-variable problem into a one-variable solve (categorical drift to A2)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Range/bound on a single variable",
+          "description": "A context gives a minimum and maximum (or a strict bound) for a single quantity; student selects a compound inequality (a ≤ x ≤ b) or single-sided bound.",
+          "core_skill_demand": "Recognize a 'between/from–to/minimum–maximum' phrasing as a compound inequality and choose strict vs non-strict ends correctly.",
+          "example_originals": ["2869fe95", "842cec4d", "86f7483f", "9e5863bd", "80da233d", "e9ef0e6b", "b64e2c7f", "0ef4a7b6", "f01ef454", "5bf5136d"],
+          "frequency": { "easy": 4, "medium": 4, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "explicit numerical min and max stated in the stem",
+                "single variable, no rate conversion",
+                "answer is a direct compound inequality on the same quantity"
+              ],
+              "example_stem": "Lowest temperature was 31°F and highest was 67°F. Which inequality represents the temperature t?",
+              "example_ids": ["2869fe95", "842cec4d", "86f7483f"]
+            },
+            "medium": {
+              "characteristics": [
+                "requires multiplying the per-unit range by a fixed quantity (e.g., per-day × 365)",
+                "or composing two rates into a single bound on a derived variable",
+                "the bound may use 'more than/less than' (strict)"
+              ],
+              "example_stem": "Elephant weighs 200 lb at birth, gains >2 but <3 lb/day during first year. Inequality for weight w 365 days after birth?",
+              "example_ids": ["80da233d", "9e5863bd", "e9ef0e6b"]
+            },
+            "hard": {
+              "characteristics": [
+                "applies a theorem/derived structural rule (e.g., triangle inequality) to produce the bound",
+                "the bound is implicit, not directly stated"
+              ],
+              "example_stem": "Triangle has sides 6 and 12; which inequality gives possible lengths x of the third side?",
+              "example_ids": ["5bf5136d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "single-variable answer form (a [op] x [op] b)",
+              "real context that fixes both endpoints (or implies them via a rule)"
+            ],
+            "must_vary": [
+              "domain (temperature, distance, height, weight)",
+              "endpoint values and whether endpoints are strict or non-strict"
+            ],
+            "common_bugs": [
+              "using ≤ when stem says 'more than' (strict)",
+              "forgetting to scale per-unit range by the multiplier (medium-difficulty regression)",
+              "writing a single-sided inequality when both bounds are given"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Multi-step contextual setup",
+          "description": "A context with multiple moving parts (rates, base fees, percentages, breakpoints) asks which inequality, when solved, would answer a posed question.",
+          "core_skill_demand": "Build a piecewise/compound algebraic expression for total cost or earnings, then express the 'at least/at most/break-even' condition correctly.",
+          "example_originals": ["df32b09c", "90bd9ef8", "34aca984", "45cfb9de", "fbd5483f", "963da34c", "55ea82f3", "e8f9e117"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "single algebraic combination (e.g., average of four numbers) with one inequality direction"
+              ],
+              "example_stem": "Tom scored 85, 78, 98 on first three exams. Which inequality gives the fourth score G to achieve mean of at least 90?",
+              "example_ids": ["df32b09c"]
+            },
+            "medium": {
+              "characteristics": [
+                "introduces a recurring/per-unit charge plus a one-time fee",
+                "requires comparing two cost expressions (savings break-even)",
+                "answer-form still inequality, not numeric"
+              ],
+              "example_stem": "Geothermal install $25,000; baseline cost $4,334/yr vs new cost $2,712/yr. Which inequality solves for years t at which total spent on new system is less than baseline?",
+              "example_ids": ["90bd9ef8", "34aca984"]
+            },
+            "hard": {
+              "characteristics": [
+                "≥3 quantities/rates and an implicit geometric or counting relation (e.g., perimeter formula, consecutive odd integers)",
+                "requires defining an intermediate quantity (e.g., wait time vs walk time, fourth odd integer = x+6) before writing the inequality"
+              ],
+              "example_stem": "In four consecutive odd integers starting with x, the product of 12 and the fourth is at most 26 less than the sum of the first and third. Which inequality represents this?",
+              "example_ids": ["fbd5483f", "45cfb9de", "963da34c", "55ea82f3", "e8f9e117"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "multi-quantity context requiring construction of a compound expression",
+              "answer is an inequality, not a number"
+            ],
+            "must_vary": [
+              "the domain (cost, geometry, integer-sequence, electrical)",
+              "the inequality direction and the named target variable"
+            ],
+            "common_bugs": [
+              "simplifying the compound expression too far (loss of structure that the answer-options preserve)",
+              "dropping a piecewise/break-even comparison and producing a single-side bound (difficulty regression to T1/T2)",
+              "swapping which side of the inequality the variable lives on (relative to answer options)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Solve inequality for numeric extremum in context",
+      "description": "Given a contextual constraint, the student must solve to obtain a numeric maximum or minimum value (often whole-number) of a variable.",
+      "boundary_with_other_aspects": "A2 returns a number (max/min count, hours, units); A1 returns an inequality. A clone that switches the answer-form is a categorical drift.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Min additional units to reach goal",
+          "description": "A 'have/need' scenario: current quantity is given, goal is given; student computes the minimum additional units needed.",
+          "core_skill_demand": "Set up goal − current = additional, recognize 'at least' as ≥ and round up if integer-constrained, report the smallest integer satisfying.",
+          "example_originals": ["4047cfa7", "4a090a46", "e006209c", "68f2cbaf", "72a5fd28"],
+          "frequency": { "easy": 5, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "direct subtraction goal − current",
+                "small whole numbers, no rate conversion",
+                "answer is a single integer"
+              ],
+              "example_stem": "Geologist needs at least 67 lava samples; has 63. Minimum additional samples?",
+              "example_ids": ["4047cfa7", "4a090a46", "e006209c"]
+            },
+            "medium": {
+              "characteristics": [
+                "one rate conversion (e.g., distance ÷ speed = hours)",
+                "or package-size rounding (ceiling)",
+                "answer is a small whole number after one operation"
+              ],
+              "example_stem": "Need 50 rolls; sold in packs of 12. Minimum packs to buy?",
+              "example_ids": ["68f2cbaf", "72a5fd28"]
+            },
+            "hard": {
+              "characteristics": [
+                "(none in this skill’s bank — harder solves migrate to A2.T2 with multi-rate structure)"
+              ],
+              "example_stem": "(no hard examples in this type.)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "two-quantity 'have/need' structure with explicit threshold",
+              "numerical answer (integer)"
+            ],
+            "must_vary": [
+              "domain (samples, hours, words, miles, packages)",
+              "whether 'minimum' requires ceiling-rounding vs exact subtraction"
+            ],
+            "common_bugs": [
+              "answering with the threshold itself instead of the difference",
+              "forgetting to ceiling-round when integer units are required",
+              "flipping at-least vs at-most direction"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Greatest/least count under budget or capacity",
+          "description": "A budget/capacity constraint with one or more rate terms; student solves for the largest (or smallest) integer value of a count variable.",
+          "core_skill_demand": "Form (rate × count) + fixed ≤ cap, isolate count, take floor (or ceiling), and report the integer.",
+          "example_originals": ["74c98c82", "b78cd5df", "b75f7812", "f02b4509", "f224df07", "dd875c97", "b8e73b5b", "ee2f611f", "ee7b1de1", "03503d49", "6c71f3ec"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "one fixed fee plus one per-unit rate",
+                "small whole-number arithmetic",
+                "single ceiling/floor step"
+              ],
+              "example_stem": "Boat rental $60/hr + $10 safety course; spend no more than $280. Max whole hours?",
+              "example_ids": ["b75f7812"]
+            },
+            "medium": {
+              "characteristics": [
+                "decimal per-unit rate (e.g., $10.25/attendee)",
+                "or two different per-unit rates (e.g., 25-lb crates and 62-lb crates) with one variable fixed by stem",
+                "requires one isolation step and one floor"
+              ],
+              "example_stem": "Onetime fee $35, $10.25 per attendee, budget $200. Greatest number of attendees?",
+              "example_ids": ["74c98c82", "b78cd5df", "f02b4509"]
+            },
+            "hard": {
+              "characteristics": [
+                "two unknown counts with two competing constraints (e.g., budget AND minimum count) requiring algebraic solving of a system",
+                "involves percent overhead (sales tax, commission) before the cap is applied",
+                "requires identifying the binding constraint among multiple"
+              ],
+              "example_stem": "Owner budgets $2,200; must buy ≥200 candles; small $4.90, large $11.60. Maximum large candles purchasable?",
+              "example_ids": ["ee7b1de1", "f224df07", "03503d49", "6c71f3ec", "b8e73b5b", "ee2f611f", "dd875c97"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "numerical (often integer) final answer for a max/min count",
+              "rate × count + fixed cost structure under a cap"
+            ],
+            "must_vary": [
+              "rates, fixed fees, and the cap",
+              "domain (party, shipping, retail, transit)",
+              "which variable is being maximized or minimized"
+            ],
+            "common_bugs": [
+              "rounding the wrong way (ceiling instead of floor) when seeking a max",
+              "treating both unknowns as free when one is constrained by another inequality (drops the system structure)",
+              "forgetting percent overhead (sales tax/commission) before applying the cap (difficulty regression)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Test ordered pair(s) against inequality or system",
+      "description": "Given one or more inequalities, the student determines which ordered pair (or table of pairs) satisfies all of them.",
+      "boundary_with_other_aspects": "A3 keeps the inequality(ies) fixed and varies the candidate points; A4 keeps a point/region fixed and asks which inequality matches a graph; A1 returns an inequality, not a point.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Point satisfies inequality or system",
+          "description": "Given an inequality (or system), pick which ordered pair from four options satisfies it.",
+          "core_skill_demand": "Substitute each candidate (x, y) into every inequality and verify all are simultaneously satisfied.",
+          "example_originals": ["bf5f80c6", "89541f9b", "948087f2", "968e9e51", "cfe67646", "541bef2f", "f2bbd43d", "563407e5"],
+          "frequency": { "easy": 3, "medium": 3, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "single inequality with small integer coefficients",
+                "candidate points have small magnitudes",
+                "could-be answer set is finite and short"
+              ],
+              "example_stem": "Bakery sells trays of 50–60 cookies. Which could be the total on 4 trays?",
+              "example_ids": ["563407e5", "cfe67646", "89541f9b"]
+            },
+            "medium": {
+              "characteristics": [
+                "a system of two inequalities, both must hold",
+                "moderate coefficients and at least one negative slope",
+                "decoys satisfy exactly one of the two inequalities"
+              ],
+              "example_stem": "Which ordered pair satisfies the system y > 14 and 4x + y < 18?",
+              "example_ids": ["948087f2", "968e9e51", "bf5f80c6"]
+            },
+            "hard": {
+              "characteristics": [
+                "system with a partially specified point (one coordinate is symbolic) or asks about a region of valid y-coordinates",
+                "answer requires both elimination of values that fail one inequality and verification on the other"
+              ],
+              "example_stem": "Point (x, 53) satisfies y > 14 and 4x + y < 18 — which x is valid?",
+              "example_ids": ["541bef2f", "f2bbd43d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "candidate pairs as the answer form (or x/y range for partially-specified points)",
+              "the requirement to satisfy every listed inequality simultaneously"
+            ],
+            "must_vary": [
+              "the specific inequalities and the four candidate pairs",
+              "strict vs non-strict boundaries (one of which often is the discriminator)"
+            ],
+            "common_bugs": [
+              "checking only one inequality of a system (false positive on partial match)",
+              "treating strict ‘<’ as ‘≤’ and including a boundary point",
+              "swapping the substituted coordinates (x for y)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Table of (x, y) values all satisfy",
+          "description": "Given a single inequality (e.g., y > 7x − 4), four small tables of (x, y) pairs are offered; pick the table whose every row satisfies the inequality.",
+          "core_skill_demand": "Substitute each row of each table and verify all rows satisfy the inequality for the correct table.",
+          "example_originals": ["6cb9bf45", "d9733ed9", "a049f400", "48fb34c8", "d8539e09", "e723bd67", "f8ff3249", "ecca0603"],
+          "frequency": { "easy": 0, "medium": 4, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(no easy in this bank; entry-level skips this format)"
+              ],
+              "example_stem": "(no easy examples.)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "single inequality with small positive slope (e.g., y > 7x − 4 or y > 4x + 8)",
+                "all candidate rows use small integers",
+                "two rows per table"
+              ],
+              "example_stem": "For y > 7x − 4, which table has all (x, y) as solutions?",
+              "example_ids": ["6cb9bf45", "d9733ed9", "a049f400"]
+            },
+            "hard": {
+              "characteristics": [
+                "larger coefficients (e.g., 13x or 2x − y > 883)",
+                "three rows per table or a system with two inequalities (e.g., y < x and x < 22)",
+                "decoys satisfy most but not all rows"
+              ],
+              "example_stem": "For 2x − y > 883, which table has all rows satisfying the inequality?",
+              "example_ids": ["48fb34c8", "d8539e09", "e723bd67", "f8ff3249", "ecca0603"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "table-of-points answer format",
+              "every row of the correct table must satisfy the inequality (or system)"
+            ],
+            "must_vary": [
+              "the inequality coefficients and the table values",
+              "whether the inequality is single or a 2-inequality system"
+            ],
+            "common_bugs": [
+              "checking only one row per table",
+              "off-by-one boundary (using ≤ where stem says <)",
+              "constructing a table whose 'correct' row only partially satisfies (silent invalidation of the clone)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Match graph to inequality",
+      "description": "A shaded half-plane (sometimes bounded by a horizontal/vertical or slanted line, dashed or solid) is shown; student selects the inequality whose solution set matches the shaded region.",
+      "boundary_with_other_aspects": "A4 requires reading a graph image; A3 requires substitution into an algebraic inequality. A clone that drops the graph (or replaces it with text-only) crosses into A3 — categorical drift.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Identify inequality from shaded half-plane",
+          "description": "Read the boundary line (slope, intercept, horizontal y = b, or vertical x = a), determine dashed vs solid, and pick ≤, <, ≥, or > based on the shaded side.",
+          "core_skill_demand": "Recover the boundary equation from the graph, then convert to inequality using the dashed/solid distinction and the shaded side relative to the line.",
+          "example_originals": ["59a49431", "744ee7d7", "c9355dec", "0b221d05", "c41e5688", "d02193fb", "187f74bc"],
+          "frequency": { "easy": 3, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "horizontal or vertical boundary (y = constant or x = constant)",
+                "solid boundary, integer intercept"
+              ],
+              "example_stem": "Shaded region above the horizontal line y = 12 (solid). Which inequality is represented?",
+              "example_ids": ["744ee7d7", "59a49431", "c9355dec"]
+            },
+            "medium": {
+              "characteristics": [
+                "slanted boundary with integer slope and integer y-intercept",
+                "dashed vs solid distinction is the discriminator among options"
+              ],
+              "example_stem": "Boundary y = mx + b with shaded region above (solid). Which inequality?",
+              "example_ids": ["0b221d05", "c41e5688", "d02193fb"]
+            },
+            "hard": {
+              "characteristics": [
+                "non-standard axis scaling (one axis ranges much wider than the other) or negative intercept that makes slope reading harder",
+                "answer choices share the same boundary but differ in inequality direction or strict/non-strict"
+              ],
+              "example_stem": "Boundary horizontal at y = −4 (solid); region shaded below. Which inequality?",
+              "example_ids": ["187f74bc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "graph-based stem (a shaded half-plane image)",
+              "answer is an inequality (not a point)",
+              "boundary line clearly readable from the graph"
+            ],
+            "must_vary": [
+              "slope and intercept values",
+              "horizontal vs vertical vs slanted boundary",
+              "dashed vs solid; shaded above vs below"
+            ],
+            "common_bugs": [
+              "confusing dashed (strict) with solid (non-strict)",
+              "flipping the shaded side and producing the opposite inequality",
+              "replacing the graph with text and accidentally creating an A3 question (categorical drift)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Algebraic interpretation/bound",
+      "description": "The stem gives an algebraic relationship between two variables (often as a word-encoded phrase like 'x is at most k less than m times y') and asks for the resulting inequality or for a numerical bound on one variable given the other.",
+      "boundary_with_other_aspects": "A5 has no contextual story (no money, distances, or items) — it is a pure algebraic translation/manipulation. A1.T3 also translates words to inequalities, but with a real-world context that drives the structure.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Word-encoded algebraic bound",
+          "description": "Translate phrases like 'x is at most 17 less than 5 times y' into an inequality, then either select the inequality form or compute a numeric bound on x given a specific y.",
+          "core_skill_demand": "Convert verbal modifiers ('at most', 'less than', 'times') into the correct algebraic inequality — most often x ≤ my − k or x ≥ my − k — and (in some variants) substitute a given y to bound x.",
+          "example_originals": ["8f0c82e2", "c17d9ba9", "1a621af4"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(no easy items — this verbal-algebraic translation does not appear at the easy tier)"
+              ],
+              "example_stem": "(no easy examples.)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "stem returns an inequality form (no substitution required)",
+                "small integer coefficients and one phrase modifier"
+              ],
+              "example_stem": "Minimum value of x is 12 less than 6 times n. Which inequality shows possible x?",
+              "example_ids": ["8f0c82e2", "c17d9ba9"]
+            },
+            "hard": {
+              "characteristics": [
+                "requires substituting a specific value of one variable and computing the numeric bound on the other",
+                "answer is a single number (often an integer) on the inequality’s tight side"
+              ],
+              "example_stem": "x is at most 2 less than 3 times y. If y = 9, what is the greatest possible value of x?",
+              "example_ids": ["1a621af4"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "context-free, purely algebraic phrasing",
+              "the specific 'less/more than' + 'times' phrase pattern"
+            ],
+            "must_vary": [
+              "coefficients k and m, and the variable names",
+              "whether the answer is an inequality (medium) or a number (hard)"
+            ],
+            "common_bugs": [
+              "treating 'k less than m times y' as my + k instead of my − k",
+              "flipping 'at most' to '≥'",
+              "adding a contextual story (categorical drift into A1.T3)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Solve/interpret given inequality (no context)",
+          "description": "A given inequality (or system) is presented and the student is asked which equivalent inequality, or which range of one coordinate, results.",
+          "core_skill_demand": "Apply equivalent-inequality moves (add/subtract, divide by positive) or eliminate one variable from a system to derive a range on the remaining variable.",
+          "example_originals": ["b31c3117", "830120b0", "68c5c81a"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(no easy examples in this bank.)"],
+              "example_stem": "(no easy examples.)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "single inequality with one rearrangement step",
+                "involves substituting a specific value of one variable in a formula relation"
+              ],
+              "example_stem": "Karvonen formula relating H and p; for p in a given range, which inequality describes H?",
+              "example_ids": ["b31c3117"]
+            },
+            "hard": {
+              "characteristics": [
+                "system requires eliminating one variable to find the resolved range on the other",
+                "or requires interpreting an inequality with a discrete-count target (greatest possible count) under multiple constraints"
+              ],
+              "example_stem": "Given 11x + 14y ≤ 115 with x ≥ 1 and y ≥ 1 (and other constraints), what is the greatest possible number of large pizzas y?",
+              "example_ids": ["830120b0", "68c5c81a"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "an algebraic (no rich-context) inequality or system as the starting point",
+              "the answer is either an equivalent inequality or a numeric extremum"
+            ],
+            "must_vary": [
+              "coefficients and constants",
+              "whether the question asks for an equivalent inequality vs a numeric value"
+            ],
+            "common_bugs": [
+              "dividing by a negative without flipping the inequality (introduces a wrong-direction decoy as the 'correct' answer)",
+              "dropping one constraint from the system and producing a looser, incorrect range",
+              "adding a context story (categorical drift into A1.T3 or A2.T2)"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Hard items concentrate in A2.T2 (multi-constraint count maximization with percent/decimal coefficients), A3.T2 (table-of-points with larger coefficients or systems), and A1.T3 (multi-step setup where the binding relation is implicit). Easy items concentrate in A1.T1, A1.T2, A2.T1, A3.T1, and A4.T1 with horizontal/vertical boundaries. A common drift risk: cloners turning an A1 'which inequality' item into an A2 'what is the maximum' item (or vice versa) — these are categorically different even when the underlying constraint is identical."
+}

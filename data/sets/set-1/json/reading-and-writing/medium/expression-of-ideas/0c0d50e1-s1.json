@@ -1,0 +1,25 @@
+{
+  "questionId": "0c0d50e1-s1",
+  "originalId": "0c0d50e1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>The Atacama Solar Array project is expected to deliver 3.4 gigawatts of capacity, enough to supply electricity to nearly 1.5 million households. As its name suggests, the project—currently under construction—consists of photovoltaic panels installed within Chile's Atacama Desert. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the project blueprint specifies more than 9 million panels arranged across a 40-square-kilometer site east of the city of Antofagasta.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In summary,</p>"},
+    {"id": "b", "content": "<p>To be precise,</p>"},
+    {"id": "c", "content": "<p>By contrast,</p>"},
+    {"id": "d", "content": "<p>As a result,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"To be precise\" logically signals that this sentence about the Atacama Solar Array project blueprint provides specific, precise details—number of panels, size of site, location—elaborating on the more general information about the project in the previous sentence.</p><p>Choice A is incorrect because \"in summary\" illogically signals that the information in this sentence concludes or summarizes the discussion of the project, when it instead provides precise details that elaborate on what was already said. Choice C is incorrect because \"by contrast\" illogically signals that the information contrasts with the previous description, when it actually narrows it. Choice D is incorrect because \"as a result\" illogically signals that the blueprint details follow as a consequence of the previous claim, when the relationship is one of specification, not causation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

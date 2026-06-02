@@ -1,0 +1,22 @@
+{
+  "questionId": "100030d9-s1",
+  "originalId": "100030d9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A1.T1.medium",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A rubber ball bounces upward one-half the height it falls each time it hits the ground. If the ball was originally dropped from a distance of 32.0 feet above the ground, what was its maximum height above the ground, in feet, between the third and fourth time it hit the ground?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>After hitting the ground once, the ball bounces to 32.0/2 = 16.0 feet. After the second hit, 16.0/2 = 8.0 feet. After the third hit, 8.0/2 = 4.0 feet. Therefore the maximum height between the third and fourth time the ball hits the ground is 4 feet.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

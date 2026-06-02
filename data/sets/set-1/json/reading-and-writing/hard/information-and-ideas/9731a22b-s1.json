@@ -1,0 +1,39 @@
+{
+  "questionId": "9731a22b-s1",
+  "originalId": "9731a22b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Paleontologist Mei Wang and colleagues have reported the discovery, at a quarry in northeastern China, of dozens of fossilized burrows from the Early Cretaceous period, along with the remains of small mammal-like creatures preserved inside several of them. The researchers conclude that the area was once a long-occupied denning ground used by these animals across multiple generations. They base this conclusion in part on the density of burrows at the site, the variety of ages of the individuals preserved, and the gradual layering of sediment within the burrows, which the team argues is consistent with repeated reuse over an extended interval rather than a single catastrophic event.</p>",
+  "stem": "<p>What does the text most strongly suggest about the site discovered by the researchers?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The site contains the earliest known fossils of any mammal-like creatures from the Early Cretaceous.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The site is unusual because it is the only known location where fossils of these creatures have been found.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The site was abandoned suddenly because of a catastrophic event that buried the burrows quickly.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The site provides evidence that the creatures used the burrows over an extended period rather than only briefly.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says the researchers conclude the area was a long-occupied denning ground based on burrow density, the variety of ages preserved, and sediment layering that suggests repeated reuse over an extended interval.</p><p>Choice A is incorrect because the text doesn&rsquo;t claim these are the earliest known fossils. Choice B is incorrect because the text doesn&rsquo;t indicate this is the only known site. Choice C is incorrect because the text explicitly contrasts gradual reuse with a single catastrophic event.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

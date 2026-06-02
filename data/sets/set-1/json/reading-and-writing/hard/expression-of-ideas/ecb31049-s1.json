@@ -1,0 +1,39 @@
+{
+  "questionId": "ecb31049-s1",
+  "originalId": "ecb31049",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Solar updraft towers are envisioned as tall hollow chimneys surrounded by a transparent collector that warms air at ground level; the heated air rises through the tower and spins turbines along the way. Engineers have long believed that solar updraft towers could one day deliver large-scale baseload electricity to grids in arid regions. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as of 2024, no commercial-scale solar updraft tower has been completed and connected to a national grid anywhere in the world.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Accordingly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Even so,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In short,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The first part of the passage describes long-standing engineering optimism about solar updraft towers, while the final sentence notes that no such tower has actually been built at commercial scale. \"Even so\" signals exactly this contrast between belief and reality.</p><p>Choice A is incorrect because \"accordingly\" would signal cause and effect, but the lack of a commercial tower is not a result of engineers' optimism. Choice C is incorrect because \"for instance\" would mark the final sentence as an example of the prior optimism, when it actually undermines it. Choice D is incorrect because \"in short\" would frame the sentence as a summary of what came before, but it instead introduces a contrasting fact.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T2.hard"
+}

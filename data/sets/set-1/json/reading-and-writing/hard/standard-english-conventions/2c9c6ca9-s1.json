@@ -1,0 +1,25 @@
+{
+  "questionId": "2c9c6ca9-s1",
+  "originalId": "2c9c6ca9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>The term &ldquo;ejective&rdquo; comes from a Latin root meaning &ldquo;thrown out,&rdquo; a fitting label for a set of consonants&mdash;ejective consonants&mdash;produced by sealing the glottis and then releasing a sharp burst of air. In many languages, especially those of the Caucasus and the Andes, these consonants are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in others, they are entirely absent and never appear in native vocabulary.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>common;</p>"},
+    {"id": "b", "content": "<p>common</p>"},
+    {"id": "c", "content": "<p>common and</p>"},
+    {"id": "d", "content": "<p>common,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. Both \"these consonants are common\" and \"in others, they are entirely absent&hellip;vocabulary\" are independent clauses with no conjunction. A semicolon correctly marks the boundary between them.</p><p>Choice B is incorrect because it leaves a run-on. Choice C is incorrect because \"and\" joins parts of a single clause but does not change \"in others, they are entirely absent&hellip;\" into a phrase; the result is still two independent clauses without proper punctuation. Choice D is incorrect because a comma between two independent clauses is a comma splice.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

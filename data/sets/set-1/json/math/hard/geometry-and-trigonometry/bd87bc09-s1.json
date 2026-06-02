@@ -1,0 +1,20 @@
+{
+  "questionId": "bd87bc09-s1",
+  "originalId": "bd87bc09",
+  "templateId": "right-triangles-and-trigonometry.A3.T5.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangle PQR is a right triangle with the right angle at R. If sin(Q) = 8/17 and side PQ has length 34, what is the length of side QR?</p>",
+  "answerOptions": [],
+  "keys": ["30"],
+  "rationale": "<p>In a right triangle, sin of an acute angle equals the opposite side over the hypotenuse. PQ is the hypotenuse (opposite the right angle). The side opposite angle Q is PR, so sin(Q) = PR/PQ = 8/17. With PQ = 34, PR = 34 &middot; 8/17 = 16. By the Pythagorean theorem, QR<sup>2</sup> = PQ<sup>2</sup> &minus; PR<sup>2</sup> = 1156 &minus; 256 = 900, so QR = 30.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z"
+}

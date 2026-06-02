@@ -1,0 +1,39 @@
+{
+  "questionId": "5a7ab8e8-s1",
+  "originalId": "5a7ab8e8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>43m = 43m</p><p>How many solutions does the given equation have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Both sides are identical for every value of m, so every real number is a solution. The equation has infinitely many solutions. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A3.T8.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3543e6e2-s1",
+  "originalId": "3543e6e2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Louisa May Alcott's 1869 novel <em>Little Women</em>. Margaret lives with her younger sisters and her widowed mother, Mrs. March.</p><p style=\"padding-left:1em;\">Margaret, the eldest of the four sisters, had at twenty an unusual measure of self-command and forethought, and even her mother, who herself often acted from impulse, had grown accustomed to leaning upon her elder daughter's quiet sense. She had a warm heart and ardent affections; her sympathies were quickly stirred, yet she had learned to keep them in check when prudence required, a discipline that her mother sometimes resolved to imitate and one of her sisters declared that nothing in the world should ever induce her to practice.</p>",
+  "stem": "<p>According to the text, what is true about Margaret?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Margaret has unusual self-control and good judgment for her age.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Margaret often quarrels with her mother but rarely changes her mother's mind.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Margaret tends to be overly sensitive about family disputes.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Margaret thinks her mother sets a poor example for the household.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says Margaret possesses self-command and forethought at only twenty, and that even her mother leans on her judgment, showing that Margaret is unusually self-controlled and clear-headed for her age.</p><p>Choice B is incorrect; the text never describes any quarrels between Margaret and her mother. Choice C is incorrect; the text says Margaret keeps her sympathies in check, not that she is overly sensitive. Choice D is incorrect; the text gives no indication of Margaret thinking poorly of her mother.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

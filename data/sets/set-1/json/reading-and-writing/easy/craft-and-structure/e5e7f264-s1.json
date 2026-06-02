@@ -1,0 +1,25 @@
+{
+  "questionId": "e5e7f264-s1",
+  "originalId": "e5e7f264",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The neighborhood barbershop was essential to many African American communities in the early twentieth century because it offered grooming services that residents needed. In addition, the barbershop was a <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of community discussion. Patrons waiting for their turn would exchange political views and pass news from house to house.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>byproduct</p>"},
+    {"id": "b", "content": "<p>hub</p>"},
+    {"id": "c", "content": "<p>barrier</p>"},
+    {"id": "d", "content": "<p>distraction</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because a \"hub\" is a central point of activity, which captures the barbershop's role as a gathering place where news and views circulated. Choice A is incorrect because \"byproduct\" means an incidental result; the text describes a deliberate social function. Choice C is incorrect because \"barrier\" means an obstacle, the opposite of an information exchange. Choice D is incorrect because \"distraction\" means a diversion of attention; the barbershop fostered, rather than diverted, attention to community matters.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

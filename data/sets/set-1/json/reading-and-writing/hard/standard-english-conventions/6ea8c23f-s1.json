@@ -1,0 +1,25 @@
+{
+  "questionId": "6ea8c23f-s1",
+  "originalId": "6ea8c23f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A4.T8.hard",
+  "type": "mcq",
+  "stimulus": "<p>In 2021, a research group led by Dr. Maya Tolstoy assembled the largest catalog to date of underwater seismic events along the Mid-Atlantic Ridge. Using this expanded record, the team could analyze where small tremors cluster along the ridge ______ how those clusters correlate with the chemistry of nearby hydrothermal vents, and how often the activity precedes eruptions on the seafloor.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>axis;</p>"},
+    {"id": "b", "content": "<p>axis</p>"},
+    {"id": "c", "content": "<p>axis,</p>"},
+    {"id": "d", "content": "<p>axis:</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The sentence contains three parallel items in a series: \"where small tremors cluster along the ridge axis,\" \"how those clusters correlate with the chemistry of nearby hydrothermal vents,\" and \"how often the activity precedes eruptions on the seafloor.\" Items in a simple series with no internal commas are separated by commas, so a comma after \"axis\" is required.</p><p>Choice A is incorrect because semicolons separate series items only when one or more items contain internal commas; these items do not. Choice B is incorrect because omitting punctuation between the first and second series items creates a run-on list. Choice D is incorrect because a colon cannot separate items within a series.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

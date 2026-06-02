@@ -1,0 +1,39 @@
+{
+  "questionId": "e268c452-s1",
+  "originalId": "e268c452",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The traditional process of Indian block printing generally proceeds like this: First, the artisan carves the desired design into a wooden block. Next, the artisan dips the carved face of the block into a tray of natural dye. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the artisan presses the inked block firmly onto cotton fabric, transferring the design.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Actually,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Finally,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Therefore,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Finally\" logically signals that pressing the block onto fabric is the final step in the block-printing process, which began with \"First\" (carving the block) and continued with \"Next\" (dipping into dye).</p><p>Choice A is incorrect because \"actually\" illogically signals an unexpected modification. Choice B is incorrect because \"nevertheless\" illogically signals contrast. Choice D is incorrect because \"therefore\" illogically signals consequence; the pressing is the final step, not a result.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T13.easy"
+}

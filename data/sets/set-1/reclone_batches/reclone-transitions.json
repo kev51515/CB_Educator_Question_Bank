@@ -1,0 +1,8 @@
+[
+  {
+    "id": "332e75bf-s1",
+    "templateId": "transitions.A5.T16.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve: 'Ultimately (or close synonym) as the unique correct option.' Keyed answer is 'Hence,' a cause/effect marker (A2.T4 territory), not a culmination marker. Stem structure (struggle to reconcile \u2192 resulting conclusion) is cause-then-effect, fitting T4, not T16 culmination. Also the rationale explicitly rejects 'Ultimately' (option C) in favor of 'Hence', contradicting the type's required answer family."
+  }
+]

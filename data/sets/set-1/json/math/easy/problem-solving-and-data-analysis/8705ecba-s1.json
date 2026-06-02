@@ -1,0 +1,39 @@
+{
+  "questionId": "8705ecba-s1",
+  "originalId": "8705ecba",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The cost of a dress is $40 before an 8% sales tax is added. What is the total cost, including sales tax, to purchase the dress?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$43.20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$40.08</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$40.80</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$48.00</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The sales tax is 0.08 \u00d7 $40 = $3.20, so the total cost is $40 + $3.20 = $43.20.</p><p>Choice B is incorrect. This adds only 8 cents of tax, not 8 percent.</p><p>Choice C is incorrect. This adds only 80 cents of tax, not 8 percent.</p><p>Choice D is incorrect. This adds 20% tax, not 8%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T3.easy"
+}

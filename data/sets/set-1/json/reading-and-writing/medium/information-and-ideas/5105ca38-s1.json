@@ -1,0 +1,25 @@
+{
+  "questionId": "5105ca38-s1",
+  "originalId": "5105ca38",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T6.medium",
+  "stimulus": "<p>Several wall paintings discovered in tombs of New Kingdom Egypt depict a male figure tending a vineyard with a falcon perched nearby. Some scholars have argued that the figure is the god Horus, since the falcon is known to have been linked with Horus in Egyptian iconography, but University of Cambridge Egyptologist Halima Ndiaye suggests that falcons may also have been associated with vineyard agriculture in general. The fact that a falcon is shown near the male figure, therefore, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>suggests that Horus was often depicted tending vineyards.</p>"},
+    {"id": "b", "content": "<p>eliminates the possibility that the figure is Horus.</p>"},
+    {"id": "c", "content": "<p>is not conclusive evidence that the figure is Horus.</p>"},
+    {"id": "d", "content": "<p>would be difficult to account for if the figure is not Horus.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is best. If falcons may have been associated with vineyards generally, then a falcon's appearance alongside a vineyard-tending figure does not by itself prove the figure is Horus. The respectful, hedged inference is that the falcon is not conclusive evidence. Choice A makes a claim about Horus's iconography that the text never supports. Choice B is too strong; Ndiaye's suggestion weakens but does not eliminate the Horus identification. Choice D reverses the inferential weight of the caveat.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

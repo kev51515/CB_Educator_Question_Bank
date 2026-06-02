@@ -1,0 +1,39 @@
+{
+  "questionId": "9b2fbb2e-s1",
+  "originalId": "9b2fbb2e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Logically, a fragmented manuscript should provide less information than an intact one, but for historian Eliza Whitfield, a torn page from a fourteenth-century Latin codex <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> surprising clarity, allowing her to see hidden marginal notes written beneath the surface text.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>resolved</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>adjusted</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>directed</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>provided</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"provided\" means gave or supplied, matching the idea that the torn page yielded surprising clarity. Choice A is incorrect because \"resolved\" doesn\u2019t fit a discovery context. Choice B is incorrect because adjusting doesn\u2019t fit. Choice C is incorrect because directing doesn\u2019t describe yielding insight.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

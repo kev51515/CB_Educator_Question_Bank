@@ -1,0 +1,25 @@
+{
+  "questionId": "d222f7d9-s1",
+  "originalId": "d222f7d9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.misc.hard",
+  "stimulus": "<p>Spiral <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> commonly recognized to provide drag reduction and propulsive efficiency in the motion of an array of tiny aquatic organisms&mdash;including diatoms, flagellated protists, and rotifers&mdash;confers comparable benefits, albeit through different swimming mechanics, to bigger reef-dwelling crustaceans, such as krill.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>twisting is</p>"},
+    {"id": "b", "content": "<p>twisting has been</p>"},
+    {"id": "c", "content": "<p>twisting,</p>"},
+    {"id": "d", "content": "<p>twisting, is</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after \"twisting\" pairs with the dash after \"rotifers\" to offset the supplementary element (\"commonly&hellip;rotifers\") that interrupts the main clause of the sentence.</p><p>Choice A is incorrect because it fails to offset the supplementary element with appropriate punctuation. Furthermore, adding the verb \"is\" here creates an ungrammatical sentence that has two finite verbs (\"is\" and \"confers\") without appropriate punctuation and/or conjunction. Choice B is incorrect because it fails to offset the supplementary element with appropriate punctuation. Furthermore, adding the verb \"has been\" here creates an ungrammatical sentence that has two finite verbs (\"has been\" and \"confers\") without appropriate punctuation and/or conjunction. Choice D is incorrect. Adding the verb \"is\" here creates an ungrammatical sentence structure with two main verbs (\"is\" and \"confers\") without appropriate punctuation and/or conjunction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

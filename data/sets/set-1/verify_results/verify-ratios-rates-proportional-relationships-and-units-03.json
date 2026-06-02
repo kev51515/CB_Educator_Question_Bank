@@ -1,0 +1,22 @@
+[
+  {"id": "b5bc47d5-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.hard", "verdict": "ok"},
+  {"id": "7d721177-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard", "verdict": "ok"},
+  {"id": "7d093333-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T4.hard", "verdict": "ok"},
+  {"id": "8637294f-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T3.hard", "verdict": "ok"},
+  {"id": "c7c6445f-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T4.hard", "verdict": "ok"},
+  {"id": "11b06e35-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard", "verdict": "ok"},
+  {"id": "e7133228-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T4.hard", "verdict": "ok"},
+  {"id": "3f5398a6-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy", "verdict": "ok"},
+  {"id": "be35c117-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "ba62b0b0-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "551c52b9-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.easy", "verdict": "ok"},
+  {"id": "86636d8f-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "d0d9ede4-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "6310adbc-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.easy", "verdict": "type_drift", "detail": "Tagged A2.T2 (Express missing ratio term symbolically) but stem uses pure numeric ratio (2:5, a=14) and asks for numeric b=35. Answer is numeric, violating T2 must_preserve 'Answer is an algebraic expression, not a numeric value'. This is A2.T1 (numeric proportion)."},
+  {"id": "000259aa-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "fe4c1c9e-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "e3d49511-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.easy", "verdict": "ok"},
+  {"id": "3c8fdc40-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.easy", "verdict": "ok"},
+  {"id": "3ac09984-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A5.T1.easy", "verdict": "ok"},
+  {"id": "312ba47c-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "f02b4509-s1",
+  "originalId": "f02b4509",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A ferry can carry a trailer if the combined weight of the trailer and the crates it contains is no more than 7,500 kilograms. What is the maximum number of crates this ferry can carry in a trailer with a weight of 600 kilograms if each crate weighs 90 kilograms?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>76</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>77</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>83</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The crates can weigh at most 7,500 \u2212 600 = 6,900 kg in total. With each crate weighing 90 kg, the maximum number of crates is 6,900/90 = 76.67, so the largest whole number is 76.</p><p>Choices A, C, and D result from rounding errors or using incorrect totals.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium"
+}

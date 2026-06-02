@@ -1,0 +1,25 @@
+{
+  "questionId": "a5079e0d-s1",
+  "originalId": "a5079e0d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>The pascal is the standard international unit used to measure pressure exerted by a fluid. Its definition depends on how much force is distributed across how large an <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> one pascal is equivalent to the pressure produced when one newton of force acts uniformly over one square meter of surface area.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>area; for instance,</p>"},
+    {"id": "b", "content": "<p>area, for instance,</p>"},
+    {"id": "c", "content": "<p>area,</p>"},
+    {"id": "d", "content": "<p>area</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The two clauses (\"Its definition...area\" and \"for instance...surface area\") are independent. A semicolon joins them properly; the conjunctive adverb \"for instance\" is then set off by a following comma.</p><p>Choice B is incorrect because a comma alone before \"for instance\" produces a comma splice between independent clauses. Choice C is incorrect because a comma alone between two independent clauses produces a comma splice. Choice D is incorrect because the unpunctuated junction produces a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

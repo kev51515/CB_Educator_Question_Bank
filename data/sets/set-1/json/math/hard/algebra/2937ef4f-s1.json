@@ -1,0 +1,39 @@
+{
+  "questionId": "2937ef4f-s1",
+  "originalId": "2937ef4f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Maya used a pump to remove water from a storage tank at a constant rate. The tank contained 20,000 liters of water when Maya began to use the pump. After 4 hours of using the pump, 17,600 liters of water remained in the tank. If the pump continues to remove water at this rate, what is the total number of hours Maya will have been using the pump when 11,000 liters of water remain in the tank?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The pump removed 20,000 &minus; 17,600 = 2,400 liters in 4 hours, a rate of 600 liters per hour. To go from 20,000 liters to 11,000 liters, the pump must remove 9,000 liters, which takes 9,000/600 = 15 hours.</p><p>Choice B is the time spent to remove 3,000 liters. Choices C and D arise from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.hard"
+}

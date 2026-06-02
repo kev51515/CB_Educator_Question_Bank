@@ -1,0 +1,39 @@
+{
+  "questionId": "aaddd60f-s1",
+  "originalId": "aaddd60f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Scientists studying Venus long thought the history of its atmosphere was relatively simple. One reason for this is that spectroscopic data collected by orbiting probes showed that the atmosphere was overwhelmingly composed of carbon dioxide, likely as a result of sustained volcanic outgassing that filled the atmosphere with greenhouse gases, producing the planet's intense surface heat. A study led by Ad\u00e8le Marchetti focused on additional information\u2014further analysis of probe data and ultraviolet wavelengths detected from Venus's cloud tops\u2014that revealed the presence of surprisingly large amounts of free oxygen in certain altitude bands above the planet. Since a planetary atmosphere produced entirely by volcanic outgassing would be unlikely to contain significant amounts of free oxygen, Marchetti concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Venus's atmosphere likely formed as a result of additional major chemical or photochemical processes beyond volcanic outgassing.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the data about atmospheric composition collected by orbiting probes is likely more reliable than the information gleaned from ultraviolet wavelengths detected above Venus's clouds.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>having a clearer understanding of the composition of Venus's atmosphere and the processes that shaped it will provide more insight into how Earth's atmosphere formed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>large amounts of free oxygen on Venus likely arose from a different process than that which produced the atmospheres of other planets.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Volcanic outgassing would produce an atmosphere dominated by carbon dioxide and other volcanic gases but would be unlikely to leave significant amounts of free oxygen. Since Venus's atmosphere does contain notable amounts of free oxygen at certain altitudes, the most reasonable conclusion is that processes other than volcanic outgassing\u2014chemical or photochemical\u2014also contributed to shaping the atmosphere.</p><p>Choice B is incorrect because the text discusses two sources of data but never compares their reliability. Choice C is incorrect because the text never mentions Earth's atmosphere. Choice D is incorrect because the text says nothing about the atmospheres of other planets and so provides no basis for inferring a different process from those that produced them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

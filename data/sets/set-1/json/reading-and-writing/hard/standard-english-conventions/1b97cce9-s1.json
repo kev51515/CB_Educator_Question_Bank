@@ -1,0 +1,25 @@
+{
+  "questionId": "1b97cce9-s1",
+  "originalId": "1b97cce9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>Caral is an archaeological site on the central coast of Peru and is considered the oldest urban center in the Americas (roughly 2600 BCE to 2000 BCE). Archaeologist Ruth Shady recently led a fresh survey at Caral to map its ceremonial <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> mapping more than thirty new structures, she has begun reconstructing how civic processions moved through the central plaza.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>platforms mapped</p>"},
+    {"id": "b", "content": "<p>platforms. Mapping</p>"},
+    {"id": "c", "content": "<p>platforms, mapping</p>"},
+    {"id": "d", "content": "<p>platforms and mapping</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. A period correctly marks the boundary between two independent sentences. The second sentence opens with the participial phrase \"Mapping more than thirty new structures,\" which modifies the subject \"she.\"</p><p>Choice A is incorrect because it creates a run-on, fusing two independent thoughts without punctuation. Choice C is incorrect because, while \"mapping\" could be read as a participle attached to the main clause, the resulting sentence would lack a second main verb to introduce the conclusion (\"she has begun&hellip;\"); read on its own, the version produces a comma splice with the next clause. Choice D is incorrect because adding \"and\" before a present participle does not create a grammatical join between the two independent clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

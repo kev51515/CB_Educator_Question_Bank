@@ -1,0 +1,39 @@
+{
+  "questionId": "499cb491-s1",
+  "originalId": "499cb491",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>7</mn><msup><mi>a</mi><mn>2</mn></msup><mo>-</mo><mn>21</mn><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>7</mn><mfenced><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>-</mo><mn>3</mn><mi>a</mi><msup><mi>b</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>7</mn><msup><mi>a</mi><mn>2</mn></msup><mfenced><mrow><mn>1</mn><mo>-</mo><mn>3</mn><msup><mi>b</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>7</mn><mi>a</mi><mfenced><mrow><mi>a</mi><mo>-</mo><mn>3</mn><msup><mi>b</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>a</mi><mfenced><mrow><mn>7</mn><mi>a</mi><mo>-</mo><mn>21</mn><msup><mi>b</mi><mn>2</mn></msup></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The greatest common factor of 7a\u00b2 and 21ab\u00b2 is 7a. Factoring gives 7a(a \u2212 3b\u00b2).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

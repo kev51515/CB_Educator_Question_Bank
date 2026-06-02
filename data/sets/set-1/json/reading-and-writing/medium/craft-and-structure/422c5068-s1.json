@@ -1,0 +1,25 @@
+{
+  "questionId": "422c5068-s1",
+  "originalId": "422c5068",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>Generally it takes blackpoll warblers about three days to complete their fall departure from the Atlantic coast of North America. From their staging grounds in coastal New England, <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">the birds begin by flying out over the open Atlantic, keeping roughly 200 miles east of the Carolina shore</span>. They climb to high altitudes to pick up favorable tailwinds, then turn southwest toward Hispaniola, before finally arriving at their wintering range in northern South America. In 2018, however, it took the warblers nearly twice as long to make the journey from New England to South America. According to researchers, the reason was a series of unusually persistent headwinds.</p>",
+  "stem": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It contrasts blackpoll warblers with other species that migrate over open ocean.</p>"},
+    {"id": "b", "content": "<p>It describes part of the blackpoll warblers' typical fall migration journey.</p>"},
+    {"id": "c", "content": "<p>It illustrates a change in the blackpoll warblers' usual flight behavior.</p>"},
+    {"id": "d", "content": "<p>It suggests an explanation for why blackpoll warblers stage in New England.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The first sentence establishes that the warblers' fall departure typically takes about three days. The sentence containing the underlined portion describes the first leg of that journey&mdash;the birds flying out over the Atlantic about 200 miles east of the Carolina shore. The rest of the text continues with the remainder of the typical route before noting that in 2018 the journey took roughly twice as long. The underlined portion therefore describes part of the warblers' typical fall migration journey.</p><p>Choice A is incorrect because the underlined portion does not compare the warblers to any other species. Choice C is incorrect because the change in flight behavior in 2018 is discussed only later in the text, not in the underlined portion. Choice D is incorrect because the underlined portion identifies the starting region, not the reason for staging there.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

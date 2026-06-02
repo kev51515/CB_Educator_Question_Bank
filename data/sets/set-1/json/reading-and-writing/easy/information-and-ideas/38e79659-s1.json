@@ -1,0 +1,39 @@
+{
+  "questionId": "38e79659-s1",
+  "originalId": "38e79659",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Attendance and Length of the Past Four Olympic Summer Games (in millions of tickets and days)</caption><thead><tr><th>Olympic Games</th><th>Length of Games (days)</th><th>Tickets sold (in millions)</th></tr></thead><tbody><tr><td>Athens 2004</td><td>17</td><td>3.80</td></tr><tr><td>Beijing 2008</td><td>16</td><td>6.50</td></tr><tr><td>London 2012</td><td>17</td><td>8.20</td></tr><tr><td>Rio 2016</td><td>17</td><td>6.20</td></tr></tbody></table></figure><p>A student is writing about how the Olympic Summer Games have grown. The student wants to note the number of tickets sold for the most recent Games before Tokyo 2020 listed here, the Rio 2016 Games. According to the table, the Rio 2016 Games sold ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8.20 million tickets.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6.20 million tickets.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6.50 million tickets.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3.80 million tickets.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the table shows the Rio 2016 Games sold 6.20 million tickets.</p><p>Choice A is incorrect: 8.20 million tickets were sold for London 2012. Choice C is incorrect: 6.50 million tickets were sold for Beijing 2008. Choice D is incorrect: 3.80 million tickets were sold for Athens 2004.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

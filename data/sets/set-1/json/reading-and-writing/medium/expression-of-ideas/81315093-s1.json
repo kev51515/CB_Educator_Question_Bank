@@ -1,0 +1,25 @@
+{
+  "questionId": "81315093-s1",
+  "originalId": "81315093",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A2.T6.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>A sprint cycling race is a short, high-intensity event of less than 1 kilometer.</li>\n<li>An ultracycling race is a long-distance cycling event of more than 200 kilometers.</li>\n<li>The Race Across the West is a one-day, 1,448-kilometer ultracycling race in the United States.</li>\n<li>The Transcontinental Race is a fifteen-day, 4,000-kilometer ultracycling race across Europe.</li>\n</ul>",
+  "stem": "<p>The student wants to make a generalization about ultracycling races. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Examples of ultracycling races include the 1,448-kilometer Race Across the West in the United States and the 4,000-kilometer Transcontinental Race across Europe.</p>"},
+    {"id": "b", "content": "<p>While the Race Across the West is a one-day ultracycling race, the Transcontinental Race is a fifteen-day ultracycling race.</p>"},
+    {"id": "c", "content": "<p>A sprint cycling race is less than 1 kilometer, but the Transcontinental Race ultracycling event, at 4,000 kilometers, is far longer.</p>"},
+    {"id": "d", "content": "<p>Ultracycling races vary widely in length, from a few hundred kilometers to several thousand.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. It is the only choice that makes a generalization about ultracycling races as a category, supported by the wide range of distances shown in the notes.</p><p>Choice A lists specific examples but doesn&rsquo;t generalize. Choice B contrasts two specific races. Choice C compares one ultracycling race to sprint races. None of these makes a generalization about ultracycling races as a category.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

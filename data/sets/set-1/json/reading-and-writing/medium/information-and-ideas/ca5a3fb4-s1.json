@@ -1,0 +1,25 @@
+{
+  "questionId": "ca5a3fb4-s1",
+  "originalId": "ca5a3fb4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.medium",
+  "stimulus": "<p>The practice of prescribed burning (intentionally setting controlled, low-intensity fires) is often viewed as being in tension with wildfire prevention efforts. However, a large field study across 480,000 hectares of mixed-conifer landscape in Arizona&rsquo;s Coconino National Forest calls that view into question. So far, results of the study indicate that stands subjected to periodic prescribed burning (the planned removal of accumulated leaf litter and small trees) may be more resistant to severe wildfire than stands that have not been burned at all. These results, in turn, suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>other prevention strategies are clearly more effective than prescribed burning.</p>"},
+    {"id": "b", "content": "<p>over time, it will be difficult to tell whether prescribed burning has any effect at all.</p>"},
+    {"id": "c", "content": "<p>the best way to protect forests may be to leave large stands entirely undisturbed.</p>"},
+    {"id": "d", "content": "<p>prescribed burning may help reduce wildfire risk, provided that it is applied carefully.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text first presents prescribed burning as seemingly opposed to wildfire prevention, then reports a large study suggesting that stands receiving periodic, controlled burns are more resistant to severe wildfire than unburned stands. It follows that, when carefully applied, prescribed burning may serve as a useful tool for reducing wildfire risk.</p><p>Choice A is incorrect because the study only compares burned with unburned stands; it makes no claims about other prevention strategies. Choice B is incorrect because the study&rsquo;s findings, far from being inconclusive, point to a clear benefit. Choice C is incorrect because the text does not endorse leaving stands undisturbed; in fact, the data suggest the opposite.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

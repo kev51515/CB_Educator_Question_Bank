@@ -1,0 +1,25 @@
+{
+  "questionId": "7bf79a90-s1",
+  "originalId": "7bf79a90",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A2.T4.medium",
+  "stimulus": "<p><span role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>Tardigrades are microscopic invertebrates known for surviving in punishing environments&mdash;from boiling springs to the vacuum of space. So Iris Lindholm and her team were puzzled when sediment samples retrieved from an unusually acidic hydrothermal vent in the Atlantic appeared to contain no tardigrades. The finding does not prove that no tardigrades inhabit such vents, but Lindholm&rsquo;s team argues that it does indicate that these particular conditions impose severe limits on tardigrade survival.</p><p>&nbsp;</p><p><span role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>Tardigrades have been recovered from nearly every habitat ever sampled, so it is implausible that they would be entirely absent from Lindholm&rsquo;s vent site, however unusual its chemistry. Most likely there were so few individuals in the sediment that available techniques could not register them. Even so, because ordinary marine sediments routinely contain hundreds of tardigrades per gram, finding so few at the vent would still demonstrate how forbidding its conditions are.</p>",
+  "stem": "<p>Based on the texts, Lindholm&rsquo;s team and the author of Text 2 would most likely agree with which statement about tardigrades?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Most tardigrades are probably unable to thrive in the sediment conditions at the acidic hydrothermal vent.</p>"},
+    {"id": "b", "content": "<p>Tardigrades are likely difficult to detect at the vent because they tend to be smaller than tardigrades collected elsewhere.</p>"},
+    {"id": "c", "content": "<p>A substantially larger number of tardigrades would probably be recovered if another sample were taken from the same vent site.</p>"},
+    {"id": "d", "content": "<p>Most tardigrades are better able to survive in highly acidic environments than in environments with extreme temperatures.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. Text 1 reports that Lindholm&rsquo;s team interprets the apparent absence of tardigrades as evidence that vent conditions severely limit their survival. Text 2 grants that some tardigrades are almost certainly present but argues that, given the hundreds per gram typical of ordinary marine sediments, even a near-undetectable population would show how forbidding the vent is. Both, then, agree that most tardigrades are unable to thrive in those sediment conditions.</p><p>Choice B is incorrect because neither text speculates about the size of tardigrades at the vent. Choice C is incorrect because both texts portray the vent as exceptionally hostile, with no reason to expect a much larger count from another sample. Choice D is incorrect because neither text compares acidity and temperature as stressors.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

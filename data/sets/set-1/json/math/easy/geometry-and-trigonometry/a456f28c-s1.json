@@ -1,0 +1,39 @@
+{
+  "questionId": "a456f28c-s1",
+  "originalId": "a456f28c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two lines intersect at a point. Angle 1 and angle 2 are vertical angles. The measure of angle 1 is 63 degrees. What is the measure of angle 2?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>27 degrees</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>117 degrees</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>126 degrees</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>63 degrees</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Vertical angles have equal measures, so the measure of angle 2 equals the measure of angle 1, which is 63 degrees.</p><p>Choice A is incorrect: this is the complement of 63 degrees.</p><p>Choice B is incorrect: 117 degrees is the supplement of 63 degrees.</p><p>Choice C is incorrect: 126 degrees is twice 63 degrees.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A6.T1.easy"
+}

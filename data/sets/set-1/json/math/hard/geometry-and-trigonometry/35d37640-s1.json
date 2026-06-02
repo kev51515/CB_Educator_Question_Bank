@@ -1,0 +1,39 @@
+{
+  "questionId": "35d37640-s1",
+  "originalId": "35d37640",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Point F lies on a unit circle in the xy-plane and has coordinates (1, 0). Point G is the center of the circle and has coordinates (0, 0). Point H also lies on the circle and has coordinates (&minus;1, y), where y is a constant. Which of the following could be the positive measure of angle FGH, in radians?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17&pi;/2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>17&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>16&pi;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since H lies on the unit circle and has x-coordinate &minus;1, y must be 0; therefore H = (&minus;1, 0), diametrically opposite F. The angle FGH is &pi; (or any value differing from &pi; by a multiple of 2&pi;). 17&pi; = 8(2&pi;) + &pi;, so 17&pi; is coterminal with &pi;.</p><p>Choices A, C, and D are not coterminal with &pi;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A4.T8.hard"
+}

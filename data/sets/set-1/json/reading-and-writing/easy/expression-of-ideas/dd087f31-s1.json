@@ -1,0 +1,25 @@
+{
+  "questionId": "dd087f31-s1",
+  "originalId": "dd087f31",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Khaled Hosseini's 2007 novel <em>A Thousand Splendid Suns</em> follows the parallel lives of Mariam and Laila, two Afghan women whose paths eventually intertwine. As a teenager, Mariam is forced into an arranged marriage and moves to Kabul. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Laila, who is several years younger, grows up in Kabul with loving parents and dreams of attending university. However, as conflict overtakes the country, Laila is also pressured into marriage.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Nevertheless,</p>"},
+    {"id": "b", "content": "<p>Meanwhile,</p>"},
+    {"id": "c", "content": "<p>Secondly,</p>"},
+    {"id": "d", "content": "<p>In fact,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Meanwhile\" logically signals that the action described in this sentence (Laila growing up in Kabul) is simultaneous with the action described in the previous sentence (Mariam's marriage and move to Kabul). The first sentence establishes that the actions happen around the same time.</p><p>Choice A is incorrect because \"nevertheless\" illogically signals that Laila's growing up is true despite Mariam's situation. Choice C is incorrect because \"secondly\" illogically signals a separate second point. Choice D is incorrect because \"in fact\" illogically signals emphasis or modification.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

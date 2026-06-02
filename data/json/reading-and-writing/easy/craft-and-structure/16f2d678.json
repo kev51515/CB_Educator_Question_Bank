@@ -1,0 +1,72 @@
+{
+  "questionId": "16f2d678",
+  "externalId": "a5de0431-b778-4957-aae9-f107e1a2ab49",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:22:01.802967+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "ca81d4df-45fc-4a53-a90d-45d198502cd6",
+      "content": "<p>replicate</p>"
+    },
+    {
+      "id": "312ed3ea-c851-4c6b-a772-eff84327b3c5",
+      "content": "<p>critique</p>"
+    },
+    {
+      "id": "2d9e09f8-a102-436f-b66e-2d179ad1d6fc",
+      "content": "<p>import</p>"
+    },
+    {
+      "id": "5ec3b89e-229a-47b1-8aa8-b4ac3345b222",
+      "content": "<p>suppress</p>"
+    }
+  ],
+  "keys": [
+    "5ec3b89e-229a-47b1-8aa8-b4ac3345b222"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of Georgi Vladimov&rsquo;s novel <em>Faithful Ruslan</em>. In this context, &ldquo;suppress&rdquo; means to prevent something, such as a book, from being accessed by the public. The text indicates that the novel was circulated secretly within the Soviet Union, a stratagem that was necessary because of the government&rsquo;s efforts to suppress the book, or prevent it from being circulated and read.</p><p>Choice A is incorrect because in this context, &ldquo;replicate&rdquo; would mean to copy or reproduce a book, and this meaning wouldn&rsquo;t make sense in the text&rsquo;s discussion of <em>Faithful Ruslan</em>. If the Soviet government had attempted to replicate Vladimov&rsquo;s novel, there would be no reason for copies to circulate &ldquo;in secret,&rdquo; since the government would be actively making more copies available, not restricting access. Choice B is incorrect. Although a repressive government might well &ldquo;critique&rdquo; a novel, or evaluate it negatively, simply critiquing one wouldn&rsquo;t necessarily lead to copies of it circulating &ldquo;in secret.&rdquo; Instead, the text suggests that the Soviet government took decisive action against <em>Faithful Ruslan</em> that necessitated its underground circulation and did not merely offer criticism of the novel. Choice C is incorrect because &ldquo;import&rdquo; means to bring a product, such as a book, into a country from elsewhere. However, the text suggests that copies of <em>Faithful Ruslan</em> were already present in the Soviet Union and that the government was trying to restrict their circulation rather than increasing access to the novel by importing copies from another country.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Although the government of the Soviet Union attempted to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Georgi Vladimov&rsquo;s novel <em>Faithful Ruslan</em>, copies of the book circulated in secret among readers in several parts of the country.&nbsp;</p>",
+    "keys": [
+      "5ec3b89e-229a-47b1-8aa8-b4ac3345b222"
+    ],
+    "answerOptions": [
+      {
+        "id": "ca81d4df-45fc-4a53-a90d-45d198502cd6",
+        "content": "<p>replicate</p>"
+      },
+      {
+        "id": "312ed3ea-c851-4c6b-a772-eff84327b3c5",
+        "content": "<p>critique</p>"
+      },
+      {
+        "id": "2d9e09f8-a102-436f-b66e-2d179ad1d6fc",
+        "content": "<p>import</p>"
+      },
+      {
+        "id": "5ec3b89e-229a-47b1-8aa8-b4ac3345b222",
+        "content": "<p>suppress</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of Georgi Vladimov&rsquo;s novel <em>Faithful Ruslan</em>. In this context, &ldquo;suppress&rdquo; means to prevent something, such as a book, from being accessed by the public. The text indicates that the novel was circulated secretly within the Soviet Union, a stratagem that was necessary because of the government&rsquo;s efforts to suppress the book, or prevent it from being circulated and read.</p><p>Choice A is incorrect because in this context, &ldquo;replicate&rdquo; would mean to copy or reproduce a book, and this meaning wouldn&rsquo;t make sense in the text&rsquo;s discussion of <em>Faithful Ruslan</em>. If the Soviet government had attempted to replicate Vladimov&rsquo;s novel, there would be no reason for copies to circulate &ldquo;in secret,&rdquo; since the government would be actively making more copies available, not restricting access. Choice B is incorrect. Although a repressive government might well &ldquo;critique&rdquo; a novel, or evaluate it negatively, simply critiquing one wouldn&rsquo;t necessarily lead to copies of it circulating &ldquo;in secret.&rdquo; Instead, the text suggests that the Soviet government took decisive action against <em>Faithful Ruslan</em> that necessitated its underground circulation and did not merely offer criticism of the novel. Choice C is incorrect because &ldquo;import&rdquo; means to bring a product, such as a book, into a country from elsewhere. However, the text suggests that copies of <em>Faithful Ruslan</em> were already present in the Soviet Union and that the government was trying to restrict their circulation rather than increasing access to the novel by importing copies from another country.</p>",
+    "externalid": "a5de0431-b778-4957-aae9-f107e1a2ab49",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Although the government of the Soviet Union attempted to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Georgi Vladimov&rsquo;s novel <em>Faithful Ruslan</em>, copies of the book circulated in secret among readers in several parts of the country.&nbsp;</p>"
+}

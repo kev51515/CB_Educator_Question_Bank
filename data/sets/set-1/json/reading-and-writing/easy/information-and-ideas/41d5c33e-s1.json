@@ -1,0 +1,39 @@
+{
+  "questionId": "41d5c33e-s1",
+  "originalId": "41d5c33e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a late nineteenth-century novel by an American author.</p><blockquote><p>In her small parlor in Boston, an elderly woman sat absorbed in a worn volume of Carlyle's essays. She did not look up when the boy from the telegraph office rapped at the door with a message. She glanced indifferently at the slip of paper he offered and impatiently at the boy himself. Adelaide Pruitt did not like to be interrupted when she was reading Carlyle; and as she was always reading Carlyle, an interruption was always treated by her as a sort of impertinence.</p></blockquote>",
+  "stem": "<p>Based on the text, how did Adelaide Pruitt most likely feel when the telegram arrived?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She felt sad because the boy did not stay to speak with her.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She felt annoyed because she had been interrupted while reading her favorite author.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She felt relieved because she had been expecting an urgent message.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She felt excited because the telegram came from a close friend.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text states that Pruitt disliked interruptions while reading Carlyle and treated them as an impertinence, and her impatient look at the messenger fits annoyance.</p><p>Choice A is incorrect; she looked at the boy impatiently, suggesting she wanted him to leave, not that she was sad. Choice C is incorrect; she glanced \"indifferently\" at the message, not with relief. Choice D is incorrect; the text gives no indication who sent the telegram, and her response is far from excited.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T8.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "0b332f00-s1",
+  "originalId": "0b332f00",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function g is defined by g(x) = 5x. What is the value of g(4)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "20"
+  ],
+  "rationale": "<p>Substituting 4 for x gives g(4) = 5(4) = 20.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

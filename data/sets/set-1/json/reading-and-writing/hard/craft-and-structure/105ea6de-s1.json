@@ -1,0 +1,39 @@
+{
+  "questionId": "105ea6de-s1",
+  "originalId": "105ea6de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>The increasing reliance on engineered microbial consortia&mdash;assemblages of multiple bacterial strains designed to perform tasks such as breaking down agricultural waste&mdash;has outpaced careful study of their ecological consequences. Predictions based on the individual strains involved are inadequate: <u>combining strains can shift their metabolic outputs so dramatically that harmless bacteria together produce a consortium that is anything but</u>.</p>\n<p><strong>Text 2</strong></p>\n<p>The risk of amplified toxicity in engineered consortia compared with that of their component strains has rightly prompted scrutiny, but the outcomes of strain combination vary by case. For example, a consortium pairing <em>Bacillus subtilis</em> with a soil <em>Pseudomonas</em> strain retained the nitrogen-fixing activity prized in agriculture while suppressing a toxin that <em>Pseudomonas</em> normally secretes on its own.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the assertion in the underlined portion of Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By agreeing that the possibility described in Text 1 warrants concern but noting that strain combination does not always produce that result</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By conceding that the risk described in Text 1 should be studied but arguing that the agricultural benefits of consortium engineering outweigh the danger</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By suggesting that the situation described in Text 1 may not be typical but admitting that the effects of combining strains are harder to anticipate than researchers had expected</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By rejecting the idea that the circumstance described in Text 1 is likely to occur but conceding that many aspects of consortium behavior remain poorly understood</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The author of Text 2 acknowledges that engineered consortia may exhibit amplified toxicity but also offers an example of a consortium whose combined toxicity is lower than a component's alone: pairing <em>B. subtilis</em> with the <em>Pseudomonas</em> strain preserves the desired activity while suppressing a toxin. This indicates agreement that the concern is valid but a caveat that combination does not always produce harmful outcomes.</p><p>Choice B is incorrect because Text 2 does not weigh agricultural benefits against the risk; it argues only that outcomes \"vary by case.\" Choice C is incorrect because Text 2 does not concede unpredictability beyond expectation; it specifically presents a counterexample. Choice D is incorrect because the author of Text 2 does not deny that the situation in Text 1 is likely; the author accepts the concern is real but qualifies it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.hard"
+}

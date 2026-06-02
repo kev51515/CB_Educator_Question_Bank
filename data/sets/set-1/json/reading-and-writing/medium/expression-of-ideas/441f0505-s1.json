@@ -1,0 +1,25 @@
+{
+  "questionId": "441f0505-s1",
+  "originalId": "441f0505",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A1.T2.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>A pulley is a simple machine consisting of a grooved wheel and a rope or belt.</li>\n<li>The wheel turns about an axle while the rope runs through the groove.</li>\n<li>A fixed pulley is attached to a stationary support and does not move with the load.</li>\n<li>A movable pulley is attached directly to the load and moves with it.</li>\n<li>In a fixed pulley, the rope changes the direction of the applied force but does not reduce the force needed to lift the load.</li>\n<li>In a movable pulley, the rope is anchored at one end so that the applied force can be roughly half the weight of the load.</li>\n</ul>",
+  "stem": "<p>The student wants to contrast fixed pulleys and movable pulleys. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In a fixed pulley, the rope only changes the direction of the applied force, but in a movable pulley, the rope allows the applied force to be roughly half the weight of the load.</p>"},
+    {"id": "b", "content": "<p>Fixed and movable pulleys differ in how their ropes interact with the applied force and the load.</p>"},
+    {"id": "c", "content": "<p>Both fixed pulleys and movable pulleys are simple machines that consist of a grooved wheel and a rope.</p>"},
+    {"id": "d", "content": "<p>In pulleys, the applied force is the force exerted on the rope, while the load is the object being lifted.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The sentence contrasts fixed pulleys and movable pulleys, explaining that the rope in a fixed pulley only redirects the applied force, whereas in a movable pulley the rope allows the applied force to be roughly half the weight of the load.</p><p>Choice B is incorrect. While the sentence acknowledges a general difference, it doesn’t specify what the difference is. Choice C is incorrect. The sentence states a similarity rather than a contrast. Choice D is incorrect. The sentence defines two pulley-related terms; it doesn’t contrast fixed and movable pulleys.</p>",
+  "generatedAt": "2026-05-27T12:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "520c8177-s1",
+  "originalId": "520c8177",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A nutritionist recommends that each day a certain dog should eat 30 calories per pound of the dog's weight, plus an additional 15 calories. Which equation represents this situation, where c is the total number of calories the nutritionist recommends the dog should eat each day if the dog's weight is x pounds?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>c = 30x + 15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>c = 30x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>c = 15x + 30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>c = 45x</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 30x captures 30 calories per pound; add the constant 15: c = 30x + 15.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T3.easy"
+}

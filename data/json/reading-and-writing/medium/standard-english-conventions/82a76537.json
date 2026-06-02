@@ -1,0 +1,72 @@
+{
+  "questionId": "82a76537",
+  "externalId": "9769fda4-5abb-4b85-9e45-26e6b0d6c2a2",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:58.340466+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "45947133-fc97-43b0-8fff-f17e081d85ae",
+      "content": "<p>newts<span data-ssml-say-as=\"characters\">.</span> For&nbsp;</p>"
+    },
+    {
+      "id": "437cceb6-7311-4c7c-8a7c-f8ba40726f03",
+      "content": "<p>newts<span data-ssml-say-as=\"characters\">,</span> for</p>"
+    },
+    {
+      "id": "8df244a8-c25b-417c-b08a-1374f997e5df",
+      "content": "<p>newts<span data-ssml-say-as=\"characters\">:</span> for</p>"
+    },
+    {
+      "id": "5467d17b-46f1-4b9b-ac29-04df5c6fc684",
+      "content": "<p>newts<span data-ssml-say-as=\"characters\">;</span> for</p>"
+    }
+  ],
+  "keys": [
+    "437cceb6-7311-4c7c-8a7c-f8ba40726f03"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;newts&rdquo; pairs with the comma after &ldquo;instance&rdquo; to separate the supplementary element &ldquo;for instance&rdquo; from the rest of the sentence. The supplementary element appears between the prepositional phrase (&ldquo;In&hellip;newts&rdquo;) and the main clause of the sentence (&ldquo;you&hellip;<em>orientalis</em>&rdquo;) and signals that the sentence is presenting an example of how keys and values function in JSON files.</p><p>Choice A is incorrect because it results in a sentence fragment (&ldquo;In a JSON file storing data about fire belly newts&rdquo;). Choice C is incorrect because a colon can&rsquo;t be paired with a comma in this way to separate the supplementary element &ldquo;for instance&rdquo; from the rest of the sentence. Choice D is incorrect because a semicolon can&rsquo;t be paired with a comma in this way to separate the supplementary element &ldquo;for instance&rdquo; from the rest of the sentence.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Key-value pairs are an important aspect of JavaScript Object Notation (JSON), an electronic file format for storing and transmitting data. Keys function as labels, while values contain the actual information. In a JSON file storing data about fire belly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> instance, you could encounter a key such as &ldquo;species&rdquo; with the associated value of &ldquo;<em>Cynops orientalis</em>.&rdquo;</p>",
+    "keys": [
+      "437cceb6-7311-4c7c-8a7c-f8ba40726f03"
+    ],
+    "answerOptions": [
+      {
+        "id": "45947133-fc97-43b0-8fff-f17e081d85ae",
+        "content": "<p>newts<span data-ssml-say-as=\"characters\">.</span> For&nbsp;</p>"
+      },
+      {
+        "id": "437cceb6-7311-4c7c-8a7c-f8ba40726f03",
+        "content": "<p>newts<span data-ssml-say-as=\"characters\">,</span> for</p>"
+      },
+      {
+        "id": "8df244a8-c25b-417c-b08a-1374f997e5df",
+        "content": "<p>newts<span data-ssml-say-as=\"characters\">:</span> for</p>"
+      },
+      {
+        "id": "5467d17b-46f1-4b9b-ac29-04df5c6fc684",
+        "content": "<p>newts<span data-ssml-say-as=\"characters\">;</span> for</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;newts&rdquo; pairs with the comma after &ldquo;instance&rdquo; to separate the supplementary element &ldquo;for instance&rdquo; from the rest of the sentence. The supplementary element appears between the prepositional phrase (&ldquo;In&hellip;newts&rdquo;) and the main clause of the sentence (&ldquo;you&hellip;<em>orientalis</em>&rdquo;) and signals that the sentence is presenting an example of how keys and values function in JSON files.</p><p>Choice A is incorrect because it results in a sentence fragment (&ldquo;In a JSON file storing data about fire belly newts&rdquo;). Choice C is incorrect because a colon can&rsquo;t be paired with a comma in this way to separate the supplementary element &ldquo;for instance&rdquo; from the rest of the sentence. Choice D is incorrect because a semicolon can&rsquo;t be paired with a comma in this way to separate the supplementary element &ldquo;for instance&rdquo; from the rest of the sentence.</p>",
+    "externalid": "9769fda4-5abb-4b85-9e45-26e6b0d6c2a2",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Key-value pairs are an important aspect of JavaScript Object Notation (JSON), an electronic file format for storing and transmitting data. Keys function as labels, while values contain the actual information. In a JSON file storing data about fire belly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> instance, you could encounter a key such as &ldquo;species&rdquo; with the associated value of &ldquo;<em>Cynops orientalis</em>.&rdquo;</p>"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "145d5ca7-s1",
+  "originalId": "145d5ca7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.misc.medium",
+  "stimulus": "<p>Forecasting volcanic activity in remote Pacific archipelagoes is difficult because of the region&rsquo;s scattered networks of seismic <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the timing and magnitude of eruptive episodes can shift unpredictably from one season to the next.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>stations and the fact that</p>"},
+    {"id": "b", "content": "<p>stations, and the fact that,</p>"},
+    {"id": "c", "content": "<p>stations and the fact that,</p>"},
+    {"id": "d", "content": "<p>stations, and, the fact that</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation within two coordinated noun phrases. When a noun phrase (&ldquo;the region&rsquo;s scattered networks of seismic stations&rdquo;) is coordinated with another noun phrase (&ldquo;the fact&rdquo;) followed by an integrated relative clause (&ldquo;that the timing...next&rdquo;), no punctuation is needed.</p><p>Choice B is incorrect because no punctuation is needed. Choice C is incorrect because no punctuation is needed. Choice D is incorrect because no punctuation is needed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

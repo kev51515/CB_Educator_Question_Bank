@@ -1,0 +1,25 @@
+{
+  "questionId": "9aa5efc4-s1",
+  "originalId": "9aa5efc4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Born in 1899 to a Berber-speaking family in the Atlas Mountains of Morocco, Idris Aksil is today considered one of the most influential figures in early North African photography. In a paper for an art history class, a student claims that Aksil&rsquo;s photographs have considerable ethnographic value&mdash;in his work, Aksil was able to capture diverse elements of Moroccan society, representing his subjects with both dignity and authenticity.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Aksil took many commissioned portraits of urban merchants in Fez, but he also produced hundreds of images carefully documenting the peoples, festivals, and crafts of Berber communities of the Atlas.</p>"},
+    {"id": "b", "content": "<p>Aksil&rsquo;s photographs demonstrate a high level of technical skill, as seen in his careful use of natural backlighting to produce striking silhouettes.</p>"},
+    {"id": "c", "content": "<p>During his lifetime, Aksil was known and celebrated both within and outside his native Morocco, as his work was published in places like France, Egypt, and Algeria.</p>"},
+    {"id": "d", "content": "<p>Some of the peoples and places Aksil photographed had long been popular subjects for Moroccan photographers.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The student&rsquo;s claim is that Aksil&rsquo;s photographs have ethnographic value because they capture diverse elements of Moroccan society. A finding that Aksil photographed both urban merchants in Fez and the peoples, festivals, and crafts of Atlas Berber communities directly supports the breadth and ethnographic value the student describes. Choice B is incorrect because technical skill in lighting is unrelated to the claim about ethnographic value and diversity of subjects. Choice C is incorrect because international reputation does not show that the photographs depict diverse elements of Moroccan society. Choice D is incorrect because the popularity of his subjects among other photographers does not bear on whether his images are ethnographically valuable.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

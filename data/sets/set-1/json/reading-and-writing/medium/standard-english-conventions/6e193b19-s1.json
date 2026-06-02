@@ -1,0 +1,25 @@
+{
+  "questionId": "6e193b19-s1",
+  "originalId": "6e193b19",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Engineer Mary Anderson devised one of the world's most ubiquitous automotive features. In the early 1900s, she developed the windshield wiper, which <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of the manual cloth-and-snow-removal practices drivers had relied on for decades.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>was a mechanical replacement</p>"},
+    {"id": "b", "content": "<p>are mechanical replacements</p>"},
+    {"id": "c", "content": "<p>were mechanical replacements</p>"},
+    {"id": "d", "content": "<p>were a mechanical replacement</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement and agreement between nouns. The singular verb \"was\" and the singular noun \"replacement\" both agree in number with the relative pronoun \"which.\" In this context, \"which\" functions as a singular subject because it refers to the singular noun \"the windshield wiper.\"</p><p>Choice B is incorrect because the plural verb \"are\" and the plural noun \"replacements\" don't agree in number with the singular noun phrase \"the windshield wiper\" that they're modifying. Choice C is incorrect because the plural verb \"were\" and the plural noun \"replacements\" don't agree in number with the singular noun phrase \"the windshield wiper.\" Choice D is incorrect because the plural verb \"were\" doesn't agree in number with the singular noun phrase \"the windshield wiper\" that it's modifying.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

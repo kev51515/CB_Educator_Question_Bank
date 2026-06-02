@@ -1,0 +1,22 @@
+{
+  "questionId": "f811d345-s1",
+  "originalId": "f811d345",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A right triangle has legs with lengths of 18 centimeters and 15 centimeters. If the length of this triangle's hypotenuse, in centimeters, can be written in the form 3&radic;d, where d is an integer, what is the value of d?</p>",
+  "answerOptions": null,
+  "keys": [
+    "61"
+  ],
+  "rationale": "<p>By the Pythagorean theorem, hypotenuse&sup2; = 18&sup2; + 15&sup2; = 324 + 225 = 549. Then hypotenuse = &radic;549 = &radic;(9 &middot; 61) = 3&radic;61, so d = 61.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.easy"
+}

@@ -1,0 +1,627 @@
+{
+  "section": "Math",
+  "domain": "Advanced Math",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+  "originals_count": 154,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Rearrange formula for a variable",
+      "description": "Given an equation or formula relating multiple variables (often a real-world formula), produce an equivalent form that isolates a named target variable. No numeric solving — the output is itself an expression.",
+      "boundary_with_other_aspects": "A1 produces an equivalent symbolic expression (solve-for-a-letter); A2 produces numeric root(s) of a single nonlinear equation; A5 produces an equivalent statement of the same equation/inequality without isolating a particular variable.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Literal-equation rearrangement (solve-for-a-variable)",
+          "description": "Given a formula or equation relating 2-4 variables (often in a context such as physics, finance, or pure symbolic), the student must isolate one named variable in terms of the others. Always MCQ.",
+          "core_skill_demand": "Apply inverse operations (subtraction, division, multiplication by a denominator, distribution, taking reciprocals, combining fractions over common denominators) to isolate a specified variable, recognizing the order of operations to undo and handling sign changes correctly.",
+          "example_originals": ["63c00e2b", "ad03127d", "11ccf3e1", "40f2e601", "c77ef2fb", "133f3e41"],
+          "frequency": { "easy": 11, "medium": 14, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "1-2 inverse operations only (e.g., add/subtract a constant, or divide both sides)",
+                "Pure symbolic form with integer coefficients (no context wrapper)",
+                "Target variable is on the side that already isolates it after a single step",
+                "No fractions or only a single fraction with the target variable in the numerator"
+              ],
+              "example_stem": "q minus 29r = s. Which equation correctly expresses q in terms of r and s?",
+              "example_ids": ["70f98ab4", "ad03127d", "bf704c34", "c1964c11", "d964bc26", "b76a2815", "63c00e2b", "fcb78856"]
+            },
+            "medium": {
+              "characteristics": [
+                "2-3 inverse operations including dividing by a multi-term group or multiplying by a denominator",
+                "Often wrapped in a real-world context (property tax, wave speed, blood volume) requiring the student to map names to variables",
+                "Target variable appears inside a denominator or inside a parenthesized expression that must be unpacked",
+                "May require distributing a coefficient before isolating"
+              ],
+              "example_stem": "p = 20 + 16/n, where n != 0 and p > 20. Express n in terms of p.",
+              "example_ids": ["11ccf3e1", "29ed5d39", "40f2e601", "6acdcece", "8f65cddc", "2683b5db", "2f958af9", "630897df", "c77ef2fb", "be1b8c74"]
+            },
+            "hard": {
+              "characteristics": [
+                "Target variable appears in multiple places (denominator and elsewhere) requiring combine-fractions-then-solve",
+                "Equation contains a radical or squared expression around the rearranged variable (must square or take reciprocal carefully)",
+                "Three or more other variables involved, often with a sign-flip step",
+                "Result is a compound fraction or requires recognizing equivalent algebraic forms"
+              ],
+              "example_stem": "12/n - 2/t = -2/w, n>0, t>0, w>t. Express n in terms of t and w.",
+              "example_ids": ["133f3e41", "17d0e87d", "5910bfff", "b03adde3", "c8e9a011", "f2f3fa00"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An explicit named target variable",
+              "Exactly one valid algebraic answer (the other 3 options reflect classic inverse-operation errors)",
+              "Same number of inverse operations as the source",
+              "If source uses a context wrapper, the clone uses an equivalent context wrapper"
+            ],
+            "must_vary": [
+              "Variable letter names (j,k,m vs p,q,r etc.)",
+              "Numeric coefficients (preserve type: integer/fraction)",
+              "Which variable is the target"
+            ],
+            "common_bugs": [
+              "Choosing a target variable that requires only 1 step when source required 3 (difficulty regression)",
+              "Allowing the distractors to be obviously wrong (e.g., not based on actual inverse-operation errors)",
+              "Sign errors in the answer key after editing the original constant without recomputing distractors",
+              "Removing the context wrapper from a medium item and dropping it to easy",
+              "Drifting into A2 by producing an equation whose target variable has a numeric answer (categorical error)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Solve a single nonlinear equation",
+      "description": "Given one equation in one unknown that is nonlinear (quadratic, absolute-value, radical, rational, factored polynomial), produce a numeric root or a small set of roots, or count distinct real solutions when no parameter is involved.",
+      "boundary_with_other_aspects": "A2 asks for actual root values of a fully specified equation. A3 differs by introducing a literal parameter and asking about the *parameter* that produces a target solution count. A4 differs by requiring two equations (a system).",
+      "types": [
+        {
+          "id": "T2",
+          "name": "Solve quadratic / find root, sum, or product",
+          "description": "A quadratic equation (in standard, factored, or vertex form) is given. Student must find one solution, the positive/negative solution, the sum, the product, or recognize a solution structure (e.g., x = (-7 + sqrt(k))/2).",
+          "core_skill_demand": "Factor a quadratic, apply the quadratic formula, use Vieta's formulas (sum = -b/a, product = c/a), recognize a perfect square, or solve a zero-product factored form. May require rearranging into standard form first.",
+          "example_originals": ["062f86db", "332cd67b", "b4acba95", "f76c1858", "ff2e5c76", "041eda89"],
+          "frequency": { "easy": 5, "medium": 10, "hard": 9 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Equation already in form x^2 = k or ax^2 + b = c (one-step square root)",
+                "Or fully factored zero-product form (x+a)(x-b)(x+c) = 0",
+                "Asked for the positive solution or any one solution; integer answer",
+                "Only basic operations needed (square root, set each factor to zero)"
+              ],
+              "example_stem": "k^2 - 53 = 91. What is the positive solution?",
+              "example_ids": ["7399c3b0", "cec36caf", "5639dd1a", "88867d37", "ce940f80"]
+            },
+            "medium": {
+              "characteristics": [
+                "Standard form ax^2 + bx + c = 0 requiring factoring over integers (or using quadratic formula with rational roots)",
+                "May require rearrangement (move terms to one side) before factoring",
+                "Asked for positive solution, sum of solutions, product of solutions, or one solution presented with sign constraint",
+                "Includes 'how many distinct real solutions' for an equation whose discriminant is straightforward"
+              ],
+              "example_stem": "5x^2 - 37x - 24 = 0. What is the positive solution?",
+              "example_ids": ["062f86db", "13e57f0a", "2926cc6d", "3b4b8831", "3d7d7534", "4b6f0a3f", "717a1964", "b4acba95", "fad2f98c", "f76c1858"]
+            },
+            "hard": {
+              "characteristics": [
+                "Solutions are irrational; answer expressed as (n ± sqrt(k))/m and student must find k or another structural constant",
+                "Requires significant rearrangement (e.g., expanding x(x+1) - 56 = 4x(x-7)) before standard form",
+                "Asks for the sum/product where Vieta's gives a fraction, or requires recognizing a pattern across two related quadratics",
+                "May embed an extra algebraic manipulation step (e.g., 'value of x^2 - 6x' from a quadratic)"
+              ],
+              "example_stem": "x^2 + 7x + 5 = 0. One solution is x = (-7 + sqrt(k))/2. What is k?",
+              "example_ids": ["041eda89", "ba0edc30", "fada6b03", "158591f0", "c303ad23", "ff2e5c76", "722de804", "7028c74f", "e11294f9"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The quadratic structure (single variable, degree 2 after rearrangement)",
+              "Type of target (one solution / positive solution / sum / product / structural constant k)",
+              "Whether the discriminant is a perfect square (rational roots) or not (irrational roots)"
+            ],
+            "must_vary": [
+              "Specific coefficients a, b, c (preserving sign and integer/fraction type)",
+              "Variable letter (x, k, w, z, d)",
+              "Form presented (standard vs factored vs requires rearrangement)"
+            ],
+            "common_bugs": [
+              "Creating a quadratic with no real solutions when the question asks for 'the positive solution'",
+              "Changing the discriminant from non-perfect-square to perfect-square (or vice versa) without changing the answer format",
+              "Editing coefficients without re-deriving the sum/product expected answer (Vieta's drift)",
+              "Replacing a factored form with an unfactored standard form when the source's difficulty depended on the factored hint"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Absolute-value equation",
+          "description": "An equation involving |expression in x| = constant (or |expr| + c = d) is given. Student finds a solution, the positive solution, the sum of solutions, or one of two possible values.",
+          "core_skill_demand": "Isolate the absolute-value expression, then split into two linear cases (expr = k and expr = -k), solve each, and select the requested root or combine them.",
+          "example_originals": ["13e5a5d5", "3cce51ea", "c6a26e14", "da602115", "3a01a5ee", "c9417793"],
+          "frequency": { "easy": 4, "medium": 1, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "|x| = k or k|x| = c (one step to isolate, single-letter inside)",
+                "Asked for the positive solution or one possible solution",
+                "Small integers"
+              ],
+              "example_stem": "5|x| = 45. What is the positive solution?",
+              "example_ids": ["13e5a5d5", "3cce51ea", "c6a26e14", "7cb3a8ee", "c7789423"]
+            },
+            "medium": {
+              "characteristics": [
+                "|linear expression in x| = constant with a multi-step linear inside (|ax + b| = c)",
+                "Asks for a derived quantity (positive value of x - 1) rather than x directly"
+              ],
+              "example_stem": "|4x - 4| = 112. What is the positive value of x - 1?",
+              "example_ids": ["da602115"]
+            },
+            "hard": {
+              "characteristics": [
+                "Sum of solutions or product of solutions of |ax + b| = c",
+                "Multiple absolute-value terms combined (e.g., 2|4-x| + 3|4-x| = 25)",
+                "Absolute value with extra constant on the other side requiring two isolation steps",
+                "May yield a fractional answer (sum = 26/5)"
+              ],
+              "example_stem": "|-5x + 13| = 73. What is the sum of the solutions?",
+              "example_ids": ["3a01a5ee", "3a9d60b2", "c9417793", "f65288e8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The absolute-value structure and a unique numeric target",
+              "Whether the answer is one root, the sum, or a derived expression"
+            ],
+            "must_vary": [
+              "Coefficients inside the bars and the right-hand side",
+              "Variable letter (x, p)"
+            ],
+            "common_bugs": [
+              "Producing an equation like |x| = -k (no solution) by sign error",
+              "Forgetting that sum of solutions equals 2 * (constant inside the bars subtracted)",
+              "Reducing a hard sum-of-solutions item to an easy single-root item"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Radical / square-root equation",
+          "description": "An equation contains a square root (or other radical) of an expression in x equal to another expression. Student isolates the radical, squares both sides, and solves the resulting equation, checking for extraneous solutions.",
+          "core_skill_demand": "Isolate the radical, square both sides, solve the resulting polynomial (often quadratic), and identify valid/smallest/positive root or determine the constant in the radicand that yields exactly one valid solution.",
+          "example_originals": ["0380bbdc", "d0a53ef5", "2c288148"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(No easy items observed for pure radical equations; sqrt appears in easy items only inside a substitution system - see T6)"],
+              "example_stem": "(none in this bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Single radical isolated on one side, equal to a constant",
+                "Asked for a derived quantity (e.g., 6x) rather than x directly",
+                "Squaring yields a linear equation"
+              ],
+              "example_stem": "4*sqrt(2x) = 16. What is 6x?",
+              "example_ids": ["0380bbdc"]
+            },
+            "hard": {
+              "characteristics": [
+                "Radical equation with variable on both sides; squaring yields a quadratic with potential extraneous roots",
+                "Or: radical contains a parameter k and student must find k such that there is exactly one real solution",
+                "Requires explicit check for extraneous solutions or domain reasoning"
+              ],
+              "example_stem": "sqrt(k - x) = 58 - x. The equation has exactly one real solution. What is the minimum value of 4k?",
+              "example_ids": ["d0a53ef5", "2c288148"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Presence of the radical (cannot simplify it away)",
+              "The extraneous-root check requirement when the source had one"
+            ],
+            "must_vary": [
+              "Constants inside and outside the radical",
+              "The target (a single root, smallest root, or parameter value)"
+            ],
+            "common_bugs": [
+              "Creating a clone whose squared form happens to have no extraneous roots when the source did (loses the conceptual challenge)",
+              "Editing the right-hand side without re-verifying domain",
+              "Drifting into A3 by adding a parameter that turns it into a discriminant problem"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Rational equation (variable in denominator)",
+          "description": "An equation contains a variable inside a denominator. Student clears the denominator by multiplication, then solves the resulting polynomial (often quadratic).",
+          "core_skill_demand": "Multiply both sides by the denominator to clear fractions, simplify (often producing a quadratic), solve, and verify the root does not make the original denominator zero.",
+          "example_originals": ["09e5e4d3", "5ae186b4", "bef4b1c6", "5ae4803e"],
+          "frequency": { "easy": 0, "medium": 4, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(No easy items in this bank for rational equations)"],
+              "example_stem": "(none)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Single rational expression equated to a constant or to another expression",
+                "Clearing the denominator produces a quadratic that factors over integers",
+                "Often phrased as 'what is the positive solution' or 'what is the solution'",
+                "May involve a cancellable common factor (e.g., (x+9)(x-9)/(x+9) = 7)"
+              ],
+              "example_stem": "55/(x+6) = x. What is the positive solution?",
+              "example_ids": ["09e5e4d3", "5ae186b4", "bef4b1c6", "5ae4803e"]
+            },
+            "hard": {
+              "characteristics": ["(In this bank, hard rational-style items are reclassified under A1.T1 literal-equation rearrangement since they ask for an expression rather than a solution)"],
+              "example_stem": "(see A1.T1.hard)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The variable appearing in a denominator",
+              "A real, non-zero solution exists after clearing the denominator",
+              "Target output (positive solution, single solution)"
+            ],
+            "must_vary": [
+              "Numerator constants and denominator structure",
+              "Right-hand side value"
+            ],
+            "common_bugs": [
+              "Producing a clone whose only solution makes the original denominator zero (no valid solution)",
+              "Simplifying the structure so the denominator no longer contains the variable (drops to a basic quadratic)",
+              "Drifting into A1 by asking 'express x in terms of …' instead of for a numeric solution"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Zero-product / factored polynomial",
+          "description": "An equation in factored form (linear factors, possibly cubic or higher) equals zero. Student identifies one solution, counts the distinct real solutions, or determines which roots are in a stated set.",
+          "core_skill_demand": "Apply the zero-product property: set each factor equal to zero, list the resulting roots, then answer the specific prompt (one solution, count, sum, or membership). For higher-degree factored forms, recognize that a cubic factor like x^3 + 64 gives a single real root.",
+          "example_originals": ["88867d37", "2926cc6d", "fad2f98c", "faeae876", "fbb96bb1"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Three linear factors of form (x + a)(x - b)(x + c) = 0",
+                "Asked for any one (positive) solution",
+                "Single-digit constants"
+              ],
+              "example_stem": "(x+2)(x-5)(x+9) = 0. What is a positive solution?",
+              "example_ids": ["88867d37"]
+            },
+            "medium": {
+              "characteristics": [
+                "Two or three linear factors equal to zero",
+                "Solutions may be fractional (from factors like 5x + 4)",
+                "Asks for one solution, distinct count, or includes a zero factor"
+              ],
+              "example_stem": "(5x + 4)(2x - 5) = 0. Which of the following is a solution?",
+              "example_ids": ["2926cc6d", "3d7d7534", "fad2f98c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Polynomial factored as product of higher-degree factors (cubic + quartic) where the count of real solutions requires recognizing which factors give real roots",
+                "Or: structure like x - 29 = (x - a)(x - 29) where student must recognize 29 as one root and find others using parameter constraint"
+              ],
+              "example_stem": "52(x^3 + 64)(x^4 - 81) = 0. How many distinct real solutions?",
+              "example_ids": ["faeae876", "fbb96bb1"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Factored form on one side equal to zero on the other",
+              "Same number and type of factors (linear, quadratic, cubic)"
+            ],
+            "must_vary": [
+              "Constants inside each factor",
+              "Variable letter"
+            ],
+            "common_bugs": [
+              "Expanding the factors into standard form (changes type to T2 and likely drops difficulty)",
+              "Creating duplicate factors (changes distinct-solution count)",
+              "Adding a non-zero RHS so zero-product no longer applies"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Reason about solution structure via parameter",
+      "description": "Given an equation or system that contains a literal parameter (b, c, k, a, …) in its coefficients, reason about how the solution count or solution structure depends on that parameter — most commonly via the discriminant b²-4ac or Vieta's formulas.",
+      "boundary_with_other_aspects": "A3 always involves at least one literal parameter, and the target is a constraint on that parameter (its value, sign, integer bound) — not a root of x. A2 fixes all coefficients and asks for a root; A3 fixes a target solution behavior and asks for a coefficient.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Discriminant / number-of-solutions / value of constant for given solution count",
+          "description": "A quadratic equation (or a system reducible to one) is given containing a parameter (b, c, k, a). Student either counts the distinct real solutions, or finds the parameter value that yields exactly one / no / more-than-one real solution.",
+          "core_skill_demand": "Apply the discriminant condition b^2 - 4ac (>0, =0, <0) to determine solution count, or set the discriminant equal to a target value and solve for the parameter. For systems, equate the two expressions and apply the same condition to the resulting quadratic.",
+          "example_originals": ["332cd67b", "1ce9ffcd", "88a0c425", "1fe32f7d", "6aefc52b", "f5aa5040"],
+          "frequency": { "easy": 1, "medium": 4, "hard": 13 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Direct discriminant calculation on a numeric quadratic ax^2 + bx + c = 0",
+                "Answer choices are 'Exactly one / Exactly two / Zero / Infinitely many'",
+                "Small integer coefficients; discriminant is a clean integer"
+              ],
+              "example_stem": "3x^2 - 15x + 18 = 0. How many distinct real solutions are there?",
+              "example_ids": ["332cd67b"]
+            },
+            "medium": {
+              "characteristics": [
+                "Either a no-parameter discriminant count on a slightly more complex equation, or an MCQ asking 'which quadratic has exactly one solution / no real solutions'",
+                "May require recognizing (x+a)^2 = 0 form or x^2 = negative number",
+                "Coefficients are still integers; discriminant computation is one or two steps"
+              ],
+              "example_stem": "Which quadratic equation has exactly one distinct real solution?",
+              "example_ids": ["3934dd0a", "6bdcac03", "f5247e52", "a5663025"]
+            },
+            "hard": {
+              "characteristics": [
+                "Equation contains a literal parameter (b, c, k, a) and student must solve b^2 - 4ac = 0 (or > 0, < 0) for that parameter",
+                "Often phrased as 'the equation has exactly one solution, find c' or 'no real solution, find the greatest integer b'",
+                "May be embedded in a system (y = const intersects parabola at one point)",
+                "Includes problems where 'least possible value' or 'greatest possible value' of an integer parameter is requested (boundary reasoning)"
+              ],
+              "example_stem": "-9x^2 + 30x + c = 0. The equation has exactly one solution. What is c?",
+              "example_ids": ["1ce9ffcd", "88a0c425", "3d12b1e0", "1fe32f7d", "03ff48d2", "ebb717ab", "6011a3f8", "7bd10ef3", "2cb17792", "6aefc52b", "9cb9beec", "a54753ca", "f5aa5040", "fc3d783a", "74473be4", "4dc5c6f9", "71014fb1", "2cd6b22d", "77c0cced", "2c5c22d0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The parameter location (in b or c) and the sign-of-discriminant target",
+              "Whether the answer is a single value (=0 case) or a boundary (least/greatest integer)",
+              "If a system, the structure (line meets parabola at exactly one point)"
+            ],
+            "must_vary": [
+              "Specific numeric coefficients while preserving discriminant tractability",
+              "Variable names and parameter letters",
+              "Direction of parabola"
+            ],
+            "common_bugs": [
+              "Changing coefficients so the discriminant equation gives a non-integer when the source had an integer answer",
+              "Editing without verifying that b^2 - 4ac actually equals/exceeds/is less than zero for the stated parameter value",
+              "Confusing 'no real solution' with 'exactly one solution' in the question text",
+              "Asking for the 'least integer' when the parameter is continuous (or vice versa), drifting the difficulty",
+              "Dropping the parameter entirely, drifting to A2.T2 (categorical error)"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Symbolic-parameter quadratic / Vieta's-style",
+          "description": "A quadratic equation contains literal parameters (a, b) in coefficients. Student finds k such that the sum or product of solutions equals k times an expression in a and b, or relates roots of two parameterized quadratics.",
+          "core_skill_demand": "Apply Vieta's formulas: sum of roots = -b/a, product = c/a. For multi-parameter coefficients, identify the structure of sum/product and equate to the proposed form, solving for the constant k. May require symbolic simplification of the resulting expression.",
+          "example_originals": ["2c05d312", "5edc8c98", "e11294f9"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(No easy items for symbolic-parameter quadratics)"],
+              "example_stem": "(none)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["(No medium items in this bank)"],
+              "example_stem": "(none)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Coefficients contain products or sums of parameters (e.g., 57b + a, 16a + 4b)",
+                "Asked for the constant k such that sum/product of solutions = k * (parameter expression)",
+                "Or: two related quadratics share constants and the question relates their roots"
+              ],
+              "example_stem": "57x^2 + (57b + a)x + ab = 0. Product of solutions = kab. What is k?",
+              "example_ids": ["2c05d312", "5edc8c98", "e11294f9"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "At least one literal parameter in the coefficients",
+              "Vieta's-style target (sum or product of roots = k * expression)"
+            ],
+            "must_vary": [
+              "Specific numeric coefficient (a, 57, 64 etc.)",
+              "Parameter letters used"
+            ],
+            "common_bugs": [
+              "Producing coefficients that make the discriminant negative for all parameter values (no real solutions)",
+              "Mixing up sum vs product of roots",
+              "Editing without recomputing k",
+              "Removing parameters and drifting to A2.T2 (categorical error)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Solve a system of two equations",
+      "description": "Given two equations in two unknowns where at least one equation is nonlinear, find the intersection (one or both coordinates, sum/product of y-values, count of intersections) — either by algebraic substitution or by reading a graph.",
+      "boundary_with_other_aspects": "A4 always involves two equations both containing variables. A2 has one equation. A3 may involve a system but its target is a parameter that controls solution count; A4 targets the coordinates themselves.",
+      "types": [
+        {
+          "id": "T9",
+          "name": "Linear-quadratic (or linear-radical) system substitution",
+          "description": "A system of two equations is given where one equation isolates or constrains one variable linearly (or fixes its value) and the other is quadratic/radical/cubic. Student substitutes to find x, y, xy, or the intersection point.",
+          "core_skill_demand": "Substitute the linear constraint into the nonlinear equation, solve the resulting one-variable equation (often a quadratic), and report the requested quantity (x, y, xy, ordered pair, or a specific root when multiple exist).",
+          "example_originals": ["0bebc08c", "1e003284", "58443765", "30a07668", "895628b5", "4fb8a648"],
+          "frequency": { "easy": 7, "medium": 7, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "First equation directly provides x = constant (or x + small constant = constant)",
+                "Nonlinear equation is a simple quadratic y = (linear in x) squared or y = x^2 + c",
+                "Asked for y or xy at a single integer solution; only one solution exists",
+                "Small numbers, no fractional arithmetic"
+              ],
+              "example_stem": "x = 3; y = (15 - x)^2. What is the value of xy?",
+              "example_ids": ["0bebc08c", "1e003284", "58443765", "a67a439d", "c8bf5313", "fc2ec559", "84e5e36c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Both equations contain the same two variables (no isolated x = k); substitution produces a quadratic with two roots",
+                "Asked to find x or y under a sign restriction (x > 0, or 'a possible value')",
+                "Constants are mid-size (two-digit) and the quadratic factors over integers",
+                "May include a factored-quadratic equation alongside a linear one"
+              ],
+              "example_stem": "y = 4x; y = x^2 - 12. A solution (x,y) has x > 0. What is x?",
+              "example_ids": ["30a07668", "3148fe3e", "895628b5", "e8779461", "568aaf27", "d0a7871e", "876a731c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Substitution yields a quadratic with non-integer roots, irrational solutions, or large-magnitude integers",
+                "Question asks for sum/product of y-values, greatest possible value, or chooses between two roots based on a constraint",
+                "Or: one of the equations contains a parameter (a, c, k) and the system has 'exactly one solution' constraint",
+                "May require expansion of a binomial before subtracting equations"
+              ],
+              "example_stem": "y = x+9; y = x^2 + 16x + 63. A solution is (x,y). What is the greatest possible value of x?",
+              "example_ids": ["4fb8a648", "7dbd46d9", "58b109d4", "e9349667", "4661e2a9", "77c0cced", "30281058", "1697ffcf"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly two equations forming a solvable system (substitution-reducible to one variable)",
+              "The number of solutions the source intended (1 or 2) and the selection rule (positive, greatest, etc.)",
+              "Same target output type (y-value, xy product, ordered pair, x with sign restriction)"
+            ],
+            "must_vary": [
+              "Specific constants in the linear and quadratic equations",
+              "Direction of the parabola (open up/down) and the linear slope",
+              "Variable letter (x,y vs other)"
+            ],
+            "common_bugs": [
+              "Producing a system whose substitution yields no real solution when source had real solutions",
+              "Editing the linear equation without updating the quadratic so the intended intersection no longer exists",
+              "Dropping the sign restriction (x > 0) and creating ambiguity between two valid answers",
+              "Simplifying first equation to x = constant when source had a coupled pair (difficulty regression)"
+            ]
+          }
+        },
+        {
+          "id": "T10",
+          "name": "Graph-based solution to a nonlinear system",
+          "description": "A graph of two functions (parabola + line, absolute value + line, curve + line) is shown. Student must identify the intersection point or count intersections.",
+          "core_skill_demand": "Read coordinates of intersection points directly from the graph (visual identification) and/or apply algebraic reasoning to a graph-described setup. For symbolic variants, recognize that a vertex value or specific coordinate matches a described intersection.",
+          "example_originals": ["3f8d5876", "4ca30186", "d0e8e8f5", "d3f7c429", "75a32330", "30281058"],
+          "frequency": { "easy": 6, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Graph clearly shows a single intersection at integer or half-integer coordinates",
+                "Answer choices are ordered pairs, one of which exactly matches the labeled intersection",
+                "Curve + line with both functions explicitly described in the graph caption"
+              ],
+              "example_stem": "[graph description] At which point do the curve and line intersect?",
+              "example_ids": ["3f8d5876", "494d247d", "4ca30186", "5c7d5744", "d0e8e8f5", "d3f7c429", "dd3a910a"]
+            },
+            "medium": {
+              "characteristics": [
+                "Identify which graph (out of 4 graph options) represents a given algebraic system",
+                "Count the number of intersections from a depicted graph"
+              ],
+              "example_stem": "y = x^2 + 1.7; y = 1.7 - x. Which graph represents this system?",
+              "example_ids": ["75a32330", "a5663025"]
+            },
+            "hard": {
+              "characteristics": [
+                "Graph-described but requires algebraic derivation (e.g., slope of a line connecting two parabola points, intersection of two functions)",
+                "Coordinates not directly labeled; student must compute"
+              ],
+              "example_stem": "The graph of y = x^2 - 9 intersects line p at (1,a) and (5,b). What is the slope of p?",
+              "example_ids": ["30281058", "1697ffcf", "97e50fa2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Presence of a graph-described scenario (the visual cue is the load-bearing feature)",
+              "Single unique answer matching one labeled or computable intersection"
+            ],
+            "must_vary": [
+              "Specific points/coordinates and curve descriptions",
+              "Whether the curve is a parabola, absolute-value, or generic curve"
+            ],
+            "common_bugs": [
+              "Producing a clone whose graph description doesn't actually pass through the stated answer point",
+              "Mismatched graph caption and algebraic equation (intersection in caption is not a true root of the system)",
+              "Removing the graph and asking purely algebraically (this changes the type to T9 within A4)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Reformulate or identify equivalent form",
+      "description": "Given an equation or inequality, identify an equivalent statement, a satisfying value, or a solution set — without necessarily producing a single numeric root. The work is recognition/transformation, not procedural solving.",
+      "boundary_with_other_aspects": "A5 targets an equivalent form (often a multiple-choice transformation of the whole equation) or a solution-set notation; A2 demands the actual numeric root. A5 stems frequently reference 'the equation above' from legacy items.",
+      "types": [
+        {
+          "id": "T11",
+          "name": "Equivalent equation / inequality / solution-set reformulation",
+          "description": "A nonlinear (or paired with referenced) equation/inequality is given via a referenced expression. Student picks the equivalent form, the solution set, or the value satisfying the equation. Often legacy items reference 'the equation above'.",
+          "core_skill_demand": "Either (a) algebraically manipulate to match one of the answer choices (divide both sides, expand, factor), or (b) test candidate values against the given equation, or (c) recognize that a solution set is expressed via set-builder or roster notation.",
+          "example_originals": ["3c95093c", "eb268057", "f11ffa93", "b80d10d7", "2d2ab76b", "66bce0c1"],
+          "frequency": { "easy": 3, "medium": 4, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Stem references an inequality/equation 'above' (legacy IBN-style item with image-based equation)",
+                "Answer choices differ by a simple scalar multiple (divide by 3)",
+                "Or: test one of 4 candidate values"
+              ],
+              "example_stem": "Which inequality is equivalent to the inequality above?",
+              "example_ids": ["3c95093c", "eb268057", "f11ffa93"]
+            },
+            "medium": {
+              "characteristics": [
+                "Asks 'what values satisfy', 'what is the solution', or 'which is a solution' for an equation referenced in stimulus (legacy items)",
+                "Requires applying quadratic formula or matching against a specific format",
+                "Includes intersection points of two graphed equations"
+              ],
+              "example_stem": "What values satisfy the equation above?",
+              "example_ids": ["7f81d0c3", "802549ac", "928498f3", "b80d10d7", "2d2ab76b"]
+            },
+            "hard": {
+              "characteristics": [
+                "Solution set reformatted as 'set consisting of n' (set-builder notation)",
+                "Or: requires recognizing that x satisfies a derived condition (e.g., x + 5 = one half)",
+                "Or: an algebraic restructure of a rational expression like u - 3 = 6/(t-2) solved for t"
+              ],
+              "example_stem": "What is the solution set of the equation above?",
+              "example_ids": ["66bce0c1", "6ce95fc8", "fc3dfa26", "f65288e8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Reference to an equation/inequality that the student must transform or test against",
+              "Format of the answer choices (equivalent inequalities, candidate values, or solution sets)"
+            ],
+            "must_vary": [
+              "The specific equation/inequality referenced",
+              "Constants and coefficients"
+            ],
+            "common_bugs": [
+              "Producing answer choices that include the correct one only by coincidence rather than as a true algebraic transformation",
+              "Confusing 'satisfies the equation' with 'equivalent to the equation'",
+              "Dropping the legacy stimulus reference so the stem becomes ill-defined (since the original image isn't reproduced)",
+              "Drifting into A2 by asking for a single numeric root rather than an equivalent form or set"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Five aspects cleanly partition the 11 types. A1 (rearrange formula) is the largest single bucket at easy/medium levels. A2 (solve one equation) holds the broadest variety of types (T2-T6) covering quadratic, absolute-value, radical, rational, and factored forms. A3 (parametric reasoning) is where hard items concentrate — 16 of 56 hard items live here, mostly via the discriminant lever. A4 (systems) splits cleanly between algebraic (T9) and graph-mediated (T10) types. A5 (equivalent forms) is small but distinctive, dominated by legacy IBN-source items whose stems reference 'the equation above' from an image. Cross-cutting clone bugs: (1) parameter removal drops A3 items into A2 (categorical drift); (2) variable-isolation prompts drift A2.T5 rational items into A1.T1; (3) removing the graph caption drifts A4.T10 into A4.T9. SPR items concentrate at medium/hard and often arise when the answer is irrational, fractional, or a sum/product of roots."
+}

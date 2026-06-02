@@ -1,0 +1,25 @@
+{
+  "questionId": "12030076-s1",
+  "originalId": "12030076",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>The European Space Agency's Comet Interceptor mission, led by Geraint Jones, will study a long-period comet entering the inner solar system for the first time. The mission will focus on the comet's coma—the cloud of gas and dust released as it warms near the Sun—which until now has been difficult to sample directly from the comet's pristine outer layers. This pristine coma is thought to preserve materials largely unchanged since the early solar system and to hold clues about how planets formed. Using a main spacecraft and two smaller probes positioned around the comet, Comet Interceptor should help answer long-standing questions about how primitive solar-system bodies behave and evolve when they first approach the Sun.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Although researchers have observed long-period comets from Earth, they have not been able to directly sample the gas in their pristine outer coma.</p>"},
+    {"id": "b", "content": "<p>As leader of the Comet Interceptor mission, Jones will be the first scientist to study a long-period comet.</p>"},
+    {"id": "c", "content": "<p>Researchers do not yet fully understand how primitive solar-system bodies evolve but have suggested they may interact with the Sun.</p>"},
+    {"id": "d", "content": "<p>The Comet Interceptor mission is expected to make the first direct measurements of a long-period comet's pristine coma, which is thought to preserve clues about early solar-system formation.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it accurately states the main idea of the text. The text introduces the Comet Interceptor mission, explains that it will focus on a long-period comet's pristine coma, notes that the coma is believed to preserve early solar-system materials, and describes how the mission's spacecraft and probes will examine it to answer questions about planetary formation. The main idea is that the mission is expected to produce the first direct measurements of this coma, which holds clues to early solar-system history.</p><p>Choice A is incorrect because, while it mentions a difficulty the mission will address, it does not reference the Comet Interceptor mission or convey why the mission is significant. Choice B is incorrect because it names the mission's leader but does not capture the broader scientific aim. Choice C is incorrect because it describes a general problem without mentioning the Comet Interceptor mission or its planned measurements.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

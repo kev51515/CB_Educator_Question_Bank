@@ -1,0 +1,39 @@
+{
+  "questionId": "1c36e3e1-s1",
+  "originalId": "1c36e3e1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The amount of rainfall that falls during the monsoon season in Mumbai, India, can vary widely from year to year. For example, the city recorded about 3,800 millimeters of monsoon rainfall in 2005. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Mumbai recorded only about 1,400 millimeters of monsoon rainfall in 2015.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By comparison,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Similarly,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The first sentence claims that monsoon rainfall can vary widely. To support this claim, the next two sentences compare two examples: one year with 3,800 millimeters of rain and another with only 1,400 millimeters. So the transition \"by comparison\" fits perfectly.</p><p>Choice A is incorrect. This choice indicates a restatement of the same idea, which doesn't make sense here. This sentence doesn't restate the first example\u2014it describes a totally different example. Choice C is incorrect. This choice uses a cause-and-effect transition, which doesn't make sense here. The first example didn't result in the second example. Choice D is incorrect. This choice indicates the addition of a similar idea, but this sentence describes a second example that is very different from the first.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A6.T18.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "58e9e497-s1",
+  "originalId": "58e9e497",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In the late nineteenth century, some settler-descendant ranchers on the southern Great Plains adopted range-management methods that the Comanche people had developed many decades earlier, but it appears that few of those ranchers had ever spent time on Comanche-managed land themselves. Setting aside the unlikely possibility that several ranchers of the period independently invented techniques that the Comanche people had already created, these facts most strongly suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Comanche range-management methods were also widely employed in regions well outside the southern Great Plains.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>those ranchers acquired the techniques from other people who had been more directly influenced by Comanche practices.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>settler-descendant ranchers in the region only began appreciating the value of Comanche range-management methods in the early twentieth century.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the kinds of livestock typically raised by settler-descendant ranchers on the southern Great Plains were poorly suited to Comanche range-management methods.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the discussion. The text presents two facts&mdash;the ranchers used Comanche techniques, and the ranchers did not get them firsthand from Comanche-managed land&mdash;and rules out coincidence. The remaining plausible explanation is that the techniques reached the ranchers through intermediaries: people who had more direct contact with Comanche practices and passed the techniques along.</p><p>Choice A is incorrect because the text discusses use only on the southern Great Plains and gives no evidence about other regions. Choice C is incorrect because the text says the ranchers were already using the techniques in the late nineteenth century, contradicting a claim that they only began appreciating them in the early twentieth. Choice D is incorrect because the text says the ranchers actually adopted and used the techniques&mdash;so the techniques cannot have been unsuited to their livestock.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

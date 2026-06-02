@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 5 data points with the following coordinates: (1, 1), (2, 3), (3, 5), (4, 7), (5, 9). Which equation is the most appropriate linear model for this relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = \u22122x + 1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = \u22122x \u2212 1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 2x \u2212 1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 2x + 1</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The points lie on the line y = 2x \u2212 1: at x=1, y=1; at x=2, y=3; and so on. The slope is 2 (positive) and the y-intercept is \u22121.</p><p>Choices A and B have a negative slope, inconsistent with the upward trend. Choice D has the wrong y-intercept.</p>",
+  "questionId": "16988f9c-s1",
+  "originalId": "16988f9c",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy"
+}

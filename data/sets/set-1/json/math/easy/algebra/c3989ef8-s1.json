@@ -1,0 +1,25 @@
+{
+  "questionId": "c3989ef8-s1",
+  "originalId": "c3989ef8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Maya receives a <math><mo>$</mo><mn>80</mn></math> gift card to use at a coffee shop. She uses it to buy <math><mn>4</mn></math> drinks for <math><mo>$</mo><mn>6.50</mn></math> each. If she spends the rest of her balance on pastries that cost <math><mo>$</mo><mn>2.70</mn></math> each, how many pastries can Maya buy?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><math><mn>15</mn></math></p>"},
+    {"id": "b", "content": "<p><math><mn>30</mn></math></p>"},
+    {"id": "c", "content": "<p><math><mn>20</mn></math></p>"},
+    {"id": "d", "content": "<p><math><mn>25</mn></math></p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. Maya spends <math><mn>4</mn><mo>(</mo><mn>6.50</mn><mo>)</mo><mo>=</mo><mn>26</mn></math> dollars on drinks. The remaining balance is <math><mn>80</mn><mo>-</mo><mn>26</mn><mo>=</mo><mn>54</mn></math> dollars. Dividing by 2.70 yields <math><mn>54</mn><mo>/</mo><mn>2.70</mn><mo>=</mo><mn>20</mn></math> pastries.</p><p>Choices A, B, and D result from conceptual or calculation errors.</p>",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

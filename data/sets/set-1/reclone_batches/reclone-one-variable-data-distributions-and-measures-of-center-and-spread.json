@@ -1,0 +1,8 @@
+[
+  {
+    "id": "608cf8e2-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard",
+    "verdict": "wrong_answer",
+    "detail": "Stem says all original 60 values are greater than 25; adding 25 (strictly less than every value) MUST decrease the mean, so statement I ('mean of B is less than mean of A') must be true. Statement II is also possible. The correct answer is 'I and II' (C), not 'II only' (D). The rationale itself notes I would be true but waffles incorrectly."
+  }
+]

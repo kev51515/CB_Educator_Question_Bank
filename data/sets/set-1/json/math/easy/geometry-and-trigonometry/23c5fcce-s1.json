@@ -1,0 +1,39 @@
+{
+  "questionId": "23c5fcce-s1",
+  "originalId": "23c5fcce",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle with center <i>O</i> has a circumference of 48. Two perpendicular diameters of the circle meet at <i>O</i>. The endpoints of one diameter on the circle are labeled <i>P</i> and <i>R</i>, and the endpoints of the other diameter on the circle are labeled <i>Q</i> and <i>S</i>. What is the length of minor arc <i>PQ</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>48</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A circle has 360&deg; of arc. Because the two diameters are perpendicular, central angle <i>POQ</i> has measure 90&deg;. Therefore minor arc <i>PQ</i> is 90/360 = 1/4 of the circumference. Since the circumference is 48, the length of minor arc <i>PQ</i> is (1/4) &times; 48 = 12.</p><p>Choice A uses 1/8 of the circumference. Choice C uses 1/2 of the circumference (a semicircle). Choice D is the full circumference, not the arc.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "circles.A3.T7.easy"
+}

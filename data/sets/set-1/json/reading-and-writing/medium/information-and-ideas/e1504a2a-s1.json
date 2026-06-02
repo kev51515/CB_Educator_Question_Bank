@@ -1,0 +1,25 @@
+{
+  "questionId": "e1504a2a-s1",
+  "originalId": "e1504a2a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.medium",
+  "stimulus": "<p>The Triassic reptile <em>Tanystropheus hydroides </em>is known for having an exceptionally elongated neck nearly as long as its body and tail combined. Until an almost complete fossil skeleton was recovered in Switzerland, paleontologists had been able to examine only skull specimens and isolated cervical vertebrae from <em>T. hydroides</em>, though it was generally presumed that, like other large-necked reptiles of the period, the species was a fast pursuit predator chasing prey across open water. Examining the more complete skeleton in 2020, Stephan Spiekman and his colleagues determined that <em>T. hydroides</em> had stout limbs, hollow lightweight neck vertebrae, and small flattened teeth&mdash;features that, taken together with the creature&rsquo;s long stiff neck, would have made sustained swimming costly and ambush from concealment relatively effective. Based on these findings the team suggests that <em>T. hydroides</em> likely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>had a shorter neck than researchers had expected based on earlier <em>T. hydroides</em> skull specimens.</p>"},
+    {"id": "b", "content": "<p>had longer limbs than other long-necked reptiles considered to have been pursuit predators.</p>"},
+    {"id": "c", "content": "<p>swam faster over long distances than did other reptile species that had elongated necks.</p>"},
+    {"id": "d", "content": "<p>hunted by ambushing prey from concealment more often than researchers previously thought.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The earlier presumption was that <em>T. hydroides</em>, like other long-necked reptiles, was a pursuit predator. Spiekman&rsquo;s team finds features (stout limbs, lightweight vertebrae, small flat teeth) that, alongside the long stiff neck, make sustained swimming costly and ambush effective. The team would therefore most logically suggest that the animal hunted by ambush more than was previously thought.</p><p>Choice A is incorrect because the text says the long neck is confirmed by the new skeleton. Choice B is incorrect because the new skeleton showed stout, not longer, limbs. Choice C is incorrect because the new findings argue against, not for, fast pursuit swimming.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

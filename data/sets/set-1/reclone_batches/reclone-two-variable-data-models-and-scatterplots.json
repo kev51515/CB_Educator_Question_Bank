@@ -1,0 +1,8 @@
+[
+  {
+    "id": "af142f8d-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard",
+    "verdict": "rationale_inconsistent",
+    "detail": "Key is 'd' and reasoning correctly leads to choice d, but rationale's final sentence states 'Choice (c) is correct' instead of 'Choice (d) is correct'."
+  }
+]

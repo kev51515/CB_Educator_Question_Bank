@@ -1,0 +1,39 @@
+{
+  "questionId": "a68fd3e7-s1",
+  "originalId": "a68fd3e7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Many of the operas composed by Giuseppe Verdi address sweeping themes that still resonate with today's audiences. For instance, <em>La Traviata</em>, which is set in the Parisian high society of Verdi's century, takes on the themes of social judgment versus individual love and sacrifice versus self-interest, and the opera continues to be staged and recorded around the world. But appreciating Verdi's so-called Risorgimento operas\u2014works like <em>Nabucco</em> and <em>I Lombardi</em>\u2014can require familiarity with the complex politics of nineteenth-century Italian unification. Consequently, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>La Traviata</em> is the most thematically accessible of all Verdi's operas.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>many opera-goers and listeners today are likely to find Verdi's Risorgimento operas less engaging than his other works.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>scholars of nineteenth-century Italian politics tend to prefer Verdi's Risorgimento operas to the rest of his output.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>some of Verdi's operas are more relevant to today's audiences than works composed in the twentieth century.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says Verdi's broadly themed operas (like <em>La Traviata</em>) continue to appeal to today's audiences because their themes are timeless, while his Risorgimento operas require familiarity with the politics of nineteenth-century Italian unification. Because many opera-goers and listeners are unlikely to have that specialized knowledge, it follows that they will find the Risorgimento operas less engaging than the more accessible works.</p><p>Choice A is incorrect because the text uses <em>La Traviata</em> as an example of Verdi's thematically accessible operas, not as a comparison among Verdi's operas to establish one as the most accessible. Choice C is incorrect because the text never mentions scholars of nineteenth-century Italian politics or suggests anything about their preferences. Choice D is incorrect because the text does not compare Verdi's operas with twentieth-century works of any kind.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T1.hard"
+}

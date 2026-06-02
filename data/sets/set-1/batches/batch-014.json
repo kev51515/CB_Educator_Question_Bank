@@ -1,0 +1,452 @@
+[
+  {
+    "id": "433184f1",
+    "path": "json/math/hard/advanced-math/433184f1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "5355c0ef",
+    "path": "json/math/hard/advanced-math/5355c0ef.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "565428e1",
+    "path": "json/math/hard/advanced-math/565428e1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "7355b9d9",
+    "path": "json/math/hard/advanced-math/7355b9d9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "89fc23af",
+    "path": "json/math/hard/advanced-math/89fc23af.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "911c415b",
+    "path": "json/math/hard/advanced-math/911c415b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "967ef685",
+    "path": "json/math/hard/advanced-math/967ef685.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "a0b4103e",
+    "path": "json/math/hard/advanced-math/a0b4103e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "ad038c19",
+    "path": "json/math/hard/advanced-math/ad038c19.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "b74f2feb",
+    "path": "json/math/hard/advanced-math/b74f2feb.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "c3b116d7",
+    "path": "json/math/hard/advanced-math/c3b116d7.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "c6e85cd7",
+    "path": "json/math/hard/advanced-math/c6e85cd7.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "c81b6c57",
+    "path": "json/math/hard/advanced-math/c81b6c57.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "c8a5c221",
+    "path": "json/math/hard/advanced-math/c8a5c221.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "d8789a4c",
+    "path": "json/math/hard/advanced-math/d8789a4c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "e117d3b8",
+    "path": "json/math/hard/advanced-math/e117d3b8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "e51bf5b1",
+    "path": "json/math/hard/advanced-math/e51bf5b1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "ea6d05bb",
+    "path": "json/math/hard/advanced-math/ea6d05bb.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "f89e1d6f",
+    "path": "json/math/hard/advanced-math/f89e1d6f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "ffdbcad4",
+    "path": "json/math/hard/advanced-math/ffdbcad4.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "03ff48d2",
+    "path": "json/math/hard/advanced-math/03ff48d2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "041eda89",
+    "path": "json/math/hard/advanced-math/041eda89.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "104bff62",
+    "path": "json/math/hard/advanced-math/104bff62.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "133f3e41",
+    "path": "json/math/hard/advanced-math/133f3e41.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "158591f0",
+    "path": "json/math/hard/advanced-math/158591f0.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "1697ffcf",
+    "path": "json/math/hard/advanced-math/1697ffcf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "17d0e87d",
+    "path": "json/math/hard/advanced-math/17d0e87d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "1ce9ffcd",
+    "path": "json/math/hard/advanced-math/1ce9ffcd.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "1fe32f7d",
+    "path": "json/math/hard/advanced-math/1fe32f7d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "2c05d312",
+    "path": "json/math/hard/advanced-math/2c05d312.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "2c288148",
+    "path": "json/math/hard/advanced-math/2c288148.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "2c5c22d0",
+    "path": "json/math/hard/advanced-math/2c5c22d0.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "2cb17792",
+    "path": "json/math/hard/advanced-math/2cb17792.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "2cd6b22d",
+    "path": "json/math/hard/advanced-math/2cd6b22d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "30281058",
+    "path": "json/math/hard/advanced-math/30281058.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "3a01a5ee",
+    "path": "json/math/hard/advanced-math/3a01a5ee.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "3a9d60b2",
+    "path": "json/math/hard/advanced-math/3a9d60b2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "3d12b1e0",
+    "path": "json/math/hard/advanced-math/3d12b1e0.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "4661e2a9",
+    "path": "json/math/hard/advanced-math/4661e2a9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "4dc5c6f9",
+    "path": "json/math/hard/advanced-math/4dc5c6f9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "4fb8a648",
+    "path": "json/math/hard/advanced-math/4fb8a648.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "58b109d4",
+    "path": "json/math/hard/advanced-math/58b109d4.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "5910bfff",
+    "path": "json/math/hard/advanced-math/5910bfff.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "5edc8c98",
+    "path": "json/math/hard/advanced-math/5edc8c98.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "6011a3f8",
+    "path": "json/math/hard/advanced-math/6011a3f8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "66bce0c1",
+    "path": "json/math/hard/advanced-math/66bce0c1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "6aefc52b",
+    "path": "json/math/hard/advanced-math/6aefc52b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "6ce95fc8",
+    "path": "json/math/hard/advanced-math/6ce95fc8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "7028c74f",
+    "path": "json/math/hard/advanced-math/7028c74f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "71014fb1",
+    "path": "json/math/hard/advanced-math/71014fb1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  }
+]

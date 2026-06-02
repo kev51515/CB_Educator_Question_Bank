@@ -1,0 +1,427 @@
+/**
+ * AssignmentAttemptsView
+ * ======================
+ * Teacher-facing list of all student attempts on a single assignment.
+ *
+ * Wave 19+: now supports BULK GRADING. Submitted rows expose a selection
+ * checkbox; the header row has a master "select all submitted" checkbox.
+ * When ≥1 row is picked, a sticky-bottom action bar appears with an
+ * "Apply feedback template" primary action that opens the BulkGradeModal.
+ *
+ * On apply, a single UPDATE goes out via PostgREST:
+ *
+ *   supabase.from('assignment_attempts')
+ *     .update({ feedback_text, score_override?, graded_at?, grader_id })
+ *     .in('id', selectedIds)
+ *
+ * The notification trigger (0059) will fire once per attempt whose
+ * feedback_text flipped null→non-null OR score_override changed; the
+ * null-guard means re-writes on already-graded attempts won't spam students.
+ *
+ * Optimistic UI: selected rows gray out + show "Applying…" while the request
+ * is in flight; on success the table refetches via `useAssignmentAttempts.refresh`.
+ */
+import { useCallback, useMemo, useState } from "react";
+import { useAssignmentAttempts } from "./useAssignmentAttempts";
+import { SkeletonRows } from "../components/Skeleton";
+import { BulkGradeModal, type BulkGradePatch } from "./BulkGradeModal";
+import { useToast } from "../components/Toast";
+import { useProfile } from "../lib/profile";
+import { supabase } from "../lib/supabase";
+
+interface AssignmentAttemptsViewProps {
+  assignmentId: string;
+  assignmentTitle: string;
+  onBack: () => void;
+  /** Open the per-attempt drilldown view for a given attempt id. */
+  onOpenDetail: (attemptId: string) => void;
+}
+
+function formatTimestamp(iso: string | null): string {
+  if (!iso) return "—";
+  try {
+    return new Date(iso).toLocaleString(undefined, {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    });
+  } catch {
+    return iso;
+  }
+}
+
+function formatScore(percent: number | null): string {
+  if (percent === null) return "—";
+  return `${percent.toFixed(0)}%`;
+}
+
+function getErrorMessage(error: unknown): string {
+  if (error instanceof Error) return error.message;
+  if (typeof error === "string") return error;
+  return "Something went wrong.";
+}
+
+export function AssignmentAttemptsView({
+  assignmentId,
+  assignmentTitle,
+  onBack,
+  onOpenDetail,
+}: AssignmentAttemptsViewProps) {
+  const { attempts, loading, error, refresh } =
+    useAssignmentAttempts(assignmentId);
+  const toast = useToast();
+  const { profile } = useProfile();
+
+  // Selection state — set of attempt ids. Only submitted attempts can be
+  // selected (in-progress attempts have nothing to grade yet).
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(
+    () => new Set<string>(),
+  );
+
+  // While a bulk apply is in flight, gray out the affected rows and disable
+  // further interaction. `applyingIds` is the snapshot of selectedIds at
+  // submit time so a user who clears selection mid-flight still sees the
+  // right rows greyed.
+  const [applyingIds, setApplyingIds] = useState<Set<string>>(
+    () => new Set<string>(),
+  );
+  const [bulkModalOpen, setBulkModalOpen] = useState<boolean>(false);
+  const [bulkBusy, setBulkBusy] = useState<boolean>(false);
+
+  const submittedAttempts = useMemo(
+    () => attempts.filter((a) => a.submitted_at !== null),
+    [attempts],
+  );
+  const submittedCount = submittedAttempts.length;
+
+  // For master checkbox state: checked if every submitted attempt is
+  // selected, indeterminate if some are.
+  const allSubmittedSelected =
+    submittedCount > 0 &&
+    submittedAttempts.every((a) => selectedIds.has(a.id));
+  const someSubmittedSelected =
+    !allSubmittedSelected && submittedAttempts.some((a) => selectedIds.has(a.id));
+
+  // Count of selected attempts that are already graded — surfaced in the
+  // modal as a "feedback will be REPLACED" warning.
+  const alreadyGradedSelected = useMemo(() => {
+    let n = 0;
+    for (const a of attempts) {
+      if (!selectedIds.has(a.id)) continue;
+      if (a.graded_at !== null) n += 1;
+    }
+    return n;
+  }, [attempts, selectedIds]);
+
+  const toggleOne = useCallback((id: string) => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id);
+      else next.add(id);
+      return next;
+    });
+  }, []);
+
+  const toggleAllSubmitted = useCallback(() => {
+    setSelectedIds((prev) => {
+      // If all submitted are already in the set, clear them; otherwise add
+      // every submitted attempt.
+      const everySelected =
+        submittedAttempts.length > 0 &&
+        submittedAttempts.every((a) => prev.has(a.id));
+      const next = new Set(prev);
+      if (everySelected) {
+        for (const a of submittedAttempts) next.delete(a.id);
+      } else {
+        for (const a of submittedAttempts) next.add(a.id);
+      }
+      return next;
+    });
+  }, [submittedAttempts]);
+
+  const clearSelection = useCallback(() => {
+    setSelectedIds(new Set<string>());
+  }, []);
+
+  const handleApply = useCallback(
+    async (patch: BulkGradePatch): Promise<void> => {
+      const ids = Array.from(selectedIds);
+      if (ids.length === 0) return;
+
+      setBulkBusy(true);
+      setApplyingIds(new Set(ids));
+
+      // Build the actual UPDATE payload. grader_id is stamped whenever we're
+      // writing feedback or marking-as-graded — i.e. whenever the row is being
+      // teacher-touched in a graded sense.
+      const payload: Record<string, unknown> = { ...patch };
+      const writesFeedback =
+        patch.feedback_text !== undefined || patch.graded_at !== undefined;
+      if (writesFeedback && profile?.id) {
+        payload.grader_id = profile.id;
+      }
+
+      try {
+        const { error: updError } = await supabase
+          .from("assignment_attempts")
+          .update(payload)
+          .in("id", ids);
+
+        if (updError) throw updError;
+
+        toast.success(
+          "Feedback applied",
+          `${ids.length} attempt${ids.length === 1 ? "" : "s"} updated.`,
+        );
+        setBulkModalOpen(false);
+        clearSelection();
+        await refresh();
+      } catch (err: unknown) {
+        toast.error("Couldn't apply feedback", getErrorMessage(err));
+      } finally {
+        setBulkBusy(false);
+        setApplyingIds(new Set<string>());
+      }
+    },
+    [selectedIds, profile, toast, refresh, clearSelection],
+  );
+
+  const selectedCount = selectedIds.size;
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
+      <div className="mx-auto max-w-4xl space-y-6">
+        <button
+          type="button"
+          onClick={onBack}
+          className="inline-flex items-center gap-1.5 rounded-lg text-sm text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <span aria-hidden>←</span> Back to assignments
+        </button>
+
+        <header className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-2">
+          <p className="text-xs uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
+            Attempts
+          </p>
+          <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+            {assignmentTitle}
+          </h1>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            {attempts.length} attempt{attempts.length === 1 ? "" : "s"} ·{" "}
+            {submittedCount} submitted
+          </p>
+        </header>
+
+        <section
+          aria-labelledby="attempts-title"
+          className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"
+        >
+          <header className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
+            <h2
+              id="attempts-title"
+              className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+            >
+              Student attempts
+            </h2>
+          </header>
+
+          {loading ? (
+            <div className="px-6 py-6">
+              <SkeletonRows count={3} />
+            </div>
+          ) : error ? (
+            <p
+              role="alert"
+              className="px-6 py-8 text-sm text-rose-600 dark:text-rose-400"
+            >
+              {error}
+            </p>
+          ) : attempts.length === 0 ? (
+            <p className="px-6 py-8 text-sm text-slate-500 dark:text-slate-400">
+              No attempts yet. Students will appear here once they start the
+              assignment.
+            </p>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="min-w-full text-sm">
+                <thead className="bg-slate-50 dark:bg-slate-800/40 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                  <tr>
+                    <th className="px-4 py-3 font-medium w-10">
+                      {submittedCount > 0 ? (
+                        <label className="inline-flex items-center justify-center cursor-pointer">
+                          <span className="sr-only">
+                            Select all {submittedCount} submitted attempts
+                          </span>
+                          <input
+                            type="checkbox"
+                            aria-label={`Select all ${submittedCount} submitted attempts`}
+                            checked={allSubmittedSelected}
+                            ref={(el) => {
+                              if (el) el.indeterminate = someSubmittedSelected;
+                            }}
+                            onChange={toggleAllSubmitted}
+                            disabled={bulkBusy}
+                            className="h-4 w-4 rounded ring-1 ring-slate-300 dark:ring-slate-700 focus:ring-2 focus:ring-indigo-500"
+                          />
+                        </label>
+                      ) : (
+                        <span className="sr-only">Select</span>
+                      )}
+                    </th>
+                    <th className="px-6 py-3 font-medium">Student</th>
+                    <th className="px-6 py-3 font-medium">Email</th>
+                    <th className="px-6 py-3 font-medium">Started</th>
+                    <th className="px-6 py-3 font-medium">Submitted</th>
+                    <th className="px-6 py-3 font-medium">Score</th>
+                    <th className="px-6 py-3 font-medium sr-only">Actions</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+                  {attempts.map((a) => {
+                    const isSubmitted = a.submitted_at !== null;
+                    const isSelected = selectedIds.has(a.id);
+                    const isApplying = applyingIds.has(a.id);
+                    return (
+                      <tr
+                        key={a.id}
+                        className={
+                          isApplying
+                            ? "opacity-60 bg-slate-100/60 dark:bg-slate-800/40"
+                            : isSelected
+                              ? "bg-indigo-50/50 dark:bg-indigo-950/20"
+                              : ""
+                        }
+                      >
+                        <td className="px-4 py-3 align-middle">
+                          {isSubmitted ? (
+                            <label className="inline-flex items-center justify-center cursor-pointer min-h-[40px] min-w-[40px] -my-2">
+                              <span className="sr-only">
+                                Select {a.student_display_name ?? a.student_email}
+                                &rsquo;s attempt
+                              </span>
+                              <input
+                                type="checkbox"
+                                aria-label={`Select ${a.student_display_name ?? a.student_email}'s attempt`}
+                                checked={isSelected}
+                                onChange={() => toggleOne(a.id)}
+                                disabled={bulkBusy}
+                                className="h-4 w-4 rounded ring-1 ring-slate-300 dark:ring-slate-700 focus:ring-2 focus:ring-indigo-500"
+                              />
+                            </label>
+                          ) : (
+                            <span aria-hidden className="text-slate-300">
+                              ·
+                            </span>
+                          )}
+                        </td>
+                        <td className="px-6 py-3 text-slate-900 dark:text-slate-100">
+                          {a.student_display_name ?? (
+                            <span className="text-slate-400">—</span>
+                          )}
+                        </td>
+                        <td className="px-6 py-3 text-slate-600 dark:text-slate-300">
+                          {a.student_email || "—"}
+                        </td>
+                        <td className="px-6 py-3 text-slate-500 dark:text-slate-400">
+                          {formatTimestamp(a.started_at)}
+                        </td>
+                        <td className="px-6 py-3 text-slate-500 dark:text-slate-400">
+                          {formatTimestamp(a.submitted_at)}
+                        </td>
+                        <td className="px-6 py-3 text-slate-900 dark:text-slate-100 font-medium">
+                          <span className="inline-flex items-center gap-1.5">
+                            {formatScore(a.effective_score ?? a.score_percent)}
+                            {a.score_override !== null &&
+                              a.score_override !== a.score_percent && (
+                                <span
+                                  title={`Auto ${formatScore(a.score_percent)} · Teacher set ${formatScore(a.score_override)}`}
+                                  aria-label="Teacher-adjusted score"
+                                  className="inline-flex items-center rounded-full bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300 text-[10px] font-semibold uppercase tracking-wide px-1.5 py-0.5"
+                                >
+                                  Adjusted
+                                </span>
+                              )}
+                            {isApplying && (
+                              <span className="text-[10px] font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
+                                Applying…
+                              </span>
+                            )}
+                          </span>
+                        </td>
+                        <td className="px-6 py-3 text-right">
+                          {isSubmitted ? (
+                            <button
+                              type="button"
+                              onClick={() => onOpenDetail(a.id)}
+                              disabled={bulkBusy}
+                              className="rounded-md bg-indigo-50 dark:bg-indigo-950/40 ring-1 ring-indigo-200 dark:ring-indigo-900 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                            >
+                              View
+                            </button>
+                          ) : (
+                            <span className="text-xs text-slate-400">—</span>
+                          )}
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </div>
+          )}
+        </section>
+
+        {/* Spacer so the sticky bulk bar doesn't cover the last row. */}
+        {selectedCount > 0 && <div aria-hidden className="h-20" />}
+      </div>
+
+      {/* Sticky bulk-actions bar — mirrors the AssignmentsPage BulkActionsBar
+       *  styling but with an action set specific to grading. We intentionally
+       *  inline this rather than reuse BulkActionsBar (whose button labels
+       *  are hardcoded to Archive/Unarchive/Delete). */}
+      {selectedCount > 0 && (
+        <div
+          role="region"
+          aria-label="Bulk grading actions"
+          className="fixed bottom-4 left-0 right-0 z-40 px-3 pointer-events-none"
+        >
+          <div className="pointer-events-auto mx-auto max-w-3xl rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-indigo-300 dark:ring-indigo-700 shadow-xl px-4 py-2.5 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+              {selectedCount} selected
+            </span>
+            <button
+              type="button"
+              disabled={bulkBusy}
+              onClick={() => setBulkModalOpen(true)}
+              className="min-h-[40px] rounded-full px-4 py-1.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {bulkBusy ? "Applying…" : "Apply feedback template"}
+            </button>
+            <button
+              type="button"
+              onClick={clearSelection}
+              disabled={bulkBusy}
+              className="ml-auto min-h-[40px] text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded disabled:opacity-50"
+            >
+              Clear
+            </button>
+          </div>
+        </div>
+      )}
+
+      {bulkModalOpen && (
+        <BulkGradeModal
+          selectedIds={Array.from(selectedIds)}
+          alreadyGradedCount={alreadyGradedSelected}
+          busy={bulkBusy}
+          onClose={() => {
+            if (!bulkBusy) setBulkModalOpen(false);
+          }}
+          onApply={handleApply}
+        />
+      )}
+    </div>
+  );
+}

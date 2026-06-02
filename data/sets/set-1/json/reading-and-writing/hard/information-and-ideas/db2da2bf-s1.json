@@ -1,0 +1,39 @@
+{
+  "questionId": "db2da2bf-s1",
+  "originalId": "db2da2bf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In 2022, 12 previously unknown asteroids were confirmed to share an orbital region near Jupiter. Nine of the asteroids travel in the same direction as the bulk of nearby objects, while the other three travel in the opposite direction. All but one of the 12 asteroids follow nearly circular orbits at roughly the same distance from the Sun. The remaining asteroid, by contrast, follows a highly elongated orbit&mdash;sometimes drifting much closer to the Sun and sometimes much farther away than its companions&mdash;and travels in the same direction as the majority of the group.</p>",
+  "stem": "<p>Based on the text, which choice best describes the asteroid with the elongated orbit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It travels in the opposite direction from the majority of the group and follows a nearly circular path.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It travels in the same direction as the majority of the group but follows an elongated path that varies its distance from the Sun.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It travels in the opposite direction from the majority of the group and follows an elongated path that varies its distance from the Sun.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It travels in the same direction as the majority of the group and follows a nearly circular path at a consistent distance from the Sun.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text states that the unusual asteroid travels in the same direction as the majority and follows a highly elongated orbit that varies its distance from the Sun.</p><p>Choice A is incorrect because the asteroid is described as following an elongated, not circular, orbit. Choice C is incorrect because the asteroid travels in the same direction as the majority, not the opposite. Choice D is incorrect because the asteroid&rsquo;s orbit is elongated, not nearly circular.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.medium"
+}

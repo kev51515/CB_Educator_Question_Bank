@@ -1,0 +1,25 @@
+{
+  "questionId": "490b205f-s1",
+  "originalId": "490b205f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>In curator Diego Salinas's introduction to his exhibition catalog <em>Voices of the Pampas: Latin American Photography of the 1960s</em>, Salinas identifies an increasingly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> documentary mode of image-making during that decade, in contrast to the more allusive and atmospheric photographs of earlier generations that tended to obscure their political subjects behind symbolism.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>cautiously</p>"},
+    {"id": "b", "content": "<p>nostalgically</p>"},
+    {"id": "c", "content": "<p>unintentionally</p>"},
+    {"id": "d", "content": "<p>openly</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. \"Openly\" means without concealment. The text contrasts 1960s documentary work with earlier photographs that hid their political subjects \"behind symbolism,\" so the new mode must be one that presents its subjects without disguise.</p><p>Choice A is incorrect because \"cautiously\" is closer to the earlier, allusive approach, not the contrasting documentary mode. Choice B is incorrect because \"nostalgically\" describes attitude toward the past, which is not the contrast the text draws. Choice C is incorrect because \"unintentionally\" would imply the photographers' political subject was accidental, but the documentary mode is described as a deliberate stance.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e53add44-s1",
+  "originalId": "e53add44",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A function <em>S</em>(<em>n</em>) = 38,000&middot;<em>a</em><sup><em>n</em></sup> models the annual salary, in dollars, of an employee <em>n</em> years after starting a job, where <em>a</em> is a constant. If the employee's salary increases by 7% each year, what is the value of <em>a</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.07</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.07</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. An exponential function modeling an increase by <em>r</em>% per period uses the multiplier (1 + <em>r</em>/100). With a 7% increase, that multiplier is 1 + 0.07 = 1.07. So <em>a</em> = 1.07. Choice A gives just <em>r</em>/100. Choices C and D arise from misreading the percent.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A6.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f3c45b4f-s1",
+  "originalId": "f3c45b4f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Submerged coral terraces off the northern coast of Madagascar preserve a record of past sea levels, but assigning ages to individual terrace layers has long been challenging. Strong surface currents have repeatedly disturbed the shallowest layers, mixing coral fragments from different periods, and dates inferred from associated sediments are unreliable because storms can shift those sediments by hundreds of meters. For decades, scientists working in this environment have therefore had to attach broad and uncertain age ranges to each terrace.</p><p><strong>Text 2</strong></p><p>A team of marine geologists used a refined uranium-thorium dating technique to reevaluate the ages of coral fragments from cores drilled deep into the Madagascar terraces. The technique relies on isotopic ratios measured directly from undisturbed, mineralogically intact aragonite within the coral skeleton itself. The researchers argue that this approach avoids the dating errors that arise from analyzing surface samples or associated sediments and can yield ages precise enough to distinguish individual terrace layers.</p>",
+  "stem": "<p>Based on the texts, how would the researchers in Text 2 most likely respond to the overall account of dating in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By agreeing with the difficulties Text 1 describes but contending that their refined uranium-thorium technique, applied to undisturbed coral aragonite from deep cores, sidesteps those difficulties.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By disputing the claim that surface currents and storm-shifted sediments pose problems for dating, since deep coral cores show no such disturbance.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By proposing that combining surface-sample analysis with associated-sediment dating would, on average, produce reliable age estimates for the Madagascar terraces.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By concluding that, because their technique still depends on associated sediments, the ages they report are subject to the same uncertainties Text 1 identifies.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Text 1 explains why dating Madagascar's coral terraces has been hard: shallow layers are mixed by currents and sediment-based dates are disturbed by storms. Text 2's researchers do not dispute these problems; instead, they describe a refined uranium-thorium technique that measures isotopes directly from \"undisturbed, mineralogically intact\" coral and argue that it \"avoids the dating errors\" Text 1 describes. They would therefore accept Text 1's account of the problem while contending that their method avoids those problems.</p><p>Choice B is incorrect because Text 2 does not deny the disturbances Text 1 describes; it offers a workaround. Choice C is incorrect because Text 2 explicitly contrasts its approach with surface-sample and sediment-based dating rather than combining them. Choice D is incorrect because Text 2 says its technique uses coral aragonite directly, not associated sediments.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.hard"
+}

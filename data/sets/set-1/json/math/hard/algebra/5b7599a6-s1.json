@@ -1,0 +1,39 @@
+{
+  "questionId": "5b7599a6-s1",
+  "originalId": "5b7599a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, a line passes through the points (0, 2) and (1, &minus;1) and represents a linear relationship between <i>x</i> and <i>y</i>. Which equation represents this relationship, where <i>R</i> is a positive constant?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12<i>x</i> + <i>Ry</i> = 24</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12<i>x</i> &minus; <i>Ry</i> = &minus;24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>Rx</i> + 12<i>y</i> = 24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>Rx</i> &minus; 12<i>y</i> = &minus;24</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The slope of the line is (&minus;1 &minus; 2)/(1 &minus; 0) = &minus;3, and the <i>y</i>-intercept is 2. So <i>y</i> = &minus;3<i>x</i> + 2, or equivalently 3<i>x</i> + <i>y</i> = 2. Multiplying both sides by 12 gives 36<i>x</i> + 12<i>y</i> = 24, which matches <i>Rx</i> + 12<i>y</i> = 24 with <i>R</i> = 36 &gt; 0.</p><p>Choice A produces slope &minus;12/<i>R</i> with <i>y</i>-intercept 24/<i>R</i> = 2, forcing <i>R</i> = 12 and slope &minus;1, not &minus;3. Choices B and D have positive slope, which contradicts the line's downward direction.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A4.T7.hard"
+}

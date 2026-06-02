@@ -1,0 +1,25 @@
+{
+  "questionId": "9452092c-s1",
+  "originalId": "9452092c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p>[Table: Effects of Rhizobium Bacteria on 3 Legume Species. Columns: plant species, rhizobium host (yes/no), average mass with rhizobium present (g), average mass with rhizobium absent (g). Rows: soybean—yes, 22.4, 14.1; chickpea—yes, 18.7, 13.5; lentil—no, 9.2, 9.1.]</p>\n<p>Rhizobium bacteria form symbiotic relationships with the roots of many legumes, fixing atmospheric nitrogen into a form the plant can use. Plants that benefit from this relationship are called rhizobium hosts. A botanist studying three legumes wanted to determine the extent to which growth depends on rhizobium presence and concluded that, of the three species, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>chickpea grown in soil containing rhizobium had a higher average mass than soybean grown in soil containing rhizobium.</p>"},
+    {"id": "b", "content": "<p>lentil had the highest average mass of all three species grown in soil that had been treated to kill rhizobium, while soybean had the lowest.</p>"},
+    {"id": "c", "content": "<p>soybean grown in soil containing rhizobium had a slightly higher average mass than soybean grown in soil that had been treated to kill rhizobium.</p>"},
+    {"id": "d", "content": "<p>soybean grown in soil containing rhizobium had a much higher average mass than soybean grown in soil that had been treated to kill rhizobium.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it uses the table data most effectively to convey the central finding. Soybean is a rhizobium host, and according to the table, soybean grown with rhizobium had an average mass of 22.4 g versus 14.1 g without rhizobium&mdash;a much higher average mass, consistent with the host relationship.</p><p>Choice A is incorrect because the table shows soybean (22.4 g) exceeded chickpea (18.7 g) when both were grown with rhizobium, so chickpea did not have the higher average mass. Choice B is incorrect because the table shows soybean had the highest, not the lowest, average mass when grown without rhizobium (14.1 g), exceeding chickpea (13.5 g) and lentil (9.1 g). Choice C is incorrect because the difference between soybean grown with and without rhizobium is large, not slight.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

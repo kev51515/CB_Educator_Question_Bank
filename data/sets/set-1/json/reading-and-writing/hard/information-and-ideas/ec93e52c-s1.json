@@ -1,0 +1,39 @@
+{
+  "questionId": "ec93e52c-s1",
+  "originalId": "ec93e52c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Zooarchaeologist Mariana Souza and colleagues investigated livestock practices among Iron Age communities along the Andean foothills (approximately 1000 BCE to 500 CE). By analyzing the chemical composition of bones from llamas, alpacas, and guinea pigs, the team determined that guinea pigs&rsquo; diets consisted almost entirely of cultivated maize, while llamas and alpacas largely grazed on wild high-altitude grasses. The team concluded that guinea pigs were likely kept within or just outside human dwellings, whereas llamas and alpacas were taken to grazing grounds well away from settlements.</p>",
+  "stem": "<p>Which finding, if true, would most strongly support the team&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Llamas and alpacas were found to have eaten small amounts of cultivated maize in addition to wild grasses.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The diets of all three animals varied somewhat from settlement to settlement, depending on what local farmers were able to cultivate.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Further analysis of guinea pig bones showed that they also consumed quinoa, another crop widely cultivated near Andean settlements during this period.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Guinea pigs generally require less food per day and tolerate a narrower range of nutrients than do llamas and alpacas.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the team&rsquo;s conclusion is that guinea pigs lived close to human dwellings while llamas and alpacas grazed far from them. Finding that guinea pigs also consumed quinoa&mdash;another crop cultivated near settlements&mdash;would strengthen that conclusion: animals eating multiple cultivated crops would have had to be close enough to settlements to access them.</p><p>Choice A is incorrect because llamas and alpacas eating some maize would, if anything, weaken the inference that they were taken far from settlements. Choice B is incorrect because variation across settlements does not address the specific question of where each animal type was kept. Choice D is incorrect because dietary requirements describe biology, not where the animals were actually pastured.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982914+00:00",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

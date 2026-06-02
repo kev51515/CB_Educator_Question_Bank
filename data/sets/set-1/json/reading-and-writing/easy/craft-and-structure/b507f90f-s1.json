@@ -1,0 +1,39 @@
+{
+  "questionId": "b507f90f-s1",
+  "originalId": "b507f90f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Elena, the main character of a fictional novel set in ancient Rome, is a young scribe. She completely loses her memory whenever she sleeps. So, before sleeping, Elena records the important events of each day on a wax tablet, carefully choosing which moments to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>suspect</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>imagine</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>keep</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>suggest</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"keep\" means to retain or hold onto, matching Elena\u2019s effort to remember moments after losing her memory. Choice A is incorrect because suspecting doesn\u2019t fit recording memories. Choice B is incorrect because imagining contradicts recording real events. Choice D is incorrect because suggesting doesn\u2019t describe retention.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

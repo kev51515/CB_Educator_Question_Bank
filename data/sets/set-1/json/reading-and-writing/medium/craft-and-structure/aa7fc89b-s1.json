@@ -1,0 +1,25 @@
+{
+  "questionId": "aa7fc89b-s1",
+  "originalId": "aa7fc89b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from Edith Wharton&rsquo;s 1916 short story &ldquo;Bunner Sisters.&rdquo; An elderly bookseller is studying a clock that he has lately taken in trade.</p>\n<p style='padding-left: 1em;'>It seemed plain enough that the little clock did not belong among his books. A talkative stranger who claimed he was clearing out his attic had let the bookseller have it for what he called a trifle. The shop was only a narrow basement room which lived chiefly on the sale of cheap reprints. The old man cast his eye over his rows of leather spines, his shelves of yellowed almanacs, his stacks of forgotten sermons. &ldquo;Hasn&rsquo;t any place here,&rdquo; he grumbled.</p>\n<p style='padding-left: 1em;'>And yet the old man was quietly pleased with his purchase. There was a half-hidden satisfaction in his frown as he shuffled about deciding on the least foolish shelf for the clock.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To convey the bookseller&rsquo;s resentment toward the person who sold him the clock</p>"},
+    {"id": "b", "content": "<p>To describe the items in the shop that the bookseller most highly prizes</p>"},
+    {"id": "c", "content": "<p>To reveal the bookseller&rsquo;s mixed feelings about the new clock</p>"},
+    {"id": "d", "content": "<p>To explain differences between the clock and the books in the shop</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes the main purpose of the text. The text opens by stating that the clock &ldquo;did not belong&rdquo; among the bookseller&rsquo;s wares and shows him grumbling as he looks over his books. The second paragraph then reveals that the bookseller was &ldquo;quietly pleased&rdquo; with the purchase and felt a &ldquo;half-hidden satisfaction.&rdquo; The main purpose is thus to reveal the bookseller&rsquo;s mixed feelings about the clock.</p><p>Choice A is incorrect because the text gives no indication of the bookseller&rsquo;s feelings about the stranger who sold him the clock. Choice B is incorrect because, although the text mentions the bookseller&rsquo;s books, it does not indicate that he prizes them above any other item. Choice D is incorrect because the text does not describe how the clock differs from the books in any specific way.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

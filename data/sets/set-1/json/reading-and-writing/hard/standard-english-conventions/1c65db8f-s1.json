@@ -1,0 +1,39 @@
+{
+  "questionId": "1c65db8f-s1",
+  "originalId": "1c65db8f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>A species of <em>Heliconius</em> butterfly synthesizes alkaloids to deter being eaten by birds. However, in certain circumstances, the alkaloids the insect uses to defend itself from predation actually ______ its appeal to predators. Some tropical jumping spiders, for example, not only ignore <em>Heliconius</em> alkaloids but even sequester them to use as a chemical shield in much the same way the butterfly does.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>boosts</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>has boosted</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>is boosting</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>boost</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The plural verb \"boost\" agrees in number with the plural subject \"alkaloids.\"</p><p>Choice A is incorrect because the singular verb \"boosts\" does not agree in number with the plural subject \"alkaloids.\" Choice B is incorrect because the singular verb \"has boosted\" does not agree in number with the plural subject. Choice C is incorrect because the singular verb \"is boosting\" does not agree in number with the plural subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T4.hard"
+}

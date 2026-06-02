@@ -1,0 +1,22 @@
+{
+  "questionId": "b8fa27db-s1",
+  "originalId": "b8fa27db",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A line in the <i>xy</i>-plane passes through the points (0, 1) and (2, 7). Line <i>q</i> (not shown) is parallel to this line. What is the slope of line <i>q</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3"
+  ],
+  "rationale": "<p>The slope of the given line is (7 &minus; 1)/(2 &minus; 0) = 6/2 = 3. Parallel lines share a slope, so the slope of line <i>q</i> is 3.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.easy"
+}

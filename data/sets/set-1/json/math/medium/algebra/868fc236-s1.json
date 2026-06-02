@@ -1,0 +1,39 @@
+{
+  "questionId": "868fc236-s1",
+  "originalId": "868fc236",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A3.T2.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the weights of three packages expressed in both pounds and kilograms.</p><table border=\"1\"><tr><th>Package</th><th>Pounds (<em>x</em>)</th><th>Kilograms (<em>k</em>)</th></tr><tr><td>P1</td><td>10</td><td>4.5</td></tr><tr><td>P2</td><td>20</td><td>9.0</td></tr><tr><td>P3</td><td>40</td><td>18.0</td></tr></table><p>If <em>x</em> pounds is equivalent to <em>k</em> kilograms, which of the following best represents the relationship between <em>x</em> and <em>k</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>xk</em> = 0.45</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>x</em> = 0.45<em>k</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>k</em> = 2.2<em>x</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>k</em> = 0.45<em>x</em></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since the relationship is proportional, it can be written as <em>k</em> = <em>mx</em>. Using two rows (10, 4.5) and (20, 9.0), the rate of change is (9.0 − 4.5)/(20 − 10) = 4.5/10 = 0.45. Thus <em>k</em> = 0.45<em>x</em>.</p><p>Choices A, B, and C are incorrect and may result from setting up the equation incorrectly or inverting the ratio.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z"
+}

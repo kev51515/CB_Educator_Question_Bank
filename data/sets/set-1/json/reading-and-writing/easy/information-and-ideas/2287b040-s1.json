@@ -1,0 +1,39 @@
+{
+  "questionId": "2287b040-s1",
+  "originalId": "2287b040",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In the 1970s, Amadou Diop became a surprise figure in mbalax, a popular form of Senegalese dance music. Most mbalax artists at the time relied on driving sabar drum patterns and amplified electric guitars to fill outdoor halls. But Diop performed alone, accompanying his soft, husky voice with only a small kora. While other mbalax singers tended to write fast, celebratory tunes about contemporary city life, Diop preferred to revive older fishermen's songs from his coastal hometown. He also rearranged those songs by stretching their phrases and adding long pauses, which gave the lyrics room to breathe and let listeners feel the weight of each line.</p>",
+  "stem": "<p>According to the text, what is one way that Diop differed from other mbalax artists?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>He refused to perform any songs from his coastal hometown.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>He rearranged older songs by stretching their phrases and adding long pauses.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>He performed with a full sabar drumming ensemble onstage.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>He sang with a loud, polished voice typical of the genre.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the text states that, unlike other mbalax artists, Diop rearranged older songs by stretching their phrases and adding long pauses.</p><p>Choice A is incorrect; the text says Diop preferred to revive older fishermen's songs from his hometown, not that he refused them. Choice C is incorrect; the text says Diop performed alone with only a small kora, not with a full sabar ensemble. Choice D is incorrect; the text describes Diop's voice as soft and husky, in contrast with the louder style of others.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

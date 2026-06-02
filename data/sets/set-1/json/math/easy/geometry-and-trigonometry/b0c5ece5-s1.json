@@ -1,0 +1,39 @@
+{
+  "questionId": "b0c5ece5-s1",
+  "originalId": "b0c5ece5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the lengths of the legs are 3 and <em>b</em>, and the length of the hypotenuse is 11. Which equation must be true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3 times b = 11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3 + b = 11</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3 squared minus b squared = 11 squared</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3 squared + b squared = 11 squared</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. By the Pythagorean theorem, the sum of the squares of the legs equals the square of the hypotenuse.</p><p>Choice A is incorrect: this is a product, not the Pythagorean relationship.</p><p>Choice B is incorrect: this is a sum of lengths, not of squares.</p><p>Choice C is incorrect: this subtracts the squared leg instead of adding it.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T2.easy"
+}

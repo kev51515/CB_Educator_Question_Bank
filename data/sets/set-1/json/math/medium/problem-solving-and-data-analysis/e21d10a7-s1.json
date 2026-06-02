@@ -1,0 +1,22 @@
+{
+  "questionId": "e21d10a7-s1",
+  "originalId": "e21d10a7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>One of a planet's moons orbits the planet every 184 days. A second moon orbits the planet every 209 days. How many more days does it take the second moon to orbit the planet 33 times than it takes the first moon to orbit the planet 33 times?</p>",
+  "answerOptions": null,
+  "keys": [
+    "825"
+  ],
+  "rationale": "<p>The correct answer is 825. The first moon takes 184 \u00b7 33 = 6,072 days to orbit 33 times. The second moon takes 209 \u00b7 33 = 6,897 days. The difference is 6,897 \u2212 6,072 = 825 days. Alternatively, (209 \u2212 184) \u00b7 33 = 25 \u00b7 33 = 825.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A5.T4.medium"
+}

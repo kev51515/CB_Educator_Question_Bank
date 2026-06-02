@@ -1,0 +1,39 @@
+{
+  "questionId": "41fdc0b8-s1",
+  "originalId": "41fdc0b8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "templateId": "linear-functions.A3.T2.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The population of a town was 3,500 in 1990 and 5,700 in 2010. If the relationship between the population and the year is linear, which of the following functions <em>P</em> models the population of the town <em>t</em> years after 1990?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>P(t) = 3500t + 110</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>P(t) = 110t + 5700</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>P(t) = 110t + 3500</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>P(t) = 220t + 3500</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The rate of change is (5700 - 3500)/(2010 - 1990) = 2200/20 = 110 per year, so the slope is 110. The starting value at t = 0 (year 1990) is 3500. Therefore P(t) = 110t + 3500. Verify: P(20) = 110(20) + 3500 = 2200 + 3500 = 5700 \u2713. Choice A swaps the roles of slope and intercept. Choice B uses the wrong starting value. Choice D doubles the slope.</p>"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "7b17f86a-s1",
+  "originalId": "7b17f86a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>f(x) = x + 3/7. For the linear function f, what is the value of f(4/7)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1"
+  ],
+  "rationale": "<p>f(4/7) = 4/7 + 3/7 = 7/7 = 1.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

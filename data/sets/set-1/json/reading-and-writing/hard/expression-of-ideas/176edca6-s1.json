@@ -1,0 +1,39 @@
+{
+  "questionId": "176edca6-s1",
+  "originalId": "176edca6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>A 2019 study of early second-language learners examined the role of cognate similarity\u2014the closeness of a word's form in two languages\u2014in vocabulary acquisition. The study found that the greater the cognate similarity of a target word, the more likely learners were to acquire it. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the correlation between acquisition and cognate similarity was weaker than that between acquisition and a separate factor studied: classroom exposure frequency.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Granted,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In fact,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. &ldquo;Granted&rdquo; concedes a qualification: yes, cognate similarity matters, <em>but</em> another factor matters more. That concession is exactly what the sentence does.</p><p>Choice B signals restatement, but no restatement occurs. Choice C strengthens the prior claim, but the new sentence weakens it. Choice D indicates cause-and-effect, which doesn't apply.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A1.T3.hard"
+}

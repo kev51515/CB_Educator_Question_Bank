@@ -1,0 +1,39 @@
+{
+  "questionId": "3b225698-s1",
+  "originalId": "3b225698",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle PQR is similar to triangle UVW such that P, Q, and R correspond to U, V, and W, respectively. The measure of \u2220R is 35\u00b0 and 3\u00b7PQ = UV. What is the measure of \u2220W?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11.67\u00b0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>70\u00b0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>35\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Corresponding angles of similar triangles are congruent. Since R corresponds to W, the measure of \u2220W equals the measure of \u2220R, which is 35\u00b0. The side-length ratio is irrelevant to angle measure.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "9aa44886-s1",
+  "originalId": "9aa44886",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A1.T1.medium",
+  "stimulus": "<p>The following text is from Edith Wharton's 1905 novel <em>The House of Mirth</em>.</p>\n<blockquote>\n<p>[Lily Bart] stood out among the throng with that quickness of glance and pliancy of bearing which betrayed a long apprenticeship to drawing-rooms&mdash;a kind of social fluency learned, I imagine, from the constant pressure to please, and made graceful by the unstudied charm of her surroundings. This <span role=\"region\" aria-label=\"Referenced Content\"><u>aptitude</u></span> showed itself in every gesture, transforming the simplest movement into something noted and remembered.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;aptitude&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Talent</p>"},
+    {"id": "b", "content": "<p>Eagerness</p>"},
+    {"id": "c", "content": "<p>Reputation</p>"},
+    {"id": "d", "content": "<p>Diligence</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"This aptitude\" refers to Lily's \"quickness of glance and pliancy of bearing\"&mdash;a learned skill or talent for social settings that shows itself in her gestures.</p><p>Choice B is incorrect. \"Eagerness\" would denote a strong desire, but the passage describes a polished ability, not an attitude of enthusiasm. Choice C is incorrect. \"Reputation\" would refer to how Lily is regarded by others, not to the skillful bearing she herself displays. Choice D is incorrect. \"Diligence\" would denote sustained hard work; the passage emphasizes a fluid, almost effortless social skill, not laborious effort.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

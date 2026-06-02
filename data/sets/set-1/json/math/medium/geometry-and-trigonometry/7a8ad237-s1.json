@@ -1,0 +1,22 @@
+{
+  "questionId": "7a8ad237-s1",
+  "originalId": "7a8ad237",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangles <em>ABC</em> and <em>DEF</em> are congruent, where <em>A</em> corresponds to <em>D</em>, <em>B</em> corresponds to <em>E</em>, and <em>C</em> corresponds to <em>F</em>. The measure of angle <em>A</em> is 35&deg; and the measure of angle <em>C</em> is 90&deg;. What is the measure, in degrees, of angle <em>E</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "55"
+  ],
+  "rationale": "<p>The correct answer is 55. In triangle ABC, m&ang;A + m&ang;B + m&ang;C = 180&deg;, so m&ang;B = 180 &minus; 35 &minus; 90 = 55&deg;. Since triangles ABC and DEF are congruent and angle B corresponds to angle E, m&ang;E = 55&deg;.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A4.T1.medium"
+}

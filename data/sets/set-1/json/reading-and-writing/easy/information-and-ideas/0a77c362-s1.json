@@ -1,0 +1,39 @@
+{
+  "questionId": "0a77c362-s1",
+  "originalId": "0a77c362",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>\"Uncle Joe's Songs\" is a 1932 poem by Sterling Brown. In the poem, the speaker indicates that the songs Uncle Joe sings are based on Uncle Joe's own working life, saying that <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses a quotation from \"Uncle Joe's Songs\" to illustrate the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the cool of the porch \"folds and unfolds / Uncle Joe's verses.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the figures in the songs \"Drift and gather quietly / In the slow hum of Uncle Joe's voice, / Drift and gather quietly.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the songs are sung during \"Long evenings on the back step.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a watching child \"knows that Uncle Joe / Never lifted his songs from any sheet of paper, / But that they rose / Right out of his own years on the line.\"</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The quotation contrasts sheet-paper sources with Uncle Joe's \"own years on the line\" (his working life), illustrating directly that the songs are based on his personal experience.</p><p>Choice A is incorrect; the cool of the porch folding the verses is an image, not evidence of personal experience. Choice B is incorrect; drifting figures describe the songs' atmosphere, not their source. Choice C is incorrect; the back step describes the setting, not the source.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A1.T2.easy"
+}

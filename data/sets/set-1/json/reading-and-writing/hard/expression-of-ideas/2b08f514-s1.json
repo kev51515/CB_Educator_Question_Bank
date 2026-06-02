@@ -1,0 +1,39 @@
+{
+  "questionId": "2b08f514-s1",
+  "originalId": "2b08f514",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The international meter, the global standard for length first defined by physical artifact in 1799, was originally measured against a platinum-iridium bar stored in Paris. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as decades passed, finer instruments revealed that the bar's length subtly shifted with temperature and handling, yet the artifact remained the official reference; it wasn't until 1983 that, spurred by precise atomic measurements, the meter was officially redefined—based now on the speed of light in vacuum.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To that end,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Granted,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Again and again,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The sentence describes a process repeated over decades: finer instruments repeatedly revealed shifts in the bar's length, yet the standard wasn't changed for many years. &ldquo;Again and again&rdquo; captures this repeated occurrence over time.</p><p>Choice A introduces a specification, but the sentence describes recurrence, not specification. Choice B indicates purpose. Choice C concedes a point, which doesn't fit.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A5.T14.hard"
+}

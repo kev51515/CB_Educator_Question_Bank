@@ -1,0 +1,39 @@
+{
+  "questionId": "dd8ac009-s1",
+  "originalId": "dd8ac009",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Sara opened a savings account at a bank. The table shows the exponential relationship between the time <em>t</em>, in years, since Sara opened the account and the total amount <em>d</em>, in dollars, in the account.</p><table border='1'><tr><th>Time (years)</th><th>Total amount (dollars)</th></tr><tr><td>0</td><td>540.00</td></tr><tr><td>1</td><td>545.94</td></tr><tr><td>2</td><td>551.94</td></tr></table><p>If Sara made no additional deposits or withdrawals, which of the following equations best represents the relationship between <em>t</em> and <em>d</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>d</em> = 540(1 + 0.011)<sup><em>t</em></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>d</em> = (1 + 0.011)(540)<sup><em>t</em></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>d</em> = (1 + 540)<sup><em>t</em></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>d</em> = 0.011(1 + 540)<sup><em>t</em></sup></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. An exponential growth model has the form <em>d</em> = <em>a</em>(1 + <em>r</em>)<sup><em>t</em></sup>, where <em>a</em> is the initial value and <em>r</em> is the periodic growth rate. From the table, <em>a</em> = 540. The growth rate is (545.94 - 540)/540 = 5.94/540 = 0.011 = 1.1%. So <em>d</em> = 540(1.011)<sup><em>t</em></sup>. Choices B, C, and D do not correctly model exponential growth from this initial value.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

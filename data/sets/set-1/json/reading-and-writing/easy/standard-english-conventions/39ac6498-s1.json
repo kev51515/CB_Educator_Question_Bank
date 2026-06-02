@@ -1,0 +1,39 @@
+{
+  "questionId": "39ac6498-s1",
+  "originalId": "39ac6498",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In discussing tides, oceanographers sometimes mention the role of king tides. What are king tides, and why ______ Part of the regular tidal cycle, king tides are unusually high tides that occur when the Sun, Moon, and Earth align. In low-lying coastal cities, these tides can flood streets and disrupt daily life.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>do they matter to coastal cities.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>do they matter to coastal cities?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>they do matter to coastal cities?</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>they do matter to coastal cities.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The sentence consists of two coordinated direct questions; both require interrogative word order and a question mark.</p><p>Choice A uses interrogative word order but ends with a period. Choice C uses declarative word order but ends with a question mark. Choice D is declarative throughout and ends with a period.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

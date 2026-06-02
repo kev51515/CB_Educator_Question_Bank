@@ -1,0 +1,22 @@
+{
+  "questionId": "1b2b20b9-s1",
+  "originalId": "1b2b20b9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Circle A is defined by the equation x&sup2; + (y &minus; 5)&sup2; = 9. Circle B has the same radius as circle A but is translated 12 units to the right of circle A. If the equation of circle B is (x &minus; h)&sup2; + (y &minus; k)&sup2; = a, what is the value of h &minus; k + a?</p>",
+  "answerOptions": null,
+  "keys": [
+    "16"
+  ],
+  "rationale": "<p>The correct answer is 16. Translating circle A 12 units right changes its center from (0, 5) to (12, 5); the radius stays the same. So h = 12, k = 5, and a = 9. Thus h &minus; k + a = 12 &minus; 5 + 9 = 16.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T5.hard"
+}

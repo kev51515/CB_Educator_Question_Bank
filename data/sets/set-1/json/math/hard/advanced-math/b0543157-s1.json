@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "b0543157-s1",
+  "originalId": "b0543157",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>g(x) = (x<sup>2</sup> + x &minus; a)(x<sup>3</sup> &minus; x &minus; b)</p><p>The function g is defined by the given equation, where a and b are constants. In the xy-plane, the graph of y = g(x) passes through the point (0, 12), and g(&minus;4) = 0. What is the value of b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;4</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since g(0) = (&minus;a)(&minus;b) = ab and the graph passes through (0, 12), ab = 12. Since g(&minus;4) = 0, one of the factors is zero at x = &minus;4. Testing the first factor: (&minus;4)<sup>2</sup> + (&minus;4) &minus; a = 16 &minus; 4 &minus; a = 12 &minus; a, so the first factor is zero when a = 12. Then ab = 12 with a = 12 gives b = 1.</p><p>Choice A is the value of a, not b. Choice C results from forcing the second factor to vanish at x = &minus;4 (which gives b = &minus;60, but then a = 12/(&minus;60) is not an integer). Choice D is the substituted x-value.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

@@ -1,0 +1,8 @@
+[
+  {"id": "4a2264b3-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy", "verdict": "ok"},
+  {"id": "c9dd92b1-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy", "verdict": "aspect_drift", "detail": "Tagged A1.T2 (qualitative graph reading, no equation/numeric prediction). Stem asks for predicted density via slope computation at x=55%—this is A4.T7 prediction, not A1 reading."},
+  {"id": "d6121490-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy", "verdict": "type_drift", "detail": "Tagged T2 (contextual graph, qualitative property). Stem uses a table (not graph) and asks for a numeric difference (200-90=110). Closer to T1 (compare values) but T2 must_preserve specifies 'contextualized x-y graph, not table' and 'no equation/numeric computation.'"},
+  {"id": "ac5b6558-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "ok"},
+  {"id": "16988f9c-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy", "verdict": "ok"},
+  {"id": "632cf8f9-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy", "verdict": "ok"}
+]

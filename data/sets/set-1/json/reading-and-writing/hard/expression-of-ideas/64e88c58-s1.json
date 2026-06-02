@@ -1,0 +1,39 @@
+{
+  "questionId": "64e88c58-s1",
+  "originalId": "64e88c58",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>In 1968, experimental composer Cornelius Cardew created <em>The Great Learning</em>.</li>\n<li><em>The Great Learning</em> is not a conventional score but a series of seven text-based paragraphs.</li>\n<li>Each paragraph gives performers instructions to whistle, hum, recite, or remember sounds.</li>\n<li>The instructions for Paragraph 2 state, &ldquo;Sustain a single tone for the length of a slow exhalation, then listen to its echo.&rdquo;</li>\n<li>The instructions for Paragraph 6 state, &ldquo;Imagine a sound you have never heard, then describe it to your neighbor.&rdquo;</li>\n</ul>",
+  "stem": "<p>The student wants to provide an explanation and an example of Cardew's <em>The Great Learning</em>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>The Great Learning</em> is not a conventional score but a series of text-based paragraphs that give performers instructions; Paragraph 6, for instance, instructs performers to &ldquo;imagine a sound you have never heard, then describe it to your neighbor.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In 1968, Cardew created <em>The Great Learning</em>, a piece consisting of seven paragraphs that give performers instructions to whistle, hum, recite, or remember sounds.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;Sustain a single tone for the length of a slow exhalation, then listen to its echo&rdquo; is one example of the instructions found in Cardew's <em>The Great Learning</em>.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Although both consist of instructions, Paragraph 2 instructs performers to &ldquo;sustain,&rdquo; whereas Paragraph 6 instructs performers to &ldquo;imagine.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it provides both an explanation (text-based paragraphs giving instructions) and a concrete example (Paragraph 6).</p><p>Choice B explains but provides no example. Choice C gives only an example with no real explanation. Choice D contrasts two examples without explaining what the piece is.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A3.T7.hard"
+}

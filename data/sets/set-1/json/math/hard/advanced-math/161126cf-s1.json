@@ -1,0 +1,39 @@
+{
+  "questionId": "161126cf-s1",
+  "originalId": "161126cf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>x</i>) = (1.21)<sup><i>x</i>/2</sup></p><p>The function <i>f</i> is defined by the given equation. The equation can be rewritten as <i>f</i>(<i>x</i>) = (1 + <i>p</i>/100)<sup><i>x</i></sup>, where <i>p</i> is a constant. Which of the following is closest to the value of <i>p</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>11</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Rewriting: <i>f</i>(<i>x</i>) = (1.21)<sup><i>x</i>/2</sup> = ((1.21)<sup>1/2</sup>)<sup><i>x</i></sup> = (1.1)<sup><i>x</i></sup>. So 1 + <i>p</i>/100 = 1.1, giving <i>p</i> = 10.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

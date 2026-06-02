@@ -1,0 +1,39 @@
+{
+  "questionId": "3091f805-s1",
+  "originalId": "3091f805",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Mountain pikas live on rocky alpine slopes. During cool mornings they actively gather plants to store in &ldquo;haypiles&rdquo; for winter. Biologists Nina Park and Daniel Cho noticed that pikas stopped gathering plants on unusually warm afternoons. Park and Cho hypothesized that high air temperatures act as a barrier preventing pikas from leaving their burrows. To test their hypothesis, the scientists placed some pikas in an enclosure kept at a normal cool temperature and others in an enclosure kept warmer than usual. They then observed the pikas&rsquo; foraging activity.</p>",
+  "stem": "<p>Which finding from the experiment, if true, would most directly support Park and Cho&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Pikas in both enclosures left their burrows equally often, but the pikas in the warm enclosure took longer to return.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Pikas in both enclosures collected the same number of plants, although the pikas in the warm enclosure ate them more quickly.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Pikas in the warm enclosure left their burrows more frequently than pikas in the cool enclosure did.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Pikas in the cool enclosure regularly left their burrows to gather plants, but pikas in the warm enclosure mostly stayed inside their burrows.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because if pikas in the warm enclosure mostly stayed inside while those in the cool enclosure foraged normally, that would directly support the hypothesis that high temperatures act as a barrier preventing pikas from leaving their burrows.</p><p>Choice A is incorrect: equal leaving rates would not show a temperature barrier. Choice B is incorrect: equal plant collection contradicts the barrier hypothesis. Choice C is incorrect: if pikas left more often in the warm enclosure, that would weaken the hypothesis rather than support it.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

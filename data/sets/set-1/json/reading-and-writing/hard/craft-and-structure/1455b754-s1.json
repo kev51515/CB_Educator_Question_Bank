@@ -1,0 +1,39 @@
+{
+  "questionId": "1455b754-s1",
+  "originalId": "1455b754",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>While recent scholarship has undermined longstanding claims that the writings of the eleventh-century Tamil mathematician and astronomer Vatesvara were ______ Indian astronomers of his era, it is indisputable that his location in the far south of the subcontinent meant that his works circulated primarily on the periphery of the great northern centers of mathematical learning.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>inconsequential to</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>antagonistic toward</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>controversial among</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>imitated by</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The sentence sets up a contrast: recent scholarship has overturned a previous claim, while geography unambiguously kept his works on the periphery of the major centers. For the contrast to work, the overturned claim must be that Vatesvara had little importance to&mdash;i.e., was \"inconsequential to\"&mdash;Indian astronomers of his era. New scholarship can plausibly undermine such a claim of insignificance.</p><p>Choice B is incorrect because there is no textual indication that Vatesvara opposed his contemporaries. Choice C is incorrect because the contrast does not concern controversy. Choice D is incorrect because \"imitated by\" reverses the relationship&mdash;new scholarship would have nothing to undermine if the original claim were that he was imitated.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T4.hard"
+}

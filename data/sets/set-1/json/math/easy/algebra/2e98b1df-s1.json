@@ -1,0 +1,39 @@
+{
+  "questionId": "2e98b1df-s1",
+  "originalId": "2e98b1df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>On the first day of a season, a soccer club has 75 members. Each day after the first day of the season, 8 new members join the club. If no members leave the club, how many total members will the club have 5 days after the first day of the season?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>115</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>83</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>75</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>375</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. After 5 days, 5 &times; 8 = 40 new members have joined. Adding to the original 75 gives 75 + 40 = 115 total members.</p><p>Choice B adds only one day's new members. Choice C is the initial count. Choice D multiplies incorrectly.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e103300e-s1",
+  "originalId": "e103300e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f(x) is defined as 25 less than 6 times a number x. If y = f(x) is graphed in the xy-plane, what is the best interpretation of the x-intercept?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The y-coordinate is 25 when x = 0.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The graph has slope 6.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The value of f is 0 when x = 6.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The value of f is 0 when x = 25/6.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. f(x) = 6x - 25. Setting f(x) = 0: 6x = 25, so x = 25/6. The x-intercept is at (25/6, 0), meaning f(x) = 0 when x = 25/6.</p><p>Choice A describes the y-intercept (with wrong sign). Choice B describes the slope. Choice C uses x = 6 instead of 25/6.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A2.T3.hard"
+}

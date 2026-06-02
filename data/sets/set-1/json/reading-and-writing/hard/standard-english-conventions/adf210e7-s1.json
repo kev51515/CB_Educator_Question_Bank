@@ -1,0 +1,25 @@
+{
+  "questionId": "adf210e7-s1",
+  "originalId": "adf210e7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>The compact, image-driven lyrics of Polish poet Wis&lstrok;awa Szymborska, which weave irony and tenderness into seemingly ordinary scenes, have drawn admiration from prominent international <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> them Irish poet and Nobel laureate Seamus Heaney, who once remarked that Szymborska&rsquo;s poems &ldquo;clarify the world without simplifying it.&rdquo;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>readers; among</p>"},
+    {"id": "b", "content": "<p>readers. Among</p>"},
+    {"id": "c", "content": "<p>readers, among</p>"},
+    {"id": "d", "content": "<p>readers among</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation between a main clause and a supplementary phrase. This choice correctly uses a comma to mark the boundary between the main clause (\"The compact...readers\") and the supplementary phrase (\"among...world without simplifying it\") that names a contemporary admirer.</p><p>Choice A is incorrect because a semicolon cannot join an independent clause and a supplementary phrase. Choice B is incorrect because it produces a sentence fragment beginning with \"Among.\" Choice D is incorrect because it fails to mark the boundary between the main clause and the supplementary phrase with any punctuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

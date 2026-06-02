@@ -1,0 +1,39 @@
+{
+  "questionId": "3206b905-s1",
+  "originalId": "3206b905",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is equivalent to 9<i>y</i><sup>11</sup> &minus; 9<i>y</i><sup>10</sup> + 81<i>y</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9<i>y</i>(<i>y</i><sup>10</sup> &minus; <i>y</i><sup>9</sup> + 9)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9<i>y</i>(<i>y</i><sup>11</sup> &minus; <i>y</i><sup>10</sup> + 9<i>y</i>)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i>(8<i>y</i><sup>11</sup> &minus; 8<i>y</i><sup>10</sup> + 80<i>y</i>)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9<i>y</i>(9<sup>10</sup> &minus; 9<sup>9</sup> + 9)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since 9<i>y</i> is a common factor of each term, the expression can be rewritten as 9<i>y</i>(<i>y</i><sup>10</sup> &minus; <i>y</i><sup>9</sup> + 9). Multiplying back: 9<i>y</i> &middot; <i>y</i><sup>10</sup> = 9<i>y</i><sup>11</sup>, 9<i>y</i> &middot; (&minus;<i>y</i><sup>9</sup>) = &minus;9<i>y</i><sup>10</sup>, and 9<i>y</i> &middot; 9 = 81<i>y</i>.</p><p>Choice B is incorrect because the exponents inside the parentheses are not reduced after factoring out <i>y</i>. Choice C results from using 8 instead of 9 as the numerical factor. Choice D incorrectly raises the constant 9 to powers instead of <i>y</i>.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "equivalent-expressions.A2.T4.medium"
+}

@@ -1,0 +1,23 @@
+{
+  "questionId": "46b2e169-s1",
+  "originalId": "46b2e169",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A box contains 17 yellow markers and 33 green markers. If one of these markers is selected at random, what is the probability of selecting a yellow marker? (Express your answer as a decimal or fraction, not as a percent.)</p>",
+  "answerOptions": null,
+  "keys": [
+    ".34",
+    "17/50"
+  ],
+  "rationale": "<p>The correct answer is 17/50 (equivalently 0.34). The total number of markers in the box is 17 + 33 = 50, and 17 of them are yellow. The probability of selecting a yellow marker at random is 17/50, or 0.34.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.medium"
+}

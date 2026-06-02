@@ -1,0 +1,39 @@
+{
+  "questionId": "dba8d38a-s1",
+  "originalId": "dba8d38a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A museum sells two types of tickets. The general admission ticket costs $9, and the deluxe ticket, which includes a guided tour, costs $20. On one Saturday the museum sold 180 tickets total and collected $2,150. If g represents the number of general admission tickets sold and d represents the number of deluxe tickets sold, which system of equations represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>g + d = 2,150 and 9g + 20d = 180</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9g + 20d = 180 and g + d = 2,150</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20g + 9d = 2,150 and g + d = 180</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>g + d = 180 and 9g + 20d = 2,150</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Total tickets: g + d = 180; revenue: 9g + 20d = 2,150.</p><p>Other choices swap totals or coefficients.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

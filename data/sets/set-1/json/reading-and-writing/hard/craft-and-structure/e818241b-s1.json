@@ -1,0 +1,39 @@
+{
+  "questionId": "e818241b-s1",
+  "originalId": "e818241b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Astronomers are confident that the red supergiant Antares will eventually exhaust the elements in its core and end as a supernova. <u>They are much less confident, however, about when this will occur, since the timing depends on internal properties of Antares that remain largely unmeasured.</u> Astrophysicist Mira Petrov and colleagues recently asked whether subtle brightness oscillations on the star's surface could be used to infer those internal properties&mdash;in effect, applying to Antares a technique pioneered in the study of the Sun. Early results suggest that the oscillations may indeed constrain the rate at which the star is fusing carbon, narrowing the range of plausible supernova dates.</p>",
+  "stem": "<p>Which choice best describes the function of the second sentence in the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It describes a serious limitation of the method used by Petrov and colleagues.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It presents the central finding reported by Petrov and colleagues.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It identifies the problem that Petrov and colleagues set out to address.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It explains how the work of Petrov and colleagues was received by others in the field.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The first sentence establishes confidence about <em>that</em> Antares will go supernova. The second sentence&mdash;the one in question&mdash;notes the lack of confidence about <em>when</em>, blaming poorly measured interior properties. The next sentences describe Petrov and colleagues' attempt to use brightness oscillations to constrain those interior properties. So the second sentence sets up the very problem the team is trying to address.</p><p>Choice A is incorrect because no limitation of the team's method is discussed; results are described as promising. Choice B is incorrect because the team's findings come later. Choice D is incorrect because no community reception is reported.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T5.hard"
+}

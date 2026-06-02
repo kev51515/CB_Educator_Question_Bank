@@ -1,0 +1,39 @@
+{
+  "questionId": "188f7e3c-s1",
+  "originalId": "188f7e3c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 2019, urban ecologist Priya Anand supervised the planting of 230 rain gardens, shallow vegetated basins designed to capture and filter stormwater, along the residential streets of Portland, Oregon. By intercepting the rainwater rushing toward storm drains, ______</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>both basement flooding and the resulting damage to home foundations have been reduced by rain gardens.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the rain gardens' reduction of both basement flooding and the resulting damage to home foundations has been achieved.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the reduction of both basement flooding and the resulting damage to home foundations has been achieved by rain gardens.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the rain gardens have reduced both basement flooding and the resulting damage to home foundations.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the rain gardens\" the subject of the sentence and places it immediately after the modifying phrase \"By intercepting...drains.\" In doing so, it clearly establishes that the rain gardens\u2014and not another noun in the sentence\u2014are intercepting the rainwater.</p><p>Choice A is incorrect because it produces a dangling modifier: \"basement flooding\" and \"damage\" cannot be what is intercepting the rainwater. Choice B is incorrect because the noun phrase \"the rain gardens' reduction\" placed after the modifier illogically suggests that a \"reduction\" is intercepting rainwater. Choice C is incorrect because the placement of \"the reduction\" immediately after the modifier creates unclear modification regarding what is intercepting the rainwater.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A4.T9.hard"
+}

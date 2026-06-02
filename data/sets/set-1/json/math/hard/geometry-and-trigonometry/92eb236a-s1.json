@@ -1,0 +1,39 @@
+{
+  "questionId": "92eb236a-s1",
+  "originalId": "92eb236a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the tangent of one of the two acute angles is &radic;5/2. What is the tangent of the other acute angle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&radic;5/2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2/&radic;5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2&radic;5/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5/2</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>In a right triangle, the two acute angles are complementary, so the tangent of one equals the reciprocal of the tangent of the other (since tan(90&deg;&minus;&theta;) = cot &theta; = 1/tan &theta;). Therefore the other tangent is 2/&radic;5. Rationalizing: 2/&radic;5 = 2&radic;5/5. Choice A repeats the original value; choice B is the reciprocal in unrationalized form (also equal to c, but not in rationalized form); choice D is the squared reciprocal. The standard rationalized answer is 2&radic;5/5.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A6.T11.medium"
+}

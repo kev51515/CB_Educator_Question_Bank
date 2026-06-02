@@ -1,0 +1,72 @@
+{
+  "questionId": "a7a944ed",
+  "externalId": "7c141757-c5fa-480a-8a3c-87b8746c8d3b",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:34.660287+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "61534c72-7b8e-4aeb-a0fc-6b4366029f51",
+      "content": "<p>though,</p>"
+    },
+    {
+      "id": "30e1328d-dd84-42aa-a2b8-05996525137f",
+      "content": "<p>for example,</p>"
+    },
+    {
+      "id": "e3d7b402-b262-40a3-a51e-07b879c55e49",
+      "content": "<p>fittingly,</p>"
+    },
+    {
+      "id": "f534a2c6-4823-4f5a-be8a-cf5686b243e8",
+      "content": "<p>likewise,&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "61534c72-7b8e-4aeb-a0fc-6b4366029f51"
+  ],
+  "rationale": "<p>Choice A is the best answer. &ldquo;Though&rdquo; logically signals that the information in this sentence&mdash;that Morgado and colleagues detected a dense ring orbiting outside the Roche limit that remained intact&mdash;presents an exception to the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Such debris would be expected to accrete into a satellite, not remain intact as a ring.</p><p>Choice B is incorrect because &ldquo;for example&rdquo; illogically signals that the information about Morgado&rsquo;s discovery exemplifies the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Instead, the sentence presents an exception to the claim. Choice C is incorrect because &ldquo;fittingly&rdquo; illogically signals that the information about Morgado&rsquo;s discovery aligns with the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Instead, the sentence presents an exception to the claim. Choice D is incorrect because &ldquo;likewise&rdquo; illogically signals that the information about Morgado&rsquo;s discovery is similar to the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Instead, the sentence presents an exception to the claim.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>In astrophysics, a ring of debris orbiting a larger object within the object&rsquo;s Roche limit is expected to persist as a ring, whereas a ring of debris orbiting outside this limit would likely accrete into a satellite (<span data-ssml-sub-alias=\"e g\">e.g.</span>, a moon). Bruno Morgado and colleagues, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> detected a dense ring of material orbiting the trans-Neptunian object Quaoar at a distance of 2,500 miles, well outside the calculated Roche limit of 1,100 miles, that has remained intact.</p>",
+    "keys": [
+      "61534c72-7b8e-4aeb-a0fc-6b4366029f51"
+    ],
+    "answerOptions": [
+      {
+        "id": "61534c72-7b8e-4aeb-a0fc-6b4366029f51",
+        "content": "<p>though,</p>"
+      },
+      {
+        "id": "30e1328d-dd84-42aa-a2b8-05996525137f",
+        "content": "<p>for example,</p>"
+      },
+      {
+        "id": "e3d7b402-b262-40a3-a51e-07b879c55e49",
+        "content": "<p>fittingly,</p>"
+      },
+      {
+        "id": "f534a2c6-4823-4f5a-be8a-cf5686b243e8",
+        "content": "<p>likewise,&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. &ldquo;Though&rdquo; logically signals that the information in this sentence&mdash;that Morgado and colleagues detected a dense ring orbiting outside the Roche limit that remained intact&mdash;presents an exception to the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Such debris would be expected to accrete into a satellite, not remain intact as a ring.</p><p>Choice B is incorrect because &ldquo;for example&rdquo; illogically signals that the information about Morgado&rsquo;s discovery exemplifies the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Instead, the sentence presents an exception to the claim. Choice C is incorrect because &ldquo;fittingly&rdquo; illogically signals that the information about Morgado&rsquo;s discovery aligns with the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Instead, the sentence presents an exception to the claim. Choice D is incorrect because &ldquo;likewise&rdquo; illogically signals that the information about Morgado&rsquo;s discovery is similar to the previous sentence&rsquo;s claim about debris orbiting outside an object&rsquo;s Roche limit. Instead, the sentence presents an exception to the claim.</p>",
+    "externalid": "7c141757-c5fa-480a-8a3c-87b8746c8d3b",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>In astrophysics, a ring of debris orbiting a larger object within the object&rsquo;s Roche limit is expected to persist as a ring, whereas a ring of debris orbiting outside this limit would likely accrete into a satellite (<span data-ssml-sub-alias=\"e g\">e.g.</span>, a moon). Bruno Morgado and colleagues, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> detected a dense ring of material orbiting the trans-Neptunian object Quaoar at a distance of 2,500 miles, well outside the calculated Roche limit of 1,100 miles, that has remained intact.</p>"
+}

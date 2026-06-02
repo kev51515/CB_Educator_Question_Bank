@@ -1,0 +1,25 @@
+{
+  "questionId": "b0fb36ad-s1",
+  "originalId": "b0fb36ad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>Unusual among large mammals, elephants employ their trunks principally for two distinct communicative ends: to call and to gesture. The question of what shared social functions unite these separate modalities, and additionally what selective pressures led elephant lineages to develop them initially, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> ethologist Rajeev Patnaik's 2024 paper &ldquo;Vocalizations and Visual Signals: Common Threads across Elephant Populations.&rdquo;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>have driven</p>"},
+    {"id": "b", "content": "<p>drives</p>"},
+    {"id": "c", "content": "<p>drive</p>"},
+    {"id": "d", "content": "<p>driving</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"drives\" agrees in number with the singular subject \"question.\"</p><p>Choice A is incorrect because the plural verb \"have driven\" doesn't agree in number with the singular subject \"question.\" Choice C is incorrect because the plural verb \"drive\" doesn't agree in number with the singular subject \"question.\" Choice D is incorrect because it results in an ungrammatical sentence. The nonfinite participle \"driving\" doesn't supply the clause with a finite verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

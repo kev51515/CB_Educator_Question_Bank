@@ -1,0 +1,39 @@
+{
+  "questionId": "096c7ef5-s1",
+  "originalId": "096c7ef5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the three points (0, 0), (8, 0), and (0, 6) lie on a circle. The circumference of this circle is k\u03c0, where k is a constant. What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The three points form a right triangle with legs of length 8 and 6 (the right angle is at the origin). Its hypotenuse, from (8, 0) to (0, 6), has length \u221a(8\u00b2 + 6\u00b2) = \u221a100 = 10. Because the right angle is inscribed in the circle, the hypotenuse is a diameter, so the diameter is 10 and the circumference is 10\u03c0. Therefore k = 10. The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A4.T2.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6c71f3ec-s1",
+  "originalId": "6c71f3ec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An agent\u2019s total earnings consist of a base salary of <math><mi>x</mi></math> dollars per year, plus commission earnings of <math><mn>8</mn><mo>%</mo></math> of the total sales the agent makes during the year. This year, the agent has a goal for the total earnings to be at least <math><mn>4</mn></math> times and at most <math><mn>5</mn></math> times the base salary. Which of the following inequalities represents all possible values of total sales <math><mi>s</mi></math>, in dollars, the agent can make this year in order to meet that goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>&#8804;</mo><mi>s</mi><mo>&#8804;</mo><mn>4</mn><mi>x</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mn>2</mn><mn>0.08</mn></mfrac><mi>x</mi><mo>&#8804;</mo><mi>s</mi><mo>&#8804;</mo><mfrac><mn>3</mn><mn>0.08</mn></mfrac><mi>x</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mn>3</mn><mn>0.08</mn></mfrac><mi>x</mi><mo>&#8804;</mo><mi>s</mi><mo>&#8804;</mo><mfrac><mn>4</mn><mn>0.08</mn></mfrac><mi>x</mi></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>4</mn><mi>x</mi><mo>&#8804;</mo><mi>s</mi><mo>&#8804;</mo><mn>5</mn><mi>x</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Total earnings = x + 0.08s. The goal: 4x \u2264 x + 0.08s \u2264 5x. Subtract x: 3x \u2264 0.08s \u2264 4x. Divide by 0.08: 3/0.08 x \u2264 s \u2264 4/0.08 x. Choice A and D conflate total sales with total earnings. Choice B uses the wrong multiples (2 and 3 instead of 3 and 4).</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "306264ab-s1",
+  "originalId": "306264ab",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right triangle has sides of length 3&radic;3, 4&radic;3, and &radic;75 units. What is the area of the triangle, in square units?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7&radic;3 + &radic;75</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12&radic;75</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a triangle is (1/2)<i>bh</i>, where <i>b</i> and <i>h</i> are the base and height. For a right triangle, the legs can serve as the base and height. To identify which sides are the legs, note that (3&radic;3)&sup2; + (4&radic;3)&sup2; = 27 + 48 = 75 = (&radic;75)&sup2;, so 3&radic;3 and 4&radic;3 are the legs and &radic;75 is the hypotenuse. The area is (1/2)(3&radic;3)(4&radic;3) = (1/2)(12)(3) = 18.</p><p>Choice A adds the legs and the hypotenuse, giving a perimeter-like quantity instead of the area. Choice C omits the factor of 1/2. Choice D multiplies 12 by the hypotenuse instead of using the area formula.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "area-and-volume.A1.T2.hard"
+}

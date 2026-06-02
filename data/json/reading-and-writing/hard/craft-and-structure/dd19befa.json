@@ -1,0 +1,72 @@
+{
+  "questionId": "dd19befa",
+  "externalId": "654af45e-67f9-45d0-a343-f3784da126af",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:10.651802+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "b1ecf796-fa04-4ffb-a4cb-9a3315ebd12e",
+      "content": "<p>cohesion</p>"
+    },
+    {
+      "id": "d556fe35-2e20-4e0c-b886-af82c570773b",
+      "content": "<p>elasticity</p>"
+    },
+    {
+      "id": "f636466e-80a1-45b4-a092-44d76b471ce9",
+      "content": "<p>affection</p>"
+    },
+    {
+      "id": "8aa08edf-c300-44fb-a8fe-c4a8d9dcd104",
+      "content": "<p>reciprocity</p>"
+    }
+  ],
+  "keys": [
+    "d556fe35-2e20-4e0c-b886-af82c570773b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of black swan familial structures. In this context, &ldquo;elasticity&rdquo; means flexibility or adaptability. The text provides examples of flexible family arrangements among black swans: successful male-female breeding pairs are known to foster other pairs&rsquo; cygnets, and while they are less common, male-male pairs also successfully rear cygnets. This context therefore emphasizes the flexibility or elasticity of black swan familial structures, showing how this trait contributes to the success of the species.</p><p>Choice A is incorrect. Although close family units may show &ldquo;cohesion,&rdquo; which refers to unity or harmony within a group, the text&rsquo;s focus is on the variety and adaptability of black swan family structures. The examples given&mdash;fostering other pairs&rsquo; cygnets and forming male-male as well as female-male pairs&mdash;highlight flexibility rather than cohesion, emphasizing family structures that vary from the model in which a breeding pair raises its own young. Choice C is incorrect. While &ldquo;affection,&rdquo; or fondness, might be present in black swan relationships, the text doesn&rsquo;t focus on emotional bonds but rather on the structural flexibility of black swan familial arrangements. The examples provided demonstrate adaptable breeding and rearing practices rather than affectionate behaviors. Choice D is incorrect because &ldquo;reciprocity&rdquo; would suggest mutual exchange or cooperation between parties. Although the text mentions the fostering of cygnets by different successful breeding pairs, it doesn&rsquo;t establish that this is based on reciprocal exchanges. The focus is instead on the flexibility of family structures and the effectiveness of these varied structures in rearing young.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>The familial structure of the black swan (<em>Cygnus atratus</em>) shows tremendous <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: breeding pairs with demonstrated success in rearing cygnets (young swans) have been observed to foster those of less successful pairs, and while rearing by female-male pairs is most common, male-male pairs sometimes rear cygnets too, achieving a significantly higher rate of survival to adulthood than female-male pairs.</p>",
+    "keys": [
+      "d556fe35-2e20-4e0c-b886-af82c570773b"
+    ],
+    "answerOptions": [
+      {
+        "id": "b1ecf796-fa04-4ffb-a4cb-9a3315ebd12e",
+        "content": "<p>cohesion</p>"
+      },
+      {
+        "id": "d556fe35-2e20-4e0c-b886-af82c570773b",
+        "content": "<p>elasticity</p>"
+      },
+      {
+        "id": "f636466e-80a1-45b4-a092-44d76b471ce9",
+        "content": "<p>affection</p>"
+      },
+      {
+        "id": "8aa08edf-c300-44fb-a8fe-c4a8d9dcd104",
+        "content": "<p>reciprocity</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of black swan familial structures. In this context, &ldquo;elasticity&rdquo; means flexibility or adaptability. The text provides examples of flexible family arrangements among black swans: successful male-female breeding pairs are known to foster other pairs&rsquo; cygnets, and while they are less common, male-male pairs also successfully rear cygnets. This context therefore emphasizes the flexibility or elasticity of black swan familial structures, showing how this trait contributes to the success of the species.</p><p>Choice A is incorrect. Although close family units may show &ldquo;cohesion,&rdquo; which refers to unity or harmony within a group, the text&rsquo;s focus is on the variety and adaptability of black swan family structures. The examples given&mdash;fostering other pairs&rsquo; cygnets and forming male-male as well as female-male pairs&mdash;highlight flexibility rather than cohesion, emphasizing family structures that vary from the model in which a breeding pair raises its own young. Choice C is incorrect. While &ldquo;affection,&rdquo; or fondness, might be present in black swan relationships, the text doesn&rsquo;t focus on emotional bonds but rather on the structural flexibility of black swan familial arrangements. The examples provided demonstrate adaptable breeding and rearing practices rather than affectionate behaviors. Choice D is incorrect because &ldquo;reciprocity&rdquo; would suggest mutual exchange or cooperation between parties. Although the text mentions the fostering of cygnets by different successful breeding pairs, it doesn&rsquo;t establish that this is based on reciprocal exchanges. The focus is instead on the flexibility of family structures and the effectiveness of these varied structures in rearing young.</p>",
+    "externalid": "654af45e-67f9-45d0-a343-f3784da126af",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>The familial structure of the black swan (<em>Cygnus atratus</em>) shows tremendous <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: breeding pairs with demonstrated success in rearing cygnets (young swans) have been observed to foster those of less successful pairs, and while rearing by female-male pairs is most common, male-male pairs sometimes rear cygnets too, achieving a significantly higher rate of survival to adulthood than female-male pairs.</p>"
+}

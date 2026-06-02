@@ -1,0 +1,39 @@
+{
+  "questionId": "5d48f889-s1",
+  "originalId": "5d48f889",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Sara Teasdale's 1917 poem \"Spring Night.\"</p><blockquote><p>Now, joy and the soft wind, and the gold of the sky,<br>Are all <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">mingled</span> together<br>Like the blending of a strange dream-flower<br>With the sweet scent of a frail spring blossom.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the word \"mingled\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Identified</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Remembered</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Combined</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Celebrated</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the simile that follows compares the joining of three things (joy, soft wind, and gold of the sky) to the \"blending\" of a dream-flower with a blossom's scent. \"Combined\" matches the meaning of mixing things together.</p><p>Choice A is incorrect because \"identified\" means recognized or named, not mixed. Choice B is incorrect because \"remembered\" describes recalling, not blending. Choice D is incorrect because \"celebrated\" means honored, which does not capture the meaning of things being blended together.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

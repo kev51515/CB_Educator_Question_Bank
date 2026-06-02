@@ -1,0 +1,39 @@
+{
+  "questionId": "e4b4e9ea-s1",
+  "originalId": "e4b4e9ea",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The length of the edge of the base of a right square prism is 5 units. The volume of the prism is 1,500 cubic units. What is the height, in units, of the prism?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5&radic;15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>300</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12&radic;5</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The base of a right square prism is a square with side length 5, so the base area is 5<sup>2</sup> = 25 square units. The volume V of a prism equals the base area times the height: V = Bh. Substituting V = 1,500 and B = 25 yields 1,500 = 25h, so h = 60 units. Choices A, B, and D are incorrect and result from formula or arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "fa2771d5-s1",
+  "originalId": "fa2771d5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Circle A has equation (x + 4)<sup>2</sup> + (y \u2212 2)<sup>2</sup> = 9. In the xy-plane, circle B is obtained by translating circle A down 5 units. Which equation represents circle B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x + 4)<sup>2</sup> + (y + 3)<sup>2</sup> = 9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x + 4)<sup>2</sup> + (y \u2212 7)<sup>2</sup> = 9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x \u2212 1)<sup>2</sup> + (y \u2212 2)<sup>2</sup> = 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x + 9)<sup>2</sup> + (y \u2212 2)<sup>2</sup> = 9</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Circle A has center (\u22124, 2). Translating down 5 units moves the center to (\u22124, \u22123), giving (x + 4)<sup>2</sup> + (y + 3)<sup>2</sup> = 9.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T5.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "22a41819-s1",
+  "originalId": "22a41819",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Rejecting the premise that the avant-garde quarterly <em>Sur</em> (1931) should advance a single coherent vision of Latin American letters, editor Victoria Ocampo cultivated her contributors' clashing perspectives by championing their editorial independence. Ocampo's hands-off approach diverged from the editorial stances of Mariano Aza&ntilde;a and Alfonso Reyes, whose choices for their own journals were considerably more ______.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>proficient</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>ambiguous</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>dogmatic</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>unpretentious</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The sentence contrasts Ocampo's hands-off editorial method with that of Aza&ntilde;a and Reyes. To create that contrast, the blank must describe a stance that imposes a particular vision rather than tolerating diverse ones. \"Dogmatic\" means insistent on a particular doctrine, which is precisely the opposite of Ocampo's championing of clashing perspectives.</p><p>Choice A is incorrect because \"proficient\" is essentially complimentary and does not pick up the contrast with hands-off pluralism. Choice B is incorrect because \"ambiguous\" choices would be hard to oppose to Ocampo's openness. Choice D is incorrect because \"unpretentious\" would describe Ocampo's own attitude rather than contrast with it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T4.hard"
+}

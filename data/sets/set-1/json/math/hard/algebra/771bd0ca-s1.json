@@ -1,0 +1,22 @@
+{
+  "questionId": "771bd0ca-s1",
+  "originalId": "771bd0ca",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>9(<i>w</i> &minus; 4) &minus; 12(<i>w</i> &minus; 4) = 21</p><p>What value of <i>w</i> is the solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "-3"
+  ],
+  "rationale": "<p>Combine like terms on the left: (9 &minus; 12)(<i>w</i> &minus; 4) = &minus;3(<i>w</i> &minus; 4) = 21. Dividing both sides by &minus;3 gives <i>w</i> &minus; 4 = &minus;7, so <i>w</i> = &minus;3.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.hard"
+}

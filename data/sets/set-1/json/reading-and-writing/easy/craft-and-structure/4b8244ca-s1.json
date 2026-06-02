@@ -1,0 +1,39 @@
+{
+  "questionId": "4b8244ca-s1",
+  "originalId": "4b8244ca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>One challenge of generating electricity from wind is that wind speed isn't <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: it varies in unpredictable ways that pose technological and planning problems for power generation.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>accidental</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>consistent</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>expensive</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>confident</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the second part of the sentence explains that wind speed varies unpredictably, which is the opposite of being steady. \"Consistent\" means staying the same and fits the logic that wind speed is not steady. The other choices do not contrast with unpredictable variation.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T8.easy"
+}

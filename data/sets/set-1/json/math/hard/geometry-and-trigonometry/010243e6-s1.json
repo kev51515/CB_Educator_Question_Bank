@@ -1,0 +1,39 @@
+{
+  "questionId": "010243e6-s1",
+  "originalId": "010243e6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangles ABC and DEF are graphed in the xy-plane. Triangle ABC has vertices A, B, and C at (2, 3), (2, 8), and (7, 3), respectively. Triangle DEF has vertices D, E, and F at (2, 3), (2, 8 + m), and (7 + m, 3), respectively, where m is a positive constant. If the measure of \u2220B is t\u00b0, what is the measure of \u2220E?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(45 \u2212 t)\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>t\u00b0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(45 + m)\u00b0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(t + m)\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Triangle ABC is a right isosceles triangle: AB has length 5 (vertical), AC has length 5 (horizontal), and \u2220A = 90\u00b0. Therefore \u2220B = 45\u00b0, so t = 45. Triangle DEF likewise has DA (vertical of length 5 + m) and DF (horizontal of length 5 + m), so it is also a right isosceles triangle with \u2220E = 45\u00b0. Since the legs DA and DE are equal, \u2220E = \u2220B = t\u00b0.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.hard"
+}

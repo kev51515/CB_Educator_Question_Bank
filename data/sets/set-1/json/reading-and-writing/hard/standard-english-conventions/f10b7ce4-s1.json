@@ -1,0 +1,25 @@
+{
+  "questionId": "f10b7ce4-s1",
+  "originalId": "f10b7ce4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>In the essay collection &ldquo;Quiet Rooms&rdquo; by Eduarda Vilar, a midcentury Portuguese essayist, the author lingers on convent gardens, the scent of old prayer books, and the muted bells of seaside chapels. So perceptive a chronicler is Vilar, an exiled fellow of the Lisbon Atheneum, that her collection&rsquo;s observations on Iberian monastic life <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> scholars more than half a century later.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>illuminates</p>"},
+    {"id": "b", "content": "<p>illuminate</p>"},
+    {"id": "c", "content": "<p>has illuminated</p>"},
+    {"id": "d", "content": "<p>is illuminating</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The plural verb &ldquo;illuminate&rdquo; agrees in number with the plural subject &ldquo;observations.&rdquo; The intervening prepositional phrase &ldquo;on Iberian monastic life&rdquo; does not change the number of the subject.</p><p>Choice A is incorrect because the singular verb &ldquo;illuminates&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;observations.&rdquo; Choice C is incorrect because the singular verb &ldquo;has illuminated&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;observations.&rdquo; Choice D is incorrect because the singular verb &ldquo;is illuminating&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;observations.&rdquo;</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "37e15265-s1",
+  "originalId": "37e15265",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;A Cup of Tea&rdquo; is a 1922 short story by Katherine Mansfield. In the story, a wealthy young woman, Rosemary, impulsively invites a poor stranger home to give her a meal and clothes. In characterizing Rosemary, Mansfield frequently contrasts the surface generosity of her actions with the self-regard underlying them, as when Mansfield writes of Rosemary, ______</p>",
+  "stem": "<p>Which quotation from &ldquo;A Cup of Tea&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;She walked quickly through the cold streets, the rain stinging her cheeks, and stopped suddenly when she heard the girl&rsquo;s small voice asking for the price of a cup of tea.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;She insisted that the girl come straight home with her, refusing every shy hesitation, and only relented when the girl agreed to ride in the carriage.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;The girl sat huddled in the chair near the fire, her hands trembling slightly as she lifted the cup, while Rosemary watched her with a soft, satisfied smile.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;She imagined the scene already as a story to be retold over dinner&mdash;how she, Rosemary, had rescued a perfect stranger from the street and given her tea&mdash;and the picture pleased her so much that she could hardly contain her happiness.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the quotation directly contrasts Rosemary&rsquo;s generous act (rescuing a stranger) with her self-regarding pleasure in imagining herself retelling the story&mdash;exactly the contrast the claim identifies. Choice A describes the moment of meeting. Choice B describes her insistence but not her self-regard. Choice C describes the girl&rsquo;s state and Rosemary&rsquo;s smile, but the smile alone doesn&rsquo;t make her self-regard explicit.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A1.T1.hard"
+}

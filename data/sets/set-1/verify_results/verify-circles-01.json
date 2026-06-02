@@ -1,0 +1,22 @@
+[
+  {"id": "aa2d36fe-s1", "templateId": "circles.A1.T1.medium", "verdict": "ok"},
+  {"id": "8e7689e0-s1", "templateId": "circles.A4.T9.medium", "verdict": "difficulty_drift", "detail": "540° is one of the 'easy' lever angles (integer multiple of 180°); medium lever requires unusual numerator/denominator like 9π/20. Answer (b=3) is correct."},
+  {"id": "95ba2d09-s1", "templateId": "circles.A4.T9.medium", "verdict": "type_drift", "detail": "Stem asks sum of central angles around a point (360° − 70 − 85 − 110 = 95). This is not a degree-radian conversion or combined-angle conversion (T9 core demand). Answer is correct (95°)."},
+  {"id": "800e71b8-s1", "templateId": "circles.A3.T7.medium", "verdict": "ok"},
+  {"id": "5011b039-s1", "templateId": "circles.A1.T1.medium", "verdict": "ok"},
+  {"id": "82c8325f-s1", "templateId": "circles.A1.T2.medium", "verdict": "ok"},
+  {"id": "a0cacec1-s1", "templateId": "circles.A4.T9.medium", "verdict": "ok"},
+  {"id": "b96ff36e-s1", "templateId": "circles.A1.T3.medium", "verdict": "type_drift", "detail": "Stem asks for the y-coordinate of the center—a direct read from standard form (T1). T3 requires substitute/inequality reasoning to test whether a point lies on/inside the circle. Answer (8) is correct."},
+  {"id": "2d521ca9-s1", "templateId": "circles.A4.T9.medium", "verdict": "difficulty_drift", "detail": "45° is explicitly an 'easy' lever angle (in {30,45,60,90,180,360}); medium lever requires unusual numerator/denominator. Answer (π/4) is correct."},
+  {"id": "856372ca-s1", "templateId": "circles.A1.T2.medium", "verdict": "ok"},
+  {"id": "fc8aa563-s1", "templateId": "circles.A1.T1.medium", "verdict": "ok"},
+  {"id": "74d8b897-s1", "templateId": "circles.A4.T9.medium", "verdict": "ok"},
+  {"id": "0815a5af-s1", "templateId": "circles.A3.T7.medium", "verdict": "type_drift", "detail": "Stem asks for sector AREA (100π/4 = 25π), not arc length or arc-fraction of circumference. T7 core demand is the arc/circumference = θ/360 proportion. Answer (25π) is correct."},
+  {"id": "ee540927-s1", "templateId": "circles.A2.T4.medium", "verdict": "ok"},
+  {"id": "f1c1e971-s1", "templateId": "circles.A4.T9.medium", "verdict": "ok"},
+  {"id": "9d159400-s1", "templateId": "circles.A2.T6.hard", "verdict": "ok"},
+  {"id": "b0a72bdc-s1", "templateId": "circles.A1.T1.hard", "verdict": "ok"},
+  {"id": "e50afdd3-s1", "templateId": "circles.A1.T3.hard", "verdict": "ok"},
+  {"id": "69b0d79d-s1", "templateId": "circles.A3.T7.hard", "verdict": "ok"},
+  {"id": "981275d2-s1", "templateId": "circles.A2.T6.hard", "verdict": "ok"}
+]

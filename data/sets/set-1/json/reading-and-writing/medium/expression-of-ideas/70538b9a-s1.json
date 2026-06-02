@@ -1,0 +1,25 @@
+{
+  "questionId": "70538b9a-s1",
+  "originalId": "70538b9a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A2.T4.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>In the 1940s, the Brazilian National Coffee Institute sought to reduce the country’s losses from a destructive coffee-leaf disease.</li>\n<li>The institute enlisted plant breeder Helena Costa to develop a disease-resistant coffee plant.</li>\n<li>She crossbred the susceptible commercial species <em>Coffea arabica</em> with wild coffee relatives from Africa.</li>\n<li>She succeeded in producing coffee hybrids that resisted the disease while preserving the desired flavor profile.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize Helena Costa’s achievement. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The Brazilian National Coffee Institute, in the 1940s, sought to reduce the country’s losses from a destructive coffee-leaf disease.</p>"},
+    {"id": "b", "content": "<p>Helena Costa succeeded in producing coffee hybrids that resisted a destructive leaf disease while preserving the desired flavor profile.</p>"},
+    {"id": "c", "content": "<p>Helena Costa, a plant breeder, crossbred the species <em>Coffea arabica</em> with wild coffee relatives from Africa.</p>"},
+    {"id": "d", "content": "<p>Helena Costa was enlisted by the Brazilian National Coffee Institute to develop a disease-resistant coffee plant.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The sentence emphasizes Costa’s achievement by foregrounding her success in producing disease-resistant coffee hybrids that preserved the desired flavor.</p><p>Choice A is incorrect. The sentence describes the institute’s aim, not Costa’s achievement. Choice C is incorrect. The sentence describes Costa’s method but not the achievement that resulted. Choice D is incorrect. The sentence describes Costa’s task but not the achievement that resulted.</p>",
+  "generatedAt": "2026-05-27T12:00:00Z"
+}

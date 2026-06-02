@@ -1,0 +1,25 @@
+{
+  "questionId": "d3725911-s1",
+  "originalId": "d3725911",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In the study of artificial intelligence, computer scientists Ana Reyes and Tomoko Saito propose that researchers avoid using the term \"intelligence.\" <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> researchers should use another word: \"competence.\" This new term, they argue, could help distinguish between machine systems that perform narrow tasks effectively and the broader, flexible reasoning typical of human thought.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Previously,</p>"},
+    {"id": "b", "content": "<p>Instead,</p>"},
+    {"id": "c", "content": "<p>There,</p>"},
+    {"id": "d", "content": "<p>Regardless,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Instead\" logically signals that the idea in this sentence&mdash;that researchers should use \"competence\"&mdash;is an alternative to the idea mentioned in the previous sentence (avoiding \"intelligence\").</p><p>Choice A is incorrect because \"previously\" illogically signals prior time. Choice C is incorrect because \"there\" illogically signals location. Choice D is incorrect because \"regardless\" illogically signals that the new term is true despite the previous proposal, but it is presented as the alternative the researchers propose.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T1.easy"
+}

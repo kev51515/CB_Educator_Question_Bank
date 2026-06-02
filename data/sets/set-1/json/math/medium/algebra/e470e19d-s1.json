@@ -1,0 +1,39 @@
+{
+  "questionId": "e470e19d-s1",
+  "originalId": "e470e19d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <em>f</em>(<em>x</em>) = 9<em>x</em> \u2212 63. What is the <em>x</em>-intercept of the graph of <em>y</em> = <em>f</em>(<em>x</em>) in the <em>xy</em>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(\u22129, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(\u22127, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(7, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(9, 0)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The <em>x</em>-intercept occurs where <em>y</em> = 0. Setting 9<em>x</em> \u2212 63 = 0 gives 9<em>x</em> = 63, so <em>x</em> = 7. The <em>x</em>-intercept is (7, 0).</p><p>Choices A, B, and D are incorrect; they correspond to sign errors or misidentifying coefficients.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T3.medium"
+}

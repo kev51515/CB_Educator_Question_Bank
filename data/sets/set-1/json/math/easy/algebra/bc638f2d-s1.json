@@ -1,0 +1,25 @@
+{
+  "questionId": "bc638f2d-s1",
+  "originalId": "bc638f2d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>q</i> defined by <i>q</i>(<i>t</i>) = 18<i>t</i> + 7 gives the estimated height, in centimeters, of a cactus <i>t</i> months after Lana bought it. Which of the following is the best interpretation of 7 in this context?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The estimated height of the cactus, in centimeters, when Lana bought it</p>"},
+    {"id": "b", "content": "<p>The estimated increase in the cactus's height, in centimeters, each month</p>"},
+    {"id": "c", "content": "<p>The number of months Lana plans to keep the cactus</p>"},
+    {"id": "d", "content": "<p>The estimated maximum height of the cactus, in centimeters</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The constant 7 is <i>q</i>(0), the value of <i>q</i> when <i>t</i> = 0, which represents the cactus's height when Lana bought it.</p><p>Choice B is the monthly rate of change (18). Choices C and D do not match the meaning of the constant term.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A2.T1.easy"
+}

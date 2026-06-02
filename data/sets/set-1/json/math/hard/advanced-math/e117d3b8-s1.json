@@ -1,0 +1,39 @@
+{
+  "questionId": "e117d3b8-s1",
+  "originalId": "e117d3b8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For positive values of p and q, which of the following is equivalent to &radic;((p &minus; q)<sup>5</sup>) &middot; &radic;(p &minus; q)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(p &minus; q)<sup>2</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>p<sup>3</sup> &minus; q<sup>3</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>p<sup>2</sup> q<sup>2</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>p<sup>3</sup> &minus; 3p<sup>2</sup>q + 3pq<sup>2</sup> &minus; q<sup>3</sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Multiplying the radicals: &radic;((p &minus; q)<sup>5</sup>) &middot; &radic;(p &minus; q) = &radic;((p &minus; q)<sup>6</sup>) = (p &minus; q)<sup>3</sup>. Expanding the binomial cube gives p<sup>3</sup> &minus; 3p<sup>2</sup>q + 3pq<sup>2</sup> &minus; q<sup>3</sup>. Choice A would result from (p &minus; q)<sup>2</sup>, which is the square root if the total power were 4 rather than 6.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A3.T7.hard"
+}

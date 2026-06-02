@@ -1,0 +1,25 @@
+{
+  "questionId": "333b2b65-s1",
+  "originalId": "333b2b65",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.easy",
+  "type": "mcq",
+  "stimulus": "<p>While one is cold-blooded and one is ______ and mammals are both vertebrates—that is, they are animals with backbones and internal skeletons.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>not, reptiles</p>"},
+    {"id": "b", "content": "<p>not. Reptiles</p>"},
+    {"id": "c", "content": "<p>not reptiles</p>"},
+    {"id": "d", "content": "<p>not; reptiles</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. A comma correctly separates the introductory dependent clause (\"While...not\") from the independent clause that follows.</p><p>Choice B creates a sentence fragment — \"While...not\" can't stand alone. Choice C creates a run-on with no punctuation. Choice D misuses a semicolon between a dependent clause and an independent clause.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

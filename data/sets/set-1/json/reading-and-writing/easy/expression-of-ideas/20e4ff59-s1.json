@@ -1,0 +1,39 @@
+{
+  "questionId": "20e4ff59-s1",
+  "originalId": "20e4ff59",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Famous for its swaying motion in heavy winds, the historic Millau Viaduct is a popular tourist destination in southern France. However, sensor readings taken in 2024 showed that the bridge's central piers were exhibiting unusual stress patterns. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> French transportation officials temporarily restricted traffic on the bridge so engineers could conduct a thorough structural assessment.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In comparison,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"As a result\" logically signals that the action of restricting traffic occurred as a consequence of the sensor readings revealing unusual stress patterns.</p><p>Choice A is incorrect because \"similarly\" illogically signals that the traffic restriction is similar to the discovery of the stress patterns. Instead, the restriction occurred as a result. Choice B is incorrect because \"for example\" illogically signals that this sentence is an example of the stress patterns. Instead, it describes a consequence of those patterns. Choice C is incorrect because \"in comparison\" illogically signals a comparison. Instead, the restriction occurred as a result of the readings.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

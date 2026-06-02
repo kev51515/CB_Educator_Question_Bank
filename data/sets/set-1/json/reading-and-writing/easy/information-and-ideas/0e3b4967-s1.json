@@ -1,0 +1,39 @@
+{
+  "questionId": "0e3b4967-s1",
+  "originalId": "0e3b4967",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Personal journals kept by composers in the nineteenth century are useful records of musical life, but few are as carefully kept as Clara Schumann’s notebooks. Beside each entry about her concerts, Schumann recorded private reflections on her family and friendships. She also listed the pieces she rehearsed and the audiences she performed for. Music historians note that, by spanning more than three decades of changing concert programs and compositional styles, the notebooks are a record of nineteenth-century European concert culture as well as Schumann’s life.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Schumann’s notebooks provide a detailed account of her life and a historical record of musical practices in nineteenth-century Europe.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Music historians depend on composer journals to understand how concert programs changed across the nineteenth century.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Keeping personal journals was a common practice among nineteenth-century European composers.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Schumann inspired other composers to keep journals that documented nineteenth-century concert culture.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The text describes Schumann’s notebooks as both a personal record (private reflections about family and friends) and a historical record (pieces she rehearsed, audiences she performed for, changing concert programs and compositional styles). Choice A captures both purposes.</p><p>Choice B is too general; the text focuses on Schumann’s specific notebooks and never claims that historians rely on composer journals broadly. Choice C addresses only the popularity of journal-keeping, not the main idea about Schumann’s specific notebooks. Choice D introduces an unsupported claim: the text never says other composers were inspired by Schumann.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a4c05a1b-s1",
+  "originalId": "a4c05a1b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, parallel lines <math><mi>p</mi></math> and <math><mi>q</mi></math> are cut by transversal line <math><mi>t</mi></math>. At the intersection of <math><mi>t</mi></math> and <math><mi>p</mi></math>, the angle measured clockwise from the top-right is <math><mi>x</mi><mo>&#176;</mo></math>. At the intersection of <math><mi>t</mi></math> and <math><mi>q</mi></math>, the same-side interior angle on the same side of <math><mi>t</mi></math> measures <math><mn>73</mn><mo>&#176;</mo></math>. Which of the following must be true about <math><mi>x</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>x</mi><mo>=</mo><mn>73</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>x</mi><mo>=</mo><mn>90</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>x</mi><mo>=</mo><mn>107</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>x</mi><mo>=</mo><mn>180</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. When two parallel lines are cut by a transversal, same-side interior angles are supplementary. So x + 73 = 180, giving x = 107.</p><p>Choice A would treat the angles as congruent, which applies to alternate interior angles, not these. Choices B and D are not consistent with the parallel-line relationship.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.medium"
+}

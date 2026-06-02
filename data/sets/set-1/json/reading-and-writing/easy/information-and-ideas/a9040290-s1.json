@@ -1,0 +1,39 @@
+{
+  "questionId": "a9040290-s1",
+  "originalId": "a9040290",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Additional Solar Energy Generated When Sunlight Hours Exceeded Forecast (in thousands of MWh). Two months shown.]</p><ul><li>July: +120 thousand MWh above forecast</li><li>August: &minus;90 thousand MWh below forecast (less sunlight than predicted)</li></ul><p>During July, weather conditions were ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>so cloudy that the electricity from solar panels was about 90 thousand MWh less than predicted.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>sunny enough to generate about 120 thousand more MWh of electricity from solar panels.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>sunny enough to generate about 90 thousand more MWh of electricity from solar panels.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>so cloudy that the electricity from solar panels was about 120 thousand MWh less than predicted.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the graph shows July generated about 120 thousand MWh more than predicted, indicating sunnier-than-expected conditions.</p><p>Choice A is incorrect: &minus;90 thousand MWh corresponds to August, not July. Choice C is incorrect: 120 thousand MWh was the surplus in July, not 90. Choice D is incorrect: July was a surplus (+120), not a shortfall.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

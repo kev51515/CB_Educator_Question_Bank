@@ -1,0 +1,39 @@
+{
+  "questionId": "fdb16e20-s1",
+  "originalId": "fdb16e20",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Tiny biological motors\u2014flagella\u2014offer cells a remarkably efficient method of propulsion through fluids, since rotating these whip-like filaments can drive a bacterium forward ______ in some cases, allow it to reverse course in milliseconds.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>and in some cases,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>and in some cases\u2014</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>and, in some cases,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>and, in some cases</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. This choice uses paired punctuation in the form of two commas to set off the nonessential phrase \"in some cases.\"</p><p>Choice A is incorrect. The phrase \"in some cases\" is a nonessential element and needs to be set off with paired punctuation: a comma is also needed after \"and\" to match the one after \"cases.\" Choice B is incorrect. To set off the nonessential phrase, a dash would also be needed after \"and\" to match the one following \"cases.\" Choice D is incorrect. A comma would also be needed after \"cases\" to match the one following \"and\" and complete the paired punctuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A2.T4.hard"
+}

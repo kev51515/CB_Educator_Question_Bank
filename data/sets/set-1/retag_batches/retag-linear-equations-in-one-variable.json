@@ -1,0 +1,8 @@
+[
+  {
+    "id": "23758540-s1",
+    "templateId": "linear-equations-in-one-variable.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem '3r+140=200' is a two-step equation (subtract 140, divide by 3) \u2014 belongs to T2, not T1. T1 must_preserve: 'Exactly one inverse operation between the equation as written and x=answer'; this clone requires two."
+  }
+]

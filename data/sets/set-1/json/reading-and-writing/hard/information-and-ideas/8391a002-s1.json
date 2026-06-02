@@ -1,0 +1,25 @@
+{
+  "questionId": "8391a002-s1",
+  "originalId": "8391a002",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "stimulus": "<p>Sorghum (<em>Sorghum bicolor</em>) is a drought-tolerant grain that is widely consumed in West Africa, but it is somewhat difficult to digest because of its high content of resistant starch and condensed tannins. Sorghum grains also contain phytate, an antinutrient that binds to dietary minerals such as iron and zinc and reduces the body&rsquo;s ability to absorb them. In a research article, food scientists Aminata Diop and Beatriz Salazar describe a controlled malting process&mdash;sprouting the grains under specified humidity and temperature&mdash;that they argue makes sorghum simultaneously more digestible and more nutritious than conventionally prepared sorghum. To validate this claim, however, the malting process would need to be shown to lower the levels of compounds that hinder digestion or mineral absorption without merely degrading other valuable components of the grain.</p>",
+  "stem": "<p>Which finding from Diop and Salazar&rsquo;s research, if true, would most directly support their claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Malted sorghum grains contained significantly less resistant starch and phytate than unmalted sorghum grains, and when cooked, the malted grains also showed significantly reduced concentrations of condensed tannins while retaining comparable levels of protein and dietary minerals.</p>"},
+    {"id": "b", "content": "<p>When cooked, malted sorghum grains contained significantly more condensed tannins and phytate but significantly less resistant starch than unmalted grains.</p>"},
+    {"id": "c", "content": "<p>When the malted sorghum grains were analyzed, they were found to host two enzymes, &alpha;-amylase and phytase, that are well-known constituents of cereal-grain malt.</p>"},
+    {"id": "d", "content": "<p>Both malted and unmalted sorghum grains contained significantly less resistant starch after being pressure-cooked at high temperature.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it directly supports the specific mechanism Diop and Salazar propose: that malting <em>simultaneously</em> improves digestibility and nutrition. Lower resistant starch and condensed tannins would make sorghum more digestible; lower phytate would improve mineral absorption (more nutritious); preservation of protein and mineral levels rules out the alternative that the gains come at the cost of degrading other valuable components.</p><p>Choice B is incorrect because higher levels of condensed tannins and phytate after malting would undermine, not support, the digestibility and nutrition claim. Choice C is incorrect because identifying enzymes typically present in malt is consistent with the process having occurred but does not by itself demonstrate the digestibility or nutritional outcome. Choice D is incorrect because if pressure cooking alone reduces resistant starch in both malted and unmalted grain, the finding fails to isolate the contribution of malting and so does not support the specific claim about malting.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

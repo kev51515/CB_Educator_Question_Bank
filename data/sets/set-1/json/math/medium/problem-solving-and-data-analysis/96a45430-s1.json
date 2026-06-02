@@ -1,0 +1,39 @@
+{
+  "questionId": "96a45430-s1",
+  "originalId": "96a45430",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A number <em>n</em> is increased by 4%. If the result is 442, what is the value of <em>n</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>424</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>425</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>460</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>438</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Increasing <em>n</em> by 4% gives 1.04<em>n</em>, so 1.04<em>n</em> = 442. Dividing both sides by 1.04 yields <em>n</em> = 442/1.04 = 425. Choice A is incorrect; subtracting 18 (4% of 450) from 442 gives 424, but this is the wrong operation. Choice C is incorrect because 460 would be the value if 442 were 4% <em>less</em> than <em>n</em> in a different sense. Choice D is incorrect because 438 corresponds to subtracting 4 (not 4% of <em>n</em>) from 442.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T2.medium"
+}

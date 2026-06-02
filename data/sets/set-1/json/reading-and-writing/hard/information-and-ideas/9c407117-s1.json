@@ -1,0 +1,25 @@
+{
+  "questionId": "9c407117-s1",
+  "originalId": "9c407117",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.hard",
+  "stimulus": "<p>A student performs an experiment to test her hypothesis that a moderately alkaline soil environment produces greater biomass in mature <em>Spinacia oleracea</em> (the vegetable commonly known as spinach) than a neutral soil environment does. She plants sixteen spinach seeds in a mixture of equal parts crushed eggshells (which are highly alkaline) and potting soil and another sixteen seeds in plain potting soil. After placing both trays under identical light, water, and temperature conditions for eight weeks, she weighs the aboveground tissue of every surviving plant.</p>",
+  "difficultyCode": "H",
+  "stem": "<p>Which finding, if true, would most directly weaken the student&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The spinach seeds planted in the soil without crushed eggshells sprouted on average two days earlier than the seeds planted in the mixture of soil and crushed eggshells.</p>"},
+    {"id": "b", "content": "<p>The spinach plants grown in the mixture of soil and crushed eggshells developed leaves of a noticeably darker green than the plants grown in the soil without crushed eggshells.</p>"},
+    {"id": "c", "content": "<p>A larger proportion of the spinach seeds planted in the mixture of soil and crushed eggshells failed to sprout than of the seeds planted in the soil without crushed eggshells.</p>"},
+    {"id": "d", "content": "<p>The aboveground tissue of the spinach plants grown in the soil without crushed eggshells weighed significantly more, on average, than that of the plants grown in the mixture of soil and crushed eggshells.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The student&rsquo;s hypothesis is specifically about mature-plant biomass: alkaline soil should yield greater biomass than neutral soil. A finding that the neutral-soil plants weighed significantly more directly contradicts the predicted direction of the effect on the very metric the hypothesis names, thus most directly weakening it.</p><p>Choice A is incorrect because germination timing concerns how quickly seeds sprout, not the mature-plant biomass the hypothesis predicts; it leaves the biomass claim untouched. Choice B is incorrect because darker leaves in the alkaline group would, if anything, suggest better growth conditions there and so would tend to support rather than weaken the hypothesis. Choice C is incorrect because seed viability (whether seeds sprout) is a separate question from biomass of plants that did grow; the hypothesis does not predict equal germination rates.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

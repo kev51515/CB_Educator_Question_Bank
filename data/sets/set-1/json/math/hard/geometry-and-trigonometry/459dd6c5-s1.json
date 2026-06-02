@@ -1,0 +1,23 @@
+{
+  "questionId": "459dd6c5-s1",
+  "originalId": "459dd6c5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangles PQR and STU are similar. Each side length of triangle PQR is 5 times the corresponding side length of triangle STU. The area of triangle PQR is 462 square inches. What is the area, in square inches, of triangle STU?</p>",
+  "answerOptions": null,
+  "keys": [
+    "462/25",
+    "18.48"
+  ],
+  "rationale": "<p>The correct answer is 18.48 (equivalent to 462/25). For similar triangles, the ratio of areas equals the square of the ratio of corresponding side lengths. Since the linear scale factor is 5, the area scale factor is 25. The area of triangle STU is 462 &divide; 25 = 18.48 square inches.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.hard"
+}

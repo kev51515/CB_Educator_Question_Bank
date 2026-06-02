@@ -1,0 +1,39 @@
+{
+  "questionId": "d0cb49e8-s1",
+  "originalId": "d0cb49e8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Helium is placed inside a container with a constant volume. A graph shows the estimated pressure <i>y</i>, in psi, of the helium when its temperature is <i>x</i> kelvins. The line passes through the points (100, 2) and (500, 10). What is the estimated pressure of the helium, in psi, when its temperature is 400 kelvins?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>100</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>400</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (10 &minus; 2)/(500 &minus; 100) = 8/400 = 0.02. Since the line passes through (100, 2), at <i>x</i> = 400 the value is 2 + 0.02(400 &minus; 100) = 2 + 6 = 8.</p><p>Choices B-D misread coordinates.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A4.T2.easy"
+}

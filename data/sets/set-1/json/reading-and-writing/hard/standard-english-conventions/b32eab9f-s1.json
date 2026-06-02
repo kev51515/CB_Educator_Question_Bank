@@ -1,0 +1,25 @@
+{
+  "questionId": "b32eab9f-s1",
+  "originalId": "b32eab9f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>Broadening participation is reshaping the discipline of computer science, according to Stanford's Mehran Sahami. The pathbreaking contributions of Timnit Gebru, recipient of the 2022 Heinz Award for her research on bias in machine-learning systems, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the importance of researchers from underrepresented backgrounds in driving inquiry into long-overlooked, yet socially consequential, problems.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>speaks</p>"},
+    {"id": "b", "content": "<p>has spoken</p>"},
+    {"id": "c", "content": "<p>speak</p>"},
+    {"id": "d", "content": "<p>is speaking</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-verb agreement. The plural verb \"speak\" agrees in number with the plural subject \"pathbreaking contributions.\"</p><p>Choice A is incorrect because the singular verb \"speaks\" doesn't agree in number with the plural subject \"pathbreaking contributions.\" Choice B is incorrect because the singular verb \"has spoken\" doesn't agree in number with the plural subject \"pathbreaking contributions.\" Choice D is incorrect because the singular verb \"is speaking\" doesn't agree in number with the plural subject \"pathbreaking contributions.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

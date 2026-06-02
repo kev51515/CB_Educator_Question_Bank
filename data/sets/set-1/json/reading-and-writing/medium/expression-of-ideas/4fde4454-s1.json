@@ -1,0 +1,25 @@
+{
+  "questionId": "4fde4454-s1",
+  "originalId": "4fde4454",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>An exit survey conducted after the 1992 mayoral debate in Riverdale indicated that challenger Mara Velasquez had stumbled: only 18 percent of attendees who listened to the audio broadcast rated her the stronger speaker. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the debate was widely reported afterward as a turning point for the photogenic challenger, who polled markedly higher than the incumbent among viewers watching the new local cable feed.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>Therefore,</p>"},
+    {"id": "c", "content": "<p>Likewise,</p>"},
+    {"id": "d", "content": "<p>In other words,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"However\" logically signals that the claim in this sentence—that the debate was reported as a turning point for Velasquez—is true despite the previous information about the audio-broadcast survey suggesting she had stumbled.</p><p>Choice B is incorrect because \"therefore\" illogically signals that the claim is a result of the audio-broadcast survey, when it actually runs against what that survey suggested. Choice C is incorrect because \"likewise\" illogically signals that this claim is similar to the previous information, when it in fact contrasts with the impression created by that survey. Choice D is incorrect because \"in other words\" illogically signals that the claim is a paraphrase of the previous information, when it actually presents a contrary outcome.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "02e49a0c-s1",
+  "originalId": "02e49a0c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>DNA studies have led researchers to suggest that giant pandas are most closely related to the group that includes modern bears. But studies of fossils have suggested instead that pandas are most closely related to other groups, such as the one that contains modern raccoons. <u>However, many of these fossil studies have relied on small or fragmentary samples.</u> For a 2020 investigation, biologist Wei Lin and colleagues examined more than 800 mammal fossils from sites across Asia. From this large data set, they found clear agreement with the results of the DNA studies.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It summarizes earlier research on the evolution of raccoons.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It identifies a shortcoming of some studies about the origin of giant pandas.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It criticizes a widely held belief about DNA studies of mammals.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It surveys the tools scientists use to examine fossil remains.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The sentence points out that some fossil studies have relied on small or fragmentary samples, suggesting that those studies are limited in what they can tell us about pandas' origins.</p><p>Choice A is incorrect. The sentence doesn't summarize research on raccoons. Choice C is incorrect. The sentence doesn't criticize any widely held belief and refers to fossil studies, not DNA studies. Choice D is incorrect. The sentence doesn't describe any tools used by scientists.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

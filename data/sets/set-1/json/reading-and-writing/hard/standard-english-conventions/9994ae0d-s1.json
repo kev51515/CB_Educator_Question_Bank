@@ -1,0 +1,25 @@
+{
+  "questionId": "9994ae0d-s1",
+  "originalId": "9994ae0d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>Sculptor Ranjit Hoskote's installation <em>Echoes of the Monsoon</em> combines bronzes, woven hangings, and projected light. Hoskote's works, drawing on materials as varied as cast brass, hand-dyed cotton, and salvaged glass beads strung above a humming motor, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the ways memory shapes domestic space.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>examines</p>"},
+    {"id": "b", "content": "<p>has examined</p>"},
+    {"id": "c", "content": "<p>examine</p>"},
+    {"id": "d", "content": "<p>examining</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-verb agreement. The plural verb \"examine\" agrees in number with the plural subject \"Hoskote's works.\"</p><p>Choice A is incorrect because the singular verb \"examines\" doesn't agree in number with the plural subject \"Hoskote's works.\" Choice B is incorrect because the singular verb phrase \"has examined\" doesn't agree in number with the plural subject \"Hoskote's works.\" Choice D is incorrect because the nonfinite participle \"examining\" doesn't supply the main clause with a finite verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

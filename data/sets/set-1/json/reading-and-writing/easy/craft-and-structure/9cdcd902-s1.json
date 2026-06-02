@@ -1,0 +1,39 @@
+{
+  "questionId": "9cdcd902-s1",
+  "originalId": "9cdcd902",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Gordon Parks was a photographer for Life magazine from 1948 to 1972. During his career he took thousands of photographs documenting daily life in Black communities across the United States. The Smithsonian maintains many of his prints, carefully <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> them for future generations.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>protecting</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>replacing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>inventing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>counting</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"protecting\" matches the goal of keeping the photographs safe \"for future generations.\" Choice B is incorrect because replacing implies destruction. Choice C is incorrect because the prints already exist; they aren’t being invented. Choice D is incorrect because counting is too narrow.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

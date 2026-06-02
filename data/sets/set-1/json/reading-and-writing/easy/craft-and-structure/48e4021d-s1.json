@@ -1,0 +1,25 @@
+{
+  "questionId": "48e4021d-s1",
+  "originalId": "48e4021d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2019 novel.</p><blockquote><p>More than three years ago my aunt bought a grandfather clock from a neighbor who was moving overseas. Aunt Pia gave it to my sister and me for our birthdays. I had to act really pleased because it was such a serious gift, but I pretty much disliked the thing from the moment it was wheeled into the corner of our living room, which is right next to the doorway to my bedroom. The clock loomed over me. It was like a sentry on watch. It wanted me to stand at attention.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It suggests that the narrator's sister is fond of antique clocks.</p>"},
+    {"id": "b", "content": "<p>It describes the event that led the narrator's aunt to buy a clock.</p>"},
+    {"id": "c", "content": "<p>It establishes how the narrator feels about the clock.</p>"},
+    {"id": "d", "content": "<p>It explains why the narrator always wanted a clock in the living room.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The narrator says she \"pretty much disliked\" the clock, describes it as looming and like \"a sentry on watch.\" These details establish her uneasy feelings about the clock.</p><p>Choice A is incorrect. The text doesn't describe the sister's feelings. Choice B is incorrect. The text doesn't describe what led Aunt Pia to buy the clock. Choice D is incorrect. The text shows the narrator disliked the clock; she didn't want one there.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

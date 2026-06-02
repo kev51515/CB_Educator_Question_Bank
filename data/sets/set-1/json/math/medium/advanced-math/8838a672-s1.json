@@ -1,0 +1,39 @@
+{
+  "questionId": "8838a672-s1",
+  "originalId": "8838a672",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is equivalent to 3(2x + 5) \u2212 4(x \u2212 2)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10x + 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2x + 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2x + 23</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10x + 23</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Distribute: 3(2x + 5) = 6x + 15; \u22124(x \u2212 2) = \u22124x + 8. Combining: 6x + 15 \u2212 4x + 8 = (6x \u2212 4x) + (15 + 8) = 2x + 23. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A1.T3.medium"
+}

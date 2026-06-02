@@ -1,0 +1,39 @@
+{
+  "questionId": "dd1757fd-s1",
+  "originalId": "dd1757fd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Large language models are computer programs designed to produce text by predicting plausible next words, and they are increasingly used in studies of human language processing. In an analysis of 8,000 such models, Sasha Ortiz and colleagues urge caution when inferring claims about human cognition from observations of language models. They found that although 85% of the models could complete sentence-continuation tasks at human-like accuracy, only about 12% of those produced internal representations that resembled patterns observed in human brain imaging. <u>But even this approximate match to brain-imaging patterns has less to do with any deep similarity between language models and human cognition than it does with the training data fed into the models.</u></p>",
+  "stem": "<p>Which finding, if true, would most directly support the claim in the underlined sentence?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The models that did not produce brain-like internal representations were nonetheless trained on data sets that had been carefully curated and used in prior cognitive-modeling studies.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Large language models can often perform language tasks that humans perform, but their architectures are typically designed to handle multiple linguistic phenomena at once.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Once a model is built, it must be tested on additional sentence-continuation tasks before researchers can decide whether its outputs resemble those of humans.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The features of the training data that allow models to produce brain-like internal representations have no counterpart in the experiences that shape human language processing.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the underlined claim attributes the model-brain resemblance not to genuine cognitive similarity but to features of the training data. A finding that the specific data features producing the brain-like representations have no counterpart in human experience would directly support that claim: the apparent match would arise from data artifacts rather than from shared cognitive structure.</p><p>Choice A is incorrect because it concerns models that failed to produce brain-like representations and says nothing about why the successful ones do. Choice B is incorrect because describing model architecture in general terms does not address the source of the resemblance. Choice C is incorrect because it discusses the testing procedure rather than the source of the match.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982506+00:00",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "ba8ca563-s1",
+  "originalId": "ba8ca563",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A cube has a volume of 110,592 cubic units. What is the surface area, in square units, of the cube?</p>",
+  "answerOptions": null,
+  "keys": [
+    "13824"
+  ],
+  "rationale": "<p>The correct answer is 13824. The side length is &#8731;110,592 = 48 units. The surface area of a cube is 6s&sup2; = 6(48)&sup2; = 6(2,304) = 13,824 square units.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T1.hard"
+}

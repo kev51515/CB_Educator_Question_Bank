@@ -1,0 +1,22 @@
+[
+  {"id": "4a07be59-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "378c66d5-s1", "templateId": "command-of-evidence.A4.T6.hard", "verdict": "ok"},
+  {"id": "010fa3f0-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "1281dfd5-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "df91532e-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "4d38c2ea-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "068f939b-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "0198240a-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "difficulty_drift", "detail": "Hard A4.T5 requires a named alternative explanation or 'fill the missing causal link' move; here the stimulus lacks any alternative and the keyed finding (D) is essentially a direct restatement of the hypothesized properties (resist compression + high heat conduction), violating the common-bug 'correct finding that merely restates the hypothesis' and the hard lever 'rules out a specific named alternative or supplies the precise missing link'."},
+  {"id": "44da37eb-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "0045c234-s1", "templateId": "command-of-evidence.A4.T6.hard", "verdict": "ok"},
+  {"id": "2c06139b-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "df9c5a1d-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "014b3394-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "04cbeca3-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "20583752-s1", "templateId": "command-of-evidence.A1.T2.hard", "verdict": "ok"},
+  {"id": "4fc9a13a-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "f9c4bdab-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "3233c162-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "2644644a-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "37e15265-s1", "templateId": "command-of-evidence.A1.T1.hard", "verdict": "ok"}
+]

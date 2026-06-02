@@ -1,0 +1,22 @@
+[
+  {"id": "e24765e6-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.medium", "verdict": "ok"},
+  {"id": "38525983-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "ad7dbb22-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.medium", "verdict": "ok"},
+  {"id": "2e74e403-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "50b2807e-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T3.medium", "verdict": "ok"},
+  {"id": "7ac5d686-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T9.medium", "verdict": "ok"},
+  {"id": "3c5b19ef-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.medium", "verdict": "ok"},
+  {"id": "fdfc90e4-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium", "verdict": "ok"},
+  {"id": "f46139df-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium", "verdict": "type_drift", "detail": "Question asks for predicted y at x=30, which is T7 (predict y) logic, not T8 (residual = actual minus predicted). No actual data point given; only the line and an interpolated x. Answer math (≈6.3) is correct, but type is mistagged."},
+  {"id": "9bb4107c-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "03a16790-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "3d985614-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.medium", "verdict": "ok"},
+  {"id": "24a1e6a7-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "7fd284ac-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium", "verdict": "ok"},
+  {"id": "e17babed-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium", "verdict": "type_drift", "detail": "Question asks for predicted y at x=6 using the line of best fit — this is T7 logic (predict y at given x), not T8 (residual = actual minus predicted). No actual data point is given. Answer math (6.33→6) is correct, but type is mistagged."},
+  {"id": "9a144a01-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T10.medium", "verdict": "ok"},
+  {"id": "e9129a5c-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "90ba8f98-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "difficulty_drift", "detail": "Medium T5 lever requires slope between 0 and 1 (or -1 and 0) so sign+magnitude both diagnostic, and decimal/non-integer reads. Clone uses integer slope = 3 from clean integer coordinates; this matches Easy lever, not Medium."},
+  {"id": "ab7740a8-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T10.medium", "verdict": "ok"},
+  {"id": "9eb896c5-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.medium", "verdict": "ok"}
+]

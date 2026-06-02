@@ -1,0 +1,39 @@
+{
+  "questionId": "fecc446d-s1",
+  "originalId": "fecc446d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line intersects two parallel lines, forming four acute angles and four obtuse angles. The measure of one of these eight angles is (9x \u2212 300)\u00b0. The sum of the measures of four of the eight angles is k\u00b0. Which of the following could NOT be equivalent to k, for all values of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>36x \u2212 1200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18x \u2212 420</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>360</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u221218x + 1500</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>All four acute angles are equal in measure, and all four obtuse angles are equal in measure (since the lines are parallel). With acute = (9x \u2212 300)\u00b0, obtuse = (480 \u2212 9x)\u00b0. The possible sums of any 4 of the 8 angles are: 4 acute = 36x \u2212 1200; 4 obtuse = 1920 \u2212 36x; 2 acute + 2 obtuse = 360; 3 acute + 1 obtuse = 27x \u2212 900 + 480 \u2212 9x = 18x \u2212 420; 1 acute + 3 obtuse = 9x \u2212 300 + 1440 \u2212 27x = \u221218x + 1140. The expression \u221218x + 1500 is not among these and so cannot equal the sum of any 4 of these angles for all x.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A1.T3.hard"
+}

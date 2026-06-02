@@ -1,0 +1,39 @@
+{
+  "questionId": "cfff8f8e-s1",
+  "originalId": "cfff8f8e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>When an artist posted a new piece, her social media page had 47 followers. Each week for several weeks after the piece was posted, the number of followers tripled from the previous week's count. Which equation gives the total number of followers, <i>n</i>, on the page <i>w</i> weeks after the piece was posted?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>n</i> = 47(3)<sup><i>w</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>n</i> = (47)<sup><i>w</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>n</i> = 47(1/3)<sup><i>w</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>n</i> = (47)&sup2; + <i>w</i></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The initial count is 47, and the number triples each week, so after <i>w</i> weeks the number of followers is 47 multiplied by 3 <i>w</i> times: <i>n</i> = 47(3)<sup><i>w</i></sup>.</p><p>Choice B has the wrong base. Choice C represents the count being divided by 3 each week. Choice D is not an exponential pattern.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A4.T1.easy"
+}

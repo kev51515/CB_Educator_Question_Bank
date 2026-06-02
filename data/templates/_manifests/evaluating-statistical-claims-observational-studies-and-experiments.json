@@ -1,0 +1,73 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "originals": [
+    {
+      "id": "82dfb646",
+      "path": "json/math/easy/problem-solving-and-data-analysis/82dfb646.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "9bf4c545",
+      "path": "json/math/easy/problem-solving-and-data-analysis/9bf4c545.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "37930b2a",
+      "path": "json/math/medium/problem-solving-and-data-analysis/37930b2a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "642519d7",
+      "path": "json/math/medium/problem-solving-and-data-analysis/642519d7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b4f5a7ca",
+      "path": "json/math/medium/problem-solving-and-data-analysis/b4f5a7ca.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1ea09200",
+      "path": "json/math/hard/problem-solving-and-data-analysis/1ea09200.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4a422e3e",
+      "path": "json/math/hard/problem-solving-and-data-analysis/4a422e3e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6fca0144",
+      "path": "json/math/hard/problem-solving-and-data-analysis/6fca0144.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7ce2830a",
+      "path": "json/math/hard/problem-solving-and-data-analysis/7ce2830a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7d68096f",
+      "path": "json/math/hard/problem-solving-and-data-analysis/7d68096f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "aa43b41f",
+      "path": "json/math/hard/problem-solving-and-data-analysis/aa43b41f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

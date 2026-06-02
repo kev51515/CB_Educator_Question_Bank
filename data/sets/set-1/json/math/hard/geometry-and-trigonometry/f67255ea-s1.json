@@ -1,0 +1,22 @@
+{
+  "questionId": "f67255ea-s1",
+  "originalId": "f67255ea",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A line intersects two parallel lines, forming four acute angles and four obtuse angles. The measure of one of the acute angles is (7x \u2212 400)\u00b0. The sum of the measures of one of the acute angles and three of the obtuse angles is (\u221214x + w)\u00b0. What is the value of w?</p>",
+  "answerOptions": [],
+  "keys": [
+    "1340"
+  ],
+  "rationale": "<p>When a transversal cuts two parallel lines, all four acute angles have the same measure and all four obtuse angles have the same measure, with each acute and obtuse pair summing to 180\u00b0. With acute = (7x \u2212 400)\u00b0, obtuse = (180 \u2212 (7x \u2212 400))\u00b0 = (580 \u2212 7x)\u00b0. One acute plus three obtuse equals (7x \u2212 400) + 3(580 \u2212 7x) = 7x \u2212 400 + 1740 \u2212 21x = \u221214x + 1340. Therefore w = 1340.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A1.T3.hard"
+}

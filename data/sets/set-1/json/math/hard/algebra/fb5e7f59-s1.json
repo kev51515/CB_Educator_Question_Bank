@@ -1,0 +1,22 @@
+{
+  "questionId": "fb5e7f59-s1",
+  "originalId": "fb5e7f59",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>&minus;x &minus; vy = &minus;341</p>\n<p>2x &minus; vy = 19</p>\n<p>In the given system of equations, v is a constant. In the xy-plane, the graphs of these equations intersect at the point (p, 17), where p is a constant. What is the value of v?</p>",
+  "answerOptions": null,
+  "keys": [
+    "13"
+  ],
+  "rationale": "<p>The correct answer is 13. Since the point (p, 17) lies on both lines, substitute it into both equations. From the first equation, &minus;p &minus; 17v = &minus;341, so p = 341 &minus; 17v. From the second equation, 2p &minus; 17v = 19. Substitute p = 341 &minus; 17v into this: 2(341 &minus; 17v) &minus; 17v = 19, or 682 &minus; 34v &minus; 17v = 19. Combining like terms gives 682 &minus; 51v = 19, so 51v = 663, and v = 13.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.hard"
+}

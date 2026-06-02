@@ -1,0 +1,39 @@
+{
+  "questionId": "4420e500-s1",
+  "originalId": "4420e500",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the area of a rectangle with a length of 9 centimeters (cm) and a width of 3 cm?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12 cm\u00b2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>24 cm\u00b2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>27 cm\u00b2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>81 cm\u00b2</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The area of a rectangle is A = lw. Therefore A = 9 \u00d7 3 = 27 cm\u00b2. Choice A is the sum of length and width. Choice B is the perimeter. Choice D squares the length.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

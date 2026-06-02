@@ -1,0 +1,22 @@
+{
+  "questionId": "6d99b141-s1",
+  "originalId": "6d99b141",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangle ACD partially overlaps triangle EBD. Point C is on segment BD; point E is on segment AD. The measure of angle AEB is x°. In the figure, AC = CD, the measure of angle EBC is 51°, and the measure of angle ACD is 86°. What is the value of x?</p>",
+  "answerOptions": [],
+  "keys": [
+    "98"
+  ],
+  "rationale": "<p>Since AC = CD, triangle ACD is isosceles and the measures of ∠CDA and ∠CAD are equal. The three angles sum to 180°, so each base angle is (180 − 86)/2 = 47°. In triangle EBD, angle AEB is an exterior angle, so it equals the sum of the two non-adjacent interior angles: ∠AEB = ∠EBD + ∠EDB = 51 + 47 = 98°.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A3.T1.hard"
+}

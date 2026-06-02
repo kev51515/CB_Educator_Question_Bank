@@ -1,0 +1,39 @@
+{
+  "questionId": "458b4a11-s1",
+  "originalId": "458b4a11",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>To examine how rising sea-surface temperatures affect zooplankton-mediated carbon export in subtropical waters, In\u00e9s Cordeiro and colleagues collected intact mesocosms of seawater and resident zooplankton from a 19\u00b0C site in the Azores and incubated them at a nearby experimental station under conditions matching a 21\u00b0C site 200 kilometers to the south. Carbon export by zooplankton increased significantly in the warmed mesocosms; importantly, the species composition of the zooplankton community remained the same, which let Cordeiro and colleagues attribute the increased carbon export to temperature-driven changes in zooplankton activity rather than to community turnover.</p>",
+  "stem": "<p>It can most reasonably be inferred from the text that the finding about zooplankton species composition was important for which reason?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It established that zooplankton activity varies depending on which species are present in the community.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It eliminated a competing explanation for the observed increase in zooplankton-mediated carbon export.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It suggested that temperature-driven shifts in zooplankton activity are now occurring at progressively higher latitudes.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It provided early evidence that zooplankton-mediated carbon export increased in the warmed mesocosms.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text reports that warming the mesocosms accelerated carbon export and notes \"importantly\" that the community composition stayed the same. By ruling out a shift in which species were present, the researchers eliminated a competing explanation\u2014turnover in community composition\u2014for the increased carbon export, leaving temperature-driven changes in activity as the best account.</p><p>Choice A is incorrect because the text says composition did not change, so it could not establish how different species' activity rates differ. Choice C is incorrect because the study compared two specific temperature conditions; it does not describe shifts across latitudes over time. Choice D is incorrect because the increased carbon export was established by direct measurement, not by the composition finding\u2014the composition finding instead explained the cause of that increase.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "2f958af9-s1",
+  "originalId": "2f958af9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p>w<sup>2</sup> = (kF)/(mR)</p>",
+  "stem": "<p>The given equation relates positive quantities w, k, F, m, and R. Which equation correctly expresses F in terms of the other variables?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>F = (mR)/(kw<sup>2</sup>)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>F = (mRw<sup>2</sup>)/k</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>F = (km)/(Rw<sup>2</sup>)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>F = k/(mRw<sup>2</sup>)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Multiply both sides by mR: mRw<sup>2</sup> = kF. Divide by k: F = (mRw<sup>2</sup>)/k. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium"
+}

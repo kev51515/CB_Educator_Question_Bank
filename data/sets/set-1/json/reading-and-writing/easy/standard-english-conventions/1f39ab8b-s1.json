@@ -1,0 +1,39 @@
+{
+  "questionId": "1f39ab8b-s1",
+  "originalId": "1f39ab8b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In the novel <em>The Bone People</em> by Keri Hulme, Kerewin is a reclusive painter of Maori heritage who treasures her family's traditions. However, when an injured boy and his guardian unexpectedly enter her life, the novel poses a key question: How ______</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>will Kerewin's solitary life change.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>will Kerewin's solitary life change?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Kerewin's solitary life will change?</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Kerewin's solitary life will change.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The clause after the colon must be a direct question, so it requires inverted subject-verb order and a question mark.</p><p>Choice A uses interrogative word order with a period. Choice C is declarative in form but ends with a question mark. Choice D is declarative throughout and ends with a period, not appropriate after \"asks a central question.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

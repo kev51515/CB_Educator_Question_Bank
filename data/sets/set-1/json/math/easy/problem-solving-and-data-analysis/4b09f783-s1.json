@@ -1,0 +1,22 @@
+{
+  "questionId": "4b09f783-s1",
+  "originalId": "4b09f783",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A list of 10 data values is shown.</p><p>3, 7, 12, 4, 8, 11, 9, 6, 5, 5</p><p>What is the mean of these data?</p>",
+  "answerOptions": [],
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The correct answer is 7. The mean of a data set is the sum of the values divided by the number of values. The sum is 3 + 7 + 12 + 4 + 8 + 11 + 9 + 6 + 5 + 5 = 70. There are 10 data values, so the mean is 70 divided by 10 = 7.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

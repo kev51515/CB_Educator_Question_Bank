@@ -1,0 +1,39 @@
+{
+  "questionId": "187f74bc-s1",
+  "originalId": "187f74bc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the boundary of an inequality is a dashed horizontal line passing through (-2, -5), (0, -5), and (4, -5). The area above the boundary is shaded. The shaded region represents the solutions to the inequality ky < 40, where k is a constant. What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The boundary y = -5 is the dividing line. The shaded region is above the line (y > -5), but the inequality ky < 40 is given. Dividing by k preserves or reverses the inequality depending on the sign of k. For the inequality y > -5 to be equivalent to ky < 40, we need ky < 40 \u21d4 y > 40/k (so k must be negative), and 40/k = -5, giving k = -8.</p><p>Choices A, C, D correspond to sign errors or arithmetic mistakes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.hard"
+}

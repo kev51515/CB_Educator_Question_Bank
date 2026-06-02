@@ -1,0 +1,39 @@
+{
+  "questionId": "949cd96b-s1",
+  "originalId": "949cd96b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The width of a certain rectangle is 64% of the length of the rectangle. Which expression represents the width of the rectangle, where <em>L</em> is the length of the rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>64L</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.64L</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6.4L</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.064L</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. To find a percentage of a quantity, convert the percent to a decimal: 64% = 0.64. So the width is 0.64L.</p><p>Choice A is incorrect. This treats 64% as 64, not as 0.64.</p><p>Choice C is incorrect. This treats 64% as 6.4.</p><p>Choice D is incorrect. This treats 64% as 0.064 (i.e., 6.4%), not 64%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A2.T3.easy"
+}

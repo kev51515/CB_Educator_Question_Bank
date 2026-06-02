@@ -1,0 +1,72 @@
+{
+  "questionId": "1d79a59d",
+  "externalId": "5f527608-5cc1-4525-bcc0-e04a71f57baf",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:19.822224+00:00",
+  "type": "mcq",
+  "stem": "<p>The student wants to place the <span data-ssml-say-as=\"date\">1821</span> Declaration of Independence in the context of Valle&rsquo;s changing political beliefs. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "bddd7554-6dd6-40ac-a5f9-b54f1403d6ea",
+      "content": "<p>Colonel Riego&rsquo;s revolt was the inspiration that Valle, a long-standing opponent of Central American independence, needed to change his political beliefs.</p>"
+    },
+    {
+      "id": "21340d39-b959-446e-a4f7-314bdb9c3516",
+      "content": "<p>Long an opponent of Central American independence, Valle changed his mind after an <span data-ssml-say-as=\"date\">1820</span> revolt and wrote the <span data-ssml-say-as=\"date\">1821</span> declaration.</p>"
+    },
+    {
+      "id": "1ea854db-5003-4ac4-a279-ed25b4f666fa",
+      "content": "<p>A change in Valle&rsquo;s political beliefs that occurred when the Spanish king repealed the <span data-ssml-say-as=\"date\">1812</span> constitution led to Valle writing Central America&rsquo;s Declaration of Independence.</p>"
+    },
+    {
+      "id": "9e0ea7aa-8864-40e5-bdef-0df8f68eb7ee",
+      "content": "<p>The writing of Central America&rsquo;s Declaration of Independence may not have happened were it not for Colonel Riego&rsquo;s <span data-ssml-say-as=\"date\">1820</span> revolt.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "21340d39-b959-446e-a4f7-314bdb9c3516"
+  ],
+  "rationale": "<p>Choice B is the best answer. The sentence places the Declaration of Independence in the context of Valle&rsquo;s changing political beliefs, noting that Valle was long an opponent of Central American independence but changed his mind after an 1820 revolt and then wrote the Declaration of Independence in 1821.</p><p>Choice A is incorrect. The sentence states that Valle&rsquo;s political beliefs changed after Riego&rsquo;s revolt but doesn&rsquo;t indicate how these changed beliefs provide context for the 1821 Declaration of Independence. Choice C is incorrect because it misrepresents information from the notes. Valle&rsquo;s political beliefs changed after Riego&rsquo;s 1820 revolt, not when the Spanish king repealed the 1812 constitution. Choice D is incorrect. While the sentence indicates a relationship between Colonel Riego&rsquo;s 1820 revolt and Central America&rsquo;s Declaration of Independence, it doesn&rsquo;t mention Valle&rsquo;s changing political beliefs.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>The student wants to place the <span data-ssml-say-as=\"date\">1821</span> Declaration of Independence in the context of Valle&rsquo;s changing political beliefs. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "stimulus": "<p><p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Leaders of the Province of Guatemala proclaimed independence for Central America from the Spanish Empire on September 15, <span data-ssml-say-as=\"date\">1821</span>.</li>\n<li>The accompanying Declaration of Independence was written by Honduran scholar and politician Jos&eacute; Cecilio del Valle.</li>\n<li>The <span data-ssml-say-as=\"date\">1812</span> Spanish Constitution had provided some degree of independence for Central America, but it was repealed by the Spanish king in <span data-ssml-say-as=\"date\">1814</span>.</li>\n<li>Valle, a loyal advisor to the Spanish Empire&rsquo;s administrators in Central America, had long opposed independence.</li>\n<li>He changed his mind after Colonel Rafael del Riego&rsquo;s <span data-ssml-say-as=\"date\">1820</span> revolt, which demanded the return of rights lost in <span data-ssml-say-as=\"date\">1814</span>.</li>\n</ul></p>",
+    "keys": [
+      "21340d39-b959-446e-a4f7-314bdb9c3516"
+    ],
+    "answerOptions": [
+      {
+        "id": "bddd7554-6dd6-40ac-a5f9-b54f1403d6ea",
+        "content": "<p>Colonel Riego&rsquo;s revolt was the inspiration that Valle, a long-standing opponent of Central American independence, needed to change his political beliefs.</p>"
+      },
+      {
+        "id": "21340d39-b959-446e-a4f7-314bdb9c3516",
+        "content": "<p>Long an opponent of Central American independence, Valle changed his mind after an <span data-ssml-say-as=\"date\">1820</span> revolt and wrote the <span data-ssml-say-as=\"date\">1821</span> declaration.</p>"
+      },
+      {
+        "id": "1ea854db-5003-4ac4-a279-ed25b4f666fa",
+        "content": "<p>A change in Valle&rsquo;s political beliefs that occurred when the Spanish king repealed the <span data-ssml-say-as=\"date\">1812</span> constitution led to Valle writing Central America&rsquo;s Declaration of Independence.</p>"
+      },
+      {
+        "id": "9e0ea7aa-8864-40e5-bdef-0df8f68eb7ee",
+        "content": "<p>The writing of Central America&rsquo;s Declaration of Independence may not have happened were it not for Colonel Riego&rsquo;s <span data-ssml-say-as=\"date\">1820</span> revolt.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The sentence places the Declaration of Independence in the context of Valle&rsquo;s changing political beliefs, noting that Valle was long an opponent of Central American independence but changed his mind after an 1820 revolt and then wrote the Declaration of Independence in 1821.</p><p>Choice A is incorrect. The sentence states that Valle&rsquo;s political beliefs changed after Riego&rsquo;s revolt but doesn&rsquo;t indicate how these changed beliefs provide context for the 1821 Declaration of Independence. Choice C is incorrect because it misrepresents information from the notes. Valle&rsquo;s political beliefs changed after Riego&rsquo;s 1820 revolt, not when the Spanish king repealed the 1812 constitution. Choice D is incorrect. While the sentence indicates a relationship between Colonel Riego&rsquo;s 1820 revolt and Central America&rsquo;s Declaration of Independence, it doesn&rsquo;t mention Valle&rsquo;s changing political beliefs.</p>",
+    "externalid": "5f527608-5cc1-4525-bcc0-e04a71f57baf",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p><p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Leaders of the Province of Guatemala proclaimed independence for Central America from the Spanish Empire on September 15, <span data-ssml-say-as=\"date\">1821</span>.</li>\n<li>The accompanying Declaration of Independence was written by Honduran scholar and politician Jos&eacute; Cecilio del Valle.</li>\n<li>The <span data-ssml-say-as=\"date\">1812</span> Spanish Constitution had provided some degree of independence for Central America, but it was repealed by the Spanish king in <span data-ssml-say-as=\"date\">1814</span>.</li>\n<li>Valle, a loyal advisor to the Spanish Empire&rsquo;s administrators in Central America, had long opposed independence.</li>\n<li>He changed his mind after Colonel Rafael del Riego&rsquo;s <span data-ssml-say-as=\"date\">1820</span> revolt, which demanded the return of rights lost in <span data-ssml-say-as=\"date\">1814</span>.</li>\n</ul></p>"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a478f9f5-s1",
+  "originalId": "a478f9f5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each of 142 seashells can be classified as one of three types, as shown in the frequency table.</p><table border=\"1\"><tr><th>Type</th><th>Frequency</th></tr><tr><td>Type A</td><td>108</td></tr><tr><td>Type B</td><td>5</td></tr><tr><td>Type C</td><td>29</td></tr></table><p>If one of the seashells is selected at random, what is the probability of selecting a seashell of Type B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5/137</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5/142</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>29/142</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>108/142</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The probability is the number of Type B shells divided by the total: 5/142.</p><p>Choice A is incorrect; the denominator should be the total, not the non-Type-B count. Choice C is incorrect; this is the probability of selecting Type C. Choice D is incorrect; this is the probability of selecting Type A.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T2.easy"
+}

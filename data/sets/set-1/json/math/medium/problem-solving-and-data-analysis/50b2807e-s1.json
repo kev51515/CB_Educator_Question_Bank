@@ -1,0 +1,39 @@
+{
+  "questionId": "50b2807e-s1",
+  "originalId": "50b2807e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between two variables, <em>x</em> and <em>y</em>. As <em>x</em> increases from 0 to 10, <em>y</em> decreases roughly from 7.5 to 0.3, suggesting a line with y-intercept near 7.5 and negative slope of magnitude less than 1. Which of the following could be an equation for the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> = 0.7 + 7.5<em>x</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> = 7.5 \u2212 0.7<em>x</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> = 0.7 \u2212 7.5<em>x</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> = 7.5 + 0.7<em>x</em></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The y-intercept is approximately 7.5, and the slope is (0.3 \u2212 7.5)/(10 \u2212 0) \u2248 \u22120.72, so y \u2248 7.5 \u2212 0.7x.</p><p>Choices A and D have positive slopes. Choice C swaps intercept and slope magnitudes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T3.medium"
+}

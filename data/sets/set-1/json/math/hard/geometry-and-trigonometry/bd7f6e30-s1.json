@@ -1,0 +1,39 @@
+{
+  "questionId": "bd7f6e30-s1",
+  "originalId": "bd7f6e30",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle ABC, AB = AC. An exterior angle at vertex A has measure 130°. What is the measure, in degrees, of angle B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>65</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>75</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>An exterior angle and its corresponding interior angle are supplementary, so ∠A = 180 − 130 = 50°. Since AB = AC, triangle ABC is isosceles with ∠B = ∠C. The interior angles sum to 180°, so ∠B = ∠C = (180 − 50)/2 = 65°.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A3.T1.medium"
+}

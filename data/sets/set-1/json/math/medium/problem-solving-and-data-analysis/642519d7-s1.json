@@ -1,0 +1,39 @@
+{
+  "questionId": "642519d7-s1",
+  "originalId": "642519d7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A research firm surveyed <math><mn>1,200</mn></math> adults selected at random from a large county and asked each adult, \"Are you satisfied with public transportation in the county?\" Of those surveyed, <math><mn>64</mn></math> percent responded that they were satisfied. Based on the results of the survey, which of the following statements must be true?</p><p>I. Of all adults in the county, <math><mn>64</mn></math> percent are satisfied with public transportation.<br>II. If a different random sample of <math><mn>1,200</mn></math> adults were surveyed, exactly <math><mn>64</mn></math> percent would say they were satisfied.<br>III. The majority of adults in the county are satisfied with public transportation.</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>III only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I and III only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>None</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The 64% is a sample estimate; it does not guarantee any exact population value, the identical result in a new sample, or any conclusion about the majority being satisfied (which depends on margin of error, not a single point estimate). So none of the statements must be true.</p><p>Each of choices A, B, and C overstates what a single point estimate can establish.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A3.T1.medium"
+}

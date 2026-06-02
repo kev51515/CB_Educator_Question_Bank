@@ -1,0 +1,39 @@
+{
+  "questionId": "9966235e-s1",
+  "originalId": "9966235e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A cube has an edge length of 50 inches. A solid sphere with a radius of 25 inches is inside the cube, such that the sphere touches the center of each face of the cube. To the nearest cubic inch, what is the volume of the space in the cube not taken up by the sphere?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>65,450</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>105,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>59,550</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>125,000</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The cube has volume 50&sup3; = 125,000 cubic inches. The sphere has volume (4/3)&pi;(25)&sup3; = (4/3)&pi;(15,625) &asymp; 65,450 cubic inches. The empty space is 125,000 &minus; 65,450 &asymp; 59,550 cubic inches.</p><p>Choice A gives the sphere's volume. Choice B is an arithmetic error. Choice D gives the cube's volume.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A4.T1.hard"
+}

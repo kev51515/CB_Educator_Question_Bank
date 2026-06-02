@@ -1,0 +1,72 @@
+{
+  "questionId": "6fdddabf",
+  "externalId": "56dd3fb5-ae99-43c6-9259-f851077a1fbb",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:23:05.023094+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "149ee668-4f57-4d50-8701-1734f59ecac8",
+      "content": "<p>called<span data-ssml-say-as=\"characters\">,</span></p>"
+    },
+    {
+      "id": "0fbdac00-fbee-42de-8b1b-c51506711829",
+      "content": "<p>called</p>"
+    },
+    {
+      "id": "b82635ab-b80e-47e9-a490-eb051843fa52",
+      "content": "<p>called<span data-ssml-say-as=\"characters\">&mdash;</span></p>"
+    },
+    {
+      "id": "47b56c0f-a7e0-4596-80a8-5368b0ea5097",
+      "content": "<p>called<span data-ssml-say-as=\"characters\">;</span></p>"
+    }
+  ],
+  "keys": [
+    "0fbdac00-fbee-42de-8b1b-c51506711829"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between a verb and its complement. No punctuation is needed between the verb &ldquo;is called&rdquo; and its complement &ldquo;the chromophore.&rdquo; The complement helps complete the idea of the verb&mdash;in this case, it explains what the part of a compound that determines the compound&rsquo;s color is called&mdash;and any punctuation between the two results in an ungrammatical sentence.</p><p>Choice A is incorrect because no punctuation is needed between the verb and its complement. Choice C is incorrect because no punctuation is needed between the verb and its complement. Choice D is incorrect because no punctuation is needed between the verb and its complement.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>The part of a compound that determines the compound&rsquo;s color is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the chromophore. One example of a chromophore is hemoglobin, which gives human blood its red color.</p>",
+    "keys": [
+      "0fbdac00-fbee-42de-8b1b-c51506711829"
+    ],
+    "answerOptions": [
+      {
+        "id": "149ee668-4f57-4d50-8701-1734f59ecac8",
+        "content": "<p>called<span data-ssml-say-as=\"characters\">,</span></p>"
+      },
+      {
+        "id": "0fbdac00-fbee-42de-8b1b-c51506711829",
+        "content": "<p>called</p>"
+      },
+      {
+        "id": "b82635ab-b80e-47e9-a490-eb051843fa52",
+        "content": "<p>called<span data-ssml-say-as=\"characters\">&mdash;</span></p>"
+      },
+      {
+        "id": "47b56c0f-a7e0-4596-80a8-5368b0ea5097",
+        "content": "<p>called<span data-ssml-say-as=\"characters\">;</span></p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between a verb and its complement. No punctuation is needed between the verb &ldquo;is called&rdquo; and its complement &ldquo;the chromophore.&rdquo; The complement helps complete the idea of the verb&mdash;in this case, it explains what the part of a compound that determines the compound&rsquo;s color is called&mdash;and any punctuation between the two results in an ungrammatical sentence.</p><p>Choice A is incorrect because no punctuation is needed between the verb and its complement. Choice C is incorrect because no punctuation is needed between the verb and its complement. Choice D is incorrect because no punctuation is needed between the verb and its complement.</p>",
+    "externalid": "56dd3fb5-ae99-43c6-9259-f851077a1fbb",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>The part of a compound that determines the compound&rsquo;s color is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the chromophore. One example of a chromophore is hemoglobin, which gives human blood its red color.</p>"
+}

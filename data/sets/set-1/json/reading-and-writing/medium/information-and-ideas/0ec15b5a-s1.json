@@ -1,0 +1,25 @@
+{
+  "questionId": "0ec15b5a-s1",
+  "originalId": "0ec15b5a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T7.easy",
+  "stimulus": "<figure class=\"table\"><table><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Average Daily Water Use and Drought-Tolerance Rating for Four Ornamental Shrubs Grown in Arid Gardens (2019 Field Trials)</p></caption><thead><tr><th scope=\"col\">Shrub species</th><th scope=\"col\">Average daily water use (liters per plant)</th><th scope=\"col\">Drought-tolerance rating (1–10 scale)</th></tr></thead><tbody><tr><th scope=\"row\">Texas sage (<em>Leucophyllum frutescens</em>)</th><td>0.9</td><td>9</td></tr><tr><th scope=\"row\">Oleander (<em>Nerium oleander</em>)</th><td>1.6</td><td>7</td></tr><tr><th scope=\"row\">Pomegranate (<em>Punica granatum</em>)</th><td>2.4</td><td>6</td></tr><tr><th scope=\"row\">Glossy abelia (<em>Abelia ×grandiflora</em>)</th><td>3.1</td><td>4</td></tr></tbody></table></figure><p>To help homeowners in arid regions design low-maintenance gardens, horticulturalists at the Sonoran Desert Botanical Center conducted field trials of four ornamental shrubs that are commonly sold in nursery centers. For each species, the researchers measured the average daily water use per plant and assigned a drought-tolerance rating on a scale from 1 (least tolerant) to 10 (most tolerant). According to the 2019 trial results, among these four shrubs, the species with the highest drought-tolerance rating was ______<span aria-hidden=\"true\"></span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>oleander.</p>"},
+    {"id": "b", "content": "<p>pomegranate.</p>"},
+    {"id": "c", "content": "<p>Texas sage.</p>"},
+    {"id": "d", "content": "<p>glossy abelia.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively uses data from the table to complete the text. According to the table, Texas sage has a drought-tolerance rating of 9, which is higher than the ratings shown for any other shrub species in the 2019 trials.</p><p>Choice A is incorrect because oleander has a drought-tolerance rating of 7, which is lower than Texas sage's rating of 9. Choice B is incorrect because pomegranate has a drought-tolerance rating of 6, lower than Texas sage's rating of 9. Choice D is incorrect because glossy abelia has a drought-tolerance rating of 4, the lowest among the four shrubs in the table.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

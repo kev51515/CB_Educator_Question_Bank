@@ -1,0 +1,39 @@
+{
+  "questionId": "f547a8b1-s1",
+  "originalId": "f547a8b1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, the graph of a function passes through the points (4, 0) and (0, &minus;7). What is the <i>y</i>-intercept of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(&minus;7, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, &minus;7)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(4, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, 4)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A <i>y</i>-intercept is a point where a graph crosses the <i>y</i>-axis (where <i>x</i> = 0). The graph passes through (0, &minus;7), so the <i>y</i>-intercept is (0, &minus;7).</p><p>Choice A swaps the coordinates. Choices C and D are <i>x</i>-intercepts or points not on the <i>y</i>-axis.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A3.T1.easy"
+}

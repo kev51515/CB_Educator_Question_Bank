@@ -1,0 +1,72 @@
+{
+  "questionId": "5e4e082c",
+  "externalId": "5fe644fc-ee4d-4803-a075-bee28870961b",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:58.607436+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the texts, Anbar <span data-ssml-sub-alias=\"et al\">et al.</span> (Text 1) and Slotznick <span data-ssml-sub-alias=\"et al\">et al.</span> (Text 2) would most likely disagree about the answer to which question about the portion of the Mount McRae Shale rock-core corresponding to 2.5 <span data-ssml-say-as=\"characters\">Ga</span>?</p>",
+  "answerOptions": [
+    {
+      "id": "734fbc27-eefa-4ac6-8647-5cd301553994",
+      "content": "<p>Does the increase in M<span data-ssml-say-as=\"characters\">o</span> in that portion suggest that atmospheric oxygen levels were not negligible before 2.5 <span data-ssml-say-as=\"characters\">Ga</span>?</p>"
+    },
+    {
+      "id": "eb87edbc-796b-4f88-b76d-e58153f5d46c",
+      "content": "<p>Is the increase in <span data-ssml-say-as=\"characters\">Mo</span> in that portion indicative of an increase in atmospheric oxygen dating to the same time?</p>"
+    },
+    {
+      "id": "22a7559f-5e15-45c8-b6f8-06b06339634f",
+      "content": "<p>Is the increase in M<span data-ssml-say-as=\"characters\">o</span> in that portion attributable to oxidative weathering of the material found in that portion?</p>"
+    },
+    {
+      "id": "a24bd789-46b7-4f2e-bdc8-eb9899ac5501",
+      "content": "<p>Did chemically analyzing bulk samples lead to a false impression that there is an increase in <span data-ssml-say-as=\"characters\">Mo</span> in that portion?</p>"
+    }
+  ],
+  "keys": [
+    "eb87edbc-796b-4f88-b76d-e58153f5d46c"
+  ],
+  "rationale": "<p>Choice B is the best answer because Anbar et al. and Slotznick et al. would most likely disagree about whether the molybdenum (Mo) increase indicates atmospheric oxygen levels specifically at 2.5 Ga. Anbar et al. conclude that the Mo increase they found &ldquo;at a point corresponding to roughly 2.5 billion years ago&rdquo; means that &ldquo;atmospheric oxygen briefly increased 2.5 Ga, then returned to its earlier negligible level,&rdquo; directly linking the timing of the Mo increase to contemporaneous atmospheric oxygen levels. In contrast, Slotznick et al. discovered volcanic debris and microfractures in the rock core and &ldquo;assert that fluid could have reached the debris through the microfractures and initiated oxidative weathering long after debris deposition.&rdquo; If, as Slotznick asserts, the Mo detected at the 2.5 Ga portion could have been deposited there much later through weathering processes, then the Mo increase wouldn&rsquo;t necessarily indicate atmospheric oxygen levels at 2.5 Ga specifically. Thus, Anbar et al. and Slotznick et al. disagree on whether the increase in Mo in the portion of the rock core corresponding to 2.5 Ga is indicative of an increase in atmospheric oxygen dating to the same time.</p><p>Choice A is incorrect because neither research team&rsquo;s findings directly address atmospheric oxygen levels before 2.5 Ga. Anbar et al. conclude that oxygen &ldquo;returned to its earlier negligible level&rdquo; after 2.5 Ga, implying low pre&ndash;2.5 Ga levels, while Slotznick et al. focus on explaining the Mo increase through later weathering processes rather than making claims about earlier atmospheric conditions. Choice C is incorrect because both research teams would likely agree that the Mo increase is attributable to oxidative weathering. Anbar et al. state that &ldquo;Mo is released mainly through oxidative weathering of minerals,&rdquo; and Slotznick et al. also reference &ldquo;oxidative weathering&rdquo; as the process that released Mo from the volcanic debris. Their disagreement concerns the timing of this weathering, not whether oxidative weathering is responsible. Choice D is incorrect because Slotznick et al. don&rsquo;t suggest that bulk chemical analysis created a false impression about the presence of increased Mo. They acknowledge that the Mo increase exists but offer a different explanation for its timing and source. They critique bulk analysis for occluding &ldquo;contextual details&rdquo; that would require another kind of analysis to uncover, not for producing inaccurate measurements of Mo levels.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the texts, Anbar <span data-ssml-sub-alias=\"et al\">et al.</span> (Text 1) and Slotznick <span data-ssml-sub-alias=\"et al\">et al.</span> (Text 2) would most likely disagree about the answer to which question about the portion of the Mount McRae Shale rock-core corresponding to 2.5 <span data-ssml-say-as=\"characters\">Ga</span>?</p>",
+    "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p>\n<p>Chemically analyzing bulk rock-core samples from Australia&rsquo;s Mount McRae Shale, Ariel Anbar <span data-ssml-sub-alias=\"et al\">et al.</span> found a transient but significant increase in molybdenum (<span data-ssml-say-as=\"characters\">Mo</span>) at a point corresponding to roughly 2.5 billion years ago (<span data-ssml-say-as=\"characters\">Ga</span>). On Earth, <span data-ssml-say-as=\"characters\">Mo</span> is released mainly through oxidative weathering of minerals; Anbar <span data-ssml-sub-alias=\"et al\">et al.</span> therefore concluded that atmospheric oxygen briefly increased 2.5 <span data-ssml-say-as=\"characters\">Ga</span>, then returned to its earlier negligible level.</p>\n<p>&nbsp;</p>\n<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p>\n<p>Sarah Slotznick <span data-ssml-sub-alias=\"et al\">et al.</span> reexamined the Mount McRae Shale core. Since chemically analyzing bulk samples can occlude contextual details, Slotznick <span data-ssml-sub-alias=\"et al\">et al.</span> also employed high-resolution microscopy, which revealed volcanic debris&mdash;a known <span data-ssml-say-as=\"characters\">Mo</span> host&mdash;around 2.5 <span data-ssml-say-as=\"characters\">Ga</span> and microfractures in the surrounding matrix. The researchers assert that fluid could have reached the debris through the microfractures and initiated oxidative weathering long after debris deposition.&nbsp;</p>",
+    "keys": [
+      "eb87edbc-796b-4f88-b76d-e58153f5d46c"
+    ],
+    "answerOptions": [
+      {
+        "id": "734fbc27-eefa-4ac6-8647-5cd301553994",
+        "content": "<p>Does the increase in M<span data-ssml-say-as=\"characters\">o</span> in that portion suggest that atmospheric oxygen levels were not negligible before 2.5 <span data-ssml-say-as=\"characters\">Ga</span>?</p>"
+      },
+      {
+        "id": "eb87edbc-796b-4f88-b76d-e58153f5d46c",
+        "content": "<p>Is the increase in <span data-ssml-say-as=\"characters\">Mo</span> in that portion indicative of an increase in atmospheric oxygen dating to the same time?</p>"
+      },
+      {
+        "id": "22a7559f-5e15-45c8-b6f8-06b06339634f",
+        "content": "<p>Is the increase in M<span data-ssml-say-as=\"characters\">o</span> in that portion attributable to oxidative weathering of the material found in that portion?</p>"
+      },
+      {
+        "id": "a24bd789-46b7-4f2e-bdc8-eb9899ac5501",
+        "content": "<p>Did chemically analyzing bulk samples lead to a false impression that there is an increase in <span data-ssml-say-as=\"characters\">Mo</span> in that portion?</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because Anbar et al. and Slotznick et al. would most likely disagree about whether the molybdenum (Mo) increase indicates atmospheric oxygen levels specifically at 2.5 Ga. Anbar et al. conclude that the Mo increase they found &ldquo;at a point corresponding to roughly 2.5 billion years ago&rdquo; means that &ldquo;atmospheric oxygen briefly increased 2.5 Ga, then returned to its earlier negligible level,&rdquo; directly linking the timing of the Mo increase to contemporaneous atmospheric oxygen levels. In contrast, Slotznick et al. discovered volcanic debris and microfractures in the rock core and &ldquo;assert that fluid could have reached the debris through the microfractures and initiated oxidative weathering long after debris deposition.&rdquo; If, as Slotznick asserts, the Mo detected at the 2.5 Ga portion could have been deposited there much later through weathering processes, then the Mo increase wouldn&rsquo;t necessarily indicate atmospheric oxygen levels at 2.5 Ga specifically. Thus, Anbar et al. and Slotznick et al. disagree on whether the increase in Mo in the portion of the rock core corresponding to 2.5 Ga is indicative of an increase in atmospheric oxygen dating to the same time.</p><p>Choice A is incorrect because neither research team&rsquo;s findings directly address atmospheric oxygen levels before 2.5 Ga. Anbar et al. conclude that oxygen &ldquo;returned to its earlier negligible level&rdquo; after 2.5 Ga, implying low pre&ndash;2.5 Ga levels, while Slotznick et al. focus on explaining the Mo increase through later weathering processes rather than making claims about earlier atmospheric conditions. Choice C is incorrect because both research teams would likely agree that the Mo increase is attributable to oxidative weathering. Anbar et al. state that &ldquo;Mo is released mainly through oxidative weathering of minerals,&rdquo; and Slotznick et al. also reference &ldquo;oxidative weathering&rdquo; as the process that released Mo from the volcanic debris. Their disagreement concerns the timing of this weathering, not whether oxidative weathering is responsible. Choice D is incorrect because Slotznick et al. don&rsquo;t suggest that bulk chemical analysis created a false impression about the presence of increased Mo. They acknowledge that the Mo increase exists but offer a different explanation for its timing and source. They critique bulk analysis for occluding &ldquo;contextual details&rdquo; that would require another kind of analysis to uncover, not for producing inaccurate measurements of Mo levels.</p>",
+    "externalid": "5fe644fc-ee4d-4803-a075-bee28870961b",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p>\n<p>Chemically analyzing bulk rock-core samples from Australia&rsquo;s Mount McRae Shale, Ariel Anbar <span data-ssml-sub-alias=\"et al\">et al.</span> found a transient but significant increase in molybdenum (<span data-ssml-say-as=\"characters\">Mo</span>) at a point corresponding to roughly 2.5 billion years ago (<span data-ssml-say-as=\"characters\">Ga</span>). On Earth, <span data-ssml-say-as=\"characters\">Mo</span> is released mainly through oxidative weathering of minerals; Anbar <span data-ssml-sub-alias=\"et al\">et al.</span> therefore concluded that atmospheric oxygen briefly increased 2.5 <span data-ssml-say-as=\"characters\">Ga</span>, then returned to its earlier negligible level.</p>\n<p>&nbsp;</p>\n<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p>\n<p>Sarah Slotznick <span data-ssml-sub-alias=\"et al\">et al.</span> reexamined the Mount McRae Shale core. Since chemically analyzing bulk samples can occlude contextual details, Slotznick <span data-ssml-sub-alias=\"et al\">et al.</span> also employed high-resolution microscopy, which revealed volcanic debris&mdash;a known <span data-ssml-say-as=\"characters\">Mo</span> host&mdash;around 2.5 <span data-ssml-say-as=\"characters\">Ga</span> and microfractures in the surrounding matrix. The researchers assert that fluid could have reached the debris through the microfractures and initiated oxidative weathering long after debris deposition.&nbsp;</p>"
+}

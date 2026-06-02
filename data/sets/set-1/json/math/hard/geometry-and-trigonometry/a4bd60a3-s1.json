@@ -1,0 +1,22 @@
+{
+  "questionId": "a4bd60a3-s1",
+  "originalId": "a4bd60a3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The perimeter of an equilateral triangle is 504 centimeters. The height of this triangle is k&radic;3 centimeters, where k is a constant. What is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "84"
+  ],
+  "rationale": "<p>Each side has length 504/3 = 168 cm. The height of an equilateral triangle with side s is (s/2)&radic;3 = 84&radic;3. Therefore k = 84.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T8.hard"
+}

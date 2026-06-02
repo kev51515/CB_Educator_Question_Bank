@@ -1,0 +1,25 @@
+{
+  "questionId": "bcd924a5-s1",
+  "originalId": "bcd924a5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The traditional <em>qanat</em> irrigation network of Iran, used to channel groundwater across arid regions since at least the first millennium BCE, has profound cultural and engineering significance. The major elements of a qanat&mdash;a mother well, gently sloping tunnels, and surface outlets&mdash;are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: they function together as one integrated structure.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>linked</p>"},
+    {"id": "b", "content": "<p>obsolete</p>"},
+    {"id": "c", "content": "<p>casual</p>"},
+    {"id": "d", "content": "<p>discretionary</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because \"linked\" means joined or connected, consistent with the text's description of the parts functioning together as one integrated structure. Choice B is incorrect because \"obsolete\" means no longer in use; the text emphasizes the system's ongoing significance, not its disuse. Choice C is incorrect because \"casual\" suggests informal or unstructured, but the text describes a carefully engineered network. Choice D is incorrect because \"discretionary\" means optional; the text emphasizes that the parts are necessary to a single integrated whole.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

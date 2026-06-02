@@ -1,0 +1,547 @@
+{
+  "section": "Math",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Area and volume",
+  "originals": [
+    {
+      "id": "02b02213",
+      "path": "json/math/easy/geometry-and-trigonometry/02b02213.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "0837c3b9",
+      "path": "json/math/easy/geometry-and-trigonometry/0837c3b9.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "0d43db90",
+      "path": "json/math/easy/geometry-and-trigonometry/0d43db90.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "0e40dfb0",
+      "path": "json/math/easy/geometry-and-trigonometry/0e40dfb0.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "165c30c4",
+      "path": "json/math/easy/geometry-and-trigonometry/165c30c4.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "29e9b28c",
+      "path": "json/math/easy/geometry-and-trigonometry/29e9b28c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2b41a4c4",
+      "path": "json/math/easy/geometry-and-trigonometry/2b41a4c4.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "3453aafc",
+      "path": "json/math/easy/geometry-and-trigonometry/3453aafc.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4420e500",
+      "path": "json/math/easy/geometry-and-trigonometry/4420e500.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4efea6a3",
+      "path": "json/math/easy/geometry-and-trigonometry/4efea6a3.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "50774285",
+      "path": "json/math/easy/geometry-and-trigonometry/50774285.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5252e606",
+      "path": "json/math/easy/geometry-and-trigonometry/5252e606.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "575f1e12",
+      "path": "json/math/easy/geometry-and-trigonometry/575f1e12.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "59cb654c",
+      "path": "json/math/easy/geometry-and-trigonometry/59cb654c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "689abc2a",
+      "path": "json/math/easy/geometry-and-trigonometry/689abc2a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "76670c80",
+      "path": "json/math/easy/geometry-and-trigonometry/76670c80.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "93f48423",
+      "path": "json/math/easy/geometry-and-trigonometry/93f48423.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "9d2e7037",
+      "path": "json/math/easy/geometry-and-trigonometry/9d2e7037.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "a490003a",
+      "path": "json/math/easy/geometry-and-trigonometry/a490003a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b4767bef",
+      "path": "json/math/easy/geometry-and-trigonometry/b4767bef.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "babd7461",
+      "path": "json/math/easy/geometry-and-trigonometry/babd7461.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "bb560789",
+      "path": "json/math/easy/geometry-and-trigonometry/bb560789.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c88183f7",
+      "path": "json/math/easy/geometry-and-trigonometry/c88183f7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d0b6d927",
+      "path": "json/math/easy/geometry-and-trigonometry/d0b6d927.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d2047497",
+      "path": "json/math/easy/geometry-and-trigonometry/d2047497.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d683a9cc",
+      "path": "json/math/easy/geometry-and-trigonometry/d683a9cc.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f39f88b7",
+      "path": "json/math/easy/geometry-and-trigonometry/f39f88b7.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "f60bb551",
+      "path": "json/math/easy/geometry-and-trigonometry/f60bb551.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "fc5ef8d3",
+      "path": "json/math/easy/geometry-and-trigonometry/fc5ef8d3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "03c6994f",
+      "path": "json/math/medium/geometry-and-trigonometry/03c6994f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "08b7a3f5",
+      "path": "json/math/medium/geometry-and-trigonometry/08b7a3f5.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "096c7ef5",
+      "path": "json/math/medium/geometry-and-trigonometry/096c7ef5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "151eda3c",
+      "path": "json/math/medium/geometry-and-trigonometry/151eda3c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1f0b582e",
+      "path": "json/math/medium/geometry-and-trigonometry/1f0b582e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "37dde49f",
+      "path": "json/math/medium/geometry-and-trigonometry/37dde49f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "38517165",
+      "path": "json/math/medium/geometry-and-trigonometry/38517165.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "3b931fb0",
+      "path": "json/math/medium/geometry-and-trigonometry/3b931fb0.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "468613c0",
+      "path": "json/math/medium/geometry-and-trigonometry/468613c0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4b7bb316",
+      "path": "json/math/medium/geometry-and-trigonometry/4b7bb316.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "5afbdc8e",
+      "path": "json/math/medium/geometry-and-trigonometry/5afbdc8e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6ae1360d",
+      "path": "json/math/medium/geometry-and-trigonometry/6ae1360d.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "96467fea",
+      "path": "json/math/medium/geometry-and-trigonometry/96467fea.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "98c12e38",
+      "path": "json/math/medium/geometry-and-trigonometry/98c12e38.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9c0a0eca",
+      "path": "json/math/medium/geometry-and-trigonometry/9c0a0eca.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a2659088",
+      "path": "json/math/medium/geometry-and-trigonometry/a2659088.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a2e76b60",
+      "path": "json/math/medium/geometry-and-trigonometry/a2e76b60.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a4ed5285",
+      "path": "json/math/medium/geometry-and-trigonometry/a4ed5285.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "ae33e0a1",
+      "path": "json/math/medium/geometry-and-trigonometry/ae33e0a1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "aef4fd8a",
+      "path": "json/math/medium/geometry-and-trigonometry/aef4fd8a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c0586eb5",
+      "path": "json/math/medium/geometry-and-trigonometry/c0586eb5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c4e5e23c",
+      "path": "json/math/medium/geometry-and-trigonometry/c4e5e23c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "cecbdeba",
+      "path": "json/math/medium/geometry-and-trigonometry/cecbdeba.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "cf53cb56",
+      "path": "json/math/medium/geometry-and-trigonometry/cf53cb56.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d621cffb",
+      "path": "json/math/medium/geometry-and-trigonometry/d621cffb.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e0874bc2",
+      "path": "json/math/medium/geometry-and-trigonometry/e0874bc2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e336a1d2",
+      "path": "json/math/medium/geometry-and-trigonometry/e336a1d2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e4b4e9ea",
+      "path": "json/math/medium/geometry-and-trigonometry/e4b4e9ea.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e86f0651",
+      "path": "json/math/medium/geometry-and-trigonometry/e86f0651.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e9c5bfb2",
+      "path": "json/math/medium/geometry-and-trigonometry/e9c5bfb2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ec5d4823",
+      "path": "json/math/medium/geometry-and-trigonometry/ec5d4823.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "f67e4efc",
+      "path": "json/math/medium/geometry-and-trigonometry/f67e4efc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "099526fc",
+      "path": "json/math/hard/geometry-and-trigonometry/099526fc.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "167aff9e",
+      "path": "json/math/hard/geometry-and-trigonometry/167aff9e.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "1be8b6b2",
+      "path": "json/math/hard/geometry-and-trigonometry/1be8b6b2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "306264ab",
+      "path": "json/math/hard/geometry-and-trigonometry/306264ab.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "310c87fe",
+      "path": "json/math/hard/geometry-and-trigonometry/310c87fe.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "459dd6c5",
+      "path": "json/math/hard/geometry-and-trigonometry/459dd6c5.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "502d9690",
+      "path": "json/math/hard/geometry-and-trigonometry/502d9690.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5b2b8866",
+      "path": "json/math/hard/geometry-and-trigonometry/5b2b8866.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "62ec6574",
+      "path": "json/math/hard/geometry-and-trigonometry/62ec6574.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6708546e",
+      "path": "json/math/hard/geometry-and-trigonometry/6708546e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "899c6042",
+      "path": "json/math/hard/geometry-and-trigonometry/899c6042.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "8c1aa743",
+      "path": "json/math/hard/geometry-and-trigonometry/8c1aa743.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "93de3f84",
+      "path": "json/math/hard/geometry-and-trigonometry/93de3f84.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "983412ea",
+      "path": "json/math/hard/geometry-and-trigonometry/983412ea.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "9966235e",
+      "path": "json/math/hard/geometry-and-trigonometry/9966235e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9f934297",
+      "path": "json/math/hard/geometry-and-trigonometry/9f934297.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "9fec9d49",
+      "path": "json/math/hard/geometry-and-trigonometry/9fec9d49.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a07ed090",
+      "path": "json/math/hard/geometry-and-trigonometry/a07ed090.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b0dc920d",
+      "path": "json/math/hard/geometry-and-trigonometry/b0dc920d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b2528e6b",
+      "path": "json/math/hard/geometry-and-trigonometry/b2528e6b.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "ba8ca563",
+      "path": "json/math/hard/geometry-and-trigonometry/ba8ca563.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "c984f1a5",
+      "path": "json/math/hard/geometry-and-trigonometry/c984f1a5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "dc71597b",
+      "path": "json/math/hard/geometry-and-trigonometry/dc71597b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "deff8a2f",
+      "path": "json/math/hard/geometry-and-trigonometry/deff8a2f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e5c57163",
+      "path": "json/math/hard/geometry-and-trigonometry/e5c57163.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "eb70d2d0",
+      "path": "json/math/hard/geometry-and-trigonometry/eb70d2d0.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "f243c383",
+      "path": "json/math/hard/geometry-and-trigonometry/f243c383.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f329442c",
+      "path": "json/math/hard/geometry-and-trigonometry/f329442c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f7e626b2",
+      "path": "json/math/hard/geometry-and-trigonometry/f7e626b2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

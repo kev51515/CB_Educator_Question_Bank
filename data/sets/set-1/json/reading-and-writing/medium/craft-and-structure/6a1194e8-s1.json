@@ -1,0 +1,25 @@
+{
+  "questionId": "6a1194e8-s1",
+  "originalId": "6a1194e8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T8.medium",
+  "stimulus": "<p>Cordelia Naismith, the central figure in Lois McMaster Bujold's 1986 novel <em>Shards of Honor</em>, is a biological survey officer, an occupation that in Bujold's fiction is not <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: nearly a dozen prominent characters across her interconnected novels are biologists, ecologists, or scientific observers tasked with cataloging unfamiliar worlds.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>uncommon</p>"},
+    {"id": "b", "content": "<p>perilous</p>"},
+    {"id": "c", "content": "<p>profitable</p>"},
+    {"id": "d", "content": "<p>indispensable</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. \"Uncommon\" means rare. The colon introduces evidence that biologists and observers populate almost a dozen of Bujold's books, so the occupation is in fact frequent, meaning it is \"not uncommon.\"</p><p>Choice B is incorrect because the abundance of these characters says nothing about whether the work is dangerous. Choice C is incorrect because the text addresses how often the occupation appears, not whether it pays well. Choice D is incorrect because if the occupation were \"not indispensable,\" the evidence would need to show the occupation is unnecessary; instead it shows how prevalent it is.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

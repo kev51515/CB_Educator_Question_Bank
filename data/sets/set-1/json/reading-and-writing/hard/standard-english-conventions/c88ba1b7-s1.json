@@ -1,0 +1,25 @@
+{
+  "questionId": "c88ba1b7-s1",
+  "originalId": "c88ba1b7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>In the early and mid twentieth century, radios were often called wireless sets in reference to the telegraph cables they had replaced. Identified as the Cathedral Era, this chapter in radio design is remembered for its dignified silhouettes and woodworked cabinets, its receivers <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by enthusiasts for their carved arches and warm tonal output.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>greatly admired</p>"},
+    {"id": "b", "content": "<p>are greatly admired</p>"},
+    {"id": "c", "content": "<p>were greatly admired</p>"},
+    {"id": "d", "content": "<p>had been greatly admired</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verb forms in a sentence. The nonfinite past participle phrase \"greatly admired\" is correctly used to form a supplementary element that modifies the main clause \"this&hellip;cabinets,\" describing memorable features of Cathedral Era radio design.</p><p>Choice B is incorrect because it results in a comma splice. Using the finite present tense verb phrase \"are greatly admired\" creates a second main clause in the sentence, and two main clauses can't be joined in this way with only a comma after \"cabinets.\" Choice C is incorrect because it results in a comma splice. Using the finite past tense verb phrase \"were greatly admired\" creates a second main clause in the sentence, and two main clauses can't be joined in this way with only a comma after \"cabinets.\" Choice D is incorrect because it results in a comma splice. Using the finite past perfect tense verb phrase \"had been greatly admired\" creates a second main clause in the sentence, and two main clauses can't be joined in this way with only a comma after \"cabinets.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

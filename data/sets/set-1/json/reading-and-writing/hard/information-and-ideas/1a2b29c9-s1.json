@@ -1,0 +1,39 @@
+{
+  "questionId": "1a2b29c9-s1",
+  "originalId": "1a2b29c9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from an early twentieth-century short story.</p>\n<blockquote>\n<p>Around the harbor of Port Manaca, it is often remarked that Se\u00f1ora Quiroga carries more household griefs in her market basket than any father confessor carries in his book.</p>\n<p>The basket, indeed, is conspicuously deep, woven of reed so dense that not a thread of sun escapes it, and lined with a cloth that no fishwife has ever yet contrived to peek beneath. When the Se\u00f1ora at last lifts the cloth in the kitchen of her own small house, the sorrows of her neighbors do not come rushing out like startled sparrows; they settle quietly among her potatoes and onions, where they will keep until they are forgotten.</p>\n</blockquote>",
+  "stem": "<p>Based on the text, how do the people of Port Manaca most likely regard Se\u00f1ora Quiroga?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They view her as someone who carelessly spreads gossip about her own household.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They consider her market basket unusually ornate compared with others in the harbor.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They feel little anxiety that she will repeat what she has been told in confidence.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They believe her chiefly remarkable for her knowledge of marketing and household goods.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text compares the Se\u00f1ora to a father confessor (who keeps confessions secret) and explicitly says the sorrows of her neighbors \"do not come rushing out like startled sparrows\" but instead \"settle quietly\u2026where they will keep until they are forgotten.\" This indicates that her neighbors trust her to hold their confidences.</p><p>Choice A is incorrect because the text suggests the opposite: she keeps secrets, not spreads them. Choice B is incorrect because the basket's depth and dense weave are described to symbolize her discretion, not for fashionable ornament. Choice D is incorrect because the text never discusses her knowledge of marketing or goods\u2014the basket is a metaphor, not a measure of expertise.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T8.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "58477a6c-s1",
+  "originalId": "58477a6c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>11</mn></math></p>\n<p>The given equation is one equation in a system of two linear equations. If the system of equations has at least one solution, which of the following equations could be the other equation in the system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>8</mn><mi>x</mi><mo>+</mo><mn>10</mn><mi>y</mi><mo>=</mo><mn>24</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>22</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>8</mn><mi>x</mi><mo>+</mo><mn>10</mn><mi>y</mi><mo>=</mo><mn>22</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>12</mn><mi>x</mi><mo>+</mo><mn>15</mn><mi>y</mi><mo>=</mo><mn>30</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. For a linear system to have at least one solution, the second equation must either be equivalent to the first (infinitely many solutions) or have a different slope (one solution). Choice C, 8x + 10y = 22, is exactly twice the given equation (4x + 5y = 11), so it represents the same line \u2014 infinitely many solutions. Choices A, B, and D all have proportional coefficients to the given equation but a non-proportional constant, so they are parallel and distinct \u2014 no solution.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard"
+}

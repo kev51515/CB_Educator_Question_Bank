@@ -1,0 +1,25 @@
+{
+  "questionId": "329255db-s1",
+  "originalId": "329255db",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Cuban-American poet Lourdes Casal's <em>Palabras Juntan Revolución</em> (1981), a collection of bilingual verses meditating on exile and return, ______ readers' appreciation of the complex emotional landscape of Cuban diasporic literature in the late twentieth century.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are deepening</p>"},
+    {"id": "b", "content": "<p>have deepened</p>"},
+    {"id": "c", "content": "<p>has deepened</p>"},
+    {"id": "d", "content": "<p>deepen</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-verb agreement. The singular verb \"has deepened\" agrees in number with the singular subject \"<em>Palabras Juntan Revolución</em>,\" which is the title of a single book of poems.</p><p>Choice A is incorrect because the plural verb \"are deepening\" does not agree in number with the singular subject. Choice B is incorrect because the plural verb \"have deepened\" does not agree in number with the singular subject. Choice D is incorrect because the plural verb \"deepen\" does not agree in number with the singular subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T4.hard"
+}

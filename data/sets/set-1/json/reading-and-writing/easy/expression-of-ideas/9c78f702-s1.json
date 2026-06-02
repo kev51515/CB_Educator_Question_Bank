@@ -1,0 +1,39 @@
+{
+  "questionId": "9c78f702-s1",
+  "originalId": "9c78f702",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Mangrove forests play a vital role in coastal ecosystems' uptake of atmospheric carbon. While growing, these salt-tolerant trees absorb carbon dioxide through photosynthesis and store it in their leaves, trunks, and roots. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when leaves and branches eventually fall into the tidal mud, the carbon they contain gets buried in the waterlogged sediment, where it can remain locked away for thousands of years.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Then,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By contrast,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Then\" logically signals that the event described in this sentence&mdash;the carbon being buried in sediment after leaves fall&mdash;occurs later in a chronological sequence than the event described in the previous sentence (the trees absorbing carbon while growing).</p><p>Choice B is incorrect because \"specifically\" illogically signals that the sentence provides precise details about the previous sentence, but this sentence describes a later step. Choice C is incorrect because \"nevertheless\" illogically signals that the information is true despite the previous claim. Choice D is incorrect because \"by contrast\" illogically signals contrast, when both sentences describe complementary stages of carbon capture.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

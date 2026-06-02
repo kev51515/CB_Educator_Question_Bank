@@ -1,0 +1,39 @@
+{
+  "questionId": "e1d5d5df-s1",
+  "originalId": "e1d5d5df",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>According to horticulturists, an apple tree infested with fire blight may develop wilted, blackened shoots that resemble burned twigs. A <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> apple tree, on the other hand, will produce shoots that are firm and uniformly green from new growth to leaf tip.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>typical</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>productive</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>thriving</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>weakened</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because \"thriving\" means flourishing and free of disease, which is precisely the contrast the text sets up with infested trees. Choice A is incorrect because \"typical\" describes commonness rather than health; the text focuses specifically on disease status, not how usual the tree is. Choice B is incorrect because \"productive\" describes yield, not disease state. Choice D is incorrect because \"weakened\" suggests an unhealthy tree, the opposite of what the contrast requires.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T4.easy"
+}

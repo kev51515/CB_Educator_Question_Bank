@@ -1,0 +1,39 @@
+{
+  "questionId": "5e101c70-s1",
+  "originalId": "5e101c70",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Most vertebrates can replace some kinds of damaged tissue, such as skin. But when an axolotl loses a limb, it grows a new one, complete with bones, muscles, and nerves. Researchers are studying this remarkable ability in part to understand why humans, by comparison, regenerate so poorly, and they're making promising progress. One especially exciting finding is that both humans and axolotls produce a regenerative signaling protein called WNT.</p>\n<p><strong>Text 2</strong></p>\n<p>When Karen Echeverri and her team reported that axolotls, like humans, rely on WNT signaling during tissue repair, it generated enthusiasm in the press. As the team itself cautioned, however, the protein likely operates very differently in humans than it does in axolotls. Echeverri has compared axolotl WNT to a conductor that coordinates a chorus of regenerative genes; the comparable role WNT may or may not play in humans remains entirely uncharacterized.</p>",
+  "stem": "<p>Based on the texts, what would the author of Text 2 most likely say about Text 1's characterization of the discovery involving WNT?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is reasonable given that Echeverri and her team have determined how WNT functions in both humans and axolotls.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is overly optimistic given further observations by Echeverri and her team.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is unexpected given that Echeverri and her team's findings were generally received with skepticism.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is unfairly dismissive given the progress Echeverri and her team have made.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Text 1 calls the WNT finding \"especially exciting\" and describes regenerative research as making \"promising progress.\" Text 2 stresses that Echeverri's own team cautioned that WNT may function very differently in humans and that its human role \"remains entirely uncharacterized.\" The author of Text 2 would therefore see Text 1's framing as overly optimistic in light of those qualifications.</p><p>Choice A is incorrect because Text 2 emphasizes that Echeverri's team has not determined WNT's role in humans. Choice C is incorrect because Text 1 does treat the findings enthusiastically; the author of Text 2 would not call that unexpected on the grounds Text 2 actually offers. Choice D is incorrect because Text 1 isn't dismissive&mdash;it praises the discovery.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ee540927-s1",
+  "originalId": "ee540927",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of the equation x<sup>2</sup> + y<sup>2</sup> &minus; 42y = 0 in the <em>xy</em>-plane is a circle. What is the center of this circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 21)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, &minus;21)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(21, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(&minus;21, 0)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Completing the square on the y-terms: y<sup>2</sup> &minus; 42y = (y &minus; 21)<sup>2</sup> &minus; 441. So the equation becomes x<sup>2</sup> + (y &minus; 21)<sup>2</sup> &minus; 441 = 0, or x<sup>2</sup> + (y &minus; 21)<sup>2</sup> = 441. The center is (0, 21). Choices B, C, and D have sign errors or place the constant in the wrong coordinate.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A2.T4.medium"
+}

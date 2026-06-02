@@ -1,0 +1,22 @@
+{
+  "questionId": "f2f3fa00-s1",
+  "originalId": "f2f3fa00",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>During an 8-second time interval, the average acceleration <i>a</i>, in meters per second squared, of an object with an initial velocity of 20 meters per second is defined by the equation <i>a</i> = (<i>v</i>&#x1d557; &minus; 20)/8, where <i>v</i>&#x1d557; is the final velocity of the object in meters per second. If the equation is rewritten in the form <i>v</i>&#x1d557; = 8<i>a</i> + <i>k</i>, what is the value of the constant <i>k</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "20"
+  ],
+  "rationale": "<p>Multiplying both sides of <i>a</i> = (<i>v</i>&#x1d557; &minus; 20)/8 by 8 yields 8<i>a</i> = <i>v</i>&#x1d557; &minus; 20. Adding 20 to both sides: <i>v</i>&#x1d557; = 8<i>a</i> + 20. So <i>k</i> = 20.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy"
+}

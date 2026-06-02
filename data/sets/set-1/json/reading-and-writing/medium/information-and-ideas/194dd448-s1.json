@@ -1,0 +1,25 @@
+{
+  "questionId": "194dd448-s1",
+  "originalId": "194dd448",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p>“The Lamplighter's Round” is a 1908 short story by Esperanza Ruíz. In the story, the narrator presents Tomás, the village <em><span lang='es'>farolero</span></em>, as a tirelessly attentive worker whose every habit has been shaped by the demands of his evening rounds: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from “The Lamplighter's Round” most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“On feast days he would linger longer in the plaza, pausing to greet the musicians and to tip his cap to the women selling roasted chestnuts beside the fountain.”</p>"},
+    {"id": "b", "content": "<p>“At the first faint smudge of dusk he was already shouldering his ladder; long after the bells of the cathedral had rung midnight he could still be seen, soot-stained and squinting, climbing from one corner lamp to the next, never resting until every wick along his route burned steady and clear.”</p>"},
+    {"id": "c", "content": "<p>“He had learned, over the years, that on rainy nights one must shield the small flame within one's cupped hand or it will sputter out before it has a chance to catch the wick.”</p>"},
+    {"id": "d", "content": "<p>“When the old brass lamps along the avenue had been replaced with newer ones of iron, he had carried the brass ones home and stacked them carefully in a wooden crate beside the door.”</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most effectively illustrates the claim that Tomás is a tirelessly attentive worker whose habits are shaped by his evening rounds. The quotation depicts him beginning his work “at the first faint smudge of dusk” and continuing “long after the bells of the cathedral had rung midnight,” still moving from lamp to lamp until “every wick along his route burned steady and clear”—directly enacting both his tireless dedication and his attention to the demands of the job.</p><p>Choice A is incorrect because it portrays Tomás socializing during feast days, not performing his lamplighting work. Choice C is incorrect because it describes a piece of practical knowledge he has acquired, but does not show him actually working tirelessly on his rounds. Choice D is incorrect because it concerns what he does with retired lamps stored at home, not his commitment to his nightly work.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

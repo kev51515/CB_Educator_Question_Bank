@@ -1,0 +1,22 @@
+{
+  "questionId": "bf749912-s1",
+  "originalId": "bf749912",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>(1/2)(y - 4) - (1/5)(y - 4) = 9</p><p>What value of y is the solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "34"
+  ],
+  "rationale": "<p>Combine like terms by factoring (y - 4): ((1/2) - (1/5))(y - 4) = 9, so (3/10)(y - 4) = 9. Multiply both sides by 10/3: y - 4 = 30. Adding 4: y = 34.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1a61e2ae-s1",
+  "originalId": "1a61e2ae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Italian Baroque painter and Caravaggio contemporary Artemisia Gentileschi's ______ widely celebrated during her lifetime (1593\u20131656) and the years immediately after, had, by the time feminist art historians turned their attention to her in the late twentieth century, been largely overlooked for the intervening 300 years.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>paintings were</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>paintings,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>paintings, were</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>paintings had been</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation and verb forms within a sentence. This choice leaves the verb \"celebrated\" in its nonfinite past-participle form to function within a supplementary element (\"widely...after\"). Offset by commas after \"paintings\" and \"after,\" this supplementary element interrupts the main clause (\"Italian Baroque painter...Artemisia Gentileschi's paintings...had...been largely overlooked...\") with additional information about the paintings' early reception.</p><p>Choice A is incorrect because it fails to offset the supplementary element with appropriate punctuation, and using the finite verb \"were widely celebrated\" produces an ungrammatical sentence. Choice C is incorrect because using the finite verb \"were widely celebrated\" produces an ungrammatical sentence. Choice D is incorrect because it fails to offset the supplementary element with appropriate punctuation, and using the finite verb \"had been widely celebrated\" produces an ungrammatical sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.hard"
+}

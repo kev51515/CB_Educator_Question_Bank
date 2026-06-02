@@ -1,0 +1,25 @@
+{
+  "questionId": "26c8c88c-s1",
+  "originalId": "26c8c88c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.easy",
+  "type": "mcq",
+  "stimulus": "<p>About 20,000 shipwrecks have been catalogued in the Mediterranean Sea. Although most shipwrecks date from the medieval ______ thousand have been identified as being from the Bronze Age or earlier.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>period: several</p>"},
+    {"id": "b", "content": "<p>period. Several</p>"},
+    {"id": "c", "content": "<p>period, several</p>"},
+    {"id": "d", "content": "<p>period; several</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. A comma correctly separates the introductory dependent clause (\"Although...period\") from the independent clause that follows.</p><p>Choice A misuses a colon — \"although...period\" is not an independent clause. Choice B creates a sentence fragment (the \"although\" clause can't stand alone). Choice D misuses a semicolon between a dependent clause and an independent clause.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

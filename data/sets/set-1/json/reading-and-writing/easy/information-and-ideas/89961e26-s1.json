@@ -1,0 +1,39 @@
+{
+  "questionId": "89961e26-s1",
+  "originalId": "89961e26",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Artist Mariana Olvera explained that she wanted to highlight the role of the alebrije, a brightly painted fantastical creature, as a symbol in Oaxacan culture. To do so, she created many sculptures from layered papier-m\u00e2ch\u00e9, a material similar to that used to make traditional alebrijes. In 2019, Olvera completed a life-size alebrije sculpture of a winged jaguar, which was displayed at the Museum of Latin American Art in Long Beach, California. The winged jaguar form is closely associated with the work of master carver Manuel Jim\u00e9nez, who is often credited with popularizing alebrijes in Oaxaca.</p>",
+  "stem": "<p>According to the text, which piece of Olvera's art was on display in the Museum of Latin American Art in 2019?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A painting of an alebrije</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A painting of Oaxaca</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A sculpture of Manuel Jim\u00e9nez</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A sculpture of a winged jaguar</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says Olvera completed a life-size alebrije sculpture of a winged jaguar in 2019, which was displayed at the Museum of Latin American Art.</p><p>Choice A is incorrect; Olvera's piece is a sculpture, not a painting. Choice B is incorrect; the museum is in Long Beach, and the piece does not depict Oaxaca. Choice C is incorrect; Manuel Jim\u00e9nez is mentioned as a carver, not as the subject of Olvera's sculpture.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "1c3d613c-s1",
+  "originalId": "1c3d613c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangle <em>ABC</em> and triangle <em>DEF</em> are such that AB/DE = BC/EF = CA/FD. If the measure of angle <em>BAC</em> is 35&deg;, what is the measure, in degrees, of angle <em>EDF</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "35"
+  ],
+  "rationale": "<p>The correct answer is 35. By the side-side-side (SSS) similarity criterion, having all three pairs of corresponding sides in the same ratio means triangle ABC is similar to triangle DEF. In similar triangles, corresponding angles are congruent. Since angle BAC corresponds to angle EDF, the two angles have equal measure, so m&ang;EDF = m&ang;BAC = 35.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.medium"
+}

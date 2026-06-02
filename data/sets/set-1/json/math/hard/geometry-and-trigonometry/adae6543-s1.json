@@ -1,0 +1,39 @@
+{
+  "questionId": "adae6543-s1",
+  "originalId": "adae6543",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the figure (not drawn to scale), segment LQ intersects segment MP at point R, and segment LM is parallel to segment PQ. The lengths of MR, LR, and RP are 4, 9, and 10, respectively. What is the length of LQ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>63/2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>31/2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>40/9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>45/4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>\u2220MRL and \u2220PRQ are vertical angles and so are congruent. Since LM \u2225 PQ cut by transversal LQ, \u2220MLR \u2245 \u2220QPR (alternate interior angles). Thus \u25b3LRM ~ \u25b3QRP. The similarity gives LR/RQ = MR/RP, i.e., 9/RQ = 4/10, so RQ = 90/4 = 45/2. Then LQ = LR + RQ = 9 + 45/2 = 63/2.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.hard"
+}

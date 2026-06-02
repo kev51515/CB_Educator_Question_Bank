@@ -1,0 +1,39 @@
+{
+  "questionId": "0acfddb5-s1",
+  "originalId": "0acfddb5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle has center P, and points J and K lie on the circle. Line segments JH and KH are tangent to the circle at points J and K, respectively. If the radius of the circle is 20 millimeters and the perimeter of quadrilateral PJHK is 238 millimeters, what is the distance, in millimeters, between points P and H?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>101</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>119</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>99</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. PJ = PK = 20 (radii), and tangents from an external point are equal: JH = KH. So 2(20) + 2(JH) = 238, giving JH = 99. Since PJ &perp; JH, by the Pythagorean theorem, PH = &radic;(20&sup2; + 99&sup2;) = &radic;(400 + 9,801) = &radic;10,201 = 101 millimeters.</p><p>Choice B is JH + 20. Choice C gives JH only. Choice D gives the radius.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A5.T10.hard"
+}

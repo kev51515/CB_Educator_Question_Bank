@@ -1,0 +1,39 @@
+{
+  "questionId": "4fb8a648-s1",
+  "originalId": "4fb8a648",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><i>y</i> = <i>x</i> + 5<br><i>y</i> = <i>x</i>&sup2; + 12<i>x</i> + 35</p><p>A solution to the given system of equations is (<i>x</i>, <i>y</i>). What is the greatest possible value of <i>x</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>35</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Setting the right-hand sides equal: <i>x</i> + 5 = <i>x</i>&sup2; + 12<i>x</i> + 35. Rearranging: <i>x</i>&sup2; + 11<i>x</i> + 30 = 0. Factoring: (<i>x</i> + 5)(<i>x</i> + 6) = 0, so <i>x</i> = &minus;5 or <i>x</i> = &minus;6. The greatest is &minus;5.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard"
+}

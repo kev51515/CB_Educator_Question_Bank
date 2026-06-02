@@ -1,0 +1,25 @@
+{
+  "questionId": "7a1877be-s1",
+  "originalId": "7a1877be",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Table: Amino Acid Concentrations from Tagish Lake Meteorite and Soil Samples in Parts per Billion. Rows: glycine—Tagish sample 1: 12, Tagish sample 2: 0.8, Tagish soil: 14; β-alanine—sample 1: 6, sample 2: 0.3, soil: not detected; α-aminoisobutyric acid (AIB)—sample 1: 4, sample 2: 0.2, soil: not detected; alanine—sample 1: 9, sample 2: 0.5, soil: 11; isovaline—sample 1: 3, sample 2: 0.15, soil: 4.]</p>\n<p>Using high-resolution mass spectrometry, astrochemist Sayuri Tanaka and colleagues analyzed two samples of the Tagish Lake meteorite, which landed in British Columbia, alongside soil collected from the meteorite&rsquo;s recovery site to measure concentrations of various amino acids. By comparing the relative concentrations of amino acids in the meteorite with those in the soil, the team concluded that there is evidence that several of the amino acids in the Tagish Lake meteorite formed in space and are not the result of contamination on Earth.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the team&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Alanine and isovaline were detected in both meteorite samples and in the soil sample.</p>"},
+    {"id": "b", "content": "<p>Glycine and alanine were detected in higher concentrations in the soil sample than in Tagish meteorite sample 2.</p>"},
+    {"id": "c", "content": "<p>β-alanine and isovaline were detected in Tagish meteorite sample 2 and in the soil sample but not in Tagish meteorite sample 1.</p>"},
+    {"id": "d", "content": "<p>β-alanine and α-aminoisobutyric acid were detected in both meteorite samples but not in the soil sample.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The team concluded that several of the meteorite&rsquo;s amino acids were not the result of soil contamination. The presence of β-alanine and α-aminoisobutyric acid (AIB) in both meteorite samples but not in the soil provides direct evidence that those amino acids did not come from terrestrial soil at the recovery site.</p><p>Choice A is incorrect because amino acids found in both the meteorite and the soil are precisely the ones for which terrestrial contamination cannot be ruled out, so they do not justify the conclusion. Choice B is incorrect because the soil exceeding meteorite sample 2 in glycine and alanine is consistent with possible contamination of the meteorite, not against it. Choice C is incorrect because it misreads the table: β-alanine and isovaline are not both absent from sample 1, and β-alanine is not detected in the soil.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

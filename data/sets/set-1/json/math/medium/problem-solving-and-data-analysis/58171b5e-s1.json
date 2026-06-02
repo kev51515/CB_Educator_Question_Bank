@@ -1,0 +1,39 @@
+{
+  "questionId": "58171b5e-s1",
+  "originalId": "58171b5e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each year, the value of an account decreases by 0.62% of its value the previous year. Which of the following functions best models how the value of the account changes over time?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Decreasing exponential</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Increasing exponential</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Decreasing linear</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Increasing linear</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A constant percentage change applied each period produces exponential change. Since the percentage represents a decrease, the model is a decreasing exponential function.</p><p>Choices C and D model constant additive change, not percentage change. Choice B has the wrong direction.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T9.medium"
+}

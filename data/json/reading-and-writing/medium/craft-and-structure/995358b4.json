@@ -1,0 +1,72 @@
+{
+  "questionId": "995358b4",
+  "externalId": "9770f199-af07-4d33-97e9-37366cf8baa7",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:55.069945+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "ea08cc62-ee88-48cd-b573-a00fa951c27a",
+      "content": "<p>reflected</p>"
+    },
+    {
+      "id": "fb6107bb-21e8-4dab-9012-2a19fcc37de1",
+      "content": "<p>hampered</p>"
+    },
+    {
+      "id": "dc230b8f-85e9-4f95-a8a6-04b1bbac01c8",
+      "content": "<p>imitated</p>"
+    },
+    {
+      "id": "e9914696-d752-47d4-9b43-00cc4de71f58",
+      "content": "<p>exploited</p>"
+    }
+  ],
+  "keys": [
+    "fb6107bb-21e8-4dab-9012-2a19fcc37de1"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of a scientific paradox regarding water and life during Earth&rsquo;s early history. In this context, &ldquo;hampered&rdquo; means hindered or impeded. The text discusses a paradox, or a situation that seems to contradict itself, and indicates that one half of the paradox is that the presence of water is necessary to support most biochemical reactions that enable life. The contradictory idea, then, would be a case of the presence of water not supporting such reactions; this context suggests that the other half of the paradox is that when oceans covered most of the planet, the water likely hindered or impeded a biochemical process (the formation of biomolecules) that is important for all living organisms.</p><p>Choice A is incorrect. In this context, &ldquo;reflected&rdquo; would mean showed or gave an indication. The text focuses on a paradox, or a seemingly self-contradictory situation, having to do with the role of water in supporting life; since the first part of the paradox has to do with water usually being essential for enabling life, the second part of the paradox should have to do with water having a negative effect on life, and water being an indication of a biomolecular process important for life wouldn&rsquo;t be a negative thing. Choice C is incorrect. In this context, &ldquo;imitated&rdquo; would mean mimicked or copied, and it isn&rsquo;t clear what it would mean to say that water being present on early Earth&rsquo;s surface somehow copied the creation of biomolecules in living organisms. Choice D is incorrect. In this context, &ldquo;exploited&rdquo; would mean used or took advantage of, and it isn&rsquo;t clear what it would mean to say that the presence of water&mdash;the fact of water being present&mdash;on early Earth&rsquo;s surface somehow took advantage of a biomolecular process occurring in living organisms.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>In a <span data-ssml-say-as=\"date\">2022</span> study, Nicol&aacute;s <span data-ssml-sub-alias=\"M\">M.</span> Morato and colleagues attempted to resolve a long-standing paradox: although water is critical to most reactions that enable life, during the earliest stages of Earth&rsquo;s history&mdash;when most of the planet&rsquo;s surface was covered by oceans&mdash;the presence of water likely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the formation of proteins and other biomolecules that are found in all living organisms.</p>",
+    "keys": [
+      "fb6107bb-21e8-4dab-9012-2a19fcc37de1"
+    ],
+    "answerOptions": [
+      {
+        "id": "ea08cc62-ee88-48cd-b573-a00fa951c27a",
+        "content": "<p>reflected</p>"
+      },
+      {
+        "id": "fb6107bb-21e8-4dab-9012-2a19fcc37de1",
+        "content": "<p>hampered</p>"
+      },
+      {
+        "id": "dc230b8f-85e9-4f95-a8a6-04b1bbac01c8",
+        "content": "<p>imitated</p>"
+      },
+      {
+        "id": "e9914696-d752-47d4-9b43-00cc4de71f58",
+        "content": "<p>exploited</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most logically completes the text&rsquo;s discussion of a scientific paradox regarding water and life during Earth&rsquo;s early history. In this context, &ldquo;hampered&rdquo; means hindered or impeded. The text discusses a paradox, or a situation that seems to contradict itself, and indicates that one half of the paradox is that the presence of water is necessary to support most biochemical reactions that enable life. The contradictory idea, then, would be a case of the presence of water not supporting such reactions; this context suggests that the other half of the paradox is that when oceans covered most of the planet, the water likely hindered or impeded a biochemical process (the formation of biomolecules) that is important for all living organisms.</p><p>Choice A is incorrect. In this context, &ldquo;reflected&rdquo; would mean showed or gave an indication. The text focuses on a paradox, or a seemingly self-contradictory situation, having to do with the role of water in supporting life; since the first part of the paradox has to do with water usually being essential for enabling life, the second part of the paradox should have to do with water having a negative effect on life, and water being an indication of a biomolecular process important for life wouldn&rsquo;t be a negative thing. Choice C is incorrect. In this context, &ldquo;imitated&rdquo; would mean mimicked or copied, and it isn&rsquo;t clear what it would mean to say that water being present on early Earth&rsquo;s surface somehow copied the creation of biomolecules in living organisms. Choice D is incorrect. In this context, &ldquo;exploited&rdquo; would mean used or took advantage of, and it isn&rsquo;t clear what it would mean to say that the presence of water&mdash;the fact of water being present&mdash;on early Earth&rsquo;s surface somehow took advantage of a biomolecular process occurring in living organisms.</p>",
+    "externalid": "9770f199-af07-4d33-97e9-37366cf8baa7",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>In a <span data-ssml-say-as=\"date\">2022</span> study, Nicol&aacute;s <span data-ssml-sub-alias=\"M\">M.</span> Morato and colleagues attempted to resolve a long-standing paradox: although water is critical to most reactions that enable life, during the earliest stages of Earth&rsquo;s history&mdash;when most of the planet&rsquo;s surface was covered by oceans&mdash;the presence of water likely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the formation of proteins and other biomolecules that are found in all living organisms.</p>"
+}

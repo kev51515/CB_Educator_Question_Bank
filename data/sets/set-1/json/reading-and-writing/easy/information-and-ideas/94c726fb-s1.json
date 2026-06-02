@@ -1,0 +1,39 @@
+{
+  "questionId": "94c726fb-s1",
+  "originalId": "94c726fb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Millions of Metric Tons of Iron Ore Mined in 1990 and 2015</caption><thead><tr><th>Country</th><th>1990</th><th>2015</th></tr></thead><tbody><tr><td>Australia</td><td>113</td><td>810</td></tr><tr><td>Brazil</td><td>152</td><td>397</td></tr><tr><td>China</td><td>180</td><td>375</td></tr><tr><td>India</td><td>54</td><td>156</td></tr></tbody></table></figure><p>A geology student is preparing a report on the growth of iron ore mining since 1990. According to the table, India mined ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>54 million metric tons of iron ore in 1990.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>113 million metric tons of iron ore in 1990.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>180 million metric tons of iron ore in 1990.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>397 million metric tons of iron ore in 1990.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the table shows India mined 54 million metric tons of iron ore in 1990.</p><p>Choice B is incorrect: 113 million metric tons was Australia&rsquo;s 1990 total. Choice C is incorrect: 180 million metric tons was China&rsquo;s 1990 total. Choice D is incorrect: 397 million metric tons was Brazil&rsquo;s 2015 total, not 1990.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "06a152cd-s1",
+  "originalId": "06a152cd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>To make a bakery's signature peanut butter cookies, a baker needs 3 ounces of peanut butter for each cookie. How many pounds of peanut butter are needed to make 64 signature peanut butter cookies? (1 pound = 16 ounces)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>192</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The baker needs 64 \u00d7 3 = 192 ounces of peanut butter. Since 1 pound = 16 ounces, that is 192 \u00f7 16 = 12 pounds.</p><p>Choice B is incorrect; it results from multiplying 64 by 3 then dividing by an incorrect conversion factor. Choice C is incorrect; this is half of 64. Choice D is incorrect; this is the number of ounces, not pounds.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium"
+}

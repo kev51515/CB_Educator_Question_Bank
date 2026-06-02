@@ -1,0 +1,22 @@
+{
+  "questionId": "3b4b5b1e-s1",
+  "originalId": "3b4b5b1e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>r</em> and <em>s</em> are parallel and are cut by transversal <em>t</em>. The angle that transversal <em>t</em> makes with line <em>r</em> on one side measures 124&deg;, and the corresponding angle that <em>t</em> makes with line <em>s</em> on the same side of <em>t</em> measures <em>x</em>&deg;. What is the value of <em>x</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "124"
+  ],
+  "rationale": "<p>Because lines <em>r</em> and <em>s</em> are parallel and are cut by transversal <em>t</em>, the corresponding angles formed at the two intersections are equal. The given angle measures 124&deg;, so the corresponding angle <em>x</em>&deg; also measures 124&deg;. Therefore <em>x</em> = 124.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

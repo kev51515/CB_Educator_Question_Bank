@@ -1,0 +1,25 @@
+{
+  "questionId": "f4166aae-s1",
+  "originalId": "f4166aae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>Beyond her own pioneering work on radio-wave propagation, the physicist Mei-Lin Choudhury was a <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> expanding access to graduate physics training for women from rural provinces, organizing a fellowship program in 1962 that placed dozens of students at universities across South and Southeast Asia.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>recipient of</p>"},
+    {"id": "b", "content": "<p>distraction from</p>"},
+    {"id": "c", "content": "<p>champion of</p>"},
+    {"id": "d", "content": "<p>substitute for</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because &ldquo;champion of&rdquo; means active supporter or advocate for. The text says Choudhury organized a fellowship program that placed dozens of women students at universities&mdash;clear evidence that she actively supported expanding their access to graduate training.</p><p>Choice A is incorrect because Choudhury created and ran the program; she was not a &ldquo;recipient of&rdquo; the access being expanded. Choice B is incorrect because organizing the fellowship advanced her aim rather than diverting her from it; it cannot be a &ldquo;distraction from&rdquo; that aim. Choice D is incorrect because &ldquo;substitute for&rdquo; would mean she replaced the goal of expanding access with something else, but the text describes her directly pursuing that goal.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

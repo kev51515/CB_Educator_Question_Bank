@@ -1,0 +1,39 @@
+{
+  "questionId": "93665100-s1",
+  "originalId": "93665100",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Diné filmmaker Sydney Freeland <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> film's tendency to depict Indigenous characters through a lens of tragedy: this refusal is evident in her movie <em>Drunktown's Finest</em>, which follows three young people with complex inner lives and ordinary ambitions rather than archetypal hardships.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>foretells</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>recants</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>proclaims</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>rejects</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Rejects\" most logically completes the text. The colon explains that Freeland refuses to portray Indigenous characters through tragedy, and her film exemplifies that refusal—she rejects the convention.</p><p>Choice A is incorrect. \"Foretells\" means predicts, but Freeland is opposing a tendency, not forecasting it. Choice B is incorrect. \"Recants\" means takes back one's own previous statement; Freeland is not recanting her own position. Choice C is incorrect. \"Proclaims\" means announces; she is opposing the tendency, not announcing it.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "a29e89fc-s1",
+  "originalId": "a29e89fc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The list gives the mass, in kilograms, of <math><mn>5</mn></math> gray wolves.</p><p style=\"text-align:center;\"><math><mn>28</mn></math>; <math><mn>30</mn></math>; <math><mn>29</mn></math>; <math><mn>31</mn></math>; <math><mn>32</mn></math></p><p>What is the mean mass, in kilograms, of these <math><mn>5</mn></math> gray wolves?</p>",
+  "answerOptions": null,
+  "keys": [
+    "30"
+  ],
+  "rationale": "<p>The correct answer is 30. The mean is the sum divided by the number of values: (28 + 30 + 29 + 31 + 32)/5 = 150/5 = 30.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

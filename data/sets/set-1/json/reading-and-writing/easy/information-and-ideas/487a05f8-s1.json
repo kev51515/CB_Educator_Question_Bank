@@ -1,0 +1,39 @@
+{
+  "questionId": "487a05f8-s1",
+  "originalId": "487a05f8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2020 memoir by an author who grew up on a small farm. The narrator is on a long bus ride with her cousins. Diego and Ana are her cousins.</p><blockquote><p>Diego and I traded riddles for hours, trying to stump each other before the bus reached the next stop, and Ana liked to count how many hawks she could see circling the fields. We were used to the short rides into Salinas and the half-day trip up to Stockton, but I had no idea what the overnight ride to Los Angeles would be like.</p></blockquote>",
+  "stem": "<p>According to the text, what did the narrator and Diego do during the bus ride?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They traded riddles.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They sang folk songs.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They sketched the landscape.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They slept the whole way.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the text states directly that the narrator and Diego \"traded riddles for hours.\"</p><p>Choice B is incorrect; the text never mentions singing. Choice C is incorrect; the text says nothing about sketching. Choice D is incorrect; the activities described, trading riddles and counting hawks, make clear that the cousins were not asleep.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

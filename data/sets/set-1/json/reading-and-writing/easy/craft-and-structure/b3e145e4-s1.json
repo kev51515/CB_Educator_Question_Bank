@@ -1,0 +1,39 @@
+{
+  "questionId": "b3e145e4-s1",
+  "originalId": "b3e145e4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In the 1920s, scientists didn't know much about the surface of Venus. <u>Many scientists at the time believed that Venus's surface was lush and tropical.</u> But astronomers Carl Sagan and James Pollack later showed that this idea was wrong. Using radio telescope data and atmospheric measurements, Sagan and Pollack demonstrated that Venus's surface is in fact incredibly hot, with temperatures high enough to melt lead.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It describes the design of Sagan and Pollack's experiment.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It emphasizes a disagreement between Sagan and Pollack.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It identifies a scientific belief that Sagan and Pollack showed to be wrong.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It presents data to support a claim that Sagan and Pollack made.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The first sentence states that scientists in the 1920s knew little about Venus. The underlined sentence states what many of them then believed\u2014that Venus was lush and tropical. The text then explains that Sagan and Pollack proved that belief wrong.</p><p>Choice A is incorrect. The underlined sentence doesn't describe an experiment's design. Choice B is incorrect. The text presents Sagan and Pollack as collaborators, not as disagreeing. Choice D is incorrect. The sentence presents a belief, not data.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

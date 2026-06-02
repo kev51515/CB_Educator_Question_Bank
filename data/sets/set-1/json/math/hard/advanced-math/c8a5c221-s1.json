@@ -1,0 +1,39 @@
+{
+  "questionId": "c8a5c221-s1",
+  "originalId": "c8a5c221",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>(5<i>y</i><sup>4</sup> + 11<i>y</i>&sup3;) &minus; (6<i>y</i>&sup3; + 7<i>y</i>&sup2;) &minus; (4<i>y</i>&sup2; + 2<i>y</i>)</p><p>The given expression can be written in the form 5<i>y</i><sup>4</sup> + 5<i>y</i>&sup3; + <i>a</i><i>y</i>&sup2; &minus; 2<i>y</i>, where <i>a</i> is a constant. What is the value of <i>a</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;11</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Distribute the negatives: 5<i>y</i><sup>4</sup> + 11<i>y</i>&sup3; &minus; 6<i>y</i>&sup3; &minus; 7<i>y</i>&sup2; &minus; 4<i>y</i>&sup2; &minus; 2<i>y</i>. Combine like terms: 5<i>y</i><sup>4</sup> + 5<i>y</i>&sup3; &minus; 11<i>y</i>&sup2; &minus; 2<i>y</i>. Comparing with the target form gives <i>a</i> = &minus;11.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A1.T2.hard"
+}

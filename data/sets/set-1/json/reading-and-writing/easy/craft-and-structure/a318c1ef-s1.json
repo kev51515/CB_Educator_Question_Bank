@@ -1,0 +1,39 @@
+{
+  "questionId": "a318c1ef-s1",
+  "originalId": "a318c1ef",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The Ordovician radiation gets its name from the rapid increase in the variety of marine invertebrates in the fossil record about 485 million years ago, during the Ordovician period. Some scientists argue that this <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> change in the fossil record might be explained by improvements in ocean chemistry that allowed more species to thrive.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>catastrophic</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>sudden</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>elusive</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>imminent</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"sudden\" matches \"rapid increase\" in the same sentence. Choice A is incorrect because catastrophic suggests disaster, not diversification. Choice C is incorrect because the change is documented in the fossil record and not elusive. Choice D is incorrect because imminent refers to something about to happen.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

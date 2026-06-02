@@ -1,0 +1,1447 @@
+{
+  "section": "Math",
+  "domain": "Advanced Math",
+  "skill": "Nonlinear functions",
+  "originals": [
+    {
+      "id": "02c67921",
+      "path": "json/math/easy/advanced-math/02c67921.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "044c1cb7",
+      "path": "json/math/easy/advanced-math/044c1cb7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "04b985e6",
+      "path": "json/math/easy/advanced-math/04b985e6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "07bcecac",
+      "path": "json/math/easy/advanced-math/07bcecac.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "09f58996",
+      "path": "json/math/easy/advanced-math/09f58996.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "0ad5012e",
+      "path": "json/math/easy/advanced-math/0ad5012e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1863e3be",
+      "path": "json/math/easy/advanced-math/1863e3be.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "1ee962ec",
+      "path": "json/math/easy/advanced-math/1ee962ec.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "20722644",
+      "path": "json/math/easy/advanced-math/20722644.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "26f5269a",
+      "path": "json/math/easy/advanced-math/26f5269a.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "2b6c12eb",
+      "path": "json/math/easy/advanced-math/2b6c12eb.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "2cf7f039",
+      "path": "json/math/easy/advanced-math/2cf7f039.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2d394c28",
+      "path": "json/math/easy/advanced-math/2d394c28.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2f4eafcc",
+      "path": "json/math/easy/advanced-math/2f4eafcc.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "2f8a580c",
+      "path": "json/math/easy/advanced-math/2f8a580c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2fec8bf4",
+      "path": "json/math/easy/advanced-math/2fec8bf4.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "369b7bb7",
+      "path": "json/math/easy/advanced-math/369b7bb7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "39652e93",
+      "path": "json/math/easy/advanced-math/39652e93.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3e28a622",
+      "path": "json/math/easy/advanced-math/3e28a622.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3ea87153",
+      "path": "json/math/easy/advanced-math/3ea87153.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4fbffc0a",
+      "path": "json/math/easy/advanced-math/4fbffc0a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "50418728",
+      "path": "json/math/easy/advanced-math/50418728.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "5377d9cf",
+      "path": "json/math/easy/advanced-math/5377d9cf.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5a74f696",
+      "path": "json/math/easy/advanced-math/5a74f696.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5e63b9cf",
+      "path": "json/math/easy/advanced-math/5e63b9cf.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5f07b257",
+      "path": "json/math/easy/advanced-math/5f07b257.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "6abec9a8",
+      "path": "json/math/easy/advanced-math/6abec9a8.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7160cbb3",
+      "path": "json/math/easy/advanced-math/7160cbb3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "72ae8a87",
+      "path": "json/math/easy/advanced-math/72ae8a87.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "75915e3c",
+      "path": "json/math/easy/advanced-math/75915e3c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "782a8a53",
+      "path": "json/math/easy/advanced-math/782a8a53.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "788bfd56",
+      "path": "json/math/easy/advanced-math/788bfd56.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "79ba511a",
+      "path": "json/math/easy/advanced-math/79ba511a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "79e6ec70",
+      "path": "json/math/easy/advanced-math/79e6ec70.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7f2524bf",
+      "path": "json/math/easy/advanced-math/7f2524bf.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7fe7cf26",
+      "path": "json/math/easy/advanced-math/7fe7cf26.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "837e9da7",
+      "path": "json/math/easy/advanced-math/837e9da7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "893c7519",
+      "path": "json/math/easy/advanced-math/893c7519.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "94ff3e2d",
+      "path": "json/math/easy/advanced-math/94ff3e2d.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "9da41c80",
+      "path": "json/math/easy/advanced-math/9da41c80.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ad376f1a",
+      "path": "json/math/easy/advanced-math/ad376f1a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b39d74a0",
+      "path": "json/math/easy/advanced-math/b39d74a0.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b5c43226",
+      "path": "json/math/easy/advanced-math/b5c43226.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "bd4d0e0c",
+      "path": "json/math/easy/advanced-math/bd4d0e0c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c13016f9",
+      "path": "json/math/easy/advanced-math/c13016f9.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "c1eead73",
+      "path": "json/math/easy/advanced-math/c1eead73.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c99d154a",
+      "path": "json/math/easy/advanced-math/c99d154a.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "ca4ee54e",
+      "path": "json/math/easy/advanced-math/ca4ee54e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "cc2601cb",
+      "path": "json/math/easy/advanced-math/cc2601cb.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "cfff8f8e",
+      "path": "json/math/easy/advanced-math/cfff8f8e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d45572cc",
+      "path": "json/math/easy/advanced-math/d45572cc.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "d46da42c",
+      "path": "json/math/easy/advanced-math/d46da42c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d84a514a",
+      "path": "json/math/easy/advanced-math/d84a514a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "de362c2f",
+      "path": "json/math/easy/advanced-math/de362c2f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e166aca6",
+      "path": "json/math/easy/advanced-math/e166aca6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e9aed539",
+      "path": "json/math/easy/advanced-math/e9aed539.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ebe4bde0",
+      "path": "json/math/easy/advanced-math/ebe4bde0.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ee05c84e",
+      "path": "json/math/easy/advanced-math/ee05c84e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f547a8b1",
+      "path": "json/math/easy/advanced-math/f547a8b1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ffdfe1e1",
+      "path": "json/math/easy/advanced-math/ffdfe1e1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "02add2d2",
+      "path": "json/math/medium/advanced-math/02add2d2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0a74365c",
+      "path": "json/math/medium/advanced-math/0a74365c.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "0aaef7aa",
+      "path": "json/math/medium/advanced-math/0aaef7aa.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0af701e7",
+      "path": "json/math/medium/advanced-math/0af701e7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0f9f8ea7",
+      "path": "json/math/medium/advanced-math/0f9f8ea7.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "100030d9",
+      "path": "json/math/medium/advanced-math/100030d9.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "15c364bf",
+      "path": "json/math/medium/advanced-math/15c364bf.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "197bed38",
+      "path": "json/math/medium/advanced-math/197bed38.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1d3c5c95",
+      "path": "json/math/medium/advanced-math/1d3c5c95.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "203774bc",
+      "path": "json/math/medium/advanced-math/203774bc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "252a3b3a",
+      "path": "json/math/medium/advanced-math/252a3b3a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "281a4f3b",
+      "path": "json/math/medium/advanced-math/281a4f3b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "341ba5db",
+      "path": "json/math/medium/advanced-math/341ba5db.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3918e8bc",
+      "path": "json/math/medium/advanced-math/3918e8bc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "39714777",
+      "path": "json/math/medium/advanced-math/39714777.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3c600337",
+      "path": "json/math/medium/advanced-math/3c600337.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4209aefe",
+      "path": "json/math/medium/advanced-math/4209aefe.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "44076c7d",
+      "path": "json/math/medium/advanced-math/44076c7d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "45df91ee",
+      "path": "json/math/medium/advanced-math/45df91ee.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4618501a",
+      "path": "json/math/medium/advanced-math/4618501a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4880eecb",
+      "path": "json/math/medium/advanced-math/4880eecb.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4993b828",
+      "path": "json/math/medium/advanced-math/4993b828.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4d425cef",
+      "path": "json/math/medium/advanced-math/4d425cef.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "50e40f08",
+      "path": "json/math/medium/advanced-math/50e40f08.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "52b1700c",
+      "path": "json/math/medium/advanced-math/52b1700c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "52e589f9",
+      "path": "json/math/medium/advanced-math/52e589f9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5bf0f84a",
+      "path": "json/math/medium/advanced-math/5bf0f84a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5c00c2c1",
+      "path": "json/math/medium/advanced-math/5c00c2c1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6676f055",
+      "path": "json/math/medium/advanced-math/6676f055.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "67f4b449",
+      "path": "json/math/medium/advanced-math/67f4b449.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "68607eca",
+      "path": "json/math/medium/advanced-math/68607eca.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6ecdbcb4",
+      "path": "json/math/medium/advanced-math/6ecdbcb4.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "70ebd3d0",
+      "path": "json/math/medium/advanced-math/70ebd3d0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "735a0a00",
+      "path": "json/math/medium/advanced-math/735a0a00.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "752055d1",
+      "path": "json/math/medium/advanced-math/752055d1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "768b60d2",
+      "path": "json/math/medium/advanced-math/768b60d2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "78d5f91a",
+      "path": "json/math/medium/advanced-math/78d5f91a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7a4475df",
+      "path": "json/math/medium/advanced-math/7a4475df.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7ba694f3",
+      "path": "json/math/medium/advanced-math/7ba694f3.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7d3a84bf",
+      "path": "json/math/medium/advanced-math/7d3a84bf.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7e5a3640",
+      "path": "json/math/medium/advanced-math/7e5a3640.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7f87deff",
+      "path": "json/math/medium/advanced-math/7f87deff.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "90bcaa61",
+      "path": "json/math/medium/advanced-math/90bcaa61.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "926c246b",
+      "path": "json/math/medium/advanced-math/926c246b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "95d1c344",
+      "path": "json/math/medium/advanced-math/95d1c344.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "97158b3a",
+      "path": "json/math/medium/advanced-math/97158b3a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "981aca65",
+      "path": "json/math/medium/advanced-math/981aca65.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "99269e03",
+      "path": "json/math/medium/advanced-math/99269e03.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "99c5e794",
+      "path": "json/math/medium/advanced-math/99c5e794.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9ff88bb5",
+      "path": "json/math/medium/advanced-math/9ff88bb5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a26c29f7",
+      "path": "json/math/medium/advanced-math/a26c29f7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a31417d1",
+      "path": "json/math/medium/advanced-math/a31417d1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "aa95fb33",
+      "path": "json/math/medium/advanced-math/aa95fb33.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ae05d37b",
+      "path": "json/math/medium/advanced-math/ae05d37b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b3b07f0c",
+      "path": "json/math/medium/advanced-math/b3b07f0c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b7cd6ca6",
+      "path": "json/math/medium/advanced-math/b7cd6ca6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "be0c419e",
+      "path": "json/math/medium/advanced-math/be0c419e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "beca03de",
+      "path": "json/math/medium/advanced-math/beca03de.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c048055c",
+      "path": "json/math/medium/advanced-math/c048055c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c19d1fb0",
+      "path": "json/math/medium/advanced-math/c19d1fb0.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "c4259674",
+      "path": "json/math/medium/advanced-math/c4259674.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c4cd5bcc",
+      "path": "json/math/medium/advanced-math/c4cd5bcc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c7a187a7",
+      "path": "json/math/medium/advanced-math/c7a187a7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "cb29c54c",
+      "path": "json/math/medium/advanced-math/cb29c54c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "cbc4c163",
+      "path": "json/math/medium/advanced-math/cbc4c163.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "cc6ccd71",
+      "path": "json/math/medium/advanced-math/cc6ccd71.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d4950429",
+      "path": "json/math/medium/advanced-math/d4950429.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d675744f",
+      "path": "json/math/medium/advanced-math/d675744f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d71f6dbf",
+      "path": "json/math/medium/advanced-math/d71f6dbf.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d8ace155",
+      "path": "json/math/medium/advanced-math/d8ace155.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "db888cd6",
+      "path": "json/math/medium/advanced-math/db888cd6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dba7432e",
+      "path": "json/math/medium/advanced-math/dba7432e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dbe9b217",
+      "path": "json/math/medium/advanced-math/dbe9b217.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "dc77e0dc",
+      "path": "json/math/medium/advanced-math/dc77e0dc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dd3b1e1a",
+      "path": "json/math/medium/advanced-math/dd3b1e1a.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "dd8ac009",
+      "path": "json/math/medium/advanced-math/dd8ac009.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e1391dd6",
+      "path": "json/math/medium/advanced-math/e1391dd6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e1f9000d",
+      "path": "json/math/medium/advanced-math/e1f9000d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e53add44",
+      "path": "json/math/medium/advanced-math/e53add44.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f1c81b3b",
+      "path": "json/math/medium/advanced-math/f1c81b3b.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "f1fa0821",
+      "path": "json/math/medium/advanced-math/f1fa0821.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f28944ff",
+      "path": "json/math/medium/advanced-math/f28944ff.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f423771c",
+      "path": "json/math/medium/advanced-math/f423771c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f44a29a8",
+      "path": "json/math/medium/advanced-math/f44a29a8.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f5e8ccf1",
+      "path": "json/math/medium/advanced-math/f5e8ccf1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f880f910",
+      "path": "json/math/medium/advanced-math/f880f910.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f89af023",
+      "path": "json/math/medium/advanced-math/f89af023.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ff8c5844",
+      "path": "json/math/medium/advanced-math/ff8c5844.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0121a235",
+      "path": "json/math/hard/advanced-math/0121a235.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "01668cd6",
+      "path": "json/math/hard/advanced-math/01668cd6.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "02060533",
+      "path": "json/math/hard/advanced-math/02060533.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "04bbce67",
+      "path": "json/math/hard/advanced-math/04bbce67.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "083ef63a",
+      "path": "json/math/hard/advanced-math/083ef63a.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "08d03fe4",
+      "path": "json/math/hard/advanced-math/08d03fe4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "09d21d79",
+      "path": "json/math/hard/advanced-math/09d21d79.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "0e61101e",
+      "path": "json/math/hard/advanced-math/0e61101e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1073d70c",
+      "path": "json/math/hard/advanced-math/1073d70c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1178f2df",
+      "path": "json/math/hard/advanced-math/1178f2df.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "128c75e2",
+      "path": "json/math/hard/advanced-math/128c75e2.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "161126cf",
+      "path": "json/math/hard/advanced-math/161126cf.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "16aa9758",
+      "path": "json/math/hard/advanced-math/16aa9758.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1853bb35",
+      "path": "json/math/hard/advanced-math/1853bb35.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "18e35375",
+      "path": "json/math/hard/advanced-math/18e35375.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1a722d7d",
+      "path": "json/math/hard/advanced-math/1a722d7d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1f353a9e",
+      "path": "json/math/hard/advanced-math/1f353a9e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1fe10d97",
+      "path": "json/math/hard/advanced-math/1fe10d97.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "263f9937",
+      "path": "json/math/hard/advanced-math/263f9937.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "270cf326",
+      "path": "json/math/hard/advanced-math/270cf326.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "271ffad7",
+      "path": "json/math/hard/advanced-math/271ffad7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2992ac30",
+      "path": "json/math/hard/advanced-math/2992ac30.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2b1a27cd",
+      "path": "json/math/hard/advanced-math/2b1a27cd.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "2c6f214f",
+      "path": "json/math/hard/advanced-math/2c6f214f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2d1614a1",
+      "path": "json/math/hard/advanced-math/2d1614a1.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2f51abc2",
+      "path": "json/math/hard/advanced-math/2f51abc2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "301faf80",
+      "path": "json/math/hard/advanced-math/301faf80.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "358f18bc",
+      "path": "json/math/hard/advanced-math/358f18bc.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "35e05e19",
+      "path": "json/math/hard/advanced-math/35e05e19.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "36b6f8ba",
+      "path": "json/math/hard/advanced-math/36b6f8ba.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "40491607",
+      "path": "json/math/hard/advanced-math/40491607.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "43926bd9",
+      "path": "json/math/hard/advanced-math/43926bd9.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "48f83c34",
+      "path": "json/math/hard/advanced-math/48f83c34.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4a0d0399",
+      "path": "json/math/hard/advanced-math/4a0d0399.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "4d037075",
+      "path": "json/math/hard/advanced-math/4d037075.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4d7064a6",
+      "path": "json/math/hard/advanced-math/4d7064a6.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4dd4efcf",
+      "path": "json/math/hard/advanced-math/4dd4efcf.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "55c5d3c2",
+      "path": "json/math/hard/advanced-math/55c5d3c2.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "58dcc59f",
+      "path": "json/math/hard/advanced-math/58dcc59f.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "59d1f4b5",
+      "path": "json/math/hard/advanced-math/59d1f4b5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "635f54ee",
+      "path": "json/math/hard/advanced-math/635f54ee.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "668f1863",
+      "path": "json/math/hard/advanced-math/668f1863.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "6d9e01a2",
+      "path": "json/math/hard/advanced-math/6d9e01a2.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "6e7ae9fc",
+      "path": "json/math/hard/advanced-math/6e7ae9fc.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "70753f99",
+      "path": "json/math/hard/advanced-math/70753f99.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "70fb357b",
+      "path": "json/math/hard/advanced-math/70fb357b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "781c2f6e",
+      "path": "json/math/hard/advanced-math/781c2f6e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7902bed0",
+      "path": "json/math/hard/advanced-math/7902bed0.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7a6d06bf",
+      "path": "json/math/hard/advanced-math/7a6d06bf.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "7e6ea718",
+      "path": "json/math/hard/advanced-math/7e6ea718.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7eed640d",
+      "path": "json/math/hard/advanced-math/7eed640d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "821e724e",
+      "path": "json/math/hard/advanced-math/821e724e.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "841ef26c",
+      "path": "json/math/hard/advanced-math/841ef26c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8462b105",
+      "path": "json/math/hard/advanced-math/8462b105.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8490cc45",
+      "path": "json/math/hard/advanced-math/8490cc45.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "84dd43f8",
+      "path": "json/math/hard/advanced-math/84dd43f8.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "84e8cc72",
+      "path": "json/math/hard/advanced-math/84e8cc72.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8e1da169",
+      "path": "json/math/hard/advanced-math/8e1da169.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "91e7ea5e",
+      "path": "json/math/hard/advanced-math/91e7ea5e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "92f812bb",
+      "path": "json/math/hard/advanced-math/92f812bb.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "95eeeb5b",
+      "path": "json/math/hard/advanced-math/95eeeb5b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9654add7",
+      "path": "json/math/hard/advanced-math/9654add7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9afe2370",
+      "path": "json/math/hard/advanced-math/9afe2370.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9f2ecade",
+      "path": "json/math/hard/advanced-math/9f2ecade.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "a45ffacb",
+      "path": "json/math/hard/advanced-math/a45ffacb.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "a58232b7",
+      "path": "json/math/hard/advanced-math/a58232b7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a7711fe8",
+      "path": "json/math/hard/advanced-math/a7711fe8.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a8ae0d22",
+      "path": "json/math/hard/advanced-math/a8ae0d22.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a9084ca4",
+      "path": "json/math/hard/advanced-math/a9084ca4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b0543157",
+      "path": "json/math/hard/advanced-math/b0543157.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b73ee6cf",
+      "path": "json/math/hard/advanced-math/b73ee6cf.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b7c74b73",
+      "path": "json/math/hard/advanced-math/b7c74b73.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b8f13a3a",
+      "path": "json/math/hard/advanced-math/b8f13a3a.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "bba18ecb",
+      "path": "json/math/hard/advanced-math/bba18ecb.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c946d5bd",
+      "path": "json/math/hard/advanced-math/c946d5bd.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "cd358b89",
+      "path": "json/math/hard/advanced-math/cd358b89.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ce508fb0",
+      "path": "json/math/hard/advanced-math/ce508fb0.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "ce579859",
+      "path": "json/math/hard/advanced-math/ce579859.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d135f4bf",
+      "path": "json/math/hard/advanced-math/d135f4bf.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "d139cf4b",
+      "path": "json/math/hard/advanced-math/d139cf4b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d41cf4d3",
+      "path": "json/math/hard/advanced-math/d41cf4d3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d8e84431",
+      "path": "json/math/hard/advanced-math/d8e84431.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "dcf63c94",
+      "path": "json/math/hard/advanced-math/dcf63c94.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "de39858a",
+      "path": "json/math/hard/advanced-math/de39858a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "df71424b",
+      "path": "json/math/hard/advanced-math/df71424b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ebed7dc6",
+      "path": "json/math/hard/advanced-math/ebed7dc6.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ee857afb",
+      "path": "json/math/hard/advanced-math/ee857afb.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "ef926848",
+      "path": "json/math/hard/advanced-math/ef926848.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f25a34aa",
+      "path": "json/math/hard/advanced-math/f25a34aa.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "f2d60b99",
+      "path": "json/math/hard/advanced-math/f2d60b99.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f44b4125",
+      "path": "json/math/hard/advanced-math/f44b4125.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f678483b",
+      "path": "json/math/hard/advanced-math/f678483b.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    }
+  ]
+}

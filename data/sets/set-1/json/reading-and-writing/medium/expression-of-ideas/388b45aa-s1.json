@@ -1,0 +1,25 @@
+{
+  "questionId": "388b45aa-s1",
+  "originalId": "388b45aa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A5.T14.medium",
+  "stimulus": "<p>Maintaining the International Prototype of the Kilogram standards is no simple job. Each year, calibration data from national mass-measurement laboratories around the world are gathered and transmitted to the Bureau International des Poids et Mesures (BIPM) in Sèvres, France. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> BIPM physicists carry out the painstaking work of reconciling these slightly varying figures into a single, internationally agreed-upon mass standard.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>By contrast,</p>"},
+    {"id": "c", "content": "<p>Specifically,</p>"},
+    {"id": "d", "content": "<p>There,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"There\" indicates that the work of reconciling the figures into a single mass standard takes place at the Bureau International des Poids et Mesures in Sèvres, France. Because \"there\" indicates a location, it fits the context perfectly.</p><p>Choice A is incorrect. \"For instance\" introduces an example, but this sentence is describing where the reconciliation takes place, not giving an example of the work described in the previous sentence. Choice B is incorrect. \"By contrast\" introduces a disagreement, but this sentence does not disagree with the previous one—they both describe the work involved in maintaining the mass standard. Choice C is incorrect. \"Specifically\" narrows or restates a previous claim, but this sentence does not narrow the previous information; it identifies the place where the next stage of work happens.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

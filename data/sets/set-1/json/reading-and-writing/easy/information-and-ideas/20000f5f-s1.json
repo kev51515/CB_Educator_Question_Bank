@@ -1,0 +1,25 @@
+{
+  "questionId": "20000f5f-s1",
+  "originalId": "20000f5f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Agatha Christie's novels featuring detective Hercule Poirot were published between 1920 and 1975. They have spawned dozens of successful adaptations, including stage plays, films, and recent streaming series. Until 2015, several of the later novels remained protected by copyright in many countries. The right to produce adaptations was largely limited to those who could pay the substantial licensing fees and obtain consent from the rights-holding estate. Some entertainment journalists predict that the number of Poirot adaptations is likely to grow now that the copyright on several titles has ended, since ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>producing adaptations will become more accessible and less costly.</p>"},
+    {"id": "b", "content": "<p>Christie's original novels will become harder to find in print.</p>"},
+    {"id": "c", "content": "<p>readers will become more interested in mystery novels than they were in the 1920s.</p>"},
+    {"id": "d", "content": "<p>the previous rights-holders of Christie's estate will refund fees they collected.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The text says that the previous restrictions made adaptations costly and limited; removing those restrictions logically makes adaptations easier and cheaper to produce.</p><p>Choice B is unsupported: the text never says original novels will become harder to find. Choice C is unsupported: the text doesn't mention reader interest in mystery novels. Choice D is unsupported: the text doesn't suggest past fees would be refunded.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A2.T3.easy"
+}

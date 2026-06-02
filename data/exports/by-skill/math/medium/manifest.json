@@ -1,0 +1,613 @@
+{
+  "generatedAt": "2026-06-01T02:48:30.793Z",
+  "section": "math",
+  "difficulty": "Medium",
+  "axis": "skill",
+  "setCount": 67,
+  "questionCount": 574,
+  "sets": [
+    {
+      "setId": "1",
+      "label": "Nonlinear functions — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-1_questions.html",
+        "keyHtml": "nonlinear-functions-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Nonlinear functions — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-2_questions.html",
+        "keyHtml": "nonlinear-functions-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Nonlinear functions — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-3_questions.html",
+        "keyHtml": "nonlinear-functions-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Nonlinear functions — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-4_questions.html",
+        "keyHtml": "nonlinear-functions-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Nonlinear functions — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-5_questions.html",
+        "keyHtml": "nonlinear-functions-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Nonlinear functions — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-6_questions.html",
+        "keyHtml": "nonlinear-functions-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Nonlinear functions — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-7_questions.html",
+        "keyHtml": "nonlinear-functions-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Nonlinear functions — Set 8",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-8_questions.html",
+        "keyHtml": "nonlinear-functions-set-8_key.html"
+      }
+    },
+    {
+      "setId": "9",
+      "label": "Nonlinear functions — Set 9",
+      "questionCount": 8,
+      "files": {
+        "questionsHtml": "nonlinear-functions-set-9_questions.html",
+        "keyHtml": "nonlinear-functions-set-9_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Nonlinear equations in one variable and systems of equations in two variables — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-1_questions.html",
+        "keyHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Nonlinear equations in one variable and systems of equations in two variables — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-2_questions.html",
+        "keyHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Nonlinear equations in one variable and systems of equations in two variables — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-3_questions.html",
+        "keyHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Nonlinear equations in one variable and systems of equations in two variables — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-4_questions.html",
+        "keyHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Nonlinear equations in one variable and systems of equations in two variables — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-5_questions.html",
+        "keyHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Nonlinear equations in one variable and systems of equations in two variables — Set 6",
+      "questionCount": 6,
+      "files": {
+        "questionsHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-6_questions.html",
+        "keyHtml": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables-set-6_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Equivalent expressions — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "equivalent-expressions-set-1_questions.html",
+        "keyHtml": "equivalent-expressions-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Equivalent expressions — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "equivalent-expressions-set-2_questions.html",
+        "keyHtml": "equivalent-expressions-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Equivalent expressions — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "equivalent-expressions-set-3_questions.html",
+        "keyHtml": "equivalent-expressions-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Equivalent expressions — Set 4",
+      "questionCount": 7,
+      "files": {
+        "questionsHtml": "equivalent-expressions-set-4_questions.html",
+        "keyHtml": "equivalent-expressions-set-4_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Linear equations in two variables — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-equations-in-two-variables-set-1_questions.html",
+        "keyHtml": "linear-equations-in-two-variables-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Linear equations in two variables — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-equations-in-two-variables-set-2_questions.html",
+        "keyHtml": "linear-equations-in-two-variables-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Linear equations in two variables — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-equations-in-two-variables-set-3_questions.html",
+        "keyHtml": "linear-equations-in-two-variables-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Linear equations in two variables — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-equations-in-two-variables-set-4_questions.html",
+        "keyHtml": "linear-equations-in-two-variables-set-4_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Linear equations in one variable — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-equations-in-one-variable-set-1_questions.html",
+        "keyHtml": "linear-equations-in-one-variable-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Linear equations in one variable — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-equations-in-one-variable-set-2_questions.html",
+        "keyHtml": "linear-equations-in-one-variable-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Linear equations in one variable — Set 3",
+      "questionCount": 7,
+      "files": {
+        "questionsHtml": "linear-equations-in-one-variable-set-3_questions.html",
+        "keyHtml": "linear-equations-in-one-variable-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Linear functions — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-functions-set-1_questions.html",
+        "keyHtml": "linear-functions-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Linear functions — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-functions-set-2_questions.html",
+        "keyHtml": "linear-functions-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Linear functions — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-functions-set-3_questions.html",
+        "keyHtml": "linear-functions-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Linear functions — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-functions-set-4_questions.html",
+        "keyHtml": "linear-functions-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Linear functions — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-functions-set-5_questions.html",
+        "keyHtml": "linear-functions-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Linear functions — Set 6",
+      "questionCount": 3,
+      "files": {
+        "questionsHtml": "linear-functions-set-6_questions.html",
+        "keyHtml": "linear-functions-set-6_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Systems of two linear equations in two variables — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "systems-of-two-linear-equations-in-two-variables-set-1_questions.html",
+        "keyHtml": "systems-of-two-linear-equations-in-two-variables-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Systems of two linear equations in two variables — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "systems-of-two-linear-equations-in-two-variables-set-2_questions.html",
+        "keyHtml": "systems-of-two-linear-equations-in-two-variables-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Systems of two linear equations in two variables — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "systems-of-two-linear-equations-in-two-variables-set-3_questions.html",
+        "keyHtml": "systems-of-two-linear-equations-in-two-variables-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Systems of two linear equations in two variables — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "systems-of-two-linear-equations-in-two-variables-set-4_questions.html",
+        "keyHtml": "systems-of-two-linear-equations-in-two-variables-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Systems of two linear equations in two variables — Set 5",
+      "questionCount": 1,
+      "files": {
+        "questionsHtml": "systems-of-two-linear-equations-in-two-variables-set-5_questions.html",
+        "keyHtml": "systems-of-two-linear-equations-in-two-variables-set-5_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Linear inequalities in one or two variables — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-inequalities-in-one-or-two-variables-set-1_questions.html",
+        "keyHtml": "linear-inequalities-in-one-or-two-variables-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Linear inequalities in one or two variables — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "linear-inequalities-in-one-or-two-variables-set-2_questions.html",
+        "keyHtml": "linear-inequalities-in-one-or-two-variables-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Linear inequalities in one or two variables — Set 3",
+      "questionCount": 7,
+      "files": {
+        "questionsHtml": "linear-inequalities-in-one-or-two-variables-set-3_questions.html",
+        "keyHtml": "linear-inequalities-in-one-or-two-variables-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Lines, angles, and triangles — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "lines-angles-and-triangles-set-1_questions.html",
+        "keyHtml": "lines-angles-and-triangles-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Lines, angles, and triangles — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "lines-angles-and-triangles-set-2_questions.html",
+        "keyHtml": "lines-angles-and-triangles-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Lines, angles, and triangles — Set 3",
+      "questionCount": 2,
+      "files": {
+        "questionsHtml": "lines-angles-and-triangles-set-3_questions.html",
+        "keyHtml": "lines-angles-and-triangles-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Area and volume — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "area-and-volume-set-1_questions.html",
+        "keyHtml": "area-and-volume-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Area and volume — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "area-and-volume-set-2_questions.html",
+        "keyHtml": "area-and-volume-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Area and volume — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "area-and-volume-set-3_questions.html",
+        "keyHtml": "area-and-volume-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Area and volume — Set 4",
+      "questionCount": 2,
+      "files": {
+        "questionsHtml": "area-and-volume-set-4_questions.html",
+        "keyHtml": "area-and-volume-set-4_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Circles — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "circles-set-1_questions.html",
+        "keyHtml": "circles-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Circles — Set 2",
+      "questionCount": 5,
+      "files": {
+        "questionsHtml": "circles-set-2_questions.html",
+        "keyHtml": "circles-set-2_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Right triangles and trigonometry — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "right-triangles-and-trigonometry-set-1_questions.html",
+        "keyHtml": "right-triangles-and-trigonometry-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Right triangles and trigonometry — Set 2",
+      "questionCount": 4,
+      "files": {
+        "questionsHtml": "right-triangles-and-trigonometry-set-2_questions.html",
+        "keyHtml": "right-triangles-and-trigonometry-set-2_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Percentages — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "percentages-set-1_questions.html",
+        "keyHtml": "percentages-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Percentages — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "percentages-set-2_questions.html",
+        "keyHtml": "percentages-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Percentages — Set 3",
+      "questionCount": 2,
+      "files": {
+        "questionsHtml": "percentages-set-3_questions.html",
+        "keyHtml": "percentages-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Probability and conditional probability — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "probability-and-conditional-probability-set-1_questions.html",
+        "keyHtml": "probability-and-conditional-probability-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Probability and conditional probability — Set 2",
+      "questionCount": 4,
+      "files": {
+        "questionsHtml": "probability-and-conditional-probability-set-2_questions.html",
+        "keyHtml": "probability-and-conditional-probability-set-2_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Two-variable data: Models and scatterplots — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "two-variable-data-models-and-scatterplots-set-1_questions.html",
+        "keyHtml": "two-variable-data-models-and-scatterplots-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Two-variable data: Models and scatterplots — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "two-variable-data-models-and-scatterplots-set-2_questions.html",
+        "keyHtml": "two-variable-data-models-and-scatterplots-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Two-variable data: Models and scatterplots — Set 3",
+      "questionCount": 3,
+      "files": {
+        "questionsHtml": "two-variable-data-models-and-scatterplots-set-3_questions.html",
+        "keyHtml": "two-variable-data-models-and-scatterplots-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "One-variable data: Distributions and measures of center and spread — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "one-variable-data-distributions-and-measures-of-center-and-spread-set-1_questions.html",
+        "keyHtml": "one-variable-data-distributions-and-measures-of-center-and-spread-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "One-variable data: Distributions and measures of center and spread — Set 2",
+      "questionCount": 9,
+      "files": {
+        "questionsHtml": "one-variable-data-distributions-and-measures-of-center-and-spread-set-2_questions.html",
+        "keyHtml": "one-variable-data-distributions-and-measures-of-center-and-spread-set-2_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Ratios, rates, proportional relationships, and units — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "ratios-rates-proportional-relationships-and-units-set-1_questions.html",
+        "keyHtml": "ratios-rates-proportional-relationships-and-units-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Ratios, rates, proportional relationships, and units — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "ratios-rates-proportional-relationships-and-units-set-2_questions.html",
+        "keyHtml": "ratios-rates-proportional-relationships-and-units-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Ratios, rates, proportional relationships, and units — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "ratios-rates-proportional-relationships-and-units-set-3_questions.html",
+        "keyHtml": "ratios-rates-proportional-relationships-and-units-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Inference from sample statistics and margin of error — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inference-from-sample-statistics-and-margin-of-error-set-1_questions.html",
+        "keyHtml": "inference-from-sample-statistics-and-margin-of-error-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Inference from sample statistics and margin of error — Set 2",
+      "questionCount": 1,
+      "files": {
+        "questionsHtml": "inference-from-sample-statistics-and-margin-of-error-set-2_questions.html",
+        "keyHtml": "inference-from-sample-statistics-and-margin-of-error-set-2_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Evaluating statistical claims: Observational studies and experiments — Set 1",
+      "questionCount": 3,
+      "files": {
+        "questionsHtml": "evaluating-statistical-claims-observational-studies-and-experiments-set-1_questions.html",
+        "keyHtml": "evaluating-statistical-claims-observational-studies-and-experiments-set-1_key.html"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "36661021-s1",
+  "originalId": "36661021",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.easy",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the lengths of the legs are 7 and 5, and the length of the hypotenuse is <em>c</em>. What is the value of <em>c</em>, to the nearest tenth?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6.0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12.0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8.6</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. By the Pythagorean theorem, c squared = 49 + 25 = 74, so c = the square root of 74, which is approximately 8.6.</p><p>Choice A is incorrect: 3.5 is half of 7.</p><p>Choice B is incorrect: 6.0 is the average of the two legs.</p><p>Choice C is incorrect: 12.0 incorrectly adds the legs.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "332e75bf",
+  "externalId": "653bea66-a999-4d76-aa42-cf889190148d",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:47.802577+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "21f9c154-4e28-48bc-b517-8af3d2fdf174",
+      "content": "<p>To that end,</p>"
+    },
+    {
+      "id": "e7ce0d47-a956-48d3-98de-d09d9bb4e0cf",
+      "content": "<p>Ultimately,</p>"
+    },
+    {
+      "id": "da2f4552-e088-45cc-9ea4-4a08137ccea3",
+      "content": "<p>Moreover,</p>"
+    },
+    {
+      "id": "151f56d5-1f4e-4cd0-a1ba-f07b43958b73",
+      "content": "<p>Hence,</p>"
+    }
+  ],
+  "keys": [
+    "e7ce0d47-a956-48d3-98de-d09d9bb4e0cf"
+  ],
+  "rationale": "<p>Choice B is the best answer. &ldquo;Ultimately&rdquo; logically signals that the information in this sentence&mdash;that, for Dillard, nature&rsquo;s mesmerizing intricacy and pitiless harshness are inextricably linked&mdash;is the final conclusion or realization reached after her struggle to reconcile the juxtapositions of the natural world mentioned in the previous sentence.</p><p>Choice A is incorrect because &ldquo;to that end&rdquo; illogically signals that linking nature&rsquo;s intricacy and harshness was Dillard&rsquo;s deliberate goal or purpose in struggling to reconcile nature&rsquo;s juxtapositions. Instead, the sentence presents her final realization after that struggle. Choice C is incorrect because &ldquo;moreover&rdquo; illogically signals that the information in this sentence merely adds to Dillard&rsquo;s struggle to reconcile nature&rsquo;s juxtapositions mentioned in the previous sentence. Instead, the sentence presents her final realization after that struggle. Choice D is incorrect because &ldquo;hence&rdquo; illogically signals that nature&rsquo;s intricacy and harshness being linked is a direct consequence of Dillard&rsquo;s struggle to reconcile the juxtapositions mentioned in the previous sentence. Instead, the sentence presents her final realization after that struggle.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>In Annie Dillard&rsquo;s <em>Pilgrim at Tinker Creek</em>&mdash;where, early on, the author marvels at a single goldfish&rsquo;s delicate fins but later winces when imagining a horde of goldfish laying and eating their own eggs&mdash;Dillard struggles to reconcile the complicated juxtapositions of the natural world. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> nature&rsquo;s mesmerizing intricacy and pitiless harshness prove inextricably linked for Dillard, like &ldquo;two branches of the same creek.&rdquo;</p>",
+    "keys": [
+      "e7ce0d47-a956-48d3-98de-d09d9bb4e0cf"
+    ],
+    "answerOptions": [
+      {
+        "id": "21f9c154-4e28-48bc-b517-8af3d2fdf174",
+        "content": "<p>To that end,</p>"
+      },
+      {
+        "id": "e7ce0d47-a956-48d3-98de-d09d9bb4e0cf",
+        "content": "<p>Ultimately,</p>"
+      },
+      {
+        "id": "da2f4552-e088-45cc-9ea4-4a08137ccea3",
+        "content": "<p>Moreover,</p>"
+      },
+      {
+        "id": "151f56d5-1f4e-4cd0-a1ba-f07b43958b73",
+        "content": "<p>Hence,</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. &ldquo;Ultimately&rdquo; logically signals that the information in this sentence&mdash;that, for Dillard, nature&rsquo;s mesmerizing intricacy and pitiless harshness are inextricably linked&mdash;is the final conclusion or realization reached after her struggle to reconcile the juxtapositions of the natural world mentioned in the previous sentence.</p><p>Choice A is incorrect because &ldquo;to that end&rdquo; illogically signals that linking nature&rsquo;s intricacy and harshness was Dillard&rsquo;s deliberate goal or purpose in struggling to reconcile nature&rsquo;s juxtapositions. Instead, the sentence presents her final realization after that struggle. Choice C is incorrect because &ldquo;moreover&rdquo; illogically signals that the information in this sentence merely adds to Dillard&rsquo;s struggle to reconcile nature&rsquo;s juxtapositions mentioned in the previous sentence. Instead, the sentence presents her final realization after that struggle. Choice D is incorrect because &ldquo;hence&rdquo; illogically signals that nature&rsquo;s intricacy and harshness being linked is a direct consequence of Dillard&rsquo;s struggle to reconcile the juxtapositions mentioned in the previous sentence. Instead, the sentence presents her final realization after that struggle.</p>",
+    "externalid": "653bea66-a999-4d76-aa42-cf889190148d",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>In Annie Dillard&rsquo;s <em>Pilgrim at Tinker Creek</em>&mdash;where, early on, the author marvels at a single goldfish&rsquo;s delicate fins but later winces when imagining a horde of goldfish laying and eating their own eggs&mdash;Dillard struggles to reconcile the complicated juxtapositions of the natural world. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> nature&rsquo;s mesmerizing intricacy and pitiless harshness prove inextricably linked for Dillard, like &ldquo;two branches of the same creek.&rdquo;</p>"
+}

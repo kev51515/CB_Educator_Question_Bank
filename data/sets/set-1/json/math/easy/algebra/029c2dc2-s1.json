@@ -1,0 +1,39 @@
+{
+  "questionId": "029c2dc2-s1",
+  "originalId": "029c2dc2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A coach is designing a fitness circuit worth 90 total points. The circuit will consist of stations worth 1 point and stations worth 4 points. Which equation represents this situation, where <i>x</i> represents the number of 1-point stations and <i>y</i> represents the number of 4-point stations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5<i>xy</i> = 90</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>x</i> + 4<i>y</i> = 90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4<i>x</i> + <i>y</i> = 90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5(<i>x</i> + <i>y</i>) = 90</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Each 1-point station contributes <i>x</i> points and each 4-point station contributes 4<i>y</i> points, for a total of <i>x</i> + 4<i>y</i> = 90 points.</p><p>Choice A is incorrect: it multiplies rather than adds. Choice C is incorrect: it swaps which kind of station is worth 4 points. Choice D is incorrect: it adds the values before multiplying instead of weighting correctly.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "7902bed0-s1",
+  "originalId": "7902bed0",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A toy rocket is launched from ground level. The rocket reaches a maximum height of 256 feet above the ground at 4 seconds and hits the ground at 8 seconds. Which equation represents the height above the ground h, in feet, of the rocket t seconds after it is launched?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>h = &minus;t<sup>2</sup> + 256</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>h = &minus;16(t &minus; 4)<sup>2</sup> + 256</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>h = &minus;16(t &minus; 4)<sup>2</sup> &minus; 256</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>h = &minus;t<sup>2</sup> + 8</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A projectile under gravity has height h(t) = a(t &minus; t<sub>max</sub>)<sup>2</sup> + h<sub>max</sub>. Here t<sub>max</sub> = 4 and h<sub>max</sub> = 256, and the rocket hits the ground at t = 8, giving 0 = a(8 &minus; 4)<sup>2</sup> + 256, so a = &minus;16. The equation is h = &minus;16(t &minus; 4)<sup>2</sup> + 256.</p><p>Choices A and D drop the proper leading coefficient. Choice C uses the wrong sign on the maximum height.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T2.hard"
+}

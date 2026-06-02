@@ -1,0 +1,39 @@
+{
+  "questionId": "709e04de-s1",
+  "originalId": "709e04de",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The value of <em>w</em> is 1.08 times 200. The value of <em>w</em> is what percent greater than 200?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>108</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>208</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8.8</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since <em>w</em> = 1.08 &times; 200 = (1 + 0.08)(200) = 200 + 0.08(200), the value of <em>w</em> exceeds 200 by 0.08(200), which is 8% of 200. Therefore, <em>w</em> is 8% greater than 200. Choice A is incorrect because 108 would be the answer if the question asked what percent of 200 the value of <em>w</em> is (108% of 200), not the percent increase. Choice B is incorrect because 208 reflects a percent corresponding to <em>w</em>=3.08&times;200, not 1.08&times;200. Choice D is incorrect because 8.8% would represent a multiplier of 1.088, not 1.08.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T4.medium"
+}

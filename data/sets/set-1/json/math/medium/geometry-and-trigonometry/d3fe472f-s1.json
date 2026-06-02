@@ -1,0 +1,39 @@
+{
+  "questionId": "d3fe472f-s1",
+  "originalId": "d3fe472f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <math><mi>P</mi><mi>Q</mi><mi>R</mi></math> is similar to triangle <math><mi>S</mi><mi>T</mi><mi>U</mi></math>, where vertices <math><mi>P</mi></math>, <math><mi>Q</mi></math>, <math><mi>R</mi></math> correspond to <math><mi>S</mi></math>, <math><mi>T</mi></math>, <math><mi>U</mi></math>, respectively. The length of each side of triangle <math><mi>S</mi><mi>T</mi><mi>U</mi></math> is <math><mn>5</mn></math> times the length of the corresponding side of triangle <math><mi>P</mi><mi>Q</mi><mi>R</mi></math>. If the length of side <math><mover><mrow><mi>P</mi><mi>Q</mi></mrow><mo>&#175;</mo></mover></math> is <math><mn>6</mn></math>, what is the length of side <math><mover><mrow><mi>S</mi><mi>T</mi></mrow><mo>&#175;</mo></mover></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>11</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>30</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>1.2</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>36</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since corresponding sides of similar triangles are proportional and the scale factor from PQR to STU is 5, the length of ST is 5\u00b76 = 30.</p><p>Choice A adds 5 + 6. Choice C is 6/5. Choice D is 6\u00b76.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.medium"
+}

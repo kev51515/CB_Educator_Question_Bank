@@ -1,0 +1,25 @@
+{
+  "questionId": "860803dd-s1",
+  "originalId": "860803dd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "stimulus": "<p>Biologist Renata Okwuchi and her team have studied two subspecies of the cliff-breeding common swift that nest along the Iberian coast. One subspecies migrates across the Sahara each fall, while the other remains in Europe year-round. The researchers found that, owing to slight differences in feather barbule structure, the wings of migratory common swift males make a faint, distinctive whistling sound during high-speed flight, whereas those of nonmigratory males are nearly silent. Okwuchi and her team hypothesize that, over many generations, the whistle has been refined by sexual selection&mdash;females in the migratory subspecies preferentially mate with males whose feathers produce a higher-pitched whistle&mdash;rather than being a mere by-product of the feather shape.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Okwuchi and her team&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The feathers located on the wings of migratory common swifts have a narrower barbule shape than those of nonmigratory swifts, which allows for more efficient flight.</p>"},
+    {"id": "b", "content": "<p>Common swifts communicate different messages to each other depending on whether their feathers produce high-pitched or low-pitched sounds.</p>"},
+    {"id": "c", "content": "<p>Over several generations, the whistle produced by the feathers of migratory male common swifts has grown progressively higher pitched relative to that of nonmigratory males.</p>"},
+    {"id": "d", "content": "<p>The breeding habits of the migratory and nonmigratory common swifts have remained generally the same over several generations.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it provides the kind of generational evidence the hypothesis requires. If females in the migratory subspecies preferentially mate with higher-pitched-whistle males over time, sexual selection should drive the whistle to become progressively higher pitched in the migratory subspecies relative to the nonmigratory one. A documented generational rise in pitch is precisely this signature.</p><p>Choice A is incorrect because flight efficiency speaks to natural selection on aerodynamics, not to the sexual-selection mechanism the hypothesis invokes. Choice B is incorrect because it concerns communication content rather than mate choice, which is what the hypothesis specifies. Choice D is incorrect because static breeding habits provide no evidence of selection on the whistle pitch over time.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

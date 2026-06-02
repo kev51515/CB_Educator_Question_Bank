@@ -1,0 +1,22 @@
+[
+  {"id": "b940952c-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "fa7a89f1-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "3118ca93-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "213248f7-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "a318c1ef-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "5d48f889-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "constraint_violation", "detail": "Target word 'mingled' is not visible in the passage; the stimulus shows a blank placeholder (______) where the word should be. Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'."},
+  {"id": "bdab32fc-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "cf9a3f34-s1", "templateId": "words-in-context.A1.T2.easy", "verdict": "ok"},
+  {"id": "5fe53347-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "7a327791-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "b11bb2a3-s1", "templateId": "words-in-context.A1.T2.easy", "verdict": "ok"},
+  {"id": "31d0bd9a-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "37219ba2-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "e7b709fc-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "69a6d050-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "84b5125b-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "aa7ae735-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "9d73c9eb-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "aad56f2b-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "5effa190-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"}
+]

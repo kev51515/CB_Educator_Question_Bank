@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "70fb357b-s1",
+  "originalId": "70fb357b",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 1024<sup>3x + 1</sup></p><p>The graph of the given equation in the xy-plane has a y-intercept of (0, s). Which of the following equivalent equations displays the value of s as a constant, a coefficient, or the base?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = (1024<sup>3</sup>)<sup>x + 1</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 3072x + 1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 1024(1024<sup>3</sup>)<sup>x</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 1024<sup>3</sup>(1024)<sup>x</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Using the law of exponents, 1024<sup>3x + 1</sup> = 1024<sup>1</sup> &middot; 1024<sup>3x</sup> = 1024(1024<sup>3</sup>)<sup>x</sup>. The y-intercept is found by setting x = 0, giving y = 1024, which appears as the coefficient in Choice C.</p><p>Choice A factors incorrectly. Choice B treats the exponent linearly. Choice D gives y(0) = 1024<sup>3</sup>, not the actual y-intercept.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T2.hard"
+}

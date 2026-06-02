@@ -1,0 +1,39 @@
+{
+  "questionId": "17f176ec-s1",
+  "originalId": "17f176ec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A concert venue charges $12 for each adult ticket and $7.50 for each youth ticket. For one concert, the venue sold a total of 180 adult and youth tickets and collected a total of $1,830. Which system of equations can be used to determine the number of adult tickets, a, and the number of youth tickets, y, sold for the concert?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a + y = 1,830 and 12a + 7.50y = 180</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12a + 7.50y = 1,830 and a + y = 180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12a + 7.50y = 180 and a + y = 1,830</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7.50a + 12y = 1,830 and a + y = 180</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Tickets: a + y = 180; revenue: 12a + 7.50y = 1,830.</p><p>Choice A swaps totals. Choice C swaps totals. Choice D swaps prices.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

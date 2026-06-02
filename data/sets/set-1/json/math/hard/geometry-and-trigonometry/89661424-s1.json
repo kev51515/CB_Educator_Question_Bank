@@ -1,0 +1,22 @@
+{
+  "questionId": "89661424-s1",
+  "originalId": "89661424",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A circle in the xy-plane has its center at (4, &minus;3) and has a radius of 7. An equation of this circle is x&sup2; + y&sup2; + ax + by + c = 0, where a, b, and c are constants. What is the value of c?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-24"
+  ],
+  "rationale": "<p>The correct answer is &minus;24. Expanding (x &minus; 4)&sup2; + (y + 3)&sup2; = 49 gives x&sup2; &minus; 8x + 16 + y&sup2; + 6y + 9 = 49, or x&sup2; + y&sup2; &minus; 8x + 6y &minus; 24 = 0. Thus c = &minus;24.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T4.hard"
+}

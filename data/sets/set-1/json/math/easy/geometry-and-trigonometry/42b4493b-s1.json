@@ -1,0 +1,39 @@
+{
+  "questionId": "42b4493b-s1",
+  "originalId": "42b4493b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the measure of one of the acute angles is 37\u00b0. What is the measure, in degrees, of the other acute angle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>53</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>37</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>63</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>143</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The two acute angles of a right triangle sum to 90\u00b0. Therefore the other acute angle measures 90 \u2212 37 = 53\u00b0.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.easy"
+}

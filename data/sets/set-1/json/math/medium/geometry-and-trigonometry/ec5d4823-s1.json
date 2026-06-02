@@ -1,0 +1,22 @@
+{
+  "questionId": "ec5d4823-s1",
+  "originalId": "ec5d4823",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>What is the volume, in cubic centimeters, of a right rectangular prism that has a length of 6 centimeters, a width of 7 centimeters, and a height of 8 centimeters?</p>",
+  "answerOptions": null,
+  "keys": [
+    "336"
+  ],
+  "rationale": "<p>The correct answer is 336. The volume of a right rectangular prism is the product of its three dimensions: length &times; width &times; height = 6 &times; 7 &times; 8 = 336 cubic centimeters.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T1.easy"
+}

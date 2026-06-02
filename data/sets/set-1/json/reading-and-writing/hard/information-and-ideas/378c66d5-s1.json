@@ -1,0 +1,39 @@
+{
+  "questionId": "378c66d5-s1",
+  "originalId": "378c66d5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>The composer Aram Tovmasyan grew up in Yerevan, immigrated to France as a young adult, and studied with teachers steeped in both Armenian folk traditions and the European avant-garde. <u>In his 1958 String Quartet No. 3, Tovmasyan fuses these influences into a musical language so personal that it resists any attempt to assign the piece to a single national or stylistic tradition.</u> Composers, he often insisted, should pursue an individual voice even as they draw on the music of the cultures around them.</p>",
+  "stem": "<p>Which quotation from a music critic most directly challenges the underlined claim in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u201cAlthough several Caucasian folk traditions made use of modal scales, the scalar passages running through the slow movement of String Quartet No. 3 point to a specifically Armenian source.\u201d</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\u201cIn String Quartet No. 3, the blending of folk and avant-garde idioms functions as a musical analogue to the work\u2019s subject \u2014 a meditation on a life lived across multiple traditions.\u201d</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u201cMany critics emphasize the Armenian elements in String Quartet No. 3 and other key works by Tovmasyan at the expense of the equally important European avant-garde influences.\u201d</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u201cThough String Quartet No. 3 features clear avant-garde gestures, it is dominated by the modal melodies and rhythmic patterns of Armenian folk music \u2014 features so central that the work belongs squarely within the Armenian folk-derived tradition.\u201d</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. This critic directly challenges the underlined claim by arguing that String Quartet No. 3 is not so personal as to resist classification \u2014 on the contrary, its dominant features place it \u201csquarely within the Armenian folk-derived tradition.\u201d This implies the work can be classified through a single cultural lens, contradicting the claim that it resists such classification.</p><p>Choice A is incorrect because, although it identifies an Armenian element in one section of the work, it does not claim that the entire work can be assigned to a single tradition. Choice B is incorrect because it supports rather than challenges the underlined claim, agreeing that the work blends multiple traditions. Choice C is incorrect because it also supports the claim by arguing that critics should view the work\u2019s influences as equally balanced rather than reducible to one tradition.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "command-of-evidence.A4.T6.hard"
+}

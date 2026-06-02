@@ -1,0 +1,39 @@
+{
+  "questionId": "3a1239d2-s1",
+  "originalId": "3a1239d2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>If an animal can use simple objects in its environment to accomplish a goal (\"the tool-use test\"), it is considered to display cognitive flexibility. In a recent experiment, researchers ______ for evidence of cognitive flexibility in octopuses, marine invertebrates that rely on a remarkably decentralized nervous system, adapted the test for underwater conditions, using clear plastic cylinders sealed with screw-on lids to challenge giant Pacific octopuses and common European octopuses.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>have looked</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>looked</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>were looking</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>looking</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle \"looking\" correctly forms a supplementary element that modifies the subject \"researchers,\" indicating that the researchers who adapted the test were searching for evidence of cognitive flexibility in octopuses.</p><p>Choice A is incorrect because the finite present perfect verb \"have looked\" cannot be used in this way to form a supplementary modifying element. Choice B is incorrect because the finite past tense verb \"looked\" cannot be used in this way to form a supplementary modifying element. Choice C is incorrect because the finite past progressive verb \"were looking\" cannot be used in this way to form a supplementary modifying element.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.hard"
+}

@@ -1,0 +1,2360 @@
+[
+  {
+    "id": "e9c5bfb2-s1",
+    "templateId": "area-and-volume.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A4.T1 (composite/subtractive figures) but stem describes two similar rectangles with linear scale factor and asks for a corresponding side. This is A3.T3 (similar polygons, linear-side ratio). No combine/subtract operation present."
+  },
+  {
+    "id": "08b7a3f5-s1",
+    "templateId": "area-and-volume.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "A2.T2 is cylinder volume/dimension. Clone uses a triangular prism with V=Bh. Stem structure (find base area from V and h via formula given) is correct geometry but wrong type \u2014 belongs under prism volume (A2.T1 family), not cylinder."
+  },
+  {
+    "id": "ec5d4823-s1",
+    "templateId": "area-and-volume.A2.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A2.T1 requires cube-from-edge or reverse (V+base area->dim) or missing-face SA variant. Clone is plain 3-integer V=lwh with small integers \u2014 matches Easy lever, not Medium."
+  },
+  {
+    "id": "6708546e-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional scale, or reverse algebra. Clone gives integer scale factor 3 directly \u2014 this matches Medium lever, not Hard."
+  },
+  {
+    "id": "e5c57163-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt/percentage/fractional/reverse lever. Clone gives integer scale 247 directly and asks forward area ratio \u2014 matches Medium A3.T1 lever, not Hard."
+  },
+  {
+    "id": "983412ea-s1",
+    "templateId": "area-and-volume.A2.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T1 requires two-formula chain (SA<->V), symbolic SA, or SA-from-scratch of non-cube prism. Clone is single inverse application: V=s^2 h, solve for s. Matches Medium tier, not Hard."
+  },
+  {
+    "id": "8c1aa743-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional k, or reverse algebra. Clone gives integer scale factor 5 directly and asks forward area; matches Medium tier."
+  },
+  {
+    "id": "899c6042-s1",
+    "templateId": "area-and-volume.A2.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T3 requires reverse chain (V+base->h->slant via Pythagoras), hemisphere with (1/2), or multi-step approximation. Clone is direct forward V=(1/3)pi r^2 h with small integer r=3, h=33; matches Medium tier."
+  },
+  {
+    "id": "dc71597b-s1",
+    "templateId": "area-and-volume.A2.T2.hard",
+    "verdict": "type_drift",
+    "detail": "Stem describes a right circular cone (V=(1/3)\u03c0r\u00b2h), but template A2.T2 is cylinder (V=\u03c0r\u00b2h). The clone fits A2.T3 (cone/sphere/hemisphere). Math is correct (r=6) under cone formula, but type tag is wrong."
+  },
+  {
+    "id": "f868d438-s1",
+    "templateId": "boundaries.A2.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests subject-verb punctuation (no comma between long subject and main verb 'were highlighted'), not restrictive/nonrestrictive modifier choice required by A2.T5. No modifier-vs-noun distinction at the blank."
+  },
+  {
+    "id": "5bed774c-s1",
+    "templateId": "boundaries.A2.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A1.T1 clause-join (period vs comma vs run-on between two independent clauses: 'Bo Bardi was central figure in Brazilian modernism. As illustrated...Bo Bardi's designs were unmistakably populist'), not A2.T5 nonrestrictive/restrictive modifier punctuation."
+  },
+  {
+    "id": "5aa171de-s1",
+    "templateId": "boundaries.A2.T4.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A1.T3 hard (conjunctive adverb 'however' at clause boundary requiring semicolon+comma combo per hard lever), not A2.T4 appositive/parenthetical set-off."
+  },
+  {
+    "id": "eb95235b-s1",
+    "templateId": "boundaries.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem lacks hard-tier characteristics: second clause ('performers use it...') is not a participial/prepositional phrase resembling a fragment; options do not differ on micro-punctuation/capitalization of the same form. Reads as easy/medium T1."
+  },
+  {
+    "id": "f30a478e-s1",
+    "templateId": "boundaries.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A4.T10 colon-introduces-elaboration (complete clause 'Research...Ocean' followed by noun-phrase elaboration 'enormous reservoirs...'), not A3.T7 unique-title+name appositive. No proper-noun name is being set off."
+  },
+  {
+    "id": "6ea8c23f-s1",
+    "templateId": "boundaries.A4.T8.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'Three or more parallel items in the series'. Clone has only two coordinate elements joined by 'and' (where tremors cluster / how clusters correlate); rationale itself states 'only two such elements (not a series of three or more)'. Not a T8 series."
+  },
+  {
+    "id": "96499989-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Clone tests verb-object boundary (no punctuation between 'will recognize' and its object), not T5 nonrestrictive/restrictive modifier punctuation at a noun-modifier boundary. Rationale itself frames it as verb-object, not modifier."
+  },
+  {
+    "id": "c21df211-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem requires comma before 'such as' supplementary phrase, not paired punctuation around an appositive. T4 requires matched paired marks; only one edge needed here. Closer fit is A2 generic comma usage, not T4 appositive-pair."
+  },
+  {
+    "id": "a2293b3f-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests subject-verb non-separation (no modifier present). T5 requires restrictive/nonrestrictive modifier punctuation; this stem has no modifier element."
+  },
+  {
+    "id": "b35cefb7-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Tests comma after introductory subordinate clause (A1.T3 territory), not setting off an appositive/parenthetical with paired marks per T4."
+  },
+  {
+    "id": "b1e8b87f-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests verb-object non-separation; no modifier present. T5 requires restrictive vs nonrestrictive modifier decision."
+  },
+  {
+    "id": "b5ff8f8e-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests preposition-complement non-separation, not restrictive/nonrestrictive modifier punctuation."
+  },
+  {
+    "id": "eb03096e-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests preposition-complement non-separation; no modifier element to evaluate restrictive vs nonrestrictive."
+  },
+  {
+    "id": "60713427-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests paired-comma enclosure of supplementary phrase 'among other functions' (A2.T4 appositive/parenthetical), not restrictive vs nonrestrictive modifier choice."
+  },
+  {
+    "id": "831b55ec-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests verb-object non-separation, not restrictive/nonrestrictive modifier punctuation."
+  },
+  {
+    "id": "89ab0d46-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests preposition-complement non-separation; no modifier to evaluate."
+  },
+  {
+    "id": "f2eaaf5d-s1",
+    "templateId": "boundaries.A3.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Tests paired-dash appositive (A2.T4); 'Ecuador' followed by 'a country in South America' is general appositive, not unique-title+name pattern of T7."
+  },
+  {
+    "id": "dddfa043-s1",
+    "templateId": "boundaries.A3.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Stem tests comma after introductory prepositional phrase, not A3.T7's unique-descriptor + name nonrestrictive appositive pattern. Answer (Ocean, the) is correct but the pattern doesn't match T7's core_skill_demand."
+  },
+  {
+    "id": "9091458d-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T4 (set off appositive/parenthetical) but stem tests A5.T11 direct-question word order ('How ______' with inverted vs declarative + ?/. options). Answer correct."
+  },
+  {
+    "id": "91fbd59d-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem tests intro subordinate clause + main clause boundary (A1.T3 pattern), not setting off an appositive/parenthetical within a clause. The '(1967)' is internal to the intro clause; the keyed comma marks the intro/main boundary."
+  },
+  {
+    "id": "de55ec71-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "No restrictive/nonrestrictive modifier is at issue; the blank tests subject-verb punctuation ('authors [blank] have drawn'). Answer (no punctuation) is correct but the type is not A2.T5."
+  },
+  {
+    "id": "6fdddabf-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Blank tests verb-complement punctuation ('is named [blank] the chloroplast'), not a restrictive vs nonrestrictive modifier choice. Answer is correct but type is mis-tagged."
+  },
+  {
+    "id": "60dd03bc-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Blank tests preposition-complement punctuation ('known for [blank] some of the clearest waters'), not a modifier restrictive/nonrestrictive contrast. Answer correct but type mis-tagged."
+  },
+  {
+    "id": "64a40675-s1",
+    "templateId": "boundaries.A1.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Keyed answer C yields 'played with an volume and improvisation'\u2014'an volume' is ungrammatical (should be 'a volume'). The stem's article mismatches the following consonant-initial noun, so no option produces a grammatical sentence. Rationale repeats the 'an volume' error."
+  },
+  {
+    "id": "a12a83ce-s1",
+    "templateId": "central-ideas-and-details.A3.T8.hard",
+    "verdict": "type_drift",
+    "detail": "Stem 'which point does Nora most directly make about herself' is T7-style (what point/question the text makes about a referent), not T8 character-trait inference. Answer B is correct and defensible, but the type tag should be T7."
+  },
+  {
+    "id": "d1b8a9ad-s1",
+    "templateId": "central-ideas-and-details.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem 'most strongly suggest about the reggaeton genre' targets the whole-passage thesis (genre underestimated despite substantive engagement). Correct answer B paraphrases the passage's overall claim, fitting A1 main-idea synthesis rather than A3 single-detail inference. Answer is correct."
+  },
+  {
+    "id": "dcca0dfc-s1",
+    "templateId": "central-ideas-and-details.A3.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T8.hard requires 'pre-twentieth-century prose with elaborate syntax and elevated diction.' Mantel's 2009 Wolf Hall is modern prose; the syntactic friction defining T8.hard is absent. Inference is otherwise plausible and answer B is correct."
+  },
+  {
+    "id": "7f0be746-s1",
+    "templateId": "central-ideas-and-details.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T2 requires pre-twentieth-century literary prose or poem with figurative language and inverted syntax; this Ishiguro 2005 excerpt is modern prose with straightforward syntax, missing the diction/syntactic friction that defines T2 Hard."
+  },
+  {
+    "id": "7c9a65bb-s1",
+    "templateId": "central-ideas-and-details.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "Answer C ('permits scanning without subjecting surfaces to as much wear from contact') is essentially a paraphrase of the explicit sentence stating the coating absorbs wear rather than the sample. The item functions as A2 factual lookup rather than a one-step inference; no qualifier-discrimination characteristic of T6 Hard is present."
+  },
+  {
+    "id": "2df56712-s1",
+    "templateId": "central-ideas-and-details.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 must_preserve requires an 'although/however/long thought\u2026 but' pivot in the stimulus that the correct option mirrors. This stimulus presents sequential facts leading to a conclusion without a corrective/contrastive pivot, and the correct option B is a straight summary rather than mirroring a pivot."
+  },
+  {
+    "id": "db2da2bf-s1",
+    "templateId": "central-ideas-and-details.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "The elongated asteroid's direction (same as majority) and shape (elongated) are explicitly stated in the final sentence; answer B is direct factual lookup, not a one-step inference. Functions as A2.T4, not A3.T6, and lacks Hard T6's hedged/qualifier-discrimination feature."
+  },
+  {
+    "id": "23ecf625-s1",
+    "templateId": "central-ideas-and-details.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard variant requires an 'although/however/long thought... but' corrective pivot the correct answer mirrors. Clone lacks this pivot; stimulus is a straightforward claim + example with no counterintuitive turn, collapsing toward Easy/Medium difficulty."
+  },
+  {
+    "id": "8e7689e0-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "difficulty_drift",
+    "detail": "540\u00b0 is one of the 'easy' lever angles (integer multiple of 180\u00b0); medium lever requires unusual numerator/denominator like 9\u03c0/20. Answer (b=3) is correct."
+  },
+  {
+    "id": "95ba2d09-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks sum of central angles around a point (360\u00b0 \u2212 70 \u2212 85 \u2212 110 = 95). This is not a degree-radian conversion or combined-angle conversion (T9 core demand). Answer is correct (95\u00b0)."
+  },
+  {
+    "id": "b96ff36e-s1",
+    "templateId": "circles.A1.T3.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks for the y-coordinate of the center\u2014a direct read from standard form (T1). T3 requires substitute/inequality reasoning to test whether a point lies on/inside the circle. Answer (8) is correct."
+  },
+  {
+    "id": "2d521ca9-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "difficulty_drift",
+    "detail": "45\u00b0 is explicitly an 'easy' lever angle (in {30,45,60,90,180,360}); medium lever requires unusual numerator/denominator. Answer (\u03c0/4) is correct."
+  },
+  {
+    "id": "0815a5af-s1",
+    "templateId": "circles.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks for sector AREA (100\u03c0/4 = 25\u03c0), not arc length or arc-fraction of circumference. T7 core demand is the arc/circumference = \u03b8/360 proportion. Answer (25\u03c0) is correct."
+  },
+  {
+    "id": "24cec8d1-s1",
+    "templateId": "circles.A5.T12.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires perimeter-to-chord problem or distractor with apex value; clone is a straightforward apex\u2192base-angle computation matching medium lever."
+  },
+  {
+    "id": "1efd7ef3-s1",
+    "templateId": "circles.A4.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever specifies tangent (sign matters) or indirect angle via point coordinates; clone uses sine of integer-\u03c0/2 multiple, fitting the medium lever."
+  },
+  {
+    "id": "3e577e4a-s1",
+    "templateId": "circles.A5.T11.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires identifying a point on the tangent line or careful negative-sign handling; clone is a straightforward slope-then-negative-reciprocal task matching the medium lever."
+  },
+  {
+    "id": "fa2771d5-s1",
+    "templateId": "circles.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 requires radius scaling, coefficient-hidden form, or numeric-extract. Clone is a pure small-integer translation (down 5), satisfying only easy/medium levers."
+  },
+  {
+    "id": "2266984b-s1",
+    "templateId": "circles.A2.T4.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T4 requires leading coef \u22601, odd linear coef (fractions), or embedded constant. Clone has leading coef 1, even linear coefficients (6, -10), and asks center directly \u2014 matches medium lever."
+  },
+  {
+    "id": "ab176ad6-s1",
+    "templateId": "circles.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 requires non-perfect-square r\u00b2 (sqrt simplification), diameter (extra step), or symbolic parameter. Clone has r\u00b2=169 (perfect square) and asks radius directly \u2014 matches medium lever exactly."
+  },
+  {
+    "id": "0d7f4966-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "type_drift",
+    "detail": "Stem asks which finding would 'most directly weaken' the claim, which matches A4.T6 (Finding-weakens-or-challenges-claim), not A4.T5 (support). Keyed answer C correctly weakens, so item itself is sound but templateId tags the wrong type."
+  },
+  {
+    "id": "040583a5-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "type_drift",
+    "detail": "Stem and stimulus use the T8 pattern (stimulus ends in '______' and stem asks 'Which choice... completes the student's conclusion'). T9 requires the explicit stem form 'Which choice best describes data... that support [conclusion]?' with no blank. Answer B is data-correct, but the type tag should be T8."
+  },
+  {
+    "id": "3430be35-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "type_drift",
+    "detail": "Stimulus ends in '______' and stem says 'Which choice most effectively uses data... to complete the text?' \u2014 this is the T8 sentence-completion structure, not T9 ('Which choice best describes data... that support [conclusion]?'). Answer B is data-correct, but the type tag should be T8."
+  },
+  {
+    "id": "0198240a-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation or 'fill the missing causal link' move; here the stimulus lacks any alternative and the keyed finding (D) is essentially a direct restatement of the hypothesized properties (resist compression + high heat conduction), violating the common-bug 'correct finding that merely restates the hypothesis' and the hard lever 'rules out a specific named alternative or supplies the precise missing link'."
+  },
+  {
+    "id": "02848335-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T9 requires multi-sub-claim conclusion and multi-row pattern with \u22654 rows \u00d7 \u22653 columns, plus distractors that accurately describe data but support a different conclusion. This clone uses only a 2\u00d73 table with a single-claim conclusion ('pyrolysis more robust') resolved by one worst-case-vs-best-case comparison; closer to Medium-level."
+  },
+  {
+    "id": "c83e0b43-s1",
+    "templateId": "command-of-evidence.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A1.T1 requires abstract multi-clause descriptors and inference from archaic/formal diction with multiple superficially relevant distractors. This clone has a single-axis trait ('draws steady comfort from intimate knowledge of the natural world'), and Choice C explicitly paraphrases it ('content among things she knew so well'). Distractors A, B, D are clearly off-topic (bad news, unfamiliarity, hurrying away). Reads as Easy/Medium."
+  },
+  {
+    "id": "39e440e4-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation and highly plausible distractors that support a rival hypothesis or the wrong specific link. The stimulus mentions the prior 'small fishing villages' view but the distractors (B small dwellings, C inland footpaths, D scattered garden plots) are obvious anti-urbanism scenarios that don't competitively support a rival; correct answer is a direct match to 'monumental planned urbanism'. Closer to Easy/Medium."
+  },
+  {
+    "id": "e37f79a7-s1",
+    "templateId": "command-of-evidence.A5.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged as T7 (direct-data-readout, expects 'According to the table, what is X?' question). Clone's stimulus ends with blank '______' and stem asks 'Which choice most effectively uses data from the table to complete the statement?'\u2014this is T8 (data-completes-sentence-with-value) structure, not T7."
+  },
+  {
+    "id": "96f3accc-s1",
+    "templateId": "cross-text-connections.A4.T6.hard",
+    "verdict": "type_drift",
+    "detail": "Stem 'author of Text 2 would most likely agree with which statement about the description in Text 1' is a one-sided A1-style predicted-response, not T6 joint inference. T6 requires 'if both authors were aware of both findings' framing and a synthesis combining specific data from each text. Clone reads as A1.T1 (respond to overall description)."
+  },
+  {
+    "id": "35e21b06-s1",
+    "templateId": "cross-text-connections.A1.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "Type T2 must_preserve requires 'Explicit reference in the stem to an underlined portion, named claim, or specific quoted excerpt in Text A'. Stimulus contains no underlined/marked portion, and the stem refers to 'the researchers' perspective in Text 1 on the behavior of the dolphins without loggers' (a general perspective, not an underlined excerpt). This is T1 structure, not T2."
+  },
+  {
+    "id": "f3c45b4f-s1",
+    "templateId": "cross-text-connections.A1.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "templateId tags T1 (respond to entire argument; no underlined portion) but stimulus contains a <span>-marked target and stem says 'respond to the underlined portion in Text 1'. Structure matches T2 (respond to underlined/specific claim), not T1. Note: span styling is used instead of <u> but functions as an underlined target."
+  },
+  {
+    "id": "e4e2aeb3-s1",
+    "templateId": "cross-text-connections.A1.T3.hard",
+    "verdict": "type_drift",
+    "detail": "T3 requires stem verb 'characterize/regard/describe/say about' and answer options opening with an evaluative adjective/label ('As questionable...', 'As illogical...'). Clone uses stem 'how would Mendoza most likely respond to the underlined claim' and options begin with action gerunds ('By insisting', 'By acknowledging', 'By cautioning', 'By proposing'). This is T2 structure (respond to underlined claim). Additionally, no underline markup is present in the stimulus, violating T2 must_preserve as well."
+  },
+  {
+    "id": "9645f55e-s1",
+    "templateId": "cross-text-connections.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem uses 'how would the author of Text 2 most likely regard the perspective of...' and answer options open with evaluative labels ('As shortsighted', 'As mistaken', 'As inconsistent', 'As unrealistic') followed by 'because' clauses. This is the T3 (characterize claim with evaluative label) structure, not T1 (respond to entire argument)."
+  },
+  {
+    "id": "835d1ae6-s1",
+    "templateId": "cross-text-connections.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem explicitly references 'the interpretation presented in the underlined portion of Text 1' and Text 1 contains an underlined sentence. This is T2 (respond to underlined/specific claim), not T1 (respond to entire argument with no underlined portion). T1 must_preserve requires 'no underlined portion'."
+  },
+  {
+    "id": "159ef46d-s1",
+    "templateId": "cross-text-connections.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Stem verb is 'regard' and answer options open with evaluative labels ('As surprising', 'As unfair', 'As problematic', 'As predictable') followed by 'because' clauses. This is the T3 (characterize with evaluative label) structure, not T2. T3 stem-verb marker (characterize/regard/describe) is explicit in template."
+  },
+  {
+    "id": "0b3d25c5-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "Stem is a difference-of-squares factoring/cancellation, not an exponent/radical-rule application. Better fits A2.T5 or A3.T8. Answer x^5-5 is correct."
+  },
+  {
+    "id": "a520ba07-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Single radical-to-power conversion with perfect exponents (cbrt(p^3 q^6)=pq^2) is an easy-lever item; medium requires multi-step rule chain or rational-exponent <-> radical with non-trivial indices. Answer pq^2 is correct."
+  },
+  {
+    "id": "26e83bbc-s1",
+    "templateId": "equivalent-expressions.A1.T10.medium",
+    "verdict": "aspect_drift",
+    "detail": "Deliverable is a numeric value of an unknown constant c via coefficient matching; per template skill_wide_notes this belongs to A4.T9, not A1.T10 substitute-and-simplify. Answer c=1 is correct."
+  },
+  {
+    "id": "42f19012-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "Item asks to identify b^(7/15) rewritten by multiplying numerator and denominator of the exponent by 15; no actual exponent/radical rule is exercised (just multiplying the fraction by 1). Stem is trivial and doesn't match T7 medium characteristics. Answer (b) is mathematically equivalent but the cognitive demand is mismatched."
+  },
+  {
+    "id": "c3a72da5-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T2 lever requires subtraction (distribute negative across second polynomial); this clone is pure addition of two polynomials with small integer coefficients, matching the easy lever. Answer 11w^5+7w^2 is correct."
+  },
+  {
+    "id": "1dd13816-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "Deliverable is a numeric value of unknown constant c via matching to cy^4-11; per template skill_wide_notes this belongs to A4.T9 (16de54c7 example in T9), not A1.T2 simple add/subtract. Answer c=10 is correct."
+  },
+  {
+    "id": "24016dee-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem '9z^5 + 4 - 2z^5 - 3' is combining like terms (T1), not adding/subtracting two parenthesized polynomials. Violates T2 must_preserve: 'parenthesised polynomial structure with explicit + or - between them'. Should be T1."
+  },
+  {
+    "id": "3e9cc0c2-s1",
+    "templateId": "equivalent-expressions.A1.T3.medium",
+    "verdict": "rationale_inconsistent",
+    "detail": "Rationale's derivation correctly yields 1 - q^5 (which is choice d, the keyed answer), but the concluding sentence states 'Choice (c) is correct' \u2014 choice c is 1 + q^4. Label mismatch in rationale text."
+  },
+  {
+    "id": "42c71eb5-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem '5(x-2) + 3(2x-4)' tests A1 distribute-and-combine, not A3 exponent/radical rules. No exponent or radical operation appears. Should be A1.T3 or A1.T2."
+  },
+  {
+    "id": "a391ed22-s1",
+    "templateId": "equivalent-expressions.A2.T6.medium",
+    "verdict": "aspect_drift",
+    "detail": "Deliverable is a numeric constant b (an unknown in target form ax^2+bx+c). Per skill-wide notes, when answer is a named constant the item belongs to A4. T6 medium characteristic explicitly says 'answer is the full expanded form'. Should be A4.T9."
+  },
+  {
+    "id": "2c88af4d-s1",
+    "templateId": "equivalent-expressions.A3.T7.hard",
+    "verdict": "wrong_answer",
+    "detail": "Expression simplifies to y^(5/3)/x^(7/2). Choice B = y\u00b7\u221b(y\u00b2)/(x\u00b3\u00b7\u221ax) = y^(5/3)/x^(7/2). Choice A = \u221b(y\u2075)/\u221a(x\u2077) = y^(5/3)/x^(7/2). Both A and B are mathematically equivalent to the original expression. Rationale claims A is 'not equivalent' which is false. Two correct answer choices."
+  },
+  {
+    "id": "ad038c19-s1",
+    "templateId": "equivalent-expressions.A1.T3.hard",
+    "verdict": "type_drift",
+    "detail": "T3 requires 'single outside factor times a parenthesised polynomial' (must_preserve). Clone is (p-q/3)\u00b2 which is squaring a binomial \u2014 polynomial-times-polynomial, fitting T6 (multiply binomials), not T3 (distribute single factor). Answer B is mathematically correct, but stem structure violates T3 must_preserve."
+  },
+  {
+    "id": "22fd3e1f-s1",
+    "templateId": "equivalent-expressions.A3.T7.hard",
+    "verdict": "type_drift",
+    "detail": "Clone tests rational expression simplification via polynomial factoring and cancellation, which is T8 (rational expression simplification). T7 must_preserve requires 'exponent or radical structure as the core operation'; clone has no exponent/radical rules \u2014 it's straight factor-and-cancel. Answer A is mathematically correct."
+  },
+  {
+    "id": "911c415b-s1",
+    "templateId": "equivalent-expressions.A2.T6.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is distribute-and-combine to match at^2+b (no binomial-by-binomial multiplication). T6 requires multi-factor polynomial product; this fits A4.T9 (find a+b) with A1.T3 rewrite. Answer 3980 is correct."
+  },
+  {
+    "id": "5d93c782-s1",
+    "templateId": "equivalent-expressions.A2.T5.easy",
+    "verdict": "wrong_answer",
+    "detail": "x^2+2x-35 factors as (x+7)(x-5) which is choice B, not keyed choice C ((x-7)(x+5)=x^2-2x-35). Rationale correctly derives (x+7)(x-5) but the answer key points to wrong choice."
+  },
+  {
+    "id": "974d33dc-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T2 requires subtraction with sign distribution; clone is pure addition (4x+3y)+(2x+5y) with small integers, matching easy lever, not medium."
+  },
+  {
+    "id": "fb96a5b3-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "2(x+1)+x = 2x+2+x = 3x+2 (choice C). Keyed answer D (3x+1) is incorrect; rationale itself states 3x+2 contradicting the key."
+  },
+  {
+    "id": "e312081b-s1",
+    "templateId": "equivalent-expressions.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "(3x+2)+(4x+6)=7x+8 (choice B). Keyed C (7x+2) is wrong; rationale derives 7x+8 contradicting the key."
+  },
+  {
+    "id": "0354c7de-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks to factor 7y+21 into 7(y+3); this is GCF factoring (A2.T4), not distribution (A1.T3)."
+  },
+  {
+    "id": "294db8ec-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks to factor 6n+14 into 2(3n+7); this is GCF factoring (A2.T4), not distribution (A1.T3)."
+  },
+  {
+    "id": "df0ef054-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem (x+3)(x+4) is binomial multiplication (A2.T6 medium), not single-factor distribution; T6 also does not appear at easy."
+  },
+  {
+    "id": "70482e20-s1",
+    "templateId": "equivalent-expressions.A1.T1.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "Stem 14z^3-6z^3=8z^3 (option c). Rationale correctly states 8z^3, but key is 'd' (20z^3). Key/rationale mismatch."
+  },
+  {
+    "id": "beb86a0c-s1",
+    "templateId": "equivalent-expressions.A2.T4.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "6x^2+11x = x(6x+11) = option b. Rationale correctly states x(6x+11), but key is 'c' (17x^3). Key/rationale mismatch."
+  },
+  {
+    "id": "fd4b2aa0-s1",
+    "templateId": "equivalent-expressions.A1.T1.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "15n^3-8n^3=7n^3 (option a). Rationale correctly states 7n^3, but key is 'b' (7n^6). Key/rationale mismatch."
+  },
+  {
+    "id": "8f82ad81-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "7(x^2+3)=7x^2+21 (option a). Rationale correctly states 7x^2+21, but key is 'b' (7x^2+3). Key/rationale mismatch."
+  },
+  {
+    "id": "fd65f47f-s1",
+    "templateId": "equivalent-expressions.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "(3x^2+2x-7)+(x^2+5x+3) = 4x^2+7x-4 which is option b. Keyed c (3x^2+7x-4) has wrong x^2 coefficient. Rationale correctly derives 4x^2+7x-4 but key points to c."
+  },
+  {
+    "id": "bdb0aa23-s1",
+    "templateId": "equivalent-expressions.A2.T4.easy",
+    "verdict": "wrong_answer",
+    "detail": "4x^5-7x^4+9x^3 = x^3(4x^2-7x+9) which is option b. Keyed d is x^3(4x^2+7x+9) with wrong middle sign. Rationale matches b, not d."
+  },
+  {
+    "id": "dc67c130-s1",
+    "templateId": "equivalent-expressions.A2.T4.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "Key b = 9ab(5ab^2-3a^2) expands to 45a^2b^3-27a^3b (correct/equivalent), but rationale describes GCF 9a^2b giving 9a^2b(5b^2-3a), which is option a. Rationale-key mismatch."
+  },
+  {
+    "id": "df747160-s1",
+    "templateId": "equivalent-expressions.A2.T5.easy",
+    "verdict": "wrong_answer",
+    "detail": "13(x^2-49y^2) = 13(x-7y)(x+7y) which is option a. Keyed b is 13(x+7y)(x+7y) = perfect square, not difference of squares. Rationale correctly derives a but key is b."
+  },
+  {
+    "id": "1a61e2ae-s1",
+    "templateId": "form-structure-and-sense.A3.T8.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A3.T8 (apostrophe/possessive) but options ('paintings were' / 'paintings,' / 'paintings, were' / 'paintings had been') vary in punctuation and finite-vs-nonfinite verb form, not in apostrophe placement. This tests A1.T2 (finite vs non-finite form) \u2014 main clause already has 'had been...overlooked,' so the blank must leave 'celebrated' as a non-finite participle inside a supplementary element offset by commas."
+  },
+  {
+    "id": "e2759b92-s1",
+    "templateId": "form-structure-and-sense.A2.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T3 (subject-verb agreement) but the four options ('was' / 'is' / 'has been' / 'will be') all share singular number and differ only in tense. This is A1.T1 (tense selection from time cues) \u2014 answered correctly via the 1312-1337 date anchor, not via number agreement."
+  },
+  {
+    "id": "f339ee39-s1",
+    "templateId": "form-structure-and-sense.A2.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T3 (subject-verb agreement) but options ('broadcasting' / 'having broadcast' / 'to broadcast' / 'broadcast to') vary in finite vs non-finite verb form, not in number. This is A1.T2 (finite vs non-finite form) \u2014 the main clause lacks a finite verb, so only the finite 'broadcast to' fits."
+  },
+  {
+    "id": "588887b9-s1",
+    "templateId": "form-structure-and-sense.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Past-perfect required by 'two decades earlier' sequencing with another past event matches the medium lever ('two competing time frames, past-perfect vs simple-past discrimination'), not easy. Answer 'had designed' is correct, but item belongs at medium."
+  },
+  {
+    "id": "988c78eb-s1",
+    "templateId": "form-structure-and-sense.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem has no interrupting modifier between subject 'demonstration' and verb \u2014 the blank sits inside a 'that' relative clause whose subject is 'that' (=demonstration). This is T3-like (or arguably A1, since options mix tense AND number). Answer 'advances' is correct."
+  },
+  {
+    "id": "83617355-s1",
+    "templateId": "form-structure-and-sense.A2.T4.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'four options vary only in number/person'. Options mix tense AND form (lights, will be lighting, would light, lit) \u2014 this is A1, not A2. Answer 'lights' is grammatically correct, but the item tests tense/form selection, not number agreement."
+  },
+  {
+    "id": "35ae047d-s1",
+    "templateId": "form-structure-and-sense.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Options vary in finite/non-finite form (perfect infinitive, participle, finite past, to-infinitive), not in tense. This matches T2 (Finite vs non-finite form), not T1 (Tense selection)."
+  },
+  {
+    "id": "e3b72630-s1",
+    "templateId": "form-structure-and-sense.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "T2 must_preserve requires distractors drawn from finite + at least two non-finite forms. Clone has only one non-finite option (to narrate) plus three finite forms (narrates, narrated, is narrating), violating the distractor-diversity constraint."
+  },
+  {
+    "id": "9ee22c16-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.medium",
+    "verdict": "type_drift",
+    "detail": "T2 requires the sample-level statistic (mean) to be computed from a list or two-way table. Clone gives a direct count (230 of 500) which is a simple proportion scale-up, matching T1 rather than T2. Medium T2 lever 'requires reading a two-way table' is not met."
+  },
+  {
+    "id": "9ba3e283-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T2 lever requires 'embedded percentage of a non-divisible class size (e.g., 34.6% of 26 must round to integer count).' Clone uses 40% of 25 = exactly 10, no rounding required. Also the per-class computation is trivial; only the complement step adds difficulty."
+  },
+  {
+    "id": "308084c5-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 lever requires 'sample-size comparison hidden in a multi-column table.' Clone provides no table or numeric sample sizes; the question is purely conceptual. Closer to the easy variant ('only one option mentions sample size')."
+  },
+  {
+    "id": "6a305cd0-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve: 'at least one distractor confuses sample with population, individual with mean, or not-possible-outside with less-plausible-outside'. All four distractors here are arithmetic variants (less than 48, greater than 56, outside interval) with no conceptual sample-vs-population or individual-vs-mean distractor. Matches the listed common_bug of removing the conceptual distractor."
+  },
+  {
+    "id": "61228830-s1",
+    "templateId": "inferences.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is not a causal/mechanistic explanation of an observed phenomenon (T3). Rather, it asks what property a replacement technology must have given stated limitations of pigeon dispatches \u2014 a comparative-contrast/implication structure (better fit: A4.T10) or a principle-applied prediction (A1.T1). No 'observation + proposed mechanism \u2192 infer underlying cause' structure required by T3. Answer D is correct logically; only the type tag is wrong."
+  },
+  {
+    "id": "5c7e0d62-s1",
+    "templateId": "inferences.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "No 'however/unlike/by contrast/whereas' pivot between two parallel sides demanded by T10. The inference is chronological reasoning from dated historical sources (manuscript ~1450 vs Munday 1598) \u2014 material/textual evidence with dates \u2192 past-tense historical claim, which matches A4.T9 (Historical/archaeological evidence scope) hard variant exactly (\u22652 dates, transmission/origin reasoning). Answer C is correct; tag should be A4.T9.hard."
+  },
+  {
+    "id": "4ba0695d-s1",
+    "templateId": "inferences.A1.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "A1.T2 must_preserve requires 'an explicit conditional or hypothetical operator (if, assuming, barring, given that)'. Stimulus contains no such operator; the inferential pivot is 'This pattern further suggests', a synthesis prompt better fitting A2.T4. Answer is logically correct."
+  },
+  {
+    "id": "1ffd60ce-s1",
+    "templateId": "inferences.A2.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone file is in hard/ folder and difficulty='Hard', but templateId tags it as medium. Stimulus complexity (multi-step quantitative reasoning about silver percentage, tribute constraints, multiple distractors near-miss) matches hard levers, not medium."
+  },
+  {
+    "id": "25893fc7-s1",
+    "templateId": "inferences.A4.T8.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem reads as principle-application (A1.T1): eye contact signals attentiveness/respect, therefore engineers want natural eye contact to put customers at ease. No measured empirical comparison/observation as A4.T8 requires; correct answer is a forward deductive prediction, not a study-finding generalization."
+  },
+  {
+    "id": "23758540-s1",
+    "templateId": "linear-equations-in-one-variable.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem '3r+140=200' is a two-step equation (subtract 140, divide by 3) \u2014 belongs to T2, not T1. T1 must_preserve: 'Exactly one inverse operation between the equation as written and x=answer'; this clone requires two."
+  },
+  {
+    "id": "6f6dfe3e-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T10.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses a parametric table (n + 120, n + 60, n), which the template lists as a hard-level characteristic for T10 ('Table contains a parameter (e.g., n)'). Medium T10 characteristics call for standard-form rearrangement, two integer points, or distributive simplification \u2014 not symbolic parameters."
+  },
+  {
+    "id": "1087f6c4-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone asks for the difference of two coefficients (32.90 - 32.40 = 0.50), which is interpreting per-unit rates from the equation (A3.T3/T4), not substituting a given value and solving (A2.T2). No value is supplied for either variable."
+  },
+  {
+    "id": "400798d6-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Interpreted piece is the constant 50 on the right side (T4-easy lever: 'Term is the constant on the right side (a total)'). Medium lever requires interpreting a variable product like 6y. Keyed answer (perimeter = sum of three sides) is correct, but variant matches T4 easy, not medium."
+  },
+  {
+    "id": "c5e38487-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Stem reduces to w + 23 = 80 (one-step) with unit coefficients (w + a = 80). Matches T2 easy levers ('Simple sum constraint x+y=total or single-step substitution: only one inverse operation'), not medium ('Two-step linear equation after substitution; decimal or non-unit coefficients'). Answer correct."
+  },
+  {
+    "id": "9b0a4eae-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "Question asks for interpretation of a point (5,9) on a graph, not interpretation of a coefficient in an equation. A3 description requires explaining what 'a specific number or term in the equation' represents (rate, total, count). Interpreting coordinates of a point fits A5-style coordinate reading rather than A3. T3 specifically requires recognizing a coefficient as per-unit rate; no coefficient is being interpreted here. Keyed answer (length 5, width 9) is correct."
+  },
+  {
+    "id": "c362c210-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem reduces to single-step division (25/20). Pears variable never used; no genuine two-variable substitution. Fails hard lever 'Two-step solve combined with extra arithmetic' and constraint that equation has exactly two variables both engaged."
+  },
+  {
+    "id": "c4ea43ef-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Substituting (20,0) into 15x+25y=t is a trivial one-step multiplication (15*20). Fails hard lever 'Two-step solve combined with extra arithmetic'; collapses to easy level."
+  },
+  {
+    "id": "fdee0fbf-s1",
+    "templateId": "linear-equations-in-two-variables.A6.T14.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem contains no parallel/perpendicular partner line; it's a single line through two points with substitution. Belongs to A5.T12 (coordinate on a line), not A6."
+  },
+  {
+    "id": "cb58833c-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T11.hard",
+    "verdict": "difficulty_drift",
+    "detail": "7x-4y=21 with y=0 yields single-step solve (x=3). No translation, no fractional rearrangement, no multi-step isolation. Fails hard lever 'multi-step isolation before substitution' or 'translated graph'."
+  },
+  {
+    "id": "2d54c272-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for difference of per-token point values by reading coefficients (30-8=22). No substitution into the equation; this is A3.T3 (interpret coefficients as per-unit rates), not A2.T2."
+  },
+  {
+    "id": "686b7244-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem requires reading coefficients (20-12=8). No substitution of a given variable value into the equation; fits A3.T3 (interpret coefficients), not A2.T2."
+  },
+  {
+    "id": "9bbce683-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T12.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is plain 'find x-intercept' from a table that already contains x=0 (y-intercept handed over). No translation/transformation or multi-step combination required; this is T11 easy/medium, not T12 hard, which requires derive-line + translate + report-coordinate."
+  },
+  {
+    "id": "a35c7164-s1",
+    "templateId": "linear-equations-in-two-variables.A6.T15.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem invokes 'infinitely many solutions' (identical-line/equivalent equations), not a parallel or perpendicular relationship. A6/T15 requires a parallel or perpendicular pair, not equation-equivalence."
+  },
+  {
+    "id": "cc7ffe02-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T4 requires geometric/compound context or two-step unit reinterpretation. Clone is a straight rate*count product interpretation (volume in large bottles); matches medium T4 (e.g., 6y as 'total cups in large containers'), not hard."
+  },
+  {
+    "id": "d0e614a6-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T9.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T9 requires fractional coefficients producing fractional y-values. Clone uses integer coefficients 4x+5y=9 with clean integer y outputs; matches medium T9 (standard form, integer coefficients)."
+  },
+  {
+    "id": "94b48cbf-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T11.hard",
+    "verdict": "type_drift",
+    "detail": "Stem asks for the slope of 9x+4y=-53, not an x- or y-intercept. T11 is intercept extraction; slope extraction is T10. Also lacks the hard T11 levers (translation, ratio of intercepts, rearranged messy form)."
+  },
+  {
+    "id": "c6b151d4-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem asks to interpret a solution pair (x,y), not a coefficient/product/constant term. The keyed answer requires substituting x=24 and solving for y, which is A2/T2 behavior, not A3/T4 (which interprets a piece of the equation in everyday language)."
+  },
+  {
+    "id": "4acd05cd-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Original T7 requires writing equation from a graph. Clone gives three explicit points and asks which table lists them; the correct option is literally the three given points, so no slope/intercept computation is needed. Stem structure no longer matches T7's core_skill_demand."
+  },
+  {
+    "id": "8da536c6-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses growth/percent-change scenario (1.22e + 1.35d = 50(1.28)), which matches the A1.T1 hard lever ('growth/percent-change scenario where each variable is multiplied by (1+p)'), not easy ('small whole-number rates'). Mislabeled easy."
+  },
+  {
+    "id": "8adf1335-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "T1 must_preserve requires 'two distinct per-unit rates attached to two distinct variables, summed to a stated total'. Clone is R = P + 38 (one variable plus a constant additive); no per-unit rate multipliers and only one variable on the right. Fits A2-style relation, not T1 two-rate equation."
+  },
+  {
+    "id": "789975b7-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'Small whole-number rates (1, 3, 5, 10) and whole-number total' with no unit conversion. Clone uses a percent-by-weight mixture (0.3, 0.7) with decimal coefficients \u2014 template explicitly lists 'percent-by-weight mixture where each variable carries a decimal fraction' as a HARD characteristic."
+  },
+  {
+    "id": "87322577-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T3.easy",
+    "verdict": "type_drift",
+    "detail": "T3 description: 'Interpret a coefficient as a per-unit rate' (the value of one unit of x). Clone asks to interpret the constant 90 (the total c in m + r = 90), not a per-unit rate coefficient. This task structure fits T4 (interpret a constant total) \u2014 not T3."
+  },
+  {
+    "id": "4d8ccb96-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Percent-by-weight mixture (0.05a + 0.80b = 0.10*30) matches hard lever 'percent-by-weight mixture where each variable carries a decimal fraction and the right side itself is a product', not easy's 'small whole-number rates' and 'no unit conversion'."
+  },
+  {
+    "id": "cea27ab2-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T9.easy",
+    "verdict": "difficulty_drift",
+    "detail": "T9 easy lever requires 'equation already in slope-intercept form with integer slope and intercept'; clone uses standard form 3x-2y=-18, which matches the medium lever."
+  },
+  {
+    "id": "1c29bfd1-s1",
+    "templateId": "linear-functions.A3.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem gives initial value (14.70) + rate (0.43 per foot) but asks student to compute total pressure at x=80, a numeric output. That is A1 (evaluate/compute), not A3 (construct the equation). The student never writes the equation; answer choices are numbers, not equations."
+  },
+  {
+    "id": "ebd457f4-s1",
+    "templateId": "linear-functions.A3.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "No initial value present; pure proportional rate (saves $60/week, asks total in 7 weeks = $420). Answer is a number, not an equation. Violates A3.T3 must_preserve (initial value AND rate) and outputs a number, so this is A1 territory, not A3."
+  },
+  {
+    "id": "7e3f8363-s1",
+    "templateId": "linear-functions.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Points (0,2) and (6,26): one point is on the y-axis, so b is read directly and slope is a clean integer. This satisfies the easy lever ('Table contains a row at x=0 so b is read directly'), not the medium lever ('Neither row is at x=0; student must compute slope then back-solve for the intercept')."
+  },
+  {
+    "id": "295a41f0-s1",
+    "templateId": "linear-functions.A4.T3.medium",
+    "verdict": "constraint_violation",
+    "detail": "Violates A4.T3 must_preserve 'Graph is shown as the primary referent'. No graph/figure is included; two points are stated verbally. Without a visual graph, this is A3.T2 (build from two points) on a transformed line, not A4.T3."
+  },
+  {
+    "id": "a5834ea4-s1",
+    "templateId": "linear-functions.A1.T1.medium",
+    "verdict": "type_drift",
+    "detail": "T1 requires substituting a single given numeric input into f and producing a numeric output. Here no input is given; the student selects a table that matches the constant function f(x)=52. Violates must_preserve 'A single numeric input value is given' and 'Answer is a single numeric output'. This is a table-identification stem, not an evaluate-f(c) stem."
+  },
+  {
+    "id": "c651cc56-s1",
+    "templateId": "linear-functions.A1.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Single linear function given as a table with a missing row (find f(3) by linear interpolation). The table-with-missing-row pattern is the T5 hard lever ('One function is given as a table with a missing row; linearity must be inferred'), not the T5 medium lever ('Both functions are given as explicit equations ... combined by addition/subtraction/scaling'). Tagged medium, but the stem structure matches hard."
+  },
+  {
+    "id": "0d5495a6-s1",
+    "templateId": "linear-functions.A1.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A1.T4 requires parameter embedded in sub-expression or multi-step solve. Here g(x)=x+c with g(0)=27 collapses to single trivial substitution (c=27), matching easy-tier characteristics, not medium."
+  },
+  {
+    "id": "e62cfe5f-s1",
+    "templateId": "linear-functions.A3.T3.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T3 must_preserve states 'Answer is the full equation in the variables named by the stem'. Clone asks for a numeric value (3.3), not an equation \u2014 this is A1.T1 (evaluate from given linear model) after a trivial verbal-to-equation step."
+  },
+  {
+    "id": "23dedddd-s1",
+    "templateId": "linear-functions.A3.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A3.T1 requires supplied point NOT on y-axis (compute b from y-mx=b) or non-trivial inputs. Clone gives g(0)=6 and g(1)=11, which the easy-tier description explicitly cites: 'two known function values are f(0) and f(1), revealing slope and intercept directly'."
+  },
+  {
+    "id": "daad7c32-s1",
+    "templateId": "linear-functions.A2.T1.hard",
+    "verdict": "type_drift",
+    "detail": "Stem asks meaning of the slope coefficient 4 in L(w)=4w+9 (cm stretched per newton). That is A2.T2 (interpret slope/rate), not A2.T1 (interpret constant term/initial value, which would be 9 here)."
+  },
+  {
+    "id": "e9908930-s1",
+    "templateId": "linear-functions.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires neither row at x=0 with narrative/non-trivial points; this clone has a row at x=0 (b=10 readable directly), which is the easy lever. Construction collapses to easy."
+  },
+  {
+    "id": "af2ba762-s1",
+    "templateId": "linear-functions.A2.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires non-standard form needing rearrangement (e.g., y-5x=6) or constant embedded as coefficient of nested factor. Clone uses standard f(x)=3.18d+8.45 where constant 8.45 is directly visible \u2014 matches easy levers."
+  },
+  {
+    "id": "a1696f3e-s1",
+    "templateId": "linear-functions.A1.T4.easy",
+    "verdict": "wrong_answer",
+    "detail": "p(3)=6(3)+a=18+a=20 gives a=2. Option (a) is '2', option (b) is '-2'. Rationale correctly derives a=2 but states 'Choice B is correct'. Key should be 'a', not 'b'."
+  },
+  {
+    "id": "9d9fe1e6-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "h(x)=24-0.12x: constant 24 is h(0), the water level at the START of measurement. Option (c) says 'water level at the start of the measurement' (correct). Key is 'd' = 'water level at the end of the measurement period' (incorrect). Key should be 'c'."
+  },
+  {
+    "id": "bd9eb2b5-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "7x=84 gives x=12. Option (c) is '12', option (d) is '7'. Rationale correctly computes x=12 but says 'Choice D is correct'. Key should be 'c', not 'd'."
+  },
+  {
+    "id": "0b332f00-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Stem asks for g(4) given g(x)=5x \u2014 this is evaluating f(c) at a given input (A1.T1), not solving f(x)=k for x (A1.T2). Answer 20 is correct, but type tag is wrong."
+  },
+  {
+    "id": "bf883fde-s1",
+    "templateId": "linear-functions.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Slope 5 and passes through (0,-12) gives g(x)=5x-12 (choice B). Key 'c' (g(x)=5x) omits the y-intercept; rationale text says 5x-12 yet selects C. Correct answer is B."
+  },
+  {
+    "id": "c10ad793-s1",
+    "templateId": "linear-functions.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "x-intercept is where y=0: (-8,0) = choice A. Key 'b' is (0,4), which is the y-intercept. Rationale's text 'x-intercept is (-8,0)' confirms A; key letter is wrong."
+  },
+  {
+    "id": "de6fe450-s1",
+    "templateId": "linear-functions.A3.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Initial fee $12 grows by $0.75/year, so f(x)=12+0.75x = choice C. Key 'd' (12-0.75x) subtracts; rationale text says '12+0.75x' but selects D. Correct is C."
+  },
+  {
+    "id": "97eab129-s1",
+    "templateId": "linear-functions.A3.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Table pairs give slope 50/200=0.25, so f(x)=0.25x = choice B. Key 'c' (4x) gives 4(200)=800\u226050. Rationale text says 0.25x but selects C. Correct is B."
+  },
+  {
+    "id": "b8cbe394-s1",
+    "templateId": "linear-functions.A3.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Cost = 14d + 25 = choice A. Key 'b' (25d+14) swaps rate and deposit; rationale text says '14d + 25' but selects B. Correct is A."
+  },
+  {
+    "id": "27198699-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T1 (interpret constant term) but stem asks to compute f(8)=19 \u2014 a numeric evaluation. This is A1.T1 (evaluate f(c)), not interpretation. Answer/rationale are correct."
+  },
+  {
+    "id": "0d6ab461-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A1.T1 (evaluate explicit f(x) at given input) but no f(x)=ax+b is supplied. Student must construct the model from words ($750 initial + $40/week \u00d7 5 weeks). This fits A3.T3 (build from rate + initial) or A1.T1 only after construction. Answer 950 is correct."
+  },
+  {
+    "id": "a8e6bd75-s1",
+    "templateId": "linear-functions.A4.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "y=3x+2 \u2192 slope 3, y-intercept (0,2) which is option B. Rationale correctly derives slope=3, b=2, but key labels 'c' (slope 2, y-intercept (0,3)). Rationale-key mismatch."
+  },
+  {
+    "id": "d11910d6-s1",
+    "templateId": "linear-functions.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Line passes through (0,9), so y-intercept is (0,9) = option A. Rationale states (0,9) but key labels 'b' which is (-3,0). Rationale-key mismatch."
+  },
+  {
+    "id": "e4a588ca-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "g(12)=(1/3)(21)=7 = option A. Rationale correctly computes 7 but key labels 'b' (=3). Rationale-key mismatch."
+  },
+  {
+    "id": "bc638f2d-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Constant 7 = q(0) = initial height when bought, matching option B. Rationale identifies initial height but key labels 'c' (keeps cactus 7 months). Rationale-key mismatch."
+  },
+  {
+    "id": "8643d906-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "R(15)=320 means population 320 in year 2015 = option A. Rationale states 'predicted population is 320 in 2015' but key labels 'b' (population 15 in 2015). Rationale-key mismatch."
+  },
+  {
+    "id": "4f89e4d4-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 = Solve f(x)=k for x. Clone evaluates p(64) directly (substitution), which is T1 (Evaluate f(c)), not T2. No target k to solve back to x."
+  },
+  {
+    "id": "88e13c8c-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "g(300)=24(300)+800=8000 = option C. Rationale computes 8000 but key labels 'd' ($1,124). Rationale-key mismatch."
+  },
+  {
+    "id": "fe287f7e-s1",
+    "templateId": "linear-functions.A3.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Total = 45x + 200 = option A. Rationale says 'total is 45x+200' but key labels 'b' (200x+45). Rationale-key mismatch."
+  },
+  {
+    "id": "a73a5c22-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "h(6)=12(6)+5=72+5=77 = option A. Rationale correctly computes 77 but key labels 'b' (=17). Rationale-key mismatch."
+  },
+  {
+    "id": "a232aa96-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "g(-7)=-4(-7)+50=28+50=78 = option B. Rationale correctly computes 78 but key labels 'c' (=22). Rationale-key mismatch."
+  },
+  {
+    "id": "0d391910-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 = Solve f(x)=k for x. Clone evaluates h(3) directly (substitution), which is T1 (Evaluate f(c)), not T2. No target value k provided to solve back for x."
+  },
+  {
+    "id": "adf60b28-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "h(x)=5x+12: constant 12 is h(0)=initial height. Correct choice is B ('estimated height was 12 inches when first measured'). Keyed 'c' (measured each week for 12 weeks) is wrong; the rationale itself states 12 is h(0), the starting height, which matches B, not C."
+  },
+  {
+    "id": "979b0b8d-s1",
+    "templateId": "linear-functions.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Slope 24 through (0,0) gives g(x)=24x, which is Choice A. Keyed 'b' is g(x)=(1/24)x. Rationale even concludes 'g(x)=24x' but key is B, contradicting the rationale."
+  },
+  {
+    "id": "c4d49134-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "v=25+4(8)=25+32=57, which is Choice B. Keyed 'c'=25 is wrong; the rationale itself shows v=57 but the key points to 25."
+  },
+  {
+    "id": "a9039591-s1",
+    "templateId": "linear-functions.A3.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Slope=5, intercept=12, so g(x)=5x+12, which is Choice C. Keyed 'd' is 12x+5. Rationale concludes 'g(x)=5x+12' but the key letter is D, mismatch."
+  },
+  {
+    "id": "f224df07-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone has two unknown counts with two competing constraints (budget \u2264470 AND minimum count \u22658) requiring algebraic solving of a system \u2014 this matches the A2.T2.hard lever, not medium."
+  },
+  {
+    "id": "dd875c97-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "A2.T2 must produce a numeric extremum, but this clone asks 'which inequality represents...' and the keyed answer is an inequality (15x+40y\u22642950). This is an A1.T1 two-variable budget setup, not A2.T2."
+  },
+  {
+    "id": "c17d9ba9-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone substitutes y=5 to compute a single numeric bound (x=12). Per A5.T1, this is the hard lever ('requires substituting a specific value... answer is a single number'); medium should return an inequality form."
+  },
+  {
+    "id": "9e5863bd-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A1.T2 requires multiplying a per-unit range by a fixed quantity, or composing rates. This clone is a direct compound inequality on the same stated min/max with no rate conversion \u2014 matches easy lever, not medium."
+  },
+  {
+    "id": "ecca0603-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone is a system of two inequalities with three rows per table \u2014 both characteristics of the A3.T2.hard lever. Medium requires a single inequality with two rows per table."
+  },
+  {
+    "id": "0b221d05-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A4 (match graph to inequality) but stem has no graph; it gives a textual inequality y<2x\u22123 and asks which ordered pair satisfies it. This is A3.T1 (point satisfies inequality)."
+  },
+  {
+    "id": "e723bd67-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses 3x\u2212y>50 with three rows per table \u2014 the larger-coefficient/3-row pattern characterizes A3.T2.hard, not medium (which is small positive-slope, two rows)."
+  },
+  {
+    "id": "f2bbd43d-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone has a partially specified point (x, 22) requiring elimination of options against the system \u2014 this is the A3.T1.hard lever, not medium (medium uses fully specified candidate pairs)."
+  },
+  {
+    "id": "ee2f611f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T2 requires two competing constraints, percent overhead, or binding-constraint identification among multiple. Clone has a single constraint with three rate options; selecting the max fare is a one-step solve closer to medium difficulty."
+  },
+  {
+    "id": "6c71f3ec-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T2 (answer is a numeric max/min), but the clone's answer form is an inequality on s, not a number. This fits A1.T3 (multi-step contextual setup with percent overhead) or A5.T2, not A2.T2."
+  },
+  {
+    "id": "541bef2f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires a partially specified point (one coordinate symbolic) or a region of valid y-coordinates. Clone uses four fully specified ordered pairs, matching the medium A3.T1 difficulty lever."
+  },
+  {
+    "id": "68c5c81a-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.hard",
+    "verdict": "type_drift",
+    "detail": "A5.T2 expects deriving an equivalent inequality or a numeric extremum from a given inequality/system. Clone asks for the interpretation of a single term (13q) in context, which is a coefficient-meaning item, not a solve/interpret-equivalent task."
+  },
+  {
+    "id": "a049f400-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T2 requires larger coefficients (e.g., 13x, 2x-y>883) or a 2-inequality system. Clone uses y<4x+3 with small slope 4 and a single inequality, matching the medium A3.T2 lever."
+  },
+  {
+    "id": "f8ff3249-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T2 requires larger coefficients or a 2-inequality system. Clone uses y<8x+5 with small slope 8 and a single inequality, matching the medium A3.T2 lever."
+  },
+  {
+    "id": "e8f9e117-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A1.T3 (answer should be an inequality) but stem asks 'what is the greatest number m' with numeric SPR answer 24 \u2014 this fits A2 (solve for numeric extremum), not A1."
+  },
+  {
+    "id": "7d6928bd-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Stem says 'at most 20 events', so w+p \u2264 20 = Choice A. Keyed 'b' is w+p \u2265 20 (wrong direction). Rationale text even says 'at most 20 means \u2264 20: w+p \u2264 20' but picks B \u2014 rationale_inconsistent with keyed answer. Also no per-unit costs/weights, violating A1.T1 must_preserve."
+  },
+  {
+    "id": "00ec9102-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Notebooks $2.15, pens $1.30 \u2192 2.15n + 1.30p \u2264 20 = Choice A. Keyed 'b' (1.30n + 2.15p \u2264 20) swaps coefficients with items. Rationale text says '2.15n notebooks and 1.30p pens' which matches Choice A, not Choice B \u2014 rationale_inconsistent."
+  },
+  {
+    "id": "c9355dec-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "A4.T1 must_preserve requires 'graph-based stem (a shaded half-plane image)'. Clone replaces the graph with a text description of two points and shading direction \u2014 categorical drift toward A3/A5 per template's documented common_bug. Math otherwise correct (Choice B)."
+  },
+  {
+    "id": "2c121b25-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Total blue marbles = 0.4x + 0.6y \u2265 500 = Choice A. Keyed 'b' (40x + 60y \u2265 500) fails to convert percents to decimals. Rationale even contradicts itself by saying 'Choice A doesn't convert percents' though Choice A does convert; rationale_inconsistent."
+  },
+  {
+    "id": "2869fe95-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Lowest 42, highest 78 \u2192 42 \u2264 t \u2264 78 = choice C. Keyed 'd' (t \u2265 78) is incorrect. Rationale text correctly derives 42 \u2264 t \u2264 78 but key doesn't match (rationale_inconsistent also)."
+  },
+  {
+    "id": "4a090a46-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "150 \u2212 118 = 32 = choice C. Keyed 'd' (118) is incorrect; rationale correctly computes 32 but key is d (rationale_inconsistent)."
+  },
+  {
+    "id": "744ee7d7-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Vertical line x=24 with shading to right \u2192 x \u2265 24 = choice B. Keyed 'c' (y \u2265 24) describes a horizontal line and is incorrect. Rationale text matches B but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "208626df-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy",
+    "verdict": "type_drift",
+    "detail": "A3.T1 must_preserve: 'candidate pairs as the answer form' and 'requirement to satisfy every listed inequality'. Clone instead presents a single (L,W) pair and asks for interpretation; answer choices are sentences, not candidate ordered pairs. This is an interpretation task, not a 'point satisfies inequality' selection."
+  },
+  {
+    "id": "563407e5-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "5\u00d730=150 min, 5\u00d740=200 max. Only 180 (choice B) lies in [150, 200]. Keyed 'c' (125) is below the minimum and is incorrect. Rationale text correctly identifies 180 but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "59a49431-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "y > 2x \u2212 3. (0,5): 5 > \u22123 TRUE = choice A. (0,\u22125): \u22125 > \u22123 FALSE. Keyed 'b' is incorrect; correct is A. Rationale substitutes (0,5) and verifies it works but then attributes it to choice B (rationale_inconsistent)."
+  },
+  {
+    "id": "84d0d07e-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Snacks 3a + drinks 5b \u2264 40 = choice C. Keyed 'd' (3a + 5b \u2265 40) reverses the inequality. Rationale text says '3a + 5b \u2264 40' but key is d (rationale_inconsistent)."
+  },
+  {
+    "id": "b64e2c7f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A1.T2 (range/bound on a single variable, answer = inequality). Clone asks for the minimum numeric rise (3.4\u00b0C) \u2014 a numerical extremum. This is an A2.T1 'have/need' task, not A1.T2. A1 must return an inequality; this returns a number."
+  },
+  {
+    "id": "4047cfa7-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "800 \u2212 624 = 176 = choice B. Keyed 'c' (624) is the current total, not the additional hours. Rationale text computes 176 but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "2adbf1b1-s1",
+    "templateId": "lines-angles-and-triangles.A1.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes two lines m and t intersecting at a point with vertical angles \u2014 no parallel lines invoked. A1 requires explicit parallel-lines configuration (per must_preserve). This is A6 (intersecting lines at a point), not A1."
+  },
+  {
+    "id": "81b664bc-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem is about similar triangles and proportional sides (EF length given scale factor 10/8). A6 is 'intersecting lines & angle relationships at a point' \u2014 no intersection configuration here. This belongs to A5.T2 (find side via proportional reasoning)."
+  },
+  {
+    "id": "933fee1a-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for sin(40\u00b0) ratio in a right triangle \u2014 pure right-triangle trigonometry, no intersecting-lines-at-a-point configuration. A6.T1 covers vertical/linear-pair angle measure. Belongs to right-triangle trigonometry skill, not A6 of this skill."
+  },
+  {
+    "id": "a4c05a1b-s1",
+    "templateId": "lines-angles-and-triangles.A1.T2.medium",
+    "verdict": "type_drift",
+    "detail": "A1.T2.medium requires both angles as linear expressions in parameter k. Clone gives one numeric angle (73\u00b0) and one variable x, with no parameter to solve for first. Stem matches A1.T1 (find unknown angle), not T2."
+  },
+  {
+    "id": "e10d8313-s1",
+    "templateId": "lines-angles-and-triangles.A5.T3.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests triangle angle-sum (A2.T1): in triangle BGC use 180\u221242\u221270=68. No similarity reasoning, no AA, no shared-vertex similar triangles. Belongs to A2, not A5.T3."
+  },
+  {
+    "id": "17912810-s1",
+    "templateId": "lines-angles-and-triangles.A1.T3.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a triangle with adjacent angle relationships (vertical, supplementary, bisector), not two parallel lines with multi-transversal config. A1 requires explicit parallels; clone has none. Better fits A2 with A6 adjuncts."
+  },
+  {
+    "id": "947a3cde-s1",
+    "templateId": "lines-angles-and-triangles.A3.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "No isosceles/equilateral side-equality invoked. Clone is intersecting lines (linear pair) + triangle angle sum. Belongs to A2/A6, not A3."
+  },
+  {
+    "id": "2d2cb85e-s1",
+    "templateId": "lines-angles-and-triangles.A5.T3.hard",
+    "verdict": "aspect_drift",
+    "detail": "No similarity reasoning. Clone solves via linear-pair supplementary (138\u219242) then triangle angle sum (180\u221242\u221247=91). Belongs to A2.T3, not A5.T3."
+  },
+  {
+    "id": "3b225698-s1",
+    "templateId": "lines-angles-and-triangles.A5.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T1 requires non-obvious correspondence, quadrilaterals with polygon-sum step, or misleading side-ratio distractors needing analysis. Clone is direct \u2220R\u2194\u2220W with a side ratio that is simply ignored; better fits medium difficulty."
+  },
+  {
+    "id": "f88f27e5-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone is exterior-angle theorem on a triangle (A2.T2), not vertical/linear-pair at an intersection of lines. A6 requires intersecting lines at a single point without triangle interior-sum invocation."
+  },
+  {
+    "id": "740bf79f-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone is straight similarity-ratio side computation (A5.T2), not intersecting lines at a point. No vertical/linear-pair reasoning at all."
+  },
+  {
+    "id": "6d99b141-s1",
+    "templateId": "lines-angles-and-triangles.A5.T3.hard",
+    "verdict": "aspect_drift",
+    "detail": "Solved by isosceles base angles (A3) + exterior-angle theorem (A2.T2). No AA similarity, no shared-vertex similar triangles. Should be A3.T1 or A2.T2, not A5.T3."
+  },
+  {
+    "id": "6a3fbec3-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "A6 requires intersecting lines at a single point with no triangle/parallel invocation. Clone is a right-triangle altitude / geometric-mean problem, which belongs to A5.T3 (right-triangle altitude similarity), not A6."
+  },
+  {
+    "id": "eeb4143c-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone is a triangle-area inequality (area = (1/2)\u00b76\u00b7h), not an intersecting-lines / vertical-angle problem. Does not test A6 (intersecting lines at a point)."
+  },
+  {
+    "id": "bd7f6e30-s1",
+    "templateId": "lines-angles-and-triangles.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 variant requires overlapping/intersecting triangles with two combined isosceles arguments, or a nested config requiring exterior-angle plus angle-sum chaining. Clone is a single isosceles triangle with one exterior-angle step \u2014 matches medium/easy difficulty at best."
+  },
+  {
+    "id": "3b4b5b1e-s1",
+    "templateId": "lines-angles-and-triangles.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'explicit parallel statement' and 'single transversal' for A1.T1. Stem only describes two angles forming a straight line \u2014 pure linear-pair problem with no parallel lines or transversal. Belongs in A6."
+  },
+  {
+    "id": "c8d60e48-s1",
+    "templateId": "lines-angles-and-triangles.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "A3 requires isosceles/equilateral side-equality. Clone uses triangle similarity (angle transfer via similar triangles) with no isosceles side-equality \u2014 belongs to A5.T1 (angle transfer via similarity)."
+  },
+  {
+    "id": "3b44439b-s1",
+    "templateId": "lines-angles-and-triangles.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'parallel-lines configuration'. Clone has only a linear pair (no parallel lines, no transversal). Also fails to require solving for a parameter \u2014 the linear-pair sum is given directly. Belongs in A6."
+  },
+  {
+    "id": "dfc420b2-s1",
+    "templateId": "lines-angles-and-triangles.A6.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "A6 boundary: 'no triangle sum'. Clone's core work is triangle interior sum (180-45-60=75), with vertical angle as a trivial final step. Better fits A2.T1 (find third angle) than A6.T1 (vertical/linear pair at a point)."
+  },
+  {
+    "id": "9342ca50-s1",
+    "templateId": "lines-angles-and-triangles.A2.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "A2.T3 requires a triangle interior-sum step plus a parallel transfer. Clone has no triangle: just BC\u2225AD with transversal AC and a single alternate-interior angle equality. Pure A1.T1 (parallels cut by transversal)."
+  },
+  {
+    "id": "410bdbe6-s1",
+    "templateId": "lines-angles-and-triangles.A2.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'both given angles are explicit integer measures (no expressions)'. Clone gives one angle as the expression 2b\u00b0 and asks for parameter b, which matches the medium lever 'one of the angles is given as a symbolic expression like (k/2)\u00b0'."
+  },
+  {
+    "id": "9d078710-s1",
+    "templateId": "lines-angles-and-triangles.A1.T3.easy",
+    "verdict": "type_drift",
+    "detail": "A1.T3 easy expects two parallel lines given with all four labeled angles and student picks the correct relationship statement. Clone reverses the logic: lines are NOT given parallel, and the task is to pick which equation proves they are parallel. This is a converse-of-parallel-postulate stem, not the templated relationship-statement stem."
+  },
+  {
+    "id": "3828f53d-s1",
+    "templateId": "lines-angles-and-triangles.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "The 145\u00b0 angle is at the j-k intersection, so the interior triangle angle there is 180-145=35\u00b0. Triangle has 90\u00b0 (j\u22a5q) + b\u00b0 + 35\u00b0 = 180\u00b0, giving b=55, not 35. The rationale even states 'two acute angles summing to 90\u00b0' which yields 35+b=90 \u2192 b=55, contradicting the keyed value 35. Correct answer is choice B (55)."
+  },
+  {
+    "id": "43236565-s1",
+    "templateId": "lines-angles-and-triangles.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone has only two intersecting lines (no parallel lines, no transversal). A1 requires explicit parallel-lines + transversal; this is A6 (vertical angles at a single intersection). T3 easy lever requires 'two parallel lines, one transversal, all four angles labeled.'"
+  },
+  {
+    "id": "b434e103-s1",
+    "templateId": "lines-angles-and-triangles.A2.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'both given angles are explicit integer measures' with answer = 180 - g1 - g2. Clone gives only one angle (J=48) and asks 'which could be K,' requiring an inequality check (K<132) \u2014 that matches the medium lever, not easy."
+  },
+  {
+    "id": "5ae186b4-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T5 medium requires 'clearing the denominator produces a quadratic that factors over integers.' Clone \u221272/w = 8 yields a one-step linear solution (w = \u22129), no quadratic; difficulty regressed below T5 medium."
+  },
+  {
+    "id": "a5663025-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone asks how many solutions the system y=x\u00b2\u22124, y=0 has. This is A4 (system intersection count) or A2 (count for x\u00b2=4), not A3 \u2014 A3 requires a literal parameter controlling solution count. No parameter present."
+  },
+  {
+    "id": "2926cc6d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem (3y+7)(4y\u22129)=0 is a factored zero-product form matching T6 (and the original 2926cc6d is listed under T6 example_ids), not T2 standard-form quadratic. Should be A2.T6.medium."
+  },
+  {
+    "id": "faeae876-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses cubic\u00d7quartic factored form (x\u00b3+27)(x\u2074\u221216); T6 medium requires 'two or three linear factors.' Higher-degree factored form with discriminant reasoning is T6 hard (original faeae876 is listed in T6 hard example_ids)."
+  },
+  {
+    "id": "652054da-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone n=(5/7)m \u2192 m=(7/5)n requires only one inverse operation (multiply by reciprocal), no context wrapper, no denominator unpacking. Fits easy lever ('1-2 inverse operations, pure symbolic form'), not medium ('2-3 inverse operations\u2026 real-world context\u2026 denominator')."
+  },
+  {
+    "id": "75a32330-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.medium",
+    "verdict": "type_drift",
+    "detail": "T10 must_preserve requires 'presence of a graph-described scenario (the visual cue is the load-bearing feature).' Clone removes the graph entirely and is solved purely algebraically; this drifts to A4.T9. Listed common_bug: 'Removing the graph and asking purely algebraically\u2026 changes the type to T9.'"
+  },
+  {
+    "id": "a1262cdb-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever requires 2-3 inverse operations, often with context wrapper, distribution, or denominator. Clone 9s+d=f asking for f-d is a single subtraction (one inverse step) with integer coefficients and no context \u2014 matches easy lever, not medium."
+  },
+  {
+    "id": "f65288e8-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is zero-product (x+4)(x-9)=0, which is T6 (zero-product/factored polynomial), not T3 (absolute-value equation). Answer (-2) is mathematically correct, but typeId is wrong."
+  },
+  {
+    "id": "71014fb1-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter (b, c, k) so student solves discriminant equation for that parameter. Clone (x+3)^2=-7 has no parameter; it's a direct no-real-solution check, matching the easy lever 'direct discriminant calculation on a numeric quadratic'."
+  },
+  {
+    "id": "4dc5c6f9-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter. Clone has no parameter; it's a direct intersection-count of y=22 with a fully numeric downward parabola (max y=17). Better fits A4.T10 medium count-intersections."
+  },
+  {
+    "id": "74473be4-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter to solve for. Clone is MCQ 'which quadratic has no real solutions' with four fully-numeric options - this matches medium lever ('which quadratic equation has exactly one / no real solutions')."
+  },
+  {
+    "id": "97e50fa2-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "T10 requires a graph-described scenario (visual cue is load-bearing). Clone presents purely algebraic functions f(x) and g(x) with no graph; this is T9 (algebraic linear-quadratic substitution). Math is correct (a=3 or 12)."
+  },
+  {
+    "id": "2cd6b22d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T7 lever requires a literal parameter (b, c, k, a) with student solving for it (e.g., 'find c such that equation has exactly one solution'). Clone is parameter-free count-of-solutions on numeric quadratic; matches easy T7 lever. Math correct (discriminant=-96, zero solutions)."
+  },
+  {
+    "id": "f2f3fa00-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 levers require target variable in multiple places, radical/square, or 3+ other variables. Clone needs only 2 simple inverse operations (multiply by 8, add 20) on a 2-variable equation; matches easy lever. Math correct (k=20)."
+  },
+  {
+    "id": "494d247d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires graph-described scenario. Clone is purely algebraic |x+2|=x+4 system with no graph; this is T9 territory. Math correct: (-3,1)."
+  },
+  {
+    "id": "d0e8e8f5-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires graph-described scenario. Clone presents equations algebraically and asks which point is an intersection; no graph shown. This is T9. Math correct: (4,4)."
+  },
+  {
+    "id": "4ca30186-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires graph-described scenario; clone is purely algebraic system substitution (no graph). Type should be T9. Math correct: (3,6)."
+  },
+  {
+    "id": "3f8d5876-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "wrong_answer",
+    "detail": "Solving y=x+1, y=x^2-5 with x>0: x^2-x-6=0, x=3, y=4. Solution is (3,4) which is option a. Rationale correctly derives (3,4) but key is 'b' = (1,2), which does not even satisfy the system. Key/option mismatch; correct key is 'a'. Also type_drift (graph removed from T10) but wrong_answer takes priority."
+  },
+  {
+    "id": "5c7d5744-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A4.T10 (graph-based), but stem has no graph; it is a pure algebraic linear-quadratic substitution system, which is A4.T9."
+  },
+  {
+    "id": "568aaf27-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium",
+    "verdict": "wrong_answer",
+    "detail": "x+y=6, y=x^2 gives x^2+x-6=0, so x=2 or x=-3. Both 2 (B) and -3 (A) are listed as choices. Question asks 'a possible value of x' \u2014 both A and B are valid, making the keyed single answer ambiguous."
+  },
+  {
+    "id": "f11ffa93-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem is a basic radical equation sqrt(x+3)=9 asking for the numeric root x=78. This tests A2 (solve a single nonlinear equation, radical type T4), not A5 (equivalent-form/reformulation). No reference to an equation 'above' nor any equivalent-form transformation. Matches documented common_bug: 'Drifting into A2 by asking for a single numeric root rather than an equivalent form or set.' Math is correct."
+  },
+  {
+    "id": "6676f055-s1",
+    "templateId": "nonlinear-functions.A3.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone provides quadratic already in vertex form f(\u03b8)=\u22120.35(\u03b8\u221242)\u00b2+1150, which matches the easy lever 'rule already in vertex form'. Medium lever requires form y=x\u00b2+c or p(x)+k=x\u00b2 (single rearrangement). Answer (42) is correct."
+  },
+  {
+    "id": "197bed38-s1",
+    "templateId": "nonlinear-functions.A3.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Clone asks for maximum height of a quadratic projectile h(t)=\u22125t\u00b2+30t+35 (max=80). This matches A3.T3 (vertex/extreme value of quadratic) or A4.T2 (quadratic projectile model), not A3.T5 (interval of increase, asymptote, symmetry). Answer 80 is correct."
+  },
+  {
+    "id": "c4cd5bcc-s1",
+    "templateId": "nonlinear-functions.A5.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Clone asks which evaluation g(c) equals the y-intercept k \u2014 pure definition of y-intercept = f(0). A5.T2 requires choosing among equivalent algebraic forms (standard/vertex/factored/rebased) that expose a feature. No equivalent forms are presented. Better fit: A3.T2 conceptual variant. Answer g(0) is correct."
+  },
+  {
+    "id": "d71f6dbf-s1",
+    "templateId": "nonlinear-functions.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks interpretation of h(0.8)=16.16, a function-value evaluation. That matches A2.T1 (Interpret f(c)=v statement), not A2.T2 (Interpret coefficient or constant). Answer C is correct; tag is wrong."
+  },
+  {
+    "id": "252a3b3a-s1",
+    "templateId": "nonlinear-functions.A3.T5.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks f(-4) for f(x)=x^3-16x \u2014 direct substitution evaluation (A1.T1). Not graph-feature reasoning (A3.T5). f(-4)=-64+64=0, answer C correct, but aspect tag is wrong."
+  },
+  {
+    "id": "f1c81b3b-s1",
+    "templateId": "nonlinear-functions.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem gives g(x)=11\u00b7a^x with unknown a, condition g(2)=1331, asks g(3). This is parameter recovery + evaluation (A6.T1 medium lever), not building an exponential model from context (A4.T1). Answer 14641 = 11\u00b711^3 is correct."
+  },
+  {
+    "id": "100030d9-s1",
+    "templateId": "nonlinear-functions.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Geometric-decay bouncing-ball problem with iterative halving is closer to A4.T1 exponential decay context, but stem asks numeric height after 3 bounces (not building a model). Answer 4 ft correct (32\u219216\u21928\u21924)."
+  },
+  {
+    "id": "9ff88bb5-s1",
+    "templateId": "nonlinear-functions.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks interpretation of x-intercept (a coordinate/feature point) \u2014 matches A2.T1 (Interpret a specific point/value in context), not A2.T2 (interpret a structural constant such as initial value or growth factor). Answer D correct."
+  },
+  {
+    "id": "c7a187a7-s1",
+    "templateId": "nonlinear-functions.A3.T3.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T3 is 'Vertex or extreme value of quadratic', but clone asks for an x-intercept of f(x)=x^2-20x-96. Stem and answer fit A3.T4 (x-intercepts/zeros of polynomial), not vertex/extremum. Answer (-4,0) is mathematically correct."
+  },
+  {
+    "id": "cc6ccd71-s1",
+    "templateId": "nonlinear-functions.A3.T5.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T5 covers interval/asymptote/symmetry reasoning. Clone asks how many x-values satisfy f(x)=0 given two stated x-intercepts\u2014this fits A3.T4 (x-intercepts/zeros). Answer 'Two' is correct."
+  },
+  {
+    "id": "95d1c344-s1",
+    "templateId": "nonlinear-functions.A3.T1.medium",
+    "verdict": "constraint_violation",
+    "detail": "A3.T1 must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone provides only verbal description of the parabola (vertex (5,14), passes (0,4))\u2014no figure. This matches the common bug 'replacing svg with text-only description (drops aspect)'. Question fits A3.T2 better. Answer 4 is mathematically correct."
+  },
+  {
+    "id": "9654add7-s1",
+    "templateId": "nonlinear-functions.A3.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Clone asks for interpretation of an x-intercept (p where P(q)=0) in context. This fits A3.T4 (x-intercepts/zeros) or A2.T2 (interpret constant), not A3.T3 (vertex/extreme value). Answer is correct (d)."
+  },
+  {
+    "id": "a45ffacb-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates 'nonlinear function' skill scope: stem defines f(x) = -ax + b, which is linear, not nonlinear. Answer a=1 works only because f is linear; if f were nonlinear (e.g., -ax^2+b), answer differs. Must_preserve nonlinear function form violated."
+  },
+  {
+    "id": "4dd4efcf-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Axis of symmetry x=-3 gives 6a=8, so a=4/3\u22481.333. Decimal sanity: 4/3=1.333 \u2265 1, so statement II (a \u2265 1) is TRUE. Rationale incorrectly claims '4/3 < 1'. c = 9a+k = 12+k with k<0 gives c<12, not necessarily c<0, so I is not forced. Correct answer is 'II only' (c), not 'Neither I nor II' (a)."
+  },
+  {
+    "id": "263f9937-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Population on day n is (2x10^4)(2)^(n-1). For value 2.048x10^9: 2^(n-1) = 1.024x10^5 = 102,400, which is not a power of 2 (n \u2248 17.66). No integer day yields exactly 2.048x10^9; rationale itself admits the approximation. Also aspect_drift: this is A4.T1 (build/use exponential model), not A6.T1 (solve for parameter)."
+  },
+  {
+    "id": "02060533-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Table data is internally inconsistent. From g(-25)=-6: f(-25)=-6(-20)=120. From g(-5)=0: f(-5)=0. From g(15)=6: f(15)=120. A linear f cannot pass through (-25,120),(-5,0),(15,120) since slopes differ (-6 vs +6). Rationale silently drops the (-25,-6) row to derive f(x)=6(x+5). Problem is over-determined/inconsistent."
+  },
+  {
+    "id": "df71424b-s1",
+    "templateId": "nonlinear-functions.A3.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A6.T1 reasoning: solve for unknown parameters a, b, c from a horizontal asymptote and two passing points. A3.T5 targets graph-feature reasoning (intervals, asymptotes, equation-shape matching), not parameter recovery. Answer (Three) is mathematically correct."
+  },
+  {
+    "id": "781c2f6e-s1",
+    "templateId": "nonlinear-functions.A5.T2.hard",
+    "verdict": "wrong_answer",
+    "detail": "Given h(x)=m+a(1.5)^x equivalent to f(x)=a(1.5)^x+1.5b, we have m=1.5b. Since b is a positive integer (0<a<b, integers), m=1.5b>0, so Statement I MUST be true. Keyed 'Neither I nor II' is incorrect; correct answer is 'I only' (Choice A). Rationale acknowledges m=1.5b>0 but illogically concludes Neither."
+  },
+  {
+    "id": "b8f13a3a-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates 'function form with at least one unknown parameter' in the must_preserve for nonlinear functions skill. f(x)=-ax+b is a LINEAR function, not nonlinear; this drifts the skill entirely. Arithmetic answer a=5 is correct, but the clone no longer fits the Nonlinear functions skill."
+  },
+  {
+    "id": "8462b105-s1",
+    "templateId": "nonlinear-functions.A4.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem describes a numeric product f(n)=n(n-17), not a geometric area/volume context. T3 must_preserve requires 'geometric (or geometric-analog) context'; this clone is a context-free abstract product, fitting A4 only loosely. Answer is correct."
+  },
+  {
+    "id": "43926bd9-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "type_drift",
+    "detail": "A6.T1 requires a nonlinear function form with unknown parameter(s) pinned by structural condition(s) (point/intercept/vertex). This clone is a pure system-of-equations identity (sum & sum-of-squares of two numbers) with no function f and no parameter to recover. Better fits algebra/system-of-equations skill, not nonlinear-functions A6.T1."
+  },
+  {
+    "id": "70753f99-s1",
+    "templateId": "nonlinear-functions.A3.T3.hard",
+    "verdict": "wrong_answer",
+    "detail": "Vertex x = (9 + (-1))/2 = 4 exactly. All four intervals are open: (-2,0), (0,2), (2,4), (4,6). The value 4 lies strictly inside NONE of them (it sits on the boundary of (2,4) and (4,6)). The rationale even acknowledges this contradiction. The question has no valid answer as constructed; keyed 'd' is not strictly correct."
+  },
+  {
+    "id": "58dcc59f-s1",
+    "templateId": "nonlinear-functions.A4.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Clone is single-variable area=w(w+3)=70 (medium lever: 'one dimension in terms of the other; given area, solve for width'). Hard requires 3D volume, two simultaneous constraints, or KE-style application."
+  },
+  {
+    "id": "84dd43f8-s1",
+    "templateId": "nonlinear-functions.A4.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem is medium-style value-after-n-periods with percent-change phrasing. Hard requires non-annual period rewrite, 150%-more vs 150%-OF distractor, or doubling-time recovery."
+  },
+  {
+    "id": "ebed7dc6-s1",
+    "templateId": "nonlinear-functions.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for the numeric x-value that produces the maximum revenue (vertex of quadratic). That is A3.T3 (vertex/extreme value), not A2 interpretation. No 'best interpretation' phrasing or symbol-to-meaning mapping is required."
+  },
+  {
+    "id": "08d03fe4-s1",
+    "templateId": "nonlinear-functions.A5.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'multiple equivalent forms among answer choices'. Computing f(1) in each: A=189, B=63, C=63, D=21. Options are NOT equivalent forms of one function f. Rationale is also internally contradictory ('f(1)=21 in all forms' then shows differing values)."
+  },
+  {
+    "id": "2c6f214f-s1",
+    "templateId": "nonlinear-functions.A4.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Basic geometric-sequence formula w=ar^(n-1) is medium-level at most. Hard requires period rewrite, 150% trap, base-rebased exponential, or doubling-time analysis."
+  },
+  {
+    "id": "9afe2370-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem builds an exponential decay model from a verbal percent-decrease description with no unknown parameter to solve. This is A4.T1 (build exponential growth/decay model), not A6.T1 (solve for parameter from structural condition)."
+  },
+  {
+    "id": "2b6c12eb-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem defines f(x)=2x^2-8 and asks to solve f(x)=24 (A1.T2 'Solve f(x)=k'); tagged as A3.T1 'Read intercept or point from graph' but no graph is involved and no intercept/coordinate is requested. Answer x=4 is correct, but aspect/type tag is wrong."
+  },
+  {
+    "id": "2d394c28-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone is contextual exponential p(x)=8(1.05)^x asking for population at x=0 \u2014 A1.T1 (substitution into nonlinear rule) or A2.T2 (interpret initial-value constant), not A3.T1 (read intercept/point from a graph). No graph appears in the stem. Answer 8 is mathematically correct."
+  },
+  {
+    "id": "ad376f1a-s1",
+    "templateId": "nonlinear-functions.A3.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Stem gives the y-intercept (0,-4) and asks for f(0) \u2014 a trivial intercept-from-given-point task fitting A3.T1 (read intercept) or A3.T2 (intercept from equation), not A3.T5 'Other graph-feature reasoning' (asymptotes, intervals, symmetry). Answer -4 is correct."
+  },
+  {
+    "id": "e166aca6-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone uses only a text description of intercepts (no svg/figure)."
+  },
+  {
+    "id": "ca4ee54e-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone describes the graph verbally and gives the answer in the text, with no figure attached."
+  },
+  {
+    "id": "1ee962ec-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem requires evaluating h(t)=-16t^2+64 at t=0,1,2 (direct substitution). This is A1.T1 (Direct substitution into f(x)), not A3 (graph feature reading)."
+  },
+  {
+    "id": "d45572cc-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure) with an identifiable target point. Clone is text-only and the answer (-2) is given verbatim in the stem."
+  },
+  {
+    "id": "d46da42c-s1",
+    "templateId": "nonlinear-functions.A3.T5.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy A3.T5 levers are 'choose graph from a table of values' or 'identify horizontal asymptote from labeled graph'. Clone asks for graph features from a factored cubic equation, fitting A3.T4 (zeros) / A3.T2 (intercept) rather than T5 easy lever."
+  },
+  {
+    "id": "893c7519-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; the y-intercept (0,6) is stated directly in the stem so no graph reading occurs."
+  },
+  {
+    "id": "50418728-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; (0,5) is stated in the stem, removing any need to read the graph."
+  },
+  {
+    "id": "26f5269a-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem is direct substitution g(4)=3*16-5=43 \u2014 matches A1.T1 (Direct substitution into f(x)) rather than A3.T1 (read intercept/point from graph)."
+  },
+  {
+    "id": "7160cbb3-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'; clone has only a text description of points, no figure. Common-bug: 'replacing svg with text-only description (drops aspect)'."
+  },
+  {
+    "id": "6abec9a8-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "No graph/figure provided; stem only lists points in text. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."
+  },
+  {
+    "id": "39652e93-s1",
+    "templateId": "nonlinear-functions.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'no fraction or negative-exponent base' and a single-/two-term polynomial or radical rule; g(x)=25/x is a rational (x^-1) form, which the template explicitly assigns to the medium lever."
+  },
+  {
+    "id": "b5c43226-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Clone has no graph/svg; only text description of points. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."
+  },
+  {
+    "id": "02c67921-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for f(2) of f(x)=x^2+4 \u2014 this is direct substitution (A1.T1), not reading an intercept from a graph (A3.T1). No graph present and no intercept question."
+  },
+  {
+    "id": "e9aed539-s1",
+    "templateId": "nonlinear-functions.A3.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a vertical translation of a graph by 3 units and asks which point lies on the translated graph \u2014 this is A5.T1 (vertical/horizontal shift), not A3.T1 (read intercept/point from graph)."
+  },
+  {
+    "id": "2f4eafcc-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for f(2) of f(x)=x^2+3 \u2014 direct substitution (A1.T1), not graph-feature identification (A3.T1). No graph, no intercept question."
+  },
+  {
+    "id": "07f2829b-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem compares medians of two separate data sets (Year 2018 vs Year 2019). This is A4.T9 (compare measures across two data sets), not A5.T14 (effect of a manipulation on one set's statistics). No manipulation/transformation is described."
+  },
+  {
+    "id": "a456cfd2-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Question computes median from a frequency table (cumulative counting to middle position). A3.T7 is direct retrieval (min/max/sum of named rows), not computing a measure of center. This belongs in A1.T3 (median from frequency table)."
+  },
+  {
+    "id": "3f2ee20a-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium",
+    "verdict": "aspect_drift",
+    "detail": "A2.T5 requires qualitative SD comparison from two visual distributions. This stem compares two classes via min/max/median table and the keyed answer (B) is about which class contained the highest score \u2014 purely a min/max comparison. Belongs in A4.T9."
+  },
+  {
+    "id": "a29e89fc-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever for A1.T1 requires '4-digit numbers or one decimal place so arithmetic is non-trivial' and 'non-round mean requiring careful division'. Clone uses 5 two-digit integers (28,30,29,31,32) summing evenly to 150/5=30 \u2014 this is an Easy-level computation."
+  },
+  {
+    "id": "560fab82-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T7 medium specifically targets identifying the min/max value with nonzero frequency (often with a zero-frequency distractor row). This clone asks for the mode of a frequency table \u2014 a different task with no zero-frequency distractor; loses the type's medium signature."
+  },
+  {
+    "id": "f8a322d9-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.hard",
+    "verdict": "type_drift",
+    "detail": "T5 requires qualitative SD comparison between two distributions; clone asks for the smallest possible positive difference between MEANS of two binned histograms, which is a mean-comparison item (A4) rather than an SD comparison. The keyed answer (10) is also not strictly determinable since values can be any integer within each bin, allowing mean differences other than 10."
+  },
+  {
+    "id": "608cf8e2-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard",
+    "verdict": "wrong_answer",
+    "detail": "Stem says all original 60 values are greater than 25; adding 25 (strictly less than every value) MUST decrease the mean, so statement I ('mean of B is less than mean of A') must be true. Statement II is also possible. The correct answer is 'I and II' (C), not 'II only' (D). The rationale itself notes I would be true but waffles incorrectly."
+  },
+  {
+    "id": "7f84b136-s1",
+    "templateId": "percentages.A2.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks 'what percent greater' (percent change between two values), which is A3.T3, not A2.T1 ('what percent of N is M'). Answer 540% is mathematically correct for the percent-greater interpretation, but the tagged aspect/type doesn't match the cognitive operation."
+  },
+  {
+    "id": "6e4a60dd-s1",
+    "templateId": "percentages.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Stem is a tip-on-bill scenario (surcharge add-on context), matching A1.T3 (tax/tip add-on) rather than A1.T2 generic 'p% of N' wrapper. Asks for surcharge amount alone, exactly matching T3 easy lever."
+  },
+  {
+    "id": "2d31caae-s1",
+    "templateId": "percentages.A1.T4.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks 'what percent of customers gave 2 stars' (part=20, whole=200, find percent). This is A2.T1 (find percent from part/whole), not A1 (compute part from given percent). A1 requires the percent to be given."
+  },
+  {
+    "id": "1c2f50a6-s1",
+    "templateId": "percentages.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a 25% price reduction (before/after change), which is A3.T1 (find new value after percent decrease), not A1.T2 (single p%-of-N in real-world context). A3 boundary: 'two states of the same quantity are compared'."
+  },
+  {
+    "id": "194ae3b1-s1",
+    "templateId": "percentages.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a 35% increase from 2010 to 2025 (before/after percent change), which is A3.T1 (find new value after stated percent change), not A1.T2 (percent of a whole). Common-bug warned against in A1.T2 must_preserve."
+  },
+  {
+    "id": "b6569d0e-s1",
+    "templateId": "probability-and-conditional-probability.A5.T16.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone asks 'Of those at least 30, what fraction were at least 40?' \u2014 this is a conditional probability (A3.T8 structure: numerator=15 in subset, denominator=27 subset total), not a 'closest to fraction \u00d7 marginal' comparison (A5.T16). Answer 15/27 is mathematically correct, but the question tests conditional reading, not the T16 'compare candidates to target fraction' skill."
+  },
+  {
+    "id": "e9ed719f-s1",
+    "templateId": "probability-and-conditional-probability.A2.T7.medium",
+    "verdict": "type_drift",
+    "detail": "T7 is 'Marginal probability with SPR output' (favorable = one full row or column over grand total). Clone asks for the JOINT cell P(yellow AND square) = 40/200, which is T5 (joint cell), not T7 (marginal). Answer 1/5 is correct, but type tag is wrong."
+  },
+  {
+    "id": "014c47ab-s1",
+    "templateId": "probability-and-conditional-probability.A3.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T8 requires: conditioning subset is a union of two+ rows/cols, OR table is 3\u00d73+, OR reverse setup. Clone uses a simple 2\u00d72 table with a single-row 'given' (trout, 45 total) \u2014 matches the medium difficulty lever, not hard. Answer 3/5 is correct."
+  },
+  {
+    "id": "585de39a-s1",
+    "templateId": "probability-and-conditional-probability.A4.T13.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T13 requires 'two totals present, only one applicable' (e.g., May 83M and Sept 97M with only one being the correct denominator). Clone gives only one total (120M); no distractor total is present. Answer 46 is correct, but the hallmark hard lever (two totals as distractor) is absent."
+  },
+  {
+    "id": "d4413871-s1",
+    "templateId": "probability-and-conditional-probability.A3.T8.hard",
+    "verdict": "type_drift",
+    "detail": "Clone is a Reverse conditional \u2014 solve for missing cell (T10), not a forward conditional reading (T8). Stem states P(B) = 1/5 with unknown x in the denominator and asks to solve for x. Answer x=6 is correct, but the template tag should be A3.T10.hard."
+  },
+  {
+    "id": "939c46d1-s1",
+    "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium",
+    "verdict": "type_drift",
+    "detail": "Stem provides two quantities (32 oz pitcher, 128 oz gallon) but solving requires only a single division 128/32=4, not a chained conversion. Should be A1.T1, not A1.T3. Also the gallon-to-ounce equivalence is given explicitly in the stem rather than as the hard variant's implicit common-knowledge fact."
+  },
+  {
+    "id": "6310adbc-s1",
+    "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A2.T2 (Express missing ratio term symbolically) but stem uses pure numeric ratio (2:5, a=14) and asks for numeric b=35. Answer is numeric, violating T2 must_preserve 'Answer is an algebraic expression, not a numeric value'. This is A2.T1 (numeric proportion)."
+  },
+  {
+    "id": "808f7d6c-s1",
+    "templateId": "ratios-rates-proportional-relationships-and-units.A5.T4.easy",
+    "verdict": "type_drift",
+    "detail": "T4 requires an algebraic relationship in a rate/proportional context. Stem 'x/3 = 7' is pure linear equation solving with no rate or proportional scenario."
+  },
+  {
+    "id": "06a152cd-s1",
+    "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Template states A1.T3 is 'Not represented at Easy; chained conversions are inherently medium-or-above.' Item correctly chains rate (3 oz/cookie) and unit conversion (16 oz/lb), so its inherent difficulty is medium, not easy."
+  },
+  {
+    "id": "c47256ca-s1",
+    "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "TemplateId says T2 (compound-rate conversion), but stem is a single-step linear unit conversion (48 yd \u2192 ft) with no rate/compound unit. This is A1.T1, not A1.T2."
+  },
+  {
+    "id": "13d9a1c3-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Template marks T8 as hard-only ('not observed at medium'); clone is a straightforward 30-60-90 hypotenuse-to-short-leg conversion appropriate for easy/medium but lacks the hard levers (k*sqrt(3) form, multi-step chain). Answer (7) is correct."
+  },
+  {
+    "id": "bf8d843e-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T8 template has no medium variant; clone is a direct 30-60-90 hypotenuse-to-leg one-step problem without hard levers (k*sqrt(3) answer form, multi-step chain). Answer (6) is correct."
+  },
+  {
+    "id": "9ec76b54-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever requires reverse direction (hypotenuse + one leg -> other leg); clone uses forward direction (two legs -> hypotenuse), which is the easy lever. Answer (12*sqrt(5)) is correct."
+  },
+  {
+    "id": "7c25b0dc-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires side lengths with radical factors yielding k*sqrt(d) answer; clone resolves to plain integer L=10 (a 'common bug' the template explicitly warns against: 'dropping the common radical factor so the answer becomes a plain integer \u2014 destroys the lever'). Answer is correct."
+  },
+  {
+    "id": "1bf809b5-s1",
+    "templateId": "right-triangles-and-trigonometry.A2.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T3 requires computing missing side via Pythagoras before forming the ratio; clone gives hypotenuse and adjacent directly, so cos x = 7/20 is one-step (easy-tier)."
+  },
+  {
+    "id": "52f7b898-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates T8 must_preserve: 'answer is a length, area, or coefficient \u2014 not a trig-ratio value'. Clone asks for tan A (a trig-ratio value). Better fits A4 in a trig context but not T8."
+  },
+  {
+    "id": "92eb236a-s1",
+    "templateId": "right-triangles-and-trigonometry.A6.T13.hard",
+    "verdict": "type_drift",
+    "detail": "T13 requires expression of form sin(a)cos(b)+cos(a)sin(b) with two complementary angles inside the expression. Clone is a cofunction reciprocal-tangent question within one right triangle, which fits T11 (cofunction value swap), not T13."
+  },
+  {
+    "id": "bd87bc09-s1",
+    "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 requires derived quantity (perimeter/area) requiring ratio\u2192both legs\u2192Pythagoras\u2192combine. Clone asks for a single side QR, which matches the medium-tier lever (one-step ratio application plus simple Pythagoras)."
+  },
+  {
+    "id": "f811d345-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 requires side lengths containing radical factors (e.g., 10\u221a37, 24\u221a37) so the answer's k\u221ad form arises from the input radicals. Clone uses plain integer legs 18 and 15; the k\u221ad form arises only by simplifying \u221a549, matching common_bugs warning about dropping the radical factor."
+  },
+  {
+    "id": "94f7c9e2-s1",
+    "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+    "verdict": "constraint_violation",
+    "detail": "T5 must_preserve requires 'the ratio appears in the stem (not the answer)'. Here cos M is given in the answer choices, not the stem; no numerical ratio constraint is provided in the stem. This is closer to A1.T2 (Pythagorean expression form) extended to trig, but violates T5's stem-ratio constraint."
+  },
+  {
+    "id": "2704399f-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "constraint_violation",
+    "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph, drifting from A3 (graphical) toward A1. Answer (D) is mathematically correct, but the categorical aspect/type is violated."
+  },
+  {
+    "id": "36f068e2-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone has no graph; it's a pure algebraic solve (substitution to find (20,20)). This is A2.T5/A1.T2 territory, not A3 (graphical representation). Answer is correct, but A3 must_preserve 'one side graphical, one algebraic' is violated."
+  },
+  {
+    "id": "19fdf387-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T11 template defines empty medium characteristics (frequency easy:0, medium:0, hard:2). Clone is a trivial one-step substitution (point (1,4) on y=ax \u2192 a=4), well below T11's hard-only difficulty profile requiring partially-specified intersection and coupled parameters. Answer is correct."
+  },
+  {
+    "id": "6e6a3241-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "constraint_violation",
+    "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph (categorical drift A3\u2192A1 per template). Answer (D) is mathematically correct."
+  },
+  {
+    "id": "d1b66ae6-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T2.hard requires large/non-coprime coefficients or fractional solution or combined-expression target (e.g., xy, 30x). Clone uses small integer coefficients (2,3,4,-1), asks for y directly, integer solution \u2014 matches easy/medium characteristics, not hard."
+  },
+  {
+    "id": "1362ccde-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T3.hard requires non-obvious combined expression with shortcut via sum/difference of equations, or grouped compound variables, or fractional/large coefficients. Clone uses simple substitution on integer system asking x-y \u2014 matches medium characteristics."
+  },
+  {
+    "id": "27f5fff3-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard",
+    "verdict": "type_drift",
+    "detail": "T8 requires the stem to ask how many solutions (categorical: 0/1/infinite). Clone asks for the intersection coordinates (6,2) \u2014 that is an A1/A3 task (solve system / read graph), not solution-counting. Violates T8 must_preserve: 'answer is a categorical choice about solution count'."
+  },
+  {
+    "id": "52cb8ea4-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T3.hard requires non-obvious combined expression admitting elimination shortcut, compound-variable grouping, or fractional/large coefficients. Clone has small integer coefficients, asks for x+y \u2014 fits T3.medium ('asked expression is a small multiple/sum')."
+  },
+  {
+    "id": "4f1342d6-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T5.hard requires mixture/weighted-percent, two parallel scenarios, or rate\u00d7time setup requiring back-conversion. Clone is a simple sum+ratio word problem (May/June sales) reducing to one linear equation in one variable \u2014 matches T5.medium ('one relationship is a ratio and one is a sum')."
+  },
+  {
+    "id": "3f5a3602-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.hard",
+    "verdict": "type_drift",
+    "detail": "T7 requires one side of the question to be graphical (matching a graph to a system or vice versa). Clone presents two pairs of points (purely algebraic) and asks for the solution (x,y) directly\u2014this is A1.T2 behavior (solve the system), not T7 (match system to graph)."
+  },
+  {
+    "id": "3409707e-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged T1 (one equation isolates a variable) but stem 'x+y=160; x+2y=215' has both equations with both variables \u2014 that is T2 structure."
+  },
+  {
+    "id": "939fc21b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged T2 (both equations involve both variables) but u=4 already isolates a variable \u2014 that is T1 structure."
+  },
+  {
+    "id": "4b06557b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 must_preserve: 'graph of exactly two lines shown'. Clone has no graph; pure algebraic system \u2014 categorical drift to A1."
+  },
+  {
+    "id": "608eeb6e-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem asks for combined expression x-y rather than a raw component; that is T3 (solve and evaluate combined expression), not T1."
+  },
+  {
+    "id": "e1259a5a-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.easy",
+    "verdict": "type_drift",
+    "detail": "T7 must_preserve: 'one side of the question is graphical, the other algebraic'. Clone presents two algebraic equations and asks which candidate point is the solution \u2014 no graphical component; this is A1 territory."
+  },
+  {
+    "id": "5f46fc76-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 must_preserve: 'graph of exactly two lines shown'. No graph in stem; pure algebraic \u2014 categorical drift to A1."
+  },
+  {
+    "id": "1006cad7-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 must_preserve: 'graph of exactly two lines shown'. Clone has no graph; pure algebraic system \u2014 categorical drift to A1."
+  },
+  {
+    "id": "e6545fa8-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone has no stimulus/graph and presents only the algebraic equations y=x+1, y=-x+5. This is the categorical drift to A1 explicitly warned about in common_bugs."
+  },
+  {
+    "id": "b0fc3166-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone provides only equations y=2x-1, y=-x+8 with no graph (stimulus is null). Categorical drift from A3 to A1."
+  },
+  {
+    "id": "cdec4c87-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 description requires that 'both equations involve both variables', but the clone's second equation y=17 is a single-variable equation that already isolates y. This is T1 (trivial one-equation isolates a variable) structure, not T2."
+  },
+  {
+    "id": "ca9bb527-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 requires both equations involve both variables; here y=22 already isolates y, making this a T1 (trivial one-equation isolates a variable) structure rather than T2."
+  },
+  {
+    "id": "ccc3ad6b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph (stimulus null) and presents only equations y=-2x+3, y=x-6. Categorical drift to A1."
+  },
+  {
+    "id": "f6b055dc-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph and only lists equations y=x, y=-x+6. Categorical drift to A1."
+  },
+  {
+    "id": "5336f2e4-s1",
+    "templateId": "text-structure-and-purpose.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem reads 'function of the underlined sentences' (plural) and the underlined span covers two sentences; T3 must_preserve requires 'Exactly one complete sentence underlined'. Multi-sentence span fits T4 better."
+  },
+  {
+    "id": "b4887dae-s1",
+    "templateId": "text-structure-and-purpose.A3.T8.hard",
+    "verdict": "type_drift",
+    "detail": "T8 requires \u22653 distinct rhetorical moves; clone has only 2 moves (introduce Hopper + describe compiler work; Abbate's judgment is a coda to the second move, not a third distinct move). Correct answer B explicitly names just 2-3 vague steps. Closer to T7 two-move structure."
+  },
+  {
+    "id": "c071eca2-s1",
+    "templateId": "transitions.A1.T1.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged T1 (direct contrast between two paired items) but stem is single-subject expectation reversal (Villa-Lobos's conventional surface vs. his innovation within it). Fits T2 (expectation reversal with 'nevertheless') better than T1."
+  },
+  {
+    "id": "2b08f514-s1",
+    "templateId": "transitions.A4.T11.hard",
+    "verdict": "type_drift",
+    "detail": "T11 requires an intensifier (in fact/indeed) reinforcing the same claim. Keyed 'Again and again' signals repetition/frequency, not intensification. Does not match T11's core_skill_demand or must_preserve 'intensifier transition as unique correct option.'"
+  },
+  {
+    "id": "a2bff07e-s1",
+    "templateId": "transitions.A2.T6.hard",
+    "verdict": "type_drift",
+    "detail": "T6 (reasoning chain) requires chain-step markers like 'in turn,' 'as such,' 'accordingly,' typically mid-sentence parentheticals. Keyed answer 'Consequently,' is a terminal-result marker (T4), not an intermediate chain link. Stem also lacks multi-step downstream chain; it's a single cause\u2192conclusion."
+  },
+  {
+    "id": "9502ec65-s1",
+    "templateId": "transitions.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "T10 requires additive transitions (in addition/additionally/moreover/furthermore) on parallel independent points. Keyed 'Alternatively,' signals alternation (one option vs another), not addition. Violates T10 must_preserve 'additive transition as unique correct option.'"
+  },
+  {
+    "id": "ecb31049-s1",
+    "templateId": "transitions.A1.T3.hard",
+    "verdict": "type_drift",
+    "detail": "T3 (concession with caveat) requires three-part claim\u2192concession\u2192restoration structure with markers like 'Granted,' 'That said,' 'Of course,' 'Admittedly.' Stem is two-part expectation reversal (engineers believed X; even so, reality is Y) with no restoration. Fits T2 better than T3."
+  },
+  {
+    "id": "3a715eca-s1",
+    "templateId": "transitions.A2.T6.hard",
+    "verdict": "type_drift",
+    "detail": "Template T6 (reasoning chain) requires chain-step markers like 'in turn', 'as such', 'accordingly' placed mid-sentence as parenthetical. Clone's keyed answer 'Consequently' is a terminal result marker characteristic of T4, placed sentence-initially. Matches common_bug: 'Cloner uses Therefore (terminal) when In turn (intermediate) is needed.' Stem is two-step, not multi-step chain."
+  },
+  {
+    "id": "332e75bf-s1",
+    "templateId": "transitions.A5.T16.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve: 'Ultimately (or close synonym) as the unique correct option.' Keyed answer is 'Hence,' a cause/effect marker (A2.T4 territory), not a culmination marker. Stem structure (struggle to reconcile \u2192 resulting conclusion) is cause-then-effect, fitting T4, not T16 culmination. Also the rationale explicitly rejects 'Ultimately' (option C) in favor of 'Hence', contradicting the type's required answer family."
+  },
+  {
+    "id": "37ec26e7-s1",
+    "templateId": "transitions.A5.T15.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A5.T15 (Earlier/Previously flashback) but clone has no date inversion and keyed answer is 'Ultimately,' \u2014 this is T16 culmination, not T15 backward-pointing temporal. Violates must_preserve: 'Two events with explicit dates whose order is reversed' and 'Backward-pointing temporal marker as unique correct option.'"
+  },
+  {
+    "id": "f46139df-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium",
+    "verdict": "type_drift",
+    "detail": "Question asks for predicted y at x=30, which is T7 (predict y) logic, not T8 (residual = actual minus predicted). No actual data point given; only the line and an interpolated x. Answer math (\u22486.3) is correct, but type is mistagged."
+  },
+  {
+    "id": "e17babed-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium",
+    "verdict": "type_drift",
+    "detail": "Question asks for predicted y at x=6 using the line of best fit \u2014 this is T7 logic (predict y at given x), not T8 (residual = actual minus predicted). No actual data point is given. Answer math (6.33\u21926) is correct, but type is mistagged."
+  },
+  {
+    "id": "90ba8f98-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T5 lever requires slope between 0 and 1 (or -1 and 0) so sign+magnitude both diagnostic, and decimal/non-integer reads. Clone uses integer slope = 3 from clean integer coordinates; this matches Easy lever, not Medium."
+  },
+  {
+    "id": "9d95e7ad-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T6.hard requires slope scaled by non-unit interval (per 5/10 units) OR slope estimated from figure first. Clone asks for plain per-unit increase = slope from two given coords, which is just T5 slope computation, not T6 interpretation."
+  },
+  {
+    "id": "fb866265-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A6.T12.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A6.T12 (exponential curve parameter), but clone asks for slope of a linear line of best fit through (0,15) and (12,135). This is A3.T5 (compute slope), not A6 (exponential parameter)."
+  },
+  {
+    "id": "af142f8d-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard",
+    "verdict": "rationale_inconsistent",
+    "detail": "Key is 'd' and reasoning correctly leads to choice d, but rationale's final sentence states 'Choice (c) is correct' instead of 'Choice (d) is correct'."
+  },
+  {
+    "id": "d0430601-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A3.T6 (interpret slope in context) but clone asks for a predicted y-value at x=6 using the line, which is A4.T7 (predict y at given x). Not slope interpretation."
+  },
+  {
+    "id": "d112bc9d-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Clone asks about greatest increase between consecutive x-values requiring computing four differences (+15,-4,-2,+2). Per template, this matches T1.medium ('interval requiring two reads plus subtraction'), not easy ('no calculation required, extreme value visually obvious')."
+  },
+  {
+    "id": "ae32cc3c-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T5.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A3.T5 (compute slope of best-fit line) but clone asks for predicted y at x=900, which is A4.T7 (predict y at given x). Answer is correct (9), but aspect tag is wrong."
+  },
+  {
+    "id": "8d63b6f1-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone reads a value directly from a data table with no line of best fit or prediction model. This is A1 (read raw values), not A4 (predict using model)."
+  },
+  {
+    "id": "661dfddd-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires classifying among {linear/exponential \u00d7 increasing/decreasing} model families. Clone instead asks to describe the association direction; MCQ options do not span the 2x2 model grid."
+  },
+  {
+    "id": "15ce8207-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T11.easy",
+    "verdict": "type_drift",
+    "detail": "T11 must_preserve requires a clearly nonlinear (typically exponential) scatterplot with curve options. Clone shows linear data with linear-vs-constant-vs-quadratic options; correct answer is 'increasing linear', so it fits A5.T10 not T11."
+  },
+  {
+    "id": "b58dbf88-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone reads weight directly from a listed data point (5, 50). No line of best fit or prediction model is used. This is A1 reading raw values, not A4 model-based prediction."
+  },
+  {
+    "id": "5c24c861-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone looks up 50 mph row directly in the table (180 ft). No line of best fit or model prediction is applied; this fits A1, not A4."
+  },
+  {
+    "id": "83272c51-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 must_preserve requires a contextualized x-y graph (not a generic scatterplot or table). Clone uses a table of values, not a graph; structure better matches A1.T1 medium (interval-change reading)."
+  },
+  {
+    "id": "9d88a3e3-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 must_preserve requires a contextualized x-y graph. Clone presents only a verbal/bulleted description with no plotted graph, violating the structural requirement."
+  },
+  {
+    "id": "c9dd92b1-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A1.T2 (qualitative graph reading, no equation/numeric prediction). Stem asks for predicted density via slope computation at x=55%\u2014this is A4.T7 prediction, not A1 reading."
+  },
+  {
+    "id": "d6121490-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged T2 (contextual graph, qualitative property). Stem uses a table (not graph) and asks for a numeric difference (200-90=110). Closer to T1 (compare values) but T2 must_preserve specifies 'contextualized x-y graph, not table' and 'no equation/numeric computation.'"
+  },
+  {
+    "id": "9b22bf7b-s1",
+    "templateId": "words-in-context.A1.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve stem wording for A1.T1 is 'As used in the text, what does the word \"X\" most nearly mean?' but clone uses A2-style stem 'Which choice completes the text with the most logical and precise word or phrase?'. The target 'determine' is underlined in the passage (not a blank), so the answer logic still works toward 'Control', but the stem is mismatched to A1.T1."
+  },
+  {
+    "id": "be94c9fc-s1",
+    "templateId": "words-in-context.A1.T2.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged as A1.T2 (multi-word phrase meaning) but only a single word 'contesting' is underlined \u2014 this is structurally A1.T1 (single-word meaning). Also violates A1.T2 must_preserve stem wording: clone uses A2-style 'Which choice completes the text with the most logical and precise word or phrase?' instead of 'As used in the text, what does the phrase \"X\" most nearly mean?'. Answer 'Obstructing' is reasonable for 'contesting our passage'."
+  },
+  {
+    "id": "98364791-s1",
+    "templateId": "words-in-context.A2.T8.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged T8 (negation/scarcity/counterfactual frame) but stem has no negation around the blank: 'such ______ stimuli'. The blank is a plain adjective describing vibration/stroking, with 'less lasting relief' applying elsewhere. Structurally this is T6 (degree/quality descriptor), not T8."
+  },
+  {
+    "id": "b411eb09-s1",
+    "templateId": "words-in-context.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Clone fits T8 (scarcity frame: 'there is a ______ studies') rather than T3 (restatement gloss). The blank is filled by 'scarcity of' \u2014 a paucity/scarcity frame is the canonical T8-hard pattern per template."
+  },
+  {
+    "id": "6286dd96-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates A1.T1 must_preserve: target word not visibly marked in passage. Stem asks about word 'invent' but passage contains a blank '______' instead of an underlined/quoted 'invent'. Structure is fill-in (A2), not A1.T1."
+  },
+  {
+    "id": "3654202f-s1",
+    "templateId": "words-in-context.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Cue is restatement ('cheap alternative') not a contrast signal; stem fits T3 better than T4."
+  },
+  {
+    "id": "849bf8d7-s1",
+    "templateId": "words-in-context.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "No contrast/concession signal; cue is causal ('helped drive'). Fits T5 better than T4."
+  },
+  {
+    "id": "8d579825-s1",
+    "templateId": "words-in-context.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "No contrast signal in stimulus; cue is restatement ('worked closely together'). Fits T3, not T4."
+  },
+  {
+    "id": "5d48f889-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Target word 'mingled' is not visible in the passage; the stimulus shows a blank placeholder (______) where the word should be. Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'."
+  },
+  {
+    "id": "74ee7737-s1",
+    "templateId": "words-in-context.A2.T6.easy",
+    "verdict": "type_drift",
+    "detail": "All four options are two-word verb+preposition phrases ('guided by', 'puzzled by', 'ignored by', 'displeased with'). This matches T7 (two-word/prepositional collocation), not T6 (single adjective descriptor)."
+  },
+  {
+    "id": "1695391a-s1",
+    "templateId": "words-in-context.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates T2 must_preserve stem wording 'As used in the text, what does the phrase \"X\" most nearly mean?' Clone uses 'what does the author most nearly mean by ...' Options are full sentences rather than short paraphrases, drifting toward a central-idea question."
+  },
+  {
+    "id": "417f8dfa-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates T1 must_preserve 'Target word visibly marked (underline/quote) in the passage.' The stimulus contains a blank '______' instead of the target word 'featured', converting an A1 disambiguation item into an A2-style fill-in-the-blank."
+  },
+  {
+    "id": "9b2fbb2e-s1",
+    "templateId": "words-in-context.A2.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 requires an adjective slot describing a noun's quality. Clone's blank is a verb ('provided') with object 'surprising clarity', matching T5 (cause/effect/function verb) rather than T6."
+  },
+  {
+    "id": "45a109a3-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Target word 'disturbed' is in the stem only, not visibly marked in the passage (the passage shows a blank '______' instead). Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'. This also confuses A1 (given word) with A2 (fill-in)."
+  }
+]

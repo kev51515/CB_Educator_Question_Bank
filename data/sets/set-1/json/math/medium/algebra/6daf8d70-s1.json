@@ -1,0 +1,39 @@
+{
+  "questionId": "6daf8d70-s1",
+  "originalId": "6daf8d70",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A gardener will plant two types of flowers, roses and tulips, in a garden. There will be no more than 150 total flowers planted, and the number of roses planted will be at most four times the number of tulips planted. Which of the following systems of inequalities best represents this situation, where <em>r</em> is the number of roses that will be planted, and <em>t</em> is the number of tulips that will be planted?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>r</em> + <em>t</em> \u2265 150<br><em>r</em> \u2264 4<em>t</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>r</em> + <em>t</em> \u2265 150<br>4<em>r</em> \u2265 <em>t</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>r</em> + <em>t</em> \u2264 150<br><em>r</em> \u2264 4<em>t</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>r</em> + <em>t</em> \u2264 150<br>4<em>r</em> \u2265 <em>t</em></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. \"No more than 150 total\" means <em>r</em> + <em>t</em> \u2264 150. \"Roses at most four times tulips\" means <em>r</em> \u2264 4<em>t</em>.</p><p>Choices A, B, and D reverse the inequality direction or incorrectly express the ratio constraint.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.medium"
+}

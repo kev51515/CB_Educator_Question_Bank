@@ -1,0 +1,39 @@
+{
+  "questionId": "45df91ee-s1",
+  "originalId": "45df91ee",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\">h(x) = 17(1/8)<sup>x</sup></p><p>If the given function h is graphed in the xy-plane, where y = h(x), what is the y-intercept of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 1)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 8)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 17)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, 136)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The y-intercept occurs at x = 0. Substituting yields h(0) = 17(1/8)<sup>0</sup> = 17(1) = 17. So the y-intercept is (0, 17). The other choices are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T2.medium"
+}

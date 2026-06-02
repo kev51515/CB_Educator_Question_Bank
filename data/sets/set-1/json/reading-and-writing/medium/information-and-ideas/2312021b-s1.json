@@ -1,0 +1,25 @@
+{
+  "questionId": "2312021b-s1",
+  "originalId": "2312021b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T7.medium",
+  "stimulus": "<p>In a study by Hannelore Schmidt, Felipe Aragão, and colleagues, residents of Hamburg, Germany, and Porto, Portugal, were surveyed about their use of public libraries. Of the 712 respondents from Hamburg, 68.4% reported visiting a public library in the past year, while of the 645 respondents from Porto, 79.1% reported doing so. Given that the percentage of Hamburg respondents who said they lived within a 15-minute walk of a library was actually higher than the percentage reported by Porto respondents, simple closeness alone cannot explain the difference in library use between the two cities.</p>",
+  "stem": "<p>The text makes which point about the difference between the proportions of Hamburg residents and Porto residents using libraries?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It was calculated using sources that predate the survey.</p>"},
+    {"id": "b", "content": "<p>It was much larger than the researchers conducting the study had expected.</p>"},
+    {"id": "c", "content": "<p>It is caused by something other than the libraries' proximity to city residents.</p>"},
+    {"id": "d", "content": "<p>It could be due to inaccuracies in the survey results.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text presents two percentages of library use—68.4% for Hamburg, 79.1% for Porto—and notes that a higher share of Hamburg respondents lived within a 15-minute walk of a library than did Porto respondents. From this the text concludes that \"simple closeness alone cannot explain the difference,\" making the point that something other than proximity drives the gap in library use.</p><p>Choice A is incorrect because the text does not mention any earlier sources or describe how the difference was calculated. Choice B is incorrect because the text does not report researchers' expectations or their reactions to the result. Choice D is incorrect because the text presents the survey results as factual and uses them as the basis for a conclusion, with no suggestion of inaccuracy.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

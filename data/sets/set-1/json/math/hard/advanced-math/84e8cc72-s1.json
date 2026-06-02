@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "84e8cc72-s1",
+  "originalId": "84e8cc72",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A quadratic function models the height, in feet, of an object above the ground in terms of the time, in seconds, after the object is launched off an elevated platform. The model indicates the object has an initial height of 12 feet above the ground and reaches its maximum height of 412 feet above the ground 5 seconds after it is launched. According to the model, what is the height, in feet, of the object 1 second before it reaches its maximum height?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>380</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>396</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>412</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Let h(t) = a(t &minus; 5)<sup>2</sup> + 412 be the model. Using h(0) = 12 gives 25a + 412 = 12, so a = &minus;16. One second before the maximum, t = 4, and h(4) = &minus;16(&minus;1)<sup>2</sup> + 412 = &minus;16 + 412 = 396.</p><p>Choice A and Choice C result from arithmetic slips. Choice D is the maximum height itself.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T2.hard"
+}

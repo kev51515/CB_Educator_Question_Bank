@@ -1,0 +1,39 @@
+{
+  "questionId": "4a2b2535-s1",
+  "originalId": "4a2b2535",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>A brief review cannot fully convey the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of Eleanor Catton's novel <em>The Luminaries</em>, with its sprawling cast of characters, its tangled, overlapping plot lines, and its chapter lengths that shrink by half as the story progresses.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>accuracy</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>restraint</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>inactivity</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>complexity</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the text lists features (a sprawling cast, tangled plots, and shrinking chapter lengths) that all describe a novel that is intricate and hard to summarize. \"Complexity\" captures this meaning. The other choices do not match these features.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

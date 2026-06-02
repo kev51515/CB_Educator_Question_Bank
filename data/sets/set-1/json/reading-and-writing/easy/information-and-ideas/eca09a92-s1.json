@@ -1,0 +1,39 @@
+{
+  "questionId": "eca09a92-s1",
+  "originalId": "eca09a92",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>If an insect has been extinct for many millions of years, how can scientists figure out the color of its wings? One group of researchers proposed a possible answer. When they examined the fossilized wing of an extinct moth, they found tiny structures called wing scales preserved in the rock. Wing scales reflect and refract light to produce specific colors depending on their shape and spacing. Because differently colored wing scales have measurably different shapes, the researchers hypothesized that they could ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>determine the colors of the moth's wings based on the shape of the wing scales in the fossil.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>show how wing scales can be found in fossils belonging to animals from other extinct insect species.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>explain why the wing scales in the fossil were so well preserved.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>identify the colors of extinct insects whose fossils lack wing scales.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The shape-to-color link in wing scales lets researchers infer the moth's colors from the preserved scales' shapes.</p><p>Choice B describes a different goal not implied by the text. Choice C focuses on preservation, not color. Choice D contradicts the method \u2014 without scales the method wouldn't work.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3d91c973-s1",
+  "originalId": "3d91c973",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Plesiosaurs were long-necked marine reptiles that lived during the Jurassic period, roughly 200 million to 145 million years ago. Researchers Hana Saito, Pablo Quintero, and Lila Erikson examined oxygen-18 isotopes in plesiosaur bone tissue to estimate likely body temperatures, and they concluded that plesiosaurs were endothermic&mdash;that is, they used internal metabolic processes to maintain a stable body temperature across varying ambient temperatures. Saito, Quintero, and Erikson claim that endothermy would have enabled plesiosaurs to range into relatively cold subpolar waters.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Saito, Quintero, and Erikson&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Plesiosaurs&rsquo; likely body temperatures are easier to estimate from oxygen-18 isotope data in bone tissue than the body temperatures of nonendothermic Jurassic marine reptiles are.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Numerous plesiosaur fossils have been found at sites known to have been near the subpolar latitudes during the Jurassic, while relatively few fossils of nonendothermic Jurassic marine reptiles have been found at those same sites.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Fossils of plesiosaurs and of nonendothermic Jurassic marine reptiles have been found in roughly equal numbers at subpolar sites, though in lower concentrations than at warmer sites.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>During the Jurassic, seawater temperatures throughout plesiosaurs&rsquo; range, including at subpolar latitudes, were likely higher than seawater temperatures at those same latitudes are today.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the claim is that endothermy let plesiosaurs reach colder subpolar waters. If plesiosaur fossils are abundant in known subpolar sites but other marine reptiles&rsquo; fossils are rare there, that directly supports the inference that plesiosaurs (unlike nonendotherms) could exploit colder waters. Choice A is about methodology, not range. Choice C undercuts the claim by showing similar distributions. Choice D suggests subpolar waters were already warm, undercutting the need for endothermy.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

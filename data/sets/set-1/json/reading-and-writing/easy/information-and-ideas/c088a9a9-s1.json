@@ -1,0 +1,39 @@
+{
+  "questionId": "c088a9a9-s1",
+  "originalId": "c088a9a9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Over the course of the 1900s, more and more Welsh children in Wales spoke only English instead of the Welsh language. To preserve the language, a group of parents and teachers founded the first Cylch Meithrin (Welsh-medium playgroup) in the 1970s. Teachers spoke only Welsh while leading activities, and the children quickly began understanding and speaking Welsh themselves. <u>The playgroups helped the Welsh language thrive again in places where it had nearly disappeared.</u></p>",
+  "stem": "<p>Which statement, if true, would most directly support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Welsh shares historical roots with other Celtic languages, including Breton and Cornish.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The earliest Cylch Meithrin groups in the 1970s usually met in church halls and community centers.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Many adults in Wales today learn Welsh through evening classes after work.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In one northern Welsh town where almost no children spoke Welsh in 1970, more than 70% of children there can now speak Welsh after attending Cylch Meithrin.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because it directly shows the language thriving again in a place where it had nearly disappeared (almost none to over 70% of children).</p><p>Choice A is incorrect: language family relationships don&rsquo;t show revival. Choice B is incorrect: meeting locations don&rsquo;t show revival. Choice C is incorrect: adult evening classes are unrelated to the playgroups described in the underlined claim.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

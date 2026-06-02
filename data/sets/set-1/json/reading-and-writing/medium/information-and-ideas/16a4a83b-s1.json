@@ -1,0 +1,25 @@
+{
+  "questionId": "16a4a83b-s1",
+  "originalId": "16a4a83b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p><em>The Way of the World</em> is a 1700 comedy of manners by William Congreve. In the play, Congreve suggests that a character named Lady Wishfort is perceived as both relentlessly self-flattering and easily wounded by the slightest hint of criticism, as is evident when another character says <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>The Way of the World</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“Lady Wishfort keeps a most agreeable house, and her table is always furnished with the freshest delicacies in town. One can scarcely refuse her an invitation.”</p>"},
+    {"id": "b", "content": "<p>“She must be flattered every hour of the day, lest she sicken; yet pronounce a single syllable that fails to sing her praises, and she will not speak to you again for a fortnight.”</p>"},
+    {"id": "c", "content": "<p>“Lady Wishfort came up from the country last spring and has, I am told, been entertaining most of the parish ever since.”</p>"},
+    {"id": "d", "content": "<p>“If you find Lady Wishfort in the garden, pray tell her that the carriage is waiting at the gate and that we mean to set out at four.”</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most effectively uses a quotation to illustrate the claim that Lady Wishfort is perceived as both relentlessly self-flattering and easily wounded by the slightest criticism. The speaker explicitly observes that Lady Wishfort “must be flattered every hour of the day, lest she sicken”—directly capturing her insatiable need for praise—and adds that even “a single syllable that fails to sing her praises” will cause her to break off relations “for a fortnight,” capturing her extreme sensitivity to anything short of adoration. The quotation thus enacts both halves of the claim.</p><p>Choice A is incorrect because it describes Lady Wishfort’s hospitality and her household, not her need for flattery or her thin skin. Choice C is incorrect because it merely reports her recent activities in the country and parish without addressing either her vanity or her sensitivity. Choice D is incorrect because it conveys only a routine practical message about a carriage; it says nothing about Lady Wishfort’s character.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

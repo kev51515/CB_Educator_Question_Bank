@@ -1,0 +1,14 @@
+[
+  {
+    "id": "52f7b898-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates T8 must_preserve: 'answer is a length, area, or coefficient \u2014 not a trig-ratio value'. Clone asks for tan A (a trig-ratio value). Better fits A4 in a trig context but not T8."
+  },
+  {
+    "id": "94f7c9e2-s1",
+    "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+    "verdict": "constraint_violation",
+    "detail": "T5 must_preserve requires 'the ratio appears in the stem (not the answer)'. Here cos M is given in the answer choices, not the stem; no numerical ratio constraint is provided in the stem. This is closer to A1.T2 (Pythagorean expression form) extended to trig, but violates T5's stem-ratio constraint."
+  }
+]

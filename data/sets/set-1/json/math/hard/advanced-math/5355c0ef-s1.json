@@ -1,0 +1,24 @@
+{
+  "questionId": "5355c0ef-s1",
+  "originalId": "5355c0ef",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">0.48<i>x</i>&sup2; + 0.36<i>x</i> + 0.84</p><p>The given expression can be rewritten as <i>a</i>(4<i>x</i>&sup2; + 3<i>x</i> + 7), where <i>a</i> is a constant. What is the value of <i>a</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    ".12",
+    "0.12",
+    "3/25"
+  ],
+  "rationale": "<p>Applying the distributive property: <i>a</i>(4<i>x</i>&sup2; + 3<i>x</i> + 7) = 4<i>a</i><i>x</i>&sup2; + 3<i>a</i><i>x</i> + 7<i>a</i>. Matching coefficients gives 4<i>a</i> = 0.48, 3<i>a</i> = 0.36, and 7<i>a</i> = 0.84. Each yields <i>a</i> = 0.12. Acceptable forms include .12 and 3/25.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A4.T9.hard"
+}

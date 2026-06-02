@@ -1,0 +1,25 @@
+{
+  "questionId": "1c7fe9be-s1",
+  "originalId": "1c7fe9be",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>In the early twentieth century, rural communities in Mississippi had little access to medical care. To <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> this problem, public-health nurse Mary Osborne organized a network of mobile clinics in 1921. The clinics went on to deliver preventive care and maternal services to tens of thousands of families over the following decades.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>preserve</p>"},
+    {"id": "b", "content": "<p>publicize</p>"},
+    {"id": "c", "content": "<p>extend</p>"},
+    {"id": "d", "content": "<p>remedy</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. \"Remedy\" means to correct or set right something undesirable. The text describes a lack of medical care as the problem, and Osborne's mobile clinics actively delivered care to families, so she took action to fix the situation.</p><p>Choice A is incorrect because \"preserve\" means to keep something as it is; Osborne acted to change the situation, not maintain it. Choice B is incorrect because \"publicize\" means to bring attention to, but Osborne provided concrete services rather than simply drawing attention to the lack of them. Choice C is incorrect because \"extend\" means to prolong or lengthen, which would mean making the shortage of care continue rather than ending it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

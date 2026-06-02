@@ -1,0 +1,25 @@
+{
+  "questionId": "08be6347-s1",
+  "originalId": "08be6347",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>In her 1962 essay <em>Patterns of Trade and Settlement</em>, Canadian historian Harriet Vance pushed back against the prevailing assumption that rivers alone dictated where early communities formed across the northern plains. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Vance argued that, rather than being determined entirely by waterways, settlement decisions were shaped just as much by negotiated trade routes maintained by Indigenous nations.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Specifically,</p>"},
+    {"id": "b", "content": "<p>Therefore,</p>"},
+    {"id": "c", "content": "<p>Likewise,</p>"},
+    {"id": "d", "content": "<p>Finally,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Specifically\" logically signals that the information in this sentence about Vance's argument—that settlement decisions were shaped by negotiated trade routes—provides precise details elaborating on the more general claim in the previous sentence about Vance pushing back against the assumption that rivers alone dictated settlement.</p><p>Choice B is incorrect because \"therefore\" illogically signals that Vance's argument is a result of her pushing back against the prevailing assumption, when in fact it details what her argument actually was. Choice C is incorrect because \"likewise\" illogically signals that the information is similar to but separate from the previous claim, when it actually elaborates on it. Choice D is incorrect because \"finally\" illogically signals a concluding step in a sequence, when the sentence simply specifies the previous, more general point.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

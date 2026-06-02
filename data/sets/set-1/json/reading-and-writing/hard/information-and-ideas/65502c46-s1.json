@@ -1,0 +1,39 @@
+{
+  "questionId": "65502c46-s1",
+  "originalId": "65502c46",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In a 2019 essay, historian Diego Albarrac&iacute;n argues that in eighteenth-century Buenos Aires, members of the city&rsquo;s gremios (trade associations) participated in a civic culture in which gift giving both signaled and conferred social standing. Earlier research on this culture had concentrated on the philanthropic donations of the city&rsquo;s wealthiest gremios. For his part, Albarrac&iacute;n looks instead at the gifting of handmade objects (such as ornately tooled leather goods and silver-inlaid hardware) within the artisan gremios, whose members were &ldquo;both highly discerning makers and highly discerning judges of work in their own craft.&rdquo; This narrower lens leads Albarrac&iacute;n to conclude that, for artisan gremio members, the exchange of such finely worked objects within the gremio <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>ensured that knowledge of the materials and techniques used by members of the artisan gremios remained within those gremios.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>served as a means for artisan gremio members to build and maintain their professional reputations among peers who could judge the quality of their craft.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>emphasized ostentatious offerings in the case of the wealthiest gremios and everyday objects in the case of the artisan gremios.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>conferred greater social standing when the recipient belonged to one of the wealthier gremios than when the recipient belonged to an artisan gremio.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the discussion. The text emphasizes that artisan gremio members were highly discerning judges of work in their own craft, and that gifts exchanged among them were finely made handmade objects. In a community of expert judges, exchanging displays of craftsmanship would function as a way to demonstrate skill to those most qualified to evaluate it&mdash;thereby building and maintaining one's professional reputation.</p><p>Choice A is incorrect because the text addresses the social meaning of gift exchange, not knowledge transmission or the protection of trade secrets. Choice C is incorrect because Albarrac&iacute;n's research focuses on the artisan gremios; the text does not compare the kinds of objects exchanged in different gremios. Choice D is incorrect because the text does not compare the social standing conferred on recipients in different gremios.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T11.hard"
+}

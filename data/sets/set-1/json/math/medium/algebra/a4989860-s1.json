@@ -1,0 +1,22 @@
+{
+  "questionId": "a4989860-s1",
+  "originalId": "a4989860",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A line in the <em>xy</em>-plane has a slope of 12 and passes through the point (0, -7). The equation y = mx + c defines the line, where <em>m</em> and <em>c</em> are constants. What is the value of <em>m</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>In slope-intercept form y = mx + c, <em>m</em> is the slope of the line. The line has slope 12, so m = 12. (The constant c equals the y-coordinate of the y-intercept, which is -7.)</p>",
+  "templateId": "linear-equations-in-two-variables.A4.T5.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a7a944ed-s1",
+  "originalId": "a7a944ed",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In aquatic chemistry, a body of fresh water with a pH below about 5 is expected to suppress the growth of soft-bodied invertebrates such as freshwater sponges, while a body of fresh water with a pH near neutral typically supports a thriving sponge population. Limnologist Ji-min Park and colleagues, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> documented a dense colony of the sponge <em>Spongilla lacustris</em> flourishing in a Korean mountain lake with a measured pH of 4.3, far below the threshold at which such organisms are believed to persist.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>similarly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>however,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>for example,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>predictably,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The sentence describes an observation\u2014a thriving sponge colony in unusually acidic water\u2014that contradicts the general rule laid out in the previous sentence. \"However\" signals that the new finding is an exception to that rule.</p><p>Choice A is incorrect because \"similarly\" would suggest the second sentence echoes the first, but it actually conflicts with it. Choice C is incorrect because \"for example\" would mark the finding as an example of the prior claim, but it is a counterexample. Choice D is incorrect because \"predictably\" would suggest the finding was expected, when the passage emphasizes that it occurred far below the expected threshold.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T1.hard"
+}

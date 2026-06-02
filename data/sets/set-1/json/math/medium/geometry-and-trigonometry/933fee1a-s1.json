@@ -1,0 +1,39 @@
+{
+  "questionId": "933fee1a-s1",
+  "originalId": "933fee1a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangles <math><mi>M</mi><mi>N</mi><mi>O</mi></math> and <math><mi>P</mi><mi>Q</mi><mi>R</mi></math> are similar, where vertices <math><mi>M</mi></math>, <math><mi>N</mi></math>, <math><mi>O</mi></math> correspond to <math><mi>P</mi></math>, <math><mi>Q</mi></math>, <math><mi>R</mi></math>, respectively. Angle <math><mi>N</mi></math> is a right angle and the measure of angle <math><mi>M</mi></math> is <math><mn>40</mn><mo>&#176;</mo></math>. Which of the following ratios is equal to <math><mi>sin</mi><mo>(</mo><mn>40</mn><mo>&#176;</mo><mo>)</mo></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfrac><mi>MN</mi><mi>MO</mi></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mi>MO</mi><mi>NO</mi></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mi>NO</mi><mi>MO</mi></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mi>MN</mi><mi>NO</mi></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In right triangle MNO, the right angle is at N, so MO is the hypotenuse. The side opposite the 40° angle at M is NO. By definition, sin(40°) equals (opposite)/(hypotenuse) = NO/MO.</p><p>Choice A gives adjacent/hypotenuse = cos(40°). Choice B is the reciprocal of cos(40°). Choice D is opposite/adjacent = tan(40°).</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.medium"
+}

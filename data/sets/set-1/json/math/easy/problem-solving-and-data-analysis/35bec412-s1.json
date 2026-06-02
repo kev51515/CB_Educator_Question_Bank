@@ -1,0 +1,22 @@
+{
+  "questionId": "35bec412-s1",
+  "originalId": "35bec412",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>12, 15, 18, 19, 22, 26, 29, 33, 37</p><p>What is the median of the data shown?</p>",
+  "answerOptions": [],
+  "keys": [
+    "22"
+  ],
+  "rationale": "<p>The correct answer is 22. The median of a data set with an odd number of values is the middle value when the values are ordered from least to greatest. The data set has 9 values already ordered, so the median is the 5th value, which is 22.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T2.easy"
+}

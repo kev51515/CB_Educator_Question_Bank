@@ -1,0 +1,22 @@
+{
+  "questionId": "38517165-s1",
+  "originalId": "38517165",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A circle has a circumference of 47\u03c0 centimeters. What is the diameter, in centimeters, of the circle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "47"
+  ],
+  "rationale": "<p>The circumference of a circle is \u03c0d, where d is the diameter. From \u03c0d = 47\u03c0, the diameter is d = 47.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A1.T3.medium"
+}

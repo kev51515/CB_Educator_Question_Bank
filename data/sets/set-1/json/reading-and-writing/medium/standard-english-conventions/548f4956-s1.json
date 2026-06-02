@@ -1,0 +1,25 @@
+{
+  "questionId": "548f4956-s1",
+  "originalId": "548f4956",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>It is generally assumed that scientific discovery is a forward-moving process, in which earlier theories are supplanted by newer and more accurate <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the recent revival of interest in classical heliocentric models (among researchers reconstructing premodern astronomical methods) reminds us that ostensibly outdated frameworks may be revisited to illuminate present-day puzzles.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>accounts, even so;</p>"},
+    {"id": "b", "content": "<p>accounts even so,</p>"},
+    {"id": "c", "content": "<p>accounts; even so,</p>"},
+    {"id": "d", "content": "<p>accounts, even so,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the coordination of main clauses within a sentence. A semicolon conventionally joins the first main clause (&ldquo;It is...accounts&rdquo;) and the second main clause (&ldquo;the recent...puzzles&rdquo;). Placing the semicolon after &ldquo;accounts&rdquo; indicates that the supplementary phrase &ldquo;even so&rdquo; modifies the following clause, producing the most logical reading.</p><p>Choice A is incorrect because placing the semicolon after &ldquo;so&rdquo; attaches &ldquo;even so&rdquo; to the first clause, which is illogical. Choice B is incorrect because it results in a run-on sentence. Choice D is incorrect because, without a conjunction following it, a comma can&rsquo;t join the two main clauses (comma splice).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

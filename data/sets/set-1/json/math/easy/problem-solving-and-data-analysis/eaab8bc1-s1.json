@@ -1,0 +1,22 @@
+{
+  "questionId": "eaab8bc1-s1",
+  "originalId": "eaab8bc1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Out of 450 seedlings that were planted, 70% grew into mature plants. How many of these seedlings grew into mature plants?</p>",
+  "answerOptions": null,
+  "keys": [
+    "315"
+  ],
+  "rationale": "<p>The correct answer is <strong>315</strong>. 70% of 450 is 0.70 \u00d7 450 = 315.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

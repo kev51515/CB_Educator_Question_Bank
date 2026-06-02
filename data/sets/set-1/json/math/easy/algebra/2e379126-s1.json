@@ -1,0 +1,39 @@
+{
+  "questionId": "2e379126-s1",
+  "originalId": "2e379126",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function g is defined by g(x) = 5x - 9. What is the value of g(-3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-3/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-18/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. g(-3) = 5(-3) - 9 = -15 - 9 = -24.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

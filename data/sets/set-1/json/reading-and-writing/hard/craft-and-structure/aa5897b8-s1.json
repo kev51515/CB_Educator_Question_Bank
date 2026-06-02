@@ -1,0 +1,39 @@
+{
+  "questionId": "aa5897b8-s1",
+  "originalId": "aa5897b8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p><u>In Henry James's novel <em>The Portrait of a Lady</em>, a barely perceptible hesitation in the voice of suitor Gilbert Osmond causes the protagonist Isabel Archer to flush; her self-consciousness deepens when she suspects that he has registered her flush.</u> This moment&mdash;in which Isabel not only reads Osmond's mental state from a minute vocal cue but also infers that <em>he</em> is reading <em>her</em> own response&mdash;exemplifies what literary scholar Caro Vincenti terms \"recursive interiority\": fictional minds attending to other minds attending to them.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It states a claim about James's mastery of psychological complexity that is reinforced by an example in the following sentence.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It provides a synopsis of an interaction in a James novel that illustrates a literary concept discussed in the following sentence.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It advances an interpretation of a James protagonist that is contrasted with protagonists from other James novels cited in the following sentence.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It describes a recurring theme in James's novels that is the focus of a literary scholar's broader analysis summarized in the following sentence.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The underlined sentence narrates a specific exchange between Isabel and Osmond. The following sentence then names \"recursive interiority\" as a literary concept and treats the underlined exchange as a concrete instance of it. The underlined material functions as the synopsis that the next sentence's concept is built upon.</p><p>Choice A is incorrect because the underlined sentence is itself the example; it makes no general claim about James's mastery. Choice C is incorrect because no other James novels are cited. Choice D is incorrect because the underlined material describes a single moment rather than a recurring theme.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.hard"
+}

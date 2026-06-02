@@ -1,0 +1,39 @@
+{
+  "questionId": "3f4ab688-s1",
+  "originalId": "3f4ab688",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A2.T3.hard",
+  "type": "mcq",
+  "stimulus": "<p>In a research paper, a student criticizes some recent biographers of nineteenth-century novelist George Eliot, claiming that they have evaluated Eliot primarily through her personal relationships and household choices rather than in terms of her literary achievements.</p>",
+  "stem": "<p>Which quotation from a work by a biographer would best illustrate the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;Eliot is a difficult subject to write about because the breadth of her novels demands a biographer with both literary and historical training.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Eliot&rsquo;s novels can be set aside for the moment; it is mainly her unconventional domestic arrangements with George Henry Lewes that warrant the modern reader&rsquo;s attention.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;Available evidence suggests Eliot&rsquo;s political views were largely consistent throughout her long career as a novelist.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;Many questions remain about Eliot&rsquo;s ultimate views on questions of religion; without further evidence, these questions are likely to stay open.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it explicitly sets aside Eliot&rsquo;s literary achievements (her novels) and elevates her personal/domestic life as the worthy subject&mdash;which is exactly what the student criticizes such biographers for doing. Choices A, C, and D describe other approaches or analytical limits and do not enact the personal-over-literary substitution the student names.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

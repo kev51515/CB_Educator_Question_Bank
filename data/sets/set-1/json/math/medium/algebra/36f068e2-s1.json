@@ -1,0 +1,39 @@
+{
+  "questionId": "36f068e2-s1",
+  "originalId": "36f068e2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>x + y = 40</p><p>8x + 15y = 460</p><p>The given equations represent the possible numbers of cabanas, x, and lockers, y, rented at a resort last week and the total spent, in dollars, to rent those cabanas and lockers. Which ordered pair (x, y) is the solution to the system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(10, 30)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(15, 25)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(20, 20)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(25, 15)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>From the first equation, x = 40 \u2212 y. Substituting into the second equation: 8(40 \u2212 y) + 15y = 460, which gives 320 + 7y = 460, so 7y = 140 and y = 20. Then x = 40 \u2212 20 = 20, giving the solution (20, 20). The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium"
+}

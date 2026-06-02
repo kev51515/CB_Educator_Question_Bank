@@ -1,0 +1,39 @@
+{
+  "questionId": "af142f8d-s1",
+  "originalId": "af142f8d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two investments are made: Account X earns simple interest at an annual rate of 6%, and Account Y earns interest compounded once per year at an annual rate of 6%. Both accounts begin with the same initial deposit and no further deposits or withdrawals are made. Which of the following best describes the annual interest earned by the two accounts?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In every year after the first year, Account X earns less interest than Account Y.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Account X always earns more interest per year than Account Y.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Account X earns the same amount of interest every year as Account Y.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Account X earns more interest per year than Account Y at first but eventually earns less.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In year 1, both accounts earn the same amount: 6% of the initial deposit. Starting in year 2, Account Y's balance has grown because the year-1 interest is added to the principal that earns interest the next year, so its annual interest exceeds 6% of the original principal. Account X, in contrast, continues to earn exactly 6% of the original principal each year. Therefore, in every year after the first, Account X earns less interest than Account Y.</p><p>Choice B is incorrect because Account X never earns more than Account Y after year 1 (and the two are equal in year 1). Choice C is incorrect: only the first year's interest is equal. Choice D reverses the relationship — simple interest never overtakes compound at the same rate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard"
+}

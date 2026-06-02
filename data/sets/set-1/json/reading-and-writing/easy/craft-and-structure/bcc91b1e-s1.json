@@ -1,0 +1,25 @@
+{
+  "questionId": "bcc91b1e-s1",
+  "originalId": "bcc91b1e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The Hayabusa2 spacecraft briefly touched down on the asteroid Ryugu in 2019. Scientist Yuichi Tsuda explained that, despite a surface far rockier than anticipated, the probe successfully <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> material from the asteroid, capturing fragments that were later delivered to Earth for analysis.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>retrieved</p>"},
+    {"id": "b", "content": "<p>fastened</p>"},
+    {"id": "c", "content": "<p>traced</p>"},
+    {"id": "d", "content": "<p>swapped</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because \"retrieved\" means obtained and brought back, which fits the description of Hayabusa2 gathering fragments to be returned to Earth. Choice B is incorrect because \"fastened\" means attached, but the spacecraft removed material; it did not attach anything. Choice C is incorrect because \"traced\" means followed or tracked, which does not describe collecting samples. Choice D is incorrect because \"swapped\" suggests exchanging items; the probe did not exchange anything with the asteroid.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

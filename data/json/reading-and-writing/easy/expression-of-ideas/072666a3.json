@@ -1,0 +1,72 @@
+{
+  "questionId": "072666a3",
+  "externalId": "52042590-ec3e-4ea6-b3a3-db7869ee35b7",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:39.799423+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "ec4db86b-f7ba-413a-b38c-440fbe0b2155",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "94fb86ab-5a28-4b28-9be6-9f9ba84de62f",
+      "content": "<p>Previously,</p>"
+    },
+    {
+      "id": "475b31ce-1fef-411d-a6b7-12b77428d479",
+      "content": "<p>In contrast,</p>"
+    },
+    {
+      "id": "9f865b27-ea6c-4482-8c7c-8c2e26d02763",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "9f865b27-ea6c-4482-8c7c-8c2e26d02763"
+  ],
+  "rationale": "<p>Choice D is the best answer. &ldquo;As a result&rdquo; logically signals that the information in this sentence&mdash;that the widened grooves in balsa wood can accommodate electrical conductors&mdash;is a direct consequence of the researchers&rsquo; method described in the previous sentence (using heat and chemicals to widen the grooves).</p><p>Choice A is incorrect because &ldquo;for example&rdquo; illogically signals that this sentence provides an example of the researchers&rsquo; method described in the previous sentence. Instead, the sentence indicates a consequence of that method. Choice B is incorrect because &ldquo;previously&rdquo; illogically signals that this sentence describes an event that occurred before the researchers&rsquo; development of the method described in the previous sentence. Instead, the sentence indicates a consequence of that method. Choice C is incorrect because &ldquo;in contrast&rdquo; illogically signals that the information in this sentence contrasts with the previous sentence&rsquo;s description of the researchers&rsquo; method. Instead, the sentence indicates a consequence of that method.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>The tiny transistors that control the flow of electricity in modern devices may one day be made of wood. Researchers in Switzerland have found a way to use heat and chemicals to widen the grooves in dry pieces of balsa wood. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> these grooves become wide enough that electrical conductors can be passed through them.</p>",
+    "keys": [
+      "9f865b27-ea6c-4482-8c7c-8c2e26d02763"
+    ],
+    "answerOptions": [
+      {
+        "id": "ec4db86b-f7ba-413a-b38c-440fbe0b2155",
+        "content": "<p>For example,</p>"
+      },
+      {
+        "id": "94fb86ab-5a28-4b28-9be6-9f9ba84de62f",
+        "content": "<p>Previously,</p>"
+      },
+      {
+        "id": "475b31ce-1fef-411d-a6b7-12b77428d479",
+        "content": "<p>In contrast,</p>"
+      },
+      {
+        "id": "9f865b27-ea6c-4482-8c7c-8c2e26d02763",
+        "content": "<p>As a result,</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. &ldquo;As a result&rdquo; logically signals that the information in this sentence&mdash;that the widened grooves in balsa wood can accommodate electrical conductors&mdash;is a direct consequence of the researchers&rsquo; method described in the previous sentence (using heat and chemicals to widen the grooves).</p><p>Choice A is incorrect because &ldquo;for example&rdquo; illogically signals that this sentence provides an example of the researchers&rsquo; method described in the previous sentence. Instead, the sentence indicates a consequence of that method. Choice B is incorrect because &ldquo;previously&rdquo; illogically signals that this sentence describes an event that occurred before the researchers&rsquo; development of the method described in the previous sentence. Instead, the sentence indicates a consequence of that method. Choice C is incorrect because &ldquo;in contrast&rdquo; illogically signals that the information in this sentence contrasts with the previous sentence&rsquo;s description of the researchers&rsquo; method. Instead, the sentence indicates a consequence of that method.</p>",
+    "externalid": "52042590-ec3e-4ea6-b3a3-db7869ee35b7",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>The tiny transistors that control the flow of electricity in modern devices may one day be made of wood. Researchers in Switzerland have found a way to use heat and chemicals to widen the grooves in dry pieces of balsa wood. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> these grooves become wide enough that electrical conductors can be passed through them.</p>"
+}

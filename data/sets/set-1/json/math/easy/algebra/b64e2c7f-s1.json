@@ -1,0 +1,39 @@
+{
+  "questionId": "b64e2c7f-s1",
+  "originalId": "b64e2c7f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A reptile must have a body temperature of at least 32.0&deg;C to be active. A lizard currently has a body temperature of 28.6&deg;C. What is the minimum number of degrees Celsius the lizard's body temperature must rise for it to become active?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3.4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5.4</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 32.0 - 28.6 = 3.4&deg;C.</p><p>Other choices result from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy"
+}

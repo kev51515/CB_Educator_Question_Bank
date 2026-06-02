@@ -1,0 +1,39 @@
+{
+  "questionId": "748995b3-s1",
+  "originalId": "748995b3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In the early 1900s, Russian composers experimented with low, dark tones in their orchestral music. They did so by adding instruments that played in the deepest registers of the orchestra. For example, in some of his symphonies, Russian composer Alexander Glazunov added contrabassoons and bass tubas to the ensemble. With these instruments sounding together, the orchestra could produce powerful low notes during the most dramatic passages of his symphonies.</p>",
+  "stem": "<p>According to the text, how did Alexander Glazunov achieve moments of powerful low tones in his symphonies?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By insisting that the singers undergo special training to reach very low notes</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By moving performances of his symphonies from indoor halls to outdoor venues</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By designing concert halls whose shape would deepen the sound</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By adding contrabassoons and bass tubas to the orchestra</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the text states directly that Glazunov added contrabassoons and bass tubas to the orchestra to produce powerful low notes.</p><p>Choice A is incorrect; the text never mentions singers. Choice B is incorrect; the text says nothing about moving venues. Choice C is incorrect; the text says nothing about the design of concert halls.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

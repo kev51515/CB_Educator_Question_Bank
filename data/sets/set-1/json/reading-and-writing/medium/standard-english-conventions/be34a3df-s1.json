@@ -1,0 +1,25 @@
+{
+  "questionId": "be34a3df-s1",
+  "originalId": "be34a3df",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.misc.medium",
+  "stimulus": "<p>In 2014, three years after the death of speculative fiction writer Ursula K. Le Guin&rsquo;s longtime friend James Tiptree Jr., the Beinecke Library at <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> acquired a trove of more than 6,000 items, including handwritten letters, working drafts, research clippings, photographs, and personal sketches. Today, the Tiptree Papers are among the most frequently consulted holdings in the library.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Yale</p>"},
+    {"id": "b", "content": "<p>Yale,</p>"},
+    {"id": "c", "content": "<p>Yale:</p>"},
+    {"id": "d", "content": "<p>Yale&mdash;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. No punctuation should separate the subject (\"the Beinecke Library at Yale\") from its verb (\"acquired\").</p><p>Choice B is incorrect because a comma improperly separates the subject from its verb. Choice C is incorrect because a colon improperly separates the subject from its verb. Choice D is incorrect because a dash improperly separates the subject from its verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

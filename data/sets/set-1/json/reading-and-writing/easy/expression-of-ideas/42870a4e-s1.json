@@ -1,0 +1,39 @@
+{
+  "questionId": "42870a4e-s1",
+  "originalId": "42870a4e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Andy Warhol intended his 1962 ready-made artwork <em>Campbell's Soup Cans</em> to challenge then-prevailing distinctions between fine art and commercial illustration. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Warhol's <em>Campbell's Soup Cans</em> did just that, raising the question of whether a painstaking reproduction of mass-produced packaging could itself be considered a serious work of art.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Indeed,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Instead,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In addition,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Indeed\" logically signals that the information in this sentence\u2014that the artwork raised the question of whether painted commercial packaging could be considered serious art\u2014offers emphasis in support of the claim in the previous sentence that the artwork was intended to challenge distinctions between fine art and commercial illustration.</p><p>Choice B is incorrect because \"similarly\" illogically signals that the information is similar to the claim. Instead, it supports that claim. Choice C is incorrect because \"instead\" illogically signals an alternative. Rather, the information supports the claim. Choice D is incorrect because \"in addition\" illogically signals merely an additional fact. Instead, the information offers emphasis in support of the claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T11.easy"
+}

@@ -1,0 +1,23 @@
+{
+  "questionId": "7028c74f-s1",
+  "originalId": "7028c74f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>4(x + 9) = 12(x &minus; 11)(x + 9). What is the sum of the solutions to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "7/3",
+    "2.33"
+  ],
+  "rationale": "<p>Subtract 4(x + 9) from both sides: 0 = 12(x &minus; 11)(x + 9) &minus; 4(x + 9). Factor out (x + 9): 0 = (x + 9)[12(x &minus; 11) &minus; 4] = (x + 9)(12x &minus; 136). So x = &minus;9 or 12x = 136, i.e. x = 34/3. The sum of the solutions is &minus;9 + 34/3 = (&minus;27 + 34)/3 = 7/3.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

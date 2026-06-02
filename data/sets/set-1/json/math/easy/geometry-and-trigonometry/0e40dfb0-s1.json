@@ -1,0 +1,39 @@
+{
+  "questionId": "0e40dfb0-s1",
+  "originalId": "0e40dfb0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A rectangle has a length of 5 units and a width of 24 units. Which expression gives the area, in square units, of this rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5 + 24</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5 \u00b7 24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5 + 5 + 24 + 24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24 \u00b7 24</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a rectangle is length times width. With length 5 and width 24, the area is 5 \u00b7 24 square units. Choice A is the sum. Choice C is the perimeter. Choice D incorrectly squares the width.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "cd358b89-s1",
+  "originalId": "cd358b89",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> + 4)(<i>x</i> + 3)(<i>x</i> + 2). The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> &minus; 5). The graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane crosses the <i>x</i>-axis at three points, (<i>r</i>, 0), (<i>s</i>, 0), and (<i>t</i>, 0). What is the value of <i>r</i> + <i>s</i> + <i>t</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The zeros of <i>f</i> are <i>x</i> = &minus;4, &minus;3, &minus;2. Because <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i> &minus; 5), each zero of <i>f</i> shifts 5 units right: <i>g</i> has zeros at 1, 2, and 3. Their sum is 1 + 2 + 3 = 6.</p><p>Choice A is the sum of the original zeros of <i>f</i>. Choices B and D apply the wrong direction or magnitude of shift.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A5.T1.hard"
+}

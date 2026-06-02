@@ -1,0 +1,39 @@
+{
+  "questionId": "baef99a5-s1",
+  "originalId": "baef99a5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1905 novel by an American writer. Edward Foley is being shown, for the first time, a bronze bust that his old friend the sculptor Renard has made of him.</p><p style=\"padding-left:1em;\">Foley crossed the studio with a careless step and turned at last toward the pedestal. As his eyes fell on the bronze, he gave a slight start and his color deepened with what was unmistakably pleasure. A light of astonishment, almost of recognition, passed over his face, and he remained standing very still, conscious in some dim way that Renard was speaking to him, yet wholly unable to follow the meaning of the words. The sense of his own dignity broke upon him as if for the first time; he had never been quite aware of it before.</p>",
+  "stem": "<p>According to the text, what is true about Foley?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>He is delighted by what he sees in the bust.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>He prefers sculptures to other types of art.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>He doubts Renard's skill as a sculptor.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>He wants to hear Renard's opinion of the bust.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text describes Foley's color deepening with pleasure, a light of astonishment passing over his face, and his being so absorbed in the bust that he cannot follow Renard's words.</p><p>Choice B is incorrect; the bust is the only artwork mentioned, so there's no basis for a preference. Choice C is incorrect; nothing suggests Foley doubts Renard's skill. Choice D is incorrect; Foley is too absorbed in the bust to be focused on Renard's opinion.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

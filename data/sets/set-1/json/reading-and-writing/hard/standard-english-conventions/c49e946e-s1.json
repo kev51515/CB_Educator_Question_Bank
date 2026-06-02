@@ -1,0 +1,25 @@
+{
+  "questionId": "c49e946e-s1",
+  "originalId": "c49e946e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T9.hard",
+  "stimulus": "<p>As the eleventh archivist of the United States, David Ferriero held many responsibilities. These included supervising the National Archives&rsquo; holdings, which exceed more than 13 billion pages of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> directing the Office of Government Information Services, which mediates disputes under the Freedom of Information Act and advises agencies on transparency policy; and authenticating the daily acts of Congress.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>records directing</p>"},
+    {"id": "b", "content": "<p>records, directing</p>"},
+    {"id": "c", "content": "<p>records. Directing</p>"},
+    {"id": "d", "content": "<p>records; directing</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the punctuation of elements in a complex series. It is conventional to use a semicolon to separate items in a complex series with internal punctuation; here the semicolon after \"records\" separates the first item (\"supervising...records\") from the second (\"directing...policy\"), matching the semicolon used later before \"and.\"</p><p>Choice A is incorrect because it fails to use any punctuation between the first and second series items. Choice B is incorrect because a comma after \"records\" does not match the semicolon used later in the series. Choice C is incorrect because it produces a sentence fragment beginning with \"Directing.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

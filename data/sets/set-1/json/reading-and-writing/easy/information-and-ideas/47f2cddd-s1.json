@@ -1,0 +1,39 @@
+{
+  "questionId": "47f2cddd-s1",
+  "originalId": "47f2cddd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;The Wind and the Pine&rdquo; is a 1902 poem by Edith Kelly. In the poem, a pine tree is portrayed as intending to stand firm and resist the wind: ______</p>",
+  "stem": "<p>Which quotation from &ldquo;The Wind and the Pine&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;I am the Wind. I sweep the hills; / I carry the seeds where my will tills; / My voice is heard in every glen, / I rush past field and through the fen.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;I am the Pine. My needles fall / Year by year on the woodland floor; / Their soft brown carpet covers all, / And builds the soil for years to come.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;I am the Pine, defiant Wind! / I am rooted here against thy storm. / Howl thou loud or whisper low, / I am set here to stand thy blow.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;I am the Wind. My breath is free; / Even granite must bend to me; / Mountains crumble beneath my song / As ages pass and time goes long.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the pine speaks directly to the wind (&ldquo;defiant Wind!&rdquo;) and declares that it is &ldquo;rooted here against thy storm&rdquo; and &ldquo;set here to stand thy blow,&rdquo; clearly conveying its intent to stand firm and resist the wind.</p><p>Choice A is incorrect because it is the wind&rsquo;s speech, not the pine&rsquo;s. Choice B is incorrect because it focuses on the pine&rsquo;s needles falling, not on resisting the wind. Choice D is incorrect because it is the wind speaking about its own power.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T2.easy"
+}

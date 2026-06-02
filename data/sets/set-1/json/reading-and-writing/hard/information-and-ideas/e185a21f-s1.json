@@ -1,0 +1,39 @@
+{
+  "questionId": "e185a21f-s1",
+  "originalId": "e185a21f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>One theory behind whale echolocation speculates that it originated in a coastal, surface-feeding cetacean ancestor that relied primarily on vision in shallow, sunlit waters, like modern dolphins do near shore, and eventually evolved into a finely tuned system for hunting in the open ocean. But recently, researchers observed beaked whales, another relative of dolphins, generating rapid clicks while diving in completely dark deep-water canyons in pursuit of squid. These observations may suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>foraging across both shallow and deep water would have been difficult without echolocation.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a surface-feeding cetacean ancestor could have easily used echolocation in shallow water.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>echolocation must have evolved simultaneously with surface feeding and deep diving.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>echolocation evolved because it was advantageous to a deep-diving ancestor of dolphins.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says one theory is that echolocation originated in a coastal, vision-dependent ancestor and later became a refined open-ocean hunting tool. But the observation that beaked whales use rapid clicks in dark deep-water canyons to find squid suggests another possible explanation: that echolocation may instead have evolved because it offered a key advantage\u2014locating prey in darkness\u2014to a deep-diving ancestor of dolphins.</p><p>Choice A is incorrect because the observation about beaked whales using clicks in the deep doesn't address how difficult shallow- and deep-water foraging would be without echolocation. Choice B is incorrect because the observation is about a deep-diving relative, not a surface-feeding one. Choice C is incorrect because the observation doesn't establish that any of these behaviors arose at the same time as the others.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

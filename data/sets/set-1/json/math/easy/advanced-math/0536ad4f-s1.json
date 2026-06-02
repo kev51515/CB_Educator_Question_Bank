@@ -1,0 +1,39 @@
+{
+  "questionId": "0536ad4f-s1",
+  "originalId": "0536ad4f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>25</mn><mi>v</mi><mo>-</mo><mfenced><mrow><mn>6</mn><mi>v</mi><mo>+</mo><mn>4</mn><mi>v</mi></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>13</mn><mi>v</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>21</mn><mi>v</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>15</mn><mi>v</mi></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>35</mn><mi>v</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Combining the like terms inside the parentheses gives 6v + 4v = 10v. Subtracting from 25v gives 25v \u2212 10v = 15v.</p>",
+  "templateId": "equivalent-expressions.A1.T2.easy"
+}

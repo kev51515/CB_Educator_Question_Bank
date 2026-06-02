@@ -1,0 +1,25 @@
+{
+  "questionId": "f2208f98-s1",
+  "originalId": "f2208f98",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>When Paraguayan novelist Susana Britos, who had previously published three works in Spanish, began writing in her ancestral language, Guaran&iacute;, in the 1980s, several colleagues and reviewers warned that doing so might place her books out of reach of readers beyond her own region. Some pointed out that Portuguese — widely read across South America — would be a more practical alternative. Rejecting their advice, Britos went on to author more than a dozen acclaimed novels in Guaran&iacute; that have been translated into a total of over twenty languages.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Although Britos&rsquo;s decision to write in Guaran&iacute; was met with skepticism, it did not prevent her from achieving literary success.</p>"},
+    {"id": "b", "content": "<p>Although Britos insisted on publishing her earliest works in Guaran&iacute;, they have since been translated into many other languages.</p>"},
+    {"id": "c", "content": "<p>The reaction to Britos&rsquo;s rejection of Spanish illustrates that some literary experts believe fame is most easily gained by writing in a widely read language, such as Guaran&iacute;.</p>"},
+    {"id": "d", "content": "<p>In the 1980s, Britos became convinced that literature ought to be written in authors&rsquo; ancestral languages, and she proceeded to publish many works in Guaran&iacute;.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text says colleagues warned Britos that writing in Guaran&iacute; would limit her readership and that she nevertheless went on to publish more than a dozen acclaimed novels translated into over twenty languages — so the skepticism did not prevent her success.</p><p>Choice B is incorrect because the text states she had previously published three works in Spanish, so her earliest works were not in Guaran&iacute;. Choice C is incorrect because the text describes Guaran&iacute; as the language whose use raised concerns about reach, not as widely read. Choice D is incorrect because the text never says what motivated Britos&rsquo;s choice or that she advocated for other authors to follow her example.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

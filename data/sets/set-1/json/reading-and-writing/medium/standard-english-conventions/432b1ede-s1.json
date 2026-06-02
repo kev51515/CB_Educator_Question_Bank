@@ -1,0 +1,39 @@
+{
+  "questionId": "432b1ede-s1",
+  "originalId": "432b1ede",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A2.T4.medium",
+  "type": "mcq",
+  "stimulus": "<p>The thirty-eight historic stone bridges of England’s Lake District are maintained by a process known as preventive conservation, in which crews regularly clean, repoint, and patch the stonework—in this case, focusing on the slate and rubble bridges of the western ______ stand up to centuries of rainfall.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>fells to</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>fells: to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>fells—to</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>fells, to</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The convention tested is the punctuation of a supplementary element within a sentence. The dash after “fells” pairs with the earlier dash after “stonework” to set off the supplementary element “in this case, focusing on the slate and rubble bridges of the western fells” from the rest of the sentence.</p><p>Choice A fails to use any punctuation to close the supplementary element. Choice B uses a colon, which cannot pair with a dash to set off a parenthetical element. Choice D uses a comma, which also doesn’t pair with the opening dash to bracket the supplementary phrase.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z"
+}

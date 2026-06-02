@@ -1,0 +1,22 @@
+{
+  "questionId": "73b3b7d8-s1",
+  "originalId": "73b3b7d8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>4</mn><mi>y</mi><mo>=</mo><mn>7</mn><mi>x</mi><mo>+</mo><mn>9</mn></math></p>\n<p style=\"text-align: center;\"><math><mo>-</mo><mn>4</mn><mi>y</mi><mo>=</mo><mn>3</mn><mi>x</mi><mo>-</mo><mn>25</mn></math></p>\n<p>The solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mn>25</mn><mi>x</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "40"
+  ],
+  "rationale": "<p>The correct answer is 40. Adding the two equations eliminates y: 0 = 10x \u2212 16, so x = 16/10 = 8/5. Then 25x = 25 \u00b7 8/5 = 40.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "a94b7fd6-s1",
+  "originalId": "a94b7fd6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>With immigrants arriving from Italy, Ireland, Germany, and many other nations, New York City has long been a hub of cultural exchange. Even in the 1850s, roughly half of the city's residents <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> born outside the United States.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are being</p>"},
+    {"id": "b", "content": "<p>are</p>"},
+    {"id": "c", "content": "<p>will be</p>"},
+    {"id": "d", "content": "<p>were</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verbs to express tense. The past tense verb \"were,\" used with the time marker \"in the 1850s,\" correctly indicates that the claim about New York City's residents refers to that earlier period.</p><p>Choice A is incorrect because the present progressive verb \"are being\" doesn't indicate that the claim refers to the population back in the 1850s. Choice B is incorrect because the present tense verb \"are\" doesn't indicate that the claim refers to the population back in the 1850s. Choice C is incorrect because the future tense verb \"will be\" doesn't indicate that the claim refers to the population back in the 1850s.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

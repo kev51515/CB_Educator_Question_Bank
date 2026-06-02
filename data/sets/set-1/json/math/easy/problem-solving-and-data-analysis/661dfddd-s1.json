@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot displays the average humidity and the altitude of 9 different weather stations in a mountain range. A line of best fit for the data slants downward from left to right. Which of the following statements best describes the association between altitude and humidity at these stations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As altitude increases, humidity tends to increase.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As altitude decreases, humidity tends to decrease.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>As altitude increases, humidity tends to decrease.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>There is no association between altitude and humidity.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A line of best fit that slants downward from left to right indicates a negative association: as altitude (x) increases, humidity (y) decreases.</p><p>Choice A describes a positive association. Choice B reverses the variables (it does not describe the same trend). Choice D contradicts the trend shown.</p>",
+  "questionId": "661dfddd-s1",
+  "originalId": "661dfddd",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T9.easy"
+}

@@ -1,0 +1,498 @@
+{
+  "section": "Math",
+  "domain": "Algebra",
+  "skill": "Linear equations in one variable",
+  "originals_count": 107,
+  "types": [
+    {
+      "id": "T1",
+      "name": "Solve a one-step linear equation",
+      "description": "A single linear equation of the form x+a=b, x-a=b, or ax=b (or simple fraction like (4x)/5=20) is given; the student must isolate x with a single inverse operation.",
+      "core_skill_demand": "Apply one inverse operation (addition/subtraction or multiplication/division) to isolate the variable.",
+      "example_originals": ["05417146", "23758540", "60f71697", "87071893", "465c73ad", "c841e8e8", "56e1b09e", "6ac23de7"],
+      "frequency": { "easy": 8, "medium": 0, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Single inverse operation needed (one add/subtract OR one multiply/divide)",
+            "Integer coefficients and integer or simple-decimal constants",
+            "Variable appears exactly once on the left side"
+          ],
+          "example_stem": "w+7=357. What value of w is the solution?",
+          "example_ids": ["05417146", "87071893", "60f71697"]
+        },
+        "medium": {
+          "characteristics": ["Not represented at medium for this template — the difficulty signal is too low for SAT medium tier."],
+          "example_stem": "",
+          "example_ids": []
+        },
+        "hard": {
+          "characteristics": ["Not represented at hard for this template."],
+          "example_stem": "",
+          "example_ids": []
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Exactly one inverse operation between the equation as written and x=answer",
+          "Variable appears only once",
+          "Solution is an exact integer (or terminating decimal for SPR items)"
+        ],
+        "must_vary": [
+          "Variable letter (w, x, p, k, n, …)",
+          "Numeric constants",
+          "Whether the operation is add, subtract, multiply, or divide",
+          "MCQ distractors that correspond to common one-step errors (used wrong inverse, used opposite sign)"
+        ],
+        "common_bugs": [
+          "Cloner sneaks in a second operation, turning an easy one-step into a medium two-step",
+          "Distractors no longer mirror real procedural errors (e.g., are just random nearby numbers)",
+          "Solution becomes non-integer when SPR format requires integer-friendly answer"
+        ]
+      }
+    },
+    {
+      "id": "T2",
+      "name": "Solve a two-step linear equation",
+      "description": "Equations of the form ax+b=c where the student performs two inverse operations in sequence (subtract the constant, then divide by the coefficient).",
+      "core_skill_demand": "Apply two inverse operations in correct order to isolate the variable.",
+      "example_originals": ["097e10f5", "349a5bc1"],
+      "frequency": { "easy": 2, "medium": 0, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Standard form ax+b=c with small positive integer coefficients",
+            "Solution is a positive integer divisible by the coefficient",
+            "No negatives, no fractions, no parentheses"
+          ],
+          "example_stem": "What value of p satisfies 5p+180=250?",
+          "example_ids": ["097e10f5", "349a5bc1"]
+        },
+        "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+        "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Exactly two inverse operations needed",
+          "Single variable, single occurrence on left side",
+          "Integer solution"
+        ],
+        "must_vary": ["Variable letter", "All three numbers (a, b, c)", "MCQ distractors corresponding to: forgot to subtract b, divided incorrectly, added instead of subtracted"],
+        "common_bugs": [
+          "Coefficient does not divide (c-b) evenly, producing a non-integer answer",
+          "Negative constants introduced, escalating to medium difficulty",
+          "Distractors lose their diagnostic mapping to procedural mistakes"
+        ]
+      }
+    },
+    {
+      "id": "T3",
+      "name": "Substitute a given value into a linear expression",
+      "description": "Student is told x equals a specific number and must compute a related linear expression like x+20.",
+      "core_skill_demand": "Substitute a numeric value for the variable and evaluate the resulting arithmetic expression.",
+      "example_originals": ["0d685865", "6fa593f1"],
+      "frequency": { "easy": 2, "medium": 0, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Given x=integer, asked to evaluate x+c or x-c",
+            "All operations stay in integer arithmetic"
+          ],
+          "example_stem": "If x=7, what is x+20?",
+          "example_ids": ["0d685865", "6fa593f1"]
+        },
+        "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+        "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+      },
+      "clone_constraints": {
+        "must_preserve": ["x is given as an explicit single integer", "Target expression is a simple linear expression in x"],
+        "must_vary": ["Value of x", "Constant in the target expression", "Whether the expression is x+c, x-c, ax, ax+c"],
+        "common_bugs": ["Target expression includes another variable, breaking the pure-substitution pattern", "Distractors fail to reflect 'used wrong operation' errors"]
+      }
+    },
+    {
+      "id": "T4",
+      "name": "Use a given linear equation to evaluate a related expression",
+      "description": "Given an equation like ax+b=c (or ax=b), evaluate a related linear expression (e.g., kx, kx+m, ax+c, x-7) WITHOUT necessarily solving for x first — by scaling/transforming the original equation.",
+      "core_skill_demand": "Recognize that the target expression is a multiplicative or additive transformation of the given equation, and apply the same transformation to both sides (or solve for x and substitute).",
+      "example_originals": ["2e8cc1c0", "70774aa4", "9b886541", "eac739b2", "0adbe034", "fa80893a", "ce6b52d8", "f60aa0dc"],
+      "frequency": { "easy": 17, "medium": 8, "hard": 1 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Target expression is the original side multiplied by a small integer (e.g., given 4x=3, find 24x)",
+            "Or: given ax=b, find x+c or x-c with one extra inverse step",
+            "No distribution, no fractions, no variables on both sides"
+          ],
+          "example_stem": "If 4x=3, what is the value of 24x?",
+          "example_ids": ["2e8cc1c0", "49cd76d5", "70774aa4", "b82a943c", "9b886541", "0adbe034"]
+        },
+        "medium": {
+          "characteristics": [
+            "Target expression involves a fractional coefficient or grouped sub-expression (e.g., 'find x-3' from a 2-step equation, 'find 8x-1' from '4x-1/2=-5')",
+            "Requires a non-trivial scaling factor (multiply both sides by a non-unit factor)",
+            "Or: given an equation in form Ax+B=Cx+B+k, recognize that x+B is the natural sub-expression"
+          ],
+          "example_stem": "If 4x-1/2=-5, what is the value of 8x-1?",
+          "example_ids": ["ce314070", "7a5a74a6", "45bba652", "d0a2fed5", "018a2704", "620abf36", "ce6b52d8", "f60aa0dc"]
+        },
+        "hard": {
+          "characteristics": [
+            "Target sub-expression appears literally inside both sides; student must treat it as a single unknown (e.g., 5(2-4x)-7=16(2-4x)-8 → find 2-4x)"
+          ],
+          "example_stem": "If 5·(2-4x)=16·(2-4x), what is the value of 2-4x?",
+          "example_ids": ["4771a64a"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "The target expression is a structural transformation (scale and/or shift) of the original equation",
+          "Solving for x is possible but not the most efficient path",
+          "Distractors should include: value of x itself, value of original expression, sign flip"
+        ],
+        "must_vary": ["Variable letter", "All numeric values", "Scaling factor between original and target", "Whether the transformation is multiplicative, additive, or both"],
+        "common_bugs": [
+          "Cloner solves for x and asks for x directly, collapsing T4 into T1/T2",
+          "Cloner picks a scaling factor of 1 (target = original side), making the question trivial",
+          "Distractors lose the 'student solved for x but forgot to plug into target' trap"
+        ]
+      }
+    },
+    {
+      "id": "T5",
+      "name": "Word problem: set up and solve a linear equation",
+      "description": "A real-world scenario (fees, inventory consumption, perimeter, age, distribution) translates into a linear equation that the student must both construct and solve.",
+      "core_skill_demand": "Translate a verbal context into a linear equation in one variable, then solve it; report the contextually meaningful quantity.",
+      "example_originals": ["12255364", "2e98b1df", "12b04e68", "56e373b3", "8339793c", "36ab4122", "1ce51655", "f09097b1", "feb78194", "2937ef4f"],
+      "frequency": { "easy": 13, "medium": 7, "hard": 1 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "One-step or simple two-step equation hidden in the prose (e.g., 130+v=165, 36+19x=188)",
+            "Quantities given are concrete counts or whole-dollar amounts",
+            "Single rate or single fixed-plus-rate structure"
+          ],
+          "example_stem": "A gym charges a $36 enrollment fee and $19/month. After how many months is the total $188?",
+          "example_ids": ["12255364", "2e98b1df", "12b04e68", "3d04de9c", "46f68129", "997bec28", "9fc31513"]
+        },
+        "medium": {
+          "characteristics": [
+            "Two-step equation requires interpreting a rate per unit (e.g., 'decreases by 1 ounce every 4 days') or piecewise compensation (regular vs. overtime)",
+            "Decimal coefficients (1.20, 1.5×rate) or non-trivial unit conversions",
+            "Must subtract a fixed expense before applying a per-unit rate"
+          ],
+          "example_stem": "A bowl contains 20 oz of water. It decreases by 1 oz every 4 days. After how many days are 9 oz left?",
+          "example_ids": ["1ce51655", "36ab4122", "79cf8505", "8c515062", "f09097b1", "feb78194"]
+        },
+        "hard": {
+          "characteristics": [
+            "Rate must be derived from two data points before applying it to a third target value",
+            "Multi-step: compute consumption rate from one interval, then solve for time at a different remaining amount"
+          ],
+          "example_stem": "Auger removed corn from 24,000 to 19,350 bushels in 5 hours. After how many total hours will 12,840 bushels remain?",
+          "example_ids": ["2937ef4f"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "The verbal context maps to exactly one linear equation in one unknown",
+          "Solution is contextually meaningful (positive integer count, positive measurement)",
+          "Required arithmetic stays consistent with the difficulty band"
+        ],
+        "must_vary": ["Surface context (gym vs. coffee shop vs. tree growth)", "Numeric parameters", "Whether the unknown is time, count, original amount, or per-unit quantity"],
+        "common_bugs": [
+          "Cloner produces a context that admits multiple equations or is ambiguous",
+          "Numbers chosen yield a non-integer answer when context requires a whole number",
+          "Difficulty drift: a medium two-step scenario gets reduced to one-step",
+          "Hard items lose the 'derive rate first' step"
+        ]
+      }
+    },
+    {
+      "id": "T6",
+      "name": "Word problem: choose or write the equation/expression",
+      "description": "A scenario is described; the student must select (MCQ) the equation or algebraic expression that models it, without solving.",
+      "core_skill_demand": "Translate prose into an algebraic equation or expression that captures fixed term plus rate-times-variable (or similar linear structure).",
+      "example_originals": ["4de87c9a", "6105234d", "f305b5ca", "5ab9903f", "76f29fa5", "0cb57740", "38bf4e04", "628300a9", "b7e6394d", "f14484a5", "5ad9eff0"],
+      "frequency": { "easy": 4, "medium": 3, "hard": 5 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Direct translation: 'X more than k times a number' → kn+X",
+            "Distractors flip a coefficient or an operation",
+            "All numeric inputs given explicitly in prose"
+          ],
+          "example_stem": "3 more than 8 times a number x equals 83. Which equation represents this?",
+          "example_ids": ["4de87c9a", "6105234d", "f305b5ca", "ed18c4f7"]
+        },
+        "medium": {
+          "characteristics": [
+            "Equation must encode a piecewise fixed-plus-rate structure with a threshold (e.g., $950 for first k hours, $50/hr after)",
+            "Includes geometric formulas (perimeter in terms of width)"
+          ],
+          "example_stem": "Bus rental: $950 for first 3 hours, $50/hr after. Total for t hours (t>3) is $1,150. Which equation?",
+          "example_ids": ["5ab9903f", "76f29fa5", "5ad9eff0"]
+        },
+        "hard": {
+          "characteristics": [
+            "Multiple grouped quantities must be combined into a total (e.g., 30-sided polygon with three side lengths; 100 items composed of three categories where one quantity is a multiple of another)",
+            "Requires expressing one category as a multiple of n and using a fixed total constraint",
+            "Distractors include the off-by-one coefficient and the missing-term version"
+          ],
+          "example_stem": "A factory makes 9-inch, 7-inch, and 4-inch screws. Number of 9-inch is 5n where n is the number of 7-inch; 22 are 4-inch; total is 100. Which equation represents this?",
+          "example_ids": ["0cb57740", "38bf4e04", "f14484a5", "628300a9", "b7e6394d"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Final task is to PICK or WRITE an equation/expression — not to solve",
+          "All four MCQ options are dimensionally/structurally plausible",
+          "Exactly one option correctly models the scenario"
+        ],
+        "must_vary": ["Surface context", "Number of categories combined into the total", "Whether variable is time, count, or measurement"],
+        "common_bugs": [
+          "Cloner accidentally asks for the numeric solution, converting T6 into T5",
+          "Hard items drop the 'multiple of n' relationship, collapsing into a single fixed-plus-rate scenario",
+          "Distractors stop being plausible (obvious wrong-side equations)"
+        ]
+      }
+    },
+    {
+      "id": "T7",
+      "name": "Solve a linear equation requiring simplification first",
+      "description": "Equation requires distributing parentheses, combining like terms across the equation, moving variables from both sides, or clearing fractions/decimals before isolating x.",
+      "core_skill_demand": "Apply distribution and/or combine like terms across both sides, then isolate the variable.",
+      "example_originals": ["51aabd93", "59afe8db", "c7d7980e", "f2b63f49", "9ff10b3b", "d9d83c02", "bf749912", "eafdbbbd", "771bd0ca", "429fb7c0"],
+      "frequency": { "easy": 9, "medium": 3, "hard": 2 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "One small simplification step (combine 8x-7x, or remove a single set of parentheses around a single variable)",
+            "Variables move to one side via a single subtraction",
+            "Integer coefficients throughout"
+          ],
+          "example_stem": "8x-7x+130=260. What is the solution?",
+          "example_ids": ["f2b63f49", "51aabd93", "c7d7980e", "4f8bd093", "59afe8db"]
+        },
+        "medium": {
+          "characteristics": [
+            "Combines like terms where the x-coefficient nearly cancels (e.g., 13x-12x leaves x with coefficient 1, hiding a near-degenerate case)",
+            "Requires distribution then collecting like terms"
+          ],
+          "example_stem": "13x+6-12x+6=-8. What is the solution?",
+          "example_ids": ["bf749912", "eafdbbbd", "4f669597"]
+        },
+        "hard": {
+          "characteristics": [
+            "Decimal coefficients with several decimal places (e.g., 0.8t-0.46=8t-0.001+1.9)",
+            "Or: factor a common binomial like 5(t+3)-7(t+3) and recognize it as -2(t+3)"
+          ],
+          "example_stem": "0.8t-0.46=8t-0.001+1.9. Find t.",
+          "example_ids": ["429fb7c0", "771bd0ca"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "At least one simplification step (distribute, combine like terms, or clear groupings) before isolation",
+          "Equation has a unique solution (not 0 or infinitely many — that is T9/T10)"
+        ],
+        "must_vary": ["Variable letter", "Which simplification step is needed", "Sign and magnitude of coefficients"],
+        "common_bugs": [
+          "Cloner produces an already-simplified equation (collapsing to T2)",
+          "Distractors do not reflect 'forgot to distribute the negative' or 'combined unlike terms'",
+          "Hard variant loses the decimal-arithmetic or grouped-binomial demand"
+        ]
+      }
+    },
+    {
+      "id": "T8",
+      "name": "Identify an equivalent equation with the same solution",
+      "description": "Given a linear equation, MCQ asks which other equation has the same solution. Distractors are equations one transformation step away that no longer preserve equality.",
+      "core_skill_demand": "Apply legal equation transformations (multiply both sides by a constant, add/subtract the same value, distribute) and recognize when an option matches.",
+      "example_originals": ["baca4a4c", "d76ab4f5", "da2e9202", "e7b6f0d1", "7392dfc1"],
+      "frequency": { "easy": 5, "medium": 0, "hard": 0 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Original equation is two-step (ax+b=c)",
+            "Correct option applies a single legal operation (multiply both sides by k, subtract b from both sides)",
+            "Distractors apply the operation to one side only"
+          ],
+          "example_stem": "4x+1=33. Which equation has the same solution?",
+          "example_ids": ["baca4a4c", "d76ab4f5", "da2e9202", "e7b6f0d1", "7392dfc1"]
+        },
+        "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+        "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Exactly one MCQ option is equation-equivalent",
+          "Distractors are wrong via specific procedural errors (one-side-only operation, sign flip)",
+          "Original equation has a clean integer solution"
+        ],
+        "must_vary": ["Numeric values", "Variable letter", "Which legal transformation is applied"],
+        "common_bugs": [
+          "Two options end up equivalent to the original",
+          "Distractors are equivalent only by coincidence (numerically same solution, different structure)"
+        ]
+      }
+    },
+    {
+      "id": "T9",
+      "name": "Count solutions of a given linear equation",
+      "description": "Student is given a linear equation (typically with variables on both sides) and must determine whether it has 0, exactly 1, or infinitely many solutions.",
+      "core_skill_demand": "Simplify both sides and compare; recognize that equal coefficients with equal constants → infinitely many; equal coefficients with unequal constants → none; unequal coefficients → exactly one.",
+      "example_originals": ["550b352c", "5a7ab8e8", "0393ba15", "25e1cfed", "69f609b2"],
+      "frequency": { "easy": 1, "medium": 1, "hard": 3 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Single-variable form like ax+b=c where the answer count is obviously one"
+          ],
+          "example_stem": "How many solutions exist to a given simple linear equation?",
+          "example_ids": ["550b352c"]
+        },
+        "medium": {
+          "characteristics": [
+            "Trivial identity form like 66x=66x → infinitely many"
+          ],
+          "example_stem": "66x=66x. How many solutions?",
+          "example_ids": ["5a7ab8e8"]
+        },
+        "hard": {
+          "characteristics": [
+            "Variables on both sides with non-trivial coefficients; must simplify -49x=-98x or 1015x-9=-156-10x and compare",
+            "Includes equations where surface form suggests one type but simplified form reveals another"
+          ],
+          "example_stem": "-49x=-98x. How many solutions does this have?",
+          "example_ids": ["0393ba15", "25e1cfed", "69f609b2"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Answer choices include 0, 1, and infinitely many (and often 'exactly 2' as an impossible distractor)",
+          "Correct answer follows from the coefficient/constant comparison after simplification"
+        ],
+        "must_vary": ["Coefficients on both sides", "Whether the answer is 0, 1, or infinitely many"],
+        "common_bugs": [
+          "Both sides simplify to a quadratic or nonlinear form (outside the skill)",
+          "Distractor 'exactly 2 solutions' is dropped, removing the diagnostic check that students don't confuse with quadratics"
+        ]
+      }
+    },
+    {
+      "id": "T10",
+      "name": "Find a parameter that makes a linear equation have no/infinitely many solutions",
+      "description": "An equation contains a literal parameter (k, a, b, p, r, s); student must find the value of the parameter that produces 'no solution' or 'infinitely many solutions'.",
+      "core_skill_demand": "Set the coefficients of x on both sides equal (for infinitely many) and the constants either equal (infinite) or unequal (no solution); solve for the parameter.",
+      "example_originals": ["5c94e6fa", "e53870b6", "15daa8d6", "40049d49", "70e29454", "12ee1edc", "153ee763", "7d5d1b32", "ac472881", "e6cb2402", "3f8a701b"],
+      "frequency": { "easy": 2, "medium": 4, "hard": 5 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Parameter appears only as the constant term on one side (e.g., 3x+21=3x+k → k=21)",
+            "Coefficients of x are already identical; only constants need matching"
+          ],
+          "example_stem": "3x+21=3x+k has infinitely many solutions. What is k?",
+          "example_ids": ["5c94e6fa", "e53870b6"]
+        },
+        "medium": {
+          "characteristics": [
+            "Parameter appears as the coefficient of x on one side; student must equate coefficients (e.g., 2x+16=ax+8 → a=2)",
+            "Requires recognizing 'infinitely many' condition: matching coefficients of x"
+          ],
+          "example_stem": "2x+16=ax+8 has infinitely many solutions. Find a.",
+          "example_ids": ["15daa8d6", "40049d49", "70e29454", "12ee1edc"]
+        },
+        "hard": {
+          "characteristics": [
+            "Parameter appears in BOTH the coefficient and constant (e.g., 3(kx+13)=(48/17)x+36)",
+            "Requires distributing through a parameter and equating both coefficients and constants",
+            "Or: parameter on left coefficient must match a fractional/derived right-side coefficient",
+            "Or: multiple-statement question (which of I/II/III must be true) about the parameter conditions for 'no solution'"
+          ],
+          "example_stem": "3(kx+13)=(48/17)x+36 has no solution. Find k.",
+          "example_ids": ["153ee763", "7d5d1b32", "ac472881", "e6cb2402", "3f8a701b"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Parameter is a literal constant (k, a, b, p, r, s)",
+          "Condition is either 'no solution' (coefficients match, constants differ) or 'infinitely many' (both match)",
+          "Equation is linear in x (no x²)"
+        ],
+        "must_vary": ["Which side the parameter appears on", "Whether parameter is coefficient, constant, or both", "Whether the question asks for no-solution or infinitely-many"],
+        "common_bugs": [
+          "Cloner sets up an equation with a unique-solution answer, breaking the skill demand",
+          "Hard items lose the distribute-through-parameter step (regressing to medium)",
+          "For 'no solution', cloner accidentally makes constants also equal (yielding infinitely many instead)"
+        ]
+      }
+    },
+    {
+      "id": "T11",
+      "name": "Interpret a coefficient or constant in a real-world linear equation",
+      "description": "An equation modeling a real-world situation is given (e.g., 15,000=2.00x-4,500); student must select the best contextual interpretation of one term (e.g., '2.00x represents…').",
+      "core_skill_demand": "Map algebraic structure (coefficient, variable, constant) to its real-world meaning (rate × quantity, fixed cost, accumulated total).",
+      "example_originals": ["9d4270fe", "aa85b138"],
+      "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+      "difficulty_levers": {
+        "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+        "medium": {
+          "characteristics": [
+            "Equation is a single-line linear model of a familiar scenario (profit, growth)",
+            "Distractors swap the roles of different terms (e.g., calling 2.00x the fixed cost instead of revenue)"
+          ],
+          "example_stem": "15,000=2.00x-4,500. What does 2.00x represent?",
+          "example_ids": ["9d4270fe", "aa85b138"]
+        },
+        "hard": { "characteristics": [], "example_stem": "", "example_ids": [] }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Exactly one term is being interpreted",
+          "Distractors are interpretations of other terms in the same equation"
+        ],
+        "must_vary": ["Scenario", "Which term is queried"],
+        "common_bugs": [
+          "Distractors stop being 'interpretation of another term', becoming nonsensical",
+          "Multiple answer options become technically defensible"
+        ]
+      }
+    },
+    {
+      "id": "T12",
+      "name": "Estimate which integer interval contains the solution",
+      "description": "Equation has a fractional or non-obvious solution; student must determine which consecutive-integer interval the value of a sub-expression falls into.",
+      "core_skill_demand": "Solve the equation (often involving messy fractions), then locate the resulting value between two integer bounds.",
+      "example_originals": ["aee9fd2d", "f5ff91b2"],
+      "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+      "difficulty_levers": {
+        "easy": { "characteristics": [], "example_stem": "", "example_ids": [] },
+        "medium": { "characteristics": [], "example_stem": "", "example_ids": [] },
+        "hard": {
+          "characteristics": [
+            "Equation involves a fractional form with the variable in two different fractional expressions",
+            "Solving requires clearing fractions and solving a clean linear equation, but the final sub-expression value is non-integer",
+            "MCQ choices are consecutive-integer intervals"
+          ],
+          "example_stem": "If (x+6)/3=(x+6)/13, the value of x+6 is between which pair of values?",
+          "example_ids": ["aee9fd2d", "f5ff91b2"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Final answer is the integer interval, not the exact value",
+          "Equation is linear after clearing fractions",
+          "Sub-expression (the thing being bounded) appears explicitly in both numerators or both denominators"
+        ],
+        "must_vary": ["Numerators/denominators", "Sub-expression form (x+a, x-a, kx+a)"],
+        "common_bugs": [
+          "Clone produces an exact-integer solution, eliminating the 'between which integers' demand",
+          "Equation becomes nonlinear after clearing fractions"
+        ]
+      }
+    }
+  ],
+  "skill_wide_notes": "Roughly 60% of originals fall into T4 (transform-and-evaluate), T5 (word-problem-solve), T6 (word-problem-equation), and T10 (parameter for no/infinite solutions). Easy items are dominated by single-step solving (T1/T2/T3) and the simplest scale-and-transform variants of T4. Hard items concentrate in T6 (multi-category totals), T9/T10 (solution-count and parameter problems requiring coefficient/constant comparison after distribution), and T12 (interval bounding). Difficulty drift risks are highest on T4 (cloners often solve for x and ask for x, collapsing to T1/T2) and T10 (cloners drop the distribute-through-parameter step). The most error-prone clone area is keeping MCQ distractors diagnostic of specific procedural mistakes rather than random nearby numbers."
+}

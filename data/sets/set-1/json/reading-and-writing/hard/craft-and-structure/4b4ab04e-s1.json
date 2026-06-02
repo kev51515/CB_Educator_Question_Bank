@@ -1,0 +1,25 @@
+{
+  "questionId": "4b4ab04e-s1",
+  "originalId": "4b4ab04e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "templateId": "cross-text-connections.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Cultured meat is animal tissue grown from cells in a bioreactor as an alternative to conventional livestock products. Life-cycle assessments of its production generally agree that its environmental footprint is lower than that of beef and comparable to that of poultry. The expense of culture media, however, currently limits its availability to a handful of wealthy markets. Recognizing that cost reductions would broaden access, bioengineers are testing solutions such as cheaper plant-derived growth-factor mixtures.</p>\n<p><strong>Text 2</strong></p>\n<p>Beef production is a major driver of tropical deforestation, and a study by Anika Lindgren and her team estimated that replacing 25% of global beef consumption with cultured beef over the next forty years would reduce forest clearance for cattle by roughly 60%. However, that shift would barely change overall agricultural land use, since cropland once devoted to feed grains would be redirected toward growing crops for the culture-media supply chain.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 1 most likely respond to the study findings mentioned in Text 2?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By emphasizing that since agricultural land use would remain largely unchanged in a shift to cultured beef, an effort must be made to also substitute cultured meat for poultry in diets</p>"},
+    {"id": "b", "content": "<p>By noting that most people would be more likely to use cultured meat as a substitute for poultry than as a substitute for beef</p>"},
+    {"id": "c", "content": "<p>By pointing out that since some countries clear more forest than others, those countries will have to replace much more than 25% of their beef consumption to achieve a meaningful environmental effect</p>"},
+    {"id": "d", "content": "<p>By asserting that the development of cheaper plant-derived growth-factor mixtures would contribute to the goal of reducing forest clearance over time</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it captures how the author of Text 1 would most likely respond to the findings discussed in Text 2. Text 2 reports that replacing 25% of global beef consumption with cultured beef could cut forest clearance for cattle by 60%. Text 1 explains that the high cost of culture media currently restricts cultured meat to wealthy markets but notes that bioengineers are exploring cheaper plant-derived growth-factor mixtures. The author of Text 1 would therefore likely argue that those cheaper mixtures would help expand access to cultured beef, thereby contributing to the reduction in deforestation Text 2 describes.</p><p>Choice A is incorrect because Text 1 indicates that cultured meat's environmental impact is comparable to poultry's, so substituting cultured meat for poultry would not reduce overall impact; in addition, Text 1 does not discuss agricultural land use specifically. Choice B is incorrect because nothing in Text 1 indicates which kinds of meat people are most likely to replace with cultured meat. Choice C is incorrect because Text 1 says nothing about variation among countries.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

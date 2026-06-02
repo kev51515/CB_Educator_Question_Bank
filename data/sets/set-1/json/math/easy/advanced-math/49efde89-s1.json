@@ -1,0 +1,39 @@
+{
+  "questionId": "49efde89-s1",
+  "originalId": "49efde89",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>The expression <math><mi>x</mi><mfenced><mrow><mi>a</mi><mo>+</mo><mn>1</mn></mrow></mfenced></math> is equivalent to <math><mn>5</mn><mi>x</mi><mo>+</mo><mi>x</mi></math>, where <math><mi>a</mi></math> is a constant. What is the value of <math><mi>a</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>5</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>3</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>4</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Distributing x in x(a + 1) gives ax + x. The given equivalent expression 5x + x has coefficient of the first term equal to 5, so a = 5.</p>",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

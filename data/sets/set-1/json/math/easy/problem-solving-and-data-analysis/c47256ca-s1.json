@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A length is measured as 48 yards. What is the length, in <span style=\"text-decoration: underline;\">feet</span>? (1 yard = 3 feet)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>51</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>144</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>148</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since 1 yard = 3 feet, 48 yards = 48 \u00d7 3 = 144 feet.</p><p>Choice A is incorrect; this is 48 divided by 3.</p><p>Choice B is incorrect; this is 48 + 3.</p><p>Choice D is incorrect; this is 144 + 4 (extraneous).</p>",
+  "questionId": "c47256ca-s1",
+  "originalId": "c47256ca",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

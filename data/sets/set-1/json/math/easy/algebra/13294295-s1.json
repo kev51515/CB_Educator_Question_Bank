@@ -1,0 +1,39 @@
+{
+  "questionId": "13294295-s1",
+  "originalId": "13294295",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph models the number of bottles a certain conveyor labels in x seconds. The line passes through (0, 0), (2, 90), (4, 180), and (6, 270). According to the graph, what is the estimated number of bottles labeled per second?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>45</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (90 - 0)/(2 - 0) = 45 bottles per second.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A4.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "44d65912-s1",
+  "originalId": "44d65912",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a video game, a player earns p points for each gem collected and q points for each crystal collected. On Tuesday a player collected 12 gems and 8 crystals for a score of 560 points. On Wednesday the same player collected 6 gems and 10 crystals for a score of 470 points. Which system of equations can be used to correctly determine the values of p and q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12p + 8q = 470 and 6p + 10q = 560</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12p + 8q = 560 and 6p + 10q = 470</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8p + 12q = 560 and 10p + 6q = 470</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12p + 6q = 560 and 8p + 10q = 470</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Tuesday: 12p + 8q = 560; Wednesday: 6p + 10q = 470.</p><p>Choices A, C, and D swap totals or coefficients.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

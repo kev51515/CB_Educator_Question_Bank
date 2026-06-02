@@ -1,0 +1,39 @@
+{
+  "questionId": "6977d22b-s1",
+  "originalId": "6977d22b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Biologists have long puzzled over how thousands of distinct soil-microbe species can coexist within a single handful of forest soil, all drawing on the same pool of carbon and nitrogen. According to <u>conventional wisdom</u>, one species ought to dominate after outcompeting the rest. Why, then, do so many persist? Decades of effort have yet to produce a satisfying explanation.</p>\n<p><strong>Text 2</strong></p>\n<p>Microbial ecologist Devon Anand and colleagues have linked soil-microbe diversity to the physical structure of the soil itself. Because individual cells are so small relative to the gaps between soil grains, microbes inhabit countless tiny, semi-isolated pore spaces, each effectively functioning as its own miniature habitat. The team argues that, as a result, neighboring species rarely interact directly enough to compete for the same resources, making head-to-head competition among soil microbes far less common than ecologists had previously assumed.</p>",
+  "stem": "<p>Based on the texts, how would Anand and colleagues (Text 2) most likely respond to the \"conventional wisdom\" discussed in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By asserting that it fails to recognize that frequent nutrient inputs from decaying plant matter prevent competition between microbial species</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By suggesting that their own findings help clarify how microbial species are able to compete with larger soil organisms</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By arguing that it rests on a misconception about microbial species competing directly with one another</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By recommending that more biologists study how competition among microbial species intensifies as soil-pore size decreases</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The conventional wisdom in Text 1 holds that one species should outcompete the rest within a diverse population. Text 2 explains that Anand and colleagues believe head-to-head competition among soil microbes is much less common than ecologists assumed, since cells inhabit semi-isolated pore spaces. So Anand and colleagues would argue the conventional wisdom misconstrues how often microbes directly compete.</p><p>Choice A is incorrect because Text 2 says nothing about nutrient inputs. Choice B is incorrect because both texts focus on competition within microbial communities, not between microbes and larger organisms. Choice D is incorrect because Text 2 implies that smaller pore size decreases, not increases, direct competition.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.hard"
+}

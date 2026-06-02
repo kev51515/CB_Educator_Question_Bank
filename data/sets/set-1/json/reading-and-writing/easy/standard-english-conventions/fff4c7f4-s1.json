@@ -1,0 +1,39 @@
+{
+  "questionId": "fff4c7f4-s1",
+  "originalId": "fff4c7f4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Spanish poet Gabriela Mistral wrote many of her early verses on loose sheets of paper, but she also took care to preserve these writings. From 1914 to around 1922, for example, she gathered more than 300 of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> into a series of bound notebooks she kept until her death.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>that</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>them</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>it</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>this</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The pronoun \"them\" agrees with the plural antecedents \"verses\" and \"writings.\"</p><p>Choice A is incorrect. \"That\" is a singular pronoun, but its antecedents, \"verses\" and \"writings,\" are plural. Choice C is incorrect. \"It\" is a singular pronoun, but its antecedents are plural. Choice D is incorrect. \"This\" is a singular pronoun, but its antecedents are plural.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

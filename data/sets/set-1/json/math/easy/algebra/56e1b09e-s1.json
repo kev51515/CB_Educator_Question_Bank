@@ -1,0 +1,23 @@
+{
+  "questionId": "56e1b09e-s1",
+  "originalId": "56e1b09e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>4.1</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>4.4</mn></math></p><p>What value of <math><mi>x</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "0.3",
+    "3/10"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>0.3</mn></math>. Subtracting 4.1 from each side yields <math><mi>x</mi><mo>=</mo><mn>0.3</mn></math>. Both .3 and 3/10 are equivalent forms of the correct answer.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

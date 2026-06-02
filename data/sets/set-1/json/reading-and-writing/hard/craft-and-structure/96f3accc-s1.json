@@ -1,0 +1,39 @@
+{
+  "questionId": "96f3accc-s1",
+  "originalId": "96f3accc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>When the first commercial telephone exchange opened in New Haven in 1878 with just twenty-one subscribers, many of those subscribers, completely unaccustomed to instantly transmitted speech, were reportedly so startled by the disembodied voices coming from the wooden handsets that they refused at first to speak back, only listening in baffled silence. This moment marks a profound cultural rupture: a new way of communicating across distance had arrived with that switchboard, and nothing about social life would ever be the same.</p>\n<p><strong>Text 2</strong></p>\n<p>The fact that no contemporary newspaper account from 1878 actually describes such a paralyzed silence has not prevented the anecdote from becoming a staple in popular histories of the telephone, even those written by communications scholars. But that pattern itself is highly revealing. Our conviction that the arrival of the telephone fundamentally reorganized social life is so deep that we have invented and keep retelling a founding myth dividing communication history into a (naive) \"before\" and a (modern) \"after.\"</p>",
+  "stem": "<p>Based on the texts, the author of Text 2 would most likely agree with which statement about the description of the first telephone exchange in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It expresses a view about the transformative nature of the telephone that communications scholars tend to regard as naive.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is more motivated by a perception of the significance of the invention of the telephone than by facts.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is not based on evidence and reflects communications scholars' belief that they are more sophisticated than today's audiences.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It reflects a misconception that is widely believed because it captures early telephone users' real sense that the new medium was disorienting.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Text 1 treats the anecdote of the silent first subscribers as a factual marker of a \"profound cultural rupture.\" Text 2 notes that no contemporary newspaper account supports the anecdote but explains that the story persists because it functions as a \"founding myth\" reinforcing belief in the telephone's transformative power. The author of Text 2 would therefore see the description in Text 1 as driven primarily by cultural perceptions about the telephone's significance rather than by documented historical facts.</p><p>Choice A is incorrect because Text 2 says scholars accept rather than dismiss the narrative; the \"naive\" label in Text 2 refers to how the myth characterizes pre-telephone audiences. Choice C is incorrect because Text 2 doesn't say scholars believe themselves to be more sophisticated than today's audiences. Choice D is incorrect because Text 2 doubts that subscribers were paralyzed at all; the misconception involves the alleged reaction itself.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.hard"
+}

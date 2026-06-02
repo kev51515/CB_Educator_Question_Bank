@@ -1,0 +1,39 @@
+{
+  "questionId": "55cfaf22-s1",
+  "originalId": "55cfaf22",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set X: 7, 11, 11, 15</p><p>Data set Y: 7, 11, 11, 15, 1</p><p>The lists give the values in data sets X and Y. Which statement correctly compares the mean of data set X and the mean of data set Y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The mean of data set X is less than the mean of data set Y.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The means of data set X and data set Y are equal.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>There is not enough information to compare the means.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The mean of data set X is greater than the mean of data set Y.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The mean of data set X is (7 + 11 + 11 + 15) divided by 4 = 44 divided by 4 = 11. The mean of data set Y is (7 + 11 + 11 + 15 + 1) divided by 5 = 45 divided by 5 = 9. Since 11 is greater than 9, the mean of X is greater than the mean of Y.</p><p>Choices A, B, and C are inconsistent with the computed means.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.easy"
+}

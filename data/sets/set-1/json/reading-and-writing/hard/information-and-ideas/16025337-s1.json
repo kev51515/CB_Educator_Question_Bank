@@ -1,0 +1,39 @@
+{
+  "questionId": "16025337-s1",
+  "originalId": "16025337",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a nineteenth-century sonnet. The poem is addressed to a beloved person from whom the speaker is separated.</p>\n<div style='padding-left:1em'><p>The bell hath struck, and night her curtain draws;</p>\n<p>My weary frame upon its couch I lay,</p>\n<p>Yet sleep, that gentle nurse, withholds her cause,</p>\n<p>And bids my restless fancy roam astray:</p>\n<p>For lo! across the leagues that lie between,</p>\n<p>My spirit goes a quiet pilgrim's round,</p>\n<p>And lingers where thy distant face is seen.</p></div>",
+  "stem": "<p>What is the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The speaker's restless thoughts about a distant beloved keep the speaker from sleeping.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The speaker has fallen asleep and is dreaming of being reunited with the beloved.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The speaker is recovering from a long journey to visit the beloved.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The speaker is composing a letter that the beloved will eventually read.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The speaker lies down at night intending to rest, but sleep does not come (\"sleep\u2026withholds her cause\"); instead the speaker's thoughts travel imaginatively to the beloved (\"my spirit goes a quiet pilgrim's round\"). The central idea is that thoughts of the beloved are keeping the speaker awake.</p><p>Choice B is incorrect because the text states sleep has not arrived, so the speaker is not dreaming. Choice C is incorrect because the journey described is imaginative, not literal\u2014the speaker is in bed, not returning from travel. Choice D is incorrect because nothing in the text suggests the speaker is writing; the address to the beloved is a mental, not written, act.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.hard"
+}

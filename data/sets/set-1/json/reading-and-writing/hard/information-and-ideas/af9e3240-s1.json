@@ -1,0 +1,25 @@
+{
+  "questionId": "af9e3240-s1",
+  "originalId": "af9e3240",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.hard",
+  "stimulus": "<p><em>Antigone</em> is a circa 441 BCE play by Sophocles, translated in 1888 by R.C. Jebb. The title character, who is determined to bury her dishonored brother in defiance of King Creon&rsquo;s edict, is aware of the danger she courts but believes her course to be justified: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>Antigone</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;O tomb, O bridal chamber, O thou deep-dug home, that art ever to keep watch upon me, whither I go to find mine own.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;Send word, my sister, send word at once to all our kin in the city, that they may know how I am dealt with by those who rule.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;I will not be guilty of betraying my brother to the dogs and the open sky; I never doubted the peril, but, since the cause is sacred to the gods, no edict of a mortal hand shall sway me from this purpose.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;Lead me, then, lead me to that bridal chamber beneath the earth&mdash;there I shall make my dwelling, and there I shall lie down to rest.&rdquo;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively illustrates the claim that Antigone is aware of the danger she courts but believes her course to be justified. She names the peril (&ldquo;I never doubted the peril&rdquo;) and asserts the justification (&ldquo;since the cause is sacred to the gods, no edict of a mortal hand shall sway me from this purpose&rdquo;), exhibiting both the awareness and the justification central to the claim.</p><p>Choice A is incorrect because, although it evokes the consequences awaiting her, it neither expresses awareness of present danger as such nor articulates a justification for her course of action. Choice B is incorrect because it is an instruction to her sister, not a statement about Antigone&rsquo;s own awareness and justification. Choice D is incorrect because it dwells on her impending fate as a destination, not on the awareness-and-justification structure the claim requires.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

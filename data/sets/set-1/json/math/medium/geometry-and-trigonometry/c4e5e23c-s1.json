@@ -1,0 +1,39 @@
+{
+  "questionId": "c4e5e23c-s1",
+  "originalId": "c4e5e23c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The length of one side of square X is 4 times the length of one side of square Y. The area of square Y is 25 square feet. What is the area, in square feet, of square X?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>100</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>400</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a square with side length s is s<sup>2</sup>. Square Y has area 25, so its side length is &radic;25 = 5 feet. Square X has side length 4(5) = 20 feet, so its area is 20<sup>2</sup> = 400 square feet. Choice A is the area of a square with side length 4 times the side length of Y divided by 2. Choice C corresponds to multiplying the area of Y by 8. Choice D is the side length of X.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A3.T1.medium"
+}

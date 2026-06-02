@@ -1,0 +1,39 @@
+{
+  "questionId": "34c2e387-s1",
+  "originalId": "34c2e387",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Standard histories of the scientific revolution, such as those by H. Floris Cohen and other Europeanist historians of science, devote little attention to pre-Columbian Mesoamerican astronomy, implicitly framing systematic empirical astronomy as a uniquely European achievement. Yet Anthony Aveni and other historians of Mesoamerican science have shown that careful, multi-generational sky observation, predictive eclipse modeling, and other practices characteristic of empirical astronomy were well established in central Mexico long before European contact. One reason for the disparity is that Europeanist historians of science depend heavily on continuous written records of laboratory protocols and observatory logs, which were largely produced on bark-paper codices that Spanish authorities destroyed in the sixteenth century and which therefore survive only in fragments.</p>",
+  "stem": "<p>Which statement about Aveni and other historians of Mesoamerican science is best supported by information in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They likely have a different view than Europeanist historians of science about which activities should count as scientific.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They likely view Mesoamerican astronomy as having been more accurate than European astronomy of the same era.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They likely differ from Europeanist historians of science in how they reconstruct continuous records from surviving codex fragments.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They likely draw on kinds of evidence that Europeanist historians of science do not customarily use.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says Europeanist historians depend on continuous written records that, for pre-Columbian Mesoamerica, were largely destroyed. Despite this, Aveni and his peers have documented empirical astronomical practices in the same era. Since the standard records are unavailable, these scholars must be using different kinds of evidence (archaeoastronomical alignments, surviving codex fragments, oral traditions, etc.).</p><p>Choice A is incorrect because the text treats the practices Aveni documents as recognized features of empirical astronomy, not as a redefinition of what counts as science. Choice B is incorrect because the text makes no claim about relative accuracy. Choice C is incorrect because the text says continuous records were largely destroyed; reconstructing such continuous records from fragments is therefore not what distinguishes these scholars\u2014they must rely on other evidentiary sources entirely.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

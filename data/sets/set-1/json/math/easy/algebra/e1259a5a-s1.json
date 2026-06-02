@@ -1,0 +1,39 @@
+{
+  "questionId": "e1259a5a-s1",
+  "originalId": "e1259a5a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 2x + 1</p><p>y = -x + 7</p><p>Which of the following points is the solution to the system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(2, 5)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(1, 3)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 7)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(5, 2)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 2x + 1 = -x + 7 gives x = 2 and y = 5.</p><p>Other choices do not satisfy both equations.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy"
+}

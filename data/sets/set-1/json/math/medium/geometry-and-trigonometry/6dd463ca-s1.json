@@ -1,0 +1,39 @@
+{
+  "questionId": "6dd463ca-s1",
+  "originalId": "6dd463ca",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, segments <em>AE</em> and <em>BD</em> are parallel, and the figure includes triangle <em>ACE</em> where segment <em>BC</em> intersects segment <em>AE</em> at point <em>C</em>. If angle <em>BDC</em> measures 47&deg; and angle <em>ACE</em> measures 71&deg;, what is the measure of angle <em>CAE</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>47&deg;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>71&deg;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>118&deg;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>62&deg;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Because segments AE and BD are parallel and the transversal connecting them creates alternate interior angles, m&ang;AEC = m&ang;BDC = 47&deg;. The angles of triangle ACE sum to 180&deg;, so m&ang;CAE = 180 &minus; m&ang;ACE &minus; m&ang;AEC = 180 &minus; 71 &minus; 47 = 62&deg;. Choices A and B are the given angle measures. Choice C is the sum of the two given measures.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A2.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "39571c77-s1",
+  "originalId": "39571c77",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Marco bought both angelfish and guppies for a total of $43. Each angelfish costs $7 and each guppy costs $4. If Marco bought 2 guppies, how many angelfish did he buy?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>35</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Let <i>a</i> be the number of angelfish. Then 7<i>a</i> + 4(2) = 43, so 7<i>a</i> = 35, and <i>a</i> = 5.</p><p>Choice A is incorrect: it is the number of guppies, not angelfish. Choices B and D result from computation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

@@ -1,0 +1,8 @@
+[
+  {"id": "e37b9e34-s1", "templateId": "words-in-context.A2.T8.medium", "verdict": "type_drift", "detail": "T8 requires an explicit negation/scarcity/counterfactual frame around the blank (e.g., 'not ___', 'less ___', 'unlikely to be ___', 'paucity of'). Here the blank sits in a plain copular slot 'the sequence appears to be ___' followed by a restatement ('transcribed only rarely and producing no observable change'). That is a T3/T6 restatement-of-quality structure, not T8. The answer 'quiescent' is supported, but the syntactic frame is wrong for T8."},
+  {"id": "e56b66e5-s1", "templateId": "words-in-context.A2.T6.medium", "verdict": "ok"},
+  {"id": "e8c26398-s1", "templateId": "words-in-context.A2.T3.medium", "verdict": "ok"},
+  {"id": "f0be91b2-s1", "templateId": "words-in-context.A2.T7.medium", "verdict": "ok"},
+  {"id": "f4166aae-s1", "templateId": "words-in-context.A2.T7.medium", "verdict": "ok"},
+  {"id": "fce80a36-s1", "templateId": "words-in-context.A2.T5.medium", "verdict": "ok"}
+]

@@ -1,0 +1,22 @@
+{
+  "questionId": "3310c2ab-s1",
+  "originalId": "3310c2ab",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>How many fluid ounces are equivalent to 95 quarts? (8 fluid ounces = 1 cup and 4 cups = 1 quart)</p>",
+  "answerOptions": null,
+  "keys": [
+    "3040"
+  ],
+  "rationale": "<p>The correct answer is 3,040. Each quart contains 4 cups, and each cup contains 8 fluid ounces, so 1 quart equals 4 &times; 8 = 32 fluid ounces. Therefore 95 quarts equal 95 &times; 32 = 3,040 fluid ounces.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium"
+}

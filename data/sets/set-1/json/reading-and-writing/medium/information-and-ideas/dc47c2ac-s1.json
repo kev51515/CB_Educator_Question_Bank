@@ -1,0 +1,25 @@
+{
+  "questionId": "dc47c2ac-s1",
+  "originalId": "dc47c2ac",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.medium",
+  "stimulus": "<p>Although most amphibians lay eggs in open water, some frog species lay eggs in foam nests built on land near water&rsquo;s edge. <span role=\"region\" aria-label=\"Referenced Content\"><u>Many herpetologists have assumed that foam nests would protect eggs from predators and thus would allow species that build them to occupy a wider variety of habitats than species that lay eggs in open water do.</u></span> To evaluate this assumption, a research team led by biologist Carla Rodriguez analyzed data for over 2,500 frog species worldwide.</p>",
+  "stem": "<p>Which finding from Rodriguez and her colleagues&rsquo; study, if true, would most directly challenge the assumption in the underlined sentence?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Species that lay eggs in open water tend to occupy a wider variety of habitats than species that build foam nests do.</p>"},
+    {"id": "b", "content": "<p>Species that lay eggs in open water tend to have higher extinction rates than species that build foam nests.</p>"},
+    {"id": "c", "content": "<p>Species that lay eggs in open water tend to be smaller in body size than species that build foam nests.</p>"},
+    {"id": "d", "content": "<p>Species that lay eggs in open water tend to use fewer materials to build any structures than species that build foam nests do.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it directly contradicts the assumption that foam-nest builders should occupy a wider variety of habitats than open-water egg-layers — finding the opposite challenges the assumption. Choice B is incorrect because extinction rates aren&rsquo;t the assumption&rsquo;s subject (habitat variety is). Choice C is incorrect because body size doesn&rsquo;t address habitat variety. Choice D is incorrect because the assumption concerns nest type, not materials used.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

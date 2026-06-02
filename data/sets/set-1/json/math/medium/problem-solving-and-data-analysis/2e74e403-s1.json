@@ -1,0 +1,39 @@
+{
+  "questionId": "2e74e403-s1",
+  "originalId": "2e74e403",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a scatterplot, a line of best fit passes through the points (1, 9) and (9, 1). Which of the following is closest to the slope of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\u22129</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u22121</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Slope = (1 \u2212 9)/(9 \u2212 1) = \u22128/8 = \u22121.</p><p>Choices A, B, and C come from misreading rise or run, or sign errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

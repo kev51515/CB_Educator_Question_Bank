@@ -1,0 +1,39 @@
+{
+  "questionId": "a7991da1-s1",
+  "originalId": "a7991da1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>A unique dialect of Spanish is spoken in the Dominican Republic. It contains many words borrowed from the language of the Taínos, the Indigenous people of the island. African languages also made important contributions to the Dominican dialect. For example, certain rhythmic patterns in Dominican Spanish can be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> back to the speech patterns of enslaved African peoples brought to the island during colonial times.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>surrendered</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>announced</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>offered</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>tracked</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"tracked\" back means to follow a trail of origin, matching the idea of identifying the source of rhythmic patterns. Choice A is incorrect because surrendering doesn’t fit a linguistic context. Choice B is incorrect because announcing isn’t the issue. Choice C is incorrect because offering doesn’t describe tracing origins.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

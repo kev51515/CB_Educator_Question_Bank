@@ -1,0 +1,20 @@
+{
+  "questionId": "4e77195b-s1",
+  "originalId": "4e77195b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>3</mn><mo>+</mo><mi>y</mi><mo>=</mo><mn>50</mn></math>, what is the value of <math><mn>21</mn><mo>+</mo><mn>7</mn><mi>y</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": ["350"],
+  "rationale": "<p>The correct answer is <math><mn>350</mn></math>. Multiplying both sides by 7 yields <math><mn>7</mn><mfenced><mrow><mn>3</mn><mo>+</mo><mi>y</mi></mrow></mfenced><mo>=</mo><mn>7</mn><mfenced><mn>50</mn></mfenced></math>, or <math><mn>21</mn><mo>+</mo><mn>7</mn><mi>y</mi><mo>=</mo><mn>350</mn></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

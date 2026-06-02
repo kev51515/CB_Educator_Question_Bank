@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "2f51abc2-s1",
+  "originalId": "2f51abc2",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = |84 &minus; 2x|</p><p>The function f is defined by the given equation. For which of the following values of k does f(k) = 3k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>252/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>84/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>84</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>42</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Setting f(k) = 3k yields |84 &minus; 2k| = 3k. Since 3k must be nonnegative, k &ge; 0, and we can drop the absolute value as \u00b1(84 &minus; 2k) = 3k. Solving 84 &minus; 2k = 3k gives 5k = 84, so k = 84/5. Solving &minus;(84 &minus; 2k) = 3k gives k = &minus;84, which is negative and fails the check. Thus k = 84/5.</p><p>Choice A is the value of 3 &middot; 84/5. Choice C uses the constant directly. Choice D would result from solving 2k = 84.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A1.T2.hard"
+}

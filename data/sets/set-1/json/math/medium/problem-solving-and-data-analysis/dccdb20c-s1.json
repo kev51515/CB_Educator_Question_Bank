@@ -1,0 +1,22 @@
+{
+  "questionId": "dccdb20c-s1",
+  "originalId": "dccdb20c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>There are 720 marbles in a jar. Of these marbles, 15% are red. How many red marbles are in the jar?</p>",
+  "answerOptions": null,
+  "keys": [
+    "108"
+  ],
+  "rationale": "<p>The correct answer is 108. The number of red marbles is 15% of 720, or 0.15 &times; 720 = 108.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A1.T2.medium"
+}

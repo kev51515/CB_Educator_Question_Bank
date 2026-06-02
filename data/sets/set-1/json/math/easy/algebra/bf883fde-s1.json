@@ -1,0 +1,25 @@
+{
+  "questionId": "bf883fde-s1",
+  "originalId": "bf883fde",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the function <i>g</i>, the graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane has a slope of 5 and passes through the point (0, &minus;12). Which equation defines <i>g</i>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>g</i>(<i>x</i>) = 5<i>x</i></p>"},
+    {"id": "b", "content": "<p><i>g</i>(<i>x</i>) = 5<i>x</i> &minus; 12</p>"},
+    {"id": "c", "content": "<p><i>g</i>(<i>x</i>) = 5<i>x</i> + 12</p>"},
+    {"id": "d", "content": "<p><i>g</i>(<i>x</i>) = &minus;12<i>x</i> + 5</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. Slope-intercept form gives <i>g</i>(<i>x</i>) = <i>m</i><i>x</i> + <i>b</i>. With <i>m</i> = 5 and <i>y</i>-intercept (0, &minus;12), <i>b</i> = &minus;12, so <i>g</i>(<i>x</i>) = 5<i>x</i> &minus; 12.</p><p>Choice A omits the <i>y</i>-intercept. Choice C uses the wrong sign for the intercept. Choice D swaps slope and intercept.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T1.easy"
+}

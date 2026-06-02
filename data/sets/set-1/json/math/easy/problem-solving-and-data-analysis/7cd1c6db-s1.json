@@ -1,0 +1,39 @@
+{
+  "questionId": "7cd1c6db-s1",
+  "originalId": "7cd1c6db",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A car travels at a constant speed of 25 meters per second. At this speed, what is the time, in seconds, that it would take for the car to travel 175 meters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4,375</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Time = distance \u00f7 speed = 175 \u00f7 25 = 7 seconds.</p><p>Choice A is incorrect and results from a small calculation error. Choice C is incorrect; it results from subtracting instead of dividing. Choice D is incorrect; it results from multiplying instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "a1d2c4d0-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "ad4f7362-s1", "templateId": "text-structure-and-purpose.A1.T1.hard", "verdict": "ok"},
+  {"id": "cce2f8dc-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "5336f2e4-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "type_drift", "detail": "Stem reads 'function of the underlined sentences' (plural) and the underlined span covers two sentences; T3 must_preserve requires 'Exactly one complete sentence underlined'. Multi-sentence span fits T4 better."},
+  {"id": "9b01bcf4-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "ok"},
+  {"id": "39857700-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "ok"},
+  {"id": "82cb7dda-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "570970cd-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "ok"},
+  {"id": "d4732483-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "662ebff2-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "b0f7541b-s1", "templateId": "text-structure-and-purpose.A1.T1.hard", "verdict": "ok"},
+  {"id": "f61c22f3-s1", "templateId": "text-structure-and-purpose.A3.T8.hard", "verdict": "ok"},
+  {"id": "a2f64e58-s1", "templateId": "text-structure-and-purpose.A2.T6.hard", "verdict": "ok"},
+  {"id": "0b5ecf0e-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "4eee64fa-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "6ae393f7-s1", "templateId": "text-structure-and-purpose.A3.T8.hard", "verdict": "ok"},
+  {"id": "d9915c15-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "a70cbc53-s1", "templateId": "text-structure-and-purpose.A3.T8.hard", "verdict": "ok"},
+  {"id": "65406d2c-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "6bc0ba75-s1", "templateId": "text-structure-and-purpose.A2.T5.hard", "verdict": "ok"}
+]

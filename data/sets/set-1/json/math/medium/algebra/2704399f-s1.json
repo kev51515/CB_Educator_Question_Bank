@@ -1,0 +1,39 @@
+{
+  "questionId": "2704399f-s1",
+  "originalId": "2704399f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\"><figure class='image'><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"320\" height=\"320\" viewBox=\"0 0 320 320\"><g stroke=\"#e0e0e0\" stroke-width=\"0.5\"><line x1=\"30.0\" y1=\"30\" x2=\"30.0\" y2=\"290\"/><line x1=\"48.6\" y1=\"30\" x2=\"48.6\" y2=\"290\"/><line x1=\"67.1\" y1=\"30\" x2=\"67.1\" y2=\"290\"/><line x1=\"85.7\" y1=\"30\" x2=\"85.7\" y2=\"290\"/><line x1=\"104.3\" y1=\"30\" x2=\"104.3\" y2=\"290\"/><line x1=\"122.9\" y1=\"30\" x2=\"122.9\" y2=\"290\"/><line x1=\"141.4\" y1=\"30\" x2=\"141.4\" y2=\"290\"/><line x1=\"160.0\" y1=\"30\" x2=\"160.0\" y2=\"290\"/><line x1=\"178.6\" y1=\"30\" x2=\"178.6\" y2=\"290\"/><line x1=\"197.1\" y1=\"30\" x2=\"197.1\" y2=\"290\"/><line x1=\"215.7\" y1=\"30\" x2=\"215.7\" y2=\"290\"/><line x1=\"234.3\" y1=\"30\" x2=\"234.3\" y2=\"290\"/><line x1=\"252.9\" y1=\"30\" x2=\"252.9\" y2=\"290\"/><line x1=\"271.4\" y1=\"30\" x2=\"271.4\" y2=\"290\"/><line x1=\"290.0\" y1=\"30\" x2=\"290.0\" y2=\"290\"/><line x1=\"30\" y1=\"290.0\" x2=\"290\" y2=\"290.0\"/><line x1=\"30\" y1=\"271.4\" x2=\"290\" y2=\"271.4\"/><line x1=\"30\" y1=\"252.9\" x2=\"290\" y2=\"252.9\"/><line x1=\"30\" y1=\"234.3\" x2=\"290\" y2=\"234.3\"/><line x1=\"30\" y1=\"215.7\" x2=\"290\" y2=\"215.7\"/><line x1=\"30\" y1=\"197.1\" x2=\"290\" y2=\"197.1\"/><line x1=\"30\" y1=\"178.6\" x2=\"290\" y2=\"178.6\"/><line x1=\"30\" y1=\"160.0\" x2=\"290\" y2=\"160.0\"/><line x1=\"30\" y1=\"141.4\" x2=\"290\" y2=\"141.4\"/><line x1=\"30\" y1=\"122.9\" x2=\"290\" y2=\"122.9\"/><line x1=\"30\" y1=\"104.3\" x2=\"290\" y2=\"104.3\"/><line x1=\"30\" y1=\"85.7\" x2=\"290\" y2=\"85.7\"/><line x1=\"30\" y1=\"67.1\" x2=\"290\" y2=\"67.1\"/><line x1=\"30\" y1=\"48.6\" x2=\"290\" y2=\"48.6\"/><line x1=\"30\" y1=\"30.0\" x2=\"290\" y2=\"30.0\"/></g><g stroke=\"#333\" stroke-width=\"1.2\"><line x1=\"30\" y1=\"160.0\" x2=\"290\" y2=\"160.0\"/><line x1=\"160.0\" y1=\"30\" x2=\"160.0\" y2=\"290\"/></g><text x=\"164.0\" y=\"172.0\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#333\">O</text><text x=\"292\" y=\"156.0\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#333\">x</text><text x=\"164.0\" y=\"26\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#333\">y</text><line x1=\"30.0\" y1=\"-248.6\" x2=\"290.0\" y2=\"271.4\" stroke=\"#1565c0\" stroke-width=\"2\"/><text x=\"261.4\" y=\"228.3\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#1565c0\">2x + y = 8</text><line x1=\"30.0\" y1=\"308.6\" x2=\"290.0\" y2=\"48.6\" stroke=\"#c62828\" stroke-width=\"2\"/><text x=\"261.4\" y=\"61.1\" font-family=\"sans-serif\" font-size=\"11\" fill=\"#c62828\">x - y = 1</text><circle cx=\"215.7\" cy=\"122.9\" r=\"3.5\" fill=\"#000\"/></svg></figure></p>",
+  "stem": "<p>The graph above shows a system of two linear equations in the xy-plane. Which of the following systems of equations has the same solution as the system shown in the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2x + y = 8 and x + y = 1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4x + 2y = 16 and 2x &minus; 2y = 2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2x + y = 16 and x &minus; y = 1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4x + 2y = 16 and x &minus; y = 2</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. From the graph, the two lines are 2x + y = 8 and x &minus; y = 1, intersecting at (3, 2). Two systems have the same solution set if and only if each equation in one is a nonzero scalar multiple of an equation in the other. Multiplying 2x + y = 8 by 2 gives 4x + 2y = 16, and multiplying x &minus; y = 1 by 2 gives 2x &minus; 2y = 2. Both equations in choice B are scalar multiples of the original equations, so the system in choice B has the same solution (3, 2).</p><p>Choices A, C, and D each alter the constant on one side of an equation without scaling its variable coefficients proportionally, so they do not have the same solution.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium"
+}

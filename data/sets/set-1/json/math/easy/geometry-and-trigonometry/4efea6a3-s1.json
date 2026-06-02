@@ -1,0 +1,22 @@
+{
+  "questionId": "4efea6a3-s1",
+  "originalId": "4efea6a3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The area of a rectangle is 96 square inches. The length of the longest side of the rectangle is 24 inches. What is the length, in inches, of the shortest side of this rectangle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>The area of a rectangle equals length times width. With area 96 and longest side 24, the shortest side x satisfies 96 = 24x. Dividing by 24 gives x = 4 inches.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

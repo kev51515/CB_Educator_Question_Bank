@@ -1,0 +1,25 @@
+{
+  "questionId": "f495b554-s1",
+  "originalId": "f495b554",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A1.T2.hard",
+  "stimulus": "<p>Lithium-ion batteries based on graphite anodes account for roughly 90% of the cells used in electric vehicles, despite recovering only about 350 milliampere-hours per gram of charge capacity. In a study addressing this relative ceiling, a team led by Mei Zhang demonstrated that adding a thin coating of silicon nanowires&mdash;which buffer rapid lithium ingress that pure graphite cannot accommodate, whereas graphite stably hosts the steady-state lithium population&mdash;allows the cells to recover 450 milliampere-hours per gram or more. Assuming the team&rsquo;s analysis is correct, cells made with only silicon nanowires, however, are no more durable over hundreds of charge cycles than graphite-only cells. It&rsquo;s reasonable to conclude, then, that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>battery cells with only silicon nanowires and no graphite would likely deliver more than 450 milliampere-hours per gram in long-term use.</p>"},
+    {"id": "b", "content": "<p>practical electric-vehicle batteries will remain elusive until lithium-ion cells are replaced by a fundamentally different technology.</p>"},
+    {"id": "c", "content": "<p>researchers should evaluate whether minerals other than silicon could similarly improve graphite-based cells.</p>"},
+    {"id": "d", "content": "<p>cells combining graphite and silicon nanowires recover more capacity because each material handles a different phase of lithium uptake.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text says silicon nanowires buffer rapid lithium ingress while graphite stably hosts the steady-state population. Assuming the team&rsquo;s analysis is correct, the combination outperforms either material alone because each handles a different phase of lithium uptake.</p><p>Choice A is incorrect because the text directly contradicts it: silicon-only cells aren&rsquo;t more durable than graphite-only cells, and the text gives no basis for inferring a higher capacity for them. Choice B is incorrect because the text describes an improvement to lithium-ion cells, not a need to replace the technology entirely. Choice C is incorrect because the text never raises other minerals as candidates for evaluation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

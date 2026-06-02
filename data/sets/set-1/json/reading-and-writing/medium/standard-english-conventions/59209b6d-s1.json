@@ -1,0 +1,25 @@
+{
+  "questionId": "59209b6d-s1",
+  "originalId": "59209b6d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>Based on ceramic remnants, historians have long believed that olive cultivation began in the eastern Mediterranean around 4000 BCE. However, since unearthing pollen residues from a 6,000-year-old storage jar in southern Anatolia, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> may have started much earlier.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>archaeobotanist Aylin Demir's hypothesis is that cultivation</p>"},
+    {"id": "b", "content": "<p>the hypothesis archaeobotanist Aylin Demir has offered is that cultivation</p>"},
+    {"id": "c", "content": "<p>archaeobotanist Aylin Demir has hypothesized that cultivation</p>"},
+    {"id": "d", "content": "<p>cultivation, archaeobotanist Aylin Demir has hypothesized,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"archaeobotanist Aylin Demir\" the subject of the sentence and places it immediately after the modifying phrase \"since...Anatolia.\" In doing so, this choice clearly establishes that Demir&mdash;and not another noun in the sentence&mdash;is who unearthed pollen residues from the storage jar.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of \"archaeobotanist Aylin Demir's hypothesis\" immediately after the modifying phrase illogically suggests that the \"hypothesis\" is what unearthed the pollen residues. Choice B is incorrect because it results in a dangling modifier. The placement of \"the hypothesis\" immediately after the modifying phrase illogically suggests that the hypothesis unearthed the pollen residues. Choice D is incorrect because it results in a dangling modifier. The placement of \"cultivation\" immediately after the modifying phrase illogically suggests that \"cultivation\" unearthed the pollen residues.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

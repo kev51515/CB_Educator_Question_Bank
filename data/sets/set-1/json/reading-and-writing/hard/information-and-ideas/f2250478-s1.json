@@ -1,0 +1,39 @@
+{
+  "questionId": "f2250478-s1",
+  "originalId": "f2250478",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Among migratory songbirds that travel in large flocks, such as starlings, Bobolinks, and certain warblers, fledglings appear to show an innate attraction to broadband, low-frequency rumbles that resemble the calls of conspecific adults at takeoff. Dmitri Sokolov and his colleagues used recordings of synthesized low-frequency rumbles to test whether this trait also occurs in greater kiwi, a flightless and largely solitary New Zealand bird whose adults do not migrate or form flocks. They found that kiwi chicks showed a significant preference for the recordings over silence and over pure tones, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>researchers should not assume that an innate attraction to low-frequency rumbles is necessarily an adaptation related to flocking or migration.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>low-frequency rumbles are likely perceived as comforting by fledglings of flocking, migratory species but as alarming by fledglings of solitary, non-migratory species.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>researchers can assume that the attraction to low-frequency rumbles seen in flocking, migratory species is learned rather than innate.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>newly hatched greater kiwi show a stronger preference for low-frequency rumbles than adult greater kiwi do.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says that newborn birds of flocking, migratory species seem innately attracted to low-frequency rumbles like those used by adults at takeoff. The kiwi study shows the same innate attraction in a solitary, non-migratory species whose adults never flock or migrate. Since a non-flocking, non-migratory species also shows the attraction, researchers shouldn't assume the trait is necessarily an adaptation related to flocking or migration.</p><p>Choice B is incorrect because the kiwi chicks were attracted to the rumbles, not alarmed by them. Choice C is incorrect because the kiwi chicks were just hatched and showed the response before any learning could have occurred. Choice D is incorrect because the text gives no data on adult kiwi.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e312081b-s1",
+  "originalId": "e312081b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which of the following is equivalent to the given expression <math><mfenced><mrow><mn>5</mn><mi>w</mi><mo>+</mo><mn>4</mn></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>3</mn><mi>w</mi><mo>+</mo><mn>9</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>8</mn><mi>w</mi><mo>+</mo><mn>13</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>8</mn><mi>w</mi><mo>+</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>2</mn><mi>w</mi><mo>+</mo><mn>13</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>15</mn><msup><mi>w</mi><mn>2</mn></msup><mo>+</mo><mn>13</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Combine like terms: (5w + 3w) + (4 + 9) = 8w + 13. Choice (a) is correct.</p>",
+  "templateId": "equivalent-expressions.A1.T2.easy"
+}

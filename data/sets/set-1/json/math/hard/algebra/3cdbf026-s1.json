@@ -1,0 +1,39 @@
+{
+  "questionId": "3cdbf026-s1",
+  "originalId": "3cdbf026",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of the equation <i>a</i><i>x</i> + <i>k</i><i>y</i> = 12 is a line in the <i>xy</i>-plane, where <i>a</i> and <i>k</i> are constants. If the line contains the points (4, 0) and (0, 3), what is the value of <i>k</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Substituting (0, 3) into <i>a</i><i>x</i> + <i>k</i><i>y</i> = 12 gives <i>k</i>(3) = 12, so <i>k</i> = 4.</p><p>Choice A confuses <i>k</i> with <i>a</i> (which equals 3 from the other point). Choices C and D arise from arithmetic mistakes.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

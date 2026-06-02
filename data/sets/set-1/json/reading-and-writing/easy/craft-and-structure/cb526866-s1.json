@@ -1,0 +1,25 @@
+{
+  "questionId": "cb526866-s1",
+  "originalId": "cb526866",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The recent recovery of an intact silk garment from a tomb in central Asia dating to roughly 1,500 years ago was remarkable. Silk textiles <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> endure for so long because of their susceptibility to decay, but archaeologists believe the dry, salty climate of the burial chamber slowed the natural breakdown of the fibers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>plainly</p>"},
+    {"id": "b", "content": "<p>seldom</p>"},
+    {"id": "c", "content": "<p>recklessly</p>"},
+    {"id": "d", "content": "<p>solidly</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because \"seldom\" means infrequently. The text emphasizes that the find is remarkable and that silk is prone to decay, supporting the idea that silk textiles only rarely survive that long. Choice A is incorrect because \"plainly\" means simply or merely; the find would not be remarkable if silk merely endured. Choice C is incorrect because \"recklessly\" means without care, which does not describe how objects survive. Choice D is incorrect because \"solidly\" means firmly or strongly; if silk firmly survived long stretches of time, the discovery would not be unusual.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T4.easy"
+}

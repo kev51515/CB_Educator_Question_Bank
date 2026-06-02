@@ -1,0 +1,22 @@
+{
+  "questionId": "17d80dc3-s1",
+  "originalId": "17d80dc3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>In the <em>xy</em>-plane, line <em>m</em> has a slope of 4 and a y-intercept of (0, -24). What is the x-coordinate of the x-intercept of line <em>m</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>The equation of the line is y = 4x - 24. At the x-intercept, y = 0, so 0 = 4x - 24. Adding 24 to both sides: 4x = 24. Dividing by 4: x = 6.</p>",
+  "templateId": "linear-functions.A1.T3.medium"
+}

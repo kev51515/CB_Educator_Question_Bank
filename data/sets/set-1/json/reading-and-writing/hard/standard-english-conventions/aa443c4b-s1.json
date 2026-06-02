@@ -1,0 +1,25 @@
+{
+  "questionId": "aa443c4b-s1",
+  "originalId": "aa443c4b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Recent radiocarbon dating of the Saharan rock art at Tassili n'Ajjer has prompted some archaeologists to claim that the now arid plateau once supported herding societies. This claim <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that certain bovine species, such as <em>Bos primigenius</em>, grazed there without interruption from the early Holocene onward cannot stand, researchers Aïcha Bouchareb and Élise Renaud caution, unless competing reconstructions can first be eliminated.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>asserts</p>"},
+    {"id": "b", "content": "<p>asserted</p>"},
+    {"id": "c", "content": "<p>has asserted</p>"},
+    {"id": "d", "content": "<p>asserting</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle \"asserting\" is correctly used to form a restrictive participial phrase (\"asserting&hellip;onward\") within the main clause (\"This claim&hellip;cannot stand\"). This participial phrase functions as part of the sentence's subject, providing essential identifying information about what the claim states&mdash;namely, that certain bovine species grazed there without interruption from the early Holocene onward.</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite verb \"asserts\" can't be used in this way within the subject of the sentence. Choice B is incorrect because it results in an ungrammatical sentence. The finite verb \"asserted\" can't be used in this way within the subject of the sentence. Choice C is incorrect because it results in an ungrammatical sentence. The finite verb \"has asserted\" can't be used in this way within the subject of the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

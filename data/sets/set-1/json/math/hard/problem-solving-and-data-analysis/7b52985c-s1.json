@@ -1,0 +1,20 @@
+{
+  "questionId": "7b52985c-s1",
+  "originalId": "7b52985c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between the length of time y, in hours, a certain hawk spent hunting, and the number of days after March 15, x. A line of best fit passes through the points (0, 3) and (8, 11). Based on this line of best fit, what is the predicted hunting time, in hours, on the day x = 5?</p>",
+  "answerOptions": null,
+  "keys": ["8"],
+  "rationale": "<p>The slope of the line is (11 − 3)/(8 − 0) = 1. The line is y = 3 + x. At x = 5, y = 3 + 5 = 8 hours.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.hard"
+}

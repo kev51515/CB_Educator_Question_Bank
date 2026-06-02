@@ -1,0 +1,39 @@
+{
+  "questionId": "7c48a6dd-s1",
+  "originalId": "7c48a6dd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In the early 1970s, inspired in part by traditional Mexican papel picado, Chicana visual artist Carmen Lomas Garza began her celebrated paper-cut series. She <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> intricate designs into colored tissue paper and mounted them onto gallery walls, where the layered cutouts created shifting patterns of light and shadow.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>to have cut</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>cut</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>cutting</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to cut</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The past tense &ldquo;cut&rdquo; matches the past tense &ldquo;mounted&rdquo; in the same coordinate verb phrase with the same subject (&ldquo;she&rdquo;): &ldquo;she cut&hellip;and [she] mounted.&rdquo;</p><p>Choice A (perfect infinitive), Choice C (present participle), and Choice D (to-infinitive) are all nonfinite forms that cannot serve as the coordinate finite verb required here.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

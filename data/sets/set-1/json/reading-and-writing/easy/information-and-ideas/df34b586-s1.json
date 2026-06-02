@@ -1,0 +1,39 @@
+{
+  "questionId": "df34b586-s1",
+  "originalId": "df34b586",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Approximate Annual Bicycle Exports (units), 1995–2010</strong></p><ul><li>Vietnam: 1995: 3,000; 2000: 4,200; 2005: 26,000; 2010: 51,000</li><li>South Korea: 1995: 19,800; 2000: 22,400; 2005: 23,100; 2010: 18,900</li><li>Mexico: 1995: 8,500; 2000: 9,000; 2005: 9,200; 2010: 8,800</li><li>Italy: 1995: 32,000; 2000: 41,500; 2005: 55,200; 2010: 15,000</li></ul><p>The Cyclepoint Company, a bicycle exporter founded in the 1970s, expanded heavily into European and Asian markets in the late twentieth century. Although Italy and Germany accounted for the majority of its overseas sales, exports from other locations also grew dramatically during this period. For example, exports from ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>South Korea were largely consistent from 1995 to 2010.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mexico increased steadily from 1995 to 2010.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Vietnam increased dramatically from 2000 to 2010.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Italy declined substantially from 1995 to 2005.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Vietnam exports grew from about 4,200 in 2000 to 51,000 in 2010 — a dramatic increase, illustrating the claim of significant growth in another location.</p><p>Choice A is wrong because South Korea's numbers stayed roughly the same, which does not illustrate growth. Choice B is wrong because Mexico's exports remained nearly flat. Choice D is wrong because Italy's exports actually rose from 1995 to 2005, not declined.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

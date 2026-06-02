@@ -1,0 +1,25 @@
+{
+  "questionId": "30438650-s1",
+  "originalId": "30438650",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A6.T17.medium",
+  "stimulus": "<p>Yiyun Li's story collection <em>A Thousand Years of Good Prayers</em> features multiple stories about family members struggling to understand one another. In \"The Princess of Nebraska,\" a young expectant mother considers her uncertain future while drifting through the streets of Chicago with a near-stranger. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in the title story, a retired father visits his adult daughter in the American Midwest and finds that years of unspoken distance are not easily bridged in conversation.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Similarly,</p>"},
+    {"id": "b", "content": "<p>Of course,</p>"},
+    {"id": "c", "content": "<p>For example,</p>"},
+    {"id": "d", "content": "<p>Therefore,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Similarly\" indicates the addition of a related, parallel idea. In this sentence, the author is providing another comparable story to the one discussed in the previous sentence. Therefore, \"similarly\" works best in this context.</p><p>Choice B is incorrect. \"Of course\" introduces a concession or acknowledgment, but the text is not conceding anything; both examples support the opening claim. Choice C is incorrect. \"For example\" introduces an example, but the second story is not an example of the first—it is another, comparable story. Choice D is incorrect. \"Therefore\" indicates cause and effect, but the second story is not caused by the first; both simply illustrate the opening claim about the collection.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

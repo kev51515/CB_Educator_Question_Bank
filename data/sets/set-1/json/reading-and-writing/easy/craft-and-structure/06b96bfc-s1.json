@@ -1,0 +1,39 @@
+{
+  "questionId": "06b96bfc-s1",
+  "originalId": "06b96bfc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>A chef and member of the Maori community in New Zealand, Monique Fiso was eager to feature traditional Maori ingredients in her cooking, but she was <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many of the wild plants used by her ancestors. She met this challenge by traveling with Maori elders who could identify edible roots and herbs and by reading every published study she could find on indigenous cuisine.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>unfamiliar with</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>skilled with</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>excited about</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>prepared for</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because \"unfamiliar with\" describes a lack of prior knowledge that explains why Fiso needed to travel with elders and read studies in order to learn about traditional ingredients. Choices B and D are incorrect because they would suggest she already knew the ingredients well, making her actions unnecessary. Choice C is incorrect because excitement alone would not explain the need to learn about the ingredients.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

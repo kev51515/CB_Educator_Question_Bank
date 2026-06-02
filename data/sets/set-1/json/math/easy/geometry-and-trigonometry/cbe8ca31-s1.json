@@ -1,0 +1,39 @@
+{
+  "questionId": "cbe8ca31-s1",
+  "originalId": "cbe8ca31",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>PQR</em>, the measure of angle <em>P</em> is 31 degrees and the measure of angle <em>Q</em> is 87 degrees. What is the measure of angle <em>R</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>56 degrees</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>62 degrees</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>118 degrees</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180 degrees</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The measures of the interior angles of a triangle sum to 180 degrees. Therefore, the measure of angle <em>R</em> is 180 minus 31 minus 87 = 62 degrees.</p><p>Choice A is incorrect: 56 is 87 minus 31.</p><p>Choice C is incorrect: 118 is 31 plus 87.</p><p>Choice D is incorrect: 180 is the sum of all three interior angles.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.easy"
+}

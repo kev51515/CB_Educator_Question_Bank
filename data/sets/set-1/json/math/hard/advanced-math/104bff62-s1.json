@@ -1,0 +1,25 @@
+{
+  "questionId": "104bff62-s1",
+  "originalId": "104bff62",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T4.hard",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation x<sup>2</sup>/&radic;(x<sup>2</sup> &minus; k<sup>2</sup>) = k<sup>2</sup>/&radic;(x<sup>2</sup> &minus; k<sup>2</sup>) + 21 holds for some real value of x. Which of the following could equal x?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&minus;k</p>"},
+    {"id": "b", "content": "<p>&minus;&radic;(k<sup>2</sup> + 21<sup>2</sup>)</p>"},
+    {"id": "c", "content": "<p>&minus;&radic;(21<sup>2</sup> &minus; k<sup>2</sup>)</p>"},
+    {"id": "d", "content": "<p>&minus;k<sup>2</sup> &minus; 21<sup>2</sup></p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Subtract k<sup>2</sup>/&radic;(x<sup>2</sup> &minus; k<sup>2</sup>) from both sides to get (x<sup>2</sup> &minus; k<sup>2</sup>)/&radic;(x<sup>2</sup> &minus; k<sup>2</sup>) = 21, which simplifies to &radic;(x<sup>2</sup> &minus; k<sup>2</sup>) = 21 (since the radicand must be positive). Squaring gives x<sup>2</sup> &minus; k<sup>2</sup> = 441, so x<sup>2</sup> = k<sup>2</sup> + 441, and x = &plusmn;&radic;(k<sup>2</sup> + 21<sup>2</sup>). The negative branch is choice B.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z"
+}

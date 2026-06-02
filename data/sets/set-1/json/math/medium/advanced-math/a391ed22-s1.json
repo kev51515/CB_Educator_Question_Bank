@@ -1,0 +1,22 @@
+{
+  "questionId": "a391ed22-s1",
+  "originalId": "a391ed22",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The expression (2x + 1)(x + 3) is equivalent to ax\u00b2 + bx + c, where a, b, and c are constants. What is the value of b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>Expand: (2x + 1)(x + 3) = 2x\u00b2 + 6x + x + 3 = 2x\u00b2 + 7x + 3. Comparing to ax\u00b2 + bx + c, the value of b is 7.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A4.T9.hard"
+}

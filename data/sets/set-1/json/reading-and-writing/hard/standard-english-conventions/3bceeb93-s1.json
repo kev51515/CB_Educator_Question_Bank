@@ -1,0 +1,39 @@
+{
+  "questionId": "3bceeb93-s1",
+  "originalId": "3bceeb93",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>When it was first described by European naturalists in 1828, the spiny, egg-laying echidna so confounded zoological taxonomy that one researcher proposed the name <em>Tachyglossus aculeatus</em>: \"swift-tongued spiny one.\" The mammal, which lays eggs but also feeds ______ young with milk secreted through the skin, has since been placed alongside the platypus in the order Monotremata.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>they're</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>its</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>their</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>it's</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The singular possessive pronoun \"its\" agrees with the singular antecedent \"the mammal\" and indicates that the \"young\" belong to it.</p><p>Choice A is incorrect because \"they're\" is the contraction of \"they are,\" producing both a pronoun-antecedent agreement error with the singular antecedent \"the mammal\" and an extra verb in a clause that already has the main verb \"feeds.\" Choice C is incorrect because \"their\" is plural and does not agree with the singular antecedent \"the mammal.\" Choice D is incorrect because \"it's\" is the contraction of \"it is,\" introducing an extra verb into a clause that already has the main verb \"feeds.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.hard"
+}

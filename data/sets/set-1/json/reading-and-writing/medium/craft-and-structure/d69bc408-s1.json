@@ -1,0 +1,25 @@
+{
+  "questionId": "d69bc408-s1",
+  "originalId": "d69bc408",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>The following text is adapted from Eliza Haywood&rsquo;s 1725 novel <em>The Fatal Secret</em>. Anziana and Bellario are neighbors who have been secretly exchanging notes through Lisetta, Anziana&rsquo;s maid.</p>\n<p style='padding-left: 1em;'>[Anziana] gave the small folded paper to Lisetta; who slipped at once into the orchard with it, where she still found Bellario beneath the laurel, gazing at the gravel in deep thought. She held out the note, but feared to drop it through the close-laid hedge; so he ran and brought a slim reed, which he split at one end, and held it while she fixed the paper into the cleft, and would not stay to hear his words to it. But never was a youth so transported with joy as he was at the reading of this short note; it inflamed his hopes anew; for to the generous, nothing kindles affection like affection.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It establishes that a character is desperate to receive a note and then explains why another character has not yet written one.</p>"},
+    {"id": "b", "content": "<p>It presents a character&rsquo;s concerns about delivering a note and then details the contents of that note.</p>"},
+    {"id": "c", "content": "<p>It describes the delivery of a note and then portrays a character&rsquo;s happiness at reading that note.</p>"},
+    {"id": "d", "content": "<p>It reveals the inspiration behind a character&rsquo;s note and then emphasizes the excitement that another character feels upon receiving that note.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes the overall structure of the text. The narrator first explains how Lisetta carefully delivers Anziana&rsquo;s note to Bellario through the hedge, and then relates that Bellario feels &ldquo;transported with joy&rdquo; after reading the note. The structure is thus a description of the delivery of a note followed by the portrayal of a character&rsquo;s happiness upon reading it.</p><p>Choice A is incorrect because the text indicates the note has been written and does not describe Bellario as desperate to receive one. Choice B is incorrect because the text does not detail the contents of the note. Choice D is incorrect because the text does not begin by discussing the inspiration behind Anziana&rsquo;s note; it begins with the delivery.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

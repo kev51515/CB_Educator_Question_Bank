@@ -1,0 +1,25 @@
+{
+  "questionId": "ea0aa676-s1",
+  "originalId": "ea0aa676",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>During the early twentieth century, Wang Zhenyi&rsquo;s grandniece Liang Suyun emerged as a respected voice in regional astronomy circles. Her painstaking catalog of comets observed near the Yangtze Delta, a humid coastal region that hosts dozens of historic observatories (most of which are still active), <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> later cited by international researchers cataloging recurring objects.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>were</p>"},
+    {"id": "c", "content": "<p>have been</p>"},
+    {"id": "d", "content": "<p>was</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement across an interrupting modifier. The singular subject &ldquo;catalog&rdquo; agrees with the singular verb &ldquo;was.&rdquo; The intervening prepositional phrases and relative clauses (&ldquo;of comets observed near the Yangtze Delta, a humid coastal region&hellip;&rdquo;) do not change the number of the true subject.</p><p>Choice A is incorrect. The subject &ldquo;catalog&rdquo; is singular, but the verb &ldquo;are&rdquo; is plural. Choice B is incorrect. The subject &ldquo;catalog&rdquo; is singular, but the verb &ldquo;were&rdquo; is plural. Choice C is incorrect. The subject &ldquo;catalog&rdquo; is singular, but the verb &ldquo;have been&rdquo; is plural.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

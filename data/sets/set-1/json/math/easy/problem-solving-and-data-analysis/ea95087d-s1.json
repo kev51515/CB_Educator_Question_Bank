@@ -1,0 +1,39 @@
+{
+  "questionId": "ea95087d-s1",
+  "originalId": "ea95087d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a certain region, the table shows the average number of cars sold per dealership in 2023 by type of vehicle.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Vehicle type</th><th>Average cars sold</th></tr><tr><td>Sedan</td><td>412</td></tr><tr><td>SUV</td><td>256</td></tr><tr><td>Truck</td><td>188</td></tr></table><p>Based on the table, how much greater was the average number of cars sold for sedans than for trucks?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>68</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>156</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>188</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>224</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The difference is 412 \u2212 188 = 224.</p><p>Choice A is incorrect. This is the difference between SUV and Truck.</p><p>Choice B is incorrect. This is the difference between Sedan and SUV.</p><p>Choice C is incorrect. This is the value for Truck, not the requested difference.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.easy"
+}

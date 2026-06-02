@@ -1,0 +1,25 @@
+{
+  "questionId": "d2c2a7ef-s1",
+  "originalId": "d2c2a7ef",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T8.medium",
+  "stimulus": "<p>The following text is from a 1906 short story by Aurelia Whitmore, &ldquo;The House at the Crossing,&rdquo; set in a New England river town referred to as the town of M.</p>\n<blockquote>\n<p>If visitors to the small river town of M. observed aloud that its winters were severe and its diversions few, the townspeople would reply that, on the contrary, M. was a place of much excellent society, that it had a lending library and a singing school, that lectures were given at the meeting-house through January and February, and finally, that quite a number of agreeable households lived there with whom an acquaintance might be cultivated. And they always named the Crowders as the most cultivated and most public-spirited household of them all.</p>\n</blockquote>",
+  "stem": "<p>What does the text suggest about the Crowders?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They are amused by the manners of other households in the town of M.</p>"},
+    {"id": "b", "content": "<p>They have recently moved into the town of M.</p>"},
+    {"id": "c", "content": "<p>They occupy a distinctive position among the households of the town of M.</p>"},
+    {"id": "d", "content": "<p>They have long disliked living in the town of M.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text says that several agreeable households live in M. and that townspeople always single out the Crowders as the &ldquo;most cultivated and most public-spirited&rdquo; of them all, which suggests that the Crowders hold a distinctive position among the town&rsquo;s households.</p><p>Choice A is incorrect because the text describes how the Crowders are viewed by others, not how they view other residents. Choice B is incorrect because the text gives no information about when the Crowders arrived in M. Choice D is incorrect because the text reveals nothing about the Crowders&rsquo; feelings toward life in M.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

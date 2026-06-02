@@ -1,0 +1,25 @@
+{
+  "questionId": "4fc9a13a-s1",
+  "originalId": "4fc9a13a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>The poet and editor Carmen Boullosa was the first Latina to serve as an acquiring editor at the New York imprint Vergara Press, where she worked from 1975 to 1991. A scholar contends that one of Boullosa's likely aims during her tenure as an editor was to expand the presence of Latina writers on Vergara Press's roster of published authors.</p>",
+  "stem": "<p>Which finding, if true, would most strongly support the scholar's claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Books that Boullosa edited at Vergara Press exhibited stylistic features that distinguished them from books she did not edit.</p>"},
+    {"id": "b", "content": "<p>Boullosa's own poetry collections published after 1991 sold considerably better and received more critical recognition than her earlier collections.</p>"},
+    {"id": "c", "content": "<p>Latina authors interviewed in the 1990s and 2000s were highly likely to identify Boullosa's poetry as a key influence on their writing.</p>"},
+    {"id": "d", "content": "<p>The share of Vergara Press authors who were Latina rose noticeably in the late 1970s and remained at the higher level through the 1980s.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. The scholar's claim concerns Boullosa's editorial activity—specifically, an effort to bring more Latina writers onto Vergara Press's published list. A rise in the share of Vergara Press authors who were Latina across the years Boullosa worked there, sustained at the higher level, directly suggests she steered acquisitions in that direction, supporting the claim.</p><p>Choice A is incorrect: stylistic features of books she edited do not show whether she focused those editorial efforts on Latina writers specifically. Choice B is incorrect: the claim is about her work as an editor, not the commercial success of her own poetry. Choice C is incorrect: later Latina authors citing Boullosa's poetry as influence speaks to her literary reputation, not to her acquisition decisions at Vergara Press.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

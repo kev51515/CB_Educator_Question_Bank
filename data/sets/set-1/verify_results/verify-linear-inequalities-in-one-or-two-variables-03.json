@@ -1,0 +1,22 @@
+[
+  {"id": "e8f9e117-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard", "verdict": "aspect_drift", "detail": "Tagged A1.T3 (answer should be an inequality) but stem asks 'what is the greatest number m' with numeric SPR answer 24 — this fits A2 (solve for numeric extremum), not A1."},
+  {"id": "fbd5483f-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "963da34c-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "45cfb9de-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "03503d49-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "1a621af4-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.hard", "verdict": "ok"},
+  {"id": "55ea82f3-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard", "verdict": "ok"},
+  {"id": "915463e0-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy", "verdict": "ok"},
+  {"id": "f01ef454-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy", "verdict": "ok"},
+  {"id": "68f2cbaf-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy", "verdict": "ok"},
+  {"id": "7d6928bd-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy", "verdict": "wrong_answer", "detail": "Stem says 'at most 20 events', so w+p ≤ 20 = Choice A. Keyed 'b' is w+p ≥ 20 (wrong direction). Rationale text even says 'at most 20 means ≤ 20: w+p ≤ 20' but picks B — rationale_inconsistent with keyed answer. Also no per-unit costs/weights, violating A1.T1 must_preserve."},
+  {"id": "c50ede6d-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.easy", "verdict": "ok"},
+  {"id": "72a5fd28-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy", "verdict": "ok"},
+  {"id": "00ec9102-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy", "verdict": "wrong_answer", "detail": "Notebooks $2.15, pens $1.30 → 2.15n + 1.30p ≤ 20 = Choice A. Keyed 'b' (1.30n + 2.15p ≤ 20) swaps coefficients with items. Rationale text says '2.15n notebooks and 1.30p pens' which matches Choice A, not Choice B — rationale_inconsistent."},
+  {"id": "df32b09c-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.easy", "verdict": "ok"},
+  {"id": "e744499e-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "c9355dec-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy", "verdict": "constraint_violation", "detail": "A4.T1 must_preserve requires 'graph-based stem (a shaded half-plane image)'. Clone replaces the graph with a text description of two points and shading direction — categorical drift toward A3/A5 per template's documented common_bug. Math otherwise correct (Choice B)."},
+  {"id": "e006209c-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy", "verdict": "ok"},
+  {"id": "89541f9b-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy", "verdict": "ok"},
+  {"id": "2c121b25-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy", "verdict": "wrong_answer", "detail": "Total blue marbles = 0.4x + 0.6y ≥ 500 = Choice A. Keyed 'b' (40x + 60y ≥ 500) fails to convert percents to decimals. Rationale even contradicts itself by saying 'Choice A doesn't convert percents' though Choice A does convert; rationale_inconsistent."}
+]

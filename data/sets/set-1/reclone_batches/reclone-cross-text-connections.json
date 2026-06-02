@@ -1,0 +1,14 @@
+[
+  {
+    "id": "35e21b06-s1",
+    "templateId": "cross-text-connections.A1.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "Type T2 must_preserve requires 'Explicit reference in the stem to an underlined portion, named claim, or specific quoted excerpt in Text A'. Stimulus contains no underlined/marked portion, and the stem refers to 'the researchers' perspective in Text 1 on the behavior of the dolphins without loggers' (a general perspective, not an underlined excerpt). This is T1 structure, not T2."
+  },
+  {
+    "id": "f3c45b4f-s1",
+    "templateId": "cross-text-connections.A1.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "templateId tags T1 (respond to entire argument; no underlined portion) but stimulus contains a <span>-marked target and stem says 'respond to the underlined portion in Text 1'. Structure matches T2 (respond to underlined/specific claim), not T1. Note: span styling is used instead of <u> but functions as an underlined target."
+  }
+]

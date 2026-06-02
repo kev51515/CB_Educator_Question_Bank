@@ -1,0 +1,65 @@
+{
+  "questionId": "7ce2830a",
+  "externalId": null,
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments",
+  "skillCode": "Q.G.",
+  "scoreBand": 7,
+  "ibn": "029344-DC",
+  "updateDate": 1691007959624,
+  "createDate": 1691007959624,
+  "scrapedAt": "2026-05-25T12:25:03.229464+00:00",
+  "source": "ibn-legacy",
+  "type": "mcq",
+  "stem": "<p class=\"stem_paragraph \">A psychologist designed and conducted a study to determine whether playing a certain educational game increases middle school students&rsquo; accuracy in adding fractions. For the study, the psychologist chose a random sample of 35 students from all of the students at one of the middle schools in a large city. The psychologist found that students who played the game showed significant improvement in accuracy when adding fractions. What is the largest group to which the results of the study can be generalized?</p>\n",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p class=\"choice_paragraph \">The 35 students in the sample</p>\n"
+    },
+    {
+      "id": "b",
+      "content": "<p class=\"choice_paragraph \">All students at the school</p>\n"
+    },
+    {
+      "id": "c",
+      "content": "<p class=\"choice_paragraph \">All middle school students in the city</p>\n"
+    },
+    {
+      "id": "d",
+      "content": "<p class=\"choice_paragraph \">All students in the city</p>\n"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The largest group to which the results of a study can be generalized is the population from which the random sample was chosen. In this case, the psychologist chose a random sample from all students at one particular middle school. Therefore, the largest group to which the results can be generalized is all the students at the school.<p>Choice A is incorrect because this isn&rsquo;t the largest group the results can be generalized to. Choices C and D are incorrect because these groups are larger than the population from which the random sample was chosen. Therefore, the sample isn&rsquo;t representative of these groups.</p><p>&nbsp;</p></p>\n",
+  "raw": {
+    "item_id": "029344-DC",
+    "section": "Math",
+    "prompt": "<p class=\"stem_paragraph \">A psychologist designed and conducted a study to determine whether playing a certain educational game increases middle school students&rsquo; accuracy in adding fractions. For the study, the psychologist chose a random sample of 35 students from all of the students at one of the middle schools in a large city. The psychologist found that students who played the game showed significant improvement in accuracy when adding fractions. What is the largest group to which the results of the study can be generalized?</p>\n",
+    "answer": {
+      "style": "Multiple Choice",
+      "choices": {
+        "a": {
+          "body": "<p class=\"choice_paragraph \">The 35 students in the sample</p>\n"
+        },
+        "b": {
+          "body": "<p class=\"choice_paragraph \">All students at the school</p>\n"
+        },
+        "c": {
+          "body": "<p class=\"choice_paragraph \">All middle school students in the city</p>\n"
+        },
+        "d": {
+          "body": "<p class=\"choice_paragraph \">All students in the city</p>\n"
+        }
+      },
+      "correct_choice": "b",
+      "rationale": "<p>Choice B is correct. The largest group to which the results of a study can be generalized is the population from which the random sample was chosen. In this case, the psychologist chose a random sample from all students at one particular middle school. Therefore, the largest group to which the results can be generalized is all the students at the school.<p>Choice A is incorrect because this isn&rsquo;t the largest group the results can be generalized to. Choices C and D are incorrect because these groups are larger than the population from which the random sample was chosen. Therefore, the sample isn&rsquo;t representative of these groups.</p><p>&nbsp;</p></p>\n"
+    }
+  }
+}

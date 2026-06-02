@@ -1,0 +1,39 @@
+{
+  "questionId": "9ff10b3b-s1",
+  "originalId": "9ff10b3b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mfrac><mn>1</mn><mn>3</mn></mfrac><mi>x</mi><mo>-</mo><mfrac><mn>1</mn><mn>12</mn></mfrac><mi>x</mi><mo>=</mo><mn>1</mn></math>, what is the value of <math><mi>x</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>4</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mn>1</mn><mn>4</mn></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>12</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>3</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Multiplying both sides by 12 yields <math><mn>4</mn><mi>x</mi><mo>-</mo><mi>x</mi><mo>=</mo><mn>12</mn></math>, or <math><mn>3</mn><mi>x</mi><mo>=</mo><mn>12</mn></math>. Dividing by 3 yields <math><mi>x</mi><mo>=</mo><mn>4</mn></math>.</p><p>Choices B, C, and D are incorrect and may result from sign errors or arithmetic mistakes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.easy"
+}

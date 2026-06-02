@@ -1,0 +1,22 @@
+{
+  "questionId": "16de54c7-s1",
+  "originalId": "16de54c7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The expression (3x + 7)(2x \u2212 1) is rewritten in the form 6x\u00b2 + kx \u2212 7, where k is a constant. What is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>Expanding (3x + 7)(2x \u2212 1) gives 6x\u00b2 \u2212 3x + 14x \u2212 7 = 6x\u00b2 + 11x \u2212 7. Comparing to 6x\u00b2 + kx \u2212 7, we have k = 11.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A4.T9.medium"
+}

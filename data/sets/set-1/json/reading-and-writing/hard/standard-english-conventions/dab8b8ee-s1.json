@@ -1,0 +1,25 @@
+{
+  "questionId": "dab8b8ee-s1",
+  "originalId": "dab8b8ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Sometimes called the ocean's &ldquo;blue lungs,&rdquo; seagrass meadows are dense underwater pastures sustained by clonal plants such as eelgrass, turtle grass, and manatee grass. Sequestering carbon in coastal sediments at remarkable rates, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>a recent paper has estimated that these meadows store carbon thirty-five times faster than tropical rainforests do.</p>"},
+    {"id": "b", "content": "<p>these meadows store carbon thirty-five times faster than tropical rainforests do, according to a recent paper.</p>"},
+    {"id": "c", "content": "<p>an estimated thirty-five-fold advantage over tropical rainforests in carbon storage is attributed to these meadows, according to a recent paper.</p>"},
+    {"id": "d", "content": "<p>a recent paper's estimate is that these meadows store carbon thirty-five times faster than tropical rainforests do.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The subject of the modifier \"sequestering carbon in coastal sediments at remarkable rates\" is \"seagrass meadows.\" Subject-modifier placement requires a modifier and its subject to be next to each other, so \"seagrass meadows\" or some variant meaning \"seagrass meadows\" (in this case, \"these meadows\") must begin the missing clause.</p><p>Choice A is incorrect. Modifiers and their subjects must go next to each other. The subject of the modifier is \"seagrass meadows,\" not \"a recent paper.\" Choice C is incorrect. Modifiers and their subjects must go next to each other. The subject of the modifier is \"seagrass meadows,\" not \"an estimated thirty-five-fold advantage.\" Choice D is incorrect. Modifiers and their subjects must go next to each other. The subject of the modifier is \"seagrass meadows,\" not \"a recent paper's estimate.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

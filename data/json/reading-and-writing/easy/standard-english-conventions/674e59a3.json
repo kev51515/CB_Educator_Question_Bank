@@ -1,0 +1,72 @@
+{
+  "questionId": "674e59a3",
+  "externalId": "05f74e82-e82f-4979-b23e-6aa8533f1b21",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:57.945583+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "9abfef31-413c-4dab-9b8e-2e0d4e9c1caa",
+      "content": "<p>will become</p>"
+    },
+    {
+      "id": "46b49e33-9f29-4e57-8cd0-2a0064584231",
+      "content": "<p>becomes</p>"
+    },
+    {
+      "id": "6d34d3d0-d2f9-4f9d-8a5b-f6600cc6593b",
+      "content": "<p>will have become</p>"
+    },
+    {
+      "id": "5588c053-784f-4417-b1a7-ca5ade152e4e",
+      "content": "<p>had become</p>"
+    }
+  ],
+  "keys": [
+    "5588c053-784f-4417-b1a7-ca5ade152e4e"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verbs to express tense in a sentence. The past perfect tense indicates an action that was completed before another past action. In this choice, the past perfect verb &ldquo;had become,&rdquo; together with the supplemental phrase &ldquo;by 2023,&rdquo; indicates that Lafourcade earned her status as one of the most celebrated musicians in Latin America before 2023.</p><p>Choice A is incorrect because the future tense &ldquo;will become&rdquo; doesn&rsquo;t indicate that Lafourcade earned her celebrated status before 2023. Choice B is incorrect because the present tense &ldquo;becomes&rdquo; doesn&rsquo;t indicate that Lafourcade earned her celebrated status before 2023. Choice C is incorrect because the future perfect tense &ldquo;will have become&rdquo; doesn&rsquo;t indicate that Lafourcade earned her celebrated status by 2023.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Following her debut album release in 2002, Mexican singer-songwriter Natalia Lafourcade quickly shot to fame. By 2023, she <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> one of the most celebrated musicians in Latin America, having released twelve albums and won seventeen Latin Grammy awards&mdash;more than any other female artist in history.</p>",
+    "keys": [
+      "5588c053-784f-4417-b1a7-ca5ade152e4e"
+    ],
+    "answerOptions": [
+      {
+        "id": "9abfef31-413c-4dab-9b8e-2e0d4e9c1caa",
+        "content": "<p>will become</p>"
+      },
+      {
+        "id": "46b49e33-9f29-4e57-8cd0-2a0064584231",
+        "content": "<p>becomes</p>"
+      },
+      {
+        "id": "6d34d3d0-d2f9-4f9d-8a5b-f6600cc6593b",
+        "content": "<p>will have become</p>"
+      },
+      {
+        "id": "5588c053-784f-4417-b1a7-ca5ade152e4e",
+        "content": "<p>had become</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verbs to express tense in a sentence. The past perfect tense indicates an action that was completed before another past action. In this choice, the past perfect verb &ldquo;had become,&rdquo; together with the supplemental phrase &ldquo;by 2023,&rdquo; indicates that Lafourcade earned her status as one of the most celebrated musicians in Latin America before 2023.</p><p>Choice A is incorrect because the future tense &ldquo;will become&rdquo; doesn&rsquo;t indicate that Lafourcade earned her celebrated status before 2023. Choice B is incorrect because the present tense &ldquo;becomes&rdquo; doesn&rsquo;t indicate that Lafourcade earned her celebrated status before 2023. Choice C is incorrect because the future perfect tense &ldquo;will have become&rdquo; doesn&rsquo;t indicate that Lafourcade earned her celebrated status by 2023.</p>",
+    "externalid": "05f74e82-e82f-4979-b23e-6aa8533f1b21",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Following her debut album release in 2002, Mexican singer-songwriter Natalia Lafourcade quickly shot to fame. By 2023, she <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> one of the most celebrated musicians in Latin America, having released twelve albums and won seventeen Latin Grammy awards&mdash;more than any other female artist in history.</p>"
+}

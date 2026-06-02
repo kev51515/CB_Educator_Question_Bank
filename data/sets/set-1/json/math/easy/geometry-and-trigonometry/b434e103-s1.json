@@ -1,0 +1,39 @@
+{
+  "questionId": "b434e103-s1",
+  "originalId": "b434e103",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>JKL</em>, the measure of angle <em>J</em> is 48 degrees. Which of the following could be the measure, in degrees, of angle <em>K</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>140</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>130</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>132</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The angles of a triangle sum to 180 degrees. With angle <em>J</em> = 48 degrees, the remaining two angles together measure 132 degrees, so each must be less than 132 degrees. Of the choices, only 130 is less than 132.</p><p>Choice A is incorrect: 180 is the total of all three angles.</p><p>Choice B is incorrect: 140 exceeds 132.</p><p>Choice D is incorrect: 132 equals the sum of the other two angles, not one of them.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.medium"
+}

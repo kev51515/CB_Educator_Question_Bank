@@ -1,0 +1,39 @@
+{
+  "questionId": "03c6994f-s1",
+  "originalId": "03c6994f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Square A has side lengths that are 312 times the side lengths of square B. The area of square A is k times the area of square B. What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>624</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>312</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>156</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>97,344</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>If the side ratio is 312, then the area ratio is 312\u00b2 = 97,344. So k = 97,344. The correct answer is choice D.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A3.T1.medium"
+}

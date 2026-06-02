@@ -1,0 +1,25 @@
+{
+  "questionId": "3fee46f2-s1",
+  "originalId": "3fee46f2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>Media scholar Henry Jenkins borrowed the term &ldquo;convergence,&rdquo; ordinarily used to describe optical phenomena, to characterize the relationship between television, film, and online platforms in the early 2000s. Jenkins&rsquo;s use of the term highlighted media companies&rsquo; strategy of redistributing single stories across many channels of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> at that time, fans were rapidly learning to follow narratives across each new platform.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>distribution, at that time</p>"},
+    {"id": "b", "content": "<p>distribution, at that time,</p>"},
+    {"id": "c", "content": "<p>distribution; at that time,</p>"},
+    {"id": "d", "content": "<p>distribution at that time,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Jenkins's use&hellip;distribution\" and \"fans were rapidly learning&hellip;platform\" are both independent clauses; a semicolon correctly marks the boundary between them, and the transitional phrase \"at that time\" is set off with a following comma.</p><p>Choices A and B are incorrect because using only commas produces a comma splice between two independent clauses. Choice D is incorrect because \"at that time\" cannot serve as a coordinator joining the two independent clauses without a semicolon or period.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

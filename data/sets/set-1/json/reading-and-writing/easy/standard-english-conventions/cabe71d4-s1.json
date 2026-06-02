@@ -1,0 +1,39 @@
+{
+  "questionId": "cabe71d4-s1",
+  "originalId": "cabe71d4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Both Ren\u00e9e Watson, an African American, and Ellen Oh, a Korean American, grew up looking for more diverse stories in children's literature. In 2014, the two writers helped launch We Need Diverse Books, a nonprofit organization <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> advocates for greater representation in books for young readers.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>that</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>,&nbsp;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>, that</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The relative pronoun \"that\" introduces an essential restrictive relative clause modifying \"organization,\" specifying which nonprofit organization is meant. No comma is needed before the restrictive clause.</p><p>Choice B is incorrect because a comma alone leaves the sentence without a subject for the verb \"advocates,\" creating an ungrammatical structure. Choice C is incorrect for the same reason. Choice D is incorrect because a restrictive relative clause shouldn't be set off with a comma.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T3.easy"
+}

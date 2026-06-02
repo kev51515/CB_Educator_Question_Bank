@@ -1,0 +1,39 @@
+{
+  "questionId": "39e440e4-s1",
+  "originalId": "39e440e4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.easy",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists had long held that the Norte Chico civilization of the central Peruvian coast, which flourished in the third millennium BCE, was characterized by small fishing villages with little large-scale construction. Recently, however, a team led by Marisol Vega used drone-mounted ground-penetrating radar to map the buried foundations beneath several coastal sites, and the team concluded that the Norte Chico people in fact developed a form of monumental, planned urbanism along that coast.</p>",
+  "stem": "<p>Which finding from the radar survey, if true, would most directly support Vega&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The radar reveals shapes consistent with large platform mounds and dense planned plazas linked to surrounding residential zones by stone-lined causeways.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The radar reveals shapes consistent with widely separated small dwellings of roughly equal size, surrounded by open ground.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The radar reveals shapes consistent with long footpaths running from Norte Chico territories toward inland cities outside the region.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The radar reveals shapes consistent with scattered small garden plots cleared near freshwater springs.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because monumental, planned urbanism is precisely what platform mounds, planned plazas, and stone-lined causeways linking residential zones indicate. Choices B, C, and D each describe small-scale, dispersed settlement patterns&mdash;the opposite of the conclusion Vega is supporting.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

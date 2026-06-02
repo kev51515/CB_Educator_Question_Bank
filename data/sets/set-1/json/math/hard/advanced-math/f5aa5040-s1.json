@@ -1,0 +1,22 @@
+{
+  "questionId": "f5aa5040-s1",
+  "originalId": "f5aa5040",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, a line with equation 2<i>y</i> = <i>c</i> for some constant <i>c</i> intersects a parabola at exactly one point. If the parabola has equation <i>y</i> = &minus;3<i>x</i>&sup2; + 12<i>x</i>, what is the value of <i>c</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "24"
+  ],
+  "rationale": "<p>The line <i>y</i> = <i>c</i>/2 (horizontal) intersects the parabola exactly once when <i>c</i>/2 equals the parabola's vertex <i>y</i>-value. The parabola opens downward; its maximum is at <i>x</i> = 12/(2&middot;3) = 2, giving <i>y</i> = &minus;3(4) + 12(2) = 12. So <i>c</i>/2 = 12, and <i>c</i> = 24.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

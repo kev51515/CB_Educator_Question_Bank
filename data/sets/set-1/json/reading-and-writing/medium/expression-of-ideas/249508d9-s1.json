@@ -1,0 +1,25 @@
+{
+  "questionId": "249508d9-s1",
+  "originalId": "249508d9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T11.medium",
+  "stimulus": "<p>With his immersive installation <em>The Garden That Listens</em>, Senegalese artist Modibo N'Dour succeeds in creating an environment that is both unsettling and deeply inviting. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when visitors step among the suspended brass leaves and hear the faint murmur that emerges only when they pause, they find themselves drawn closer despite a creeping sense that the room itself is aware of them—as if they have entered a space that quietly returns their attention.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Granted,</p>"},
+    {"id": "b", "content": "<p>In fact,</p>"},
+    {"id": "c", "content": "<p>Next,</p>"},
+    {"id": "d", "content": "<p>Otherwise,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"In fact\" logically signals that the description of the installation in this sentence—the suspended brass leaves, the faint murmur, and the unsettling yet inviting effect on visitors—offers additional emphasis in support of the previous sentence's claim that the installation is both unsettling and deeply inviting.</p><p>Choice A is incorrect because \"granted\" illogically signals a concession, when the description in fact reinforces the previous claim rather than qualifying it. Choice C is incorrect because \"next\" illogically signals a sequential step, when the sentence is instead an elaboration that strengthens the prior point. Choice D is incorrect because \"otherwise\" illogically signals an alternative scenario, but the description supports the previous claim instead of contrasting with it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

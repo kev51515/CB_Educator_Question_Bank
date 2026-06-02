@@ -1,0 +1,39 @@
+{
+  "questionId": "0eae6be1-s1",
+  "originalId": "0eae6be1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number y is 56 less than the number x. Which equation represents the relationship between x and y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = x + 56</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = x - 56</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 56x</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = x/56</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. 'y is 56 less than x' means y = x - 56.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T3.easy"
+}

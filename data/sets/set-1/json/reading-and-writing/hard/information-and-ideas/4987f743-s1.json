@@ -1,0 +1,39 @@
+{
+  "questionId": "4987f743-s1",
+  "originalId": "4987f743",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>KIVA-Plus is a microfinance initiative in Kenya that issues small loans to rural female cooperative members who lack the assets and credit records required by traditional banks. Borrowers repay in equal weekly installments using revenue from their cooperatives' sales, and the only consequence of missing a payment is reduced access to future borrowing. Development economists Naomi Achieng and Peter Otieno reviewed KIVA-Plus records and found that members of weaving cooperatives located far from regional markets miss payments more frequently than members based near markets, in large part because they bring their textiles to market less often than they could. Achieng and Otieno argue that this pattern reflects a strategic choice that allows remote weavers to earn greater profit on each item they ultimately sell.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Achieng and Otieno's argument?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The transportation costs that remote weavers incur to reach regional markets are substantial but largely fixed regardless of the volume of textiles they bring.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Regional markets typically charge each seller a stall fee equal to a fixed percentage of that seller's daily revenue.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Because remote weavers face lower input costs than urban sellers, they generally need smaller initial loans from KIVA-Plus.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Remote weavers can usually obtain higher prices for their textiles in regional markets than near home, but they also face more competing sellers in those markets.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. If transport costs to market are high but largely fixed regardless of load size, then traveling less often\u2014and bringing a large batch each trip\u2014spreads that fixed cost over more units, increasing profit per item. That exactly explains why a strategic remote weaver would choose to sell less frequently than possible: it raises per-unit profit even though it disrupts the weekly repayment schedule.</p><p>Choice B is incorrect: a percentage-based stall fee scales with revenue and creates no incentive to bunch trips together, so it doesn't support the strategic claim. Choice C is incorrect: a smaller initial loan amount is set at the start and is unrelated to how often a weaver chooses to sell. Choice D is incorrect: stable price and competition differences would, if anything, push weavers to sell as often as possible at the higher-priced market, not less often.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

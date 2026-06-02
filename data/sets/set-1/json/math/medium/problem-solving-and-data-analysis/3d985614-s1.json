@@ -1,0 +1,39 @@
+{
+  "questionId": "3d985614-s1",
+  "originalId": "3d985614",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between the time spent studying, <em>x</em> (in hours), and the test score, <em>y</em> (in points), for 25 students. The data clusters along a line that passes through approximately (2, 70) and (6, 90). Which of the following equations most closely fits the data?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> = 5<em>x</em> + 60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> = 10<em>x</em> + 50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> = 4<em>x</em> + 70</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> = \u22125<em>x</em> + 80</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Slope = (90 \u2212 70)/(6 \u2212 2) = 20/4 = 5. Using y = 5x + b at (2, 70): 70 = 10 + b, so b = 60. The equation is y = 5x + 60.</p><p>Choices B and C have the wrong slope. Choice D has the wrong sign.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.medium"
+}

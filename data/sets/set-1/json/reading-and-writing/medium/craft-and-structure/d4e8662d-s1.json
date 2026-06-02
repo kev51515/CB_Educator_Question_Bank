@@ -1,0 +1,25 @@
+{
+  "questionId": "d4e8662d-s1",
+  "originalId": "d4e8662d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T8.medium",
+  "stimulus": "<p>The fraction of coastal wetlands that a 2022 regional survey classified as either freshwater marsh or brackish marsh diverges from earlier conservation estimates. Given how little <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> there is among ecologists regarding the boundaries of these categories, this divergence is not unexpected: wetland researchers routinely challenge one another's classifications.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>curiosity</p>"},
+    {"id": "b", "content": "<p>scrutiny</p>"},
+    {"id": "c", "content": "<p>debate</p>"},
+    {"id": "d", "content": "<p>agreement</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Agreement\" fits the negation: the text says wetland researchers \"routinely challenge one another's classifications,\" which means there is little agreement among them about the categories' boundaries.</p><p>Choice A is incorrect. \"Curiosity\" would mean little interest in the boundaries, but the text shows scientists are actively engaged with them. Choice B is incorrect. \"Scrutiny\" would mean little examination, but the text says researchers routinely scrutinize and challenge classifications. Choice C is incorrect. \"Debate\" reverses the logic; the dispute described is itself debate, so there is much, not little, debate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

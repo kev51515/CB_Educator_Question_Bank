@@ -1,0 +1,25 @@
+{
+  "questionId": "c04e9136-s1",
+  "originalId": "c04e9136",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T9.medium",
+  "stimulus": "<p>The 2019 Nobel Prize in Physics was shared by three contributors to modern cosmology: theoretical pioneer James Peebles, who developed foundational models of large-scale structure in the 1960s; Didier Queloz, codiscoverer of the first exoplanet orbiting a sunlike star at the Observatory of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and Michel Mayor, an emeritus professor at the same observatory.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Geneva,</p>"},
+    {"id": "b", "content": "<p>Geneva</p>"},
+    {"id": "c", "content": "<p>Geneva;</p>"},
+    {"id": "d", "content": "<p>Geneva:</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. This is a complex list whose items already contain internal commas (\"who developed...1960s\"; \"codiscoverer...sunlike star...\"; \"an emeritus professor...observatory\"). Semicolons must therefore separate the items.</p><p>Choice A is incorrect because a comma cannot separate items in a list whose items already contain internal commas. Choice B is incorrect because some punctuation is needed to mark the boundary between the second and third list items. Choice D is incorrect because colons are not used to separate items in a list.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

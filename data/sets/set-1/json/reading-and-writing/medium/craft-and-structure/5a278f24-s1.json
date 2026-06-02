@@ -1,0 +1,25 @@
+{
+  "questionId": "5a278f24-s1",
+  "originalId": "5a278f24",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>The research of computational ecologist Priya Ramanathan is recognized for <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> standard divisions between scientific subfields. The lab Ramanathan directs at the university brings together climate modelers, statisticians, field ecologists, and computer scientists, and her publications regularly appear in journals serving each of those communities.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>typifying</p>"},
+    {"id": "b", "content": "<p>tightening</p>"},
+    {"id": "c", "content": "<p>crossing</p>"},
+    {"id": "d", "content": "<p>predicting</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. \"Crossing\" means traversing or going beyond. Ramanathan's lab combines several distinct subfields and her publications appear across them, so her work moves over the standard divisions between subfields rather than respecting them.</p><p>Choice A is incorrect because \"typifying\" means being a representative example, which would suggest she follows the standard divisions rather than reaching beyond them. Choice B is incorrect because \"tightening\" the divisions is the opposite of what her interdisciplinary practice does. Choice D is incorrect because \"predicting\" the divisions does not match the evidence of her active cross-disciplinary work.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

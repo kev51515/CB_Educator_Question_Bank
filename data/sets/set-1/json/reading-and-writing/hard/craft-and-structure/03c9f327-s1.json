@@ -1,0 +1,39 @@
+{
+  "questionId": "03c9f327-s1",
+  "originalId": "03c9f327",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Elizabeth Gaskell's 1855 novel <em>North and South</em>. Margaret, the narrator, has recently moved to the manufacturing town of Milton.</p>\n<p style='padding-left: 1em;'>I went about my appointed duties in the parlour with composure enough; and yet every now and then half-formed plans for some other manner of life would steal across my mind unbidden, and I caught myself shaping out, in spite of better resolutions, what I might say in a letter of inquiry to some distant household, and turning over how a change of place might suit me. I let the thoughts come and go; perhaps they would take root and bear something, perhaps they would wither, but I would not stop them yet.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To establish Margaret's resolve to remain in Milton no matter the personal cost.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To portray Margaret's deep affection for the household she currently serves.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To show that Margaret has already arranged her departure from Milton.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To convey the tension between Margaret's calm outward behavior and her unsettled inner deliberations about leaving.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The narrator goes about her parlour duties \"with composure enough,\" signaling outward calm, yet at the same time she keeps mentally drafting inquiries to other households and weighing a change of place. The passage's purpose is to register this contrast between her composed surface and her restless inner life.</p><p>Choice A is incorrect because Margaret describes thoughts about leaving as taking root, not as something she has resolved against. Choice B is incorrect because the text expresses no warmth toward the household; it dwells on her contemplation of departure. Choice C is incorrect because Margaret has only entertained \"half-formed plans\" and possible letters of inquiry&mdash;no arrangements have been made.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.hard"
+}

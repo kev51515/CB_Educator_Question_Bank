@@ -1,0 +1,39 @@
+{
+  "questionId": "52f9a246-s1",
+  "originalId": "52f9a246",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>3, 3, 3, 7, 7, 7, 7, 12, 12</p><p>Which frequency table correctly represents the data listed?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Number \u2014 Frequency: 3 \u2014 9; 7 \u2014 9; 12 \u2014 9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Number \u2014 Frequency: 3 \u2014 3; 7 \u2014 4; 12 \u2014 2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Number \u2014 Frequency: 3 \u2014 7; 7 \u2014 12; 12 \u2014 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Number \u2014 Frequency: 9 \u2014 3; 9 \u2014 7; 9 \u2014 12</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A frequency table lists each unique data value and the number of times it appears. The value 3 appears 3 times, 7 appears 4 times, and 12 appears 2 times.</p><p>Choice A is incorrect: it lists the total count of data values as the frequency for each value.</p><p>Choice C is incorrect: the frequencies do not match the counts in the data.</p><p>Choice D is incorrect: the columns are mislabeled and the frequencies are wrong.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T8.easy"
+}

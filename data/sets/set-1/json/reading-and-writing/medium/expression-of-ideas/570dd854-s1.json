@@ -1,0 +1,25 @@
+{
+  "questionId": "570dd854-s1",
+  "originalId": "570dd854",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T12.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li><em>The Long Road</em> is a sculpture by Mexican American artist Rosalba Cordero.</li>\n<li>It is a tall column of woven copper wire shaped like a stalk of corn.</li>\n<li>Corn has long been a central crop in many Mexican farming communities.</li>\n<li>Cordero says that the sculpture honors “the generations of farmers whose labor has sustained communities on both sides of the border.”</li>\n<li>Overall, Cordero wants her works to “invite viewers to consider the histories of labor, land, and migration.”</li>\n</ul>",
+  "stem": "<p>The student wants to use a quotation from Cordero to explain what the sculpture represents. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Rosalba Cordero’s sculpture <em>The Long Road</em> is a tall column of woven copper wire shaped like a stalk of corn.</p>"},
+    {"id": "b", "content": "<p>Cordero, a Mexican American artist, hopes her works will “invite viewers to consider the histories of labor, land, and migration.”</p>"},
+    {"id": "c", "content": "<p>According to Cordero, <em>The Long Road</em> honors “the generations of farmers whose labor has sustained communities on both sides of the border.”</p>"},
+    {"id": "d", "content": "<p>Corn, the inspiration for the shape of <em>The Long Road</em>, has long been a central crop in many Mexican farming communities.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The sentence uses a direct quotation from Cordero with attribution to explain what <em>The Long Road</em> represents: the labor of farming communities on both sides of the border.</p><p>Choice A is incorrect. The sentence describes the sculpture’s appearance but doesn’t use a Cordero quotation. Choice B is incorrect. The sentence uses a Cordero quotation, but it concerns her work in general rather than what <em>The Long Road</em> represents. Choice D is incorrect. The sentence gives context about corn but doesn’t use a Cordero quotation.</p>",
+  "generatedAt": "2026-05-27T12:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "56315bd0-s1",
+  "originalId": "56315bd0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Hopepunk is a literary movement that imagines collective resilience as a path toward equitable futures. In Becky Chambers's hopepunk novella \"A Psalm for the Wild-Built,\" a sentient tea robot that converses with humans, traveling along forested roads between rural monasteries, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the protagonist toward an unexpected friendship.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>guides</p>"},
+    {"id": "b", "content": "<p>guide</p>"},
+    {"id": "c", "content": "<p>have been guiding</p>"},
+    {"id": "d", "content": "<p>are guiding</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The singular verb \"guides\" agrees in number with the singular subject \"a sentient tea robot.\"</p><p>Choice B is incorrect because the plural verb \"guide\" doesn't agree in number with the singular subject \"a sentient tea robot.\" Choice C is incorrect because the plural verb \"have been guiding\" doesn't agree in number with the singular subject \"a sentient tea robot.\" Choice D is incorrect because the plural verb \"are guiding\" doesn't agree in number with the singular subject \"a sentient tea robot.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

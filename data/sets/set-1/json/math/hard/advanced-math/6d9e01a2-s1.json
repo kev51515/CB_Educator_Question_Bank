@@ -1,0 +1,23 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "6d9e01a2-s1",
+  "originalId": "6d9e01a2",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>f(x) = 2x<sup>2</sup> &minus; 18x + 45</p><p>The given equation defines the function f. For what value of x does f(x) reach its minimum?</p>",
+  "answerOptions": null,
+  "keys": [
+    "9/2",
+    "4.5"
+  ],
+  "rationale": "<p>The correct answer is 9/2 (equivalently 4.5). For f(x) = ax<sup>2</sup> + bx + c with a &gt; 0, the minimum occurs at x = &minus;b/(2a) = 18/(2 &middot; 2) = 18/4 = 9/2.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

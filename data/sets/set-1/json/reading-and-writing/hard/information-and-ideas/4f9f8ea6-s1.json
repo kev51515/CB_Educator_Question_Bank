@@ -1,0 +1,39 @@
+{
+  "questionId": "4f9f8ea6-s1",
+  "originalId": "4f9f8ea6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Many species of fish consume foods containing melanin precursors, which the body converts into the dark pigments that color scales. Pigmentation tends to be especially intense in male fish, and because melanin precursors are also linked to immune-system robustness, the darkest coloration generally serves as what biologists call an honest signal of a male fish's overall health to potential mates. However, marine biologist Renata Costa and colleagues have observed that males in several wrasse species of the genus <em>Halichoeres</em> use specialized arrangements of guanine crystals in their scales to manipulate light, generating an appearance of saturation that is not, in fact, supported by the actual melanin content of those scales. These findings suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a male wrasse's outward appearance may operate as a dishonest signal of the individual's overall health.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>scientists have not yet established why wrasses prefer mates with brightly saturated scales.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>scale microstructures may be less effective than deeply pigmented scales for communicating overall health.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>individual male wrasses can engage in honest signaling without depending on melanin precursor consumption.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the discussion. The text establishes that deep coloration normally serves as an honest signal of male fitness because melanin pigment is linked to immune-system robustness. However, the wrasses studied appear deeply colored without that being backed by their actual melanin content&mdash;their scales' saturation comes from light manipulation by guanine crystals. So the visual signal is decoupled from the underlying health indicator, meaning their appearance is a dishonest signal of overall health.</p><p>Choice B is incorrect because the text does not address mate preference or why mates favor saturated coloration. Choice C is incorrect because the text actually suggests that scale microstructures effectively produce the appearance of saturation, so they may be quite effective at signaling&mdash;just dishonestly. Choice D is incorrect because the microstructure mechanism described circumvents melanin precursors and is, by hypothesis, dishonest&mdash;not an alternative form of honest signaling.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

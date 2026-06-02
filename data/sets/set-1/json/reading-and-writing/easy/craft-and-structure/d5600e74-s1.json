@@ -1,0 +1,39 @@
+{
+  "questionId": "d5600e74-s1",
+  "originalId": "d5600e74",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2018 novel. In the village where Elena lives, there is an old lighthouse on the cape. Children in the village say the lighthouse is haunted.</p><blockquote><p>For as long as she could remember, Elena had begged Mam\u00e1 [her mother] to take her to see the lighthouse and the rocky cape up close. She'd be a hero among her friends if she was the first girl to step inside its haunted door! Just because Mam\u00e1 didn't believe in spirits didn't mean they weren't there. Maybe this autumn Mam\u00e1 would finally take her. She <em>was</em> almost thirteen.</p></blockquote>",
+  "stem": "<p>Which choice best describes the overall purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To portray how proud Elena's mother is of Elena</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To show how much Elena wants to visit the lighthouse</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To criticize Elena for disliking autumn</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To explain why Elena doesn't want to grow up yet</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says Elena has \"begged\" her mother to visit the lighthouse for as long as she can remember and hopes this autumn she will finally go. The purpose is to show how much she wants to visit.</p><p>Choice A is incorrect. The text doesn't discuss Mam\u00e1's feelings about Elena. Choice C is incorrect. Nothing suggests Elena dislikes autumn. Choice D is incorrect. Being \"almost thirteen\" suggests anticipation of growing up.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

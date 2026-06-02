@@ -1,0 +1,25 @@
+{
+  "questionId": "995d55fd-s1",
+  "originalId": "995d55fd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Long a puzzle to planetary scientists, evenly spaced grooves crisscross the surface of Enceladus, Saturn&rsquo;s sixth-largest moon. A team led by Hanae Inami has proposed that these grooves form through a process closely resembling the one that creates parallel crevasses in certain Antarctic ice shelves. On those shelves, meltwater pooling beneath the ice freezes and expands, fracturing the overlying surface into regularly spaced channels. Although Enceladus has no surface meltwater, the moon&rsquo;s subsurface ocean could provide an equivalent reservoir whose freezing and expansion produces the same striking pattern.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The grooves found on Antarctic ice shelves are believed to be much older than the grooves observed on Enceladus.</p>"},
+    {"id": "b", "content": "<p>Researchers believe the grooves on Enceladus and those on Antarctic ice shelves may form through a similar process, even though Enceladus lacks surface meltwater.</p>"},
+    {"id": "c", "content": "<p>The chief contrast between Enceladus&rsquo;s grooves and Antarctica&rsquo;s grooves is that only the Antarctic grooves are evenly spaced.</p>"},
+    {"id": "d", "content": "<p>Researchers remain unsure why Enceladus is marked by so many grooves given that the moon has no liquid water above or below its surface.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text describes Enceladus&rsquo;s evenly spaced grooves, explains the Antarctic process of meltwater freezing and expanding to fracture the ice, and proposes that the moon&rsquo;s subsurface ocean could produce the same pattern even though Enceladus lacks surface meltwater. That is the main idea.</p><p>Choice A is incorrect because the text never compares the ages of the two sets of grooves. Choice C is incorrect because the text says the patterns on both bodies are evenly spaced. Choice D is incorrect because the text proposes a mechanism rather than expressing uncertainty, and it explicitly mentions a subsurface ocean.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

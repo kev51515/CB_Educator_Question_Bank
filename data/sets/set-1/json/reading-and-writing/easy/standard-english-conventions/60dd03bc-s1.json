@@ -1,0 +1,39 @@
+{
+  "questionId": "60dd03bc-s1",
+  "originalId": "60dd03bc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The Pacific Ocean is dotted with thousands of small islands. Some belong to the country of Kiribati, others to Tuvalu. The Republic of Palau, though, is known <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> some of the clearest waters on Earth.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>for</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>for,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>for;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>for&mdash;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation use between a preposition and its complement. No punctuation is needed between the preposition \"for\" and its complement \"some of the clearest waters on Earth.\" The complement completes the meaning of the preposition, and any punctuation within it results in an ungrammatical sentence.</p><p>Choice B is incorrect because no punctuation is needed between the preposition and its complement. Choice C is incorrect because no punctuation is needed between the preposition and its complement. Choice D is incorrect because no punctuation is needed between the preposition and its complement.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.misc.easy"
+}

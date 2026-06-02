@@ -1,0 +1,39 @@
+{
+  "questionId": "83617355-s1",
+  "originalId": "83617355",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Each evening in Reykjavik, Iceland, a corner of the city&rsquo;s harbor is bathed in a warm amber glow. The source of the glow is Sumarsnj&oacute;r, a public installation made of 1,800 recycled fishing floats arranged into a luminous wave. A network of LEDs woven through the floats <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the structure from within.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>light</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>lights</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>do light</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>light up</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The true subject of the verb is the singular noun \"network,\" not the plural \"LEDs\" inside the interrupting prepositional phrase \"of LEDs woven through the floats.\" The singular present-tense verb \"lights\" agrees in number with \"network.\"</p><p>Choice A is incorrect because the plural present-tense verb \"light\" agrees with the lure noun \"LEDs\" rather than the singular subject \"network.\" Choice C is incorrect because the plural-agreeing \"do light\" also fails to agree with the singular subject \"network\" (which would take \"does light\"). Choice D is incorrect because the plural-agreeing \"light up\" fails to agree with the singular subject \"network\" (which would take \"lights up\").</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T4.easy"
+}

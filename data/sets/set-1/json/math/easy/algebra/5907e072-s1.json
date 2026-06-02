@@ -1,0 +1,39 @@
+{
+  "questionId": "5907e072-s1",
+  "originalId": "5907e072",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = x + b. For the linear function f, b is a constant. When x = 0, f(x) = -12. What is the value of b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-1/12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1/12</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. f(0) = 0 + b = -12, so b = -12.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T4.easy"
+}

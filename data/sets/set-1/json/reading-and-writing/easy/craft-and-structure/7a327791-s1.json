@@ -1,0 +1,39 @@
+{
+  "questionId": "7a327791-s1",
+  "originalId": "7a327791",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Composer Aaron Copland greatly admired Igor Stravinsky\u2019s style. Copland\u2019s ballet Appalachian Spring contains a section dedicated to Stravinsky that serves as a clear <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of Stravinsky\u2019s style: anyone familiar with Stravinsky\u2019s music would notice the resemblance immediately.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>rejection</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>echo</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>criticism</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>denial</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"echo\" means a replication or imitation, which fits the idea that Copland\u2019s passage clearly reproduces Stravinsky\u2019s style. Choice A is incorrect because the section honors, not rejects, Stravinsky. Choice C is incorrect because criticism doesn\u2019t fit a tribute. Choice D is incorrect because denial contradicts the idea of resemblance.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

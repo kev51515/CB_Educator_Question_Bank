@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">An apple peeling machine peels 15 pounds of apples in 5 minutes. At this rate, how many minutes does it take the machine to peel 120 pounds of apples?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The rate is 15 \u00f7 5 = 3 pounds per minute. Time for 120 pounds = 120 \u00f7 3 = 40 minutes.</p><p>Choices B, C, and D are incorrect and result from calculation errors.</p>",
+  "questionId": "fe1ec415-s1",
+  "originalId": "fe1ec415",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

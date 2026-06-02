@@ -1,0 +1,25 @@
+{
+  "questionId": "3a2d77d7-s1",
+  "originalId": "3a2d77d7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>In the 1970s, new amplification techniques made it practical to feature an additional voice in salsa and Latin jazz <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> traditionally portable folk instrument, its bright timbre could finally cut through the dense layering of percussion and brass that defined the genre.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>ensembles, the cuatro, a</p>"},
+    {"id": "b", "content": "<p>ensembles: the cuatro. A</p>"},
+    {"id": "c", "content": "<p>ensembles. The cuatro, a</p>"},
+    {"id": "d", "content": "<p>ensembles; the cuatro, a</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text before the blank is an independent clause that promises an elaboration; a colon correctly introduces the named instance \"the cuatro.\" A period then begins a new sentence whose subject (\"A traditionally portable folk instrument\") is the appositive opening of a new independent clause.</p><p>Choice A is incorrect because using only commas produces a comma splice once the second independent clause begins (\"its bright timbre&hellip;\"). Choice C is incorrect because it leaves \"The cuatro, a traditionally portable folk instrument\" as a fragment lacking a verb to begin its own sentence. Choice D is incorrect for the same reason: the second \"sentence\" remains a fragment.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

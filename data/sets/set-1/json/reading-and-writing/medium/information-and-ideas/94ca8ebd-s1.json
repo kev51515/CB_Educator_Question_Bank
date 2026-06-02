@@ -1,0 +1,25 @@
+{
+  "questionId": "94ca8ebd-s1",
+  "originalId": "94ca8ebd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>A student is examining a difficult, much-discussed play that was initially staged for a small theater festival without a program essay, then later mounted in a major-house production accompanied by a long program essay written by the playwright. The student asserts that the program essay was added to the major-house run primarily as a marketing device to help draw festival attendees back for the new production.</p>",
+  "stem": "<p>Which statement, if true, would most directly support the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The text of the play as staged at the festival is not identical to the text staged in the major-house production.</p>"},
+    {"id": "b", "content": "<p>Several theater critics believe that the playwright&rsquo;s program essay removes certain ambiguities of the play and makes the experience less compelling as a result.</p>"},
+    {"id": "c", "content": "<p>The producers of the major-house run requested the program essay from the playwright in order to make the production attractive to audiences who had already seen the festival version.</p>"},
+    {"id": "d", "content": "<p>Correspondence between the playwright and the producers reveals that the program essay went through several drafts.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it directly supports the claim about the producers&rsquo; motivation: requesting the essay specifically to attract audiences who already saw the festival version is precisely the marketing motivation the student asserts. Choice A is incorrect because the student&rsquo;s claim is about the essay&rsquo;s inclusion, not about textual differences in the play. Choice B is incorrect because how critics receive the essay does not bear on the motivation for including it. Choice D is incorrect because drafting an essay multiple times does not, by itself, indicate that the purpose was marketing.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

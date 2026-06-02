@@ -1,0 +1,25 @@
+{
+  "questionId": "783d1388-s1",
+  "originalId": "783d1388",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.hard",
+  "stimulus": "<p><em>The Souls of Slavery</em>&mdash;here referring to <em>Twelve Years a Slave</em>, an 1853 memoir by Solomon Northup&mdash;recounts Northup&rsquo;s abduction and enslavement. In the memoir, Northup suggests that the spirituals sung by enslaved people in the fields struck him as a paradoxical mixture: outwardly performed for the overseer&rsquo;s benefit, yet inwardly an instrument of communal endurance whose meaning could not be confiscated by his oppressors: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>Twelve Years a Slave</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;The songs that issued from our weary lips were of a melancholy cast, the natural utterance of grief, drawn forth by the bitter conditions under which we labored.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;Music has a power over the human heart not to be understood, save by those who feel its influence; and to the slave, deprived of every other consolation, it became at once a refuge and a possession.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;Loud as we lifted our voices for the master&rsquo;s ear, louder still rang the secret meaning between us&mdash;a meaning he could neither hear nor steal, and which sustained us through the long hours of toil.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;The instrument itself, an old violin given me in childhood, accompanied me through years of bondage, and on many a Sabbath evening it diverted my mind from the heavy reflections crowding upon it.&rdquo;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the quotation enacts the paradox described in the claim: the singers&rsquo; voices were &ldquo;loud&rdquo; enough to satisfy the overseer (&ldquo;the master&rsquo;s ear&rdquo;), but a &ldquo;secret meaning&rdquo; ran &ldquo;louder still&rdquo; among the enslaved themselves&mdash;something the master &ldquo;could neither hear nor steal,&rdquo; sustaining them. This captures both the outward performance and the inward, communally held meaning that the claim asserts.</p><p>Choice A is incorrect because it characterizes the songs as melancholy utterances of grief but does not show the dual-audience structure of outward performance and inward, unconfiscatable meaning. Choice B is incorrect because it praises music as a general consolation and &ldquo;refuge&rdquo; but does not register the simultaneous outward and inward dimensions central to the claim. Choice D is incorrect because it concerns a private instrument and personal solace rather than the communal, double-edged practice of singing described in the stimulus.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

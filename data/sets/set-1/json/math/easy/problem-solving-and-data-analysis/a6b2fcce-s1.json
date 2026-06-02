@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows the number of new video game console models released each year.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Year</th><th>Releases</th></tr>\n<tr><td>2018</td><td>4</td></tr><tr><td>2019</td><td>22</td></tr><tr><td>2020</td><td>15</td></tr><tr><td>2021</td><td>13</td></tr><tr><td>2022</td><td>11</td></tr></table>\n<p style=\"text-align: left;\">According to the table, between which two consecutive years was there the greatest change in the number of console models released?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2018\u20132019</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2019\u20132020</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2020\u20132021</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2021\u20132022</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The differences are: 2018\u21922019: 18; 2019\u21922020: 7; 2020\u21922021: 2; 2021\u21922022: 2. The greatest change is 18, between 2018 and 2019.</p><p>The other intervals show smaller changes.</p>",
+  "questionId": "a6b2fcce-s1",
+  "originalId": "a6b2fcce",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

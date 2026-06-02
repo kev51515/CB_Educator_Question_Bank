@@ -1,0 +1,25 @@
+{
+  "questionId": "a232aa96-s1",
+  "originalId": "a232aa96",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = &minus;4<i>x</i> + 50. What is the value of <i>g</i>(<i>x</i>) when <i>x</i> = &minus;7?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>78</p>"},
+    {"id": "b", "content": "<p>22</p>"},
+    {"id": "c", "content": "<p>46</p>"},
+    {"id": "d", "content": "<p>&minus;78</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. <i>g</i>(&minus;7) = &minus;4(&minus;7) + 50 = 28 + 50 = 78.</p><p>Choice B results from a sign error on the product (&minus;28 + 50). Choice C results from subtracting 4 from 50. Choice D is the negation of the correct value.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

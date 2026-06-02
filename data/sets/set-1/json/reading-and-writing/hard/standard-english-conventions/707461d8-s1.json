@@ -1,0 +1,39 @@
+{
+  "questionId": "707461d8-s1",
+  "originalId": "707461d8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In 2019, Brazilian biochemist Joana Almeida-Carvalho led a study on bioluminescent microbes (that is, microbes that emit visible light during ______ examining the metabolic pathways of more than eighty bioluminescent strains, she concluded that some of their light-producing enzymes could be adapted as inexpensive replacements for fluorescent dyes used in laboratory imaging.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>respiration), by</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>respiration) and by</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>respiration). By</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>respiration) by</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The period correctly marks the boundary between one complete sentence (\"In 2019&hellip;respiration\") and another (\"By examining&hellip;imaging\"). The prepositional phrase beginning with \"By\" modifies the subject \"she\" of the second sentence.</p><p>Choice A is incorrect because it produces a comma splice: a comma cannot join two independent clauses. Choice B is incorrect because without a comma preceding it, the conjunction \"and\" cannot join two independent clauses. Choice D is incorrect because it creates a run-on sentence; the two clauses are fused without any punctuation or conjunction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T1.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "e8926747-s1",
+  "originalId": "e8926747",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Two dozen journals kept by Charles Darwin, author of the influential book <em>On the Origin of Species</em> (1859), are preserved at Cambridge University Library. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> journals reveal Darwin's careful note-taking and observational habits.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>These</p>"},
+    {"id": "b", "content": "<p>This</p>"},
+    {"id": "c", "content": "<p>One</p>"},
+    {"id": "d", "content": "<p>That</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of determiners in a sentence. The plural determiner \"these\" agrees in number with the plural noun \"journals\" that it modifies. This choice clearly indicates that the journals reveal Darwin's note-taking habits.</p><p>Choice B is incorrect because the singular determiner \"this\" doesn't agree in number with the plural noun \"journals.\" Choice C is incorrect because the singular determiner \"one\" doesn't agree in number with the plural noun \"journals.\" Choice D is incorrect because the singular determiner \"that\" doesn't agree in number with the plural noun \"journals.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

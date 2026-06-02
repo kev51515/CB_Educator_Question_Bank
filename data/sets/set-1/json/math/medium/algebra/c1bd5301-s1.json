@@ -1,0 +1,22 @@
+{
+  "questionId": "c1bd5301-s1",
+  "originalId": "c1bd5301",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A3.T3.medium",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A model predicts that a certain seedling was 12 inches tall when it was planted and that it grew 0.4 inches per week during its first year. This model is defined by an equation in the form <em>f</em>(<em>x</em>) = <em>a</em> + <em>bx</em>, where <em>f</em>(<em>x</em>) is the predicted height, in inches, of the seedling <em>x</em> weeks after it was planted, and <em>a</em> and <em>b</em> are constants. What is the value of <em>a</em>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The correct answer is 12. In the equation <em>f</em>(<em>x</em>) = <em>a</em> + <em>bx</em>, <em>a</em> represents the predicted height of the seedling when <em>x</em> = 0 (the time of planting), and <em>b</em> represents the predicted growth rate in inches per week. Since the seedling was 12 inches tall when planted, <em>a</em> = 12.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z"
+}

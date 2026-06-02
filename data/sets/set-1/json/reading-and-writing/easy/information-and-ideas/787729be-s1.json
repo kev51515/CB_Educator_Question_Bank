@@ -1,0 +1,25 @@
+{
+  "questionId": "787729be-s1",
+  "originalId": "787729be",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Yuki Tanaka, Felipe Aguirre, and colleagues have identified a new burrowing rodent species (<em>Ctenomys subterricola</em>) in the high Andes. Like other rodents in its genus, <em>C. subterricola</em> tunnels through the soil to find roots and tubers, but unlike its relatives, this new species rarely surfaces and instead forages almost entirely while still underground. The team found the species on cold, windswept plateaus where surface vegetation is sparse and surface temperatures are often below freezing. Therefore, the researchers hypothesize that <em>C. subterricola</em> likely ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>evolved to forage almost entirely underground in order to avoid harsh surface conditions.</p>"},
+    {"id": "b", "content": "<p>represents one of many undiscovered rodent species in the Andes.</p>"},
+    {"id": "c", "content": "<p>developed underground habits early in life to absorb more moisture from the soil.</p>"},
+    {"id": "d", "content": "<p>is buried by nearby animals as they search for food on the plateau.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The text says the species rarely surfaces and the surface is harsh (cold, sparse vegetation), so an underground foraging strategy plausibly evolved as an adaptation to those conditions.</p><p>Choice B is unsupported — the text doesn't mention other undiscovered species. Choice C introduces moisture absorption, not discussed. Choice D contradicts the focus on the rodent's own behavior.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A2.T3.easy"
+}

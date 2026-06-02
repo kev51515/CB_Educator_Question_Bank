@@ -1,0 +1,25 @@
+{
+  "questionId": "d52fca9f-s1",
+  "originalId": "d52fca9f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A3.T4.medium",
+  "stimulus": "<p>Many fitness-tracking apps also function as social media platforms: by giving users the option to follow friends and share workout summaries or competitive leaderboards, these apps allow people to broadcast their exercise habits to their social networks. In a 2024 study, researcher Priya Anand interviewed regular users of a popular fitness-tracking app to investigate how its social media features shape their workout behavior. Anand found that these features tended to make participants more conscious of how their workouts might be evaluated by others, which in turn influenced the choices they made about training.</p>",
+  "stem": "<p>Which quotation from a fitness-tracking app user would best illustrate Anand&rsquo;s finding?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;The app&rsquo;s automatic recommendations are based on the routes I&rsquo;ve run before, and sometimes the suggestions feel repetitive and don&rsquo;t take into account my training goals for the week.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;I like that the app makes it easy to organize virtual group runs with my friends, even if we&rsquo;re all in different cities, so we feel like we&rsquo;re working out together.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;Tracking my workouts on this app feels much less manual than the old paper logbook I used to keep, since I don&rsquo;t have to record anything by hand.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;Knowing my followers can see my weekly mileage, I&rsquo;ll often push myself to add an extra run I wouldn&rsquo;t otherwise have done, just to keep my numbers looking strong.&rdquo;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it shows the user becoming conscious of how followers will evaluate their mileage and then changing training behavior (adding an extra run) — both aspects of Anand&rsquo;s finding. Choice A is incorrect because it focuses on algorithmic recommendations, not social evaluation by others. Choice B is incorrect because it describes social connection through shared workouts, not awareness of being judged. Choice D is incorrect — sorry, Choice C is incorrect because it compares the app to a paper logbook without referencing social awareness or behavior change.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

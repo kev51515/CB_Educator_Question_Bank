@@ -1,0 +1,22 @@
+[
+  {"id": "4ac59df6-s1", "templateId": "equivalent-expressions.A3.T7.easy", "verdict": "ok"},
+  {"id": "0354c7de-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "aspect_drift", "detail": "Stem asks to factor 7y+21 into 7(y+3); this is GCF factoring (A2.T4), not distribution (A1.T3)."},
+  {"id": "294db8ec-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "aspect_drift", "detail": "Stem asks to factor 6n+14 into 2(3n+7); this is GCF factoring (A2.T4), not distribution (A1.T3)."},
+  {"id": "df0ef054-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "aspect_drift", "detail": "Stem (x+3)(x+4) is binomial multiplication (A2.T6 medium), not single-factor distribution; T6 also does not appear at easy."},
+  {"id": "70482e20-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "rationale_inconsistent", "detail": "Stem 14z^3-6z^3=8z^3 (option c). Rationale correctly states 8z^3, but key is 'd' (20z^3). Key/rationale mismatch."},
+  {"id": "508344ac-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "ok"},
+  {"id": "075b29b0-s1", "templateId": "equivalent-expressions.A1.T2.easy", "verdict": "ok"},
+  {"id": "beb86a0c-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "rationale_inconsistent", "detail": "6x^2+11x = x(6x+11) = option b. Rationale correctly states x(6x+11), but key is 'c' (17x^3). Key/rationale mismatch."},
+  {"id": "6e06a0a7-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "ok"},
+  {"id": "e597050f-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "ok"},
+  {"id": "1e8d7183-s1", "templateId": "equivalent-expressions.A2.T5.easy", "verdict": "ok"},
+  {"id": "4a5af623-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "fd4b2aa0-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "rationale_inconsistent", "detail": "15n^3-8n^3=7n^3 (option a). Rationale correctly states 7n^3, but key is 'b' (7n^6). Key/rationale mismatch."},
+  {"id": "50338a48-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "9ed9f54d-s1", "templateId": "equivalent-expressions.A1.T2.easy", "verdict": "ok"},
+  {"id": "8f82ad81-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "rationale_inconsistent", "detail": "7(x^2+3)=7x^2+21 (option a). Rationale correctly states 7x^2+21, but key is 'b' (7x^2+3). Key/rationale mismatch."},
+  {"id": "18c7c3e0-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "ok"},
+  {"id": "49efde89-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "ok"},
+  {"id": "d4d513ff-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "127b2759-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "ok"}
+]

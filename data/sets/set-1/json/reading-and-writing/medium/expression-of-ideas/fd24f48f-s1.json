@@ -1,0 +1,25 @@
+{
+  "questionId": "fd24f48f-s1",
+  "originalId": "fd24f48f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A6.T17.medium",
+  "stimulus": "<p>Prior to Oregon's 1912 referendum to extend voting rights to women, organizers throughout the state distributed printed cookbooks to advance the suffrage cause. In Portland, the College Equal Suffrage League compiled the <em>Votes for Women Cook Book</em> for sale at civic gatherings. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in Salem, activist Marguerite Whitmore, who managed one of Oregon's most popular bakeries, assembled the <em>Suffrage Recipes</em> booklet for her customers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Likewise,</p>"},
+    {"id": "c", "content": "<p>To summarize,</p>"},
+    {"id": "d", "content": "<p>That is,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Likewise\" logically signals that the activity described in this sentence (Marguerite Whitmore assembling the Suffrage Recipes booklet in Salem) is parallel to the activity described in the previous sentence (the College Equal Suffrage League compiling the Votes for Women Cook Book in Portland). Together, the two parallel cases support the preceding claim that organizers throughout Oregon distributed printed cookbooks to advance the suffrage cause.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the Salem activity exemplifies the Portland activity, when in fact the two are parallel cases. Choice C is incorrect because \"to summarize\" illogically signals that the sentence summarizes the previous information, when in fact it adds a parallel case. Choice D is incorrect because \"that is\" illogically signals that the sentence paraphrases the previous one, when in fact it describes a separate, similar activity.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

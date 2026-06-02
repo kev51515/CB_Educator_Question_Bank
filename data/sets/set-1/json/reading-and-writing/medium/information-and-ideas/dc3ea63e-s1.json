@@ -1,0 +1,25 @@
+{
+  "questionId": "dc3ea63e-s1",
+  "originalId": "dc3ea63e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>To color her ceramic glazes, Pueblo potter Helena Naranjo-Vigil uses minerals and plants gathered from the canyons of northern New Mexico, where she lives. For example, she achieved the soft greens and golds visible in her 2017 jar <em>Where Pi&ntilde;on Stands</em> by using rabbitbrush flowers, drying and crushing them before steeping the powder in a wood-ash solution to form a slip. To deepen the appearance of certain hues, Naranjo-Vigil also occasionally folds in micaceous clay collected from a nearby riverbank.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Greens and golds are not common in most of Naranjo-Vigil&rsquo;s ceramic pieces.</p>"},
+    {"id": "b", "content": "<p>Naranjo-Vigil finds it difficult to gather rabbitbrush flowers in the high desert.</p>"},
+    {"id": "c", "content": "<p>Naranjo-Vigil draws on local resources for the approach she uses to color her glazes.</p>"},
+    {"id": "d", "content": "<p><em>Where Pi&ntilde;on Stands</em> is widely celebrated for its color palette and inventive forming techniques.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text opens by stating that Naranjo-Vigil uses local minerals and plants to color her glazes, and the rest of the passage describes how she does so.</p><p>Choice A is incorrect because the text only mentions one piece, and that piece features greens and golds; it says nothing about her other work. Choice B is incorrect because the text never says rabbitbrush is difficult to find. Choice D is incorrect because the text never calls <em>Where Pi&ntilde;on Stands</em> widely celebrated; it uses the piece only to illustrate her use of local materials.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

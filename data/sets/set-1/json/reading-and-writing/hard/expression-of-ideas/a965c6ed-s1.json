@@ -1,0 +1,39 @@
+{
+  "questionId": "a965c6ed-s1",
+  "originalId": "a965c6ed",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>A whale's fluke\u2014the broad, flat tail used for swimming\u2014looks at a glance like the fin of a large fish. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the fluke is often mistakenly believed to be vertically oriented and supported by fin rays, as in a fish, when in fact it is horizontally oriented and stiffened by a dense pad of fibrous tissue, reflecting the whale's descent from land-dwelling mammals that propelled themselves with up-and-down movements of the spine.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As a result,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To illustrate,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By contrast,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Nonetheless,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"As a result\" logically signals that the popular misconception about the fluke's orientation and structure is a consequence of its superficial resemblance to a fish fin, which was described in the previous sentence.</p><p>Choice B is incorrect because \"to illustrate\" would frame the misconception as an example of the prior claim, but it is a consequence of the resemblance, not an instance of it. Choice C is incorrect because \"by contrast\" would signal opposition, yet the second sentence builds on rather than opposes the first. Choice D is incorrect because \"nonetheless\" would signal contrast or concession, but the second sentence follows from the first rather than running counter to it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T4.hard"
+}

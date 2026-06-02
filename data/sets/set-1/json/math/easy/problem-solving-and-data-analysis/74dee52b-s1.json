@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows the number of graduates from the classes of 2014 through 2020 at a certain high school who enrolled in college within 24 months of graduation.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Class year</th><th>Enrolled</th></tr>\n<tr><td>2014</td><td>92</td></tr><tr><td>2015</td><td>110</td></tr><tr><td>2016</td><td>88</td></tr><tr><td>2017</td><td>105</td></tr><tr><td>2018</td><td>97</td></tr><tr><td>2019</td><td>83</td></tr><tr><td>2020</td><td>101</td></tr></table>\n<p style=\"text-align: left;\">Of the following, which class had the fewest graduates who enrolled in college within 24 months of graduation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2014</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2015</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2017</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2019</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The smallest value among the choices is 83, corresponding to the class of 2019.</p><p>Choices A, B, and C give 92, 110, and 105 respectively, all larger than 83.</p>",
+  "questionId": "74dee52b-s1",
+  "originalId": "74dee52b",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

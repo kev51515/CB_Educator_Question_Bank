@@ -1,0 +1,25 @@
+{
+  "questionId": "11df9b99-s1",
+  "originalId": "11df9b99",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Because a parabolic mirror is curved along a single axis, light striking it from a faraway point converges at one focal point. A spherical mirror, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can be likened to the inside of a polished bowl: it produces a blurred band of light rather than a single sharp point, since rays striking its edges focus differently from those striking its center.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by contrast,</p>"},
+    {"id": "b", "content": "<p>in other words,</p>"},
+    {"id": "c", "content": "<p>likewise,</p>"},
+    {"id": "d", "content": "<p>for example,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. This sentence compares a spherical mirror to a parabolic one. It describes how a spherical mirror produces a blurred band of light rather than the single sharp focal point produced by a parabolic mirror. So the transition \"by contrast\" fits the context perfectly.</p><p>Choice B is incorrect. \"In other words\" indicates a restatement of the same idea in different words, but this sentence doesn't restate the previous one—it introduces a different kind of mirror with different behavior. Choice C is incorrect. \"Likewise\" indicates the addition of an agreeing idea, but a spherical mirror behaves differently from a parabolic one, not similarly. Choice D is incorrect. \"For example\" introduces an example, but a spherical mirror is not an example of a parabolic mirror; it is a different type that behaves differently.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

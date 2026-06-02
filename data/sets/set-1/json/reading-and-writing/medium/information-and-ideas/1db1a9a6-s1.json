@@ -1,0 +1,25 @@
+{
+  "questionId": "1db1a9a6-s1",
+  "originalId": "1db1a9a6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Average Tomato Yield (pounds per plant), 2020–2022, with and without Compost Tea Treatment</p></caption><thead><tr><th scope=\"col\">Year</th><th scope=\"col\">Control (water only)</th><th scope=\"col\">Compost tea</th></tr></thead><tbody><tr><th scope=\"row\">2020</th><td>5.2</td><td>7.1</td></tr><tr><th scope=\"row\">2021</th><td>6.4</td><td>8.6</td></tr><tr><th scope=\"row\">2022</th><td>4.1</td><td>5.8</td></tr></tbody></table></figure><p>To test the effects of a foliar compost tea spray on tomato production, horticulturalists grew determinate tomato plants in identical raised beds over three consecutive growing seasons. In each year, half the plants were sprayed weekly with compost tea, while the other half were sprayed weekly with plain water as a control. The researchers concluded that the compost tea spray increases tomato yield.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers' conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In every year of the experiment, plants treated with compost tea produced a yield of at least 6.0 pounds per plant.</p>"},
+    {"id": "b", "content": "<p>In every year of the experiment, plants treated with compost tea produced a greater yield than did plants in the control group.</p>"},
+    {"id": "c", "content": "<p>The 2021 yield for plants in the control group was greater than the 2022 yield for plants treated with compost tea.</p>"},
+    {"id": "d", "content": "<p>The yield for plants treated with compost tea increased from 2020 to 2021.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it describes data from the table that support the researchers' conclusion that compost tea increases tomato yield. In each of the three years, the compost-tea group produced a higher yield than the control group (7.1 vs. 5.2 in 2020; 8.6 vs. 6.4 in 2021; 5.8 vs. 4.1 in 2022). This consistent across-the-board advantage directly supports the conclusion.</p><p>Choice A is incorrect because the 2022 compost-tea yield is 5.8 pounds per plant, which is less than 6.0; the across-year minimum of at least 6.0 pounds is not actually met. Choice C is incorrect because, while the description is factually accurate (6.4 > 5.8), the comparison places the control yield above a compost-tea yield, which conflicts with the conclusion rather than supporting it. Choice D is incorrect because the year-over-year change in the compost-tea group from 2020 to 2021 says nothing about how compost tea compares to the control; without that comparison, the increase could reflect weather or other factors.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

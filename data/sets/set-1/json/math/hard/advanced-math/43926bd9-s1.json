@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "43926bd9-s1",
+  "originalId": "43926bd9",
+  "templateId": "nonlinear-functions.misc.hard",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The sum of two positive numbers is 21, and the sum of their squares is 233. What is the product of the two numbers?</p>",
+  "answerOptions": null,
+  "keys": [
+    "104"
+  ],
+  "rationale": "<p>The correct answer is 104. Let the numbers be x and y with x + y = 21 and x<sup>2</sup> + y<sup>2</sup> = 233. Squaring the first equation, (x + y)<sup>2</sup> = x<sup>2</sup> + 2xy + y<sup>2</sup> = 441. Subtracting x<sup>2</sup> + y<sup>2</sup> = 233 from this gives 2xy = 441 &minus; 233 = 208, so xy = 104.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z"
+}

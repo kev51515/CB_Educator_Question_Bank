@@ -1,0 +1,25 @@
+{
+  "questionId": "f64ff4fb-s1",
+  "originalId": "f64ff4fb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T6.medium",
+  "stimulus": "<p>In her 2005 study <em>Patios and Polyphonies</em>, musicologist Lucia Ferreira-Mendes draws her analysis in part on field recordings of street duets sung in the 1940s in S&atilde;o Paulo by the singers Dora Beltr&atilde;o and Ines de Sousa. Ferreira-Mendes focuses on how Beltr&atilde;o and de Sousa improvised the lyrics — replacing the printed verses with pointed commentary on neighborhood politics and sly puns. Ferreira-Mendes&rsquo;s work was particularly time-consuming because, in order to transcribe the lyrics as Beltr&atilde;o and de Sousa sang them, she had to play the wax-cylinder recordings repeatedly, since the recordings were quite noisy.</p>",
+  "stem": "<p>What does the text most strongly suggest about the duets sung by Beltr&atilde;o and de Sousa?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The duets grew in popularity in the decades after they were first sung.</p>"},
+    {"id": "b", "content": "<p>There were few, if any, reliable transcriptions of Beltr&atilde;o&rsquo;s and de Sousa&rsquo;s improvised lyrics when Ferreira-Mendes began her study.</p>"},
+    {"id": "c", "content": "<p>According to Ferreira-Mendes, the duets sung by Beltr&atilde;o were typically more musically inventive than those sung by de Sousa.</p>"},
+    {"id": "d", "content": "<p>More wax-cylinder recordings were made of Beltr&atilde;o&rsquo;s duets than of de Sousa&rsquo;s.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text describes the transcription work as particularly time-consuming and explains that Ferreira-Mendes had to play noisy wax-cylinder recordings repeatedly to capture the improvised lyrics. That painstaking approach implies that reliable transcriptions of those lyrics were not otherwise available to her.</p><p>Choice A is incorrect because the text never addresses the duets&rsquo; popularity over time. Choice C is incorrect because the text treats the two singers in parallel and doesn&rsquo;t compare their inventiveness. Choice D is incorrect because the text never compares the number of recordings made of each singer.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

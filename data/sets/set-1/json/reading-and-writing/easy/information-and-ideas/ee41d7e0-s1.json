@@ -1,0 +1,39 @@
+{
+  "questionId": "ee41d7e0-s1",
+  "originalId": "ee41d7e0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Cephalopods\u2014octopuses, cuttlefish, and many other soft-bodied marine animals\u2014have skin that can change color and texture using specialized cells called chromatophores. Researchers have learned about these skin systems in ancient cephalopods from impressions and chemical traces left in various fossils. For example, in a study of two fossils of the extinct cephalopod species <em>Notonautilus glaesarius</em>, Lena Bachmann, Pietro Rinaldi, and colleagues observed clear patterns suggestive of pigment cells. They also noted possible traces of muscle fibers that may have controlled those cells. Researchers expect to identify more features of the skin systems of prehistoric cephalopods as additional well-preserved fossils are uncovered.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>There are several similarities between the skin of cuttlefish and the skin of octopuses.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Researchers should focus on finding more fossils of ancient cephalopods.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Newly discovered fossils suggest that ancient cuttlefish and ancient octopuses had bones.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Fossil evidence can contribute to the understanding of skin systems in ancient cephalopods.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says researchers have used fossils to learn about ancient cephalopod skin, gives the specific <em>Notonautilus glaesarius</em> example, and notes that more discoveries are expected as more fossils are found.</p><p>Choice A is incorrect; cuttlefish and octopuses are only mentioned in passing as examples of cephalopods. Choice B is incorrect; the text says researchers expect to learn more from new fossils, not that they need to focus on finding them. Choice C is incorrect; the text is about skin systems, not bones.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

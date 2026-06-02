@@ -1,0 +1,39 @@
+{
+  "questionId": "ede3f942-s1",
+  "originalId": "ede3f942",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Total Areas of Five National Parks in Country Y</p></caption><thead><tr><th scope=\"col\">National park</th><th scope=\"col\">Region</th><th scope=\"col\">Area (square kilometers)</th></tr></thead><tbody><tr><th scope=\"row\">Greatrock Park</th><td>Northern Region</td><td>3,420.50</td></tr><tr><th scope=\"row\">Coral Bay Park</th><td>Southern Region</td><td>62.10</td></tr><tr><th scope=\"row\">Pinewood Park</th><td>Southern Region</td><td>118.40</td></tr><tr><th scope=\"row\">Stillwater Park</th><td>Northern Region</td><td>945.30</td></tr><tr><th scope=\"row\">Mistfern Park</th><td>Southern Region</td><td>187.90</td></tr></tbody></table></figure></p><p>In Country Y, there are over forty national parks. One of the largest, Greatrock Park, covers 3,420.50 square kilometers in the northern region of the country. However, most national parks in Country Y cover less than 200 square kilometers in total area. For example, the total area of Mistfern Park in the Southern Region is ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to support the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>187.90 square kilometers.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>62.10 square kilometers.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>945.30 square kilometers.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>118.40 square kilometers.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The table shows Mistfern Park covers 187.90 square kilometers \u2014 less than 200 \u2014 which supports the statement about Mistfern Park specifically.</p><p>Choice B cites the area of Coral Bay Park. Choice C cites Stillwater Park's area, which is also greater than 200 square kilometers. Choice D cites Pinewood Park's area, not Mistfern Park's.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,20 @@
+{
+  "questionId": "50418728-s1",
+  "originalId": "50418728",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><figure class='image'><svg role=\"img\" version=\"1.1\" viewBox=\"0 0 360 320\" width=\"360\" height=\"320\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"Graph of a polynomial curve passing through (-4, 0), (0, -8), and (2, 0).\"><defs><style>.ax{stroke:#333;stroke-width:1.2;fill:none}.gr{stroke:#ddd;stroke-width:0.6;fill:none}.cv{stroke:#1f77b4;stroke-width:2;fill:none}.pt{fill:#1f77b4}.lb{font-family:Arial,sans-serif;font-size:12px;fill:#222}</style></defs><rect x=\"0\" y=\"0\" width=\"360\" height=\"320\" fill=\"#fff\"/><g class=\"gr\"><line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"290\"/><line x1=\"90\" y1=\"30\" x2=\"90\" y2=\"290\"/><line x1=\"140\" y1=\"30\" x2=\"140\" y2=\"290\"/><line x1=\"190\" y1=\"30\" x2=\"190\" y2=\"290\"/><line x1=\"240\" y1=\"30\" x2=\"240\" y2=\"290\"/><line x1=\"290\" y1=\"30\" x2=\"290\" y2=\"290\"/><line x1=\"340\" y1=\"30\" x2=\"340\" y2=\"290\"/><line x1=\"40\" y1=\"40\" x2=\"340\" y2=\"40\"/><line x1=\"40\" y1=\"80\" x2=\"340\" y2=\"80\"/><line x1=\"40\" y1=\"120\" x2=\"340\" y2=\"120\"/><line x1=\"40\" y1=\"160\" x2=\"340\" y2=\"160\"/><line x1=\"40\" y1=\"200\" x2=\"340\" y2=\"200\"/><line x1=\"40\" y1=\"240\" x2=\"340\" y2=\"240\"/><line x1=\"40\" y1=\"280\" x2=\"340\" y2=\"280\"/></g><g class=\"ax\"><line x1=\"40\" y1=\"160\" x2=\"340\" y2=\"160\"/><line x1=\"190\" y1=\"30\" x2=\"190\" y2=\"290\"/></g><path class=\"cv\" d=\"M 60 80 Q 90 160 140 240 Q 190 280 240 160 Q 270 80 320 60\"/><circle class=\"pt\" cx=\"90\" cy=\"160\" r=\"3.5\"/><circle class=\"pt\" cx=\"190\" cy=\"240\" r=\"3.5\"/><circle class=\"pt\" cx=\"240\" cy=\"160\" r=\"3.5\"/><text class=\"lb\" x=\"178\" y=\"175\">O</text><text class=\"lb\" x=\"60\" y=\"150\">(-4, 0)</text><text class=\"lb\" x=\"196\" y=\"246\">(0, -8)</text><text class=\"lb\" x=\"242\" y=\"152\">(2, 0)</text></svg></figure></p><p>The graph of the polynomial function <i>p</i> is shown in the <i>xy</i>-plane, where <i>y</i> = <i>p</i>(<i>x</i>). What is the value of <i>p</i>(0)?</p>",
+  "answerOptions": [],
+  "keys": ["-8"],
+  "rationale": "<p>The value of <i>p</i>(0) is the <i>y</i>-coordinate of the point on the graph where <i>x</i> = 0. The graph crosses the <i>y</i>-axis at (0, &minus;8), so <i>p</i>(0) = &minus;8.</p>",
+  "generatedAt": "2026-05-27T00:00:04Z",
+  "templateId": "nonlinear-functions.A3.T1.easy"
+}

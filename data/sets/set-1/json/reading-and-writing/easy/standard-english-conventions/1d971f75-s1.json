@@ -1,0 +1,39 @@
+{
+  "questionId": "1d971f75-s1",
+  "originalId": "1d971f75",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Filmmaker Agn&egrave;s Varda&rsquo;s short documentaries are widely admired for their inventive style. However, several of the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of city streets were originally commissioned not as art but as commercials; a tourism agency had hired Varda to shoot promotional footage of various French neighborhoods.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>directors early film&rsquo;s</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>director&rsquo;s early films</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>directors&rsquo; early film&rsquo;s</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>director&rsquo;s early film&rsquo;s</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The convention being tested is the use of plural and possessive nouns. The singular possessive noun &ldquo;director&rsquo;s&rdquo; and the plural noun &ldquo;films&rdquo; correctly indicate that one director made multiple films.</p><p>Choice A omits the possessive on &ldquo;directors&rdquo; and incorrectly adds one to &ldquo;film&rsquo;s.&rdquo; Choice C uses the plural possessive &ldquo;directors&rsquo;&rdquo; (implying more than one director) and incorrectly possessivizes &ldquo;film&rsquo;s.&rdquo; Choice D incorrectly uses the singular possessive on both nouns.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T8.easy"
+}

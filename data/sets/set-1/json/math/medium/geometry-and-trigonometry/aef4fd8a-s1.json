@@ -1,0 +1,39 @@
+{
+  "questionId": "aef4fd8a-s1",
+  "originalId": "aef4fd8a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The length of each side of a square is 73 centimeters (cm). Which expression gives the area, in cm<sup>2</sup>, of the square?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2&middot;73</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>73&middot;73</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4&middot;73</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2&middot;73&middot;73</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a square with side length s is s<sup>2</sup>, which equals s&middot;s. With s = 73, the area is 73&middot;73 cm<sup>2</sup>. Choice A is incorrect; that is twice the side length. Choice C is incorrect; that is the perimeter. Choice D is incorrect; that is twice the area.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T1.medium"
+}

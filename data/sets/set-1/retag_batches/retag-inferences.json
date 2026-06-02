@@ -1,0 +1,32 @@
+[
+  {
+    "id": "61228830-s1",
+    "templateId": "inferences.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is not a causal/mechanistic explanation of an observed phenomenon (T3). Rather, it asks what property a replacement technology must have given stated limitations of pigeon dispatches \u2014 a comparative-contrast/implication structure (better fit: A4.T10) or a principle-applied prediction (A1.T1). No 'observation + proposed mechanism \u2192 infer underlying cause' structure required by T3. Answer D is correct logically; only the type tag is wrong."
+  },
+  {
+    "id": "5c7e0d62-s1",
+    "templateId": "inferences.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "No 'however/unlike/by contrast/whereas' pivot between two parallel sides demanded by T10. The inference is chronological reasoning from dated historical sources (manuscript ~1450 vs Munday 1598) \u2014 material/textual evidence with dates \u2192 past-tense historical claim, which matches A4.T9 (Historical/archaeological evidence scope) hard variant exactly (\u22652 dates, transmission/origin reasoning). Answer C is correct; tag should be A4.T9.hard."
+  },
+  {
+    "id": "25893fc7-s1",
+    "templateId": "inferences.A4.T8.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem reads as principle-application (A1.T1): eye contact signals attentiveness/respect, therefore engineers want natural eye contact to put customers at ease. No measured empirical comparison/observation as A4.T8 requires; correct answer is a forward deductive prediction, not a study-finding generalization."
+  },
+  {
+    "id": "bcbcc43f-s1",
+    "templateId": "inferences.A2.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "A2.T3 requires inferring an underlying causal mechanism abductively from observations. Here the stimulus states a productive irrigation system yielding surplus; the keyed answer (trade with neighbors) is a forward downstream consequence of surplus, not an implied mechanism explaining an observation. Fits A4.T11 (social/cultural implication) or A1 (forward prediction) better."
+  },
+  {
+    "id": "1ffd60ce-s1",
+    "templateId": "inferences.A2.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone file is in hard/ folder and difficulty='Hard', but templateId tags it as medium. Stimulus complexity (multi-step quantitative reasoning about silver percentage, tribute constraints, multiple distractors near-miss) matches hard levers, not medium."
+  }
+]

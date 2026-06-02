@@ -1,0 +1,39 @@
+{
+  "questionId": "d683a9cc-s1",
+  "originalId": "d683a9cc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right rectangular prism has a length of 7 cm, a width of 4 cm, and a height of 5 cm. The volume V of a right rectangular prism is V = lwh, where l is the length, w is the width, and h is the height. What is the volume, in cubic centimeters, of the prism?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>140</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. V = lwh = 7 \u00d7 4 \u00d7 5 = 140 cm\u00b3. Choices A, C, and D use incorrect dimension combinations.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A2.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "9eb43963-s1",
+  "originalId": "9eb43963",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T6.medium",
+  "stimulus": "<p>Sand in the Sahara Desert is lifted skyward by seasonal updrafts, but the rotation of Earth and gusts from passing storm systems together push <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> across the Atlantic to fertilize the soils of the Amazon rainforest&mdash;a phenomenon scientists call the Saharan dust plume.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>it</p>"},
+    {"id": "b", "content": "<p>these</p>"},
+    {"id": "c", "content": "<p>them</p>"},
+    {"id": "d", "content": "<p>those</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"it\" agrees in number with the singular antecedent \"sand\" and clearly indicates that the sand&mdash;not the updrafts, gusts, or storm systems&mdash;is pushed across the Atlantic.</p><p>Choice B is incorrect. The plural pronoun \"these\" doesn&rsquo;t agree in number with the singular antecedent \"sand\" and is ambiguous as to which plural noun in the sentence it refers. Choice C is incorrect. The plural pronoun \"them\" doesn&rsquo;t agree in number with the singular antecedent \"sand.\" Choice D is incorrect. The plural pronoun \"those\" doesn&rsquo;t agree in number with the singular antecedent \"sand.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

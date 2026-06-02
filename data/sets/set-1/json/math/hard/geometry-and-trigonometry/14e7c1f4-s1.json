@@ -1,0 +1,39 @@
+{
+  "questionId": "14e7c1f4-s1",
+  "originalId": "14e7c1f4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For two acute angles, \u2220Q and \u2220R, cos Q = sin R. The measures, in degrees, of \u2220Q and \u2220R are 2x + 33 and 3x + 7, respectively. What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>16</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>If cos Q = sin R for two acute angles, then Q and R are complementary, i.e., Q + R = 90\u00b0. Substituting, (2x + 33) + (3x + 7) = 90, so 5x + 40 = 90 and x = 10.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A6.T12.hard"
+}

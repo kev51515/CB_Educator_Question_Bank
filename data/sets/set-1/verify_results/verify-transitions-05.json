@@ -1,0 +1,22 @@
+[
+  {"id": "4f2710ab-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "f735493e-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "a064955f-s1", "templateId": "transitions.A1.T1.easy", "verdict": "ok"},
+  {"id": "7d56630a-s1", "templateId": "transitions.A5.T13.easy", "verdict": "ok"},
+  {"id": "9fe7315b-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"},
+  {"id": "c78620ba-s1", "templateId": "transitions.A5.T13.easy", "verdict": "ok"},
+  {"id": "1996c104-s1", "templateId": "transitions.A2.T6.easy", "verdict": "ok"},
+  {"id": "827afb27-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "290a5d77-s1", "templateId": "transitions.A4.T10.easy", "verdict": "ok"},
+  {"id": "47547d07-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "c4f7f726-s1", "templateId": "transitions.A1.T1.easy", "verdict": "ok"},
+  {"id": "6916c8e5-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "e0bd4f8a-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "1c36e3e1-s1", "templateId": "transitions.A6.T18.easy", "verdict": "ok"},
+  {"id": "04ad68ca-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "ff1a2e5e-s1", "templateId": "transitions.A1.T3.easy", "verdict": "ok"},
+  {"id": "92fe0ed7-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"},
+  {"id": "c7e85c0a-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"},
+  {"id": "e965fd73-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "fc2bcc79-s1", "templateId": "transitions.A4.T11.easy", "verdict": "ok"}
+]

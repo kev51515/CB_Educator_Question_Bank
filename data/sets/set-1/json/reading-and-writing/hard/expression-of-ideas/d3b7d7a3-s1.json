@@ -1,0 +1,25 @@
+{
+  "questionId": "d3b7d7a3-s1",
+  "originalId": "d3b7d7a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Many popular histories of the Klondike of the late 1890s emphasize the long, dramatic journey of would-be prospectors from the eastern United States and Europe all the way to Dawson City. However, a 2019 study of period steamship manifests and passport records complicates this familiar story; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> researchers concluded, gold seekers who actually reached the goldfields were drawn predominantly from the Pacific Northwest and western Canadian provinces—populations already living within a few hundred miles of the route.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>likewise,</p>"},
+    {"id": "b", "content": "<p>as a result,</p>"},
+    {"id": "c", "content": "<p>still,</p>"},
+    {"id": "d", "content": "<p>more typically,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"More typically\" logically signals that the demographic pattern researchers actually found—stampeders coming chiefly from the Pacific Northwest and western Canada—was more common than the dramatic transcontinental migration emphasized in popular accounts. The transition contrasts frequencies.</p><p>Choice A is incorrect because \"likewise\" would mark the finding as a similar parallel to the popular story, but it actually corrects that story. Choice B is incorrect because \"as a result\" would signal cause and effect, but the regional migration pattern is not caused by the popular account. Choice C is incorrect because \"still\" would signal contrast with the immediately preceding clause about the study, creating an ambiguous opposition rather than naming the more common pattern.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T1.hard"
+}

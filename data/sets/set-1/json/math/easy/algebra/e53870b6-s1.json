@@ -1,0 +1,22 @@
+{
+  "questionId": "e53870b6-s1",
+  "originalId": "e53870b6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": "<p style=\"text-align: center;\"><math><mn>9</mn><mi>x</mi><mo>+</mo><mi>k</mi><mo>=</mo><mn>9</mn><mi>x</mi><mo>+</mo><mn>11</mn></math></p>",
+  "stem": "<p>In the given equation, <math><mi>k</mi></math> is a constant. If the equation has infinitely many solutions, what is the value of <math><mi>k</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>11</mn></math>. Subtracting <math><mn>9</mn><mi>x</mi></math> from both sides yields <math><mi>k</mi><mo>=</mo><mn>11</mn></math>. For the equation to hold for any value of <math><mi>x</mi></math>, the value of <math><mi>k</mi></math> must be 11.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.easy"
+}

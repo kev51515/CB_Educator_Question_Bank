@@ -1,0 +1,39 @@
+{
+  "questionId": "faaf484f-s1",
+  "originalId": "faaf484f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Percent of Town Residents in Favor of Building a New Community Pool</p></caption><thead><tr><th scope=\"col\">Town district</th><th scope=\"col\">Percent in favor</th></tr></thead><tbody><tr><th scope=\"row\">Lakeview</th><td>18%</td></tr><tr><th scope=\"row\">Hillcrest</th><td>34%</td></tr><tr><th scope=\"row\">Riverside</th><td>92%</td></tr><tr><th scope=\"row\">Westfield</th><td>51%</td></tr><tr><th scope=\"row\">Oakdale</th><td>27%</td></tr></tbody></table></figure></p><p>A town's recreation board is exploring whether to fund a new community pool. The board surveyed residents from five town districts to gauge where support is highest. The survey found the strongest support, with 92 percent of residents in favor of building the new pool, in the town's ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Hillcrest district.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Oakdale district.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Riverside district.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Lakeview district.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The table shows Riverside at 92 percent \u2014 matching the statement about strongest support.</p><p>Choice A is wrong: Hillcrest is at 34 percent. Choice B is wrong: Oakdale is at 27 percent. Choice D is wrong: Lakeview is at 18 percent, the lowest.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

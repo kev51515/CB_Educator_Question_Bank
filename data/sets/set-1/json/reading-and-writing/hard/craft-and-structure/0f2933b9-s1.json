@@ -1,0 +1,39 @@
+{
+  "questionId": "0f2933b9-s1",
+  "originalId": "0f2933b9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a nineteenth-century stage tragedy. Alceo has lived for many years in the court of King Renaut, far from his native city of Lirona, and has asked the king for leave to return there.</p>\n<blockquote><p>RENAUT: I pray thee, dear Alceo, urge me no further.</p><p>To deny thee is a wound; to grant thee, ruin.</p><p>&nbsp;</p><p>ALCEO: It is twelve summers since I saw Lirona.</p><p>Though through all that time I have served thee well,</p><p>and though, it may be, my old prince retains</p><p>some kindly memory of his absent subject,</p><p>still I cannot tell whether my returning</p><p>would prove a comfort to him or no thing at all.</p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion (\"<u>it may be...absent subject</u>\") in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It establishes Alceo's hope that Renaut will be reassured to know Alceo is not departing of his own preference.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It supports the idea that Alceo's primary reason for returning is concern for the prince of Lirona.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It reveals that Alceo feels he must justify his decision to leave Renaut's court.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It conveys Alceo's recognition that whatever benefit his presence might bring to the prince of Lirona is merely a possibility.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The underlined portion is hedged: \"it may be\" the prince still remembers his absent subject. Alceo immediately follows it by saying he cannot tell whether his return would actually comfort the prince. The clause therefore functions to mark this benefit as speculative rather than certain.</p><p>Choice A is incorrect because the line dwells on uncertainty, not on Renaut's likely relief. Choice B is incorrect because the speculative phrasing weakens, rather than supports, the idea that concern for the prince is Alceo's main motive. Choice C is incorrect because the underlined portion concerns the prince's memory, not Alceo's justification for leaving.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

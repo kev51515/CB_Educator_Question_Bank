@@ -1,0 +1,39 @@
+{
+  "questionId": "a067c926-s1",
+  "originalId": "a067c926",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the number of visitors to a museum during each of four months.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Month</th><th>March</th><th>April</th><th>May</th><th>June</th></tr><tr><td>Visitors</td><td>60</td><td>85</td><td>72</td><td>90</td></tr></table><p>How many more visitors went to the museum in June than in May?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>162</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The museum had 90 visitors in June and 72 visitors in May, so 90 \u2212 72 = 18 more visitors went in June than in May.</p><p>Choice B is incorrect. This is the number of visitors in May.</p><p>Choice C is incorrect. This is the number of visitors in June.</p><p>Choice D is incorrect. This is the total number of visitors in May and June combined.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7d89376f-s1",
+  "originalId": "7d89376f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bus company sells a certain number of tickets, x, for a route at $35 each. It sells the remaining tickets, y, at $80 each. The bus company sold a total of 90 tickets for the route, which generated $4,650 in sales. Which system of equations represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35x + 80y = 4,650 and x + y = 90</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x + y = 4,650 and 35x + 80y = 90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>80x + 35y = 4,650 and x + y = 90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>35x + 80y = 90 and x + y = 4,650</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Total tickets: x + y = 90; total revenue: 35x + 80y = 4,650.</p><p>Other choices swap prices, quantities, or totals.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

@@ -1,0 +1,16 @@
+[
+  {"id": "332cd67b-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "c6a26e14-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.easy", "verdict": "ok"},
+  {"id": "d3f7c429-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy", "verdict": "ok"},
+  {"id": "4236c5a3-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "0bebc08c-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "1e003284-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "f11ffa93-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.easy", "verdict": "aspect_drift", "detail": "Stem is a basic radical equation sqrt(x+3)=9 asking for the numeric root x=78. This tests A2 (solve a single nonlinear equation, radical type T4), not A5 (equivalent-form/reformulation). No reference to an equation 'above' nor any equivalent-form transformation. Matches documented common_bug: 'Drifting into A2 by asking for a single numeric root rather than an equivalent form or set.' Math is correct."},
+  {"id": "a67a439d-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "eb268057-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.easy", "verdict": "ok"},
+  {"id": "dd3a910a-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy", "verdict": "ok"},
+  {"id": "ce940f80-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "7a8cb72a-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "cec36caf-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "fc2ec559-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy", "verdict": "ok"}
+]

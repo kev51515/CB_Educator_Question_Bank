@@ -1,0 +1,25 @@
+{
+  "questionId": "ba8ebf49-s1",
+  "originalId": "ba8ebf49",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>The medieval Spanish poem <em>Cantar de mio Cid</em> opens with the word &ldquo;cuidando,&rdquo; which is an Old Castilian <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as &ldquo;grieving&rdquo; or &ldquo;in deep thought&rdquo; in most modern editions, the word was rendered as &ldquo;heartsick&rdquo; by Burton Raffel in his 2009 verse translation of the epic.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>participle, rendered</p>"},
+    {"id": "b", "content": "<p>participle. Rendered</p>"},
+    {"id": "c", "content": "<p>participle rendered</p>"},
+    {"id": "d", "content": "<p>participle and rendered</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between one sentence (\"The medieval...participle\") and another sentence that begins with a supplementary element (\"Rendered...epic\"). The participial phrase \"rendered as 'grieving' or 'in deep thought' in most modern editions\" modifies the subject of the second sentence, \"the word.\"</p><p>Choice A is incorrect because it results in a comma splice. Choice C is incorrect because it results in a comma splice after \"editions,\" as the two sentences are fused without a clause boundary at the blank. Choice D is incorrect because, without a comma preceding it, the conjunction \"and\" cannot join two sentences.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

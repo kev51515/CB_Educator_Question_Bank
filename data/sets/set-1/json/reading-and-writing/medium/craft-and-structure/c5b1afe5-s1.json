@@ -1,0 +1,25 @@
+{
+  "questionId": "c5b1afe5-s1",
+  "originalId": "c5b1afe5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>Electric scooter sharing programs allow users to pick up a scooter at one location within a city and leave it at any other permitted location, which can produce serious mismatches between scooter supply and rider demand. Hye-Won Park applies machine learning to commuting data to identify when a high volume of one-way trips is likely to leave some neighborhoods <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> scooters and other neighborhoods with insufficient inventory.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>overstocked with</p>"},
+    {"id": "b", "content": "<p>dependent on</p>"},
+    {"id": "c", "content": "<p>insensitive to</p>"},
+    {"id": "d", "content": "<p>devoid of</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Overstocked with\" means having a surplus of. The text describes an imbalance: when scooters accumulate in some neighborhoods at the expense of others. The blank, contrasted with \"insufficient inventory,\" must name the surplus side.</p><p>Choice B is incorrect. \"Dependent on\" would suggest the neighborhoods rely on scooters for some need, but the text describes a question of supply, not reliance. Choice C is incorrect. \"Insensitive to\" doesn't fit; neighborhoods don't react sensitively or insensitively to scooters. Choice D is incorrect. \"Devoid of\" means empty of; the contrast with \"insufficient supply\" requires the blank to indicate the opposite&mdash;an excess&mdash;not another form of shortage.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ba79f10f-s1",
+  "originalId": "ba79f10f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table below shows three values of <i>x</i> and their corresponding values of <i>y</i>.</p><table border=\"1\"><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>0</td><td>24</td></tr><tr><td>1</td><td>20</td></tr><tr><td>2</td><td>16</td></tr></table><p>There is a linear relationship between <i>x</i> and <i>y</i>. Which of the following equations represents this relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = 24<i>x</i> + 24</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = 24<i>x</i> + 20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = &minus;4<i>x</i> + 24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = &minus;4<i>x</i> + 20</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The change in <i>y</i> is &minus;4 per unit increase in <i>x</i>, giving slope &minus;4. The <i>y</i>-intercept is 24. Thus <i>y</i> = &minus;4<i>x</i> + 24.</p><p>Choices A and B use 24 as the slope, which doesn't match the data. Choice D uses the wrong <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T6.easy"
+}

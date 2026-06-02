@@ -1,0 +1,25 @@
+{
+  "questionId": "a30567fd-s1",
+  "originalId": "a30567fd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.medium",
+  "stimulus": "<p>Umm Kulthum was one of the most influential Egyptian singers of the twentieth century. Her wide-ranging concert programs&mdash;which combined classical Arabic forms, such as <em>tarab</em> and the <em>qasida</em>, with newly composed orchestral arrangements&mdash;gave Umm Kulthum a lasting place in the Arab musical imagination, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her the title \"the Voice of Egypt.\"</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>had earned</p>"},
+    {"id": "b", "content": "<p>earning</p>"},
+    {"id": "c", "content": "<p>earn</p>"},
+    {"id": "d", "content": "<p>earned</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The word \"earning\" is being used to introduce an additional modifying phrase that describes how Umm Kulthum&rsquo;s programs lent her a lasting place. When a verb ends in -ing and doesn&rsquo;t have a helper verb like \"is\" before it, it can be used to modify a noun or verb, which is appropriate here.</p><p>Choice A is incorrect. The underlined verb is being used to introduce additional descriptive information set off by a comma. Because there is no new subject here, a finite form of the verb (like \"had earned\") creates an error. Choice C is incorrect. Because there is no new subject here, the finite verb \"earn\" creates an error; a non-finite form is needed. Choice D is incorrect. Because there is no new subject here, the finite past-tense verb \"earned\" creates an error; a non-finite form is needed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

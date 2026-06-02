@@ -1,0 +1,39 @@
+{
+  "questionId": "0d402146-s1",
+  "originalId": "0d402146",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>US postage stamps did not always come in standardized sizes. Stamps only <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a few common dimensions until the Universal Postal Union encouraged broader size standards in the early twentieth century.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>avoided</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>disregarded</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>came in</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>refused</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the surrounding sentence is describing what sizes early stamps were actually made in before standardization. \"Came in\" fits, indicating the dimensions that existed. Choices A, B, and D all suggest that stamps did not use those dimensions, which contradicts the meaning required by the sentence.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "53d97af5-s1",
+  "originalId": "53d97af5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A study was done on the weights of various species of birds at a sanctuary. A random sample of birds was captured and weighed, ensuring each bird was weighed only once. The sample contained <math><mn>240</mn></math> sparrows, of which <math><mn>45</mn><mo>%</mo></math> weighed more than <math><mn>30</mn></math> grams. Which of the following conclusions is best supported by the sample data?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Approximately <math><mn>45</mn><mo>%</mo></math> of all sparrows in the sanctuary weigh more than <math><mn>30</mn></math> grams.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Approximately <math><mn>45</mn><mo>%</mo></math> of all birds in the sanctuary weigh more than <math><mn>30</mn></math> grams.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The average weight of all birds in the sanctuary is approximately <math><mn>30</mn></math> grams.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The majority of all birds in the sanctuary weigh less than <math><mn>30</mn></math> grams.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The sample statistic supports an inference about the population from which the sample was drawn \u2014 in this case, sparrows in the sanctuary.</p><p>Choices B, C, and D generalize beyond sparrows to all birds, which is unsupported by a sparrow-only sample.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A3.T6.medium"
+}

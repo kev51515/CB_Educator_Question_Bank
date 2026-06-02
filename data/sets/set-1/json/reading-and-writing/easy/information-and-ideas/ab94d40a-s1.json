@@ -1,0 +1,39 @@
+{
+  "questionId": "ab94d40a-s1",
+  "originalId": "ab94d40a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Time Participants Spent Reading about Five Tourist Sites in Rome</caption><thead><tr><th>Site Name</th><th>Ranking provided to one group</th><th>Average time (minutes) &mdash; ranking group</th><th>Average time (minutes) &mdash; no-ranking group</th></tr></thead><tbody><tr><td>Colosseum</td><td>1</td><td>9.2</td><td>3.4</td></tr><tr><td>Pantheon</td><td>2</td><td>2.1</td><td>3.0</td></tr><tr><td>Roman Forum</td><td>3</td><td>1.6</td><td>3.5</td></tr><tr><td>Trevi Fountain</td><td>4</td><td>1.2</td><td>3.1</td></tr><tr><td>Spanish Steps</td><td>5</td><td>1.0</td><td>3.3</td></tr></tbody></table></figure><p>Researchers found that providing rankings biased participants&rsquo; attention toward top-ranked sites.</p>",
+  "stem": "<p>Which choice best describes data in the table that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Participants who were not provided with a ranking spent the most time reading about the Roman Forum.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Participants who were provided with a ranking spent the least amount of time reading about the Pantheon.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Participants who were provided with a ranking spent disproportionately more time reading about the Colosseum.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Participants who were not provided with a ranking spent roughly equal amounts of time reading about each site.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the ranking group spent 9.2 minutes on the top-ranked Colosseum, far more than on the others (2.1, 1.6, 1.2, 1.0), directly supporting the claim that rankings biased attention toward the top-ranked site.</p><p>Choice A is incorrect: the no-ranking group spent roughly equal time across all sites, not the most on the Roman Forum. Choice B is incorrect: the ranking group spent the least time on the Spanish Steps (1.0), not the Pantheon. Choice D is incorrect: even though the no-ranking group did spend roughly equal time across sites, this fact by itself doesn&rsquo;t show that rankings biased the other group.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T9.easy"
+}

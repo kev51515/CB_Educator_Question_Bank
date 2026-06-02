@@ -1,0 +1,25 @@
+{
+  "questionId": "6af80ff3-s1",
+  "originalId": "6af80ff3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Tree Hollow Bats Counted in Three Eucalypt Hollows</p></caption><thead><tr><th>Category</th><th>Hollow 1</th><th>Hollow 2</th><th>Hollow 3</th></tr></thead><tbody><tr><td>adult males</td><td>14</td><td>3</td><td>1</td></tr><tr><td>adult females</td><td>11</td><td>1</td><td>4</td></tr><tr><td>juveniles</td><td>0</td><td>9</td><td>12</td></tr></tbody></table></figure><p>While surveying old-growth eucalypts in Tasmania, ecologist Renee Halverson and her team documented that three large tree hollows were serving as roosts for greater long-eared bats (<em>Nyctophilus timoriensis</em>). Additionally, <span style=\"text-decoration: underline;\">the team found that adult male and adult female <em>N. timoriensis</em> share the same hollow (the same roost)</span>, a behavior not observed among ghost bats (<em>Macroderma gigas</em>), another cave- and tree-roosting species.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the underlined claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Each of the three hollows was inhabited by at least one adult male <em>N. timoriensis</em> and at least one juvenile <em>N. timoriensis</em>.</p>"},
+    {"id": "b", "content": "<p>Hollow 1 was inhabited by 14 adult male <em>N. timoriensis</em>.</p>"},
+    {"id": "c", "content": "<p>Each of the three hollows was inhabited by at least one adult male <em>N. timoriensis</em> and at least one adult female <em>N. timoriensis</em>.</p>"},
+    {"id": "d", "content": "<p>Hollow 1 was inhabited by 11 adult female <em>N. timoriensis</em>.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the underlined claim is that adult males and adult females share the same roost. According to the table, each of the three hollows contains at least one adult male (14, 3, 1) and at least one adult female (11, 1, 4), supporting the shared-roost claim. Choice A is incorrect because it concerns juveniles rather than adult females, so it does not address whether adult males and adult females share a hollow. Choice B is incorrect because it gives information about males only. Choice D is incorrect because it gives information about females only.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

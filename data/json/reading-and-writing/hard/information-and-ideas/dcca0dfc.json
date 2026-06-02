@@ -1,0 +1,72 @@
+{
+  "questionId": "dcca0dfc",
+  "externalId": "980ff1d5-d247-4ec5-a99c-63476cc5503b",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:01.160418+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the text, which choice best describes Sir Winston Day?</p>",
+  "answerOptions": [
+    {
+      "id": "e4bfae8a-d52b-4c59-aa29-31fabe00cad7",
+      "content": "<p>He has the appearance of a distinguished figure, but it is uncertain whether he has accomplished anything to earn distinction.</p>"
+    },
+    {
+      "id": "17adc243-1907-4f75-ad8f-4924aa0db4ae",
+      "content": "<p>He looks like a person worthy of respect, but his memoirs reveal that some of his actions were dishonorable.</p>"
+    },
+    {
+      "id": "729991ad-8046-453d-82e8-1835d3dd4d79",
+      "content": "<p>He would be a celebrated public figure if his achievements did not have to be kept secret.</p>"
+    },
+    {
+      "id": "f31628cd-776f-4434-9fd4-8036ad671165",
+      "content": "<p>He has maintained a modest profile even though he has served the public capably for many years.</p>"
+    }
+  ],
+  "keys": [
+    "e4bfae8a-d52b-4c59-aa29-31fabe00cad7"
+  ],
+  "rationale": "<p>Choice A is the best answer because it accurately describes Sir Winston Day as he is portrayed in the text. The text indicates that Sir Winston&rsquo;s &ldquo;features seemed moulded to adorn a bust, or possibly a stamp,&rdquo; suggesting that he appeared distinguished. But the text also indicates that his &ldquo;actual achievements&rdquo; during his long public service constitute an &ldquo;enigma,&rdquo; or mystery, highlighting the point with a joke about Sir Winston&rsquo;s uninteresting memoirs (any information about his achievements past the first thirty pages &ldquo;might as well have remained state secrets&rdquo; since, it&rsquo;s implied, no one bothered to read that far). Thus, the text suggests that Sir Winston appears distinguished even though his known accomplishments, if any, are relatively few.</p><p>Choice B is incorrect because nothing in the text indicates that Sir Winston behaved dishonorably. Rather, the text indicates that his &ldquo;actual achievements&rdquo; during his long public service constitute an enigma, or mystery, suggesting that he may have done very little, not that what he has done was disreputable. Choice C is incorrect. Although the text says that Sir Winston&rsquo;s achievements that appear &ldquo;after the thirty-page mark&rdquo; in his memoirs &ldquo;might as well have remained state secrets,&rdquo; this is a joke about the public&rsquo;s lack of interest in the memoirs, not a sincere claim that secrecy was intended. Choice D is incorrect because the text does not associate Sir Winston with modesty, nor does it suggest that he was a capable public servant. Rather, by indicating that Sir Winston&rsquo;s &ldquo;features seemed moulded to adorn a bust, or possibly a stamp,&rdquo; the text suggests that Sir Winston&rsquo;s appearance communicated importance, not modesty. The text further indicates that his &ldquo;actual achievements&rdquo; during his long public service constitute an enigma, or mystery, suggesting that he may have done very little, not that he was particularly capable.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the text, which choice best describes Sir Winston Day?</p>",
+    "stimulus": "<p>The following text is from Mick Herron&rsquo;s <span data-ssml-say-as=\"date\">2023</span> novel <em>The Secret Hours</em>. The narrator is describing members of a government committee.&nbsp;</p>\n<blockquote>\n<p>Finally, and adding much-needed gravitas, was Sir Winston Day, whose features seemed moulded to adorn a bust, or possibly a stamp, and whose forehead was so evidently bulging with grey matter that it would have been impertinent to inquire too closely into the actual achievements his half century of public service had produced. His recently published memoirs possibly cast light on this enigma, but given that such details were not provided until after the thirty-page mark, they might as well have remained state secrets.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;<span data-ssml-say-as=\"date\">2023</span> by Mick Herron</span></p>",
+    "keys": [
+      "e4bfae8a-d52b-4c59-aa29-31fabe00cad7"
+    ],
+    "answerOptions": [
+      {
+        "id": "e4bfae8a-d52b-4c59-aa29-31fabe00cad7",
+        "content": "<p>He has the appearance of a distinguished figure, but it is uncertain whether he has accomplished anything to earn distinction.</p>"
+      },
+      {
+        "id": "17adc243-1907-4f75-ad8f-4924aa0db4ae",
+        "content": "<p>He looks like a person worthy of respect, but his memoirs reveal that some of his actions were dishonorable.</p>"
+      },
+      {
+        "id": "729991ad-8046-453d-82e8-1835d3dd4d79",
+        "content": "<p>He would be a celebrated public figure if his achievements did not have to be kept secret.</p>"
+      },
+      {
+        "id": "f31628cd-776f-4434-9fd4-8036ad671165",
+        "content": "<p>He has maintained a modest profile even though he has served the public capably for many years.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it accurately describes Sir Winston Day as he is portrayed in the text. The text indicates that Sir Winston&rsquo;s &ldquo;features seemed moulded to adorn a bust, or possibly a stamp,&rdquo; suggesting that he appeared distinguished. But the text also indicates that his &ldquo;actual achievements&rdquo; during his long public service constitute an &ldquo;enigma,&rdquo; or mystery, highlighting the point with a joke about Sir Winston&rsquo;s uninteresting memoirs (any information about his achievements past the first thirty pages &ldquo;might as well have remained state secrets&rdquo; since, it&rsquo;s implied, no one bothered to read that far). Thus, the text suggests that Sir Winston appears distinguished even though his known accomplishments, if any, are relatively few.</p><p>Choice B is incorrect because nothing in the text indicates that Sir Winston behaved dishonorably. Rather, the text indicates that his &ldquo;actual achievements&rdquo; during his long public service constitute an enigma, or mystery, suggesting that he may have done very little, not that what he has done was disreputable. Choice C is incorrect. Although the text says that Sir Winston&rsquo;s achievements that appear &ldquo;after the thirty-page mark&rdquo; in his memoirs &ldquo;might as well have remained state secrets,&rdquo; this is a joke about the public&rsquo;s lack of interest in the memoirs, not a sincere claim that secrecy was intended. Choice D is incorrect because the text does not associate Sir Winston with modesty, nor does it suggest that he was a capable public servant. Rather, by indicating that Sir Winston&rsquo;s &ldquo;features seemed moulded to adorn a bust, or possibly a stamp,&rdquo; the text suggests that Sir Winston&rsquo;s appearance communicated importance, not modesty. The text further indicates that his &ldquo;actual achievements&rdquo; during his long public service constitute an enigma, or mystery, suggesting that he may have done very little, not that he was particularly capable.</p>",
+    "externalid": "980ff1d5-d247-4ec5-a99c-63476cc5503b",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>The following text is from Mick Herron&rsquo;s <span data-ssml-say-as=\"date\">2023</span> novel <em>The Secret Hours</em>. The narrator is describing members of a government committee.&nbsp;</p>\n<blockquote>\n<p>Finally, and adding much-needed gravitas, was Sir Winston Day, whose features seemed moulded to adorn a bust, or possibly a stamp, and whose forehead was so evidently bulging with grey matter that it would have been impertinent to inquire too closely into the actual achievements his half century of public service had produced. His recently published memoirs possibly cast light on this enigma, but given that such details were not provided until after the thirty-page mark, they might as well have remained state secrets.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;<span data-ssml-say-as=\"date\">2023</span> by Mick Herron</span></p>"
+}

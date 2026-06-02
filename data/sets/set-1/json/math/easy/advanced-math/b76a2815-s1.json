@@ -1,0 +1,39 @@
+{
+  "questionId": "b76a2815-s1",
+  "originalId": "b76a2815",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The current <em>I</em> in a circuit is given by <math><mi>I</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></math>, where <em>V</em> is the voltage and <em>R</em> is the resistance. Which of the following correctly expresses <em>V</em> in terms of <em>I</em> and <em>R</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>V</mi><mo>=</mo><mfrac><mi>I</mi><mi>R</mi></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>V</mi><mo>=</mo><mi>I</mi><mo>+</mo><mi>R</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>V</mi><mo>=</mo><mfrac><mi>R</mi><mi>I</mi></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>V</mi><mo>=</mo><mi>I</mi><mi>R</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Multiplying both sides of <math><mi>I</mi><mo>=</mo><mfrac><mi>V</mi><mi>R</mi></mfrac></math> by <em>R</em> yields <math><mi>V</mi><mo>=</mo><mi>I</mi><mi>R</mi></math>.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy"
+}

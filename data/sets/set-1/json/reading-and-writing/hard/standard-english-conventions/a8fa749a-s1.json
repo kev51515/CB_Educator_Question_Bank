@@ -1,0 +1,25 @@
+{
+  "questionId": "a8fa749a-s1",
+  "originalId": "a8fa749a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T9.hard",
+  "stimulus": "<p>Chilean filmmaker Patricio Guzm&aacute;n&rsquo;s acclaimed documentary work includes <em>Nostalgia for the Light</em>, a meditation on memory and astronomy filmed in the Atacama <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a poetic essay on water and political violence in southern Chile; and <em>The Cordillera of Dreams</em>, his award-winning study of the Andes.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Desert, <em>The Pearl Button</em>,</p>"},
+    {"id": "b", "content": "<p>Desert, <em>The Pearl Button</em>:</p>"},
+    {"id": "c", "content": "<p>Desert; <em>The Pearl Button</em></p>"},
+    {"id": "d", "content": "<p>Desert; <em>The Pearl Button</em>,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the punctuation of items in a complex series with internal punctuation. The semicolon after \"Desert\" separates the first item (\"<em>Nostalgia for the Light</em>...Desert\") from the second (\"<em>The Pearl Button</em>...Chile\"), matching the semicolon used later before \"and.\" The comma after \"<em>The Pearl Button</em>\" correctly separates the title from its supplementary descriptive phrase.</p><p>Choice A is incorrect because the comma after \"Desert\" does not match the semicolon used later in the series. Choice B is incorrect because the comma after \"Desert\" does not match the later semicolon, and a colon cannot separate a title from its descriptive supplementary phrase here. Choice C is incorrect because it omits the comma needed to separate the title from the supplementary phrase that describes it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

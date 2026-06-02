@@ -1,0 +1,25 @@
+{
+  "questionId": "c218cd98-s1",
+  "originalId": "c218cd98",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>In 1962, the recently independent government of Algeria sent Frantz Fanon's collaborator Mohammed Lebjaoui to several West African capitals to seek diplomatic recognition for the new state. Lebjaoui was widely admired across the region. This <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> almost certainly helped him persuade the neighboring governments to extend formal recognition.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>candor</p>"},
+    {"id": "b", "content": "<p>regard</p>"},
+    {"id": "c", "content": "<p>insistence</p>"},
+    {"id": "d", "content": "<p>scrutiny</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Regard\" means high respect or esteem. The text says Lebjaoui was \"widely admired,\" and the missing word names exactly that quality of being held in respect, which helped him achieve his diplomatic aims.</p><p>Choice A is incorrect. \"Candor,\" or frankness, is not the quality described by \"widely admired.\" Choice C is incorrect. \"Insistence\" would denote persistence in advancing a claim, which is not what the text describes about him. Choice D is incorrect. \"Scrutiny\" would suggest he was closely examined, contradicting the positive admiration the text emphasizes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

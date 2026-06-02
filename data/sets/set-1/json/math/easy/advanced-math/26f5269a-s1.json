@@ -1,0 +1,22 @@
+{
+  "questionId": "26f5269a-s1",
+  "originalId": "26f5269a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>g</em> is defined by <math><mi>g</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>5</mn></math>. What is the value of <math><mi>g</mi><mfenced><mn>4</mn></mfenced></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "43"
+  ],
+  "rationale": "<p>The correct answer is 43. Substituting 4 for <em>x</em>: <math><mi>g</mi><mfenced><mn>4</mn></mfenced><mo>=</mo><mn>3</mn><mo>&#183;</mo><msup><mn>4</mn><mn>2</mn></msup><mo>-</mo><mn>5</mn><mo>=</mo><mn>48</mn><mo>-</mo><mn>5</mn><mo>=</mo><mn>43</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c6a26e14-s1",
+  "originalId": "c6a26e14",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>+</mo><mn>22</mn></mrow></mfenced><mo>=</mo><mn>26</mn></math></p><p>What is the positive solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. By the definition of absolute value, either <math><mi>x</mi><mo>+</mo><mn>22</mn><mo>=</mo><mn>26</mn></math> or <math><mi>x</mi><mo>+</mo><mn>22</mn><mo>=</mo><mo>-</mo><mn>26</mn></math>. The first yields <em>x</em> = 4 (positive) and the second yields <em>x</em> = -48. The positive solution is 4.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.easy"
+}

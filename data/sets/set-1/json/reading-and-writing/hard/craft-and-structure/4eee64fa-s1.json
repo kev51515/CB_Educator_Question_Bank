@@ -1,0 +1,39 @@
+{
+  "questionId": "4eee64fa-s1",
+  "originalId": "4eee64fa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Plant biologists Diego Salgado, Mei-Lin Chao, and Robert Tanaka grew seedlings of <em>Brassica rapa</em> in samples of simulated Martian regolith and, as a control, in standard greenhouse loam. They found that although most seeds in both groups germinated, the regolith-grown plants developed shorter taproots, accumulated higher levels of anthocyanin pigments in their leaves, and produced fewer rosette leaves overall than the controls. The researchers interpret these symptoms&mdash;stunted roots, red coloration, and reduced leaf number&mdash;as classic stress responses, suggesting that, while germination on a Mars-analog substrate is possible, sustained growth would require substantial soil amendment.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To discuss the findings of a study evaluating the effects of growing a plant species in Mars-analog soil conditions.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To compare two methods of measuring stress indicators in plants exposed to space radiation.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To describe an experiment that resolved a debate about whether Martian regolith is chemically similar to Earth soils.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To support the claim that no terrestrial plant can germinate in a Mars-analog substrate.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text walks through the setup, observations, and interpretation of a single study on <em>Brassica rapa</em> grown in Mars-analog regolith, framing its purpose as a report of that study's findings.</p><p>Choice B is incorrect because only one method&mdash;direct observation of plants&mdash;is used; no comparison of methods is undertaken. Choice C is incorrect because the text never frames the work as resolving a soil-chemistry debate. Choice D is incorrect because the text states that most of the seeds did germinate, contradicting the claim in this option.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

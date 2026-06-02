@@ -1,0 +1,22 @@
+{
+  "questionId": "76c73dbf-s1",
+  "originalId": "76c73dbf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The graph of x&sup2; + x + y&sup2; + y = 287/2 in the xy-plane is a circle. What is the length of the circle\u2019s radius?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The correct answer is 12. Completing the square in x and y: (x + 1/2)&sup2; &minus; 1/4 + (y + 1/2)&sup2; &minus; 1/4 = 287/2, so (x + 1/2)&sup2; + (y + 1/2)&sup2; = 287/2 + 1/2 = 144. The radius is &radic;144 = 12.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T4.hard"
+}

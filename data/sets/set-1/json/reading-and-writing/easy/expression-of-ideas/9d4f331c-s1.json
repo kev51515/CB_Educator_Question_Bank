@@ -1,0 +1,25 @@
+{
+  "questionId": "9d4f331c-s1",
+  "originalId": "9d4f331c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>When architect Maya Lin was designing the Vietnam Veterans Memorial, she presented her concept to a panel of advisers. The advisers suggested that she use shiny white granite and arrange the panels in a circle around a central monument. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Lin chose polished black granite arranged in a long V-shaped wall set into the earth.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Additionally,</p>"},
+    {"id": "b", "content": "<p>Thus,</p>"},
+    {"id": "c", "content": "<p>For example,</p>"},
+    {"id": "d", "content": "<p>Instead,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Instead\" logically signals that Lin's design decisions&mdash;polished black granite arranged in a V-shape&mdash;contrast with the advisers' suggestions of shiny white granite arranged in a circle.</p><p>Choice A is incorrect because \"additionally\" illogically signals that Lin's choice was an addition to the panel's suggestions, when in fact it was a different choice. Choice B is incorrect because \"thus\" illogically signals consequence rather than contrast. Choice C is incorrect because \"for example\" illogically signals that Lin's choice exemplifies the advisers' suggestions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T1.easy"
+}

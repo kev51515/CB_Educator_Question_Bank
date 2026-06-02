@@ -1,0 +1,39 @@
+{
+  "questionId": "627d93e3-s1",
+  "originalId": "627d93e3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Modeled Annual Wheat Yield (tonnes per hectare) under Drought Scenarios</strong></p><table border=\"1\"><thead><tr><th>Drought scenario</th><th>With phosphorus fertilizer</th><th>Without phosphorus fertilizer</th></tr></thead><tbody><tr><td>current rainfall</td><td>5.6</td><td>4.4</td></tr><tr><td>mild drought</td><td>5.1</td><td>4.1</td></tr><tr><td>severe drought</td><td>1.7</td><td>1.2</td></tr></tbody></table><p>Agronomists Niamh Walsh and colleagues studied a wheat field in which some plots receive periodic phosphorus fertilization to mimic the broader trend of increased phosphorus deposition. Walsh and colleagues modeled grain yield with and without phosphorus fertilization under three rainfall scenarios (current rainfall, mild drought, and severe drought). Although they found that drought would reduce yield, they concluded that phosphorus fertilization could more than offset that decline provided that drought is mild rather than severe.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Walsh and colleagues' conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Yield with phosphorus under current rainfall exceeded yield with phosphorus under mild drought, but the latter exceeded yield without phosphorus under severe drought.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Yield with phosphorus under mild drought exceeded yield without phosphorus under mild drought, but the latter exceeded yield without phosphorus under severe drought.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Yield with phosphorus under mild drought exceeded yield without phosphorus under current rainfall, but the latter exceeded yield with phosphorus under severe drought.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Yield without phosphorus under current rainfall exceeded yield without phosphorus under mild drought, but the latter exceeded yield with phosphorus under severe drought.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. To support the conclusion that phosphorus can more than offset a mild-drought yield decline but not a severe-drought one, the data must show that yield WITH phosphorus under mild drought beats yield WITHOUT phosphorus under current rainfall (5.1 > 4.4 \u2713), AND that yield WITHOUT phosphorus under current rainfall beats yield WITH phosphorus under severe drought (4.4 > 1.7 \u2713). Choice C makes exactly these two comparisons.</p><p>Choice A is incorrect: it compares with-phosphorus current vs. with-phosphorus mild drought, which does not isolate the offset effect. Choice B is incorrect: it compares with vs. without phosphorus only within mild drought, and never compares to current-rainfall yields, so it cannot show that the fertilizer offsets drought losses. Choice D is incorrect: it only addresses without-phosphorus comparisons across rainfall scenarios and one extreme case, which does not establish that fertilization can compensate for mild drought.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7e3f8363-s1",
+  "originalId": "7e3f8363",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>In the <em>xy</em>-plane, the graph of the linear function <em>f</em> contains the points (0, 2) and (6, 26). Which equation defines <em>f</em>, where y = f(x)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = 24x + 28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = 2x + 28</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = 6x + 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = 4x + 2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Slope = (26 - 2)/(6 - 0) = 24/6 = 4. The line passes through (0, 2), so the y-intercept is 2. Therefore f(x) = 4x + 2. Choice A uses (26 - 2) as the slope directly. Choice B uses the x-coordinate as slope. Choice C uses the x-coordinate of (6, 26) as the slope.</p>",
+  "templateId": "linear-functions.A3.T2.easy"
+}

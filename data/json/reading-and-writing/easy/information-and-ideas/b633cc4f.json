@@ -1,0 +1,72 @@
+{
+  "questionId": "b633cc4f",
+  "externalId": "372d026d-316c-4dc0-a1e7-33878776e91c",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:05.935790+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the main topic of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "d329c42e-eb9b-47ec-8b89-614d9b42430e",
+      "content": "<p>Bird-watching in southern England</p>"
+    },
+    {
+      "id": "4e7cf58d-b7f3-46bf-b9e5-e76fadfe5774",
+      "content": "<p>A previously unseen behavior of gray seals</p>"
+    },
+    {
+      "id": "859ecd3b-eea8-4b03-b021-b8d3cdbedbc1",
+      "content": "<p>How white-tailed eagles defend their territory against other predators</p>"
+    },
+    {
+      "id": "5d056832-bce4-4123-b4d1-f24d85c763ca",
+      "content": "<p>Differences between gray seals and white-tailed eagles</p>"
+    }
+  ],
+  "keys": [
+    "4e7cf58d-b7f3-46bf-b9e5-e76fadfe5774"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most accurately states the main topic of the text. The text begins by noting that few animals are known to spit, and then it focuses on Clare Jacobs&rsquo;s January 2022 observation of a gray seal spitting water at a white-tailed eagle. The text explicitly notes that this behavior had never before been observed in seals, highlighting that this was a previously unseen behavior. The text concludes with biologist Sean Twiss&rsquo;s hypotheses about why the seal might have been spitting. Thus, the main topic is the observation of a previously unseen behavior (spitting) of gray seals.</p><p>Choice A is incorrect because while the text does mention bird-watcher Clare Jacobs making an observation in southern England, bird-watching itself is not the main topic. The reference to bird-watching is incidental to the central focus of the novel behavior of a gray seal spitting water at an eagle. Choice C is incorrect because the text only mentions a white-tailed eagle as the target of a seal&rsquo;s spitting behavior; it doesn&rsquo;t provide any information about how these eagles typically behave when defending territory or interacting with other predators. Choice D is incorrect because the text doesn&rsquo;t discuss differences between gray seals and white-tailed eagles. While both animals are mentioned, the text is focused on the seal&rsquo;s unusual spitting behavior rather than comparing the two animals in any way.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the main topic of the text?</p>",
+    "stimulus": "<p>Few animals are known to spit: among them are humans, cobras, and camels. But in January 2022 at a nature preserve in southern England, bird-watcher Clare Jacobs observed a gray seal spitting a jet of water at a white-tailed eagle flying overhead. Seals had never been seen spitting before. Biologist Sean Twiss, who studies gray seals, believes that the seal may have been attempting to scare the eagle away from a food source or that the seal may have just been playing.</p>",
+    "keys": [
+      "4e7cf58d-b7f3-46bf-b9e5-e76fadfe5774"
+    ],
+    "answerOptions": [
+      {
+        "id": "d329c42e-eb9b-47ec-8b89-614d9b42430e",
+        "content": "<p>Bird-watching in southern England</p>"
+      },
+      {
+        "id": "4e7cf58d-b7f3-46bf-b9e5-e76fadfe5774",
+        "content": "<p>A previously unseen behavior of gray seals</p>"
+      },
+      {
+        "id": "859ecd3b-eea8-4b03-b021-b8d3cdbedbc1",
+        "content": "<p>How white-tailed eagles defend their territory against other predators</p>"
+      },
+      {
+        "id": "5d056832-bce4-4123-b4d1-f24d85c763ca",
+        "content": "<p>Differences between gray seals and white-tailed eagles</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most accurately states the main topic of the text. The text begins by noting that few animals are known to spit, and then it focuses on Clare Jacobs&rsquo;s January 2022 observation of a gray seal spitting water at a white-tailed eagle. The text explicitly notes that this behavior had never before been observed in seals, highlighting that this was a previously unseen behavior. The text concludes with biologist Sean Twiss&rsquo;s hypotheses about why the seal might have been spitting. Thus, the main topic is the observation of a previously unseen behavior (spitting) of gray seals.</p><p>Choice A is incorrect because while the text does mention bird-watcher Clare Jacobs making an observation in southern England, bird-watching itself is not the main topic. The reference to bird-watching is incidental to the central focus of the novel behavior of a gray seal spitting water at an eagle. Choice C is incorrect because the text only mentions a white-tailed eagle as the target of a seal&rsquo;s spitting behavior; it doesn&rsquo;t provide any information about how these eagles typically behave when defending territory or interacting with other predators. Choice D is incorrect because the text doesn&rsquo;t discuss differences between gray seals and white-tailed eagles. While both animals are mentioned, the text is focused on the seal&rsquo;s unusual spitting behavior rather than comparing the two animals in any way.</p>",
+    "externalid": "372d026d-316c-4dc0-a1e7-33878776e91c",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Few animals are known to spit: among them are humans, cobras, and camels. But in January 2022 at a nature preserve in southern England, bird-watcher Clare Jacobs observed a gray seal spitting a jet of water at a white-tailed eagle flying overhead. Seals had never been seen spitting before. Biologist Sean Twiss, who studies gray seals, believes that the seal may have been attempting to scare the eagle away from a food source or that the seal may have just been playing.</p>"
+}

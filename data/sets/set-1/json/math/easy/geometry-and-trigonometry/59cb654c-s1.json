@@ -1,0 +1,39 @@
+{
+  "questionId": "59cb654c-s1",
+  "originalId": "59cb654c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The area of a square is 121 square inches. What is the side length, in inches, of this square?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>121</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>242</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a square is A = s\u00b2. Setting s\u00b2 = 121 and taking the positive square root gives s = 11 inches.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "12b04e68-s1",
+  "originalId": "12b04e68",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A total of 245 people attended a community festival as either a ticket-holder or a volunteer. 178 people attended as a ticket-holder. How many people attended as a volunteer?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>178</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>67</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>245</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>423</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Let <i>v</i> be the number of volunteers. Then 178 + <i>v</i> = 245, so <i>v</i> = 245 &minus; 178 = 67.</p><p>Choice A is the number of ticket-holders. Choice C is the total. Choice D is the sum, not the difference.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "61b87506-s1",
+  "originalId": "61b87506",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>For the values <em>p</em> and <em>q</em>, the ratio of <em>p</em> to <em>q</em> is 9 to 14. If <em>p</em> is multiplied by 23, what is <em>q</em> multiplied by in order to maintain the same ratio?</p>",
+  "answerOptions": null,
+  "keys": [
+    "23"
+  ],
+  "rationale": "<p>The correct answer is 23. The ratio <em>p</em>/<em>q</em> = 9/14. For (23<em>p</em>)/(<em>cq</em>) to equal 9/14, the factor in the numerator and denominator must cancel, requiring <em>c</em> = 23. Therefore <em>q</em> must be multiplied by 23.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d2a90d4f-s1",
+  "originalId": "d2a90d4f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Most discarded fishing nets today wind up in the ocean or are, at best, sent to landfills. To address this problem, materials engineer Hana Mori and colleagues designed a process that breaks down nylon fishing nets and reshapes them into pellets. The pellets can then be used to make thermoplastic (<u>a polymer that softens when heated and can be molded</u>). With this promising new method, abandoned fishing nets could be turned into a range of useful plastic products.</p>",
+  "stem": "<p>Which choice best states the function of the underlined portion of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It describes an environmental concern.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It identifies a result that confused the team.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It clarifies the meaning of a scientific term.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It explains the significance of a scientific discovery.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The underlined portion is set off by parentheses and provides a definition of \"thermoplastic\"\u2014a polymer that softens when heated. Its function is to clarify the meaning of the scientific term.</p><p>Choice A is incorrect. The text addresses an environmental concern overall, but the underlined portion just defines a term. Choice B is incorrect. No confusion is mentioned. Choice D is incorrect. The portion defines a term, not the significance of a discovery.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "2fd05c15-s1",
+  "originalId": "2fd05c15",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T5.hard",
+  "stimulus": "<p>In her short fiction, Argentine writer Samanta Schweblin frequently draws on the gothic tradition of nineteenth-century Latin American storytellers. Her 2014 novella <em>Fever Dream</em>, for example, is a tense reworking of the rural ghost story, while her 2018 collection <em><span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Mouthful of Birds</em> revisits the bestiary motif favored by writers such as Silvina Ocampo.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>Mouthful of Birds</em></p>"},
+    {"id": "b", "content": "<p><em>&shy;&shy;Mouthful of Birds</em>&mdash;</p>"},
+    {"id": "c", "content": "<p><em>&shy;&shy;Mouthful of Birds,</em></p>"},
+    {"id": "d", "content": "<p><em>&shy;&shy;Mouthful of Birds:</em></p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The title <em>Mouthful of Birds</em> is a restrictive identifier of \"her 2018 collection\" (no commas), parallel in structure to \"Her 2014 novella <em>Fever Dream</em>\" earlier in the sentence. No punctuation is needed between the descriptor and the title.</p><p>Choice B is incorrect because a dash would wrongly set off the title as a parenthetical insertion, breaking the parallel with the earlier restrictive title. Choices C and D are incorrect because a comma or colon would also wrongly imply that the title is nonrestrictive supplementary material.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

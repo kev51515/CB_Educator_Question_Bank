@@ -1,0 +1,22 @@
+{
+  "questionId": "ebbf23ae-s1",
+  "originalId": "ebbf23ae",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A circle in the xy-plane has a diameter with endpoints (\u22123, 1) and (\u22123, 17). An equation of this circle is (x + 3)<sup>2</sup> + (y \u2212 9)<sup>2</sup> = r<sup>2</sup>, where r is a positive constant. What is the value of r?</p>",
+  "answerOptions": [],
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>The diameter length is the distance from (\u22123, 1) to (\u22123, 17), which is |17 \u2212 1| = 16. The radius is half the diameter, so r = 8.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A1.T2.hard"
+}

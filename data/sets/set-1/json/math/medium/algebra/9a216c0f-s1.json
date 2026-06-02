@@ -1,0 +1,39 @@
+{
+  "questionId": "9a216c0f-s1",
+  "originalId": "9a216c0f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The combined original price for a chair and a lamp is $80. After a 30% discount to the chair and a 50% discount to the lamp are applied, the combined sale price for the two items is $48. Which system of equations gives the original price c, in dollars, of the chair and the original price l, in dollars, of the lamp?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>c + l = 80<br>0.70c + 0.50l = 48</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>c + l = 80<br>0.30c + 0.50l = 48</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>c + l = 80<br>0.50c + 0.70l = 48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>c + l = 80<br>0.30c + 0.70l = 48</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>A 30% discount means the chair is sold at 70% of its original price (0.70c), and a 50% discount on the lamp means it's sold at 50% (0.50l). Their sum equals 48, so 0.70c + 0.50l = 48 along with c + l = 80. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.medium"
+}

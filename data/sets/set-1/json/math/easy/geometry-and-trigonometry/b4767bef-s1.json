@@ -1,0 +1,39 @@
+{
+  "questionId": "b4767bef-s1",
+  "originalId": "b4767bef",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The lengths of two sides of a triangle are 5 centimeters and 9 centimeters. If the perimeter of the triangle is 21 centimeters, what is the length, in centimeters, of the third side of this triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The perimeter equals the sum of the three sides. Let x be the third side; then 5 + 9 + x = 21, so x = 7 centimeters.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T2.easy"
+}

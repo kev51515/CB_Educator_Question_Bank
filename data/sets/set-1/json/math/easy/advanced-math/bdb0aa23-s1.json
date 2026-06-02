@@ -1,0 +1,39 @@
+{
+  "questionId": "bdb0aa23-s1",
+  "originalId": "bdb0aa23",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>6</mn><msup><mi>x</mi><mn>6</mn></msup><mo>−</mo><mn>10</mn><msup><mi>x</mi><mn>5</mn></msup><mo>+</mo><mn>8</mn><msup><mi>x</mi><mn>4</mn></msup></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mfenced><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>2</mn><msup><mi>x</mi><mn>5</mn></msup><mfenced><mrow><mn>3</mn><mi>x</mi><mo>−</mo><mn>5</mn><mo>+</mo><mn>4</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>2</mn><msup><mi>x</mi><mn>4</mn></msup><mfenced><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2</mn><msup><mi>x</mi><mn>6</mn></msup><mfenced><mrow><mn>3</mn><mo>−</mo><mn>5</mn><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The greatest common factor of 6x⁶, 10x⁵, and 8x⁴ is 2x⁴ (smallest power of x is 4; gcd(6,10,8) = 2). Factoring gives 2x⁴(3x² − 5x + 4). Choice (a) is correct.</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

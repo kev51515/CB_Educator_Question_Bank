@@ -1,0 +1,22 @@
+{
+  "questionId": "feb78194-s1",
+  "originalId": "feb78194",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A bike shop rents bicycles to customers. The shop earns revenue of $18 for each bicycle rented for the day. On Saturday, the shop earned $480 in profit from renting bicycles after paying daily expenses of $96. How many bicycles did the shop rent on Saturday? (profit = total revenue \u2212 total expenses)</p>",
+  "answerOptions": [],
+  "keys": [
+    "32"
+  ],
+  "rationale": "<p>Let n be the number of bicycles rented. Revenue is 18n, so profit = 18n - 96 = 480. Then 18n = 576 and n = 32.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.medium"
+}

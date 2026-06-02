@@ -1,0 +1,22 @@
+{
+  "questionId": "447fa970-s1",
+  "originalId": "447fa970",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by the equation f(x) = 9x + 4. What is the value of f(4)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "40"
+  ],
+  "rationale": "<p>Substituting 4 for x yields f(4) = 9(4) + 4 = 40.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "0fa289a7-s1",
+  "originalId": "0fa289a7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>In 1968, Senegalese filmmaker Ousmane Semb&egrave;ne completed his second feature, <em>Mandabi</em> <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> wry comedy about a Dakar laborer struggling to cash an unexpected money order, Semb&egrave;ne&rsquo;s film was the first commercial release shot largely in Wolof rather than in French.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>Mandabi</em>. A</p>"},
+    {"id": "b", "content": "<p><em>Mandabi</em>, a</p>"},
+    {"id": "c", "content": "<p><em>Mandabi</em>, which was a</p>"},
+    {"id": "d", "content": "<p><em>Mandabi</em> a</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. A period correctly marks the boundary between one independent sentence (\"In 1968&hellip;<em>Mandabi</em>\") and another (\"A wry comedy&hellip;French\"). The phrase beginning with \"A wry comedy\" is an appositive modifying the subject of the next sentence, \"Sembène's film.\"</p><p>Choice B is incorrect because it produces a comma splice between two independent sentences. Choice C is incorrect because inserting \"which was a\" turns the second sentence into a dependent clause attached by a comma, which still leaves the first sentence followed by an incomplete construction. Choice D is incorrect because it creates a run-on, fusing the sentences without punctuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

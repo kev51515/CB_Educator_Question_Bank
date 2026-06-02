@@ -1,0 +1,25 @@
+{
+  "questionId": "4603d1f7-s1",
+  "originalId": "4603d1f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In their book <em>Crowd Logic</em>, Marisol Tan and Henry Okafor examine independent comic creators' use of the \"name your price\" digital publishing model. This model usually offers readers the choice to pay more or less than a suggested price for an issue or full series — or to pay nothing at all. The authors note that this was the option most readers chose for a graphic novel by the duo Inkwell Brothers. Only about 2% of downloaders paid anything for the work, leaving the creators with earnings well below their projections. But the authors also profile cartoonist Devi Patel, who saw substantial earnings from her \"name your price\" online store when many fans chose to pay well above her suggested prices. Hence, the \"name your price\" model may ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>hold greater financial appeal for duos than for individual creators.</p>"},
+    {"id": "b", "content": "<p>prove financially successful for some comic creators but disappointing for others.</p>"},
+    {"id": "c", "content": "<p>cause most creators who use the model to lower the suggested prices of their works over time.</p>"},
+    {"id": "d", "content": "<p>more strongly reflect differences in certain creators' popularity than traditional pricing models do.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. One example shows disappointing earnings (Inkwell Brothers), the other strong earnings (Patel) — so the outcomes vary by creator.</p><p>Choice A contradicts the examples (the duo did worse than the individual). Choice C imagines a price-lowering behavior not mentioned. Choice D mentions popularity, which the text doesn't discuss.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A2.T4.easy"
+}

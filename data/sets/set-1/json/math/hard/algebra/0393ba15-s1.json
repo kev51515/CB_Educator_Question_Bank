@@ -1,0 +1,39 @@
+{
+  "questionId": "0393ba15-s1",
+  "originalId": "0393ba15",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>&minus;56<i>x</i> = &minus;84<i>x</i></p><p>How many solutions does the given equation have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Adding 84<i>x</i> to both sides gives 28<i>x</i> = 0, so <i>x</i> = 0 is the unique solution.</p><p>Choices A and D would require the equation to be a contradiction or an identity, respectively, neither of which is the case. A linear equation cannot have exactly two solutions.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T8.hard"
+}

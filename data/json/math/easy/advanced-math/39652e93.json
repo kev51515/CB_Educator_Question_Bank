@@ -1,0 +1,70 @@
+{
+  "questionId": "39652e93",
+  "externalId": "b0ead772-4a2d-45aa-95e5-204e1ccfdb59",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1730147357401,
+  "createDate": 1730147357401,
+  "scrapedAt": "2026-05-25T12:09:25.619250+00:00",
+  "type": "mcq",
+  "stem": "<p style=\"text-align: left;\">The function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by&nbsp;<math alttext=\"f left parenthesis x right parenthesis equals StartFraction 16 Over x EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mfrac><mn>16</mn><mi>x</mi></mfrac></math>. What is the value of&nbsp;<math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>?</p>",
+  "answerOptions": [
+    {
+      "content": "<p><math alttext=\"StartFraction 16 Over 17 EndFraction\"><mfrac><mn>16</mn><mn>17</mn></mfrac></math></p>",
+      "id": "117cd229-0cd8-44f0-8f98-9e3bb49191a5"
+    },
+    {
+      "content": "<p><math alttext=\"StartFraction 17 Over 16 EndFraction\"><mfrac><mn>17</mn><mn>16</mn></mfrac></math></p>",
+      "id": "0ecd62d7-dd60-48ba-80a8-2e6b9b60cc0d"
+    },
+    {
+      "content": "<p><math alttext=\"16\"><mn>16</mn>\n</math></p>",
+      "id": "5a15ba98-5028-44df-9d25-d48ff4017afd"
+    },
+    {
+      "content": "<p><math alttext=\"17\"><mn>17</mn>\n</math></p>",
+      "id": "0af5ca96-c05a-49a6-89bd-cdde69139573"
+    }
+  ],
+  "keys": [
+    "117cd229-0cd8-44f0-8f98-9e3bb49191a5"
+  ],
+  "rationale": "<p style=\"text-align: left;\">Choice A is correct. It's given that <math alttext=\"f left parenthesis x right parenthesis equals StartFraction 16 Over x EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mfrac><mn>16</mn><mi>x</mi></mfrac></math>. Substituting <math alttext=\"17\"><mn>17</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in this function yields <math alttext=\"f left parenthesis 17 right parenthesis equals StartFraction 16 Over 17 EndFraction\"><mi>f</mi><mfenced><mn>17</mn></mfenced><mo>=</mo><mfrac><mn>16</mn><mn>17</mn></mfrac></math>. Therefore, when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>, the value of <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> is <math alttext=\"StartFraction 16 Over 17 EndFraction\"><mfrac><mn>16</mn><mn>17</mn></mfrac></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect. This is the value of the reciprocal of <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. This is the value of <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> when <math alttext=\"x equals 1\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>1</mn>\n</mrow>\n</math>.</p>\n<p style=\"text-align: left;\">Choice D is incorrect. This is the value of <math alttext=\"x\"><mi>x</mi>\n</math> when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>.</p>",
+  "raw": {
+    "answerOptions": [
+      {
+        "content": "<p><math alttext=\"StartFraction 16 Over 17 EndFraction\"><mfrac><mn>16</mn><mn>17</mn></mfrac></math></p>",
+        "id": "117cd229-0cd8-44f0-8f98-9e3bb49191a5"
+      },
+      {
+        "content": "<p><math alttext=\"StartFraction 17 Over 16 EndFraction\"><mfrac><mn>17</mn><mn>16</mn></mfrac></math></p>",
+        "id": "0ecd62d7-dd60-48ba-80a8-2e6b9b60cc0d"
+      },
+      {
+        "content": "<p><math alttext=\"16\"><mn>16</mn>\n</math></p>",
+        "id": "5a15ba98-5028-44df-9d25-d48ff4017afd"
+      },
+      {
+        "content": "<p><math alttext=\"17\"><mn>17</mn>\n</math></p>",
+        "id": "0af5ca96-c05a-49a6-89bd-cdde69139573"
+      }
+    ],
+    "externalid": "b0ead772-4a2d-45aa-95e5-204e1ccfdb59",
+    "keys": [
+      "117cd229-0cd8-44f0-8f98-9e3bb49191a5"
+    ],
+    "rationale": "<p style=\"text-align: left;\">Choice A is correct. It's given that <math alttext=\"f left parenthesis x right parenthesis equals StartFraction 16 Over x EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mfrac><mn>16</mn><mi>x</mi></mfrac></math>. Substituting <math alttext=\"17\"><mn>17</mn>\n</math> for <math alttext=\"x\"><mi>x</mi>\n</math> in this function yields <math alttext=\"f left parenthesis 17 right parenthesis equals StartFraction 16 Over 17 EndFraction\"><mi>f</mi><mfenced><mn>17</mn></mfenced><mo>=</mo><mfrac><mn>16</mn><mn>17</mn></mfrac></math>. Therefore, when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>, the value of <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> is <math alttext=\"StartFraction 16 Over 17 EndFraction\"><mfrac><mn>16</mn><mn>17</mn></mfrac></math>.</p>\n<p style=\"text-align: left;\">Choice B is incorrect. This is the value of the reciprocal of <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>.</p>\n<p style=\"text-align: left;\">Choice C is incorrect. This is the value of <math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> when <math alttext=\"x equals 1\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>1</mn>\n</mrow>\n</math>.</p>\n<p style=\"text-align: left;\">Choice D is incorrect. This is the value of <math alttext=\"x\"><mi>x</mi>\n</math> when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>.</p>",
+    "stem": "<p style=\"text-align: left;\">The function <math alttext=\"f\"><mi>f</mi>\n</math> is defined by&nbsp;<math alttext=\"f left parenthesis x right parenthesis equals StartFraction 16 Over x EndFraction\"><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mfrac><mn>16</mn><mi>x</mi></mfrac></math>. What is the value of&nbsp;<math alttext=\"f left parenthesis x right parenthesis\"><mi>f</mi><mfenced><mi>x</mi></mfenced></math> when <math alttext=\"x equals 17\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>17</mn>\n</mrow>\n</math>?</p>",
+    "type": "mcq",
+    "correct_answer": [
+      "A"
+    ]
+  }
+}

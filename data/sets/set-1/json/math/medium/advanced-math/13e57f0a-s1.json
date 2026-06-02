@@ -1,0 +1,39 @@
+{
+  "questionId": "13e57f0a-s1",
+  "originalId": "13e57f0a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p>&minus;3y<sup>2</sup> &minus; 5y = &minus;28</p>",
+  "stem": "<p>What is a positive solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5/3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7/3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Rearrange: 3y<sup>2</sup> + 5y &minus; 28 = 0. Factor: (3y &minus; 7)(y + 4) = 0 yields y = 7/3 or y = &minus;4. The positive solution is 7/3. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium"
+}

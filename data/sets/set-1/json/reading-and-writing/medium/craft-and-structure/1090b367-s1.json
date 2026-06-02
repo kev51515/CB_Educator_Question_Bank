@@ -1,0 +1,25 @@
+{
+  "questionId": "1090b367-s1",
+  "originalId": "1090b367",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>Today choreographer Pearl Primus is mainly remembered for her bold solo dances &ldquo;Strange Fruit&rdquo; and &ldquo;Hard Time Blues.&rdquo; However, by overlooking her lesser-known group works, audiences will miss the full scope of Primus's vision. For instance, her ensemble piece &ldquo;Fanga&rdquo; and her staged suite <em>African Ceremonial</em> richly weave West African dance traditions with American modern technique. These compositions deserve as much recognition as Primus's most famous solos.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To describe the resemblances and differences between West African dance and American modern dance</p>"},
+    {"id": "b", "content": "<p>To recommend that dance audiences attend performances by a wide range of choreographers</p>"},
+    {"id": "c", "content": "<p>To argue that Primus's less famous group works deserve greater recognition</p>"},
+    {"id": "d", "content": "<p>To explain how Primus learned to create and perform her best-known solo dances</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text opens by noting Primus's most celebrated solos, then asserts that overlooking her group works obscures the full scope of her vision, and closes by claiming that two specific ensemble pieces deserve as much recognition as her famous solos. The arc is an argument that her lesser-known group works should receive more attention.</p><p>Choice A is incorrect because, although the text mentions that &ldquo;Fanga&rdquo; blends two dance traditions, it does not undertake a general comparison of West African and American modern dance. Choice B is incorrect because the text concerns Primus's own work and does not urge audiences to seek out many different choreographers. Choice D is incorrect because the text does not describe how Primus learned her craft; it focuses on the relative neglect of her group pieces.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

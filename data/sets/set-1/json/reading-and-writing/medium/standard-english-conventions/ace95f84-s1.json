@@ -1,0 +1,25 @@
+{
+  "questionId": "ace95f84-s1",
+  "originalId": "ace95f84",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>By measuring the relative abundance of certain isotopes in a tooth, scientists can estimate where an animal lived during particular phases of its life. When tooth enamel is unavailable, researchers turn to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> analysis of compounds locked inside bone collagen (a structural protein)&mdash;to infer geographic origin from chemical signatures preserved in the skeleton.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>bioarchaeometry, the</p>"},
+    {"id": "b", "content": "<p>bioarchaeometry: the</p>"},
+    {"id": "c", "content": "<p>bioarchaeometry (the</p>"},
+    {"id": "d", "content": "<p>bioarchaeometry&mdash;the</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The dash after \"bioarchaeometry\" pairs with the dash after \"(a structural protein)\" to enclose the supplementary element \"the analysis of compounds locked inside bone collagen (a structural protein)\" symmetrically with matched dashes.</p><p>Choice A is incorrect because a comma cannot pair with a closing dash to set off a supplementary element. Choice B is incorrect because a colon cannot pair with a closing dash in this way. Choice C is incorrect because an opening parenthesis cannot pair with a closing dash.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "aad56f2b-s1",
+  "originalId": "aad56f2b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>As a young filmmaker in the 1970s, Agnès Varda <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the conventions of cinema by mixing documentary and fiction in the same film and including handheld, unsteady shots—features that critics often dismissed as careless. So unusual was Varda’s approach that she initially had difficulty finding distributors.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>broke from</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>reviewed</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>respected</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>concealed</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"broke from\" means to depart from, matching the description of Varda mixing genres and using unconventional techniques. Choice B is incorrect because reviewing is too passive. Choice C is incorrect because respecting conventions contradicts her unusual approach. Choice D is incorrect because concealing isn’t mentioned.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

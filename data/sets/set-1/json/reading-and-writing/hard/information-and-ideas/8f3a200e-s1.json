@@ -1,0 +1,39 @@
+{
+  "questionId": "8f3a200e-s1",
+  "originalId": "8f3a200e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Some astrobiologists searching for signs of extraterrestrial life have proposed that atmospheric CH<sub>3</sub>Cl (methyl chloride) can serve as a biosignature gas&mdash;a marker indicating that a planet may host life. Sukrit Ranjan and colleagues examined this possibility, finding that on rocky planets orbiting cool dwarf stars, CH<sub>3</sub>Cl produced by oceanic microbes could in principle accumulate to detectable concentrations because such stars emit relatively little ultraviolet radiation, and ultraviolet light is what ordinarily destroys CH<sub>3</sub>Cl in planetary atmospheres. Around hotter stars, by contrast, the gas would break down too quickly to be a reliable indicator.</p>",
+  "stem": "<p>Based on the text, Ranjan and colleagues would most likely agree with which statement about atmospheric CH<sub>3</sub>Cl?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is the most reliable biosignature gas for use in searches for life around any kind of star.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is more readily produced by oceanic microbes than by terrestrial microbes.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is unlikely ever to accumulate to detectable levels in the atmosphere of any rocky planet.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Its usefulness as a biosignature depends in part on the type of star a planet orbits.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says CH<sub>3</sub>Cl could accumulate to detectable levels around cool dwarf stars because such stars emit little ultraviolet light, but around hotter stars the gas breaks down too quickly to serve as a reliable indicator. Ranjan and colleagues would thus agree that its usefulness as a biosignature depends on the host star.</p><p>Choice A is incorrect because the text says CH<sub>3</sub>Cl is not reliable around hotter stars. Choice B is incorrect because the text doesn&rsquo;t compare microbe types. Choice C is incorrect because the text says the gas could in principle accumulate around cool dwarfs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

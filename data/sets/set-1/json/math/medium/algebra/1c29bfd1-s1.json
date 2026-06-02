@@ -1,0 +1,39 @@
+{
+  "questionId": "1c29bfd1-s1",
+  "originalId": "1c29bfd1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The pressure exerted on a scuba diver at sea level is 14.70 pounds per square inch (psi). For each foot the scuba diver descends below sea level, the pressure exerted on the scuba diver increases by 0.43 psi. What is the total pressure, in psi, exerted on the scuba diver at 80 feet below sea level?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>34.40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14.70</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>49.10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.43</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Total pressure = sea-level pressure + (rate per foot)(depth) = 14.70 + 0.43(80) = 14.70 + 34.40 = 49.10 psi. Choice A omits the sea-level pressure. Choice B is only the sea-level pressure. Choice D is the rate of increase per foot.</p>",
+  "templateId": "linear-functions.A1.T1.medium"
+}

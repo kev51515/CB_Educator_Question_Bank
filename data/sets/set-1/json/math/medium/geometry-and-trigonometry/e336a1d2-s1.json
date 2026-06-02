@@ -1,0 +1,39 @@
+{
+  "questionId": "e336a1d2-s1",
+  "originalId": "e336a1d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A cube has an edge length of 23 inches. What is the volume, in cubic inches, of the cube?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>529</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12,167</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3,174</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>69</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The volume V of a cube with edge length s is V = s<sup>3</sup>. Substituting s = 23 yields V = 23<sup>3</sup> = 12,167 cubic inches. Choice A is the area of one face. Choice C corresponds to 6 times the area of a face (surface area). Choice D is three times the edge length.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "04cbeca3-s1",
+  "originalId": "04cbeca3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>In 1763, after the Seven Years&rsquo; War, the British government issued the Royal Proclamation, which barred colonial settlement west of the Appalachian Mountains and reserved that territory for Indigenous nations. Some historians argue that the proclamation was motivated primarily by fiscal concerns, namely a desire to reduce the costs of defending an expanding frontier.</p>",
+  "stem": "<p>Which quotation from a scholarly article would best support the assertion of the historians mentioned in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;Indigenous leaders had warned colonial officials repeatedly during the preceding decade that unregulated westward expansion would lead to renewed violence on the frontier.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Many colonists, particularly those in Virginia and Pennsylvania, openly defied the proclamation within a few years of its issuance.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;The proclamation also imposed new structures for the administration of newly acquired territories in Canada and Florida, reflecting broader reforms of colonial governance.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;Internal Treasury memoranda from late 1762 estimated that maintaining garrisons beyond the Appalachians would consume nearly a quarter of projected colonial expenditures, and ministers explicitly cited these projections when drafting the western-boundary clause.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it directly ties the boundary clause of the proclamation to fiscal projections about frontier garrison costs, exactly the financial motivation the historians describe. Choice A speaks to security concerns from Indigenous nations, not Crown finances. Choice B describes colonial reaction, not motivation. Choice C describes other reforms in the proclamation without addressing why the western boundary was set.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A2.T3.hard"
+}

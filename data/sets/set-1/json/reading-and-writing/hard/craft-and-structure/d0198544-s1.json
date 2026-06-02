@@ -1,0 +1,39 @@
+{
+  "questionId": "d0198544-s1",
+  "originalId": "d0198544",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>In 2009, a team led by Daniel Renfrew analyzed sweet potato remains discovered in an archaeological deposit on Mangaia, Cook Islands, dating them to 1180&ndash;1260 CE&mdash;over two centuries before European voyages reached the central Pacific, bringing crops from the Americas. Renfrew also found that the Mangaia sweet potatoes carried a distinctive chloroplast haplotype shared with ancient varieties grown along the Andean coast. Thus, <u>Polynesian voyagers, not later Europeans, probably first introduced sweet potatoes to the islands of the central Pacific.</u></p>\n<p><strong>Text 2</strong></p>\n<p>A European research group later weakened the case for an Andean origin for the Mangaia sweet potatoes by confirming that Renfrew's chloroplast haplotype is in fact found in sweet potato varieties from many parts of the world. More recently, however, a team led by Ana\u00efs Ramos-Vidal found that Polynesian sweet potato varieties and Andean varieties share several nuclear DNA markers that Caribbean and Mesoamerican varieties lack. Thus, the preponderance of evidence now favors a Polynesian-Andean exchange.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By broadly agreeing with the claim but objecting that its timeline conflicts with the findings of Renfrew's genetic analysis</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By noting that while the claim is persuasive, the findings of Ramos-Vidal's team provide stronger evidence for it than the findings of Renfrew's analysis do</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By faulting the claim for implying that domesticated plants couldn't also have been transferred from the central Pacific to South America</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By critiquing the claim for being based on an assumption that, before European voyaging, Caribbean and Mesoamerican sweet potato varieties were genetically uniform</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Text 1 cites a single distinctive haplotype as evidence for the underlined claim. Text 2 explains that this haplotype is widespread, undercutting it as evidence, but adds that Ramos-Vidal's team identified multiple nuclear DNA markers shared by Polynesian and Andean varieties but absent in Caribbean and Mesoamerican ones. The author of Text 2 would therefore agree with the underlined claim while regarding Ramos-Vidal's findings as stronger evidence than Renfrew's.</p><p>Choice A is incorrect because nothing in Text 2 disputes the timeline of Text 1. Choice C is incorrect because both texts focus on directionality of exchange but neither suggests transfer was one-way. Choice D is incorrect because the criticism in Text 2 concerns the strength of the haplotype evidence, not assumptions about Caribbean and Mesoamerican varieties' uniformity.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "04bfd364-s1",
+  "originalId": "04bfd364",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": "<p>The extreme cold encountered in polar lakes can damage the membranes of microbes living in the water, disrupting normal cell function. A class of molecules called antifreeze glycoproteins (AFGPs) prevents this damage by binding to small ice crystals and stopping them from ______ are produced in unusually large amounts in the cells of polar-adapted bacteria.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>growing AFGPs</p>"},
+    {"id": "b", "content": "<p>growing and AFGPs</p>"},
+    {"id": "c", "content": "<p>growing, AFGPs</p>"},
+    {"id": "d", "content": "<p>growing. AFGPs</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. A period correctly marks the boundary between the two independent clauses (\"A class...growing\" and \"AFGPs...bacteria\").</p><p>Choice A creates a run-on with no punctuation. Choice B uses \"and\" without a comma to join two independent clauses, creating a comma splice when paired with no preceding comma — improper conjunction use here. Choice C creates a comma splice. </p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "213a25d1-s1",
+  "originalId": "213a25d1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is from James Weldon Johnson's 1917 poem &ldquo;The Lantern.&rdquo;</p>\n<blockquote class=\"dap_poemexcerpt\">\n<p>A lantern is so slight a thing,</p>\n<p>And yet what cheer its wick can bring!</p>\n<p>In days of work it warms my breast,</p>\n<p>And when at dusk I crave for rest;</p>\n<p>When carts come home along the lane,</p>\n<p style=\"padding-left: 1em;\">And in the yard I hear the gate,</p>\n<p>As Dusk, the keeper, tends his flame,</p>\n<p style=\"padding-left: 1em;\">I light my lantern, and all is right.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To portray the speaker's longing for the rural countryside</p>"},
+    {"id": "b", "content": "<p>To convey how the simple act of lighting a lantern affects the speaker</p>"},
+    {"id": "c", "content": "<p>To compare the speaker to a wandering lamplighter</p>"},
+    {"id": "d", "content": "<p>To describe the chores the speaker performs at the end of each day</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text opens by declaring that a lantern is &ldquo;so slight a thing&rdquo; yet brings &ldquo;cheer,&rdquo; that it warms the speaker in days of work and in the evening when rest is craved. The closing lines repeat that by lighting the lantern the speaker feels &ldquo;all is right.&rdquo; The text as a whole is concerned with how this small act affects the speaker.</p><p>Choice A is incorrect because the rural details (carts, lanes, yards) serve as the setting in which the speaker lights the lantern, not as objects of longing. Choice C is incorrect because the &ldquo;keeper&rdquo; named in the poem is a figurative description of dusk, not a literal lamplighter the speaker is compared to. Choice D is incorrect because the text focuses on the speaker's feelings tied to the lantern, not on a list of end-of-day chores.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,23 @@
+{
+  "questionId": "97e50fa2-s1",
+  "originalId": "97e50fa2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = &minus;(1/3)(<i>x</i> &minus; 6)&sup2; + 12, and the function <i>g</i> is defined by <i>g</i>(<i>x</i>) = &minus;<i>x</i> + 12. What is one possible value of <i>a</i> such that <i>f</i>(<i>a</i>) = <i>g</i>(<i>a</i>)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3",
+    "12"
+  ],
+  "rationale": "<p>Setting <i>f</i>(<i>a</i>) = <i>g</i>(<i>a</i>): &minus;(1/3)(<i>a</i> &minus; 6)&sup2; + 12 = &minus;<i>a</i> + 12. Subtracting 12 from both sides: &minus;(1/3)(<i>a</i> &minus; 6)&sup2; = &minus;<i>a</i>. Multiplying by &minus;3: (<i>a</i> &minus; 6)&sup2; = 3<i>a</i>. Expanding: <i>a</i>&sup2; &minus; 12<i>a</i> + 36 = 3<i>a</i>, so <i>a</i>&sup2; &minus; 15<i>a</i> + 36 = 0. Factoring: (<i>a</i> &minus; 3)(<i>a</i> &minus; 12) = 0, so <i>a</i> = 3 or <i>a</i> = 12.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6bc0ba75-s1",
+  "originalId": "6bc0ba75",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The tamarisk shrub evolved in central Asia, where the leaf beetle <em>Diorhabda elongata</em> feeds on its foliage. In 1823, tamarisks were brought to the American Southwest as ornamentals, well beyond the natural range of <em>D. elongata</em>. <u>But evolutionary partnerships between herbivores and their host plants can persist across continents and centuries.</u> Around 2001, after deliberate introductions for biocontrol, <em>D. elongata</em> populations established themselves along several southwestern rivers and now show damage rates on tamarisk strikingly similar to those documented in its native range&mdash;findings that a team led by Sun Jianhua treats as a textbook case of host&ndash;herbivore reunion.</p>",
+  "stem": "<p>Which choice best describes the function of the third sentence in the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It states the hypothesis that Sun and colleagues had set out to test using tamarisk and <em>D. elongata</em>.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It provides context that clarifies why the species mentioned spread to new locations.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It presents a generalization that is illustrated by the discussion of tamarisk and <em>D. elongata</em>.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It offers an alternative explanation for the findings of Sun and colleagues.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The third sentence makes a broad claim&mdash;that evolutionary partnerships between herbivores and host plants can survive across continents and centuries. The surrounding sentences (tamarisk's journey from central Asia to the Southwest, and the eventual reunion with <em>D. elongata</em>) function as the specific example that illustrates this generalization.</p><p>Choice A is incorrect because the sentence is a general principle, not a hypothesis being tested. Choice B is incorrect because the sentence does not explain why the species moved; it speaks to relationships persisting across distance. Choice D is incorrect because the sentence supports rather than competes with the team's interpretation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T5.hard"
+}

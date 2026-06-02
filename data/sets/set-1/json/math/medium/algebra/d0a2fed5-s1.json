@@ -1,0 +1,22 @@
+{
+  "questionId": "d0a2fed5-s1",
+  "originalId": "d0a2fed5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If (3/5)q + 12 = 39, what is the value of 4q?</p>",
+  "answerOptions": [],
+  "keys": [
+    "180"
+  ],
+  "rationale": "<p>Subtract 12: (3/5)q = 27. Multiply both sides by 5/3: q = 45. Then 4q = 180.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "121dc44f-s1",
+  "originalId": "121dc44f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population of Town B increased by 4% from 2018 to 2019. If the 2019 population is <em>m</em> times the 2018 population, what is the value of <em>m</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.04</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1.4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.04</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A 4% increase means the 2019 population is 100% + 4% = 104% of the 2018 population. Writing 104% as a decimal gives 1.04, so the 2019 population equals 1.04 times the 2018 population, and <em>m</em>=1.04. Choice A is incorrect because 0.4 would represent the 2019 population being 40% of the 2018 population. Choice B is incorrect because 0.04 would represent the 2019 population being only 4% of the 2018 population. Choice C is incorrect because 1.4 would represent a 40% increase, not 4%.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T4.medium"
+}

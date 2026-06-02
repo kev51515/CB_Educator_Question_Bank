@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 6 data points trending up from left to right. A line of best fit passes through the approximate coordinates (0, 5), (6, 11), and (10, 15). Which of the following equations best represents the line of best fit shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = \u2212x + 5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = x \u2212 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = \u2212x \u2212 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = x + 5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Slope = (11 \u2212 5)/(6 \u2212 0) = 1; y-intercept = 5. So the line of best fit is y = x + 5.</p><p>The other choices have wrong sign of slope or y-intercept.</p>",
+  "questionId": "c5ee6ac0-s1",
+  "originalId": "c5ee6ac0",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy"
+}

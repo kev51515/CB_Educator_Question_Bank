@@ -1,0 +1,22 @@
+[
+  {"id": "5cf1bbc9-s1", "templateId": "linear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "441558e7-s1", "templateId": "linear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "dae126d7-s1", "templateId": "linear-functions.A3.T3.medium", "verdict": "ok"},
+  {"id": "af711d1b-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "c1bd5301-s1", "templateId": "linear-functions.A3.T3.medium", "verdict": "ok"},
+  {"id": "a775af14-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "c8fb6bcb-s1", "templateId": "linear-functions.A1.T2.medium", "verdict": "ok"},
+  {"id": "548a4929-s1", "templateId": "linear-functions.A1.T3.medium", "verdict": "ok"},
+  {"id": "b2fe7ab6-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "113b938e-s1", "templateId": "linear-functions.A2.T3.medium", "verdict": "ok"},
+  {"id": "271f7e3f-s1", "templateId": "linear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "6c5c2a81-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "1bc11c4e-s1", "templateId": "linear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "63d03c0b-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "023c0a8d-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "67d63e19-s1", "templateId": "linear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "a7e2859a-s1", "templateId": "linear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "b988eeec-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "78391fcc-s1", "templateId": "linear-functions.A1.T5.hard", "verdict": "ok"},
+  {"id": "50f4cb9c-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"}
+]

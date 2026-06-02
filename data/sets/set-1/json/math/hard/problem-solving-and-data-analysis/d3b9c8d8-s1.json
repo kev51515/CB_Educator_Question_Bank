@@ -1,0 +1,39 @@
+{
+  "questionId": "d3b9c8d8-s1",
+  "originalId": "d3b9c8d8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two box plots labeled Group 1 and Group 2 show the masses (in kilograms) of antelope in each group. The number line ranges from 18 to 30. For Group 1: minimum 19, Q1 = 22, median = 26, Q3 = 28, maximum = 30. For Group 2: minimum 18, Q1 = 23, median = 27, Q3 = 29, maximum = 30. Which of the following statements must be true based on the box plots?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The median mass of group 1 is less than the median mass of group 2.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The mean mass of group 1 is less than the mean mass of group 2.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The median mass of group 1 is greater than the median mass of group 2.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The mean mass of group 1 is greater than the mean mass of group 2.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The median of a box plot is the vertical line inside the box. Group 1's median is 26 kg; group 2's median is 27 kg. Since 26 &lt; 27, the median mass of group 1 is less than the median mass of group 2. The means cannot be determined from a box plot, so the statements about means are not necessarily true.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.hard"
+}

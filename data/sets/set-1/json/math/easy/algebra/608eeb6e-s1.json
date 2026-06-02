@@ -1,0 +1,39 @@
+{
+  "questionId": "608eeb6e-s1",
+  "originalId": "608eeb6e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>6x = 18</p><p>2x + y = 11</p><p>The solution to the given system of equations is (x, y). What is the value of x - y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. From 6x = 18, x = 3. Then 6 + y = 11 gives y = 5. So x - y = -2.</p><p>Other choices result from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.easy"
+}

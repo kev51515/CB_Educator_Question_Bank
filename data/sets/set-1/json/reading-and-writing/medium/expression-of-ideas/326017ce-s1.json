@@ -1,0 +1,25 @@
+{
+  "questionId": "326017ce-s1",
+  "originalId": "326017ce",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>For years, engineers have tested mycelium-based composites in place of synthetic foams for shock-absorbing packaging, and the results have been encouraging overall. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> these fungal materials—which can be grown around custom-shaped forms in a matter of days and then composted at the end of their service life—have outperformed petroleum-derived foams in repeated drop and compression tests.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>Moreover,</p>"},
+    {"id": "c", "content": "<p>In several cases,</p>"},
+    {"id": "d", "content": "<p>Therefore,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The first sentence makes the claim that mycelium-based composites have produced \"encouraging results.\" This sentence supports that claim by describing specific findings of the engineers' tests. The transition \"in several cases\" fits the context perfectly.</p><p>Choice A is incorrect. \"However\" is a disagreement transition, but this sentence actually agrees with the previous one. Both claim that mycelium composites are performing well against petroleum-derived foams. Choice B is incorrect. \"Moreover\" introduces a new, additional idea, but this sentence doesn't introduce a new idea; it elaborates on the same encouraging results already mentioned. Choice D is incorrect. \"Therefore\" indicates cause and effect, but the fact that results have been encouraging overall is not what causes the mycelium composites to be more effective—the sentence simply specifies how that encouraging performance has manifested.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

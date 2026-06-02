@@ -1,0 +1,39 @@
+{
+  "questionId": "2266984b-s1",
+  "originalId": "2266984b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation x&sup2; + y&sup2; + 6x &minus; 10y = 30 defines a circle in the xy-plane. What are the coordinates of the center of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(&minus;3, 5)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(3, &minus;5)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(&minus;6, 10)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(6, &minus;10)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Complete the square: (x&sup2; + 6x) + (y&sup2; &minus; 10y) = 30, so (x + 3)&sup2; &minus; 9 + (y &minus; 5)&sup2; &minus; 25 = 30, which gives (x + 3)&sup2; + (y &minus; 5)&sup2; = 64. The center is (&minus;3, 5).</p><p>Choice B negates both coordinates. Choices C and D use the unhalved coefficients.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T4.medium"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "772835db",
+  "externalId": "931dceb0-251c-469c-8475-e8b6fad3b219",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:23:11.067933+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "1e670f04-9419-40df-b303-bf7992a786f3",
+      "content": "<p>ice <span data-ssml-say-as=\"characters\">Ih</span> contains crystals, whereas amorphous ice, which lacks the thermal energy to form them, does not.</p>"
+    },
+    {
+      "id": "938671f4-dbce-4418-afc4-056861d4cd76",
+      "content": "<p>amorphous ice lacks the thermal energy to form the crystals found in ice <span data-ssml-say-as=\"characters\">Ih</span>.</p>"
+    },
+    {
+      "id": "da64bc30-570d-4e72-8e01-29ce2874121f",
+      "content": "<p>the lack of thermal energy in amorphous ice explains its inability to form the crystals found in ice <span data-ssml-say-as=\"characters\">Ih</span>.</p>"
+    },
+    {
+      "id": "a31b56d7-dd3c-46ec-b141-dafe98ceb388",
+      "content": "<p>ice <span data-ssml-say-as=\"characters\">Ih</span> differs from amorphous ice in that it possesses the thermal energy to form crystals.</p>"
+    }
+  ],
+  "keys": [
+    "938671f4-dbce-4418-afc4-056861d4cd76"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;amorphous ice&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;defined&hellip;structure.&rdquo; In doing so, this choice clearly establishes that amorphous ice&mdash;and not another noun in the sentence&mdash;is being described as having a disorganized molecular structure.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of the noun &ldquo;ice Ih&rdquo; immediately after the modifying phrase illogically suggests that ice Ih has a disorganized molecular structure, whereas ice Ih is previously described as having molecules that form a hexagonal pattern. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the lack of thermal energy&rdquo; immediately after the modifying phrase illogically suggests that the lack of thermal energy has a disorganized molecular structure. Choice D is incorrect because it results in a dangling modifier. The placement of &ldquo;ice Ih&rdquo; immediately after the modifying phrase illogically suggests that ice Ih has a disorganized molecular structure, whereas ice Ih is previously described as having molecules that form a hexagonal pattern.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Most of the ice found on Earth is ice <span data-ssml-say-as=\"characters\">Ih</span>, distinguished by a crystalline structure in which molecules form a hexagonal pattern. Amorphous ice, on the other hand, constitutes most of the ice in the ultrafrigid environment of outer space. Defined by a disorganized molecular structure, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "938671f4-dbce-4418-afc4-056861d4cd76"
+    ],
+    "answerOptions": [
+      {
+        "id": "1e670f04-9419-40df-b303-bf7992a786f3",
+        "content": "<p>ice <span data-ssml-say-as=\"characters\">Ih</span> contains crystals, whereas amorphous ice, which lacks the thermal energy to form them, does not.</p>"
+      },
+      {
+        "id": "938671f4-dbce-4418-afc4-056861d4cd76",
+        "content": "<p>amorphous ice lacks the thermal energy to form the crystals found in ice <span data-ssml-say-as=\"characters\">Ih</span>.</p>"
+      },
+      {
+        "id": "da64bc30-570d-4e72-8e01-29ce2874121f",
+        "content": "<p>the lack of thermal energy in amorphous ice explains its inability to form the crystals found in ice <span data-ssml-say-as=\"characters\">Ih</span>.</p>"
+      },
+      {
+        "id": "a31b56d7-dd3c-46ec-b141-dafe98ceb388",
+        "content": "<p>ice <span data-ssml-say-as=\"characters\">Ih</span> differs from amorphous ice in that it possesses the thermal energy to form crystals.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;amorphous ice&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;defined&hellip;structure.&rdquo; In doing so, this choice clearly establishes that amorphous ice&mdash;and not another noun in the sentence&mdash;is being described as having a disorganized molecular structure.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of the noun &ldquo;ice Ih&rdquo; immediately after the modifying phrase illogically suggests that ice Ih has a disorganized molecular structure, whereas ice Ih is previously described as having molecules that form a hexagonal pattern. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the lack of thermal energy&rdquo; immediately after the modifying phrase illogically suggests that the lack of thermal energy has a disorganized molecular structure. Choice D is incorrect because it results in a dangling modifier. The placement of &ldquo;ice Ih&rdquo; immediately after the modifying phrase illogically suggests that ice Ih has a disorganized molecular structure, whereas ice Ih is previously described as having molecules that form a hexagonal pattern.</p>",
+    "externalid": "931dceb0-251c-469c-8475-e8b6fad3b219",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Most of the ice found on Earth is ice <span data-ssml-say-as=\"characters\">Ih</span>, distinguished by a crystalline structure in which molecules form a hexagonal pattern. Amorphous ice, on the other hand, constitutes most of the ice in the ultrafrigid environment of outer space. Defined by a disorganized molecular structure, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

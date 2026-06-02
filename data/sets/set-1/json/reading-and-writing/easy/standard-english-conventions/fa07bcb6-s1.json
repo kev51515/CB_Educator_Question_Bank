@@ -1,0 +1,39 @@
+{
+  "questionId": "fa07bcb6-s1",
+  "originalId": "fa07bcb6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Yodeling is a folk singing tradition that developed in the Alpine regions of central Europe. Yodelers rapidly alternate between low chest tones and high falsetto tones. These calls can carry long distances across the mountains, which is why <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>yodeling has been used as a long-distance signal<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>yodeling has been used as a long-distance signal<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>has yodeling been used as a long-distance signal<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>has yodeling been used as a long-distance signal<span data-ssml-say-as=\"characters\">?</span></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is end-of-sentence punctuation. The sentence as a whole is a declarative statement explaining why yodeling has been used as a signal; the clause after \"which is why\" is an embedded clause with declarative word order. A period is the appropriate end punctuation.</p><p>Choice B is incorrect because a question mark can't end a declarative sentence. Choice C is incorrect because the inverted word order \"has yodeling been\" belongs to a direct question, not an embedded clause. Choice D is incorrect for the same reason.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "fc3d783a-s1",
+  "originalId": "fc3d783a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, a line with equation 2<i>y</i> = 8 intersects a parabola at exactly one point. If the parabola has equation <i>y</i> = &minus;9<i>x</i>&sup2; + <i>b</i><i>x</i>, where <i>b</i> is a positive constant, what is the value of <i>b</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The line <i>y</i> = 4 intersects <i>y</i> = &minus;9<i>x</i>&sup2; + <i>b</i><i>x</i> exactly once when &minus;9<i>x</i>&sup2; + <i>b</i><i>x</i> &minus; 4 = 0 has a single solution. Setting the discriminant to zero: <i>b</i>&sup2; &minus; 4(&minus;9)(&minus;4) = 0, so <i>b</i>&sup2; = 144, and since <i>b</i> &gt; 0, <i>b</i> = 12.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

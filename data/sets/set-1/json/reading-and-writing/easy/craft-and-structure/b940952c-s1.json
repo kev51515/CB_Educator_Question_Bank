@@ -1,0 +1,39 @@
+{
+  "questionId": "b940952c-s1",
+  "originalId": "b940952c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Drawing on extensive measurements of distant supernovae, cosmologists in the late 1990s proposed that the expansion of the universe is accelerating rather than slowing down, attributing this acceleration to a mysterious form of energy. This <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> has since been corroborated by independent observations of the cosmic microwave background.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>readout</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>hypothesis</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>routine</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>simulation</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because a \"hypothesis\" is a proposed explanation supported by reasoning and prior data, exactly what the cosmologists put forward in the 1990s and what was later corroborated. Choice A is incorrect because a \"readout\" is a direct measurement display, not a proposed explanation. Choice C is incorrect because \"routine\" suggests a regular procedure rather than an explanatory claim. Choice D is incorrect because a \"simulation\" is a modeled imitation of a process; the cosmologists' proposal, though informed by models, is the explanatory claim about acceleration, not the imitation itself.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

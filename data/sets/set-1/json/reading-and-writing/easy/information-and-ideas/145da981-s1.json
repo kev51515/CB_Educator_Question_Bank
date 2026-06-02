@@ -1,0 +1,39 @@
+{
+  "questionId": "145da981-s1",
+  "originalId": "145da981",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Effect of Streaming Service Launch on Cable Networks' Revenues</p></caption><thead><tr><th>Network</th><th>Total revenue change ($ in thousands)</th><th>Percentage change (%)</th><th>Network size</th></tr></thead><tbody><tr><th><em>Apex Sports</em></th><td>185,420</td><td>18.4</td><td>large</td></tr><tr><th><em>Coastal Movies</em></th><td>74,510</td><td>11.2</td><td>large</td></tr><tr><th><em>Highland Local News</em></th><td>\u22124,250</td><td>\u22122</td><td>small</td></tr><tr><th><em>Plains Public Channel</em></th><td>\u221218,640</td><td>\u22129.8</td><td>small</td></tr><tr><th><em>Metro Family Network</em></th><td>82,300</td><td>15.7</td><td>large</td></tr></tbody></table></figure></p><p>Streaming services restrict access to certain shows to those with a paid subscription. In an investigation of the effect of launching a streaming service on cable network revenues for subscriptions and advertising, Devon Park and colleagues compared actual outcomes (with a streaming service) to control estimates (without a streaming service). The researchers concluded that launching a streaming service is generally more beneficial for larger cable networks, which have wider audiences and tend to own substantial original programming.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Park and colleagues' conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>Apex Sports</em> had an 18.4% revenue change, while <em>Highland Local News</em> had a \u22122% revenue change.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>Highland Local News</em> had only a \u22122% revenue change, which was the smallest percentage change of the selected networks.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The <em>Metro Family Network</em> and <em>Coastal Movies</em> had similar total revenue changes, but <em>Coastal Movies</em> had a smaller percentage change.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>Coastal Movies</em> had an 11.2% revenue change, while <em>Apex Sports</em> had an 18.4% revenue change.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The conclusion is that streaming services benefit larger networks more. Comparing the large network <em>Apex Sports</em> (a revenue gain of 18.4%) with the small network <em>Highland Local News</em> (a revenue loss of 2%) directly supports that conclusion.</p><p>Choice B is incorrect; it discusses only a small network. Choice C is incorrect; it compares two large networks with no small-network comparison. Choice D is incorrect; it compares two large networks with no small-network comparison.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "bd4d0e0c-s1",
+  "originalId": "bd4d0e0c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = 7<i>x</i>&sup2; &minus; 15<i>x</i> &minus; 204. What is the value of <i>g</i>(0)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;204</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting 0 for <i>x</i>: <i>g</i>(0) = 7(0)&sup2; &minus; 15(0) &minus; 204 = 0 &minus; 0 &minus; 204 = &minus;204.</p><p>Choices A, B, and C are incorrect; they may result from ignoring the constant term or making sign errors when substituting <i>x</i> = 0.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

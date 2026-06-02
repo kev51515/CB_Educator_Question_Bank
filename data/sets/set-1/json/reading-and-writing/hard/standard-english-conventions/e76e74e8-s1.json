@@ -1,0 +1,25 @@
+{
+  "questionId": "e76e74e8-s1",
+  "originalId": "e76e74e8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>More than fifteen years ago, in a noted experiment in the economics of decision-making, professor Dilip Soman placed a small caf&eacute; cart at the edge of a hospital cafeteria. The number of pastry varieties offered to passing <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> some customers were shown eighteen distinct items, others only four. Strikingly, the customers facing fewer options spent more time at the cart and made larger purchases.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>fluctuated, while</p>"},
+    {"id": "b", "content": "<p>fluctuated while</p>"},
+    {"id": "c", "content": "<p>fluctuated,</p>"},
+    {"id": "d", "content": "<p>fluctuated:</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of a colon within a sentence. The colon is used in a conventional way to introduce the following description of how the number of pastry varieties offered fluctuated.</p><p>Choice A is incorrect because using \"while\" to join the main clause (\"The number...fluctuated\") with what follows wrongly suggests that the fluctuation is in contrast to certain customers being shown more options. Choice B is incorrect because \"while\" suggests a simultaneous occurrence that the sentence does not intend. Choice C is incorrect because a comma alone produces a comma splice between two main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

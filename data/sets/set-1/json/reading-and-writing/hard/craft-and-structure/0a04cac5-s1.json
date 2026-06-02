@@ -1,0 +1,39 @@
+{
+  "questionId": "0a04cac5-s1",
+  "originalId": "0a04cac5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from an early nineteenth-century novel. Edmund, the speaker, is trying to persuade his cousin to take part in an informal musical evening at home.</p>\n<p style='padding-left:1em;'>It is to be the merest trifle, only ourselves and two or three cousins; no strangers, no audience to dread. We can be relied upon, I think, to choose airs perfectly genteel; and I cannot imagine that anyone could come to harm by spending an hour at the pianoforte with a few familiar pieces, when we should very willingly devote the same hour to far less profitable amusement.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To clarify that the musical evening will not take the form Edmund had originally proposed.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To convey Edmund's reassurance that the musical evening will be modest in scope and inoffensive in content.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To suggest that the cousins lack the musical ability needed for the evening to succeed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To argue that Edmund believes a wider audience must be recruited to make the evening worthwhile.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Edmund stresses that the gathering will be a \"merest trifle\" of relatives only, with \"no audience,\" and that the music will be carefully chosen to be \"perfectly genteel.\" Both moves work to reassure his cousin that the event is small, private, and unobjectionable.</p><p>Choice A is incorrect because Edmund presents the plan affirmatively rather than revising any prior version of it. Choice C is incorrect because he speaks with confidence in the group's choice of pieces, not with doubt about their ability. Choice D is incorrect because Edmund explicitly excludes any outside audience.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.hard"
+}

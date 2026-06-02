@@ -1,0 +1,24 @@
+{
+  "questionId": "6d8ad460-s1",
+  "originalId": "6d8ad460",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, line <i>k</i> passes through the points (&minus;8, 0) and (0, &minus;3). Line <i>j</i> (not shown) is perpendicular to line <i>k</i>. What is the slope of line <i>j</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "8/3",
+    "2.6666",
+    "2.6667"
+  ],
+  "rationale": "<p>The slope of line <i>k</i> is (&minus;3 &minus; 0)/(0 &minus; (&minus;8)) = &minus;3/8. The slope of a line perpendicular to <i>k</i> is the negative reciprocal: 8/3.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.hard"
+}

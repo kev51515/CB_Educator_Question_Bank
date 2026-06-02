@@ -1,0 +1,39 @@
+{
+  "questionId": "c9931030-s1",
+  "originalId": "c9931030",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The side lengths of right triangle ABC are AB = 9, BC = 40, and CA = 41. Triangle ABC is similar to triangle DEF, where B corresponds to E and C corresponds to F. What is the value of tan F?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9/41</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40/41</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>40/9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9/40</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Triangle ABC has 9-40-41 sides, with the right angle at B (since 9&sup2; + 40&sup2; = 41&sup2;). Angle C is opposite side AB = 9 and adjacent to side BC = 40, so tan C = 9/40. Since DEF is similar with C&harr;F, tan F = tan C = 9/40. Choice A is sin C; choice B is cos C; choice C is the reciprocal of tan C.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T4.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "7edfb2c5-s1",
+  "originalId": "7edfb2c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Estimated Peak Firing Temperatures of Pottery Sherds from the Tepe Hesar Excavation</p></caption><thead><tr><th>Sherd</th><th>Estimated temperature (&deg;C)</th></tr></thead><tbody><tr><td>H2-041</td><td>540</td></tr><tr><td>H4-126</td><td>180</td></tr><tr><td>H4-203</td><td>670</td></tr><tr><td>H2-088</td><td>240</td></tr></tbody></table></figure><p>Pottery sherds recovered from the lower strata of Tepe Hesar in northeastern Iran have generally been assumed to predate the use of true ceramic kilns at the site. The visible appearance of the sherds shows no clear signs of high-temperature firing, leading some scholars to conclude that the early inhabitants only sun-dried or open-baked their wares. But Yara Saidi and colleagues recently used a new mineralogical method to determine whether these sherds had been heated above 500&deg;C (the typical lower threshold for true kiln firing) and concluded that some of the early inhabitants of Tepe Hesar may have used true kilns.</p>",
+  "stem": "<p>Which choice best describes data in the table that support the team&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Sherds H4-126 and H2-088 were heated to temperatures above 500&deg;C.</p>"},
+    {"id": "b", "content": "<p>Sherds H2-041 and H4-203 were heated to temperatures of approximately 540&deg;C and 670&deg;C, respectively.</p>"},
+    {"id": "c", "content": "<p>All of the sherds were heated to temperatures above 100&deg;C.</p>"},
+    {"id": "d", "content": "<p>Sherd H2-088 was heated to a higher temperature than was sherd H4-126.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Kiln firing typically begins above 500&deg;C, so sherds heated above this level support the conclusion that some inhabitants used true kilns. Sherds H2-041 (~540&deg;C) and H4-203 (~670&deg;C) both exceed this threshold. Choice A is incorrect because H4-126 (180&deg;C) and H2-088 (240&deg;C) are both well below 500&deg;C. Choice C is incorrect because temperatures above 100&deg;C do not show kiln use. Choice D is incorrect because both sherds in this comparison were below 500&deg;C, so the comparison cannot support kiln use.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

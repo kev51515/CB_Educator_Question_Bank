@@ -1,0 +1,39 @@
+{
+  "questionId": "d0a7871e-s1",
+  "originalId": "d0a7871e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\">y = x + 2 and y = x\u00b2 + 2x</p>",
+  "stem": "<p>If (x, y) is a solution to the system of equations above, which of the following could be the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Setting the right-hand sides equal: x + 2 = x\u00b2 + 2x. Subtracting x + 2 from both sides yields 0 = x\u00b2 + x \u2212 2. Factoring: (x + 2)(x \u2212 1) = 0, so x = \u22122 or x = 1. Of the values offered, only 1 satisfies the system. Choice A: if x = 0, then x + 2 = 2 but x\u00b2 + 2x = 0, mismatch. Choice C: if x = 2, then x + 2 = 4 but x\u00b2 + 2x = 8. Choice D: if x = 4, then x + 2 = 6 but x\u00b2 + 2x = 24.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium"
+}

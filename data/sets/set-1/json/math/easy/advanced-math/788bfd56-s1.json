@@ -1,0 +1,39 @@
+{
+  "questionId": "788bfd56-s1",
+  "originalId": "788bfd56",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = 5 + &radic;<i>x</i>. What is the value of <i>g</i>(100)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>105</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. <i>g</i>(100) = 5 + &radic;100 = 5 + 10 = 15.</p><p>Choice B is the result of multiplying 5 by 100/something. Choices C and D result from arithmetic or sign errors.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

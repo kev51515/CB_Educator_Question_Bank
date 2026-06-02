@@ -1,0 +1,39 @@
+{
+  "questionId": "10cd0327-s1",
+  "originalId": "10cd0327",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>An atmospheric river is a long, narrow region of intense water vapor transport in the atmosphere.</li><li>In 2023, a team of researchers analyzed records of forty large precipitation events along the Pacific coast of North America.</li><li>Atmospheric rivers can occur in subtropical and temperate latitudes.</li><li>The team found that precipitation events fueled by atmospheric rivers were also likely to coincide with elevated coastal sea-surface temperatures.</li><li>One explanation for this relationship is that warmer coastal waters supply additional water vapor that the atmospheric rivers then transport inland.</li></ul>",
+  "stem": "<p>The student wants to present the study's findings to an audience already familiar with atmospheric rivers. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The team studied atmospheric rivers in forty large precipitation events along the Pacific coast; atmospheric rivers can occur in subtropical and temperate latitudes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Researchers found that precipitation events fueled by atmospheric rivers were likely to coincide with elevated coastal sea-surface temperatures, which may supply additional water vapor for the rivers to transport inland.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Warmer coastal waters may supply additional water vapor to the atmosphere.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Researchers found that precipitation events fueled by long, narrow regions of intense water vapor transport in the atmosphere were likely to coincide with elevated coastal sea-surface temperatures; these long, narrow regions of intense water vapor transport are called atmospheric rivers.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. It conveys the central finding (atmospheric-river precipitation events coincide with elevated coastal sea-surface temperatures) and the proposed mechanism (warmer coastal waters supplying additional water vapor) without defining what atmospheric rivers are\u2014appropriate for an audience already familiar with them.</p><p>Choice A is incorrect because it describes background information about atmospheric rivers rather than the study's findings. Choice C is incorrect because it states the proposed mechanism without identifying the study's central finding. Choice D is incorrect because it defines atmospheric rivers (\"long, narrow regions of intense water vapor transport\"), which is unnecessary for an audience already familiar with the concept.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "rhetorical-synthesis.A4.T11.hard"
+}

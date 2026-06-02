@@ -1,0 +1,39 @@
+{
+  "questionId": "789975b7-s1",
+  "originalId": "789975b7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A muralist buys two kinds of paint. Paint A contains 30% pigment by weight and Paint B contains 70% pigment by weight. Together, the paints bought by the muralist contain a total of 150 pounds of pigment. Which equation models this relationship, where <i>x</i> is the number of pounds of Paint A and <i>y</i> is the number of pounds of Paint B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.3<i>x</i> + 0.7<i>y</i> = 150 &times; 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30<i>x</i> + 70<i>y</i> = 150</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.3<i>x</i> + 0.7<i>y</i> = 150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.7<i>x</i> + 0.3<i>y</i> = 150</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The pigment in <i>x</i> pounds of Paint A is 0.30<i>x</i> pounds, and the pigment in <i>y</i> pounds of Paint B is 0.70<i>y</i> pounds. Their sum equals 150 pounds.</p><p>Choice A doubles the total incorrectly. Choice B treats percents as integers. Choice D swaps the pigment fractions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

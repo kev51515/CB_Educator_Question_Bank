@@ -1,0 +1,39 @@
+{
+  "questionId": "0dccbf17-s1",
+  "originalId": "0dccbf17",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Edmonia Lewis's 1876 marble sculpture <em>The Death of Cleopatra</em>, which depicts the Egyptian queen in the moment after her suicide, is widely recognized as a turning point in the history of work by Black American sculptors. Scholars should be careful, however, about reading present-day political or ideological commitments into the piece: the assumptions and frameworks that seem self-evident today may have been foreign to Lewis and her nineteenth-century audience, just as ideas central to them may be unfamiliar to us. Scholars who lose sight of this when discussing <em>The Death of Cleopatra</em> therefore <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>tend to confuse Lewis's personal political views with those held by the majority of her contemporaries.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>wrongly conclude that Lewis intended the sculpture as a direct rebuke of other sculptors working in marble.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>risk evaluating Lewis's sculpture according to standards that may not be historically appropriate to it.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>abandon analysis of the sculpture itself in favor of speculation about Lewis's later career.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text warns that today's assumptions \"may have been foreign\" to Lewis and her contemporaries. Scholars who ignore that warning would be applying modern frameworks to a nineteenth-century work \u2014 that is, judging it by standards that may not be historically appropriate.</p><p>Choice A is incorrect because the text does not say Lewis's political views are being mistaken for those of her peers; it warns about anachronism in general. Choice B is incorrect because nothing in the passage concerns Lewis's intent toward other sculptors. Choice D is incorrect because the passage does not address scholars abandoning analysis of the sculpture for biographical speculation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T7.hard"
+}

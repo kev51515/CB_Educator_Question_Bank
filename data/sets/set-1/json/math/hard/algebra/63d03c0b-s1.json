@@ -1,0 +1,22 @@
+{
+  "questionId": "63d03c0b-s1",
+  "originalId": "63d03c0b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>For a particular engine, the linear function f gives the predicted power, in brake horsepower (bhp), for engine speeds between 1,200 rpm and 5,800 rpm. According to this function, the engine's predicted power is 380 bhp at an engine speed of 2,800 rpm and 540 bhp at an engine speed of 4,200 rpm. The equation f(x) = (8/7)(x - a) + 380 defines f, where x is the engine speed in rpm and a is a constant. What is the value of a?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2800"
+  ],
+  "rationale": "<p>Substituting the point (2800, 380): 380 = (8/7)(2800 - a) + 380. Subtracting 380 from both sides: 0 = (8/7)(2800 - a), so 2800 - a = 0, giving a = 2800.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

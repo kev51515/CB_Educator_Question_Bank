@@ -1,0 +1,39 @@
+{
+  "questionId": "975b0602-s1",
+  "originalId": "975b0602",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Since the early 2000s, several women of African descent have been elected to the United Kingdom's House of Commons through the major established parties. In parts of West Africa, by contrast, women political organizers have founded their own parties to support candidates committed to advancing women's interests directly. This approach has been particularly visible in Sierra Leone, where Femi Bangura, a leader of the women-led party Akoya, won a seat in the national parliament in 2022.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To argue that women in the United Kingdom should form their own political party.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To highlight two approaches to achieving women's political representation.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To trace the history of a single political movement and speculate about its future.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To consider how British politicians have influenced women political organizers in West Africa.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text sets up two routes to political representation for women&mdash;working within the major established parties in the United Kingdom and forming dedicated women-led parties as in Sierra Leone&mdash;and uses Akoya's success as an example of the second route. Its main purpose is to spotlight these two contrasting approaches.</p><p>Choice A is incorrect because the text takes no position on what British women should do. Choice C is incorrect because no single movement is traced over time and no future speculation is offered. Choice D is incorrect because the text draws no causal line of influence between British and West African organizers.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

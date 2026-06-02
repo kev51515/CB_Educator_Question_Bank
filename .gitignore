@@ -1,0 +1,61 @@
+# Node / Vite (viewer + repo root)
+node_modules/
+viewer/node_modules/
+viewer/dist/
+viewer/.vite/
+viewer/*.tsbuildinfo
+viewer/.eslintcache
+
+# Playwright + test artefacts
+viewer/test-results/
+viewer/playwright-report/
+viewer/playwright/.cache/
+test-results/
+playwright-report/
+
+# Backups + scratch
+*.bak
+*.bak2
+**/*.bak
+**/*.bak2
+
+# Scraper browser profile + caches (regenerable, browser-state)
+scraper/.profile/
+scraper/.cache/
+scraper/__pycache__/
+
+# Claude Code session state (per-machine, transient)
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+
+# Editors / OS
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# Logs / temp
+*.log
+/tmp/
+data/sets/*/verify_results/.tmp/
+data/sets/*/verify_batches/.tmp/
+
+# Secrets / env
+.env
+.env.local
+.env.*.local
+
+# Build outputs from non-tracked tooling
+*.cache
+.next/
+out/
+.work/

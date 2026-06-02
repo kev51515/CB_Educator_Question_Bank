@@ -1,0 +1,25 @@
+{
+  "questionId": "c2c26e20-s1",
+  "originalId": "c2c26e20",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Edith Wharton's 1905 novel <em>The House of Mirth</em>. The narrator describes a moment of reverie.</p>\n<blockquote>\n<p>For an instant the noise of the room receded, and only a faint <span role=\"region\" aria-label=\"Referenced Content\"><u>murmur</u></span> of it reached her, as if she stood at the edge of a great sea and the voices were no more than the distant break of waves upon the sand.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;murmur&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Complaint</p>"},
+    {"id": "b", "content": "<p>Hum</p>"},
+    {"id": "c", "content": "<p>Whisper</p>"},
+    {"id": "d", "content": "<p>Echo</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because \"hum\" most nearly captures the low, indistinct, continuous background sound the narrator perceives when the noise of the room recedes into something like distant waves. Choice A is incorrect because \"complaint\" implies dissatisfaction; the text describes ambient sound, not grievance. Choice C is incorrect because a \"whisper\" implies a deliberately quiet voice from a particular source, whereas the text describes a diffuse background sound. Choice D is incorrect because \"echo\" implies a reflected repetition of a specific sound, not the steady low noise of a crowded room receding into the distance.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

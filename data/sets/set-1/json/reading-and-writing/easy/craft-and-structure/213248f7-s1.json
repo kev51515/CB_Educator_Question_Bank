@@ -1,0 +1,39 @@
+{
+  "questionId": "213248f7-s1",
+  "originalId": "213248f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Frances Hodgson Burnett's 1911 novel <em>The Secret Garden</em>.</p><p>\"The first thing,\" Mary said to herself, \"is to find the key to the door. I am sure that is the best plan.\" It seemed a very good plan, no doubt, and quite neatly and simply settled; the only trouble was that Mary did not have the slightest idea where the key might be hidden.</p>",
+  "stem": "<p>As used in the text, what does the word \"simply\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Foolishly</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Easily</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Faintly</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Hastily</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the text pairs \"neatly\" with \"simply\" to describe a plan that seems straightforward and easy on the surface, even though Mary actually has no idea how to carry it out. Choice A is incorrect because the text does not call the plan foolish. Choice C is incorrect because \"faintly\" describes weakness or dimness, which does not fit a plan. Choice D is incorrect because \"hastily\" suggests speed, which the text does not describe.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

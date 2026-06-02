@@ -1,0 +1,22 @@
+{
+  "questionId": "3638f413-s1",
+  "originalId": "3638f413",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Maria deposited x dollars in her investment account on January 1, 2010. The amount of money in the account tripled each year until Maria had 1,620 dollars in her investment account on January 1, 2014. What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "20"
+  ],
+  "rationale": "<p>The correct answer is 20. The amount tripled each year for 4 years, so x \u00d7 3\u2074 = 1,620. Since 3\u2074 = 81, we have 81x = 1,620, so x = 20.</p>",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A5.T3.hard"
+}

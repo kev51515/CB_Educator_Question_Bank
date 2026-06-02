@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "95eeeb5b-s1",
+  "originalId": "95eeeb5b",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = ax<sup>2</sup> + bx + c, where a, b, and c are constants. The graph of y = f(x) in the xy-plane passes through the points (5, 0) and (&minus;2, 0). If a is an integer greater than 1, which of the following could be the value of a + b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since the graph has x-intercepts at x = 5 and x = &minus;2, f factors as f(x) = a(x &minus; 5)(x + 2) = a(x<sup>2</sup> &minus; 3x &minus; 10). Therefore b = &minus;3a, so a + b = a &minus; 3a = &minus;2a. For integer a &gt; 1, possible values of a + b are &minus;4, &minus;6, &minus;8, etc. Of the choices, only &minus;4 (achieved when a = 2) matches.</p><p>Choices B, C, and D cannot be written in the form &minus;2a for any integer a &gt; 1.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

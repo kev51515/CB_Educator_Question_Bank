@@ -1,0 +1,39 @@
+{
+  "questionId": "a490003a-s1",
+  "originalId": "a490003a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The width of a rectangle is 6 centimeters. The length of the rectangle is 35 centimeters longer than the width. What is the area, in square centimeters, of this rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>41</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>246</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>47</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The length is 6 + 35 = 41 cm. The area is length \u00d7 width = 41 \u00d7 6 = 246 cm\u00b2.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

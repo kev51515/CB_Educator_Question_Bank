@@ -1,0 +1,25 @@
+{
+  "questionId": "01c1d9ee-s1",
+  "originalId": "01c1d9ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "type": "mcq",
+  "stimulus": "<p>Quechua is estimated to be a first language for about 8 million people across the Andes. It is also officially recognized in Peru, Bolivia, and Ecuador, meaning these countries permit Quechua to be used in government documents and proceedings. <u>But even in countries where Quechua is not an official language, it is often spoken widely in particular regions, sometimes by a substantial portion of the population.</u></p><figure class=\"table\"><table><caption>Estimated Quechua Speakers in Four South American Countries</caption><thead><tr><th>Country</th><th>Official-language status</th><th>Estimated Quechua speakers</th><th>Estimated % of population</th></tr></thead><tbody><tr><td>Peru</td><td>Official</td><td>3,800,000</td><td>11.5%</td></tr><tr><td>Bolivia</td><td>Official</td><td>1,700,000</td><td>14.2%</td></tr><tr><td>Argentina</td><td>Not official</td><td>900,000</td><td>2.0%</td></tr><tr><td>Chile</td><td>Not official</td><td>20,000</td><td>0.1%</td></tr></tbody></table></figure>",
+  "stem": "<p>Which choice most effectively uses data from the table to support the underlined claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In Chile, where Quechua is not an official language, only 0.1% of the population speaks Quechua.</p>"},
+    {"id": "b", "content": "<p>In Argentina, where Quechua is not an official language, an estimated 900,000 people speak the language, more than the number of Quechua speakers in many regions where it is official.</p>"},
+    {"id": "c", "content": "<p>In Peru, where Quechua is an official language, an estimated 3,800,000 people speak Quechua.</p>"},
+    {"id": "d", "content": "<p>In Bolivia, where Quechua is an official language, about 14.2% of the population speaks the language.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The underlined claim is that Quechua is often spoken widely even in countries where it is not official. Argentina, where Quechua is not official, has an estimated 900,000 speakers&mdash;a substantial number that directly supports the claim.</p><p>Choice A is incorrect because Chile&rsquo;s 0.1% would not show that Quechua is spoken widely. Choices C and D describe Peru and Bolivia, where Quechua is official, so they cannot support a claim about non-official countries.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "09d21d79-s1",
+  "originalId": "09d21d79",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The graph of <i>y</i> = 3<i>x</i>&sup2; + <i>bx</i> + <i>c</i> is a parabola that opens upward with vertex at (&minus;2, &minus;5). The parabola passes through the points (&minus;3, &minus;2), (&minus;2, &minus;5), and (&minus;1, &minus;2). What is the value of <i>c</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The vertex form is <i>y</i> = 3(<i>x</i> + 2)&sup2; &minus; 5. Expanding: <i>y</i> = 3(<i>x</i>&sup2; + 4<i>x</i> + 4) &minus; 5 = 3<i>x</i>&sup2; + 12<i>x</i> + 12 &minus; 5 = 3<i>x</i>&sup2; + 12<i>x</i> + 7. So <i>c</i> = 7.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

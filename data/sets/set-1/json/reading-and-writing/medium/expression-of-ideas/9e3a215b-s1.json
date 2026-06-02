@@ -1,0 +1,25 @@
+{
+  "questionId": "9e3a215b-s1",
+  "originalId": "9e3a215b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>A 2023 study by researchers Ines Quaresma and Bayo Ogundimu examined the relationship between community libraries' programming budgets and visitor turnout. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the researchers analyzed the correlation between how much 14,562 public libraries spent on outreach activities—programs such as author talks and after-school workshops—and how many residents walked through their doors (a proxy for overall reach).</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Specifically,</p>"},
+    {"id": "b", "content": "<p>Thus,</p>"},
+    {"id": "c", "content": "<p>By comparison,</p>"},
+    {"id": "d", "content": "<p>In addition,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Specifically\" logically signals that the information in this sentence—that the researchers analyzed spending on outreach activities and the resulting visitor turnout across 14,562 libraries—provides specific, precise details elaborating on how the researchers investigated the relationship between programming budgets and visitor turnout.</p><p>Choice B is incorrect because \"thus\" illogically signals that the methodology is a result of the investigation, when it actually specifies how the investigation was carried out. Choice C is incorrect because \"by comparison\" illogically signals that this information is being compared to the previous claim, when it elaborates on that claim. Choice D is incorrect because \"in addition\" illogically signals an additional, independent fact, when this sentence is providing the specific details of the previously described study.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

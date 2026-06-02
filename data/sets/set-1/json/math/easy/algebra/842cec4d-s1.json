@@ -1,0 +1,39 @@
+{
+  "questionId": "842cec4d-s1",
+  "originalId": "842cec4d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During a portion of a flight, a passenger jet's cruising speed varied between 220 miles per hour and 240 miles per hour. Which inequality best represents this situation, where <i>s</i> is the cruising speed, in miles per hour, during this portion of the flight?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>220 &le; <i>s</i> &le; 240</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>s</i> &le; 220</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>s</i> &le; 240</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>s</i> &le; 20</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The speed varies between 220 and 240, inclusive, so 220 &le; <i>s</i> &le; 240.</p><p>Other choices describe only one bound or use an unrelated value.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "f868d438-s1",
+  "originalId": "f868d438",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.misc.hard",
+  "type": "mcq",
+  "stimulus": "<p>In 2021, the boundary-pushing photographs of Nigerian visual artist and storyteller Ruth Ossai ______ were highlighted in <em>Future Frames</em>, a solo show at London's Tate Modern.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Ossai;</p>"},
+    {"id": "b", "content": "<p>Ossai,</p>"},
+    {"id": "c", "content": "<p>Ossai:</p>"},
+    {"id": "d", "content": "<p>Ossai</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is punctuation between a subject and a verb. No punctuation is needed when a subject is immediately followed by its main verb. Here the subject (\"the boundary-pushing photographs of Nigerian visual artist and storyteller Ruth Ossai\") is followed by the main verb \"were highlighted,\" so no punctuation should appear between them.</p><p>Choice A is incorrect because no punctuation is needed between the subject and the verb. Choice B is incorrect because no punctuation is needed between the subject and the verb. Choice C is incorrect because no punctuation is needed between the subject and the verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "id": "0fa289a7-s1",
+    "templateId": "boundaries.A2.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests clause-boundary punctuation (period vs comma vs run-on) between two independent sentences ('Semb\u00e8ne completed his second feature, Mandabi' | 'A wry comedy..., Semb\u00e8ne's film was...'). This is A1.T1 (Independent + Independent join), not A2.T5 (restrictive vs nonrestrictive modifier)."
+  },
+  {
+    "id": "435809d8-s1",
+    "templateId": "boundaries.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "T10 requires colon/dash introducing a list or elaboration. This clone tests whether to insert a comma before a 'because of' prepositional phrase that modifies a main clause; correct answer is a single comma (choice C), not a colon or dash. Stimulus has no list/elaboration structure, no IC-introduces-elaboration pattern. Fits A2 supplementary punctuation, not A4.T10."
+  },
+  {
+    "id": "145d5ca7-s1",
+    "templateId": "boundaries.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "T5 tests nonrestrictive-vs-restrictive modifier punctuation around a noun (comma/dash vs no punct). The clone's construction is two coordinated noun phrases ('the region's scattered networks of seismic stations' AND 'the fact that...') with the keyed answer being no punctuation between the coordinator and the second noun phrase. The rationale itself states 'punctuation within two coordinated noun phrases' \u2014 not a restrictive/nonrestrictive modifier choice. Stem structure does not match T5's core_skill_demand."
+  },
+  {
+    "id": "3ed5ebb4-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Stem joins main clause to a supplementary noun phrase 'a fitting description...' \u2014 this is a single appositive at clause edge, not a bilateral supplementary insertion with two fixed edges (T4 requires the opposite edge to be fixed in the stem). The keyed comma is correct for the structure, but the type pattern more closely matches A2/T5 or an A1 boundary, not T4 paired-mark insertion."
+  },
+  {
+    "id": "403d7bb5-s1",
+    "templateId": "boundaries.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Question tests punctuation between a 'when' subordinate clause's participle and the main verb; correct answer is no punctuation between subject and predicate. This is not a restrictive/nonrestrictive modifier choice (T5), but a subject-verb / subordinate-clause boundary issue."
+  },
+  {
+    "id": "548f4956-s1",
+    "templateId": "boundaries.A1.T3.medium",
+    "verdict": "type_drift",
+    "detail": "Both sides of the blank are independent clauses joined with semicolon + conjunctive adverb 'even so'. This fits A1.T1 (independent+independent join) rather than T3 (independent+dependent). 'Even so' is a transitional adverb, not a subordinator."
+  },
+  {
+    "id": "83c9c503-s1",
+    "templateId": "boundaries.A3.T6.medium",
+    "verdict": "type_drift",
+    "detail": "Stem tests subject-verb punctuation after a name at the end of a subject NP ('Her sculpture of activist Grace Lee'). Keyed 'no punctuation' is correct, but the rationale explicitly invokes subject-verb boundary, not the A3/T6 role+restrictive-name distinction. The role 'activist' precedes the name inside a possessive NP \u2014 restrictiveness analysis is not the central issue."
+  },
+  {
+    "id": "8f6d6ae6-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Stem joins a main clause to a trailing participial-phrase supplement ('making it among...'). This is a one-sided supplement at clause edge, not a bilateral insertion with both edges in play. Closer to A1/A2 boundary between clause and trailing modifier; not the paired-mark T4 pattern."
+  },
+  {
+    "id": "a427a52c-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Stem is intro participial phrase + main clause ('Cooled with ___ the absorbent mats...'), not an inserted supplementary element with a fixed opposite edge. This is A1-style boundary, not T4 paired-mark appositive."
+  },
+  {
+    "id": "ac5536c1-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Blank sits between 'study of rocks' and a participial phrase 'mapping...'; no fixed opposite edge of an insertion is present. This is a main-clause + participial boundary (A1.T3 hard pattern), not a T4 paired-mark appositive."
+  },
+  {
+    "id": "be34a3df-s1",
+    "templateId": "boundaries.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Question tests subject-verb separation ('Beinecke Library at Yale acquired'), not restrictive vs nonrestrictive modifier choice. No modifier follows 'Yale' to be classified as restrictive or nonrestrictive; rationale itself says it is about subject-verb separation."
+  },
+  {
+    "id": "66bef967-s1",
+    "templateId": "central-ideas-and-details.A1.T1.medium",
+    "verdict": "type_drift",
+    "detail": "T1 must_preserve requires stem 'Which choice best states the main idea of the text?' (or 'best describes the main idea'); clone uses 'Which choice best describes Jourdain's approach to art' which drifts toward an A3-style inference-about-an-entity stem rather than whole-passage main idea phrasing."
+  },
+  {
+    "id": "87aa7bab-s1",
+    "templateId": "central-ideas-and-details.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "T7 requires stem 'which question does the text most directly attempt to answer' or 'what point does the text make about [referent]'. Clone stem 'what can be concluded about the diminishing popularity...' is an inference-about-a-finding stem matching T6, not T7."
+  },
+  {
+    "id": "94c54577-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stimulus claim is attributed to an arts journalist about a curator's strategy; options are propositional findings about exhibitions Banerjee organized. This matches A2.T3 (external-source/historian-supports-claim with 'not X but Y' structure; Enwezor example is the template's hard exemplar) rather than A4.T5 (researcher hypothesis with named alternative explanation). No experimental hypothesis is present."
+  },
+  {
+    "id": "b32c4b3a-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stimulus contains no table or graph; the options are propositional findings about core data, not descriptions of patterns in a presented dataset. This fits A4.T5 (finding-supports-hypothesis with named alternative 'uniform weakening') rather than A5.T9 (which requires the stimulus to contain a table/graph)."
+  },
+  {
+    "id": "bc7b1a04-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "type_drift",
+    "detail": "Stimulus ends with a blanked-out sentence ('is likely ______') and options are short value-range phrases that grammatically complete the blank. This matches T8 (data-completes-sentence-with-value) rather than T9 (which requires stem 'Which choice best describes data\u2026 that support [conclusion]' with options as factual-pattern descriptions)."
+  },
+  {
+    "id": "b30a2613-s1",
+    "templateId": "command-of-evidence.A5.T9.medium",
+    "verdict": "type_drift",
+    "detail": "T9 spec is 'best-describes-data-SUPPORTING-conclusion'; clone asks which data WEAKEN the conclusion. Stem signal inverted from template's defining 'support' wording. Correct answer (D) is logically sound but structural pattern is a categorical variant not covered by T9."
+  },
+  {
+    "id": "d222f7d9-s1",
+    "templateId": "form-structure-and-sense.A1.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests punctuation (comma pairing with dash to offset a supplementary element), not verb form/finiteness. The four options vary in whether a verb ('is'/'has been') is included and whether a comma is present \u2014 the correct answer (C) is selected on punctuation grounds, not on finite vs non-finite distinction. Belongs to a punctuation aspect, not A1.T2."
+  },
+  {
+    "id": "ecba68b5-s1",
+    "templateId": "form-structure-and-sense.A2.T4.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged as T5 inverted-order in template example_ids, but stem is standard SVO with interrupting participial phrase, not inversion. However templateId says T4 (interrupting modifier), which matches the stem structure. Verdict: ok."
+  },
+  {
+    "id": "d073983d-s1",
+    "templateId": "form-structure-and-sense.A4.punctuation.medium",
+    "verdict": "aspect_drift",
+    "detail": "Tests punctuation between subject and verb (no-punctuation vs comma/dash/colon), which is a Boundaries/Punctuation skill, not Form/Structure/Sense. Template has no 'punctuation' type under A4 (only T9 dangling modifier). Options differ in punctuation marks rather than verb/pronoun/modifier form."
+  },
+  {
+    "id": "bcbcc43f-s1",
+    "templateId": "inferences.A2.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "A2.T3 requires inferring an underlying causal mechanism abductively from observations. Here the stimulus states a productive irrigation system yielding surplus; the keyed answer (trade with neighbors) is a forward downstream consequence of surplus, not an implied mechanism explaining an observation. Fits A4.T11 (social/cultural implication) or A1 (forward prediction) better."
+  },
+  {
+    "id": "5d3177aa-s1",
+    "templateId": "rhetorical-synthesis.A4.T10.medium",
+    "verdict": "aspect_drift",
+    "detail": "Goal 'present the significance of the Homestead Act' is A2/T4-style emphasis on significance rather than A4/T10 audience-calibrated introduction; audience cue ('unfamiliar with history of US land policy') affects framing but the rhetorical act is significance-emphasis."
+  },
+  {
+    "id": "25361ec6-s1",
+    "templateId": "transitions.A5.T13.medium",
+    "verdict": "type_drift",
+    "detail": "Tagged T13 (ordinal list First/Second/Finally), but stimulus has no N-item enumeration or anchor ordinals; correct answer 'At last' marks culmination/resolution of a long debate, which fits T16 (culmination/ultimately), not T13."
+  },
+  {
+    "id": "b8eec031-s1",
+    "templateId": "transitions.A4.T11.medium",
+    "verdict": "type_drift",
+    "detail": "Correct answer 'Increasingly' is a temporal/trend modifier, not an intensifier from T11's family (In fact / Indeed / What's more). Second clause elaborates the shift rather than supplying stronger evidence of the same claim; better fits A3 specification or general elaboration."
+  },
+  {
+    "id": "f114cbf0-s1",
+    "templateId": "transitions.A1.T1.medium",
+    "verdict": "type_drift",
+    "detail": "T1 requires two paired entities differing on a single dimension. Clone uses a single entity (bombardier beetle) with two opposing process states (reaction occurring vs ceasing), violating must_preserve 'Two clearly paired entities'. Better fits T2 expectation reversal."
+  },
+  {
+    "id": "1374a9fa-s1",
+    "templateId": "words-in-context.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "T4 requires an explicit contrast/concession signal word (despite/however/unlike/while/but/although) governing the blank. The stimulus has no such signal; the 'while describing' clause is parallel elaboration, not a contrast about the blank. Structure fits T5 (verb naming scholars' action, supported by descriptive elaboration)."
+  },
+  {
+    "id": "757077f9-s1",
+    "templateId": "words-in-context.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "T4 requires an explicit contrast/concession signal word in the stimulus. None present; blank sits in 'may persuade scholars ... to ______ that assumption,' which is a cause/effect verb slot (T5 structure). No 'although/while/unlike/despite/but' signal governs the blank."
+  },
+  {
+    "id": "94eb800d-s1",
+    "templateId": "words-in-context.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "T5 requires the blank to be a verb naming a causal/functional action with directional polarity cue. Here the blank verb 'produced' is just the basic action of creation with no causal mechanism or directional polarity at stake. The stem fits T3 (restatement: 'made' the films) rather than a cause/effect/function cue."
+  },
+  {
+    "id": "995358b4-s1",
+    "templateId": "words-in-context.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Tagged T4 (contrast cue) but functions as T5: 'although' introduces context, but the blank itself names the causal action ('destabilized') of heavy nectar inflow on labor balance. No antonym pole is being supplied to contrast a named entity; the blank fills the causal effect verb."
+  },
+  {
+    "id": "9c35759f-s1",
+    "templateId": "words-in-context.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Stem turns on contrast ('refuses to ___...willingness to upend...avoid predictable'), not on a causal/functional mechanism. Better fits T4 (contrast cue) with negation framing, not T5."
+  },
+  {
+    "id": "cd2ce51f-s1",
+    "templateId": "words-in-context.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Blank verb 'portrays' names the cast-character representation relation, not a cause/effect/function in a causal chain. Better fits T3 (restatement of how cast plays/depicts characters)."
+  },
+  {
+    "id": "e37b9e34-s1",
+    "templateId": "words-in-context.A2.T8.medium",
+    "verdict": "type_drift",
+    "detail": "T8 requires an explicit negation/scarcity/counterfactual frame around the blank (e.g., 'not ___', 'less ___', 'unlikely to be ___', 'paucity of'). Here the blank sits in a plain copular slot 'the sequence appears to be ___' followed by a restatement ('transcribed only rarely and producing no observable change'). That is a T3/T6 restatement-of-quality structure, not T8. The answer 'quiescent' is supported, but the syntactic frame is wrong for T8."
+  }
+]

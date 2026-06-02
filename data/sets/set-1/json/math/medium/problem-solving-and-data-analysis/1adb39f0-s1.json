@@ -1,0 +1,39 @@
+{
+  "questionId": "1adb39f0-s1",
+  "originalId": "1adb39f0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between <em>x</em> and <em>y</em> along with a line of best fit. The data point with <em>x</em> = 6 has a <em>y</em>-coordinate of 11, and the line of best fit predicts <em>y</em> = 9 when <em>x</em> = 6. Which of the following is closest to the difference between the actual <em>y</em>-value and the value predicted by the line of best fit at <em>x</em> = 6?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>11</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The difference between the actual value (11) and the predicted value (9) is 11 \u2212 9 = 2.</p><p>Choices A, C, and D are incorrect; they confuse the residual with the actual or predicted values.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium"
+}

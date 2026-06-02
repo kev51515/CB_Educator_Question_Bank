@@ -1,0 +1,39 @@
+{
+  "questionId": "3f2ee20a-s1",
+  "originalId": "3f2ee20a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes test scores for two classes.</p><table border=\"1\" style=\"margin:auto;border-collapse:collapse;\"><thead><tr><th></th><th>Class P</th><th>Class Q</th></tr></thead><tbody><tr><td>Minimum</td><td>62</td><td>58</td></tr><tr><td>Maximum</td><td>88</td><td>96</td></tr><tr><td>Median</td><td>75</td><td>75</td></tr></tbody></table><p>Which statement is true based on the table?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The Class P data set is identical to the Class Q data set.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Class Q contained the highest score.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The median score in Class Q is larger than the median score in Class P.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The scores in Class P had a larger spread than the scores in Class Q.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The maximum value for Class Q is 96, which is greater than Class P's maximum of 88. So Class Q contained the highest score.</p><p>Choice A is unsupported \u2014 the same median doesn't mean the data sets are identical. Choice C is wrong because the medians are equal. Choice D is wrong because Class Q's range (96-58 = 38) exceeds Class P's range (88-62 = 26).</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.medium"
+}

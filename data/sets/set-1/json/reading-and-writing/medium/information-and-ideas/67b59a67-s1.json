@@ -1,0 +1,25 @@
+{
+  "questionId": "67b59a67-s1",
+  "originalId": "67b59a67",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Honeybee colonies are sometimes devastated by a fungal infection known as chalkbrood, caused by the fungus <em>Ascosphaera apis</em>. A research group led by entomologist Inara Bekova investigated whether substances secreted by certain pollens collected by foraging bees might influence colony resistance to the disease. The team sampled pollen brought back to hives over a full foraging season and compared the resulting pollen profiles in hives that suffered chalkbrood outbreaks with those that did not. They concluded that the presence of certain pollen-derived compounds in stored pollen might explain the difference between resilient and afflicted colonies.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the group&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The pollen stores of resilient colonies contained significantly higher concentrations of compounds known to suppress <em>Ascosphaera apis</em> than the pollen stores of afflicted colonies did.</p>"},
+    {"id": "b", "content": "<p>The pollen stores of both resilient and afflicted colonies contained roughly equal concentrations of <em>Ascosphaera apis</em> spores.</p>"},
+    {"id": "c", "content": "<p>Resilient colonies tended to be located closer to large stands of flowering trees than afflicted colonies were.</p>"},
+    {"id": "d", "content": "<p>By the end of the season, the majority of monitored colonies had been affected by chalkbrood regardless of differences in the compounds found in their pollen stores.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. It directly links a difference in pollen-derived antifungal compounds to the difference between resilient and afflicted colonies, supporting the team&rsquo;s conclusion. Choice B is incorrect; if both groups had equal spore loads, the difference in outcomes would be unexplained by the fungus itself but also not tied to pollen compounds. Choice C is incorrect because it points to location, not pollen-derived compounds, as the explanatory factor. Choice D is incorrect because it implies that compound differences were unrelated to outcomes, which weakens, not supports, the team&rsquo;s conclusion.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

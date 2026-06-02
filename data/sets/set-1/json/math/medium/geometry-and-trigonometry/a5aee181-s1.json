@@ -1,0 +1,39 @@
+{
+  "questionId": "a5aee181-s1",
+  "originalId": "a5aee181",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The length of a rectangle's diagonal is <math><mn>4</mn><msqrt><mn>13</mn></msqrt></math>, and the length of the rectangle's shorter side is <math><mn>4</mn></math>. What is the length of the rectangle's longer side?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><msqrt><mn>13</mn></msqrt></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>12</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>8</mn><msqrt><mn>3</mn></msqrt></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>192</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The diagonal and two sides of the rectangle form a right triangle. By the Pythagorean theorem, longer side = √((4√13)² - 4²) = √(208 - 16) = √192 = 8√3.</p><p>Choice A divides by 4. Choice B is a near-miss arithmetic error. Choice D is 192 (square not taken).</p>",
+  "generatedAt": "2026-05-26T01:47:17Z"
+}

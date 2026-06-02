@@ -1,0 +1,25 @@
+{
+  "questionId": "25fc2534-s1",
+  "originalId": "25fc2534",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T3.medium",
+  "stimulus": "<p>Researchers in northern Sweden recently uncovered well-preserved leather garments believed to belong to a fourteenth-century traveler buried in a peat bog. Under most circumstances, leather decomposes within decades when exposed to bacteria and oxygen, but the acidic, oxygen-poor conditions found in peat bogs can inhibit this decay for centuries. Therefore, the discovered garments were most likely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>part of a larger collection of textiles being excavated from the bog.</p>"},
+    {"id": "b", "content": "<p>submerged in the acidic, oxygen-poor environment of the bog for the entire period.</p>"},
+    {"id": "c", "content": "<p>a confirmation of earlier theories about leather-tanning techniques used in fourteenth-century Sweden.</p>"},
+    {"id": "d", "content": "<p>manufactured significantly later than researchers initially proposed.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is best. The text states that leather decays quickly when exposed to bacteria and oxygen but that the acidic, oxygen-poor conditions of peat bogs inhibit decay. Since the garments survived for centuries in a bog, they were most likely continuously submerged in those preserving conditions. Choice A is unsupported—nothing in the text suggests additional textiles are present. Choice C is wrong because the text does not address tanning techniques or any prior theories about them. Choice D is wrong because the text gives no alternative date for the garments' manufacture.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

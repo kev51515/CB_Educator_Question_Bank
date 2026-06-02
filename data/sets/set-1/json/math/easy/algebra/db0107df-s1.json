@@ -1,0 +1,22 @@
+{
+  "questionId": "db0107df-s1",
+  "originalId": "db0107df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The <i>y</i>-intercept of the graph of 5<i>x</i> + 4<i>y</i> = 32 in the <i>xy</i>-plane is (0, <i>y</i>). What is the value of <i>y</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>Setting <i>x</i> = 0 in 5<i>x</i> + 4<i>y</i> = 32 yields 4<i>y</i> = 32, so <i>y</i> = 8.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.easy"
+}

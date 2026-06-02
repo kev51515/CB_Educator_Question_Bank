@@ -1,0 +1,25 @@
+{
+  "questionId": "48555763-s1",
+  "originalId": "48555763",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>The following text is from Mary Elizabeth Braddon's 1862 novel <em>Lady Audley's Secret</em>.</p>\n\n<p>The visitor still stood by the parlour window, where he had first taken his post. <span role=\"region\" aria-label=\"Referenced Content\"><u>His oddness compelled a more careful inspection.</u></span> A small, restless figure. Hair gingery and close-cropped, pressed flat above his temples. His hooded sockets of eyes were rimmed by a pale, smudged shadow, and gleamed with a guarded sort of curiosity: the watch without the look. The whole man was dusted with road grit. He stood in a faint cloud on the worn carpet: his curious silver-tipped cane upright at his side.</p>",
+  "stem": "<p>Which choice best states the function of the underlined sentence in the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It elaborates on the previous sentence's description of the character.</p>"},
+    {"id": "b", "content": "<p>It sets up the character description presented in the sentences that follow.</p>"},
+    {"id": "c", "content": "<p>It introduces the setting that is described in the sentences that follow.</p>"},
+    {"id": "d", "content": "<p>It establishes a contrast with the description in the previous sentence.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The underlined sentence (&ldquo;His oddness compelled a more careful inspection&rdquo;) is followed by an extended description of the visitor: a small restless figure, gingery hair, hooded eyes, dust on the carpet, and a silver-tipped cane. The underlined sentence functions as a setup for that detailed character description.</p><p>Choice A is incorrect because the previous sentence describes where the visitor is standing, not the visitor himself, so the underlined sentence cannot elaborate on a character description there. Choice C is incorrect because the sentences that follow describe the character, not the surrounding setting. Choice D is incorrect because there is no contrast between the underlined sentence and the previous one; both move toward the closer look at the visitor.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

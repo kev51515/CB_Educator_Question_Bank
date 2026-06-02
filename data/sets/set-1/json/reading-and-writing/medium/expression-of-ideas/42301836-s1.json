@@ -1,0 +1,25 @@
+{
+  "questionId": "42301836-s1",
+  "originalId": "42301836",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T12.medium",
+  "stimulus": "<p>While reviewing seafloor sediment cores in 2018, marine geologist Yuki Tanaka identified an unusual layer of microscopic glass beads dating to roughly 12,800 years ago, suggesting that a fragmenting cosmic body had showered the region with debris. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the rare deposit was named the \"Tanaka horizon\" in recognition of the geologist who first characterized it.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>In other words,</p>"},
+    {"id": "c", "content": "<p>Fittingly,</p>"},
+    {"id": "d", "content": "<p>Similarly,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Fittingly\" logically signals that naming a sediment layer after Yuki Tanaka is an appropriate outcome, since Tanaka is the geologist who first identified and characterized that deposit.</p><p>Choice A is incorrect because \"however\" illogically signals a contrast between the identification of the deposit and its naming, when the naming is in fact an apt outcome of the identification. Choice B is incorrect because \"in other words\" illogically signals that the naming sentence merely restates the previous information about Tanaka's identification of the deposit; instead, it describes a separate, fitting consequence. Choice D is incorrect because \"similarly\" illogically signals that the naming is a parallel case to the identification, when it is in fact an apt outcome of it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

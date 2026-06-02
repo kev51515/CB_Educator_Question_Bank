@@ -1,0 +1,39 @@
+{
+  "questionId": "75e07a4d-s1",
+  "originalId": "75e07a4d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Sample of Food Items from Apollo Mission Menus</caption><thead><tr><th>Food item</th><th>Day</th><th>Meal</th></tr></thead><tbody><tr><td>beef stew</td><td>2</td><td>A</td></tr><tr><td>peach pudding</td><td>2</td><td>B</td></tr><tr><td>chicken sandwich</td><td>2</td><td>C</td></tr><tr><td>orange juice</td><td>3</td><td>A</td></tr></tbody></table></figure><p>A history student is preparing a report on Apollo mission meals. The student wants an example of a food eaten during meal B on Day 2 of the mission. According to the table, that would include ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>beef stew for meal B.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>chicken sandwich for meal A.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>orange juice for meal B.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>peach pudding for meal B.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the table lists peach pudding as eaten on Day 2 during meal B.</p><p>Choice A is incorrect: beef stew was eaten during meal A, not meal B. Choice B is incorrect: chicken sandwich was eaten during meal C, and the question asks about meal B. Choice C is incorrect: orange juice was eaten on Day 3 during meal A, not meal B.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

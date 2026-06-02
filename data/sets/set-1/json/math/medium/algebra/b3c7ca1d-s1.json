@@ -1,0 +1,39 @@
+{
+  "questionId": "b3c7ca1d-s1",
+  "originalId": "b3c7ca1d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following systems of linear equations has no solution?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 4x + 2<br>y = 4x + 9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 2<br>x = 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 7x + 3<br>y = 5x + 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x = 4<br>y = 4x + 5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>A linear system has no solution exactly when the two lines are parallel \u2014 same slope, different y-intercept. Choice A has two lines with slope 4 but different y-intercepts (2 and 9), so they never intersect. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.medium"
+}

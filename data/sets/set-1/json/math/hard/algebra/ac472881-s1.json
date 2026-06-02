@@ -1,0 +1,22 @@
+{
+  "questionId": "ac472881-s1",
+  "originalId": "ac472881",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>(10<i>x</i> + 35)/5 &minus; <i>q</i>/9 = <i>c</i>(<i>x</i> &minus; 6)</p><p>In the given equation, <i>q</i> and <i>c</i> are constants, and <i>q</i> &gt; 0. If the equation has infinitely many solutions, what is the value of <i>q</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "171"
+  ],
+  "rationale": "<p>Simplify the left side: (10<i>x</i> + 35)/5 = 2<i>x</i> + 7. The equation becomes 2<i>x</i> + 7 &minus; <i>q</i>/9 = <i>c</i><i>x</i> &minus; 6<i>c</i>. For infinitely many solutions, the coefficients of <i>x</i> and the constant terms must match. From <i>x</i>: 2 = <i>c</i>. From constants: 7 &minus; <i>q</i>/9 = &minus;6<i>c</i> = &minus;12, so <i>q</i>/9 = 19 and <i>q</i> = 171.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.hard"
+}

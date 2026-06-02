@@ -1,0 +1,39 @@
+{
+  "questionId": "24854644-s1",
+  "originalId": "24854644",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the equation of the line that passes through the point (0, 9) and is parallel to the graph of <i>y</i> = 4<i>x</i> &minus; 2 in the <i>xy</i>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = 9<i>x</i> + 4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = 9<i>x</i></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = 4<i>x</i> + 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = 4<i>x</i></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Parallel lines share a slope, so the slope is 4. The line passes through (0, 9), so the <i>y</i>-intercept is 9. Thus <i>y</i> = 4<i>x</i> + 9.</p><p>Choices A and B use 9 as the slope. Choice D omits the <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T14.easy"
+}

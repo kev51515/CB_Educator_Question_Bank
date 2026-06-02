@@ -1,0 +1,25 @@
+{
+  "questionId": "ba974387-s1",
+  "originalId": "ba974387",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Isabella Bird's 1879 travel memoir <em>A Lady's Life in the Rocky Mountains</em>.</p>\n<blockquote>\n<p>The trail up the canyon, though short in measured miles, proved anything but gentle. The mountain seemed bent on producing every <span role=\"region\" aria-label=\"Referenced Content\"><u>imaginable</u></span> hindrance for the rider who dared to ascend its slopes, from sudden boulders to washed-out tracks.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;imaginable&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Conceivable</p>"},
+    {"id": "b", "content": "<p>Apparent</p>"},
+    {"id": "c", "content": "<p>Mild</p>"},
+    {"id": "d", "content": "<p>Persistent</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because \"imaginable\" most nearly means capable of being thought of or conceived. The author emphasizes the variety of obstacles by suggesting the mountain devised every challenge one could conceive of. Choice B is incorrect because \"apparent\" means obvious or easily perceived, but the text emphasizes the range of obstacles, not their visibility. Choice C is incorrect because \"mild\" means gentle, the opposite of what the text describes. Choice D is incorrect because \"persistent\" emphasizes duration; the text emphasizes variety and range.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

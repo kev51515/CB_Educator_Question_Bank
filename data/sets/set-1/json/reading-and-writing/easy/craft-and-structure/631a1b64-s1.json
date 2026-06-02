@@ -1,0 +1,39 @@
+{
+  "questionId": "631a1b64-s1",
+  "originalId": "631a1b64",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Ever since the new community center opened, the town has needed regular crews to come out and adjust the rooftop solar array to keep it running at peak efficiency. Engineers hope that small automated motors will soon be able to handle these adjustments. Using motors instead of crews will be helpful, as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> workers to maintain the array can be costly.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>scheduling</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>complimenting</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>ignoring</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>depending on</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because, in context, \"depending on\" workers to maintain the solar array would be costly. The text indicates that hiring crews to adjust the array is expensive, which is why automated motors would help.</p><p>Choice A is incorrect because scheduling workers does not directly explain why crews are expensive. Choice B is incorrect because complimenting workers is unrelated to cost. Choice C is incorrect because ignoring workers wouldn\u2019t make sense in a context about needing them to do maintenance.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

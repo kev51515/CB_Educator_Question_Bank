@@ -1,0 +1,25 @@
+{
+  "questionId": "60c6b64d-s1",
+  "originalId": "60c6b64d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Female mosquitoes locate hosts in part by detecting the carbon dioxide hosts exhale, but it is unclear whether they also rely on body heat once they are nearby. Entomologists Naomi Park and Sergei Volkov wondered if heat alone is enough to draw mosquitoes in at close range or if the insects need a chemical cue alongside it. In a trial, the researchers placed two artificial targets inside a flight cage: one warmed to roughly skin temperature, and a second warmed to skin temperature while also releasing a steady puff of carbon dioxide. Park and Volkov concluded that warmth is not, on its own, a sufficient close-range cue for mosquitoes.</p>",
+  "stem": "<p>Which finding from the trial, if true, would most directly support Park and Volkov&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The warmed-only target drew comparable numbers of mosquitoes when the surrounding air was made cooler than skin temperature.</p>"},
+    {"id": "b", "content": "<p>Substantially more mosquitoes landed on the target that combined warmth with carbon dioxide than on the target that was only warmed.</p>"},
+    {"id": "c", "content": "<p>When carbon dioxide release was paused, mosquitoes drifted away from the combined target within seconds.</p>"},
+    {"id": "d", "content": "<p>Both targets drew small numbers of mosquitoes during the first minute, after which arrivals to both targets stopped entirely.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the researchers concluded that warmth alone is not a sufficient close-range cue. If substantially more mosquitoes landed on the combined warmth-plus-CO₂ target than on the warmth-only target, that directly shows that warmth by itself does not draw mosquitoes effectively at close range&mdash;a chemical cue is also needed. Choice A is incorrect because it concerns the warmed-only target under different background conditions, not a comparison that isolates whether warmth alone is sufficient. Choice C is incorrect because mosquitoes drifting away when CO₂ stops would suggest CO₂ is the dominant cue, but it doesn&rsquo;t compare the two targets and so doesn&rsquo;t directly establish the insufficiency of warmth. Choice D is incorrect because if arrivals to both targets stopped entirely, no comparison between targets could support the conclusion that warmth alone is insufficient.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

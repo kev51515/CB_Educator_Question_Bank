@@ -1,0 +1,50 @@
+[
+  {
+    "id": "92eb236a-s1",
+    "templateId": "right-triangles-and-trigonometry.A6.T13.hard",
+    "verdict": "type_drift",
+    "detail": "T13 requires expression of form sin(a)cos(b)+cos(a)sin(b) with two complementary angles inside the expression. Clone is a cofunction reciprocal-tangent question within one right triangle, which fits T11 (cofunction value swap), not T13."
+  },
+  {
+    "id": "13d9a1c3-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Template marks T8 as hard-only ('not observed at medium'); clone is a straightforward 30-60-90 hypotenuse-to-short-leg conversion appropriate for easy/medium but lacks the hard levers (k*sqrt(3) form, multi-step chain). Answer (7) is correct."
+  },
+  {
+    "id": "bf8d843e-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T8 template has no medium variant; clone is a direct 30-60-90 hypotenuse-to-leg one-step problem without hard levers (k*sqrt(3) answer form, multi-step chain). Answer (6) is correct."
+  },
+  {
+    "id": "9ec76b54-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever requires reverse direction (hypotenuse + one leg -> other leg); clone uses forward direction (two legs -> hypotenuse), which is the easy lever. Answer (12*sqrt(5)) is correct."
+  },
+  {
+    "id": "7c25b0dc-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires side lengths with radical factors yielding k*sqrt(d) answer; clone resolves to plain integer L=10 (a 'common bug' the template explicitly warns against: 'dropping the common radical factor so the answer becomes a plain integer \u2014 destroys the lever'). Answer is correct."
+  },
+  {
+    "id": "1bf809b5-s1",
+    "templateId": "right-triangles-and-trigonometry.A2.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T3 requires computing missing side via Pythagoras before forming the ratio; clone gives hypotenuse and adjacent directly, so cos x = 7/20 is one-step (easy-tier)."
+  },
+  {
+    "id": "bd87bc09-s1",
+    "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 requires derived quantity (perimeter/area) requiring ratio\u2192both legs\u2192Pythagoras\u2192combine. Clone asks for a single side QR, which matches the medium-tier lever (one-step ratio application plus simple Pythagoras)."
+  },
+  {
+    "id": "f811d345-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 requires side lengths containing radical factors (e.g., 10\u221a37, 24\u221a37) so the answer's k\u221ad form arises from the input radicals. Clone uses plain integer legs 18 and 15; the k\u221ad form arises only by simplifying \u221a549, matching common_bugs warning about dropping the radical factor."
+  }
+]

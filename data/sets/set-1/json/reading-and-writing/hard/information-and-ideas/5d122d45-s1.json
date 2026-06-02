@@ -1,0 +1,39 @@
+{
+  "questionId": "5d122d45-s1",
+  "originalId": "5d122d45",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>A team of social psychologists wanted to test whether brief experiences of awe make people more willing to help strangers. The team had participants spend several minutes either gazing at an enormous, vividly colored canyon vista (an image typically rated highly for awe) or at a featureless beige wall (an ordinary, low-awe image). Immediately afterward, an assistant in the room \"accidentally\" knocked over a small basket of paper clips. The researchers claimed that they found evidence that experiencing awe makes people feel more bound to others and therefore more likely to behave altruistically.</p>",
+  "stem": "<p>Which finding from the researchers' study, if true, would most strongly support their claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Participants who had viewed the beige wall were significantly more likely than those who had viewed the canyon to notice that the basket had been spilled.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Participants who helped pick up the paper clips described both images in a postexperiment survey using a larger vocabulary of positive adjectives than did participants who did not help.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Participants who had viewed the canyon helped the assistant pick up significantly more paper clips than did participants who had viewed the beige wall.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Participants who did not help the assistant pick up the paper clips were significantly more likely to report feeling awe, regardless of which image they had viewed.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The claim is that experiencing awe makes people more likely to behave altruistically. A finding that the awe-primed group (canyon viewers) actually helped more\u2014picking up more paper clips\u2014than the low-awe group (wall viewers) directly demonstrates the link between awe and altruistic behavior.</p><p>Choice A is incorrect: noticing a spill is not the same as helping; this measures attention, not altruism, and in fact runs counter to the claim. Choice B is incorrect: a vocabulary difference in a survey is unrelated to whether awe produces altruistic action. Choice D is incorrect: if those reporting awe were less likely to help, that would undercut the claim rather than support it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

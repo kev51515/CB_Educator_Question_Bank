@@ -1,0 +1,39 @@
+{
+  "questionId": "714e4c10-s1",
+  "originalId": "714e4c10",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Augusta Savage was a celebrated sculptor who worked in many materials, including her well-known portrait busts, but she was devoted to more than making art herself. Savage also wanted to open the world of art to young people in her adopted neighborhood of Harlem, New York. To that end, in 1932 she founded the Savage Studio of Arts and Crafts, which offered free art classes to local children, and in 1937 she became the first director of the Harlem Community Art Center, a federally funded program that brought visiting artists and instruction to thousands of students.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Savage's commitment to art education led her to establish art programs for young people in Harlem.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Savage inspired many other sculptors to share their work with children in public schools.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Savage gave up a promising career as a sculptor to work as a community art teacher.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Savage's portrait busts were valued more by Harlem audiences than by national critics.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text presents Savage as a sculptor who was devoted to more than her own art and gives two examples (the Savage Studio of Arts and Crafts and the Harlem Community Art Center) of programs she founded for young people in Harlem.</p><p>Choice B is incorrect; the text does not say Savage inspired other sculptors. Choice C is incorrect; the text describes her education work as complementing, not replacing, her career as a sculptor. Choice D is incorrect; the text makes no comparison between Harlem and national reception of her busts.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

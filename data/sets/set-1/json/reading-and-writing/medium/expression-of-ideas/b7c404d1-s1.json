@@ -1,0 +1,25 @@
+{
+  "questionId": "b7c404d1-s1",
+  "originalId": "b7c404d1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T11.medium",
+  "stimulus": "<p>With her warehouse-scale installation <em>Tideline Archive</em>, Nigerian Canadian artist Folake Adesanya managed to build a setting that felt, as she had described it in advance, both \"oceanic and architectural.\" <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> with a wall of cast-glass panels arrayed along the far end of a salt-streaked concrete hall, the installation called to mind a coastal observation post—albeit one moored deep inside a converted shipyard.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Next,</p>"},
+    {"id": "b", "content": "<p>Instead,</p>"},
+    {"id": "c", "content": "<p>Indeed,</p>"},
+    {"id": "d", "content": "<p>Nevertheless,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Indeed\" logically signals that the information in this sentence—that Adesanya's installation called to mind both a coastal observation post and a converted shipyard—supports the previous sentence's claim that the space felt both \"oceanic and architectural.\"</p><p>Choice A is incorrect because \"next\" illogically signals that the description in this sentence is the next step in a process, when it actually reinforces the previous claim about the installation's dual character. Choice B is incorrect because \"instead\" illogically signals that this sentence presents an alternative to the previous claim, when it in fact strengthens it. Choice D is incorrect because \"nevertheless\" illogically signals that the description is true despite the previous claim, when it actually confirms that claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

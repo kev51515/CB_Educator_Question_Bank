@@ -1,0 +1,39 @@
+{
+  "questionId": "53487897-s1",
+  "originalId": "53487897",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "templateId": "linear-functions.A3.T1.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The relationship between two variables, <em>x</em> and <em>y</em>, is linear. For every increase in the value of <em>x</em> by 1, the value of <em>y</em> increases by 6. When the value of <em>x</em> is 3, the value of <em>y</em> is 25. Which equation represents the relationship between <em>x</em> and <em>y</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 6x + 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 3x + 16</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 6x + 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 7x + 4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A constant rate of increase of 6 in y per unit increase in x means the slope is 6. Using (3, 25): 25 = 6(3) + b \u2192 b = 7. So y = 6x + 7. Verify: at x = 3, y = 18 + 7 = 25 \u2713. The other choices have either the wrong slope or wrong intercept (or both).</p>"
+}

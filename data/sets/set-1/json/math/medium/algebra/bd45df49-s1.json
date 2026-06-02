@@ -1,0 +1,39 @@
+{
+  "questionId": "bd45df49-s1",
+  "originalId": "bd45df49",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = x + 5</p><p>2y = 5x \u2212 8</p><p>The solution to the given system of equations is (x, y). What is the value of x \u2212 y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u221217</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\u221211</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u22125</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Substituting y = x + 5 into 2y = 5x \u2212 8 gives 2(x + 5) = 5x \u2212 8, so 2x + 10 = 5x \u2212 8 and 3x = 18, x = 6. Then y = 6 + 5 = 11, and x \u2212 y = 6 \u2212 11 = \u22125. The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3c95093c-s1",
+  "originalId": "3c95093c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p style=\"text-align:center;\"><math><mn>4</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>\u2264</mo><mn>16</mn></math></p><p>Which of the following inequalities is equivalent to the inequality above?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>\u2265</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>4</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>\u2265</mo><mn>16</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi><mo>\u2264</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>y</mi><mo>\u2264</mo><mn>16</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Dividing both sides of the inequality by 4 (a positive number, so the direction of the inequality is preserved) yields x + 2y \u2264 4.</p>",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.easy"
+}

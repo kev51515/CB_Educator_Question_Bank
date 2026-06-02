@@ -1,0 +1,72 @@
+{
+  "questionId": "38facbad",
+  "externalId": "0d431820-b3fc-41fe-9b35-b26b78b6f0ad",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:21:27.067458+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "d4b86fd0-5b1f-41b1-b11f-ad38ef009252",
+      "content": "<p>across cultural contexts, people who share similar profiles of personality traits tend to prefer listening to similar types of Western music.</p>"
+    },
+    {
+      "id": "90fa60c8-8b21-4e40-8e07-41f58384a887",
+      "content": "<p>the five-factor framework can likely be used to predict preferences for non-Western music styles based on personality traits even if the characteristics of those styles substantially differ from characteristics of Western music styles.</p>"
+    },
+    {
+      "id": "a97bad9c-e2fd-49a0-ac45-250b7ab6b987",
+      "content": "<p>the strength of the relationship between personality traits and musical preferences varies less across cultures than researchers had previously assumed.</p>"
+    },
+    {
+      "id": "816b1f2a-0d14-4148-b398-cc0261f079a4",
+      "content": "<p>people with a relatively high degree of familiarity with Western music styles are likely to express stronger preferences for those styles than people with a relatively low degree of familiarity with those styles are.</p>"
+    }
+  ],
+  "keys": [
+    "d4b86fd0-5b1f-41b1-b11f-ad38ef009252"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of the cross-cultural study on personality traits and music preferences. The text first explains that previous studies in individual Western societies had found links between personality traits and five musical factors that shape individual preferences for Western music styles. This finding suggests that people in those societies who have similar personality traits likely prefer listening to similar types of Western music. The text goes on to state that Greenberg et al. conducted a study that expanded this research to a broader, cross-cultural context (fifty-three countries across six continents). This study validated that the five-factor framework accurately represented participants&rsquo; preferences for Western music and that the study found patterns linking those preferences to personality traits. It follows, then, that people with similar profiles of personality traits tend to prefer similar types of Western music across cultural contexts.</p><p>Choice B is incorrect because Greenberg et al.&rsquo;s study examined only preferences for Western music styles, so the text provides no basis for inferring that the five-factor framework could predict preferences for non-Western music styles. The study was specifically limited to Western musical styles, and extending the study&rsquo;s findings to non-Western music would go beyond what the study investigated or supports. Choice C is incorrect because the text doesn&rsquo;t mention what researchers had previously assumed about cultural variation in the strength of the relationship between personality traits and musical preferences. The text presents the cross-cultural consistency of the association between musical preferences and personality traits as a new finding but doesn&rsquo;t mention previous expectations or assumptions about this association. Choice D is incorrect because the text doesn&rsquo;t address familiarity with Western music styles or suggest that familiarity influences preference strength for those styles. Greenberg et al.&rsquo;s study focused on the relationship between personality traits and musical preferences across cultural contexts, not on how exposure or familiarity might affect those preferences.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>Studies conducted in individual Western societies have demonstrated associations between personality traits and five musical factors (mellowness, unpretentiousness, sophistication, intensity, and contemporariness) underlying individual preferences for styles of Western music. To investigate these associations across cultures, David <span data-ssml-sub-alias=\"M\">M.</span> Greenberg <span data-ssml-sub-alias=\"et al\">et al.</span> collected music-preference assessments for Western genres and self-reported personality traits from participants in fifty-three countries across six continents. The study confirmed that the five-factor framework accurately captured participants&rsquo; tastes in Western music, and, moreover, the study found similar correlations between patterns of these factors and of personality traits, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "d4b86fd0-5b1f-41b1-b11f-ad38ef009252"
+    ],
+    "answerOptions": [
+      {
+        "id": "d4b86fd0-5b1f-41b1-b11f-ad38ef009252",
+        "content": "<p>across cultural contexts, people who share similar profiles of personality traits tend to prefer listening to similar types of Western music.</p>"
+      },
+      {
+        "id": "90fa60c8-8b21-4e40-8e07-41f58384a887",
+        "content": "<p>the five-factor framework can likely be used to predict preferences for non-Western music styles based on personality traits even if the characteristics of those styles substantially differ from characteristics of Western music styles.</p>"
+      },
+      {
+        "id": "a97bad9c-e2fd-49a0-ac45-250b7ab6b987",
+        "content": "<p>the strength of the relationship between personality traits and musical preferences varies less across cultures than researchers had previously assumed.</p>"
+      },
+      {
+        "id": "816b1f2a-0d14-4148-b398-cc0261f079a4",
+        "content": "<p>people with a relatively high degree of familiarity with Western music styles are likely to express stronger preferences for those styles than people with a relatively low degree of familiarity with those styles are.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of the cross-cultural study on personality traits and music preferences. The text first explains that previous studies in individual Western societies had found links between personality traits and five musical factors that shape individual preferences for Western music styles. This finding suggests that people in those societies who have similar personality traits likely prefer listening to similar types of Western music. The text goes on to state that Greenberg et al. conducted a study that expanded this research to a broader, cross-cultural context (fifty-three countries across six continents). This study validated that the five-factor framework accurately represented participants&rsquo; preferences for Western music and that the study found patterns linking those preferences to personality traits. It follows, then, that people with similar profiles of personality traits tend to prefer similar types of Western music across cultural contexts.</p><p>Choice B is incorrect because Greenberg et al.&rsquo;s study examined only preferences for Western music styles, so the text provides no basis for inferring that the five-factor framework could predict preferences for non-Western music styles. The study was specifically limited to Western musical styles, and extending the study&rsquo;s findings to non-Western music would go beyond what the study investigated or supports. Choice C is incorrect because the text doesn&rsquo;t mention what researchers had previously assumed about cultural variation in the strength of the relationship between personality traits and musical preferences. The text presents the cross-cultural consistency of the association between musical preferences and personality traits as a new finding but doesn&rsquo;t mention previous expectations or assumptions about this association. Choice D is incorrect because the text doesn&rsquo;t address familiarity with Western music styles or suggest that familiarity influences preference strength for those styles. Greenberg et al.&rsquo;s study focused on the relationship between personality traits and musical preferences across cultural contexts, not on how exposure or familiarity might affect those preferences.</p>",
+    "externalid": "0d431820-b3fc-41fe-9b35-b26b78b6f0ad",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Studies conducted in individual Western societies have demonstrated associations between personality traits and five musical factors (mellowness, unpretentiousness, sophistication, intensity, and contemporariness) underlying individual preferences for styles of Western music. To investigate these associations across cultures, David <span data-ssml-sub-alias=\"M\">M.</span> Greenberg <span data-ssml-sub-alias=\"et al\">et al.</span> collected music-preference assessments for Western genres and self-reported personality traits from participants in fifty-three countries across six continents. The study confirmed that the five-factor framework accurately captured participants&rsquo; tastes in Western music, and, moreover, the study found similar correlations between patterns of these factors and of personality traits, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "e3b72630-s1",
+  "originalId": "e3b72630",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In the historical novel <em>The Inheritance of Loss</em>, Indian American author Kiran Desai uses shifting narrators rather than a single perspective <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the complicated histories of a community in northeastern India.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>narrating</p>"},
+    {"id": "b", "content": "<p>narrated</p>"},
+    {"id": "c", "content": "<p>to narrate</p>"},
+    {"id": "d", "content": "<p>narrates</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The convention being tested is the use of finite and nonfinite verb forms within a sentence. The main clause \"Desai uses shifting narrators rather than a single perspective\" already has the finite verb \"uses,\" so the blank requires a nonfinite form. The to-infinitive \"to narrate\" forms an infinitive clause that expresses purpose, explaining why Desai uses shifting narrators.</p><p>Choice A is incorrect because the present participle \"narrating\" would form a participial modifier that, lacking a comma and a clear noun to modify, attaches awkwardly and does not convey purpose. Choice B is incorrect because the past participle \"narrated\" cannot stand as a purpose modifier; it would require an auxiliary to function as a finite verb. Choice D is incorrect because the finite present-tense verb \"narrates\" would create a second main verb without a coordinator, producing a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

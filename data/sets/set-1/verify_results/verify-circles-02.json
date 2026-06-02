@@ -1,0 +1,22 @@
+[
+  {"id": "24cec8d1-s1", "templateId": "circles.A5.T12.hard", "verdict": "difficulty_drift", "detail": "Hard lever requires perimeter-to-chord problem or distractor with apex value; clone is a straightforward apex→base-angle computation matching medium lever."},
+  {"id": "acd30391-s1", "templateId": "circles.A1.T3.hard", "verdict": "ok"},
+  {"id": "ca2235f6-s1", "templateId": "circles.A3.T7.hard", "verdict": "ok"},
+  {"id": "9acd101f-s1", "templateId": "circles.A2.T5.hard", "verdict": "ok"},
+  {"id": "6b4707aa-s1", "templateId": "circles.A2.T5.hard", "verdict": "ok"},
+  {"id": "244ff6c4-s1", "templateId": "circles.A4.T8.hard", "verdict": "ok"},
+  {"id": "1b2b20b9-s1", "templateId": "circles.A2.T5.hard", "verdict": "ok"},
+  {"id": "35d37640-s1", "templateId": "circles.A4.T8.hard", "verdict": "ok"},
+  {"id": "c447367f-s1", "templateId": "circles.A1.T2.hard", "verdict": "ok"},
+  {"id": "e80d62c6-s1", "templateId": "circles.A2.T5.hard", "verdict": "ok"},
+  {"id": "c8345903-s1", "templateId": "circles.A3.T7.hard", "verdict": "ok"},
+  {"id": "249d3f80-s1", "templateId": "circles.A4.T9.hard", "verdict": "ok"},
+  {"id": "fb58c0db-s1", "templateId": "circles.A3.T7.hard", "verdict": "ok"},
+  {"id": "196e8e6e-s1", "templateId": "circles.A5.T10.hard", "verdict": "ok"},
+  {"id": "1efd7ef3-s1", "templateId": "circles.A4.T8.hard", "verdict": "difficulty_drift", "detail": "Hard lever specifies tangent (sign matters) or indirect angle via point coordinates; clone uses sine of integer-π/2 multiple, fitting the medium lever."},
+  {"id": "2855cb58-s1", "templateId": "circles.A1.T2.hard", "verdict": "ok"},
+  {"id": "9e44284b-s1", "templateId": "circles.A2.T4.hard", "verdict": "ok"},
+  {"id": "3e577e4a-s1", "templateId": "circles.A5.T11.hard", "verdict": "difficulty_drift", "detail": "Hard lever requires identifying a point on the tangent line or careful negative-sign handling; clone is a straightforward slope-then-negative-reciprocal task matching the medium lever."},
+  {"id": "6585d841-s1", "templateId": "circles.A2.T4.hard", "verdict": "ok"},
+  {"id": "0acfddb5-s1", "templateId": "circles.A5.T10.hard", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "babd7461-s1",
+  "originalId": "babd7461",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the figure, triangle <i>ABC</i> is similar to triangle <i>XYZ</i>, where <i>A</i> corresponds to <i>X</i> and <i>B</i> corresponds to <i>Y</i>. The length of segment <i>AB</i> is 8, and the perimeter of triangle <i>ABC</i> is 20. The length of segment <i>XY</i> is 56. What is the perimeter of triangle <i>XYZ</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>76</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>140</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>448</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,120</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Because triangles <i>ABC</i> and <i>XYZ</i> are similar, the ratio of any pair of corresponding sides equals the ratio of their perimeters. The scale factor from <i>AB</i> to <i>XY</i> is 56/8 = 7. Therefore the perimeter of triangle <i>XYZ</i> is 7 &times; 20 = 140.</p><p>Choice A results from adding the scale factor difference (56 &minus; 8 = 48) to the original perimeter. Choice C results from multiplying 56 by 8 instead of dividing. Choice D results from squaring the scale factor (7&sup2; = 49) and multiplying by 20.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "area-and-volume.A3.T3.easy"
+}

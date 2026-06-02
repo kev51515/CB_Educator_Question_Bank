@@ -1,0 +1,22 @@
+[
+  {"id": "6a3fbec3-s1", "templateId": "lines-angles-and-triangles.A6.T1.hard", "verdict": "aspect_drift", "detail": "A6 requires intersecting lines at a single point with no triangle/parallel invocation. Clone is a right-triangle altitude / geometric-mean problem, which belongs to A5.T3 (right-triangle altitude similarity), not A6."},
+  {"id": "c41eb616-s1", "templateId": "lines-angles-and-triangles.A6.T1.hard", "verdict": "ok"},
+  {"id": "eeb4143c-s1", "templateId": "lines-angles-and-triangles.A6.T1.hard", "verdict": "aspect_drift", "detail": "Clone is a triangle-area inequality (area = (1/2)·6·h), not an intersecting-lines / vertical-angle problem. Does not test A6 (intersecting lines at a point)."},
+  {"id": "694b7fce-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "ok"},
+  {"id": "bd7f6e30-s1", "templateId": "lines-angles-and-triangles.A3.T1.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T1 variant requires overlapping/intersecting triangles with two combined isosceles arguments, or a nested config requiring exterior-angle plus angle-sum chaining. Clone is a single isosceles triangle with one exterior-angle step — matches medium/easy difficulty at best."},
+  {"id": "901c3215-s1", "templateId": "lines-angles-and-triangles.A4.T2.hard", "verdict": "ok"},
+  {"id": "a0369739-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "ok"},
+  {"id": "adae6543-s1", "templateId": "lines-angles-and-triangles.A5.T2.hard", "verdict": "ok"},
+  {"id": "48fb6483-s1", "templateId": "lines-angles-and-triangles.A2.T3.hard", "verdict": "ok"},
+  {"id": "0d3f51dc-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "7268586c-s1", "templateId": "lines-angles-and-triangles.A3.T1.easy", "verdict": "ok"},
+  {"id": "64d1f49f-s1", "templateId": "lines-angles-and-triangles.A6.T1.easy", "verdict": "ok"},
+  {"id": "992f4e93-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "afa3c48b-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "cf0d3050-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "5b918ebb-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "ok"},
+  {"id": "3b4b5b1e-s1", "templateId": "lines-angles-and-triangles.A1.T1.easy", "verdict": "constraint_violation", "detail": "Violates must_preserve 'explicit parallel statement' and 'single transversal' for A1.T1. Stem only describes two angles forming a straight line — pure linear-pair problem with no parallel lines or transversal. Belongs in A6."},
+  {"id": "69f4bbdc-s1", "templateId": "lines-angles-and-triangles.A2.T1.easy", "verdict": "ok"},
+  {"id": "c8d60e48-s1", "templateId": "lines-angles-and-triangles.A3.T1.easy", "verdict": "aspect_drift", "detail": "A3 requires isosceles/equilateral side-equality. Clone uses triangle similarity (angle transfer via similar triangles) with no isosceles side-equality — belongs to A5.T1 (angle transfer via similarity)."},
+  {"id": "3b44439b-s1", "templateId": "lines-angles-and-triangles.A1.T2.easy", "verdict": "constraint_violation", "detail": "Violates must_preserve 'parallel-lines configuration'. Clone has only a linear pair (no parallel lines, no transversal). Also fails to require solving for a parameter — the linear-pair sum is given directly. Belongs in A6."}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "567ac7ab-s1",
+  "originalId": "567ac7ab",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>2</mn><mi>y</mi><mo>=</mo><mn>8</mn><mi>x</mi><mo>-</mo><mn>14</mn></math></p>\n<p>One of the two equations in a linear system is given. The system has no solution. Which of the following could be the other equation in the system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>-</mo><mn>7</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mo>-</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>4</mn><mi>y</mi><mo>=</mo><mn>16</mn><mi>x</mi><mo>-</mo><mn>28</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>y</mi><mo>=</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The given equation 2y = 8x - 14 simplifies to y = 4x - 7 (slope 4, intercept -7). For no solution, the partner line must have slope 4 and a different intercept. Choice D, y = 4x + 5, satisfies this. Choices A and C are equivalent to the given line. Choice B has a different slope, so the system would have a unique solution.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.hard"
+}

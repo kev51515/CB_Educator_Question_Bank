@@ -1,0 +1,39 @@
+{
+  "questionId": "097e10f5-s1",
+  "originalId": "097e10f5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What value of <i>q</i> satisfies the equation 4<i>q</i> + 150 = 210?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>60</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Subtracting 150 from both sides gives 4<i>q</i> = 60. Dividing by 4 gives <i>q</i> = 15.</p><p>Choices A, C, and D result from skipping the subtraction step or incorrect division.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A1.T2.easy"
+}

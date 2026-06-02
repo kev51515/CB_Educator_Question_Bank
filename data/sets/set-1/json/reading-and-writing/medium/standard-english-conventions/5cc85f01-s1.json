@@ -1,0 +1,25 @@
+{
+  "questionId": "5cc85f01-s1",
+  "originalId": "5cc85f01",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.medium",
+  "stimulus": "<p>A documentary filmmaker and photographer celebrated by both the journalism community and the gallery <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Sundara Patel was invited to curate the retrospective <em>After the Border: South Asian American Storytellers</em> at the South Asian Heritage Museum.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>world</p>"},
+    {"id": "b", "content": "<p>world:</p>"},
+    {"id": "c", "content": "<p>world;</p>"},
+    {"id": "d", "content": "<p>world,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is punctuation between a supplementary phrase and a main clause. The comma correctly marks the boundary between the supplementary phrase (&ldquo;A documentary...world&rdquo;), which describes Sundara Patel, and the main clause (&ldquo;Sundara...Museum&rdquo;).</p><p>Choice A is incorrect because it fails to mark the boundary with appropriate punctuation. Choice B is incorrect because a colon can&rsquo;t join a supplementary phrase to the following main clause; doing so wrongly suggests the supplementary phrase is being explained or amplified by what follows. Choice C is incorrect because a semicolon can&rsquo;t join a supplementary phrase to a main clause; semicolons separate two main clauses or items in a complex series.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

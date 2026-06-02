@@ -1,0 +1,39 @@
+{
+  "questionId": "e7d37666-s1",
+  "originalId": "e7d37666",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>It is by no means <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to recognize the influence of Italian Baroque composer Claudio Monteverdi on Hannah Lash's chamber works; indeed, Lash herself cites Monteverdi as a touchstone. However, some musicologists have suggested that twelfth-century Hildegard von Bingen's plainchant may have had a far greater impact on Lash's compositional voice.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>satisfying</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>insignificant</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>substantial</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>appropriate</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Insignificant\" most logically completes the text. The text concedes that Monteverdi's influence on Lash is real and acknowledged\u2014so it is \"by no means insignificant.\" The contrast with \"however\" then offers an even greater influence (Hildegard).</p><p>Choice A is incorrect. \"Satisfying\" describes a feeling about the act of recognition rather than the magnitude of the influence. Choice C is incorrect. \"Substantial\" would reverse the polarity: \"by no means substantial\" would mean the influence is minor, contradicting Lash's own citation. Choice D is incorrect. \"Appropriate\" describes propriety, not magnitude.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

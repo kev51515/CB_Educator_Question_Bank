@@ -1,0 +1,39 @@
+{
+  "questionId": "d3898d32-s1",
+  "originalId": "d3898d32",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Carl Safina&mdash;the author of widely praised books such as <em>Beyond Words</em> (2015)&mdash;is best known for writing about animal cognition, but he has also conducted firsthand research expeditions. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his research has included field studies of elephants in Kenya, wolves in Yellowstone, and orcas in the Pacific Northwest, and his recorded observations have informed conservation efforts at institutions such as the Wildlife Conservation Society.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Conversely,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Subsequently,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Regardless,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The second sentence provides specific information about the firsthand research mentioned in the first sentence&mdash;that the studies took place in Kenya, Yellowstone, and the Pacific Northwest. \"Specifically\" fits perfectly.</p><p>Choice B is incorrect because \"conversely\" illogically signals contrast, but the sentence elaborates on the previous claim. Choice C is incorrect because \"subsequently\" illogically signals a later event. Choice D is incorrect because \"regardless\" illogically signals contrast, when the sentence agrees with the previous one.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T8.easy"
+}

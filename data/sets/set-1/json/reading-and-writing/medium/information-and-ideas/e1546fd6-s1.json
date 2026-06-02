@@ -1,0 +1,25 @@
+{
+  "questionId": "e1546fd6-s1",
+  "originalId": "e1546fd6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Average Iron and Silicate Concentrations in Seawater after Underwater Volcanic Eruption</p></caption><thead><tr><th scope=\"col\">Nutrient</th><th scope=\"col\">Plume-affected area, 10&ndash;50 m below surface</th><th scope=\"col\">Plume-affected area, 80&ndash;130 m below surface</th><th scope=\"col\">Outside plume-affected area, 10&ndash;50 m below surface</th><th scope=\"col\">Outside plume-affected area, 80&ndash;130 m below surface</th></tr></thead><tbody><tr><th scope=\"row\">Iron (nanomoles per liter)</th><td>2.8</td><td>0.5</td><td><span aria-hidden=\"true\">&le;0.02</span><span class=\"sr-only\">less than or equal to 0.02</span></td><td><span aria-hidden=\"true\">&le;0.01</span><span class=\"sr-only\">less than or equal to 0.01</span></td></tr><tr><th scope=\"row\">Silicate (micromoles per liter)</th><td>0.19</td><td>0.10</td><td>0.16</td><td>0.07</td></tr></tbody></table></figure></p><p>After a submarine volcanic eruption discharged a hydrothermal plume into South Pacific Ocean waters, a dramatic increase of diatoms (a kind of phytoplankton) near the surface occurred. Scientists assumed the diatoms were thriving on nutrients such as silicate from the plume, but analysis showed these nutrients weren&rsquo;t present near the surface in forms diatoms can use. However, there was an abundance of usable iron, a nutrient usually found in much deeper water and almost never released by surface plumes. Microbial oceanographer Aurelie Vincent and colleagues believe that as the plume rose more than 250 meters from below the surface it carried pockets of this nutrient upward, given that <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>at 10&ndash;50 meters below the surface, the average concentration of silicate was about the same in the seawater in the plume-affected area as in the seawater outside of the plume-affected area.</p>"},
+    {"id": "b", "content": "<p>for both depth ranges measured in the seawater in the plume-affected area, the average concentrations of iron were substantially higher than the average concentrations of silicate.</p>"},
+    {"id": "c", "content": "<p>in the seawater outside of the plume-affected area, there was little change in the average concentration of iron from 80&ndash;130 meters below the surface to 10&ndash;50 meters below the surface.</p>"},
+    {"id": "d", "content": "<p>for both depth ranges measured, the average concentrations of iron were substantially higher in the seawater in the plume-affected area than in the seawater outside of the plume-affected area.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the team&rsquo;s claim is that the plume carried iron upward; data showing substantially higher iron in plume-affected seawater at both depths above 250 m (2.8 and 0.5) than in unaffected seawater (≤0.02 and ≤0.01) supports the claim. Choice A is incorrect because the claim is about iron, not silicate. Choice B is incorrect because comparing iron with silicate doesn&rsquo;t address whether the plume delivered iron. Choice C is incorrect because the claim is about plume-affected water, not the area outside.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

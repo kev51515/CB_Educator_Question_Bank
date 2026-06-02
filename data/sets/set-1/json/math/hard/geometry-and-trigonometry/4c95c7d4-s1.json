@@ -1,0 +1,39 @@
+{
+  "questionId": "4c95c7d4-s1",
+  "originalId": "4c95c7d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An artist designs a banner whose outline is a trapezoid formed by three congruent equilateral triangles placed edge to edge. The perimeter of the trapezoid is 30 centimeters. What is the combined area, in square centimeters, of two of the three congruent equilateral triangles?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18&radic;3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9&radic;3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>27&radic;3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Three congruent equilateral triangles arranged into a trapezoid produce 5 equal outer edges, each of length s. Therefore 5s = 30, so s = 6. The area of one equilateral triangle with side 6 is (6&sup2;&radic;3)/4 = 9&radic;3 square cm. Two such triangles have combined area 18&radic;3 square cm. Choice B is the area of one triangle. Choice C is the area of all three triangles. Choice D ignores the &radic;3 factor.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T8.hard"
+}

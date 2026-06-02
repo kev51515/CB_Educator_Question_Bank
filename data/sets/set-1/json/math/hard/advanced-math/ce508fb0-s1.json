@@ -1,0 +1,22 @@
+{
+  "questionId": "ce508fb0-s1",
+  "originalId": "ce508fb0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The functions <i>f</i> and <i>g</i> are defined by <i>f</i>(<i>x</i>) = 5 &minus; |<i>x</i>&sup2; &minus; 4<i>x</i>| and <i>g</i>(<i>x</i>) = |<i>x</i> &minus; 3| &minus; 7. What is the value of <i>g</i>(<i>f</i>(5))?</p>",
+  "answerOptions": [],
+  "keys": [
+    "-4"
+  ],
+  "rationale": "<p>First evaluate <i>f</i>(5) = 5 &minus; |25 &minus; 20| = 5 &minus; 5 = 0. Then <i>g</i>(0) = |0 &minus; 3| &minus; 7 = 3 &minus; 7 = &minus;4.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A1.T1.hard"
+}

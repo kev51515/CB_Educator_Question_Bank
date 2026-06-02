@@ -1,0 +1,22 @@
+[
+  {"id": "43744269-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T9.easy", "verdict": "ok"},
+  {"id": "8d63b6f1-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "aspect_drift", "detail": "Clone reads a value directly from a data table with no line of best fit or prediction model. This is A1 (read raw values), not A4 (predict using model)."},
+  {"id": "8baf2118-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy", "verdict": "ok"},
+  {"id": "8156d446-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "ok"},
+  {"id": "cf0ae57a-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "ok"},
+  {"id": "661dfddd-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy", "verdict": "type_drift", "detail": "T10 requires classifying among {linear/exponential × increasing/decreasing} model families. Clone instead asks to describe the association direction; MCQ options do not span the 2x2 model grid."},
+  {"id": "39aa146d-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.easy", "verdict": "ok"},
+  {"id": "15ce8207-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T11.easy", "verdict": "type_drift", "detail": "T11 must_preserve requires a clearly nonlinear (typically exponential) scatterplot with curve options. Clone shows linear data with linear-vs-constant-vs-quadratic options; correct answer is 'increasing linear', so it fits A5.T10 not T11."},
+  {"id": "74dee52b-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy", "verdict": "ok"},
+  {"id": "b58dbf88-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "aspect_drift", "detail": "Clone reads weight directly from a listed data point (5, 50). No line of best fit or prediction model is used. This is A1 reading raw values, not A4 model-based prediction."},
+  {"id": "13f67ddc-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy", "verdict": "ok"},
+  {"id": "a6b2fcce-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy", "verdict": "ok"},
+  {"id": "5c24c861-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "aspect_drift", "detail": "Clone looks up 50 mph row directly in the table (180 ft). No line of best fit or model prediction is applied; this fits A1, not A4."},
+  {"id": "82aaa0a1-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T11.easy", "verdict": "ok"},
+  {"id": "5f3ee607-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy", "verdict": "ok"},
+  {"id": "bc59c2d9-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy", "verdict": "ok"},
+  {"id": "c141366d-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy", "verdict": "ok"},
+  {"id": "83272c51-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy", "verdict": "type_drift", "detail": "T2 must_preserve requires a contextualized x-y graph (not a generic scatterplot or table). Clone uses a table of values, not a graph; structure better matches A1.T1 medium (interval-change reading)."},
+  {"id": "9d88a3e3-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy", "verdict": "type_drift", "detail": "T2 must_preserve requires a contextualized x-y graph. Clone presents only a verbal/bulleted description with no plotted graph, violating the structural requirement."},
+  {"id": "2e511919-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy", "verdict": "ok"}
+]

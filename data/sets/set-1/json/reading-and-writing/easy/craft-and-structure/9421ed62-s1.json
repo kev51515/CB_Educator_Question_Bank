@@ -1,0 +1,39 @@
+{
+  "questionId": "9421ed62-s1",
+  "originalId": "9421ed62",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In 2010, computer scientist Adriana Vargas was working on improving voice-recognition systems for smartphones. She found that the systems struggled with some accents and background noises that humans could parse easily. Based on that finding, Vargas developed a simple online task that recorded volunteers reading short passages aloud. The first version of her project asked volunteers to read one familiar phrase and one phrase that the system had previously misheard. Each correct recording added data to the voice-recognition training set and produced a more reliable assistant.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To indicate how popular voice-recognition systems are</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To explain how microphones detect sound</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To discuss Vargas's creation of a voice-recognition training project</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To call attention to Vargas's smartphone designs</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. After briefly introducing Vargas, the text focuses on how her work led her to create a project that trains voice-recognition systems with volunteer recordings.</p><p>Choice A is incorrect. The text doesn't address popularity. Choice B is incorrect. The text doesn't explain how microphones work. Choice D is incorrect. The text mentions smartphones as the context but doesn't focus on Vargas's smartphone designs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

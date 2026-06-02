@@ -1,0 +1,25 @@
+{
+  "questionId": "485962a6-s1",
+  "originalId": "485962a6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T6.medium",
+  "stimulus": "<p>Planetary scientists examined the Tharsis Montes region of Mars because it appears to contain large channel networks that may have been carved by ancient flowing water. In their investigations of Tharsis Montes, the researchers found mineral deposits in quantities and patterns consistent with sustained water flow. However, dust storms and lava flows over billions of years could have substantially obscured or transported original surface features. Therefore, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the current makeup of the Tharsis Montes region might not accurately reflect Mars's past hydrological activity.</p>"},
+    {"id": "b", "content": "<p>the channels found in the Tharsis Montes region were necessarily formed by processes other than water flow.</p>"},
+    {"id": "c", "content": "<p>water flows on Mars were likely not as sustained as planetary scientists previously believed.</p>"},
+    {"id": "d", "content": "<p>the mineral deposits were most likely transported from several distant Martian regions.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is best. The cautious conclusion that respects the stated caveat (dust and lava have altered the surface) is that today's appearance may not reliably reflect past hydrological activity—signs may have been transformed or moved. Choice B is too strong; the text does not rule out water as the cause, only that we cannot be certain. Choice C overreaches with a confident claim about flow duration. Choice D speculates about an origin that the text never supports.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

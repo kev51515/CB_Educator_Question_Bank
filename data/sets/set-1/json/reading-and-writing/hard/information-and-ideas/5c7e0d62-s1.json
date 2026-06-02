@@ -1,0 +1,39 @@
+{
+  "questionId": "5c7e0d62-s1",
+  "originalId": "5c7e0d62",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Robin Hood legends&mdash;tales centered on the figure of the outlaw archer Robin Hood&mdash;come down to us from a number of sources, including the ballad <em>Robin Hood and the Monk</em>, preserved in a manuscript from around 1450, and the printed compilation <em>A Gest of Robyn Hode</em>, dating to roughly 1495. One of the most influential sources, however, was the chronicler John Major&rsquo;s <em>History of Greater Britain</em>, written in 1521; portions of that work were later reworked by the playwright Anthony Munday into the play <em>The Downfall of Robert, Earl of Huntington</em> in 1598. But Munday didn&rsquo;t simply adapt Major&rsquo;s material&mdash;he added to it as well, introducing for the first time the idea that Robin Hood was a dispossessed nobleman of the Huntington line, an idea that became central to later versions of the legend. From this, it follows that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>John Major was unaware of stories of Robin Hood&rsquo;s noble origins when writing <em>History of Greater Britain</em>, although historians know that texts containing such stories were already in circulation at that time.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>The Downfall of Robert, Earl of Huntington</em> is more historically accurate than <em>History of Greater Britain</em>, because <em>A Gest of Robyn Hode</em> had not yet been printed when Major composed his chronicle.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the Robin Hood legends drawn on by the composer of <em>Robin Hood and the Monk</em> would not have depicted Robin Hood as a dispossessed nobleman of the Huntington line.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>John Major&rsquo;s accounts of Robin Hood in <em>History of Greater Britain</em> are more similar in overall content to the accounts in <em>The Downfall of Robert, Earl of Huntington</em> than to those in <em>Robin Hood and the Monk</em>.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically follows from the text. The text says Munday, writing in 1598, was the first to introduce the idea that Robin Hood was a dispossessed nobleman of the Huntington line. <em>Robin Hood and the Monk</em>, however, was preserved in a manuscript from about 1450&mdash;well before Munday's innovation. So the legends available to the composer of <em>Robin Hood and the Monk</em> could not yet have included the dispossessed-nobleman idea.</p><p>Choice A is incorrect because the text says Munday introduced the noble-origin idea for the first time, which rules out the existence of earlier texts containing such stories. Choice B is incorrect because the text says nothing about historical accuracy, and the relative dates of <em>A Gest of Robyn Hode</em> and Major's chronicle don't bear on accuracy. Choice D is incorrect because the text gives no basis for comparing the overall content of Major's chronicle with that of either later work.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T9.hard"
+}

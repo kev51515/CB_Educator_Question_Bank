@@ -1,0 +1,39 @@
+{
+  "questionId": "6a6bbac3-s1",
+  "originalId": "6a6bbac3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Stone scrapers recovered at the Olbia rock shelter, by depth and material source</strong></p><table border=\"1\"><thead><tr><th>Depth below surface (m)</th><th>Tools made from outcrop flint</th><th>Tools made from river-bed flint</th></tr></thead><tbody><tr><td>1\u20132</td><td>34</td><td>9</td></tr><tr><td>2\u20133</td><td>61</td><td>14</td></tr><tr><td>3\u20134</td><td>78</td><td>19</td></tr><tr><td>4\u20135</td><td>42</td><td>10</td></tr><tr><td>5\u20136</td><td>53</td><td>12</td></tr></tbody></table><p>Early Mesolithic hunter-gatherers in central Italy made stone scrapers from two kinds of flint: rough nodules picked up at exposed limestone outcrops, and smoother, denser cobbles tumbled in nearby riverbeds. The river-bed flint, having been polished and hardened by water, holds a sharper edge and is therefore more desirable for scraper-making. Yet a research team studying the Olbia rock shelter concluded, on the basis of artifacts recovered there, that scrapers made from river-bed flint are far rarer at the site than scrapers made from outcrop flint.</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to support the research team's conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The greater number of scrapers at depths of 5\u20136 meters than at depths of 4\u20135 meters suggests that the supply of suitable flint changed over time.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>At each depth below the surface, the difference in the numbers of scrapers of each type suggests that flint was easier to gather at limestone outcrops than to collect from riverbeds.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>At each depth below the surface, the difference in the numbers of scrapers of each type suggests that hunter-gatherers preferred outcrop flint because of its sharper edge.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The highest number of scrapers occurs at a depth of 3\u20134 meters, which suggests that the population at the site was largest during the related period.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The team's conclusion is that the more desirable river-bed flint was used less often than the less desirable outcrop flint. The table shows that, at every depth, outcrop-flint scrapers outnumber river-bed-flint scrapers by a wide margin. The most coherent explanation for that uniform imbalance is that gathering flint at outcrops was substantially easier than collecting it from riverbeds, supporting the conclusion.</p><p>Choice A is incorrect: a difference between depths concerns fluctuations in supply, not the consistent imbalance the conclusion addresses. Choice C is incorrect: it contradicts the text, which states river-bed flint\u2014not outcrop flint\u2014holds the sharper edge. Choice D is incorrect: identifying the most populous period does not explain why the less desirable material was used more often.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

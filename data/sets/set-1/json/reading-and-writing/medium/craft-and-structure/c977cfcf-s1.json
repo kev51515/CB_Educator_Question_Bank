@@ -1,0 +1,25 @@
+{
+  "questionId": "c977cfcf-s1",
+  "originalId": "c977cfcf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T4.medium",
+  "stimulus": "<p>According to a team of cognitive scientists at McGill University, success at simultaneous interpretation may be tied to signaling between two brain regions, the anterior cingulate cortex and the dorsolateral prefrontal cortex. Interpreters tend to be more accurate when the rate of signaling between the regions is elevated, whereas they make more lexical errors when signaling is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>suppressed</p>"},
+    {"id": "b", "content": "<p>directed</p>"},
+    {"id": "c", "content": "<p>assessed</p>"},
+    {"id": "d", "content": "<p>acquired</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Suppressed\" means reduced or held back. The text sets up a contrast: interpreters are more accurate when signaling is elevated, and the opposite condition (the blank) must be one in which signaling is decreased.</p><p>Choice B is incorrect. \"Directed\" describes steering signaling somewhere, not whether it is high or low&mdash;so it doesn't supply the needed contrast. Choice C is incorrect. \"Assessed\" means evaluated; the text concerns the rate of signaling, not appraisal of it. Choice D is incorrect. \"Acquired\" means gained; the relevant variable in the contrast is intensity of signaling, not whether it has been obtained.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

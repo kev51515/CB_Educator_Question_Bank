@@ -1,0 +1,22 @@
+{
+  "questionId": "825b7490-s1",
+  "originalId": "825b7490",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The ratio 180 to <em>n</em> is equivalent to the ratio 5 to 35. What is the value of <em>n</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1260"
+  ],
+  "rationale": "<p>The correct answer is 1,260. The equation 180/n = 5/35 must hold. Cross-multiplying gives 180 \u00b7 35 = 5n, so 6,300 = 5n, and n = 1,260.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.medium"
+}

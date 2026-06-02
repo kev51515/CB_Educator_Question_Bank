@@ -1,0 +1,25 @@
+{
+  "questionId": "e9aee0d8-s1",
+  "originalId": "e9aee0d8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>In March 1857, amid mounting unrest across northern India, soldiers of the Bengal Army began coordinating with sympathetic civilians through clandestine messengers. By June 1857, what had begun as scattered acts of resistance had developed into something far more <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> coalition of regiments, princely households, and rural cultivators that, drawing on overlapping grievances against colonial rule, briefly threatened British authority across the Gangetic plain.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>formidable; a</p>"},
+    {"id": "b", "content": "<p>formidable. A</p>"},
+    {"id": "c", "content": "<p>formidable: a</p>"},
+    {"id": "d", "content": "<p>formidable, it was a</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of a colon within a sentence. The colon correctly introduces the following explanation of what the resistance had developed into by June 1857.</p><p>Choice A is incorrect because a semicolon cannot join the main clause (\"what...formidable\") and the supplementary element (\"a coalition...plain\"); a semicolon conventionally joins two main clauses, whereas a colon introduces an element that explains or amplifies the preceding clause. Choice B is incorrect because it results in a sentence fragment beginning with \"A coalition.\" Choice D is incorrect because adding \"it was\" creates a comma splice between two main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

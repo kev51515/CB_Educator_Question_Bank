@@ -1,0 +1,39 @@
+{
+  "questionId": "be947479-s1",
+  "originalId": "be947479",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Bachata is a music form that was first developed in Dominican communities. Bachata was heavily influenced by Cuban bolero, which became widely popular in Latin America in the mid-twentieth century. Bachata musicians were inspired by bolero's romantic themes and the way bolero singers shaped phrases with feeling. As bolero continued to evolve in the 1960s and 1970s, bachata evolved with it. Because of bolero's influence, bachata quickly developed into a music form quite different from earlier styles of Caribbean folk music.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It explains why audiences prefer some kinds of music over others.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes how to play a musical instrument.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It emphasizes the popularity of a famous singer.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It discusses the development of a music form.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says where bachata first developed, what influenced it, and how it evolved alongside bolero into a distinct music form.</p><p>Choice A is incorrect. The text doesn't explain audience preferences. Choice B is incorrect. The text doesn't describe how to play an instrument. Choice C is incorrect. The text never names a particular singer.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

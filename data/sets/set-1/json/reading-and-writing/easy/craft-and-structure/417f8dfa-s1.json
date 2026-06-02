@@ -1,0 +1,39 @@
+{
+  "questionId": "417f8dfa-s1",
+  "originalId": "417f8dfa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Tommy Pico's 2017 poem \"Nature Poem.\" The speaker is studying an old portrait.</p><blockquote><p>I could not stop staring at the sepia-toned photograph in a wooden frame. Set upon the bookshelf, it <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">featured</span> a young portrait of my great-grandmother on the day of her marriage.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the word \"featured\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Questioned</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Approved</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ignored</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Displayed</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the speaker describes a framed photograph sitting on a bookshelf and presenting a portrait of the great-grandmother. \"Displayed\" means shown or exhibited, which is exactly what the photograph does.</p><p>Choice A is incorrect because a photograph does not ask questions. Choice B is incorrect because a photograph does not approve or endorse. Choice C is incorrect because the photograph is plainly visible on the bookshelf, not overlooked.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

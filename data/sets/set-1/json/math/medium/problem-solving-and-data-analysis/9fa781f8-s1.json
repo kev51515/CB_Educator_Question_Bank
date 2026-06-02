@@ -1,0 +1,22 @@
+{
+  "questionId": "9fa781f8-s1",
+  "originalId": "9fa781f8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The ratio <em>a</em> to <em>b</em> is equivalent to the ratio 7 to 4. If the value of <em>a</em> is 175, what is the value of <em>b</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "100"
+  ],
+  "rationale": "<p>The correct answer is 100. From a/b = 7/4, we get 4a = 7b, so b = 4a/7 = 4(175)/7 = 700/7 = 100.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.medium"
+}

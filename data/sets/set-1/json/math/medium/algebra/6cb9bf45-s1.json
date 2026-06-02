@@ -1,0 +1,39 @@
+{
+  "questionId": "6cb9bf45-s1",
+  "originalId": "6cb9bf45",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>y</em> &gt; 3<em>x</em> + 2</p><p>For which of the following tables are all the values of <em>x</em> and their corresponding values of <em>y</em> solutions to the given inequality?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<table border=\"1\"><tr><th><em>x</em></th><th><em>y</em></th></tr><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>4</td></tr><tr><td>2</td><td>7</td></tr></table>"
+    },
+    {
+      "id": "b",
+      "content": "<table border=\"1\"><tr><th><em>x</em></th><th><em>y</em></th></tr><tr><td>0</td><td>3</td></tr><tr><td>1</td><td>6</td></tr><tr><td>2</td><td>9</td></tr></table>"
+    },
+    {
+      "id": "c",
+      "content": "<table border=\"1\"><tr><th><em>x</em></th><th><em>y</em></th></tr><tr><td>1</td><td>5</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>10</td></tr></table>"
+    },
+    {
+      "id": "d",
+      "content": "<table border=\"1\"><tr><th><em>x</em></th><th><em>y</em></th></tr><tr><td>\u22121</td><td>0</td></tr><tr><td>0</td><td>3</td></tr><tr><td>1</td><td>5</td></tr></table>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Test each pair: 3 &gt; 3(0)+2=2 \u2713, 6 &gt; 3(1)+2=5 \u2713, 9 &gt; 3(2)+2=8 \u2713. All pairs satisfy the inequality.</p><p>Choices A, C, and D contain at least one pair that fails the inequality.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium"
+}

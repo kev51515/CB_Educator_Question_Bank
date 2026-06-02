@@ -1,0 +1,39 @@
+{
+  "questionId": "974b5a8c-s1",
+  "originalId": "974b5a8c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The villanelle is a form of fixed-verse poem built around two repeating refrains and a strict pattern of rhymed tercets that culminate in a closing quatrain. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many other poetic forms also depend on rigid meter, recurring lines, and rhyme schemes, but the villanelle is set apart by the obsessive return of its two refrains; the form can feel less like a song than a kind of liturgical chant cycling back on itself.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In addition,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By contrast,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>That is,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To be sure,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"To be sure\" logically concedes an obvious similarity between the villanelle and other strict poetic forms before the sentence pivots to what distinguishes the villanelle\u2014its obsessive refrains. The transition acknowledges the shared trait so that the contrast can be sharpened.</p><p>Choice A is incorrect because \"in addition\" would simply add another claim about the villanelle, missing the concession-then-contrast structure. Choice B is incorrect because \"by contrast\" would frame the remark about other forms as opposing the first sentence, but the two clauses on either side of the blank both acknowledge similarity. Choice C is incorrect because \"that is\" would mark a paraphrase or clarification, but the sentence introduces new information about other poetic forms rather than restating the description of the villanelle.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5e732e67-s1",
+  "originalId": "5e732e67",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Many radio programs from the 1930s have been lost. These losses include several programs created by the first wave of Latina radio hosts. We know about these missing broadcasts only from small pieces of evidence. For example, a flyer advertising Rosita Fernandez's variety show <em>Una Hora de M\u00fasica</em> still exists. There's a mention in a magazine of Lydia Mendoza's <em>El Ranchito Musical</em>. And Carmen Salinas's news show <em>Voces del Sur</em> is referenced in a letter and a newspaper review, with one photograph of the broadcast booth turning up in the 1980s.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The text summarizes a debate among researchers, then gives reasons for supporting one side.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The text discusses several notable individuals, then explains commonly overlooked differences between them.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The text identifies a complex problem, then presents unsuccessful attempts to solve it.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The text describes a general situation, then illustrates that situation with specific examples.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The first three sentences describe a general situation\u2014early Latina radio programs have been lost, known only from fragmentary evidence\u2014and the rest of the text gives specific examples of that evidence.</p><p>Choice A is incorrect. No debate is presented. Choice B is incorrect. The text doesn't compare differences between the radio hosts. Choice C is incorrect. The situation isn't framed as a problem with unsuccessful attempted solutions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.easy"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "a12a83ce-s1",
+    "templateId": "central-ideas-and-details.A3.T8.hard",
+    "verdict": "type_drift",
+    "detail": "Stem 'which point does Nora most directly make about herself' is T7-style (what point/question the text makes about a referent), not T8 character-trait inference. Answer B is correct and defensible, but the type tag should be T7."
+  },
+  {
+    "id": "d1b8a9ad-s1",
+    "templateId": "central-ideas-and-details.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem 'most strongly suggest about the reggaeton genre' targets the whole-passage thesis (genre underestimated despite substantive engagement). Correct answer B paraphrases the passage's overall claim, fitting A1 main-idea synthesis rather than A3 single-detail inference. Answer is correct."
+  },
+  {
+    "id": "7c9a65bb-s1",
+    "templateId": "central-ideas-and-details.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "Answer C ('permits scanning without subjecting surfaces to as much wear from contact') is essentially a paraphrase of the explicit sentence stating the coating absorbs wear rather than the sample. The item functions as A2 factual lookup rather than a one-step inference; no qualifier-discrimination characteristic of T6 Hard is present."
+  },
+  {
+    "id": "db2da2bf-s1",
+    "templateId": "central-ideas-and-details.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "The elongated asteroid's direction (same as majority) and shape (elongated) are explicitly stated in the final sentence; answer B is direct factual lookup, not a one-step inference. Functions as A2.T4, not A3.T6, and lacks Hard T6's hedged/qualifier-discrimination feature."
+  },
+  {
+    "id": "66bef967-s1",
+    "templateId": "central-ideas-and-details.A1.T1.medium",
+    "verdict": "type_drift",
+    "detail": "T1 must_preserve requires stem 'Which choice best states the main idea of the text?' (or 'best describes the main idea'); clone uses 'Which choice best describes Jourdain's approach to art' which drifts toward an A3-style inference-about-an-entity stem rather than whole-passage main idea phrasing."
+  },
+  {
+    "id": "87aa7bab-s1",
+    "templateId": "central-ideas-and-details.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "T7 requires stem 'which question does the text most directly attempt to answer' or 'what point does the text make about [referent]'. Clone stem 'what can be concluded about the diminishing popularity...' is an inference-about-a-finding stem matching T6, not T7."
+  },
+  {
+    "id": "dcca0dfc-s1",
+    "templateId": "central-ideas-and-details.A3.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T8.hard requires 'pre-twentieth-century prose with elaborate syntax and elevated diction.' Mantel's 2009 Wolf Hall is modern prose; the syntactic friction defining T8.hard is absent. Inference is otherwise plausible and answer B is correct."
+  },
+  {
+    "id": "7f0be746-s1",
+    "templateId": "central-ideas-and-details.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T2 requires pre-twentieth-century literary prose or poem with figurative language and inverted syntax; this Ishiguro 2005 excerpt is modern prose with straightforward syntax, missing the diction/syntactic friction that defines T2 Hard."
+  },
+  {
+    "id": "2df56712-s1",
+    "templateId": "central-ideas-and-details.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 must_preserve requires an 'although/however/long thought\u2026 but' pivot in the stimulus that the correct option mirrors. This stimulus presents sequential facts leading to a conclusion without a corrective/contrastive pivot, and the correct option B is a straight summary rather than mirroring a pivot."
+  },
+  {
+    "id": "23ecf625-s1",
+    "templateId": "central-ideas-and-details.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard variant requires an 'although/however/long thought... but' corrective pivot the correct answer mirrors. Clone lacks this pivot; stimulus is a straightforward claim + example with no counterintuitive turn, collapsing toward Easy/Medium difficulty."
+  }
+]

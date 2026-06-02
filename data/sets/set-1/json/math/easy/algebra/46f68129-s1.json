@@ -1,0 +1,39 @@
+{
+  "questionId": "46f68129-s1",
+  "originalId": "46f68129",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A teacher has 51 pencils to distribute to a group of students. If she gives each student 3 pencils, she will have 9 pencils left over. How many students are in the group?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>30</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Subtracting the leftover pencils from the total gives <math><mn>51</mn><mo>-</mo><mn>9</mn><mo>=</mo><mn>42</mn></math>, the number of pencils distributed. Dividing by 3 pencils per student gives <math><mn>42</mn><mo>/</mo><mn>3</mn><mo>=</mo><mn>14</mn></math> students.</p><p>Choices B, C, and D are incorrect and may result from sign errors or using the wrong operations.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

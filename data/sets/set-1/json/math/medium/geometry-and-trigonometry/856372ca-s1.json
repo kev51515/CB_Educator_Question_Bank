@@ -1,0 +1,39 @@
+{
+  "questionId": "856372ca-s1",
+  "originalId": "856372ca",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <em>xy</em>-plane, a circle with radius 7 has center (&minus;2, 3). Which of the following is an equation of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x &minus; 2)<sup>2</sup> + (y + 3)<sup>2</sup> = 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x &minus; 2)<sup>2</sup> + (y + 3)<sup>2</sup> = 49</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x + 2)<sup>2</sup> + (y &minus; 3)<sup>2</sup> = 7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x + 2)<sup>2</sup> + (y &minus; 3)<sup>2</sup> = 49</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The equation of a circle with center (h, k) and radius r is (x &minus; h)<sup>2</sup> + (y &minus; k)<sup>2</sup> = r<sup>2</sup>. With center (&minus;2, 3) and radius 7: (x &minus; (&minus;2))<sup>2</sup> + (y &minus; 3)<sup>2</sup> = 7<sup>2</sup>, i.e., (x + 2)<sup>2</sup> + (y &minus; 3)<sup>2</sup> = 49. Choices A and B have the wrong signs for the center coordinates. Choice C uses 7 instead of 49 for r<sup>2</sup>.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A1.T2.medium"
+}

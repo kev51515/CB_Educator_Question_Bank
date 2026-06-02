@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">Daniel rode a stationary bike for forty minutes. His speed during the ride is summarized as follows:</p>\n<ul>\n<li>From minute 0 to minute 10, his speed increased steadily from 0 mph to 12 mph.</li>\n<li>From minute 10 to minute 20, his speed remained constant at 12 mph.</li>\n<li>From minute 20 to minute 35, his speed decreased steadily from 12 mph to 4 mph.</li>\n<li>From minute 35 to minute 40, his speed increased steadily from 4 mph to 14 mph.</li>\n</ul>\n<p style=\"text-align: left;\">According to this description, which of the following statements is NOT true concerning Daniel's ride?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Daniel rode at a constant speed for ten minutes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Daniel's speed decreased at a constant rate during a fifteen-minute period.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Daniel's maximum speed occurred during the last five minutes of his ride.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Daniel's speed was increasing for a longer period of time than it was decreasing.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct (the NOT-true statement). Daniel's speed was increasing for 10 + 5 = 15 minutes total but decreasing for 15 minutes — they are equal, so it is not true that increasing took longer.</p><p>Choices A, B, and C are all true based on the description.</p>",
+  "questionId": "9d88a3e3-s1",
+  "originalId": "9d88a3e3",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.misc.easy"
+}

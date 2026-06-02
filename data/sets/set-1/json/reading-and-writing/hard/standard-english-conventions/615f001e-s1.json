@@ -1,0 +1,25 @@
+{
+  "questionId": "615f001e-s1",
+  "originalId": "615f001e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": "<p>Consider the physics of a tuning fork: when a prong is struck, the metal vibrates back and forth at a fixed rate, producing a clean tone. A frequency analysis shows precisely why this ______ each prong is rigid and symmetrical, it returns to its rest position at a constant rate, and the surrounding air molecules are pushed and pulled in regular intervals, yielding a single audible pitch.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>happens, because</p>"},
+    {"id": "b", "content": "<p>happens: it&rsquo;s because</p>"},
+    {"id": "c", "content": "<p>happens. Because</p>"},
+    {"id": "d", "content": "<p>happens because</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The period correctly marks the boundary between one complete sentence (\"A frequency&hellip;happens\") and another (\"Because&hellip;pitch\"). The second sentence begins with a subordinate clause (\"Because&hellip;rate\") followed by the main clause.</p><p>Choice A is incorrect because it produces a comma splice between two independent clauses. Choice B is incorrect because, although a colon can introduce an explanation, the result is still a comma splice within the second part (\"it&rsquo;s because&hellip;rate, all&hellip;intervals\"). Choice D is incorrect because it creates a run-on sentence by fusing two independent clauses without punctuation or a conjunction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "379ffefb-s1",
+  "originalId": "379ffefb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right triangle has legs with lengths 8 centimeters and 6 centimeters. What is the length, in centimeters, of this triangle's hypotenuse?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the square root of 14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the square root of 28</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. By the Pythagorean theorem, the hypotenuse c satisfies c squared = 64 + 36 = 100, so c = 10.</p><p>Choice B is incorrect: 14 incorrectly adds the legs.</p><p>Choice C is incorrect: this confuses subtraction with squaring.</p><p>Choice D is incorrect: this confuses the squaring step.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.easy"
+}

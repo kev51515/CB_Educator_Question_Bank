@@ -1,0 +1,39 @@
+{
+  "questionId": "fbffb352-s1",
+  "originalId": "fbffb352",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Archaeologist Dr. Maya Rodriguez founded the Andean Heritage Project to preserve the cultural history of regions in Peru.</li>\n<li>The Andean Heritage Project has overseen a digital documentation effort to create photographic records of ancient rock art in Peru.</li>\n<li>Paintings found at the Toro Muerto site are included in the documentation.</li>\n<li>The Toro Muerto paintings feature geometric patterns and dance figures.</li>\n<li>Paintings found at the Cerro Mulato site are included in the documentation.</li>\n<li>The Cerro Mulato paintings feature what are thought to be the earliest depictions of agricultural calendars in the region.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize a similarity between the Toro Muerto paintings and the Cerro Mulato paintings. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The earliest depictions of agricultural calendars in the region are thought to be featured in the paintings at the Cerro Mulato site in Peru.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The Toro Muerto paintings and the Cerro Mulato paintings are both examples of ancient rock art found in Peru.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In Peru, the paintings at the Toro Muerto site feature geometric patterns and dance figures.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The paintings at the Cerro Mulato site feature agricultural calendars, while those at Toro Muerto feature geometric patterns and dance figures.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. This choice compares the Toro Muerto paintings and the Cerro Mulato paintings to one another and emphasizes what they have in common: they are both ancient rock art found in the same region.</p><p>Choice A is incorrect. This choice only mentions the Cerro Mulato paintings. It doesn't compare them to the Toro Muerto paintings. Choice C is incorrect. This choice only mentions the Toro Muerto paintings. It doesn't compare them to the Cerro Mulato paintings. Choice D is incorrect. This choice doesn't emphasize a similarity between the two paintings. Instead, it emphasizes a difference: the type of content they depict.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ee846db7-s1",
+  "originalId": "ee846db7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bakery sells two sizes of bread loaves. Last month, sales totaled 989.40 dollars and the equation 4.25 x + 6.80 y = 989.40 represents this situation, where x is the number of small loaves sold and y is the number of large loaves sold. According to the equation, which of the following represents the price, in dollars, of each small loaf?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4.25 x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6.80</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6.80 y</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.25</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The expression 4.25 x is the total revenue from x small loaves, so 4.25 is the price per small loaf.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-equations-in-two-variables.A3.T3.easy"
+}

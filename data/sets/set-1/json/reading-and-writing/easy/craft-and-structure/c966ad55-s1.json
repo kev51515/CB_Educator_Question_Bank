@@ -1,0 +1,39 @@
+{
+  "questionId": "c966ad55-s1",
+  "originalId": "c966ad55",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a 1908 novel. Anya is walking down the lane behind the orchard that she ran through often as a child.</p><blockquote><p>She walked along the path she knew so well. <u>The blossoming trees seemed to lean over her like familiar neighbors greeting an old friend.</u> They greeted her as an old friend. Soon she reached the orchard gate.</p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It conveys Anya's appreciation for her long-term friendships.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It emphasizes Anya's sense of belonging in the landscape.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It indicates that Anya has lost her sense of direction in the orchard.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It suggests that Anya feels uncomfortable near the orchard gate.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The underlined portion describes the trees as leaning over Anya like familiar neighbors greeting an old friend. This emphasizes that Anya feels at home in the landscape.</p><p>Choice A is incorrect. The friendship referred to is figurative, between Anya and the trees. Choice C is incorrect. Anya walks a path she \"knew so well,\" not one in which she is lost. Choice D is incorrect. The text suggests comfort, not discomfort.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

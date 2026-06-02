@@ -1,0 +1,39 @@
+{
+  "questionId": "1684b237-s1",
+  "originalId": "1684b237",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>One of the most influential jazz drummers of the mid-twentieth century, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Max Roach&rsquo;s recordings reshaped the rhythmic vocabulary of modern jazz.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the rhythmic vocabulary of modern jazz was reshaped by Max Roach&rsquo;s recordings.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>recordings by Max Roach reshaped the rhythmic vocabulary of modern jazz.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Max Roach reshaped the rhythmic vocabulary of modern jazz through his recordings.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The convention being tested is subject-modifier placement. This choice makes the proper noun &ldquo;Max Roach&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;one of the most influential jazz drummers of the mid-twentieth century,&rdquo; clearly establishing that Max Roach&mdash;and not another noun&mdash;is being described.</p><p>Choices A, B, and C all result in dangling modifiers because the noun immediately following the modifying phrase (&ldquo;Max Roach&rsquo;s recordings,&rdquo; &ldquo;the rhythmic vocabulary,&rdquo; or &ldquo;recordings by Max Roach&rdquo;) is not the influential jazz drummer being described.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A4.T9.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "70e29454-s1",
+  "originalId": "70e29454",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>3(2x + 5) = ax + b</p><p>In the given equation, a and b are constants. If the equation has infinitely many solutions, what are the values of a and b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a = 3 and b = 5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a = 5 and b = 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a = 6 and b = 15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a = 6 and b = 5</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Distribute on the left: 6x + 15 = ax + b. For infinitely many solutions, the coefficients of x and the constants must match: a = 6 and b = 15. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.medium"
+}

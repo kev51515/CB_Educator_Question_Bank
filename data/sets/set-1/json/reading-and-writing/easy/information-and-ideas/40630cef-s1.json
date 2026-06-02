@@ -1,0 +1,39 @@
+{
+  "questionId": "40630cef-s1",
+  "originalId": "40630cef",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2021 short story by Renata Cruz. The narrator has just stepped onstage for her first school recital.</p><blockquote><p>The stage lights were brighter than anything I had ever stood under before. My fingers tingled on the keys, and even my breath felt too loud. I was nervous, but I was also proud.</p></blockquote>",
+  "stem": "<p>According to the text, how does the narrator feel about being on the recital stage?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She feels both nervous and proud.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She feels overjoyed.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She feels both bitter and embarrassed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She feels calm.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the narrator directly says she was \"nervous\" but also \"proud,\" capturing both feelings.</p><p>Choice B is incorrect; \"nervous\" is not the same as overjoyed and the text balances pride with nervousness. Choice C is incorrect; the text says nothing about bitterness or embarrassment. Choice D is incorrect; the description of tingling fingers and loud breathing is the opposite of calm.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "4b3d6062-s1",
+  "originalId": "4b3d6062",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The freshwater pupfish <em>Cyprinodon diabolis</em> survives only in a single limestone cavern in the Mojave Desert, and the extreme narrowness of its range makes it acutely vulnerable to extinction. The conventional single-species framework for conservation centers on protecting individual species most at risk, like <em>C. diabolis</em>, but a growing number of conservation biologists have argued that an ecosystem-based framework&mdash;one that takes into account the many interactions among water chemistry, geology, and the various organisms of a given area&mdash;may yield better outcomes for all the species that share a location. If this newer view is correct, the single-species framework applied to <em>C. diabolis</em> could thus <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>lead to a clearer understanding of how the distribution of pupfish species across the desert Southwest has shaped their long-term survival.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>allow conservationists to better account for how changes in regional climate may reduce the number of species that compete with <em>C. diabolis</em>.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>overlook the ways the survival of <em>C. diabolis</em> may depend on changes in the populations of other organisms sharing its narrow habitat.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>mistakenly draw conservation attention away from <em>C. diabolis</em> itself.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the discussion. The text contrasts two frameworks: the single-species framework (focusing on at-risk species in isolation) and the ecosystem-based framework (focusing on interactions among many factors and organisms). The text says if the ecosystem-based view is correct, then it implies that the single-species framework misses something important&mdash;namely, the species interactions that the ecosystem-based view considers. So applying the single-species framework to <em>C. diabolis</em> would likely overlook how the cavern's other organisms affect its survival.</p><p>Choice A is incorrect because the text does not address the distribution of other pupfish species or how distribution shapes survival&mdash;the focus is specifically on <em>C. diabolis</em> and conservation frameworks. Choice B is incorrect because the text never suggests that climatic shifts would reduce competition for <em>C. diabolis</em>; this would be a benefit, not a downside, of the single-species framework. Choice D is incorrect because the single-species framework focuses on <em>C. diabolis</em> itself&mdash;if anything, it concentrates attention there, rather than shifting attention away.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

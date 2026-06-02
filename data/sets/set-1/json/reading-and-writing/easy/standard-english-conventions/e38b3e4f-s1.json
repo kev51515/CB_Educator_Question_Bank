@@ -1,0 +1,25 @@
+{
+  "questionId": "e38b3e4f-s1",
+  "originalId": "e38b3e4f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The light that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> during the rapid expansion of a young star is known as protostellar emission.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>have emerged</p>"},
+    {"id": "b", "content": "<p>emerges</p>"},
+    {"id": "c", "content": "<p>emerge</p>"},
+    {"id": "d", "content": "<p>are emerging</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"emerges\" agrees in number with the singular subject \"light.\"</p><p>Choice A is incorrect because the plural verb \"have emerged\" doesn't agree in number with the singular subject \"light.\" Choice C is incorrect because the plural verb \"emerge\" doesn't agree in number with the singular subject \"light.\" Choice D is incorrect because the plural verb \"are emerging\" doesn't agree in number with the singular subject \"light.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T4.easy"
+}

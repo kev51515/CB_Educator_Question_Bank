@@ -1,0 +1,22 @@
+{
+  "questionId": "7fac16fb-s1",
+  "originalId": "7fac16fb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = (3/5)<i>x</i> + 40. What is the value of <i>g</i>(25)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "55"
+  ],
+  "rationale": "<p>The correct answer is 55. Substituting 25 for <i>x</i> in <i>g</i>(<i>x</i>) = (3/5)<i>x</i> + 40 gives <i>g</i>(25) = (3/5)(25) + 40 = 15 + 40 = 55.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z"
+}

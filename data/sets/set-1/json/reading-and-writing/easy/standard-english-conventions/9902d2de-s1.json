@@ -1,0 +1,39 @@
+{
+  "questionId": "9902d2de-s1",
+  "originalId": "9902d2de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The Snowball Earth hypothesis, advanced in the late 1990s by geologist Paul Hoffman and his colleagues, proposed that the planet's surface was once almost entirely frozen <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it left open the question of how some organisms could have survived such extreme conditions.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>over but</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>over</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>over,&nbsp;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>over, but</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the coordination of independent clauses. This choice uses a comma and the coordinating conjunction \"but\" to join the first independent clause (\"The Snowball Earth hypothesis...frozen over\") and the second independent clause (\"it left open...extreme conditions\").</p><p>Choice A is incorrect because a comma is needed before the coordinating conjunction. Choice B is incorrect because it results in a run-on sentence. Choice C is incorrect because it results in a comma splice without a coordinating conjunction.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T2.easy"
+}

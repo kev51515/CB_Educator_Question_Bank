@@ -1,0 +1,22 @@
+{
+  "questionId": "c99d154a-s1",
+  "originalId": "c99d154a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A3.T1.easy",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) crosses the <i>y</i>-axis at the point (0, 11). What is the <i>y</i>-coordinate of the <i>y</i>-intercept of the graph?</p>",
+  "answerOptions": null,
+  "keys": [
+    "11"
+  ],
+  "rationale": "<p>The <i>y</i>-intercept is the point where the graph crosses the <i>y</i>-axis. That point is (0, 11), so its <i>y</i>-coordinate is 11.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z"
+}

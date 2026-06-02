@@ -1,0 +1,39 @@
+{
+  "questionId": "c4ea43ef-s1",
+  "originalId": "c4ea43ef",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>To save for a trip, Marco works two part-time jobs: P and Q. He earns $15 per hour at job P and $25 per hour at job Q. In one week, Marco earned a total of t dollars working at the two jobs. The graph 15x + 25y = t represents all combinations of hours x at job P and hours y at job Q that produce t dollars. The line passes through the point (20, 0). What is the value of t?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$300</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$500</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The point (20, 0) means Marco worked 20 hours at job P and 0 hours at job Q. His earnings are 15(20) + 25(0) = 300. Therefore t = $300.</p><p>Choices A, C, and D result from using the wrong hourly rate or arithmetic mistakes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

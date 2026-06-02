@@ -1,0 +1,25 @@
+{
+  "questionId": "40ba6288-s1",
+  "originalId": "40ba6288",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>5</mn><mi>y</mi><mo>=</mo><mn>45</mn></math>, what is the value of <math><mn>5</mn><mi>y</mi><mo>-</mo><mn>17</mn></math>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><math><mn>62</mn></math></p>"},
+    {"id": "b", "content": "<p><math><mo>-</mo><mn>8</mn></math></p>"},
+    {"id": "c", "content": "<p><math><mn>26</mn></math></p>"},
+    {"id": "d", "content": "<p><math><mn>28</mn></math></p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. Subtracting 17 from each side of the given equation yields <math><mn>5</mn><mi>y</mi><mo>-</mo><mn>17</mn><mo>=</mo><mn>45</mn><mo>-</mo><mn>17</mn></math>, or <math><mn>5</mn><mi>y</mi><mo>-</mo><mn>17</mn><mo>=</mo><mn>28</mn></math>.</p><p>Choice A is incorrect; this is the value of <math><mn>5</mn><mi>y</mi><mo>+</mo><mn>17</mn></math>.</p><p>Choice B is incorrect; this is the value of <math><mi>y</mi><mo>-</mo><mn>17</mn></math>.</p><p>Choice C is incorrect; this is the value of <math><mi>y</mi><mo>+</mo><mn>17</mn></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

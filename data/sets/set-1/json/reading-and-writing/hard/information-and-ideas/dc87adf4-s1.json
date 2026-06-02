@@ -1,0 +1,39 @@
+{
+  "questionId": "dc87adf4-s1",
+  "originalId": "dc87adf4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><em>Vanity Fair</em> is an 1848 novel by William Makepeace Thackeray. In the novel, Thackeray&rsquo;s portrayal of Mr. Joseph Sedley accentuates the character&rsquo;s inflated estimate of his own merits and consequence: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>Vanity Fair</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;He had lived for many years in India, where the climate had not agreed with him, and he had returned home with a constitution that required a great deal of careful management on his part.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;The truth is, Joseph was naturally shy, and society had not yet taught him how to overcome his retiring disposition; he often blushed in company and avoided drawing notice to himself.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;Joseph Sedley walked into the drawing room with the easy step of a man who is quite sure that he is universally admired, lingered before the mirror to adjust his ample waistcoat, and bowed to his sister with all the gravity of one conferring a favor.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;He had taken his seat by the window because the light there was poor, and he hoped that the small company gathered in the parlor would not pay him any particular attention as the evening wore on.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it shows Joseph Sedley behaving as someone certain of being universally admired and treating ordinary acts (entering a room, adjusting his waistcoat, bowing to his sister) with self-important ceremony, directly illustrating an exaggerated sense of his own importance.</p><p>Choice A is incorrect because it describes his health, not his estimation of himself. Choice B is incorrect because it portrays him as shy and self-effacing&mdash;the opposite of the inflated self-regard the claim requires. Choice D is incorrect because it depicts him trying to avoid attention, which contradicts the claim.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982377+00:00",
+  "templateId": "command-of-evidence.A1.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "11c00ab9-s1",
+  "originalId": "11c00ab9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Estimated Impacts of Invasive Plant Species on Native Wildflowers, Shrubs, and Grasses</p></caption><thead><tr><th>Invasive plant species</th><th>Estimated impact on native wildflowers</th><th>Estimated impact on native shrubs</th><th>Estimated impact on native grasses</th></tr></thead><tbody><tr><th>Garlic mustard</th><td>0.71</td><td>0.49</td><td>0.38</td></tr><tr><th>Japanese knotweed</th><td>0.68</td><td>0.82</td><td>0.40</td></tr><tr><th>Common buckthorn</th><td>0.55</td><td>0.66</td><td>0.47</td></tr></tbody></table></figure></p><p>How harmful are invasive plants to native species? To find out, researchers assigned values from 0.25 to 1.00 to various harms caused by invasive plant species. The researchers then used these values to estimate the extent to which several invasive plants have harmfully impacted native wildflowers, shrubs, and grasses. In the table, higher numbers represent greater impacts. The estimated impact of invasive Japanese knotweed on native shrubs is <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.40.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.49.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.66.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.82.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The table shows the estimated impact of Japanese knotweed on native shrubs is 0.82.</p><p>Choice A is incorrect; 0.40 is the impact of Japanese knotweed on native grasses, not shrubs. Choice B is incorrect; 0.49 is the impact of garlic mustard on native shrubs. Choice C is incorrect; 0.66 is the impact of common buckthorn on native shrubs.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

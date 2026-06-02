@@ -1,0 +1,39 @@
+{
+  "questionId": "57f45509-s1",
+  "originalId": "57f45509",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>From left to right, the values of the five vertical bars in a box plot are 3, 6, 9, 12, and 15. The box plot summarizes 17 data values. What is the median of this data set?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The median of a data set summarized by a box plot is the vertical line inside the box (the third of the five bars). Here that value is 9.</p><p>Choice B is incorrect: 6 is the first quartile.</p><p>Choice C is incorrect: 3 is the minimum.</p><p>Choice D is incorrect: 15 is the maximum.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.easy"
+}

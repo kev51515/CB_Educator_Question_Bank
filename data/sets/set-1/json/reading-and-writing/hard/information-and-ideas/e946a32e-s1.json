@@ -1,0 +1,39 @@
+{
+  "questionId": "e946a32e-s1",
+  "originalId": "e946a32e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Working freely across painting, sculpture, performance, and writing, Cuban-American artist Ana Mendieta produced cross-media work that engages themes such as exile, the body, and the land. Her pieces have prompted responses from creators in many fields, including dance, film, ceramic art, and landscape architecture. In an essay, a student argues that the breadth of these responses by others reflects Mendieta&rsquo;s own way of making art.</p>",
+  "stem": "<p>Which quotation from a scholarly review of Mendieta&rsquo;s work best supports the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;Mendieta studied art at the University of Iowa, where her instructors recall her openness to experimental approaches and her willingness to challenge accepted hierarchies among media.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Mendieta&rsquo;s work has been the subject of major retrospectives at museums in the United States and Europe, where curators have arranged her pieces according to chronological and thematic principles.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;Mendieta&rsquo;s readiness to move freely between media&mdash;treating the body, the camera, the soil, and the page as continuous tools&mdash;invites artists in adjacent disciplines to consider how their own forms might cross into territories that traditionally belonged to others.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;In addition to her visual and performance work, Mendieta produced critical writing on artists including Frida Kahlo, Wifredo Lam, and others working within and beyond the Latin American tradition.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the student&rsquo;s claim links the wide range of cross-disciplinary responses to Mendieta&rsquo;s own cross-media approach. A reviewer&rsquo;s observation that her willingness to move among media invites artists in adjacent disciplines to cross into other territories directly connects her own practice to the cross-disciplinary responses she has prompted.</p><p>Choice A is incorrect because it describes her education and disposition without tying her practice to the diverse responses of others. Choice B is incorrect because it concerns the curatorial reception of her work, not how her practice shapes responses from other fields. Choice D is incorrect because it documents her own critical writing rather than explaining the breadth of responses to her work.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982710+00:00",
+  "templateId": "command-of-evidence.A2.T3.hard"
+}

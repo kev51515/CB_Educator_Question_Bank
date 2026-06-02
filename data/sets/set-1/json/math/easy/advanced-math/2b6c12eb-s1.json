@@ -1,0 +1,22 @@
+{
+  "questionId": "2b6c12eb-s1",
+  "originalId": "2b6c12eb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>8</mn></math>. What is the positive value of <em>x</em> for which <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>24</mn></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>The correct answer is 4. Setting 2x^2 - 8 = 24 gives 2x^2 = 32, so x^2 = 16 and x = ±4. The positive value is 4.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T2.easy"
+}

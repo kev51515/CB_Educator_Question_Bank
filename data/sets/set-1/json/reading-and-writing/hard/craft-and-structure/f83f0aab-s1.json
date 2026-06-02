@@ -1,0 +1,39 @@
+{
+  "questionId": "f83f0aab-s1",
+  "originalId": "f83f0aab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Some researchers have argued that birds during the early Cenozoic era were not a very <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> group, but paleontologist Daniel Field's recent work shows that the first 10 million years after the dinosaurs' extinction saw birds rapidly fill an extraordinary range of ecological roles. Fossils of various plant-eating, seed-cracking, and even wading birds have been recovered from North America and Europe, including specimens like <em>Asteriornis maastrichtensis</em>, which Field considers a near-universal common ancestor of modern landfowl and waterfowl.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>predatory</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>obscure</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>localized</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>varied</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Varied\" most logically completes the text. Field's evidence shows that early Cenozoic birds filled many ecological roles (plant-eating, seed-cracking, wading) and produced ancestors of major modern lineages\u2014evidence of significant variety. The view he challenges is that birds were not varied.</p><p>Choice A is incorrect. \"Predatory\" describes hunting habit; the new evidence shows birds in many roles, not just predation. Choice B is incorrect. \"Obscure\" describes how well known they are, not their ecological breadth. Choice C is incorrect. \"Localized\" describes geographic restriction; the text mentions fossils from two continents but its emphasis is on ecological breadth.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

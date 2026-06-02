@@ -1,0 +1,39 @@
+{
+  "questionId": "b4f5a7ca-s1",
+  "originalId": "b4f5a7ca",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "skillCode": "Q.G.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A survey was conducted using a sample of English professors selected at random from the Texas state universities. The professors surveyed were asked to identify the textbooks they assigned in their introductory writing courses. What is the largest population to which the results of the survey can be generalized?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>All English professors at all Texas state universities</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>All professors at all Texas state universities</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>All English professors in the United States</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>All professors in the United States</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. When a sample is selected at random, the results can be generalized only to the population from which the sample was drawn. Here, the sample was drawn from English professors at Texas state universities, so the largest population to which the results can be generalized is all English professors at all Texas state universities.</p><p>Choices B, C, and D each extend the conclusion beyond the population that was actually sampled (to other disciplines, to other states, or both), so none of these generalizations is supported by the sampling method.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A1.T1.medium"
+}

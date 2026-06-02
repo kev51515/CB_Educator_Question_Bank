@@ -1,0 +1,39 @@
+{
+  "questionId": "5afbdc8e-s1",
+  "originalId": "5afbdc8e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the length of one side of a square that has the same area as a circle with radius 5 ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5&radic;&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&radic;(5&pi;)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25&pi;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a circle with radius r is &pi;r<sup>2</sup>. With r = 5, the area is 25&pi;. The area of a square with side length s is s<sup>2</sup>. Setting s<sup>2</sup> = 25&pi; and taking the positive square root, s = 5&radic;&pi;. Choice A is incorrect because the side length of the square is not equal to the radius. Choices C and D are incorrect and result from incorrectly simplifying &radic;(25&pi;).</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T3.medium"
+}

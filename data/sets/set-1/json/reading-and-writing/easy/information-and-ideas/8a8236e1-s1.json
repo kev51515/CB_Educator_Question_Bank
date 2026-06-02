@@ -1,0 +1,39 @@
+{
+  "questionId": "8a8236e1-s1",
+  "originalId": "8a8236e1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Sound surrounds our daily lives, often shaping how we feel about places we visit and people we meet. This connection has drawn the attention of historians who hope to use audio recordings, surviving instruments, and written descriptions of soundscapes to better understand past religious ceremonies, marketplaces, neighborhood routines, and crafts. Although background noise can be lost in old recordings and instruments often degrade, recent improvements in acoustic modeling show promise in reconstructing sounds from earlier eras. Studies built on these tools may reveal new details about how earlier societies experienced their everyday environments.</p>",
+  "stem": "<p>According to the text, what is one reason some historians are interested in reconstructing sounds from the past?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They believe the sounds could shed light on important aspects of life in past societies.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They think that the sounds would be enjoyable to listen to today.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They are investigating whether people's hearing has weakened over the centuries.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They hope to design new instruments based on old recordings.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text states that historians want to use these sounds to better understand religious ceremonies, marketplaces, neighborhood routines, and crafts, all of which are important aspects of life in past societies.</p><p>Choice B is incorrect; the text never suggests that the goal is enjoyment. Choice C is incorrect; the text discusses sound preservation, not changes in human hearing. Choice D is incorrect; the text does not mention designing new instruments.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

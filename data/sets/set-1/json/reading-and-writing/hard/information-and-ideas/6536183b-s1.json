@@ -1,0 +1,39 @@
+{
+  "questionId": "6536183b-s1",
+  "originalId": "6536183b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>On the basalt cliffs of Iceland's southern coast, <em>Saxifraga rivularis</em> and <em>Saxifraga oppositifolia</em>\u2014two plants in the Saxifragaceae family\u2014establish themselves on bare, nutrient-poor surfaces of basalt rock. Botanists Sigr\u00ed\u00f0ur J\u00f3nsson and Lukas Berger used micro-CT imaging to show that the roots of <em>S. rivularis</em> and <em>S. oppositifolia</em>, which grow directly into the basalt, develop dense clusters of fine hairs near the root tips; further chemical analysis revealed that these hairs secrete both oxalic and tartaric acids. The botanists hypothesize that the plants depend on dissolving the underlying basalt with these acids, as the process not only opens channels for continued root growth but also releases the iron oxides that supply the vital nutrient iron.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the botanists' hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The roots of <em>S. rivularis</em> and <em>S. oppositifolia</em> bore new entry points into basalt even when usable cracks in the surface are readily available.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Although <em>S. rivularis</em> and <em>S. oppositifolia</em> both secrete oxalic and tartaric acids, each species produces them in different proportions.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Other species in the Saxifragaceae family are found growing in soil-rich habitats but have root structures similar to those of <em>S. rivularis</em> and <em>S. oppositifolia</em>.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>S. rivularis</em> and <em>S. oppositifolia</em> thrive even when transplanted to surfaces of basalt that contain almost no iron oxides.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. If the plants bore into basalt even when pre-existing cracks would suffice, the plants must be gaining something more than just root access\u2014plausibly the iron that dissolving releases. That behavior directly supports the botanists' hypothesis that the plants depend on the dissolution process itself.</p><p>Choice B is incorrect: differences in acid proportions between species say nothing about dependence on dissolution. Choice C is incorrect: relatives in soil-rich habitats with similar roots would suggest the root structure is multipurpose; it does not show that these species rely on rock dissolution. Choice D is incorrect: thriving on iron-poor basalt undermines the proposed need to dissolve rock to obtain iron, weakening the hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

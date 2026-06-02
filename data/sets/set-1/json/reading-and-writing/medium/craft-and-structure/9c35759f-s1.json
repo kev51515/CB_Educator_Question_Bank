@@ -1,0 +1,25 @@
+{
+  "questionId": "9c35759f-s1",
+  "originalId": "9c35759f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T4.medium",
+  "stimulus": "<p>Filmmaker Ana Lily Amirpour refuses to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the established norms of the horror genre in which much of her work is grouped, and she has noted that audiences respond to her films precisely because of this willingness to upend genre cues and avoid predictable narrative beats.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>respond to</p>"},
+    {"id": "b", "content": "<p>abide by</p>"},
+    {"id": "c", "content": "<p>doubt</p>"},
+    {"id": "d", "content": "<p>recognize</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Abide by\" means to act in accordance with. The text indicates that Amirpour's willingness to upend cues and avoid predictable beats describes how she treats the genre's norms: she does not act in accordance with them.</p><p>Choice A is incorrect. \"Respond to\" suggests reacting; by deliberately subverting cues, Amirpour is in fact reacting to genre norms, just not following them. Choice C is incorrect. \"Doubt\" would mean she is uncertain about the norms; the text suggests she actively resists them, not that she withholds questioning. Choice D is incorrect. \"Recognize\" means to acknowledge or be aware of; the text implies she is fully aware of the norms and deliberately rejects them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

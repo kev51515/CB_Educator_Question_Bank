@@ -1,0 +1,39 @@
+{
+  "questionId": "4cc05491-s1",
+  "originalId": "4cc05491",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between <em>x</em> and <em>y</em>. A line of best fit passes through (0, 2) and (5, 14). Which of the following is closest to the slope of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2.4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1.0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3.0</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Slope = (14 \u2212 2)/(5 \u2212 0) = 12/5 = 2.4.</p><p>Choice A is the reciprocal of 2.5. Choices C and D arise from miscounting rise or run.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

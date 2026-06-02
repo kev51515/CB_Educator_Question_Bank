@@ -1,0 +1,25 @@
+{
+  "questionId": "e060dd6b-s1",
+  "originalId": "e060dd6b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Detailed maps of the ocean floor, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> unusually steep gradients along the Pacific subduction zones.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the marine geologists studying tectonic boundaries observed bathymetric charts with</p>"},
+    {"id": "b", "content": "<p>tectonic boundary observations show that bathymetric charts of marine geologists have</p>"},
+    {"id": "c", "content": "<p>bathymetric charts reveal that, when studying tectonic boundaries, marine geologists observe</p>"},
+    {"id": "d", "content": "<p>marine geologists studying tectonic boundaries observe bathymetric charts containing</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun &ldquo;bathymetric charts&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;Detailed maps of the ocean floor.&rdquo; In doing so, this choice clearly establishes that bathymetric charts&mdash;and not other nouns or noun phrases in the sentence&mdash;are detailed maps of the ocean floor.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of &ldquo;the marine geologists studying tectonic boundaries&rdquo; immediately after the modifying phrase illogically suggests that the geologists are detailed maps of the ocean floor. Choice B is incorrect because it results in a dangling modifier. The placement of &ldquo;tectonic boundary observations&rdquo; immediately after the modifying phrase illogically suggests that the observations are detailed maps of the ocean floor. Choice D is incorrect because it results in a dangling modifier. The placement of &ldquo;marine geologists studying tectonic boundaries&rdquo; immediately after the modifying phrase illogically suggests that the geologists are detailed maps of the ocean floor.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

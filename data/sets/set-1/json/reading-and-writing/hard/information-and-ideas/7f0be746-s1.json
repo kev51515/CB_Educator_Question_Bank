@@ -1,0 +1,39 @@
+{
+  "questionId": "7f0be746-s1",
+  "originalId": "7f0be746",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Kazuo Ishiguro&rsquo;s 2005 novel <em>Never Let Me Go</em>. Bruno is an aging horse kept on the grounds where the narrator works.</p><blockquote><p>Bruno had grown notably slower over the previous winter, and yet the carers spoke of him as though no time had passed at all. They led him out each morning to the same patch of grass beside the wall, fastened the same blue halter to his head, and stood watching him in the same attitudes they had years ago, when he had been quick and willful. They would scold him gently for his stillness, then laugh, as if expecting any moment that he might bolt off as he once had. It seemed to me that what they were doing was not unkind, exactly, but it was a refusal&mdash;a refusal to acknowledge that the creature in front of them was no longer the creature they remembered.</p></blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The carers&rsquo; insistence on treating Bruno as they always have prevents them from confronting how much he has changed.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The narrator believes that the carers&rsquo; gentle scolding is causing Bruno to behave more slowly than he otherwise would.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Bruno was once a difficult animal but has since become docile under the patient guidance of his carers.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The carers have begun to suspect that Bruno&rsquo;s slowness is more serious than they had previously thought.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The narrator describes how the carers continue their old routines with Bruno&mdash;the same patch of grass, the same halter, the same attitudes&mdash;and concludes that this constitutes \"a refusal to acknowledge\" how much Bruno has changed. This is the main idea of the passage.</p><p>Choice B is incorrect because the narrator does not suggest that the scolding affects Bruno&rsquo;s behavior. Choice C is incorrect because the text describes Bruno&rsquo;s decline due to age, not a temperamental change. Choice D is incorrect because the text emphasizes the carers&rsquo; refusal to acknowledge the change, not a growing suspicion.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.medium"
+}

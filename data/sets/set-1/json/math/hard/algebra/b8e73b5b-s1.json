@@ -1,0 +1,39 @@
+{
+  "questionId": "b8e73b5b-s1",
+  "originalId": "b8e73b5b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Maya is working this summer at a community garden. She earned $9 per hour for the first 12 hours she worked this week. Because of her dedication, her supervisor raised her pay to $12 per hour for the rest of the week. Maya saves 80% of her earnings each week. What is the least number of hours she must work the rest of the week to save at least $240 for the week?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>16</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Maya earns $9 \u00d7 12 = $108 for the first 12 hours. Let x be additional hours at $12/hr; total earnings = 12x + 108. Saving 80%: 0.8(12x + 108) \u2265 240, so 12x + 108 \u2265 300, giving 12x \u2265 192 and x \u2265 16. So the least is 16 hours. Other choices overestimate the hours needed.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard"
+}

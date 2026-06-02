@@ -1,0 +1,25 @@
+{
+  "questionId": "f71802d6-s1",
+  "originalId": "f71802d6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Average Percentage of Nonhexagonal Cells in Nests of Three Stingless Bee Species (by cell shape)</p></caption><thead><tr><th>Species</th><th>5-sided cells</th><th>7-sided cells</th><th>8-sided cells</th></tr></thead><tbody><tr><td>Highland melipona</td><td>2.5%</td><td>2.3%</td><td>0.0%</td></tr><tr><td>Forest jatai</td><td>2.7%</td><td>2.1%</td><td>0.3%</td></tr><tr><td>Coastal mandacaia</td><td>0.40%</td><td>0.35%</td><td>0.05%</td></tr></tbody></table></figure><p>Stingless bee nests consist mainly of hexagonal (six-sided) units called brood cells, in which queens lay eggs. Hexagonal cells for eggs that develop into nonreproductive workers are smaller than those for eggs that develop into reproductive males, though the size difference varies by species. Difference in cell size results in a construction problem&mdash;it&rsquo;s hard to neatly connect sections of small cells to sections of large cells&mdash;that worsens as the difference increases. To fill in gaps between the sections when building a nest, bees rely on cells that have more or fewer than six sides. A student studying stingless bee nest structure consults data on three species, concluding that ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the student&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>both the highland melipona and the coastal mandacaia probably reserve eight-sided cells for male eggs, while the forest jatai likely deposits male eggs in seven-sided cells.</p>"},
+    {"id": "b", "content": "<p>the coastal mandacaia probably relies on many more geometrical shapes when constructing cells than either the forest jatai or the highland melipona does.</p>"},
+    {"id": "c", "content": "<p>the percentage of hexagonal cells is probably slightly lower in the nests of the coastal mandacaia than in the nests of the forest jatai and the highland melipona.</p>"},
+    {"id": "d", "content": "<p>cells for worker eggs are probably closer in size to cells for male eggs in the nests of the coastal mandacaia than in the nests of the forest jatai and the highland melipona.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. The text explains that nonhexagonal cells exist solely to bridge sections of different-sized hexagonal cells, and the more those sizes differ, the more nonhexagonal cells the nest contains. The table shows the coastal mandacaia has dramatically lower percentages of 5-, 7-, and 8-sided cells (0.40%, 0.35%, 0.05%) than the highland melipona (2.5%, 2.3%, 0.0%) or the forest jatai (2.7%, 2.1%, 0.3%). A smaller nonhexagonal-cell share implies a smaller size gap between worker- and male-egg cells, so the coastal mandacaia&rsquo;s worker- and male-egg cells are likely closer in size. Choice A is incorrect because the text says eggs are deposited in hexagonal cells, not in nonhexagonal ones. Choice B is incorrect because the coastal mandacaia uses the same three nonhexagonal shapes as the forest jatai; it does not rely on more shapes. Choice C is incorrect because a smaller share of nonhexagonal cells implies a larger share of hexagonal cells, the opposite of what this choice claims.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

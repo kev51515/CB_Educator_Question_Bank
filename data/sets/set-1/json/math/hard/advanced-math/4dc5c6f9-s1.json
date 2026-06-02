@@ -1,0 +1,39 @@
+{
+  "questionId": "4dc5c6f9-s1",
+  "originalId": "4dc5c6f9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><i>y</i> = 22<br><i>y</i> = &minus;2(<i>x</i> &minus; 10)&sup2; + 17</p><p>If the given equations are graphed in the <i>xy</i>-plane, at how many points do the graphs of the equations intersect?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The second equation is a downward-opening parabola with vertex (10, 17), so its maximum <i>y</i>-value is 17. The horizontal line <i>y</i> = 22 lies entirely above this maximum, so the graphs do not intersect. There are zero intersection points.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.medium"
+}

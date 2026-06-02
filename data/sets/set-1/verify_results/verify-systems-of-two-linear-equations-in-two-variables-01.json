@@ -1,0 +1,22 @@
+[
+  {"id": "f5929f7a-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "ed92fb68-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium", "verdict": "ok"},
+  {"id": "4e400635-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "71189542-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium", "verdict": "ok"},
+  {"id": "e3bbde69-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "6e50ce28-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.medium", "verdict": "ok"},
+  {"id": "5e422ff9-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "2704399f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium", "verdict": "constraint_violation", "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph, drifting from A3 (graphical) toward A1. Answer (D) is mathematically correct, but the categorical aspect/type is violated."},
+  {"id": "36f068e2-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium", "verdict": "aspect_drift", "detail": "Clone has no graph; it's a pure algebraic solve (substitution to find (20,20)). This is A2.T5/A1.T2 territory, not A3 (graphical representation). Answer is correct, but A3 must_preserve 'one side graphical, one algebraic' is violated."},
+  {"id": "6a87902f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.medium", "verdict": "ok"},
+  {"id": "0c541d87-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium", "verdict": "ok"},
+  {"id": "79be5180-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "8a87c2c8-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium", "verdict": "ok"},
+  {"id": "2875ba81-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "19fdf387-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.medium", "verdict": "difficulty_drift", "detail": "T11 template defines empty medium characteristics (frequency easy:0, medium:0, hard:2). Clone is a trivial one-step substitution (point (1,4) on y=ax → a=4), well below T11's hard-only difficulty profile requiring partially-specified intersection and coupled parameters. Answer is correct."},
+  {"id": "9a216c0f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.medium", "verdict": "ok"},
+  {"id": "cb8f449f-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "d909cd31-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T10.medium", "verdict": "ok"},
+  {"id": "bf4a8b6a-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium", "verdict": "ok"},
+  {"id": "6e6a3241-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium", "verdict": "constraint_violation", "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph (categorical drift A3→A1 per template). Answer (D) is mathematically correct."}
+]

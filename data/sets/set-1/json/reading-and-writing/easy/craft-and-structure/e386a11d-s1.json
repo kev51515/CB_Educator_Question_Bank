@@ -1,0 +1,39 @@
+{
+  "questionId": "e386a11d-s1",
+  "originalId": "e386a11d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p><em>The Tale of Princess Kaguya</em> is a notable work of hand-drawn animation in the tradition of Studio Ghibli. Unlike many contemporary studios, which have adopted computer-generated imagery and digital coloring, director Isao Takahata <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> classical illustration methods. For example, Takahata produced the film using sketchbook-style brush-and-ink work that mimics centuries-old Japanese scroll painting.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>doubted</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>discarded</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>championed</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>misunderstood</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because \"championed\" means strongly supported or advocated, which fits Takahata's deliberate use of classical hand-drawn techniques against the prevailing digital trend. Choice A is incorrect because \"doubted\" suggests skepticism, contradicting his use of these methods. Choice B is incorrect because \"discarded\" means abandoned, the opposite of what he did. Choice D is incorrect because \"misunderstood\" suggests he didn't grasp the methods, but the text describes a master practitioner.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T4.easy"
+}

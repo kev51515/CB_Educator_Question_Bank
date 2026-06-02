@@ -1,0 +1,39 @@
+{
+  "questionId": "2869fe95-s1",
+  "originalId": "2869fe95",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During a week-long cycling trip, the shortest daily distance Tomas rode was 35 kilometers and the longest daily distance he rode was 90 kilometers. Which inequality is true for any daily distance <i>d</i>, in kilometers, Tomas rode during this trip?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35 &le; <i>d</i> &le; 90</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>d</i> &le; 35</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>d</i> &ge; 90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>d</i> &le; 125</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Because the shortest daily distance was 35 km, every daily distance <i>d</i> satisfies <i>d</i> &ge; 35. Because the longest daily distance was 90 km, every daily distance also satisfies <i>d</i> &le; 90. Combining these gives the compound inequality 35 &le; <i>d</i> &le; 90.</p><p>Choice B describes only the lower bound and reverses its direction. Choice C describes only the upper bound and reverses its direction. Choice D uses the sum of the two endpoints, which is not a meaningful bound here.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy"
+}

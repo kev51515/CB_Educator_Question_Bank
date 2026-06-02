@@ -1,0 +1,39 @@
+{
+  "questionId": "a6097ec2-s1",
+  "originalId": "a6097ec2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the angle of measure x degrees is acute. The side opposite this angle has length 5 units and the hypotenuse has length 13 units. What is the value of the sine of x degrees?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1 over 13</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5 over 13</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12 over 13</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>13 over 5</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The sine of an acute angle in a right triangle is the ratio of the length of the side opposite the angle to the length of the hypotenuse, which is 5 over 13.</p><p>Choice A is incorrect: 1 over 13 has no special trigonometric meaning here.</p><p>Choice C is incorrect: 12 over 13 is the cosine of x degrees.</p><p>Choice D is incorrect: 13 over 5 is the reciprocal of the sine.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.easy"
+}

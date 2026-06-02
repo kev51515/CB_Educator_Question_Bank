@@ -1,0 +1,25 @@
+{
+  "questionId": "a8e6bd75-s1",
+  "originalId": "a8e6bd75",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following describes the graph of the equation <i>y</i> = 3<i>x</i> + 2 in the <i>xy</i>-plane?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>A line with slope 2 and <i>y</i>-intercept (0, 3)</p>"},
+    {"id": "b", "content": "<p>A line with slope 3 and <i>y</i>-intercept (0, 2)</p>"},
+    {"id": "c", "content": "<p>A line with slope &minus;3 and <i>y</i>-intercept (0, 2)</p>"},
+    {"id": "d", "content": "<p>A line with slope 3 and <i>y</i>-intercept (0, &minus;2)</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. In the slope-intercept form <i>y</i> = <i>m</i><i>x</i> + <i>b</i>, the coefficient of <i>x</i> is the slope and the constant is the <i>y</i>-intercept. Here the slope is 3 and the <i>y</i>-intercept is (0, 2).</p><p>Choice A swaps the slope and intercept. Choice C uses the wrong sign for the slope. Choice D uses the wrong sign for the intercept.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A4.T3.easy"
+}

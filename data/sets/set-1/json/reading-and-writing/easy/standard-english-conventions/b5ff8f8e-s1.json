@@ -1,0 +1,39 @@
+{
+  "questionId": "b5ff8f8e-s1",
+  "originalId": "b5ff8f8e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The element tungsten has the highest known boiling point <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> all the metals on the periodic table&mdash;about 5,930 degrees Celsius.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>of:</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>of,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>of</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>of&mdash;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation use between a preposition and its complement. No punctuation is needed between the preposition \"of\" and its complement \"all the metals on the periodic table.\" The complement completes the meaning of the preposition, and any punctuation between the two results in an ungrammatical sentence.</p><p>Choice A is incorrect because no punctuation is needed between the preposition and its complement. Choice B is incorrect because no punctuation is needed between the preposition and its complement. Choice D is incorrect because no punctuation is needed between the preposition and its complement.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.misc.easy"
+}

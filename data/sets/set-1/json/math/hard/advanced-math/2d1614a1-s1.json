@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "2d1614a1-s1",
+  "originalId": "2d1614a1",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Q(t) = 420(1.06)<sup>t/2</sup></p><p>The function Q models the population, in thousands, of a certain town t years after 2010. According to the model, the population is predicted to increase by n% every 24 months. What is the value of n?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.06</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since 24 months equals 2 years, let x represent the number of 24-month periods. Then t = 2x. Substituting 2x for t in Q(t) = 420(1.06)<sup>t/2</sup> gives Q = 420(1.06)<sup>x</sup>. So every 24 months, the population is multiplied by 1.06, an increase of 6%.</p><p>Choice B confuses the multiplier 1.06 with the percent increase. Choice C and Choice D arise from miscomputing the interval scale.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

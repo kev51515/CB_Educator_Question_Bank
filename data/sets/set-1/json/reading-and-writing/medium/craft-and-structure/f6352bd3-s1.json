@@ -1,0 +1,25 @@
+{
+  "questionId": "f6352bd3-s1",
+  "originalId": "f6352bd3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>Most paleontologists have long held that the dramatic body plans of the Cambrian Period emerged only after oxygen levels in Earth&rsquo;s oceans rose above a critical threshold roughly 540 million years ago. However, fresh analyses of trace fossils preserved in shale beds along the coast of Newfoundland have complicated this account. Using high-resolution geochemical assays of iron-bound sediments, a team led by paleontologist Naila Reyes argued that complex burrowing animals were already active in seafloor mud some 30 million years earlier, well before the oxygen rise that conventional models had treated as a prerequisite.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It compares two laboratory techniques used to date ancient marine fossils, then explains why one of those techniques is more reliable.</p>"},
+    {"id": "b", "content": "<p>It surveys competing theories about the causes of Cambrian diversification, then evaluates a study that has apparently reconciled them.</p>"},
+    {"id": "c", "content": "<p>It introduces a widely accepted explanation among paleontologists, then discusses a recent study that calls that explanation into question.</p>"},
+    {"id": "d", "content": "<p>It identifies a gap in the fossil record of early animals, then describes a sampling strategy used by some paleontologists to address that gap.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text first lays out the prevailing paleontological explanation: that Cambrian body plans appeared only after ocean oxygen crossed a critical threshold. It then describes Reyes&rsquo;s geochemical analyses of Newfoundland trace fossils, which suggest complex burrowing animals predate that oxygen rise, calling the established account into question.</p><p>Choice A is incorrect. Although the text refers to geochemical assays, it does not compare two dating techniques or argue for the superiority of one. Choice B is incorrect. The study introduces a tension with the established view rather than reconciling competing theories. Choice D is incorrect. The text does not characterize the fossil record as having a gap or describe a sampling strategy designed to fill one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

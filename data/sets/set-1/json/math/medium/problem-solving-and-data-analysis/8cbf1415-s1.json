@@ -1,0 +1,39 @@
+{
+  "questionId": "8cbf1415-s1",
+  "originalId": "8cbf1415",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a collection, 25% of the cards are foreign. Of all the foreign cards in the collection, 60% are rare. What percentage of the cards in the collection are foreign and rare?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>35%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>85%</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The percentage of cards that are both foreign and rare equals the percentage that are foreign times the percentage of those that are rare: 25% &times; 60% = 0.25 &times; 0.60 = 0.15 = 15%. Choice A is incorrect because 10% would result from subtracting (25% - 15%) or some other miscombination. Choice C is incorrect because 35% would result from adding 25% + 10% instead of multiplying. Choice D is incorrect because 85% has no meaningful relation to the given percentages and likely results from subtracting 15% from 100%.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A4.T4.medium"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "73ddfdac-s1",
+  "originalId": "73ddfdac",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A distance of 85 fathoms is equivalent to how many inches? (1 fathom = 6 feet and 1 foot = 12 inches)</p>",
+  "answerOptions": null,
+  "keys": [
+    "6120"
+  ],
+  "rationale": "<p>The correct answer is 6,120. Given that 1 fathom = 6 feet and 1 foot = 12 inches, a distance of 85 fathoms is equivalent to (85 fathoms)(6 feet / 1 fathom)(12 inches / 1 foot) = 85 \u00b7 6 \u00b7 12 = 6,120 inches.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium"
+}

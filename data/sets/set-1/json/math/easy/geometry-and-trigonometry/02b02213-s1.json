@@ -1,0 +1,39 @@
+{
+  "questionId": "02b02213-s1",
+  "originalId": "02b02213",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the perimeter, in inches, of a rectangle with a length of 11 inches and a width of 6 inches?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>34</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>66</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Perimeter = 2(length + width) = 2(11 + 6) = 34 inches.</p><p>Choice A is length + width. Choice C is 2 &middot; length. Choice D is the area.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

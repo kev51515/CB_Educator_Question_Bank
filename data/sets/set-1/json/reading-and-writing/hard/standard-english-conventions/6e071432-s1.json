@@ -1,0 +1,39 @@
+{
+  "questionId": "6e071432-s1",
+  "originalId": "6e071432",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In 2004, sound artist Janet Cardiff invited dozens of choristers to record themselves singing a sixteenth-century motet, capturing each voice individually. Cardiff then arranged the recordings on forty speakers&mdash;each speaker positioned for a single singer and broadcasting only that singer&rsquo;s ______ to immersive effect in her installation <em>The Forty Part Motet</em>.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>part, soprano or alto or tenor or bass&mdash;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>part: soprano or alto or tenor or bass</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>part&mdash;soprano or alto or tenor or bass,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>part, soprano or alto or tenor or bass</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The comma after \"part\" separates the first supplementary element (\"each speaker&hellip;part\") from the second supplementary element (\"soprano or alto or tenor or bass\"), and the dash after \"bass\" pairs with the dash after \"speakers\" to enclose both supplementary elements as a single bracketed unit. The matched dashes operate at a higher organizing level than the comma, signaling that the elements between them belong together.</p><p>Choice B is incorrect because a colon cannot conventionally separate a supplementary element from the noun phrase it modifies, and no closing dash is provided to balance the opening dash after \"speakers.\" Choice C is incorrect because placing a dash between the two supplementary elements obscures the fact that they function together and incorrectly treats the first as a standalone parenthetical. Choice D is incorrect because no closing dash is supplied to match the opening dash after \"speakers,\" leaving the bracketed material grammatically incoherent.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A2.T4.hard"
+}

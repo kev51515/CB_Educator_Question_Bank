@@ -1,0 +1,22 @@
+{
+  "questionId": "b1e1c2f5-s1",
+  "originalId": "b1e1c2f5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In right triangle ABC, angle C is the right angle and BC = 180. Point D on side AB is connected by a line segment with point E on side AC such that segment DE is parallel to side BC and CE = 4\u00b7AE. What is the length of segment DE?</p>",
+  "answerOptions": [],
+  "keys": [
+    "36"
+  ],
+  "rationale": "<p>Because DE \u2225 BC, triangles ADE and ABC are similar with similarity ratio AE/AC. Since CE = 4\u00b7AE, AC = AE + CE = 5\u00b7AE, so AE/AC = 1/5. Therefore DE = BC \u00d7 1/5 = 180/5 = 36.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.hard"
+}

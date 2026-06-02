@@ -1,0 +1,25 @@
+{
+  "questionId": "3ae2638c-s1",
+  "originalId": "3ae2638c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T5.medium",
+  "stimulus": "<p>In documents called peer-review reports, scientific referees explain the reasoning behind their recommendations on submitted manuscripts, and in those explanations they sometimes cite and discuss prior empirical studies. Science studies researcher Mira Halpern argues that while referees are naturally inclined to cite studies whose conclusions support their own assessment, the strongest peer-review reports anticipate and answer potential objections; discussing prior studies whose results conflict with the referee's view could therefore <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>bring peer-review reports in line with conclusions that are widely accepted among scientists.</p>"},
+    {"id": "b", "content": "<p>make peer-review reports more comprehensible to readers without scientific training.</p>"},
+    {"id": "c", "content": "<p>strengthen the assessments referees put forward in their peer-review reports.</p>"},
+    {"id": "d", "content": "<p>allow referees to write peer-review reports without needing to consult any prior empirical studies.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is best. Halpern's view is that the strongest reports anticipate and rebut objections, so a referee who engages with conflicting studies would be doing exactly that—strengthening the assessment. Choice A reframes the recommendation as conformity to consensus, which Halpern does not endorse. Choice B is unsupported; comprehensibility for nonspecialists is not the issue. Choice D contradicts Halpern's argument, which requires consulting the conflicting studies in question.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "332e75bf-s1",
+  "originalId": "332e75bf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In Mary Oliver's <em>Upstream</em>—where, early in the book, the author lingers in awe over the iridescent shimmer of a single trout but later mourns watching that same trout devoured by a heron she has been admiring for pages, and where she returns again and again to scenes in which loveliness and brutality occupy the same instant—Oliver does not so much resolve the contradictions of the natural world as patiently inhabit them, turning each tension over in her hands without flinching. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> nature's quiet beauty and indifferent violence prove, for Oliver, two sides of the same coin.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Hence,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To that end,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ultimately,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Moreover,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The first sentence describes an extended pattern across <em>Upstream</em>—Oliver repeatedly returning to the coexistence of beauty and violence and patiently inhabiting that tension rather than resolving it. The second sentence delivers the final synthesis that emerges from all of this looking: beauty and violence are two sides of the same coin. \"Ultimately,\" signals exactly this culminating verdict at the end of an extended discourse.</p><p>Choice A (\"Hence\") signals a tight cause-and-effect step, but the stimulus does not present a single cause whose effect the second sentence states; it presents a long pattern of observations whose ultimate synthesis the second sentence delivers. Choice B (\"To that end\") signals purpose or means-to-an-end, which does not fit: the second sentence is not a means by which Oliver achieves something. Choice D (\"Moreover\") signals an added parallel point, but the second sentence does not add another observation alongside the first; it consolidates them into a verdict.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A5.T16.hard"
+}

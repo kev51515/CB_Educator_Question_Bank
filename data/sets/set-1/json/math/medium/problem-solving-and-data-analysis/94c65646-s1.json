@@ -1,0 +1,22 @@
+{
+  "questionId": "94c65646-s1",
+  "originalId": "94c65646",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>624 is 78% of what number?</p>",
+  "answerOptions": null,
+  "keys": [
+    "800"
+  ],
+  "rationale": "<p>The correct answer is 800. If 624 is 78% of <em>n</em>, then 0.78<em>n</em> = 624. Dividing both sides by 0.78 gives <em>n</em> = 624/0.78 = 800.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A2.T2.medium"
+}

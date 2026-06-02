@@ -1,0 +1,39 @@
+{
+  "questionId": "c6645cab-s1",
+  "originalId": "c6645cab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Dr. Lin Wei studies fossils at the Yunnan University of Paleontology.</li>\n<li>Wei's research team recently found a 520-million-year-old arthropod fossil.</li>\n<li>It is the oldest fossil from the arthropod group ever recovered with preserved soft tissue.</li>\n<li>It was found in the Chengjiang shale beds in southern China.</li>\n</ul>",
+  "stem": "<p>The student wants to indicate where the arthropod fossil was found. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Wei's team recently found the oldest arthropod fossil with preserved soft tissue ever recovered.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The arthropod fossil was found in the Chengjiang shale beds in southern China.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Dr. Lin Wei, of the Yunnan University of Paleontology, is part of a research team.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The fossil, which is from the arthropod group, is 520 million years old.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The sentence indicates where the arthropod fossil was found: the Chengjiang shale beds in southern China.</p><p>Choice A is incorrect. The sentence states that Wei's team discovered the arthropod fossil; it doesn't specify where they found it. Choice C is incorrect. The sentence provides information about Dr. Lin Wei; it doesn't indicate where the fossil was found. Choice D is incorrect. While the sentence provides information about the fossil, it doesn't indicate where the fossil was found.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A5.T14.easy"
+}

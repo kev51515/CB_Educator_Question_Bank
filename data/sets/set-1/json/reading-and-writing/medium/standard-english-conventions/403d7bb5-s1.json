@@ -1,0 +1,25 @@
+{
+  "questionId": "403d7bb5-s1",
+  "originalId": "403d7bb5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.misc.medium",
+  "stimulus": "<p>According to Hiroshi Tanaka of Kyoto University, the reason maple samaras seem to hover briefly when <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> is that their winged shape generates a stable leading-edge vortex, prolonging their descent and giving the wind extra time to carry the seeds away from the parent tree.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>spinning,</p>"},
+    {"id": "b", "content": "<p>spinning;</p>"},
+    {"id": "c", "content": "<p>spinning:</p>"},
+    {"id": "d", "content": "<p>spinning</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The word &ldquo;spinning&rdquo; occurs in the middle of a clause and isn&rsquo;t part of a supplement, so no punctuation is needed after it. This becomes clear when the rest of the sentence is simplified: &ldquo;The reason maple samaras seem to hover briefly when spinning is that their winged shape generates a stable leading-edge vortex.&rdquo;</p><p>Choice A is incorrect because no punctuation is needed after a participle in the middle of a clause. Choice B is incorrect because a semicolon can&rsquo;t separate a subordinate &ldquo;when&rdquo; clause from its main verb. Choice C is incorrect because a colon can&rsquo;t separate the subject and its predicate in this way.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "82c8325f-s1",
+  "originalId": "82c8325f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle in the <em>xy</em>-plane has its center at (3, &minus;2) and the point (7, 1) lies on the circle. Which equation represents this circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x &minus; 3)<sup>2</sup> + (y + 2)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x + 3)<sup>2</sup> + (y &minus; 2)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x &minus; 3)<sup>2</sup> + (y + 2)<sup>2</sup> = 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x + 3)<sup>2</sup> + (y &minus; 2)<sup>2</sup> = 5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The equation of a circle with center (h, k) and radius r is (x &minus; h)<sup>2</sup> + (y &minus; k)<sup>2</sup> = r<sup>2</sup>. The center is (3, &minus;2), so h = 3 and k = &minus;2. The radius is the distance from the center to (7, 1): r<sup>2</sup> = (7 &minus; 3)<sup>2</sup> + (1 &minus; (&minus;2))<sup>2</sup> = 16 + 9 = 25. The equation is (x &minus; 3)<sup>2</sup> + (y + 2)<sup>2</sup> = 25. Choices B, C, and D have sign errors in the center coordinates or use 5 instead of 25 for r<sup>2</sup>.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A1.T2.medium"
+}

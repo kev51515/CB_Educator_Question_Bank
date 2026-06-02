@@ -1,0 +1,39 @@
+{
+  "questionId": "b7363ba2-s1",
+  "originalId": "b7363ba2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Biologist Lynn Margulis used the metaphor of \"endosymbiosis\" to explain how complex cells could have evolved from simpler ancestors. According to Margulis's metaphor, an ancient bacterium tucking <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> inside a larger host might eventually have become the mitochondria found in modern cells.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>it's flagella's</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>its flagellas'</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>it's flagella</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>its flagella</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The conventions being tested are the use of possessive determiners and plural nouns. The singular possessive determiner \"its\" and the plural noun \"flagella\" correctly indicate that the bacterium has multiple flagella.</p><p>Choice A is incorrect because the context requires the singular possessive determiner \"its\" and the plural noun \"flagella,\" not the contraction \"it's\" and the singular possessive noun \"flagella's.\" Choice B is incorrect because the context requires the plural noun \"flagella,\" not the plural possessive noun \"flagellas'.\" Choice C is incorrect because the context requires the singular possessive determiner \"its,\" not the contraction \"it's.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T7.easy"
+}

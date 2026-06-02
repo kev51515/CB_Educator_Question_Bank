@@ -1,0 +1,25 @@
+{
+  "questionId": "923ebfe3-s1",
+  "originalId": "923ebfe3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Operators of regional bus systems face obstacles in deciding how many vehicles to deploy on each route: ridership shifts rapidly with the weather, school calendars, and local events, while ordering and outfitting new buses takes a significant amount of time. Researchers Lakshmi Iyer and Diego Holub have found that combining operators' own farecard records with data drawn from local mobile-phone usage can dramatically improve the accuracy of such ridership forecasts—by 28 to 49 percent in the cases they directly studied. Better predictions mean demand on a given route is easier to meet without operators leaving vehicles idle in the depot.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Drawing on more than one data source can improve the ability of regional bus operators to anticipate ridership.</p>"},
+    {"id": "b", "content": "<p>Mobile-phone data is transforming how operators and researchers think about regional bus systems.</p>"},
+    {"id": "c", "content": "<p>Leaving vehicles idle in the depot is the main concern of operators trying to forecast ridership.</p>"},
+    {"id": "d", "content": "<p>Bus operators can use their own farecard records alone to predict accurately how ridership patterns will change.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text describes the difficulty of forecasting regional bus ridership, presents Iyer and Holub's finding that combining farecard data with local mobile-phone data improves forecast accuracy by 28 to 49 percent, and notes that better predictions make demand easier to meet. The main idea is that using multiple data sources can enhance ridership forecasting.</p><p>Choice B is incorrect because the text does not claim that mobile-phone data is transforming how operators or researchers view bus systems. Choice C is incorrect because avoiding idle vehicles is mentioned only as a benefit, not characterized as operators' main concern. Choice D is incorrect because the text implies that farecard data alone is not sufficient and that combining sources improves predictions.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

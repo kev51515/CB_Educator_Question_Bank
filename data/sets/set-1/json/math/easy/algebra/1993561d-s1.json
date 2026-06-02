@@ -1,0 +1,39 @@
+{
+  "questionId": "1993561d-s1",
+  "originalId": "1993561d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function f, the graph of y = f(x) in the xy-plane has a slope of 1/3 and passes through the point (0, 8). Which equation defines f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = (1/3)x - 8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = (1/3)x + 1/8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = (1/3)x + 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = 3x + 8</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Slope 1/3, y-intercept (0, 8): f(x) = (1/3)x + 8.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T1.easy"
+}

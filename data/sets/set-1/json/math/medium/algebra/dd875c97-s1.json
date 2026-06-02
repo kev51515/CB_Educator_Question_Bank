@@ -1,0 +1,39 @@
+{
+  "questionId": "dd875c97-s1",
+  "originalId": "dd875c97",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A van can carry a maximum weight of 3,200 kilograms. During one trip, the van will be used to carry a 250-kilogram piece of equipment as well as several crates. Some of these crates weigh 15 kilograms each and the others weigh 40 kilograms each. Which inequality represents the possible combinations of the number of 15-kilogram crates, <em>x</em>, and the number of 40-kilogram crates, <em>y</em>, the van can carry during one trip if only the equipment and the crates are being carried?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15<em>x</em> + 40<em>y</em> \u2265 2,950</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40<em>x</em> + 15<em>y</em> \u2264 3,200</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15<em>x</em> + 40<em>y</em> \u2264 2,950</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40<em>x</em> + 15<em>y</em> \u2265 3,200</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The crates can weigh at most 3,200 \u2212 250 = 2,950 kilograms in total. With <em>x</em> crates of 15 kg and <em>y</em> crates of 40 kg, the total crate weight is 15<em>x</em> + 40<em>y</em>, so 15<em>x</em> + 40<em>y</em> \u2264 2,950.</p><p>Choices A, B, and D have wrong direction, wrong coefficients, or omit the equipment weight.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.medium"
+}

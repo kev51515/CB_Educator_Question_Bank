@@ -1,0 +1,39 @@
+{
+  "questionId": "f5563c26-s1",
+  "originalId": "f5563c26",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 7</p><p>x = y + 5</p><p>The solution to the given system of equations is (x, y). What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. x = 7 + 5 = 12.</p><p>Choice A subtracts. Choices B and C are constants given.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b0f7541b-s1",
+  "originalId": "b0f7541b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a nineteenth-century novel. Caroline Frye, a celebrated naturalist, was renowned for her published lectures on butterflies.</p>\n<blockquote><p>Some years past, a serious young geologist, being in Paris, observed at a Sunday salon a chatty woman in an ill-cut shawl, talking with great gaiety to a circle of admirers who, in his view, did her too much credit. He pitied her hosts and was preparing to retire with disdain, when&mdash;chancing upon her name in the conversation&mdash;he discovered, to his considerable confusion, that the woman whose manner he had judged so trivial was the very Caroline Frye whose writings on butterflies he had carried with him across the Atlantic.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It offers a short history of how a person came to be famous.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explains why one character dislikes another.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It portrays the thoughts of a character who is embarrassed about his own behavior.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It presents an account of a misunderstanding.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The passage describes the geologist's mistaken impression of a stranger&mdash;he writes her off as trivial&mdash;followed by his discovery, on hearing her name, that she is the very naturalist whose work he reveres. The main purpose is to recount this misunderstanding and the embarrassed correction that follows.</p><p>Choice A is incorrect because the text does not narrate Frye's rise to fame. Choice B is incorrect because the geologist's annoyance is dissolved, not explained, by the end of the passage. Choice C is incorrect because the embarrassment, while implied, is not where the passage's energy lies; the central pivot is the misjudgment.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.hard"
+}

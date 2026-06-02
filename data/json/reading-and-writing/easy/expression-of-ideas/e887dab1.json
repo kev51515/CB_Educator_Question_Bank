@@ -1,0 +1,72 @@
+{
+  "questionId": "e887dab1",
+  "externalId": "1e891785-8515-4d26-8f9c-4e2497efedcb",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:48.314230+00:00",
+  "type": "mcq",
+  "stem": "<p>The student wants to indicate how long John Cage&rsquo;s musical piece will last. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "4cfdd5c0-f06a-4b87-b084-3295ac29261d",
+      "content": "<p>John Cage is the composer of the musical piece &ldquo;Organ<sup>2</sup>/<span data-ssml-say-as=\"characters\">ASLSP</span> (As Slow as Possible).&rdquo;</p>"
+    },
+    {
+      "id": "f76b9bfb-afe8-49c6-a630-692190679282",
+      "content": "<p>&ldquo;Organ<sup>2</sup>/<span data-ssml-say-as=\"characters\">ASLSP</span> (As Slow as Possible)&rdquo; is a musical piece currently being played in <span data-ssml-sub-alias=\"St\">St.</span> Burchardi Church in Halberstadt, Germany.</p>"
+    },
+    {
+      "id": "07b4a596-f508-4ced-a286-ecefdc0b90a5",
+      "content": "<p>Lasting 639 years, John Cage&rsquo;s musical piece will be the longest continuous musical performance in history.</p>"
+    },
+    {
+      "id": "ba3c4157-447d-403e-a72d-0937ebd539cf",
+      "content": "<p>An organ in <span data-ssml-sub-alias=\"St\">St.</span> Burchardi Church in Halberstadt, Germany, began playing a musical piece by avant-garde composer John Cage.</p>"
+    }
+  ],
+  "keys": [
+    "07b4a596-f508-4ced-a286-ecefdc0b90a5"
+  ],
+  "rationale": "<p>Choice C is the best answer. The sentence indicates how long John Cage&rsquo;s musical piece will last, noting that it will last 639 years and be the longest continuous musical performance in history.</p><p>Choice A is incorrect. The sentence identifies John Cage as the composer and provides the name of the musical piece; it doesn&rsquo;t indicate how long the piece will last. Choice B is incorrect. The sentence provides the name of the musical piece and where it is currently being played; it doesn&rsquo;t indicate how long the piece will last. Choice D is incorrect. The sentence mentions where the musical piece is being played and identifies John Cage as the composer; it doesn&rsquo;t indicate how long the piece will last.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>The student wants to indicate how long John Cage&rsquo;s musical piece will last. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>&ldquo;Organ<sup>2</sup>/<span data-ssml-say-as=\"characters\">ASLSP</span> (As Slow as Possible)&rdquo; is a musical piece by avant-garde composer John Cage.</li>\n<li>A specially designed automated organ in <span data-ssml-sub-alias=\"St\">St.</span> Burchardi Church in Halberstadt, Germany, began playing the piece in <span data-ssml-say-as=\"date\">2001</span>.</li>\n<li>It is scheduled to stop playing the piece in <span data-ssml-say-as=\"date\">2640</span>.</li>\n<li>The performance will last 639 years.</li>\n<li>It will be the longest continuous musical performance in history.</li>\n</ul>",
+    "keys": [
+      "07b4a596-f508-4ced-a286-ecefdc0b90a5"
+    ],
+    "answerOptions": [
+      {
+        "id": "4cfdd5c0-f06a-4b87-b084-3295ac29261d",
+        "content": "<p>John Cage is the composer of the musical piece &ldquo;Organ<sup>2</sup>/<span data-ssml-say-as=\"characters\">ASLSP</span> (As Slow as Possible).&rdquo;</p>"
+      },
+      {
+        "id": "f76b9bfb-afe8-49c6-a630-692190679282",
+        "content": "<p>&ldquo;Organ<sup>2</sup>/<span data-ssml-say-as=\"characters\">ASLSP</span> (As Slow as Possible)&rdquo; is a musical piece currently being played in <span data-ssml-sub-alias=\"St\">St.</span> Burchardi Church in Halberstadt, Germany.</p>"
+      },
+      {
+        "id": "07b4a596-f508-4ced-a286-ecefdc0b90a5",
+        "content": "<p>Lasting 639 years, John Cage&rsquo;s musical piece will be the longest continuous musical performance in history.</p>"
+      },
+      {
+        "id": "ba3c4157-447d-403e-a72d-0937ebd539cf",
+        "content": "<p>An organ in <span data-ssml-sub-alias=\"St\">St.</span> Burchardi Church in Halberstadt, Germany, began playing a musical piece by avant-garde composer John Cage.</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer. The sentence indicates how long John Cage&rsquo;s musical piece will last, noting that it will last 639 years and be the longest continuous musical performance in history.</p><p>Choice A is incorrect. The sentence identifies John Cage as the composer and provides the name of the musical piece; it doesn&rsquo;t indicate how long the piece will last. Choice B is incorrect. The sentence provides the name of the musical piece and where it is currently being played; it doesn&rsquo;t indicate how long the piece will last. Choice D is incorrect. The sentence mentions where the musical piece is being played and identifies John Cage as the composer; it doesn&rsquo;t indicate how long the piece will last.</p>",
+    "externalid": "1e891785-8515-4d26-8f9c-4e2497efedcb",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>&ldquo;Organ<sup>2</sup>/<span data-ssml-say-as=\"characters\">ASLSP</span> (As Slow as Possible)&rdquo; is a musical piece by avant-garde composer John Cage.</li>\n<li>A specially designed automated organ in <span data-ssml-sub-alias=\"St\">St.</span> Burchardi Church in Halberstadt, Germany, began playing the piece in <span data-ssml-say-as=\"date\">2001</span>.</li>\n<li>It is scheduled to stop playing the piece in <span data-ssml-say-as=\"date\">2640</span>.</li>\n<li>The performance will last 639 years.</li>\n<li>It will be the longest continuous musical performance in history.</li>\n</ul>"
+}

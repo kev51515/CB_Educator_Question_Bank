@@ -1,0 +1,22 @@
+{
+  "questionId": "128c75e2-s1",
+  "originalId": "128c75e2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>h</i> is defined by <i>h</i>(<i>x</i>) = |<i>x</i>|/<i>b</i> &minus; 9, where <i>b</i> &lt; 0. What is the product of <i>h</i>(12<i>b</i>) and <i>h</i>(6<i>b</i>)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "315"
+  ],
+  "rationale": "<p>Since <i>b</i> &lt; 0, |12<i>b</i>| = &minus;12<i>b</i> and |6<i>b</i>| = &minus;6<i>b</i>. Then <i>h</i>(12<i>b</i>) = (&minus;12<i>b</i>)/<i>b</i> &minus; 9 = &minus;12 &minus; 9 = &minus;21. And <i>h</i>(6<i>b</i>) = (&minus;6<i>b</i>)/<i>b</i> &minus; 9 = &minus;6 &minus; 9 = &minus;15. Product = (&minus;21)(&minus;15) = 315.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A1.T1.hard"
+}

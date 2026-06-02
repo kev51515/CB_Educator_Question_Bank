@@ -1,0 +1,39 @@
+{
+  "questionId": "886dc9f9-s1",
+  "originalId": "886dc9f9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>On June 18, 1932, an experimental seaplane called the <em>Southern Cross</em> touched down in Honolulu ______ taken off from San Francisco Bay under the command of Captain Charles Kingsford Smith and his copilot, navigator Patrick Taylor, exactly 31 hours and 12 minutes earlier, the celebrated aircraft set a transpacific record that would stand for decades.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Harbor and having</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Harbor, having</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Harbor having</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Harbor. Having</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The period after \"Harbor\" correctly marks the boundary between the first sentence (\"On June 18&hellip;Harbor\") and the second sentence (\"Having&hellip;decades\"). The supplementary phrase beginning with \"Having\" modifies the subject of the second sentence, \"the celebrated aircraft.\"</p><p>Choice A is incorrect because without a comma preceding it, the conjunction \"and\" cannot join two independent clauses. Choice B is incorrect because it produces a comma splice. Choice C is incorrect because it creates a run-on sentence with the two clauses fused.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T1.hard"
+}

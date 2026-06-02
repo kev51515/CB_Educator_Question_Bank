@@ -1,0 +1,39 @@
+{
+  "questionId": "197bed38-s1",
+  "originalId": "197bed38",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An object is launched from a platform. Its height h, in meters, above the ground t seconds after launch is given by h(t) = −5t² + 30t + 35. What is the maximum height, in meters, reached by the object?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>110</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. For a quadratic h(t) = at² + bt + c with a < 0, the maximum occurs at t = −b/(2a) = −30/(−10) = 3. Substituting gives h(3) = −5(9) + 30(3) + 35 = −45 + 90 + 35 = 80 meters. Choice A is the initial height. Choices B and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T3.medium"
+}

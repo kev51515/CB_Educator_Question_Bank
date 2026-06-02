@@ -1,0 +1,39 @@
+{
+  "questionId": "39857700-s1",
+  "originalId": "39857700",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1908 novel. Constance and a friend are pausing at a lookout above a coastal town.</p>\n<p style='padding-left: 1em;'>Constance had no special communion with the sea, but she had an unfailing instinct for the becoming, and could be exquisitely alive to a setting that flattered her own emotion. <u>The bay laid out beneath her struck her as the natural amplification of her present feeling, and she lingered upon each long arc of the shoreline as if she herself had drawn it.</u> Her companion, less practiced at being seen, murmured only that the wind was sharp and that it would soon be time to descend.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It illustrates the idea introduced in the previous sentence.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It creates a detailed image of the physical setting independent of Constance's feelings.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It establishes that a character is experiencing a sharp internal conflict.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It makes an assertion that the next sentence then expands on.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The sentence before the underlined one states that Constance is sensitive to settings that flatter her own emotion. The underlined sentence shows precisely this: the bay below her feels like an extension of her mood, and she dwells on its arcs as if authoring them. The underlined material thus illustrates the general claim just established.</p><p>Choice B is incorrect because the description is filtered through Constance's emotion, not offered as an independent landscape. Choice C is incorrect because no conflict is depicted; her mood and the scene align. Choice D is incorrect because the following sentence shifts to the companion's reaction rather than expanding on the underlined claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.hard"
+}

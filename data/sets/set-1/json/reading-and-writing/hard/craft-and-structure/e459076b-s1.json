@@ -1,0 +1,39 @@
+{
+  "questionId": "e459076b-s1",
+  "originalId": "e459076b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Edith Wharton's 1905 novel <em>The House of Mirth</em>.</p><blockquote><p>[Mr. Trenor] had passed his early manhood at his club and in the company of horses, and was held among the older families of New York to have <span role=\"region\" aria-label=\"Referenced Content\"><u>contracted</u></span> a too speculative habit of mind. Mr. Trenor's investments were as difficult to foresee as the markets themselves.</p></blockquote>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Acquired</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Restricted</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Described</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Settled</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. In the context of habits, \"contracted\" means to have taken on or developed. The older families regard Mr. Trenor as having taken on\u2014acquired\u2014a speculative habit of mind during his early manhood. \"Acquired\" preserves this meaning.</p><p>Choice B is incorrect. \"Restricted\" means narrowed or limited; the text isn't saying his mind was constrained but that he picked up a particular habit. Choice C is incorrect. \"Described\" means depicted or characterized; one doesn't \"describe\" a habit of mind for oneself in this sense. Choice D is incorrect. \"Settled\" means made firm or resolved; a habit isn't \"settled\" so much as developed or taken on.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A1.T1.hard"
+}

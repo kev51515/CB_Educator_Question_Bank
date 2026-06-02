@@ -1,0 +1,72 @@
+{
+  "questionId": "0021d326",
+  "externalId": "cdec6f45-f788-41ed-b5ca-a993c1daa960",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:29.416002+00:00",
+  "type": "mcq",
+  "stem": "<p>Which finding, if true, would most strongly support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "8613bf71-2832-4a6e-a8b7-eca20634e767",
+      "content": "<p>Researchers determine that olms don&rsquo;t breed often.</p>"
+    },
+    {
+      "id": "94040776-a669-488e-8b5f-8c6cde616e12",
+      "content": "<p>Researchers confirm that olms live in only a few cave systems.</p>"
+    },
+    {
+      "id": "2ecb7ac8-6d8d-4a39-a549-b449ced71d2e",
+      "content": "<p>Researchers discover that earthworms from surface soils are a major part of olms&rsquo; diet.</p>"
+    },
+    {
+      "id": "e40aecd3-bdb6-4919-a7fe-e30b8107776a",
+      "content": "<p>Researchers learn that olms&rsquo; brains differ from other salamanders&rsquo; brains.</p>"
+    }
+  ],
+  "keys": [
+    "2ecb7ac8-6d8d-4a39-a549-b449ced71d2e"
+  ],
+  "rationale": "<p>Choice C is the best answer because it presents a finding that, if true, would most strongly support Manenti and team&rsquo;s claim that olms regularly come to the surface to find food. The text explains that scientists previously believed olms remained in their underwater caves throughout their lives, but Manenti&rsquo;s team claims that olms actually surface regularly to perform important activities like finding food. Since earthworms from surface soils would not be present in underwater caves, the finding that such earthworms constitute a major part of olms&rsquo; diet would provide compelling evidence that olms regularly leave their underwater cave environment to obtain food from the surface, thus supporting the underlined claim.</p><p>Choice A is incorrect because information about olms&rsquo; breeding frequency wouldn&rsquo;t support the claim about their leaving their underwater habitats to obtain food. While breeding patterns might be relevant to understanding olm behavior in general, this finding doesn&rsquo;t address whether olms surface to find food, which is the specific behavior that the underlined claim addresses. Choice B is incorrect because learning that olms live in only a few cave systems wouldn&rsquo;t support the claim about their regular visits to the surface. This finding would provide information about the geographic distribution of olm habitats but wouldn&rsquo;t address whether olms leave these caves to find food or perform other activities on the surface. Choice D is incorrect because the differences between olms&rsquo; brains and other salamanders&rsquo; brains have no clear connection to olms&rsquo; movement beyond their underwater habitats or to their feeding habits. A finding about the uniqueness of olms&rsquo; brains wouldn&rsquo;t address whether olms leave their caves to find food or support Manenti and team&rsquo;s claim about olms&rsquo; motivation for coming to the surface.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which finding, if true, would most strongly support the underlined claim?</p>",
+    "stimulus": "<p>Olms are salamanders that live in underwater caves. Scientists once thought that olms stay in their caves all their lives. However, Raoul Manenti and team claim that <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">olms regularly come to the surface to perform important activities such as finding food.</span></p>",
+    "keys": [
+      "2ecb7ac8-6d8d-4a39-a549-b449ced71d2e"
+    ],
+    "answerOptions": [
+      {
+        "id": "8613bf71-2832-4a6e-a8b7-eca20634e767",
+        "content": "<p>Researchers determine that olms don&rsquo;t breed often.</p>"
+      },
+      {
+        "id": "94040776-a669-488e-8b5f-8c6cde616e12",
+        "content": "<p>Researchers confirm that olms live in only a few cave systems.</p>"
+      },
+      {
+        "id": "2ecb7ac8-6d8d-4a39-a549-b449ced71d2e",
+        "content": "<p>Researchers discover that earthworms from surface soils are a major part of olms&rsquo; diet.</p>"
+      },
+      {
+        "id": "e40aecd3-bdb6-4919-a7fe-e30b8107776a",
+        "content": "<p>Researchers learn that olms&rsquo; brains differ from other salamanders&rsquo; brains.</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it presents a finding that, if true, would most strongly support Manenti and team&rsquo;s claim that olms regularly come to the surface to find food. The text explains that scientists previously believed olms remained in their underwater caves throughout their lives, but Manenti&rsquo;s team claims that olms actually surface regularly to perform important activities like finding food. Since earthworms from surface soils would not be present in underwater caves, the finding that such earthworms constitute a major part of olms&rsquo; diet would provide compelling evidence that olms regularly leave their underwater cave environment to obtain food from the surface, thus supporting the underlined claim.</p><p>Choice A is incorrect because information about olms&rsquo; breeding frequency wouldn&rsquo;t support the claim about their leaving their underwater habitats to obtain food. While breeding patterns might be relevant to understanding olm behavior in general, this finding doesn&rsquo;t address whether olms surface to find food, which is the specific behavior that the underlined claim addresses. Choice B is incorrect because learning that olms live in only a few cave systems wouldn&rsquo;t support the claim about their regular visits to the surface. This finding would provide information about the geographic distribution of olm habitats but wouldn&rsquo;t address whether olms leave these caves to find food or perform other activities on the surface. Choice D is incorrect because the differences between olms&rsquo; brains and other salamanders&rsquo; brains have no clear connection to olms&rsquo; movement beyond their underwater habitats or to their feeding habits. A finding about the uniqueness of olms&rsquo; brains wouldn&rsquo;t address whether olms leave their caves to find food or support Manenti and team&rsquo;s claim about olms&rsquo; motivation for coming to the surface.</p>",
+    "externalid": "cdec6f45-f788-41ed-b5ca-a993c1daa960",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>Olms are salamanders that live in underwater caves. Scientists once thought that olms stay in their caves all their lives. However, Raoul Manenti and team claim that <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">olms regularly come to the surface to perform important activities such as finding food.</span></p>"
+}

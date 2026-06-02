@@ -1,0 +1,39 @@
+{
+  "questionId": "33b1b285-s1",
+  "originalId": "33b1b285",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Founded in 1973 and originally established as a community theater workshop for Black playwrights in Chicago, the Onyx Stage Collective has been recognized both as an incubator for the next generation of African American dramatists and as a notable contributor to American regional theater. In an article about the company, a theater historian posits that a significant stylistic influence on Onyx&rsquo;s early productions was the call-and-response performance tradition of historically Black church services, in which preachers and worshippers actively shape each other&rsquo;s words.</p>",
+  "stem": "<p>Which quotation from the article would best illustrate the theater historian&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;The company drew heavily on the rhythms and imagery of contemporary urban Black life as well as a deliberately stripped-down staging aesthetic that reflected the troupe&rsquo;s limited resources and its commitment to accessibility.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;The company was rooted in the political moment of 1970s Chicago and discovered that humor and lyric monologue, alongside sober social analysis, could engage and provoke audiences in equal measure.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;The members of the company&mdash;in addition to founder Etta Wells, predominantly amateurs from neighborhood churches&mdash;performed in school gyms and community centers using minimal props and lighting.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;The company staged short verse plays whose lines were structured so that performers paused to invite audience exclamations, with audience cries of agreement and rebuke openly woven into each performance and even prompting performers to alter their delivery in real time.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it directly illustrates the call-and-response tradition the historian invokes: the company&rsquo;s performances deliberately included audience exclamations and let those exclamations alter the performance in real time, just as a preacher and congregation shape each other. Choice A speaks to aesthetic and content but not the call-and-response form. Choice B is about humor and analysis. Choice C describes the company&rsquo;s amateur composition and minimal staging, not its dialogic structure.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A2.T3.hard"
+}

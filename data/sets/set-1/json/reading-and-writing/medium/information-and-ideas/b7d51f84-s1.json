@@ -1,0 +1,25 @@
+{
+  "questionId": "b7d51f84-s1",
+  "originalId": "b7d51f84",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Among many Pacific Northwest Indigenous nations, totem carvers have traditionally been keepers of clan lineages and records of major communal events. They have often served as historians and ceremonial advisers as well. New tools and materials may have altered some aspects of the craft today, but totem carvers continue to be valued for knowing and protecting the stories of their peoples.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Although totem carvers have many roles, many of them prefer ceremonial advising above the others.</p>"},
+    {"id": "b", "content": "<p>Totem carvers have been entertaining members of their communities for centuries.</p>"},
+    {"id": "c", "content": "<p>Even though some aspects of their craft have changed, totem carvers continue to preserve their communities&rsquo; histories.</p>"},
+    {"id": "d", "content": "<p>New tools can now do many of the tasks that totem carvers used to be responsible for.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text says totem carvers have traditionally been keepers of clan lineages and event records, that new tools have altered some aspects of the craft, and that carvers continue to be valued for protecting their peoples&rsquo; stories. That captures the main idea.</p><p>Choice A is incorrect because the text never describes the carvers&rsquo; own preferences among their roles. Choice B is incorrect because the text presents carvers as knowledge keepers, not entertainers, and never specifies how long they have served. Choice D is incorrect because the text does not claim that new tools have taken over the carvers&rsquo; traditional responsibilities — only that they have altered some aspects of the craft.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7b65bb28-s1",
+  "originalId": "7b65bb28",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Daniel recorded the price of one gallon of milk from seven different grocery stores on the same morning. The prices, in dollars, were <math><mn>2.949</mn></math>, <math><mn>2.989</mn></math>, <math><mn>3.019</mn></math>, <math><mn>3.059</mn></math>, <math><mn>3.099</mn></math>, <math><mn>3.129</mn></math>, and <math><mn>3.199</mn></math>. What is the median of the milk prices Daniel recorded?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$3.059</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$3.099</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$2.989</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$3.119</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The prices are already in ascending order, and there are 7 values. The median is the 4th value, which is $3.059.</p><p>Choice B is the 5th value. Choice C is the 2nd value. Choice D is approximately the mean.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T2.medium"
+}

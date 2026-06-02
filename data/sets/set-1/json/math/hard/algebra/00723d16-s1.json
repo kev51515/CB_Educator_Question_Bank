@@ -1,0 +1,23 @@
+{
+  "questionId": "00723d16-s1",
+  "originalId": "00723d16",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Line &#8467; is defined by 2<i>y</i> + 10<i>x</i> = 9. Line <i>n</i> is perpendicular to line &#8467; in the <i>xy</i>-plane. What is the slope of line <i>n</i>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "0.2",
+    "1/5"
+  ],
+  "rationale": "<p>Rewriting 2<i>y</i> + 10<i>x</i> = 9 in slope-intercept form: <i>y</i> = &minus;5<i>x</i> + 9/2, so the slope of line &#8467; is &minus;5. The slope of a line perpendicular to &#8467; is the negative reciprocal: 1/5.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "6b4707aa-s1",
+  "originalId": "6b4707aa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Circle A in the xy-plane has the equation (x &minus; 3)&sup2; + (y + 4)&sup2; = 16. Circle B has the same center as circle A. The radius of circle B is three times the radius of circle A. The equation defining circle B in the xy-plane is (x &minus; 3)&sup2; + (y + 4)&sup2; = k, where k is a constant. What is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "144"
+  ],
+  "rationale": "<p>The correct answer is 144. The radius of circle A is &radic;16 = 4. The radius of circle B is 3 &times; 4 = 12, so k = 12&sup2; = 144.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T5.hard"
+}

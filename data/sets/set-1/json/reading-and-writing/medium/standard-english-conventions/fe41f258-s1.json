@@ -1,0 +1,25 @@
+{
+  "questionId": "fe41f258-s1",
+  "originalId": "fe41f258",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.medium",
+  "stimulus": "<p>In medieval scholastic philosophy, the Stoic ideal of <em>apatheia</em> was reframed by thinkers who studied Aristotle. The theologian Thomas Aquinas characterized true virtue as &ldquo;the rational ordering of one&rsquo;s <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> arguing that disordered desires obscure the soul&rsquo;s natural inclination toward the good.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>passions&rdquo;: arguing</p>"},
+    {"id": "b", "content": "<p>passions,&rdquo; arguing</p>"},
+    {"id": "c", "content": "<p>passions&rdquo;; arguing</p>"},
+    {"id": "d", "content": "<p>passions.&rdquo; Arguing</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation between a main clause and a participial phrase. This choice correctly uses a comma to mark the boundary between the main clause (\"The theologian&hellip;'passions'\") and the participial phrase (\"arguing&hellip;good\") that adds information about Aquinas's reasoning.</p><p>Choice A is incorrect because a colon cannot be used in this way to join a main clause and a participial phrase. Choice C is incorrect because a semicolon cannot be used to join a main clause and a participial phrase. Choice D is incorrect because it produces a sentence fragment beginning with \"Arguing.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "cf9a00e0-s1",
+  "originalId": "cf9a00e0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>Antarctica&rsquo;s McMurdo Dry Valleys are one of the coldest, driest places on Earth. <span role=\"region\" aria-label=\"Referenced Content\"><u>Jill Mikucki and other astrobiologists search for life, or its remains, in this harsh place because the valleys closely mirror the icy subsurface environment thought to lie beneath the moon Europa.</u></span> The microbes living below the salty waters of the valleys may offer clues about possible Europan life. By studying how these organisms survive such extreme conditions on Earth, Mikucki&rsquo;s team hopes to assess whether similar life might exist beneath Europa&rsquo;s ice and to design the best tools to look for evidence of it.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To indicate why astrobiologists choose to conduct research in the McMurdo Dry Valleys</p>"},
+    {"id": "b", "content": "<p>To contrast the conditions in the McMurdo Dry Valleys with those beneath Europa&rsquo;s ice</p>"},
+    {"id": "c", "content": "<p>To explain why many life-forms cannot survive in the McMurdo Dry Valleys</p>"},
+    {"id": "d", "content": "<p>To describe certain limitations to conducting scientific study in the McMurdo Dry Valleys</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most accurately describes how the underlined sentence functions in the text as a whole. The first sentence describes a unique location on Earth, the McMurdo Dry Valleys. The next sentence, which is the underlined sentence, states that astrobiologists study life there because the environment closely mirrors the icy subsurface thought to lie beneath Europa. The remainder of the text explains that the researchers hope this work will support inquiry into possible Europan life.</p><p>Choice B is incorrect because the underlined sentence emphasizes similarity, not contrast. Choice C is incorrect because the underlined sentence does not address forms of life that cannot survive the conditions. Choice D is incorrect because the underlined sentence does not suggest that research in the valleys is limited; it explains the rationale for conducting it there.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

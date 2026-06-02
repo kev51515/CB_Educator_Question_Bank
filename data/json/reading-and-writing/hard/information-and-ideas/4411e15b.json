@@ -1,0 +1,72 @@
+{
+  "questionId": "4411e15b",
+  "externalId": "41e246d6-ff3c-448d-8852-1127eaf889c0",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:04.366212+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "57618202-7f59-43c5-9861-d20f785e7a75",
+      "content": "<p>the selection process that enabled the Navajo-Churro to retain its somewhat coarse outer fiber also resulted in inner fiber that, at its softest, is softer than either the mouflon&rsquo;s or the Merino&rsquo;s inner fiber.</p>"
+    },
+    {
+      "id": "b4c54706-fd25-4333-8267-ff9f8e126d9c",
+      "content": "<p>the Navajo-Churro more closely resembles its ancestor, the mouflon, in the uniform softness of its inner fiber, while the Merino more closely resembles the mouflon in the variable diameter of its outer fiber.&nbsp;</p>"
+    },
+    {
+      "id": "f2498f97-0b9c-4e06-8a59-7007d80aaa73",
+      "content": "<p>domestication resulted in a counterintuitive increase in the inner fiber&rsquo;s minimum diameter, making the inner fiber of the Merino and the Navajo-Churro less suitable for delicate garments than the mouflon&rsquo;s inner fiber is.</p>"
+    },
+    {
+      "id": "9412413a-be36-47bb-bfd3-1f859bc76bf5",
+      "content": "<p>the domestication of the mouflon and the subsequent selection process that produced the Merino and the Navajo-Churro resulted in greater softness of outer and inner fiber alike.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "57618202-7f59-43c5-9861-d20f785e7a75"
+  ],
+  "rationale": "<p>Choice A is the best answer because it accurately uses data from the table to complete the statement about the fibers of three types of sheep. The text discusses some qualities of outer and inner fibers of mouflons, Spanish Merino sheep, and Navajo-Churro sheep and indicates that sheep fibers with finer, or smaller, diameters are softer than fibers with larger diameters. The text then sets up a conclusion that can be made by comparing the fibers of all three sheep types. The table shows that the minimum diameter of the Navajo-Churro&rsquo;s inner fibers is 10 microns, which is smaller than the minimum diameters of the inner fibers of both the mouflon (15 microns) and the Spanish Merino (17 microns). Thus, comparing the fiber characteristics of all three sheep reveals that at its softest, the inner fiber of the Navajo-Churro is softer than either the mouflon&rsquo;s or the Merino&rsquo;s inner fiber.</p><p>Choice B is incorrect because it doesn&rsquo;t accurately describe the data in the table. The table shows that the softness of Navajo-Churro inner fiber isn&rsquo;t uniform (since the diameter of Navajo-Churro inner fiber ranges from 10 microns to 35 microns) and that the diameter of the outer fiber of the mouflon isn&rsquo;t variable (rather, it is a uniform 150 microns). Choice C is incorrect because it doesn&rsquo;t accurately describe the data in the table. The text indicates that both Spanish Merino sheep and Navajo-Churro sheep were domesticated from mouflon sheep. The table doesn&rsquo;t show that domestication increased the minimum diameter of inner fibers for both Spanish Merino sheep and Navajo-Churro sheep from the 15-micron diameter of mouflon inner fibers: the minimum diameter of Spanish Merino increased to 17 microns, but the minimum diameter of Navajo-Churro inner fibers <em>decreased</em> to 10 microns. Choice D is incorrect because it doesn&rsquo;t accurately describe the data in the table. The text explains that sheep fibers with finer, or smaller, diameters are softer than fibers with larger diameters. The table does show that Spanish Merino outer fibers are finer, and thus softer, than mouflon outer fibers and that at their finest, Navajo-Churro outer fibers are softer than mouflon outer fibers, but it also shows that Spanish Merino inner fibers are less soft than mouflon inner fibers, since their minimum diameter is greater than 15 microns, and that Navajo-Churro inner fibers can be less soft than mouflon inner fibers, since the diameter ranges up to 35 microns.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+    "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Fiber Characteristics of Mouflon, Navajo-Churro, and Spanish Merino Sheep</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Type of sheep</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Diameter of outer coat fibers (in microns)</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Diameter of inner coat fibers (in microns)</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\">Spanish Merino</th><td style=\"text-align: center;\">19&ndash;24</td><td style=\"text-align: center;\">17&ndash;21</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Navajo-Churro</th><td style=\"text-align: center;\">35 or higher</td><td style=\"text-align: center;\">10&ndash;35</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Mouflon</th><td style=\"text-align: center;\">150</td><td style=\"text-align: center;\">15</td></tr></tbody></table></figure></p>\n<p>Domestic sheep&rsquo;s wild ancestor, the mouflon, has a coarse outer coat and an inner coat of wool fiber that is finer in diameter and therefore much softer. In some domestic breeds, such as the Spanish Merino, the outer fiber is only marginally coarser than the inner, and the wool is soft overall. Thus, Merino wool is ideal for delicate garments worn against the skin. Meanwhile, the Navajo-Churro has been selected to retain the marked distinction between outer and inner fiber that the Merino has lost. Being coarser than Merino wool overall, Navajo-Churro wool yields a more durable yarn, which <span lang=\"nv\">Din&eacute;</span> (Navajo) weavers use in their celebrated rugs. Yet a comparison of the fiber characteristics of all three sheep reveals that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "57618202-7f59-43c5-9861-d20f785e7a75"
+    ],
+    "answerOptions": [
+      {
+        "id": "57618202-7f59-43c5-9861-d20f785e7a75",
+        "content": "<p>the selection process that enabled the Navajo-Churro to retain its somewhat coarse outer fiber also resulted in inner fiber that, at its softest, is softer than either the mouflon&rsquo;s or the Merino&rsquo;s inner fiber.</p>"
+      },
+      {
+        "id": "b4c54706-fd25-4333-8267-ff9f8e126d9c",
+        "content": "<p>the Navajo-Churro more closely resembles its ancestor, the mouflon, in the uniform softness of its inner fiber, while the Merino more closely resembles the mouflon in the variable diameter of its outer fiber.&nbsp;</p>"
+      },
+      {
+        "id": "f2498f97-0b9c-4e06-8a59-7007d80aaa73",
+        "content": "<p>domestication resulted in a counterintuitive increase in the inner fiber&rsquo;s minimum diameter, making the inner fiber of the Merino and the Navajo-Churro less suitable for delicate garments than the mouflon&rsquo;s inner fiber is.</p>"
+      },
+      {
+        "id": "9412413a-be36-47bb-bfd3-1f859bc76bf5",
+        "content": "<p>the domestication of the mouflon and the subsequent selection process that produced the Merino and the Navajo-Churro resulted in greater softness of outer and inner fiber alike.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it accurately uses data from the table to complete the statement about the fibers of three types of sheep. The text discusses some qualities of outer and inner fibers of mouflons, Spanish Merino sheep, and Navajo-Churro sheep and indicates that sheep fibers with finer, or smaller, diameters are softer than fibers with larger diameters. The text then sets up a conclusion that can be made by comparing the fibers of all three sheep types. The table shows that the minimum diameter of the Navajo-Churro&rsquo;s inner fibers is 10 microns, which is smaller than the minimum diameters of the inner fibers of both the mouflon (15 microns) and the Spanish Merino (17 microns). Thus, comparing the fiber characteristics of all three sheep reveals that at its softest, the inner fiber of the Navajo-Churro is softer than either the mouflon&rsquo;s or the Merino&rsquo;s inner fiber.</p><p>Choice B is incorrect because it doesn&rsquo;t accurately describe the data in the table. The table shows that the softness of Navajo-Churro inner fiber isn&rsquo;t uniform (since the diameter of Navajo-Churro inner fiber ranges from 10 microns to 35 microns) and that the diameter of the outer fiber of the mouflon isn&rsquo;t variable (rather, it is a uniform 150 microns). Choice C is incorrect because it doesn&rsquo;t accurately describe the data in the table. The text indicates that both Spanish Merino sheep and Navajo-Churro sheep were domesticated from mouflon sheep. The table doesn&rsquo;t show that domestication increased the minimum diameter of inner fibers for both Spanish Merino sheep and Navajo-Churro sheep from the 15-micron diameter of mouflon inner fibers: the minimum diameter of Spanish Merino increased to 17 microns, but the minimum diameter of Navajo-Churro inner fibers <em>decreased</em> to 10 microns. Choice D is incorrect because it doesn&rsquo;t accurately describe the data in the table. The text explains that sheep fibers with finer, or smaller, diameters are softer than fibers with larger diameters. The table does show that Spanish Merino outer fibers are finer, and thus softer, than mouflon outer fibers and that at their finest, Navajo-Churro outer fibers are softer than mouflon outer fibers, but it also shows that Spanish Merino inner fibers are less soft than mouflon inner fibers, since their minimum diameter is greater than 15 microns, and that Navajo-Churro inner fibers can be less soft than mouflon inner fibers, since the diameter ranges up to 35 microns.</p>",
+    "externalid": "41e246d6-ff3c-448d-8852-1127eaf889c0",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Fiber Characteristics of Mouflon, Navajo-Churro, and Spanish Merino Sheep</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Type of sheep</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Diameter of outer coat fibers (in microns)</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Diameter of inner coat fibers (in microns)</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\">Spanish Merino</th><td style=\"text-align: center;\">19&ndash;24</td><td style=\"text-align: center;\">17&ndash;21</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Navajo-Churro</th><td style=\"text-align: center;\">35 or higher</td><td style=\"text-align: center;\">10&ndash;35</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Mouflon</th><td style=\"text-align: center;\">150</td><td style=\"text-align: center;\">15</td></tr></tbody></table></figure></p>\n<p>Domestic sheep&rsquo;s wild ancestor, the mouflon, has a coarse outer coat and an inner coat of wool fiber that is finer in diameter and therefore much softer. In some domestic breeds, such as the Spanish Merino, the outer fiber is only marginally coarser than the inner, and the wool is soft overall. Thus, Merino wool is ideal for delicate garments worn against the skin. Meanwhile, the Navajo-Churro has been selected to retain the marked distinction between outer and inner fiber that the Merino has lost. Being coarser than Merino wool overall, Navajo-Churro wool yields a more durable yarn, which <span lang=\"nv\">Din&eacute;</span> (Navajo) weavers use in their celebrated rugs. Yet a comparison of the fiber characteristics of all three sheep reveals that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

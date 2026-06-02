@@ -1,0 +1,39 @@
+{
+  "questionId": "1853bb35-s1",
+  "originalId": "1853bb35",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the function <i>r</i>, the value of <i>r</i>(<i>x</i>) decreases by 30% for every increase in the value of <i>x</i> by 1. If <i>r</i>(0) = 22, which equation defines <i>r</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>r</i>(<i>x</i>) = 0.7(22)<sup><i>x</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>r</i>(<i>x</i>) = 22(0.7)<sup><i>x</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>r</i>(<i>x</i>) = 1.3(22)<sup><i>x</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>r</i>(<i>x</i>) = 22(1.3)<sup><i>x</i></sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A 30% decrease means multiplying by 1 &minus; 0.30 = 0.7 per unit increase in <i>x</i>. With initial value <i>r</i>(0) = 22, the function is <i>r</i>(<i>x</i>) = 22(0.7)<sup><i>x</i></sup>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

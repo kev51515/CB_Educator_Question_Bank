@@ -1,0 +1,39 @@
+{
+  "questionId": "66fd248a-s1",
+  "originalId": "66fd248a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>\"The City\" is a 1928 poem by the American writer Lenore Hartwell. The poem reveals the speaker's ambivalence toward urban life: even as the speaker catalogues the city's noise and indignities, the speaker also acknowledges its quiet pleasures. ______</p>",
+  "stem": "<p>Which quotation from \"The City\" most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"Among the soot and shouted slogans, / a stranger's hand will sometimes pause / to steady mine on the train rail.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"All day the iron grinds upon the iron, / the avenues exhale a yellow dust / that has no end and no beginning.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"No one in this place is mine; / the lamps lean closer to the curb / but never to the listener beneath them.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"Let the harangues continue, / let the drivers lay on their horns\u2014 / I refuse to be moved.\"</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The quotation pairs the city's harshness (\"soot and shouted slogans\") with an unexpected kindness (a stranger steadying the speaker's hand). That juxtaposition of negative and positive aspects of urban life captures exactly the ambivalence the claim describes.</p><p>Choice B is incorrect: it conveys only unrelenting unpleasantness (noise, grime), with no balancing positive note. Choice C is incorrect: it dwells on isolation and indifference; there is no acknowledgment of any quiet pleasure. Choice D is incorrect: it expresses defiance toward the city's irritations but does not concede any redeeming feature, so it does not illustrate ambivalence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A1.T2.hard"
+}

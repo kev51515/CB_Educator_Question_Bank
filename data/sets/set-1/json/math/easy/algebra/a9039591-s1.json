@@ -1,0 +1,25 @@
+{
+  "questionId": "a9039591-s1",
+  "originalId": "a9039591",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows three values of <i>x</i> and their corresponding values of <i>g</i>(<i>x</i>) for a linear function <i>g</i>: (0, 12), (1, 17), (2, 22). Which equation defines <i>g</i>(<i>x</i>)?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>g</i>(<i>x</i>) = 12<i>x</i> + 5</p>"},
+    {"id": "b", "content": "<p><i>g</i>(<i>x</i>) = 17<i>x</i> + 12</p>"},
+    {"id": "c", "content": "<p><i>g</i>(<i>x</i>) = 5<i>x</i> + 12</p>"},
+    {"id": "d", "content": "<p><i>g</i>(<i>x</i>) = 22<i>x</i> + 12</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The values of <i>g</i>(<i>x</i>) increase by 5 for each unit increase in <i>x</i>, so the slope is 5. When <i>x</i> = 0, <i>g</i>(<i>x</i>) = 12, so the <i>y</i>-intercept is 12. Thus <i>g</i>(<i>x</i>) = 5<i>x</i> + 12.</p><p>Choice A swaps slope and intercept. Choices B and D use one of the later <i>g</i>(<i>x</i>) values as the slope.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T2.easy"
+}

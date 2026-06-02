@@ -1,0 +1,39 @@
+{
+  "questionId": "bcb66188-s1",
+  "originalId": "bcb66188",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <math><mi>F</mi><mi>G</mi><mi>H</mi></math> is similar to triangle <math><mi>J</mi><mi>K</mi><mi>L</mi></math>, where angle <math><mi>F</mi></math> corresponds to angle <math><mi>J</mi></math> and angles <math><mi>G</mi></math> and <math><mi>K</mi></math> are right angles. If <math><mi>sin</mi><mo>(</mo><mi>F</mi><mo>)</mo><mo>=</mo><mfrac><mn>24</mn><mn>25</mn></mfrac></math>, what is the value of <math><mi>sin</mi><mo>(</mo><mi>J</mi><mo>)</mo></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfrac><mn>7</mn><mn>25</mn></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mn>25</mn><mn>24</mn></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mn>25</mn><mn>7</mn></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mn>24</mn><mn>25</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Corresponding angles in similar triangles are congruent, so the measure of angle J equals the measure of angle F. Therefore sin(J) = sin(F) = 24/25.</p><p>Choice A gives cos(F) (using the 7-24-25 triple). Choice B is 1/sin(F). Choice C is 1/cos(F).</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "right-triangles-and-trigonometry.A5.T10.medium"
+}

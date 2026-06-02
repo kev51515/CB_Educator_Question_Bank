@@ -1,0 +1,25 @@
+{
+  "questionId": "5d453dcc-s1",
+  "originalId": "5d453dcc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Probability of Voting (%) by Voters' Political Engagement and Level of Civic Knowledge</p></caption><thead><tr><th scope=\"col\">Engagement scale (1 = least engaged, 7 = most engaged)</th><th scope=\"col\">Low civic-knowledge voters</th><th scope=\"col\">High civic-knowledge voters</th></tr></thead><tbody><tr><th scope=\"row\">1</th><td>42%</td><td>62%</td></tr><tr><th scope=\"row\">2</th><td>38%</td><td>58%</td></tr><tr><th scope=\"row\">3</th><td>40%</td><td>61%</td></tr><tr><th scope=\"row\">4</th><td>44%</td><td>67%</td></tr><tr><th scope=\"row\">5</th><td>52%</td><td>74%</td></tr><tr><th scope=\"row\">6</th><td>61%</td><td>83%</td></tr><tr><th scope=\"row\">7</th><td>69%</td><td>91%</td></tr></tbody></table></figure><p>Researchers Estela Cruz and Maya Stenberg analyzed survey data tracking U.S. citizens' political engagement (on a 7-point scale) and their level of civic knowledge in a recent national midterm election. The team claims that, regardless of political engagement, voters with higher civic knowledge are consistently more likely to actually cast a ballot than voters with lower civic knowledge.</p>",
+  "stem": "<p>Which choice best describes data in the table that support Cruz and Stenberg's claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>At each point on the political engagement scale, high-civic-knowledge voters were more likely to vote than low-civic-knowledge voters.</p>"},
+    {"id": "b", "content": "<p>Only low-civic-knowledge voters who scored a 2 on the engagement scale had a voting probability below 40%.</p>"},
+    {"id": "c", "content": "<p>The closer that low-civic-knowledge voters are to the ends of the engagement scale, the more likely they were to vote.</p>"},
+    {"id": "d", "content": "<p>High-civic-knowledge voters were more likely to score at the extreme ends of the engagement scale than low-civic-knowledge voters were.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it describes data in the table that directly support Cruz and Stenberg's claim. At every engagement-scale value from 1 through 7, the high-civic-knowledge column shows a voting probability higher than the low-civic-knowledge column (62% vs. 42%, 58% vs. 38%, and so on through 91% vs. 69%). That across-the-board advantage is exactly what the claim asserts.</p><p>Choice B is incorrect because it is factually wrong: low-civic-knowledge voters at engagement-scale value 2 have a voting probability of 38% (below 40%), but the claim that they are the “only” such group is not what the researchers' claim asks about—the claim concerns the across-knowledge comparison, not isolated low values. Choice C is incorrect because, although the table shows that low-civic-knowledge voters at higher engagement values vote more, the closer-to-the-ends framing does not isolate the comparison between knowledge groups that the claim is about. Choice D is incorrect because the table does not show how voters' engagement scores are distributed by civic-knowledge level—only the voting probability within each cell.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

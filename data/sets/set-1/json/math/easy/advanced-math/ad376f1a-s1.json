@@ -1,0 +1,39 @@
+{
+  "questionId": "ad376f1a-s1",
+  "originalId": "ad376f1a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) crosses the <i>y</i>-axis at the point (0, &minus;4). What is the value of <i>f</i>(0)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;2/5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The value of <i>f</i>(0) is the <i>y</i>-coordinate of the point on the graph where <i>x</i> = 0. The graph crosses the <i>y</i>-axis at (0, &minus;4), so <i>f</i>(0) = &minus;4.</p><p>Choices B, C, and D are incorrect; they may result from sign or coordinate errors.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A3.T2.easy"
+}

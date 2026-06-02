@@ -1,0 +1,25 @@
+{
+  "questionId": "dd6a0326-s1",
+  "originalId": "dd6a0326",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>Mexican American chemist Mario Molina was a researcher and educator whose work helped to protect the atmosphere. Recognized in 1995 with the Nobel Prize in Chemistry for explaining the depletion of the ozone layer, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> led to international agreements that phased out the use of chlorofluorocarbons worldwide.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Molina&rsquo;s 1974 research on chlorofluorocarbons</p>"},
+    {"id": "b", "content": "<p>Molina published research on chlorofluorocarbons in 1974, which</p>"},
+    {"id": "c", "content": "<p>Molina published research on chlorofluorocarbons in 1974; it</p>"},
+    {"id": "d", "content": "<p>chlorofluorocarbons were studied by Molina in 1974, and</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"Molina&rsquo;s 1974 research\" the subject of the sentence and places it immediately after the modifying phrase \"Recognized...ozone layer.\" In doing so, this choice clearly establishes that Molina&rsquo;s 1974 research&mdash;and not another noun in the sentence&mdash;was recognized in 1995 with the Nobel Prize in Chemistry.</p><p>Choice B is incorrect because it results in a dangling modifier: placing \"Molina\" himself after the modifier illogically suggests that Molina (not his research) was recognized in 1995. Choice C is incorrect because it results in a dangling modifier: placing \"Molina\" after the modifier illogically suggests that Molina was recognized in 1995. Choice D is incorrect because it results in a dangling modifier: placing \"chlorofluorocarbons\" after the modifier illogically suggests that chlorofluorocarbons themselves were recognized in 1995.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

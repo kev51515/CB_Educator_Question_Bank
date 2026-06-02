@@ -1,0 +1,25 @@
+{
+  "questionId": "35fd0eb4-s1",
+  "originalId": "35fd0eb4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>The team that first cataloged the deep-sea snail <em>Chrysomallon squamiferum</em> chose a descriptive Latin name that highlighted its scaly iron foot. Most newly described species of deep-sea mollusks, however, receive only a numerical catalog entry, largely because the rate at which marine biologists now encounter new species during submersible surveys makes coining individual names <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>impractical</p>"},
+    {"id": "b", "content": "<p>profitable</p>"},
+    {"id": "c", "content": "<p>routine</p>"},
+    {"id": "d", "content": "<p>controversial</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. \"Impractical\" means not feasible. The text contrasts a single well-named species with the broader practice of assigning numerical entries, explaining that the high rate of new species discoveries makes individually naming each one unworkable.</p><p>Choice B is incorrect because the text discusses workload, not financial reward. Choice C is incorrect; if naming were routine, biologists would presumably name each species rather than assign numbers. Choice D is incorrect because the text does not suggest disagreement about naming, only that doing so is unmanageable at scale.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

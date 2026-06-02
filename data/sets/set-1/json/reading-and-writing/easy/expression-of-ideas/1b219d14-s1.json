@@ -1,0 +1,39 @@
+{
+  "questionId": "1b219d14-s1",
+  "originalId": "1b219d14",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>As a young folklorist in the 1960s, Lee Wong began interviewing fellow Chinese American immigrants about their experiences moving between two cultures. Over the next several decades, Wong conducted more than 500 such interviews, also known as oral histories. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she collected letters, family photographs, and other artifacts that represented her subjects' experiences.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In addition,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>On the contrary,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Today,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"In addition\" logically signals that Wong's artifact collecting was separate from, and in addition to, her interviewing.</p><p>Choice B is incorrect because \"in other words\" illogically signals that the artifact collecting restates the previous information about interviewing. Instead, Wong collected artifacts in addition to conducting interviews. Choice C is incorrect because \"on the contrary\" illogically signals that the artifact collecting was contrary to the interviewing. Instead, it was in addition to it. Choice D is incorrect because \"today\" illogically signals that the artifact collecting is happening in the present day. Instead, this activity occurred in the past, as indicated by the past tense verb \"collected.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T10.easy"
+}

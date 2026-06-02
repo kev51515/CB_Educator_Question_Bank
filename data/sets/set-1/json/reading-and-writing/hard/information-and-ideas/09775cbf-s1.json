@@ -1,0 +1,39 @@
+{
+  "questionId": "09775cbf-s1",
+  "originalId": "09775cbf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>In a series of experiments, researchers Olivia Renner and Marcus Boyd showed that the background music played in a restaurant can influence diners&rsquo; ratings of the food. Participants in several experiments rated the same dishes in identical (generic) dining-room settings as significantly more enjoyable when slow classical music was playing than when no music played. In one experiment, however, Renner and Boyd served the same meal with slow classical music in two settings: a fine-dining establishment and a casual cafeteria. The result of this experiment suggests that a casual-dining context may moderate the effect Renner and Boyd observed in their other experiments.</p>",
+  "stem": "<p>Which finding from the cafeteria-and-fine-dining experiment, if true, would most directly support the conclusion presented in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In the cafeteria, participants rated the meal as substantially more enjoyable with the slow classical music than without it, but in the fine-dining setting, participants rated the meal as only slightly more enjoyable with the music than without it.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In the fine-dining setting, participants rated the meal as substantially more enjoyable with slow classical music than without it, but in the cafeteria, participants rated the meal as only slightly more enjoyable with the music than without it.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Participants in both settings rated the meal as similarly enjoyable when no music was playing, but they all rated it lower when classical music played.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Participants in the cafeteria rated the meal as more enjoyable than participants in the fine-dining setting did, regardless of whether music played.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the text&rsquo;s conclusion is that a casual-dining context <em>moderates</em> (reduces) the music effect. If music substantially boosted enjoyment in the fine-dining setting but only slightly in the cafeteria, that directly shows the casual context dampens the effect. Choice A shows the opposite pattern. Choice C contradicts the original finding that music enhances enjoyment. Choice D compares settings overall but doesn&rsquo;t test how the music effect varies by setting.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

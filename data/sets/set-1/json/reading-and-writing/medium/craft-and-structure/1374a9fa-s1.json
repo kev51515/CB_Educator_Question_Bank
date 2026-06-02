@@ -1,0 +1,25 @@
+{
+  "questionId": "1374a9fa-s1",
+  "originalId": "1374a9fa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Sociologist Lena Halverson has contended that scholars of postwar suburban life have tended to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the contributions of housewives in shaping community infrastructure, foregrounding municipal officials and male civic leaders as the principal architects of suburban institutions while describing women as largely passive recipients of those changes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>discount</p>"},
+    {"id": "b", "content": "<p>idealize</p>"},
+    {"id": "c", "content": "<p>celebrate</p>"},
+    {"id": "d", "content": "<p>document</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. \"Discount\" means treat as unimportant or fail to give due weight to. The text says scholars foreground male officials as the principal architects and describe housewives as \"largely passive recipients,\" which means scholars have effectively dismissed the women's contributions as insignificant.</p><p>Choice B is incorrect because \"idealize\" would imply elevating housewives' role, the opposite of what the text describes. Choice C is incorrect because \"celebrate\" likewise suggests praising contributions, which contradicts the description of housewives as passive. Choice D is incorrect because \"document\" simply means record, which neither contrasts with the leaders' prominence nor matches the dismissive treatment the text describes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

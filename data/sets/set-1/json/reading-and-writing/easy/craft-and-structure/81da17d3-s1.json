@@ -1,0 +1,39 @@
+{
+  "questionId": "81da17d3-s1",
+  "originalId": "81da17d3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Dutch painters of the early 1600s seldom included tools of their craft in self-portraits. Painting had not yet attained high social status, so most painters chose to emphasize their education or fine clothing instead. <u>In the city of Haarlem, the first painter to depict himself with a palette was Frans Hals.</u> A portrait of his from about 1640 shows Hals holding a brush in mid-stroke.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>Among Haarlem painters, references to the act of painting were uncommon in self-portraits until the mid-seventeenth century. However, Judith Leyster's <em>Self-Portrait</em>, completed around 1633, stands out as an earlier example. In the painting, Leyster turns toward the viewer with a brush in one hand and a palette in the other, while a half-finished canvas rests on her easel.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Leyster's Self-Portrait was painted before Hals's portrait and also refers to the artist's craft.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Hals and Leyster were among the most successful painters in Haarlem at the time.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Leyster was likely inspired by Hals's depiction of a brush and palette.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Leyster's portrait was meant to emphasize her social position rather than her work.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Text 2 places Leyster's brush-and-palette self-portrait around 1633, earlier than Hals's circa-1640 portrait, directly contradicting Text 1's claim that Hals was first.</p><p>Choices B, C, and D introduce ideas not supported by Text 2.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.easy"
+}

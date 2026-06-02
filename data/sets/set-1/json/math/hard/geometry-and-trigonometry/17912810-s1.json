@@ -1,0 +1,22 @@
+{
+  "questionId": "17912810-s1",
+  "originalId": "17912810",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Lines p, q, and r form a triangle. One interior angle of the triangle is vertical to an angle of measure a°. A second interior angle is supplementary to an angle of measure b°. The third interior angle is bisected by another line into two equal sub-angles, each of measure c°. If a = 51 and b = 115, what is the value of c?</p>",
+  "answerOptions": [],
+  "keys": [
+    "32"
+  ],
+  "rationale": "<p>The interior angle vertical to a° has measure 51°. The interior angle supplementary to b° has measure 180 − 115 = 65°. The three interior angles of the triangle sum to 180°, so the third interior angle measures 180 − 51 − 65 = 64°. That angle is bisected into two equal sub-angles of measure c°, so 2c = 64, giving c = 32.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.hard"
+}

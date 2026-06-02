@@ -1,0 +1,15 @@
+[
+  {"id": "fa2771d5-s1", "templateId": "circles.A2.T5.hard", "verdict": "difficulty_drift", "detail": "Hard T5 requires radius scaling, coefficient-hidden form, or numeric-extract. Clone is a pure small-integer translation (down 5), satisfying only easy/medium levers."},
+  {"id": "2266984b-s1", "templateId": "circles.A2.T4.hard", "verdict": "difficulty_drift", "detail": "Hard T4 requires leading coef ≠1, odd linear coef (fractions), or embedded constant. Clone has leading coef 1, even linear coefficients (6, -10), and asks center directly — matches medium lever."},
+  {"id": "ebbf23ae-s1", "templateId": "circles.A1.T2.hard", "verdict": "ok"},
+  {"id": "858fd1cf-s1", "templateId": "circles.A5.T11.hard", "verdict": "ok"},
+  {"id": "9adb86ed-s1", "templateId": "circles.A5.T12.hard", "verdict": "ok"},
+  {"id": "89661424-s1", "templateId": "circles.A2.T4.hard", "verdict": "ok"},
+  {"id": "a38c0183-s1", "templateId": "circles.A2.T5.hard", "verdict": "ok"},
+  {"id": "76c73dbf-s1", "templateId": "circles.A2.T4.hard", "verdict": "ok"},
+  {"id": "b8a225ff-s1", "templateId": "circles.A2.T5.hard", "verdict": "ok"},
+  {"id": "ab176ad6-s1", "templateId": "circles.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Hard T1 requires non-perfect-square r² (sqrt simplification), diameter (extra step), or symbolic parameter. Clone has r²=169 (perfect square) and asks radius directly — matches medium lever exactly."},
+  {"id": "f2495de4-s1", "templateId": "circles.A4.T8.easy", "verdict": "ok"},
+  {"id": "23c5fcce-s1", "templateId": "circles.A3.T7.easy", "verdict": "ok"},
+  {"id": "d03e29f1-s1", "templateId": "circles.A1.T1.easy", "verdict": "ok"}
+]

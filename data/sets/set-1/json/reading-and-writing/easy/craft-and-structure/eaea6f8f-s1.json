@@ -1,0 +1,39 @@
+{
+  "questionId": "eaea6f8f-s1",
+  "originalId": "eaea6f8f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Most everyday batteries lose their charge within hours or days when in use, as their internal chemicals are consumed during discharge. But chemist Linda Nazar and her team developed a new lithium-sulfur battery formulation that can endure many more charge cycles than typical batteries. For example, lithium polysulfides tend to dissolve and migrate within the cell, so <span role=\"region\" aria-label=\"Referenced Content\"><u>a battery whose cathode contains a porous host material can trap these dissolved compounds and thereby prevent the capacity loss that usually follows.</u></span></p>",
+  "stem": "<p>Which choice best states the purpose of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It explains why a problem mentioned in the text is unlikely to be solved by current research.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It outlines the conditions under which the researchers first noticed the issue described in the text.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It describes how a technique developed by researchers improves the durability of an object discussed in the text.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It introduces a follow-up experiment that researchers plan to conduct in the near future.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it accurately describes how the underlined portion functions in the text. The text first explains that ordinary batteries lose their charge quickly, then introduces Linda Nazar and her team, who developed a battery that can endure many more charge cycles. The underlined portion describes the mechanism: a porous host material in the cathode traps dissolved polysulfides, preventing the capacity loss that would otherwise occur. The portion therefore explains how a technique devised by researchers improves the durability of a battery.</p><p>Choice A is incorrect because the underlined portion does not suggest that the problem is unsolvable; it describes how the new formulation addresses it. Choice B is incorrect because the underlined portion does not describe how the researchers first noticed the issue. Choice D is incorrect because the underlined portion does not mention any future experiments.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

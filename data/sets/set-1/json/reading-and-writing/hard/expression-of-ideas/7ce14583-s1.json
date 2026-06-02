@@ -1,0 +1,25 @@
+{
+  "questionId": "7ce14583-s1",
+  "originalId": "7ce14583",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In her 2019 essay \"Cartographies of Sound,\" musicologist Iris Halberg reflects on a composition that has shaped her thinking: Pauline Oliveros's 1980 work <em>Rose Mountain Slow Runner</em>. The piece, built on long sustained drones and improvised vocal lines, drives the essay's careful inquiry into how listeners experience duration and place. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in engaging with Oliveros's composition, Halberg's essay raises questions about the boundaries between musical performance and scholarly writing.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In addition,</p>"},
+    {"id": "b", "content": "<p>To put it differently,</p>"},
+    {"id": "c", "content": "<p>By way of illustration,</p>"},
+    {"id": "d", "content": "<p>On the contrary,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The second sentence introduces a further, separate claim about Halberg's essay—that it raises questions about boundaries between performance and scholarship—beyond the previous claim that the composition drives her inquiry into duration and place. \"In addition\" signals that an additional, related point is being made.</p><p>Choice B is incorrect because \"to put it differently\" would mark the second sentence as a paraphrase of the first, but it offers a new claim. Choice C is incorrect because \"by way of illustration\" would signal that the second sentence is an example of the first, but it makes a separate point. Choice D is incorrect because \"on the contrary\" would signal that the second sentence opposes the first, yet the two claims complement each other.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A4.T10.hard"
+}

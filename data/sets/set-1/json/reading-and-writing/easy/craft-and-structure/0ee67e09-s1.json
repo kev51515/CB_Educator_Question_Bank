@@ -1,0 +1,39 @@
+{
+  "questionId": "0ee67e09-s1",
+  "originalId": "0ee67e09",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Paleontologist Stephen Brusatte and colleagues examined the fossilized inner-ear bones of a small dinosaur species. They found that these bones were <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the inner-ear bones of modern birds that are agile, fast-flying species, such as falcons and swifts, suggesting that the dinosaur had unusually sharp balance and quick reflexes in life.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>obtained from</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>independent of</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>surpassed by</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>comparable to</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because \"comparable to\" means similar to, which fits the logic of the sentence: the researchers found the dinosaur's bones resembled those of agile modern birds, supporting the conclusion that the dinosaur was likely agile too. Choice A is incorrect because the bones came from a fossil, not from modern birds. Choice B is incorrect because \"independent of\" would weaken the link the researchers are drawing. Choice C is incorrect because \"surpassed by\" introduces an inequality the text does not support.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

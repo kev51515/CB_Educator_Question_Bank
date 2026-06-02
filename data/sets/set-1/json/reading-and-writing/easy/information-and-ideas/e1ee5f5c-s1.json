@@ -1,0 +1,39 @@
+{
+  "questionId": "e1ee5f5c-s1",
+  "originalId": "e1ee5f5c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><em>The Long Road Home</em> is a 1925 novel by Clara Whitfield. After being told his apprenticeship will be cut short, the young blacksmith Thomas approaches Mr. Bramwell, the master of the workshop, to plead his case. The narrator depicts Thomas as working hard to persuade Mr. Bramwell to let him finish his term: ______</p>",
+  "stem": "<p>Which quotation from <em>The Long Road Home</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"Mr. Bramwell looked up from his ledger but said nothing, the hammer in the next room ringing steadily on.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"Outside the forge, Thomas leaned briefly against the doorframe before walking off across the muddy yard.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"Thomas chose every word with care. He began by praising Mr. Bramwell's patience as a teacher, reminded him gently of the long winter they had worked through together, and only then turned to the matter of finishing his apprenticeship.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"The forge smelled, as always, of coal smoke and iron, and the heat from the fire made Thomas's eyes water.\"</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. It directly depicts Thomas working hard to persuade: he chooses his words carefully, praises Mr. Bramwell, recalls shared experience, and only then introduces his request — a deliberate persuasive effort.</p><p>Choice A focuses on Mr. Bramwell's reaction but says nothing of Thomas's persuasive effort. Choice B describes Thomas leaving the workshop after the conversation, not the conversation itself. Choice D establishes setting only and contains no persuasive content.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A1.T1.easy"
+}

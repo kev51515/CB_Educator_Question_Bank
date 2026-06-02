@@ -1,0 +1,39 @@
+{
+  "questionId": "e51bf5b1-s1",
+  "originalId": "e51bf5b1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions has a factor of <i>x</i> + 3<i>b</i>, where <i>b</i> is a positive integer constant?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2<i>x</i>&sup2; + 7<i>x</i> + 21<i>b</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2<i>x</i>&sup2; + 20<i>x</i> + 21<i>b</i></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2<i>x</i>&sup2; + 33<i>x</i> + 21<i>b</i></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2<i>x</i>&sup2; + 49<i>x</i> + 21<i>b</i></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>If <i>x</i> + 3<i>b</i> is a factor of an expression 2<i>x</i>&sup2; + <i>c</i><i>x</i> + 21<i>b</i>, the other factor must be 2<i>x</i> + 7 since the leading coefficient is 2 and 3<i>b</i> &middot; 7 = 21<i>b</i>. Multiplying: (<i>x</i> + 3<i>b</i>)(2<i>x</i> + 7) = 2<i>x</i>&sup2; + (7 + 6<i>b</i>)<i>x</i> + 21<i>b</i>. So 7 + 6<i>b</i> must equal the coefficient of <i>x</i> in the expression, and <i>b</i> must be a positive integer. Of the four choices, only 49 yields an integer value: 7 + 6<i>b</i> = 49 gives <i>b</i> = 7.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A2.T5.hard"
+}

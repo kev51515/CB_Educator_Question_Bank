@@ -1,0 +1,39 @@
+{
+  "questionId": "2d394c28-s1",
+  "originalId": "2d394c28",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A town's population, in thousands, <em>x</em> years after 2015 is modeled by <math><mi>p</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>8</mn><msup><mfenced><mn>1.05</mn></mfenced><mi>x</mi></msup></math>. According to the model, what was the population, in thousands, in 2015?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.05</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8.4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In 2015, <em>x</em> = 0, so <math><mi>p</mi><mfenced><mn>0</mn></mfenced><mo>=</mo><mn>8</mn><msup><mfenced><mn>1.05</mn></mfenced><mn>0</mn></msup><mo>=</mo><mn>8</mn></math>. The population in 2015 was 8 thousand.</p><p>Choices B, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

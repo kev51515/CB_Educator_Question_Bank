@@ -1,0 +1,25 @@
+{
+  "questionId": "8643d906-s1",
+  "originalId": "8643d906",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population of bald eagles in a wildlife refuge can be modeled by the function <i>R</i>, where <i>R</i>(<i>t</i>) is the population <i>t</i> years after 2000. Which is the best interpretation of the equation <i>R</i>(15) = 320?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The bald eagle population is predicted to be 15 in the year 2015.</p>"},
+    {"id": "b", "content": "<p>The bald eagle population is predicted to be 320 in the year 2020.</p>"},
+    {"id": "c", "content": "<p>The bald eagle population is predicted to be 320 in the year 2015.</p>"},
+    {"id": "d", "content": "<p>The bald eagle population is predicted to be 15 in the year 2320.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. Because <i>t</i> is the number of years after 2000, <i>t</i> = 15 corresponds to the year 2015, and <i>R</i>(15) = 320 means the predicted population is 320 in 2015.</p><p>Choices A and D reverse the meaning of <i>t</i> and <i>R</i>(<i>t</i>). Choice B uses the wrong year.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A2.T1.easy"
+}

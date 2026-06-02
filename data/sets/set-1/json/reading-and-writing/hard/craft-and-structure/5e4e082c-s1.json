@@ -1,0 +1,39 @@
+{
+  "questionId": "5e4e082c-s1",
+  "originalId": "5e4e082c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Chemically analyzing bulk lake-sediment samples from a Greenland coring site, Bryn Halverson et al. detected a brief but pronounced enrichment of vanadium (V) in a layer corresponding to roughly 14,000 years before present (BP). Because V is mobilized chiefly by sustained reducing conditions in lake bottom waters, Halverson et al. concluded that the lake briefly became strongly anoxic at that time, then returned to its earlier oxygenated state.</p>\n<p><strong>Text 2</strong></p>\n<p>Reiko Tanaka et al. reanalyzed the same Greenland core. Because bulk chemical analysis can mask spatial heterogeneity, Tanaka et al. supplemented it with high-resolution synchrotron imaging, which revealed thin, isolated layers of pyrite&mdash;an iron sulfide and a well-known V host&mdash;at the 14,000 BP horizon, embedded around tiny burrows made by sediment-dwelling worms. The team contends that pore waters could have moved through these burrows, depositing V into the pyrite long after the corresponding sediments were laid down.</p>",
+  "stem": "<p>Based on the texts, Halverson et al. (Text 1) and Tanaka et al. (Text 2) would most likely disagree about the answer to which question about the portion of the Greenland core corresponding to 14,000 BP?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Does chemically analyzing bulk samples lead to a false impression that there is an increase in V in that portion?</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Does the increase in V in that portion suggest that the lake's bottom waters experienced reducing conditions before 14,000 BP?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Is the increase in V in that portion indicative of strongly reducing bottom-water conditions dating to the same time?</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Is the increase in V in that portion attributable to mobilization of V from material found in that portion?</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because Halverson et al. and Tanaka et al. would most likely disagree about whether the V increase indicates reducing bottom-water conditions at 14,000 BP specifically. Halverson et al. take the V enrichment as evidence that the lake \"briefly became strongly anoxic at that time.\" Tanaka et al., however, propose that pore waters could have transported V into pyrite long after the sediments themselves were deposited, decoupling the V signal from conditions at 14,000 BP.</p><p>Choice A is incorrect because Tanaka et al. don't dispute that the V increase is real, only its timing and source. Choice B is incorrect because neither team makes claims about conditions before 14,000 BP. Choice D is incorrect because both teams agree V is mobilized via reducing/oxidative processes; the disagreement is when this happened.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A4.T7.hard"
+}

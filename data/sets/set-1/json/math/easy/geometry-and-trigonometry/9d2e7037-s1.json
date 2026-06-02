@@ -1,0 +1,39 @@
+{
+  "questionId": "9d2e7037-s1",
+  "originalId": "9d2e7037",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A rectangle has a length of 72 inches and a width of 35 inches. What is the area, in square inches, of the rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>107</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2,520</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>214</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A = lw = 72 \u00d7 35 = 2,520 square inches. Choice B is the sum of length and width; choice D is the perimeter.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

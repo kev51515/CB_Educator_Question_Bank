@@ -1,0 +1,39 @@
+{
+  "questionId": "64d1f49f-s1",
+  "originalId": "64d1f49f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two lines intersect at a point. The vertical angle pair at the top and bottom are labeled p\u00b0 and q\u00b0. If p = 47, what is the value of q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>47</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>43</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>133</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>94</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The top and bottom angles formed by two intersecting lines are vertical angles, which are congruent. Therefore q = p = 47.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A6.T1.easy"
+}

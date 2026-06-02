@@ -1,0 +1,39 @@
+{
+  "questionId": "ca9dc00f-s1",
+  "originalId": "ca9dc00f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>In Tibetan Buddhist practice, monks construct elaborate sand mandalas over many days and then ritually sweep them away as part of teachings on impermanence. The artist Losang Samten, a former monk, has produced sand mandalas in Western museums and universities, leaving them on view for weeks rather than dissolving them at once. This may seem in tension with the practice&rsquo;s emphasis on impermanence&mdash;how can a long-displayed object honor a tradition centered on dissolution?&mdash;but such a view is overly object-focused and overlooks how Samten works to convey exactly those characteristics of the mandala as a living practice.</p>",
+  "stem": "<p>Which quotation from an art historian would most directly support the claim made in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;Samten&rsquo;s museum mandalas are best understood not as freestanding objects but as records of the public process of their making, during which Samten conducted teachings, answered questions, and emphasized that the work would, in due course, be returned to the earth.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Although Samten&rsquo;s museum mandalas may inform audiences with limited exposure to Tibetan culture, they should not be mistaken for sand mandalas constructed within an authentic ritual context.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;The most useful way to reconcile the apparent tension between the dissolution central to mandala practice and the durability of Samten&rsquo;s museum works is to treat his works as a distinct genre, parallel to but separate from traditional mandala making.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;It is important to remember that Samten&rsquo;s public dismantling ceremonies&mdash;when they occur&mdash;serve a temporary, performative function, and they alone constitute his attempt to honor impermanence.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the claim is that Samten works to convey impermanence and other dynamic qualities of the mandala practice, even though the museum objects themselves persist. A historian&rsquo;s framing of the museum mandalas as records of a public, process-centered practice&mdash;with explicit attention to their eventual return to the earth&mdash;most directly supports that claim.</p><p>Choice B is incorrect because dismissing the museum works as inauthentic substitutes does not support the claim that they convey the dynamic character of the practice. Choice C is incorrect because treating them as a separate genre concedes the tension rather than resolving it in the way the text describes. Choice D is incorrect because it places weight only on rare dismantling ceremonies and disregards how the museum works themselves are presented to convey impermanence.</p>",
+  "generatedAt": "2026-05-26T15:09:53.049834+00:00",
+  "templateId": "command-of-evidence.A2.T3.hard"
+}

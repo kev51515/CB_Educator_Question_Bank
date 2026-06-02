@@ -1,0 +1,39 @@
+{
+  "questionId": "ed856e9c-s1",
+  "originalId": "ed856e9c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the y-intercept of the graph of y = 23x + 47 in the xy-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 23)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 47)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, -23)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, -47)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For y = mx + b, the y-intercept is (0, b). Here b = 47, so the y-intercept is (0, 47).</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-equations-in-two-variables.A5.T11.easy"
+}

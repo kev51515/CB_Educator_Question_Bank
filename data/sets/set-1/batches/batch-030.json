@@ -1,0 +1,452 @@
+[
+  {
+    "id": "868fc236",
+    "path": "json/math/medium/algebra/868fc236.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "8a6de407",
+    "path": "json/math/medium/algebra/8a6de407.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "8ad64841",
+    "path": "json/math/medium/algebra/8ad64841.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "946ab892",
+    "path": "json/math/medium/algebra/946ab892.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "9551cd91",
+    "path": "json/math/medium/algebra/9551cd91.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "a5834ea4",
+    "path": "json/math/medium/algebra/a5834ea4.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "a775af14",
+    "path": "json/math/medium/algebra/a775af14.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "a91a2b75",
+    "path": "json/math/medium/algebra/a91a2b75.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "af711d1b",
+    "path": "json/math/medium/algebra/af711d1b.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "b2fe7ab6",
+    "path": "json/math/medium/algebra/b2fe7ab6.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "c01f4a95",
+    "path": "json/math/medium/algebra/c01f4a95.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "c1bd5301",
+    "path": "json/math/medium/algebra/c1bd5301.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "c22b5f25",
+    "path": "json/math/medium/algebra/c22b5f25.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "c651cc56",
+    "path": "json/math/medium/algebra/c651cc56.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "c81f1c2f",
+    "path": "json/math/medium/algebra/c81f1c2f.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "c8fb6bcb",
+    "path": "json/math/medium/algebra/c8fb6bcb.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "dae126d7",
+    "path": "json/math/medium/algebra/dae126d7.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "e3cf671f",
+    "path": "json/math/medium/algebra/e3cf671f.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "e470e19d",
+    "path": "json/math/medium/algebra/e470e19d.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "e62cfe5f",
+    "path": "json/math/medium/algebra/e62cfe5f.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "ebd457f4",
+    "path": "json/math/medium/algebra/ebd457f4.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "f0773a55",
+    "path": "json/math/medium/algebra/f0773a55.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "f7e39fe9",
+    "path": "json/math/medium/algebra/f7e39fe9.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "0b221d05",
+    "path": "json/math/medium/algebra/0b221d05.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "0ef4a7b6",
+    "path": "json/math/medium/algebra/0ef4a7b6.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "34aca984",
+    "path": "json/math/medium/algebra/34aca984.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "64c85440",
+    "path": "json/math/medium/algebra/64c85440.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "6cb9bf45",
+    "path": "json/math/medium/algebra/6cb9bf45.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "6daf8d70",
+    "path": "json/math/medium/algebra/6daf8d70.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "74c98c82",
+    "path": "json/math/medium/algebra/74c98c82.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "spr"
+  },
+  {
+    "id": "80da233d",
+    "path": "json/math/medium/algebra/80da233d.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "8f0c82e2",
+    "path": "json/math/medium/algebra/8f0c82e2.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "90bd9ef8",
+    "path": "json/math/medium/algebra/90bd9ef8.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "948087f2",
+    "path": "json/math/medium/algebra/948087f2.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "968e9e51",
+    "path": "json/math/medium/algebra/968e9e51.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "9e5863bd",
+    "path": "json/math/medium/algebra/9e5863bd.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b31c3117",
+    "path": "json/math/medium/algebra/b31c3117.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b78cd5df",
+    "path": "json/math/medium/algebra/b78cd5df.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "spr"
+  },
+  {
+    "id": "bf5f80c6",
+    "path": "json/math/medium/algebra/bf5f80c6.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "c17d9ba9",
+    "path": "json/math/medium/algebra/c17d9ba9.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "spr"
+  },
+  {
+    "id": "c41e5688",
+    "path": "json/math/medium/algebra/c41e5688.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "d02193fb",
+    "path": "json/math/medium/algebra/d02193fb.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "d9733ed9",
+    "path": "json/math/medium/algebra/d9733ed9.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "dd875c97",
+    "path": "json/math/medium/algebra/dd875c97.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e723bd67",
+    "path": "json/math/medium/algebra/e723bd67.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e9ef0e6b",
+    "path": "json/math/medium/algebra/e9ef0e6b.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ecca0603",
+    "path": "json/math/medium/algebra/ecca0603.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f02b4509",
+    "path": "json/math/medium/algebra/f02b4509.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f224df07",
+    "path": "json/math/medium/algebra/f224df07.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f2bbd43d",
+    "path": "json/math/medium/algebra/f2bbd43d.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  }
+]

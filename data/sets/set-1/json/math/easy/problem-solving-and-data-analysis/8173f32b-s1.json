@@ -1,0 +1,39 @@
+{
+  "questionId": "8173f32b-s1",
+  "originalId": "8173f32b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An analyst collected data on the price of a loaf of bread at 40 locations selected at random in Oregon. The mean price of a loaf of bread was estimated to be $3.50, with an associated margin of error of $0.05. Which of the following is a plausible statement about the mean price of a loaf of bread for all locations that sell this product in Oregon?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is less than $3.45.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is greater than $3.55.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is either less than $3.45 or greater than $3.55.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is between $3.45 and $3.55.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The plausible values for the population mean lie within one margin of error of the sample mean: $3.45 to $3.55.</p><p>Choices A, B, and C describe values outside the plausible range.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy"
+}

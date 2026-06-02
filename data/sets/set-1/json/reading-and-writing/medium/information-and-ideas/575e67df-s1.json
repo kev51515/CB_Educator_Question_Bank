@@ -1,0 +1,25 @@
+{
+  "questionId": "575e67df-s1",
+  "originalId": "575e67df",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.medium",
+  "stimulus": "<p>By running computer simulations of the formation of a young star system designated HD-2174, Priya Banerjee, Hideo Suzuki, and colleagues concluded that the central star may have been surrounded by three distinct debris belts before the planets started to form. The researchers suggest that the materials in the innermost belt produced the three small rocky planets closest to the star, the materials in the middle belt formed the rest of the planets, and the materials in the outermost belt created the comets and icy bodies in the system's far reaches. In one simulation, the researchers delayed the initial formation of the middle belt, causing oversized rocky giants to begin developing from the innermost belt. The researchers therefore hypothesize that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the timing of the initial formation of the middle belt played an important role in determining the eventual size of the inner rocky planets.</p>"},
+    {"id": "b", "content": "<p>if the outermost belt had formed earlier in a simulation, all the planets would have become rocky giants.</p>"},
+    {"id": "c", "content": "<p>the innermost belt actually produced all the planets in the system, not just the three closest to the star.</p>"},
+    {"id": "d", "content": "<p>the middle belt formed earlier in the system's development than the initial simulations suggested.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is best. Delaying the middle belt's formation produced oversized rocky giants from the innermost belt, so the middle belt's timing affected the size of the inner planets. Choice D mischaracterizes \"initial simulations\" not referenced in the text. Choice B incorrectly attributes the simulated effect to the outermost belt. Choice C contradicts the text's account of planet formation from distinct belts.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

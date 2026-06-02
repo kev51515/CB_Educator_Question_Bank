@@ -1,0 +1,25 @@
+{
+  "questionId": "b2e54b50-s1",
+  "originalId": "b2e54b50",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Table: Correlations Between Subway Crowding Ratings and Features of Crowds in Raters&rsquo; Immediate Vicinity. Three crowding rating columns: ratings before entering the platform, ratings on the platform itself, and overall (average of both). Two crowd-feature rows: passenger density and passenger walking speed. Cell values: density&mdash;before platform: 0.41; on platform: 0.32; overall: 0.36. Walking speed&mdash;before platform: &minus;0.62; on platform: &minus;0.55; overall: &minus;0.58. The text notes that, since correlations can range from &minus;1 to +1, a correlation farther from 0 is considered &ldquo;stronger&rdquo; regardless of sign.]</p>\n<p>Researchers Ji-won Bae and Lukas Hellman concluded that, across all three crowding ratings (before platform, on platform, overall), passenger walking speed is more closely associated with riders&rsquo; perceived crowding than passenger density is.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The correlation between before-platform crowding ratings and density is further from 0 than the correlation between overall crowding ratings and density is.</p>"},
+    {"id": "b", "content": "<p>For each of the three crowding ratings, the correlation with walking speed is further from 0 than the corresponding correlation with density is.</p>"},
+    {"id": "c", "content": "<p>The correlation between before-platform crowding ratings and walking speed is further from 0 than the correlation between overall crowding ratings and walking speed is.</p>"},
+    {"id": "d", "content": "<p>For each of the three crowding ratings, the correlation with walking speed is negative while the correlation with density is positive.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the researchers&rsquo; conclusion is precisely that, across all three crowding ratings, passenger walking speed is more closely associated with perceived crowding than passenger density is. According to the table, each walking-speed correlation (|−0.62|, |−0.55|, |−0.58|) is farther from 0 than its corresponding density correlation (0.41, 0.32, 0.36), which is the exact pattern the conclusion describes.</p><p>Choice A is incorrect because it compares two density correlations with each other; it does not address how density compares with walking speed. Choice C is incorrect because it compares two walking-speed correlations with each other; again, it does not contrast walking speed with density across the three ratings. Choice D is incorrect because the conclusion concerns relative strength (distance from 0), not the signs of the correlations; merely noting that walking-speed correlations are negative and density correlations are positive does not establish that walking speed is more closely associated with perceived crowding.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

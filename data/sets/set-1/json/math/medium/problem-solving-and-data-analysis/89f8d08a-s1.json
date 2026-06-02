@@ -1,0 +1,39 @@
+{
+  "questionId": "89f8d08a-s1",
+  "originalId": "89f8d08a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A store manager reviewed the receipts from <math><mn>60</mn></math> customers selected at random from all the customers who made purchases on a busy Saturday. Of those selected, <math><mn>18</mn></math> receipts showed that the customer had purchased flowers. If <math><mn>2,000</mn></math> customers made purchases that Saturday, which of the following is the most appropriate conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Exactly <math><mn>200</mn></math> customers must have purchased flowers on Saturday.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The best estimate for the number of customers who purchased flowers on Saturday is <math><mn>600</mn></math>.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly <math><mn>600</mn></math> customers must have purchased flowers on Saturday.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The best estimate for the number of customers who purchased flowers on Saturday is <math><mn>200</mn></math>.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The sample proportion is 18/60 = 30%. Applying this to all 2,000 purchasing customers gives an estimate of 0.30 \u00d7 2,000 = 600. Because this comes from a sample, it is an estimate, not an exact count.</p><p>Choices A and C inappropriately use the word 'exactly.' Choice D uses an incorrect proportion.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.medium"
+}

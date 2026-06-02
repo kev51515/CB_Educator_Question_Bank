@@ -1,0 +1,25 @@
+{
+  "questionId": "52b31d7b-s1",
+  "originalId": "52b31d7b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>In the spring of 1971, sculptor Tomás Aguirre was living in what must have looked like the ideal setting for a rising artist: Florence. He was studying the bronze-casting practices of Italian Renaissance workshops firsthand and beginning to earn favorable mention in regional art journals. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Aguirre yearned to return to his hometown of Guadalajara; only there, he believed, could his work meaningfully engage with the materials and traditions that mattered most to him.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Furthermore,</p>"},
+    {"id": "b", "content": "<p>Therefore,</p>"},
+    {"id": "c", "content": "<p>Indeed,</p>"},
+    {"id": "d", "content": "<p>Still,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Still\" logically signals that the information about Aguirre in this sentence—that he longed to return to Guadalajara—contrasts with what one would expect after reading about his promising experiences in Florence in the previous sentences.</p><p>Choice A is incorrect because \"furthermore\" illogically signals that this information offers an additional supporting point for the previous descriptions, when instead it runs counter to them. Choice B is incorrect because \"therefore\" illogically signals that Aguirre's longing to return home is a result of his successful experiences in Florence, when in fact this information contrasts with those experiences. Choice C is incorrect because \"indeed\" illogically signals that this sentence reinforces the previous descriptions, when it actually contrasts with them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

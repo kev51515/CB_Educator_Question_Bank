@@ -1,0 +1,39 @@
+{
+  "questionId": "0af701e7-s1",
+  "originalId": "0af701e7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function g is defined by g(t) = |t \u2212 5t|. What value of c satisfies g(3) \u2212 g(c) = \u221220?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u221225</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>50</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. g(t) = |t \u2212 5t| = |\u22124t| = 4|t|. So g(3) = 12 and g(c) = 4|c|. The equation g(3) \u2212 g(c) = \u221220 becomes 12 \u2212 4|c| = \u221220, so \u22124|c| = \u221232, giving |c| = 8. Therefore c = 8 or c = \u22128. Of the choices given, only 8 satisfies. Choices A, B, and D do not yield a valid solution.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A1.T2.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "92fe0ed7-s1",
+  "originalId": "92fe0ed7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Astronomers have long considered Jupiter to be the largest planet in the solar system, measuring approximately 143,000 kilometers in diameter. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> according to a 2021 analysis by exoplanet researcher Asha Patel, the recently discovered gas giant TOI-1431b is significantly larger, with a diameter of about 207,000 kilometers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Secondly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Moreover,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Consequently,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"However\" logically signals that this sentence, which indicates that TOI-1431b may be larger than Jupiter, offers a contrast to or refutation of the previous claim that Jupiter is the largest planet.</p><p>Choice A is incorrect because \"secondly\" illogically signals an additional or secondary point rather than contrast. Choice B is incorrect because \"moreover\" illogically signals an addition to the previous claim, when this sentence challenges it. Choice D is incorrect because \"consequently\" illogically signals consequence rather than contrast.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

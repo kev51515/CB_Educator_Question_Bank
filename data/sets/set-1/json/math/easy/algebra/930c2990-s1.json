@@ -1,0 +1,39 @@
+{
+  "questionId": "930c2990-s1",
+  "originalId": "930c2990",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Nitrogen is placed inside a container kept at constant pressure. A line on a graph relates the estimated volume <i>y</i>, in liters, of the nitrogen to its temperature <i>x</i> in kelvins. The line passes through the points (100, 1.5) and (600, 9). What is the estimated volume, in liters, of the nitrogen when its temperature is 600 kelvins?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>100</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>600</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The line passes through (600, 9), so when <i>x</i> = 600 kelvins, the volume <i>y</i> = 9 liters.</p><p>Choices B, C, and D misread the relevant coordinates.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A4.T2.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "4105f5ac-s1",
+  "originalId": "4105f5ac",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T5.medium",
+  "stimulus": "<p>When, in 2014, biologists Dr. Amara Okonjo and Dr. Felix Bauer began planning a new field initiative together, one of their central goals was for early-career researchers from underrepresented regions to lead their own coastal monitoring studies. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they established the Shoreline Fellows program, a multi-year fellowship in which each participating researcher designs and directs an independent monitoring project along a coastline of their choosing.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>In other words,</p>"},
+    {"id": "c", "content": "<p>To this end,</p>"},
+    {"id": "d", "content": "<p>In summary,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"To this end\" logically signals that the information in this sentence—the biologists' creation of the Shoreline Fellows program in which each fellow leads an independent monitoring project—is the product of the goal stated in the previous sentence (that early-career researchers from underrepresented regions lead their own coastal monitoring studies).</p><p>Choice A is incorrect because \"for instance\" illogically signals that the Shoreline Fellows program is merely an example of the previous goal, when it is in fact the deliberate means by which that goal is being pursued. Choice B is incorrect because \"in other words\" illogically signals that the program is a restatement of the prior goal, when it is actually the action taken to fulfill that goal. Choice D is incorrect because \"in summary\" illogically signals that the program summarizes the previous information, when it instead describes a concrete step taken in pursuit of the stated goal.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

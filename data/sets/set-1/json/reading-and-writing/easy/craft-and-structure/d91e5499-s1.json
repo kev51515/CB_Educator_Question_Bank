@@ -1,0 +1,25 @@
+{
+  "questionId": "d91e5499-s1",
+  "originalId": "d91e5499",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>A group of marine biologists has located an unusually pristine coral reef in a remote section of the Indian Ocean. The corals are so well preserved that the team has been able to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> detailed information about the organisms living on the reef, including the species composition and the relationships among predators and prey.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>gather</p>"},
+    {"id": "b", "content": "<p>conceal</p>"},
+    {"id": "c", "content": "<p>occupy</p>"},
+    {"id": "d", "content": "<p>withhold</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because \"gather\" means to collect or acquire, which fits the context of biologists assembling detailed information from a well-preserved reef. Choice B is incorrect because \"conceal\" means to hide, the opposite of the discovery the text describes. Choice C is incorrect because \"occupy\" means to inhabit or engage; information is not inhabited. Choice D is incorrect because \"withhold\" means to keep back, but the text describes researchers obtaining information, not restricting it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

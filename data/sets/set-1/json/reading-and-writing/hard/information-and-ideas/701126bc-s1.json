@@ -1,0 +1,39 @@
+{
+  "questionId": "701126bc-s1",
+  "originalId": "701126bc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In a Bose\u2013Einstein condensate, large numbers of atoms occupy the same quantum state and behave as a single coherent matter wave that can interfere with itself. Until recently, this phenomenon was observable only at temperatures within a few nanokelvin of absolute zero, because thermal motion ordinarily destroys the delicate atomic coherence at any higher temperature. In a recent study, however, Naomi Asante and colleagues report inducing a Bose\u2013Einstein-like condensate in a thin layer of magnetic quasiparticles called magnons at temperatures near 290 K. The researchers propose that strong, uniform interactions among the magnons effectively shield the condensate's coherence from the surrounding thermal disturbances of the host material.</p>",
+  "stem": "<p>Based on the text, how are the interactions among magnons believed to be involved in the condensate observed in Asante and colleagues' study?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The interactions reduce the intensity of the condensate's coherent wave.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The interactions accelerate the formation of the coherent matter wave.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The interactions permit the condensate's coherence to persist at temperatures far above those usually required.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The interactions allow the condensate to spread between different layers of magnetic material.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text says Bose\u2013Einstein-type coherence is usually destroyed at any temperature above near-absolute-zero by thermal motion, but that in Asante's study a condensate-like state is observed near 290 K. The researchers attribute this to strong interactions among the magnons, which shield the condensate's coherence from thermal disturbances. The interactions therefore enable the coherence to persist at much higher temperatures than usual.</p><p>Choice A is incorrect because the text suggests the interactions protect coherence rather than reducing its intensity. Choice B is incorrect because the text does not discuss how quickly the coherent state forms; it concerns whether coherence survives thermal noise. Choice D is incorrect because the text discusses a single thin layer; it does not describe the condensate moving between layers.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

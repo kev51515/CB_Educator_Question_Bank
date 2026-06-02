@@ -1,0 +1,25 @@
+{
+  "questionId": "f114cbf0-s1",
+  "originalId": "f114cbf0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>A bombardier beetle stores hydroquinone and hydrogen peroxide in separate chambers within its abdomen, then forces these compounds together with catalytic enzymes to trigger a violent exothermic reaction that ejects a hot, noxious spray. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when the beetle closes its valves and isolates the chambers, the reaction—and the spray—immediately stop.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For example,</p>"},
+    {"id": "b", "content": "<p>In particular,</p>"},
+    {"id": "c", "content": "<p>To summarize,</p>"},
+    {"id": "d", "content": "<p>Conversely,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Conversely\" logically signals that the information in this sentence—that the beetle's spray ceases when the chambers are isolated—contrasts with the previous sentence's discussion of the processes that produce the spray.</p><p>Choice A is incorrect because \"for example\" illogically signals that the information exemplifies the previous discussion of how the spray is produced, when in fact it contrasts with that discussion. Choice B is incorrect because \"in particular\" illogically signals that the information provides specific details elaborating on the previous sentence, when in fact it presents an opposing process. Choice D is incorrect because \"to summarize\" illogically signals that the information summarizes the previous sentence, when in fact it contrasts with it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

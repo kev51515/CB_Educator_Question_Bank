@@ -1,0 +1,39 @@
+{
+  "questionId": "8adf1335-s1",
+  "originalId": "8adf1335",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A startup's total first-quarter revenue was <i>R</i> million dollars. The startup earned <i>P</i> million dollars from product sales and 38 million dollars from all other revenue sources. Which equation represents the relationship between <i>R</i> and <i>P</i> in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>P</i> = <i>R</i> + 38</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>R</i> = 38 &minus; <i>P</i></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>R</i> = <i>P</i> + 38</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>P</i> = 38<i>R</i></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total revenue <i>R</i> is the sum of product-sale revenue <i>P</i> and other revenue 38: <i>R</i> = <i>P</i> + 38.</p><p>Choices A and B rearrange the equation incorrectly. Choice D treats 38 as a multiplier rather than an additive term.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

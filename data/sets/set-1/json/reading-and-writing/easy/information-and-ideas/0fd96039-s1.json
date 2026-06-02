@@ -1,0 +1,25 @@
+{
+  "questionId": "0fd96039-s1",
+  "originalId": "0fd96039",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>For decades, scholars have credited the design of the iconic Park Plaza fountain in Wexford City to architect Lillian Bram, who said she sketched the final plan in May of 1908. Recently, however, an archivist uncovered a city engineering report dated February 1908 that includes a detailed drawing of the same fountain. The drawing suggests that someone other than Bram may have produced the design first.</p>",
+  "stem": "<p>Based on the text, what piece of knowledge about the Park Plaza fountain has recently become uncertain?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The year the city published its first engineering reports</p>"},
+    {"id": "b", "content": "<p>How many revisions Bram made to her sketches over time</p>"},
+    {"id": "c", "content": "<p>Which neighborhood originally requested the fountain</p>"},
+    {"id": "d", "content": "<p>The identity of the person who first designed the fountain</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the text describes a long-held belief that Bram produced the design and a new finding (an earlier dated drawing) that calls that belief into question, leaving the original designer's identity uncertain.</p><p>Choice A is incorrect; the text does not discuss when the city first published engineering reports. Choice B is incorrect; the text does not mention any revisions Bram made. Choice C is incorrect; the text says nothing about which neighborhood requested the fountain.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.easy"
+}

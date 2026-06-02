@@ -1,0 +1,39 @@
+{
+  "questionId": "645fd11a-s1",
+  "originalId": "645fd11a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Average number of direct reports to high school principals, by category and period</strong></p><table border=\"1\"><thead><tr><th>Period</th><th>Assistant principals</th><th>Department chairs</th></tr></thead><tbody><tr><td>1995\u20132000</td><td>2.1</td><td>3.2</td></tr><tr><td>2001\u20132007</td><td>2.4</td><td>4.5</td></tr><tr><td>2008\u20132015</td><td>2.6</td><td>7.1</td></tr></tbody></table><p>Education researchers analyzing organizational charts at U.S. public high schools concluded that there is a growing interest among principals in connecting directly with more academic departments at their schools.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers' conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The average number of department chairs reporting directly to a principal grew across the three periods studied.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The average number of assistant principals reporting directly to a principal was highest in 2001\u20132007.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The average number of department chairs reporting directly to a principal exceeded the average number of assistant principals in each of the three periods studied.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The average numbers of assistant principals and department chairs reporting directly to a principal did not fluctuate from 1995\u20132000 to 2008\u20132015.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The researchers conclude that principals are increasingly connecting with more academic departments. Because each department chair leads a different academic department, a rise in the average number of department chairs reporting directly to a principal across the three periods (3.2 \u2192 4.5 \u2192 7.1) supports exactly that conclusion.</p><p>Choice B is incorrect: the average for assistant principals is highest in 2008\u20132015 (2.6), not 2001\u20132007. Choice C is incorrect: while true that department chairs exceed assistant principals in every period, this static comparison says nothing about an increase over time. Choice D is incorrect: both averages do rise from the first period to the third, contradicting this claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

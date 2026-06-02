@@ -1,0 +1,39 @@
+{
+  "questionId": "16cea46c-s1",
+  "originalId": "16cea46c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A total of 40 students enrolled in a community dance class. The frequency table shows how many of these students train in each dance style.</p><table border=\"1\"><tr><th>Dance style</th><th>Number of students</th></tr><tr><td>Ballet</td><td>14</td></tr><tr><td>Jazz</td><td>6</td></tr><tr><td>Contemporary</td><td>10</td></tr><tr><td>Hip-hop</td><td>10</td></tr></table><p>If one of these students is selected at random, what is the probability that the student trains in contemporary dance?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.40</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The probability is the number of contemporary students divided by the total number of students. There are 10 contemporary students and 40 students total, so the probability is 10/40 = 0.25.</p><p>Choice A is incorrect; this would be the result if the class had 100 students. Choice B is incorrect; this is the probability of choosing a jazz student. Choice D is incorrect; this would be the result if the class had 25 students.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e1391dd6-s1",
+  "originalId": "e1391dd6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>According to a model, the population of a microorganism doubles every 3 years. In the year 2000, a sample contained 80,000 microorganisms. Based on this information, in which of the following years does the model estimate the population to reach 1,280,000 microorganisms?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2003</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2006</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2012</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2018</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The population is 1,280,000 / 80,000 = 16 times the starting amount. Since 16 = 2<sup>4</sup>, four doublings are required. At 3 years per doubling, that takes 4&middot;3 = 12 years. Therefore the population reaches 1,280,000 in the year 2000 + 12 = 2012. Choices A, B, and D correspond to incorrect doubling counts.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

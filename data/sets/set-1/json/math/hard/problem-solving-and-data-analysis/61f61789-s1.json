@@ -1,0 +1,23 @@
+{
+  "questionId": "61f61789-s1",
+  "originalId": "61f61789",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>To study water content, samples from the stems of 30 plants were cut into cubes. One of these cubes has an edge length of 5.00 centimeters and a mass of 80.00 grams. What is the density of this cube, in grams per cubic centimeter?</p>",
+  "answerOptions": null,
+  "keys": [
+    "0.64",
+    "16/25"
+  ],
+  "rationale": "<p>The volume of the cube is (5.00 cm)<sup>3</sup> = 125 cubic centimeters. Density equals mass divided by volume: 80.00 grams \u00f7 125 cm\u00b3 = 0.64 grams per cubic centimeter. Note that 0.64 and 16/25 are equivalent answers.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard"
+}

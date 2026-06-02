@@ -1,0 +1,25 @@
+{
+  "questionId": "04dff083-s1",
+  "originalId": "04dff083",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>On the high plains of northeastern Bolivia, archaeologist Heiko Prümers and geographer Carla Jaimes Betancourt used airborne laser scanning to identify two large pre-Hispanic settlements at Cotoca and Landívar, along with twenty-four smaller fortified sites distributed across the surrounding savanna. The researchers determined that these outlying sites were politically tied to Cotoca and Landívar because each was built during the same Casarabe-culture period and laid out around a central earthen platform with elevated causeways radiating outward, mirroring the larger centers. Their matching engineering suggests that the inhabitants of the smaller sites participated in the same agricultural and ceremonial networks that organized life in the two principal settlements.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Researchers have concluded that Cotoca and Landívar were politically connected to nearby smaller settlements because of their shared design and construction period.</p>"},
+    {"id": "b", "content": "<p>Researchers have shown that the layout of Cotoca and Landívar was modeled after that of the twenty-four smaller fortified sites in the region.</p>"},
+    {"id": "c", "content": "<p>Ceremonial activities at Cotoca and Landívar appear to have mattered more to residents than those held at the surrounding smaller sites.</p>"},
+    {"id": "d", "content": "<p>Although archaeologists have studied Cotoca and Landívar extensively, they have only recently begun to map the surrounding savanna using airborne laser scanning.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it captures the whole-passage thesis. The text reports that Prümers and Jaimes Betancourt identified two large settlements and twenty-four smaller fortified sites, and that the researchers concluded the smaller sites were tied to Cotoca and Landívar because all share the same Casarabe-period date and an identical layout. The passage closes by drawing the inference that the matching engineering implies a shared network. The main idea is therefore that the connection was inferred from shared design and period.</p><p>Choice B inverts the direction of influence the text describes. Choice C focuses on ceremonial importance, a topic the passage does not rank. Choice D fixes on the laser-scanning method, which is a supporting detail rather than the passage's thesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

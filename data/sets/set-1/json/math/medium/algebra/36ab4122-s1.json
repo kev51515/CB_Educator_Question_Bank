@@ -1,0 +1,39 @@
+{
+  "questionId": "36ab4122-s1",
+  "originalId": "36ab4122",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Carlos's regular wage at his job is r dollars per hour for the first 8 hours of work in a day plus 1.5 times his regular hourly wage for work in excess of 8 hours that day. On a given day, Carlos worked for 10 hours, and his total earnings for that day were $170.50. What is Carlos's regular hourly wage?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$14.25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$14.75</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$15.50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$16.00</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Carlos worked 8 regular hours at r and 2 overtime hours at 1.5r: 8r + 2(1.5r) = 8r + 3r = 11r. Setting 11r = 170.50 gives r = 15.50. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.medium"
+}

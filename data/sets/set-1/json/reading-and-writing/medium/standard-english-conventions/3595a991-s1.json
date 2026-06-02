@@ -1,0 +1,25 @@
+{
+  "questionId": "3595a991-s1",
+  "originalId": "3595a991",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T6.medium",
+  "stimulus": "<p>In 1965, Mexican muralist Pablo O'Higgins captured scenes of laborers and farmworkers in three vivid lithographs: <em>Workers of the Field</em>, <em>Harvest at Dawn</em>, and <em>The Stonecutter</em>. In 2018, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> displayed alongside dozens of O'Higgins's other prints in a retrospective at the Museo Nacional de Arte in Mexico City.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>that was</p>"},
+    {"id": "b", "content": "<p>it was</p>"},
+    {"id": "c", "content": "<p>they were</p>"},
+    {"id": "d", "content": "<p>some were</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The plural pronoun \"they\" agrees in number with the plural antecedent \"lithographs\" and clearly identifies what was displayed at the Museo Nacional de Arte.</p><p>Choice A is incorrect because the singular pronoun \"that\" doesn't agree in number with the plural antecedent \"lithographs.\" Choice B is incorrect because the singular pronoun \"it\" doesn't agree in number with the plural antecedent \"lithographs.\" Choice D is incorrect because the pronoun \"some\" is illogical in this context (referring to \"some\" of three lithographs).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

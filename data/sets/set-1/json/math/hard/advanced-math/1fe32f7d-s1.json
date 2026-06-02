@@ -1,0 +1,22 @@
+{
+  "questionId": "1fe32f7d-s1",
+  "originalId": "1fe32f7d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">&minus;<i>x</i>&sup2; + <i>b</i><i>x</i> &minus; 324 = 0</p><p>In the given equation, <i>b</i> is a positive integer. The equation has no real solution. What is the greatest possible value of <i>b</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "35"
+  ],
+  "rationale": "<p>The equation has no real solution when the discriminant is negative: <i>b</i>&sup2; &minus; 4(&minus;1)(&minus;324) &lt; 0, i.e., <i>b</i>&sup2; &minus; 1296 &lt; 0, so <i>b</i>&sup2; &lt; 1296, meaning <i>b</i> &lt; 36. The greatest positive integer value of <i>b</i> is 35.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

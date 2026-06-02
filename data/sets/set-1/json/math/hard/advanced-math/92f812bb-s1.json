@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "92f812bb-s1",
+  "originalId": "92f812bb",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, a parabola has vertex (6, &minus;10) and intersects the x-axis at two points. If the equation of the parabola is written in the form y = ax<sup>2</sup> + bx + c, where a, b, and c are constants, which of the following could be the value of a + b + c?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;10</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The value of a + b + c equals y at x = 1, since y(1) = a + b + c. Writing the parabola in vertex form y = a(x &minus; 6)<sup>2</sup> &minus; 10, we get y(1) = a(25) &minus; 10 = 25a &minus; 10. For the parabola to intersect the x-axis at two distinct points and have vertex below the x-axis, the parabola must open upward, so a &gt; 0. Therefore 25a &minus; 10 &gt; &minus;10. Of the choices, only &minus;8 satisfies this inequality.</p><p>Choices A, B, and D are all at most &minus;10 and so cannot equal 25a &minus; 10 for any positive a.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

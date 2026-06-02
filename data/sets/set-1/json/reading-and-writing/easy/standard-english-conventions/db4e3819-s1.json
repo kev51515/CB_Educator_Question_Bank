@@ -1,0 +1,25 @@
+{
+  "questionId": "db4e3819-s1",
+  "originalId": "db4e3819",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Midway through her 1974 jazz album <em>Mary Lou's Mass</em>, pianist Mary Lou Williams switches modes, moving from a swinging blues passage into a slow, hymn-like section. With the same emotive touch that Williams was admired for in her earlier work, she <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her hands across the keys and produces a deeply moving sound.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are gliding</p>"},
+    {"id": "b", "content": "<p>were gliding</p>"},
+    {"id": "c", "content": "<p>glide</p>"},
+    {"id": "d", "content": "<p>glides</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-verb agreement. The singular verb \"glides\" agrees in number with the singular subject \"she,\" which refers to Williams.</p><p>Choice A is incorrect because the plural verb \"are gliding\" doesn't agree in number with the singular subject \"she.\" Choice B is incorrect because the plural verb \"were gliding\" doesn't agree in number with the singular subject \"she.\" Choice C is incorrect because the plural verb \"glide\" doesn't agree in number with the singular subject \"she.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

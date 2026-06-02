@@ -1,0 +1,39 @@
+{
+  "questionId": "63c73b50-s1",
+  "originalId": "63c73b50",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 2019, researchers Maya Patel and Jorge Ruiz launched a mobile application called LeafID. A user who finds an unknown plant photographs its leaves using the app's camera tool. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> LeafID's machine-learning algorithm measures more than fifteen leaf characteristics and compares them to entries in a global botanical database.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Then,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In fact,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Then\" logically signals that the events described in this sentence (the algorithm measuring leaf characteristics) take place after the events in the previous sentence (the user photographing the leaves). The analysis is the next step in the sequence.</p><p>Choice A is incorrect because measuring leaf characteristics is not an example of photographing leaves; it is a separate step. Choice C is incorrect because \"likewise\" illogically signals a similar action, but the two steps are different parts of the process. Choice D is incorrect because \"in fact\" illogically emphasizes a modification of the previous statement, while this sentence introduces a new step.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

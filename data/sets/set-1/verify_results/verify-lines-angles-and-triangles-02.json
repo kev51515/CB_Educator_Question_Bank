@@ -1,0 +1,22 @@
+[
+  {"id": "a4c05a1b-s1", "templateId": "lines-angles-and-triangles.A1.T2.medium", "verdict": "type_drift", "detail": "A1.T2.medium requires both angles as linear expressions in parameter k. Clone gives one numeric angle (73°) and one variable x, with no parameter to solve for first. Stem matches A1.T1 (find unknown angle), not T2."},
+  {"id": "94364a79-s1", "templateId": "lines-angles-and-triangles.A5.T2.medium", "verdict": "ok"},
+  {"id": "e10d8313-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "aspect_drift", "detail": "Clone tests triangle angle-sum (A2.T1): in triangle BGC use 180−42−70=68. No similarity reasoning, no AA, no shared-vertex similar triangles. Belongs to A2, not A5.T3."},
+  {"id": "17912810-s1", "templateId": "lines-angles-and-triangles.A1.T3.hard", "verdict": "aspect_drift", "detail": "Stem describes a triangle with adjacent angle relationships (vertical, supplementary, bisector), not two parallel lines with multi-transversal config. A1 requires explicit parallels; clone has none. Better fits A2 with A6 adjuncts."},
+  {"id": "947a3cde-s1", "templateId": "lines-angles-and-triangles.A3.T1.hard", "verdict": "aspect_drift", "detail": "No isosceles/equilateral side-equality invoked. Clone is intersecting lines (linear pair) + triangle angle sum. Belongs to A2/A6, not A3."},
+  {"id": "1318dfea-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "ok"},
+  {"id": "2d2cb85e-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "aspect_drift", "detail": "No similarity reasoning. Clone solves via linear-pair supplementary (138→42) then triangle angle sum (180−42−47=91). Belongs to A2.T3, not A5.T3."},
+  {"id": "3b225698-s1", "templateId": "lines-angles-and-triangles.A5.T1.hard", "verdict": "difficulty_drift", "detail": "Hard A5.T1 requires non-obvious correspondence, quadrilaterals with polygon-sum step, or misleading side-ratio distractors needing analysis. Clone is direct ∠R↔∠W with a side ratio that is simply ignored; better fits medium difficulty."},
+  {"id": "f731d88b-s1", "templateId": "lines-angles-and-triangles.A2.T3.hard", "verdict": "ok"},
+  {"id": "f88f27e5-s1", "templateId": "lines-angles-and-triangles.A6.T1.hard", "verdict": "aspect_drift", "detail": "Clone is exterior-angle theorem on a triangle (A2.T2), not vertical/linear-pair at an intersection of lines. A6 requires intersecting lines at a single point without triangle interior-sum invocation."},
+  {"id": "345cc36a-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "ok"},
+  {"id": "010243e6-s1", "templateId": "lines-angles-and-triangles.A5.T2.hard", "verdict": "ok"},
+  {"id": "5b4757df-s1", "templateId": "lines-angles-and-triangles.A5.T2.hard", "verdict": "ok"},
+  {"id": "b1e1c2f5-s1", "templateId": "lines-angles-and-triangles.A5.T2.hard", "verdict": "ok"},
+  {"id": "740bf79f-s1", "templateId": "lines-angles-and-triangles.A6.T1.hard", "verdict": "aspect_drift", "detail": "Clone is straight similarity-ratio side computation (A5.T2), not intersecting lines at a point. No vertical/linear-pair reasoning at all."},
+  {"id": "fecc446d-s1", "templateId": "lines-angles-and-triangles.A1.T3.hard", "verdict": "ok"},
+  {"id": "6d99b141-s1", "templateId": "lines-angles-and-triangles.A5.T3.hard", "verdict": "aspect_drift", "detail": "Solved by isosceles base angles (A3) + exterior-angle theorem (A2.T2). No AA similarity, no shared-vertex similar triangles. Should be A3.T1 or A2.T2, not A5.T3."},
+  {"id": "f7dbde16-s1", "templateId": "lines-angles-and-triangles.A5.T5.hard", "verdict": "ok"},
+  {"id": "322a6dfe-s1", "templateId": "lines-angles-and-triangles.A5.T1.hard", "verdict": "ok"},
+  {"id": "f67255ea-s1", "templateId": "lines-angles-and-triangles.A1.T3.hard", "verdict": "ok"}
+]

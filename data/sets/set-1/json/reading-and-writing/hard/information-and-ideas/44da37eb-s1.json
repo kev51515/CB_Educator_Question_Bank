@@ -1,0 +1,39 @@
+{
+  "questionId": "44da37eb-s1",
+  "originalId": "44da37eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Many venomous animals deploy their toxins for more than one purpose. Cone snails immobilize fish, certain ants defend their colonies, and some centipedes use toxins to compete with rivals. A single species may even produce a venom that serves multiple functions. Observing that the venom used by the Australian funnel-web spider <em>Hadronyche valida</em> to subdue insect prey also suppresses the growth of <em>Salmonella enterica</em>, a bacterium common in soil, researcher Hana Pereira and her colleagues conclude that this particular venom composition may have spread through the species in part because it reduces the risk of harmful infection during feeding, in addition to making prey capture more efficient.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Pereira and colleagues' conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>S. enterica</em> is commonly present on insects that <em>H. valida</em> consumes and can survive passage through the spider's digestive enzymes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>H. valida</em> appears able to detect <em>S. enterica</em> chemically and tends to avoid feeding on contaminated insects.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>S. enterica</em> does not appear to be pathogenic to <em>H. valida</em>, even when ingested from prey that the spider did not envenomate.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The venom of <em>H. valida</em> also inhibits soil-dwelling bacteria that are not pathogenic to the spider.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Pereira and colleagues' conclusion is that the venom's antibacterial activity matters because it protects <em>H. valida</em> from a real feeding-related risk. If <em>S. enterica</em> is genuinely common on prey and survives normal digestion, then the spider needs another mechanism to neutralize it; the venom's antibacterial property fits that role, supporting the conclusion that this trait spread because it reduces risk during feeding.</p><p>Choice B is incorrect: if the spider already avoids contaminated prey, then it doesn't need venom-based protection, weakening the case that the antibacterial property drove the trait's spread. Choice C is incorrect: if <em>S. enterica</em> doesn't actually harm the spider, then suppressing it offers no fitness benefit, undermining the conclusion. Choice D is incorrect: inhibiting bacteria that pose no risk to the spider doesn't show that venom reduces feeding risk.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

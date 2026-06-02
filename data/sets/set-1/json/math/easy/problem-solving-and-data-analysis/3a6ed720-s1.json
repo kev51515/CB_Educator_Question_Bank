@@ -1,0 +1,39 @@
+{
+  "questionId": "3a6ed720-s1",
+  "originalId": "3a6ed720",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Of 750,000 buttons in a factory, 660,000 are blue. What percentage of the buttons are blue?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>88%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>76%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>44%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12%</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The percentage is (660,000 \u00f7 750,000) \u00d7 100 = 0.88 \u00d7 100 = 88%.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This is approximately half of 88%, not the correct percentage.</p><p>Choice D is incorrect. This is the percentage of buttons that are NOT blue.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A2.T1.easy"
+}

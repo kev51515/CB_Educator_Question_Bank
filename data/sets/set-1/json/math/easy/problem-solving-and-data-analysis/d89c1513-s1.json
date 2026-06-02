@@ -1,0 +1,39 @@
+{
+  "questionId": "d89c1513-s1",
+  "originalId": "d89c1513",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes 200 visitors to a bookstore on Saturday, by whether they bought a book and whether they ordered coffee.</p><table border=\"1\"><tr><th></th><th>Bought book</th><th>Did not buy book</th><th>Total</th></tr><tr><th>Ordered coffee</th><td>80</td><td>30</td><td>110</td></tr><tr><th>Did not order coffee</th><td>40</td><td>50</td><td>90</td></tr><tr><th>Total</th><td>120</td><td>80</td><td>200</td></tr></table><p>If a visitor is selected at random, what is the probability that the visitor ordered coffee?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80/200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>110/200</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90/200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>120/200</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The probability is the number of coffee-ordering visitors divided by the total: 110/200.</p><p>Choice A is incorrect; this is the probability of ordering coffee and buying a book. Choice C is incorrect; this is the probability of not ordering coffee. Choice D is incorrect; this is the probability of buying a book.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A2.T4.easy"
+}

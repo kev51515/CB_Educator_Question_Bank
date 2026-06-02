@@ -1,0 +1,39 @@
+{
+  "questionId": "e4f312c5-s1",
+  "originalId": "e4f312c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>While most flowering plants rely on pollen transfer between separate individuals to produce viable seeds, the autogamous orchid <em>Holcoglossum amesianum</em> presents an intriguing <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: in a recent study, researchers observed that this orchid's pollen-bearing structures actively curve back to deposit pollen directly onto the plant's own stigma, producing fully viable seeds without any external assistance.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>affinity</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>hypothesis</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>corroboration</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>exception</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Exception\" most logically completes the text. The text describes a plant whose self-fertilization runs counter to the typical pattern (cross-pollination between individuals). The orchid is an exception to that general rule.</p><p>Choice A is incorrect. \"Affinity\" means a natural attraction or relationship; this doesn't capture the contrast with the general rule. Choice B is incorrect. \"Hypothesis\" means a proposed explanation; the orchid is an observed phenomenon, not a proposal. Choice C is incorrect. \"Corroboration\" means confirmation; the orchid contradicts the typical pattern, so it does not confirm it.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

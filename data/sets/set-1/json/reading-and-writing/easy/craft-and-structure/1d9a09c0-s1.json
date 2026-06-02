@@ -1,0 +1,39 @@
+{
+  "questionId": "1d9a09c0-s1",
+  "originalId": "1d9a09c0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2018 short story. The narrator, who is in middle school, is sitting on a bench at the mall.</p><blockquote><p>I just sit here to watch the people coming out of the photo booth. See, the booth across the way has this little curtain\u2014like nothing more than a sheet, really\u2014and they got those flashes that make you blink real hard and look like you just walked into the sun, so every group comes out blinking and squinting and shoving each other, looking all goofy. And trust me, there ain't nothing funnier than that. So I just sit there for a bit like it's some kind of show: <em>The Blinking Bunch</em>, starring photo-booth victim one through twenty.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To explain a problem the narrator has overcome</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To discuss a show the narrator saw at a theater</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To describe an activity the narrator finds amusing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To give a reason the narrator is excited about going to the mall</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The narrator describes watching people leave a photo booth and says, \"there ain't nothing funnier than that.\" The main purpose is to describe an activity the narrator finds amusing.</p><p>Choice A is incorrect. The text mentions no problem the narrator has overcome. Choice B is incorrect. The \"show\" is the narrator's invented label for the people, not a real theater show. Choice D is incorrect. The text doesn't address why the narrator goes to the mall.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

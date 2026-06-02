@@ -1,0 +1,201 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments",
+  "originals_count": 11,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Scope of inference",
+      "description": "Identify the largest population to which results from a randomly-selected sample can be generalized/applied. The correct answer is always the population from which the random sample was drawn — neither broader nor narrower.",
+      "boundary_with_other_aspects": "A1 takes the sample's random selection as a given and asks 'how far can we generalize?'; A2 instead asks whether the sample is even valid (bias detection); A3 treats the sample as valid but probes the certainty of point estimates.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Largest-population generalization (well-designed sample)",
+          "description": "A study describes a random sample drawn from a specific subgroup (e.g., 'fourth-grade students at one school', 'history professors at California State Universities'). Question asks for the largest group/population to which results can be applied or generalized. Distractors offer: (a) the sample itself, (b) a strict subset of the source population, (c) a population broader than the source.",
+          "core_skill_demand": "Recognize that statistical generalization from a random sample extends to exactly the population from which the sample was drawn — not to the sample itself (too narrow) and not to any broader population (overreach). Parse the stem to extract the precise source population (sometimes nested: 'fourth-graders at one school in a city').",
+          "example_originals": ["82dfb646", "b4f5a7ca", "1ea09200", "6fca0144", "7ce2830a", "7d68096f"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Source population is a single, unambiguous descriptor stated directly in the stem (e.g., 'people who liked a certain book')",
+                "Distractors are obviously broader populations the student can rule out by reading carefully",
+                "No extraneous data (no tables, no irrelevant percentages)",
+                "Inference is phrased plainly ('Most people who like this book will dislike this movie')"
+              ],
+              "example_stem": "A market researcher selected 200 people at random from a group of people who indicated that they liked a certain book... 95% disliked the movie. Which inference can appropriately be drawn?",
+              "example_ids": ["82dfb646"]
+            },
+            "medium": {
+              "characteristics": [
+                "Source population has 2 stacked qualifiers (e.g., 'history professors' AND 'at California State Universities')",
+                "Distractors systematically drop one qualifier ('all professors at CSU', 'all history professors in US') so student must hold both constraints simultaneously",
+                "Answer is phrased as a population label (not an inference sentence)"
+              ],
+              "example_stem": "A sample of history professors was selected at random from the California State Universities... What is the largest population to which the results can be generalized?",
+              "example_ids": ["b4f5a7ca"]
+            },
+            "hard": {
+              "characteristics": [
+                "Source population has 3+ stacked qualifiers (e.g., '17-year-old baobab trees in a habitat in South Africa', 'fourth-graders at one middle school in a large city') and student must NOT drop any",
+                "Distractor includes 'the sample itself' (e.g., 'the 40 students surveyed', 'the 55 teams in the sample') — a tempting under-generalization",
+                "Stem includes irrelevant data: contingency tables (7d68096f), experimental treatment details (6fca0144), point estimates (1ea09200), or sample-size figures, none of which change the scope answer",
+                "Distractor offers a subgroup of the sample defined by an outcome variable (e.g., 'teams that scored 14+ points') — student must recognize the sampling unit is the original population, not a post-hoc subset",
+                "May involve an experimental design (random selection + random assignment to treatments) where the scope-of-inference rule still depends only on the random-selection step"
+              ],
+              "example_stem": "A scientist randomly selected 50 baobab trees that were 17 years old [in a South African habitat] and randomly assigned them to two watering patterns... what is the largest group to which these results can be applied?",
+              "example_ids": ["1ea09200", "6fca0144", "7ce2830a", "7d68096f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Random selection from a clearly identifiable source population",
+              "Four answer choices whose levels of generality bracket the correct source population (one too narrow = sample itself or subset, one correct = source population, two too broad)",
+              "Asking specifically for the 'largest' population/group to which results can be applied/generalized"
+            ],
+            "must_vary": [
+              "Domain context (people, animals, plants, schools, businesses, etc.)",
+              "The specific stacked qualifiers (geographic, demographic, temporal)",
+              "Whether the study is observational (survey) or experimental (treatment assignment)",
+              "Sample size and any reported result percentages (these should be irrelevant to the answer)"
+            ],
+            "common_bugs": [
+              "Cloner drops one of the stacked qualifiers, making the correct answer ambiguous or making a broader distractor accidentally correct",
+              "Cloner forgets to include 'the sample itself' as a hard-difficulty distractor, regressing it toward medium",
+              "Cloner adds a table/percentage that turns out to be the deciding factor — but in this type the data must be irrelevant; including data that matters silently changes the question into a different skill",
+              "Cloner makes the source population vague ('students at schools') so multiple choices defensibly match",
+              "Cloner swaps in non-random selection ('a sample of volunteers') — this is a categorical drift into A2 (sampling bias)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Sampling bias / non-representativeness",
+      "description": "Determine whether a sample is biased (non-representative of the intended population) and, if so, identify the reason. The intended population is broader than the sampled subgroup, or the sample is self-selected / convenience-based.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that the sample is not random (or is drawn from the wrong subgroup), so no generalization to the intended population is valid; a clone that gives a random sample of the target population is a categorical drift into A1 or A3.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Diagnose biased sampling design",
+          "description": "A stem describes a survey/poll where the intended population is broad (all city residents, an entire community, US population) but the sample is drawn from a non-representative subgroup (dog owners only, families at a playground, self-selected viewers of a TV show). Question asks what is true about the survey, why results don't represent the population, or whether the sampling method is flawed.",
+          "core_skill_demand": "Compare the intended target population to the actual sampling frame and recognize the mismatch. Identify that the failure is one of representativeness (not sample size, not response rate arithmetic, not time allotted).",
+          "example_originals": ["9bf4c545", "4a422e3e", "aa43b41f"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Mismatch is overt and labeled in the stem ('wanted opinions of all city residents... surveyed 500 dog owners')",
+                "Correct choice uses the textbook phrase 'biased because it is not representative'",
+                "Distractors are obviously wrong (suggest making the bias worse, or suggesting the all-non-X opposite)"
+              ],
+              "example_stem": "Council wanted to assess opinions of all city residents about a dog park. Council surveyed 500 residents who own dogs. Which of the following is true?",
+              "example_ids": ["9bf4c545"]
+            },
+            "medium": {
+              "characteristics": [
+                "Mismatch present but cloner-can-add a numerical distractor (sample size as a red herring)"
+              ],
+              "example_stem": "(no Medium originals in this bank for this type)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Sample size is plausible (20–500), so 'sample too small' is an attractive but wrong distractor",
+                "Sampling frame's bias is subtler — requires inferring why the chosen subgroup differs systematically (e.g., 'families at a playground' are more likely to have children; 'cable TV viewers who chose to respond' are self-selected)",
+                "Correct choice uses precise language ('flawed and may produce a biased estimate', 'were not a random sample') rather than the textbook 'biased because not representative'",
+                "Distractors include both 'sampling is fine' and 'sample too small' — student must reject both and pick the bias explanation",
+                "May ask 'what best explains why results are unlikely to represent the population' (forces choice among multiple defects)"
+              ],
+              "example_stem": "To determine the mean number of children per household in a community, Tabitha surveyed 20 families at a playground. Which of the following must be true?",
+              "example_ids": ["4a422e3e", "aa43b41f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An intended target population that is broader than the sampling frame",
+              "A sampling mechanism that systematically excludes or over-represents a subgroup (non-random selection, self-selection, convenience sampling)",
+              "At least one distractor that mis-attributes the problem to a non-representativeness cause (sample size, response rate, arithmetic, time)"
+            ],
+            "must_vary": [
+              "The intended population (city, community, country, customer base)",
+              "The specific bias mechanism (occupational subgroup, location-based convenience sample, self-selection via voluntary response, opt-in poll)",
+              "Whether the question asks 'what is true', 'what explains', or 'is the method flawed'"
+            ],
+            "common_bugs": [
+              "Cloner switches the sampling description to 'selected at random' — this turns the question into A1 (scope) or A3 (uncertainty), a categorical drift",
+              "Cloner makes the sample size small enough that 'sample too small' becomes a defensible answer, breaking the type",
+              "Cloner makes the target population equal to the sampled subgroup (e.g., 'wanted opinions of dog owners, surveyed dog owners') — the bias vanishes and there's no correct answer",
+              "Cloner writes a correct-answer distractor that confuses bias with the magnitude of the result (e.g., 'the percentages are unequal')"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Sample-to-population uncertainty",
+      "description": "Given a well-designed random sample with a reported statistic (percentage/mean), evaluate which claims about the population — or about hypothetical resamples — must necessarily be true. The correct answer recognizes that a sample statistic only estimates the population parameter; it does not equal it, and other samples may differ.",
+      "boundary_with_other_aspects": "A3 differs from A1 in that the question is not about which population the result can apply to (that's assumed valid) but about whether the exact sample statistic is guaranteed to hold for the population or for another sample; A3 differs from A2 in that the sample IS random and representative — the question tests understanding of sampling variability, not sampling bias.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Roman-numeral 'must be true' for random sample",
+          "description": "Stem reports a random sample with a single statistic (e.g., '87% said satisfied', '78% said yes'). Stem presents 2–3 Roman-numeral claims: (I) the population parameter equals the sample statistic exactly, (II) a different random sample of the same size would yield the same statistic, (III) a sample from a different population would yield the same statistic. Question asks which must be true. Correct answer is virtually always 'Neither/None'.",
+          "core_skill_demand": "Recognize that a sample statistic is an estimate, not a deterministic predictor: (a) the population parameter need not equal the sample statistic exactly, (b) sampling variability means different random samples give different results, (c) results from one population do not transfer to another. Apply 'must be true' literally — only deductively necessary statements qualify.",
+          "example_originals": ["37930b2a", "642519d7"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(no Easy originals in this bank for this type)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Two or three Roman-numeral claims, each one a textbook misconception (sample = population; sample = other sample; sample = other-population sample)",
+                "Answer choices are combinations: 'Neither/None', 'I only', 'II only', 'I and II', etc., with the trap being any non-Neither choice",
+                "Sample is explicitly random and from the population of interest (so A2 is ruled out)"
+              ],
+              "example_stem": "A random sample of 200 residents was surveyed; 87% said satisfied. Which must be true? I. Of all residents, 87% are satisfied. II. Another random sample of 200 would also yield 87%.",
+              "example_ids": ["37930b2a", "642519d7"]
+            },
+            "hard": {
+              "characteristics": [
+                "(no Hard originals in this bank for this type; potential hard levers: include a claim that IS conditionally true to force discrimination, or include a confidence-interval-style claim)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An explicitly random sample from the target population (no sampling bias)",
+              "A reported sample statistic (percentage or mean)",
+              "Roman-numeral claims that conflate the sample statistic with: (a) the population parameter, and/or (b) another sample's statistic, and/or (c) a different population's parameter",
+              "Answer-choice structure that includes 'Neither/None of the above' as the correct option"
+            ],
+            "must_vary": [
+              "Domain (residents/air quality, polling, customers, etc.)",
+              "The reported statistic (any plausible percentage or mean)",
+              "Number of Roman-numeral claims (2 or 3) and which misconception each one targets"
+            ],
+            "common_bugs": [
+              "Cloner writes a Roman-numeral claim that is actually deductively true (e.g., 'the sample statistic for this sample is X') — breaks the 'None' answer",
+              "Cloner uses the word 'approximately' or 'about' in a Roman-numeral claim, making it defensibly true and breaking the type",
+              "Cloner removes the 'random' descriptor from the sampling, turning this into A2 (bias) and changing the correct answer",
+              "Cloner drops 'Neither/None' from the answer choices, so the correct answer is no longer available",
+              "Cloner adds a Roman-numeral claim about an experiment / causation, mixing aspects"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "All 11 originals are MCQ. The bank skews Hard (6 Hard, 3 Medium, 2 Easy). A1 (scope of inference) dominates with 6 of 11 questions, all sharing the same single type (T1: largest-population generalization). The Hard variants of A1 are distinguished from Medium primarily by (a) extra qualifiers in the source-population description, (b) inclusion of 'the sample itself' as a distractor, and (c) irrelevant data (tables, treatments, percentages) added to test whether the student stays focused on the random-selection step. A2 questions always pit the intended population against a structurally different sampling frame. A3 questions always use Roman-numeral 'must be true' structure with 'Neither/None' as the correct choice. Cloners should be especially careful not to drift across aspects by swapping random vs. non-random sampling or by adding/removing the 'largest population' framing."
+}

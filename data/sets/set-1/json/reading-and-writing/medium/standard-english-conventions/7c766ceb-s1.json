@@ -1,0 +1,25 @@
+{
+  "questionId": "7c766ceb-s1",
+  "originalId": "7c766ceb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.medium",
+  "stimulus": "<p>A widely used platform for genomic data analysis, Galaxy allows bioinformaticians like Sapelo Bioinformatics co-founder Anika Patel <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> workflows by combining sequencing reads with reference annotations.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>built</p>"},
+    {"id": "b", "content": "<p>building</p>"},
+    {"id": "c", "content": "<p>build</p>"},
+    {"id": "d", "content": "<p>to build</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite to-infinitive verb \"to build\" is correctly used to form a subordinate clause that expresses how Galaxy facilitates the building of workflows (by combining certain inputs).</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The finite verb \"built\" can't be used in this way to form a subordinate clause that expresses how Galaxy facilitates the building of workflows. Choice B is incorrect because it results in an ungrammatical sentence. The nonfinite participle \"building\" can't be used in this way to form a subordinate clause that expresses how Galaxy facilitates the building of workflows. Choice C is incorrect because it results in an ungrammatical sentence. The finite verb \"build\" can't be used in this way to form a subordinate clause that expresses how Galaxy facilitates the building of workflows.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

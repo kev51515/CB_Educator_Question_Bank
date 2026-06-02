@@ -1,0 +1,39 @@
+{
+  "questionId": "ad911622-s1",
+  "originalId": "ad911622",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The value of a collectible coin increased by 142% from the end of 2014 to the end of 2015 and then decreased by 18% from the end of 2015 to the end of 2016. What was the net percentage increase in the value of the collectible coin from the end of 2014 to the end of 2016?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>124.00%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>168.44%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>114.16%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>98.44%</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Let x be the value at the end of 2014. After a 142% increase, the value is x(1 + 1.42) = 2.42x. After an 18% decrease, the value is 2.42x(1 \u2212 0.18) = 2.42 \u00d7 0.82 x = 1.9844x. The net increase is 1.9844x \u2212 x = 0.9844x, or 98.44%.</p><p>Choice A results from subtracting 18 from 142. Choices B and C result from combining percents additively or omitting a step.</p>",
+  "templateId": "percentages.A4.T2.hard"
+}

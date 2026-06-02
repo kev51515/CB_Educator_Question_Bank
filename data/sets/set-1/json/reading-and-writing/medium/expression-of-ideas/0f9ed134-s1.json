@@ -1,0 +1,25 @@
+{
+  "questionId": "0f9ed134-s1",
+  "originalId": "0f9ed134",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>In 1988, Brazilian agronomist Beatriz Carvalho and Indian agronomist Surya Patel demonstrated that a particular rotation of cover crops sharply reduced topsoil erosion on tropical farmland. Their findings proved highly influential in shaping sustainable agriculture policy. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they served as the basis for a 1994 regional agreement that incentivized the practice across more than a dozen countries.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Regardless,</p>"},
+    {"id": "b", "content": "<p>Previously,</p>"},
+    {"id": "c", "content": "<p>In particular,</p>"},
+    {"id": "d", "content": "<p>However,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"In particular\" logically signals that the information in this sentence—that Carvalho and Patel's findings served as the basis for a later regional agreement—provides specific, precise details elaborating on the previous sentence's more general claim about the findings' influence on policy.</p><p>Choice A is incorrect because \"regardless\" illogically signals that this information is true despite the previous claim about the findings' influence, when in fact it specifies that influence. Choice B is incorrect because \"previously\" illogically signals that the regional agreement came before the influence on policy, when the dates indicate the opposite. Choice D is incorrect because \"however\" illogically signals that this information contrasts with the previous claim, when it actually narrows and supports it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

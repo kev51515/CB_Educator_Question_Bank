@@ -1,0 +1,39 @@
+{
+  "questionId": "9e5863bd-s1",
+  "originalId": "9e5863bd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a rainstorm in a certain town, the minimum rate of rainfall recorded was 0.3 inches per hour, and the maximum rate of rainfall recorded was 1.1 inches per hour. Which inequality is true for all values of <em>r</em>, where <em>r</em> represents a rate of rainfall, in inches per hour, recorded for this rainstorm?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>r</em> \u2265 1.4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.3 \u2264 <em>r</em> \u2264 1.1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>r</em> \u2265 1.1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0 \u2264 <em>r</em> \u2264 0.3</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The minimum recorded rate is 0.3 in/hr and the maximum is 1.1 in/hr, so any recorded rate satisfies 0.3 \u2264 <em>r</em> \u2264 1.1.</p><p>Choices A, C, and D are incorrect; they describe ranges outside the actual minimum and maximum.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "0d81b7d9-s1",
+  "originalId": "0d81b7d9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T6.medium",
+  "stimulus": "<p>Paleobotanist Hana Kowalski and her team examined leaf fossils preserved in volcanic ash deposits in Patagonia that are roughly 52 million years old. The fossils belonged to two previously undocumented species of broadleaf trees from the Eocene epoch. The team also noted that the leaves of one of the two species were on average five times broader than those of the largest broadleaf species growing in any temperate forest today.</p>",
+  "stem": "<p>Based on the text, which choice best describes the two previously undocumented broadleaf species?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They were more numerous than other tree species in their environment.</p>"},
+    {"id": "b", "content": "<p>They thrived in regions that had little volcanic activity.</p>"},
+    {"id": "c", "content": "<p>They no longer exist as living species.</p>"},
+    {"id": "d", "content": "<p>They produced leaves that were smaller than those of modern broadleaf trees.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it presents an inference about the two species that is supported by the text. The text describes the species as Eocene-epoch trees known only from fossilized leaves, and it compares the leaves of one species to those of \"the largest broadleaf species growing in any temperate forest today,\" implying that the fossil species themselves are not among today's trees. The text therefore most strongly supports the inference that the two species are no longer living.</p><p>Choice A is incorrect because the text gives no information about how common these species were relative to others. Choice B is incorrect because the text doesn't address where the species lived in relation to volcanic activity. Choice D inverts the comparison: one of the fossil species had leaves five times broader than the largest broadleaf species alive today.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

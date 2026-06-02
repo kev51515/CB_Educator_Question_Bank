@@ -1,0 +1,36 @@
+{
+  "questionId": "dccdb20c",
+  "externalId": "c709983b-f5d2-4f76-8755-5eb306b94baa",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1743430554986,
+  "createDate": 1743430554986,
+  "scrapedAt": "2026-05-25T12:09:58.912680+00:00",
+  "type": "spr",
+  "stem": "<p style=\"text-align: left;\">There are <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box. Of these tiles, <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> are black. How many black tiles are in the box?</p>",
+  "answerOptions": null,
+  "keys": [
+    "27"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"27\"><mn>27</mn>\n</math>. It&rsquo;s given that <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> of the <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box are black. Therefore, the number of black tiles in the box can be calculated by multiplying the number of tiles in the box by <math alttext=\"StartFraction 6 Over 100 EndFraction\"><mfrac><mn>6</mn><mn>100</mn></mfrac></math>, which is equivalent to <math alttext=\"450 left parenthesis StartFraction 6 Over 100 EndFraction right parenthesis\"><mn>450</mn><mfenced><mfrac><mn>6</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"27\"><mn>27</mn>\n</math>.</p>",
+  "raw": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">There are <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box. Of these tiles, <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> are black. How many black tiles are in the box?</p>",
+    "keys": [
+      "27"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"27\"><mn>27</mn>\n</math>. It&rsquo;s given that <math alttext=\"6 percent sign\"><mn>6</mn><mo>%</mo></math> of the <math alttext=\"450\"><mn>450</mn>\n</math> tiles in a box are black. Therefore, the number of black tiles in the box can be calculated by multiplying the number of tiles in the box by <math alttext=\"StartFraction 6 Over 100 EndFraction\"><mfrac><mn>6</mn><mn>100</mn></mfrac></math>, which is equivalent to <math alttext=\"450 left parenthesis StartFraction 6 Over 100 EndFraction right parenthesis\"><mn>450</mn><mfenced><mfrac><mn>6</mn><mn>100</mn></mfrac></mfenced></math>, or <math alttext=\"27\"><mn>27</mn>\n</math>.</p>",
+    "externalid": "c709983b-f5d2-4f76-8755-5eb306b94baa",
+    "answerOptions": [],
+    "correct_answer": [
+      "27"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "035fd57e-s1",
+  "originalId": "035fd57e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The corroboree frog is a species of amphibian native to Australia. Currently, the frog's habitat <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> alpine wetlands in the Southern Tablelands of New South Wales.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>includes</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>included</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>will have included</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>had included</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is verb tense and subject-verb agreement. The word \"Currently\" establishes a present time frame, so a present-tense verb is required. The subject \"habitat\" is singular, so the singular form \"includes\" is correct.</p><p>Choice B is incorrect because the simple past \"included\" doesn't match the present time frame indicated by \"Currently.\" Choice C is incorrect because the future perfect doesn't match the present time frame. Choice D is incorrect because the past perfect doesn't match the present time frame.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

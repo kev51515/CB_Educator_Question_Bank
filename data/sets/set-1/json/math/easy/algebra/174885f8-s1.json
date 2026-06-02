@@ -1,0 +1,39 @@
+{
+  "questionId": "174885f8-s1",
+  "originalId": "174885f8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Lina bikes at a speed of 12 miles per hour and drives at a speed of 30 miles per hour. She bikes for <i>b</i> hours and drives for <i>d</i> hours for a combined total of 90 miles. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&frac1;&frasl;<sub>12</sub><i>b</i> + &frac1;&frasl;<sub>30</sub><i>d</i> = 90</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30<i>b</i> + 12<i>d</i> = 90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&frac1;&frasl;<sub>12</sub><i>b</i> + &frac1;&frasl;<sub>30</sub><i>d</i> = 360</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12<i>b</i> + 30<i>d</i> = 90</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Biking at 12 mph for <i>b</i> hours covers 12<i>b</i> miles; driving at 30 mph for <i>d</i> hours covers 30<i>d</i> miles. The total distance is 12<i>b</i> + 30<i>d</i> = 90.</p><p>Choices A, B, and C are incorrect: each results from using the reciprocal of the speed or swapping which rate is associated with which variable.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

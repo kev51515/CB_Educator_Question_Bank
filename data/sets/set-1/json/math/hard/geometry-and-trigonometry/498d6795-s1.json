@@ -1,0 +1,39 @@
+{
+  "questionId": "498d6795-s1",
+  "originalId": "498d6795",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle PQR, angle Q is a right angle. The length of side PQ is 7&radic;41 and the length of side QR is 24&radic;41. What is the length of side PR?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17&radic;41</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>31&radic;41</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>25&radic;41</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&radic;(25 &middot; 41)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>By the Pythagorean theorem, PR&sup2; = (7&radic;41)&sup2; + (24&radic;41)&sup2; = 49&middot;41 + 576&middot;41 = 625&middot;41, so PR = 25&radic;41. Choice A results from subtracting the coefficients (24&minus;7). Choice B results from adding the coefficients (7+24). Choice D results from taking &radic;(25&middot;41) instead of &radic;(625&middot;41).</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.hard"
+}

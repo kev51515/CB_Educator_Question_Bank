@@ -1,0 +1,25 @@
+{
+  "questionId": "7c21b4b5-s1",
+  "originalId": "7c21b4b5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Survey Results for Two Public Transit Improvements</p></caption><thead><tr><th>Improvement</th><th>Percent in Canada who chose method</th><th>Percent in Germany who chose method</th><th>Percent in Brazil who chose method</th></tr></thead><tbody><tr><td>Dedicated bus lanes</td><td>41</td><td>27</td><td>19</td></tr><tr><td>Real-time arrival displays</td><td>12</td><td>9</td><td>34</td></tr></tbody></table></figure><p>A survey listed possible improvements that cities could make to their public transit systems. Participants in different countries were asked to choose the improvement they view as most important. The table presents data for two of the improvements. According to the table, real-time arrival displays were viewed as most important by <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>41 percent of survey participants in Canada.</p>"},
+    {"id": "b", "content": "<p>9 percent of survey participants in Germany.</p>"},
+    {"id": "c", "content": "<p>19 percent of survey participants in Brazil.</p>"},
+    {"id": "d", "content": "<p>12 percent of survey participants in Brazil.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the table shows that 9 percent of participants in Germany viewed real-time arrival displays as the most important improvement, which is the only choice that correctly represents data in the table. Choice A is incorrect because 41 percent of participants in Canada chose dedicated bus lanes, not real-time arrival displays (12 percent in Canada chose real-time displays). Choice C is incorrect because 19 percent in Brazil chose dedicated bus lanes; 34 percent in Brazil chose real-time displays. Choice D is incorrect because 12 percent is the figure for Canada, not Brazil.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

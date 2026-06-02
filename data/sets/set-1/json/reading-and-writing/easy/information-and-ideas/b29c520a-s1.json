@@ -1,0 +1,39 @@
+{
+  "questionId": "b29c520a-s1",
+  "originalId": "b29c520a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Energy Density of Four Heating Fuels (in MJ/L).]</p><ul><li>natural gas (liquefied): 22 MJ/L</li><li>kerosene: 36 MJ/L</li><li>heating oil: 38 MJ/L</li><li>biodiesel: 32 MJ/L</li></ul><p>According to the graph, the fuel with the highest energy density is ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the sentence?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>heating oil.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>kerosene.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>biodiesel.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>natural gas (liquefied).</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because heating oil has the highest energy density on the graph at 38 MJ/L.</p><p>Choice B is incorrect: kerosene is 36 MJ/L, lower than heating oil. Choice C is incorrect: biodiesel is 32 MJ/L. Choice D is incorrect: natural gas (liquefied) is 22 MJ/L, the lowest of the four.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

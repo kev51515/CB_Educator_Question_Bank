@@ -1,0 +1,39 @@
+{
+  "questionId": "ae33e0a1-s1",
+  "originalId": "ae33e0a1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right circular cylinder has a base diameter of 14 centimeters and a height of 5 centimeters. What is the volume, in cubic centimeters, of the cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>245&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>35&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>70&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>980&pi;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The volume V of a right circular cylinder is V = &pi;r<sup>2</sup>h. Since the base diameter is 14 cm, the radius is r = 7 cm. With h = 5 cm, V = &pi;(7)<sup>2</sup>(5) = 245&pi; cubic centimeters. Choice B uses the diameter times height; Choice C uses 2 &times; radius &times; height; Choice D mistakenly uses the diameter as the radius.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T2.medium"
+}

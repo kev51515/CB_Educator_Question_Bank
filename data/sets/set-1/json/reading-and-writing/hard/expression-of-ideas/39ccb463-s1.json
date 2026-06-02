@@ -1,0 +1,39 @@
+{
+  "questionId": "39ccb463-s1",
+  "originalId": "39ccb463",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li><em>Harper's Weekly</em> magazine began publication in 1857.</li>\n<li>The magazine covered politics, current events, and illustration.</li>\n<li>In 2018, historian Mei-Ling Carter published the book <em>Frontline Reporters of \"Harper's Weekly\"</em>.</li>\n<li>The book examines women correspondents whose dispatches appeared in the magazine during the 1860s.</li>\n<li>One reporter featured is Sarah Talbot, whose Civil War dispatches were widely read.</li>\n</ul>",
+  "stem": "<p>The student wants to introduce Mei-Ling Carter's book to an audience already familiar with <em>Harper's Weekly</em>. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Mei-Ling Carter's <em>Frontline Reporters of \"Harper's Weekly\"</em> examines women correspondents whose dispatches appeared in the magazine during the 1860s.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A magazine called <em>Harper's Weekly</em>, referred to in Mei-Ling Carter's book title, began publication in 1857.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>Frontline Reporters of \"Harper's Weekly\"</em> highlights contributors to <em>Harper's Weekly</em>, the magazine first published in 1857 that covered politics, current events, and illustration.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A reporter discussed by Mei-Ling Carter is Sarah Talbot, whose Civil War dispatches appeared in <em>Harper's Weekly</em>.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the audience already familiar with <em>Harper's Weekly</em> doesn't need a long magazine history but does benefit from a clear statement of the book's subject paired with a light reminder of the publication.</p><p>Choice A doesn't connect the book to the audience's prior knowledge. Choice B over-explains the magazine. Choice D narrows to a single subject of the book.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A4.T10.hard"
+}

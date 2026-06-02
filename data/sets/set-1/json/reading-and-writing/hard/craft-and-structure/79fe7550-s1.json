@@ -1,0 +1,39 @@
+{
+  "questionId": "79fe7550-s1",
+  "originalId": "79fe7550",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Researcher Diego Alvarez led a 2022 study showing that public displays of civic participation can <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> further civic engagement across an entire neighborhood. Alvarez and his team found that residents who saw their neighbors volunteering at community events became more likely to volunteer themselves, and in doing so, encouraged still others to participate.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>spur</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>recall</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>impede</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>require</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Spur\" means to prompt or stimulate. The study shows that seeing volunteers prompts others to volunteer, who then prompt still others\u2014so public displays of participation spur further engagement.</p><p>Choice B is incorrect. \"Recall\" means to remember or summon; the study describes new actions, not memories. Choice C is incorrect. \"Impede\" means to obstruct, the opposite of what the study describes. Choice D is incorrect. \"Require\" means to demand or make necessary, but the study describes inspiration, not compulsion.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

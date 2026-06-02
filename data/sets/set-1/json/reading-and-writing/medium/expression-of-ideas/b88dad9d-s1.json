@@ -1,0 +1,25 @@
+{
+  "questionId": "b88dad9d-s1",
+  "originalId": "b88dad9d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>Sicily, the central Mediterranean island that now sits at the southern tip of Italy, was governed by various Arabic-speaking emirates over roughly two centuries beginning in the ninth century. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many Arabic words, such as \"zibibbo\"—the name of a grape variety still cultivated on the island—worked their way into the Sicilian language.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Instead,</p>"},
+    {"id": "b", "content": "<p>Specifically,</p>"},
+    {"id": "c", "content": "<p>For example,</p>"},
+    {"id": "d", "content": "<p>Consequently,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Consequently\" logically signals that the information in this sentence—that many Arabic words entered the Sicilian language—is a result of the previous information about Sicily being governed by Arabic-speaking emirates for roughly two centuries.</p><p>Choice A is incorrect because \"instead\" illogically signals that the information about Arabic loanwords is an alternative to the previous information about the emirates' rule, when it is in fact a consequence of that rule. Choice B is incorrect because \"specifically\" illogically signals that this sentence provides specific details about the emirates' rule, when it actually describes a downstream linguistic consequence. Choice C is incorrect because \"for example\" illogically signals that the entry of Arabic loanwords exemplifies the emirates' rule, when it is actually a consequence of that rule.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

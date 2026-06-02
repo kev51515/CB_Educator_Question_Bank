@@ -1,0 +1,39 @@
+{
+  "questionId": "939fc21b-s1",
+  "originalId": "939fc21b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>t + 5u = 24</p><p>u = 4</p><p>What is the solution (u, t) to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(24, 4)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(4, 24)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(4, 4)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(5, 4)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting u = 4 into t + 5u = 24 gives t = 4. So (u, t) = (4, 4).</p><p>Other choices have incorrect ordering or arithmetic.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e597050f-s1",
+  "originalId": "e597050f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>7</mn><mi>x</mi><mo>+</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>+</mo><mn>5</mn><mi>y</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn><mi>y</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>11</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>11</mn><mi>x</mi><mi>y</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Combining like terms: 7x + 4x = 11x and 3y + 5y = 8y. So the result is 11x + 8y.</p>",
+  "templateId": "equivalent-expressions.A1.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "bb43fc3c-s1",
+  "originalId": "bb43fc3c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A1.T1.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Funicular railways are inclined cable railways that carry passengers up and down steep slopes.</li>\n<li>Many funiculars were built in the 19th and 20th centuries in mountainous cities around the world.</li>\n<li>The Reisszug is a famous funicular in Salzburg, Austria.</li>\n<li>It has operated since at least 1515 CE.</li>\n<li>The Niterói funicular is a famous funicular in Valparaíso, Chile.</li>\n<li>It has operated since 1883 CE.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize a similarity between the ages of the funiculars. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Both the Reisszug and the Niterói funicular are famous funicular railways, the former in Salzburg and the latter in Valparaíso.</p>"},
+    {"id": "b", "content": "<p>The Reisszug and the Niterói funicular are funicular railways, inclined cable railways that carry passengers up steep slopes.</p>"},
+    {"id": "c", "content": "<p>The Reisszug and the Niterói funicular are examples of funiculars, which proliferated in mountainous cities in the 19th and 20th centuries.</p>"},
+    {"id": "d", "content": "<p>The Reisszug has operated since at least 1515; likewise, the Niterói funicular has been running for well over a century.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The sentence emphasizes a similarity between the ages of the two funiculars, noting that both have been operating for a long time&mdash;the Reisszug since at least 1515 and the Niterói funicular for well over a century.</p><p>Choice A is incorrect. The sentence emphasizes that both locations are famous funiculars and notes that they are in different cities; it doesn&rsquo;t emphasize a similarity in their ages. Choice B is incorrect. While the sentence emphasizes that both are funicular railways, it doesn&rsquo;t emphasize a similarity in their ages. Choice C is incorrect. The sentence gives information about funiculars in general; it doesn&rsquo;t emphasize a similarity in the ages of these two funiculars specifically.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

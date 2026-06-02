@@ -1,0 +1,25 @@
+{
+  "questionId": "de0bcf4f-s1",
+  "originalId": "de0bcf4f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>American composer John Cage, like several of his avant-garde contemporaries, wanted to incorporate elements of chance into his musical compositions. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> he developed techniques that produced unpredictable sonic results, such as consulting the <em>I Ching</em>'s coin-toss divination method to determine the pitch, duration, and dynamics of individual notes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>On the contrary,</p>"},
+    {"id": "b", "content": "<p>In conclusion,</p>"},
+    {"id": "c", "content": "<p>With this in mind,</p>"},
+    {"id": "d", "content": "<p>Regardless,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"With this in mind\" logically signals that Cage's techniques&mdash;using the <em>I Ching</em>'s coin tosses to determine musical elements&mdash;are a result of his desire to include chance in his compositions.</p><p>Choice A is incorrect because \"on the contrary\" illogically signals opposition. Choice B is incorrect because \"in conclusion\" illogically signals summary. Choice D is incorrect because \"regardless\" illogically signals that Cage used these techniques despite his desire for chance, when in fact the techniques follow from that desire.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T5.easy"
+}

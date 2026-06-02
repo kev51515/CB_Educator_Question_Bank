@@ -1,0 +1,23 @@
+{
+  "questionId": "3d73a58b-s1",
+  "originalId": "3d73a58b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>A gift shop buys ornaments at a wholesale price of 9.00 dollars each and resells them each at a retail price that is 320% of the wholesale price. At the end of the season, any remaining ornaments are marked at a discounted price that is 75% off the retail price. What is the discounted price of each remaining ornament, in dollars?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7.2",
+    "36/5"
+  ],
+  "rationale": "<p>The correct answer is 7.2 (or 36/5). The retail price is 320% of $9.00, which is 9.00 \u00d7 3.20 = $28.80. The discounted price is 75% off the retail price, which is 28.80 \u00d7 (1 \u2212 0.75) = 28.80 \u00d7 0.25 = $7.20.</p>",
+  "templateId": "percentages.A4.T2.hard"
+}

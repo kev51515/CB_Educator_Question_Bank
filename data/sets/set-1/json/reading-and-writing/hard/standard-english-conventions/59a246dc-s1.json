@@ -1,0 +1,25 @@
+{
+  "questionId": "59a246dc-s1",
+  "originalId": "59a246dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A3.T6.hard",
+  "stimulus": "<p>When repeated impacts strike conventional concrete used in bridge decks, microcracks accumulate around aggregate boundaries, eventually triggering visible spalling. Recently, materials engineer Sofia Marchetti of Politecnico di Milano in Italy used polymer <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to produce a self-healing composite that recovers its compressive strength after each loading cycle.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>additive, polyvinyl alcohol,</p>"},
+    {"id": "b", "content": "<p>additive polyvinyl alcohol</p>"},
+    {"id": "c", "content": "<p>additive polyvinyl alcohol,</p>"},
+    {"id": "d", "content": "<p>additive, polyvinyl alcohol</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The role term &ldquo;polymer additive&rdquo; is indefinite&mdash;there are many polymer additives&mdash;so the proper name &ldquo;polyvinyl alcohol&rdquo; serves as a restrictive appositive that supplies essential identifying information. Restrictive appositives take no punctuation, and the sentence then continues &ldquo;to produce&hellip;cycle&rdquo; without any internal break.</p><p>Choice A is incorrect because it sets off &ldquo;polyvinyl alcohol&rdquo; with commas on both sides, wrongly treating the name as removable. Choice C is incorrect because a single trailing comma cuts the noun phrase off from its grammatical role as object of &ldquo;used.&rdquo; Choice D is incorrect because the comma before the name implies nonrestrictive status that the indefinite role does not license.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "54cb53cf-s1",
+  "originalId": "54cb53cf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The number of zebras in a population in 2020 was 1.45 times the number of zebras in this population in 2016. If the number of zebras in this population in 2016 is p% of the number of zebras in this population in 2020, what is the value of p, to the nearest whole number?</p>",
+  "answerOptions": null,
+  "keys": [
+    "69"
+  ],
+  "rationale": "<p>The correct answer is 69. Let x be the count in 2016 and y the count in 2020. Then y = 1.45x, so x/y = 1/1.45 \u2248 0.6897. Therefore x is about 68.97% of y, which rounds to 69%.</p>",
+  "templateId": "percentages.A3.T4.hard"
+}

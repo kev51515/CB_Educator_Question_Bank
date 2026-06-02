@@ -1,0 +1,39 @@
+{
+  "questionId": "bbfa2bb6-s1",
+  "originalId": "bbfa2bb6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p><em>Acacia senegal</em>, a tree found in the dry savannas of West Africa, is the world's main source of natural gum arabic, a substance used in foods, paints, and inks. The tree produces a sticky sap that hardens into the gum. The branches of <em>Acacia senegal</em> are helpful for the process of harvesting gum arabic because they have a distinctive feature that lets harvesters collect the sap easily. A pattern of weak points runs along each branch, and when harvesters peel back small strips of bark there, the sap flows out steadily and pools without much waste.</p>",
+  "stem": "<p>What feature of <em>Acacia senegal</em> does the text say is helpful for the process of harvesting gum arabic?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It can grow in a wide range of climates around the world.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Its sap produces gum arabic of an especially high purity.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Its branches have weak points that make it easy to collect the sap.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is one of only two trees in West Africa that produce sticky sap.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text states that the branches' pattern of weak points lets harvesters peel back strips of bark and collect the sap easily.</p><p>Choice A is incorrect; the text mentions only the dry savannas of West Africa, not a wide range of climates. Choice B is incorrect; the text does not discuss the purity of gum arabic. Choice D is incorrect; the text says <em>Acacia senegal</em> is the main source, not that it is one of only two sources.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

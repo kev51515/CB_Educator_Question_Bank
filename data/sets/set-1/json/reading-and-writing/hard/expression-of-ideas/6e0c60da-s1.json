@@ -1,0 +1,39 @@
+{
+  "questionId": "6e0c60da-s1",
+  "originalId": "6e0c60da",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Visitors to Aiko Tezuka's textile installations are often drawn in by the swirling, weather-like patterns that her tapestries seem to project, and many find themselves imagining storm fronts sweeping across alien skies. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it's the artist's wall label that pulls them back into the studio, revealing that each tapestry is woven entirely from unraveled department-store curtains.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Conversely,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In the end,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The first sentence describes the viewer's initial impression of the tapestries; the second describes what happens afterward, when the wall label brings them back to the everyday source material. \"In the end\" signals this temporal/sequential resolution.</p><p>Choice A is incorrect because \"likewise\" would mark the second sentence as a similar idea, but it actually reverses the impression created in the first. Choice B is incorrect because \"therefore\" would signal a causal result, but the wall-label revelation is not caused by the viewer's imagining. Choice C is incorrect because \"conversely\" would signal direct opposition between two static ideas, but the two sentences describe sequential phases of one experience rather than opposed claims.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A5.T16.hard"
+}

@@ -1,0 +1,578 @@
+[
+  {
+    "id": "ec5d4823-s1",
+    "templateId": "area-and-volume.A2.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A2.T1 requires cube-from-edge or reverse (V+base area->dim) or missing-face SA variant. Clone is plain 3-integer V=lwh with small integers \u2014 matches Easy lever, not Medium."
+  },
+  {
+    "id": "6708546e-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional scale, or reverse algebra. Clone gives integer scale factor 3 directly \u2014 this matches Medium lever, not Hard."
+  },
+  {
+    "id": "e5c57163-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt/percentage/fractional/reverse lever. Clone gives integer scale 247 directly and asks forward area ratio \u2014 matches Medium A3.T1 lever, not Hard."
+  },
+  {
+    "id": "983412ea-s1",
+    "templateId": "area-and-volume.A2.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T1 requires two-formula chain (SA<->V), symbolic SA, or SA-from-scratch of non-cube prism. Clone is single inverse application: V=s^2 h, solve for s. Matches Medium tier, not Hard."
+  },
+  {
+    "id": "8c1aa743-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional k, or reverse algebra. Clone gives integer scale factor 5 directly and asks forward area; matches Medium tier."
+  },
+  {
+    "id": "899c6042-s1",
+    "templateId": "area-and-volume.A2.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T3 requires reverse chain (V+base->h->slant via Pythagoras), hemisphere with (1/2), or multi-step approximation. Clone is direct forward V=(1/3)pi r^2 h with small integer r=3, h=33; matches Medium tier."
+  },
+  {
+    "id": "eb95235b-s1",
+    "templateId": "boundaries.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem lacks hard-tier characteristics: second clause ('performers use it...') is not a participial/prepositional phrase resembling a fragment; options do not differ on micro-punctuation/capitalization of the same form. Reads as easy/medium T1."
+  },
+  {
+    "id": "dcca0dfc-s1",
+    "templateId": "central-ideas-and-details.A3.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T8.hard requires 'pre-twentieth-century prose with elaborate syntax and elevated diction.' Mantel's 2009 Wolf Hall is modern prose; the syntactic friction defining T8.hard is absent. Inference is otherwise plausible and answer B is correct."
+  },
+  {
+    "id": "7f0be746-s1",
+    "templateId": "central-ideas-and-details.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T2 requires pre-twentieth-century literary prose or poem with figurative language and inverted syntax; this Ishiguro 2005 excerpt is modern prose with straightforward syntax, missing the diction/syntactic friction that defines T2 Hard."
+  },
+  {
+    "id": "2df56712-s1",
+    "templateId": "central-ideas-and-details.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 must_preserve requires an 'although/however/long thought\u2026 but' pivot in the stimulus that the correct option mirrors. This stimulus presents sequential facts leading to a conclusion without a corrective/contrastive pivot, and the correct option B is a straight summary rather than mirroring a pivot."
+  },
+  {
+    "id": "23ecf625-s1",
+    "templateId": "central-ideas-and-details.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard variant requires an 'although/however/long thought... but' corrective pivot the correct answer mirrors. Clone lacks this pivot; stimulus is a straightforward claim + example with no counterintuitive turn, collapsing toward Easy/Medium difficulty."
+  },
+  {
+    "id": "8e7689e0-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "difficulty_drift",
+    "detail": "540\u00b0 is one of the 'easy' lever angles (integer multiple of 180\u00b0); medium lever requires unusual numerator/denominator like 9\u03c0/20. Answer (b=3) is correct."
+  },
+  {
+    "id": "2d521ca9-s1",
+    "templateId": "circles.A4.T9.medium",
+    "verdict": "difficulty_drift",
+    "detail": "45\u00b0 is explicitly an 'easy' lever angle (in {30,45,60,90,180,360}); medium lever requires unusual numerator/denominator. Answer (\u03c0/4) is correct."
+  },
+  {
+    "id": "24cec8d1-s1",
+    "templateId": "circles.A5.T12.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires perimeter-to-chord problem or distractor with apex value; clone is a straightforward apex\u2192base-angle computation matching medium lever."
+  },
+  {
+    "id": "1efd7ef3-s1",
+    "templateId": "circles.A4.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever specifies tangent (sign matters) or indirect angle via point coordinates; clone uses sine of integer-\u03c0/2 multiple, fitting the medium lever."
+  },
+  {
+    "id": "3e577e4a-s1",
+    "templateId": "circles.A5.T11.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires identifying a point on the tangent line or careful negative-sign handling; clone is a straightforward slope-then-negative-reciprocal task matching the medium lever."
+  },
+  {
+    "id": "fa2771d5-s1",
+    "templateId": "circles.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 requires radius scaling, coefficient-hidden form, or numeric-extract. Clone is a pure small-integer translation (down 5), satisfying only easy/medium levers."
+  },
+  {
+    "id": "2266984b-s1",
+    "templateId": "circles.A2.T4.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T4 requires leading coef \u22601, odd linear coef (fractions), or embedded constant. Clone has leading coef 1, even linear coefficients (6, -10), and asks center directly \u2014 matches medium lever."
+  },
+  {
+    "id": "ab176ad6-s1",
+    "templateId": "circles.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 requires non-perfect-square r\u00b2 (sqrt simplification), diameter (extra step), or symbolic parameter. Clone has r\u00b2=169 (perfect square) and asks radius directly \u2014 matches medium lever exactly."
+  },
+  {
+    "id": "0198240a-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation or 'fill the missing causal link' move; here the stimulus lacks any alternative and the keyed finding (D) is essentially a direct restatement of the hypothesized properties (resist compression + high heat conduction), violating the common-bug 'correct finding that merely restates the hypothesis' and the hard lever 'rules out a specific named alternative or supplies the precise missing link'."
+  },
+  {
+    "id": "02848335-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T9 requires multi-sub-claim conclusion and multi-row pattern with \u22654 rows \u00d7 \u22653 columns, plus distractors that accurately describe data but support a different conclusion. This clone uses only a 2\u00d73 table with a single-claim conclusion ('pyrolysis more robust') resolved by one worst-case-vs-best-case comparison; closer to Medium-level."
+  },
+  {
+    "id": "c83e0b43-s1",
+    "templateId": "command-of-evidence.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A1.T1 requires abstract multi-clause descriptors and inference from archaic/formal diction with multiple superficially relevant distractors. This clone has a single-axis trait ('draws steady comfort from intimate knowledge of the natural world'), and Choice C explicitly paraphrases it ('content among things she knew so well'). Distractors A, B, D are clearly off-topic (bad news, unfamiliarity, hurrying away). Reads as Easy/Medium."
+  },
+  {
+    "id": "39e440e4-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation and highly plausible distractors that support a rival hypothesis or the wrong specific link. The stimulus mentions the prior 'small fishing villages' view but the distractors (B small dwellings, C inland footpaths, D scattered garden plots) are obvious anti-urbanism scenarios that don't competitively support a rival; correct answer is a direct match to 'monumental planned urbanism'. Closer to Easy/Medium."
+  },
+  {
+    "id": "a520ba07-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Single radical-to-power conversion with perfect exponents (cbrt(p^3 q^6)=pq^2) is an easy-lever item; medium requires multi-step rule chain or rational-exponent <-> radical with non-trivial indices. Answer pq^2 is correct."
+  },
+  {
+    "id": "c3a72da5-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T2 lever requires subtraction (distribute negative across second polynomial); this clone is pure addition of two polynomials with small integer coefficients, matching the easy lever. Answer 11w^5+7w^2 is correct."
+  },
+  {
+    "id": "974d33dc-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T2 requires subtraction with sign distribution; clone is pure addition (4x+3y)+(2x+5y) with small integers, matching easy lever, not medium."
+  },
+  {
+    "id": "588887b9-s1",
+    "templateId": "form-structure-and-sense.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Past-perfect required by 'two decades earlier' sequencing with another past event matches the medium lever ('two competing time frames, past-perfect vs simple-past discrimination'), not easy. Answer 'had designed' is correct, but item belongs at medium."
+  },
+  {
+    "id": "9ba3e283-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T2 lever requires 'embedded percentage of a non-divisible class size (e.g., 34.6% of 26 must round to integer count).' Clone uses 40% of 25 = exactly 10, no rounding required. Also the per-class computation is trivial; only the complement step adds difficulty."
+  },
+  {
+    "id": "308084c5-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 lever requires 'sample-size comparison hidden in a multi-column table.' Clone provides no table or numeric sample sizes; the question is purely conceptual. Closer to the easy variant ('only one option mentions sample size')."
+  },
+  {
+    "id": "1ffd60ce-s1",
+    "templateId": "inferences.A2.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone file is in hard/ folder and difficulty='Hard', but templateId tags it as medium. Stimulus complexity (multi-step quantitative reasoning about silver percentage, tribute constraints, multiple distractors near-miss) matches hard levers, not medium."
+  },
+  {
+    "id": "6f6dfe3e-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T10.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses a parametric table (n + 120, n + 60, n), which the template lists as a hard-level characteristic for T10 ('Table contains a parameter (e.g., n)'). Medium T10 characteristics call for standard-form rearrangement, two integer points, or distributive simplification \u2014 not symbolic parameters."
+  },
+  {
+    "id": "400798d6-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Interpreted piece is the constant 50 on the right side (T4-easy lever: 'Term is the constant on the right side (a total)'). Medium lever requires interpreting a variable product like 6y. Keyed answer (perimeter = sum of three sides) is correct, but variant matches T4 easy, not medium."
+  },
+  {
+    "id": "c5e38487-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Stem reduces to w + 23 = 80 (one-step) with unit coefficients (w + a = 80). Matches T2 easy levers ('Simple sum constraint x+y=total or single-step substitution: only one inverse operation'), not medium ('Two-step linear equation after substitution; decimal or non-unit coefficients'). Answer correct."
+  },
+  {
+    "id": "c362c210-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem reduces to single-step division (25/20). Pears variable never used; no genuine two-variable substitution. Fails hard lever 'Two-step solve combined with extra arithmetic' and constraint that equation has exactly two variables both engaged."
+  },
+  {
+    "id": "c4ea43ef-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Substituting (20,0) into 15x+25y=t is a trivial one-step multiplication (15*20). Fails hard lever 'Two-step solve combined with extra arithmetic'; collapses to easy level."
+  },
+  {
+    "id": "cb58833c-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T11.hard",
+    "verdict": "difficulty_drift",
+    "detail": "7x-4y=21 with y=0 yields single-step solve (x=3). No translation, no fractional rearrangement, no multi-step isolation. Fails hard lever 'multi-step isolation before substitution' or 'translated graph'."
+  },
+  {
+    "id": "cc7ffe02-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T4 requires geometric/compound context or two-step unit reinterpretation. Clone is a straight rate*count product interpretation (volume in large bottles); matches medium T4 (e.g., 6y as 'total cups in large containers'), not hard."
+  },
+  {
+    "id": "d0e614a6-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T9.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T9 requires fractional coefficients producing fractional y-values. Clone uses integer coefficients 4x+5y=9 with clean integer y outputs; matches medium T9 (standard form, integer coefficients)."
+  },
+  {
+    "id": "8da536c6-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses growth/percent-change scenario (1.22e + 1.35d = 50(1.28)), which matches the A1.T1 hard lever ('growth/percent-change scenario where each variable is multiplied by (1+p)'), not easy ('small whole-number rates'). Mislabeled easy."
+  },
+  {
+    "id": "789975b7-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'Small whole-number rates (1, 3, 5, 10) and whole-number total' with no unit conversion. Clone uses a percent-by-weight mixture (0.3, 0.7) with decimal coefficients \u2014 template explicitly lists 'percent-by-weight mixture where each variable carries a decimal fraction' as a HARD characteristic."
+  },
+  {
+    "id": "4d8ccb96-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Percent-by-weight mixture (0.05a + 0.80b = 0.10*30) matches hard lever 'percent-by-weight mixture where each variable carries a decimal fraction and the right side itself is a product', not easy's 'small whole-number rates' and 'no unit conversion'."
+  },
+  {
+    "id": "cea27ab2-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T9.easy",
+    "verdict": "difficulty_drift",
+    "detail": "T9 easy lever requires 'equation already in slope-intercept form with integer slope and intercept'; clone uses standard form 3x-2y=-18, which matches the medium lever."
+  },
+  {
+    "id": "7e3f8363-s1",
+    "templateId": "linear-functions.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Points (0,2) and (6,26): one point is on the y-axis, so b is read directly and slope is a clean integer. This satisfies the easy lever ('Table contains a row at x=0 so b is read directly'), not the medium lever ('Neither row is at x=0; student must compute slope then back-solve for the intercept')."
+  },
+  {
+    "id": "c651cc56-s1",
+    "templateId": "linear-functions.A1.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Single linear function given as a table with a missing row (find f(3) by linear interpolation). The table-with-missing-row pattern is the T5 hard lever ('One function is given as a table with a missing row; linearity must be inferred'), not the T5 medium lever ('Both functions are given as explicit equations ... combined by addition/subtraction/scaling'). Tagged medium, but the stem structure matches hard."
+  },
+  {
+    "id": "0d5495a6-s1",
+    "templateId": "linear-functions.A1.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A1.T4 requires parameter embedded in sub-expression or multi-step solve. Here g(x)=x+c with g(0)=27 collapses to single trivial substitution (c=27), matching easy-tier characteristics, not medium."
+  },
+  {
+    "id": "23dedddd-s1",
+    "templateId": "linear-functions.A3.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A3.T1 requires supplied point NOT on y-axis (compute b from y-mx=b) or non-trivial inputs. Clone gives g(0)=6 and g(1)=11, which the easy-tier description explicitly cites: 'two known function values are f(0) and f(1), revealing slope and intercept directly'."
+  },
+  {
+    "id": "e9908930-s1",
+    "templateId": "linear-functions.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires neither row at x=0 with narrative/non-trivial points; this clone has a row at x=0 (b=10 readable directly), which is the easy lever. Construction collapses to easy."
+  },
+  {
+    "id": "af2ba762-s1",
+    "templateId": "linear-functions.A2.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires non-standard form needing rearrangement (e.g., y-5x=6) or constant embedded as coefficient of nested factor. Clone uses standard f(x)=3.18d+8.45 where constant 8.45 is directly visible \u2014 matches easy levers."
+  },
+  {
+    "id": "f224df07-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone has two unknown counts with two competing constraints (budget \u2264470 AND minimum count \u22658) requiring algebraic solving of a system \u2014 this matches the A2.T2.hard lever, not medium."
+  },
+  {
+    "id": "c17d9ba9-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone substitutes y=5 to compute a single numeric bound (x=12). Per A5.T1, this is the hard lever ('requires substituting a specific value... answer is a single number'); medium should return an inequality form."
+  },
+  {
+    "id": "9e5863bd-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A1.T2 requires multiplying a per-unit range by a fixed quantity, or composing rates. This clone is a direct compound inequality on the same stated min/max with no rate conversion \u2014 matches easy lever, not medium."
+  },
+  {
+    "id": "ecca0603-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone is a system of two inequalities with three rows per table \u2014 both characteristics of the A3.T2.hard lever. Medium requires a single inequality with two rows per table."
+  },
+  {
+    "id": "e723bd67-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses 3x\u2212y>50 with three rows per table \u2014 the larger-coefficient/3-row pattern characterizes A3.T2.hard, not medium (which is small positive-slope, two rows)."
+  },
+  {
+    "id": "f2bbd43d-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone has a partially specified point (x, 22) requiring elimination of options against the system \u2014 this is the A3.T1.hard lever, not medium (medium uses fully specified candidate pairs)."
+  },
+  {
+    "id": "ee2f611f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T2 requires two competing constraints, percent overhead, or binding-constraint identification among multiple. Clone has a single constraint with three rate options; selecting the max fare is a one-step solve closer to medium difficulty."
+  },
+  {
+    "id": "541bef2f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires a partially specified point (one coordinate symbolic) or a region of valid y-coordinates. Clone uses four fully specified ordered pairs, matching the medium A3.T1 difficulty lever."
+  },
+  {
+    "id": "a049f400-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T2 requires larger coefficients (e.g., 13x, 2x-y>883) or a 2-inequality system. Clone uses y<4x+3 with small slope 4 and a single inequality, matching the medium A3.T2 lever."
+  },
+  {
+    "id": "f8ff3249-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T2 requires larger coefficients or a 2-inequality system. Clone uses y<8x+5 with small slope 8 and a single inequality, matching the medium A3.T2 lever."
+  },
+  {
+    "id": "3b225698-s1",
+    "templateId": "lines-angles-and-triangles.A5.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T1 requires non-obvious correspondence, quadrilaterals with polygon-sum step, or misleading side-ratio distractors needing analysis. Clone is direct \u2220R\u2194\u2220W with a side ratio that is simply ignored; better fits medium difficulty."
+  },
+  {
+    "id": "bd7f6e30-s1",
+    "templateId": "lines-angles-and-triangles.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 variant requires overlapping/intersecting triangles with two combined isosceles arguments, or a nested config requiring exterior-angle plus angle-sum chaining. Clone is a single isosceles triangle with one exterior-angle step \u2014 matches medium/easy difficulty at best."
+  },
+  {
+    "id": "410bdbe6-s1",
+    "templateId": "lines-angles-and-triangles.A2.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'both given angles are explicit integer measures (no expressions)'. Clone gives one angle as the expression 2b\u00b0 and asks for parameter b, which matches the medium lever 'one of the angles is given as a symbolic expression like (k/2)\u00b0'."
+  },
+  {
+    "id": "b434e103-s1",
+    "templateId": "lines-angles-and-triangles.A2.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'both given angles are explicit integer measures' with answer = 180 - g1 - g2. Clone gives only one angle (J=48) and asks 'which could be K,' requiring an inequality check (K<132) \u2014 that matches the medium lever, not easy."
+  },
+  {
+    "id": "5ae186b4-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T5 medium requires 'clearing the denominator produces a quadratic that factors over integers.' Clone \u221272/w = 8 yields a one-step linear solution (w = \u22129), no quadratic; difficulty regressed below T5 medium."
+  },
+  {
+    "id": "faeae876-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses cubic\u00d7quartic factored form (x\u00b3+27)(x\u2074\u221216); T6 medium requires 'two or three linear factors.' Higher-degree factored form with discriminant reasoning is T6 hard (original faeae876 is listed in T6 hard example_ids)."
+  },
+  {
+    "id": "652054da-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone n=(5/7)m \u2192 m=(7/5)n requires only one inverse operation (multiply by reciprocal), no context wrapper, no denominator unpacking. Fits easy lever ('1-2 inverse operations, pure symbolic form'), not medium ('2-3 inverse operations\u2026 real-world context\u2026 denominator')."
+  },
+  {
+    "id": "a1262cdb-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever requires 2-3 inverse operations, often with context wrapper, distribution, or denominator. Clone 9s+d=f asking for f-d is a single subtraction (one inverse step) with integer coefficients and no context \u2014 matches easy lever, not medium."
+  },
+  {
+    "id": "71014fb1-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter (b, c, k) so student solves discriminant equation for that parameter. Clone (x+3)^2=-7 has no parameter; it's a direct no-real-solution check, matching the easy lever 'direct discriminant calculation on a numeric quadratic'."
+  },
+  {
+    "id": "4dc5c6f9-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter. Clone has no parameter; it's a direct intersection-count of y=22 with a fully numeric downward parabola (max y=17). Better fits A4.T10 medium count-intersections."
+  },
+  {
+    "id": "74473be4-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter to solve for. Clone is MCQ 'which quadratic has no real solutions' with four fully-numeric options - this matches medium lever ('which quadratic equation has exactly one / no real solutions')."
+  },
+  {
+    "id": "2cd6b22d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T7 lever requires a literal parameter (b, c, k, a) with student solving for it (e.g., 'find c such that equation has exactly one solution'). Clone is parameter-free count-of-solutions on numeric quadratic; matches easy T7 lever. Math correct (discriminant=-96, zero solutions)."
+  },
+  {
+    "id": "f2f3fa00-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 levers require target variable in multiple places, radical/square, or 3+ other variables. Clone needs only 2 simple inverse operations (multiply by 8, add 20) on a 2-variable equation; matches easy lever. Math correct (k=20)."
+  },
+  {
+    "id": "6676f055-s1",
+    "templateId": "nonlinear-functions.A3.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone provides quadratic already in vertex form f(\u03b8)=\u22120.35(\u03b8\u221242)\u00b2+1150, which matches the easy lever 'rule already in vertex form'. Medium lever requires form y=x\u00b2+c or p(x)+k=x\u00b2 (single rearrangement). Answer (42) is correct."
+  },
+  {
+    "id": "58dcc59f-s1",
+    "templateId": "nonlinear-functions.A4.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Clone is single-variable area=w(w+3)=70 (medium lever: 'one dimension in terms of the other; given area, solve for width'). Hard requires 3D volume, two simultaneous constraints, or KE-style application."
+  },
+  {
+    "id": "84dd43f8-s1",
+    "templateId": "nonlinear-functions.A4.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem is medium-style value-after-n-periods with percent-change phrasing. Hard requires non-annual period rewrite, 150%-more vs 150%-OF distractor, or doubling-time recovery."
+  },
+  {
+    "id": "2c6f214f-s1",
+    "templateId": "nonlinear-functions.A4.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Basic geometric-sequence formula w=ar^(n-1) is medium-level at most. Hard requires period rewrite, 150% trap, base-rebased exponential, or doubling-time analysis."
+  },
+  {
+    "id": "d46da42c-s1",
+    "templateId": "nonlinear-functions.A3.T5.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy A3.T5 levers are 'choose graph from a table of values' or 'identify horizontal asymptote from labeled graph'. Clone asks for graph features from a factored cubic equation, fitting A3.T4 (zeros) / A3.T2 (intercept) rather than T5 easy lever."
+  },
+  {
+    "id": "39652e93-s1",
+    "templateId": "nonlinear-functions.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'no fraction or negative-exponent base' and a single-/two-term polynomial or radical rule; g(x)=25/x is a rational (x^-1) form, which the template explicitly assigns to the medium lever."
+  },
+  {
+    "id": "a29e89fc-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever for A1.T1 requires '4-digit numbers or one decimal place so arithmetic is non-trivial' and 'non-round mean requiring careful division'. Clone uses 5 two-digit integers (28,30,29,31,32) summing evenly to 150/5=30 \u2014 this is an Easy-level computation."
+  },
+  {
+    "id": "014c47ab-s1",
+    "templateId": "probability-and-conditional-probability.A3.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T8 requires: conditioning subset is a union of two+ rows/cols, OR table is 3\u00d73+, OR reverse setup. Clone uses a simple 2\u00d72 table with a single-row 'given' (trout, 45 total) \u2014 matches the medium difficulty lever, not hard. Answer 3/5 is correct."
+  },
+  {
+    "id": "585de39a-s1",
+    "templateId": "probability-and-conditional-probability.A4.T13.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T13 requires 'two totals present, only one applicable' (e.g., May 83M and Sept 97M with only one being the correct denominator). Clone gives only one total (120M); no distractor total is present. Answer 46 is correct, but the hallmark hard lever (two totals as distractor) is absent."
+  },
+  {
+    "id": "06a152cd-s1",
+    "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Template states A1.T3 is 'Not represented at Easy; chained conversions are inherently medium-or-above.' Item correctly chains rate (3 oz/cookie) and unit conversion (16 oz/lb), so its inherent difficulty is medium, not easy."
+  },
+  {
+    "id": "13d9a1c3-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Template marks T8 as hard-only ('not observed at medium'); clone is a straightforward 30-60-90 hypotenuse-to-short-leg conversion appropriate for easy/medium but lacks the hard levers (k*sqrt(3) form, multi-step chain). Answer (7) is correct."
+  },
+  {
+    "id": "bf8d843e-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T8 template has no medium variant; clone is a direct 30-60-90 hypotenuse-to-leg one-step problem without hard levers (k*sqrt(3) answer form, multi-step chain). Answer (6) is correct."
+  },
+  {
+    "id": "9ec76b54-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever requires reverse direction (hypotenuse + one leg -> other leg); clone uses forward direction (two legs -> hypotenuse), which is the easy lever. Answer (12*sqrt(5)) is correct."
+  },
+  {
+    "id": "7c25b0dc-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires side lengths with radical factors yielding k*sqrt(d) answer; clone resolves to plain integer L=10 (a 'common bug' the template explicitly warns against: 'dropping the common radical factor so the answer becomes a plain integer \u2014 destroys the lever'). Answer is correct."
+  },
+  {
+    "id": "1bf809b5-s1",
+    "templateId": "right-triangles-and-trigonometry.A2.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T3 requires computing missing side via Pythagoras before forming the ratio; clone gives hypotenuse and adjacent directly, so cos x = 7/20 is one-step (easy-tier)."
+  },
+  {
+    "id": "bd87bc09-s1",
+    "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T5 requires derived quantity (perimeter/area) requiring ratio\u2192both legs\u2192Pythagoras\u2192combine. Clone asks for a single side QR, which matches the medium-tier lever (one-step ratio application plus simple Pythagoras)."
+  },
+  {
+    "id": "f811d345-s1",
+    "templateId": "right-triangles-and-trigonometry.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 requires side lengths containing radical factors (e.g., 10\u221a37, 24\u221a37) so the answer's k\u221ad form arises from the input radicals. Clone uses plain integer legs 18 and 15; the k\u221ad form arises only by simplifying \u221a549, matching common_bugs warning about dropping the radical factor."
+  },
+  {
+    "id": "19fdf387-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T11 template defines empty medium characteristics (frequency easy:0, medium:0, hard:2). Clone is a trivial one-step substitution (point (1,4) on y=ax \u2192 a=4), well below T11's hard-only difficulty profile requiring partially-specified intersection and coupled parameters. Answer is correct."
+  },
+  {
+    "id": "d1b66ae6-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T2.hard requires large/non-coprime coefficients or fractional solution or combined-expression target (e.g., xy, 30x). Clone uses small integer coefficients (2,3,4,-1), asks for y directly, integer solution \u2014 matches easy/medium characteristics, not hard."
+  },
+  {
+    "id": "1362ccde-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T3.hard requires non-obvious combined expression with shortcut via sum/difference of equations, or grouped compound variables, or fractional/large coefficients. Clone uses simple substitution on integer system asking x-y \u2014 matches medium characteristics."
+  },
+  {
+    "id": "52cb8ea4-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T3.hard requires non-obvious combined expression admitting elimination shortcut, compound-variable grouping, or fractional/large coefficients. Clone has small integer coefficients, asks for x+y \u2014 fits T3.medium ('asked expression is a small multiple/sum')."
+  },
+  {
+    "id": "4f1342d6-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T5.hard requires mixture/weighted-percent, two parallel scenarios, or rate\u00d7time setup requiring back-conversion. Clone is a simple sum+ratio word problem (May/June sales) reducing to one linear equation in one variable \u2014 matches T5.medium ('one relationship is a ratio and one is a sum')."
+  },
+  {
+    "id": "90ba8f98-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T5 lever requires slope between 0 and 1 (or -1 and 0) so sign+magnitude both diagnostic, and decimal/non-integer reads. Clone uses integer slope = 3 from clean integer coordinates; this matches Easy lever, not Medium."
+  },
+  {
+    "id": "9d95e7ad-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T6.hard requires slope scaled by non-unit interval (per 5/10 units) OR slope estimated from figure first. Clone asks for plain per-unit increase = slope from two given coords, which is just T5 slope computation, not T6 interpretation."
+  },
+  {
+    "id": "d112bc9d-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Clone asks about greatest increase between consecutive x-values requiring computing four differences (+15,-4,-2,+2). Per template, this matches T1.medium ('interval requiring two reads plus subtraction'), not easy ('no calculation required, extreme value visually obvious')."
+  }
+]

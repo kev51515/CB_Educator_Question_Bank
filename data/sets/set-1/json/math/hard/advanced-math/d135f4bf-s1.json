@@ -1,0 +1,22 @@
+{
+  "questionId": "d135f4bf-s1",
+  "originalId": "d135f4bf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> &minus; 3)(<i>x</i> + 1)(<i>x</i> &minus; 7). In the <i>xy</i>-plane, the graph of <i>y</i> = <i>g</i>(<i>x</i>) is the result of translating the graph of <i>y</i> = <i>f</i>(<i>x</i>) up 5 units. What is the product of all distinct values <i>v</i> for which <i>g</i>(<i>v</i>) = 5?</p>",
+  "answerOptions": [],
+  "keys": [
+    "-21"
+  ],
+  "rationale": "<p>Because <i>g</i>(<i>x</i>) = <i>f</i>(<i>x</i>) + 5, the equation <i>g</i>(<i>v</i>) = 5 is equivalent to <i>f</i>(<i>v</i>) = 0. The zeros of <i>f</i> are <i>v</i> = 3, &minus;1, and 7. Their product is 3 &middot; (&minus;1) &middot; 7 = &minus;21.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A5.T1.hard"
+}

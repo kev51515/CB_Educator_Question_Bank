@@ -1,0 +1,39 @@
+{
+  "questionId": "84664a7c-s1",
+  "originalId": "84664a7c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A hot-air balloon starts 25 feet above the ground. If the balloon rises at a constant rate of 6 feet per second, which of the following equations gives the height <i>h</i>, in feet, of the balloon <i>s</i> seconds after it begins rising?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>h</i> = 25<i>s</i> + 6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>h</i> = 6<i>s</i> + 25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>h</i> = 6<i>s</i> &minus; 25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>h</i> = 25<i>s</i> &minus; 6</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The initial height of 25 feet is a constant, and the balloon rises 6 feet each second, contributing 6<i>s</i>. So <i>h</i> = 6<i>s</i> + 25.</p><p>Choice A swaps the rate and initial height. Choices C and D incorrectly subtract the initial value instead of adding it.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A3.T3.easy"
+}

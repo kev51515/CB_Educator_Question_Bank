@@ -1,0 +1,39 @@
+{
+  "questionId": "80da233d-s1",
+  "originalId": "80da233d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A certain young tortoise weighs 5 kilograms at hatching and gains more than 0.01 but less than 0.02 kilograms per day during its first 200 days. Which of the following inequalities represents all possible weights <em>w</em>, in kilograms, for the tortoise 200 days after hatching?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7 &lt; <em>w</em> &lt; 9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2 &lt; <em>w</em> &lt; 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5 &lt; <em>w</em> &lt; 7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9 &lt; <em>w</em> &lt; 11</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The minimum daily gain \u00d7 200 = 0.01 \u00d7 200 = 2 kg, giving a minimum weight of 5 + 2 = 7 kg. The maximum daily gain \u00d7 200 = 0.02 \u00d7 200 = 4 kg, giving 5 + 4 = 9 kg. Therefore 7 &lt; <em>w</em> &lt; 9.</p><p>Choices B, C, and D are incorrect; they neglect the initial weight or use wrong endpoints.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium"
+}

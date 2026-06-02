@@ -1,0 +1,25 @@
+{
+  "questionId": "37957752-s1",
+  "originalId": "37957752",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>As biologist Susan Williams has documented, long-distance migration presents a challenge for hummingbirds and other small migrating birds. A hummingbird must store enough fat to fuel itself across hundreds of miles of open water, while keeping its body weight low enough that it can still maintain its rapid wingbeat. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a hummingbird feeds almost constantly in the weeks before migration, building up fat reserves to nearly double its normal body weight.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In the first place,</p>"},
+    {"id": "b", "content": "<p>On the other hand,</p>"},
+    {"id": "c", "content": "<p>For this reason,</p>"},
+    {"id": "d", "content": "<p>In comparison,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"For this reason\" logically signals that the behavior described in this sentence is a consequence of the information about hummingbirds in the previous sentence. That is, a hummingbird feeds almost constantly before migration because it needs to store enough fat to fuel itself without becoming too heavy.</p><p>Choice A is incorrect because \"in the first place\" illogically signals the first point in a discussion. Instead, the sentence describes a behavior that is a consequence of the previous information. Choice B is incorrect because \"on the other hand\" illogically signals contrast. Instead, the behavior is a consequence of the previous information. Choice D is incorrect because \"in comparison\" illogically signals a comparison. Instead, the behavior is a consequence of the previous information.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

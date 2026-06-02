@@ -1,0 +1,23 @@
+{
+  "questionId": "2d0e13a6-s1",
+  "originalId": "2d0e13a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Line <i>k</i> is defined by <i>y</i> = &frac25;<i>x</i> + 3. Line <i>m</i> is parallel to line <i>k</i> in the <i>xy</i>-plane. What is the slope of line <i>m</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2/5",
+    ".4"
+  ],
+  "rationale": "<p>Parallel lines have equal slopes. The slope of line <i>k</i> is &frac25;, so the slope of line <i>m</i> is also &frac25; (equivalently, 0.4).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "7afdcca2-s1",
+  "originalId": "7afdcca2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T11.medium",
+  "stimulus": "<p>Over 300 languages are spoken in greater London in addition to English—one can find Bengali spoken in the area of Tower Hamlets, or Yoruba in Peckham. Most speakers of Spanish languages reside in the area of Elephant and Castle (part of London's borough of Southwark) and in Seven Sisters, in the borough of Haringey. New arrivals from the Andean region of Colombia, where many people speak Spanish with regional Pacific influences, tend to settle in Seven Sisters, while new arrivals from coastal Ecuador, where many people speak Spanish with Quichua loanwords, tend to settle in Elephant and Castle. It can therefore be inferred that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>regional language correlations in one country can replicate themselves in a destination country to which the original country's citizens emigrate.</p>"},
+    {"id": "b", "content": "<p>there is a positive correlation between the physical size of a country and the number of languages spoken in that country.</p>"},
+    {"id": "c", "content": "<p>languages tend to change more rapidly in areas where many languages are spoken than in areas where few languages are spoken.</p>"},
+    {"id": "d", "content": "<p>languages spoken by immigrant communities can differ significantly in vocabulary and pronunciation from those same languages in their country of origin.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is best. Speakers from one region of Colombia cluster in one London neighborhood and speakers from one region of Ecuador cluster in another, mirroring regional distinctions from their countries of origin. The pattern supports the inference that regional language correlations can replicate themselves in destination countries. Choices B and C are unsupported—country size and rate of language change are not discussed. Choice D speculates about vocabulary/pronunciation changes, but the text only addresses settlement patterns.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

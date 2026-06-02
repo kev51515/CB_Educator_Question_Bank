@@ -1,0 +1,39 @@
+{
+  "questionId": "50f4cb9c-s1",
+  "originalId": "50f4cb9c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows three values of x and their corresponding values of f(x) for a linear function f. Function f is defined by f(x) = ax + b, where a and b are constants. What is the value of a - b?</p><table border=\"1\"><tr><th>x</th><th>f(x)</th></tr><tr><td>2</td><td>-30</td></tr><tr><td>4</td><td>0</td></tr><tr><td>6</td><td>30</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-75</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>75</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (0 - (-30))/(4 - 2) = 30/2 = 15, so a = 15. Using f(4) = 0: 0 = 15(4) + b, so b = -60. Then a - b = 15 - (-60) = 75.</p><p>Choice A reflects mis-adding the values. Choice B uses the wrong sign on b. Choice C gives just a.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

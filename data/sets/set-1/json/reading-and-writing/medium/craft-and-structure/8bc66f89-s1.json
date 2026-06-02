@@ -1,0 +1,25 @@
+{
+  "questionId": "8bc66f89-s1",
+  "originalId": "8bc66f89",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>Parts of the Namib Desert in southern Africa support unexpectedly diverse plant communities despite extremely scarce rainfall. Coastal fog provides moisture that established plants can absorb, but the sand surface is often packed so tightly that few seeds can take root. Termites that build mounds in this terrain appear to play a helpful role: <span role=\"region\" aria-label=\"Referenced Content\"><u>they loosen the surrounding soil and pull organic matter from deeper layers up to the surface, where seeds can settle and germinate</u></span>. In a 2018 study, ecologist Norbert J&uuml;rgens found that the soil immediately around termite mounds contained roughly twice the density of seedlings as nearby undisturbed soil.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It elaborates on the idea that the sand surface in the Namib Desert is tightly packed.</p>"},
+    {"id": "b", "content": "<p>It describes how seeds are first deposited in Namib Desert soil.</p>"},
+    {"id": "c", "content": "<p>It explains how certain termites encourage seed germination in Namib Desert soil.</p>"},
+    {"id": "d", "content": "<p>It identifies why particular termite species choose to build mounds in arid terrain.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. The first two sentences establish a puzzle: the Namib supports diverse plant life despite tightly packed sand that hinders seedling establishment. The next sentence, containing the underlined portion, offers a possible explanation: termites loosen the soil and bring organic matter to the surface, where seeds can germinate. The final sentence reports a study finding that supports this explanation. Thus the underlined portion functions chiefly to explain how certain termites encourage seed germination.</p><p>Choice A is incorrect because the underlined portion does not elaborate on the packed sand surface but instead describes how termites disturb it. Choice B is incorrect because the underlined portion is about conditions for germination, not how seeds arrive in the soil. Choice D is incorrect because neither the underlined portion nor the text as a whole identifies why termites choose to build mounds.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

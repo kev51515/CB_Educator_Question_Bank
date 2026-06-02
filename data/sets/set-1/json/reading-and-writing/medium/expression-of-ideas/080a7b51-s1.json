@@ -1,0 +1,25 @@
+{
+  "questionId": "080a7b51-s1",
+  "originalId": "080a7b51",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Consider a wooden chair that a family has used for decades before donating it to a thrift store. This chair represents secondhand reuse, as it changes owners while still functioning in its original form. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the wooden planks rescued from a demolished barn and refashioned into a new chair represent upcycling, as the original material is reshaped into something with a distinct identity.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As a result,</p>"},
+    {"id": "b", "content": "<p>In contrast,</p>"},
+    {"id": "c", "content": "<p>For instance,</p>"},
+    {"id": "d", "content": "<p>In particular,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"In contrast\" logically signals that the information in this sentence—that the rescued barn planks represent upcycling—contrasts with the previous information about the donated chair representing secondhand reuse.</p><p>Choice A is incorrect because \"as a result\" illogically signals that upcycling occurs as a consequence of secondhand reuse, when the two concepts are simply being contrasted. Choice C is incorrect because \"for instance\" illogically signals that upcycling is an example of secondhand reuse, when the two are actually being distinguished. Choice D is incorrect because \"in particular\" illogically signals that the sentence narrows the previous claim with precise detail, when in fact it introduces a contrasting category.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

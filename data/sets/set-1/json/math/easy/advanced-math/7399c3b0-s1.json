@@ -1,0 +1,39 @@
+{
+  "questionId": "7399c3b0-s1",
+  "originalId": "7399c3b0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><msup><mi>m</mi><mn>2</mn></msup><mo>-</mo><mn>47</mn><mo>=</mo><mn>34</mn></math></p><p>What is the positive solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>81</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Adding 47 to both sides yields <math><msup><mi>m</mi><mn>2</mn></msup><mo>=</mo><mn>81</mn></math>. Taking the square root gives <em>m</em> = \u00b19, so the positive solution is 9.</p><p>Choices A, B, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy"
+}

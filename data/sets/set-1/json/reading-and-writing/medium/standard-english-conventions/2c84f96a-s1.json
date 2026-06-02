@@ -1,0 +1,25 @@
+{
+  "questionId": "2c84f96a-s1",
+  "originalId": "2c84f96a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>In 2019, composers Mei Lin Chen and Diego Ramirez rescored the orchestral interludes and dance sequences for The San Francisco Opera&rsquo;s production of <em>The</em> <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to critics, the rescoring helped knit the production with currents drawn from contemporary Mexican and Taiwanese folk music.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>Magic Flute</em>, according</p>"},
+    {"id": "b", "content": "<p><em>Magic Flute</em>. According</p>"},
+    {"id": "c", "content": "<p><em>Magic Flute</em> according</p>"},
+    {"id": "d", "content": "<p><em>Magic Flute</em> according,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between one sentence (&ldquo;In 2019...<em>Magic Flute</em>&rdquo;) and another (&ldquo;According...music&rdquo;). The supplementary element &ldquo;according to critics&rdquo; modifies the main clause of the second sentence.</p><p>Choice A is incorrect because it results in a comma splice. Choice C is incorrect because it results in a run-on sentence. Choice D is incorrect because it results in a run-on sentence; in addition, no punctuation is needed within the supplementary element &ldquo;according to critics.&rdquo;</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

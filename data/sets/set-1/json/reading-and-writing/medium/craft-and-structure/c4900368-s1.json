@@ -1,0 +1,25 @@
+{
+  "questionId": "c4900368-s1",
+  "originalId": "c4900368",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is from the 1922 poem &ldquo;Harvest Round&rdquo; by Lola Ridge, an Irish-American poet.</p>\n<p style=\"padding-left:1em;\">There shall be other harvests rising,<br>A new turning of the wheel&mdash;<br>Our hands shall have a different gleaning,<br>Pale fields renew their grain&mdash;<br>But under the new moon&rsquo;s meaning,<br>Repeating what dusk began,<br>There&rsquo;ll be the same shoulders aching,<br>The same tired hands shall reel&mdash;<br>When this dusk has done its breaking<br>And dawn shall come again.....</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To question whether tasks completed at one time of day are more meaningful than those completed at another time</p>"},
+    {"id": "b", "content": "<p>To consider how the cyclical nature of human labor can be both renewing and burdensome</p>"},
+    {"id": "c", "content": "<p>To refute the idea that hopeful feelings are more commonly experienced than weary ones</p>"},
+    {"id": "d", "content": "<p>To demonstrate how the experiences of farmworkers relate to the experiences of their communities</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it accurately states the main purpose of the text. The text begins with images of renewal&mdash;&ldquo;other harvests rising,&rdquo; &ldquo;a new turning of the wheel,&rdquo; &ldquo;pale fields renew their grain&rdquo;&mdash;promising change. But the poem then notes that under the &ldquo;new moon&rsquo;s meaning&rdquo; there will be &ldquo;the same shoulders aching&rdquo; and &ldquo;the same tired hands.&rdquo; The poem thus considers both the renewing and the burdensome aspects of cyclical human labor.</p><p>Choice A is incorrect because the text does not compare meaningfulness of tasks at different times. Choice C is incorrect because the text does not compare the frequency of hopeful and weary feelings. Choice D is incorrect because the text does not distinguish between individuals and communities.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

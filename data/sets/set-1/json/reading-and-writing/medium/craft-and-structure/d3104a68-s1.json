@@ -1,0 +1,25 @@
+{
+  "questionId": "d3104a68-s1",
+  "originalId": "d3104a68",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Whales call to coordinate with members of their pods across potentially vast stretches of ocean. For this reason, many researchers maintain that whales living in cold, deep waters generally call at lower frequencies than whales living in shallower, warmer regions, since the colder, layered waters tend to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the range that high-frequency calls can travel.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>shorten</p>"},
+    {"id": "b", "content": "<p>surpass</p>"},
+    {"id": "c", "content": "<p>encircle</p>"},
+    {"id": "d", "content": "<p>disguise</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Shorten\" means to reduce in length. The text suggests that high-frequency calls do not travel as far in cold, layered waters, so the waters must reduce the range of those calls.</p><p>Choice B is incorrect. \"Surpass\" means to exceed; the waters can't go beyond a distance that calls travel. Choice C is incorrect. \"Encircle\" means to surround, which is not something waters can do to a propagation distance. Choice D is incorrect. \"Disguise\" means to hide; the text addresses how far the calls travel, not whether they are perceptible.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

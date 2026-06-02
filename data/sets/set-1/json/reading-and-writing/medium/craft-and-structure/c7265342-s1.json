@@ -1,0 +1,25 @@
+{
+  "questionId": "c7265342-s1",
+  "originalId": "c7265342",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T9.medium",
+  "stimulus": "<p>The following text is from the 1898 poem &ldquo;Lowlands at Evening&rdquo; by Sarah Piatt, an American writer.</p>\n<blockquote class=\"dap_poemexcerpt\">\n<p>Beside the slow brook in the failing light,</p>\n<p>The frog repeats his slow refrain at night.</p>\n<p>The marsh hen, settling, finds a sheltered glade,</p>\n<p>Where cat-tails sway, and dim green mosses fade.</p>\n<p>Last terns with idle wing and heavy flight</p>\n<p>Drift through the silence into deeper night.</p>\n<p>And like a shadow, dragged by some soft wind,</p>\n<p>Steals dusk along the reed-bed&rsquo;s thinning rind.</p>\n<p>Still lie the rushes, and the mists arise,</p>\n<p>Dim, cool and damp, while all the lowland sighs.</p>\n</blockquote>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It names animal species found in a place, then names plant species found there.</p>"},
+    {"id": "b", "content": "<p>It sketches a setting by presenting a series of images of nature.</p>"},
+    {"id": "c", "content": "<p>It makes an extended comparison of nature to human emotions.</p>"},
+    {"id": "d", "content": "<p>It identifies a location, then refers to a person living there.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it best describes the overall structure of the text. The text first establishes the setting, a &ldquo;slow brook&rdquo; in the lowlands at evening, and then provides further details by presenting a series of descriptive images of nature, including a repeating frog, marsh hens in a sheltered glade, drifting terns, dusk like a shadow, and rising mists.</p><p>Choice A is incorrect because the text does not separate animals and plants into successive sections; it interleaves them. Choice C is incorrect because the text does not compare nature with human emotions. Choice D is incorrect because the text makes no mention of any person living at the location.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

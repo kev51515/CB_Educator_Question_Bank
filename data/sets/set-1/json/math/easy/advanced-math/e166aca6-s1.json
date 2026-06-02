@@ -1,0 +1,25 @@
+{
+  "questionId": "e166aca6-s1",
+  "originalId": "e166aca6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><figure class='image'><svg role=\"img\" version=\"1.1\" viewBox=\"0 0 360 320\" width=\"360\" height=\"320\" xmlns=\"http://www.w3.org/2000/svg\" aria-label=\"Graph of a curve in the xy-plane. The x-axis ranges from -2 to 10 and the y-axis ranges from -2 to 10. The curve passes through the points (0, 8) on the y-axis and (7, 0) on the x-axis.\"><defs><style>.ax{stroke:#333;stroke-width:1.2;fill:none}.gr{stroke:#ddd;stroke-width:0.6;fill:none}.cv{stroke:#1f77b4;stroke-width:2;fill:none}.pt{fill:#1f77b4}.lb{font-family:Arial,sans-serif;font-size:12px;fill:#222}</style></defs><g><rect x=\"0\" y=\"0\" width=\"360\" height=\"320\" fill=\"#fff\"/><g class=\"gr\"><line x1=\"30\" y1=\"30\" x2=\"30\" y2=\"290\"/><line x1=\"60\" y1=\"30\" x2=\"60\" y2=\"290\"/><line x1=\"90\" y1=\"30\" x2=\"90\" y2=\"290\"/><line x1=\"120\" y1=\"30\" x2=\"120\" y2=\"290\"/><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"290\"/><line x1=\"180\" y1=\"30\" x2=\"180\" y2=\"290\"/><line x1=\"210\" y1=\"30\" x2=\"210\" y2=\"290\"/><line x1=\"240\" y1=\"30\" x2=\"240\" y2=\"290\"/><line x1=\"270\" y1=\"30\" x2=\"270\" y2=\"290\"/><line x1=\"300\" y1=\"30\" x2=\"300\" y2=\"290\"/><line x1=\"330\" y1=\"30\" x2=\"330\" y2=\"290\"/><line x1=\"30\" y1=\"30\" x2=\"330\" y2=\"30\"/><line x1=\"30\" y1=\"60\" x2=\"330\" y2=\"60\"/><line x1=\"30\" y1=\"90\" x2=\"330\" y2=\"90\"/><line x1=\"30\" y1=\"120\" x2=\"330\" y2=\"120\"/><line x1=\"30\" y1=\"150\" x2=\"330\" y2=\"150\"/><line x1=\"30\" y1=\"180\" x2=\"330\" y2=\"180\"/><line x1=\"30\" y1=\"210\" x2=\"330\" y2=\"210\"/><line x1=\"30\" y1=\"240\" x2=\"330\" y2=\"240\"/><line x1=\"30\" y1=\"270\" x2=\"330\" y2=\"270\"/></g><g class=\"ax\"><line x1=\"30\" y1=\"260\" x2=\"330\" y2=\"260\"/><line x1=\"80\" y1=\"30\" x2=\"80\" y2=\"290\"/></g><path class=\"cv\" d=\"M 80 60 Q 200 80 290 260\"/><circle class=\"pt\" cx=\"290\" cy=\"260\" r=\"3.5\"/><circle class=\"pt\" cx=\"80\" cy=\"60\" r=\"3.5\"/><text class=\"lb\" x=\"68\" y=\"275\">O</text><text class=\"lb\" x=\"282\" y=\"278\">(7, 0)</text><text class=\"lb\" x=\"88\" y=\"58\">(0, 8)</text></svg></figure></p><p>The graph of a function is shown in the <i>xy</i>-plane. What is the <i>x</i>-intercept of the graph?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>(0, 8)</p>"},
+    {"id": "b", "content": "<p>(0, 7)</p>"},
+    {"id": "c", "content": "<p>(7, 0)</p>"},
+    {"id": "d", "content": "<p>(8, 0)</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The <i>x</i>-intercept of a graph is the point where it crosses the <i>x</i>-axis (where <i>y</i> = 0). The graph crosses the <i>x</i>-axis at the labeled point (7, 0).</p><p>Choice A is the <i>y</i>-intercept, not the <i>x</i>-intercept. Choice B is not on the <i>x</i>-axis. Choice D switches the value 7 to 8.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T1.easy"
+}

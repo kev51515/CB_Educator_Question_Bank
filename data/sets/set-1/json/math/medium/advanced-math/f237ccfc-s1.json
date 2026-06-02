@@ -1,0 +1,22 @@
+{
+  "questionId": "f237ccfc-s1",
+  "originalId": "f237ccfc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The sum of &minus;5x<sup>2</sup> + 2x + 17 and 4x<sup>2</sup> + 9x &minus; 6 can be written in the form ax<sup>2</sup> + bx + c, where a, b, and c are constants. What is the value of a + b + c?</p>",
+  "answerOptions": [],
+  "keys": [
+    "21"
+  ],
+  "rationale": "<p>Combining like terms: (&minus;5 + 4)x<sup>2</sup> + (2 + 9)x + (17 &minus; 6) = &minus;x<sup>2</sup> + 11x + 11. So a = &minus;1, b = 11, c = 11, giving a + b + c = 21. Alternatively, evaluating each polynomial at x = 1: (&minus;5 + 2 + 17) + (4 + 9 &minus; 6) = 14 + 7 = 21.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A4.T9.medium"
+}

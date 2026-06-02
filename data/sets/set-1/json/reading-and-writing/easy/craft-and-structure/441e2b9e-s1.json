@@ -1,0 +1,39 @@
+{
+  "questionId": "441e2b9e-s1",
+  "originalId": "441e2b9e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Researchers and public health experts stress that the spread of mosquito-borne diseases is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. For example, people can take simple steps such as emptying standing water from containers around their homes to reduce the places where disease-carrying mosquitoes can breed.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>undeniable</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>common</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>concerning</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>preventable</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the text describes a simple step that people can take to reduce mosquito breeding, supporting the meaning that the spread of these diseases can be prevented. \"Preventable\" matches this. Choices A, B, and C describe qualities that do not connect to the specific action of removing standing water.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

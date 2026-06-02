@@ -1,0 +1,22 @@
+[
+  {"id": "faee8ec7-s1", "templateId": "cross-text-connections.A1.T2.medium", "verdict": "ok"},
+  {"id": "6977d22b-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "ok"},
+  {"id": "6a1dc7c5-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "ok"},
+  {"id": "d6c77ae5-s1", "templateId": "cross-text-connections.A1.T3.hard", "verdict": "ok"},
+  {"id": "a87c3925-s1", "templateId": "cross-text-connections.A4.T6.hard", "verdict": "ok"},
+  {"id": "c885c38b-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "ok"},
+  {"id": "de2c2f57-s1", "templateId": "cross-text-connections.A4.T7.hard", "verdict": "ok"},
+  {"id": "105ea6de-s1", "templateId": "cross-text-connections.A1.T2.hard", "verdict": "ok"},
+  {"id": "96f3accc-s1", "templateId": "cross-text-connections.A4.T6.hard", "verdict": "type_drift", "detail": "Stem 'author of Text 2 would most likely agree with which statement about the description in Text 1' is a one-sided A1-style predicted-response, not T6 joint inference. T6 requires 'if both authors were aware of both findings' framing and a synthesis combining specific data from each text. Clone reads as A1.T1 (respond to overall description)."},
+  {"id": "35e21b06-s1", "templateId": "cross-text-connections.A1.T2.hard", "verdict": "constraint_violation", "detail": "Type T2 must_preserve requires 'Explicit reference in the stem to an underlined portion, named claim, or specific quoted excerpt in Text A'. Stimulus contains no underlined/marked portion, and the stem refers to 'the researchers' perspective in Text 1 on the behavior of the dolphins without loggers' (a general perspective, not an underlined excerpt). This is T1 structure, not T2."},
+  {"id": "17bf10de-s1", "templateId": "cross-text-connections.A3.T5.hard", "verdict": "ok"},
+  {"id": "d0198544-s1", "templateId": "cross-text-connections.A1.T2.hard", "verdict": "ok"},
+  {"id": "f3c45b4f-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "constraint_violation", "detail": "templateId tags T1 (respond to entire argument; no underlined portion) but stimulus contains a <span>-marked target and stem says 'respond to the underlined portion in Text 1'. Structure matches T2 (respond to underlined/specific claim), not T1. Note: span styling is used instead of <u> but functions as an underlined target."},
+  {"id": "592f94c2-s1", "templateId": "cross-text-connections.A1.T2.hard", "verdict": "ok"},
+  {"id": "d72b325e-s1", "templateId": "cross-text-connections.A1.T3.hard", "verdict": "ok"},
+  {"id": "5e4e082c-s1", "templateId": "cross-text-connections.A4.T7.hard", "verdict": "ok"},
+  {"id": "4b4ab04e-s1", "templateId": "cross-text-connections.A1.T1.hard", "verdict": "ok"},
+  {"id": "84dbd633-s1", "templateId": "cross-text-connections.A1.T2.hard", "verdict": "ok"},
+  {"id": "97e5bf55-s1", "templateId": "cross-text-connections.A2.T4.hard", "verdict": "ok"},
+  {"id": "e4e2aeb3-s1", "templateId": "cross-text-connections.A1.T3.hard", "verdict": "type_drift", "detail": "T3 requires stem verb 'characterize/regard/describe/say about' and answer options opening with an evaluative adjective/label ('As questionable...', 'As illogical...'). Clone uses stem 'how would Mendoza most likely respond to the underlined claim' and options begin with action gerunds ('By insisting', 'By acknowledging', 'By cautioning', 'By proposing'). This is T2 structure (respond to underlined claim). Additionally, no underline markup is present in the stimulus, violating T2 must_preserve as well."}
+]

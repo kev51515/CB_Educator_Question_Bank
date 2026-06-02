@@ -1,0 +1,72 @@
+{
+  "questionId": "c9708e7d",
+  "externalId": "1ea2792b-cfba-4930-9629-2423ee5df20b",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:20:59.627254+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "cf538876-c854-43d5-8ccc-d8520d23c284",
+      "content": "<p>make themselves appear brave and strong for being able to climb to difficult places where edelweiss supposedly grew.</p>"
+    },
+    {
+      "id": "3f27e7cb-f0f1-43bf-9a3f-8fe43a0ebecb",
+      "content": "<p>encourage more flower enthusiasts to explore the Swiss Alps.</p>"
+    },
+    {
+      "id": "9250e4ee-27ab-4302-8dc1-157f61127a8c",
+      "content": "<p>share their observations about the unusual characteristics of edelweiss with scientists.</p>"
+    },
+    {
+      "id": "fd3e1df1-f8fe-4729-a94c-b99a90d73487",
+      "content": "<p>prove that edelweiss were more common in the Swiss Alps than in other mountain regions in Europe.</p>"
+    }
+  ],
+  "keys": [
+    "cf538876-c854-43d5-8ccc-d8520d23c284"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of mountain climbers&rsquo; motivations for exaggerating the difficulty of reaching edelweiss. The text establishes that edelweiss became symbols of strength and courage in Switzerland in the mid-1800s. The text goes on to state that mountain climbing became popular around the same time and that climbers spread the false idea that the flowers grew only in dangerous, hard-to-reach locations. According to the text, historian Tobias Scheidegger argues that these claims were &ldquo;self-interested,&rdquo; meaning they served the climbers&rsquo; own purposes. The text therefore implies that by claiming that edelweiss could be found only in perilous locations, mountain climbers could enhance their own reputations: climbers who encountered edelweiss would appear to have undertaken a dangerous journey, thereby making themselves seem brave and strong.</p><p>Choice B is incorrect because making edelweiss seem more dangerous to reach than other mountain flowers are would likely discourage flower enthusiasts from trying to reach edelweiss rather than encourage them to explore the Swiss Alps. The text suggests that climbers&rsquo; self-interested motivation for exaggerating the difficulty of climbing to areas where edelweiss grew was to enhance their own reputations for being especially brave, not to promote tourism in the Swiss Alps. Choice C is incorrect because the text states that according to Scheidegger, mountain climbers exaggerated the difficulty of reaching edelweiss for self-interested reasons, not because they wanted to report genuine scientific observations about the flower&rsquo;s unique characteristics. The text provides no indication that the climbers sincerely believed that their claims about the especially challenging terrain in which edelweiss grew were accurate, much less that they wanted to share this information with scientists. Choice D is incorrect because the text doesn&rsquo;t suggest that mountain climbers were trying to prove that edelweiss were more common in Switzerland than elsewhere. The text&rsquo;s focus is on the supposed difficulty and danger of reaching the flowers, not on their relative abundance in the Swiss Alps compared to other regions. In fact, the text implies that mountain climbers exaggerated how difficult edelweiss were to reach; it therefore wouldn&rsquo;t make sense to say that they exaggerated this difficulty to demonstrate that edelweiss were relatively common.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>In Switzerland, the white fuzzy mountain flowers known as edelweiss are widely treated as a symbol of strength and courage. Although edelweiss can thrive in extreme conditions, they aren&rsquo;t notably tougher or harder to reach than other mountain flowers growing in the Swiss Alps. Historian Tobias Scheidegger has shown that the popular view of the flowers originated in the mid-1800s when mountain climbing became popular in Switzerland. Mountain climbers spread the idea that the flowers grew only in steep, icy terrains that were dangerous to climb to. Scheidegger says that these claims were self-interested. He suggests that mountain climbers presented edelweiss in this way in order to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "cf538876-c854-43d5-8ccc-d8520d23c284"
+    ],
+    "answerOptions": [
+      {
+        "id": "cf538876-c854-43d5-8ccc-d8520d23c284",
+        "content": "<p>make themselves appear brave and strong for being able to climb to difficult places where edelweiss supposedly grew.</p>"
+      },
+      {
+        "id": "3f27e7cb-f0f1-43bf-9a3f-8fe43a0ebecb",
+        "content": "<p>encourage more flower enthusiasts to explore the Swiss Alps.</p>"
+      },
+      {
+        "id": "9250e4ee-27ab-4302-8dc1-157f61127a8c",
+        "content": "<p>share their observations about the unusual characteristics of edelweiss with scientists.</p>"
+      },
+      {
+        "id": "fd3e1df1-f8fe-4729-a94c-b99a90d73487",
+        "content": "<p>prove that edelweiss were more common in the Swiss Alps than in other mountain regions in Europe.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of mountain climbers&rsquo; motivations for exaggerating the difficulty of reaching edelweiss. The text establishes that edelweiss became symbols of strength and courage in Switzerland in the mid-1800s. The text goes on to state that mountain climbing became popular around the same time and that climbers spread the false idea that the flowers grew only in dangerous, hard-to-reach locations. According to the text, historian Tobias Scheidegger argues that these claims were &ldquo;self-interested,&rdquo; meaning they served the climbers&rsquo; own purposes. The text therefore implies that by claiming that edelweiss could be found only in perilous locations, mountain climbers could enhance their own reputations: climbers who encountered edelweiss would appear to have undertaken a dangerous journey, thereby making themselves seem brave and strong.</p><p>Choice B is incorrect because making edelweiss seem more dangerous to reach than other mountain flowers are would likely discourage flower enthusiasts from trying to reach edelweiss rather than encourage them to explore the Swiss Alps. The text suggests that climbers&rsquo; self-interested motivation for exaggerating the difficulty of climbing to areas where edelweiss grew was to enhance their own reputations for being especially brave, not to promote tourism in the Swiss Alps. Choice C is incorrect because the text states that according to Scheidegger, mountain climbers exaggerated the difficulty of reaching edelweiss for self-interested reasons, not because they wanted to report genuine scientific observations about the flower&rsquo;s unique characteristics. The text provides no indication that the climbers sincerely believed that their claims about the especially challenging terrain in which edelweiss grew were accurate, much less that they wanted to share this information with scientists. Choice D is incorrect because the text doesn&rsquo;t suggest that mountain climbers were trying to prove that edelweiss were more common in Switzerland than elsewhere. The text&rsquo;s focus is on the supposed difficulty and danger of reaching the flowers, not on their relative abundance in the Swiss Alps compared to other regions. In fact, the text implies that mountain climbers exaggerated how difficult edelweiss were to reach; it therefore wouldn&rsquo;t make sense to say that they exaggerated this difficulty to demonstrate that edelweiss were relatively common.</p>",
+    "externalid": "1ea2792b-cfba-4930-9629-2423ee5df20b",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>In Switzerland, the white fuzzy mountain flowers known as edelweiss are widely treated as a symbol of strength and courage. Although edelweiss can thrive in extreme conditions, they aren&rsquo;t notably tougher or harder to reach than other mountain flowers growing in the Swiss Alps. Historian Tobias Scheidegger has shown that the popular view of the flowers originated in the mid-1800s when mountain climbing became popular in Switzerland. Mountain climbers spread the idea that the flowers grew only in steep, icy terrains that were dangerous to climb to. Scheidegger says that these claims were self-interested. He suggests that mountain climbers presented edelweiss in this way in order to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

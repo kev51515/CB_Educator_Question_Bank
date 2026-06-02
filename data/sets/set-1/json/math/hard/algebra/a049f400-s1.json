@@ -1,0 +1,39 @@
+{
+  "questionId": "a049f400-s1",
+  "originalId": "a049f400",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>y</mi><mo>&#60;</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>3</mn></math></p>\n<p>For which of the following tables are all the values of <math><mi>x</mi></math> and their corresponding values of <math><mi>y</mi></math> solutions to the given inequality?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<figure class=\"table left-justified\"><table border=\"1\"><thead><tr><th style=\"text-align:center;\">x</th><th style=\"text-align:center;\">y</th></tr></thead><tbody><tr><td style=\"text-align:center;\">2</td><td style=\"text-align:center;\">11</td></tr><tr><td style=\"text-align:center;\">4</td><td style=\"text-align:center;\">19</td></tr><tr><td style=\"text-align:center;\">6</td><td style=\"text-align:center;\">27</td></tr></tbody></table></figure>"
+    },
+    {
+      "id": "b",
+      "content": "<figure class=\"table left-justified\"><table border=\"1\"><thead><tr><th style=\"text-align:center;\">x</th><th style=\"text-align:center;\">y</th></tr></thead><tbody><tr><td style=\"text-align:center;\">2</td><td style=\"text-align:center;\">9</td></tr><tr><td style=\"text-align:center;\">4</td><td style=\"text-align:center;\">19</td></tr><tr><td style=\"text-align:center;\">6</td><td style=\"text-align:center;\">25</td></tr></tbody></table></figure>"
+    },
+    {
+      "id": "c",
+      "content": "<figure class=\"table left-justified\"><table border=\"1\"><thead><tr><th style=\"text-align:center;\">x</th><th style=\"text-align:center;\">y</th></tr></thead><tbody><tr><td style=\"text-align:center;\">2</td><td style=\"text-align:center;\">9</td></tr><tr><td style=\"text-align:center;\">4</td><td style=\"text-align:center;\">17</td></tr><tr><td style=\"text-align:center;\">6</td><td style=\"text-align:center;\">25</td></tr></tbody></table></figure>"
+    },
+    {
+      "id": "d",
+      "content": "<figure class=\"table left-justified\"><table border=\"1\"><thead><tr><th style=\"text-align:center;\">x</th><th style=\"text-align:center;\">y</th></tr></thead><tbody><tr><td style=\"text-align:center;\">2</td><td style=\"text-align:center;\">13</td></tr><tr><td style=\"text-align:center;\">4</td><td style=\"text-align:center;\">21</td></tr><tr><td style=\"text-align:center;\">6</td><td style=\"text-align:center;\">29</td></tr></tbody></table></figure>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting x = 2 yields y < 11; x = 4 yields y < 19; x = 6 yields y < 27. Table C gives y values 9, 17, 25, each strictly less than the corresponding bound. Choices A and D have values that meet or exceed the bound. Choice B has 19 which is not less than 19.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium"
+}

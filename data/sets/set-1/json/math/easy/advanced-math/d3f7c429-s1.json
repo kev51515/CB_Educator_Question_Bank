@@ -1,0 +1,39 @@
+{
+  "questionId": "d3f7c429-s1",
+  "originalId": "d3f7c429",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <em>xy</em>-plane, the graphs of <math><mi>y</mi><mo>=</mo><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mo>+</mo><mn>2</mn></math> and <math><mi>y</mi><mo>=</mo><mn>5</mn></math> intersect at two points. Which of the following is one of those points?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(-2, 5)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 5)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(1, 5)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(2, 5)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Setting the expressions equal gives <math><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mo>+</mo><mn>2</mn><mo>=</mo><mn>5</mn></math>, so <math><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>-</mo><mn>1</mn></mrow></mfenced><mo>=</mo><mn>3</mn></math>. Thus <em>x</em> - 1 = 3 or <em>x</em> - 1 = -3, giving <em>x</em> = 4 or <em>x</em> = -2. Of the choices, (-2, 5) is given.</p><p>Choices B, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy"
+}

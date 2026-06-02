@@ -1,0 +1,25 @@
+{
+  "questionId": "e7247766-s1",
+  "originalId": "e7247766",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>Lateral antibiotic-resistance gene transfer occurs when a bacterium of one strain acquires genetic material from a bacterium of another strain through nonreproductive means. The genetic material can then be passed along &ldquo;vertically&rdquo; in the second strain&mdash;that is, through ordinary cell division. Microbiologist Lakshmi Chandran and her team have hypothesized infection by bacteriophages as a mechanism of resistance-gene transfer between bacterial strains found in soil: <span role=\"region\" aria-label=\"Referenced Content\"><u>while reproducing in a host cell, a phage could pick up a resistance gene from one strain, then move on to a cell of a different strain and deposit the gene into it in turn.</u></span></p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It describes a means by which lateral antibiotic-resistance gene transfer might occur in soil bacteria.</p>"},
+    {"id": "b", "content": "<p>It explains why bacteriophages are less susceptible to gene transfer than their hosts are.</p>"},
+    {"id": "c", "content": "<p>It clarifies why some genes are more likely to be transferred laterally than others are.</p>"},
+    {"id": "d", "content": "<p>It contrasts how lateral gene transfer occurs in soil bacteria with how it occurs in marine bacteria.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text defines lateral antibiotic-resistance gene transfer and proposes infection by bacteriophages as a mechanism between soil bacteria. The underlined portion describes how that mechanism could work.</p><p>Choice B is incorrect because the underlined portion describes phages as the agent that does the transferring, not as more or less susceptible than hosts. Choice C is incorrect because the text never discusses which genes are more likely to be transferred. Choice D is incorrect because the text never discusses lateral gene transfer in marine bacteria.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

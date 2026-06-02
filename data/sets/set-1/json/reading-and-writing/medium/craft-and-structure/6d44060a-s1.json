@@ -1,0 +1,25 @@
+{
+  "questionId": "6d44060a-s1",
+  "originalId": "6d44060a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T8.medium",
+  "stimulus": "<p>Works of political theory, such as Hobbes's <em>Leviathan</em> or Locke's <em>Second Treatise of Government</em>, are partly concerned with how a legitimate state should be organized. But theorist Mira Caldwell argues that works that prescribe a structure of legitimate government without also setting out the obligations of those who would inhabit it are inherently useful only to readers who already share the author's political ideals&mdash;readers indifferent to those ideals will see no reason to follow the proposed rules. However, some works of political theory attempt to describe what constitutes a legitimate state while also offering reasons that citizens, on their own terms, would have to support it.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It outlines the history of a field of thought by discussing two works and then proposes a topic of further research for specialists in the field.</p>"},
+    {"id": "b", "content": "<p>It describes two influential works and then explains why one is more widely read than the other.</p>"},
+    {"id": "c", "content": "<p>It mentions two renowned works and then claims that despite their popularity it is impossible for them to serve the purpose their authors intended.</p>"},
+    {"id": "d", "content": "<p>It offers a characterization of a field of thought by noting two works in it and then details a way in which some works in that field are more comprehensive than others.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text first characterizes political theory by naming two examples (<em>Leviathan</em> and the <em>Second Treatise of Government</em>) and describing what such works are partly concerned with. It then notes Caldwell's claim that works prescribing a structure without supplying obligations for citizens are limited in usefulness. Finally, it states that some works try to remedy that limitation by combining a description of legitimate government with reasons citizens themselves would have to support it. The structure characterizes a field, notes a shortcoming of some works, and then identifies a more comprehensive class of works.</p><p>Choice A is incorrect because the text does not summarize the history of political theory or propose further research. Choice B is incorrect because it does not address which work is more widely read. Choice C is incorrect because the text does not call the two named works popular and does not claim they fail to serve their authors' purposes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

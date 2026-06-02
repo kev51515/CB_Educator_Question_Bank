@@ -1,0 +1,39 @@
+{
+  "questionId": "75012ee7-s1",
+  "originalId": "75012ee7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>3</mn><mi>x</mi><mo>-</mo><mn>4</mn><mi>y</mi><mo>=</mo><mn>12</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>9</mn><mi>x</mi><mo>-</mo><mn>12</mn><mi>y</mi><mo>=</mo><mn>36</mn></math></p>\n<p>For each real number <math><mi>r</mi></math>, which of the following points lies on the graph of each equation in the <em>xy</em>-plane for the given system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>3</mn><mi>r</mi><mo>+</mo><mn>12</mn></mrow><mn>4</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>4</mn><mi>r</mi><mo>-</mo><mn>12</mn></mrow><mn>3</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>3</mn><mi>r</mi><mo>-</mo><mn>12</mn></mrow><mn>4</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>12</mn><mo>-</mo><mn>3</mn><mi>r</mi></mrow><mn>4</mn></mfrac></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The second equation is exactly three times the first, so both represent the same line. Solving 3x - 4y = 12 for y: 4y = 3x - 12, so y = (3x - 12)/4. For x = r, the point (r, (3r - 12)/4) lies on the line. The other choices use incorrect rearrangements (e.g., flipping a sign or swapping coefficients).</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T12.hard"
+}

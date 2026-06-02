@@ -1,0 +1,25 @@
+{
+  "questionId": "b30a2613-s1",
+  "originalId": "b30a2613",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.misc.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Approximate Aphid Population Count in Two Enclosures</p></caption><thead><tr><th scope=\"col\">Day</th><th scope=\"col\">Enclosure without ladybugs</th><th scope=\"col\">Enclosure with ladybugs</th></tr></thead><tbody><tr><th scope=\"row\">1</th><td>90</td><td>90</td></tr><tr><th scope=\"row\">10</th><td>65</td><td>34</td></tr><tr><th scope=\"row\">20</th><td>52</td><td>26</td></tr><tr><th scope=\"row\">30</th><td>45</td><td>22</td></tr></tbody></table></figure></p><p>To investigate the effect of ladybug predation on aphid populations, a student in a biology class placed aphids in two enclosures, one with ladybugs and one without, and tracked the number of aphids in the enclosures for 30 days. The student concluded that the reduction in the aphid population count in the enclosure with ladybugs by day 30 was entirely attributable to the presence of the ladybugs.</p>",
+  "stem": "<p>Which choice best describes data from the table that weaken the student&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The aphid population count was the same in both enclosures on day 1.</p>"},
+    {"id": "b", "content": "<p>The largest decline in aphid population count in the enclosure with ladybugs occurred from day 1 to day 10.</p>"},
+    {"id": "c", "content": "<p>The aphid population count on day 30 was lower in the enclosure with ladybugs than in the enclosure without ladybugs.</p>"},
+    {"id": "d", "content": "<p>The aphid population count also substantially declined by day 30 in the enclosure without ladybugs.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the student&rsquo;s claim is that the reduction in aphids in the enclosure with ladybugs is entirely due to the ladybugs. But the table shows the enclosure without ladybugs also dropped substantially (from 90 to 45). That decline shows another factor must contribute, weakening the claim. Choice A is incorrect because identical starting counts don&rsquo;t address the cause of the decline. Choice B is incorrect because the timing of the largest decline doesn&rsquo;t bear on whether ladybugs were the only cause. Choice C is incorrect because a lower day-30 count in the ladybug enclosure actually suggests the ladybugs contributed to the decline, not that they weren&rsquo;t the sole cause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

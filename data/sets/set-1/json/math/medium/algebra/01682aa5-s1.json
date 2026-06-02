@@ -1,0 +1,39 @@
+{
+  "questionId": "01682aa5-s1",
+  "originalId": "01682aa5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line p is defined by 3y + 15x = 12. Line r is perpendicular to line p in the xy-plane. What is the slope of line r?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-1/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Rewrite as y = -5x + 4, so the slope of p is -5. The slope of a perpendicular line is the negative reciprocal: 1/5. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.medium"
+}

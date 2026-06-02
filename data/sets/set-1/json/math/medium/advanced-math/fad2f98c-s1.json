@@ -1,0 +1,39 @@
+{
+  "questionId": "fad2f98c-s1",
+  "originalId": "fad2f98c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\">5x(x \u2212 2)(x + 7) = 0</p><p>What is one of the solutions to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22127</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\u22122</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Applying the zero product property to the given equation yields 5x = 0, x \u2212 2 = 0, or x + 7 = 0. Solving each yields x = 0, x = 2, and x = \u22127. Of the choices listed, only \u22127 is among the solutions. Choices B, C, and D do not satisfy the equation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium"
+}

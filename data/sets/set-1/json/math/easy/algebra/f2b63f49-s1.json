@@ -1,0 +1,22 @@
+{
+  "questionId": "f2b63f49-s1",
+  "originalId": "f2b63f49",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>9</mn><mi>x</mi><mo>-</mo><mn>8</mn><mi>x</mi><mo>+</mo><mn>140</mn><mo>=</mo><mn>275</mn></math></p><p>What value of <math><mi>x</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "135"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>135</mn></math>. Combining like terms on the left side yields <math><mi>x</mi><mo>+</mo><mn>140</mn><mo>=</mo><mn>275</mn></math>. Subtracting 140 yields <math><mi>x</mi><mo>=</mo><mn>135</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.easy"
+}

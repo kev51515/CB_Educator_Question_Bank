@@ -1,0 +1,39 @@
+{
+  "questionId": "f329442c-s1",
+  "originalId": "f329442c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Circle X has a radius of 4n and circle Y has a radius of 84n, where n is a positive constant. The area of circle Y is how many times the area of circle X?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>441</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>84</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,764</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a circle is &pi;r&sup2;. The ratio of areas equals the square of the ratio of radii. Since 84n / 4n = 21, the area ratio is 21&sup2; = 441.</p><p>Choice A gives only the radius ratio. Choice C uses 84 directly. Choice D squares 84/2.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A1.T3.hard"
+}

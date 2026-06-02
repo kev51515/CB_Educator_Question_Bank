@@ -1,0 +1,39 @@
+{
+  "questionId": "2c76bcce-s1",
+  "originalId": "2c76bcce",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A factory produces metal rods. To estimate the mean length of the rods produced on a particular day, a sample of the rods produced that day was selected at random. Based on the sample, the mean length of all rods made that day was estimated to be 14.5 cm, with an associated margin of error of 0.1 cm. Based on this estimate and the margin of error, which of the following is the most appropriate conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The actual lengths of all rods made that day are between 14.4 cm and 14.6 cm.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The actual lengths of all rods in the sample are between 14.4 cm and 14.6 cm.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Plausible values for the mean length of all rods made that day are between 14.4 cm and 14.6 cm.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The mean length of all rods made that day is exactly 14.5 cm.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The margin of error gives an interval of plausible values for the population mean. With estimate 14.5 cm and margin of error 0.1 cm, the plausible values range from 14.4 cm to 14.6 cm.</p><p>Choice A is incorrect: the margin of error describes the mean, not individual rod lengths.</p><p>Choice B is incorrect: the margin of error describes the population mean, not sample observations.</p><p>Choice D is incorrect: a margin of error implies a range, not a single value.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy"
+}

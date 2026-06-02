@@ -1,0 +1,14 @@
+[
+  {
+    "id": "6ea8c23f-s1",
+    "templateId": "boundaries.A4.T8.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'Three or more parallel items in the series'. Clone has only two coordinate elements joined by 'and' (where tremors cluster / how clusters correlate); rationale itself states 'only two such elements (not a series of three or more)'. Not a T8 series."
+  },
+  {
+    "id": "64a40675-s1",
+    "templateId": "boundaries.A1.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Keyed answer C yields 'played with an volume and improvisation'\u2014'an volume' is ungrammatical (should be 'a volume'). The stem's article mismatches the following consonant-initial noun, so no option produces a grammatical sentence. Rationale repeats the 'an volume' error."
+  }
+]

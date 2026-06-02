@@ -1,0 +1,25 @@
+{
+  "questionId": "1aa3f174-s1",
+  "originalId": "1aa3f174",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>The ancient Anatolian site of &Ccedil;atalh&ouml;y&uuml;k offered a strikingly compact form of urban planning. Established roughly nine thousand years ago, &Ccedil;atalh&ouml;y&uuml;k sheltered its inhabitants (perhaps as many as 8,000, according to archaeologists&rsquo; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in densely clustered mudbrick dwellings entered from the roof.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>reconstructions),</p>"},
+    {"id": "b", "content": "<p>reconstructions)</p>"},
+    {"id": "c", "content": "<p>reconstructions&mdash;</p>"},
+    {"id": "d", "content": "<p>reconstructions</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. This choice correctly completes the parenthetical element &ldquo;perhaps as many as 8,000, according to archaeologists&rsquo; reconstructions&rdquo; with a closing parenthesis, pairing with the opening parenthesis earlier in the sentence.</p><p>Choice A is incorrect because no comma is needed before the prepositional phrase (&ldquo;in...roof&rdquo;) that provides essential information. Choice C is incorrect because a dash can&rsquo;t be paired with an opening parenthesis. Choice D is incorrect because it fails to close the parenthetical element opened earlier in the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

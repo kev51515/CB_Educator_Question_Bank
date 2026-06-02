@@ -1,0 +1,39 @@
+{
+  "questionId": "6762772f-s1",
+  "originalId": "6762772f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Microbial fuel cells are an emerging clean-energy technology that draws on natural biochemical processes. The devices use specialized bacteria that consume organic material in wastewater and release electrons as a byproduct; these electrons are captured by an anode and routed through an external circuit to generate electrical current. Although the technology has attracted considerable interest from researchers, it cannot yet be deployed economically at the scale required for municipal power generation. To address this gap, scientists in several fields are exploring more durable electrode materials, more efficient bacterial strains, and improved methods for integrating the cells into existing wastewater-treatment infrastructure.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Microbial fuel cells produce electricity from wastewater more efficiently than conventional treatment plants do.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Microbial fuel cells were developed to combine wastewater treatment with the long-term commercial generation of electricity.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Further research and development of microbial fuel cells will be necessary before the technology can be used widely to generate electricity.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Recent growth in the commercial deployment of microbial fuel cells has prompted scientists to investigate improvements to the technology.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text introduces microbial fuel cells, notes that the technology \"cannot yet be deployed economically at the scale required for municipal power generation,\" and describes ongoing scientific work to overcome that limitation. The main idea is that more research is needed before the technology can see widespread use.</p><p>Choice A is incorrect because the text does not compare microbial fuel cells with conventional wastewater plants on efficiency. Choice B is incorrect because, while the text mentions wastewater and electricity, the purpose of the technology is not the focus; the limitations and needed improvements are. Choice D is incorrect because the text says the technology is <em>not yet</em> commercially deployed at scale; the research is motivated by current limitations, not by commercial growth.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

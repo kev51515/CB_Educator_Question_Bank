@@ -1,0 +1,25 @@
+{
+  "questionId": "87023f34-s1",
+  "originalId": "87023f34",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p>&ldquo;Bells of the Returning Tide&rdquo; is an early 1900s poem by Eira Carwyn. In the poem, the speaker describes experiencing a recurring rhythm of hope followed by sorrowful looking back: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from &ldquo;Bells of the Returning Tide&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;What does this tolling sound proclaim, / That falling on the harbor stones / Brings to my breast a touch of shame / And anxious tones?&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;The rain has paused its sliding flight, / The wind dropped to a hollow sigh, / A solemn hush attends the night, / The gulls go by.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;It speaks of many a wasted noon, / Of letters torn and gardens dry, / Of harvests gathered all too soon, / Of years gone by.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;And so the tides keep turning still, / Each, rising, lifts a bright belief, / And each, retreating, leaves a chill / Bound to my grief.&rdquo;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because this quotation depicts the speaker experiencing a recurring rhythm: each rising tide lifts &ldquo;a bright belief&rdquo; (hope) and each retreating tide leaves &ldquo;a chill / Bound to my grief&rdquo; (sorrowful looking back). The phrasing &ldquo;keep turning still,&rdquo; &ldquo;each, rising,&rdquo; and &ldquo;each, retreating&rdquo; signals an ongoing cycle. Choice A is incorrect because it describes a single moment of unease at the sound of bells, not a recurring rhythm. Choice B is incorrect because, although it sets a hushed mood, it shows no cycle of hope and sorrow. Choice C is incorrect because it expresses regret only, with no element of hope or recurring rhythm.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "73caa3ab-s1",
+  "originalId": "73caa3ab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T8.medium",
+  "stimulus": "<p>The following text is from Yumi Asano's 2020 novel <em>The Slow Conservatory</em>. The narrator and Vélez are both music critics.</p>\n<blockquote>\n<p>When my younger brother confessed to Vélez over tea that he found contemporary classical music, string quartets in particular, somewhat tiresome, Vélez pursed his lips, gently lowered his cup, and let out a long, theatrical breath; he then rose and explained, with elaborate apology, that a phone call he had been told to expect had just come to mind, all while making it perfectly clear that no such call had ever been arranged.</p>\n</blockquote>",
+  "stem": "<p>Based on the text, what is notable about Vélez's behavior?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Vélez communicates his opinion of one of his companions without putting it into words.</p>"},
+    {"id": "b", "content": "<p>Vélez's forgetfulness about his appointments is unusual for him.</p>"},
+    {"id": "c", "content": "<p>Vélez's exit is prompted by the return of an old dispute he and the narrator's brother once had over a particular composer.</p>"},
+    {"id": "d", "content": "<p>Vélez only behaves theatrically when he is in the presence of the narrator and his brother.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text shows Vélez reacting to the brother's confession by pursing his lips, sighing theatrically, and then inventing a fictitious phone call to leave the tea early. The narrator makes clear there was no such call. Through these enacted gestures and the transparent excuse, Vélez communicates his disapproval of the brother's musical opinion without saying it directly.</p><p>Choice B is incorrect because the text indicates the appointment is a pretense, not a real instance of forgetfulness. Choice C is incorrect because the text describes only this single exchange and gives no prior dispute. Choice D is incorrect because the text presents one episode and offers no evidence about Vélez's behavior in other company.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

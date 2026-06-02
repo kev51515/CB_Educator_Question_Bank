@@ -1,0 +1,25 @@
+{
+  "questionId": "ccf414c9-s1",
+  "originalId": "ccf414c9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Audiobook Sales as a Percentage of Total Unit Sales for a Major Australian Publisher, by Genre, 2008, 2013, 2018</p></caption><thead><tr><th scope=\"col\">Genre</th><th scope=\"col\">2008</th><th scope=\"col\">2013</th><th scope=\"col\">2018</th></tr></thead><tbody><tr><th scope=\"row\">memoir</th><td>0.5</td><td>22.4</td><td>34.1</td></tr><tr><th scope=\"row\">gardening manuals</th><td>0</td><td>2.3</td><td>9.7</td></tr><tr><th scope=\"row\">travel guides</th><td>0</td><td>5.0</td><td>23.2</td></tr><tr><th scope=\"row\">mystery</th><td>0.4</td><td>33.7</td><td>51.5</td></tr></tbody></table></figure></p><p>Audiobooks became an increasingly popular reading format in Australia in the 2010s, though that popularity was concentrated in titles that, like those in most narrative genres, are meant to be listened to in sequence from beginning to end. For books in reference genres that don&rsquo;t tell stories and require the reader to skip among sections, audiobooks have been notably less commercially successful. This can be seen by comparing <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to illustrate the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the percentage of 2008 mystery sales that were audiobooks with the percentage of 2018 mystery sales that were audiobooks.</p>"},
+    {"id": "b", "content": "<p>the percentage of 2008 mystery sales that were audiobooks with the percentage of 2008 memoir sales that were audiobooks.</p>"},
+    {"id": "c", "content": "<p>the percentage of 2018 gardening manual sales that were audiobooks with the percentage of 2018 mystery sales that were audiobooks.</p>"},
+    {"id": "d", "content": "<p>the percentage of 2013 travel guide sales that were audiobooks with the percentage of 2018 travel guide sales that were audiobooks.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it compares a reference genre (gardening manuals: 9.7% in 2018) with a narrative genre (mystery: 51.5% in 2018), illustrating the claim that audiobooks are less successful in reference genres than in narrative ones. Choice A is incorrect because it compares only one narrative genre across time. Choice B is incorrect because both mystery and memoir are narrative genres. Choice D is incorrect because comparing a single reference genre across years doesn&rsquo;t contrast it with narrative genres.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ad038c19-s1",
+  "originalId": "ad038c19",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to (p &minus; q/3)<sup>2</sup>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>p<sup>2</sup> &minus; pq + q<sup>2</sup>/9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>p<sup>2</sup> &minus; (2pq)/3 + q<sup>2</sup>/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>p<sup>2</sup> &minus; q<sup>2</sup>/9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>p<sup>2</sup> + (2pq)/3 + q<sup>2</sup>/9</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Expand (p &minus; q/3)<sup>2</sup> = p<sup>2</sup> &minus; 2&middot;p&middot;(q/3) + (q/3)<sup>2</sup> = p<sup>2</sup> &minus; (2pq)/3 + q<sup>2</sup>/9. Choice A drops the factor of 2 in the cross term, choice C omits the cross term entirely, and choice D uses the wrong sign.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A2.T6.medium"
+}

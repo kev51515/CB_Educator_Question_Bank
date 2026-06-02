@@ -1,0 +1,39 @@
+{
+  "questionId": "f03465dc-s1",
+  "originalId": "f03465dc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>6</mn><mi>x</mi><mo>+</mo><mn>11</mn><mi>y</mi><mo>=</mo><mn>5</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>18</mn><mi>x</mi><mo>+</mo><mn>33</mn><mi>y</mi><mo>=</mo><mn>15</mn></math></p>\n<p>For each real number <math><mi>r</mi></math>, which of the following points lies on the graph of each equation in the <em>xy</em>-plane for the given system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>6</mn><mi>r</mi><mo>-</mo><mn>5</mn></mrow><mn>11</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>5</mn><mo>-</mo><mn>11</mn><mi>r</mi></mrow><mn>6</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>5</mn><mo>-</mo><mn>6</mn><mi>r</mi></mrow><mn>11</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>5</mn><mo>+</mo><mn>6</mn><mi>r</mi></mrow><mn>11</mn></mfrac></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The second equation is three times the first, so they represent the same line. Solving 6x + 11y = 5 for y: y = (5 - 6x)/11. For x = r, the point is (r, (5 - 6r)/11). The other choices reflect incorrect rearrangements.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T12.hard"
+}

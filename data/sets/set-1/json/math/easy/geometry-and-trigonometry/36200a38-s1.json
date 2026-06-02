@@ -1,0 +1,39 @@
+{
+  "questionId": "36200a38-s1",
+  "originalId": "36200a38",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A triangle has interior angles measuring 80\u00b0 and 40\u00b0 at its base. The two non-base sides are extended beyond the top vertex. The angle outside the triangle, between the two extensions above the top vertex, measures y\u00b0. What is the value of y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>140</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The third interior angle is 180 \u2212 80 \u2212 40 = 60\u00b0. The angle formed by the two extensions above the top vertex is vertical to this top interior angle, so y = 60.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A2.T2.easy"
+}

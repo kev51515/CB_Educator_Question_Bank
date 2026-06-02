@@ -1,0 +1,146 @@
+[
+  {
+    "id": "1087f6c4-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone asks for the difference of two coefficients (32.90 - 32.40 = 0.50), which is interpreting per-unit rates from the equation (A3.T3/T4), not substituting a given value and solving (A2.T2). No value is supplied for either variable."
+  },
+  {
+    "id": "9b0a4eae-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "Question asks for interpretation of a point (5,9) on a graph, not interpretation of a coefficient in an equation. A3 description requires explaining what 'a specific number or term in the equation' represents (rate, total, count). Interpreting coordinates of a point fits A5-style coordinate reading rather than A3. T3 specifically requires recognizing a coefficient as per-unit rate; no coefficient is being interpreted here. Keyed answer (length 5, width 9) is correct."
+  },
+  {
+    "id": "fdee0fbf-s1",
+    "templateId": "linear-equations-in-two-variables.A6.T14.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem contains no parallel/perpendicular partner line; it's a single line through two points with substitution. Belongs to A5.T12 (coordinate on a line), not A6."
+  },
+  {
+    "id": "2d54c272-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for difference of per-token point values by reading coefficients (30-8=22). No substitution into the equation; this is A3.T3 (interpret coefficients as per-unit rates), not A2.T2."
+  },
+  {
+    "id": "686b7244-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem requires reading coefficients (20-12=8). No substitution of a given variable value into the equation; fits A3.T3 (interpret coefficients), not A2.T2."
+  },
+  {
+    "id": "9bbce683-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T12.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is plain 'find x-intercept' from a table that already contains x=0 (y-intercept handed over). No translation/transformation or multi-step combination required; this is T11 easy/medium, not T12 hard, which requires derive-line + translate + report-coordinate."
+  },
+  {
+    "id": "a35c7164-s1",
+    "templateId": "linear-equations-in-two-variables.A6.T15.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem invokes 'infinitely many solutions' (identical-line/equivalent equations), not a parallel or perpendicular relationship. A6/T15 requires a parallel or perpendicular pair, not equation-equivalence."
+  },
+  {
+    "id": "94b48cbf-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T11.hard",
+    "verdict": "type_drift",
+    "detail": "Stem asks for the slope of 9x+4y=-53, not an x- or y-intercept. T11 is intercept extraction; slope extraction is T10. Also lacks the hard T11 levers (translation, ratio of intercepts, rearranged messy form)."
+  },
+  {
+    "id": "c6b151d4-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem asks to interpret a solution pair (x,y), not a coefficient/product/constant term. The keyed answer requires substituting x=24 and solving for y, which is A2/T2 behavior, not A3/T4 (which interprets a piece of the equation in everyday language)."
+  },
+  {
+    "id": "4acd05cd-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Original T7 requires writing equation from a graph. Clone gives three explicit points and asks which table lists them; the correct option is literally the three given points, so no slope/intercept computation is needed. Stem structure no longer matches T7's core_skill_demand."
+  },
+  {
+    "id": "8adf1335-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "T1 must_preserve requires 'two distinct per-unit rates attached to two distinct variables, summed to a stated total'. Clone is R = P + 38 (one variable plus a constant additive); no per-unit rate multipliers and only one variable on the right. Fits A2-style relation, not T1 two-rate equation."
+  },
+  {
+    "id": "87322577-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T3.easy",
+    "verdict": "type_drift",
+    "detail": "T3 description: 'Interpret a coefficient as a per-unit rate' (the value of one unit of x). Clone asks to interpret the constant 90 (the total c in m + r = 90), not a per-unit rate coefficient. This task structure fits T4 (interpret a constant total) \u2014 not T3."
+  },
+  {
+    "id": "6f6dfe3e-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T10.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses a parametric table (n + 120, n + 60, n), which the template lists as a hard-level characteristic for T10 ('Table contains a parameter (e.g., n)'). Medium T10 characteristics call for standard-form rearrangement, two integer points, or distributive simplification \u2014 not symbolic parameters."
+  },
+  {
+    "id": "400798d6-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Interpreted piece is the constant 50 on the right side (T4-easy lever: 'Term is the constant on the right side (a total)'). Medium lever requires interpreting a variable product like 6y. Keyed answer (perimeter = sum of three sides) is correct, but variant matches T4 easy, not medium."
+  },
+  {
+    "id": "c5e38487-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Stem reduces to w + 23 = 80 (one-step) with unit coefficients (w + a = 80). Matches T2 easy levers ('Simple sum constraint x+y=total or single-step substitution: only one inverse operation'), not medium ('Two-step linear equation after substitution; decimal or non-unit coefficients'). Answer correct."
+  },
+  {
+    "id": "c362c210-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem reduces to single-step division (25/20). Pears variable never used; no genuine two-variable substitution. Fails hard lever 'Two-step solve combined with extra arithmetic' and constraint that equation has exactly two variables both engaged."
+  },
+  {
+    "id": "c4ea43ef-s1",
+    "templateId": "linear-equations-in-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Substituting (20,0) into 15x+25y=t is a trivial one-step multiplication (15*20). Fails hard lever 'Two-step solve combined with extra arithmetic'; collapses to easy level."
+  },
+  {
+    "id": "cb58833c-s1",
+    "templateId": "linear-equations-in-two-variables.A5.T11.hard",
+    "verdict": "difficulty_drift",
+    "detail": "7x-4y=21 with y=0 yields single-step solve (x=3). No translation, no fractional rearrangement, no multi-step isolation. Fails hard lever 'multi-step isolation before substitution' or 'translated graph'."
+  },
+  {
+    "id": "cc7ffe02-s1",
+    "templateId": "linear-equations-in-two-variables.A3.T4.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T4 requires geometric/compound context or two-step unit reinterpretation. Clone is a straight rate*count product interpretation (volume in large bottles); matches medium T4 (e.g., 6y as 'total cups in large containers'), not hard."
+  },
+  {
+    "id": "d0e614a6-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T9.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T9 requires fractional coefficients producing fractional y-values. Clone uses integer coefficients 4x+5y=9 with clean integer y outputs; matches medium T9 (standard form, integer coefficients)."
+  },
+  {
+    "id": "8da536c6-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses growth/percent-change scenario (1.22e + 1.35d = 50(1.28)), which matches the A1.T1 hard lever ('growth/percent-change scenario where each variable is multiplied by (1+p)'), not easy ('small whole-number rates'). Mislabeled easy."
+  },
+  {
+    "id": "789975b7-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'Small whole-number rates (1, 3, 5, 10) and whole-number total' with no unit conversion. Clone uses a percent-by-weight mixture (0.3, 0.7) with decimal coefficients \u2014 template explicitly lists 'percent-by-weight mixture where each variable carries a decimal fraction' as a HARD characteristic."
+  },
+  {
+    "id": "4d8ccb96-s1",
+    "templateId": "linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Percent-by-weight mixture (0.05a + 0.80b = 0.10*30) matches hard lever 'percent-by-weight mixture where each variable carries a decimal fraction and the right side itself is a product', not easy's 'small whole-number rates' and 'no unit conversion'."
+  },
+  {
+    "id": "cea27ab2-s1",
+    "templateId": "linear-equations-in-two-variables.A4.T9.easy",
+    "verdict": "difficulty_drift",
+    "detail": "T9 easy lever requires 'equation already in slope-intercept form with integer slope and intercept'; clone uses standard form 3x-2y=-18, which matches the medium lever."
+  }
+]

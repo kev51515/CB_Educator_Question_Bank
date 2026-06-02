@@ -1,0 +1,39 @@
+{
+  "questionId": "028752cd-s1",
+  "originalId": "028752cd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The Great Smog of London was a period of severe air pollution that engulfed the city in 1952. During those few days, thick fog and coal smoke <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> visibility across nearly every neighborhood. They contributed to thousands of deaths from respiratory illness.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>are reducing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>reduced</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>will have reduced</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>will reduce</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is verb tense. The preceding sentence establishes that the events took place in 1952, a specific time in the past, so the simple past tense \"reduced\" is required.</p><p>Choice A is incorrect because the present progressive \"are reducing\" doesn't match the past time frame. Choice C is incorrect because the future perfect \"will have reduced\" doesn't match the past time frame. Choice D is incorrect because the simple future \"will reduce\" doesn't match the past time frame.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

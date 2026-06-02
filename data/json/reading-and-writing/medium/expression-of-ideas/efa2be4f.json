@@ -1,0 +1,72 @@
+{
+  "questionId": "efa2be4f",
+  "externalId": "8e115ea7-bbb9-40f5-b9fe-5a8745b61654",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:40.647844+00:00",
+  "type": "mcq",
+  "stem": "<p>The student wants to emphasize a difference between the meters of the two poems. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "be170e19-1ede-481f-b233-6fda3bfe0cdc",
+      "content": "<p>The poem <em>Widsith </em>is written in Old English, but <em>Meghad\u016bta</em> is written in Sanskrit.&nbsp;</p>"
+    },
+    {
+      "id": "fa63ad51-5064-4cd6-b1e0-a6156eef02d6",
+      "content": "<p>Alliterative meter is a pattern of repeated sounds, but quantitative meter is a rhythmic structure or pattern of accents.</p>"
+    },
+    {
+      "id": "8d696a40-1d75-4f3f-9882-13567ca83df4",
+      "content": "<p>The Sanskrit poem <em>Meghad\u016bta </em>uses a quantitative meter, while the meter of the Old English poem <em>Widsith </em>uses a pattern of long and short syllables.&nbsp;</p>"
+    },
+    {
+      "id": "edaefe26-0abf-41d0-b6eb-9dfaab3b0728",
+      "content": "<p>The lines of the poem <em>Meghad\u016bta</em> use a pattern of long and short syllables, whereas <em>Widsith</em>&rsquo;s lines use a pattern of repeated sounds.</p>"
+    }
+  ],
+  "keys": [
+    "edaefe26-0abf-41d0-b6eb-9dfaab3b0728"
+  ],
+  "rationale": "<p>Choice D is the best answer. Noting that <em>Meghad\u016bta</em> uses a pattern of long and short syllables in its lines (quantitative meter) and <em>Widsith</em> uses a pattern of repeated sounds in its lines (alliterative meter), and signaling a contrast with &ldquo;whereas,&rdquo; the sentence emphasizes a difference between the meters of the two poems.</p><p>Choice A is incorrect. The sentence indicates that the two poems were written in different languages; it doesn&rsquo;t emphasize a difference between the meters of the two poems. Choice B is incorrect. The sentence mentions the meters of the two poems but misrepresents information from the notes; the overall definition of a meter (the rhythmic structure or pattern of accents in a poem&rsquo;s lines) applies to both alliterative and quantitative meters, not just quantitative. Choice C is incorrect. While the sentence emphasizes a difference between the meters of the two poems, it misrepresents information from the notes; <em>Widsith</em> uses an alliterative meter, which is structured by a pattern of repeated sounds, not a pattern of long and short syllables.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>The student wants to emphasize a difference between the meters of the two poems. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The meter of a poem is the rhythmic structure or pattern of accents in its lines.</li>\n<li>Alliterative meter is structured by a pattern of repeated sounds.</li>\n<li>Quantitative meter is structured by a pattern of long and short syllables.</li>\n<li>The Old English poem <em>Widsith</em> uses an alliterative meter.</li>\n<li>The Sanskrit poem <em>Meghad\u016bta</em> uses a quantitative meter.</li>\n</ul>",
+    "keys": [
+      "edaefe26-0abf-41d0-b6eb-9dfaab3b0728"
+    ],
+    "answerOptions": [
+      {
+        "id": "be170e19-1ede-481f-b233-6fda3bfe0cdc",
+        "content": "<p>The poem <em>Widsith </em>is written in Old English, but <em>Meghad\u016bta</em> is written in Sanskrit.&nbsp;</p>"
+      },
+      {
+        "id": "fa63ad51-5064-4cd6-b1e0-a6156eef02d6",
+        "content": "<p>Alliterative meter is a pattern of repeated sounds, but quantitative meter is a rhythmic structure or pattern of accents.</p>"
+      },
+      {
+        "id": "8d696a40-1d75-4f3f-9882-13567ca83df4",
+        "content": "<p>The Sanskrit poem <em>Meghad\u016bta </em>uses a quantitative meter, while the meter of the Old English poem <em>Widsith </em>uses a pattern of long and short syllables.&nbsp;</p>"
+      },
+      {
+        "id": "edaefe26-0abf-41d0-b6eb-9dfaab3b0728",
+        "content": "<p>The lines of the poem <em>Meghad\u016bta</em> use a pattern of long and short syllables, whereas <em>Widsith</em>&rsquo;s lines use a pattern of repeated sounds.</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. Noting that <em>Meghad\u016bta</em> uses a pattern of long and short syllables in its lines (quantitative meter) and <em>Widsith</em> uses a pattern of repeated sounds in its lines (alliterative meter), and signaling a contrast with &ldquo;whereas,&rdquo; the sentence emphasizes a difference between the meters of the two poems.</p><p>Choice A is incorrect. The sentence indicates that the two poems were written in different languages; it doesn&rsquo;t emphasize a difference between the meters of the two poems. Choice B is incorrect. The sentence mentions the meters of the two poems but misrepresents information from the notes; the overall definition of a meter (the rhythmic structure or pattern of accents in a poem&rsquo;s lines) applies to both alliterative and quantitative meters, not just quantitative. Choice C is incorrect. While the sentence emphasizes a difference between the meters of the two poems, it misrepresents information from the notes; <em>Widsith</em> uses an alliterative meter, which is structured by a pattern of repeated sounds, not a pattern of long and short syllables.</p>",
+    "externalid": "8e115ea7-bbb9-40f5-b9fe-5a8745b61654",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The meter of a poem is the rhythmic structure or pattern of accents in its lines.</li>\n<li>Alliterative meter is structured by a pattern of repeated sounds.</li>\n<li>Quantitative meter is structured by a pattern of long and short syllables.</li>\n<li>The Old English poem <em>Widsith</em> uses an alliterative meter.</li>\n<li>The Sanskrit poem <em>Meghad\u016bta</em> uses a quantitative meter.</li>\n</ul>"
+}

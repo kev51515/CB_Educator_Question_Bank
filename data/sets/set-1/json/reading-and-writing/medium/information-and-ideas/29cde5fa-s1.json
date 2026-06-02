@@ -1,0 +1,25 @@
+{
+  "questionId": "29cde5fa-s1",
+  "originalId": "29cde5fa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p>“Mr. Bartholomew Reed, Newly Elected” is a 1902 short story by Estella Whitfield. In the story, the narrator describes Mr. Bartholomew Reed's bearing as conveying his inflated sense of his own importance after winning a seat on the town council: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from “Mr. Bartholomew Reed, Newly Elected” most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“He moved through the streets of the town as though the very lampposts had been raised in his honor.”</p>"},
+    {"id": "b", "content": "<p>“The dark frock coat fit him neatly across the shoulders, and a silver-tipped walking stick replaced the plain hickory cane he had previously favored.”</p>"},
+    {"id": "c", "content": "<p>“It was a clear October morning and the early sun shone agreeably on Mr. Bartholomew Reed's well-brushed black frock coat as he stepped down from the morning coach onto the platform at Hartfield Station.”</p>"},
+    {"id": "d", "content": "<p>“Mr. Bartholomew Reed had long made it his custom to speak only in unhurried, measured sentences.”</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most effectively illustrates the claim that Mr. Reed's bearing conveys his inflated sense of his own importance. The image of him moving through town “as though the very lampposts had been raised in his honor” captures his bearing directly: he carries himself as if the public infrastructure of the town existed to commemorate him, which enacts his exaggerated self-regard.</p><p>Choice B is incorrect because it merely describes the cut of his coat and his change of walking stick—details of dress that do not, on their own, convey inflated self-importance. Choice C is incorrect because it simply sets the scene of his arrival at the station and notes that he is well-dressed; it does not characterize his bearing as inflated. Choice D is incorrect because it describes a habit of speech, not the manner of his bearing or movement through the world.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

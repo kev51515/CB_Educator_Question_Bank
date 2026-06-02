@@ -1,0 +1,39 @@
+{
+  "questionId": "52fe862a-s1",
+  "originalId": "52fe862a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Researcher Tomas Riley is using new ice-core dating techniques to study the Vostok Station drilling site in Antarctica. He and his colleagues have found that the deepest ice differs from the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> estimate: it is approximately 50,000 years older than scientists believed when first analyzing the cores in the 1990s.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>original</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>intentional</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>independent</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>genuine</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the sentence compares Riley's new dating to the estimate made when scientists first analyzed the cores in the 1990s. \"Original\" means existing from the beginning, which fits the earliest estimate. The other choices describe being purposeful, separate, or real, none of which captures the meaning of \"earliest\" estimate.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

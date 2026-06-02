@@ -1,0 +1,39 @@
+{
+  "questionId": "151eda3c-s1",
+  "originalId": "151eda3c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A manufacturing company produces two sizes of cylindrical containers that each have a height of 40 centimeters. The radius of container A is 12 centimeters, and the radius of container B is 50% longer than the radius of container A. What is the volume, in cubic centimeters, of container B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12,960\u03c0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9,000\u03c0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8,000\u03c0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5,760\u03c0</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The radius of B is 12(1.50) = 18 cm. Its volume is V = \u03c0r\u00b2h = \u03c0(18\u00b2)(40) = \u03c0(324)(40) = 12,960\u03c0 cubic centimeters. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A4.T3.medium"
+}

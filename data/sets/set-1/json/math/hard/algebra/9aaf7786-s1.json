@@ -1,0 +1,22 @@
+{
+  "questionId": "9aaf7786-s1",
+  "originalId": "9aaf7786",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, line q has a slope of -7/4 and an x-intercept of (-8, 0). What is the y-coordinate of the y-intercept of line q?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-14"
+  ],
+  "rationale": "<p>The correct answer is -14. A line can be written as y = mx + b, where m is the slope and b is the y-coordinate of the y-intercept. Given m = -7/4 and the point (-8, 0): 0 = (-7/4)(-8) + b = 14 + b, so b = -14.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.hard"
+}

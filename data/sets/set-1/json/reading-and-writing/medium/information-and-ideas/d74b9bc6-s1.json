@@ -1,0 +1,39 @@
+{
+  "questionId": "d74b9bc6-s1",
+  "originalId": "d74b9bc6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "type": "mcq",
+  "stimulus": "<p>Average Annual Snowfall (in centimeters) at Three Mountain Stations</p><figure><table><thead><tr><th>Station</th><th>1990</th><th>2020</th></tr></thead><tbody><tr><td>Mt. Hawthorne (Vermont)</td><td>410</td><td>325</td></tr><tr><td>Mt. Sienna (Colorado)</td><td>520</td><td>515</td></tr><tr><td>Mt. Brindle (Oregon)</td><td>290</td><td>330</td></tr></tbody></table></figure><p>It is common for high-elevation stations in temperate regions to receive substantial snowfall each winter. The total amount of snowfall depends on many factors, including local weather patterns, elevation, and aspect, but a climate researcher claims that some such stations have seen a decline in annual snowfall between 1990 and 2020. She cites as a typical example ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the researcher’s example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>both Mt. Hawthorne and Mt. Sienna, which had less than 530 centimeters of snowfall in 1990.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mt. Brindle, which had more snowfall in 2020 than it did in 1990.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Mt. Hawthorne, which had less snowfall in 2020 than it did in 1990.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>both Mt. Sienna and Mt. Brindle, which had more than 300 centimeters of snowfall in 2020.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because it uses data from the table to support the researcher’s claim: Mt. Hawthorne received 410 centimeters of snowfall in 1990 but only 325 centimeters in 2020, evidence of a clear decline between the two years.</p><p>Choice A is incorrect because it cites data from only one year (1990), which alone cannot establish a decline. Choice B is incorrect because Mt. Brindle’s snowfall increased (290 to 330), contradicting the researcher’s claim. Choice D is incorrect because it cites only 2020 data; without a comparison to an earlier year, it doesn’t establish a decline.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z"
+}

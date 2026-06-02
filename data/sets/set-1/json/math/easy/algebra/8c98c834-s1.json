@@ -1,0 +1,39 @@
+{
+  "questionId": "8c98c834-s1",
+  "originalId": "8c98c834",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation <i>y</i> = <i>x</i>/12 models the relationship between the number of saplings, <i>y</i>, a gardener plants during an <i>x</i>-minute work block. How many saplings did the gardener plant if the work block lasted 48 minutes?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>48</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting <i>x</i> = 48 into <i>y</i> = <i>x</i>/12 gives <i>y</i> = 48/12 = 4.</p><p>Choices A and B come from misreading the equation. Choice D is the time, not the count.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "bbb0359a-s1",
+  "originalId": "bbb0359a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The table below shows three values of <em>x</em> and their corresponding values of <em>y</em>:</p><p>x: 1, 2, 3<br>y: 10, 13, 16</p><p>There is a linear relationship between <em>x</em> and <em>y</em>. Which equation represents this relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 3x + 10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 13x + 10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 3x + 7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 7x + 3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The y-values increase by 3 each time x increases by 1, so the slope m = 3. Using point (1, 10) in y = mx + b gives 10 = 3(1) + b, so b = 7. The equation is y = 3x + 7. Choice A uses the y-value at x = 1 as the intercept. Choice B confuses the slope with one of the y-values. Choice D swaps slope and intercept.</p>",
+  "templateId": "linear-equations-in-two-variables.A4.T6.medium"
+}

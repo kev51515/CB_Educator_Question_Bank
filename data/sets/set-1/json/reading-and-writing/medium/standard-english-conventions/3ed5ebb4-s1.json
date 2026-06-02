@@ -1,0 +1,25 @@
+{
+  "questionId": "3ed5ebb4-s1",
+  "originalId": "3ed5ebb4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T5.medium",
+  "stimulus": "<p>In her study of Willa Cather&rsquo;s <em>My &Aacute;ntonia</em> (1918), scholar Rosa Lindgren contends that the novel renders the Nebraska prairie as &ldquo;a landscape both unforgiving and tenderly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a fitting description given that Cather drew on her own childhood among Bohemian immigrant families on the Great Plains.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>familiar&rdquo;; and</p>"},
+    {"id": "b", "content": "<p>familiar&rdquo; and</p>"},
+    {"id": "c", "content": "<p>familiar,&rdquo;</p>"},
+    {"id": "d", "content": "<p>familiar&rdquo;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation between a main clause and a supplementary noun phrase. The comma correctly marks the boundary between the main clause (&ldquo;scholar...familiar&rdquo;) and the supplementary noun phrase (&ldquo;a fitting description&rdquo;) that describes Lindgren&rsquo;s reading of the novel.</p><p>Choice A is incorrect because a semicolon and the conjunction &ldquo;and&rdquo; can&rsquo;t mark the boundary between a main clause and a supplementary noun phrase. Choice B is incorrect because joining the main clause to the following noun phrase with &ldquo;and&rdquo; produces an illogical sentence suggesting that the novel itself is &ldquo;a fitting description.&rdquo; Choice D is incorrect because it fails to mark the boundary between the main clause and the supplementary noun phrase with appropriate punctuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

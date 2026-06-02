@@ -1,0 +1,39 @@
+{
+  "questionId": "86f7483f-s1",
+  "originalId": "86f7483f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During fall migration, a sandpiper traveled a minimum of 2,340 miles and a maximum of 5,180 miles between rest stops. Which inequality represents this situation, where d is a possible distance, in miles, this sandpiper traveled between rest stops during fall migration?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>d &le; 2,340</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>d &ge; 5,180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2,340 &le; d &le; 5,180</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5,180 &le; d &le; 7,520</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The sandpiper traveled at least 2,340 miles and at most 5,180 miles, so d must satisfy 2,340 &le; d &le; 5,180.</p><p>Choice A allows distances less than the minimum. Choice B allows distances greater than the maximum. Choice D uses the wrong endpoints.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy"
+}

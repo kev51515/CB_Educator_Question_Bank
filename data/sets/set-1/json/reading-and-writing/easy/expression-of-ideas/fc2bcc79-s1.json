@@ -1,0 +1,39 @@
+{
+  "questionId": "fc2bcc79-s1",
+  "originalId": "fc2bcc79",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Indigo was a highly valued dye throughout the kingdoms of West Africa. Yoruba weavers in particular were famous for using this plant-based dye to color their fabrics a striking deep blue. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the word \"indigo\" itself, some linguists claim, may have entered European languages through Yoruba trade routes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>On the contrary,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Lastly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Regardless,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In fact,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"In fact\" logically signals that the claim in this sentence&mdash;the word \"indigo\" possibly entering European languages through Yoruba trade routes&mdash;emphasizes and supports the previous claim that Yoruba weavers were famous for their indigo dye.</p><p>Choice A is incorrect because \"on the contrary\" illogically signals opposition. Choice B is incorrect because \"lastly\" illogically signals a final step in a sequence. Choice C is incorrect because \"regardless\" illogically signals contrast.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T11.easy"
+}

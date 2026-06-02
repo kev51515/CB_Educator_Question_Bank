@@ -1,0 +1,39 @@
+{
+  "questionId": "76e4c51d-s1",
+  "originalId": "76e4c51d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The kalimba, a hand-held instrument with thin metal tines mounted on a wooden soundboard, is thought to have originated with the Shona people of present-day Zimbabwe. Players use their thumbs to pluck the tines, producing tones that are highly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: the sounds produced by kalimbas can differ based on the length and thickness of each tine, the material of the soundboard, and the player's plucking technique.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>familiar</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>varied</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>routine</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>overlooked</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Varied\" most logically completes the text. The colon introduces an explanation showing that kalimba tones differ from instrument to instrument and player to player; this list supports the idea that the sound is varied.</p><p>Choice A is incorrect. \"Familiar\" doesn't follow from the differences the text describes. Choice C is incorrect. \"Routine\" means ordinary or unchanging, which contradicts the list of differences. Choice D is incorrect. \"Overlooked\" describes how something is perceived, not the differences in sound the colon explains.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

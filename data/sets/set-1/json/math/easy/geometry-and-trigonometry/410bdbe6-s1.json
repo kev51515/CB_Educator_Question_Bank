@@ -1,0 +1,39 @@
+{
+  "questionId": "410bdbe6-s1",
+  "originalId": "410bdbe6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a triangle, the three interior angles measure 27°, 2b°, and a°. If a = 51, what is the value of b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>39</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>78</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>51</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>26</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The interior angles sum to 180°: 27 + 2b + 51 = 180, so 2b = 102, giving b = 51.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.medium"
+}

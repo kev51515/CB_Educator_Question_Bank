@@ -1,0 +1,25 @@
+{
+  "questionId": "1f8cd95f-s1",
+  "originalId": "1f8cd95f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T1.medium",
+  "stimulus": "<p>In the 1960s, textile chemist Stephanie Kwolek was experimenting with a stiff, opaque polymer solution when her colleague Charles Smullen urged her to spin it into fibers despite the cloudy appearance. In addition, Smullen <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> testing the resulting fibers for tensile strength: the substance became known as Kevlar.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>suggests</p>"},
+    {"id": "b", "content": "<p>had suggested</p>"},
+    {"id": "c", "content": "<p>suggested</p>"},
+    {"id": "d", "content": "<p>is suggesting</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of verbs to express tense. The simple past tense verb \"suggested\" properly indicates that Smullen offered his recommendation in the past. This tense is consistent with the previous sentence's use of the simple past tense verb \"urged\" to describe Smullen's advice to Kwolek.</p><p>Choice A is incorrect because the present tense verb \"suggests\" doesn't indicate that Smullen offered his recommendation in the past. Choice B is incorrect because the past perfect verb \"had suggested\" isn't consistent with the previous sentence's use of the simple past tense verb \"urged.\" Choice D is incorrect because the present progressive verb \"is suggesting\" isn't consistent with the previous sentence's use of the simple past tense verb \"urged.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

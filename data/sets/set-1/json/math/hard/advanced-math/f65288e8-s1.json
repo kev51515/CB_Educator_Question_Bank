@@ -1,0 +1,39 @@
+{
+  "questionId": "f65288e8-s1",
+  "originalId": "f65288e8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>(<i>x</i> + 4)(<i>x</i> &minus; 9) = 0</p><p>If <i>x</i> is a solution to the given equation, which of the following is a possible value of <i>x</i> + 2?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The solutions to (<i>x</i> + 4)(<i>x</i> &minus; 9) = 0 are <i>x</i> = &minus;4 and <i>x</i> = 9. Then <i>x</i> + 2 = &minus;2 or 11. Only &minus;2 appears among the choices.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.hard"
+}

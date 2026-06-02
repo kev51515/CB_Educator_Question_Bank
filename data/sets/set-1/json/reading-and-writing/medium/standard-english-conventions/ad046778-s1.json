@@ -1,0 +1,25 @@
+{
+  "questionId": "ad046778-s1",
+  "originalId": "ad046778",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>To casual observers, it does not appear that the leafy sea dragon relies on mimicry to deter <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the flamboyantly fringed fish drifts openly through shallow kelp beds rather than retreating into crevices. Researcher Akemi Tanaka of Flinders University has explained that the dragon&rsquo;s elaborate appendages may in fact be precisely what conceals it.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>predators; instead,</p>"},
+    {"id": "b", "content": "<p>predators, instead,</p>"},
+    {"id": "c", "content": "<p>predators instead,</p>"},
+    {"id": "d", "content": "<p>predators, instead;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. A semicolon correctly joins the first independent clause (\"To casual observers...predators\") and the second (\"instead...crevices\"). The comma after the adverb \"instead\" properly sets the transition off from the clause it modifies.</p><p>Choice B is incorrect because a comma alone produces a comma splice between two independent clauses. Choice C is incorrect because it fuses two independent clauses without sufficient punctuation. Choice D is incorrect because placing the semicolon after \"instead\" misassigns the transition, illogically attaching it to the previous clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

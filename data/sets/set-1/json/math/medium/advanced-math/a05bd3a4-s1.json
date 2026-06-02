@@ -1,0 +1,39 @@
+{
+  "questionId": "a05bd3a4-s1",
+  "originalId": "a05bd3a4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is equivalent to t\u00b2 \u2212 7?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(t + 7)(t \u2212 1)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(t \u2212 7)(t + 1)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(t + \u221a7)(t \u2212 \u221a7)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(t + 7)(t \u2212 7)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>t\u00b2 \u2212 7 is a difference of squares: t\u00b2 \u2212 (\u221a7)\u00b2 = (t + \u221a7)(t \u2212 \u221a7). Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A2.T5.medium"
+}

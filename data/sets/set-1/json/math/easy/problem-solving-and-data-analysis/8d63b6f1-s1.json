@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane shows the height (in centimeters) and number of petals on 8 wildflowers. The data points are:</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Height (cm)</th><th>Petals</th></tr>\n<tr><td>20</td><td>4</td></tr><tr><td>25</td><td>5</td></tr><tr><td>30</td><td>7</td></tr><tr><td>35</td><td>6</td></tr><tr><td>40</td><td>8</td></tr><tr><td>45</td><td>9</td></tr><tr><td>50</td><td>10</td></tr><tr><td>55</td><td>11</td></tr></table>\n<p style=\"text-align: left;\">How many petals did the 30-centimeter-tall wildflower have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. According to the table, the 30 cm flower has 7 petals.</p><p>Choices A, C, and D correspond to other heights.</p>",
+  "questionId": "8d63b6f1-s1",
+  "originalId": "8d63b6f1",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

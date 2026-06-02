@@ -1,0 +1,22 @@
+{
+  "questionId": "76670c80-s1",
+  "originalId": "76670c80",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Each side of a square has a length of 38. What is the perimeter of this square?</p>",
+  "answerOptions": null,
+  "keys": [
+    "152"
+  ],
+  "rationale": "<p>The perimeter of a square equals 4 times the side length. With side length 38, the perimeter is 4 \u00d7 38 = 152.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

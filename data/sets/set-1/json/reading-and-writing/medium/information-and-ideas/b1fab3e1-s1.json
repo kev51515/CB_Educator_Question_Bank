@@ -1,0 +1,25 @@
+{
+  "questionId": "b1fab3e1-s1",
+  "originalId": "b1fab3e1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T3.medium",
+  "stimulus": "<p>Bronze bells cast in workshops in Hangzhou, China, during the Southern Song dynasty (1127&ndash;1279) produce a tone that contemporary metallurgists describe as exceptionally pure compared with bells of similar size cast today. Some specialists had attributed the difference to the metal alloy used, but modern and Song-era bells are made from the same proportions of copper and tin. Recent microstructural analysis, however, has revealed that the Song-era bells were subjected to a multistep annealing process during cooling, prompting researchers to propose that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>contemporary bell makers in Hangzhou have rediscovered and now routinely apply the Song-era annealing process.</p>"},
+    {"id": "b", "content": "<p>Song-era bells were unlikely to have been considered acoustically superior at the time they were cast.</p>"},
+    {"id": "c", "content": "<p>the tonal purity of Song-era bells results in part from a thermal treatment the original founders applied to the metal.</p>"},
+    {"id": "d", "content": "<p>bells made of copper&ndash;zinc alloys would likely produce a tone as pure as that of Song-era bronze bells.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text states that Song-era bells sound purer than modern bells, that both are made from identical copper-and-tin proportions (so alloy alone cannot explain the difference), and that microstructural analysis reveals the older bells underwent a multistep annealing process. The most logical inference is that this thermal treatment helps account for the tonal difference.</p><p>Choice A is incorrect because the text frames annealing as a newly recognized feature of the Song-era bells, implying current makers do not routinely use it. Choice B is incorrect because the text does not address how the bells were judged when cast. Choice D is incorrect because the text never mentions zinc or any alloy other than copper-and-tin, so no inference about a different alloy is supported.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e9521fd1-s1",
+  "originalId": "e9521fd1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The Bantu language family is divided into a western branch, whose best-known representative is Kikongo, spoken across parts of present-day Angola and the Democratic Republic of the Congo, and an eastern branch, which includes Swahili, the lingua franca of much of East Africa. Lexical similarities across the family, including of botanical terms, confirm descent from a single language spoken millennia ago, and the family's geographical distribution suggests an origin in what is now the borderland between Cameroon and Nigeria. However, vocabulary pertaining to coffee isn't shared between the western and eastern branches, despite the crop's universal cultivation among Bantu communities. Given archaeological evidence that coffee originated in the Ethiopian highlands and diffused southward and westward into the rest of Bantu-speaking Africa, some linguists reason that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the family's division into western and eastern branches likely preceded the acquisition of the crop by the Bantu communities.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>western Bantu communities likely obtained the crop directly from an eastern Bantu community rather than from a non-Bantu community.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>variation in coffee-related vocabulary within each branch of the Bantu family likely reflects regionally specific methods for cultivating the crop.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>eastern Bantu communities likely acquired coffee at roughly the same time as western Bantu communities did, though from different sources.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says the western and eastern branches of the Bantu family descended from a single language but do not share vocabulary for coffee, even though all Bantu communities cultivate it. Coffee diffused from the Ethiopian highlands into Bantu-speaking Africa after the Bantu family had already spread out. If coffee had been known when the family was still unified, the descendant branches would likely share coffee vocabulary. Since they do not, the family must have already divided into the western and eastern branches before coffee arrived, and each branch then developed its own coffee vocabulary independently.</p><p>Choice B is incorrect because it addresses only the route of acquisition rather than the linguistic evidence; moreover, if western Bantu communities had received coffee from eastern Bantu communities, they would likely also have borrowed eastern Bantu coffee vocabulary, contradicting the observed absence of shared terms. Choice C is incorrect because the text addresses differences between branches, not within branches. Choice D is incorrect because the text implies that eastern Bantu communities, being geographically closer to the Ethiopian highlands, acquired coffee earlier than western Bantu communities did.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

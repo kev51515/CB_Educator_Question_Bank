@@ -1,0 +1,39 @@
+{
+  "questionId": "1be8b6b2-s1",
+  "originalId": "1be8b6b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right circular cone has a volume of 20,328&pi; cubic centimeters and the area of its base is 1,089&pi; square centimeters. What is the slant height, in centimeters, of this cone?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>33</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>65</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>56</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>98</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The base area &pi;r&sup2; = 1,089&pi; gives r = 33. The volume formula V = (1/3)&pi;r&sup2;h gives 20,328&pi; = (1/3)(1,089&pi;)h, so h = 56. The slant height is &radic;(r&sup2; + h&sup2;) = &radic;(1,089 + 3,136) = &radic;4,225 = 65.</p><p>Choice A gives the radius, choice C gives the height, choice D adds r and h.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T3.hard"
+}

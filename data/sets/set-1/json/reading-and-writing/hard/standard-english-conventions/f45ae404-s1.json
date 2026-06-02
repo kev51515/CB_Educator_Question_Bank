@@ -1,0 +1,39 @@
+{
+  "questionId": "f45ae404-s1",
+  "originalId": "f45ae404",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The transit authority in Copenhagen worked with researchers to launch GreenFlow\u2014a privacy-respecting AI traffic management ______ data drawn from sensors embedded at intersections, the system predicts congestion in real time and adjusts signal timing while discarding all individually identifiable vehicle information.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>platform, processing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>platform. Processing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>platform processing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>platform\u2014processing</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between the first sentence (\"The transit...platform\") and the second sentence (\"Processing...information\"). The participial phrase beginning with \"Processing\" modifies the subject of the second sentence, \"the system.\"</p><p>Choice A is incorrect because it produces a comma splice; a comma cannot join two complete sentences. Choice C is incorrect because it produces a run-on sentence with no punctuation between the two independent clauses. Choice D is incorrect because placing a dash before \"processing\" creates a confusing and ambiguous modifier and a comma splice later in the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T1.hard"
+}

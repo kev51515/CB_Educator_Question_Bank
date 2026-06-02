@@ -1,0 +1,22 @@
+{
+  "questionId": "a4ed5285-s1",
+  "originalId": "a4ed5285",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A right triangle has legs of length 7 inches and 4 inches. What is the area, in square inches, of the triangle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "14"
+  ],
+  "rationale": "<p>The correct answer is 14. The area A of a triangle is A = (1/2)bh, where b is the base length and h is the corresponding height. In a right triangle, the two legs serve as the base and the height. Substituting b = 7 and h = 4 yields A = (1/2)(7)(4) = 14 square inches.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T2.medium"
+}

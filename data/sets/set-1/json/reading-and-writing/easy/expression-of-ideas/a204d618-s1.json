@@ -1,0 +1,39 @@
+{
+  "questionId": "a204d618-s1",
+  "originalId": "a204d618",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 1937, George Lerner developed a candy-coating machine for use in chocolate factories. As Lerner's machine rotated the candy centers, it first sprayed them with a thin layer of warm chocolate. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it cooled the coated candies under a stream of chilled air. Lastly, it tumbled them in a polishing drum to give the shells a glossy finish.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In contrast,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Next,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Next\" logically signals that the action in this sentence&mdash;the cooling of the candies&mdash;is the next step in the coating process, following the chocolate spraying in the previous sentence.</p><p>Choice A is incorrect because \"similarly\" illogically signals that the actions are similar rather than sequential. Choice B is incorrect because \"for example\" illogically signals exemplification. Choice C is incorrect because \"in contrast\" illogically signals contrast, but the cooling step is the next stage in the process.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

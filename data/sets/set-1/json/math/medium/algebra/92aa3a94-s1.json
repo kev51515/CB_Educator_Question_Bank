@@ -1,0 +1,39 @@
+{
+  "questionId": "92aa3a94-s1",
+  "originalId": "92aa3a94",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>Line <em>p</em> is defined by y = 5x + 2/9. Line <em>q</em> is perpendicular to line <em>p</em> in the <em>xy</em>-plane. What is the slope of line <em>q</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-1/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The slope of line <em>p</em> is 5 (the coefficient of <em>x</em> in y = mx + b form). Line <em>q</em> is perpendicular to line <em>p</em>, so its slope is the opposite reciprocal of 5, which is -1/5. Choice A reverses the sign incorrectly. Choice B is the y-intercept of line <em>p</em>. Choice D is the slope of line <em>p</em> itself, which would make the lines parallel, not perpendicular.</p>",
+  "templateId": "linear-equations-in-two-variables.A6.T13.medium"
+}

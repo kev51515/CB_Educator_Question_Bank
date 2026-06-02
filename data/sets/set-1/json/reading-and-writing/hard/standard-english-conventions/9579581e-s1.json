@@ -1,0 +1,25 @@
+{
+  "questionId": "9579581e-s1",
+  "originalId": "9579581e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>As irrigation techniques spread along the rivers of the ancient Near East during and after the Neolithic, divergent strategies for managing water <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> whereas canal-based diversion became the foundation of large-scale agriculture along the Tigris and Euphrates, terraced catchment systems became common among hill-farming villages in the surrounding uplands.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>arose,</p>"},
+    {"id": "b", "content": "<p>arose:</p>"},
+    {"id": "c", "content": "<p>arose and</p>"},
+    {"id": "d", "content": "<p>arose</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text before the blank is a complete sentence that promises an elaboration, and the text after the blank is a contrastive pair of clauses elaborating the \"divergent strategies.\" A colon correctly introduces this elaboration.</p><p>Choice A is incorrect because a comma produces a splice between the introductory clause and the elaborating clauses. Choice C is incorrect because \"and\" introduces a coordinator that does not match the contrastive \"whereas&hellip;\" structure that follows. Choice D is incorrect because it leaves a run-on between the introductory clause and the elaboration.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

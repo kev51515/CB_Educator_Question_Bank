@@ -1,0 +1,39 @@
+{
+  "questionId": "69f609b2-s1",
+  "originalId": "69f609b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>How many solutions does the equation 8(<i>x</i> &minus; 5) = &minus;2(<i>x</i> + 20) have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Expanding gives 8<i>x</i> &minus; 40 = &minus;2<i>x</i> &minus; 40. Adding 2<i>x</i> + 40 to both sides yields 10<i>x</i> = 0, so <i>x</i> = 0 is the unique solution.</p><p>Choice A would require a contradiction, choice D would require an identity, and choice C is impossible for a linear equation.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T8.hard"
+}

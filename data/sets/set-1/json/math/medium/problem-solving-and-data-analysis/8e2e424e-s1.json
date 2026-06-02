@@ -1,0 +1,39 @@
+{
+  "questionId": "8e2e424e-s1",
+  "originalId": "8e2e424e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number <em>h</em> is 22% greater than 80. If <em>h</em> is the product of 80 and <em>s</em>, what is the value of <em>s</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2.2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1.22</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.22</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. If <em>h</em> is 22% greater than 80, then <em>h</em> = 80 + 0.22(80) = (1 + 0.22)(80) = 1.22(80). Since <em>h</em> = 80<em>s</em>, dividing both sides by 80 yields <em>s</em> = 1.22. Choices A, B, and D are incorrect; 22, 2.2, and 0.22 would correspond to <em>h</em> being 1,660% greater than 80, 120% greater than 80, and 78% less than 80, respectively, none of which match a 22% increase.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T4.medium"
+}

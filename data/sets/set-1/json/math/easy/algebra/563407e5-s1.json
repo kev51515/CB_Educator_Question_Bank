@@ -1,0 +1,39 @@
+{
+  "questionId": "563407e5-s1",
+  "originalId": "563407e5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A farmer packs eggs into cartons. Each carton contains at least 25 eggs but no more than 35 eggs. Which of the following could be the total number of eggs in 4 cartons?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>96</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>130</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. With 4 cartons, the minimum total is 4 &times; 25 = 100 eggs and the maximum total is 4 &times; 35 = 140 eggs. So any valid total <i>n</i> satisfies 100 &le; <i>n</i> &le; 140. Only 130 falls within this range.</p><p>Choices A and B are below the minimum of 100. Choice C is above the maximum of 140.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9551cd91-s1",
+  "originalId": "9551cd91",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the linear relationship between the number of ferries, <em>c</em>, leaving a dock and the maximum number of passengers, <em>p</em>, the ferries can carry in total.</p><table border=\"1\"><tr><th>Number of ferries</th><th>Maximum number of passengers</th></tr><tr><td>4</td><td>158</td></tr><tr><td>6</td><td>232</td></tr><tr><td>9</td><td>343</td></tr></table><p>Which equation represents the linear relationship between <em>c</em> and <em>p</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>37<em>c</em> \u2212 <em>p</em> = 10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>37<em>p</em> \u2212 <em>c</em> = \u221210</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>37<em>c</em> \u2212 <em>p</em> = \u221210</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>37<em>p</em> \u2212 <em>c</em> = 10</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. For a linear relationship <em>p</em> = <em>mc</em> + <em>b</em>, the rate of change is (232 \u2212 158)/(6 \u2212 4) = 74/2 = 37, so <em>m</em> = 37. Substituting (4, 158): 158 = 37(4) + <em>b</em> = 148 + <em>b</em>, so <em>b</em> = 10. Therefore <em>p</em> = 37<em>c</em> + 10, or equivalently 37<em>c</em> \u2212 <em>p</em> = \u221210.</p><p>Choices A, B, and D are incorrect and may result from sign errors or swapping <em>c</em> and <em>p</em>.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T2.medium"
+}

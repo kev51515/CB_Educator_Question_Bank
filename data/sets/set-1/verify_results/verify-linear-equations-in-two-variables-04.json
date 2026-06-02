@@ -1,0 +1,22 @@
+[
+  {"id": "0366d965-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "05bb1af9-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "9bbce683-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "type_drift", "detail": "Stem is plain 'find x-intercept' from a table that already contains x=0 (y-intercept handed over). No translation/transformation or multi-step combination required; this is T11 easy/medium, not T12 hard, which requires derive-line + translate + report-coordinate."},
+  {"id": "a35c7164-s1", "templateId": "linear-equations-in-two-variables.A6.T15.hard", "verdict": "aspect_drift", "detail": "Stem invokes 'infinitely many solutions' (identical-line/equivalent equations), not a parallel or perpendicular relationship. A6/T15 requires a parallel or perpendicular pair, not equation-equivalence."},
+  {"id": "00723d16-s1", "templateId": "linear-equations-in-two-variables.A6.T13.hard", "verdict": "ok"},
+  {"id": "5b7599a6-s1", "templateId": "linear-equations-in-two-variables.A4.T7.hard", "verdict": "ok"},
+  {"id": "cc7ffe02-s1", "templateId": "linear-equations-in-two-variables.A3.T4.hard", "verdict": "difficulty_drift", "detail": "Hard T4 requires geometric/compound context or two-step unit reinterpretation. Clone is a straight rate*count product interpretation (volume in large bottles); matches medium T4 (e.g., 6y as 'total cups in large containers'), not hard."},
+  {"id": "a7a14e87-s1", "templateId": "linear-equations-in-two-variables.A6.T14.hard", "verdict": "ok"},
+  {"id": "d0e614a6-s1", "templateId": "linear-equations-in-two-variables.A4.T9.hard", "verdict": "difficulty_drift", "detail": "Hard T9 requires fractional coefficients producing fractional y-values. Clone uses integer coefficients 4x+5y=9 with clean integer y outputs; matches medium T9 (standard form, integer coefficients)."},
+  {"id": "94b48cbf-s1", "templateId": "linear-equations-in-two-variables.A5.T11.hard", "verdict": "type_drift", "detail": "Stem asks for the slope of 9x+4y=-53, not an x- or y-intercept. T11 is intercept extraction; slope extraction is T10. Also lacks the hard T11 levers (translation, ratio of intercepts, rearranged messy form)."},
+  {"id": "a1fd2304-s1", "templateId": "linear-equations-in-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "184ce5aa-s1", "templateId": "linear-equations-in-two-variables.A6.T13.hard", "verdict": "ok"},
+  {"id": "2554b413-s1", "templateId": "linear-equations-in-two-variables.A4.T5.easy", "verdict": "ok"},
+  {"id": "83f2c3bf-s1", "templateId": "linear-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "c6b151d4-s1", "templateId": "linear-equations-in-two-variables.A3.T4.easy", "verdict": "type_drift", "detail": "Stem asks to interpret a solution pair (x,y), not a coefficient/product/constant term. The keyed answer requires substituting x=24 and solving for y, which is A2/T2 behavior, not A3/T4 (which interprets a piece of the equation in everyday language)."},
+  {"id": "8368afd1-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "dfa45424-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "52a8ef85-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "5b8a8475-s1", "templateId": "linear-equations-in-two-variables.A6.T13.easy", "verdict": "ok"},
+  {"id": "4edecdba-s1", "templateId": "linear-equations-in-two-variables.A2.T2.easy", "verdict": "ok"}
+]

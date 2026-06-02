@@ -1,0 +1,399 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Craft and Structure",
+  "skill": "Cross-Text Connections",
+  "originals_count": 58,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Predicted author response",
+      "description": "The student is given a paired Text 1 / Text 2 and must predict how one author would react, reply, or characterize a specific claim, finding, argument, or recommendation in the other text. The cognitive operation is one-sided cross-text projection: hold one author's stance fixed and apply it to a target located in the other text.",
+      "boundary_with_other_aspects": "A1 differs from A2/A3 in that A1 makes a directional inference (Author B's reaction to Text A); a stem asking what BOTH authors share belongs to A2, and a stem asking how the two authors DIFFER belongs to A3. Drift risk: turning a 'how would Author B respond' clone into a 'both authors agree' clone is a categorical error.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Respond to entire argument/finding",
+          "description": "Stem points to the overall argument, research, claim, or 'consensus view' of the other text — no underlined portion. Student infers Author B's verbal response (typically phrased 'By [doing X]...') to the totality of Text A's position.",
+          "core_skill_demand": "Identify Text A's main claim, identify Text B's competing or qualifying stance, and select the response that applies Text B's stance directly against Text A's claim — without smuggling in content not supported by Text B.",
+          "example_originals": ["02fd3da7", "059f7201", "27d9bb69", "6977d22b", "c885c38b", "c4737d6a"],
+          "frequency": { "easy": 5, "medium": 8, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Text 1 makes a single clear claim and Text 2 explicitly contradicts or qualifies it within the stimulus",
+                "Answer paraphrases Text 2's already-stated counter-claim almost directly",
+                "Topics are everyday/accessible (voting, flamingos, bluegrass)"
+              ],
+              "example_stem": "Based on the texts, how would Singh and Roy (Text 2) most likely respond to the research discussed in Text 1?",
+              "example_ids": ["02fd3da7", "9645f55e", "ed52a093", "835d1ae6"]
+            },
+            "medium": {
+              "characteristics": [
+                "Author B's stance must be assembled from multiple sentences in Text 2",
+                "Correct answer requires choosing between two near-parallel reasoning moves (e.g., 'by asserting' vs. 'by noting')",
+                "Distractors include plausible content from Text 1 that is NOT what Text 2 would say"
+              ],
+              "example_stem": "Based on the texts, how would the author of Text 2 most likely respond to the overall argument presented in Text 1?",
+              "example_ids": ["059f7201", "27d9bb69", "ab56a107", "9a94eb77", "c19b2f77"]
+            },
+            "hard": {
+              "characteristics": [
+                "Text A's claim involves a technical mechanism or specialist domain (geology, paleontology, biochemistry)",
+                "Text B does not directly mention Text A's claim — student must infer Text B's stance from new evidence presented in Text 2 and project it back onto Text 1",
+                "Correct answer is a multi-clause qualified statement ('agreeing that X but pointing out that Y')"
+              ],
+              "example_stem": "Based on the texts, how would Behrenfeld and colleagues (Text 2) most likely respond to the 'conventional wisdom' discussed in Text 1?",
+              "example_ids": ["6977d22b", "c885c38b", "c4737d6a", "f3c45b4f", "f7c02e89"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two clearly demarcated texts with distinct authors or research teams",
+              "Stem identifies which author/team responds and which text contains the target",
+              "Target is the whole argument/finding/consensus — no underlined portion",
+              "Exactly one option that follows from Text B's specific stance"
+            ],
+            "must_vary": [
+              "Subject domain (science, humanities, social science)",
+              "Whether Text 2 contradicts, qualifies, extends, or redirects Text 1",
+              "Surface phrasing of response options ('By asserting', 'By noting', 'By suggesting')"
+            ],
+            "common_bugs": [
+              "Cloner has Text 2 not actually take a stance — making the prediction unsupported by Text 2",
+              "Cloner writes a correct option that paraphrases Text 1's own qualifications rather than Text 2's view",
+              "Cloner makes the response only loosely related to Text 1's target instead of directly engaging it",
+              "Cloner writes hard-version distractors that are obviously off-topic, eliminating the discrimination that makes the item hard"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Respond to underlined/specific claim",
+          "description": "Stem references a specific underlined sentence, quoted phrase, or particular claim within Text 1 (or vice versa). Student predicts Author B's response narrowly targeted at that excerpt, not the whole text.",
+          "core_skill_demand": "Locate the underlined or named target in Text A, identify Text B's directly applicable evidence or position, and select the response that engages that specific target without overreaching to other parts of Text A.",
+          "example_originals": ["22105871", "81da17d3", "8889d6e2", "f878693b", "faee8ec7", "d0198544"],
+          "frequency": { "easy": 4, "medium": 5, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Underlined claim is a single short sentence stating a simple position",
+                "Text 2 contains a direct counterexample or qualification visibly tied to the underlined content",
+                "Correct option restates Text 2's counterpoint almost verbatim"
+              ],
+              "example_stem": "Based on the texts, how would the author of Text 2 most likely respond to the underlined portion of Text 1?",
+              "example_ids": ["22105871", "81da17d3", "eb89dcc8", "159ef46d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Underlined claim requires interpretation (e.g., a methodological inference, not a flat assertion)",
+                "Text 2 implicitly rather than explicitly bears on the underlined content",
+                "Distractors target adjacent (non-underlined) content in Text 1"
+              ],
+              "example_stem": "Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?",
+              "example_ids": ["8889d6e2", "f878693b", "faee8ec7", "f1c9d2c1", "f52cc78c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Underlined claim is embedded in a technical argument and the response evaluates the EVIDENCE behind it, not the claim itself",
+                "Text 2 introduces a competing evidentiary standard the student must recognize as applicable",
+                "Correct answer is a nuanced epistemic critique ('rests on an assumption not sufficiently supported', 'persuasive, but stronger evidence comes from elsewhere')"
+              ],
+              "example_stem": "Based on the texts, how would the author of Text 2 most likely respond to the assertion in the underlined portion of Text 1?",
+              "example_ids": ["105ea6de", "d0198544", "35e21b06", "592f94c2", "84dbd633"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Explicit reference in the stem to an underlined portion, named claim, or specific quoted excerpt in Text A",
+              "Text B contains material that bears specifically on that excerpt, not on Text A as a whole",
+              "Response option targets the excerpt's content, not broader Text A claims"
+            ],
+            "must_vary": [
+              "Whether the response is supportive, qualifying, or contradicting",
+              "Whether Text B's bearing on the excerpt is explicit or inferred",
+              "Domain and subject matter of the paired texts"
+            ],
+            "common_bugs": [
+              "Cloner forgets to actually underline / clearly mark the target, collapsing T2 into T1",
+              "Cloner picks a 'target' in Text 1 that Text 2 has nothing specific to say about, forcing a vague answer",
+              "Cloner writes a correct option that engages other parts of Text 1 (rather than the underlined excerpt)",
+              "Difficulty regression: easy clones use explicit verbatim restatements of Text 2's view, eliminating the inferential step"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Characterize claim with evaluative label",
+          "description": "Stem asks how Author B would 'characterize', 'regard', 'describe', or 'say about' Text A's claim. Answer options begin with an evaluative descriptor or category ('As questionable, because...', 'As illogical, because...', 'It may seem plausible, but...').",
+          "core_skill_demand": "Infer the evaluative label (skeptical, dismissive, sympathetic, qualified, etc.) that Author B's reasoning yields when applied to Text A's claim, AND verify the supporting reason clause matches Text B's actual basis.",
+          "example_originals": ["12d81fc1", "9645f55e", "d6c77ae5", "d72b325e", "e4e2aeb3", "5e101c70"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Answer choices use clear opposing labels (illogical vs. logical, surprising vs. unsurprising)",
+                "Text 2 takes an obvious stance signaled by transitions like 'however' or 'in fact'",
+                "The 'because' clause restates Text 2's stated reason"
+              ],
+              "example_stem": "Based on the texts, how would the author of Text 2 most likely regard the perspective of bluegrass purists, as described in Text 1?",
+              "example_ids": ["9645f55e", "159ef46d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Label is more nuanced (cautionary, qualified) rather than binary",
+                "The 'because' clause distinguishes between two near-correct rationales"
+              ],
+              "example_stem": "Based on the texts, how would the author of Text 2 most likely characterize Lacadena's theory, as described in Text 1?",
+              "example_ids": ["12d81fc1"]
+            },
+            "hard": {
+              "characteristics": [
+                "Label is layered ('plausible but unsupported', 'overly optimistic given X')",
+                "Both parts of the answer (label AND rationale) must independently match Text 2",
+                "Distractors include labels Text 2 could plausibly assign on a different topic"
+              ],
+              "example_stem": "Based on the texts, how would Putirka and Xu (Text 2) most likely characterize the conclusion presented in Text 1?",
+              "example_ids": ["d6c77ae5", "d72b325e", "e4e2aeb3", "5e101c70"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem verb is characterize / regard / describe / say about (not 'respond to')",
+              "Answer options open with an evaluative adjective/category followed by a reason",
+              "Both label AND rationale derive from Text B"
+            ],
+            "must_vary": [
+              "Polarity of the label (positive, negative, mixed)",
+              "Whether the rationale targets methodology, evidence, scope, or interpretation"
+            ],
+            "common_bugs": [
+              "Cloner writes a correct option where the label is right but the reason clause restates Text 1, not Text 2",
+              "Cloner writes distractors with mismatched label/reason pairs that are too obviously absurd",
+              "Cloner drops the evaluative-label structure, collapsing T3 into T1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Shared agreement",
+      "description": "Stem asks what statement BOTH authors would agree with. The cognitive operation is two-sided intersection: identify the proposition supported by Text 1 AND by Text 2 simultaneously, even when their overall stances differ.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that A2 requires symmetric support from both texts — an answer that only Text 1 (or only Text 2) supports is wrong. Drift risk: cloning an A2 'both agree' stem and writing a correct option that only one author would endorse turns the question into a one-sided inference (A1 drift) or breaks validity.",
+      "types": [
+        {
+          "id": "T4",
+          "name": "Both-authors-agree statement",
+          "description": "Stem: 'Based on the texts, both authors would most likely agree with which statement?' Answer is a single proposition both texts independently support.",
+          "core_skill_demand": "Identify the overlap between the two authors' positions — the proposition each text gives independent grounds to endorse — while rejecting options endorsed by only one text.",
+          "example_originals": ["5a4b147c", "7b55e895", "8d802289", "c106b9f7", "c68ceeff", "82c05b34", "c8a2af72", "7bf79a90", "97e5bf55"],
+          "frequency": { "easy": 5, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both texts share a clear, broadly stated common premise (e.g., 'X is admirable', 'X influenced Y')",
+                "Correct answer is a high-level summary statement",
+                "Distractors are statements only one text supports"
+              ],
+              "example_stem": "Based on the texts, both authors would most likely agree with which statement?",
+              "example_ids": ["5a4b147c", "7b55e895", "8d802289", "c106b9f7", "c68ceeff"]
+            },
+            "medium": {
+              "characteristics": [
+                "Texts have visibly different focuses; the shared point is at a moderate level of abstraction",
+                "Correct answer requires noticing implicit endorsement in one text",
+                "Distractors paraphrase a specific claim only one text makes"
+              ],
+              "example_stem": "Based on the texts, both authors would most likely agree with which statement?",
+              "example_ids": ["82c05b34", "c8a2af72", "7bf79a90"]
+            },
+            "hard": {
+              "characteristics": [
+                "Authors disagree on the main thesis but share a narrow common assumption that the correct answer captures",
+                "Correct answer is a precise, narrow point (not a broad generality)",
+                "Distractors are claims one author makes and the other could plausibly accept but does not actually endorse"
+              ],
+              "example_stem": "Based on the texts, both Sykes in Text 1 and the scholars in Text 2 would most likely agree with which statement?",
+              "example_ids": ["97e5bf55"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem explicitly asks what both authors would agree with",
+              "Correct answer derivable independently from each text",
+              "Distractors include at least one option supported by only Text 1 and one by only Text 2"
+            ],
+            "must_vary": [
+              "Whether texts share a thesis or only a sub-premise",
+              "Domain and topic"
+            ],
+            "common_bugs": [
+              "Cloner writes a correct answer that only one text actually supports",
+              "Cloner makes the agreement so obvious that the question is trivialized",
+              "Cloner makes the two texts agree on the main thesis, eliminating the cross-text challenge"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Contrast of stated views",
+      "description": "Stem asks the student to articulate the DIFFERENCE between how the two authors view a shared topic, object, or finding. The cognitive operation is two-sided contrast: characterize each author's stance on the same target and select the option whose two-clause description matches both.",
+      "boundary_with_other_aspects": "A3 differs from A1 in that A3's correct answer must describe BOTH authors' positions accurately (often in a single sentence with two clauses), whereas A1 describes only Author B's response. Drift risk: a clone whose correct answer mischaracterizes one of the two authors collapses A3 into A1.",
+      "types": [
+        {
+          "id": "T5",
+          "name": "Two-clause view difference",
+          "description": "Stem: 'Which choice best describes a difference in how the author of Text 1 and the author of Text 2 view [target]?' Answer is a single sentence containing one clause about each author's view, joined by 'while' or 'whereas'.",
+          "core_skill_demand": "Independently characterize Text 1's view of the target and Text 2's view of the target, then select the option whose two clauses match both — rejecting options that mischaracterize either side.",
+          "example_originals": ["2c50ed1a", "88bb0f6f", "dc043599", "17bf10de"],
+          "frequency": { "easy": 3, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Authors' stances are explicitly stated and directly oppositional",
+                "Target of comparison is named in the stimulus (a study, a method, an artwork)",
+                "Correct answer's two clauses both restate stated positions"
+              ],
+              "example_stem": "Which choice best describes a difference in how the author of Text 1 and the author of Text 2 view Strassburg's team's study?",
+              "example_ids": ["2c50ed1a", "88bb0f6f", "dc043599"]
+            },
+            "medium": {
+              "characteristics": [
+                "Difference is in degree (skeptical vs. very skeptical) or in emphasis rather than direct opposition",
+                "Each author's stance must be assembled across multiple sentences"
+              ],
+              "example_stem": "(no clear medium exemplars in this bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Authors agree the work is flawed but disagree about WHY — correct option must capture both authors' distinct critiques",
+                "Distractors swap the two authors' positions or use a true claim about one author + a false claim about the other",
+                "Target is interpretive (a book, an artistic work) rather than empirical"
+              ],
+              "example_stem": "Which choice best describes a difference in how the authors of Text 1 and Text 2 view Barbara Tuchman's The Guns of August?",
+              "example_ids": ["17bf10de"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem explicitly asks for a DIFFERENCE between the two authors' views",
+              "Both authors have visible stances on the same named target",
+              "Correct answer is a two-clause sentence accurately describing each author's view"
+            ],
+            "must_vary": [
+              "Whether the difference is in conclusion, methodology, scope, or evaluation",
+              "Surface conjunction ('while', 'whereas', 'but')"
+            ],
+            "common_bugs": [
+              "Cloner writes a correct answer whose Text 1 clause is right but Text 2 clause is wrong (or vice versa)",
+              "Cloner picks a target only one author actually discusses, breaking the two-sided contrast",
+              "Cloner has the authors actually agree on the target, eliminating the difference"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Joint synthesis and text relationship",
+      "description": "Stem asks the student to combine BOTH texts to derive a synthesis statement, to characterize how the two texts relate to each other structurally, or to identify a specific question the authors would disagree about. The cognitive operation is integrative: use information from both texts together (not one author about the other).",
+      "boundary_with_other_aspects": "A4 differs from A1/A2/A3 in that the correct answer is not a one-sided prediction, a shared agreement, or a contrast — it is a statement about the texts as a pair (their relationship, a joint inference combining specific findings, or the locus of their disagreement). Drift risk: producing an answer that only summarizes one text's content collapses A4 into A1 or A2.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Joint inference from combined findings",
+          "description": "Stem: 'If both authors were aware of both findings/experiments, they would most likely agree with which statement?' Correct answer is a new inference that requires combining specific data from Text 1 with specific data from Text 2.",
+          "core_skill_demand": "Synthesize specific facts from each text into a single conclusion neither text states alone — typically a methodological reconciliation or a conditional claim that resolves an apparent tension.",
+          "example_originals": ["a87c3925", "96f3accc"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "(no easy exemplars in this bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "(no medium exemplars in this bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Both texts present empirical studies with different methods or findings",
+                "Correct answer is a reconciliation that holds only if BOTH sets of findings are assumed true",
+                "Distractors are claims supported by one study alone, or contradicted by either"
+              ],
+              "example_stem": "Based on the texts, if Ishii and O'Mahony (Text 1) and Jünger et al. (Text 2) were aware of the findings of both experiments, they would most likely agree with which statement?",
+              "example_ids": ["a87c3925", "96f3accc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem explicitly invokes both authors/teams considered jointly with both sets of findings",
+              "Correct answer requires combining facts from each text",
+              "Neither text alone licenses the correct answer"
+            ],
+            "must_vary": [
+              "Whether the synthesis is methodological, temporal, or causal",
+              "Domain of the studies"
+            ],
+            "common_bugs": [
+              "Cloner writes a correct answer supported by only one text, breaking the joint-synthesis requirement",
+              "Cloner makes the synthesis trivially restate facts both texts already share",
+              "Cloner introduces outside knowledge as the synthesis link, making it unsupported"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Relationship or disagreement framing",
+          "description": "Stem asks how Text 1 and Text 2 RELATE to each other, or identifies which specific QUESTION the two authors would disagree about (rather than asking for the disagreement itself).",
+          "core_skill_demand": "Characterize the structural relationship between the two texts (e.g., Text 1 presents findings; Text 2 calls them into question) OR identify the precise locus of disagreement as a question form — recognizing what the authors share and where they diverge.",
+          "example_originals": ["de2c2f57", "5e4e082c"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [],
+              "example_stem": "(no easy exemplars in this bank)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [],
+              "example_stem": "(no medium exemplars in this bank)",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Texts have a multi-step argumentative relationship (findings → explanation → counter-evidence)",
+                "Correct answer is a meta-description of that relationship, or a precise question both authors address but answer differently",
+                "Distractors mischaracterize one stage (e.g., claim Text 2 supports Text 1 when it qualifies it)"
+              ],
+              "example_stem": "Which choice best describes how Text 1 and Text 2 relate to each other?",
+              "example_ids": ["de2c2f57", "5e4e082c"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem asks about the texts' relationship or about a question the authors would disagree on (not 'what would Author B say')",
+              "Correct answer captures both texts' roles or both authors' positions on the disagreement question",
+              "Both texts are clearly engaged in a single argumentative arc"
+            ],
+            "must_vary": [
+              "Nature of the relationship (challenge, refine, extend, reframe)",
+              "Whether the stem uses 'relate' framing or 'disagree about which question' framing"
+            ],
+            "common_bugs": [
+              "Cloner writes a correct answer that describes only Text 1's or only Text 2's content",
+              "Cloner makes the two texts merely parallel rather than engaged in a relationship",
+              "Cloner phrases the 'disagreement question' answer as a statement rather than a question, breaking the structure"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Every original presents exactly two short labeled texts (Text 1 / Text 2) on a shared topic. The dominant stem family — predicted-response (A1) — accounts for roughly two-thirds of items at every difficulty. Hard items disproportionately use technical/specialist topics (paleontology, geochemistry, art history) and require either (a) inferring Text B's stance from new evidence rather than direct contradiction, or (b) selecting a multi-clause qualified answer. Easy items consistently feature direct verbal contradiction between the two texts with answer options that closely paraphrase Text B. The A2 'both agree' family clusters at Easy; A4 joint-synthesis appears almost exclusively at Hard. Underlined-portion targeting (T2) is a strong structural marker — when present, the response must engage that specific excerpt, not the broader text."
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f7bd14de-s1",
+  "originalId": "f7bd14de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Several scholars have argued that conditions in northern Italy during the mid-thirteenth through early fourteenth centuries&mdash;namely, expanding urban literacy alongside frequent political clashes between rival city-states&mdash;were uniquely conducive to the flowering of early Italian vernacular literature. Stefania Lombardi&rsquo;s recent analysis of regional record-keeping practices, however, complicates this picture. Lombardi argues that the rise of vernacular writing in the period was at least as much a product of changes in commercial bookkeeping conventions, which gave merchants and notaries practical reasons to record contracts and correspondence in spoken Italian rather than Latin. On her account, attending narrowly to literacy and political conflict obscures the central role that the everyday demands of commerce played in establishing the vernacular as a written medium.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Lombardi&rsquo;s analysis suggests that the development of early Italian vernacular literature owed more to commercial bookkeeping practices than is recognized by scholars who emphasize literacy and political conflict.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Most scholars now agree that political conflict was the single most important factor in the rise of early Italian vernacular literature.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Lombardi argues that early Italian vernacular literature emerged primarily from religious rather than commercial sources.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Northern Italian merchants and notaries in the thirteenth and fourteenth centuries generally preferred Latin to spoken Italian for their records.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text contrasts the standard scholarly account (emphasizing literacy and political conflict) with Lombardi&rsquo;s argument that commercial bookkeeping conventions played a central role&mdash;an emphasis the standard account obscures.</p><p>Choice B is incorrect because the text doesn&rsquo;t claim scholars agree on political conflict as paramount. Choice C is incorrect because the text emphasizes commercial, not religious, sources. Choice D is incorrect because the text says merchants began recording in Italian, not that they preferred Latin.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

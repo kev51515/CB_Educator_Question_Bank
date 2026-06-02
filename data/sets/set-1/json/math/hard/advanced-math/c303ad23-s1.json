@@ -1,0 +1,22 @@
+{
+  "questionId": "c303ad23-s1",
+  "originalId": "c303ad23",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If 4<i>x</i>&sup2; &minus; 32<i>x</i> &minus; 28 = 0, what is the value of <i>x</i>&sup2; &minus; 8<i>x</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>Dividing both sides of 4<i>x</i>&sup2; &minus; 32<i>x</i> &minus; 28 = 0 by 4 yields <i>x</i>&sup2; &minus; 8<i>x</i> &minus; 7 = 0. Adding 7 to both sides gives <i>x</i>&sup2; &minus; 8<i>x</i> = 7.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "40491607-s1",
+  "originalId": "40491607",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>f(x) = (x + 1)(x &minus; 4)(x + 2)</p><p>In the xy-plane, when the graph of the function f, where y = f(x), is shifted down 3 units, the resulting graph is defined by the function g. If the graph of y = g(x) passes through the point (5, b), where b is a constant, what is the value of b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "39"
+  ],
+  "rationale": "<p>The correct answer is 39. Since g(x) = f(x) &minus; 3, we have g(5) = f(5) &minus; 3 = (5 + 1)(5 &minus; 4)(5 + 2) &minus; 3 = (6)(1)(7) &minus; 3 = 42 &minus; 3 = 39. Therefore b = 39.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A5.T1.hard"
+}

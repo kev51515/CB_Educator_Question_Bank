@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "7eed640d-s1",
+  "originalId": "7eed640d",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A quadratic function h(t) models the height above the ground, in meters, of a projectile t seconds after it had been launched vertically. If y = h(t) is graphed in the ty-plane, which of the following represents the real-life meaning of the y-intercept of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The initial height of the projectile</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The maximum height of the projectile</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The time at which the projectile reaches its maximum height</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The time at which the projectile hits the ground</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The y-intercept of the graph occurs at t = 0, the instant the projectile is launched. The value of h at t = 0 is therefore the height of the projectile at launch \u2014 its initial height above the ground.</p><p>Choice B describes the vertex of the parabola, not the y-intercept. Choices C and D describe particular t-values, not the y-value at t = 0.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A2.T2.hard"
+}

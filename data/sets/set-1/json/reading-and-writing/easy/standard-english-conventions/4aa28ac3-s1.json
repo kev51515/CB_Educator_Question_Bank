@@ -1,0 +1,39 @@
+{
+  "questionId": "4aa28ac3-s1",
+  "originalId": "4aa28ac3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>These days, dodgeball is mostly thought of as a casual playground game. Surprisingly, an international sports federation once decided <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> dodgeball as a demonstration event at a major international tournament! Teams from over a dozen countries competed in the demonstration.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>featured</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>to feature</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>featuring</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>feature</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The verb &ldquo;decided&rdquo; requires a to-infinitive complement to express what was decided. &ldquo;To feature&rdquo; correctly forms a subordinate clause indicating what the federation decided to do.</p><p>Choice A (finite past) creates a comma splice. Choice C (present participle) doesn&rsquo;t complete &ldquo;decided.&rdquo; Choice D (bare infinitive) is ungrammatical after &ldquo;decided.&rdquo;</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "bcd924a5-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "83687083-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "21d95d1d-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "d91e5499-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "1ad04ea0-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "04e4c51d-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "74ee7737-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "type_drift", "detail": "All four options are two-word verb+preposition phrases ('guided by', 'puzzled by', 'ignored by', 'displeased with'). This matches T7 (two-word/prepositional collocation), not T6 (single adjective descriptor)."},
+  {"id": "6cf906fc-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "e3f05561-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "441e2b9e-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "a49500cc-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "683f66c9-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "9ccf463e-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "95f037ad-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "e3ffb854-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "d74788e1-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "f8ca5766-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"},
+  {"id": "49bbe4d7-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "b93428a6-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"},
+  {"id": "79dec1e1-s1", "templateId": "words-in-context.A2.T7.easy", "verdict": "ok"}
+]

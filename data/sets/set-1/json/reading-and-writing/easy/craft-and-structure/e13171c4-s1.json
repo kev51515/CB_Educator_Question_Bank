@@ -1,0 +1,25 @@
+{
+  "questionId": "e13171c4-s1",
+  "originalId": "e13171c4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Historians Carla Ruiz and David Tang have both documented the assistance Quaker families gave to fugitives from slavery in the years before the US Civil War. Much of the historical evidence of this help comes from family letters preserved by Quaker meetinghouses and from narratives published by the fugitives themselves. <u>One such narrative is Henry Bibb's 1849 autobiography, which describes how a Quaker family near Cincinnati provided him with food, shelter, and clothing during his journey north.</u></p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It shows why Bibb decided to write in great detail about his journey north in his autobiography.</p>"},
+    {"id": "b", "content": "<p>It argues that autobiographies are particularly important sources of information about US geography before the Civil War.</p>"},
+    {"id": "c", "content": "<p>It provides an example of a narrative that describes help given by a Quaker family to a fugitive from slavery.</p>"},
+    {"id": "d", "content": "<p>It suggests that most historians believe Quaker families were more successful in assisting fugitives than other people were.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The previous sentence broadly mentions \"narratives published by the fugitives themselves.\" The underlined sentence identifies Henry Bibb's autobiography as a specific example.</p><p>Choice A is incorrect. The sentence doesn't explain why Bibb wrote his account. Choice B is incorrect. The sentence doesn't argue for the importance of autobiographies as geography sources. Choice D is incorrect. The text doesn't compare Quaker families to others in this regard.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

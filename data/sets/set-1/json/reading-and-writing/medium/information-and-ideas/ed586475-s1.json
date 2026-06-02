@@ -1,0 +1,25 @@
+{
+  "questionId": "ed586475-s1",
+  "originalId": "ed586475",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p><em>Quicksand</em> is a 1928 novel by Nella Larsen. In the novel, the narrator portrays the character Helga as someone who values independence in other people above any other quality: <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which quotation from <em>Quicksand</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;Helga was deeply absorbed by people who lived chiefly by their own resources. Anything less than that she dismissed.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;Helga, like her mother before her, possessed a certain habit of measured speech.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;Helga was alike her father not only in her stubborn pride but also in her quickness of temper.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;She had a keen ear for languages, a quick wit, and a steady patience for those who came to her with troubles.&rdquo;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it depicts Helga as engaged only with people who live by their own resources and dismissing anyone who doesn&rsquo;t — the exclusive valuing of independence the claim describes. Choice B is incorrect because it describes a habit of Helga&rsquo;s speech, not what she values in others. Choice C is incorrect because it speaks to similarities between Helga and her father, not to her exclusive admiration of independence in others. Choice D is incorrect because it lists qualities Helga possesses, not qualities she admires in others.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

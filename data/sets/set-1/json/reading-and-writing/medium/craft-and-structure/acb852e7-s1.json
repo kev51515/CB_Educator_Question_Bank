@@ -1,0 +1,25 @@
+{
+  "questionId": "acb852e7-s1",
+  "originalId": "acb852e7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T9.medium",
+  "stimulus": "<p>The following text is from the 1921 poem &ldquo;A Heron at Dawn&rdquo; by Jessie Redmon Fauset, a Black American writer.</p>\n<p style=\"padding-left:1em;\">I have just seen a quiet thing,<br>Long and slim,<br>&ensp;Against a pale, pale shore,<br>&ensp;A solitary heron,<br>Watchful,<br>Patient,<br>A grey question mark<br>Bent on the water.<br>Why, slender silent question, are you grey?<br>And what do you ask of the morning tide?</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The speaker describes a striking sight in nature, then wonders what meaning to attach to that sight.</p>"},
+    {"id": "b", "content": "<p>The speaker evaluates a natural phenomenon, then questions the accuracy of her evaluation.</p>"},
+    {"id": "c", "content": "<p>The speaker presents an outdoor scene, then considers a human activity occurring within it.</p>"},
+    {"id": "d", "content": "<p>The speaker surveys her surroundings, then speculates about how they affect her mood.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most accurately describes the overall structure of the text. The speaker first describes a striking sight: a heron standing motionless against the shore, looking like a &ldquo;grey question mark&rdquo; bent over the water. Then she wonders about the image&rsquo;s meaning, asking why it is grey and what it asks of the tide. The text thus moves from description of a natural sight to reflection on its meaning.</p><p>Choice B is incorrect because, although the speaker wonders about the image, she does not suggest that her likening of the heron to a question mark is wrong. Choice C is incorrect because the speaker does not introduce any human activity within the scene. Choice D is incorrect because the speaker does not address her own emotional state.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

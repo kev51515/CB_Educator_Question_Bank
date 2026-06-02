@@ -1,0 +1,189 @@
+{
+  "total_verified": 2767,
+  "by_verdict": {
+    "ok": 2374,
+    "type_drift": 124,
+    "difficulty_drift": 96,
+    "aspect_drift": 80,
+    "wrong_answer": 48,
+    "constraint_violation": 38,
+    "rationale_inconsistent": 7
+  },
+  "by_skill": {
+    "area-and-volume": {
+      "ok": 81,
+      "difficulty_drift": 6,
+      "type_drift": 2,
+      "aspect_drift": 1
+    },
+    "boundaries": {
+      "ok": 70,
+      "type_drift": 16,
+      "aspect_drift": 5,
+      "difficulty_drift": 1,
+      "constraint_violation": 1,
+      "wrong_answer": 1
+    },
+    "central-ideas-and-details": {
+      "ok": 71,
+      "difficulty_drift": 4,
+      "aspect_drift": 3,
+      "type_drift": 1
+    },
+    "circles": {
+      "ok": 42,
+      "difficulty_drift": 8,
+      "type_drift": 3
+    },
+    "command-of-evidence": {
+      "ok": 141,
+      "type_drift": 4,
+      "difficulty_drift": 4
+    },
+    "cross-text-connections": {
+      "ok": 32,
+      "type_drift": 5,
+      "constraint_violation": 2
+    },
+    "equivalent-expressions": {
+      "ok": 78,
+      "aspect_drift": 7,
+      "wrong_answer": 7,
+      "type_drift": 6,
+      "rationale_inconsistent": 6,
+      "difficulty_drift": 3
+    },
+    "evaluating-statistical-claims-observational-studies-and-experiments": {
+      "ok": 11
+    },
+    "form-structure-and-sense": {
+      "ok": 99,
+      "aspect_drift": 3,
+      "type_drift": 2,
+      "constraint_violation": 2,
+      "difficulty_drift": 1
+    },
+    "inference-from-sample-statistics-and-margin-of-error": {
+      "ok": 20,
+      "difficulty_drift": 2,
+      "type_drift": 1,
+      "constraint_violation": 1
+    },
+    "inferences": {
+      "ok": 72,
+      "type_drift": 2,
+      "constraint_violation": 1,
+      "difficulty_drift": 1,
+      "aspect_drift": 1
+    },
+    "linear-equations-in-one-variable": {
+      "ok": 106,
+      "type_drift": 1
+    },
+    "linear-equations-in-two-variables": {
+      "ok": 104,
+      "difficulty_drift": 12,
+      "aspect_drift": 6,
+      "type_drift": 6
+    },
+    "linear-functions": {
+      "ok": 119,
+      "wrong_answer": 21,
+      "type_drift": 7,
+      "difficulty_drift": 6,
+      "aspect_drift": 3,
+      "constraint_violation": 1
+    },
+    "linear-inequalities-in-one-or-two-variables": {
+      "ok": 46,
+      "difficulty_drift": 10,
+      "wrong_answer": 10,
+      "aspect_drift": 5,
+      "type_drift": 2,
+      "constraint_violation": 1
+    },
+    "lines-angles-and-triangles": {
+      "ok": 59,
+      "aspect_drift": 16,
+      "difficulty_drift": 4,
+      "type_drift": 2,
+      "constraint_violation": 2,
+      "wrong_answer": 1
+    },
+    "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables": {
+      "ok": 133,
+      "difficulty_drift": 9,
+      "type_drift": 8,
+      "aspect_drift": 2,
+      "wrong_answer": 2
+    },
+    "nonlinear-functions": {
+      "ok": 192,
+      "aspect_drift": 12,
+      "constraint_violation": 12,
+      "type_drift": 11,
+      "difficulty_drift": 6,
+      "wrong_answer": 5
+    },
+    "one-variable-data-distributions-and-measures-of-center-and-spread": {
+      "ok": 70,
+      "aspect_drift": 3,
+      "type_drift": 2,
+      "difficulty_drift": 1,
+      "wrong_answer": 1
+    },
+    "percentages": {
+      "ok": 74,
+      "aspect_drift": 4,
+      "type_drift": 1
+    },
+    "probability-and-conditional-probability": {
+      "ok": 40,
+      "type_drift": 2,
+      "difficulty_drift": 2,
+      "aspect_drift": 1
+    },
+    "ratios-rates-proportional-relationships-and-units": {
+      "ok": 82,
+      "type_drift": 4,
+      "difficulty_drift": 1
+    },
+    "rhetorical-synthesis": {
+      "ok": 86
+    },
+    "right-triangles-and-trigonometry": {
+      "ok": 47,
+      "difficulty_drift": 7,
+      "constraint_violation": 2,
+      "type_drift": 1
+    },
+    "systems-of-two-linear-equations-in-two-variables": {
+      "ok": 93,
+      "type_drift": 11,
+      "constraint_violation": 6,
+      "difficulty_drift": 5,
+      "aspect_drift": 1
+    },
+    "text-structure-and-purpose": {
+      "ok": 83,
+      "type_drift": 2
+    },
+    "transitions": {
+      "ok": 104,
+      "type_drift": 7,
+      "constraint_violation": 1
+    },
+    "two-variable-data-models-and-scatterplots": {
+      "ok": 48,
+      "type_drift": 7,
+      "aspect_drift": 7,
+      "difficulty_drift": 3,
+      "rationale_inconsistent": 1
+    },
+    "words-in-context": {
+      "ok": 171,
+      "type_drift": 8,
+      "constraint_violation": 6
+    }
+  }
+}

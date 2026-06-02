@@ -1,0 +1,25 @@
+{
+  "questionId": "be37d4ae-s1",
+  "originalId": "be37d4ae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>During the Italian Renaissance (roughly 1400&ndash;1600), many sculptors emulated the marble figures and reliefs of ancient Rome. They were not the first in Italy to revive the visual forms of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a number of medieval workshops in Tuscany had already drawn on classical models for tomb monuments and pulpit decoration.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>antiquity, however</p>"},
+    {"id": "b", "content": "<p>antiquity, however,</p>"},
+    {"id": "c", "content": "<p>antiquity, however;</p>"},
+    {"id": "d", "content": "<p>antiquity; however,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the punctuation of a supplementary phrase following a clause. This choice uses a comma to separate the supplementary adverb \"however\" from the independent clause it modifies (\"They...antiquity\") and a semicolon to join that clause to the second independent clause (\"a number...decoration\"). Placing the semicolon after \"however\" indicates that the information in the clause it belongs to (that Renaissance sculptors were not the first to revive classical forms) is contrary to what might be assumed from the previous sentence.</p><p>Choice A is incorrect because it fails to mark the boundary after \"however\" between two independent clauses. Choice B is incorrect because the comma after \"however\" cannot mark a boundary between independent clauses. Choice D is incorrect because placing the semicolon after \"antiquity\" illogically attaches \"however\" to the second clause, reversing the contrast.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

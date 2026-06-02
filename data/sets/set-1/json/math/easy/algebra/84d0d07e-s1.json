@@ -1,0 +1,39 @@
+{
+  "questionId": "84d0d07e-s1",
+  "originalId": "84d0d07e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At a farmers market, apples cost $2 each and oranges cost $4 each. Jordan can spend at most $50 on apples and oranges. If Jordan buys <i>a</i> apples and <i>r</i> oranges, which of the following must be true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4<i>a</i> + 2<i>r</i> &le; 50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2<i>a</i> + 4<i>r</i> &le; 50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2<i>a</i> + 4<i>r</i> &ge; 50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4<i>a</i> + 2<i>r</i> &ge; 50</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The cost of <i>a</i> apples at $2 each is 2<i>a</i>, and the cost of <i>r</i> oranges at $4 each is 4<i>r</i>. The total cost 2<i>a</i> + 4<i>r</i> must be at most $50, giving 2<i>a</i> + 4<i>r</i> &le; 50.</p><p>Choices A and D swap the per-item prices. Choices C and D use the wrong inequality direction (&ge; means \"at least\", but Jordan cannot spend more than $50).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy"
+}

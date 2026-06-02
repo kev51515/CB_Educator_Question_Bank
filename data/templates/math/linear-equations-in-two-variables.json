@@ -1,0 +1,753 @@
+{
+  "section": "Math",
+  "domain": "Algebra",
+  "skill": "Linear equations in two variables",
+  "originals_count": 128,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Write equation from real-world context",
+      "description": "Student is given a verbal scenario involving two unknown quantities (counts, weights, costs, times, etc.) combined by a sum/total constraint, and must translate it into a single linear equation in two variables ax+by=c (or an equivalent form). The cognitive operation is modeling: identify each per-unit rate, attach it to its variable, and equate the total.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 only writes the equation (no values are substituted); A1 differs from A3 in that A1 produces the equation, while A3 starts from a given equation and interprets a piece of it; A1 differs from A4 in that A1 derives from words, not from a graph/table/coordinate features.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Two-rate total equation from words",
+          "description": "A scenario gives two per-unit values (e.g., $0.69/lb potatoes and $0.99/lb celery, 1-pt vs 3-pt questions, 5-lb vs 10-lb boxes) and a total (cost, points, weight, time, length). Student must pick the equation that attaches each rate to the correct variable and sums to the total.",
+          "core_skill_demand": "Translate 'rate1 * x + rate2 * y = total' from prose; choose the answer that pairs each rate with the correct variable (and does not invert, multiply, or average the rates).",
+          "example_originals": ["029c2dc2", "174885f8", "80ae6851", "820ad8e8", "c8e0f511", "b450ab03", "d1042cf8", "ebf8d2b7", "4d8ccb96", "8da536c6"],
+          "frequency": { "easy": 9, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Small whole-number rates (1, 3, 5, 10) and whole-number total",
+                "Both quantities counted in the same units; no unit conversion",
+                "Distractors are simple structural variants (swap which rate goes with which variable; multiply x and y instead of adding; sum the rates)"
+              ],
+              "example_stem": "Assignment worth 70 points, mix of 1-point and 3-point questions; x = number of 1-pt, y = number of 3-pt. Which equation?",
+              "example_ids": ["029c2dc2", "80ae6851", "820ad8e8", "c8e0f511"]
+            },
+            "medium": {
+              "characteristics": [
+                "Decimal or non-trivial rates (e.g., 1.5, 1.9, 0.04, 0.48, 24.5, 24.75)",
+                "Per-unit values that are easy to confuse (close in size or with units like percent-by-weight)",
+                "Distractors include swapped rates and a parallel sum/difference form"
+              ],
+              "example_stem": "Sandwich takes 1.5 min, salad takes 1.9 min; total 46.1 min preparing x sandwiches and y salads. Which equation?",
+              "example_ids": ["b450ab03", "d1042cf8"]
+            },
+            "hard": {
+              "characteristics": [
+                "Compound rates per polygon/group (e.g., 3 sides * x + 4 sides * y; 8 perimeters from 2 squares * 4 sides) require an intermediate multiplication",
+                "Or a percent-by-weight mixture where each variable carries a decimal fraction and the right side itself is a product (e.g., 0.04*24)",
+                "Or a growth/percent-change scenario where each variable is multiplied by (1 + p)"
+              ],
+              "example_stem": "2 squares each side r, 6 equilateral triangles each side t, total perimeter 210. Which equation?",
+              "example_ids": ["62ef6f73", "4d8ccb96", "8da536c6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two distinct per-unit rates attached to two distinct variables, summed to a stated total",
+              "Variables defined explicitly in the stem (\"x represents ...\", \"y represents ...\")",
+              "Distractor set includes at least one swapped-rate equation and one structurally wrong form (e.g., product instead of sum, or sum of rates not weighted)"
+            ],
+            "must_vary": [
+              "Cover story (food, hardware, tickets, polygons, mixtures, time)",
+              "Variable letters (x/y, w/r, s/c, a/b, R/G, etc.)",
+              "Numeric rates and total",
+              "Whether the total is dollars, points, minutes, pounds, liters, etc."
+            ],
+            "common_bugs": [
+              "Cloner forgets to define the variables in the stem, making more than one answer plausible",
+              "Cloner removes the swapped-rate distractor, so the correct answer is the only one with both rates present",
+              "Cloner picks rates that are equal or both 1, collapsing the distinction the question is testing",
+              "Cloner uses a mixture/growth setup but keeps an easy distractor set, producing a difficulty mismatch"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Solve for one unknown using a given two-variable equation",
+      "description": "An equation in two variables (often dressed in a real-world context, sometimes context-free like a perimeter formula) is given along with one variable's value. Student substitutes and solves the resulting one-variable linear equation. The cognitive operation is substitution + linear solving.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that the equation is already provided (or is a standard formula like perimeter or 25%·V mixture); the work is computation, not modeling. A2 differs from A3 in that A2 returns a numeric value; A3 returns a verbal interpretation. A2 differs from A5 in that A2 plugs a non-zero value, while A5 plugs x=0 or y=0 to find an intercept.",
+      "types": [
+        {
+          "id": "T2",
+          "name": "Substitute given value, solve for the other variable",
+          "description": "Stem either supplies an explicit two-variable equation or sets up a sum-equals-total formula and gives one variable's value (or the other's). Student substitutes and solves a one-step or two-step linear equation.",
+          "core_skill_demand": "Substitute the known value into the linear two-variable equation, then isolate the remaining variable using inverse operations.",
+          "example_originals": ["12ae3452", "39617468", "4edecdba", "52a8ef85", "5518885d", "6a12efbb", "7038b587", "39571c77", "c5479c1a", "b23bba4c", "b52e5b6f", "8368afd1", "8c98c834", "637022d2", "7625073d", "0d1b1e35", "431c3038", "c5e38487", "9c7741c6", "1087f6c4", "686b7244", "2d54c272", "c362c210", "c4ea43ef", "a1fd2304"],
+          "frequency": { "easy": 11, "medium": 9, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Simple sum constraint (x + y = total) or single-step substitution: only one inverse operation after substitution",
+                "Integer coefficients and integer answer",
+                "Numbers chosen so substitution and arithmetic are mental"
+              ],
+              "example_stem": "x + y = 350 relates maple (x) and birch (y); if x = 245, how many birch? (option C: 105)",
+              "example_ids": ["39617468", "5518885d", "12ae3452", "6a12efbb", "b52e5b6f", "7038b587", "c5479c1a"]
+            },
+            "medium": {
+              "characteristics": [
+                "Two-step linear equation after substitution (subtract, then divide)",
+                "Decimal or non-unit coefficients (24.5, 24.75, 7, 4.51, 6.07)",
+                "Or context where the relationship must first be assembled (e.g., 'twice as many ... as ...' becomes y = 2x then substituted)"
+              ],
+              "example_stem": "7g + 7b = 840, with b = 71. Find g. (g = 49)",
+              "example_ids": ["7625073d", "637022d2", "0d1b1e35", "431c3038", "1087f6c4", "535fa6e6"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two-step solve combined with extra arithmetic (compute a per-unit cost or token value first)",
+                "Or context requires identifying both equations of the line implicitly from a graph + extra fact (e.g., point with second coordinate given, find first coordinate)",
+                "Or mixture problems where the student must set up the equation themselves before substituting"
+              ],
+              "example_stem": "5G + 45R = 380; one student won G green and R red worth 380; find value of G in terms of R or vice versa to extract a value.",
+              "example_ids": ["2d54c272", "686b7244", "c362c210", "c4ea43ef", "a1fd2304"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Equation has exactly two variables; exactly one variable's value is supplied",
+              "Resulting one-variable equation is genuinely linear and has a single solution",
+              "Solution is a clean number consistent with the format (integer for SPR, integer/simple decimal for MCQ)"
+            ],
+            "must_vary": [
+              "Cover story (perimeter, points, dollars, weight, mixture, travel)",
+              "Whether x or y is supplied",
+              "Coefficients (small integers vs decimals)",
+              "MCQ distractors corresponding to (a) forgot to subtract, (b) divided by the wrong coefficient, (c) returned the supplied value back"
+            ],
+            "common_bugs": [
+              "Cloner picks numbers that make the answer non-integer when the original was integer",
+              "Cloner removes the swapped-coefficient distractor, leaving an obvious correct option",
+              "Cloner reverses which variable is given, but forgets to flip which coefficient is used (semantic drift)",
+              "Cloner promotes an easy 1-step solve to a 2-step but keeps trivial distractors, leaving the math hard but the discrimination weak"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Interpret meaning of an equation, coefficient, or term in context",
+      "description": "A two-variable equation is presented inside a verbal scenario. The student must explain, in everyday language, what a specific number or term in the equation represents (a per-unit rate, a total, a count, a difference, or a sum). The cognitive operation is reading the equation back into the model.",
+      "boundary_with_other_aspects": "A3 differs from A1 in direction: A1 builds an equation from words; A3 starts with an equation and produces a verbal interpretation. A3 differs from A2 in that A3 returns words, not a numeric value. A3 differs from A5 in that the focal piece is a coefficient inside a context, not the slope/intercept of a graph.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Interpret a coefficient as a per-unit rate",
+          "description": "An equation like 68x + 85y = 1258 or 5.48x + 7.30y = 1277.94 is given with x and y defined as counts; student picks the option that names a coefficient as the per-unit value (price per drink, calories per hour, trees per hectare, etc.).",
+          "core_skill_demand": "Recognize that, in ax + by = c, the coefficient a is the value of one unit of x (rate per x), not a count of x, not a total, and not a value of y.",
+          "example_originals": ["768b2425", "ee846db7", "b9839f9e", "038d87d7", "3c03cbd8", "2e1a7f66", "87322577", "9b0a4eae"],
+          "frequency": { "easy": 4, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Equation has integer coefficients with units obvious from context (hours, dollars, minutes)",
+                "Distractors include 'count of x', 'price of y', and the total — easy to eliminate by dimensional analysis",
+                "Only one number in the equation is being interpreted"
+              ],
+              "example_stem": "Designer earned $1,258 from x hours consulting and y hours of plans. Equation 68x + 85y = 1258. What does 68 represent? (price per hour consulting)",
+              "example_ids": ["768b2425", "ee846db7", "b9839f9e", "87322577"]
+            },
+            "medium": {
+              "characteristics": [
+                "Setup distinguishes between two close interpretations (e.g., 'avg trees per hectare in the park' vs 'in the residential area' vs 'total trees in the park')",
+                "Coefficient is multiplied by a count whose meaning is itself non-trivial (number of sides of a polygon)",
+                "Or two numbers in the equation are simultaneously plausible without dimensional reasoning"
+              ],
+              "example_stem": "2x + 35y = 3934 with 2-hectare park and 35-hectare residential, 3934 trees total. Interpret 'x'. (avg trees per hectare in the park)",
+              "example_ids": ["038d87d7", "3c03cbd8", "2e1a7f66", "9b0a4eae"]
+            },
+            "hard": {
+              "characteristics": ["Pure rate-interpretation rarely appears at hard; hard variants tend to migrate to T4 (interpret a product/term)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Equation is in the form ax + by = c with x, y defined as counts/extensive quantities",
+              "Exactly one numeric piece (a, b, or c) is being interpreted",
+              "Distractors include at least one swapped-variable interpretation and one count-vs-rate confusion"
+            ],
+            "must_vary": [
+              "Cover story",
+              "Which coefficient (a, b, or c) is interpreted",
+              "Units (dollars/hr, calories/min, trees/hectare, points/game)"
+            ],
+            "common_bugs": [
+              "Cloner makes both coefficients identical, so the swapped-variable distractor becomes equally true",
+              "Cloner drops the variable definitions, making the question unanswerable",
+              "Cloner picks units that don't match a rate (e.g., 'total dollars'), turning T3 into T4 by accident"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Interpret a product (term) or constant total in context",
+          "description": "Question asks what a term like 5y, 6y, or the right-hand-side constant represents in a context such as 'Lily made 36 cups of jam, x small + y large containers, 4x + 6y = 36, what does 6y represent?' The answer is a total (e.g., total cups in the large containers), not a per-unit rate.",
+          "core_skill_demand": "Distinguish the product of rate × count (total contributed by one category) from the rate alone and from the count alone.",
+          "example_originals": ["dd797fe2", "df78b361", "cc7ffe02", "c6b151d4", "400798d6", "483d208d"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Term is the constant on the right side (a total) or a simple product like 24",
+                "Distractor set includes 'count', 'rate per unit', and 'total of the other category'"
+              ],
+              "example_stem": "Mario bought 4 binders at $x each and 3 notebooks at $y each. Equation gives 24 as constant. Interpret 24.",
+              "example_ids": ["dd797fe2", "c6b151d4"]
+            },
+            "medium": {
+              "characteristics": [
+                "Term is a variable product like 6y or 5y; student must read it as 'total of category y' (cups, jars)",
+                "Distractors include 'number of large containers' (the count y, not the product) and 'number of small containers'"
+              ],
+              "example_stem": "4x + 6y = 36 (cups of jam). Interpret 6y. (total cups in large containers)",
+              "example_ids": ["df78b361", "400798d6"]
+            },
+            "hard": {
+              "characteristics": [
+                "Geometric or compound context (sum of perimeters, or token-value with point-per-color compounds)",
+                "Or 'interpretation' is two-step: identify the term, then re-express it in problem-specific units (centimeters, points), requiring the student to keep both algebra and units straight"
+              ],
+              "example_stem": "Triangle QRS: QR = RS = x cm, SQ = y cm. 2x + y = 37. Interpret y. (length of the unequal side)",
+              "example_ids": ["cc7ffe02", "483d208d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Equation in two variables with all parts well-defined in context",
+              "The interpreted piece is a product/term, not an isolated coefficient",
+              "Distractor mapping: at least one 'count-only' option and at least one 'wrong category' option"
+            ],
+            "must_vary": [
+              "Cover story",
+              "Whether the interpreted term is on the left (ax or by) or the right (c)",
+              "Whether the variable counted is integer (jars, triangles) or continuous (cups, centimeters)"
+            ],
+            "common_bugs": [
+              "Cloner replaces the product with a single coefficient, turning T4 into T3 without updating the difficulty levers",
+              "Cloner picks a constant total that equals one of the coefficients, making distractor logic incoherent",
+              "Cloner blends counts and continuous quantities ('number of cups of jam'), confusing the interpretation"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Write a linear equation from features (graph, table, two points, slope+point)",
+      "description": "Student is given visual or numerical evidence about a line — a graph, a table of (x, y) pairs, two coordinates, or a slope plus a point — and must produce or select the equation of the line, typically in slope-intercept form y = mx + b. The cognitive operation is determining slope and intercept from features and assembling the equation.",
+      "boundary_with_other_aspects": "A4 differs from A1 in that the source is graph/table/coordinate, not a verbal modeling situation. A4 differs from A5 in that A4 produces a full equation, while A5 produces only one feature (slope or intercept). A4 differs from A6 because A6's equation depends on a parallel/perpendicular relationship to another line.",
+      "types": [
+        {
+          "id": "T5",
+          "name": "Equation from slope and y-intercept (slope+(0,b) point)",
+          "description": "Stem gives a slope and a point on the y-axis (i.e., the y-intercept directly). Student selects/writes y = mx + b. The simplest A4 variant.",
+          "core_skill_demand": "Plug slope and y-intercept directly into y = mx + b; do not confuse the slope and intercept positions, and do not negate either.",
+          "example_originals": ["10c448d6", "1fe778dc", "6fa1dc0f", "2554b413", "a4989860"],
+          "frequency": { "easy": 4, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Integer slope (e.g., 4, 6) and integer y-intercept",
+                "Point is given explicitly as (0, b)",
+                "Distractors include sign-flipped slope, sign-flipped intercept, and swapped slope/intercept"
+              ],
+              "example_stem": "Slope 4, passes through (0, 6). Which equation? (y = 4x + 6)",
+              "example_ids": ["10c448d6", "1fe778dc", "6fa1dc0f", "2554b413"]
+            },
+            "medium": {
+              "characteristics": [
+                "Slope is a fraction (1/9, -1/2) or the y-intercept is negative",
+                "Equation may be requested in the form y = px + r and student returns one of p or r as an SPR"
+              ],
+              "example_stem": "Slope 9, passes through (0, -5). y = px + r. What is p? (SPR: 9)",
+              "example_ids": ["a4989860"]
+            },
+            "hard": { "characteristics": ["Slope+y-intercept rarely escalates to hard; harder variants migrate to T6/T8."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Slope and a point on the y-axis (x = 0) are given",
+              "Distractor set covers slope/intercept swap and sign flips"
+            ],
+            "must_vary": ["Slope sign and magnitude", "y-intercept sign and magnitude", "Variable letter for the line (k, j, r, t)"],
+            "common_bugs": [
+              "Cloner replaces (0, b) with a non-axis point, silently changing the type to T7",
+              "Cloner removes the swap distractor, making the answer easy by elimination",
+              "Cloner uses slope 0 or 1, collapsing several distractors into the correct answer"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Equation from a table or two given points",
+          "description": "A table of three or more (x, y) pairs (or two explicit points) is given; student must compute slope, find the y-intercept, and write y = mx + b. Tables sometimes include x = 0 (intercept handed to the student) and sometimes do not.",
+          "core_skill_demand": "Compute slope = Δy/Δx from two table rows, then use one point to solve for b; select the matching equation.",
+          "example_originals": ["ba79f10f", "bbb0359a", "606cdce7", "d7c8ba0b", "f81a0503", "c307283c", "768f3b7c"],
+          "frequency": { "easy": 1, "medium": 4, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Table includes a row with x = 0 (y-intercept given directly)",
+                "Slope is a small integer",
+                "Distractors include using the wrong row as intercept and swapping slope/intercept"
+              ],
+              "example_stem": "Table: (0,18),(1,13),(2,8). Which equation? (y = -5x + 18)",
+              "example_ids": ["ba79f10f"]
+            },
+            "medium": {
+              "characteristics": [
+                "Table does not contain x = 0, so the student must solve for b after computing slope",
+                "Slope is integer but values are larger; Δx is small (1) so slope is easy once spotted",
+                "Or two points are given directly, often including one of (0,b)"
+              ],
+              "example_stem": "Table: x=1,2,3; y=11,16,21. Which equation? (y = 5x + 6)",
+              "example_ids": ["bbb0359a", "d7c8ba0b", "f81a0503", "c307283c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Table values include a parameter (k, s, or n) rather than concrete numbers; student must derive the equation symbolically",
+                "Or the table values are large/non-aligned with simple Δx, requiring careful slope calculation",
+                "Distractors include forms like sx + 3y = 18s and 3x + sy = 18 that mix up the role of the parameter"
+              ],
+              "example_stem": "Table: x = -2s, -s, s; y = 24, 21, 15. Which equation represents the line? (3x + sy = 18s)",
+              "example_ids": ["768f3b7c", "606cdce7"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "All table rows are consistent with one line (no decoy nonlinear point)",
+              "At least one method (compute slope from two rows + use one point for b) works cleanly",
+              "MCQ distractors map to procedural errors: swapped m/b, off-by-one in Δx, used a single y-value as slope"
+            ],
+            "must_vary": [
+              "Whether x=0 appears in the table",
+              "Sign of slope",
+              "Whether a parameter appears (hard variant)",
+              "Number of rows (2-4)"
+            ],
+            "common_bugs": [
+              "Cloner adds a row to the table that doesn't actually lie on the line",
+              "Cloner sets Δx = 0 between two chosen rows, making slope undefined",
+              "Cloner removes the parametric form in a hard clone, dropping the difficulty without flagging it"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Equation from a graph in the xy-plane",
+          "description": "Student is shown (or given a description of) a line in the xy-plane with two labeled points (often including the y-intercept and the x-intercept). Student writes or selects the equation, sometimes in standard form Ax + By = C rather than slope-intercept.",
+          "core_skill_demand": "Read two coordinates off the line, compute slope, identify intercept(s), and produce the equation — choosing the correct slope sign from the graph's tilt and the correct form among options.",
+          "example_originals": ["4acd05cd", "8a1544f1", "b2845d88", "2e0290c3", "00b9bd37", "5b7599a6", "c307283c"],
+          "frequency": { "easy": 2, "medium": 3, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Graph passes through (0, b) and one or two other clear integer points; slope is a small integer (e.g., +2 or -1)",
+                "Answer choices are in y = mx + b form"
+              ],
+              "example_stem": "Line passes through (0,-5),(1,-3),(2,-1). Which equation matches the graph?",
+              "example_ids": ["4acd05cd", "c307283c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Line has both x- and y-intercepts visible as round numbers (e.g., (0,40) and (60,0)); options are split between slope-intercept form and standard form (ax + by = c)",
+                "Slope is rational with denominator > 1"
+              ],
+              "example_stem": "Line through (0,35) and (90,0). Choose equation: 7x + 18y = 630 (standard form).",
+              "example_ids": ["00b9bd37", "2e0290c3"]
+            },
+            "hard": {
+              "characteristics": [
+                "One of the coefficients in the answer options is itself a symbolic constant (e.g., Rx + 18y = 36), requiring student to determine which form is consistent with both axis intercepts shown",
+                "Or graph shows a non-axis pair, forcing two-point slope calculation with non-trivial fractions"
+              ],
+              "example_stem": "Line through (0,6) and (1,3). Which option (involving symbolic R) represents this line? (Rx + 18y = 36 with R = 9)",
+              "example_ids": ["5b7599a6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Graph (or its textual description) gives at least two unambiguous integer or rational coordinates on the line",
+              "Slope direction (up-right vs down-right) is preserved by the clone's graph description",
+              "Distractors include opposite-slope-sign and slope/intercept-swap options"
+            ],
+            "must_vary": [
+              "Slope sign and magnitude",
+              "Whether the graph passes through both axes at integer points",
+              "Whether answers are in slope-intercept or standard form"
+            ],
+            "common_bugs": [
+              "Cloner inverts the graph tilt but forgets to flip the slope sign in the correct answer",
+              "Cloner picks points that don't actually have integer coordinates on the described line",
+              "Cloner mixes slope-intercept and standard form options inconsistently, leaving exactly one form for the correct answer (and giving it away)"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Equation from slope and a non-axis point",
+          "description": "Stem gives a slope and a point that is NOT on the y-axis (e.g., slope -1/3 through (9,10)). Student must use point-slope or substitute back to find the y-intercept, then choose y = mx + b.",
+          "core_skill_demand": "Apply y - y1 = m(x - x1) (or substitute the point into y = mx + b and solve for b) to produce the equation.",
+          "example_originals": ["9f3cb472"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not present at easy in this bank."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Slope is a small rational (e.g., -1/3); point has small integer coordinates",
+                "Distractors include using x1 directly as the y-intercept, swapping slope and intercept, and using the point as (0, b)"
+              ],
+              "example_stem": "Slope -1/3 through (9,10). Which equation? (y = -x/3 + 13)",
+              "example_ids": ["9f3cb472"]
+            },
+            "hard": { "characteristics": ["Hard versions tend to migrate to A6 (parallel/perpendicular)."], "example_stem": "", "example_ids": [] }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Slope and a single non-axis point are given",
+              "Distractor list contains the 'used x1 as intercept' option and a sign-flipped slope option"
+            ],
+            "must_vary": ["Slope sign and form (integer vs fraction)", "Coordinates of the point"],
+            "common_bugs": [
+              "Cloner picks a point that happens to lie on the y-axis, collapsing T8 to T5",
+              "Cloner picks numbers so that the y-intercept equals the slope, making the swap distractor true"
+            ]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Build a table that satisfies a given equation",
+          "description": "Stem gives an equation (e.g., y = 70x + 8 or 7x - 4y = -84 or (3/5)x + (3/4)y = 7) and asks which table of (x,y) pairs is consistent with it. Direction is reversed from T6.",
+          "core_skill_demand": "Substitute each candidate x into the equation and verify y; or detect which table is consistent for all rows.",
+          "example_originals": ["1efd8202", "83f2c3bf", "e7343559", "cea27ab2", "d0e614a6"],
+          "frequency": { "easy": 4, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Equation already in slope-intercept form with integer slope and intercept",
+                "Distractors come from common sign errors (wrong slope sign, dropped intercept)"
+              ],
+              "example_stem": "y = -4x + 40. Which table of (0,?),(1,?),(2,?) is correct?",
+              "example_ids": ["1efd8202", "83f2c3bf", "e7343559"]
+            },
+            "medium": {
+              "characteristics": ["Equation in standard form ax + by = c with non-trivial coefficients; rows include negative values."],
+              "example_stem": "7x - 4y = -84. Choose the table with consistent (x,y) pairs.",
+              "example_ids": ["cea27ab2"]
+            },
+            "hard": {
+              "characteristics": [
+                "Fractional coefficients (e.g., (3/5)x + (3/4)y = 7) so y values are themselves fractions with large denominators",
+                "Distractor tables differ from the correct one only in subtle arithmetic (e.g., one rationalization error)"
+              ],
+              "example_stem": "(3/5)x + (3/4)y = 7. Which table of (x,y) values is consistent?",
+              "example_ids": ["d0e614a6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one of the answer tables is consistent for all rows",
+              "Distractor tables fail by a coherent rule (wrong slope, wrong intercept, swapped axes, sign of slope)"
+            ],
+            "must_vary": ["Form of the equation (slope-intercept vs standard vs fractional)", "Sign and magnitude of slope and intercept"],
+            "common_bugs": [
+              "Cloner accidentally makes two answer tables both satisfy the equation",
+              "Cloner picks x-values where the equation has identical y in two tables, killing the discrimination"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Extract slope, intercept, or related coordinate feature",
+      "description": "A line is specified by an equation, graph, or table, and the student must report a single scalar/coordinate feature: its slope, its y-intercept, its x-intercept, or a coordinate after the line is translated. The cognitive operation is rearranging into slope-intercept form (or recognizing the form) and reading off one number.",
+      "boundary_with_other_aspects": "A5 differs from A4 in that A5 returns only one feature, not the full equation. A5 differs from A6 in that A5 does not invoke a parallel/perpendicular partner line. A5 differs from A2 in that A5 typically plugs x=0 or y=0 (intercepts), not an arbitrary supplied value.",
+      "types": [
+        {
+          "id": "T10",
+          "name": "Find slope of a given line",
+          "description": "An equation is given (in slope-intercept, standard, or messy form like (1/4)(27x+15)+7x) or a graph/two points, and the student returns the slope.",
+          "core_skill_demand": "Rearrange to y = mx + b (or use Δy/Δx for two points) and report m.",
+          "example_originals": ["51568fb9", "9ed4c1a2", "e0f59119", "ca452900", "fb43b85f", "265f2a53", "6f6dfe3e"],
+          "frequency": { "easy": 0, "medium": 6, "hard": 1 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Pure slope extraction rarely appears at easy in this skill; comparable easy items are at T11."], "example_stem": "", "example_ids": [] },
+            "medium": {
+              "characteristics": [
+                "Equation in standard form ax + by = c, requiring one rearrangement to isolate y, then read coefficient",
+                "Or compute slope from two integer points",
+                "Or simplify a distributive expression to slope-intercept form"
+              ],
+              "example_stem": "What is the slope of 10x - 5y = -12?",
+              "example_ids": ["51568fb9", "9ed4c1a2", "e0f59119", "ca452900", "fb43b85f"]
+            },
+            "hard": {
+              "characteristics": [
+                "Table contains a parameter (e.g., n) but slope is still extractable from Δy/Δx of constants",
+                "Or x- and y-intercepts are given as fractions and slope must be derived as -b/a"
+              ],
+              "example_stem": "Table x = -6, -3, 0; y = n+184, n+92, n. Find the slope. (-92/3)",
+              "example_ids": ["6f6dfe3e", "265f2a53"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one slope value is correct",
+              "Distractors map to errors: forgot to divide by the coefficient of y, used the wrong sign, used the intercept as slope, computed Δx/Δy instead of Δy/Δx"
+            ],
+            "must_vary": ["Form of equation (standard, slope-intercept, point-pair, table)", "Sign and magnitude of slope"],
+            "common_bugs": [
+              "Cloner forgets to negate when rearranging from ax+by=c",
+              "Cloner introduces decimals that don't match clean answer options"
+            ]
+          }
+        },
+        {
+          "id": "T11",
+          "name": "Find x- or y-intercept of a given line",
+          "description": "Equation is given (slope-intercept or standard form, sometimes with a translation 'shifted down 5 units' or a different equation form like (3x/7) = -5y/9 + 21); student returns one intercept coordinate.",
+          "core_skill_demand": "Set x = 0 (for y-intercept) or y = 0 (for x-intercept), solve, and report the coordinate. Account for any translation by adjusting the constant term.",
+          "example_originals": ["8b2a2a63", "db0107df", "ed856e9c", "eeebe166", "f40552a9", "99ea3715", "9aaf7786", "9f70fd47", "cb58833c", "cc3e9528", "94b48cbf"],
+          "frequency": { "easy": 5, "medium": 1, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Equation already in slope-intercept form y = mx + b, so y-intercept is b; or graph shows the y-axis crossing directly",
+                "Distractors are the negation, x-intercept, or sign-flipped versions"
+              ],
+              "example_stem": "What is the y-intercept of y = 34x + 81?",
+              "example_ids": ["ed856e9c", "8b2a2a63", "db0107df", "eeebe166", "f40552a9"]
+            },
+            "medium": {
+              "characteristics": [
+                "Equation is given in standard form and the graph is shifted by k units in y; student must find the new intercept",
+                "Or equation involves fractions before isolation"
+              ],
+              "example_stem": "27x + 33y = 297 shifted down 5 units. New y-intercept?",
+              "example_ids": ["99ea3715"]
+            },
+            "hard": {
+              "characteristics": [
+                "Equation is rearranged into a non-standard form ((3x/7) = -5y/9 + 21), requiring multi-step isolation before substitution",
+                "Or asks for a ratio of intercepts (b/a) rather than a single intercept",
+                "Or graph is translated and student must find x-intercept of the new line — combining slope, original intercept, and a shift"
+              ],
+              "example_stem": "Find the x-intercept after 9x - 10y = 19 is translated down 4 units.",
+              "example_ids": ["9aaf7786", "9f70fd47", "cb58833c", "cc3e9528", "94b48cbf"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one intercept is being asked for, and the equation has a unique line",
+              "Distractors include 'used the other intercept', 'forgot to negate', 'forgot the translation'"
+            ],
+            "must_vary": [
+              "Whether x- or y-intercept is asked",
+              "Whether the line is translated",
+              "Form of equation (slope-intercept, standard, rearranged with fractions)"
+            ],
+            "common_bugs": [
+              "Cloner forgets to apply the translation to the constant, giving the wrong intercept",
+              "Cloner asks for y-coordinate but provides distractors that all look like x-coordinates (or vice versa)"
+            ]
+          }
+        },
+        {
+          "id": "T12",
+          "name": "Coordinate on/after translating a line",
+          "description": "Stem gives a line (often via table or graph) and asks for a specific coordinate: the missing x or y of a point on the line; the x-intercept of a translated copy of the line; or the value of a parameter in a coordinate of an intercept.",
+          "core_skill_demand": "Build the equation of the line (or apply known slope), then either substitute a target coordinate to solve for the other, or apply the translation to the constant term and solve for an intercept coordinate.",
+          "example_originals": ["9bbce683", "49800634", "9d0396d4", "0366d965", "3008cfc3", "3cdbf026", "05bb1af9"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 7 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not present at easy."], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["Not present at medium in this bank — these tasks are reliably hard."], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Combines two operations: build equation from table + translate + find intercept",
+                "Or build equation from two points + substitute target point with a fractional coordinate",
+                "Or table contains a symbolic constant (k, s) that propagates into the answer",
+                "Or graph is described and student must combine a vertical shift with f(x) interpretation"
+              ],
+              "example_stem": "Table for line h: (18,130),(23,160),(26,178). Line k = h translated down 5 units. Find x-intercept of k.",
+              "example_ids": ["9bbce683", "49800634", "9d0396d4", "0366d965", "3008cfc3", "3cdbf026", "05bb1af9"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Multi-step structure: derive line + apply transformation/substitution + report a coordinate",
+              "All inputs are sufficient to uniquely determine the answer",
+              "Distractors map to errors like forgetting to translate, swapping intercepts, sign errors on translation"
+            ],
+            "must_vary": [
+              "Source of the line (table, two points, graph, equation)",
+              "Type of transformation (vertical shift, none) and feature requested (intercept coordinate, point's x or y)"
+            ],
+            "common_bugs": [
+              "Cloner drops one step (e.g., omits the translation), regressing the difficulty to medium",
+              "Cloner introduces a translation but forgets to adjust the answer, so the labeled correct answer is wrong",
+              "Cloner uses non-integer coordinates that don't match any clean answer option"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "Use parallel/perpendicular relationships between lines",
+      "description": "Student is given one line and asked about a second line constrained to be parallel or perpendicular to it. The task may be to find the second line's slope, write its full equation, find a coordinate on it, or identify which pair of equations exhibits the relationship. The cognitive operation is applying the rules m_parallel = m and m_perp = -1/m, then doing whatever follow-up the stem requires.",
+      "boundary_with_other_aspects": "A6 differs from A5 because A6 invokes a partner line. A6 differs from A4 because the second line's equation is derived via parallel/perpendicular relation rather than directly from given points/slope. A categorical drift would be a clone that loses the 'perpendicular to' clause and becomes a straight slope extraction.",
+      "types": [
+        {
+          "id": "T13",
+          "name": "Slope of a parallel or perpendicular line",
+          "description": "Stem provides one line via equation (slope-intercept or standard form), describes a second line as parallel/perpendicular to it, and asks only for the second line's slope.",
+          "core_skill_demand": "Extract slope of given line (rearrange if needed), then apply m_parallel = m or m_perp = -1/m. Report the resulting slope.",
+          "example_originals": ["2d0e13a6", "5b8a8475", "b8fa27db", "002dba45", "01682aa5", "0451d754", "c39dbbdf", "92aa3a94", "00723d16", "184ce5aa", "db422e7f", "6d8ad460", "98d3393a"],
+          "frequency": { "easy": 2, "medium": 5, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Given line is already in slope-intercept form with integer slope; relationship is parallel or simple perpendicular",
+                "Distractors include the original slope, the simple negation, and unrelated reciprocals"
+              ],
+              "example_stem": "Line k: y = (1/4)x + 1. Line j is parallel to k. Slope of j? (1/4)",
+              "example_ids": ["2d0e13a6", "5b8a8475", "b8fa27db"]
+            },
+            "medium": {
+              "characteristics": [
+                "Given line is in standard form (e.g., 2y + 18x = 9) or has a fractional slope; relationship is parallel or perpendicular",
+                "Student must rearrange before applying the relationship"
+              ],
+              "example_stem": "Line p: 2y + 18x = 9. Line r is perpendicular to p. Slope of r? (1/9)",
+              "example_ids": ["01682aa5", "0451d754", "c39dbbdf", "92aa3a94", "002dba45"]
+            },
+            "hard": {
+              "characteristics": [
+                "Given line is in an unusual form ((1/5)x + (1/7)y - 70 = 0, 3y + 12x = 5, 4y + 8x = 6), requiring careful sign and reciprocal management",
+                "Or asks about a vertical/horizontal edge case (perpendicular to a vertical line ⇒ slope 0; perpendicular to horizontal ⇒ undefined)"
+              ],
+              "example_stem": "Line h: (1/5)x + (1/7)y - 70 = 0. Line j is perpendicular to h. Slope? (5/7)",
+              "example_ids": ["184ce5aa", "00723d16", "db422e7f", "6d8ad460", "98d3393a"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one relationship (parallel OR perpendicular) is invoked",
+              "Slope of the given line is well-defined (or, in edge-case hard variants, the question explicitly handles vertical/horizontal cases)",
+              "Distractors include: the original slope (parallel-vs-perpendicular confusion), the simple negative (forgot reciprocal), the simple reciprocal (forgot to negate)"
+            ],
+            "must_vary": [
+              "Form of the given line",
+              "Whether parallel or perpendicular",
+              "Sign and form of the slope"
+            ],
+            "common_bugs": [
+              "Cloner drops the 'parallel/perpendicular' clause, regressing to A5 T10",
+              "Cloner uses slope ±1, where parallel and perpendicular distractors collapse",
+              "Cloner introduces a fractional slope but provides only integer answer choices"
+            ]
+          }
+        },
+        {
+          "id": "T14",
+          "name": "Equation or coordinate on parallel/perpendicular line through a point",
+          "description": "Stem gives one line, names a second line as parallel or perpendicular passing through a specific point, and asks for the second line's full equation or for a specific coordinate on it (e.g., y-value at given x).",
+          "core_skill_demand": "Determine new slope via parallel/perpendicular rule; then apply point-slope form (or substitute the given point into y = mx + b and solve for b) to write the equation; or substitute the given x to find the y-coordinate on the new line.",
+          "example_originals": ["24854644", "deee9063", "63be6c9a", "a7a14e87", "b9835972", "fdee0fbf"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Parallel relationship with given line in slope-intercept form; partner line passes through a point on the y-axis (so b is read off directly)",
+                "Distractors include 'used the wrong slope (original vs given point's y)', 'used the slope of the given line with wrong intercept'"
+              ],
+              "example_stem": "Parallel to y = 7x + 4, through (0,5). Equation? (y = 7x + 5)",
+              "example_ids": ["24854644", "deee9063"]
+            },
+            "medium": {
+              "characteristics": [
+                "Partner line through (0,0) and parallel/perp to a line in slope-intercept form; ask for y-value at a specified x (i.e., compute m·x)",
+                "Or full equation with a non-axis intercept point"
+              ],
+              "example_stem": "Line s parallel to y = 18x + 2 through (0,0); s also passes through (4,d). Find d. (72)",
+              "example_ids": ["63be6c9a"]
+            },
+            "hard": {
+              "characteristics": [
+                "Three-step problem: rearrange given line to find slope, apply perpendicular rule, use given y-intercept (or non-axis point) to write equation",
+                "Or partner line through an x-intercept on the new line, requiring solving for w in a third point",
+                "Or relationship encoded symbolically in pairs of equations (a x + b y = 1 family) requiring identification of an equivalent pair"
+              ],
+              "example_stem": "Line script l through (0,0) parallel to y = 8x + 2; also passes through (3, d). Find d. (24)",
+              "example_ids": ["a7a14e87", "b9835972", "fdee0fbf"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two-stage structure: derive new slope from given line, then assemble the new line via a supplied point",
+              "Final question is either a full equation, a specific coordinate, or a parameter — exactly one is asked",
+              "Distractors include 'used the given line's intercept', 'used the partner point's coordinates as slope', 'forgot to reciprocate'"
+            ],
+            "must_vary": [
+              "Parallel vs perpendicular",
+              "Whether the partner point is on the y-axis or not",
+              "What is requested (equation vs y-value vs constant)"
+            ],
+            "common_bugs": [
+              "Cloner replaces the perpendicular relation with parallel but keeps the same numeric answer choices",
+              "Cloner uses a point that already lies on the given line, making the two lines coincide",
+              "Cloner picks a slope of 0 or undefined, collapsing the perpendicular rule"
+            ]
+          }
+        },
+        {
+          "id": "T15",
+          "name": "Identify equivalent perpendicular/parallel pair from option set",
+          "description": "Stem states that a given pair of equations (e.g., 5x + 7y = 1 and ax + by = 1) represents perpendicular (or parallel) lines, and asks which option pair also represents perpendicular (or parallel) lines.",
+          "core_skill_demand": "Compute the slope conditions implied by the original pair; check which option pair preserves that relationship after the algebraic changes shown.",
+          "example_originals": ["a35c7164"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": { "characteristics": ["Not present at easy."], "example_stem": "", "example_ids": [] },
+            "medium": { "characteristics": ["Not present at medium."], "example_stem": "", "example_ids": [] },
+            "hard": {
+              "characteristics": [
+                "Slopes are encoded inside multi-term standard-form equations; student must derive slope = -a/b for each and check the perpendicular product",
+                "Distractors modify only one of the two equations in subtle ways (multiplying x-coefficient by 2 but not adjusting b)"
+              ],
+              "example_stem": "5x + 7y = 1 and ax + by = 1 are perpendicular. Which option pair is also perpendicular?",
+              "example_ids": ["a35c7164"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Original pair sets up a slope-product condition (perpendicular ⇒ m1·m2 = -1; parallel ⇒ m1 = m2)",
+              "Exactly one option preserves that condition; distractors break it in a single, identifiable way"
+            ],
+            "must_vary": [
+              "Whether the relation is parallel or perpendicular",
+              "Numerical values of the original coefficients"
+            ],
+            "common_bugs": [
+              "Cloner garbles the correct option so the slope condition fails, leaving no correct answer",
+              "Cloner makes two options simultaneously satisfy the condition"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Easy items concentrate in A1 (write equation from words), A2 (substitute and solve), A4 T5 (slope+y-intercept), A5 T11 (read y-intercept from y=mx+b), and A6 T13 with parallel relations. Medium items shift toward standard-form rearrangement (slope/intercept extraction), table-to-equation, and perpendicular slopes. Hard items consistently combine two operations: derive line + translate + intercept (T12); rearrange messy form + perp/parallel + new equation (T14); symbolic parameter in table or option (T6 hard, T15). The most common categorical drifts to watch for are: (a) a clone of A1 that supplies one variable's value, accidentally turning it into A2; (b) a clone of A3 that asks for a numeric value, accidentally turning it into A2; (c) a clone of A6 that drops the parallel/perpendicular clause, regressing to A5. Difficulty drifts cluster around removing rearrangement steps (standard form → slope-intercept) or removing a translation/transformation in A5 T12 and A6 T14."
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "23e2421a-s1",
+  "originalId": "23e2421a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Coding of Suggestions Submitted to Improve a Public Park Design, by Category</p></caption><thead><tr><th scope=\"col\">Category</th><th scope=\"col\">Number of suggestions</th></tr></thead><tbody><tr><th scope=\"row\">Additive (adding new features)</th><td>610</td></tr><tr><th scope=\"row\">Subtractive (removing existing features)</th><td>85</td></tr><tr><th scope=\"row\">Substitutive (replacing features)</th><td>190</td></tr><tr><th scope=\"row\">Neither additive nor subtractive (other)</th><td>140</td></tr><tr><th scope=\"row\">Invalid (off-topic or unclear)</th><td>45</td></tr></tbody></table></figure><p>To investigate how people generate ideas for improving a shared space, urban planners invited residents to submit written suggestions for improving the design of a new neighborhood park. After collecting more than a thousand suggestions, the planners independently coded each one as additive, subtractive, substitutive, neither additive nor subtractive, or invalid. Researchers later analyzed the results and noted that, in this dataset, ______<span aria-hidden=\"true\"></span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>around 140 suggestions were coded as neither additive nor subtractive, whereas around 610 suggestions were coded as additive.</p>"},
+    {"id": "b", "content": "<p>more than 350 suggestions were coded as invalid, whereas fewer than 100 suggestions were coded as subtractive.</p>"},
+    {"id": "c", "content": "<p>fewer than 100 suggestions were coded as subtractive, whereas more than 600 suggestions were coded as additive.</p>"},
+    {"id": "d", "content": "<p>around 610 suggestions were coded as additive, whereas around 140 suggestions were coded as subtractive.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most effectively uses data from the table. According to the table, 85 suggestions (fewer than 100) were coded as subtractive, and 610 suggestions (more than 600) were coded as additive. This contrast accurately reflects the values in the table.</p><p>Choice A is incorrect because, although the figures (140 and 610) are accurate, the statement does not contrast the additive category with its natural opposite (subtractive); the framing weakens the specific subtractive-versus-additive comparison the researchers are highlighting. Choice B is incorrect because the table shows only 45 invalid suggestions, far fewer than 350. Choice D is incorrect because 140 suggestions were coded as “neither additive nor subtractive,” not as subtractive; the actual subtractive count is 85.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

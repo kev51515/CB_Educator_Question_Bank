@@ -1,0 +1,39 @@
+{
+  "questionId": "f44b4125-s1",
+  "originalId": "f44b4125",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The functions <i>f</i> and <i>g</i> are defined by the given equations, where <i>x</i> &ge; 0. Which of the following equations displays, as a constant or coefficient, the maximum value of the function it defines, where <i>x</i> &ge; 0?</p><p>I. <i>f</i>(<i>x</i>) = 25(0.8)<sup><i>x</i></sup> + 14</p><p>II. <i>g</i>(<i>x</i>) = &minus;3(<i>x</i> &minus; 7)&sup2; + 22</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neither I nor II</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. For II, <i>g</i> is a downward parabola in vertex form with vertex (7, 22); the maximum value 22 appears as the constant term, so II displays the maximum. For I, the maximum of <i>f</i> on <i>x</i> &ge; 0 is <i>f</i>(0) = 25 + 14 = 39, which is neither 25 nor 14 individually, so I does not display the maximum as a constant or coefficient.</p><p>Choices A and B misidentify I. Choice D fails to recognize the vertex form.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A5.T2.hard"
+}

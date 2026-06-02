@@ -1,0 +1,25 @@
+{
+  "questionId": "a0b58ef0-s1",
+  "originalId": "a0b58ef0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T6.medium",
+  "stimulus": "<p>The Late Ordovician mass extinction, occurring roughly 444 million years ago, eliminated nearly 85% of marine species. Some researchers argue that a nearby supernova&rsquo;s gamma-ray burst stripped Earth&rsquo;s ozone layer and triggered the event. Others remain skeptical, partly because no isotopic signature characteristic of a supernova event has been securely dated to the boundary. In 2021, a team led by Reiko Tanaka identified an unusual iron-60 enrichment in deep-sea sediment cores recovered off the Patagonian shelf. Researchers who favor the supernova hypothesis cite this enrichment as supporting evidence. However, Tanaka&rsquo;s team has not yet been able to determine the depositional age of the iron-60 layer. Consequently, the team cautions that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>iron-60 deposits in deep-sea sediments are generally too rare to support any conclusions about ancient astronomical events.</p>"},
+    {"id": "b", "content": "<p>the discovered iron-60 enrichment cannot be confidently linked to the start of the Late Ordovician extinction.</p>"},
+    {"id": "c", "content": "<p>most other researchers have overlooked the role volcanic activity may have played in the extinction.</p>"},
+    {"id": "d", "content": "<p>the existing dates assigned to the Late Ordovician extinction are themselves likely to be incorrect.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text notes that some scientists invoke a supernova burst to explain the extinction, and that Tanaka&rsquo;s team found an iron-60 enrichment that supporters take as evidence. However, the team has not been able to date that layer. Without a secure date, the enrichment cannot be confidently tied to the start of the extinction event.</p><p>Choice A is incorrect because the text never claims that iron-60 deposits are too rare to ever support inferences&mdash;only that this particular layer cannot yet be dated. Choice C is incorrect because the debate in the text concerns whether the iron-60 layer is contemporaneous with the extinction, not whether volcanism has been overlooked. Choice D is incorrect because the text gives a fixed date (roughly 444 million years ago) for the extinction and never suggests that date is in doubt; the uncertainty lies with the iron-60 layer&rsquo;s age.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

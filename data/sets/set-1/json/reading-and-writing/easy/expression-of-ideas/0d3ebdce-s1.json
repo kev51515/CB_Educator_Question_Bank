@@ -1,0 +1,39 @@
+{
+  "questionId": "0d3ebdce-s1",
+  "originalId": "0d3ebdce",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Botanist Dr. Henry Park wanted to determine whether plants can communicate distress signals through their root systems. He first connected the roots of several tomato plants to a network of sensors that could detect tiny chemical changes in the surrounding soil. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> he applied controlled stressors to individual plants and recorded any chemical responses from neighboring plants.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In sum,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Next,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Next\" logically signals that the action described in this sentence\u2014applying stressors and recording responses\u2014is the next step in Park's experiment.</p><p>Choice A is incorrect because \"specifically\" illogically signals that this sentence elaborates on the previous step. Instead, it describes the next step in Park's experiment. Choice B is incorrect because \"for instance\" illogically signals that this sentence is an example of the previous action. Instead, it is the next step in Park's experiment. Choice C is incorrect because \"in sum\" illogically signals that this sentence summarizes the previous action. Instead, it describes the next step in Park's experiment.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

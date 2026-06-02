@@ -1,0 +1,39 @@
+{
+  "questionId": "0147b080-s1",
+  "originalId": "0147b080",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Notable Hydroelectric Dams</p><figure><table><thead><tr><th>Dam</th><th>Country</th><th>Height (meters)</th><th>Year Completed</th></tr></thead><tbody><tr><td>Hoover Dam</td><td>United States</td><td>221</td><td>1936</td></tr><tr><td>Three Gorges Dam</td><td>China</td><td>181</td><td>2006</td></tr><tr><td>Itaipu Dam</td><td>Brazil/Paraguay</td><td>196</td><td>1984</td></tr><tr><td>Aswan High Dam</td><td>Egypt</td><td>111</td><td>1970</td></tr></tbody></table></figure><p>A student is writing an essay about hydroelectric dams for a science class and wants to note the year each dam was completed and how tall each dam is. Consulting the table, the student finds that the Itaipu Dam was completed in 1984 and is ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>111 meters tall.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>181 meters tall.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>196 meters tall.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>221 meters tall.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because it uses the table data accurately. The table shows that the Itaipu Dam is 196 meters tall.</p><p>Choice A is incorrect: 111 meters is the height of the Aswan High Dam. Choice B is incorrect: 181 meters is the height of the Three Gorges Dam. Choice D is incorrect: 221 meters is the height of the Hoover Dam.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

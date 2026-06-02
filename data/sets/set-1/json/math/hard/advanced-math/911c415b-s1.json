@@ -1,0 +1,22 @@
+{
+  "questionId": "911c415b-s1",
+  "originalId": "911c415b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The expression (4250 + 80t<sup>2</sup>) + 5(20t<sup>2</sup> &minus; 90) can be written in the form at<sup>2</sup> + b, where a and b are constants. What is the value of a + b?</p>",
+  "answerOptions": [],
+  "keys": [
+    "3980"
+  ],
+  "rationale": "<p>Distribute the 5: (4250 + 80t<sup>2</sup>) + (100t<sup>2</sup> &minus; 450). Combine like terms to get 180t<sup>2</sup> + 3800. In the form at<sup>2</sup> + b, a = 180 and b = 3800, so a + b = 180 + 3800 = 3980.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A4.T9.hard"
+}

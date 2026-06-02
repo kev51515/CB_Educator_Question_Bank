@@ -1,0 +1,39 @@
+{
+  "questionId": "6bc0e595-s1",
+  "originalId": "6bc0e595",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>One feature of attending a live concert that streamed music can't replicate is the chance to feel the music physically \u2014 the vibration of the bass, the buzz of the crowd. Does this matter to listeners? In an experiment, researchers had one group of participants listen to a short performance on a sound system that included low-frequency bass effects, while another group listened to the same performance through standard speakers without those effects. Each participant was then asked how much they'd pay for a ticket to a full-length show by the same performer. People who had felt the bass were willing to pay considerably more than those who had not. This finding suggests that ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>streaming services may be able to raise prices for tracks only available through their platform.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>people who stream most of their music probably spend more each month than people who mainly attend concerts.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>concert venues should charge the same ticket price for every show.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>physically experiencing music may make a performance feel more valuable than it would if only heard through standard speakers.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. People who felt the bass valued the show more \u2014 so physical sensation seems to enhance perceived value.</p><p>Choice A speculates about streaming pricing, never raised. Choice B compares monthly spending, not addressed. Choice C addresses what venues \"should\" do, not implied by the study.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A4.T8.easy"
+}

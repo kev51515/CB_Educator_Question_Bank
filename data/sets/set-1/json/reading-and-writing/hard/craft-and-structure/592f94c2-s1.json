@@ -1,0 +1,39 @@
+{
+  "questionId": "592f94c2-s1",
+  "originalId": "592f94c2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Compelling fiction often unsettles its readers by violating familiar narrative expectations, but the production of children's literature&mdash;novels, picture books, and graphic stories marketed for school-age readers&mdash;typically depends on broad consensus among authors, editors, parents, and educators about a book's themes and lessons. <u>A children's book that fails to accommodate every gatekeeper by being sufficiently safe and unchallenging almost always provokes objection.</u></p>\n<p><strong>Text 2</strong></p>\n<p>Children's literature is most often delivered to young readers through institutions, such as schools and libraries, whose primary missions concern academic instruction or general public service rather than aesthetic exploration. Some scholars of children's literature therefore observe that norm-defying books not carefully framed for their context&mdash;through teacher introductions, reading guides, or curated displays that prepare readers to engage thoughtfully with difficult ideas&mdash;tend to draw harsher complaints than equally provocative titles encountered in less institutional settings, such as a parent's recommendation at home.</p>",
+  "stem": "<p>Based on the texts, how would the scholars mentioned in Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By arguing that the reason adults might object to a children's book is unrelated to the unconventionality of its themes or storytelling</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By contending that the kinds of complaints provocative children's books often receive aren't determined solely by qualities of the books themselves</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By agreeing with the idea that only books with universally acceptable content are appropriate for distribution in schools and libraries</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By disputing the notion that adults are easily satisfied by children's books that mainly reinforce conventional moral lessons</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the scholars in Text 2 argue that negative reactions to children's books are not solely the product of the books' content. Text 1's underlined claim implies that a book's unconventional themes alone draw objections. Text 2 counters that books not \"carefully framed for their context\" face harsher complaints, suggesting that institutional framing&mdash;not just content&mdash;shapes responses.</p><p>Choice A is incorrect because the scholars in Text 2 do not deny that unconventionality matters; they argue that context also plays a significant role. Choice C is incorrect because the scholars do not advocate restricting institutions to universally acceptable books; they argue better framing can support more challenging titles. Choice D is incorrect because the scholars do not address whether adults are satisfied by conventional books; their point concerns the framing of unconventional ones.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.hard"
+}

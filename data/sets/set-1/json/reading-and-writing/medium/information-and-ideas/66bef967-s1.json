@@ -1,0 +1,25 @@
+{
+  "questionId": "66bef967-s1",
+  "originalId": "66bef967",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T6.medium",
+  "stimulus": "<p>Anishinaabe artist Maeve Jourdain turns hockey sticks used in arenas into sculpture by wrapping them in birchbark and ornaments of Anishinaabe quillwork. These ornaments include porcupine-quill mosaics and small copper bells, which traditionally adorn ceremonial pouches and ribbon skirts within many Anishinaabe communities. Jourdain thus combines an object widely associated with competitive sport (a hockey stick) with craft forms historically practiced by Anishinaabe women (quillwork and birchbark decoration). In this way, she challenges familiar boundaries between athletic gear and ceremonial craft.</p>",
+  "stem": "<p>Which choice best describes Jourdain's approach to art, as presented in the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>She turns to ice hockey for inspiration when designing pouches and skirts.</p>"},
+    {"id": "b", "content": "<p>She has been influenced equally by Anishinaabe and non-Anishinaabe artists.</p>"},
+    {"id": "c", "content": "<p>She draws on traditional Anishinaabe craft forms to create her original works.</p>"},
+    {"id": "d", "content": "<p>She defies expectations about color and pattern when incorporating quillwork.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text explains that Jourdain creates her sculptures by applying traditional Anishinaabe quillwork and birchbark elements—porcupine quills, copper bells, and birchbark—to hockey sticks. Her approach therefore consists of using traditional Anishinaabe craft forms to make new sculptural works.</p><p>Choice A is incorrect because the text says Jourdain uses hockey sticks as the base for her sculptures, not that she designs pouches or skirts inspired by hockey. Choice B is incorrect because the text does not mention non-Anishinaabe artists as an influence. Choice D is incorrect because the text never describes the colors or patterns of her quillwork.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

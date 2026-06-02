@@ -1,0 +1,39 @@
+{
+  "questionId": "0b696a0c-s1",
+  "originalId": "0b696a0c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The European Space Agency's <em>JUICE</em> spacecraft recorded a subtle flexing in the icy crust of Europa, one of Jupiter's largest moons. Drawing on simulations of the moon's tidal stresses and orbital pull, planetary scientist Hiro Tanaka and colleagues have suggested that this flexing may be caused by warm currents in a saltwater ocean churning below the ice. The team argues that other Jovian moons should be surveyed for similar signals of buried seas.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Tanaka and colleagues have proposed that subtle flexing in Europa's crust may point to a saltwater ocean beneath the ice.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Tanaka and colleagues have confirmed that multiple moons of Jupiter contain large saltwater oceans.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Tanaka and colleagues have shown that Europa's icy crust is too rigid to allow any warm currents underneath.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Tanaka and colleagues have built a new model that locates hidden oceans without needing to study tidal stresses.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text reports an observation (subtle flexing) and a proposed explanation (a saltwater ocean below the ice), which together capture the main idea.</p><p>Choice B is incorrect; the text says scientists believe more moons should be surveyed, not that oceans have been confirmed on several. Choice C is incorrect; the text says the opposite, that flexing may be caused by warm currents. Choice D is incorrect; the simulations in the text rely on tidal stresses and orbital pull, not a method that avoids them.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

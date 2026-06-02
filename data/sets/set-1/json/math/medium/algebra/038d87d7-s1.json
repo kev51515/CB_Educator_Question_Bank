@@ -1,0 +1,39 @@
+{
+  "questionId": "038d87d7-s1",
+  "originalId": "038d87d7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A farm consists of a 7-hectare orchard and a 20-hectare pasture. The total number of trees on the farm is 3,500. The equation 7x + 20y = 3,500 represents this situation. Which of the following is the best interpretation of x in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The total number of trees in the pasture</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The total number of trees in the orchard</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The average number of trees per hectare in the orchard</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The average number of trees per hectare in the pasture</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The coefficient of x is 7 (the hectares of orchard), so the term 7x gives the total number of trees in the orchard. That means x is the average number of trees per hectare in the orchard. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium"
+}

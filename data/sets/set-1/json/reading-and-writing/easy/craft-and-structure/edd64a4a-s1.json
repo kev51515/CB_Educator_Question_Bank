@@ -1,0 +1,39 @@
+{
+  "questionId": "edd64a4a-s1",
+  "originalId": "edd64a4a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Edith Wharton's 1920 novel <em>The Age of Innocence</em>. Mr. Archer is planning a meeting with a friend.</p>\n<blockquote>\n<p>He had already resolved to seek her out at the opera, where he was sure to find her in her usual box. He had only to <span role=\"region\" aria-label=\"Referenced Content\"><u>fix</u></span> the moment during the evening when he would approach. He decided to wait through the first act and slip away during the second intermission.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;fix&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Repair</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Settle</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Restrict</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Fasten</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because \"settle\" most nearly captures the sense of deciding or pinning down, which matches the narrator's process of choosing exactly when to approach. Choice A is incorrect because \"repair\" means to mend something broken; nothing in the text needs repair. Choice C is incorrect because \"restrict\" means to limit; the narrator is selecting a time, not constraining one. Choice D is incorrect because \"fasten\" means to attach physically; the moment is a point in time, not an object to be attached.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

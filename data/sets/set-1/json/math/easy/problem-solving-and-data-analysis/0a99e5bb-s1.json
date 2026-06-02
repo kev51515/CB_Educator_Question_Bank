@@ -1,0 +1,39 @@
+{
+  "questionId": "0a99e5bb-s1",
+  "originalId": "0a99e5bb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>\u22127, \u22122, 5, 11</p><p>A data set of four numbers is shown. If a number from this data set is selected at random, what is the probability of selecting a negative number?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3/4</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. There are 4 numbers in the data set, and 2 of them (\u22127 and \u22122) are negative. The probability is 2/4 = 1/2.</p><p>Choice A is incorrect. This would be the probability if only 1 of 4 numbers were negative.</p><p>Choice B is incorrect. This would be the probability if 1 of 3 numbers were negative.</p><p>Choice D is incorrect. This is the probability of selecting a non-negative number (5 or 11).</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

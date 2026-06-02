@@ -1,0 +1,39 @@
+{
+  "questionId": "1142af44-s1",
+  "originalId": "1142af44",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The frequency distribution below summarizes a set of data, where n is a positive integer.</p><p>Value 1: frequency n</p><p>Value 2: frequency n+2</p><p>Value 3: frequency n+5</p><p>Value 4: frequency n+2</p><p>Value 5: frequency n</p><p>How much greater is the mean of the set of data than the median?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The frequencies of the values below 3 (values 1 and 2) match the frequencies of the values above 3 (values 4 and 5). The distribution is symmetric about the value 3. In a symmetric distribution the mean and median are equal, so their difference is 0.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "47955354-s1",
+  "originalId": "47955354",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The civilization of ancient Egypt (which flourished from around 3100 to 30 BCE) <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many concepts that continue to shape modern life: for example, one of the earliest known versions of a 365-day calendar appears in Egyptian records of the Nile's annual flooding.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>inherited</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>overlooked</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>transformed</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>introduced</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the sentence describes an idea (a 365-day calendar) that appears in Egyptian records and continues to shape modern life, indicating that the Egyptians were the first to use the concept. \"Introduced\" means brought into use for the first time, which fits. The other choices describe receiving from someone else, ignoring, or changing existing concepts, none of which fits the role of being the first to create something.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

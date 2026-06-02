@@ -1,0 +1,22 @@
+{
+  "questionId": "ee7b1de1-s1",
+  "originalId": "ee7b1de1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A small business owner budgets <math><mo>$</mo><mn>3,000</mn></math> to purchase candles. The owner must purchase a minimum of 250 candles to maintain the discounted pricing. If the owner pays <math><mo>$</mo><mn>5.20</mn></math> per small candle and <math><mo>$</mo><mn>13.40</mn></math> per large candle, what is the maximum number of large candles the owner can purchase to stay within the budget and maintain the discounted pricing?</p>",
+  "answerOptions": [],
+  "keys": [
+    "207"
+  ],
+  "rationale": "<p>The correct answer is 207. Let s and l be the numbers of small and large candles. We need s + l \u2265 250 and 5.20s + 13.40l \u2264 3000. From the first, s \u2265 250 \u2212 l, so 5.20s \u2265 5.20(250 \u2212 l) = 1300 \u2212 5.20l. Then 5.20s + 13.40l \u2265 1300 + 8.20l. Combining with the budget cap: 1300 + 8.20l \u2264 3000, so 8.20l \u2264 1700 and l \u2264 207.32. Hence the maximum whole number of large candles is 207.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard"
+}

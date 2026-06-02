@@ -1,0 +1,25 @@
+{
+  "questionId": "28166dc6-s1",
+  "originalId": "28166dc6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T3.medium",
+  "stimulus": "<p>In graph theory (the mathematical study of networks of nodes and edges), graphs are classified in part by their chromatic numbers&mdash;the minimum number of colors needed to color adjacent nodes differently. The Petersen graph and the complete graph on four vertices, each with a chromatic number below five, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> frequently cited examples in introductory courses.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>has been</p>"},
+    {"id": "c", "content": "<p>is</p>"},
+    {"id": "d", "content": "<p>was</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The plural verb \"are\" agrees in number with the plural compound subject \"the Petersen graph and the complete graph on four vertices.\" The two graphs joined by \"and\" function as a plural subject and thus require a plural verb.</p><p>Choice B is incorrect because the singular verb \"has been\" doesn't agree in number with the plural compound subject. Choice C is incorrect because the singular verb \"is\" doesn't agree in number with the plural compound subject. Choice D is incorrect because the singular verb \"was\" doesn't agree in number with the plural compound subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

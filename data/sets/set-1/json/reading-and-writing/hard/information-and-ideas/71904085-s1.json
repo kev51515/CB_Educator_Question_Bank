@@ -1,0 +1,25 @@
+{
+  "questionId": "71904085-s1",
+  "originalId": "71904085",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>Education researcher Yara Oduya hypothesizes that, when teaching unfamiliar policy issues to high school students, a collaborative group discussion in which several students with different viewpoints share ideas in a supportive setting is more informative for an observing audience than a head-to-head debate between two students arguing opposing positions is. To test Oduya's hypothesis, a team of graduate students recruited audience members and randomly assigned each to watch one of three classroom segments on the same unfamiliar issue: (1) a single student giving a brief presentation, (2) a two-student debate, or (3) a four-student collaborative discussion with varied perspectives.</p>",
+  "stem": "<p>Which finding from the team's study, if true, would most strongly support Oduya's hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>On average, audience members rated the debaters as more knowledgeable about the issue than the discussion participants.</p>"},
+    {"id": "b", "content": "<p>On average, audience members rated the discussion participants as more knowledgeable about the issue than the single presenter.</p>"},
+    {"id": "c", "content": "<p>On average, audience members who watched the collaborative discussion answered more factual questions about the issue correctly than those who watched the debate or the single presenter did.</p>"},
+    {"id": "d", "content": "<p>On average, audience members who watched the single presenter answered more factual questions about the issue correctly than those who watched the debate did.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. Oduya's hypothesis is that a collaborative group discussion (multiple viewpoints, supportive setting) is more informative than a head-to-head debate. Showing that the discussion audience answered more factual questions correctly than the debate audience (and the single-presenter audience) directly demonstrates that the discussion format was the most informative one—exactly what the hypothesis predicts.</p><p>Choice A is incorrect: perceptions of how knowledgeable the debaters seemed do not show whether the audience actually learned more. Choice B is incorrect: a perception comparison between two formats (and one that the hypothesis isn't even framed around) doesn't establish that the collaborative discussion is more informative than the debate. Choice D is incorrect: comparing the single presenter to the debate is irrelevant; the hypothesis concerns the collaborative discussion versus the debate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

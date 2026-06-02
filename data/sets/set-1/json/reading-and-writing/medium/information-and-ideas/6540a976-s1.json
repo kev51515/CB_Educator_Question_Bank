@@ -1,0 +1,25 @@
+{
+  "questionId": "6540a976-s1",
+  "originalId": "6540a976",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>To understand how Neolithic farmers prepared grain for storage, archaeologist Yuna Park and her team tested different drying techniques in a reconstructed pit-house in Sweden using replicas of tools recovered from northern European Neolithic sites. They tried three Neolithic drying methods—open-air racks, shallow hearth pits, and elevated smoke chambers—and concluded that each likely served a distinct purpose. For example, the team found that the shallow hearth pits dried grain much faster than the open-air racks but charred the outer kernels far more often.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Park and her team's study established that elevated smoke chambers were essential to Neolithic farming communities.</p>"},
+    {"id": "b", "content": "<p>Park and her team were hesitant to draw firm conclusions from their study because of the difficulty of replicating Neolithic tools.</p>"},
+    {"id": "c", "content": "<p>Park and her team determined that Neolithic farmers in Sweden used open-air racks more often than shallow hearth pits.</p>"},
+    {"id": "d", "content": "<p>Park and her team tested Neolithic drying methods and learned details about how each technique was suited to a particular task.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text reports that Park's team tested three Neolithic drying techniques using replicas of period tools and concluded that each method likely served a distinct purpose, citing the example that shallow hearth pits dried grain faster but charred kernels more often than open-air racks did.</p><p>Choice A is incorrect because the text does not single out smoke chambers as essential. Choice B is incorrect because the team did reach conclusions; the text does not describe hesitation. Choice C is incorrect because the text does not compare how often each technique was used.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

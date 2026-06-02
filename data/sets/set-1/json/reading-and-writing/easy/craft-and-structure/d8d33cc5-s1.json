@@ -1,0 +1,25 @@
+{
+  "questionId": "d8d33cc5-s1",
+  "originalId": "d8d33cc5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>For much of the nineteenth century, urban water supplies in many European cities relied on shallow wells that were easily contaminated by waste, leading to repeated outbreaks of cholera. To address the recurring crises, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> were proposed in the mid-1800s, including the construction of large sewer systems and the introduction of sand-filtered municipal waterworks.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>holdings</p>"},
+    {"id": "b", "content": "<p>surveys</p>"},
+    {"id": "c", "content": "<p>extensions</p>"},
+    {"id": "d", "content": "<p>reforms</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because \"reforms\" means deliberate changes meant to improve a system, which matches the text's description of sewers and filtered waterworks introduced to fix a failing supply. Choice A is incorrect because \"holdings\" refers to possessions and does not describe corrective changes. Choice B is incorrect because \"surveys\" refers to studies; constructing sewers and waterworks are not surveys but interventions. Choice C is incorrect because \"extensions\" implies adding more of the existing system, but the text describes new, redesigned infrastructure aimed at fixing problems.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

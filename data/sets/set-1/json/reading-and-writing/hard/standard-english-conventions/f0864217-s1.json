@@ -1,0 +1,25 @@
+{
+  "questionId": "f0864217-s1",
+  "originalId": "f0864217",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p><em>Mwindo Epic</em> is a Nyanga oral poem traditionally chanted in the eastern forests of the Democratic Republic of the Congo. Composed in verses passed down through generations of bards, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> had been exiled by his own father but later returned to claim his rightful place among the chiefs of the kingdom.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the hero, Mwindo, whose adventures fill the <em>Mwindo Epic</em>,</p>"},
+    {"id": "b", "content": "<p>there was a hero, Mwindo, who in the <em>Mwindo Epic</em></p>"},
+    {"id": "c", "content": "<p>the <em>Mwindo Epic</em> recounts the deeds of Mwindo, a hero who</p>"},
+    {"id": "d", "content": "<p>Mwindo, the hero of the <em>Mwindo Epic</em>,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The modifier &ldquo;Composed in verses passed down through generations of bards&rdquo; is describing the poem &ldquo;<em>Mwindo Epic</em>.&rdquo; Modifiers need to be next to the subjects they describe, so &ldquo;<em>Mwindo Epic</em>&rdquo; needs to be the first noun phrase after the comma.</p><p>Choice A is incorrect. This doesn&rsquo;t complete the text in a way that conforms to the conventions of Standard English. The modifier illogically describes the hero as composed in verses. Choice B is incorrect. The modifier illogically describes &ldquo;there was a hero&rdquo; as composed in verses, and the construction is awkward. Choice D is incorrect. The modifier illogically describes Mwindo himself as composed in verses, when in fact the poem is what was composed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

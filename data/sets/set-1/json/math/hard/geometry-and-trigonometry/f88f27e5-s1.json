@@ -1,0 +1,22 @@
+{
+  "questionId": "f88f27e5-s1",
+  "originalId": "f88f27e5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a triangle, two of the interior angles measure 28° and 65°. What is the measure, in degrees, of the exterior angle at the third vertex?</p>",
+  "answerOptions": [],
+  "keys": [
+    "93"
+  ],
+  "rationale": "<p>An exterior angle of a triangle equals the sum of the two non-adjacent interior angles (the remote interior angles). Therefore the exterior angle at the third vertex measures 28 + 65 = 93°.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A2.T2.hard"
+}

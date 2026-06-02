@@ -1,0 +1,39 @@
+{
+  "questionId": "42f19012-s1",
+  "originalId": "42f19012",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to b<sup>7/15</sup>, where b &gt; 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>b<sup>7/(15\u00b715)</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>b<sup>(7\u00b715)/(15\u00b715)</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>b<sup>(7\u00b715)/15</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>b<sup>7/(15\u00b77)</sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Multiplying the exponent by 15/15 = 1 gives b<sup>7/15</sup> = b<sup>(7\u00b715)/(15\u00b715)</sup> = b<sup>105/225</sup>, which simplifies back to b<sup>7/15</sup>. Choice (b) is the equivalent rewriting.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T7.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "849bf8d7-s1",
+  "originalId": "849bf8d7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the late nineteenth century, some agricultural newspapers <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> northward migration by African American farmers in the United States; by printing letters describing the affordable land and steady wages available in Kansas, a paper called the Topeka Colored Citizen was one such publication that helped drive what became known as the Exoduster movement.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>discouraged</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>ignored</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>encouraged</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>opposed</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"encouraged\" matches the idea that the papers promoted migration by publishing favorable letters. Choices A, B, and D describe the opposite of the effect described. The paper\u2019s role in driving the Exoduster movement shows it supported migration.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

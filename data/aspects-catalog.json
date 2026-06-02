@@ -1,0 +1,1517 @@
+{
+  "version": 1,
+  "aspects": [
+    {
+      "slug": "eq-expr-radicals",
+      "label": "Manipulate radicals / rational exponents",
+      "skill": "Equivalent expressions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 12
+    },
+    {
+      "slug": "eq-expr-rational",
+      "label": "Rewrite rational expressions",
+      "skill": "Equivalent expressions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 6
+    },
+    {
+      "slug": "eq-expr-find-constant",
+      "label": "Find the unknown constant",
+      "skill": "Equivalent expressions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 6
+    },
+    {
+      "slug": "eq-expr-factor",
+      "label": "Factor a polynomial",
+      "skill": "Equivalent expressions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 28
+    },
+    {
+      "slug": "eq-expr-distribute",
+      "label": "Distribute and expand",
+      "skill": "Equivalent expressions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 31
+    },
+    {
+      "slug": "eq-expr-combine",
+      "label": "Combine like terms / add or subtract polynomials",
+      "skill": "Equivalent expressions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 17
+    },
+    {
+      "slug": "nlf-graph-read",
+      "label": "Read a feature from a given graph",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 49
+    },
+    {
+      "slug": "nlf-zero-cubic",
+      "label": "Cubic / factored polynomial zeros",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 29
+    },
+    {
+      "slug": "nlf-quadratic-features",
+      "label": "Quadratic: vertex, axis, intercepts, transformation",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 18
+    },
+    {
+      "slug": "nlf-exp-build",
+      "label": "Build an exponential model from context",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 26
+    },
+    {
+      "slug": "nlf-exp-rewrite",
+      "label": "Rewrite or interpret an exponential expression",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 12
+    },
+    {
+      "slug": "nlf-interpret-context",
+      "label": "Interpret a parameter or value in context",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 11
+    },
+    {
+      "slug": "nlf-build-from-text",
+      "label": "Translate verbal description to a function",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "nlf-evaluate",
+      "label": "Evaluate a function at a value",
+      "skill": "Nonlinear functions",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 52
+    },
+    {
+      "slug": "nle-system-substitute",
+      "label": "Solve (line + nonlinear) by substitution",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 18
+    },
+    {
+      "slug": "nle-system-graph",
+      "label": "Read a system's solution from a graph",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "nle-discriminant-constant",
+      "label": "Find constant for #-of-solutions",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 15
+    },
+    {
+      "slug": "nle-absolute-value",
+      "label": "Solve an absolute value equation",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "nle-radical",
+      "label": "Solve a radical / squaring equation",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 26
+    },
+    {
+      "slug": "nle-rational",
+      "label": "Solve a rational equation",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 5
+    },
+    {
+      "slug": "nle-literal",
+      "label": "Solve a literal equation for one variable",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 27
+    },
+    {
+      "slug": "nle-exponent-eq",
+      "label": "Exponential / power equation",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "nle-zero-product",
+      "label": "Solve a factored polynomial equation",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 13
+    },
+    {
+      "slug": "nle-quadratic-solve",
+      "label": "Solve a quadratic equation",
+      "skill": "Nonlinear equations in one variable and systems of equations in two variables",
+      "domain": "Advanced Math",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "lf-combine-functions",
+      "label": "Combine/compose/transform two functions",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "lf-build-from-table",
+      "label": "Find slope/intercept/equation from a table",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "lf-build-from-slope",
+      "label": "Write equation given slope and point/intercept",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 14
+    },
+    {
+      "slug": "lf-interpret-coeff",
+      "label": "Interpret slope or y-intercept in context",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 16
+    },
+    {
+      "slug": "lf-build-from-context",
+      "label": "Translate words to a linear function",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 25
+    },
+    {
+      "slug": "lf-graph-intercepts",
+      "label": "Read x/y-intercept from graph or equation",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 14
+    },
+    {
+      "slug": "lf-find-constant",
+      "label": "Find an unknown constant in a linear function",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "lf-evaluate",
+      "label": "Evaluate a linear function",
+      "skill": "Linear functions",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 38
+    },
+    {
+      "slug": "le2-table-to-eq",
+      "label": "Find the equation from a table of (x, y)",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "le2-perpendicular-parallel",
+      "label": "Slope of a parallel or perpendicular line",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 19
+    },
+    {
+      "slug": "le2-build-from-features",
+      "label": "Write equation from slope + point or two points",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 11
+    },
+    {
+      "slug": "le2-intercept-conversion",
+      "label": "Find intercept given the other intercept / a point",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "le2-find-constant",
+      "label": "Find unknown constant in an equation given graph/extra info",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "le2-interpret-coeff",
+      "label": "Interpret a coefficient in context",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 11
+    },
+    {
+      "slug": "le2-build-from-context",
+      "label": "Build a two-variable linear equation from a word problem",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 14
+    },
+    {
+      "slug": "le2-substitute-given-one-var",
+      "label": "Solve for one variable given the value of the other",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 12
+    },
+    {
+      "slug": "le2-graph-feature",
+      "label": "Read intercept/slope from a graph or from a slope-intercept equation",
+      "skill": "Linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 24
+    },
+    {
+      "slug": "le1-find-constant-infinite",
+      "label": "Find constant for infinitely many solutions",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 8
+    },
+    {
+      "slug": "le1-find-constant-nosol",
+      "label": "Find constant for no solution",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "le1-num-solutions",
+      "label": "Determine number of solutions",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 3
+    },
+    {
+      "slug": "le1-treat-block-as-variable",
+      "label": "Treat a sub-expression as a single variable",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "le1-scale-substitute",
+      "label": "Scale both sides / value of a related expression",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 23
+    },
+    {
+      "slug": "le1-build-from-context",
+      "label": "Translate a word problem into a one-variable equation",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 18
+    },
+    {
+      "slug": "le1-isolate",
+      "label": "Solve a one-variable linear equation",
+      "skill": "Linear equations in one variable",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 25
+    },
+    {
+      "slug": "sys-find-constant-infinite",
+      "label": "Find constant(s) for infinitely many solutions",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "sys-find-constant-nosol",
+      "label": "Find constant(s) for no solution",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "sys-find-constant-given-point",
+      "label": "Find a constant given a particular solution",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 3
+    },
+    {
+      "slug": "sys-num-solutions",
+      "label": "Determine number of solutions or identify equivalent/parallel",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "sys-graph-read",
+      "label": "Read solution from a graph",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 8
+    },
+    {
+      "slug": "sys-build-from-context",
+      "label": "Build a system from a word problem",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 13
+    },
+    {
+      "slug": "sys-solve-substitution",
+      "label": "Solve a system by substitution",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 54
+    },
+    {
+      "slug": "sys-solve-elimination",
+      "label": "Solve a system by elimination / combination",
+      "skill": "Systems of two linear equations in two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "lineq-build-compound",
+      "label": "Build a compound (between / inclusive range) inequality",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 15
+    },
+    {
+      "slug": "lineq-triangle-inequality",
+      "label": "Triangle inequality / geometric inequality",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "lineq-test-point",
+      "label": "Test which ordered pair satisfies an inequality/system",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 17
+    },
+    {
+      "slug": "lineq-graph-read",
+      "label": "Identify inequality from a shaded graph",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "lineq-solve-1var",
+      "label": "Solve a one-variable linear inequality (algebraic)",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "lineq-build-2var-context",
+      "label": "Build a two-variable inequality from context",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "lineq-build-1var-context",
+      "label": "Build a one-variable inequality from context",
+      "skill": "Linear inequalities in one or two variables",
+      "domain": "Algebra",
+      "section": "Math",
+      "count": 12
+    },
+    {
+      "slug": "av-prism",
+      "label": "3D prism / box volume & surface area",
+      "skill": "Area and volume",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 20
+    },
+    {
+      "slug": "av-cylinder",
+      "label": "Right cylinder volume",
+      "skill": "Area and volume",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 11
+    },
+    {
+      "slug": "av-similar-scale",
+      "label": "Similarity / scale-factor area & volume",
+      "skill": "Area and volume",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 8
+    },
+    {
+      "slug": "av-circle",
+      "label": "Circle area / circumference / diameter",
+      "skill": "Area and volume",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "av-triangle",
+      "label": "Triangle area / perimeter / side",
+      "skill": "Area and volume",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 16
+    },
+    {
+      "slug": "av-rectangle-square",
+      "label": "Rectangle / square area, perimeter, side",
+      "skill": "Area and volume",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 25
+    },
+    {
+      "slug": "lat-parallel-transversal",
+      "label": "Parallel lines cut by a transversal",
+      "skill": "Lines, angles, and triangles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 37
+    },
+    {
+      "slug": "lat-similar-triangles",
+      "label": "Similar triangles / proportional sides",
+      "skill": "Lines, angles, and triangles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 15
+    },
+    {
+      "slug": "lat-congruent-triangles",
+      "label": "Congruent triangles / corresponding parts",
+      "skill": "Lines, angles, and triangles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 5
+    },
+    {
+      "slug": "lat-isosceles-equilateral",
+      "label": "Isosceles / equilateral angle reasoning",
+      "skill": "Lines, angles, and triangles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 6
+    },
+    {
+      "slug": "lat-exterior-angle",
+      "label": "Exterior-angle theorem",
+      "skill": "Lines, angles, and triangles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "lat-triangle-angle-sum",
+      "label": "Interior angle sum in a triangle",
+      "skill": "Lines, angles, and triangles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 13
+    },
+    {
+      "slug": "rtt-special-triangles",
+      "label": "30-60-90, 45-45-90, equilateral",
+      "skill": "Right triangles and trigonometry",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "rtt-sin-cos-complement",
+      "label": "sin(x) = cos(90 - x) identity",
+      "skill": "Right triangles and trigonometry",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 6
+    },
+    {
+      "slug": "rtt-similar-right",
+      "label": "Similar right triangles",
+      "skill": "Right triangles and trigonometry",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "rtt-sohcahtoa",
+      "label": "Sine, cosine, tangent ratios",
+      "skill": "Right triangles and trigonometry",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 15
+    },
+    {
+      "slug": "rtt-pythag-basic",
+      "label": "Pythagorean theorem: find side",
+      "skill": "Right triangles and trigonometry",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 23
+    },
+    {
+      "slug": "cir-radians-degrees",
+      "label": "Radian-degree conversion",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "cir-eq-complete-square",
+      "label": "Complete the square to find circle",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 5
+    },
+    {
+      "slug": "cir-arc-sector",
+      "label": "Arc length / sector / fraction of circumference",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "cir-tangent-chord",
+      "label": "Tangent line / chord properties",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "cir-central-inscribed-arc",
+      "label": "Central or inscribed angle <-> arc",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "cir-trig-unit-circle",
+      "label": "Unit-circle trig values",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "cir-points-properties",
+      "label": "Geometry on a circle (chords through center, etc.)",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "cir-eq-extract",
+      "label": "Read center/radius from given equation",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 18
+    },
+    {
+      "slug": "cir-eq-find",
+      "label": "Write/choose equation of a circle",
+      "skill": "Circles",
+      "domain": "Geometry and Trigonometry",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "rpr-density",
+      "label": "Density problems",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 12
+    },
+    {
+      "slug": "rpr-rate-speed-time-distance",
+      "label": "Speed / time / distance",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 13
+    },
+    {
+      "slug": "rpr-unit-price",
+      "label": "Unit price (price/cost per unit)",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "rpr-scale-model",
+      "label": "Scale model / drawing",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "rpr-unit-convert-area-vol",
+      "label": "Square / cubic unit conversion",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "rpr-unit-convert-rate",
+      "label": "Compound-rate unit conversion",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "rpr-unit-convert-length",
+      "label": "One-step unit conversion (length/volume/time)",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 23
+    },
+    {
+      "slug": "rpr-proportional-symbolic",
+      "label": "Symbolic / algebraic proportional expression",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "rpr-one-step-proportion",
+      "label": "Single-step proportion / unit rate",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "rpr-ratio-equivalent",
+      "label": "Equivalent ratios / proportion solve",
+      "skill": "Ratios, rates, proportional relationships, and units",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 10
+    },
+    {
+      "slug": "pct-chained-two-step",
+      "label": "Two chained percent-greater/less",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 15
+    },
+    {
+      "slug": "pct-table-multiplier",
+      "label": "Table-driven percent share",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "pct-multiplier-times",
+      "label": "Multiplier hidden as 'times'",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "pct-reverse-find-whole",
+      "label": "Reverse: find the original or whole",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "pct-pct-change",
+      "label": "Percent increase / decrease over time",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 11
+    },
+    {
+      "slug": "pct-pct-greater-less",
+      "label": "One-step 'X% greater/less than'",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "pct-basic-find-part",
+      "label": "Basic find-the-part",
+      "skill": "Percentages",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 31
+    },
+    {
+      "slug": "ov-compare-two-sets",
+      "label": "Compare two named datasets",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 24
+    },
+    {
+      "slug": "ov-dot-plot",
+      "label": "Dot-plot reading",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 3
+    },
+    {
+      "slug": "ov-box-plot",
+      "label": "Box-plot reading",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "ov-freq-table-center",
+      "label": "Frequency table center",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 8
+    },
+    {
+      "slug": "ov-sd-spread",
+      "label": "Standard deviation / spread comparison",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 2
+    },
+    {
+      "slug": "ov-range-iqr",
+      "label": "Range / interquartile range",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "ov-median-from-list",
+      "label": "Find median of a list",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 15
+    },
+    {
+      "slug": "ov-mean-from-list",
+      "label": "Find or use the mean",
+      "skill": "One-variable data: Distributions and measures of center and spread",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 12
+    },
+    {
+      "slug": "tv-exponential-model",
+      "label": "Exponential growth/decay model",
+      "skill": "Two-variable data: Models and scatterplots",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 7
+    },
+    {
+      "slug": "tv-line-graph-read",
+      "label": "Line graph reading",
+      "skill": "Two-variable data: Models and scatterplots",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 5
+    },
+    {
+      "slug": "tv-identify-nonlinear",
+      "label": "Linear vs nonlinear from table",
+      "skill": "Two-variable data: Models and scatterplots",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "tv-best-fit-equation",
+      "label": "Choose/interpret equation of best fit",
+      "skill": "Two-variable data: Models and scatterplots",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "tv-best-fit-predict",
+      "label": "Predict / interpolate from line of best fit",
+      "skill": "Two-variable data: Models and scatterplots",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 41
+    },
+    {
+      "slug": "prob-two-way-conditional",
+      "label": "Conditional from two-way table",
+      "skill": "Probability and conditional probability",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 26
+    },
+    {
+      "slug": "prob-simple-list-die",
+      "label": "Equally-likely outcomes (die, spinner, labels)",
+      "skill": "Probability and conditional probability",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "prob-simple-population",
+      "label": "Simple ratio from a single-attribute group",
+      "skill": "Probability and conditional probability",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 10
+    },
+    {
+      "slug": "prob-frequency-table",
+      "label": "One-way frequency table",
+      "skill": "Probability and conditional probability",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 0
+    },
+    {
+      "slug": "prob-two-way-joint",
+      "label": "Joint / marginal from two-way table",
+      "skill": "Probability and conditional probability",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 4
+    },
+    {
+      "slug": "inf-margin-of-error-ci",
+      "label": "Margin of error / CI interpretation",
+      "skill": "Inference from sample statistics and margin of error",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 14
+    },
+    {
+      "slug": "inf-scale-up-count",
+      "label": "Scale sample count to population",
+      "skill": "Inference from sample statistics and margin of error",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 9
+    },
+    {
+      "slug": "inf-conclusion-validity",
+      "label": "Most appropriate conclusion from sample",
+      "skill": "Inference from sample statistics and margin of error",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 0
+    },
+    {
+      "slug": "esc-random-assign-causal",
+      "label": "Random assignment -> causal claim",
+      "skill": "Evaluating statistical claims: Observational studies and experiments",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 1
+    },
+    {
+      "slug": "esc-biased-sample",
+      "label": "Biased / non-representative sample",
+      "skill": "Evaluating statistical claims: Observational studies and experiments",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 3
+    },
+    {
+      "slug": "esc-random-select-generalize",
+      "label": "Random selection -> generalizability",
+      "skill": "Evaluating statistical claims: Observational studies and experiments",
+      "domain": "Problem-Solving and Data Analysis",
+      "section": "Math",
+      "count": 6
+    },
+    {
+      "slug": "coe-literary-quote",
+      "label": "Literary quotation illustrates a claim",
+      "skill": "Command of Evidence",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 53
+    },
+    {
+      "slug": "coe-survey-or-respondent-quote",
+      "label": "Survey/respondent quote supports a conclusion",
+      "skill": "Command of Evidence",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 4
+    },
+    {
+      "slug": "coe-hypothetical-finding",
+      "label": "Hypothetical finding supporting/weakening a claim",
+      "skill": "Command of Evidence",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 70
+    },
+    {
+      "slug": "coe-quantitative-data",
+      "label": "Data from a table or graph",
+      "skill": "Command of Evidence",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 120
+    },
+    {
+      "slug": "coe-other-detail-from-data",
+      "label": "Direct data-lookup detail",
+      "skill": "Command of Evidence",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 7
+    },
+    {
+      "slug": "cid-lit-main-idea",
+      "label": "Main idea of a literary excerpt",
+      "skill": "Central Ideas and Details",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 14
+    },
+    {
+      "slug": "cid-info-main-idea",
+      "label": "Main idea of a nonfiction passage",
+      "skill": "Central Ideas and Details",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 42
+    },
+    {
+      "slug": "cid-lit-detail",
+      "label": "Detail question on a literary excerpt",
+      "skill": "Central Ideas and Details",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 19
+    },
+    {
+      "slug": "cid-info-detail",
+      "label": "Detail question on a nonfiction passage",
+      "skill": "Central Ideas and Details",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 47
+    },
+    {
+      "slug": "inf-literary",
+      "label": "Complete an inference from a literary excerpt",
+      "skill": "Inferences",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 1
+    },
+    {
+      "slug": "inf-research-study",
+      "label": "Complete a research-study conclusion",
+      "skill": "Inferences",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 69
+    },
+    {
+      "slug": "inf-humanities-arts",
+      "label": "Complete a humanities/arts argument",
+      "skill": "Inferences",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 18
+    },
+    {
+      "slug": "inf-general-claim",
+      "label": "Complete a general explanatory claim",
+      "skill": "Inferences",
+      "domain": "Information and Ideas",
+      "section": "Reading and Writing",
+      "count": 36
+    },
+    {
+      "slug": "wic-context-meaning",
+      "label": "'Most nearly mean' definition in situ",
+      "skill": "Words in Context",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 44
+    },
+    {
+      "slug": "wic-fill-adverb",
+      "label": "Fill-in an adverb",
+      "skill": "Words in Context",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 3
+    },
+    {
+      "slug": "wic-fill-noun",
+      "label": "Fill-in an academic noun",
+      "skill": "Words in Context",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 14
+    },
+    {
+      "slug": "wic-fill-adj-participle",
+      "label": "Fill-in a descriptive adjective or participle",
+      "skill": "Words in Context",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 94
+    },
+    {
+      "slug": "wic-fill-verb",
+      "label": "Fill-in a verb (incl. short phrasal predicates)",
+      "skill": "Words in Context",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 86
+    },
+    {
+      "slug": "wic-fill-other-pos",
+      "label": "Fill-in any other part of speech",
+      "skill": "Words in Context",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 0
+    },
+    {
+      "slug": "tsp-underlined-function",
+      "label": "Function of an underlined sentence/portion",
+      "skill": "Text Structure and Purpose",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 58
+    },
+    {
+      "slug": "tsp-overall-structure",
+      "label": "Overall structure of the text",
+      "skill": "Text Structure and Purpose",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 29
+    },
+    {
+      "slug": "tsp-main-purpose-lit",
+      "label": "Main purpose of a literary excerpt",
+      "skill": "Text Structure and Purpose",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 24
+    },
+    {
+      "slug": "tsp-main-purpose-info",
+      "label": "Main purpose of an informational text",
+      "skill": "Text Structure and Purpose",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 25
+    },
+    {
+      "slug": "tsp-other",
+      "label": "Other function/structure variants",
+      "skill": "Text Structure and Purpose",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 0
+    },
+    {
+      "slug": "xtc-difference-between",
+      "label": "Difference between the two authors' views",
+      "skill": "Cross-Text Connections",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 6
+    },
+    {
+      "slug": "xtc-both-agree",
+      "label": "Statement both authors would agree with",
+      "skill": "Cross-Text Connections",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 12
+    },
+    {
+      "slug": "xtc-text1-agreement",
+      "label": "Text 1's likely view on Text 2",
+      "skill": "Cross-Text Connections",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 9
+    },
+    {
+      "slug": "xtc-text2-responds-text1",
+      "label": "Text 2's likely response to Text 1",
+      "skill": "Cross-Text Connections",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 11
+    },
+    {
+      "slug": "xtc-other-response",
+      "label": "Other paired-text inference shapes",
+      "skill": "Cross-Text Connections",
+      "domain": "Craft and Structure",
+      "section": "Reading and Writing",
+      "count": 20
+    },
+    {
+      "slug": "rs-research-summary",
+      "label": "Summarize a study's aim or findings",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 7
+    },
+    {
+      "slug": "rs-similarity",
+      "label": "Emphasize a similarity / shared trait",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 6
+    },
+    {
+      "slug": "rs-contrast",
+      "label": "Contrast or emphasize a difference",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 59
+    },
+    {
+      "slug": "rs-explain",
+      "label": "Explain origin, advantage, or process",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 52
+    },
+    {
+      "slug": "rs-emphasize-claim",
+      "label": "Emphasize a point or support a claim",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 23
+    },
+    {
+      "slug": "rs-introduce-summarize",
+      "label": "Introduce for an unfamiliar audience",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 19
+    },
+    {
+      "slug": "rs-specify-fact",
+      "label": "Specify or identify a single fact",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 20
+    },
+    {
+      "slug": "rs-other",
+      "label": "Other rhetorical goals",
+      "skill": "Rhetorical Synthesis",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 6
+    },
+    {
+      "slug": "trans-contrast",
+      "label": "Contrast / concession",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 41
+    },
+    {
+      "slug": "trans-cause-effect",
+      "label": "Cause and effect",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 31
+    },
+    {
+      "slug": "trans-example",
+      "label": "Example / specification",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 20
+    },
+    {
+      "slug": "trans-addition",
+      "label": "Addition / similarity",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 17
+    },
+    {
+      "slug": "trans-emphasis",
+      "label": "Emphasis / intensification",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 14
+    },
+    {
+      "slug": "trans-purpose-restatement",
+      "label": "Purpose, restatement, or alternative",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 12
+    },
+    {
+      "slug": "trans-sequence",
+      "label": "Temporal or ordinal sequence",
+      "skill": "Transitions",
+      "domain": "Expression of Ideas",
+      "section": "Reading and Writing",
+      "count": 32
+    },
+    {
+      "slug": "fss-dangling-modifier",
+      "label": "Dangling/misplaced modifier",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 23
+    },
+    {
+      "slug": "fss-possessive-apostrophe",
+      "label": "Possessive form and apostrophe placement",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 22
+    },
+    {
+      "slug": "fss-pronoun-agreement-case",
+      "label": "Pronoun agreement and case",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 20
+    },
+    {
+      "slug": "fss-fragment-clause",
+      "label": "Sentence completeness (fragment vs. clause)",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 36
+    },
+    {
+      "slug": "fss-noun-number",
+      "label": "Noun form / plural vs. singular",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 2
+    },
+    {
+      "slug": "fss-subject-verb-agreement",
+      "label": "Subject-verb agreement",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 44
+    },
+    {
+      "slug": "fss-verb-tense-form",
+      "label": "Verb tense and form",
+      "skill": "Form, Structure, and Sense",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 36
+    },
+    {
+      "slug": "boundary-semicolon-clauses",
+      "label": "Semicolon to join two independent clauses",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 26
+    },
+    {
+      "slug": "boundary-colon-introduction",
+      "label": "Colon introducing a list, explanation, or quotation",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 18
+    },
+    {
+      "slug": "boundary-dash",
+      "label": "Em dash for supplementary information or break",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 12
+    },
+    {
+      "slug": "boundary-sentence-end",
+      "label": "Sentence boundary (period / capitalization)",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 40
+    },
+    {
+      "slug": "boundary-comma-splice-runon",
+      "label": "Avoid a comma splice or run-on",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 14
+    },
+    {
+      "slug": "boundary-subordinate-main",
+      "label": "Comma between a subordinate clause and a main clause",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 9
+    },
+    {
+      "slug": "boundary-supplement-pair-commas",
+      "label": "Paired commas around a nonrestrictive element",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 27
+    },
+    {
+      "slug": "boundary-no-punctuation-needed",
+      "label": "No punctuation needed",
+      "skill": "Boundaries",
+      "domain": "Standard English Conventions",
+      "section": "Reading and Writing",
+      "count": 28
+    }
+  ]
+}

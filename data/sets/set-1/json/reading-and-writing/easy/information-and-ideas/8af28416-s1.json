@@ -1,0 +1,39 @@
+{
+  "questionId": "8af28416-s1",
+  "originalId": "8af28416",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: US States with the Greatest Number of Vineyards in 2018. Six bars; vertical axis 0&ndash;2,800.]</p><ul><li>California: 2,500</li><li>Washington: 950</li><li>Oregon: 720</li><li>New York: 470</li><li>Texas: 410</li><li>Virginia: 280</li></ul><p>The graph shows the number of vineyards in six states in 2018. For instance, in 2018 ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Oregon had more than 1,000 vineyards.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>New York had between 600 and 800 vineyards.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Oregon had between 600 and 800 vineyards.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Virginia and Texas each had between 1,200 and 1,400 vineyards.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the graph shows Oregon at about 720 vineyards, which falls between 600 and 800.</p><p>Choice A is incorrect: Oregon had about 720 vineyards, fewer than 1,000. Choice B is incorrect: New York had about 470, below 600. Choice D is incorrect: Virginia (280) and Texas (410) are both well under 1,200.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

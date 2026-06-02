@@ -1,0 +1,507 @@
+{
+  "section": "Math",
+  "domain": "Advanced Math",
+  "skill": "Nonlinear functions",
+  "originals_count": 240,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Evaluate function values",
+      "description": "Substitute a given input into a nonlinear rule and compute the output, or solve for the input that produces a given output. The student executes the function as a procedure; no interpretation of context or graph features is required.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 is context-free numerical evaluation; if the stem asks for the meaning of a value, it is A2. A1 differs from A3 because A1 takes the equation as given and computes; A3 reasons about graph features (intercepts, vertex, behavior).",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Direct substitution into f(x)",
+          "description": "A nonlinear function f (polynomial, radical, rational, absolute-value, or exponential) is defined; the student must compute f(c) for a numeric c.",
+          "core_skill_demand": "Evaluate a closed-form nonlinear expression at a specific numeric input by substitution and arithmetic simplification.",
+          "example_originals": ["09f58996", "20722644", "788bfd56", "2f8a580c", "de362c2f", "c13016f9", "94ff3e2d", "c1eead73", "dbe9b217", "c4259674", "cbc4c163", "3c600337"],
+          "frequency": { "easy": 16, "medium": 4, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["single-term or two-term rule like x^n+k or a√x+k", "small whole-number input", "no fraction or negative-exponent base"],
+              "example_stem": "f(x) = x^3 + 9. What is f(2)?",
+              "example_ids": ["20722644", "79ba511a", "09f58996", "788bfd56", "de362c2f", "c13016f9", "369b7bb7", "3e28a622", "94ff3e2d", "c1eead73", "bd4d0e0c"]
+            },
+            "medium": {
+              "characteristics": ["rule uses a fractional / negative-exponent or absolute-value form", "input is a non-integer or larger value", "may include exponential f(0) requiring base-rule recall"],
+              "example_stem": "f(x) = 4x^(-1). What is f(21)?",
+              "example_ids": ["c4259674", "cbc4c163", "3c600337", "dbe9b217"]
+            },
+            "hard": {
+              "characteristics": ["input is a parameter expression like 15a or 7a forcing absolute-value sign analysis", "computation requires combining two function evaluations (sum, product, composition)"],
+              "example_stem": "g(x) = |x|/a − 14 with a<0. What is g(15a) · g(7a)?",
+              "example_ids": ["128c75e2", "ce508fb0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit closed-form rule for f", "single numeric (or symbolic) input to evaluate", "no contextual interpretation in the stem"],
+            "must_vary": ["surface function family (polynomial, radical, rational, absolute value, exponential)", "specific numeric coefficients and input"],
+            "common_bugs": ["cloning a quadratic but choosing an input that yields a non-integer (drifts difficulty)", "swapping √x for x^(1/2) without preserving domain", "replacing a^x with a*x — loses exponential character (aspect drift to linear)"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Solve f(x) = k for x",
+          "description": "Given a nonlinear function and a target output value, find the input x. May involve square, cube, radical, rational, or absolute-value functions.",
+          "core_skill_demand": "Invert a nonlinear function for a specific output by isolating x — squaring, taking roots, clearing denominators, or testing candidate values.",
+          "example_originals": ["2cf7f039", "3ea87153", "0aaef7aa", "0af701e7", "2f51abc2"],
+          "frequency": { "easy": 2, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["single-step inversion: x^2=k, √x=k, or n^c with small numbers"],
+              "example_stem": "f(x) = 8√x. For what x is f(x) = 48?",
+              "example_ids": ["2cf7f039", "3ea87153"]
+            },
+            "medium": {
+              "characteristics": ["cube root or two-step inversion (e.g., 7n^3 = 56)"],
+              "example_stem": "p(n) = 7n^3. What is n when p(n)=56?",
+              "example_ids": ["0aaef7aa", "0af701e7"]
+            },
+            "hard": {
+              "characteristics": ["absolute-value equation with parameter k on both sides, requiring case analysis"],
+              "example_stem": "f(x)=|59 − 2x|. For which k does f(k)=3k?",
+              "example_ids": ["2f51abc2"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["target output stated as a single number or expression", "exactly one stated function rule"],
+            "must_vary": ["choice of inverse operation (root, division, case split)"],
+            "common_bugs": ["picking a target that yields multiple solutions when only one is expected (e.g., x^2 = 25 with no domain restriction)", "removing the absolute value in the hard variant — collapses to linear"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Interpret value or feature in context",
+      "description": "Given a contextual nonlinear model (exponential growth/decay, projectile quadratic, etc.), identify the real-world meaning of a specific value, coefficient, point, vertex, or intercept. The student translates symbols to meaning rather than computing.",
+      "boundary_with_other_aspects": "A2 always asks 'what does X represent / best interpretation'. If the stem asks for a numeric answer (no interpretation), it is A1, A3, or A4 depending on demand.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Interpret f(c)=v statement",
+          "description": "Stem gives a contextual exponential or quadratic and asks for the best interpretation of a specific evaluation (e.g., 'P(8) ≈ 32.91').",
+          "core_skill_demand": "Map the input variable to its real-world meaning (time, count), map the output to its real-world meaning (population, revenue, height), and pick the option whose units and quantities match both.",
+          "example_originals": ["07bcecac", "2fec8bf4", "04b985e6", "72ae8a87", "d84a514a", "4209aefe", "be0c419e", "15c364bf", "67f4b449", "735a0a00", "7d3a84bf"],
+          "frequency": { "easy": 5, "medium": 6, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["evaluation at t=0 (initial value) or simple year shift", "context clearly stated and units explicit"],
+              "example_stem": "P(t)=24.8(1.036)^t. Interpret P(8) ≈ 32.91.",
+              "example_ids": ["07bcecac", "2fec8bf4", "04b985e6", "72ae8a87", "d84a514a"]
+            },
+            "medium": {
+              "characteristics": ["non-zero input requiring offset reasoning (e.g., 'years after 1957')", "half-life or decay parameter requires understanding rate"],
+              "example_stem": "s(t)=184(0.5)^(t/29) — interpret s(87)=23 in context.",
+              "example_ids": ["4209aefe", "be0c419e", "15c364bf", "67f4b449", "735a0a00", "7d3a84bf"]
+            },
+            "hard": {
+              "characteristics": ["interpretation of a coordinate (x,y) on a quadratic model, requiring both axes to be translated", "interpretation tied to vertex of a contextual quadratic"],
+              "example_stem": "y=0.25x^2−7.5x+90.25 stock-price model — interpret (1,83).",
+              "example_ids": ["735a0a00", "f2d60b99"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a fully described real-world context", "an explicit evaluation statement or specific point", "the 'best interpretation' question form"],
+            "must_vary": ["context domain (population, currency, height, decay)", "input/output units"],
+            "common_bugs": ["dropping the context to produce a context-free clone (categorical drift to A1)", "writing distractors that swap inputs and outputs identically — leaves only one plausible answer"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Interpret coefficient or constant",
+          "description": "Stem asks for the real-world meaning of a specific number embedded in the model (initial value, growth factor, vertex coordinate, y-intercept).",
+          "core_skill_demand": "Identify which structural role a constant plays in the symbolic form (initial value, multiplier per unit time, maximum, axis crossing) and state the corresponding real-world quantity.",
+          "example_originals": ["1d3c5c95", "4618501a", "b7cd6ca6", "5bf0f84a", "3918e8bc", "beca03de", "926c246b", "1f353a9e", "a9084ca4", "9ff88bb5", "db888cd6", "7f2524bf", "f2d60b99", "cb29c54c", "d71f6dbf", "ebed7dc6"],
+          "frequency": { "easy": 2, "medium": 9, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["constant is the obvious initial value or y-intercept of an exponential", "context fully spelled out with units"],
+              "example_stem": "y-intercept of a depreciation graph — interpret in context.",
+              "example_ids": ["7f2524bf", "ebe4bde0"]
+            },
+            "medium": {
+              "characteristics": ["interpretation of a base or initial-value constant in an explicit exponential", "interpretation of vertex of a contextual quadratic"],
+              "example_stem": "f(x)=3000(0.75)^x; what does 3000 represent?",
+              "example_ids": ["1d3c5c95", "4618501a", "b7cd6ca6", "3918e8bc", "beca03de", "cb29c54c", "9ff88bb5", "db888cd6", "5bf0f84a"]
+            },
+            "hard": {
+              "characteristics": ["interpret y-intercept of a decay model in context (must reason about t=0)", "interpret vertex of a quadratic model where vertex coordinates are not the maximum height alone but a paired (time, height)", "interpret positive x-intercept of a projectile model"],
+              "example_stem": "f(t)=8000(0.65)^t coupon model — best interpretation of y-intercept?",
+              "example_ids": ["1f353a9e", "a9084ca4", "f2d60b99", "7eed640d", "ebed7dc6"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["the targeted constant is structurally identifiable (initial value, growth factor, vertex coord, intercept)", "real-world variable mappings"],
+            "must_vary": ["which constant is highlighted", "context type"],
+            "common_bugs": ["changing the constant so it no longer plays the named structural role", "writing four interpretations that are all numerically true but only one matches role — verify against template's must_preserve"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Analyze graph features",
+      "description": "Identify or compute key features of a nonlinear graph — intercepts, vertex, max/min, intervals of increase, asymptotes — either from a provided graph or from an equation. The student reads structure off of geometry/equation form.",
+      "boundary_with_other_aspects": "A3 differs from A2 because A3 returns numeric features (coordinates, values), not contextual interpretations. A3 differs from A1 because A3 reasons about graph features, not about computing f at a given point.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Read intercept or point from graph",
+          "description": "A graph is shown; the student identifies the y-intercept, x-intercept, or a labeled point.",
+          "core_skill_demand": "Visually decode a graph (exponential, polynomial, parabola, rational) to read a specific intercept or point coordinate.",
+          "example_originals": ["02c67921", "1ee962ec", "26f5269a", "2b6c12eb", "2f4eafcc", "50418728", "5f07b257", "6abec9a8", "7160cbb3", "79e6ec70", "893c7519", "b5c43226", "cc2601cb", "e166aca6", "f547a8b1", "2d394c28", "ca4ee54e"],
+          "frequency": { "easy": 17, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["intercept is a labeled grid point", "single-curve graph"],
+              "example_stem": "What is the y-intercept of the graph shown?",
+              "example_ids": ["02c67921", "5f07b257", "6abec9a8", "7160cbb3", "893c7519", "b5c43226", "f547a8b1"]
+            },
+            "medium": {
+              "characteristics": ["graph shows multiple features (vertex + intercepts) and stem requires choosing the right one", "may involve a translation"],
+              "example_stem": "Graph translated up 4 units — which is the resulting graph?",
+              "example_ids": ["e9aed539", "2f4eafcc"]
+            },
+            "hard": {
+              "characteristics": ["graph paired with stem requiring choice among options that include near-distractor coordinates"],
+              "example_stem": "(no observed hard-only instance)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a graph (svg/figure) with at least one clearly identifiable target point", "stem requesting a specific intercept / coordinate value"],
+            "must_vary": ["curve family", "specific numeric coordinates"],
+            "common_bugs": ["replacing svg with text-only description (drops aspect)", "moving the y-intercept off integer values without indicating approximation"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "y-intercept / point from equation",
+          "description": "An equation is given (often quadratic, exponential, or polynomial); the student computes the y-intercept (or another point) without a graph.",
+          "core_skill_demand": "Evaluate the equation at x=0 (or another given x) and recognize the result as the intercept.",
+          "example_originals": ["1863e3be", "bd4d0e0c", "45df91ee", "dd3b1e1a", "0ad5012e", "8490cc45", "70fb357b"],
+          "frequency": { "easy": 4, "medium": 3, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["evaluate y = x^2 + c at x=0; or f(0) for a polynomial"],
+              "example_stem": "y = x^2 + 31 — what is the y-coordinate of the y-intercept?",
+              "example_ids": ["1863e3be", "bd4d0e0c"]
+            },
+            "medium": {
+              "characteristics": ["exponential with non-obvious base; need to recall a^0=1", "context-free polynomial of higher degree"],
+              "example_stem": "g(x)=11(1/12)^x — what is the y-intercept?",
+              "example_ids": ["45df91ee", "dd3b1e1a", "0ad5012e"]
+            },
+            "hard": {
+              "characteristics": ["transformed exponential (exponent with constant offset), or shifted exponential where (−8)(2)^x + 22 type form", "asking for equivalent form that displays the intercept as a coefficient/constant"],
+              "example_stem": "y = 576^(2x+2) — which equivalent form shows the y-intercept as a constant?",
+              "example_ids": ["8490cc45", "70fb357b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit equation", "intercept (or specific x) question"],
+            "must_vary": ["function family"],
+            "common_bugs": ["asking for a y-intercept where x=0 is outside the stated domain", "replacing exponential with quadratic but leaving the 'as a base' option distractors"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Vertex or extreme value of quadratic",
+          "description": "Stem asks for vertex coordinates, the minimum or maximum value of a quadratic, or the x-value at which a quadratic reaches its extremum.",
+          "core_skill_demand": "Either complete the square, use −b/(2a), or use factored-form symmetry to locate the vertex of a quadratic.",
+          "example_originals": ["782a8a53", "341ba5db", "39714777", "c7a187a7", "04bbce67", "083ef63a", "18e35375", "358f18bc", "4d7064a6", "6d9e01a2", "8e1da169", "16aa9758", "841ef26c", "70753f99", "a7711fe8", "9654add7", "ee857afb", "d139cf4b", "668f1863"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 15 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["vertex visible on graph", "rule already in vertex form"],
+              "example_stem": "Graph of y=f(x) parabola through (−1,5),(0,2),(1,5). Vertex?",
+              "example_ids": ["782a8a53"]
+            },
+            "medium": {
+              "characteristics": ["rule in form y = x^2 + c (vertex on y-axis)", "rule p(x)+k = x^2 with single rearrangement"],
+              "example_stem": "g(x)=x^2+55. What is the minimum value of g?",
+              "example_ids": ["341ba5db", "39714777", "c7a187a7"]
+            },
+            "hard": {
+              "characteristics": ["rule given in factored form (x−p)(x+q); requires axis-of-symmetry midpoint", "rule in standard form with two non-trivial coefficients requiring −b/(2a)", "stem asks for x-value of vertex of a composition g(x)=f(x+5)", "interpretive variants ('which equivalent form displays the maximum?')"],
+              "example_stem": "f(x)=(x−14)(x+19). For what x does f reach minimum?",
+              "example_ids": ["04bbce67", "083ef63a", "18e35375", "358f18bc", "4d7064a6", "6d9e01a2", "8e1da169", "16aa9758", "841ef26c", "70753f99", "a7711fe8", "ee857afb", "d139cf4b", "668f1863"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["quadratic form (factored, vertex, or standard)", "vertex-related question"],
+            "must_vary": ["which form (factored vs standard vs vertex)", "sign of leading coefficient"],
+            "common_bugs": ["converting factored form to standard form before cloning (simplifies the hard variant)", "choosing roots that give a non-integer axis of symmetry then asking for integer answer", "swapping minimum/maximum without flipping leading coefficient sign"]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "x-intercept / zeros of polynomial",
+          "description": "Stem asks for an x-intercept, root, factor, or zero of a polynomial (quadratic, cubic, or higher-degree). May be from factored form, standard form, or table.",
+          "core_skill_demand": "Use factored form directly, factor the quadratic, or use the factor theorem (a root corresponds to factor (x−r)) to identify zeros.",
+          "example_originals": ["50e40f08", "4d425cef", "7f87deff", "f5e8ccf1", "0121a235", "9f2ecade", "91e7ea5e", "7e6ea718", "f678483b"],
+          "frequency": { "easy": 0, "medium": 4, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(not observed)"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["factored quadratic f(x)=(x+a)(x−b); read off roots", "factor-theorem question naming integer roots", "stem asks 'which is NOT an x-intercept'"],
+              "example_stem": "f(x)=(x+6)(x−4) — find an x-intercept.",
+              "example_ids": ["50e40f08", "4d425cef", "7f87deff", "f5e8ccf1"]
+            },
+            "hard": {
+              "characteristics": ["polynomial of degree ≥3 in factored form with repeated factor — requires distinguishing distinct vs total roots", "table-based factor identification using polynomial values", "two-parameter equation in factored form with constraint about x-intercepts", "contextual quadratic where one of two roots must be selected as the physical answer"],
+              "example_stem": "y = 2(x−d)(x+d)(x+g)(x−d); how many distinct x-intercepts?",
+              "example_ids": ["0121a235", "9f2ecade", "91e7ea5e", "7e6ea718", "f678483b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["polynomial (≥quadratic) presented in identifiable form", "root/intercept question"],
+            "must_vary": ["polynomial degree", "form (factored, table, standard)"],
+            "common_bugs": ["expanding a factored cubic into standard form (loses hard variant character)", "writing a cubic where two of the three roots collapse without using that as the difficulty lever intentionally"]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Other graph-feature reasoning",
+          "description": "Asks about interval of increase/decrease, asymptote, symmetry, or which equation matches a described graph shape.",
+          "core_skill_demand": "Connect described graph behavior (multiple turning points, end behavior, asymptotes) to algebraic structure (degree, leading coefficient sign, factor multiplicity).",
+          "example_originals": ["197bed38", "252a3b3a", "cc6ccd71", "b39d74a0", "d46da42c", "dba7432e", "d675744f", "36b6f8ba", "df71424b", "4d037075", "ad376f1a"],
+          "frequency": { "easy": 3, "medium": 4, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["choose graph from a table of values", "identify horizontal asymptote from labeled graph"],
+              "example_stem": "Table of (x,y) — which graph could represent the relationship?",
+              "example_ids": ["b39d74a0", "d46da42c", "ad376f1a"]
+            },
+            "medium": {
+              "characteristics": ["identify interval where graph is increasing on a labeled parabola", "match equation to a multi-turn polynomial graph", "translate rational graph"],
+              "example_stem": "Parabola y=f(x) — for which interval is y increasing?",
+              "example_ids": ["197bed38", "252a3b3a", "cc6ccd71", "dba7432e", "d675744f"]
+            },
+            "hard": {
+              "characteristics": ["polynomial graph with multiple turning points and crossing/touching distinction", "rational function with asymptotes — identify equation form", "exponential with horizontal asymptote — count intersections with horizontal line"],
+              "example_stem": "Graph y=f(x)=ab^x+c crosses y=−7 how many times?",
+              "example_ids": ["36b6f8ba", "df71424b", "4d037075"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["graph or precise verbal description of graph", "feature-identification question (not numeric evaluation)"],
+            "must_vary": ["feature targeted (asymptote, interval, factor multiplicity)"],
+            "common_bugs": ["dropping the asymptote when copying a rational/exponential — destroys answer logic", "converting 'increasing interval' to 'maximum' (drift to T3)"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Model nonlinear situation",
+      "description": "Construct (not interpret) a nonlinear function or equation that represents a described real-world situation — usually exponential growth/decay, geometric area/volume, or quadratic projectile motion. Output is an equation or value derived from one.",
+      "boundary_with_other_aspects": "A4 produces an equation/model from a description; A2 takes an equation/model and interprets one of its values. A4 differs from A6 because A4's parameters are fully specified in the description; A6 has unknown parameters to be solved from additional constraints.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Build exponential growth/decay model",
+          "description": "Given initial value and a per-period multiplicative change, write the function or compute a value from it.",
+          "core_skill_demand": "Translate 'increased by p% per period' or 'doubles every k years' into A·r^x or A·2^(x/k), preserving the per-period structure.",
+          "example_originals": ["5a74f696", "cfff8f8e", "ffdfe1e1", "9da41c80", "02add2d2", "0a74365c", "281a4f3b", "7a4475df", "7ba694f3", "7e5a3640", "a31417d1", "99c5e794", "c048055c", "ae05d37b", "90bcaa61", "5c00c2c1", "ce579859", "1073d70c", "68607eca", "a8ae0d22", "1853bb35", "84dd43f8", "2c6f214f", "e1391dd6", "b73ee6cf", "d8ace155", "52b1700c", "dd8ac009", "f423771c", "ff8c5844", "f1c81b3b", "1fe10d97", "752055d1"],
+          "frequency": { "easy": 4, "medium": 17, "hard": 12 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["doubling/halving language with explicit period", "stem identifies initial value and number of periods clearly"],
+              "example_stem": "Account opened at $890 and doubles every 10 years. Equation for value M(t)?",
+              "example_ids": ["5a74f696", "cfff8f8e", "ffdfe1e1", "9da41c80"]
+            },
+            "medium": {
+              "characteristics": ["percent-change phrasing (e.g., '7% greater than previous month')", "value-after-n-periods question requiring two-step compute", "table of (t, amount) implying compound rate"],
+              "example_stem": "Newsletter grows 7% per month from 1300; equation for c(m)?",
+              "example_ids": ["02add2d2", "281a4f3b", "7a4475df", "7ba694f3", "7e5a3640", "a31417d1", "99c5e794", "5c00c2c1", "f423771c", "ff8c5844", "52b1700c", "dd8ac009", "1d3c5c95", "0a74365c"]
+            },
+            "hard": {
+              "characteristics": ["non-annual period rewrite required ('m months after census' from a yearly model, or 'p% every 18 months' from yearly)", "150%-more vs 150%-OF distractor", "exponent form (1.84)^(x/4) needing identification of effective per-unit rate", "double-time question from f(t)=A·2^(t/k) requiring k itself"],
+              "example_stem": "P(t)=90000(1.06)^t years — best model for m months?",
+              "example_ids": ["1fe10d97", "2992ac30", "2d1614a1", "ce579859", "1073d70c", "68607eca", "b7c74b73", "161126cf", "84dd43f8", "59d1f4b5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["explicit initial value", "explicit per-period multiplicative rate", "discrete period structure"],
+            "must_vary": ["growth vs decay", "period unit (years, months, days)"],
+            "common_bugs": ["confusing '150% more' (×2.5) with '150% of' (×1.5)", "writing P(t)=A·r·t instead of A·r^t (linearization drift, categorical error)", "for the hard rewrite type, simplifying the unit conversion (e.g., forgetting (r^(1/12))^m)"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Quadratic projectile / motion model",
+          "description": "Object launched/dropped/thrown; build or use a quadratic h(t) to find initial height, time to ground, time to a specific height, or max-height time.",
+          "core_skill_demand": "Read coefficients of a quadratic in t (or build one from initial height, max height, time of max), recognize that the constant term is initial height and that −b/(2a) gives the time of vertex.",
+          "example_originals": ["3918e8bc", "c19d1fb0", "e1f9000d", "271ffad7", "2b1a27cd", "84e8cc72", "7902bed0", "7eed640d"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(not observed)"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["read constant term of h(t)=at^2+bt+c as initial height", "use given quadratic to find time-to-ground via factoring"],
+              "example_stem": "h = −4.9t^2 + 7t + 9 — height from which object was kicked?",
+              "example_ids": ["3918e8bc", "c19d1fb0", "e1f9000d"]
+            },
+            "hard": {
+              "characteristics": ["build the quadratic from verbal description of vertex and intercepts (e.g., 'launched from 7m, reached 51.1m at t=3')", "use vertex-form symmetry to find time for return to a given height"],
+              "example_stem": "Projectile launched from 7m, max 51.1m at t=3 — when back to 7m?",
+              "example_ids": ["271ffad7", "2b1a27cd", "84e8cc72", "7902bed0", "7eed640d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["physical motion context (projectile, dropped object, dive)", "quadratic structure (downward parabola for gravity-bound motion)"],
+            "must_vary": ["which feature is asked (initial, max, time-to-ground)"],
+            "common_bugs": ["mismatching signs of the leading coefficient with described concavity", "using vertex form's k as 'time of max' instead of 'max height'"]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Geometric area/volume model",
+          "description": "Build or use a quadratic/cubic expression for area, volume, or perimeter when one side is expressed in terms of another (length = 2×width, length = width+k).",
+          "core_skill_demand": "Recognize multiplicative relationships among geometric dimensions, encode them in a single variable, and solve a quadratic for the dimension.",
+          "example_originals": ["4993b828", "97158b3a", "beca03de", "f880f910", "f89af023", "d4950429", "203774bc", "4880eecb", "f44a29a8", "58dcc59f", "7a6d06bf", "ef926848", "35e05e19", "48f83c34", "8462b105", "635f54ee", "d8e84431", "f25a34aa", "301faf80"],
+          "frequency": { "easy": 0, "medium": 8, "hard": 11 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(not observed)"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["one dimension in terms of the other; given area, solve for width", "build expression w(w+9) given factored form description"],
+              "example_stem": "Area = w(w+9); which expression is the length?",
+              "example_ids": ["4993b828", "97158b3a", "beca03de", "f880f910", "f89af023", "d4950429", "203774bc", "4880eecb"]
+            },
+            "hard": {
+              "characteristics": ["product of two unknowns with two simultaneous constraints", "3D volume model (V = h·l·w where l = w+1)", "uses an area-as-function form V(x), then matches against multiple polynomial options", "kinetic-energy / KE-style nonlinear application"],
+              "example_stem": "Rectangular prism, height 9, length x = width+7. V(x)?",
+              "example_ids": ["48f83c34", "35e05e19", "ef926848", "f25a34aa", "d8e84431", "8462b105", "635f54ee", "7a6d06bf", "58dcc59f", "f44a29a8", "301faf80"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["geometric (or geometric-analog) context", "two related dimensions giving a quadratic/cubic"],
+            "must_vary": ["which dimension or quantity is requested", "whether asked for an expression or numeric solution"],
+            "common_bugs": ["picking dimensions that produce non-integer answers in 'find width' variant", "writing V = lwh but forgetting to substitute the dimension relation, leaving multiple variables"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Transformations & equivalent forms",
+      "description": "Apply or recognize transformations (vertical/horizontal shifts, replacing x by x+k), or rewrite a nonlinear expression into an equivalent form that exposes a feature. Output is a new function or feature value derived via algebraic restructuring.",
+      "boundary_with_other_aspects": "A5 alters the algebraic form (shifts, equivalent rewrites); A3 reads features from a fixed form; A4 builds a model from context.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Vertical/horizontal shift",
+          "description": "Given y=f(x), find or describe y = f(x)+k or y = f(x+h), or evaluate a translated function at a point.",
+          "core_skill_demand": "Apply the rule 'f(x+h) shifts left by h; f(x)+k shifts up by k' and compute the resulting equation or value.",
+          "example_originals": ["e9aed539", "a26c29f7", "981aca65", "6ecdbcb4", "aa95fb33", "40491607", "0e61101e", "dcf63c94", "841ef26c", "cd358b89", "d135f4bf", "c946d5bd"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["graph translation in one direction with multiple-choice graphs"],
+              "example_stem": "Parabola translated up 4 — which graph results?",
+              "example_ids": ["e9aed539"]
+            },
+            "medium": {
+              "characteristics": ["function rule shifted down by k; produce new equation", "translate a table-based polynomial output"],
+              "example_stem": "f(x)=7x^3; g shifts f down 2. g(x)=?",
+              "example_ids": ["a26c29f7", "981aca65", "6ecdbcb4", "aa95fb33"]
+            },
+            "hard": {
+              "characteristics": ["composition with shift in input (f(x+k)) on factored polynomial — must redistribute factors", "vertex of translated quadratic g(x)=f(x+5)", "evaluate g(0) after up-shift of cubic", "given factored cubic and shift, find sum of new x-intercepts"],
+              "example_stem": "f(x)=(x+6)(x+5)(x+1); g(x)=f(x−1). Roots of g?",
+              "example_ids": ["40491607", "0e61101e", "dcf63c94", "841ef26c", "cd358b89", "d135f4bf", "c946d5bd"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["a source function f and a transformation (shift) description", "a target output (equation, value, or feature)"],
+            "must_vary": ["direction of shift", "function family"],
+            "common_bugs": ["confusing f(x+k) with f(x)+k (horizontal vs vertical)", "shifting roots of a factored cubic in the wrong direction (sign flip)"]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Equivalent form revealing feature",
+          "description": "Stem asks which equivalent form of a nonlinear function displays a target feature (vertex, max/min, y-intercept, growth rate) as a constant, coefficient, or base.",
+          "core_skill_demand": "Choose between standard, vertex, factored, and base-rebased forms by recognizing which form makes the target feature explicit.",
+          "example_originals": ["768b60d2", "08d03fe4", "16aa9758", "70fb357b", "01668cd6", "a58232b7", "f44b4125", "781c2f6e", "c4cd5bcc"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(not observed)"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["choose among forms of an exponential to expose f(0)=c"],
+              "example_stem": "For exponential f, f(0)=c. Which form shows c as coefficient?",
+              "example_ids": ["768b60d2"]
+            },
+            "hard": {
+              "characteristics": ["max/min of a transformed exponential must be expressed in a chosen equivalent form", "rewrite of (1.84)^(x/4) as (1+p/100)^x and identify p", "rewrite as base-2 with offset exponent to show y-intercept"],
+              "example_stem": "f(x)=−6x^2+60x−126. Which equivalent form displays the max?",
+              "example_ids": ["08d03fe4", "16aa9758", "70fb357b", "01668cd6", "a58232b7", "f44b4125", "781c2f6e", "161126cf"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["targeted feature (max, min, intercept, growth rate)", "multiple equivalent forms among answer choices"],
+            "must_vary": ["function family (quadratic vs exponential)"],
+            "common_bugs": ["providing equivalent-form options that are not actually equivalent (verification step needed)", "having two options that both display the feature — ambiguous correct answer"]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "name": "Reason about unknown parameters",
+      "description": "Given a nonlinear function with one or more unknown constants and additional structural conditions (passes through point, has stated vertex, has given intercept), determine the value of a parameter or a combination of parameters.",
+      "boundary_with_other_aspects": "A6 always requires solving for unknown parameters using stated structural conditions. If parameters are given numerically and the task is to evaluate or interpret, it is A1/A2/A3 instead.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Solve for parameter from condition",
+          "description": "Given f(x) with constants a, b (or c) and one or more conditions like 'passes through (p,q)' or 'has vertex at (h,k)' or 'intercept at (0,n)', find the parameter or a combination.",
+          "core_skill_demand": "Substitute the stated conditions into the symbolic form to produce equations in the unknown parameters, then solve (typically a system of 1–2 equations).",
+          "example_originals": ["09d21d79", "1178f2df", "92f812bb", "95eeeb5b", "bba18ecb", "4dd4efcf", "1a722d7d", "4a0d0399", "55c5d3c2", "a45ffacb", "b8f13a3a", "b0543157", "de39858a", "821e724e", "02060533", "263f9937", "9afe2370", "e53add44", "0f9f8ea7", "f1c81b3b"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 18 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["(not observed)"],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["one unknown, one substitution condition (e.g., f(3)=value gives a)", "linear relation a^n = k solvable by inspection"],
+              "example_stem": "y = 3600·a^x; what was the initial number?",
+              "example_ids": ["0f9f8ea7", "f1c81b3b", "e53add44"]
+            },
+            "hard": {
+              "characteristics": ["two unknowns, two simultaneous conditions (e.g., y-intercept and a passing point)", "vertex constraint plus extra structural info (intercept sign, value sign of k)", "parameter recovered from indirect feature (intercepts symmetric around vertex)", "exponential with subtraction f(x)=a^x+b and two passing points"],
+              "example_stem": "f(x)=a^x+b; x-intercept (2,0), y-intercept (0,−323). Find b.",
+              "example_ids": ["09d21d79", "1178f2df", "92f812bb", "95eeeb5b", "bba18ecb", "4dd4efcf", "1a722d7d", "4a0d0399", "55c5d3c2", "a45ffacb", "b8f13a3a", "b0543157", "de39858a", "821e724e", "02060533", "668f1863"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": ["function form with at least one unknown parameter", "at least one structural condition (point, intercept, vertex) that pins down the parameter"],
+            "must_vary": ["which parameter is requested", "whether condition is point-based or feature-based"],
+            "common_bugs": ["providing conditions that under- or over-determine the parameters", "designing a quadratic problem where the requested parameter combination (e.g., a+b+c) happens to equal one of the conditions trivially", "for exponential a^x+b, choosing constraints that admit a≤0 or a=1 (degenerate)"]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "240 originals span 60 Easy / 96 Medium / 84 Hard. Frequency counts are approximate primary-type assignments; a handful of originals fit two types and have been counted in only one. Easy items are heavily concentrated in A1.T1 (direct substitution), A2.T1 (interpret f(c)=v), and A3.T1 (read intercept from graph). Hard items concentrate in A3.T3 (vertex from factored/standard form), A5 (transformations & equivalent forms), and A6.T1 (solve for parameters). Quadratic vertex problems (A3.T3) are the most prolific Hard type. Exponential modeling (A4.T1) appears at every difficulty level — the lever shifts from simple doubling (Easy) to percent-change (Medium) to period-rewrite (Hard). Graph-dependent items (A3.T1, A3.T5) are reserved almost entirely for Easy and Medium; Hard items in A3 are usually equation-only."
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6310adbc-s1",
+  "originalId": "6310adbc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The ratio of <em>a</em> to <em>b</em> is 2 to 5, and a = 14. What is the value of <em>b</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>35</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>70</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Setting up the proportion 2/5 = 14/b, cross-multiplying gives 2b = 70, so b = 35.</p><p>Choice A is incorrect; it doubles a. Choice C is incorrect; it halves a. Choice D is incorrect; it results from multiplying instead of solving the proportion.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy"
+}

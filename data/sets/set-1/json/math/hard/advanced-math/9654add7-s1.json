@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "9654add7-s1",
+  "originalId": "9654add7",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The profit, in dollars, that a company receives from manufacturing q units of a product is given by a quadratic function P(q). The graph of y = P(q) in the qy-plane intersects the q-axis at q = 0 and q = p, where p is a positive constant. What does p represent in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The maximum profit, in dollars, the company can earn from the product</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of units that yields the maximum profit</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The profit, in dollars, when the company produces 0 units</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The number of units produced that results in a profit of $0</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A graph intersects the q-axis where y = 0, i.e., where the profit is $0. The intercept at q = 0 corresponds to producing nothing; the second intercept at q = p corresponds to a different production level that also yields $0 profit.</p><p>Choice A describes the maximum y-value (at the vertex), not an x-intercept. Choice B describes the q-coordinate of the vertex. Choice C describes the y-intercept itself.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T4.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "aa2d36fe-s1",
+  "originalId": "aa2d36fe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle in the <em>xy</em>-plane has the equation (x &minus; 9)<sup>2</sup> + (y &minus; m)<sup>2</sup> = 121, where m is a constant. Which of the following correctly describes the center and the radius of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The center is at (m, 9) and the radius is 11.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The center is at (9, m) and the radius is 11.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The center is at (9, m) and the radius is 121.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The center is at (m, 9) and the radius is 121.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. An equation of a circle in the form (x &minus; h)<sup>2</sup> + (y &minus; k)<sup>2</sup> = r<sup>2</sup> has center (h, k) and radius r. Here h = 9, k = m, and r<sup>2</sup> = 121, so r = 11. Therefore the center is (9, m) and the radius is 11. Choices A and D reverse the coordinates of the center. Choices C and D use 121 (i.e., r<sup>2</sup>) as the radius instead of r.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A1.T1.medium"
+}

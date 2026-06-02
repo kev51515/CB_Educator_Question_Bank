@@ -1,0 +1,39 @@
+{
+  "questionId": "47624288-s1",
+  "originalId": "47624288",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the distribution of preferred drinks among 100 employees at three branches of a company.</p><table border=\"1\"><tr><th>Drink</th><th>Branch A</th><th>Branch B</th><th>Branch C</th><th>Total</th></tr><tr><th>Coffee</th><td>10</td><td>8</td><td>7</td><td>25</td></tr><tr><th>Tea</th><td>5</td><td>6</td><td>9</td><td>20</td></tr><tr><th>Water</th><td>15</td><td>16</td><td>14</td><td>45</td></tr><tr><th>Juice</th><td>0</td><td>5</td><td>5</td><td>10</td></tr><tr><th>Total</th><td>30</td><td>35</td><td>35</td><td>100</td></tr></table><p>If one of these employees is selected at random, what is the probability that the employee prefers tea?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9/20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1/10</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. There are 20 tea drinkers out of 100 employees, so the probability is 20/100 = 1/5.</p><p>Choice B is incorrect; this is the probability of preferring coffee. Choice C is incorrect; this is the probability of preferring water. Choice D is incorrect; this is the probability of preferring juice.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A2.T4.easy"
+}

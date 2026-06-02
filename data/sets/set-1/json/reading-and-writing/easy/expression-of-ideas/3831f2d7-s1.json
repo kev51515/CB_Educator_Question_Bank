@@ -1,0 +1,39 @@
+{
+  "questionId": "3831f2d7-s1",
+  "originalId": "3831f2d7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Texas swimmer Sybil Bauer was already a record holder when she won an Olympic gold medal in the 100-meter backstroke at the Paris Games in July of 1924. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in November of 1922, Bauer had set an aquatic record when she swam the 440-yard backstroke in a time faster than the men's world record.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Earlier,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Next,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. This choice uses a transition that indicates a shift back in time. Since the first sentence talks about Bauer's gold medal in 1924 and the second shifts back to talking about her record in 1922, this makes the most sense here.</p><p>Choice A is incorrect. This choice uses a disagreement transition. But this sentence actually agrees with and expands on the previous sentence by describing the earlier record that Bauer had \"already\" held. Choice C is incorrect. This choice indicates a shift forward in time, which doesn't make sense here. A record in 1922 didn't come after Bauer's Olympic win in 1924. Choice D is incorrect. This choice uses a cause-and-effect transition, which doesn't make sense\u2014an event in 1924 can't cause something in 1922.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T15.easy"
+}

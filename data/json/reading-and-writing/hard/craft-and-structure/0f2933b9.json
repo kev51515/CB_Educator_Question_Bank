@@ -1,0 +1,72 @@
+{
+  "questionId": "0f2933b9",
+  "externalId": "12555f35-ee6c-44a8-a5e3-33a7ee95ffa6",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:21:46.723119+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "b2cf4b58-66d7-48f5-af23-733dc5eaf2b0",
+      "content": "<p>It establishes Camillo&rsquo;s hope that Polixenes will be comforted knowing that Camillo isn&rsquo;t departing at his own discretion.</p>"
+    },
+    {
+      "id": "cb4e59fa-4cfc-4436-9bed-2c0b3461c410",
+      "content": "<p>It suggests that Camillo feels compelled to persuade Polixenes that Camillo&rsquo;s decision to leave the court is justified.</p>"
+    },
+    {
+      "id": "45891951-5071-4015-8df0-a51b44d96ec1",
+      "content": "<p>It conveys Camillo&rsquo;s recognition that one benefit his presence may afford the king of Sicily is merely speculative.</p>"
+    },
+    {
+      "id": "f1a86afc-a08d-47ad-9d58-3841fe9f8dc6",
+      "content": "<p>It bolsters the idea that Camillo&rsquo;s primary motivation to return home is his concern for the king of Sicily&rsquo;s well-being in his absence.&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "45891951-5071-4015-8df0-a51b44d96ec1"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. In the text, Camillo explains to Polixenes that he wants to return home after his long absence and that Sicily&rsquo;s king has summoned him. In the underlined portion, Camillo adds that he also wants to return because he might provide comfort to the king&rsquo;s sorrows (&ldquo;to whose feeling sorrows I might be some allay&rdquo;) but then clarifies that his belief about being able to comfort the king is a presumption&mdash;that is, something he thinks is true but can&rsquo;t be certain of. Thus, the underlined portion indicates that Camillo recognizes that one benefit his presence may offer is merely speculative.</p><p>Choice A is incorrect because the underlined portion conveys Camillo&rsquo;s hope that he might comfort the king of Sicily, which does suggest a personal choice contributing to Camillo&rsquo;s decision to leave; the idea that Camillo isn&rsquo;t choosing to leave is established in a different part of the text, when he says &ldquo;the penitent king, my master, hath sent for me.&rdquo; Choice B is incorrect because the underlined portion doesn&rsquo;t suggest Camillo feels compelled to justify his decision to leave. Rather than expressing a need to persuade Polixenes that his departure is warranted, Camillo&rsquo;s statement simply reveals his awareness that he assumes rather than knows with certainty that his presence will comfort the king of Sicily. Choice D is incorrect because nothing in the text indicates that Camillo&rsquo;s primary motivation for returning to Sicily is his concern for the king&rsquo;s well-being; Camillo mentions first that he wants to return home because he has been away for so long, then adds that the king has summoned him and that he hopes his presence will comfort the king. The underlined portion simply conveys Camillo&rsquo;s awareness that offering comfort is a hope rather than a certainty; it doesn&rsquo;t suggest that the king&rsquo;s well-being is his main concern.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+    "stimulus": "<p><p>The following text is from William Shakespeare&rsquo;s circa <span data-ssml-say-as=\"date\">1611</span> play <em>The Winter&rsquo;s Tale</em>. Camillo has been away from his home in Sicily and serves in the court of Polixenes, the king of Bohemia. He has asked Polixenes for permission to return to Sicily.</p>\n<blockquote>\n<p>POLIXENES: I pray thee, good Camillo, be no more&nbsp;</p>\n<p>importunate. &rsquo;Tis a sickness denying thee anything,&nbsp;</p>\n<p>a death to grant this.</p>\n<p>&nbsp;</p>\n<p>CAMILLO: It is fifteen years since I saw my country.</p>\n<p>Though I have for the most part been aired abroad,</p>\n<p>I desire to lay my bones there. Besides, the penitent</p>\n<p>king, my master, hath sent for me, <span role=\"region\" aria-label=\"Referenced Content\"><span style=\"text-decoration: underline;\">to whose feeling</span><br/><span style=\"text-decoration: underline;\">sorrows I might be some allay&mdash;or I o&rsquo;erween [presume] to</span><br/><span style=\"text-decoration: underline;\">think so</span></span>&mdash;which is another spur to my departure.</p>\n</blockquote></p>",
+    "keys": [
+      "45891951-5071-4015-8df0-a51b44d96ec1"
+    ],
+    "answerOptions": [
+      {
+        "id": "b2cf4b58-66d7-48f5-af23-733dc5eaf2b0",
+        "content": "<p>It establishes Camillo&rsquo;s hope that Polixenes will be comforted knowing that Camillo isn&rsquo;t departing at his own discretion.</p>"
+      },
+      {
+        "id": "cb4e59fa-4cfc-4436-9bed-2c0b3461c410",
+        "content": "<p>It suggests that Camillo feels compelled to persuade Polixenes that Camillo&rsquo;s decision to leave the court is justified.</p>"
+      },
+      {
+        "id": "45891951-5071-4015-8df0-a51b44d96ec1",
+        "content": "<p>It conveys Camillo&rsquo;s recognition that one benefit his presence may afford the king of Sicily is merely speculative.</p>"
+      },
+      {
+        "id": "f1a86afc-a08d-47ad-9d58-3841fe9f8dc6",
+        "content": "<p>It bolsters the idea that Camillo&rsquo;s primary motivation to return home is his concern for the king of Sicily&rsquo;s well-being in his absence.&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. In the text, Camillo explains to Polixenes that he wants to return home after his long absence and that Sicily&rsquo;s king has summoned him. In the underlined portion, Camillo adds that he also wants to return because he might provide comfort to the king&rsquo;s sorrows (&ldquo;to whose feeling sorrows I might be some allay&rdquo;) but then clarifies that his belief about being able to comfort the king is a presumption&mdash;that is, something he thinks is true but can&rsquo;t be certain of. Thus, the underlined portion indicates that Camillo recognizes that one benefit his presence may offer is merely speculative.</p><p>Choice A is incorrect because the underlined portion conveys Camillo&rsquo;s hope that he might comfort the king of Sicily, which does suggest a personal choice contributing to Camillo&rsquo;s decision to leave; the idea that Camillo isn&rsquo;t choosing to leave is established in a different part of the text, when he says &ldquo;the penitent king, my master, hath sent for me.&rdquo; Choice B is incorrect because the underlined portion doesn&rsquo;t suggest Camillo feels compelled to justify his decision to leave. Rather than expressing a need to persuade Polixenes that his departure is warranted, Camillo&rsquo;s statement simply reveals his awareness that he assumes rather than knows with certainty that his presence will comfort the king of Sicily. Choice D is incorrect because nothing in the text indicates that Camillo&rsquo;s primary motivation for returning to Sicily is his concern for the king&rsquo;s well-being; Camillo mentions first that he wants to return home because he has been away for so long, then adds that the king has summoned him and that he hopes his presence will comfort the king. The underlined portion simply conveys Camillo&rsquo;s awareness that offering comfort is a hope rather than a certainty; it doesn&rsquo;t suggest that the king&rsquo;s well-being is his main concern.</p>",
+    "externalid": "12555f35-ee6c-44a8-a5e3-33a7ee95ffa6",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p><p>The following text is from William Shakespeare&rsquo;s circa <span data-ssml-say-as=\"date\">1611</span> play <em>The Winter&rsquo;s Tale</em>. Camillo has been away from his home in Sicily and serves in the court of Polixenes, the king of Bohemia. He has asked Polixenes for permission to return to Sicily.</p>\n<blockquote>\n<p>POLIXENES: I pray thee, good Camillo, be no more&nbsp;</p>\n<p>importunate. &rsquo;Tis a sickness denying thee anything,&nbsp;</p>\n<p>a death to grant this.</p>\n<p>&nbsp;</p>\n<p>CAMILLO: It is fifteen years since I saw my country.</p>\n<p>Though I have for the most part been aired abroad,</p>\n<p>I desire to lay my bones there. Besides, the penitent</p>\n<p>king, my master, hath sent for me, <span role=\"region\" aria-label=\"Referenced Content\"><span style=\"text-decoration: underline;\">to whose feeling</span><br/><span style=\"text-decoration: underline;\">sorrows I might be some allay&mdash;or I o&rsquo;erween [presume] to</span><br/><span style=\"text-decoration: underline;\">think so</span></span>&mdash;which is another spur to my departure.</p>\n</blockquote></p>"
+}

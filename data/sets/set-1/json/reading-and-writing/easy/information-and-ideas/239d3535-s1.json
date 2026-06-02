@@ -1,0 +1,39 @@
+{
+  "questionId": "239d3535-s1",
+  "originalId": "239d3535",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Population of Four Australian Cities (in thousands), 1881&ndash;1911 [graph]</p><p>The graph displays the population for the following four cities across 1881, 1891, 1901, and 1911:</p><ul><li>Sydney: 220 (1881), 380 (1891), 480 (1901), 630 (1911)</li><li>Melbourne: 280 (1881), 490 (1891), 495 (1901), 590 (1911)</li><li>Adelaide: 95 (1881), 130 (1891), 140 (1901), 190 (1911)</li><li>Brisbane: 32 (1881), 60 (1891), 120 (1901), 145 (1911)</li></ul><p>The graph shows the populations of four large Australian cities at the end of the nineteenth and beginning of the twentieth centuries.</p>",
+  "stem": "<p>According to the graph, which city had the largest population in 1891?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Sydney</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Brisbane</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Melbourne</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Adelaide</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the graph shows that in 1891 Melbourne had approximately 490 thousand inhabitants, more than any other city listed.</p><p>Choice A is incorrect: Sydney had about 380 thousand in 1891, less than Melbourne. Choice B is incorrect: Brisbane had only about 60 thousand in 1891. Choice D is incorrect: Adelaide had about 130 thousand in 1891.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T7.easy"
+}

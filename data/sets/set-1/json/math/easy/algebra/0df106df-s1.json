@@ -1,0 +1,39 @@
+{
+  "questionId": "0df106df-s1",
+  "originalId": "0df106df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A toy store sells action figures and stickers. Each action figure sells for $5, and each sticker sells for $2. If Daniel purchased a total of 12 action figures and stickers that have a combined price of $42, how many action figures did he purchase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Let a be the number of action figures. The cost equation is 5a + 2(12 - a) = 42, which simplifies to 3a + 24 = 42, giving a = 6.</p><p>Choices A, B, and D do not satisfy the cost equation.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "daa90829",
+  "externalId": "50ef9940-0c0d-4d71-a837-c302dfa17130",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:25.138604+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the text, Lady Howard would most likely agree with which statement about Reverend Villars?&nbsp;</p>",
+  "answerOptions": [
+    {
+      "id": "7c8ab4f8-93df-48aa-9535-e22c4b08eca3",
+      "content": "<p>Although the manner in which he has raised Evelina is in many ways exemplary, he has been misguided in shielding her from the influence of other young people.</p>"
+    },
+    {
+      "id": "5cd5c03f-a21a-4052-9038-25bbb8056d04",
+      "content": "<p>He has imparted to Evelina his own idealistic view of the world, which results in her being unprepared to face inevitable disappointments.</p>"
+    },
+    {
+      "id": "d82b1409-2215-47f1-9a1f-74ac12a1cf83",
+      "content": "<p>Although his desire to guard Evelina from unscrupulous people is commendable, his general mistrust has led him to be unduly wary of the Mirvans.&nbsp;&nbsp;</p>"
+    },
+    {
+      "id": "14d064b3-85fe-46c5-904b-1f2f4bed86ff",
+      "content": "<p>He is overly protective of Evelina, who would likely benefit from a greater variety of experiences than she has had thus far.</p>"
+    }
+  ],
+  "keys": [
+    "14d064b3-85fe-46c5-904b-1f2f4bed86ff"
+  ],
+  "rationale": "<p>Choice D is the best answer because it presents a statement about Reverend Villars that Lady Howard would most likely agree with based on the text. In the text, Lady Howard urges Reverend Villars to allow his ward, Evelina, to join the Mirvans on a trip to London. Her first words after describing the Mirvans&rsquo; wish&mdash;&ldquo;Do not start at this proposal&rdquo;&mdash;suggest that she believes Villars will be alarmed by the idea, and she goes on to assure him that this alarm is unwarranted because Evelina will benefit from visiting London. Lady Howard supports her claim by arguing that excessive isolation from the world leads young people to entertain unrealistic, idealized views of it. On the other hand, she suggests, giving young people appropriate access to the world when they, like Evelina, are ready can help them develop a more balanced view of the world and its moral complexities. These words indicate that Lady Howard believes Evelina risks becoming too sheltered because of her guardian&rsquo;s protectiveness and that she would benefit from exposure to a wider range of experiences than she has had thus far.</p><p>Choice A is incorrect because while the text does suggest that Lady Howard believes Reverend Villars has sheltered Evelina too much, it doesn&rsquo;t specifically mention shielding her from the influence of other young people. Lady Howard refers more broadly to getting more exposure to the world and doesn&rsquo;t focus on peer relationships. Additionally, the text doesn&rsquo;t indicate whether Lady Howard finds other aspects of how Villars has raised Evelina to be exemplary. Choice B is incorrect because the text doesn&rsquo;t suggest that Lady Howard believes Reverend Villars&rsquo;s view of the world is idealistic or that he has imparted an idealistic view of the world to Evelina. While Lady Howard does warn that young people who are too sheltered may develop romantic, idealized views of the world, she presents this as a general principle about sheltered youth, not as a specific criticism of Villars for having transmitted a na&iuml;ve outlook to Evelina. Choice C is incorrect because the text doesn&rsquo;t mention Reverend Villars being specifically concerned about protecting Evelina from unscrupulous people or suggest that he is exceptionally wary of the Mirvans. While Lady Howard&rsquo;s words certainly anticipate some resistance from Villars, the text doesn&rsquo;t specify the nature of his concerns beyond the general desire to protect Evelina from the world.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the text, Lady Howard would most likely agree with which statement about Reverend Villars?&nbsp;</p>",
+    "stimulus": "<p>The following text is adapted from Fanny Burney&rsquo;s <span data-ssml-say-as=\"date\">1778</span> novel <em>Evelina</em>. The text is an excerpt from a letter by Lady Howard to Evelina&rsquo;s guardian, Reverend Villars, in which Lady Howard discusses an upcoming trip to London planned by her daughter <span data-ssml-sub-alias=\"Mrs\">Mrs.</span> Mirvan&rsquo;s family.</p>\n<blockquote>\n<p>It is very earnestly [the Mirvans&rsquo;] wish to enlarge and enliven their party by the addition of your amiable ward, who would share, equally with her own daughter, the care and attention of <span data-ssml-sub-alias=\"Mrs\">Mrs.</span> Mirvan. Do not start at this proposal; it is time that [Evelina] should see something of the world. When young people are too rigidly sequestered from it, their lively and romantic imaginations paint it to them as a paradise of which they have been beguiled; but when they are shown it properly, and in due time, they see it such as it really is, equally shared by pain and pleasure, hope and disappointment.</p>\n</blockquote>",
+    "keys": [
+      "14d064b3-85fe-46c5-904b-1f2f4bed86ff"
+    ],
+    "answerOptions": [
+      {
+        "id": "7c8ab4f8-93df-48aa-9535-e22c4b08eca3",
+        "content": "<p>Although the manner in which he has raised Evelina is in many ways exemplary, he has been misguided in shielding her from the influence of other young people.</p>"
+      },
+      {
+        "id": "5cd5c03f-a21a-4052-9038-25bbb8056d04",
+        "content": "<p>He has imparted to Evelina his own idealistic view of the world, which results in her being unprepared to face inevitable disappointments.</p>"
+      },
+      {
+        "id": "d82b1409-2215-47f1-9a1f-74ac12a1cf83",
+        "content": "<p>Although his desire to guard Evelina from unscrupulous people is commendable, his general mistrust has led him to be unduly wary of the Mirvans.&nbsp;&nbsp;</p>"
+      },
+      {
+        "id": "14d064b3-85fe-46c5-904b-1f2f4bed86ff",
+        "content": "<p>He is overly protective of Evelina, who would likely benefit from a greater variety of experiences than she has had thus far.</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it presents a statement about Reverend Villars that Lady Howard would most likely agree with based on the text. In the text, Lady Howard urges Reverend Villars to allow his ward, Evelina, to join the Mirvans on a trip to London. Her first words after describing the Mirvans&rsquo; wish&mdash;&ldquo;Do not start at this proposal&rdquo;&mdash;suggest that she believes Villars will be alarmed by the idea, and she goes on to assure him that this alarm is unwarranted because Evelina will benefit from visiting London. Lady Howard supports her claim by arguing that excessive isolation from the world leads young people to entertain unrealistic, idealized views of it. On the other hand, she suggests, giving young people appropriate access to the world when they, like Evelina, are ready can help them develop a more balanced view of the world and its moral complexities. These words indicate that Lady Howard believes Evelina risks becoming too sheltered because of her guardian&rsquo;s protectiveness and that she would benefit from exposure to a wider range of experiences than she has had thus far.</p><p>Choice A is incorrect because while the text does suggest that Lady Howard believes Reverend Villars has sheltered Evelina too much, it doesn&rsquo;t specifically mention shielding her from the influence of other young people. Lady Howard refers more broadly to getting more exposure to the world and doesn&rsquo;t focus on peer relationships. Additionally, the text doesn&rsquo;t indicate whether Lady Howard finds other aspects of how Villars has raised Evelina to be exemplary. Choice B is incorrect because the text doesn&rsquo;t suggest that Lady Howard believes Reverend Villars&rsquo;s view of the world is idealistic or that he has imparted an idealistic view of the world to Evelina. While Lady Howard does warn that young people who are too sheltered may develop romantic, idealized views of the world, she presents this as a general principle about sheltered youth, not as a specific criticism of Villars for having transmitted a na&iuml;ve outlook to Evelina. Choice C is incorrect because the text doesn&rsquo;t mention Reverend Villars being specifically concerned about protecting Evelina from unscrupulous people or suggest that he is exceptionally wary of the Mirvans. While Lady Howard&rsquo;s words certainly anticipate some resistance from Villars, the text doesn&rsquo;t specify the nature of his concerns beyond the general desire to protect Evelina from the world.</p>",
+    "externalid": "50ef9940-0c0d-4d71-a837-c302dfa17130",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>The following text is adapted from Fanny Burney&rsquo;s <span data-ssml-say-as=\"date\">1778</span> novel <em>Evelina</em>. The text is an excerpt from a letter by Lady Howard to Evelina&rsquo;s guardian, Reverend Villars, in which Lady Howard discusses an upcoming trip to London planned by her daughter <span data-ssml-sub-alias=\"Mrs\">Mrs.</span> Mirvan&rsquo;s family.</p>\n<blockquote>\n<p>It is very earnestly [the Mirvans&rsquo;] wish to enlarge and enliven their party by the addition of your amiable ward, who would share, equally with her own daughter, the care and attention of <span data-ssml-sub-alias=\"Mrs\">Mrs.</span> Mirvan. Do not start at this proposal; it is time that [Evelina] should see something of the world. When young people are too rigidly sequestered from it, their lively and romantic imaginations paint it to them as a paradise of which they have been beguiled; but when they are shown it properly, and in due time, they see it such as it really is, equally shared by pain and pleasure, hope and disappointment.</p>\n</blockquote>"
+}

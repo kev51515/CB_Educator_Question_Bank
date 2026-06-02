@@ -1,0 +1,25 @@
+{
+  "questionId": "f6d1f735-s1",
+  "originalId": "f6d1f735",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Scientists have not been able to identify a single trigger for yawning, which happens when a person's jaw opens <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. However, researcher Andrew Gallup has suggested that these spontaneous movements may help cool the brain by drawing in fresh air.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>silently</p>"},
+    {"id": "b", "content": "<p>laboriously</p>"},
+    {"id": "c", "content": "<p>reflexively</p>"},
+    {"id": "d", "content": "<p>continuously</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because \"reflexively\" means without conscious control, which matches the text's later description of yawns as \"spontaneous movements.\" Choice A is incorrect because \"silently\" describes sound; the text concerns whether the action is voluntary, not quiet. Choice B is incorrect because \"laboriously\" means with great effort; spontaneous movements happen without effort. Choice D is incorrect because \"continuously\" means without pause; yawns are discrete events, not continuous ones.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

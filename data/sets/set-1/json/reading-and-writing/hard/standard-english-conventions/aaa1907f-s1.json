@@ -1,0 +1,25 @@
+{
+  "questionId": "aaa1907f-s1",
+  "originalId": "aaa1907f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T9.hard",
+  "stimulus": "<p>To support rural communities during the postwar years, pioneering Mississippi educator Septima Clark organized literacy workshops for adults in both reading and arithmetic, an ambitious <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> trained dozens of grassroots teachers, who carried the curriculum to neighboring counties; and produced citizenship primers that were distributed throughout the Sea Islands.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>undertaking at the time;</p>"},
+    {"id": "b", "content": "<p>undertaking, at the time,</p>"},
+    {"id": "c", "content": "<p>undertaking at the time,</p>"},
+    {"id": "d", "content": "<p>undertaking, at the time</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the punctuation of items in a complex series with internal punctuation. The semicolon after \"time\" separates the first item (\"organized...time\") from the second (\"trained...counties\") and matches the semicolon used later before \"and\" to separate the second item from the third. No comma is needed between the noun \"undertaking\" and the essential prepositional phrase \"at the time.\"</p><p>Choice B is incorrect because a comma after \"time\" does not match the later semicolon used elsewhere in the series, and the prepositional phrase \"at the time\" is essential and should not be set off with commas. Choice C is incorrect because a comma cannot separate complex series items already containing internal commas. Choice D is incorrect for the same reasons as B and additionally fails to mark the series boundary at all.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

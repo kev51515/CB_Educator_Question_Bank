@@ -1,0 +1,72 @@
+{
+  "questionId": "54be8f96",
+  "externalId": "7d889d5e-6ff0-4c2b-a1b2-9b0d56817fea",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:34.350951+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "4bf7a4ee-15b7-474e-87ac-e3271bbe182e",
+      "content": "<p>1.51 days, which is the shortest rotational period of any of the TRAPPIST planets.</p>"
+    },
+    {
+      "id": "a230b45c-3d2c-4ffc-8823-7c943abf838d",
+      "content": "<p>6.1 days, and its rotational period is also 6.1 days.</p>"
+    },
+    {
+      "id": "400e73a8-fc7c-4331-8797-6af8fae2f415",
+      "content": "<p>9.21 days, which is the same as the rotational period of TRAPPIST-1f.</p>"
+    },
+    {
+      "id": "8100e6b1-95b4-4018-8683-e8f08fa656c6",
+      "content": "<p>6.1 days, and its rotational period is 0.92 days.</p>"
+    }
+  ],
+  "keys": [
+    "a230b45c-3d2c-4ffc-8823-7c943abf838d"
+  ],
+  "rationale": "<p>Choice B is the best answer because it correctly uses data from the table to illustrate the relationship between orbital and rotational periods described in the text. For Earth and each of four TRAPPIST-1 exoplanets, the table provides the orbital period and radius (in relation to the radius of Earth). The text explains that for each TRAPPIST-1 exoplanet, gravitational forces cause the rotational period (how long the planet takes to spin once on its axis) to equal the orbital period (how long the planet takes to orbit the star). According to the table, TRAPPIST-1e has an orbital period of 6.1 days. Since the text states that the orbital and rotational periods are equal for these planets, TRAPPIST-1e&rsquo;s rotational period must also be 6.1 days.</p><p>Choice A is incorrect because the table shows that TRAPPIST-1e has an orbital period (and thus a rotational period) of 6.1 days, not 1.51 days, which is the orbital period (and thus the rotational period) of TRAPPIST-1b. Furthermore, comparing the length of TRAPPIST-1e&rsquo;s rotational period to those of the other exoplanets would not logically complete the example, which should illustrate how the orbital and rotational periods of a planet in TRAPPIST-1 are the same length. Choice C is incorrect because the table shows that TRAPPIST-1e has an orbital period (and thus a rotational period) of 6.1 days, not 9.21 days, which the table shows is the orbital period (and thus rotational period) of TRAPPIST-1f. Additionally, comparing the rotational periods of two exoplanets would not logically complete the example, which should illustrate how the orbital and rotational periods of a planet in TRAPPIST-1 are the same length. Choice D is incorrect because although it correctly identifies TRAPPIST-1e&rsquo;s orbital period as 6.1 days, it incorrectly states that its rotational period is 0.92 days. This contradicts the text&rsquo;s statement that the orbital and rotational periods are equal for TRAPPIST-1 exoplanets. The value 0.92 actually represents TRAPPIST-1e&rsquo;s radius in relation to Earth&rsquo;s radius, not its rotational period.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+    "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Properties of TRAPPIST-1 Exoplanets Compared to Earth\u2019s Properties</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Planet</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Orbital period (days)</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Planet radius (Earth radii)</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\">Earth</th><td style=\"text-align: center;\">365.26</td><td style=\"text-align: center;\">1</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1b</th><td style=\"text-align: center;\">1.51</td><td style=\"text-align: center;\">1.09</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1d</th><td style=\"text-align: center;\">4.05</td><td style=\"text-align: center;\">0.77</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1e</th><td style=\"text-align: center;\">6.1</td><td style=\"text-align: center;\">0.92</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1f</th><td style=\"text-align: center;\">9.21</td><td style=\"text-align: center;\">1.04</td></tr></tbody></table></figure></p>\n<p>TRAPPIST-1 is a planetary system with a central red dwarf star and several Earth-sized exoplanets. Each planet in this system is so close in orbit to the star that the gravitational forces acting between the planet and the star cause the planet&rsquo;s rotational period around its axis and orbital period around the star to be equal. For example, the orbital period of TRAPPIST-1e is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "a230b45c-3d2c-4ffc-8823-7c943abf838d"
+    ],
+    "answerOptions": [
+      {
+        "id": "4bf7a4ee-15b7-474e-87ac-e3271bbe182e",
+        "content": "<p>1.51 days, which is the shortest rotational period of any of the TRAPPIST planets.</p>"
+      },
+      {
+        "id": "a230b45c-3d2c-4ffc-8823-7c943abf838d",
+        "content": "<p>6.1 days, and its rotational period is also 6.1 days.</p>"
+      },
+      {
+        "id": "400e73a8-fc7c-4331-8797-6af8fae2f415",
+        "content": "<p>9.21 days, which is the same as the rotational period of TRAPPIST-1f.</p>"
+      },
+      {
+        "id": "8100e6b1-95b4-4018-8683-e8f08fa656c6",
+        "content": "<p>6.1 days, and its rotational period is 0.92 days.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it correctly uses data from the table to illustrate the relationship between orbital and rotational periods described in the text. For Earth and each of four TRAPPIST-1 exoplanets, the table provides the orbital period and radius (in relation to the radius of Earth). The text explains that for each TRAPPIST-1 exoplanet, gravitational forces cause the rotational period (how long the planet takes to spin once on its axis) to equal the orbital period (how long the planet takes to orbit the star). According to the table, TRAPPIST-1e has an orbital period of 6.1 days. Since the text states that the orbital and rotational periods are equal for these planets, TRAPPIST-1e&rsquo;s rotational period must also be 6.1 days.</p><p>Choice A is incorrect because the table shows that TRAPPIST-1e has an orbital period (and thus a rotational period) of 6.1 days, not 1.51 days, which is the orbital period (and thus the rotational period) of TRAPPIST-1b. Furthermore, comparing the length of TRAPPIST-1e&rsquo;s rotational period to those of the other exoplanets would not logically complete the example, which should illustrate how the orbital and rotational periods of a planet in TRAPPIST-1 are the same length. Choice C is incorrect because the table shows that TRAPPIST-1e has an orbital period (and thus a rotational period) of 6.1 days, not 9.21 days, which the table shows is the orbital period (and thus rotational period) of TRAPPIST-1f. Additionally, comparing the rotational periods of two exoplanets would not logically complete the example, which should illustrate how the orbital and rotational periods of a planet in TRAPPIST-1 are the same length. Choice D is incorrect because although it correctly identifies TRAPPIST-1e&rsquo;s orbital period as 6.1 days, it incorrectly states that its rotational period is 0.92 days. This contradicts the text&rsquo;s statement that the orbital and rotational periods are equal for TRAPPIST-1 exoplanets. The value 0.92 actually represents TRAPPIST-1e&rsquo;s radius in relation to Earth&rsquo;s radius, not its rotational period.</p>",
+    "externalid": "7d889d5e-6ff0-4c2b-a1b2-9b0d56817fea",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Properties of TRAPPIST-1 Exoplanets Compared to Earth\u2019s Properties</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Planet</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Orbital period (days)</th><th scope=\"col\" style=\"text-align: center;vertical-align: bottom;\">Planet radius (Earth radii)</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\">Earth</th><td style=\"text-align: center;\">365.26</td><td style=\"text-align: center;\">1</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1b</th><td style=\"text-align: center;\">1.51</td><td style=\"text-align: center;\">1.09</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1d</th><td style=\"text-align: center;\">4.05</td><td style=\"text-align: center;\">0.77</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1e</th><td style=\"text-align: center;\">6.1</td><td style=\"text-align: center;\">0.92</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">TRAPPIST-1f</th><td style=\"text-align: center;\">9.21</td><td style=\"text-align: center;\">1.04</td></tr></tbody></table></figure></p>\n<p>TRAPPIST-1 is a planetary system with a central red dwarf star and several Earth-sized exoplanets. Each planet in this system is so close in orbit to the star that the gravitational forces acting between the planet and the star cause the planet&rsquo;s rotational period around its axis and orbital period around the star to be equal. For example, the orbital period of TRAPPIST-1e is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

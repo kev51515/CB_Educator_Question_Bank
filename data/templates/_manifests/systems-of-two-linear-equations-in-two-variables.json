@@ -1,0 +1,703 @@
+{
+  "section": "Math",
+  "domain": "Algebra",
+  "skill": "Systems of two linear equations in two variables",
+  "originals": [
+    {
+      "id": "0d1dca87",
+      "path": "json/math/easy/algebra/0d1dca87.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "0df106df",
+      "path": "json/math/easy/algebra/0df106df.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1006cad7",
+      "path": "json/math/easy/algebra/1006cad7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "17f176ec",
+      "path": "json/math/easy/algebra/17f176ec.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "317e80f9",
+      "path": "json/math/easy/algebra/317e80f9.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3409707e",
+      "path": "json/math/easy/algebra/3409707e.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "44d65912",
+      "path": "json/math/easy/algebra/44d65912.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4b06557b",
+      "path": "json/math/easy/algebra/4b06557b.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "4b76c7f1",
+      "path": "json/math/easy/algebra/4b76c7f1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4ec95eab",
+      "path": "json/math/easy/algebra/4ec95eab.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4fb8adf7",
+      "path": "json/math/easy/algebra/4fb8adf7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5f46fc76",
+      "path": "json/math/easy/algebra/5f46fc76.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "608eeb6e",
+      "path": "json/math/easy/algebra/608eeb6e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7d89376f",
+      "path": "json/math/easy/algebra/7d89376f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "8abed0fb",
+      "path": "json/math/easy/algebra/8abed0fb.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "939fc21b",
+      "path": "json/math/easy/algebra/939fc21b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "9db5b5c1",
+      "path": "json/math/easy/algebra/9db5b5c1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "aacc834b",
+      "path": "json/math/easy/algebra/aacc834b.json",
+      "difficulty": "Easy",
+      "type": "spr"
+    },
+    {
+      "id": "aff28230",
+      "path": "json/math/easy/algebra/aff28230.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b0fc3166",
+      "path": "json/math/easy/algebra/b0fc3166.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b86123af",
+      "path": "json/math/easy/algebra/b86123af.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ca9bb527",
+      "path": "json/math/easy/algebra/ca9bb527.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ccc3ad6b",
+      "path": "json/math/easy/algebra/ccc3ad6b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "cd33b015",
+      "path": "json/math/easy/algebra/cd33b015.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "cdec4c87",
+      "path": "json/math/easy/algebra/cdec4c87.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d1aeb6f1",
+      "path": "json/math/easy/algebra/d1aeb6f1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "dba8d38a",
+      "path": "json/math/easy/algebra/dba8d38a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e0177f5f",
+      "path": "json/math/easy/algebra/e0177f5f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e1259a5a",
+      "path": "json/math/easy/algebra/e1259a5a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e6545fa8",
+      "path": "json/math/easy/algebra/e6545fa8.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ece00725",
+      "path": "json/math/easy/algebra/ece00725.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ee031767",
+      "path": "json/math/easy/algebra/ee031767.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f5563c26",
+      "path": "json/math/easy/algebra/f5563c26.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f6b055dc",
+      "path": "json/math/easy/algebra/f6b055dc.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f88970cc",
+      "path": "json/math/easy/algebra/f88970cc.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ffb371f5",
+      "path": "json/math/easy/algebra/ffb371f5.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "092ad67d",
+      "path": "json/math/medium/algebra/092ad67d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0c541d87",
+      "path": "json/math/medium/algebra/0c541d87.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0dd6227f",
+      "path": "json/math/medium/algebra/0dd6227f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "19fdf387",
+      "path": "json/math/medium/algebra/19fdf387.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2704399f",
+      "path": "json/math/medium/algebra/2704399f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2875ba81",
+      "path": "json/math/medium/algebra/2875ba81.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "36f068e2",
+      "path": "json/math/medium/algebra/36f068e2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "38a43902",
+      "path": "json/math/medium/algebra/38a43902.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "4e400635",
+      "path": "json/math/medium/algebra/4e400635.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "55447be2",
+      "path": "json/math/medium/algebra/55447be2.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "5e422ff9",
+      "path": "json/math/medium/algebra/5e422ff9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "65833256",
+      "path": "json/math/medium/algebra/65833256.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "686b7cad",
+      "path": "json/math/medium/algebra/686b7cad.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6a87902f",
+      "path": "json/math/medium/algebra/6a87902f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6ba39da5",
+      "path": "json/math/medium/algebra/6ba39da5.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "6e50ce28",
+      "path": "json/math/medium/algebra/6e50ce28.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6e6a3241",
+      "path": "json/math/medium/algebra/6e6a3241.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "71189542",
+      "path": "json/math/medium/algebra/71189542.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "74c03c21",
+      "path": "json/math/medium/algebra/74c03c21.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "79784c23",
+      "path": "json/math/medium/algebra/79784c23.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "79be5180",
+      "path": "json/math/medium/algebra/79be5180.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "7efe5495",
+      "path": "json/math/medium/algebra/7efe5495.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "8a87c2c8",
+      "path": "json/math/medium/algebra/8a87c2c8.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9a216c0f",
+      "path": "json/math/medium/algebra/9a216c0f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9f6f96ff",
+      "path": "json/math/medium/algebra/9f6f96ff.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a0489274",
+      "path": "json/math/medium/algebra/a0489274.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a94ed4e0",
+      "path": "json/math/medium/algebra/a94ed4e0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b00ad7f2",
+      "path": "json/math/medium/algebra/b00ad7f2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b3c7ca1d",
+      "path": "json/math/medium/algebra/b3c7ca1d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b544a348",
+      "path": "json/math/medium/algebra/b544a348.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "bd45df49",
+      "path": "json/math/medium/algebra/bd45df49.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bf4a8b6a",
+      "path": "json/math/medium/algebra/bf4a8b6a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c5082ce3",
+      "path": "json/math/medium/algebra/c5082ce3.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "cb8f449f",
+      "path": "json/math/medium/algebra/cb8f449f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d909cd31",
+      "path": "json/math/medium/algebra/d909cd31.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dcc4886a",
+      "path": "json/math/medium/algebra/dcc4886a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e3bbde69",
+      "path": "json/math/medium/algebra/e3bbde69.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e53688cb",
+      "path": "json/math/medium/algebra/e53688cb.json",
+      "difficulty": "Medium",
+      "type": "spr"
+    },
+    {
+      "id": "e77a76ce",
+      "path": "json/math/medium/algebra/e77a76ce.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ed92fb68",
+      "path": "json/math/medium/algebra/ed92fb68.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f5929f7a",
+      "path": "json/math/medium/algebra/f5929f7a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1362ccde",
+      "path": "json/math/hard/algebra/1362ccde.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "14360f84",
+      "path": "json/math/hard/algebra/14360f84.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1b1deebe",
+      "path": "json/math/hard/algebra/1b1deebe.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1e0a46e4",
+      "path": "json/math/hard/algebra/1e0a46e4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1e11190a",
+      "path": "json/math/hard/algebra/1e11190a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "27f5fff3",
+      "path": "json/math/hard/algebra/27f5fff3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "36fd6752",
+      "path": "json/math/hard/algebra/36fd6752.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "3a84f885",
+      "path": "json/math/hard/algebra/3a84f885.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "3f5a3602",
+      "path": "json/math/hard/algebra/3f5a3602.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "45a534d0",
+      "path": "json/math/hard/algebra/45a534d0.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "466b87e3",
+      "path": "json/math/hard/algebra/466b87e3.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "4becad44",
+      "path": "json/math/hard/algebra/4becad44.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4f1342d6",
+      "path": "json/math/hard/algebra/4f1342d6.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "52cb8ea4",
+      "path": "json/math/hard/algebra/52cb8ea4.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "567ac7ab",
+      "path": "json/math/hard/algebra/567ac7ab.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "570b5a5d",
+      "path": "json/math/hard/algebra/570b5a5d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "571174f3",
+      "path": "json/math/hard/algebra/571174f3.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "58477a6c",
+      "path": "json/math/hard/algebra/58477a6c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "59352689",
+      "path": "json/math/hard/algebra/59352689.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "5e08a055",
+      "path": "json/math/hard/algebra/5e08a055.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "70feb725",
+      "path": "json/math/hard/algebra/70feb725.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "73b3b7d8",
+      "path": "json/math/hard/algebra/73b3b7d8.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "75012ee7",
+      "path": "json/math/hard/algebra/75012ee7.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7866a908",
+      "path": "json/math/hard/algebra/7866a908.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "797a81fb",
+      "path": "json/math/hard/algebra/797a81fb.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "979c6ebc",
+      "path": "json/math/hard/algebra/979c6ebc.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a71b1bc1",
+      "path": "json/math/hard/algebra/a71b1bc1.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "adb0c96c",
+      "path": "json/math/hard/algebra/adb0c96c.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "b5f62071",
+      "path": "json/math/hard/algebra/b5f62071.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "d1b66ae6",
+      "path": "json/math/hard/algebra/d1b66ae6.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "d7bf55e1",
+      "path": "json/math/hard/algebra/d7bf55e1.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "e1248a5c",
+      "path": "json/math/hard/algebra/e1248a5c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e2e3942f",
+      "path": "json/math/hard/algebra/e2e3942f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "edc1b7b7",
+      "path": "json/math/hard/algebra/edc1b7b7.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "f03465dc",
+      "path": "json/math/hard/algebra/f03465dc.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f718c9cf",
+      "path": "json/math/hard/algebra/f718c9cf.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "f75bd744",
+      "path": "json/math/hard/algebra/f75bd744.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "fb5e7f59",
+      "path": "json/math/hard/algebra/fb5e7f59.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    },
+    {
+      "id": "ff501705",
+      "path": "json/math/hard/algebra/ff501705.json",
+      "difficulty": "Hard",
+      "type": "spr"
+    }
+  ]
+}

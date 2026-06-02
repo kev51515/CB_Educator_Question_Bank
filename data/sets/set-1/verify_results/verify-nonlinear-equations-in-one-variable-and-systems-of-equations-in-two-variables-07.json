@@ -1,0 +1,22 @@
+[
+  {"id": "84e5e36c-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "c8bf5313-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "5c7d5744-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy", "verdict": "type_drift", "detail": "Tagged A4.T10 (graph-based), but stem has no graph; it is a pure algebraic linear-quadratic substitution system, which is A4.T9."},
+  {"id": "b8c4a1cd-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "13e5a5d5-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.easy", "verdict": "ok"},
+  {"id": "98f735f2-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "ad03127d-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "88867d37-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "63c00e2b-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "c1964c11-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "70f98ab4-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "5639dd1a-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "fcb78856-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "bf704c34-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "568aaf27-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium", "verdict": "wrong_answer", "detail": "x+y=6, y=x^2 gives x^2+x-6=0, so x=2 or x=-3. Both 2 (B) and -3 (A) are listed as choices. Question asks 'a possible value of x' — both A and B are valid, making the keyed single answer ambiguous."},
+  {"id": "7399c3b0-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "3de7a7d7-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy", "verdict": "ok"},
+  {"id": "d964bc26-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "7cb3a8ee-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.easy", "verdict": "ok"},
+  {"id": "3c95093c-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.easy", "verdict": "ok"}
+]

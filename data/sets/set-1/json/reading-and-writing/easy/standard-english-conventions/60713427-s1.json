@@ -1,0 +1,39 @@
+{
+  "questionId": "60713427-s1",
+  "originalId": "60713427",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Carotenoids are pigment compounds ______ among other functions, give carrots and pumpkins their distinctive orange color.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>that\u2014</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>that:</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>that;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>that,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The comma after \"that\" pairs with the comma after \"functions\" to enclose the supplementary phrase \"among other functions.\"</p><p>Choice A pairs a dash with a comma, which is inconsistent. Choice B pairs a colon with a comma, inconsistent. Choice C pairs a semicolon with a comma, inconsistent.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A2.T4.easy"
+}

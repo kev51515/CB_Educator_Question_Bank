@@ -1,0 +1,39 @@
+{
+  "questionId": "939c46d1-s1",
+  "originalId": "939c46d1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A pitcher holds approximately 32 fluid ounces. If Marco has 1 gallon (128 fluid ounces) of lemonade, how many times can he fill the pitcher completely?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. 128 \u00f7 32 = 4, so Marco can fill the pitcher 4 times.</p><p>Choice A is incorrect; that would require 256 fluid ounces. Choice B is incorrect; 6 \u00d7 32 = 192 > 128. Choice C is incorrect; that would require 512 fluid ounces.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.medium"
+}

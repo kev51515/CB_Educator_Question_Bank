@@ -1,0 +1,39 @@
+{
+  "questionId": "a520ba07-s1",
+  "originalId": "a520ba07",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is equivalent to \u221b(p\u00b3q<sup>6</sup>), where p and q are positive?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>pq</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>p\u00b3q\u00b2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>pq\u00b2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>p\u00b2q</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>\u221b(p\u00b3q<sup>6</sup>) = \u221bp\u00b3 \u00b7 \u221bq<sup>6</sup> = p \u00b7 q\u00b2 = pq\u00b2. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T7.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "5f07b257-s1",
+  "originalId": "5f07b257",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The graph of the polynomial function <i>f</i>, where <i>y</i> = <i>f</i>(<i>x</i>), passes through the points (&minus;2, 0), (0, 8), and (4, 0). The <i>y</i>-intercept of the graph is (0, <i>y</i>). What is the value of <i>y</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>The <i>y</i>-intercept of a graph is the point where it crosses the <i>y</i>-axis (where <i>x</i> = 0). The graph passes through (0, 8), so <i>y</i> = 8.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A3.T1.easy"
+}

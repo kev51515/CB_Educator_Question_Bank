@@ -1,0 +1,39 @@
+{
+  "questionId": "31ad8024-s1",
+  "originalId": "31ad8024",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>The vibrations created by an obstruction in flowing water produce eddies (rotating currents) of varying size; by sensing these eddies through their lateral lines, fish can determine the obstruction&rsquo;s size and location. Laboratory work by Tom\u00e1s Vega-Reyes and colleagues using fish models of three body shapes&mdash;slender, intermediate, and stocky&mdash;showed that for small eddies, fish with stocky body shapes would be least able to distinguish between the eddies and the surrounding turbulence. A second research team has therefore hypothesized that, in murky low-visibility water, stocky-bodied fish will be less likely than slender-bodied fish to detect obstructions.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the second research team&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A study using obstructions that produced small eddies in murky water found that the stocky-bodied bullhead catfish collided with obstructions more often than the slender-bodied longfin chub did.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A study using obstructions that produced small eddies in murky water found that the slender-bodied longfin chub collided with obstructions about as often as the stocky-bodied bullhead catfish did.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A study using obstructions that produced small eddies in murky water found that some specimens of the slender-bodied longfin chub collided with obstructions more often than other specimens of the same species did.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A study using obstructions that produced small eddies in murky water found that the stocky-bodied bullhead catfish collided with more than half of the obstructions presented.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it provides a direct between-species comparison in the exact conditions the hypothesis predicts: stocky-bodied fish collide more often than slender-bodied fish in low-visibility water with small eddies. Choice B contradicts the hypothesis by showing no difference. Choice C describes within-species variation, not the body-shape contrast. Choice D gives only the stocky-bodied performance without comparison.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

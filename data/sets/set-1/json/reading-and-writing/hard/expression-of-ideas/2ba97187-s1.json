@@ -1,0 +1,39 @@
+{
+  "questionId": "2ba97187-s1",
+  "originalId": "2ba97187",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>When viewers first encounter Edgar Mueller's <em>The Crevasse</em>, a vivid chalk drawing on a Dublin sidewalk, many step back instinctively, sure that the pavement has split open into a deep, jagged chasm. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by carefully applying the principles of perspective, Mueller has produced only the illusion of depth.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Additionally,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Next,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>On the contrary,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As a result,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The first sentence describes what viewers initially believe (that the pavement has actually split). The second sentence corrects this impression by stating that the chasm is merely an illusion. &ldquo;On the contrary&rdquo; signals direct correction of the prior idea.</p><p>Choice A adds; the new sentence doesn't add. Choice B sequences; the new sentence isn't a next step. Choice D shows cause-and-effect; the illusion isn't a result of the viewers' impression.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A1.T1.hard"
+}

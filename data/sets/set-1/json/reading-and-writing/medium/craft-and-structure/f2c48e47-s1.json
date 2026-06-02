@@ -1,0 +1,25 @@
+{
+  "questionId": "f2c48e47-s1",
+  "originalId": "f2c48e47",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T9.medium",
+  "stimulus": "<p>The following text is from Ina Coolbrith&rsquo;s 1895 poem &ldquo;The Mountain&rsquo;s Word.&rdquo;</p>\n<p>No matter how we terrace up the slope,</p>\n<p>&nbsp;Hedging the meadow and the orchard close;</p>\n<p>No matter how we channel down the rain,</p>\n<p>Bidding the dry hill flower at our hand,</p>\n<p>&nbsp;We must always leave the shoulders of the peak;</p>\n<p>&nbsp;The unmeasured reaches</p>\n<p>&nbsp;Of the windy snow-swept beaches,</p>\n<p>The lonely upper margin of the peak.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The speaker argues against interfering with nature and then gives evidence supporting this interference.</p>"},
+    {"id": "b", "content": "<p>The speaker presents an account of efforts to dominate nature and then cautions that such efforts are only temporary.</p>"},
+    {"id": "c", "content": "<p>The speaker describes attempts to control nature and then offers a reminder that not all nature is controllable.</p>"},
+    {"id": "d", "content": "<p>The speaker provides examples of an admirable way of approaching nature and then challenges that approach.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. In the first half of the text, the speaker describes attempts to control nature: terracing slopes, hedging meadows and orchards, channeling rainwater, and bidding dry hill flowers to bloom. In the second half, the speaker states that we must always leave the &ldquo;shoulders of the peak&rdquo; and its &ldquo;lonely upper margin&rdquo;&mdash;reminding us that not all nature is controllable.</p><p>Choice A is incorrect because the speaker does not argue against interfering with nature; the speaker simply notes a limit. Choice B is incorrect because the speaker does not describe these efforts as temporary. Choice D is incorrect because the speaker does not describe these efforts as admirable.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

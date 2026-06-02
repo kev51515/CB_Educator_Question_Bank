@@ -1,0 +1,39 @@
+{
+  "questionId": "3934dd0a-s1",
+  "originalId": "3934dd0a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which quadratic equation has exactly one distinct real solution?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(z &minus; 8)<sup>2</sup> = 60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(z &minus; 8)<sup>2</sup> = 0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(z &minus; 8)<sup>2</sup> = &minus;20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(z &minus; 8)<sup>2</sup> = 100</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>A quadratic of the form (z &minus; h)<sup>2</sup> = k has exactly one distinct real solution when k = 0 (giving z = h). When k &gt; 0 there are two real solutions and when k &lt; 0 there are no real solutions. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "51aabd93-s1",
+  "originalId": "51aabd93",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mo>(</mo><mi>q</mi><mo>+</mo><mn>7</mn><mo>)</mo><mo>+</mo><mn>5</mn><mo>=</mo><mn>9</mn></math></p><p>What value of <math><mi>q</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>21</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>11</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mo>-</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>4</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Subtracting 5 from both sides yields <math><mi>q</mi><mo>+</mo><mn>7</mn><mo>=</mo><mn>4</mn></math>. Subtracting 7 from both sides yields <math><mi>q</mi><mo>=</mo><mo>-</mo><mn>3</mn></math>.</p><p>Choices A, B, and D are incorrect and may result from sign or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "59094d87-s1",
+  "originalId": "59094d87",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T2.hard",
+  "stimulus": "<p>The Yup&rsquo;ik Cultural Center in Bethel, Alaska, was established in 1968 with the purpose of preserving the language and oral traditions of the Yup&rsquo;ik <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> today, more than half a century later, it remains the largest community-run archive of Yup&rsquo;ik recordings in the state.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>people</p>"},
+    {"id": "b", "content": "<p>people and</p>"},
+    {"id": "c", "content": "<p>people,</p>"},
+    {"id": "d", "content": "<p>people, and</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The blank joins two independent clauses, each with its own subject (\"The Yup'ik Cultural Center&hellip;was established\" and \"it remains&hellip;state\"). A comma plus the coordinating conjunction \"and\" correctly joins them.</p><p>Choice A is incorrect because it leaves a run-on. Choice B is incorrect because \"and\" without a comma is unconventional joining two independent clauses with explicit, distinct subjects. Choice C is incorrect because a comma alone creates a comma splice.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

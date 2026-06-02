@@ -1,0 +1,39 @@
+{
+  "questionId": "29fa7970-s1",
+  "originalId": "29fa7970",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bar graph summarizes the number of liters of water that a tank received each day for 12 days. The categories and their values are: 0 liters: 4 days; 5 liters: 2 days; 7 liters: 3 days; 10 liters: 1 day; 12 liters: 1 day; 15 liters: 1 day. For how many of these 12 days did the tank receive exactly 7 liters of water?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. According to the bar graph, the bar for 7 liters has a height of 3, so the tank received exactly 7 liters on 3 of the 12 days.</p><p>Choice B is incorrect: 2 is the number of days with 5 liters.</p><p>Choice C is incorrect: 1 is the number of days with 10, 12, or 15 liters.</p><p>Choice D is incorrect: 4 is the number of days with 0 liters.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

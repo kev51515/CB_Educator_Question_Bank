@@ -1,0 +1,39 @@
+{
+  "questionId": "9f1a0d91-s1",
+  "originalId": "9f1a0d91",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The \"South Sea Bubble\"\u2014the explosive rise and equally dramatic collapse of share prices in the South Sea Company in early eighteenth-century London\u2014is frequently held up as a warning about the dangers of unrestrained financial speculation. Yet recent archival work has shown that the scale of public losses and the irrationality of investors have been considerably exaggerated by later commentators. The dramatic narrative typically attached to the episode, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> deserves a measure of skepticism.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>for instance,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>consequently,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>still,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>in contrast,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Consequently\" expresses the cause-and-effect link the passage requires: because the archival evidence undercuts the dramatic narrative, that narrative should be regarded with skepticism. The conclusion follows from the new findings described in the previous sentence.</p><p>Choice A is incorrect because \"for instance\" would frame the conclusion as an example of the prior point, but skepticism toward the narrative is a consequence of the evidence, not an instance of it. Choice C is incorrect because \"still\" would signal contrast, yet the sentence agrees with rather than opposes the prior claim. Choice D is incorrect because \"in contrast\" would signal opposition, but the conclusion is consistent with the new findings.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T4.hard"
+}

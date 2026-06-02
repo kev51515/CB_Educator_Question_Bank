@@ -1,0 +1,39 @@
+{
+  "questionId": "a7a14e87-s1",
+  "originalId": "a7a14e87",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, line m is defined by the equation 2x - y = 0. Line n is perpendicular to line m and passes through the point (4, 1). Which of the following is an equation of line n?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 2x - 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = -x/2 + 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = -2x + 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = x/2 - 1</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Rewriting 2x - y = 0 as y = 2x shows line m has slope 2. A perpendicular line has slope -1/2. Using point-slope with (4, 1): y - 1 = (-1/2)(x - 4), so y = -x/2 + 2 + 1 = -x/2 + 3.</p><p>Choice A uses the same slope as m, not perpendicular. Choices C and D use incorrect slope or intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T14.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "71189542-s1",
+  "originalId": "71189542",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A group of 252 campers went on a weekend trip and used a total of 80 cabins. Some of the cabins held 3 people each, and the rest held 4 people each. Assuming all the cabins were filled to capacity and every camper got to sleep in a cabin, exactly how many of the cabins were 3-person cabins?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>68</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>252</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Let x be the number of 3-person cabins and y the number of 4-person cabins. Then x + y = 80 and 3x + 4y = 252. From the first equation, y = 80 \u2212 x. Substituting: 3x + 4(80 \u2212 x) = 252, which gives 320 \u2212 x = 252, so x = 68. The correct answer is choice B.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium"
+}

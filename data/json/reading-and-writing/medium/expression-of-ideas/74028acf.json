@@ -1,0 +1,72 @@
+{
+  "questionId": "74028acf",
+  "externalId": "dfe91e9e-0f76-4130-80c1-8a8a439b700d",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:22:32.887723+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "bf0ecdac-5109-4fe4-b4d2-6daaa80b0f7a",
+      "content": "<p>in conclusion,</p>"
+    },
+    {
+      "id": "feeb3438-a965-45a9-8e0b-a4d2f6727b08",
+      "content": "<p>for example,</p>"
+    },
+    {
+      "id": "daa06778-5ebe-43d7-9ecc-fffa9a5f8a98",
+      "content": "<p>by contrast,</p>"
+    },
+    {
+      "id": "ac2d1f00-e0b8-4c12-9864-61b0f3c6a688",
+      "content": "<p>afterward,</p>"
+    }
+  ],
+  "keys": [
+    "daa06778-5ebe-43d7-9ecc-fffa9a5f8a98"
+  ],
+  "rationale": "<p>Choice C is the best answer. &ldquo;By contrast&rdquo; logically signals that the information about bathymetric maps in this sentence&mdash;that they show landforms&rsquo; elevation below the sea&mdash;presents a direct contrast to the previous information about topographic maps showing landforms&rsquo; elevation above sea level.</p><p>Choice A is incorrect because &ldquo;in conclusion&rdquo; illogically signals that the information about bathymetric maps in this sentence concludes or summarizes the previous information about topographic maps. Instead, the sentence provides contrasting information about bathymetric maps. Choice B is incorrect because &ldquo;for example&rdquo; illogically signals that the information about bathymetric maps in this sentence exemplifies the previous information about topographic maps. Instead, the sentence provides contrasting information about bathymetric maps. Choice D is incorrect because &ldquo;afterward&rdquo; illogically signals that this sentence describes an event that chronologically follows the previous information about topographic maps. Instead, the sentence provides contrasting information about bathymetric maps.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>Topographic maps show the elevation of landforms above sea level. Bathymetric maps, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> show the elevation of landforms below the sea, providing valuable information to marine geophysicists like Claudia Flores, who studies seismic data from the northeastern Caribbean.&nbsp;</p>",
+    "keys": [
+      "daa06778-5ebe-43d7-9ecc-fffa9a5f8a98"
+    ],
+    "answerOptions": [
+      {
+        "id": "bf0ecdac-5109-4fe4-b4d2-6daaa80b0f7a",
+        "content": "<p>in conclusion,</p>"
+      },
+      {
+        "id": "feeb3438-a965-45a9-8e0b-a4d2f6727b08",
+        "content": "<p>for example,</p>"
+      },
+      {
+        "id": "daa06778-5ebe-43d7-9ecc-fffa9a5f8a98",
+        "content": "<p>by contrast,</p>"
+      },
+      {
+        "id": "ac2d1f00-e0b8-4c12-9864-61b0f3c6a688",
+        "content": "<p>afterward,</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer. &ldquo;By contrast&rdquo; logically signals that the information about bathymetric maps in this sentence&mdash;that they show landforms&rsquo; elevation below the sea&mdash;presents a direct contrast to the previous information about topographic maps showing landforms&rsquo; elevation above sea level.</p><p>Choice A is incorrect because &ldquo;in conclusion&rdquo; illogically signals that the information about bathymetric maps in this sentence concludes or summarizes the previous information about topographic maps. Instead, the sentence provides contrasting information about bathymetric maps. Choice B is incorrect because &ldquo;for example&rdquo; illogically signals that the information about bathymetric maps in this sentence exemplifies the previous information about topographic maps. Instead, the sentence provides contrasting information about bathymetric maps. Choice D is incorrect because &ldquo;afterward&rdquo; illogically signals that this sentence describes an event that chronologically follows the previous information about topographic maps. Instead, the sentence provides contrasting information about bathymetric maps.</p>",
+    "externalid": "dfe91e9e-0f76-4130-80c1-8a8a439b700d",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>Topographic maps show the elevation of landforms above sea level. Bathymetric maps, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> show the elevation of landforms below the sea, providing valuable information to marine geophysicists like Claudia Flores, who studies seismic data from the northeastern Caribbean.&nbsp;</p>"
+}

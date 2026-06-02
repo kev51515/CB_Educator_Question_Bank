@@ -1,0 +1,25 @@
+{
+  "questionId": "61160f0a-s1",
+  "originalId": "61160f0a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Author Octavia Butler, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to establish a sense of disorientation that unsettles the reader, opens her novel <em>Kindred</em> with a stark account of \"the day I lost my arm\" and the disquieting return of an unfamiliar room.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>worked</p>"},
+    {"id": "b", "content": "<p>works</p>"},
+    {"id": "c", "content": "<p>working</p>"},
+    {"id": "d", "content": "<p>is working</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle verb \"working\" is correctly used to form a subordinate clause that describes the intent behind how Butler begins her novel.</p><p>Choice A is incorrect because the finite past-tense verb \"worked\" can&rsquo;t be used in this way to form a subordinate clause. Choice B is incorrect because the finite present-tense verb \"works\" can&rsquo;t be used in this way to form a subordinate clause. Choice D is incorrect because the finite present-progressive verb \"is working\" can&rsquo;t be used in this way to form a subordinate clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

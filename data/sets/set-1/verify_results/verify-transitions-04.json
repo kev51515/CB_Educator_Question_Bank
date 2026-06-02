@@ -1,0 +1,22 @@
+[
+  {"id": "ac8eb085-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "b7571c0a-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "20e4ff59-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "072666a3-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "2bda9edb-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "87d8a2ff-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "20733eac-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"},
+  {"id": "90117366-s1", "templateId": "transitions.A1.T1.easy", "verdict": "ok"},
+  {"id": "9d4f331c-s1", "templateId": "transitions.A1.T1.easy", "verdict": "ok"},
+  {"id": "6a5939c2-s1", "templateId": "transitions.A6.T18.easy", "verdict": "ok"},
+  {"id": "34a5ba1c-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "42870a4e-s1", "templateId": "transitions.A4.T11.easy", "verdict": "ok"},
+  {"id": "de0bcf4f-s1", "templateId": "transitions.A2.T5.easy", "verdict": "ok"},
+  {"id": "57bcd0d6-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "420dea42-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"},
+  {"id": "37ec26e7-s1", "templateId": "transitions.A5.T15.easy", "verdict": "type_drift", "detail": "Tagged A5.T15 (Earlier/Previously flashback) but clone has no date inversion and keyed answer is 'Ultimately,' — this is T16 culmination, not T15 backward-pointing temporal. Violates must_preserve: 'Two events with explicit dates whose order is reversed' and 'Backward-pointing temporal marker as unique correct option.'"},
+  {"id": "db8fe023-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "f07570bb-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "0d3ebdce-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "9c78f702-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"}
+]

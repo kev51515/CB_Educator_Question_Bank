@@ -1,0 +1,39 @@
+{
+  "questionId": "86684ce9-s1",
+  "originalId": "86684ce9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The result of increasing the quantity x by 1,500% is 480. What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7,200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7,680</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Increasing x by 1,500% means x + 15x = 16x = 480, so x = 480 / 16 = 30.</p><p>Choice A results from dividing by 15. Choices C and D incorrectly multiply by 15 or 16 instead of dividing.</p>",
+  "templateId": "percentages.A3.T2.hard"
+}

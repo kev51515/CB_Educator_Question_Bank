@@ -1,0 +1,25 @@
+{
+  "questionId": "702eb7e3-s1",
+  "originalId": "702eb7e3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "type": "mcq",
+  "stimulus": "<p><strong>Indexed policy uncertainty in Germany, 2012–2017 (higher = more uncertainty)</strong></p><table border=\"1\"><thead><tr><th>Year</th><th>Immigration policy</th><th>Healthcare policy</th><th>General economic policy</th></tr></thead><tbody><tr><td>2012</td><td>55</td><td>110</td><td>95</td></tr><tr><td>2013</td><td>60</td><td>118</td><td>100</td></tr><tr><td>2014</td><td>80</td><td>105</td><td>85</td></tr><tr><td>2015</td><td>175</td><td>90</td><td>95</td></tr><tr><td>2016</td><td>120</td><td>95</td><td>90</td></tr><tr><td>2017</td><td>70</td><td>100</td><td>130</td></tr></tbody></table><p>High levels of public uncertainty about which economic policies a country will adopt can make planning difficult for households and firms, but measures of such uncertainty have tended to be coarse. Recently, however, economist Yelena Kraus derived measures not only for general economic policy uncertainty but also for uncertainty about specific policy areas, such as immigration or healthcare. One revelation of her work is that a general measure may not fully reflect uncertainty about specific areas of policy, as in the case of Germany, where general economic policy uncertainty ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to illustrate the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>reached its highest level between 2012 and 2017 in the same year that uncertainty about immigration policy and healthcare policy reached their lowest levels.</p>"},
+    {"id": "b", "content": "<p>was substantially higher than uncertainty about immigration policy in 2012 and substantially lower than uncertainty about immigration policy in 2015.</p>"},
+    {"id": "c", "content": "<p>aligned closely with uncertainty about healthcare policy in 2013 but differed from uncertainty about healthcare policy by a large amount in 2015.</p>"},
+    {"id": "d", "content": "<p>was substantially lower than uncertainty about healthcare policy in each year from 2012 to 2017.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The claim is that the general measure can mask big movements in a specific area. In 2012, general (95) was substantially higher than immigration (55); in 2015, general (95) was substantially lower than immigration (175). These two contrasting comparisons illustrate exactly how a stable general measure can conceal large changes in a specific policy area.</p><p>Choice A is incorrect: the highest general value is 130 in 2017, but immigration is not at its lowest in 2017 (55 in 2012 is lower), so this misreads the table. Choice C is incorrect: in 2013, general (100) and healthcare (118) are not closely aligned; the description is inaccurate. Choice D is incorrect: in 2017, general (130) exceeded healthcare (100), so general was not lower in every year.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

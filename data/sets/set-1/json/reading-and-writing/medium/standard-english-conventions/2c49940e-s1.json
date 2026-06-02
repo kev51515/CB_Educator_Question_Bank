@@ -1,0 +1,25 @@
+{
+  "questionId": "2c49940e-s1",
+  "originalId": "2c49940e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>Greek mathematician Archimedes searched for a method to determine the purity of King Hiero's golden crown. Eventually, he found a solution in his famous exclamation \"Eureka!\" The <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> depth: it captured the principle that an object displaces a volume of water equal to its own volume.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>exclamations brevity masks their</p>"},
+    {"id": "b", "content": "<p>exclamation's brevity masks its</p>"},
+    {"id": "c", "content": "<p>exclamations' brevity masks its</p>"},
+    {"id": "d", "content": "<p>exclamation's brevity masks their</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The conventions being tested are the use of possessive nouns and the use of possessive determiners. The singular possessive noun \"exclamation's\" correctly indicates that there is only one famous exclamation. The singular possessive determiner \"its\" agrees in number with the singular possessive noun \"exclamation's,\" reinforcing the idea that one brief utterance captures a profound principle.</p><p>Choice A is incorrect because the context requires the singular possessive noun \"exclamation's\" and the singular possessive determiner \"its,\" not the plural noun \"exclamations\" and the plural possessive determiner \"their.\" Choice C is incorrect because the context requires the singular possessive noun \"exclamation's,\" not the plural possessive noun \"exclamations'.\" Choice D is incorrect because the context requires the singular possessive determiner \"its,\" not the plural possessive determiner \"their.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

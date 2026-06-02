@@ -1,0 +1,25 @@
+{
+  "questionId": "1d08c7ee-s1",
+  "originalId": "1d08c7ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A2.T3.medium",
+  "stimulus": "<p>Award-winning composer Tania Vasquez has worked for decades as both a touring jazz pianist and a writer of orchestral scores for symphonic concert halls. In an essay about Vasquez's recent compositions, a student claims that Vasquez blends her two areas of expertise by importing improvisational practices drawn from jazz performance into her work as a composer of fully notated orchestral music.</p>",
+  "stem": "<p>Which quotation from a music critic best supports the student's claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“Vasquez first attracted attention as a soloist at after-hours clubs in New Orleans during the 1990s before eventually enrolling in a graduate program in composition at a New England conservatory.”</p>"},
+    {"id": "b", "content": "<p>“In several of her orchestral scores, Vasquez writes out passages that mimic the rhythmic give-and-take of a jazz trio reacting to one another in real time, instructing the strings to copy phrasings she herself improvised at the piano during rehearsal.”</p>"},
+    {"id": "c", "content": "<p>“At her jazz club appearances, Vasquez has increasingly opened her sets with miniature suites whose harmonic structures borrow openly from the orchestral works of Ravel and Stravinsky.”</p>"},
+    {"id": "d", "content": "<p>“The protagonist of Vasquez's recent chamber opera is a frustrated young pianist who longs to leave the conservatory behind and spend her evenings sitting in with a touring jazz quintet.”</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The example of Vasquez writing out, in her orchestral scores, passages that mimic real-time jazz interaction—and basing those notated passages on phrasings she herself improvised at the piano—directly shows her importing improvisational practices from jazz into her work as a composer of notated orchestral music.</p><p>Choice A is incorrect because it merely describes the chronology of Vasquez's early career as a jazz soloist and her later move to a composition program; it does not show jazz practices being carried into her orchestral writing. Choice C is incorrect because it shows influence flowing the other way: orchestral works shaping her jazz performances, not jazz practices entering her composed orchestral work. Choice D is incorrect because it describes the storyline of a character in one of Vasquez's works, not how Vasquez herself composes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

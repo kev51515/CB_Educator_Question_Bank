@@ -1,0 +1,39 @@
+{
+  "questionId": "f5929f7a-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "f5929f7a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = −(1/6)x</p><p>y = (1/4)x</p><p>The solution to the given system of equations is (x, y). What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>−4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Setting the right-hand sides equal: −(1/6)x = (1/4)x. Multiplying by 12: −2x = 3x, so −5x = 0 and x = 0. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

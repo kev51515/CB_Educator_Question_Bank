@@ -1,0 +1,39 @@
+{
+  "questionId": "04b985e6-s1",
+  "originalId": "04b985e6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The kinetic energy, in joules, of an object with mass 5 kilograms traveling at a speed of <em>v</em> meters per second is given by the function <em>K</em>, where <math><mi>K</mi><mfenced><mi>v</mi></mfenced><mo>=</mo><mfrac><mn>5</mn><mn>2</mn></mfrac><msup><mi>v</mi><mn>2</mn></msup></math>. Which of the following is the best interpretation of <math><mi>K</mi><mfenced><mn>20</mn></mfenced><mo>=</mo><mn>1000</mn></math> in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The object traveling at 200 meters per second has a kinetic energy of 1,000 joules.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The object traveling at 20 meters per second has a kinetic energy of 1,000 joules.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The object traveling at 1,000 meters per second has a kinetic energy of 20 joules.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The object traveling at 400 meters per second has a kinetic energy of 20 joules.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. In the function <math><mi>K</mi><mfenced><mi>v</mi></mfenced></math>, <em>v</em> represents the speed in meters per second and the output is the kinetic energy in joules. Therefore <math><mi>K</mi><mfenced><mn>20</mn></mfenced><mo>=</mo><mn>1000</mn></math> means that at a speed of 20 m/s the kinetic energy is 1,000 joules.</p><p>Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A2.T1.easy"
+}

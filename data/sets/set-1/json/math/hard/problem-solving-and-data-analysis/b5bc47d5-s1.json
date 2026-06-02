@@ -1,0 +1,39 @@
+{
+  "questionId": "b5bc47d5-s1",
+  "originalId": "b5bc47d5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a scale model of a museum, a length of 1 inch is equivalent to a length of 23/4 feet in the actual museum. If a length in the actual museum measures y feet, which expression represents the corresponding length, in inches, in the model in terms of y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>23y / 3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4y / 23</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4y / (23 \u00d7 12)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>23y / (4 \u00d7 12)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Since 1 inch in the model = 23/4 feet in the actual museum, the conversion factor is (1 inch)/(23/4 feet) = 4/23 inches per foot. So y feet corresponds to y \u00d7 (4/23) = 4y/23 inches in the model. Choice (b) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.hard"
+}

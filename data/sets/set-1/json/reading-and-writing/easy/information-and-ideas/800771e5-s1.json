@@ -1,0 +1,39 @@
+{
+  "questionId": "800771e5-s1",
+  "originalId": "800771e5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Line graph: Total Conference Paper Submissions by Topic, 2017&ndash;2020. Vertical: Number of submissions, 0&ndash;400. Horizontal: 2017, 2018, 2019, 2020.]</p><ul><li>Computer science: 2017 ~180, 2018 ~210, 2019 ~280, 2020 ~340</li><li>Education: 2017 ~150, 2018 ~140, 2019 ~155, 2020 ~150</li><li>Psychology: 2017 ~120, 2018 ~135, 2019 ~145, 2020 ~160</li></ul><p>A conference coordinator wrote, &ldquo;<u>Submissions to one topic grew dramatically during this period, while another remained nearly flat.</u>&rdquo;</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Computer science submissions nearly doubled from 2017 (about 180) to 2020 (about 340), while education submissions stayed near 150 throughout the period.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In 2018, psychology submissions were higher than education submissions.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In 2020, the total number of computer science submissions was greater than that of psychology submissions.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The lowest number of psychology submissions in a year was about 120 in 2017.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because it shows one topic (computer science) growing dramatically (~180 to ~340) and another (education) staying nearly flat (~150 throughout), directly supporting both parts of the claim.</p><p>Choice B is incorrect: it compares two topics in a single year, not growth over time. Choice C is incorrect: it again compares topics in a single year. Choice D is incorrect: it gives only the minimum of one topic, not contrast between dramatic growth and flatness.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T9.easy"
+}

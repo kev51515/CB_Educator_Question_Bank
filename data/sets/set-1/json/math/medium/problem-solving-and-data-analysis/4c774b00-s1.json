@@ -1,0 +1,39 @@
+{
+  "questionId": "4c774b00-s1",
+  "originalId": "4c774b00",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table below shows the distribution of ages, in years, of <math><mn>20</mn></math> participants in a community workshop.</p><table border=\"1\" style=\"margin:auto;border-collapse:collapse;\"><thead><tr><th>Age</th><th>Frequency</th></tr></thead><tbody><tr><td>30</td><td>1</td></tr><tr><td>31</td><td>1</td></tr><tr><td>32</td><td>2</td></tr><tr><td>33</td><td>3</td></tr><tr><td>34</td><td>5</td></tr><tr><td>35</td><td>8</td></tr></tbody></table><p>Which of the following gives the correct order of the mean, median, and mode of the ages?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>mode &lt; median &lt; mean</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>mode &lt; mean &lt; median</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>mean &lt; median &lt; mode</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>median &lt; mode &lt; mean</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The mode is the value with the highest frequency: 35. The median is the average of the 10th and 11th values when ordered; both are 34, so the median is 34. The mean is (30+31+32+32+33+33+33+34+34+34+34+34+35+35+35+35+35+35+35+35)/20 = 674/20 = 33.7. So mean (33.7) &lt; median (34) &lt; mode (35).</p><p>The other choices misorder these three measures.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.medium"
+}

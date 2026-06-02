@@ -1,0 +1,25 @@
+{
+  "questionId": "9fe7315b-s1",
+  "originalId": "9fe7315b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Few moviegoers have heard James Horner's name. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many have heard his work in the blockbuster film <em>Titanic</em>. As the film's composer, Horner created the haunting orchestral score and co-wrote the theme song that became a global hit.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>Similarly,</p>"},
+    {"id": "c", "content": "<p>Therefore,</p>"},
+    {"id": "d", "content": "<p>For example,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"However\" logically signals that the claim in this sentence&mdash;that many moviegoers have heard Horner's work in <em>Titanic</em>&mdash;is true despite the previous information that few have heard his name.</p><p>Choice B is incorrect because \"similarly\" illogically signals that the two claims are similar, when in fact they contrast. Choice C is incorrect because \"therefore\" illogically signals consequence; the second sentence contrasts with rather than results from the first. Choice D is incorrect because \"for example\" illogically signals exemplification, when the second sentence offers a counterpoint.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

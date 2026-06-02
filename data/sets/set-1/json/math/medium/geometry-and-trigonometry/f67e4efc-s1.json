@@ -1,0 +1,39 @@
+{
+  "questionId": "f67e4efc-s1",
+  "originalId": "f67e4efc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right circular cylinder has a volume of 64&pi;. If the height of the cylinder is 4, what is the radius of the cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>16</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The volume of a right circular cylinder with radius r and height h is V = &pi;r<sup>2</sup>h. Substituting V = 64&pi; and h = 4 yields 64&pi; = &pi;r<sup>2</sup>(4), so r<sup>2</sup> = 16 and r = 4. Choice A is half the answer; Choice C is twice the radius (diameter); Choice D is r<sup>2</sup>.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T2.medium"
+}

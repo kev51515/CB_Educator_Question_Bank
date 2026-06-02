@@ -1,0 +1,346 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Inference from sample statistics and margin of error ",
+  "originals_count": 24,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Scale sample to population estimate",
+      "description": "Use a sample proportion, percentage, or mean to estimate a count or total for the larger population. Requires multiplicative scaling (proportion or mean times population/total size), with no use of a margin of error to build an interval.",
+      "boundary_with_other_aspects": "A1 produces a single point estimate (or chooses a single value that matches a scale-up calculation). A2 produces a plausible-value interval using a stated margin of error. A1 questions never give a margin of error; A2 questions always do.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Sample percent/proportion to population count",
+          "description": "Stem gives a population size and a sample percent or fraction with a certain attribute; asks for the estimated number in the full population. Solution = (sample proportion) x (population size).",
+          "core_skill_demand": "Apply proportional reasoning: convert a sample percent or count-ratio into a proportion and multiply by the total population to produce a count estimate.",
+          "example_originals": ["90eed2e5", "97631565", "affb2315", "e7d9649f", "89f8d08a", "916ffe9b"],
+          "frequency": { "easy": 4, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "round-friendly numbers (e.g., 30% of 50; 80% of 400; 20% of 55)",
+                "single multiplication step",
+                "population size is small or a clean multiple",
+                "answer choices clearly separate sample count vs. scaled-up count"
+              ],
+              "example_stem": "A city has 50 council members. 6 of 20 polled supported a bill. Estimate how many of the 50 support it.",
+              "example_ids": ["90eed2e5", "97631565", "affb2315"]
+            },
+            "medium": {
+              "characteristics": [
+                "non-round population (e.g., 14,878) or non-round sample fraction (e.g., 7/50)",
+                "answer choices are 'best estimate' ranges or numerical values requiring rounding",
+                "distractors include sample-only count and 'must have' vs 'best estimate' wording trap"
+              ],
+              "example_stem": "Of 80 random receipts, 20 showed fruit purchase. Of 1,500 customers, best estimate of fruit-buyers?",
+              "example_ids": ["e7d9649f", "89f8d08a"]
+            },
+            "hard": {
+              "characteristics": [
+                "answer requires a follow-up operation after the scale-up (e.g., difference between two scaled estimates, complement of an attribute)",
+                "non-trivial ratio (e.g., 483/803) requiring computation",
+                "distractors include sample-level difference and raw scaled count without follow-up"
+              ],
+              "example_stem": "483 of 803 polled voters chose A; the rest chose B. If 6,424 vote, by how many votes does A win?",
+              "example_ids": ["916ffe9b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "explicit random sample drawn from a stated total population",
+              "single scale-up multiplication is the core operation",
+              "no margin of error appears in the stem"
+            ],
+            "must_vary": [
+              "context (voters, students, fish, products, etc.)",
+              "whether the sample proportion is given as percent, decimal, or count/count",
+              "size of population and sample"
+            ],
+            "common_bugs": [
+              "adding a margin of error and turning this into an A2 interval question (categorical drift)",
+              "using 'must equal' wording instead of 'best estimate' (changes correct answer set)",
+              "answer choice for sample-count and scaled-count too close together, making distractor trivial"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Sample mean to population total",
+          "description": "Sample gives a mean per unit (e.g., trees per acre, items per box) over a small random sample; asks for an estimate of the total or for the population mean times population size.",
+          "core_skill_demand": "Compute the sample mean from a list, then multiply by the population size (or compare to a target range).",
+          "example_originals": ["f4b3672a", "9ee22c16"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "small list of integer sample values that average to an integer",
+                "answer choices are wide non-overlapping ranges",
+                "distractors built from using min, median, or max of sample instead of mean"
+              ],
+              "example_stem": "Sample of 5 acres has tree counts 51, 59, 45, 52, 73. Forest is 253 acres. Which range contains best estimate?",
+              "example_ids": ["f4b3672a"]
+            },
+            "medium": {
+              "characteristics": [
+                "requires reading a two-way table to obtain the sample count or mean",
+                "free-response (SPR) rather than MCQ, no distractors to anchor on",
+                "more than one row/column must be combined"
+              ],
+              "example_stem": "Table shows 400 polled by sex; estimate voters for Candidate A in a town of 6,000.",
+              "example_ids": ["9ee22c16"]
+            },
+            "hard": {
+              "characteristics": [
+                "multi-step scaling: per-class mean times classes times students-per-class, with a 'fewer than / at least' complement",
+                "embedded percentage of a non-divisible class size (e.g., 34.6% of 26 → must round to integer count)"
+              ],
+              "example_stem": "34.6% of 26 students have at least 2 siblings; 1,800 classes of average size 26; estimate students with fewer than 2 siblings.",
+              "example_ids": ["9ba3e283"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "sample-level statistic must be computed (mean of a list, or via a table), not given outright",
+              "population size is explicitly stated"
+            ],
+            "must_vary": [
+              "context (trees/acres, voters/town, students/classes, etc.)",
+              "presentation: explicit list vs. two-way table",
+              "whether attribute or its complement is asked"
+            ],
+            "common_bugs": [
+              "simplifying the list so the mean is already given (collapses to T1)",
+              "omitting distractors built on min/median/max (loses Easy lever)",
+              "forgetting the rounding step in hard variant"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Interpret margin of error",
+      "description": "Given an estimated statistic and an associated margin of error, choose the conclusion that correctly describes the plausible-value interval for the population parameter. The cognitive operation is to add and subtract the margin to the estimate and select the conclusion phrased as 'plausible values are between (estimate - MoE) and (estimate + MoE)'.",
+      "boundary_with_other_aspects": "A2 always provides an explicit margin of error and centers on building or interpreting the (estimate ± MoE) interval. A1 has no margin of error and produces a point estimate. A3 turns on the *population/subgroup* the claim applies to, not on the interval calculation.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Build plausible-value interval for parameter",
+          "description": "Stem gives an estimated population parameter (proportion, percent, or mean) and a margin of error, and asks for the best interpretation. Correct choice is 'plausible values are between (estimate - MoE) and (estimate + MoE).'",
+          "core_skill_demand": "Identify that the population parameter (not individual values, not the sample) lies in [estimate - MoE, estimate + MoE], and reject distractors that (a) make the parameter exact, (b) claim individuals lie in the interval, or (c) place the parameter outside the interval.",
+          "example_originals": ["0108ac2d", "2c76bcce", "6a305cd0", "8173f32b", "1e562f24", "4096a482", "9bedc4a0", "a2162ea1", "e03f3477", "f8f79e11"],
+          "frequency": { "easy": 4, "medium": 6, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "integer or one-decimal estimate and MoE (e.g., 37 ± 3; 38% ± 5.5%)",
+                "bound arithmetic is one-step mental math",
+                "wrong choices are obviously different (less-than vs greater-than vs interval)",
+                "exactly one option states the correct interval"
+              ],
+              "example_stem": "Random sample mean is 37 with margin of error 3. Best conclusion about population mean?",
+              "example_ids": ["0108ac2d", "6a305cd0", "8173f32b", "2c76bcce"]
+            },
+            "medium": {
+              "characteristics": [
+                "two-decimal or odd MoE (e.g., ± 3.41%, ± 3.62%, ± 0.19, ± 0.04)",
+                "distractors swap 'mean of population' with 'every value', 'sample', or 'not possible outside'",
+                "one distractor uses 'not possible' / 'every value' to test conceptual scope, not arithmetic"
+              ],
+              "example_stem": "Estimated proportion 0.49, MoE 0.04. Most appropriate conclusion about population proportion?",
+              "example_ids": ["1e562f24", "4096a482", "9bedc4a0", "a2162ea1", "e03f3477", "f8f79e11"]
+            },
+            "hard": {
+              "characteristics": [
+                "interval is implicit; student must evaluate a specific outside-interval claim ('is 35% plausible?')",
+                "answer is phrased as 'it is doubtful' / 'unlikely' rather than the literal bounds",
+                "distractors include certainty claims ('not possible', 'exactly')"
+              ],
+              "example_stem": "Estimate 30% with MoE 3%; is the claim that 35% are heavy texters correct? Pick the appropriate conclusion.",
+              "example_ids": ["85939da5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "explicit margin of error in stem",
+              "exactly one option states the correct (estimate - MoE, estimate + MoE) bounds for the population parameter",
+              "at least one distractor confuses sample with population, individual with mean, or 'not possible outside' with 'less plausible outside'"
+            ],
+            "must_vary": [
+              "parameter type (mean, percent, proportion) and units",
+              "magnitude and decimal precision of estimate and MoE",
+              "real-world context"
+            ],
+            "common_bugs": [
+              "cloning with MoE that produces a negative or impossible lower bound (e.g., 5% ± 8%)",
+              "writing all distractors as arithmetic variants, removing the conceptual 'every value / sample / not possible' distractor and making the question trivially mechanical",
+              "swapping 'mean' for 'value' in the correct option, accidentally flipping the answer"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Apply MoE to scaled population count",
+          "description": "Stem gives a percent estimate with a margin of error AND a total population, asks for a plausible total count, or for an inequality on the unknown count r. Requires both scaling (A1-like) and interval-building (T3-like).",
+          "core_skill_demand": "Compute (estimate - MoE) x N and (estimate + MoE) x N to bracket the count, then pick the option whose number or inequality falls in the resulting count interval.",
+          "example_originals": ["fc46af57", "f04d40b2"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "round percent and MoE; population is a clean multiple",
+                "only one option falls in the (low, high) count range; others are far off"
+              ],
+              "example_stem": "10,000 beads; 15% ± 2% estimated red. Which is plausible for actual red count r?",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "answer choices are concrete count values; distractors include sample-only counts and totals outside the scaled interval",
+                "MoE is a non-round percent (e.g., 3%) on a small or large population"
+              ],
+              "example_stem": "Population 50,000; 35% support with MoE 3%. Which is a plausible total supporting count?",
+              "example_ids": ["fc46af57", "f04d40b2"]
+            },
+            "hard": {
+              "characteristics": [
+                "answers expressed as inequalities on a variable r, not as a single integer",
+                "uses both lower and upper bounds and asks which compound inequality is most plausible"
+              ],
+              "example_stem": "If r is actual red bead count and 15% ± 2% of 10,000 are red, which inequality is most plausible?",
+              "example_ids": ["fc46af57"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "both a margin of error and a total population size in the stem",
+              "answer options refer to counts (or inequalities on counts), not percentages",
+              "the correct option lies inside [(p - MoE) x N, (p + MoE) x N]"
+            ],
+            "must_vary": [
+              "real-world context",
+              "whether choices are inequalities on a variable or numerical counts"
+            ],
+            "common_bugs": [
+              "scaling only the estimate and not the MoE (turns problem into A1)",
+              "producing answer choices where two options both fall inside the bracket",
+              "off-by-one in computing (p - MoE) x N for non-round numbers"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Reason about cause of MoE difference",
+          "description": "Two samples drawn from the same population yield different margins of error; stem asks the reason. Tests conceptual knowledge that smaller sample size yields larger margin of error.",
+          "core_skill_demand": "Recall that margin of error decreases as sample size increases (and is essentially independent of the sample percent/response distribution within typical SAT framing); reject distractors based on response rate or favorability.",
+          "example_originals": ["308084c5"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "sample sizes are clearly stated and very different",
+                "only one option mentions sample size"
+              ],
+              "example_stem": "Sample A's MoE is larger than B's. Why? (Choice: A had smaller sample size.)",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "sample sizes given in a table, must be read first",
+                "distractors include unrecorded-vote count and favorability percent"
+              ],
+              "example_stem": "Two random samples for the same proposition; MoE for A > MoE for B. Best reason?",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "sample-size comparison hidden in a multi-column table",
+                "multiple plausible-sounding distractors invoking response rate, favorability, or non-response",
+                "requires distinguishing factors that affect MoE from factors that do not"
+              ],
+              "example_stem": "Two random samples, same method; why is MoE_A > MoE_B? (Correct: smaller sample size.)",
+              "example_ids": ["308084c5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "two samples from the same population with the same MoE method",
+              "exactly one option attributes the difference to sample size",
+              "distractors include at least one plausible-but-incorrect cause (response rate, favorability, etc.)"
+            ],
+            "must_vary": [
+              "context (votes, products, survey responses)",
+              "direction (which sample has larger MoE)"
+            ],
+            "common_bugs": [
+              "making the sample-size answer trivially obvious by stating sizes directly in stem instead of in a table",
+              "writing distractors that are factually false rather than plausible-but-wrong, removing the discrimination"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Identify valid scope of inference",
+      "description": "Given a sample drawn from a specific subgroup, identify the population to which the conclusion can validly extend. The cognitive operation is recognizing that the sample only supports inference about the subgroup it was drawn from, not the entire broader population.",
+      "boundary_with_other_aspects": "A3 turns on *which population* a conclusion applies to. A1/A2 take the population as given and focus on arithmetic or interval interpretation. A clone that drops the subgroup framing and reverts to a generic-population stem is a categorical drift to A2/T3.",
+      "types": [
+        {
+          "id": "T6",
+          "name": "Restrict conclusion to sampled subgroup",
+          "description": "Sample is drawn from a subgroup (e.g., one species of fish, one club) within a larger population. Stem asks which conclusion is best supported; correct answer restricts the conclusion to the subgroup, while distractors over-generalize to the whole population.",
+          "core_skill_demand": "Distinguish the population actually sampled (subgroup) from a larger population that contains it; recognize that sample statistics support inference only about the sampled subgroup.",
+          "example_originals": ["53d97af5"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "subgroup is obviously different from the population",
+                "only one option restricts to the subgroup",
+                "distractors are clearly broader claims"
+              ],
+              "example_stem": "Sample of largemouth bass shows 30% over 2 lbs. Best conclusion about pond fish?",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "two distractors over-generalize: one to all fish proportion, one to all fish average",
+                "one distractor restates the same fact about the sample without inference language",
+                "subgroup is named in the stem only once"
+              ],
+              "example_stem": "Sample of 150 largemouth bass; 30% over 2 lb. Best supported conclusion?",
+              "example_ids": ["53d97af5"]
+            },
+            "hard": {
+              "characteristics": [
+                "subgroup is one of several mentioned in the stem; reader must track which one was actually sampled",
+                "distractors involve mixing two subgroups or projecting onto an unsampled subgroup"
+              ],
+              "example_stem": "Sample drawn from largemouth bass only; which inference about other species or all fish is supported?",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "sample is explicitly drawn from a named subgroup of a larger population",
+              "correct answer restricts inference to the subgroup",
+              "at least one distractor over-generalizes from the subgroup to the whole population"
+            ],
+            "must_vary": [
+              "context (species, club, region, store branch)",
+              "the attribute measured"
+            ],
+            "common_bugs": [
+              "removing the subgroup-vs-whole distinction; clone becomes a simple proportion question (drifts to A1/T1)",
+              "writing the correct answer with weaker phrasing than at least one distractor, making the over-generalization tempting"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "All originals frame a 'random sample' explicitly. Two cognitive families dominate: scale-up (A1, no MoE) and interval-interpretation (A2, MoE given). Difficulty within A2/T3 is driven mostly by decimal precision of estimate and MoE plus the conceptual subtlety of distractors (sample vs population, mean vs every value, plausible vs not-possible). Hard A2 items shift from 'compute the bounds' to 'evaluate a specific claim against the implied bounds'. T6 (scope) is rare but distinguished by the subgroup framing."
+}

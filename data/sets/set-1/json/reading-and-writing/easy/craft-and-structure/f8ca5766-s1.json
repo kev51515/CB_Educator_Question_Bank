@@ -1,0 +1,25 @@
+{
+  "questionId": "f8ca5766-s1",
+  "originalId": "f8ca5766",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Trinidadian American performer Lin-Manuel Miranda's <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his two passions&mdash;American history and hip-hop music&mdash;culminates in his 2015 musical, <em>Hamilton</em>, which inventively pairs the founding-era story of Alexander Hamilton with a rap-driven score.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>distance from</p>"},
+    {"id": "b", "content": "<p>impatience with</p>"},
+    {"id": "c", "content": "<p>boredom with</p>"},
+    {"id": "d", "content": "<p>devotion to</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because \"devotion to\" means deep commitment, which fits the text's framing of Miranda's two passions culminating in a work that inventively unites them. Choice A is incorrect because \"distance from\" implies separation; Miranda actively engaged both subjects. Choice B is incorrect because \"impatience with\" implies frustration; the text indicates enduring interest. Choice C is incorrect because \"boredom with\" contradicts the word \"passions\" used in the text.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

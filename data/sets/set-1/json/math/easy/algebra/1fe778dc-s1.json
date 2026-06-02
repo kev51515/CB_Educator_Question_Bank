@@ -1,0 +1,39 @@
+{
+  "questionId": "1fe778dc-s1",
+  "originalId": "1fe778dc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line in the <i>xy</i>-plane has a slope of &minus;&frac14; and passes through the point (0, 5). Which equation represents this line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = &minus;&frac14;<i>x</i> + 5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = &frac14;<i>x</i> + 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = &minus;&frac14;<i>x</i> &minus; 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = &frac14;<i>x</i> &minus; 5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Using <i>y</i> = <i>mx</i> + <i>b</i> with <i>m</i> = &minus;&frac14; and <i>b</i> = 5 gives <i>y</i> = &minus;&frac14;<i>x</i> + 5.</p><p>Choices B, C, and D are incorrect because they use the wrong sign for the slope, the <i>y</i>-intercept, or both.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T5.easy"
+}

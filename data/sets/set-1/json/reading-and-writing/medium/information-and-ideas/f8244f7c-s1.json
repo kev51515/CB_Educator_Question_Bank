@@ -1,0 +1,25 @@
+{
+  "questionId": "f8244f7c-s1",
+  "originalId": "f8244f7c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">East African Sunbird Mean Wing Length and Habitat Elevation</p></caption><thead><tr><th>Species</th><th>Mean wing length (mm)</th><th>Mean habitat elevation (m)</th><th>Mean annual rainfall (mm)</th></tr></thead><tbody><tr><th>Olive sunbird</th><td>58.2</td><td>1850</td><td>1420</td></tr><tr><th>Bronze sunbird</th><td>62.7</td><td>1620</td><td>1310</td></tr><tr><th>Tacazze sunbird</th><td>69.4</td><td>2980</td><td>980</td></tr><tr><th>Malachite sunbird</th><td>74.1</td><td>3240</td><td>820</td></tr><tr><th>Eastern double-collared sunbird</th><td>52.5</td><td>2150</td><td>1180</td></tr></tbody></table></figure></p>\n<p>It has been hypothesized that since longer wings reduce the energetic cost of sustained hovering flight, sunbird wing length should increase with the abundance of nectar-producing flowers in a habitat, which itself tracks rainfall. To evaluate this hypothesis for a 2023 study, ornithologist Naliaka Wanjiru and colleagues collected data on mean wing length of East African sunbirds along with climate and elevation conditions of the birds&rsquo; native habitats. Based on their data, Wanjiru and colleagues concluded that the hypothesis was not fully supported.</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to support Wanjiru and colleagues&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Although the Tacazze sunbird has the third-largest mean wing length of the species in the table, its habitat has lower mean annual rainfall than the habitats of two species with smaller wings.</p>"},
+    {"id": "b", "content": "<p>Of the species in the table, the malachite sunbird has the largest mean wing length but the habitat with the lowest mean annual rainfall, while the bronze sunbird has the second-smallest mean wing length but the habitat with the second-highest mean annual rainfall.</p>"},
+    {"id": "c", "content": "<p>Of the species in the table, the eastern double-collared sunbird has the smallest mean wing length and the habitat with the second-highest mean annual rainfall, while the olive sunbird has a mid-range wing length and the highest mean annual rainfall.</p>"},
+    {"id": "d", "content": "<p>Although the bronze sunbird has the second-smallest mean wing length of the birds in the table, its habitat has one of the lower mean elevations and a moderate mean annual rainfall.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most effectively uses data from the table to support Wanjiru and colleagues&rsquo; conclusion that the hypothesized positive relationship between wing length and rainfall (a proxy for nectar abundance) is not fully supported. The malachite sunbird has the largest mean wing length (74.1 mm), yet its habitat has the lowest mean annual rainfall (820 mm); the bronze sunbird has the second-smallest mean wing length (62.7 mm), yet its habitat has the second-highest mean annual rainfall (1310 mm). Both pairings reverse the predicted positive relationship, supporting the researchers&rsquo; conclusion.</p><p>Choice A is incorrect because pointing out that the Tacazze sunbird&rsquo;s habitat has lower rainfall than habitats of two smaller-winged species does not by itself reverse the hypothesized trend across the dataset. Choice C is incorrect because the data described broadly align with the hypothesis (a smaller-winged species in a higher-rainfall habitat and a mid-sized-winged species in the highest-rainfall habitat are consistent with, not counter to, the predicted relationship). Choice D is incorrect because it focuses on elevation rather than rainfall and does not characterize a relationship that contradicts the hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

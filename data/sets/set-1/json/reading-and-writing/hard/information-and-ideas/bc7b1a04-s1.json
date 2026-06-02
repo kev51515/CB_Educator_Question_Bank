@@ -1,0 +1,25 @@
+{
+  "questionId": "bc7b1a04-s1",
+  "originalId": "bc7b1a04",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Three Studies&rsquo; Estimated Mean Surface Pressure of Exoplanet Kepler-1649c</p></caption><thead><tr><th>Researchers</th><th>Study year</th><th>Estimated surface pressure</th></tr></thead><tbody><tr><td>Sato and Pereira</td><td>2018</td><td>0.62 atm</td></tr><tr><td>Adekunle and colleagues</td><td>2023</td><td>0.94 atm</td></tr><tr><td>Vrbanic and colleagues</td><td>2014</td><td>0.41 atm</td></tr></tbody></table></figure><p>In 2023, Tunde Adekunle and colleagues produced the most refined estimate yet of the mean atmospheric surface pressure of the exoplanet Kepler-1649c. Before the 2023 study, all earlier estimates of the planet&rsquo;s surface pressure were within the range required for a stable nitrogen-dominated atmosphere, but according to an analysis by Mei-Lin Chao and colleagues, the estimated pressure from the 2023 study is too high for a nitrogen-dominated atmosphere to remain stable. Therefore, if Chao and colleagues are correct, the maximum mean surface pressure for Kepler-1649c at which a nitrogen-dominated atmosphere can remain stable is likely ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>below 0.41 atm.</p>"},
+    {"id": "b", "content": "<p>above 0.41 atm but below 0.62 atm.</p>"},
+    {"id": "c", "content": "<p>above 0.62 atm but below 0.94 atm.</p>"},
+    {"id": "d", "content": "<p>above 0.94 atm.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct because the table shows that the 2018 estimate (0.62 atm) and the 2014 estimate (0.41 atm) were both within the range supporting a stable nitrogen-dominated atmosphere, while the 2023 estimate (0.94 atm) was the first to exceed that range. The maximum pressure that still supports stability must therefore lie above the highest pre-2023 value (0.62 atm) and below the 2023 value (0.94 atm). Choice A is incorrect because both 0.41 atm and 0.62 atm were within the stable range, so the threshold must be greater than 0.41 atm. Choice B is incorrect for the same reason: 0.62 atm was below the threshold, so the threshold must be higher than 0.62 atm. Choice D is incorrect because if a value of 0.94 atm is too high to support a stable atmosphere, any value above 0.94 atm would also be too high.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

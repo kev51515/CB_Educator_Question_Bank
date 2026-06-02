@@ -1,0 +1,25 @@
+{
+  "questionId": "e6f2dba6-s1",
+  "originalId": "e6f2dba6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>According to the older CMY (cyan-magenta-yellow) printing model, red is produced by overlapping yellow and magenta inks. However, red <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> generated as a primary color in modern RGB digital displays.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>having been</p>"},
+    {"id": "b", "content": "<p>being</p>"},
+    {"id": "c", "content": "<p>to be</p>"},
+    {"id": "d", "content": "<p>is</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verb forms within a sentence. A main clause requires a finite (tensed) verb to perform the action of the subject (\"red\"), and this choice supplies the present tense verb \"is generated\" to indicate that red is generated as a primary color in modern RGB displays.</p><p>Choice A is incorrect because the nonfinite participle \"having been generated\" doesn't supply the main clause with a finite verb. Choice B is incorrect because the nonfinite participle \"being generated\" doesn't supply the main clause with a finite verb. Choice C is incorrect because the nonfinite to-infinitive \"to be generated\" doesn't supply the main clause with a finite verb.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

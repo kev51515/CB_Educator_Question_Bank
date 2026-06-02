@@ -1,0 +1,25 @@
+{
+  "questionId": "c7e85c0a-s1",
+  "originalId": "c7e85c0a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The wooden barrels used to ship grain across the American frontier in the mid-1800s were heavy and difficult to seal. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> because they were the only large containers strong enough to survive long wagon journeys, these barrels remained the standard. That all changed in 1879, when inventor Robert Gair developed a machine to mass-produce sturdy, lightweight cardboard boxes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Thus,</p>"},
+    {"id": "c", "content": "<p>In other words,</p>"},
+    {"id": "d", "content": "<p>However,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"However\" logically signals that the information in this sentence&mdash;that wooden barrels remained the standard&mdash;contrasts with the previous claim that these barrels were heavy and difficult to seal.</p><p>Choice A is incorrect because \"for instance\" illogically signals exemplification. Choice B is incorrect because \"thus\" illogically signals consequence; the second sentence does not result from the first. Choice D \"In other words\" illogically signals a restatement.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

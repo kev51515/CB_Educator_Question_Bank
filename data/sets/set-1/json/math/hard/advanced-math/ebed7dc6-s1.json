@@ -1,0 +1,39 @@
+{
+  "questionId": "ebed7dc6-s1",
+  "originalId": "ebed7dc6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A concert hall has seats for 2,500 people. Tickets to attend a performance at the hall currently cost $6.00. For each $1.00 increase to the ticket price, 125 fewer tickets will be sold. This situation can be modeled by the equation <i>y</i> = &minus;125<i>x</i>&sup2; + 1,750<i>x</i> + 15,000, where <i>x</i> represents the increase in ticket price, in dollars, and <i>y</i> represents the total revenue, in dollars. According to this model, what value of <i>x</i> produces the maximum total revenue?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>17</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The parabola <i>y</i> = &minus;125<i>x</i>&sup2; + 1,750<i>x</i> + 15,000 opens downward, so it attains its maximum at its vertex. The vertex occurs at <i>x</i> = &minus;<i>b</i>/(2<i>a</i>) = &minus;1,750/(2 &middot; &minus;125) = 7.</p><p>Choice B is the current ticket price. Choice C doubles the correct value. Choice D is the sum of 7 and 10.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

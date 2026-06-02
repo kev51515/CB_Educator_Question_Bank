@@ -1,0 +1,39 @@
+{
+  "questionId": "159ef46d-s1",
+  "originalId": "159ef46d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Although nature writing is one of the most popular genres in the United States, academic critics have long treated it as marginal. Within nature writing, field guides receive the least scholarly respect of all, no matter how carefully they are written. This is especially true of guides devoted to backyard wildlife, whose accessibility and ecological detail are often dismissed as merely practical.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>In her 1962 book <em>Watching Songbirds</em>, naturalist Helen Carver transformed a regional field guide into something more. Her crisp, observational prose lifts the text beyond a mere catalog of species. <u>Yet despite its undeniable craft, Carver's book has received virtually no attention from literary critics.</u></p>",
+  "stem": "<p>Based on the two texts, how would the author of Text 1 most likely regard the situation presented in the underlined sentence in Text 2?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As surprising, because Carver's book combines literary craft with practical content that critics usually value.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As unfair, because Carver's book is more widely read than most academic nature studies.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>As problematic, because Carver's book contributed important new scientific findings.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As predictable, because critics tend to overlook nature writing in general and field guides in particular.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Text 1 explicitly says nature writing\u2014and field guides in particular\u2014are dismissed by academic critics, so the author would find the neglect of Carver's book entirely predictable.</p><p>Choices A, B, and C contradict or go beyond what Text 1 establishes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T3.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "6b49f5f1-s1",
+  "originalId": "6b49f5f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T2.medium",
+  "stimulus": "<p>In 1817, mathematician Sophie Germain submitted a memoir on elastic surfaces to the Paris Academy of Sciences. Germain claimed that her analysis extended an unpublished argument by the late Leonhard Euler. Several reviewers, including physicist Sim&eacute;on Poisson, were <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> later mathematicians have confirmed that Euler did indeed leave behind notes on the very surfaces Germain treated.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>doubtful</p>"},
+    {"id": "b", "content": "<p>doubtful, but</p>"},
+    {"id": "c", "content": "<p>doubtful but</p>"},
+    {"id": "d", "content": "<p>doubtful,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The sentence contains two independent clauses, each with a subject and a verb: &ldquo;Several reviewers...were doubtful&rdquo; and &ldquo;later mathematicians have confirmed....&rdquo; These clauses can be grammatically joined by a comma and the coordinating conjunction &ldquo;but.&rdquo;</p><p>Choice A is incorrect because it results in a run-on sentence. Choice C is incorrect because two independent clauses can&rsquo;t be joined by the coordinating conjunction &ldquo;but&rdquo; alone&mdash;a comma is also required. Choice D is incorrect because it results in a comma splice.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e17babed-s1",
+  "originalId": "e17babed",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows a line of best fit passing through the points (2, 3) and (8, 8). According to the line of best fit, what is the value of <em>y</em> when <em>x</em> = 6 (rounded to the nearest whole number)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Slope = (8 − 3)/(8 − 2) = 5/6 ≈ 0.833. Line: y − 3 = (5/6)(x − 2). At x = 6: y = 3 + (5/6)(4) = 3 + 20/6 ≈ 6.33, which rounds to 6.</p><p>Choices B, C, and D arise from common arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "2573d64b-s1",
+  "originalId": "2573d64b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Stretching across more than 900 pages in three volumes, <em>Voices from the Studio Floor</em>, assembled by Priya Banerjee and Lukas Volkov, is offered as the \"complete, unauthorized oral history\" of the long-running animated series <em>Starlight Atlas</em> as told by the people who made it. The book aspires to be exhaustive by, for instance, including testimony from animators, writers, and voice performers from every season produced to date. But while <em>Voices from the Studio Floor</em> is undeniably a singular and useful reference, it has a limitation common to oral histories: it lacks a unifying authorial perspective that might otherwise weave its many recollections into a coherent overall story.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Banerjee and Volkov had ambitious goals for their oral history of <em>Starlight Atlas</em>, but the finished book leaves out information about many important episodes in the series.</p>"},
+    {"id": "b", "content": "<p><em>Voices from the Studio Floor</em> represents a worthwhile attempt to chronicle <em>Starlight Atlas</em> thoroughly, but its chosen approach has an important limitation.</p>"},
+    {"id": "c", "content": "<p><em>Voices from the Studio Floor</em> contains more accounts from animators than from writers or voice performers involved with <em>Starlight Atlas</em>.</p>"},
+    {"id": "d", "content": "<p>The large quantity of material in <em>Voices from the Studio Floor</em> is surprising given that many people involved with <em>Starlight Atlas</em> declined to take part in the project.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it captures the whole-passage thesis. The text presents <em>Voices from the Studio Floor</em> as a \"singular and useful reference\" that aspires to be exhaustive but then highlights an inherent shortcoming of oral histories—the absence of a unifying authorial perspective. The main idea is that the book is a worthwhile, comprehensive attempt whose approach has an important limitation.</p><p>Choice A is incorrect because the text's criticism concerns the oral history form, not omitted episodes. Choice C is incorrect because the text says contributors come from \"every season\" rather than comparing types of contributors. Choice D is incorrect because the text suggests broad participation rather than a lack of it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "7a6d06bf-s1",
+  "originalId": "7a6d06bf",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A rectangle has an area of 168 square centimeters. The length of the rectangle is 2 centimeters less than 5 times the width of the rectangle. What is the width of the rectangle, in centimeters?</p>",
+  "answerOptions": null,
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>The correct answer is 6. Let w be the width. Then the length is 5w &minus; 2 and the area is w(5w &minus; 2) = 168, so 5w<sup>2</sup> &minus; 2w &minus; 168 = 0. Factoring: (5w + 28)(w &minus; 6) = 0. Rejecting the negative solution, w = 6.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b69d821d-s1",
+  "originalId": "b69d821d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Sara Teasdale&rsquo;s 1920 poem &ldquo;Winter Dusk.&rdquo;</p><blockquote class=\"dap_poemexcerpt\"><p>When the long day at last has drawn its breath<br/>And every bird is silent in the boughs,<br/>And shutters tighten on the windowed house,<br/>And the slow shadow climbs the eastern path<br/>To stand a moment by the orchard wall&mdash;<br/>Then I, who have walked far and seen the snow<br/>Lay its white hand upon the fields below,<br/>Come home to find the kettle, and the small<br/>Bright window of the kitchen, and the chair<br/>Pulled close, and the warm patient room aware.</p></blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>After a long, cold walk through a darkening winter landscape, the speaker is welcomed by the quiet comforts of home.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The speaker fears that the approaching winter night will leave the house feeling cold and unwelcoming.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The speaker reflects bitterly on the silence and emptiness of a winter day that has just ended.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The speaker is troubled by the snow that has covered the fields and worries that the orchard may suffer.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The poem describes the close of a winter day&mdash;silent birds, tightening shutters, snow on the fields&mdash;and then turns to the speaker arriving home to find the warm, attentive interior. The poem&rsquo;s main idea is the contrast between the cold outdoor walk and the welcoming comforts of home.</p><p>Choice B is incorrect because the speaker finds the house warm and inviting, not unwelcoming. Choice C is incorrect because the speaker doesn&rsquo;t express bitterness. Choice D is incorrect because the snow is part of the setting, not a source of worry for the speaker.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.hard"
+}

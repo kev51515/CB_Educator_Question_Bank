@@ -1,0 +1,39 @@
+{
+  "questionId": "b0a72bdc-s1",
+  "originalId": "b0a72bdc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the diameter of the circle in the xy-plane with equation (x + 2)<sup>2</sup> + (y \u2212 6)<sup>2</sup> = 49?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>49</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>98</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>An equation (x \u2212 h)<sup>2</sup> + (y \u2212 k)<sup>2</sup> = r<sup>2</sup> gives a circle of radius r. Here r<sup>2</sup> = 49, so r = 7 and the diameter is 2r = 14.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A1.T1.hard"
+}

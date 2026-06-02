@@ -1,0 +1,22 @@
+{
+  "questionId": "e53688cb-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.medium",
+  "originalId": "e53688cb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>x + 5y = 33</p><p>5y = 8</p><p>The solution to the given system of equations is (x, y). What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "25"
+  ],
+  "rationale": "<p>From the second equation, 5y = 8. Substituting 8 for 5y in the first equation: x + 8 = 33, so x = 25.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "975b0602-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "0f2933b9-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "ca50de52-s1", "templateId": "text-structure-and-purpose.A2.T6.hard", "verdict": "ok"},
+  {"id": "1f2d6173-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "2e744883-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "5f56fdec-s1", "templateId": "text-structure-and-purpose.A1.T1.hard", "verdict": "ok"},
+  {"id": "34d7bb25-s1", "templateId": "text-structure-and-purpose.A3.T7.hard", "verdict": "ok"},
+  {"id": "df45f0eb-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "ok"},
+  {"id": "93ce86d0-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "aa5897b8-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "ok"},
+  {"id": "c61a7c4a-s1", "templateId": "text-structure-and-purpose.A1.T2.hard", "verdict": "ok"},
+  {"id": "cf46f239-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "4ed09415-s1", "templateId": "text-structure-and-purpose.A3.T8.hard", "verdict": "ok"},
+  {"id": "e818241b-s1", "templateId": "text-structure-and-purpose.A2.T5.hard", "verdict": "ok"},
+  {"id": "3e6ad72d-s1", "templateId": "text-structure-and-purpose.A2.T3.hard", "verdict": "ok"},
+  {"id": "ac9a3a26-s1", "templateId": "text-structure-and-purpose.A2.T4.hard", "verdict": "ok"},
+  {"id": "03c9f327-s1", "templateId": "text-structure-and-purpose.A1.T1.hard", "verdict": "ok"},
+  {"id": "0a04cac5-s1", "templateId": "text-structure-and-purpose.A1.T1.hard", "verdict": "ok"},
+  {"id": "b4887dae-s1", "templateId": "text-structure-and-purpose.A3.T8.hard", "verdict": "type_drift", "detail": "T8 requires ≥3 distinct rhetorical moves; clone has only 2 moves (introduce Hopper + describe compiler work; Abbate's judgment is a coda to the second move, not a third distinct move). Correct answer B explicitly names just 2-3 vague steps. Closer to T7 two-move structure."},
+  {"id": "eaea6f8f-s1", "templateId": "text-structure-and-purpose.A2.T4.easy", "verdict": "ok"}
+]

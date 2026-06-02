@@ -1,0 +1,25 @@
+{
+  "questionId": "d5d3ea31-s1",
+  "originalId": "d5d3ea31",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p>&ldquo;The Story of an Hour&rdquo; is an 1894 short story by Kate Chopin. In the story, the protagonist, Louise Mallard, expresses contradictory feelings about her grief: <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which quotation from &ldquo;The Story of an Hour&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;There were patches of blue sky showing here and there through the clouds that had met and piled one above the other in the west facing her window.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;She knew that she would weep again when she saw the kind, tender hands folded in death; the face that had never looked save with love upon her, fixed and gray and dead. But she saw beyond that bitter moment a long procession of years to come that would belong to her absolutely.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;Her pulses beat fast, and the coursing blood warmed and relaxed every inch of her body.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;She did not hear the story as many women have heard the same, with a paralyzed inability to accept its significance.&rdquo;</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it directly captures Louise&rsquo;s contradictory feelings: she anticipates weeping in grief at the sight of her husband, yet also envisions a long stretch of years that will belong to her — sorrow alongside anticipation, the very contradiction the claim names. Choice A is incorrect because it describes the sky, not Louise&rsquo;s feelings. Choice C is incorrect because it describes a physical sensation without contradiction. Choice D is incorrect because it indicates only one feeling — her unhesitant acceptance of the news.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

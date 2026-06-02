@@ -1,0 +1,39 @@
+{
+  "questionId": "21d95d1d-s1",
+  "originalId": "21d95d1d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Marisol Escobar's contributions to twentieth-century sculpture are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: her many accomplishments include developing a distinctive style that blended folk traditions with pop art, exhibiting major works alongside Andy Warhol, and influencing later generations of Latina artists.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>extensive</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>controversial</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>universal</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>pragmatic</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the sentence lists several major contributions and supports the idea that her body of work is wide-ranging. \"Extensive\" captures this broad scope. Choice B is incorrect because the text does not describe disputes about her work. Choice C is incorrect because \"universal\" would mean applying to everyone, which the list of specific achievements does not support. Choice D is incorrect because \"pragmatic\" describes a practical approach, not the size of her contributions.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

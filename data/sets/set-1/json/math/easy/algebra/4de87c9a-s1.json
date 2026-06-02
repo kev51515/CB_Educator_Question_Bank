@@ -1,0 +1,39 @@
+{
+  "questionId": "4de87c9a-s1",
+  "originalId": "4de87c9a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mn>4</mn></math> less than <math><mn>7</mn></math> times a number <math><mi>y</mi></math> is equal to <math><mn>52</mn></math>. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>7</mn><mi>y</mi><mo>-</mo><mn>4</mn><mo>=</mo><mn>52</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>7</mn><mi>y</mi><mo>+</mo><mn>4</mn><mo>=</mo><mn>52</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>4</mn><mi>y</mi><mo>-</mo><mn>7</mn><mo>=</mo><mn>52</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>7</mn><mi>y</mi><mo>=</mo><mn>52</mn><mo>+</mo><mn>4</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. \"7 times a number <math><mi>y</mi></math>\" is <math><mn>7</mn><mi>y</mi></math>. \"4 less than\" means subtract 4, giving <math><mn>7</mn><mi>y</mi><mo>-</mo><mn>4</mn></math>. Setting this equal to 52 gives <math><mn>7</mn><mi>y</mi><mo>-</mo><mn>4</mn><mo>=</mo><mn>52</mn></math>.</p><p>Choice B switches the operation. Choice C swaps coefficients. Choice D rearranges incorrectly.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.easy"
+}

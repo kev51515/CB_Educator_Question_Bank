@@ -1,0 +1,39 @@
+{
+  "questionId": "8a47383f-s1",
+  "originalId": "8a47383f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The National Endowment Award was established to publicly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> outstanding jazz musicians in the United States. In 2018, the award was given to saxophonist Dorothy Donegan to celebrate her decades of contributions to American music.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>honor</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>amuse</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>obscure</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>confuse</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"honor\" matches the idea of giving an award to celebrate someone’s achievements. Choices B, C, and D describe negative or unrelated actions that wouldn’t fit a celebratory award.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

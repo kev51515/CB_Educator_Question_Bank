@@ -1,0 +1,25 @@
+{
+  "questionId": "8622320e-s1",
+  "originalId": "8622320e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>Earth's lightning—dramatic electrical discharges seen during storms—results, broadly speaking, from collisions inside thunderclouds. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> rising ice crystals and falling graupel pellets collide inside the cloud and exchange charge, leaving the upper cloud positively charged and the lower cloud negatively charged. These separated charges then build to the point of producing a lightning stroke between regions of the cloud or between the cloud and the ground.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Hence,</p>"},
+    {"id": "b", "content": "<p>Nevertheless,</p>"},
+    {"id": "c", "content": "<p>Similarly,</p>"},
+    {"id": "d", "content": "<p>Specifically,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Specifically\" logically signals that the information in this sentence—that ice crystals and graupel pellets exchange charge during collisions, leaving the cloud divided into positively and negatively charged regions—provides specific, precise details about how lightning results from collisions inside thunderclouds.</p><p>Choice A is incorrect because \"hence\" illogically signals that this information is a result of the general claim, when it actually elaborates on how lightning forms. Choice B is incorrect because \"nevertheless\" illogically signals a contrast with the previous claim, when the sentence in fact specifies that claim. Choice C is incorrect because \"similarly\" illogically signals a parallel case, when the sentence is providing specific details about the general mechanism described in the previous sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

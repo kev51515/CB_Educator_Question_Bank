@@ -1,0 +1,25 @@
+{
+  "questionId": "7dab4d5d-s1",
+  "originalId": "7dab4d5d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Bar graph: Mean Working-Memory Scores by Sleep Duration Condition across three test administrations. Three groups: standard sleep (8 h), brief nap (20–40 min), extended nap (60–90 min). Values (higher = better): First administration—standard: 540, brief nap: 460, extended nap: 545. Second administration—standard: 470, brief nap: 580, extended nap: 520. Third administration—standard: 500, brief nap: 510, extended nap: 482.]</p>\n<p>To investigate potential cognitive benefits of daytime napping, psychologist Itzel Ramírez and colleagues conducted a six-month study of Mexican civil-service employees who either took no nap during the work day (standard sleep group), took a brief nap of 20–40 minutes, or took an extended nap of 60–90 minutes. Tests of working memory were administered to participants three times during the study: at random for the standard-sleep staff, and for the rest, one week before they began their nap regimen, one week after they completed it, and one week later. After analyzing the results, the researchers concluded that longer naps might not confer a greater cognitive benefit than briefer naps do.</p>",
+  "stem": "<p>Which choice best describes data from the graph that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In both the second and third test administrations, participants who took brief naps had higher average working-memory scores than did participants who took extended naps.</p>"},
+    {"id": "b", "content": "<p>In the first test administration, participants who took brief naps had lower average working-memory scores than did those who took extended naps and those who maintained standard sleep.</p>"},
+    {"id": "c", "content": "<p>In the second test administration, participants who took brief naps scored higher than those who maintained standard sleep, but in the third test administration, those who maintained standard sleep scored higher than those who took extended naps.</p>"},
+    {"id": "d", "content": "<p>In both the second and third test administrations, participants who took brief naps scored higher than did those who maintained standard sleep.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The researchers&rsquo; conclusion compares the cognitive effects of brief versus extended naps. The graph shows that on the second and third post-regimen tests, brief-nap participants scored 580 and 510 respectively, while extended-nap participants scored 520 and 482—lower in both cases. These differences directly support the conclusion that longer naps do not confer a greater benefit than briefer ones do.</p><p>Choice B is incorrect because the first administration occurred before the nap regimen began, so the scores have no bearing on the conclusion about nap effects. Choice C is incorrect because the conclusion compares brief and extended naps, not either group against the standard-sleep group. Choice D is incorrect for the same reason: a comparison with the standard-sleep group does not address the relative effects of brief versus extended naps.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

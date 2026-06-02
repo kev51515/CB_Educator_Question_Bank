@@ -1,0 +1,22 @@
+{
+  "questionId": "6a12efbb-s1",
+  "originalId": "6a12efbb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The equation 64 = 2<i>L</i> + 2<i>W</i> gives the perimeter of a rectangular garden bed that has length <i>L</i>, in feet, and width <i>W</i>, in feet. The width of the garden bed is 11 feet. What is the length, in feet, of the garden bed?</p>",
+  "answerOptions": null,
+  "keys": [
+    "21"
+  ],
+  "rationale": "<p>Substituting <i>W</i> = 11 into 64 = 2<i>L</i> + 2<i>W</i> gives 64 = 2<i>L</i> + 22. Subtracting 22 from each side yields 42 = 2<i>L</i>, so <i>L</i> = 21.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

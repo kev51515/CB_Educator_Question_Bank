@@ -1,0 +1,25 @@
+{
+  "questionId": "6409016a-s1",
+  "originalId": "6409016a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T10.medium",
+  "stimulus": "<p>The Norwegian Mother, Father and Child Cohort Study (MoBa) tracks health outcomes among more than 100,000 families in Norway over the course of decades. As is true of most cohort studies, this need for years of repeated data collection results in high costs. By contrast, a relatively straightforward nutrition survey, such as one that is merely trying to identify the percentage of college students in a city who eat breakfast, may not need a large budget because <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>cohort methods are probably suitable for the nutrition survey.</p>"},
+    {"id": "b", "content": "<p>100,000 families is more than enough for MoBa to find health trends.</p>"},
+    {"id": "c", "content": "<p>the nutrition survey can be done well without years of data collection.</p>"},
+    {"id": "d", "content": "<p>it would be easy for MoBa researchers to add questions to their cohort study.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is best. MoBa is expensive because it requires years of repeated data collection. The nutrition survey, which only needs to identify a current percentage, can be done without years of collection, which is what keeps its budget low. Choice A is wrong because cohort methods are exactly what would make the survey expensive. Choices B and D are about MoBa itself and do not explain the nutrition survey's lower budget.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

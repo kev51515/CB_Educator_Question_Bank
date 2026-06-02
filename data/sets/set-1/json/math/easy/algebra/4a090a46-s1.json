@@ -1,0 +1,39 @@
+{
+  "questionId": "4a090a46-s1",
+  "originalId": "4a090a46",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Aviva needs to read at least 250 pages to finish her book club assignment. She has already read 187 pages. What is the minimum number of additional pages Aviva needs to read to finish the assignment?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>187</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>63</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>250</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>437</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The minimum number of additional pages equals the goal minus what has already been read: 250 &minus; 187 = 63.</p><p>Choice A is the number of pages already read, not the additional pages needed. Choice C is the total goal, not the difference. Choice D is the sum 250 + 187 instead of the difference.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy"
+}

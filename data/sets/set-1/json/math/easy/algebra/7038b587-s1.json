@@ -1,0 +1,22 @@
+{
+  "questionId": "7038b587-s1",
+  "originalId": "7038b587",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Henrik bought notebooks and stickers for $58. Each notebook cost $4, and each sticker cost $1. If Henrik bought 8 notebooks, how many stickers did he buy?</p>",
+  "answerOptions": null,
+  "keys": [
+    "26"
+  ],
+  "rationale": "<p>Henrik spent 8 &times; 4 = $32 on notebooks. The remaining 58 &minus; 32 = $26 was spent on stickers at $1 each, so he bought 26 stickers.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "294db8ec-s1",
+  "originalId": "294db8ec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which of the following is equivalent to <math><mn>6</mn><mi>n</mi><mo>+</mo><mn>14</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mfenced><mrow><mn>2</mn><mi>n</mi><mo>+</mo><mn>7</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>2</mn><mfenced><mrow><mn>3</mn><mi>n</mi><mo>+</mo><mn>7</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>6</mn><mfenced><mrow><mi>n</mi><mo>+</mo><mn>14</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2</mn><mfenced><mrow><mn>3</mn><mi>n</mi><mo>+</mo><mn>14</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The greatest common factor of 6n and 14 is 2. Factoring 2 from both terms gives 2(3n + 7).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "133f3e41-s1",
+  "originalId": "133f3e41",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">1/<i>a</i> = 1/<i>b</i> &minus; 1/<i>c</i> &minus; 1/<i>d</i></p><p>The given equation relates the positive variables <i>a</i>, <i>b</i>, <i>c</i>, and <i>d</i>. Which of the following is equivalent to <i>b</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>a</i> + <i>c</i> + <i>d</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>a</i><i>c</i><i>d</i>/(<i>a</i><i>c</i> + <i>a</i><i>d</i> + <i>c</i><i>d</i>)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(<i>a</i> + <i>c</i> + <i>d</i>)/(<i>a</i><i>c</i><i>d</i>)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>a</i><i>c</i><i>d</i></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Add 1/<i>c</i> + 1/<i>d</i> to both sides: 1/<i>a</i> + 1/<i>c</i> + 1/<i>d</i> = 1/<i>b</i>. Combine the left side over the common denominator <i>a</i><i>c</i><i>d</i>: (<i>c</i><i>d</i> + <i>a</i><i>d</i> + <i>a</i><i>c</i>)/(<i>a</i><i>c</i><i>d</i>) = 1/<i>b</i>. Taking reciprocals gives <i>b</i> = <i>a</i><i>c</i><i>d</i>/(<i>a</i><i>c</i> + <i>a</i><i>d</i> + <i>c</i><i>d</i>).</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard"
+}

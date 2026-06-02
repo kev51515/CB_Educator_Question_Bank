@@ -1,0 +1,39 @@
+{
+  "questionId": "07bcecac-s1",
+  "originalId": "07bcecac",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mi>P</mi><mfenced><mi>t</mi></mfenced><mo>=</mo><mn>12.5</mn><msup><mfenced><mn>1.04</mn></mfenced><mi>t</mi></msup></math></p><p>The function <em>P</em> gives the predicted population, in millions, of a certain region for the period from 2000 to 2020, where <em>t</em> is the number of years after 2000. Which of the following is the best interpretation of <math><mi>P</mi><mfenced><mn>5</mn></mfenced><mo>&#8776;</mo><mn>15.21</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In 2000, the predicted population of this region was approximately 5 million.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5 years after 2000, the predicted population of this region was approximately 15.21 million.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In 2000, the predicted population of this region was approximately 15.21 million.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15.21 years after 2000, the predicted population of this region was approximately 5 million.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The input <em>t</em> is years after 2000 and the output is population in millions. So <math><mi>P</mi><mfenced><mn>5</mn></mfenced><mo>&#8776;</mo><mn>15.21</mn></math> means that 5 years after 2000, the predicted population was approximately 15.21 million.</p><p>Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A2.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "edbc6cca-s1",
+  "originalId": "edbc6cca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Charlotte Brontë's 1849 novel <em>Shirley</em>. Caroline is visiting her cousin Robert, whom she has not seen for some time.</p><p>The conversation began warmly. Caroline, perceiving that Robert seemed tired from the day's work at the mill, offered at once to delay her questions until the morning and to read quietly by the fire instead. This unselfish willingness to set aside her own curiosity moved Robert deeply; he warmly thanked her, and within minutes the cousins had passed from polite reserve into the easy familiarity of children who had once played together.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It showcases how Caroline's thoughtfulness and patience deepen her bond with her cousin Robert.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explains the practical reasons Caroline and Robert decided to spend the evening reading rather than talking.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It contrasts Caroline's initial cool greeting of Robert with her later affection toward him.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It describes how Robert's daily duties at the mill have begun to strain his relationships at home.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it describes the main purpose of the text. The narrator shows Caroline noticing that Robert is tired and choosing to set aside her own curiosity, and then describes how this consideration draws the two of them quickly into easy familiarity. The passage thus focuses on how Caroline's thoughtfulness strengthens her relationship with Robert.</p><p>Choice B is incorrect because the text does not explain practical reasons; it focuses on the emotional effect of Caroline's gesture. Choice C is incorrect because Caroline's initial greeting is not described as cool. Choice D is incorrect because the text does not suggest that Robert's mill work is straining his relationships.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

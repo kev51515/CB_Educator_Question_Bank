@@ -1,0 +1,22 @@
+{
+  "questionId": "881ef5f5-s1",
+  "originalId": "881ef5f5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math><mi>a</mi></math> is the mean and <math><mi>b</mi></math> is the median of seven consecutive integers, what is the value of <math><mi>a</mi><mo>-</mo><mi>b</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "0"
+  ],
+  "rationale": "<p>The correct answer is 0. Let the seven consecutive integers be n, n+1, n+2, n+3, n+4, n+5, n+6. Their sum is 7n + 21, so the mean is (7n+21)/7 = n + 3. The middle value when ordered is also n + 3 (the 4th value). So a = b = n + 3, and a - b = 0.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "b8cbe394-s1",
+  "originalId": "b8cbe394",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Mei rents a kayak at a cost of $14 per day plus a one-time deposit of $25. Which equation represents the total cost <i>c</i>, in dollars, to rent the kayak with deposit for <i>d</i> days?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>c</i> = 14<i>d</i> + 25</p>"},
+    {"id": "b", "content": "<p><i>c</i> = 25<i>d</i> + 14</p>"},
+    {"id": "c", "content": "<p><i>c</i> = 14<i>d</i> &minus; 25</p>"},
+    {"id": "d", "content": "<p><i>c</i> = 14 + 25<i>d</i></p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The total daily cost is 14<i>d</i> and the fixed deposit is $25, so the total cost is <i>c</i> = 14<i>d</i> + 25.</p><p>Choices B and D swap the per-day rate and the fixed deposit. Choice C subtracts the deposit instead of adding it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T3.easy"
+}

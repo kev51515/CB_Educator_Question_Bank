@@ -1,0 +1,39 @@
+{
+  "questionId": "588887b9-s1",
+  "originalId": "588887b9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 1893, German engineer Rudolf Diesel patented his new internal combustion engine. Diesel&rsquo;s engine dramatically improved the fuel efficiency of the earlier compression engine, which the French engineer Alphonse Beau de Rochas <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> two decades earlier, could achieve.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>is designing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>will design</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>had designed</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>designs</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Diesel patented his engine in 1893, and the earlier engine was designed &ldquo;two decades earlier.&rdquo; The past perfect &ldquo;had designed&rdquo; correctly indicates that one past event (the earlier design) occurred before another past event (Diesel&rsquo;s patent).</p><p>Choices A, B, and D use present, future, and simple present tenses that don&rsquo;t match the past time frame.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.medium"
+}

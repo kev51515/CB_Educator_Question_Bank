@@ -1,0 +1,39 @@
+{
+  "questionId": "014b3394-s1",
+  "originalId": "014b3394",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>During hibernation, eastern chipmunks and black-tailed prairie dogs enter a state called torpor that lowers their metabolic rates and conserves energy. They periodically arouse from torpor, briefly raising their metabolic rates and burning much of the fat stored for the winter. A researcher hypothesized that the species with the longer average torpor bouts and the shorter average arousal episodes would expend less of its stored energy and therefore enter spring with greater fat reserves.</p><figure class=\"table\"><table><caption>Average Duration of Torpor Bouts and Arousal Episodes for Eastern Chipmunks and Black-Tailed Prairie Dogs, 2015&ndash;2018</caption><thead><tr><th>Species</th><th>Average torpor bout (days)</th><th>Average arousal episode (hours)</th></tr></thead><tbody><tr><td>Eastern chipmunk</td><td>9.2</td><td>14.6</td></tr><tr><td>Black-tailed prairie dog</td><td>13.7</td><td>9.1</td></tr></tbody></table></figure>",
+  "stem": "<p>Which choice best describes data from the table that support the researcher&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Eastern chipmunks have a longer average torpor bout and a shorter average arousal episode than black-tailed prairie dogs.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Black-tailed prairie dogs have a shorter average torpor bout and a longer average arousal episode than eastern chipmunks.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Eastern chipmunks have a shorter average torpor bout and a longer average arousal episode than black-tailed prairie dogs, so they likely enter spring with smaller fat reserves.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Eastern chipmunks and black-tailed prairie dogs have similar average torpor bouts and similar average arousal episodes.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The hypothesis predicts that the species with longer torpor bouts and shorter arousal episodes will retain more fat. The table shows black-tailed prairie dogs have longer torpor bouts (13.7 vs. 9.2 days) and shorter arousals (9.1 vs. 14.6 hours), so chipmunks&mdash;with shorter torpor and longer arousal&mdash;should enter spring with smaller reserves. This pattern matches and supports the hypothesis.</p><p>Choice A is incorrect because chipmunks have a shorter torpor bout and a longer arousal episode, not the reverse. Choice B is incorrect for the same reason; the directions are reversed. Choice D is incorrect because the two species show clearly different values, not similar ones.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

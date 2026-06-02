@@ -1,0 +1,39 @@
+{
+  "questionId": "2c6f214f-s1",
+  "originalId": "2c6f214f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The first term of a sequence is 7. Each term after the first is 5 times the preceding term. If <i>w</i> represents the <i>n</i>th term of the sequence, which equation gives <i>w</i> in terms of <i>n</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>w</i> = 5(7)<sup><i>n</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>w</i> = 7(5)<sup><i>n</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>w</i> = 7(5)<sup><i>n</i> &minus; 1</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>w</i> = 5(7)<sup><i>n</i> &minus; 1</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A geometric sequence with first term <i>a</i> = 7 and common ratio <i>r</i> = 5 has <i>n</i>th term <i>w</i> = <i>ar</i><sup><i>n</i> &minus; 1</sup> = 7(5)<sup><i>n</i> &minus; 1</sup>. Verify: <i>w</i>&#8321; = 7(5)&#8304; = 7 &#x2713;.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

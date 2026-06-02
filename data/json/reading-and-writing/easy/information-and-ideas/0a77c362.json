@@ -1,0 +1,72 @@
+{
+  "questionId": "0a77c362",
+  "externalId": "763708b4-8126-4bc6-9720-cce524db89ed",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:20:53.638547+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most effectively uses a quotation from &ldquo;Aunt Sue&rsquo;s Stories&rdquo; to illustrate the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "ca993e96-d9ff-40f2-aa2e-43756e2e2e9d",
+      "content": "<p>dark shadows &ldquo;cross and recross / Aunt Sue&rsquo;s stories.&rdquo;</p>"
+    },
+    {
+      "id": "fc8ad0cf-79ac-4223-9c71-232b5976aab1",
+      "content": "<p>a listening child &ldquo;knows that Aunt Sue / Never got her stories out of any book at all, / But that they came / Right out of her own life.&rdquo;</p>"
+    },
+    {
+      "id": "5e2fd9a4-cbc1-453c-a054-f063a911a1bf",
+      "content": "<p>the stories are told during &ldquo;Summer nights on the front porch.&rdquo;</p>"
+    },
+    {
+      "id": "4207d4e1-1afa-4e1e-ae0a-d439110868f3",
+      "content": "<p>the people in the stories &ldquo;Mingle themselves softly / In the flow of old Aunt Sue&rsquo;s voice, / Mingle themselves softly.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "fc8ad0cf-79ac-4223-9c71-232b5976aab1"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most effectively illustrates the speaker of the poem&rsquo;s claim that the stories Aunt Sue tells are based on Aunt Sue&rsquo;s personal experiences. In the quotation, the speaker conveys the listening child&rsquo;s point of view that Aunt Sue&rsquo;s stories originate from her personal experiences and are not taken from books or other external sources. The listening child explicitly contrasts two possible sources for Aunt Sue&rsquo;s stories: a book (whose potentially fictitious stories are implied to be written by someone else) or &ldquo;her own life.&rdquo; By having the child confidently assert that Aunt Sue &ldquo;never got her stories out of any book at all,&rdquo; the speaker indicates that Aunt Sue&rsquo;s stories are instead informed by her lived experiences.</p><p>Choice A is incorrect because it describes an element or image that recurs within Aunt Sue&rsquo;s stories rather than indicating that these stories have a real-life basis. The reference to dark shadows that &ldquo;cross and recross&rdquo; the stories functions as imagery on a literal, visual level and may also evoke figurative darkness, but this detail by itself doesn&rsquo;t suggest that the stories are based on Aunt Sue&rsquo;s personal experiences. Choice C is incorrect because it identifies the setting of Aunt Sue&rsquo;s storytelling rather than describing the real-life basis of the stories themselves. The quotation states that Aunt Sue tells her stories on &ldquo;summer nights on the front porch,&rdquo; which establishes when and where the storytelling occurs; however, no information is provided about the origins of the stories that Aunt Sue tells within this setting. Choice D is incorrect because it describes the movement or circulation of characters in the stories as Aunt Sue speaks rather than establishing that these stories have a real-life basis. The quotation primarily evokes the sounds of Aunt Sue&rsquo;s voice and the seemingly easy &ldquo;flow&rdquo; of this voice in her storytelling. Although the characters who &ldquo;mingle&hellip;in the flow of old Aunt Sue&rsquo;s voice&rdquo; are to some extent created or animated by her voice, no information is provided about the characters themselves or their relationship to Aunt Sue&rsquo;s actual experiences.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most effectively uses a quotation from &ldquo;Aunt Sue&rsquo;s Stories&rdquo; to illustrate the claim?</p>",
+    "stimulus": "<p>&ldquo;Aunt Sue&rsquo;s Stories&rdquo; is a 1926 poem by Langston Hughes. In the poem, the speaker indicates that the stories Aunt Sue tells are based on Aunt Sue&rsquo;s personal experiences, saying that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "fc8ad0cf-79ac-4223-9c71-232b5976aab1"
+    ],
+    "answerOptions": [
+      {
+        "id": "ca993e96-d9ff-40f2-aa2e-43756e2e2e9d",
+        "content": "<p>dark shadows &ldquo;cross and recross / Aunt Sue&rsquo;s stories.&rdquo;</p>"
+      },
+      {
+        "id": "fc8ad0cf-79ac-4223-9c71-232b5976aab1",
+        "content": "<p>a listening child &ldquo;knows that Aunt Sue / Never got her stories out of any book at all, / But that they came / Right out of her own life.&rdquo;</p>"
+      },
+      {
+        "id": "5e2fd9a4-cbc1-453c-a054-f063a911a1bf",
+        "content": "<p>the stories are told during &ldquo;Summer nights on the front porch.&rdquo;</p>"
+      },
+      {
+        "id": "4207d4e1-1afa-4e1e-ae0a-d439110868f3",
+        "content": "<p>the people in the stories &ldquo;Mingle themselves softly / In the flow of old Aunt Sue&rsquo;s voice, / Mingle themselves softly.&rdquo;</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most effectively illustrates the speaker of the poem&rsquo;s claim that the stories Aunt Sue tells are based on Aunt Sue&rsquo;s personal experiences. In the quotation, the speaker conveys the listening child&rsquo;s point of view that Aunt Sue&rsquo;s stories originate from her personal experiences and are not taken from books or other external sources. The listening child explicitly contrasts two possible sources for Aunt Sue&rsquo;s stories: a book (whose potentially fictitious stories are implied to be written by someone else) or &ldquo;her own life.&rdquo; By having the child confidently assert that Aunt Sue &ldquo;never got her stories out of any book at all,&rdquo; the speaker indicates that Aunt Sue&rsquo;s stories are instead informed by her lived experiences.</p><p>Choice A is incorrect because it describes an element or image that recurs within Aunt Sue&rsquo;s stories rather than indicating that these stories have a real-life basis. The reference to dark shadows that &ldquo;cross and recross&rdquo; the stories functions as imagery on a literal, visual level and may also evoke figurative darkness, but this detail by itself doesn&rsquo;t suggest that the stories are based on Aunt Sue&rsquo;s personal experiences. Choice C is incorrect because it identifies the setting of Aunt Sue&rsquo;s storytelling rather than describing the real-life basis of the stories themselves. The quotation states that Aunt Sue tells her stories on &ldquo;summer nights on the front porch,&rdquo; which establishes when and where the storytelling occurs; however, no information is provided about the origins of the stories that Aunt Sue tells within this setting. Choice D is incorrect because it describes the movement or circulation of characters in the stories as Aunt Sue speaks rather than establishing that these stories have a real-life basis. The quotation primarily evokes the sounds of Aunt Sue&rsquo;s voice and the seemingly easy &ldquo;flow&rdquo; of this voice in her storytelling. Although the characters who &ldquo;mingle&hellip;in the flow of old Aunt Sue&rsquo;s voice&rdquo; are to some extent created or animated by her voice, no information is provided about the characters themselves or their relationship to Aunt Sue&rsquo;s actual experiences.</p>",
+    "externalid": "763708b4-8126-4bc6-9720-cce524db89ed",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>&ldquo;Aunt Sue&rsquo;s Stories&rdquo; is a 1926 poem by Langston Hughes. In the poem, the speaker indicates that the stories Aunt Sue tells are based on Aunt Sue&rsquo;s personal experiences, saying that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "4c06427b-s1",
+  "originalId": "4c06427b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Curiosity about quorum sensing, the chemical signaling system that allows bacteria to coordinate gene expression based on population density, is growing because of pioneering research by microbiologists&mdash;many of whom, like molecular biology and chemistry expert Bonnie Bassler, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> this mechanism to design new strategies for combating antibiotic-resistant infections.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>has investigated</p>"},
+    {"id": "b", "content": "<p>investigate</p>"},
+    {"id": "c", "content": "<p>is investigating</p>"},
+    {"id": "d", "content": "<p>investigates</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The plural verb \"investigate\" agrees in number with the plural subject \"many.\"</p><p>Choice A is incorrect because the singular verb \"has investigated\" doesn't agree in number with the plural subject \"many.\" Choice C is incorrect because the singular verb \"is investigating\" doesn't agree in number with the plural subject \"many.\" Choice D is incorrect because the singular verb \"investigates\" doesn't agree in number with the plural subject \"many.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

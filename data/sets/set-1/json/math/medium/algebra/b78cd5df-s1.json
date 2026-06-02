@@ -1,0 +1,22 @@
+{
+  "questionId": "b78cd5df-s1",
+  "originalId": "b78cd5df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>An event planner is planning a banquet. It costs the event planner a onetime fee of $50 to rent the hall and $11.50 per attendee. The event planner has a budget of $400. What is the greatest number of attendees possible without exceeding the budget?</p>",
+  "answerOptions": [],
+  "keys": [
+    "30"
+  ],
+  "rationale": "<p>The correct answer is 30. Let <em>x</em> be the number of attendees. The total cost is 50 + 11.50<em>x</em>. Setting up the inequality 50 + 11.50<em>x</em> \u2264 400 and solving: 11.50<em>x</em> \u2264 350, so <em>x</em> \u2264 30.43... The greatest whole number of attendees is 30.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium"
+}

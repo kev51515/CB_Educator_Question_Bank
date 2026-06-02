@@ -1,0 +1,22 @@
+[
+  {"id": "2f958af9-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "802549ac-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.medium", "verdict": "ok"},
+  {"id": "2683b5db-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "a267bd29-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "f5247e52-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium", "verdict": "ok"},
+  {"id": "da602115-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.medium", "verdict": "ok"},
+  {"id": "b80d10d7-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.medium", "verdict": "ok"},
+  {"id": "11ccf3e1-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "bef4b1c6-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T5.medium", "verdict": "ok"},
+  {"id": "a1262cdb-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "difficulty_drift", "detail": "Medium lever requires 2-3 inverse operations, often with context wrapper, distribution, or denominator. Clone 9s+d=f asking for f-d is a single subtraction (one inverse step) with integer coefficients and no context — matches easy lever, not medium."},
+  {"id": "928498f3-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.medium", "verdict": "ok"},
+  {"id": "717a1964-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "ff2c1431-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "87a3de81-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "a4f61d75-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium", "verdict": "ok"},
+  {"id": "5ae4803e-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T5.medium", "verdict": "ok"},
+  {"id": "7dbd46d9-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "6011a3f8-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"},
+  {"id": "ebb717ab-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"},
+  {"id": "c8e9a011-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard", "verdict": "ok"}
+]

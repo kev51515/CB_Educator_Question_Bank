@@ -1,0 +1,25 @@
+{
+  "questionId": "c102f9b0-s1",
+  "originalId": "c102f9b0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Antónia Novello became the fourteenth Surgeon General of the United States in March 1990, making <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the first time the country would appoint a woman to that role.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>those</p>"},
+    {"id": "b", "content": "<p>these</p>"},
+    {"id": "c", "content": "<p>this</p>"},
+    {"id": "d", "content": "<p>some</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"this\" agrees in number with the singular antecedent (the event of Novello becoming Surgeon General). The pronoun \"this\" refers back to the singular event described earlier in the sentence.</p><p>Choice A is incorrect because the plural pronoun \"those\" doesn't agree in number with the singular antecedent. Choice B is incorrect because the plural pronoun \"these\" doesn't agree in number with the singular antecedent. Choice D is incorrect because the indefinite pronoun \"some\" is ambiguous in this context.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

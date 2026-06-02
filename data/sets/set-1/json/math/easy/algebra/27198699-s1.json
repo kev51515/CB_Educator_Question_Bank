@@ -1,0 +1,39 @@
+{
+  "questionId": "27198699-s1",
+  "originalId": "27198699",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>As part of a biology experiment, Liam measured the height of a plant over a period of days. The function f(x) = 35 - 2x gives the estimated height, in centimeters, of the plant x days after the start of the experiment. What is the estimated height of the plant 8 days after the start of the experiment?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>19</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>27</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. f(8) = 35 - 2(8) = 35 - 16 = 19 centimeters.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f2eaaf5d-s1",
+  "originalId": "f2eaaf5d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>At twelve articles long, the preamble to the constitution of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> country in South America&mdash;is far longer than the brief preamble to the Constitution of Canada.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Ecuador: a</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Ecuador, a</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ecuador&mdash;a</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Ecuador a</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of paired dashes to set off a supplementary appositive. Because the sentence already contains a closing dash before \"is far longer,\" an opening dash is needed before the appositive \"a country in South America\" to form a matched pair.</p><p>Choice A is incorrect because a colon cannot pair with the closing dash that follows. Choice B is incorrect because a comma cannot pair with a closing dash. Choice D is incorrect because the appositive must be set off with some kind of punctuation.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A2.T4.easy"
+}

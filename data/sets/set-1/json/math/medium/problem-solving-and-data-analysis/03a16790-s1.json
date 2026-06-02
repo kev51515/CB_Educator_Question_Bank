@@ -1,0 +1,39 @@
+{
+  "questionId": "03a16790-s1",
+  "originalId": "03a16790",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between two variables, <em>x</em> and <em>y</em>. A line of best fit passes through the points (2, 12) and (10, 4). Which of the following is closest to the slope of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22122.0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1.0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u22121.0</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (4 \u2212 12)/(10 \u2212 2) = \u22128/8 = \u22121.0.</p><p>Choices A, B, and C arise from common errors in computing rise/run or sign.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

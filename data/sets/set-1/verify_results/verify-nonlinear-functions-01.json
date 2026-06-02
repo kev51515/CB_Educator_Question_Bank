@@ -1,0 +1,22 @@
+[
+  {"id": "6676f055-s1", "templateId": "nonlinear-functions.A3.T3.medium", "verdict": "difficulty_drift", "detail": "Clone provides quadratic already in vertex form f(θ)=−0.35(θ−42)²+1150, which matches the easy lever 'rule already in vertex form'. Medium lever requires form y=x²+c or p(x)+k=x² (single rearrangement). Answer (42) is correct."},
+  {"id": "52b1700c-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "db888cd6-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "99269e03-s1", "templateId": "nonlinear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "39714777-s1", "templateId": "nonlinear-functions.A3.T3.medium", "verdict": "ok"},
+  {"id": "197bed38-s1", "templateId": "nonlinear-functions.A3.T5.medium", "verdict": "type_drift", "detail": "Clone asks for maximum height of a quadratic projectile h(t)=−5t²+30t+35 (max=80). This matches A3.T3 (vertex/extreme value of quadratic) or A4.T2 (quadratic projectile model), not A3.T5 (interval of increase, asymptote, symmetry). Answer 80 is correct."},
+  {"id": "dbe9b217-s1", "templateId": "nonlinear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "e1f9000d-s1", "templateId": "nonlinear-functions.A4.T2.medium", "verdict": "ok"},
+  {"id": "c4cd5bcc-s1", "templateId": "nonlinear-functions.A5.T2.medium", "verdict": "type_drift", "detail": "Clone asks which evaluation g(c) equals the y-intercept k — pure definition of y-intercept = f(0). A5.T2 requires choosing among equivalent algebraic forms (standard/vertex/factored/rebased) that expose a feature. No equivalent forms are presented. Better fit: A3.T2 conceptual variant. Answer g(0) is correct."},
+  {"id": "7ba694f3-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "7e5a3640-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "203774bc-s1", "templateId": "nonlinear-functions.A4.T3.medium", "verdict": "ok"},
+  {"id": "15c364bf-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok"},
+  {"id": "78d5f91a-s1", "templateId": "nonlinear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "0a74365c-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "768b60d2-s1", "templateId": "nonlinear-functions.A5.T2.medium", "verdict": "ok"},
+  {"id": "3918e8bc-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "a31417d1-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "752055d1-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "926c246b-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "ok"}
+]

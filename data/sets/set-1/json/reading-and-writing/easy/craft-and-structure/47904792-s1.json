@@ -1,0 +1,25 @@
+{
+  "questionId": "47904792-s1",
+  "originalId": "47904792",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Animals use many sounds to communicate with one another. Such uses include warning of danger, attracting mates, and marking territory. For a long time, people thought that complex vocal communication was unique to mammals and birds. Frogs and other animals, though, have shown that complex calls don't require fur or feathers. Imaginatively, certain frog species mix high and low notes to indicate the size of an approaching predator. Coqui frogs also get expressive. They change the pitch of their calls when staking out a new perch.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To compare vocal communication in humans with vocal communication in coqui frogs</p>"},
+    {"id": "b", "content": "<p>To question the belief that frogs are intelligent</p>"},
+    {"id": "c", "content": "<p>To argue that a variety of animals communicate vocally in complex ways</p>"},
+    {"id": "d", "content": "<p>To establish that vocal communication doesn't indicate intelligence</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text first says animals use many sounds to communicate and then explains that although people once thought complex vocal communication was unique to mammals and birds, frogs show otherwise. The main purpose is to argue that a variety of animals, not just mammals and birds, use complex vocal communication.</p><p>Choice A is incorrect. The text doesn't discuss humans. Choice B is incorrect. The text doesn't question frogs' intelligence; it describes their calls as imaginative. Choice D is incorrect. The text doesn't mention intelligence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

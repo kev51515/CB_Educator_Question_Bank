@@ -1,0 +1,23 @@
+{
+  "questionId": "8213b1b3-s1",
+  "originalId": "8213b1b3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>According to a set of standards, a certain type of substance can contain a maximum of 0.002% sulfur by mass. If a sample of this substance has a mass of 230 grams, what is the maximum mass, in grams, of sulfur the sample can contain to meet these standards?</p>",
+  "answerOptions": null,
+  "keys": [
+    ".0046",
+    "23/5000"
+  ],
+  "rationale": "<p>The correct answer is 0.0046 (or 23/5000). The maximum mass of sulfur is 0.002% of 230 grams, which is (0.002/100) \u00d7 230 = 0.00002 \u00d7 230 = 0.0046 grams.</p>",
+  "templateId": "percentages.A1.T1.hard"
+}

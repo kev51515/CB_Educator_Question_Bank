@@ -1,0 +1,25 @@
+{
+  "questionId": "c6bd3447-s1",
+  "originalId": "c6bd3447",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>The following text is from E. M. Forster&rsquo;s 1910 novel <em>Howards End</em>. The text describes a literary club where members deliver short essays in turn.</p>\n<blockquote>\n<p>Member by member they rose, and, as though with <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content 1\">a dull pencil, tried to trace</span> the figure of their thought upon the air a shade more sharply, and sat down with the feeling that, by some cause they could not lay hold of, their <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content 2\">lines had blurred</span>. As they sat down, they turned without fail to the person beside them and continued, in a whisper, what they had just attempted aloud.</p>\n</blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portions in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To highlight the physical effort involved in members&rsquo; preparation of written drafts</p>"},
+    {"id": "b", "content": "<p>To draw attention to members&rsquo; dissatisfaction with the club&rsquo;s topic of discussion</p>"},
+    {"id": "c", "content": "<p>To demonstrate members&rsquo; puzzlement over the reception of a particular essay</p>"},
+    {"id": "d", "content": "<p>To emphasize the extent of members&rsquo; struggles to express their ideas</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it most accurately describes the function of the underlined portions in the text as a whole. The underlined portions describe each member as trying to &ldquo;trace&rdquo; the figure of their thought with a &ldquo;dull pencil&rdquo; and then feeling that their &ldquo;lines had blurred.&rdquo; In context, the metaphorical language of an imprecise drawing tool emphasizes how much the members struggled to express their ideas clearly; the text adds that they continued in whispers to refine what they had said aloud.</p><p>Choice A is incorrect because, although the underlined portions refer to a physical activity (tracing with a pencil), the descriptions are metaphorical, not literal. Choice B is incorrect because the text does not identify a topic of discussion that members are dissatisfied with; they are dissatisfied with their own expression. Choice C is incorrect because the text never mentions a particular essay or its reception.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5aa171de-s1",
+  "originalId": "5aa171de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Tardigrades are microscopic animals famous for surviving extreme conditions, from boiling springs to the vacuum of space. They are not truly ______ in fact, many populations endure long stretches of dormancy in which they expel nearly all moisture from their bodies and curl into a desiccated form known as a tun.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>invincible, however;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>invincible, however,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>invincible; however</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>invincible, however</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The comma correctly separates the supplementary adverb \"however\" from the preceding main clause (\"They are not truly invincible\"), and the semicolon after \"however\" correctly joins the two main clauses (\"They&hellip;however\" and \"many&hellip;tun\"). Placing the semicolon after \"however\" signals that the second clause expresses a contrast to what the previous sentence implies.</p><p>Choice B is incorrect because it produces a comma splice: a comma alone cannot join two independent clauses without a coordinating conjunction. Choice C is incorrect because placing the semicolon after \"invincible\" misaligns the contrast logic, treating \"however\" as part of the second clause instead of the supplementary adverb to the first. Choice D is also a comma splice; the two main clauses are joined only by a comma.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T3.hard"
+}

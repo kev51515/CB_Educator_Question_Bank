@@ -1,0 +1,98 @@
+[
+  {
+    "id": "0b3d25c5-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "Stem is a difference-of-squares factoring/cancellation, not an exponent/radical-rule application. Better fits A2.T5 or A3.T8. Answer x^5-5 is correct."
+  },
+  {
+    "id": "26e83bbc-s1",
+    "templateId": "equivalent-expressions.A1.T10.medium",
+    "verdict": "aspect_drift",
+    "detail": "Deliverable is a numeric value of an unknown constant c via coefficient matching; per template skill_wide_notes this belongs to A4.T9, not A1.T10 substitute-and-simplify. Answer c=1 is correct."
+  },
+  {
+    "id": "42f19012-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "type_drift",
+    "detail": "Item asks to identify b^(7/15) rewritten by multiplying numerator and denominator of the exponent by 15; no actual exponent/radical rule is exercised (just multiplying the fraction by 1). Stem is trivial and doesn't match T7 medium characteristics. Answer (b) is mathematically equivalent but the cognitive demand is mismatched."
+  },
+  {
+    "id": "1dd13816-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "Deliverable is a numeric value of unknown constant c via matching to cy^4-11; per template skill_wide_notes this belongs to A4.T9 (16de54c7 example in T9), not A1.T2 simple add/subtract. Answer c=10 is correct."
+  },
+  {
+    "id": "24016dee-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem '9z^5 + 4 - 2z^5 - 3' is combining like terms (T1), not adding/subtracting two parenthesized polynomials. Violates T2 must_preserve: 'parenthesised polynomial structure with explicit + or - between them'. Should be T1."
+  },
+  {
+    "id": "42c71eb5-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem '5(x-2) + 3(2x-4)' tests A1 distribute-and-combine, not A3 exponent/radical rules. No exponent or radical operation appears. Should be A1.T3 or A1.T2."
+  },
+  {
+    "id": "a391ed22-s1",
+    "templateId": "equivalent-expressions.A2.T6.medium",
+    "verdict": "aspect_drift",
+    "detail": "Deliverable is a numeric constant b (an unknown in target form ax^2+bx+c). Per skill-wide notes, when answer is a named constant the item belongs to A4. T6 medium characteristic explicitly says 'answer is the full expanded form'. Should be A4.T9."
+  },
+  {
+    "id": "ad038c19-s1",
+    "templateId": "equivalent-expressions.A1.T3.hard",
+    "verdict": "type_drift",
+    "detail": "T3 requires 'single outside factor times a parenthesised polynomial' (must_preserve). Clone is (p-q/3)\u00b2 which is squaring a binomial \u2014 polynomial-times-polynomial, fitting T6 (multiply binomials), not T3 (distribute single factor). Answer B is mathematically correct, but stem structure violates T3 must_preserve."
+  },
+  {
+    "id": "22fd3e1f-s1",
+    "templateId": "equivalent-expressions.A3.T7.hard",
+    "verdict": "type_drift",
+    "detail": "Clone tests rational expression simplification via polynomial factoring and cancellation, which is T8 (rational expression simplification). T7 must_preserve requires 'exponent or radical structure as the core operation'; clone has no exponent/radical rules \u2014 it's straight factor-and-cancel. Answer A is mathematically correct."
+  },
+  {
+    "id": "911c415b-s1",
+    "templateId": "equivalent-expressions.A2.T6.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is distribute-and-combine to match at^2+b (no binomial-by-binomial multiplication). T6 requires multi-factor polynomial product; this fits A4.T9 (find a+b) with A1.T3 rewrite. Answer 3980 is correct."
+  },
+  {
+    "id": "0354c7de-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks to factor 7y+21 into 7(y+3); this is GCF factoring (A2.T4), not distribution (A1.T3)."
+  },
+  {
+    "id": "294db8ec-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks to factor 6n+14 into 2(3n+7); this is GCF factoring (A2.T4), not distribution (A1.T3)."
+  },
+  {
+    "id": "df0ef054-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem (x+3)(x+4) is binomial multiplication (A2.T6 medium), not single-factor distribution; T6 also does not appear at easy."
+  },
+  {
+    "id": "a520ba07-s1",
+    "templateId": "equivalent-expressions.A3.T7.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Single radical-to-power conversion with perfect exponents (cbrt(p^3 q^6)=pq^2) is an easy-lever item; medium requires multi-step rule chain or rational-exponent <-> radical with non-trivial indices. Answer pq^2 is correct."
+  },
+  {
+    "id": "c3a72da5-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T2 lever requires subtraction (distribute negative across second polynomial); this clone is pure addition of two polynomials with small integer coefficients, matching the easy lever. Answer 11w^5+7w^2 is correct."
+  },
+  {
+    "id": "974d33dc-s1",
+    "templateId": "equivalent-expressions.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T2 requires subtraction with sign distribution; clone is pure addition (4x+3y)+(2x+5y) with small integers, matching easy lever, not medium."
+  }
+]

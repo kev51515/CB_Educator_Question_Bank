@@ -1,0 +1,39 @@
+{
+  "questionId": "244ff6c4-s1",
+  "originalId": "244ff6c4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the value of tan(73&pi;/6)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;&radic;3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;&radic;3/3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&radic;3/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&radic;3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Tangent has period &pi;. 73&pi;/6 = 12&pi; + &pi;/6 = 12&pi; + &pi;/6, so tan(73&pi;/6) = tan(&pi;/6) = &radic;3/3.</p><p>Choice A is &minus;tan(2&pi;/3). Choices B and D use the wrong reference angle or sign.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A4.T8.hard"
+}

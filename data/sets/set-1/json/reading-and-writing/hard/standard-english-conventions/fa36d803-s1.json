@@ -1,0 +1,25 @@
+{
+  "questionId": "fa36d803-s1",
+  "originalId": "fa36d803",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A3.T6.hard",
+  "type": "mcq",
+  "stimulus": "<p>Initially credited to Frans Hals, the celebrated Dutch Golden Age portraitist, the 1633 canvas <em>Boy with a Flute</em> attracted renewed scrutiny in the 2010s when conservators determined that the painting—which portrays a smiling youth tuning his instrument—was in fact produced by obscure Haarlem genre ______ Judith Leyster (1609–1660).</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>painter</p>"},
+    {"id": "b", "content": "<p>painter:</p>"},
+    {"id": "c", "content": "<p>painter—</p>"},
+    {"id": "d", "content": "<p>painter,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of punctuation between a descriptive title and a proper noun. No punctuation is needed to set off the proper noun \"Judith Leyster\" from the descriptive title that precedes it, \"obscure Haarlem genre painter.\"</p><p>Choice B is incorrect because no punctuation is needed. Choice C is incorrect because no punctuation is needed. Choice D is incorrect because no punctuation is needed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

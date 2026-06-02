@@ -1,0 +1,39 @@
+{
+  "questionId": "30281058-s1",
+  "originalId": "30281058",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the graph of y = x<sup>2</sup> &minus; 16 and line k intersect at the points (2, a) and (6, b), where a and b are constants. What is the slope of line k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Substituting x = 2 gives a = 2<sup>2</sup> &minus; 16 = &minus;12. Substituting x = 6 gives b = 6<sup>2</sup> &minus; 16 = 20. The slope of line k is (b &minus; a)/(6 &minus; 2) = (20 &minus; (&minus;12))/4 = 32/4 = 8.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard"
+}

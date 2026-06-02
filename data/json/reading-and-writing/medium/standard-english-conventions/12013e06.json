@@ -1,0 +1,72 @@
+{
+  "questionId": "12013e06",
+  "externalId": "d0d16783-ef40-445f-a4e1-a033a0b35daa",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:21.910650+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "ce909646-9384-4fa7-8dc1-2a3af60d6077",
+      "content": "<p>cooperation<span data-ssml-say-as=\"characters\">,</span> this</p>"
+    },
+    {
+      "id": "52d443e3-b113-415e-82f5-5fe4e2889b18",
+      "content": "<p>cooperation<span data-ssml-say-as=\"characters\">&mdash;</span>this</p>"
+    },
+    {
+      "id": "979067b7-5dd8-4f03-80c4-f53d689d96c1",
+      "content": "<p>cooperation<span data-ssml-say-as=\"characters\">:</span> this</p>"
+    },
+    {
+      "id": "f636e19c-2347-408b-b6ef-82f7b2e5303d",
+      "content": "<p>cooperation this</p>"
+    }
+  ],
+  "keys": [
+    "52d443e3-b113-415e-82f5-5fe4e2889b18"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a dash after &ldquo;cooperation&rdquo; to pair with the dash after &ldquo;that&rdquo; to separate the supplementary element &ldquo;assuming solar panel installers&rsquo; cooperation&rdquo; from the rest of the sentence.</p><p>Choice A is incorrect because a comma can&rsquo;t be paired with a dash in this way to separate the supplementary element from the rest of the sentence. Choice C is incorrect because a colon can&rsquo;t be paired with a dash in this way to separate the supplementary element from the rest of the sentence. Choice D is incorrect because it fails to use appropriate punctuation to separate the supplemental element from the rest of the sentence.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>In rural Minnesota, ecologist Leroy Walston conducted a study to determine whether seeding solar panel fields with wildflowers could bolster pollinator populations in nearby food crops. Walston&rsquo;s findings indicate that&mdash;assuming solar panel installers&rsquo; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> practice has the potential to increase the number of native bees in crops near solar fields throughout the Midwest by up to 20 percent.</p>",
+    "keys": [
+      "52d443e3-b113-415e-82f5-5fe4e2889b18"
+    ],
+    "answerOptions": [
+      {
+        "id": "ce909646-9384-4fa7-8dc1-2a3af60d6077",
+        "content": "<p>cooperation<span data-ssml-say-as=\"characters\">,</span> this</p>"
+      },
+      {
+        "id": "52d443e3-b113-415e-82f5-5fe4e2889b18",
+        "content": "<p>cooperation<span data-ssml-say-as=\"characters\">&mdash;</span>this</p>"
+      },
+      {
+        "id": "979067b7-5dd8-4f03-80c4-f53d689d96c1",
+        "content": "<p>cooperation<span data-ssml-say-as=\"characters\">:</span> this</p>"
+      },
+      {
+        "id": "f636e19c-2347-408b-b6ef-82f7b2e5303d",
+        "content": "<p>cooperation this</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. This choice correctly uses a dash after &ldquo;cooperation&rdquo; to pair with the dash after &ldquo;that&rdquo; to separate the supplementary element &ldquo;assuming solar panel installers&rsquo; cooperation&rdquo; from the rest of the sentence.</p><p>Choice A is incorrect because a comma can&rsquo;t be paired with a dash in this way to separate the supplementary element from the rest of the sentence. Choice C is incorrect because a colon can&rsquo;t be paired with a dash in this way to separate the supplementary element from the rest of the sentence. Choice D is incorrect because it fails to use appropriate punctuation to separate the supplemental element from the rest of the sentence.</p>",
+    "externalid": "d0d16783-ef40-445f-a4e1-a033a0b35daa",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>In rural Minnesota, ecologist Leroy Walston conducted a study to determine whether seeding solar panel fields with wildflowers could bolster pollinator populations in nearby food crops. Walston&rsquo;s findings indicate that&mdash;assuming solar panel installers&rsquo; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> practice has the potential to increase the number of native bees in crops near solar fields throughout the Midwest by up to 20 percent.</p>"
+}

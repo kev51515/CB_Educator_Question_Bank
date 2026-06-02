@@ -1,0 +1,22 @@
+{
+  "questionId": "a4d6fbec-s1",
+  "originalId": "a4d6fbec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <i>y</i> = 4<i>x</i> + 7, what is the value of <i>y</i> when <i>x</i> = 9?</p>",
+  "answerOptions": null,
+  "keys": [
+    "43"
+  ],
+  "rationale": "<p>The correct answer is 43. Substituting 9 for <i>x</i> yields <i>y</i> = 4(9) + 7 = 36 + 7 = 43.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z"
+}

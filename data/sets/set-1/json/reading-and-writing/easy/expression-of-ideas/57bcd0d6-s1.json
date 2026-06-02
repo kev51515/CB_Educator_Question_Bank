@@ -1,0 +1,25 @@
+{
+  "questionId": "57bcd0d6-s1",
+  "originalId": "57bcd0d6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Hidden within the limestone cliffs of southern France are vast networks of caves containing prehistoric paintings. Archaeologists have studied these caves since the 1940s, when a group of teenagers stumbled upon the famous Lascaux site, and researchers have been documenting the artwork ever since. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> archaeologists are using 3D laser scanners to create detailed digital models of the paintings.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>In comparison,</p>"},
+    {"id": "c", "content": "<p>Currently,</p>"},
+    {"id": "d", "content": "<p>Still,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Currently\" logically signals that the archaeologists' use of 3D laser scanners (a present-day technology) is the modern-day continuation of the ongoing research described in the previous sentence.</p><p>Choice A is incorrect because \"however\" illogically signals contrast, but the use of scanners continues the previous research rather than contradicts it. Choice B is incorrect because \"in comparison\" illogically suggests a comparison, but the sentence describes a continuation. Choice D is incorrect because \"still\" illogically signals that the action occurs despite the previous research, when in fact it builds on that research.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

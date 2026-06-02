@@ -1,0 +1,39 @@
+{
+  "questionId": "683f66c9-s1",
+  "originalId": "683f66c9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Though not closely related, the marsupial sugar gliders of Australia share basic <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> flying squirrels of North America, including a gliding membrane, large eyes, and small body size—traits the two groups of mammals developed independently in response to similar lifestyles in their respective habitats.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>examples of</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>features with</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>doubts about</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>warnings against</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because the text emphasizes traits the two groups share, so saying sugar gliders share \"features with\" flying squirrels is logical. Choice A is incorrect because sugar gliders aren’t examples of flying squirrels (they’re unrelated). Choice C is incorrect because the passage isn’t about doubts. Choice D is incorrect because no warning is implied.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

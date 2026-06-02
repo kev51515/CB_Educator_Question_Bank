@@ -1,0 +1,25 @@
+{
+  "questionId": "39d1a519-s1",
+  "originalId": "39d1a519",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>To identify which native grain varieties were cultivated in Peru's Sacred Valley before the spread of large-scale commercial farming, archaeologist Renata Quispe frequently consults colonial-era tax registers that recorded harvest tributes in detail. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she examines church murals from the same era, as they sometimes depict accurate likenesses of grains that have since disappeared from local cultivation.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Hence,</p>"},
+    {"id": "b", "content": "<p>In addition,</p>"},
+    {"id": "c", "content": "<p>In conclusion,</p>"},
+    {"id": "d", "content": "<p>Rather,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"In addition\" logically signals that the mural analysis discussed in this sentence is an additional part of the archaeological research discussed in the previous sentence. That is, to research which grain varieties were grown in the Sacred Valley in the past, Quispe examines church murals in addition to colonial-era tax registers.</p><p>Choice A is incorrect because \"hence\" illogically signals that the mural analysis is a result of consulting tax registers, when in fact it is a separate method used alongside that work. Choice C is incorrect because \"in conclusion\" illogically signals that the mural analysis concludes the discussion, when it actually introduces another distinct research method. Choice D is incorrect because \"rather\" illogically signals that the mural analysis is an alternative to consulting tax registers, when it is instead a complement to that work.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

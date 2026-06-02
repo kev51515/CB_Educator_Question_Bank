@@ -1,0 +1,39 @@
+{
+  "questionId": "90117366-s1",
+  "originalId": "90117366",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>To examine how room lighting affects test performance, British researchers had students complete identical math problems under different conditions. The researchers found that when the lighting was warm-toned and dim, students tended to make more arithmetic errors. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> cool-toned and bright lighting was associated with fewer errors.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By contrast,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Firstly,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"By contrast\" logically signals that the finding described in this sentence contrasts with the finding described in the previous sentence. That is, cool/bright lighting was associated with fewer errors, whereas warm/dim lighting was associated with more errors.</p><p>Choice B is incorrect because \"specifically\" illogically signals that the sentence provides precise details about the earlier finding; instead, it presents a contrasting finding. Choice C is incorrect because \"for example\" illogically signals exemplification, when the sentence presents a contrasting result. Choice D is incorrect because \"firstly\" illogically signals a first item in a series.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T1.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "668f1863-s1",
+  "originalId": "668f1863",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Function f is a quadratic function where f(&minus;18) = 0 and f(6) = 0. The graph of y = f(x) in the xy-plane has a vertex at (s, &minus;50). What is the value of s?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-6"
+  ],
+  "rationale": "<p>The correct answer is &minus;6. Because f has zeros at x = &minus;18 and x = 6, the graph passes through (&minus;18, 0) and (6, 0). The vertex of a parabola lies on the axis of symmetry, midway between the x-intercepts: s = (&minus;18 + 6)/2 = &minus;6.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

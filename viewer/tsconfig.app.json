@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": ["ES2023", "DOM"],
+    "module": "esnext",
+    "types": ["vite/client"],
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    // TODO: enable `noPropertyAccessFromIndexSignature` (touches ~10 sites in
+    //   A11yPreferences / FilterPresets where index-signature props are read
+    //   via dot notation). Easy fix once decided.
+    // TODO: enable `noUncheckedIndexedAccess` (currently surfaces 152 errors
+    //   for unchecked array/Record access). High-value strictness, but a real
+    //   chunk of work — most sites need a `?? defaultValue` or guard.
+
+    /* Path aliases — `@/foo` resolves to `src/foo`. Mirrors vite.config alias. */
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["src"]
+}

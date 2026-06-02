@@ -1,0 +1,39 @@
+{
+  "questionId": "6585d841-s1",
+  "originalId": "6585d841",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>x&sup2; + 10x + y&sup2; = 8y + 75</p><p>In the xy-plane, the graph of the given equation is a circle. What is the length of the circle\u2019s radius?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2&radic;29</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&radic;75</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&radic;91</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&radic;141</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Rearranging: x&sup2; + 10x + y&sup2; &minus; 8y = 75. Completing the square: (x + 5)&sup2; &minus; 25 + (y &minus; 4)&sup2; &minus; 16 = 75, so (x + 5)&sup2; + (y &minus; 4)&sup2; = 116. The radius is &radic;116 = 2&radic;29.</p><p>Choices B, C, and D omit the squared-constant adjustments.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T4.hard"
+}

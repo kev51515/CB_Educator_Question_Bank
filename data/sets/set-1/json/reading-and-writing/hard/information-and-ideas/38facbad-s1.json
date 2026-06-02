@@ -1,0 +1,25 @@
+{
+  "questionId": "38facbad-s1",
+  "originalId": "38facbad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Earlier studies conducted within individual European countries had identified consistent links between personality traits&mdash;measured along five broad dimensions&mdash;and the kinds of food flavors people prefer. To test whether these links extend beyond a single national context, Anika M&uuml;ller and colleagues surveyed more than 40,000 people across forty-eight countries on six continents about their personality traits and their flavor preferences for European-style cuisines (e.g., savory, smoky, herbal, tangy, sweet). The cross-cultural data confirmed that the five-dimension personality framework captured participants&rsquo; preferences for these European-style cuisines well and revealed broadly similar patterns linking traits to flavor preferences from country to country. These results suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>cross-cultural differences in the connection between personality traits and flavor preferences are smaller than scholars had previously believed.</p>"},
+    {"id": "b", "content": "<p>the five-dimension framework can likely be used to predict preferences for non-European cuisines based on personality traits even though those cuisines differ substantially in flavor from European-style cuisines.</p>"},
+    {"id": "c", "content": "<p>people who have more familiarity with European-style cuisines are likely to express stronger preferences for those cuisines than people with less familiarity are.</p>"},
+    {"id": "d", "content": "<p>across different cultural settings, people who share similar profiles of personality traits tend to prefer similar European-style cuisines.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the cross-cultural study's discussion. The earlier within-country studies showed that personality traits predict flavor preferences for European-style cuisines. The new study extended this to many countries and confirmed that the same five-dimension framework captured preferences well and produced similar trait-to-preference patterns across cultures. It follows that people with similar personality profiles tend to prefer similar European-style cuisines regardless of cultural setting.</p><p>Choice A is incorrect because the text does not state what researchers previously believed about cross-cultural variation in the strength of this link; it presents the consistency as a finding, not as a comparison to prior assumptions. Choice B is incorrect because the study examined only European-style cuisines, so its findings cannot be extended to non-European cuisines that differ substantially in flavor. Choice C is incorrect because the text does not discuss familiarity or exposure; it only addresses personality traits and preferences.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

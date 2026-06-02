@@ -1,0 +1,39 @@
+{
+  "questionId": "a9ac31e4-s1",
+  "originalId": "a9ac31e4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Area of Three Glaciers in the 2018 Patagonia Glacier Inventory. Vertical axis: Area (square kilometers).]</p><ul><li>Perito Moreno glacier: 250 km&sup2;</li><li>Viedma glacier: 575 km&sup2;</li><li>O&rsquo;Higgins glacier: 380 km&sup2;</li></ul><p>According to the graph, the Viedma glacier has ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a larger area than either the Perito Moreno glacier or the O&rsquo;Higgins glacier.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a smaller area than the Perito Moreno glacier but a larger area than the O&rsquo;Higgins glacier.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a smaller area than either the Perito Moreno glacier or the O&rsquo;Higgins glacier.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a larger area than the Perito Moreno glacier but a smaller area than the O&rsquo;Higgins glacier.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the Viedma glacier (575 km&sup2;) has a larger area than the Perito Moreno glacier (250 km&sup2;) and the O&rsquo;Higgins glacier (380 km&sup2;).</p><p>Choice B is incorrect: Viedma is larger, not smaller, than Perito Moreno. Choice C is incorrect: Viedma is larger than both, not smaller. Choice D is incorrect: Viedma is larger than O&rsquo;Higgins, not smaller.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

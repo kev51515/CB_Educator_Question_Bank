@@ -1,0 +1,22 @@
+{
+  "questionId": "0a74365c-s1",
+  "originalId": "0a74365c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The population of the town of Larkfield doubled every 40 years from 1700 to 1900. The population of this town was 96,000 in 1900. What was the population of this town in 1700?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3000"
+  ],
+  "rationale": "<p>Let y represent the population x years after 1700. Since the population doubled every 40 years, y = a(2)<sup>x/40</sup>, where a is the initial population in 1700. The number of years from 1700 to 1900 is 200, so when x = 200, y = 96,000. Substituting: 96,000 = a(2)<sup>200/40</sup> = a(2)<sup>5</sup> = 32a. Dividing both sides by 32 yields a = 3,000.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

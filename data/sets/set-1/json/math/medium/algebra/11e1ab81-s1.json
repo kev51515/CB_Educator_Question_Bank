@@ -1,0 +1,39 @@
+{
+  "questionId": "11e1ab81-s1",
+  "originalId": "11e1ab81",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A graph shows the distance traveled <em>d</em>, in feet, by a package on a conveyor belt <em>m</em> minutes after the package is placed on the belt. The line passes through the points (0, 0) and (2, 30). Which of the following equations correctly relates <em>d</em> and <em>m</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>d = m + 15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>d = 2m + 30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>d = 15m</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>d = 30m</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The line passes through the origin, so the y-intercept is 0 and the relationship is direct proportion d = km. Using (2, 30): 30 = k(2), so k = 15. Therefore d = 15m. Choices A and B introduce nonzero constants not supported by passing through the origin. Choice D uses the y-value at m = 2 as the constant of proportionality rather than dividing by 2.</p>",
+  "templateId": "linear-functions.A4.T3.medium"
+}

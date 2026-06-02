@@ -1,0 +1,39 @@
+{
+  "questionId": "25e1cfed-s1",
+  "originalId": "25e1cfed",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>How many solutions does the equation 4(5<i>x</i> &minus; 3) = &minus;3(4 &minus; 5<i>x</i>) have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Infinitely many</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Zero</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Expanding both sides gives 20<i>x</i> &minus; 12 = &minus;12 + 15<i>x</i>. Subtracting 15<i>x</i> from both sides yields 5<i>x</i> &minus; 12 = &minus;12, so 5<i>x</i> = 0 and <i>x</i> = 0 is the unique solution.</p><p>Choice B is impossible for a linear equation. Choices C and D would require an identity or a contradiction, respectively.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T8.hard"
+}

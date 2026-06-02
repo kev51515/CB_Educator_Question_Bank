@@ -1,0 +1,22 @@
+[
+  {"id": "014edcb7-s1", "templateId": "lines-angles-and-triangles.A2.T2.medium", "verdict": "ok"},
+  {"id": "4ff7b652-s1", "templateId": "lines-angles-and-triangles.A5.T1.medium", "verdict": "ok"},
+  {"id": "901e3285-s1", "templateId": "lines-angles-and-triangles.A3.T1.medium", "verdict": "ok"},
+  {"id": "055aafe7-s1", "templateId": "lines-angles-and-triangles.A5.T2.medium", "verdict": "ok"},
+  {"id": "2085e10e-s1", "templateId": "lines-angles-and-triangles.A5.T5.medium", "verdict": "ok"},
+  {"id": "d7a8aa9c-s1", "templateId": "lines-angles-and-triangles.A5.T4.medium", "verdict": "ok"},
+  {"id": "c7bed21d-s1", "templateId": "lines-angles-and-triangles.A5.T4.medium", "verdict": "ok"},
+  {"id": "95ca2683-s1", "templateId": "lines-angles-and-triangles.A2.T1.medium", "verdict": "ok"},
+  {"id": "d3fe472f-s1", "templateId": "lines-angles-and-triangles.A5.T2.medium", "verdict": "ok"},
+  {"id": "6dd463ca-s1", "templateId": "lines-angles-and-triangles.A2.T3.medium", "verdict": "ok"},
+  {"id": "2f7c92ad-s1", "templateId": "lines-angles-and-triangles.A5.T3.medium", "verdict": "ok"},
+  {"id": "2adbf1b1-s1", "templateId": "lines-angles-and-triangles.A1.T2.medium", "verdict": "aspect_drift", "detail": "Stem describes two lines m and t intersecting at a point with vertical angles — no parallel lines invoked. A1 requires explicit parallel-lines configuration (per must_preserve). This is A6 (intersecting lines at a point), not A1."},
+  {"id": "fd8745fc-s1", "templateId": "lines-angles-and-triangles.A2.T1.medium", "verdict": "ok"},
+  {"id": "1c3d613c-s1", "templateId": "lines-angles-and-triangles.A5.T1.medium", "verdict": "ok"},
+  {"id": "686b5212-s1", "templateId": "lines-angles-and-triangles.A1.T2.medium", "verdict": "ok"},
+  {"id": "7a8ad237-s1", "templateId": "lines-angles-and-triangles.A4.T1.medium", "verdict": "ok"},
+  {"id": "81b664bc-s1", "templateId": "lines-angles-and-triangles.A6.T1.medium", "verdict": "aspect_drift", "detail": "Stem is about similar triangles and proportional sides (EF length given scale factor 10/8). A6 is 'intersecting lines & angle relationships at a point' — no intersection configuration here. This belongs to A5.T2 (find side via proportional reasoning)."},
+  {"id": "51f26ce8-s1", "templateId": "lines-angles-and-triangles.A5.T3.medium", "verdict": "ok"},
+  {"id": "933fee1a-s1", "templateId": "lines-angles-and-triangles.A6.T1.medium", "verdict": "aspect_drift", "detail": "Stem asks for sin(40°) ratio in a right triangle — pure right-triangle trigonometry, no intersecting-lines-at-a-point configuration. A6.T1 covers vertical/linear-pair angle measure. Belongs to right-triangle trigonometry skill, not A6 of this skill."},
+  {"id": "585a9138-s1", "templateId": "lines-angles-and-triangles.A4.T1.medium", "verdict": "ok"}
+]

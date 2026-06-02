@@ -1,0 +1,24 @@
+{
+  "questionId": "002dba45-s1",
+  "originalId": "002dba45",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Line k is defined by y = -(11/4)x + 2. Line j is perpendicular to line k in the xy-plane. What is the slope of line j?</p>",
+  "answerOptions": [],
+  "keys": [
+    "4/11",
+    ".3636",
+    ".3637"
+  ],
+  "rationale": "<p>Perpendicular slopes are negative reciprocals. Slope of k is -11/4, so slope of j is 4/11 \u2248 0.3636.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "4042ff0b-s1",
+  "originalId": "4042ff0b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Comfort Ratings and Lighting-Adjustment Preferences from One Survey</caption><thead><tr><th>Participant</th><th>Comfort rating (1-10)</th><th>Preferred lighting change</th></tr></thead><tbody><tr><td>Participant 4</td><td>6</td><td>dimmer</td></tr><tr><td>Participant 12</td><td>4</td><td>much brighter</td></tr><tr><td>Participant 30</td><td>7</td><td>slightly brighter</td></tr></tbody></table></figure><p>Researchers surveyed office workers about their visual comfort in a shared workspace. Each participant gave a 1-to-10 comfort rating and chose a preferred lighting change. According to the table, all three participants preferred either dimmer or brighter lighting, ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>and they each reported the same level of comfort.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>even though each participant&rsquo;s ratings varied throughout the day.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>but participant 30 reported feeling much less comfortable than the other two participants did.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>but participant 12 reported feeling significantly less comfortable than the other two participants did.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the table shows participant 12 gave a comfort rating of 4, which is noticeably lower than the ratings of participants 4 (6) and 30 (7).</p><p>Choice A is incorrect: the three comfort ratings (6, 4, 7) are not equal. Choice B is incorrect: the table reports a single rating per participant, not changes throughout the day. Choice C is incorrect: participant 30 gave the highest rating (7), not the lowest.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "087cdcfd-s1",
+  "originalId": "087cdcfd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Three lines intersect at point Q. The angle measured x\u00b0 and one other angle are vertical angles. The angle vertically opposite the x\u00b0 angle is adjacent to the y\u00b0 angle and the z\u00b0 angle, and together these three adjacent angles form a straight angle. If x = 55 and y = 80, what is the value of z?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>135</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The angle vertical to the x\u00b0 angle also measures 55\u00b0. Since 55\u00b0, y\u00b0, and z\u00b0 are adjacent and form a straight angle, 55 + 80 + z = 180, so z = 45.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A6.T1.easy"
+}

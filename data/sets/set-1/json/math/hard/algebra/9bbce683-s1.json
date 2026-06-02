@@ -1,0 +1,39 @@
+{
+  "questionId": "9bbce683-s1",
+  "originalId": "9bbce683",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows three values of x and their corresponding values of y for a linear relationship between x and y. What is the x-coordinate of the x-intercept of the graph of this relationship in the xy-plane?</p><table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>0</td><td>2</td></tr><tr><td>3</td><td>11</td></tr><tr><td>6</td><td>20</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-1/3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-2/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-2</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The slope is (11 - 2)/(3 - 0) = 3, and the y-intercept is 2. The equation is y = 3x + 2. Setting y = 0: 0 = 3x + 2, so x = -2/3. Therefore the x-coordinate of the x-intercept is -2/3.</p><p>Choice A would result from using y-intercept 9 instead of 2. Choices B and D result from sign errors or swapping numerator and denominator.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.easy"
+}

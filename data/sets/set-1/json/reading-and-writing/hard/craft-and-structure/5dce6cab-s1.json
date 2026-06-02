@@ -1,0 +1,39 @@
+{
+  "questionId": "5dce6cab-s1",
+  "originalId": "5dce6cab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Given that the chaotic atmospheric conditions on hot Jupiters should make stable weather patterns nearly impossible, it's not surprising that the persistence of certain banded cloud structures on these planets has lacked <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> explanation. Astrophysicist Vivian Park and her colleagues shed new light on the subject when they used three-dimensional simulations to identify a delicate interplay of jet streams that could sustain such bands.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a simple</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a discernible</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>an unbiased</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>an inconclusive</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"A simple\" most logically completes the text. The conditions are chaotic, and the new model invokes a \"delicate interplay\" of factors\u2014so a simple explanation has been lacking, which is why the new, complex modeling is significant.</p><p>Choice B is incorrect. The text doesn't suggest that no explanation could be perceived (\"discernible\")\u2014rather, that no easy one has existed. Choice C is incorrect. \"Unbiased\" addresses fairness rather than ease, which is irrelevant here. Choice D is incorrect. \"Inconclusive\" is self-contradictory in this slot: saying the explanation lacked an inconclusive explanation would be backwards.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

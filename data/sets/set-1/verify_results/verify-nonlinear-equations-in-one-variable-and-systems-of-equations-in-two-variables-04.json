@@ -1,0 +1,22 @@
+[
+  {"id": "e9349667-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "133f3e41-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard", "verdict": "ok"},
+  {"id": "4661e2a9-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "58b109d4-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "d0a53ef5-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T4.hard", "verdict": "ok"},
+  {"id": "f65288e8-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard", "verdict": "type_drift", "detail": "Stem is zero-product (x+4)(x-9)=0, which is T6 (zero-product/factored polynomial), not T3 (absolute-value equation). Answer (-2) is mathematically correct, but typeId is wrong."},
+  {"id": "03ff48d2-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"},
+  {"id": "4fb8a648-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard", "verdict": "ok"},
+  {"id": "ff2e5c76-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "71014fb1-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T7 requires a literal parameter (b, c, k) so student solves discriminant equation for that parameter. Clone (x+3)^2=-7 has no parameter; it's a direct no-real-solution check, matching the easy lever 'direct discriminant calculation on a numeric quadratic'."},
+  {"id": "4dc5c6f9-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T7 requires a literal parameter. Clone has no parameter; it's a direct intersection-count of y=22 with a fully numeric downward parabola (max y=17). Better fits A4.T10 medium count-intersections."},
+  {"id": "722de804-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "a54753ca-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"},
+  {"id": "3d12b1e0-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"},
+  {"id": "c303ad23-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "3a01a5ee-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard", "verdict": "ok"},
+  {"id": "fc3d783a-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"},
+  {"id": "74473be4-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T7 requires a literal parameter to solve for. Clone is MCQ 'which quadratic has no real solutions' with four fully-numeric options - this matches medium lever ('which quadratic equation has exactly one / no real solutions')."},
+  {"id": "5910bfff-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard", "verdict": "ok"},
+  {"id": "77c0cced-s1", "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard", "verdict": "ok"}
+]

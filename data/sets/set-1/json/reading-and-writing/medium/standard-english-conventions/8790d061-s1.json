@@ -1,0 +1,25 @@
+{
+  "questionId": "8790d061-s1",
+  "originalId": "8790d061",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>When restoring medieval frescoes, modern conservators often inject a mild adhesive behind flaking pigment to reattach it to the wall. These adhesive injections, a stabilization technique known as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> are typically reversible so future conservators can revise the treatment.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>consolidation,</p>"},
+    {"id": "b", "content": "<p>consolidation;</p>"},
+    {"id": "c", "content": "<p>consolidation:</p>"},
+    {"id": "d", "content": "<p>consolidation</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The comma after \"consolidation\" pairs with the comma after \"injections\" to enclose the supplementary appositive \"a stabilization technique known as consolidation\" symmetrically with matched commas. Removing the insertion leaves a grammatical sentence.</p><p>Choice B is incorrect because a semicolon cannot pair with an opening comma to set off a supplementary element. Choice C is incorrect because a colon cannot pair with an opening comma in this way. Choice D is incorrect because no punctuation fails to close the supplementary element that the opening comma began.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

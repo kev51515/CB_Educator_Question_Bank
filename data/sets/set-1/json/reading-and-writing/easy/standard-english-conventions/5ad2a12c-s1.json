@@ -1,0 +1,39 @@
+{
+  "questionId": "5ad2a12c-s1",
+  "originalId": "5ad2a12c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The Domesday Book, compiled in 1086, is the earliest comprehensive land survey of England. The manuscript <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> records of more than 13,000 settlements, including small villages whose names might otherwise have been forgotten.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>contains</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>to contain</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>containing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to be containing</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A main clause requires a finite (tensed) verb. The finite present tense verb &ldquo;contains&rdquo; correctly serves as the main verb performing the action of the subject &ldquo;the manuscript.&rdquo;</p><p>Choices B, C, and D are all nonfinite forms (infinitive, present participle, progressive infinitive) that cannot serve as the main verb of a clause.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

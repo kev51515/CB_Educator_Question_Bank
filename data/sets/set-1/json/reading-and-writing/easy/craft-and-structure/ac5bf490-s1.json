@@ -1,0 +1,39 @@
+{
+  "questionId": "ac5bf490-s1",
+  "originalId": "ac5bf490",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a 2015 memoir. The narrator, Lucia, recalls a time when she and her younger brother Sam were children. A trading card is a small printed card collected for its picture or stats.</p><blockquote><p>I asked Sam to come trade cards with me. He wasn't as interested in my collection as he had been only a month before, <u>which made me sad because that was the one thing Sam had admired me for</u>. Usually, it was me doing the admiring. After I asked him again and again, he finally set down his book and came over to me.</p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It provides a reason for why Sam is unwilling to play with Lucia.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It indicates Lucia's unhappiness over Sam's diminished interest in her cards.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It presents an example of how Lucia and Sam usually played together as children.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It expresses Lucia's anger over Sam's refusal to spend time with her.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The underlined portion directly says Lucia felt sad about her brother's diminished interest in her collection\u2014the one thing Sam had admired her for.</p><p>Choice A is incorrect. The text doesn't explain Sam's reasons. Choice C is incorrect. The underlined portion describes Lucia's feelings, not how they usually played together. Choice D is incorrect. The emotion expressed is sadness, not anger.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

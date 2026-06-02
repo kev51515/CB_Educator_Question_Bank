@@ -1,0 +1,39 @@
+{
+  "questionId": "98c12e38-s1",
+  "originalId": "98c12e38",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Circle G has a radius of 6 millimeters (mm). Circle H has an area of 50&pi; mm<sup>2</sup>. What is the total area, in mm<sup>2</sup>, of circles G and H?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>86&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>112&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1800&pi;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area A of a circle with radius r is A = &pi;r<sup>2</sup>. Substituting r = 6 yields A = &pi;(6)<sup>2</sup> = 36&pi; mm<sup>2</sup> for circle G. Circle H has area 50&pi; mm<sup>2</sup>. Therefore the total area is 36&pi; + 50&pi; = 86&pi; mm<sup>2</sup>. Choices A and C are incorrect; they correspond to mishandling the formula (e.g., using sum of radii or diameters times &pi;). Choice D is incorrect and may result from multiplying rather than adding the areas.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T3.medium"
+}

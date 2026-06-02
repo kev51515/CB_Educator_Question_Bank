@@ -1,0 +1,39 @@
+{
+  "questionId": "12ee1edc-s1",
+  "originalId": "12ee1edc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation cx + 6 = 7x + 9 is given, where c is a constant. If the equation has no solution, what is the value of c?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Subtracting 7x from both sides gives (c - 7)x + 6 = 9. For the equation to have no solution, the coefficient of x must be 0 and the constants must be unequal: c - 7 = 0 and 6 \u2260 9. So c = 7. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.medium"
+}

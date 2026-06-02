@@ -1,0 +1,39 @@
+{
+  "questionId": "d84a514a-s1",
+  "originalId": "d84a514a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>p</i>(<i>x</i>) = 320,000(1.15)<sup><i>x</i></sup> gives a company's predicted annual revenue, in dollars, <i>x</i> years after the company began selling cookware online, where 0 &lt; <i>x</i> &le; 10. What is the best interpretation of the statement &ldquo;<i>p</i>(6) is approximately equal to 740,160&rdquo; in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>When the company's predicted annual revenue is approximately 740,160 dollars, it is 6 times the predicted annual revenue for the previous year.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6 years after the company began selling cookware online, its predicted annual revenue is approximately 740,160 dollars.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6 years after the company began selling cookware online, its predicted annual revenue will have increased by a total of approximately 740,160 dollars.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>When the company's predicted annual revenue is approximately 740,160 dollars, it is 6% greater than the predicted annual revenue for the previous year.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The function <i>p</i>(<i>x</i>) gives the predicted annual revenue in dollars <i>x</i> years after the company began selling cookware online. So <i>p</i>(6) &asymp; 740,160 means that 6 years after the company began selling cookware online, the predicted annual revenue is approximately 740,160 dollars.</p><p>Choices A, C, and D misinterpret the meaning of <i>p</i>(6) by confusing the value of the function with a change or a multiplicative comparison.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A2.T1.easy"
+}

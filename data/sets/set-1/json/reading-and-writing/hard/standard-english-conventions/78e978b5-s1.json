@@ -1,0 +1,25 @@
+{
+  "questionId": "78e978b5-s1",
+  "originalId": "78e978b5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A3.T6.hard",
+  "type": "mcq",
+  "stimulus": "<p>The World Health Organization (WHO) publishes annual figures on the average cost of a standardized clinic visit across its member states. For example, in March 2022, a routine outpatient consultation priced at the equivalent of 50 US dollars (USD) in Germany would have cost 18 USD and 73 USD in fellow WHO ______ and Sweden, respectively.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>members Vietnam</p>"},
+    {"id": "b", "content": "<p>members, Vietnam</p>"},
+    {"id": "c", "content": "<p>members; Vietnam</p>"},
+    {"id": "d", "content": "<p>members: Vietnam</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. No punctuation is needed between the title \"fellow WHO members\" and the coordinated proper nouns \"Vietnam and Sweden,\" because the country names are essential to identifying which members are meant.</p><p>Choice B is incorrect because placing a comma after \"members\" treats the names as nonessential, suggesting they could be removed without changing the sentence&rsquo;s meaning — but here the names are necessary. Choice C is incorrect because a semicolon cannot be used in this way; it would also wrongly imply two independent clauses. Choice D is incorrect because a colon after \"members\" would suggest that all WHO members had those costs, rather than just Vietnam and Sweden.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

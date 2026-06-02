@@ -1,0 +1,39 @@
+{
+  "questionId": "d65b9a87-s1",
+  "originalId": "d65b9a87",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The dot plots represent two data sets A and B, both symmetric and with an odd number of values. Data set A has values 20, 21, 22, 22, 23, 24, 24, 25, 26 (one dot each except 22 and 24 have one each as well). Data set B has values 20, 20, 21, 22, 22, 23, 24, 24, 25, 26, 26. Both distributions are symmetric about 23. Consider the two statements: I. The median of A equals the median of B. II. The standard deviation of A is greater than the standard deviation of B. Which of the following is true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neither I nor II</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Both distributions are symmetric with odd counts; the median equals the value at the center, which is 23 for each set. So statement I is true. Standard deviation measures spread from the mean: data set B has more values at the extremes (20 and 26 each appear twice) than A does, so B has a larger standard deviation. That means statement II (A &gt; B) is false. Only I is true.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.hard"
+}

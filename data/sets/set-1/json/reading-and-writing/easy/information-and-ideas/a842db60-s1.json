@@ -1,0 +1,39 @@
+{
+  "questionId": "a842db60-s1",
+  "originalId": "a842db60",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>To bring her work to more readers, poet Carmen Lozano turned to community broadsides. In broadside printing, a poem is printed on a single large sheet, often illustrated and distributed in caf\u00e9s, libraries, and meeting halls. In her broadside series <em>Mothers of the Valley</em> (1972\u20131974), Lozano paired short poems about the daily lives of farmworking mothers in the Central Valley with brief tributes to lesser-known organizers from the same region. The pairing invites the reader to see ties among the women. The broadside format helped Lozano's poetry reach a wide audience and supported her aim of building solidarity among Latina women through her work.</p>",
+  "stem": "<p>According to the text, what is significant about Lozano's use of broadside printing?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Broadside printing relied on materials that were inexpensive and easy for Lozano to obtain.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Lozano became financially successful once she began using broadside printing.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Broadside printing helped Lozano use poetry to bring people together, especially Latina women.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Lozano was one of the first Latina poets to use broadside printing.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text states that the broadside format helped Lozano's poetry reach a wide audience and supported her aim of building solidarity among Latina women.</p><p>Choice A is incorrect; the text does not discuss the cost or availability of materials. Choice B is incorrect; the text mentions a wide audience but does not say Lozano became financially successful. Choice D is incorrect; the text does not claim Lozano was among the first Latina poets to use broadsides.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

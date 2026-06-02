@@ -1,0 +1,39 @@
+{
+  "questionId": "82d2436a-s1",
+  "originalId": "82d2436a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2021 novel by a contemporary author. The narrator is a member of her high school's debate team.</p><blockquote><p>That spring, the debate team was invited to compete at the Mid-Atlantic Forensics Tournament. Walking to the front of the room, I did what my coach had taught me. Imagine you're talking to a single friend over coffee. That way you won't tense up. I let my eyes settle on my sister, who sat in the second row, smiling a little, waiting. Then I steadied my hands on the podium and began.</p></blockquote>",
+  "stem": "<p>According to the text, what does the narrator do as she walks to the front of the room?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She follows her coach's advice for managing her nervousness.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She feels excited to compete in her first tournament.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She thinks about how debating in front of a panel differs from debating with a partner.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She recalls all the hours she spent practicing her speech.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text shows the narrator using her coach's advice (\"Imagine you're talking to a single friend over coffee\") to keep from tensing up, which she puts into practice by focusing on her sister.</p><p>Choice B is incorrect; the text describes nervousness, not excitement, and never says this is her first tournament. Choice C is incorrect; the text does not compare panel debates with partner debates. Choice D is incorrect; the text does not mention practice.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

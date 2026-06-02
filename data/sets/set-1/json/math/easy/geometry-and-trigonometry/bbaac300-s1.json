@@ -1,0 +1,39 @@
+{
+  "questionId": "bbaac300-s1",
+  "originalId": "bbaac300",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <em>PQR</em> is similar to triangle <em>STU</em>, where angle <em>P</em> corresponds to angle <em>S</em>, and angles <em>R</em> and <em>U</em> are right angles. If the cosine of angle <em>Q</em> equals 2 over 15, what is the value of the cosine of angle <em>T</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1 over 15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15 over 2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>13 over 15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2 over 15</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Because the triangles are similar, their corresponding acute angles are congruent. Angle <em>Q</em> corresponds to angle <em>T</em>, so the cosine of angle <em>T</em> equals the cosine of angle <em>Q</em>, which is 2 over 15.</p><p>Choice A is incorrect: 1 over 15 has no relation to the given cosine.</p><p>Choice B is incorrect: 15 over 2 is the reciprocal of the given cosine.</p><p>Choice C is incorrect: 13 over 15 is approximately the sine of angle <em>Q</em>.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A5.T10.easy"
+}

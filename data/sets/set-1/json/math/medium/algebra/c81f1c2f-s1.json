@@ -1,0 +1,22 @@
+{
+  "questionId": "c81f1c2f-s1",
+  "originalId": "c81f1c2f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>f</em>(<em>x</em>) = 28<em>x</em> + 350</p><p>The function <em>f</em> gives the monthly fee <em>f</em>(<em>x</em>), in dollars, a club charges for <em>x</em> members. What is the monthly fee, in dollars, the club charges for 40 members?</p>",
+  "answerOptions": [],
+  "keys": [
+    "1470"
+  ],
+  "rationale": "<p>The correct answer is 1,470. Substituting <em>x</em> = 40 into <em>f</em>(<em>x</em>) = 28<em>x</em> + 350 yields <em>f</em>(40) = 28(40) + 350 = 1,120 + 350 = 1,470.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T1.medium"
+}

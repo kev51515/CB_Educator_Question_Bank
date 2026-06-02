@@ -1,0 +1,39 @@
+{
+  "questionId": "0045c234-s1",
+  "originalId": "0045c234",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Because fish and the sediments of the lakes they inhabit ultimately draw their trace minerals from the surrounding bedrock, some geologists have proposed that freshwater fish should contain the same trace minerals as the bedrock of their lake&rsquo;s watershed, with the fish containing equal or smaller quantities of the minerals that the watershed bedrock contains. This idea is supported by evidence that fish in several mountain lakes contain trace amounts of some of the same minerals found in the local bedrock.</p>",
+  "stem": "<p>Which finding, if true, would most directly weaken the geologists&rsquo; claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Evidence emerges that the amount of zinc in some lake-dwelling fish is considerably higher than the amount present in the bedrock of their watershed.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Most freshwater fish are composed largely of water and protein, but small samples reveal trace amounts of magnesium and iron.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A nearby river is observed to flow over bedrock similar in composition to that of a lake studied by the geologists.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The method for determining the trace-mineral content of freshwater fish is found to be less effective when used on saltwater fish.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it presents a finding that, if true, would weaken the claim. The geologists claim that fish should contain the same minerals as the watershed bedrock in equal or smaller quantities. Evidence that some lake-dwelling fish contain considerably higher amounts of zinc than the bedrock contains would directly contradict the &ldquo;equal or smaller quantities&rdquo; part of the claim.</p><p>Choice B is incorrect because the fact that fish are composed largely of water and protein is consistent with the claim and doesn&rsquo;t address the quantities of trace minerals relative to the bedrock. Choice C is incorrect because a finding about a separate river&rsquo;s bedrock doesn&rsquo;t bear on the comparison between fish and their own watershed bedrock. Choice D is incorrect because the geologists&rsquo; claim is grounded in the fact that fish and bedrock minerals come from the same source, which would remain true regardless of how well the analytical method works on saltwater fish.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T6.hard"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "e268c452",
+  "externalId": "97d4e00a-62bc-4d6e-9499-dbdbd7288683",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:22:41.741123+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "f03bd83c-9ac4-4e6d-8d7b-6798e2ade3f7",
+      "content": "<p>Actually,</p>"
+    },
+    {
+      "id": "5580affe-7751-49f4-a2ee-a899429d91a2",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "8238adbe-d512-4dd2-a79a-e402f31b0219",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "9afc44c3-e9ed-494d-8b88-d1919504664e",
+      "content": "<p>Finally,</p>"
+    }
+  ],
+  "keys": [
+    "9afc44c3-e9ed-494d-8b88-d1919504664e"
+  ],
+  "rationale": "<p>Choice D is the best answer. &ldquo;Finally&rdquo; logically signals that the information in this sentence&mdash;that the artisan slips paper in and out of the liquid to transfer the design onto paper&mdash;is the final step in the process of Turkish paper marbling, which began with what happens &ldquo;first&rdquo; (filling a tray with a solution) and continued with what happens &ldquo;next&rdquo; (adding inks or paints to the solution).</p><p>Choice A is incorrect because &ldquo;actually&rdquo; illogically signals that the information in this sentence about slipping paper in and out of liquid to transfer a design onto paper is unexpected in light of the previously described steps. Instead, the sentence describes the final step in the process of Turkish paper marbling. Choice B is incorrect because &ldquo;therefore&rdquo; illogically signals that the information in this sentence about slipping paper in and out of liquid to transfer a design onto paper is a consequence of the previously described steps. Instead, the sentence describes the final step in the process of Turkish paper marbling. Choice C is incorrect because &ldquo;nevertheless&rdquo; illogically signals that the information in this sentence about slipping paper in and out of liquid to transfer a design onto paper contrasts with the previously described steps. Instead, the sentence describes the final step in the process of Turkish paper marbling.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>The traditional process of Turkish paper marbling (<span lang=\"tr\">ebru</span>) generally proceeds like this: First, the artisan fills a shallow tray with a water bath solution. Next, the artisan adds inks or paints to the solution, which can then be manipulated into intricate designs. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the artisan slips paper in and out of the liquid, transferring the design onto the paper.</p>",
+    "keys": [
+      "9afc44c3-e9ed-494d-8b88-d1919504664e"
+    ],
+    "answerOptions": [
+      {
+        "id": "f03bd83c-9ac4-4e6d-8d7b-6798e2ade3f7",
+        "content": "<p>Actually,</p>"
+      },
+      {
+        "id": "5580affe-7751-49f4-a2ee-a899429d91a2",
+        "content": "<p>Therefore,</p>"
+      },
+      {
+        "id": "8238adbe-d512-4dd2-a79a-e402f31b0219",
+        "content": "<p>Nevertheless,</p>"
+      },
+      {
+        "id": "9afc44c3-e9ed-494d-8b88-d1919504664e",
+        "content": "<p>Finally,</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. &ldquo;Finally&rdquo; logically signals that the information in this sentence&mdash;that the artisan slips paper in and out of the liquid to transfer the design onto paper&mdash;is the final step in the process of Turkish paper marbling, which began with what happens &ldquo;first&rdquo; (filling a tray with a solution) and continued with what happens &ldquo;next&rdquo; (adding inks or paints to the solution).</p><p>Choice A is incorrect because &ldquo;actually&rdquo; illogically signals that the information in this sentence about slipping paper in and out of liquid to transfer a design onto paper is unexpected in light of the previously described steps. Instead, the sentence describes the final step in the process of Turkish paper marbling. Choice B is incorrect because &ldquo;therefore&rdquo; illogically signals that the information in this sentence about slipping paper in and out of liquid to transfer a design onto paper is a consequence of the previously described steps. Instead, the sentence describes the final step in the process of Turkish paper marbling. Choice C is incorrect because &ldquo;nevertheless&rdquo; illogically signals that the information in this sentence about slipping paper in and out of liquid to transfer a design onto paper contrasts with the previously described steps. Instead, the sentence describes the final step in the process of Turkish paper marbling.</p>",
+    "externalid": "97d4e00a-62bc-4d6e-9499-dbdbd7288683",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>The traditional process of Turkish paper marbling (<span lang=\"tr\">ebru</span>) generally proceeds like this: First, the artisan fills a shallow tray with a water bath solution. Next, the artisan adds inks or paints to the solution, which can then be manipulated into intricate designs. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the artisan slips paper in and out of the liquid, transferring the design onto the paper.</p>"
+}

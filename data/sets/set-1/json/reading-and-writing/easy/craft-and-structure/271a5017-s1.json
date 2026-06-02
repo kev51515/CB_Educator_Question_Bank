@@ -1,0 +1,25 @@
+{
+  "questionId": "271a5017-s1",
+  "originalId": "271a5017",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2021 novel. Mira is a teenager who lives with her father, Theo, and her grandmother, Lina, who is a potter.</p><blockquote><p>Lina finished the vase in the gray hour of a morning—it was just before dawn when Mira heard the kiln door swing open. She lay in the dimness of her room and listened to her grandmother's footsteps moving down the hallway between her [grandmother] and Theo's room. There was a low hum pulsing through the wooden floor in a kind of melody, and that was how Mira knew the vase was done. <u>Lina's feet were humming the news.</u></p></blockquote>",
+  "stem": "<p>Which choice best states the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It describes Theo's reaction upon seeing the vase for the first time.</p>"},
+    {"id": "b", "content": "<p>It indicates that Lina always hums while shaping a vase.</p>"},
+    {"id": "c", "content": "<p>It adds to the idea that Lina's footsteps reveal something to Mira.</p>"},
+    {"id": "d", "content": "<p>It indicates that Mira is more interested in music than in pottery.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text establishes that Mira can tell from her grandmother's footsteps that the vase is done. The underlined sentence builds on this by stating that Lina's feet \"were humming the news.\" It emphasizes that the footsteps themselves communicate information to Mira.</p><p>Choice A is incorrect. Theo isn't described in the underlined sentence. Choice B is incorrect. The humming is figurative, describing how the footsteps feel; it doesn't say Lina hums while working. Choice D is incorrect. The text gives no evidence that Mira prefers music to pottery.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

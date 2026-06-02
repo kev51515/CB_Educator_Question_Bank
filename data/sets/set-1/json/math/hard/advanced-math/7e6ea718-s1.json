@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "7e6ea718-s1",
+  "originalId": "7e6ea718",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 6(x &minus; c)(x + c)<sup>2</sup>(x &minus; d)</p><p>In the given equation, c and d are unique positive constants. When the equation is graphed in the xy-plane, how many distinct x-intercepts does the graph have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The zeros come from each factor: x &minus; c = 0 gives x = c; (x + c)<sup>2</sup> = 0 gives x = &minus;c (a double root, but still one distinct value); x &minus; d = 0 gives x = d. Since c and d are distinct positive numbers, the three values c, &minus;c, and d are all distinct, giving 3 distinct x-intercepts.</p><p>Choice A counts each factor separately even though one is repeated. Choices B and C undercount the distinct zeros.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T4.hard"
+}

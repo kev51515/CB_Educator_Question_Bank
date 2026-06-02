@@ -1,0 +1,39 @@
+{
+  "questionId": "4d1a9c0d-s1",
+  "originalId": "4d1a9c0d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Following the principles of community-based participatory research, Indigenous communities and universities are equal partners in environmental studies conducted on tribal lands. A collaboration between the Yurok Tribe and Humboldt State University <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> this model: tribal members worked alongside ecologists to design the methodology and continue to assist in data collection.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>circumvents</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>fabricates</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>exemplifies</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>eclipses</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the second part of the sentence describes how tribal members and scientists worked as equal partners, which matches the model named in the first sentence. \"Exemplifies\" means serves as a clear example, which fits. The other choices describe avoiding, inventing, or surpassing, none of which fits a collaboration that demonstrates the model.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

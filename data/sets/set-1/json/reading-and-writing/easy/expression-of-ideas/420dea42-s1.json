@@ -1,0 +1,25 @@
+{
+  "questionId": "420dea42-s1",
+  "originalId": "420dea42",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>A blend of silk and synthetic fibers, the material used for Beyoncé's gold mirror-ball Renaissance tour bodysuit was lightweight enough to allow the singer to perform her demanding choreography. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the added weight of the bodysuit's hundreds of hand-applied crystal mirrors likely placed some strain on the singer during extended performances.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For this reason,</p>"},
+    {"id": "b", "content": "<p>Firstly,</p>"},
+    {"id": "c", "content": "<p>In other words,</p>"},
+    {"id": "d", "content": "<p>However,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"However\" logically signals that the claim in this sentence—that the weight of the crystal mirrors likely placed strain on the singer—contrasts with the previous information about the material being lightweight enough for demanding choreography.</p><p>Choice A is incorrect because \"for this reason\" illogically signals that the strain is caused by the material being lightweight. Instead, the strain contrasts with the material's lightness. Choice B is incorrect because \"firstly\" illogically signals the first in a series. Instead, the strain contrasts with the previous information. Choice C is incorrect because \"in other words\" illogically signals a restatement. Instead, this sentence contrasts with the previous information.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T2.easy"
+}

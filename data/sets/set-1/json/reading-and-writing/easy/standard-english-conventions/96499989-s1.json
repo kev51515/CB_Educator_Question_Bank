@@ -1,0 +1,39 @@
+{
+  "questionId": "96499989-s1",
+  "originalId": "96499989",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.misc.easy",
+  "type": "mcq",
+  "stimulus": "<p>Fans of musical theater will <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> several allusions to <em>West Side Story</em> in Lin-Manuel Miranda's <em>In the Heights</em>, including melodic phrases that echo Leonard Bernstein's original score.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>recognize. The</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>recognize, the</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>recognize the</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>recognize: the</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation use between a verb and its object. No punctuation is needed between the verb \"will recognize\" and its object \"the several allusions to West Side Story...\" The object helps complete the idea of the verb, and any punctuation between the two results in an ungrammatical sentence.</p><p>Choice A is incorrect because it results in a sentence fragment. Choice B is incorrect because no punctuation is needed between the verb and its object. Choice D is incorrect because no punctuation is needed between the verb and its object.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

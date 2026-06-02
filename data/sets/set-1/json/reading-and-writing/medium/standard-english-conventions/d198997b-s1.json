@@ -1,0 +1,25 @@
+{
+  "questionId": "d198997b-s1",
+  "originalId": "d198997b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.medium",
+  "stimulus": "<p>Lee Krasner, a US painter and member of the Abstract Expressionist movement, completed many ambitious large-scale canvases, including her 1959 cycle <em>Night Journeys</em>. In these works, Krasner&rsquo;s mature style is distinguished by her use of dense rhythmic <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recur across each painting with subtle variation.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>brushstrokes: that</p>"},
+    {"id": "b", "content": "<p>brushstrokes; that</p>"},
+    {"id": "c", "content": "<p>brushstrokes that</p>"},
+    {"id": "d", "content": "<p>brushstrokes. That</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The relative pronoun \"that\" introduces an integrated (restrictive) relative clause supplying essential information about the noun phrase \"dense rhythmic brushstrokes.\" Restrictive relative clauses take no punctuation between the relative clause and the noun it modifies.</p><p>Choice A is incorrect because a colon improperly separates the noun from its restrictive modifier. Choice B is incorrect because a semicolon improperly separates the noun from its restrictive modifier and cannot precede a dependent clause. Choice D is incorrect because a period creates a sentence fragment beginning with \"That.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

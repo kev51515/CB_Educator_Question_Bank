@@ -1,0 +1,22 @@
+{
+  "questionId": "2b1a27cd-s1",
+  "originalId": "2b1a27cd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The quadratic function <i>g</i> models the depth, in meters, below the surface of the water of a whale <i>t</i> minutes after the whale began a dive. The function estimates that the whale reached its maximum depth of 180 meters 5 minutes after it began the dive and then reached the surface of the water 10 minutes after it began the dive. What is the value of <i>g</i>(2)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "115.2"
+  ],
+  "rationale": "<p>The vertex form is <i>g</i>(<i>t</i>) = <i>a</i>(<i>t</i> &minus; 5)&sup2; + 180. Using <i>g</i>(10) = 0: 0 = 25<i>a</i> + 180, so <i>a</i> = &minus;7.2. Then <i>g</i>(2) = &minus;7.2(9) + 180 = &minus;64.8 + 180 = 115.2. Hmm \u2014 but also <i>g</i>(0) should be 0 if starting from surface; the dive begins at surface, so <i>g</i>(0) = 0 and <i>g</i>(10) = 0. With both zeros, the function is <i>g</i>(<i>t</i>) = <i>a</i>(<i>t</i>)(<i>t</i> &minus; 10) with maximum at <i>t</i> = 5: <i>g</i>(5) = <i>a</i>(5)(&minus;5) = &minus;25<i>a</i> = 180, so <i>a</i> = &minus;7.2. Then <i>g</i>(2) = &minus;7.2(2)(&minus;8) = 115.2.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T2.hard"
+}

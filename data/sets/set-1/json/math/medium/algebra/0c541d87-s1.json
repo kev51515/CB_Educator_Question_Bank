@@ -1,0 +1,39 @@
+{
+  "questionId": "0c541d87-s1",
+  "originalId": "0c541d87",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two customers ordered the same kind of sandwich and bottled drink at a caf\u00e9. The first customer paid $12.20 for 1 sandwich and 2 drinks. The second customer paid $17.30 for 4 sandwiches and 1 drink. What is the cost, in dollars, of 1 drink?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5.10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.05</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Let s be the cost of a sandwich and d the cost of a drink. Then s + 2d = 12.20 and 4s + d = 17.30. Multiplying the first equation by 4 gives 4s + 8d = 48.80. Subtracting the second equation: 7d = 31.50, so d = 4.50. The correct answer is choice B.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium"
+}

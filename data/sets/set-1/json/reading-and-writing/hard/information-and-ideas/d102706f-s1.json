@@ -1,0 +1,39 @@
+{
+  "questionId": "d102706f-s1",
+  "originalId": "d102706f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Estimates of Megalodon Bite Force</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;\">Study</th><th scope=\"col\" style=\"text-align: center;\">Year</th><th scope=\"col\" style=\"text-align: center;\">Estimation method</th><th scope=\"col\" style=\"text-align: center;\">Approximate bite force (newtons)</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\">Wroe et al.</th><td style=\"text-align: center;\">2008</td><td>muscular and skeletal modeling</td><td>108,000&ndash;182,000</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Hubbell and Long</th><td style=\"text-align: center;\">2014</td><td>tooth-wear interaction analysis</td><td>40,000&ndash;90,000</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Renaud</th><td style=\"text-align: center;\">2001</td><td>body-mass scaling</td><td>220,000&ndash;310,000</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Bates and Falkingham</th><td style=\"text-align: center;\">2017</td><td>muscular and skeletal modeling</td><td>110,000&ndash;175,000</td></tr></tbody></table></figure><p>The largest sharks ever known &mdash; the extinct genus <em>Otodus megalodon</em> &mdash; are thought to have possessed bite forces well beyond those of any living predator, but the precise magnitude has been debated. Paleontologists Allison Park and Tomas Reyes have argued that estimates of megalodon bite force vary widely depending on the method used, and that studies that rely on similar methods tend to produce comparable results, while studies that rely on very different methods tend to produce sharply different results.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Park and Reyes's argument?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The study by Renaud used body-mass scaling and produced the lowest estimated maximum bite force, while the study by Wroe et al. used muscular and skeletal modeling and produced the highest estimated maximum bite force.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In their study, Hubbell and Long used tooth-wear interaction analysis to produce an estimated bite-force range whose upper end was lower than the upper end produced by Bates and Falkingham.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The estimated maximum bite force produced by Wroe et al. was higher than the estimated maximum produced by Bates and Falkingham, even though both studies used muscular and skeletal modeling.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The bite-force estimates produced by Bates and Falkingham and by Wroe et al. were similar to each other, while the estimates produced by Hubbell and Long and by Renaud, which used different methods from each other and from Bates and Falkingham and Wroe et al., were considerably different from each other and from the Bates and Falkingham and Wroe et al. estimates.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. Park and Reyes claim that similar methods yield similar estimates and that different methods yield sharply different estimates. The table shows that the two studies using muscular and skeletal modeling (Wroe et al. and Bates and Falkingham) produced very close ranges (108,000&ndash;182,000 and 110,000&ndash;175,000 N), whereas Hubbell and Long (tooth-wear interaction analysis: 40,000&ndash;90,000 N) and Renaud (body-mass scaling: 220,000&ndash;310,000 N) used different methods from those two studies and from each other, and produced estimates that are far apart from each other and from the muscular and skeletal modeling estimates. This pattern directly supports the argument.</p><p>Choice A is incorrect because it contrasts two studies that used different methods, which doesn't speak to the \"similar methods yield similar results\" half of the argument. Choice B is incorrect for the same reason: comparing the upper ends of two studies that used different methods does not address either half of the argument. Choice C is incorrect because the maxima from the two muscular and skeletal modeling studies are very close (182,000 vs. 175,000 N), which is consistent with similar methods producing similar results &mdash; pointing out that one is \"higher\" misrepresents the pattern.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

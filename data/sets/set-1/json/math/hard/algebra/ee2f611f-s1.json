@@ -1,0 +1,22 @@
+{
+  "questionId": "ee2f611f-s1",
+  "originalId": "ee2f611f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A regional bus company sells a monthly pass for $120 that allows an unlimited number of trips of any length. Tickets for individual trips cost $1.75, $3.00, or $4.50, depending on the length of the trip. What is the minimum number of trips per month for which the monthly pass could cost less than purchasing individual tickets for trips?</p>",
+  "answerOptions": [],
+  "keys": [
+    "27"
+  ],
+  "rationale": "<p>The correct answer is 27. The minimum is found by assuming the maximum individual fare, $4.50. If n tickets at $4.50 are purchased, 120 < 4.50n. Dividing by 4.50: n > 26.67, so the minimum whole number is 27.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium"
+}

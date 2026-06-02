@@ -1,0 +1,25 @@
+{
+  "questionId": "6989c80a-s1",
+  "originalId": "6989c80a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T4.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>F(x) = (9/5)(x - 273.15) + 32. The function F gives the temperature, in degrees Fahrenheit, that corresponds to a temperature of x kelvins. If a temperature increased by 3.50 kelvins, by how much did the temperature increase, in degrees Fahrenheit?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>6.85</p>"},
+    {"id": "b", "content": "<p>5.83</p>"},
+    {"id": "c", "content": "<p>1.94</p>"},
+    {"id": "d", "content": "<p>6.30</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. The change in F per unit change in x is the slope 9/5 = 1.8. An increase of 3.50 kelvins corresponds to an increase of 3.50 × 1.8 = 6.30 degrees Fahrenheit.</p><p>Choices A, B, and C arise from misapplying the formula or using the wrong slope.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

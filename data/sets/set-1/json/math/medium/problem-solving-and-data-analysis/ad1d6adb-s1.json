@@ -1,0 +1,39 @@
+{
+  "questionId": "ad1d6adb-s1",
+  "originalId": "ad1d6adb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number of stamps in a collection increased from 8 to 56. What was the percent increase in the number of stamps in this collection?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>48%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>600%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>700%</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The percent increase equals (new - old)/old &times; 100%, so the percent increase is (56 - 8)/8 &times; 100% = (48/8) &times; 100% = 6 &times; 100% = 600%. Choice A is incorrect because 14% is approximately the new value as a fraction of the increase, not the percent increase. Choice B is incorrect because 48% is just the numerical difference 48 expressed as a percent rather than divided by the original. Choice D is incorrect; 700% would correspond to a final value of 64, not 56.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T3.medium"
+}

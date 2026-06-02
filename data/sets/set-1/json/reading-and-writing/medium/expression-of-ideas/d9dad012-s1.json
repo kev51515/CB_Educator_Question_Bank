@@ -1,0 +1,25 @@
+{
+  "questionId": "d9dad012-s1",
+  "originalId": "d9dad012",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>The Maya of Mesoamerica carved elaborate stone monuments called stelae to commemorate countable events, such as royal accessions and military victories. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they may have used stelae to preserve more elaborate content, including dynastic genealogies and astronomical observations, according to recent epigraphers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>That is,</p>"},
+    {"id": "c", "content": "<p>Therefore,</p>"},
+    {"id": "d", "content": "<p>Moreover,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Moreover\" logically signals that the claim in this sentence—that the Maya may have used stelae to preserve more elaborate content like dynastic genealogies and astronomical observations—is an additional point related to the previous statement about the Maya using stelae to record countable events.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the claim about elaborate content exemplifies the previous statement about countable events, when in fact it introduces a separate category of use. Choice B is incorrect because \"that is\" illogically signals that the claim merely restates the previous statement, when in fact it presents an additional use. Choice C is incorrect because \"therefore\" illogically signals that the claim is a consequence of the previous statement, when in fact it adds a parallel function.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

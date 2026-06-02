@@ -1,0 +1,25 @@
+{
+  "questionId": "ab1bd603-s1",
+  "originalId": "ab1bd603",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from George Eliot's 1860 novel <em>The Mill on the Floss</em>. Mrs. Tulliver is preparing the household for a gathering of relatives.</p>\n<blockquote>\n<p>It fell to Mrs. Tulliver to arrange that everything in the parlour should be set in its proper order, and after the most respectable household manner; and, bustling from cupboard to dresser, scolding the maid and giving anxious instructions all morning in her gentle, fretting voice, Mrs. Tulliver was too determined to make others <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">observe</span> the appearances to <em>observe</em> them herself.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;observe&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Make a remark about</p>"},
+    {"id": "b", "content": "<p>Watch attentively for</p>"},
+    {"id": "c", "content": "<p>Conduct a ceremony to honor</p>"},
+    {"id": "d", "content": "<p>Comply with and follow</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. In context, \"observe\" means to comply with and follow. The text describes Mrs. Tulliver insisting that everything be arranged according to \"the most respectable household manner\"&mdash;that is, that others follow proper appearances&mdash;while she herself is too caught up in directing the work to comply with those same standards.</p><p>Choice A is incorrect. \"Observe\" can mean to make a remark, but the passage doesn't suggest Mrs. Tulliver fails to comment on the appearances; it suggests she fails to abide by them. Choice B is incorrect. \"Watch attentively for\" doesn't fit, since the passage is about adherence to social standards, not visual attention. Choice C is incorrect. \"Conduct a ceremony to honor\" is a specialized sense (as in observing a holiday) that the passage's reference to \"appearances\" does not activate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "f8befe75-s1",
+  "originalId": "f8befe75",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Many cultural histories of the Chicano Movement of the 1960s and 1970s rest heavily on manifestos and other explicitly programmatic texts as primary sources, a tendency that can overrepresent the perspectives of a small number of public organizers, most of them men. Historian Yolanda Estrada-Mart&iacute;n has shown that broadening the range of primary sources to include other kinds of material — including mural sketches, family snapshots, and community newspapers — yields a much fuller account of the movement and of the central and varied roles that Chicana women played in shaping it.</p>",
+  "stem": "<p>Which choice best describes the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Before Estrada-Mart&iacute;n&rsquo;s work, historians had largely ignored the cultural dimensions of the Chicano Movement.</p>"},
+    {"id": "b", "content": "<p>Estrada-Mart&iacute;n&rsquo;s methods and research have deepened the historical understanding of the Chicano Movement and Chicana women&rsquo;s contributions to it.</p>"},
+    {"id": "c", "content": "<p>Other historians of the Chicano Movement have criticized Estrada-Mart&iacute;n&rsquo;s use of unconventional primary sources.</p>"},
+    {"id": "d", "content": "<p>The Chicano Movement figures whom historians most often cite would have endorsed Estrada-Mart&iacute;n&rsquo;s conclusions about Chicana women&rsquo;s roles.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text begins by saying that prior histories rest too heavily on manifestos, then describes how Estrada-Mart&iacute;n has shown that broader source material yields a fuller account of the movement and of Chicana women&rsquo;s roles — deepening historical understanding.</p><p>Choice A is incorrect because the text says historians have relied on manifestos and programmatic texts, which are themselves cultural in nature. Choice C is incorrect because the text never describes other historians&rsquo; reactions to Estrada-Mart&iacute;n&rsquo;s work. Choice D is incorrect because the text never describes what movement figures would have thought of her conclusions.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

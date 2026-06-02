@@ -1,0 +1,23 @@
+{
+  "questionId": "5b4757df-s1",
+  "originalId": "5b4757df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In triangle ABC, angle C is a right angle. Point D lies on segment AB, and point E lies on segment AC such that segment DE is parallel to segment BC. The length of BC is 60 units, the length of DE is 5 units, and the area of triangle ABC is 450 square units. What is the length, in units, of segment EC?</p>",
+  "answerOptions": [],
+  "keys": [
+    "13.75",
+    "55/4"
+  ],
+  "rationale": "<p>Since \u2220C is right, the area of \u25b3ABC is (1/2)\u00b7AC\u00b7BC = 450. With BC = 60, this gives AC = 15. Because DE \u2225 BC, triangle ADE is similar to triangle ABC, so DE/BC = AE/AC, i.e., 5/60 = AE/15, giving AE = 15/12 = 5/4. Then EC = AC \u2212 AE = 15 \u2212 5/4 = 55/4 = 13.75.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.hard"
+}

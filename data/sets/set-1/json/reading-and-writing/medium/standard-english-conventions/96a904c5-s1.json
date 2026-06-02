@@ -1,0 +1,25 @@
+{
+  "questionId": "96a904c5-s1",
+  "originalId": "96a904c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>The album covers of Brazilian designer Aldo Luiz are celebrated for their enigmatic captions. Saturated with handwritten symbols and seemingly nonsensical phrases, and shaped largely by Luiz's \"intuition and dreams,\" <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the captions encourage the listener to engage with each record without preconceptions.</p>"},
+    {"id": "b", "content": "<p>the listener can engage with each record without preconceptions because of the captions.</p>"},
+    {"id": "c", "content": "<p>each record can be engaged with by the listener without preconceptions because of the captions.</p>"},
+    {"id": "d", "content": "<p>the listener's engagement with each record because of the captions can be free from preconceptions.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the captions\" the subject of the sentence and places it immediately after the modifying phrases \"saturated with handwritten symbols and seemingly nonsensical phrases, and shaped largely by Luiz's 'intuition and dreams.'\" In doing so, this choice clearly establishes that the captions&mdash;and not another noun in the sentence&mdash;are being described as saturated with symbols and shaped by Luiz's intuition.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of \"the listener\" immediately after the modifying phrases illogically suggests that the listener, rather than the captions, is saturated with handwritten symbols and shaped by Luiz's intuition. Choice C is incorrect because it results in a dangling modifier. The placement of \"each record\" immediately after the modifying phrases illogically suggests that the records, rather than the captions, are saturated with handwritten symbols and shaped by Luiz's intuition. Choice D is incorrect because it results in a dangling modifier. The placement of \"the listener's engagement\" immediately after the modifying phrases illogically suggests that the listener's engagement, rather than the captions, is saturated with handwritten symbols and shaped by Luiz's intuition.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

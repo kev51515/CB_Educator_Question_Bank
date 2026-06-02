@@ -1,0 +1,22 @@
+[
+  {"id": "ea6d05bb-s1", "templateId": "equivalent-expressions.A2.T6.hard", "verdict": "ok"},
+  {"id": "a0b4103e-s1", "templateId": "equivalent-expressions.A2.T5.hard", "verdict": "ok"},
+  {"id": "40c09d66-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "ok"},
+  {"id": "565428e1-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "ok"},
+  {"id": "371cbf6b-s1", "templateId": "equivalent-expressions.A2.T6.hard", "verdict": "ok"},
+  {"id": "911c415b-s1", "templateId": "equivalent-expressions.A2.T6.hard", "verdict": "type_drift", "detail": "Stem is distribute-and-combine to match at^2+b (no binomial-by-binomial multiplication). T6 requires multi-factor polynomial product; this fits A4.T9 (find a+b) with A1.T3 rewrite. Answer 3980 is correct."},
+  {"id": "0536ad4f-s1", "templateId": "equivalent-expressions.A1.T2.easy", "verdict": "ok"},
+  {"id": "772de699-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "5d93c782-s1", "templateId": "equivalent-expressions.A2.T5.easy", "verdict": "wrong_answer", "detail": "x^2+2x-35 factors as (x+7)(x-5) which is choice B, not keyed choice C ((x-7)(x+5)=x^2-2x-35). Rationale correctly derives (x+7)(x-5) but the answer key points to wrong choice."},
+  {"id": "974d33dc-s1", "templateId": "equivalent-expressions.A1.T2.medium", "verdict": "difficulty_drift", "detail": "Medium T2 requires subtraction with sign distribution; clone is pure addition (4x+3y)+(2x+5y) with small integers, matching easy lever, not medium."},
+  {"id": "fb96a5b3-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "wrong_answer", "detail": "2(x+1)+x = 2x+2+x = 3x+2 (choice C). Keyed answer D (3x+1) is incorrect; rationale itself states 3x+2 contradicting the key."},
+  {"id": "1d3fee25-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "ok"},
+  {"id": "e312081b-s1", "templateId": "equivalent-expressions.A1.T2.easy", "verdict": "wrong_answer", "detail": "(3x+2)+(4x+6)=7x+8 (choice B). Keyed C (7x+2) is wrong; rationale derives 7x+8 contradicting the key."},
+  {"id": "60fdb4d4-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "ok"},
+  {"id": "253985c2-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "ok"},
+  {"id": "5dd53f73-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "499cb491-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "290cdc2c-s1", "templateId": "equivalent-expressions.A3.T7.easy", "verdict": "ok"},
+  {"id": "f5c3e3b8-s1", "templateId": "equivalent-expressions.A3.T7.easy", "verdict": "ok"},
+  {"id": "02489d55-s1", "templateId": "equivalent-expressions.A1.T3.easy", "verdict": "ok"}
+]

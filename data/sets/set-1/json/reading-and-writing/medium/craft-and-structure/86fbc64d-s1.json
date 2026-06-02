@@ -1,0 +1,25 @@
+{
+  "questionId": "86fbc64d-s1",
+  "originalId": "86fbc64d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Cultivated for centuries by Indigenous people across the highlands of Mesoamerica, the avocado, whose fruit is now a global commodity, departs noticeably in fruit size and oil content from the wild plant it descends from. Quinoa, another crop developed by Andean farmers, has come to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> such pronounced differences from its wild ancestor that, even today, botanists studying the species are unable to identify a single wild population that resembles the modern grain in seed size or saponin content.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>refute</p>"},
+    {"id": "b", "content": "<p>request</p>"},
+    {"id": "c", "content": "<p>conceal</p>"},
+    {"id": "d", "content": "<p>exhibit</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. \"Exhibit\" means to show or display. The text states that botanists cannot find any wild quinoa population resembling the modern grain in seed size or saponin content, which means modern quinoa visibly displays these pronounced differences.</p><p>Choice A is incorrect because \"refute\" means to disprove, but a crop cannot disprove differences that are evident in its own form. Choice B is incorrect because a crop cannot request anything; the agent-fit fails. Choice C is incorrect because \"conceal\" contradicts the fact that the differences are detectable enough for botanists to identify them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "85f1892d-s1",
+  "originalId": "85f1892d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In triangle PQR, angle Q is a right angle, the measure of angle R is 41&deg;, and the length of segment QR is 18 units. If the area, in square units, of triangle PQR can be represented by the expression k&middot;tan 41&deg;, where k is a constant, what is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "162"
+  ],
+  "rationale": "<p>In right triangle PQR with right angle at Q, side QR is adjacent to angle R, and side PQ is opposite angle R. So tan R = PQ/QR, giving PQ = QR &middot; tan R = 18 tan 41&deg;. The area equals (1/2) &middot; QR &middot; PQ = (1/2)(18)(18 tan 41&deg;) = 162 tan 41&deg;. Thus k = 162.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A3.T5.hard"
+}

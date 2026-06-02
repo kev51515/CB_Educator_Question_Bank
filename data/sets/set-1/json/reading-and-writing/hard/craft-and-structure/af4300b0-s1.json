@@ -1,0 +1,39 @@
+{
+  "questionId": "af4300b0-s1",
+  "originalId": "af4300b0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The construction of Walter Pichler's 1972 sculptural environment <em>Tor zum Garten</em> was <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> undertaking. Over the course of nearly four years, Pichler and his collaborators painstakingly carved hundreds of stone components by hand and repeatedly had to devise new tools and techniques to realize the structural details Pichler envisioned.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a laborious</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a contentious</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>an ineffectual</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a haphazard</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"A laborious\" most logically completes the text. The text describes nearly four years of work, hundreds of hand-carved components, and the repeated development of new tools and techniques\u2014all of which characterize an extremely labor-intensive process.</p><p>Choice B is incorrect. \"A contentious\" implies disputes, which the text doesn't describe. Choice C is incorrect. \"An ineffectual\" means ineffective; the text describes the project as eventually realized, not a failure. Choice D is incorrect. \"A haphazard\" means done randomly; the text describes painstaking, methodical work that is the opposite of haphazard.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

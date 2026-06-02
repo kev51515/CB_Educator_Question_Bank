@@ -1,0 +1,39 @@
+{
+  "questionId": "d72b325e-s1",
+  "originalId": "d72b325e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>What factors shape the long-term diversity of plant species in a meadow? Some theorists have argued that founding diversity is a major driver of how diverse a meadow community eventually becomes: differences in the diversity of grasslands occupying otherwise comparable sites, in this view, are strongly influenced by the number of plant species established in those sites at the very start.</p>\n<p><strong>Text 2</strong></p>\n<p>In 2015, a team of researchers led by ecologist J\u00falia Almeida established replicate experimental meadows on cleared farmland in southern Brazil. They seeded some plots with a richly diverse mix of native grasses and wildflowers and others with only a single grass species, then allowed the plots to develop without further intervention. Over the next five years, Almeida and colleagues regularly sampled plant species in the plots, finding&mdash;contrary to their expectations&mdash;that by the end of the study there was almost no difference in plant species diversity between the two types of plots.</p>",
+  "stem": "<p>Based on the texts, how would Almeida and colleagues (Text 2) most likely describe the view of the theorists presented in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is largely correct, but it requires a minor refinement in light of the research team's results.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is not compelling as a theory regardless of any experimental data collected by the research team.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It probably holds true only in conditions like those in the research team's study.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It may seem plausible, but it is not supported by the research team's findings.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The view in Text 1 is that founding diversity strongly shapes long-term meadow diversity. Almeida and colleagues did not find this: by the end of their study there was almost no difference in diversity between plots that started out diverse and plots that started out with a single species. So they would describe the view as plausible-seeming but unsupported by their findings.</p><p>Choice A is incorrect because Almeida's findings directly contradict the view rather than refine it. Choice B is incorrect because the team's design was framed to test this hypothesis, and their results were \"contrary to their expectations,\" meaning they once found the theory plausible. Choice C is incorrect because the findings directly undermine the view in conditions like those of the study.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T3.hard"
+}

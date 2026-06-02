@@ -1,0 +1,39 @@
+{
+  "questionId": "38bf4e04-s1",
+  "originalId": "38bf4e04",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bakery makes large, medium, and small cookies. During a certain day, the number of large cookies that the bakery makes is 4 times the number <i>m</i> of medium cookies it makes, and the number of small cookies it makes is 18. During this day, the bakery makes 75 cookies total. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4<i>m</i> + 18 = 75</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(large weight)(4<i>m</i>) + (medium weight)<i>m</i> + (small weight)(18) = 75</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5<i>m</i> + 18 = 75</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4<i>m</i> + <i>m</i> + <i>m</i> = 75</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Total cookies = (4<i>m</i>) + <i>m</i> + 18 = 5<i>m</i> + 18, and this must equal 75.</p><p>Choice A omits the <i>m</i> medium cookies. Choice B multiplies by size weights, which is irrelevant to counting cookies. Choice D omits the 18 small cookies and miscounts medium cookies.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.hard"
+}

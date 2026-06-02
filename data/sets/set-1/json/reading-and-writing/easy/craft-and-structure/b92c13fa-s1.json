@@ -1,0 +1,39 @@
+{
+  "questionId": "b92c13fa-s1",
+  "originalId": "b92c13fa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>According to engineer Henry Petroski, the best way to predict how long a non-living object (such as a bridge or a tool) will continue to function is to examine how long it has lasted so far. In this view, an object’s age is the strongest <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> how much longer it will endure.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>uncertainty about</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>motivation for</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>criticism of</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>predictor of</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"predictor of\" matches the idea that age is the best basis for predicting how much longer an object will endure. Choice A is incorrect because uncertainty contradicts a useful prediction. Choice B is incorrect because motivation doesn’t fit. Choice C is incorrect because criticism doesn’t describe prediction.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

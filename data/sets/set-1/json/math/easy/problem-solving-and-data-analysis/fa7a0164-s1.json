@@ -1,0 +1,39 @@
+{
+  "questionId": "fa7a0164-s1",
+  "originalId": "fa7a0164",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The high temperatures, in degrees Fahrenheit, recorded during a five-day period were: 72, 75, 71, 78, 74.</p><p>What was the mean high temperature, in degrees Fahrenheit, during the five-day period?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>73</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>73.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>74</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The mean is (72+75+71+78+74) \u00f7 5 = 370 \u00f7 5 = 74.</p><p>Choice A is incorrect. This is the lowest of the five values, not the mean.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

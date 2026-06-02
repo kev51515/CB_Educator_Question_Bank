@@ -1,0 +1,39 @@
+{
+  "questionId": "2e744883-s1",
+  "originalId": "2e744883",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Public-health historians have argued that one decisive factor in the spread of vaccination across rural India in the 1970s was the Smallpox Eradication Program's Field Trainee Initiative, which brought aspiring health workers to its three-week residency at the Patna training center. Run by veteran organizers such as Indira Saxena and Vikram Bhatt, the trainees<u>&mdash;over 9,400 in total&mdash;</u>completed sessions ranging from cold-chain logistics to community outreach before returning to their districts.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It illustrates the variety of topics covered in the training residency.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It implies that the trainees disagreed widely about the Field Trainee Initiative's methods.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It underscores the scale of the Field Trainee Initiative's reach during the eradication effort.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It establishes that opposition to the Field Trainee Initiative was confined to a few program leaders.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. By inserting the figure \"over 9,400 in total,\" the underlined clause quantifies how many health workers passed through the program. Within a passage about the initiative's role in nationwide vaccination, that number functions to emphasize the breadth of its reach.</p><p>Choice A is incorrect because the variety of training topics is conveyed by the later list (\"cold-chain logistics to community outreach\"), not by the participant count. Choice B is incorrect because the underlined portion mentions only the number of trainees, not their opinions. Choice D is incorrect because nothing in the underlined portion or surrounding text concerns internal opposition to the program.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

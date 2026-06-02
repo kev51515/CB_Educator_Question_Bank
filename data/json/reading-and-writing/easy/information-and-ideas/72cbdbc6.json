@@ -1,0 +1,72 @@
+{
+  "questionId": "72cbdbc6",
+  "externalId": "f6a00237-7406-4f9c-a897-4e706b7fdb72",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771171,
+  "createDate": 1776362771171,
+  "scrapedAt": "2026-05-25T12:21:11.886368+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "961d1d34-c41a-489c-b891-16cd64641593",
+      "content": "<p>decrease the number of new or inexperienced cyclists riding in the city.</p>"
+    },
+    {
+      "id": "6f4dec3c-10ba-483d-bd5f-ed9ca788d86a",
+      "content": "<p>increase the number of experienced cyclists riding in the city.</p>"
+    },
+    {
+      "id": "0771d29f-a019-4db8-b55e-fb7afabfa1ef",
+      "content": "<p>decrease the number of experienced cyclists riding in the city.</p>"
+    },
+    {
+      "id": "ead716d3-9641-4cca-a00f-1de035b3ca84",
+      "content": "<p>increase the number of new or inexperienced cyclists riding in the city.</p>"
+    }
+  ],
+  "keys": [
+    "ead716d3-9641-4cca-a00f-1de035b3ca84"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the relationship between street lighting and people&rsquo;s cycling behavior. According to the text, Eugeni Vidal-Tortosa and Robin Lovelace found that poor street lighting deters new or inexperienced cyclists from riding their bikes in a city but has little effect on experienced cyclists. This finding establishes a causal relationship between street lighting and the willingness of new or inexperienced cyclists to ride a bicycle in the city: if poor lighting discourages new or inexperienced cyclists from riding, then improving lighting conditions by increasing the number of streetlights would logically remove this deterrent, potentially leading to an increase in the number of new or inexperienced cyclists willing to ride in the city.</p><p>Choice A is incorrect because it contradicts the logical relationship established in the text. If poor street lighting deters new or inexperienced cyclists from riding in the city, then increasing the number of streetlights (improving lighting conditions) would be expected to encourage more of these cyclists to ride, not decrease their numbers. Choice B is incorrect because the text explicitly states that street lighting didn&rsquo;t have an effect on experienced cyclists. If lighting conditions don&rsquo;t significantly influence experienced cyclists&rsquo; decisions to ride, then increasing the number of streetlights wouldn&rsquo;t necessarily increase the number of experienced cyclists riding in the city. Choice C is incorrect. The text indicates that street lighting didn&rsquo;t affect experienced cyclists, so increasing the number of streetlights wouldn&rsquo;t decrease the participation of these cyclists. Instead, their numbers would be expected to remain about the same.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>Researchers Eugeni Vidal-Tortosa and Robin Lovelace looked at the relationship between street lighting in a city and people&rsquo;s willingness to ride a bicycle. Their results suggest that poor street lighting can deter new or inexperienced cyclists from riding in a city but has little effect on experienced cyclists. Therefore, increasing the number of streetlights in a city could potentially <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "ead716d3-9641-4cca-a00f-1de035b3ca84"
+    ],
+    "answerOptions": [
+      {
+        "id": "961d1d34-c41a-489c-b891-16cd64641593",
+        "content": "<p>decrease the number of new or inexperienced cyclists riding in the city.</p>"
+      },
+      {
+        "id": "6f4dec3c-10ba-483d-bd5f-ed9ca788d86a",
+        "content": "<p>increase the number of experienced cyclists riding in the city.</p>"
+      },
+      {
+        "id": "0771d29f-a019-4db8-b55e-fb7afabfa1ef",
+        "content": "<p>decrease the number of experienced cyclists riding in the city.</p>"
+      },
+      {
+        "id": "ead716d3-9641-4cca-a00f-1de035b3ca84",
+        "content": "<p>increase the number of new or inexperienced cyclists riding in the city.</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the relationship between street lighting and people&rsquo;s cycling behavior. According to the text, Eugeni Vidal-Tortosa and Robin Lovelace found that poor street lighting deters new or inexperienced cyclists from riding their bikes in a city but has little effect on experienced cyclists. This finding establishes a causal relationship between street lighting and the willingness of new or inexperienced cyclists to ride a bicycle in the city: if poor lighting discourages new or inexperienced cyclists from riding, then improving lighting conditions by increasing the number of streetlights would logically remove this deterrent, potentially leading to an increase in the number of new or inexperienced cyclists willing to ride in the city.</p><p>Choice A is incorrect because it contradicts the logical relationship established in the text. If poor street lighting deters new or inexperienced cyclists from riding in the city, then increasing the number of streetlights (improving lighting conditions) would be expected to encourage more of these cyclists to ride, not decrease their numbers. Choice B is incorrect because the text explicitly states that street lighting didn&rsquo;t have an effect on experienced cyclists. If lighting conditions don&rsquo;t significantly influence experienced cyclists&rsquo; decisions to ride, then increasing the number of streetlights wouldn&rsquo;t necessarily increase the number of experienced cyclists riding in the city. Choice C is incorrect. The text indicates that street lighting didn&rsquo;t affect experienced cyclists, so increasing the number of streetlights wouldn&rsquo;t decrease the participation of these cyclists. Instead, their numbers would be expected to remain about the same.</p>",
+    "externalid": "f6a00237-7406-4f9c-a897-4e706b7fdb72",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Researchers Eugeni Vidal-Tortosa and Robin Lovelace looked at the relationship between street lighting in a city and people&rsquo;s willingness to ride a bicycle. Their results suggest that poor street lighting can deter new or inexperienced cyclists from riding in a city but has little effect on experienced cyclists. Therefore, increasing the number of streetlights in a city could potentially <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

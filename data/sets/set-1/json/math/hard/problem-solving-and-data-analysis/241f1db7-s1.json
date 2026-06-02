@@ -1,0 +1,39 @@
+{
+  "questionId": "241f1db7-s1",
+  "originalId": "241f1db7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The frequency table below summarizes the weights, in pounds, of 67 puppies.</p><p>Weight 9: frequency 10<br>Weight 10: frequency 7<br>Weight 11: frequency 6<br>Weight 12: frequency 8<br>Weight 13: frequency 9<br>Weight 14: frequency 11<br>Weight 15: frequency 12<br>Weight 16: frequency 4</p><p>A new data set is created by adding the weight 30 pounds to the data set above, producing a new set of 68 puppies. Which of the following correctly compares the mean and median of the new data set with the mean and median of the original data set?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The mean of the new data set is less than the mean of the original data set, and the median of the new data set is less than the median of the original data set.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The mean of the new data set is less than the mean of the original data set, and the medians of the two data sets are equal.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The mean of the new data set is greater than the mean of the original data set, and the medians of the two data sets are equal.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The mean of the new data set is greater than the mean of the original data set, and the median of the new data set is greater than the median of the original data set.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The added value (30) is greater than every value in the original set, so the new mean is greater than the original mean. For the median: the original 67 values have a middle (34th) value; based on cumulative frequencies (10, 17, 23, 31, 40, 51, 63, 67), the 34th value falls at 13. The new set has 68 values, so the median is the average of the 34th and 35th values, both of which equal 13 (still within the same bucket). So the medians are equal. Choices A and B incorrectly claim the new mean is less; choice D incorrectly increases the median.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "a73a5c22-s1",
+  "originalId": "a73a5c22",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>h</i> is defined by <i>h</i>(<i>x</i>) = 12<i>x</i> + 5. What is the value of <i>h</i>(<i>x</i>) when <i>x</i> = 6?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>17</p>"},
+    {"id": "b", "content": "<p>72</p>"},
+    {"id": "c", "content": "<p>77</p>"},
+    {"id": "d", "content": "<p>65</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. <i>h</i>(6) = 12(6) + 5 = 72 + 5 = 77.</p><p>Choice A adds 12 + 5 instead of multiplying. Choice B omits the constant 5. Choice D subtracts instead of adding.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A1.T1.easy"
+}

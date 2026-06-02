@@ -1,0 +1,39 @@
+{
+  "questionId": "04bcb7a9-s1",
+  "originalId": "04bcb7a9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Paleontologist Maria Reyes and her team have unearthed what they describe as the oldest known winged insect, preserved in a 312-million-year-old slab of shale in Massachusetts. The team has named the new species <em>Volusalis paleozoica</em>. They argue that the find pushes the evolution of flight in insects back into the Carboniferous period, which lasted from about 299 million to 359 million years ago.</p>",
+  "stem": "<p>According to the text, how old is the insect fossil that Reyes and her team discovered?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>299 million years old</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>312 million years old</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>359 million years old</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>275 million years old</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the text directly states that Reyes and her team unearthed an insect preserved in a 312-million-year-old slab of shale.</p><p>Choice A is incorrect because 299 million years ago marks the end of the Carboniferous period in the text, not the age of the fossil itself. Choice C is incorrect because 359 million years ago marks the beginning of the Carboniferous period, not the age of the fossil. Choice D is incorrect because the text gives no age of 275 million years; this falls outside the Carboniferous window the team mentions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

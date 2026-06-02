@@ -1,0 +1,39 @@
+{
+  "questionId": "ffdfe1e1-s1",
+  "originalId": "ffdfe1e1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are 320 contestants in a chess tournament that includes 4 rounds of matches. Each contestant in the tournament will play a match against another contestant in round 1. At the end of each round, the contestant who loses the match is eliminated and the contestant who won advances. Which equation gives the number of contestants, <i>c</i>, remaining at the end of round <i>r</i>, where <i>r</i> &le; 4?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>c</i> = 320(1/2)<sup><i>r</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>c</i> = 320(2)<sup><i>r</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>c</i> = 20(1/2)<sup><i>r</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>c</i> = 20(2)<sup><i>r</i></sup></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. After each round, half of the remaining contestants are eliminated, so the number remaining halves each round. Starting from 320 contestants, after <i>r</i> rounds the number remaining is 320(1/2)<sup><i>r</i></sup>.</p><p>Choices B, C, and D use an incorrect base or initial value and do not match the halving pattern starting from 320.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A4.T1.easy"
+}

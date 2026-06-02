@@ -1,0 +1,39 @@
+{
+  "questionId": "0b634641-s1",
+  "originalId": "0b634641",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Researchers Hana Park and Diego Mendez asked 380 schoolchildren in Argentina to draw and label the local wildlife they had seen in the past month. After tallying the drawings by animal group, the researchers reported the following percentages: reptiles appeared in 72.4% of the drawings; amphibians appeared in 47.8% of the drawings; and fish appeared in 30.2% of the drawings. The researchers suggest that the children may be more aware of reptiles than of other animals in their environments.</p>",
+  "stem": "<p>Which choice best describes data from the study that support the researchers' conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The fewest drawings contained an example of an amphibian.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>More of the drawings had an example of a reptile than either an example of an amphibian or an example of a fish.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>More of the drawings had an example of a fish than an example of a reptile.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>There were about as many drawings with an example of an amphibian as there were with an example of a fish.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Reptiles appeared in 72.4% of the drawings, more than both amphibians (47.8%) and fish (30.2%), which directly supports the claim that children may be more aware of reptiles than of other animals.</p><p>Choice A is incorrect; the fewest drawings contained fish, not amphibians, and it would not support a claim about reptile awareness. Choice C is incorrect; reptiles, not fish, appeared in more drawings. Choice D is incorrect; the percentages for amphibians (47.8%) and fish (30.2%) are not similar.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.easy"
+}

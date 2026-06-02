@@ -1,0 +1,39 @@
+{
+  "questionId": "ead0fd9b-s1",
+  "originalId": "ead0fd9b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A typical brass quintet consists of two trumpet players, a horn player, a trombone player, and a tuba player. When a brass quintet performs, the two trumpet players usually sit facing the audience, while the horn player faces sideways, with the bell of the horn pointing back toward a wall behind the stage. This seating arrangement causes the horn's bell, where the sound exits, to be angled away from the audience. Therefore, if the horn player has a musical solo and wants to make sure the audience can hear it clearly, the horn player typically ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>looks at the sheet music instead of looking at the audience.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>shifts position so the bell of the horn points more toward the audience.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>instructs the other members of the quintet to play louder.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>plays at the same volume as the tuba.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The horn's bell projects sound; angling it toward the audience during a solo lets the audience hear it more clearly.</p><p>Choice A is irrelevant \u2014 where the player looks doesn't affect sound projection. Choice C would make the soloist less prominent, not more. Choice D would similarly make the horn less prominent than the soloist needs to be.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A1.T1.easy"
+}

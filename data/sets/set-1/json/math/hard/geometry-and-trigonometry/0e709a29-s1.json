@@ -1,0 +1,39 @@
+{
+  "questionId": "0e709a29-s1",
+  "originalId": "0e709a29",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In right triangle PQR, PQ = 9, QR = 40, and PR = 41. Triangle PQR is similar to triangle XYZ, where Q corresponds to Y and R corresponds to Z. What is the value of tan Z?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9/40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9/41</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40/41</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Since PR = 41 is the longest side, it is the hypotenuse, so the right angle is at Q. In triangle PQR, the tangent of angle R is the ratio of the side opposite R (which is PQ = 9) to the side adjacent to R (which is QR = 40), giving tan R = 9/40. Because the triangles are similar with R\u2194Z, tan Z = tan R = 9/40.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T4.hard"
+}

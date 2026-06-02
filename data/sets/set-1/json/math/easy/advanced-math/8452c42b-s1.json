@@ -1,0 +1,39 @@
+{
+  "questionId": "8452c42b-s1",
+  "originalId": "8452c42b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>40</mn><msup><mi>r</mi><mn>2</mn></msup><mo>+</mo><mn>7</mn><msup><mi>r</mi><mn>2</mn></msup></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>47</mn><msup><mi>r</mi><mn>2</mn></msup></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>47</mn><msup><mi>r</mi><mn>4</mn></msup></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>280</mn><msup><mi>r</mi><mn>2</mn></msup></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>33</mn><msup><mi>r</mi><mn>2</mn></msup></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>40r\u00b2 and 7r\u00b2 are like terms; adding the coefficients yields 47r\u00b2.</p>",
+  "templateId": "equivalent-expressions.A1.T1.easy"
+}

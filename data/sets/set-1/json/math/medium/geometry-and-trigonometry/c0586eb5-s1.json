@@ -1,0 +1,39 @@
+{
+  "questionId": "c0586eb5-s1",
+  "originalId": "c0586eb5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A cylinder has a diameter of 10 inches and a height of 8 inches. What is the volume, in cubic inches, of the cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>25&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>80&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>100&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>200&pi;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The volume V of a cylinder is V = &pi;r<sup>2</sup>h. With diameter 10, the radius is r = 5. Substituting r = 5 and h = 8 gives V = &pi;(5)<sup>2</sup>(8) = 200&pi; cubic inches. Choice A is the area of the base only; Choice B uses the diameter as the radius incorrectly; Choice C corresponds to using r &times; h &times; some incorrect factor.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T2.medium"
+}

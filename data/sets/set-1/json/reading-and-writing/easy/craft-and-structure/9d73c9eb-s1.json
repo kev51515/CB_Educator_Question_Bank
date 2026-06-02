@@ -1,0 +1,39 @@
+{
+  "questionId": "9d73c9eb-s1",
+  "originalId": "9d73c9eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Lakota Nation citizen John Running Bear produced and directed the documentary Mitákuye Oyásʼin , which vividly chronicles Lakota traditions and ceremonies. Telling Lakota stories through documentary film is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> choice because two of the most respected documentary filmmakers of the past fifty years were also Lakota citizens.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>an unpredictable</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a fitting</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>an arbitrary</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a forced</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"a fitting\" means appropriate or suitable, matching the reasoning that two respected Lakota documentary filmmakers make the medium an appropriate choice. Choices A, C, and D all suggest a poor or random fit, contradicting the supporting reason.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

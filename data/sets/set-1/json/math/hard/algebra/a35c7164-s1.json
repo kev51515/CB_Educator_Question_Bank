@@ -1,0 +1,39 @@
+{
+  "questionId": "a35c7164-s1",
+  "originalId": "a35c7164",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The system of equations 4x + 9y = 1 and ax + by = 1 has infinitely many solutions in the xy-plane, where a and b are constants. Which equation must also represent the same line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4x + 9y = 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4x - 9y = 1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8x + 9y = 1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8x + 18y = 2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. If two equations have infinitely many solutions, one must be a constant multiple of the other. The equation 8x + 18y = 2 is obtained by multiplying 4x + 9y = 1 by 2, so they represent the same line.</p><p>Choice A changes only the constant term, producing a parallel (not identical) line. Choices B and C change one coefficient, producing different lines.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.misc.hard"
+}

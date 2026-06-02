@@ -1,0 +1,39 @@
+{
+  "questionId": "dae79de4-s1",
+  "originalId": "dae79de4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes 200 hikers on a trail by skill level and number of trips made this season.</p><table border=\"1\"><tr><th></th><th>1 trip</th><th>2 or more trips</th><th>Total</th></tr><tr><th>Beginner</th><td>30</td><td>20</td><td>50</td></tr><tr><th>Experienced</th><td>40</td><td>110</td><td>150</td></tr><tr><th>Total</th><td>70</td><td>130</td><td>200</td></tr></table><p>If one of these hikers is selected at random, what is the probability that the hiker is experienced?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>50/200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>70/200</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>150/200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>130/200</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The probability is the number of experienced hikers divided by the total: 150/200.</p><p>Choice A is incorrect; this is the probability of being a beginner. Choice B is incorrect; this is the probability of having made 1 trip. Choice D is incorrect; this is the probability of having made 2 or more trips.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A2.T4.easy"
+}

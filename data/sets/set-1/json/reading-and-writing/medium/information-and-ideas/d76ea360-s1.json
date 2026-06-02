@@ -1,0 +1,25 @@
+{
+  "questionId": "d76ea360-s1",
+  "originalId": "d76ea360",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.medium",
+  "stimulus": "<p>Madagascar is an island in the Indian Ocean. Indigenous people there began raising domesticated chickens about 1,200 years ago. Chickens had originally been domesticated much earlier in both Southeast Asia and East Africa. So were chickens brought to Madagascar from Southeast Asia or from East Africa? Ancient Indian Ocean trade routes connected Madagascar with East Africa but not directly with Southeast Asia. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Therefore, chickens in Madagascar probably came from East Africa and descended from East African chickens.</span></p>",
+  "stem": "<p>Which finding, if true, would most directly weaken the underlined claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Chickens are commonly depicted in ancient Malagasy art, especially in woodcarvings.</p>"},
+    {"id": "b", "content": "<p>Ancient chickens in Madagascar were genetically less similar to ancient chickens in East Africa than to ancient chickens in Southeast Asia.</p>"},
+    {"id": "c", "content": "<p>Modern breeds of chickens don&rsquo;t resemble depictions of chickens in ancient art from Madagascar, East Africa, and Southeast Asia.</p>"},
+    {"id": "d", "content": "<p>The chicken population of ancient East Africa was much larger than the chicken population of ancient Southeast Asia.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the underlined claim is that Madagascar&rsquo;s chickens descended from East African chickens; finding greater genetic similarity to Southeast Asian chickens would suggest the opposite, weakening the claim. Choice A is incorrect because depictions in art don&rsquo;t address geographic origin. Choice C is incorrect because differences between modern and ancient depictions don&rsquo;t address ancestral relationships among ancient populations. Choice D is incorrect because comparative population sizes don&rsquo;t determine which population was the source.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

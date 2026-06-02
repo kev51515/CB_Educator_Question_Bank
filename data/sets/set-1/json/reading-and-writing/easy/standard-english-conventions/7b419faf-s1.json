@@ -1,0 +1,39 @@
+{
+  "questionId": "7b419faf-s1",
+  "originalId": "7b419faf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 1908, naturalist Gifford Pinchot accompanied President Theodore Roosevelt on a five-day boat tour down the Mississippi River. Upon completing the journey, Roosevelt <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to expand the country&rsquo;s system of national forests, a promise he honored before leaving office the following year.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>is pledging</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>vows</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>pledged</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>will pledge</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The past tense verb &ldquo;pledged&rdquo; is consistent with the other past tense verbs in the passage (&ldquo;accompanied,&rdquo; &ldquo;honored&rdquo;) and the past time frame (1908).</p><p>Choice A (present progressive), Choice B (simple present), and Choice D (future) all use tenses inconsistent with the past time frame.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

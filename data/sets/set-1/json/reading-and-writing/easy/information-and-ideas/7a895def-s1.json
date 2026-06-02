@@ -1,0 +1,39 @@
+{
+  "questionId": "7a895def-s1",
+  "originalId": "7a895def",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Anna Julia Cooper wrote many essays in the late 1800s and early 1900s. At the time, mainstream academic journals rarely published the work of Black women, so few of Cooper's essays appeared in widely read publications. Only a small portion of her writing was reviewed in her lifetime. But that doesn't mean Cooper never received feedback on her ideas. She hosted regular salons for fellow Black scholars and educators in her Washington, D.C., home. Attendees would read excerpts of one another's writing aloud and discuss them, including Cooper's own essays. These salons could therefore serve as ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>an occasion for mainstream journals to publish work by Black women.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a way for Cooper to learn about essays being written in other countries.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>an opportunity for Cooper to get feedback on her essays.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>subject matter for future essays by Cooper.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The text explicitly says attendees would discuss Cooper's writing \u2014 so the salons provided feedback on her essays.</p><p>Choice A is wrong: the salons weren't journals. Choice B introduces a foreign-essay angle the text never mentions. Choice D speculates about future essay topics, not addressed.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A1.T1.easy"
+}

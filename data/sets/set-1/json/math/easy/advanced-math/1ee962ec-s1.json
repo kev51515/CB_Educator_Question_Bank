@@ -1,0 +1,39 @@
+{
+  "questionId": "1ee962ec-s1",
+  "originalId": "1ee962ec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A ball is dropped from a height. Its height above the ground, in feet, <em>t</em> seconds after being dropped is modeled by <math><mi>h</mi><mfenced><mi>t</mi></mfenced><mo>=</mo><mo>-</mo><mn>16</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><mn>64</mn></math>. Which of the following tables gives three values of <em>t</em> and their corresponding values of <em>h(t)</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<table border=\"1\"><thead><tr><th>t</th><th>h(t)</th></tr></thead><tbody><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>16</td></tr><tr><td>2</td><td>64</td></tr></tbody></table>"
+    },
+    {
+      "id": "b",
+      "content": "<table border=\"1\"><thead><tr><th>t</th><th>h(t)</th></tr></thead><tbody><tr><td>0</td><td>64</td></tr><tr><td>1</td><td>16</td></tr><tr><td>2</td><td>0</td></tr></tbody></table>"
+    },
+    {
+      "id": "c",
+      "content": "<table border=\"1\"><thead><tr><th>t</th><th>h(t)</th></tr></thead><tbody><tr><td>0</td><td>64</td></tr><tr><td>1</td><td>32</td></tr><tr><td>2</td><td>16</td></tr></tbody></table>"
+    },
+    {
+      "id": "d",
+      "content": "<table border=\"1\"><thead><tr><th>t</th><th>h(t)</th></tr></thead><tbody><tr><td>0</td><td>64</td></tr><tr><td>1</td><td>48</td></tr><tr><td>2</td><td>0</td></tr></tbody></table>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. h(0) = -16(0)+64 = 64; h(1) = -16(1)+64 = 48; h(2) = -16(4)+64 = 0. Choice D matches.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

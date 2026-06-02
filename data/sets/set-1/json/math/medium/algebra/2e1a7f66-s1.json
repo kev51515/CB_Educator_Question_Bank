@@ -1,0 +1,39 @@
+{
+  "questionId": "2e1a7f66-s1",
+  "originalId": "2e1a7f66",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Figure A and figure B are both regular polygons. The sum of the perimeter of figure A and the perimeter of figure B is 80 inches. The equation 5x + 4y = 80 represents this situation, where x is the number of sides of figure A and y is the number of sides of figure B. Which statement is the best interpretation of 5 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The number of sides of figure A is 5.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of sides of figure B is 5.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Each side of figure A has a length of 5 inches.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Each side of figure B has a length of 5 inches.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Since x is the number of sides of figure A, the term 5x gives the perimeter of figure A. Therefore 5 is the length, in inches, of each side of figure A. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium"
+}

@@ -1,0 +1,22 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot shows the number of ice cream cones sold and the average daily temperature, in degrees Celsius, at a shop on each of eleven different days. The line of best fit for the data has equation y = 8x + 50, where x is the temperature in \u00b0C and y is the number of cones sold. According to the line of best fit, what is the number of cones, rounded to the nearest 10, predicted to be sold on a day with an average temperature of 30\u00b0C?</p>",
+  "answerOptions": null,
+  "keys": [
+    "290"
+  ],
+  "rationale": "<p>The correct answer is 290. Substituting x = 30 into y = 8x + 50 gives y = 240 + 50 = 290.</p>",
+  "questionId": "8156d446-s1",
+  "originalId": "8156d446",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

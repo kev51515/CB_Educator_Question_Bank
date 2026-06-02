@@ -1,0 +1,39 @@
+{
+  "questionId": "2adbf1b1-s1",
+  "originalId": "2adbf1b1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two lines <em>m</em> and <em>t</em> intersect at a point, forming four angles. The measure of one angle is (4k + 9)&deg; and the measure of the angle vertical to it is (7k &minus; 21)&deg;, where k is a constant. What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>49</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>111</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Vertical angles formed by two intersecting lines are congruent, so the two given angle measures are equal: 4k + 9 = 7k &minus; 21. Solving for k: 30 = 3k, so k = 10. Choice A is a partial result. Choice C is the angle measure, not k. Choice D is the supplement of that angle measure.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A6.T1.medium"
+}

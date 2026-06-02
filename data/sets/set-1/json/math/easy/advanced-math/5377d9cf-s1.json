@@ -1,0 +1,39 @@
+{
+  "questionId": "5377d9cf-s1",
+  "originalId": "5377d9cf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <i>g</i>(<i>x</i>) = (<i>x</i>&sup2; + 2<i>x</i> &minus; 3)/(<i>x</i> &minus; 3), what is <i>g</i>(&minus;1)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Substituting &minus;1 for <i>x</i> gives <i>g</i>(&minus;1) = ((&minus;1)&sup2; + 2(&minus;1) &minus; 3) / ((&minus;1) &minus; 3) = (1 &minus; 2 &minus; 3) / (&minus;4) = &minus;4 / &minus;4 = 1.</p><p>Choices A, B, and D are incorrect and may result from sign errors or arithmetic mistakes when evaluating the numerator or denominator.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z"
+}

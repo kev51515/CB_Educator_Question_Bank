@@ -1,0 +1,39 @@
+{
+  "questionId": "322a6dfe-s1",
+  "originalId": "322a6dfe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Quadrilaterals JKLM and NPQR are similar, where J, K, and L correspond to N, P, and Q, respectively. The measure of \u2220M is 108\u00b0, JM = 28, and NR = 7. What is the measure of \u2220R?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>27\u00b0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>108\u00b0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>72\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Corresponding angles in similar figures are congruent. Since \u2220M corresponds to \u2220R, the measure of \u2220R equals the measure of \u2220M, which is 108\u00b0. The side-length information is not needed for finding the angle.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.hard"
+}

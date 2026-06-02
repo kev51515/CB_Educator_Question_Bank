@@ -1,0 +1,25 @@
+{
+  "questionId": "eef91a50-s1",
+  "originalId": "eef91a50",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>Two years before Susan B. Anthony became famous for casting a ballot in defiance of the laws restricting suffrage in Rochester, New York, a Norwegian American teacher named Marie Hansen was fined for the same <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to several local historians, Hansen&rsquo;s prosecution helped focus regional press attention on the question of voting rights long before Anthony&rsquo;s arrest.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>act and according</p>"},
+    {"id": "b", "content": "<p>act according</p>"},
+    {"id": "c", "content": "<p>act. According</p>"},
+    {"id": "d", "content": "<p>act, according</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Two years before...act\" and \"according to...arrest\" are both independent clauses. Separating them with a period is the only grammatically correct option among the choices.</p><p>Choice A is incorrect because the coordinating conjunction \"and\" requires a preceding comma to join two independent clauses. Choice B is incorrect because omitting punctuation fuses two independent clauses into a run-on. Choice D is incorrect because a comma alone produces a comma splice between two independent clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

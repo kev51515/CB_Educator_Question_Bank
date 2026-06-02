@@ -1,0 +1,25 @@
+{
+  "questionId": "b28dc26d-s1",
+  "originalId": "b28dc26d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "stimulus": "<p>The substrate intolerance hypothesis (SIH) holds that the prosodic complexity of languages (how rich their stress, tone, and rhythmic systems are) is inversely related to their geographic dispersal: when languages spread across large territories acquired through colonization or trade, the SIH predicts that prosodic complexity erodes as second-language speakers fail to acquire its subtler features. Focusing on two characteristics that are positive indicators of prosodic complexity&mdash;tonal density (the average number of contrastive tones per syllable type) and stress-system regularity&mdash;sociolinguists Mariam Eshtiagh and Davit Sargsyan compared 168 languages varying in geographic dispersal and reported that their results were inconsistent with the SIH. To validate their stronger conclusion that their study refuted the SIH, however, the team would need its data to show a relationship between the two indicators and geographic dispersal that contradicts the SIH&rsquo;s predicted inverse relationship.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Eshtiagh and Sargsyan&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Eshtiagh and Sargsyan&rsquo;s analysis showed a slightly positive correlation between tonal density and geographic dispersal and between stress-system regularity and geographic dispersal.</p>"},
+    {"id": "b", "content": "<p>Eshtiagh and Sargsyan&rsquo;s analysis showed a slightly negative correlation between prosodic complexity and tonal density and between prosodic complexity and stress-system regularity.</p>"},
+    {"id": "c", "content": "<p>Eshtiagh and Sargsyan&rsquo;s analysis showed a slightly negative correlation between prosodic complexity and geographic dispersal.</p>"},
+    {"id": "d", "content": "<p>Eshtiagh and Sargsyan&rsquo;s analysis showed a slightly positive correlation between prosodic complexity and tonal density.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it directly contradicts the SIH&rsquo;s prediction. The SIH predicts an inverse relationship between prosodic complexity and geographic dispersal. Since tonal density and stress-system regularity are both positive indicators of prosodic complexity, a positive correlation between each of them and geographic dispersal points to the <em>opposite</em> of the predicted inverse relationship&mdash;exactly what would support Eshtiagh and Sargsyan&rsquo;s claim that their results refute the SIH.</p><p>Choice B is incorrect because it describes a correlation between prosodic complexity and its own indicators, which says nothing about geographic dispersal. Choice C is incorrect because a slightly negative correlation between prosodic complexity and geographic dispersal is consistent with, not against, the SIH. Choice D is incorrect for the same reason as B: a relation between an indicator and the construct it measures does not address the SIH&rsquo;s dispersal claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

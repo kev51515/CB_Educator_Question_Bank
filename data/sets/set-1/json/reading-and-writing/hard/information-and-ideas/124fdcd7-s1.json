@@ -1,0 +1,39 @@
+{
+  "questionId": "124fdcd7-s1",
+  "originalId": "124fdcd7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>Many veteran translators will tell you that judging the quality of a literary translation depends not only on accuracy and fluency but also on intuitions about voice and register developed over years of practice. In a recent study, however, researchers trained a large language model on thousands of paired source texts and professional translations and found that the model could rank candidate translations roughly as well as a panel of expert translators. Some translators have voiced concern that they might be replaced by such models, but the researchers contend that this outcome is highly unlikely.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; contention?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A survey of literary translators indicates that ranking candidate translations is only a small fraction of their professional work, most of which involves creative tasks the model cannot perform.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In the researchers&rsquo; study, the model could rank translations far faster than the human panel could.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In the researchers&rsquo; study, neither the model nor the panel could correctly rank every translation pair.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A survey of literary translators indicates that few translators have formal training specifically in evaluating translation quality.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the researchers&rsquo; contention is that translators are unlikely to be replaced. If ranking is a small part of a translator&rsquo;s work and most of the job involves creative tasks the model cannot do, then matching the model on ranking does not threaten the profession. Choice B (speed advantage) actually supports the replacement worry. Choice C says both have limits but doesn&rsquo;t distinguish their roles. Choice D speaks to training, not to whether ranking exhausts translation work.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

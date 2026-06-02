@@ -1,0 +1,20 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "b8f13a3a-s1",
+  "originalId": "b8f13a3a",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i>&middot;<i>b</i><sup><i>x</i></sup>, where <i>a</i> and <i>b</i> are constants with <i>a</i> &gt; 0 and <i>b</i> &gt; 1. If <i>f</i>(1) = 18 and <i>f</i>(3) = 162, what is the value of <i>b</i>?</p>",
+  "answerOptions": [],
+  "keys": ["3"],
+  "rationale": "<p>From <i>f</i>(1) = <i>a</i>&middot;<i>b</i> = 18 and <i>f</i>(3) = <i>a</i>&middot;<i>b</i><sup>3</sup> = 162, dividing gives <i>b</i><sup>2</sup> = 162/18 = 9, so <i>b</i> = 3 (since <i>b</i> &gt; 1). Then <i>a</i> = 18/3 = 6, which is positive, consistent with the conditions. The value of <i>b</i> is 3.</p>",
+  "generatedAt": "2026-05-27T00:00:13Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

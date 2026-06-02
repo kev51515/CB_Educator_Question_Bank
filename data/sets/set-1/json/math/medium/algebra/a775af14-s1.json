@@ -1,0 +1,39 @@
+{
+  "questionId": "a775af14-s1",
+  "originalId": "a775af14",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <em>xy</em>-plane, the graph of the linear function <em>f</em> contains the points (0, 3) and (5, 28). Which equation defines <em>f</em>, where <em>y</em> = <em>f</em>(<em>x</em>)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>f</em>(<em>x</em>) = 3<em>x</em> + 28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>f</em>(<em>x</em>) = 5<em>x</em> + 28</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>f</em>(<em>x</em>) = 25<em>x</em> + 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>f</em>(<em>x</em>) = 5<em>x</em> + 3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (28 \u2212 3)/(5 \u2212 0) = 25/5 = 5. Since the line passes through (0, 3), the <em>y</em>-intercept is 3. Therefore <em>f</em>(<em>x</em>) = 5<em>x</em> + 3.</p><p>Choices A, B, and C are incorrect; they result from using incorrect slope or intercept values.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T2.medium"
+}

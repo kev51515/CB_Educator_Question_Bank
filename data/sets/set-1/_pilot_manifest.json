@@ -1,0 +1,202 @@
+[
+  {
+    "id": "babd7461",
+    "path": "json/math/easy/geometry-and-trigonometry/babd7461.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume"
+  },
+  {
+    "id": "23c5fcce",
+    "path": "json/math/easy/geometry-and-trigonometry/23c5fcce.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles"
+  },
+  {
+    "id": "0354c7de",
+    "path": "json/math/easy/advanced-math/0354c7de.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions"
+  },
+  {
+    "id": "9bf4c545",
+    "path": "json/math/easy/problem-solving-and-data-analysis/9bf4c545.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Evaluating statistical claims: Observational studies and experiments "
+  },
+  {
+    "id": "a2659088",
+    "path": "json/math/medium/geometry-and-trigonometry/a2659088.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume"
+  },
+  {
+    "id": "74d8b897",
+    "path": "json/math/medium/geometry-and-trigonometry/74d8b897.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles"
+  },
+  {
+    "id": "3206b905",
+    "path": "json/math/medium/advanced-math/3206b905.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions"
+  },
+  {
+    "id": "b4f5a7ca",
+    "path": "json/math/medium/problem-solving-and-data-analysis/b4f5a7ca.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Evaluating statistical claims: Observational studies and experiments "
+  },
+  {
+    "id": "306264ab",
+    "path": "json/math/hard/geometry-and-trigonometry/306264ab.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume"
+  },
+  {
+    "id": "fb58c0db",
+    "path": "json/math/hard/geometry-and-trigonometry/fb58c0db.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Circles"
+  },
+  {
+    "id": "20291f47",
+    "path": "json/math/hard/advanced-math/20291f47.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions"
+  },
+  {
+    "id": "7d68096f",
+    "path": "json/math/hard/problem-solving-and-data-analysis/7d68096f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Evaluating statistical claims: Observational studies and experiments "
+  },
+  {
+    "id": "85b8b9c5",
+    "path": "json/reading-and-writing/easy/standard-english-conventions/85b8b9c5.json",
+    "section": "Reading and Writing",
+    "difficulty": "Easy",
+    "domain": "Standard English Conventions",
+    "skill": "Boundaries"
+  },
+  {
+    "id": "0e3b4967",
+    "path": "json/reading-and-writing/easy/information-and-ideas/0e3b4967.json",
+    "section": "Reading and Writing",
+    "difficulty": "Easy",
+    "domain": "Information and Ideas",
+    "skill": "Central Ideas and Details"
+  },
+  {
+    "id": "0147b080",
+    "path": "json/reading-and-writing/easy/information-and-ideas/0147b080.json",
+    "section": "Reading and Writing",
+    "difficulty": "Easy",
+    "domain": "Information and Ideas",
+    "skill": "Command of Evidence"
+  },
+  {
+    "id": "22105871",
+    "path": "json/reading-and-writing/easy/craft-and-structure/22105871.json",
+    "section": "Reading and Writing",
+    "difficulty": "Easy",
+    "domain": "Craft and Structure",
+    "skill": "Cross-Text Connections"
+  },
+  {
+    "id": "432b1ede",
+    "path": "json/reading-and-writing/medium/standard-english-conventions/432b1ede.json",
+    "section": "Reading and Writing",
+    "difficulty": "Medium",
+    "domain": "Standard English Conventions",
+    "skill": "Boundaries"
+  },
+  {
+    "id": "659c6c1d",
+    "path": "json/reading-and-writing/medium/information-and-ideas/659c6c1d.json",
+    "section": "Reading and Writing",
+    "difficulty": "Medium",
+    "domain": "Information and Ideas",
+    "skill": "Central Ideas and Details"
+  },
+  {
+    "id": "d74b9bc6",
+    "path": "json/reading-and-writing/medium/information-and-ideas/d74b9bc6.json",
+    "section": "Reading and Writing",
+    "difficulty": "Medium",
+    "domain": "Information and Ideas",
+    "skill": "Command of Evidence"
+  },
+  {
+    "id": "faee8ec7",
+    "path": "json/reading-and-writing/medium/craft-and-structure/faee8ec7.json",
+    "section": "Reading and Writing",
+    "difficulty": "Medium",
+    "domain": "Craft and Structure",
+    "skill": "Cross-Text Connections"
+  },
+  {
+    "id": "109d5bbb",
+    "path": "json/reading-and-writing/hard/standard-english-conventions/109d5bbb.json",
+    "section": "Reading and Writing",
+    "difficulty": "Hard",
+    "domain": "Standard English Conventions",
+    "skill": "Boundaries"
+  },
+  {
+    "id": "daa90829",
+    "path": "json/reading-and-writing/hard/information-and-ideas/daa90829.json",
+    "section": "Reading and Writing",
+    "difficulty": "Hard",
+    "domain": "Information and Ideas",
+    "skill": "Central Ideas and Details"
+  },
+  {
+    "id": "378c66d5",
+    "path": "json/reading-and-writing/hard/information-and-ideas/378c66d5.json",
+    "section": "Reading and Writing",
+    "difficulty": "Hard",
+    "domain": "Information and Ideas",
+    "skill": "Command of Evidence"
+  },
+  {
+    "id": "f3c45b4f",
+    "path": "json/reading-and-writing/hard/craft-and-structure/f3c45b4f.json",
+    "section": "Reading and Writing",
+    "difficulty": "Hard",
+    "domain": "Craft and Structure",
+    "skill": "Cross-Text Connections"
+  },
+  {
+    "id": "02489d55",
+    "path": "json/math/easy/advanced-math/02489d55.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions"
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "questionId": "d2cf0e11-s1",
+  "originalId": "d2cf0e11",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>Inventor Hedy Lamarr created an early prototype of frequency-hopping signaling by inserting a perforated paper roll into a transmitter and, using a synchronized timer, advancing the signal smoothly across the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> When the timer and paper roll were activated together, the resulting pattern of shifting frequencies made the transmission far harder to jam.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>roll&rsquo;s perforation&rsquo;s.</p>"},
+    {"id": "b", "content": "<p>roll&rsquo;s perforations.</p>"},
+    {"id": "c", "content": "<p>rolls&rsquo; perforations.</p>"},
+    {"id": "d", "content": "<p>rolls perforations&rsquo;.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of plural and possessive nouns. The singular possessive noun \"roll&rsquo;s\" and the plural noun \"perforations\" correctly indicate that there is only one paper roll and it has multiple perforations.</p><p>Choice A is incorrect because the context requires the plural noun \"perforations,\" not the singular possessive noun \"perforation&rsquo;s.\" Choice C is incorrect because the context requires the singular possessive noun \"roll&rsquo;s,\" not the plural possessive noun \"rolls&rsquo;.\" Choice D is incorrect because the context requires the singular possessive noun \"roll&rsquo;s\" and the plural noun \"perforations,\" not the plural noun \"rolls\" or the plural possessive noun \"perforations&rsquo;.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "cd2443c0-s1",
+  "originalId": "cd2443c0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>A leading figure in the field of dendrochronology (the science of dating events through tree rings), <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can reveal precise climate conditions stretching back thousands of years.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>tree rings of bristlecone pines, Valmore LaMarche argued in a 1974 study,</p>"},
+    {"id": "b", "content": "<p>a 1974 study&mdash;by Valmore LaMarche&mdash;argued that tree rings of bristlecone pines</p>"},
+    {"id": "c", "content": "<p>it was argued in a 1974 study by Valmore LaMarche that tree rings of bristlecone pines</p>"},
+    {"id": "d", "content": "<p>Valmore LaMarche argued in a 1974 study that tree rings of bristlecone pines</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"Valmore LaMarche\" the subject of the sentence and places it immediately after the modifying phrase \"A leading figure...tree rings.\" In doing so, this choice clearly establishes that LaMarche&mdash;and not another noun in the sentence&mdash;is a leading figure in dendrochronology.</p><p>Choice A is incorrect because it results in a dangling modifier: placing \"tree rings of bristlecone pines\" after the modifier illogically suggests the tree rings are a leading figure in dendrochronology. Choice B is incorrect because it results in a dangling modifier: placing \"a 1974 study\" after the modifier illogically suggests the study is a leading figure in dendrochronology. Choice C is incorrect because it results in a dangling modifier: placing \"it\" after the modifier illogically suggests that \"it\" is a leading figure in dendrochronology.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

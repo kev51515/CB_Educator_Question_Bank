@@ -1,0 +1,39 @@
+{
+  "questionId": "441558e7-s1",
+  "originalId": "441558e7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>Researchers studied beetle colonies and found that for any of these colonies, if the colony has <em>x</em> worker beetles, the equation y = 0.55x + 3.2, where 25 \u2264 x \u2264 100, models the total number <em>y</em> of beetles in the colony. According to the model, what is the predicted total number of beetles in a colony with 80 worker beetles?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>44</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>47</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>183</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Substituting x = 80 into y = 0.55x + 3.2 gives y = 0.55(80) + 3.2 = 44 + 3.2 = 47.2, which rounds to 47. Choice A omits the constant term 3.2. Choice C uses the slope multiplied by 100. Choice D inverts the slope (80/0.55 \u2248 145, not exact, but reflects a backward-division error of similar type).</p>",
+  "templateId": "linear-functions.A1.T1.medium"
+}

@@ -1,0 +1,24 @@
+{
+  "questionId": "c6e85cd7-s1",
+  "originalId": "c6e85cd7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If 5<sup>6<i>c</i></sup> = <sup>9</sup>&radic;(5<sup>4</sup>), what is the value of <i>c</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2/27",
+    ".0740",
+    ".0741"
+  ],
+  "rationale": "<p>Rewrite the right side using a fractional exponent: <sup>9</sup>&radic;(5<sup>4</sup>) = 5<sup>4/9</sup>. The equation becomes 5<sup>6<i>c</i></sup> = 5<sup>4/9</sup>, so 6<i>c</i> = 4/9. Dividing both sides by 6 gives <i>c</i> = 4/54 = 2/27.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A3.T7.hard"
+}

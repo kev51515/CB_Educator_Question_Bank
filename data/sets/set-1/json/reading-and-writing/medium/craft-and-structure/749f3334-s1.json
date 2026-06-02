@@ -1,0 +1,25 @@
+{
+  "questionId": "749f3334-s1",
+  "originalId": "749f3334",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>The following text is from Frances Harper's 1872 poem &ldquo;On the Cliffs.&rdquo;</p>\n<p style='padding-left: 1em;'>Oh, deep delight to watch the gladsome winds<br>Exultant rush among the bending pines;<br><span role=\"region\" aria-label=\"Referenced Content\"><u>Ever turned aside, yet ever pressing on&mdash;</u></span><br><span role=\"region\" aria-label=\"Referenced Content\"><u>Filled with a force that will not be denied;</u></span><br>To see the brilliant hues of dawn and sea.<br>The far white sails, glide spirit like,<br>Into a wider world, to feel the sweet<br>Enchantment of the height steal through the soul,<br>Clearing the burdened brain, making the heart<br>Leap joyous as the bright, ascending winds!</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It draws a contrast between the winds and the speaker's thoughts.</p>"},
+    {"id": "b", "content": "<p>It conveys the speaker's mixed feelings about the natural world.</p>"},
+    {"id": "c", "content": "<p>It portrays the surroundings as a forbidding and intimidating scene.</p>"},
+    {"id": "d", "content": "<p>It characterizes the cliff-top winds as a relentless and irrepressible force.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text presents the speaker's experience of watching wind sweep through pines on a cliff top. The underlined portion focuses on the idea that the winds, although &ldquo;ever turned aside,&rdquo; are &ldquo;ever pressing on&rdquo; and &ldquo;filled with a force that will not be denied,&rdquo; suggesting an unstoppable, irrepressible movement. The underlined portion characterizes the cliff-top winds as a relentless and enduring force.</p><p>Choice A is incorrect because the underlined portion concerns the winds, not the speaker's thoughts, and does not contrast the two. Choice B is incorrect because the underlined portion does not present mixed feelings; the surrounding lines are positive (&ldquo;deep delight,&rdquo; &ldquo;leap joyous&rdquo;). Choice C is incorrect because the speaker treats the scene with delight rather than fear or intimidation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

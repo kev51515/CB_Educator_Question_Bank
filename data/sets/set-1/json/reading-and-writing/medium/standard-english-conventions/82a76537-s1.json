@@ -1,0 +1,25 @@
+{
+  "questionId": "82a76537-s1",
+  "originalId": "82a76537",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Tagged unions are a useful feature of several modern programming languages, including Rust and Swift. A tagged union associates a type label with each variant, allowing the compiler to verify which case is being handled. In a Rust program tracking different species of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> example, you might encounter a variant called &ldquo;Hummingbird&rdquo; carrying the wing-beat frequency in hertz.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>birds. For</p>"},
+    {"id": "b", "content": "<p>birds, for</p>"},
+    {"id": "c", "content": "<p>birds: for</p>"},
+    {"id": "d", "content": "<p>birds; for</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;birds&rdquo; pairs with the comma after &ldquo;example&rdquo; to set off the supplementary element &ldquo;for example&rdquo; from the rest of the sentence. The supplementary element sits between the prepositional phrase (&ldquo;In...birds&rdquo;) and the main clause (&ldquo;you...hertz&rdquo;) and signals that an illustration follows.</p><p>Choice A is incorrect because it results in a sentence fragment (&ldquo;In a Rust program tracking different species of birds&rdquo;). Choice C is incorrect because a colon can&rsquo;t pair with a comma to set off a supplementary element. Choice D is incorrect because a semicolon can&rsquo;t pair with a comma in this way.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

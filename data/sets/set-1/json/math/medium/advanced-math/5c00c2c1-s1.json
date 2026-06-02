@@ -1,0 +1,39 @@
+{
+  "questionId": "5c00c2c1-s1",
+  "originalId": "5c00c2c1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There were no zebra mussels in a certain river before 1985, when 18 zebra mussels were introduced. By 2010 the population of zebra mussels had reached approximately 5 billion. If the population grew exponentially, this corresponds to a 13.5% increase, on average, in the population each year. Which of the following functions best models the population p(t) of zebra mussels t years after 1985?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>p(t) = 1.135 \u00d7 18<sup>t</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>p(t) = 18 \u00d7 2<sup>1.135t</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>p(t) = (18 \u00d7 1.135)<sup>t</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>p(t) = 18 \u00d7 1.135<sup>t</sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. An exponential growth model has the form p(t) = A(1 + r)<sup>t</sup>, where A is the initial population and r is the annual growth rate. With A = 18 and r = 0.135, p(t) = 18(1.135)<sup>t</sup>. Choices A, B, and C misapply the form.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

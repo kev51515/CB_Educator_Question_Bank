@@ -1,0 +1,39 @@
+{
+  "questionId": "4e375d1f-s1",
+  "originalId": "4e375d1f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>How many meters are equivalent to 4,500 centimeters? (100 centimeters = 1 meter)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.045</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4,600</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>450,000</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since 100 centimeters = 1 meter, 4,500 centimeters = 4,500 \u00f7 100 = 45 meters.</p><p>Choices A, B, and D are incorrect and may result from misplacing decimal points or using addition instead of division.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

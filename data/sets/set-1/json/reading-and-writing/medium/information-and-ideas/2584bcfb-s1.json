@@ -1,0 +1,25 @@
+{
+  "questionId": "2584bcfb-s1",
+  "originalId": "2584bcfb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.medium",
+  "stimulus": "<p>Sandra Voss-Klein and team examined whether the tone of restaurant reviews posted online can predict a restaurant's commercial longevity. The team considered both numeric star ratings and written customer comments. To analyze the written comments, the team measured the warmth—the degree to which a written comment expresses friendly, welcoming feeling—of customer comments on a popular review website, assigning each comment a warmth score. After reading about this research, a student argues that the warmth of restaurant reviews is unrelated to whether a restaurant remains in business over the long term.</p>",
+  "stem": "<p>Which finding, if true, would most directly weaken the student's conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Restaurants whose comments had the highest average warmth scores received the lowest average star ratings on the review website.</p>"},
+    {"id": "b", "content": "<p>The average warmth score of a restaurant's comments was a strong positive predictor of how many years that restaurant continued to operate after the comments were posted.</p>"},
+    {"id": "c", "content": "<p>More than half of the restaurants the team examined received an average star rating of 3.5 out of 5 stars.</p>"},
+    {"id": "d", "content": "<p>The restaurants that remained in business the longest tended to have high average star ratings.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most directly weakens the student's conclusion that the warmth of restaurant reviews is unrelated to commercial longevity. If a comment's average warmth score is a strong positive predictor of how many years the restaurant continues to operate, then warmth and longevity are related, contradicting the student's claim.</p><p>Choice A is incorrect because it relates warmth to star ratings, not to commercial longevity. It does not address whether warmth predicts how long a restaurant stays in business. Choice C is incorrect because it describes the distribution of star ratings overall and says nothing about warmth or longevity. Choice D is incorrect because it links star ratings to longevity rather than linking warmth to longevity; the student's claim is specifically about warmth.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

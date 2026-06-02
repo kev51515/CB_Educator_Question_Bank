@@ -1,0 +1,97 @@
+[
+  {
+    "path": "json/math/medium/advanced-math/911383f2-s1.json",
+    "originalId": "911383f2",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/364a2d25-s1.json",
+    "originalId": "364a2d25",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/0980fcdd-s1.json",
+    "originalId": "0980fcdd",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/652054da-s1.json",
+    "originalId": "652054da",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/fcdf87b7-s1.json",
+    "originalId": "fcdf87b7",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/95ed0b69-s1.json",
+    "originalId": "95ed0b69",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/4e18fc5d-s1.json",
+    "originalId": "4e18fc5d",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/6e02cd78-s1.json",
+    "originalId": "6e02cd78",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/a267bd29-s1.json",
+    "originalId": "a267bd29",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/a1262cdb-s1.json",
+    "originalId": "a1262cdb",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/ff2c1431-s1.json",
+    "originalId": "ff2c1431",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/87a3de81-s1.json",
+    "originalId": "87a3de81",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/advanced-math/a4f61d75-s1.json",
+    "originalId": "a4f61d75",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/hard/advanced-math/104bff62-s1.json",
+    "originalId": "104bff62",
+    "difficulty": "hard"
+  },
+  {
+    "path": "json/math/easy/advanced-math/b8c4a1cd-s1.json",
+    "originalId": "b8c4a1cd",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/advanced-math/98f735f2-s1.json",
+    "originalId": "98f735f2",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/advanced-math/3de7a7d7-s1.json",
+    "originalId": "3de7a7d7",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/advanced-math/4236c5a3-s1.json",
+    "originalId": "4236c5a3",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/advanced-math/7a8cb72a-s1.json",
+    "originalId": "7a8cb72a",
+    "difficulty": "easy"
+  }
+]

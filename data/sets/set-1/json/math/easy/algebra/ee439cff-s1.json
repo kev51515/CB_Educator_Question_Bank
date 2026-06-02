@@ -1,0 +1,39 @@
+{
+  "questionId": "ee439cff-s1",
+  "originalId": "ee439cff",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>On a road trip, Marcus and Elena each drove for part of the trip, and the total distance they drove was under 300 miles. Marcus drove at an average speed of 45 miles per hour for m hours, and Elena drove at an average speed of 55 miles per hour for e hours. Which of the following inequalities represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>45m + 55e &gt; 300</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>55m + 45e &lt; 300</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>45m + 55e &lt; 300</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>55m + 45e &gt; 300</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total distance, 45m + 55e, must be less than 300.</p><p>Choice A reverses the inequality. Choices B and D swap the speeds.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z"
+}

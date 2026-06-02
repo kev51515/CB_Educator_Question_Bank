@@ -1,0 +1,25 @@
+{
+  "questionId": "1107e7dc-s1",
+  "originalId": "1107e7dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>Agricultural advisers note that growers hoping to depend more heavily on wind-powered irrigation pumps should invest in larger water reservoirs; maintaining a generous supply of stored water can offset the consequences of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> wind availability caused by erratic changes in regional weather patterns.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>improvements in</p>"},
+    {"id": "b", "content": "<p>refinements to</p>"},
+    {"id": "c", "content": "<p>variations in</p>"},
+    {"id": "d", "content": "<p>rewards for</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. \"Variations in\" means irregular or unpredictable changes in, which fits the text's mention of \"erratic changes in regional weather patterns\" that affect wind availability. Stored water is described as offsetting the consequences of these irregular changes, so the blank must name those changes themselves.</p><p>Choice A is incorrect because \"improvements in\" wind availability would not be a problem reservoirs need to offset. Choice B is incorrect because \"refinements to\" implies deliberate adjustment, but the text describes natural, erratic changes. Choice D is incorrect because \"rewards for\" wind availability does not match anything in the passage.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

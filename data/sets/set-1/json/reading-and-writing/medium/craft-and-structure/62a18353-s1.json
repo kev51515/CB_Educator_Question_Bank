@@ -1,0 +1,25 @@
+{
+  "questionId": "62a18353-s1",
+  "originalId": "62a18353",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from George Eliot's 1860 novel <em>The Mill on the Floss</em>. Tom has decided he must leave the family farm to seek work in town.</p><blockquote><p>He had more than once tried to <span role=\"region\" aria-label=\"Referenced Content\"><u>win his father over to</u></span> the plan, but the old man always shook his head and turned to his pipe in injured silence. Tom's ambitions struck him as a kind of disloyalty, that was all.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the phrase &ldquo;win his father over to&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Persuade his father to support</p>"},
+    {"id": "b", "content": "<p>Defeat his father at</p>"},
+    {"id": "c", "content": "<p>Earn money for his father through</p>"},
+    {"id": "d", "content": "<p>Bring his father back from</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The idiom \"win someone over to\" something means to persuade that person to accept or support it. Tom wants his father to back his plan to leave for town, but the father remains silently disapproving.</p><p>Choice B is incorrect because the phrase has no competitive sense here; the father is not Tom's opponent in a contest. Choice C is incorrect because \"win\" is not used in the financial sense; no money is at issue. Choice D is incorrect because the father has not gone anywhere; only Tom is contemplating leaving.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b260c65a-s1",
+  "originalId": "b260c65a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Jupiter has dozens of moons, but Ganymede is by far the largest. Due to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> immense size, Ganymede is the only moon in the solar system known to generate its own magnetic field, and astronomers continue to study its unusual properties.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Ganymedes</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Ganymede</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ganymede's</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Ganymedes'</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of possessive nouns. The singular possessive noun \"Ganymede's\" correctly indicates that there is one Ganymede and it has an immense size.</p><p>Choice A is incorrect because the context requires the singular possessive noun \"Ganymede's,\" not the plural noun \"Ganymedes.\" Choice B is incorrect because the context requires the singular possessive noun \"Ganymede's,\" not the singular noun \"Ganymede.\" Choice D is incorrect because the context requires the singular possessive noun \"Ganymede's,\" not the plural possessive noun \"Ganymedes'.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T8.easy"
+}

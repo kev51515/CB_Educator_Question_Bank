@@ -1,0 +1,22 @@
+[
+  {"id": "7cab9fe1-s1", "templateId": "percentages.A3.T5.medium", "verdict": "ok"},
+  {"id": "566759ef-s1", "templateId": "percentages.A4.T1.medium", "verdict": "ok"},
+  {"id": "699af7b3-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "20845d36-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "25faa756-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "0231050d-s1", "templateId": "percentages.A3.T3.hard", "verdict": "ok"},
+  {"id": "54cb53cf-s1", "templateId": "percentages.A3.T4.hard", "verdict": "ok"},
+  {"id": "993000da-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "ba0e23b0-s1", "templateId": "percentages.A3.T3.hard", "verdict": "ok"},
+  {"id": "65c49824-s1", "templateId": "percentages.A2.T2.hard", "verdict": "ok"},
+  {"id": "3d73a58b-s1", "templateId": "percentages.A4.T2.hard", "verdict": "ok"},
+  {"id": "e635aede-s1", "templateId": "percentages.A4.T2.hard", "verdict": "ok"},
+  {"id": "4aaa9c42-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "40e7a1a9-s1", "templateId": "percentages.A3.T3.hard", "verdict": "ok"},
+  {"id": "34f8cd89-s1", "templateId": "percentages.A4.T4.hard", "verdict": "ok"},
+  {"id": "040f2a84-s1", "templateId": "percentages.A4.T2.hard", "verdict": "ok"},
+  {"id": "1baffbcf-s1", "templateId": "percentages.A3.T4.hard", "verdict": "ok"},
+  {"id": "67c0200a-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"},
+  {"id": "0ea56bb2-s1", "templateId": "percentages.A4.T4.hard", "verdict": "ok"},
+  {"id": "1fbd3b67-s1", "templateId": "percentages.A4.T3.hard", "verdict": "ok"}
+]

@@ -1,0 +1,22 @@
+{
+  "questionId": "5b918ebb-s1",
+  "originalId": "5b918ebb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Line r is parallel to line s. Line n intersects both lines r and s. Two corresponding angles formed by this configuration measure 118\u00b0 and x\u00b0. What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "118"
+  ],
+  "rationale": "<p>When two parallel lines are cut by a transversal, corresponding angles are congruent. Therefore x = 118.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

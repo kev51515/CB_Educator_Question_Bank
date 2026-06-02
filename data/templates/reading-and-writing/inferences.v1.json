@@ -1,0 +1,587 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Information and Ideas",
+  "skill": "Inferences",
+  "originals_count": 124,
+  "types": [
+    {
+      "id": "T1",
+      "name": "Scientific study finding inference",
+      "description": "Stimulus reports an empirical study (experiment, observation, or measurement) and ends with a connector like 'suggests that ______'. Student must select the inference about a biological, ecological, chemical, or physical phenomenon that is best supported by the reported result.",
+      "core_skill_demand": "Map a quantitative or comparative experimental result onto its narrowest valid generalization: identify what the data licenses you to conclude about the mechanism, organism, or material under study without overreaching into claims the experiment did not test.",
+      "example_originals": ["01989d77", "25893fc7", "6bc0e595", "8a3ecac6", "3cc2eacc", "4f9f8ea6"],
+      "frequency": { "easy": 9, "medium": 14, "hard": 18 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Single experimental comparison with one variable (e.g., plants A vs B)",
+            "Correct inference paraphrases the finding almost verbatim",
+            "Distractors are obviously off-topic (mention groups not in the study)",
+            "Stimulus under ~110 words"
+          ],
+          "example_stem": "Aben found tanks with duckweed and algae released more methane than tanks with watermilfoil. This suggests that ______",
+          "example_ids": ["01989d77", "25893fc7", "8a3ecac6", "eca09a92"]
+        },
+        "medium": {
+          "characteristics": [
+            "Two or three variables or a multi-step study design (e.g., before/after, multiple species)",
+            "Correct inference requires one inferential bridge beyond the literal finding",
+            "Distractors include plausible but unsupported generalizations (e.g., 'in all species', 'best way')",
+            "Stimulus 110-160 words with one piece of technical vocabulary"
+          ],
+          "example_stem": "Tanks of A. thaliana showed bacteria from both wind and soil sources... Either explanation suggests that ______",
+          "example_ids": ["2d2983b3", "3cc2eacc", "cac82f9b", "f3f444bc", "5432d1de"]
+        },
+        "hard": {
+          "characteristics": [
+            "Result is conditional, partial, or qualified (e.g., 'no significant effect on X but did affect Y')",
+            "Correct inference requires synthesizing two findings or recognizing a non-obvious mechanistic implication",
+            "Distractors include reverse-causation, overreach, or accurate restatements that miss the inferential ask",
+            "Technical or specialized terms (genes, compounds, isotopes) appear multiple times",
+            "Stimulus often >160 words with a named researcher and multiple measured quantities"
+          ],
+          "example_stem": "Altered plants showed no difference at 22C; at 27C unmodified plants flowered faster while altered did not, which suggests that ______",
+          "example_ids": ["1b9b29f1", "4f9f8ea6", "5cd55c77", "cae97f58", "f2250478", "fd1095d7"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Blank at end of stimulus introduced by a logical connector (suggests/indicates/implies/thus)",
+          "Stimulus reports an actual measured comparison or observation",
+          "Correct answer stays within the scope of what the study measured"
+        ],
+        "must_vary": [
+          "Scientific subdomain (ecology, genetics, materials, neuroscience, etc.)",
+          "Named researcher and organism/material",
+          "Specific magnitudes and conditions reported"
+        ],
+        "common_bugs": [
+          "Cloner writes a correct answer that overgeneralizes ('all X do Y') beyond the experimental sample, matching the wrong-answer pattern",
+          "Cloner drops the qualifier ('higher', 'longer', 'more likely') and produces a result-paraphrase that is the literal finding rather than an inference",
+          "Cloner adds a comparison group (deeper water, other species) that was never in the original setup, replicating an Easy distractor pattern in the key"
+        ]
+      }
+    },
+    {
+      "id": "T2",
+      "name": "Causal/mechanistic explanation inference",
+      "description": "Stimulus describes a phenomenon and offers a competing or partial explanation, then asks the student to infer the most likely underlying cause or mechanism implied by the evidence.",
+      "core_skill_demand": "From a description of correlated observations, infer the specific causal pathway or condition that the author/researcher is implicitly endorsing — distinguishing a true mechanistic claim from mere description of co-occurrence.",
+      "example_originals": ["72cbdbc6", "1bf2173e", "45c03837", "61228830", "9869c261", "fcae209f"],
+      "frequency": { "easy": 4, "medium": 6, "hard": 9 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Single proposed mechanism with one piece of supporting evidence",
+            "Inference directly names the mechanism stated in the stimulus",
+            "No competing explanation present"
+          ],
+          "example_stem": "Poor street lighting deters new cyclists but not experienced ones... improving lighting would ______",
+          "example_ids": ["72cbdbc6", "fcae209f", "ead0fd9b"]
+        },
+        "medium": {
+          "characteristics": [
+            "Multiple correlated facts that jointly point to one mechanism",
+            "Inference requires picking the cause from 2-3 candidate mechanisms",
+            "Connector words like 'therefore', 'thus' signal the inferential pivot"
+          ],
+          "example_stem": "Wood rots quickly unless protected by sediment; the discovered ship was likely ______",
+          "example_ids": ["25fc2534", "5432d1de", "b1fab3e1", "bcbcc43f"]
+        },
+        "hard": {
+          "characteristics": [
+            "Mechanism is non-obvious and requires ruling out a more salient surface explanation",
+            "Stimulus contains a 'however' or qualifier that complicates the simple causal reading",
+            "Correct inference identifies an indirect or compensatory mechanism (e.g., 'because they need to compensate for...')",
+            "Often involves a numerical or comparative anchor that must be reinterpreted"
+          ],
+          "example_stem": "Differences between diving behaviors were negligible, which could be attributed to ship sounds dominating so much that ______",
+          "example_ids": ["1bf2173e", "45c03837", "9869c261", "cae97f58", "5d20f560"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Observation + proposed mechanism structure",
+          "Inferential connector creating the blank at end",
+          "The correct mechanism must be implied, not stated"
+        ],
+        "must_vary": [
+          "Domain of the mechanism (geological, behavioral, chemical, etc.)",
+          "Direction of the causal arrow (additive vs subtractive effect)"
+        ],
+        "common_bugs": [
+          "Cloner restates the observation as the answer rather than its underlying cause",
+          "Cloner inverts the causal direction in distractors so subtly that two answers become defensible",
+          "Cloner removes the qualifier ('negligible', 'only', 'partially') that the inference hinges on, collapsing difficulty"
+        ]
+      }
+    },
+    {
+      "id": "T3",
+      "name": "Scholar/researcher position inference",
+      "description": "Stimulus presents a named scholar's view, contention, or argument — often contrasted with an alternative or prior view — and asks what conclusion or implication follows from that position.",
+      "core_skill_demand": "Recover the speaker/author's commitment from their argument structure: identify what they would also have to believe (or reject) given the stance they have explicitly taken, especially when their stance opposes a default view.",
+      "example_originals": ["d047abca", "3ae2638c", "1755eaf0", "a13c1c66", "a44c7bd4", "9abc3ba5"],
+      "frequency": { "easy": 1, "medium": 5, "hard": 9 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Single scholar with a clearly stated view and one supporting reason",
+            "Inference simply restates the view in different words"
+          ],
+          "example_stem": "Green found earlier Hadestown confusing but praised the Broadway version, suggesting that in Green's view ______",
+          "example_ids": ["b4da6aaf"]
+        },
+        "medium": {
+          "characteristics": [
+            "Scholar's view contrasts with an unnamed conventional assumption",
+            "Inference must extract the scholar's implicit corollary",
+            "May include words like 'disagrees', 'argues', 'contends'"
+          ],
+          "example_stem": "Laidre disagrees with the importance-of-tusk idea; if the tusk were so important, then ______",
+          "example_ids": ["d047abca", "3ae2638c", "c9708e7d", "d748c3fd"]
+        },
+        "hard": {
+          "characteristics": [
+            "Two named scholars or one scholar contrasted with 'previous assumption' / 'some claim'",
+            "Inference requires identifying what both parties must agree on, or what one party is implicitly committed to denying",
+            "Includes hedging language ('to the extent that', 'if these works are representative')",
+            "Frequently humanities (art, literature, philosophy, history) rather than empirical"
+          ],
+          "example_stem": "Both Whitten and historians likely agree that Whitten's 1960s work ______ compared to 1970s",
+          "example_ids": ["1755eaf0", "a13c1c66", "a44c7bd4", "9abc3ba5", "4b3d6062", "f1bfbed3"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "A named or clearly identified scholar/researcher with a stated position",
+          "An explicit or implicit contrast (with default view, with another scholar, with prior assumption)",
+          "Inferential ask about what the scholar's view implies/commits them to"
+        ],
+        "must_vary": [
+          "Field (art history, archaeology, philosophy of science, linguistics, etc.)",
+          "Whether the contrast is between two scholars or scholar-vs-tradition"
+        ],
+        "common_bugs": [
+          "Cloner collapses the contrast and writes a stimulus where only one view is present, eliminating the inferential lever",
+          "Cloner writes a correct answer that the scholar would reject because it ignores the qualifier ('to the extent that')",
+          "Cloner makes the answer a direct quotation paraphrase from the scholar rather than an implied commitment"
+        ]
+      }
+    },
+    {
+      "id": "T4",
+      "name": "Historical/archaeological evidence inference",
+      "description": "Stimulus presents historical records, artifacts, or archaeological findings (often with dating, distribution, or provenance details) and asks the student to infer something about past peoples, practices, or events.",
+      "core_skill_demand": "Reason from material evidence (dates, isotopes, distributions, written records) to a defensible claim about historical agents — recognizing what artifact patterns can and cannot license about migration, trade, authorship, or cultural practice.",
+      "example_originals": ["c4d43991", "fc1259dd", "350e2336", "8fbed1cb", "4889580c", "96d1c1fe"],
+      "frequency": { "easy": 2, "medium": 4, "hard": 9 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Single artifact or record with one feature pointing directly to a conclusion",
+            "Inference is a simple paraphrase of role/function"
+          ],
+          "example_stem": "Inscriptions suggest Merneith controlled the treasury... Merneith likely ______",
+          "example_ids": ["fc1259dd", "c4d43991"]
+        },
+        "medium": {
+          "characteristics": [
+            "Multiple artifacts with dates that must be aligned with a historical timeline",
+            "Inference identifies a transition or boundary event"
+          ],
+          "example_stem": "Casta rocks dating to 3.75 bya show subduction-like isotope composition, so ______",
+          "example_ids": ["3882ddf6", "350e2336", "8fbed1cb"]
+        },
+        "hard": {
+          "characteristics": [
+            "Conflicting dates or evidence types that must be reconciled ('if both correct, then...')",
+            "Inference requires positing trade, migration, or transmission rather than independent origin",
+            "Stimulus includes ≥2 numerical dates or geographic locations",
+            "Distractors include plausible-but-unsupported migrations or causal chains"
+          ],
+          "example_stem": "If both the early artifact dates and the 14th-century founding date are correct, then ______",
+          "example_ids": ["9391b7cc", "96d1c1fe", "ac285054", "b5e9f3c2", "58e9e497", "e9521fd1"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "Concrete material/textual evidence with at least one date, location, or measurable feature",
+          "An inferential gap between the evidence and the historical claim",
+          "Past-tense conclusion about people, places, or events"
+        ],
+        "must_vary": [
+          "Geographic and temporal setting",
+          "Type of evidence (genetic, isotopic, linguistic, documentary, artifactual)"
+        ],
+        "common_bugs": [
+          "Cloner writes a correct answer that overreaches (claims migration when only contact is supported)",
+          "Cloner omits the conflicting/qualifying detail that distinguishes the correct inference from a naive one",
+          "Cloner introduces anachronism in the answer choices (events occurring before the stimulus's evidence permits)"
+        ]
+      }
+    },
+    {
+      "id": "T5",
+      "name": "Methodological-limitation inference",
+      "description": "Stimulus introduces a study, method, or analytic approach along with an explicit limitation, caveat, or competing factor, and asks what cautious conclusion or recommendation follows.",
+      "core_skill_demand": "Identify the conclusion that respects a stated epistemic limit — recognizing when evidence is insufficient, when a finding cannot generalize, or when method choice constrains what can be claimed.",
+      "example_originals": ["28dfc05a", "a0b58ef0", "485962a6", "d95a0bb8", "5632ffb4", "f1bfbed3"],
+      "frequency": { "easy": 0, "medium": 4, "hard": 7 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "(Rare at Easy in this bank.) Single explicit limitation with the answer almost restating it"
+          ],
+          "example_stem": "—",
+          "example_ids": []
+        },
+        "medium": {
+          "characteristics": [
+            "One clearly stated limitation (e.g., 'haven't been able to determine the age')",
+            "Inference cautiously denies a stronger claim",
+            "Distractors include the stronger claim the limitation forbids"
+          ],
+          "example_stem": "Erosion could have modified Mars's surface, therefore ______ (current makeup may not reflect past activity)",
+          "example_ids": ["485962a6", "a0b58ef0", "5105ca38"]
+        },
+        "hard": {
+          "characteristics": [
+            "Multiple competing factors or uncertain methodological choice",
+            "Correct answer is a hedged statement using 'may', 'could', 'is to be expected'",
+            "At least one distractor confidently asserts what the data only weakly supports",
+            "Often involves model assumptions, classification choices, or proxy measures"
+          ],
+          "example_stem": "Researchers' decisions on whether genetic differences count as new species are consequential; the two censuses agreed on vertebrates but differed on microorganisms, suggesting ______",
+          "example_ids": ["28dfc05a", "d95a0bb8", "5632ffb4", "f1bfbed3", "3f236877", "f39507a3"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "An explicit methodological caveat, missing data, or competing factor in the stimulus",
+          "Correct answer hedged to respect that caveat",
+          "At least one distractor that ignores the caveat"
+        ],
+        "must_vary": [
+          "Type of limitation (incomplete data, competing factor, definitional ambiguity, model assumption)",
+          "Research domain"
+        ],
+        "common_bugs": [
+          "Cloner writes a correct answer that is too confident, indistinguishable from the unhedged distractor",
+          "Cloner drops the caveat from the stimulus so the limitation is no longer the inferential pivot",
+          "Cloner makes all four options hedged, eliminating the discrimination between cautious and overconfident inference"
+        ]
+      }
+    },
+    {
+      "id": "T6",
+      "name": "Comparative contrast inference",
+      "description": "Stimulus describes two contrasting groups, conditions, or entities (often with a 'however' or 'unlike' pivot) and asks the student to infer what the contrast itself implies.",
+      "core_skill_demand": "Translate a binary comparison into a single relational claim about the contrastive dimension itself, recognizing which property is the operative variable producing the difference.",
+      "example_originals": ["4025e00c", "493c46bc", "9077be25", "55688b3c", "5c7e0d62", "6e0e0de1"],
+      "frequency": { "easy": 3, "medium": 3, "hard": 4 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Two groups directly compared on one attribute",
+            "Inference picks the attribute that explains the difference"
+          ],
+          "example_stem": "Hooked tool is harder to get but much better than basic stick... hooked tools are ______",
+          "example_ids": ["4025e00c", "493c46bc", "9077be25"]
+        },
+        "medium": {
+          "characteristics": [
+            "Contrast involves a temporal or methodological dimension (e.g., 'unlike earlier versions...')",
+            "Inference requires recognizing the operative variable is the new attribute"
+          ],
+          "example_stem": "Imported foods feature 3x more than dairy in Dutch paintings, casting doubt that ______",
+          "example_ids": ["55688b3c", "df654a2b", "ca5a3fb4"]
+        },
+        "hard": {
+          "characteristics": [
+            "Contrast is across time periods, authors, or analytical frames",
+            "The implied claim is about what one side lacks that the other has",
+            "Often involves cultural, artistic, or literary entities",
+            "Distractors include reversed direction or scope errors"
+          ],
+          "example_stem": "Wace added the Round Table to Geoffrey's History in 1155, which suggests the Vita Sancti Cadoci's source ______",
+          "example_ids": ["5c7e0d62", "6e0e0de1", "4b8eda0a", "1ffd60ce"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "An explicit two-sided contrast with a pivot word (however, unlike, by contrast, whereas)",
+          "Inferential ask about the implication of the contrast",
+          "Both sides of the contrast given concrete content in the stimulus"
+        ],
+        "must_vary": [
+          "Type of contrast (temporal, group-vs-group, expected-vs-actual)",
+          "Subject domain"
+        ],
+        "common_bugs": [
+          "Cloner removes one side of the contrast, leaving only a single-condition stimulus that no longer demands comparative reasoning",
+          "Cloner writes a correct answer about only one side rather than about the comparison itself",
+          "Cloner reverses the direction of the contrast in distractors without making any distractor a credible foil"
+        ]
+      }
+    },
+    {
+      "id": "T7",
+      "name": "Predictive/conditional inference",
+      "description": "Stimulus presents a general principle, model, or established relationship and asks the student to predict what should happen, or what someone should do, in a specific scenario — using 'therefore', 'consequently', or 'should likely'.",
+      "core_skill_demand": "Apply a stated principle to a fresh case: identify the predicted outcome, recommended action, or expected observation that follows by deductive transfer from the established relationship.",
+      "example_originals": ["7a895def", "93cad661", "ead0fd9b", "3cc2eacc", "95dbdf51", "ce4448b7"],
+      "frequency": { "easy": 3, "medium": 3, "hard": 4 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Principle and application in same paragraph with explicit 'therefore'",
+            "Prediction is the obvious mechanical consequence"
+          ],
+          "example_stem": "Violists' f-holes face away from audience; therefore for a solo a violist typically ______",
+          "example_ids": ["7a895def", "93cad661", "ead0fd9b"]
+        },
+        "medium": {
+          "characteristics": [
+            "Principle requires one inferential step beyond literal restatement",
+            "Application scenario introduces a new but compatible entity"
+          ],
+          "example_stem": "Fan cells need dopamine, which the brain releases on reward; receiving a reward should likely ______",
+          "example_ids": ["3cc2eacc", "3190835d", "fc57d569"]
+        },
+        "hard": {
+          "characteristics": [
+            "Principle (theory, framework) drawn from one author, applied to a different specific case",
+            "Application requires recognizing the case satisfies the principle's antecedent",
+            "Prediction has multiple plausible forms; correct one matches the principle's exact mechanism"
+          ],
+          "example_stem": "Mulvey says identification with characters depends on POV shots; Hitchcock's Birds scene has few POV shots, so it should ______",
+          "example_ids": ["95dbdf51", "ce4448b7", "a68fd3e7", "f942646f"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "A stated general principle, model, theory, or relationship",
+          "A specific scenario to which the principle is being applied",
+          "A predictive connector ('therefore', 'should', 'would')"
+        ],
+        "must_vary": [
+          "Principle's source (theorist's framework, biological mechanism, social norm)",
+          "Domain of application"
+        ],
+        "common_bugs": [
+          "Cloner applies the principle inconsistently — the correct answer doesn't actually follow from the stated principle",
+          "Cloner makes the predicted scenario already implied by the stimulus text, making the inference trivial",
+          "Cloner writes distractors that restate the principle rather than misapply it, eliminating contrast"
+        ]
+      }
+    },
+    {
+      "id": "T8",
+      "name": "Literary/arts interpretive inference",
+      "description": "Stimulus discusses a work of art, literature, theater, or film — often presenting a critic's or artist's intention — and asks the student to infer the work's significance, the artist's contribution, or how the work should be evaluated.",
+      "core_skill_demand": "Translate biographical, contextual, or critical detail about a creative work into a defensible evaluative claim about the artist's achievement, the work's reception, or its place within a tradition.",
+      "example_originals": ["1d0b5bf4", "dbbbc5dd", "7c1e5880", "0dccbf17", "bcf2f169", "f9bd4e61"],
+      "frequency": { "easy": 4, "medium": 4, "hard": 5 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Stated artistic goal + stated achievement → conclude the goal was met",
+            "Single artist, one work"
+          ],
+          "example_stem": "Grimes wanted X with the golden shovel method... ______",
+          "example_ids": ["1d0b5bf4", "dbbbc5dd"]
+        },
+        "medium": {
+          "characteristics": [
+            "Multiple works or aspects of an artist's output must be combined",
+            "Inference rebuts a partial or reductive view of the artist"
+          ],
+          "example_stem": "Zelda Fitzgerald wrote her own novels and stories; those who see her only as F. Scott's inspiration ______",
+          "example_ids": ["7c1e5880", "bcf2f169", "d748c3fd"]
+        },
+        "hard": {
+          "characteristics": [
+            "Critic's framework or theoretical lens that must be applied to the work",
+            "Inference about audience reception, scholarly interpretation, or the work's distance from convention",
+            "Often includes historical context that constrains 'historically appropriate' interpretation",
+            "Distractors include plausible but anachronistic or unsupported readings"
+          ],
+          "example_stem": "Asco's exhibition struggles open an interpretation that allows us to conclude Instant Mural is ______",
+          "example_ids": ["0dccbf17", "4b8eda0a", "f9bd4e61", "a44c7bd4", "cf3acc50"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "A creative work (literature, visual art, theater, film, music) as the topic",
+          "Critic's view OR artist's intention OR contextual circumstance feeding into the inference",
+          "Evaluative or interpretive ask"
+        ],
+        "must_vary": [
+          "Medium and historical period of the work",
+          "Whether the inference is about reception, intention, or significance"
+        ],
+        "common_bugs": [
+          "Cloner writes a correct answer that judges the work by a standard not mentioned in the stimulus",
+          "Cloner removes the contextual constraint (era, tradition, critic's framework), making interpretation arbitrary",
+          "Cloner introduces a value judgment ('best', 'most important') unsupported by the stimulus"
+        ]
+      }
+    },
+    {
+      "id": "T9",
+      "name": "Synthesis-of-multiple-findings inference",
+      "description": "Stimulus reports two or more distinct findings, observations, or claims and asks the student to infer the joint conclusion that integrates them. Often signaled by 'taken together', 'together these findings', or implicit synthesis.",
+      "core_skill_demand": "Combine two pieces of evidence into a single conclusion that neither piece supports alone — recognizing the additional claim made possible by the conjunction.",
+      "example_originals": ["8a3ecac6", "2d2983b3", "086dd8cc", "4ba0695d", "aaddd60f", "e185a21f"],
+      "frequency": { "easy": 1, "medium": 3, "hard": 6 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Two findings stated, joint implication is the obvious overlap"
+          ],
+          "example_stem": "Black wolves intermingle more AND are more immune to distemper; taken together ______",
+          "example_ids": ["8a3ecac6"]
+        },
+        "medium": {
+          "characteristics": [
+            "Two findings from same study with a clear conjunctive 'and' or 'also'",
+            "Joint inference requires recognizing the shared underlying cause"
+          ],
+          "example_stem": "Beads lack iron but have high carbon, so Natufian beadmakers ______",
+          "example_ids": ["2d2983b3", "1ffd60ce", "5105ca38"]
+        },
+        "hard": {
+          "characteristics": [
+            "Three or more pieces of evidence, including some that initially seem contradictory",
+            "Joint inference rejects a 'previously assumed' default view",
+            "Synthesis must respect all stated data, not just the salient ones",
+            "Includes phrases like 'rather than... as previously assumed', 'in addition to'"
+          ],
+          "example_stem": "Anterior genes active throughout, posterior genes limited to edges, suggesting rather than head-elimination, sea star morphology evolved by ______",
+          "example_ids": ["086dd8cc", "4ba0695d", "aaddd60f", "e185a21f", "f495b554", "6e0e0de1"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "At least two distinct findings or claims in the stimulus",
+          "An inference that requires both findings to be valid",
+          "Synthesis marker ('taken together', 'in addition', 'furthermore', or implicit conjunction)"
+        ],
+        "must_vary": [
+          "How many findings (2 vs 3+)",
+          "Whether findings are confirming or apparently contradictory"
+        ],
+        "common_bugs": [
+          "Cloner writes a correct answer supported by only one of the findings, making other distractors equally valid",
+          "Cloner stacks redundant findings that all say the same thing, eliminating the need for synthesis",
+          "Cloner produces a stimulus where the two findings actually contradict and the 'correct' answer ignores one"
+        ]
+      }
+    },
+    {
+      "id": "T10",
+      "name": "Conditional/hypothetical inference",
+      "description": "Stimulus poses a hypothetical scenario or conditional framing ('if X is correct, then...', 'barring Y, then...', 'assuming Z holds') and asks what follows from that condition.",
+      "core_skill_demand": "Reason hypothetically: hold the stated condition as true and derive the consequence that logically follows, without smuggling in claims beyond the condition.",
+      "example_originals": ["fcae209f", "9391b7cc", "4ba0695d", "58e9e497", "f495b554", "cf3acc50"],
+      "frequency": { "easy": 1, "medium": 2, "hard": 6 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Simple 'because' clause introducing the condition",
+            "Conditional consequence is the direct mechanism"
+          ],
+          "example_stem": "Nacional trees in remote valley might have avoided disease because ______",
+          "example_ids": ["fcae209f"]
+        },
+        "medium": {
+          "characteristics": [
+            "Explicit 'if X, then ______' or 'assuming Y' framing",
+            "Two-step logical chain from condition to consequence"
+          ],
+          "example_stem": "Assuming Fan's team's findings are valid, it can be inferred that ______",
+          "example_ids": ["4ba0695d", "f495b554"]
+        },
+        "hard": {
+          "characteristics": [
+            "'Barring X, these facts suggest...' or 'if both X and Y are correct, then Z'",
+            "Requires ruling out the excluded possibility and accepting the only remaining account",
+            "Multiple parallel conditions must hold simultaneously",
+            "Distractors include the excluded possibility itself"
+          ],
+          "example_stem": "Barring several farmers independently inventing techniques, these facts most strongly suggest that ______",
+          "example_ids": ["9391b7cc", "58e9e497", "ac285054", "b5e9f3c2", "cf3acc50", "e9521fd1"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "An explicit conditional or hypothetical operator ('if', 'assuming', 'barring', 'given that')",
+          "The inference depends on accepting that condition",
+          "At least one distractor that would only be true if the condition were false"
+        ],
+        "must_vary": [
+          "Conditional form (assumption-based, exclusion-based, joint-truth-based)",
+          "Domain of the claim"
+        ],
+        "common_bugs": [
+          "Cloner drops the conditional operator so the inference becomes a flat assertion",
+          "Cloner writes a correct answer that holds independently of the condition, weakening the conditional structure",
+          "Cloner fails to make any distractor track the excluded alternative, eliminating the lever the condition provides"
+        ]
+      }
+    },
+    {
+      "id": "T11",
+      "name": "Social/cultural-implication inference",
+      "description": "Stimulus describes a social practice, cultural pattern, economic behavior, or institutional arrangement and asks what broader implication follows about the people, group, or institution involved.",
+      "core_skill_demand": "Generalize from a specific cultural or behavioral observation to a defensible claim about underlying values, motives, social functions, or population-level patterns — without overreaching into stereotype or speculation.",
+      "example_originals": ["7afdcca2", "c95995bc", "65502c46", "6b8a7c74", "22b3da87", "2a075bd1"],
+      "frequency": { "easy": 1, "medium": 4, "hard": 5 },
+      "difficulty_levers": {
+        "easy": {
+          "characteristics": [
+            "Direct observation of practice with a transparent functional explanation"
+          ],
+          "example_stem": "Johnson hosted writers at her home for feedback; these gatherings served as ______",
+          "example_ids": ["7a895def"]
+        },
+        "medium": {
+          "characteristics": [
+            "Cultural/economic correlation with a stated outcome",
+            "Inference identifies the social function or population trend"
+          ],
+          "example_stem": "Cantonese-speakers settle in Manhattan; this suggests language-region correlations ______",
+          "example_ids": ["7afdcca2", "c95995bc", "54057e3f", "fc57d569"]
+        },
+        "hard": {
+          "characteristics": [
+            "Cultural pattern + institutional context + qualifying caveat",
+            "Inference identifies a motivated social function (signaling, status, control) implicit in the description",
+            "Often involves political, economic, or governance settings",
+            "Distractors include alternative motives also superficially compatible"
+          ],
+          "example_stem": "Real estate tax was main means of voter qualification, suggesting voters during the Restoration ______",
+          "example_ids": ["22b3da87", "65502c46", "6b8a7c74", "2a075bd1", "f27559d4"]
+        }
+      },
+      "clone_constraints": {
+        "must_preserve": [
+          "A specific social, cultural, economic, or institutional setting",
+          "Inference about people's motives, group properties, or institutional function",
+          "Sufficient stimulus detail to rule out alternative motives"
+        ],
+        "must_vary": [
+          "Cultural/historical setting",
+          "Whether inference is about individuals, groups, or institutions"
+        ],
+        "common_bugs": [
+          "Cloner writes a correct answer that stereotypes the cultural group rather than tracking the specific evidence",
+          "Cloner removes the institutional context, leaving an inference that floats free of evidence",
+          "Cloner introduces a motive in the answer that the stimulus does not differentiate from other plausible motives"
+        ]
+      }
+    }
+  ],
+  "skill_wide_notes": "All 124 originals share the exact same stem ('Which choice most logically completes the text?') and a fill-in-the-blank stimulus structure where the blank appears at the end of the passage introduced by an inferential connector (suggests/indicates/implies/therefore/thus/consequently). No stimuli in this skill use tables or quantitative figures (those live in 'Command of Quantitative Evidence'). Type distinctions are therefore driven entirely by (a) stimulus genre — scientific study, scholar's argument, historical evidence, creative work, social practice — and (b) the cognitive operation the connector demands — generalize, explain, predict, synthesize, or hedge. A single original can satisfy two type definitions (e.g., a scientific study with a methodological caveat fits both T1 and T5); when this happens, the type with the more specific inferential operation is preferred. Difficulty regression across types follows three consistent levers: (1) stimulus length and density of technical detail, (2) whether the correct inference is a paraphrase of a stated finding (easy) versus requires bridging or synthesis (hard), and (3) whether distractors include only off-topic foils (easy) versus over-confident or scope-mismatched near-misses (hard)."
+}

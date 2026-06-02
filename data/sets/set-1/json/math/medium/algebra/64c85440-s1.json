@@ -1,0 +1,39 @@
+{
+  "questionId": "64c85440-s1",
+  "originalId": "64c85440",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a certain store, the standard width of a shelf is at least 1.2 meters and no more than 1.5 meters. A store manager wants to determine the number of shelves, <em>n</em>, that could be placed end-to-end along a wall that is 18 meters long, based on the standard width of a shelf. Which of the following describes all the possible values of <em>n</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12 ≤ <em>n</em> ≤ 15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.2 ≤ <em>n</em> ≤ 1.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15 ≤ <em>n</em> ≤ 18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12 ≤ <em>n</em> ≤ 18</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The maximum number of shelves occurs when the shelves are narrowest (1.2 m): 18/1.2 = 15. The minimum number occurs when the shelves are widest (1.5 m): 18/1.5 = 12. Therefore 12 ≤ <em>n</em> ≤ 15.</p><p>Choices B, C, and D are incorrect and may result from confusing the shelf-width range with the count range.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z"
+}

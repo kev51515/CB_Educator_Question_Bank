@@ -1,0 +1,25 @@
+{
+  "questionId": "960dec02-s1",
+  "originalId": "960dec02",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A3.T6.hard",
+  "stimulus": "<p>A recent study followed the number of pollinating moth species visiting twenty-four high-elevation meadows in the Colorado Rockies over an eight-year period. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> reported that when nearby coniferous edges were thinned for fuel management, the diversity of moths visiting the meadows fell sharply within two seasons.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Lepidopterist Mei Watanabe:</p>"},
+    {"id": "b", "content": "<p>Lepidopterist Mei Watanabe,</p>"},
+    {"id": "c", "content": "<p>Lepidopterist, Mei Watanabe,</p>"},
+    {"id": "d", "content": "<p>Lepidopterist Mei Watanabe</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Lepidopterist\" is an indefinite role, so the proper name \"Mei Watanabe\" supplies essential identification and is restrictive&mdash;no commas. No punctuation should separate the subject from its verb \"reported.\"</p><p>Choice A is incorrect because a colon does not correctly introduce a finite verb. Choice B is incorrect because a comma between subject and verb is ungrammatical. Choice C is incorrect because it wrongly treats the name as nonrestrictive supplementary information.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

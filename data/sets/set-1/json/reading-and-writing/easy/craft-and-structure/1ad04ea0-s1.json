@@ -1,0 +1,39 @@
+{
+  "questionId": "1ad04ea0-s1",
+  "originalId": "1ad04ea0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In coral reef ecosystems with limited shelter, certain shrimp species clean parasites from the bodies of larger fish, engaging in mutually beneficial relationships known as cleaning symbioses: in this exchange, the fish provides the shrimp with food in the form of parasites it has removed, and the fish <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by gaining protection from harmful skin infections.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>retaliates</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>overreacts</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>deviates</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>benefits</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the sentence describes a relationship that is mutually beneficial: the shrimp gets food and the fish gets protection from infection. \"Benefits\" captures the idea that the fish gains an advantage in this exchange. Choices A, B, and C all describe negative or unrelated actions and do not fit a mutually beneficial relationship.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "cf956802-s1",
+  "originalId": "cf956802",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>When ceramicist Anna Lindgren opened her studio in Portland, Oregon, in 1962, she quickly became known for creating finely thrown stoneware, especially mugs and small bowls. She was perhaps most renowned for her tall vases, which she shaped by hand using a long, careful process. As she gained more customers, Lindgren began using a small mechanical wheel and a gas-fired kiln to help her produce vases more efficiently, though she continued to handpaint the floral patterns that made each vase distinctive.</p>",
+  "stem": "<p>Based on the text, what would have been the most likely consequence if Lindgren had not begun using a mechanical wheel and a gas-fired kiln?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She would have had to design each vase individually.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She would have been unable to ensure that each vase included distinctive handpainted patterns.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She would not have generated as much interest in her vases.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She would have struggled to meet the growing demand for her vases.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text states that the mechanical wheel and gas-fired kiln helped Lindgren produce vases more efficiently as she gained more customers, so without those tools she likely would have struggled to keep up with demand.</p><p>Choice A is incorrect; the text shows Lindgren handpainting distinctive patterns whether or not she used the new tools. Choice B is incorrect; the handpainted patterns were independent of the new tools. Choice C is incorrect; interest in her vases had already grown before she adopted the new tools.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.easy"
+}

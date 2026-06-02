@@ -1,0 +1,39 @@
+{
+  "questionId": "7ce4ee13-s1",
+  "originalId": "7ce4ee13",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>After settling in California and earning her law degree, Patsy Mink turned to public service, becoming known for her tireless advocacy for women&rsquo;s and Asian American rights. In 1965 Mink was elected to the U.S. House of ______ in 1972 she became the first Asian American woman to run for the presidential nomination of a major political party.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Representatives, and</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Representatives and</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Representatives,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Representatives</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A comma followed by the coordinating conjunction \"and\" correctly joins the first main clause (\"In 1965 Mink&hellip;Representatives\") and the second main clause (\"in 1972 she&hellip;party\").</p><p>Choice B is incorrect because when coordinating two longer main clauses, a comma should precede the coordinating conjunction. Choice C is incorrect because it produces a comma splice: without a conjunction, a comma cannot join two main clauses. Choice D is incorrect because it produces a run-on sentence with the two main clauses fused.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T2.hard"
+}

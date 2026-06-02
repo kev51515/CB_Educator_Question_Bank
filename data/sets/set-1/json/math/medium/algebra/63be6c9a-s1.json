@@ -1,0 +1,39 @@
+{
+  "questionId": "63be6c9a-s1",
+  "originalId": "63be6c9a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, line s passes through the point (0, 0) and is parallel to the line represented by the equation y = 11x - 3. If line s also passes through the point (5, d), what is the value of d?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>50</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Parallel lines have the same slope; here the slope is 11. Line s passes through the origin, so y = 11x. At x = 5: d = 11(5) = 55. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A6.T14.medium"
+}

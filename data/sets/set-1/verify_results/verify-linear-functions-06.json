@@ -1,0 +1,22 @@
+[
+  {"id": "f79fffba-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "bf883fde-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "wrong_answer", "detail": "Slope 5 and passes through (0,-12) gives g(x)=5x-12 (choice B). Key 'c' (g(x)=5x) omits the y-intercept; rationale text says 5x-12 yet selects C. Correct answer is B."},
+  {"id": "c10ad793-s1", "templateId": "linear-functions.A4.T1.easy", "verdict": "wrong_answer", "detail": "x-intercept is where y=0: (-8,0) = choice A. Key 'b' is (0,4), which is the y-intercept. Rationale's text 'x-intercept is (-8,0)' confirms A; key letter is wrong."},
+  {"id": "3462d850-s1", "templateId": "linear-functions.A2.T2.easy", "verdict": "ok"},
+  {"id": "de6fe450-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "wrong_answer", "detail": "Initial fee $12 grows by $0.75/year, so f(x)=12+0.75x = choice C. Key 'd' (12-0.75x) subtracts; rationale text says '12+0.75x' but selects D. Correct is C."},
+  {"id": "97eab129-s1", "templateId": "linear-functions.A3.T2.easy", "verdict": "wrong_answer", "detail": "Table pairs give slope 50/200=0.25, so f(x)=0.25x = choice B. Key 'c' (4x) gives 4(200)=800≠50. Rationale text says 0.25x but selects C. Correct is B."},
+  {"id": "776cfa7c-s1", "templateId": "linear-functions.A2.T2.easy", "verdict": "ok"},
+  {"id": "84664a7c-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "5ad6bc97-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "3d1070c9-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "73b5f330-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "ok"},
+  {"id": "4702da8f-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "cee5b352-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "2eef7e61-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "b8cbe394-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "wrong_answer", "detail": "Cost = 14d + 25 = choice A. Key 'b' (25d+14) swaps rate and deposit; rationale text says '14d + 25' but selects B. Correct is A."},
+  {"id": "2e379126-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "a4d6fbec-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "27198699-s1", "templateId": "linear-functions.A2.T1.easy", "verdict": "aspect_drift", "detail": "Tagged A2.T1 (interpret constant term) but stem asks to compute f(8)=19 — a numeric evaluation. This is A1.T1 (evaluate f(c)), not interpretation. Answer/rationale are correct."},
+  {"id": "0d6ab461-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "type_drift", "detail": "Tagged A1.T1 (evaluate explicit f(x) at given input) but no f(x)=ax+b is supplied. Student must construct the model from words ($750 initial + $40/week × 5 weeks). This fits A3.T3 (build from rate + initial) or A1.T1 only after construction. Answer 950 is correct."},
+  {"id": "6863c7ce-s1", "templateId": "linear-functions.A2.T2.easy", "verdict": "ok"}
+]

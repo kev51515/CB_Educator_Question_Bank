@@ -1,0 +1,39 @@
+{
+  "questionId": "0fe5ce68-s1",
+  "originalId": "0fe5ce68",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Twelve of Anton Chekhov's short stories are commonly classified as the major late tales. Although each one of these stories, which include <em>The Lady with the Dog</em> and <em>Ward No. 6</em>, ______ on a single protagonist (typically a middle-aged Russian struggling with disillusionment), a few, such as <em>Peasants</em> and <em>In the Ravine</em>, instead trace the entwined lives of several characters within one village.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>center</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>centers</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>are centered</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>were centered</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"centers\" agrees in number with the singular subject \"each one of these stories,\" which refers to each story individually.</p><p>Choice A is incorrect because the plural verb \"center\" does not agree in number with the singular subject \"each one of these stories.\" Choice C is incorrect because the plural verb \"are centered\" does not agree in number with the singular subject. Choice D is incorrect because the plural verb \"were centered\" does not agree in number with the singular subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T4.hard"
+}

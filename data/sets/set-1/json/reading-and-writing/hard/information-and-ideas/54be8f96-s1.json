@@ -1,0 +1,39 @@
+{
+  "questionId": "54be8f96-s1",
+  "originalId": "54be8f96",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Properties of Selected Jovian Moons Compared with Earth's Moon</strong></p><table border=\"1\"><thead><tr><th>Body</th><th>Orbital period (days)</th><th>Body radius (in km)</th></tr></thead><tbody><tr><td>Earth's Moon</td><td>27.32</td><td>1737</td></tr><tr><td>Io</td><td>1.77</td><td>1822</td></tr><tr><td>Europa</td><td>3.55</td><td>1561</td></tr><tr><td>Ganymede</td><td>7.16</td><td>2634</td></tr><tr><td>Callisto</td><td>16.69</td><td>2410</td></tr></tbody></table><p>The four largest moons of Jupiter form a tightly bound system, and each lies so close to the planet that gravitational forces between the moon and Jupiter cause the moon's rotational period (the time it takes to spin once on its own axis) to equal its orbital period (the time it takes to circle Jupiter). For example, the orbital period of Europa is ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.55 days, and its rotational period is also 3.55 days.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7.16 days, which equals the rotational period of Ganymede.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1.77 days, the shortest orbital period of any of these moons.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3.55 days, and its rotational period is 1561 days.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The table lists Europa's orbital period as 3.55 days. The text says that for each of these moons, the rotational period equals the orbital period; therefore Europa's rotational period must also be 3.55 days. Choice A states exactly this.</p><p>Choice B is incorrect: 7.16 days is Ganymede's orbital period, not Europa's. The example is supposed to illustrate the equality of orbital and rotational period for a single moon, not compare two moons. Choice C is incorrect: 1.77 days is Io's orbital period, not Europa's; this also fails to illustrate the equality for a single moon. Choice D is incorrect: although 3.55 days is Europa's orbital period, 1561 is Europa's radius in km, not a rotational period, and it contradicts the rule that orbital period equals rotational period.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

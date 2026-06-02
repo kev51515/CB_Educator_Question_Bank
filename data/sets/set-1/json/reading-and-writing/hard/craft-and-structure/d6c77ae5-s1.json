@@ -1,0 +1,39 @@
+{
+  "questionId": "d6c77ae5-s1",
+  "originalId": "d6c77ae5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Astronomer Ravi Subramanian and colleagues examined the atmospheres of five hot Neptunes&mdash;Neptune-sized exoplanets that orbit unusually close to their host stars&mdash;in order to constrain the composition of the planets' deep interiors. Studying infrared spectral lines from the atmospheres, the team reported that traces of elements such as rubidium and cesium support the presence of buried metallic-hydrogen mantles like those once predicted for warm Jovian worlds.</p>\n<p><strong>Text 2</strong></p>\n<p>Past atmospheric studies of hot Neptunes have concluded that some such planets contain metallic-hydrogen mantles. Geophysicist Helena Vargas and astronomer Akira Tomori argue that those studies place too much weight on atmospheric traces of rubidium and other individual elements as proxies for specific interior structures. The studies, they note, fail to adequately consider that different deep-interior compounds, made up of various ratios of those elements, and even kinds of high-pressure phases not seen in our own solar system, could produce indistinguishable atmospheric signatures.</p>",
+  "stem": "<p>Based on the texts, how would Vargas and Tomori (Text 2) most likely characterize the conclusion presented in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As questionable, because it rests on an incomplete consideration of potential sources of the elements detected in hot-Neptune atmospheres</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As unexpected, because it was widely believed at the time that hot Neptunes lack metallic-hydrogen mantles</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>As premature, because researchers have only just begun trying to determine what kinds of interiors hot Neptunes have</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As puzzling, because it's unusual to successfully detect rubidium and cesium when analyzing the spectra of hot-Neptune atmospheres</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Subramanian's team interpreted atmospheric traces of rubidium and cesium as supporting buried metallic-hydrogen mantles. Vargas and Tomori argue that the same elements can come from different deep-interior compounds and even from high-pressure phases not found in our solar system. They would therefore describe the Text 1 conclusion as questionable because it does not adequately consider alternative sources of those elements.</p><p>Choice B is incorrect because neither text discusses how widely held any viewpoint is. Choice C is incorrect because neither text suggests the field is too new. Choice D is incorrect because neither text discusses how often rubidium and cesium can be detected.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T3.hard"
+}

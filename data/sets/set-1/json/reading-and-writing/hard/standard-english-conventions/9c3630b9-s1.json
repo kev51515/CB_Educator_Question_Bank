@@ -1,0 +1,25 @@
+{
+  "questionId": "9c3630b9-s1",
+  "originalId": "9c3630b9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T9.hard",
+  "stimulus": "<p>Using salvaged municipal materials, such as cracked <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> such as fishing nets; and conventional craft materials, such as cedar bark, Coast Salish weaver Mira Quinault assembles her large-format hanging panels, which she hopes will prompt urban viewers to reconsider how waste circulates through their watersheds.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>asphalt; marine refuse,</p>"},
+    {"id": "b", "content": "<p>asphalt, marine refuse,</p>"},
+    {"id": "c", "content": "<p>asphalt, marine refuse:</p>"},
+    {"id": "d", "content": "<p>asphalt; marine refuse;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The series is composed of three complex items, each followed by \"such as&hellip;,\" containing internal commas. Semicolons therefore separate the items, while a comma sets off the introductory \"such as fishing nets\" inside the middle item.</p><p>Choice B is incorrect because using commas between items that themselves contain commas breaks the parallel separation. Choice C is incorrect because a colon would wrongly introduce only one item rather than continue a three-item series. Choice D is incorrect because the second semicolon (after \"marine refuse\") prevents the inner comma pattern from setting off \"such as fishing nets.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

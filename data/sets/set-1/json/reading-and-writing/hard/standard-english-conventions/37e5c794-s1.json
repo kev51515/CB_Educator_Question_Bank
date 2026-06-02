@@ -1,0 +1,39 @@
+{
+  "questionId": "37e5c794-s1",
+  "originalId": "37e5c794",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Despite being affordable, durable, and convenient to assemble, ______ they require timber harvested from old-growth forests, and most contain adhesives that release harmful indoor pollutants.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>there are two drawbacks to engineered wood panels:</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>engineered wood panels have two notable drawbacks:</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>engineered wood panels' two notable drawbacks are that</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>two notable drawbacks of engineered wood panels are that</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice ensures that the modifying phrase \"despite being affordable, durable, and convenient to assemble\" appears immediately before the noun it modifies, \"engineered wood panels,\" clearly establishing that the panels\u2014not another noun in the sentence\u2014are being described as affordable, durable, and convenient to assemble.</p><p>Choice A is incorrect because placing the function word \"there\" immediately after the modifier illogically suggests that \"there\" is affordable, durable, and convenient. Choice C is incorrect because placing \"engineered wood panels' two notable drawbacks\" after the modifier illogically suggests that the drawbacks themselves are affordable and convenient. Choice D is incorrect because placing \"two notable drawbacks\" after the modifier illogically suggests that the drawbacks are affordable and convenient.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A4.T9.hard"
+}

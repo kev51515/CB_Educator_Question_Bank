@@ -1,0 +1,39 @@
+{
+  "questionId": "508344ac-s1",
+  "originalId": "508344ac",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>9</mn><mfenced><mrow><mi>x</mi><mo>+</mo><mn>20</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>9</mn><mi>x</mi><mo>+</mo><mn>20</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>x</mi><mo>+</mo><mn>180</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>29</mn><mi>x</mi></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>9</mn><mi>x</mi><mo>+</mo><mn>180</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Applying the distributive property: 9(x + 20) = 9\u00b7x + 9\u00b720 = 9x + 180.</p>",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

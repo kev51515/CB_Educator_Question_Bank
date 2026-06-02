@@ -1,0 +1,39 @@
+{
+  "questionId": "c4bee178-s1",
+  "originalId": "c4bee178",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Rings of Selected Outer Planets</p></caption><thead><tr><th scope=\"col\">Planet</th><th scope=\"col\">Number of main rings</th></tr></thead><tbody><tr><th scope=\"row\">Jupiter</th><td>4</td></tr><tr><th scope=\"row\">Saturn</th><td>7</td></tr><tr><th scope=\"row\">Uranus</th><td>13</td></tr><tr><th scope=\"row\">Neptune</th><td>5</td></tr></tbody></table></figure></p><p>Several outer planets in our solar system have ring systems, but the systems vary widely in how many main rings each planet has. According to the table, two planets that each have fewer than six main rings are ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Saturn and Uranus.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Jupiter and Neptune.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Uranus and Saturn.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neptune and Saturn.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The table shows Jupiter has 4 main rings and Neptune has 5 main rings \u2014 both fewer than six.</p><p>Choice A is incorrect: Saturn has 7 and Uranus has 13. Choice C is incorrect: both Saturn (7) and Uranus (13) exceed six. Choice D is incorrect: while Neptune has 5, Saturn has 7.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

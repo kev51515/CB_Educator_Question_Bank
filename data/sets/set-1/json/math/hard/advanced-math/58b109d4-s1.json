@@ -1,0 +1,22 @@
+{
+  "questionId": "58b109d4-s1",
+  "originalId": "58b109d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><i>x</i>&sup2; + <i>y</i> + 4 = 4<br>14<i>x</i> + 49 &minus; <i>y</i> = 0</p><p>The solution to the given system of equations is (<i>x</i>, <i>y</i>). What is the value of <i>x</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-7"
+  ],
+  "rationale": "<p>The first equation simplifies to <i>y</i> = &minus;<i>x</i>&sup2;. The second gives <i>y</i> = 14<i>x</i> + 49. Setting these equal: &minus;<i>x</i>&sup2; = 14<i>x</i> + 49, or <i>x</i>&sup2; + 14<i>x</i> + 49 = 0, i.e., (<i>x</i> + 7)&sup2; = 0, so <i>x</i> = &minus;7.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard"
+}

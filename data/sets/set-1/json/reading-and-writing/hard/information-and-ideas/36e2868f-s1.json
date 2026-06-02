@@ -1,0 +1,39 @@
+{
+  "questionId": "36e2868f-s1",
+  "originalId": "36e2868f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a twentieth-century novel.</p>\n<blockquote>\n<p>The tale of Margit Hal\u00e1sz which we now propose to set down\u2014not on her account (for the reader will quickly recognize her as a thoroughly unexceptional, if amiable, young woman), but on account of the tale itself, which appears to us to merit a careful telling (though it must be granted, in Margit Hal\u00e1sz's favor, that it is <em>her</em> tale, and that not every tale falls to the lot of every person)\u2014is a tale that unfolded a great many years ago, has, as it were, the dust of distant decades settled upon it, and consequently must be related in language drawn from the most remote past.</p>\n</blockquote>",
+  "stem": "<p>What does the text most strongly suggest about the tale of Margit Hal\u00e1sz?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is a striking tale that happened to an ordinary person, though one might reasonably argue that the value of the tale lends some distinction to the person at its center.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Although it is a tale of a person of little distinction, the tale's age and the special way it therefore must be told are themselves signs that it is significant.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Like all tales of unremarkable people, this one must be related in a particular manner if its importance is to be made plain to its audience.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Although tales of even the dullest people are themselves interesting because every life is in some sense singular, this tale's particular interest is hard to discern due to its great age.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The narrator says the tale will be told for the sake of the tale itself (not because of Hal\u00e1sz, who is \"thoroughly unexceptional\"), but adds parenthetically that it is to Hal\u00e1sz's favor that the tale is <em>hers</em>\u2014suggesting that some of the tale's value attaches to the person at its center. This combination\u2014a remarkable tale befalling an unremarkable person whose distinction nonetheless borrows from the tale\u2014is exactly what Choice A states.</p><p>Choice B is incorrect because the narrator presents the tale's age and required mode of telling as mere consequences of how long ago it happened, not as evidence of its significance. Choice C is incorrect because the narrator does not claim that all tales about ordinary people must be told in a particular way to convey their importance; the narrative manner is dictated by chronology. Choice D is incorrect because the text does not claim the tale's interest is hard to discern\u2014on the contrary, the narrator says it is plainly worth telling.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T8.hard"
+}

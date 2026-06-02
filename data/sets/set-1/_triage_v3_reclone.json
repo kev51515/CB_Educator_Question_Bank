@@ -1,0 +1,32 @@
+[
+  {
+    "id": "59a246dc-s1",
+    "templateId": "boundaries.A3.T6.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve item 'Role term must be indefinite (no the, not preceded by previous unique mention)'. Stimulus uses 'the polymer additive ___ polyvinyl alcohol'\u2014the definite article 'the' before the role makes the noun phrase potentially uniquely referring, which can license a nonrestrictive appositive (T7) reading with comma. This is the exact common_bug listed: 'Cloner adds the before the role, making nonrestrictive valid and breaking the key.'"
+  },
+  {
+    "id": "a05cc490-s1",
+    "templateId": "boundaries.A1.T3.hard",
+    "verdict": "wrong_answer",
+    "detail": "Standard pattern for a conjunctive adverb between two independent clauses is 'IC1; adverb, IC2' (semicolon before, comma after)\u2014e.g., 'savings; though, cheaper...'. Keyed C is 'savings, though;' which inverts the marks: comma before adverb and semicolon after, leaving a comma-splice between the first IC and 'though' and orphaning the second IC with a stray semicolon. Correct keyed pattern (see parallel clone 21e58a83) is '; though,'\u2014not present among options. No option is correct; keyed answer is wrong."
+  },
+  {
+    "id": "d4fe8f03-s1",
+    "templateId": "boundaries.A3.T6.hard",
+    "verdict": "constraint_violation",
+    "detail": "T6 must_preserve requires the role term to be indefinite ('no the, not preceded by previous unique mention'). Stem uses 'the celebrated twentieth-century British sculptors', which is the exact common-bug listed: 'Cloner adds the before the role, making nonrestrictive valid and breaking the key'. With 'the' cueing definite identification, the appositive 'Henry Moore and Barbara Hepworth' could plausibly be read as nonrestrictive, undermining the keyed no-punctuation answer."
+  },
+  {
+    "id": "9c407117-s1",
+    "templateId": "command-of-evidence.A4.T6.hard",
+    "verdict": "wrong_answer",
+    "detail": "Hypothesis is that alkaline soil is more beneficial 'for growth' as measured by height, mass, AND sprout count (stimulus explicitly lists all three). Choices B (taller), C (heavier), and D (more sprouted) each show neutral soil outperforming alkaline on one of these stipulated growth metrics, so all three would weaken equally. Distractor uniqueness fails."
+  },
+  {
+    "id": "de3dd17d-s1",
+    "templateId": "form-structure-and-sense.A1.T2.hard",
+    "verdict": "wrong_answer",
+    "detail": "The blank follows 'that, after cooling and crystallizing into mineral grains,' \u2014 'that' refers to 'fragments of magma' (plural). The relative clause needs a finite verb agreeing with plural 'fragments': 'drift' (plural) is correct. Keyed answer A 'drift' is actually correct here, but the rationale calls it 'the only choice that provides [a conjugated finite verb]' \u2014 which is accurate. Verdict: ok actually. Reconsidering: 'drift' is base/plural form. Subject 'that' = fragments (plural). 'drift' agrees. Answer A is correct."
+  }
+]

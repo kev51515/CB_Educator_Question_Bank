@@ -1,0 +1,25 @@
+{
+  "questionId": "87d8a2ff-s1",
+  "originalId": "87d8a2ff",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>During a 2022 software update, Volaris Airlines' booking system experienced an unexpected failure: a database error suddenly canceled hundreds of reservations made in the previous week. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> rather than ignoring the problem, Volaris' CEO publicly acknowledged the glitch and offered affected travelers full refunds along with vouchers for future flights.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Additionally,</p>"},
+    {"id": "b", "content": "<p>Afterward,</p>"},
+    {"id": "c", "content": "<p>Indeed,</p>"},
+    {"id": "d", "content": "<p>Similarly,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Afterward\" logically signals that the events described in this sentence&mdash;the CEO's public acknowledgment and refunds&mdash;occurred after the booking system failure and are part of a chronological sequence of events.</p><p>Choice A is incorrect because \"additionally\" illogically signals that the events merely add to the booking failure rather than follow it. Choice C is incorrect because \"indeed\" illogically signals emphasis or confirmation of the previous statement. Choice D is incorrect because \"similarly\" illogically signals that the CEO's actions are similar to the system failure, when in fact they follow from and respond to it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

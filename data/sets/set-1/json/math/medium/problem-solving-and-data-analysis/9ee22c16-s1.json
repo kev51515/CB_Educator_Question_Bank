@@ -1,0 +1,22 @@
+{
+  "questionId": "9ee22c16-s1",
+  "originalId": "9ee22c16",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A town has a total of <math><mn>9,000</mn></math> registered voters. In a random sample of <math><mn>500</mn></math> voters, <math><mn>230</mn></math> said they plan to vote for Candidate X. Based on this sample, what is the best estimate of the number of voters in the town who plan to vote for Candidate X?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4140"
+  ],
+  "rationale": "<p>The correct answer is 4140. The sample proportion is 230/500 = 0.46. Applying this to all 9,000 voters gives 9000 \u00d7 0.46 = 4,140.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.medium"
+}

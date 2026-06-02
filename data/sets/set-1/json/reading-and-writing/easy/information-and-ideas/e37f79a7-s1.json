@@ -1,0 +1,39 @@
+{
+  "questionId": "e37f79a7-s1",
+  "originalId": "e37f79a7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Building Permits Issued in Riverton, May\u2013August 2023</p></caption><thead><tr><th scope=\"col\">Month</th><th scope=\"col\">Permits issued</th></tr></thead><tbody><tr><th scope=\"row\">May</th><td>842</td></tr><tr><th scope=\"row\">June</th><td>915</td></tr><tr><th scope=\"row\">July</th><td>720</td></tr><tr><th scope=\"row\">August</th><td>1,034</td></tr></tbody></table></figure></p><p>City planners track how many new building permits are issued each month. In the four months from May to August 2023, the highest number of building permits issued in Riverton was in ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>July.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>June.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>May.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>August.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The table shows August had 1,034 permits \u2014 the highest count of the four months.</p><p>Choice A is wrong because July had 720, the lowest. Choice B is wrong because June had 915. Choice C is wrong because May had 842.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

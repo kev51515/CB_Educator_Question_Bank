@@ -1,0 +1,39 @@
+{
+  "questionId": "89f71526-s1",
+  "originalId": "89f71526",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Heights of Four Active Volcanoes (in meters).]</p><ul><li>Mount Etna: 3,326</li><li>Cotopaxi: 5,897</li><li>Mount Fuji: 3,776</li><li>Sakurajima: 1,117</li></ul><p>A volcanologist needed to identify which of these four active volcanoes is the tallest. According to the graph, the tallest is ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Cotopaxi.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mount Fuji.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Mount Etna.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Sakurajima.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the graph shows Cotopaxi at 5,897 meters, taller than the other three volcanoes listed.</p><p>Choice B is incorrect: Mount Fuji is 3,776 meters, shorter than Cotopaxi. Choice C is incorrect: Mount Etna is 3,326 meters. Choice D is incorrect: Sakurajima is only 1,117 meters, the shortest of the four.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "555939d2-s1",
+  "originalId": "555939d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A streaming service wanted to know how many of its 50,000 subscribers would be interested in a new genre channel. The service surveyed 250 subscribers at random and asked each one whether they would be interested in the new channel. Of those surveyed, 12 said they would be interested. Based on this survey, about how many of the 50,000 subscribers would be expected to be interested in the new channel?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2,400</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>240</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24,000</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The fraction interested is 12/250. Applying this to 50,000 subscribers: (12/250) \u00d7 50,000 = 2,400.</p><p>Choice B is incorrect; this is just the count from the sample. Choice C is incorrect and results from dividing by 10 instead of 200. Choice D is incorrect; it overestimates by an order of magnitude.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A5.T2.easy"
+}

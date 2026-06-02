@@ -1,0 +1,39 @@
+{
+  "questionId": "4e527894-s1",
+  "originalId": "4e527894",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are 25 keys in a drawer: 9 silver keys, 4 gold keys, and 12 bronze keys. If one of these keys is selected at random, what is the probability of selecting a silver key?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4/25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9/25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12/25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>16/25</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The probability is the number of silver keys divided by the total: 9/25.</p><p>Choice A is incorrect; this is the probability of selecting a gold key. Choice C is incorrect; this is the probability of selecting a bronze key. Choice D is incorrect; this is the probability of selecting a non-silver key.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

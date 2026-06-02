@@ -1,0 +1,39 @@
+{
+  "questionId": "37a49687-s1",
+  "originalId": "37a49687",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Number of three bird species banded by season.]</p><ul><li>Spring: yellow warbler 60, American robin 45, hermit thrush 12</li><li>Summer: yellow warbler 25, American robin 35, hermit thrush 5</li><li>Fall: yellow warbler 50, American robin 28, hermit thrush 40</li></ul><p>To monitor migration patterns, ornithologists banded three songbird species at a station across three seasons. The data show, for example, that ______</p>",
+  "stem": "<p>Which choice most effectively uses the data in the graph to complete the example?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>more hermit thrushes were banded in the summer than in either of the other two seasons.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>in the spring, researchers banded more American robins than they banded from the other two species.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the American robin was banded more frequently than the other two species in all three seasons.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>more yellow warblers and American robins were banded in the spring than in either of the other two seasons.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the data show 60 yellow warblers and 45 American robins banded in spring, which is higher than the numbers banded in summer (25, 35) or fall (50, 28) for both species.</p><p>Choice A is incorrect: only 5 hermit thrushes were banded in summer, the lowest of all hermit thrush totals. Choice B is incorrect: in spring, more yellow warblers (60) were banded than American robins (45). Choice C is incorrect: in spring, yellow warblers (60) outnumbered American robins (45).</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d2e0cba5-s1",
+  "originalId": "d2e0cba5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In a study of online education, Priya Subramaniam et al. examined moderate frustration (the mild irritation that occurs when a task is harder than a learner expects) to determine whether it could yield positive learning outcomes. The team focused on adult students who had previously taken several online courses and who reported that a particular new course was harder than they had anticipated. Counterintuitively, the researchers found that the students who reported moderate frustration during the course generally completed it at higher rates and scored higher on a follow-up retention test than peers who reported either no frustration or extreme frustration. Subramaniam&rsquo;s team suggests that moderate frustration may prompt learners to slow down, revisit material, and develop more durable understanding.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Online courses tend to be more difficult than learners expect, leading to high dropout rates.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Subramaniam&rsquo;s team found that experiencing moderate frustration during an online course can lead to better learning outcomes than experiencing none or too much.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Adult learners benefit more from online education than younger learners do because they tolerate frustration better.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Researchers should focus on reducing learners&rsquo; frustration in order to improve completion rates in online courses.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text describes Subramaniam et al.&rsquo;s finding that students reporting moderate frustration completed courses at higher rates and scored better on retention tests than peers with no frustration or extreme frustration.</p><p>Choice A is incorrect because the text doesn&rsquo;t focus on overall difficulty or dropout rates. Choice C is incorrect because the text doesn&rsquo;t compare adult and younger learners. Choice D is incorrect because the study suggests moderate frustration can be beneficial, not something to be reduced.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

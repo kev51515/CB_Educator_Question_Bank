@@ -1,0 +1,22 @@
+[
+  {"id": "b3abf40f-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "daad7c32-s1", "templateId": "linear-functions.A2.T1.hard", "verdict": "type_drift", "detail": "Stem asks meaning of the slope coefficient 4 in L(w)=4w+9 (cm stretched per newton). That is A2.T2 (interpret slope/rate), not A2.T1 (interpret constant term/initial value, which would be 9 here)."},
+  {"id": "a5882327-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "a309803e-s1", "templateId": "linear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "415ab1d2-s1", "templateId": "linear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "be9cb6a2-s1", "templateId": "linear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "2b15d65f-s1", "templateId": "linear-functions.A3.T2.hard", "verdict": "ok"},
+  {"id": "e86a06fe-s1", "templateId": "linear-functions.A2.T1.hard", "verdict": "ok"},
+  {"id": "0b0fa68b-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "6989c80a-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "8c5e6702-s1", "templateId": "linear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "e9908930-s1", "templateId": "linear-functions.A3.T2.hard", "verdict": "difficulty_drift", "detail": "Hard lever requires neither row at x=0 with narrative/non-trivial points; this clone has a row at x=0 (b=10 readable directly), which is the easy lever. Construction collapses to easy."},
+  {"id": "d1f50dbe-s1", "templateId": "linear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "16889ef3-s1", "templateId": "linear-functions.A3.T2.hard", "verdict": "ok"},
+  {"id": "e25f0807-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "0bd33265-s1", "templateId": "linear-functions.A1.T4.hard", "verdict": "ok"},
+  {"id": "e103300e-s1", "templateId": "linear-functions.A2.T3.hard", "verdict": "ok"},
+  {"id": "bbf9e5ce-s1", "templateId": "linear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "af2ba762-s1", "templateId": "linear-functions.A2.T1.hard", "verdict": "difficulty_drift", "detail": "Hard lever requires non-standard form needing rearrangement (e.g., y-5x=6) or constant embedded as coefficient of nested factor. Clone uses standard f(x)=3.18d+8.45 where constant 8.45 is directly visible — matches easy levers."},
+  {"id": "13294295-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"}
+]

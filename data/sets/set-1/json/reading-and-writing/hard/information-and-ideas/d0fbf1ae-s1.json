@@ -1,0 +1,39 @@
+{
+  "questionId": "d0fbf1ae-s1",
+  "originalId": "d0fbf1ae",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Lichen-forming fungi rely on a symbiotic partnership with algae or cyanobacteria living within their tissues, the photosynthetic partner producing sugars that the fungus cannot make for itself. When this partnership is healthy, many lichens appear in muted greens, browns, or grays, reflecting the pigments of their internal photosynthetic colonies. In response to severe environmental stressors such as prolonged drought or extreme heat, however, lichens sometimes expel a portion of their photosynthetic partners. With fewer of those colonies remaining in their tissues, certain other pigments produced by the fungus itself, which were previously masked, become visible, and the lichen may take on striking yellow or orange hues until the population of partners recovers.</p>",
+  "stem": "<p>What does the text most strongly suggest about lichens that display striking yellow or orange hues?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They contain fewer photosynthetic partners than they would under typical, unstressed conditions.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They are no longer capable of supporting their photosynthetic partners and will eventually die.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They have permanently altered their pigmentation in response to environmental change.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They are dependent on environmental stress to produce any visible color at all.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text explains that lichens may expel some photosynthetic partners under severe stress, and that the bright yellow or orange pigments produced by the fungus become visible only when fewer of those partners remain. This implies that brightly colored lichens currently have fewer photosynthetic partners than usual.</p><p>Choice B is incorrect because the text says the partner population recovers. Choice C is incorrect because the change in color is presented as temporary. Choice D is incorrect because the text doesn&rsquo;t suggest lichens lack color when unstressed.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

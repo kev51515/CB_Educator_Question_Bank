@@ -1,0 +1,39 @@
+{
+  "questionId": "858fd1cf-s1",
+  "originalId": "858fd1cf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle in the xy-plane has its center at (2, &minus;3). Line t is tangent to this circle at the point (&minus;1, 5). Which of the following points also lies on line t?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(3, 6)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 4)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(&minus;5, 3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(7, 8)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope of the radius from (2, &minus;3) to (&minus;1, 5) is (5 &minus; (&minus;3))/(&minus;1 &minus; 2) = &minus;8/3. The tangent at (&minus;1, 5) is perpendicular, so it has slope 3/8. The line: y &minus; 5 = (3/8)(x + 1). At x = 7: y = 5 + (3/8)(8) = 5 + 3 = 8. So (7, 8) lies on line t.</p><p>Choices A, B, and C do not satisfy the line's equation.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A5.T11.hard"
+}

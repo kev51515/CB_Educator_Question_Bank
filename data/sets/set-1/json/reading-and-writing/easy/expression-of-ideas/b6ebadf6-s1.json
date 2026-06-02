@@ -1,0 +1,25 @@
+{
+  "questionId": "b6ebadf6-s1",
+  "originalId": "b6ebadf6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>There are three basic stages to writing a research paper. First, gather and read sources relevant to your topic. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> develop a thesis statement that captures the main argument of your paper. Third, draft the paper using evidence from your sources to support that thesis.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Therefore,</p>"},
+    {"id": "b", "content": "<p>For example,</p>"},
+    {"id": "c", "content": "<p>Second,</p>"},
+    {"id": "d", "content": "<p>Instead,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Second\" logically signals that the activity described in this sentence&mdash;developing a thesis statement&mdash;is the next step in the three-part sequence of stages described in the text (signaled by \"First\" and \"Third\").</p><p>Choice A is incorrect because \"therefore\" illogically signals consequence; the thesis is the next step in the sequence. Choice B is incorrect because \"for example\" illogically signals exemplification; the thesis is a distinct step. Choice D is incorrect because \"instead\" illogically signals an alternative; the thesis is the next step.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T13.easy"
+}

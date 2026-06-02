@@ -1,0 +1,25 @@
+{
+  "questionId": "b5b74c3f-s1",
+  "originalId": "b5b74c3f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>When composing <em>Symphony No. 9</em> (2018), Chinese American composer Tan Dun drew on traditional folk melodies he had learned in childhood. The acclaimed work is Tan's ninth symphony, but his composing <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recognized before. At the age of nineteen, he submitted a piece to a national music competition&mdash;and won.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>has been</p>"},
+    {"id": "c", "content": "<p>have been</p>"},
+    {"id": "d", "content": "<p>were</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"has been\" agrees in number with the singular subject \"composing.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"composing.\" Choice C is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"composing.\" Choice D is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject \"composing.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

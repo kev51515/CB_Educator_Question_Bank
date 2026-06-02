@@ -1,0 +1,39 @@
+{
+  "questionId": "9296553d-s1",
+  "originalId": "9296553d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows data points that lie close to a straight line. The points include approximately (0, 8), (2, 12), (4, 16), (6, 20), and (8, 24). Which of the following could be an equation for a line of best fit for the data in the scatterplot?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = &minus;2x + 8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 2x &minus; 8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 0.5x + 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 2x + 8</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The data go through (0, 8) and increase by about 4 units of y for every 2 units of x, giving a slope near 2 and a y-intercept near 8. The line y = 2x + 8 matches both. The other choices either have the wrong sign of slope, the wrong intercept, or a slope that is too small to match the data.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "70612a79-s1",
+  "originalId": "70612a79",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Following the removal of the sea otter from California's coastal kelp forests in the early 1900s, the population of sea urchins\u2014a primary prey of the sea otter\u2014grew larger than the ecosystem could support. Sea urchin overpopulation led to overgrazing of kelp forests that many other ocean species relied on for food and shelter. As scientists began to see how essential the sea otter was to the kelp ecosystem, restoration strategies were carried out to return otters to the central California coast in the 1990s. The rebound effect in the kelp forests was noticed within a few years.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It presents a claim about the health of the sea otter population and then gives specific examples to support that claim.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explains why California allowed the removal of sea otters and then discusses the consequences of returning them.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It mentions the removal of the sea otter from California's kelp forests and then explains why the otter was eventually restored.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It summarizes a problem that developed in California's kelp forests in the 1900s and then offers potential solutions to that problem.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text begins with the removal of the sea otter, describes the resulting overpopulation of sea urchins and overgrazing of kelp, and then explains that scientists' recognition of the otter's importance led to its restoration.</p><p>Choice A is incorrect. The text doesn't make a claim about the health of the otter population. Choice B is incorrect. The text never explains why the removal was allowed. Choice D is incorrect. The text describes one specific solution that was carried out, not multiple potential solutions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.easy"
+}

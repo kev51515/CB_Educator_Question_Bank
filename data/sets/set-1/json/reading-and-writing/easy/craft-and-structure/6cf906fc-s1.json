@@ -1,0 +1,39 @@
+{
+  "questionId": "6cf906fc-s1",
+  "originalId": "6cf906fc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from an 1894 poem by a fictional author. The speaker describes a winter painting in a gallery.</p>\n<blockquote class=\"dap_poemexcerpt\">\n<p>Beneath the bare and frost-touched trees,</p>\n<p>&ensp;&ensp;&ensp;No bird, no song, no laughter near,</p>\n<p>Nor <span role=\"region\" aria-label=\"Referenced Content\"><u>guarding</u></span> wall is seen—</p>\n<p>&ensp;&ensp;&ensp;Though winds blow sharp and clear.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the word &ldquo;guarding&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Decorative</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Protective</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Affectionate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Suspicious</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because, in context, a wall that guards offers protection from the sharp winter winds. \"Protective\" matches this sense. Choice A is incorrect because the wall would shield, not decorate. Choice C is incorrect because affection has nothing to do with the cold setting. Choice D is incorrect because there is no suggestion of suspicion in the text.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

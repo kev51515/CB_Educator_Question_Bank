@@ -1,0 +1,39 @@
+{
+  "questionId": "8368afd1-s1",
+  "originalId": "8368afd1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line in the <i>xy</i>-plane passes through the points (0, 20), (3, 14), (8, 4), and (10, 0). The line shows the possible combinations of the number of pounds of apricots, <i>x</i>, and the number of pounds of peaches, <i>y</i>, that could be purchased for a fixed dollar amount. If 5 pounds of apricots are purchased, how many pounds of peaches are purchased?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The line has slope (0 &minus; 20)/(10 &minus; 0) = &minus;2 and <i>y</i>-intercept 20, so <i>y</i> = &minus;2<i>x</i> + 20. Substituting <i>x</i> = 5 gives <i>y</i> = &minus;10 + 20 = 10.</p><p>Choices A, B, and C use different points on the line that don't correspond to <i>x</i> = 5.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

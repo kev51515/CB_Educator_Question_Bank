@@ -1,0 +1,39 @@
+{
+  "questionId": "1c69ff20-s1",
+  "originalId": "1c69ff20",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Until recently, the only fossil evidence of trigonotarbids\u2014an extinct order of small, spider-like terrestrial arachnids that flourished in the Paleozoic era\u2014came from sites scattered across the ancient supercontinent of Laurasia. Now, in a finding that broadens the known geographic range of the group, paleontologist Aisha Mensah and her colleagues have described the remains of a new trigonotarbid species, <em>Australopteron tasmanicum</em>, that lived roughly 380 million years ago in what was then part of the southern supercontinent of Gondwana.</p>",
+  "stem": "<p>According to the text, why was Mensah and her colleagues' discovery of the <em>Australopteron tasmanicum</em> fossil significant?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The fossil represents the first scientific evidence that trigonotarbids lived during the Paleozoic era.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The fossil suggests that trigonotarbids are more closely related to modern spiders than scientists had previously believed.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The fossil constitutes the first evidence that trigonotarbids inhabited regions outside the ancient supercontinent of Laurasia.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The fossil helps refine the evolutionary timeline of trigonotarbids on Laurasia and Gondwana.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text states that previous trigonotarbid fossils came only from Laurasia, and that the new fossil from Gondwana \"broadens the known geographic range of the group.\" The significance is that the discovery is the first to place trigonotarbids outside Laurasia.</p><p>Choice A is incorrect because the text already presupposes trigonotarbids lived in the Paleozoic; it does not claim the new fossil is the first Paleozoic-era evidence. Choice B is incorrect because the text says nothing about the relationship between trigonotarbids and modern spiders being closer than thought. Choice D is incorrect because the significance lies in geographic range, not in refining an evolutionary timeline; the text frames the discovery as a distributional rather than a chronological revision.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.hard"
+}

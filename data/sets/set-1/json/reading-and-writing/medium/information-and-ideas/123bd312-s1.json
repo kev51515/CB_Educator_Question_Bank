@@ -1,0 +1,25 @@
+{
+  "questionId": "123bd312-s1",
+  "originalId": "123bd312",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T3.medium",
+  "stimulus": "<p>Giant ground sloths of the Pleistocene epoch could exceed 13 feet in length and weigh as much as 3 tons, and some paleontologists have attributed the evolution of these sloths to such enormous sizes to increased foliage availability resulting from elevated atmospheric oxygen levels during that period. However, there is no evidence of meaningful rises in oxygen levels coinciding with key intervals in ground sloth evolution, such as when the earliest large-bodied species appeared, when several sloth lineages independently shifted toward gigantism, or when the largest known specimens lived, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the development of larger body sizes in ground sloths did not depend on elevated atmospheric oxygen.</p>"},
+    {"id": "b", "content": "<p>shifts in atmospheric oxygen affected separate ground sloth lineages in distinct ways.</p>"},
+    {"id": "c", "content": "<p>atmospheric oxygen was higher when the largest ground sloths lived than when the earliest ground sloths appeared.</p>"},
+    {"id": "d", "content": "<p>ground sloths probably would not have evolved to such immense sizes if atmospheric oxygen had been slightly lower.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is best. The text notes that ground sloths reached massive sizes and that some paleontologists attribute this to elevated oxygen-driven foliage. However, the text states that oxygen levels did not rise during the key intervals of sloth body-size evolution. If significant gigantism evolved without those rises, the evolution of larger sizes did not depend on elevated oxygen. Choice B is incorrect because the text never describes oxygen fluctuations affecting different lineages differently. Choice C reverses what the text actually says and is unsupported. Choice D speculates about effects of lower oxygen, which the text does not address.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

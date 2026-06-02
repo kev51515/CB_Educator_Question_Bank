@@ -1,0 +1,39 @@
+{
+  "questionId": "95f037ad-s1",
+  "originalId": "95f037ad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The works of Filipino American artist Pacita Abad are now <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in museums both in the United States and abroad, but the textile collages she contributed as a member of community art projects early in her career were displayed in church halls and community centers across Manila.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>exhibited</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>invented</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>adjusted</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>rejected</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"exhibited\" means displayed in a gallery setting, which matches the contrast between museum displays and community-center displays. Choice B is incorrect because the works already exist; they aren’t being invented. Choice C is incorrect because adjusted doesn’t fit a display context. Choice D is incorrect because the works are being shown, not rejected.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "bb560789-s1",
+  "originalId": "bb560789",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle T has an area of 55 square centimeters (cm\u00b2). Square U has side lengths of 6 cm. What is the total area of triangle T and square U, in cm\u00b2?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>91</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>67</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>85</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>61</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The area of square U is 6\u00b2 = 36 cm\u00b2. The total area is 55 + 36 = 91 cm\u00b2.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A4.T1.easy"
+}

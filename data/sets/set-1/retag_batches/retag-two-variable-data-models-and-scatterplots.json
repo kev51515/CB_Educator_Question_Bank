@@ -1,0 +1,104 @@
+[
+  {
+    "id": "f46139df-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium",
+    "verdict": "type_drift",
+    "detail": "Question asks for predicted y at x=30, which is T7 (predict y) logic, not T8 (residual = actual minus predicted). No actual data point given; only the line and an interpolated x. Answer math (\u22486.3) is correct, but type is mistagged."
+  },
+  {
+    "id": "e17babed-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium",
+    "verdict": "type_drift",
+    "detail": "Question asks for predicted y at x=6 using the line of best fit \u2014 this is T7 logic (predict y at given x), not T8 (residual = actual minus predicted). No actual data point is given. Answer math (6.33\u21926) is correct, but type is mistagged."
+  },
+  {
+    "id": "fb866265-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A6.T12.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A6.T12 (exponential curve parameter), but clone asks for slope of a linear line of best fit through (0,15) and (12,135). This is A3.T5 (compute slope), not A6 (exponential parameter)."
+  },
+  {
+    "id": "d0430601-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A3.T6 (interpret slope in context) but clone asks for a predicted y-value at x=6 using the line, which is A4.T7 (predict y at given x). Not slope interpretation."
+  },
+  {
+    "id": "ae32cc3c-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T5.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A3.T5 (compute slope of best-fit line) but clone asks for predicted y at x=900, which is A4.T7 (predict y at given x). Answer is correct (9), but aspect tag is wrong."
+  },
+  {
+    "id": "8d63b6f1-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone reads a value directly from a data table with no line of best fit or prediction model. This is A1 (read raw values), not A4 (predict using model)."
+  },
+  {
+    "id": "661dfddd-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires classifying among {linear/exponential \u00d7 increasing/decreasing} model families. Clone instead asks to describe the association direction; MCQ options do not span the 2x2 model grid."
+  },
+  {
+    "id": "15ce8207-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T11.easy",
+    "verdict": "type_drift",
+    "detail": "T11 must_preserve requires a clearly nonlinear (typically exponential) scatterplot with curve options. Clone shows linear data with linear-vs-constant-vs-quadratic options; correct answer is 'increasing linear', so it fits A5.T10 not T11."
+  },
+  {
+    "id": "b58dbf88-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone reads weight directly from a listed data point (5, 50). No line of best fit or prediction model is used. This is A1 reading raw values, not A4 model-based prediction."
+  },
+  {
+    "id": "5c24c861-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone looks up 50 mph row directly in the table (180 ft). No line of best fit or model prediction is applied; this fits A1, not A4."
+  },
+  {
+    "id": "83272c51-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 must_preserve requires a contextualized x-y graph (not a generic scatterplot or table). Clone uses a table of values, not a graph; structure better matches A1.T1 medium (interval-change reading)."
+  },
+  {
+    "id": "9d88a3e3-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 must_preserve requires a contextualized x-y graph. Clone presents only a verbal/bulleted description with no plotted graph, violating the structural requirement."
+  },
+  {
+    "id": "c9dd92b1-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A1.T2 (qualitative graph reading, no equation/numeric prediction). Stem asks for predicted density via slope computation at x=55%\u2014this is A4.T7 prediction, not A1 reading."
+  },
+  {
+    "id": "d6121490-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged T2 (contextual graph, qualitative property). Stem uses a table (not graph) and asks for a numeric difference (200-90=110). Closer to T1 (compare values) but T2 must_preserve specifies 'contextualized x-y graph, not table' and 'no equation/numeric computation.'"
+  },
+  {
+    "id": "90ba8f98-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T5 lever requires slope between 0 and 1 (or -1 and 0) so sign+magnitude both diagnostic, and decimal/non-integer reads. Clone uses integer slope = 3 from clean integer coordinates; this matches Easy lever, not Medium."
+  },
+  {
+    "id": "9d95e7ad-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T6.hard requires slope scaled by non-unit interval (per 5/10 units) OR slope estimated from figure first. Clone asks for plain per-unit increase = slope from two given coords, which is just T5 slope computation, not T6 interpretation."
+  },
+  {
+    "id": "d112bc9d-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Clone asks about greatest increase between consecutive x-values requiring computing four differences (+15,-4,-2,+2). Per template, this matches T1.medium ('interval requiring two reads plus subtraction'), not easy ('no calculation required, extreme value visually obvious')."
+  }
+]

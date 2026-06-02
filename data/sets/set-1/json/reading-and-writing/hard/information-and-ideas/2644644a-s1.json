@@ -1,0 +1,39 @@
+{
+  "questionId": "2644644a-s1",
+  "originalId": "2644644a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>In many cities, ride-share vehicles often double-park while waiting for or picking up passengers, blocking travel lanes and causing congestion behind them. To address this, transportation researcher Aisha Olufemi proposes that cities install dedicated curbside pick-up zones on busy commercial streets, arguing that requiring ride-share vehicles to use them would substantially reduce traffic congestion and, as a result, lower average commute times in those areas.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researcher&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A survey in one city found that seven out of ten respondents felt that ride-share vehicles cause too much congestion.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>After a city installed dedicated curbside pick-up zones on its busiest commercial streets and required ride-share vehicles to use them, GPS data showed that average travel times along those streets dropped by about 15%.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A traffic study found that drivers on streets with double-parked ride-share vehicles tend to slow down more often than drivers on streets without them.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In a town that built a single ride-share waiting lot off the main commercial avenue, taxis reported being unable to access the new facility easily.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it presents direct evidence that the researcher&rsquo;s proposed policy works: a real city installed the zones, required ride-share vehicles to use them, and travel times on those streets fell substantially. That straightforwardly supports the claim that the policy reduces congestion and lowers commute times. Choice A reports opinion. Choice C describes a problem but not the policy&rsquo;s effect. Choice D describes a different policy and a negative outcome for a different group.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

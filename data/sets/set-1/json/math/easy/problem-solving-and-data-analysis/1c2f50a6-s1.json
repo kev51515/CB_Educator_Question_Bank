@@ -1,0 +1,39 @@
+{
+  "questionId": "1c2f50a6-s1",
+  "originalId": "1c2f50a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During a sale, the original prices of all the items in a store have been reduced by 25%. What is the sale price of a backpack with an original price of $60?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$35</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$45</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$48</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A 25% reduction means the sale price is 75% of the original: 0.75 \u00d7 $60 = $45.</p><p>Choice A is incorrect. This is 25% of $60 (the discount), not the sale price.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This represents only a 20% reduction, not 25%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A3.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "0ea7ef01-s1",
+  "originalId": "0ea7ef01",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A weather balloon rises into the atmosphere. The graph shows the estimated volume y, in cubic meters, of the balloon when its altitude is x kilometers, where the line passes through (2, 100), (4, 250), and (6, 400). What is the estimated volume, in cubic meters, of the balloon when its altitude is 4 kilometers?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>250</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>100</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The graph shows (4, 250), so when x = 4, y = 250.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A4.T2.easy"
+}

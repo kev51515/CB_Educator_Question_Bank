@@ -1,0 +1,42 @@
+[
+  {
+    "path": "json/math/medium/algebra/a04190b7-s1.json",
+    "originalId": "a04190b7",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/medium/algebra/d62ad380-s1.json",
+    "originalId": "d62ad380",
+    "difficulty": "medium"
+  },
+  {
+    "path": "json/math/hard/algebra/0b46bad5-s1.json",
+    "originalId": "0b46bad5",
+    "difficulty": "hard"
+  },
+  {
+    "path": "json/math/hard/algebra/1a1a95de-s1.json",
+    "originalId": "1a1a95de",
+    "difficulty": "hard"
+  },
+  {
+    "path": "json/math/easy/algebra/dfa45424-s1.json",
+    "originalId": "dfa45424",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/algebra/b2de69bd-s1.json",
+    "originalId": "b2de69bd",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/algebra/8adf1335-s1.json",
+    "originalId": "8adf1335",
+    "difficulty": "easy"
+  },
+  {
+    "path": "json/math/easy/algebra/789975b7-s1.json",
+    "originalId": "789975b7",
+    "difficulty": "easy"
+  }
+]

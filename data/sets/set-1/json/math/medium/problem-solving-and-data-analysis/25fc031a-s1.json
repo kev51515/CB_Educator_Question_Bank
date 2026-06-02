@@ -1,0 +1,39 @@
+{
+  "questionId": "25fc031a-s1",
+  "originalId": "25fc031a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two factories, X and Y, each track daily output for <math><mn>120</mn></math> days. The distribution of daily output for Factory X is concentrated tightly between <math><mn>40</mn></math> and <math><mn>50</mn></math> units, with most days near <math><mn>45</mn></math> units. The distribution of daily output for Factory Y spreads from <math><mn>20</mn></math> to <math><mn>70</mn></math> units, with values fairly evenly distributed across that range. Both distributions have the same mean. Which of the following statements best describes a comparison of the standard deviations of the daily output for the two factories?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The standard deviation of daily output for Factory X is equal to the standard deviation of daily output for Factory Y.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The standard deviation of daily output for Factory X is greater than the standard deviation of daily output for Factory Y.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>There is not enough information to compare the standard deviations.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The standard deviation of daily output for Factory X is less than the standard deviation of daily output for Factory Y.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Standard deviation measures the spread of values from the mean. Factory X's outputs are tightly clustered near the mean, while Factory Y's outputs are spread over a much wider range. Therefore, Factory X has the smaller standard deviation.</p><p>Choices A and B contradict this comparison. Choice C is incorrect because the descriptions of spread provide sufficient information to compare.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium"
+}

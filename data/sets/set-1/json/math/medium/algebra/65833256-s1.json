@@ -1,0 +1,39 @@
+{
+  "questionId": "65833256-s1",
+  "originalId": "65833256",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 5x + 12</p><p>\u22122x \u2212 y = 23</p><p>What is the solution (x, y) to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(\u221213, \u22125)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(\u22125, \u221213)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(5, 37)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(\u221235/7, \u221213)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>From the second equation, y = \u22122x \u2212 23. Setting equal to the first: 5x + 12 = \u22122x \u2212 23, so 7x = \u221235 and x = \u22125. Then y = 5(\u22125) + 12 = \u221213. The correct answer is choice B.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium"
+}

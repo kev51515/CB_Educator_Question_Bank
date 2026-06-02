@@ -1,0 +1,39 @@
+{
+  "questionId": "f5a00eff-s1",
+  "originalId": "f5a00eff",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>If the cooling of Earth's atmosphere following the Cretaceous-Paleogene impact had been governed solely by sulfate aerosols ejected by the asteroid, climate models predict that surface temperatures would have recovered within roughly a decade. Geochemical records of ocean sediments, however, indicate that depressed temperatures persisted for centuries. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a second cooling mechanism\u2014likely soot lofted into the stratosphere by global wildfires\u2014must have prolonged the climatic disruption well beyond what aerosols alone could explain.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By comparison,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>However,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Therefore\" correctly signals that the claim in the final sentence\u2014that a second cooling mechanism must have operated\u2014follows logically as a conclusion from the previous sentences, which establish that aerosols alone cannot account for the observed centuries-long cooling. The conclusion is inferred from the discrepancy.</p><p>Choice A is incorrect because \"by comparison\" would suggest the final sentence makes a comparative observation, but it instead draws a conclusion. Choice B is incorrect because \"for instance\" would mark the final sentence as an example of the prior claim, but it is a deduction, not an illustration. Choice D is incorrect because \"however\" would signal contrast or contradiction, but the final sentence actually flows logically from\u2014not against\u2014the prior evidence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A2.T4.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "ae439895-s1",
+  "originalId": "ae439895",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>In her 1997 book <em>The Cultivated Plate: Food and Identity at the Modern Table</em>, anthropologist Diana Yusof first developed at length her notion of a &ldquo;gastronomic memory&rdquo;&mdash;the proposition that the assorted communal and ritual scripts an eater has absorbed (region, religion, generation, etc.) <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> every flavor judgment that eater makes at a meal.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>condition</p>"},
+    {"id": "b", "content": "<p>conditions</p>"},
+    {"id": "c", "content": "<p>is conditioning</p>"},
+    {"id": "d", "content": "<p>has been conditioning</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The plural verb \"condition\" agrees in number with the plural subject \"scripts.\"</p><p>Choice B is incorrect because the singular verb \"conditions\" doesn't agree in number with the plural subject \"scripts.\" Choice C is incorrect because the singular verb \"is conditioning\" doesn't agree in number with the plural subject \"scripts.\" Choice D is incorrect because the singular verb \"has been conditioning\" doesn't agree in number with the plural subject \"scripts.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

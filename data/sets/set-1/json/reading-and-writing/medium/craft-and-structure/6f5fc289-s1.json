@@ -1,0 +1,25 @@
+{
+  "questionId": "6f5fc289-s1",
+  "originalId": "6f5fc289",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from Arnold Bennett's 1908 novel <em>The Old Wives' Tale</em>. Bursley is a fictional town in England.</p>\n<p>[Bursley] contained several broad lanes all very like one another, and many narrow lanes still more like one another, lined by houses equally like one another, whose occupants all rose and slept at the same hours, with the same step upon the same cobblestones, to perform the same labour, and for whom every day was the twin of yesterday and tomorrow, and every season the duplicate of the last and the next.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To emphasize the sameness of both the town and the people who live there</p>"},
+    {"id": "b", "content": "<p>To explain the limited employment options available to the town's residents</p>"},
+    {"id": "c", "content": "<p>To suggest that the predictability of the town causes residents to lose track of time</p>"},
+    {"id": "d", "content": "<p>To argue that the steady rhythm of life in the town makes it an agreeable place to live</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text describes Bursley as having broad lanes like one another, narrow lanes still more like one another, houses like one another, and occupants who rise and sleep at the same hours and perform the same labor, with every day and season the duplicate of those before and after. The piling-up of likenesses emphasizes the sameness of the town and its residents.</p><p>Choice B is incorrect because, although the text says residents perform &ldquo;the same labour,&rdquo; it does not explain what that labor is or why options are limited; the detail serves the broader claim of uniformity. Choice C is incorrect because the text says days resemble one another but does not claim that residents lose track of time. Choice D is incorrect because the text does not characterize the town as agreeable; if anything, it suggests dullness.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

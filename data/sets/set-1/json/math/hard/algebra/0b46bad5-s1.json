@@ -1,0 +1,39 @@
+{
+  "questionId": "0b46bad5-s1",
+  "originalId": "0b46bad5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A5.T10.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation 4<i>x</i> + <i>a</i><i>y</i> = 8, where <i>a</i> is a positive constant, is graphed in the <i>xy</i>-plane. Which of the following statements must be true about the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The graph has positive slope.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The graph passes through the origin.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The graph's <i>y</i>-intercept is negative.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The graph has negative slope and positive <i>y</i>-intercept.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Solving for <i>y</i> gives <i>y</i> = &minus;(4/<i>a</i>)<i>x</i> + 8/<i>a</i>. Because <i>a</i> &gt; 0, the slope &minus;4/<i>a</i> is negative and the <i>y</i>-intercept 8/<i>a</i> is positive.</p><p>Choice A contradicts the negative slope. Choice B would require the constant to be 0, not 8. Choice C contradicts the positive <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z"
+}

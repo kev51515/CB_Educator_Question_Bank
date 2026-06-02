@@ -1,0 +1,22 @@
+{
+  "questionId": "ebb717ab-s1",
+  "originalId": "ebb717ab",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p><i>x</i>&sup2; &minus; 26<i>x</i> + <i>c</i> = 0</p><p>In the given equation, <i>c</i> is a constant. The equation has no real solutions if <i>c</i> &gt; <i>n</i>. What is the least possible value of <i>n</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "169"
+  ],
+  "rationale": "<p>A quadratic <i>x</i>&sup2; + <i>bx</i> + <i>c</i> = 0 has no real solutions when its discriminant <i>b</i>&sup2; &minus; 4<i>c</i> &lt; 0. Here that means (&minus;26)&sup2; &minus; 4<i>c</i> &lt; 0, or 676 &lt; 4<i>c</i>, so <i>c</i> &gt; 169. The least value of <i>n</i> is 169.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

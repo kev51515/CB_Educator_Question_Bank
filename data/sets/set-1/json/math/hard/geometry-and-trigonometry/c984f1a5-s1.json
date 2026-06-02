@@ -1,0 +1,39 @@
+{
+  "questionId": "c984f1a5-s1",
+  "originalId": "c984f1a5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A hemisphere is half of a sphere. If a hemisphere has a radius of 20 inches, which of the following is closest to the volume, in cubic inches, of this hemisphere?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16,800</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8,400</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>33,500</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2,500</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A hemisphere has volume (1/2)(4/3)&pi;r&sup3; = (2/3)&pi;r&sup3;. For r = 20, V = (2/3)&pi;(8,000) &asymp; 16,755, closest to 16,800.</p><p>Choice B halves the correct value. Choice C gives the full sphere's volume. Choice D is much too small.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T3.hard"
+}

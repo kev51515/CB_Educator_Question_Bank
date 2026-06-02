@@ -1,0 +1,39 @@
+{
+  "questionId": "69f4bbdc-s1",
+  "originalId": "69f4bbdc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right triangle has interior angles measuring 90\u00b0, 28\u00b0, and a\u00b0. What is the value of a?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>118</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>62</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The interior angles of a triangle sum to 180\u00b0. Thus 90 + 28 + a = 180, so a = 62.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.easy"
+}

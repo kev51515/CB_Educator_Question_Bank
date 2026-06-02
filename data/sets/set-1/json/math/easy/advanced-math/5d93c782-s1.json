@@ -1,0 +1,39 @@
+{
+  "questionId": "5d93c782-s1",
+  "originalId": "5d93c782",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which expression is equivalent to <math><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>3</mn><mi>x</mi><mo>−</mo><mn>28</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mi>x</mi><mo>−</mo><mn>4</mn></mrow></mfenced><mfenced><mrow><mi>x</mi><mo>+</mo><mn>7</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mi>x</mi><mo>−</mo><mn>7</mn></mrow></mfenced><mfenced><mrow><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mi>x</mi><mo>+</mo><mn>7</mn></mrow></mfenced><mfenced><mrow><mi>x</mi><mo>+</mo><mn>4</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mi>x</mi><mo>−</mo><mn>7</mn></mrow></mfenced><mfenced><mrow><mi>x</mi><mo>−</mo><mn>4</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Find two numbers that multiply to −28 and add to −3: they are −7 and +4. So x² − 3x − 28 = (x − 7)(x + 4). Choice (b) is correct.</p>",
+  "templateId": "equivalent-expressions.A2.T5.easy"
+}

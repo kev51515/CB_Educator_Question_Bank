@@ -1,0 +1,39 @@
+{
+  "questionId": "20722644-s1",
+  "originalId": "20722644",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>5</mn></math>. What is the value of <math><mi>f</mi><mfenced><mn>3</mn></mfenced></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Substituting 3 for <em>x</em>: <math><mi>f</mi><mfenced><mn>3</mn></mfenced><mo>=</mo><msup><mn>3</mn><mn>3</mn></msup><mo>+</mo><mn>5</mn><mo>=</mo><mn>27</mn><mo>+</mo><mn>5</mn><mo>=</mo><mn>32</mn></math>.</p><p>Choices B, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "0cb57740-s1",
+  "originalId": "0cb57740",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Each side of a 24-sided polygon has one of three lengths. The number of sides with length 7 centimeters (cm) is 3 times the number of sides <i>n</i> with length 5 cm. There are 4 sides with length 6 cm. Which equation must be true for the value of <i>n</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3<i>n</i> + 4 = 24</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7(3<i>n</i>) + 5<i>n</i> + 6(4) = 24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4<i>n</i> + 4 = 24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7<i>n</i> + 5<i>n</i> + 6<i>n</i> = 24</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total number of sides is the sum of the three counts: 3<i>n</i> (length 7) + <i>n</i> (length 5) + 4 (length 6) = 24, which simplifies to 4<i>n</i> + 4 = 24.</p><p>Choice A omits the <i>n</i> sides of length 5. Choices B and D incorrectly weight the counts by the side lengths.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.hard"
+}

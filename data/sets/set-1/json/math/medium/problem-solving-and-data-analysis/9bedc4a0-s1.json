@@ -1,0 +1,39 @@
+{
+  "questionId": "9bedc4a0-s1",
+  "originalId": "9bedc4a0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bakery wants to estimate the percent of pastries produced in a typical week that are damaged in packaging. A random sample of <math><mn>420</mn></math> pastries produced in a certain week was inspected. Based on the sample, it is estimated that <math><mn>18</mn><mo>%</mo></math> of all pastries produced by the bakery this week were damaged, with an associated margin of error of <math><mn>2.7</mn><mo>%</mo></math>. Based on the estimate and associated margin of error, which of the following is most appropriate?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2.7</mn><mo>%</mo></math> of the pastries are damaged.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>18</mn><mo>%</mo></math> of the pastries are damaged.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is plausible that more than <math><mn>20.7</mn><mo>%</mo></math> of the pastries are damaged.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is plausible that between <math><mn>15.3</mn><mo>%</mo></math> and <math><mn>20.7</mn><mo>%</mo></math> of the pastries are damaged.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The plausible range is 18% \u00b1 2.7%, i.e., 15.3% to 20.7%.</p><p>Choices A and B treat point values as exact. Choice C is outside the plausible interval.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium"
+}

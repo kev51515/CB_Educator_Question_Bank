@@ -1,0 +1,39 @@
+{
+  "questionId": "cf3acc50-s1",
+  "originalId": "cf3acc50",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Assembled in the early 1700s largely through the efforts of native court scribes, the <em>Bayan al-Wuzara</em> is the most important collection of historical prose in Classical Wolof, the principal language of the Jolof Confederation in West Africa. The chronicles portray Jolof society before the arrival of French colonial administrators in the region, and marginal notes in the <em>Bayan al-Wuzara</em> indicate that much of the collection's content predates that arrival. Nonetheless, some of the chronicles contain inarguable references to administrative practices and legal customs common in France during this era. Thus, some scholars have concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the references to French administrative practices and legal customs should be attributed to a coincidental resemblance between French and Jolof institutions.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>before the arrival of French administrators, the historians of the Jolof Confederation borrowed from the historiographical traditions of other societies.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>although those who compiled the <em>Bayan al-Wuzara</em> were fluent in Wolof, they had limited knowledge of the French language.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>while its content largely predates the arrival of French administrators, the <em>Bayan al-Wuzara</em> also contains additions made after that arrival.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text explains that the <em>Bayan al-Wuzara</em> contains chronicles about Jolof society before the arrival of French administrators, and that marginal notes attest that much of the content predates that arrival, while some references to French customs could only have entered the collection after the arrival. The implication is that some chronicles predate the arrival but the references to French practices must have come about only after it, so the collection includes both pre- and post-arrival material.</p><p>Choice A is incorrect because the text says the references are \"inarguable,\" which conflicts with the idea that they are mere coincidence. Choice B is incorrect because the text mentions only the Jolof Confederation and France; it provides no information about borrowing from other societies. Choice C is incorrect because the text clearly indicates that the collection is in Wolof, not French, so the compilers' familiarity with French is irrelevant to whether the collection contains post-arrival material.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "2c4cd76d-s1",
+  "originalId": "2c4cd76d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>Researchers studying chemoreception have proposed why certain deep-sea octopuses in trenches near New Zealand swim toward chemical plumes that surface-dwelling octopuses ignore when hunting for <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> at the surface, prey items emit dilute scent trails, but in the cold, high-pressure trenches the same compounds linger long enough to guide a predator over considerable distances.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>prey</p>"},
+    {"id": "b", "content": "<p>prey,</p>"},
+    {"id": "c", "content": "<p>prey while</p>"},
+    {"id": "d", "content": "<p>prey:</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text before the blank is an independent clause, and what follows is an elaboration that explains the contrast. A colon correctly introduces this elaboration.</p><p>Choice A is incorrect because it produces a run-on. Choice B is incorrect because it produces a comma splice between two independent clauses. Choice C is incorrect because \"while\" introduces a subordinator that does not fit the contrastive structure (\"at the surface&hellip;but in the cold&hellip;trenches\") and leaves the sentence incomplete.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

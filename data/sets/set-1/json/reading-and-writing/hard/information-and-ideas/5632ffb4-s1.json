@@ -1,0 +1,39 @@
+{
+  "questionId": "5632ffb4-s1",
+  "originalId": "5632ffb4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>In an investigation of the problem-solving abilities of long-tailed macaques (<em>Macaca fascicularis</em>), researchers failed to control for the physical difficulty of the tasks they used to evaluate the monkeys. The problem-solving abilities of macaques given tasks requiring minimal dexterity, such as pushing a lever to release a treat, were judged by the same criteria as those of macaques given physically demanding tasks, such as untwisting a cap and inserting a finger to retrieve a treat. The findings of the investigation, therefore, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>reveal more about the macaques&rsquo; problem-solving abilities when tackling laboratory puzzles than when tackling problems they would meet in the wild.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>are useful for identifying tasks that exceed the macaques&rsquo; problem-solving abilities but not for identifying tasks they can perform successfully.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>may indicate differences in problem-solving ability among the macaques even though such differences may not actually exist.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>should not be taken as representative of the problem-solving abilities of any macaque species other than <em>M. fascicularis</em>.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the discussion. If researchers used the same criteria to judge macaques on tasks of very different physical difficulty, then a macaque that performed poorly on a physically demanding task might have struggled with the dexterity required rather than with the underlying problem-solving challenge. Such a macaque would be scored as less cognitively capable than one that completed an easier task, even if their actual problem-solving abilities were equal. So the findings could indicate differences in problem-solving that don't truly exist.</p><p>Choice A is incorrect because the text does not contrast laboratory tasks with naturalistic ones. Choice B is incorrect because the design flaw confounds both successful and unsuccessful performance: a success on an easy task and a failure on a hard one tell us little about either ability. Choice D is incorrect because the issue is the design of the tasks, not the species; the findings cannot be reliably generalized at all, not specifically to other macaque species.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T6.hard"
+}

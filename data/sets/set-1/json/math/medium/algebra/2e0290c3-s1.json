@@ -1,0 +1,39 @@
+{
+  "questionId": "2e0290c3-s1",
+  "originalId": "2e0290c3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line in the xy-plane has x-intercept (50, 0) and y-intercept (0, 25). Which equation represents this line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 2x + 50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2x + y = 50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = (1/2)x + 25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x + 2y = 50</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>From intercept form, x/50 + y/25 = 1. Multiplying by 50: x + 2y = 50. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A4.T7.medium"
+}

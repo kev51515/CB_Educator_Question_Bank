@@ -1,0 +1,39 @@
+{
+  "questionId": "78391fcc-s1",
+  "originalId": "78391fcc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows some values of x and their corresponding values of g(x) for the linear function g. What is the x-intercept of the graph of g in the xy-plane?</p><table border=\"1\"><tr><th>x</th><th>g(x)</th></tr><tr><td>2</td><td>14</td></tr><tr><td>5</td><td>5</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(20/3, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(6, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(7, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(8, 0)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (5 - 14)/(5 - 2) = -3. Using point (2, 14): g(x) = 14 - 3(x - 2) = -3x + 20. Setting g(x) = 0: 3x = 20, so x = 20/3.</p><p>Choices B, C, and D come from arithmetic mistakes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T5.hard"
+}

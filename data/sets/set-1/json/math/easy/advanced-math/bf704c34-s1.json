@@ -1,0 +1,39 @@
+{
+  "questionId": "bf704c34-s1",
+  "originalId": "bf704c34",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mi>d</mi><mo>-</mo><mn>11</mn><mo>=</mo><mn>18</mn><mi>q</mi><mo>+</mo><mi>h</mi></math></p><p>The given equation relates the positive numbers <em>d</em>, <em>q</em>, and <em>h</em>. Which equation correctly expresses <em>d</em> in terms of <em>q</em> and <em>h</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>d</mi><mo>=</mo><mn>18</mn><mi>q</mi><mo>+</mo><mi>h</mi><mo>-</mo><mn>11</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>d</mi><mo>=</mo><mn>11</mn><mfenced><mrow><mn>18</mn><mi>q</mi><mo>+</mo><mi>h</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>d</mi><mo>=</mo><mn>18</mn><mi>q</mi><mo>+</mo><mi>h</mi><mo>+</mo><mn>11</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>d</mi><mo>=</mo><mfrac><mrow><mn>18</mn><mi>q</mi><mo>+</mo><mi>h</mi></mrow><mn>11</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Adding 11 to both sides yields <math><mi>d</mi><mo>=</mo><mn>18</mn><mi>q</mi><mo>+</mo><mi>h</mi><mo>+</mo><mn>11</mn></math>.</p><p>Choices A, B, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy"
+}

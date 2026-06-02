@@ -1,0 +1,22 @@
+{
+  "section": "Math",
+  "difficulty": "Hard",
+  "dcode": "H",
+  "domain": "Advanced Math",
+  "domain_code": "P",
+  "skill": "Equivalent expressions",
+  "skill_code": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>One of the factors of <math><mn>3</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>36</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>105</mn><mi>x</mi></math> is <math><mi>x</mi><mo>+</mo><mi>b</mi></math>, where <em>b</em> is a positive constant. What is the smallest possible value of <em>b</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "5"
+  ],
+  "rationale": "<p>The correct answer is 5. Factor out 3x: 3x\u00b3 + 36x\u00b2 + 105x = 3x(x\u00b2 + 12x + 35). Factor the quadratic: 35 = 5 \u00b7 7 and 5 + 7 = 12, so x\u00b2 + 12x + 35 = (x + 5)(x + 7). Therefore 3x\u00b3 + 36x\u00b2 + 105x = 3x(x + 5)(x + 7). The factors of the form x + b are x + 5 and x + 7; the smallest value of b is 5.</p>",
+  "questionId": "42f8e4b4-s1",
+  "originalId": "42f8e4b4",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:28:54.548681+00:00",
+  "templateId": "equivalent-expressions.A2.T5.hard"
+}

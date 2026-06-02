@@ -1,0 +1,25 @@
+{
+  "questionId": "83c9c503-s1",
+  "originalId": "83c9c503",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.misc.medium",
+  "stimulus": "<p>South Korean American sculptor Ji-Hye Park uses recycled steel wire to build delicate, life-sized portraits of working people. Her sculpture of activist Grace <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> is installed in the Detroit Institute of Arts.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Lee:</p>"},
+    {"id": "b", "content": "<p>Lee&mdash;</p>"},
+    {"id": "c", "content": "<p>Lee</p>"},
+    {"id": "d", "content": "<p>Lee,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation use between a subject and a verb. No punctuation is needed when, as in this case, a subject (&ldquo;Her sculpture of activist Grace Lee&rdquo;) is immediately followed by a main verb (&ldquo;is installed&rdquo;).</p><p>Choice A is incorrect because no punctuation is needed between the subject and the verb. Choice B is incorrect because no punctuation is needed between the subject and the verb. Choice D is incorrect because no punctuation is needed between the subject and the verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

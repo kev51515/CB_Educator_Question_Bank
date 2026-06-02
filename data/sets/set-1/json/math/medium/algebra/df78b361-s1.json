@@ -1,0 +1,39 @@
+{
+  "questionId": "df78b361-s1",
+  "originalId": "df78b361",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>Maya bottled 48 ounces of honey. She then filled <em>x</em> small bottles and <em>y</em> large bottles with all the honey she made. The equation 3x + 8y = 48 represents this situation. Which is the best interpretation of 8y in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The number of large bottles Maya filled.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of small bottles Maya filled.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The total number of ounces of honey in the small bottles.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The total number of ounces of honey in the large bottles.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since each large bottle holds 8 ounces of honey, the total ounces of honey in y large bottles is 8y. By the same reasoning, 3x represents the total ounces of honey in the small bottles. Choice A confuses the count with the total ounces. Choice B is the count of small bottles. Choice C describes 3x, not 8y.</p>",
+  "templateId": "linear-equations-in-two-variables.A3.T4.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "c8fb6bcb-s1",
+  "originalId": "c8fb6bcb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>f</em>(<em>x</em>) = 2<em>x</em> + 86</p><p>The given function <em>f</em> represents the perimeter, in centimeters (cm), of a rectangle with a length of <em>x</em> cm and a fixed width. What is the width, in cm, of the rectangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>86</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>172</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>43</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The perimeter of a rectangle is <em>P</em> = 2<em>L</em> + 2<em>W</em>. Since <em>f</em>(<em>x</em>) = 2<em>x</em> + 86 represents the perimeter where <em>x</em> is the length, the constant term 2<em>W</em> = 86, so <em>W</em> = 43 cm.</p><p>Choices A, B, and C are incorrect; 86 is the value of 2<em>W</em>, not <em>W</em> itself.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T2.medium"
+}

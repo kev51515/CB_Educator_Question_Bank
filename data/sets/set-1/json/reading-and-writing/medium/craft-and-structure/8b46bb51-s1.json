@@ -1,0 +1,25 @@
+{
+  "questionId": "8b46bb51-s1",
+  "originalId": "8b46bb51",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>A noted music theorist of early twentieth-century Vienna, Heinrich Schenker frequently published commentaries that diverged sharply from the views of his contemporaries. One of his more controversial essays examined whether contemporary popular songs could be considered serious art: in the essay, Schenker <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that such songs offered amusement rather than enduring artistic merit.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>uncovered</p>"},
+    {"id": "b", "content": "<p>maintained</p>"},
+    {"id": "c", "content": "<p>detected</p>"},
+    {"id": "d", "content": "<p>questioned</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Maintained\" means stated as one's firm position. Schenker \"frequently published commentaries that diverged sharply from the views of his contemporaries,\" indicating he was confident in advancing his own positions.</p><p>Choice A is incorrect. \"Uncovered\" implies revealing a previously hidden truth; Schenker was advancing an opinion, not exposing a fact. Choice C is incorrect. \"Detected\" means noticed or found, which doesn't fit an essay advancing a personal aesthetic judgment. Choice D is incorrect. \"Questioned\" would suggest doubt, but the text indicates Schenker was advancing a confident claim, not raising doubts about it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

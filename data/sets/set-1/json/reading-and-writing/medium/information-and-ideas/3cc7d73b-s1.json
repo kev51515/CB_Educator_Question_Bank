@@ -1,0 +1,25 @@
+{
+  "questionId": "3cc7d73b-s1",
+  "originalId": "3cc7d73b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Using the Atacama Large Millimeter Array (ALMA), a team of astronomers mapped the rotational motion of gas in the protoplanetary disk surrounding the young star HD-2089, a dense ring of dust and gas in which planets are still forming. Surprisingly, the map revealed a region where the gas spiraled inward in tight, off-center loops rather than tracing the smooth circular orbits researchers had expected. The team had assumed the disk's rotation would resemble the largely uniform, concentric motion seen in protoplanetary disks around other young stars in the same region.</p>",
+  "stem": "<p>According to the text, what was surprising about the researchers' mapping of the gas in the protoplanetary disk around HD-2089?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It produced rotation measurements similar to those reported for disks around other young stars.</p>"},
+    {"id": "b", "content": "<p>It showed the disk to be much smaller than the researchers had expected.</p>"},
+    {"id": "c", "content": "<p>It implied that earlier maps of nearby protoplanetary disks had been inaccurate.</p>"},
+    {"id": "d", "content": "<p>It revealed a region where the gas's motion was not uniformly circular.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text states that the team mapped HD-2089's protoplanetary disk and \"surprisingly\" found a region where gas spiraled inward in tight, off-center loops rather than tracing the smooth circular orbits expected. The researchers had anticipated motion resembling the \"largely uniform, concentric motion\" seen elsewhere. The surprise, then, was finding motion that was not uniformly circular.</p><p>Choice A is incorrect because the surprise was that the disk's rotation differed from, not matched, that of other disks. Choice B is incorrect because the text does not discuss the disk's overall size. Choice C is incorrect because the text never indicates that previous mappings of other disks were inaccurate.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

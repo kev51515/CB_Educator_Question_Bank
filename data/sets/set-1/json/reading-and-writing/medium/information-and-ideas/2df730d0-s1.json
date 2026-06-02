@@ -1,0 +1,25 @@
+{
+  "questionId": "2df730d0-s1",
+  "originalId": "2df730d0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Distribution of New Solar Photovoltaic Installations in a Mid-Sized European City by Panel-Array Size, 2012 vs. 2022</p></caption><thead><tr><th scope=\"col\">Array size</th><th scope=\"col\">2012 (% of new installations)</th><th scope=\"col\">2022 (% of new installations)</th></tr></thead><tbody><tr><th scope=\"row\">Less than 4 kW</th><td>72%</td><td>9%</td></tr><tr><th scope=\"row\">4–6 kW</th><td>21%</td><td>22%</td></tr><tr><th scope=\"row\">6–10 kW</th><td>7%</td><td>34%</td></tr><tr><th scope=\"row\">More than 10 kW</th><td>0%</td><td>35%</td></tr></tbody></table></figure><p>A student researching residential rooftop solar power in a mid-sized European city argues that, over the last decade, homeowners and small businesses in the city have steadily moved toward installing physically larger photovoltaic arrays.</p>",
+  "stem": "<p>Which choice best describes data in the table that support the student's claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The percentage of new installations larger than 10 kW increased every year between 2012 and 2022.</p>"},
+    {"id": "b", "content": "<p>In 2012, nearly 75% of installations were smaller than 4 kW, whereas only a little more than 20% were in the 4–6 kW range.</p>"},
+    {"id": "c", "content": "<p>No installations in 2012 were larger than 6 kW, whereas the majority of installations in 2022 were larger than 10 kW.</p>"},
+    {"id": "d", "content": "<p>Most installations in 2012 were smaller than 4 kW, whereas most installations in 2022 were 6 kW or larger.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it describes data from the table that directly support the student's claim about a shift toward physically larger arrays. The table shows that in 2012, 72% of new installations were less than 4 kW (the smallest category), while in 2022, 34% + 35% = 69% of installations were 6 kW or larger. That contrast (most installations small in 2012; most installations 6 kW or larger in 2022) is precisely a steady move toward larger arrays.</p><p>Choice A is incorrect because the table only shows 2012 and 2022, not yearly data; we cannot tell from the table whether the share larger than 10 kW increased every year. Choice B is incorrect because, although the 2012 figures are accurate, the statement says nothing about 2022 and so does not show a shift toward larger arrays over the decade. Choice C is incorrect because the table shows 7% of 2012 installations were in the 6–10 kW range (so installations larger than 6 kW did exist in 2012), and only 35% of 2022 installations were larger than 10 kW—not “the majority.”</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

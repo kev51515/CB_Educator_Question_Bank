@@ -1,0 +1,39 @@
+{
+  "questionId": "52931bfa-s1",
+  "originalId": "52931bfa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to (10x(x \u2212 5) \u2212 7(x \u2212 5)) / (3x \u2212 15), where x &gt; 5?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(10x \u2212 7) / 3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(10x \u2212 7)(x \u2212 5) / 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x \u2212 5) / 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(10x\u00b2 \u2212 57x + 35) / (3x \u2212 15)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Factor: 3x \u2212 15 = 3(x \u2212 5). The numerator is (10x \u2212 7)(x \u2212 5). Since x &gt; 5, x \u2212 5 \u2260 0 and can be cancelled: (10x \u2212 7)(x \u2212 5) / (3(x \u2212 5)) = (10x \u2212 7)/3. Choice (a) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T8.medium"
+}

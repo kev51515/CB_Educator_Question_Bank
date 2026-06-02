@@ -1,0 +1,25 @@
+{
+  "questionId": "872a002e-s1",
+  "originalId": "872a002e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T7.hard",
+  "stimulus": "<p>The mountainous regions of the present-day Caucasus include the historical kingdoms of Iberia and Colchis, two of several small polities that flourished alongside larger empires in late antiquity. Like <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> neighboring kingdoms, Iberia and Colchis were defined by distinctive ethnolinguistic boundaries: most of their inhabitants spoke languages belonging to the Kartvelian family.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>their</p>"},
+    {"id": "b", "content": "<p>they&rsquo;re</p>"},
+    {"id": "c", "content": "<p>its</p>"},
+    {"id": "d", "content": "<p>it&rsquo;s</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of possessive determiners. The plural possessive determiner \"their\" agrees in number with the plural subject \"Iberia and Colchis\" and thus indicates that the other kingdoms were their neighbors.</p><p>Choice B is incorrect because \"they're\" is the contraction for \"they are,\" not a possessive determiner. Choice C is incorrect because the singular possessive determiner \"its\" doesn't agree in number with the plural subject \"Iberia and Colchis.\" Choice D is incorrect because \"it's\" is the contraction for \"it is\" or \"it has,\" not a possessive determiner.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "8d53e7a0-s1",
+  "originalId": "8d53e7a0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T8.medium",
+  "stimulus": "<p>Storyteller Jason Reynolds's verse novel <em>Long Way Down</em>, winner of the 2018 Newbery Honor for Children's Literature, is composed of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> protagonist, fifteen-year-old Will Holloman.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>vignette's narrated by the books'</p>"},
+    {"id": "b", "content": "<p>vignettes narrated by the book's</p>"},
+    {"id": "c", "content": "<p>vignette's narrated by the book's</p>"},
+    {"id": "d", "content": "<p>vignettes narrated by the books'</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Nothing belongs to the \"vignettes\" in the sentence, so it should not be possessive&mdash;just a simple plural noun. The protagonist does belong to the book&mdash;it's the protagonist of the book&mdash;so \"book\" needs to be a singular possessive noun.</p><p>Choice A is incorrect. This choice uses the singular possessive \"vignette's,\" but the text indicates that it should be the simple plural \"vignettes\": there is more than one vignette, and nothing belongs to the vignettes. This choice also uses the plural possessive \"books',\" which is incorrect because there is only one book. Choice C is incorrect. This choice uses the singular possessive \"vignette's,\" but the text indicates that it should be the simple plural \"vignettes.\" Choice D is incorrect. This choice uses the plural possessive \"books',\" which is incorrect because there is only one book, so it should be the singular possessive \"book's.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

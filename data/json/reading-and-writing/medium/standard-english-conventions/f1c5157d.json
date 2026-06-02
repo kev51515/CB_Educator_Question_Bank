@@ -1,0 +1,72 @@
+{
+  "questionId": "f1c5157d",
+  "externalId": "ba593ea9-220c-4820-9652-e73ba28a2582",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:22.153849+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "889108c4-7aa4-4249-ac11-9f41501fe1ef",
+      "content": "<p>the South Side Writers Group provided a valuable forum for Chicago writers to share ideas;</p>"
+    },
+    {
+      "id": "cc85269b-cf58-4f11-95b8-dfb4b4d9363a",
+      "content": "<p>Chicago writers in the South Side Writers Group had a valuable forum for sharing ideas;&nbsp;</p>"
+    },
+    {
+      "id": "a8a3fcbe-0cbd-4f7f-a434-d7652f3b0fde",
+      "content": "<p>writers shared ideas at a valuable forum known as the South Side Writers Group in Chicago;</p>"
+    },
+    {
+      "id": "90607736-9eae-42c7-bdf4-52ab00ed2bbd",
+      "content": "<p>Chicago was where the South Side Writers Group provided a valuable forum for writers to share ideas;&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "889108c4-7aa4-4249-ac11-9f41501fe1ef"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;the South Side Writers Group&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;established in 1936 by African American novelist Richard Wright.&rdquo; In doing so, this choice clearly indicates that the South Side Writers Group&mdash;and not another noun in the sentence&mdash;was established in 1936 by Richard Wright.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;Chicago writers&rdquo; immediately after the modifying phrase illogically suggests that the Chicago writers were established in 1936 by Richard Wright. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;writers&rdquo; immediately after the modifying phrase illogically suggests that the writers were established in 1936 by Richard Wright. Choice D is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;Chicago&rdquo; immediately after the modifying phrase illogically suggests that Chicago was established in 1936 by Richard Wright.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Established in 1936 by African American novelist Richard Wright, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it would become a vital part of the creative movement known as the Chicago Black Renaissance. &nbsp;&nbsp;</p>",
+    "keys": [
+      "889108c4-7aa4-4249-ac11-9f41501fe1ef"
+    ],
+    "answerOptions": [
+      {
+        "id": "889108c4-7aa4-4249-ac11-9f41501fe1ef",
+        "content": "<p>the South Side Writers Group provided a valuable forum for Chicago writers to share ideas;</p>"
+      },
+      {
+        "id": "cc85269b-cf58-4f11-95b8-dfb4b4d9363a",
+        "content": "<p>Chicago writers in the South Side Writers Group had a valuable forum for sharing ideas;&nbsp;</p>"
+      },
+      {
+        "id": "a8a3fcbe-0cbd-4f7f-a434-d7652f3b0fde",
+        "content": "<p>writers shared ideas at a valuable forum known as the South Side Writers Group in Chicago;</p>"
+      },
+      {
+        "id": "90607736-9eae-42c7-bdf4-52ab00ed2bbd",
+        "content": "<p>Chicago was where the South Side Writers Group provided a valuable forum for writers to share ideas;&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;the South Side Writers Group&rdquo; the subject of the sentence and places it immediately after the modifying phrase &ldquo;established in 1936 by African American novelist Richard Wright.&rdquo; In doing so, this choice clearly indicates that the South Side Writers Group&mdash;and not another noun in the sentence&mdash;was established in 1936 by Richard Wright.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;Chicago writers&rdquo; immediately after the modifying phrase illogically suggests that the Chicago writers were established in 1936 by Richard Wright. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;writers&rdquo; immediately after the modifying phrase illogically suggests that the writers were established in 1936 by Richard Wright. Choice D is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;Chicago&rdquo; immediately after the modifying phrase illogically suggests that Chicago was established in 1936 by Richard Wright.</p>",
+    "externalid": "ba593ea9-220c-4820-9652-e73ba28a2582",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Established in 1936 by African American novelist Richard Wright, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it would become a vital part of the creative movement known as the Chicago Black Renaissance. &nbsp;&nbsp;</p>"
+}

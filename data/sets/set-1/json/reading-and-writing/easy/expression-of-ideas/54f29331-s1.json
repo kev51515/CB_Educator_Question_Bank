@@ -1,0 +1,39 @@
+{
+  "questionId": "54f29331-s1",
+  "originalId": "54f29331",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The capybara is a species of large rodent.</li>\n<li>It is native to wetlands across South America.</li>\n<li>The capybara mainly feeds on grasses and aquatic plants.</li>\n<li>It has an average weight of about 50 kilograms.</li>\n</ul>",
+  "stem": "<p>The student wants to specify the average weight of the capybara. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The capybara has an average weight of about 50 kilograms.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The capybara is a large rodent native to South America.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>One large rodent found in South American wetlands eats grasses and aquatic plants.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The capybara is a rodent that mainly feeds on grasses and aquatic plants.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The sentence specifies the average weight of the capybara: about 50 kilograms.</p><p>Choice B is incorrect. While the sentence provides information about the capybara, it doesn't specify the capybara's average weight. Choice C is incorrect. The sentence describes the diet of a rodent in South American wetlands; it doesn't specify the capybara's average weight. Choice D is incorrect. While the sentence provides information about the capybara, it doesn't specify the capybara's average weight.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A5.T14.easy"
+}

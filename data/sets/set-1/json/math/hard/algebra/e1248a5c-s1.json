@@ -1,0 +1,39 @@
+{
+  "questionId": "e1248a5c-s1",
+  "originalId": "e1248a5c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>a</mi><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>18</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>4</mn><mi>x</mi><mo>+</mo><mi>c</mi><mi>y</mi><mo>=</mo><mn>12</mn></math></p>\n<p>In the system of equations above, <math><mi>a</mi></math> and <math><mi>c</mi></math> are constants. If the system of equations has an infinite number of solutions, what is the value of <math><mi>a</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For infinitely many solutions, the two equations must represent the same line, meaning their coefficients are proportional: a/4 = 6/c = 18/12 = 3/2. So a/4 = 3/2 gives a = 6.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6d5ddea4-s1",
+  "originalId": "6d5ddea4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>According to forester Suzanne Simard, the Indigenous practice of gathering certain mushrooms by twisting them off rather than digging them up actually <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> wild populations: it may seem counterintuitive, she says, but this gentle removal preserves the fungal network underground so new mushrooms can grow back the following season.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>renews</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>interrupts</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>weighs</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>examines</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"renews\" means brings back or refreshes, matching the idea that the technique allows new mushrooms to grow. Choice B is incorrect because the practice is shown to help, not interrupt. Choice C is incorrect because weighing isn’t addressed. Choice D is incorrect because examining isn’t the focus.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

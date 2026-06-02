@@ -1,0 +1,25 @@
+{
+  "questionId": "c502943e-s1",
+  "originalId": "c502943e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 2006 novel.</p><blockquote><p><u>Aunt Imelda was as cheerful as my mother was solemn.</u> Even when she wasn't laughing, she made the room feel light, humming under her breath and tapping her foot against the chair leg.</p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It contrasts Aunt Imelda with the narrator's mother.</p>"},
+    {"id": "b", "content": "<p>It suggests that Aunt Imelda dislikes meeting new people.</p>"},
+    {"id": "c", "content": "<p>It lists the kinds of topics Aunt Imelda enjoys discussing.</p>"},
+    {"id": "d", "content": "<p>It describes a conversation between the narrator and the narrator's mother.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The underlined sentence contrasts Aunt Imelda's cheerfulness with the mother's solemnity. The rest of the text elaborates on Imelda's cheerful presence.</p><p>Choice B is incorrect. The text doesn't address Imelda's feelings about new people. Choice C is incorrect. No topics of conversation are listed. Choice D is incorrect. No conversation is described.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

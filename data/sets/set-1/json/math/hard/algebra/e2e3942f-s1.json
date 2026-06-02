@@ -1,0 +1,39 @@
+{
+  "questionId": "e2e3942f-s1",
+  "originalId": "e2e3942f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mi>x</mi><mo>+</mo><mi>a</mi><mi>y</mi><mo>=</mo><mn>14</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>10</mn><mi>x</mi><mo>+</mo><mn>6</mn><mi>y</mi><mo>=</mo><mn>25</mn></math></p>\n<p>In the system of equations above, <math><mi>a</mi></math> is a constant. If the system of equations has no solution, what is the value of <math><mi>a</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. For no solution, the coefficient ratios must match but the constant ratio must differ. 5/10 = a/6 gives a = 3. Checking: 14/25 \u2260 1/2, so the lines are parallel but distinct \u2014 no solution.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

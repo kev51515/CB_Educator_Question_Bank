@@ -1,0 +1,22 @@
+{
+  "questionId": "0d391910-s1",
+  "originalId": "0d391910",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function h is defined by h(x) = 7x. What is the value of h(3)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "21"
+  ],
+  "rationale": "<p>Substituting 3 for x yields h(3) = 7(3) = 21.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

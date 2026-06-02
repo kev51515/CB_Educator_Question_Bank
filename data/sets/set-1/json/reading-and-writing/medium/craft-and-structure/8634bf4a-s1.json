@@ -1,0 +1,25 @@
+{
+  "questionId": "8634bf4a-s1",
+  "originalId": "8634bf4a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>Wifredo Lam was a central figure in the modernist art scene of mid-twentieth-century Havana, but his impact was scarcely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Cuba: surrealist and Negritude painters across the Caribbean, Europe, and West Africa adopted his vocabulary of hybrid human-vegetal forms, and curators continue to organize retrospectives of his work in major museums on three continents.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>imitated in</p>"},
+    {"id": "b", "content": "<p>limited to</p>"},
+    {"id": "c", "content": "<p>welcomed in</p>"},
+    {"id": "d", "content": "<p>opposed by</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Limited to\" means restricted to. The text says Lam was central in Havana \"but\" his impact reached painters across the Caribbean, Europe, and West Africa and continues to draw museum retrospectives on three continents. His impact was therefore not confined to Cuba.</p><p>Choice A is incorrect because the text shows imitation occurred outside Cuba, not just inside it, so \"scarcely imitated in Cuba\" misrepresents the contrast. Choice C is incorrect because \"welcomed in\" Cuba is not contradicted by his international reach. Choice D is incorrect because \"opposed by\" Cuba would describe local resistance, not the geographic spread the rest of the sentence emphasizes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

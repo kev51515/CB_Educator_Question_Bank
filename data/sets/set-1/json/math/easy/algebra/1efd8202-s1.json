@@ -1,0 +1,39 @@
+{
+  "questionId": "1efd8202-s1",
+  "originalId": "1efd8202",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 50<i>x</i> + 11. Which table gives three values of <i>x</i> and their corresponding values of <i>y</i> for the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<table border=\"1\"><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>0</td><td>50</td></tr><tr><td>2</td><td>61</td></tr><tr><td>4</td><td>72</td></tr></table>"
+    },
+    {
+      "id": "b",
+      "content": "<table border=\"1\"><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>0</td><td>11</td></tr><tr><td>2</td><td>111</td></tr><tr><td>4</td><td>211</td></tr></table>"
+    },
+    {
+      "id": "c",
+      "content": "<table border=\"1\"><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>0</td><td>50</td></tr><tr><td>2</td><td>100</td></tr><tr><td>4</td><td>200</td></tr></table>"
+    },
+    {
+      "id": "d",
+      "content": "<table border=\"1\"><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>0</td><td>11</td></tr><tr><td>2</td><td>72</td></tr><tr><td>4</td><td>133</td></tr></table>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Substituting <i>x</i> = 0, 2, 4 into <i>y</i> = 50<i>x</i> + 11 gives <i>y</i> = 11, 111, 211, respectively.</p><p>Choice A corresponds to <i>y</i> = &frac;<i>x</i> + 50 (swapped slope and intercept). Choices C and D result from arithmetic errors or using the wrong intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T9.easy"
+}

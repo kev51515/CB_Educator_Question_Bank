@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-06-01T03:04:25.850Z",
+  "section": "math",
+  "difficulty": "Hard",
+  "axis": "skill",
+  "setCount": 2,
+  "questionCount": 17,
+  "sets": [
+    {
+      "setId": "1",
+      "label": "Ratios, rates, proportional relationships, and units — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "ratios-rates-proportional-relationships-and-units-set-1_questions.html",
+        "keyHtml": "ratios-rates-proportional-relationships-and-units-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Ratios, rates, proportional relationships, and units — Set 2",
+      "questionCount": 7,
+      "files": {
+        "questionsHtml": "ratios-rates-proportional-relationships-and-units-set-2_questions.html",
+        "keyHtml": "ratios-rates-proportional-relationships-and-units-set-2_key.html"
+      }
+    }
+  ]
+}

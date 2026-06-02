@@ -1,0 +1,39 @@
+{
+  "questionId": "aa0968dd-s1",
+  "originalId": "aa0968dd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Poetry in Classical Tamil, the language of the early Sangam Age in southern India, relies on the convention of <em>tinai</em>, in which an outwardly literal scene&mdash;a specific landscape with its associated flora, animals, and human activities&mdash;is understood by readers to evoke a particular interior emotional state. For example, the <em>kurinji</em> tinai, named after a mountain flower that blooms only rarely, describes mountainous terrain at night but is understood to depict the union of lovers. Readers familiar with the convention recognize that the <em>kurinji</em> setting is not the central subject of the poem; the mountain landscape functions as a vehicle for representing a state of heightened romantic feeling.</p>",
+  "stem": "<p>Which statement about the <em>kurinji</em> tinai is most strongly supported by the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is the only tinai used by Tamil poets to evoke feelings of romantic union.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is understood by knowledgeable readers as a representation of an emotional state rather than as a description of an actual landscape.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is the most highly regarded tinai in Classical Tamil poetry because of its association with the rare mountain flower.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It has gradually replaced earlier conventions used by Tamil poets to depict mountainous landscapes.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text explains that the kurinji tinai describes mountainous terrain but is recognized by familiar readers as representing the union of lovers&mdash;an interior emotional state for which the landscape merely serves as a vehicle.</p><p>Choice A is incorrect because the text does not claim kurinji is the only such tinai. Choice C is incorrect because the text doesn&rsquo;t evaluate the kurinji&rsquo;s relative status. Choice D is incorrect because the text doesn&rsquo;t describe historical replacement of earlier conventions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

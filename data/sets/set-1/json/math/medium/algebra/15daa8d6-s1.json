@@ -1,0 +1,22 @@
+{
+  "questionId": "15daa8d6-s1",
+  "originalId": "15daa8d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3(x + 4) = ax + 12</p><p>In the given equation, a is a constant. If the equation has infinitely many solutions, what is the value of a?</p>",
+  "answerOptions": [],
+  "keys": [
+    "3"
+  ],
+  "rationale": "<p>Expand the left side: 3x + 12 = ax + 12. For infinitely many solutions, both sides must be identical, so a = 3.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.medium"
+}

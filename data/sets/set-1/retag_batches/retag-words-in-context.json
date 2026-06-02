@@ -1,0 +1,92 @@
+[
+  {
+    "id": "be94c9fc-s1",
+    "templateId": "words-in-context.A1.T2.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged as A1.T2 (multi-word phrase meaning) but only a single word 'contesting' is underlined \u2014 this is structurally A1.T1 (single-word meaning). Also violates A1.T2 must_preserve stem wording: clone uses A2-style 'Which choice completes the text with the most logical and precise word or phrase?' instead of 'As used in the text, what does the phrase \"X\" most nearly mean?'. Answer 'Obstructing' is reasonable for 'contesting our passage'."
+  },
+  {
+    "id": "98364791-s1",
+    "templateId": "words-in-context.A2.T8.hard",
+    "verdict": "type_drift",
+    "detail": "Tagged T8 (negation/scarcity/counterfactual frame) but stem has no negation around the blank: 'such ______ stimuli'. The blank is a plain adjective describing vibration/stroking, with 'less lasting relief' applying elsewhere. Structurally this is T6 (degree/quality descriptor), not T8."
+  },
+  {
+    "id": "b411eb09-s1",
+    "templateId": "words-in-context.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Clone fits T8 (scarcity frame: 'there is a ______ studies') rather than T3 (restatement gloss). The blank is filled by 'scarcity of' \u2014 a paucity/scarcity frame is the canonical T8-hard pattern per template."
+  },
+  {
+    "id": "3654202f-s1",
+    "templateId": "words-in-context.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Cue is restatement ('cheap alternative') not a contrast signal; stem fits T3 better than T4."
+  },
+  {
+    "id": "849bf8d7-s1",
+    "templateId": "words-in-context.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "No contrast/concession signal; cue is causal ('helped drive'). Fits T5 better than T4."
+  },
+  {
+    "id": "8d579825-s1",
+    "templateId": "words-in-context.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "No contrast signal in stimulus; cue is restatement ('worked closely together'). Fits T3, not T4."
+  },
+  {
+    "id": "74ee7737-s1",
+    "templateId": "words-in-context.A2.T6.easy",
+    "verdict": "type_drift",
+    "detail": "All four options are two-word verb+preposition phrases ('guided by', 'puzzled by', 'ignored by', 'displeased with'). This matches T7 (two-word/prepositional collocation), not T6 (single adjective descriptor)."
+  },
+  {
+    "id": "9b2fbb2e-s1",
+    "templateId": "words-in-context.A2.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 requires an adjective slot describing a noun's quality. Clone's blank is a verb ('provided') with object 'surprising clarity', matching T5 (cause/effect/function verb) rather than T6."
+  },
+  {
+    "id": "1374a9fa-s1",
+    "templateId": "words-in-context.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "T4 requires an explicit contrast/concession signal word (despite/however/unlike/while/but/although) governing the blank. The stimulus has no such signal; the 'while describing' clause is parallel elaboration, not a contrast about the blank. Structure fits T5 (verb naming scholars' action, supported by descriptive elaboration)."
+  },
+  {
+    "id": "757077f9-s1",
+    "templateId": "words-in-context.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "T4 requires an explicit contrast/concession signal word in the stimulus. None present; blank sits in 'may persuade scholars ... to ______ that assumption,' which is a cause/effect verb slot (T5 structure). No 'although/while/unlike/despite/but' signal governs the blank."
+  },
+  {
+    "id": "94eb800d-s1",
+    "templateId": "words-in-context.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "T5 requires the blank to be a verb naming a causal/functional action with directional polarity cue. Here the blank verb 'produced' is just the basic action of creation with no causal mechanism or directional polarity at stake. The stem fits T3 (restatement: 'made' the films) rather than a cause/effect/function cue."
+  },
+  {
+    "id": "995358b4-s1",
+    "templateId": "words-in-context.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Tagged T4 (contrast cue) but functions as T5: 'although' introduces context, but the blank itself names the causal action ('destabilized') of heavy nectar inflow on labor balance. No antonym pole is being supplied to contrast a named entity; the blank fills the causal effect verb."
+  },
+  {
+    "id": "9c35759f-s1",
+    "templateId": "words-in-context.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Stem turns on contrast ('refuses to ___...willingness to upend...avoid predictable'), not on a causal/functional mechanism. Better fits T4 (contrast cue) with negation framing, not T5."
+  },
+  {
+    "id": "cd2ce51f-s1",
+    "templateId": "words-in-context.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Blank verb 'portrays' names the cast-character representation relation, not a cause/effect/function in a causal chain. Better fits T3 (restatement of how cast plays/depicts characters)."
+  },
+  {
+    "id": "e37b9e34-s1",
+    "templateId": "words-in-context.A2.T8.medium",
+    "verdict": "type_drift",
+    "detail": "T8 requires an explicit negation/scarcity/counterfactual frame around the blank (e.g., 'not ___', 'less ___', 'unlikely to be ___', 'paucity of'). Here the blank sits in a plain copular slot 'the sequence appears to be ___' followed by a restatement ('transcribed only rarely and producing no observable change'). That is a T3/T6 restatement-of-quality structure, not T8. The answer 'quiescent' is supported, but the syntactic frame is wrong for T8."
+  }
+]

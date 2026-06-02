@@ -1,0 +1,39 @@
+{
+  "questionId": "946ab892-s1",
+  "originalId": "946ab892",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function <em>h</em>, the graph of <em>y</em> = <em>h</em>(<em>x</em>) in the <em>xy</em>-plane has a slope of 3 and passes through the point (2, 11). Which equation defines <em>h</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>h</em>(<em>x</em>) = 3<em>x</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>h</em>(<em>x</em>) = 3<em>x</em> + 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>h</em>(<em>x</em>) = 3<em>x</em> + 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>h</em>(<em>x</em>) = 3<em>x</em> + 11</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A linear function can be written as <em>h</em>(<em>x</em>) = <em>mx</em> + <em>b</em>. With slope 3, <em>m</em> = 3. Substituting (2, 11): 11 = 3(2) + <em>b</em>, so <em>b</em> = 5. Therefore <em>h</em>(<em>x</em>) = 3<em>x</em> + 5.</p><p>Choices A, C, and D are incorrect; they correspond to other points but not (2, 11).</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "18e35375-s1",
+  "originalId": "18e35375",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>g</i>(<i>x</i>) = (<i>x</i> + 11)(<i>x</i> &minus; 24)</p><p>The function <i>g</i> is defined by the given equation. For what value of <i>x</i> does <i>g</i>(<i>x</i>) reach its minimum?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;264</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13/2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;13</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The minimum of an upward-opening parabola occurs at the axis of symmetry, which is the midpoint of the zeros &minus;11 and 24: (&minus;11 + 24)/2 = 13/2.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

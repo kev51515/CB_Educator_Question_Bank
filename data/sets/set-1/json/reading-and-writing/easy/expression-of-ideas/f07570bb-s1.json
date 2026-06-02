@@ -1,0 +1,39 @@
+{
+  "questionId": "f07570bb-s1",
+  "originalId": "f07570bb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Researchers believe that timbers recovered from a Florida riverbed are from a French merchant vessel that sank in 1565. Oral histories passed down among the area's Timucua descendants support this belief. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Timucua accounts describe how barrels of wine, an item the ship had been carrying, drifted onto nearby shores in the months following the wreck.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For this reason,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Likewise,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"For example\" logically signals that the Timucua wine-barrel accounts mentioned in this sentence are examples consistent with the previous claim that oral histories support the shipwreck theory.</p><p>Choice B is incorrect because \"for this reason\" illogically signals that the wine-barrel accounts were caused by the previous claim. Choice C is incorrect because \"however\" illogically signals contrast. Choice D is incorrect because \"likewise\" illogically signals that the wine-barrel accounts are similar to but separate from the supporting oral histories, when in fact they exemplify those histories.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

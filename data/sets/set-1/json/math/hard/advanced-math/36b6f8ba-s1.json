@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "36b6f8ba-s1",
+  "originalId": "36b6f8ba",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of y = f(x) + 3 in the xy-plane passes through the point (0, 7) and approaches the horizontal line y = 8 as x decreases without bound. Which equation defines function f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = &minus;2<sup>x</sup> + 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = &minus;2<sup>x</sup> + 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = &minus;2<sup>x</sup> + 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = &minus;2<sup>x</sup> + 8</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since y = f(x) + 3 passes through (0, 7), f(0) = 7 &minus; 3 = 4. For any equation of the form f(x) = &minus;2<sup>x</sup> + k, evaluating at x = 0 gives f(0) = &minus;1 + k. Setting &minus;1 + k = 4 yields k = 5, so f(x) = &minus;2<sup>x</sup> + 5.</p><p>Choices A, B, and D give values of k that do not satisfy f(0) = 4.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T5.hard"
+}

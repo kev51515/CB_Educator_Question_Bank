@@ -1,0 +1,25 @@
+{
+  "questionId": "c843d63c-s1",
+  "originalId": "c843d63c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T7.medium",
+  "stimulus": "<p>The weavers of the Otavalo cooperative in northern Ecuador typically <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the wool-spinning and dyeing methods that have been passed down through their families since the colonial period, but they don't strictly preserve every practice; for example, weavers now use synthetic mordants alongside the customary plant-based fixatives to set dyes on the fibers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>tinker with</p>"},
+    {"id": "b", "content": "<p>improve upon</p>"},
+    {"id": "c", "content": "<p>conform to</p>"},
+    {"id": "d", "content": "<p>contend with</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Conform to\" means to act in accordance with. The text establishes a contrast: weavers typically follow the inherited methods, but \"don't strictly preserve every practice.\" The blank must describe the default behavior of following tradition.</p><p>Choice A is incorrect. \"Tinker with\" means to make small adjustments, which would be an example of not strictly preserving every practice rather than the baseline of following tradition. Choice B is incorrect. \"Improve upon\" means to make better, which similarly describes departure from, not adherence to, tradition. Choice D is incorrect. \"Contend with\" means struggle against, but the text does not suggest the weavers struggle with their inherited methods.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

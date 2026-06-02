@@ -1,0 +1,455 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Craft and Structure",
+  "skill": "Words in Context",
+  "originals_count": 241,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Word meaning in literary excerpt",
+      "description": "The student is shown an underlined word or phrase within a passage from a classic literary work (novel/play) and must choose the answer that most nearly captures its meaning AS USED in that specific context. Cognitive demand: disambiguate among plausible dictionary senses of an already-known word by attending to the surrounding literary cues.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that the target word is given (not blank) and the passage is always a literary excerpt with an authorial attribution; an A1 clone that drops the literary frame or removes the target word is a categorical drift to A2.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Single-word meaning (verb/adjective/noun)",
+          "description": "Stem asks 'As used in the text, what does the word \"X\" most nearly mean?' The target X is a single, familiar English word whose contextual sense is one of its less-dominant dictionary meanings.",
+          "core_skill_demand": "Reject the first/most-common sense of a familiar word and select the sense activated by surrounding clues (descriptive phrases, parallel structures, the speaker's tone).",
+          "example_originals": ["05575bca", "2c82068f", "9aa44886", "84ece3f6", "3566120b", "9b22bf7b", "e459076b"],
+          "frequency": { "easy": 26, "medium": 5, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Target is a concrete adjective/noun with a clearly stated paraphrase nearby (e.g., 'how nice and soft it sounds — just as if someone was kissing the window')",
+                "Distractors are obviously off-topic dictionary senses (e.g., 'shapeless', 'bland' for 'soft')",
+                "Stimulus passage is short (≤3 sentences) with explicit framing prose"
+              ],
+              "example_stem": "As used in the text, what does the word 'soft' most nearly mean? — Alice describes snow sounding 'nice and soft', 'just as if someone was kissing the window'.",
+              "example_ids": ["05575bca", "2c82068f", "417f8dfa"]
+            },
+            "medium": {
+              "characteristics": [
+                "Target is a polysemous verb whose intended sense is metaphorical or idiomatic (e.g., 'assumed' = acquired; 'quality' = characteristic)",
+                "At least two distractors are valid dictionary senses of the target in other contexts",
+                "Contextual cue requires reading 1-2 surrounding sentences, not just the target line"
+              ],
+              "example_stem": "Day by day, the work assumed greater precision … — what does 'assumed' most nearly mean?",
+              "example_ids": ["84ece3f6", "9aa44886", "ab1bd603", "b4c6cff6"]
+            },
+            "hard": {
+              "characteristics": [
+                "Target word has 3+ active dictionary senses, with two of them plausible in the passage",
+                "Correct answer is a near-archaic or specialized sense (e.g., 'contracted' = developed/acquired, 'endure' = tolerate, 'manifest' = perceptible)",
+                "Distractors include the most-common modern sense as a deliberate trap"
+              ],
+              "example_stem": "[Mr. Brooke] was held to have contracted a too rambling habit of mind — what does 'contracted' most nearly mean? (Distractor 'Restricted' is the dominant modern sense.)",
+              "example_ids": ["e459076b", "3566120b", "7f935017", "9b22bf7b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Literary excerpt framing with author/date/work attribution",
+              "Target word visibly marked (underline/quote) in the passage",
+              "Stem wording: 'As used in the text, what does the word \"X\" most nearly mean?'",
+              "Four single-word options, each capitalized as a standalone gloss"
+            ],
+            "must_vary": [
+              "Choice of target word (a different polysemous English word)",
+              "Literary source (different author/era/genre)",
+              "Identity of the trap distractor (most-common sense)"
+            ],
+            "common_bugs": [
+              "Picking a word whose intended sense IS its most common sense (collapses to trivial)",
+              "Using a modern non-literary passage (drifts into A2 territory)",
+              "Distractors that are all clearly wrong dictionary senses, removing the disambiguation challenge",
+              "Marking the target with brackets instead of underline/quote, breaking schema conventions"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Multi-word phrase meaning",
+          "description": "Stem asks about a 2-4 word phrase ('a singular', 'reconcile his mother to', 'disputing'-in-context as transitive action) whose compositional meaning differs from its parts.",
+          "core_skill_demand": "Treat the phrase as an idiomatic unit and select a paraphrase that captures its specific contextual function, not the sum of its lexical parts.",
+          "example_originals": ["359902ae", "62a18353", "be94c9fc"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Phrase appears in a passage with explicit narrative support",
+                "Options are short paraphrases differing in clearly opposite directions"
+              ],
+              "example_stem": "What does the phrase 'X' most nearly mean? (Easy literary excerpt with clear surrounding context.)",
+              "example_ids": ["359902ae"]
+            },
+            "medium": {
+              "characteristics": [
+                "Phrase has a literal reading that competes with its idiomatic reading",
+                "One distractor preserves the literal sense; correct answer captures the idiom"
+              ],
+              "example_stem": "He had attempted to reconcile his mother to the notion — what does 'reconcile his mother to' most nearly mean? Answer: 'Get his mother to accept'.",
+              "example_ids": ["62a18353"]
+            },
+            "hard": {
+              "characteristics": [
+                "Phrase is used in an unusual transitive sense or extended metaphor",
+                "All four options are syntactically parallel and semantically near-neighbors",
+                "Correct answer requires inferring an extended/figurative meaning from scene-level imagery (e.g., 'disputing … our passage' = providing resistance to)"
+              ],
+              "example_stem": "Here they were now, in blue, disputing, every inch, our passage — what does 'disputing' most nearly mean? Answer: 'Providing resistance to'.",
+              "example_ids": ["be94c9fc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Literary attribution and stimulus structure as in T1",
+              "Phrase (not single word) marked as the target",
+              "Stem wording: 'As used in the text, what does the phrase \"X\" most nearly mean?'"
+            ],
+            "must_vary": [
+              "Choice of phrase (different idiomatic/figurative construction)",
+              "Literary source"
+            ],
+            "common_bugs": [
+              "Choosing a phrase whose meaning is fully compositional (no idiomatic challenge)",
+              "Picking only the literal sense distractor as the answer (defeats the type)",
+              "Treating this as T1 by selecting a single-word target instead"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Fill-in-the-blank vocabulary precision",
+      "description": "The student is shown an informational/expository passage with one blank and must choose the most logical and precise word or phrase to complete it. Cognitive demand: identify the semantic relationship the surrounding context dictates, then pick the option whose precise sense fits that relationship.",
+      "boundary_with_other_aspects": "A2 differs from A1 in that there is no underlined target — the student must SUPPLY the word given context cues; a clone that supplies an underlined word in a literary passage drifts to A1.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Restatement / elaboration cue",
+          "description": "The sentence containing the blank is followed (or preceded) by an explicit restatement — typically via colon, semicolon, dash, or 'in other words / that is' — that defines what the blank must mean. The blank is a high-level summary word.",
+          "core_skill_demand": "Identify the explicit definitional gloss in the surrounding clause and select the single word that exactly summarizes it (without adding or removing connotation).",
+          "example_originals": ["01de46bb", "f3fac04f", "6c64a8f3", "be612a26", "dd19befa", "76e4c51d"],
+          "frequency": { "easy": 40, "medium": 16, "hard": 12 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Restatement is in the same sentence with a colon/dash and uses common vocabulary (e.g., 'calmer waters where animals can take shelter' defines 'tranquil')",
+                "Three distractors are clearly opposite or off-topic (dangerous, imaginative, surprising)",
+                "Correct answer is a high-frequency word ≤2 syllables in everyday register"
+              ],
+              "example_stem": "Kelp forests … slow currents to create a more ______ environment with calmer waters where animals can take shelter.",
+              "example_ids": ["051d3065", "0afb2ac4", "f3fac04f", "a4ca92fd"]
+            },
+            "medium": {
+              "characteristics": [
+                "Restatement is present but in a separate sentence or buried behind a relative clause",
+                "Correct answer is a mid-register word (3-4 syllables: exactitude, marginalize, persistent)",
+                "At least one distractor is semantically adjacent (e.g., 'precariousness' vs. 'exactitude')"
+              ],
+              "example_stem": "… inhabitants used natural landmarks to track time with a high degree of ______. By observing the sun's position … the Mexica were able to precisely identify the dates …",
+              "example_ids": ["6c64a8f3", "be612a26", "85083d4d", "1374a9fa"]
+            },
+            "hard": {
+              "characteristics": [
+                "Restatement is implicit via an example list or extended description (no colon)",
+                "Correct answer is a low-frequency academic word (ubiquity, anomaly, paucity, variable)",
+                "Two distractors are sophisticated synonyms-on-the-surface that fail on a specific nuance (e.g., 'heterogeneity' vs. correct 'ubiquity' when the cue stresses prevalence not variety)"
+              ],
+              "example_stem": "Archaeologists have identified a plethora of beads … attribute these artifacts' apparent ______ to … widespread availability of T. gibbosula.",
+              "example_ids": ["bce4d106", "e4f312c5", "b411eb09", "76e4c51d", "dd19befa"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An explicit or near-explicit gloss in the stimulus that defines the blank",
+              "Stem wording: 'Which choice completes the text with the most logical and precise word or phrase?'",
+              "Four single-word options of the same part of speech",
+              "Informational/expository register (no narrative)"
+            ],
+            "must_vary": [
+              "Subject domain (science, history, arts, social science) — sample broadly",
+              "Position of the restatement (before vs. after the blank)",
+              "Difficulty register of the correct word and distractors"
+            ],
+            "common_bugs": [
+              "Removing the gloss to make the question 'harder' — this turns it into pure vocabulary recall, not Words-in-Context",
+              "Picking a correct answer that adds connotation absent from the gloss (e.g., 'enthusiastic' when the gloss only says 'consistent')",
+              "Inserting two equally valid synonyms among the options (creates an ambiguous key)",
+              "Drifting register: easy stem + sophisticated correct word, or vice versa, breaks difficulty calibration"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Contrast / concession cue",
+          "description": "The stimulus sets up a contrast using 'despite', 'however', 'unlike', 'while', 'but', 'in contrast', or a counterintuitive 'though'. The blank requires a word that completes the contrasted side of the relationship.",
+          "core_skill_demand": "Read the contrast signal, identify which pole the blank sits on, and select a word that is the appropriate antonym/contrast of the named pole — neither too weak nor too strong.",
+          "example_originals": ["e386a11d", "4974b053", "1455b754", "22a41819", "85083d4d", "a5e747f0"],
+          "frequency": { "easy": 15, "medium": 11, "hard": 12 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Contrast signal is explicit ('Unlike X who did A, Y ______ A')",
+                "Required contrast is a direct antonym in common vocabulary (embraced vs. rejected)",
+                "Distractors include the SAME-pole synonym as a trap"
+              ],
+              "example_stem": "Unlike Kuroda Seiki, who adopted traditional European methods, Hishida Shunsō ______ traditional Japanese approaches.",
+              "example_ids": ["e386a11d", "849bf8d7", "8d579825"]
+            },
+            "medium": {
+              "characteristics": [
+                "Contrast spans two sentences or uses 'although' / 'while' with embedded clauses",
+                "Correct word is mid-register and one distractor is the contrast's exact opposite (overcorrecting)",
+                "Often involves a researcher/critic challenging a prevailing view"
+              ],
+              "example_stem": "Although science fiction was dominated by white male authors when Butler began writing, she did not view the genre as ______.",
+              "example_ids": ["4974b053", "85083d4d", "757077f9", "1374a9fa"]
+            },
+            "hard": {
+              "characteristics": [
+                "Contrast is implied by 'while recent scholarship has undermined claims that … were ______' — requires reconstructing what the disproved claim asserted",
+                "Correct word is academic register (dogmatic, inconsequential, opaque)",
+                "All four distractors are intellectually plausible; only one matches the precise direction of the contrast"
+              ],
+              "example_stem": "While recent scholarship has undermined claims that the works of Ibn Rushd were ______ other Muslim philosophers of his time, … his works were primarily available thousands of miles west.",
+              "example_ids": ["1455b754", "22a41819", "a5e747f0", "d7807ec8"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An explicit contrast/concession signal word in the stimulus",
+              "Two contrasting referents (entity A vs. entity B, or expectation vs. reality)",
+              "Standard fill-in stem"
+            ],
+            "must_vary": [
+              "The contrast signal used (despite / however / unlike / while / but)",
+              "Subject domain",
+              "Whether the blank sits on the 'expected' or 'unexpected' side"
+            ],
+            "common_bugs": [
+              "Picking a contrast word that is too strong or too weak relative to the named pole",
+              "Failing to flip polarity for 'less ______' or 'not ______' framings (creates inverted key)",
+              "Removing the contrast signal during cloning — collapses into T3",
+              "Two options that are valid antonyms of the named pole — ambiguous key"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Cause / effect / function cue",
+          "description": "The stimulus describes a causal chain, mechanism, or function and the blank is the verb (or verb-derived noun) naming the action performed in that chain. Often: 'X led to / helped to / caused ______'.",
+          "core_skill_demand": "Identify the directional action that the cause performs on the effect (or vice versa) and pick a verb whose connotation (positive/negative, weak/strong) matches the described mechanism.",
+          "example_originals": ["04e4c51d", "5d2fd27d", "637d0878", "bdab32fc", "5444db38", "79fe7550", "e26d23c4"],
+          "frequency": { "easy": 18, "medium": 8, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Cause-effect is explicit ('helped to ______ photography: they made it easy and enjoyable …')",
+                "Correct verb is common and directly entailed by the explanation",
+                "Distractors include obvious-wrong-direction verbs (weaken when text says made widely accessible)"
+              ],
+              "example_stem": "Carte de visite photos helped to ______ photography: they made it easy and enjoyable for everyday people to have their pictures taken.",
+              "example_ids": ["04e4c51d", "5d2fd27d", "637d0878", "bdab32fc", "fa014d2d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Causal chain spans multiple clauses; the blank verb describes a researcher's or actor's intent",
+                "Correct verb is mid-register (rectify, mitigate, stimulate, indulge)",
+                "One distractor is a verb that names a related but distinct action (rectify vs. retain)"
+              ],
+              "example_stem": "To ______ this situation, Maggie Lena Walker chartered the St. Luke Penny Savings Bank in 1903.",
+              "example_ids": ["1c7fe9be", "2e8ab360", "d3104a68", "d8d1ecaa"]
+            },
+            "hard": {
+              "characteristics": [
+                "Causal mechanism is described abstractly or counterintuitively ('counterintuitive effect of ______ demand')",
+                "Correct verb is low-frequency academic (engendering, stymie, exploited, mitigate)",
+                "Distractors include surface-plausible verbs that fail on direction OR on agent-fit (e.g., 'praise' fails because subject is inanimate)"
+              ],
+              "example_stem": "The price of pop music cassette tapes rose dramatically, which had the counterintuitive effect of ______ demand: buyers thronged the market …",
+              "example_ids": ["4b54bbf0", "5444db38", "e26d23c4", "83fd3cf4", "79fe7550"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An explicit causal / mechanistic / functional relationship in the stimulus",
+              "The blank as a verb (or deverbal noun) naming the action",
+              "A directional cue (positive vs. negative outcome) that fixes the verb's polarity"
+            ],
+            "must_vary": [
+              "Domain (lab science, social science, history, arts)",
+              "Whether the actor is a person, an institution, or an inanimate process",
+              "Polarity of the relationship (promote vs. inhibit)"
+            ],
+            "common_bugs": [
+              "Picking a verb with wrong polarity (inhibit when context says promote)",
+              "Picking a verb that requires an animate agent for an inanimate subject (e.g., 'praise')",
+              "Weak-strong mismatch: 'rectify' when the stimulus only says 'address slightly'",
+              "Inserting two valid synonyms in the options"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Degree / magnitude / quality descriptor",
+          "description": "The blank is an adjective (or adjectival phrase) describing the quality, magnitude, or character of a noun, where the surrounding text supplies the measurable characteristic ('most ______', 'highly ______', 'extremely ______', 'a ______ process').",
+          "core_skill_demand": "Read the descriptive details and pick the adjective whose specific connotation captures the dominant property the text emphasizes — not just 'positive' vs. 'negative' but the right facet (e.g., persistent vs. impartial, arduous vs. haphazard).",
+          "example_originals": ["0afb2ac4", "9b2fbb2e", "a4ca92fd", "710799ae", "af4300b0", "a06c434d", "f99847ed", "f83f0aab"],
+          "frequency": { "easy": 15, "medium": 7, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Descriptive details directly entail the correct adjective ('great number and variety' → 'effective')",
+                "Distractors are obviously wrong adjectives",
+                "Adjective is a common positive/negative descriptor (effective, tranquil)"
+              ],
+              "example_stem": "This method of farming proved to be highly ______, as evidenced by the great number and variety of crops grown at that time.",
+              "example_ids": ["0afb2ac4", "9b2fbb2e", "74ee7737", "a4ca92fd"]
+            },
+            "medium": {
+              "characteristics": [
+                "Correct adjective requires nuance (competent vs. imaginative; integral vs. tangential)",
+                "Descriptive details support 2 of 4 options superficially",
+                "Adjective sits at the boundary between two qualities"
+              ],
+              "example_stem": "Cuttlefish appear to be surprisingly ______ at exercising self-control: in a 2021 study … these cephalopods routinely demonstrated restraint by delaying gratification …",
+              "example_ids": ["710799ae", "7b43c0cc", "1fa751f1", "85083d4d"]
+            },
+            "hard": {
+              "characteristics": [
+                "Adjective is academic/literary (arduous, opaque, peripheral, disparate, unassuming)",
+                "Stimulus suggests qualities by example/analogy rather than naming them",
+                "At least two distractors are sophisticated near-synonyms differing on a single feature (e.g., 'contentious' vs. 'arduous')"
+              ],
+              "example_stem": "The creation of Lotte Reiniger's 1926 animated film was ______ process. Over the course of three years, Reiniger painstakingly made more than 250,000 individual images …",
+              "example_ids": ["af4300b0", "a06c434d", "f99847ed", "f83f0aab", "a756aa95", "b35e2fdc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Adjective slot (with appropriate degree modifier when present: 'most', 'highly', 'a/an ______')",
+              "Descriptive support sentences that uniquely entail the correct adjective's facet"
+            ],
+            "must_vary": [
+              "The specific facet emphasized (effort, scope, character, attitude)",
+              "Domain"
+            ],
+            "common_bugs": [
+              "Choosing a generically-positive adjective when text specifies a particular positive facet",
+              "Degree mismatch (very-strong adjective when text supports only mild quality)",
+              "Distractors with same valence but different facets — ambiguous key",
+              "Forgetting to flip polarity when the degree modifier negates ('less ______', 'not particularly ______')"
+            ]
+          }
+        },
+        {
+          "id": "T7",
+          "name": "Two-word / prepositional collocation",
+          "description": "The blank is filled by a two-or-more word phrase consisting of a verb/adjective + preposition (or other relational word): 'contingent on', 'overshadowed by', 'demarcated from', 'mediated by', 'a proponent of', 'irrelevant to'. The task tests both the head word's meaning and its idiomatic preposition.",
+          "core_skill_demand": "Identify the relational meaning required (dependence, contrast, comparison, exclusion) AND verify the idiomatic preposition matches the head word in standard English.",
+          "example_originals": ["4830ab87", "4fa7e50e", "5a97d9cd", "5e57efec", "7afb470b", "3f753a8e", "f4166aae", "c5b1afe5"],
+          "frequency": { "easy": 2, "medium": 3, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Phrase uses common verbs/adjectives plus standard preposition ('inspired by', 'a proponent of')",
+                "Context strongly fixes the relationship direction"
+              ],
+              "example_stem": "Carmen Lomas Garza … is ______ direct experience, drawing from memories of her childhood …",
+              "example_ids": ["74ee7737"]
+            },
+            "medium": {
+              "characteristics": [
+                "Head word is mid-register (contingent on, depleted of, saturated with)",
+                "One distractor uses a similar head word with a different preposition (susceptible to vs. saturated with)"
+              ],
+              "example_stem": "What a photograph conveys is therefore largely ______ how it is balanced.",
+              "example_ids": ["4830ab87", "c5b1afe5", "f4166aae"]
+            },
+            "hard": {
+              "characteristics": [
+                "All four options are two-word phrases of identical syntactic shape",
+                "Correct head word is academic (mediated by, demarcated from, independent of, overshadowed by)",
+                "At least one distractor is a real English collocation that fails on directional polarity (e.g., 'predictive of' vs. 'independent of')",
+                "Frequently the stimulus presents a researcher's nuanced claim about how X relates to Y"
+              ],
+              "example_stem": "Nuisance costs … are largely ______ donation size, so charities will likely favor a few large donors over many small donors.",
+              "example_ids": ["4fa7e50e", "5a97d9cd", "5e57efec", "7afb470b", "3f753a8e", "1455b754"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two-or-more-word phrase options, all of identical syntactic shape (verb+prep or adj+prep)",
+              "Idiomatic prepositional pairings that are standard English",
+              "Context cue that fixes the relational direction"
+            ],
+            "must_vary": [
+              "Head word and preposition (vary both)",
+              "Direction of relationship"
+            ],
+            "common_bugs": [
+              "Mixing single-word and multi-word options — breaks the type",
+              "Picking a phrase with non-idiomatic preposition (e.g., 'consistent on' instead of 'consistent with')",
+              "Two options that are valid for the directional cue — ambiguous key",
+              "Reducing during cloning to a single-word answer — drifts to T3/T5/T6"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Negation / scarcity / counterfactual framing",
+          "description": "The blank appears inside a negated, comparative-less, or counterfactual frame: 'not ______', 'less ______', 'unlikely to be ______', 'lacked ______', 'a ______ of [studies]'. The student must select a word whose meaning, once negated by the frame, yields the relationship the stimulus describes.",
+          "core_skill_demand": "Mentally invert the frame to recover what is being denied or said to be scarce, then pick a word whose face value (before negation) matches that denied content.",
+          "example_originals": ["6a1194e8", "98364791", "b411eb09", "bbb77c84", "dba9eaf8", "e7d37666", "0462dac3"],
+          "frequency": { "easy": 14, "medium": 5, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Rare at easy difficulty; when present, the frame is a simple 'not ______' with strong context",
+                "Correct word is common and the polarity flip is one step"
+              ],
+              "example_stem": "(rare; if present, e.g., 'These plants are not ______ to deep water — they are harmed by it.')",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Frame uses 'not' or 'less' with mid-register vocabulary (atypical, innocuous)",
+                "Correct word's face value is the OPPOSITE of what the stimulus describes as actual"
+              ],
+              "example_stem": "Rydra Wong … is a poet, an occupation which, in Delany's work, is not ______: nearly a dozen of the characters are poets or writers.",
+              "example_ids": ["6a1194e8"]
+            },
+            "hard": {
+              "characteristics": [
+                "Frame is non-trivial: 'lacked ______ explanation', 'unlikely to be ______', 'paucity of', 'a ______ account', 'by no means ______'",
+                "Correct word is academic and its negation yields the precise descriptor (e.g., 'lacked a straightforward explanation' means the explanation is complex)",
+                "Distractors include words that fit only without the negation (a trap for readers who miss the frame)"
+              ],
+              "example_stem": "We are unlikely to ever have ______ account of ancient Egypt under Hatshepsut, as much of the evidence … was deliberately destroyed.",
+              "example_ids": ["0462dac3", "5dce6cab", "6a1194e8", "98364791", "b411eb09", "bbb77c84", "dba9eaf8", "e7d37666", "6c086e70"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An explicit negation, scarcity, or counterfactual frame around the blank",
+              "Stimulus content that, once the frame is applied, fixes the answer unambiguously"
+            ],
+            "must_vary": [
+              "The specific frame device (not / less / unlikely to be / paucity of / by no means)",
+              "Domain"
+            ],
+            "common_bugs": [
+              "Picking a word that fits the stimulus content directly, ignoring the negation (inverted key)",
+              "Removing the negation during cloning — collapses to T3 or T6",
+              "Stacking two negations carelessly so the reader cannot parse intended polarity",
+              "Selecting an option that fits the frame but contradicts the supporting evidence"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Across the bank, hard items in A2 almost always rely on either (a) low-frequency academic vocabulary (T3-hard, T6-hard, T7-hard) or (b) a syntactic frame the student must invert before applying meaning (T4-hard contrast, T7-hard relational phrases, T8-hard negation). Easy items concentrate in T3 (explicit gloss) and T5 (explicit causal link) with high-frequency vocabulary. Note: T8 (negation framing) is essentially absent at Easy difficulty — this is a hardness lever in itself. T2 (multi-word phrase meaning) is rare (only 3 originals) but clearly distinct from T1. A clone preserving aspect+type but inflating vocabulary register without preserving the underlying cognitive frame will produce false difficulty inflation; verifiers should check that the structural cue (gloss / contrast / cause / frame) is preserved at the targeted difficulty's specified strength."
+}

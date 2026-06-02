@@ -1,0 +1,39 @@
+{
+  "questionId": "075b29b0-s1",
+  "originalId": "075b29b0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mfenced><mrow><mn>7</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>9</mn></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>3</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>10</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>10</mn><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>10</mn><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>10</mn><msup><mi>x</mi><mn>6</mn></msup><mo>+</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>-</mo><mn>36</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Combining like terms: x\u00b3-terms give 7x\u00b3+3x\u00b3=10x\u00b3; the only x\u00b2-term is 2x\u00b2; the x-term is 4x; constants give 9+(\u22124)=5. Result: 10x\u00b3+2x\u00b2+4x+5.</p>",
+  "templateId": "equivalent-expressions.A1.T2.easy"
+}

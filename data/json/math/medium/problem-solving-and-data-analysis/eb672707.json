@@ -1,0 +1,41 @@
+{
+  "questionId": "eb672707",
+  "externalId": "46ab20b9-f632-4d8f-a085-104d8f446b46",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "scoreBand": 5,
+  "ibn": null,
+  "updateDate": 1691007959830,
+  "createDate": 1691007959830,
+  "scrapedAt": "2026-05-25T12:09:50.016838+00:00",
+  "type": "spr",
+  "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">tablespoons</span> are equivalent to <math alttext=\"14\"><mn>14</mn>\n</math> teaspoons? <math alttext=\"left parenthesis 3 teaspoons  equals 1 tablespoon right parenthesis\"><mfenced><mrow><mn>3</mn><mo>&#160;</mo><mtext>teaspoons</mtext><mo>=</mo><mn>1</mn><mo>&#160;</mo><mtext>tablespoon</mtext></mrow></mfenced></math></p>",
+  "answerOptions": null,
+  "keys": [
+    "14/3",
+    "4.666",
+    "4.667"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is&nbsp;<math alttext=\"StartFraction 14 Over 3 EndFraction\"><mfrac><mn>14</mn><mn>3</mn></mfrac></math>. It's given that <math alttext=\"3\"><mn>3</mn>\n</math> teaspoons is equivalent to <math alttext=\"1\"><mn>1</mn>\n</math> tablespoon. Therefore, <math alttext=\"14\"><mn>14</mn>\n</math> teaspoons is equivalent to&nbsp;<math alttext=\"left parenthesis 14 teaspoons right parenthesis left parenthesis StartFraction 1 tablespoon Over 3 teaspoons EndFraction right parenthesis\"><mfenced><mrow><mn>14</mn><mo>&nbsp;</mo><mtext>teaspoons</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&nbsp;</mo><mtext>tablespoon</mtext></mrow><mrow><mn>3</mn><mo>&nbsp;</mo><mtext>teaspoons</mtext></mrow></mfrac></mfenced></math>, or&nbsp;<math alttext=\"StartFraction 14 Over 3 EndFraction\"><mfrac><mn>14</mn><mn>3</mn></mfrac></math> tablespoons. Note that 14/3, 4.666, and 4.667 are examples of ways to enter a correct answer.</p>",
+  "raw": {
+    "type": "spr",
+    "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">tablespoons</span> are equivalent to <math alttext=\"14\"><mn>14</mn>\n</math> teaspoons? <math alttext=\"left parenthesis 3 teaspoons  equals 1 tablespoon right parenthesis\"><mfenced><mrow><mn>3</mn><mo>&#160;</mo><mtext>teaspoons</mtext><mo>=</mo><mn>1</mn><mo>&#160;</mo><mtext>tablespoon</mtext></mrow></mfenced></math></p>",
+    "keys": [
+      "14/3",
+      "4.666",
+      "4.667"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is&nbsp;<math alttext=\"StartFraction 14 Over 3 EndFraction\"><mfrac><mn>14</mn><mn>3</mn></mfrac></math>. It's given that <math alttext=\"3\"><mn>3</mn>\n</math> teaspoons is equivalent to <math alttext=\"1\"><mn>1</mn>\n</math> tablespoon. Therefore, <math alttext=\"14\"><mn>14</mn>\n</math> teaspoons is equivalent to&nbsp;<math alttext=\"left parenthesis 14 teaspoons right parenthesis left parenthesis StartFraction 1 tablespoon Over 3 teaspoons EndFraction right parenthesis\"><mfenced><mrow><mn>14</mn><mo>&nbsp;</mo><mtext>teaspoons</mtext></mrow></mfenced><mfenced><mfrac><mrow><mn>1</mn><mo>&nbsp;</mo><mtext>tablespoon</mtext></mrow><mrow><mn>3</mn><mo>&nbsp;</mo><mtext>teaspoons</mtext></mrow></mfrac></mfenced></math>, or&nbsp;<math alttext=\"StartFraction 14 Over 3 EndFraction\"><mfrac><mn>14</mn><mn>3</mn></mfrac></math> tablespoons. Note that 14/3, 4.666, and 4.667 are examples of ways to enter a correct answer.</p>",
+    "externalid": "46ab20b9-f632-4d8f-a085-104d8f446b46",
+    "correct_answer": [
+      "14/3",
+      "4.666",
+      "4.667"
+    ]
+  }
+}

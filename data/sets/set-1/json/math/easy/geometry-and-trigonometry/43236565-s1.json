@@ -1,0 +1,39 @@
+{
+  "questionId": "43236565-s1",
+  "originalId": "43236565",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line p intersects line q. Based on the figure, the angle marked x° and the angle marked 118° are vertical angles. Which of the following must be true about the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The value of x is equal to 118.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The value of x is less than 118.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The value of x is greater than 118.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The value of x cannot be determined.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Vertical angles formed by two intersecting lines are congruent, so x = 118.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A6.T1.easy"
+}

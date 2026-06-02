@@ -1,0 +1,39 @@
+{
+  "questionId": "042aa429-s1",
+  "originalId": "042aa429",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>If f(x) = x + 4 and g(x) = 3x, what is the value of 5f(3) - g(3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>32</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. f(3) = 3 + 4 = 7, so 5f(3) = 35. g(3) = 3(3) = 9. Therefore 5f(3) - g(3) = 35 - 9 = 26. The other choices result from common errors such as omitting the multiplier of 5, computing f(3) incorrectly, or subtracting in the wrong order.</p>",
+  "templateId": "linear-functions.A1.T5.medium"
+}

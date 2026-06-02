@@ -1,0 +1,25 @@
+{
+  "questionId": "adf60b28-s1",
+  "originalId": "adf60b28",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>h</i>(<i>x</i>) = 5<i>x</i> + 12. The function <i>h</i> gives the estimated height, in inches, of a bamboo plant <i>x</i> weeks after its height was first measured. Which statement is the best interpretation of 12 in this context?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The estimated height of the plant increased by 12 inches each week.</p>"},
+    {"id": "b", "content": "<p>The estimated height of the plant was 12 inches when it was first measured.</p>"},
+    {"id": "c", "content": "<p>The plant will be measured each week for 12 weeks.</p>"},
+    {"id": "d", "content": "<p>The estimated maximum height of the plant is 12 inches.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. In <i>h</i>(<i>x</i>) = 5<i>x</i> + 12, the constant 12 is <i>h</i>(0), the height at <i>x</i> = 0 weeks &mdash; when the plant was first measured.</p><p>Choice A confuses the constant with the rate of change (5). Choices C and D do not match the meaning of the constant.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A2.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "4b0c156b-s1",
+  "originalId": "4b0c156b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>In the linear function <em>h</em>, h(20) = 12 and h(18) = 17. Which equation defines <em>h</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>h(x) = -2/5 x + 20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>h(x) = -5/2 x + 62</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>h(x) = 5/2 x + 12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>h(x) = -5/2 x + 17</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Slope = (17 - 12)/(18 - 20) = 5/(-2) = -5/2. Using h(20) = 12 in h(x) = -5/2 x + b: 12 = -5/2 (20) + b = -50 + b, so b = 62. Therefore h(x) = -5/2 x + 62. Choice A uses the reciprocal slope. Choice C has the wrong sign on the slope. Choice D uses h(18) as the y-intercept instead of computing b correctly.</p>",
+  "templateId": "linear-functions.A3.T1.medium"
+}

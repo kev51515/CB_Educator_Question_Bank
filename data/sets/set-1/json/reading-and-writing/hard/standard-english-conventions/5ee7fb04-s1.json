@@ -1,0 +1,25 @@
+{
+  "questionId": "5ee7fb04-s1",
+  "originalId": "5ee7fb04",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": "<p>In traditional ensemble jazz, soloists generally avoid stepping outside the agreed harmonic ______ violate that framework risks unsettling the rhythm section and disrupting the call-and-response between musicians on stage.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>structure, to</p>"},
+    {"id": "b", "content": "<p>structure to</p>"},
+    {"id": "c", "content": "<p>structure. To</p>"},
+    {"id": "d", "content": "<p>structure. As to</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The period correctly marks the boundary between one complete sentence (\"In traditional&hellip;structure\") and another (\"To violate&hellip;stage\"), with the infinitive phrase \"To violate that framework\" functioning as the subject of the second clause.</p><p>Choice A is incorrect because it produces a comma splice between two independent clauses. Choice B is incorrect because it creates a run-on sentence: the two clauses are fused without punctuation or a conjunction. Choice D is incorrect because adding \"As\" before \"to\" produces an awkward sentence fragment beginning with the conjunction \"as,\" which has no main clause to attach to in the second sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

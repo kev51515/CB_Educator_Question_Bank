@@ -1,0 +1,39 @@
+{
+  "questionId": "6ab30ce3-s1",
+  "originalId": "6ab30ce3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle PQR is similar to triangle XYZ, where P corresponds to X and R corresponds to Z. Angles R and Z are right angles. If tan(P) = &radic;3 and XZ = 90, what is the length of segment XY?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>90&radic;3/3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90&radic;3/2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>90&radic;3</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Since triangles PQR and XYZ are similar with right angles at R and Z, tan(X) = tan(P) = &radic;3, meaning the angle at X is 60&deg;. In right triangle XYZ with right angle at Z, tan(X) = YZ/XZ = &radic;3, so YZ = 90&radic;3. The hypotenuse XY = &radic;(XZ&sup2; + YZ&sup2;) = &radic;(8100 + 24300) = &radic;32400 = 180. Choice A is XZ &middot; (&radic;3/3); choice C is XZ &middot; (&radic;3/2); choice D is the long leg YZ, not the hypotenuse.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A3.T5.hard"
+}

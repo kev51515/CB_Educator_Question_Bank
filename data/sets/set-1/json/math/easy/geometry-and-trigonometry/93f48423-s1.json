@@ -1,0 +1,39 @@
+{
+  "questionId": "93f48423-s1",
+  "originalId": "93f48423",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the area, in square inches, of a rectangle with a length of 8 inches and a width of 5 inches?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>26</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>64</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The area of a rectangle is A = lw, so A = 8 \u00d7 5 = 40 square inches. Choice A is the sum; choice C is the perimeter.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

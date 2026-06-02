@@ -1,0 +1,39 @@
+{
+  "questionId": "97ca2cda-s1",
+  "originalId": "97ca2cda",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In the early days of streaming video in the 2000s, many people thought that online video services would rely on the financial support of subscribers, much like cable television did. But subscribers hesitated to commit to a new service, <u>particularly at a time when most households had limited broadband internet, which made smooth video playback unreliable.</u> Streaming companies, like Netflix, needed to convince subscribers to pay for their service despite not knowing whether the technology would deliver a consistent viewing experience.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined phrase in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It compares the beginnings of cable television with the beginnings of streaming video.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes how streaming companies attempted to convince subscribers to sign up.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It explains why a type of streaming content was popular at the time.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It identifies a specific reason behind some subscribers' hesitance to commit to streaming services.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says subscribers were reluctant to commit to streaming services. The underlined phrase identifies a specific reason for that reluctance\u2014limited broadband internet that made playback unreliable.</p><p>Choice A is incorrect. The text mentions cable as background but doesn't compare its beginnings to streaming's. Choice B is incorrect. The underlined phrase doesn't describe persuasion attempts. Choice C is incorrect. The phrase doesn't discuss popular content.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

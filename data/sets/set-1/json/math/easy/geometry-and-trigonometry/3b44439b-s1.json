@@ -1,0 +1,39 @@
+{
+  "questionId": "3b44439b-s1",
+  "originalId": "3b44439b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>p</em> and <em>q</em> are parallel and are cut by a transversal. One same-side interior angle (between the two parallel lines, on one side of the transversal) measures 136&deg;, and the other same-side interior angle measures <em>x</em>&deg;. What is the value of <em>x</em> + 136?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>44</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>136</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>272</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. When two parallel lines are cut by a transversal, same-side interior angles are supplementary, so their measures sum to 180&deg;. Therefore <em>x</em> + 136 = 180.</p><p>Choice A is incorrect because 44 is the value of <em>x</em> itself (180 - 136), not <em>x</em> + 136. Choice C is incorrect because 136 treats the two same-side interior angles as equal rather than supplementary. Choice D is incorrect because 272 = 2(136) treats both angles as 136&deg;.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "lines-angles-and-triangles.A1.T2.easy"
+}

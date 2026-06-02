@@ -1,0 +1,39 @@
+{
+  "questionId": "f8f79e11-s1",
+  "originalId": "f8f79e11",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A naturalist asked a random sample of campers how many hours they spent outdoors during their stay. Based on the responses, the estimated mean was <math><mn>7.2</mn></math> hours, with an associated margin of error of <math><mn>0.4</mn></math> hours. Which of the following is the best conclusion from these data?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It is plausible that the mean number of hours spent outdoors for all campers is between <math><mn>6.8</mn></math> and <math><mn>7.6</mn></math> hours.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is likely that all campers spent between <math><mn>6.8</mn></math> and <math><mn>7.6</mn></math> hours outdoors.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is likely that most campers spent exactly <math><mn>7.2</mn></math> hours outdoors.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It is not possible that any camper spent less than <math><mn>5</mn></math> hours outdoors.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The margin of error provides a plausible range for the mean of the population: 7.2 \u00b1 0.4 gives 6.8 to 7.6 hours.</p><p>Choice B confuses an interval for the population mean with the range of individual values. Choice C inappropriately claims most campers spent the exact mean. Choice D draws an impossibility claim unsupported by the data.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium"
+}

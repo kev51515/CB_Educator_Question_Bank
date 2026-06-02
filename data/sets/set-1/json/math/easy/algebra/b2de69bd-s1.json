@@ -1,0 +1,39 @@
+{
+  "questionId": "b2de69bd-s1",
+  "originalId": "b2de69bd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A4.T6.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table below shows three pairs of <i>x</i> and <i>y</i> values.</p><table border=\"1\"><tr><th><i>x</i></th><th><i>y</i></th></tr><tr><td>1</td><td>5</td></tr><tr><td>2</td><td>8</td></tr><tr><td>3</td><td>11</td></tr></table><p>Which of the following equations could represent the relationship between <i>x</i> and <i>y</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = 2<i>x</i> + 3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = <i>x</i> + 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = 3<i>x</i> + 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = 5<i>x</i></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The change in <i>y</i> per unit change in <i>x</i> is 3 (since <i>y</i> goes 5 &rarr; 8 &rarr; 11), so the slope is 3. Using (1, 5): 5 = 3(1) + <i>b</i>, so <i>b</i> = 2. Therefore <i>y</i> = 3<i>x</i> + 2.</p><p>Choices A, B, and D yield incorrect values when the listed <i>x</i> values are substituted.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

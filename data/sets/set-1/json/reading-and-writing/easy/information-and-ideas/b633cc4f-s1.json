@@ -1,0 +1,39 @@
+{
+  "questionId": "b633cc4f-s1",
+  "originalId": "b633cc4f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Few animals are known to use tools: among them are sea otters, chimpanzees, and certain crows. But in March 2023 at a marine sanctuary off the coast of Western Australia, marine biologist Hannah Pereira observed a bottlenose dolphin pressing a folded sea sponge over a sharp rock spine to scrape it clean. Dolphins had never been seen using a sponge in this way before. Behavioral ecologist Vincent Marlow, who studies bottlenose dolphins, believes the dolphin may have been trying to dislodge a hidden fish or that it may simply have been playing with the sponge.</p>",
+  "stem": "<p>Which choice best states the main topic of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>How bottlenose dolphins defend their territory against other predators</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Differences between bottlenose dolphins and the animals known to use tools</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Marine biology research off the coast of Western Australia</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A previously unobserved behavior of bottlenose dolphins</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text opens by noting that few animals are known to use tools and then focuses on Pereira's observation of a dolphin using a sponge in a way that had never been seen before, which is the main topic.</p><p>Choice A is incorrect; the text does not discuss how dolphins defend territory. Choice B is incorrect; the text does not compare dolphins with other tool-using animals beyond mentioning them in passing. Choice C is incorrect; marine biology research as a general topic is incidental to the specific behavior described.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T3.easy"
+}

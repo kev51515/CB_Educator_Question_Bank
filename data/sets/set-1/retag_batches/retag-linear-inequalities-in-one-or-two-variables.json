@@ -1,0 +1,104 @@
+[
+  {
+    "id": "dd875c97-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium",
+    "verdict": "aspect_drift",
+    "detail": "A2.T2 must produce a numeric extremum, but this clone asks 'which inequality represents...' and the keyed answer is an inequality (15x+40y\u22642950). This is an A1.T1 two-variable budget setup, not A2.T2."
+  },
+  {
+    "id": "0b221d05-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A4 (match graph to inequality) but stem has no graph; it gives a textual inequality y<2x\u22123 and asks which ordered pair satisfies it. This is A3.T1 (point satisfies inequality)."
+  },
+  {
+    "id": "6c71f3ec-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T2 (answer is a numeric max/min), but the clone's answer form is an inequality on s, not a number. This fits A1.T3 (multi-step contextual setup with percent overhead) or A5.T2, not A2.T2."
+  },
+  {
+    "id": "68c5c81a-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.hard",
+    "verdict": "type_drift",
+    "detail": "A5.T2 expects deriving an equivalent inequality or a numeric extremum from a given inequality/system. Clone asks for the interpretation of a single term (13q) in context, which is a coefficient-meaning item, not a solve/interpret-equivalent task."
+  },
+  {
+    "id": "e8f9e117-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A1.T3 (answer should be an inequality) but stem asks 'what is the greatest number m' with numeric SPR answer 24 \u2014 this fits A2 (solve for numeric extremum), not A1."
+  },
+  {
+    "id": "208626df-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy",
+    "verdict": "type_drift",
+    "detail": "A3.T1 must_preserve: 'candidate pairs as the answer form' and 'requirement to satisfy every listed inequality'. Clone instead presents a single (L,W) pair and asks for interpretation; answer choices are sentences, not candidate ordered pairs. This is an interpretation task, not a 'point satisfies inequality' selection."
+  },
+  {
+    "id": "b64e2c7f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A1.T2 (range/bound on a single variable, answer = inequality). Clone asks for the minimum numeric rise (3.4\u00b0C) \u2014 a numerical extremum. This is an A2.T1 'have/need' task, not A1.T2. A1 must return an inequality; this returns a number."
+  },
+  {
+    "id": "f224df07-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone has two unknown counts with two competing constraints (budget \u2264470 AND minimum count \u22658) requiring algebraic solving of a system \u2014 this matches the A2.T2.hard lever, not medium."
+  },
+  {
+    "id": "c17d9ba9-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone substitutes y=5 to compute a single numeric bound (x=12). Per A5.T1, this is the hard lever ('requires substituting a specific value... answer is a single number'); medium should return an inequality form."
+  },
+  {
+    "id": "9e5863bd-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A1.T2 requires multiplying a per-unit range by a fixed quantity, or composing rates. This clone is a direct compound inequality on the same stated min/max with no rate conversion \u2014 matches easy lever, not medium."
+  },
+  {
+    "id": "ecca0603-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone is a system of two inequalities with three rows per table \u2014 both characteristics of the A3.T2.hard lever. Medium requires a single inequality with two rows per table."
+  },
+  {
+    "id": "e723bd67-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses 3x\u2212y>50 with three rows per table \u2014 the larger-coefficient/3-row pattern characterizes A3.T2.hard, not medium (which is small positive-slope, two rows)."
+  },
+  {
+    "id": "f2bbd43d-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone has a partially specified point (x, 22) requiring elimination of options against the system \u2014 this is the A3.T1.hard lever, not medium (medium uses fully specified candidate pairs)."
+  },
+  {
+    "id": "ee2f611f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T2 requires two competing constraints, percent overhead, or binding-constraint identification among multiple. Clone has a single constraint with three rate options; selecting the max fare is a one-step solve closer to medium difficulty."
+  },
+  {
+    "id": "541bef2f-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires a partially specified point (one coordinate symbolic) or a region of valid y-coordinates. Clone uses four fully specified ordered pairs, matching the medium A3.T1 difficulty lever."
+  },
+  {
+    "id": "a049f400-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T2 requires larger coefficients (e.g., 13x, 2x-y>883) or a 2-inequality system. Clone uses y<4x+3 with small slope 4 and a single inequality, matching the medium A3.T2 lever."
+  },
+  {
+    "id": "f8ff3249-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T2 requires larger coefficients or a 2-inequality system. Clone uses y<8x+5 with small slope 8 and a single inequality, matching the medium A3.T2 lever."
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "6b8a7c74-s1",
+  "originalId": "6b8a7c74",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A widely recognized social norm of gift giving holds that the amount of time spent obtaining a present is taken as a measure of how thoughtful the gift is. Consumer psychologists Aiko Tanaka, Maria Delgado, and Rohan Kapoor examined this norm in their studies of digital flower deliveries, noting that while recipients usually view same-day floral deliveries arranged through a smartphone app (which can be ordered with a few taps from anywhere) as functionally equivalent or even superior to deliveries arranged through a traditional florist (which often require a phone call or an in-person visit), 91% of gift givers in the study chose the traditional-florist option when sending flowers for important occasions. The researchers&rsquo; data lead them to conclude that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>gift givers likely overestimate how much effort recipients spend redeeming traditional florist deliveries and therefore mistakenly assume that recipients will view those deliveries as inconvenient.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>traditional florist deliveries are likely less desirable to recipients than app-based deliveries are because of a perception that traditional deliveries require less effort to send.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>traditional florist deliveries are likely preferred by recipients because their physical, in-person nature offers a stronger psychological sense of personal attention.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>gift givers likely perceive app-based deliveries as requiring relatively little effort to send and therefore wrongly assume that recipients will appreciate them less than traditional florist deliveries.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the discussion. The text establishes the norm that recipients judge thoughtfulness by the time spent obtaining a gift. It also notes that recipients view app-based deliveries as functionally equivalent or even superior, yet 91% of givers still pick the traditional-florist option. The reconciliation: givers wrongly project the norm onto recipients, assuming that the lower-effort app delivery will be seen as less thoughtful, even though recipients themselves do not see it that way.</p><p>Choice A is incorrect because the question is about the effort to send, not to redeem, and recipients don't generally find traditional florist deliveries inconvenient. Choice B is incorrect because the text says recipients view app-based deliveries as equivalent or even superior to traditional ones, so the premise that traditional deliveries are less desirable contradicts the data. Choice C is incorrect because the text indicates recipients see the two options as functionally equivalent or app-based as superior, which is the opposite of recipients preferring traditional florist deliveries.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T11.hard"
+}

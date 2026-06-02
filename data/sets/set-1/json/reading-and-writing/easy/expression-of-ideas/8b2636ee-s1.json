@@ -1,0 +1,39 @@
+{
+  "questionId": "8b2636ee-s1",
+  "originalId": "8b2636ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Mei-Lin Tanaka is a scientist.</li>\n<li>Tanaka studies coral reefs.</li>\n<li>A scientist who studies coral reefs is called a coral reef ecologist.</li>\n<li>Staghorn, brain, and elkhorn are examples of coral species.</li>\n</ul>",
+  "stem": "<p>The student wants to identify what type of scientist Tanaka is. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Brain coral is a type of coral species.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Some scientists study staghorn, brain, and elkhorn corals.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Tanaka is a coral reef ecologist.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>There are scientists who study coral reefs.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The sentence identifies the type of scientist Tanaka is, noting that she is a coral reef ecologist.</p><p>Choice A is incorrect. The sentence provides an example of a type of coral; it doesn't identify what type of scientist Tanaka is. Choice B is incorrect. The sentence indicates types of corals that some scientists study; it doesn't identify what type of scientist Tanaka is. Choice D is incorrect. While the sentence states that some scientists study coral reefs, it doesn't identify Tanaka as this type of scientist.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A5.T14.easy"
+}

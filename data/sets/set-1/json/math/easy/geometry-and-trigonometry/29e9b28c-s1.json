@@ -1,0 +1,39 @@
+{
+  "questionId": "29e9b28c-s1",
+  "originalId": "29e9b28c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The lengths of the three sides of a triangle are p, q, and r. The triangle has a perimeter of 31 units. If p = 12 units and q = 8 units, what is the value of r, in units?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>11</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The perimeter is the sum of the three side lengths, so p + q + r = 31. Substituting p = 12 and q = 8 gives 12 + 8 + r = 31, so r = 11.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T2.easy"
+}

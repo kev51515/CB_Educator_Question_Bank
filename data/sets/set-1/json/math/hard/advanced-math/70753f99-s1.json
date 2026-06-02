@@ -1,0 +1,25 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "70753f99-s1",
+  "originalId": "70753f99",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = (<i>x</i> &minus; 11)(<i>x</i> + 3). The graph of <i>f</i> in the <i>xy</i>-plane is a parabola. Which of the following intervals contains the <i>x</i>-coordinate of the vertex of the graph of <i>f</i>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>(1, 3)</p>"},
+    {"id": "b", "content": "<p>(7, 9)</p>"},
+    {"id": "c", "content": "<p>(3, 5)</p>"},
+    {"id": "d", "content": "<p>(5, 7)</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The <i>x</i>-intercepts of the parabola are <i>x</i> = 11 and <i>x</i> = &minus;3. By symmetry, the <i>x</i>-coordinate of the vertex is the average of the <i>x</i>-intercepts: <i>x</i> = (11 + (&minus;3))/2 = 8/2 = 4. The value 4 lies strictly inside the interval (3, 5).</p><p>Choice A and Choice D do not contain 4. Choice B is far from the axis of symmetry.</p>",
+  "generatedAt": "2026-05-27T00:00:15Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

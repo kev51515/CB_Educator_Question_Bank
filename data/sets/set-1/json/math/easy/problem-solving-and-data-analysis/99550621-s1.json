@@ -1,0 +1,39 @@
+{
+  "questionId": "99550621-s1",
+  "originalId": "99550621",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Riya is planning an event in a 4,200-square-foot hall. If there should be at least 6 square feet per person, what is the maximum number of people that could attend this event?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>700</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>600</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>25,200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4,194</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The maximum number of people = total area \u00f7 area per person = 4,200 \u00f7 6 = 700.</p><p>Choice B is incorrect and may result from a division error. Choice C is incorrect; it multiplies instead of dividing. Choice D is incorrect; it subtracts instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

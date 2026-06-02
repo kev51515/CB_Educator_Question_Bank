@@ -1,0 +1,22 @@
+{
+  "questionId": "ff501705-s1",
+  "originalId": "ff501705",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>5/2 y &minus; 1/3 x = 3/4 &minus; 5/2 y</p>\n<p>2/3 x + 5/2 = ny + 13/2</p>\n<p>In the given system of equations, n is a constant. If the system has no solution, what is the value of n?</p>",
+  "answerOptions": null,
+  "keys": [
+    "10"
+  ],
+  "rationale": "<p>The correct answer is 10. Rewrite the first equation: 5y &minus; (1/3)x = 3/4. Multiply by 12: &minus;4x + 60y = 9. Rewrite the second equation: (2/3)x &minus; ny = 13/2 &minus; 5/2 = 3. Multiply by 3: 2x &minus; 3ny = 9. To make these lines parallel (no solution), the ratio of x-coefficients must equal the ratio of y-coefficients, but the ratio of constants must differ. Setting &minus;4/2 = 60/(&minus;3n) gives &minus;2 = &minus;20/n, so n = 10. With n = 10, the equations have proportional coefficients but different constants, so the system has no solution.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

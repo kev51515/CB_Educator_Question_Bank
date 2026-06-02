@@ -1,0 +1,22 @@
+[
+  {"id": "8e528129-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.medium", "verdict": "ok"},
+  {"id": "d28c29e1-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium", "verdict": "ok"},
+  {"id": "8917ce38-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium", "verdict": "ok"},
+  {"id": "ec787383-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium", "verdict": "ok"},
+  {"id": "b4912cc5-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium", "verdict": "ok"},
+  {"id": "e21d10a7-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A5.T4.medium", "verdict": "ok"},
+  {"id": "873d2838-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium", "verdict": "ok"},
+  {"id": "939c46d1-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium", "verdict": "type_drift", "detail": "Stem provides two quantities (32 oz pitcher, 128 oz gallon) but solving requires only a single division 128/32=4, not a chained conversion. Should be A1.T1, not A1.T3. Also the gallon-to-ounce equivalence is given explicitly in the stem rather than as the hard variant's implicit common-knowledge fact."},
+  {"id": "73ddfdac-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium", "verdict": "ok"},
+  {"id": "f6cbb04a-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.medium", "verdict": "ok"},
+  {"id": "c3d78831-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.medium", "verdict": "ok"},
+  {"id": "568bc2a4-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium", "verdict": "ok"},
+  {"id": "eb672707-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.medium", "verdict": "ok"},
+  {"id": "61b87506-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T3.medium", "verdict": "ok"},
+  {"id": "674a4084-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium", "verdict": "ok"},
+  {"id": "1b403590-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.medium", "verdict": "ok"},
+  {"id": "825b7490-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.medium", "verdict": "ok"},
+  {"id": "445dd032-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.medium", "verdict": "ok"},
+  {"id": "51c9d65f-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T3.medium", "verdict": "ok"},
+  {"id": "1180401d-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium", "verdict": "ok"}
+]

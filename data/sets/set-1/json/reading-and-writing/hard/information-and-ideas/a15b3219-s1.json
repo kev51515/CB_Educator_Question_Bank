@@ -1,0 +1,25 @@
+{
+  "questionId": "a15b3219-s1",
+  "originalId": "a15b3219",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<p>[Bar graph: Universities&rsquo; Responses to Inquiries about Potential Tuition Discounts for a Hypothetical Donor-Funded Scholarship. Six bars total, grouped into three pairs. Pair 1 (received inquiry / responded to inquiry): announcement date before next board meeting—1240 received, 730 responded; announcement date after next board meeting—1235 received, 720 responded. Pair 2 (responded / offered discount): before next board meeting—730 responded, 410 offered; after next board meeting—720 responded, 405 offered.]</p>\n<p>Education economists Felipe Cardona and Ines Lehmann hypothesized that universities would be more eager to offer tuition discounts to attract a donor-funded scholarship if the resulting publicity could be announced before the next public board meeting (when board members would be politically sensitive to enrollment perceptions). To test this hypothesis, the team sent inquiries to 2,475 universities; in roughly half of these inquiries, the planned announcement date was given as &ldquo;before the next public board meeting,&rdquo; and in the other half, &ldquo;after the next public board meeting.&rdquo; The team recorded how many universities responded and how many of those responses offered a discount.</p>",
+  "stem": "<p>Which choice best describes data from the graph that weaken the team&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>A large majority of the universities that received an inquiry mentioning plans for an announcement before the next board meeting did not respond to the inquiry.</p>"},
+    {"id": "b", "content": "<p>Only around half the universities that responded to inquiries mentioning plans for an announcement before the next board meeting offered discounts.</p>"},
+    {"id": "c", "content": "<p>The proportion of universities that responded to the inquiry or offered discounts did not substantially differ across the announcement-timing conditions.</p>"},
+    {"id": "d", "content": "<p>Of the universities that received an inquiry mentioning plans for an announcement date after the next board meeting, more than 1,200 did not respond.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the team&rsquo;s hypothesis predicts a difference between the two announcement-timing conditions&mdash;more eagerness to offer discounts when an announcement could occur before the next board meeting. The graph shows nearly identical response rates (730 vs. 720) and nearly identical discount-offer rates (410 vs. 405) across conditions, so the lack of a substantial difference is precisely the result that weakens the hypothesis.</p><p>Choice A is incorrect because describing the response rate in only one condition does not by itself contradict a comparative hypothesis. Choice B is incorrect because it characterizes the discount rate in one condition without contrasting it against the other. Choice D is incorrect because nonresponse in the &ldquo;after&rdquo; condition mirrors nonresponse in the &ldquo;before&rdquo; condition, so it neither weakens nor supports the timing-specific hypothesis on its own.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

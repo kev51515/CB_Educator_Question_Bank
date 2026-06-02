@@ -1,0 +1,39 @@
+{
+  "questionId": "bf8d843e-s1",
+  "originalId": "bf8d843e",
+  "templateId": "right-triangles-and-trigonometry.misc.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, one of the non-right angles measures <math><mn>60</mn><mo>&#176;</mo></math> and the length of the hypotenuse is <math><mn>12</mn></math>. What is the length of the side opposite the <math><mn>30</mn><mo>&#176;</mo></math> angle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>6</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>4</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>6</mn><msqrt><mn>3</mn></msqrt></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>12</mn><msqrt><mn>3</mn></msqrt></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In a 30-60-90 right triangle, the side opposite the 30° angle is half the length of the hypotenuse. So that side is 12/2 = 6.</p><p>Choice B is 12/3. Choice C is the side opposite 60°. Choice D is 12√3 (an unrelated multiple).</p>",
+  "generatedAt": "2026-05-26T01:47:17Z"
+}

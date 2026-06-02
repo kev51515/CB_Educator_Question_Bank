@@ -1,0 +1,22 @@
+{
+  "questionId": "1a621af4-s1",
+  "originalId": "1a621af4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A number x is at most 5 less than 4 times the value of y. If the value of y is -3, what is the greatest possible value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-17"
+  ],
+  "rationale": "<p>The statement gives x \u2264 4y - 5. When y = -3, 4y - 5 = -12 - 5 = -17. So x \u2264 -17 and the greatest value of x is -17.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.hard"
+}

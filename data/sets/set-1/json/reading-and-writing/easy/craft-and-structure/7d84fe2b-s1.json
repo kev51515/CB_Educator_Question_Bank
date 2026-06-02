@@ -1,0 +1,39 @@
+{
+  "questionId": "7d84fe2b-s1",
+  "originalId": "7d84fe2b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Marine biologists like Sylvia Earle and Edith Widder spend much of their time <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> what is hidden in the deep ocean: using submersibles and underwater cameras, they carefully study the behavior of bioluminescent creatures that live far below the surface.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>studying</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>choosing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>designing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>deciding</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"studying\" matches the idea of using submersibles to observe deep-sea creatures. Choice B is incorrect because the text describes ongoing observation, not selection. Choice C is incorrect because the biologists aren\u2019t designing the creatures. Choice D is incorrect because deciding doesn\u2019t fit a research context.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

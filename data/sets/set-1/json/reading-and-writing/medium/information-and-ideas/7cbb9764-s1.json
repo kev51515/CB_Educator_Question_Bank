@@ -1,0 +1,25 @@
+{
+  "questionId": "7cbb9764-s1",
+  "originalId": "7cbb9764",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A2.T3.medium",
+  "stimulus": "<p>Sculptor and ceramicist Toshiko Takaezu (1922&ndash;2011) is recognized for using her ceramic vessels and bronzes to evoke the natural world. In a paper for an art history class, a student claims that Takaezu had a distinctive gift for fusing techniques and influences drawn from different artistic traditions in a single work.</p>",
+  "stem": "<p>Which quotation from a scholar describing Takaezu&rsquo;s work would best support the student&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;In her closed-form vessel <em>Mountain Memory</em>, Takaezu joined a Japanese tea-ceremony glazing technique with the layered chromatic logic of American Abstract Expressionist painters such as Mark Rothko.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;In her series <em>Star Pillars</em>, Takaezu arranged tall, sealed ceramic columns in groups across a gallery floor, inviting viewers to walk among them.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;Made in the 1990s, Takaezu&rsquo;s bronze bell <em>Sound Form</em>, cast to a height of roughly four feet, remains a touchstone of her late career and continues to attract scholarly attention today.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;A particular group of Takaezu&rsquo;s smaller works, produced after she returned from Japan, was thrown on the potter&rsquo;s wheel and depicts forms inspired by ripening fruit.&rdquo;</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it presents a quotation directly supporting the student&rsquo;s claim that Takaezu fused techniques and influences from different traditions in a single work. The quotation explains that <em>Mountain Memory</em> combines a Japanese tea-ceremony glazing technique with the chromatic strategies of American Abstract Expressionism. Choice B is incorrect because it discusses arrangement of works in a gallery, not the fusion of distinct traditions or techniques. Choice C is incorrect because it describes the bell&rsquo;s dimensions and reputation but does not identify any fusion of traditions or techniques. Choice D is incorrect because the quotation describes throwing technique and subject matter but does not refer to multiple distinct artistic traditions being fused.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

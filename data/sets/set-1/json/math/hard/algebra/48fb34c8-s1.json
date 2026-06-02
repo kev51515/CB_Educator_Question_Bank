@@ -1,0 +1,39 @@
+{
+  "questionId": "48fb34c8-s1",
+  "originalId": "48fb34c8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y > 11x - 24. For which of the following tables are all the values of x and their corresponding values of y solutions to the given inequality?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>x: 0, 1, 2; y: -25, -14, -3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x: 0, 1, 2; y: -24, -13, -2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x: 0, 1, 2; y: -22, -10, 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x: 0, 1, 2; y: -30, -19, -10</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. We need y > 11x - 24 for each row. At x = 0, 11x - 24 = -24, and y = -22 > -24 \u2713. At x = 1, 11x - 24 = -13, and y = -10 > -13 \u2713. At x = 2, 11x - 24 = -2, and y = 2 > -2 \u2713.</p><p>Choice A: at x = 0, y = -25 is NOT > -24. Choice B: at x = 0, y = -24 is NOT > -24 (strict inequality). Choice D: at x = 0, -30 is NOT > -24.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard"
+}

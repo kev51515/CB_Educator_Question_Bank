@@ -1,0 +1,39 @@
+{
+  "questionId": "fdfc90e4-s1",
+  "originalId": "fdfc90e4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows a line of best fit with slope 0.5 passing through (26, 4). At <em>x</em> = 32, the actual data point has <em>y</em> = 8.5. Which of the following is closest to the difference between the actual <em>y</em>-value and the value predicted by the line of best fit at <em>x</em> = 32?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3.0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The line predicts y at x = 32 as 4 + 0.5\u00b7(32 \u2212 26) = 4 + 3 = 7. Actual minus predicted: 8.5 \u2212 7 = 1.5.</p><p>Choices B, C, and D are common arithmetic miscalculations.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium"
+}

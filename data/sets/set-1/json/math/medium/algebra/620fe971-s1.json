@@ -1,0 +1,39 @@
+{
+  "questionId": "620fe971-s1",
+  "originalId": "620fe971",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The equation y = -20x + 130 represents the number of boxes <em>y</em> remaining to be delivered <em>x</em> hours after a delivery truck began its route. The graph of this equation in the <em>xy</em>-plane is a line. What is the best interpretation of the <em>x</em>-intercept in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The truck started its route with about 6.5 boxes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The truck will have delivered all the boxes in 6.5 hours.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The truck delivers about 20 boxes per hour.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The truck started with 130 boxes to deliver.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The x-intercept is where y = 0: 0 = -20x + 130, so x = 6.5. Since y is the number of boxes remaining, x = 6.5 hours is when no boxes remain \u2014 all have been delivered. Choice A misreads which axis is which. Choice C describes the slope's magnitude. Choice D describes the y-intercept, not the x-intercept.</p>",
+  "templateId": "linear-functions.A2.T3.medium"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "1dd13816-s1",
+  "originalId": "1dd13816",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>(7y<sup>4</sup> \u2212 2) \u2212 (\u22123y<sup>4</sup> + 9) The given expression is equivalent to cy<sup>4</sup> \u2212 11, where c is a constant. What is the value of c?</p>",
+  "answerOptions": null,
+  "keys": [
+    "10"
+  ],
+  "rationale": "<p>Distributing the negative sign: 7y<sup>4</sup> \u2212 2 + 3y<sup>4</sup> \u2212 9 = (7 + 3)y<sup>4</sup> + (\u22122 \u2212 9) = 10y<sup>4</sup> \u2212 11. Comparing to cy<sup>4</sup> \u2212 11, we have c = 10.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A4.T9.medium"
+}

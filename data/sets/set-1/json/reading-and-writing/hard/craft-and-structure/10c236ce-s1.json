@@ -1,0 +1,25 @@
+{
+  "questionId": "10c236ce-s1",
+  "originalId": "10c236ce",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Genomic databases such as the 1000 Genomes Project archive millions of human DNA sequences that can be queried for the empirical study of how common particular genetic variants actually are. If one has a ______ that variants of a given gene are widespread among people of a certain ancestry, for example, an analysis of the archive can support that claim by showing the variant's frequency to be elevated in the relevant population.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>recognition</p>"},
+    {"id": "b", "content": "<p>supposition</p>"},
+    {"id": "c", "content": "<p>synopsis</p>"},
+    {"id": "d", "content": "<p>scheme</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The blank names something that an analysis can then \"support\"&mdash;in other words, a tentative claim or conjecture awaiting evidence. \"Supposition\" denotes precisely such a tentative claim, and it fits the example of a hypothesis about how common a variant is.</p><p>Choice A is incorrect because a \"recognition\" already implies acknowledged truth; a database analysis would not need to support it. Choice C is incorrect because a \"synopsis\" is a summary, not something to be empirically tested. Choice D is incorrect because a \"scheme\" suggests a plan of action, not a tentative claim about frequency.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

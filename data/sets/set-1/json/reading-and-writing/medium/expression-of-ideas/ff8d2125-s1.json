@@ -1,0 +1,37 @@
+{
+  "questionId": "ff8d2125-s1",
+  "originalId": "ff8d2125",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A1.T3.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Iridescence is a phenomenon in which certain butterfly wings appear to shift in color when viewed from different angles.</li>\n<li>To explain how this happens, biologist Liana Voss proposes the structural-grating hypothesis.</li>\n<li>According to Voss&rsquo;s hypothesis, microscopic ridges on the wing scales scatter light to produce the color shift.</li>\n<li>Chemist Daichi Mori posits the pigment-layer hypothesis.</li>\n<li>According to Mori&rsquo;s hypothesis, thin pigment layers within the scales selectively absorb and re-emit light, producing the color shift.</li>\n</ul>",
+  "stem": "<p>The student wants to compare the causes of iridescence proposed in the two hypotheses. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Both Voss and Mori have proposed hypotheses to explain what causes iridescence in butterfly wings.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mori posits the pigment-layer hypothesis, whereas Voss proposes an alternative hypothesis.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Voss&rsquo;s structural-grating hypothesis proposes that microscopic ridges on butterfly wing scales scatter light, resulting in the apparent color shift that defines iridescence.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>While Voss proposes that iridescence is caused by microscopic ridges on wing scales scattering light, Mori posits that it occurs when thin pigment layers in the scales selectively absorb and re-emit light.</p>"
+    }
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The sentence compares the two proposed causes of iridescence, noting the hypotheses&rsquo; differences: Voss cites microscopic ridges scattering light, while Mori cites pigment layers absorbing and re-emitting light.</p><p>Choice A is incorrect. The sentence merely identifies the existence of two hypotheses for iridescence; it doesn&rsquo;t compare the causes proposed by each. Choice B is incorrect. The sentence merely indicates that there are two different hypotheses for iridescence; it doesn&rsquo;t compare the causes proposed by each. Choice C is incorrect. The sentence merely explains one hypothesis for iridescence; it doesn&rsquo;t compare two hypotheses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "08b28c1a-s1",
+  "originalId": "08b28c1a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>A researcher designed a study inspired by reports that solo travelers sometimes feel more capable and more cheerful after taking a short trip on their own. The researcher recruited a group of participants and had each one spend an afternoon hiking alone on a marked trail in a nearby state park. As soon as the participants returned, each one completed a survey about the experience. Based on the survey responses, the researcher claims that spending time alone in unfamiliar outdoor settings can lift a person's mood and increase their sense of confidence.</p>",
+  "stem": "<p>Which quotation from a participant would best illustrate the researcher's claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"The hike was a little intimidating at first, but I knew the trail was well marked, so I felt less worried after about half an hour.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"My family was so curious about my hike that we talked about it through dinner.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"Once I finished the hike alone, I felt much more capable and noticeably more upbeat.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"The quiet of the woods on my solo hike reminded me of the feeling I get on a long bus ride at night.\"</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The participant reports that finishing the solo hike (time alone in an unfamiliar outdoor setting) made them feel \"more capable\" (confidence) and \"more upbeat\" (mood), illustrating both parts of the claim.</p><p>Choice A is incorrect; the participant talks about reduced worry, not lifted mood or confidence. Choice B is incorrect; family conversation does not illustrate the participant's own mood or confidence. Choice D is incorrect; comparing the hike to a bus ride does not show a lift in mood or an increase in confidence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A3.T4.easy"
+}

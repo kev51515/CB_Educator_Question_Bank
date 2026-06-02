@@ -1,0 +1,25 @@
+{
+  "questionId": "df46a2ee-s1",
+  "originalId": "df46a2ee",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>The following text is from Henry James&rsquo;s 1908 novel <em>The Reverberator</em>. Mr. Probert is making his way across Paris on his way to a private appointment.</p>\n<p>Before reaching the Quai d&rsquo;Orsay, Mr. Probert turned aside out of the crowded boulevard, busy with the clatter of fiacres and the shuffle of porters, into the almost silent, swift current of black coup&eacute;s. Under his hat, set at a slight forward angle, his hair had been combed into respectable smoothness; for his business was with a Legation. And Mr. Probert, firm as a column&mdash;<u>a slightly pliant kind of column</u>&mdash;advanced now along a street that might in every propriety be called retired.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined phrase in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It qualifies an earlier description of Mr. Probert.</p>"},
+    {"id": "b", "content": "<p>It emphasizes an internal struggle Mr. Probert experiences.</p>"},
+    {"id": "c", "content": "<p>It contrasts Mr. Probert with his surroundings.</p>"},
+    {"id": "d", "content": "<p>It reveals a private opinion Mr. Probert holds.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The underlined phrase qualifies (adds limits or conditions to) the description of Mr. Probert as &ldquo;firm as a column,&rdquo; adding that he is a &ldquo;slightly pliant&rdquo; column.</p><p>Choice B is incorrect because the passage never mentions Mr. Probert experiencing internal struggles. Choice C is incorrect because the underlined phrase modifies the description of him as a column rather than contrasting him with his surroundings. Choice D is incorrect because the underlined phrase further describes his character for the reader rather than revealing a private opinion he holds.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

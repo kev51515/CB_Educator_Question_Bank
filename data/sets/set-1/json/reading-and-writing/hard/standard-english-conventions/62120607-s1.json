@@ -1,0 +1,25 @@
+{
+  "questionId": "62120607-s1",
+  "originalId": "62120607",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.hard",
+  "type": "mcq",
+  "stimulus": "<p>From a distance, Indigenous Australian artist Emily Kame Kngwarreye&rsquo;s canvases appear to be loose abstract paintings, their fields of dots and lines so fluid that they seem the work of a sweeping brush. Up close, the canvases reveal themselves to be meticulously stippled ______ tiny dots, no larger than a pinhead, layered in concentric rings that trace the ancestral landscapes of her homeland.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>compositions; the</p>"},
+    {"id": "b", "content": "<p>compositions. The</p>"},
+    {"id": "c", "content": "<p>compositions, the</p>"},
+    {"id": "d", "content": "<p>compositions, and the</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. A comma correctly marks the boundary between the main clause (\"the canvases&hellip;compositions\") and the supplementary noun phrase (\"the tiny dots&hellip;homeland\") that further describes how the canvases are stippled.</p><p>Choice A is incorrect because a semicolon cannot join a main clause to a supplementary noun phrase; semicolons connect independent clauses. Choice B is incorrect because it produces a rhetorically unacceptable sentence fragment beginning with \"The tiny dots.\" Choice D is incorrect because the comma plus \"and\" construction is used to join two main clauses, but the second part is a noun phrase, not a clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "93724cc6-s1",
+  "originalId": "93724cc6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>12 is 15% of what number?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>80</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. If 12 is 15% of n, then 0.15n = 12, so n = 12 \u00f7 0.15 = 80.</p><p>Choice B is incorrect. This is 15% of 12, the reverse of the relationship asked.</p><p>Choice C is incorrect. This is the sum 12 + 15, not the correct calculation.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A2.T2.easy"
+}

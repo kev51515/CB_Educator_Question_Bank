@@ -1,0 +1,25 @@
+{
+  "questionId": "0c13dea9-s1",
+  "originalId": "0c13dea9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>The protein resilin not only gives fleas their remarkable jumping power but also enables certain insects to survive sudden, sharp impacts. Resilin behaves like a near-perfect rubber, absorbing kinetic energy and then releasing it almost without loss. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> tissues containing resilin can withstand repeated, high-frequency mechanical stress without breaking down over the insect's lifetime.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>For instance,</p>"},
+    {"id": "c", "content": "<p>Consequently,</p>"},
+    {"id": "d", "content": "<p>Nevertheless,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Consequently\" indicates that tissues containing resilin being able to withstand repeated, high-frequency stress is a result of resilin behaving like a near-perfect rubber that absorbs and releases kinetic energy almost without loss. So \"consequently\" fits the context perfectly.</p><p>Choice A is incorrect. This choice uses a disagreement transition, but this sentence doesn't disagree with the previous one—rather, it describes an effect of the property described before it. Choice B is incorrect. \"For instance\" introduces an example, but this sentence does not provide an instance of the rubber-like behavior; it describes its consequence. Choice D is incorrect. \"Nevertheless\" introduces a concession, but the second sentence does not run counter to the previous one; it follows from it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

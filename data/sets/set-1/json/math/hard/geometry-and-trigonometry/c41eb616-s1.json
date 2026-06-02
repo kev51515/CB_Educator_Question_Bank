@@ -1,0 +1,39 @@
+{
+  "questionId": "c41eb616-s1",
+  "originalId": "c41eb616",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two lines intersect at exactly one point, forming two acute angles and two obtuse angles. The measure of one of these angles is (7x \u2212 220)\u00b0. Which of the following could NOT be the sum of the measures of any two of these angles?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(14x \u2212 440)\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(\u221214x + 440)\u00b0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(800 \u2212 14x)\u00b0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>When two lines intersect, opposite angles are congruent and adjacent angles are supplementary. With one angle measuring (7x \u2212 220)\u00b0, the four angles are (7x \u2212 220)\u00b0, (7x \u2212 220)\u00b0, (180 \u2212 (7x \u2212 220))\u00b0, and (180 \u2212 (7x \u2212 220))\u00b0. Possible sums of pairs include: two acute (or two obtuse) of the same measure giving 2(7x \u2212 220) = 14x \u2212 440, or 2(400 \u2212 7x) = 800 \u2212 14x; and one acute + one obtuse adjacent giving 180\u00b0. The expression \u221214x + 440 = \u2212(14x \u2212 440), which is the negation of the two-acute sum and cannot equal any actual sum of two of these angles for all x.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A6.T1.hard"
+}

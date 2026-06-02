@@ -1,0 +1,39 @@
+{
+  "questionId": "b4da6aaf-s1",
+  "originalId": "b4da6aaf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The opera <em>River of Stars</em> had its first staging at a regional festival in 2015. A revised version of the opera premiered at a major opera house in 2020, in a more lavish production. In a review of the 2020 production, music critic Helena Krause enthusiastically praised the opera's libretto. However, Krause also explained that she had attended the earlier version in 2015 and had found the libretto to be muddled and difficult to follow. This suggests that in Krause's view, ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the 2020 version of <em>River of Stars</em> was less enjoyable than the 2015 version.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>River of Stars</em> should have had a more lavish production in 2020 than it actually did.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the 2015 version of <em>River of Stars</em> had fewer libretto problems than the 2020 version did.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>River of Stars</em> improved greatly between 2015 and its 2020 premiere.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Krause found the 2015 libretto muddled but praised the 2020 libretto \u2014 that contrast implies the opera improved substantially.</p><p>Choice A is wrong: Krause praised the later version. Choice B speculates about production scale, not addressed. Choice C reverses the comparison.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A3.T5.easy"
+}

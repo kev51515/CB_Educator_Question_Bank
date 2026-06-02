@@ -1,0 +1,39 @@
+{
+  "questionId": "96467fea-s1",
+  "originalId": "96467fea",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Circle P has a radius of 5 millimeters (mm). Circle Q has an area of 81&pi; mm<sup>2</sup>. What is the total area, in mm<sup>2</sup>, of circles P and Q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>56&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>76&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>106&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>405&pi;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The area of a circle with radius r is &pi;r<sup>2</sup>. For circle P with radius 5, the area is &pi;(5)<sup>2</sup> = 25&pi; mm<sup>2</sup>. Circle Q has an area of 81&pi; mm<sup>2</sup>. Adding the two areas yields 25&pi; + 81&pi; = 106&pi; mm<sup>2</sup>. Choices A, B, and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T3.medium"
+}

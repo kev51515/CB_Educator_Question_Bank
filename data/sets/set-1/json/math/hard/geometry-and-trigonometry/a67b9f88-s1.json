@@ -1,0 +1,24 @@
+{
+  "questionId": "a67b9f88-s1",
+  "originalId": "a67b9f88",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In right triangle PQR, the right angle is at P. The hypotenuse QR has length 65, and side PQ has length 16. What is the value of sin Q?</p>",
+  "answerOptions": null,
+  "keys": [
+    "63/65",
+    ".9692",
+    ".9693"
+  ],
+  "rationale": "<p>By the Pythagorean theorem, PR&sup2; = 65&sup2; &minus; 16&sup2; = 4225 &minus; 256 = 3969, so PR = 63. The sine of angle Q is the ratio of the side opposite Q (which is PR) to the hypotenuse QR: sin Q = 63/65 &asymp; 0.9692.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.hard"
+}

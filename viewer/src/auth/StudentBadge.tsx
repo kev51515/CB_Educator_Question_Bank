@@ -1,0 +1,133 @@
+/**
+ * StudentBadge
+ * ============
+ * Tiny corner widget that overlays the active area (bank or mock) so the
+ * student can switch areas or sign out without us touching the viewer's
+ * existing header. Fixed-positioned, collapses to an icon on small screens.
+ */
+import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../lib/routes";
+
+interface StudentBadgeProps {
+  studentName: string;
+  onSwitchArea: () => void;
+  onSignOut: () => void;
+  /** When false, hides the "Switch area" menu item (e.g. for teachers). */
+  showSwitchArea?: boolean;
+  /**
+   * Deprecated. The "Account settings" item now navigates to
+   * `ROUTES.ACCOUNT` via react-router. Kept in the props for source
+   * compatibility with callers that still pass a handler; the value is
+   * ignored.
+   */
+  onOpenSettings?: () => void;
+}
+
+export function StudentBadge({
+  studentName,
+  onSwitchArea,
+  onSignOut,
+  showSwitchArea = true,
+}: StudentBadgeProps) {
+  const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement | null>(null);
+  const firstName = studentName.split(" ")[0] || studentName;
+  const initial = (firstName[0] || "?").toUpperCase();
+
+  useEffect(() => {
+    if (!open) return;
+    const onDocClick = (e: MouseEvent) => {
+      if (!ref.current?.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div ref={ref} className="fixed bottom-3 right-3 z-50 print:hidden">
+      {open && (
+        <div
+          role="menu"
+          className="mb-2 w-56 rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 overflow-hidden"
+        >
+          <div className="px-4 py-3 border-b border-slate-100 dark:border-slate-800">
+            <p className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">Signed in as</p>
+            <p className="font-medium text-slate-900 dark:text-slate-100 truncate">
+              {studentName}
+            </p>
+          </div>
+          {showSwitchArea && (
+            <button
+              type="button"
+              role="menuitem"
+              onClick={() => {
+                setOpen(false);
+                onSwitchArea();
+              }}
+              className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+            >
+              Switch area
+            </button>
+          )}
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => {
+              setOpen(false);
+              navigate(ROUTES.INBOX);
+            }}
+            className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Inbox
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => {
+              setOpen(false);
+              navigate(ROUTES.ACCOUNT);
+            }}
+            className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+          >
+            Account settings
+          </button>
+          <button
+            type="button"
+            role="menuitem"
+            onClick={() => {
+              setOpen(false);
+              onSignOut();
+            }}
+            className="block w-full text-left px-4 py-2 text-sm text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40"
+          >
+            Sign out
+          </button>
+        </div>
+      )}
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        aria-haspopup="menu"
+        aria-expanded={open}
+        aria-label={`Account menu for ${studentName}`}
+        className="flex items-center gap-2 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 pl-1 pr-3 py-1 hover:ring-indigo-400 dark:hover:ring-indigo-500 transition"
+      >
+        <span className="h-7 w-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white grid place-items-center text-sm font-semibold">
+          {initial}
+        </span>
+        <span className="text-sm font-medium text-slate-700 dark:text-slate-200 max-w-[8rem] truncate">
+          {firstName}
+        </span>
+      </button>
+    </div>
+  );
+}

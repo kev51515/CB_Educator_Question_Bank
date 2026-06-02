@@ -1,0 +1,39 @@
+{
+  "questionId": "6f6dfe3e-s1",
+  "originalId": "6f6dfe3e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<figure class=\"table\"><table border=\"1\"><thead><tr><th>x</th><th>y</th></tr></thead><tbody><tr><td>-8</td><td>n + 120</td></tr><tr><td>-4</td><td>n + 60</td></tr><tr><td>0</td><td>n</td></tr></tbody></table></figure><p>The table shows three values of x and their corresponding values of y, where n is a constant, for the linear relationship between x and y. What is the slope of the line that represents this relationship in the xy-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-15</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-60</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Slope = (\u0394y)/(\u0394x) = ((n+60) - (n+120))/((-4) - (-8)) = -60/4 = -15. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A5.T10.hard"
+}

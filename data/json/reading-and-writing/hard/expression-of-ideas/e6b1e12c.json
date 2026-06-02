@@ -1,0 +1,72 @@
+{
+  "questionId": "e6b1e12c",
+  "externalId": "02e8a6bd-5ee6-4963-a33f-b583deda3645",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:21.042520+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "0418770a-ae43-403c-abec-997accd36c26",
+      "content": "<p>Contrary to this phenomenon,&nbsp;</p>"
+    },
+    {
+      "id": "3fabf3d9-db58-496d-9228-ead3b01bcc02",
+      "content": "<p>Undermining this explanation,&nbsp;</p>"
+    },
+    {
+      "id": "842a6c3b-ae1c-45d2-8d01-34d3f2afb281",
+      "content": "<p>Drawing a similar conclusion,&nbsp;</p>"
+    },
+    {
+      "id": "6e6516ad-7058-4f2b-8e72-7deaa5590f15",
+      "content": "<p>Confirming this hypothesis,</p>"
+    }
+  ],
+  "keys": [
+    "3fabf3d9-db58-496d-9228-ead3b01bcc02"
+  ],
+  "rationale": "<p>Choice B is the best answer. &ldquo;Undermining this explanation&rdquo; logically signals that the information in this sentence&mdash;that adult <em>Chelonibia testudinaria</em> showed behavior consistent with self-initiated locomotion&mdash;undermines or weakens the previous explanation that barnacle movement was a result of passive displacement by water currents.</p><p>Choice A is incorrect because &ldquo;contrary to this phenomenon&rdquo; illogically signals that the information in this sentence about barnacles exhibiting behavior consistent with self-initiated locomotion opposes the previous information about barnacles shifting slightly in position over time. Instead, the sentence undermines or weakens the previous claim about passive displacement. That is, the sentence doesn&rsquo;t oppose the fact that the barnacles shifted position: it challenges the previous sentence&rsquo;s explanation for the movement. Choice C is incorrect because &ldquo;drawing a similar conclusion&rdquo; illogically signals that the information in this sentence about barnacles exhibiting behavior consistent with self-initiated locomotion is similar to the previous conclusion that barnacle movement is the result of passive displacement. Instead, the sentence undermines or weakens the previous sentence&rsquo;s explanation for how the barnacles moved. Choice D is incorrect because &ldquo;confirming this hypothesis&rdquo; illogically signals that the information in this sentence about barnacles exhibiting behavior consistent with self-initiated locomotion confirms the hypothesis in the previous sentence that the barnacle movement was the result of passive displacement. Instead, the sentence undermines or weakens the previous sentence&rsquo;s explanation for how the barnacles moved.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>Long thought to be sessile (immobile), adult <em>Chelonibia testudinaria</em>, barnacles that adhere to sea turtle shells, have been observed to shift slightly in position over time&mdash;a phenomenon that has been attributed to the barnacles&rsquo; passive displacement by water currents. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a research team found that adult <em><span data-ssml-sub-alias=\"C\">C.</span> testudinaria</em> moved toward the heads of their sea turtle hosts and thus against the prevailing water flow, behavior consistent with self-initiated locomotion.&nbsp;</p>",
+    "keys": [
+      "3fabf3d9-db58-496d-9228-ead3b01bcc02"
+    ],
+    "answerOptions": [
+      {
+        "id": "0418770a-ae43-403c-abec-997accd36c26",
+        "content": "<p>Contrary to this phenomenon,&nbsp;</p>"
+      },
+      {
+        "id": "3fabf3d9-db58-496d-9228-ead3b01bcc02",
+        "content": "<p>Undermining this explanation,&nbsp;</p>"
+      },
+      {
+        "id": "842a6c3b-ae1c-45d2-8d01-34d3f2afb281",
+        "content": "<p>Drawing a similar conclusion,&nbsp;</p>"
+      },
+      {
+        "id": "6e6516ad-7058-4f2b-8e72-7deaa5590f15",
+        "content": "<p>Confirming this hypothesis,</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. &ldquo;Undermining this explanation&rdquo; logically signals that the information in this sentence&mdash;that adult <em>Chelonibia testudinaria</em> showed behavior consistent with self-initiated locomotion&mdash;undermines or weakens the previous explanation that barnacle movement was a result of passive displacement by water currents.</p><p>Choice A is incorrect because &ldquo;contrary to this phenomenon&rdquo; illogically signals that the information in this sentence about barnacles exhibiting behavior consistent with self-initiated locomotion opposes the previous information about barnacles shifting slightly in position over time. Instead, the sentence undermines or weakens the previous claim about passive displacement. That is, the sentence doesn&rsquo;t oppose the fact that the barnacles shifted position: it challenges the previous sentence&rsquo;s explanation for the movement. Choice C is incorrect because &ldquo;drawing a similar conclusion&rdquo; illogically signals that the information in this sentence about barnacles exhibiting behavior consistent with self-initiated locomotion is similar to the previous conclusion that barnacle movement is the result of passive displacement. Instead, the sentence undermines or weakens the previous sentence&rsquo;s explanation for how the barnacles moved. Choice D is incorrect because &ldquo;confirming this hypothesis&rdquo; illogically signals that the information in this sentence about barnacles exhibiting behavior consistent with self-initiated locomotion confirms the hypothesis in the previous sentence that the barnacle movement was the result of passive displacement. Instead, the sentence undermines or weakens the previous sentence&rsquo;s explanation for how the barnacles moved.</p>",
+    "externalid": "02e8a6bd-5ee6-4963-a33f-b583deda3645",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Long thought to be sessile (immobile), adult <em>Chelonibia testudinaria</em>, barnacles that adhere to sea turtle shells, have been observed to shift slightly in position over time&mdash;a phenomenon that has been attributed to the barnacles&rsquo; passive displacement by water currents. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a research team found that adult <em><span data-ssml-sub-alias=\"C\">C.</span> testudinaria</em> moved toward the heads of their sea turtle hosts and thus against the prevailing water flow, behavior consistent with self-initiated locomotion.&nbsp;</p>"
+}

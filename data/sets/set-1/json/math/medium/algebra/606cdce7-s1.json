@@ -1,0 +1,39 @@
+{
+  "questionId": "606cdce7-s1",
+  "originalId": "606cdce7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<figure class=\"table\"><table border=\"1\"><thead><tr><th>x</th><th>y</th></tr></thead><tbody><tr><td>-4</td><td>40</td></tr><tr><td>-2</td><td>32</td></tr><tr><td>2</td><td>16</td></tr><tr><td>4</td><td>8</td></tr></tbody></table></figure><p>The table shows four values of x and their corresponding values of y. There is a linear relationship between x and y. Which of the following equations represents this relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>20x + 5y = 5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5x + 20y = 120</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20x + 5y = 120</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5x + 20y = 5</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Slope = (8 - 40)/(4 - (-4)) = -32/8 = -4. Using point (4, 8): 8 = -4(4) + b, so b = 24. The line is y = -4x + 24, or 4x + y = 24. Multiplying by 5 gives 20x + 5y = 120. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A4.T6.medium"
+}

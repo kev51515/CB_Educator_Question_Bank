@@ -1,0 +1,39 @@
+{
+  "questionId": "6011a3f8-s1",
+  "originalId": "6011a3f8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">36<i>x</i>&sup2; + <i>b</i><i>x</i> + 49 = 0</p><p>In the given equation, <i>b</i> is a constant. For which of the following values of <i>b</i> will the equation have more than one real solution?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;75</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;97</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>A quadratic has more than one real solution when its discriminant is positive: <i>b</i>&sup2; &minus; 4(36)(49) &gt; 0, i.e., <i>b</i>&sup2; &gt; 7056, so |<i>b</i>| &gt; 84. Of the four choices, only <i>b</i> = &minus;97 satisfies this since |&minus;97| = 97 &gt; 84.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "3c8fdc40-s1",
+  "originalId": "3c8fdc40",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A machine produces widgets at a constant rate of 35 widgets per minute. At what rate, in widgets per hour, does the machine produce the widgets?</p>",
+  "answerOptions": [],
+  "keys": [
+    "2100"
+  ],
+  "rationale": "<p>There are 60 minutes in 1 hour. At a rate of 35 widgets per minute, the machine produces 35 \u00d7 60 = 2,100 widgets per hour.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.easy"
+}

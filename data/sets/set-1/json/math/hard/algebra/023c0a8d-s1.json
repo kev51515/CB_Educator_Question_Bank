@@ -1,0 +1,25 @@
+{
+  "questionId": "023c0a8d-s1",
+  "originalId": "023c0a8d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T4.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the function g, g(3x) = 6x + 5 for all values of x. What is the value of g(12)?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>17</p>"},
+    {"id": "b", "content": "<p>29</p>"},
+    {"id": "c", "content": "<p>77</p>"},
+    {"id": "d", "content": "<p>22</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. Set 3x = 12, so x = 4. Then g(12) = g(3·4) = 6(4) + 5 = 29.</p><p>Choices A, C, and D result from arithmetic mistakes or substituting x = 12 directly instead of solving 3x = 12.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

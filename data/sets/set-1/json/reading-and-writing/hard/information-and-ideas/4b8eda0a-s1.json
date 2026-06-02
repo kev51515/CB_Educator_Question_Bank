@@ -1,0 +1,39 @@
+{
+  "questionId": "4b8eda0a-s1",
+  "originalId": "4b8eda0a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>For the 1981 performance piece <em>Fence Line</em>, the Pinoy art collective Pintig blindfolded members Marisol Reyes and Jaime Domingo and led them along a chain-link border on the edge of an industrial district in San Diego. The work is plainly an exploration of restriction, but most commentators focus exclusively on Reyes and the labor restrictions imposed on Filipina migrant workers at the time, an emphasis that is understandable but offers no explanation for the participation of Reyes&rsquo;s male collaborator Domingo. Instead, we should consider that in 1981 the U.S. gallery system recognized Filipino American artists almost exclusively as makers of traditional documentary photography, leaving conceptual and performance-based Filipino American artists, including Pintig, with little institutional visibility. This perspective suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>while Reyes&rsquo;s presence in <em>Fence Line</em> stands for the labor restrictions placed on Filipina migrant workers, Domingo&rsquo;s presence stands for a related but distinct set of restrictions placed on Filipino men in the same industries.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>Fence Line</em> is a reflection on the constraining aesthetic expectations imposed on Filipino American artists in general, rather than on the labor restrictions placed on Filipina migrant workers in particular.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the central subject of <em>Fence Line</em> is Filipina migrant workers&rsquo; experience of being constrained both by gender-role expectations and by labor restrictions.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>Fence Line</em> is best understood not as a critique of labor restrictions placed on Filipina workers but as a critique of traditional documentary photography, which had previously been the only kind of Filipino American art the gallery system would acknowledge.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the new interpretation the author is proposing. The author points out that focusing only on Reyes (and gendered labor restrictions) leaves Domingo's participation unexplained, so a better account must apply to both artists. The author then offers a context that applies to both: the gallery system recognized Filipino American artists only as traditional documentary photographers, restricting conceptual and performance-based artists like Pintig. It follows that <em>Fence Line</em> is best read as a reflection on the aesthetic restrictions imposed on Filipino American artists as a group&mdash;a reading that encompasses both Reyes and Domingo.</p><p>Choice A is incorrect because the author specifically argues against splitting the meaning by gender, since the proposed reading must explain both artists. Choice C is incorrect because it keeps the focus on Filipina migrant workers, leaving Domingo's role unexplained. Choice D is incorrect because the text positions documentary photography as the only kind of work the gallery system would acknowledge, not as the target of <em>Fence Line</em>'s critique; the critique is aimed at the gallery system's restrictive expectations of Filipino American artists.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T7.hard"
+}

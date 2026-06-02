@@ -1,0 +1,39 @@
+{
+  "questionId": "02add2d2-s1",
+  "originalId": "02add2d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A magazine had 2,500 subscribers in January 2019. For the next 30 months after January 2019, the total number of subscribers each month was 4% greater than the total subscribers the previous month. Which equation gives the total number of subscribers, s, m months after January 2019, where m \u2264 30?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>s = 2,500(0.04)<sup>m</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>s = 2,500(4)<sup>m</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>s = 2,500(1.04)<sup>m</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>s = 2,500(1.4)<sup>m</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Monthly growth by 4% is modeled by s = a(1 + r/100)<sup>m</sup>, with a = 2,500 (initial count) and r = 4. Substituting yields s = 2,500(1 + 0.04)<sup>m</sup> = 2,500(1.04)<sup>m</sup>. Choice A models a 96% decrease per month. Choice B models a 300% increase. Choice D models a 40% increase.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "308084c5-s1",
+  "originalId": "308084c5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Inference from sample statistics and margin of error ",
+  "domainCode": "Q",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two random samples of voters were drawn from the same population to estimate support for a ballot measure. Both samples used the same method for computing margin of error. Sample X had a larger margin of error than sample Y. Which of the following is the most appropriate reason for this?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Sample X had a smaller sample size.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Sample X had a larger sample size.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Sample X had a higher percent of favorable responses.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Sample X had a smaller number of invalid responses.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Holding all else equal, the margin of error is inversely proportional to the square root of the sample size, so a smaller sample produces a larger margin of error. Choice B is the opposite. Choices C and D have weaker, not primary, effects on margin of error relative to sample size.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T5.easy"
+}

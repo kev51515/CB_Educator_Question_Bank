@@ -1,0 +1,39 @@
+{
+  "questionId": "c3a72da5-s1",
+  "originalId": "c3a72da5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to the sum of 5w<sup>5</sup> + 4w<sup>2</sup> and 6w<sup>5</sup> + 3w<sup>2</sup>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11w<sup>5</sup> + 7w<sup>2</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30w<sup>10</sup> + 12w<sup>4</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11w<sup>10</sup> + 7w<sup>4</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18w<sup>7</sup></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Adding gives 5w<sup>5</sup> + 6w<sup>5</sup> + 4w<sup>2</sup> + 3w<sup>2</sup>. Like terms with the same variable raised to the same power combine: 11w<sup>5</sup> + 7w<sup>2</sup>. Exponents are not added when summing like terms. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A1.T2.easy"
+}

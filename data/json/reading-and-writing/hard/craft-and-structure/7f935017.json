@@ -1,0 +1,72 @@
+{
+  "questionId": "7f935017",
+  "externalId": "7a84daaf-4322-4bdc-aed9-b52f165cfc97",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:44.238429+00:00",
+  "type": "mcq",
+  "stem": "<p>As used in the text, what does the word &ldquo;manifest&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "3f32f623-7c0c-4a80-8975-13db6264c545",
+      "content": "<p>Realized</p>"
+    },
+    {
+      "id": "2bf519af-ad5f-4f83-b2ca-8bd7b3a9d5c5",
+      "content": "<p>Perceptible</p>"
+    },
+    {
+      "id": "b2705fcc-53f2-4e62-be7b-756f375d8f57",
+      "content": "<p>Situated</p>"
+    },
+    {
+      "id": "625c73d8-03cd-4d2a-a5ae-18fa39e7e693",
+      "content": "<p>Dwindling</p>"
+    }
+  ],
+  "keys": [
+    "2bf519af-ad5f-4f83-b2ca-8bd7b3a9d5c5"
+  ],
+  "rationale": "<p>Choice B is the best answer because as used in the text, &ldquo;manifest&rdquo; most nearly means perceptible or detectable. The text indicates that the sun was &ldquo;already down,&rdquo; meaning it was below the horizon and not directly visible. However, the sun&rsquo;s presence was nonetheless perceptible or manifest in the &ldquo;tongues of fire&rdquo; (or beams of light) that still flickered in the darkening sky.</p><p>Choice A is incorrect. Although in some contexts &ldquo;manifest&rdquo; can mean &ldquo;realized&rdquo; or &ldquo;brought into being,&rdquo; that is not the context here. Rather, the text is about how the sun&rsquo;s presence was perceptible or manifest in the &ldquo;darting&rdquo; beams of light that could still be seen in the sky. Choice C is incorrect. This choice would suggest that the sun is situated, or located, in the light it emits, which is not supported by the surrounding context. Rather, the text is about how the sun&rsquo;s presence was perceptible or manifest in the remaining light that could still be seen in the sky. Choice D is incorrect. Although the text is about the decreasing light in the scene at sunset, the text&rsquo;s use of &ldquo;manifest&rdquo; is about how the sun&rsquo;s presence was nonetheless perceptible or manifest in the &ldquo;tongues of fire&rdquo; still visible in the sky as night approached.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>As used in the text, what does the word &ldquo;manifest&rdquo; most nearly mean?</p>",
+    "stimulus": "<p>The following text is from a 1955 translation of Samuel Beckett&rsquo;s 1951 novel <em>Molloy</em> (translated by the author and Patrick Bowles). In the text, Molloy has arrived at the town ramparts, an elevated walkway atop the city walls.</p>\n<blockquote>\n<p>And having cleared the ramparts I had to confess the sky was clearing, prior to its winding in the other shroud, night. Yes, the great cloud was ravelling, discovering here and there a pale and dying sky, and the sun, already down, was <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">manifest</span> in the livid tongues of fire darting towards the zenith, falling and darting again, ever more pale and languid, and doomed no sooner lit to be extinguished.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1955 by Grove Press, Inc.</span></p>",
+    "keys": [
+      "2bf519af-ad5f-4f83-b2ca-8bd7b3a9d5c5"
+    ],
+    "answerOptions": [
+      {
+        "id": "3f32f623-7c0c-4a80-8975-13db6264c545",
+        "content": "<p>Realized</p>"
+      },
+      {
+        "id": "2bf519af-ad5f-4f83-b2ca-8bd7b3a9d5c5",
+        "content": "<p>Perceptible</p>"
+      },
+      {
+        "id": "b2705fcc-53f2-4e62-be7b-756f375d8f57",
+        "content": "<p>Situated</p>"
+      },
+      {
+        "id": "625c73d8-03cd-4d2a-a5ae-18fa39e7e693",
+        "content": "<p>Dwindling</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because as used in the text, &ldquo;manifest&rdquo; most nearly means perceptible or detectable. The text indicates that the sun was &ldquo;already down,&rdquo; meaning it was below the horizon and not directly visible. However, the sun&rsquo;s presence was nonetheless perceptible or manifest in the &ldquo;tongues of fire&rdquo; (or beams of light) that still flickered in the darkening sky.</p><p>Choice A is incorrect. Although in some contexts &ldquo;manifest&rdquo; can mean &ldquo;realized&rdquo; or &ldquo;brought into being,&rdquo; that is not the context here. Rather, the text is about how the sun&rsquo;s presence was perceptible or manifest in the &ldquo;darting&rdquo; beams of light that could still be seen in the sky. Choice C is incorrect. This choice would suggest that the sun is situated, or located, in the light it emits, which is not supported by the surrounding context. Rather, the text is about how the sun&rsquo;s presence was perceptible or manifest in the remaining light that could still be seen in the sky. Choice D is incorrect. Although the text is about the decreasing light in the scene at sunset, the text&rsquo;s use of &ldquo;manifest&rdquo; is about how the sun&rsquo;s presence was nonetheless perceptible or manifest in the &ldquo;tongues of fire&rdquo; still visible in the sky as night approached.</p>",
+    "externalid": "7a84daaf-4322-4bdc-aed9-b52f165cfc97",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>The following text is from a 1955 translation of Samuel Beckett&rsquo;s 1951 novel <em>Molloy</em> (translated by the author and Patrick Bowles). In the text, Molloy has arrived at the town ramparts, an elevated walkway atop the city walls.</p>\n<blockquote>\n<p>And having cleared the ramparts I had to confess the sky was clearing, prior to its winding in the other shroud, night. Yes, the great cloud was ravelling, discovering here and there a pale and dying sky, and the sun, already down, was <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">manifest</span> in the livid tongues of fire darting towards the zenith, falling and darting again, ever more pale and languid, and doomed no sooner lit to be extinguished.</p>\n</blockquote>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1955 by Grove Press, Inc.</span></p>"
+}

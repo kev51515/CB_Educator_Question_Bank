@@ -1,0 +1,22 @@
+{
+  "questionId": "f678483b-s1",
+  "originalId": "f678483b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A remotely operated underwater vehicle is used for ocean research. The function <i>h</i>(<i>x</i>) = &minus;(1/40)(<i>x</i> + 12)(<i>x</i> &minus; 50) gives the depth below the surface of the ocean, in meters, of the vehicle <i>x</i> minutes after it began collecting a sample, where <i>x</i> &gt; 0. How many minutes after beginning to collect the sample does the vehicle return to the surface of the ocean?</p>",
+  "answerOptions": [],
+  "keys": [
+    "50"
+  ],
+  "rationale": "<p>The vehicle is at the surface when its depth is zero. Setting <i>h</i>(<i>x</i>) = 0 gives (<i>x</i> + 12)(<i>x</i> &minus; 50) = 0, so <i>x</i> = &minus;12 or <i>x</i> = 50. Because <i>x</i> &gt; 0, the device returns to the surface 50 minutes after it began collecting the sample.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A3.T4.hard"
+}

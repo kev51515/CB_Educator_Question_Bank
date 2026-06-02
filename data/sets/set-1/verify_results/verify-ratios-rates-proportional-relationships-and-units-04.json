@@ -1,0 +1,22 @@
+[
+  {"id": "c81499e1-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "4347a032-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "3f236a64-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T3.easy", "verdict": "ok"},
+  {"id": "7cd1c6db-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "808f7d6c-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A5.T4.easy", "verdict": "type_drift", "detail": "T4 requires an algebraic relationship in a rate/proportional context. Stem 'x/3 = 7' is pure linear equation solving with no rate or proportional scenario."},
+  {"id": "7270d642-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "2cdefcb1-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "06a152cd-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.easy", "verdict": "difficulty_drift", "detail": "Template states A1.T3 is 'Not represented at Easy; chained conversions are inherently medium-or-above.' Item correctly chains rate (3 oz/cookie) and unit conversion (16 oz/lb), so its inherent difficulty is medium, not easy."},
+  {"id": "fe1ec415-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "0700a2d5-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "8bf3f67a-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "aeeaec96-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "2d16d62c-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "e9841407-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy", "verdict": "ok"},
+  {"id": "99550621-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "85b33aa8-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy", "verdict": "ok"},
+  {"id": "24ad9dcb-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A5.T1.easy", "verdict": "ok"},
+  {"id": "94660ba8-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.easy", "verdict": "ok"},
+  {"id": "4837406c-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy", "verdict": "ok"},
+  {"id": "c47256ca-s1", "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.easy", "verdict": "type_drift", "detail": "TemplateId says T2 (compound-rate conversion), but stem is a single-step linear unit conversion (48 yd → ft) with no rate/compound unit. This is A1.T1, not A1.T2."}
+]

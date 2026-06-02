@@ -1,0 +1,39 @@
+{
+  "questionId": "7afb470b-s1",
+  "originalId": "7afb470b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Anadromous fish, like Atlantic salmon, are born in freshwater, migrate to the ocean to mature, and return to freshwater to spawn. The migration's strict pattern is why anadromous fish should be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> those that are merely catadromous (which spawn in the sea but otherwise live in fresh water, like European eels): both move between water types, but the direction and timing of the migrations are reversed.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>reconstituted as</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>derived from</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>confused with</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>distinguished from</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Distinguished from\" most logically completes the text. The text emphasizes that anadromous and catadromous fish differ in the direction and timing of their migrations\u2014properties that should keep the two categories distinguished from each other.</p><p>Choice A is incorrect. \"Reconstituted as\" means rebuilt or reformed, not separated by category. Choice B is incorrect. \"Derived from\" implies origin, not categorical separation. Choice C is incorrect. \"Confused with\" is the opposite of what the text recommends; the text is showing why one should not confuse them.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

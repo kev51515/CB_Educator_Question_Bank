@@ -1,0 +1,39 @@
+{
+  "questionId": "1be909aa-s1",
+  "originalId": "1be909aa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to (m<sup>20</sup> n<sup>4</sup>) / (m<sup>8</sup> n<sup>15</sup>), where m &gt; 0 and n &gt; 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>m<sup>28</sup> / n<sup>19</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>m<sup>28</sup> n<sup>19</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>m<sup>12</sup> n<sup>11</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>m<sup>12</sup> / n<sup>11</sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Apply the exponent quotient rule: m<sup>20</sup>/m<sup>8</sup> = m<sup>12</sup>, and n<sup>4</sup>/n<sup>15</sup> = n<sup>\u221211</sup> = 1/n<sup>11</sup>. So the expression equals m<sup>12</sup>/n<sup>11</sup>. Choice (d) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T7.medium"
+}

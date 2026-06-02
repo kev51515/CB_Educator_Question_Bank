@@ -1,0 +1,39 @@
+{
+  "questionId": "f5ff91b2-s1",
+  "originalId": "f5ff91b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If (<i>x</i> + 10)/4 = (<i>x</i> + 10)/15, the value of <i>x</i> + 10 is between which of the following pairs of values?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;15 and &minus;10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;10 and &minus;4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;2 and 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4 and 15</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Multiplying both sides by 60 gives 15(<i>x</i> + 10) = 4(<i>x</i> + 10), so 11(<i>x</i> + 10) = 0 and <i>x</i> + 10 = 0. The value 0 lies between &minus;2 and 2.</p><p>Choices A, B, and D give ranges that do not contain 0.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T10.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3ea87153-s1",
+  "originalId": "3ea87153",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>h</i> is defined by <i>h</i>(<i>x</i>) = <i>x</i>&sup2; + 11. For which value of <i>x</i> is <i>h</i>(<i>x</i>) = 36?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Setting <i>h</i>(<i>x</i>) = 36 gives <i>x</i>&sup2; + 11 = 36, so <i>x</i>&sup2; = 25 and <i>x</i> = &plusmn;5. Only 5 appears among the choices.</p><p>Choices A, B, and D are incorrect and may result from arithmetic or conceptual errors.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A1.T2.easy"
+}

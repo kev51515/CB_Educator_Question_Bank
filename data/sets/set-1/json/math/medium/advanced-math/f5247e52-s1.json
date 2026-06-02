@@ -1,0 +1,39 @@
+{
+  "questionId": "f5247e52-s1",
+  "originalId": "f5247e52",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\">y = px\u00b2 \u2212 q</p>",
+  "stem": "<p>In the equation above, p and q are positive constants. How many times does the graph of the equation above intersect the graph of the equation y = p + q in the xy-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Two</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>One</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>More than two</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since p and q are positive, the parabola y = px\u00b2 \u2212 q opens upward and has its vertex on the y-axis at (0, \u2212q), below the x-axis. The line y = p + q is horizontal, and because p and q are positive, p + q > 0, so the line lies above the x-axis. A horizontal line above the x-axis intersects an upward-opening parabola with vertex below the x-axis at exactly two points. Choice B is wrong because the line is above the vertex. Choice C is wrong because the graphs do intersect. Choice D is wrong because a line cannot intersect a parabola in more than two points.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium"
+}

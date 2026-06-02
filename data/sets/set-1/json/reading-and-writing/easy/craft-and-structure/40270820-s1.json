@@ -1,0 +1,39 @@
+{
+  "questionId": "40270820-s1",
+  "originalId": "40270820",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Renata Okafor is a researcher who studies pollinator corridors. A pollinator corridor is a strip of land between farms or fields where wildflowers and native plants are encouraged to grow. These plants attract bees, butterflies, and other pollinators. Pollinator corridors help support healthy crop production (how flowering crops are pollinated and made fruitful) in farming areas. This benefit is one reason Okafor is interested in pollinator corridors along soybean fields in the central United States.</p>",
+  "stem": "<p>Which choice best describes the text's overall structure?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It introduces a researcher and gives information about what she researches.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It compares the sizes of two types of fields over several years.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It presents an idea and mentions a researcher who disagrees with that idea.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It explains a disagreement between researchers and how it was resolved.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text begins by mentioning Okafor as a researcher who studies pollinator corridors and then provides information about her research\u2014what pollinator corridors are, why they matter, and her interest in those along soybean fields.</p><p>Choice B is incorrect. The text doesn't compare field sizes. Choice C is incorrect. No disagreement is presented. Choice D is incorrect. No researcher disagreement or resolution is described.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T7.easy"
+}

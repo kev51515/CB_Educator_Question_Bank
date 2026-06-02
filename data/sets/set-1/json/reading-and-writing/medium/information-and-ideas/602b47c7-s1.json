@@ -1,0 +1,25 @@
+{
+  "questionId": "602b47c7-s1",
+  "originalId": "602b47c7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>Ecologists have predicted that desert lizards' scale structures vary with habitat aridity, but this had not been tested across a single mountain gradient. Herpetologist Tomás Cifuentes examined scales from 187 lizard species living at different elevations—and thus experiencing different humidity levels—on the western slopes of the Andes in Peru. He found that the scales of lizards from arid, low-elevation habitats not only have a higher proportion of microscopic, water-channeling ridges than do those of lizards from humid, high-elevation habitats, but they also tend to overlap more tightly, reducing water loss across the body's surface.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Cifuentes's investigation suggests that the ability of lizards to tolerate dry conditions is determined more by scale overlap than by ridge structure, challenging a long-standing belief.</p>"},
+    {"id": "b", "content": "<p>Cifuentes found a link between habitat aridity and scale structure among Andean lizards, providing new support for a general prediction.</p>"},
+    {"id": "c", "content": "<p>Cifuentes discovered that desert lizards have adapted to their environment by growing scales without water-channeling ridges, complicating an earlier hypothesis.</p>"},
+    {"id": "d", "content": "<p>Cifuentes's investigation shows that some Andean lizard species have evolved better water-conserving scales than others have, contradicting previous predictions.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text describes how Cifuentes found a relationship between habitat aridity and scale structure among Andean lizards, which directly supports the general prediction stated in the first sentence: that scale structures vary with habitat aridity.</p><p>Choice A is incorrect because the text does not compare the importance of scale overlap with ridge structure or say the study challenges established beliefs. Choice C is incorrect because the text says arid-habitat lizards have more ridges, not that they lack them. Choice D is incorrect because the study confirms rather than contradicts the earlier prediction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

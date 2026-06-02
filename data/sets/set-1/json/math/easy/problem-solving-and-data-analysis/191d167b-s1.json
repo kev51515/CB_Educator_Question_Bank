@@ -1,0 +1,39 @@
+{
+  "questionId": "191d167b-s1",
+  "originalId": "191d167b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Last year, 150 students enrolled in a graphic design program. This year, the number of students enrolled is 132% of last year\u2019s number. How many students are enrolled in the graphic design program this year?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>132</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>168</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>182</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>198</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. 132% of 150 is 1.32 \u00d7 150 = 198.</p><p>Choice A is incorrect. This is just the percentage value, not applied to 150.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7d3a84bf-s1",
+  "originalId": "7d3a84bf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph shows the estimated melting point <em>y</em>, in degrees Celsius, of a normal alkane with a molecular weight of <em>x</em> grams per mole, where 1 &le; <em>x</em> &le; 320. Which statement is the best interpretation of the point (210, -45) on the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A normal alkane with a molecular weight of 210 grams per mole has an estimated melting point of -45 degrees Celsius.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A normal alkane with a molecular weight of -45 grams per mole has an estimated melting point of 210 degrees Celsius.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The minimum estimated melting point for normal alkanes corresponds to an alkane with a molecular weight of 210 grams per mole and an estimated melting point of -45 degrees Celsius.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The maximum estimated melting point for normal alkanes corresponds to an alkane with a molecular weight of 210 grams per mole and an estimated melting point of -45 degrees Celsius.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The variable <em>x</em> is the molecular weight in grams per mole, and <em>y</em> is the estimated melting point in degrees Celsius. So for the point (210, -45), 210 represents the molecular weight and -45 represents the corresponding estimated melting point. Choice B swaps the meanings of <em>x</em> and <em>y</em>. Choices C and D incorrectly describe the point as a minimum or maximum.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A2.T1.medium"
+}

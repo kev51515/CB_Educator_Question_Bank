@@ -1,0 +1,25 @@
+{
+  "questionId": "a773f069-s1",
+  "originalId": "a773f069",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Tiny ridge-like structures called lamellae run along the underside of a gecko's toes. These lamellae generate weak attractive forces with the molecules of any surface they contact. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> geckos can walk upside down across smooth ceilings and even pane glass.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>However,</p>"},
+    {"id": "c", "content": "<p>As a result,</p>"},
+    {"id": "d", "content": "<p>Similarly,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"As a result\" logically signals that the claim in this sentence&mdash;that geckos can walk upside down on smooth surfaces&mdash;is a consequence of the previous information about lamellae generating attractive forces with surface molecules.</p><p>Choice A is incorrect because \"for instance\" illogically signals exemplification rather than consequence. Choice B is incorrect because \"however\" illogically signals contrast, when the second sentence describes a result. Choice D is incorrect because \"similarly\" illogically signals similarity, when the geckos' climbing ability is caused by the lamellae's properties.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

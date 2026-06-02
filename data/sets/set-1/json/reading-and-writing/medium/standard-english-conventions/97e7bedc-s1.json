@@ -1,0 +1,25 @@
+{
+  "questionId": "97e7bedc-s1",
+  "originalId": "97e7bedc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Pitcher plants typically obtain nitrogen from the insects that fall into their fluid-filled traps, but certain species have also developed a partnership with tree shrews, small mammals that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> for the plants&rsquo; sugary nectar and leave nutrient-rich droppings behind.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>has visited</p>"},
+    {"id": "b", "content": "<p>visit</p>"},
+    {"id": "c", "content": "<p>visits</p>"},
+    {"id": "d", "content": "<p>is visiting</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The plural verb \"visit\" agrees in number with the plural relative-clause subject \"that,\" whose antecedent is the plural noun \"tree shrews.\"</p><p>Choice A is incorrect because the singular verb \"has visited\" doesn&rsquo;t agree in number with the plural antecedent \"tree shrews.\" Choice C is incorrect because the singular verb \"visits\" doesn&rsquo;t agree in number with the plural antecedent \"tree shrews.\" Choice D is incorrect because the singular verb \"is visiting\" doesn&rsquo;t agree in number with the plural antecedent \"tree shrews.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

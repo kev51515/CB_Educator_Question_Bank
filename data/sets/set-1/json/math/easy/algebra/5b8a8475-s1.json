@@ -1,0 +1,39 @@
+{
+  "questionId": "5b8a8475-s1",
+  "originalId": "5b8a8475",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line <i>k</i> is defined by <i>y</i> = 5<i>x</i> + 7. Line <i>j</i> is perpendicular to line <i>k</i> in the <i>xy</i>-plane. What is the slope of line <i>j</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;&frac15;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&frac15;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope of line <i>k</i> is 5. A line perpendicular to it has slope equal to the negative reciprocal, &minus;&frac15;.</p><p>Choices A and D give the wrong magnitude; choice C has the wrong sign.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "083a35dc-s1",
+  "originalId": "083a35dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T2.medium",
+  "stimulus": "<p>Wangari Maathai was a Kenyan environmental and political activist who founded the Green Belt Movement in Nairobi in 1977. She was awarded the Nobel Peace Prize in <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> through her decades of advocacy, communities across rural Kenya had planted tens of millions of trees.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>2004</p>"},
+    {"id": "b", "content": "<p>2004 and</p>"},
+    {"id": "c", "content": "<p>2004, and</p>"},
+    {"id": "d", "content": "<p>2004,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a comma and the coordinating conjunction &ldquo;and&rdquo; to join the first main clause (&ldquo;She...2004&rdquo;) and the second main clause (&ldquo;through...trees&rdquo;).</p><p>Choice A is incorrect because it results in a run-on sentence. Choice B is incorrect because when coordinating two longer main clauses, it is conventional to use a comma before the coordinating conjunction. Choice D is incorrect because, without a conjunction following it, a comma can&rsquo;t join two main clauses (comma splice).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f1bfbed3-s1",
+  "originalId": "f1bfbed3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Anika Mathur and colleagues' 2022 Andean cloud-forest fungal biodiversity census reported approximately 9,400 species, nearly double the number reported in Pablo Salazar and Roc\u00edo Vega's 2012 census\u2014a difference only partly attributable to the description of new macrofungi (mushrooms) in the interim. Another factor is that the genetic variability of microfungi is poorly understood compared to that of macrofungi, lichens, vascular plants, and bryophytes, creating uncertainty about how to evaluate microfungi as species. Researchers' decisions on such matters therefore can be highly consequential. Indeed, the two censuses reported similar counts of macrofungi, lichen, and bryophyte species, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>some genetic differences observed in microfungi may have been treated as variations within species by Salazar and Vega but treated as indicative of distinct species by Mathur and colleagues.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mathur and colleagues reported a much higher number of species than Salazar and Vega did largely due to the inclusion of mushrooms that had not been described at the time of Salazar and Vega's census.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Salazar and Vega may have been less sensitive to the degree of genetic variation displayed within a typical species of microfungus than Mathur and colleagues were.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the absence of clarity regarding how to differentiate among species of microfungi may have resulted in Mathur and colleagues underestimating the number of microfungal species.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says the doubling of the species count is only partly explained by newly described mushrooms, and that microfungi are particularly hard to evaluate as species; meanwhile the two censuses agreed on macrofungi, lichens, and bryophytes. The most logical conclusion is that the difference comes from how microfungi were treated: Mathur and colleagues likely classified as distinct species some microfungal differences that Salazar and Vega had classified as within-species variation, accounting for the much higher total.</p><p>Choice B is incorrect because the text explicitly states that newly described mushrooms account for only part of the difference. Choice C is incorrect because if Salazar and Vega had been less sensitive to within-species variation, they would have reported more species, not fewer. Choice D is incorrect because an underestimate by Mathur and colleagues would mean the difference between the censuses should have been even larger, not smaller.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

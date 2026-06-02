@@ -1,0 +1,25 @@
+{
+  "questionId": "7a0d9031-s1",
+  "originalId": "7a0d9031",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>In several of her abstract canvases from the 1950s and 1960s, Canadian Anishinaabe artist Daphne Odjig sought to evoke the rhythms of woodland storytelling through stylized form, using bold black contours to outline ancestral figures. Notably, the circle representing the cycle of seasons <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> among the recurring symbols in her compositions.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>have been</p>"},
+    {"id": "b", "content": "<p>is</p>"},
+    {"id": "c", "content": "<p>were</p>"},
+    {"id": "d", "content": "<p>are</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"the circle.\"</p><p>Choice A is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"the circle.\" Choice C is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject \"the circle.\" Choice D is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"the circle.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

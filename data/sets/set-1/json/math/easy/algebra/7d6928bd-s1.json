@@ -1,0 +1,39 @@
+{
+  "questionId": "7d6928bd-s1",
+  "originalId": "7d6928bd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bakery sells muffins and cookies. Each muffin costs $2.50 and each cookie costs $1.75. Devon has at most $30 to spend. Which inequality represents this situation, where <i>m</i> is the number of muffins and <i>c</i> is the number of cookies Devon can buy?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2.50<i>m</i> + 1.75<i>c</i> &le; 30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.75<i>m</i> + 2.50<i>c</i> &le; 30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2.50<i>m</i> + 1.75<i>c</i> &ge; 30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2.50<i>m</i> &minus; 1.75<i>c</i> &le; 30</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The cost of <i>m</i> muffins is 2.50<i>m</i> and the cost of <i>c</i> cookies is 1.75<i>c</i>, so the total cost is 2.50<i>m</i> + 1.75<i>c</i>. \"At most $30\" means the total is less than or equal to 30, giving 2.50<i>m</i> + 1.75<i>c</i> &le; 30.</p><p>Choice B swaps the per-item prices. Choice C uses the wrong inequality direction (&ge; means \"at least\", not \"at most\"). Choice D incorrectly subtracts the cost of cookies instead of adding it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "8889d6e2-s1",
+  "originalId": "8889d6e2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T2.medium",
+  "stimulus": "<p><span role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>A series of excavations at the Bluefish Caves in northern Yukon has challenged the long-standing belief that humans first entered the Americas roughly 15,000 years ago. Dozens of mammoth and horse bones recovered from the cave floors bear thin parallel grooves dated to as much as 24,000 years ago, <span role=\"region\" aria-label=\"Referenced Content\"><u>revealing that humans were already butchering large game in the region millennia before the conventionally accepted arrival date.</u></span></p><p>&nbsp;</p><p><span role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>The Bluefish Caves bones are striking, but it may be premature to read them as proof of human butchery. Similar grooves can be produced by carnivores gnawing through dried tendon or by stones rolling across bone during freeze-thaw cycles. Moreover, the cave deposits have so far yielded no stone tools, hearth remains, or other independent traces of human occupation from the relevant period.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By acknowledging that it will most likely be confirmed once the grooves are subjected to higher-resolution imaging</p>"},
+    {"id": "b", "content": "<p>By suggesting that it draws a plausible link between two ancient populations but will require additional study to verify</p>"},
+    {"id": "c", "content": "<p>By pointing out that it fails to account for evidence that humans were present in the Americas as early as is commonly thought</p>"},
+    {"id": "d", "content": "<p>By asserting that it rests on an assumption about the grooves on the bones that is not sufficiently supported by available evidence</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Text 1 treats the grooves on the bones as butchery marks and uses them to infer human activity at the caves. Text 2 argues that comparable grooves can be produced by carnivores or by freeze-thaw activity, and that no independent signs of human occupation have been found in the deposits. The author of Text 2 would therefore say that the claim in Text 1 depends on an unsupported assumption about what produced the grooves.</p><p>Choice A is incorrect because Text 2 emphasizes the absence of corroborating evidence, not the need for finer imaging. Choice B is incorrect because Text 1 makes no claim about two distinct populations; it concerns one site&rsquo;s timeline. Choice C is incorrect because Text 2 challenges the interpretation of the grooves, not any claim about how early humans were present elsewhere.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

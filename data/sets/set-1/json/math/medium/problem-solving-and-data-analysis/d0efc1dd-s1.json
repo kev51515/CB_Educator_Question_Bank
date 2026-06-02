@@ -1,0 +1,39 @@
+{
+  "questionId": "d0efc1dd-s1",
+  "originalId": "d0efc1dd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>12, 11, 19, 18, <em>x</em></p><p>The mean and the median of the five numbers above are equal. Which of the following is NOT a possible value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Suppose <em>x</em>=5. Then the five numbers are 12, 11, 19, 18, 5, whose sum is 65, so the mean is 65/5=13. Ordered from least to greatest the numbers are 5, 11, 12, 18, 19, so the median is 12. Because 13 &ne; 12, the mean and median are not equal when <em>x</em>=5. Choices A, B, and C are incorrect; substituting any of these values for <em>x</em> makes the mean equal to the median: when <em>x</em>=15, the ordered list is 11, 12, 15, 18, 19 with mean 15 and median 15; when <em>x</em>=30, the ordered list is 11, 12, 18, 19, 30 with mean 18 and median 18; when <em>x</em>=0, the ordered list is 0, 11, 12, 18, 19 with mean 12 and median 12.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.medium"
+}

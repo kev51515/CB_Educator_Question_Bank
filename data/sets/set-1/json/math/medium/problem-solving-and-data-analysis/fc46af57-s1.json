@@ -1,0 +1,39 @@
+{
+  "questionId": "fc46af57-s1",
+  "originalId": "fc46af57",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A jar containing <math><mn>8,000</mn></math> marbles of assorted colors is purchased from a supplier. To estimate the percent of green marbles in the jar, a sample of marbles is selected at random. The percent of green marbles in the jar is estimated to be <math><mn>22</mn><mo>%</mo></math>, with an associated margin of error of <math><mn>3</mn><mo>%</mo></math>. If <math><mi>r</mi></math> is the actual number of green marbles in the jar, which of the following is most plausible?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>r</mi><mo>&#60;</mo><mn>1,520</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>r</mi><mo>&#62;</mo><mn>2,000</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>1,520</mn><mo>&#8804;</mo><mi>r</mi><mo>&#8804;</mo><mn>2,000</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>r</mi><mo>=</mo><mn>1,760</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The plausible range for the proportion is 22% \u00b1 3%, i.e., 19% to 25%. Multiplying by 8,000 gives a plausible range for r of 1,520 to 2,000.</p><p>Choices A and B fall outside the plausible interval. Choice D fixes a single value, which is too restrictive given the margin of error.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T4.medium"
+}

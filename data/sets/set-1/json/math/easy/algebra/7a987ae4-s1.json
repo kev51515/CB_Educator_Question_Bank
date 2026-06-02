@@ -1,0 +1,25 @@
+{
+  "questionId": "7a987ae4-s1",
+  "originalId": "7a987ae4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mfrac><mrow><mn>3</mn><mi>k</mi></mrow><mn>4</mn></mfrac><mo>=</mo><mn>6</mn></math>, what is the value of <math><mn>3</mn><mi>k</mi><mo>-</mo><mn>1</mn></math>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>11</p>"},
+    {"id": "b", "content": "<p>7</p>"},
+    {"id": "c", "content": "<p>23</p>"},
+    {"id": "d", "content": "<p>25</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. Multiplying both sides of the given equation by 4 yields <math><mn>3</mn><mi>k</mi><mo>=</mo><mn>24</mn></math>. Substituting into <math><mn>3</mn><mi>k</mi><mo>-</mo><mn>1</mn></math> yields <math><mn>24</mn><mo>-</mo><mn>1</mn><mo>=</mo><mn>23</mn></math>.</p><p>Choice A is the value of <math><mi>k</mi><mo>+</mo><mn>3</mn></math>. Choice B is the value of <math><mi>k</mi><mo>-</mo><mn>1</mn></math>. Choice D is the value of <math><mn>3</mn><mi>k</mi><mo>+</mo><mn>1</mn></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

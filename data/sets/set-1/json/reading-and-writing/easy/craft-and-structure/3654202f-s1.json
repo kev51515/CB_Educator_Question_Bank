@@ -1,0 +1,39 @@
+{
+  "questionId": "3654202f-s1",
+  "originalId": "3654202f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Industrial robotic arms can perform precise assembly tasks, but they are too expensive for hobbyist use. Researchers Wei Zhou and Allison Chang have shown, however, that there may be a comparatively <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> alternative: small modifications to consumer-grade 3D printers can give makers a cheap way to perform similar assembly steps at home.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>impractical</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>infrequent</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>unmistakable</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>inexpensive</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the text contrasts an expensive industrial option with a cheap alternative for hobbyists, and \"inexpensive\" matches the word \"cheap\" used later in the sentence. Choices A, B, and C all describe qualities (impracticality, rarity, clarity) that do not match the contrast between expensive and affordable.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

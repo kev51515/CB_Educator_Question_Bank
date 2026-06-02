@@ -1,0 +1,25 @@
+{
+  "questionId": "94c54577-s1",
+  "originalId": "94c54577",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A2.T3.hard",
+  "stimulus": "<p>While studying art history in London in the 1990s, the curator Aruna Banerjee encountered few works by South Asian artists in major British museum exhibitions, despite London&rsquo;s reputation as one of the leading hubs for contemporary art from around the world. According to an arts journalist, later in her career as a curator and museum director, Banerjee sought to remedy this absence not by mounting exhibitions devoted exclusively to South Asian modernism but by curating shows that placed South Asian artists in sustained dialogue with their European, African, and East Asian contemporaries.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the journalist&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As director of the Tate Modern, Banerjee organized a retrospective of Indian painter Nasreen Mohamedi&rsquo;s work entitled <em>Nasreen Mohamedi: Lines among Lines</em>.</p>"},
+    {"id": "b", "content": "<p>Banerjee organized the exhibition <em>Bombay/London/Lagos: Print Cultures 1947&ndash;1980</em> in order to foreground a particular printmaking aesthetic rather than to compare regional traditions.</p>"},
+    {"id": "c", "content": "<p>In the exhibition <em>Routes after Bandung: Asian, African, and European Abstraction 1955&ndash;1975</em>, Banerjee and cocurator Eli Mwangi brought works by South Asian abstractionists into conversation with African and European abstractionists working in the same period.</p>"},
+    {"id": "d", "content": "<p>Banerjee&rsquo;s work as curator of the 2008 exhibition <em>The Postcolonial Decade: South Asian Independence Movements 1945&ndash;1955</em> drew large audiences across the UK.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it presents the specific kind of evidence the journalist&rsquo;s claim requires. The claim has a &ldquo;not X but Y&rdquo; structure: Banerjee remedied the absence <em>not</em> by South-Asian-only shows <em>but</em> by curating exhibitions that placed South Asian artists in dialogue with artists from other regions. An exhibition explicitly putting South Asian abstractionists in conversation with African and European contemporaries exemplifies that &ldquo;Y&rdquo; component.</p><p>Choice A is incorrect because a solo retrospective of a single South Asian artist exemplifies the &ldquo;X&rdquo; approach the journalist says Banerjee did <em>not</em> rely on, so it does not support the claim. Choice B is incorrect because foregrounding a particular aesthetic rather than comparing regional traditions does not exhibit the cross-regional dialogue the claim emphasizes. Choice D is incorrect because audience size is irrelevant to the curatorial strategy described in the claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

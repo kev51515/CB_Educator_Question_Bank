@@ -1,0 +1,23 @@
+{
+  "questionId": "9cb9beec-s1",
+  "originalId": "9cb9beec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p><i>y</i> = &minus;2.5</p><p><i>y</i> = <i>x</i>&sup2; + 10<i>x</i> + <i>a</i></p><p>In the given system of equations, <i>a</i> is a positive constant. The system has exactly one distinct real solution. What is the value of <i>a</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "22.5",
+    "45/2"
+  ],
+  "rationale": "<p>Substituting &minus;2.5 for <i>y</i> in the second equation: &minus;2.5 = <i>x</i>&sup2; + 10<i>x</i> + <i>a</i>, or <i>x</i>&sup2; + 10<i>x</i> + (<i>a</i> + 2.5) = 0. For exactly one solution, the discriminant equals 0: 10&sup2; &minus; 4(<i>a</i> + 2.5) = 0, so 100 = 4<i>a</i> + 10, giving 4<i>a</i> = 90, <i>a</i> = 22.5.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

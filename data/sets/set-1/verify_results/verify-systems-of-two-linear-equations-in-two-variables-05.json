@@ -1,0 +1,22 @@
+[
+  {"id": "317e80f9-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy", "verdict": "ok"},
+  {"id": "3409707e-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "type_drift", "detail": "Tagged T1 (one equation isolates a variable) but stem 'x+y=160; x+2y=215' has both equations with both variables — that is T2 structure."},
+  {"id": "939fc21b-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy", "verdict": "type_drift", "detail": "Tagged T2 (both equations involve both variables) but u=4 already isolates a variable — that is T1 structure."},
+  {"id": "4b06557b-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "type_drift", "detail": "T6 must_preserve: 'graph of exactly two lines shown'. Clone has no graph; pure algebraic system — categorical drift to A1."},
+  {"id": "608eeb6e-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "type_drift", "detail": "Stem asks for combined expression x-y rather than a raw component; that is T3 (solve and evaluate combined expression), not T1."},
+  {"id": "f5563c26-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "cd33b015-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy", "verdict": "ok"},
+  {"id": "4ec95eab-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.medium", "verdict": "ok"},
+  {"id": "e1259a5a-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.easy", "verdict": "type_drift", "detail": "T7 must_preserve: 'one side of the question is graphical, the other algebraic'. Clone presents two algebraic equations and asks which candidate point is the solution — no graphical component; this is A1 territory."},
+  {"id": "4b76c7f1-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.easy", "verdict": "ok"},
+  {"id": "0d1dca87-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "4fb8adf7-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "aacc834b-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "5f46fc76-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "type_drift", "detail": "T6 must_preserve: 'graph of exactly two lines shown'. No graph in stem; pure algebraic — categorical drift to A1."},
+  {"id": "ece00725-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "f88970cc-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "8abed0fb-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "1006cad7-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy", "verdict": "type_drift", "detail": "T6 must_preserve: 'graph of exactly two lines shown'. Clone has no graph; pure algebraic system — categorical drift to A1."},
+  {"id": "17f176ec-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy", "verdict": "ok"},
+  {"id": "0df106df-s1", "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.easy", "verdict": "ok"}
+]

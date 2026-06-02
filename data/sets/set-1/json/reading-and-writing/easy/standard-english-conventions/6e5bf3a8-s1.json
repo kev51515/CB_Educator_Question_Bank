@@ -1,0 +1,39 @@
+{
+  "questionId": "6e5bf3a8-s1",
+  "originalId": "6e5bf3a8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Although hummingbirds prefer highly concentrated sugar water, the flowers that attract them have evolved to produce nectar that is only moderately sweet. A recent study <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> why: producing concentrated nectar is biologically costly, and it is more efficient for flowers to make a large volume of less sweet nectar than a small volume of very sweet nectar.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>clarifies</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>clarifying</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>having clarified</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to clarify</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A main clause requires a finite verb. The finite present tense verb &ldquo;clarifies&rdquo; correctly serves as the main verb performing the action of the subject &ldquo;a recent study.&rdquo;</p><p>Choices B, C, and D are all nonfinite forms that cannot serve as the main verb of a clause.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

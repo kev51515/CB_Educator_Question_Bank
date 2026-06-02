@@ -1,0 +1,39 @@
+{
+  "questionId": "2a5aa08a-s1",
+  "originalId": "2a5aa08a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><em>The Old Curiosity Shop</em> is an 1841 novel by Charles Dickens. The narrator describes meeting a mysterious old shopkeeper as a young man. The narrator was unsettled by the shopkeeper&rsquo;s strange manner, as can be seen when the narrator says, ______</p>",
+  "stem": "<p>Which quotation from <em>The Old Curiosity Shop</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;[The shopkeeper] watched me with a strange, fixed look in his eyes that made me shrink back from his counter; long after I had left him, I could feel that gaze still settled on me, and it disturbed my sleep for many nights.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;The street outside was crowded with carts and barrows of every description, and the noise of wheels and voices was constant from dawn to dusk.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;[The shopkeeper] kept the shop in good order, dusting the cases himself each morning and arranging the smaller curiosities on the shelves with a careful hand.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;I had walked past the shop many times before that afternoon, always meaning to step inside but never finding the time to do so.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because it shows the narrator&rsquo;s unease: the &ldquo;strange, fixed look&rdquo; makes him &ldquo;shrink back,&rdquo; and the gaze even &ldquo;disturbed [his] sleep,&rdquo; clearly indicating that the shopkeeper&rsquo;s manner unsettled him.</p><p>Choice B is incorrect because it describes the street outside, not the narrator&rsquo;s feelings about the shopkeeper. Choice C is incorrect because tidy housekeeping does not convey unease. Choice D is incorrect because passing the shop earlier says nothing about being unsettled by the shopkeeper&rsquo;s manner.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "68f2cbaf-s1",
+  "originalId": "68f2cbaf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Anika set a goal to bike at least 36 miles every day to train for a long-distance ride. On a certain day, Anika plans to bike at an average speed of 9 miles per hour. What is the minimum number of hours Anika must bike that day to fulfill the goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. To cover at least 36 miles at 9 mph, the minimum time is 36 / 9 = 4 hours.</p><p>Other choices misinterpret the relationship between distance, speed, and time.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy"
+}

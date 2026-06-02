@@ -1,0 +1,25 @@
+{
+  "questionId": "e929fe98-s1",
+  "originalId": "e929fe98",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Composer Margaret Bonds won first prize for her song cycle <em>Three Dream Portraits</em> at the 1944 Wanamaker Foundation Awards. The work was performed the following year by the Robert Shaw Chorale, a significant recognition of its quality. Bonds continued to compose many pieces throughout her career, blending traditional spirituals and the rhythms of African American song with European classical forms. In recent years, Bonds's choral works and art songs have been performed and recorded by several major ensembles, further preserving her music for others to enjoy.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To compare Bonds's scores with those of classical European composers</p>"},
+    {"id": "b", "content": "<p>To provide examples of Bonds's importance as a composer</p>"},
+    {"id": "c", "content": "<p>To describe the musical styles that inspired many of Bonds's songs</p>"},
+    {"id": "d", "content": "<p>To argue that more major ensembles should perform Bonds's compositions</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text shows Bonds's importance by describing her 1944 award, the high-profile performance by the Robert Shaw Chorale, her blended musical style, and recent recordings by major ensembles.</p><p>Choice A is incorrect. The text doesn't directly compare scores. Choice C is incorrect. The blended styles are mentioned briefly, not as the main focus. Choice D is incorrect. The text doesn't argue for more performances.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

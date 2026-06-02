@@ -1,0 +1,39 @@
+{
+  "questionId": "00ec9102-s1",
+  "originalId": "00ec9102",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Priya is buying books and magazines at a used bookstore. Each book costs $4.20 and each magazine costs $3.10. Priya has $25 to spend. Which inequality represents the relationship between the number of books, <i>b</i>, and the number of magazines, <i>m</i>, that Priya can buy?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.10<i>b</i> + 4.20<i>m</i> &le; 25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.20<i>b</i> + 3.10<i>m</i> &ge; 25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4.20<i>b</i> + 3.10<i>m</i> &le; 25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3.10<i>b</i> + 4.20<i>m</i> &ge; 25</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The cost of <i>b</i> books is 4.20<i>b</i> and the cost of <i>m</i> magazines is 3.10<i>m</i>, so the total cost is 4.20<i>b</i> + 3.10<i>m</i>. Since Priya has only $25, the total must be at most $25: 4.20<i>b</i> + 3.10<i>m</i> &le; 25.</p><p>Choice A swaps the per-item prices. Choices B and D use the wrong inequality direction (&ge; means \"at least\", but Priya cannot spend more than her $25).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "4ed09415-s1",
+  "originalId": "4ed09415",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Naomi Kessler and Stephen Ortega found that elevated background noise depresses the foraging activity of the eastern red bat (<em>Lasiurus borealis</em>), a result they explain in cost-benefit terms: louder ambient conditions mask the echolocation cues bats rely on, so the gains from continued hunting do not outweigh the increased risk of misjudging obstacles. Most other small insectivorous bats respond to ambient noise much as eastern red bats do; the silver-haired bat (<em>Lasionycteris noctivagans</em>), however, has been documented foraging unabated in noisy environments. Researchers tentatively trace this divergence to the silver-haired bat's preference for larger, slower prey whose detection appears to rely less on faint acoustic cues.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It introduces an observation of a behavioral pattern, presents an explanation for the pattern, and then describes an exception that casts doubt on that explanation.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes and accounts for a finding, characterizes that finding as representative of a broader pattern, and then describes and accounts for an exception to that pattern.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It discusses two different responses to the same stimulus, explains why one of those responses occurs, and then states that the other still cannot be explained.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It presents a study result, says it agrees with many other studies, and then attributes a conflicting result to a flaw in method.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text first reports Kessler and Ortega's finding about the eastern red bat and gives a cost-benefit explanation for it; next it notes that most other small insectivorous bats behave the same way (making the finding representative of a broader pattern); finally it describes the silver-haired bat as an exception and proposes a reason rooted in its prey choice.</p><p>Choice A is incorrect because the silver-haired bat's behavior is given its own tentative explanation, not used to discredit the original one. Choice C is incorrect because the two responses are presented sequentially, not as competing reactions to one stimulus, and both receive explanations. Choice D is incorrect because the text never attributes the divergent result to methodological flaws.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T8.hard"
+}

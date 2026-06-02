@@ -1,0 +1,25 @@
+{
+  "questionId": "7aac173e-s1",
+  "originalId": "7aac173e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A5.T14.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Engineer Norma Merrick Sklarek trained in modernist and international-style architecture in New York.</li>\n<li>Sklarek worked for a large architecture firm that was contracted in 1965 to design buildings for a major California civic center.</li>\n<li>Most of the civic center&rsquo;s buildings exhibit modernist and international-style design.</li>\n<li>At the time, Sklarek&rsquo;s contributions were not publicly credited.</li>\n<li>Based on the buildings&rsquo; design vocabulary, historians believe Sklarek led the design of most of the civic center&rsquo;s buildings.</li>\n</ul>",
+  "stem": "<p>The student wants to specify why historians believe Sklarek led the design of most of the civic center&rsquo;s buildings. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Although Sklarek wasn&rsquo;t publicly credited at the time, historians believe she led the design of most of the civic center&rsquo;s buildings.</p>"},
+    {"id": "b", "content": "<p>Most of the civic center&rsquo;s buildings, designed by a firm that employed Sklarek, exhibit modernist and international-style design.</p>"},
+    {"id": "c", "content": "<p>Sklarek, an engineer who trained in modernist and international-style architecture in New York, is believed to have led the design of most of the civic center&rsquo;s buildings.</p>"},
+    {"id": "d", "content": "<p>Because most of the civic center&rsquo;s buildings exhibit the modernist and international-style design vocabulary Sklarek had trained in, historians believe she led their design.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. It specifies the reason for historians&rsquo; belief: the buildings&rsquo; design vocabulary matches the style Sklarek trained in.</p><p>Choice A states the belief but not the reason. Choice B emphasizes the buildings&rsquo; styles without linking them to Sklarek&rsquo;s authorship. Choice C identifies Sklarek and the belief but doesn&rsquo;t specify the historians&rsquo; reasoning.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

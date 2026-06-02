@@ -1,0 +1,25 @@
+{
+  "questionId": "ecba68b5-s1",
+  "originalId": "ecba68b5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>Architect Lina Bo Bardi, occasionally working alongside designers Joaquim Guedes and Vilanova Artigas, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recognized for transforming postwar Brazilian modernism. After her early collaborations in S&atilde;o Paulo, she developed an independent style. Guedes later acknowledged that her ideas reshaped his own practice in ways he had not initially anticipated.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>is</p>"},
+    {"id": "c", "content": "<p>have been</p>"},
+    {"id": "d", "content": "<p>are being</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb &ldquo;is recognized&rdquo; agrees in number with the singular subject &ldquo;Architect Lina Bo Bardi.&rdquo; The interrupting participial phrase &ldquo;occasionally working alongside designers Joaquim Guedes and Vilanova Artigas&rdquo; does not change the number of the subject.</p><p>Choice A is incorrect because the plural verb &ldquo;are recognized&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Architect Lina Bo Bardi.&rdquo; Choice C is incorrect because the plural verb &ldquo;have been recognized&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Architect Lina Bo Bardi.&rdquo; Choice D is incorrect because the plural verb &ldquo;are being recognized&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Architect Lina Bo Bardi.&rdquo;</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

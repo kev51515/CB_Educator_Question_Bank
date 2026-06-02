@@ -1,0 +1,39 @@
+{
+  "questionId": "45c03837-s1",
+  "originalId": "45c03837",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Researcher Hideo Tanaka and colleagues studied how two kinds of human-generated noise affect the foraging behavior of beluga whales near busy shipping channels. They compared the whales&rsquo; deep-dive feeding behavior under three conditions: natural ocean sound, the rumble of cargo-ship engines alone, and the rumble of cargo-ship engines combined with the high-frequency sonar pings used by some vessels for navigation. Both engine rumble alone and engine rumble combined with sonar pings disrupted the whales&rsquo; foraging compared to natural conditions, but&mdash;unexpectedly&mdash;the team found essentially no behavioral difference between the two engine-noise conditions. One reasonable explanation for this surprising finding is that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>cargo-ship engine rumble already raises ambient noise so much that adding sonar pings produces almost no further change in the whales&rsquo; acoustic surroundings.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>belugas turned out to be less sensitive to human-generated sound than the researchers had expected.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>belugas forage at shallower depths in the presence of engine rumble alone than in the presence of engine rumble combined with sonar pings.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>sonar pings reach the whales at noticeably greater depths than engine rumble does.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the discussion of why the two engine-noise conditions had nearly identical effects. If engine rumble alone is already loud enough to mask or dominate the acoustic environment, then adding sonar pings to it would scarcely change the level of disturbance, so the whales' responses would look essentially the same in both conditions.</p><p>Choice B is incorrect because the text states that both human-noise conditions significantly disrupted natural foraging compared to baseline, indicating that the whales were quite sensitive to human-generated sound. Choice C is incorrect because the text says there were essentially no behavioral differences between the two noise conditions; this answer directly contradicts that. Choice D is incorrect because if sonar pings reached the whales at depths where engine rumble did not, one would expect a difference in behavior between the two conditions, not an absence of difference.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

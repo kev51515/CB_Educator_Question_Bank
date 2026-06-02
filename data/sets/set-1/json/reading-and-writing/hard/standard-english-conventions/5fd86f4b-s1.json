@@ -1,0 +1,25 @@
+{
+  "questionId": "5fd86f4b-s1",
+  "originalId": "5fd86f4b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T5.hard",
+  "stimulus": "<p>The villanelle, a poetic form originating in sixteenth-century French pastoral verse, has an exacting structure. The contemporary scholar Annie Finch explains that each one of a villanelle&rsquo;s nineteen lines, while contributing to the patterns of refrain (a recurring first and third line) and rhyme established in the poem&rsquo;s opening tercet, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> rhythmically distinct and tonally deliberate, producing what she calls \"a meticulously braided silence.\"</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>have been</p>"},
+    {"id": "b", "content": "<p>is</p>"},
+    {"id": "c", "content": "<p>are</p>"},
+    {"id": "d", "content": "<p>were</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verb forms within a sentence. The singular verb \"is\" agrees in number with the singular subject \"each one of a villanelle&rsquo;s nineteen lines.\" While the prepositional phrase \"of a villanelle&rsquo;s nineteen lines\" within the subject contains a plural noun, the head of the subject (\"each one\") is singular, indicating that each individual line (not the lines as a group) is \"rhythmically distinct and tonally deliberate.\"</p><p>Choice A is incorrect because the plural verb \"have been\" doesn&rsquo;t agree in number with the singular subject \"each one of a villanelle&rsquo;s nineteen lines.\" Choice C is incorrect because the plural verb \"are\" doesn&rsquo;t agree in number with the singular subject. Choice D is incorrect because the plural verb \"were\" doesn&rsquo;t agree in number with the singular subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

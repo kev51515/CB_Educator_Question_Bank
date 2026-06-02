@@ -1,0 +1,39 @@
+{
+  "questionId": "3233c162-s1",
+  "originalId": "3233c162",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Iron-to-calcium ratio (mmol/mol) in sediment cores from two coastal sites, by approximate years before present (kyr BP). A lower iron-to-calcium ratio is associated with higher local salinity.</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Years before present (kyr)</th><th>Site A: Bay of Calais</th><th>Site B: Galician Shelf</th></tr>\n<tr><td>2</td><td>52.1</td><td>14.5</td></tr>\n<tr><td>4</td><td>78.3</td><td>13.9</td></tr>\n<tr><td>6</td><td>56.2</td><td>15.0</td></tr>\n<tr><td>8</td><td>68.7</td><td>14.1</td></tr>\n<tr><td>10</td><td>22.8</td><td>12.9</td></tr>\n<tr><td>12</td><td>49.5</td><td>13.7</td></tr>\n<tr><td>14</td><td>45.0</td><td>17.2</td></tr>\n<tr><td>16</td><td>54.0</td><td>14.0</td></tr>\n<tr><td>18</td><td>40.0</td><td>13.5</td></tr>\n<tr><td>20</td><td>33.5</td><td>13.0</td></tr>\n</table>\n<p>The population of the seagrass <em>Posidonia oceanica</em> declined sharply around 9,000 years ago in the Bay of Calais and around 11,000 years ago off the Galician Shelf. Using the iron-to-calcium ratio (which inversely correlates with local salinity), marine ecologist Margarida Soares and colleagues evaluated whether salinity changes contributed to those declines. They concluded that salinity changes may have been important in the Bay of Calais but not off the Galician Shelf, since ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a substantial increase in salinity at Site A corresponded with the local decline of <em>P. oceanica</em>, while the opposite relationship between salinity and <em>P. oceanica</em> was found at Site B.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>salinity at Site A was higher before the decline in <em>P. oceanica</em> than after the decline, whereas salinity at Site B was relatively high both before and after the decline.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>at Site A, <em>P. oceanica</em> declined during a period of large local salinity change, but at Site B, <em>P. oceanica</em> declined during a period of only small local salinity change.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>salinity at Site A tended to be substantially lower than salinity at Site B during the period studied.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the conclusion is that salinity mattered at Site A but not at Site B. At Site A, around 9,000&ndash;10,000 years ago, the iron/calcium ratio dropped sharply from ~56 to ~23 (a large salinity change). At Site B, around 11,000 years ago, the iron/calcium ratio shifted only modestly. So <em>P. oceanica</em> declined during big salinity change at A but during little salinity change at B&mdash;exactly supporting the researchers&rsquo; conclusion. Choices A, B, and D either misread the data or compare absolute levels rather than changes around the decline.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

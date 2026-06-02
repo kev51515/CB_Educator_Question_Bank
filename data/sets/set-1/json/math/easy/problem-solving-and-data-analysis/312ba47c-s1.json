@@ -1,0 +1,39 @@
+{
+  "questionId": "312ba47c-s1",
+  "originalId": "312ba47c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a box of markers, the ratio of blue markers to green markers is 6 to 1. There are 54 blue markers in the box. How many green markers are in the box?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>324</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since the ratio of blue to green is 6 to 1, the number of green markers is 54 \u00f7 6 = 9.</p><p>Choice A is incorrect; this is the ratio coefficient. Choice B is incorrect and results from subtracting incorrectly. Choice D is incorrect; it results from multiplying 54 by 6 instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy"
+}

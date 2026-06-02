@@ -1,0 +1,39 @@
+{
+  "questionId": "e9fb7774-s1",
+  "originalId": "e9fb7774",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What percentage of 200 is 60?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>20%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>120%</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The percentage is (60 \u00f7 200) \u00d7 100 = 0.30 \u00d7 100 = 30%.</p><p>Choice A is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This is the value itself, not the percentage.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A2.T1.easy"
+}

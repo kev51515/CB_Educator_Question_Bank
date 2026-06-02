@@ -1,0 +1,25 @@
+{
+  "questionId": "f3f444bc-s1",
+  "originalId": "f3f444bc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.medium",
+  "stimulus": "<p>Many tick repellents include natural compounds that work by stimulating multiple chemosensory receptors on the ticks&rsquo; legs. As ticks develop resistance, new repellents are needed. Adesh Mehta and his team found that nootkatone, a compound extracted from Alaska yellow-cedar, can repel ticks by stimulating just one chemosensory receptor&mdash;and this receptor, <span data-ssml-say-as=\"characters\">Cr12</span>, is present in every tick species known to transmit Lyme disease. Therefore, the researchers suggest that in developing new repellents, it would be most useful to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>investigate alternative methods of extracting nootkatone from Alaska yellow-cedar.</p>"},
+    {"id": "b", "content": "<p>identify additional compounds similar to nootkatone that also target <span data-ssml-say-as=\"characters\">Cr12</span> receptors.</p>"},
+    {"id": "c", "content": "<p>verify the precise locations of <span data-ssml-say-as=\"characters\">Cr12</span> and other chemosensory receptors on the ticks&rsquo; legs.</p>"},
+    {"id": "d", "content": "<p>determine the maximum number of distinct receptors that a single compound can stimulate.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text says that nootkatone is effective because <span data-ssml-say-as=\"characters\">Cr12</span> is present in every Lyme-transmitting tick species. Because ticks may eventually develop resistance to nootkatone, the researchers&rsquo; logic supports searching for other compounds that act on the same shared receptor.</p><p>Choice A is incorrect because the text never indicates that extraction is the bottleneck. Choice C is incorrect because the text gives no hint that the location of <span data-ssml-say-as=\"characters\">Cr12</span> is unknown. Choice D is incorrect because the text&rsquo;s logic does not support shifting back toward multi-receptor compounds.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

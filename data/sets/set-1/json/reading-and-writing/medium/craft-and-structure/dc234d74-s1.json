@@ -1,0 +1,25 @@
+{
+  "questionId": "dc234d74-s1",
+  "originalId": "dc234d74",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>The recently detected fast radio burst FRB 2024-148B carried roughly forty millijoules of energy, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> for a burst originating in a known magnetar field. Bursts produced by similar magnetars normally carry less than one millijoule.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>an outlier</p>"},
+    {"id": "b", "content": "<p>a regularity</p>"},
+    {"id": "c", "content": "<p>a setback</p>"},
+    {"id": "d", "content": "<p>an event</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"An outlier\" is something that lies far outside typical values. The text contrasts forty millijoules with the usual sub-millijoule reading, marking this burst as unusually energetic.</p><p>Choice B is incorrect. \"A regularity\" would mean a typical case, contradicting the text's emphasis on how unusual the burst is. Choice C is incorrect. \"A setback\" denotes a hindrance, which doesn't describe a burst's energy. Choice D is incorrect. \"An event\" applies to the burst itself, but the blank describes the energy reading; calling a number an event is incoherent here.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9342ca50-s1",
+  "originalId": "9342ca50",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Segment BC is parallel to segment AD. Line t passes through points A and C. The measure of angle ACB is x°, and the measure of angle CAD is y°. If x = 37, what is the value of y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>53</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>74</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>143</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>37</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since BC is parallel to AD and AC is a transversal, angles ACB and CAD are alternate interior angles, which are congruent. Thus y = x = 37.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

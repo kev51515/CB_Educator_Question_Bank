@@ -1,0 +1,25 @@
+{
+  "questionId": "6317295c-s1",
+  "originalId": "6317295c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Selected Brown Dwarfs and Their Properties</p></caption><thead><tr><th>Name</th><th>Spectral type</th><th>Rotation period (hours)</th><th>Surface temperature (K)</th></tr></thead><tbody><tr><td>BD-217</td><td>L4</td><td>2.31</td><td>1820</td></tr><tr><td>BD-419</td><td>L9</td><td>8.46</td><td>1410</td></tr><tr><td>BD-088</td><td>T2</td><td>1.74</td><td>1175</td></tr><tr><td>BD-302</td><td>T7</td><td>5.92</td><td>820</td></tr><tr><td>BD-156</td><td>T5</td><td>13.08</td><td>960</td></tr></tbody></table></figure><p>A student is researching brown dwarfs, substellar objects too small to sustain hydrogen fusion. The rotation period of a brown dwarf is the time it takes the object to spin once on its axis. Looking at the table, the student concludes that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>BD-088 takes longer to complete one rotation than any of the other brown dwarfs in the table.</p>"},
+    {"id": "b", "content": "<p>BD-419 and BD-302 take the same amount of time to complete one rotation.</p>"},
+    {"id": "c", "content": "<p>BD-156 takes the longest amount of time to complete one rotation of any brown dwarf in the table.</p>"},
+    {"id": "d", "content": "<p>BD-217 and BD-088 each take more than three hours to complete one rotation.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. According to the table, BD-156 has a rotation period of 13.08 hours, which is the longest period of any brown dwarf listed; since the rotation period is the time required to spin once, BD-156 takes the longest to complete one rotation. Choice A is incorrect because BD-088 has the shortest rotation period in the table (1.74 hours), not the longest. Choice B is incorrect because BD-419 (8.46 hours) and BD-302 (5.92 hours) have different rotation periods. Choice D is incorrect because BD-088 has a rotation period of 1.74 hours, which is less than three hours.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

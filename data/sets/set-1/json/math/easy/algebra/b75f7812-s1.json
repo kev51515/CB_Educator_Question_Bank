@@ -1,0 +1,22 @@
+{
+  "questionId": "b75f7812-s1",
+  "originalId": "b75f7812",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Lin plans to rent a kayak. The kayak rental costs $45 per hour, and she will also have to pay a $20 launch fee. Lin wants to spend no more than $200 for the rental and the fee. If the kayak rental is available only for a whole number of hours, what is the maximum number of hours for which Lin can rent the kayak?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>The correct answer is 4. The cost is 45h + 20 for h hours. 45h + 20 &le; 200 gives 45h &le; 180, so h &le; 4. The largest whole-number value is 4.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.easy"
+}

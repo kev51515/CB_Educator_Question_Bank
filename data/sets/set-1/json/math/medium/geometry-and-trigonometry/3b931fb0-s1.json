@@ -1,0 +1,22 @@
+{
+  "questionId": "3b931fb0-s1",
+  "originalId": "3b931fb0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A right circular cylinder has a volume of 504 cubic centimeters. The area of the base of the cylinder is 18 square centimeters. What is the height, in centimeters, of the cylinder?</p>",
+  "answerOptions": null,
+  "keys": [
+    "28"
+  ],
+  "rationale": "<p>The volume of a right circular cylinder is V = Bh, where B is the area of the base. Therefore h = V/B = 504/18 = 28.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A2.T2.medium"
+}

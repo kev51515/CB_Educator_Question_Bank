@@ -1,0 +1,25 @@
+{
+  "questionId": "f8c4591b-s1",
+  "originalId": "f8c4591b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>With their long, blade-like leaves and tall flowering spikes, the plants Phormium tenax (New Zealand) and Yucca filamentosa (United States) may appear nearly identical to a casual observer. Botanist Hira Manaaki and her colleagues, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> can determine from each plant's flower structure that Phormium belongs to the lily family, while Yucca belongs to the asparagus family.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>for instance,</p>"},
+    {"id": "b", "content": "<p>furthermore,</p>"},
+    {"id": "c", "content": "<p>however,</p>"},
+    {"id": "d", "content": "<p>thus,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"However\" logically signals that the information in this sentence—that botanists can distinguish the two plants by their flower structure—presents a qualification or exception to the previous statement that the plants look nearly identical. The plants actually belong to entirely different families.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the information exemplifies the previous information about the plants' similar appearance. Choice B is incorrect because \"furthermore\" illogically signals that the information merely adds to the previous information, when in fact it qualifies the apparent similarity. Choice D is incorrect because \"thus\" illogically signals that the information is a result of the previous information about appearance, when in fact it contrasts with that apparent similarity.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

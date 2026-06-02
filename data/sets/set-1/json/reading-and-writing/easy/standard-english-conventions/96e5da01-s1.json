@@ -1,0 +1,39 @@
+{
+  "questionId": "96e5da01-s1",
+  "originalId": "96e5da01",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The diatom species <em>Phaeodactylum tricornutum</em> is highly efficient at absorbing carbon dioxide. For this reason, researchers are currently studying ways to deploy this species in industrial settings. <em>P. tricornutum</em> might be cultivated, for example, to support future bioreactor systems that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> emissions from factories.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>are capturing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>captured</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>have captured</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>capture</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Simple present tense verbs can describe actions in hypothetical or future scenarios. The simple present &ldquo;capture&rdquo; correctly describes what the future bioreactor systems would do.</p><p>Choice A (present progressive) describes a current ongoing action that doesn&rsquo;t apply to a hypothetical future system. Choices B (past) and C (present perfect) place the action in the past, inconsistent with the future scenario.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

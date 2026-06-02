@@ -1,0 +1,39 @@
+{
+  "questionId": "a67a439d-s1",
+  "originalId": "a67a439d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mi>x</mi><mo>-</mo><mn>4</mn><mo>=</mo><mn>2</mn></math></p><p><math><msup><mfenced><mrow><mi>x</mi><mo>-</mo><mn>4</mn></mrow></mfenced><mn>2</mn></msup><mo>=</mo><mi>y</mi></math></p><p>Which ordered pair <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> is a solution to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(6, 2)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(6, 4)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(6, 6)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(2, 4)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. From the first equation, <em>x</em> = 6. Substituting <em>x</em> = 6 into the second equation gives <math><msup><mfenced><mrow><mn>6</mn><mo>-</mo><mn>4</mn></mrow></mfenced><mn>2</mn></msup><mo>=</mo><msup><mn>2</mn><mn>2</mn></msup><mo>=</mo><mn>4</mn></math>, so <em>y</em> = 4. The ordered pair is (6, 4).</p><p>Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

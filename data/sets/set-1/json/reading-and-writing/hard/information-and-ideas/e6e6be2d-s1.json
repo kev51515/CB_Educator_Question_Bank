@@ -1,0 +1,25 @@
+{
+  "questionId": "e6e6be2d-s1",
+  "originalId": "e6e6be2d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Overbrowsing by white-tailed deer has caused many eastern North American hardwood forests to be replaced by browse-line glades—forest understories stripped of saplings and covered in invasive shrubs that deer avoid eating. Invasive shrubs in browse-line glades persist in a state of low palatability that lessens their food value—and thus their appeal—to many large herbivores. Maria Vianello and colleagues penned American bison, a once-abundant herbivore species that has been reintroduced to several eastern preserves only in recent years, in paddocks that each contained a palatable shrub and an unpalatable shrub. The researchers found that the bison selected the palatable shrub in 44.1% of trials and the unpalatable shrub in 39.8% of trials, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>American bison are reluctant to feed on both palatable and unpalatable shrubs and are therefore unlikely to thrive in eastern hardwood forests.</p>"},
+    {"id": "b", "content": "<p>American bison are less likely to consume invasive shrubs in browse-line glades than other species of large herbivores are, putting bison at a high risk of extinction.</p>"},
+    {"id": "c", "content": "<p>American bison are willing to browse shrubs, but if given a choice, they will eat other more nutritious plants instead.</p>"},
+    {"id": "d", "content": "<p>American bison do not always avoid foraging on unpalatable shrubs, making American bison population recovery a potentially important tool for controlling browse-line glades.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text explains that browse-line glades are dominated by unpalatable invasive shrubs that most large herbivores avoid, but that in the experiment, reintroduced American bison consumed the unpalatable shrubs in nearly 40% of trials, even when palatable shrubs were available. Because the bison did not always avoid the unpalatable shrubs, growing the bison population could help control browse-line glades by removing those shrubs.</p><p>Choice A is incorrect because the bison did eat both kinds of shrubs in significant fractions of trials, not refused them. Choice B is incorrect because the text doesn't compare bison consumption rates to those of other large herbivores. Choice C is incorrect because the text doesn't mention other, more nutritious plants or bison preferences for them.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

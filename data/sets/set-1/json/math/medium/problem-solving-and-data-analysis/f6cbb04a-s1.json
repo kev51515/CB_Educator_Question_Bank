@@ -1,0 +1,39 @@
+{
+  "questionId": "f6cbb04a-s1",
+  "originalId": "f6cbb04a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation <em>d</em> = 65<em>t</em> can be used to calculate the distance <em>d</em>, in miles, traveled by a car moving at a speed of 65 miles per hour over a period of <em>t</em> hours. For any positive constant <em>k</em>, the distance the car would have traveled after <em>kt</em> hours is how many times the distance it would have traveled after <em>t</em> hours?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>65<em>k</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>65 + <em>k</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>k</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>65/<em>k</em></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Distance after <em>kt</em> hours is 65(<em>kt</em>) = 65<em>k</em>\u00b7<em>t</em>. Distance after <em>t</em> hours is 65<em>t</em>. The ratio of the two is 65<em>kt</em> / 65<em>t</em> = <em>k</em>.</p><p>Choices A, B, and D arise from common arithmetic or conceptual errors with the formula.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.medium"
+}

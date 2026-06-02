@@ -1,0 +1,39 @@
+{
+  "questionId": "70d9516e-s1",
+  "originalId": "70d9516e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A train is traveling at a constant speed along a straight portion of track. The equation d = 45t gives the distance d, in feet from a station, that the train will be t seconds after passing the station. How many feet from the station will the train be 3 seconds after passing the station?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>135</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>90</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. d = 45(3) = 135 feet.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "35e21b06-s1",
+  "originalId": "35e21b06",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Elena Marquez and colleagues observed seven captive bottlenose dolphins (<em>Tursiops truncatus</em>) outfitted with experimental suction-cup data loggers. While fitting each dolphin, the researchers noticed that some dolphins without loggers would nudge a logger on another dolphin with their rostrums until the device detached. <u>The researchers proposed that this behavior could indicate dolphins helping one another without any benefit to the helpers.</u></p>\n<p><strong>Text 2</strong></p>\n<p>It is appealing to interpret animals as deliberately assisting one another when we see them removing equipment from each other, particularly in species already known to engage in other forms of cooperation. Yet it can be difficult to rule out the possibility that individuals are simply intrigued by the unfamiliar object, nosing or batting at it until it eventually comes loose.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The proposal is well supported because cooperation is already documented in <em>Tursiops truncatus</em>, making a helping interpretation the most parsimonious.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The proposal misidentifies the helpers, since the dolphins wearing loggers were the ones most likely to be assisted by others.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The proposal applies to captive settings but cannot extend to wild populations, where loggers are seldom used.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The proposal overstates a helping motive when the dolphins' behavior could be explained as simple curiosity about an unfamiliar object.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The underlined claim in Text 1 is the researchers' specific proposal that nudging loggers off other dolphins reflects helping behavior with no benefit to the helpers. Text 2 cautions that animals removing equipment from each other can often be sufficiently explained by curiosity about an unfamiliar object, so the author of Text 2 would push back on the underlined helping interpretation by offering this alternative explanation.</p><p>Choice A is incorrect because Text 2 explicitly warns against treating prior cooperation in a species as licensing a helping interpretation here. Choice B is incorrect because Text 2 raises no concern about misidentifying which dolphins are helpers; it questions whether helping is occurring at all. Choice C is incorrect because Text 2 does not draw a captive-versus-wild distinction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.hard"
+}

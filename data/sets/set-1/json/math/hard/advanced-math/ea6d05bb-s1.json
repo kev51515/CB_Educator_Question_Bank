@@ -1,0 +1,22 @@
+{
+  "questionId": "ea6d05bb-s1",
+  "originalId": "ea6d05bb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The expression (5<i>x</i> &minus; 17)(13<i>x</i> + 8) is equivalent to the expression <i>a</i><i>x</i>&sup2; + <i>b</i><i>x</i> + <i>c</i>, where <i>a</i>, <i>b</i>, and <i>c</i> are constants. What is the value of <i>b</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-181"
+  ],
+  "rationale": "<p>Expand using FOIL: (5<i>x</i>)(13<i>x</i>) + (5<i>x</i>)(8) + (&minus;17)(13<i>x</i>) + (&minus;17)(8) = 65<i>x</i>&sup2; + 40<i>x</i> &minus; 221<i>x</i> &minus; 136 = 65<i>x</i>&sup2; &minus; 181<i>x</i> &minus; 136. So <i>b</i> = &minus;181.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A2.T6.hard"
+}

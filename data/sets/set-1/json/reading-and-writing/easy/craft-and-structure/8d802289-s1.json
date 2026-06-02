@@ -1,0 +1,39 @@
+{
+  "questionId": "8d802289-s1",
+  "originalId": "8d802289",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Mexican muralist Diego Rivera's love of pre-Columbian art is most clearly visible in the imagery and symbols he wove into his murals. Rivera collected Aztec and Mayan artifacts throughout his life, drawing inspiration from sculptures, codices, and stonework. With his choice of motifs, Rivera helped bring ancient Mexican traditions to modern audiences.</p><p><strong>Text 2</strong></p><p>Pre-Columbian influence runs through all of Rivera's work, but it is most visible in the bold compositional style he used. Rivera often arranged figures in flat, layered planes that recall the panels of Mesoamerican codices. When painting public walls, Rivera rarely centered a single dominant figure. Instead, he organized scenes in stacked registers, the way ancient artisans did.</p>",
+  "stem": "<p>Based on the texts, both authors would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Rivera's murals are heavily shaped by pre-Columbian art.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Viewers were mostly unfamiliar with the pre-Columbian symbols Rivera used.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Rivera blended multiple European traditions when creating his murals.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Artists who worked alongside Rivera valued his approach to public art.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Text 1 says Rivera had a \"love of pre-Columbian art\" that is visible in the imagery of his murals. Text 2 says pre-Columbian influence \"runs through all of Rivera's work.\" While the authors point to different aspects of that influence, both agree it shaped his murals.</p><p>Choice B is incorrect. Neither text mentions how familiar viewers were with the symbols Rivera used. Choice C is incorrect. Neither text mentions European traditions; both focus on pre-Columbian influences. Choice D is incorrect. Neither text discusses the opinions of artists who worked with Rivera.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A2.T4.easy"
+}

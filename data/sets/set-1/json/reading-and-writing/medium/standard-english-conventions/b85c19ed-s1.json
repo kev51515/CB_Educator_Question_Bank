@@ -1,0 +1,25 @@
+{
+  "questionId": "b85c19ed-s1",
+  "originalId": "b85c19ed",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T6.medium",
+  "stimulus": "<p>The longbows handcrafted in the fifteenth century by English bowyer Thomas Yarrow have long been admired as some of the most powerful ever made. In close consultation with archers, Yarrow modified the curvature of a standard longbow, deepening some of the weapon&rsquo;s arcs and making <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> sturdier overall.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>them</p>"},
+    {"id": "b", "content": "<p>one</p>"},
+    {"id": "c", "content": "<p>it</p>"},
+    {"id": "d", "content": "<p>those</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"it\" agrees in number with the singular antecedent \"longbow\" and indicates that the standard longbow (and not its arcs) was made sturdier.</p><p>Choice A is incorrect because the plural pronoun \"them\" doesn&rsquo;t agree in number with the singular antecedent \"longbow.\" Choice B is incorrect because the singular pronoun \"one\" is ambiguous in this context; the resulting sentence leaves unclear what Yarrow made sturdier. Choice D is incorrect because the plural pronoun \"those\" doesn&rsquo;t agree in number with the singular antecedent \"longbow.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

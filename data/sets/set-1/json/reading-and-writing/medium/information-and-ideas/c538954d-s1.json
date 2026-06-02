@@ -1,0 +1,25 @@
+{
+  "questionId": "c538954d-s1",
+  "originalId": "c538954d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T1.medium",
+  "stimulus": "<p><em>Persuasion</em> is an 1817 novel by Jane Austen. In the novel, Austen describes Anne Elliot&rsquo;s tendency to suppress her own desires in favor of accommodating the wishes of others, even when doing so causes her distress: <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which quotation from <em>Persuasion</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;Anne, with an elegance of mind and sweetness of character, which must have placed her high with any people of real understanding, was nobody with either father or sister.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;She had been forced into prudence in her youth, she learned romance as she grew older: the natural sequel of an unnatural beginning.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;How quick come the reasons for approving what we like! She had been thinking it would be much more agreeable to remain at home, but yielded to the wishes of all and undertook the journey she dreaded.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;A few months had seen the beginning and the end of their acquaintance; but, not with a few months ended Anne&rsquo;s share of suffering from it.&rdquo;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it shows Anne preferring to stay home but yielding to others&rsquo; wishes and undertaking a journey she dreaded — an enactment of suppressing her desire to accommodate others, even with distress. Choice A is incorrect because it describes how others undervalue Anne, not her self-suppression. Choice B is incorrect because it explains how Anne came to value romance, not how she defers to others. Choice D is incorrect because it describes Anne&rsquo;s prolonged grief, not her habit of accommodating others.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

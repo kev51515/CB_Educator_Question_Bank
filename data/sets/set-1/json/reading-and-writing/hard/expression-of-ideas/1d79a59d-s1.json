@@ -1,0 +1,39 @@
+{
+  "questionId": "1d79a59d-s1",
+  "originalId": "1d79a59d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Leaders of the Republic of Texas declared independence from Mexico in March 1836.</li>\n<li>The accompanying Texas Declaration of Independence was drafted by lawyer George Childress.</li>\n<li>Earlier in his career, Childress had publicly opposed any break with the Mexican government.</li>\n<li>The Mexican government's 1835 dissolution of the federalist 1824 constitution alarmed Childress.</li>\n<li>After this dissolution, Childress reversed his position and joined the independence movement.</li>\n</ul>",
+  "stem": "<p>The student wants to place the 1836 Texas Declaration of Independence in the context of Childress's shifting political beliefs. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The 1835 dissolution of the Mexican federalist constitution was the spark that Childress, a long-time opponent of Texas independence, needed to change his political views.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A change in Childress's political beliefs that occurred when the Mexican government dissolved the 1824 constitution led to Childress drafting Texas's Declaration of Independence.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The drafting of the Texas Declaration of Independence may not have occurred without the Mexican government's 1835 dissolution of the 1824 constitution.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Long opposed to a break with Mexico, Childress reversed his position after the 1835 dissolution of the federalist constitution and drafted the 1836 declaration.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it situates the 1836 declaration squarely within Childress's changed beliefs: it notes his earlier opposition, identifies the event that caused him to reverse, and ties that reversal directly to his drafting of the document.</p><p>Choice A omits the drafting of the declaration itself. Choice B describes the change but doesn't note his earlier opposition. Choice C focuses on the cause rather than on Childress's shift.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A4.T13.hard"
+}

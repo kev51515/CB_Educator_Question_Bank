@@ -1,0 +1,39 @@
+{
+  "questionId": "f452410b-s1",
+  "originalId": "f452410b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Results of Track Analysis for Two Sets of Hadrosaur Tracks</p></caption><thead><tr><th scope=\"col\">Tracks</th><th scope=\"col\">Estimated footprint length (centimeters)</th><th scope=\"col\">Average stride length (meters)</th><th scope=\"col\">Estimated mean speed (meters per second)</th></tr></thead><tbody><tr><th scope=\"row\">Coastal 4A</th><td>41.6</td><td>3.85</td><td>4.2\u20136.1</td></tr><tr><th scope=\"row\">Coastal 4B</th><td>47.2</td><td>3.22</td><td>3.0\u20134.7</td></tr></tbody></table></figure></p><p>The table shows data from a 2023 study of two sets of dinosaur tracks preserved in coastal sediment. The tracks, labeled Coastal 4A and Coastal 4B, were left by two individual hadrosaurs (plant-eating dinosaurs that often walked on two legs). The findings suggest that, of the two hadrosaurs, the one that left the Coastal 4A tracks had a higher maximum mean speed, ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>a shorter footprint, and a shorter average stride.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>a longer footprint, and a longer average stride.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a longer footprint, and a shorter average stride.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a shorter footprint, and a longer average stride.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Coastal 4A has footprint 41.6 cm (shorter than 4B's 47.2 cm) and stride 3.85 m (longer than 4B's 3.22 m).</p><p>Choice A wrongly claims 4A had a shorter stride. Choice B wrongly claims 4A had a longer footprint. Choice C reverses both characteristics.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

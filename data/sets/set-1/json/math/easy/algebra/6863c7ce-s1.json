@@ -1,0 +1,39 @@
+{
+  "questionId": "6863c7ce-s1",
+  "originalId": "6863c7ce",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A2.T2.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>d = 24t</p><p>The given equation represents the distance d, in feet, where t represents the number of seconds since an object started moving. Which of the following is the best interpretation of 24 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The object moved a total of 24 feet.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The object is moving at a rate of 24 feet per second.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The object moved a total of 24 t feet.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The object is moving at a rate of 1/24 feet per second.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. In d = 24t, 24 is the rate, in feet per second.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

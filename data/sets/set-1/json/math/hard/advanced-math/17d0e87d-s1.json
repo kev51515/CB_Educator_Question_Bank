@@ -1,0 +1,39 @@
+{
+  "questionId": "17d0e87d-s1",
+  "originalId": "17d0e87d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>(18p)/(6q) = 3&radic;(r + 11). The given equation relates the distinct positive real numbers p, q, and r. Which equation correctly expresses r in terms of p and q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>r = (p/q)<sup>2</sup> &minus; 11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>r = (3p/q)<sup>2</sup> &minus; 11</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>r = &radic;(p/q) &minus; 11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>r = &radic;(18p/6q) &minus; 11</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Simplify the left side: 18p/(6q) = 3p/q. The equation becomes 3p/q = 3&radic;(r + 11). Dividing both sides by 3 gives p/q = &radic;(r + 11). Squaring (both sides are positive): (p/q)<sup>2</sup> = r + 11. Subtracting 11 yields r = (p/q)<sup>2</sup> &minus; 11.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard"
+}

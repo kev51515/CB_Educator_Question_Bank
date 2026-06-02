@@ -1,0 +1,176 @@
+[
+  {
+    "id": "197bed38-s1",
+    "templateId": "nonlinear-functions.A3.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Clone asks for maximum height of a quadratic projectile h(t)=\u22125t\u00b2+30t+35 (max=80). This matches A3.T3 (vertex/extreme value of quadratic) or A4.T2 (quadratic projectile model), not A3.T5 (interval of increase, asymptote, symmetry). Answer 80 is correct."
+  },
+  {
+    "id": "c4cd5bcc-s1",
+    "templateId": "nonlinear-functions.A5.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Clone asks which evaluation g(c) equals the y-intercept k \u2014 pure definition of y-intercept = f(0). A5.T2 requires choosing among equivalent algebraic forms (standard/vertex/factored/rebased) that expose a feature. No equivalent forms are presented. Better fit: A3.T2 conceptual variant. Answer g(0) is correct."
+  },
+  {
+    "id": "d71f6dbf-s1",
+    "templateId": "nonlinear-functions.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks interpretation of h(0.8)=16.16, a function-value evaluation. That matches A2.T1 (Interpret f(c)=v statement), not A2.T2 (Interpret coefficient or constant). Answer C is correct; tag is wrong."
+  },
+  {
+    "id": "252a3b3a-s1",
+    "templateId": "nonlinear-functions.A3.T5.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks f(-4) for f(x)=x^3-16x \u2014 direct substitution evaluation (A1.T1). Not graph-feature reasoning (A3.T5). f(-4)=-64+64=0, answer C correct, but aspect tag is wrong."
+  },
+  {
+    "id": "f1c81b3b-s1",
+    "templateId": "nonlinear-functions.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem gives g(x)=11\u00b7a^x with unknown a, condition g(2)=1331, asks g(3). This is parameter recovery + evaluation (A6.T1 medium lever), not building an exponential model from context (A4.T1). Answer 14641 = 11\u00b711^3 is correct."
+  },
+  {
+    "id": "100030d9-s1",
+    "templateId": "nonlinear-functions.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Geometric-decay bouncing-ball problem with iterative halving is closer to A4.T1 exponential decay context, but stem asks numeric height after 3 bounces (not building a model). Answer 4 ft correct (32\u219216\u21928\u21924)."
+  },
+  {
+    "id": "9ff88bb5-s1",
+    "templateId": "nonlinear-functions.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem asks interpretation of x-intercept (a coordinate/feature point) \u2014 matches A2.T1 (Interpret a specific point/value in context), not A2.T2 (interpret a structural constant such as initial value or growth factor). Answer D correct."
+  },
+  {
+    "id": "c7a187a7-s1",
+    "templateId": "nonlinear-functions.A3.T3.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T3 is 'Vertex or extreme value of quadratic', but clone asks for an x-intercept of f(x)=x^2-20x-96. Stem and answer fit A3.T4 (x-intercepts/zeros of polynomial), not vertex/extremum. Answer (-4,0) is mathematically correct."
+  },
+  {
+    "id": "cc6ccd71-s1",
+    "templateId": "nonlinear-functions.A3.T5.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T5 covers interval/asymptote/symmetry reasoning. Clone asks how many x-values satisfy f(x)=0 given two stated x-intercepts\u2014this fits A3.T4 (x-intercepts/zeros). Answer 'Two' is correct."
+  },
+  {
+    "id": "9654add7-s1",
+    "templateId": "nonlinear-functions.A3.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Clone asks for interpretation of an x-intercept (p where P(q)=0) in context. This fits A3.T4 (x-intercepts/zeros) or A2.T2 (interpret constant), not A3.T3 (vertex/extreme value). Answer is correct (d)."
+  },
+  {
+    "id": "df71424b-s1",
+    "templateId": "nonlinear-functions.A3.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A6.T1 reasoning: solve for unknown parameters a, b, c from a horizontal asymptote and two passing points. A3.T5 targets graph-feature reasoning (intervals, asymptotes, equation-shape matching), not parameter recovery. Answer (Three) is mathematically correct."
+  },
+  {
+    "id": "8462b105-s1",
+    "templateId": "nonlinear-functions.A4.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem describes a numeric product f(n)=n(n-17), not a geometric area/volume context. T3 must_preserve requires 'geometric (or geometric-analog) context'; this clone is a context-free abstract product, fitting A4 only loosely. Answer is correct."
+  },
+  {
+    "id": "43926bd9-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "type_drift",
+    "detail": "A6.T1 requires a nonlinear function form with unknown parameter(s) pinned by structural condition(s) (point/intercept/vertex). This clone is a pure system-of-equations identity (sum & sum-of-squares of two numbers) with no function f and no parameter to recover. Better fits algebra/system-of-equations skill, not nonlinear-functions A6.T1."
+  },
+  {
+    "id": "ebed7dc6-s1",
+    "templateId": "nonlinear-functions.A2.T2.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for the numeric x-value that produces the maximum revenue (vertex of quadratic). That is A3.T3 (vertex/extreme value), not A2 interpretation. No 'best interpretation' phrasing or symbol-to-meaning mapping is required."
+  },
+  {
+    "id": "9afe2370-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stem builds an exponential decay model from a verbal percent-decrease description with no unknown parameter to solve. This is A4.T1 (build exponential growth/decay model), not A6.T1 (solve for parameter from structural condition)."
+  },
+  {
+    "id": "2b6c12eb-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem defines f(x)=2x^2-8 and asks to solve f(x)=24 (A1.T2 'Solve f(x)=k'); tagged as A3.T1 'Read intercept or point from graph' but no graph is involved and no intercept/coordinate is requested. Answer x=4 is correct, but aspect/type tag is wrong."
+  },
+  {
+    "id": "2d394c28-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Clone is contextual exponential p(x)=8(1.05)^x asking for population at x=0 \u2014 A1.T1 (substitution into nonlinear rule) or A2.T2 (interpret initial-value constant), not A3.T1 (read intercept/point from a graph). No graph appears in the stem. Answer 8 is mathematically correct."
+  },
+  {
+    "id": "ad376f1a-s1",
+    "templateId": "nonlinear-functions.A3.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Stem gives the y-intercept (0,-4) and asks for f(0) \u2014 a trivial intercept-from-given-point task fitting A3.T1 (read intercept) or A3.T2 (intercept from equation), not A3.T5 'Other graph-feature reasoning' (asymptotes, intervals, symmetry). Answer -4 is correct."
+  },
+  {
+    "id": "1ee962ec-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem requires evaluating h(t)=-16t^2+64 at t=0,1,2 (direct substitution). This is A1.T1 (Direct substitution into f(x)), not A3 (graph feature reading)."
+  },
+  {
+    "id": "26f5269a-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem is direct substitution g(4)=3*16-5=43 \u2014 matches A1.T1 (Direct substitution into f(x)) rather than A3.T1 (read intercept/point from graph)."
+  },
+  {
+    "id": "02c67921-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for f(2) of f(x)=x^2+4 \u2014 this is direct substitution (A1.T1), not reading an intercept from a graph (A3.T1). No graph present and no intercept question."
+  },
+  {
+    "id": "e9aed539-s1",
+    "templateId": "nonlinear-functions.A3.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a vertical translation of a graph by 3 units and asks which point lies on the translated graph \u2014 this is A5.T1 (vertical/horizontal shift), not A3.T1 (read intercept/point from graph)."
+  },
+  {
+    "id": "2f4eafcc-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks for f(2) of f(x)=x^2+3 \u2014 direct substitution (A1.T1), not graph-feature identification (A3.T1). No graph, no intercept question."
+  },
+  {
+    "id": "6676f055-s1",
+    "templateId": "nonlinear-functions.A3.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone provides quadratic already in vertex form f(\u03b8)=\u22120.35(\u03b8\u221242)\u00b2+1150, which matches the easy lever 'rule already in vertex form'. Medium lever requires form y=x\u00b2+c or p(x)+k=x\u00b2 (single rearrangement). Answer (42) is correct."
+  },
+  {
+    "id": "58dcc59f-s1",
+    "templateId": "nonlinear-functions.A4.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Clone is single-variable area=w(w+3)=70 (medium lever: 'one dimension in terms of the other; given area, solve for width'). Hard requires 3D volume, two simultaneous constraints, or KE-style application."
+  },
+  {
+    "id": "84dd43f8-s1",
+    "templateId": "nonlinear-functions.A4.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem is medium-style value-after-n-periods with percent-change phrasing. Hard requires non-annual period rewrite, 150%-more vs 150%-OF distractor, or doubling-time recovery."
+  },
+  {
+    "id": "2c6f214f-s1",
+    "templateId": "nonlinear-functions.A4.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Basic geometric-sequence formula w=ar^(n-1) is medium-level at most. Hard requires period rewrite, 150% trap, base-rebased exponential, or doubling-time analysis."
+  },
+  {
+    "id": "d46da42c-s1",
+    "templateId": "nonlinear-functions.A3.T5.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy A3.T5 levers are 'choose graph from a table of values' or 'identify horizontal asymptote from labeled graph'. Clone asks for graph features from a factored cubic equation, fitting A3.T4 (zeros) / A3.T2 (intercept) rather than T5 easy lever."
+  },
+  {
+    "id": "39652e93-s1",
+    "templateId": "nonlinear-functions.A1.T1.easy",
+    "verdict": "difficulty_drift",
+    "detail": "Easy lever requires 'no fraction or negative-exponent base' and a single-/two-term polynomial or radical rule; g(x)=25/x is a rational (x^-1) form, which the template explicitly assigns to the medium lever."
+  }
+]

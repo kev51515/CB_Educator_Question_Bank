@@ -1,0 +1,7 @@
+data/sets/set-1/json/math/easy/advanced-math/fd65f47f-s1.json
+data/sets/set-1/json/math/easy/advanced-math/bdb0aa23-s1.json
+data/sets/set-1/json/math/easy/advanced-math/72ebc024-s1.json
+data/sets/set-1/json/math/easy/advanced-math/dc67c130-s1.json
+data/sets/set-1/json/math/easy/advanced-math/8452c42b-s1.json
+data/sets/set-1/json/math/easy/advanced-math/67e866b5-s1.json
+data/sets/set-1/json/math/easy/advanced-math/df747160-s1.json

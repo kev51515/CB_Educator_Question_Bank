@@ -1,0 +1,39 @@
+{
+  "questionId": "cdec4c87-s1",
+  "originalId": "cdec4c87",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 5x - 13</p><p>y = 17</p><p>What is the solution (x, y) to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(17, 6)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(6, 17)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(6, -17)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(13, 17)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. 17 = 5x - 13 gives x = 6.</p><p>Other choices switch coordinates or have incorrect signs.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

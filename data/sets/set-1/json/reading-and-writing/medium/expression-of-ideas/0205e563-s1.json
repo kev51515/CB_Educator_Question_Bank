@@ -1,0 +1,25 @@
+{
+  "questionId": "0205e563-s1",
+  "originalId": "0205e563",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Juvenile sea turtles spend their first years drifting in open-ocean currents, where they rely chiefly on their sense of smell to locate floating mats of food. Newly hatched freshwater terrapins, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> rely primarily on visual cues to locate sheltered marshes within the first weeks of life. This reliance on different senses likely reflects the very different habitats the two groups must navigate during their earliest stages.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>conversely,</p>"},
+    {"id": "b", "content": "<p>in other words,</p>"},
+    {"id": "c", "content": "<p>for instance,</p>"},
+    {"id": "d", "content": "<p>accordingly,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Conversely\" logically signals that the information in this sentence—that newly hatched freshwater terrapins rely primarily on visual cues—contrasts with the preceding information about juvenile sea turtles, which rely chiefly on smell.</p><p>Choice B is incorrect because \"in other words\" illogically signals that the information about terrapins paraphrases the information about sea turtles. Instead, the two groups are being contrasted. Choice C is incorrect because \"for instance\" illogically signals that the information about terrapins exemplifies the information about sea turtles, when it actually contrasts with it. Choice D is incorrect because \"accordingly\" illogically signals that the information about terrapins is a result of the information about sea turtles, rather than a contrast with it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

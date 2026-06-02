@@ -1,0 +1,25 @@
+{
+  "questionId": "855247c7-s1",
+  "originalId": "855247c7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>Ida B. Wells, an investigative journalist of the post-Reconstruction era, earned a lasting reputation as a pioneering civil rights advocate after challenging segregation in the railroads of the American South. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 1884, she sued the Chesapeake, Ohio and Southwestern Railroad after being forcibly removed from a first-class car designated for white passengers, a case she won at trial before the Tennessee Supreme Court ultimately overturned the verdict.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Specifically,</p>"},
+    {"id": "b", "content": "<p>Then,</p>"},
+    {"id": "c", "content": "<p>For this reason,</p>"},
+    {"id": "d", "content": "<p>In addition,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Specifically\" logically signals that the information about Wells's 1884 lawsuit provides specific, precise details elaborating on the previous point that Wells challenged segregation in the railroads of the American South.</p><p>Choice B is incorrect because \"then\" illogically signals that the lawsuit was simply the next event after she challenged segregation, when the lawsuit is the specific way she challenged segregation. Choice C is incorrect because \"for this reason\" illogically signals that the lawsuit was a result of her challenge, when the lawsuit is the elaboration of that challenge. Choice D is incorrect because \"in addition\" illogically signals an additional, independent point, when the sentence is actually elaborating on the previous claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "739f1bbc-s1",
+  "originalId": "739f1bbc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle DEF, DE = 1,250 millimeters (mm) and EF = 1,250 mm. Which statement is sufficient to prove that triangle DEF is equilateral?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>DF = 125 mm</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>DF = 1,250 mm</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>DF = 12.5 mm</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>DF = 1.25 mm</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. An equilateral triangle has three equal sides. Since DE = EF = 1,250 mm, if DF also equals 1,250 mm, all sides are equal and the triangle is equilateral.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A3.T2.easy"
+}

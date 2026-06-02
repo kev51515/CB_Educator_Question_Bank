@@ -1,0 +1,25 @@
+{
+  "questionId": "20a6a4ed-s1",
+  "originalId": "20a6a4ed",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Ethnomusicologist Kofi Agawu, of Princeton University in the United States, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> rhythm and identity in West African drumming traditions&mdash;specifically, how polyrhythmic forms such as <span lang=\"tw\">agbadza</span> (a Ewe social dance) and <span lang=\"ak\">adowa</span> (an Akan ceremonial style) encode communal histories, values, and aesthetic principles.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are analyzing</p>"},
+    {"id": "b", "content": "<p>analyzes</p>"},
+    {"id": "c", "content": "<p>have analyzed</p>"},
+    {"id": "d", "content": "<p>analyze</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"analyzes\" agrees in number with the singular subject \"ethnomusicologist Kofi Agawu.\"</p><p>Choice A is incorrect because the plural verb \"are analyzing\" doesn't agree in number with the singular subject \"ethnomusicologist Kofi Agawu.\" Choice C is incorrect because the plural verb \"have analyzed\" doesn't agree in number with the singular subject \"ethnomusicologist Kofi Agawu.\" Choice D is incorrect because the plural verb \"analyze\" doesn't agree in number with the singular subject \"ethnomusicologist Kofi Agawu.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5ab9903f-s1",
+  "originalId": "5ab9903f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The cost to rent a boat from Company Y is $1,200 for the first 4 hours and an additional $75 per hour for each hour after the first 4 hours. If the total cost to rent the boat from Company Y for t hours, where t &gt; 4, is $1,500, which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1200(t - 4) + 75t = 1500</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1200(4t) + 75t = 1500</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1200 + 75(4t) = 1500</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1200 + 75(t - 4) = 1500</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The flat fee for the first 4 hours is $1,200. The extra time beyond 4 hours is (t - 4) hours at $75 each, contributing 75(t - 4). The total is 1200 + 75(t - 4) = 1500. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.medium"
+}

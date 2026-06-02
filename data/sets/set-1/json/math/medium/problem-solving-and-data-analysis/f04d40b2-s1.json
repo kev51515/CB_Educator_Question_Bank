@@ -1,0 +1,39 @@
+{
+  "questionId": "f04d40b2-s1",
+  "originalId": "f04d40b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>From a population of <math><mn>80,000</mn></math> people, <math><mn>1,200</mn></math> were chosen at random and surveyed about a proposed referendum. Based on the survey, it is estimated that <math><mn>42</mn><mo>%</mo></math> of people in the population support the referendum, with an associated margin of error of <math><mn>4</mn><mo>%</mo></math>. Based on these results, which of the following is a plausible value for the total number of people in the population who support the referendum?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>420</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>32,400</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>800</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>54,000</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The plausible range for the proportion is 42% \u00b1 4%, i.e., 38% to 46%. Applied to 80,000 people, the plausible range for the total is 30,400 to 36,800. The value 32,400 lies in this range.</p><p>Choices A and C are far too small. Choice D is above the plausible upper bound (36,800).</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T4.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "b3abf40f-s1",
+  "originalId": "b3abf40f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T4.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>F(x) = (9/5)(x - 273.15) + 32. The function F gives the temperature, in degrees Fahrenheit, that corresponds to a temperature of x kelvins. If a temperature increased by 7.50 kelvins, by how much did the temperature increase, in degrees Fahrenheit?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>4.17</p>"},
+    {"id": "b", "content": "<p>13.50</p>"},
+    {"id": "c", "content": "<p>7.50</p>"},
+    {"id": "d", "content": "<p>9.50</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The Fahrenheit change is 9/5 times the kelvin change: 7.50 × (9/5) = 7.50 × 1.8 = 13.50.</p><p>Choices A, C, and D arise from misapplying the formula or using the wrong scale factor.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

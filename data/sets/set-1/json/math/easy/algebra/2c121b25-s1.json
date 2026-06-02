@@ -1,0 +1,39 @@
+{
+  "questionId": "2c121b25-s1",
+  "originalId": "2c121b25",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Mia harvested two crates of apples. In the first crate, 30% of the apples are red, and in the second crate, 50% of the apples are red. Together, the two crates contain at least 400 red apples. Which inequality shows this relationship, where <i>x</i> is the total number of apples in the first crate and <i>y</i> is the total number of apples in the second crate?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30<i>x</i> + 50<i>y</i> &ge; 400</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.30<i>x</i> + 0.50<i>y</i> &le; 400</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.50<i>x</i> + 0.30<i>y</i> &ge; 400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.30<i>x</i> + 0.50<i>y</i> &ge; 400</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Convert each percent to a decimal: 30% = 0.30 and 50% = 0.50. The number of red apples in the first crate is 0.30<i>x</i> and in the second crate is 0.50<i>y</i>. The total number of red apples is 0.30<i>x</i> + 0.50<i>y</i>, which is at least 400, so 0.30<i>x</i> + 0.50<i>y</i> &ge; 400.</p><p>Choice A fails to convert percents to decimals. Choice B uses the wrong inequality direction (&le; instead of &ge;). Choice C swaps the two percentages between the crates.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy"
+}

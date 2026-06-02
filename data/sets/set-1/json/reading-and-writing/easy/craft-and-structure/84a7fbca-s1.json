@@ -1,0 +1,39 @@
+{
+  "questionId": "84a7fbca-s1",
+  "originalId": "84a7fbca",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>When Mexican-American astronomer María Concepción León published her 1902 study of star clusters observed from a remote desert telescope in present-day Arizona, other researchers readily <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her findings as significant; this recognition stemmed from her careful measurements and clearly written conclusions.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>denied</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>ensured</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>disregarded</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>recognized</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"recognized\" matches the description of researchers accepting her findings as significant. Choice A is incorrect because denying contradicts recognition. Choice B is incorrect because ensuring something is significant doesn’t describe how others viewed it. Choice C is incorrect because disregarding contradicts the text.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

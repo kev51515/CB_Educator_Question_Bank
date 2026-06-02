@@ -1,0 +1,39 @@
+{
+  "questionId": "1872cd6d-s1",
+  "originalId": "1872cd6d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>While printing the first issues of the colony of Maryland's official gazette in the 1740s, Jonas Green\u2014then a young Annapolis printer\u2014took several steps to discourage forgery, such as folding sheets to create distinctive watermarks and mixing custom batches of ink to deter substitution. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> he stamped each issue with intricate hand-cut woodblock ornaments that were difficult for counterfeiters to reproduce.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Specifically,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>That said,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Moreover,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The previous sentence already gives two examples (watermarks and custom inks) of how Green deterred forgery. The new sentence adds a third example. &ldquo;Moreover&rdquo; signals additional supporting information.</p><p>Choices A and D introduce examples, but the prior sentence has already listed examples; the new sentence isn't a specification of the prior list but an addition. Choice B signals contrast.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A4.T10.hard"
+}

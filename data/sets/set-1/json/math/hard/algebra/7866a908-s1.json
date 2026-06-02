@@ -1,0 +1,39 @@
+{
+  "questionId": "7866a908-s1",
+  "originalId": "7866a908",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A sample of a certain alloy has a total mass of 60.0 grams and is 50.0% copper by mass. The sample was created by combining two pieces of different alloys. The first piece was 20.0% copper by mass and the second piece was 80.0% copper by mass. What was the mass, in grams, of the copper in the second piece?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Let a and b be the masses of the two pieces. Then a + b = 60 and 0.20a + 0.80b = 30 (50% of 60). Substituting a = 60 \u2212 b: 0.20(60 \u2212 b) + 0.80b = 30, so 12 + 0.60b = 30, giving b = 30. The second piece contains 0.80 \u00d7 30 = 24 grams of copper.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard"
+}

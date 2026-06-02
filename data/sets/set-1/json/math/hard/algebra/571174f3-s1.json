@@ -1,0 +1,23 @@
+{
+  "questionId": "571174f3-s1",
+  "originalId": "571174f3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mfrac><mn>3</mn><mn>4</mn></mfrac><mi>x</mi><mo>+</mo><mfrac><mn>5</mn><mn>4</mn></mfrac><mi>y</mi><mo>=</mo><mfrac><mn>3</mn><mn>8</mn></mfrac></math></p>\n<p style=\"text-align: center;\"><math><mi>g</mi><mi>x</mi><mo>+</mo><mi>k</mi><mi>y</mi><mo>=</mo><mfrac><mn>9</mn><mn>4</mn></mfrac></math></p>\n<p>In the given system of equations, <math><mi>g</mi></math> and <math><mi>k</mi></math> are constants. The system has infinitely many solutions. What is the value of <math><mfrac><mi>g</mi><mi>k</mi></mfrac></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "3/5",
+    ".6"
+  ],
+  "rationale": "<p>The correct answer is 3/5 (or .6). For infinitely many solutions, the two equations must represent the same line, so coefficient ratios match: g/k = (3/4) / (5/4) = 3/5.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

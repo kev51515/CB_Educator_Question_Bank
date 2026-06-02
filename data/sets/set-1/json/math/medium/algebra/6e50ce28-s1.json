@@ -1,0 +1,39 @@
+{
+  "questionId": "6e50ce28-s1",
+  "originalId": "6e50ce28",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Three times the sum of a number p and 5 is equal to a number q. The number q is 4 more than the number p. Which system of equations describes this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>p + 5 = 3q<br>q = p + 4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>p + 5 = 3q<br>q = 4 \u2212 p</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3(p + 5) = q<br>q = p + 4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3(p + 5) = q<br>q = 4 \u2212 p</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Three times the sum of p and 5 is 3(p + 5), which equals q. Saying q is 4 more than p translates to q = p + 4. Choice C matches both. The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.medium"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "74c98c82-s1",
+  "originalId": "74c98c82",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A meeting coordinator is planning an event. It costs the coordinator a onetime fee of $42 to rent the room and $8.75 per attendee. The coordinator has a budget of $250. What is the greatest number of attendees possible without exceeding the budget?</p>",
+  "answerOptions": [],
+  "keys": [
+    "23"
+  ],
+  "rationale": "<p>The correct answer is 23. Let <em>x</em> be the number of attendees. The total cost is 42 + 8.75<em>x</em>. The constraint is 42 + 8.75<em>x</em> \u2264 250. Subtracting 42: 8.75<em>x</em> \u2264 208. Dividing by 8.75: <em>x</em> \u2264 23.77... So the greatest whole number of attendees is 23.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium"
+}

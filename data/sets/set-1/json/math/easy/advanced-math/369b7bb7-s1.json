@@ -1,0 +1,39 @@
+{
+  "questionId": "369b7bb7-s1",
+  "originalId": "369b7bb7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>h</em> is defined by <math><mi>h</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msqrt><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn></msqrt></math>. What is the value of <math><mi>h</mi><mfenced><mn>5</mn></mfenced></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>16/3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting 5 for <em>x</em>: <math><mi>h</mi><mfenced><mn>5</mn></mfenced><mo>=</mo><msqrt><mn>3</mn><mo>&#183;</mo><mn>5</mn><mo>+</mo><mn>1</mn></msqrt><mo>=</mo><msqrt><mn>16</mn></msqrt><mo>=</mo><mn>4</mn></math>.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

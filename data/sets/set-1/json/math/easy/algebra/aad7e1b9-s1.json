@@ -1,0 +1,39 @@
+{
+  "questionId": "aad7e1b9-s1",
+  "originalId": "aad7e1b9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i> is defined by <i>g</i>(<i>x</i>) = (1/8)<i>x</i> &minus; 5. What is the <i>y</i>-intercept of the graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, &minus;5)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(&minus;5, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 1/8)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(1/8, 0)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The <i>y</i>-intercept is the point where <i>x</i> = 0: <i>g</i>(0) = &minus;5, so the <i>y</i>-intercept is (0, &minus;5).</p><p>Choice B swaps coordinates. Choices C and D use the slope value.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A1.T3.easy"
+}

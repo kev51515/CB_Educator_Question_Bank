@@ -1,0 +1,39 @@
+{
+  "questionId": "d621cffb-s1",
+  "originalId": "d621cffb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A sphere has a radius of 11/4 feet. What is the volume, in cubic feet, of the sphere?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4&pi;/11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11&pi;/3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1331&pi;/48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>121&pi;/16</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The volume V of a sphere with radius r is V = (4/3)&pi;r<sup>3</sup>. Substituting r = 11/4 yields V = (4/3)&pi;(11/4)<sup>3</sup> = (4/3)&pi;(1331/64) = 5324&pi;/192 = 1331&pi;/48 cubic feet. Choices A, B, and D are incorrect and result from formula or arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T3.medium"
+}

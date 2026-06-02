@@ -1,0 +1,25 @@
+{
+  "questionId": "94978129-s1",
+  "originalId": "94978129",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Approximate Reading Rates and Information Retention Rates for Five Text Formats</p></caption><thead><tr><th>Text format</th><th>Reading rate (words per minute)</th><th>Information retained (idea units per minute)</th></tr></thead><tbody><tr><td>Plain academic prose</td><td>235</td><td>27.4</td></tr><tr><td>Newspaper article</td><td>320</td><td>29.8</td></tr><tr><td>Annotated textbook</td><td>165</td><td>29.2</td></tr><tr><td>Bulleted summary</td><td>140</td><td>21.0</td></tr><tr><td>Illustrated magazine spread</td><td>205</td><td>23.5</td></tr></tbody></table></figure><p>A group of education researchers conducted a study to determine how quickly readers typically work through different text formats (in words per minute) and how much information they retain from each (in idea units per minute). They found that, although reading rates vary widely across formats, retention rates per minute tend to vary much less. Thus, they claim that two formats with very different reading rates can nonetheless deliver the same amount of information in a given amount of time.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers&rsquo; claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Among the five text formats in the table, bulleted summary and illustrated magazine spread have the lowest reading rates and the lowest retention rates.</p>"},
+    {"id": "b", "content": "<p>The annotated textbook delivers information at approximately the same rate as the newspaper article despite being read at a slower pace.</p>"},
+    {"id": "c", "content": "<p>Among the five text formats in the table, the format that is read the fastest is also the format that delivers information the fastest.</p>"},
+    {"id": "d", "content": "<p>Plain academic prose and the illustrated magazine spread are read at approximately the same rate, but plain academic prose delivers information faster than the illustrated magazine spread does.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The annotated textbook is read at 165 wpm (much slower than the newspaper article at 320 wpm), yet its retention rate (29.2 idea units per minute) is very close to the newspaper article&rsquo;s retention rate (29.8 idea units per minute). This directly supports the claim that two formats with very different reading rates can deliver similar amounts of information in a given time. Choice A is incorrect because the lowest reading rate is the bulleted summary (140), not the illustrated magazine spread (205), and even if true the comparison does not bear on the claim. Choice C is incorrect because the fastest format (newspaper article, 320 wpm) does not deliver the most information per minute (29.8 is below the annotated textbook&rsquo;s 29.2 by only a small margin, and the claim is also irrelevant). Choice D is incorrect because plain academic prose and the illustrated magazine spread are not read at the same rate (235 vs. 205) and prose delivers 27.4 vs. 23.5.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

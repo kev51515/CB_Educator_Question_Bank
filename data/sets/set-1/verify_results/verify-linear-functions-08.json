@@ -1,0 +1,19 @@
+[
+  {"id": "3a3b95df-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "0ea7ef01-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"},
+  {"id": "adf60b28-s1", "templateId": "linear-functions.A2.T1.easy", "verdict": "wrong_answer", "detail": "h(x)=5x+12: constant 12 is h(0)=initial height. Correct choice is B ('estimated height was 12 inches when first measured'). Keyed 'c' (measured each week for 12 weeks) is wrong; the rationale itself states 12 is h(0), the starting height, which matches B, not C."},
+  {"id": "12983c1e-s1", "templateId": "linear-functions.A3.T2.easy", "verdict": "ok"},
+  {"id": "aeaba0b6-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "ok"},
+  {"id": "979b0b8d-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "wrong_answer", "detail": "Slope 24 through (0,0) gives g(x)=24x, which is Choice A. Keyed 'b' is g(x)=(1/24)x. Rationale even concludes 'g(x)=24x' but key is B, contradicting the rationale."},
+  {"id": "c4d49134-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "wrong_answer", "detail": "v=25+4(8)=25+32=57, which is Choice B. Keyed 'c'=25 is wrong; the rationale itself shows v=57 but the key points to 25."},
+  {"id": "1993561d-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "6efcc0a3-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "a9039591-s1", "templateId": "linear-functions.A3.T2.easy", "verdict": "wrong_answer", "detail": "Slope=5, intercept=12, so g(x)=5x+12, which is Choice C. Keyed 'd' is 12x+5. Rationale concludes 'g(x)=5x+12' but the key letter is D, mismatch."},
+  {"id": "a130fcdc-s1", "templateId": "linear-functions.A3.T2.easy", "verdict": "ok"},
+  {"id": "70d9516e-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "3dffe9d2-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "ok"},
+  {"id": "33e4af6b-s1", "templateId": "linear-functions.A4.T1.easy", "verdict": "ok"},
+  {"id": "1ecaa9c0-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "2ecce641-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"},
+  {"id": "361f97c7-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "37dde49f-s1",
+  "originalId": "37dde49f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A glass has a volume given by V = (5\u03c0k\u00b3)/36 cubic centimeters, where k is a positive constant in centimeters. The glass can hold a maximum volume of 380 cubic centimeters. To the nearest hundredth, what is the value of k, in centimeters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9.55</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.83</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7.62</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12.05</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>From (5\u03c0k\u00b3)/36 = 380, multiplying both sides by 36 and dividing by 5\u03c0 gives k\u00b3 = (380)(36)/(5\u03c0) \u2248 870.96. Taking the cube root gives k \u2248 9.55. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A4.T3.medium"
+}

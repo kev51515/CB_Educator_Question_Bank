@@ -1,0 +1,39 @@
+{
+  "questionId": "3dc911d6-s1",
+  "originalId": "3dc911d6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Line graph: Percentage of Adults in Two US Regions Who Reported Daily Newspaper Reading, 1985&ndash;2025.]</p><ul><li>Northeast: 1985 ~70%, 2005 ~50%, 2025 ~22%</li><li>Midwest: 1985 ~65%, 2005 ~45%, 2025 ~20%</li></ul><p>Researchers tracked the percentage of adults in two US regions who reported reading a daily newspaper. The graph shows that ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the sentence?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the percentage of those adults decreased substantially in both regions from 1985 to 2025.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>from 2005 to 2025, adults in the Midwest reported higher daily newspaper reading than adults in the Northeast did.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>from 1985 to 2005, adults in both regions reported daily newspaper reading at rates above 80%.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the percentage of those adults remained fairly consistent, regardless of region, from 2005 to 2025.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because the graph shows a substantial decrease in both regions: the Northeast fell from about 70% to about 22%, and the Midwest from about 65% to about 20%, between 1985 and 2025.</p><p>Choice B is incorrect: the Northeast was consistently slightly higher than the Midwest, not lower. Choice C is incorrect: neither region exceeded 80% in that period. Choice D is incorrect: rates kept falling between 2005 and 2025, not staying consistent.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "5f56fdec-s1",
+  "originalId": "5f56fdec",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from an 1899 poem titled \"The Quiet Hills.\"</p>\n<blockquote><p>My weary heart yet cries, and all my breath</p><p>Aches for the slow green silence of the hills.</p><p>Hold me, ye ridges, from the noise of streets,</p><p>And let me lie beneath the patient pine,</p><p>Where the soft drip of resin shall be all</p><p>The speech I hear, mingled with little winds</p><p>That bear me lightly on between the world</p><p>And the dim country of forgetfulness.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To illustrate the rising intensity of the speaker's wish to escape ongoing hardship by walking the hills.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To justify the speaker's hesitations about being carried by the hills to a distant place.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To contrast the demands of city life with the relief of being held by the hills.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To convey the speaker's longing for the hills to deliver a sense of inner stillness.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The speaker calls on the ridges to hold him \"from the noise of streets\" and to let him lie beneath the pines, with the soft drip of resin as the only sound and little winds bearing him toward \"the dim country of forgetfulness.\" The dominant note is a wish for inner stillness drawn from the hills.</p><p>Choice A is incorrect because the poem reflects a sustained longing rather than a rising intensity. Choice B is incorrect because the speaker expresses desire, not hesitation. Choice C is incorrect because the city is only briefly invoked as a noise to be escaped, not developed as a contrast.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.hard"
+}

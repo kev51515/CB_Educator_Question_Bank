@@ -1,0 +1,39 @@
+{
+  "questionId": "763e6769-s1",
+  "originalId": "763e6769",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The ratio <em>m</em> to <em>n</em> is equivalent to the ratio 8 to <em>p</em>. When m = 72, what is the value of <em>n</em> in terms of <em>p</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8p</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>72p</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>9p</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>576p</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. From m/n = 8/p with m = 72: 72/n = 8/p. Cross-multiplying gives 8n = 72p, so n = 9p.</p><p>Choice A is incorrect; this is just the ratio numerator. Choice B is incorrect; it confuses m with n. Choice D is incorrect; it results from multiplying instead of dividing.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.easy"
+}

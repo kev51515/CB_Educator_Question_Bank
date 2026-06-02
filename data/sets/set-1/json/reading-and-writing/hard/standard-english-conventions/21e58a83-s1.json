@@ -1,0 +1,25 @@
+{
+  "questionId": "21e58a83-s1",
+  "originalId": "21e58a83",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>Seawalls&mdash;tall barriers built parallel to the shore&mdash;are commonly installed to defend coastal property from storm surges. Seawalls can sometimes produce the opposite <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> reflecting wave energy back onto the beach and accelerating the erosion of the very sand they were meant to keep in place.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>result, though;</p>"},
+    {"id": "b", "content": "<p>result, though,</p>"},
+    {"id": "c", "content": "<p>result; though,</p>"},
+    {"id": "d", "content": "<p>result, though</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Result\" ends an independent clause, and a semicolon correctly separates it from the next independent clause, which begins with the conjunctive adverb \"though,\" set off by a comma.</p><p>Choice A is incorrect because a semicolon after \"though\" would wrongly mark the start of yet another independent clause. Choice B is incorrect because using only commas creates a comma splice between the two independent clauses. Choice D is incorrect because, without a semicolon or period before \"though,\" the two independent clauses are spliced.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

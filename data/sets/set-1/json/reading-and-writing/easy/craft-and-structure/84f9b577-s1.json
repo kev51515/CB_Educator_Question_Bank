@@ -1,0 +1,39 @@
+{
+  "questionId": "84f9b577-s1",
+  "originalId": "84f9b577",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a fictional 2008 novel. Mira, a child, is at a lakeshore in Minnesota with her grandmother. On the shore Mira <u>collects</u> smooth stones, presses them into the sand. She and her grandmother walk along the water, pausing every few steps.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;collects&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Increases</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Gathers</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Sorts</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Buys</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because, in context, Mira is gathering stones by picking them up from the shore. Choice A is incorrect because the text doesn\u2019t suggest she\u2019s adding to a fixed number. Choice C is incorrect because there\u2019s no sorting described. Choice D is incorrect because buying doesn\u2019t make sense at a lakeshore.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

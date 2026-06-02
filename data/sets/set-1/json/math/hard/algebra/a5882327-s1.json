@@ -1,0 +1,39 @@
+{
+  "questionId": "a5882327-s1",
+  "originalId": "a5882327",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The linear function g is defined by g(x) = b - 12x, where b is a constant. If g(c + 3) = c\u00b75, where c is a constant, which of the following expressions represents the value of b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17c + 36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5c - 36</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-7c + 36</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5c + 12</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. g(c + 3) = b - 12(c + 3) = b - 12c - 36. Setting equal to 5c: b - 12c - 36 = 5c, so b = 5c + 12c + 36 = 17c + 36.</p><p>Choice B drops the +12c term. Choice C uses incorrect signs. Choice D ignores the -12c term entirely.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

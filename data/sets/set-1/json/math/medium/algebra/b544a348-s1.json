@@ -1,0 +1,22 @@
+{
+  "questionId": "b544a348-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "b544a348",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>5x + 3y = 38</p><p>x + 3y = 14</p><p>In the solution (x, y) to the system of equations above, what is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>Subtracting the second equation from the first eliminates y: 4x = 24, so x = 6.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

@@ -1,0 +1,809 @@
+{
+  "section": "Math",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "originals_count": 87,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Unit conversion",
+      "description": "Student is given a quantity in one unit (or compound unit) and one or more conversion factors, and must convert to a different unit. Cognitive operation is selecting and applying conversion factor(s) by multiplication/division, possibly chained across multiple steps and possibly involving compound (rate, area, squared) units.",
+      "boundary_with_other_aspects": "A1 differs from A2 in that A1 supplies an explicit unit-equivalence (1 yard = 36 inches) and requires conversion only, while A2 supplies a part-to-part or part-to-whole ratio between like-kind quantities and requires proportional equivalence reasoning. A1 differs from A3 in that A1 converts a unit, while A3 applies a rate to compute amount/time/cost.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Single-step linear unit conversion",
+          "description": "A quantity in one linear unit is given with a single equivalence 'A unit1 = B unit2'; student multiplies or divides by the conversion factor to express the quantity in the other unit.",
+          "core_skill_demand": "Choose multiplication or division by the given conversion ratio so the original unit cancels and the target unit remains.",
+          "example_originals": ["0700a2d5", "2cdefcb1", "2d16d62c", "4347a032", "4e375d1f", "85b33aa8", "8bf3f67a", "aeeaec96", "ba62b0b0", "c81499e1", "d0d9ede4", "d7a3179d", "eb672707"],
+          "frequency": { "easy": 12, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Exactly one conversion factor supplied in the stem",
+                "Conversion factor is an integer or familiar decimal (1 yd = 3 ft, 1 kg = 1000 g, 1 yd = 36 in)",
+                "Input quantity is a small/medium positive integer divisible (or near-divisible) by the conversion factor when needed",
+                "Target answer is an integer or terminating decimal"
+              ],
+              "example_stem": "How many feet are equivalent to 34 yards? (1 yard = 3 feet)",
+              "example_ids": ["d0d9ede4", "4347a032", "4e375d1f", "2cdefcb1", "ba62b0b0"]
+            },
+            "medium": {
+              "characteristics": [
+                "Conversion factor is non-integer (e.g., 5.5 yards = 1 rod) OR direction of conversion is from larger to smaller unit so the student must invert",
+                "Input quantity does not divide evenly, producing a multi-digit result"
+              ],
+              "example_stem": "How many tablespoons are equivalent to 14 teaspoons? (3 teaspoons = 1 tablespoon)",
+              "example_ids": ["eb672707", "0700a2d5"]
+            },
+            "hard": {
+              "characteristics": [
+                "Single-step linear unit conversion is not represented at Hard in this bank; Hard items always chain conversions or involve squared/cubed units (see T3, T4)."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Exactly one explicit equivalence statement in the stem",
+              "Both units are simple linear units (length, mass, volume, count) — not compound rates",
+              "The arithmetic is a single multiplication or division"
+            ],
+            "must_vary": [
+              "The physical domain (length, mass, volume) and unit names",
+              "Direction of conversion (large→small vs small→large)",
+              "Whether the conversion factor is presented as 'A = B' or 'A unit = 1 other'"
+            ],
+            "common_bugs": [
+              "Cloner inverts the conversion direction so the answer divides instead of multiplies (or vice versa) without adjusting the expected answer",
+              "Cloner introduces a second conversion factor — that promotes the item to T2 (difficulty drift up)",
+              "Distractors are random numbers rather than mirrors of 'multiplied when should have divided' / 'used reciprocal' errors"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Compound-rate unit conversion",
+          "description": "A rate in one compound unit (e.g., per second, per hour) is given along with one or two conversion factors; student must convert one or both components of the compound unit (e.g., posters/minute → posters/hour, mi/s → mi/hr, mi/hr → yd/hr, ft/s → yd/s).",
+          "core_skill_demand": "Identify whether numerator, denominator, or both must be converted and apply conversion factor(s) so the unwanted units cancel, leaving the requested compound unit.",
+          "example_originals": ["3c8fdc40", "94660ba8", "c47256ca", "89c39d77", "8917ce38", "674a4084", "cb4894f9", "d28c29e1", "fea831fc"],
+          "frequency": { "easy": 3, "medium": 6, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Only one of numerator or denominator needs conversion",
+                "Conversion factor is integer-friendly (1 yd = 3 ft, 1 min = 60 s)",
+                "Input rate has small integer values"
+              ],
+              "example_stem": "A printer produces posters at a constant rate of 42 posters per minute. At what rate, in posters per hour, does the printer produce the posters?",
+              "example_ids": ["3c8fdc40", "c47256ca"]
+            },
+            "medium": {
+              "characteristics": [
+                "Decimal input rate (e.g., 4.76 mi/sec, 19.700 mi/hr, 20.300 mi/hr) requiring careful multiplication",
+                "Time unit conversion in denominator combined with non-integer factor in numerator",
+                "Student must reason 'miles per hour' vs 'yards per hour' and pick conversion of numerator only",
+                "Computing average speed from distance and time before converting (fea831fc)"
+              ],
+              "example_stem": "A triathlon participant completed the cycling leg with an average speed of 19.700 miles per hour. What was the average speed, in yards per hour? (1 mile = 1,760 yards)",
+              "example_ids": ["cb4894f9", "89c39d77", "d28c29e1", "8917ce38", "fea831fc", "674a4084"]
+            },
+            "hard": {
+              "characteristics": [
+                "Compound-rate conversion with single physical dimension does not appear at Hard; Hard items push to squared/cubed units (see T4)."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A rate in compound units (X per Y) supplied in the stem",
+              "At least one conversion factor (numerator, denominator, or both) supplied",
+              "Target output is a rate, not a total amount"
+            ],
+            "must_vary": [
+              "Which component is converted (numerator only, denominator only, both)",
+              "Magnitudes and decimal precision of the input rate",
+              "Physical scenario (vehicle speed, machine throughput, fluid flow, biological rate)"
+            ],
+            "common_bugs": [
+              "Cloner applies the conversion factor to the wrong component (e.g., to denominator when only numerator should change), producing a wrong but plausible target answer",
+              "Cloner drops the time component (turning rate→total), drifting to A3.T1 (categorical error)",
+              "Distractor set lacks the 'reciprocal of conversion factor' option that is the dominant SAT trap"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Chained / multi-factor conversion",
+          "description": "Two or more conversion factors are supplied (e.g., 1 furlong = 220 yards AND 1 yard = 3 feet, or 8 fl oz = 1 cup AND 4 cups = 1 quart). Student must chain the factors so all intermediate units cancel.",
+          "core_skill_demand": "Sequence two (or more) conversion factors so intermediate units cancel and produce the target unit; perform compound multiplication.",
+          "example_originals": ["568bc2a4", "73ddfdac", "ec787383", "3310c2ab", "939c46d1"],
+          "frequency": { "easy": 0, "medium": 5, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Not represented at Easy in this bank; chained conversions are inherently medium-or-above."
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Two conversion factors provided, both integer-valued",
+                "Input is a 2–3 digit integer",
+                "Answer is a multi-digit integer or simple decimal obtained by chained multiplication"
+              ],
+              "example_stem": "A distance of 354 furlongs is equivalent to how many feet? (1 furlong = 220 yards and 1 yard = 3 feet)",
+              "example_ids": ["568bc2a4", "73ddfdac", "ec787383", "3310c2ab"]
+            },
+            "hard": {
+              "characteristics": [
+                "Chained conversion in three-or-more dimensions, OR combined with squared/cubed dimensions (T4)",
+                "Implicit (not explicit) conversion factor (e.g., student must know fl oz/gallon)",
+                "Real-world wrapper requires student to compute or extract the input before chaining"
+              ],
+              "example_stem": "The glass can hold approximately 16 fluid ounces. Jenny has 1 gallon of water. How many times could Jenny completely fill the glass with 1 gallon of water?",
+              "example_ids": ["939c46d1"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two or more conversion factors supplied in the stem",
+              "All units are linear (not squared) — squared/cubed belong in T4",
+              "Final answer requires actually chaining both factors (not just one)"
+            ],
+            "must_vary": [
+              "Physical domain (length, volume, mass)",
+              "Direction of each conversion",
+              "Whether all factors are explicit or one is implicit/common-knowledge"
+            ],
+            "common_bugs": [
+              "Cloner uses only one of the two supplied factors, leaving the answer in an intermediate unit (creates an incorrect 'correct answer')",
+              "Cloner reduces to a single-step conversion, drifting back to T1 (difficulty drift down)",
+              "Distractor set lacks the 'used only first factor' and 'used only second factor' intermediate answers, which are the canonical SAT traps"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Squared / cubed / compound-dimension conversion",
+          "description": "Student must convert units where the underlying dimension is squared (area), cubed (volume), or otherwise compounded (e.g., m/s² → mi/min², sq ft/hr → sq m/min). Conversion factor must be squared, cubed, or applied to multiple dimensions simultaneously.",
+          "core_skill_demand": "Recognize that a length conversion factor must be squared for area or cubed for volume, and that compound time-or-acceleration units require multiple chained conversions with appropriate exponents.",
+          "example_originals": ["c7c6445f", "d6456c7a", "c74df824", "7d093333", "e7133228"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["Not represented at Medium in this bank — squared/cubed conversions are consistently flagged Hard."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Conversion factor must be raised to a power (squared for area, cubed for volume, squared for acceleration's denominator)",
+                "Input includes decimals and large magnitudes (e.g., 11,863,808 sq yd, 4.36 sq mi, 7.3 m/s²)",
+                "Often the conversion involves a compound rate AND a squared unit simultaneously (e.g., sq ft per hour → sq m per minute)",
+                "Answer requires rounding to specified precision"
+              ],
+              "example_stem": "A certain town has an area of 4.36 square miles. What is the area, in square yards? (1 mile = 1,760 yards)",
+              "example_ids": ["c7c6445f", "d6456c7a", "c74df824", "7d093333", "e7133228"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "The target unit must be a squared, cubed, or compound-rate version of a linear conversion factor",
+              "Stem must supply only the linear conversion factor (not the squared one) — the squaring is the cognitive demand",
+              "Rounding instruction (nearest tenth, nearest whole, etc.) when present"
+            ],
+            "must_vary": [
+              "Physical domain (area vs volume vs acceleration)",
+              "Whether time conversion is also chained in",
+              "Direction (small→large vs large→small)"
+            ],
+            "common_bugs": [
+              "Cloner squares/cubes the original quantity instead of (or in addition to) the conversion factor",
+              "Cloner forgets to square the conversion factor and produces an answer off by a factor of the original conversion — distractor set must include this trap value",
+              "Cloner drops the squaring entirely, turning the item into a T1 single-step conversion (categorical drift)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Proportional reasoning with ratios",
+      "description": "Student is given a ratio between two like-kind quantities (part-to-part or part-to-whole) and one numeric value, and must produce the other value (or an algebraic expression for it) by maintaining proportional equivalence. The cognitive operation is setting up and solving a/b = c/d (or equivalent cross-multiplication).",
+      "boundary_with_other_aspects": "A2 differs from A1 in that A2's ratio is between quantities of the same physical kind (red:blue pens, length:width, x:y) rather than between two different units. A2 differs from A3 in that A2's relation is given as a ratio a:b or 'equivalent ratio' phrasing, not as a rate 'X per Y' applied to compute a different total. A2 differs from A4 in that A4 specifically applies the density/per-area formula, while A2 stays in dimensionless ratio reasoning.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Solve numeric proportion a/b = c/d",
+          "description": "Student is given a ratio 'a to b' or 'equivalent to a:b' between two like quantities, plus one of the two new values, and must compute the missing value.",
+          "core_skill_demand": "Set up a proportion a/b = c/d (or use the scale factor a→c) and solve for the unknown by cross-multiplication or by multiplying through by the scale factor.",
+          "example_originals": ["312ba47c", "3f5398a6", "da9ffcf6", "825b7490", "9fa781f8", "20b69297", "e9841407"],
+          "frequency": { "easy": 4, "medium": 2, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both ratio terms are small positive integers (8:1, 6:1, 1:5)",
+                "Given value is an exact multiple of the matching ratio term",
+                "Answer is a small or medium positive integer obtainable by single multiplication or division"
+              ],
+              "example_stem": "In a box of pens, the ratio of black pens to red pens is 8 to 1. There are 40 black pens in the box. How many red pens are in the box?",
+              "example_ids": ["312ba47c", "3f5398a6", "da9ffcf6", "e9841407"]
+            },
+            "medium": {
+              "characteristics": [
+                "Ratio terms are larger or the equivalence is presented backwards (140:m equivalent to 4:28)",
+                "Solution requires cross-multiplication, not single-step scaling",
+                "Given value is not an exact small multiple of the matched ratio term"
+              ],
+              "example_stem": "The ratio 140 to m is equivalent to the ratio 4 to 28. What is the value of m?",
+              "example_ids": ["825b7490", "9fa781f8"]
+            },
+            "hard": {
+              "characteristics": [
+                "Ratio is given via real-world wrapper that requires identifying both terms",
+                "Numeric inputs do not divide evenly; answer requires non-integer arithmetic or a fraction",
+                "May involve a second-batch / scaling-up setup"
+              ],
+              "example_stem": "Anita mixed 2 oz blue with 3 oz yellow. If she uses 5 oz blue for the second batch with the same ratio, how much yellow paint should she use?",
+              "example_ids": ["20b69297"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A ratio a:b (or equivalent phrasing) between two like quantities",
+              "Exactly one numeric value of the new instance given; the other is the unknown",
+              "Answer is a single numeric value"
+            ],
+            "must_vary": [
+              "Surface scenario (paint, pens, body parts, line segments, time intervals)",
+              "Which of the four positions (a, b, c, d) is the unknown",
+              "Magnitude of the given value"
+            ],
+            "common_bugs": [
+              "Cloner cross-multiplies in the wrong direction so the 'correct' answer is actually the reciprocal — common when ratio is presented backwards (140:m=4:28)",
+              "Cloner replaces ratio with rate (per unit), drifting to A3 (categorical error)",
+              "Distractors lack the 'inverted ratio' value, which is the canonical SAT trap"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Express missing ratio term symbolically",
+          "description": "Student is given a ratio with one or both terms as variables (or a real-world quantity in terms of a variable), plus one numeric or symbolic input, and must produce an algebraic expression for the unknown.",
+          "core_skill_demand": "Translate a ratio statement into an algebraic relation and solve symbolically for the unknown, yielding an expression in given variables.",
+          "example_originals": ["763e6769", "6310adbc", "c3d78831", "1d945139", "b5bc47d5", "21e539a0"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Ratio involves one variable in a simple position",
+                "Setup matches a/b = c/d directly with a single variable substitution",
+                "Answer choices are simple algebraic fractions"
+              ],
+              "example_stem": "The ratio x to y is equivalent to the ratio 12 to t. When x = 156, what is the value of y in terms of t?",
+              "example_ids": ["763e6769", "6310adbc"]
+            },
+            "medium": {
+              "characteristics": [
+                "Variable appears in both numerator and denominator of expression options",
+                "Real-world wrapper (coaches:athletes, items per worker) requires translation",
+                "Answer choices differ by factor multiples (e.g., 26x vs x/26)"
+              ],
+              "example_stem": "The ratio of coaches to athletes is 1 to 26. If there are x coaches, which expression represents the number of athletes?",
+              "example_ids": ["c3d78831", "1d945139"]
+            },
+            "hard": {
+              "characteristics": [
+                "Multiple variables (two or more) and a compound unit or scale relationship",
+                "Stem combines proportional reasoning with rate-like phrasing (per unit, per minute) — student must abstract out the dimension",
+                "Expression must be algebraically simplified or rearranged into a specific form"
+              ],
+              "example_stem": "A scale model uses 1 inch for every 17/3 feet of actual building. If a length in the actual building measures x feet, what expression represents the corresponding model length in inches?",
+              "example_ids": ["b5bc47d5", "21e539a0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "At least one ratio term is symbolic (variable)",
+              "Answer is an algebraic expression, not a numeric value",
+              "Distractors include the reciprocal and the un-scaled forms"
+            ],
+            "must_vary": [
+              "Variable letters used",
+              "Whether the unknown is numerator or denominator",
+              "Surface scenario"
+            ],
+            "common_bugs": [
+              "Cloner produces a numeric answer instead of an expression — drifts to T1 (type drift)",
+              "Cloner writes the inverted expression in the answer key (reciprocal of the correct expression)",
+              "Distractors fail to include the canonical 'switched numerator/denominator' wrong answer"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Maintain ratio under change",
+          "description": "Two quantities related by a fixed ratio are given; one quantity is changed (multiplied, increased, or expanded) and the student must determine the corresponding change in the other quantity to preserve the ratio.",
+          "core_skill_demand": "Apply the property that ratios are preserved under proportional scaling: if a→ka, then b→kb. Compute the multiplicative or additive change required.",
+          "example_originals": ["181cc4d6", "51c9d65f", "61b87506", "3f236a64"],
+          "frequency": { "easy": 1, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Constant ratio implicit in a small table or simple statement",
+                "Student solves for a single constant k or single unknown"
+              ],
+              "example_stem": "In the table above, the ratio of y to x for each ordered pair is constant. What is the value of k?",
+              "example_ids": ["3f236a64"]
+            },
+            "medium": {
+              "characteristics": [
+                "Change is multiplicative on one term (×17) — student must scale the other term by the same factor",
+                "Change is additive on one term — student must compute corresponding multiplicative change on the other",
+                "Geometric wrapper (length:width ratio of rectangles)"
+              ],
+              "example_stem": "Rectangle A has length 15 and width w. Rectangle B has length 20 and the same length-to-width ratio. What is the width of B in terms of w?",
+              "example_ids": ["181cc4d6", "61b87506", "51c9d65f"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard in this bank."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Setup specifies a ratio that must be 'preserved' or 'maintained' under change",
+              "Exactly one quantity is changed; the other change is the unknown",
+              "Final answer is the new value (or expression) of the second quantity"
+            ],
+            "must_vary": [
+              "Whether the change is multiplicative or additive",
+              "Geometric vs. abstract framing",
+              "Direction (scale up vs scale down)"
+            ],
+            "common_bugs": [
+              "Cloner converts an additive-change item into a multiplicative-change item (or vice versa) without adjusting the answer",
+              "Cloner forgets to apply the ratio-preservation logic and instead computes a new ratio (turns item into A2.T1)",
+              "Distractors fail to include the 'applied additive change to wrong side' value"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Apply a rate to compute amount, time, or cost",
+      "description": "A constant rate (distance per time, items per time, cost per unit, etc.) is supplied and the student must compute either the total quantity produced, the time required, or the inverse rate by direct application of rate = amount / time (or its rearrangements). Cognitive operation is plugging into the rate equation in one of its three rearranged forms.",
+      "boundary_with_other_aspects": "A3 differs from A1.T2 in that A3 holds the unit of the rate fixed and computes a total amount or elapsed time, while A1.T2 changes the unit of the rate itself. A3 differs from A2 in that A3's relation is a per-unit rate (\"3 dollars per pound\") rather than a part-to-part ratio between like quantities. A3 differs from A4 in that A3 involves rates over time or units of countable items, while A4 specifically involves intensive properties (density, population per area).",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Apply rate to compute amount or time (numeric)",
+          "description": "A constant rate and one of {amount, time} is supplied; student computes the other by single multiplication or division.",
+          "core_skill_demand": "Identify the correct rearrangement of rate = amount/time and perform one arithmetic operation.",
+          "example_originals": ["000259aa", "3318d37b", "4837406c", "7270d642", "7cd1c6db", "86636d8f", "be35c117", "fe1ec415", "fe4c1c9e", "99550621"],
+          "frequency": { "easy": 10, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Rate, given amount/time, and target are all small positive integers or simple decimals",
+                "Single multiplication or division yields the answer",
+                "No unit conversion required"
+              ],
+              "example_stem": "An object travels at a constant speed of 6 centimeters per second. What is the time, in seconds, for it to travel 24 centimeters?",
+              "example_ids": ["4837406c", "000259aa", "be35c117", "86636d8f", "7270d642"]
+            },
+            "medium": {
+              "characteristics": ["Not represented as pure numeric T1 at Medium — at Medium, items typically add an algebraic component (see T2) or unit conversion (A1)."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard — pure numeric rate application without algebra or conversion is below Hard difficulty."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A 'constant rate' (per minute, per hour, per pound, per person) phrased explicitly",
+              "Exactly one of {total amount, total time} given as a number",
+              "Answer is a single numeric value in the unit indicated by the stem"
+            ],
+            "must_vary": [
+              "Whether the unknown is amount, time, or rate denominator (e.g., per-person capacity)",
+              "Physical domain (motion, machine throughput, cost, capacity per area)",
+              "Magnitudes (small single-digit vs medium 2–3 digit values)"
+            ],
+            "common_bugs": [
+              "Cloner multiplies when the relationship demands division (or vice versa), often by mis-identifying which quantity is the rate vs. the total",
+              "Cloner introduces a unit mismatch (rate in seconds, amount in minutes) without supplying conversion — drifts to A1.T2",
+              "Distractors are random numbers rather than 'multiplied instead of divided' and 'used reciprocal' mirrors"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Express rate-based amount/time symbolically",
+          "description": "A rate is supplied algebraically (e.g., earns p dollars per w hours, hose delivers 88x ounces in 5y minutes) and the student must produce an expression for the amount or time at a different specified value of the input.",
+          "core_skill_demand": "Translate the rate into amount-per-unit form, multiply by the requested input, and simplify the resulting algebraic expression.",
+          "example_originals": ["551c52b9", "445dd032", "21e539a0", "50b99b2d", "f6cbb04a"],
+          "frequency": { "easy": 1, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Rate is expressed with one or two variables (p dollars per w hours)",
+                "Target input is a simple multiple of the base input (e.g., 39w hours)",
+                "Answer is a simple algebraic fraction or product"
+              ],
+              "example_stem": "Tilly earns p dollars for every w hours of work. Which expression represents the amount of money Tilly earns for 39w hours?",
+              "example_ids": ["551c52b9"]
+            },
+            "medium": {
+              "characteristics": [
+                "Numeric rate combined with symbolic time (e.g., $13.50/hr × z hr)",
+                "Symbolic equation d = rt supplied and student must compare different values of t",
+                "Answer involves a multiplicative factor whose value is the comparison ratio"
+              ],
+              "example_stem": "For d = 55t, after kh hours, the distance traveled is how many times the distance after h hours?",
+              "example_ids": ["445dd032", "f6cbb04a"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two or more variables in rate plus a separate target with different variable values (88x oz / 5y min → 9y min)",
+                "Comparative setup involving two related rates (R is half the speed of S)",
+                "Answer requires algebraic manipulation, not just substitution"
+              ],
+              "example_stem": "A hose puts 88x ounces in 5y minutes. Which expression represents the ounces in 9y minutes at this rate?",
+              "example_ids": ["21e539a0", "50b99b2d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Rate expressed with at least one symbolic variable",
+              "Target input expressed with at least one variable (or multiple of base input)",
+              "Answer is an algebraic expression"
+            ],
+            "must_vary": [
+              "Variable letters",
+              "Whether the rate is amount-per-time or amount-per-amount",
+              "Whether target input shares variables with the rate or introduces new ones"
+            ],
+            "common_bugs": [
+              "Cloner reduces algebraic rate to numeric rate, drifting to T1 (difficulty drift down)",
+              "Cloner produces an answer that mishandles the cancellation of shared variables (e.g., leaves y in answer when y should cancel)",
+              "Distractor set lacks the canonical 'forgot to apply scale factor' and 'inverted rate' wrong forms"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Equating two rates / equivalent-expression rate setup",
+          "description": "Two expressions involving products of the same variables but different coefficients are equated (e.g., 'If xy = 4 and 24xny = 4, what is n?'). The cognitive demand is to recognize that the two products must be equal, force the coefficient relationship, and solve.",
+          "core_skill_demand": "Recognize equality of two products with shared variables, equate coefficients, and solve for the unknown multiplier.",
+          "example_originals": ["3726e079", "8637294f"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Both expressions equal the same integer",
+                "Solution is a single rational number obtainable by dividing the two given coefficients"
+              ],
+              "example_stem": "If xy = 4 and 24x(n)y = 4, what is the value of n?",
+              "example_ids": ["3726e079"]
+            },
+            "hard": {
+              "characteristics": [
+                "Coefficients are non-integer decimals (e.g., 4ab = 6.7 and abn = 26.8)",
+                "Solution is a decimal requiring careful division"
+              ],
+              "example_stem": "If 4ab = 6.7 and abn = 26.8, what is n?",
+              "example_ids": ["8637294f"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two product expressions, sharing the same variables, set equal to (the same or related) constants",
+              "The unknown is exactly one coefficient",
+              "Answer is a single rational/decimal value"
+            ],
+            "must_vary": [
+              "Variable letters",
+              "Whether the two products equal the same constant or two different constants",
+              "Sign and decimal precision of coefficients"
+            ],
+            "common_bugs": [
+              "Cloner accidentally makes the system inconsistent (no solution) by mis-balancing the products",
+              "Cloner introduces an extra variable, drifting into systems-of-equations territory (cross-skill drift)",
+              "Distractors lack the 'inverted ratio of coefficients' value"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Density and per-area quantities",
+      "description": "Student applies an intensive ratio (mass per volume, people per area, force per area) to compute one of {density, total quantity, volume/area, edge length}. Cognitive operation is using density = quantity / volume (or its rearrangements), often combined with a geometric computation (cube volume, rectangular area) or a unit conversion.",
+      "boundary_with_other_aspects": "A4 differs from A3 in that A4's rate is dimensional-intensive (per unit of area or volume, not per unit of time or per countable item) and frequently requires geometric setup (computing cube volume from edge length) before applying the rate. A4 differs from A1 in that A4's main work is rate application, not unit conversion, although a conversion may appear as a subcomponent.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Population density / per-area scaling",
+          "description": "A population density (people, animals, items per unit area) is supplied along with either a total population or a total area; student computes the missing quantity.",
+          "core_skill_demand": "Apply density = population / area in the correct rearranged form for one or two arithmetic steps.",
+          "example_originals": ["15617f62", "e3d49511", "1180401d", "873d2838", "b4912cc5", "96c3e32d"],
+          "frequency": { "easy": 2, "medium": 4, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Density and one of {population, area} given directly; no land/water decomposition or change-over-time wrinkle",
+                "Inputs are clean integers or simple decimals",
+                "Answer is a positive integer obtained by single division or multiplication"
+              ],
+              "example_stem": "Population density is 290 per sq mi. Population is 92,800. What is the area, in sq mi?",
+              "example_ids": ["15617f62", "e3d49511"]
+            },
+            "medium": {
+              "characteristics": [
+                "Stem requires preliminary computation: subtract water area to get land area, multiply two densities to get population change, multiply by area to get total force",
+                "Numbers do not divide evenly; answer is rounded or expressed as 'closest to'",
+                "Multi-decimal inputs"
+              ],
+              "example_stem": "The total area of a coastal city is 92.1 sq mi, of which 11.3 is water. Population is 621,000. Which is closest to the population density per sq mi of LAND area?",
+              "example_ids": ["1180401d", "873d2838", "b4912cc5", "96c3e32d"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard for population-density framing in this bank; Hard A4 items consistently involve cube geometry (see T2)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem supplies an intensive ratio over a 2D region (per square mile, per square kilometer, per square inch)",
+              "Exactly one of {density, total quantity, area} is unknown",
+              "Answer is a numeric value with the unit specified in the stem"
+            ],
+            "must_vary": [
+              "Whether the intensive quantity is population, count, or force",
+              "Whether stem requires a preliminary computation (subtract a portion, compute change between two densities)"
+            ],
+            "common_bugs": [
+              "Cloner uses raw total area when the stem requires net (e.g., land-only) area",
+              "Cloner multiplies when the stem requires division (mis-identifies which quantity is the density)",
+              "Distractor set lacks the 'forgot to subtract water area' and 'used wrong rearrangement' values"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Mass-density of a geometric solid",
+          "description": "A density (mass per volume) is supplied along with a geometric solid (typically a cube with given edge length, or two adjacent squares). Student must compute volume from the geometric data, then apply density to compute mass, or rearrange to compute density or edge length.",
+          "core_skill_demand": "Compute the volume of a cube (s³) — or the area of a composite figure — from given side/edge data, then apply mass = density × volume (or rearrange to solve for an unknown component).",
+          "example_originals": ["11b06e35", "5154615f", "61f61789", "69f6717f", "7d721177", "c2e7fa6d", "1b403590", "8e528129"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Mass and volume both supplied directly; no geometric computation",
+                "Density combined with a per-mass or per-unit cost (compound rate)"
+              ],
+              "example_stem": "An object has a mass of 168 grams and a volume of 24 cubic cm. What is the density?",
+              "example_ids": ["1b403590", "8e528129"]
+            },
+            "hard": {
+              "characteristics": [
+                "Cube edge length supplied (typically decimal: 0.60 m, 0.90 m, 3.000 cm, 2.00 cm); student must cube to find volume",
+                "Density may be the unknown (compute volume, then divide given mass by volume) or the edge may be the unknown (compute volume = mass/density, then cube root)",
+                "Multi-component geometry (two adjacent squares with one side three times the other) requiring algebraic setup before applying intensive quantity",
+                "Final answer requires rounding to specified precision"
+              ],
+              "example_stem": "Density of a solid substance is 813 kg/m³. A cube sample has edge 0.60 m. To the nearest whole number, what is the mass in kg?",
+              "example_ids": ["11b06e35", "5154615f", "61f61789", "69f6717f", "7d721177", "c2e7fa6d"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A geometric solid (typically cube) with at least one numeric edge or volume",
+              "An intensive quantity (density, force-per-area) supplied",
+              "Final answer requires combining geometric computation with the intensive quantity",
+              "Rounding instruction when present"
+            ],
+            "must_vary": [
+              "Which quantity is unknown (mass, density, edge length, volume)",
+              "Type of solid (cube vs composite figure)",
+              "Numeric precision of inputs"
+            ],
+            "common_bugs": [
+              "Cloner forgets to cube the edge length (uses s or s² in place of s³), producing an answer off by a power",
+              "When edge is unknown, cloner forgets the cube-root step at the end",
+              "Cloner inverts mass = density × volume (uses mass/density to get density), producing wrong-but-plausible answer",
+              "Distractor set lacks the 'used s² instead of s³' and 'used s alone' canonical traps"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "name": "Compound real-world proportional scenarios",
+      "description": "Items that combine proportional reasoning with an additional non-proportional layer: a percentage fee on top of a currency conversion, sample-to-population scaling via survey, exponential doubling over discrete time, layered fractional weights across different planets, or algebraic equivalence between two rate expressions. Cognitive operation requires identifying that a proportional step is embedded inside a larger multi-step problem.",
+      "boundary_with_other_aspects": "A5 collects items that mix proportional/ratio/rate reasoning with one extra layer (a percent fee, a layered fraction comparison, a discrete exponential growth count, or an algebraic equivalence transformation) that would distort the boundary rules of A1–A4. Without this catch-all, these items would force overly broad type definitions inside A1–A4 and weaken cloning guidance.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Proportion plus percentage/fee adjustment",
+          "description": "A proportional/rate conversion is applied and then a percent fee, discount, or layered fractional adjustment is applied on top.",
+          "core_skill_demand": "Perform the proportional conversion correctly, then apply a percent operation in the correct direction (multiply by 1−r for a fee/discount, by 1+r for a markup, or compute the difference of two fractional weights).",
+          "example_originals": ["3ac09984", "24ad9dcb"],
+          "frequency": { "easy": 2, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Single rate conversion followed by single percent application",
+                "Two layered fractional rates (Venus vs Jupiter weight as fractions of Earth) and a difference computation"
+              ],
+              "example_stem": "Marta converts 7,500 pesos at 1 peso = 0.075 USD with a 2% fee on the converted amount. How many USD does she receive?",
+              "example_ids": ["3ac09984", "24ad9dcb"]
+            },
+            "medium": {"characteristics": ["Not represented at Medium in this bank."], "example_stem": "", "example_ids": []},
+            "hard": {"characteristics": ["Not represented at Hard in this bank."], "example_stem": "", "example_ids": []}
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A proportional/rate step",
+              "A second layer that is NOT proportional (percent fee/discount, layered fraction comparison)",
+              "Final answer combines both layers"
+            ],
+            "must_vary": [
+              "Whether the second layer is a fee, discount, or comparison",
+              "Order (conversion-then-adjustment vs adjustment-then-conversion)"
+            ],
+            "common_bugs": [
+              "Cloner applies the percent to the wrong base (e.g., to pesos instead of converted dollars)",
+              "Cloner drops one of the two layers, drifting back to A1.T1 or A3.T1 (difficulty drift down)",
+              "Distractor set lacks the 'applied percent to wrong base' value"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Sample-to-population proportional scaling",
+          "description": "A small sample is surveyed/observed; student must scale the observed count up to the full population using a proportion (n surveyed → N total).",
+          "core_skill_demand": "Set up the proportion (positives in sample / sample size) = (positives in population / population size) and solve.",
+          "example_originals": ["555939d2"],
+          "frequency": { "easy": 1, "medium": 0, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "All four quantities in the proportion are clean integers",
+                "Answer is a 'best estimate' choice — student picks the value closest to the proportional scale-up"
+              ],
+              "example_stem": "Of 300 surveyed customers, 8 said interested. Best estimate of total interested across 30,000 customers?",
+              "example_ids": ["555939d2"]
+            },
+            "medium": {"characteristics": ["Not represented in this bank's manifest at Medium."], "example_stem": "", "example_ids": []},
+            "hard": {"characteristics": ["Not represented in this bank's manifest at Hard."], "example_stem": "", "example_ids": []}
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A surveyed/observed subset and its positive count",
+              "A larger total population for which a positive count is to be estimated",
+              "Answer is a single numeric estimate"
+            ],
+            "must_vary": [
+              "Subject matter (survey, sample of products, ecological count)",
+              "Magnitudes of sample size and population size"
+            ],
+            "common_bugs": [
+              "Cloner uses the wrong proportion direction (population-to-sample instead of sample-to-population)",
+              "Cloner introduces a sampling-bias confound that turns the item into a statistical-inference question (cross-skill drift)"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Discrete repeated-doubling / exponential growth seed",
+          "description": "A starting quantity grows by a fixed multiplier each year for a fixed number of years; student must back-solve the starting value from the ending value (or compute ending value from starting value).",
+          "core_skill_demand": "Recognize that repeated multiplication by a constant ratio yields x · k^n, and solve x = ending / k^n.",
+          "example_originals": ["3638f413"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {"characteristics": ["Not represented at Easy."], "example_stem": "", "example_ids": []},
+            "medium": {"characteristics": ["Not represented at Medium."], "example_stem": "", "example_ids": []},
+            "hard": {
+              "characteristics": [
+                "Multiplier (typically 2) and number of years (4) such that ending = start × 16",
+                "Ending value is a clean multiple of the implied 2^n factor",
+                "Answer is the starting value"
+              ],
+              "example_stem": "Account doubled each year from Jan 1 2001 to Jan 1 2005, ending at $480. What is the starting amount x?",
+              "example_ids": ["3638f413"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "A discrete multiplicative growth statement ('doubled each year', 'tripled each month')",
+              "Exactly one of {start, end, number of periods} is unknown",
+              "Final answer is a single positive value"
+            ],
+            "must_vary": [
+              "Growth multiplier (2, 3, 1.5)",
+              "Number of periods",
+              "Which quantity is unknown"
+            ],
+            "common_bugs": [
+              "Cloner off-by-one on the number of doublings (count of years vs count of intervals)",
+              "Cloner replaces multiplicative with additive growth (drifts to arithmetic-sequence skill)"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Algebraic equivalent-expression in rate form",
+          "description": "Student is given a rate-style equation in symbolic form (e.g., distance d=55t) or an expression involving a proportional relationship, and asked to identify which algebraic transformation is equivalent.",
+          "core_skill_demand": "Apply algebraic equivalence (factoring, distribution, multiplication-by-inverse) to a rate or proportional expression.",
+          "example_originals": ["808f7d6c", "e21d10a7"],
+          "frequency": { "easy": 1, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Direct equivalent-expression task on a single proportional equation",
+                "Answer choices differ by a simple algebraic transformation"
+              ],
+              "example_stem": "If [proportional equation], which of the following is equivalent to [expression]?",
+              "example_ids": ["808f7d6c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Two periodic-rate events (orbits) compared; answer is difference between two products",
+                "Two-step computation involving distinct rates"
+              ],
+              "example_stem": "One moon orbits every 252 days; another every 287 days. How many more days for the second to orbit 29 times than the first?",
+              "example_ids": ["e21d10a7"]
+            },
+            "hard": {"characteristics": ["Not represented at Hard in this bank."], "example_stem": "", "example_ids": []}
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "An algebraic relationship in a rate / proportional context",
+              "Answer either identifies an equivalent expression OR computes a comparison between two rate-based quantities",
+              "Final answer is symbolic OR a single numeric difference/ratio"
+            ],
+            "must_vary": [
+              "Surface scenario (motion, orbits, work)",
+              "Whether the comparison is multiplicative or subtractive"
+            ],
+            "common_bugs": [
+              "Cloner drops the rate context and turns the item into pure algebraic-equivalence (cross-skill drift)",
+              "Cloner mis-counts the multiplicative factor between the two compared events"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Hard items in this skill concentrate in two structural patterns: (1) squared/cubed unit conversions (A1.T4) and (2) cube-geometry combined with mass-density (A4.T2). These are the dominant Hard archetypes — Hard cloners should default to one of these patterns rather than trying to make a T1 item 'harder' through bigger numbers. Easy items concentrate in single-step unit conversion (A1.T1) and rate-application (A3.T1). Medium items lean on chained unit conversions (A1.T3) and compound-rate conversions (A1.T2 Medium). When phrasing ratios, the SAT routinely presents them backwards (e.g., '140 to m equivalent to 4 to 28') — clone distractors must include the inverted-ratio trap."
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "548a4929-s1",
+  "originalId": "548a4929",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The function <em>h</em> is defined by h(x) = 6x - 42. The graph of y = h(x) in the <em>xy</em>-plane has an x-intercept at (a, 0), where <em>a</em> is a constant. What is the value of <em>a</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-42</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>42</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. At the x-intercept y = 0, so 0 = 6a - 42. Adding 42 to both sides: 6a = 42. Dividing by 6: a = 7. Choice A is the constant term. Choice B has the wrong sign. Choice D is the constant in the function rather than the solution.</p>",
+  "templateId": "linear-functions.A1.T3.medium"
+}

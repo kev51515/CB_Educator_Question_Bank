@@ -1,0 +1,39 @@
+{
+  "questionId": "d2047497-s1",
+  "originalId": "d2047497",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the area of a rectangle with a length of 21 centimeters (cm) and a width of 6 cm?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>27 cm\u00b2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>54 cm\u00b2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>441 cm\u00b2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>126 cm\u00b2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The area is A = lw = 21 \u00d7 6 = 126 cm\u00b2. Choice A is the sum; choice B is the perimeter; choice C squares the length.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

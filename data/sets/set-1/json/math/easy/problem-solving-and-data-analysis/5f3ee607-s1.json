@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 10 data points in a linear pattern trending down from left to right, with selected data points at approximately (1, 10), (3, 6), (5, 2). Which of the following equations is the most appropriate linear model for the data shown in the scatterplot?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = \u22122x + 12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = \u22122x \u2212 12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 2x + 12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 2x \u2212 12</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Slope = (6 \u2212 10)/(3 \u2212 1) = \u22122; y-intercept from y = \u22122x + b with (1, 10): 10 = \u22122 + b so b = 12. The line y = \u22122x + 12 fits the data.</p><p>Choices B, C, and D have wrong sign of slope or intercept.</p>",
+  "questionId": "5f3ee607-s1",
+  "originalId": "5f3ee607",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy"
+}

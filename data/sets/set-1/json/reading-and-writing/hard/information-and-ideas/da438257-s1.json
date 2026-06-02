@@ -1,0 +1,25 @@
+{
+  "questionId": "da438257-s1",
+  "originalId": "da438257",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Vietnam&rsquo;s Manufacturing Exports by Type, 2005&ndash;2015 (hundreds of millions of U.S. dollars)</p></caption><thead><tr><th>Export type</th><th>2005</th><th>2010</th><th>2015</th></tr></thead><tbody><tr><td>Domestically sourced exports</td><td>900</td><td>1,600</td><td>3,100</td></tr><tr><td>Assembly exports (foreign inputs supplied free)</td><td>200</td><td>290</td><td>700</td></tr><tr><td>Inputs-purchased exports (foreign inputs bought up front)</td><td>550</td><td>1,150</td><td>2,200</td></tr></tbody></table></figure><p>A student is researching Vietnam&rsquo;s 1986 D&#7893;i M&#7899;i reforms, which transitioned the country toward a market economy emphasizing trade liberalization. One mode of trade liberalization shifts firms from domestically sourced exports toward foreign-input manufacturing, which has two types: assembly exports (in which a Vietnamese firm receives raw materials from a foreign partner without payment and sells the assembled goods back, charging only for assembly) and inputs-purchased exports (in which a firm spends its own capital to buy raw materials from a foreign partner, processes them, and chooses where to sell the finished goods). The student asserts that while initial trade liberalization efforts in Vietnam were shaped by firms&rsquo; limited capital, this situation resolved during the 2010s.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the student&rsquo;s assertion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Inputs-purchased exports were greater than both domestically sourced exports and assembly exports in 2015.</p>"},
+    {"id": "b", "content": "<p>From 2005 to 2015, inputs-purchased exports rose much more sharply than assembly exports did.</p>"},
+    {"id": "c", "content": "<p>From 2005 to 2015, neither inputs-purchased exports nor assembly exports were greater than domestically sourced exports.</p>"},
+    {"id": "d", "content": "<p>Assembly exports were greater in 2015 than inputs-purchased exports were in 2005.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. To support the assertion that firms&rsquo; capital constraints resolved during the 2010s, the data must show a change within the type of export that requires capital outlay. Inputs-purchased exports (which require firms to pay for raw materials up front) rose from 550 to 2,200 across the decade, while assembly exports (which require no capital outlay) rose far less, from 200 to 700. The sharper rise in the capital-intensive type indicates that firms&rsquo; available capital expanded substantially. Choice A is incorrect because the table shows domestically sourced exports were largest in 2015, not inputs-purchased exports. Choice C is incorrect because the comparison of inputs-purchased and assembly exports against domestically sourced exports does not address a change within either capital-related category over time. Choice D is incorrect because the fact that assembly exports in 2015 (700) exceed inputs-purchased exports in 2005 (550) is a cross-period, cross-category comparison that does not capture a change in capital availability.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "03eeecf3-s1",
+  "originalId": "03eeecf3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>The following text is from Marion Hayworth's 1921 poem &ldquo;After the Storm.&rdquo; In the poem, the speaker stands by a window at dawn.</p>\n<blockquote class=\"dap_poemexcerpt\">\n<p><span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">A trembling drop slips from the broken bough</span>&mdash;</p>\n<p>so falls my courage now,</p>\n<p>so leaves my hope.</p>\n<p>The grey rain has gone,</p>\n<p>yet within me it pours.</p>\n<p>I am hollowed by its weight.</p>\n<p>I am emptied like</p>\n<p>the shaken, dripping bough.</p>\n</blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It depicts a transformation in the speaker's outdoor surroundings that the speaker blames for the despondency expressed in the text.</p>"},
+    {"id": "b", "content": "<p>It offers a glimpse of a natural detail that the speaker then develops into a figure for a hollowed emotional state.</p>"},
+    {"id": "c", "content": "<p>It sets up an image of stability in nature that the speaker later contrasts with the volatility of human feeling.</p>"},
+    {"id": "d", "content": "<p>It evokes a routine occurrence after rainfall to suggest that the speaker's sadness is a familiar, recurring experience.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The underlined portion presents a small natural observation (a drop falling from a broken bough), and the rest of the poem elaborates that image into a figure for the speaker's hollowed-out, emptied emotional state (\"so falls my courage now\"; \"I am emptied like / the shaken, dripping bough\"). The portion thus introduces an image of the natural world that the speaker then expands into an account of an interior emotional condition.</p><p>Choice A is incorrect because nothing in the text indicates that the falling drop has caused the speaker's despondency; the poem instead uses the image as an analogue for it. Choice C is incorrect because the text does not contrast the bough with the speaker's feelings or characterize the dripping as stable; the natural detail and the inner state are parallel, not opposed. Choice D is incorrect because the poem does not suggest that the speaker's sadness is routine or recurring; it presents one specific moment in which the speaker feels emptied.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

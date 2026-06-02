@@ -1,0 +1,25 @@
+{
+  "questionId": "8af0c099-s1",
+  "originalId": "8af0c099",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>&ldquo;Headline recall&rdquo; measures how memorable an online news headline is. To give editors information about which headlines stick with readers, a news app regularly surveys users about whether they remember headlines they had recently interacted with on the app. In a study drawing on this survey data, communications researcher Joaquin Vidal and colleagues noted that different reader interactions involve different levels of cognitive engagement: writing a comment under a story or sharing it through messaging is more cognitively demanding than tapping the &ldquo;save for later&rdquo; button or pausing briefly on the preview screen. The researchers hypothesized that interactions indicating high levels of cognitive engagement with a headline would result in relatively high levels of headline recall.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Users who interacted with a headline were much more likely to do so by tapping the &ldquo;save for later&rdquo; button than to interact with the headline in any other way.</p>"},
+    {"id": "b", "content": "<p>Users who interacted with a headline were significantly more likely to subscribe to the news app at the time they saw the headline than were users who saw the headline but did not interact with it.</p>"},
+    {"id": "c", "content": "<p>Compared with users who tapped &ldquo;save for later&rdquo; on a story, users who wrote a comment under that same story were significantly more likely to remember reading the headline when surveyed three days later.</p>"},
+    {"id": "d", "content": "<p>Although users who shared a headline were highly likely to remember details from it when surveyed three days later, those same users tended to forget those details when surveyed again a week later.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The researchers&rsquo; hypothesis is that more cognitively demanding interactions produce higher recall. Writing a comment is more demanding than tapping &ldquo;save for later,&rdquo; so finding that commenters had higher recall than savers directly supports the hypothesis. Choice A is incorrect because it concerns the relative frequency of one type of interaction, not whether more demanding interactions produce higher recall. Choice B is incorrect because subscription behavior is unrelated to recall. Choice D is incorrect because higher early recall fading by a week later would not support a link between cognitive engagement and durable recall.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

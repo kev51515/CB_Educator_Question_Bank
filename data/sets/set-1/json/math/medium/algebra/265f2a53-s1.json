@@ -1,0 +1,39 @@
+{
+  "questionId": "265f2a53-s1",
+  "originalId": "265f2a53",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>When line n is graphed in the xy-plane, it has an x-intercept of (-3, 0) and a y-intercept of (0, 50/3). What is the slope of line n?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9/50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-50/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>-9/50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>50/9</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Slope = (\u0394y)/(\u0394x) = (50/3 - 0)/(0 - (-3)) = (50/3)/3 = 50/9. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A5.T10.medium"
+}

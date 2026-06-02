@@ -1,0 +1,39 @@
+{
+  "questionId": "a8fabad0-s1",
+  "originalId": "a8fabad0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A delivery driver receives tips. On average, the tip is 12% of the customer\u2019s bill. At this rate, which of the following is closest to the tip the driver can expect when a customer has a bill that is $86.70?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$8.00</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$10.00</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$12.00</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$14.00</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. 12% of $86.70 is 0.12 \u00d7 $86.70 = $10.40, which is closest to $10.00.</p><p>Choice A is incorrect. This is too low for 12% of $86.70.</p><p>Choice C is incorrect. This is approximately 14% of $86.70, not 12%.</p><p>Choice D is incorrect. This is approximately 16% of $86.70, not 12%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "8fb67890-s1",
+  "originalId": "8fb67890",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T3.medium",
+  "stimulus": "<p>Archaeologists have uncovered a clay tablet in southern Iraq that may carry one of the earliest examples of recorded music notation in the ancient Near East. Thermoluminescence testing of nearby pottery indicates that the tablet was likely inscribed between 1500 and 1300 BCE. Musicologist Mariana Dorr believes the tablet will be useful in learning more about the use of cuneiform musical signs in late Bronze Age Mesopotamia.</p>",
+  "stem": "<p>Which choice best states the main topic of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The research interests of Mariana Dorr</p>"},
+    {"id": "b", "content": "<p>Trade routes of the late Bronze Age</p>"},
+    {"id": "c", "content": "<p>A new method for dating clay artifacts</p>"},
+    {"id": "d", "content": "<p>A clay tablet found in Iraq</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text introduces a clay tablet uncovered in southern Iraq that may carry one of the earliest examples of recorded music notation, reports the dating of the tablet, and then quotes a researcher on the tablet's importance for studying cuneiform musical signs. The tablet is the unifying subject throughout.</p><p>Choice A is incorrect because Dorr is mentioned only briefly to comment on the tablet's significance. Choice B is incorrect because the text never discusses trade routes. Choice C is incorrect because thermoluminescence is mentioned only to date the tablet, with no claim that the method itself is new.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

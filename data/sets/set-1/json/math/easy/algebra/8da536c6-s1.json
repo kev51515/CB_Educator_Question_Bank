@@ -1,0 +1,39 @@
+{
+  "questionId": "8da536c6-s1",
+  "originalId": "8da536c6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In 2015, a transit district had a total of 50 buses, each classified as either electric or diesel. From 2015 to 2025, the number of electric buses in the district increased by approximately 22%, and the number of diesel buses increased by approximately 35%. The total number of buses in the district increased by approximately 28% over the same period. Which equation best represents this situation, where <i>e</i> is the number of electric buses and <i>d</i> is the number of diesel buses in 2015?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1.22<i>e</i> + 1.35<i>d</i> = 50(1.28)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.28<i>e</i> + 1.35<i>d</i> = 50(1.22)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1.35<i>e</i> + 1.22<i>d</i> = 50(1.28)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.22<i>e</i> + 0.35<i>d</i> = 50(0.28)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The number of electric buses in 2025 is 1.22<i>e</i> and the number of diesel buses is 1.35<i>d</i>. The total in 2025 is 50(1.28). Therefore, 1.22<i>e</i> + 1.35<i>d</i> = 50(1.28).</p><p>Choice B swaps which factor goes with the total. Choice C swaps electric and diesel multipliers. Choice D uses growth fractions instead of growth factors, which omits the original counts.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.hard"
+}

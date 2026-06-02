@@ -1,0 +1,39 @@
+{
+  "questionId": "6a305cd0-s1",
+  "originalId": "6a305cd0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A researcher selected a random sample from a large population and computed a sample mean of 52, with an associated margin of error of 4. Which of the following is the most appropriate conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Every value in the population is between 48 and 56.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is plausible that the population mean is between 48 and 56.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The mean of the sample is between 48 and 56, but the population mean cannot be estimated from this study.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The population mean cannot be less than 48 or greater than 56.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A margin of error of 4 around the sample mean of 52 yields a plausible-value interval of 48 to 56 for the population mean. The most appropriate conclusion is that it is plausible the population mean lies in this interval.</p><p>Choice A confuses the population mean with every individual value: the margin of error describes uncertainty about the mean, not about individual data points. Choice C confuses the sample mean (which is exactly 52, not an interval) with the population parameter and incorrectly denies that an estimate can be made. Choice D overstates the certainty: values outside the interval are less plausible, but they are not impossible.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy"
+}

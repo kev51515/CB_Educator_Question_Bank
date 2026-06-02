@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "9afe2370-s1",
+  "originalId": "9afe2370",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population of a bacterial culture decreases each hour by a fixed percent r% of its previous population. If the initial population is P<sub>0</sub>, which of the following models the population P(t) of the culture t hours later?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>P(t) = P<sub>0</sub>(1 + r)<sup>t</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>P(t) = P<sub>0</sub> &minus; rt</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>P(t) = P<sub>0</sub>(1 &minus; r/100)<sup>t</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>P(t) = P<sub>0</sub>(r/100)<sup>t</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A fixed percent decrease of r% per hour means the new population is (1 &minus; r/100) times the previous one. After t hours, the population is P<sub>0</sub>(1 &minus; r/100)<sup>t</sup>.</p><p>Choice A would model an increase. Choice B models linear, not exponential, decline. Choice D treats r/100 as the entire base rather than the retention factor.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

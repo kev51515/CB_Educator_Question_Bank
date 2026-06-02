@@ -1,0 +1,39 @@
+{
+  "questionId": "2aaee77f-s1",
+  "originalId": "2aaee77f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Some fish species don't watch over their own young. Instead, adult females release their eggs near other fishes' nests, mixing them with another species' own eggs. <u>Female cuckoo catfish have been observed quickly releasing eggs into the nests of mouthbrooding cichlids while those fish are gathering their own eggs.</u> After the eggs hatch, the noncatfish parents typically tend to the catfish young as if they were their own, even though the catfish look very different from the other fry.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It introduces a physical feature of female cuckoo catfish that is described later in the text.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes the appearance of the cichlid nests mentioned earlier in the text.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It explains how other fish react to the female cuckoo catfish behavior discussed in the text.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It offers a detail about how female cuckoo catfish carry out the behavior discussed in the text.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The first two sentences establish that some fish species lay their eggs in other fishes' nests. The underlined sentence then provides a specific detail about how female cuckoo catfish accomplish this\u2014quickly, while the cichlids are gathering their own eggs.</p><p>Choice A is incorrect. The sentence describes behavior, not a physical feature. Choice B is incorrect. The sentence doesn't describe the nests' appearance. Choice C is incorrect. The other fishes' reaction is in the final sentence, not the underlined one.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

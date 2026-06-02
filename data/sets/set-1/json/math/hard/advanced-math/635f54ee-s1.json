@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "635f54ee-s1",
+  "originalId": "635f54ee",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The surface area of a cube is 24b, where b is a positive constant. Which of the following gives the perimeter of one face of the cube?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2&radic;b</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4&radic;b</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6&radic;b</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8&radic;b</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A cube has 6 congruent square faces, so each face has area 24b/6 = 4b. If s is the side length of a face, then s<sup>2</sup> = 4b, so s = 2&radic;b. The perimeter of one face is 4s = 8&radic;b.</p><p>Choice A gives the side length, not the perimeter. Choice B gives twice the side. Choice C arises from arithmetic error.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

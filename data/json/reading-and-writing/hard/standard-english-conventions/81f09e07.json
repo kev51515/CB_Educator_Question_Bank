@@ -1,0 +1,72 @@
+{
+  "questionId": "81f09e07",
+  "externalId": "d679edb0-8a6b-44bb-9ae3-78407013c7e9",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:28.534129+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "9c4ebaa0-be48-4ca6-8d7e-dd72ba5d8864",
+      "content": "<p>had prioritized</p>"
+    },
+    {
+      "id": "acfff34c-1010-4105-b22e-b80eb4373ed3",
+      "content": "<p>was prioritizing</p>"
+    },
+    {
+      "id": "fcc5b6c4-4bbb-41d7-9fe7-6ec381ab05f2",
+      "content": "<p>prioritized</p>"
+    },
+    {
+      "id": "f10233f0-93e4-4624-9d0b-9edca5125428",
+      "content": "<p>prioritizing</p>"
+    }
+  ],
+  "keys": [
+    "f10233f0-93e4-4624-9d0b-9edca5125428"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle &ldquo;prioritizing&rdquo; is correctly used to form a supplementary element that modifies &ldquo;their design,&rdquo; describing what the headrests&rsquo; design prioritized.</p><p>Choice A is incorrect because it results in a comma splice. The finite past perfect verb &ldquo;had prioritized&rdquo; creates a second main clause in the sentence, and the comma after &ldquo;headrests&rdquo; can&rsquo;t be used in this way to join two main clauses. Choice B is incorrect because it results in a comma splice. The finite past progressive verb &ldquo;was prioritizing&rdquo; creates a second main clause in the sentence, and the comma after &ldquo;headrests&rdquo; can&rsquo;t be used in this way to join two main clauses. Choice C is incorrect because it results in a comma splice. The finite past tense verb &ldquo;prioritized&rdquo; creates a second main clause in the sentence, and the comma after &ldquo;headrests&rdquo; can&rsquo;t be used in this way to join two main clauses.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Instead of sleeping on soft pillows, ancient Egyptians slept on hard, elevated headrests, their design <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> airflow, protection from insects, and hairstyle maintenance over comfort.</p>",
+    "keys": [
+      "f10233f0-93e4-4624-9d0b-9edca5125428"
+    ],
+    "answerOptions": [
+      {
+        "id": "9c4ebaa0-be48-4ca6-8d7e-dd72ba5d8864",
+        "content": "<p>had prioritized</p>"
+      },
+      {
+        "id": "acfff34c-1010-4105-b22e-b80eb4373ed3",
+        "content": "<p>was prioritizing</p>"
+      },
+      {
+        "id": "fcc5b6c4-4bbb-41d7-9fe7-6ec381ab05f2",
+        "content": "<p>prioritized</p>"
+      },
+      {
+        "id": "f10233f0-93e4-4624-9d0b-9edca5125428",
+        "content": "<p>prioritizing</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. The convention being tested is the use of verb forms within a sentence. The nonfinite present participle &ldquo;prioritizing&rdquo; is correctly used to form a supplementary element that modifies &ldquo;their design,&rdquo; describing what the headrests&rsquo; design prioritized.</p><p>Choice A is incorrect because it results in a comma splice. The finite past perfect verb &ldquo;had prioritized&rdquo; creates a second main clause in the sentence, and the comma after &ldquo;headrests&rdquo; can&rsquo;t be used in this way to join two main clauses. Choice B is incorrect because it results in a comma splice. The finite past progressive verb &ldquo;was prioritizing&rdquo; creates a second main clause in the sentence, and the comma after &ldquo;headrests&rdquo; can&rsquo;t be used in this way to join two main clauses. Choice C is incorrect because it results in a comma splice. The finite past tense verb &ldquo;prioritized&rdquo; creates a second main clause in the sentence, and the comma after &ldquo;headrests&rdquo; can&rsquo;t be used in this way to join two main clauses.</p>",
+    "externalid": "d679edb0-8a6b-44bb-9ae3-78407013c7e9",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Instead of sleeping on soft pillows, ancient Egyptians slept on hard, elevated headrests, their design <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> airflow, protection from insects, and hairstyle maintenance over comfort.</p>"
+}

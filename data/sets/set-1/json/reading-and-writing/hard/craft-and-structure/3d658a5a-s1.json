@@ -1,0 +1,25 @@
+{
+  "questionId": "3d658a5a-s1",
+  "originalId": "3d658a5a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Some pollinator-network models predict that hummingbirds will reduce their daily travel distances as nectar-bearing flowers become more numerous, but ornithologists Pia Castillo and Lin-Wei Huang showed that hummingbird behavior departs from this prediction whenever flowers in dense patches are ______: the birds will travel beyond locally abundant but uniform patches in order to obtain a mix of corolla shapes and nectar concentrations.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>homogeneous</p>"},
+    {"id": "b", "content": "<p>depleted</p>"},
+    {"id": "c", "content": "<p>dispersed</p>"},
+    {"id": "d", "content": "<p>immature</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The colon explains that the birds travel beyond dense patches \"to obtain a mix of corolla shapes and nectar concentrations.\" That motivation only makes sense if the dense patches lack variety&mdash;i.e., are \"homogeneous.\"</p><p>Choice B is incorrect because depleted patches no longer offer nectar at all, so seeking variety would not be the reason the birds leave. Choice C is incorrect because the sentence specifies that the patches in question are dense, contradicting the idea of dispersal. Choice D is incorrect because immaturity describes a developmental stage rather than the lack of varietal mix the colon highlights.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

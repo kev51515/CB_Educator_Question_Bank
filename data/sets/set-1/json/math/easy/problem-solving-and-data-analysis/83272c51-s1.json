@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows the temperature, in degrees Fahrenheit (°F), of a beverage at 5-minute intervals after being placed in a cooler.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Time (min)</th><th>Temperature (°F)</th></tr>\n<tr><td>0</td><td>80</td></tr><tr><td>5</td><td>72</td></tr><tr><td>10</td><td>54</td></tr><tr><td>15</td><td>50</td></tr><tr><td>20</td><td>48</td></tr></table>\n<p style=\"text-align: left;\">During which of the following 5-minute intervals does the temperature of the beverage decrease at the greatest average rate?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Between 0 and 5 minutes</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Between 5 and 10 minutes</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Between 10 and 15 minutes</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Between 15 and 20 minutes</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The drops are: 0→5: 8°F; 5→10: 18°F; 10→15: 4°F; 15→20: 2°F. The greatest drop in a 5-minute interval is between 5 and 10 minutes.</p><p>Choices A, C, and D show smaller drops.</p>",
+  "questionId": "83272c51-s1",
+  "originalId": "83272c51",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "7ce2830a-s1",
+  "originalId": "7ce2830a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "domainCode": "Q",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A researcher conducted a study to determine whether a new vocabulary app improves high school students' performance on spelling quizzes. The researcher selected a random sample of 42 students from all of the students at one of the high schools in a large city. The researcher found that students who used the app showed significant improvement in spelling quiz scores. What is the largest group to which the results can be generalized?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>All students at the high school</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The 42 students in the sample</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>All students in the city</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>All high school students in the city</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The random sample was drawn from students at one specific high school, so results generalize to that school's students but no farther. Choice B is too narrow because random sampling supports inference about the broader sampling frame. Choices C and D are too broad because students at only one school were sampled.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A1.T1.hard"
+}

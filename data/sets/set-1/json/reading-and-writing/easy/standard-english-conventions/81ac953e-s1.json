@@ -1,0 +1,39 @@
+{
+  "questionId": "81ac953e-s1",
+  "originalId": "81ac953e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 1865, Russian chemist Aleksandr Butlerov proposed a structural theory to address a basic question: how does the arrangement of atoms within a molecule determine its properties? Butlerov&rsquo;s theory of chemical structure, named for its founder, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a foundational concept in modern organic chemistry.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>are</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>is</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>have been</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>were</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The singular verb &ldquo;is&rdquo; agrees with the singular subject &ldquo;Butlerov&rsquo;s theory of chemical structure.&rdquo;</p><p>Choices A, C, and D are all plural verb forms that don&rsquo;t agree with the singular subject.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A2.T4.easy"
+}

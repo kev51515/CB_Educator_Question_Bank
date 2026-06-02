@@ -1,0 +1,25 @@
+{
+  "questionId": "827afb27-s1",
+  "originalId": "827afb27",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Most mammals (animals belonging to the class Mammalia) give birth to live young. That is, they nourish their developing offspring inside the body until birth. However, not all mammal species follow this pattern. The platypus, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> lays eggs in a riverbank burrow.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>nevertheless,</p>"},
+    {"id": "b", "content": "<p>meanwhile,</p>"},
+    {"id": "c", "content": "<p>for instance,</p>"},
+    {"id": "d", "content": "<p>in addition,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"For instance\" logically signals that the information about the platypus laying eggs is an example supporting the claim in the previous sentence that not all mammal species give birth to live young.</p><p>Choice A is incorrect because \"nevertheless\" illogically signals that the platypus's behavior is true despite the claim, but it actually exemplifies the claim. Choice B is incorrect because \"meanwhile\" illogically signals simultaneous events. Choice D is incorrect because \"in addition\" illogically signals an additional unrelated fact, when the platypus exemplifies the claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

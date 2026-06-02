@@ -1,0 +1,23 @@
+{
+  "questionId": "5b2b8866-s1",
+  "originalId": "5b2b8866",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A rectangular banner has an area of 250 square inches. A copy of the banner is made in which the length and width of the original banner are each increased by 30%. What is the area of the copy, in square inches?</p>",
+  "answerOptions": null,
+  "keys": [
+    "845/2",
+    "422.5"
+  ],
+  "rationale": "<p>The correct answer is 422.5 (equivalent to 845/2). Increasing each dimension by 30% multiplies each by 1.3, so the area is multiplied by 1.3&sup2; = 1.69. The new area is 250 &times; 1.69 = 422.5 square inches.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.hard"
+}

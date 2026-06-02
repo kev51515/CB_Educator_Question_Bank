@@ -1,0 +1,39 @@
+{
+  "questionId": "430d929a-s1",
+  "originalId": "430d929a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>British astronomers Cecilia Payne and Henry Norris Russell are often credited with discovering that the Sun is composed mostly of hydrogen, but this account is incomplete. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> work depended on years of spectroscopic measurements made by earlier researchers, especially Annie Jump Cannon, who classified hundreds of thousands of stellar spectra.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It&rsquo;s</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Its</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They&rsquo;re</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Their</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The convention being tested is the use of possessive determiners. The plural possessive determiner &ldquo;their&rdquo; correctly refers to the plural conjoined noun phrase &ldquo;Payne and Russell.&rdquo;</p><p>Choice A is the contraction &ldquo;it is.&rdquo; Choice B is a singular possessive determiner that doesn&rsquo;t agree with the plural antecedent. Choice C is the contraction &ldquo;they are,&rdquo; not a possessive.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T7.easy"
+}

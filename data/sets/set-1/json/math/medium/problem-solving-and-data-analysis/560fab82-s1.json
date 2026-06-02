@@ -1,0 +1,22 @@
+{
+  "questionId": "560fab82-s1",
+  "originalId": "560fab82",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table shows the frequency of values in a data set.</p><table border=\"1\" style=\"margin:auto;border-collapse:collapse;\"><thead><tr><th>Value</th><th>Frequency</th></tr></thead><tbody><tr><td>4</td><td>2</td></tr><tr><td>7</td><td>5</td></tr><tr><td>9</td><td>3</td></tr><tr><td>11</td><td>1</td></tr></tbody></table><p>What is the mode of the data set?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The correct answer is 7. The mode is the value with the highest frequency. The value 7 appears 5 times, which is more than any other value, so the mode is 7.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.easy"
+}

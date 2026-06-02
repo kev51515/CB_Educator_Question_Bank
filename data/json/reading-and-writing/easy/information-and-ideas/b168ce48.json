@@ -1,0 +1,72 @@
+{
+  "questionId": "b168ce48",
+  "externalId": "6bf622a0-d5f7-48e3-bd49-df6a4cf0d266",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:20:58.345790+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the text, what would Hincapi&eacute; most likely say is a promising way to increase entrepreneurship in early adulthood?&nbsp;</p>",
+  "answerOptions": [
+    {
+      "id": "dd173b7f-95b9-41a2-b53c-92ae6fb64bdd",
+      "content": "<p>Creating social networks of young adults who are interested in starting a business</p>"
+    },
+    {
+      "id": "e28453b2-7193-4d85-80b4-38725d0fd715",
+      "content": "<p>Encouraging young adults to brainstorm business ideas</p>"
+    },
+    {
+      "id": "da56dc18-44b5-4105-b0eb-47c4d03a28d0",
+      "content": "<p>Providing young adults with practical information about how to start a business</p>"
+    },
+    {
+      "id": "63911def-ae92-49c2-98a7-95da18de06e9",
+      "content": "<p>Giving young adults training opportunities at a variety of businesses</p>"
+    }
+  ],
+  "keys": [
+    "da56dc18-44b5-4105-b0eb-47c4d03a28d0"
+  ],
+  "rationale": "<p>Choice C is the best answer because it presents a conclusion about increasing entrepreneurship in early adulthood that can be reasonably inferred from the text. The text explains that Andr&eacute;s Hincapi&eacute; investigated why young adults are less likely than older adults to start businesses and found that lack of knowledge of practical aspects of starting a business is a barrier. The text then states that Hincapi&eacute; found that providing relevant informational resources greatly helps address that problem. Offering young adults practical information about how to start a business would be an example of providing relevant informational resources, so Hincapi&eacute; would most likely say it is a promising way to increase early adult entrepreneurship.</p><p>Choice A is incorrect because creating social networks of young adults interested (but presumably inexperienced) in starting a business wouldn&rsquo;t involve a clear source of practical information for those young adults, and the text indicates that Hincapi&eacute; identified offering relevant informational resources about starting a business as a way to significantly reduce the problem of young adults&rsquo; low participation in entrepreneurship. Choice B is incorrect because encouraging young people to brainstorm business ideas wouldn&rsquo;t involve a clear source of practical information for those young adults, and the text indicates that Hincapi&eacute; identified offering relevant informational resources about starting a business as a way to significantly reduce the problem of young adults&rsquo; low participation in entrepreneurship. Choice D is incorrect because providing young adults with training opportunities at existing businesses would give those young people exposure to businesses that already exist but not necessarily information about how to start a business, and the text indicates that Hincapi&eacute; identified offering relevant informational resources about starting a business as a way to significantly reduce the problem of young adults&rsquo; low participation in entrepreneurship.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the text, what would Hincapi&eacute; most likely say is a promising way to increase entrepreneurship in early adulthood?&nbsp;</p>",
+    "stimulus": "<p>The average age at which people in the United States start businesses is 35. Economist Andr&eacute;s Hincapi&eacute; studied why young adults are relatively less likely to start businesses and whether there are ways to increase entrepreneurship in early adulthood. Hincapi&eacute; found that one impediment is lack of knowledge about the practical details of how businesses are started; he further found that simply providing young adults with good informational resources on the topic significantly alleviates this problem.</p>",
+    "keys": [
+      "da56dc18-44b5-4105-b0eb-47c4d03a28d0"
+    ],
+    "answerOptions": [
+      {
+        "id": "dd173b7f-95b9-41a2-b53c-92ae6fb64bdd",
+        "content": "<p>Creating social networks of young adults who are interested in starting a business</p>"
+      },
+      {
+        "id": "e28453b2-7193-4d85-80b4-38725d0fd715",
+        "content": "<p>Encouraging young adults to brainstorm business ideas</p>"
+      },
+      {
+        "id": "da56dc18-44b5-4105-b0eb-47c4d03a28d0",
+        "content": "<p>Providing young adults with practical information about how to start a business</p>"
+      },
+      {
+        "id": "63911def-ae92-49c2-98a7-95da18de06e9",
+        "content": "<p>Giving young adults training opportunities at a variety of businesses</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it presents a conclusion about increasing entrepreneurship in early adulthood that can be reasonably inferred from the text. The text explains that Andr&eacute;s Hincapi&eacute; investigated why young adults are less likely than older adults to start businesses and found that lack of knowledge of practical aspects of starting a business is a barrier. The text then states that Hincapi&eacute; found that providing relevant informational resources greatly helps address that problem. Offering young adults practical information about how to start a business would be an example of providing relevant informational resources, so Hincapi&eacute; would most likely say it is a promising way to increase early adult entrepreneurship.</p><p>Choice A is incorrect because creating social networks of young adults interested (but presumably inexperienced) in starting a business wouldn&rsquo;t involve a clear source of practical information for those young adults, and the text indicates that Hincapi&eacute; identified offering relevant informational resources about starting a business as a way to significantly reduce the problem of young adults&rsquo; low participation in entrepreneurship. Choice B is incorrect because encouraging young people to brainstorm business ideas wouldn&rsquo;t involve a clear source of practical information for those young adults, and the text indicates that Hincapi&eacute; identified offering relevant informational resources about starting a business as a way to significantly reduce the problem of young adults&rsquo; low participation in entrepreneurship. Choice D is incorrect because providing young adults with training opportunities at existing businesses would give those young people exposure to businesses that already exist but not necessarily information about how to start a business, and the text indicates that Hincapi&eacute; identified offering relevant informational resources about starting a business as a way to significantly reduce the problem of young adults&rsquo; low participation in entrepreneurship.</p>",
+    "externalid": "6bf622a0-d5f7-48e3-bd49-df6a4cf0d266",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>The average age at which people in the United States start businesses is 35. Economist Andr&eacute;s Hincapi&eacute; studied why young adults are relatively less likely to start businesses and whether there are ways to increase entrepreneurship in early adulthood. Hincapi&eacute; found that one impediment is lack of knowledge about the practical details of how businesses are started; he further found that simply providing young adults with good informational resources on the topic significantly alleviates this problem.</p>"
+}

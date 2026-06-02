@@ -1,0 +1,39 @@
+{
+  "questionId": "a5b069b4-s1",
+  "originalId": "a5b069b4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mn>7</mn></math>, <math><mn>12</mn></math>, <math><mn>21</mn></math>, <math><mn>7</mn></math>, <math><mn>7</mn></math>, <math><mn>8</mn></math>, <math><mn>9</mn></math>, <math><mn>8</mn></math></p><p>What is the median of the data set shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>7</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>9</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>10</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>8</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Sorted, the data are 7, 7, 7, 8, 8, 9, 12, 21. With 8 values, the median is the average of the 4th and 5th values: (8 + 8)/2 = 8.</p><p>Choice A is the mode. Choices B and C are not the median of the sorted list.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T2.medium"
+}

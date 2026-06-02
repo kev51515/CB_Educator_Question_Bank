@@ -1,0 +1,39 @@
+{
+  "questionId": "194ae3b1-s1",
+  "originalId": "194ae3b1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There were approximately 86,000 forest ranger jobs in a country in 2010. The Bureau of Labor Statistics projected that this number will increase by 35% from 2010 to 2025. Of the following, which is closest to the number of forest ranger jobs projected for 2025?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>88,300</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>116,100</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>121,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>130,000</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A 35% increase means the new value is 86,000 + 0.35 \u00d7 86,000 = 86,000 \u00d7 1.35 = 116,100.</p><p>Choice A is incorrect. This represents only a small percentage increase, not 35%.</p><p>Choice C is incorrect. This results from a computational error.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A3.T1.easy"
+}

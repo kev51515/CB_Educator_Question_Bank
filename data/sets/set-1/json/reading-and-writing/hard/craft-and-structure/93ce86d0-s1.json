@@ -1,0 +1,25 @@
+{
+  "questionId": "93ce86d0-s1",
+  "originalId": "93ce86d0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Curious about whether mental rehearsal could improve physical performance, Hannah Okonkwo and her team recruited competitive springboard divers for a multiweek study. The athletes were asked to spend twenty minutes a day visualizing specific dives in detail, and the researchers tracked the smoothness of their executed dives across the trial period. <u>Across the multiweek trial, the smoothness ratings improved steadily for divers who reported clear, detailed mental images, very much as one would expect from athletes engaging in additional physical practice.</u> Because the visualization sessions involved no physical movement at all, the team concluded that detailed mental rehearsal can drive measurable improvements in trained athletic skills.</p>",
+  "stem": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To offer key evidence that undermines Okonkwo and team's initial hypothesis.</p>"},
+    {"id": "b", "content": "<p>To show the unexpected result that led Okonkwo and team to change the focus of their study.</p>"},
+    {"id": "c", "content": "<p>To identify a comparable circumstance that helps justify Okonkwo and team's conclusion.</p>"},
+    {"id": "d", "content": "<p>To illustrate an important real-world implication of Okonkwo and team's main finding.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The underlined sentence reports that smoothness ratings improved \"very much as one would expect from athletes engaging in additional physical practice.\" By placing the visualization-only divers' improvement alongside the familiar effect of extra physical practice, the sentence supplies a comparable circumstance that supports the next sentence's conclusion: that mental rehearsal alone can yield measurable performance gains.</p><p>Choice A is incorrect because the underlined material confirms, rather than undermines, the team's working idea. Choice B is incorrect because no change of focus is described. Choice D is incorrect because the underlined portion is within the study's findings, not an extrapolation to outside applications.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

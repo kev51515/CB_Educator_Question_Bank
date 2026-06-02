@@ -1,0 +1,39 @@
+{
+  "questionId": "343aaff6-s1",
+  "originalId": "343aaff6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function f, the graph of y = f(x) in the xy-plane has a slope of 9 and passes through the point (0, 4). Which equation defines f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = 9x + 4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = 4x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = 4x + 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = 36x + 4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Slope 9 and y-intercept 4 give f(x) = 9x + 4.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A3.T1.easy"
+}

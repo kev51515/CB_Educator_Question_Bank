@@ -1,0 +1,22 @@
+{
+  "questionId": "4e400635-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "4e400635",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>5x + 8 = 6y</p><p>5x + 2 = 3y</p><p>The solution to the given system of equations is (x, y). What is the value of y?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2"
+  ],
+  "rationale": "<p>Subtracting the second equation from the first: (5x + 8) − (5x + 2) = 6y − 3y, which simplifies to 6 = 3y, so y = 2.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

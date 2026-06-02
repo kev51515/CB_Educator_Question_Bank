@@ -1,0 +1,25 @@
+{
+  "questionId": "da53d726-s1",
+  "originalId": "da53d726",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.medium",
+  "stimulus": "<p>In March 2002, building on decades of grassroots organizing, delegates from twenty African nations gathered in Maputo to launch the African Women&rsquo;s Decade. The platform&rsquo;s priorities were <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> expand girls&rsquo; access to secondary education, to broaden women&rsquo;s participation in agricultural cooperatives, and to strengthen protections against gender-based violence.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>clear; to</p>"},
+    {"id": "b", "content": "<p>clear. To</p>"},
+    {"id": "c", "content": "<p>clear: to</p>"},
+    {"id": "d", "content": "<p>clear to</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The clause \"The platform's priorities were clear\" is a complete independent clause that promises an elaboration. A colon correctly introduces the list of priorities that follows.</p><p>Choice A is incorrect because a semicolon must connect two independent clauses, and the list of infinitives that follows is not independent. Choice B is incorrect because a period creates a sentence fragment beginning with \"To.\" Choice D is incorrect because the unpunctuated junction fuses the main clause and the list into a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "6d883838-s1",
+  "originalId": "6d883838",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>According to a well-documented pattern in linguistic typology, languages whose verbs come at the very end of the clause tend strongly toward postpositions, in which grammatical markers follow the noun they govern. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> languages whose verbs sit between the subject and object generally favor prepositions, in which those same grammatical markers appear in front of the noun.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>In other words,</p>"},
+    {"id": "c", "content": "<p>Subsequently,</p>"},
+    {"id": "d", "content": "<p>Conversely,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Conversely\" logically signals that the information in this sentence—that languages with verbs between subject and object favor prepositions—contrasts with the previous information about verb-final languages favoring postpositions.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the second case exemplifies the first, when the two cases instead present opposed patterns. Choice B is incorrect because \"in other words\" illogically signals a restatement of the previous information, when the second sentence actually presents the opposite pattern. Choice C is incorrect because \"subsequently\" illogically signals a chronological sequence, when the two clauses present a contrast in linguistic patterns rather than a temporal order.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "8c5dbd3e-s1",
+  "originalId": "8c5dbd3e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The number w is 120% greater than the number z. The number z is 40% less than 75. What is the value of w?</p>",
+  "answerOptions": null,
+  "keys": [
+    "99"
+  ],
+  "rationale": "<p>The correct answer is 99. Since z is 40% less than 75, z = 75(1 \u2212 0.40) = 75 \u00d7 0.60 = 45. Since w is 120% greater than z, w = z(1 + 1.20) = z \u00d7 2.20 = 45 \u00d7 2.20 = 99.</p>",
+  "templateId": "percentages.A4.T3.hard"
+}

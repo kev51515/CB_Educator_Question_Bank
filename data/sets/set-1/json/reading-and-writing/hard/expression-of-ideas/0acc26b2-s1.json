@@ -1,0 +1,39 @@
+{
+  "questionId": "0acc26b2-s1",
+  "originalId": "0acc26b2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>Geologists estimate that the number of active and dormant volcanoes on Earth's seafloor is in the tens of thousands.</li><li>Loihi Seamount, off the coast of Hawaii, is one of many seafloor volcanoes whose summit has shifted upward over time.</li><li>Loihi Seamount's summit was once located more than 1,500 meters below the ocean's surface.</li><li>The seamount's summit is now positioned roughly 975 meters below the surface and continues to rise.</li></ul>",
+  "stem": "<p>The student wants to make and support a generalization about the summits of seafloor volcanoes. Which choice most effectively uses relevant information from the notes to accomplish these goals?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The summit of a seafloor volcano may shift upward over time: Loihi Seamount's summit was once located more than 1,500 meters below the ocean's surface but is now positioned roughly 975 meters below the surface.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Geologists estimate that the number of active and dormant seafloor volcanoes is in the tens of thousands; the volcanoes' summits may shift upward.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>One example of a seafloor volcano is Loihi Seamount, off the coast of Hawaii, whose summit was once located more than 1,500 meters below the surface but is now positioned roughly 975 meters below it.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Like Loihi Seamount, tens of thousands of volcanoes lie on Earth's seafloor.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. It states a generalization about seafloor volcanoes (their summits may shift upward) and supports that generalization with specific evidence from Loihi Seamount (a shift from more than 1,500 meters below the surface to roughly 975 meters below).</p><p>Choice B is incorrect because it asserts a generalization but offers no supporting evidence from the notes. Choice C is incorrect because it presents Loihi Seamount as a single example without articulating the generalization. Choice D is incorrect because it makes a generalization about the number of seafloor volcanoes, not about their summits, and so does not match the student's goal.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "rhetorical-synthesis.A2.T6.hard"
+}

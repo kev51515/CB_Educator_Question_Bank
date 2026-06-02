@@ -1,0 +1,39 @@
+{
+  "questionId": "5336f2e4-s1",
+  "originalId": "5336f2e4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1923 short story. Mira is a child who lives in a small village beside a tea estate.</p>\n<p style='padding-left:1em;'>Perhaps nine-year-old Mira was perplexing to the elders in the village, for she was a dreamy child and given to inventing companies and capitals. The Karuna River curled past, scarcely two hundred yards from her grandmother's gate. <u>Along its lower bank stood mossy banyans, brilliant flame-of-the-forest trees, and dense clusters of bamboo; on the upper bank, where the soil was thinner, only a sparse fringe of wild jasmine survived the dry months, lending the slope a faint, perpetual sweetness in the heat. From a flat shelf of rock near the bend, Mira could watch barges drift toward the coast and could imagine herself, in time, drifting after them.</u> She had never in her short life left the valley, but the river suggested itself to her as a way out.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentences in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They reveal that some residents of the village are confused by Mira's behavior.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They demonstrate the uniqueness of Mira's imagination compared with that of other children.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They suggest that Mira longs for a wider experience beyond the valley.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They provide an extended description of a place Mira likes to visit.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The description of the riverbank culminates in Mira watching barges \"drift toward the coast\" and imagining herself drifting after them, and the sentence that follows notes that she has never left the valley but that the river suggests itself as a way out. The underlined material therefore works to convey her longing for a wider life beyond the village.</p><p>Choice A is incorrect because the villagers' perplexity is mentioned outside the underlined material. Choice B is incorrect because no comparison is made between Mira's imagination and other children's. Choice D is incorrect because the descriptions serve the larger emotional arc of longing rather than functioning merely as scene-setting.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

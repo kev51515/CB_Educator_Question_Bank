@@ -1,0 +1,39 @@
+{
+  "questionId": "e03f3477-s1",
+  "originalId": "e03f3477",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A sample of <math><mn>800</mn></math> adult smartphone users was selected at random. Based on the sample, it is estimated that <math><mn>25</mn><mo>%</mo></math> of all adult smartphone users use their phones to read e-books, with an associated margin of error of <math><mn>2.85</mn><mo>%</mo></math>. Which of the following is the most plausible conclusion about all adult smartphone users?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Between <math><mn>22.15</mn><mo>%</mo></math> and <math><mn>27.85</mn><mo>%</mo></math> of all adult smartphone users use their phones to read e-books.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>More than <math><mn>27.85</mn><mo>%</mo></math> of all adult smartphone users use their phones to read e-books.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Since the sample did not include all e-book readers, no conclusion can be made.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Since the sample included users who do not read e-books, no conclusion can be made.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The plausible range is 25% \u00b1 2.85%, i.e., 22.15% to 27.85%.</p><p>Choice B falls outside the plausible interval. Choices C and D incorrectly claim that no conclusion can be drawn from a random sample.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium"
+}

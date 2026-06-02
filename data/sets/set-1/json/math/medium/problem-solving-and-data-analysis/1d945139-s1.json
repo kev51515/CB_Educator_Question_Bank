@@ -1,0 +1,39 @@
+{
+  "questionId": "1d945139-s1",
+  "originalId": "1d945139",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The total mass, in kilograms, of <em>n</em> identical objects is <em>m</em>. Which expression represents the total mass, in kilograms, of 87<em>n</em> of these objects?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>87 &minus; <em>m</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>87 + <em>m</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>m</em>/87</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>87<em>m</em></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. If <em>n</em> identical objects have a total mass of <em>m</em>, then each object has mass <em>m</em>/<em>n</em>. Therefore 87<em>n</em> objects have a total mass of 87<em>n</em> &times; (<em>m</em>/<em>n</em>) = 87<em>m</em> kilograms. Choices A and B are incorrect because they treat 87 and <em>m</em> additively rather than multiplicatively. Choice C is incorrect because <em>m</em>/87 represents dividing rather than multiplying by 87.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.medium"
+}

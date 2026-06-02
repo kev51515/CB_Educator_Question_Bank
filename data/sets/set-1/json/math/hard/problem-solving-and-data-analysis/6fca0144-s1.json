@@ -1,0 +1,39 @@
+{
+  "questionId": "6fca0144-s1",
+  "originalId": "6fca0144",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "domainCode": "Q",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a maple grove in Vermont, a scientist randomly selected 60 maple trees that were 22 years old and randomly assigned them to two groups. Each group received a different fertilizer treatment for 3 consecutive years to observe whether the fertilizer affects sap yield. Based on the design of the study, what is the largest group to which these results can be applied?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>All 22-year-old maple trees in Vermont</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>All 22-year-old maple trees in this grove</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The 60 maple trees that were selected</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>All 25-year-old maple trees in this grove</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The selection was random from 22-year-old maple trees in one specific grove. Results may be generalized only to the population from which the random sample was drawn: 22-year-old maple trees in this grove. Choice A is broader than the sampling frame. Choice C is too narrow given random sampling. Choice D refers to an age not sampled.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A1.T1.hard"
+}

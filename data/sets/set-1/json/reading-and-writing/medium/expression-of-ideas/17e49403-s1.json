@@ -1,0 +1,25 @@
+{
+  "questionId": "17e49403-s1",
+  "originalId": "17e49403",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>When, in the early 1900s, oceanographers first proposed that ocean basins are continually renewed by molten material rising from mid-ocean ridges, some suggested that this renewal could be tracked through the magnetic record locked in seafloor rocks. The deep ocean floor is so inaccessible, though, that recovering the necessary samples requires both ships capable of long voyages and specialized drilling equipment. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> researchers were unable to verify the theory of seafloor renewal until the 1960s.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Furthermore,</p>"},
+    {"id": "b", "content": "<p>Still,</p>"},
+    {"id": "c", "content": "<p>Then,</p>"},
+    {"id": "d", "content": "<p>Thus,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Thus\" logically signals that the information in this sentence—that researchers were unable to verify the theory of seafloor renewal until the 1960s—is a consequence of the previous information about how inaccessible the deep ocean floor is and the special equipment required to sample it.</p><p>Choice A is incorrect because \"furthermore\" illogically signals that this information is merely additional to the previous claim, rather than a specific consequence of it. Choice B is incorrect because \"still\" illogically signals that this information is true despite the previous claim, when in fact it follows directly from that claim. Choice C is incorrect because \"then\" illogically signals that this information is the next step in a process, when it actually identifies a result of the difficulties described.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

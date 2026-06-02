@@ -1,0 +1,20 @@
+{
+  "questionId": "e24765e6-s1",
+  "originalId": "e24765e6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>During a study, the pressure, in kilopascals, of a gas in a sealed chamber was recorded to the nearest integer at certain times. The scatterplot shows recorded pressure <em>y</em>, in kilopascals, <em>x</em> minutes after the start of the study. The line of best fit passes through (0, 10) and (8, 18). What is the predicted increase in pressure, in kilopascals, between minute 0 and minute 8?</p>",
+  "answerOptions": null,
+  "keys": ["8"],
+  "rationale": "<p>The correct answer is 8. From the line of best fit, the pressure rises from 10 to 18 between minute 0 and minute 8, an increase of 18 − 10 = 8 kilopascals.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.medium"
+}

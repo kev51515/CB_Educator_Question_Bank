@@ -1,0 +1,39 @@
+{
+  "questionId": "89541f9b-s1",
+  "originalId": "89541f9b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Consider the inequality 4x + y &lt; 5. Which of the following ordered pairs (x, y) satisfy this inequality?</p><p>I. (1, 2)</p><p>II. (0, 4)</p><p>III. (-1, 5)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I and II only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>II and III only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>I, II, and III</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For (1, 2): 4 + 2 = 6, not less than 5 (false). For (0, 4): 0 + 4 = 4 &lt; 5 (true). For (-1, 5): -4 + 5 = 1 &lt; 5 (true). Only II and III satisfy the inequality.</p><p>Choices A, C, and D include I or omit II or III incorrectly.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy"
+}

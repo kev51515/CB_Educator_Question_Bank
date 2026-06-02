@@ -1,0 +1,72 @@
+{
+  "questionId": "592f94c2",
+  "externalId": "51519b20-3a00-4154-8ba3-8d08a2b8fc66",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:53.315175+00:00",
+  "type": "mcq",
+  "stem": "<p>Based on the texts, how would the critics mentioned in Text 2 most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "20f3df5f-0c11-4b74-b592-81828ed08f81",
+      "content": "<p>By arguing that the reason members of the general public might disagree about a public artwork&rsquo;s merits is unrelated to the unconventionality of its appearance and ideas&nbsp;</p>"
+    },
+    {
+      "id": "51ecbf69-0b75-4106-9d07-0fb91f195ca1",
+      "content": "<p>By agreeing with the idea that only works of art that are universally appealing are suitable for displaying in public spaces</p>"
+    },
+    {
+      "id": "3c1a6029-1cb9-49c8-9c77-ae91d0b4aacf",
+      "content": "<p>By disputing the notion that civic leaders and community members are easily placated by art that is intended mainly to reinforce social norms</p>"
+    },
+    {
+      "id": "ac135779-f026-490b-aabf-df48c4b4121f",
+      "content": "<p>By contending that the kinds of reactions controversial public artworks often receive aren&rsquo;t exclusively the result of attributes inherent in the works themselves&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "ac135779-f026-490b-aabf-df48c4b4121f"
+  ],
+  "rationale": "<p>Choice D is the best answer because the critics mentioned in Text 2 would argue that negative reactions to controversial public art are not solely the result of the nature of the art itself. The claim in Text 1 suggests that public artworks tend to provoke backlash when they are not &ldquo;aesthetically and conceptually bland.&rdquo; This implies that the content of public art alone can cause backlash. However, the critics in Text 2 offer a more nuanced explanation. They argue that norm-defying pieces of public art that are not &ldquo;effectively integrated within their surroundings&rdquo; are more likely to be judged harshly by the public. They also imply that a museum provides a context that prepares viewers to expect challenging art, while public environments that serve other purposes often do not. This indicates that the critics in Text 2 would contend that factors beyond the attributes of the art, like environment and presentation, play a significant role in how public art is received.</p><p>Choice A is incorrect because the critics in Text 2 do not argue that unconventionality is unrelated to public disagreement about a public artwork&rsquo;s merits. Rather, they acknowledge that norm-defying pieces do face unfavorable reactions, but they attribute such reactions to contextual factors like poor integration with the environment rather than dismissing the role of unconventionality entirely. Choice B is incorrect because the critics in Text 2 do not advocate for restricting public art to universally appealing works. Instead, they argue that better integration with the surroundings and situating the work in appropriate contexts could help norm-defying art be better received by passersby. Choice C is incorrect because the critics in Text 2 do not address whether civic leaders and community members are easily satisfied by norm-reinforcing art. The critics in Text 2 instead argue that installation and integration with the surrounding environment factor into how norm-defying art is received by the general public, rather than disputing how people respond to conventional art.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Based on the texts, how would the critics mentioned in Text 2 most likely respond to the underlined claim in Text 1?</p>",
+    "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1&nbsp;</strong></span></p>\n<p>Good art often challenges and disrupts social and aesthetic norms, but the creation of public art&mdash;paintings, sculptures, and performance pieces displayed in nonmuseum or nontheatrical public settings&mdash;typically requires broad agreement among artists, civic officials, and community members about the works&rsquo; message and artistic goals. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Public art that fails to appease everyone by being sufficiently aesthetically and conceptually bland almost inevitably provokes backlash.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p>\n<p>Public art is commonly displayed in spaces intended for purposes other than meaningful aesthetic engagement. Some critics of public art therefore note that norm-defying pieces that aren&rsquo;t effectively integrated within their surroundings in a manner that primes passersby to appreciate the pieces&rsquo; merits (as is often the case) tend to be regarded more unfavorably than similarly provocative art encountered in museums is.&nbsp;</p>",
+    "keys": [
+      "ac135779-f026-490b-aabf-df48c4b4121f"
+    ],
+    "answerOptions": [
+      {
+        "id": "20f3df5f-0c11-4b74-b592-81828ed08f81",
+        "content": "<p>By arguing that the reason members of the general public might disagree about a public artwork&rsquo;s merits is unrelated to the unconventionality of its appearance and ideas&nbsp;</p>"
+      },
+      {
+        "id": "51ecbf69-0b75-4106-9d07-0fb91f195ca1",
+        "content": "<p>By agreeing with the idea that only works of art that are universally appealing are suitable for displaying in public spaces</p>"
+      },
+      {
+        "id": "3c1a6029-1cb9-49c8-9c77-ae91d0b4aacf",
+        "content": "<p>By disputing the notion that civic leaders and community members are easily placated by art that is intended mainly to reinforce social norms</p>"
+      },
+      {
+        "id": "ac135779-f026-490b-aabf-df48c4b4121f",
+        "content": "<p>By contending that the kinds of reactions controversial public artworks often receive aren&rsquo;t exclusively the result of attributes inherent in the works themselves&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because the critics mentioned in Text 2 would argue that negative reactions to controversial public art are not solely the result of the nature of the art itself. The claim in Text 1 suggests that public artworks tend to provoke backlash when they are not &ldquo;aesthetically and conceptually bland.&rdquo; This implies that the content of public art alone can cause backlash. However, the critics in Text 2 offer a more nuanced explanation. They argue that norm-defying pieces of public art that are not &ldquo;effectively integrated within their surroundings&rdquo; are more likely to be judged harshly by the public. They also imply that a museum provides a context that prepares viewers to expect challenging art, while public environments that serve other purposes often do not. This indicates that the critics in Text 2 would contend that factors beyond the attributes of the art, like environment and presentation, play a significant role in how public art is received.</p><p>Choice A is incorrect because the critics in Text 2 do not argue that unconventionality is unrelated to public disagreement about a public artwork&rsquo;s merits. Rather, they acknowledge that norm-defying pieces do face unfavorable reactions, but they attribute such reactions to contextual factors like poor integration with the environment rather than dismissing the role of unconventionality entirely. Choice B is incorrect because the critics in Text 2 do not advocate for restricting public art to universally appealing works. Instead, they argue that better integration with the surroundings and situating the work in appropriate contexts could help norm-defying art be better received by passersby. Choice C is incorrect because the critics in Text 2 do not address whether civic leaders and community members are easily satisfied by norm-reinforcing art. The critics in Text 2 instead argue that installation and integration with the surrounding environment factor into how norm-defying art is received by the general public, rather than disputing how people respond to conventional art.</p>",
+    "externalid": "51519b20-3a00-4154-8ba3-8d08a2b8fc66",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1&nbsp;</strong></span></p>\n<p>Good art often challenges and disrupts social and aesthetic norms, but the creation of public art&mdash;paintings, sculptures, and performance pieces displayed in nonmuseum or nontheatrical public settings&mdash;typically requires broad agreement among artists, civic officials, and community members about the works&rsquo; message and artistic goals. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Public art that fails to appease everyone by being sufficiently aesthetically and conceptually bland almost inevitably provokes backlash.</span></p>\n<p>&nbsp;</p>\n<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p>\n<p>Public art is commonly displayed in spaces intended for purposes other than meaningful aesthetic engagement. Some critics of public art therefore note that norm-defying pieces that aren&rsquo;t effectively integrated within their surroundings in a manner that primes passersby to appreciate the pieces&rsquo; merits (as is often the case) tend to be regarded more unfavorably than similarly provocative art encountered in museums is.&nbsp;</p>"
+}

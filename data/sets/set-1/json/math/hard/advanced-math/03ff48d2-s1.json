@@ -1,0 +1,22 @@
+{
+  "questionId": "03ff48d2-s1",
+  "originalId": "03ff48d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><i>x</i>(<i>k</i><i>x</i> &minus; 72) = &minus;24</p><p>In the given equation, <i>k</i> is an integer constant. If the equation has no real solution, what is the least possible value of <i>k</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "55"
+  ],
+  "rationale": "<p>Distribute and rewrite in standard form: <i>k</i><i>x</i>&sup2; &minus; 72<i>x</i> + 24 = 0. The equation has no real solutions exactly when the discriminant is negative: (&minus;72)&sup2; &minus; 4(<i>k</i>)(24) &lt; 0, i.e., 5184 &minus; 96<i>k</i> &lt; 0, so <i>k</i> &gt; 54. The least integer satisfying this is 55.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

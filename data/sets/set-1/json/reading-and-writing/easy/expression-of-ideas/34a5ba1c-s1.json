@@ -1,0 +1,39 @@
+{
+  "questionId": "34a5ba1c-s1",
+  "originalId": "34a5ba1c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>By 1956, Hungarian pianist Annie Fischer was known across Europe for her brilliant interpretations of classical repertoire. However, in October of that year, the outbreak of the Hungarian Revolution made it dangerous for her to continue performing in her home country. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Fischer left Hungary to perform abroad, playing for audiences across Western Europe and the Americas.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As a result,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In comparison,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>First of all,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"As a result\" logically signals that the information in this sentence about Fischer leaving Hungary to perform abroad is a result of the previous information about the Hungarian Revolution.</p><p>Choice B is incorrect because \"in comparison\" illogically signals that the information is being compared to the previous information. Instead, Fischer leaving Hungary is a result of the revolution. Choice C is incorrect because \"first of all\" illogically signals the beginning of a sequence. Instead, leaving Hungary is a result of the event described in the previous sentence. Choice D is incorrect because \"for example\" illogically signals that the information is an example. Instead, it is a result of the revolution.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "7b43c0cc",
+  "externalId": "145d53b4-900a-482a-924e-63f882773a6e",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:13.359532+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "109b9a28-439b-4aff-ad4f-97892a4d4780",
+      "content": "<p>tangential</p>"
+    },
+    {
+      "id": "d291184c-3bab-4065-ac6c-0d7e842787eb",
+      "content": "<p>subsequent</p>"
+    },
+    {
+      "id": "1440a634-d6a2-4afe-a8fb-38c5d18ccda9",
+      "content": "<p>analogous</p>"
+    },
+    {
+      "id": "e3ef364d-b834-483f-9263-04038e859592",
+      "content": "<p>integral</p>"
+    }
+  ],
+  "keys": [
+    "e3ef364d-b834-483f-9263-04038e859592"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of Steiger Butte Drum&rsquo;s contributions to the musical work <em>Natural History</em>. In this context, &ldquo;integral&rdquo; means essential or necessary to the whole. The text states that Steiger Butte Drum not only took part in the piece&rsquo;s creation, collaborating with composer Michael Gordon on it, but also &ldquo;must be included in all performances.&rdquo; This context clearly indicates that the ensemble&rsquo;s participation is essential, or integral, to the piece, both in its creation and its performance.</p><p>Choice A is incorrect because in this context, &ldquo;tangential&rdquo; would mean peripheral or of little relevance to something. The text emphasizes the importance of Steiger Butte Drum&rsquo;s involvement in both the composition and performance of <em>Natural History</em>, indicating their role is central, not tangential. Choice B is incorrect because in this context, &ldquo;subsequent&rdquo; would mean following after or coming later than something else. The text doesn&rsquo;t establish a temporal sequence where the participation of Steiger Butte Drum followed after the creation of <em>Natural History</em>; rather, it indicates that the ensemble was involved with the piece from the beginning, having worked with Michael Gordon during the creation process. Choice C is incorrect because in this context, &ldquo;analogous&rdquo; would mean similar or comparable to something else, and the text doesn&rsquo;t compare Steiger Butte Drum&rsquo;s participation in the creation and performances of <em>Natural History</em> to anything else; instead, it describes the nature and importance of the ensemble&rsquo;s involvement.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Steiger Butte Drum, a family ensemble from the Klamath Tribes of the Pacific Northwest, collaborated with composer Michael Gordon to create <em>Natural History</em>, a work featuring traditional drumming and vocals alongside an orchestra and chorus. Steiger Butte Drum&rsquo;s participation is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the piece: members not only contributed to its composition but also must be included in all performances.</p>",
+    "keys": [
+      "e3ef364d-b834-483f-9263-04038e859592"
+    ],
+    "answerOptions": [
+      {
+        "id": "109b9a28-439b-4aff-ad4f-97892a4d4780",
+        "content": "<p>tangential</p>"
+      },
+      {
+        "id": "d291184c-3bab-4065-ac6c-0d7e842787eb",
+        "content": "<p>subsequent</p>"
+      },
+      {
+        "id": "1440a634-d6a2-4afe-a8fb-38c5d18ccda9",
+        "content": "<p>analogous</p>"
+      },
+      {
+        "id": "e3ef364d-b834-483f-9263-04038e859592",
+        "content": "<p>integral</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of Steiger Butte Drum&rsquo;s contributions to the musical work <em>Natural History</em>. In this context, &ldquo;integral&rdquo; means essential or necessary to the whole. The text states that Steiger Butte Drum not only took part in the piece&rsquo;s creation, collaborating with composer Michael Gordon on it, but also &ldquo;must be included in all performances.&rdquo; This context clearly indicates that the ensemble&rsquo;s participation is essential, or integral, to the piece, both in its creation and its performance.</p><p>Choice A is incorrect because in this context, &ldquo;tangential&rdquo; would mean peripheral or of little relevance to something. The text emphasizes the importance of Steiger Butte Drum&rsquo;s involvement in both the composition and performance of <em>Natural History</em>, indicating their role is central, not tangential. Choice B is incorrect because in this context, &ldquo;subsequent&rdquo; would mean following after or coming later than something else. The text doesn&rsquo;t establish a temporal sequence where the participation of Steiger Butte Drum followed after the creation of <em>Natural History</em>; rather, it indicates that the ensemble was involved with the piece from the beginning, having worked with Michael Gordon during the creation process. Choice C is incorrect because in this context, &ldquo;analogous&rdquo; would mean similar or comparable to something else, and the text doesn&rsquo;t compare Steiger Butte Drum&rsquo;s participation in the creation and performances of <em>Natural History</em> to anything else; instead, it describes the nature and importance of the ensemble&rsquo;s involvement.</p>",
+    "externalid": "145d53b4-900a-482a-924e-63f882773a6e",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Steiger Butte Drum, a family ensemble from the Klamath Tribes of the Pacific Northwest, collaborated with composer Michael Gordon to create <em>Natural History</em>, a work featuring traditional drumming and vocals alongside an orchestra and chorus. Steiger Butte Drum&rsquo;s participation is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the piece: members not only contributed to its composition but also must be included in all performances.</p>"
+}

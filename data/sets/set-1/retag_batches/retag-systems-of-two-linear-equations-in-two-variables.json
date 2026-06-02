@@ -1,0 +1,104 @@
+[
+  {
+    "id": "36f068e2-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone has no graph; it's a pure algebraic solve (substitution to find (20,20)). This is A2.T5/A1.T2 territory, not A3 (graphical representation). Answer is correct, but A3 must_preserve 'one side graphical, one algebraic' is violated."
+  },
+  {
+    "id": "27f5fff3-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T8.hard",
+    "verdict": "type_drift",
+    "detail": "T8 requires the stem to ask how many solutions (categorical: 0/1/infinite). Clone asks for the intersection coordinates (6,2) \u2014 that is an A1/A3 task (solve system / read graph), not solution-counting. Violates T8 must_preserve: 'answer is a categorical choice about solution count'."
+  },
+  {
+    "id": "3f5a3602-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.hard",
+    "verdict": "type_drift",
+    "detail": "T7 requires one side of the question to be graphical (matching a graph to a system or vice versa). Clone presents two pairs of points (purely algebraic) and asks for the solution (x,y) directly\u2014this is A1.T2 behavior (solve the system), not T7 (match system to graph)."
+  },
+  {
+    "id": "3409707e-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged T1 (one equation isolates a variable) but stem 'x+y=160; x+2y=215' has both equations with both variables \u2014 that is T2 structure."
+  },
+  {
+    "id": "939fc21b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged T2 (both equations involve both variables) but u=4 already isolates a variable \u2014 that is T1 structure."
+  },
+  {
+    "id": "4b06557b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 must_preserve: 'graph of exactly two lines shown'. Clone has no graph; pure algebraic system \u2014 categorical drift to A1."
+  },
+  {
+    "id": "608eeb6e-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Stem asks for combined expression x-y rather than a raw component; that is T3 (solve and evaluate combined expression), not T1."
+  },
+  {
+    "id": "e1259a5a-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.easy",
+    "verdict": "type_drift",
+    "detail": "T7 must_preserve: 'one side of the question is graphical, the other algebraic'. Clone presents two algebraic equations and asks which candidate point is the solution \u2014 no graphical component; this is A1 territory."
+  },
+  {
+    "id": "5f46fc76-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 must_preserve: 'graph of exactly two lines shown'. No graph in stem; pure algebraic \u2014 categorical drift to A1."
+  },
+  {
+    "id": "1006cad7-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "type_drift",
+    "detail": "T6 must_preserve: 'graph of exactly two lines shown'. Clone has no graph; pure algebraic system \u2014 categorical drift to A1."
+  },
+  {
+    "id": "cdec4c87-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 description requires that 'both equations involve both variables', but the clone's second equation y=17 is a single-variable equation that already isolates y. This is T1 (trivial one-equation isolates a variable) structure, not T2."
+  },
+  {
+    "id": "ca9bb527-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 requires both equations involve both variables; here y=22 already isolates y, making this a T1 (trivial one-equation isolates a variable) structure rather than T2."
+  },
+  {
+    "id": "19fdf387-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T11 template defines empty medium characteristics (frequency easy:0, medium:0, hard:2). Clone is a trivial one-step substitution (point (1,4) on y=ax \u2192 a=4), well below T11's hard-only difficulty profile requiring partially-specified intersection and coupled parameters. Answer is correct."
+  },
+  {
+    "id": "d1b66ae6-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T2.hard requires large/non-coprime coefficients or fractional solution or combined-expression target (e.g., xy, 30x). Clone uses small integer coefficients (2,3,4,-1), asks for y directly, integer solution \u2014 matches easy/medium characteristics, not hard."
+  },
+  {
+    "id": "1362ccde-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T3.hard requires non-obvious combined expression with shortcut via sum/difference of equations, or grouped compound variables, or fractional/large coefficients. Clone uses simple substitution on integer system asking x-y \u2014 matches medium characteristics."
+  },
+  {
+    "id": "52cb8ea4-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T3.hard requires non-obvious combined expression admitting elimination shortcut, compound-variable grouping, or fractional/large coefficients. Clone has small integer coefficients, asks for x+y \u2014 fits T3.medium ('asked expression is a small multiple/sum')."
+  },
+  {
+    "id": "4f1342d6-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "T5.hard requires mixture/weighted-percent, two parallel scenarios, or rate\u00d7time setup requiring back-conversion. Clone is a simple sum+ratio word problem (May/June sales) reducing to one linear equation in one variable \u2014 matches T5.medium ('one relationship is a ratio and one is a sum')."
+  }
+]

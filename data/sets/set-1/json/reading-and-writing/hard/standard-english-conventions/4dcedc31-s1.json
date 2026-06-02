@@ -1,0 +1,25 @@
+{
+  "questionId": "4dcedc31-s1",
+  "originalId": "4dcedc31",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A3.T6.hard",
+  "stimulus": "<p>To grow more efficient catalysts for ammonia synthesis, engineers must be able to image how nitrogen atoms attach to nanostructured metal surfaces in real time. Fortunately, materials <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and her team at ETH Zurich have recently developed a high-speed electron-microscopy technique that captures the reaction frame by frame.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>scientist, Aiko Tanaka,</p>"},
+    {"id": "b", "content": "<p>scientist, Aiko Tanaka</p>"},
+    {"id": "c", "content": "<p>scientist Aiko Tanaka</p>"},
+    {"id": "d", "content": "<p>scientist Aiko Tanaka,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Materials scientist\" is an indefinite role, so the proper name \"Aiko Tanaka\" is essential identification and is not set off by commas.</p><p>Choices A and B are incorrect because they set off the name with one or two commas, implying that \"Aiko Tanaka\" could be removed without loss of meaning; the name, however, is essential. Choice D is incorrect because a single trailing comma wrongly separates the compound subject from its verb \"have&hellip;developed.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

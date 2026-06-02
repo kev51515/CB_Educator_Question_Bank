@@ -1,0 +1,20 @@
+{
+  "questionId": "b4553284-s1",
+  "originalId": "b4553284",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>3</mn><mi>y</mi><mo>=</mo><mn>21</mn></math>, what is the value of <math><mn>8</mn><mi>y</mi></math>?</p>",
+  "answerOptions": null,
+  "keys": ["56"],
+  "rationale": "<p>The correct answer is <math><mn>56</mn></math>. Dividing both sides of <math><mn>3</mn><mi>y</mi><mo>=</mo><mn>21</mn></math> by 3 yields <math><mi>y</mi><mo>=</mo><mn>7</mn></math>. Multiplying both sides by 8 yields <math><mn>8</mn><mi>y</mi><mo>=</mo><mn>56</mn></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

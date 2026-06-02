@@ -1,0 +1,39 @@
+{
+  "questionId": "e35d481c-s1",
+  "originalId": "e35d481c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Some labor historians <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that mid-twentieth-century factories in the American Midwest experienced steady gains in worker productivity—they assumed that productivity rose smoothly with each year of expanded automation. Historian Marisol Gutiérrez showed, however, that a close look at the available shop-floor records disproves this supposition.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>questioned</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>conjectured</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>regretted</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>contrived</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Conjectured\" means proposed without firm evidence. The text says some historians \"assumed\" something that newer evidence has now disproved—so they had conjectured the pattern of steady productivity gains rather than having documented it.</p><p>Choice A is incorrect. \"Questioned\" means challenged; the historians took the pattern for granted rather than challenging it. Choice C is incorrect. \"Regretted\" means lamented, which makes no sense applied to a hypothesis about productivity. Choice D is incorrect. \"Contrived\" suggests deliberate invention or scheming, but the text describes a casual assumption based on plausible reasoning.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "ab1f424a-s1",
+  "originalId": "ab1f424a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Working together with the Hopi Tribe's Water Resources Program, Dr. Marisol Quimayousie analyzed data about groundwater recharge in the Black Mesa basin. She found that recharge (the rate at which water seeps into the aquifer) was highest in late summer at lower-elevation washes. At higher-elevation washes, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> recharge was highest in early autumn.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>in other words,</p>"},
+    {"id": "b", "content": "<p>in summary,</p>"},
+    {"id": "c", "content": "<p>for instance,</p>"},
+    {"id": "d", "content": "<p>on the other hand,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"On the other hand\" logically signals that the information in this sentence—that groundwater recharge at higher-elevation washes peaked in early autumn—contrasts with the previous information about recharge at lower-elevation washes peaking in late summer.</p><p>Choice A is incorrect because \"in other words\" illogically signals that this sentence merely restates the previous information, when it actually presents a contrasting case. Choice B is incorrect because \"in summary\" illogically signals a summary of the previous information, when this sentence describes a different elevation band with a different peak timing. Choice C is incorrect because \"for instance\" illogically signals that the higher-elevation case is an example of the lower-elevation pattern, when it actually contrasts with that pattern.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

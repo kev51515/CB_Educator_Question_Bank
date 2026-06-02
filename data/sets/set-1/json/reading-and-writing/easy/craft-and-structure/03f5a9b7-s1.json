@@ -1,0 +1,39 @@
+{
+  "questionId": "03f5a9b7-s1",
+  "originalId": "03f5a9b7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>When ecologist Daniel Mennill played different forest recordings to groups of young songbirds, groups that heard the songs of an active, thriving population of their own species were the most <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. They were twice as likely as other groups to begin practicing their own songs. This suggests that playing recordings of a healthy population may encourage young birds to develop their songs.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>silent</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>fearful</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>scattered</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>responsive</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because \"responsive\" means reacting readily and is supported by the detail that the birds in those groups were twice as likely to begin practicing their songs. Choice A is incorrect because \"silent\" would contradict the fact that the birds began practicing songs. Choice B is incorrect because nothing in the text indicates the birds were afraid. Choice C is incorrect because \"scattered\" describes physical distribution, not how the birds reacted to the recordings.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

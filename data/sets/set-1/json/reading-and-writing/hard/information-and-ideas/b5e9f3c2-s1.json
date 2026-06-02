@@ -1,0 +1,39 @@
+{
+  "questionId": "b5e9f3c2-s1",
+  "originalId": "b5e9f3c2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The Nuragic peoples, the civilization from which many present-day Sardinians culturally descend, emerged as early as 1800 B.C.E. in what is now central Sardinia and dispersed suddenly in the early 700s B.C.E., abandoning established stone-tower villages where they maintained systems for cultivating barley and raising sheep. Recent analysis comparing sheep remains at the Su Nuraxi site in central Sardinia to samples from modern sheep populations on the Aegean island of Lemnos determined that the Lemnos sheep descended in part from sheep raised at Su Nuraxi, with shared genetic markers first appearing only after 720 B.C.E. Thus, researchers concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>some Nuragic peoples migrated to the Aegean island of Lemnos in the early 700s B.C.E. and carried their pastoral practices with them.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>conditions of the terrains in central Sardinia and on the island of Lemnos had greater similarities in the past than they do today.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Indigenous peoples living on Lemnos primarily cultivated barley and did not raise sheep before 720 B.C.E.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the Nuragic peoples of central Sardinia likely adopted the pastoral practices of peoples living in other regions.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says that the Nuragic peoples maintained sheep-raising systems at Su Nuraxi, that their civilization dispersed in the early 700s B.C.E., and that genetic markers shared by Lemnos sheep with Su Nuraxi sheep first appeared on Lemnos only after 720 B.C.E. The most reasonable conclusion is that some Nuragic peoples migrated to Lemnos around that time and brought their sheep-raising practices with them.</p><p>Choice B is incorrect because the text never compares the terrains of central Sardinia and Lemnos at any time. Choice C is incorrect because the shared genetic markers appearing on Lemnos after 720 B.C.E. don't rule out the possibility that Lemnos peoples raised sheep from a different ancestry before that date. Choice D is incorrect because the evidence indicates that Nuragic peoples brought their practices to a new region, not that they adopted practices from an outside civilization.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

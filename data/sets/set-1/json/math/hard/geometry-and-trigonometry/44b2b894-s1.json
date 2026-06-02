@@ -1,0 +1,22 @@
+{
+  "questionId": "44b2b894-s1",
+  "originalId": "44b2b894",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A rectangle is inscribed in a circle so that each vertex of the rectangle lies on the circle. The diagonal of the rectangle is twice the length of the shorter side of the rectangle. The area of the rectangle is 676&radic;3 square units. What is the length, in units, of the diameter of the circle?</p>",
+  "answerOptions": null,
+  "keys": [
+    "52"
+  ],
+  "rationale": "<p>Because each vertex lies on the circle, the diagonal of the rectangle equals the diameter. Let s be the shorter side. Since the diagonal equals 2s, by the Pythagorean theorem the longer side b satisfies s&sup2; + b&sup2; = (2s)&sup2;, so b&sup2; = 3s&sup2; and b = s&radic;3. The area equals s &middot; s&radic;3 = s&sup2;&radic;3 = 676&radic;3, so s&sup2; = 676 and s = 26. The diameter equals 2s = 52.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T9.hard"
+}

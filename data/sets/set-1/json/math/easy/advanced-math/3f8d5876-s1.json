@@ -1,0 +1,39 @@
+{
+  "questionId": "3f8d5876-s1",
+  "originalId": "3f8d5876",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>The graph in the xy-plane shows the parabola <math><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>4</mn></math> and the line <math><mi>y</mi><mo>=</mo><mi>x</mi><mo>+</mo><mn>2</mn></math>. The two curves intersect at two points; the intersection with positive <em>x</em>-coordinate is labeled <em>P</em>. What are the coordinates of point <em>P</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mn>3</mn><mo>,</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mn>2</mn><mo>,</mo><mn>4</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mn>4</mn><mo>,</mo><mn>6</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mn>5</mn><mo>,</mo><mn>21</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>At the labeled intersection P, the parabola and line share the same y-value, so x² − 4 = x + 2, giving x² − x − 6 = 0, which factors as (x − 3)(x + 2) = 0. Since P has positive x-coordinate, x = 3, and y = 3 + 2 = 5. Thus P = (3, 5), matching choice A. Choice B comes from swapping the substitution and gives a point that is not on either curve. Choice C is on the line but not on the parabola. Choice D is on the parabola but not on the line.</p>",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy"
+}

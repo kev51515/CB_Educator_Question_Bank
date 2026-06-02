@@ -1,0 +1,72 @@
+{
+  "questionId": "d222f7d9",
+  "externalId": "928ce2c4-f5f3-415f-943e-0728649989ed",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:23:29.306198+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "10503124-acda-4859-99ef-2e4632877d95",
+      "content": "<p>swimming<span data-ssml-say-as=\"characters\">,</span> is</p>"
+    },
+    {
+      "id": "503967f3-f7c8-497b-8f82-7527e090bac3",
+      "content": "<p>swimming is</p>"
+    },
+    {
+      "id": "cb292c78-d504-4434-9131-6f3b53132a93",
+      "content": "<p>swimming has been</p>"
+    },
+    {
+      "id": "0f6144b0-53c7-49b3-bc7e-457d59ae0ffd",
+      "content": "<p>swimming<span data-ssml-say-as=\"characters\">,</span></p>"
+    }
+  ],
+  "keys": [
+    "0f6144b0-53c7-49b3-bc7e-457d59ae0ffd"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;swimming&rdquo; pairs with the dash after &ldquo;ciliates&rdquo; to offset the supplementary element (&ldquo;widely&hellip;ciliates&rdquo;) that interrupts the main clause of the sentence.</p><p>Choice A is incorrect. Adding the verb &ldquo;is&rdquo; here creates an ungrammatical sentence structure with two main verbs (&ldquo;is&rdquo; and &ldquo;bestows&rdquo;) without appropriate punctuation and/or conjunction. Choice B is incorrect because it fails to offset the supplementary element with appropriate punctuation. Furthermore, adding the verb &ldquo;is&rdquo; here creates an ungrammatical sentence that has two finite verbs (&ldquo;is&rdquo; and &ldquo;bestows&rdquo;) without appropriate punctuation and/or conjunction. Choice C is incorrect because it fails to offset the supplementary element with appropriate punctuation. Furthermore, adding the verb &ldquo;has been&rdquo; here creates an ungrammatical sentence that has two finite verbs (&ldquo;has been&rdquo; and &ldquo;bestows&rdquo;) without appropriate punctuation and/or conjunction.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Helical <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> widely understood to confer stability and efficiency in the locomotion of a variety of microscopic organisms&mdash;including bacteria, eukaryotic algae, and ciliates&mdash;bestows similar advantages, albeit via different propulsive modes, to larger oceanic macroplanktons, such as salps.</p>",
+    "keys": [
+      "0f6144b0-53c7-49b3-bc7e-457d59ae0ffd"
+    ],
+    "answerOptions": [
+      {
+        "id": "10503124-acda-4859-99ef-2e4632877d95",
+        "content": "<p>swimming<span data-ssml-say-as=\"characters\">,</span> is</p>"
+      },
+      {
+        "id": "503967f3-f7c8-497b-8f82-7527e090bac3",
+        "content": "<p>swimming is</p>"
+      },
+      {
+        "id": "cb292c78-d504-4434-9131-6f3b53132a93",
+        "content": "<p>swimming has been</p>"
+      },
+      {
+        "id": "0f6144b0-53c7-49b3-bc7e-457d59ae0ffd",
+        "content": "<p>swimming<span data-ssml-say-as=\"characters\">,</span></p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;swimming&rdquo; pairs with the dash after &ldquo;ciliates&rdquo; to offset the supplementary element (&ldquo;widely&hellip;ciliates&rdquo;) that interrupts the main clause of the sentence.</p><p>Choice A is incorrect. Adding the verb &ldquo;is&rdquo; here creates an ungrammatical sentence structure with two main verbs (&ldquo;is&rdquo; and &ldquo;bestows&rdquo;) without appropriate punctuation and/or conjunction. Choice B is incorrect because it fails to offset the supplementary element with appropriate punctuation. Furthermore, adding the verb &ldquo;is&rdquo; here creates an ungrammatical sentence that has two finite verbs (&ldquo;is&rdquo; and &ldquo;bestows&rdquo;) without appropriate punctuation and/or conjunction. Choice C is incorrect because it fails to offset the supplementary element with appropriate punctuation. Furthermore, adding the verb &ldquo;has been&rdquo; here creates an ungrammatical sentence that has two finite verbs (&ldquo;has been&rdquo; and &ldquo;bestows&rdquo;) without appropriate punctuation and/or conjunction.</p>",
+    "externalid": "928ce2c4-f5f3-415f-943e-0728649989ed",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Helical <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> widely understood to confer stability and efficiency in the locomotion of a variety of microscopic organisms&mdash;including bacteria, eukaryotic algae, and ciliates&mdash;bestows similar advantages, albeit via different propulsive modes, to larger oceanic macroplanktons, such as salps.</p>"
+}

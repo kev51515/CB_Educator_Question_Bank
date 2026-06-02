@@ -1,0 +1,4 @@
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/3563d76d-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/43236565-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/5207e508-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/b434e103-s1.json

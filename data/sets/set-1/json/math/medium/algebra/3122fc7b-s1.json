@@ -1,0 +1,22 @@
+{
+  "questionId": "3122fc7b-s1",
+  "originalId": "3122fc7b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A linear model estimates the population of a town from 1995 to 2020. The model estimates the population was 35 thousand in 1995, 175 thousand in 2015, and <em>x</em> thousand in 2020. To the nearest whole number, what is the value of <em>x</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "210"
+  ],
+  "rationale": "<p>The rate of change is (175 - 35)/(2015 - 1995) = 140/20 = 7 thousand per year. From 2015 to 2020 is 5 years, so the model estimates the population in 2020 to be 175 + 5(7) = 175 + 35 = 210 thousand. Therefore x = 210.</p>",
+  "templateId": "linear-functions.A3.T2.medium"
+}

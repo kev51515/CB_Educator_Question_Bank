@@ -1,0 +1,39 @@
+{
+  "questionId": "bf47ad54-s1",
+  "originalId": "bf47ad54",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Each of the following frequency tables represents a data set. Which data set has the greatest mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><figure class=\"table\"><table border=\"1\"><tbody><tr><th>Value</th><th>Frequency</th></tr><tr><td style=\"text-align:center;\">20</td><td style=\"text-align:center;\">5</td></tr><tr><td style=\"text-align:center;\">30</td><td style=\"text-align:center;\">4</td></tr><tr><td style=\"text-align:center;\">40</td><td style=\"text-align:center;\">4</td></tr><tr><td style=\"text-align:center;\">50</td><td style=\"text-align:center;\">5</td></tr></tbody></table></figure></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><figure class=\"table\"><table border=\"1\"><tbody><tr><th>Value</th><th>Frequency</th></tr><tr><td style=\"text-align:center;\">20</td><td style=\"text-align:center;\">3</td></tr><tr><td style=\"text-align:center;\">30</td><td style=\"text-align:center;\">7</td></tr><tr><td style=\"text-align:center;\">40</td><td style=\"text-align:center;\">7</td></tr><tr><td style=\"text-align:center;\">50</td><td style=\"text-align:center;\">3</td></tr></tbody></table></figure></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><figure class=\"table\"><table border=\"1\"><tbody><tr><th>Value</th><th>Frequency</th></tr><tr><td style=\"text-align:center;\">20</td><td style=\"text-align:center;\">3</td></tr><tr><td style=\"text-align:center;\">30</td><td style=\"text-align:center;\">4</td></tr><tr><td style=\"text-align:center;\">40</td><td style=\"text-align:center;\">5</td></tr><tr><td style=\"text-align:center;\">50</td><td style=\"text-align:center;\">8</td></tr></tbody></table></figure></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><figure class=\"table\"><table border=\"1\"><tbody><tr><th>Value</th><th>Frequency</th></tr><tr><td style=\"text-align:center;\">20</td><td style=\"text-align:center;\">6</td></tr><tr><td style=\"text-align:center;\">30</td><td style=\"text-align:center;\">5</td></tr><tr><td style=\"text-align:center;\">40</td><td style=\"text-align:center;\">5</td></tr><tr><td style=\"text-align:center;\">50</td><td style=\"text-align:center;\">6</td></tr></tbody></table></figure></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The tables in choices A, B, and D each represent a data set where the values 20 and 50 have the same frequency and the values 30 and 40 have the same frequency. Each of these data sets is symmetric around the value halfway between 30 and 40, or 35. When a data set is symmetric around a value, that value is the mean of the data set, so choices A, B, and D each have a mean of 35. The table in choice C represents a data set where 50 has greater frequency than 20, and 40 has greater frequency than 30. It follows that this data set has a mean greater than 35. Therefore, choice C represents the data set with the greatest mean.</p><p>Choices A, B, and D are incorrect because each represents a symmetric data set with a mean of 35.</p>",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.hard"
+}

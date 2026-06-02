@@ -1,0 +1,39 @@
+{
+  "questionId": "41b71b4e-s1",
+  "originalId": "41b71b4e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What number is 30% greater than 80?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>56</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>83</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>104</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A number 30% greater than 80 is 80 + 0.30 \u00d7 80 = 80 + 24 = 104.</p><p>Choice A is incorrect. This represents a decrease, not an increase.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This is only 3 more than 80, not 30% greater.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A3.T1.easy"
+}

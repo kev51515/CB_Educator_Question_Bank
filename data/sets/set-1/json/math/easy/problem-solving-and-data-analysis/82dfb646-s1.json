@@ -1,0 +1,39 @@
+{
+  "questionId": "82dfb646-s1",
+  "originalId": "82dfb646",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "skillCode": "Q.G.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A researcher selected 250 people at random from a group of customers who had purchased a brand of headphones in the past year. Those 250 people were asked whether they were satisfied with the headphones, and 88% said they were satisfied. Which of the following inferences can appropriately be drawn from this survey result?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>At least 88% of all consumers will be satisfied with headphones.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>At least 88% of all consumers who buy any electronics product will be satisfied with their purchase.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Most people who use audio equipment are satisfied with their equipment.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Most people who bought this brand of headphones in the past year were satisfied with them.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The sample was drawn from customers who had purchased the brand of headphones in the past year, so any inference applies only to that population, not to wider groups of consumers or audio-equipment users.</p><p>Choices A, B, and C generalize the result to populations beyond the one actually sampled.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A1.T1.easy"
+}

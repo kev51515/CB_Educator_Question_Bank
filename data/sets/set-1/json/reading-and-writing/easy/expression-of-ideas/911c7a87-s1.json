@@ -1,0 +1,39 @@
+{
+  "questionId": "911c7a87-s1",
+  "originalId": "911c7a87",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Once a manuscript is accepted, a typical book-publishing project begins with an editor reviewing the draft for content and structure. Then, copy editors check the manuscript for grammar, punctuation, and consistency. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the book is typeset, printed, and shipped to bookstores.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Finally,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>On the contrary,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Earlier,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Finally\" logically signals that the actions in this sentence&mdash;typesetting, printing, and shipping&mdash;are the next and final steps in the process, following the previous editorial and copy-editing steps.</p><p>Choice A is incorrect because the printing and shipping process is not an example of editing; it is a separate step. Choice C is incorrect because \"on the contrary\" illogically signals opposition. Choice D is incorrect because \"earlier\" illogically signals these steps occur before editing, when in fact they follow editing.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T13.easy"
+}

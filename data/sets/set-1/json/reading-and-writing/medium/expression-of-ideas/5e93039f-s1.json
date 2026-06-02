@@ -1,0 +1,25 @@
+{
+  "questionId": "5e93039f-s1",
+  "originalId": "5e93039f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>Roughly every few minutes, a plume of superheated brine erupts from a deep-sea hydrothermal vent on the Juan de Fuca Ridge before cooling and dispersing into near-freezing water—a cycle that, on its face, would appear utterly hostile to living organisms. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as marine biologist Adaeze Onuora notes, \"these chimneys are…something like nurseries for unusual life,\" hosting dense communities of tubeworms and chemosynthetic bacteria that flourish in the mineral-rich flow.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Specifically,</p>"},
+    {"id": "b", "content": "<p>Nevertheless,</p>"},
+    {"id": "c", "content": "<p>Thus,</p>"},
+    {"id": "d", "content": "<p>In other words,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Nevertheless\" logically signals that the information in this sentence about thriving tubeworms and bacteria is true despite the previous claim that the vent's cycle appears hostile to life.</p><p>Choice A is incorrect because \"specifically\" illogically signals that the information about flourishing communities provides specific details about the hostile cycle, when instead it presents a fact that runs counter to that claim. Choice C is incorrect because \"thus\" illogically signals that the thriving communities are a result of the seemingly hostile cycle, when in fact this information contradicts the expectation set by the previous claim. Choice D is incorrect because \"in other words\" illogically signals that this sentence restates the previous claim, when it actually offers a counterpoint to it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

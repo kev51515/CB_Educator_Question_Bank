@@ -1,0 +1,39 @@
+{
+  "questionId": "10a409bd-s1",
+  "originalId": "10a409bd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1925 essay by Alain Locke. Mr. Tanner is a reference to Henry Ossawa Tanner, an American painter.</p><p>The gallery's exhibits are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> so that the title of every work is plainly visible beside its frame, and one need not consult a printed catalogue to learn the name and the artist. This is a courtesy to the general visitor, which other galleries, which shall remain unnamed, might do well to copy. To its store of fine art the gallery has recently added Mr. Tanner's new canvas, the Banjo Lesson.</p>",
+  "stem": "<p>As used in the text, what does the word \"arranged\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Ranked</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Organized</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Discussed</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Scheduled</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the passage is describing how the works are laid out so that titles are clearly visible next to each piece. \"Organized\" captures this meaning of being arranged for convenience. Choice A is incorrect because the text does not establish a hierarchy among the works. Choice C is incorrect because \"discussed\" refers to talking about the works, not their physical arrangement. Choice D is incorrect because \"scheduled\" applies to events in time, not to the placement of artworks.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "5ad6bc97-s1",
+  "originalId": "5ad6bc97",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>f(x) = 4x + 5. For the linear function f shown, what is the value of f(11)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "49"
+  ],
+  "rationale": "<p>f(11) = 4(11) + 5 = 44 + 5 = 49.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

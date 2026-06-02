@@ -1,0 +1,39 @@
+{
+  "questionId": "6d247c13-s1",
+  "originalId": "6d247c13",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The Pearl Saloon was one of the most prominent African American&ndash;owned businesses in late nineteenth-century San Francisco. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> by businesswoman Marion Whitfield, the saloon was praised for its refined service and welcoming atmosphere.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Establishes</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Established</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Establishing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Establish</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The past participle &ldquo;established&rdquo; correctly forms a supplementary modifier describing the saloon (the saloon was established by Whitfield).</p><p>Choice A (present singular) and Choice D (bare plural) are finite verb forms that would require a subject. Choice C (present participle &ldquo;establishing&rdquo;) would incorrectly imply the saloon was performing the establishing.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

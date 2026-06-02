@@ -1,0 +1,39 @@
+{
+  "questionId": "06fc1726-s1",
+  "originalId": "06fc1726",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If f is the function defined by f(x) = (3x - 2)/4, what is the value of f(6)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. f(6) = (3(6) - 2)/4 = (18 - 2)/4 = 16/4 = 4.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

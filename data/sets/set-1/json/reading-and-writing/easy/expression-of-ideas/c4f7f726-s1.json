@@ -1,0 +1,25 @@
+{
+  "questionId": "c4f7f726-s1",
+  "originalId": "c4f7f726",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Most frog species have moist, slimy skin that helps them absorb oxygen from the water around them. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> some frog species have skin that is dry and roughened with bumps. Cane toads, for example, have warty, leathery skin that helps them retain moisture in dry environments.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>Similarly,</p>"},
+    {"id": "c", "content": "<p>Previously,</p>"},
+    {"id": "d", "content": "<p>In other words,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"However\" logically signals that the information in this sentence about frog species&mdash;that some have dry, bumpy skin&mdash;contrasts with the previous information about frog species with moist, slimy skin.</p><p>Choice B is incorrect because \"similarly\" illogically signals similarity, when the second sentence contrasts with the first. Choice C is incorrect because \"previously\" illogically signals a prior event. Choice D is incorrect because \"in other words\" illogically signals a restatement.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T1.easy"
+}

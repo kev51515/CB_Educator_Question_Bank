@@ -1,0 +1,39 @@
+{
+  "questionId": "f7dbde16-s1",
+  "originalId": "f7dbde16",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangles JKL and MNO, angles J and M each have measure 50\u00b0, JL = 12, and MO = 36. Which additional piece of information is sufficient to prove that triangle JKL is similar to triangle MNO?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The measures of angles K and O are 80\u00b0 and 50\u00b0, respectively.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>KL = 8 and NO = 8.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>JK = 5 and MN = 12.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The measures of angles L and O are equal.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Triangles are similar if they have two pairs of congruent corresponding angles. Angles J and M (each 50\u00b0) are one such pair. If angle K = 80\u00b0 and angle O = 50\u00b0, then in triangle JKL the third angle L = 180 \u2212 50 \u2212 80 = 50\u00b0, and in triangle MNO the third angle N = 180 \u2212 50 \u2212 50 = 80\u00b0. So angles K and N (corresponding) both equal 80\u00b0, confirming a second congruent pair and AA similarity.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T5.hard"
+}

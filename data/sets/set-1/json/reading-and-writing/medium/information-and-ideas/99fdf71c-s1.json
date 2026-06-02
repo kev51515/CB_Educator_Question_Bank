@@ -1,0 +1,25 @@
+{
+  "questionId": "99fdf71c-s1",
+  "originalId": "99fdf71c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p>&ldquo;Where the Streetlamps Meet the Pines&rdquo; is a 1934 poem by Aleksy Tomaszewski, who immigrated to Chicago as a young man from a village in the Tatra foothills of Poland. The poem conveys Tomaszewski&rsquo;s contrasting feelings about Chicago&mdash;his adopted home in the United States&mdash;and his home country: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from &ldquo;Where the Streetlamps Meet the Pines&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;A weary trolley clatters by, / Its bell a thin, late note; / Pale neon writes against the sky, / And cold wires float.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;Dim figures start for the mill; / I watch them shuffle through the gloam, / &rsquo;Tis dawn, dawn in Chicago. / But I would be among the pines once more, / Among the pines that ring my mother&rsquo;s door.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;And the spotted goat is calling, calling, calling / From her trampled corner of the upland lea / That slopes down to the cold spring water falling / Over the smooth stones lazily!&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;The tired vans go grumbling by, / The moaning, groaning vans, / And the old fish carts go rattling by / Under the same dull lamps.&rdquo;</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the quotation contrasts a negative view of Chicago at dawn (workers shuffling through the gloom) with a positive longing for the speaker&rsquo;s home country (&ldquo;among the pines that ring my mother&rsquo;s door&rdquo;), directly illustrating the speaker&rsquo;s contrasting feelings about the two places. Choice A is incorrect because the quotation describes only a Chicago scene. Choice C is incorrect because the quotation describes only the rural homeland without contrasting it to Chicago. Choice D is incorrect because the quotation focuses only on the negative urban setting and does not include the contrasting homeland.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

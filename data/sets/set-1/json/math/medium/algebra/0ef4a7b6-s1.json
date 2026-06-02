@@ -1,0 +1,39 @@
+{
+  "questionId": "0ef4a7b6-s1",
+  "originalId": "0ef4a7b6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A particular biologist classifies an individual of a certain species of fish as heavy if its typical mass when fully grown is more than 50 kilograms. Each of the following inequalities represents the possible masses <em>m</em>, in kilograms, for a specific fish species when fully grown. Which inequality represents the possible masses <em>m</em>, in kilograms, for a heavy fish species?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30 &lt; <em>m</em> &lt; 48</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12 &lt; <em>m</em> &lt; 42</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>62 &lt; <em>m</em> &lt; 85</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25 &lt; <em>m</em> &lt; 70</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A heavy fish has mass &gt; 50 kg, so every value in the range must exceed 50. Only 62 &lt; <em>m</em> &lt; 85 satisfies this for all values.</p><p>Choices A, B, and D include masses at or below 50 kg, so they do not all represent heavy fish.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium"
+}

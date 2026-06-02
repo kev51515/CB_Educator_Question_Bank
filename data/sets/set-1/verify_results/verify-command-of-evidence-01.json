@@ -1,0 +1,22 @@
+[
+  {"id": "d74b9bc6-s1", "templateId": "command-of-evidence.A5.T8.medium", "verdict": "ok"},
+  {"id": "0d7f4966-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "type_drift", "detail": "Stem asks which finding would 'most directly weaken' the claim, which matches A4.T6 (Finding-weakens-or-challenges-claim), not A4.T5 (support). Keyed answer C correctly weakens, so item itself is sound but templateId tags the wrong type."},
+  {"id": "dd1757fd-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "4987f743-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "403fb4e4-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "124fdcd7-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "56f477fb-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "3bfcb73b-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "6a6bbac3-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "5d122d45-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "ca9dc00f-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "64cd7321-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "53c6c179-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "626a1308-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "d696eafa-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "31ad8024-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "35ec767c-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "156ff681-s1", "templateId": "command-of-evidence.A4.T6.hard", "verdict": "ok"},
+  {"id": "71904085-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "4411e15b-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"}
+]

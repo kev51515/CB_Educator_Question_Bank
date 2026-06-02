@@ -1,0 +1,39 @@
+{
+  "questionId": "b680e76d-s1",
+  "originalId": "b680e76d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the number of survey respondents who reported their reading preference, by gender.</p><table border=\"1\"><tr><th></th><th>Fiction</th><th>Nonfiction</th><th>Total</th></tr><tr><th>Female</th><td>184</td><td>96</td><td>280</td></tr><tr><th>Male</th><td>112</td><td>108</td><td>220</td></tr><tr><th>Total</th><td>296</td><td>204</td><td>500</td></tr></table><p>How many of the females surveyed reported preferring fiction?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>96</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>112</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>184</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>296</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. According to the table, 184 females reported preferring fiction.</p><p>Choice A is incorrect; this is the number of females preferring nonfiction. Choice B is incorrect; this is the number of males preferring fiction. Choice D is incorrect; this is the total number preferring fiction (all genders).</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A2.T6.easy"
+}

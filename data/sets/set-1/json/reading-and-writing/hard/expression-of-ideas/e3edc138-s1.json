@@ -1,0 +1,39 @@
+{
+  "questionId": "e3edc138-s1",
+  "originalId": "e3edc138",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In a long-running debate within paleoanthropology, the field is split between out-of-Africa proponents and multiregionalists. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> there are those who maintain that anatomically modern humans dispersed from a single African origin and rapidly replaced other hominin populations, and those who hold that modern human traits emerged in parallel from multiple regional ancestor populations through ongoing gene flow. Paleoanthropologist Rebecca Cann places herself in neither camp.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Moreover,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"In other words\" logically signals that the second sentence clarifies the previous one by spelling out exactly who out-of-Africa proponents and multiregionalists are. It paraphrases and unpacks the camps named in the first sentence.</p><p>Choice B is incorrect because \"however\" would signal contrast, but the second sentence agrees with and elaborates the first. Choice C is incorrect because \"likewise\" would mark the sentences as parallel claims, but the second is an explanatory restatement of the first. Choice D is incorrect because \"moreover\" would add a separate point, but the second sentence does not introduce new information beyond what the first one announces.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A3.T9.hard"
+}

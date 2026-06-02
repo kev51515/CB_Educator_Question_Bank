@@ -1,0 +1,25 @@
+{
+  "questionId": "c5d39bc7-s1",
+  "originalId": "c5d39bc7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Researchers believe that, unlike most other parasites, certain remora fish (<em>Echeneis naucrates</em>) can adjust the suction force of the dorsal disc they use to attach <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to a host shark, allowing the remoras to detach and reattach as the shark moves through different waters.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>it</p>"},
+    {"id": "b", "content": "<p>itself</p>"},
+    {"id": "c", "content": "<p>them</p>"},
+    {"id": "d", "content": "<p>themselves</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is pronoun-antecedent agreement. The plural reflexive pronoun \"themselves\" agrees in number with the plural antecedent \"remora fish,\" correctly indicating what is attached to a shark.</p><p>Choice A is incorrect because the singular pronoun \"it\" doesn't agree in number with the plural antecedent \"remora fish.\" Choice B is incorrect because the singular reflexive pronoun \"itself\" doesn't agree in number with the plural antecedent \"remora fish.\" Choice C is incorrect because the plural pronoun \"them\" results in an unclear sentence; in this context, it isn't clear what \"them\" refers to.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

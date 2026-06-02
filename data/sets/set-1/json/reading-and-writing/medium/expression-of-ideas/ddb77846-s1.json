@@ -1,0 +1,25 @@
+{
+  "questionId": "ddb77846-s1",
+  "originalId": "ddb77846",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>My fascination with historic covered bridges has prompted me to track them down whenever I travel through a new region of New England. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> I could explore every county in New England and still not find the longest covered bridge in North America. That bridge, the Hartland Bridge, spans the Saint John River in New Brunswick, Canada.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Consequently,</p>"},
+    {"id": "b", "content": "<p>Subsequently,</p>"},
+    {"id": "c", "content": "<p>However,</p>"},
+    {"id": "d", "content": "<p>That is,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"However\" logically signals that the claim in this sentence—that the speaker could explore every county in New England and still not find the longest covered bridge in North America—is true despite the previous claim about the speaker tracking down historic covered bridges in New England.</p><p>Choice A is incorrect because \"consequently\" illogically signals that the claim is a result of the previous claim about the speaker's tracking habits. Choice B is incorrect because \"subsequently\" illogically signals that the claim occurs later in a chronological sequence than the speaker's tracking. Choice D is incorrect because \"that is\" illogically signals that the claim merely paraphrases the previous claim, when in fact it reverses the speaker's expectation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

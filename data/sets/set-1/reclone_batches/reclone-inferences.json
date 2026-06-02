@@ -1,0 +1,8 @@
+[
+  {
+    "id": "4ba0695d-s1",
+    "templateId": "inferences.A1.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "A1.T2 must_preserve requires 'an explicit conditional or hypothetical operator (if, assuming, barring, given that)'. Stimulus contains no such operator; the inferential pivot is 'This pattern further suggests', a synthesis prompt better fitting A2.T4. Answer is logically correct."
+  }
+]

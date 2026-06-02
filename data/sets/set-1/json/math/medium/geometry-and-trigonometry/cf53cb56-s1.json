@@ -1,0 +1,39 @@
+{
+  "questionId": "cf53cb56-s1",
+  "originalId": "cf53cb56",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <em>xy</em>-plane, square <em>JKLM</em> has its diagonals on the <em>x</em>- and <em>y</em>-axes, with vertices at (3, 0), (0, 3), (&minus;3, 0), and (0, &minus;3). What is the area, in square units, of the square?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The diagonals of the square lie along the axes. Each diagonal has length 3 &minus; (&minus;3) = 6 units. For a square with diagonals of length d, the area is d<sup>2</sup>/2 = 6<sup>2</sup>/2 = 18 square units. Equivalently, the diagonals divide the square into 4 congruent right triangles each with legs of length 3, so the total area is 4 &times; (1/2)(3)(3) = 18. Choice B is the area of one triangle. Choice C is the perimeter divided by 2. Choice D is the square of the diagonal length.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A4.T2.medium"
+}

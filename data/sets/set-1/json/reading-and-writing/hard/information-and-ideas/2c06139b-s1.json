@@ -1,0 +1,39 @@
+{
+  "questionId": "2c06139b-s1",
+  "originalId": "2c06139b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Body Length and Defensive Compound Production in Fire Salamanders after Three Weeks at Different Larval Densities</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Larval density</th><th>Average body length (mm)</th><th>Average number of distinct alkaloid compounds per larva</th><th>Average alkaloid amount per larva (ng)</th><th>Average alkaloid concentration (ng per mm of body length)</th></tr>\n<tr><td>High</td><td>14.2</td><td>11.4</td><td>425.3</td><td>29.9</td></tr>\n<tr><td>Medium</td><td>17.6</td><td>11.0</td><td>378.9</td><td>21.5</td></tr>\n<tr><td>Low</td><td>18.0</td><td>11.2</td><td>342.1</td><td>19.0</td></tr>\n</table>\n<p>Ecologist Helena Bauer and colleagues studied within-species competition among fire salamanders, a species that produces a suite of defensive alkaloid compounds in its skin. The researchers raised fire-salamander larvae for three weeks in tanks of varying larval density but fixed food supply. Based on the post-three-week measurements, the researchers concluded that increased competition shifted resources toward defensive-compound production at the expense of body growth.</p>",
+  "stem": "<p>Which choice uses data from the table to most effectively support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The difference in average body length between the low and medium density conditions was small, and between the low and high conditions substantially larger.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The average number of distinct alkaloid compounds per larva remained nearly constant across all three density conditions.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Larvae in the high density condition had a relatively modest increase in alkaloid amount but roughly 1.5 times the concentration found in the low density condition.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Larvae in the low and medium density conditions had substantially lower average alkaloid concentrations but greater average body lengths than those in the high density condition.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because the researchers&rsquo; conclusion has two linked components: more competition increases defensive compounds, and growth suffers. Choice D captures both&mdash;the high-density group had a higher alkaloid concentration AND smaller body length than the lower-density groups&mdash;making the trade-off explicit. Choice A speaks only to growth. Choice B doesn&rsquo;t support either claim. Choice C captures the toxin-side increase but not the growth cost.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

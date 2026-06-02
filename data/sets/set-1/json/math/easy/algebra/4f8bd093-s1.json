@@ -1,0 +1,39 @@
+{
+  "questionId": "4f8bd093-s1",
+  "originalId": "4f8bd093",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What value of <math><mi>y</mi></math> is the solution to the equation <math><mn>10</mn><mi>y</mi><mo>+</mo><mn>30</mn><mo>=</mo><mn>16</mn><mi>y</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mo>-</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>5</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mn>3</mn><mn>13</mn></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mn>1</mn><mn>5</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Subtracting <math><mn>10</mn><mi>y</mi></math> from both sides yields <math><mn>30</mn><mo>=</mo><mn>6</mn><mi>y</mi></math>. Dividing both sides by 6 yields <math><mi>y</mi><mo>=</mo><mn>5</mn></math>.</p><p>Choices A, C, and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.easy"
+}

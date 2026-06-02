@@ -1,0 +1,25 @@
+{
+  "questionId": "5b8f9cf2-s1",
+  "originalId": "5b8f9cf2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Within the canon of postcolonial Caribbean literature, Martinican philosopher Frantz Fanon&rsquo;s 1952 book <em>Black Skin, White Masks</em> (<em>Peau noire, masques blancs</em>) occupies a singular position. A psychological study, a political polemic, and an unflinching look into the legacies of European empire, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> dissects the architecture of colonial identity with searing precision.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>France produced a wave of Caribbean intellectuals just before the publication of Fanon&rsquo;s first major work, which</p>"},
+    {"id": "b", "content": "<p>Fanon wrote a first major work that, published just before independence movements swept across French Africa,</p>"},
+    {"id": "c", "content": "<p>Fanon&rsquo;s first major work, published just before independence movements swept across French Africa,</p>"},
+    {"id": "d", "content": "<p>published just before independence movements swept across French Africa, Fanon wrote a first major work that</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. Subject-modifier placement requires a modifier and its subject to be next to each other. The subject of the modifier \"A psychological study...European empire\" is Fanon&rsquo;s book <em>Black Skin, White Masks</em>, so the subject \"Fanon&rsquo;s first major work\" fits perfectly after this introductory modifying phrase.</p><p>Choice A is incorrect because the introductory modifier describes Fanon&rsquo;s book, not France; this choice places \"France\" directly next to the modifier. Choice B is incorrect because the modifier describes Fanon&rsquo;s book, not Fanon himself; this choice places \"Fanon\" directly next to the modifier. Choice D is incorrect because the modifier describes Fanon&rsquo;s book; this choice places \"Fanon\" right after the modifier rather than the work itself.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

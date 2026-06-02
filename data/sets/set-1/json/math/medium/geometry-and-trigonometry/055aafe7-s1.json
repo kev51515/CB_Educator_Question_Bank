@@ -1,0 +1,39 @@
+{
+  "questionId": "055aafe7-s1",
+  "originalId": "055aafe7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <em>ABC</em> is similar to triangle <em>XYZ</em>, where <em>A</em>, <em>B</em>, and <em>C</em> correspond to <em>X</em>, <em>Y</em>, and <em>Z</em>, respectively. In triangle <em>ABC</em>, AB = 240 and BC = 720. In triangle <em>XYZ</em>, YZ = 90. What is the length of <em>XY</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>270</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>750</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In similar triangles, the ratios of corresponding sides are equal. Since AB corresponds to XY and BC corresponds to YZ, AB/XY = BC/YZ, i.e., 240/XY = 720/90 = 8. Therefore XY = 240/8 = 30. Choice B and Choice C result from multiplying instead of dividing. Choice D is the reciprocal scaled incorrectly.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.medium"
+}

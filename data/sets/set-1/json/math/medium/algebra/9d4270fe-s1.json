@@ -1,0 +1,39 @@
+{
+  "questionId": "9d4270fe-s1",
+  "originalId": "9d4270fe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A company that makes and sells reusable bottles calculates its weekly profit, in dollars, by subtracting its fixed weekly costs, in dollars, from its weekly sales revenue, in dollars. The equation 8,000 = 3.50x - 1,200 represents this situation for a week where x bottles are made and sold. Which statement is the best interpretation of 3.50x in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The weekly cost, in dollars, of making x bottles</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The weekly sales revenue, in dollars, from each bottle sold</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The weekly sales revenue, in dollars, from selling x bottles</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The weekly cost, in dollars, of making each bottle</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>In the formula profit = revenue - costs, the 3.50x term must be the revenue, since 1,200 (a fixed cost) is being subtracted. Since each bottle sells for $3.50 and x bottles are sold, 3.50x is the weekly sales revenue from selling x bottles. Choice C is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T6.medium"
+}

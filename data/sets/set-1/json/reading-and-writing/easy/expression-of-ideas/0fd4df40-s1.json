@@ -1,0 +1,39 @@
+{
+  "questionId": "0fd4df40-s1",
+  "originalId": "0fd4df40",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The National Folk Festival Archive is known for its extensive collection of traditional music recordings. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the archive holds more than 8,000 audio recordings of regional American folk music dating as far back as 1934.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>After,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In fact,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Regardless,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Instead,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"In fact\" logically signals that the information in this sentence about the large number of recordings emphasizes and supports the previous claim that the archive holds an extensive collection of traditional music recordings.</p><p>Choice A is incorrect because \"after\" illogically signals a chronological sequence. Instead, the information about the large number of recordings supports the previous claim. Choice C is incorrect because \"regardless\" illogically signals that the information is true despite the previous claim. Instead, it supports that claim. Choice D is incorrect because \"instead\" illogically signals an alternative to the previous claim. Rather, the information supports that claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T11.easy"
+}

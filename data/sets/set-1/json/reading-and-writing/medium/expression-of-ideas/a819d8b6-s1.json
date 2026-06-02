@@ -1,0 +1,25 @@
+{
+  "questionId": "a819d8b6-s1",
+  "originalId": "a819d8b6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A5.T15.medium",
+  "stimulus": "<p>In 1928, German chemist Anke Vogel demonstrated that protein molecules are built from chains of amino acids linked in fixed, repeating sequences, a finding that overturned earlier assumptions about how proteins are organized. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> chemists had assumed that proteins were loose colloidal aggregates of small molecules rather than long, ordered polymer chains made of distinct units.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>As a result,</p>"},
+    {"id": "c", "content": "<p>Likewise,</p>"},
+    {"id": "d", "content": "<p>Previously,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"Previously\" logically signals that the colloidal-aggregate view of proteins came before Vogel's 1928 demonstration that proteins are built from ordered chains of amino acids.</p><p>Choice A is incorrect because \"however\" illogically signals that the colloidal view contrasts directly with Vogel's findings; while the views do differ, the previous sentence already states that Vogel's discovery went against earlier assumptions, so the second sentence is describing one of those earlier assumptions in time. Choice B is incorrect because \"as a result\" illogically signals that the colloidal view was a result of Vogel's discovery, when it actually preceded it. Choice C is incorrect because \"likewise\" illogically signals that the colloidal view was similar to Vogel's findings, when it was an older and quite different account that her work overturned.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

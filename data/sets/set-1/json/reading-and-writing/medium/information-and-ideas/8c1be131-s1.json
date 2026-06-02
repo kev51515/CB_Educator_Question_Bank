@@ -1,0 +1,25 @@
+{
+  "questionId": "8c1be131-s1",
+  "originalId": "8c1be131",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>In the years following the Korean War, some young Korean American women in Los Angeles adopted a striking new look that newspapers of the time called the <em>kkang</em> style. They wore boxy, oversized blazers with rolled cuffs, dramatic eyeliner, and short, sharply cut bangs, often paired with motorcycle boots. Some commentators criticized the <em>kkang</em> style at the time, saying it was reckless and that the young women ought to dress more conventionally. But historians of Asian American fashion see things differently. They view the <em>kkang</em> style as a form of resistance to the era's rigid expectations about gender and respectability. They argue that it expressed the young women's desire for personal expression and autonomy.</p>",
+  "stem": "<p>According to the text, how do historians of Asian American fashion view the <em>kkang</em> style?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They think the <em>kkang</em> style allowed young Korean American women to display their support for U.S. military efforts in the Korean War.</p>"},
+    {"id": "b", "content": "<p>They think the <em>kkang</em> style closely resembled fashion trends adopted by other groups of young women at the time.</p>"},
+    {"id": "c", "content": "<p>They think the <em>kkang</em> style was a way for some young Korean American women to express themselves and resist conservative expectations.</p>"},
+    {"id": "d", "content": "<p>They think the <em>kkang</em> style was so influential that it continues to shape fashion in Los Angeles to the present day.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text contrasts contemporary critics' view of the <em>kkang</em> style with that of historians of Asian American fashion. Historians, the text says, see the style as a form of resistance to rigid expectations about gender and respectability and as an expression of personal autonomy. According to the text, then, historians view the <em>kkang</em> style as a way for some young Korean American women to express themselves and resist conservative expectations.</p><p>Choice A is incorrect because the text does not connect the <em>kkang</em> style to support for the war. Choice B is incorrect because the text discusses no other fashion trends. Choice D is incorrect because the text presents the style as belonging to a specific postwar moment, not as a continuing influence on fashion.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

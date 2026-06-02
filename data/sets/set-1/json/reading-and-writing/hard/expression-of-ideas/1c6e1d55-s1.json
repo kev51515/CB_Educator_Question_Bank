@@ -1,0 +1,39 @@
+{
+  "questionId": "1c6e1d55-s1",
+  "originalId": "1c6e1d55",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Historically, most senior judges on national supreme courts have shared similar demographic backgrounds, but a new wave of justices is broadening representation. Bolivia's Silvia Salame served as the first Indigenous-identifying justice to sit on her country's Supreme Court of Justice in 2007, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> and Senegal's A\u00efssata Tall Sall was appointed to a comparable senior judicial role in 2020.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>granted,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>for instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>in addition,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>lastly,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The first sentence introduces a generalization (a new wave of justices is broadening representation). The two named justices are concrete examples of that wave. &ldquo;For instance&rdquo; introduces the second example, after the first, as part of an illustrative pair.</p><p>Choice A concedes; nothing is being conceded here. Choices C and D suggest additive lists, but the sentence is providing illustrative examples of an opening claim.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A3.T7.hard"
+}

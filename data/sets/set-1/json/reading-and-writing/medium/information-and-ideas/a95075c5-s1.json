@@ -1,0 +1,25 @@
+{
+  "questionId": "a95075c5-s1",
+  "originalId": "a95075c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Mean Scores for Employees after 30 Days of a Workplace Wellness Pilot</p></caption><thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">Mean score for employees enrolled in the program</th><th scope=\"col\">Mean score for employees in the comparison group</th></tr></thead><tbody><tr><th scope=\"row\">Job satisfaction</th><td>6.4</td><td>5.1</td></tr><tr><th scope=\"row\">Energy index</th><td>78.00</td><td>54.00</td></tr><tr><th scope=\"row\">Sleep quality</th><td>9.2</td><td>6.7</td></tr></tbody></table></figure></p><p>To examine whether structured wellness routines benefit office workers, a research team tracked employees at a large insurance firm. Half of the participants were enrolled in a daily wellness program; the others made up a comparison group. The team used three measures, with higher mean scores indicating greater well-being on each. Compared to the mean scores after 30 days for employees in the comparison group, the mean scores for employees enrolled in the program <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>were higher for all three measures, indicating greater overall well-being for these employees.</p>"},
+    {"id": "b", "content": "<p>were lower for two measures, with the score for only one measure indicating greater well-being for these employees.</p>"},
+    {"id": "c", "content": "<p>ranged from 6.4 to 78.00, indicating that well-being varied widely from employee to employee.</p>"},
+    {"id": "d", "content": "<p>ranged from 5.1 to 54.00, with no score indicating greater well-being in any measure for these employees.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because the table shows that mean scores for employees enrolled in the program (6.4, 78.00, 9.2) were higher than those for the comparison group (5.1, 54.00, 6.7) on all three measures, and the text states that higher scores indicate greater well-being. Choice B is incorrect because no measure was lower for enrolled employees. Choice C is incorrect because the table reports means, not individual scores. Choice D is incorrect because it cites the comparison group&rsquo;s scores, and the enrolled employees scored higher on every measure.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

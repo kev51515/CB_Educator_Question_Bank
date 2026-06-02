@@ -1,0 +1,39 @@
+{
+  "questionId": "aab78b25-s1",
+  "originalId": "aab78b25",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Economist Sendhil Mullainathan was hired by a transit agency to determine how much commuters <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> After conducting interviews and surveys, he found that no single ideal existed: respondents expressed widely different preferences for trade-offs between travel time, cost, and seating availability.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>do most riders value in a transit pass?</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>do most riders value in a transit pass.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>most riders value in a transit pass.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>most riders value in a transit pass?</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is end-of-sentence punctuation. The sentence is a declarative statement about what Mullainathan was hired to determine. The embedded noun clause \"most riders value in a transit pass\" uses declarative word order, so the whole sentence must end with a period.</p><p>Choice A is incorrect because both the inverted word order \"do most riders\" and the question mark are appropriate only for a direct question. Choice B is incorrect because inverted word order belongs to a direct question. Choice D is incorrect because a question mark can't be used to end a declarative sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

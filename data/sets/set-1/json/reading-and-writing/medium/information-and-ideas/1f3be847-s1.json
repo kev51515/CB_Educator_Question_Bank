@@ -1,0 +1,25 @@
+{
+  "questionId": "1f3be847-s1",
+  "originalId": "1f3be847",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p>“Dawn over the Hayfields” is a 1919 poem by Edith Marsden. In the poem, which depicts an early-morning scene in a rural valley, Marsden portrays an element of nature as an active participant in the unfolding of the scene, writing, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from “Dawn over the Hayfields” most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“With patient fingers the wind combs out the dew / From the long, listening grasses of the field.”</p>"},
+    {"id": "b", "content": "<p>“Quietly the cattle wait beside the gate, / Their breath rising in narrow plumes of mist.”</p>"},
+    {"id": "c", "content": "<p>“Or like a sailor's lantern lifted high, / Forgotten in the rigging through the night.”</p>"},
+    {"id": "d", "content": "<p>“But the old stones of the wall, in their grey peace, / Are ever and always content to stay.”</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most effectively illustrates the claim that Marsden portrays an element of nature as an active participant in the unfolding of the early-morning rural scene. Rather than describing the wind merely blowing or stirring, the quotation gives it “patient fingers” that “comb out the dew” from the grasses—an animate, deliberate human action that places nature itself as a participant in the dawn scene.</p><p>Choice B is incorrect because, although it sets the early-morning scene, the cattle (the element described) are simply waiting passively; they are not portrayed as active participants. Choice C is incorrect because it offers a simile referencing a sailor's lantern and does not depict any natural element actively participating in the rural valley scene. Choice D is incorrect because it presents the old stones of a wall as static and unchanging (“ever and always content to stay”), the opposite of active participation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

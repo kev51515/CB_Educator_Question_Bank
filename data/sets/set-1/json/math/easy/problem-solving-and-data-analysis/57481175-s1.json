@@ -1,0 +1,39 @@
+{
+  "questionId": "57481175-s1",
+  "originalId": "57481175",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bar graph shows the number of each type of bird in a nature reserve: pigeon (14), sparrow (10), crow (6), starling (9), and finch (12). How many more pigeons are there than crows in the nature reserve?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The number of pigeons is 14 and the number of crows is 6, so there are 14 minus 6 = 8 more pigeons than crows.</p><p>Choice B is incorrect: 14 is the count of pigeons.</p><p>Choice C is incorrect: 20 is the sum, not the difference.</p><p>Choice D is incorrect: 6 is the count of crows.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "f2208f98",
+  "externalId": "186b2a9e-0ace-47a7-b2d5-4db88f390327",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:21:31.986929+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "5083f78a-6858-4763-a0fe-158b8ae73354",
+      "content": "<p>The reaction to Ng\u0169g\u0129&rsquo;s rejection of English illustrates that some literary experts believe that fame is most easily gained by writing in a widely understood language, such as G\u0129k\u0169y\u0169.</p>"
+    },
+    {
+      "id": "ae11b317-deaa-42c0-93e2-c6515cf5390d",
+      "content": "<p>Although Ng\u0169g\u0129 insisted on publishing his first works in G\u0129k\u0169y\u0169, they have since been translated into many other languages.</p>"
+    },
+    {
+      "id": "c3ffdf6f-326b-41c9-a0b1-72d3c23d23be",
+      "content": "<p>Although Ng\u0169g\u0129&rsquo;s decision to write in G\u0129k\u0169y\u0169 was met with some skepticism, it didn&rsquo;t prevent him from achieving literary success.</p>"
+    },
+    {
+      "id": "b71f3697-a453-4b69-bb6c-cdcce870dd7e",
+      "content": "<p>In the 1970s, Ng\u0169g\u0129 became convinced that literature ought to be written in authors&rsquo; native languages, and he proceeded to publish many works in G\u0129k\u0169y\u0169.</p>"
+    }
+  ],
+  "keys": [
+    "c3ffdf6f-326b-41c9-a0b1-72d3c23d23be"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most accurately states the main idea of the text. The text begins by explaining that Kenyan writer Ng\u0169g\u0129 wa Thiong&rsquo;o had published four novels in English before he began writing in his native language, G\u0129k\u0169y\u0169, in the 1970s. The text then explains that fellow writers and critics were skeptical of this decision, warning that the choice to publish in his native language, which the text implies isn&rsquo;t widely understood, would limit his readership. The text concludes by stating that despite those warnings, Ng\u0169g\u0129 proceeded to publish several acclaimed novels in G\u0129k\u0169y\u0169 that were translated into several languages, suggesting that Ng\u0169g\u0129&rsquo;s works in G\u0129k\u0169y\u0169 achieved literary success in the forms of critical recognition and a wide international readership. Thus, the main idea is that although Ng\u0169g\u0129&rsquo;s decision to write in G\u0129k\u0169y\u0169 was met with some skepticism, this choice didn&rsquo;t prevent him from achieving literary success.</p><p>Choice A is incorrect because it contradicts the description of G\u0129k\u0169y\u0169 provided in the text. Rather than indicating that G\u0129k\u0169y\u0169 is a widely understood language, as this choice claims, the text states that colleagues cautioned Ng\u0169g\u0129 that writing in G\u0129k\u0169y\u0169 instead of English &ldquo;might make his works inaccessible outside his own community.&rdquo; Furthermore, the text contrasts the choice of G\u0129k\u0169y\u0169 with another alternative to English, Kiswahili, which the text indicates is &ldquo;a more practical choice&rdquo; given that it is &ldquo;widely spoken in Kenya and elsewhere in Africa.&rdquo; Choice B is incorrect because it contradicts information in the text. Although the text states that the novels Ng\u0169g\u0129 published in G\u0129k\u0169y\u0169 were later translated into other languages, the text explicitly states that Ng\u0169g\u0129 had previously published four novels in English before he began writing in G\u0129k\u0169y\u0169 in the 1970s. Thus, his first works were published in English, not G\u0129k\u0169y\u0169. Choice D is incorrect. The text doesn&rsquo;t address what motivated Ng\u0169g\u0129&rsquo;s choice to publish in his native G\u0129k\u0169y\u0169, and nothing in the text suggests that he intended for other authors to follow his example.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the main idea of the text?</p>",
+    "stimulus": "<p>When Kenyan writer Ng\u0169g\u0129 wa Thiong&rsquo;o, who had previously published four novels in English, began writing in his native language, G\u0129k\u0169y\u0169, in the 1970s, several fellow writers and critics cautioned that doing so might make his works inaccessible outside his own community. Some noted that Kiswahili&mdash;widely spoken in Kenya and elsewhere in Africa&mdash;would be a more practical choice. Rejecting their arguments, Ng\u0169g\u0129 went on to author dozens of acclaimed works in G\u0129k\u0169y\u0169 that have been translated into a total of more than thirty languages.</p>",
+    "keys": [
+      "c3ffdf6f-326b-41c9-a0b1-72d3c23d23be"
+    ],
+    "answerOptions": [
+      {
+        "id": "5083f78a-6858-4763-a0fe-158b8ae73354",
+        "content": "<p>The reaction to Ng\u0169g\u0129&rsquo;s rejection of English illustrates that some literary experts believe that fame is most easily gained by writing in a widely understood language, such as G\u0129k\u0169y\u0169.</p>"
+      },
+      {
+        "id": "ae11b317-deaa-42c0-93e2-c6515cf5390d",
+        "content": "<p>Although Ng\u0169g\u0129 insisted on publishing his first works in G\u0129k\u0169y\u0169, they have since been translated into many other languages.</p>"
+      },
+      {
+        "id": "c3ffdf6f-326b-41c9-a0b1-72d3c23d23be",
+        "content": "<p>Although Ng\u0169g\u0129&rsquo;s decision to write in G\u0129k\u0169y\u0169 was met with some skepticism, it didn&rsquo;t prevent him from achieving literary success.</p>"
+      },
+      {
+        "id": "b71f3697-a453-4b69-bb6c-cdcce870dd7e",
+        "content": "<p>In the 1970s, Ng\u0169g\u0129 became convinced that literature ought to be written in authors&rsquo; native languages, and he proceeded to publish many works in G\u0129k\u0169y\u0169.</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most accurately states the main idea of the text. The text begins by explaining that Kenyan writer Ng\u0169g\u0129 wa Thiong&rsquo;o had published four novels in English before he began writing in his native language, G\u0129k\u0169y\u0169, in the 1970s. The text then explains that fellow writers and critics were skeptical of this decision, warning that the choice to publish in his native language, which the text implies isn&rsquo;t widely understood, would limit his readership. The text concludes by stating that despite those warnings, Ng\u0169g\u0129 proceeded to publish several acclaimed novels in G\u0129k\u0169y\u0169 that were translated into several languages, suggesting that Ng\u0169g\u0129&rsquo;s works in G\u0129k\u0169y\u0169 achieved literary success in the forms of critical recognition and a wide international readership. Thus, the main idea is that although Ng\u0169g\u0129&rsquo;s decision to write in G\u0129k\u0169y\u0169 was met with some skepticism, this choice didn&rsquo;t prevent him from achieving literary success.</p><p>Choice A is incorrect because it contradicts the description of G\u0129k\u0169y\u0169 provided in the text. Rather than indicating that G\u0129k\u0169y\u0169 is a widely understood language, as this choice claims, the text states that colleagues cautioned Ng\u0169g\u0129 that writing in G\u0129k\u0169y\u0169 instead of English &ldquo;might make his works inaccessible outside his own community.&rdquo; Furthermore, the text contrasts the choice of G\u0129k\u0169y\u0169 with another alternative to English, Kiswahili, which the text indicates is &ldquo;a more practical choice&rdquo; given that it is &ldquo;widely spoken in Kenya and elsewhere in Africa.&rdquo; Choice B is incorrect because it contradicts information in the text. Although the text states that the novels Ng\u0169g\u0129 published in G\u0129k\u0169y\u0169 were later translated into other languages, the text explicitly states that Ng\u0169g\u0129 had previously published four novels in English before he began writing in G\u0129k\u0169y\u0169 in the 1970s. Thus, his first works were published in English, not G\u0129k\u0169y\u0169. Choice D is incorrect. The text doesn&rsquo;t address what motivated Ng\u0169g\u0129&rsquo;s choice to publish in his native G\u0129k\u0169y\u0169, and nothing in the text suggests that he intended for other authors to follow his example.</p>",
+    "externalid": "186b2a9e-0ace-47a7-b2d5-4db88f390327",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>When Kenyan writer Ng\u0169g\u0129 wa Thiong&rsquo;o, who had previously published four novels in English, began writing in his native language, G\u0129k\u0169y\u0169, in the 1970s, several fellow writers and critics cautioned that doing so might make his works inaccessible outside his own community. Some noted that Kiswahili&mdash;widely spoken in Kenya and elsewhere in Africa&mdash;would be a more practical choice. Rejecting their arguments, Ng\u0169g\u0129 went on to author dozens of acclaimed works in G\u0129k\u0169y\u0169 that have been translated into a total of more than thirty languages.</p>"
+}

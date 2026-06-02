@@ -1,0 +1,39 @@
+{
+  "questionId": "5cf1bbc9-s1",
+  "originalId": "5cf1bbc9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The graph of the function <em>f</em>, where y = f(x), gives the total cost <em>y</em>, in dollars, for a certain music player and <em>x</em> downloaded songs. The line passes through (0, 80) and (10, 260). What is the best interpretation of the slope of the graph in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The music player costs $260.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The music player costs $80.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Each song costs $80.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Each song costs $18.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The slope is (260 - 80)/(10 - 0) = 180/10 = 18, meaning each additional song adds $18 to the total cost. So each song costs $18. Choices A and B describe the y-intercept (cost of the music player itself) \u2014 that's interpretation of intercept, not slope. Choice C confuses the y-intercept with the slope.</p>",
+  "templateId": "linear-functions.A2.T2.medium"
+}

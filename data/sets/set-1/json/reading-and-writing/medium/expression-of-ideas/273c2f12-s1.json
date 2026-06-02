@@ -1,0 +1,25 @@
+{
+  "questionId": "273c2f12-s1",
+  "originalId": "273c2f12",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T6.medium",
+  "stimulus": "<p>Aliyah Chen's textile work <em>HARVEST/HOMETOWN</em>, a denim factory uniform reworked with porcelain buttons and gold thread used in traditional Hmong embroidery, weaves together—literally and figuratively—materials drawn from both her family's heritage and the industrial garment trade that long defined her hometown. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Chen's work also unsettles the line between heirloom craft and mass-produced labor.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>However,</p>"},
+    {"id": "b", "content": "<p>For example,</p>"},
+    {"id": "c", "content": "<p>In particular,</p>"},
+    {"id": "d", "content": "<p>In so doing,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"In so doing\" logically signals that the information in this sentence about Chen's work—that it unsettles the line between heirloom craft and mass-produced labor—is a result or consequence of the work's combining of heritage and industrial-garment materials described in the previous sentence.</p><p>Choice A is incorrect. \"However\" illogically signals that this sentence contrasts with the previous information about the combining of materials. Instead, it presents a result of that combining. Choice B is incorrect. \"For example\" illogically signals that this sentence provides an example supporting the previous claim. Instead, it presents a consequence of what was described. Choice C is incorrect. \"In particular\" illogically signals that this sentence provides specific details elaborating on the previous information. Instead, it presents a result of that information.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "e5da61f1-s1",
+  "originalId": "e5da61f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1905 short story. The narrator and his sister have recently moved to a small New England town, and Walter is their gardener.</p><blockquote><p>Walter [was] very useful when we settled into our new home. He had a thorough knowledge of the area, was familiar with the streams and stone walls, knew the qualities of the various soils and what would grow best in them, and where the best produce stands and woodlots were to be found. He was a marvelous hand at managing chickens and bees.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To give an example of Walter's knowledge about soil</p>"},
+    {"id": "b", "content": "<p>To compare the narrator's reaction to a new home with his sister's reaction</p>"},
+    {"id": "c", "content": "<p>To explain different ways in which Walter was helpful</p>"},
+    {"id": "d", "content": "<p>To show that the narrator and Walter often kept bees together</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The narrator opens by saying Walter was \"very useful\" and then lists many ways in which he was helpful—knowing the area, soils, produce stands, and managing chickens and bees.</p><p>Choice A is incorrect. The text mentions Walter's knowledge of soil as one example, not the focus. Choice B is incorrect. The narrator's and sister's reactions aren't compared. Choice D is incorrect. The text doesn't show how often the narrator and Walter worked together.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "768f3b7c-s1",
+  "originalId": "768f3b7c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows three values of <em>x</em> and their corresponding values of <em>y</em>, where <em>k</em> is a constant. There is a linear relationship between <em>x</em> and <em>y</em>. Which of the following equations represents this relationship?</p><table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>-2k</td><td>40</td></tr><tr><td>k</td><td>22</td></tr><tr><td>4k</td><td>4</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>kx + 6y = 28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>kx + 6y = 28k</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6x + ky = 28k</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6x + ky = 28</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Using the points (k, 22) and (4k, 4), the slope is m = (4 - 22) / (4k - k) = -18/(3k) = -6/k. Using point-slope form with (k, 22): y - 22 = (-6/k)(x - k), which gives y = -6x/k + 6 + 22 = -6x/k + 28. Multiplying both sides by k: ky = -6x + 28k, or 6x + ky = 28k. Verification: x = -2k, y = 40: 6(-2k) + k(40) = -12k + 40k = 28k \u2713; x = k, y = 22: 6k + 22k = 28k \u2713; x = 4k, y = 4: 24k + 4k = 28k \u2713. Therefore 6x + ky = 28k represents the relationship.</p><p>Choice A is incorrect: kx + 6y = 28 fails to balance the variable k consistently and does not satisfy the given points. Choice B is incorrect: it swaps the coefficients on x and y. Choice D is incorrect: dropping the factor of k on the right side makes the equation inconsistent.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T6.hard"
+}

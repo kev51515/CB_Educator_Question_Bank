@@ -1,0 +1,25 @@
+{
+  "questionId": "84136d69-s1",
+  "originalId": "84136d69",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Five of the Responses to Survey about Actions to Reduce Household Water Use</p></caption><thead><tr><th>Action</th><th>Action category</th><th>Percentage of respondents selecting action (%)</th></tr></thead><tbody><tr><td>Install low-flow showerheads</td><td>efficiency</td><td>4.1</td></tr><tr><td>Take shorter showers</td><td>curtailment</td><td>8.7</td></tr><tr><td>Stop running the tap while brushing teeth</td><td>curtailment</td><td>22.4</td></tr><tr><td>Use a high-efficiency washing machine</td><td>efficiency</td><td>3.0</td></tr><tr><td>Water lawn less often</td><td>curtailment</td><td>15.2</td></tr></tbody></table></figure><p>In a survey of public perceptions of water use, researcher Marisol Reyes and her team asked respondents to name the most effective action ordinary households can take to reduce water use. The team categorized each action as either an efficiency or a curtailment and found that respondents tended to name curtailments more often than they did efficiencies. For example, 22.4% of respondents stated that the most effective way to reduce water use is to stop running the tap while brushing teeth, while only <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>8.7% of respondents said it was most effective to install low-flow showerheads.</p>"},
+    {"id": "b", "content": "<p>3.0% of respondents said it was most effective to take shorter showers.</p>"},
+    {"id": "c", "content": "<p>15.2% of respondents said it was most effective to use a high-efficiency washing machine.</p>"},
+    {"id": "d", "content": "<p>4.1% of respondents said it was most effective to install low-flow showerheads.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The example is meant to support the claim that respondents named curtailments more than efficiencies. A curtailment was already cited (stopping the tap, 22.4%), so the completing example should cite an efficiency selected by a relatively low percentage. Installing low-flow showerheads is an efficiency, and 4.1% selected it. Choice A is incorrect because 8.7% is the percentage for &ldquo;take shorter showers,&rdquo; not for installing low-flow showerheads. Choice B is incorrect because 3.0% applies to high-efficiency washing machines, not shorter showers. Choice C is incorrect because &ldquo;water lawn less often&rdquo; (15.2%) is a curtailment, not an efficiency.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

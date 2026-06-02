@@ -1,0 +1,39 @@
+{
+  "questionId": "dd797fe2-s1",
+  "originalId": "dd797fe2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Jia purchased 5 markers that cost <i>p</i> dollars each and 2 erasers that cost <i>q</i> dollars each. The equation 5<i>p</i> + 2<i>q</i> = 31 represents this situation. Which of the following is the best interpretation of 31 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The total cost, in dollars, of all markers and erasers purchased</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The total cost, in dollars, of all markers purchased</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The total cost, in dollars, of all erasers purchased</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The difference, in dollars, between the cost of the markers and the erasers</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The term 5<i>p</i> is the total cost of markers and 2<i>q</i> is the total cost of erasers; their sum, 31, represents the total cost of all markers and erasers combined.</p><p>Choices B and C describe one component only. Choice D describes a difference, not a sum.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A3.T4.easy"
+}

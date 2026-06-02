@@ -1,0 +1,39 @@
+{
+  "questionId": "b450ab03-s1",
+  "originalId": "b450ab03",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An assembler at a factory builds widgets and gadgets. It takes the assembler 2.3 minutes to build a widget and 4.1 minutes to build a gadget. The assembler spends a total of 71.5 minutes building <i>x</i> widgets and <i>y</i> gadgets. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2.3<i>x</i> + 4.1<i>y</i> = 71.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4.1<i>x</i> + 2.3<i>y</i> = 71.5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>x</i> + <i>y</i> = 71.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9.43<i>x</i> + 9.43<i>y</i> = 71.5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The total time is 2.3 minutes times the number of widgets plus 4.1 minutes times the number of gadgets, equal to 71.5 minutes.</p><p>Choice B swaps the per-item times. Choices C and D mishandle the coefficients.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

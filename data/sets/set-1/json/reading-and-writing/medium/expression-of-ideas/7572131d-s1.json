@@ -1,0 +1,25 @@
+{
+  "questionId": "7572131d-s1",
+  "originalId": "7572131d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A1.T1.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Hiroshi Sugimoto&rsquo;s photograph <em>Seascape: Bay of Sagami</em> (1990) shows a horizon dividing sea and sky in long exposure.</li>\n<li>The image uses extended exposure times to convey a sense of timeless stillness across the natural world.</li>\n<li>His photograph <em>Lake Superior, Eagle River</em> (2003) shows another horizon between water and sky captured under similar conditions.</li>\n<li>This image also relies on long exposures and minimal compositional elements.</li>\n<li>Both works are intended to evoke contemplative stillness through the unchanging horizon line.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize a similarity between the two photographs. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>Seascape: Bay of Sagami</em> and <em>Lake Superior, Eagle River</em> both rely on long exposures of a horizon to evoke contemplative stillness.</p>"},
+    {"id": "b", "content": "<p>Sugimoto&rsquo;s <em>Lake Superior, Eagle River</em> uses minimal compositional elements to convey timeless stillness across the natural world.</p>"},
+    {"id": "c", "content": "<p>Sugimoto completed <em>Seascape: Bay of Sagami</em> in 1990 and <em>Lake Superior, Eagle River</em> in 2003.</p>"},
+    {"id": "d", "content": "<p>While <em>Seascape: Bay of Sagami</em> depicts an oceanic horizon, <em>Lake Superior, Eagle River</em> depicts a freshwater horizon.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. It names both photographs and asserts a shared feature (long exposures of a horizon to evoke contemplative stillness), drawn from notes that overlap on both works.</p><p>Choice B is incorrect because it describes only one photograph (one-sided foil). Choice C is incorrect because it states a difference in completion years rather than a similarity. Choice D is incorrect because it emphasizes a difference between the subjects.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

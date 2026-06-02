@@ -1,0 +1,25 @@
+{
+  "questionId": "d83c3d54-s1",
+  "originalId": "d83c3d54",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Approximate Land Cover Along Banks of the Bitterroot River Downstream of the Painted Rocks Reservoir (square meters)</p></caption><thead><tr><th scope=\"col\">Year</th><th scope=\"col\">Grass cover</th><th scope=\"col\">Bare soil</th><th scope=\"col\">Forest cover</th></tr></thead><tbody><tr><th scope=\"row\">1985</th><td>61,000</td><td>62,000</td><td>78,000</td></tr><tr><th scope=\"row\">1990</th><td>98,000</td><td>18,000</td><td>60,000</td></tr><tr><th scope=\"row\">2008</th><td>128,000</td><td>33,000</td><td>47,000</td></tr></tbody></table></figure></p><p>The Painted Rocks Reservoir was constructed on the Bitterroot River in Montana in 1986. Earth scientist Nguyen Thi Hoa and colleagues tracked changes in the bank environment downstream of the reservoir, including how much grass and forest cover were present. They concluded that the reservoir altered the flow of the river in ways that benefited grass plants but didn&rsquo;t benefit trees.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Nguyen and colleagues&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The lowest amount of grass cover was approximately 61,000 square meters, and the highest amount of forest cover was approximately 78,000 square meters.</p>"},
+    {"id": "b", "content": "<p>There was less grass cover than bare soil in 1985 but more grass cover than bare soil in 1990 and 2008, whereas there was more forest cover than bare soil in all three years.</p>"},
+    {"id": "c", "content": "<p>Grass cover increased from 1985 to 1990 and from 1990 to 2008, whereas forest cover decreased in those periods.</p>"},
+    {"id": "d", "content": "<p>There was more grass cover than forest cover in 1985, and this difference increased dramatically in 1990 and again in 2008.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the reservoir was built in 1986, so 1985 reflects pre-reservoir conditions and 1990 and 2008 reflect post-reservoir conditions. The table shows grass cover rising (61,000 → 98,000 → 128,000) and forest cover falling (78,000 → 60,000 → 47,000), supporting the conclusion that the reservoir benefited grasses but not trees. Choice A is incorrect because both values are pre-reservoir. Choice B is incorrect because comparisons against bare soil don&rsquo;t support the trees-versus-grass conclusion. Choice D is incorrect because in 1985 there was more forest cover than grass cover, not the reverse.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

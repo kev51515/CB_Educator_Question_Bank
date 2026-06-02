@@ -1,0 +1,39 @@
+{
+  "questionId": "566759ef-s1",
+  "originalId": "566759ef",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Aliyah purchased a new printer for her office. At the time of purchase, the printer had a value of $1,200. Aliyah estimates that each year the printer will depreciate by 25% of the previous year's estimated value. What is the estimated value of the printer exactly 2 years after Aliyah purchased it?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$600</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$720</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$900</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$675</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. If the printer depreciates by 25% of the previous year's value each year, then each year it retains 100% - 25% = 75%, or 0.75, of the previous year's value. Starting from $1,200, after one year the value is 0.75 &times; $1,200 = $900, and after two years it is 0.75 &times; $900 = $675. Equivalently, (0.75)<sup>2</sup>($1,200) = $675. Choice A is incorrect because $600 would result from depreciating 25% of the original value each year (a flat $300 per year), not 25% of the previous year's value. Choice B is incorrect; this is the result of depreciating 20% per year of the previous value, not 25%. Choice C is incorrect because $900 is the value after only 1 year, not 2 years.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A4.T1.medium"
+}

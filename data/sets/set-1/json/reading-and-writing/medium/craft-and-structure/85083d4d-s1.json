@@ -1,0 +1,25 @@
+{
+  "questionId": "85083d4d-s1",
+  "originalId": "85083d4d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T4.medium",
+  "stimulus": "<p>Pushing back against the widespread assumption that contemporary West African textile design is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, the weavers represented in the recent exhibition at the Centre for African Studies draw on a striking variety of approaches. Some work strictly within the kente tradition of Ghana; others adapt Yoruba aso oke patterns to luxury garments; still others incorporate digital print techniques to produce experimental textile installations.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>commercial</p>"},
+    {"id": "b", "content": "<p>uniform</p>"},
+    {"id": "c", "content": "<p>experimental</p>"},
+    {"id": "d", "content": "<p>obscure</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Uniform\" means all the same. The text counters the assumption by listing weavers who use \"a striking variety of approaches,\" so the assumption being refuted must be that the design is undifferentiated&mdash;that is, uniform.</p><p>Choice A is incorrect because the text does not contest the commercial nature of the work; it contests its perceived sameness. Choice C is incorrect because the text presents experimental work as part of the variety; calling the assumption \"experimental\" would not make the refutation coherent. Choice D is incorrect because the assumption being refuted concerns sameness, not visibility.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

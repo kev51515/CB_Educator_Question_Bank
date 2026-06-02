@@ -1,0 +1,25 @@
+{
+  "questionId": "c468db1c-s1",
+  "originalId": "c468db1c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>A team of agronomists led by Hana &Scaron;t&iacute;pkov&aacute; at the Czech Institute of Crop Research in Prague compared the drought tolerance of two cultivars of the durum wheat <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Lucanica, which is prized for its rapid grain-filling, and Sammartino, which is much more vulnerable to early-season water stress.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>plant:</p>"},
+    {"id": "b", "content": "<p>plant;</p>"},
+    {"id": "c", "content": "<p>plant.</p>"},
+    {"id": "d", "content": "<p>plant</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation use between a main clause and a supplementary phrase. The colon correctly marks the boundary between the main clause (\"A team...plant\") and the supplementary element (\"Lucanica...water stress\") and introduces an elaboration on the specific cultivars examined.</p><p>Choice B is incorrect because a semicolon cannot join a main clause and a supplementary phrase; a semicolon is conventionally used between two main clauses. Choice C is incorrect because it results in a sentence fragment beginning with \"Lucanica.\" Choice D is incorrect because it fails to mark the boundary between the main clause and the supplementary element with any punctuation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

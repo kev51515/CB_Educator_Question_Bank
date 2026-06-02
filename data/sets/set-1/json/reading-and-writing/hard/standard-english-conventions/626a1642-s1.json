@@ -1,0 +1,39 @@
+{
+  "questionId": "626a1642-s1",
+  "originalId": "626a1642",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>As a developmental psychologist, Alison Gopnik of the University of California, Berkeley, argues that young children reason about the world in surprisingly systematic ways. Gopnik&rsquo;s work can therefore challenge classical cognitive ______ that children cannot grasp abstract causal structure&mdash;routinely overlook.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>theories which</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>theories which&mdash;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>theories, which</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>theories&mdash;which</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The dashes after \"theories\" and \"structure\" correctly enclose the supplementary element \"which insist&hellip;structure,\" indicating that this element could be removed without affecting the grammatical structure of the sentence.</p><p>Choice A is incorrect because it fails to use any punctuation to mark the supplementary element. Choice B is incorrect because it places the opening dash after \"which,\" interrupting the supplementary clause at an illogical and grammatically incoherent point. Choice C is incorrect because a comma cannot be paired with a dash to enclose a supplementary element; punctuation marks used to bracket a parenthetical must match.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A2.T4.hard"
+}

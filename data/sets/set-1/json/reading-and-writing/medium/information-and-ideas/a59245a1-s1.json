@@ -1,0 +1,25 @@
+{
+  "questionId": "a59245a1-s1",
+  "originalId": "a59245a1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>The composer Teresa Carre&ntilde;o made significant contributions to the development of nineteenth-century Venezuelan classical music, but her work is rarely performed in concert halls in Europe today except among specialists in Latin American composition. One reason for Carre&ntilde;o&rsquo;s relative obscurity in Europe is the towering reputation of certain contemporaries. In particular, the composers Heitor Villa-Lobos and Manuel de Falla have so dominated European programming of Latin and Iberian repertoire that Carre&ntilde;o and other Latin American composers of the period are frequently overlooked, despite the technical mastery and originality of their writing.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>During Carre&ntilde;o&rsquo;s lifetime, her compositions were programmed in European concert halls far more often than the works of Villa-Lobos and de Falla.</p>"},
+    {"id": "b", "content": "<p>Carre&ntilde;o composed pieces on some of the same themes that Villa-Lobos and de Falla treated but employed sharply different harmonic techniques.</p>"},
+    {"id": "c", "content": "<p>Carre&ntilde;o&rsquo;s work is less widely performed in Europe than it deserves to be because Villa-Lobos and de Falla draw so much of audiences&rsquo; attention.</p>"},
+    {"id": "d", "content": "<p>Few of Carre&ntilde;o&rsquo;s scores survive today because she produced only a small number of complete compositions.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text states that Carre&ntilde;o made significant contributions but is rarely performed in Europe and explains that Villa-Lobos and de Falla so dominate programming that Carre&ntilde;o is overlooked. That is the main idea.</p><p>Choice A is incorrect because the text doesn&rsquo;t compare performance frequencies during Carre&ntilde;o&rsquo;s lifetime; it actually emphasizes her current obscurity. Choice B is incorrect because the text does not discuss the themes or harmonic techniques of Carre&ntilde;o or her contemporaries. Choice D is incorrect because the text never claims that Carre&ntilde;o produced only a few works or that her scores are scarce.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

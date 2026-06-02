@@ -1,0 +1,25 @@
+{
+  "questionId": "dfbf5d33-s1",
+  "originalId": "dfbf5d33",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>In 1872, Japanese Emperor Meiji issued a decree dissolving the centuries-old samurai class, and many former retainers found themselves stripped of their stipends. Determined to restore his fortunes after years of poverty, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> eventually becoming one of the most prosperous tea exporters in the Shizuoka region.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the tea fields of Nakamura were cultivated,</p>"},
+    {"id": "b", "content": "<p>Nakamura cultivated the tea fields,</p>"},
+    {"id": "c", "content": "<p>the cultivation of tea fields by Nakamura began,</p>"},
+    {"id": "d", "content": "<p>it was Nakamura who cultivated the tea fields,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice ensures that the introductory phrase &ldquo;Determined to restore his fortunes after years of poverty&rdquo; appears immediately before the noun it modifies (&ldquo;Nakamura&rdquo;), clearly establishing that Nakamura is the one determined to restore his fortunes.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the tea fields of Nakamura&rdquo; immediately after the introductory phrase illogically suggests that the tea fields were determined to restore his fortunes. Choice C is incorrect because it results in a dangling modifier. The placement of the noun phrase &ldquo;the cultivation of tea fields&rdquo; immediately after the introductory phrase illogically suggests that the cultivation was determined to restore his fortunes. Choice D is incorrect because it results in a dangling modifier. The placement of the function word &ldquo;it&rdquo; immediately after the introductory phrase illogically suggests that &ldquo;it&rdquo; was determined to restore his fortunes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

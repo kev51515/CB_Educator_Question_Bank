@@ -1,0 +1,452 @@
+[
+  {
+    "id": "2f0a43b2",
+    "path": "json/math/easy/algebra/2f0a43b2.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "349a5bc1",
+    "path": "json/math/easy/algebra/349a5bc1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "3c4ce699",
+    "path": "json/math/easy/algebra/3c4ce699.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "3d04de9c",
+    "path": "json/math/easy/algebra/3d04de9c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "40ba6288",
+    "path": "json/math/easy/algebra/40ba6288.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "465c73ad",
+    "path": "json/math/easy/algebra/465c73ad.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "46f68129",
+    "path": "json/math/easy/algebra/46f68129.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "49cd76d5",
+    "path": "json/math/easy/algebra/49cd76d5.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "4de87c9a",
+    "path": "json/math/easy/algebra/4de87c9a.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "4e77195b",
+    "path": "json/math/easy/algebra/4e77195b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "4f7981a0",
+    "path": "json/math/easy/algebra/4f7981a0.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "4f8bd093",
+    "path": "json/math/easy/algebra/4f8bd093.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "51aabd93",
+    "path": "json/math/easy/algebra/51aabd93.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "550b352c",
+    "path": "json/math/easy/algebra/550b352c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "56e1b09e",
+    "path": "json/math/easy/algebra/56e1b09e.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "56e373b3",
+    "path": "json/math/easy/algebra/56e373b3.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "590f2187",
+    "path": "json/math/easy/algebra/590f2187.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "59afe8db",
+    "path": "json/math/easy/algebra/59afe8db.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "5c94e6fa",
+    "path": "json/math/easy/algebra/5c94e6fa.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "60f71697",
+    "path": "json/math/easy/algebra/60f71697.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "6105234d",
+    "path": "json/math/easy/algebra/6105234d.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "6ac23de7",
+    "path": "json/math/easy/algebra/6ac23de7.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "6fa593f1",
+    "path": "json/math/easy/algebra/6fa593f1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "70774aa4",
+    "path": "json/math/easy/algebra/70774aa4.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "7392dfc1",
+    "path": "json/math/easy/algebra/7392dfc1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "7a987ae4",
+    "path": "json/math/easy/algebra/7a987ae4.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "8339793c",
+    "path": "json/math/easy/algebra/8339793c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "83fb222d",
+    "path": "json/math/easy/algebra/83fb222d.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "87071893",
+    "path": "json/math/easy/algebra/87071893.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "93954cfa",
+    "path": "json/math/easy/algebra/93954cfa.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "997bec28",
+    "path": "json/math/easy/algebra/997bec28.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "9b886541",
+    "path": "json/math/easy/algebra/9b886541.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "9fc31513",
+    "path": "json/math/easy/algebra/9fc31513.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "9ff10b3b",
+    "path": "json/math/easy/algebra/9ff10b3b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "a9c04a21",
+    "path": "json/math/easy/algebra/a9c04a21.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "b4553284",
+    "path": "json/math/easy/algebra/b4553284.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "b82a943c",
+    "path": "json/math/easy/algebra/b82a943c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "baca4a4c",
+    "path": "json/math/easy/algebra/baca4a4c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "c3989ef8",
+    "path": "json/math/easy/algebra/c3989ef8.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "c7d7980e",
+    "path": "json/math/easy/algebra/c7d7980e.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "c841e8e8",
+    "path": "json/math/easy/algebra/c841e8e8.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "d76ab4f5",
+    "path": "json/math/easy/algebra/d76ab4f5.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "d9d83c02",
+    "path": "json/math/easy/algebra/d9d83c02.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "da2e9202",
+    "path": "json/math/easy/algebra/da2e9202.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "e53870b6",
+    "path": "json/math/easy/algebra/e53870b6.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "e7b6f0d1",
+    "path": "json/math/easy/algebra/e7b6f0d1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "eac739b2",
+    "path": "json/math/easy/algebra/eac739b2.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "ed18c4f7",
+    "path": "json/math/easy/algebra/ed18c4f7.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  },
+  {
+    "id": "f2b63f49",
+    "path": "json/math/easy/algebra/f2b63f49.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "spr"
+  },
+  {
+    "id": "f305b5ca",
+    "path": "json/math/easy/algebra/f305b5ca.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear equations in one variable",
+    "type": "mcq"
+  }
+]

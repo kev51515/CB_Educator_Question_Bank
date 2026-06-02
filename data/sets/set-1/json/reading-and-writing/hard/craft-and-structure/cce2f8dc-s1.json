@@ -1,0 +1,39 @@
+{
+  "questionId": "cce2f8dc-s1",
+  "originalId": "cce2f8dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In 2022 musicologist Sofia Reinhart warned executives at streaming platforms who confidently predict that traditional concert recordings will soon be supplanted by short-form interactive video formats. Reinhart pointed out that <u>the notion of an \"interactive\" musical recording is much older than these executives assume, reaching back at least to the early twentieth-century player piano, whose rolls allowed performers and listeners alike to manipulate tempo and dynamics in real time</u>. Moreover, she noted, the newer interactive formats so prized by the streaming companies still depend heavily on conventionally recorded performances as their underlying material.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It explains the basis for the claim being made by the streaming executives mentioned in the text.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It suggests that academics are better suited than executives to evaluate the future of interactive musical formats.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It provides a historical anecdote about the technological difficulties of using early interactive musical formats.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It challenges the stance of the executives mentioned earlier in the text.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The executives' confident prediction depends on treating interactive formats as a brand-new phenomenon that must inevitably eclipse traditional recordings. By citing the player piano as a much older example of interactive recording, the underlined material undercuts that premise and directly challenges their stance.</p><p>Choice A is incorrect because the underlined material weakens, rather than supports, the executives' claim. Choice B is incorrect because the passage challenges the executives without arguing about academic versus industry authority. Choice C is incorrect because the underlined portion is offered as counterevidence, not as a tangential anecdote about technological difficulty.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

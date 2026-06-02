@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "b7c74b73-s1",
+  "originalId": "b7c74b73",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = 9000(0.49)<sup>x/12</sup></p><p>The function f gives the value, in dollars, of a certain piece of equipment after x months of use. If the value of the equipment decreases each year by p% of its value the preceding year, what is the value of p?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.49</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>51</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>49</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4.9</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. After 12 months (one year), the multiplier is (0.49)<sup>12/12</sup> = 0.49. So the value at the end of each year is 49% of the previous year's value, meaning it has decreased by 100% &minus; 49% = 51%.</p><p>Choice A is the multiplier itself, not the percent decrease. Choice C is the retention rate as a percent. Choice D arises from a decimal-point error.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

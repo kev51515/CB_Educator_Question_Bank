@@ -1,0 +1,25 @@
+{
+  "questionId": "e41dfaab-s1",
+  "originalId": "e41dfaab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In 1983 a German magazine published excerpts from diaries reportedly written by Adolf Hitler that had supposedly been recovered from a wartime plane crash. Forensic experts and historians were unable to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the authenticity of the diaries, however, and the documents were soon exposed as a forgery.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>convey</p>"},
+    {"id": "b", "content": "<p>compose</p>"},
+    {"id": "c", "content": "<p>verify</p>"},
+    {"id": "d", "content": "<p>tolerate</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because \"verify\" means to confirm as genuine, the precise action the experts could not perform before the diaries were exposed as fakes. Choice A is incorrect because \"convey\" means to communicate; the issue was certifying genuineness, not transmitting information. Choice B is incorrect because \"compose\" means to write; the experts evaluated the diaries, they did not write them. Choice D is incorrect because \"tolerate\" means to accept or endure; the experts evaluated authenticity rather than tolerating it.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

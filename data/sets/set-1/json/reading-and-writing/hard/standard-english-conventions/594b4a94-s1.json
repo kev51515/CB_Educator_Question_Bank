@@ -1,0 +1,25 @@
+{
+  "questionId": "594b4a94-s1",
+  "originalId": "594b4a94",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A3.T6.hard",
+  "stimulus": "<p>The field of paleoclimatology owes much to British <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Nicholas Shackleton, a pioneering isotope geochemist whose careful analyses of seafloor sediment cores helped establish the orbital theory of ice ages and reshaped scientific understanding of long-term climate cycles.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>geophysicist</p>"},
+    {"id": "b", "content": "<p>geophysicist,</p>"},
+    {"id": "c", "content": "<p>geophysicist;</p>"},
+    {"id": "d", "content": "<p>geophysicist:</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"British geophysicist\" is an indefinite role, so the proper name \"Nicholas Shackleton\" supplies essential identification and is not set off by punctuation.</p><p>Choice B is incorrect because a comma wrongly implies that the name could be removed without loss of meaning. Choices C and D are incorrect because a semicolon or colon between the role and the name does not match any standard punctuation pattern between a role and a restrictive proper name.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

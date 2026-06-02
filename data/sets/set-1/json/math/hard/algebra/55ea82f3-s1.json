@@ -1,0 +1,39 @@
+{
+  "questionId": "55ea82f3-s1",
+  "originalId": "55ea82f3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A drama club hosting a fundraising performance plans to sell at least <math><mn>160</mn></math> tickets before this performance and at least <math><mn>180</mn></math> tickets during this performance to raise a total of at least <math><mo>$</mo><mn>4,800</mn></math> from all tickets sold. The price of a ticket during this performance is <math><mo>$</mo><mn>2</mn></math> less than the price of a ticket before this performance. Which inequality represents this situation, where <math><mi>x</mi></math> is the price, in dollars, of a ticket sold during this performance?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>160</mn><mfenced><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfenced><mo>+</mo><mn>180</mn><mi>x</mi><mo>&#8805;</mo><mn>4,800</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>160</mn><mfenced><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfenced><mo>+</mo><mn>180</mn><mi>x</mi><mo>&#8804;</mo><mn>4,800</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>160</mn><mfenced><mrow><mi>x</mi><mo>-</mo><mn>2</mn></mrow></mfenced><mo>+</mo><mn>180</mn><mi>x</mi><mo>&#8805;</mo><mn>4,800</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>160</mn><mfenced><mrow><mi>x</mi><mo>-</mo><mn>2</mn></mrow></mfenced><mo>+</mo><mn>180</mn><mi>x</mi><mo>&#8804;</mo><mn>4,800</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since the during-performance price is $2 less than the before price, and x is the during price, the before price is x + 2. Revenue before = 160(x+2); revenue during = 180x. Total revenue must be at least $4,800, so 160(x+2) + 180x \u2265 4,800. Choice B reverses the inequality direction. Choices C and D treat the before price as x - 2, which is incorrect.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard"
+}

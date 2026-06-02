@@ -1,0 +1,39 @@
+{
+  "questionId": "5805e747-s1",
+  "originalId": "5805e747",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to 9w<sup>4</sup> + 5w \u2212 (\u22124w<sup>4</sup> \u2212 2w)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5w<sup>4</sup> + 3w</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5w<sup>4</sup> + 7w</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>13w<sup>4</sup> + 3w</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>13w<sup>4</sup> + 7w</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Distribute the minus sign: 9w<sup>4</sup> + 5w + 4w<sup>4</sup> + 2w = (9 + 4)w<sup>4</sup> + (5 + 2)w = 13w<sup>4</sup> + 7w. Choice (d) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A1.T2.medium"
+}

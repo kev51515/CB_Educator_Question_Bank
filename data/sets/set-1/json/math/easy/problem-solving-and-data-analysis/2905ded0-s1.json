@@ -1,0 +1,39 @@
+{
+  "questionId": "2905ded0-s1",
+  "originalId": "2905ded0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes 180 patrons of a public library by genre preference and library card status.</p><table border=\"1\"><tr><td></td><th>Has card</th><th>No card</th><th>Total</th></tr><tr><th>Prefers fiction</th><td>96</td><td>36</td><td>132</td></tr><tr><th>Prefers nonfiction</th><td>30</td><td>18</td><td>48</td></tr><tr><th>Total</th><td>126</td><td>54</td><td>180</td></tr></table><p>If a patron is selected at random, what is the probability that the selected patron prefers fiction?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>132/180</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>126/180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>54/180</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>48/180</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The probability is the number of fiction-preferring patrons divided by the total: 132/180.</p><p>Choice B is incorrect; this is the probability of having a card. Choice C is incorrect; this is the probability of not having a card. Choice D is incorrect; this is the probability of preferring nonfiction.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A2.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "1281dfd5-s1",
+  "originalId": "1281dfd5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A5.T8.hard",
+  "type": "mcq",
+  "stimulus": "<p>Average percent of maximal acceleration used by various small mammal species when foraging or fleeing predators, grouped by percentage range.</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Percent of maximal acceleration</th><th>Foraging (species)</th><th>Fleeing (species)</th></tr>\n<tr><td>30&ndash;39</td><td>2</td><td>0</td></tr>\n<tr><td>40&ndash;49</td><td>1</td><td>0</td></tr>\n<tr><td>50&ndash;59</td><td>1</td><td>1</td></tr>\n<tr><td>60&ndash;69</td><td>0</td><td>2</td></tr>\n<tr><td>70&ndash;79</td><td>1</td><td>2</td></tr>\n<tr><td>80&ndash;89</td><td>0</td><td>3</td></tr>\n<tr><td>90&ndash;100</td><td>1</td><td>6</td></tr>\n</table>\n<p>One might assume that small mammals always flee predators at their maximum possible acceleration, but the metabolic cost of full-output sprints can disfavor that strategy even in escape contexts, as evidenced by the fact that ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>multiple small mammal species use, on average, less than 90% of their maximal acceleration even while fleeing predators.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>most small mammal species use about the same percentage of their maximal acceleration when foraging as when fleeing predators.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>more small mammal species use 90&ndash;100% of their maximal acceleration while foraging than use any lower percentage.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>at least four small mammal species use less than 100% of their maximal acceleration while foraging.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the table shows several species fleeing at well below 90% of maximal acceleration (1 species at 50&ndash;59%, 2 at 60&ndash;69%, 2 at 70&ndash;79%, 3 at 80&ndash;89% &mdash; eight species total below 90%). This directly supports the claim that metabolic cost can dissuade full-speed escape. Choice B is contradicted by the data (foraging skews lower, fleeing skews higher). Choice C is wrong (only 1 species forages at 90&ndash;100%). Choice D is true but does not concern the escape context.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

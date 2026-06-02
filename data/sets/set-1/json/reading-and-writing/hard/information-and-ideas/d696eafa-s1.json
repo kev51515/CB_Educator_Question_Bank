@@ -1,0 +1,39 @@
+{
+  "questionId": "d696eafa-s1",
+  "originalId": "d696eafa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>Early Mars is believed to have undergone a transition from a global magnetic dynamo regime, in which its molten core generated a planet-wide magnetic field that shielded the surface from the solar wind, to a regime in which the dynamo had ceased and the solar wind was able to strip away much of the atmosphere. Researchers examined the timing of this transition using paleomagnetic data preserved in volcanic rocks ranging from 200 million to 4.2 billion years old. They concluded that the dynamo shut down approximately 3.7 billion years ago.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Volcanic rocks older than 3.7 billion years preserve consistent evidence of a strong magnetic field at the time of their formation, while volcanic rocks younger than 3.7 billion years show no such evidence.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The total volume of volcanic rocks formed on Mars older than 3.7 billion years is significantly greater than the total volume of volcanic rocks formed after that date.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Volcanic rocks of every age on Mars contain trace iron-bearing minerals that are capable of recording weak magnetic fields under laboratory conditions.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Volcanic rocks older than 3.7 billion years exhibit greater chemical variation than do volcanic rocks younger than 3.7 billion years.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the researchers&rsquo; conclusion is that the magnetic dynamo on Mars shut down around 3.7 billion years ago. A finding that volcanic rocks older than 3.7 billion years record a strong magnetic field at the time of their formation, while younger rocks do not, would directly support that conclusion: rocks formed while the dynamo was active should preserve evidence of the field, and rocks formed after the dynamo shut down should not.</p><p>Choice B is incorrect because the total volume of volcanic activity has no direct bearing on when the dynamo ceased. Choice C is incorrect because showing that all rocks could in principle record magnetic fields is irrelevant to whether they actually did record one. Choice D is incorrect because chemical variation alone does not indicate the presence or absence of a magnetic dynamo.</p>",
+  "generatedAt": "2026-05-26T15:11:33.982009+00:00"
+}

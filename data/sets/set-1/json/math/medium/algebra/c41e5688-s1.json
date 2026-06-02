@@ -1,0 +1,39 @@
+{
+  "questionId": "c41e5688-s1",
+  "originalId": "c41e5688",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of a linear inequality in the <em>xy</em>-plane has a solid boundary line passing through (0, 2) and (2, 0). The region above and on the boundary is shaded. Which inequality represents this graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> &lt; 2 \u2212 <em>x</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> &lt; 2 + <em>x</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> \u2265 2 \u2212 <em>x</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> \u2265 2 + <em>x</em></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The boundary line passes through (0, 2) and (2, 0), giving slope (0 \u2212 2)/(2 \u2212 0) = \u22121 and <em>y</em>-intercept 2, so the line is <em>y</em> = 2 \u2212 <em>x</em>. Because the boundary is solid and the region above is shaded, the inequality is <em>y</em> \u2265 2 \u2212 <em>x</em>.</p><p>Choices A, B, and D are incorrect; they use the wrong slope sign or the wrong inequality direction.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium"
+}

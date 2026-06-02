@@ -1,0 +1,22 @@
+{
+  "questionId": "8a6de407-s1",
+  "originalId": "8a6de407",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>g</em> is defined by <em>g</em>(<em>x</em>) = <em>mx</em> + <em>b</em>, where <em>m</em> and <em>b</em> are constants. If <em>g</em>(0) = 25 and <em>g</em>(1) = 30, what is the value of <em>m</em>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "5"
+  ],
+  "rationale": "<p>The correct answer is 5. The slope of a line passing through two points (<em>x</em>\u2081, <em>y</em>\u2081) and (<em>x</em>\u2082, <em>y</em>\u2082) is <em>m</em> = (<em>y</em>\u2082 \u2212 <em>y</em>\u2081)/(<em>x</em>\u2082 \u2212 <em>x</em>\u2081). Since <em>g</em>(0) = 25 and <em>g</em>(1) = 30, the graph passes through (0, 25) and (1, 30). Therefore <em>m</em> = (30 \u2212 25)/(1 \u2212 0) = 5.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T4.medium"
+}

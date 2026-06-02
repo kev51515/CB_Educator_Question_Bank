@@ -1,0 +1,39 @@
+{
+  "questionId": "28c6bd8c-s1",
+  "originalId": "28c6bd8c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows a summary of 800 responses to a survey question about preferred news sources.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Source</th><th>Percent of responses</th></tr><tr><td>Television</td><td>38%</td></tr><tr><td>Newspaper</td><td>12%</td></tr><tr><td>Online</td><td>35%</td></tr><tr><td>Radio</td><td>10%</td></tr><tr><td>Other</td><td>5%</td></tr></table><p>Based on the table, how many of those surveyed get most of their news from either Television or Online?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>304</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>376</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>560</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>584</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Television (38%) plus Online (35%) is 73% of 800: 0.73 \u00d7 800 = 584.</p><p>Choice A is incorrect. This is 38% of 800 (Television only).</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T4.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9d935bd8-s1",
+  "originalId": "9d935bd8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A nationwide survey of residents in all 50 states asked whether they exercise daily. The percentages of residents who exercise daily for 7 of the states are 18.10%, 19.30%, 20.50%, 21.40%, 22.50%, 23.30%, 24.20%. The median percent for all 50 states is 22.10%. What is the difference between the median percent for these 7 states and the median percent for all 50 states?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.05%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.40%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.70%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3.45%</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>For the 7 listed values in ascending order, the median is the 4th value: 21.40%. The given all-states median is 22.10%. The positive difference between these medians is 22.10 &minus; 21.40 = 0.70%.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.hard"
+}

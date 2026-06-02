@@ -1,0 +1,39 @@
+{
+  "questionId": "bf4a8b6a-s1",
+  "originalId": "bf4a8b6a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A company that offers hot-air balloon tours takes groups of 15 people at a time. The company's revenue is $120 per adult and $75 per child. If the company's revenue for one group consisting of adults and children was $1,485, how many people in the group were children?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Let a be the number of adults and c the number of children. Then a + c = 15 and 120a + 75c = 1485. Substituting a = 15 \u2212 c: 120(15 \u2212 c) + 75c = 1485, which gives 1800 \u2212 45c = 1485, so 45c = 315 and c = 7. The correct answer is choice B.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.medium"
+}

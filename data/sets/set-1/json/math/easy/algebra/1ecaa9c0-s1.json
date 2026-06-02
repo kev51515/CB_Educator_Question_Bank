@@ -1,0 +1,39 @@
+{
+  "questionId": "1ecaa9c0-s1",
+  "originalId": "1ecaa9c0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Tessa rented a moving van to transport furniture she purchased from a store. She was charged an initial fee of $25.00 plus an additional $0.85 per mile driven. If the van was driven 44 miles, what was the total amount Tessa was charged?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>$37.40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>$54.40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>$62.40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>$77.40</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Total = 25 + 0.85(44) = 25 + 37.40 = 62.40.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

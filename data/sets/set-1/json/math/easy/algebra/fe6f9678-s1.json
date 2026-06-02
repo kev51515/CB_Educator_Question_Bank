@@ -1,0 +1,39 @@
+{
+  "questionId": "fe6f9678-s1",
+  "originalId": "fe6f9678",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function <i>g</i>, <i>g</i>(0) = 23 and <i>g</i>(1) = 23. Which equation defines <i>g</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>g</i>(<i>x</i>) = 23</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>g</i>(<i>x</i>) = <i>x</i> + 23</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>g</i>(<i>x</i>) = 23<i>x</i></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>g</i>(<i>x</i>) = 1/23</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since <i>g</i>(0) = <i>g</i>(1) = 23, the function is constant: <i>g</i>(<i>x</i>) = 23.</p><p>Other choices yield different values at <i>x</i> = 0 or <i>x</i> = 1.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A3.T1.easy"
+}

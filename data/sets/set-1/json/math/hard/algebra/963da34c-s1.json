@@ -1,0 +1,39 @@
+{
+  "questionId": "963da34c-s1",
+  "originalId": "963da34c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A shipping company restricts the dimensions of the boxes it will ship for a certain service. The restriction states that for boxes shaped like rectangular prisms, the sum of the perimeter of the base of the box and the height of the box cannot exceed 154 inches. The perimeter of the base is determined using the width and length of the box. If a box has a height of 50 inches and its length is 3 times the width, which inequality shows the allowable width <math><mi>x</mi></math>, in inches, of the box?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>0</mn><mo>&#60;</mo><mi>x</mi><mo>&#8804;</mo><mn>15</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>0</mn><mo>&#60;</mo><mi>x</mi><mo>&#8804;</mo><mn>13</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>0</mn><mo>&#60;</mo><mi>x</mi><mo>&#8804;</mo><mn>26</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>0</mn><mo>&#60;</mo><mi>x</mi><mo>&#8804;</mo><mn>17</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Width is x, length is 3x. Perimeter of base = 2(x + 3x) = 8x. The restriction: 8x + 50 \u2264 154, so 8x \u2264 104, giving x \u2264 13. Since x is a positive length, 0 < x \u2264 13. Other choices result from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard"
+}

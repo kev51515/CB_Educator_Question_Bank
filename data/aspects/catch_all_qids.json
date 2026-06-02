@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "generatedAt": "2026-05-30T13:59:42.347526+00:00",
+  "bySlug": {
+    "av-other": [
+      "37dde49f"
+    ],
+    "boundary-other": [
+      "fe41f258"
+    ],
+    "cid-other": [
+      "409058ee",
+      "66bef967",
+      "a12a83ce"
+    ],
+    "cir-other": [
+      "ab176ad6",
+      "acd30391",
+      "b96ff36e"
+    ],
+    "coe-other-detail-from-data": [
+      "0113152f",
+      "0a77c362",
+      "825dc766",
+      "b4cda84d"
+    ],
+    "eq-expr-other": [
+      "2c88af4d",
+      "40c09d66",
+      "ffdbcad4"
+    ],
+    "esc-other": [
+      "82dfb646"
+    ],
+    "fss-other": [
+      "ea0aa676"
+    ],
+    "inf-other": [
+      "53d97af5"
+    ],
+    "lat-other": [
+      "3563d76d",
+      "81b664bc"
+    ],
+    "le1-other": [
+      "2937ef4f",
+      "36ab4122",
+      "3f8a701b",
+      "628300a9",
+      "9d4270fe"
+    ],
+    "le2-other": [
+      "1087f6c4",
+      "431c3038",
+      "789975b7",
+      "87322577",
+      "8adf1335",
+      "8da536c6",
+      "9c7741c6",
+      "c362c210",
+      "dfa45424"
+    ],
+    "lf-other": [
+      "0ea7ef01",
+      "1c29bfd1",
+      "4fe4fd7c",
+      "56dc8045",
+      "720e51ac",
+      "868fc236",
+      "930c2990",
+      "a1696f3e",
+      "a5834ea4",
+      "af2ba762",
+      "c8fb6bcb",
+      "daad7c32",
+      "e62cfe5f"
+    ],
+    "lineq-other": [
+      "187f74bc",
+      "830120b0",
+      "b31c3117"
+    ],
+    "nle-other": [
+      "09e5e4d3",
+      "133f3e41",
+      "1697ffcf",
+      "2f958af9",
+      "30281058",
+      "3c95093c",
+      "4661e2a9",
+      "5ae186b4",
+      "75a32330",
+      "802549ac",
+      "97e50fa2",
+      "a54753ca",
+      "a5663025",
+      "b80d10d7",
+      "f2f3fa00",
+      "fcdf87b7"
+    ],
+    "nlf-other": [
+      "161126cf",
+      "1a722d7d",
+      "270cf326",
+      "2f51abc2",
+      "43926bd9",
+      "635f54ee",
+      "6676f055",
+      "668f1863",
+      "70ebd3d0",
+      "9654add7",
+      "bba18ecb",
+      "d71f6dbf",
+      "df71424b",
+      "ebe4bde0",
+      "ef926848",
+      "f44a29a8"
+    ],
+    "pct-other": [
+      "65c49824",
+      "8a714fa1"
+    ],
+    "prob-other": [
+      "38a9ac45",
+      "5dc386fb",
+      "b6569d0e",
+      "e1ad3d41"
+    ],
+    "rpr-other": [
+      "24ad9dcb",
+      "3ac09984",
+      "445dd032",
+      "96c3e32d",
+      "e21d10a7"
+    ],
+    "sys-other": [
+      "ed92fb68"
+    ],
+    "tsp-other": [
+      "d5600e74",
+      "ff97fd53"
+    ],
+    "tv-other": [
+      "7ac5d686",
+      "9a144a01",
+      "9b5b23fc",
+      "9d88a3e3",
+      "d6121490"
+    ]
+  }
+}

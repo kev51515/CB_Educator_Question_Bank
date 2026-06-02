@@ -1,0 +1,39 @@
+{
+  "questionId": "c21df211-s1",
+  "originalId": "c21df211",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.misc.easy",
+  "type": "mcq",
+  "stimulus": "<p>In 1922, a Broadway producer introduced Color Theater, a system that bathed the stage in colored light at key emotional moments in a <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as deep red during a battle scene. Color Theater drew skepticism from critics, however, with one calling it \"a gimmick that distracts more than it enhances.\"</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>play, such</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>play such</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>play; such</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>play. Such</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of a comma between a main clause and a supplementary phrase introduced by \"such as.\" The comma correctly sets off the supplementary example phrase (\"such as deep red during a battle scene\") from the main clause that precedes it.</p><p>Choice B is incorrect because no punctuation between the main clause and the supplementary phrase results in a confusing, ungrammatical sentence. Choice C is incorrect because a semicolon can only join two independent clauses, but \"such as deep red during a battle scene\" is not an independent clause. Choice D is incorrect because a period creates a sentence fragment from the supplementary phrase.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

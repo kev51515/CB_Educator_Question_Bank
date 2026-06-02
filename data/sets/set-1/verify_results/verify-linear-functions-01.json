@@ -1,0 +1,22 @@
+[
+  {"id": "c22b5f25-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "e3cf671f-s1", "templateId": "linear-functions.A1.T4.medium", "verdict": "ok"},
+  {"id": "3ce92ce8-s1", "templateId": "linear-functions.A1.T3.medium", "verdict": "ok"},
+  {"id": "1c29bfd1-s1", "templateId": "linear-functions.A3.T3.medium", "verdict": "aspect_drift", "detail": "Stem gives initial value (14.70) + rate (0.43 per foot) but asks student to compute total pressure at x=80, a numeric output. That is A1 (evaluate/compute), not A3 (construct the equation). The student never writes the equation; answer choices are numbers, not equations."},
+  {"id": "f7e39fe9-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "ebd457f4-s1", "templateId": "linear-functions.A3.T3.medium", "verdict": "aspect_drift", "detail": "No initial value present; pure proportional rate (saves $60/week, asks total in 7 weeks = $420). Answer is a number, not an equation. Violates A3.T3 must_preserve (initial value AND rate) and outputs a number, so this is A1 territory, not A3."},
+  {"id": "7e3f8363-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "difficulty_drift", "detail": "Points (0,2) and (6,26): one point is on the y-axis, so b is read directly and slope is a clean integer. This satisfies the easy lever ('Table contains a row at x=0 so b is read directly'), not the medium lever ('Neither row is at x=0; student must compute slope then back-solve for the intercept')."},
+  {"id": "042aa429-s1", "templateId": "linear-functions.A1.T5.medium", "verdict": "ok"},
+  {"id": "4b0c156b-s1", "templateId": "linear-functions.A3.T1.medium", "verdict": "ok"},
+  {"id": "8a6de407-s1", "templateId": "linear-functions.A1.T4.medium", "verdict": "ok"},
+  {"id": "295a41f0-s1", "templateId": "linear-functions.A4.T3.medium", "verdict": "constraint_violation", "detail": "Violates A4.T3 must_preserve 'Graph is shown as the primary referent'. No graph/figure is included; two points are stated verbally. Without a visual graph, this is A3.T2 (build from two points) on a transformed line, not A4.T3."},
+  {"id": "c81f1c2f-s1", "templateId": "linear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "a5834ea4-s1", "templateId": "linear-functions.A1.T1.medium", "verdict": "type_drift", "detail": "T1 requires substituting a single given numeric input into f and producing a numeric output. Here no input is given; the student selects a table that matches the constant function f(x)=52. Violates must_preserve 'A single numeric input value is given' and 'Answer is a single numeric output'. This is a table-identification stem, not an evaluate-f(c) stem."},
+  {"id": "f0773a55-s1", "templateId": "linear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "c651cc56-s1", "templateId": "linear-functions.A1.T5.medium", "verdict": "difficulty_drift", "detail": "Single linear function given as a table with a missing row (find f(3) by linear interpolation). The table-with-missing-row pattern is the T5 hard lever ('One function is given as a table with a missing row; linearity must be inferred'), not the T5 medium lever ('Both functions are given as explicit equations ... combined by addition/subtraction/scaling'). Tagged medium, but the stem structure matches hard."},
+  {"id": "41fdc0b8-s1", "templateId": "linear-functions.A3.T2.medium", "verdict": "ok"},
+  {"id": "946ab892-s1", "templateId": "linear-functions.A3.T1.medium", "verdict": "ok"},
+  {"id": "68f343c9-s1", "templateId": "linear-functions.A1.T5.medium", "verdict": "ok"},
+  {"id": "53487897-s1", "templateId": "linear-functions.A3.T1.medium", "verdict": "ok"},
+  {"id": "c01f4a95-s1", "templateId": "linear-functions.A1.T4.medium", "verdict": "ok"}
+]

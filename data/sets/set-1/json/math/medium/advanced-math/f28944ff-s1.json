@@ -1,0 +1,39 @@
+{
+  "questionId": "f28944ff-s1",
+  "originalId": "f28944ff",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A1.T1.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>q</em> is defined by <em>q</em>(<em>x</em>) = 48(2<sup><em>x</em></sup>). Which table gives three values of <em>x</em> and their corresponding values of <em>q</em>(<em>x</em>)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><table border='1'><tr><th><em>x</em></th><th><em>q</em>(<em>x</em>)</th></tr><tr><td>-1</td><td>-96</td></tr><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>96</td></tr></table></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><table border='1'><tr><th><em>x</em></th><th><em>q</em>(<em>x</em>)</th></tr><tr><td>-1</td><td>1/24</td></tr><tr><td>0</td><td>2</td></tr><tr><td>1</td><td>96</td></tr></table></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><table border='1'><tr><th><em>x</em></th><th><em>q</em>(<em>x</em>)</th></tr><tr><td>-1</td><td>24</td></tr><tr><td>0</td><td>48</td></tr><tr><td>1</td><td>96</td></tr></table></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><table border='1'><tr><th><em>x</em></th><th><em>q</em>(<em>x</em>)</th></tr><tr><td>-1</td><td>1/24</td></tr><tr><td>0</td><td>48</td></tr><tr><td>1</td><td>96</td></tr></table></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting <em>x</em> = -1 gives <em>q</em>(-1) = 48&middot;2<sup>-1</sup> = 48&middot;(1/2) = 24. Substituting <em>x</em> = 0 gives <em>q</em>(0) = 48&middot;2<sup>0</sup> = 48. Substituting <em>x</em> = 1 gives <em>q</em>(1) = 48&middot;2 = 96. These match the table in choice C. The other choices have at least one incorrect value.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z"
+}

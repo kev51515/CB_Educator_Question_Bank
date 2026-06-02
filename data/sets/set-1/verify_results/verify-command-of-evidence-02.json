@@ -1,0 +1,22 @@
+[
+  {"id": "66fd248a-s1", "templateId": "command-of-evidence.A1.T2.hard", "verdict": "ok"},
+  {"id": "040583a5-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "type_drift", "detail": "Stem and stimulus use the T8 pattern (stimulus ends in '______' and stem asks 'Which choice... completes the student's conclusion'). T9 requires the explicit stem form 'Which choice best describes data... that support [conclusion]?' with no blank. Answer B is data-correct, but the type tag should be T8."},
+  {"id": "3f4ab688-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "702eb7e3-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "63e7799d-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "e946a32e-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "6d69ab93-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "eaf22802-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "09775cbf-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "dc87adf4-s1", "templateId": "command-of-evidence.A1.T1.hard", "verdict": "ok"},
+  {"id": "3430be35-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "type_drift", "detail": "Stimulus ends in '______' and stem says 'Which choice most effectively uses data... to complete the text?' — this is the T8 sentence-completion structure, not T9 ('Which choice best describes data... that support [conclusion]?'). Answer B is data-correct, but the type tag should be T8."},
+  {"id": "627d93e3-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "55df0275-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "3fc06a91-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "6536183b-s1", "templateId": "command-of-evidence.A4.T5.hard", "verdict": "ok"},
+  {"id": "5cf5c0d3-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"},
+  {"id": "01c1d9ee-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "645fd11a-s1", "templateId": "command-of-evidence.A5.T9.hard", "verdict": "ok"},
+  {"id": "33b1b285-s1", "templateId": "command-of-evidence.A2.T3.hard", "verdict": "ok"},
+  {"id": "54be8f96-s1", "templateId": "command-of-evidence.A5.T8.hard", "verdict": "ok"}
+]

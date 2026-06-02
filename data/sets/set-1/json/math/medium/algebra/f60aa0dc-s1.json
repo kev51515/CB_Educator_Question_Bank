@@ -1,0 +1,39 @@
+{
+  "questionId": "f60aa0dc-s1",
+  "originalId": "f60aa0dc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 7(5 - 2y) + 3 = 6(5 - 2y) + 11, what is the value of 5 - 2y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>14</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Subtract 6(5 - 2y) from both sides: (5 - 2y) + 3 = 11. Then 5 - 2y = 8. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.medium"
+}

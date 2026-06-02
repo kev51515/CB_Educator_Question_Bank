@@ -1,0 +1,39 @@
+{
+  "questionId": "5444db38-s1",
+  "originalId": "5444db38",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>To show that the structural soundness of bridge cables can be evaluated without removing their protective casings, engineer Mira Tanaka and her team <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the tendency of certain steel alloys' acoustic signatures to shift under tension: the researchers demonstrated that these subtle shifts can be detected from outside the casing and can reveal areas of fatigue inside the cables.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>discounted</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>harnessed</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>reframed</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>postulated</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Harnessed\" means put to use or exploited for a purpose. The text indicates that the researchers turned a known physical property (the shift in acoustic signatures under tension) into a diagnostic technique, putting the property to use to assess cable integrity.</p><p>Choice A is incorrect because \"discounted\" means dismissed or rejected; the team relied on this property rather than dismissing it. Choice C is incorrect because \"reframed\" means presented from a new perspective, but the text describes practical use of the property, not a reinterpretation of it. Choice D is incorrect because \"postulated\" means proposed as a hypothesis, but the team demonstrated a working technique rather than merely advancing a hypothesis.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

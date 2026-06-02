@@ -1,0 +1,39 @@
+{
+  "questionId": "2cf7f039-s1",
+  "originalId": "2cf7f039",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>5</mn><msqrt><mi>x</mi></msqrt></math>. For what value of <em>x</em> does <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><mn>40</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>64</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>200</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1600</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Setting <math><mn>5</mn><msqrt><mi>x</mi></msqrt><mo>=</mo><mn>40</mn></math> gives <math><msqrt><mi>x</mi></msqrt><mo>=</mo><mn>8</mn></math>, so <em>x</em> = 64.</p><p>Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T2.easy"
+}

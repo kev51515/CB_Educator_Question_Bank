@@ -1,0 +1,25 @@
+{
+  "questionId": "40c3589d-s1",
+  "originalId": "40c3589d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Joy Harjo is the first Native American to be named poet laureate of the United States. Her collection <em>An American Sunrise</em>&mdash;an interweaving of memoir and history, lyric verse and <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> stands as a testament to her range as a writer of the Mvskoke Nation.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>song&mdash;</p>"},
+    {"id": "b", "content": "<p>song;</p>"},
+    {"id": "c", "content": "<p>song,</p>"},
+    {"id": "d", "content": "<p>song</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. &ldquo;An interweaving of memoir and history, lyric verse and song&rdquo; is a nonessential supplement, so it must be set off with a matched pair of punctuation marks. A dash already opens the supplement, so a dash is needed at its end to match.</p><p>Choice B is incorrect because a semicolon can&rsquo;t pair with an opening dash to set off a supplement. Choice C is incorrect because a comma can&rsquo;t pair with an opening dash. Choice D is incorrect because it fails to close the supplement opened earlier in the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

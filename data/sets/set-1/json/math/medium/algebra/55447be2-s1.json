@@ -1,0 +1,22 @@
+{
+  "questionId": "55447be2-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "55447be2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>y = (1/2)x − 7</p><p>y = −x + 11</p><p>The solution to the given system of equations is (x, y). What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>Setting the right-hand sides equal: (1/2)x − 7 = −x + 11. Adding x to both sides: (3/2)x − 7 = 11, so (3/2)x = 18, giving x = 12.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

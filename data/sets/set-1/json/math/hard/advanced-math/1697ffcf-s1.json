@@ -1,0 +1,22 @@
+{
+  "questionId": "1697ffcf-s1",
+  "originalId": "1697ffcf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The graphs of y = 2x<sup>2</sup> &minus; 11x and y = x in the xy-plane intersect at (0, 0) and at the point (a, a), where a is a constant. What is the value of a?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>Set the right-hand sides equal: x = 2x<sup>2</sup> &minus; 11x, so 0 = 2x<sup>2</sup> &minus; 12x = 2x(x &minus; 6). The solutions are x = 0 and x = 6. The nonzero intersection has the form (a, a), so a = 6.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.hard"
+}

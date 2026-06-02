@@ -1,0 +1,39 @@
+{
+  "questionId": "9b0a4eae-s1",
+  "originalId": "9b0a4eae",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A graph in the <em>xy</em>-plane models the possible combinations of length <em>x</em>, in meters (m), and width <em>y</em>, in meters, for a rectangle with a perimeter of 28 m. The line passes through the point (5, 9). What is the best interpretation of the point (5, 9) in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The length is 5 m less than the perimeter, and the width is 9 m less than the perimeter.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The length is 9 m, and the width is 5 m.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The length is 9 m less than the perimeter, and the width is 5 m less than the perimeter.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The length is 5 m, and the width is 9 m.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. In the model, x represents length and y represents width. The point (5, 9) therefore corresponds to length = 5 m and width = 9 m. (Check: 2(5) + 2(9) = 28, the given perimeter.) Choice B reverses length and width. Choices A and C misinterpret the coordinates as differences from the perimeter rather than the actual dimensions.</p>",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

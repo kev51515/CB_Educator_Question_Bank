@@ -1,0 +1,20 @@
+{
+  "questionId": "55bb437a-s1",
+  "originalId": "55bb437a",
+  "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In right triangle ABC, the right angle is at C, and tan(B) = 5/12. Side BC has length 36. Point D lies on AB and point E lies on BC such that triangle DBE is similar to triangle ABC (with the right angle of DBE at E), and DA = 13. What is the length of DE?</p>",
+  "answerOptions": [],
+  "keys": ["10"],
+  "rationale": "<p>Since tan(B) = AC/BC = 5/12 and BC = 36 (a scale factor of 3 applied to the 5-12-13 right triangle), we get AC = 15 and AB = 39. Triangles ABC and DBE share angle B and both have a right angle, so they are similar with ratio DB/AB. Since DA = 13, DB = 39 &minus; 13 = 26, so the ratio is 26/39 = 2/3. Therefore DE = (2/3) &middot; AC = (2/3) &middot; 15 = 10.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "345cc36a-s1",
+  "originalId": "345cc36a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Two triangles intersect at vertex Q. The measure of angle CAQ is a\u00b0, and the measure of angle DBQ is a\u00b0. In the figure (not drawn to scale), AD and CB intersect at point Q, with BQ = 48, AQ = 60, AC = 45, and CQ = 80. What is the length of BD?</p>",
+  "answerOptions": [],
+  "keys": [
+    "36"
+  ],
+  "rationale": "<p>\u2220AQC and \u2220BQD are vertical angles and thus congruent. Combined with \u2220A \u2245 \u2220B (both a\u00b0), triangles QAC and QBD are similar by AA. The correspondence is A\u2194B, C\u2194D, with similarity ratio BQ/AQ = 48/60 = 4/5. Therefore BD = AC \u00d7 4/5 = 45 \u00d7 4/5 = 36.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.hard"
+}

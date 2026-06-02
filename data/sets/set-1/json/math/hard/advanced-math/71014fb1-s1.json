@@ -1,0 +1,39 @@
+{
+  "questionId": "71014fb1-s1",
+  "originalId": "71014fb1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">(<i>x</i> + 3)&sup2; = &minus;7</p><p>How many distinct real solutions does the given equation have?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Exactly one</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly two</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Zero</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>A squared real expression is always nonnegative, so (<i>x</i> + 3)&sup2; &ge; 0 for every real <i>x</i>. It can never equal &minus;7. Therefore, the equation has zero distinct real solutions.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.easy"
+}

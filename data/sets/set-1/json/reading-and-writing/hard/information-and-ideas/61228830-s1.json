@@ -1,0 +1,39 @@
+{
+  "questionId": "61228830-s1",
+  "originalId": "61228830",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A pigeon-borne dispatch is a method of sending written messages&mdash;usually short notes on lightweight paper&mdash;by attaching them to the legs of trained homing pigeons. Pigeon-borne dispatches were used for relatively rapid communication over large distances for military, commercial, and journalistic purposes during the nineteenth and early twentieth centuries, but they were largely effective only over established routes, and the success of a flight depended on factors such as the weather and the presence of predatory birds. For these reasons, pigeon-borne dispatches were eventually replaced by technology that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>operated on similar principles but was less expensive to produce and maintain.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>could be used for purposes beyond military, commercial, or journalistic communication.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>enabled communication that did not require the sender or recipient to be literate.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>was not so dependent on environmental conditions.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the discussion. The text identifies the central weakness of pigeon-borne dispatches: their effectiveness depended on environmental conditions like weather and predators along established routes. A replacement technology that addressed these limitations would, naturally, be one not so dependent on environmental conditions.</p><p>Choice A is incorrect because the text never identifies cost as a problem with pigeon-borne dispatches; the limitations described are environmental. Choice B is incorrect because the text gives no indication that a wider range of purposes was needed&mdash;the listed purposes are broad. Choice C is incorrect because literacy is not raised as a limitation; the messages are described as written notes, but that is not flagged as a problem.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T10.hard"
+}

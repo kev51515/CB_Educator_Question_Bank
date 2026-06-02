@@ -1,0 +1,39 @@
+{
+  "questionId": "44cc5f75-s1",
+  "originalId": "44cc5f75",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Reliably delivering drugs to specific tissues in the body is an important part of treating many diseases, but it is difficult to keep medicine intact as it passes through the digestive system. Bioengineer Giovanni Traverso and his colleagues have shown that it may be possible to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> this problem by encasing drugs in tiny ingestible capsules that release their contents only after reaching the target tissue.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>illustrate</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>overcome</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>neglect</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>conceptualize</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the engineers' capsules are designed to solve the difficulty of delivering drugs safely to the right place. \"Overcome\" means to successfully deal with a problem, which fits. Choice A is incorrect because the capsules don't merely demonstrate the problem; they solve it. Choice C is incorrect because the team is addressing, not ignoring, the problem. Choice D is incorrect because \"conceptualize\" describes thinking about something, not solving it.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "77cf4fa6-s1",
+  "originalId": "77cf4fa6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>There are 240 marbles in a container. Of these marbles, 10% are striped. How many marbles in the container are striped?</p>",
+  "answerOptions": null,
+  "keys": [
+    "24"
+  ],
+  "rationale": "<p>The correct answer is <strong>24</strong>. 10% of 240 is 0.10 × 240 = 24.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

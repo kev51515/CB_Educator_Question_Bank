@@ -1,0 +1,39 @@
+{
+  "questionId": "be94c9fc-s1",
+  "originalId": "be94c9fc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Marcel Proust's 1913 novel <em>Swann's Way</em> (translated by C. K. Scott Moncrieff). The narrator is recalling an afternoon in the village of Combray.</p><blockquote><p>The villagers, returning from the fields and the workshops at that hour when the church bells call the day to a close, seemed always to be dressed in shades of brown and dust except on feast days, when, for a few hours, they put on a determined and improbable bright. There they were now, in their dust-colored cloaks, <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">contesting</span>, foot by foot, our passage, with their handcarts, their barrows, their bursting baskets borne stoutly upon the shoulder.</p></blockquote><p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1913 by Marcel Proust</span></p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Disapproving of</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Obstructing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Asserting possession of</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Arguing about</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. In context, the villagers' handcarts, barrows, and shoulder-borne baskets are physically blocking the narrator's passage \"foot by foot.\" \"Contesting\" here means standing in the way of or obstructing\u2014the villagers and their loads obstruct the narrator's path.</p><p>Choice A is incorrect. \"Disapproving of\" describes an attitude, but the obstruction is physical, not moral. Choice C is incorrect. \"Asserting possession of\" suggests a claim of ownership, but the villagers are not claiming the path as theirs\u2014they are simply impeding movement through it. Choice D is incorrect. \"Arguing about\" implies a verbal dispute, but the passage describes a physical scene without speech.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A1.T1.hard"
+}

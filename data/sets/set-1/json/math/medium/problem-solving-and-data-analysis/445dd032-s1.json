@@ -1,0 +1,39 @@
+{
+  "questionId": "445dd032-s1",
+  "originalId": "445dd032",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Brandon earns $11.75 per hour at his part-time job. When he works <em>h</em> hours, he earns <em>E</em> dollars, where <em>E</em> is given by which of the following expressions?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11.75 + <em>h</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>h</em>/11.75</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11.75<em>h</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>11.75/<em>h</em></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Earnings equal hourly rate times hours worked, so <em>E</em> = 11.75<em>h</em>. Choice A is incorrect because it adds rate and hours instead of multiplying. Choice B is incorrect because <em>h</em>/11.75 divides hours by rate. Choice D is incorrect because 11.75/<em>h</em> divides rate by hours; both Choices B and D would have units that are not dollars.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.medium"
+}

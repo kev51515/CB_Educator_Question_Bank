@@ -1,0 +1,25 @@
+{
+  "questionId": "7c1e5880-s1",
+  "originalId": "7c1e5880",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T7.medium",
+  "stimulus": "<p>Scholars have noted that the photographer Alfred Stieglitz's curatorial vision was likely shaped in part by his marriage to the painter Georgia O'Keeffe, but many do not recognize O'Keeffe as a curator in her own right. Indeed, O'Keeffe organized several major exhibitions herself, including the 1946 retrospective at the Museum of Modern Art and numerous traveling shows of southwestern modernism. Thus, those who primarily view O'Keeffe as a muse for Stieglitz's photographs and exhibitions <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>tend to read the works of Stieglitz and O'Keeffe in an overly autobiographical light.</p>"},
+    {"id": "b", "content": "<p>may draw inaccurate conclusions about how Stieglitz and O'Keeffe viewed each other's work.</p>"},
+    {"id": "c", "content": "<p>risk misrepresenting the full range of O'Keeffe's contributions to the visual arts.</p>"},
+    {"id": "d", "content": "<p>overlook the many other influences that shaped Stieglitz's curatorial choices.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is best. The text introduces O'Keeffe's own curatorial accomplishments (retrospective, traveling shows) and explains that many do not recognize her in that role. Viewing her only as Stieglitz's muse therefore risks misrepresenting the full range of her contributions to the visual arts. Choice A introduces autobiographical interpretation, which is not discussed. Choice B brings in mutual opinions of each other's work, which the text does not address. Choice D shifts focus to Stieglitz's other influences rather than O'Keeffe's own contributions.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

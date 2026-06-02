@@ -1,0 +1,39 @@
+{
+  "questionId": "f7e626b2-s1",
+  "originalId": "f7e626b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The dimensions of a right rectangular prism are 5 inches by 6 inches by 8 inches. What is the surface area, in square inches, of the prism?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>38</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>118</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>236</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>240</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The surface area of a right rectangular prism is 2(LW + LH + WH) = 2(5&times;6 + 5&times;8 + 6&times;8) = 2(30 + 40 + 48) = 2(118) = 236 square inches.</p><p>Choice A sums dimensions. Choice B omits doubling. Choice D is the volume.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T1.hard"
+}

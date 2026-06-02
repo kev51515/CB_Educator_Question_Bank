@@ -1,0 +1,39 @@
+{
+  "questionId": "708590d7-s1",
+  "originalId": "708590d7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set A: 1, 2, 3, 4</p><p>Data set B: 3, 4, 5, 6, 7</p><p>Which of the following statements correctly compares the means of data set A and data set B?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The mean of each data set is 3.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The mean of each data set is 5.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The mean of data set A is less than the mean of data set B.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The mean of data set A is greater than the mean of data set B.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The mean of data set A is (1 + 2 + 3 + 4) divided by 4 = 2.5. The mean of data set B is (3 + 4 + 5 + 6 + 7) divided by 5 = 5. Because 2.5 is less than 5, the mean of data set A is less than the mean of data set B.</p><p>Choices A and B incorrectly claim the means are equal.</p><p>Choice D is incorrect because the comparison is reversed.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.easy"
+}

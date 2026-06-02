@@ -1,0 +1,25 @@
+{
+  "questionId": "d11910d6-s1",
+  "originalId": "d11910d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of the linear function <i>f</i> passes through the points (&minus;3, 0) and (0, 9). What is the <i>y</i>-intercept of the graph of <i>y</i> = <i>f</i>(<i>x</i>)?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>(0, 9)</p>"},
+    {"id": "b", "content": "<p>(&minus;3, 0)</p>"},
+    {"id": "c", "content": "<p>(9, 0)</p>"},
+    {"id": "d", "content": "<p>(0, &minus;3)</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. The <i>y</i>-intercept is the point where <i>x</i> = 0. The graph passes through (0, 9), so the <i>y</i>-intercept is (0, 9).</p><p>Choice B is the <i>x</i>-intercept. Choices C and D swap coordinates or change signs incorrectly.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A4.T1.easy"
+}

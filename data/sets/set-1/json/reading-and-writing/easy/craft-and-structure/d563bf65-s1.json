@@ -1,0 +1,25 @@
+{
+  "questionId": "d563bf65-s1",
+  "originalId": "d563bf65",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1908 novel. The narrator is a young college student writing letters describing her weekly experiences.</p><blockquote><p>[The college is] putting together the Freshman swim team and there's just a chance that I shall make it. I'm small, of course, but I'm strong and quick in the water. While the others are still finding their breath on the wall, I can push off and reach the far end before they're halfway there.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To explain why the narrator thinks she might make the swim team</p>"},
+    {"id": "b", "content": "<p>To provide details of how to swim</p>"},
+    {"id": "c", "content": "<p>To compare swimming with other sports</p>"},
+    {"id": "d", "content": "<p>To state how players will be chosen for the swim team</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The narrator says \"there's just a chance that I shall make it\" and explains why—she's strong, quick, and faster than other swimmers off the wall.</p><p>Choice B is incorrect. The text doesn't describe how to swim in general. Choice C is incorrect. No other sports are mentioned. Choice D is incorrect. No selection process is described.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "265e7f4c-s1",
+  "originalId": "265e7f4c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>The Globe Theatre in London is a reconstruction of the famous venue where many of Shakespeare&rsquo;s plays were first staged. In 1613, a stage cannon <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> during a performance and set the Globe&rsquo;s thatched roof ablaze. No one was injured, but within hours the original Globe had burned to the ground.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>misfires</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>misfired</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>has misfired</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>will misfire</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The convention being tested is the use of verbs to express tense. The past tense verb &ldquo;misfired&rdquo; is consistent with other past tense verbs in the passage (&ldquo;set,&rdquo; &ldquo;had burned&rdquo;) and with the date &ldquo;1613.&rdquo;</p><p>Choice A is incorrect because the present tense doesn&rsquo;t match the past time frame. Choice C uses present perfect, which is inappropriate for a completed past event with a specific date. Choice D uses future tense, which is inconsistent with the past time frame.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

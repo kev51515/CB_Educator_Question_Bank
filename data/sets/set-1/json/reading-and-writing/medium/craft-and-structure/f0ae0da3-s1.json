@@ -1,0 +1,25 @@
+{
+  "questionId": "f0ae0da3-s1",
+  "originalId": "f0ae0da3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>When ride-hailing services first entered urban transportation markets, their operators frequently claimed that the services would reduce overall congestion by encouraging passengers to give up private cars. Economist Vivek Anand examined this notion in the context of the Atlanta metropolitan area. He estimated a hypothetical city in which ride-hailing achieved its highest plausible market share and found that average downtown travel times would lengthen during peak hours.</p><p>&nbsp;</p><p><span class=\"paired_passage\" role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>Transportation economists Linnea Ostberg and Hugo Marchetti have argued that research on the effects of ride-hailing has focused excessively on short-run congestion effects, which tend to be unfavorable to commuters. Drawing on data from Stockholm over a span of nearly a decade, they show that, in the long term, sustained ride-hailing availability is associated with reduced household car ownership and modest improvements in peak-hour traffic flow.</p>",
+  "stem": "<p>Based on the texts, how would Ostberg and Marchetti (Text 2) most likely respond to Anand&rsquo;s findings (Text 1)?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They would recommend that Anand compare the near-term effect of ride-hailing on Atlanta travel times with its effect in another metropolitan market.</p>"},
+    {"id": "b", "content": "<p>They would claim that ride-hailing has a different effect on commuters in the United States than it does in most other regions.</p>"},
+    {"id": "c", "content": "<p>They would argue that, over the long term, operating costs incurred by ride-hailing companies will also rise.</p>"},
+    {"id": "d", "content": "<p>They would encourage Anand to investigate whether the projected lengthening of travel times persists over an extended period.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Text 1 reports Anand&rsquo;s finding that peak-hour downtown travel times would lengthen under high ride-hailing market share. Text 2 argues that research has overemphasized short-run congestion effects and shows that, over nearly a decade in Stockholm, sustained availability is linked to lower car ownership and modest improvements in peak-hour flow. Ostberg and Marchetti would therefore urge Anand to test whether his short-run projection persists over a longer horizon.</p><p>Choice A is incorrect because Text 2 focuses on duration rather than cross-city comparison. Choice B is incorrect because nothing in Text 2 treats the United States as a special case. Choice C is incorrect because Text 2 emphasizes consumer-side effects and does not predict rising operator costs.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "96c3e32d-s1",
+  "originalId": "96c3e32d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>One face of a rectangular panel has an area of 615 square inches. If a pressure of 23 pounds per square inch is exerted on this face of the panel, what is the total force, in pounds, exerted on this face of the panel?</p>",
+  "answerOptions": null,
+  "keys": [
+    "14145"
+  ],
+  "rationale": "<p>The correct answer is 14,145. The total force equals area times pressure: 615 \u00b7 23 = 14,145 pounds.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T1.medium"
+}

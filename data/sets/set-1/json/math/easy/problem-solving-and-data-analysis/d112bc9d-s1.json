@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane shows 7 data points representing recorded temperatures (in degrees Fahrenheit) on different days. The data points are: (1, 55), (2, 70), (3, 64), (4, 60), (5, 58), (6, 63), (7, 65). During which of the following time periods did the greatest increase in recorded temperature take place?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>From x = 1 to x = 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>From x = 3 to x = 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>From x = 4 to x = 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>From x = 6 to x = 7</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The changes are: 1→2: +15; 3→4: −4; 4→5: −2; 6→7: +2. The greatest increase is +15, from x = 1 to x = 2.</p><p>Choices B and C show decreases. Choice D shows a smaller increase.</p>",
+  "questionId": "d112bc9d-s1",
+  "originalId": "d112bc9d",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.medium"
+}

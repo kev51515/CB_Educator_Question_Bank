@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "a58232b7-s1",
+  "originalId": "a58232b7",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The functions p and q are defined by p(x) = 7(1.2)<sup>x</sup> + 9 and q(x) = 7 &middot; 1.2<sup>x + 3</sup>, where x &ge; 0. Which of the following displays, as a constant or coefficient, the minimum value of the function it defines for x &ge; 0?</p><ol style=\"list-style-type: upper-roman;\"><li>p</li><li>q</li></ol>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Neither I nor II</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>I and II</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. For x &ge; 0, the expression 7(1.2)<sup>x</sup> is minimized at x = 0, where it equals 7. So p's minimum is 7 + 9 = 16, but the constant 9 displayed in p(x) is not 16, so p does not display the minimum. For q(x) = 7 &middot; 1.2<sup>x + 3</sup>, the minimum (at x = 0) is 7 &middot; 1.2<sup>3</sup>, which is not a constant or coefficient written in q. Therefore neither equation displays the minimum.</p><p>Choices B, C, and D each claim that at least one expression directly displays the minimum, which is not the case.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A5.T2.hard"
+}

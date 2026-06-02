@@ -1,0 +1,39 @@
+{
+  "questionId": "992f4e93-s1",
+  "originalId": "992f4e93",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Lines L and k are parallel, and line j is a transversal that intersects both. Line j makes an angle of 72\u00b0 with line k. The same-side interior angle on line L measures a\u00b0. What is the value of a?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>108</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Same-side interior angles formed by parallel lines cut by a transversal are supplementary, so a + 72 = 180, giving a = 108.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

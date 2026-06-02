@@ -1,0 +1,25 @@
+{
+  "questionId": "908a76b8-s1",
+  "originalId": "908a76b8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T6.hard",
+  "stimulus": "<p>When a particular sector&mdash;rail transit and natural gas distribution are two familiar examples&mdash;requires extensive land rights and other regulatory permissions that deter newcomers, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> typically operates as a single firm per region. Such markets are referred to as regulated monopolies.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>this</p>"},
+    {"id": "b", "content": "<p>it</p>"},
+    {"id": "c", "content": "<p>they</p>"},
+    {"id": "d", "content": "<p>these</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"it\" agrees in number with the singular antecedent \"sector\" and clearly indicates that the sector typically operates as a single firm per region.</p><p>Choice A is incorrect because the singular pronoun \"this\" is ambiguous in this context; the resulting sentence leaves unclear what typically operates as a single firm per region. Choice C is incorrect because the plural pronoun \"they\" doesn't agree in number with the singular antecedent \"sector.\" Choice D is incorrect. The plural pronoun \"these\" neither agrees in number with the singular antecedent \"sector\" nor clearly indicates that the sector&mdash;not another plural noun in the sentence, such as \"land rights\" or \"permissions\"&mdash;typically operates as a single firm per region.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

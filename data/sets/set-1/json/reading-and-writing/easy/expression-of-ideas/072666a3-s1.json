@@ -1,0 +1,39 @@
+{
+  "questionId": "072666a3-s1",
+  "originalId": "072666a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The lightweight batteries that power modern portable electronics may one day be made of paper. Researchers in Japan have found a way to use ink containing graphene and bacterial cellulose to coat sheets of treated paper. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> these paper sheets become conductive enough to store and discharge electrical energy like a thin battery.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As a result,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Previously,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In contrast,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"As a result\" logically signals that the conductive paper sheets described in this sentence are a direct consequence of the researchers' method described in the previous sentence (using graphene-and-cellulose ink to coat treated paper).</p><p>Choice B is incorrect because \"previously\" illogically signals that this sentence describes an event that occurred before the researchers' method. Instead, the sentence indicates a consequence of that method. Choice C is incorrect because \"in contrast\" illogically signals that the information in this sentence contrasts with the previous sentence. Instead, the sentence indicates a consequence of the previous method. Choice D is incorrect because \"for example\" illogically signals that this sentence provides an example of the researchers' method. Instead, the sentence indicates a consequence of that method.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

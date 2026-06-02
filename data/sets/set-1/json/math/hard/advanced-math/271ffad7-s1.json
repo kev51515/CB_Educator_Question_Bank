@@ -1,0 +1,39 @@
+{
+  "questionId": "271ffad7-s1",
+  "originalId": "271ffad7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A quadratic function models a rocket's height, in meters, above the ground in terms of the time, in seconds, after it was launched. The model estimates that the rocket was launched from an initial height of 5 meters above the ground and reached a maximum height of 85 meters above the ground 4 seconds after the launch. How many seconds after the launch does the model estimate the rocket lands?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. In vertex form: <i>h</i>(<i>t</i>) = <i>a</i>(<i>t</i> &minus; 4)&sup2; + 85. Using <i>h</i>(0) = 5: 5 = 16<i>a</i> + 85, so <i>a</i> = &minus;5. Then <i>h</i>(<i>t</i>) = 0 when (<i>t</i> &minus; 4)&sup2; = 17, giving <i>t</i> = 4 + &radic;17 &asymp; 8.12. Closest option is 8.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A4.T2.hard"
+}

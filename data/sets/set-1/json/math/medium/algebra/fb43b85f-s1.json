@@ -1,0 +1,23 @@
+{
+  "questionId": "fb43b85f-s1",
+  "originalId": "fb43b85f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A line passes through the points (5, 8) and (16, 25) in the <em>xy</em>-plane. What is the slope of the line?</p>",
+  "answerOptions": null,
+  "keys": [
+    "17/11",
+    "1.545"
+  ],
+  "rationale": "<p>The slope between two points (x\u2081, y\u2081) and (x\u2082, y\u2082) is (y\u2082 - y\u2081)/(x\u2082 - x\u2081). Here the slope is (25 - 8)/(16 - 5) = 17/11 (approximately 1.545).</p>",
+  "templateId": "linear-equations-in-two-variables.A5.T10.medium"
+}

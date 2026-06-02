@@ -1,0 +1,25 @@
+{
+  "questionId": "db876fd5-s1",
+  "originalId": "db876fd5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T8.medium",
+  "stimulus": "<p>Frogs learn the calls of their species shortly after metamorphosis. With each generation, small acoustic differences accumulate, producing distinct call types&mdash;referred to as dialects&mdash;among geographically separated populations of the same species. A research study examined whether four-week-old <em>Hyperolius marmoratus</em> (painted reed frog) juveniles prefer local dialects over the unfamiliar calls of nonlocal <em>H. marmoratus</em> populations: the more orientation responses the juveniles made toward a played call, the stronger their preference. The researchers found that juveniles oriented more frequently toward their own local dialect than toward nonlocal dialects. Since call preference is known to influence mate choice in reed frogs, the finding suggests that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><em>H. marmoratus</em> juveniles&rsquo; preference for their local dialect likely fades as they mature, encouraging mixing between distant populations.</p>"},
+    {"id": "b", "content": "<p><em>H. marmoratus</em> juveniles&rsquo; preference for their local dialect likely leads them to mate primarily with adults from their own population rather than distant populations.</p>"},
+    {"id": "c", "content": "<p><em>H. marmoratus</em> juveniles who orient strongly toward local dialects likely outgrow their peers who show no preference.</p>"},
+    {"id": "d", "content": "<p><em>H. marmoratus</em> juveniles likely prefer calls of other local frog species over those of nonlocal frogs of any species.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Because call preference influences mate choice and juveniles already prefer the local dialect, mature frogs will tend to choose mates whose calls match the local dialect&mdash;that is, mates from their own population.</p><p>Choice A is incorrect because the text gives no evidence that the early preference fades. Choice C is incorrect because no claim is made about growth rates. Choice D is incorrect because the text concerns calls within <em>H. marmoratus</em> only, not other species.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3d04de9c-s1",
+  "originalId": "3d04de9c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A coach used a total of <math><mn>32</mn></math> cones that were either orange or green for practice drills. The coach used <math><mn>25</mn></math> orange cones. How many green cones were used?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>32</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>25</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>7</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>57</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The total number of cones is 32 and 25 are orange, so the number of green cones is <math><mn>32</mn><mo>-</mo><mn>25</mn></math>, or 7.</p><p>Choice A is incorrect; this is the total number of cones used.</p><p>Choice B is incorrect; this is the number of orange cones.</p><p>Choice D is incorrect and may result from adding instead of subtracting.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

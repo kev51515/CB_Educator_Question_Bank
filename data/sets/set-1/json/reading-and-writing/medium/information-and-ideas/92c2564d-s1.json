@@ -1,0 +1,25 @@
+{
+  "questionId": "92c2564d-s1",
+  "originalId": "92c2564d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Tasmania is home to Old Vyne, a stand of more than 18,000 genetically identical Antarctic beech trees that all share a single underground root network. Old Vyne is one of the most massive single organisms on Earth, but ecologists are concerned that its expansion is slowing in part because invasive feral pigs have been rooting up the young shoots that spring from its base. The ecologists say that sturdy fencing around the perimeter could keep the pigs from reaching the new growth and help Old Vyne start expanding again.</p>",
+  "stem": "<p>According to the text, why are ecologists concerned about Old Vyne?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Its underground root network cannot support many more new shoots.</p>"},
+    {"id": "b", "content": "<p>It cannot expand into new areas because fences are blocking its growth.</p>"},
+    {"id": "c", "content": "<p>It is not expanding at the same rate it used to.</p>"},
+    {"id": "d", "content": "<p>It is no longer producing young shoots.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text states that Old Vyne is one of Earth's largest organisms but that ecologists are concerned its expansion is slowing because invasive feral pigs are rooting up the young shoots. The ecologists' concern is therefore that Old Vyne is not expanding as fast as it once did.</p><p>Choice A is incorrect because the text gives no evidence that the root network cannot support more shoots; in fact, fencing is presented as a way to help the stand expand again. Choice B is incorrect because the text presents fences as a proposed solution to keep pigs out, not as a barrier to growth. Choice D is incorrect because the text indicates Old Vyne is still producing young shoots that need protection.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

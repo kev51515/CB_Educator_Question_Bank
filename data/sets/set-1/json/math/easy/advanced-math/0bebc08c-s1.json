@@ -1,0 +1,39 @@
+{
+  "questionId": "0bebc08c-s1",
+  "originalId": "0bebc08c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p style=\"text-align:center;\"><math><mi>x</mi><mo>=</mo><mn>2</mn></math></p><p style=\"text-align:center;\"><math><mi>y</mi><mo>=</mo><msup><mfenced><mrow><mn>10</mn><mo>-</mo><mi>x</mi></mrow></mfenced><mn>2</mn></msup></math></p><p>A solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mi>x</mi><mi>y</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>16</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>128</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>20</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>64</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>From the first equation, x = 2. Substituting into y = (10 \u2212 x)\u00b2 gives y = (10 \u2212 2)\u00b2 = 8\u00b2 = 64. Therefore xy = (2)(64) = 128.</p>",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

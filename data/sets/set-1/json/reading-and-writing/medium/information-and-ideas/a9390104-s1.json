@@ -1,0 +1,25 @@
+{
+  "questionId": "a9390104-s1",
+  "originalId": "a9390104",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Arctic terns travel up to 70,000 kilometers each year between their Arctic breeding grounds and Antarctic wintering grounds. Ornithologists have generally assumed that the birds rest by gliding on air currents during most of this migration. But seabird ecologist Kasper Thorup and his team have proposed otherwise. After examining tracking data collected over 15 years from miniature loggers attached to migrating terns, the team contends that arctic terns may engage in active flapping flight throughout much of their journey.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the team&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The tracking data show that arctic terns generally migrate along routes where prevailing winds are weakest.</p>"},
+    {"id": "b", "content": "<p>The tracking data show that arctic terns travel along similar routes in both spring and fall migrations.</p>"},
+    {"id": "c", "content": "<p>The tracking data record sustained wingbeat patterns by the terns during a large portion of each migratory leg.</p>"},
+    {"id": "d", "content": "<p>The tracking data indicate that arctic terns rest more frequently when they travel above open ocean than above land.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because a finding that the loggers recorded sustained wingbeat patterns during much of each migratory leg would directly support the team&rsquo;s claim that the terns engage in active flapping flight throughout much of their journey. Choice A is incorrect because route selection relative to wind strength doesn&rsquo;t reveal whether the birds are flapping or gliding. Choice B is incorrect because route similarity between seasons has no bearing on whether flight is active or passive. Choice D is incorrect because differences in rest frequency over ocean versus land don&rsquo;t show whether the birds flap actively when in flight.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

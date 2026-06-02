@@ -1,0 +1,505 @@
+{
+  "generatedAt": "2026-06-01T02:48:31.061Z",
+  "section": "math",
+  "difficulty": "Hard",
+  "axis": "domain",
+  "setCount": 55,
+  "questionCount": 535,
+  "sets": [
+    {
+      "setId": "1",
+      "label": "Advanced Math — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-1_questions.html",
+        "keyHtml": "advanced-math-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Advanced Math — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-2_questions.html",
+        "keyHtml": "advanced-math-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Advanced Math — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-3_questions.html",
+        "keyHtml": "advanced-math-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Advanced Math — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-4_questions.html",
+        "keyHtml": "advanced-math-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Advanced Math — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-5_questions.html",
+        "keyHtml": "advanced-math-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Advanced Math — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-6_questions.html",
+        "keyHtml": "advanced-math-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Advanced Math — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-7_questions.html",
+        "keyHtml": "advanced-math-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Advanced Math — Set 8",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-8_questions.html",
+        "keyHtml": "advanced-math-set-8_key.html"
+      }
+    },
+    {
+      "setId": "9",
+      "label": "Advanced Math — Set 9",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-9_questions.html",
+        "keyHtml": "advanced-math-set-9_key.html"
+      }
+    },
+    {
+      "setId": "10",
+      "label": "Advanced Math — Set 10",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-10_questions.html",
+        "keyHtml": "advanced-math-set-10_key.html"
+      }
+    },
+    {
+      "setId": "11",
+      "label": "Advanced Math — Set 11",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-11_questions.html",
+        "keyHtml": "advanced-math-set-11_key.html"
+      }
+    },
+    {
+      "setId": "12",
+      "label": "Advanced Math — Set 12",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-12_questions.html",
+        "keyHtml": "advanced-math-set-12_key.html"
+      }
+    },
+    {
+      "setId": "13",
+      "label": "Advanced Math — Set 13",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-13_questions.html",
+        "keyHtml": "advanced-math-set-13_key.html"
+      }
+    },
+    {
+      "setId": "14",
+      "label": "Advanced Math — Set 14",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-14_questions.html",
+        "keyHtml": "advanced-math-set-14_key.html"
+      }
+    },
+    {
+      "setId": "15",
+      "label": "Advanced Math — Set 15",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-15_questions.html",
+        "keyHtml": "advanced-math-set-15_key.html"
+      }
+    },
+    {
+      "setId": "16",
+      "label": "Advanced Math — Set 16",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-16_questions.html",
+        "keyHtml": "advanced-math-set-16_key.html"
+      }
+    },
+    {
+      "setId": "17",
+      "label": "Advanced Math — Set 17",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "advanced-math-set-17_questions.html",
+        "keyHtml": "advanced-math-set-17_key.html"
+      }
+    },
+    {
+      "setId": "18",
+      "label": "Advanced Math — Set 18",
+      "questionCount": 7,
+      "files": {
+        "questionsHtml": "advanced-math-set-18_questions.html",
+        "keyHtml": "advanced-math-set-18_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Algebra — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-1_questions.html",
+        "keyHtml": "algebra-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Algebra — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-2_questions.html",
+        "keyHtml": "algebra-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Algebra — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-3_questions.html",
+        "keyHtml": "algebra-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Algebra — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-4_questions.html",
+        "keyHtml": "algebra-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Algebra — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-5_questions.html",
+        "keyHtml": "algebra-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Algebra — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-6_questions.html",
+        "keyHtml": "algebra-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Algebra — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-7_questions.html",
+        "keyHtml": "algebra-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Algebra — Set 8",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-8_questions.html",
+        "keyHtml": "algebra-set-8_key.html"
+      }
+    },
+    {
+      "setId": "9",
+      "label": "Algebra — Set 9",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-9_questions.html",
+        "keyHtml": "algebra-set-9_key.html"
+      }
+    },
+    {
+      "setId": "10",
+      "label": "Algebra — Set 10",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-10_questions.html",
+        "keyHtml": "algebra-set-10_key.html"
+      }
+    },
+    {
+      "setId": "11",
+      "label": "Algebra — Set 11",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-11_questions.html",
+        "keyHtml": "algebra-set-11_key.html"
+      }
+    },
+    {
+      "setId": "12",
+      "label": "Algebra — Set 12",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-12_questions.html",
+        "keyHtml": "algebra-set-12_key.html"
+      }
+    },
+    {
+      "setId": "13",
+      "label": "Algebra — Set 13",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "algebra-set-13_questions.html",
+        "keyHtml": "algebra-set-13_key.html"
+      }
+    },
+    {
+      "setId": "14",
+      "label": "Algebra — Set 14",
+      "questionCount": 6,
+      "files": {
+        "questionsHtml": "algebra-set-14_questions.html",
+        "keyHtml": "algebra-set-14_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Geometry and Trigonometry — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-1_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Geometry and Trigonometry — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-2_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Geometry and Trigonometry — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-3_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Geometry and Trigonometry — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-4_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Geometry and Trigonometry — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-5_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Geometry and Trigonometry — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-6_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Geometry and Trigonometry — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-7_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Geometry and Trigonometry — Set 8",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-8_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-8_key.html"
+      }
+    },
+    {
+      "setId": "9",
+      "label": "Geometry and Trigonometry — Set 9",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-9_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-9_key.html"
+      }
+    },
+    {
+      "setId": "10",
+      "label": "Geometry and Trigonometry — Set 10",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-10_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-10_key.html"
+      }
+    },
+    {
+      "setId": "11",
+      "label": "Geometry and Trigonometry — Set 11",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-11_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-11_key.html"
+      }
+    },
+    {
+      "setId": "12",
+      "label": "Geometry and Trigonometry — Set 12",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-12_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-12_key.html"
+      }
+    },
+    {
+      "setId": "13",
+      "label": "Geometry and Trigonometry — Set 13",
+      "questionCount": 4,
+      "files": {
+        "questionsHtml": "geometry-and-trigonometry-set-13_questions.html",
+        "keyHtml": "geometry-and-trigonometry-set-13_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Problem-Solving and Data Analysis — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-1_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Problem-Solving and Data Analysis — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-2_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Problem-Solving and Data Analysis — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-3_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Problem-Solving and Data Analysis — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-4_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Problem-Solving and Data Analysis — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-5_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Problem-Solving and Data Analysis — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-6_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Problem-Solving and Data Analysis — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-7_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Problem-Solving and Data Analysis — Set 8",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-8_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-8_key.html"
+      }
+    },
+    {
+      "setId": "9",
+      "label": "Problem-Solving and Data Analysis — Set 9",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-9_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-9_key.html"
+      }
+    },
+    {
+      "setId": "10",
+      "label": "Problem-Solving and Data Analysis — Set 10",
+      "questionCount": 8,
+      "files": {
+        "questionsHtml": "problem-solving-and-data-analysis-set-10_questions.html",
+        "keyHtml": "problem-solving-and-data-analysis-set-10_key.html"
+      }
+    }
+  ]
+}

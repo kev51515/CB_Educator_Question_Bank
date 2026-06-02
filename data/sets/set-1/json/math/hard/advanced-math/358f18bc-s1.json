@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "358f18bc-s1",
+  "originalId": "358f18bc",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>f(x) = x<sup>2</sup> &minus; 36x + 1,620</p><p>What is the minimum value of the given function?</p>",
+  "answerOptions": null,
+  "keys": [
+    "1296"
+  ],
+  "rationale": "<p>The correct answer is 1,296. Completing the square: x<sup>2</sup> &minus; 36x + 1,620 = (x &minus; 18)<sup>2</sup> &minus; 324 + 1,620 = (x &minus; 18)<sup>2</sup> + 1,296. Since (x &minus; 18)<sup>2</sup> &ge; 0, the minimum value is 1,296, attained at x = 18.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

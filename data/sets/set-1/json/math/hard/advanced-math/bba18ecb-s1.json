@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "bba18ecb-s1",
+  "originalId": "bba18ecb",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>When the quadratic function f is graphed in the xy-plane, where y = f(x), its vertex is (5, &minus;12). One of the x-intercepts of this graph is (&minus;3, 0). What is the other x-intercept of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(8, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(10, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(13, 0)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(&minus;13, 0)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. For a parabola, the x-coordinate of the vertex is the midpoint of the two x-intercepts. Let the other x-intercept be x = q. Then (&minus;3 + q)/2 = 5, so q = 13. The other x-intercept is (13, 0).</p><p>Choice A and Choice B fail the midpoint equation. Choice D has the correct magnitude but the wrong sign.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

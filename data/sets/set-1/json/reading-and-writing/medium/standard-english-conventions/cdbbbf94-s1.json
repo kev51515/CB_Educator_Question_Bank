@@ -1,0 +1,25 @@
+{
+  "questionId": "cdbbbf94-s1",
+  "originalId": "cdbbbf94",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.medium",
+  "stimulus": "<p>As Swiss horologist Andr&eacute; Beyner once remarked, &ldquo;a wristwatch is a tiny argument with the planet.&rdquo; The Earth&rsquo;s subtle slowing and seasonal wobble mean that timekeeping standards must be regularly corrected. Specifically, the official scale of time (Coordinated Universal Time) is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> drift between astronomical and atomic measurements approaches the threshold defined by international convention.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>updated whenever</p>"},
+    {"id": "b", "content": "<p>updated, whenever</p>"},
+    {"id": "c", "content": "<p>updated; whenever</p>"},
+    {"id": "d", "content": "<p>updated. Whenever</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The subordinator \"whenever\" introduces a dependent clause that restrictively modifies the verb \"is updated.\" No punctuation should separate a verb from the dependent clause that completes its meaning.</p><p>Choice B is incorrect because a comma improperly separates the verb from the dependent clause. Choice C is incorrect because a semicolon can only join two independent clauses, and what follows is a dependent clause. Choice D is incorrect because a period creates a sentence fragment beginning with the subordinator \"Whenever.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

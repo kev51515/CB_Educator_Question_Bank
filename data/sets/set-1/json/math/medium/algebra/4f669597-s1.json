@@ -1,0 +1,22 @@
+{
+  "questionId": "4f669597-s1",
+  "originalId": "4f669597",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3(q + 2) + 5(q - 2) = 6q</p><p>What value of q is the solution to the given equation?</p>",
+  "answerOptions": [],
+  "keys": [
+    "2"
+  ],
+  "rationale": "<p>Expand: 3q + 6 + 5q - 10 = 6q, so 8q - 4 = 6q. Subtract 6q: 2q = 4, giving q = 2.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.medium"
+}

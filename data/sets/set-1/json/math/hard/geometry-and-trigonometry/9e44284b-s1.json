@@ -1,0 +1,39 @@
+{
+  "questionId": "9e44284b-s1",
+  "originalId": "9e44284b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the graph of 2x<sup>2</sup> + 2y<sup>2</sup> \u2212 8x + 12y \u2212 64 = 0 is a circle. What is the radius of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u221a45</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Divide every term by 2: x<sup>2</sup> + y<sup>2</sup> \u2212 4x + 6y \u2212 32 = 0. Complete the square: (x \u2212 2)<sup>2</sup> \u2212 4 + (y + 3)<sup>2</sup> \u2212 9 \u2212 32 = 0, so (x \u2212 2)<sup>2</sup> + (y + 3)<sup>2</sup> = 45. Therefore r<sup>2</sup> = 45 and r = \u221a45.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T4.hard"
+}

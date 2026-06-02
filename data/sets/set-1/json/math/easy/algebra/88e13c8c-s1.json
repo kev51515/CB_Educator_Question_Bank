@@ -1,0 +1,25 @@
+{
+  "questionId": "88e13c8c-s1",
+  "originalId": "88e13c8c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The total cost <i>g</i>(<i>x</i>), in dollars, to lease an apartment for 24 months from a property management company is given by <i>g</i>(<i>x</i>) = 24<i>x</i> + 800, where <i>x</i> is the monthly rent, in dollars. What is the total cost to lease the apartment when the monthly rent is $300?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>$7,200</p>"},
+    {"id": "b", "content": "<p>$8,000</p>"},
+    {"id": "c", "content": "<p>$8,800</p>"},
+    {"id": "d", "content": "<p>$1,124</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. Substituting <i>x</i> = 300 yields <i>g</i>(300) = 24(300) + 800 = 7,200 + 800 = 8,000.</p><p>Choice A omits the 800. Choice C adds 800 twice. Choice D results from miscomputing the product.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A1.T1.easy"
+}

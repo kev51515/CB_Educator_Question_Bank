@@ -1,0 +1,39 @@
+{
+  "questionId": "a396ed75-s1",
+  "originalId": "a396ed75",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a fitness routine, Renata jogs at an average rate of 7.2 minutes per kilometer. Which function <i>t</i> models the number of minutes it will take Renata to jog <i>x</i> kilometers at this rate?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>t</i>(<i>x</i>) = 7.2<i>x</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>t</i>(<i>x</i>) = <i>x</i>/7.2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>t</i>(<i>x</i>) = <i>x</i> + 7.2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>t</i>(<i>x</i>) = <i>x</i> &minus; 7.2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. To jog <i>x</i> km at 7.2 min/km, multiply: <i>t</i>(<i>x</i>) = 7.2<i>x</i>.</p><p>Other choices misuse the rate.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A3.T3.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b5898291-s1",
+  "originalId": "b5898291",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The instruments from the early Voyager probes (launched in 1977), such as cameras and magnetometers, are still functioning today, but the original raw data tapes from these missions were mostly inaccessible until a recent digitization project made them <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. This project has allowed researcher Pedro Lima to study planetary magnetic fields in new ways.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>accessible</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>predictable</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>complicated</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>representative</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"accessible\" matches the idea that the digitization project finally made the raw data available for study. Choice B is incorrect because predictability isn\u2019t the issue. Choice C is incorrect because complicating wouldn\u2019t help research. Choice D is incorrect because representative doesn\u2019t describe data availability.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

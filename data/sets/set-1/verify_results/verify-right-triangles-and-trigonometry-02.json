@@ -1,0 +1,22 @@
+[
+  {"id": "1bf809b5-s1", "templateId": "right-triangles-and-trigonometry.A2.T3.hard", "verdict": "difficulty_drift", "detail": "Hard T3 requires computing missing side via Pythagoras before forming the ratio; clone gives hypotenuse and adjacent directly, so cos x = 7/20 is one-step (easy-tier)."},
+  {"id": "4c95c7d4-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.hard", "verdict": "ok"},
+  {"id": "25da87f8-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.hard", "verdict": "ok"},
+  {"id": "2be01bd9-s1", "templateId": "right-triangles-and-trigonometry.A5.T10.hard", "verdict": "ok"},
+  {"id": "85f1892d-s1", "templateId": "right-triangles-and-trigonometry.A3.T5.hard", "verdict": "ok"},
+  {"id": "ae041e52-s1", "templateId": "right-triangles-and-trigonometry.A4.T9.hard", "verdict": "ok"},
+  {"id": "52f7b898-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.hard", "verdict": "constraint_violation", "detail": "Violates T8 must_preserve: 'answer is a length, area, or coefficient — not a trig-ratio value'. Clone asks for tan A (a trig-ratio value). Better fits A4 in a trig context but not T8."},
+  {"id": "58c26db8-s1", "templateId": "right-triangles-and-trigonometry.A4.T7.hard", "verdict": "ok"},
+  {"id": "54df8076-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.hard", "verdict": "ok"},
+  {"id": "16d66178-s1", "templateId": "right-triangles-and-trigonometry.A6.T13.hard", "verdict": "ok"},
+  {"id": "92eb236a-s1", "templateId": "right-triangles-and-trigonometry.A6.T13.hard", "verdict": "type_drift", "detail": "T13 requires expression of form sin(a)cos(b)+cos(a)sin(b) with two complementary angles inside the expression. Clone is a cofunction reciprocal-tangent question within one right triangle, which fits T11 (cofunction value swap), not T13."},
+  {"id": "bd87bc09-s1", "templateId": "right-triangles-and-trigonometry.A3.T5.hard", "verdict": "difficulty_drift", "detail": "Hard T5 requires derived quantity (perimeter/area) requiring ratio→both legs→Pythagoras→combine. Clone asks for a single side QR, which matches the medium-tier lever (one-step ratio application plus simple Pythagoras)."},
+  {"id": "f811d345-s1", "templateId": "right-triangles-and-trigonometry.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Hard T1 requires side lengths containing radical factors (e.g., 10√37, 24√37) so the answer's k√d form arises from the input radicals. Clone uses plain integer legs 18 and 15; the k√d form arises only by simplifying √549, matching common_bugs warning about dropping the radical factor."},
+  {"id": "c6dff223-s1", "templateId": "right-triangles-and-trigonometry.A5.T10.hard", "verdict": "ok"},
+  {"id": "44b2b894-s1", "templateId": "right-triangles-and-trigonometry.A4.T9.hard", "verdict": "ok"},
+  {"id": "ffe862a3-s1", "templateId": "right-triangles-and-trigonometry.A4.T7.hard", "verdict": "ok"},
+  {"id": "14e7c1f4-s1", "templateId": "right-triangles-and-trigonometry.A6.T12.hard", "verdict": "ok"},
+  {"id": "55bb437a-s1", "templateId": "right-triangles-and-trigonometry.A3.T5.hard", "verdict": "ok"},
+  {"id": "c9931030-s1", "templateId": "right-triangles-and-trigonometry.A2.T4.hard", "verdict": "ok"},
+  {"id": "a4bd60a3-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.hard", "verdict": "ok"}
+]

@@ -1,0 +1,25 @@
+{
+  "questionId": "c0e1b70a-s1",
+  "originalId": "c0e1b70a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from Anzia Yezierska&rsquo;s 1925 novel <em>Bread Givers</em>. As a young woman, the narrator emigrated from Poland to New York.</p>\n<blockquote>\n<p>The ways of my old country and of my new one were so unlike in many things, and my feeling for each was so deeply my own, that at times I had the strange sensation of standing on a high bridge in midair, looking down with measuring eyes upon two different worlds. At first I was always trying to fit, by the rules I had grown up with, the unfamiliar happenings that pressed on me every day; for no one around me seemed to know why the customs of the new place were as they were, or where they had come from.</p>\n</blockquote>",
+  "stem": "<p>Which choice best describes the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To establish the narrator&rsquo;s hope of forming connections with new companions by sharing customs she learned as a child</p>"},
+    {"id": "b", "content": "<p>To reveal the narrator&rsquo;s recognition that she is hesitant to ask questions about a culture she is newly encountering</p>"},
+    {"id": "c", "content": "<p>To emphasize the narrator&rsquo;s wonder at discovering that two countries are farther apart than she had expected</p>"},
+    {"id": "d", "content": "<p>To convey the narrator&rsquo;s experience of observing and making sense of differences between two cultures she cares about</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it most accurately describes the main purpose of the text. The narrator asserts that her feeling for each country was deeply her own even though their ways differed widely. She also indicates that, at first, she tried to fit unfamiliar happenings into the rules she had grown up with. Thus, the main purpose of the text is to convey her experience of observing and making sense of differences between two cultures she cares about.</p><p>Choice A is incorrect because the text makes no reference to forming connections with companions. Choice B is incorrect because nothing in the text indicates she was hesitant to ask questions; she explicitly notes that others did not seem to know the origins of customs, implying she had inquired. Choice C is incorrect because the text refers to cultural differences, not physical distance between countries.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

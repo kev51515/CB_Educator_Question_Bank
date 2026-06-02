@@ -1,0 +1,39 @@
+{
+  "questionId": "de0a5b4e-s1",
+  "originalId": "de0a5b4e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In 2023, researchers rediscovered an ancient painted frieze on the walls of a deep sinkhole in southern Mexico. The sinkhole was so narrow that there was no spot from which the frieze, which stretched continuously around the entire chamber, could be viewed or photographed all at once. However, the researchers used a remote-controlled drone fitted with a wide-angle camera to capture overlapping images of every section of the wall. They then worked with Maya scholars to interpret the procession of human and animal figures painted along the frieze.</p>",
+  "stem": "<p>According to the text, what challenge did the researchers have to overcome to examine the frieze?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The sinkhole was so remote that the researchers could not easily reach it.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The sinkhole's dimensions prevented the researchers from fully viewing the frieze at once.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Some of the figures in the frieze were so faded that they could not be photographed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The researchers were unable to operate a drone inside the sinkhole.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says the sinkhole was so narrow that there was no spot from which the entire frieze could be viewed or photographed at once.</p><p>Choice A is incorrect; the text never describes the sinkhole as remote, only as narrow. Choice C is incorrect; the text never says the figures were faded. Choice D is incorrect; the text says the researchers successfully used a drone.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

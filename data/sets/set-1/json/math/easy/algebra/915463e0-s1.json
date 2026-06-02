@@ -1,0 +1,39 @@
+{
+  "questionId": "915463e0-s1",
+  "originalId": "915463e0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a particular species of frog, a healthy body temperature is between 18.5&deg;C and 22.0&deg;C, inclusive. Which of the following temperatures is within the healthy range?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17.2&deg;C</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>23.4&deg;C</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18.0&deg;C</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20.5&deg;C</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The healthy range is 18.5 &le; t &le; 22.0. Only 20.5&deg;C lies in this interval.</p><p>Choice A is below 18.5. Choice B is above 22.0. Choice C is below 18.5.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z"
+}

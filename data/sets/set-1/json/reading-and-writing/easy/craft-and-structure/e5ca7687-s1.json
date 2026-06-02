@@ -1,0 +1,39 @@
+{
+  "questionId": "e5ca7687-s1",
+  "originalId": "e5ca7687",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists studying the ancient city of Herculaneum in Italy recently uncovered a well-preserved bakery. The site contains stone ovens, milling tools, and charred loaves. These items give researchers a clearer picture of what daily food production in Herculaneum may have looked like. For example, the archaeologists found a stone mill that they believe was used to grind grain for the bakery's breads.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To compare ancient tools with modern ones</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To discuss the political system of Italy</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To describe a region's climate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To present a recent archaeological discovery</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text reports that archaeologists discovered a well-preserved bakery in Herculaneum and describes the items found there.</p><p>Choice A is incorrect. The text doesn't compare ancient and modern tools. Choice B is incorrect. The text doesn't discuss politics. Choice C is incorrect. The text doesn't describe climate.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

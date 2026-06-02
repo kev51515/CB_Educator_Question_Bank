@@ -1,0 +1,25 @@
+{
+  "questionId": "82c05b34-s1",
+  "originalId": "82c05b34",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A2.T4.medium",
+  "stimulus": "<p><strong>Text 1</strong></p><p>The independent bookstore sector is expanding in both store count and event programming. With consumers facing endless online options, owners are working to make in-store visits a memorable communal experience worth recounting. This trend is connected to the wider &ldquo;experiential economy,&rdquo; in which many people prefer to spend money on lived activities. To remain profitable, bookstores increasingly design their spaces around reader events and curated atmosphere, not just inventory.</p><p><strong>Text 2</strong></p><p>Author appearances are becoming a more significant part of writers&rsquo; livelihoods. One driver of this shift is the spread of e-book subscription services, which give readers access to vast libraries for a fixed monthly fee and reduce sales of individual print copies. With this change in reading habits, many authors now depend heavily on income from in-person events such as readings and signings.</p>",
+  "stem": "<p>Based on the texts, both authors would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Consumers&rsquo; growing interest in lived experiences is mostly confined to the book industry.</p>"},
+    {"id": "b", "content": "<p>Shifts in consumer behavior are producing changes in book-related businesses.</p>"},
+    {"id": "c", "content": "<p>Readers are more interested in paying for e-book subscriptions than in attending bookstore events.</p>"},
+    {"id": "d", "content": "<p>Rising demand for in-store bookstore events also generates higher demand for e-book subscription services.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Both texts describe a shift in consumer behavior and how it is reshaping book-related businesses. Text 1 explains that consumers&rsquo; preference for lived experiences is leading bookstores to design around events and atmosphere. Text 2 describes how the spread of e-book subscriptions is reducing print sales and pushing authors to rely on in-person events. Both authors thus agree that changing consumer behaviors are producing changes in book-related businesses.</p><p>Choice A is incorrect because Text 1 presents bookstore events as one instance of a broader trend; neither text claims the trend is confined to books. Choice C is incorrect because neither text contrasts subscriptions and in-person events as competing consumer choices. Choice D is incorrect because neither text claims a causal link from in-store events to subscription demand.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

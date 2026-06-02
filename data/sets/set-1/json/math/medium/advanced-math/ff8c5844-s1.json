@@ -1,0 +1,39 @@
+{
+  "questionId": "ff8c5844-s1",
+  "originalId": "ff8c5844",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<figure class=\"table\"><table border=\"1\"><thead><tr><th>x</th><th>f(x)</th></tr></thead><tbody><tr><td>-1</td><td>16</td></tr><tr><td>0</td><td>1</td></tr><tr><td>1</td><td>1/16</td></tr><tr><td>2</td><td>1/256</td></tr></tbody></table></figure><p>For the exponential function f, the table shows four values of x and their corresponding values of f(x). Which equation defines f?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = 16<sup>x</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = -16<sup>x</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = (1/16)<sup>x</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = -(1/16)<sup>x</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>For an exponential function of the form f(x) = a \u00b7 b<sup>x</sup>, f(0) = a. Here f(0) = 1, so a = 1. Then f(1) = b = 1/16, so f(x) = (1/16)<sup>x</sup>. Check: f(-1) = (1/16)<sup>-1</sup> = 16 \u2713; f(2) = 1/256 \u2713. Choice C is correct. Choices A, B, and D fail at least one of the table values.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

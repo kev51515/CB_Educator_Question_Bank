@@ -1,0 +1,22 @@
+{
+  "questionId": "d0430601-s1",
+  "originalId": "d0430601",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the relationship between weeks elapsed and the number of subscribers, in thousands, of a streaming service. A line of best fit passes through (2, 18) and (10, 50). Based on this line of best fit, what is the predicted number of subscribers, in thousands, at week 6?</p>",
+  "answerOptions": null,
+  "keys": [
+    "34"
+  ],
+  "rationale": "<p>Slope = (50 − 18)/(10 − 2) = 32/8 = 4 thousand per week. y-intercept: from y = 4x + b, using (2, 18): 18 = 8 + b, so b = 10. At x = 6, y = 4(6) + 10 = 34 thousand subscribers.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

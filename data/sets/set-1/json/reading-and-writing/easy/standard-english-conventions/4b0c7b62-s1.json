@@ -1,0 +1,39 @@
+{
+  "questionId": "4b0c7b62-s1",
+  "originalId": "4b0c7b62",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The kora is a 21-string harp-lute from West Africa. The bridge of a stringed instrument is the small piece ______ A bridge made of wood transmits the strings' vibrations to the instrument's body and the surrounding air.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>where is the bridge placed?</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>that supports the strings?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>where the bridge is placed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>that supports the strings.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The sentence is declarative and ends with a relative clause (\"that supports the strings\") followed by a period.</p><p>Choice A uses interrogative word order and a question mark within a declarative sentence. Choice B uses a declarative-form clause but ends with a question mark. Choice C uses unrelated content (about placement) that breaks the sentence's meaning.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

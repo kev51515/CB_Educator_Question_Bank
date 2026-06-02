@@ -1,0 +1,72 @@
+{
+  "questionId": "6e3fdd1a",
+  "externalId": "3e2440f0-a872-4575-a256-8df5dd1a9aeb",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:47.657813+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "771a9cdc-daa1-4490-ba3f-fb868638a3c0",
+      "content": "<p>reproduction of</p>"
+    },
+    {
+      "id": "14a17e73-bfa4-4814-9fd3-e387ac1f5b59",
+      "content": "<p>contribution to</p>"
+    },
+    {
+      "id": "4d4f6b9e-7a90-4d9f-8b25-e075c37f0008",
+      "content": "<p>application to</p>"
+    },
+    {
+      "id": "5c99318d-7910-4ef1-87a4-05b04df56da7",
+      "content": "<p>perception of</p>"
+    }
+  ],
+  "keys": [
+    "5c99318d-7910-4ef1-87a4-05b04df56da7"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the early years of film. In this context, &ldquo;perception of&rdquo; means understanding of or view of. The text states that people in the film industry had a personal stake (&ldquo;a vested interest&rdquo;) in getting the public to embrace film when the medium was new and indicates that some film critics helped legitimize film as an art form&mdash;that is, that they helped to make film something people accepted as a type of art. This context conveys that it was the critics&rsquo; ability to influence the public&rsquo;s view of the world of cinema that some early filmmakers relied on.</p><p>Choice A is incorrect because in this context, &ldquo;reproduction of&rdquo; would refer to a copy of something or the act of copying something, and it wouldn&rsquo;t make sense to describe the general public as reproducing the world of cinema, or copying film as an entire art form. Choice B is incorrect. In this context, &ldquo;contribution to&rdquo; would refer to playing a significant part in causing something to happen. Although the text indicates that people in the early film industry had reasons to want the public to embrace film, it wouldn&rsquo;t make sense to suggest that filmmakers relied on film critics to influence how the public contributed to the world of cinema; the text focuses on the public&rsquo;s view of film once the world of cinema existed (embracing it, regarding it as legitimate art) and doesn&rsquo;t suggest the general public was responsible for the medium&rsquo;s existence. Choice C is incorrect because in this context, &ldquo;application to&rdquo; would refer to putting something to direct use, and it wouldn&rsquo;t make sense to say that the general public needed to be used in a practical way in the world of cinema. The text focuses on the importance of the public&rsquo;s view of film when the medium was new but not on the idea that the public needed to be directly involved in film.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>During film&rsquo;s early years, those who worked in the industry had a vested interest in convincing the public to embrace the new medium. As Sumiko Higashi argues, some filmmakers relied on film critics to influence the public&rsquo;s <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the world of cinema. Critics who drew similarities between film and traditional art forms, like drama, could help legitimize film as an art form.</p>",
+    "keys": [
+      "5c99318d-7910-4ef1-87a4-05b04df56da7"
+    ],
+    "answerOptions": [
+      {
+        "id": "771a9cdc-daa1-4490-ba3f-fb868638a3c0",
+        "content": "<p>reproduction of</p>"
+      },
+      {
+        "id": "14a17e73-bfa4-4814-9fd3-e387ac1f5b59",
+        "content": "<p>contribution to</p>"
+      },
+      {
+        "id": "4d4f6b9e-7a90-4d9f-8b25-e075c37f0008",
+        "content": "<p>application to</p>"
+      },
+      {
+        "id": "5c99318d-7910-4ef1-87a4-05b04df56da7",
+        "content": "<p>perception of</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of the early years of film. In this context, &ldquo;perception of&rdquo; means understanding of or view of. The text states that people in the film industry had a personal stake (&ldquo;a vested interest&rdquo;) in getting the public to embrace film when the medium was new and indicates that some film critics helped legitimize film as an art form&mdash;that is, that they helped to make film something people accepted as a type of art. This context conveys that it was the critics&rsquo; ability to influence the public&rsquo;s view of the world of cinema that some early filmmakers relied on.</p><p>Choice A is incorrect because in this context, &ldquo;reproduction of&rdquo; would refer to a copy of something or the act of copying something, and it wouldn&rsquo;t make sense to describe the general public as reproducing the world of cinema, or copying film as an entire art form. Choice B is incorrect. In this context, &ldquo;contribution to&rdquo; would refer to playing a significant part in causing something to happen. Although the text indicates that people in the early film industry had reasons to want the public to embrace film, it wouldn&rsquo;t make sense to suggest that filmmakers relied on film critics to influence how the public contributed to the world of cinema; the text focuses on the public&rsquo;s view of film once the world of cinema existed (embracing it, regarding it as legitimate art) and doesn&rsquo;t suggest the general public was responsible for the medium&rsquo;s existence. Choice C is incorrect because in this context, &ldquo;application to&rdquo; would refer to putting something to direct use, and it wouldn&rsquo;t make sense to say that the general public needed to be used in a practical way in the world of cinema. The text focuses on the importance of the public&rsquo;s view of film when the medium was new but not on the idea that the public needed to be directly involved in film.</p>",
+    "externalid": "3e2440f0-a872-4575-a256-8df5dd1a9aeb",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>During film&rsquo;s early years, those who worked in the industry had a vested interest in convincing the public to embrace the new medium. As Sumiko Higashi argues, some filmmakers relied on film critics to influence the public&rsquo;s <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the world of cinema. Critics who drew similarities between film and traditional art forms, like drama, could help legitimize film as an art form.</p>"
+}

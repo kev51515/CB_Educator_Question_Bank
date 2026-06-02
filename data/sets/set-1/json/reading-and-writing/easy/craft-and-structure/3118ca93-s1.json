@@ -1,0 +1,39 @@
+{
+  "questionId": "3118ca93-s1",
+  "originalId": "3118ca93",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The plant-based meat market, in which consumers purchase substitutes for traditional animal products, generated nearly $7 billion worldwide in 2020. Expecting continued growth, some analysts <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that revenues will more than triple by 2030.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>worried</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>predicted</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>produced</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>denied</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the analysts are making a claim about future revenue. \"Predicted\" means to state what will happen and matches this meaning. Choice A is incorrect because \"worried\" would suggest concern, not a forecast. Choice C is incorrect because the analysts are not making the revenue, only forecasting it. Choice D is incorrect because \"denied\" would contradict the expectation of growth.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

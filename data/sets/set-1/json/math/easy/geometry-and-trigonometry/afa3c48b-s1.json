@@ -1,0 +1,39 @@
+{
+  "questionId": "afa3c48b-s1",
+  "originalId": "afa3c48b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, line <em>m</em> is parallel to line <em>n</em>, and a transversal crosses both lines. On the same side of the transversal, one interior angle between lines <em>m</em> and <em>n</em> has measure 38 degrees and the other has measure x degrees. What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>38</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>142</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>52</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. When two parallel lines are cut by a transversal, same-side interior angles are supplementary, so x + 38 = 180, giving x = 142.</p><p>Choice A is incorrect: same-side interior angles are supplementary, not congruent.</p><p>Choice C is incorrect: 52 is the complement of 38, not the supplement.</p><p>Choice D is incorrect: 180 is the supplementary total, not the unknown angle.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

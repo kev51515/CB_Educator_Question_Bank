@@ -1,0 +1,39 @@
+{
+  "questionId": "b6569d0e-s1",
+  "originalId": "b6569d0e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table below gives the number of employees at a company whose age at the time of hire falls within the interval listed.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th>Age at hire (years)</th><th>Number of employees</th></tr></thead><tbody><tr><td style=\"text-align: center;\">Under 30</td><td style=\"text-align: center;\">5</td></tr><tr><td style=\"text-align: center;\">30&ndash;39</td><td style=\"text-align: center;\">12</td></tr><tr><td style=\"text-align: center;\">40&ndash;49</td><td style=\"text-align: center;\">9</td></tr><tr><td style=\"text-align: center;\">50 or older</td><td style=\"text-align: center;\">6</td></tr></tbody></table></figure><p>Of those employees who were at least 30 years old when they were hired, what fraction were at least 40 years old?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15/32</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9/27</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6/15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15/27</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The number of employees at least 30 years old at hire is 12 + 9 + 6 = 27. Of those, the number at least 40 years old is 9 + 6 = 15. Therefore the fraction is 15/27 (which reduces to 5/9). Choice A is incorrect because 15/32 uses the total of all employees as the denominator instead of conditioning on those at least 30. Choice B is incorrect because 9/27 omits the 6 employees who were 50 or older from the numerator. Choice C is incorrect because 6/15 is the fraction of employees at least 40 years old who were at least 50.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A3.T8.medium"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "9f70fd47-s1",
+  "originalId": "9f70fd47",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>What is the y-coordinate of the y-intercept of the graph of 2x/5 = -3y/8 + 12 in the xy-plane?</p>",
+  "answerOptions": null,
+  "keys": [
+    "32"
+  ],
+  "rationale": "<p>The y-intercept occurs when x = 0. Substituting x = 0: 0 = -3y/8 + 12, so 3y/8 = 12, giving y = 32. The y-coordinate of the y-intercept is 32.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.hard"
+}

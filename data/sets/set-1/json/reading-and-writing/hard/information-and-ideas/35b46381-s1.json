@@ -1,0 +1,39 @@
+{
+  "questionId": "35b46381-s1",
+  "originalId": "35b46381",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In a 2019 paper, Hira Nakamoto and colleagues, conceding that the proposed existence of a fifth fundamental force\u2014an extremely weak, short-range interaction supposedly coupling to baryon number\u2014lacked any direct experimental confirmation, reasonably maintained that the hypothesis remained worth pursuing on theoretical grounds because no experiment had yet ruled it out either. A 2024 report by an international consortium, however, presents the first high-precision torsion-balance measurements specifically designed to detect a fifth-force contribution at the predicted range. The measured force profile matched the predictions of the four established forces to within a fraction of a percent, leaving no room for the proposed additional interaction.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Although theoreticians were justified in pursuing the fifth-force hypothesis before the 2024 report, the report's findings indicate that the rationale offered in the 2019 paper no longer holds.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The torsion-balance measurements described in the 2024 report were specifically designed to test predictions made in Nakamoto and colleagues' 2019 paper.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Nakamoto and colleagues had assumed that direct experimental confirmation of a fifth force would never be possible, an assumption that the 2024 report calls into question.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Prior to 2024, an excessive concentration on theoretical work delayed the development of suitable experimental techniques for testing the fifth-force hypothesis.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text first endorses Nakamoto and colleagues' theoretical interest in a fifth force on the grounds that no evidence ruled it out. It then describes a 2024 experiment whose results are inconsistent with the hypothesized force. The central claim is that the new experimental finding removes the original rationale for continued theoretical work on the hypothesis.</p><p>Choice B is incorrect because the text does not say the experiment was designed specifically to test the 2019 paper\u2014only that it measured the relevant force profile. Choice C is incorrect because Nakamoto et al. argued the hypothesis was worth considering precisely because evidence was lacking, not because confirmation was impossible. Choice D is incorrect because the text describes their theoretical work approvingly (\"reasonably maintained\") and never suggests it impeded experiment.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ca9bb527-s1",
+  "originalId": "ca9bb527",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = 3x - 5</p><p>y = 22</p><p>What is the solution (x, y) to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(9, 22)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(22, 9)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(3, 22)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(22, 3)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 22 = 3x - 5 yields x = 9.</p><p>Other choices switch coordinates or use incorrect values.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

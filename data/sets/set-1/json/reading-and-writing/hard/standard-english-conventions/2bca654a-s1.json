@@ -1,0 +1,39 @@
+{
+  "questionId": "2bca654a-s1",
+  "originalId": "2bca654a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Building elaborate partnerships via lichen symbiosis\u2014that is, a mutualistic relationship between fungi and algae\u2014______</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>water and minerals can be exchanged through the cohabitation of green algae's cells and the fungus <em>Cladonia rangiferina</em>'s hyphal threads.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>green algae and the fungus <em>Cladonia rangiferina</em> can exchange water and minerals through their interwoven algal cells and fungal threads.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the exchange of water and minerals is enabled by the cohabitation of green algae's cells and the fungus <em>Cladonia rangiferina</em>'s hyphal threads.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>it is the cohabitation of green algae's cells and the fungus <em>Cladonia rangiferina</em>'s hyphal threads that makes the exchange of water and minerals possible.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"green algae and the fungus <em>Cladonia rangiferina</em>\" the subject of the sentence and places it immediately after the modifying phrase \"Building...algae.\" In doing so, this choice clearly establishes that the algae and fungus\u2014not another noun in the sentence\u2014are the entities building the partnerships.</p><p>Choice A is incorrect because it produces a dangling modifier: \"water and minerals\" cannot be what is building the partnerships. Choice C is incorrect because \"the exchange of water and minerals\" placed after the modifier illogically suggests that an exchange is what is building the partnerships. Choice D is incorrect because the it-cleft \"it is\" placed after the modifier illogically suggests that \"it\" is building the partnerships, producing an unnecessarily wordy and confusing sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A4.T9.hard"
+}

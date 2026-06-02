@@ -1,0 +1,22 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A printer produces pages at a constant rate of 75 pages per hour. At this rate, how many pages will the printer produce in 4 hours?</p>",
+  "answerOptions": null,
+  "keys": [
+    "300"
+  ],
+  "rationale": "<p>The correct answer is 300. At 75 pages per hour, in 4 hours the printer produces 75 \u00d7 4 = 300 pages.</p>",
+  "questionId": "fe4c1c9e-s1",
+  "originalId": "fe4c1c9e",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

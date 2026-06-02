@@ -1,0 +1,22 @@
+[
+  {"id": "a6155e60-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "1b219d14-s1", "templateId": "transitions.A4.T10.easy", "verdict": "ok"},
+  {"id": "63c73b50-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "bfb4e85e-s1", "templateId": "transitions.A1.T2.easy", "verdict": "ok"},
+  {"id": "660d50dc-s1", "templateId": "transitions.A4.T10.easy", "verdict": "ok"},
+  {"id": "fc5e83cc-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "a204d618-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "f33f0892-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "42d92dea-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "3831f2d7-s1", "templateId": "transitions.A5.T15.easy", "verdict": "ok"},
+  {"id": "01c8c433-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "b5a399f1-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "e268c452-s1", "templateId": "transitions.A5.T13.easy", "verdict": "ok"},
+  {"id": "49ecf985-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "0fd4df40-s1", "templateId": "transitions.A4.T11.easy", "verdict": "ok"},
+  {"id": "a773f069-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "2b5e0731-s1", "templateId": "transitions.A2.T4.easy", "verdict": "ok"},
+  {"id": "d10e46a2-s1", "templateId": "transitions.A3.T7.easy", "verdict": "ok"},
+  {"id": "6036ad0e-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"},
+  {"id": "56336696-s1", "templateId": "transitions.A5.T14.easy", "verdict": "ok"}
+]

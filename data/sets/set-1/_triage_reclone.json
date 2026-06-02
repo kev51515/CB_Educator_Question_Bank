@@ -1,0 +1,560 @@
+[
+  {
+    "id": "6ea8c23f-s1",
+    "templateId": "boundaries.A4.T8.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'Three or more parallel items in the series'. Clone has only two coordinate elements joined by 'and' (where tremors cluster / how clusters correlate); rationale itself states 'only two such elements (not a series of three or more)'. Not a T8 series."
+  },
+  {
+    "id": "64a40675-s1",
+    "templateId": "boundaries.A1.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Keyed answer C yields 'played with an volume and improvisation'\u2014'an volume' is ungrammatical (should be 'a volume'). The stem's article mismatches the following consonant-initial noun, so no option produces a grammatical sentence. Rationale repeats the 'an volume' error."
+  },
+  {
+    "id": "35e21b06-s1",
+    "templateId": "cross-text-connections.A1.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "Type T2 must_preserve requires 'Explicit reference in the stem to an underlined portion, named claim, or specific quoted excerpt in Text A'. Stimulus contains no underlined/marked portion, and the stem refers to 'the researchers' perspective in Text 1 on the behavior of the dolphins without loggers' (a general perspective, not an underlined excerpt). This is T1 structure, not T2."
+  },
+  {
+    "id": "f3c45b4f-s1",
+    "templateId": "cross-text-connections.A1.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "templateId tags T1 (respond to entire argument; no underlined portion) but stimulus contains a <span>-marked target and stem says 'respond to the underlined portion in Text 1'. Structure matches T2 (respond to underlined/specific claim), not T1. Note: span styling is used instead of <u> but functions as an underlined target."
+  },
+  {
+    "id": "3e9cc0c2-s1",
+    "templateId": "equivalent-expressions.A1.T3.medium",
+    "verdict": "rationale_inconsistent",
+    "detail": "Rationale's derivation correctly yields 1 - q^5 (which is choice d, the keyed answer), but the concluding sentence states 'Choice (c) is correct' \u2014 choice c is 1 + q^4. Label mismatch in rationale text."
+  },
+  {
+    "id": "2c88af4d-s1",
+    "templateId": "equivalent-expressions.A3.T7.hard",
+    "verdict": "wrong_answer",
+    "detail": "Expression simplifies to y^(5/3)/x^(7/2). Choice B = y\u00b7\u221b(y\u00b2)/(x\u00b3\u00b7\u221ax) = y^(5/3)/x^(7/2). Choice A = \u221b(y\u2075)/\u221a(x\u2077) = y^(5/3)/x^(7/2). Both A and B are mathematically equivalent to the original expression. Rationale claims A is 'not equivalent' which is false. Two correct answer choices."
+  },
+  {
+    "id": "5d93c782-s1",
+    "templateId": "equivalent-expressions.A2.T5.easy",
+    "verdict": "wrong_answer",
+    "detail": "x^2+2x-35 factors as (x+7)(x-5) which is choice B, not keyed choice C ((x-7)(x+5)=x^2-2x-35). Rationale correctly derives (x+7)(x-5) but the answer key points to wrong choice."
+  },
+  {
+    "id": "fb96a5b3-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "2(x+1)+x = 2x+2+x = 3x+2 (choice C). Keyed answer D (3x+1) is incorrect; rationale itself states 3x+2 contradicting the key."
+  },
+  {
+    "id": "e312081b-s1",
+    "templateId": "equivalent-expressions.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "(3x+2)+(4x+6)=7x+8 (choice B). Keyed C (7x+2) is wrong; rationale derives 7x+8 contradicting the key."
+  },
+  {
+    "id": "70482e20-s1",
+    "templateId": "equivalent-expressions.A1.T1.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "Stem 14z^3-6z^3=8z^3 (option c). Rationale correctly states 8z^3, but key is 'd' (20z^3). Key/rationale mismatch."
+  },
+  {
+    "id": "beb86a0c-s1",
+    "templateId": "equivalent-expressions.A2.T4.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "6x^2+11x = x(6x+11) = option b. Rationale correctly states x(6x+11), but key is 'c' (17x^3). Key/rationale mismatch."
+  },
+  {
+    "id": "fd4b2aa0-s1",
+    "templateId": "equivalent-expressions.A1.T1.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "15n^3-8n^3=7n^3 (option a). Rationale correctly states 7n^3, but key is 'b' (7n^6). Key/rationale mismatch."
+  },
+  {
+    "id": "8f82ad81-s1",
+    "templateId": "equivalent-expressions.A1.T3.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "7(x^2+3)=7x^2+21 (option a). Rationale correctly states 7x^2+21, but key is 'b' (7x^2+3). Key/rationale mismatch."
+  },
+  {
+    "id": "fd65f47f-s1",
+    "templateId": "equivalent-expressions.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "(3x^2+2x-7)+(x^2+5x+3) = 4x^2+7x-4 which is option b. Keyed c (3x^2+7x-4) has wrong x^2 coefficient. Rationale correctly derives 4x^2+7x-4 but key points to c."
+  },
+  {
+    "id": "bdb0aa23-s1",
+    "templateId": "equivalent-expressions.A2.T4.easy",
+    "verdict": "wrong_answer",
+    "detail": "4x^5-7x^4+9x^3 = x^3(4x^2-7x+9) which is option b. Keyed d is x^3(4x^2+7x+9) with wrong middle sign. Rationale matches b, not d."
+  },
+  {
+    "id": "dc67c130-s1",
+    "templateId": "equivalent-expressions.A2.T4.easy",
+    "verdict": "rationale_inconsistent",
+    "detail": "Key b = 9ab(5ab^2-3a^2) expands to 45a^2b^3-27a^3b (correct/equivalent), but rationale describes GCF 9a^2b giving 9a^2b(5b^2-3a), which is option a. Rationale-key mismatch."
+  },
+  {
+    "id": "df747160-s1",
+    "templateId": "equivalent-expressions.A2.T5.easy",
+    "verdict": "wrong_answer",
+    "detail": "13(x^2-49y^2) = 13(x-7y)(x+7y) which is option a. Keyed b is 13(x+7y)(x+7y) = perfect square, not difference of squares. Rationale correctly derives a but key is b."
+  },
+  {
+    "id": "83617355-s1",
+    "templateId": "form-structure-and-sense.A2.T4.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'four options vary only in number/person'. Options mix tense AND form (lights, will be lighting, would light, lit) \u2014 this is A1, not A2. Answer 'lights' is grammatically correct, but the item tests tense/form selection, not number agreement."
+  },
+  {
+    "id": "e3b72630-s1",
+    "templateId": "form-structure-and-sense.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "T2 must_preserve requires distractors drawn from finite + at least two non-finite forms. Clone has only one non-finite option (to narrate) plus three finite forms (narrates, narrated, is narrating), violating the distractor-diversity constraint."
+  },
+  {
+    "id": "6a305cd0-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve: 'at least one distractor confuses sample with population, individual with mean, or not-possible-outside with less-plausible-outside'. All four distractors here are arithmetic variants (less than 48, greater than 56, outside interval) with no conceptual sample-vs-population or individual-vs-mean distractor. Matches the listed common_bug of removing the conceptual distractor."
+  },
+  {
+    "id": "4ba0695d-s1",
+    "templateId": "inferences.A1.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "A1.T2 must_preserve requires 'an explicit conditional or hypothetical operator (if, assuming, barring, given that)'. Stimulus contains no such operator; the inferential pivot is 'This pattern further suggests', a synthesis prompt better fitting A2.T4. Answer is logically correct."
+  },
+  {
+    "id": "295a41f0-s1",
+    "templateId": "linear-functions.A4.T3.medium",
+    "verdict": "constraint_violation",
+    "detail": "Violates A4.T3 must_preserve 'Graph is shown as the primary referent'. No graph/figure is included; two points are stated verbally. Without a visual graph, this is A3.T2 (build from two points) on a transformed line, not A4.T3."
+  },
+  {
+    "id": "a1696f3e-s1",
+    "templateId": "linear-functions.A1.T4.easy",
+    "verdict": "wrong_answer",
+    "detail": "p(3)=6(3)+a=18+a=20 gives a=2. Option (a) is '2', option (b) is '-2'. Rationale correctly derives a=2 but states 'Choice B is correct'. Key should be 'a', not 'b'."
+  },
+  {
+    "id": "9d9fe1e6-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "h(x)=24-0.12x: constant 24 is h(0), the water level at the START of measurement. Option (c) says 'water level at the start of the measurement' (correct). Key is 'd' = 'water level at the end of the measurement period' (incorrect). Key should be 'c'."
+  },
+  {
+    "id": "bd9eb2b5-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "7x=84 gives x=12. Option (c) is '12', option (d) is '7'. Rationale correctly computes x=12 but says 'Choice D is correct'. Key should be 'c', not 'd'."
+  },
+  {
+    "id": "bf883fde-s1",
+    "templateId": "linear-functions.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Slope 5 and passes through (0,-12) gives g(x)=5x-12 (choice B). Key 'c' (g(x)=5x) omits the y-intercept; rationale text says 5x-12 yet selects C. Correct answer is B."
+  },
+  {
+    "id": "c10ad793-s1",
+    "templateId": "linear-functions.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "x-intercept is where y=0: (-8,0) = choice A. Key 'b' is (0,4), which is the y-intercept. Rationale's text 'x-intercept is (-8,0)' confirms A; key letter is wrong."
+  },
+  {
+    "id": "de6fe450-s1",
+    "templateId": "linear-functions.A3.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Initial fee $12 grows by $0.75/year, so f(x)=12+0.75x = choice C. Key 'd' (12-0.75x) subtracts; rationale text says '12+0.75x' but selects D. Correct is C."
+  },
+  {
+    "id": "97eab129-s1",
+    "templateId": "linear-functions.A3.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Table pairs give slope 50/200=0.25, so f(x)=0.25x = choice B. Key 'c' (4x) gives 4(200)=800\u226050. Rationale text says 0.25x but selects C. Correct is B."
+  },
+  {
+    "id": "b8cbe394-s1",
+    "templateId": "linear-functions.A3.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Cost = 14d + 25 = choice A. Key 'b' (25d+14) swaps rate and deposit; rationale text says '14d + 25' but selects B. Correct is A."
+  },
+  {
+    "id": "a8e6bd75-s1",
+    "templateId": "linear-functions.A4.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "y=3x+2 \u2192 slope 3, y-intercept (0,2) which is option B. Rationale correctly derives slope=3, b=2, but key labels 'c' (slope 2, y-intercept (0,3)). Rationale-key mismatch."
+  },
+  {
+    "id": "d11910d6-s1",
+    "templateId": "linear-functions.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Line passes through (0,9), so y-intercept is (0,9) = option A. Rationale states (0,9) but key labels 'b' which is (-3,0). Rationale-key mismatch."
+  },
+  {
+    "id": "e4a588ca-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "g(12)=(1/3)(21)=7 = option A. Rationale correctly computes 7 but key labels 'b' (=3). Rationale-key mismatch."
+  },
+  {
+    "id": "bc638f2d-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Constant 7 = q(0) = initial height when bought, matching option B. Rationale identifies initial height but key labels 'c' (keeps cactus 7 months). Rationale-key mismatch."
+  },
+  {
+    "id": "8643d906-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "R(15)=320 means population 320 in year 2015 = option A. Rationale states 'predicted population is 320 in 2015' but key labels 'b' (population 15 in 2015). Rationale-key mismatch."
+  },
+  {
+    "id": "88e13c8c-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "g(300)=24(300)+800=8000 = option C. Rationale computes 8000 but key labels 'd' ($1,124). Rationale-key mismatch."
+  },
+  {
+    "id": "fe287f7e-s1",
+    "templateId": "linear-functions.A3.T3.easy",
+    "verdict": "wrong_answer",
+    "detail": "Total = 45x + 200 = option A. Rationale says 'total is 45x+200' but key labels 'b' (200x+45). Rationale-key mismatch."
+  },
+  {
+    "id": "a73a5c22-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "h(6)=12(6)+5=72+5=77 = option A. Rationale correctly computes 77 but key labels 'b' (=17). Rationale-key mismatch."
+  },
+  {
+    "id": "a232aa96-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "g(-7)=-4(-7)+50=28+50=78 = option B. Rationale correctly computes 78 but key labels 'c' (=22). Rationale-key mismatch."
+  },
+  {
+    "id": "adf60b28-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "h(x)=5x+12: constant 12 is h(0)=initial height. Correct choice is B ('estimated height was 12 inches when first measured'). Keyed 'c' (measured each week for 12 weeks) is wrong; the rationale itself states 12 is h(0), the starting height, which matches B, not C."
+  },
+  {
+    "id": "979b0b8d-s1",
+    "templateId": "linear-functions.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Slope 24 through (0,0) gives g(x)=24x, which is Choice A. Keyed 'b' is g(x)=(1/24)x. Rationale even concludes 'g(x)=24x' but key is B, contradicting the rationale."
+  },
+  {
+    "id": "c4d49134-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "v=25+4(8)=25+32=57, which is Choice B. Keyed 'c'=25 is wrong; the rationale itself shows v=57 but the key points to 25."
+  },
+  {
+    "id": "a9039591-s1",
+    "templateId": "linear-functions.A3.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Slope=5, intercept=12, so g(x)=5x+12, which is Choice C. Keyed 'd' is 12x+5. Rationale concludes 'g(x)=5x+12' but the key letter is D, mismatch."
+  },
+  {
+    "id": "7d6928bd-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Stem says 'at most 20 events', so w+p \u2264 20 = Choice A. Keyed 'b' is w+p \u2265 20 (wrong direction). Rationale text even says 'at most 20 means \u2264 20: w+p \u2264 20' but picks B \u2014 rationale_inconsistent with keyed answer. Also no per-unit costs/weights, violating A1.T1 must_preserve."
+  },
+  {
+    "id": "00ec9102-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Notebooks $2.15, pens $1.30 \u2192 2.15n + 1.30p \u2264 20 = Choice A. Keyed 'b' (1.30n + 2.15p \u2264 20) swaps coefficients with items. Rationale text says '2.15n notebooks and 1.30p pens' which matches Choice A, not Choice B \u2014 rationale_inconsistent."
+  },
+  {
+    "id": "c9355dec-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "A4.T1 must_preserve requires 'graph-based stem (a shaded half-plane image)'. Clone replaces the graph with a text description of two points and shading direction \u2014 categorical drift toward A3/A5 per template's documented common_bug. Math otherwise correct (Choice B)."
+  },
+  {
+    "id": "2c121b25-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Total blue marbles = 0.4x + 0.6y \u2265 500 = Choice A. Keyed 'b' (40x + 60y \u2265 500) fails to convert percents to decimals. Rationale even contradicts itself by saying 'Choice A doesn't convert percents' though Choice A does convert; rationale_inconsistent."
+  },
+  {
+    "id": "2869fe95-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.easy",
+    "verdict": "wrong_answer",
+    "detail": "Lowest 42, highest 78 \u2192 42 \u2264 t \u2264 78 = choice C. Keyed 'd' (t \u2265 78) is incorrect. Rationale text correctly derives 42 \u2264 t \u2264 78 but key doesn't match (rationale_inconsistent also)."
+  },
+  {
+    "id": "4a090a46-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "150 \u2212 118 = 32 = choice C. Keyed 'd' (118) is incorrect; rationale correctly computes 32 but key is d (rationale_inconsistent)."
+  },
+  {
+    "id": "744ee7d7-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Vertical line x=24 with shading to right \u2192 x \u2265 24 = choice B. Keyed 'c' (y \u2265 24) describes a horizontal line and is incorrect. Rationale text matches B but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "563407e5-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "5\u00d730=150 min, 5\u00d740=200 max. Only 180 (choice B) lies in [150, 200]. Keyed 'c' (125) is below the minimum and is incorrect. Rationale text correctly identifies 180 but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "59a49431-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "y > 2x \u2212 3. (0,5): 5 > \u22123 TRUE = choice A. (0,\u22125): \u22125 > \u22123 FALSE. Keyed 'b' is incorrect; correct is A. Rationale substitutes (0,5) and verifies it works but then attributes it to choice B (rationale_inconsistent)."
+  },
+  {
+    "id": "84d0d07e-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "Snacks 3a + drinks 5b \u2264 40 = choice C. Keyed 'd' (3a + 5b \u2265 40) reverses the inequality. Rationale text says '3a + 5b \u2264 40' but key is d (rationale_inconsistent)."
+  },
+  {
+    "id": "4047cfa7-s1",
+    "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "800 \u2212 624 = 176 = choice B. Keyed 'c' (624) is the current total, not the additional hours. Rationale text computes 176 but key is c (rationale_inconsistent)."
+  },
+  {
+    "id": "3b4b5b1e-s1",
+    "templateId": "lines-angles-and-triangles.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'explicit parallel statement' and 'single transversal' for A1.T1. Stem only describes two angles forming a straight line \u2014 pure linear-pair problem with no parallel lines or transversal. Belongs in A6."
+  },
+  {
+    "id": "3b44439b-s1",
+    "templateId": "lines-angles-and-triangles.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'parallel-lines configuration'. Clone has only a linear pair (no parallel lines, no transversal). Also fails to require solving for a parameter \u2014 the linear-pair sum is given directly. Belongs in A6."
+  },
+  {
+    "id": "3828f53d-s1",
+    "templateId": "lines-angles-and-triangles.A1.T1.easy",
+    "verdict": "wrong_answer",
+    "detail": "The 145\u00b0 angle is at the j-k intersection, so the interior triangle angle there is 180-145=35\u00b0. Triangle has 90\u00b0 (j\u22a5q) + b\u00b0 + 35\u00b0 = 180\u00b0, giving b=55, not 35. The rationale even states 'two acute angles summing to 90\u00b0' which yields 35+b=90 \u2192 b=55, contradicting the keyed value 35. Correct answer is choice B (55)."
+  },
+  {
+    "id": "3f8d5876-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "wrong_answer",
+    "detail": "Solving y=x+1, y=x^2-5 with x>0: x^2-x-6=0, x=3, y=4. Solution is (3,4) which is option a. Rationale correctly derives (3,4) but key is 'b' = (1,2), which does not even satisfy the system. Key/option mismatch; correct key is 'a'. Also type_drift (graph removed from T10) but wrong_answer takes priority."
+  },
+  {
+    "id": "568aaf27-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.medium",
+    "verdict": "wrong_answer",
+    "detail": "x+y=6, y=x^2 gives x^2+x-6=0, so x=2 or x=-3. Both 2 (B) and -3 (A) are listed as choices. Question asks 'a possible value of x' \u2014 both A and B are valid, making the keyed single answer ambiguous."
+  },
+  {
+    "id": "95d1c344-s1",
+    "templateId": "nonlinear-functions.A3.T1.medium",
+    "verdict": "constraint_violation",
+    "detail": "A3.T1 must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone provides only verbal description of the parabola (vertex (5,14), passes (0,4))\u2014no figure. This matches the common bug 'replacing svg with text-only description (drops aspect)'. Question fits A3.T2 better. Answer 4 is mathematically correct."
+  },
+  {
+    "id": "a45ffacb-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates 'nonlinear function' skill scope: stem defines f(x) = -ax + b, which is linear, not nonlinear. Answer a=1 works only because f is linear; if f were nonlinear (e.g., -ax^2+b), answer differs. Must_preserve nonlinear function form violated."
+  },
+  {
+    "id": "4dd4efcf-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Axis of symmetry x=-3 gives 6a=8, so a=4/3\u22481.333. Decimal sanity: 4/3=1.333 \u2265 1, so statement II (a \u2265 1) is TRUE. Rationale incorrectly claims '4/3 < 1'. c = 9a+k = 12+k with k<0 gives c<12, not necessarily c<0, so I is not forced. Correct answer is 'II only' (c), not 'Neither I nor II' (a)."
+  },
+  {
+    "id": "263f9937-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Population on day n is (2x10^4)(2)^(n-1). For value 2.048x10^9: 2^(n-1) = 1.024x10^5 = 102,400, which is not a power of 2 (n \u2248 17.66). No integer day yields exactly 2.048x10^9; rationale itself admits the approximation. Also aspect_drift: this is A4.T1 (build/use exponential model), not A6.T1 (solve for parameter)."
+  },
+  {
+    "id": "02060533-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Table data is internally inconsistent. From g(-25)=-6: f(-25)=-6(-20)=120. From g(-5)=0: f(-5)=0. From g(15)=6: f(15)=120. A linear f cannot pass through (-25,120),(-5,0),(15,120) since slopes differ (-6 vs +6). Rationale silently drops the (-25,-6) row to derive f(x)=6(x+5). Problem is over-determined/inconsistent."
+  },
+  {
+    "id": "781c2f6e-s1",
+    "templateId": "nonlinear-functions.A5.T2.hard",
+    "verdict": "wrong_answer",
+    "detail": "Given h(x)=m+a(1.5)^x equivalent to f(x)=a(1.5)^x+1.5b, we have m=1.5b. Since b is a positive integer (0<a<b, integers), m=1.5b>0, so Statement I MUST be true. Keyed 'Neither I nor II' is incorrect; correct answer is 'I only' (Choice A). Rationale acknowledges m=1.5b>0 but illogically concludes Neither."
+  },
+  {
+    "id": "b8f13a3a-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates 'function form with at least one unknown parameter' in the must_preserve for nonlinear functions skill. f(x)=-ax+b is a LINEAR function, not nonlinear; this drifts the skill entirely. Arithmetic answer a=5 is correct, but the clone no longer fits the Nonlinear functions skill."
+  },
+  {
+    "id": "70753f99-s1",
+    "templateId": "nonlinear-functions.A3.T3.hard",
+    "verdict": "wrong_answer",
+    "detail": "Vertex x = (9 + (-1))/2 = 4 exactly. All four intervals are open: (-2,0), (0,2), (2,4), (4,6). The value 4 lies strictly inside NONE of them (it sits on the boundary of (2,4) and (4,6)). The rationale even acknowledges this contradiction. The question has no valid answer as constructed; keyed 'd' is not strictly correct."
+  },
+  {
+    "id": "08d03fe4-s1",
+    "templateId": "nonlinear-functions.A5.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'multiple equivalent forms among answer choices'. Computing f(1) in each: A=189, B=63, C=63, D=21. Options are NOT equivalent forms of one function f. Rationale is also internally contradictory ('f(1)=21 in all forms' then shows differing values)."
+  },
+  {
+    "id": "e166aca6-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone uses only a text description of intercepts (no svg/figure)."
+  },
+  {
+    "id": "ca4ee54e-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone describes the graph verbally and gives the answer in the text, with no figure attached."
+  },
+  {
+    "id": "d45572cc-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure) with an identifiable target point. Clone is text-only and the answer (-2) is given verbatim in the stem."
+  },
+  {
+    "id": "893c7519-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; the y-intercept (0,6) is stated directly in the stem so no graph reading occurs."
+  },
+  {
+    "id": "50418728-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; (0,5) is stated in the stem, removing any need to read the graph."
+  },
+  {
+    "id": "7160cbb3-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'; clone has only a text description of points, no figure. Common-bug: 'replacing svg with text-only description (drops aspect)'."
+  },
+  {
+    "id": "6abec9a8-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "No graph/figure provided; stem only lists points in text. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."
+  },
+  {
+    "id": "b5c43226-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Clone has no graph/svg; only text description of points. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."
+  },
+  {
+    "id": "608cf8e2-s1",
+    "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard",
+    "verdict": "wrong_answer",
+    "detail": "Stem says all original 60 values are greater than 25; adding 25 (strictly less than every value) MUST decrease the mean, so statement I ('mean of B is less than mean of A') must be true. Statement II is also possible. The correct answer is 'I and II' (C), not 'II only' (D). The rationale itself notes I would be true but waffles incorrectly."
+  },
+  {
+    "id": "52f7b898-s1",
+    "templateId": "right-triangles-and-trigonometry.A4.T8.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates T8 must_preserve: 'answer is a length, area, or coefficient \u2014 not a trig-ratio value'. Clone asks for tan A (a trig-ratio value). Better fits A4 in a trig context but not T8."
+  },
+  {
+    "id": "94f7c9e2-s1",
+    "templateId": "right-triangles-and-trigonometry.A3.T5.hard",
+    "verdict": "constraint_violation",
+    "detail": "T5 must_preserve requires 'the ratio appears in the stem (not the answer)'. Here cos M is given in the answer choices, not the stem; no numerical ratio constraint is provided in the stem. This is closer to A1.T2 (Pythagorean expression form) extended to trig, but violates T5's stem-ratio constraint."
+  },
+  {
+    "id": "2704399f-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "constraint_violation",
+    "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph, drifting from A3 (graphical) toward A1. Answer (D) is mathematically correct, but the categorical aspect/type is violated."
+  },
+  {
+    "id": "6e6a3241-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "constraint_violation",
+    "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph (categorical drift A3\u2192A1 per template). Answer (D) is mathematically correct."
+  },
+  {
+    "id": "e6545fa8-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone has no stimulus/graph and presents only the algebraic equations y=x+1, y=-x+5. This is the categorical drift to A1 explicitly warned about in common_bugs."
+  },
+  {
+    "id": "b0fc3166-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone provides only equations y=2x-1, y=-x+8 with no graph (stimulus is null). Categorical drift from A3 to A1."
+  },
+  {
+    "id": "ccc3ad6b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph (stimulus null) and presents only equations y=-2x+3, y=x-6. Categorical drift to A1."
+  },
+  {
+    "id": "f6b055dc-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph and only lists equations y=x, y=-x+6. Categorical drift to A1."
+  },
+  {
+    "id": "332e75bf-s1",
+    "templateId": "transitions.A5.T16.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve: 'Ultimately (or close synonym) as the unique correct option.' Keyed answer is 'Hence,' a cause/effect marker (A2.T4 territory), not a culmination marker. Stem structure (struggle to reconcile \u2192 resulting conclusion) is cause-then-effect, fitting T4, not T16 culmination. Also the rationale explicitly rejects 'Ultimately' (option C) in favor of 'Hence', contradicting the type's required answer family."
+  },
+  {
+    "id": "af142f8d-s1",
+    "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard",
+    "verdict": "rationale_inconsistent",
+    "detail": "Key is 'd' and reasoning correctly leads to choice d, but rationale's final sentence states 'Choice (c) is correct' instead of 'Choice (d) is correct'."
+  },
+  {
+    "id": "9b22bf7b-s1",
+    "templateId": "words-in-context.A1.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve stem wording for A1.T1 is 'As used in the text, what does the word \"X\" most nearly mean?' but clone uses A2-style stem 'Which choice completes the text with the most logical and precise word or phrase?'. The target 'determine' is underlined in the passage (not a blank), so the answer logic still works toward 'Control', but the stem is mismatched to A1.T1."
+  },
+  {
+    "id": "6286dd96-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates A1.T1 must_preserve: target word not visibly marked in passage. Stem asks about word 'invent' but passage contains a blank '______' instead of an underlined/quoted 'invent'. Structure is fill-in (A2), not A1.T1."
+  },
+  {
+    "id": "5d48f889-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Target word 'mingled' is not visible in the passage; the stimulus shows a blank placeholder (______) where the word should be. Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'."
+  },
+  {
+    "id": "1695391a-s1",
+    "templateId": "words-in-context.A1.T2.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates T2 must_preserve stem wording 'As used in the text, what does the phrase \"X\" most nearly mean?' Clone uses 'what does the author most nearly mean by ...' Options are full sentences rather than short paraphrases, drifting toward a central-idea question."
+  },
+  {
+    "id": "417f8dfa-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates T1 must_preserve 'Target word visibly marked (underline/quote) in the passage.' The stimulus contains a blank '______' instead of the target word 'featured', converting an A1 disambiguation item into an A2-style fill-in-the-blank."
+  },
+  {
+    "id": "45a109a3-s1",
+    "templateId": "words-in-context.A1.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Target word 'disturbed' is in the stem only, not visibly marked in the passage (the passage shows a blank '______' instead). Violates must_preserve: 'Target word visibly marked (underline/quote) in the passage'. This also confuses A1 (given word) with A2 (fill-in)."
+  }
+]

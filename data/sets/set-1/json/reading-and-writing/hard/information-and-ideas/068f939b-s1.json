@@ -1,0 +1,39 @@
+{
+  "questionId": "068f939b-s1",
+  "originalId": "068f939b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>The Japanese aesthetic concept of <em>wabi-sabi</em>&mdash;an appreciation for impermanence, imperfection, and the patina of age&mdash;has long shaped traditional crafts such as tea-ware and architecture. Scholar Naomi Tagawa cautions that translating <em>wabi-sabi</em> simply as &ldquo;rustic beauty&rdquo; in English-language texts is misleading: it reduces the concept to a purely visual style and obscures the ethical and contemplative dimensions of <em>wabi-sabi</em> as a philosophy of how to live with material things over time.</p>",
+  "stem": "<p>Which statement, if true, would most directly support Tagawa&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Classical Japanese tea-ceremony manuals describe <em>wabi-sabi</em> not only as a quality of objects but as a disciplined attitude of the host toward guests, care, and the passage of time.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The English phrase &ldquo;rustic beauty&rdquo; first appears in mid-twentieth-century translations of Japanese essays on tea-ware.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Many contemporary museum exhibitions use the phrase &ldquo;rustic beauty&rdquo; in wall texts because curators consider it accessible to broad audiences.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Modern Japanese ceramics that exhibit asymmetry and visible cracks are often described as <em>wabi-sabi</em> by Japanese critics and collectors alike.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it directly demonstrates that <em>wabi-sabi</em> in classical sources extends beyond appearance to include ethical and contemplative aspects&mdash;exactly what Tagawa says is obscured by &ldquo;rustic beauty.&rdquo; Choice B is about translation history, not whether the concept exceeds appearance. Choice C describes curatorial practice, not the concept&rsquo;s meaning. Choice D affirms only the visual sense of <em>wabi-sabi</em>, which is the reduced sense Tagawa criticizes.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9c759a09-s1",
+  "originalId": "9c759a09",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a 1925 poem titled \"To My Daughter.\"</p><p style=\"padding-left:1em;\">Step forth, my child,<br>Lifted by my fondest hope!<br>Wide horizons, yet unseen,<br>Wait<br>For your discovery.<br>I cannot, though I wish,<br>Walk the road beside you,<br>My journey nears its end,<br>But the world is calling you!</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To encourage a child to embrace the experiences life will offer</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To warn a child that she will face many challenges throughout her life</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To suggest that raising a child involves many struggles</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To express hope that a child will have the same accomplishments as her parent did</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The speaker urges the child to \"step forth\" toward \"wide horizons, yet unseen\" and says \"the world is calling you,\" framing future experiences as positive opportunities to embrace.</p><p>Choice B is incorrect. The speaker presents future experiences positively, not as challenges. Choice C is incorrect. The text doesn't discuss the struggles of raising a child. Choice D is incorrect. The speaker doesn't tie the child's future to matching parental accomplishments.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

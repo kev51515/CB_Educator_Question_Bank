@@ -1,0 +1,39 @@
+{
+  "questionId": "50b99b2d-s1",
+  "originalId": "50b99b2d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Objects P and Q each travel at a constant speed. The speed of object P is one-third the speed of object Q. Object P travels a distance of 6x inches in y seconds. Which expression represents the time, in seconds, it takes object Q to travel a distance of 36x inches?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2y</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6y</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18y</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y/2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Object P's speed is 6x/y inches per second, so object Q's speed is 3 \u00d7 6x/y = 18x/y inches per second. The time for Q to travel 36x inches is (36x) / (18x/y) = 2y seconds.</p><p>Choices B, C, and D result from forgetting the speed factor of 3 or inverting the relation.</p>",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T2.hard"
+}

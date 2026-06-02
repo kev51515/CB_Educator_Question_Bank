@@ -1,0 +1,25 @@
+{
+  "questionId": "835545cd-s1",
+  "originalId": "835545cd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T8.medium",
+  "stimulus": "<p>The following text is adapted from Anthony Trollope's 1855 novel <em>The Warden</em>.</p>\n<p style='padding-left:1em'>Miss Threadgold was a lady of decided opinions, whose pronouncements upon her neighbours, whether present at her tea-table or absent from it, were marked by a candour at times no less than astonishing. This habit caused her invitations to be received with a measured caution. Miss Threadgold was perfectly aware of this hesitation among her neighbours, and indeed prided herself upon it.</p>",
+  "stem": "<p>Based on the text, what is true about Miss Threadgold's neighbours?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They are likely offended by remarks Miss Threadgold has made about them.</p>"},
+    {"id": "b", "content": "<p>They are too taken up with their own affairs to spend time with Miss Threadgold.</p>"},
+    {"id": "c", "content": "<p>They make an effort to avoid topics that might upset Miss Threadgold.</p>"},
+    {"id": "d", "content": "<p>They are unable to visit Miss Threadgold as often as she would wish.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it presents an inference about the neighbours that is supported by the text. The text says Miss Threadgold's pronouncements are marked by an \"astonishing\" candour and that her invitations are received with \"measured caution.\" Together, these details suggest the neighbours' caution arises from being offended by what she has said about them.</p><p>Choice B is incorrect because the text gives no indication the neighbours are preoccupied with their own affairs. Choice C is incorrect because the text says the neighbours hesitate to come at all, not that they steer conversation around sensitive topics. Choice D is incorrect because Miss Threadgold takes pride in their caution rather than wanting more company.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

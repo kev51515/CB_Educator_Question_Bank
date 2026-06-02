@@ -1,0 +1,39 @@
+{
+  "questionId": "affb2315-s1",
+  "originalId": "affb2315",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>There are 60 students in a robotics club. A sample of the robotics club students was selected at random and asked whether they intend to compete in an upcoming tournament. Of those surveyed, 25% responded that they intend to compete. Based on this survey, which of the following is the best estimate of the total number of robotics club students who intend to compete in the tournament?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>45</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The estimated proportion of all robotics club students who intend to compete is 25%, or 0.25. Applying this to the 60 students gives 0.25 times 60 = 15.</p><p>Choice A is incorrect: 25 is the percent, not a count.</p><p>Choice B is incorrect: 45 corresponds to those who do not intend to compete.</p><p>Choice C is incorrect: 60 is the total number of club students.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy"
+}

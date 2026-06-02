@@ -1,0 +1,39 @@
+{
+  "questionId": "90bd9ef8-s1",
+  "originalId": "90bd9ef8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The average annual electricity cost for a certain home is $1,500. The homeowner plans to spend $18,000 to install a rooftop solar system. The homeowner estimates that the average annual electricity cost will then be $900. Which of the following inequalities can be solved to find <em>t</em>, the number of years after installation at which the total amount of electricity-cost savings will exceed the installation cost?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18,000 &gt; 1,500<em>t</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18,000 &gt; (1,500 \u2212 900)<em>t</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18,000 &lt; 900<em>t</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18,000 &lt; (1,500 \u2212 900)<em>t</em></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The annual savings is 1,500 \u2212 900 = 600 dollars per year. After <em>t</em> years, the total savings is (1,500 \u2212 900)<em>t</em>. The savings exceeds the installation cost when 18,000 &lt; (1,500 \u2212 900)<em>t</em>.</p><p>Choices A, B, and C are incorrect; they reverse the inequality direction or fail to use the savings difference.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.medium"
+}

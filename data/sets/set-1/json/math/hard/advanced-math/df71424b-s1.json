@@ -1,0 +1,39 @@
+{
+  "questionId": "df71424b-s1",
+  "originalId": "df71424b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the function <i>f</i> defined by <i>f</i>(<i>x</i>) = <i>ab</i><sup><i>x</i></sup> + <i>c</i>, where <i>a</i>, <i>b</i>, and <i>c</i> are constants and <i>b</i> &ne; 1, the graph of <i>y</i> = <i>f</i>(<i>x</i>) in the <i>xy</i>-plane has a horizontal asymptote at <i>y</i> = 4 and passes through the points (0, 7) and (1, 5.5). As <i>x</i> increases without bound, the values of <i>f</i>(<i>x</i>) approach 4 from above. How many of the constants <i>a</i>, <i>b</i>, and <i>c</i> are positive?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>None</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>One</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Three</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Two</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The horizontal asymptote <i>y</i> = 4 gives <i>c</i> = 4 (positive). At <i>x</i> = 0, <i>a</i> + <i>c</i> = 7 yields <i>a</i> = 3 (positive). At <i>x</i> = 1, 3<i>b</i> + 4 = 5.5 yields <i>b</i> = 0.5 (positive). All three constants are positive.</p><p>Choices A, B, and D undercount.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

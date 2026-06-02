@@ -1,0 +1,39 @@
+{
+  "questionId": "4ff597db-s1",
+  "originalId": "4ff597db",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The mean number of years that the 15 staff members of a law firm have worked at the firm is 8.4 years. After one of the staff members leaves the firm, the mean number of years that the remaining staff members have worked at the firm is reduced to 7.8 years. How many years did the staff member who left work at the firm?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16.8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2.5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10.0</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Total years before: 15 &middot; 8.4 = 126. Total years after: 14 &middot; 7.8 = 109.2. The departing staff member had worked 126 &minus; 109.2 = 16.8 years. Choice B is the difference of means; C and D are common miscalculations.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T13.hard"
+}

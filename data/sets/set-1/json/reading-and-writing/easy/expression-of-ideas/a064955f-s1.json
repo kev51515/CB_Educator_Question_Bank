@@ -1,0 +1,25 @@
+{
+  "questionId": "a064955f-s1",
+  "originalId": "a064955f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In most owl species, the male and female look nearly identical in size and color. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> snowy owls are different. They are one of the few owl species in which males and females display strikingly different plumage&mdash;males are almost pure white, while females have dark barring across their feathers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Similarly,</p>"},
+    {"id": "b", "content": "<p>However,</p>"},
+    {"id": "c", "content": "<p>Next,</p>"},
+    {"id": "d", "content": "<p>Thus,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"However\" logically signals that the claim about snowy owls in this sentence contrasts with the information about most owl species in the previous sentence.</p><p>Choice A is incorrect because \"similarly\" illogically signals similarity, when snowy owls are presented as different. Choice C is incorrect because \"next\" illogically signals a step in a process. Choice D is incorrect because \"thus\" illogically signals consequence; the claim contrasts with rather than follows from the previous information.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A1.T1.easy"
+}

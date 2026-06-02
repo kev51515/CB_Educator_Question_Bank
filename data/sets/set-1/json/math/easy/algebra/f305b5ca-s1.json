@@ -1,0 +1,39 @@
+{
+  "questionId": "f305b5ca-s1",
+  "originalId": "f305b5ca",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Ava purchased a loaf of bread and some apples at the market. Ava paid <math><mo>$</mo><mn>3</mn></math> for the loaf of bread and <math><mo>$</mo><mn>2.40</mn></math> per pound for the apples. If Ava paid a total of <math><mo>$</mo><mn>13.80</mn></math> for the loaf of bread and the apples, which equation can be used to find <math><mi>p</mi></math>, the number of pounds of apples Ava purchased? (Assume there is no sales tax.)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2.40</mn><mi>p</mi><mo>+</mo><mn>3</mn><mo>=</mo><mn>13.80</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>2.40</mn><mi>p</mi><mo>-</mo><mn>3</mn><mo>=</mo><mn>13.80</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>2.40</mn><mo>+</mo><mn>3</mn><mi>p</mi><mo>=</mo><mn>13.80</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2.40</mn><mo>-</mo><mn>3</mn><mi>p</mi><mo>=</mo><mn>13.80</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The cost of <math><mi>p</mi></math> pounds of apples at $2.40/lb is <math><mn>2.40</mn><mi>p</mi></math>. Adding the $3 bread and setting equal to the total $13.80 yields <math><mn>2.40</mn><mi>p</mi><mo>+</mo><mn>3</mn><mo>=</mo><mn>13.80</mn></math>.</p><p>Choices B, C, and D are incorrect and may result from conceptual errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.easy"
+}

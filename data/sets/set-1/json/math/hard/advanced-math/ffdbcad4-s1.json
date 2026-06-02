@@ -1,0 +1,39 @@
+{
+  "questionId": "ffdbcad4-s1",
+  "originalId": "ffdbcad4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The expression 6<i>x</i>&sup2; + <i>b</i><i>x</i> + 35, where <i>b</i> is a constant, can be rewritten as (<i>h</i><i>x</i> + <i>k</i>)(<i>x</i> + <i>j</i>), where <i>h</i>, <i>k</i>, and <i>j</i> are integer constants. Which of the following must be an integer?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>35/<i>k</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>35/<i>h</i></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>b</i>/<i>k</i></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>b</i>/<i>h</i></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Expanding (<i>h</i><i>x</i> + <i>k</i>)(<i>x</i> + <i>j</i>) = <i>h</i><i>x</i>&sup2; + (<i>h</i><i>j</i> + <i>k</i>)<i>x</i> + <i>k</i><i>j</i>. Equating with 6<i>x</i>&sup2; + <i>b</i><i>x</i> + 35 gives <i>h</i> = 6, <i>k</i><i>j</i> = 35, and <i>b</i> = <i>h</i><i>j</i> + <i>k</i>. Since <i>k</i> and <i>j</i> are integers with <i>k</i><i>j</i> = 35, the value 35/<i>k</i> = <i>j</i> is an integer. The other options are not guaranteed to be integers.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A2.T5.hard"
+}

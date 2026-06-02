@@ -1,0 +1,39 @@
+{
+  "questionId": "577b09fa-s1",
+  "originalId": "577b09fa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Marisol Vega of the Pacific Marine Institute is a malacologist, a scientist who specializes in mollusks. To Vega, octopuses are the ocean's most resourceful invertebrates: they can change their skin ______ open jars to retrieve food, and pass through narrow gaps as long as their beak can fit.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>color,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>color</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>color;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>color. And</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A comma properly separates the first item (\"they can change their skin color\") from the second item (\"open jars to retrieve food\") in a list.</p><p>Choice B omits required punctuation between list items. Choice C misuses a semicolon for a simple list. Choice D creates a sentence fragment beginning with \"And open jars.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A4.T8.easy"
+}

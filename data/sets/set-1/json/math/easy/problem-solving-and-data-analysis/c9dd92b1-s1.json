@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot shows the density of different concentrations of orange juice, where the x-axis represents concentration (in percent) and the y-axis represents density (in kilograms per cubic meter). The data show that density increases linearly with concentration, passing through (10%, 1,020), (40%, 1,090), and (70%, 1,160). According to the trend shown by the data, which of the following is closest to the predicted density, in kilograms per cubic meter (kg/m³), for orange juice with a concentration of 55%?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1,100</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,125</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1,150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,200</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope is (1,090 − 1,020)/(40 − 10) ≈ 2.33 per percent. At concentration 55%, density ≈ 1,020 + 2.33·(55 − 10) = 1,020 + 105 = 1,125 kg/m³.</p><p>Other choices result from misreading the trend.</p>",
+  "questionId": "c9dd92b1-s1",
+  "originalId": "c9dd92b1",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

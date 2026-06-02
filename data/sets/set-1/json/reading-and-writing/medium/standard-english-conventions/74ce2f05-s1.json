@@ -1,0 +1,25 @@
+{
+  "questionId": "74ce2f05-s1",
+  "originalId": "74ce2f05",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>A study led by chemist Adaeze Okonkwo at the University of Cape Town found that ostriches that forage near agricultural runoff retain elevated concentrations of a rare nitrogen isotope, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> traceable to the synthetic fertilizers used on nearby fields. Birds with these elevated levels were also found to lay eggs with notably thicker shells on average.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>nitrogen-15 (<sup>15</sup>N)</p>"},
+    {"id": "b", "content": "<p>nitrogen-15, (<sup>15</sup>N)</p>"},
+    {"id": "c", "content": "<p>nitrogen-15, (<sup>15</sup>N),</p>"},
+    {"id": "d", "content": "<p>nitrogen-15 (<sup>15</sup>N),</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the punctuation of a supplementary element within a sentence. The comma after &ldquo;(15N)&rdquo; pairs with the comma after &ldquo;isotope&rdquo; to separate the supplementary element &ldquo;nitrogen-15 (15N)&rdquo; from the rest of the sentence. The supplementary element defines the &ldquo;rare nitrogen isotope.&rdquo;</p><p>Choice A is incorrect because it fails to set off the supplementary element with a closing comma. Choice B is incorrect because it leaves the supplementary element unclosed and inserts an unwarranted comma before the parentheses. Choice C is incorrect because no comma is needed before the parentheses, which already separate &ldquo;15N&rdquo; from the rest of the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

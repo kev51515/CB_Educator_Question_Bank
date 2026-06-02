@@ -1,0 +1,644 @@
+{
+  "section": "Math",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Area and volume",
+  "originals_count": 90,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "2D area and perimeter",
+      "description": "Student is given dimensions (or a target area/perimeter) of a planar figure — rectangle, square, triangle, or circle — and must apply the standard 2D formula (A=lw, A=s^2, A=(1/2)bh, A=pi*r^2, perimeter/circumference) in either the forward direction (dimensions -> measurement) or reverse direction (measurement + one dimension -> other dimension). The cognitive operation is direct formula recall and one-step arithmetic substitution, with no scaling, no compositing, and no 3D solids involved.",
+      "boundary_with_other_aspects": "A1 differs from A2 because A2's figures are 3D solids requiring volume or surface-area formulas; differs from A3 because A1 never involves comparing two similar figures or applying a side-ratio -> area-ratio relation; differs from A4 because A1's figure is a single named primitive given dimensionally in the stem, not built from a context, composite, or coordinate description.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Rectangle / square area or perimeter",
+          "description": "A rectangle or square is described by side length(s); the student computes area or perimeter (forward) OR is given the area/perimeter plus one side and finds the missing side (reverse).",
+          "core_skill_demand": "Recall A=lw or A=s^2 (and P=2(l+w) or P=4s) and either multiply two integers or divide the given area by the known side to find the missing one.",
+          "example_originals": ["02b02213", "165c30c4", "4efea6a3", "59cb654c", "d0b6d927", "1f0b582e", "aef4fd8a"],
+          "frequency": { "easy": 17, "medium": 2, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both sides are small whole numbers given explicitly in the stem (e.g. length 7, width 6)",
+                "Single direct application of A=lw, A=s^2, P=2(l+w), or P=4s",
+                "Reverse questions require exactly one integer division (area/known side, perimeter/4) with integer result"
+              ],
+              "example_stem": "What is the area, in square inches, of a rectangle with a length of 7 inches and a width of 6 inches?",
+              "example_ids": ["93f48423", "165c30c4", "4efea6a3", "76670c80"]
+            },
+            "medium": {
+              "characteristics": [
+                "One side described indirectly via a one-step relation (e.g. 'perimeter of square Y is 2 times the perimeter of square X') so the student must first solve a small linear step before applying the formula",
+                "OR the stem asks for the symbolic expression that gives the area rather than its numeric value, requiring choice between multiplicative vs additive forms",
+                "Numbers may be larger (two-digit) but still integer"
+              ],
+              "example_stem": "Square X has a side length of 12 cm. The perimeter of square Y is 2 times the perimeter of square X. What is the length of one side of square Y?",
+              "example_ids": ["1f0b582e", "aef4fd8a"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard for this type; rectangle/square forward and reverse questions remain at Easy or Medium tier in the bank."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Single named primitive (rectangle or square) given by sides or by an area/perimeter measure",
+              "Exactly one formula application; reverse versions require exactly one inverse operation",
+              "Answer is a whole number (or simple terminating decimal) in the same unit class as the stem"
+            ],
+            "must_vary": [
+              "Which measurement is asked (area vs perimeter, forward vs reverse)",
+              "Unit (inches, centimeters, meters, units)",
+              "Specific integers for length/width",
+              "MCQ distractors that correspond to confusing perimeter vs area (e.g. 2(l+w) vs lw), or forgetting to square for area-of-square"
+            ],
+            "common_bugs": [
+              "Cloner swaps area and perimeter formulas, producing distractors that are no longer plausible (e.g. ignoring the 2(l+w) vs lw trap)",
+              "Reverse clone yields a non-integer side length, breaking SPR or making the MCQ key irrational",
+              "Adds a second relation step at Easy level (e.g. 'length is 5 more than twice the width'), drifting from Easy to Medium difficulty"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Triangle area or side from perimeter",
+          "description": "A triangle is given either (a) with base and height so the student computes A=(1/2)bh, or (b) with two sides and a perimeter so the student finds the third side by subtraction.",
+          "core_skill_demand": "Recall A=(1/2)bh and multiply, OR recall perimeter = sum of sides and subtract. At Hard, the same formula is applied but base/height must first be extracted from radical side lengths or from coordinates.",
+          "example_originals": ["f39f88b7", "0d43db90", "29e9b28c", "b4767bef", "468613c0", "9c0a0eca", "a4ed5285", "306264ab", "099526fc"],
+          "frequency": { "easy": 4, "medium": 3, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Either base+height with small integers OR perimeter+two-sides with small integers",
+                "All numeric values are integers and the answer is an integer",
+                "No figure interpretation beyond labeling sides"
+              ],
+              "example_stem": "A triangle has a base length of 40 cm and a height of 90 cm. What is the area, in sq cm, of the triangle?",
+              "example_ids": ["f39f88b7", "b4767bef", "0d43db90", "29e9b28c"]
+            },
+            "medium": {
+              "characteristics": [
+                "Base and height are larger integers, OR the height is given indirectly (e.g. the legs of a right triangle, requiring recognition that the two legs serve as base and height)",
+                "Answer may be a non-integer simple decimal or fraction (e.g. 7.5 = 15/2)",
+                "Stem may include a not-to-scale figure"
+              ],
+              "example_stem": "The figure shows the lengths, in inches, of two sides of a right triangle (legs 3 and 5). What is the area of the triangle?",
+              "example_ids": ["a4ed5285", "468613c0", "9c0a0eca"]
+            },
+            "hard": {
+              "characteristics": [
+                "Side lengths are given as radicals (e.g. 2*sqrt(2), sqrt(80)) and student must identify the two legs of the right triangle and multiply radical expressions",
+                "OR the triangle is embedded in the coordinate plane and one leg's length must be computed via the distance formula before applying A=(1/2)bh",
+                "Multi-step: identify-which-sides-are-legs -> compute -> apply formula"
+              ],
+              "example_stem": "A right triangle has sides 2*sqrt(2), 6*sqrt(2), and sqrt(80). What is the area of the triangle?",
+              "example_ids": ["306264ab", "099526fc"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Triangle stays a single triangle (not compounded with another shape)",
+              "The required formula is A=(1/2)bh or sum-of-sides-equals-perimeter; no introduction of trigonometry or Heron's formula",
+              "At Hard, the right-triangle structure (legs perpendicular) must remain so that base and height are unambiguous"
+            ],
+            "must_vary": [
+              "Whether the question is forward area or reverse missing-side-of-perimeter",
+              "Specific integer or radical values",
+              "Orientation of the figure if one is supplied"
+            ],
+            "common_bugs": [
+              "Cloner drops the (1/2) factor in distractors, making the wrong-answer pattern transparent",
+              "Hard clone replaces radicals with integers, collapsing the Hard variant back to Easy/Medium",
+              "Coordinate-leg clone uses points that do not yield a clean integer or simple-radical leg length"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Circle area / circumference / diameter",
+          "description": "A circle is described by its radius, diameter, or circumference; the student applies A=pi*r^2 and C=2*pi*r (or d=2r) once, either forward or in reverse.",
+          "core_skill_demand": "Recall and apply circle formulas. At Hard, the same recall is reused inside a ratio-of-areas comparison or radius-substitution context.",
+          "example_originals": ["38517165", "6ae1360d", "e86f0651", "5afbdc8e", "f329442c"],
+          "frequency": { "easy": 0, "medium": 6, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy in this bank — College Board treats single-circle formula application as Medium-tier."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Radius (or diameter, or circumference) given as a single integer or simple decimal",
+                "Answer expressed in terms of pi (e.g. '43 pi', '4.41') so no decimal approximation of pi is required",
+                "May ask for sum-of-two-circle-areas (still one formula applied twice) or to convert between r, d, and C"
+              ],
+              "example_stem": "A circle has a radius of 43 meters. What is the area, in square meters, of the circle? -> 1,849 pi.",
+              "example_ids": ["e86f0651", "6ae1360d", "38517165", "98c12e38", "96467fea", "5afbdc8e"]
+            },
+            "hard": {
+              "characteristics": [
+                "Radii are given symbolically (e.g. radius 3n and 129n) and the student must compute the ratio of areas, recognizing (r2/r1)^2",
+                "OR multi-circle / multi-step reasoning where one circle's radius is itself derived from another quantity"
+              ],
+              "example_stem": "Circle A has radius 3n and circle B has radius 129n. The area of B is how many times the area of A?",
+              "example_ids": ["f329442c"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Single-circle formula application (or two parallel applications for sum-of-areas)",
+              "Answer expressible exactly in terms of pi or as the integer multiplier in 'k*pi' form",
+              "Forward/reverse direction stays consistent (don't swap which of r, d, C is the unknown without preserving difficulty)"
+            ],
+            "must_vary": [
+              "Which quantity is given vs unknown (r, d, C, A)",
+              "The numeric radius or diameter",
+              "Whether the answer is asked as 'k pi' (SPR-friendly) or in MCQ form"
+            ],
+            "common_bugs": [
+              "Cloner picks a radius whose square is not clean, producing ugly k pi values",
+              "Distractors confuse C=2 pi r with A=pi r^2 but in arithmetically obvious ways",
+              "Hard ratio-of-areas clone forgets that the area ratio is (r2/r1)^2, not r2/r1, so the labeled correct answer is itself wrong"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "3D volume and surface area",
+      "description": "Student is given the dimensions (or a target volume/surface area) of a 3D solid — right rectangular prism, cube, cylinder, cone, sphere, hemisphere, or square/triangular prism — and applies the standard 3D formula in the forward direction (dimensions -> V or SA) or in reverse (V or SA + some dimensions -> missing dimension or symbolic expression).",
+      "boundary_with_other_aspects": "A2 differs from A1 because the figure is a 3D solid (cube, prism, cylinder, cone, sphere); differs from A3 because no two similar solids are compared via a scale factor; differs from A4 because the solid is a single primitive named in the stem rather than a composite, scale-model, or context-described object.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Rectangular prism / cube volume or surface area",
+          "description": "A right rectangular prism (sometimes a cube) is given by length, width, and height; the student computes the volume (V=lwh, V=s^3) or surface area, or reverses to find a missing edge.",
+          "core_skill_demand": "Recall V=lwh / V=s^3 / SA=2(lw+lh+wh) / SA=6 s^2 and either multiply three numbers, divide the volume by the product of two dimensions, or apply two formulas in sequence (e.g. from V infer edge, then compute SA).",
+          "example_originals": ["2b41a4c4", "50774285", "d683a9cc", "4b7bb316", "e336a1d2", "ec5d4823", "e4b4e9ea", "310c87fe", "9f934297", "983412ea", "ba8ca563", "f7e626b2", "62ec6574"],
+          "frequency": { "easy": 3, "medium": 4, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "All three dimensions given as small integers in the stem",
+                "Single application of V=lwh; the formula itself may even be quoted in the stem",
+                "Answer is a clean integer"
+              ],
+              "example_stem": "A right rectangular prism has a length of 11 m, width 8 m, height 10 m. What is the volume?",
+              "example_ids": ["2b41a4c4", "50774285", "d683a9cc"]
+            },
+            "medium": {
+              "characteristics": [
+                "Cube volume from edge length (large integer, e.g. 41^3) OR finding the missing dimension when V and the area of the base are given",
+                "Surface-area variants where one face is missing (e.g. 'box without a lid' computes 5 s^2 not 6 s^2)",
+                "Numbers larger; the answer remains an integer"
+              ],
+              "example_stem": "A cube has an edge length of 41 inches. What is the volume?",
+              "example_ids": ["e336a1d2", "e4b4e9ea", "ec5d4823", "4b7bb316"]
+            },
+            "hard": {
+              "characteristics": [
+                "Two-formula chain: e.g. given SA -> infer edge -> compute V (cube); given V -> infer edge -> compute SA",
+                "Symbolic answer expressing surface area as an expression in a variable (e.g. base area 24t cm^2, find SA in terms of t)",
+                "Surface area of a non-cube prism computed from scratch (three different face pairs)"
+              ],
+              "example_stem": "A cube has surface area 54 sq m. What is the volume, in cubic meters?",
+              "example_ids": ["310c87fe", "ba8ca563", "9f934297", "f7e626b2", "983412ea", "62ec6574"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Solid is a right rectangular prism (possibly a cube) — no oblique prisms, no compound solids",
+              "Number of unknowns matches difficulty (1 unknown at Easy, 1 plus a formula chain at Hard)",
+              "Surface-area formula matches the stated geometry (e.g. 5-face 'without lid' is preserved as 5-face, not silently treated as 6-face)"
+            ],
+            "must_vary": [
+              "Which dimension/measurement is the unknown (V, SA, l, w, h, edge)",
+              "Specific integer values",
+              "Whether the stem uses 'rectangular prism', 'box', 'cube', or 'right square prism' wording"
+            ],
+            "common_bugs": [
+              "Cloner converts SA formula incorrectly when one face is missing (forgets that 5 s^2 vs 6 s^2 changes both the answer and the key)",
+              "Hard SA-from-V chain produces a non-integer edge, breaking the integer assumption",
+              "Symbolic-SA clone drops or duplicates a 2 in 2(lw+lh+wh), making the expression algebraically wrong"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Cylinder volume or dimension",
+          "description": "A right circular cylinder is given by radius (or diameter or circumference of base) and height; the student computes V=pi*r^2*h or reverses to find r, h, or the base area.",
+          "core_skill_demand": "Recall V=pi*r^2*h, substitute, and either multiply (forward) or divide (reverse). At Hard, an extra step converts circumference/diameter to radius first, or expresses V symbolically.",
+          "example_originals": ["a2659088", "ae33e0a1", "c0586eb5", "3b931fb0", "cecbdeba", "f67e4efc", "08b7a3f5", "deff8a2f", "b0dc920d", "dc71597b"],
+          "frequency": { "easy": 0, "medium": 7, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy in this bank."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Radius (or diameter, requiring one halving step) and height both given as small integers",
+                "Answer expressed in 'k pi' form",
+                "Reverse variant: given V (and base area or one dimension) find the other -> one division step"
+              ],
+              "example_stem": "A right circular cylinder has height 8 m and base radius 12 m. What is the volume, in cubic meters?",
+              "example_ids": ["a2659088", "ae33e0a1", "c0586eb5", "3b931fb0", "cecbdeba", "f67e4efc", "08b7a3f5"]
+            },
+            "hard": {
+              "characteristics": [
+                "Radius given only indirectly via circumference -> r = C / (2 pi) first, then V",
+                "Symbolic answer: V expressed as a function of r where h is given in terms of r",
+                "Reverse with non-trivial algebra (V given, height given, solve for r requiring a square root)"
+              ],
+              "example_stem": "The circumference of the base of a cylinder is 20 pi m and the height is 6 m. What is the volume?",
+              "example_ids": ["deff8a2f", "b0dc920d", "dc71597b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Right circular cylinder (no oblique, no truncated)",
+              "Exact V=pi*r^2*h application; pi remains symbolic in the answer when the stem requests 'k pi'",
+              "Difficulty signal: Medium requires direct r/h; Hard requires a conversion or symbolic expression step"
+            ],
+            "must_vary": [
+              "Which of r, d, C, h, V is the unknown",
+              "Integer values for r and h",
+              "Whether the answer is in 'k pi' or numeric form"
+            ],
+            "common_bugs": [
+              "Cloner forgets to halve a diameter, producing a wrong key by factor 4",
+              "Hard clone collapses circumference -> radius into a single step, removing the conversion that defines Hard",
+              "Distractors fail to mirror the classic r-vs-d confusion, removing the obvious trap"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Cone / sphere / hemisphere volume",
+          "description": "A right circular cone, sphere, or hemisphere is given by radius, diameter, or height; the student applies V=(1/3)pi*r^2*h or V=(4/3)pi*r^3 (or one-half of it for a hemisphere), forward or in reverse.",
+          "core_skill_demand": "Recall the (1/3) factor for a cone or (4/3) factor for a sphere and substitute. At Hard, the formula is rearranged (e.g. given cone volume find slant height via Pythagorean theorem with the base radius).",
+          "example_originals": ["d621cffb", "899c6042", "1be8b6b2", "c984f1a5"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 3 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Sphere or cone with radius given as a small integer or simple fraction",
+                "Answer remains in terms of pi",
+                "Single application of the formula"
+              ],
+              "example_stem": "A sphere has a radius of 17/5 feet. What is the volume, in cubic feet?",
+              "example_ids": ["d621cffb"]
+            },
+            "hard": {
+              "characteristics": [
+                "Reverse: cone V and base radius (or base area) given -> find height -> then use Pythagorean theorem to find slant height",
+                "OR hemisphere where the (1/2) factor on V_sphere must be remembered and result is approximated",
+                "Multi-step chain (extract r from base area, plug into V, possibly approximate)"
+              ],
+              "example_stem": "A right circular cone has volume 71,148 pi cubic cm and base area 5,929 pi sq cm. What is the slant height?",
+              "example_ids": ["1be8b6b2", "899c6042", "c984f1a5"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Solid type (cone, sphere, or hemisphere) and the matching (1/3), (4/3), or (2/3) factor",
+              "At Hard, the chain length: cone Hard must end with slant height via Pythagoras OR approximation step",
+              "Hemisphere clones must preserve the half-of-sphere semantics"
+            ],
+            "must_vary": [
+              "Specific radius / height numbers",
+              "Whether the stem provides base area or base radius",
+              "Whether the answer is exact (k pi) or an approximation"
+            ],
+            "common_bugs": [
+              "Cloner forgets (1/3) for the cone, producing distractors that look like cylinder answers",
+              "Hemisphere clone divides by 2 the diameter instead of the volume (or vice versa)",
+              "Hard cone clone skips the Pythagorean step, collapsing it to a Medium 'find h from V' question"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Similar figures and scaling",
+      "description": "Student is told that two figures are similar (or that one's linear dimensions are a constant multiple of the other's) and must propagate that linear scale factor k to a perimeter (factor k), area (factor k^2), surface area (factor k^2), or volume (factor k^3). The cognitive operation is recognizing the dimension of the measured quantity and raising the linear scale to the matching power.",
+      "boundary_with_other_aspects": "A3 differs from A1/A2 because a clone of A3 must compare two figures via a scale factor — turning the question into a single-figure 'compute the area' problem is categorical drift. A3 differs from A4 because the comparison is between abstract similar primitives (squares, rectangles, triangles, prisms), not a real-world scale model embedded in a context.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Similar 2D figures: side -> area scaling",
+          "description": "Two similar 2D figures (squares, rectangles, parallelograms, triangles) are given with a linear scale factor (or with one area and the linear scale); the student must apply area_ratio = k^2.",
+          "core_skill_demand": "Recognize that scaling all linear dimensions by k multiplies the area by k^2; apply forward (k known, areas to compare) or reverse (areas known, find k or a side).",
+          "example_originals": ["03c6994f", "c4e5e23c", "8c1aa743", "502d9690", "459dd6c5", "6708546e", "5b2b8866", "9fec9d49", "e5c57163"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Linear scale factor k given explicitly as a small positive integer (e.g. 6 times, 246 times)",
+                "Single application: given side ratio, square it for area ratio",
+                "Forward direction only (no reverse algebra)"
+              ],
+              "example_stem": "Square A has side lengths 246 times those of square B. The area of A is k times that of B. What is k?",
+              "example_ids": ["03c6994f", "c4e5e23c"]
+            },
+            "hard": {
+              "characteristics": [
+                "Scale factor must be inferred from a ratio of areas (sqrt step) before propagating to a side or perimeter",
+                "OR scale factor is given as a percentage increase (e.g. 20%) and must be converted to 1.2 before squaring",
+                "OR scale factor is fractional (1/10) and squared to a small fraction",
+                "Reverse direction: given two areas and one side, find the corresponding side in the other figure"
+              ],
+              "example_stem": "Rectangle ABCD has area 648 sq in and rectangle EFGH (similar) has area 72 sq in. ABCD's longest side is 36 in. What is the longest side of EFGH?",
+              "example_ids": ["502d9690", "8c1aa743", "459dd6c5", "6708546e", "5b2b8866", "9fec9d49", "e5c57163"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two similar figures explicitly named (not a single figure)",
+              "The k^2 relationship between linear scale and area scale must remain the central operation",
+              "Difficulty signal: Medium clones give k directly; Hard clones require either sqrt-of-area-ratio, percentage conversion, or reverse algebra"
+            ],
+            "must_vary": [
+              "Whether figures are squares, rectangles, parallelograms, or triangles",
+              "The numerical scale factor (integer, fraction, percentage)",
+              "Direction (forward area or reverse side)"
+            ],
+            "common_bugs": [
+              "Cloner applies linear scale to area without squaring (categorical error — produces wrong key)",
+              "Hard clone replaces a fractional or percentage k with an integer k, collapsing to Medium",
+              "Reverse clone yields a non-square-rational area ratio, making the sqrt step irrational and the key non-integer"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Similar 3D solids: side -> volume / SA scaling",
+          "description": "Two similar 3D solids (typically right rectangular prisms or cylinders) are described; the student must propagate the linear scale factor to volume (k^3) or surface area (k^2), often chaining: SA_ratio -> k -> V_ratio.",
+          "core_skill_demand": "Recognize that SA_ratio=k^2 and V_ratio=k^3; chain the two relations to convert between linear, surface, and volume ratios; OR find the scale factor that produces a specified volume multiplier (e.g. 392x).",
+          "example_originals": ["167aff9e", "f243c383", "a07ed090", "93de3f84"],
+          "frequency": { "easy": 0, "medium": 0, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": ["Not represented at Medium for 3D similarity in this bank."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Two solids with surface areas given; student must take sqrt(SA_ratio)=k and then cube it to scale V",
+                "OR find an integer pair (R/r, H/h) whose product r^2*h scales V by a target multiplier (e.g. 392=8^2*7^1)",
+                "OR a composite scaling: two identical prisms glued, requiring deriving k from a surface-area ratio K -> (92/47)K"
+              ],
+              "example_stem": "Right rectangular prism X is similar to Y. SA of X is 58 sq cm, SA of Y is 1,450 sq cm. Volume of Y is 1,250 cu cm. What is the volume of X?",
+              "example_ids": ["167aff9e", "f243c383", "a07ed090", "93de3f84"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two 3D solids (or one solid scaled twice) — never collapse to a single computation on one solid",
+              "Both k^2 and k^3 relations must be operative in the solution chain",
+              "Numerical setup such that sqrt(SA_ratio) and cube root, or the chosen factorization, yield clean integers"
+            ],
+            "must_vary": [
+              "Type of solid (rectangular prism, cylinder, cone)",
+              "Which ratio is the unknown (V from SA, R/r given V multiplier, etc.)",
+              "Whether the scale factor is given numerically or must be inferred"
+            ],
+            "common_bugs": [
+              "Cloner mixes up which exponent applies to which measure (uses k^2 for V or k^3 for SA)",
+              "Numerical scaling chosen so that sqrt(SA_ratio) is irrational — breaks the clean key",
+              "Scale-factor-search variant (e.g. 392x volume) chosen with target number that has no integer factorization a^2 * b"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Similar triangles / polygons: perimeter or corresponding side ratio",
+          "description": "Two similar polygons (usually triangles) are given; the student uses the linear scale factor to find a perimeter, a corresponding side, or to scale an area at a still-linear level (e.g. ratio of areas of similar right triangles via leg ratio).",
+          "core_skill_demand": "Recognize that all corresponding linear measures share the same scale factor k (perimeter, side); compute k from one pair of corresponding sides or perimeters, then apply.",
+          "example_originals": ["0837c3b9", "fc5ef8d3", "e0874bc2", "babd7461"],
+          "frequency": { "easy": 3, "medium": 1, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Linear scale factor k is given or trivially derivable from one pair of corresponding sides or two perimeters",
+                "Only one linear measure (perimeter or side) is asked",
+                "Small integer arithmetic; no area-vs-side dimension mix"
+              ],
+              "example_stem": "Triangle ABC and DEF are similar; corresponding sides given; perimeter of ABC is 20. Perimeter of DEF?",
+              "example_ids": ["0837c3b9", "fc5ef8d3", "babd7461"]
+            },
+            "medium": {
+              "characteristics": [
+                "Scale factor must be computed from a table or ratio of two perimeters before applying to find a side",
+                "Includes one extra abstraction step (e.g. perimeter ratio = side ratio implicit)"
+              ],
+              "example_stem": "Table gives perimeters of similar triangles TUV (37) and XYZ; TU=18. Find XY.",
+              "example_ids": ["e0874bc2"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard for linear-only triangle similarity; Hard variants of triangle similarity migrate into A3.T1 (area scaling)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Pair of similar triangles (or polygons) named in the stem",
+              "Asked quantity is a linear measure (side or perimeter) so the scale factor is applied to the first power",
+              "Clean integer arithmetic for the scale factor"
+            ],
+            "must_vary": [
+              "Whether scale factor is inferred from sides or from perimeters",
+              "Direction (find perimeter of bigger triangle given smaller, or vice versa)",
+              "Triangle labeling and numerical sides"
+            ],
+            "common_bugs": [
+              "Cloner applies k^2 to a perimeter, drifting into A3.T1",
+              "Distractors don't include the classic 'used the wrong direction of k' error",
+              "Clones a side-from-perimeter setup but forgets perimeter ratio = side ratio"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "name": "Composite, coordinate, and contextual figures",
+      "description": "Student must first construct, decompose, or interpret a figure before any area/volume formula can be applied: combine two primitives (sum of areas), subtract one from another, compute area from coordinate points, or extract dimensions from a real-world context (scale model, manufactured container, glass shape).",
+      "boundary_with_other_aspects": "A4 differs from A1 and A2 because the dimensions used in the formula are not given directly — they must be assembled by adding/subtracting two figures, by computing distances from coordinates, or by translating a verbal context. A4 differs from A3 because A4 does not compare two similar figures via a scale factor; even when a 'scale model' appears (e.g. 9fec9d49), the operation is one-shot area scaling and is therefore classified to A3.T1 — A4 instead handles composites, coordinate-defined figures, and engineering/word-problem contexts.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Composite / subtractive 2D and 3D figures",
+          "description": "Two or more figures are combined (sum) or one figure removed from another (difference). Student computes each piece's area or volume and combines them.",
+          "core_skill_demand": "Compute area or volume of each component using A1/A2 formulas, then add or subtract; recognize which formula applies to each component.",
+          "example_originals": ["689abc2a", "bb560789", "e9c5bfb2", "9966235e"],
+          "frequency": { "easy": 2, "medium": 1, "hard": 1 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Both components are 2D primitives with explicit area/dimension given in the stem (no separate formula step needed for one of them)",
+                "One add or one subtract step; integer arithmetic",
+                "Both shapes are named (rectangle, triangle, square)"
+              ],
+              "example_stem": "Triangle R has area 80 cm^2; square S has side 4 cm. What is the total area of R and S?",
+              "example_ids": ["bb560789", "689abc2a"]
+            },
+            "medium": {
+              "characteristics": [
+                "Both components require their own area calculation from dimensions; the comparison or difference is then taken",
+                "May include figure interpretation (a labeled diagram with two named rectangles)"
+              ],
+              "example_stem": "Rectangle ABCD has AB=12; rectangle QRST has QR=5 and QT=10. What is the difference of their areas (or similar)?",
+              "example_ids": ["e9c5bfb2"]
+            },
+            "hard": {
+              "characteristics": [
+                "3D composite: one solid inscribed in / removed from another (e.g. sphere inside cube)",
+                "Requires two full 3D formulas (V_cube and V_sphere) and a final rounding/approximation step",
+                "Large numerical values (e.g. edge 68 in)"
+              ],
+              "example_stem": "A cube has edge 68 in; a sphere of radius 34 in is inside, touching each face's center. What is the volume of the space in the cube not taken by the sphere?",
+              "example_ids": ["9966235e"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Two clearly named figures combined or subtracted",
+              "The combine/subtract operation remains the structural hinge of the question",
+              "At Hard, the inscribed-solid geometry is exact (e.g. sphere diameter equals cube edge)"
+            ],
+            "must_vary": [
+              "Which shapes are combined (triangle+square, rect+rect, cube-sphere, cube-cylinder, etc.)",
+              "Whether the operation is sum or difference",
+              "Specific numerical dimensions"
+            ],
+            "common_bugs": [
+              "Cloner forgets the inscribed-solid constraint (sphere diameter = cube edge), making the figure geometrically impossible",
+              "Distractors no longer include the 'forgot to subtract' or 'added instead of subtracted' classic errors",
+              "Cloner picks Hard numbers that don't round cleanly, producing a key that disagrees with all distractors"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Coordinate-defined figure: area or circle",
+          "description": "Three (or more) points are given by coordinates and define a triangle (whose area must be found) or a circle (whose circumference / radius must be found via the right angle inscribed in a semicircle, or via the distance formula).",
+          "core_skill_demand": "Use the distance formula or coordinate-based area formulas (e.g. (1/2)|x1(y2-y3)+...|) to extract the required lengths, then apply the area or circle formula.",
+          "example_originals": ["096c7ef5", "cf53cb56", "b2528e6b", "eb70d2d0"],
+          "frequency": { "easy": 0, "medium": 2, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Coordinates produce axis-aligned distances (one leg is vertical, one horizontal) so the lengths are read off directly",
+                "Figure is a 'nice' shape (right triangle, square with diagonals on axes)",
+                "Single distance-formula step (or none) and one formula application"
+              ],
+              "example_stem": "Three points (4,8), (7,11), (7,5) define a circle; circumference is k*pi. Find k.",
+              "example_ids": ["096c7ef5", "cf53cb56"]
+            },
+            "hard": {
+              "characteristics": [
+                "Coordinates yield non-axis-aligned segments so the distance formula (with sqrt) is required twice",
+                "Triangle area requires the determinant-style coordinate formula, not just (1/2) bh on visible legs",
+                "Larger or more spread-out coordinates"
+              ],
+              "example_stem": "Triangle with vertices (-3,4), (4,-3), (5,3). What is its area, in square units?",
+              "example_ids": ["b2528e6b", "eb70d2d0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Figure defined purely by coordinate points",
+              "Required answer is area, circumference, radius, or another standard A1/A2 quantity",
+              "At Hard, at least one side must be non-axis-aligned to require the distance formula"
+            ],
+            "must_vary": [
+              "Specific coordinates (rotated, reflected, translated)",
+              "Whether the figure is triangle, square, or circle",
+              "Asked quantity (area vs circumference vs radius)"
+            ],
+            "common_bugs": [
+              "Cloner picks coordinates that yield ugly sqrt values, making the key irrational",
+              "Coordinate triangle clone uses axis-aligned points at Hard, collapsing to Medium",
+              "Circle-from-three-points clone forgets that the right-angle inscribed in a semicircle condition fixes the diameter (when applicable), so the chosen points don't actually lie on a single small-radius circle"
+            ]
+          }
+        },
+        {
+          "id": "T3",
+          "name": "Real-world / contextual prism or cylinder",
+          "description": "A real-world object (drinking glass, fruit can, manufactured cylinder, ballroom floor) is described; the student must extract the relevant geometric primitive's dimensions from the context and apply a volume or area formula, sometimes including approximation or unit conversion.",
+          "core_skill_demand": "Translate a verbal description (and possibly a figure) into the canonical primitive, identify which dimension is unknown, and apply the appropriate 3D formula (often cylinder V) — usually with one extra step like percentage adjustment or subtraction of a known volume.",
+          "example_originals": ["151eda3c", "37dde49f", "a2e76b60"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": ["Not represented at Easy."],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Real-world object described as a single named primitive (cylinder, prism)",
+                "Exactly one extra translation step: percentage increase in a dimension, or subtraction of a known partial volume, or unit conversion (cm <-> fluid ounces) given in the stem",
+                "Numerical setup yields a numeric answer that can be matched to MCQ options"
+              ],
+              "example_stem": "Cylindrical containers: container A has radius 16 cm; container B has radius 25% longer than A. Find the volume of B.",
+              "example_ids": ["151eda3c", "37dde49f", "a2e76b60"]
+            },
+            "hard": {
+              "characteristics": ["Not represented at Hard for contextual prisms in this bank; Hard real-world objects tend to migrate into A2.T2 / A2.T3 (cylinder V from circumference, cone slant)."],
+              "example_stem": "",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Real-world surface description that maps unambiguously to one canonical primitive",
+              "Single 'translate-and-add' step beyond the standard formula (e.g. percentage adjustment, partial-volume subtraction)",
+              "Sensible physical dimensions (no negative radii, no implausible heights)"
+            ],
+            "must_vary": [
+              "The narrative object (can, glass, tank, model, floor)",
+              "Which dimension is given vs unknown",
+              "The extra step (percentage, subtraction, conversion)"
+            ],
+            "common_bugs": [
+              "Cloner removes the contextual step, collapsing the question to a plain A2.T2",
+              "Clone uses a percentage that doesn't yield a clean radius (e.g. 33% increase on 16 -> ugly product)",
+              "Distractors don't reflect classic 'forgot to subtract syrup volume' or 'percent applied to volume instead of radius' errors"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Most Easy items in this bank live in A1.T1 (rectangle/square area-perimeter) or A2.T1 (rectangular prism volume). Medium items concentrate in A2.T2 (cylinders) and A1.T3 (circles). Hard items cluster in A2 (3D solids with formula chains: SA <-> V, circumference -> r, slant height) and A3 (similar-figure scaling, especially k^2 and k^3 propagation). A3 is the most common source of categorical drift in clones: a Hard similar-figure question silently rewritten without the second figure becomes an A1/A2 single-figure clone. A4 questions almost always involve one extra non-formula step (subtract, combine, distance-formula, percentage); preserving that step is essential for difficulty fidelity."
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "af89fa02-s1",
+  "originalId": "af89fa02",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T2.medium",
+  "stimulus": "<p>The Sumerian ruler Shulgi accomplished a great deal during his nearly half-century on the throne of Ur. He standardized weights and measures across his kingdom, established a network of post stations on the royal road, and oversaw a flourishing of literary and administrative writing. Today, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> he is mainly remembered for a single innovation: the highly trained civil bureaucracy he assembled to administer the Third Dynasty of Ur.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>however,</p>"},
+    {"id": "b", "content": "<p>therefore,</p>"},
+    {"id": "c", "content": "<p>for instance,</p>"},
+    {"id": "d", "content": "<p>likewise,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"However\" logically signals that the information in this sentence—that Shulgi is mainly remembered for a single innovation, his civil bureaucracy—is contrary to what one might assume from the previous information about his many accomplishments.</p><p>Choice B is incorrect because \"therefore\" illogically signals that this information is a result of Shulgi's many accomplishments, when it actually runs against what one would expect from those accomplishments. Choice C is incorrect because \"for instance\" illogically signals that this sentence exemplifies the previous accomplishments, when it instead presents a contrary fact about what he is remembered for. Choice D is incorrect because \"likewise\" illogically signals that this information parallels the previous accomplishments, when it actually contrasts with the expectation those accomplishments create.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

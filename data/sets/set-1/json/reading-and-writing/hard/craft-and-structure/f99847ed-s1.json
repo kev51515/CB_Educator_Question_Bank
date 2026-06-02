@@ -1,0 +1,39 @@
+{
+  "questionId": "f99847ed-s1",
+  "originalId": "f99847ed",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>For her 2020 art installation <em>Ocean Without a Shore</em>, choreographer Bintou Diallo collaborated with sound designer Pavel Krupin to create a piece that critics found genuinely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: they praised Diallo for transforming a working harbor warehouse into a kinetic stage by suspending dancers from cables 30 feet above the floor and saturating the space with underwater recordings of whale song and tidal currents.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>original</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>restrained</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>mystifying</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>inexplicable</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Original\" most logically completes the text. The colon introduces an explanation of what made the piece notable: the unusual transformation of a warehouse, the suspension of dancers from cables, and the use of underwater recordings. These all describe an inventive, original approach.</p><p>Choice B is incorrect. \"Restrained\" means modest or held back, which contradicts the elaborate, ambitious staging described. Choice C is incorrect. \"Mystifying\" means puzzling; the colon describes a creative achievement, not confusion. Choice D is incorrect. \"Inexplicable\" means unable to be explained, which contradicts the clear, explained creative choices.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

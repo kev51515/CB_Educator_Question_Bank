@@ -1,0 +1,25 @@
+{
+  "questionId": "f942646f-s1",
+  "originalId": "f942646f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A1.T1.hard",
+  "stimulus": "<p>Researchers Esther Lindqvist and Marco Petersen modeled varying levels of passenger redistribution from short-haul ferry routes (crossings of 40 to 180 minutes, from departure to arrival) to a planned undersea rail tunnel between two Scandinavian capitals. Ferries spend much of their schedule loading vehicles and waiting on tidal windows that the tunnel rail service would avoid, so for moderate passenger numbers the two modes take similar amounts of time door to door. However, the model suggests that as undersea rail passenger volumes approach the tunnel&rsquo;s engineered capacity limits, long platform queues and boarding delays begin to emerge. Therefore, for the new rail service to remain a viable alternative to short-haul ferries, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>operators should add departures to the schedule for these routes to keep passenger volumes below capacity limits.</p>"},
+    {"id": "b", "content": "<p>passengers using the new rail service will need to accept that platform queues will routinely be similar in length to ferry boarding waits.</p>"},
+    {"id": "c", "content": "<p>vehicle-loading and tidal-window procedures used by ferries may need to be implemented for the new rail service.</p>"},
+    {"id": "d", "content": "<p>ferries should offer fewer routes between the two capitals and the rail service should offer more routes between distant cities.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text frames ferries and the tunnel rail service as time-competitive only when rail volumes stay below capacity. Once those volumes approach the tunnel&rsquo;s engineered limits, queues and delays appear. Therefore, the principle that rail remains viable only as a faster alternative implies that the operator must add departures to keep volumes safely below those limits.</p><p>Choice B is incorrect because accepting ferry-like waits would erode the rail service&rsquo;s competitive advantage. Choice C is incorrect because the ferry procedures are cited only to explain ferry slowness, not as something rail should adopt. Choice D is incorrect because the text never discusses long-distance routes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

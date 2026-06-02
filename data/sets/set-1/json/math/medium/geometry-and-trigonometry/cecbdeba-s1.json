@@ -1,0 +1,39 @@
+{
+  "questionId": "cecbdeba-s1",
+  "originalId": "cecbdeba",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right circular cylinder has a volume of 240 cubic centimeters. The area of the base of the cylinder is 15 square centimeters. What is the height, in centimeters, of the cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>225</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3,600</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The volume V of a right circular cylinder equals the area of the base B times the height h: V = Bh. Substituting V = 240 and B = 15 yields 240 = 15h, so h = 240/15 = 16 centimeters. Choice A is the area of the base, not the height. Choice B is the base area squared. Choice D is the product of the area of the base and the volume.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A2.T2.medium"
+}

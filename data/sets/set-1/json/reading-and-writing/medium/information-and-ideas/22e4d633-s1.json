@@ -1,0 +1,25 @@
+{
+  "questionId": "22e4d633-s1",
+  "originalId": "22e4d633",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Although many small noncoding RNAs (sncRNAs) lose their regulatory function in animal cells over evolutionary time and become inactive remnants, members of the piRNA family appear to remain functionally active in the cells of certain animals. In mammals, piRNAs are critical regulators of meiosis within the testis, the tissue responsible for producing sperm. When the results of single-cell sequencing of two species of cuttlefish—an animal famous for its complex camouflage and large nervous system—were announced in 2024, the confirmation of an active piRNA pathway in <em>Sepia officinalis</em> and <em>Sepia pharaonis</em> drew attention. A team of researchers led by Dr. Léa Martín hypothesized that piRNAs in cuttlefish, as in mammals, primarily serve a meiosis-regulating role in the gonads.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Martín's team's hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The active piRNAs in <em>S. officinalis</em> and <em>S. pharaonis</em> are strongly expressed within developing germ cells of the cuttlefish gonads, particularly during the stages of meiosis.</p>"},
+    {"id": "b", "content": "<p>The mammalian genome contains multiple sncRNA families besides piRNAs, several of which are also active in the testis.</p>"},
+    {"id": "c", "content": "<p>A roughly consistent number of piRNA-related sequences is present across most cephalopod genomes sequenced to date, with few apparent inactivations.</p>"},
+    {"id": "d", "content": "<p><em>S. officinalis</em> and <em>S. pharaonis</em> have smaller body sizes than many other cephalopods but possess a broader variety of sncRNA families overall.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it directly supports Martín's team's hypothesis that piRNAs in cuttlefish primarily serve a meiosis-regulating role in the gonads. Finding that the active piRNAs are most strongly expressed within developing germ cells of the cuttlefish gonads—and particularly during meiosis—links the piRNAs precisely to the proposed function in the proposed tissue.</p><p>Choice B is incorrect because it concerns other sncRNA families in mammals; it tells us nothing about what cuttlefish piRNAs actually do. Choice C is incorrect because the mere number of piRNA-related sequences across cephalopod genomes does not address whether those sequences regulate meiosis in the gonads. Choice D is incorrect because relative body size and overall sncRNA diversity are unrelated to whether cuttlefish piRNAs specifically regulate meiosis in the gonads.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

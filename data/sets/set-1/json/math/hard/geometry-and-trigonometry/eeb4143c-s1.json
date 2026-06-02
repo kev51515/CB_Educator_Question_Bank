@@ -1,0 +1,28 @@
+{
+  "questionId": "eeb4143c-s1",
+  "originalId": "eeb4143c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangle ABC has area at least 36 but no more than 54 square units, and side AB has length 6 units. If h represents the length of the altitude from C to side AB and h is an integer, what is one possible value of h?</p>",
+  "answerOptions": [],
+  "keys": [
+    "12",
+    "13",
+    "14",
+    "15",
+    "16",
+    "17",
+    "18"
+  ],
+  "rationale": "<p>The area equals (1/2)·6·h = 3h. The constraint 36 ≤ 3h ≤ 54 gives 12 ≤ h ≤ 18. Since h is an integer, any of 12, 13, 14, 15, 16, 17, or 18 is acceptable.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.misc.hard"
+}

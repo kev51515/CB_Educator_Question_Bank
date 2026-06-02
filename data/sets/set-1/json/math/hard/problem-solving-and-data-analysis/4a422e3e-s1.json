@@ -1,0 +1,39 @@
+{
+  "questionId": "4a422e3e-s1",
+  "originalId": "4a422e3e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "domainCode": "Q",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>To estimate the mean number of hours per week residents of a town spend on outdoor exercise, Marco interviewed 25 visitors at a local hiking trail. For the 25 visitors surveyed, the mean was 6.8 hours per week. Which of the following statements must be true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The sampling method is flawed and may produce a biased estimate of the mean number of hours per week residents spend on outdoor exercise.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The mean number of hours per week residents spend on outdoor exercise is 6.8.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>An estimate of the mean for the town should not be made because the sample size is too small.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The sampling method is not flawed and is likely to produce an unbiased estimate of the mean for the town.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Marco surveyed people at a hiking trail, who are not representative of all town residents because they self-select into outdoor activity. The sampling method is biased, so the estimate cannot be trusted to reflect the whole population. Choice B treats the sample mean as the population mean. Choice C is incorrect because the issue is bias, not sample size. Choice D contradicts the bias.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A2.T1.hard"
+}

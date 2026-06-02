@@ -1,0 +1,22 @@
+[
+  {"id": "23ecf625-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Hard variant requires an 'although/however/long thought... but' corrective pivot the correct answer mirrors. Clone lacks this pivot; stimulus is a straightforward claim + example with no counterintuitive turn, collapsing toward Easy/Medium difficulty."},
+  {"id": "14189fbb-s1", "templateId": "central-ideas-and-details.A1.T1.hard", "verdict": "ok"},
+  {"id": "89961e26-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "0fd96039-s1", "templateId": "central-ideas-and-details.A3.T6.easy", "verdict": "ok"},
+  {"id": "69d662af-s1", "templateId": "central-ideas-and-details.A1.T2.easy", "verdict": "ok"},
+  {"id": "c889e52e-s1", "templateId": "central-ideas-and-details.A1.T1.easy", "verdict": "ok"},
+  {"id": "41d5c33e-s1", "templateId": "central-ideas-and-details.A3.T8.easy", "verdict": "ok"},
+  {"id": "dc5edbf6-s1", "templateId": "central-ideas-and-details.A1.T1.easy", "verdict": "ok"},
+  {"id": "82d2436a-s1", "templateId": "central-ideas-and-details.A2.T5.easy", "verdict": "ok"},
+  {"id": "2287b040-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "714e4c10-s1", "templateId": "central-ideas-and-details.A1.T1.easy", "verdict": "ok"},
+  {"id": "bbfa2bb6-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "706046f7-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "487a05f8-s1", "templateId": "central-ideas-and-details.A2.T5.easy", "verdict": "ok"},
+  {"id": "3543e6e2-s1", "templateId": "central-ideas-and-details.A2.T5.easy", "verdict": "ok"},
+  {"id": "8a8236e1-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "2edd7ffe-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "a842db60-s1", "templateId": "central-ideas-and-details.A2.T4.easy", "verdict": "ok"},
+  {"id": "baef99a5-s1", "templateId": "central-ideas-and-details.A2.T5.easy", "verdict": "ok"},
+  {"id": "b168ce48-s1", "templateId": "central-ideas-and-details.A3.T6.easy", "verdict": "ok"}
+]

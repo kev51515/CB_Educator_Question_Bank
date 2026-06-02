@@ -1,0 +1,39 @@
+{
+  "questionId": "9debe79a-s1",
+  "originalId": "9debe79a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Average Temperatures in January in Four Locations in the Adirondack Region</caption><thead><tr><th>Location</th><th>Average highest temperature (Fahrenheit)</th><th>Average lowest temperature (Fahrenheit)</th></tr></thead><tbody><tr><td>Lake Placid</td><td>26&deg;</td><td>5&deg;</td></tr><tr><td>Saranac Lake</td><td>24&deg;</td><td>3&deg;</td></tr><tr><td>Tupper Lake</td><td>27&deg;</td><td>6&deg;</td></tr><tr><td>Long Lake</td><td>22&deg;</td><td>1&deg;</td></tr></tbody></table></figure><p>A student writing about winter weather in the Adirondacks noted that ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the lowest temperature for both Saranac Lake and Lake Placid was 6&deg;.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Tupper Lake&rsquo;s average highest temperature was 22&deg;, while Long Lake&rsquo;s was 24&deg;.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the lowest temperature for both Saranac Lake and Tupper Lake was 1&deg;.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Long Lake&rsquo;s average highest temperature was 22&deg;, while Tupper Lake&rsquo;s was 27&deg;.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the table shows Long Lake at 22&deg; and Tupper Lake at 27&deg; for average highest temperature.</p><p>Choice A is incorrect: the lowest temperatures were 3&deg; for Saranac Lake and 5&deg; for Lake Placid, not 6&deg;. Choice B is incorrect: Tupper Lake&rsquo;s average highest was 27&deg;, not 22&deg;. Choice C is incorrect: Saranac Lake&rsquo;s lowest was 3&deg; and Tupper Lake&rsquo;s was 6&deg;, not 1&deg;.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

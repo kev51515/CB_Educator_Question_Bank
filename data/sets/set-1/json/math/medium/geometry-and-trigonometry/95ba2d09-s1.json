@@ -1,0 +1,39 @@
+{
+  "questionId": "95ba2d09-s1",
+  "originalId": "95ba2d09",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <em>xy</em>-plane, points <em>A</em>, <em>B</em>, <em>C</em>, and <em>D</em> lie on a circle with center <em>O</em> in that order around the circle. The measure of central angle <em>AOB</em> is 70&deg;, the measure of central angle <em>BOC</em> is 85&deg;, and the measure of central angle <em>COD</em> is 110&deg;. What is the measure, in degrees, of central angle <em>DOA</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>70&deg;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>95&deg;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>85&deg;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>110&deg;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The four central angles AOB, BOC, COD, and DOA together form one complete revolution about the center O. Their measures sum to 360&deg;. Therefore, m&ang;DOA = 360 &minus; 70 &minus; 85 &minus; 110 = 95 degrees. Choices A, C, and D are the measures of the other three central angles, not the one being asked about.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.misc.medium"
+}

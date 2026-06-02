@@ -1,0 +1,22 @@
+{
+  "questionId": "cb58833c-s1",
+  "originalId": "cb58833c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The line with the equation 7x - 4y = 21 is graphed in the xy-plane. What is the x-coordinate of the x-intercept of the line?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3"
+  ],
+  "rationale": "<p>At the x-intercept, y = 0. Substituting: 7x - 4(0) = 21, so 7x = 21 and x = 3.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.easy"
+}

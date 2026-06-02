@@ -1,0 +1,22 @@
+{
+  "questionId": "d1b66ae6-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "d1b66ae6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>y</mi><mo>=</mo><mn>22</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>4</mn><mi>x</mi><mo>-</mo><mi>y</mi><mo>=</mo><mn>16</mn></math></p>\n<p>If <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> satisfies the system of equations above, what is the value of <math><mi>y</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>The correct answer is 4. From the second equation, y = 4x − 16. Substituting into the first: 2x + 3(4x − 16) = 22, so 14x − 48 = 22, giving x = 5. Then y = 4(5) − 16 = 4.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z"
+}

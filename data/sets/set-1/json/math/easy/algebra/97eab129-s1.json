@@ -1,0 +1,25 @@
+{
+  "questionId": "97eab129-s1",
+  "originalId": "97eab129",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A delivery company tracks the number of liters of fuel used <i>f</i>(<i>x</i>) for trips of <i>x</i> kilometers. The table shows three pairs of <i>x</i> and <i>f</i>(<i>x</i>) values: (200, 50), (400, 100), (600, 150). Which equation could define <i>f</i>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>f</i>(<i>x</i>) = 4<i>x</i></p>"},
+    {"id": "b", "content": "<p><i>f</i>(<i>x</i>) = 0.5<i>x</i></p>"},
+    {"id": "c", "content": "<p><i>f</i>(<i>x</i>) = 50<i>x</i></p>"},
+    {"id": "d", "content": "<p><i>f</i>(<i>x</i>) = 0.25<i>x</i></p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. For each row, <i>f</i>(<i>x</i>)/<i>x</i> = 0.25 (50/200, 100/400, 150/600). So <i>f</i>(<i>x</i>) = 0.25<i>x</i>.</p><p>Choice A inverts the rate (200/50). Choice B doubles the correct rate. Choice C uses the first <i>f</i>-value as slope.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T2.easy"
+}

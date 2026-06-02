@@ -1,0 +1,10 @@
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/2b41a4c4-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/4efea6a3-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/575f1e12-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/76670c80-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/0d43db90-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/d683a9cc-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/3453aafc-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/29e9b28c-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/59cb654c-s1.json
+data/sets/set-1/json/math/easy/geometry-and-trigonometry/d2047497-s1.json

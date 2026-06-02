@@ -1,0 +1,39 @@
+{
+  "questionId": "14189fbb-s1",
+  "originalId": "14189fbb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Although Bohemian-born botanist Thadd\u00e4us Haenke completed extensive field journals during his late-1700s travels across South America, his notes might have vanished into obscurity after his death in a remote Bolivian village. It was Czech naturalist Tade\u00e1\u0161 Peregrinus Haenke\u2014no relation, but a devoted admirer\u2014who acquired the manuscripts from a missionary in the 1820s, transcribed the deteriorating pages, and supplemented Haenke's terse observations with detailed commentary drawing on the latest European botanical literature. The published edition that eventually reached scholars bears as much of Peregrinus's editorial hand as it does of Haenke's original fieldwork.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Peregrinus played a decisive role in shaping and preserving the published version of Haenke's botanical journals.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Modern scholars disagree about which portions of the published journals were originally written by Haenke.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Haenke's field notes were among the most thorough botanical records produced in eighteenth-century South America.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The published journals significantly influenced the direction of nineteenth-century European botany.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text describes how Peregrinus acquired, transcribed, and substantially supplemented Haenke's deteriorating notes, and it explicitly states that the published edition reflects as much of Peregrinus's editorial work as Haenke's original fieldwork. This central idea is captured by Choice A.</p><p>Choice B is incorrect because the text does not discuss any scholarly dispute about authorship; it simply describes Peregrinus's contributions. Choice C is incorrect because while the text mentions Haenke's notes were extensive, it does not compare them to other botanical records of the era. Choice D is incorrect because the text discusses how the journals came to be published but says nothing about their later influence on European botany.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

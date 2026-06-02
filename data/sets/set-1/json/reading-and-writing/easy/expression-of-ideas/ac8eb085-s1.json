@@ -1,0 +1,25 @@
+{
+  "questionId": "ac8eb085-s1",
+  "originalId": "ac8eb085",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>\"The Memory Vault,\" an acclaimed science fiction novella by South Korean author Min-jun Park, takes place in an alternate version of Seoul where personal memories are a valuable resource that can be extracted and stored in private databases. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> citizens must pay subscription fees to access their own childhood recollections.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In any case,</p>"},
+    {"id": "b", "content": "<p>As a result,</p>"},
+    {"id": "c", "content": "<p>Nevertheless,</p>"},
+    {"id": "d", "content": "<p>Earlier,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The second sentence describes a consequence of the system laid out in the first sentence: because memories are stored in private databases in this world, people must pay to access them.</p><p>Choice A is incorrect because \"in any case\" doesn't fit here; there's only one fictional situation described. Choice C is incorrect because \"nevertheless\" illogically signals contrast, when the two sentences describe the same fictional setup. Choice D is incorrect because \"earlier\" illogically signals a time shift backward, when both sentences describe the same fictional present.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

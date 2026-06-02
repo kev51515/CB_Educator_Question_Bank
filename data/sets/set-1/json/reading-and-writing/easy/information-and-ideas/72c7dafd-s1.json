@@ -1,0 +1,39 @@
+{
+  "questionId": "72c7dafd-s1",
+  "originalId": "72c7dafd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><em>The Glass House</em> is a 1923 novel by Eliza Hart. The narrator presents a young man as being unimpressed with the country estate he is visiting: ______</p>",
+  "stem": "<p>Which quotation from <em>The Glass House</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;The driveway curved between two long rows of poplars before opening onto a wide gravel courtyard.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;He set down his small leather case and looked out across the courtyard toward the front door.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;His first impression was one of dullness; the long flat front of the house seemed to him a tired box, plain and without grace.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;A maid appeared at the door and asked if he would prefer to wait inside or on the veranda.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the quotation directly conveys disappointment: &ldquo;dullness,&rdquo; &ldquo;tired box,&rdquo; &ldquo;plain and without grace&rdquo; show he is unimpressed with the estate.</p><p>Choice A is incorrect: it describes the driveway neutrally. Choice B is incorrect: it describes his actions, not his judgment. Choice D is incorrect: it describes the maid&rsquo;s greeting, not his impression of the estate.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T1.easy"
+}

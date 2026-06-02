@@ -1,0 +1,39 @@
+{
+  "questionId": "b31c3117-s1",
+  "originalId": "b31c3117",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>H</em> = <em>R</em> + <em>p</em>(<em>M</em> \u2212 <em>R</em>)</p><p>The Karvonen formula above shows the relationship between James's target heart rate <em>H</em>, in beats per minute (bpm), and the intensity level <em>p</em> of different activities. For James, the resting heart rate <em>R</em> is 70 bpm and the maximum heart rate <em>M</em> is 190 bpm. It is recommended that <em>p</em> be between 0.4 and 0.8 for James when he trains. Which of the following inequalities describes James's target training heart rate?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>70 \u2264 <em>H</em> \u2264 118</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>118 \u2264 <em>H</em> \u2264 190</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>70 \u2264 <em>H</em> \u2264 166</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>118 \u2264 <em>H</em> \u2264 166</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting <em>R</em> = 70 and <em>M</em> = 190: <em>H</em> = 70 + <em>p</em>(190 \u2212 70) = 70 + 120<em>p</em>. For <em>p</em> = 0.4: <em>H</em> = 70 + 48 = 118. For <em>p</em> = 0.8: <em>H</em> = 70 + 96 = 166. Therefore 118 \u2264 <em>H</em> \u2264 166.</p><p>Choices A, B, and C are incorrect and may result from using the wrong endpoints or omitting an offset.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "d46ac7e7-s1",
+  "originalId": "d46ac7e7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T1.hard",
+  "stimulus": "<p>A first-generation Cuban American, Pedro Zamora <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as an HIV/AIDS educator (1990-93) and lectured at hundreds of high schools across the country when he joined the cast of MTV's <em>The Real World: San Francisco</em> for the 1994 season, becoming one of the first openly gay men with AIDS portrayed on American television.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>had already worked</p>"},
+    {"id": "b", "content": "<p>already worked</p>"},
+    {"id": "c", "content": "<p>was already working</p>"},
+    {"id": "d", "content": "<p>already works</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. Zamora worked as an HIV/AIDS educator before he joined the cast of <em>The Real World</em> in 1994. To show that a past occurrence took place before another past occurrence, we need to use \"had\" + the past tense form of the verb. This is called the past perfect tense.</p><p>Choice B is incorrect. Zamora worked as an HIV/AIDS educator before he joined the cast. Both events are in the past, but his work as an educator happened earlier, so we need a verb that makes it clear that his work (and the lectures) had ended by the time he joined the cast. Choice C is incorrect. \"Was already working\" forms the continuous past tense, which we use when we're showing a past action that was ongoing. Both events are in the past, but they're not happening at the same time, so we shouldn't use the continuous past tense here. Choice D is incorrect. Zamora worked as an HIV/AIDS educator in the past, so we shouldn't use the present tense \"works.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,16 @@
+[
+  {"id": "ce81d0b7-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"},
+  {"id": "91fbd59d-s1", "templateId": "boundaries.A2.T4.easy", "verdict": "type_drift", "detail": "Stem tests intro subordinate clause + main clause boundary (A1.T3 pattern), not setting off an appositive/parenthetical within a clause. The '(1967)' is internal to the intro clause; the keyed comma marks the intro/main boundary."},
+  {"id": "75eb5242-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "8a3998f1-s1", "templateId": "boundaries.A1.T1.easy", "verdict": "ok"},
+  {"id": "de55ec71-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "No restrictive/nonrestrictive modifier is at issue; the blank tests subject-verb punctuation ('authors [blank] have drawn'). Answer (no punctuation) is correct but the type is not A2.T5."},
+  {"id": "39ac6498-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "04bfd364-s1", "templateId": "boundaries.A1.T1.easy", "verdict": "ok"},
+  {"id": "155239cf-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "6fdddabf-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Blank tests verb-complement punctuation ('is named [blank] the chloroplast'), not a restrictive vs nonrestrictive modifier choice. Answer is correct but type is mis-tagged."},
+  {"id": "4b0c7b62-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "cabe71d4-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"},
+  {"id": "85b8b9c5-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "60dd03bc-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "type_drift", "detail": "Blank tests preposition-complement punctuation ('known for [blank] some of the clearest waters'), not a modifier restrictive/nonrestrictive contrast. Answer correct but type mis-tagged."},
+  {"id": "64a40675-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "wrong_answer", "detail": "Keyed answer C yields 'played with an volume and improvisation'—'an volume' is ungrammatical (should be 'a volume'). The stem's article mismatches the following consonant-initial noun, so no option produces a grammatical sentence. Rationale repeats the 'an volume' error."}
+]

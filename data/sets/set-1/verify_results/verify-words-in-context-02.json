@@ -1,0 +1,22 @@
+[
+  {"id": "d7807ec8-s1", "templateId": "words-in-context.A2.T4.hard", "verdict": "ok"},
+  {"id": "79fe7550-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "bce4d106-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "5e57efec-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "7bc05fa2-s1", "templateId": "words-in-context.A2.T7.hard", "verdict": "ok"},
+  {"id": "e26d23c4-s1", "templateId": "words-in-context.A2.T5.hard", "verdict": "ok"},
+  {"id": "22a41819-s1", "templateId": "words-in-context.A2.T4.hard", "verdict": "ok"},
+  {"id": "3d658a5a-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "af4300b0-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "1455b754-s1", "templateId": "words-in-context.A2.T4.hard", "verdict": "ok"},
+  {"id": "a1ff8ce3-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "a06c434d-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "e8fb0744-s1", "templateId": "words-in-context.A2.T4.hard", "verdict": "ok"},
+  {"id": "7f935017-s1", "templateId": "words-in-context.A1.T1.hard", "verdict": "ok"},
+  {"id": "6c9f1727-s1", "templateId": "words-in-context.A2.T4.hard", "verdict": "ok"},
+  {"id": "a756aa95-s1", "templateId": "words-in-context.A2.T6.hard", "verdict": "ok"},
+  {"id": "10c236ce-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "93665100-s1", "templateId": "words-in-context.A2.T3.hard", "verdict": "ok"},
+  {"id": "6c086e70-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"},
+  {"id": "5dce6cab-s1", "templateId": "words-in-context.A2.T8.hard", "verdict": "ok"}
+]

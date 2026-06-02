@@ -1,0 +1,39 @@
+{
+  "questionId": "6e0e0de1-s1",
+  "originalId": "6e0e0de1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Shape-memory polymers are a class of lightweight materials engineered to return to a programmed shape after being deformed and then exposed to a triggering stimulus, such as heat. These polymers are often used in deployable medical stents and protective gear because they can flex and re-form under stress; however, conventional shape-memory polymers gradually lose their ability to recover their original shape after many cycles of deformation, owing to internal fatigue. Now, Hiroto Nakamura of Kyoto University and colleagues have developed a shape-memory polymer with unusually durable molecular cross-links. Unlike earlier shape-memory polymers, Nakamura&rsquo;s team&rsquo;s material maintains nearly its full shape-recovery capacity even after extended cycling. These findings suggest that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the new polymer will be less subject to the internal fatigue that ultimately causes most other shape-memory polymers to lose their shape-recovery capacity with repeated use.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the new polymer&rsquo;s remarkable durability comes from a higher proportion of cross-links to free polymer chains than is found in other shape-memory polymers.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the new polymer&rsquo;s overall stiffness is greater than that of other lightweight materials but its ability to flex under stress is lower.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the new polymer will be more effective for applications that involve gradual cycles of deformation than for applications that involve rapid, repeated stress.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the discussion. The text identifies the standard failure mode for conventional shape-memory polymers&mdash;internal fatigue accumulated over repeated cycles&mdash;and notes that the new material retains nearly full shape-recovery capacity after extended cycling. The most direct inference is that the new polymer is much less subject to the same fatigue-driven failure than its predecessors.</p><p>Choice B is incorrect because the text mentions durable cross-links but does not give information about their proportion relative to free polymer chains. Choice C is incorrect because the text says nothing about overall stiffness or compromised flexibility&mdash;in fact, the polymer is described as a flexing material that recovers its shape. Choice D is incorrect because the text indicates the polymer retains its capacity under extended cycling, which suggests it handles repeated stress well, not poorly.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

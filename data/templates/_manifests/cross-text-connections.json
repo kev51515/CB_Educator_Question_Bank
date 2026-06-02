@@ -1,0 +1,355 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Craft and Structure",
+  "skill": "Cross-Text Connections",
+  "originals": [
+    {
+      "id": "02fd3da7",
+      "path": "json/reading-and-writing/easy/craft-and-structure/02fd3da7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "159ef46d",
+      "path": "json/reading-and-writing/easy/craft-and-structure/159ef46d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "22105871",
+      "path": "json/reading-and-writing/easy/craft-and-structure/22105871.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "2c50ed1a",
+      "path": "json/reading-and-writing/easy/craft-and-structure/2c50ed1a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5a4b147c",
+      "path": "json/reading-and-writing/easy/craft-and-structure/5a4b147c.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7b55e895",
+      "path": "json/reading-and-writing/easy/craft-and-structure/7b55e895.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "81da17d3",
+      "path": "json/reading-and-writing/easy/craft-and-structure/81da17d3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "835d1ae6",
+      "path": "json/reading-and-writing/easy/craft-and-structure/835d1ae6.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "88bb0f6f",
+      "path": "json/reading-and-writing/easy/craft-and-structure/88bb0f6f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "8d802289",
+      "path": "json/reading-and-writing/easy/craft-and-structure/8d802289.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "9645f55e",
+      "path": "json/reading-and-writing/easy/craft-and-structure/9645f55e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c106b9f7",
+      "path": "json/reading-and-writing/easy/craft-and-structure/c106b9f7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c68ceeff",
+      "path": "json/reading-and-writing/easy/craft-and-structure/c68ceeff.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "dc043599",
+      "path": "json/reading-and-writing/easy/craft-and-structure/dc043599.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "eb89dcc8",
+      "path": "json/reading-and-writing/easy/craft-and-structure/eb89dcc8.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ed52a093",
+      "path": "json/reading-and-writing/easy/craft-and-structure/ed52a093.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "03080769",
+      "path": "json/reading-and-writing/medium/craft-and-structure/03080769.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "059f7201",
+      "path": "json/reading-and-writing/medium/craft-and-structure/059f7201.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "12d81fc1",
+      "path": "json/reading-and-writing/medium/craft-and-structure/12d81fc1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "27d9bb69",
+      "path": "json/reading-and-writing/medium/craft-and-structure/27d9bb69.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7bf79a90",
+      "path": "json/reading-and-writing/medium/craft-and-structure/7bf79a90.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "82c05b34",
+      "path": "json/reading-and-writing/medium/craft-and-structure/82c05b34.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "8889d6e2",
+      "path": "json/reading-and-writing/medium/craft-and-structure/8889d6e2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "8de51658",
+      "path": "json/reading-and-writing/medium/craft-and-structure/8de51658.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9a94eb77",
+      "path": "json/reading-and-writing/medium/craft-and-structure/9a94eb77.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ab56a107",
+      "path": "json/reading-and-writing/medium/craft-and-structure/ab56a107.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c19b2f77",
+      "path": "json/reading-and-writing/medium/craft-and-structure/c19b2f77.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c8a2af72",
+      "path": "json/reading-and-writing/medium/craft-and-structure/c8a2af72.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e1befb41",
+      "path": "json/reading-and-writing/medium/craft-and-structure/e1befb41.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "eae66bf9",
+      "path": "json/reading-and-writing/medium/craft-and-structure/eae66bf9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f0ae0da3",
+      "path": "json/reading-and-writing/medium/craft-and-structure/f0ae0da3.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f1c9d2c1",
+      "path": "json/reading-and-writing/medium/craft-and-structure/f1c9d2c1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f52cc78c",
+      "path": "json/reading-and-writing/medium/craft-and-structure/f52cc78c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f653b273",
+      "path": "json/reading-and-writing/medium/craft-and-structure/f653b273.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f878693b",
+      "path": "json/reading-and-writing/medium/craft-and-structure/f878693b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "faee8ec7",
+      "path": "json/reading-and-writing/medium/craft-and-structure/faee8ec7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "105ea6de",
+      "path": "json/reading-and-writing/hard/craft-and-structure/105ea6de.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "17bf10de",
+      "path": "json/reading-and-writing/hard/craft-and-structure/17bf10de.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "35e21b06",
+      "path": "json/reading-and-writing/hard/craft-and-structure/35e21b06.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "4b4ab04e",
+      "path": "json/reading-and-writing/hard/craft-and-structure/4b4ab04e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "592f94c2",
+      "path": "json/reading-and-writing/hard/craft-and-structure/592f94c2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5e101c70",
+      "path": "json/reading-and-writing/hard/craft-and-structure/5e101c70.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5e4e082c",
+      "path": "json/reading-and-writing/hard/craft-and-structure/5e4e082c.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6977d22b",
+      "path": "json/reading-and-writing/hard/craft-and-structure/6977d22b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6a1dc7c5",
+      "path": "json/reading-and-writing/hard/craft-and-structure/6a1dc7c5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "84dbd633",
+      "path": "json/reading-and-writing/hard/craft-and-structure/84dbd633.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "96f3accc",
+      "path": "json/reading-and-writing/hard/craft-and-structure/96f3accc.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "97e5bf55",
+      "path": "json/reading-and-writing/hard/craft-and-structure/97e5bf55.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "a87c3925",
+      "path": "json/reading-and-writing/hard/craft-and-structure/a87c3925.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c4737d6a",
+      "path": "json/reading-and-writing/hard/craft-and-structure/c4737d6a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c885c38b",
+      "path": "json/reading-and-writing/hard/craft-and-structure/c885c38b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d0198544",
+      "path": "json/reading-and-writing/hard/craft-and-structure/d0198544.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d6c77ae5",
+      "path": "json/reading-and-writing/hard/craft-and-structure/d6c77ae5.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "d72b325e",
+      "path": "json/reading-and-writing/hard/craft-and-structure/d72b325e.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "de2c2f57",
+      "path": "json/reading-and-writing/hard/craft-and-structure/de2c2f57.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e4e2aeb3",
+      "path": "json/reading-and-writing/hard/craft-and-structure/e4e2aeb3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f3c45b4f",
+      "path": "json/reading-and-writing/hard/craft-and-structure/f3c45b4f.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "f7c02e89",
+      "path": "json/reading-and-writing/hard/craft-and-structure/f7c02e89.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

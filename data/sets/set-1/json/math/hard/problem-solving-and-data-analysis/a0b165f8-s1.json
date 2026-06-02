@@ -1,0 +1,39 @@
+{
+  "questionId": "a0b165f8-s1",
+  "originalId": "a0b165f8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>A naturalist studying the life cycle of butterflies counted the number of butterflies in a meadow each day for 46 days. On April 15, there were 138 butterflies in the meadow. The percent increase in the number of butterflies in the meadow from March 1 to April 15 was 15%. How many butterflies were in the meadow on March 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>117</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>159</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. If x is the count on March 1, then x(1 + 0.15) = 138, so 1.15x = 138 and x = 120.</p><p>Choice A subtracts 21 instead of dividing. Choice C adds 15% to 138. Choice D is the difference 138 \u2212 120.</p>",
+  "templateId": "percentages.A3.T2.hard"
+}

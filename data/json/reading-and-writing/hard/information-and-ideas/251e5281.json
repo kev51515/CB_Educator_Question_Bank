@@ -1,0 +1,72 @@
+{
+  "questionId": "251e5281",
+  "externalId": "79be8588-88d3-4689-8dfa-a1eff7775048",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:17.876488+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "d583e12a-e929-42e0-b54a-34b484f9d86c",
+      "content": "<p>Previous studies have suggested that steepness mediates breaking in traveling waves, but the study by McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> shows that jet stability and cavity shape may also influence breaking in such waves.</p>"
+    },
+    {
+      "id": "d271456b-fc74-4f6f-8431-4d0a539d03a3",
+      "content": "<p>The process of breaking limits the height of traveling waves, but the study by McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> suggests that spike waves can exceed those limits if their height-to-length ratio reaches a critical threshold.</p>"
+    },
+    {
+      "id": "33006a18-eff4-4020-9eb8-c7de3295ac77",
+      "content": "<p>McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> suggest that spike waves can form when traveling waves propagating in opposing directions intersect and that spike waves tend to be higher than traveling waves.&nbsp;</p>"
+    },
+    {
+      "id": "980acd07-6d23-4c8d-bdbf-72e639ba9fe7",
+      "content": "<p>The study by McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> suggests that when traveling waves intersect in specific ways, the resulting wave may be higher than would be expected based on the properties of traveling waves.</p>"
+    }
+  ],
+  "keys": [
+    "980acd07-6d23-4c8d-bdbf-72e639ba9fe7"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most accurately states the main idea of the text. The text begins by explaining that most studies of ocean wave breaking have focused on traveling waves (those that move horizontally) but that McAllister et al. studied spike waves, which form when traveling waves moving in opposing directions intersect. The text establishes that while traveling waves break when their steepness exceeds a critical threshold (limiting their height), McAllister et al. found that spike waves can exceed these constraints because factors like jet stability and cavity shape can mitigate the effects of steepness. Thus, the main idea of the text is that spike waves resulting from traveling waves intersecting in specific ways can reach heights greater than what would be expected based on the general properties of traveling waves.</p><p>Choice A is incorrect because it misrepresents the information in the text; the text indicates that McAllister et al. showed that jet stability and cavity shape (along with steepness) influence breaking in spike waves, not in traveling waves. Further, the information about specific influences is not the main focus of the text. Choice B is incorrect because it misrepresents the information in the text; the text indicates that McAllister et al. found that spike waves can pass the steepness threshold at which traveling waves break because factors like jet stability and cavity shape affect the breaking of spike waves, not because they&rsquo;ve simply reached a critical threshold of steepness. Choice C is incorrect. Although the text does explain that spike waves can form when traveling waves intersect, it presents this as a known fact that McAllister et al.&rsquo;s study was based on, not as something the researchers suggested. Further, the text indicates that spike waves can exceed a threshold that limits traveling wave height but doesn&rsquo;t focus on the idea that spike waves typically are higher than traveling waves.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the main idea of the text?</p>",
+    "stimulus": "<p>Studies of ocean wave breaking have predominantly focused on traveling waves (those propagating along the horizontal plane), so Mark McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> utilized a circular wave tank to produce and study spike waves, axisymmetric standing waves that can erupt vertically when traveling waves propagating in opposing directions intersect. Traveling waves break when wave steepness (height-to-length ratio) passes a critical threshold; breaking thus constrains wave height. McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> found that spike waves can exceed that constraint, as other factors than just steepness (<span data-ssml-sub-alias=\"e g\">e.g.</span>, jet stability and cavity shape) mediate spike-wave breaking.</p>",
+    "keys": [
+      "980acd07-6d23-4c8d-bdbf-72e639ba9fe7"
+    ],
+    "answerOptions": [
+      {
+        "id": "d583e12a-e929-42e0-b54a-34b484f9d86c",
+        "content": "<p>Previous studies have suggested that steepness mediates breaking in traveling waves, but the study by McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> shows that jet stability and cavity shape may also influence breaking in such waves.</p>"
+      },
+      {
+        "id": "d271456b-fc74-4f6f-8431-4d0a539d03a3",
+        "content": "<p>The process of breaking limits the height of traveling waves, but the study by McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> suggests that spike waves can exceed those limits if their height-to-length ratio reaches a critical threshold.</p>"
+      },
+      {
+        "id": "33006a18-eff4-4020-9eb8-c7de3295ac77",
+        "content": "<p>McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> suggest that spike waves can form when traveling waves propagating in opposing directions intersect and that spike waves tend to be higher than traveling waves.&nbsp;</p>"
+      },
+      {
+        "id": "980acd07-6d23-4c8d-bdbf-72e639ba9fe7",
+        "content": "<p>The study by McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> suggests that when traveling waves intersect in specific ways, the resulting wave may be higher than would be expected based on the properties of traveling waves.</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most accurately states the main idea of the text. The text begins by explaining that most studies of ocean wave breaking have focused on traveling waves (those that move horizontally) but that McAllister et al. studied spike waves, which form when traveling waves moving in opposing directions intersect. The text establishes that while traveling waves break when their steepness exceeds a critical threshold (limiting their height), McAllister et al. found that spike waves can exceed these constraints because factors like jet stability and cavity shape can mitigate the effects of steepness. Thus, the main idea of the text is that spike waves resulting from traveling waves intersecting in specific ways can reach heights greater than what would be expected based on the general properties of traveling waves.</p><p>Choice A is incorrect because it misrepresents the information in the text; the text indicates that McAllister et al. showed that jet stability and cavity shape (along with steepness) influence breaking in spike waves, not in traveling waves. Further, the information about specific influences is not the main focus of the text. Choice B is incorrect because it misrepresents the information in the text; the text indicates that McAllister et al. found that spike waves can pass the steepness threshold at which traveling waves break because factors like jet stability and cavity shape affect the breaking of spike waves, not because they&rsquo;ve simply reached a critical threshold of steepness. Choice C is incorrect. Although the text does explain that spike waves can form when traveling waves intersect, it presents this as a known fact that McAllister et al.&rsquo;s study was based on, not as something the researchers suggested. Further, the text indicates that spike waves can exceed a threshold that limits traveling wave height but doesn&rsquo;t focus on the idea that spike waves typically are higher than traveling waves.</p>",
+    "externalid": "79be8588-88d3-4689-8dfa-a1eff7775048",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Studies of ocean wave breaking have predominantly focused on traveling waves (those propagating along the horizontal plane), so Mark McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> utilized a circular wave tank to produce and study spike waves, axisymmetric standing waves that can erupt vertically when traveling waves propagating in opposing directions intersect. Traveling waves break when wave steepness (height-to-length ratio) passes a critical threshold; breaking thus constrains wave height. McAllister <span data-ssml-sub-alias=\"et al\">et al.</span> found that spike waves can exceed that constraint, as other factors than just steepness (<span data-ssml-sub-alias=\"e g\">e.g.</span>, jet stability and cavity shape) mediate spike-wave breaking.</p>"
+}

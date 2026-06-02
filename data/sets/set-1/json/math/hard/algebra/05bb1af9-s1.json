@@ -1,0 +1,39 @@
+{
+  "questionId": "05bb1af9-s1",
+  "originalId": "05bb1af9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) + 9 is a line that passes through the points (&minus;6, 5), (0, 2), and (6, &minus;1). Which equation defines function <i>f</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;<i>x</i>/2 + 11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;<i>x</i>/2 &minus; 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;<i>x</i>/2 + 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>f</i>(<i>x</i>) = &minus;<i>x</i>/2 &minus; 9</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The graph of <i>y</i> = <i>f</i>(<i>x</i>) + 9 has slope (2 &minus; 5)/(0 &minus; (&minus;6)) = &minus;1/2 and <i>y</i>-intercept 2, so the graph's equation is <i>y</i> = &minus;<i>x</i>/2 + 2. Therefore <i>f</i>(<i>x</i>) + 9 = &minus;<i>x</i>/2 + 2, giving <i>f</i>(<i>x</i>) = &minus;<i>x</i>/2 &minus; 7.</p><p>Choice A adds 9 instead of subtracting. Choice C forgets the shift. Choice D uses the wrong constant.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard"
+}

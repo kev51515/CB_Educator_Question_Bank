@@ -1,0 +1,39 @@
+{
+  "questionId": "5514fd1f-s1",
+  "originalId": "5514fd1f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologist Sarah Parcak works with local communities in Egypt to protect culturally significant sites from looting. In 2018 she and her partners decided that establishing a network of citizen monitors connected to satellite imagery would <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> their protection efforts, because volunteer reports can reach authorities far faster than traditional patrols.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>reduce</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>promote</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>ignore</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>inspire</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because the explanation that follows (volunteer reports reach authorities faster than patrols) supports the idea that the network would help the protection efforts. \"Promote\" means to support or further, which fits. Choices A and C describe weakening or ignoring the effort, which contradicts the supporting reason. Choice D, while positive, suggests creating inspiration rather than strengthening an ongoing effort.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

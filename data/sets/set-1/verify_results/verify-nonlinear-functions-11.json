@@ -1,0 +1,22 @@
+[
+  {"id": "e166aca6-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone uses only a text description of intercepts (no svg/figure)."},
+  {"id": "de362c2f-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "ca4ee54e-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "must_preserve requires a graph (svg/figure). Clone describes the graph verbally and gives the answer in the text, with no figure attached."},
+  {"id": "c13016f9-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "1ee962ec-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "aspect_drift", "detail": "Stem requires evaluating h(t)=-16t^2+64 at t=0,1,2 (direct substitution). This is A1.T1 (Direct substitution into f(x)), not A3 (graph feature reading)."},
+  {"id": "788bfd56-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "04b985e6-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "d45572cc-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "must_preserve requires a graph (svg/figure) with an identifiable target point. Clone is text-only and the answer (-2) is given verbatim in the stem."},
+  {"id": "d46da42c-s1", "templateId": "nonlinear-functions.A3.T5.easy", "verdict": "difficulty_drift", "detail": "Easy A3.T5 levers are 'choose graph from a table of values' or 'identify horizontal asymptote from labeled graph'. Clone asks for graph features from a factored cubic equation, fitting A3.T4 (zeros) / A3.T2 (intercept) rather than T5 easy lever."},
+  {"id": "893c7519-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; the y-intercept (0,6) is stated directly in the stem so no graph reading occurs."},
+  {"id": "2cf7f039-s1", "templateId": "nonlinear-functions.A1.T2.easy", "verdict": "ok"},
+  {"id": "044c1cb7-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "2fec8bf4-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "0ad5012e-s1", "templateId": "nonlinear-functions.A3.T2.easy", "verdict": "ok"},
+  {"id": "50418728-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; (0,5) is stated in the stem, removing any need to read the graph."},
+  {"id": "9da41c80-s1", "templateId": "nonlinear-functions.A4.T1.easy", "verdict": "ok"},
+  {"id": "20722644-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "4fbffc0a-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "cfff8f8e-s1", "templateId": "nonlinear-functions.A4.T1.easy", "verdict": "ok"},
+  {"id": "26f5269a-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "aspect_drift", "detail": "Stem is direct substitution g(4)=3*16-5=43 — matches A1.T1 (Direct substitution into f(x)) rather than A3.T1 (read intercept/point from graph)."}
+]

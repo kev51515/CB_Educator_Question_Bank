@@ -1,0 +1,39 @@
+{
+  "questionId": "d5235d39-s1",
+  "originalId": "d5235d39",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p><em>The Inheritors</em>, a 1901 novel jointly written by Joseph Conrad and Ford Madox Ford, stands among the rare instances of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in literature. Most authors prefer to compose alone, and given that the difficulties of the joint effort strained the partnership between Conrad and Ford, it is easy to see why.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>experimentation</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>translation</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>satire</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>co-authorship</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because \"co-authorship\" precisely names two writers composing a single work together, which is the unusual practice the text highlights. Choice A is incorrect because \"experimentation\" refers to trying novel techniques; the text emphasizes shared authorship, not novelty of method. Choice B is incorrect because \"translation\" refers to rendering text from one language to another and does not describe joint composition. Choice C is incorrect because \"satire\" describes a tone or genre and does not address the collaborative nature the text discusses.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

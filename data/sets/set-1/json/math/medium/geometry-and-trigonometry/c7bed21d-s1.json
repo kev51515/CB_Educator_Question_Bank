@@ -1,0 +1,39 @@
+{
+  "questionId": "c7bed21d-s1",
+  "originalId": "c7bed21d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Pentagon <math><msup><mi>A</mi><mo>'</mo></msup><msup><mi>B</mi><mo>'</mo></msup><msup><mi>C</mi><mo>'</mo></msup><msup><mi>D</mi><mo>'</mo></msup><msup><mi>E</mi><mo>'</mo></msup></math> is similar to pentagon <math><mi>A</mi><mi>B</mi><mi>C</mi><mi>D</mi><mi>E</mi></math>, where the vertices correspond in order. The measure of angle <math><mi>B</mi></math> is <math><mn>85</mn><mo>&#176;</mo></math>. The length of each side of the larger pentagon is <math><mn>5</mn></math> times the length of the corresponding side of the smaller pentagon. What is the measure of angle <math><msup><mi>B</mi><mo>'</mo></msup></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>85</mn><mo>&#176;</mo></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>90</mn><mo>&#176;</mo></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>17</mn><mo>&#176;</mo></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>425</mn><mo>&#176;</mo></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Corresponding angles of similar figures are congruent. So angle B' has the same measure as angle B, which is 85\u00b0.</p><p>Choice B is a common right-angle distractor. Choice C is 85/5. Choice D is 85\u00b75.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A5.T4.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "62ec6574-s1",
+  "originalId": "62ec6574",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right rectangular prism has a base area of 30s square centimeters (cm&sup2;). The length of the base of the rectangular prism is 5/2 cm, and the height of the rectangular prism is 12 cm. Which expression represents the surface area, in cm&sup2;, of the right rectangular prism?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>348s + 60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>174s + 30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>720s + 60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>360s</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The width of the base is (base area)/(length) = 30s/(5/2) = 12s cm. The surface area of a rectangular prism is 2(LW + LH + WH) = 2(30s + (5/2)(12) + (12s)(12)) = 2(30s + 30 + 144s) = 2(174s + 30) = 348s + 60.</p><p>Choice B omits doubling. Choice C miscomputes the lateral area. Choice D uses only one pair of faces.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T1.hard"
+}

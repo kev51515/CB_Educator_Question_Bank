@@ -1,0 +1,39 @@
+{
+  "questionId": "e821a26d-s1",
+  "originalId": "e821a26d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows data points that fall along a smooth curve passing through (0, 2), (1, 6), (2, 18), and (3, 54). Of the following equations, which best models the data?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 2 + 4x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 2x + 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 2(3)<sup>x</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 3(2)<sup>x</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Each successive y-value is multiplied by 3 (2 \u2192 6 \u2192 18 \u2192 54), indicating exponential growth with base 3. At x = 0, y = 2, so the model is y = 2(3)<sup>x</sup>. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A6.T12.hard"
+}

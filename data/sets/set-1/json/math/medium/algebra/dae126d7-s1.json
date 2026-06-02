@@ -1,0 +1,39 @@
+{
+  "questionId": "dae126d7-s1",
+  "originalId": "dae126d7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The temperature of water near the surface of a certain lake is 4 degrees Celsius (\u00b0C). For every 100 meters below the surface, the temperature of the water decreases by about 1 \u00b0C. Which of the following equations can be used to find the temperature <em>T</em> of water, in \u00b0C, at a depth of <em>x</em> meters below the surface?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>T</em> = 100 \u2212 <em>x</em>/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>T</em> = 4 \u2212 <em>x</em>/100</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>T</em> = 4 + <em>x</em>/100</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>T</em> = 100 + <em>x</em>/4</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The surface temperature is 4 \u00b0C and the water cools at a rate of 1 \u00b0C per 100 m. Thus at depth <em>x</em>, the temperature is <em>T</em> = 4 \u2212 (1/100)<em>x</em> = 4 \u2212 <em>x</em>/100.</p><p>Choices A, C, and D are incorrect; A and D have the constant and the slope coefficient swapped, and C has the wrong sign for the rate.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T3.medium"
+}

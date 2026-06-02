@@ -1,0 +1,39 @@
+{
+  "questionId": "4fa7e50e-s1",
+  "originalId": "4fa7e50e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>According to a leading labor economist, salary differences are <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> other considerations when professionals weigh a job change. Even substantial gaps in pay rarely sway most candidates; instead, factors such as commute time, workplace culture, and the quality of management dominate their decisions.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>consistent with</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>indicative of</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>parallel to</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>outweighed by</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Outweighed by\" most logically describes the relationship the text sets up: salary differences are less influential than the other considerations the economist lists. The text says salary gaps \"rarely sway\" candidates while other factors \"dominate\" their decisions, so salary is outweighed by those other factors.</p><p>Choice A is incorrect. \"Consistent with\" would suggest agreement or alignment, not the contrast the text establishes. Choice B is incorrect. \"Indicative of\" would suggest salary differences signal or reveal the other considerations, which is not the relationship described. Choice C is incorrect. \"Parallel to\" suggests similarity in importance, but the text explicitly subordinates salary to the other considerations.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

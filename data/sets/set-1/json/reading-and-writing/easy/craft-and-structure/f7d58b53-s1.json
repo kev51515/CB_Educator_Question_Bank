@@ -1,0 +1,25 @@
+{
+  "questionId": "f7d58b53-s1",
+  "originalId": "f7d58b53",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Like other federally recognized tribal nations, the Navajo Nation is self-governing; its tribal council passes laws covering matters such as natural resources and education, while the president and executive branch officials <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> those laws by designing programs and overseeing services consistent with them.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>oppose</p>"},
+    {"id": "b", "content": "<p>conceal</p>"},
+    {"id": "c", "content": "<p>execute</p>"},
+    {"id": "d", "content": "<p>summarize</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because \"execute\" means to carry out or put into effect, which fits the executive branch's role in designing programs to enact laws. Choice A is incorrect because \"oppose\" means to act against; the executive branch implements laws, not blocks them. Choice B is incorrect because \"conceal\" means to hide; the officials are openly applying the laws. Choice D is incorrect because \"summarize\" means to state briefly; designing programs and overseeing services is broader than summarizing.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

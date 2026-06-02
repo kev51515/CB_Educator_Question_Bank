@@ -1,0 +1,25 @@
+{
+  "questionId": "6c64a8f3-s1",
+  "originalId": "6c64a8f3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>Maritime archaeologist Sanjay Vaidyanathan and colleagues have found that Polynesian wayfinders crossing the open Pacific navigated long distances with a remarkable degree of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. By memorizing star paths, swell patterns, and the flight directions of seabirds, these voyagers were able to consistently steer their canoes to specific small islands hundreds of kilometers from their points of departure.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>uncertainty</p>"},
+    {"id": "b", "content": "<p>accuracy</p>"},
+    {"id": "c", "content": "<p>resilience</p>"},
+    {"id": "d", "content": "<p>secrecy</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Accuracy\" means freedom from error. The text's second sentence is the gloss: voyagers \"consistently steered their canoes to specific small islands hundreds of kilometers\" away, which is a description of precise, on-target navigation.</p><p>Choice A is incorrect; \"uncertainty\" would directly contradict the consistent, successful landings the text describes. Choice C is incorrect because the text emphasizes precision in reaching targets, not endurance under hardship. Choice D is incorrect because nothing in the gloss concerns concealment of the navigation methods.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

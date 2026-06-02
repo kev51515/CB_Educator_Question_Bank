@@ -1,0 +1,22 @@
+[
+  {"id": "70fb357b-s1", "templateId": "nonlinear-functions.A3.T2.hard", "verdict": "ok"},
+  {"id": "18e35375-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "8490cc45-s1", "templateId": "nonlinear-functions.A3.T2.hard", "verdict": "ok"},
+  {"id": "1073d70c-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "ok"},
+  {"id": "ce579859-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "ok"},
+  {"id": "09d21d79-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "d139cf4b-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "43926bd9-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "type_drift", "detail": "A6.T1 requires a nonlinear function form with unknown parameter(s) pinned by structural condition(s) (point/intercept/vertex). This clone is a pure system-of-equations identity (sum & sum-of-squares of two numbers) with no function f and no parameter to recover. Better fits algebra/system-of-equations skill, not nonlinear-functions A6.T1."},
+  {"id": "1f353a9e-s1", "templateId": "nonlinear-functions.A2.T2.hard", "verdict": "ok"},
+  {"id": "70753f99-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "wrong_answer", "detail": "Vertex x = (9 + (-1))/2 = 4 exactly. All four intervals are open: (-2,0), (0,2), (2,4), (4,6). The value 4 lies strictly inside NONE of them (it sits on the boundary of (2,4) and (4,6)). The rationale even acknowledges this contradiction. The question has no valid answer as constructed; keyed 'd' is not strictly correct."},
+  {"id": "c946d5bd-s1", "templateId": "nonlinear-functions.A5.T1.hard", "verdict": "ok"},
+  {"id": "48f83c34-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "301faf80-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "ef926848-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "f25a34aa-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "dcf63c94-s1", "templateId": "nonlinear-functions.A5.T1.hard", "verdict": "ok"},
+  {"id": "1178f2df-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "95eeeb5b-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "635f54ee-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "083ef63a-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"}
+]

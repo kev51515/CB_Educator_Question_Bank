@@ -1,0 +1,39 @@
+{
+  "questionId": "12255364-s1",
+  "originalId": "12255364",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A streaming service charges its members a one-time $20 signup fee and a subscription fee of $12 per month. If there are no charges other than the signup fee and the subscription fee, after how many months will a member have been charged a total of $128 at the service?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Let <i>m</i> be the number of months. Total cost is 20 + 12<i>m</i> = 128. Solving: 12<i>m</i> = 108, so <i>m</i> = 9.</p><p>Choices B, C, and D result from arithmetic errors or from neglecting the signup fee.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

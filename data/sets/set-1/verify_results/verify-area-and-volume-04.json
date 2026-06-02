@@ -1,0 +1,22 @@
+[
+  {"id": "dc71597b-s1", "templateId": "area-and-volume.A2.T2.hard", "verdict": "type_drift", "detail": "Stem describes a right circular cone (V=(1/3)πr²h), but template A2.T2 is cylinder (V=πr²h). The clone fits A2.T3 (cone/sphere/hemisphere). Math is correct (r=6) under cone formula, but type tag is wrong."},
+  {"id": "93f48423-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "babd7461-s1", "templateId": "area-and-volume.A3.T3.easy", "verdict": "ok"},
+  {"id": "a490003a-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "9d2e7037-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "c88183f7-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "165c30c4-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "4420e500-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "b4767bef-s1", "templateId": "area-and-volume.A1.T2.easy", "verdict": "ok"},
+  {"id": "689abc2a-s1", "templateId": "area-and-volume.A4.T1.easy", "verdict": "ok"},
+  {"id": "f60bb551-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "fc5ef8d3-s1", "templateId": "area-and-volume.A3.T3.easy", "verdict": "ok"},
+  {"id": "0e40dfb0-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "d0b6d927-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "50774285-s1", "templateId": "area-and-volume.A2.T1.easy", "verdict": "ok"},
+  {"id": "02b02213-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "5252e606-s1", "templateId": "area-and-volume.A1.T1.easy", "verdict": "ok"},
+  {"id": "f39f88b7-s1", "templateId": "area-and-volume.A1.T2.easy", "verdict": "ok"},
+  {"id": "bb560789-s1", "templateId": "area-and-volume.A4.T1.easy", "verdict": "ok"},
+  {"id": "0837c3b9-s1", "templateId": "area-and-volume.A3.T3.easy", "verdict": "ok"}
+]

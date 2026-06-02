@@ -1,0 +1,25 @@
+{
+  "questionId": "be612a26-s1",
+  "originalId": "be612a26",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>Recent observations of a flare from the active galactic nucleus of NGC 4395 (a dwarf galaxy) were striking not only because the flare's brightness departed from baseline predictions but also because of the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> of that departure: the recorded brightness was nearly five orders of magnitude greater than the quiescent levels modeled by accepted accretion theory.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>magnitude</p>"},
+    {"id": "b", "content": "<p>origin</p>"},
+    {"id": "c", "content": "<p>presence</p>"},
+    {"id": "d", "content": "<p>consequence</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Magnitude\" means size or extent. The text describes the brightness as \"nearly five orders of magnitude greater than\" predicted, indicating the departure was not only present but very large in extent.</p><p>Choice B is incorrect. \"Origin\" would refer to the cause of the departure, but the text does not address the cause. Choice C is incorrect. \"Presence\" would simply repeat the first half of the sentence, since the text has already stated that brightness departed from predictions. Choice D is incorrect. \"Consequence\" would refer to results of the departure, which the text does not describe; it describes only how large the departure was.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

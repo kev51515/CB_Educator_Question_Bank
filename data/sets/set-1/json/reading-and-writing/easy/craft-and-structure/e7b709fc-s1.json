@@ -1,0 +1,25 @@
+{
+  "questionId": "e7b709fc-s1",
+  "originalId": "e7b709fc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Archaeologists investigating an early settlement on Cyprus believe that it dates to the late Bronze Age. Their recovery of distinctive Mycenaean pottery shards and copper smelting tools consistent with the period <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> support for this theory.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>disputes</p>"},
+    {"id": "b", "content": "<p>limits</p>"},
+    {"id": "c", "content": "<p>conceals</p>"},
+    {"id": "d", "content": "<p>lends</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because \"lends\" means provides, fitting the context in which dated artifacts supply support for the dating theory. Choice A is incorrect because \"disputes\" means argues against, the opposite of what the findings do. Choice B is incorrect because \"limits\" means restricts; the artifacts strengthen rather than constrain the theory. Choice C is incorrect because \"conceals\" means hides; the artifacts make evidence visible, not hidden.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

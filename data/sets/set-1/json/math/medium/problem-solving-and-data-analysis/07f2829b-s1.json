@@ -1,0 +1,22 @@
+{
+  "questionId": "07f2829b-s1",
+  "originalId": "07f2829b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table below shows the number of regional festival attendees, in thousands, for two years.</p><table border=\"1\" style=\"margin:auto;border-collapse:collapse;\"><thead><tr><th>Year 2018</th><th>Year 2019</th></tr></thead><tbody><tr><td>22</td><td>26</td></tr><tr><td>28</td><td>27</td></tr><tr><td>31</td><td>30</td></tr><tr><td>34</td><td>32</td></tr><tr><td>36</td><td>35</td></tr><tr><td>40</td><td>37</td></tr><tr><td>45</td><td>42</td></tr></tbody></table><p>What is the positive difference between the median number of attendees, in thousands, in Year 2018 and the median number of attendees in Year 2019?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2"
+  ],
+  "rationale": "<p>The correct answer is 2. Each column has 7 values, so the median is the 4th value when ordered. For Year 2018 (22, 28, 31, 34, 36, 40, 45), the median is 34. For Year 2019 (26, 27, 30, 32, 35, 37, 42), the median is 32. The positive difference is 34 - 32 = 2.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.medium"
+}

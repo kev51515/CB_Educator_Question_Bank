@@ -1,0 +1,25 @@
+{
+  "questionId": "d168e7c5-s1",
+  "originalId": "d168e7c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T4.medium",
+  "stimulus": "<p>The following text is from Sandra Cisneros&rsquo;s 1991 autobiographical short fiction collection <em>Woman Hollering Creek</em>. The narrator is a young girl living near San Antonio.</p>\n<blockquote>\n<p>I rode the bus. My grandmother had let me ride alone once I could recite our home address without missing. I rode and learned the streets. I drew a map in my head and placed myself on it. At night under my blanket I quizzed myself on the city&rsquo;s plan and set tasks: <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Reach the library transferring only buses that pass the river. Picture a route from the school to my cousin&rsquo;s house.</span></p>\n<p style=\"text-align: right;\"><span class=\"dap_copyright\">&copy;1991 by Sandra Cisneros</span></p>\n</blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It describes the narrator trying to memorize her home address.</p>"},
+    {"id": "b", "content": "<p>It gives directions to the narrator&rsquo;s favorite library.</p>"},
+    {"id": "c", "content": "<p>It portrays the narrator&rsquo;s relationship with her grandmother.</p>"},
+    {"id": "d", "content": "<p>It provides examples of what the narrator quizzes herself on at night.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it accurately describes how the underlined portion functions in the text as a whole. The narrator explains that she rides the bus, learns the streets, draws a &ldquo;map in [her] head,&rdquo; and at night quizzes herself on the city&rsquo;s plan, setting tasks. The underlined portion gives two such tasks (reaching the library by certain routes and picturing a route from school to her cousin&rsquo;s house) and thus provides examples of what she quizzes herself on at night.</p><p>Choice A is incorrect because the underlined portion does not mention memorizing the home address. Choice B is incorrect because the underlined portion does not contain specific directions to the library, nor does it identify the library as favorite. Choice C is incorrect because the underlined portion makes no mention of the grandmother or the narrator&rsquo;s relationship with her.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

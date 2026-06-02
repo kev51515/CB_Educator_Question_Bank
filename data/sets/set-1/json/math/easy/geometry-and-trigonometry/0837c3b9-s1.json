@@ -1,0 +1,39 @@
+{
+  "questionId": "0837c3b9-s1",
+  "originalId": "0837c3b9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle GHI and triangle JKL are similar triangles, where side GH and side JK are corresponding sides. If the length of JK equals 3 times the length of GH and the perimeter of triangle GHI is 14, what is the perimeter of triangle JKL?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>28</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>84</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since the triangles are similar with a scale factor of 3 from GHI to JKL, each side of JKL is 3 times the corresponding side of GHI, so the perimeter of JKL is 3 times the perimeter of GHI. Thus the perimeter of JKL is 3 \u00d7 14 = 42.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A3.T3.easy"
+}

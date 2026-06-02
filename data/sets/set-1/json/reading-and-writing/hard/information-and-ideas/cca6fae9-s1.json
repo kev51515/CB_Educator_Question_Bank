@@ -1,0 +1,39 @@
+{
+  "questionId": "cca6fae9-s1",
+  "originalId": "cca6fae9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Delta 13-C Values in Coastal Algae Samples from Four Sites along the Baja California Coast, 2018&ndash;2019</p></caption><thead><tr><th scope=\"col\" style=\"text-align: center;\">Site</th><th scope=\"col\" style=\"text-align: center;\">March 2018</th><th scope=\"col\" style=\"text-align: center;\">September 2018</th><th scope=\"col\" style=\"text-align: center;\">March 2019</th><th scope=\"col\" style=\"text-align: center;\">September 2019</th></tr></thead><tbody><tr><th scope=\"row\" style=\"text-align: left;\">Bahia Tortugas</th><td style=\"text-align: center;\">no data available</td><td style=\"text-align: center;\">&minus;18.2</td><td style=\"text-align: center;\">&minus;15.7</td><td style=\"text-align: center;\">&minus;19.4</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Punta Banda</th><td style=\"text-align: center;\">&minus;12.4</td><td style=\"text-align: center;\">no data available</td><td style=\"text-align: center;\">&minus;13.0</td><td style=\"text-align: center;\">&minus;14.1</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Loreto</th><td style=\"text-align: center;\">&minus;21.3</td><td style=\"text-align: center;\">&minus;20.9</td><td style=\"text-align: center;\">&minus;16.5</td><td style=\"text-align: center;\">&minus;20.7</td></tr><tr><th scope=\"row\" style=\"text-align: left;\">Cabo Pulmo</th><td style=\"text-align: center;\">&minus;11.6</td><td style=\"text-align: center;\">&minus;11.1</td><td style=\"text-align: center;\">&minus;9.4</td><td style=\"text-align: center;\">&minus;12.0</td></tr></tbody></table></figure><p>To track shifts in nearshore primary production along the Baja California coast, marine ecologist Dario Cervantes and colleagues measured delta 13-C values (a stable carbon isotope ratio used to indicate the photosynthetic pathways and environmental conditions experienced by marine algae) in samples collected at four coastal sites over two years. Bahia Tortugas and Loreto sit near major upwelling zones that typically produce <u>more negative delta 13-C values</u>, while Punta Banda and Cabo Pulmo lie in calmer, warmer waters that typically produce less negative values. Cervantes and colleagues concluded that, although the broad north&ndash;south contrast among the four sites was preserved across the study, conditions at Bahia Tortugas and Loreto varied substantially across the three measurements taken between September 2018 and September 2019.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the underlined conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>At Bahia Tortugas and Loreto, delta 13-C values changed by several units between September 2018 and September 2019, while at Punta Banda and Cabo Pulmo the values across the same three measurements were comparatively close together.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Delta 13-C values were generally more negative at Bahia Tortugas and Loreto than at Punta Banda and Cabo Pulmo, but the differences between northern and southern sites narrowed by September 2019.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Delta 13-C values reached their least negative level in March 2019 at both Bahia Tortugas and Loreto, but no data were available for Bahia Tortugas in March 2018.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Although all four sites showed variation across the two years, delta 13-C values stayed essentially flat at Bahia Tortugas and Loreto across the three measurements taken between September 2018 and September 2019.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The underlined conclusion is that conditions at Bahia Tortugas and Loreto varied substantially across the three measurements between September 2018 and September 2019. The table shows Bahia Tortugas moving from &minus;18.2 to &minus;15.7 to &minus;19.4 (a range of 3.7 units) and Loreto moving from &minus;20.9 to &minus;16.5 to &minus;20.7 (a range of 4.4 units), while Punta Banda and Cabo Pulmo each vary by only about 1 to 2 units across the same three measurements. The contrast in variability directly supports the conclusion.</p><p>Choice B is incorrect because it focuses on the north&ndash;south contrast, not on variability at Bahia Tortugas and Loreto across the three relevant measurements; in fact, the contrast does not clearly narrow by September 2019. Choice C is incorrect because the conclusion is about variability, not which month was \"least negative,\" and the missing March 2018 datum is irrelevant to the September-2018-to-September-2019 window. Choice D is incorrect because it states the opposite of what the data show: Bahia Tortugas and Loreto values changed substantially, not stayed flat.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

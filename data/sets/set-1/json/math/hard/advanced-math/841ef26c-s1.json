@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "841ef26c-s1",
+  "originalId": "841ef26c",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>f(x) = 3x<sup>2</sup> + 48x + 200</p><p>The function g is defined by g(x) = f(x + 4). For what value of x does g(x) reach its minimum?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;12</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;16</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The minimum of f occurs at its vertex, x = &minus;b/(2a) = &minus;48/6 = &minus;8. Since g(x) = f(x + 4), the graph of g is the graph of f shifted 4 units to the left. So g reaches its minimum at x = &minus;8 &minus; 4 = &minus;12.</p><p>Choice A is the minimum location of f itself, not of g. Choices B and D arise from shifting the wrong direction or doubling the shift.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

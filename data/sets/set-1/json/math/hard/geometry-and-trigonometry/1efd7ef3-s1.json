@@ -1,0 +1,39 @@
+{
+  "questionId": "1efd7ef3-s1",
+  "originalId": "1efd7ef3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the value of sin(37&pi;/2)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;&radic;2/2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Sine has period 2&pi;. 37&pi;/2 = 18&pi; + &pi;/2, and since 18&pi; = 9(2&pi;), sin(37&pi;/2) = sin(&pi;/2) = 1.</p><p>Choices A, B, and C give incorrect reference values.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A4.T8.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9869c261-s1",
+  "originalId": "9869c261",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Core samples obtained by a submersible probe at the Pelagia Basin on the floor of the South Atlantic suggest unusual depositional conditions far below the ocean surface. To characterize the nature of the depositional environment, Hiroshi Nakamura and colleagues analyzed the grain size of basin sediment, finding that although there are intervals of large, well-rounded pebbles, most of the sediment consists of very fine clays that show signs of layered, calm settling interrupted by brief disturbances. Nakamura and colleagues concluded that the pebbles are gravel deposited by powerful turbidity currents, whereas the fine clays are deposited by slow settling out of still seawater, leading the researchers to posit that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>although the Pelagia Basin experienced a prolonged period of swift bottom flow that prevented clay from settling, slow-moving currents from a distant source were intermittently present.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>one or more turbidity currents flowed across the Pelagia Basin for an extended period until being replaced by a calm-water environment that persisted only briefly before being permanently disturbed.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>a calm-water environment existed at the Pelagia Basin for a prolonged period, though the environment was occasionally disrupted by powerful turbidity currents that briefly delivered gravel to the site.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>a current-fed calm basin was present at the Pelagia Basin for an extended period, and although the calm phases experienced occasional disruption, the turbidity currents did not.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text says that most of the sediment is fine clay deposited slowly in still water, which implies a calm-water environment persisting for a long time, while the intervals of gravel deposited by powerful turbidity currents indicate occasional brief disturbances. Taken together, the evidence supports the conclusion that a calm-water environment existed for a prolonged period at the Pelagia Basin and was occasionally interrupted by turbidity currents that delivered gravel.</p><p>Choice A is incorrect because the abundance of fine clay shows that calm settling conditions <em>were</em> present, not absent; and the text doesn't address where any currents originated. Choice B is incorrect because the evidence indicates a long-lived calm-water environment with brief disturbances, not a long period of turbidity currents replaced by a short calm phase. Choice D is incorrect because the text describes the gravel layers as evidence of brief disturbances, not as a continuous condition, so it is not supported to say only the calm phases were disrupted while the turbidity currents were not.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

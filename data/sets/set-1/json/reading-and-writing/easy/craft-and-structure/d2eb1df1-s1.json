@@ -1,0 +1,25 @@
+{
+  "questionId": "d2eb1df1-s1",
+  "originalId": "d2eb1df1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In praising Joy Harjo's collection <em>An American Sunrise</em>, a critic observed that the works of the former US Poet Laureate retain their <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> character when read silently: the lines carry the same rhythmic, song-like cadence on the page that they do when Harjo recites them aloud.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>technical</p>"},
+    {"id": "b", "content": "<p>private</p>"},
+    {"id": "c", "content": "<p>discordant</p>"},
+    {"id": "d", "content": "<p>musical</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the text describes the lines as having a \"rhythmic, song-like cadence,\" which \"musical\" captures directly. Choice A is incorrect because \"technical\" suggests specialized or procedural, not song-like. Choice B is incorrect because \"private\" suggests intimate or personal, not the rhythmic quality the text emphasizes. Choice C is incorrect because \"discordant\" means clashing, the opposite of the harmonious cadence described.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

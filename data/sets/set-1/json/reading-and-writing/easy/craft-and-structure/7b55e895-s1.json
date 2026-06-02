@@ -1,0 +1,39 @@
+{
+  "questionId": "7b55e895-s1",
+  "originalId": "7b55e895",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "INI",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Many fish species, such as carp, can thrive in a wide range of waterways. By contrast, certain stream-dwelling salamander species are highly restricted in where they can live. This is because many of these salamanders rely on cold, oxygen-rich water found only in mountain streams. Therefore, these salamanders struggle to survive in lowland streams where the water is warmer.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>A recent investigation analyzed observations of more than 200 stream salamander species to understand why they live in such narrow ranges. Researchers noticed that when several salamander species coexisted in a watershed, each tended to occupy a smaller area than it would alone. The team concluded that competition among species, rather than water temperature, often limits where these salamanders can live.</p>",
+  "stem": "<p>Based on the texts, both authors would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>New equipment has made it easier to identify stream salamander species than in the past.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Stream salamanders that live in mountain streams are genetically similar to one another.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Stream salamander species are limited in where they can live.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Very little is known about how stream salamanders raise their young.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Text 1 emphasizes that salamanders need specific conditions; Text 2 shows competition further narrows where they can live. Both texts agree the species are limited in range.</p><p>Choices A, B, and D are not supported by either text.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A2.T4.easy"
+}

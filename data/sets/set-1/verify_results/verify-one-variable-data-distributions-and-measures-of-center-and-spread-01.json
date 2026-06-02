@@ -1,0 +1,22 @@
+[
+  {"id": "8193e8cd-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.medium", "verdict": "ok"},
+  {"id": "f52123e0-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T4.medium", "verdict": "ok"},
+  {"id": "7b65bb28-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T2.medium", "verdict": "ok"},
+  {"id": "881ef5f5-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.medium", "verdict": "ok"},
+  {"id": "25fc031a-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium", "verdict": "ok"},
+  {"id": "5c3c2e3c-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.medium", "verdict": "ok"},
+  {"id": "07f2829b-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.medium", "verdict": "aspect_drift", "detail": "Stem compares medians of two separate data sets (Year 2018 vs Year 2019). This is A4.T9 (compare measures across two data sets), not A5.T14 (effect of a manipulation on one set's statistics). No manipulation/transformation is described."},
+  {"id": "a456cfd2-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.medium", "verdict": "aspect_drift", "detail": "Question computes median from a frequency table (cumulative counting to middle position). A3.T7 is direct retrieval (min/max/sum of named rows), not computing a measure of center. This belongs in A1.T3 (median from frequency table)."},
+  {"id": "3f2ee20a-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium", "verdict": "aspect_drift", "detail": "A2.T5 requires qualitative SD comparison from two visual distributions. This stem compares two classes via min/max/median table and the keyed answer (B) is about which class contained the highest score — purely a min/max comparison. Belongs in A4.T9."},
+  {"id": "a5b069b4-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T2.medium", "verdict": "ok"},
+  {"id": "be00d896-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.medium", "verdict": "ok"},
+  {"id": "578e26ae-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T10.medium", "verdict": "ok"},
+  {"id": "a29e89fc-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.medium", "verdict": "difficulty_drift", "detail": "Medium lever for A1.T1 requires '4-digit numbers or one decimal place so arithmetic is non-trivial' and 'non-round mean requiring careful division'. Clone uses 5 two-digit integers (28,30,29,31,32) summing evenly to 150/5=30 — this is an Easy-level computation."},
+  {"id": "560fab82-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.medium", "verdict": "type_drift", "detail": "A3.T7 medium specifically targets identifying the min/max value with nonzero frequency (often with a zero-frequency distractor row). This clone asks for the mode of a frequency table — a different task with no zero-frequency distractor; loses the type's medium signature."},
+  {"id": "9110c120-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.medium", "verdict": "ok"},
+  {"id": "d0efc1dd-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T12.medium", "verdict": "ok"},
+  {"id": "4c774b00-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.medium", "verdict": "ok"},
+  {"id": "9e2bf782-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.medium", "verdict": "ok"},
+  {"id": "d94018fd-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A2.T5.medium", "verdict": "ok"},
+  {"id": "190be2fc-s1", "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T13.hard", "verdict": "ok"}
+]

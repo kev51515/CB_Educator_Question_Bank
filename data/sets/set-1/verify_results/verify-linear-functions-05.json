@@ -1,0 +1,22 @@
+[
+  {"id": "255996a6-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "ok"},
+  {"id": "1480dd5c-s1", "templateId": "linear-functions.A1.T4.easy", "verdict": "ok"},
+  {"id": "720e51ac-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"},
+  {"id": "7fac16fb-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "0eae6be1-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "343aaff6-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "3174f07d-s1", "templateId": "linear-functions.A4.T1.easy", "verdict": "ok"},
+  {"id": "346d5c2e-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "ok"},
+  {"id": "a1696f3e-s1", "templateId": "linear-functions.A1.T4.easy", "verdict": "wrong_answer", "detail": "p(3)=6(3)+a=18+a=20 gives a=2. Option (a) is '2', option (b) is '-2'. Rationale correctly derives a=2 but states 'Choice B is correct'. Key should be 'a', not 'b'."},
+  {"id": "4e97f862-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "06fc1726-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "930c2990-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"},
+  {"id": "13909d78-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "a396ed75-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "fe6f9678-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "520c8177-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "81390d6c-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "9d9fe1e6-s1", "templateId": "linear-functions.A2.T1.easy", "verdict": "wrong_answer", "detail": "h(x)=24-0.12x: constant 24 is h(0), the water level at the START of measurement. Option (c) says 'water level at the start of the measurement' (correct). Key is 'd' = 'water level at the end of the measurement period' (incorrect). Key should be 'c'."},
+  {"id": "bd9eb2b5-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "wrong_answer", "detail": "7x=84 gives x=12. Option (c) is '12', option (d) is '7'. Rationale correctly computes x=12 but says 'Choice D is correct'. Key should be 'c', not 'd'."},
+  {"id": "0b332f00-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "type_drift", "detail": "Stem asks for g(4) given g(x)=5x — this is evaluating f(c) at a given input (A1.T1), not solving f(x)=k for x (A1.T2). Answer 20 is correct, but type tag is wrong."}
+]

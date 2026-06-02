@@ -1,0 +1,25 @@
+{
+  "questionId": "2df56712-s1",
+  "originalId": "2df56712",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Modernist choreographer Tomás Reyes is credited with the choreography for three full-length ballets: <em>Tideland</em> (1968), <em>Glass Quartet</em> (1974), and <em>Iron Garden</em> (1981). However, the choreography of <em>Tideland</em> consisted largely of his rearrangements of earlier sequences by Martha Graham. In addition, although Reyes and collaborator Inés Calderón devised most of the movement for <em>Glass Quartet</em>, director Marlena Voss replaced nearly all of it in rehearsals before the premiere. Of the three works, <em>Iron Garden</em> is the production that contains the most movement actually invented by Reyes himself.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The director of <em>Glass Quartet</em> retained most of the choreography Reyes had devised for the ballet.</p>"},
+    {"id": "b", "content": "<p>Of the three ballets credited to Reyes, <em>Iron Garden</em> contains the largest amount of his original choreography.</p>"},
+    {"id": "c", "content": "<p>Martha Graham is generally regarded as a more influential choreographer than Reyes.</p>"},
+    {"id": "d", "content": "<p>Reyes is one of the most innovative figures in mid-twentieth-century American dance.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text walks through Reyes's three credited ballets, showing that <em>Tideland</em> mostly recycles Martha Graham's sequences and that <em>Glass Quartet</em>'s Reyes choreography was replaced by the director, before concluding that <em>Iron Garden</em> retains the most Reyes-original movement.</p><p>Choice A is incorrect because the text says nearly all of Reyes's choreography for <em>Glass Quartet</em> was replaced. Choice C is incorrect because the text does not compare the artistic stature of Graham and Reyes. Choice D is incorrect because the text never makes a general claim about Reyes's significance in mid-century dance; it discusses authorship of three specific works.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.medium"
+}

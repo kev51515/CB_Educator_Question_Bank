@@ -1,0 +1,22 @@
+{
+  "questionId": "e62cfe5f-s1",
+  "originalId": "e62cfe5f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>According to a model, the length, in millimeters, of a certain species of ant can be estimated by adding 0.3 to two times the body mass of the ant, in milligrams. According to the model, what would be the length, in millimeters, of an ant that has a body mass of 1.5 milligrams?</p>",
+  "answerOptions": [],
+  "keys": [
+    "3.3"
+  ],
+  "rationale": "<p>The correct answer is 3.3. Let <em>x</em> represent body mass and <em>y</em> represent length. The model gives <em>y</em> = 0.3 + 2<em>x</em>. Substituting <em>x</em> = 1.5 yields <em>y</em> = 0.3 + 2(1.5) = 0.3 + 3 = 3.3.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T1.medium"
+}

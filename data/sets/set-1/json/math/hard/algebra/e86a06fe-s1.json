@@ -1,0 +1,39 @@
+{
+  "questionId": "e86a06fe-s1",
+  "originalId": "e86a06fe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Jorge used fabric measuring 7 yards in length to make each costume for a theater. The relationship between the number of costumes Jorge made, x, and the total length of fabric he purchased, y, in yards, is represented by y - 7x = 9. What is the best interpretation of 9 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The number of yards of fabric used for each costume.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of costumes Jorge made.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The number of yards of fabric Jorge had left over after making the costumes.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The cost, in dollars, of the fabric Jorge purchased.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Rewriting: y = 7x + 9. The 7x is the fabric used for x costumes; y is the total purchased; so 9 is the extra (leftover) fabric.</p><p>Choices A describes the slope 7. Choice B refers to x. Choice D introduces a quantity (cost) not in the equation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A2.T1.hard"
+}

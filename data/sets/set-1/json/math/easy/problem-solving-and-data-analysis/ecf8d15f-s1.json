@@ -1,0 +1,39 @@
+{
+  "questionId": "ecf8d15f-s1",
+  "originalId": "ecf8d15f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A total of 60 attendees at a community fair were offered 4 craft workshops. The table shows the number who chose each workshop.</p><table border=\"1\"><tr><th>Workshop</th><th>Number of attendees</th></tr><tr><td>Pottery</td><td>21</td></tr><tr><td>Painting</td><td>18</td></tr><tr><td>Knitting</td><td>14</td></tr><tr><td>Origami</td><td>7</td></tr><tr><td>Total</td><td>60</td></tr></table><p>If one of these attendees is selected at random, what is the probability that the selected attendee chose origami?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7/120</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7/53</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7/60</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The probability is the number of origami choosers divided by the total: 7/60.</p><p>Choice A is incorrect; the denominator is double the total. Choice B is incorrect; the denominator excludes origami. Choice C is incorrect; this is the probability of choosing knitting (approximately).</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T2.easy"
+}

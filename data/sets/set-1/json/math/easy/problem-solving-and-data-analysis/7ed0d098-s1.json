@@ -1,0 +1,39 @@
+{
+  "questionId": "7ed0d098-s1",
+  "originalId": "7ed0d098",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Reyes spent 25% of his 6-hour shift answering customer emails. How many <strong>minutes</strong> of his shift did he spend answering emails?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1.5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>270</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 6 hours equals 6 \u00d7 60 = 360 minutes. 25% of 360 minutes is 0.25 \u00d7 360 = 90 minutes.</p><p>Choice A is incorrect. This is 25% of 6, treating the time in hours rather than converting to minutes.</p><p>Choice B is incorrect. This is just the percentage value, not applied to the total minutes.</p><p>Choice D is incorrect. This is the number of minutes spent NOT on emails (75% of the shift).</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.medium"
+}

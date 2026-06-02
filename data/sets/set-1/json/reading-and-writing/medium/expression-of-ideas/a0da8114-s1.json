@@ -1,0 +1,25 @@
+{
+  "questionId": "a0da8114-s1",
+  "originalId": "a0da8114",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T11.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Andean alpacas are domesticated camelids native to the highlands of South America.</li>\n<li>A mutation in their EPO gene increases red blood cell production.</li>\n<li>A mutation in their VEGFA gene improves the formation of capillaries in muscle tissue.</li>\n<li>These mutations enable the alpacas to thrive in hypoxic (low-oxygen) conditions at high altitudes.</li>\n<li>In a 2019 study, Marcela Vilca and colleagues noted that wild vicu&ntilde;as&rsquo; DNA contains the same EPO and VEGFA mutations.</li>\n<li>Vilca and colleagues concluded that the alpacas first acquired these mutations through ancient domestication from vicu&ntilde;a populations roughly 7,000 years ago.</li>\n</ul>",
+  "stem": "<p>The student wants to present the conclusion of Marcela Vilca and colleagues&rsquo; 2019 study. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Like Andean alpacas, wild vicu&ntilde;as can thrive in hypoxic conditions at high altitudes.</p>"},
+    {"id": "b", "content": "<p>Both Andean alpacas and wild vicu&ntilde;as have mutations in their EPO and VEGFA genes, which increase red blood cell production and improve capillary formation, respectively.</p>"},
+    {"id": "c", "content": "<p>Through ancient domestication from wild vicu&ntilde;a populations roughly 7,000 years ago, Andean alpacas acquired the genetic mutations that enable them to thrive in hypoxic conditions.</p>"},
+    {"id": "d", "content": "<p>In addition to increasing red blood cell production, a mutation in Andean alpacas&rsquo; VEGFA gene improves the formation of capillaries in muscle tissue.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. It presents the study&rsquo;s conclusion: alpacas acquired the relevant mutations through ancient domestication from vicu&ntilde;a populations.</p><p>Choices A and B emphasize similarities between species but don&rsquo;t state the study&rsquo;s conclusion. Choice D misrepresents the notes (the VEGFA mutation affects capillaries, not red blood cell production).</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

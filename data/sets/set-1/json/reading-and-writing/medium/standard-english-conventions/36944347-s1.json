@@ -1,0 +1,25 @@
+{
+  "questionId": "36944347-s1",
+  "originalId": "36944347",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T6.medium",
+  "stimulus": "<p>Reported measurements of Mount Everest's elevation differ: according to a 2020 Chinese-Nepali survey, the summit stands at 8,848.86 meters, whereas earlier US-led assessments listed the height as 8,850 meters. This discrepancy can be explained in part by the fact that glaciated peaks such as Everest gain and lose elevation as <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> snow and ice.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>one accumulates</p>"},
+    {"id": "b", "content": "<p>it accumulates</p>"},
+    {"id": "c", "content": "<p>we accumulate</p>"},
+    {"id": "d", "content": "<p>they accumulate</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The noun that goes with \"gain and lose\" is \"peaks,\" a plural noun. \"They\" is a third-person plural pronoun, so it can correctly stand in for \"peaks.\"</p><p>Choice A is incorrect. This choice creates a pronoun-antecedent agreement error. \"One\" is a singular pronoun, but the noun that goes with \"gain and lose\" is the plural noun \"peaks.\" Choice B is incorrect. \"It\" is a singular pronoun, but the noun that goes with \"gain and lose\" is the plural noun \"peaks.\" Choice C is incorrect. The noun that goes with \"gain and lose\" is the plural noun \"peaks.\" Peaks are not people, so \"we\" can't be used to stand in for it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

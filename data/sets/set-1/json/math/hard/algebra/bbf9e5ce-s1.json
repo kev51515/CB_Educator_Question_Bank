@@ -1,0 +1,39 @@
+{
+  "questionId": "bbf9e5ce-s1",
+  "originalId": "bbf9e5ce",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For groups of 30 or more people, a botanical garden charges $18 per person for the first 30 people and $12 for each additional person. Which function f gives the total charge, in dollars, for a tour group with n people, where n \u2265 30?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(n) = 30n + 12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(n) = 540 + 18(n - 30)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(n) = 540 + 12(n - 30)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(n) = 18(n - 30) + 12n</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The first 30 people cost 30 \u00d7 18 = $540. Each of the remaining (n - 30) people costs $12. Total: f(n) = 540 + 12(n - 30). Verification: f(30) = 540 \u2713.</p><p>Choice A is not a meaningful expression of the cost. Choice B applies $18 to the additional people. Choice D mixes both rates incorrectly.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T4.hard"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "79e6ec70-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "09f58996-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "2b6c12eb-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "type_drift", "detail": "Stem defines f(x)=2x^2-8 and asks to solve f(x)=24 (A1.T2 'Solve f(x)=k'); tagged as A3.T1 'Read intercept or point from graph' but no graph is involved and no intercept/coordinate is requested. Answer x=4 is correct, but aspect/type tag is wrong."},
+  {"id": "94ff3e2d-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "f547a8b1-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "07bcecac-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "5e63b9cf-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "75915e3c-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "c1eead73-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "79ba511a-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "837e9da7-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "c99d154a-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "7f2524bf-s1", "templateId": "nonlinear-functions.A2.T2.easy", "verdict": "ok"},
+  {"id": "2d394c28-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "aspect_drift", "detail": "Clone is contextual exponential p(x)=8(1.05)^x asking for population at x=0 — A1.T1 (substitution into nonlinear rule) or A2.T2 (interpret initial-value constant), not A3.T1 (read intercept/point from a graph). No graph appears in the stem. Answer 8 is mathematically correct."},
+  {"id": "cc2601cb-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "5f07b257-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "ok"},
+  {"id": "ad376f1a-s1", "templateId": "nonlinear-functions.A3.T5.easy", "verdict": "type_drift", "detail": "Stem gives the y-intercept (0,-4) and asks for f(0) — a trivial intercept-from-given-point task fitting A3.T1 (read intercept) or A3.T2 (intercept from equation), not A3.T5 'Other graph-feature reasoning' (asymptotes, intervals, symmetry). Answer -4 is correct."},
+  {"id": "3e28a622-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "782a8a53-s1", "templateId": "nonlinear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "ebe4bde0-s1", "templateId": "nonlinear-functions.A2.T2.easy", "verdict": "ok"}
+]

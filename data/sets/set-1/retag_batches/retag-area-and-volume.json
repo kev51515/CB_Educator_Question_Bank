@@ -1,0 +1,56 @@
+[
+  {
+    "id": "e9c5bfb2-s1",
+    "templateId": "area-and-volume.A4.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A4.T1 (composite/subtractive figures) but stem describes two similar rectangles with linear scale factor and asks for a corresponding side. This is A3.T3 (similar polygons, linear-side ratio). No combine/subtract operation present."
+  },
+  {
+    "id": "08b7a3f5-s1",
+    "templateId": "area-and-volume.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "A2.T2 is cylinder volume/dimension. Clone uses a triangular prism with V=Bh. Stem structure (find base area from V and h via formula given) is correct geometry but wrong type \u2014 belongs under prism volume (A2.T1 family), not cylinder."
+  },
+  {
+    "id": "dc71597b-s1",
+    "templateId": "area-and-volume.A2.T2.hard",
+    "verdict": "type_drift",
+    "detail": "Stem describes a right circular cone (V=(1/3)\u03c0r\u00b2h), but template A2.T2 is cylinder (V=\u03c0r\u00b2h). The clone fits A2.T3 (cone/sphere/hemisphere). Math is correct (r=6) under cone formula, but type tag is wrong."
+  },
+  {
+    "id": "ec5d4823-s1",
+    "templateId": "area-and-volume.A2.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A2.T1 requires cube-from-edge or reverse (V+base area->dim) or missing-face SA variant. Clone is plain 3-integer V=lwh with small integers \u2014 matches Easy lever, not Medium."
+  },
+  {
+    "id": "6708546e-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional scale, or reverse algebra. Clone gives integer scale factor 3 directly \u2014 this matches Medium lever, not Hard."
+  },
+  {
+    "id": "e5c57163-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt/percentage/fractional/reverse lever. Clone gives integer scale 247 directly and asks forward area ratio \u2014 matches Medium A3.T1 lever, not Hard."
+  },
+  {
+    "id": "983412ea-s1",
+    "templateId": "area-and-volume.A2.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T1 requires two-formula chain (SA<->V), symbolic SA, or SA-from-scratch of non-cube prism. Clone is single inverse application: V=s^2 h, solve for s. Matches Medium tier, not Hard."
+  },
+  {
+    "id": "8c1aa743-s1",
+    "templateId": "area-and-volume.A3.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T1 requires sqrt-of-area-ratio, percentage conversion, fractional k, or reverse algebra. Clone gives integer scale factor 5 directly and asks forward area; matches Medium tier."
+  },
+  {
+    "id": "899c6042-s1",
+    "templateId": "area-and-volume.A2.T3.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A2.T3 requires reverse chain (V+base->h->slant via Pythagoras), hemisphere with (1/2), or multi-step approximation. Clone is direct forward V=(1/3)pi r^2 h with small integer r=3, h=33; matches Medium tier."
+  }
+]

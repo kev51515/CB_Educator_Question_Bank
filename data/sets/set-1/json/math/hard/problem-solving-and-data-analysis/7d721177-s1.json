@@ -1,0 +1,39 @@
+{
+  "questionId": "7d721177-s1",
+  "originalId": "7d721177",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The density of a certain type of cork is 224 kilograms per cubic meter. A cubical block of this cork has a mass of 215 kilograms. To the nearest hundredth of a <u>meter</u>, what is the length of one edge of this block?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.96</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.97</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.99</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.01</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Volume = mass / density = 215 / 224 \u2248 0.95982 cubic meters. For a cube V = s\u00b3, so s = \u221b0.95982 \u2248 0.9865, which rounds to 0.99. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard"
+}

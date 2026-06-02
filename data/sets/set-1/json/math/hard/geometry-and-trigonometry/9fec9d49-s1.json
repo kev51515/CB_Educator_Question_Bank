@@ -1,0 +1,39 @@
+{
+  "questionId": "9fec9d49-s1",
+  "originalId": "9fec9d49",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The floor of an auditorium has an area of 720 square meters. An architect creates a scale model of the floor of the auditorium, where the length of each side of the model is 1/12 times the length of the corresponding side of the actual floor of the auditorium. What is the area, in square meters, of the scale model?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>720</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. When linear dimensions are scaled by 1/12, areas are scaled by (1/12)&sup2; = 1/144. The model's area is 720 &times; 1/144 = 5 square meters.</p><p>Choice A scales by 1/12 instead of 1/144. Choice B gives the linear scale factor's denominator. Choice C does not scale at all.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.hard"
+}

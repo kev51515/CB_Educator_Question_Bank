@@ -1,0 +1,39 @@
+{
+  "questionId": "cc776a04-s1",
+  "originalId": "cc776a04",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to (2.5x &minus; 1.6)<sup>2</sup> &minus; (4.25x<sup>2</sup> &minus; 3.6)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2x<sup>2</sup> &minus; 8x + 6.16</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2x<sup>2</sup> + 5.6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2x<sup>2</sup> &minus; 8x + 2.56</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2x<sup>2</sup> &minus; 8x &minus; 1.04</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>(2.5x &minus; 1.6)<sup>2</sup> = 6.25x<sup>2</sup> &minus; 8x + 2.56. Subtracting (4.25x<sup>2</sup> &minus; 3.6) gives 6.25x<sup>2</sup> &minus; 8x + 2.56 &minus; 4.25x<sup>2</sup> + 3.6 = 2x<sup>2</sup> &minus; 8x + 6.16. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "equivalent-expressions.A2.T6.medium"
+}

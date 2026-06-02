@@ -1,0 +1,39 @@
+{
+  "questionId": "72cbdbc6-s1",
+  "originalId": "72cbdbc6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Researchers Hana Okada and Daniel Brooks studied the relationship between the availability of safe sidewalks in a town and people's willingness to walk to local destinations. Their results suggest that the absence of well-maintained sidewalks can deter new or inexperienced walkers from making walking trips but has little effect on experienced walkers. Therefore, adding more well-maintained sidewalks in a town could potentially ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>increase the number of new or inexperienced walkers making trips in the town.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>decrease the number of experienced walkers making trips in the town.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>increase the number of experienced walkers making trips in the town.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>decrease the number of new or inexperienced walkers making trips in the town.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The deterrent is removed when sidewalks improve, so new/inexperienced walkers \u2014 who were the ones deterred \u2014 would be expected to increase.</p><p>Choice B reverses the relationship. Choice C contradicts the finding that lighting/sidewalk quality doesn't affect experienced walkers. Choice D contradicts the deterrence-removal logic.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A2.T3.easy"
+}

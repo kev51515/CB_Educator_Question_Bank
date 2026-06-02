@@ -1,0 +1,39 @@
+{
+  "questionId": "b2845d88-s1",
+  "originalId": "b2845d88",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line in the <i>xy</i>-plane passes through the points (0, 2) and (3, 0). Which of the following is an equation of this line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = &frac23;<i>x</i> + 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = &minus;&frac23;<i>x</i> + 2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = &minus;&frac23;<i>x</i> &minus; 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = &frac32;<i>x</i> + 2</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope is (0 &minus; 2)/(3 &minus; 0) = &minus;&frac23;, and the <i>y</i>-intercept is 2, giving <i>y</i> = &minus;&frac23;<i>x</i> + 2.</p><p>Choice A has the wrong sign for the slope. Choice C has the wrong <i>y</i>-intercept sign. Choice D inverts the slope magnitude.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T7.easy"
+}

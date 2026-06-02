@@ -1,0 +1,39 @@
+{
+  "questionId": "33e4af6b-s1",
+  "originalId": "33e4af6b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A linear function f has a graph that passes through the points (0, -6) and (2, 0). What is the y-intercept of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 0)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 6)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, -6)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, -2)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The point with x = 0 is (0, -6), so the y-intercept is (0, -6).</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-functions.A4.T1.easy"
+}

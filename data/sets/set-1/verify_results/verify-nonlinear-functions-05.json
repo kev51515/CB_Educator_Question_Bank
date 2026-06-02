@@ -1,0 +1,22 @@
+[
+  {"id": "f423771c-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "f44a29a8-s1", "templateId": "nonlinear-functions.A4.T3.medium", "verdict": "ok"},
+  {"id": "b7cd6ca6-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "44076c7d-s1", "templateId": "nonlinear-functions.A6.T1.medium", "verdict": "ok"},
+  {"id": "70ebd3d0-s1", "templateId": "nonlinear-functions.A2.T2.medium", "verdict": "ok"},
+  {"id": "f89af023-s1", "templateId": "nonlinear-functions.A4.T3.medium", "verdict": "ok"},
+  {"id": "16aa9758-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "1a722d7d-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "821e724e-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "358f18bc-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "9654add7-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "type_drift", "detail": "Clone asks for interpretation of an x-intercept (p where P(q)=0) in context. This fits A3.T4 (x-intercepts/zeros) or A2.T2 (interpret constant), not A3.T3 (vertex/extreme value). Answer is correct (d)."},
+  {"id": "a58232b7-s1", "templateId": "nonlinear-functions.A5.T2.hard", "verdict": "ok"},
+  {"id": "f44b4125-s1", "templateId": "nonlinear-functions.A5.T2.hard", "verdict": "ok"},
+  {"id": "84e8cc72-s1", "templateId": "nonlinear-functions.A4.T2.hard", "verdict": "ok"},
+  {"id": "1fe10d97-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "ok"},
+  {"id": "35e05e19-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "2b1a27cd-s1", "templateId": "nonlinear-functions.A4.T2.hard", "verdict": "ok"},
+  {"id": "55c5d3c2-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "ok"},
+  {"id": "a45ffacb-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "constraint_violation", "detail": "Violates 'nonlinear function' skill scope: stem defines f(x) = -ax + b, which is linear, not nonlinear. Answer a=1 works only because f is linear; if f were nonlinear (e.g., -ax^2+b), answer differs. Must_preserve nonlinear function form violated."},
+  {"id": "4dd4efcf-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "wrong_answer", "detail": "Axis of symmetry x=-3 gives 6a=8, so a=4/3≈1.333. Decimal sanity: 4/3=1.333 ≥ 1, so statement II (a ≥ 1) is TRUE. Rationale incorrectly claims '4/3 < 1'. c = 9a+k = 12+k with k<0 gives c<12, not necessarily c<0, so I is not forced. Correct answer is 'II only' (c), not 'Neither I nor II' (a)."}
+]

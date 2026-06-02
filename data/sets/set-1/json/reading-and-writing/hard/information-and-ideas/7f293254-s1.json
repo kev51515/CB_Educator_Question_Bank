@@ -1,0 +1,25 @@
+{
+  "questionId": "7f293254-s1",
+  "originalId": "7f293254",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A3.T4.hard",
+  "stimulus": "<p>Worker-owned cooperatives, like the Mondragon Corporation in Spain&rsquo;s Basque Country or Cooperative Home Care Associates in New York, are businesses jointly owned and democratically governed by their workers. Workers participate in major business decisions through general assemblies and elected councils. Based on a recent series of interviews with members of several worker cooperatives, a labor researcher claims that this democratic governance can be unexpectedly burdensome for workers who are accustomed to managers making strategic decisions without their participation.</p>",
+  "stem": "<p>Which quotation from the interviews best illustrates the researcher&rsquo;s claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;Our weekly assemblies sometimes run long, but our facilitators have refined them into something efficient: most members can voice an opinion and be home in under two hours.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;At my old factory job, I rarely thought about anything outside my shift. Here, after work, we attend committee meetings, read budgets, and weigh quarterly strategy&mdash;it&rsquo;s a load I had no idea I was signing up for.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;When I joined the cooperative, I expected the pay to be lower than at a conventional firm, but it turned out our wages were quite competitive once profit-sharing was factored in.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;Outside consultants are sometimes brought in to advise the assembly on technical matters, but ultimately the membership&mdash;not the consultants&mdash;has the final say on every proposal.&rdquo;</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it provides the first-person testimony that most directly illustrates the researcher&rsquo;s specific claim&mdash;that democratic governance is an unexpected burden for workers accustomed to top-down decision-making. The speaker contrasts a previous job, in which strategic decisions were made without them, with the cooperative, in which committee meetings, budget review, and strategy occupy time and energy they &ldquo;had no idea&rdquo; they were taking on.</p><p>Choice A is incorrect because it describes assemblies as &ldquo;efficient&rdquo; rather than burdensome, which does not illustrate the claim. Choice C is incorrect because it addresses compensation, not the burden of democratic governance. Choice D is incorrect because it describes how outside expertise is used while membership retains decision-making authority, but it does not illustrate any unexpected burden experienced by workers.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

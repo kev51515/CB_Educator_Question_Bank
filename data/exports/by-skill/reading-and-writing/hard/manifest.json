@@ -1,0 +1,541 @@
+{
+  "generatedAt": "2026-06-01T03:52:05.039Z",
+  "section": "reading-and-writing",
+  "difficulty": "Hard",
+  "axis": "skill",
+  "setCount": 59,
+  "questionCount": 533,
+  "sets": [
+    {
+      "setId": "1",
+      "label": "Text Structure and Purpose — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "text-structure-and-purpose-set-1_questions.html",
+        "keyHtml": "text-structure-and-purpose-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Text Structure and Purpose — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "text-structure-and-purpose-set-2_questions.html",
+        "keyHtml": "text-structure-and-purpose-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Text Structure and Purpose — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "text-structure-and-purpose-set-3_questions.html",
+        "keyHtml": "text-structure-and-purpose-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Text Structure and Purpose — Set 4",
+      "questionCount": 9,
+      "files": {
+        "questionsHtml": "text-structure-and-purpose-set-4_questions.html",
+        "keyHtml": "text-structure-and-purpose-set-4_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Words in Context — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "words-in-context-set-1_questions.html",
+        "keyHtml": "words-in-context-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Words in Context — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "words-in-context-set-2_questions.html",
+        "keyHtml": "words-in-context-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Words in Context — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "words-in-context-set-3_questions.html",
+        "keyHtml": "words-in-context-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Words in Context — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "words-in-context-set-4_questions.html",
+        "keyHtml": "words-in-context-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Words in Context — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "words-in-context-set-5_questions.html",
+        "keyHtml": "words-in-context-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Words in Context — Set 6",
+      "questionCount": 4,
+      "files": {
+        "questionsHtml": "words-in-context-set-6_questions.html",
+        "keyHtml": "words-in-context-set-6_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Cross-Text Connections — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "cross-text-connections-set-1_questions.html",
+        "keyHtml": "cross-text-connections-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Cross-Text Connections — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "cross-text-connections-set-2_questions.html",
+        "keyHtml": "cross-text-connections-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Cross-Text Connections — Set 3",
+      "questionCount": 2,
+      "files": {
+        "questionsHtml": "cross-text-connections-set-3_questions.html",
+        "keyHtml": "cross-text-connections-set-3_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Transitions — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "transitions-set-1_questions.html",
+        "keyHtml": "transitions-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Transitions — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "transitions-set-2_questions.html",
+        "keyHtml": "transitions-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Transitions — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "transitions-set-3_questions.html",
+        "keyHtml": "transitions-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Transitions — Set 4",
+      "questionCount": 9,
+      "files": {
+        "questionsHtml": "transitions-set-4_questions.html",
+        "keyHtml": "transitions-set-4_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Rhetorical Synthesis — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "rhetorical-synthesis-set-1_questions.html",
+        "keyHtml": "rhetorical-synthesis-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Rhetorical Synthesis — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "rhetorical-synthesis-set-2_questions.html",
+        "keyHtml": "rhetorical-synthesis-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Rhetorical Synthesis — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "rhetorical-synthesis-set-3_questions.html",
+        "keyHtml": "rhetorical-synthesis-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Rhetorical Synthesis — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "rhetorical-synthesis-set-4_questions.html",
+        "keyHtml": "rhetorical-synthesis-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Rhetorical Synthesis — Set 5",
+      "questionCount": 4,
+      "files": {
+        "questionsHtml": "rhetorical-synthesis-set-5_questions.html",
+        "keyHtml": "rhetorical-synthesis-set-5_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Command of Evidence — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-1_questions.html",
+        "keyHtml": "command-of-evidence-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Command of Evidence — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-2_questions.html",
+        "keyHtml": "command-of-evidence-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Command of Evidence — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-3_questions.html",
+        "keyHtml": "command-of-evidence-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Command of Evidence — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-4_questions.html",
+        "keyHtml": "command-of-evidence-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Command of Evidence — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-5_questions.html",
+        "keyHtml": "command-of-evidence-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Command of Evidence — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-6_questions.html",
+        "keyHtml": "command-of-evidence-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Command of Evidence — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-7_questions.html",
+        "keyHtml": "command-of-evidence-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Command of Evidence — Set 8",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-8_questions.html",
+        "keyHtml": "command-of-evidence-set-8_key.html"
+      }
+    },
+    {
+      "setId": "9",
+      "label": "Command of Evidence — Set 9",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-9_questions.html",
+        "keyHtml": "command-of-evidence-set-9_key.html"
+      }
+    },
+    {
+      "setId": "10",
+      "label": "Command of Evidence — Set 10",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-10_questions.html",
+        "keyHtml": "command-of-evidence-set-10_key.html"
+      }
+    },
+    {
+      "setId": "11",
+      "label": "Command of Evidence — Set 11",
+      "questionCount": 2,
+      "files": {
+        "questionsHtml": "command-of-evidence-set-11_questions.html",
+        "keyHtml": "command-of-evidence-set-11_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Inferences — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inferences-set-1_questions.html",
+        "keyHtml": "inferences-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Inferences — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inferences-set-2_questions.html",
+        "keyHtml": "inferences-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Inferences — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inferences-set-3_questions.html",
+        "keyHtml": "inferences-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Inferences — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inferences-set-4_questions.html",
+        "keyHtml": "inferences-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Inferences — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inferences-set-5_questions.html",
+        "keyHtml": "inferences-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Inferences — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "inferences-set-6_questions.html",
+        "keyHtml": "inferences-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Inferences — Set 7",
+      "questionCount": 1,
+      "files": {
+        "questionsHtml": "inferences-set-7_questions.html",
+        "keyHtml": "inferences-set-7_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Central Ideas and Details — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "central-ideas-and-details-set-1_questions.html",
+        "keyHtml": "central-ideas-and-details-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Central Ideas and Details — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "central-ideas-and-details-set-2_questions.html",
+        "keyHtml": "central-ideas-and-details-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Central Ideas and Details — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "central-ideas-and-details-set-3_questions.html",
+        "keyHtml": "central-ideas-and-details-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Central Ideas and Details — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "central-ideas-and-details-set-4_questions.html",
+        "keyHtml": "central-ideas-and-details-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Central Ideas and Details — Set 5",
+      "questionCount": 1,
+      "files": {
+        "questionsHtml": "central-ideas-and-details-set-5_questions.html",
+        "keyHtml": "central-ideas-and-details-set-5_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Boundaries — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-1_questions.html",
+        "keyHtml": "boundaries-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Boundaries — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-2_questions.html",
+        "keyHtml": "boundaries-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Boundaries — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-3_questions.html",
+        "keyHtml": "boundaries-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Boundaries — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-4_questions.html",
+        "keyHtml": "boundaries-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Boundaries — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-5_questions.html",
+        "keyHtml": "boundaries-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Boundaries — Set 6",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-6_questions.html",
+        "keyHtml": "boundaries-set-6_key.html"
+      }
+    },
+    {
+      "setId": "7",
+      "label": "Boundaries — Set 7",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "boundaries-set-7_questions.html",
+        "keyHtml": "boundaries-set-7_key.html"
+      }
+    },
+    {
+      "setId": "8",
+      "label": "Boundaries — Set 8",
+      "questionCount": 8,
+      "files": {
+        "questionsHtml": "boundaries-set-8_questions.html",
+        "keyHtml": "boundaries-set-8_key.html"
+      }
+    },
+    {
+      "setId": "1",
+      "label": "Form, Structure, and Sense — Set 1",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "form-structure-and-sense-set-1_questions.html",
+        "keyHtml": "form-structure-and-sense-set-1_key.html"
+      }
+    },
+    {
+      "setId": "2",
+      "label": "Form, Structure, and Sense — Set 2",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "form-structure-and-sense-set-2_questions.html",
+        "keyHtml": "form-structure-and-sense-set-2_key.html"
+      }
+    },
+    {
+      "setId": "3",
+      "label": "Form, Structure, and Sense — Set 3",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "form-structure-and-sense-set-3_questions.html",
+        "keyHtml": "form-structure-and-sense-set-3_key.html"
+      }
+    },
+    {
+      "setId": "4",
+      "label": "Form, Structure, and Sense — Set 4",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "form-structure-and-sense-set-4_questions.html",
+        "keyHtml": "form-structure-and-sense-set-4_key.html"
+      }
+    },
+    {
+      "setId": "5",
+      "label": "Form, Structure, and Sense — Set 5",
+      "questionCount": 10,
+      "files": {
+        "questionsHtml": "form-structure-and-sense-set-5_questions.html",
+        "keyHtml": "form-structure-and-sense-set-5_key.html"
+      }
+    },
+    {
+      "setId": "6",
+      "label": "Form, Structure, and Sense — Set 6",
+      "questionCount": 3,
+      "files": {
+        "questionsHtml": "form-structure-and-sense-set-6_questions.html",
+        "keyHtml": "form-structure-and-sense-set-6_key.html"
+      }
+    }
+  ]
+}

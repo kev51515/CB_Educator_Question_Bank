@@ -1,0 +1,25 @@
+{
+  "questionId": "7b43c0cc-s1",
+  "originalId": "7b43c0cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>Te Roopu Whakahau, a Maori choral ensemble from Aotearoa New Zealand, partnered with composer Eleanor Hartfield to produce <em>Tides of Memory</em>, a work weaving traditional waiata and chant with a string quartet and woodwind octet. Te Roopu Whakahau's contribution is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to the piece: the choral lines establish the rhythmic structure, set the melodic vocabulary the instruments take up, and provide the harmonic anchor around which the entire work is built.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>parallel</p>"},
+    {"id": "b", "content": "<p>incidental</p>"},
+    {"id": "c", "content": "<p>foundational</p>"},
+    {"id": "d", "content": "<p>subsequent</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. \"Foundational\" means serving as a base on which other elements rest. The text explains that the choral lines set rhythm, melody, and harmony for everything else in the piece, making the ensemble's contribution the basis of the entire work.</p><p>Choice A is incorrect because \"parallel\" suggests the choral lines run alongside but do not support the rest, contradicting their structural role. Choice B is incorrect because \"incidental\" means minor or secondary, the opposite of the central role described. Choice D is incorrect because \"subsequent\" refers to time order, but the text describes a structural relationship, not a chronological one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "64b6427a-s1",
+  "originalId": "64b6427a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Since its opening in 2019, the Algae Pavilion—a public exhibition hall in Hamburg, Germany, whose facade is filled with panels of live microalgae—has become a notable example of bioreactive architecture. Engineer Hanne Vossen designed the building, whose transparent panels circulate algae that absorb sunlight to produce heat and biomass, as a working model for low-emission urban construction. However, the concept has met with skepticism: critics observe that, although the algae strains used in the Algae Pavilion were carefully selected for the project, it remains too early to determine whether they can sustain their productivity in this unusual setting.</p>",
+  "stem": "<p>According to the text, why are some critics skeptical of the concept behind the Algae Pavilion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It is uncertain whether the Algae Pavilion can sustain the live algae included in its design.</p>"},
+    {"id": "b", "content": "<p>The construction of the Algae Pavilion was no less environmentally damaging than that of more conventional buildings.</p>"},
+    {"id": "c", "content": "<p>Some essential aspects of the Algae Pavilion's design are difficult to adapt to climates outside of Hamburg.</p>"},
+    {"id": "d", "content": "<p>The algae strains used in the Algae Pavilion turned out to be less varied than Vossen had originally envisioned.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text states that Vossen designed the Algae Pavilion as a model for low-emission construction and that critics observe it is too early to tell whether the algae can sustain their productivity in this unusual setting. According to the text, then, critics are skeptical because it is uncertain whether the building can sustain its live algae.</p><p>Choice B is incorrect because the text does not discuss how the building was constructed or compare its construction with that of other buildings. Choice C is incorrect because the text does not address whether the design can be adapted to other climates. Choice D is incorrect because, while the text says strains were carefully selected, it does not say the variety fell short of Vossen's vision.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "ead0fd9b",
+  "externalId": "45ee9a51-b34a-4a7d-88e4-a8ede1c654a4",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:23.527598+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "e5ba4086-2e97-459b-a0ab-e5116f50e229",
+      "content": "<p>instructs the other members of the quartet to play louder.</p>"
+    },
+    {
+      "id": "28ab3672-04f7-4117-9f7a-a03a4ad800c2",
+      "content": "<p>plays at the same volume as the cellist.</p>"
+    },
+    {
+      "id": "c4983823-cfc2-42e4-b493-6be66512f320",
+      "content": "<p>shifts position in order to face outwards toward the audience.</p>"
+    },
+    {
+      "id": "6bf8a77c-6458-4188-a29c-1060d53490d1",
+      "content": "<p>looks at the sheet music instead of looking at the audience.</p>"
+    }
+  ],
+  "keys": [
+    "c4983823-cfc2-42e4-b493-6be66512f320"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of how a violist in a string quartet might behave to ensure their instrument can be heard clearly by the audience during a solo. According to the text, such quartets consist of two violins, a viola, and a cello, configured as follows: the cellist and one of the violinists both face the audience, while the other violinist and the violist face each other. In other words, the viola and its f-holes, or sound openings, are &ldquo;angled away from the audience,&rdquo; just as the musician playing the instrument is. As the text implies, the f-holes are crucial for projecting sound, so this positioning reduces the volume of the viola as perceived by the audience and in turn presents a dilemma during a solo, in which the viola should be heard clearly above the other instruments in the quartet. Therefore, during a viola solo, the violist would most logically adjust their position and face the audience directly, thereby projecting the sound emerging from the instrument&rsquo;s f-holes toward listeners. This adjustment would maximize the viola&rsquo;s sound for the benefit of the audience for the duration of the solo.</p><p>Choice A is incorrect because the text&rsquo;s discussion is about how a violist in a string quartet behaves to ensure that their instrument can be heard clearly by the audience during a solo, given the orientation of this instrument in a typical string quartet configuration, and a soloist would want the viola to be more prominent relative to the other instruments in this context, not less prominent. Therefore, it wouldn&rsquo;t be sensible for the violist to instruct the other members of the quartet to play louder during the solo. Choice B is incorrect because the text&rsquo;s discussion is about how a violist behaves to ensure that their instrument can be heard clearly by the audience during a solo, given the orientation of this instrument in a typical string quartet configuration, and a violist would want the viola to be more prominent and therefore louder relative to all the other instruments. Therefore, it wouldn&rsquo;t be sensible for the violist to play at the same volume as the cellist during a solo. Choice D is incorrect. While a violist might very well look at the sheet music during a solo to ensure they are playing the piece correctly, the direction that a musician looks in doesn&rsquo;t determine how effectively the sound of their instrument is projected to the audience. If, as the text stipulates, a violist wants to ensure that their instrument can be heard clearly, given the orientation of the viola in the typical seating configuration of a string quartet, then the violist would likely change their physical orientation, facing toward the audience and therefore angling the viola&rsquo;s f-holes in that direction during the solo.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>A typical string quartet consists of two violin players, a viola player, and a cello player. When a string quartet performs, one violinist and the cellist usually sit facing the audience. The violist and the other violinist usually sit facing each other. This seating arrangement causes the viola&rsquo;s carved sound openings, or f-holes, to be angled away from the audience. Therefore, if the viola player has a musical solo and wants to make sure that the audience can hear it clearly, the violist typically <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "c4983823-cfc2-42e4-b493-6be66512f320"
+    ],
+    "answerOptions": [
+      {
+        "id": "e5ba4086-2e97-459b-a0ab-e5116f50e229",
+        "content": "<p>instructs the other members of the quartet to play louder.</p>"
+      },
+      {
+        "id": "28ab3672-04f7-4117-9f7a-a03a4ad800c2",
+        "content": "<p>plays at the same volume as the cellist.</p>"
+      },
+      {
+        "id": "c4983823-cfc2-42e4-b493-6be66512f320",
+        "content": "<p>shifts position in order to face outwards toward the audience.</p>"
+      },
+      {
+        "id": "6bf8a77c-6458-4188-a29c-1060d53490d1",
+        "content": "<p>looks at the sheet music instead of looking at the audience.</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of how a violist in a string quartet might behave to ensure their instrument can be heard clearly by the audience during a solo. According to the text, such quartets consist of two violins, a viola, and a cello, configured as follows: the cellist and one of the violinists both face the audience, while the other violinist and the violist face each other. In other words, the viola and its f-holes, or sound openings, are &ldquo;angled away from the audience,&rdquo; just as the musician playing the instrument is. As the text implies, the f-holes are crucial for projecting sound, so this positioning reduces the volume of the viola as perceived by the audience and in turn presents a dilemma during a solo, in which the viola should be heard clearly above the other instruments in the quartet. Therefore, during a viola solo, the violist would most logically adjust their position and face the audience directly, thereby projecting the sound emerging from the instrument&rsquo;s f-holes toward listeners. This adjustment would maximize the viola&rsquo;s sound for the benefit of the audience for the duration of the solo.</p><p>Choice A is incorrect because the text&rsquo;s discussion is about how a violist in a string quartet behaves to ensure that their instrument can be heard clearly by the audience during a solo, given the orientation of this instrument in a typical string quartet configuration, and a soloist would want the viola to be more prominent relative to the other instruments in this context, not less prominent. Therefore, it wouldn&rsquo;t be sensible for the violist to instruct the other members of the quartet to play louder during the solo. Choice B is incorrect because the text&rsquo;s discussion is about how a violist behaves to ensure that their instrument can be heard clearly by the audience during a solo, given the orientation of this instrument in a typical string quartet configuration, and a violist would want the viola to be more prominent and therefore louder relative to all the other instruments. Therefore, it wouldn&rsquo;t be sensible for the violist to play at the same volume as the cellist during a solo. Choice D is incorrect. While a violist might very well look at the sheet music during a solo to ensure they are playing the piece correctly, the direction that a musician looks in doesn&rsquo;t determine how effectively the sound of their instrument is projected to the audience. If, as the text stipulates, a violist wants to ensure that their instrument can be heard clearly, given the orientation of the viola in the typical seating configuration of a string quartet, then the violist would likely change their physical orientation, facing toward the audience and therefore angling the viola&rsquo;s f-holes in that direction during the solo.</p>",
+    "externalid": "45ee9a51-b34a-4a7d-88e4-a8ede1c654a4",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>A typical string quartet consists of two violin players, a viola player, and a cello player. When a string quartet performs, one violinist and the cellist usually sit facing the audience. The violist and the other violinist usually sit facing each other. This seating arrangement causes the viola&rsquo;s carved sound openings, or f-holes, to be angled away from the audience. Therefore, if the viola player has a musical solo and wants to make sure that the audience can hear it clearly, the violist typically <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

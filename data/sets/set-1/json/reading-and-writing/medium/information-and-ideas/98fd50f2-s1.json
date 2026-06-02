@@ -1,0 +1,25 @@
+{
+  "questionId": "98fd50f2-s1",
+  "originalId": "98fd50f2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Among the most attended natural history museums in the world, the Smithsonian National Museum of Natural History in Washington, D.C., received roughly five million visitors in 2019. The museum also offers immersive online exhibits that members of the public can explore for free. Although there were initial concerns that people who explored the online exhibits would then consider an in-person visit unnecessary, museum administrators claim that their surveys of in-person visitors show that those concerns were unjustified.</p>",
+  "stem": "<p>Which statement, if true, would most directly support the administrators&rsquo; claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Many surveyed visitors to the Smithsonian National Museum of Natural History indicated that the online exhibits convinced them to plan an in-person visit.</p>"},
+    {"id": "b", "content": "<p>Most surveyed visitors to the Smithsonian National Museum of Natural History indicated that they were unaware of the online exhibits before their first in-person visit.</p>"},
+    {"id": "c", "content": "<p>Most surveyed visitors to the Smithsonian National Museum of Natural History indicated that they lived somewhere other than the Washington, D.C., area.</p>"},
+    {"id": "d", "content": "<p>Many surveyed visitors to the Smithsonian National Museum of Natural History indicated that they would likely revisit the online exhibits in order to revisit favorite parts of their in-person trip.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because the administrators&rsquo; claim is that initial fears that online exhibits would make in-person visits unnecessary were unjustified. A finding that many surveyed in-person visitors say the online exhibits actually motivated them to come supports that claim. Choice B is incorrect because visitors being unaware of the online exhibits before visiting tells us nothing about whether the online exhibits replace in-person visits. Choice C is incorrect because visitors&rsquo; geographic origins are irrelevant to whether the online exhibits deter in-person visits. Choice D is incorrect because using the online exhibits after a visit does not address whether they made the in-person visit unnecessary.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

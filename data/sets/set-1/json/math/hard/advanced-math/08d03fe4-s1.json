@@ -1,0 +1,25 @@
+{
+  "questionId": "08d03fe4-s1",
+  "originalId": "08d03fe4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the exponential function <i>f</i>, the value of <i>f</i>(1) is <i>k</i>, where <i>k</i> is a constant. Which of the following equivalent forms of the function <i>f</i> shows the value of <i>k</i> as the coefficient or the base?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>f</i>(<i>x</i>) = 4(2)<sup><i>x</i></sup></p>"},
+    {"id": "b", "content": "<p><i>f</i>(<i>x</i>) = 16(2)<sup><i>x</i> &minus; 2</sup></p>"},
+    {"id": "c", "content": "<p><i>f</i>(<i>x</i>) = 32(2)<sup><i>x</i> &minus; 3</sup></p>"},
+    {"id": "d", "content": "<p><i>f</i>(<i>x</i>) = 8(2)<sup><i>x</i> &minus; 1</sup></p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. All four forms are equivalent: 4&middot;2<sup><i>x</i></sup> = 8&middot;2<sup><i>x</i>&minus;1</sup> = 16&middot;2<sup><i>x</i>&minus;2</sup> = 32&middot;2<sup><i>x</i>&minus;3</sup>, since each shift in the exponent by &minus;1 is compensated by doubling the coefficient. So <i>k</i> = <i>f</i>(1) = 4&middot;2<sup>1</sup> = 8. In the form <i>f</i>(<i>x</i>) = 8(2)<sup><i>x</i>&minus;1</sup>, evaluating at <i>x</i> = 1 makes the exponent 0, so the coefficient 8 equals <i>f</i>(1) = <i>k</i>.</p><p>Choice A shows <i>f</i>(0) = 4 as the coefficient. Choice B shows <i>f</i>(2) = 16 as the coefficient. Choice C shows <i>f</i>(3) = 32 as the coefficient.</p>",
+  "generatedAt": "2026-05-27T00:00:16Z",
+  "templateId": "nonlinear-functions.A5.T2.hard"
+}

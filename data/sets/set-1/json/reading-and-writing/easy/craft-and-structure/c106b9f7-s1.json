@@ -1,0 +1,39 @@
+{
+  "questionId": "c106b9f7-s1",
+  "originalId": "c106b9f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>American photographer Gordon Parks is best known for his powerful portraits of public figures, such as his iconic images of Muhammad Ali and Malcolm X. Although Parks photographed many other subjects, his career as a photographer is best represented by the works in which he captured well-known historical figures.</p><p><strong>Text 2</strong></p><p>Critics have often overlooked the many fashion photographs Gordon Parks made for magazines like <em>Vogue</em>. Parks likely took these fashion images regularly during his long career. He is celebrated for his portraits, but Parks likely supported himself financially through commercial fashion work for editors who paid him to shoot models and clothing. Thus, his fashion photographs are a central aspect of his career.</p>",
+  "stem": "<p>Based on the texts, both authors would most likely agree with which statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Parks's portraits have overshadowed his other work.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Parks's works cover a variety of subjects.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>His image of Muhammad Ali is Parks's most famous photograph.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Photographing public figures was a short-lived fashion in midcentury journalism.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Text 1 admits that Parks photographed subjects beyond historical figures, implying variety. Text 2 explicitly says Parks took fashion photographs alongside his portrait work, which also implies variety in his subjects.</p><p>Choice A is incorrect. Text 2 states critics have ignored Parks's fashion work, which suggests his portraits have not overshadowed his other work in the way described. Choice C is incorrect. Neither text singles out the Ali image as the most famous. Choice D is incorrect. Neither text says photographing public figures was a short-lived trend.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A2.T4.easy"
+}

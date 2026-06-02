@@ -1,0 +1,39 @@
+{
+  "questionId": "20b69297-s1",
+  "originalId": "20b69297",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>Carlos created a batch of green paint by mixing 3 ounces of blue paint with 4 ounces of yellow paint. He must mix a second batch using the same ratio of blue and yellow paint as the first batch. If he uses 6 ounces of blue paint for the second batch, how much yellow paint should Carlos use?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2 ounces more than the amount of yellow paint used in the first batch</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4/3 times the amount of blue paint used in the second batch</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly 6 ounces</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4/3 times the amount of yellow paint used in the first batch</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The first batch uses 3 oz blue to 4 oz yellow, so the yellow-to-blue ratio is 4/3. For any batch with the same ratio, yellow = (4/3) \u00d7 blue. Therefore the yellow paint in the second batch is 4/3 times the blue paint used in the second batch.</p><p>Choice A adds an absolute amount rather than scaling. Choice C ignores the ratio. Choice D incorrectly scales relative to the first batch's yellow rather than the second batch's blue.</p>",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.hard"
+}

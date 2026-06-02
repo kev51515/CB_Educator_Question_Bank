@@ -1,0 +1,39 @@
+{
+  "questionId": "1755eaf0-s1",
+  "originalId": "1755eaf0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Like many groups of freshwater fishes, North American minnows have suffered substantial population declines in recent decades, driven by habitat loss, pollution, and altered stream flows. Minnows are also among the most thoroughly studied freshwater fishes, surpassed only by salmonids in the volume of research dedicated to them. As a result, fisheries biologists have drawn many of their conclusions about freshwater-fish declines from minnow data. In a 2022 paper, ichthyologist Maya Ortiz notes that minnows are among the relatively few freshwater-fish groups that form large mixed-species shoals and exhibit broad dietary flexibility, two traits that are linked with increased tolerance to certain types of environmental disturbance. Ortiz therefore contends that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>because the responses of minnows and other freshwater fishes to environmental threats are not always comparable, researchers should be cautious about generalizing from minnow data to other freshwater-fish groups.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>because minnows and other fishes with flexible diets are less harmed by environmental stress than fishes with specialized diets are, they are less likely to face population declines in the future.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>although minnows have historically experienced declines similar to those in other freshwater fishes, minnows are now at substantially greater risk of extinction than those other fishes are.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>although minnows have been studied more thoroughly than most freshwater fishes, biologists should stop using minnows as a study system for environmental change altogether.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Ortiz notes that minnows happen to have traits (shoaling, dietary flexibility) that buffer them against environmental change in ways most other freshwater fishes do not share. The natural inference is that conclusions drawn from minnows may not extend cleanly to fishes that lack those traits \u2014 so researchers should be cautious when generalizing.</p><p>Choice B is incorrect because the text says these traits provide increased tolerance to <em>certain</em> disturbances, not that minnows are protected from declines overall \u2014 in fact, the passage notes minnows have already declined substantially. Choice C is incorrect because the passage does not claim minnows are at greater risk than other freshwater fishes. Choice D is incorrect because it goes too far: Ortiz argues for caution in generalizing, not for abandoning minnow research altogether.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

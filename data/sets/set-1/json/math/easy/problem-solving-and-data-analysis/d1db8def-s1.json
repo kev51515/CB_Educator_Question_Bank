@@ -1,0 +1,39 @@
+{
+  "questionId": "d1db8def-s1",
+  "originalId": "d1db8def",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the results of a survey of 250 people who were asked how often they read a book.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Response</th><th>Daily</th><th>Weekly</th><th>Monthly</th><th>Rarely</th><th>Never</th></tr><tr><td>Number of people</td><td>70</td><td>80</td><td>45</td><td>35</td><td>20</td></tr></table><p>Based on the table, how many people responded either \"Rarely\" or \"Never\"?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>65</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>150</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>230</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The number of people who responded \u201cRarely\u201d (35) plus the number who responded \u201cNever\u201d (20) is 35 + 20 = 55.</p><p>Choice B is incorrect. This adds the wrong categories.</p><p>Choice C is incorrect. This is the total of \u201cDaily\u201d and \u201cWeekly\u201d.</p><p>Choice D is incorrect. This is the total of all categories except \u201cNever.\u201d</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T7.easy"
+}

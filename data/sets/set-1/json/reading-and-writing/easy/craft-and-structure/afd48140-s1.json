@@ -1,0 +1,39 @@
+{
+  "questionId": "afd48140-s1",
+  "originalId": "afd48140",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In 1882, almost 80% of Florida’s railroads were already owned by Henry Plant’s Plant System. The company further strengthened its <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in rail access to the state’s Gulf Coast when it completed the Tampa Bay Railroad in 1885: running from Jacksonville to Tampa, the new line carried most of the region’s freight and passengers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>neutrality</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>insignificance</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>control</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>creativity</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"control\" matches the idea of a company that owned most of the railroads and strengthened its hold over Gulf Coast rail access. Choice A is incorrect because neutrality contradicts ownership of 80%. Choice B is incorrect because insignificance is the opposite. Choice D is incorrect because creativity isn’t the focus.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

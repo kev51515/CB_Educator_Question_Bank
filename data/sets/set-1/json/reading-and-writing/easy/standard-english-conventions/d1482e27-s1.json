@@ -1,0 +1,25 @@
+{
+  "questionId": "d1482e27-s1",
+  "originalId": "d1482e27",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>One of the oldest surviving sundials is a small limestone device unearthed in Egypt and thought to be more than 3,300 years old. The dial <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> hours of daylight, displays a curved scale, and includes markings for noon.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>measures</p>"},
+    {"id": "b", "content": "<p>are measuring</p>"},
+    {"id": "c", "content": "<p>have measured</p>"},
+    {"id": "d", "content": "<p>measure</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The singular verb \"measures\" agrees in number with the singular subject \"dial.\"</p><p>Choice B is incorrect because the plural verb \"are measuring\" doesn't agree in number with the singular subject \"dial.\" Choice C is incorrect because the plural verb \"have measured\" doesn't agree in number with the singular subject \"dial.\" Choice D is incorrect because the plural verb \"measure\" doesn't agree in number with the singular subject \"dial.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

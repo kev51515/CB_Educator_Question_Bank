@@ -1,0 +1,39 @@
+{
+  "questionId": "7254379e-s1",
+  "originalId": "7254379e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Residents of a neighborhood in Portland recently founded a community tool library, where neighbors share gardening tools, hand tools, and small appliances. Students at a local high school surveyed users as part of a project to understand the library&rsquo;s impact. The students concluded that the new tool library benefits the community overall by encouraging neighbors to talk and exchange skills.</p>",
+  "stem": "<p>Which quotation from a survey respondent would best illustrate the students&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;Our first task was figuring out which tools we needed most. We had to balance demand for tools with how much space we had on the shelves.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;I love being able to borrow a drill without having to drive all the way to a hardware store across town.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;What I appreciate most is the savings &mdash; tools are expensive, and being able to borrow them keeps money in my pocket.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;I&rsquo;ve learned so much from my neighbors at the tool library. When I borrowed a tile cutter, one of them walked me through how to use it, and now I&rsquo;m teaching my own brother how to use it too.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the response directly describes neighbors talking and exchanging skills (a neighbor teaches the respondent, who then teaches a relative), which matches the students&rsquo; conclusion.</p><p>Choice A is incorrect: it describes the planning of the library, not interactions among neighbors. Choice B is incorrect: it focuses on convenience, not skill-sharing. Choice C is incorrect: it focuses on money saved, not on talking and exchanging skills.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A3.T4.easy"
+}

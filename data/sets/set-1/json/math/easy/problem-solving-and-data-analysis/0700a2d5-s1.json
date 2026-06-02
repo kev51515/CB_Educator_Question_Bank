@@ -1,0 +1,22 @@
+{
+  "questionId": "0700a2d5-s1",
+  "originalId": "0700a2d5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>How many yards are equivalent to 65 chains? (22 yards = 1 chain)</p>",
+  "answerOptions": [],
+  "keys": [
+    "1430"
+  ],
+  "rationale": "<p>Since 1 chain = 22 yards, 65 chains is equivalent to 65 \u00d7 22 = 1,430 yards.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

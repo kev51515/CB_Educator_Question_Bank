@@ -1,0 +1,39 @@
+{
+  "questionId": "1ea09200-s1",
+  "originalId": "1ea09200",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "Evaluating statistical claims: Observational studies and experiments ",
+  "domainCode": "Q",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A sample of 55 seventh-grade students was selected at random from a particular middle school. The 55 students completed a survey about the school's new lunch menu, and 41 indicated they liked the new menu. Which of the following is the largest population to which the results of the survey can be applied?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>All seventh-grade students in the school district</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The 55 students who completed the survey</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>All students at the middle school</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>All seventh-grade students at the middle school</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Because the sample was drawn at random from seventh-grade students at one middle school, the results can be generalized to that population but no broader. Choice A goes beyond the sampling frame. Choice B is too narrow because the sample was meant to represent a larger group. Choice C is too broad since only seventh-graders were sampled.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "evaluating-statistical-claims-observational-studies-and-experiments.A1.T1.hard"
+}

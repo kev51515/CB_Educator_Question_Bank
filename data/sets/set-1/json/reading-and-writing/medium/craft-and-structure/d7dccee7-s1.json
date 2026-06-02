@@ -1,0 +1,25 @@
+{
+  "questionId": "d7dccee7-s1",
+  "originalId": "d7dccee7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T6.medium",
+  "stimulus": "<p>In a 2022 study, Tomas Cabello and colleagues found that the slime mold <em>Physarum polycephalum</em> not only chooses between competing food sources but also revises its choice when one becomes contaminated. This evidence of an organism without a nervous system effectively \"weighing options\" suggests that decision making in nature may not be confined to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> systems.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>fragile</p>"},
+    {"id": "b", "content": "<p>territorial</p>"},
+    {"id": "c", "content": "<p>complex</p>"},
+    {"id": "d", "content": "<p>cooperative</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Complex\" means having many interconnected parts; the study shows even an organism lacking a nervous system can revise choices, suggesting decision making is not limited to elaborate, complex systems with brains.</p><p>Choice A is incorrect. \"Fragile\" describes vulnerability; the text doesn't address whether nervous systems are easily broken. Choice B is incorrect. \"Territorial\" describes defending an area; this is not the dimension under discussion. Choice D is incorrect. \"Cooperative\" describes mutual coordination among parts or organisms; the text is about whether brain-like organization is required for decision making.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

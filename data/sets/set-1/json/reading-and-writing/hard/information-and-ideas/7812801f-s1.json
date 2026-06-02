@@ -1,0 +1,39 @@
+{
+  "questionId": "7812801f-s1",
+  "originalId": "7812801f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The matorral of central Chile is a species-rich shrubland habitat found nowhere else on Earth. It abuts the Valdivian temperate rainforest along a strikingly abrupt boundary, with virtually no zone of mixed vegetation between the two habitats. Matorral shrubs possess unusually deep and broadly spreading root networks that are highly effective at drawing water from the surrounding soil. In a recent experiment, ecologists transplanted Valdivian tree seedlings into plots located within the matorral. Seedlings placed in plots physically separated from the root networks of matorral shrubs grew nearly four times as fast as seedlings placed in plots in immediate contact with those root networks.</p>",
+  "stem": "<p>Based on the text, what role do matorral roots most likely have in maintaining the border between the matorral and the Valdivian rainforest?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The roots of matorral shrubs allow the shrubs to draw so much water from the soil that Valdivian tree seedlings cannot thrive within the matorral.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The roots of matorral shrubs extend close enough to Valdivian roots to form a physical barrier that Valdivian roots cannot penetrate.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The roots of matorral shrubs physically injure the roots of Valdivian trees, depriving them of essential resources.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The roots of matorral shrubs improve the soil immediately around the shrubs, enabling them to thrive in an otherwise inhospitable habitat.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says matorral root networks are highly effective at drawing water from the soil, and the experiment shows that Valdivian seedlings grow nearly four times faster when separated from those roots. The most reasonable inference is that matorral roots deplete the soil of water to such a degree that Valdivian trees cannot grow well, which helps maintain the sharp boundary.</p><p>Choice B is incorrect because the experiment shows Valdivian seedlings <em>can</em> grow in matorral soil\u2014just slowly\u2014so the roots are not an impassable physical barrier. Choice C is incorrect because the text does not say matorral roots physically damage forest roots; the mechanism described is resource competition. Choice D is incorrect because the text says matorral roots <em>extract</em> water from the soil, not that they enrich it, and it does not describe the matorral as inhospitable.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

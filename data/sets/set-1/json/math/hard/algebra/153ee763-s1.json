@@ -1,0 +1,39 @@
+{
+  "questionId": "153ee763-s1",
+  "originalId": "153ee763",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>&minus;5<i>x</i> + 30<i>q</i><i>x</i> = 60</p><p>In the given equation, <i>q</i> is a constant. The equation has no solution. What is the value of <i>q</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5/6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1/6</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Factor: (30<i>q</i> &minus; 5)<i>x</i> = 60. For no solution, the coefficient of <i>x</i> must equal 0 while the right side does not: 30<i>q</i> &minus; 5 = 0, so <i>q</i> = 1/6.</p><p>Choices A, B, and C produce equations that do have solutions.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.hard"
+}

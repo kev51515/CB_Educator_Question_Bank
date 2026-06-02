@@ -1,0 +1,39 @@
+{
+  "questionId": "8c515062-s1",
+  "originalId": "8c515062",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An ice block weighs 25 pounds when first placed outdoors. While outside, the ice melts at a rate of 1 pound every 3 hours. If 8 pounds of ice remain, for how many hours has the block been outdoors?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>51</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>75</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The block has lost 25 - 8 = 17 pounds. Each pound takes 3 hours to melt, so the total time is 17 \u00d7 3 = 51 hours. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.medium"
+}

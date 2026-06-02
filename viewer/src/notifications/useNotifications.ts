@@ -1,0 +1,149 @@
+/**
+ * useNotifications
+ * ================
+ * Subscribes to the current user's notification feed. Fetches the 50 most
+ * recent rows up-front, then keeps the list fresh via a Supabase Realtime
+ * channel filtered by `recipient_id`. Returns helpers to mark single or all
+ * rows read.
+ */
+import { useCallback, useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
+import { useToast } from "../components";
+
+export interface NotificationRow {
+  id: number;
+  recipient_id: string;
+  kind: string;
+  title: string;
+  body: string | null;
+  link: string | null;
+  read_at: string | null;
+  created_at: string;
+}
+
+interface UseNotificationsResult {
+  notifications: NotificationRow[];
+  unreadCount: number;
+  loading: boolean;
+  refresh: () => Promise<void>;
+  markRead: (id: number) => Promise<void>;
+  markAllRead: () => Promise<void>;
+}
+
+export function useNotifications(): UseNotificationsResult {
+  const [notifications, setNotifications] = useState<NotificationRow[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [userId, setUserId] = useState<string | null>(null);
+  const toast = useToast();
+
+  const fetchNotifications = useCallback(async (uid: string): Promise<void> => {
+    const { data, error } = await supabase
+      .from("notifications")
+      .select("id, recipient_id, kind, title, body, link, read_at, created_at")
+      .eq("recipient_id", uid)
+      .order("created_at", { ascending: false })
+      .limit(50);
+    if (error) {
+      setNotifications([]);
+      return;
+    }
+    setNotifications((data ?? []) as NotificationRow[]);
+  }, []);
+
+  const refresh = useCallback(async (): Promise<void> => {
+    if (!userId) return;
+    setLoading(true);
+    await fetchNotifications(userId);
+    setLoading(false);
+  }, [userId, fetchNotifications]);
+
+  // Resolve current user once.
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      const { data } = await supabase.auth.getUser();
+      const uid = data.user?.id ?? null;
+      if (cancelled) return;
+      setUserId(uid);
+      if (uid) {
+        await fetchNotifications(uid);
+      } else {
+        setNotifications([]);
+      }
+      setLoading(false);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [fetchNotifications]);
+
+  // Realtime subscription scoped to this recipient.
+  useEffect(() => {
+    if (!userId) return;
+    const channel = supabase
+      .channel(`notifications:${userId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "notifications",
+          filter: `recipient_id=eq.${userId}`,
+        },
+        () => {
+          void fetchNotifications(userId);
+        },
+      )
+      .subscribe();
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [userId, fetchNotifications]);
+
+  const markRead = useCallback(
+    async (id: number): Promise<void> => {
+      const nowIso = new Date().toISOString();
+      // Optimistic update.
+      setNotifications((prev) =>
+        prev.map((n) => (n.id === id && n.read_at === null ? { ...n, read_at: nowIso } : n)),
+      );
+      await supabase
+        .from("notifications")
+        .update({ read_at: nowIso })
+        .eq("id", id)
+        .is("read_at", null);
+    },
+    [],
+  );
+
+  const markAllRead = useCallback(async (): Promise<void> => {
+    if (!userId) return;
+    const nowIso = new Date().toISOString();
+    // Snapshot for rollback on failure.
+    let previous: NotificationRow[] = [];
+    setNotifications((prev) => {
+      previous = prev;
+      return prev.map((n) => (n.read_at === null ? { ...n, read_at: nowIso } : n));
+    });
+    const { error } = await supabase
+      .from("notifications")
+      .update({ read_at: nowIso })
+      .eq("recipient_id", userId)
+      .is("read_at", null);
+    if (error) {
+      // Revert optimistic update and surface the failure.
+      setNotifications(previous);
+      toast.error("Couldn't mark notifications as read");
+      return;
+    }
+    // Refresh to ensure unread count + state align with server truth.
+    await fetchNotifications(userId);
+  }, [userId, fetchNotifications, toast]);
+
+  const unreadCount = notifications.reduce(
+    (count, n) => (n.read_at === null ? count + 1 : count),
+    0,
+  );
+
+  return { notifications, unreadCount, loading, refresh, markRead, markAllRead };
+}

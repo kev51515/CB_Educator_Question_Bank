@@ -1,0 +1,39 @@
+{
+  "questionId": "463eec13-s1",
+  "originalId": "463eec13",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If E = 36x<sup>6</sup>y<sup>10</sup>, which of the following expressions is equivalent to \u221aE, where x and y are positive?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6x\u00b3y<sup>5</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18x\u00b3y<sup>5</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6x<sup>6</sup>y<sup>10</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6xy</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>\u221a(36x<sup>6</sup>y<sup>10</sup>) = \u221a36 \u00b7 \u221ax<sup>6</sup> \u00b7 \u221ay<sup>10</sup> = 6 \u00b7 x\u00b3 \u00b7 y<sup>5</sup> = 6x\u00b3y<sup>5</sup>. Choice (a) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T7.medium"
+}

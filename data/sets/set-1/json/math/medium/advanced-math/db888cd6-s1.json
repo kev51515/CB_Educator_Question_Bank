@@ -1,0 +1,39 @@
+{
+  "questionId": "db888cd6-s1",
+  "originalId": "db888cd6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph gives the estimated number of magazines <em>y</em>, in thousands, a publisher sent to its subscribers at the end of each year, where <em>x</em> represents the number of years since the end of 2005, where 0 &le; <em>x</em> &le; 12. The graph passes through the point (0, 12) and decreases as <em>x</em> increases. Which statement is the best interpretation of the <em>y</em>-intercept in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The estimated total number of magazines the publisher sent during the first 12 years was 12,000.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The estimated total number of magazines the publisher sent from the end of 2005 to the end of 2017 was 120.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The estimated number of magazines the publisher sent at the end of 2005 was 12,000.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The estimated number of magazines the publisher sent at the end of 2005 was 12.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The <em>y</em>-intercept is the point where <em>x</em> = 0, which corresponds to the end of 2005. The <em>y</em>-coordinate of the intercept is 12, and the units are thousands of magazines. So at the end of 2005 the publisher sent approximately 12,000 magazines. Choices A and B mistake an annual count for a multi-year total. Choice D uses the wrong units.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A2.T2.medium"
+}

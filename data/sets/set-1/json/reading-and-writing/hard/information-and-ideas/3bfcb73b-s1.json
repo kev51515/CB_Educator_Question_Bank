@@ -1,0 +1,39 @@
+{
+  "questionId": "3bfcb73b-s1",
+  "originalId": "3bfcb73b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>An archaeological team led by Sara Bremmer and Andrei Volkov found fragments of a 3,500-year-old polished-bone tool at a Bronze Age site in southern Finland. Little remains of the implement except a slender bone shaft with characteristic grooves along one edge. Some scholars argue that the tool was largely used by long-distance herders.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the scholars&rsquo; argument?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Other tools dating to the same period have been found in the remains of several dwellings in the region, including in one that may have belonged to a herder.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Remains of other tool types have also been found at the Finnish site that probably reached the location through trade with herding peoples.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Similar tools have been found at other sites of the same period that were connected to the Finnish site via known seasonal grazing corridors.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The other known examples of this tool from the same period have all been found along routes that seem to have been used primarily by herders moving livestock between pastures.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it links the tool&rsquo;s known distribution directly to herder routes&mdash;a strong inference that the implement was used by long-distance herders specifically. Choice A places one tool in one potentially-herder dwelling. Choice B describes other goods, not the tool. Choice C describes connection of sites along grazing corridors but doesn&rsquo;t establish primary use by herders.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

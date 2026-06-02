@@ -1,0 +1,25 @@
+{
+  "questionId": "29ae4d48-s1",
+  "originalId": "29ae4d48",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A6.T17.medium",
+  "stimulus": "<p>In the late 1960s, ceramicist Maren Tovar began firing her sculptures on what was then an unconventional surface for high-temperature work: discarded steel sheets reclaimed from shipyards. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Maren's daughter Pilar has chosen an unusual canvas for her ongoing project, <em>Driftlines</em>. In this striking series, the artist paints fading mineral pigments onto sun-bleached driftwood gathered along the Pacific coast of Chile, producing images that appear to dissolve back into the wood as they age.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Similarly,</p>"},
+    {"id": "b", "content": "<p>Nevertheless,</p>"},
+    {"id": "c", "content": "<p>Indeed,</p>"},
+    {"id": "d", "content": "<p>First,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Similarly\" logically signals that the information about Maren's daughter Pilar is comparable to the previous information about Maren Tovar. Both artists have chosen unconventional surfaces for their work: Maren used reclaimed steel sheets, and Pilar uses sun-bleached driftwood.</p><p>Choice B is incorrect because \"nevertheless\" illogically signals that the information about Pilar contrasts with the previous information about Maren. Instead, it is similar to the previous information. Choice C is incorrect because \"indeed\" illogically signals that the information about Pilar emphasizes or strengthens the previous point about Maren, when it instead introduces a parallel case. Choice D is incorrect because \"first\" illogically signals that the information about Pilar is the first item in an enumerated list, when it is actually a comparable example added to Maren's case.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

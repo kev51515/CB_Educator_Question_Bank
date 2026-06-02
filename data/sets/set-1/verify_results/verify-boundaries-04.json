@@ -1,0 +1,22 @@
+[
+  {"id": "6997261f-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "ok"},
+  {"id": "a1e0c981-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "ok"},
+  {"id": "a466679a-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "ok"},
+  {"id": "b0115ef6-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "8b002b08-s1", "templateId": "boundaries.A1.T2.easy", "verdict": "ok"},
+  {"id": "333b2b65-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"},
+  {"id": "fa07bcb6-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "1f39ab8b-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "02871a0d-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "dddfa043-s1", "templateId": "boundaries.A3.T7.easy", "verdict": "type_drift", "detail": "Stem tests comma after introductory prepositional phrase, not A3.T7's unique-descriptor + name nonrestrictive appositive pattern. Answer (Ocean, the) is correct but the pattern doesn't match T7's core_skill_demand."},
+  {"id": "486f03da-s1", "templateId": "boundaries.A3.T7.easy", "verdict": "ok"},
+  {"id": "667a0587-s1", "templateId": "boundaries.A1.T3.easy", "verdict": "ok"},
+  {"id": "96953201-s1", "templateId": "boundaries.A2.T5.easy", "verdict": "ok"},
+  {"id": "9091458d-s1", "templateId": "boundaries.A2.T4.easy", "verdict": "aspect_drift", "detail": "Tagged A2.T4 (set off appositive/parenthetical) but stem tests A5.T11 direct-question word order ('How ______' with inverted vs declarative + ?/. options). Answer correct."},
+  {"id": "e15c50b2-s1", "templateId": "boundaries.A4.T8.easy", "verdict": "ok"},
+  {"id": "8459dc2f-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "aab78b25-s1", "templateId": "boundaries.A5.T11.easy", "verdict": "ok"},
+  {"id": "1724dac2-s1", "templateId": "boundaries.A1.T1.easy", "verdict": "ok"},
+  {"id": "577b09fa-s1", "templateId": "boundaries.A4.T8.easy", "verdict": "ok"},
+  {"id": "a7fdf862-s1", "templateId": "boundaries.A4.T8.easy", "verdict": "ok"}
+]

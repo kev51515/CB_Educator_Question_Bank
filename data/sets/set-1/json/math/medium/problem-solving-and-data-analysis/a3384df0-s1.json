@@ -1,0 +1,39 @@
+{
+  "questionId": "a3384df0-s1",
+  "originalId": "a3384df0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number of cats at an animal shelter, sorted by breed and fur color, is shown in the table.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th>Breed</th><th>Dark fur</th><th>Light fur</th><th>Total</th></tr></thead><tbody><tr><td>Tabby</td><td style=\"text-align: center;\">4</td><td style=\"text-align: center;\">11</td><td style=\"text-align: center;\">15</td></tr><tr><td>Persian</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">9</td><td style=\"text-align: center;\">14</td></tr><tr><td>Maine Coon</td><td style=\"text-align: center;\">8</td><td style=\"text-align: center;\">14</td><td style=\"text-align: center;\">22</td></tr><tr><td>Siamese</td><td style=\"text-align: center;\">6</td><td style=\"text-align: center;\">12</td><td style=\"text-align: center;\">18</td></tr></tbody></table></figure><p>Which breed has a dark-fur population that is closest to being 1/3 of the total population for that breed?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Tabby</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Persian</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Maine Coon</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Siamese</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. For each breed, compute the fraction of cats with dark fur: Tabby 4/15 &asymp; 0.267; Persian 5/14 &asymp; 0.357; Maine Coon 8/22 &asymp; 0.364; Siamese 6/18 = 1/3 &asymp; 0.333. The fraction 1/3 is exactly 0.333, so the Siamese breed has a dark-fur fraction equal to (and therefore closest to) 1/3. Choices A, B, and C are incorrect because their dark-fur fractions (0.267, 0.357, and 0.364) are farther from 1/3 than the Siamese fraction is.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A5.T16.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f9d40000-s1",
+  "originalId": "f9d40000",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>ABC</em>, the measure of angle <em>A</em> is 18 degrees and the measure of angle <em>B</em> is 54 degrees. What is the measure of angle <em>C</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72 degrees</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>108 degrees</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>126 degrees</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36 degrees</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The interior angles of a triangle sum to 180 degrees, so the measure of angle <em>C</em> is 180 minus 18 minus 54 = 108 degrees.</p><p>Choice A is incorrect: 72 is the sum of the two given angles.</p><p>Choice C is incorrect: 126 ignores angle <em>A</em>.</p><p>Choice D is incorrect: 36 is the difference of the two given angles.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A2.T1.easy"
+}

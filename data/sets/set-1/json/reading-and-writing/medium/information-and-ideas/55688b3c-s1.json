@@ -1,0 +1,25 @@
+{
+  "questionId": "55688b3c-s1",
+  "originalId": "55688b3c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T10.medium",
+  "stimulus": "<p>Edo-period Japanese woodblock prints from the eighteenth and nineteenth centuries frequently showed townspeople gathered around bowls of rice or platters of pickled vegetables. Some art historians, noting that rice and pickles were a major component of the Edo urban diet, interpret these depictions as reflections of everyday Edo eating habits. However, a group of researchers recently reviewed hundreds of food-related prints and found that imported sugar—which could only be acquired in Edo Japan at great expense, since it had to be brought from southern regions through controlled trade—appears in Edo prints of the period more than four times as frequently as rice or pickles do, thereby casting doubt on the idea that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>rice and pickled vegetables were a more significant component of the Edo urban diet than imported sugar was.</p>"},
+    {"id": "b", "content": "<p>food was a more popular subject among Edo-period printmakers than it was among printmakers from other countries at the time.</p>"},
+    {"id": "c", "content": "<p>Edo-period printmakers may have depicted foods for symbolic reasons rather than to show what townspeople typically ate.</p>"},
+    {"id": "d", "content": "<p>depictions of food in Edo-period prints should be taken as realistic representations of Edo urban eating habits.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. Sugar was rare and expensive yet appears far more often than dietary staples like rice and pickles. This contrast undermines the realistic-depiction theory and is what the text says is cast into doubt. Choice A actually aligns with the text's own implication and is therefore not what is being doubted. Choice B is unsupported; no cross-country comparison is given. Choice C describes an alternative the text endorses rather than the idea being doubted.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

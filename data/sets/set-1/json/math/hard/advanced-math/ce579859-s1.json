@@ -1,0 +1,39 @@
+{
+  "questionId": "ce579859-s1",
+  "originalId": "ce579859",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A biologist models the population of a bacterial culture in a controlled environment. Each day from day 0 to day 5, the number of bacteria in the culture is 200% more than the number on the previous day. The model estimates that on day 1 there were 240 bacteria. Which of the following equations represents this model, where <i>n</i> is the estimated number of bacteria on day <i>t</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>n</i> = 240(2)<sup><i>t</i></sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>n</i> = 240(3)<sup><i>t</i></sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>n</i> = 80(2)<sup><i>t</i></sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>n</i> = 80(3)<sup><i>t</i></sup></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A 200% increase multiplies the prior value by 1 + 2.00 = 3, so the model has the form <i>n</i> = <i>a</i>(3)<sup><i>t</i></sup>. On day 1, <i>n</i> = 240, so 240 = <i>a</i>(3)<sup>1</sup>, giving <i>a</i> = 80. The equation is <i>n</i> = 80(3)<sup><i>t</i></sup>.</p><p>Choice A uses a 100% increase factor of 2 with the day-1 value as the initial value. Choice B uses the day-1 value as the initial value. Choice C uses a 100% increase factor of 2.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

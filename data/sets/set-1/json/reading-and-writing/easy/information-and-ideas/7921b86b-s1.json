@@ -1,0 +1,39 @@
+{
+  "questionId": "7921b86b-s1",
+  "originalId": "7921b86b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Mateo Carvajal cofounded Verde Joven Colombia when he was still in high school. Carvajal and his team founded the organization to teach young people how their food choices affect water use and why eating locally grown produce matters. For example, the organization held a community lunch made entirely from produce grown in school gardens.</p>",
+  "stem": "<p>According to the text, what is one reason Carvajal and others founded Verde Joven Colombia?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To draw attention to overlooked Colombian chefs</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To give teenagers advice about starting restaurants</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To teach young people why eating locally grown produce matters</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To help adults improve their cooking skills</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text states directly that the organization was founded to teach young people about food choices and the importance of eating locally grown produce.</p><p>Choice A is incorrect; the text does not mention chefs being overlooked. Choice B is incorrect; the text does not discuss starting restaurants. Choice D is incorrect; the text focuses on young people, not adults.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

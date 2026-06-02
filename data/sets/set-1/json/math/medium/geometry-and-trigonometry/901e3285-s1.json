@@ -1,0 +1,39 @@
+{
+  "questionId": "901e3285-s1",
+  "originalId": "901e3285",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>ABC</em>, the measure of angle <em>A</em> is 70&deg;. If triangle <em>ABC</em> is an isosceles triangle, which of the following could NOT be the measure of angle <em>B</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>70&deg;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40&deg;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>90&deg;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>55&deg;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The three interior angles of a triangle sum to 180&deg;. With m&ang;A = 70&deg;, if m&ang;B = 90&deg;, then m&ang;C = 180 &minus; 70 &minus; 90 = 20&deg;, so the angle measures would be 70&deg;, 90&deg;, and 20&deg;. An isosceles triangle requires at least two angles of equal measure, and no two of these are equal. Choice A: 70&deg;, 70&deg;, 40&deg; is isosceles. Choice B: 70&deg;, 40&deg;, 70&deg; is isosceles. Choice D: 70&deg;, 55&deg;, 55&deg; is isosceles. So 90&deg; is the only value that does not yield an isosceles triangle.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A3.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d1042cf8-s1",
+  "originalId": "d1042cf8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A party supplier buys candles for $0.06 each and holders for $0.55 each. The total cost of <i>x</i> candles and <i>y</i> holders is $487.50. Which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.06<i>x</i> + 0.55<i>y</i> = 487.50</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.55<i>x</i> + 0.06<i>y</i> = 487.50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0.06<i>x</i> &minus; 0.55<i>y</i> = 487.50</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.55<i>x</i> &minus; 0.06<i>y</i> = 487.50</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The cost of <i>x</i> candles is 0.06<i>x</i> and the cost of <i>y</i> holders is 0.55<i>y</i>; their sum is 487.50.</p><p>Choice B swaps the unit prices. Choices C and D use subtraction instead of addition.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A1.T1.easy"
+}

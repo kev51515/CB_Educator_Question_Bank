@@ -1,0 +1,452 @@
+[
+  {
+    "id": "933fee1a",
+    "path": "json/math/medium/geometry-and-trigonometry/933fee1a.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "94364a79",
+    "path": "json/math/medium/geometry-and-trigonometry/94364a79.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "95ca2683",
+    "path": "json/math/medium/geometry-and-trigonometry/95ca2683.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "a4c05a1b",
+    "path": "json/math/medium/geometry-and-trigonometry/a4c05a1b.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "c7bed21d",
+    "path": "json/math/medium/geometry-and-trigonometry/c7bed21d.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "d3fe472f",
+    "path": "json/math/medium/geometry-and-trigonometry/d3fe472f.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "d7a8aa9c",
+    "path": "json/math/medium/geometry-and-trigonometry/d7a8aa9c.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "mcq"
+  },
+  {
+    "id": "fd8745fc",
+    "path": "json/math/medium/geometry-and-trigonometry/fd8745fc.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Lines, angles, and triangles",
+    "type": "spr"
+  },
+  {
+    "id": "13d9a1c3",
+    "path": "json/math/medium/geometry-and-trigonometry/13d9a1c3.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "2bddbc1b",
+    "path": "json/math/medium/geometry-and-trigonometry/2bddbc1b.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "33e29881",
+    "path": "json/math/medium/geometry-and-trigonometry/33e29881.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "5a7e3b46",
+    "path": "json/math/medium/geometry-and-trigonometry/5a7e3b46.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "659cb706",
+    "path": "json/math/medium/geometry-and-trigonometry/659cb706.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "7700d098",
+    "path": "json/math/medium/geometry-and-trigonometry/7700d098.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "902dc959",
+    "path": "json/math/medium/geometry-and-trigonometry/902dc959.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "9823f279",
+    "path": "json/math/medium/geometry-and-trigonometry/9823f279.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "9ec76b54",
+    "path": "json/math/medium/geometry-and-trigonometry/9ec76b54.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "a5aee181",
+    "path": "json/math/medium/geometry-and-trigonometry/a5aee181.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "a71617d3",
+    "path": "json/math/medium/geometry-and-trigonometry/a71617d3.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "bcb66188",
+    "path": "json/math/medium/geometry-and-trigonometry/bcb66188.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "bf8d843e",
+    "path": "json/math/medium/geometry-and-trigonometry/bf8d843e.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "de550be0",
+    "path": "json/math/medium/geometry-and-trigonometry/de550be0.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "mcq"
+  },
+  {
+    "id": "37930b2a",
+    "path": "json/math/medium/problem-solving-and-data-analysis/37930b2a.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Evaluating statistical claims: Observational studies and experiments ",
+    "type": "mcq"
+  },
+  {
+    "id": "642519d7",
+    "path": "json/math/medium/problem-solving-and-data-analysis/642519d7.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Evaluating statistical claims: Observational studies and experiments ",
+    "type": "mcq"
+  },
+  {
+    "id": "1e562f24",
+    "path": "json/math/medium/problem-solving-and-data-analysis/1e562f24.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "4096a482",
+    "path": "json/math/medium/problem-solving-and-data-analysis/4096a482.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "53d97af5",
+    "path": "json/math/medium/problem-solving-and-data-analysis/53d97af5.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "89f8d08a",
+    "path": "json/math/medium/problem-solving-and-data-analysis/89f8d08a.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "9bedc4a0",
+    "path": "json/math/medium/problem-solving-and-data-analysis/9bedc4a0.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "9ee22c16",
+    "path": "json/math/medium/problem-solving-and-data-analysis/9ee22c16.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "spr"
+  },
+  {
+    "id": "a2162ea1",
+    "path": "json/math/medium/problem-solving-and-data-analysis/a2162ea1.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "e03f3477",
+    "path": "json/math/medium/problem-solving-and-data-analysis/e03f3477.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "f04d40b2",
+    "path": "json/math/medium/problem-solving-and-data-analysis/f04d40b2.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "f8f79e11",
+    "path": "json/math/medium/problem-solving-and-data-analysis/f8f79e11.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "fc46af57",
+    "path": "json/math/medium/problem-solving-and-data-analysis/fc46af57.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Inference from sample statistics and margin of error ",
+    "type": "mcq"
+  },
+  {
+    "id": "07f2829b",
+    "path": "json/math/medium/problem-solving-and-data-analysis/07f2829b.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "25fc031a",
+    "path": "json/math/medium/problem-solving-and-data-analysis/25fc031a.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "3f2ee20a",
+    "path": "json/math/medium/problem-solving-and-data-analysis/3f2ee20a.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "4c774b00",
+    "path": "json/math/medium/problem-solving-and-data-analysis/4c774b00.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "560fab82",
+    "path": "json/math/medium/problem-solving-and-data-analysis/560fab82.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "578e26ae",
+    "path": "json/math/medium/problem-solving-and-data-analysis/578e26ae.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "5c3c2e3c",
+    "path": "json/math/medium/problem-solving-and-data-analysis/5c3c2e3c.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "7b65bb28",
+    "path": "json/math/medium/problem-solving-and-data-analysis/7b65bb28.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "8193e8cd",
+    "path": "json/math/medium/problem-solving-and-data-analysis/8193e8cd.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "881ef5f5",
+    "path": "json/math/medium/problem-solving-and-data-analysis/881ef5f5.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "9110c120",
+    "path": "json/math/medium/problem-solving-and-data-analysis/9110c120.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "9e2bf782",
+    "path": "json/math/medium/problem-solving-and-data-analysis/9e2bf782.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "a29e89fc",
+    "path": "json/math/medium/problem-solving-and-data-analysis/a29e89fc.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "a456cfd2",
+    "path": "json/math/medium/problem-solving-and-data-analysis/a456cfd2.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "a5b069b4",
+    "path": "json/math/medium/problem-solving-and-data-analysis/a5b069b4.json",
+    "section": "Math",
+    "difficulty": "Medium",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  }
+]

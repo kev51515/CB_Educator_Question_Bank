@@ -1,0 +1,32 @@
+[
+  {
+    "id": "7f84b136-s1",
+    "templateId": "percentages.A2.T1.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks 'what percent greater' (percent change between two values), which is A3.T3, not A2.T1 ('what percent of N is M'). Answer 540% is mathematically correct for the percent-greater interpretation, but the tagged aspect/type doesn't match the cognitive operation."
+  },
+  {
+    "id": "6e4a60dd-s1",
+    "templateId": "percentages.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Stem is a tip-on-bill scenario (surcharge add-on context), matching A1.T3 (tax/tip add-on) rather than A1.T2 generic 'p% of N' wrapper. Asks for surcharge amount alone, exactly matching T3 easy lever."
+  },
+  {
+    "id": "2d31caae-s1",
+    "templateId": "percentages.A1.T4.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem asks 'what percent of customers gave 2 stars' (part=20, whole=200, find percent). This is A2.T1 (find percent from part/whole), not A1 (compute part from given percent). A1 requires the percent to be given."
+  },
+  {
+    "id": "1c2f50a6-s1",
+    "templateId": "percentages.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a 25% price reduction (before/after change), which is A3.T1 (find new value after percent decrease), not A1.T2 (single p%-of-N in real-world context). A3 boundary: 'two states of the same quantity are compared'."
+  },
+  {
+    "id": "194ae3b1-s1",
+    "templateId": "percentages.A1.T2.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem describes a 35% increase from 2010 to 2025 (before/after percent change), which is A3.T1 (find new value after stated percent change), not A1.T2 (percent of a whole). Common-bug warned against in A1.T2 must_preserve."
+  }
+]

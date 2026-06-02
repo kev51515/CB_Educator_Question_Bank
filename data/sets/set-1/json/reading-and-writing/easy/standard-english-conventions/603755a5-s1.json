@@ -1,0 +1,39 @@
+{
+  "questionId": "603755a5-s1",
+  "originalId": "603755a5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>In 1972, civil rights attorney Maria Reyes co-founded the Coastal Legal Defenders, a community legal ______ that is one of the oldest nonprofit legal aid organizations serving Latina communities in California and that has assisted thousands of families with housing and labor disputes.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>group,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>group</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>group\u2014</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>group, and</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The \"that is...that has...\" relative clauses are essential restrictive modifiers; no punctuation should separate them from \"community legal group.\"</p><p>Choice A wrongly uses a comma to separate the noun from its essential restrictive modifier. Choice C wrongly uses a dash for the same. Choice D inserts a coordinating conjunction that creates an awkward fragmented structure.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A2.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "fb866265-s1",
+  "originalId": "fb866265",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows points where x ranges from 0 to 12 and y ranges from 0 to 140. A line of best fit passes through (0, 15) and (12, 135). What is the slope of this line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1.25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10.00</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>125.00</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Slope = (135 − 15)/(12 − 0) = 120/12 = 10.00. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium"
+}

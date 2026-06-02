@@ -1,0 +1,22 @@
+{
+  "questionId": "694b7fce-s1",
+  "originalId": "694b7fce",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Angle DEA is a right angle. Point B lies on side AD; point C lies on side AE. Segment BC is drawn so that angle BCA is a right angle, forming right triangle ABC inside right triangle ADE. In the figure, AB = 20 units, AC = 12 units, and CE = 18 units. What is the area, in square units, of triangle ADE?</p>",
+  "answerOptions": [],
+  "keys": [
+    "600"
+  ],
+  "rationale": "<p>\u2220ACB and \u2220AED are both right angles, and \u2220BAC = \u2220DAE (the same angle at A). Therefore triangles ABC and ADE are similar (AA). In \u25b3ABC, by the Pythagorean theorem, BC = \u221a(20\u00b2 \u2212 12\u00b2) = \u221a256 = 16. The corresponding side lengths give AE = AC + CE = 30 and the similarity ratio AE/AC = 30/12 = 5/2. So DE = BC \u00d7 5/2 = 16 \u00d7 5/2 = 40. The area of \u25b3ADE = (1/2)\u00b7AE\u00b7DE = (1/2)\u00b730\u00b740 = 600.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6bc907c9-s1",
+  "originalId": "6bc907c9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Composer Antonin Dvo&#345;&aacute;k greatly admired the work of Bed&#345;ich Smetana, a Czech nationalist composer. In fact, scholars believe that a melody from Smetana&rsquo;s 1874 symphonic poem <em>M&aacute; vlast</em> likely inspired the main theme of one of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Symphony No. 9.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Dvo&#345;&aacute;ks&rsquo; most famous symphony&rsquo;s,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Dvo&#345;&aacute;ks most famous symphonies,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Dvo&#345;&aacute;k&rsquo;s most famous symphonies,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Dvo&#345;&aacute;k&rsquo;s most famous symphony&rsquo;s,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The singular possessive proper noun &ldquo;Dvo&#345;&aacute;k&rsquo;s&rdquo; and the plural noun &ldquo;symphonies&rdquo; correctly indicate that Dvo&#345;&aacute;k wrote multiple symphonies that were famous.</p><p>Choice A incorrectly pluralizes the surname and possessivizes &ldquo;symphony&rsquo;s.&rdquo; Choice B omits the necessary possessive on the surname. Choice D incorrectly possessivizes &ldquo;symphony&rsquo;s.&rdquo;</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T8.easy"
+}

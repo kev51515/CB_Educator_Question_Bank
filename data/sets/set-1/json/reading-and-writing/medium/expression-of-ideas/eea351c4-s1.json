@@ -1,0 +1,25 @@
+{
+  "questionId": "eea351c4-s1",
+  "originalId": "eea351c4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>\"Greenwashing\"—labeling products as environmentally friendly under the misleading impression that those products are genuinely sustainable—ultimately does more damage than good. Greenwashed products, such as plastic bottles marketed as \"eco-friendly,\" can lead consumers to discard more single-use packaging, increasing landfill waste. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> greenwashed marketing campaigns can erode public trust in legitimately sustainable brands.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Conversely,</p>"},
+    {"id": "b", "content": "<p>Furthermore,</p>"},
+    {"id": "c", "content": "<p>Aptly,</p>"},
+    {"id": "d", "content": "<p>Nonetheless,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The first sentence tells us that \"greenwashing\" is damaging, the previous sentence offers one example, and this sentence offers another example. So \"furthermore\"—a transition indicating the addition of another supporting point—fits perfectly here.</p><p>Choice A is incorrect. This choice uses a contrast transition. But this sentence actually agrees with the previous one; both provide examples of how greenwashing causes harm. Choice C is incorrect. This choice means \"appropriately\" or \"fittingly,\" which doesn't make sense in context. The sentence adds another example of harm, so we need an addition transition. Choice D is incorrect. This choice uses a disagreement transition, but the sentence agrees with and extends the previous one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

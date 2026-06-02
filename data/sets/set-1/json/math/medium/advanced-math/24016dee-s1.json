@@ -1,0 +1,39 @@
+{
+  "questionId": "24016dee-s1",
+  "originalId": "24016dee",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to 9z<sup>5</sup> + 4 \u2212 2z<sup>5</sup> \u2212 3?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9z<sup>5</sup> + 1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11z<sup>5</sup> + 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7z<sup>5</sup> + 7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7z<sup>5</sup> + 1</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Combining like terms: (9z<sup>5</sup> \u2212 2z<sup>5</sup>) + (4 \u2212 3) = 7z<sup>5</sup> + 1. Choice (d) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A1.T1.easy"
+}

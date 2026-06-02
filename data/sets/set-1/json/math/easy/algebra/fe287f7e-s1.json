@@ -1,0 +1,25 @@
+{
+  "questionId": "fe287f7e-s1",
+  "originalId": "fe287f7e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>To paint a room, a house painter charges $45 per hour for labor plus $200 for supplies. Which function <i>g</i> represents the total amount, in dollars, the painter will charge for this job if it takes <i>x</i> hours?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><i>g</i>(<i>x</i>) = 200<i>x</i> + 45</p>"},
+    {"id": "b", "content": "<p><i>g</i>(<i>x</i>) = 45<i>x</i> &minus; 200</p>"},
+    {"id": "c", "content": "<p><i>g</i>(<i>x</i>) = 45<i>x</i></p>"},
+    {"id": "d", "content": "<p><i>g</i>(<i>x</i>) = 45<i>x</i> + 200</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. Labor cost for <i>x</i> hours at $45 per hour is 45<i>x</i>, and the fixed supply cost is $200, so the total is 45<i>x</i> + 200.</p><p>Choice A swaps the per-hour rate and the fixed amount. Choice B subtracts supplies. Choice C omits supplies.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-functions.A3.T3.easy"
+}

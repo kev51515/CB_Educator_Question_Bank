@@ -1,0 +1,39 @@
+{
+  "questionId": "4b54bbf0-s1",
+  "originalId": "4b54bbf0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the early 2020s, the price of vintage mechanical wristwatches from the 1960s rose sharply, which had the counterintuitive effect of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> interest: collectors who had previously shown no enthusiasm for these timepieces flocked to auctions, convinced that prices would keep climbing and the watches could be resold later for considerable profit.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>appraising</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>capitalizing on</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>generating</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>exploiting</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because \"generating\" most logically completes the text's discussion of how rising prices affected collector interest in vintage wristwatches. The text describes a counterintuitive effect: although prices typically reduce demand when they rise, in this case the price increase produced (generated) new interest, drawing in collectors who had not previously been interested.</p><p>Choice A is incorrect. \"Appraising\" means evaluating the worth of something; a price increase itself cannot perform an appraisal, and an appraisal would normally precede a price change rather than be an effect of it. Choice B is incorrect. \"Capitalizing on\" means taking advantage of for gain; sellers, not a price increase itself, would capitalize on demand. Choice D is incorrect. \"Exploiting\" implies unfair use; again, this would describe sellers' motives, not the surprising effect of a price increase.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T5.hard"
+}

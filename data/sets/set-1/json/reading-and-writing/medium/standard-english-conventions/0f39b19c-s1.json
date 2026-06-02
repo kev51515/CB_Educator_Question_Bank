@@ -1,0 +1,25 @@
+{
+  "questionId": "0f39b19c-s1",
+  "originalId": "0f39b19c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>Born in a small Ontario town, the pianist Glenn Gould was no ordinary prodigy. He didn&rsquo;t merely perform classical pieces, he reimagined <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his landmark 1955 recording of the Goldberg Variations, he transformed a piece long regarded as a contrapuntal exercise into a daringly personal statement of rhythm and voice.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>them&mdash;boldly. In</p>"},
+    {"id": "b", "content": "<p>them&mdash;boldly&mdash;in</p>"},
+    {"id": "c", "content": "<p>them&mdash;boldly in</p>"},
+    {"id": "d", "content": "<p>them&mdash;boldly, in</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between one sentence (&ldquo;He...boldly&rdquo;) and another sentence that begins with a supplementary phrase (&ldquo;In his...voice&rdquo;).</p><p>Choice B is incorrect. When a dash is already present in the first sentence (&ldquo;them&mdash;boldly&rdquo;), using another dash to mark the boundary between sentences creates a potentially confusing sentence. Choice C is incorrect because it results in a run-on sentence. Choice D is incorrect because it results in a comma splice; a comma can&rsquo;t mark the boundary between two main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

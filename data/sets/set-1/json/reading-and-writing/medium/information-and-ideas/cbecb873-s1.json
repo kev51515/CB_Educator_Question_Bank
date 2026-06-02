@@ -1,0 +1,25 @@
+{
+  "questionId": "cbecb873-s1",
+  "originalId": "cbecb873",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Body Length, Wing-Loading Index, and Average Daily Flight Hours for Four Albatross Species</p></caption><thead><tr><th scope=\"col\">Albatross species</th><th scope=\"col\">Typical adult body length (meters)</th><th scope=\"col\">Wing-loading index (Newtons per square meter)</th><th scope=\"col\">Average daily flight hours over open ocean</th></tr></thead><tbody><tr><th scope=\"row\">grey-headed</th><td>0.7&ndash;0.8</td><td>110</td><td>5.20</td></tr><tr><th scope=\"row\">black-browed</th><td>0.8&ndash;0.9</td><td>135</td><td>6.40</td></tr><tr><th scope=\"row\">wandering</th><td>1.1&ndash;1.4</td><td>165</td><td>9.10</td></tr><tr><th scope=\"row\">royal</th><td>1.1&ndash;1.3</td><td>170</td><td>9.80</td></tr></tbody></table></figure></p><p>Albatrosses use a flight technique called dynamic soaring, in which they exploit differences in wind speed near the ocean surface to glide for long distances with little flapping. Although wing area increases with an albatross&rsquo;s body length, the bird&rsquo;s overall weight increases more rapidly with body length, which produces higher wing loading in larger species and helps explain why <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>black-browed albatrosses show an average wing-loading index of 135 Newtons per square meter.</p>"},
+    {"id": "b", "content": "<p>grey-headed and black-browed albatrosses show similar average daily flight hours.</p>"},
+    {"id": "c", "content": "<p>royal albatrosses show the longest average daily flight hours and the highest wing-loading index.</p>"},
+    {"id": "d", "content": "<p>wandering albatrosses show a higher wing-loading index than grey-headed albatrosses do.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the claim is that larger albatrosses have higher wing loading. The table shows that wandering albatrosses (longer body, 1.1–1.4 m) have a higher wing-loading index (165) than the smaller grey-headed albatrosses (0.7–0.8 m; 110), which illustrates the claim. Choice A is incorrect because a single value does not relate body length to wing loading. Choice B is incorrect because the table shows different daily flight hours for grey-headed (5.20) and black-browed (6.40), and the comparison ignores the claim. Choice C is incorrect because royal albatrosses do have the highest wing loading and flight hours, but this conflates wing loading with flight hours rather than relating wing loading to body length.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

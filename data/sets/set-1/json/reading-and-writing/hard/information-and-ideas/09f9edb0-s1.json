@@ -1,0 +1,39 @@
+{
+  "questionId": "09f9edb0-s1",
+  "originalId": "09f9edb0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "templateId": "command-of-evidence.A4.T5.hard",
+  "type": "mcq",
+  "stimulus": "<p>Since the 1990s, music critics and broadcasters in Western Europe have grouped a wide variety of musical traditions from East Asia under the umbrella term &ldquo;Asian fusion.&rdquo; While some welcome this label for raising the visibility of traditions like Korean pansori and Mongolian throat-singing in European concert programs, musicologist Hyun-Joo Kim argues that the term flattens highly distinct musical lineages by treating them as variants of a single style.</p>",
+  "stem": "<p>Which finding about pansori and Mongolian throat-singing, if true, would most directly support Kim&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Pansori is more widely performed in European concert halls than Mongolian throat-singing is.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Both traditions are now studied in conservatories across East Asia by students from many backgrounds.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Both pansori and Mongolian throat-singing differ markedly from Western art music but resemble each other in vocal technique.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Pansori and Mongolian throat-singing developed independently of each other and share very few musical features.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because Kim&rsquo;s claim is that the umbrella term flattens distinct traditions. Showing that pansori and Mongolian throat-singing developed independently and share little musically directly supports the claim that lumping them together obscures real differences. Choice A is about popularity. Choice B is about pedagogy. Choice C actually undercuts Kim&rsquo;s claim by implying the two traditions are similar.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z"
+}

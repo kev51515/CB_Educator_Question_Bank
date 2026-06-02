@@ -1,0 +1,25 @@
+{
+  "questionId": "dc645172-s1",
+  "originalId": "dc645172",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.hard",
+  "stimulus": "<p>The creative pursuits of Cecilia Vicuña, best known for her 2014 poetry collection <em>Spit Temple</em> and the dialogue it provoked, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> bounded by the territory of verse: she also earned renown in textile art, where her engagement with knotted wool&mdash;a material she called &ldquo;ancestral\" for its presence across cultures and centuries&mdash;became central to her artistic voice.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>isn&rsquo;t</p>"},
+    {"id": "b", "content": "<p>wasn&rsquo;t</p>"},
+    {"id": "c", "content": "<p>aren&rsquo;t</p>"},
+    {"id": "d", "content": "<p>hasn&rsquo;t been</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The subject \"pursuits\" is plural, and so is the verb \"aren't\": \"the creative pursuits&hellip;aren't bounded.\"</p><p>Choice A is incorrect. The subject \"pursuits\" is plural, but the verb \"isn't\" is singular. Choice B is incorrect. The subject \"pursuits\" is plural, but the verb \"wasn't\" is singular. Choice D is incorrect. The subject \"pursuits\" is plural, but the verb \"hasn't been\" is singular.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

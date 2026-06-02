@@ -1,0 +1,23 @@
+{
+  "questionId": "67c0200a-s1",
+  "originalId": "67c0200a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The number a is 60% less than the positive number b. The number c is 75% greater than a. The number c is how many times b?</p>",
+  "answerOptions": null,
+  "keys": [
+    ".7",
+    "7/10"
+  ],
+  "rationale": "<p>The correct answer is 7/10 (or .7). Since a is 60% less than b, a = b(1 \u2212 0.60) = 0.40b. Since c is 75% greater than a, c = a(1 + 0.75) = 1.75a = 1.75 \u00d7 0.40b = 0.70b. So c is 0.7, or 7/10, times b.</p>",
+  "templateId": "percentages.A4.T3.hard"
+}

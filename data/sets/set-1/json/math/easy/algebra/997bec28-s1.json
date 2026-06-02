@@ -1,0 +1,22 @@
+{
+  "questionId": "997bec28-s1",
+  "originalId": "997bec28",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The perimeter of an isosceles triangle is <math><mn>71</mn></math> centimeters. Each of the two congruent sides of the triangle has a length of <math><mn>19</mn></math> centimeters. What is the length, in centimeters, of the third side?</p>",
+  "answerOptions": null,
+  "keys": [
+    "33"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>33</mn></math>. Setting up <math><mn>19</mn><mo>+</mo><mn>19</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>71</mn></math> gives <math><mn>38</mn><mo>+</mo><mi>x</mi><mo>=</mo><mn>71</mn></math>. Subtracting 38 yields <math><mi>x</mi><mo>=</mo><mn>33</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T4.easy"
+}

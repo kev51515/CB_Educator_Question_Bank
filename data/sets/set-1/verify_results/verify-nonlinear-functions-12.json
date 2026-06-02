@@ -1,0 +1,20 @@
+[
+  {"id": "7160cbb3-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'; clone has only a text description of points, no figure. Common-bug: 'replacing svg with text-only description (drops aspect)'."},
+  {"id": "6abec9a8-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "No graph/figure provided; stem only lists points in text. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."},
+  {"id": "39652e93-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "difficulty_drift", "detail": "Easy lever requires 'no fraction or negative-exponent base' and a single-/two-term polynomial or radical rule; g(x)=25/x is a rational (x^-1) form, which the template explicitly assigns to the medium lever."},
+  {"id": "369b7bb7-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "d84a514a-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "72ae8a87-s1", "templateId": "nonlinear-functions.A2.T1.easy", "verdict": "ok"},
+  {"id": "ffdfe1e1-s1", "templateId": "nonlinear-functions.A4.T1.easy", "verdict": "ok"},
+  {"id": "2f8a580c-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "b39d74a0-s1", "templateId": "nonlinear-functions.A3.T5.easy", "verdict": "ok"},
+  {"id": "b5c43226-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "constraint_violation", "detail": "Clone has no graph/svg; only text description of points. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."},
+  {"id": "7fe7cf26-s1", "templateId": "nonlinear-functions.A5.T1.easy", "verdict": "ok"},
+  {"id": "ee05c84e-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "02c67921-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "aspect_drift", "detail": "Stem asks for f(2) of f(x)=x^2+4 — this is direct substitution (A1.T1), not reading an intercept from a graph (A3.T1). No graph present and no intercept question."},
+  {"id": "bd4d0e0c-s1", "templateId": "nonlinear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "e9aed539-s1", "templateId": "nonlinear-functions.A3.T1.medium", "verdict": "aspect_drift", "detail": "Stem describes a vertical translation of a graph by 3 units and asks which point lies on the translated graph — this is A5.T1 (vertical/horizontal shift), not A3.T1 (read intercept/point from graph)."},
+  {"id": "2f4eafcc-s1", "templateId": "nonlinear-functions.A3.T1.easy", "verdict": "aspect_drift", "detail": "Stem asks for f(2) of f(x)=x^2+3 — direct substitution (A1.T1), not graph-feature identification (A3.T1). No graph, no intercept question."},
+  {"id": "1863e3be-s1", "templateId": "nonlinear-functions.A3.T2.easy", "verdict": "ok"},
+  {"id": "3ea87153-s1", "templateId": "nonlinear-functions.A1.T2.easy", "verdict": "ok"}
+]

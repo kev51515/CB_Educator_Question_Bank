@@ -1,0 +1,39 @@
+{
+  "questionId": "e4e2aeb3-s1",
+  "originalId": "e4e2aeb3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p>Text 1</p>\n<p>Like the painter Joaqu&iacute;n Sorolla before her, Mar&iacute;a Blanchard's canvases include sun-drenched coastal scenes whose loose brushwork and high-keyed palette so closely echo Sorolla's earlier works that the two artists can momentarily seem interchangeable. Given the many other parallels between them in subject and composition, these scenes suggest a direct artistic debt owed by Blanchard to Sorolla.</p>\n<p>Text 2</p>\n<p>Critic Helena Mendoza cautions that perceived stylistic affinities should not be confused with documented influence. Sorolla's luminous Mediterranean idiom belonged to a broad early twentieth-century movement that many artists, Blanchard included, encountered through exhibitions, journals, and shared teachers. Without letters, diaries, or interviews attesting that Blanchard studied Sorolla in particular, Mendoza argues, attributing her coastal works specifically to his influence risks overstating one channel of transmission.</p>",
+  "stem": "<p>Based on the texts, how would Mendoza (Text 2) most likely respond to the underlined claim in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By insisting that Blanchard's coastal scenes are too dissimilar from Sorolla's for any influence to be plausible.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By acknowledging that Blanchard imitated Sorolla but denying that she did so in her coastal paintings specifically.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By cautioning that visual similarity alone cannot establish direct influence, since the shared idiom may have reached Blanchard through other routes.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By proposing that the resemblance reflects Blanchard's deliberate parody of Sorolla rather than her admiration of him.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. Mendoza explicitly warns that resemblance should not be equated with documented influence and notes that the luminous coastal style was widely available through exhibitions and shared training. She would therefore challenge the Text 1 claim by pointing out that stylistic similarity is consistent with several routes of transmission, not just direct debt to Sorolla.</p><p>Choice A is incorrect because Mendoza does not deny similarity; she merely denies that similarity proves direct influence. Choice B is incorrect because Mendoza neither concedes Blanchard imitated Sorolla nor singles out her coastal paintings as an exception. Choice D is incorrect because nothing in Text 2 suggests parody; Mendoza's concern is methodological, not interpretive.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.hard"
+}

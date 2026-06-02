@@ -1,0 +1,39 @@
+{
+  "questionId": "c228bd45-s1",
+  "originalId": "c228bd45",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1910 novel by an English author.</p><p style=\"padding-left:1em;\">Father did not spend all his evenings reading the newspaper by the fire, or shutting himself away in his study with thick books that the children were never allowed to touch. He was almost always there, ready to teach them little card tricks, mend their toys when they broke, and help them learn the songs they were practicing for school concerts. Besides this, he used to invent small puzzles for them while they were away at lessons, and bring them out after supper, and he could be counted on to make up new riddles for every birthday and other family celebration.</p>",
+  "stem": "<p>According to the text, what is true about Father?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>He creates puzzles and riddles for his children.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>He wishes that he had more time to read alone by the fire.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Birthdays are his favorite family celebration.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Helping his children with songs is his favorite activity.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says Father invents small puzzles for the children while they are at lessons and makes up new riddles for birthdays and other family celebrations.</p><p>Choice B is incorrect; the text says he is almost always with the children, not that he wishes for more reading time. Choice C is incorrect; the text mentions birthdays as one of many occasions, not the favorite. Choice D is incorrect; the text describes many activities without naming a favorite.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T5.easy"
+}

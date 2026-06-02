@@ -1,0 +1,39 @@
+{
+  "questionId": "b411eb09-s1",
+  "originalId": "b411eb09",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Original research conducted by Olufemi Akande and Jeanne Lin is motivated by their observation that although many studies have explored the effects of arctic conditions on human cognition, there is a <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> studies examining the effects on cognition of living in extremely arid desert environments, such as the Atacama villages of Toconao and San Pedro.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>profusion of</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>verisimilitude in</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>quarrel about</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>scarcity of</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Scarcity of\" most logically completes the text. The text contrasts the abundance of studies on arctic cognition with the lack of comparable studies on desert cognition\u2014\"there is a scarcity of\" such studies.</p><p>Choice A is incorrect. \"Profusion of\" means an abundance, the opposite of what the text needs. Choice B is incorrect. \"Verisimilitude in\" means realism or believability, which doesn't fit a quantity claim about studies. Choice C is incorrect. \"Quarrel about\" means dispute about, but the text describes absence of research, not disagreement.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "67667d72-s1",
+  "originalId": "67667d72",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>Indigenous communities were long assumed to have first settled the Australian rock-shelter site of Madjedbebe between 50,000 and 55,000 years ago. However, a team led by archaeologist Dr. Chris Clarkson used optically stimulated luminescence dating to gather evidence that the site had been occupied considerably <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> 65,000 years ago, according to Clarkson, people were likely living at the shelter.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>earlier. By</p>"},
+    {"id": "b", "content": "<p>earlier, by</p>"},
+    {"id": "c", "content": "<p>earlier, which by</p>"},
+    {"id": "d", "content": "<p>earlier by</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between one sentence (&ldquo;However...earlier&rdquo;) and another (&ldquo;By...shelter&rdquo;). The supplementary phrase &ldquo;By 65,000 years ago&rdquo; modifies the subject of the third sentence.</p><p>Choice B is incorrect because it results in a comma splice. Choice C is incorrect because it results in a comma splice and the relative &ldquo;which&rdquo; misattaches the modifier. Choice D is incorrect because it results in a run-on sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

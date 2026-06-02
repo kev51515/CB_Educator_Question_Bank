@@ -1,0 +1,39 @@
+{
+  "questionId": "cc6ccd71-s1",
+  "originalId": "cc6ccd71",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of <em>y</em> = <em>f</em>(<em>x</em>) in the <em>xy</em>-plane crosses the <em>x</em>-axis at exactly the points (-2, 0) and (5, 0). For how many values of <em>x</em> does <em>f</em>(<em>x</em>) = 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>One</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Two</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Three</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Four</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. A value of <em>x</em> for which <em>f</em>(<em>x</em>) = 0 corresponds to an <em>x</em>-intercept of the graph of <em>y</em> = <em>f</em>(<em>x</em>). The graph has two <em>x</em>-intercepts, at (-2, 0) and (5, 0), so there are two values of <em>x</em> for which <em>f</em>(<em>x</em>) = 0. Choices A, C, and D give incorrect counts.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A3.T4.medium"
+}

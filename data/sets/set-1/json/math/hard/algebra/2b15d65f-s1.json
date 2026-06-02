@@ -1,0 +1,39 @@
+{
+  "questionId": "2b15d65f-s1",
+  "originalId": "2b15d65f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An analyst modeled the demand Q for a product as a linear function of selling price P. The demand was 30,000 units at $50 per unit and 18,000 units at $80 per unit. Based on this model, what is the demand, in units, at a selling price of $70 per unit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>21,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>20,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>22,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24,000</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The slope is (18000 - 30000)/(80 - 50) = -12000/30 = -400 units per dollar. Using point (50, 30000): Q = 30000 - 400(P - 50). At P = 70: Q = 30000 - 400(20) = 30000 - 8000 = 22,000 units.</p><p>Choices A, B, and D arise from arithmetic mistakes or incorrect slope computation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T2.hard"
+}

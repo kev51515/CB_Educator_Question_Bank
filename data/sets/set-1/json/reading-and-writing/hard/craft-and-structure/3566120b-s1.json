@@ -1,0 +1,39 @@
+{
+  "questionId": "3566120b-s1",
+  "originalId": "3566120b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a late nineteenth-century stage comedy.</p>\n<p style='padding-left:1em'>HARRIET: Must we really say goodbye?</p>\n<p style='padding-left:1em'>EDWIN: I'm afraid so. It is a very dreadful parting.</p>\n<p style='padding-left:1em'>HARRIET: It is always dreadful to take leave of those whom one has known but a single afternoon. The departure of old companions one can <u>brook</u> with perfect composure. But even a quarter of an hour's separation from a person to whom one has only just been presented is, to my mind, an intolerable trial.</p>",
+  "stem": "<p>As used in the text, what does the word \"brook\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Tolerate</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Encourage</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Regret</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Persist</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The sentence contrasts how Harriet greets the departure of old companions with how she reacts to even brief separations from people just met: the first she handles with \"perfect composure,\" the second is an \"intolerable trial.\" Saying she can \"brook\" the departure of old companions \"with perfect composure\" makes sense only if \"brook\" means \"tolerate\" or \"put up with.\"</p><p>Choice B is incorrect because Harriet's stance toward farewells is one of acceptance, not active encouragement. Choice C is incorrect because regret of old companions' departure would conflict with the composure she ascribes to herself. Choice D is incorrect because \"persist\" cannot take a noun like \"departure\" as its object in the way the sentence requires.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.hard"
+}

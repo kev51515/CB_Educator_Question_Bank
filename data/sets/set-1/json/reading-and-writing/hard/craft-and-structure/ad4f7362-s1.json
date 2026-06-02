@@ -1,0 +1,39 @@
+{
+  "questionId": "ad4f7362-s1",
+  "originalId": "ad4f7362",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a late seventeenth-century English verse translation of an ancient pastoral poem. The shepherdess Phyllis has just listened to the wanderer Daphnis describe his many sorrows.</p>\n<blockquote><p>But silent griefs were stirring in her breast:</p><p>A flame unsought had robb'd her of her rest.</p><p>His travel'd words, his sun-touch'd brow, his eyes&mdash;</p><p>All these together did her heart surprise.</p><p>She turn'd her wheel, but knew not what she spun;</p><p>And watch'd the flock, yet saw it scarce by one.</p></blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To emphasize that Phyllis has been deeply affected by Daphnis's story.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To imply that Phyllis engages both emotionally and intellectually with Daphnis.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To indicate that Phyllis is hiding her doubts about the truth of Daphnis's account.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To suggest that Phyllis fears Daphnis might uncover a secret she keeps from him.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The passage describes silent griefs stirring in Phyllis, her loss of rest, her surprised heart, and her distracted spinning and watching of the flock&mdash;all signs that Daphnis's story has shaken her composure. The main purpose is to register the depth of his story's effect on her.</p><p>Choice B is incorrect because no intellectual engagement is depicted; the passage dwells on emotional response. Choice C is incorrect because nothing suggests skepticism on Phyllis's part. Choice D is incorrect because no secret of her own is even hinted at.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T1.hard"
+}

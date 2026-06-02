@@ -1,0 +1,39 @@
+{
+  "questionId": "a4ca92fd-s1",
+  "originalId": "a4ca92fd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Beginning in the 1970s, Mexican-American physician Helen Rodr\u00edguez Tr\u00edas worked tirelessly to expand health-care access for women and children; this <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> effort involved testifying before Congress, traveling to clinics across the country, and writing extensively about reproductive rights.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>tireless</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>offhand</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>impartial</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>casual</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"tireless\" matches \"worked tirelessly\" earlier in the sentence and describes someone who works steadily over a long time. Choices B, C, and D all suggest weak or detached effort, which contradicts the description of her years of dedicated work.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

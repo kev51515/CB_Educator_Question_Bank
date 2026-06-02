@@ -1,0 +1,25 @@
+{
+  "questionId": "d74788e1-s1",
+  "originalId": "d74788e1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Mexican photographer Graciela Iturbide has a <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> capturing scenes of daily life in Indigenous communities across the Americas. Among her widely admired works are her photographs of the Zapotec women of Juchit&aacute;n, Oaxaca, and the Seri community of Sonora.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>worry about</p>"},
+    {"id": "b", "content": "<p>requirement for</p>"},
+    {"id": "c", "content": "<p>reputation for</p>"},
+    {"id": "d", "content": "<p>doubt about</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because \"reputation for\" means being widely recognized for an activity, which matches the description of Iturbide as admired for her photographic work in particular communities. Choice A is incorrect because \"worry about\" implies anxiety, contradicting the positive characterization of her work. Choice B is incorrect because \"requirement for\" implies an obligation; the text describes a recognized practice, not a mandate. Choice D is incorrect because \"doubt about\" implies uncertainty; the text presents her work as established and respected.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

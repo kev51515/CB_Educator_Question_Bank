@@ -1,0 +1,104 @@
+[
+  {
+    "id": "95d1c344-s1",
+    "templateId": "nonlinear-functions.A3.T1.medium",
+    "verdict": "constraint_violation",
+    "detail": "A3.T1 must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone provides only verbal description of the parabola (vertex (5,14), passes (0,4))\u2014no figure. This matches the common bug 'replacing svg with text-only description (drops aspect)'. Question fits A3.T2 better. Answer 4 is mathematically correct."
+  },
+  {
+    "id": "a45ffacb-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates 'nonlinear function' skill scope: stem defines f(x) = -ax + b, which is linear, not nonlinear. Answer a=1 works only because f is linear; if f were nonlinear (e.g., -ax^2+b), answer differs. Must_preserve nonlinear function form violated."
+  },
+  {
+    "id": "4dd4efcf-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Axis of symmetry x=-3 gives 6a=8, so a=4/3\u22481.333. Decimal sanity: 4/3=1.333 \u2265 1, so statement II (a \u2265 1) is TRUE. Rationale incorrectly claims '4/3 < 1'. c = 9a+k = 12+k with k<0 gives c<12, not necessarily c<0, so I is not forced. Correct answer is 'II only' (c), not 'Neither I nor II' (a)."
+  },
+  {
+    "id": "263f9937-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Population on day n is (2x10^4)(2)^(n-1). For value 2.048x10^9: 2^(n-1) = 1.024x10^5 = 102,400, which is not a power of 2 (n \u2248 17.66). No integer day yields exactly 2.048x10^9; rationale itself admits the approximation. Also aspect_drift: this is A4.T1 (build/use exponential model), not A6.T1 (solve for parameter)."
+  },
+  {
+    "id": "02060533-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "wrong_answer",
+    "detail": "Table data is internally inconsistent. From g(-25)=-6: f(-25)=-6(-20)=120. From g(-5)=0: f(-5)=0. From g(15)=6: f(15)=120. A linear f cannot pass through (-25,120),(-5,0),(15,120) since slopes differ (-6 vs +6). Rationale silently drops the (-25,-6) row to derive f(x)=6(x+5). Problem is over-determined/inconsistent."
+  },
+  {
+    "id": "781c2f6e-s1",
+    "templateId": "nonlinear-functions.A5.T2.hard",
+    "verdict": "wrong_answer",
+    "detail": "Given h(x)=m+a(1.5)^x equivalent to f(x)=a(1.5)^x+1.5b, we have m=1.5b. Since b is a positive integer (0<a<b, integers), m=1.5b>0, so Statement I MUST be true. Keyed 'Neither I nor II' is incorrect; correct answer is 'I only' (Choice A). Rationale acknowledges m=1.5b>0 but illogically concludes Neither."
+  },
+  {
+    "id": "b8f13a3a-s1",
+    "templateId": "nonlinear-functions.A6.T1.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates 'function form with at least one unknown parameter' in the must_preserve for nonlinear functions skill. f(x)=-ax+b is a LINEAR function, not nonlinear; this drifts the skill entirely. Arithmetic answer a=5 is correct, but the clone no longer fits the Nonlinear functions skill."
+  },
+  {
+    "id": "70753f99-s1",
+    "templateId": "nonlinear-functions.A3.T3.hard",
+    "verdict": "wrong_answer",
+    "detail": "Vertex x = (9 + (-1))/2 = 4 exactly. All four intervals are open: (-2,0), (0,2), (2,4), (4,6). The value 4 lies strictly inside NONE of them (it sits on the boundary of (2,4) and (4,6)). The rationale even acknowledges this contradiction. The question has no valid answer as constructed; keyed 'd' is not strictly correct."
+  },
+  {
+    "id": "08d03fe4-s1",
+    "templateId": "nonlinear-functions.A5.T2.hard",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve 'multiple equivalent forms among answer choices'. Computing f(1) in each: A=189, B=63, C=63, D=21. Options are NOT equivalent forms of one function f. Rationale is also internally contradictory ('f(1)=21 in all forms' then shows differing values)."
+  },
+  {
+    "id": "e166aca6-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone uses only a text description of intercepts (no svg/figure)."
+  },
+  {
+    "id": "ca4ee54e-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone describes the graph verbally and gives the answer in the text, with no figure attached."
+  },
+  {
+    "id": "d45572cc-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure) with an identifiable target point. Clone is text-only and the answer (-2) is given verbatim in the stem."
+  },
+  {
+    "id": "893c7519-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; the y-intercept (0,6) is stated directly in the stem so no graph reading occurs."
+  },
+  {
+    "id": "50418728-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires a graph (svg/figure). Clone is text-only; (0,5) is stated in the stem, removing any need to read the graph."
+  },
+  {
+    "id": "7160cbb3-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'; clone has only a text description of points, no figure. Common-bug: 'replacing svg with text-only description (drops aspect)'."
+  },
+  {
+    "id": "6abec9a8-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "No graph/figure provided; stem only lists points in text. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."
+  },
+  {
+    "id": "b5c43226-s1",
+    "templateId": "nonlinear-functions.A3.T1.easy",
+    "verdict": "constraint_violation",
+    "detail": "Clone has no graph/svg; only text description of points. Violates A3.T1 must_preserve 'graph (svg/figure) with at least one clearly identifiable target point'."
+  }
+]

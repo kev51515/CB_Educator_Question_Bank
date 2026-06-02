@@ -1,0 +1,39 @@
+{
+  "questionId": "f79fffba-s1",
+  "originalId": "f79fffba",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>p</i> is defined by <i>p</i>(<i>x</i>) = 4<i>x</i> &minus; 9. What is the value of <i>p</i>(&minus;3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;21</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;3</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. <i>p</i>(&minus;3) = 4(&minus;3) &minus; 9 = &minus;12 &minus; 9 = &minus;21.</p><p>Choices A-C result from sign errors.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A1.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "f39507a3-s1",
+  "originalId": "f39507a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T6.hard",
+  "stimulus": "<p>One challenge when investigating whether attending a selective music conservatory shapes a musician&rsquo;s later performance style is the problem of ensuring that the study includes an appropriate control group. To reveal the influence of conservatory training, researchers must compare musicians who graduated from a top conservatory with musicians who did not attend such a conservatory but who are otherwise comparable in talent, background, and early training. Because researchers cannot determine which applicants are admitted to elite conservatories in any given year, they therefore <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>struggle to obtain reliable performance data from musicians who never attended a selective conservatory.</p>"},
+    {"id": "b", "content": "<p>can carry out informative studies only on musicians who have already retired from active performance.</p>"},
+    {"id": "c", "content": "<p>will likely find it difficult to assemble a control group that meaningfully resembles conservatory graduates.</p>"},
+    {"id": "d", "content": "<p>should deliberately select control-group musicians who differ in talent and background from the conservatory graduates.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text frames the central challenge as constructing a control group of non-attending musicians who match conservatory graduates in talent, background, and early training. Because researchers cannot decide who is admitted, they cannot directly engineer such a matched group, so identifying an appropriate control group will be hard.</p><p>Choice A is incorrect because the difficulty is in finding comparable non-attendees, not in obtaining their performance data. Choice B is incorrect because focusing on retired musicians would defeat the goal of studying training effects across active careers. Choice D is incorrect because deliberately picking dissimilar controls violates the very definition of an appropriate control group.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

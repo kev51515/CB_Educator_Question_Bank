@@ -1,0 +1,25 @@
+{
+  "questionId": "270cf326-s1",
+  "originalId": "270cf326",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A3.T5.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following functions has(have) a minimum value at &minus;4?</p><p>I. <i>f</i>(<i>x</i>) = &minus;8(2)<sup><i>x</i></sup> &minus; 4</p><p>II. <i>g</i>(<i>x</i>) = &minus;4(8)<sup><i>x</i></sup></p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>I only</p>"},
+    {"id": "b", "content": "<p>II only</p>"},
+    {"id": "c", "content": "<p>I and II</p>"},
+    {"id": "d", "content": "<p>Neither I nor II</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is correct. For I: <i>f</i>(<i>x</i>) = &minus;8(2)<sup><i>x</i></sup> &minus; 4. As <i>x</i> &rarr; &infin;, the term &minus;8(2)<sup><i>x</i></sup> &rarr; &minus;&infin;, so <i>f</i> has no minimum. For II: <i>g</i>(<i>x</i>) = &minus;4(8)<sup><i>x</i></sup>. As <i>x</i> &rarr; &infin;, <i>g</i>(<i>x</i>) &rarr; &minus;&infin;, so <i>g</i> has no minimum either. Neither has a minimum at &minus;4.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

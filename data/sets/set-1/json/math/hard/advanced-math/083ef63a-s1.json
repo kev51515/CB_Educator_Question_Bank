@@ -1,0 +1,23 @@
+{
+  "questionId": "083ef63a-s1",
+  "originalId": "083ef63a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p><i>f</i>(<i>x</i>) = (<i>x</i> + 3)(<i>x</i> &minus; 18)</p><p>The function <i>f</i> is defined by the given equation. For what value of <i>x</i> does <i>f</i>(<i>x</i>) reach its minimum?</p>",
+  "answerOptions": null,
+  "keys": [
+    "15/2",
+    "7.5"
+  ],
+  "rationale": "<p>The function is a parabola opening upward. Its minimum is at the axis of symmetry, which is the midpoint of the zeros &minus;3 and 18: (&minus;3 + 18)/2 = 15/2 = 7.5.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T3.hard"
+}

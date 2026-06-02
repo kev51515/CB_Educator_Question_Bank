@@ -1,0 +1,22 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">How many <span style=\"text-decoration: underline;\">yards</span> are equivalent to 1,512 inches? (1 yard = 36 inches)</p>",
+  "answerOptions": null,
+  "keys": [
+    "42"
+  ],
+  "rationale": "<p>The correct answer is 42. Since 1 yard = 36 inches, 1,512 inches = 1,512 \u00f7 36 = 42 yards.</p>",
+  "questionId": "d7a3179d-s1",
+  "originalId": "d7a3179d",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

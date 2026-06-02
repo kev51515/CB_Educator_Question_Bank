@@ -1,0 +1,22 @@
+[
+  {"id": "4889580c-s1", "templateId": "inferences.A4.T9.hard", "verdict": "ok"},
+  {"id": "9391b7cc-s1", "templateId": "inferences.A1.T2.hard", "verdict": "ok"},
+  {"id": "d95a0bb8-s1", "templateId": "inferences.A3.T6.hard", "verdict": "ok"},
+  {"id": "cae97f58-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "03701ef3-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "9abc3ba5-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"},
+  {"id": "45c03837-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "cef77aa7-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "5cd55c77-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "26f5c4ba-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "6e0e0de1-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "58e9e497-s1", "templateId": "inferences.A1.T2.hard", "verdict": "ok"},
+  {"id": "4ba0695d-s1", "templateId": "inferences.A1.T2.hard", "verdict": "constraint_violation", "detail": "A1.T2 must_preserve requires 'an explicit conditional or hypothetical operator (if, assuming, barring, given that)'. Stimulus contains no such operator; the inferential pivot is 'This pattern further suggests', a synthesis prompt better fitting A2.T4. Answer is logically correct."},
+  {"id": "4802f6a5-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "2a075bd1-s1", "templateId": "inferences.A4.T11.hard", "verdict": "ok"},
+  {"id": "086dd8cc-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "a68fd3e7-s1", "templateId": "inferences.A1.T1.hard", "verdict": "ok"},
+  {"id": "cf3acc50-s1", "templateId": "inferences.A1.T2.hard", "verdict": "ok"},
+  {"id": "4b3d6062-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"},
+  {"id": "22b3da87-s1", "templateId": "inferences.A4.T11.hard", "verdict": "ok"}
+]

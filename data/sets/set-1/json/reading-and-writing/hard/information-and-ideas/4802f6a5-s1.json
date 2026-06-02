@@ -1,0 +1,25 @@
+{
+  "questionId": "4802f6a5-s1",
+  "originalId": "4802f6a5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Phage-display peptides&mdash;short protein fragments engineered on the surface of bacteriophages to recognize and stick to specific molecular targets&mdash;can be used to detect harmful microbes in beverages, though how reliably they avoid false alarms (their specificity, i.e., the probability of giving a negative result when the target microbe is absent) in real-world drinks has remained unclear. Diana Marquez and colleagues created a strip that incorporates phage-display peptides designed to recognize strain ST131 of the bacterium <em>Klebsiella pneumoniae</em>; the strip turns from yellow to green when the peptides bind to their target. The team tested the strip in store-bought apple cider that had been spiked with <em>K. pneumoniae</em> ST131, with other strains of <em>K. pneumoniae</em>, or with other bacterial species. After exposure, the strip from the ST131 sample turned green while the strips from the other samples remained yellow, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>phage-display tests in real-world drinks are more likely to show a high degree of specificity when the target microbe is <em>K. pneumoniae</em> ST131 than when the target is another strain of <em>K. pneumoniae</em> or another species.</p>"},
+    {"id": "b", "content": "<p>the phage-display peptides successfully bound to <em>K. pneumoniae</em> ST131 and the strip displayed a high degree of specificity in a real-world drink.</p>"},
+    {"id": "c", "content": "<p>uncertainty about the specificity of phage-display tests for microbes in real-world drinks may stem from similarities between <em>K. pneumoniae</em> ST131 and other <em>K. pneumoniae</em> strains.</p>"},
+    {"id": "d", "content": "<p>the specificity of the strip in a real-world drink was unaffected by the peptides&rsquo; tendency to bind to multiple strains of <em>K. pneumoniae</em>.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it most logically completes the text's discussion of phage-display peptides used to detect microbes in beverages. The strip turned green when exposed to the targeted strain (ST131) but stayed yellow when exposed to other strains of <em>K. pneumoniae</em> or other bacterial species. This pattern indicates two things: the peptides did bind to their intended target, and the strip yielded a correct negative result whenever the target was absent&mdash;in other words, a high degree of specificity in a real-world drink.</p><p>Choice A is incorrect because nothing in the text indicates that ST131 differs from other targets in a way that would make phage-display tests more specific for ST131 than for other microbes. Choice C is incorrect because similarities between ST131 and other <em>K. pneumoniae</em> strains aren't discussed, and the results actually show the peptides distinguishing ST131 from other strains. Choice D is incorrect because the results suggest the peptides did not bind to multiple strains&mdash;they bound only to ST131. If they had bound to other strains too, specificity would have been compromised, not preserved.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

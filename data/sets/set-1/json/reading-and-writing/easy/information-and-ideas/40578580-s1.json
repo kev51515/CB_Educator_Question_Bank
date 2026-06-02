@@ -1,0 +1,39 @@
+{
+  "questionId": "40578580-s1",
+  "originalId": "40578580",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Naked mole-rats are small rodents that live in underground colonies in East Africa. Scientists once believed that adult colony members only cared for their own young. However, biologists Aiden Ross and Priya Mehta claim that adult naked mole-rats may help raise pups that are not their own.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Ross and Mehta&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Adult naked mole-rats spend many hours each day digging tunnels in the colony&rsquo;s underground network.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Adult naked mole-rats have been observed grooming and warming pups born to other females in the colony.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Naked mole-rats can detect changes in the air quality of their tunnels and respond by burrowing toward fresher air.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Naked mole-rats produce vocalizations that researchers have only rarely heard them use with one another.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because grooming and warming pups born to other females directly shows adults helping raise pups that are not their own, which supports the claim.</p><p>Choice A is incorrect: digging tunnels says nothing about caring for other pups. Choice C is incorrect: detecting air quality is about survival, not cooperative pup care. Choice D is incorrect: the rarity of vocalizations is unrelated to caring for others&rsquo; pups.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

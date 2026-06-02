@@ -1,0 +1,39 @@
+{
+  "questionId": "3828f53d-s1",
+  "originalId": "3828f53d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>m</em> and <em>n</em> are parallel and are cut by transversal <em>t</em>. The angle formed between line <em>m</em> and transversal <em>t</em> measures 145&deg;. The same-side interior angle <em>b</em>&deg; lies between the two parallel lines on the same side of <em>t</em>. What is the value of <em>b</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>145</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>55</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>35</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. When two parallel lines are cut by a transversal, same-side interior angles are supplementary. Therefore <em>b</em> + 145 = 180, so <em>b</em> = 35.</p><p>Choice A is incorrect because 145 would be the alternate-interior or corresponding angle, not the same-side interior angle. Choice B is incorrect because the transversal is not perpendicular to the parallel lines. Choice C is incorrect because 55 = 90 - 35 reflects an unjustified right-triangle assumption.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "52b61716-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "775f3eb9-s1", "templateId": "form-structure-and-sense.A3.T8.easy", "verdict": "ok"},
+  {"id": "96e5da01-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "f0f9bf8f-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "02913383-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "ok"},
+  {"id": "29c9be28-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "dbd78791-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "175df826-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "57998dd3-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "8df848c1-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "97df6650-s1", "templateId": "form-structure-and-sense.A2.T3.easy", "verdict": "ok"},
+  {"id": "35ae047d-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "type_drift", "detail": "Options vary in finite/non-finite form (perfect infinitive, participle, finite past, to-infinitive), not in tense. This matches T2 (Finite vs non-finite form), not T1 (Tense selection)."},
+  {"id": "c5d39bc7-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "0ff8477b-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "60a4c088-s1", "templateId": "form-structure-and-sense.A3.T8.easy", "verdict": "ok"},
+  {"id": "97b62fab-s1", "templateId": "form-structure-and-sense.A3.T6.easy", "verdict": "ok"},
+  {"id": "843f92af-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "265e7f4c-s1", "templateId": "form-structure-and-sense.A1.T1.easy", "verdict": "ok"},
+  {"id": "e6f2dba6-s1", "templateId": "form-structure-and-sense.A1.T2.easy", "verdict": "ok"},
+  {"id": "81ac953e-s1", "templateId": "form-structure-and-sense.A2.T4.easy", "verdict": "ok"}
+]

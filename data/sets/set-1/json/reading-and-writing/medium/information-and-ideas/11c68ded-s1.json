@@ -1,0 +1,25 @@
+{
+  "questionId": "11c68ded-s1",
+  "originalId": "11c68ded",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T7.medium",
+  "stimulus": "<p>An informal contraction of \"going to,\" the verb form \"gonna\" has long appeared in casual speech across many varieties of English. In recent decades, linguists tracking radio broadcasts, podcasts, and news interviews have observed \"gonna\" appearing more frequently in contexts once reserved for the fuller \"going to.\" What accounts for this shift? Researchers note that \"gonna\" is shorter and faster to say than \"going to\" and is also better suited to the relaxed, conversational style now favored on much of the airwaves. As broadcasters increasingly adopt that style, \"gonna\" travels with it into formerly more formal settings.</p>",
+  "stem": "<p>Which question does the text most directly attempt to answer?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>When was the contraction \"gonna\" first recorded in the English language?</p>"},
+    {"id": "b", "content": "<p>Why has \"gonna\" become more common in broadcast speech?</p>"},
+    {"id": "c", "content": "<p>How many other informal contractions are entering broadcast speech alongside \"gonna\"?</p>"},
+    {"id": "d", "content": "<p>Is \"gonna\" used in English-speaking communities outside of broadcast media?</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. After noting that \"gonna\" has appeared more often in broadcast contexts once reserved for \"going to,\" the text explicitly poses the question of what accounts for the shift and answers it: \"gonna\" is shorter and matches the more relaxed style broadcasters have adopted. The text therefore directly addresses why \"gonna\" has become more common in broadcast speech.</p><p>Choice A is incorrect because the text discusses recent decades of broadcast use but never identifies the first recorded use of \"gonna.\" Choice C is incorrect because the text addresses only \"gonna\" and does not catalog other contractions. Choice D is incorrect because the text focuses on broadcast settings and does not examine use outside broadcast media.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

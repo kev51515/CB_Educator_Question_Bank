@@ -1,0 +1,25 @@
+{
+  "questionId": "0a114526-s1",
+  "originalId": "0a114526",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A3.T6.hard",
+  "stimulus": "<p>In 1962, Cuban American conductor Tania Le&oacute;n, who had trained as a pianist but had not yet found steady work in composition, accepted a position as music director for Arthur Mitchell&rsquo;s newly founded Dance Theatre of Harlem, an appointment that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> &ldquo;reshaped what an American symphonic career could sound like.&rdquo;</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>musicologist Roberto Vargas describes as</p>"},
+    {"id": "b", "content": "<p>musicologist, Roberto Vargas, describes as</p>"},
+    {"id": "c", "content": "<p>musicologist Roberto Vargas, describes as,</p>"},
+    {"id": "d", "content": "<p>musicologist, Roberto Vargas, describes as,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The conventions tested are punctuation between a title and a proper noun and between a verb and its integrated quotation. The role term \"musicologist\" is indefinite, so the proper name \"Roberto Vargas\" supplies essential identification and takes no commas. Likewise, no punctuation is needed between \"describes as\" and the quotation, which is integrated into the sentence.</p><p>Choices B and D are incorrect because setting \"Roberto Vargas\" off with commas implies that the name could be removed without loss of meaning, but the name is essential. Choices C and D also wrongly insert a comma between \"as\" and the integrated quotation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

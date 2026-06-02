@@ -1,0 +1,39 @@
+{
+  "questionId": "479c7e82-s1",
+  "originalId": "479c7e82",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Although critics believed that diners would never agree to share long communal tables with strangers, such concerns didn't <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Alice Waters's efforts to promote the practice. Thanks in part to Waters's determined advocacy, restaurants that seat guests at large shared tables can now be found in cities throughout the United States.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>enhance</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>aggravate</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>hinder</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>misrepresent</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text indicates that critics' concerns failed to stop Waters from promoting the practice, and \"hinder\" means to slow or prevent something. Choice A is incorrect because enhancing her efforts would describe help, not obstruction. Choice B is incorrect because \"aggravate\" usually refers to worsening a condition or annoyance, not slowing an effort. Choice D is incorrect because the concerns are not misrepresenting her work.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

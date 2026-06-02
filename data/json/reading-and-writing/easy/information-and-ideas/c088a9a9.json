@@ -1,0 +1,72 @@
+{
+  "questionId": "c088a9a9",
+  "externalId": "853c4554-64d7-44c5-a3e8-5337cdf33310",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:32.414214+00:00",
+  "type": "mcq",
+  "stem": "<p>Which statement, if true, would most directly support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "5e4831af-947d-4688-9351-e8f12cbfbf58",
+      "content": "<p>Fewer than fifty children could speak Hawaiian when &lsquo;Aha P\u016bnana Leo was founded, but now more than 2,000 students at &lsquo;Aha P\u016bnana Leo speak it.</p>"
+    },
+    {
+      "id": "d16a1758-b7bb-48fa-85c6-76689bde8cd9",
+      "content": "<p>Roughly 680,000 Native Hawaiian people lived in the United States in 2020, and a little less than half of them lived in Hawai&lsquo;i.</p>"
+    },
+    {
+      "id": "0e19e2e7-8897-4e8b-ae1c-b8066305f067",
+      "content": "<p>Hawaiian is very similar to other languages that are spoken on the Polynesian Islands of the Pacific Ocean, including Tahitian, Samoan, and M\u0101ori.</p>"
+    },
+    {
+      "id": "6f552a98-095d-4b19-8c34-21d8bfe8ea08",
+      "content": "<p>Besides Native Hawaiians, tens of thousands of people from other Pacific Islander communities live in Hawai&lsquo;i today, including over 37,000 Samoans.</p>"
+    }
+  ],
+  "keys": [
+    "5e4831af-947d-4688-9351-e8f12cbfbf58"
+  ],
+  "rationale": "<p>Choice A is the best answer because it presents a statement that, if true, would most directly support the claim that the number of young people who speak Hawaiian has increased because of the &lsquo;Aha P\u016bnana Leo school. The text explains that Native Hawaiian teachers founded the school to help preserve the Hawaiian language by teaching it to children at a time when an increasing number of Native Hawaiians were speaking English instead. If it is true that when &lsquo;Aha P\u016bnana Leo was founded fewer than fifty children could speak Hawaiian and that now over 2,000 students at the school can speak it, that would directly demonstrate that the school&rsquo;s efforts have led to a greater number of young people speaking Hawaiian.</p><p>Choice B is incorrect because information about the total number and location of Native Hawaiian people in a single year wouldn&rsquo;t reveal anything about the number of young speakers of Hawaiian (particularly since the text indicates that not all Native Hawaiians speak Hawaiian) or about the effect of the &lsquo;Aha P\u016bnana Leo school on that number, so it wouldn&rsquo;t have any bearing on the text&rsquo;s claim. Choice C is incorrect because the fact that Hawaiian is similar to Tahitian, Samoan, M\u0101ori, and other languages of the Polynesian Islands wouldn&rsquo;t reveal anything about the number of young speakers of Hawaiian or the effect of the &lsquo;Aha P\u016bnana Leo school on that number, so it wouldn&rsquo;t have any bearing on the text&rsquo;s claim. Choice D is incorrect because information about non&ndash;Native Hawaiian people from Pacific Islander communities living in Hawai&lsquo;i today wouldn&rsquo;t reveal anything about the number of young speakers of Hawaiian or the effect of the &lsquo;Aha P\u016bnana Leo school on that number, so it wouldn&rsquo;t have any bearing on the text&rsquo;s claim.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which statement, if true, would most directly support the underlined claim?</p>",
+    "stimulus": "<p>Over the course of the 1900s, more and more Native Hawaiians spoke English instead of the Hawaiian language. To preserve their language, Native Hawaiian teachers founded the &lsquo;Aha P\u016bnana Leo preschool in 1984. They spoke Hawaiian while teaching, and their Native Hawaiian students were soon able to understand and speak it themselves. The school was a huge success. Eventually it opened locations around Hawai&lsquo;i and started teaching Hawaiian to elementary and high school students too. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Thanks to &lsquo;Aha P\u016bnana Leo, the number of young people who speak the language has increased.</span></p>",
+    "keys": [
+      "5e4831af-947d-4688-9351-e8f12cbfbf58"
+    ],
+    "answerOptions": [
+      {
+        "id": "5e4831af-947d-4688-9351-e8f12cbfbf58",
+        "content": "<p>Fewer than fifty children could speak Hawaiian when &lsquo;Aha P\u016bnana Leo was founded, but now more than 2,000 students at &lsquo;Aha P\u016bnana Leo speak it.</p>"
+      },
+      {
+        "id": "d16a1758-b7bb-48fa-85c6-76689bde8cd9",
+        "content": "<p>Roughly 680,000 Native Hawaiian people lived in the United States in 2020, and a little less than half of them lived in Hawai&lsquo;i.</p>"
+      },
+      {
+        "id": "0e19e2e7-8897-4e8b-ae1c-b8066305f067",
+        "content": "<p>Hawaiian is very similar to other languages that are spoken on the Polynesian Islands of the Pacific Ocean, including Tahitian, Samoan, and M\u0101ori.</p>"
+      },
+      {
+        "id": "6f552a98-095d-4b19-8c34-21d8bfe8ea08",
+        "content": "<p>Besides Native Hawaiians, tens of thousands of people from other Pacific Islander communities live in Hawai&lsquo;i today, including over 37,000 Samoans.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it presents a statement that, if true, would most directly support the claim that the number of young people who speak Hawaiian has increased because of the &lsquo;Aha P\u016bnana Leo school. The text explains that Native Hawaiian teachers founded the school to help preserve the Hawaiian language by teaching it to children at a time when an increasing number of Native Hawaiians were speaking English instead. If it is true that when &lsquo;Aha P\u016bnana Leo was founded fewer than fifty children could speak Hawaiian and that now over 2,000 students at the school can speak it, that would directly demonstrate that the school&rsquo;s efforts have led to a greater number of young people speaking Hawaiian.</p><p>Choice B is incorrect because information about the total number and location of Native Hawaiian people in a single year wouldn&rsquo;t reveal anything about the number of young speakers of Hawaiian (particularly since the text indicates that not all Native Hawaiians speak Hawaiian) or about the effect of the &lsquo;Aha P\u016bnana Leo school on that number, so it wouldn&rsquo;t have any bearing on the text&rsquo;s claim. Choice C is incorrect because the fact that Hawaiian is similar to Tahitian, Samoan, M\u0101ori, and other languages of the Polynesian Islands wouldn&rsquo;t reveal anything about the number of young speakers of Hawaiian or the effect of the &lsquo;Aha P\u016bnana Leo school on that number, so it wouldn&rsquo;t have any bearing on the text&rsquo;s claim. Choice D is incorrect because information about non&ndash;Native Hawaiian people from Pacific Islander communities living in Hawai&lsquo;i today wouldn&rsquo;t reveal anything about the number of young speakers of Hawaiian or the effect of the &lsquo;Aha P\u016bnana Leo school on that number, so it wouldn&rsquo;t have any bearing on the text&rsquo;s claim.</p>",
+    "externalid": "853c4554-64d7-44c5-a3e8-5337cdf33310",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Over the course of the 1900s, more and more Native Hawaiians spoke English instead of the Hawaiian language. To preserve their language, Native Hawaiian teachers founded the &lsquo;Aha P\u016bnana Leo preschool in 1984. They spoke Hawaiian while teaching, and their Native Hawaiian students were soon able to understand and speak it themselves. The school was a huge success. Eventually it opened locations around Hawai&lsquo;i and started teaching Hawaiian to elementary and high school students too. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">Thanks to &lsquo;Aha P\u016bnana Leo, the number of young people who speak the language has increased.</span></p>"
+}

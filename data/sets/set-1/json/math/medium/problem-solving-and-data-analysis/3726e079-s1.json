@@ -1,0 +1,22 @@
+{
+  "questionId": "3726e079-s1",
+  "originalId": "3726e079",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <em>x</em>/<em>y</em> = 5 and 35<em>x</em>/(<em>n</em><em>y</em>) = 5, what is the value of <em>n</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "35"
+  ],
+  "rationale": "<p>The correct answer is 35. Rewrite 35<em>x</em>/(<em>n</em><em>y</em>) as (35/<em>n</em>)(<em>x</em>/<em>y</em>). Substituting <em>x</em>/<em>y</em> = 5 yields (35/<em>n</em>)(5) = 5, so 175/<em>n</em> = 5. Solving gives <em>n</em> = 35.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T3.medium"
+}

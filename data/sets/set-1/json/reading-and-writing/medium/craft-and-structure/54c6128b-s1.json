@@ -1,0 +1,25 @@
+{
+  "questionId": "54c6128b-s1",
+  "originalId": "54c6128b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T3.medium",
+  "stimulus": "<p>When ancient cedar beams were uncovered during waterfront repairs in Alexandria, Egypt, Yasmin Rashid and her team analyzed the isotopic signatures in the wood to determine where the beams had originated. By comparing the isotopes in the beams to records of cedars from across the eastern Mediterranean, the team traced the wood to the Bekaa Valley in present-day Lebanon, hundreds of kilometers from Alexandria. <span role=\"region\" aria-label=\"Referenced Content\"><u>Because cedar of that quality could only have been moved from the inland Bekaa Valley to Alexandria by ship, the team's findings hint at the reach of ancient Mediterranean trade networks.</u></span></p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It describes typical methods used in Egyptian waterfront construction.</p>"},
+    {"id": "b", "content": "<p>It explains why the beams were made from cedar rather than another wood.</p>"},
+    {"id": "c", "content": "<p>It presents a conclusion about ancient Mediterranean trade networks based on the team's findings.</p>"},
+    {"id": "d", "content": "<p>It questions how the team was able to conclude that the beams were used in a ship.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The first sentence explains that Rashid's team examined isotopic signatures in the beams to determine their origin, and the next sentence reports that the team traced the wood to the Bekaa Valley. The underlined sentence then draws an inference from that result: because such cedar could only have been transported by ship from the inland Bekaa Valley to Alexandria, the findings point to the reach of ancient Mediterranean trade networks. The underlined sentence therefore presents a conclusion about ancient trade networks based on the team's findings.</p><p>Choice A is incorrect because no methods of waterfront construction are discussed. Choice B is incorrect because the text does not address why cedar in particular was used. Choice D is incorrect because the text does not suggest that the beams were part of a ship, nor does the underlined sentence question that idea.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

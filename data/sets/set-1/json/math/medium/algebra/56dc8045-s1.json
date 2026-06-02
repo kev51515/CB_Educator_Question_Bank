@@ -1,0 +1,39 @@
+{
+  "questionId": "56dc8045-s1",
+  "originalId": "56dc8045",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The function w(t) = 480 - 6t models the volume of liquid, in milliliters, in a container <em>t</em> seconds after it begins draining from a hole at the bottom. According to the model, what is the predicted volume, in milliliters, draining from the container each second?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>480</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>474</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>80</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The slope -6 indicates that the volume decreases by 6 milliliters each second, so the rate of drainage is 6 mL per second. Choice A is the initial volume. Choice C is the volume after 1 second (480 - 6). Choice D is the time it takes to fully drain (480/6 = 80 seconds).</p>",
+  "templateId": "linear-functions.A2.T2.medium"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "04bbce67-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "d135f4bf-s1", "templateId": "nonlinear-functions.A5.T1.hard", "verdict": "ok"},
+  {"id": "7a6d06bf-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "ok"},
+  {"id": "b73ee6cf-s1", "templateId": "nonlinear-functions.A4.T1.hard", "verdict": "ok"},
+  {"id": "0e61101e-s1", "templateId": "nonlinear-functions.A5.T1.hard", "verdict": "ok"},
+  {"id": "263f9937-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "wrong_answer", "detail": "Population on day n is (2x10^4)(2)^(n-1). For value 2.048x10^9: 2^(n-1) = 1.024x10^5 = 102,400, which is not a power of 2 (n ≈ 17.66). No integer day yields exactly 2.048x10^9; rationale itself admits the approximation. Also aspect_drift: this is A4.T1 (build/use exponential model), not A6.T1 (solve for parameter)."},
+  {"id": "01668cd6-s1", "templateId": "nonlinear-functions.A5.T2.hard", "verdict": "ok"},
+  {"id": "7902bed0-s1", "templateId": "nonlinear-functions.A4.T2.hard", "verdict": "ok"},
+  {"id": "40491607-s1", "templateId": "nonlinear-functions.A5.T1.hard", "verdict": "ok"},
+  {"id": "02060533-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "wrong_answer", "detail": "Table data is internally inconsistent. From g(-25)=-6: f(-25)=-6(-20)=120. From g(-5)=0: f(-5)=0. From g(15)=6: f(15)=120. A linear f cannot pass through (-25,120),(-5,0),(15,120) since slopes differ (-6 vs +6). Rationale silently drops the (-25,-6) row to derive f(x)=6(x+5). Problem is over-determined/inconsistent."},
+  {"id": "df71424b-s1", "templateId": "nonlinear-functions.A3.T5.hard", "verdict": "aspect_drift", "detail": "Clone tests A6.T1 reasoning: solve for unknown parameters a, b, c from a horizontal asymptote and two passing points. A3.T5 targets graph-feature reasoning (intervals, asymptotes, equation-shape matching), not parameter recovery. Answer (Three) is mathematically correct."},
+  {"id": "ee857afb-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "6e7ae9fc-s1", "templateId": "nonlinear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "668f1863-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"},
+  {"id": "781c2f6e-s1", "templateId": "nonlinear-functions.A5.T2.hard", "verdict": "wrong_answer", "detail": "Given h(x)=m+a(1.5)^x equivalent to f(x)=a(1.5)^x+1.5b, we have m=1.5b. Since b is a positive integer (0<a<b, integers), m=1.5b>0, so Statement I MUST be true. Keyed 'Neither I nor II' is incorrect; correct answer is 'I only' (Choice A). Rationale acknowledges m=1.5b>0 but illogically concludes Neither."},
+  {"id": "b8f13a3a-s1", "templateId": "nonlinear-functions.A6.T1.hard", "verdict": "constraint_violation", "detail": "Violates 'function form with at least one unknown parameter' in the must_preserve for nonlinear functions skill. f(x)=-ax+b is a LINEAR function, not nonlinear; this drifts the skill entirely. Arithmetic answer a=5 is correct, but the clone no longer fits the Nonlinear functions skill."},
+  {"id": "8462b105-s1", "templateId": "nonlinear-functions.A4.T3.hard", "verdict": "type_drift", "detail": "Stem describes a numeric product f(n)=n(n-17), not a geometric area/volume context. T3 must_preserve requires 'geometric (or geometric-analog) context'; this clone is a context-free abstract product, fitting A4 only loosely. Answer is correct."},
+  {"id": "7e6ea718-s1", "templateId": "nonlinear-functions.A3.T4.hard", "verdict": "ok"},
+  {"id": "cd358b89-s1", "templateId": "nonlinear-functions.A5.T1.hard", "verdict": "ok"},
+  {"id": "4d7064a6-s1", "templateId": "nonlinear-functions.A3.T3.hard", "verdict": "ok"}
+]

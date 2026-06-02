@@ -1,0 +1,20 @@
+{
+  "questionId": "2f0a43b2-s1",
+  "originalId": "2f0a43b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>If <math><mfrac><mi>y</mi><mn>6</mn></mfrac><mo>=</mo><mn>4</mn></math>, what is the value of <math><mfrac><mn>6</mn><mi>y</mi></mfrac></math>?</p>",
+  "answerOptions": null,
+  "keys": [".25", "1/4"],
+  "rationale": "<p>The correct answer is <math><mfrac><mn>1</mn><mn>4</mn></mfrac></math>. Since <math><mn>4</mn></math> can be written as <math><mfrac><mn>4</mn><mn>1</mn></mfrac></math>, the equation <math><mfrac><mi>y</mi><mn>6</mn></mfrac><mo>=</mo><mn>4</mn></math> is equivalent to <math><mfrac><mi>y</mi><mn>6</mn></mfrac><mo>=</mo><mfrac><mn>4</mn><mn>1</mn></mfrac></math>, so <math><mfrac><mn>6</mn><mi>y</mi></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></math>. Alternatively, multiplying both sides by 6 gives <math><mi>y</mi><mo>=</mo><mn>24</mn></math>, and <math><mfrac><mn>6</mn><mn>24</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></math>. Both .25 and 1/4 are accepted.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

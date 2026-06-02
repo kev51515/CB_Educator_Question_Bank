@@ -1,0 +1,25 @@
+{
+  "questionId": "a6155e60-s1",
+  "originalId": "a6155e60",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Every mineral has a distinct crystal structure, a precise arrangement of atoms that scatters X-rays in a unique pattern. <span aria-hidden=\"true\" class=\"item-blank\">______</span><span class=\"sr-only\">blank</span> by analyzing the X-ray diffraction patterns produced by samples collected on the lunar surface, geochemist Reza Khalid of the University of Toronto was able to identify the presence of the rare mineral tranquillityite in moon rocks brought back by Apollo missions.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Thus,</p>"},
+    {"id": "b", "content": "<p>Regardless,</p>"},
+    {"id": "c", "content": "<p>Meanwhile,</p>"},
+    {"id": "d", "content": "<p>In comparison,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Thus\" logically signals that the action described in this sentence&mdash;the researcher being able to identify tranquillityite in moon rocks based on X-ray diffraction patterns&mdash;is a result or consequence of the previous information about each mineral having a distinct crystal structure.</p><p>Choice B is incorrect because \"regardless\" illogically signals that the finding occurs despite the previous information, rather than as a consequence of it. Choice C is incorrect because \"meanwhile\" illogically signals simultaneous unrelated events. Choice D is incorrect because \"in comparison\" illogically signals a comparison rather than a consequential relationship.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

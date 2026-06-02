@@ -1,0 +1,39 @@
+{
+  "questionId": "5aa1fffd-s1",
+  "originalId": "5aa1fffd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Where ______ Interestingly, it was coined by a chemist. It was first used by the British scientist Humphry Davy in the early 1800s to describe a newly isolated metal.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>did the word \"aluminum\" come from.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the word \"aluminum\" did come from?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the word \"aluminum\" come from.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>did the word \"aluminum\" come from?</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The sentence is a direct question: it needs the auxiliary \"did\" after the interrogative \"where\" and must end with a question mark.</p><p>Choice A uses interrogative word order but ends with a period. Choice B uses declarative word order before \"did,\" which is non-standard. Choice C is non-standard in form and uses a period despite asking a question.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

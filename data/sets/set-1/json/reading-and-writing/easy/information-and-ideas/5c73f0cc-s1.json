@@ -1,0 +1,39 @@
+{
+  "questionId": "5c73f0cc-s1",
+  "originalId": "5c73f0cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>[Bar graph: Test Results for Two New Plastic Recycling Processes. Vertical axis: Percent plastic recovered (0-80%). Two categories of plastic.]</p><ul><li>PET bottles &mdash; Process A: 60%, Process B: 25%</li><li>polypropylene containers &mdash; Process A: 70%, Process B: 35%</li></ul><p>Engineers tested two new processes for recycling household plastics. For PET bottles, Process A recovered ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>25%.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>35%.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60%.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>70%.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the graph shows Process A recovered 60% of PET bottles.</p><p>Choice A is incorrect: 25% is Process B&rsquo;s result for PET bottles, not Process A&rsquo;s. Choice B is incorrect: 35% is Process B&rsquo;s result for polypropylene containers. Choice D is incorrect: 70% is Process A&rsquo;s result for polypropylene containers, not PET bottles.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

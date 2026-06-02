@@ -1,0 +1,39 @@
+{
+  "questionId": "0d3f51dc-s1",
+  "originalId": "0d3f51dc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line m is parallel to line n, and a transversal line t intersects both. Two exterior angles on the same side of the transversal are formed. One measures 42\u00b0 and the other measures x\u00b0. What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>138</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>90</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Same-side exterior angles formed by a transversal cutting two parallel lines are supplementary. Thus x + 42 = 180, so x = 138.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

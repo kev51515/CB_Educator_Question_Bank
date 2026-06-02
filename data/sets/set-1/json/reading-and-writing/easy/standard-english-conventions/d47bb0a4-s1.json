@@ -1,0 +1,39 @@
+{
+  "questionId": "d47bb0a4-s1",
+  "originalId": "d47bb0a4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Buildings ranging from the Centre Pompidou in Paris to the Lloyd's headquarters in London to the Pompidou Metz <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> designed by the Italian-British architect Richard Rogers.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>has been</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>were</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>is</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>was</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The plural verb \"were\" agrees in number with the plural subject \"buildings.\"</p><p>Choice A is incorrect because the singular verb \"has been\" doesn't agree in number with the plural subject \"buildings.\" Choice C is incorrect because the singular verb \"is\" doesn't agree in number with the plural subject \"buildings.\" Choice D is incorrect because the singular verb \"was\" doesn't agree in number with the plural subject \"buildings.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A2.T3.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "d95a0bb8",
+  "externalId": "16ce6c5b-f91d-4409-9462-3e27c0871836",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:20:55.011089+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "269cec3a-07f1-4412-adda-7184e238e546",
+      "content": "<p>some disagreements between the model&rsquo;s simulations of Titan&rsquo;s precipitation and humidity and the moon&rsquo;s actual precipitation and humidity are to be expected.</p>"
+    },
+    {
+      "id": "04c5c1ee-3ab6-486f-b06c-bd789fc7cb3f",
+      "content": "<p>further observations of Titan may clarify the moon&rsquo;s methane mole fraction sufficiently for the model to employ a single value rather than a range.</p>"
+    },
+    {
+      "id": "e4de36e4-e41f-41df-9adf-5f5ea4dea2e9",
+      "content": "<p>even though the model&rsquo;s outputs sometimes agree with observational data, Titan&rsquo;s real methane mole fraction is likely higher than the methane mole fraction used in the model.</p>"
+    },
+    {
+      "id": "f59a3991-a1b0-4958-8c39-5b64fb4de2f8",
+      "content": "<p>inconsistencies across the model&rsquo;s simulations of Titan&rsquo;s precipitation and humidity could be attributable to variations in the moon&rsquo;s methane mole fraction.</p>"
+    }
+  ],
+  "keys": [
+    "269cec3a-07f1-4412-adda-7184e238e546"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of modeling the atmosphere of Titan. The text establishes that the methane mole fraction (the ratio of methane to other atmospheric components) influences precipitation, humidity, and other meteorological phenomena and that observational data for Titan are too lacking (&ldquo;too sparse and discrepant&rdquo;) to fully determine the range of this measure across the moon&rsquo;s various atmospheric levels. The text indicates that because of this limitation, researchers developed an atmospheric model (IPSL) that uses a simplified approach: it applies a uniform methane mole fraction for the lowest atmospheric level. Since it is very unlikely that the actual methane distribution across atmospheric levels on Titan is uniform, and since the methane mole fraction directly affects precipitation and humidity, it logically follows that the model&rsquo;s simplified treatment of the methane mole fraction would lead to some disagreements between the model&rsquo;s simulations and Titan&rsquo;s actual precipitation and humidity.</p><p>Choice B is incorrect because the text makes it clear that the model <em>already </em>uses a single value for Titan&rsquo;s methane mole fraction instead of a range. Further, the text suggests that the single value is a simplification of what is likely a more complex reality, so there&rsquo;s no reason to assume that a single value would be more desirable than a range. Choice C is incorrect. The text strongly suggests that Titan&rsquo;s actual methane mole fraction differs from the uniform value used in the model, even though some of the model&rsquo;s outputs align closely with observations, but nothing in the text indicates how the actual value would differ. There&rsquo;s no reason to assume that the actual methane mole fraction is higher than what the model uses. The &ldquo;lowest level&rdquo; mentioned in the text refers to the atmosphere and not Titan&rsquo;s methane mole fraction. Choice D is incorrect because the text makes it clear that the model <em>doesn&rsquo;t </em>reflect the actual variations in the methane mole fraction across Titan&rsquo;s atmospheric levels, since observational data are too limited. Because the model uniformly applies a set methane mole fraction, no inconsistencies in the simulations would be attributable to actual variations in the moon&rsquo;s methane mole fraction.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>The ratio of methane to other atmospheric constituents&mdash;represented by a measure called the methane mole fraction&mdash;influences a variety of meteorological phenomena, notably precipitation and humidity. For Titan, Saturn&rsquo;s largest moon, the observational data that exist are too sparse and discrepant to fully constrain the range of the methane mole fraction at various atmospheric levels. Juan Lora and colleagues point out that outputs of the IPSL atmospheric model of Titan, which track closely to observations in some respects, reflect how the model&rsquo;s developers responded to this challenge: by prescribing a uniform methane mole fraction for the lowest level of the atmosphere. It is therefore important to note that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "269cec3a-07f1-4412-adda-7184e238e546"
+    ],
+    "answerOptions": [
+      {
+        "id": "269cec3a-07f1-4412-adda-7184e238e546",
+        "content": "<p>some disagreements between the model&rsquo;s simulations of Titan&rsquo;s precipitation and humidity and the moon&rsquo;s actual precipitation and humidity are to be expected.</p>"
+      },
+      {
+        "id": "04c5c1ee-3ab6-486f-b06c-bd789fc7cb3f",
+        "content": "<p>further observations of Titan may clarify the moon&rsquo;s methane mole fraction sufficiently for the model to employ a single value rather than a range.</p>"
+      },
+      {
+        "id": "e4de36e4-e41f-41df-9adf-5f5ea4dea2e9",
+        "content": "<p>even though the model&rsquo;s outputs sometimes agree with observational data, Titan&rsquo;s real methane mole fraction is likely higher than the methane mole fraction used in the model.</p>"
+      },
+      {
+        "id": "f59a3991-a1b0-4958-8c39-5b64fb4de2f8",
+        "content": "<p>inconsistencies across the model&rsquo;s simulations of Titan&rsquo;s precipitation and humidity could be attributable to variations in the moon&rsquo;s methane mole fraction.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it most logically completes the text&rsquo;s discussion of modeling the atmosphere of Titan. The text establishes that the methane mole fraction (the ratio of methane to other atmospheric components) influences precipitation, humidity, and other meteorological phenomena and that observational data for Titan are too lacking (&ldquo;too sparse and discrepant&rdquo;) to fully determine the range of this measure across the moon&rsquo;s various atmospheric levels. The text indicates that because of this limitation, researchers developed an atmospheric model (IPSL) that uses a simplified approach: it applies a uniform methane mole fraction for the lowest atmospheric level. Since it is very unlikely that the actual methane distribution across atmospheric levels on Titan is uniform, and since the methane mole fraction directly affects precipitation and humidity, it logically follows that the model&rsquo;s simplified treatment of the methane mole fraction would lead to some disagreements between the model&rsquo;s simulations and Titan&rsquo;s actual precipitation and humidity.</p><p>Choice B is incorrect because the text makes it clear that the model <em>already </em>uses a single value for Titan&rsquo;s methane mole fraction instead of a range. Further, the text suggests that the single value is a simplification of what is likely a more complex reality, so there&rsquo;s no reason to assume that a single value would be more desirable than a range. Choice C is incorrect. The text strongly suggests that Titan&rsquo;s actual methane mole fraction differs from the uniform value used in the model, even though some of the model&rsquo;s outputs align closely with observations, but nothing in the text indicates how the actual value would differ. There&rsquo;s no reason to assume that the actual methane mole fraction is higher than what the model uses. The &ldquo;lowest level&rdquo; mentioned in the text refers to the atmosphere and not Titan&rsquo;s methane mole fraction. Choice D is incorrect because the text makes it clear that the model <em>doesn&rsquo;t </em>reflect the actual variations in the methane mole fraction across Titan&rsquo;s atmospheric levels, since observational data are too limited. Because the model uniformly applies a set methane mole fraction, no inconsistencies in the simulations would be attributable to actual variations in the moon&rsquo;s methane mole fraction.</p>",
+    "externalid": "16ce6c5b-f91d-4409-9462-3e27c0871836",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>The ratio of methane to other atmospheric constituents&mdash;represented by a measure called the methane mole fraction&mdash;influences a variety of meteorological phenomena, notably precipitation and humidity. For Titan, Saturn&rsquo;s largest moon, the observational data that exist are too sparse and discrepant to fully constrain the range of the methane mole fraction at various atmospheric levels. Juan Lora and colleagues point out that outputs of the IPSL atmospheric model of Titan, which track closely to observations in some respects, reflect how the model&rsquo;s developers responded to this challenge: by prescribing a uniform methane mole fraction for the lowest level of the atmosphere. It is therefore important to note that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

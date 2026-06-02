@@ -1,0 +1,39 @@
+{
+  "questionId": "60fdb4d4-s1",
+  "originalId": "60fdb4d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>3</mn><mfenced><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfenced><mo>+</mo><mn>4</mn><mi>x</mi></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>9</mn><mi>x</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>+</mo><mn>6</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>7</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>7</mn><mi>x</mi><mo>+</mo><mn>6</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Distributing the 3 gives 3x + 6 + 4x. Combining like terms (3x + 4x) yields 7x + 6.</p>",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a5e747f0-s1",
+  "originalId": "a5e747f0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Despite how <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they may seem on first reading, the late poems of Wallace Stevens have proven to be remarkably rewarding. Readers who manage to push past Stevens's tangled syntax and elaborate symbolism often discover that his startlingly original meditations transform the way they see the world.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>authoritative</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>facile</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>impenetrable</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>empirical</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Impenetrable\" most logically completes the text. The text describes Stevens's poems as having \"tangled syntax\" and \"elaborate symbolism\" that readers must \"push past,\" which is consistent with the poems' seeming impenetrable on first reading.</p><p>Choice A is incorrect. \"Authoritative\" describes how confidently a text speaks, which doesn't match the difficulty the passage emphasizes. Choice B is incorrect. \"Facile\" means easy or superficial\u2014the opposite of the difficulty described. Choice D is incorrect. \"Empirical\" relates to observation and experience, which doesn't describe how the poems seem at first encounter.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T4.hard"
+}

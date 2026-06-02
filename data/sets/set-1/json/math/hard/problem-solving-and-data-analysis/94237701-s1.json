@@ -1,0 +1,22 @@
+{
+  "questionId": "94237701-s1",
+  "originalId": "94237701",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The scores for class X are: 3, 4, 4, 5, 5, 6, 7, 7, 9. The scores for class Y are: 5, 6, 6, 7, 7, 7, 8, 9, 9, 10, 10. The median of the scores for class Y is how much greater than the median of the scores for class X?</p>",
+  "answerOptions": [],
+  "keys": [
+    "2"
+  ],
+  "rationale": "<p>Class X has 9 scores; the median is the 5th value when sorted, which is 5. Class Y has 11 scores; the median is the 6th value, which is 7. The median for class Y is 7 &minus; 5 = 2 greater than the median for class X.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "f9c4bdab-s1",
+  "originalId": "f9c4bdab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>A student is writing a paper about <em>The Crucible</em>, Arthur Miller's 1953 play. Miller drew on transcripts from the 1692 Salem witch trials when writing the play, but he also invented characters, compressed timelines, and altered relationships among historical figures. The student claims that, although Miller relied on a foundation of historical records, <em>The Crucible</em> is best understood not as a faithful dramatization of the Salem trials but as a dramatic work that uses the historical episode to explore broader themes of mass hysteria and moral courage.</p>",
+  "stem": "<p>Which quotation from an article about <em>The Crucible</em> would be the most effective evidence for the student to include in support of this claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\"Miller spent several weeks in Salem reading court records before he began drafting the play, and he kept many of the names of the actual accused and accusers.\"</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>\"While the bare facts of the Salem proceedings provided Miller with his starting point, he freely reshaped events, invented an affair between Abigail and John Proctor, and condensed the trials in ways that served his thematic aims rather than the historical record.\"</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\"<em>The Crucible</em> opened on Broadway in 1953 and went on to become one of the most frequently produced American plays of the twentieth century.\"</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\"Miller has acknowledged that he wrote the play partly in response to the congressional hearings of the early 1950s, in which suspected communists were called to testify about their political associations.\"</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it directly supports the student's claim. The quotation acknowledges that Miller used the Salem trials as a starting point (the \"foundation of historical records\") but emphasizes that he \"freely reshaped events,\" \"invented\" a relationship, and \"condensed\" the trials to serve his thematic aims \u2014 exactly the contrast between historical fidelity and dramatic invention that the claim asserts.</p><p>Choice A is incorrect because it only emphasizes Miller's research and use of real names, supporting a view of the play as a faithful dramatization rather than a thematic reinvention. Choice C is incorrect because the play's popularity and longevity say nothing about whether it is a faithful dramatization or a thematic reworking. Choice D is incorrect because Miller's motivation to comment on the 1950s political climate does not, on its own, address whether the play deviates from the historical record of Salem.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A2.T3.hard"
+}

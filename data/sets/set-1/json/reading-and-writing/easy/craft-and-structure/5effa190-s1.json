@@ -1,0 +1,39 @@
+{
+  "questionId": "5effa190-s1",
+  "originalId": "5effa190",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The process of mechanically recycling textiles is often considered <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> because of the high energy use and the steep drop in fiber quality that often occurs. But chemist Sonja Salmon has helped develop a cleaner enzyme-based process that converts blended cotton-polyester fabric into reusable cotton sugars and intact polyester fibers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>dynamic</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>satisfactory</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>inadequate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>resilient</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text describes drawbacks (high energy use and a steep drop in fiber quality), and \"inadequate\" means not good enough. This fits the negative view of mechanical recycling that the text is setting up before introducing a better alternative. Choices A, B, and D describe positive qualities that would not justify calling for a cleaner alternative.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

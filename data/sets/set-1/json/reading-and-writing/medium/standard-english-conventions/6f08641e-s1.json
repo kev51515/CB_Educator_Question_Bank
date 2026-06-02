@@ -1,0 +1,25 @@
+{
+  "questionId": "6f08641e-s1",
+  "originalId": "6f08641e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>On February 1, 1960, four college students sat down at a segregated lunch counter in Greensboro, North Carolina. After campaigning for months&mdash;without success&mdash;for an end to the store's segregation policy, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> until the policy was reversed. Within weeks, similar protests spread across the South.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>store management faced mounting pressure as the students refused to leave their seats</p>"},
+    {"id": "b", "content": "<p>the students refused to leave their seats and pressured store management</p>"},
+    {"id": "c", "content": "<p>the refusal of the students to leave their seats pressured store management</p>"},
+    {"id": "d", "content": "<p>mounting pressure was placed on store management by the students who refused to leave their seats</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the students\" the subject of the sentence and places it immediately after the modifying phrase \"after...policy.\" In doing so, this choice clearly establishes that the students&mdash;and not another noun in the sentence&mdash;were campaigning for an end to the store's segregation policy.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of \"store management\" immediately after the modifying phrase illogically suggests that \"store management\" was campaigning for an end to segregation. Choice C is incorrect because it results in a dangling modifier. The placement of \"the refusal\" immediately after the modifying phrase illogically suggests that \"the refusal\" was campaigning for months. Choice D is incorrect because it results in a dangling modifier. The placement of \"mounting pressure\" immediately after the modifying phrase illogically suggests that \"pressure\" was campaigning for an end to segregation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

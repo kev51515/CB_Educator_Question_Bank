@@ -1,0 +1,39 @@
+{
+  "questionId": "60f71697-s1",
+  "originalId": "60f71697",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>6</mn><mi>y</mi><mo>=</mo><mn>72</mn></math></p><p>What value of <math><mi>y</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>66</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>432</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>12</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>78</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Dividing both sides by 6 yields <math><mi>y</mi><mo>=</mo><mn>12</mn></math>.</p><p>Choice A is the solution to <math><mi>y</mi><mo>+</mo><mn>6</mn><mo>=</mo><mn>72</mn></math>. Choice B is the solution to <math><mfrac><mi>y</mi><mn>6</mn></mfrac><mo>=</mo><mn>72</mn></math>. Choice D is the solution to <math><mi>y</mi><mo>-</mo><mn>6</mn><mo>=</mo><mn>72</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

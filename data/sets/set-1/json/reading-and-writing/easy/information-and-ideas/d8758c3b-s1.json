@@ -1,0 +1,39 @@
+{
+  "questionId": "d8758c3b-s1",
+  "originalId": "d8758c3b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Psychologists wanted to test how young children think about sharing and effort. In an experiment, two adults handed out small treats while children (ages five to seven) watched. The adults gave out the same number of treats, but one of them paused to ask each child for help opening the bag before taking a treat out. The children were then asked who was kinder. 68% chose the adult who paused to ask for help. The psychologists think that asking for help showed the children that the adult was treating them as partners. The children may have believed that the adult who did not ask for help did not see them as partners.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>An experiment showed that the way treats are handed out may affect whether young children think an adult is kind.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Psychologists believe young children cannot understand the concept of sharing until they are seven years old.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>An experiment found that asking children for help opening bags is the best way to teach them cooperation.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Psychologists think young children expect to be rewarded when they show that they care about kindness.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text describes an experiment in which the way adults handed out treats (pausing to ask for help versus not) affected children's judgments of kindness.</p><p>Choice B is incorrect; the text mentions a single age range and never suggests children cannot understand sharing until age seven. Choice C is incorrect; the experiment is about perceptions of kindness, not teaching cooperation. Choice D is incorrect; the text says nothing about children expecting to be rewarded.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "88bb0f6f-s1",
+  "originalId": "88bb0f6f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>A team led by economist Maya Lindgren reports that adopting a four-day workweek could deliver significant gains for businesses and workers alike. According to their study, companies that shortened their schedules saw a 35% drop in employee burnout and only a small dip in productivity\u2014results the authors call \"a clear victory for both well-being and the bottom line.\"</p><p><strong>Text 2</strong></p><p>While Lindgren's team's results are encouraging, it's worth considering the impact on customer service. The shortened schedule means fewer hours available for client interaction, and some businesses may struggle to cover demand. Any policy promoting a four-day workweek should therefore also address how companies can maintain reliable service to the people who depend on them.</p>",
+  "stem": "<p>Which choice best describes a difference in how the author of Text 1 and the author of Text 2 view Lindgren's team's study?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The author of Text 2 argues that the productivity drop reported by Lindgren's team is larger than Text 1 acknowledges, whereas the author of Text 1 considers it negligible.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The author of Text 2 focuses on the schedule's effect on burnout, whereas the author of Text 1 focuses on its effect on customer service.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The author of Text 2 raises a concern about an issue the study does not address, whereas the author of Text 1 highlights the study's reported benefits.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The author of Text 2 believes the four-day workweek will become standard practice in the near future, whereas the author of Text 1 doubts that it will.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. Text 1 emphasizes the positive findings of Lindgren's team, calling the results \"a clear victory.\" Text 2 doesn't dispute those findings but adds a concern\u2014customer service\u2014that the study did not address.</p><p>Choice A is incorrect. Text 2 doesn't dispute the size of the productivity drop; it raises a separate issue. Choice B is incorrect. Text 1 mentions burnout, not Text 2; the texts' focuses are reversed in this choice. Choice D is incorrect. Neither text discusses the likelihood that the four-day workweek will become standard practice.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A3.T5.easy"
+}

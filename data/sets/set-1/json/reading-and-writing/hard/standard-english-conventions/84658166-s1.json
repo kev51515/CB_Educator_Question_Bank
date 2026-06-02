@@ -1,0 +1,25 @@
+{
+  "questionId": "84658166-s1",
+  "originalId": "84658166",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T3.hard",
+  "type": "mcq",
+  "stimulus": "<p>In 1958, during the height of the space race, electrical engineer Mary Sherman Morgan was recruited by the U.S. Army to formulate a new rocket propellant for the Jupiter-C launch vehicle. Sherman Morgan&rsquo;s later achievements would extend well beyond ______ as the lead chemist behind hydyne, she would help launch America&rsquo;s first satellite into orbit.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>propellants. Though,</p>"},
+    {"id": "b", "content": "<p>propellants though</p>"},
+    {"id": "c", "content": "<p>propellants, though:</p>"},
+    {"id": "d", "content": "<p>propellants, though,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. The comma after \"propellants\" separates the main clause (\"Sherman Morgan&rsquo;s&hellip;propellants\") from the supplementary adverb \"though,\" and the colon after \"though\" correctly marks the boundary between that clause and the following clause, introducing an explanation of how Sherman Morgan&rsquo;s achievements extended beyond propellants.</p><p>Choice A is incorrect because beginning a new sentence with \"Though\" suggests that what follows contradicts the previous sentence, but here the second clause supports and explains the previous claim. Choice B is incorrect because it produces a run-on sentence; the two independent clauses are fused without punctuation. Choice D is incorrect because it produces a comma splice between two independent clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

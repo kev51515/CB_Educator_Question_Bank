@@ -1,0 +1,39 @@
+{
+  "questionId": "b39d74a0-s1",
+  "originalId": "b39d74a0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shown lists some values of <i>x</i> and their corresponding values of <i>y</i>: (0, 0), (1, 1), (2, 8), (3, 27). Which of the following equations could represent the relationship between <i>x</i> and <i>y</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = <i>x</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = <i>x</i>&sup2;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = <i>x</i>&sup3;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = 3<i>x</i></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Checking each pair: 0&sup3; = 0, 1&sup3; = 1, 2&sup3; = 8, 3&sup3; = 27. All four points satisfy <i>y</i> = <i>x</i>&sup3;.</p><p>Choice A fails at (2, 8). Choice B gives 4 at <i>x</i> = 2, not 8. Choice D gives 6 at <i>x</i> = 2, not 8.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A3.T5.easy"
+}

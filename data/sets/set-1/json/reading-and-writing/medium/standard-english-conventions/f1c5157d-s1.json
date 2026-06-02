@@ -1,0 +1,25 @@
+{
+  "questionId": "f1c5157d-s1",
+  "originalId": "f1c5157d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.medium",
+  "stimulus": "<p>Founded in 1944 by Mexican American muralist Edward Chavez, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it would later be celebrated as a key institution within the broader Chicano arts movement.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Denver artists in the Westside Mural Workshop had a vital outlet for collaboration;</p>"},
+    {"id": "b", "content": "<p>Denver was where the Westside Mural Workshop offered a vital outlet for artists to collaborate;</p>"},
+    {"id": "c", "content": "<p>artists collaborated at a vital outlet known as the Westside Mural Workshop in Denver;</p>"},
+    {"id": "d", "content": "<p>the Westside Mural Workshop offered a vital outlet for Denver artists to collaborate;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the Westside Mural Workshop\" the subject of the sentence and places it immediately after the modifying phrase \"Founded in 1944 by Mexican American muralist Edward Chavez.\" In doing so, this choice clearly indicates that the Westside Mural Workshop&mdash;and not another noun in the sentence&mdash;was founded in 1944 by Chavez.</p><p>Choice A is incorrect because it results in a dangling modifier: placing \"Denver artists\" after the modifier illogically suggests that the Denver artists were founded in 1944. Choice B is incorrect because placing \"Denver\" after the modifier illogically suggests that Denver was founded in 1944. Choice C is incorrect because placing \"artists\" after the modifier illogically suggests that the artists were founded in 1944.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

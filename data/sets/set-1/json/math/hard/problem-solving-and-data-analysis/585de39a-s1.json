@@ -1,0 +1,22 @@
+{
+  "questionId": "585de39a-s1",
+  "originalId": "585de39a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>On June 30, 2022, there were 120 million mobile phone subscribers in a country. The major providers were OmegaCorp, Nexus, Aurora, Pacific, and Beacon. If a mobile subscriber on June 30, 2022, is selected at random, the probability that the person selected was an OmegaCorp subscriber is 0.38. There were p million OmegaCorp subscribers in the country on June 30, 2022. To the nearest integer, what is the value of p?</p>",
+  "answerOptions": null,
+  "keys": [
+    "46"
+  ],
+  "rationale": "<p>The correct answer is 46. The probability of randomly selecting an OmegaCorp subscriber equals the number of OmegaCorp subscribers divided by the total subscribers. So p / 120 = 0.38, giving p = 45.6, which rounds to 46.</p>",
+  "templateId": "probability-and-conditional-probability.A4.T13.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "70ced8dc-s1",
+  "originalId": "70ced8dc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T2.easy",
+  "type": "mcq",
+  "stimulus": "<p>For most homeowners, cracked plaster or peeling wallpaper would lower a home's resale <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when those features are linked to a famous architect like Frank Lloyd Wright, such imperfections can become valuable historical evidence.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>price</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>price, but</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>price,&nbsp;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>price but</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the coordination of independent clauses within a sentence. This choice uses a comma and the coordinating conjunction \"but\" to join the first independent clause (\"For most...resale price\") and the second independent clause (\"when those...historical evidence\") to create a compound sentence.</p><p>Choice A is incorrect because it results in a run-on sentence. Choice C is incorrect because it results in a comma splice. Choice D is incorrect because a comma is needed to mark the boundary between two coordinated independent clauses.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b2fe7ab6-s1",
+  "originalId": "b2fe7ab6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For the linear function <em>h</em>, the table shows four values of <em>x</em> and their corresponding values of <em>h</em>(<em>x</em>). The function can be written as <em>h</em>(<em>x</em>) = <em>mx</em> + <em>b</em>, where <em>m</em> and <em>b</em> are constants. What is the value of <em>b</em>?</p><table border=\"1\"><tr><th><em>x</em></th><th><em>h</em>(<em>x</em>)</th></tr><tr><td>1</td><td>48</td></tr><tr><td>2</td><td>44</td></tr><tr><td>3</td><td>40</td></tr><tr><td>4</td><td>36</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>52</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u22124</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (44 \u2212 48)/(2 \u2212 1) = \u22124, so <em>m</em> = \u22124. Substituting (1, 48): 48 = \u22124(1) + <em>b</em>, so <em>b</em> = 52.</p><p>Choices B, C, and D are incorrect: 48 is the value of <em>h</em>(1), 4 has the sign wrong, and \u22124 is the slope, not the intercept.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T2.medium"
+}

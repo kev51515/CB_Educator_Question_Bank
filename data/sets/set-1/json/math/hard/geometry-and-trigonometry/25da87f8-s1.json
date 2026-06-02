@@ -1,0 +1,22 @@
+{
+  "questionId": "25da87f8-s1",
+  "originalId": "25da87f8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A triangle has angle measures of 30\u00b0, 60\u00b0, and 90\u00b0 and a perimeter of (9 + 3\u221a3) units. What is the length of the longest side of the triangle?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>In a 30\u00b0-60\u00b0-90\u00b0 triangle, the side lengths are in ratio 1 : \u221a3 : 2 (short leg : long leg : hypotenuse). Let the short leg be x. Then perimeter = x + x\u221a3 + 2x = (3 + \u221a3)x. Setting (3 + \u221a3)x = 9 + 3\u221a3 = 3(3 + \u221a3), we get x = 3. The hypotenuse (longest side) is 2x = 6.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T8.hard"
+}

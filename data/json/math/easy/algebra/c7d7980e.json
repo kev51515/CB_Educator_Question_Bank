@@ -1,0 +1,36 @@
+{
+  "questionId": "c7d7980e",
+  "externalId": "cab807ab-67ed-464f-a4b2-ece6edb417b6",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1730147357387,
+  "createDate": 1730147357387,
+  "scrapedAt": "2026-05-25T12:08:17.268927+00:00",
+  "type": "spr",
+  "stem": "<p style=\"text-align: center;\"><math alttext=\"13 x equals 112 minus x\"><mrow><mn>13</mn></mrow><mi>x</mi><mo>=</mo><mrow><mn>112</mn></mrow><mo>-</mo><mi>x</mi></math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"8\"><mn>8</mn>\n</math>. Adding <math alttext=\"x\"><mi>x</mi>\n</math> to both sides of the given equation yields <math alttext=\"14 x equals 112\"><mrow>\n\t<mrow>\n\t\t<mn>14</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>112</mn>\n</mrow>\n</math>. Dividing both sides of this equation by <math alttext=\"14\"><mn>14</mn>\n</math> yields <math alttext=\"x equals 8\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>8</mn>\n</mrow>\n</math>.</p>",
+  "raw": {
+    "answerOptions": [],
+    "externalid": "cab807ab-67ed-464f-a4b2-ece6edb417b6",
+    "keys": [
+      "8"
+    ],
+    "rationale": "<p style=\"text-align: left;\">The correct answer is <math alttext=\"8\"><mn>8</mn>\n</math>. Adding <math alttext=\"x\"><mi>x</mi>\n</math> to both sides of the given equation yields <math alttext=\"14 x equals 112\"><mrow>\n\t<mrow>\n\t\t<mn>14</mn>\n\t\t<mi>x</mi>\n\t</mrow>\n\t<mo>=</mo>\n\t<mn>112</mn>\n</mrow>\n</math>. Dividing both sides of this equation by <math alttext=\"14\"><mn>14</mn>\n</math> yields <math alttext=\"x equals 8\"><mrow>\n\t<mi>x</mi>\n\t<mo>=</mo>\n\t<mn>8</mn>\n</mrow>\n</math>.</p>",
+    "stem": "<p style=\"text-align: center;\"><math alttext=\"13 x equals 112 minus x\"><mrow><mn>13</mn></mrow><mi>x</mi><mo>=</mo><mrow><mn>112</mn></mrow><mo>-</mo><mi>x</mi></math></p>\n<p style=\"text-align: left;\">What value of <math alttext=\"x\"><mi>x</mi>\n</math> is the solution to the given equation?</p>",
+    "type": "spr",
+    "correct_answer": [
+      "8"
+    ]
+  }
+}

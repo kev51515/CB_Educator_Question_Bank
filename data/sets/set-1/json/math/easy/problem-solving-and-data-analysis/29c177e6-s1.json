@@ -1,0 +1,39 @@
+{
+  "questionId": "29c177e6-s1",
+  "originalId": "29c177e6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is 10% of 630?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6.3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>53</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>567</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>63</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. 10% of 630 is 0.10 \u00d7 630 = 63.</p><p>Choice A is incorrect. This is 1% of 630, not 10%.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This is 90% of 630, not 10%.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T1.easy"
+}

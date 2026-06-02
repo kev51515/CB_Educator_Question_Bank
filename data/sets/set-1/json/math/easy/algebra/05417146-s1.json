@@ -1,0 +1,39 @@
+{
+  "questionId": "05417146-s1",
+  "originalId": "05417146",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>m</i> + 9 = 412</p><p>What value of <i>m</i> is the solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>47</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>405</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>403</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3,708</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Subtracting 9 from both sides of <i>m</i> + 9 = 412 gives <i>m</i> = 403.</p><p>Choice A divides incorrectly. Choice B subtracts the wrong number. Choice D multiplies 412 by 9.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

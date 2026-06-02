@@ -1,0 +1,39 @@
+{
+  "questionId": "1e8ccffd-s1",
+  "originalId": "1e8ccffd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The mean score of 10 players in a soccer tournament was 11.2 goals. If the player with the highest individual score is removed, the mean score of the remaining 9 players is 10 goals. What was the highest score?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>26</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Total of 10 players: 10 &times; 11.2 = 112. Total of remaining 9 after removing top: 9 &times; 10 = 90. Highest score = 112 &minus; 90 = 22. Choices B, C, and D result from computation errors with totals or means.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T13.hard"
+}

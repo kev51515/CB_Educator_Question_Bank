@@ -1,0 +1,39 @@
+{
+  "questionId": "69d662af-s1",
+  "originalId": "69d662af",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a 1953 novel by an American author. Marcus lives in a row house in South Philadelphia.</p><blockquote><p>A soft rain had just stopped, and the wet bricks of the street were shining under the streetlamps. The block looks well after a rain, Marcus thought. From the front step he could see the corner grocer arranging crates of oranges on the sidewalk, two old men playing checkers under the awning of the barbershop, and a small group of girls drawing chalk hopscotch squares on the cooled pavement.</p></blockquote>",
+  "stem": "<p>Which choice best describes what is happening in the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Marcus is annoyed by the noise made by the children and shopkeepers on his block.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Marcus is staying indoors to avoid speaking with his neighbors.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Marcus is confused by the rules of the children's hopscotch game.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Marcus is observing the look of his block just after a rain and the activities happening on it.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text describes Marcus's view from his front step: the wet, shining bricks after the rain, the grocer arranging crates, the men playing checkers, and the girls drawing hopscotch squares.</p><p>Choice A is incorrect; nothing in the text suggests Marcus is annoyed. Choice B is incorrect; Marcus is on his front step, not staying inside to avoid neighbors. Choice C is incorrect; the text says nothing about Marcus being confused by hopscotch.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.easy"
+}

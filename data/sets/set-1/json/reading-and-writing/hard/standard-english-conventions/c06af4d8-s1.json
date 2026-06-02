@@ -1,0 +1,25 @@
+{
+  "questionId": "c06af4d8-s1",
+  "originalId": "c06af4d8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.hard",
+  "stimulus": "<p>Archivist Lourdes Ben&iacute;tez serves on the advisory council that recommends new entries for the National Register of Maritime Landmarks, which already includes the Faro de Punta Larga and the Mariposa Lightship. Ben&iacute;tez does not finalize such recommendations <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> every proposed designation must be reviewed by a panel of seven other specialists drawn from naval history, coastal archaeology, conservation engineering, and oral tradition.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>unilaterally; however,</p>"},
+    {"id": "b", "content": "<p>unilaterally however</p>"},
+    {"id": "c", "content": "<p>unilaterally, however;</p>"},
+    {"id": "d", "content": "<p>unilaterally, however,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the punctuation of a supplementary word between two main clauses. The comma separates the supplementary adverb \"however\" from the preceding main clause (\"Ben&iacute;tez does not...unilaterally\"), and the semicolon joins the next main clause (\"every...tradition\") to the rest of the sentence. Placing the semicolon after \"however\" correctly attaches the contrast to the preceding clause, signaling that the information there is contrary to what might be assumed from the previous sentence.</p><p>Choice A is incorrect because placing the semicolon after \"unilaterally\" and the comma after \"however\" illogically attaches \"however\" to the second clause. Choice B is incorrect because it produces a run-on sentence. Choice D is incorrect because it produces a comma splice: commas cannot punctuate a supplementary word between two main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

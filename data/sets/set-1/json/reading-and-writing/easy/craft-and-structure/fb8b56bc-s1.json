@@ -1,0 +1,39 @@
+{
+  "questionId": "fb8b56bc-s1",
+  "originalId": "fb8b56bc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Oscar Wilde's 1895 play <em>The Importance of Being Earnest</em>. Lady Bracknell has just arrived at her sister's home, where guests are expected.</p><p>LADY BRACKNELL: Really, Augusta, I cannot understand it. Whenever you invite Algernon, half my acquaintances refuse to come.<br/>AUGUSTA: Nonsense! Algernon is charming; people adore him.<br/>LADY BRACKNELL: Adore him! What about the trouble he caused at the Duchess's last week? Really, Augusta, you must not let him stay.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To explain why Algernon is no longer invited to most parties in London</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To describe what Augusta typically does when she entertains friends at home</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To present a detailed account of an incident that took place at the Duchess's house</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To show that Lady Bracknell wants Algernon to leave</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it describes the main purpose of the text. Lady Bracknell repeatedly complains that Algernon's presence drives away her acquaintances and ends by telling Augusta directly, \"you must not let him stay.\" The passage is primarily intended to show Lady Bracknell pushing for Algernon's removal.</p><p>Choice A is incorrect because the text does not state that Algernon is no longer invited to parties; it focuses on Lady Bracknell's reaction in this specific moment. Choice B is incorrect because the text describes a single exchange, not Augusta's usual hosting habits. Choice C is incorrect because the incident at the Duchess's is only mentioned in passing, not described in detail.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "text-structure-and-purpose.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "622a351d-s1",
+  "originalId": "622a351d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>In 1990, Cree communities in northern Quebec staged protests against the proposed Great Whale hydroelectric project.</li>\n<li>The project would have flooded traditional hunting and trapping grounds.</li>\n<li>The project was ultimately shelved, but the Great Whale campaign had a lasting effect.</li>\n<li>It drew international attention to Indigenous land rights.</li>\n<li>It contributed to a 2002 agreement formally recognizing Cree authority over local resource management.</li>\n</ul>",
+  "stem": "<p>The student wants to make and support a generalization about the Great Whale campaign. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>During the Great Whale campaign, Cree communities staged protests to block a hydroelectric project that would have flooded hunting and trapping grounds.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Although the hydroelectric project that the Cree had protested was eventually shelved, the Great Whale campaign had a lasting effect.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The Great Whale campaign had a lasting effect, drawing international attention to Indigenous land rights and contributing to formal recognition of Cree authority over local resources.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Cree authority over local resource management received international attention and legal recognition as a result of the Great Whale campaign.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because it makes the generalization (the campaign had a lasting effect) and supports it with two outcomes drawn from the notes.</p><p>Choices A and B describe the campaign without making and supporting a generalization. Choice D states an outcome but doesn't frame it as a generalization with support.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A2.T6.hard"
+}

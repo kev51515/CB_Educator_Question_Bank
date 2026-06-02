@@ -1,0 +1,25 @@
+{
+  "questionId": "e47d2524-s1",
+  "originalId": "e47d2524",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Discarded tire fragments are tiny pieces of rubber waste. Stretches of urban stormwater channels with higher concentrations of tire fragments also exhibit slower and less turbulent flow. A study by Idrissa Konaté and colleagues found that the concentration of tire fragments cannot be the only cause of this reduced flow, because the concentration of fragments that would produce the observed effect is much greater than that recorded in these stretches. However, the team found that plasticizers, additives commonly used to soften rubber, leach into the water from the tire fragments and have a much stronger flow-dampening effect.</p>",
+  "stem": "<p>According to the text, what did Konaté and colleagues discover about plasticizers?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They are mainly composed of water.</p>"},
+    {"id": "b", "content": "<p>They are useful for removing tire fragments from stormwater channels.</p>"},
+    {"id": "c", "content": "<p>They can be used to confine tire fragments to certain stretches of stormwater channels.</p>"},
+    {"id": "d", "content": "<p>They have a much stronger effect on water flow than tire fragments alone do.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text states that Konaté and colleagues found plasticizers leach from tire fragments into the water and have a much stronger flow-dampening effect than the fragments alone.</p><p>Choice A is incorrect because the text does not describe what plasticizers are made of. Choice B is incorrect because the text never claims plasticizers help remove tire fragments. Choice C is incorrect because the text never claims plasticizers confine the fragments to certain stretches of channel.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

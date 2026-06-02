@@ -1,0 +1,39 @@
+{
+  "questionId": "cfade68d-s1",
+  "originalId": "cfade68d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Naomi Beckwith is a curator at the Guggenheim Museum in New York.</li>\n<li>She curated the Guggenheim's 2019 exhibition <em>Implicit Tensions: Mapplethorpe Now</em>.</li>\n<li>This exhibition featured photographs by mid-career Black artists working in portraiture.</li>\n<li>She also curated the Guggenheim's 2021 exhibition <em>Off the Record</em>, which gathered conceptual works by long-established artists examining archives.</li>\n</ul>",
+  "stem": "<p>The student wants to describe the exhibition that Beckwith curated in 2019. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Held at the Guggenheim Museum, the exhibition <em>Off the Record</em> gathered conceptual works by long-established artists examining archives.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In both 2019 and 2021, Naomi Beckwith curated exhibitions at the Guggenheim Museum in New York.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>While one exhibition that Naomi Beckwith curated featured photographs by mid-career artists, another included conceptual works by long-established artists.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>Implicit Tensions: Mapplethorpe Now</em>, an exhibition at the Guggenheim Museum, featured photographs by mid-career Black artists working in portraiture.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it describes the 2019 exhibition in particular by name and content.</p><p>Choice A describes the 2021 exhibition. Choice B describes the curator's general activity. Choice C compares the two exhibitions but doesn't focus on the 2019 one.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A3.T8.hard"
+}

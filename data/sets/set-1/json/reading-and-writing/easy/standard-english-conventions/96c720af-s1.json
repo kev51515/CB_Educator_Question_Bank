@@ -1,0 +1,39 @@
+{
+  "questionId": "96c720af-s1",
+  "originalId": "96c720af",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Electrons in a betatron, a type of cyclic particle accelerator, travel in a spiral path of increasing radius until they <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the desired energy, at which point they are directed toward a target for high-energy collision experiments.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>attain</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>are attaining</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>had attained</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>will attain</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The present tense verb &ldquo;attain&rdquo; is consistent with the other present tense verb (&ldquo;travel&rdquo;) used to describe the electrons&rsquo; ongoing behavior.</p><p>Choice B (present progressive) suggests a specific moment rather than a general behavior. Choice C (past perfect) doesn&rsquo;t match the general present time frame. Choice D (future) is inconsistent with the present time frame.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "fea831fc-s1",
+  "originalId": "fea831fc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>On a morning ride, a cyclist traveled 14 miles in 35 minutes. If the cyclist had maintained this pace without stopping, what would the average speed of the bicycle have been, to the nearest tenth of a mile per <u>hour</u>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "24"
+  ],
+  "rationale": "<p>The correct answer is 24.0. The cyclist's speed is 14 miles / 35 minutes = 14/35 = 0.4 miles per minute. Since 1 hour = 60 minutes, the average speed is 0.4 \u00b7 60 = 24.0 miles per hour.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium"
+}

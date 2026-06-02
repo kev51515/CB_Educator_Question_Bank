@@ -1,0 +1,39 @@
+{
+  "questionId": "93cad661-s1",
+  "originalId": "93cad661",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A central goal of the Indigenous Filmmakers Workshop (IFW), a media organization founded in 1978, is to advance new films by Indigenous storytellers. The IFW pursues this goal in part by focusing on emerging directors. By pairing them with seasoned filmmakers as mentors, the IFW gives new directors the benefits of expert technical training and creative guidance. Numerous organizations offer similar kinds of support to new generations of choreographers, novelists, and other artists, suggesting that ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>artists of all ages benefit more from technical training than from creative guidance.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>finding a mentor is more important for filmmakers than it is for choreographers, novelists, and other types of artists.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>many arts organizations recognize the importance of giving emerging artists opportunities to learn from experienced mentors.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>most established artists could become even better at their craft by serving as mentors.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The text describes the IFW's mentoring approach and notes that many other arts groups do the same \u2014 implying that these organizations broadly value pairing emerging artists with experienced mentors.</p><p>Choice A claims one form of support outweighs another, which the text doesn't establish. Choice B singles out filmmakers as needing mentors more, which the text doesn't say. Choice D speculates about mentors' own growth, not addressed.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A1.T1.easy"
+}

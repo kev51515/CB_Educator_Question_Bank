@@ -1,0 +1,39 @@
+{
+  "questionId": "96802cc0-s1",
+  "originalId": "96802cc0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>For most of the twentieth century, the prevailing view of the hippocampus&mdash;a small, seahorse-shaped structure in the vertebrate brain&mdash;centered almost exclusively on its role in forming and consolidating new memories. This focus on memory, while well supported, has obscured other roles the structure plays in cognition. Research over the past two decades has steadily accumulated evidence that the hippocampus is also engaged when individuals imagine future events, make spatial decisions, and even reason about abstract relationships among objects. As a result, neuroscientists increasingly describe the hippocampus not as a dedicated memory center but as a region whose contributions extend across a range of cognitive functions that share certain underlying computational demands.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Recent neuroscience research has shown that the hippocampus is more important for memory formation than scientists previously believed.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The hippocampus plays a smaller role in imagination and spatial reasoning than was once assumed by twentieth-century neuroscientists.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Although the hippocampus has long been associated chiefly with memory, growing evidence indicates that it supports a broader range of cognitive functions.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neuroscientists disagree about whether the hippocampus is best described as a memory center or as a region devoted to spatial reasoning.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text describes how the hippocampus has long been associated chiefly with memory but recent research shows it is also engaged during imagination, spatial decision-making, and abstract reasoning, supporting a broader view of its role.</p><p>Choice A is incorrect because the text doesn&rsquo;t claim the hippocampus is more important for memory; it argues its role extends beyond memory. Choice B is incorrect because the text says the hippocampus is more, not less, involved in these other functions than previously assumed. Choice D is incorrect because the text presents a developing consensus, not disagreement among scientists.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

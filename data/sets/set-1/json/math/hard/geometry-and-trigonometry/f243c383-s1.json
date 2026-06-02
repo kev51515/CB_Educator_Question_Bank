@@ -1,0 +1,39 @@
+{
+  "questionId": "f243c383-s1",
+  "originalId": "f243c383",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two identical rectangular prisms each have a height of 60 centimeters (cm). The base of each prism is a square, and the surface area of each prism is K cm&sup2;. If the prisms are glued together along a square base, the resulting prism has a surface area of (41/21)K cm&sup2;. What is the side length, in cm, of each square base?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Each prism has surface area K = 2s&sup2; + 4(60)s = 2s&sup2; + 240s. When glued along a square base, two faces (each of area s&sup2;) are hidden, so the combined surface area is 2(2s&sup2; + 240s) &minus; 2s&sup2; = 2s&sup2; + 480s. Setting 2s&sup2; + 480s = (41/21)(2s&sup2; + 240s) and solving gives s = 6 cm.</p><p>Choices A, B, and D yield incorrect ratios.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T2.hard"
+}

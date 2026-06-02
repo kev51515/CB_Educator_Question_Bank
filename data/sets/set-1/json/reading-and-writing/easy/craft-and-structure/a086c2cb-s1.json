@@ -1,0 +1,39 @@
+{
+  "questionId": "a086c2cb-s1",
+  "originalId": "a086c2cb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Built in the 1980s, the Bath County facility in Virginia is a pumped-storage hydropower plant (sometimes called a \"water battery\"). When regional electricity demand is low, surplus power from the area's coal and nuclear plants is used to pump water from a lower reservoir up through a tunnel to an upper reservoir at the top of the mountain, where the water is held as gravitational potential energy. When electricity demand peaks, water flows back down through the tunnel, spinning turbines and generating up to 3,000 megawatts of power\u2014enough to power more than two million homes for several hours.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To point out the differences between two methods of energy generation</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To discuss the benefits of a new energy technology</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To explain the basics of how a specific energy technology works</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To encourage regional utilities to build more storage facilities</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text introduces the Bath County pumped-storage plant and then explains how it works\u2014pumping water up during low demand and letting it flow back down through turbines during peak demand.</p><p>Choice A is incorrect. The text mentions coal and nuclear only as power sources for the pumping process, not in comparison. Choice B is incorrect. The plant was built in the 1980s, so it isn't presented as new. Choice D is incorrect. The text doesn't urge more facilities to be built.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

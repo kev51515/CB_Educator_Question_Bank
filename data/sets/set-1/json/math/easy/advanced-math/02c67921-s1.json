@@ -1,0 +1,22 @@
+{
+  "questionId": "02c67921-s1",
+  "originalId": "02c67921",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <math><mi>f</mi><mfenced><mi>x</mi></mfenced><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn></math>. What is the value of <math><mi>f</mi><mfenced><mn>2</mn></mfenced></math>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>The correct answer is 8. Substituting 2 for <em>x</em>: <math><mi>f</mi><mfenced><mn>2</mn></mfenced><mo>=</mo><msup><mn>2</mn><mn>2</mn></msup><mo>+</mo><mn>4</mn><mo>=</mo><mn>4</mn><mo>+</mo><mn>4</mn><mo>=</mo><mn>8</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-functions.A1.T1.easy"
+}

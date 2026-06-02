@@ -1,0 +1,39 @@
+{
+  "questionId": "87a9a2d4-s1",
+  "originalId": "87a9a2d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In right triangle <em>ABC</em>, the angle at <em>C</em> is a right angle. The length of side <em>BC</em> is 8 and the length of the hypotenuse <em>AB</em> is 17. What is the value of the sine of angle <em>A</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1 over 17</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>15 over 17</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8 over 17</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>17 over 8</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In a right triangle, the sine of an acute angle is the ratio of the length of the side opposite that angle to the length of the hypotenuse. Side <em>BC</em> is opposite angle <em>A</em> and has length 8, and the hypotenuse <em>AB</em> has length 17. So the sine of angle <em>A</em> equals 8 over 17.</p><p>Choice A is incorrect: 1 over 17 has no meaningful interpretation here.</p><p>Choice B is incorrect: 15 over 17 is the cosine of angle <em>A</em>.</p><p>Choice D is incorrect: 17 over 8 is the reciprocal of the sine.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.easy"
+}

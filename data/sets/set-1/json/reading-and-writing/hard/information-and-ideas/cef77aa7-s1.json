@@ -1,0 +1,25 @@
+{
+  "questionId": "cef77aa7-s1",
+  "originalId": "cef77aa7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Petroglyphs are images carved or pecked into rock surfaces. The Coso petroglyphs were carved into volcanic basalt in the Coso Range of eastern California by Indigenous peoples over a period of many millennia. American archaeologist Lucia Ortega specializes in these petroglyphs. At a Japanese exhibit about North American rock art, she saw an old photograph of a large petroglyph depicting a swordfish-like figure and was surprised that she didn't recognize it. Ortega returned to California and used a high-resolution aerial scanner mounted on a helicopter to survey a wide area, looking for the figure from the air. This approach suggests that Ortega thought that if she hadn't already seen it, the swordfish-like petroglyph <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>must depict a species of swordfish that vanished before there were any people in California.</p>"},
+    {"id": "b", "content": "<p>is probably in a location Ortega hadn't ever encountered while on foot.</p>"},
+    {"id": "c", "content": "<p>was almost certainly created long after the other Coso petroglyphs were created.</p>"},
+    {"id": "d", "content": "<p>is actually located in Japan, not California, and isn't part of the Coso petroglyphs at all.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text says that Ortega specializes in the Coso petroglyphs but didn't recognize the swordfish-like figure she saw in the Japanese exhibit, and that she searched a wide area from the air on her return. Given her expertise and surprise, the text suggests she believed she would have noticed it if she had been to its location on foot. Thus, the most logical conclusion is that the petroglyph is in a location Ortega had not previously encountered.</p><p>Choice A is incorrect because the text doesn't address what species the figure represents or its relationship to the earliest people in California. Choice C is incorrect because the text doesn't address when any particular petroglyph in the Coso group was created. Choice D is incorrect because the text indicates that the photograph in the Japanese exhibit was specifically about the Coso petroglyphs, which are in California.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

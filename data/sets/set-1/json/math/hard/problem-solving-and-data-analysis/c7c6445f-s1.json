@@ -1,0 +1,39 @@
+{
+  "questionId": "c7c6445f-s1",
+  "originalId": "c7c6445f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A certain county has an area of 5.80 square miles. What is the area, in <u>square yards</u>, of this county? (1 mile = 1,760 yards)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>17,966,080</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>945,341</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10,208</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>538</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>1 square mile = (1,760 yards)\u00b2 = 3,097,600 square yards. Therefore 5.80 \u00d7 3,097,600 = 17,966,080 square yards. Choice (a) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T4.hard"
+}

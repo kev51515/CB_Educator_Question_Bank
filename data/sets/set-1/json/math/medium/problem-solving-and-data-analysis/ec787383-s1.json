@@ -1,0 +1,22 @@
+{
+  "questionId": "ec787383-s1",
+  "originalId": "ec787383",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A distance of 47 furlongs is equivalent to how many feet? (1 furlong = 220 yards and 1 yard = 3 feet)</p>",
+  "answerOptions": null,
+  "keys": [
+    "31020"
+  ],
+  "rationale": "<p>The correct answer is 31,020. Multiplying conversions: 47 furlongs \u00b7 (220 yards/1 furlong) \u00b7 (3 feet/1 yard) = 47 \u00b7 220 \u00b7 3 = 31,020 feet.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T3.medium"
+}

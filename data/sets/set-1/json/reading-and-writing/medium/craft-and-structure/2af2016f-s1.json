@@ -1,0 +1,25 @@
+{
+  "questionId": "2af2016f-s1",
+  "originalId": "2af2016f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>A study by Dr. Linnea Forsberg and colleagues concluded that elementary school students retain information from a lesson more accurately when they take a short walk outdoors before the lesson begins. Study participants were divided into two groups. The experimental group spent ten minutes walking through a tree-lined school courtyard before listening to a fifteen-minute lesson on basic geology. The control group spent ten minutes sitting quietly indoors before listening to the same lesson. Forsberg and colleagues found that the experimental group answered significantly more questions correctly on a follow-up quiz than the control group did.</p>",
+  "stem": "<p>Which choice best describes the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To argue that researchers were surprised by the results of a certain study</p>"},
+    {"id": "b", "content": "<p>To describe a widely held belief and how a study's results support that belief</p>"},
+    {"id": "c", "content": "<p>To suggest ways to improve a certain study's experimental design</p>"},
+    {"id": "d", "content": "<p>To explain a study's conclusion and how a research team arrived at that conclusion</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text opens by summarizing Forsberg and colleagues' conclusion (that a short outdoor walk before a lesson improves children's recall) and then describes the experimental design used to reach that conclusion: an experimental group that walked outdoors compared with a control group that sat indoors, followed by a quiz on the lesson content. The purpose is therefore to explain the study's conclusion and how the team arrived at it.</p><p>Choice A is incorrect because the text gives no indication that the researchers were surprised. Choice B is incorrect because the text does not present the conclusion as a widely held belief. Choice C is incorrect because the text describes, rather than critiques or proposes improvements to, the experimental design.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

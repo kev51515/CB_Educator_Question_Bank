@@ -1,0 +1,39 @@
+{
+  "questionId": "b35e2fdc-s1",
+  "originalId": "b35e2fdc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>A glancing summary of Yinka Shonibare's 2010 installation <em>Nelson's Ship in a Bottle</em> can make the work seem <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>\u2014a sculpture that consists of a scaled-down Royal Navy vessel inside a glass bottle may sound merely decorative\u2014but in fact the work is a layered, provocative meditation on imperialism and identity that demands sustained attention.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>pretentious</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>shrewd</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>slight</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>incongruous</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Slight\" most logically completes the text. The text contrasts a casual summary of the work (which makes it sound \"merely decorative\") with its actual depth. \"Slight\" means trivial or lacking substance\u2014the impression the summary would give.</p><p>Choice A is incorrect. \"Pretentious\" means putting on airs of importance, which doesn't match \"merely decorative.\" Choice B is incorrect. \"Shrewd\" means cleverly perceptive\u2014a positive quality the summary wouldn't naively impart. Choice D is incorrect. \"Incongruous\" means out of place; the summary makes the work sound inoffensive and minor, not jarring.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

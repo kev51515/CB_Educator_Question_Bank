@@ -1,0 +1,39 @@
+{
+  "questionId": "1448f43f-s1",
+  "originalId": "1448f43f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Reinforcement learning is a method that researchers like David Silver use to develop game-playing artificial intelligence. It involves training computer agents to learn from rewards and penalties as they interact with an environment. Imitation learning is another method. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> involves training computer agents by having them mimic the behavior of human demonstrators.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Those</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Some</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The antecedent is the singular noun \"Imitation learning\" in the previous sentence. The singular pronoun \"It\" agrees with this antecedent.</p><p>Choice A is incorrect because the plural \"Those\" doesn't agree with the singular antecedent. Choice B is incorrect because the plural \"They\" doesn't agree with the singular antecedent. Choice D is incorrect because \"Some\" is indefinite and doesn't clearly refer to imitation learning.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "form-structure-and-sense.A3.T6.easy"
+}

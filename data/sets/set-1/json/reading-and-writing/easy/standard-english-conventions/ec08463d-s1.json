@@ -1,0 +1,25 @@
+{
+  "questionId": "ec08463d-s1",
+  "originalId": "ec08463d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Ornithologists recognize over thirty different species of hummingbird in North America. One species, the rufous hummingbird, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> both a coastal migratory route that travels north along the Pacific and an inland return route through the Rocky Mountains.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>follows</p>"},
+    {"id": "b", "content": "<p>following</p>"},
+    {"id": "c", "content": "<p>having followed</p>"},
+    {"id": "d", "content": "<p>to follow</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. This verb needs to function as the main verb in the sentence, with the subject \"one species,\" so it needs to be conjugated. This choice provides the singular present tense \"follows,\" which is the only conjugated form of the verb among the choices.</p><p>Choice B is incorrect. The verb needs to function as the main verb in the sentence, so it needs to be conjugated. \"Following\" is the gerund/participle form, not a conjugated verb. Choice C is incorrect. \"Having followed\" is a participle form, not a conjugated verb. Choice D is incorrect. \"To follow\" is the infinitive form, not a conjugated verb.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "dede8260-s1",
+  "originalId": "dede8260",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T11.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>When law students discuss real cases publicly online, they may violate attorney-client privilege.</li>\n<li>Hannah Park led a study to determine how many law schools have student policies that address online discussion of cases.</li>\n<li>Park and her team reviewed 178 law school websites, examining publicly available student handbooks.</li>\n<li>Only twenty-three law schools had guidelines that explicitly mention online case discussion, and only nine defined what constitutes acceptable conduct.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize the study&rsquo;s methodology. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The student handbooks of 178 law schools can be found online, according to research by Hannah Park.</p>"},
+    {"id": "b", "content": "<p>Out of 178 law schools, only twenty-three had student policies that mentioned online case discussion, and only nine specified what conduct was acceptable.</p>"},
+    {"id": "c", "content": "<p>Hannah Park and her team wanted to know how many law schools have student policies in place about protecting attorney-client privilege online.</p>"},
+    {"id": "d", "content": "<p>To find out how many law schools have guidelines about online case discussion, Hannah Park and her team examined the student handbooks of 178 law schools.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The sentence effectively emphasizes Park&rsquo;s methodology: examining the student handbooks of 178 law schools for guidelines about online case discussion.</p><p>Choice A is incorrect. The sentence specifies how many law schools&rsquo; handbooks are available online; it doesn&rsquo;t emphasize the study&rsquo;s methodology. Choice B is incorrect. The sentence emphasizes the study&rsquo;s results, not the methodology. Choice C is incorrect. The sentence emphasizes the aim of the study, not the methodology.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

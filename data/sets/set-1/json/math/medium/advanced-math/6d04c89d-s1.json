@@ -1,0 +1,39 @@
+{
+  "questionId": "6d04c89d-s1",
+  "originalId": "6d04c89d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The expression 30 / (5x + 35) is equivalent to 6 / (x + k), where k is a constant and x &gt; 0. What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>175</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Factor out 5 from the denominator: 5x + 35 = 5(x + 7). So 30/(5x + 35) = 30/(5(x + 7)) = 6/(x + 7). Thus k = 7. Choice (b) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T8.medium"
+}

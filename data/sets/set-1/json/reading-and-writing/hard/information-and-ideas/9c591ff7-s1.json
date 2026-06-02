@@ -1,0 +1,25 @@
+{
+  "questionId": "9c591ff7-s1",
+  "originalId": "9c591ff7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Some <em>Heliotrigona neotropica</em>, a meadow-nesting bee found in southern Brazil, have colonized urban rooftops in the region. Although there is little genetic difference between meadow and rooftop <em>H. neotropica</em> and all members of the species can perform the same range of waggle dances, biologist Pedro Aragão and colleagues found that the meaning and context of those dances vary by location—e.g., the rapid figure-eight that meadow-dwelling <em>H. neotropica</em> use to indicate nectar sources is used by rooftop bees to recruit guards—and the choreography of rooftop bee dances shows some rooftop-specific variations as well. Aragão and colleagues note that differences in dance communication could accumulate to the point of inhibiting interbreeding among bees from different locations, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>although <em>H. neotropica</em> from different locations can interbreed currently, meadow bees and rooftop bees are sufficiently genetically distinct that they can be considered separate species.</p>"},
+    {"id": "b", "content": "<p>although <em>H. neotropica</em> living in meadows are genetically similar to those living on rooftops, meadow bees rely on dance communication less than rooftop bees do.</p>"},
+    {"id": "c", "content": "<p>although <em>H. neotropica</em> is a single species at present, it could be in the process of splitting into distinct populations with different characteristics.</p>"},
+    {"id": "d", "content": "<p>although all <em>H. neotropica</em> perform waggle dances, the bees living in meadows execute some movements that the bees living on rooftops do not, and vice versa.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text says that meadow and rooftop bees are genetically very similar today and share the same repertoire of dances, but they use the dances for different purposes, and rooftop bees show location-specific choreographic variations. If these differences in dance communication eventually inhibit interbreeding, the meadow population would breed only with meadow bees and the rooftop population only with rooftop bees, splitting the single species into distinct populations. So the inference that the species could be in the process of splitting is the one best supported.</p><p>Choice A is incorrect because it contradicts the text: the text says there is little genetic difference between meadow and rooftop bees, not enough to consider them separate species. Choice B is incorrect because nothing in the text indicates that meadow bees depend on dance communication less than rooftop bees do—only that the meaning of the dances differs. Choice D is incorrect because the text says all members of the species can perform the same range of dances; only their meaning and choreographic details differ.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T8.hard"
+}

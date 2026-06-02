@@ -1,0 +1,39 @@
+{
+  "questionId": "3067723b-s1",
+  "originalId": "3067723b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>The Akashi Kaiky&omacr; Bridge is a suspension bridge in Japan.</li>\n<li>It connects the city of Kobe to Awaji Island.</li>\n<li>Its main span is roughly 1.24 miles long.</li>\n<li>The Great Belt Bridge is a suspension bridge in Denmark.</li>\n<li>It connects the islands of Zealand and Funen.</li>\n<li>Its main span is about 1.03 miles long.</li>\n</ul>",
+  "stem": "<p>The student wants to compare the main span lengths of the two suspension bridges. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The Akashi Kaiky&omacr; Bridge, whose main span is roughly 1.24 miles long, connects the city of Kobe to Awaji Island.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Both the Akashi Kaiky&omacr; Bridge, which is located in Japan, and the Great Belt Bridge, which is located in Denmark, are examples of suspension bridges.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Some of the world's suspension bridges, including one bridge between Zealand and Funen in Denmark, have spans longer than a mile.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The main span of the Akashi Kaiky&omacr; Bridge is roughly 1.24 miles long, while the main span of the slightly shorter Great Belt Bridge is about 1.03 miles long.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it compares the lengths of the main spans of the two named bridges, stating both figures. Choice A is incorrect because it describes only one bridge. Choice B is incorrect because it identifies both bridges by type and location without comparing their span lengths. Choice C is incorrect because it makes a general statement about suspension bridges that does not compare the two specific bridges.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A1.T3.easy"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "77e3b3b3",
+  "externalId": "b5f5a3c9-8e64-4839-ae5e-632c2bbaef48",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:22:52.549341+00:00",
+  "type": "mcq",
+  "stem": "<p>The student wants to make and support a claim about Iberian orca behavior. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "26f578a1-4bf2-474f-aed8-172a9d722276",
+      "content": "<p>The recent destructive behavior of Iberian orcas may be the result of understimulation, given that orcas&rsquo; interactions with marine vessels have increased as the orcas have spent less time hunting.</p>"
+    },
+    {
+      "id": "9d03f825-506e-4cd1-90f2-66083b3aa13c",
+      "content": "<p>As supported by the workshop&rsquo;s analysis of 637 encounters between vessels and Iberian orcas, <span data-ssml-say-as=\"characters\">TAST</span> is a harmless and effective acoustic deterrent.</p>"
+    },
+    {
+      "id": "07713f69-7d46-4ed4-b702-7c819bb7c0e8",
+      "content": "<p>In <span data-ssml-say-as=\"date\">2024</span>, Spain and Portugal sponsored a workshop that addressed incidents where pods of Iberian orcas were ramming, nudging, or biting the rudders of vessels.</p>"
+    },
+    {
+      "id": "eb9a1ecb-5bf0-4a56-8cac-44bf6938a548",
+      "content": "<p>Tuna populations have increased by approximately 99% off the Iberian Peninsula due to changes in the hunting behavior of Iberian orcas.</p>"
+    }
+  ],
+  "keys": [
+    "26f578a1-4bf2-474f-aed8-172a9d722276"
+  ],
+  "rationale": "<p>Choice A is the best answer. The sentence makes and supports a claim about Iberian orca behavior, claiming that the orcas&rsquo; destructive behavior may be the result of understimulation and citing as support the fact that as orcas have spent less time hunting (a stimulating activity), encounters with vessels have increased.</p><p>Choice B is incorrect. While the sentence makes a claim about an orca deterrent, it misrepresents information from the notes. The workshop advised avoiding orcas pending further testing of TAST&rsquo;s efficacy; it didn&rsquo;t claim that TAST was effective. Choice C is incorrect. The sentence describes a workshop that addressed the orcas&rsquo; behavior; it doesn&rsquo;t make or support a claim about their behavior. Choice D is incorrect. While the sentence does make a claim about orcas&rsquo; hunting behavior, it misrepresents information from the notes; the notes state that increased tuna populations have reduced orcas&rsquo; hunting time by 99%, not that tuna populations have increased by 99% because of the orcas&rsquo; behavior.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>The student wants to make and support a claim about Iberian orca behavior. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+    "stimulus": "<p><p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li><span data-ssml-say-as=\"date\">2024</span>: Spain and Portugal sponsored a workshop to address recent encounters between Iberian orcas and marine vessels off the Iberian Peninsula.</li>\n<li>Many of the 637 documented incidents involved pods of orcas damaging vessels by ramming, nudging, or biting the rudders.</li>\n<li>Studies of Iberian orcas suggest recent increases in tuna populations have reduced the time the orcas spend hunting by 99%.</li>\n<li>Researchers believe this shift has increased the number of interactions between marine vessels and understimulated orcas.</li>\n<li>The workshop advised mariners to avoid orcas pending further testing of the efficacy of <span data-ssml-say-as=\"characters\">TAST</span>, a harmless acoustic deterrent.</li>\n</ul></p>",
+    "keys": [
+      "26f578a1-4bf2-474f-aed8-172a9d722276"
+    ],
+    "answerOptions": [
+      {
+        "id": "26f578a1-4bf2-474f-aed8-172a9d722276",
+        "content": "<p>The recent destructive behavior of Iberian orcas may be the result of understimulation, given that orcas&rsquo; interactions with marine vessels have increased as the orcas have spent less time hunting.</p>"
+      },
+      {
+        "id": "9d03f825-506e-4cd1-90f2-66083b3aa13c",
+        "content": "<p>As supported by the workshop&rsquo;s analysis of 637 encounters between vessels and Iberian orcas, <span data-ssml-say-as=\"characters\">TAST</span> is a harmless and effective acoustic deterrent.</p>"
+      },
+      {
+        "id": "07713f69-7d46-4ed4-b702-7c819bb7c0e8",
+        "content": "<p>In <span data-ssml-say-as=\"date\">2024</span>, Spain and Portugal sponsored a workshop that addressed incidents where pods of Iberian orcas were ramming, nudging, or biting the rudders of vessels.</p>"
+      },
+      {
+        "id": "eb9a1ecb-5bf0-4a56-8cac-44bf6938a548",
+        "content": "<p>Tuna populations have increased by approximately 99% off the Iberian Peninsula due to changes in the hunting behavior of Iberian orcas.</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The sentence makes and supports a claim about Iberian orca behavior, claiming that the orcas&rsquo; destructive behavior may be the result of understimulation and citing as support the fact that as orcas have spent less time hunting (a stimulating activity), encounters with vessels have increased.</p><p>Choice B is incorrect. While the sentence makes a claim about an orca deterrent, it misrepresents information from the notes. The workshop advised avoiding orcas pending further testing of TAST&rsquo;s efficacy; it didn&rsquo;t claim that TAST was effective. Choice C is incorrect. The sentence describes a workshop that addressed the orcas&rsquo; behavior; it doesn&rsquo;t make or support a claim about their behavior. Choice D is incorrect. While the sentence does make a claim about orcas&rsquo; hunting behavior, it misrepresents information from the notes; the notes state that increased tuna populations have reduced orcas&rsquo; hunting time by 99%, not that tuna populations have increased by 99% because of the orcas&rsquo; behavior.</p>",
+    "externalid": "b5f5a3c9-8e64-4839-ae5e-632c2bbaef48",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p><p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li><span data-ssml-say-as=\"date\">2024</span>: Spain and Portugal sponsored a workshop to address recent encounters between Iberian orcas and marine vessels off the Iberian Peninsula.</li>\n<li>Many of the 637 documented incidents involved pods of orcas damaging vessels by ramming, nudging, or biting the rudders.</li>\n<li>Studies of Iberian orcas suggest recent increases in tuna populations have reduced the time the orcas spend hunting by 99%.</li>\n<li>Researchers believe this shift has increased the number of interactions between marine vessels and understimulated orcas.</li>\n<li>The workshop advised mariners to avoid orcas pending further testing of the efficacy of <span data-ssml-say-as=\"characters\">TAST</span>, a harmless acoustic deterrent.</li>\n</ul></p>"
+}

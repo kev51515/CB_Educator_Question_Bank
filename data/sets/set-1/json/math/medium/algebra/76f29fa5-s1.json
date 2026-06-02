@@ -1,0 +1,39 @@
+{
+  "questionId": "76f29fa5-s1",
+  "originalId": "76f29fa5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The cost to rent a kayak from a certain company is $800 for the first 3 hours and an additional $60 per hour for each hour after the first 3 hours. If the total cost to rent the kayak from the company for t hours, where t &gt; 3, is $980, which equation represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>800(3t) + 60t = 980</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>800 + 60(t - 3) = 980</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>800(t - 3) + 60t = 980</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>800 + 60(3t) = 980</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The fixed amount $800 covers the first 3 hours. Each hour beyond that costs $60, and there are (t - 3) such hours. So the total is 800 + 60(t - 3) = 980. Choice B is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.medium"
+}

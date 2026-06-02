@@ -1,0 +1,39 @@
+{
+  "questionId": "be00d896-s1",
+  "originalId": "be00d896",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For which of the following data sets is the mean greater than the median?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1, 3, 6, 12, 24, 48, 96, 192, 384</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4, 4, 4, 4, 4, 4, 4, 4, 4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10, 20, 30, 40, 50, 60, 70, 80, 90</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9, 109, 109, 209, 209, 209, 309, 309, 309</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Each data set listed has 9 values, so the median of each set is its 5th value when the data are ordered from least to greatest. For the set in choice A, the median is 24. The values that are greater than 24 (48, 96, 192, 384) lie much farther above 24 than the values less than 24 (1, 3, 6, 12) lie below it. Therefore, the mean must be greater than 24. (Computing directly, the mean is (1+3+6+12+24+48+96+192+384)/9 = 766/9 &asymp; 85.1, which is greater than the median 24.) Choices B and C are incorrect because each of those data sets is symmetric about its median, so its mean equals its median. Choice D is incorrect because that data set is left-skewed; its median is 209, and the values less than 209 lie farther below 209 than values greater than 209 lie above it, making the mean less than the median.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.medium"
+}

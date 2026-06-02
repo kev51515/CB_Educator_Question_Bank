@@ -1,0 +1,39 @@
+{
+  "questionId": "4565a53c-s1",
+  "originalId": "4565a53c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Carlos M\u00e9ndez of an agricultural research institute in Mexico observed that highly compacted soils contain pockets where oxygen cannot reach plant roots, thereby stunting tomato growth. If these plants were grown alongside cover crops whose roots loosen the soil structure, ______ M\u00e9ndez set out to find out.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>could the tomato plants thrive.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the tomato plants could thrive.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>could the tomato plants thrive?</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the tomato plants could thrive?</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The sentence presents an indirect question M\u00e9ndez wished to investigate, which is conventionally written as a direct question with interrogative word order and a question mark.</p><p>Choice A uses interrogative word order but ends with a period. Choice B uses declarative form, suggesting the answer is known. Choice D uses declarative form but ends with a question mark.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

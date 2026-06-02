@@ -1,0 +1,22 @@
+[
+  {"id": "7d3a84bf-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok"},
+  {"id": "68607eca-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "c7a187a7-s1", "templateId": "nonlinear-functions.A3.T3.medium", "verdict": "type_drift", "detail": "A3.T3 is 'Vertex or extreme value of quadratic', but clone asks for an x-intercept of f(x)=x^2-20x-96. Stem and answer fit A3.T4 (x-intercepts/zeros of polynomial), not vertex/extremum. Answer (-4,0) is mathematically correct."},
+  {"id": "7a4475df-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "c4259674-s1", "templateId": "nonlinear-functions.A1.T1.medium", "verdict": "ok"},
+  {"id": "981aca65-s1", "templateId": "nonlinear-functions.A5.T1.medium", "verdict": "ok"},
+  {"id": "99c5e794-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "02add2d2-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "5c00c2c1-s1", "templateId": "nonlinear-functions.A4.T1.medium", "verdict": "ok"},
+  {"id": "cc6ccd71-s1", "templateId": "nonlinear-functions.A3.T5.medium", "verdict": "type_drift", "detail": "A3.T5 covers interval/asymptote/symmetry reasoning. Clone asks how many x-values satisfy f(x)=0 given two stated x-intercepts—this fits A3.T4 (x-intercepts/zeros). Answer 'Two' is correct."},
+  {"id": "b3b07f0c-s1", "templateId": "nonlinear-functions.A6.T1.medium", "verdict": "ok"},
+  {"id": "52e589f9-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok"},
+  {"id": "f880f910-s1", "templateId": "nonlinear-functions.A4.T3.medium", "verdict": "ok"},
+  {"id": "c19d1fb0-s1", "templateId": "nonlinear-functions.A4.T2.medium", "verdict": "ok"},
+  {"id": "dba7432e-s1", "templateId": "nonlinear-functions.A3.T5.medium", "verdict": "ok"},
+  {"id": "0af701e7-s1", "templateId": "nonlinear-functions.A1.T2.medium", "verdict": "ok"},
+  {"id": "50e40f08-s1", "templateId": "nonlinear-functions.A3.T4.medium", "verdict": "ok"},
+  {"id": "95d1c344-s1", "templateId": "nonlinear-functions.A3.T1.medium", "verdict": "constraint_violation", "detail": "A3.T1 must_preserve requires 'a graph (svg/figure) with at least one clearly identifiable target point'. Clone provides only verbal description of the parabola (vertex (5,14), passes (0,4))—no figure. This matches the common bug 'replacing svg with text-only description (drops aspect)'. Question fits A3.T2 better. Answer 4 is mathematically correct."},
+  {"id": "67f4b449-s1", "templateId": "nonlinear-functions.A2.T1.medium", "verdict": "ok"},
+  {"id": "dc77e0dc-s1", "templateId": "nonlinear-functions.A3.T2.medium", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "8a3998f1-s1",
+  "originalId": "8a3998f1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>After the city of Reykjav\u00edk began charging a small fee on disposable coffee cups in 2017, single-use cup consumption fell by nearly seventy <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> fees are subject to what economists call the \"habituation effect\": once shoppers adjusted, cup use slowly started to rise again.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>percent. Such</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>percent, such</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>percent and such</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>percent such</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. It appropriately uses a period to mark the end of one independent clause (\"After...nearly seventy percent\") and the start of another (\"Such fees...to rise again\").</p><p>Choice B is incorrect because it results in a comma splice. Choice C is incorrect because a comma is needed in addition to the conjunction \"and\" when joining two independent clauses. Choice D is incorrect because it results in a run-on sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A1.T1.easy"
+}

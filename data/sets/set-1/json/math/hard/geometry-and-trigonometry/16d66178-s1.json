@@ -1,0 +1,39 @@
+{
+  "questionId": "16d66178-s1",
+  "originalId": "16d66178",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following expressions is equivalent to sin 35\u00b0 cos 55\u00b0 + cos 35\u00b0 sin 55\u00b0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2 cos 55\u00b0 sin 35\u00b0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(cos 55\u00b0)\u00b2 + (sin 35\u00b0)\u00b2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(cos 55\u00b0)\u00b2 + (cos 35\u00b0)\u00b2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2 cos 35\u00b0 + 2 cos 55\u00b0</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Sine and cosine of complementary angles are equal: since 35\u00b0 + 55\u00b0 = 90\u00b0, we have cos 55\u00b0 = sin 35\u00b0 and sin 55\u00b0 = cos 35\u00b0. Substituting into the given expression: sin 35\u00b0 \u00b7 sin 35\u00b0 + cos 35\u00b0 \u00b7 cos 35\u00b0 = (sin 35\u00b0)\u00b2 + (cos 35\u00b0)\u00b2 = (cos 55\u00b0)\u00b2 + (cos 35\u00b0)\u00b2 = 1.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A6.T13.hard"
+}

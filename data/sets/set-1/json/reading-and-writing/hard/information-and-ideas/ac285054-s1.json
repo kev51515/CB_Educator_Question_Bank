@@ -1,0 +1,39 @@
+{
+  "questionId": "ac285054-s1",
+  "originalId": "ac285054",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The bottle gourd (<em>Lagenaria siceraria</em>) descends from a wild plant native to sub-Saharan Africa. It is also widely found in coastal South America, where archaeological evidence confirms that Indigenous peoples were using bottle gourds as containers and floats well before any seafaring contact occurred across the thousands of miles of ocean separating them from Africa. To explain how the bottle gourd was first introduced into South America, botanist Eleni Karagiannis and colleagues analyzed the DNA of numerous varieties of the plant, concluding that South American varieties diverged from African ones more than 100,000 years ago. Given that South America was peopled only in the last twenty thousand years, the team concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the cultivation of the bottle gourd in South America likely predates its cultivation in sub-Saharan Africa.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>human activity likely played no role in the introduction of the bottle gourd in South America.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>South American peoples likely obtained the bottle gourd from African peoples only within the last twenty thousand years.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>South American bottle gourd varieties likely descend from a single African variety that was domesticated, not wild.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text says that South American peoples were using bottle gourds long before any sea contact with Africa was possible, and that South American gourd varieties diverged from African ones over 100,000 years ago\u2014long before humans were even present in South America. Since people were not in South America when the divergence happened, humans could not have been responsible for bringing the gourd there; the most reasonable conclusion is that human activity played no role in the gourd's introduction to South America.</p><p>Choice A is incorrect because the text says nothing about when cultivation of the gourd began in Africa. Choice C is incorrect because the text shows that the gourd was already present in South America long before any contact with Africans was possible, so it could not have been obtained from Africans within the last twenty thousand years. Choice D is incorrect because the text says the South American gourd, like the African one, descends from a wild plant, and the text does not specify that the African parent was a domesticated variety.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "id": "0d7f4966-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "type_drift",
+    "detail": "Stem asks which finding would 'most directly weaken' the claim, which matches A4.T6 (Finding-weakens-or-challenges-claim), not A4.T5 (support). Keyed answer C correctly weakens, so item itself is sound but templateId tags the wrong type."
+  },
+  {
+    "id": "040583a5-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "type_drift",
+    "detail": "Stem and stimulus use the T8 pattern (stimulus ends in '______' and stem asks 'Which choice... completes the student's conclusion'). T9 requires the explicit stem form 'Which choice best describes data... that support [conclusion]?' with no blank. Answer B is data-correct, but the type tag should be T8."
+  },
+  {
+    "id": "3430be35-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "type_drift",
+    "detail": "Stimulus ends in '______' and stem says 'Which choice most effectively uses data... to complete the text?' \u2014 this is the T8 sentence-completion structure, not T9 ('Which choice best describes data... that support [conclusion]?'). Answer B is data-correct, but the type tag should be T8."
+  },
+  {
+    "id": "e37f79a7-s1",
+    "templateId": "command-of-evidence.A5.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged as T7 (direct-data-readout, expects 'According to the table, what is X?' question). Clone's stimulus ends with blank '______' and stem asks 'Which choice most effectively uses data from the table to complete the statement?'\u2014this is T8 (data-completes-sentence-with-value) structure, not T7."
+  },
+  {
+    "id": "94c54577-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stimulus claim is attributed to an arts journalist about a curator's strategy; options are propositional findings about exhibitions Banerjee organized. This matches A2.T3 (external-source/historian-supports-claim with 'not X but Y' structure; Enwezor example is the template's hard exemplar) rather than A4.T5 (researcher hypothesis with named alternative explanation). No experimental hypothesis is present."
+  },
+  {
+    "id": "b32c4b3a-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "aspect_drift",
+    "detail": "Stimulus contains no table or graph; the options are propositional findings about core data, not descriptions of patterns in a presented dataset. This fits A4.T5 (finding-supports-hypothesis with named alternative 'uniform weakening') rather than A5.T9 (which requires the stimulus to contain a table/graph)."
+  },
+  {
+    "id": "bc7b1a04-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "type_drift",
+    "detail": "Stimulus ends with a blanked-out sentence ('is likely ______') and options are short value-range phrases that grammatically complete the blank. This matches T8 (data-completes-sentence-with-value) rather than T9 (which requires stem 'Which choice best describes data\u2026 that support [conclusion]' with options as factual-pattern descriptions)."
+  },
+  {
+    "id": "b30a2613-s1",
+    "templateId": "command-of-evidence.A5.T9.medium",
+    "verdict": "type_drift",
+    "detail": "T9 spec is 'best-describes-data-SUPPORTING-conclusion'; clone asks which data WEAKEN the conclusion. Stem signal inverted from template's defining 'support' wording. Correct answer (D) is logically sound but structural pattern is a categorical variant not covered by T9."
+  },
+  {
+    "id": "0198240a-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation or 'fill the missing causal link' move; here the stimulus lacks any alternative and the keyed finding (D) is essentially a direct restatement of the hypothesized properties (resist compression + high heat conduction), violating the common-bug 'correct finding that merely restates the hypothesis' and the hard lever 'rules out a specific named alternative or supplies the precise missing link'."
+  },
+  {
+    "id": "02848335-s1",
+    "templateId": "command-of-evidence.A5.T9.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T9 requires multi-sub-claim conclusion and multi-row pattern with \u22654 rows \u00d7 \u22653 columns, plus distractors that accurately describe data but support a different conclusion. This clone uses only a 2\u00d73 table with a single-claim conclusion ('pyrolysis more robust') resolved by one worst-case-vs-best-case comparison; closer to Medium-level."
+  },
+  {
+    "id": "c83e0b43-s1",
+    "templateId": "command-of-evidence.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A1.T1 requires abstract multi-clause descriptors and inference from archaic/formal diction with multiple superficially relevant distractors. This clone has a single-axis trait ('draws steady comfort from intimate knowledge of the natural world'), and Choice C explicitly paraphrases it ('content among things she knew so well'). Distractors A, B, D are clearly off-topic (bad news, unfamiliarity, hurrying away). Reads as Easy/Medium."
+  },
+  {
+    "id": "39e440e4-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation and highly plausible distractors that support a rival hypothesis or the wrong specific link. The stimulus mentions the prior 'small fishing villages' view but the distractors (B small dwellings, C inland footpaths, D scattered garden plots) are obvious anti-urbanism scenarios that don't competitively support a rival; correct answer is a direct match to 'monumental planned urbanism'. Closer to Easy/Medium."
+  },
+  {
+    "id": "9452092c-s1",
+    "templateId": "command-of-evidence.A5.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A5.T8 requires multi-row inference across 4-5 columns with options as complete clauses requiring data adjudication of a contested claim. This clone uses a simple 3-row, 4-column table and a one-step comparison (soybean 22.4 vs 14.1); fits Easy/Medium rather than Hard."
+  },
+  {
+    "id": "98d0a5d7-s1",
+    "templateId": "command-of-evidence.A4.T5.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A4.T5 requires a named alternative explanation that the correct finding rules out, or a precise missing causal link. The stimulus presents no named alternative; the correct finding (more bicycle references after 1885) is a direct correlation matching the hypothesis at the Easy/Medium level."
+  },
+  {
+    "id": "0ec15b5a-s1",
+    "templateId": "command-of-evidence.A5.T8.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium T8 requires a constraint combining two columns or a comparison structure; clone is a single-column max lookup of one rating (Texas sage = 9), matching T7 direct-readout easy pattern. No two-step reasoning or partial-match trap."
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "de2c2f57-s1",
+  "originalId": "de2c2f57",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p>Text 1</p>\n<p>For decades, paleontologists have placed the disappearance of the saiga antelope from much of central Eurasia at roughly 5 thousand years (kyr) ago, based on bone records. In 2022, however, sediment cores examined by Inessa Polzin and colleagues yielded saiga environmental DNA in layers dated to only 2 kyr ago. To reconcile this with the bone record, Theodore Brace and Yuri Lenkov proposed that frigid steppe winds could preserve saiga remains intact above ground for thousands of years, allowing slow leakage of DNA into the soil.</p>\n<p>Text 2</p>\n<p>Polzin and her colleagues acknowledge that environmental DNA derives from carcasses as well as living animals, but for DNA to leak from remains over millennia, those remains must persist on the surface for the entire span. In the open steppe, however, foxes, wolves, and rapid freeze-thaw cycles tend to disassemble any large carcass within a century or two.</p>",
+  "stem": "<p>Which choice best describes how Text 1 and Text 2 relate to each other?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Text 1 presents Polzin and colleagues' finding along with another team's proposal for explaining it, whereas Text 2 raises practical objections that weaken that proposal.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Text 1 compares two competing methods for dating saiga remains without endorsing either, whereas Text 2 endorses one method over the other.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Text 1 describes Polzin and colleagues' study together with a criticism of their methodology, whereas Text 2 supplies evidence that vindicates that methodology.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Text 1 contends that recent research overturns the conventional timeline of saiga decline, whereas Text 2 proposes a way to harmonize the new and old evidence.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Text 1 introduces Polzin and colleagues' surprising eDNA result and then describes Brace and Lenkov's hypothesis about long-lasting surface preservation as a way to explain it. Text 2 challenges that hypothesis by noting that scavengers and freeze-thaw cycles would break down carcasses far faster than the proposed timescale, undermining the surface-preservation explanation.</p><p>Choice B is incorrect because neither text compares dating methods; Text 1 reports one finding plus one hypothesis, and Text 2 critiques that hypothesis. Choice C is incorrect because Text 1 does not describe a methodological critique of Polzin and colleagues; it describes an interpretive proposal by Brace and Lenkov, which Text 2 then disputes. Choice D is incorrect because the conventional timeline and the reconciliation attempt both appear in Text 1; Text 2 contests rather than offers that reconciliation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A4.T7.hard"
+}

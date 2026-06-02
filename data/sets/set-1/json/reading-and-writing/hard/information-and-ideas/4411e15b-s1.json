@@ -1,0 +1,39 @@
+{
+  "questionId": "4411e15b-s1",
+  "originalId": "4411e15b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Fiber Characteristics of Vicu\u00f1a, Suri Alpaca, and Huacaya Alpaca</strong></p><table border=\"1\"><thead><tr><th>Type of camelid</th><th>Diameter of outer coat fibers (in microns)</th><th>Diameter of inner coat fibers (in microns)</th></tr></thead><tbody><tr><td>Huacaya alpaca</td><td>22\u201328</td><td>18\u201323</td></tr><tr><td>Suri alpaca</td><td>40 or higher</td><td>9\u201340</td></tr><tr><td>Vicu\u00f1a</td><td>120</td><td>14</td></tr></tbody></table><p>Domestic alpacas descend from the wild vicu\u00f1a, which has a coarse outer coat and an inner coat of fine, soft fiber. In the Huacaya alpaca, breeders have narrowed the gap between outer and inner fibers, producing a fleece that is uniformly soft and is prized for fine knitwear. The Suri alpaca, by contrast, has been bred to preserve the strong distinction between outer and inner fibers that the Huacaya has lost; its coarser overall coat is favored by Andean weavers for sturdy textiles. Yet a comparison of the fiber characteristics of all three camelids reveals that ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>both the Huacaya and the Suri more closely resemble the vicu\u00f1a in the uniformity of their inner fibers than in the diameter of their outer fibers.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>domestication consistently raised the minimum diameter of inner fibers, making Huacaya and Suri inner fibers less suitable than the vicu\u00f1a's for delicate garments.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the selection that allowed the Suri to keep its relatively coarse outer fiber also yielded inner fiber that, at its finest, is finer than either the vicu\u00f1a's or the Huacaya's inner fiber.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>domestication produced a uniform reduction in both outer and inner fiber diameters across the Huacaya and the Suri.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Finer fibers (smaller diameter) are softer. The table shows the Suri alpaca's inner fiber has a minimum diameter of 9 microns, which is smaller than both the vicu\u00f1a's inner fiber (14 microns) and the Huacaya's inner fiber (minimum 18 microns). So at its finest, the Suri's inner fiber is the finest of the three.</p><p>Choice A is incorrect: the Suri's inner fiber ranges 9\u201340 microns\u2014not uniform at all\u2014so it does not resemble the vicu\u00f1a's uniform 14-micron inner fiber. Choice B is incorrect: the Suri's minimum inner-fiber diameter (9 microns) is smaller than the vicu\u00f1a's (14 microns), so domestication did not consistently raise the minimum. Choice D is incorrect: the Suri's outer fiber (40 or higher) and inner fiber (up to 40) are not reductions across the board; the table shows substantial variation, not uniform reduction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

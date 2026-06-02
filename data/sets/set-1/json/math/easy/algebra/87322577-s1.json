@@ -1,0 +1,39 @@
+{
+  "questionId": "87322577-s1",
+  "originalId": "87322577",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation <i>m</i> + <i>r</i> = 90 relates the number of minutes, <i>m</i>, Priya spends practicing math each evening and the number of minutes, <i>r</i>, she spends practicing reading each evening. In the equation, what does the number 90 represent?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The total number of minutes spent practicing math and reading each evening</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The number of minutes spent practicing math each evening</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The number of minutes spent practicing reading each evening</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The number of minutes spent reading for each minute spent on math</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The sum <i>m</i> + <i>r</i> represents the combined minutes spent on math and reading. Since this sum equals 90, the number 90 represents the total minutes spent on the two activities each evening.</p><p>Choices B and C confuse the total with one component. Choice D describes a ratio, not a sum.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A3.T4.easy"
+}

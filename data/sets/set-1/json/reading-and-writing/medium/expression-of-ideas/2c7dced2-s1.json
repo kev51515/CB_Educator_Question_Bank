@@ -1,0 +1,25 @@
+{
+  "questionId": "2c7dced2-s1",
+  "originalId": "2c7dced2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "templateId": "rhetorical-synthesis.A4.T12.medium",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Hedy Lamarr (1914&ndash;2000) was a Hollywood film actress.</li>\n<li>She was known for her glamorous on-screen presence and her work outside of film as an inventor.</li>\n<li>In 2014, Lamarr was inducted into the National Inventors Hall of Fame for her major contribution to wireless technology.</li>\n<li>According to film critic Yvonne Tasker, &ldquo;Lamarr could play sophistication and danger in the same glance.&rdquo;</li>\n<li>According to engineer David Hughes, &ldquo;Lamarr is the unsung pioneer of modern frequency-hopping communications.&rdquo;</li>\n</ul>",
+  "stem": "<p>The student wants to use a quotation to support a claim about Lamarr's contribution to wireless technology. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Hollywood actress Hedy Lamarr had a major contribution to wireless technology, and she was known for her glamorous on-screen presence.</p>"},
+    {"id": "b", "content": "<p>Hedy Lamarr had such a major contribution to wireless technology that David Hughes called her &ldquo;the unsung pioneer&rdquo; of modern frequency-hopping communications.</p>"},
+    {"id": "c", "content": "<p>David Hughes believes that Hedy Lamarr made a major contribution to wireless technology.</p>"},
+    {"id": "d", "content": "<p>A Hollywood actress, Hedy Lamarr could &ldquo;play sophistication and danger in the same glance,&rdquo; according to Yvonne Tasker.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The sentence uses the quotation from Hughes to support a claim about Lamarr's contribution to wireless technology, noting that the impact Lamarr had on the field led Hughes to call her &ldquo;the unsung pioneer of modern frequency-hopping communications.&rdquo;</p><p>Choice A is incorrect. While the sentence makes the claim that Lamarr had a major contribution to wireless technology, it does not use a quotation to support this claim. Choice C is incorrect. The sentence presents Hughes's opinion that Lamarr made a major contribution but does not use a quotation to support the claim. Choice D is incorrect. While the sentence includes a quotation about Lamarr's on-screen presence, it does not support a claim about her contribution to wireless technology.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

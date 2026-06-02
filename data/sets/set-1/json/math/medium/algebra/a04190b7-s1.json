@@ -1,0 +1,23 @@
+{
+  "questionId": "a04190b7-s1",
+  "originalId": "a04190b7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A bakery sells two different-sized containers of muffins. The bakery's sales of these muffins totaled 712.50 dollars last week. The equation 3.29x + 5.42y = 712.50 represents this situation, where <em>x</em> is the number of smaller containers sold and <em>y</em> is the number of larger containers sold. According to the equation, what is the price, in dollars, of each smaller container?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3.29",
+    "329/100"
+  ],
+  "rationale": "<p>In the equation 3.29x + 5.42y = 712.50, the coefficient of x is the per-unit price of the smaller container, since 3.29x represents the total revenue from x smaller containers. Therefore the price of each smaller container is 3.29 dollars.</p>"
+}

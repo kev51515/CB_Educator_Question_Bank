@@ -1,0 +1,22 @@
+{
+  "questionId": "0d5495a6-s1",
+  "originalId": "0d5495a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>For the linear function <em>g</em> defined by g(x) = x + c, where <em>c</em> is a constant, g(0) = 27. What is the value of <em>c</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "27"
+  ],
+  "rationale": "<p>Substituting x = 0 into g(x) = x + c gives g(0) = 0 + c = c. Since g(0) = 27, it follows that c = 27.</p>",
+  "templateId": "linear-functions.A1.T4.easy"
+}

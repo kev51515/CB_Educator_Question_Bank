@@ -1,0 +1,39 @@
+{
+  "questionId": "1fc4f47b-s1",
+  "originalId": "1fc4f47b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At a music festival, there are a total of 400 attendees. Each attendee is located in either tent A, tent B, or tent C. If one of these attendees is selected at random, the probability of selecting an attendee who is located in tent A is 0.35, and the probability of selecting an attendee who is located in tent B is 0.40. How many attendees are located in tent C?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>100</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>140</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>160</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The probabilities for A, B, and C must sum to 1, so P(C) = 1 - 0.35 - 0.40 = 0.25. The number of attendees in tent C is 0.25 &times; 400 = 100. Choice A is incorrect; 25 corresponds to misreading P(C) as 0.0625. Choice C is incorrect because 140 = 0.35 &times; 400 is the count in tent A. Choice D is incorrect because 160 = 0.40 &times; 400 is the count in tent B.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A4.T12.medium"
+}

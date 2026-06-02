@@ -1,0 +1,39 @@
+{
+  "questionId": "5252e606-s1",
+  "originalId": "5252e606",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The side length of a square is 42 centimeters (cm). What is the area, in cm\u00b2, of the square?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>84</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>168</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1,684</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,764</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The area of a square is A = s\u00b2. With s = 42, A = 42\u00b2 = 1,764 cm\u00b2. Choice A doubles the side; choice B is the perimeter.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "area-and-volume.A1.T1.easy"
+}

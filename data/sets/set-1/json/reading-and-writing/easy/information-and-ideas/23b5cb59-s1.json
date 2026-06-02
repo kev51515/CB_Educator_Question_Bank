@@ -1,0 +1,39 @@
+{
+  "questionId": "23b5cb59-s1",
+  "originalId": "23b5cb59",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Total Electoral College Votes and Popular Votes in the 17th US Presidential Election</caption><thead><tr><th>Candidate</th><th>Total electoral college votes</th><th>Total popular votes</th></tr></thead><tbody><tr><td>Franklin Pierce</td><td>254</td><td>1,607,510</td></tr><tr><td>Winfield Scott</td><td>42</td><td>1,386,942</td></tr><tr><td>John P. Hale</td><td>0</td><td>155,210</td></tr></tbody></table></figure><p>A student is writing a paper on the history of the 17th US presidential election, which was held in 1852. The student needs to determine how many electoral college votes were cast for the winning candidate, Franklin Pierce. According to the table, Franklin Pierce received ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>42 electoral college votes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>155 electoral college votes.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>254 electoral college votes.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180 electoral college votes.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the table shows that Franklin Pierce, the winning candidate, received 254 electoral college votes.</p><p>Choice A is incorrect: 42 is the number of electoral college votes received by Winfield Scott, not Pierce. Choice B is incorrect: 155 is unrelated to electoral votes; 155,210 was Hale's popular vote total. Choice D is incorrect: the table does not show 180 votes for any candidate.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

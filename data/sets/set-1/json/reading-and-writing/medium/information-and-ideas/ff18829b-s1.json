@@ -1,0 +1,25 @@
+{
+  "questionId": "ff18829b-s1",
+  "originalId": "ff18829b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p>[Bar graph: Average Ratings of Coastal Mangrove Restoration&rsquo;s Contribution to Various Ecosystem Services. Three respondent groups (local fishers, project coordinators, regional policymakers) rated three services on a 0&ndash;5 scale (0 = no contribution, 5 = high contribution). Values: local fishers&mdash;storm-surge buffering 4.6, fisheries habitat 4.3, carbon storage 3.5; project coordinators&mdash;storm-surge buffering 4.1, fisheries habitat 4.1, carbon storage 3.6; regional policymakers&mdash;storm-surge buffering 3.0, fisheries habitat 3.0, carbon storage 2.0.]</p>\n<p>Coastal mangrove restoration is the practice of replanting mangrove forests along tropical and subtropical shorelines. Adaora Okonkwo, Pelin Demir, and their team surveyed three groups in coastal Tanzania&mdash;local fishers, coordinators of mangrove restoration projects, and regional policymakers&mdash;to compare their views about the extent to which mangrove restoration contributes to a set of ecosystem services that the team identified. The survey results show that, on average, regional policymakers rated mangrove restoration as contributing less to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the graph to complete the assertion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>buffering storm surges than to providing tourism revenue.</p>"},
+    {"id": "b", "content": "<p>providing fisheries habitat than to buffering storm surges.</p>"},
+    {"id": "c", "content": "<p>storing carbon than to controlling shoreline erosion.</p>"},
+    {"id": "d", "content": "<p>storing carbon than to providing fisheries habitat.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because, according to the graph, regional policymakers gave carbon storage an average rating of approximately 2.0, lower than the rating of approximately 3.0 they gave to providing fisheries habitat. This shows that policymakers rated mangrove restoration as contributing less to storing carbon than to providing fisheries habitat.</p><p>Choice A is incorrect because the graph does not provide data on tourism revenue; the comparison cannot be made. Choice B is incorrect because policymakers rated buffering storm surges and providing fisheries habitat at approximately the same level (3.0 each), so there is no &ldquo;less&rdquo; relationship to support. Choice C is incorrect because the graph does not provide data on shoreline erosion; the comparison cannot be made.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

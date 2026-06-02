@@ -1,0 +1,9 @@
+[
+  {"id": "fd65f47f-s1", "templateId": "equivalent-expressions.A1.T2.easy", "verdict": "wrong_answer", "detail": "(3x^2+2x-7)+(x^2+5x+3) = 4x^2+7x-4 which is option b. Keyed c (3x^2+7x-4) has wrong x^2 coefficient. Rationale correctly derives 4x^2+7x-4 but key points to c."},
+  {"id": "bdb0aa23-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "wrong_answer", "detail": "4x^5-7x^4+9x^3 = x^3(4x^2-7x+9) which is option b. Keyed d is x^3(4x^2+7x+9) with wrong middle sign. Rationale matches b, not d."},
+  {"id": "72ebc024-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "ok"},
+  {"id": "dc67c130-s1", "templateId": "equivalent-expressions.A2.T4.easy", "verdict": "rationale_inconsistent", "detail": "Key b = 9ab(5ab^2-3a^2) expands to 45a^2b^3-27a^3b (correct/equivalent), but rationale describes GCF 9a^2b giving 9a^2b(5b^2-3a), which is option a. Rationale-key mismatch."},
+  {"id": "8452c42b-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "ok"},
+  {"id": "67e866b5-s1", "templateId": "equivalent-expressions.A1.T1.easy", "verdict": "ok"},
+  {"id": "df747160-s1", "templateId": "equivalent-expressions.A2.T5.easy", "verdict": "wrong_answer", "detail": "13(x^2-49y^2) = 13(x-7y)(x+7y) which is option a. Keyed b is 13(x+7y)(x+7y) = perfect square, not difference of squares. Rationale correctly derives a but key is b."}
+]

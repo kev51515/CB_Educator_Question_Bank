@@ -1,0 +1,39 @@
+{
+  "questionId": "1f2d6173-s1",
+  "originalId": "1f2d6173",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Histories of the Asian American movement&mdash;a coalition that pressed for political and cultural recognition and that crested in the late 1960s and 1970s&mdash;<u>tend to spotlight the most confrontational student organizers in major coastal cities</u>, leaving the impression of a movement uniformly radical. Sociologist Mai-Linh Tran has argued, however, that if attention is shifted to less-publicized initiatives in suburban community centers, mutual-aid clinics, and language schools, one finds participants espousing a wide span of political stances&mdash;reformist, religious, and liberal as well as radical&mdash;within the same broad cause.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It introduces a trend in scholarship on the Asian American movement that the text claims has now been completely abandoned in light of Tran's research.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It identifies a focus in scholarship on the Asian American movement that, according to the text, conceals the political variety actually present among participants.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It calls out an emphasis that the text implies has been driven by historians' own ideological commitments.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It summarizes a conventional approach that, the text suggests, misrepresents the effectiveness of community institutions.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The underlined clause names the customary scholarly focus on confrontational coastal student organizers; the rest of the passage uses Tran's work to argue that this focus hides the wider political diversity revealed in lower-profile, community-based settings.</p><p>Choice A is incorrect because the text only counterposes Tran's argument; it does not claim the prior trend has been abandoned. Choice C is incorrect because the text never attributes the focus to historians' political commitments. Choice D is incorrect because the contrast concerns ideological range, not the effectiveness of community institutions.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

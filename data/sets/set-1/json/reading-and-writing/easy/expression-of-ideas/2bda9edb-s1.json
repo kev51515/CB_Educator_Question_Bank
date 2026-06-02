@@ -1,0 +1,39 @@
+{
+  "questionId": "2bda9edb-s1",
+  "originalId": "2bda9edb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 1947, Japanese-born Washington resident Hiro Yamasaki became a leader in the Asian American civil rights movement. In March of that year, he won a landmark fair-housing case in the Washington Supreme Court. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in October, he delivered a public address criticizing his local university for excluding Japanese American applicants. Both actions are remembered today as historic stands against discrimination.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For instance,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Rather,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Later,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Later\" logically signals that the public address discussed in this sentence occurred later in a chronological sequence of events than did the fair-housing case discussed in the previous sentence.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the address is an example of the court case. Instead, the address is an event that occurred after the case. Choice B is incorrect because \"in other words\" illogically signals that the address is a paraphrase of the court case. Instead, it is a later event. Choice C is incorrect because \"rather\" illogically signals that the address is an alternative to the court case. Instead, it is a later event.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

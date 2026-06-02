@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Hard",
+  "dcode": "H",
+  "domain": "Advanced Math",
+  "domain_code": "P",
+  "skill": "Equivalent expressions",
+  "skill_code": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mo>(</mo><mi>c</mi><mi>x</mi><mo>+</mo><mn>2</mn><mo>)</mo><mo>(</mo><mn>4</mn><msup><mi>x</mi><mn>2</mn></msup><mo>\u2212</mo><mi>d</mi><mi>x</mi><mo>+</mo><mn>5</mn><mo>)</mo><mo>=</mo><mn>4</mn><mi>c</mi><msup><mi>x</mi><mn>3</mn></msup><mo>\u2212</mo><mn>10</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mo>(</mo><mn>5</mn><mi>c</mi><mo>\u2212</mo><mn>2</mn><mi>d</mi><mo>)</mo><mi>x</mi><mo>+</mo><mn>10</mn></math></p>\n<p>The equation above is true for all <em>x</em>, where <em>c</em> and <em>d</em> are constants. What is the value of <em>cd</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Expanding the left side: (cx + 2)(4x\u00b2 \u2212 dx + 5) = 4cx\u00b3 \u2212 cdx\u00b2 + 5cx + 8x\u00b2 \u2212 2dx + 10 = 4cx\u00b3 + (8 \u2212 cd)x\u00b2 + (5c \u2212 2d)x + 10. Equating the coefficient of x\u00b2 on each side: 8 \u2212 cd = \u221210, so cd = 18.</p><p>The other choices result from sign errors in matching coefficients.</p>",
+  "questionId": "371cbf6b-s1",
+  "originalId": "371cbf6b",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:28:54.548681+00:00",
+  "templateId": "equivalent-expressions.A2.T6.hard"
+}

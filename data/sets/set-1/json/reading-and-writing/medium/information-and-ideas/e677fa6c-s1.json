@@ -1,0 +1,25 @@
+{
+  "questionId": "e677fa6c-s1",
+  "originalId": "e677fa6c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from Sarah Orne Jewett&rsquo;s 1894 sketch &ldquo;A Lost Lover.&rdquo;</p>\n<blockquote>\n<p>One soft September afternoon, in the course of a walking ramble that I had begun without much plan among the back roads of the central counties of Maine, I became, with no little vexation, uncertain about the lane I was following. The hills had risen and fallen by such close turns; and the path, for the last half hour, had crossed and recrossed itself between the orchards and the stone walls so confusingly, that I no longer had any clear notion in which direction lay the pleasant village of P&mdash;&mdash;, where I had intended to take my lodging for the night.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The narrator recalls fond memories of an afternoon spent walking among Maine&rsquo;s scenic hills.</p>"},
+    {"id": "b", "content": "<p>The narrator describes the sights he encountered during a long walk through a region he often visits.</p>"},
+    {"id": "c", "content": "<p>The narrator explains the difficulties he faced during a walking ramble and how he overcame them.</p>"},
+    {"id": "d", "content": "<p>The narrator recounts a walking ramble he undertook and admits to becoming lost.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The narrator is &ldquo;vexed&rdquo; about the lane and concedes that he no longer has any clear notion of the direction to P&mdash;&mdash;, his intended lodging — that is, he is recounting the ramble and admitting that he became lost.</p><p>Choice A is incorrect because the narrator describes vexation rather than fondness and does not dwell on scenic beauty. Choice B is incorrect because the text does not indicate the region is one he often visits. Choice C is incorrect because the excerpt ends with him still lost — he does not explain how he overcame the difficulty.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

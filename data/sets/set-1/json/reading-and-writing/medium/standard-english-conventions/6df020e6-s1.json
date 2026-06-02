@@ -1,0 +1,25 @@
+{
+  "questionId": "6df020e6-s1",
+  "originalId": "6df020e6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>A study showed that an urban tree canopy reduced summer air temperatures along nearby streets, though the long-term effects on residents&rsquo; energy use are still being assessed. Before the canopy&rsquo;s expansion, the air temperature 50 meters from the street&rsquo;s edge was 0.2&deg;C lower than that of a reference <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> expansion, the temperature 50 meters from the edge was 1.4&deg;C lower than that of the reference street.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>street after</p>"},
+    {"id": "b", "content": "<p>street, after</p>"},
+    {"id": "c", "content": "<p>street. After</p>"},
+    {"id": "d", "content": "<p>street after,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between one sentence (&ldquo;Before...street&rdquo;) and another (&ldquo;After...street&rdquo;). The phrase &ldquo;After expansion&rdquo; modifies the second sentence.</p><p>Choice A is incorrect because it results in a run-on sentence. Choice B is incorrect because it results in a comma splice. Choice D is incorrect because it results in a run-on sentence and inserts an unnecessary comma after &ldquo;after.&rdquo;</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

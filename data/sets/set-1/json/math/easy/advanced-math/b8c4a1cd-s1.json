@@ -1,0 +1,39 @@
+{
+  "questionId": "b8c4a1cd-s1",
+  "originalId": "b8c4a1cd",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mn>11</mn><mi>n</mi><mo>=</mo><mi>p</mi><mo>+</mo><mn>9</mn><mi>q</mi></math></p><p>The given equation relates the distinct positive numbers <em>n</em>, <em>p</em>, and <em>q</em>. Which equation correctly expresses <em>n</em> in terms of <em>p</em> and <em>q</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>n</mi><mo>=</mo><mfrac><mi>p</mi><mn>11</mn></mfrac><mo>+</mo><mn>9</mn><mi>q</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>n</mi><mo>=</mo><mfrac><mrow><mi>p</mi><mo>+</mo><mn>9</mn><mi>q</mi></mrow><mn>11</mn></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>n</mi><mo>=</mo><mi>p</mi><mo>+</mo><mfrac><mrow><mn>9</mn><mi>q</mi></mrow><mn>11</mn></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>n</mi><mo>=</mo><mn>11</mn><mfenced><mrow><mi>p</mi><mo>+</mo><mn>9</mn><mi>q</mi></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Dividing both sides by 11 yields <math><mi>n</mi><mo>=</mo><mfrac><mrow><mi>p</mi><mo>+</mo><mn>9</mn><mi>q</mi></mrow><mn>11</mn></mfrac></math>.</p><p>Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z"
+}

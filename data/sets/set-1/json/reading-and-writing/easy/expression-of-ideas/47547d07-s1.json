@@ -1,0 +1,39 @@
+{
+  "questionId": "47547d07-s1",
+  "originalId": "47547d07",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Each spring, female Atlantic salmon return to the freshwater streams where they hatched to spawn. First, the salmon will scoop out a shallow depression in the gravel using powerful sweeps of her tail. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she will release thousands of eggs into the cleared spot. Finally, she will cover the eggs with loose gravel before swimming back downstream.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Next,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By contrast,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Next\" logically signals that releasing the eggs is the next step in the chronological sequence of spawning behaviors described in the passage (after scooping out the gravel depression and before covering the eggs).</p><p>Choice B is incorrect because \"similarly\" illogically suggests that releasing eggs is similar to scooping out the depression; though related, the two actions are distinct steps. Choice C is incorrect because \"by contrast\" illogically signals a contrast between releasing eggs and scooping out gravel, but the sentence describes the next sequential step, not an opposing action. Choice D is incorrect because \"for example\" illogically suggests that releasing eggs is an example of scooping out a depression, but the two are separate steps in a sequence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

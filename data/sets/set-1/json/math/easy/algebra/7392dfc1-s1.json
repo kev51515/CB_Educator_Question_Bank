@@ -1,0 +1,39 @@
+{
+  "questionId": "7392dfc1-s1",
+  "originalId": "7392dfc1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to <math><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mn>15</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo>=</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mn>5</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>x</mi><mo>+</mo><mn>3</mn><mo>=</mo><mn>3</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mn>5</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Dividing each side of <math><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn><mo>=</mo><mn>15</mn></math> by 3 yields <math><mn>2</mn><mi>x</mi><mo>+</mo><mn>3</mn><mo>=</mo><mn>5</mn></math>.</p><p>Choices B, C, and D are incorrect; each divides only some terms rather than every term by the same factor.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T7.easy"
+}

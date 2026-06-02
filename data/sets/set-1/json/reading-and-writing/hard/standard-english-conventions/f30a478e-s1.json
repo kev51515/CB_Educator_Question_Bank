@@ -1,0 +1,39 @@
+{
+  "questionId": "f30a478e-s1",
+  "originalId": "f30a478e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Research conducted by University of Tokyo seismologist Aiko Tanaka in 2022 proposes a refined model of subterranean water transport beneath the Pacific ______ enormous reservoirs of mineral-bound water carried into the mantle by descending slabs of crust, which slowly release moisture as they sink and contribute to deep-Earth volcanic activity.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Ocean. Enormous</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Ocean; enormous</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ocean enormous</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Ocean: enormous</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is punctuation between a main clause and a supplementary phrase. A colon correctly marks the boundary between the main clause (\"Research...Ocean\") and the explanatory phrase (\"enormous...activity\"), introducing the elaboration of what the model proposes.</p><p>Choice A is incorrect because it creates a sentence fragment beginning with \"Enormous,\" which lacks a finite verb. Choice B is incorrect because a semicolon joins two main clauses, but the material following the blank is not a main clause. Choice C is incorrect because it leaves the boundary between the main clause and the supplementary phrase unpunctuated.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A4.T10.medium"
+}

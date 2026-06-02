@@ -1,0 +1,39 @@
+{
+  "questionId": "9110c120-s1",
+  "originalId": "9110c120",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set A: <math><mn>1</mn></math>, <math><mn>3</mn></math>, <math><mn>5</mn></math>, <math><mn>7</mn></math>, <math><mn>9</mn></math>.</p><p>Data set B: <math><mn>2</mn></math>, <math><mn>3</mn></math>, <math><mn>4</mn></math>, <math><mn>7</mn></math>, <math><mn>9</mn></math>.</p><p>Which of the following statements about the means and medians of data set A and data set B is true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Both the means and the medians are different.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Only the means are different.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Only the medians are different.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neither the means nor the medians are different.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The mean of A is (1+3+5+7+9)/5 = 5; the mean of B is (2+3+4+7+9)/5 = 5. The medians are the 3rd value of each ordered list: median A = 5, median B = 4. So the means are equal but the medians differ.</p><p>The other choices misidentify which measure changes between the sets.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.medium"
+}

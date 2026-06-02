@@ -1,0 +1,39 @@
+{
+  "questionId": "a2835734-s1",
+  "originalId": "a2835734",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Glass artist Mei Nakamura states that the soft palettes of seaside skies, traditional Japanese textiles, and her childhood garden have always fascinated her. This love of subtle hues and gentle blends translates into the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> sculptures she produces.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>loud</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>delicate</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>rigid</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>drab</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct because \"delicate\" matches the description of soft palettes, subtle hues, and gentle blends. Choice A is incorrect because loud contradicts soft. Choice C is incorrect because rigid contradicts gentle. Choice D is incorrect because drab implies dull, which is the opposite of the artist\u2019s expressive aim.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

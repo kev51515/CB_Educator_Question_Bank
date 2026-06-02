@@ -1,0 +1,39 @@
+{
+  "questionId": "1e31470f-s1",
+  "originalId": "1e31470f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>To pull off a quintuple twist on the floor, a gymnast must rotate around the vertical axis five full times before landing, a feat once considered impossible. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 2024, when 19-year-old Mai Tran landed the first quintuple twist\u2014long viewed as the most demanding twisting skill\u2014in a senior international competition, the crowd erupted in disbelief.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Moreover,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Fittingly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Next,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The first sentence sets up the extreme difficulty of the skill; the second sentence describes the audience's awestruck reaction to its first landing. &ldquo;Fittingly&rdquo; signals that the dramatic reaction matches the magnitude of the feat.</p><p>Choice A adds, but no parallel point is being added. Choice C contrasts; no contrast is present. Choice D suggests sequence in a list, which doesn't fit.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A4.T12.hard"
+}

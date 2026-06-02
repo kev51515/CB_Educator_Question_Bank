@@ -1,0 +1,39 @@
+{
+  "questionId": "25adba4e-s1",
+  "originalId": "25adba4e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>In 1903, two brothers, Pedro and Manuel, set off on a horseback journey from Buenos Aires, Argentina, to New York City.</li>\n<li>The 13,000-mile journey took three years.</li>\n<li>The aim was to demonstrate the endurance of Argentine creole horses.</li>\n<li>In 2003, Argentine veterinarian Jorge Coro retraced the route to mark the journey's centennial.</li>\n<li>Coro wanted to call attention to the original ride's significance for South American horsemanship.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize how far the brothers traveled. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The aim of the 1903 journey was to demonstrate the endurance of Argentine creole horses.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The brothers rode their horses from Buenos Aires to New York City&mdash;covering a total of 13,000 miles.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>A century later, Jorge Coro honored the brothers by retracing their 1903 route.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The centennial of the brothers' journey was marked in 2003.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it states both the route and the total distance, emphasizing how far the brothers traveled. Choice A is incorrect because it explains the aim, not the distance. Choice C is incorrect because it describes the centennial reenactment rather than the original distance. Choice D is incorrect because it gives the centennial date without addressing distance.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A2.T4.easy"
+}

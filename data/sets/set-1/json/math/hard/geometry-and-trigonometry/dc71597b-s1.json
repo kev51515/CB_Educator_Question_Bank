@@ -1,0 +1,39 @@
+{
+  "questionId": "dc71597b-s1",
+  "originalId": "dc71597b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right circular cone has a volume of 192&pi; cubic feet and a height of 16 feet. What is the radius, in feet, of the base of the cone?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>12</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The volume of a cone is V = (1/3)&pi;r&sup2;h. So 192&pi; = (1/3)&pi;r&sup2;(16), giving r&sup2; = 192(3)/16 = 36, hence r = 6 feet.</p><p>Choice A uses an incorrect ratio. Choice B is off by a factor. Choice D doubles the correct radius.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T3.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "cc3e9528-s1",
+  "originalId": "cc3e9528",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The graph of 7x - 8y = 15 is translated down 6 units in the xy-plane. What is the x-coordinate of the x-intercept of the resulting graph?</p>",
+  "answerOptions": null,
+  "keys": [
+    "9"
+  ],
+  "rationale": "<p>Solving 7x - 8y = 15 for y: y = (7/8)x - 15/8. Translating down 6 units gives y = (7/8)x - 15/8 - 6 = (7/8)x - 63/8. Setting y = 0: (7/8)x = 63/8, so x = 9. The x-coordinate of the x-intercept is 9.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.hard"
+}

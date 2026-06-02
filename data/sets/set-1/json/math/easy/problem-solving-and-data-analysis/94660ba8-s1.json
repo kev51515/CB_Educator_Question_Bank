@@ -1,0 +1,22 @@
+{
+  "questionId": "94660ba8-s1",
+  "originalId": "94660ba8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A participant in a long-distance race completes the race with an average speed of 22,000 yards per hour. What is this average speed, in miles per hour? (1 mile = 1,760 yards)</p>",
+  "answerOptions": [],
+  "keys": [
+    "12.5"
+  ],
+  "rationale": "<p>Average speed in miles per hour = 22,000 \u00f7 1,760 = 12.5 miles per hour.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.easy"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "e25f0807-s1",
+  "originalId": "e25f0807",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table shows two values of x and their corresponding values of y. The graph of the linear equation representing this relationship passes through the point (12, a). What is the value of a?</p><table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>-8</td><td>-50</td></tr><tr><td>4</td><td>10</td></tr></table>",
+  "answerOptions": null,
+  "keys": [
+    "50"
+  ],
+  "rationale": "<p>Slope = (10 - (-50))/(4 - (-8)) = 60/12 = 5. Using (4, 10): y - 10 = 5(x - 4), so y = 5x - 10. At x = 12: y = 60 - 10 = 50. So a = 50.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A1.T4.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "993000da-s1",
+  "originalId": "993000da",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The positive number a is 180% of the number b, and a is 45% of the number c. If c is p% of b, which of the following is closest to the value of p?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>135</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>225</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>400</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>81</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since a = 1.80b and a = 0.45c, setting equal gives 1.80b = 0.45c, so c = 4b. Therefore c is 400% of b, and p = 400.</p><p>Choices A, B, and D are incorrect and result from miscombining the two percent relationships.</p>",
+  "templateId": "percentages.A4.T3.hard"
+}

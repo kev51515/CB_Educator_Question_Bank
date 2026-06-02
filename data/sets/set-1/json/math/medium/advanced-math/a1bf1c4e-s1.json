@@ -1,0 +1,39 @@
+{
+  "questionId": "a1bf1c4e-s1",
+  "originalId": "a1bf1c4e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to x\u00b2 + 8x + 7?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x + 4)\u00b2 + 9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x \u2212 4)\u00b2 + 9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x + 4)\u00b2 \u2212 9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x \u2212 4)\u00b2 \u2212 9</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Complete the square: x\u00b2 + 8x + 7 = (x\u00b2 + 8x + 16) \u2212 16 + 7 = (x + 4)\u00b2 \u2212 9. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A2.T5.medium"
+}

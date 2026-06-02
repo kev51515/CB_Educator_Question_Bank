@@ -1,0 +1,39 @@
+{
+  "questionId": "981275d2-s1",
+  "originalId": "981275d2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>x&sup2; + y&sup2; &minus; 6x + 8y = 0. In the xy-plane, the graph of the equation above is a circle. Point P is on the circle and has coordinates (0, 0). If PQ is a diameter of the circle, what are the coordinates of point Q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(3, &minus;4)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(6, &minus;8)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(&minus;6, 8)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(&minus;3, 4)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Completing the square gives (x &minus; 3)&sup2; + (y + 4)&sup2; = 25, so the center is (3, &minus;4). Since PQ is a diameter, the center is the midpoint of PQ. With P = (0, 0), Q = (2&middot;3 &minus; 0, 2&middot;(&minus;4) &minus; 0) = (6, &minus;8).</p><p>Choice A gives the center. Choices C and D have wrong signs.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "circles.A2.T6.hard"
+}

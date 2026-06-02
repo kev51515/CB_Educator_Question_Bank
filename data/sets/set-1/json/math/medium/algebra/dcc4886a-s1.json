@@ -1,0 +1,39 @@
+{
+  "questionId": "dcc4886a-s1",
+  "originalId": "dcc4886a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = (3/5)x \u2212 4</p><p>One of the two equations in a system of linear equations is given. The system has infinitely many solutions. If the second equation in the system is y = mx + b, where m and b are constants, what is the value of b?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22123/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3/5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>\u22124</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>For infinitely many solutions, the two equations must represent the same line. Therefore m = 3/5 and b = \u22124. The correct answer is choice C.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.medium"
+}

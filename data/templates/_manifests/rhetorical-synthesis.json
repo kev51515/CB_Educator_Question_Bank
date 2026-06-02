@@ -1,0 +1,1159 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Expression of Ideas",
+  "skill": "Rhetorical Synthesis",
+  "originals": [
+    {
+      "id": "00460c13",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/00460c13.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "00bb356a",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/00bb356a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "02527f43",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/02527f43.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "064c8999",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/064c8999.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "13f36b03",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/13f36b03.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "1792fa73",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/1792fa73.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "25a197dd",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/25a197dd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "25adba4e",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/25adba4e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "264e7415",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/264e7415.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "296801d2",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/296801d2.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3067723b",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/3067723b.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "3150021d",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/3150021d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4b376902",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/4b376902.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "4e063114",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/4e063114.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "54227b8e",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/54227b8e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "54f29331",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/54f29331.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "5a2a4b36",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/5a2a4b36.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "6b5bc97d",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/6b5bc97d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "79c6a01e",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/79c6a01e.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "7f2781fd",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/7f2781fd.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "878f835a",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/878f835a.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "8b2636ee",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/8b2636ee.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "9922b364",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/9922b364.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "a3204ab0",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/a3204ab0.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "af76771f",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/af76771f.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "b5cd28a7",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/b5cd28a7.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ba263620",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/ba263620.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "bc930940",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/bc930940.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "c6645cab",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/c6645cab.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ca4ff52d",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/ca4ff52d.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d2b52c50",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/d2b52c50.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d436a2b2",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/d436a2b2.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "d7f31e68",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/d7f31e68.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e2693197",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/e2693197.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e3484c07",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/e3484c07.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e3bbf2bf",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/e3bbf2bf.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "e887dab1",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/e887dab1.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "eaded344",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/eaded344.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "eae29760",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/eae29760.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "f4b63a04",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/f4b63a04.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "fbffb352",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/fbffb352.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "ff3865b3",
+      "path": "json/reading-and-writing/easy/expression-of-ideas/ff3865b3.json",
+      "difficulty": "Easy",
+      "type": "mcq"
+    },
+    {
+      "id": "04397a63",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/04397a63.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "0778b4ac",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/0778b4ac.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "113f16da",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/113f16da.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "114bbce6",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/114bbce6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "14037904",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/14037904.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "146233fc",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/146233fc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1469d23a",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/1469d23a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "164a32e7",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/164a32e7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "17ec916d",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/17ec916d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1b94a80a",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/1b94a80a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "1bb4aec8",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/1bb4aec8.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "23da9791",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/23da9791.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "24014c3f",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/24014c3f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "25755def",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/25755def.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "259d16ac",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/259d16ac.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "28a46cb0",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/28a46cb0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2b89bfe5",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/2b89bfe5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2bf05ae9",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/2bf05ae9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "2c7dced2",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/2c7dced2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "31ac4d2c",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/31ac4d2c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "34e1124f",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/34e1124f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "35507eba",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/35507eba.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3c925481",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/3c925481.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "3ea7372e",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/3ea7372e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4223d4a6",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/4223d4a6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "441f0505",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/441f0505.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "45eaf7fb",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/45eaf7fb.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "48d0bb34",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/48d0bb34.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "49fe306b",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/49fe306b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4b99b481",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/4b99b481.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4c26f18a",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/4c26f18a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4c43bf61",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/4c43bf61.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "4f9ee1dc",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/4f9ee1dc.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "54c1b2dd",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/54c1b2dd.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "56cad44a",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/56cad44a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "570dd854",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/570dd854.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "58281fc4",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/58281fc4.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5888712f",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/5888712f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5a5e22b5",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/5a5e22b5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5bb7dc03",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/5bb7dc03.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "5d3177aa",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/5d3177aa.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "61c0f7b3",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/61c0f7b3.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6249b173",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/6249b173.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6351062d",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/6351062d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "63a4fa29",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/63a4fa29.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "6de02dfa",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/6de02dfa.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "70538b9a",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/70538b9a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7298633c",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/7298633c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "72ae9bca",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/72ae9bca.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "74149724",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/74149724.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7572131d",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/7572131d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "77e3b3b3",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/77e3b3b3.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7aac173e",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/7aac173e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7c9d0e38",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/7c9d0e38.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7fa2b1ee",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/7fa2b1ee.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "7fd39a42",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/7fd39a42.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "804928b6",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/804928b6.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "81315093",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/81315093.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "835b101b",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/835b101b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "8432a140",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/8432a140.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "84e108cf",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/84e108cf.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "85c0c0f0",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/85c0c0f0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "86b78078",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/86b78078.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "88308a39",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/88308a39.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "883493d5",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/883493d5.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "92dec236",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/92dec236.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "94cb8720",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/94cb8720.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "94f48106",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/94f48106.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "94f4eecb",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/94f4eecb.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "99183985",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/99183985.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "9e2d4ef7",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/9e2d4ef7.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a0da8114",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/a0da8114.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a1955620",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/a1955620.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a1ca7ec4",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/a1ca7ec4.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a4366255",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/a4366255.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "a86c0b1b",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/a86c0b1b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "aa7e10d0",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/aa7e10d0.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "aec8d3e8",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/aec8d3e8.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b46e0c8a",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/b46e0c8a.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "b98b8f64",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/b98b8f64.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bb275f0d",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/bb275f0d.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bb43fc3c",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/bb43fc3c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bc56170b",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/bc56170b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "bce57278",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/bce57278.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "c92ea686",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/c92ea686.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ce282575",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/ce282575.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d6dec50e",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/d6dec50e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d7c5388f",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/d7c5388f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d8aa8ba2",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/d8aa8ba2.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "d9d314d9",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/d9d314d9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dd11e5ab",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/dd11e5ab.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "dede8260",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/dede8260.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e1453c88",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/e1453c88.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e2d97f10",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/e2d97f10.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e2eb70b9",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/e2eb70b9.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e6b57c9b",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/e6b57c9b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "e876e395",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/e876e395.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ed80971c",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/ed80971c.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "efa2be4f",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/efa2be4f.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "efc19153",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/efc19153.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f1631638",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/f1631638.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f1d8550e",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/f1d8550e.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f2f6009b",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/f2f6009b.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "f6d454c1",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/f6d454c1.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "fb3abe38",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/fb3abe38.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "ff8d2125",
+      "path": "json/reading-and-writing/medium/expression-of-ideas/ff8d2125.json",
+      "difficulty": "Medium",
+      "type": "mcq"
+    },
+    {
+      "id": "07456405",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/07456405.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "0acc26b2",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/0acc26b2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "0fab0c90",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/0fab0c90.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "10cd0327",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/10cd0327.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "16631d34",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/16631d34.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1773fa73",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/1773fa73.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "1d79a59d",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/1d79a59d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "2c61e0b9",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/2c61e0b9.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "39ccb463",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/39ccb463.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3b02e88a",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/3b02e88a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3dcc7140",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/3dcc7140.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "3fa48bf3",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/3fa48bf3.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "459df2ba",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/459df2ba.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5222ffab",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/5222ffab.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5645f119",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/5645f119.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "56b000d0",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/56b000d0.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5b8b69a2",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/5b8b69a2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "5fa51c86",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/5fa51c86.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "622a351d",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/622a351d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "64e88c58",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/64e88c58.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "6c9df5d1",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/6c9df5d1.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "7d5c32e6",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/7d5c32e6.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "87d34a39",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/87d34a39.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8d1ddd1b",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/8d1ddd1b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "8fe4f4ab",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/8fe4f4ab.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9336f63b",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/9336f63b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "9551ef8b",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/9551ef8b.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "964c6055",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/964c6055.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "96a86bce",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/96a86bce.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "973632d2",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/973632d2.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "af88c47a",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/af88c47a.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "afec1a70",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/afec1a70.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b0620764",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/b0620764.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b07a7634",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/b07a7634.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "b44141cf",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/b44141cf.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c34d6bff",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/c34d6bff.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "c40a1964",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/c40a1964.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "cfade68d",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/cfade68d.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "db3ad406",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/db3ad406.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "de01ccef",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/de01ccef.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e8494245",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/e8494245.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "e98b1690",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/e98b1690.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "ec03f090",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/ec03f090.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    },
+    {
+      "id": "fdd9a360",
+      "path": "json/reading-and-writing/hard/expression-of-ideas/fdd9a360.json",
+      "difficulty": "Hard",
+      "type": "mcq"
+    }
+  ]
+}

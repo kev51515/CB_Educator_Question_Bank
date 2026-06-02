@@ -1,0 +1,39 @@
+{
+  "questionId": "b11bb2a3-s1",
+  "originalId": "b11bb2a3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a fictional 1915 poem. It is autumn, glorious, fire-leafed autumn, The very breath of nature\u2019s tired year When all her bursting life begins to fade. To me alone it is a time of rest, <u>A void</u> and quiet space between two seasons.</p>",
+  "stem": "<p>As used in the text, what does the phrase &ldquo;a void&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A useless</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A forgotten</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>An incomplete</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>An empty</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"a void\" means empty or unoccupied, matching the description of a quiet space between two seasons. Choice A is incorrect because uselessness isn\u2019t implied. Choice B is incorrect because forgotten suggests memory, not emptiness. Choice C is incorrect because incomplete suggests something unfinished, not empty.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T2.easy"
+}

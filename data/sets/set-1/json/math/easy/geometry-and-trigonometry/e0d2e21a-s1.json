@@ -1,0 +1,39 @@
+{
+  "questionId": "e0d2e21a-s1",
+  "originalId": "e0d2e21a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Triangle <em>RST</em> is dilated to produce triangle <em>UVW</em>, where <em>R</em> corresponds to <em>U</em>, <em>S</em> corresponds to <em>V</em>, and <em>T</em> corresponds to <em>W</em>. If the measure of angle <em>R</em> is 72 degrees, what is the measure of angle <em>U</em>, in degrees?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>72</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>108</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A dilation produces a similar figure, and in similar figures, corresponding angles are congruent. Therefore, the measure of angle <em>U</em> equals the measure of angle <em>R</em>, which is 72 degrees.</p><p>Choice B is incorrect: 108 is the supplement of 72.</p><p>Choice C is incorrect: 18 is the complement of 72.</p><p>Choice D is incorrect: 36 is half of 72.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A5.T1.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "f9bd4e61-s1",
+  "originalId": "f9bd4e61",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T7.hard",
+  "stimulus": "<p>Polish theater practitioner Jerzy Grotowski (1933&ndash;1999) maintained that performance should strip away spectacle so that audiences confront the actor&rsquo;s living presence rather than illusionistic distractions, thereby provoking reflection on the rituals and assumptions that shape their everyday lives. Grotowski&rsquo;s influence is evident in U.S. playwright Suzan-Lori Parks&rsquo;s 2001 play <em>Topdog/Underdog</em>: although the play sometimes invites empathetic reactions, it primarily works to engage audiences in a reckoning with racialized inheritance and economic precarity, which it does by stripping the staging to two brothers in a single rented room, thereby encouraging audiences to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>focus on the brothers&rsquo; personal beliefs about racial identity as revealed by their individual actions.</p>"},
+    {"id": "b", "content": "<p>treat the bare-room staging as itself a tool for examining racialized inheritance and economic precarity outside the play.</p>"},
+    {"id": "c", "content": "<p>reflect on social and political phenomena unrelated to racialized inheritance or economic precarity.</p>"},
+    {"id": "d", "content": "<p>recognize specific parallels between Polish society during Grotowski&rsquo;s career and the United States when Parks was writing the play.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Grotowski held that stripping spectacle directs audiences to consider broader rituals and assumptions. Parks adopts that bare-staging strategy to engage audiences with racialized inheritance and economic precarity. Most consistent with both is that audiences treat the bare-room staging itself as a tool for examining those very issues outside the play.</p><p>Choice A is incorrect because Grotowski-inspired staging directs attention outward, not into characters&rsquo; individual beliefs. Choice C is incorrect because the play explicitly targets racialized inheritance and economic precarity. Choice D is incorrect because the text does not mention any specific parallels between Polish and U.S. society.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

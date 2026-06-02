@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">The table shows the probability of rain, as a percent, at a certain location for each day during a four-day period.</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Day</th><th>Probability of rain (%)</th></tr>\n<tr><td>Monday</td><td>25</td></tr>\n<tr><td>Tuesday</td><td>80</td></tr>\n<tr><td>Wednesday</td><td>45</td></tr>\n<tr><td>Thursday</td><td>60</td></tr></table>\n<p style=\"text-align: left;\">According to the table, for which day during this four-day period is the probability of rain 25%?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Monday</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Tuesday</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Wednesday</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Thursday</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. According to the table, Monday has a probability of rain of 25%.</p><p>Choices B, C, and D show different values (80%, 45%, and 60% respectively).</p>",
+  "questionId": "13f67ddc-s1",
+  "originalId": "13f67ddc",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy"
+}

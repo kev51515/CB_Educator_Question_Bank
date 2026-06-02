@@ -1,0 +1,39 @@
+{
+  "questionId": "35ae047d-s1",
+  "originalId": "35ae047d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 1935, French engineer &Eacute;douard B&eacute;lin demonstrated an early facsimile machine that transmitted images over telephone lines. Two decades later, B&eacute;lin <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his earlier work to develop one of the first portable photo-transmission devices.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>to have built upon</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>building upon</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>built upon</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to build upon</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A main clause requires a finite (tensed) verb. The finite past tense verb &ldquo;built upon&rdquo; correctly expresses what B&eacute;lin did and matches the past time frame of the passage.</p><p>Choices A, B, and D are all nonfinite forms (perfect infinitive, present participle, to-infinitive) that cannot serve as the main verb of a clause.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

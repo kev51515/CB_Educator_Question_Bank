@@ -1,0 +1,39 @@
+{
+  "questionId": "3f5398a6-s1",
+  "originalId": "3f5398a6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a particular liquid solution, the ratio of solute volume <em>a</em> (in milliliters) to total solution volume <em>b</em> (in milliliters) is estimated to be 1 to 4. According to this estimate, if a sample has 8 milliliters of solute, what is the total volume of the solution, in milliliters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Setting up the proportion a/b = 1/4, with a = 8, gives 8/b = 1/4. Cross-multiplying yields b = 32 milliliters.</p><p>Choice B is incorrect; it results from adding 4 to 8. Choice C is incorrect; this is just the ratio denominator. Choice D is incorrect; it results from dividing 8 by 4.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T1.easy"
+}

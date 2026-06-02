@@ -1,0 +1,25 @@
+{
+  "questionId": "12013e06-s1",
+  "originalId": "12013e06",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>In a region of coastal Oregon, marine biologist Hana Suzuki conducted a long-term study to determine whether restoring native eelgrass beds along a degraded estuary could revive juvenile salmon populations. Suzuki&rsquo;s results suggest that&mdash;given continued protection from boat <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> approach could increase nursery habitat for salmon in similar Pacific estuaries by as much as 30 percent within a decade.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>traffic, this</p>"},
+    {"id": "b", "content": "<p>traffic: this</p>"},
+    {"id": "c", "content": "<p>traffic&mdash;this</p>"},
+    {"id": "d", "content": "<p>traffic this</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of punctuation within a sentence. The dash after &ldquo;traffic&rdquo; correctly pairs with the dash after &ldquo;that&rdquo; to separate the supplementary element &ldquo;given continued protection from boat traffic&rdquo; from the rest of the sentence.</p><p>Choice A is incorrect because a comma can&rsquo;t be paired with a dash in this way. Choice B is incorrect because a colon can&rsquo;t be paired with a dash in this way. Choice D is incorrect because it fails to close the supplementary element opened by the earlier dash.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

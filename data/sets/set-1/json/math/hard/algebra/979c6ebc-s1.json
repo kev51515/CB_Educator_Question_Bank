@@ -1,0 +1,39 @@
+{
+  "questionId": "979c6ebc-s1",
+  "originalId": "979c6ebc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mi>x</mi><mo>+</mo><mn>8</mn><mi>y</mi><mo>=</mo><mn>9</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>15</mn><mi>x</mi><mo>+</mo><mn>24</mn><mi>y</mi><mo>=</mo><mn>27</mn></math></p>\n<p>For each real number <math><mi>r</mi></math>, which of the following points lies on the graph of each equation in the <em>xy</em>-plane for the given system?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>9</mn><mo>-</mo><mn>5</mn><mi>r</mi></mrow><mn>8</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>5</mn><mi>r</mi><mo>-</mo><mn>9</mn></mrow><mn>8</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>9</mn><mo>-</mo><mn>8</mn><mi>r</mi></mrow><mn>5</mn></mfrac></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mi>r</mi><mo>,</mo><mfrac><mrow><mn>9</mn><mo>+</mo><mn>5</mn><mi>r</mi></mrow><mn>8</mn></mfrac></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The second equation is three times the first, so both represent the same line. Solving 5x + 8y = 9 for y: y = (9 - 5x)/8. Setting x = r gives the point (r, (9 - 5r)/8). The other choices use incorrect rearrangements.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T12.hard"
+}

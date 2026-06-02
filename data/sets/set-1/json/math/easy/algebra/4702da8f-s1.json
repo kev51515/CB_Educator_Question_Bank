@@ -1,0 +1,39 @@
+{
+  "questionId": "4702da8f-s1",
+  "originalId": "4702da8f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = 90 - 8x. What is the value of f(6)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>84</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>98</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. f(6) = 90 - 8(6) = 90 - 48 = 42.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

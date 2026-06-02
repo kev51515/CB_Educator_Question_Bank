@@ -1,0 +1,39 @@
+{
+  "questionId": "69f031ab-s1",
+  "originalId": "69f031ab",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>While excavating an ancient burial mound in Iowa in 1928, Ho-Chunk archaeologist Ellen Whitman uncovered her most significant find: a fragment of woven textile alongside copper ornaments. Whitman&rsquo;s discovery was the first <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> textile production in the Upper Midwest at least 1,500 years ago.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>to document</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>documented</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>documents</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>document</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The object of &ldquo;was&rdquo; is &ldquo;first,&rdquo; and the to-infinitive &ldquo;to document&rdquo; correctly modifies &ldquo;first&rdquo; (the first what? the first to document textile production).</p><p>Choices B, C, and D are finite verb forms that would create a comma splice or fail to complete the &ldquo;the first ___&rdquo; construction.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

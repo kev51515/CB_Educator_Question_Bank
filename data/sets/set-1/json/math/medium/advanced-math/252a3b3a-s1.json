@@ -1,0 +1,39 @@
+{
+  "questionId": "252a3b3a-s1",
+  "originalId": "252a3b3a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = x³ − 16x. What is the value of f(−4)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>−128</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>−64</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>64</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting −4 for x: f(−4) = (−4)³ − 16(−4) = −64 + 64 = 0. Choice A: would be the result of (−4)³ − 16(4). Choice B: (−4)³. Choice D: 16 × 4.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A1.T1.medium"
+}

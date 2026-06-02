@@ -1,0 +1,39 @@
+{
+  "questionId": "7e5a3640-s1",
+  "originalId": "7e5a3640",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Bacteria are growing in a Petri dish. There were 200,000 cells per milliliter at the start of an observation. The number of cells per milliliter doubles every 4 hours. How many cells per milliliter will there be 20 hours after the start of the observation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1,000,000</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1,600,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6,400,000</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3,200,000</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Let <em>y</em> represent the number of cells per milliliter <em>x</em> hours after the start. Because the number doubles every 4 hours, <em>y</em> = 200,000&middot;2<sup><em>x</em>/4</sup>. Substituting <em>x</em> = 20 gives <em>y</em> = 200,000&middot;2<sup>5</sup> = 200,000&middot;32 = 6,400,000. Choices A, B, and D arise from miscounting the number of doublings or arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A4.T1.medium"
+}

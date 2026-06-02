@@ -1,0 +1,72 @@
+{
+  "questionId": "d52fca9f",
+  "externalId": "e937bcae-33f9-41e7-a260-badb93557071",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:05.649271+00:00",
+  "type": "mcq",
+  "stem": "<p>Which quotation from a music streaming platform user would best illustrate Walsh&rsquo;s finding?</p>",
+  "answerOptions": [
+    {
+      "id": "7a666117-35aa-4a10-8ea0-b0e8ad2f68cc",
+      "content": "<p>&ldquo;When I create playlists or choose songs to listen to, I often pick songs that I think the friends who are following me might be interested in listening to, rather than what I might actually prefer listening to in that moment.&rdquo;</p>"
+    },
+    {
+      "id": "60a517a6-c70b-4a63-854e-45479488cf4a",
+      "content": "<p>&ldquo;Because the predictions the platform makes about what new songs I might like depend on my past listening habits, at times its recommendations can feel overly repetitive and unvarying.&rdquo;</p>"
+    },
+    {
+      "id": "7999f5aa-4013-4a1c-9ac6-f53a724d311e",
+      "content": "<p>&ldquo;The social aspects of music streaming make it really easy to create a sense of a shared listening experience with my friends, even if we aren&rsquo;t in the same room.&rdquo;</p>"
+    },
+    {
+      "id": "3359d058-c4c0-4afb-ba9e-69a9d2a76c3b",
+      "content": "<p>&ldquo;Listening to music through a streaming platform feels a lot more passive, since I don&rsquo;t need to make any deliberate choices about what music I&rsquo;m going to consume, like I do when buying digital downloads or records and CDs.&rdquo;&nbsp;&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "7a666117-35aa-4a10-8ea0-b0e8ad2f68cc"
+  ],
+  "rationale": "<p>Choice A is the best answer because it directly reflects both aspects of Walsh&rsquo;s finding about the social media dimensions of music streaming platforms: that they make their users more mindful of how their listening activities may be perceived and that self-awareness then influences how users manage those activities. The quotation illustrates this by showing that the user considers the music preferences of their followers when selecting music (&ldquo;songs that I think the friends who are following me might be interested in&rdquo;), even if those choices differ from their own preferences (&ldquo;rather than what I might actually prefer listening to in that moment&rdquo;). This supports both aspects of Walsh&rsquo;s finding: users have increased social awareness and deliberately change their listening habits based on that awareness.</p><p>Choice B is incorrect because it focuses on how the platform&rsquo;s algorithmic recommendation system influences user choice, not on how the imagined opinions of other users might influence that choice. The quotation highlights a user&rsquo;s concern about repetitive music recommendations based on their past listening behavior. It does not suggest that the user is adjusting their listening habits based on how they think others may perceive what they listen to. Choice C is incorrect because it focuses on the social connection that can be created by music streaming rather than illustrating how social awareness affects users&rsquo; management of their listening activities. While this quotation addresses the social dimensions of streaming platforms, it describes how these features create shared experiences rather than demonstrating how concern about others&rsquo; perceptions influences users&rsquo; listening choices. Choice D is incorrect because it compares streaming platforms to traditional music purchasing methods. This comparison doesn&rsquo;t address the social media dimensions of streaming platforms or how awareness of others&rsquo; perceptions of music selections influences what users choose to listen to.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which quotation from a music streaming platform user would best illustrate Walsh&rsquo;s finding?</p>",
+    "stimulus": "<p>Many music streaming services also function as social media platforms: by giving users the option to follow friends and share curated playlists or information about their listening history, these platforms allow people to convey their music preferences and listening activities directly to their social networks. In a 2023 study, researcher Michael James Walsh interviewed frequent users of a popular music streaming platform to investigate how its social media dimensions shape their listening habits. Walsh found that these dimensions tended to make study participants feel more mindful of how their listening activities may be perceived, which in turn influenced how they managed those activities.</p>",
+    "keys": [
+      "7a666117-35aa-4a10-8ea0-b0e8ad2f68cc"
+    ],
+    "answerOptions": [
+      {
+        "id": "7a666117-35aa-4a10-8ea0-b0e8ad2f68cc",
+        "content": "<p>&ldquo;When I create playlists or choose songs to listen to, I often pick songs that I think the friends who are following me might be interested in listening to, rather than what I might actually prefer listening to in that moment.&rdquo;</p>"
+      },
+      {
+        "id": "60a517a6-c70b-4a63-854e-45479488cf4a",
+        "content": "<p>&ldquo;Because the predictions the platform makes about what new songs I might like depend on my past listening habits, at times its recommendations can feel overly repetitive and unvarying.&rdquo;</p>"
+      },
+      {
+        "id": "7999f5aa-4013-4a1c-9ac6-f53a724d311e",
+        "content": "<p>&ldquo;The social aspects of music streaming make it really easy to create a sense of a shared listening experience with my friends, even if we aren&rsquo;t in the same room.&rdquo;</p>"
+      },
+      {
+        "id": "3359d058-c4c0-4afb-ba9e-69a9d2a76c3b",
+        "content": "<p>&ldquo;Listening to music through a streaming platform feels a lot more passive, since I don&rsquo;t need to make any deliberate choices about what music I&rsquo;m going to consume, like I do when buying digital downloads or records and CDs.&rdquo;&nbsp;&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer because it directly reflects both aspects of Walsh&rsquo;s finding about the social media dimensions of music streaming platforms: that they make their users more mindful of how their listening activities may be perceived and that self-awareness then influences how users manage those activities. The quotation illustrates this by showing that the user considers the music preferences of their followers when selecting music (&ldquo;songs that I think the friends who are following me might be interested in&rdquo;), even if those choices differ from their own preferences (&ldquo;rather than what I might actually prefer listening to in that moment&rdquo;). This supports both aspects of Walsh&rsquo;s finding: users have increased social awareness and deliberately change their listening habits based on that awareness.</p><p>Choice B is incorrect because it focuses on how the platform&rsquo;s algorithmic recommendation system influences user choice, not on how the imagined opinions of other users might influence that choice. The quotation highlights a user&rsquo;s concern about repetitive music recommendations based on their past listening behavior. It does not suggest that the user is adjusting their listening habits based on how they think others may perceive what they listen to. Choice C is incorrect because it focuses on the social connection that can be created by music streaming rather than illustrating how social awareness affects users&rsquo; management of their listening activities. While this quotation addresses the social dimensions of streaming platforms, it describes how these features create shared experiences rather than demonstrating how concern about others&rsquo; perceptions influences users&rsquo; listening choices. Choice D is incorrect because it compares streaming platforms to traditional music purchasing methods. This comparison doesn&rsquo;t address the social media dimensions of streaming platforms or how awareness of others&rsquo; perceptions of music selections influences what users choose to listen to.</p>",
+    "externalid": "e937bcae-33f9-41e7-a260-badb93557071",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Many music streaming services also function as social media platforms: by giving users the option to follow friends and share curated playlists or information about their listening history, these platforms allow people to convey their music preferences and listening activities directly to their social networks. In a 2023 study, researcher Michael James Walsh interviewed frequent users of a popular music streaming platform to investigate how its social media dimensions shape their listening habits. Walsh found that these dimensions tended to make study participants feel more mindful of how their listening activities may be perceived, which in turn influenced how they managed those activities.</p>"
+}

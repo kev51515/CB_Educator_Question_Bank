@@ -1,0 +1,39 @@
+{
+  "questionId": "1e11190a-s1",
+  "originalId": "1e11190a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Store A sells bananas for <math><mo>$</mo><mn>2</mn></math> per pound and mangoes for <math><mo>$</mo><mn>3</mn></math> per pound. Store B sells bananas for <math><mo>$</mo><mn>3</mn></math> per pound and mangoes for <math><mo>$</mo><mn>5</mn></math> per pound. A certain purchase of bananas and mangoes would cost <math><mo>$</mo><mn>25</mn></math> at Store A or <math><mo>$</mo><mn>40</mn></math> at Store B. How many pounds of mangoes are in the purchase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Let b and m be the pounds of bananas and mangoes. Then 2b + 3m = 25 and 3b + 5m = 40. Multiply the first equation by 3 and the second by 2 to get 6b + 9m = 75 and 6b + 10m = 80. Subtracting yields m = 5. (Then b = 5.) So the purchase contains 5 pounds of mangoes.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard"
+}

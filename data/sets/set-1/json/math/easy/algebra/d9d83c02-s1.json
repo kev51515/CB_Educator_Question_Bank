@@ -1,0 +1,39 @@
+{
+  "questionId": "d9d83c02-s1",
+  "originalId": "d9d83c02",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For what value of <math><mi>z</mi></math> does <math><mi>z</mi><mo>-</mo><mn>6</mn><mo>=</mo><mn>3</mn><mo>(</mo><mi>z</mi><mo>+</mo><mn>4</mn><mo>)</mo></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mo>-</mo><mn>9</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>9</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>0</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mo>-</mo><mn>6</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Distributing on the right side yields <math><mi>z</mi><mo>-</mo><mn>6</mn><mo>=</mo><mn>3</mn><mi>z</mi><mo>+</mo><mn>12</mn></math>. Subtracting <math><mi>z</mi></math> from both sides yields <math><mo>-</mo><mn>6</mn><mo>=</mo><mn>2</mn><mi>z</mi><mo>+</mo><mn>12</mn></math>. Subtracting 12 yields <math><mo>-</mo><mn>18</mn><mo>=</mo><mn>2</mn><mi>z</mi></math>, so <math><mi>z</mi><mo>=</mo><mo>-</mo><mn>9</mn></math>.</p><p>Choices B, C, and D result from sign errors or incomplete distribution.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.easy"
+}

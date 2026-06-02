@@ -1,0 +1,25 @@
+{
+  "questionId": "19688783-s1",
+  "originalId": "19688783",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is from Sarah Orne Jewett's 1896 novel <em>The Country of the Pointed Firs</em>. Mira, a young visitor, has come to spend the summer at a coastal house in Maine with an older woman named Mrs. Todd.</p>\n<blockquote>\n<p>&nbsp;Mira drank in every shade of the marshes spread before her.</p>\n<p>&ldquo;Oh, Mrs. Todd,&rdquo; she cried one early morning, sweeping into the kitchen with her apron full of damp goldenrod, &ldquo;I'm so glad I live where there are Septembers. Wouldn't it be dreadful if we leapt straight from August into October? Look at these dripping stalks. Don't they thrill you&mdash;over and over? I'm going to set them on every windowsill.&rdquo;</p>\n<p>&ldquo;Weedy stuff,&rdquo; said Mrs. Todd, whose feeling for adornment had never much developed. &ldquo;You overrun the kitchen, child, with bog stuff. Kitchens were meant for cooking in.&rdquo;</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To demonstrate that Mira has only recently come to appreciate wild plants</p>"},
+    {"id": "b", "content": "<p>To show that Mira and Mrs. Todd have markedly different sensibilities</p>"},
+    {"id": "c", "content": "<p>To describe a disagreement that Mira and Mrs. Todd have repeatedly</p>"},
+    {"id": "d", "content": "<p>To emphasize Mrs. Todd's distaste for how Mira has arranged the kitchen</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text first shows Mira drinking in the colors of the marshes and sweeping in with an apron full of goldenrod, exclaiming about September. It then turns to Mrs. Todd, whose feeling for adornment has &ldquo;never much developed&rdquo; and who calls the stalks &ldquo;weedy stuff&rdquo; that overruns the kitchen. The passage as a whole contrasts the two figures: Mira is exuberant and aesthetically alive, Mrs. Todd is practical and unimpressed. Its purpose is to display their markedly different sensibilities.</p><p>Choice A is incorrect because the text presents Mira's delight in nature as part of her temperament rather than a newly formed enthusiasm. Choice C is incorrect because no recurring quarrel between the two is described; this is presented as a single morning's exchange. Choice D is incorrect because Mrs. Todd's distaste is one supporting detail that helps establish the larger contrast in their personalities.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

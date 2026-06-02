@@ -1,0 +1,39 @@
+{
+  "questionId": "97ab5669-s1",
+  "originalId": "97ab5669",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Former ocean explorer Dawn Wright says that although she doesn’t have a definite idea of when it might happen, she <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that humans will someday need to find ways to live sustainably beneath the surface of the sea. This guess informs her interest in future research missions to deep-ocean habitats.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>supposes</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>demands</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>doubts</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>establishes</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"supposes\" is a tentative guess, matching the text’s phrase \"doesn’t have a definite idea\" and \"this guess.\" Choice B is incorrect because demanding is too forceful. Choice C is incorrect because doubting contradicts her belief that it may happen. Choice D is incorrect because establishing implies certainty.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

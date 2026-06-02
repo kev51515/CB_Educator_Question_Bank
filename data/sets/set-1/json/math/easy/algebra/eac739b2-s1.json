@@ -1,0 +1,39 @@
+{
+  "questionId": "eac739b2-s1",
+  "originalId": "eac739b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>3</mn><mi>y</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>14</mn></math>, what is the value of <math><mn>15</mn><mi>y</mi><mo>+</mo><mn>25</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>60</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>70</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>55</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>80</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Multiplying both sides of <math><mn>3</mn><mi>y</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>14</mn></math> by 5 yields <math><mn>15</mn><mi>y</mi><mo>+</mo><mn>25</mn><mo>=</mo><mn>70</mn></math>.</p><p>Choices A, C, and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

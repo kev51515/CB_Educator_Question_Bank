@@ -1,0 +1,39 @@
+{
+  "questionId": "099526fc-s1",
+  "originalId": "099526fc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line segment with endpoints (&minus;2, 1) and (10, 6) in the xy-plane represents one of the legs of a right triangle. The area of this triangle is 78 square units. What is the length, in units, of the other leg of this triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6&radic;13</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5&radic;13</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The length of the given leg is &radic;((10&minus;(&minus;2))&sup2; + (6&minus;1)&sup2;) = &radic;(144+25) = &radic;169 = 13. The area of a right triangle is (1/2)(leg1)(leg2), so 78 = (1/2)(13)(leg2), giving leg2 = 156/13 = 12.</p><p>Choice B doubles the correct answer. Choices C and D leave the radical unsimplified or use an incorrect length.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A1.T2.hard"
+}

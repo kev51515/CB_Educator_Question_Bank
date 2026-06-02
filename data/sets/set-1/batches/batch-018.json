@@ -1,0 +1,452 @@
+[
+  {
+    "id": "768f3b7c",
+    "path": "json/math/hard/algebra/768f3b7c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "94b48cbf",
+    "path": "json/math/hard/algebra/94b48cbf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "98d3393a",
+    "path": "json/math/hard/algebra/98d3393a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "9aaf7786",
+    "path": "json/math/hard/algebra/9aaf7786.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "9bbce683",
+    "path": "json/math/hard/algebra/9bbce683.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "9d0396d4",
+    "path": "json/math/hard/algebra/9d0396d4.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "9f70fd47",
+    "path": "json/math/hard/algebra/9f70fd47.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "a1fd2304",
+    "path": "json/math/hard/algebra/a1fd2304.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "a35c7164",
+    "path": "json/math/hard/algebra/a35c7164.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "a7a14e87",
+    "path": "json/math/hard/algebra/a7a14e87.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b9835972",
+    "path": "json/math/hard/algebra/b9835972.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "c362c210",
+    "path": "json/math/hard/algebra/c362c210.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "c4ea43ef",
+    "path": "json/math/hard/algebra/c4ea43ef.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "cb58833c",
+    "path": "json/math/hard/algebra/cb58833c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "cc3e9528",
+    "path": "json/math/hard/algebra/cc3e9528.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "cc7ffe02",
+    "path": "json/math/hard/algebra/cc7ffe02.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "d0e614a6",
+    "path": "json/math/hard/algebra/d0e614a6.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "db422e7f",
+    "path": "json/math/hard/algebra/db422e7f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "fdee0fbf",
+    "path": "json/math/hard/algebra/fdee0fbf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "023c0a8d",
+    "path": "json/math/hard/algebra/023c0a8d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "0b0fa68b",
+    "path": "json/math/hard/algebra/0b0fa68b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "0bd33265",
+    "path": "json/math/hard/algebra/0bd33265.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "16889ef3",
+    "path": "json/math/hard/algebra/16889ef3.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "2b15d65f",
+    "path": "json/math/hard/algebra/2b15d65f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "415ab1d2",
+    "path": "json/math/hard/algebra/415ab1d2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "50f4cb9c",
+    "path": "json/math/hard/algebra/50f4cb9c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "63d03c0b",
+    "path": "json/math/hard/algebra/63d03c0b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "67d63e19",
+    "path": "json/math/hard/algebra/67d63e19.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "6989c80a",
+    "path": "json/math/hard/algebra/6989c80a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "78391fcc",
+    "path": "json/math/hard/algebra/78391fcc.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "8c5e6702",
+    "path": "json/math/hard/algebra/8c5e6702.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "a309803e",
+    "path": "json/math/hard/algebra/a309803e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "a5882327",
+    "path": "json/math/hard/algebra/a5882327.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "a7e2859a",
+    "path": "json/math/hard/algebra/a7e2859a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "af2ba762",
+    "path": "json/math/hard/algebra/af2ba762.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "b3abf40f",
+    "path": "json/math/hard/algebra/b3abf40f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "b988eeec",
+    "path": "json/math/hard/algebra/b988eeec.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "bbf9e5ce",
+    "path": "json/math/hard/algebra/bbf9e5ce.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "be9cb6a2",
+    "path": "json/math/hard/algebra/be9cb6a2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "d1f50dbe",
+    "path": "json/math/hard/algebra/d1f50dbe.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "daad7c32",
+    "path": "json/math/hard/algebra/daad7c32.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "e103300e",
+    "path": "json/math/hard/algebra/e103300e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "e25f0807",
+    "path": "json/math/hard/algebra/e25f0807.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "spr"
+  },
+  {
+    "id": "e86a06fe",
+    "path": "json/math/hard/algebra/e86a06fe.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "e9908930",
+    "path": "json/math/hard/algebra/e9908930.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear functions",
+    "type": "mcq"
+  },
+  {
+    "id": "03503d49",
+    "path": "json/math/hard/algebra/03503d49.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "187f74bc",
+    "path": "json/math/hard/algebra/187f74bc.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "1a621af4",
+    "path": "json/math/hard/algebra/1a621af4.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "spr"
+  },
+  {
+    "id": "45cfb9de",
+    "path": "json/math/hard/algebra/45cfb9de.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "48fb34c8",
+    "path": "json/math/hard/algebra/48fb34c8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  }
+]

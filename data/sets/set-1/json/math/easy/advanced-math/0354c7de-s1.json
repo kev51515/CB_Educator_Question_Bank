@@ -1,0 +1,39 @@
+{
+  "questionId": "0354c7de-s1",
+  "originalId": "0354c7de",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to the expression 7<i>y</i> + 21?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7(<i>y</i> + 14)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7(<i>y</i> + 3)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7(<i>y</i> + 21)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7(<i>y</i> + 28)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since 7 is a factor of both 7<i>y</i> and 21, the expression can be factored as 7(<i>y</i> + 3).</p><p>Choice A may result from subtracting 7 from the constant when factoring. Choice C results from factoring 7 from only the first term, not the constant. Choice D may result from adding 7 to the constant when factoring.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

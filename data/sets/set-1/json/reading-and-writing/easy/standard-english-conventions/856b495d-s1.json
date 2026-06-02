@@ -1,0 +1,39 @@
+{
+  "questionId": "856b495d-s1",
+  "originalId": "856b495d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In the mid-twentieth century, Celia Cruz and other Cuban <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> across the United States to the dynamic rhythms of salsa music. The genre soon became a staple of urban dance scenes from Miami to New York.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>singer&rsquo;s introduced listener&rsquo;s</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>singers&rsquo; introduced listeners&rsquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>singers introduced listeners</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>singers&rsquo; introduced listeners</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The plural nouns &ldquo;singers&rdquo; and &ldquo;listeners&rdquo; correctly indicate multiple singers introducing the music to multiple listeners.</p><p>Choices A, B, and D all incorrectly add possessive apostrophes to one or both nouns when no possession is needed.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T8.easy"
+}

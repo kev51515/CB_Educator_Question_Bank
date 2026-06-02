@@ -1,0 +1,39 @@
+{
+  "questionId": "c9355dec-s1",
+  "originalId": "c9355dec",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A graph in the xy-plane shows a horizontal dashed line passing through the points (&minus;3, 8), (0, 8), and (4, 8). The region below the line is shaded. The shaded region represents all of the solutions to which of the following inequalities?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> &le; 8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> &lt; 8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> &gt; 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>x</i> &lt; 8</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The boundary is a horizontal line at <i>y</i> = 8, so the inequality involves <i>y</i>. Because the line is dashed, the boundary is not included, so the inequality is strict (&lt; or &gt;). Since the shaded region is below the line, the solutions are values of <i>y</i> less than 8, giving <i>y</i> &lt; 8.</p><p>Choice A uses &le;, which would correspond to a solid boundary. Choice C reverses the shaded side. Choice D describes a vertical boundary at <i>x</i> = 8, not a horizontal one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.easy"
+}

@@ -1,0 +1,116 @@
+[
+  {
+    "id": "a5663025-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone asks how many solutions the system y=x\u00b2\u22124, y=0 has. This is A4 (system intersection count) or A2 (count for x\u00b2=4), not A3 \u2014 A3 requires a literal parameter controlling solution count. No parameter present."
+  },
+  {
+    "id": "2926cc6d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.medium",
+    "verdict": "type_drift",
+    "detail": "Stem (3y+7)(4y\u22129)=0 is a factored zero-product form matching T6 (and the original 2926cc6d is listed under T6 example_ids), not T2 standard-form quadratic. Should be A2.T6.medium."
+  },
+  {
+    "id": "75a32330-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.medium",
+    "verdict": "type_drift",
+    "detail": "T10 must_preserve requires 'presence of a graph-described scenario (the visual cue is the load-bearing feature).' Clone removes the graph entirely and is solved purely algebraically; this drifts to A4.T9. Listed common_bug: 'Removing the graph and asking purely algebraically\u2026 changes the type to T9.'"
+  },
+  {
+    "id": "f65288e8-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard",
+    "verdict": "type_drift",
+    "detail": "Stem is zero-product (x+4)(x-9)=0, which is T6 (zero-product/factored polynomial), not T3 (absolute-value equation). Answer (-2) is mathematically correct, but typeId is wrong."
+  },
+  {
+    "id": "97e50fa2-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "T10 requires a graph-described scenario (visual cue is load-bearing). Clone presents purely algebraic functions f(x) and g(x) with no graph; this is T9 (algebraic linear-quadratic substitution). Math is correct (a=3 or 12)."
+  },
+  {
+    "id": "494d247d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires graph-described scenario. Clone is purely algebraic |x+2|=x+4 system with no graph; this is T9 territory. Math correct: (-3,1)."
+  },
+  {
+    "id": "d0e8e8f5-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires graph-described scenario. Clone presents equations algebraically and asks which point is an intersection; no graph shown. This is T9. Math correct: (4,4)."
+  },
+  {
+    "id": "4ca30186-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "T10 requires graph-described scenario; clone is purely algebraic system substitution (no graph). Type should be T9. Math correct: (3,6)."
+  },
+  {
+    "id": "5c7d5744-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T10.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A4.T10 (graph-based), but stem has no graph; it is a pure algebraic linear-quadratic substitution system, which is A4.T9."
+  },
+  {
+    "id": "f11ffa93-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A5.T11.easy",
+    "verdict": "aspect_drift",
+    "detail": "Stem is a basic radical equation sqrt(x+3)=9 asking for the numeric root x=78. This tests A2 (solve a single nonlinear equation, radical type T4), not A5 (equivalent-form/reformulation). No reference to an equation 'above' nor any equivalent-form transformation. Matches documented common_bug: 'Drifting into A2 by asking for a single numeric root rather than an equivalent form or set.' Math is correct."
+  },
+  {
+    "id": "5ae186b4-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "T5 medium requires 'clearing the denominator produces a quadratic that factors over integers.' Clone \u221272/w = 8 yields a one-step linear solution (w = \u22129), no quadratic; difficulty regressed below T5 medium."
+  },
+  {
+    "id": "faeae876-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T6.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone uses cubic\u00d7quartic factored form (x\u00b3+27)(x\u2074\u221216); T6 medium requires 'two or three linear factors.' Higher-degree factored form with discriminant reasoning is T6 hard (original faeae876 is listed in T6 hard example_ids)."
+  },
+  {
+    "id": "652054da-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Clone n=(5/7)m \u2192 m=(7/5)n requires only one inverse operation (multiply by reciprocal), no context wrapper, no denominator unpacking. Fits easy lever ('1-2 inverse operations, pure symbolic form'), not medium ('2-3 inverse operations\u2026 real-world context\u2026 denominator')."
+  },
+  {
+    "id": "a1262cdb-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium lever requires 2-3 inverse operations, often with context wrapper, distribution, or denominator. Clone 9s+d=f asking for f-d is a single subtraction (one inverse step) with integer coefficients and no context \u2014 matches easy lever, not medium."
+  },
+  {
+    "id": "71014fb1-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter (b, c, k) so student solves discriminant equation for that parameter. Clone (x+3)^2=-7 has no parameter; it's a direct no-real-solution check, matching the easy lever 'direct discriminant calculation on a numeric quadratic'."
+  },
+  {
+    "id": "4dc5c6f9-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter. Clone has no parameter; it's a direct intersection-count of y=22 with a fully numeric downward parabola (max y=17). Better fits A4.T10 medium count-intersections."
+  },
+  {
+    "id": "74473be4-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard A3.T7 requires a literal parameter to solve for. Clone is MCQ 'which quadratic has no real solutions' with four fully-numeric options - this matches medium lever ('which quadratic equation has exactly one / no real solutions')."
+  },
+  {
+    "id": "2cd6b22d-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T7 lever requires a literal parameter (b, c, k, a) with student solving for it (e.g., 'find c such that equation has exactly one solution'). Clone is parameter-free count-of-solutions on numeric quadratic; matches easy T7 lever. Math correct (discriminant=-96, zero solutions)."
+  },
+  {
+    "id": "f2f3fa00-s1",
+    "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T1 levers require target variable in multiple places, radical/square, or 3+ other variables. Clone needs only 2 simple inverse operations (multiply by 8, add 20) on a 2-variable equation; matches easy lever. Math correct (k=20)."
+  }
+]

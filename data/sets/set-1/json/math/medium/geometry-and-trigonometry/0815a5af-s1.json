@@ -1,0 +1,39 @@
+{
+  "questionId": "0815a5af-s1",
+  "originalId": "0815a5af",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Circle <em>O</em> has an area of 100&pi; square units. Two diameters of the circle, line segment <em>PR</em> and line segment <em>QS</em>, are perpendicular to each other, dividing the interior of the circle into four congruent sectors. What is the area, in square units, of one of these four sectors?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>20&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>50&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>25&pi;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The total area of the circle is 100&pi; square units. Since the two perpendicular diameters divide the circle into four congruent (equal-area) sectors, each sector has area 100&pi;/4 = 25&pi; square units. Choices A, B, and C are incorrect and may result from dividing by 10, 5, or 2 instead of 4.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.misc.medium"
+}

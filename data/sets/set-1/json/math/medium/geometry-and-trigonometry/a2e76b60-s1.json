@@ -1,0 +1,39 @@
+{
+  "questionId": "a2e76b60-s1",
+  "originalId": "a2e76b60",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A cylindrical jar containing whole olives is filled to the top with brine before being sealed. The base of the jar has an area of 60 square centimeters, and the height of the jar is 12 cm. If 95 cubic centimeters of brine is needed to fill the jar to the top, which of the following is closest to the total volume of the olives in the jar?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>625 cubic centimeters</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>155 cubic centimeters</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>720 cubic centimeters</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>47.5 cubic centimeters</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The total volume of the cylindrical jar is the product of the base area and the height: (60)(12) = 720 cubic centimeters. If the brine needed to fill the jar has volume 95 cubic centimeters, the remaining volume occupied by the olives is 720 &minus; 95 = 625 cubic centimeters. Choice B is incorrect because it would imply 565 cubic centimeters of brine. Choice C is incorrect because that is the total volume of the jar, not just the olives. Choice D is incorrect and corresponds to a similar misinterpretation.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A4.T3.medium"
+}

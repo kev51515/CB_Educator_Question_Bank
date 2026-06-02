@@ -1,0 +1,25 @@
+{
+  "questionId": "a14eef71-s1",
+  "originalId": "a14eef71",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>In 2018, a research group led by physicists Hiroshi Tanaka and Lena Volkov managed to lower the thermal conductivity of a layered crystal to a record minimum&mdash;ultraphononic insulation. An almost perfectly heat-blocking (and, as its name implies, vibration-trapping) condition, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>ultraphononic insulation is achieved when a crystal's thermal conductivity falls below 0.05.</p>"},
+    {"id": "b", "content": "<p>when its thermal conductivity falls below 0.05, a crystal achieves ultraphononic insulation.</p>"},
+    {"id": "c", "content": "<p>a crystal, when its thermal conductivity falls below 0.05, achieves ultraphononic insulation.</p>"},
+    {"id": "d", "content": "<p>achieving ultraphononic insulation happens when a crystal's thermal conductivity falls below 0.05.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The subject of the modifier \"An almost perfectly heat-blocking&hellip;condition\" is \"ultraphononic insulation.\" Subject-modifier placement requires a modifier and its subject to be next to one another, so \"ultraphononic insulation\" must be the first word in the missing clause.</p><p>Choice B is incorrect. This choice creates a subject-modifier placement error. The subject of the modifier is \"ultraphononic insulation,\" so \"ultraphononic insulation\" must be the first word in the missing clause. Choice C is incorrect. This choice creates a subject-modifier placement error. The subject of the modifier is \"ultraphononic insulation,\" so \"ultraphononic insulation\" must be the first word in the missing clause. Choice D is incorrect. This choice creates a subject-modifier placement error. The subject of the modifier is \"ultraphononic insulation,\" so \"ultraphononic insulation\" must be the first word in the missing clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

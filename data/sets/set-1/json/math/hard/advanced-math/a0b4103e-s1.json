@@ -1,0 +1,39 @@
+{
+  "questionId": "a0b4103e-s1",
+  "originalId": "a0b4103e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The expression (1/5)x<sup>2</sup> &minus; 2 can be written in the form (1/5)(x &minus; k)(x + k), where k is a positive constant. What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&radic;2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&radic;10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Factor (1/5) from the original expression: (1/5)(x<sup>2</sup> &minus; 10). Then x<sup>2</sup> &minus; 10 = (x &minus; &radic;10)(x + &radic;10). Comparing with (x &minus; k)(x + k) gives k = &radic;10. Choice A confuses k<sup>2</sup> with 2; choice B and D miscompute the factor.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z",
+  "templateId": "equivalent-expressions.A2.T5.hard"
+}

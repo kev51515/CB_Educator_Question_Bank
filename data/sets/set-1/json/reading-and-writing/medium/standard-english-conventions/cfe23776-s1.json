@@ -1,0 +1,25 @@
+{
+  "questionId": "cfe23776-s1",
+  "originalId": "cfe23776",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>According to the original text of the US Constitution, drafted in 1787, federal senators were chosen by state legislatures rather than by direct popular vote. The 17th amendment, ratified in <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> shifted that selection power to the voters of each state.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>1913:</p>"},
+    {"id": "b", "content": "<p>1913</p>"},
+    {"id": "c", "content": "<p>1913,</p>"},
+    {"id": "d", "content": "<p>1913&mdash;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The comma after \"1913\" pairs with the comma after \"amendment\" to enclose the supplementary element \"ratified in 1913\" symmetrically with matched commas. The supplementary element provides additional information about the 17th amendment and could be removed without affecting the grammar of the sentence.</p><p>Choice A is incorrect because a colon cannot pair with an opening comma to set off a supplementary element. Choice B is incorrect because omitting punctuation fails to close the supplementary element that the opening comma began. Choice D is incorrect because a dash cannot pair with an opening comma in this way.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

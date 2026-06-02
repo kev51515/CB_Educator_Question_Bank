@@ -1,0 +1,22 @@
+{
+  "questionId": "b2528e6b-s1",
+  "originalId": "b2528e6b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The three points (0, 2), (8, 2), and (0, 8) define a circle in the xy-plane. The circumference of this circle is k&pi;, where k is a constant. What is the value of k?</p>",
+  "answerOptions": null,
+  "keys": [
+    "10"
+  ],
+  "rationale": "<p>The correct answer is 10. The chord from (0, 2) to (8, 2) is horizontal; its perpendicular bisector is the vertical line x = 4. The chord from (0, 2) to (0, 8) is vertical; its perpendicular bisector is the horizontal line y = 5. The center is at the intersection: (4, 5). The radius is the distance from (4, 5) to (0, 2): &radic;(16 + 9) = &radic;25 = 5. The circumference is 2&pi;(5) = 10&pi;, so k = 10.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A4.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "eb89dcc8-s1",
+  "originalId": "eb89dcc8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p><span style=\"text-decoration: underline;\">Imagine you and a coworker are trying to choose a meeting time for a project.</span> When people make joint scheduling decisions like this, they often don't share their real availability. Instead, they say any time would work because they think this response makes them seem more accommodating and easier to work with.</p><p><strong>Text 2</strong></p><p>Research shows that people who don't share their actual preferences when scheduling with others aren't viewed as more cooperative. In fact, saying you have no preference makes scheduling harder for the other person. It can also lead them to feel less satisfied with the final plan\u2014and with you.</p>",
+  "stem": "<p>Based on the texts, what response would the author of Text 2 most likely suggest for someone in the situation described in the underlined sentence in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Postpone the project to a later date.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Suggest a specific time that works best.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ask the coworker which times they usually prefer.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Switch the conversation to a different topic.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Text 1 describes a common scheduling scenario in which people hide their real availability to appear easygoing. Text 2 reports that this strategy doesn't work\u2014and makes things worse for the other person. The author of Text 2 would therefore most likely recommend stating a specific preferred time.</p><p>Choice A is incorrect. Text 2 doesn't suggest postponing or avoiding the decision; it's about how to make joint decisions well. Choice C is incorrect. Asking what the coworker prefers still avoids stating one's own preference, which is what Text 2 criticizes. Choice D is incorrect. Changing the subject avoids the decision entirely, the opposite of what Text 2 implies.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T2.easy"
+}

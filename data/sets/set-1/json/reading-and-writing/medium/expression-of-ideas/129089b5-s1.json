@@ -1,0 +1,25 @@
+{
+  "questionId": "129089b5-s1",
+  "originalId": "129089b5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A4.T10.medium",
+  "stimulus": "<p>In 1971, the Twenty-Sixth Amendment to the US Constitution was ratified. The amendment prohibits the federal government and states from setting a voting age higher than 18 in any election, lowering the age from the previous standard of 21. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the amendment guarantees that voting-age citizens cannot be denied registration based on age in primary contests held by political parties.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For instance,</p>"},
+    {"id": "b", "content": "<p>Moreover,</p>"},
+    {"id": "c", "content": "<p>Specifically,</p>"},
+    {"id": "d", "content": "<p>Instead,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Moreover\" logically signals that the information in this sentence—that the amendment also guarantees that voting-age citizens cannot be denied registration in primary contests—is a separate, additional point alongside the amendment's prohibition on setting a voting age higher than 18.</p><p>Choice A is incorrect because \"for instance\" illogically signals that the information in this sentence exemplifies the prior point about voting-age thresholds, when in fact it presents a distinct additional requirement. Choice C is incorrect because \"specifically\" illogically signals that this sentence narrows the previous claim about voting-age thresholds, when it instead adds a separate guarantee about primaries. Choice D is incorrect because \"instead\" illogically signals that this provision is a substitute for the first, when it is actually a separate provision in addition to it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

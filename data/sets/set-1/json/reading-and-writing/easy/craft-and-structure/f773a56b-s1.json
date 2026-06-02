@@ -1,0 +1,25 @@
+{
+  "questionId": "f773a56b-s1",
+  "originalId": "f773a56b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>As the first Black woman elected to the United States Congress, Shirley Chisholm became one of the most <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> figures in her country's political history: among the many achievements of her seven terms in office (1969&ndash;1983), Chisholm helped expand the federal food stamp program and was a founding member of the Congressional Black Caucus.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>consequential</p>"},
+    {"id": "b", "content": "<p>routine</p>"},
+    {"id": "c", "content": "<p>mysterious</p>"},
+    {"id": "d", "content": "<p>fleeting</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because \"consequential\" means having significant impact, matching the text's description of major achievements during a long tenure. Choice B is incorrect because \"routine\" means ordinary, contradicting the description of significant achievements. Choice C is incorrect because \"mysterious\" suggests obscurity; the text emphasizes visible accomplishments. Choice D is incorrect because \"fleeting\" suggests short duration; the text emphasizes a seven-term, fourteen-year career with lasting impact.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

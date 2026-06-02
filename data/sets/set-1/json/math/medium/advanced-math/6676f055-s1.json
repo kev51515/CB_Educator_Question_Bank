@@ -1,0 +1,39 @@
+{
+  "questionId": "6676f055-s1",
+  "originalId": "6676f055",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A3.T3.easy",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\">f(θ) = −0.35(θ − 42)² + 1,150</p>",
+  "stem": "<p>An engineer wanted to identify the best angle for a turbine blade in order to get the greatest energy output. The engineer found that the function above models the energy output f(θ), in watts, as a function of the blade angle θ, in degrees. According to the model, what angle, in degrees, gives the greatest energy output?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>−0.35</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.35</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,150</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The function is quadratic in vertex form f(θ) = a(θ − h)² + k with a < 0, so the vertex (h, k) is a maximum. Here h = 42 and k = 1,150, so the maximum occurs at θ = 42. Choices A and B misidentify which constant is the vertex. Choice D is the maximum value f(42), not the angle.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

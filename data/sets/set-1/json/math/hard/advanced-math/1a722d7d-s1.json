@@ -1,0 +1,39 @@
+{
+  "questionId": "1a722d7d-s1",
+  "originalId": "1a722d7d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Let the function <i>q</i> be defined as <i>q</i>(<i>x</i>) = ((<i>x</i> &minus; <i>c</i>)&sup2; + 80)/(2<i>c</i>), where <i>c</i> is a constant. If <i>q</i>(<i>c</i>) = 10, what is the value of <i>q</i>(12)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>18</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. <i>q</i>(<i>c</i>) = (0 + 80)/(2<i>c</i>) = 40/<i>c</i> = 10, so <i>c</i> = 4. Then <i>q</i>(12) = ((12 &minus; 4)&sup2; + 80)/(8) = (64 + 80)/8 = 144/8 = 18.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

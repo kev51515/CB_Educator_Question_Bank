@@ -1,0 +1,39 @@
+{
+  "questionId": "68f343c9-s1",
+  "originalId": "68f343c9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>If f(x) = x + 5 and g(x) = 4x, what is the value of 6f(3) - g(3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>48</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. f(3) = 3 + 5 = 8, so 6f(3) = 48. g(3) = 4(3) = 12. Therefore 6f(3) - g(3) = 48 - 12 = 36. Choice A confuses operations. Choice C results from not subtracting g(3). Choice D is 6f(3) without subtracting g(3).</p>",
+  "templateId": "linear-functions.A1.T5.medium"
+}

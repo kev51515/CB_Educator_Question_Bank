@@ -1,0 +1,25 @@
+{
+  "questionId": "e2829dd7-s1",
+  "originalId": "e2829dd7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Average Number of Wheel Revolutions Performed by Rats Treated with Compound X or Saline, by Age</p></caption><thead><tr><th scope=\"col\">Time relative to treatment (minutes)</th><th scope=\"col\">Young rats with saline</th><th scope=\"col\">Young rats with Compound X</th><th scope=\"col\">Older rats with saline</th><th scope=\"col\">Older rats with Compound X</th></tr></thead><tbody><tr><th scope=\"row\">-5</th><td>500</td><td>490</td><td>400</td><td>410</td></tr><tr><th scope=\"row\">20</th><td>520</td><td>1,250</td><td>340</td><td>600</td></tr><tr><th scope=\"row\">60</th><td>450</td><td>1,050</td><td>200</td><td>520</td></tr><tr><th scope=\"row\">120</th><td>180</td><td>700</td><td>120</td><td>320</td></tr></tbody></table></figure></p><p>To investigate the influence of a hippocampal-targeting receptor on locomotion across age, neuroscientist Jamal Whitfield and colleagues treated young and older rats with either saline solution or Compound X, which activates the receptor. Monitoring the activity levels of the rats by counting wheel revolutions, Whitfield et al. found that the rats in their study showed age-specific differences in response to receptor activation: <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the assertion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>young Compound X-treated rats showed a greater increase in activity relative to young saline-treated rats than older Compound X-treated rats showed relative to older saline-treated rats.</p>"},
+    {"id": "b", "content": "<p>the four groups of rats differed greatly in their activity levels before treatment but showed identical activity levels at the end of the monitoring period.</p>"},
+    {"id": "c", "content": "<p>young saline-treated rats showed substantially more activity at certain points in the monitoring period than older saline-treated rats did.</p>"},
+    {"id": "d", "content": "<p>young Compound X-treated rats showed a substantial increase and then decline in activity over the monitoring period, whereas older Compound X-treated rats showed a substantial decline followed by a steep increase.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because the activation effect was much larger in young rats. At 20 minutes, Compound X drives young rats to 1,250 versus saline 520 (a roughly 730-revolution gap), while older rats go from 340 to 600 (about 260). This shows an age-specific difference in response to activation. Choice B is incorrect because all four groups started near similar baselines. Choice C is incorrect because it compares only saline-treated rats, which doesn&rsquo;t illustrate the age-specific response to activation. Choice D is incorrect because the table doesn&rsquo;t show a steep increase for older Compound X-treated rats; they decline.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

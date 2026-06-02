@@ -1,0 +1,39 @@
+{
+  "questionId": "303537cf-s1",
+  "originalId": "303537cf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a late nineteenth-century satirical novel. A crowd has gathered in the courtyard of a country estate belonging to the Marquis, an aristocrat who employs a steward called the Bailiff.</p>\n<div style=\"padding-left:1em\"><p>One stout fellow, redder of face than the rest, clambered upon a barrel and bellowed out (as nearly as I could catch it) \"Down with the Bailiff!\" The whole company then shouted in answer, though whether it was for or against the Bailiff none could plainly say: some were calling out \"Grain!\" and others \"Rents!\" and still others were merely waving their caps. Each seemed to roar from a private grievance of his own.</p>\n<p>All of this I observed from a small upper window of the morning-room, peering over the elbow of the Marquis as he watched.</p>\n<p>\"What an extraordinary scene,\" he repeated mildly to himself. \"I have never witnessed such a commotion. And how perfectly of one mind they all are\u2014what splendid harmony of purpose!\"</p></div>",
+  "stem": "<p>Based on the text, how does the Marquis respond to the crowd?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>He praises the crowd for being unified, although the crowd is plainly in disagreement.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>He claims to understand the crowd's specific complaints, although he has only just begun to listen.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>He expresses irritation at the noise of the crowd, although he secretly sympathizes with its demands.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>He announces his intention to address the crowd directly, although the crowd is calling for the Bailiff.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The narrator establishes that the crowd is shouting various, conflicting things\u2014\"Down with the Bailiff,\" \"Grain,\" \"Rents,\" and others simply waving caps\u2014and explicitly notes \"each seemed to roar from a private grievance.\" The Marquis nevertheless remarks on their \"splendid harmony of purpose,\" describing the crowd as unified when in fact it is not.</p><p>Choice B is incorrect because the Marquis does not claim to understand specific complaints; he marvels at the scene in general. Choice C is incorrect because the text presents him as calm and mildly observant, not irritated, and gives no indication of secret sympathy. Choice D is incorrect because the Marquis does not say or imply that he wishes to address the crowd; he merely watches and comments.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T8.hard"
+}

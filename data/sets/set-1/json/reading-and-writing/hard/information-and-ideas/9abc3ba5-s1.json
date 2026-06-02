@@ -1,0 +1,39 @@
+{
+  "questionId": "9abc3ba5-s1",
+  "originalId": "9abc3ba5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>\"Improvisation\" in jazz is typically understood as melodic invention generated in the moment of performance. In the 1990s, Brazilian saxophonist Lia Branco assembled a complex system of pre-arranged loops and pedal-triggered samples that allowed her, in concert, to layer entire passages by activating a single switch, producing the elaborate \"stack\" recordings of that decade. Branco described this process as making an entire performance from \"one decision,\" signaling a sharp departure from the centrality of moment-to-moment invention that defined her work in the 1980s. Some music critics claim that this shift represents \"removing improvisation\" from her practice altogether. Therefore, regardless of whether triggering the loop system constitutes improvisation, both Branco and these critics likely agree that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Branco's 1980s work is much more melodically sophisticated than her 1990s work.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>any tool that a musician uses during a performance is capable of producing improvisation.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Branco became less interested in exploring the role of improvisation in her work as her career progressed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Branco's work from the 1980s contains far more moments of in-the-moment invention than her work from the 1990s does.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. Branco thinks the loop system produces a performance from \"one decision\"; the critics think it removes improvisation completely. Setting that disagreement aside, both Branco and the critics would agree that the 1990s performances using the system have far fewer in-the-moment improvisational decisions than her 1980s work, in which such decisions were central.</p><p>Choice A is incorrect because the text never discusses the relative melodic sophistication of the two periods; it only contrasts the amount of in-the-moment invention. Choice B is incorrect because the text only discusses Branco's loop system, not other tools generally. Choice C is incorrect because the text suggests Branco was still actively investigating improvisation in the 1990s\u2014she went to considerable lengths to redefine what an improvised performance could mean\u2014rather than losing interest in the question.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T5.hard"
+}

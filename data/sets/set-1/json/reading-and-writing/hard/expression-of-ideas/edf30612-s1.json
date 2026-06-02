@@ -1,0 +1,25 @@
+{
+  "questionId": "edf30612-s1",
+  "originalId": "edf30612",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In the early twenty-first century, scholars in literary studies devoted increasing attention to questions of reading practice. Proponents of computational approaches mapped reading patterns across thousands of digitized novels through natural-language processing pipelines; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> literary critic Rita Felski characterized reading as \"a mode of attentive, embodied engagement with a text's affective pull,\" emphasizing instead the situated, lived experience of individual readers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>in addition,</p>"},
+    {"id": "b", "content": "<p>for instance,</p>"},
+    {"id": "c", "content": "<p>consequently,</p>"},
+    {"id": "d", "content": "<p>in contrast,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The sentence opposes two scholarly approaches—a computational, large-scale method and an experiential, individual-reader method. \"In contrast\" precisely signals this opposition between the two approaches.</p><p>Choice A is incorrect because \"in addition\" would mark Felski's approach as a parallel supplement to computational methods, but the passage emphasizes their difference. Choice B is incorrect because \"for instance\" would make Felski's view an example of computational practice, which it is not. Choice C is incorrect because \"consequently\" would signal cause and effect, but Felski's view is not a result of the rise of computational approaches.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T1.hard"
+}

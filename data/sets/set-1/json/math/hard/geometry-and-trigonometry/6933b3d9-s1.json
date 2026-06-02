@@ -1,0 +1,20 @@
+{
+  "questionId": "6933b3d9-s1",
+  "originalId": "6933b3d9",
+  "templateId": "right-triangles-and-trigonometry.A6.T11.hard",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In right triangle PQR, the right angle is at Q, PQ = 8, and QR = 15. Point W is any point on side PR. What is the value of cos(angle PQW) &minus; sin(angle WQR)?</p>",
+  "answerOptions": [],
+  "keys": ["0"],
+  "rationale": "<p>The angles PQW and WQR together make up the right angle PQR, so they are complementary: angle PQW + angle WQR = 90&deg;. For complementary angles, cos of one equals sin of the other: cos(angle PQW) = sin(90&deg; &minus; angle PQW) = sin(angle WQR). Therefore cos(angle PQW) &minus; sin(angle WQR) = 0. The answer does not depend on where W lies on PR.</p>",
+  "generatedAt": "2026-05-26T01:33:08Z"
+}

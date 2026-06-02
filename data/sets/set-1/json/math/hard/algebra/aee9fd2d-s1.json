@@ -1,0 +1,39 @@
+{
+  "questionId": "aee9fd2d-s1",
+  "originalId": "aee9fd2d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If (<i>x</i> &minus; 8)/5 = (<i>x</i> &minus; 8)/11, the value of <i>x</i> &minus; 8 is between which of the following pairs of values?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;1 and 1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2 and 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5 and 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8 and 11</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Multiplying both sides by 55 gives 11(<i>x</i> &minus; 8) = 5(<i>x</i> &minus; 8), so 6(<i>x</i> &minus; 8) = 0 and <i>x</i> &minus; 8 = 0. The value 0 lies between &minus;1 and 1.</p><p>Choices B, C, and D give ranges that do not contain 0.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T10.hard"
+}

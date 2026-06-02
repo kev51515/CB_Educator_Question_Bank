@@ -1,0 +1,72 @@
+{
+  "questionId": "a086c2cb",
+  "externalId": "931c68e8-c59b-4d75-8c98-213ba5557018",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:21:57.102766+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a7564665-03fc-4d59-bfc7-08aa505e1113",
+      "content": "<p>To point out the differences between two methods of energy generation</p>"
+    },
+    {
+      "id": "f6f94ad7-e997-4dbf-a685-201e47103b99",
+      "content": "<p>To explain the basics of how a specific energy technology works</p>"
+    },
+    {
+      "id": "eb011c48-e81a-48db-a8ef-fd7f1ed29b57",
+      "content": "<p>To encourage regional electric utilities to build energy storage facilities</p>"
+    },
+    {
+      "id": "e640dc9c-7537-4b32-add4-89d5035c2f23",
+      "content": "<p>To discuss the benefits of a new energy technology</p>"
+    }
+  ],
+  "keys": [
+    "f6f94ad7-e997-4dbf-a685-201e47103b99"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most accurately describes the main purpose of the text, which is to explain the basics of how a specific energy technology works. The text introduces Raccoon Mountain as a pumped-storage hydropower facility built in the 1970s and then explains how it operates: during periods of low demand, excess power pumps water up to a lake at the mountain&rsquo;s summit, and when demand for energy peaks, the water flows back down, spinning turbines along the way to generate electricity. The text provides some additional details, like the name of the water source, but the overall focus is on explaining the basics of how pumped-storage hydropower works.</p><p>Choice A is incorrect because the text focuses on one method of energy generation&mdash;pumped-water hydropower&mdash;and briefly mentions another type of energy generation (nuclear plants) only to identify it as a source of power for the pumping process. The text never makes any comparison between the two methods. Choice C is incorrect because the text simply gives a factual description of how Raccoon Mountain, a pumped-storage hydropower facility, operates; it never suggests that more energy storage facilities should be built, whether by regional utilities or by any other entity. Choice D is incorrect because the text doesn&rsquo;t present pumped-storage hydropower as a new technology; it indicates that Raccoon Mountain was built in the 1970s, meaning that, rather than being new, this facility is approximately 50 years old.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the main purpose of the text?</p>",
+    "stimulus": "<p>Built in the 1970s, Raccoon Mountain is a pumped-storage hydropower facility (a &ldquo;water-battery&rdquo;) located in the United States along the Tennessee River. When energy demand is low, excess power from the regional electric utility&rsquo;s nuclear plants is used to pump water (from a lower reservoir filled from the Tennessee River) up a shaft to the summit lake, where the water is stored as gravitational potential energy. When energy demand peaks, the water drains down from the summit lake, spinning turbines and generating upward of 1,700 megawatts of power&mdash;enough to power one million homes for twenty hours.</p>",
+    "keys": [
+      "f6f94ad7-e997-4dbf-a685-201e47103b99"
+    ],
+    "answerOptions": [
+      {
+        "id": "a7564665-03fc-4d59-bfc7-08aa505e1113",
+        "content": "<p>To point out the differences between two methods of energy generation</p>"
+      },
+      {
+        "id": "f6f94ad7-e997-4dbf-a685-201e47103b99",
+        "content": "<p>To explain the basics of how a specific energy technology works</p>"
+      },
+      {
+        "id": "eb011c48-e81a-48db-a8ef-fd7f1ed29b57",
+        "content": "<p>To encourage regional electric utilities to build energy storage facilities</p>"
+      },
+      {
+        "id": "e640dc9c-7537-4b32-add4-89d5035c2f23",
+        "content": "<p>To discuss the benefits of a new energy technology</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most accurately describes the main purpose of the text, which is to explain the basics of how a specific energy technology works. The text introduces Raccoon Mountain as a pumped-storage hydropower facility built in the 1970s and then explains how it operates: during periods of low demand, excess power pumps water up to a lake at the mountain&rsquo;s summit, and when demand for energy peaks, the water flows back down, spinning turbines along the way to generate electricity. The text provides some additional details, like the name of the water source, but the overall focus is on explaining the basics of how pumped-storage hydropower works.</p><p>Choice A is incorrect because the text focuses on one method of energy generation&mdash;pumped-water hydropower&mdash;and briefly mentions another type of energy generation (nuclear plants) only to identify it as a source of power for the pumping process. The text never makes any comparison between the two methods. Choice C is incorrect because the text simply gives a factual description of how Raccoon Mountain, a pumped-storage hydropower facility, operates; it never suggests that more energy storage facilities should be built, whether by regional utilities or by any other entity. Choice D is incorrect because the text doesn&rsquo;t present pumped-storage hydropower as a new technology; it indicates that Raccoon Mountain was built in the 1970s, meaning that, rather than being new, this facility is approximately 50 years old.</p>",
+    "externalid": "931c68e8-c59b-4d75-8c98-213ba5557018",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Built in the 1970s, Raccoon Mountain is a pumped-storage hydropower facility (a &ldquo;water-battery&rdquo;) located in the United States along the Tennessee River. When energy demand is low, excess power from the regional electric utility&rsquo;s nuclear plants is used to pump water (from a lower reservoir filled from the Tennessee River) up a shaft to the summit lake, where the water is stored as gravitational potential energy. When energy demand peaks, the water drains down from the summit lake, spinning turbines and generating upward of 1,700 megawatts of power&mdash;enough to power one million homes for twenty hours.</p>"
+}

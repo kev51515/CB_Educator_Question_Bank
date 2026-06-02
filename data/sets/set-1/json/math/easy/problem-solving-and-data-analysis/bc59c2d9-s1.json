@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 6 data points trending down from left to right showing the relationship between distance above sea level (in feet) and average temperature (in degrees Fahrenheit). A line of best fit passes through the coordinates (0, 60), (3,000, 45), and (6,000, 30). At a distance of 3,000 feet above sea level, what is the temperature, in degrees Fahrenheit, predicted by the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>45</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The line of best fit passes through (3,000, 45), so the predicted temperature at 3,000 feet is 45\u00b0F.</p><p>The other choices are temperatures at different elevations.</p>",
+  "questionId": "bc59c2d9-s1",
+  "originalId": "bc59c2d9",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A4.T7.easy"
+}

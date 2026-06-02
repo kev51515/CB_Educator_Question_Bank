@@ -1,0 +1,39 @@
+{
+  "questionId": "0ff8477b-s1",
+  "originalId": "0ff8477b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Memory and identity are central to Ocean Vuong's novels. In <em>On Earth We're Briefly Gorgeous</em>, for instance, the narrator Little Dog returns again and again to his mother's stories of Vietnam, while in his earlier poems, the speaker <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the war's lingering presence through fragmented images of family and place.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>experienced</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>had experienced</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>experiences</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>will be experiencing</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is verb tense. The preceding clause uses the simple present (\"returns again and again\") to describe what happens within the novels and poems. To maintain parallel tense, the verb in the second clause should also be in the simple present (\"experiences\").</p><p>Choice A is incorrect because the simple past \"experienced\" doesn't match the present-tense narration of literary works. Choice B is incorrect because the past perfect \"had experienced\" doesn't match the present-tense narration. Choice D is incorrect because the future progressive \"will be experiencing\" doesn't match the present-tense narration.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

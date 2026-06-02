@@ -1,0 +1,39 @@
+{
+  "questionId": "cf46f239-s1",
+  "originalId": "cf46f239",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a nineteenth-century novel. Jonas is a young man making his way through the back country of upstate New York during the late eighteenth century.</p>\n<blockquote><p>He contracted himself out for six months, at the end of which he was to receive in payment a hundred and forty acres of cleared land lying near the Black River. [...] His employer proving false to the bargain in the matter of the land, and there being no court within fifty miles that would compel him to honor it, Jonas&mdash;<u>too easily contented, perhaps, with whatever cheer the road and a kind stranger could supply</u>&mdash;at length resigned the dispute and turned his face once more toward the south.</p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It implies that Jonas treasures a personality trait that is usually regarded as a flaw.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It suggests that if not for a certain aspect of his character, Jonas might not have been so easily thwarted in his ambition to acquire land.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It shows why Jonas could not have managed the labor of running a farm even if he had owned the necessary land.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It explains why Jonas is able to undertake courageous acts that others would generally avoid.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The underlined aside&mdash;\"too easily contented, perhaps, with whatever cheer the road and a kind stranger could supply\"&mdash;characterizes Jonas as a person whose easy contentment leaves him unwilling to press a legal dispute. Combined with his decision to resign the dispute and turn south, the underlined material attributes the loss of his land in part to this trait.</p><p>Choice A is incorrect because the narrator describes the trait critically, not as something Jonas treasures. Choice C is incorrect because no inability to do the labor of farming is suggested. Choice D is incorrect because the underlined portion accounts for Jonas's withdrawal from a fight, not for any courageous undertaking.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

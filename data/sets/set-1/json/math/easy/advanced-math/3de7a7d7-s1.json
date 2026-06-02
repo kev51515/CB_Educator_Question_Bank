@@ -1,0 +1,39 @@
+{
+  "questionId": "3de7a7d7-s1",
+  "originalId": "3de7a7d7",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p style=\"text-align:center;\"><math><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>25</mn><mo>=</mo><mn>0</mn></math></p><p>Which of the following is a solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>4</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>6</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>5</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>3</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Adding 25 to both sides gives x\u00b2 = 25. Taking the square root of both sides gives x = 5 or x = \u22125. Of the choices, x = 5 is a solution.</p>"
+}

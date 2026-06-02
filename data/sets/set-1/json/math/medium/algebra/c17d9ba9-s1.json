@@ -1,0 +1,22 @@
+{
+  "questionId": "c17d9ba9-s1",
+  "originalId": "c17d9ba9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A number <em>x</em> is at most 8 less than 4 times the value of <em>y</em>. If the value of <em>y</em> is 5, what is the greatest possible value of <em>x</em>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The correct answer is 12. \"At most 8 less than 4 times <em>y</em>\" gives <em>x</em> \u2264 4<em>y</em> \u2212 8. Substituting <em>y</em> = 5: <em>x</em> \u2264 4(5) \u2212 8 = 12. So the greatest possible value of <em>x</em> is 12.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.hard"
+}

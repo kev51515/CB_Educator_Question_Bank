@@ -1,0 +1,39 @@
+{
+  "questionId": "2b6e1c06-s1",
+  "originalId": "2b6e1c06",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>A historical assembly officially known as the Tynwald, ______</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the Isle of Man's legislature is one of the oldest continuous parliaments in the world, having first convened more than a thousand years ago.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>more than a thousand years ago is when the Isle of Man's legislature, one of the oldest continuous parliaments in the world, first convened.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the first convening of one of the oldest continuous parliaments in the world, the Isle of Man's, was more than a thousand years ago.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the world's oldest continuous parliaments include one that first convened more than a thousand years ago, the Isle of Man's.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"the Isle of Man's legislature\" the subject of the sentence and places it immediately after the modifying phrase \"a historical assembly officially known as the Tynwald.\" In doing so, this choice clearly establishes that the Isle of Man's legislature\u2014and not another noun in the sentence\u2014is the assembly known as the Tynwald.</p><p>Choice B is incorrect because it produces a dangling modifier: \"more than a thousand years ago\" cannot be the assembly known as the Tynwald. Choice C is incorrect because the noun phrase \"the first convening\" placed after the modifier illogically suggests that a convening is the assembly. Choice D is incorrect because \"the world's oldest continuous parliaments\" placed after the modifier illogically suggests that all of the world's oldest parliaments are the Tynwald.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A4.T9.hard"
+}

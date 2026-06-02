@@ -1,0 +1,39 @@
+{
+  "questionId": "18382e67-s1",
+  "originalId": "18382e67",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In Yayoi Kusama's 2013 installation <em>Aftermath of Obliteration of Eternity</em>, absent are the kinds of polka-dot pumpkins and brightly colored sculptural pieces that earned the Japanese avant-garde artist a global following at the peak of her late-career resurgence. In ______ place is something quieter and more meditative: a mirrored room filled with hanging lanterns that flicker and fade in the dark.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>their</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>it's</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>its</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>they're</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of possessive determiners. The plural possessive determiner \"their\" agrees in number with the plural noun \"kinds,\" indicating that the quieter, more meditative work takes the place of those kinds of pumpkins and colorful sculptures that earned Kusama her following.</p><p>Choice B is incorrect because \"it's\" is the contraction of \"it is\" or \"it has,\" not a possessive determiner. Choice C is incorrect because the singular possessive determiner \"its\" does not agree in number with the plural noun \"kinds.\" Choice D is incorrect because \"they're\" is the contraction of \"they are,\" not a possessive determiner.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A3.T6.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d1f50dbe-s1",
+  "originalId": "d1f50dbe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>One gallon of varnish will cover 140 square feet of a surface. A deck has a total surface area of w square feet. Which equation represents the total amount of varnish V, in gallons, needed to varnish the deck twice?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>V = 140w / 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>V = 280 / w</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>V = w / 280</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>V = 2w / 140</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. One coat requires w/140 gallons; two coats require 2w/140 gallons.</p><p>Choice A inverts the relationship. Choice B inverts both quantities. Choice C uses the wrong denominator (280 instead of 140), corresponding to single coverage at half the rate.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T3.hard"
+}

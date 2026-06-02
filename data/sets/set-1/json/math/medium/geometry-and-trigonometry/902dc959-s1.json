@@ -1,0 +1,39 @@
+{
+  "questionId": "902dc959-s1",
+  "originalId": "902dc959",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.medium",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, the side opposite acute angle <math><mi>A</mi></math> has length <math><mn>8</mn></math>, and the non-hypotenuse side adjacent to angle <math><mi>A</mi></math> has length <math><mn>15</mn></math>. What is the value of <math><mi>tan</mi><mo>(</mo><mi>A</mi><mo>)</mo></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfrac><mn>8</mn><mn>15</mn></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mn>15</mn><mn>8</mn></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mn>8</mn><mn>17</mn></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mn>15</mn><mn>17</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. By definition, tan(A) is the ratio of the side opposite angle A to the side adjacent to angle A (not the hypotenuse): tan(A) = 8/15.</p><p>Choice B inverts the ratio (cot A). Choices C and D use the hypotenuse (17 by the Pythagorean theorem), giving sin A and cos A, respectively.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z"
+}

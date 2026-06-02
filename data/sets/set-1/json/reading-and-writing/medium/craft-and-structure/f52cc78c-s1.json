@@ -1,0 +1,25 @@
+{
+  "questionId": "f52cc78c-s1",
+  "originalId": "f52cc78c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T2.medium",
+  "stimulus": "<p>Text 1</p><p>Monarch butterflies in eastern North America rely on stands of milkweed as the sole host plant for their caterpillars, but expanding row-crop agriculture has eliminated much of this milkweed across the species&rsquo; breeding range, raising concerns about the future of the migration. A 2021 review of population counts at Mexican overwintering sites <u>concluded that monarch populations dependent on the historic breeding range are at substantial risk of collapse within the next several decades</u>.</p><p>Text 2</p><p>Long-term monitoring by researchers from the Ontario Lepidopterists&rsquo; Association indicates that monarchs along the northern fringe of the breeding range have remained surprisingly stable in recent years despite continued losses of agricultural milkweed. The researchers attribute this stability in part to a behavioral shift: in addition to laying eggs on common milkweed, females in this region have begun depositing significant numbers of eggs on swamp milkweed and on butterfly weed growing along roadsides and ditches.</p>",
+  "stem": "<p>Based on the texts, how would the researchers in Text 2 most likely respond to the conclusion presented in the underlined portion of Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By arguing that it fails to account for monarchs&rsquo; reliance on a single host plant species</p>"},
+    {"id": "b", "content": "<p>By noting that it overlooks the possibility of some monarch populations adjusting their behavior in response to habitat change</p>"},
+    {"id": "c", "content": "<p>By asserting that it neglects monarch populations that have not yet been affected by losses of agricultural milkweed</p>"},
+    {"id": "d", "content": "<p>By suggesting that it is probably incorrect about the rate at which row-crop agriculture has expanded into the monarch&rsquo;s breeding range</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. Text 2 describes how monarchs in the northern part of the breeding range have remained stable by expanding the host plants they use, depositing eggs on swamp milkweed and butterfly weed in addition to common milkweed. This adaptive behavior counters the underlined claim that populations dependent on the historic breeding range face substantial risk of collapse: at least some populations are adjusting in ways the 2021 review&rsquo;s conclusion does not consider.</p><p>Choice A is incorrect because Text 2 itself observes monarchs using several host species, undermining the &ldquo;single host plant&rdquo; framing. Choice C is incorrect because Text 2 focuses on a population that has been affected by milkweed loss yet remains stable, not on unaffected populations. Choice D is incorrect because Text 2 does not dispute the rate of agricultural expansion.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

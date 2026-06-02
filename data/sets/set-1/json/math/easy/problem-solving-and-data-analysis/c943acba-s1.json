@@ -1,0 +1,39 @@
+{
+  "questionId": "c943acba-s1",
+  "originalId": "c943acba",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a parking lot with 9 cars, 3 of the cars are red. If a car in this lot is selected at random, what is the probability of selecting a car that is red?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3/9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9/9</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The probability is the number of red cars divided by the total number of cars: 3/9.</p><p>Choice B is incorrect; this is the probability of selecting a non-red car. Choice C is incorrect; this is the probability of selecting one specific car. Choice D is incorrect; this would mean every car is red.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

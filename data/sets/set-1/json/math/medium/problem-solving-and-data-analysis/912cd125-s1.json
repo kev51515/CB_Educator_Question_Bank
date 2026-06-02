@@ -1,0 +1,39 @@
+{
+  "questionId": "912cd125-s1",
+  "originalId": "912cd125",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table summarizes the weather records for 30 consecutive days, classified by whether the day was a weekday or weekend day and whether there was snow.</p><figure class=\"table\"><table border=\"1\"><thead><tr><th></th><th>Snow</th><th>No snow</th><th>Total</th></tr></thead><tbody><tr><td>Weekday</td><td style=\"text-align: center;\">2</td><td style=\"text-align: center;\">20</td><td style=\"text-align: center;\">22</td></tr><tr><td>Weekend</td><td style=\"text-align: center;\">3</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">8</td></tr><tr><td>Total</td><td style=\"text-align: center;\">5</td><td style=\"text-align: center;\">25</td><td style=\"text-align: center;\">30</td></tr></tbody></table></figure><p>If one of the days on which there was no snow is selected at random, what is the probability the day was a weekend day?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3/8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8/30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5/25</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The condition is that the day had no snow; from the table, there are 25 such days, and 5 of those were weekend days. Therefore the conditional probability is 5/25 (equal to 1/5). Choice A is incorrect; 3/8 is the probability the day was a snow day given that it was a weekend day. Choice B is incorrect; 8/30 is the unconditional probability that a day was a weekend day. Choice C is incorrect; 3/5 is the probability the day had snow given it was a weekend day (3 of 5 snow days were weekend).</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A3.T8.medium"
+}

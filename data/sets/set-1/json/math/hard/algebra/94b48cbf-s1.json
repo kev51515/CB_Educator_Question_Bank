@@ -1,0 +1,39 @@
+{
+  "questionId": "94b48cbf-s1",
+  "originalId": "94b48cbf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of 9x + 4y = -53 in the xy-plane has a slope of m. What is the value of m?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-9/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-4/9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4/9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9/4</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Solving 9x + 4y = -53 for y gives 4y = -9x - 53, so y = (-9/4)x - 53/4. In slope-intercept form y = mx + b, the slope m is -9/4.</p><p>Choice B reverses the numerator and denominator. Choice C also reverses them and changes the sign. Choice D drops the negative sign that comes from moving 9x to the right-hand side.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T10.medium"
+}

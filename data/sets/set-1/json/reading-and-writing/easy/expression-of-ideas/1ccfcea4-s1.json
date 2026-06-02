@@ -1,0 +1,39 @@
+{
+  "questionId": "1ccfcea4-s1",
+  "originalId": "1ccfcea4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The Italian engineers Giulia Rossi and Marco Bianchi founded the toy design studio TerraToys. They also love butterflies. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they created an award-winning board game, <em>Wingspan Voyage</em> (2022), that lets the player guide a migrating butterfly through a series of habitat challenges.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Intermittently,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>On the other hand,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In fact,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"In fact\" logically signals that the information about the creation of the board game offers additional emphasis in support of the previous claim that the studio founders Rossi and Bianchi love butterflies.</p><p>Choice A is incorrect because \"intermittently\" illogically signals that the information occurs sporadically. Instead, the creation of the game supports the previous claim. Choice B is incorrect because \"on the other hand\" illogically signals a contrast. Instead, the creation of the game supports the previous claim. Choice C is incorrect because \"nevertheless\" illogically signals that the information is true despite the previous claim. Instead, it supports that claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A4.T11.easy"
+}

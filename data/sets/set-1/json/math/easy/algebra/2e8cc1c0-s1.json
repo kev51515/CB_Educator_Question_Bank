@@ -1,0 +1,39 @@
+{
+  "questionId": "2e8cc1c0-s1",
+  "originalId": "2e8cc1c0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 5<i>y</i> = 4, what is the value of 30<i>y</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>six fifths</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Multiplying both sides of 5<i>y</i> = 4 by 6 gives 30<i>y</i> = 24.</p><p>Choice A is the value of <i>y</i> itself (4/5 misread). Choices B and C result from misapplying the multiplier.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

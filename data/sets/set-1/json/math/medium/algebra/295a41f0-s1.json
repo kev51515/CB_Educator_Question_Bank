@@ -1,0 +1,39 @@
+{
+  "questionId": "295a41f0-s1",
+  "originalId": "295a41f0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The graph of y = f(x) + 5 in the <em>xy</em>-plane is a line that passes through the points (-1, -1) and (0, -3). Which equation defines the linear function <em>f</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>f(x) = -3x - 8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>f(x) = -2x - 3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>f(x) = -2x - 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>f(x) = -3x - 3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The line y = f(x) + 5 has slope (-3 - (-1))/(0 - (-1)) = -2 and y-intercept -3, so y = -2x - 3. Then f(x) + 5 = -2x - 3, giving f(x) = -2x - 8. Choice A uses an incorrect slope. Choice B forgets to subtract 5. Choice D mixes up both the slope and the shift adjustment.</p>",
+  "templateId": "linear-functions.A4.T3.medium"
+}

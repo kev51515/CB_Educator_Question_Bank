@@ -1,0 +1,39 @@
+{
+  "questionId": "1c6b1fa0-s1",
+  "originalId": "1c6b1fa0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In 1855, a Cherokee surveyor named Sequoyah Tahlonteeskee drew a finely detailed map of the Arkansas River basin. <u>This work demonstrates a great deal of geographic knowledge, as the map features precise names of tributaries and ridges, as well as the first known sketch of the basin's seasonal floodplain.</u> The map is especially notable because Tahlonteeskee also marked the locations of several Indigenous communities living in the region.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It explains how Tahlonteeskee developed an interest in surveying.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It details how the map was used for trade and travel.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It emphasizes Tahlonteeskee's wish to represent communities on the map.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It identifies some reasons why the map is impressive.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The underlined sentence highlights features\u2014precise names, the first known sketch of the floodplain\u2014that make the map impressive.</p><p>Choice A is incorrect. The sentence doesn't describe how Tahlonteeskee became a surveyor. Choice B is incorrect. The sentence doesn't describe how the map was used. Choice C is incorrect. The sentence doesn't focus on Indigenous communities\u2014that's mentioned afterward.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

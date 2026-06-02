@@ -1,0 +1,39 @@
+{
+  "questionId": "a12a83ce-s1",
+  "originalId": "a12a83ce",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "difficultyCode": "H",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from Henrik Ibsen&rsquo;s 1879 play <em>A Doll&rsquo;s House</em>. Nora has lived with her husband, Torvald, for several years and has just begun to question whether she truly knows herself outside of the role he has assigned her.</p><blockquote><p>NORA: It is true, Torvald. When I lived at home with father, he told me what he thought of everything, and so I had the same opinions; and if I differed from him I concealed the fact, because he would not have liked it. He called me his doll-child, and he played with me as I played with my dolls. And when I came to live with you&mdash;</p><p>TORVALD: What sort of expression is that to use about our marriage?</p><p>NORA: I mean that I was simply transferred from father&rsquo;s hands into yours. You arranged everything according to your own taste, and so I got the same tastes as yours&mdash;or else I pretended to, I am really not quite sure which.</p></blockquote>",
+  "stem": "<p>In the text, which point does Nora most directly make about herself and her opinions?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>She fears that Torvald will become angry if she tells him about her father&rsquo;s influence on her.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>She believes that her opinions have been shaped to match those of the men in her life, leaving her uncertain which are genuinely hers.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>She has begun to develop strong views on important matters but is afraid to share them with Torvald.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>She regrets that her father did not allow her to express any opinions of her own when she was young.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Nora explains that with her father she adopted his opinions or concealed her disagreements, and with Torvald she was &ldquo;simply transferred&rdquo; and adopted his tastes&mdash;adding that she is not even sure whether she really shares them or only pretends to. Her central point is that her opinions have been shaped by these men and she can no longer tell which views are genuinely her own.</p><p>Choice A is incorrect because Nora doesn&rsquo;t express fear of Torvald&rsquo;s anger. Choice C is incorrect because she describes uncertainty about her opinions, not having strong views she conceals. Choice D is incorrect because she does not focus on regret toward her father.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T7.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "a49500cc-s1",
+  "originalId": "a49500cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Bird species differ widely in how they <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> food for their chicks. Some carry insects directly to the nest, some regurgitate partially digested seeds, and some lead the chicks to nearby foraging spots.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>avoid</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>guess</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>describe</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>deliver</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"deliver\" matches the actions of carrying, regurgitating, and leading chicks to food. Choice A is incorrect because avoiding contradicts feeding. Choice B is incorrect because guessing doesn’t fit. Choice C is incorrect because describing isn’t the action being performed.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

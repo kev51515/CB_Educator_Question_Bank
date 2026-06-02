@@ -1,0 +1,22 @@
+{
+  "questionId": "d0a53ef5-s1",
+  "originalId": "d0a53ef5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>&radic;((<i>x</i> &minus; 3)&sup2;) = &radic;(5<i>x</i> + 21)</p><p>What is the smallest solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-1"
+  ],
+  "rationale": "<p>Squaring both sides gives (<i>x</i> &minus; 3)&sup2; = 5<i>x</i> + 21. Expanding: <i>x</i>&sup2; &minus; 6<i>x</i> + 9 = 5<i>x</i> + 21, so <i>x</i>&sup2; &minus; 11<i>x</i> &minus; 12 = 0. Factoring: (<i>x</i> &minus; 12)(<i>x</i> + 1) = 0, so <i>x</i> = 12 or <i>x</i> = &minus;1. Both satisfy 5<i>x</i> + 21 &ge; 0. The smallest solution is &minus;1.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T4.hard"
+}

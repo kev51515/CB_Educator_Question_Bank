@@ -1,0 +1,39 @@
+{
+  "questionId": "ae041e52-s1",
+  "originalId": "ae041e52",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A square is inscribed in a circle. The radius of the circle is (14&radic;2)/2 inches. What is the side length, in inches, of the square?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>28</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14&radic;2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(14&radic;2)/2</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The diagonal of the inscribed square equals the diameter of the circle: 2 &middot; (14&radic;2)/2 = 14&radic;2. For a square with side s, the diagonal equals s&radic;2. Setting s&radic;2 = 14&radic;2 gives s = 14. Choice A is the diameter doubled; choice B is the diagonal; choice D is the radius.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T9.hard"
+}

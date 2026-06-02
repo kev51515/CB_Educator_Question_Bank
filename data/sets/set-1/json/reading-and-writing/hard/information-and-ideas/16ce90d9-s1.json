@@ -1,0 +1,39 @@
+{
+  "questionId": "16ce90d9-s1",
+  "originalId": "16ce90d9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In 2021, marine biologists documented a dense colony of <em>Pagurus tenebrosus</em> (shadow hermit crabs) clustered around a series of methane seeps on the Cascadia continental slope, some 1,400 meters below sea level. Sediment temperatures at this site\u2014nicknamed the Crab Hollow\u2014reach 8\u00b0C, considerably warmer than the surrounding 3\u00b0C waters. After surveying the site repeatedly over four years, the researchers concluded that the warmer sediments likely accelerate egg development and that the seep field appears to function solely as a breeding ground: thousands of mature adults, freshly emerged hatchlings, and visible egg clusters were recorded at every visit, yet no subadult or juvenile crabs were ever observed in the area.</p>",
+  "stem": "<p>Which statement about <em>P. tenebrosus</em> and the Crab Hollow is best supported by the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Adult <em>P. tenebrosus</em> migrate away from the Crab Hollow before producing offspring.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The Crab Hollow's elevated sediment temperatures harm <em>P. tenebrosus</em> hatchlings.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>P. tenebrosus</em> depart the Crab Hollow at some point after hatching but before reaching adulthood.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Methane seepage is the primary food source for <em>P. tenebrosus</em> hatchlings at the Crab Hollow.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text states that adults, hatchlings, and eggs were repeatedly observed at the Crab Hollow but that no subadult or juvenile crabs were ever seen there. This implies that hatchlings must leave the site at some stage between hatching and adulthood, returning only as breeding adults.</p><p>Choice A is incorrect because the text says adults and eggs are present together at the site, indicating reproduction occurs there\u2014adults are not leaving before reproducing. Choice B is incorrect because the text suggests warmer temperatures are beneficial (\"accelerate egg development\"), not harmful. Choice D is incorrect because the text says nothing about what the hatchlings eat, only that the site functions as a breeding ground.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

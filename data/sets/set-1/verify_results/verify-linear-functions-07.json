@@ -1,0 +1,22 @@
+[
+  {"id": "3f5375d9-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"},
+  {"id": "a8e6bd75-s1", "templateId": "linear-functions.A4.T3.easy", "verdict": "wrong_answer", "detail": "y=3x+2 → slope 3, y-intercept (0,2) which is option B. Rationale correctly derives slope=3, b=2, but key labels 'c' (slope 2, y-intercept (0,3)). Rationale-key mismatch."},
+  {"id": "447fa970-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "d11910d6-s1", "templateId": "linear-functions.A4.T1.easy", "verdict": "wrong_answer", "detail": "Line passes through (0,9), so y-intercept is (0,9) = option A. Rationale states (0,9) but key labels 'b' which is (-3,0). Rationale-key mismatch."},
+  {"id": "e4a588ca-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "wrong_answer", "detail": "g(12)=(1/3)(21)=7 = option A. Rationale correctly computes 7 but key labels 'b' (=3). Rationale-key mismatch."},
+  {"id": "bc638f2d-s1", "templateId": "linear-functions.A2.T1.easy", "verdict": "wrong_answer", "detail": "Constant 7 = q(0) = initial height when bought, matching option B. Rationale identifies initial height but key labels 'c' (keeps cactus 7 months). Rationale-key mismatch."},
+  {"id": "bf36c815-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "d0cb49e8-s1", "templateId": "linear-functions.A4.T2.easy", "verdict": "ok"},
+  {"id": "7b17f86a-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "ok"},
+  {"id": "8643d906-s1", "templateId": "linear-functions.A2.T1.easy", "verdict": "wrong_answer", "detail": "R(15)=320 means population 320 in year 2015 = option A. Rationale states 'predicted population is 320 in 2015' but key labels 'b' (population 15 in 2015). Rationale-key mismatch."},
+  {"id": "5907e072-s1", "templateId": "linear-functions.A1.T4.easy", "verdict": "ok"},
+  {"id": "4f89e4d4-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "type_drift", "detail": "T2 = Solve f(x)=k for x. Clone evaluates p(64) directly (substitution), which is T1 (Evaluate f(c)), not T2. No target k to solve back to x."},
+  {"id": "88e13c8c-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "wrong_answer", "detail": "g(300)=24(300)+800=8000 = option C. Rationale computes 8000 but key labels 'd' ($1,124). Rationale-key mismatch."},
+  {"id": "fe287f7e-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "wrong_answer", "detail": "Total = 45x + 200 = option A. Rationale says 'total is 45x+200' but key labels 'b' (200x+45). Rationale-key mismatch."},
+  {"id": "a73a5c22-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "wrong_answer", "detail": "h(6)=12(6)+5=72+5=77 = option A. Rationale correctly computes 77 but key labels 'b' (=17). Rationale-key mismatch."},
+  {"id": "a232aa96-s1", "templateId": "linear-functions.A1.T1.easy", "verdict": "wrong_answer", "detail": "g(-7)=-4(-7)+50=28+50=78 = option B. Rationale correctly computes 78 but key labels 'c' (=22). Rationale-key mismatch."},
+  {"id": "1d18794b-s1", "templateId": "linear-functions.A3.T3.easy", "verdict": "ok"},
+  {"id": "aad7e1b9-s1", "templateId": "linear-functions.A1.T3.easy", "verdict": "ok"},
+  {"id": "0d391910-s1", "templateId": "linear-functions.A1.T2.easy", "verdict": "type_drift", "detail": "T2 = Solve f(x)=k for x. Clone evaluates h(3) directly (substitution), which is T1 (Evaluate f(c)), not T2. No target value k provided to solve back for x."},
+  {"id": "b51c173d-s1", "templateId": "linear-functions.A3.T1.easy", "verdict": "ok"}
+]

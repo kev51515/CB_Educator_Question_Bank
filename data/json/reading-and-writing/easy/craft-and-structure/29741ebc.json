@@ -1,0 +1,72 @@
+{
+  "questionId": "29741ebc",
+  "externalId": "d8f2d55e-1a54-42bc-9c26-4590addf0853",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 3,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:21:47.496987+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "1ab79f30-20ee-46c3-b910-71ca4d2d9ea6",
+      "content": "<p>It gives information about a famous person.</p>"
+    },
+    {
+      "id": "dfcb9ffc-c724-4437-8a93-40d57f6f19d2",
+      "content": "<p>It explains the meaning of a word.</p>"
+    },
+    {
+      "id": "c1d9bc7e-10d7-453c-a4bb-8a4d481e167c",
+      "content": "<p>It describes a debate among historians.</p>"
+    },
+    {
+      "id": "73e4923a-7c09-4cde-8e8d-f085a422afbc",
+      "content": "<p>It summarizes an unexpected finding.</p>"
+    }
+  ],
+  "keys": [
+    "dfcb9ffc-c724-4437-8a93-40d57f6f19d2"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. The underlined portion is a parenthetical phrase directly following the word &ldquo;microfilm,&rdquo; and it describes film containing small (&ldquo;scaled-down&rdquo;) images; the placement and focus of the portion indicate that it is serving to define the term &ldquo;microfilm.&rdquo;</p><p>Choice A is incorrect. Although the text is about accessing the writings of a famous historical figure (Douglass), the underlined portion doesn&rsquo;t give information about Douglass or any other person. Instead, it explains what microfilms are. Choice C is incorrect because the text never describes any kind of debate or disagreement; it simply describes a change in how researchers can access historical documents, with the underlined portion defining an important term. Choice D is incorrect because the text never makes any mention of a particular finding, unexpected or otherwise; it simply describes a change in how researchers do some of their work, with the underlined portion defining an important term.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+    "stimulus": "<p>In the past, historians who wanted to examine Frederick Douglass&rsquo;s diary and other personal papers had to visit the Library of Congress in Washington, DC, to view them on microfilm <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">(film containing scaled-down reproductions of documents)</span>. But traveling to the library often added time and costs to research projects. Now, by going to the library&rsquo;s website, researchers can access digitized versions of Douglass&rsquo;s papers without physically going anywhere.</p>",
+    "keys": [
+      "dfcb9ffc-c724-4437-8a93-40d57f6f19d2"
+    ],
+    "answerOptions": [
+      {
+        "id": "1ab79f30-20ee-46c3-b910-71ca4d2d9ea6",
+        "content": "<p>It gives information about a famous person.</p>"
+      },
+      {
+        "id": "dfcb9ffc-c724-4437-8a93-40d57f6f19d2",
+        "content": "<p>It explains the meaning of a word.</p>"
+      },
+      {
+        "id": "c1d9bc7e-10d7-453c-a4bb-8a4d481e167c",
+        "content": "<p>It describes a debate among historians.</p>"
+      },
+      {
+        "id": "73e4923a-7c09-4cde-8e8d-f085a422afbc",
+        "content": "<p>It summarizes an unexpected finding.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. The underlined portion is a parenthetical phrase directly following the word &ldquo;microfilm,&rdquo; and it describes film containing small (&ldquo;scaled-down&rdquo;) images; the placement and focus of the portion indicate that it is serving to define the term &ldquo;microfilm.&rdquo;</p><p>Choice A is incorrect. Although the text is about accessing the writings of a famous historical figure (Douglass), the underlined portion doesn&rsquo;t give information about Douglass or any other person. Instead, it explains what microfilms are. Choice C is incorrect because the text never describes any kind of debate or disagreement; it simply describes a change in how researchers can access historical documents, with the underlined portion defining an important term. Choice D is incorrect because the text never makes any mention of a particular finding, unexpected or otherwise; it simply describes a change in how researchers do some of their work, with the underlined portion defining an important term.</p>",
+    "externalid": "d8f2d55e-1a54-42bc-9c26-4590addf0853",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>In the past, historians who wanted to examine Frederick Douglass&rsquo;s diary and other personal papers had to visit the Library of Congress in Washington, DC, to view them on microfilm <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">(film containing scaled-down reproductions of documents)</span>. But traveling to the library often added time and costs to research projects. Now, by going to the library&rsquo;s website, researchers can access digitized versions of Douglass&rsquo;s papers without physically going anywhere.</p>"
+}

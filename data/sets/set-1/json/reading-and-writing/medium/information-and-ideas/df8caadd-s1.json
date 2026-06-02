@@ -1,0 +1,25 @@
+{
+  "questionId": "df8caadd-s1",
+  "originalId": "df8caadd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Partial List of Candidate Species for De-extinction</p></caption><thead><tr><th scope=\"col\">Common name</th><th scope=\"col\">Scientific name</th><th scope=\"col\">Became extinct</th></tr></thead><tbody><tr><th scope=\"row\">Thylacine</th><td><em>Thylacinus cynocephalus</em></td><td>1936</td></tr><tr><th scope=\"row\">Bramble Cay melomys</th><td><em>Melomys rubicola</em></td><td>2016</td></tr><tr><th scope=\"row\">Pyrenean ibex</th><td><em>Capra pyrenaica pyrenaica</em></td><td>2000</td></tr><tr><th scope=\"row\">Cave lion</th><td><em>Panthera spelaea</em></td><td>12,000 years before present</td></tr><tr><th scope=\"row\">Steller&rsquo;s sea cow</th><td><em>Hydrodamalis gigas</em></td><td>1768</td></tr></tbody></table></figure></p><p>The passage of time is among the many obstacles faced by scientists who are pursuing de-extinction efforts — that is, efforts to use breeding or a mixture of cloning and genetic engineering to bring back extinct species. Specifically, researchers are concerned that the longer a species has been extinct, the less likely it is that a suitable habitat still exists for that species. Among candidate species for de-extinction, this problem would be especially concerning for the <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>thylacine (<em>Thylacinus cynocephalus</em>), which became extinct only a few years before the Pyrenean ibex (<em>Capra pyrenaica pyrenaica</em>).</p>"},
+    {"id": "b", "content": "<p>Bramble Cay melomys (<em>Melomys rubicola</em>), which became extinct in 2016.</p>"},
+    {"id": "c", "content": "<p>cave lion (<em>Panthera spelaea</em>), which became extinct 12,000 years ago.</p>"},
+    {"id": "d", "content": "<p>Steller&rsquo;s sea cow (<em>Hydrodamalis gigas</em>), which became extinct several thousand years before the cave lion (<em>Panthera spelaea</em>).</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the species for which suitable habitat is least likely to still exist is the one extinct longest. The table shows the cave lion is the oldest extinction at 12,000 years before present. Choice A is incorrect because the thylacine&rsquo;s extinction date (1936) is recent. Choice B is incorrect because the Bramble Cay melomys (2016) is the most recent extinction listed. Choice D is incorrect because Steller&rsquo;s sea cow became extinct in 1768, which is far more recent than the cave lion, not earlier.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

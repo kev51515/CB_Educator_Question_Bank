@@ -1,0 +1,39 @@
+{
+  "questionId": "15d87c0f-s1",
+  "originalId": "15d87c0f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A bar graph shows the number of students enrolled in each of four science electives at a high school: biology (55 students), chemistry (42 students), physics (38 students), and earth science (29 students). How many more students are enrolled in biology than in chemistry?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>97</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The number of students in biology is 55, and the number in chemistry is 42. The difference is 55 minus 42 = 13.</p><p>Choice A is incorrect: 97 is the sum, not the difference.</p><p>Choice B is incorrect: 42 is the number of chemistry students.</p><p>Choice D is incorrect: 3 has no meaningful interpretation here.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

@@ -1,0 +1,24 @@
+{
+  "questionId": "8027db3f-s1",
+  "originalId": "8027db3f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In triangle PQR, cos(Q) = 9/41 and angle P is a right angle. What is the value of cos(R)?</p>",
+  "answerOptions": null,
+  "keys": [
+    "40/41",
+    ".9756",
+    ".9755"
+  ],
+  "rationale": "<p>Since angle P is a right angle, angles Q and R are complementary, so cos(R) = sin(Q). From cos(Q) = 9/41, using sin&sup2;Q + cos&sup2;Q = 1, sin(Q) = &radic;(1 &minus; 81/1681) = &radic;(1600/1681) = 40/41. Therefore cos(R) = 40/41 &asymp; 0.9756.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A6.T11.hard"
+}

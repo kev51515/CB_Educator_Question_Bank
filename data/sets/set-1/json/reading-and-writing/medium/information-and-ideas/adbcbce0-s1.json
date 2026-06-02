@@ -1,0 +1,25 @@
+{
+  "questionId": "adbcbce0-s1",
+  "originalId": "adbcbce0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from Elizabeth Barrett Browning&rsquo;s 1850 sonnet sequence <em>Sonnets from the Portuguese</em>, Sonnet 21.</p>\n<p>Say over again, and yet once over again,</p>\n<p>&ensp;That thou dost love me. Though the word repeated</p>\n<p>&ensp;Should seem &lsquo;a cuckoo-song,&rsquo; as thou dost treat it,</p>\n<p>Remember, never to the hill or plain,</p>\n<p>Valley and wood, without her cuckoo-strain</p>\n<p>&ensp;Comes the fresh Spring in all her green completed.</p>\n<p>&ensp;Belov&egrave;d, I, amid the darkness greeted</p>\n<p>By a doubtful spirit-voice, in that doubt&rsquo;s pain</p>\n<p>Cry, &lsquo;Speak once more&mdash;thou lovest!&rsquo;</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The speaker celebrates how repeated declarations of affection have already dispelled every doubt she once felt about a beloved.</p>"},
+    {"id": "b", "content": "<p>As an anniversary of a beloved&rsquo;s first declaration approaches, the speaker feels torn over how to mark the occasion.</p>"},
+    {"id": "c", "content": "<p>After years of indifference toward a beloved&rsquo;s reassurances, the speaker fears that her own coldness has driven him away.</p>"},
+    {"id": "d", "content": "<p>Because doubt continues to trouble the speaker, she pleads with a beloved to repeat his declaration of love even at the risk of seeming monotonous.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The speaker asks the beloved to &ldquo;say over again&rdquo; that he loves her, acknowledges that the repetition might seem like a &ldquo;cuckoo-song,&rdquo; defends the request with the image of spring&rsquo;s necessary cuckoo-strain, and explains that, in her doubt&rsquo;s pain, she still cries &ldquo;Speak once more.&rdquo;</p><p>Choice A is incorrect because the speaker is still asking for reassurance — her doubt has not been dispelled. Choice B is incorrect because no anniversary is mentioned anywhere in the excerpt. Choice C is incorrect because nothing suggests the speaker has been indifferent or that the beloved has been driven away; the speaker is the one urging him to speak.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

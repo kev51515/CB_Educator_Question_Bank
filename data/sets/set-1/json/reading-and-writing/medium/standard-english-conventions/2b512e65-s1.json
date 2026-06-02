@@ -1,0 +1,25 @@
+{
+  "questionId": "2b512e65-s1",
+  "originalId": "2b512e65",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Sanjay Iyer, a plant geneticist at Cornell University, recently observed that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> share an unusual capacity for stress-induced flowering that allows them to seed under conditions that would normally suppress reproduction.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>brassicas, leafy crops that include kale, cabbage, and broccoli</p>"},
+    {"id": "b", "content": "<p>brassicas&mdash;leafy crops&mdash;that include kale, cabbage, and broccoli,</p>"},
+    {"id": "c", "content": "<p>brassicas&mdash;leafy crops that include kale, cabbage, and broccoli&mdash;</p>"},
+    {"id": "d", "content": "<p>brassicas, leafy crops that include: kale, cabbage, and broccoli,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the punctuation of a supplementary element within a sentence. The dash after &ldquo;brassicas&rdquo; pairs with the dash after &ldquo;broccoli&rdquo; to clearly separate the supplementary element &ldquo;leafy crops that include kale, cabbage, and broccoli&rdquo; from the rest of the sentence. Because the supplementary element contains its own internal commas, paired dashes are needed at the outer boundaries.</p><p>Choice A is incorrect because commas can&rsquo;t clearly set off a supplementary element that itself contains commas. Choice B is incorrect because the inserted inner dashes break the span apart and the trailing comma mismatches the opening dash. Choice D is incorrect because a colon and trailing comma fail to mark matched boundaries around the supplementary element.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

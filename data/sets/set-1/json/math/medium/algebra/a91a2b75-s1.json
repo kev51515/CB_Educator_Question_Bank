@@ -1,0 +1,22 @@
+{
+  "questionId": "a91a2b75-s1",
+  "originalId": "a91a2b75",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>g</em> is defined by <em>g</em>(<em>x</em>) = \u22127<em>x</em> + 12. What is the <em>y</em>-coordinate of the <em>y</em>-intercept of the graph of <em>y</em> = <em>g</em>(<em>x</em>) in the <em>xy</em>-plane?</p>",
+  "answerOptions": [],
+  "keys": [
+    "12"
+  ],
+  "rationale": "<p>The correct answer is 12. The <em>y</em>-intercept of a graph occurs where <em>x</em> = 0. Substituting 0 into <em>g</em>(<em>x</em>) = \u22127<em>x</em> + 12 yields <em>g</em>(0) = 12. Therefore, the <em>y</em>-coordinate of the <em>y</em>-intercept is 12.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "42e6cc83-s1",
+  "originalId": "42e6cc83",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Looking back at the early 1900s, given the foundational work on radioactivity that had already been published by Henri Becquerel and the Curies, the discovery of the atomic nucleus by an experimentalist of Ernest Rutherford's caliber was, in many respects, a natural next step. It may not have been mere chance, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that researchers in several European laboratories were converging on similar conclusions during the same decade. The history of physics offers many such cases in which a major insight emerges from multiple investigators working independently along parallel lines.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>nevertheless,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>additionally,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>then,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>for instance,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Then\" signals that the second sentence's claim about converging conclusions follows logically from the first sentence's setup about prior work on radioactivity. The first sentence establishes conditions that made the discovery likely; the second presents the predictable outcome.</p><p>Choice A is incorrect because \"nevertheless\" would signal contrast, but the second sentence does not contradict the first. Choice B is incorrect because \"additionally\" would signal a mere addition of unrelated information, whereas the second sentence is a logical consequence of the first. Choice D is incorrect because \"for instance\" would mark the second sentence as an example of the first, but it instead states a result that follows from the conditions described.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A5.T14.hard"
+}

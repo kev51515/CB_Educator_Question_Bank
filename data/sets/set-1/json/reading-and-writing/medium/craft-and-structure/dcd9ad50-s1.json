@@ -1,0 +1,25 @@
+{
+  "questionId": "dcd9ad50-s1",
+  "originalId": "dcd9ad50",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>The following text is adapted from Anthony Trollope&rsquo;s 1855 novel <em>The Warden</em>. Mr. Crowther is an attorney in the town of Barchester.</p>\n<blockquote>\n<p>By the townsfolk of Barchester and its precincts, [Mr. Crowther] was esteemed as a man of quite singular acuteness and judgment, who must produce a notable impression in the chambers and committee-rooms of London upon his occasional visits to the capital; and by his fellow attorneys he was regarded as an obliging and unobtrusive colleague. Mr. Crowther never permitted himself any sharp dispute; he proposed what might be considered, but seldom uttered what he himself considered; he never let either gentleman or lady perceive that he was amused at their expense, and he never afforded anyone an occasion to be amused at <em>his</em>.</p>\n</blockquote>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It presents the favorable opinion of Mr. Crowther that other people hold and then describes the behaviors of Mr. Crowther that enable him to maintain that favorable opinion.</p>"},
+    {"id": "b", "content": "<p>It shows that Mr. Crowther had originally been held in high regard by his colleagues and then details the events that caused their regard for him to subside.</p>"},
+    {"id": "c", "content": "<p>It implies that Mr. Crowther&rsquo;s neighbors are more na&iuml;ve in their estimation of him than people in London are and then explains why his neighbors have been so easily misled.</p>"},
+    {"id": "d", "content": "<p>It stresses the discrepancy between Mr. Crowther&rsquo;s public and private conduct and then alludes to his motivation for hiding his true personality.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it best describes the overall structure of the text. The first part of the text presents the favorable opinions others hold of Mr. Crowther: the townsfolk consider him remarkable for his acuteness and judgment and imagine he impresses people in London, while his fellow attorneys regard him as obliging and unobtrusive. The text then describes behaviors that enable him to cultivate and preserve his positive reputation: he avoids sharp disputes, rarely says what he himself considers, never lets others see he is amused at them, and never gives anyone occasion to be amused at him.</p><p>Choice B is incorrect because the text does not describe any events that caused people&rsquo;s regard for Mr. Crowther to diminish. Choice C is incorrect because the text does not suggest that the neighbors are more na&iuml;ve than Londoners. Choice D is incorrect because the text does not discuss how Mr. Crowther behaves in private, nor allude to his motivations.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

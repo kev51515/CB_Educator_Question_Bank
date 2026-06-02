@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "a8ae0d22-s1",
+  "originalId": "a8ae0d22",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two variables, x and y, are related such that for each increase of 1 in the value of x, the value of y is multiplied by 3. When x = 0, y = 150. Which equation represents this relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 150 &middot; 3<sup>x</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 3 &middot; 150<sup>x</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 150 + 3x</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 150x<sup>3</sup></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A constant multiplicative growth of factor 3 per unit increase in x is exponential, of the form y = y<sub>0</sub> &middot; r<sup>x</sup>. With y<sub>0</sub> = 150 and r = 3, the equation is y = 150 &middot; 3<sup>x</sup>.</p><p>Choice B swaps the base and initial value. Choice C is linear. Choice D is power, not exponential.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

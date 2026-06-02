@@ -1,0 +1,39 @@
+{
+  "questionId": "21e539a0-s1",
+  "originalId": "21e539a0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>A pump delivers 72x liters of water into a tank in 4y minutes. Which expression represents the number of liters of water the pump delivers in 11y minutes at this rate?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>198x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x/198</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11x/72</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>72x/11</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The pump's rate is 72x / (4y) liters per minute. In 11y minutes the volume delivered is [72x/(4y)] \u00d7 11y = (72x \u00d7 11) / 4 = 792x / 4 = 198x liters.</p><p>Choices B, C, and D result from inverting the rate or combining the factors incorrectly.</p>",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T2.hard"
+}

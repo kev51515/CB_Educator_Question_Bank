@@ -1,0 +1,39 @@
+{
+  "questionId": "208626df-s1",
+  "originalId": "208626df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "templateId": "linear-inequalities-in-one-or-two-variables.misc.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>2<i>L</i> + 2<i>W</i> &le; 40. A rectangle has length <i>L</i> and width <i>W</i>. The inequality gives the possible values of <i>L</i> and <i>W</i> for which the perimeter of the rectangle is less than or equal to 40. Which statement is the best interpretation of (<i>L</i>, <i>W</i>) = (11, 5) in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>If the rectangle has length 11 and width 5, its perimeter is less than or equal to 40.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>If the rectangle has length 5 and width 11, its perimeter is less than or equal to 40.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>If the rectangle has length 11 and width 5, its perimeter is greater than or equal to 40.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>If the rectangle has length 5 and width 11, its perimeter is greater than or equal to 40.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The ordered pair (<i>L</i>, <i>W</i>) = (11, 5) gives <i>L</i> = 11 and <i>W</i> = 5, and the inequality says the perimeter is at most 40.</p><p>Choice B swaps the labels. Choices C and D use the wrong direction of inequality.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z"
+}

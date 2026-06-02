@@ -1,0 +1,39 @@
+{
+  "questionId": "869a32f1-s1",
+  "originalId": "869a32f1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The low temperature, in degrees Fahrenheit (\u00b0F), in a town was recorded for each of 5 days. The data are shown below.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Day</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th></tr><tr><td>Low temperature (\u00b0F)</td><td>64</td><td>65</td><td>64</td><td>63</td><td>64</td></tr></table><p>Over this 5-day period, which of the following is NOT equal to 64\u00b0F?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Range of the low temperatures</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Mean of the low temperatures</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Median of the low temperatures</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Mode of the low temperatures</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The range is the difference between the maximum (65\u00b0F) and minimum (63\u00b0F) values, which is 65 \u2212 63 = 2\u00b0F, not 64\u00b0F.</p><p>Choice B is incorrect. The mean is (64+65+64+63+64) \u00f7 5 = 320 \u00f7 5 = 64\u00b0F.</p><p>Choice C is incorrect. Ordered: 63, 64, 64, 64, 65; the median is 64\u00b0F.</p><p>Choice D is incorrect. The value 64\u00b0F occurs three times, more than any other, so the mode is 64\u00b0F.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.easy"
+}

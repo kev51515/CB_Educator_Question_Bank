@@ -1,0 +1,39 @@
+{
+  "questionId": "f5959727-s1",
+  "originalId": "f5959727",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Art Nouveau designers prized organic forms and the appearance of natural growth in their work. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the wrought-iron M\u00e9tro entrances Hector Guimard designed for Paris in the 1900s weren't actually sprouting from the pavement like vines. Still, one detects botanical inspiration in their sinuous curves, tendril-like railings, and lamps shaped like budding flowers.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Likewise,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Of course,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>As a result,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Moreover,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Of course\" logically introduces an acknowledgment of an obvious qualification to the preceding claim. The previous sentence claims that Art Nouveau designers favored organic forms; this sentence concedes the obvious limit of that influence (the iron entrances weren't literally growing). \"Of course\" signals that concession naturally.</p><p>Choice A is incorrect because \"likewise\" would signal similarity between the two sentences, but the second sentence introduces a contrasting limitation, not a parallel observation. Choice C is incorrect because \"as a result\" would mean the iron entrances not literally growing is a consequence of designers' preference for organic forms\u2014which doesn't make sense. Choice D is incorrect because \"moreover\" would suggest the second sentence simply adds to the first, but it instead concedes an obvious caveat.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T3.hard"
+}

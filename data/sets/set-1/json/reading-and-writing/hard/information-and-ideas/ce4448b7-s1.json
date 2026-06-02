@@ -1,0 +1,39 @@
+{
+  "questionId": "ce4448b7-s1",
+  "originalId": "ce4448b7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Researchers recently found that occasional pauses during an enjoyable experience, such as brief intermissions inserted during a live theater performance, often increase audiences' reported enjoyment of the show. Suspecting that pauses during an unpleasant experience would have the opposite effect, the researchers had participants watch a continuous 25-minute video of slowly dripping motor oil and anticipated that those whose viewing experience was frequently interrupted with short breaks of blank screen would thus <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>perceive the speed of the dripping oil as growing slower over time.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>find the pauses more irritating as time went on.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>rate the experience of watching the dripping-oil video as lasting for less time than it actually lasted.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>rate the viewing experience as more negative than those whose viewing experience was uninterrupted.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says that pauses during an enjoyable experience tend to make the experience seem more enjoyable, and that the researchers suspect pauses during an unpleasant experience would have the opposite effect. So they would expect participants whose unpleasant viewing experience was frequently interrupted to rate the experience as more negative than participants whose viewing experience was uninterrupted.</p><p>Choice A is incorrect because the text makes no claims about how interruptions affect viewers' perception of the speed of what they are watching. Choice B is incorrect because the text never discusses how the interruptions themselves are perceived. Choice C is incorrect because the text makes no claims about how interruptions affect perceived duration.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T1.hard"
+}

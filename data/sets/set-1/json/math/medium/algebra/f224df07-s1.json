@@ -1,0 +1,39 @@
+{
+  "questionId": "f224df07-s1",
+  "originalId": "f224df07",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A delivery drone carries only 50-pound packages and 70-pound packages. For each delivery trip, the drone must carry at least 8 packages, and the total weight of the packages can be at most 470 pounds. What is the maximum number of 70-pound packages that the drone can carry per trip?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Suppose the drone carries exactly 8 packages, with <em>n</em> packages weighing 70 lb and (8 \u2212 <em>n</em>) packages weighing 50 lb. Total weight is 70<em>n</em> + 50(8 \u2212 <em>n</em>) = 20<em>n</em> + 400. Setting 20<em>n</em> + 400 \u2264 470 gives 20<em>n</em> \u2264 70, so <em>n</em> \u2264 3.5. The maximum whole number of 70-pound packages is 3. Adding more total packages can only reduce <em>n</em>, so 3 remains the maximum.</p><p>Choices B, C, and D are incorrect; they exceed the total-weight limit.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "2d31caae-s1",
+  "originalId": "2d31caae",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the ratings given by 200 customers for a restaurant\u2019s service.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Rating</th><th>Number of customers</th></tr><tr><td>1 star</td><td>16</td></tr><tr><td>2 stars</td><td>20</td></tr><tr><td>3 stars</td><td>80</td></tr><tr><td>4 stars</td><td>64</td></tr><tr><td>5 stars</td><td>20</td></tr></table><p>According to the table, what percent of the customers gave the service a rating of 2 stars?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>20%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>32%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40%</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The number of 2-star ratings is 20 out of 200 total customers: 20/200 = 0.10 = 10%.</p><p>Choice B is incorrect. This is the number of 2-star ratings expressed as a percent of 100, not of 200.</p><p>Choice C is incorrect. This is the percent of 3-star ratings.</p><p>Choice D is incorrect. This results from a computational error.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A2.T1.easy"
+}

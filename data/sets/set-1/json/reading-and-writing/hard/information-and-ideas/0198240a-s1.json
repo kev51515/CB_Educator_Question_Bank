@@ -1,0 +1,39 @@
+{
+  "questionId": "0198240a-s1",
+  "originalId": "0198240a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>At ordinary atmospheric pressures, carbon dioxide molecules behave as a typical gas, with weak interactions between widely spaced molecules. Under extreme pressure, however, CO<sub>2</sub> can be forced into denser arrangements in which molecules pack closely enough to form ordered crystalline structures more reminiscent of solids than of gases. Several researchers have hypothesized that under such high-pressure conditions, CO<sub>2</sub> would also display unusual mechanical properties&mdash;in particular, that it would resist compression more strongly than ordinary CO<sub>2</sub> gas and would conduct heat at rates considerably higher than expected for a molecular compound.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; hypothesis?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>At ordinary atmospheric pressure, CO<sub>2</sub> molecules form a gas whose molecules are widely separated.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Some other gases, when placed under extreme pressure, also form ordered crystalline structures.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Researchers have developed an apparatus that can subject samples of CO<sub>2</sub> to extreme pressure for short periods of time.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Laboratory measurements of high-pressure CO<sub>2</sub> samples show that they resist further compression more strongly than ordinary CO<sub>2</sub> gas does and conduct heat at rates well above typical molecular compounds.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The researchers hypothesize that high-pressure CO<sub>2</sub> would resist compression more strongly and conduct heat at unusually high rates. A laboratory measurement showing exactly these two properties would directly support the hypothesis.</p><p>Choice A is incorrect because describing the behavior of CO<sub>2</sub> at ordinary pressure says nothing about its behavior at extreme pressures. Choice B is incorrect because the hypothesis concerns CO<sub>2</sub> specifically, not other gases. Choice C is incorrect because the existence of an apparatus would not, by itself, provide evidence for or against the hypothesized properties.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.medium"
+}

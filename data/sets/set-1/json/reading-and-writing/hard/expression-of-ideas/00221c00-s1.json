@@ -1,0 +1,39 @@
+{
+  "questionId": "00221c00-s1",
+  "originalId": "00221c00",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 1829, while in exile in Paris, Polish poet Adam Mickiewicz drafted an open letter celebrating the political maturity of independent European nations and expressing hope that the partitioned regions of Poland might someday be reunited. The letter was addressed to a Polish \u00e9migr\u00e9 bookseller, Karol Forster; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> though, Mickiewicz's aim was to nudge sympathetic Western politicians into supporting Polish self-rule.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>additionally,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>ultimately,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>accordingly,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>consequently,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. &ldquo;Ultimately&rdquo; means &ldquo;in the long run&rdquo; or &ldquo;at the highest level.&rdquo; Mickiewicz addressed the letter to one person, but his real, larger goal was to influence Western politicians. &ldquo;Ultimately&rdquo; fits this contrast between immediate recipient and broader audience.</p><p>Choice A indicates addition; the second clause contrasts the first. Choices C and D indicate cause-and-effect; writing the letter to Forster did not cause Mickiewicz to have his broader political goal.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A5.T16.hard"
+}

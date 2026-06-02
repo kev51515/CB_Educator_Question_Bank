@@ -1,0 +1,8 @@
+[
+  {
+    "id": "6a305cd0-s1",
+    "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy",
+    "verdict": "constraint_violation",
+    "detail": "Violates must_preserve: 'at least one distractor confuses sample with population, individual with mean, or not-possible-outside with less-plausible-outside'. All four distractors here are arithmetic variants (less than 48, greater than 56, outside interval) with no conceptual sample-vs-population or individual-vs-mean distractor. Matches the listed common_bug of removing the conceptual distractor."
+  }
+]

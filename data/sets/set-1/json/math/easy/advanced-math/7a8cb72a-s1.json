@@ -1,0 +1,39 @@
+{
+  "questionId": "7a8cb72a-s1",
+  "originalId": "7a8cb72a",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mn>9</mn><mi>a</mi><mo>=</mo><mn>4</mn><mfenced><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mfenced></math></p><p>The given equation relates the positive numbers <em>a</em>, <em>b</em>, and <em>c</em>. Which equation correctly gives <em>a</em> in terms of <em>b</em> and <em>c</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mn>4</mn><mfenced><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mfrac><mrow><mn>4</mn><mfenced><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mfenced></mrow><mn>9</mn></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mn>4</mn><mfenced><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mfenced><mo>-</mo><mn>9</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mn>4</mn><mo>-</mo><mi>b</mi><mo>-</mo><mi>c</mi><mo>-</mo><mn>9</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Dividing both sides by 9 yields <math><mi>a</mi><mo>=</mo><mfrac><mrow><mn>4</mn><mfenced><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mfenced></mrow><mn>9</mn></mfrac></math>.</p><p>Choices A, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z"
+}

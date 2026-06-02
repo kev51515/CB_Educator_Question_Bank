@@ -1,0 +1,22 @@
+[
+  {"id": "15daa8d6-s1", "templateId": "linear-equations-in-one-variable.A3.T9.medium", "verdict": "ok"},
+  {"id": "70e29454-s1", "templateId": "linear-equations-in-one-variable.A3.T9.medium", "verdict": "ok"},
+  {"id": "40049d49-s1", "templateId": "linear-equations-in-one-variable.A3.T9.medium", "verdict": "ok"},
+  {"id": "ce6b52d8-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "bf749912-s1", "templateId": "linear-equations-in-one-variable.A1.T3.medium", "verdict": "ok"},
+  {"id": "f60aa0dc-s1", "templateId": "linear-equations-in-one-variable.A4.T12.medium", "verdict": "ok"},
+  {"id": "5a7ab8e8-s1", "templateId": "linear-equations-in-one-variable.A3.T8.medium", "verdict": "ok"},
+  {"id": "3f8a701b-s1", "templateId": "linear-equations-in-one-variable.A3.T9.hard", "verdict": "ok"},
+  {"id": "0393ba15-s1", "templateId": "linear-equations-in-one-variable.A3.T8.hard", "verdict": "ok"},
+  {"id": "f14484a5-s1", "templateId": "linear-equations-in-one-variable.A2.T5.hard", "verdict": "ok"},
+  {"id": "aee9fd2d-s1", "templateId": "linear-equations-in-one-variable.A3.T10.hard", "verdict": "ok"},
+  {"id": "0cb57740-s1", "templateId": "linear-equations-in-one-variable.A2.T5.hard", "verdict": "ok"},
+  {"id": "628300a9-s1", "templateId": "linear-equations-in-one-variable.A2.T5.hard", "verdict": "ok"},
+  {"id": "2937ef4f-s1", "templateId": "linear-equations-in-one-variable.A2.T4.hard", "verdict": "ok"},
+  {"id": "7d5d1b32-s1", "templateId": "linear-equations-in-one-variable.A3.T9.hard", "verdict": "ok"},
+  {"id": "69f609b2-s1", "templateId": "linear-equations-in-one-variable.A3.T8.hard", "verdict": "ok"},
+  {"id": "25e1cfed-s1", "templateId": "linear-equations-in-one-variable.A3.T8.hard", "verdict": "ok"},
+  {"id": "f5ff91b2-s1", "templateId": "linear-equations-in-one-variable.A3.T10.hard", "verdict": "ok"},
+  {"id": "153ee763-s1", "templateId": "linear-equations-in-one-variable.A3.T9.hard", "verdict": "ok"},
+  {"id": "ac472881-s1", "templateId": "linear-equations-in-one-variable.A3.T9.hard", "verdict": "ok"}
+]

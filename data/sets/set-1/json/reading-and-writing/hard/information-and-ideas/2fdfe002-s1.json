@@ -1,0 +1,39 @@
+{
+  "questionId": "2fdfe002-s1",
+  "originalId": "2fdfe002",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from an early twentieth-century poem.</p>\n<blockquote class=\"dap_poemexcerpt\">\n<p>The caged bird beats her wings against the bars,</p>\n<p>And I, behind my softer cage of years,</p>\n<p>Beat in like manner at the iron stars</p>\n<p>That hem my spirit's flight with hopes and fears.</p>\n<p>Her bars are made of brass; my own, of will,</p>\n<p>And custom that no purpose may unbind;</p>\n<p>Yet hers and mine alike are cages still,</p>\n<p>And keep the wanderer body, soul, and mind.</p>\n</blockquote>",
+  "stem": "<p>Based on the text, what challenge do humans sometimes experience?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>They quickly lose patience with everyday burdens because of a deficiency of inner strength.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>They struggle to care for caged creatures because of a deficiency of empathy.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>They harbor desires they cannot realize because of constraints that bind them.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>They fail to pursue worthwhile aims because of a deficiency of ambition.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The poem compares the speaker to a caged bird, claiming that the speaker is just as confined\u2014by \"will\" and \"custom\"\u2014and that this confinement \"hem[s] my spirit's flight with hopes and fears.\" The text thus depicts humans as having longings (\"hopes,\" the \"spirit's flight\") that they cannot fully realize because of constraining limitations.</p><p>Choice A is incorrect because the speaker says nothing about losing patience or lacking inner strength; the issue is restraint, not impatience. Choice B is incorrect because the bird is used as a metaphor; the speaker does not discuss treating caged animals or lacking empathy. Choice D is incorrect because the speaker does not suggest a lack of ambition\u2014on the contrary, the speaker has desires but cannot act on them due to external/internal constraints.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T8.hard"
+}

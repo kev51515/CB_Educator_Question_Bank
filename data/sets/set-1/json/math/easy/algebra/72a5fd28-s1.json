@@ -1,0 +1,22 @@
+{
+  "questionId": "72a5fd28-s1",
+  "originalId": "72a5fd28",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>For an event, 90 chairs are needed. Chairs are sold in sets of 14. What is the minimum number of sets that should be bought for the event?</p>",
+  "answerOptions": null,
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>The correct answer is 7. Six sets provide 6 &times; 14 = 84 chairs, which is fewer than 90. Seven sets provide 7 &times; 14 = 98 chairs, which is at least 90. So 7 sets is the minimum.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A2.T1.easy"
+}

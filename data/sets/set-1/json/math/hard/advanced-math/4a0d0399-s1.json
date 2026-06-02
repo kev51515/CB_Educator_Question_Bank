@@ -1,0 +1,22 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "4a0d0399-s1",
+  "originalId": "4a0d0399",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = a<sup>x</sup> + b, where a and b are constants. In the xy-plane, the graph of y = f(x) has an x-intercept at (3, 0) and a y-intercept at (0, &minus;127). What is the value of b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-128"
+  ],
+  "rationale": "<p>The correct answer is &minus;128. The y-intercept means f(0) = &minus;127. Substituting x = 0 into f(x) = a<sup>x</sup> + b gives f(0) = a<sup>0</sup> + b = 1 + b = &minus;127, so b = &minus;128.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

@@ -1,0 +1,12 @@
+[
+  {"id": "d54e16ee-s1", "templateId": "transitions.A6.T17.medium", "verdict": "ok"},
+  {"id": "d9dad012-s1", "templateId": "transitions.A4.T10.medium", "verdict": "ok"},
+  {"id": "ddb77846-s1", "templateId": "transitions.A1.T2.medium", "verdict": "ok"},
+  {"id": "e1b00a70-s1", "templateId": "transitions.A2.T4.medium", "verdict": "ok"},
+  {"id": "ec3d7605-s1", "templateId": "transitions.A4.T11.medium", "verdict": "ok"},
+  {"id": "eea351c4-s1", "templateId": "transitions.A4.T10.medium", "verdict": "ok"},
+  {"id": "f114cbf0-s1", "templateId": "transitions.A1.T1.medium", "verdict": "type_drift", "detail": "T1 requires two paired entities differing on a single dimension. Clone uses a single entity (bombardier beetle) with two opposing process states (reaction occurring vs ceasing), violating must_preserve 'Two clearly paired entities'. Better fits T2 expectation reversal."},
+  {"id": "f8c4591b-s1", "templateId": "transitions.A1.T1.medium", "verdict": "ok"},
+  {"id": "fd24f48f-s1", "templateId": "transitions.A6.T17.medium", "verdict": "ok"},
+  {"id": "feb1e6da-s1", "templateId": "transitions.A4.T11.medium", "verdict": "ok"}
+]

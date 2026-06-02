@@ -1,0 +1,22 @@
+{
+  "questionId": "b9835972-s1",
+  "originalId": "b9835972",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, line n passes through the origin (0, 0) and is parallel to the line represented by the equation y = 6x + 5. If line n also passes through the point (4, d), what is the value of d?</p>",
+  "answerOptions": null,
+  "keys": [
+    "24"
+  ],
+  "rationale": "<p>A line parallel to y = 6x + 5 has slope 6. Line n passes through (0, 0), so its equation is y = 6x. At x = 4: y = 24. Therefore d = 24.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T14.hard"
+}

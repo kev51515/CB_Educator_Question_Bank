@@ -1,0 +1,72 @@
+{
+  "questionId": "c102f9b0",
+  "externalId": "2c5ae910-ddc7-449f-b570-d39c820b417b",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1730147323048,
+  "createDate": 1730147323048,
+  "scrapedAt": "2026-05-25T12:23:13.187627+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "1eb0afb6-5f22-4311-80eb-83f2eb53a33f",
+      "content": "<p>these</p>"
+    },
+    {
+      "id": "f5a6a8c6-1a10-4cf1-9b57-c9937656fd86",
+      "content": "<p>those</p>"
+    },
+    {
+      "id": "23c0b2d7-b524-43ab-895d-def516e5ce97",
+      "content": "<p>this</p>"
+    },
+    {
+      "id": "b3853456-b3dc-43a1-8cc7-188b7dce6c8b",
+      "content": "<p>some</p>"
+    }
+  ],
+  "keys": [
+    "23c0b2d7-b524-43ab-895d-def516e5ce97"
+  ],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"this\" agrees in number with the singular antecedent \"L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013.\" The pronoun \"this\" is referring back to the singular event described earlier in the sentence in which Minh became secretary-general of ASEAN.</p><p>Choice A is incorrect because the plural pronoun \"these\" doesn&rsquo;t agree in number with the singular antecedent \"L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013.\" Choice B is incorrect because the plural pronoun \"those\" doesn&rsquo;t agree in number with the singular antecedent \"L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013.\" Choice D is incorrect because the indefinite pronoun \"some\" is ambiguous in this context; the resulting sentence leaves unclear what marks the first time the organization appointed a Vietnamese leader.</p>",
+  "raw": {
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013, making <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the first time the organization would appoint a Vietnamese leader.</p>",
+    "type": "mcq",
+    "keys": [
+      "23c0b2d7-b524-43ab-895d-def516e5ce97"
+    ],
+    "answerOptions": [
+      {
+        "id": "1eb0afb6-5f22-4311-80eb-83f2eb53a33f",
+        "content": "<p>these</p>"
+      },
+      {
+        "id": "f5a6a8c6-1a10-4cf1-9b57-c9937656fd86",
+        "content": "<p>those</p>"
+      },
+      {
+        "id": "23c0b2d7-b524-43ab-895d-def516e5ce97",
+        "content": "<p>this</p>"
+      },
+      {
+        "id": "b3853456-b3dc-43a1-8cc7-188b7dce6c8b",
+        "content": "<p>some</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer. The convention being tested is pronoun-antecedent agreement. The singular pronoun \"this\" agrees in number with the singular antecedent \"L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013.\" The pronoun \"this\" is referring back to the singular event described earlier in the sentence in which Minh became secretary-general of ASEAN.</p><p>Choice A is incorrect because the plural pronoun \"these\" doesn&rsquo;t agree in number with the singular antecedent \"L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013.\" Choice B is incorrect because the plural pronoun \"those\" doesn&rsquo;t agree in number with the singular antecedent \"L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013.\" Choice D is incorrect because the indefinite pronoun \"some\" is ambiguous in this context; the resulting sentence leaves unclear what marks the first time the organization appointed a Vietnamese leader.</p>",
+    "externalid": "2c5ae910-ddc7-449f-b570-d39c820b417b",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>L&ecirc; L\u01b0\u01a1ng Minh became the thirteenth secretary-general of the Association of Southeast Asian Nations (ASEAN) in January 2013, making <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the first time the organization would appoint a Vietnamese leader.</p>"
+}

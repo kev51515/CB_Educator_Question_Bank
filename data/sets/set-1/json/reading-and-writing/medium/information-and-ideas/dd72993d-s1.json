@@ -1,0 +1,25 @@
+{
+  "questionId": "dd72993d-s1",
+  "originalId": "dd72993d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.medium",
+  "stimulus": "<p>Lakes rich in dissolved organic matter appear brown, while increases in cyanobacteria make lakes appear green. To track properties such as the organic matter or cyanobacteria content of large North American lakes, Annika Sjoberg and colleagues used satellite imagery to determine the dominant visible wavelengths of light measured for different portions of these lakes. The researchers classified wavelengths of 510 nanometers (nm) and below as green, wavelengths between 510 and 580 nm as yellow, and wavelengths of 580 nm and above as brown. The researchers concluded that for Lake Superior, near-shore portions of the lake tend to carry more organic matter than do open-water portions of the lake.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Near-shore portions of Lake Superior typically had dominant wavelengths of light above 580 nm, while open-water portions of the lake typically had dominant wavelengths below 580 nm.</p>"},
+    {"id": "b", "content": "<p>Portions of Lake Superior that had higher levels of chlorophyll-a, which contributes to the green color of photosynthetic organisms, had dominant wavelengths of light between 500 and 570 nm.</p>"},
+    {"id": "c", "content": "<p>In small lakes near Lake Superior, the dominant wavelength of light tended to be above 580 nm near the lakes&rsquo; shores and below 580 nm in the lakes&rsquo; centers.</p>"},
+    {"id": "d", "content": "<p>The majority of portions of Lake Superior were found to have dominant wavelengths of light significantly higher than 580 nm.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because rivers/lakes rich in organic matter appear brown (≥580 nm). Finding that near-shore portions are ≥580 nm and open-water portions are below 580 nm supports the conclusion that near-shore portions carry more organic matter than open-water portions. Choice B is incorrect because it concerns chlorophyll-a, not organic matter contrast between near-shore and open-water. Choice C is incorrect because it describes other small lakes, not Lake Superior&rsquo;s near-shore vs. open-water comparison. Choice D is incorrect because it speaks of the lake overall, not the specific contrast required.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

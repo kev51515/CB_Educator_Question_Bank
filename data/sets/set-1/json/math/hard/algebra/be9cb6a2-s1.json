@@ -1,0 +1,39 @@
+{
+  "questionId": "be9cb6a2-s1",
+  "originalId": "be9cb6a2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The cost of renting a forklift for up to 14 days is $320 for the first day and $160 for each additional day. Which equation gives the cost y, in dollars, of renting the forklift for x days, where x is a positive integer and x \u2264 14?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 320 + 160(x - 1)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = 160 + 320(x - 1)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 320x + 160</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = 480x</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The first day costs $320, and each of the remaining (x - 1) days costs $160. Total: y = 320 + 160(x - 1). Verification: x = 1 gives y = 320 \u2713; x = 2 gives y = 480.</p><p>Choice B swaps the rates. Choice C charges $320/day for every day plus a flat $160. Choice D charges the sum of the two rates per day.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T4.hard"
+}

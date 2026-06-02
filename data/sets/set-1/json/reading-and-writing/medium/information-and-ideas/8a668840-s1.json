@@ -1,0 +1,25 @@
+{
+  "questionId": "8a668840-s1",
+  "originalId": "8a668840",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Monthly Average Rainfall (mm) from April to September in Quito and Manta, Ecuador</p></caption><thead><tr><th>Month</th><th>Quito</th><th>Manta</th></tr></thead><tbody><tr><td>April</td><td>175</td><td>32</td></tr><tr><td>May</td><td>120</td><td>15</td></tr><tr><td>June</td><td>55</td><td>9</td></tr><tr><td>July</td><td>22</td><td>4</td></tr><tr><td>August</td><td>30</td><td>3</td></tr><tr><td>September</td><td>70</td><td>5</td></tr></tbody></table></figure><p>A student is researching average monthly rainfall in different cities in Ecuador. When comparing trends in Quito and Manta, the student concludes that both cities show a similar overall pattern in average monthly rainfall from April to September.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the student&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In each city, average monthly rainfall remains roughly the same from June through August before rising sharply in September.</p>"},
+    {"id": "b", "content": "<p>In each city, average monthly rainfall decreases from April to July and then rises slightly from July to September.</p>"},
+    {"id": "c", "content": "<p>Both cities receive less than 10 mm of rainfall in each month from April through September.</p>"},
+    {"id": "d", "content": "<p>Both cities receive more than 100 mm of rainfall in April and May and less than 25 mm in each month from June to September.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. In both Quito and Manta the table shows rainfall declining month by month from April through July (Quito 175→22 mm; Manta 32→4 mm), and then rising from July to September (Quito 22→70 mm; Manta 4→5 mm). This is the shared pattern the student describes. Choice A is incorrect because in both cities rainfall does change noticeably from June to August, and rainfall in Quito does not rise sharply in September relative to August&rsquo;s level for both cities. Choice C is incorrect because Quito&rsquo;s rainfall exceeds 10 mm in every month listed. Choice D is incorrect because Manta does not receive more than 100 mm in April or May.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

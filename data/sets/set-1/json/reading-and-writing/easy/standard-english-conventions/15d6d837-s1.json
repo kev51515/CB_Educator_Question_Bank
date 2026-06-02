@@ -1,0 +1,39 @@
+{
+  "questionId": "15d6d837-s1",
+  "originalId": "15d6d837",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Curators at oral history museums often spend years recording everyday <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> from immigrants who arrived in the country during the early twentieth century.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>residents story&rsquo;s</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>residents&rsquo; stories</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>residents stories&rsquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>resident&rsquo;s story&rsquo;s</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The convention being tested is the use of plural and possessive nouns. The plural possessive noun &ldquo;residents&rsquo;&rdquo; and the plural noun &ldquo;stories&rdquo; correctly indicate that there are multiple stories from multiple residents.</p><p>Choice A uses the singular possessive &ldquo;story&rsquo;s&rdquo; when the plural &ldquo;stories&rdquo; is required. Choice C uses the plural noun &ldquo;residents&rdquo; rather than the needed plural possessive &ldquo;residents&rsquo;&rdquo; and adds an unnecessary possessive to &ldquo;stories.&rdquo; Choice D uses the singular possessive forms when both nouns should be plural.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A3.T8.easy"
+}

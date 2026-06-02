@@ -1,0 +1,39 @@
+{
+  "questionId": "9391b7cc-s1",
+  "originalId": "9391b7cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>If certain pottery shards recovered from excavations of the highland settlement of Verra Alta, in present-day Peru, date from the ninth century CE, that may lend support to claims that the settlement was established before or around that time. There is other evidence, however, strongly indicating a tenth century CE founding date for Verra Alta. If both the pottery dates and the tenth century CE founding date are correct, that would imply that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>the pottery was made elsewhere and eventually arrived at Verra Alta through commerce or migration.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>pottery from the tenth century CE is more frequently recovered than is pottery from the ninth century CE.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Verra Alta was founded by people from a different region than had previously been assumed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>excavations at Verra Alta may have inadvertently damaged some pottery dating to the tenth century CE.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it most logically completes the text's discussion of pottery shards and Verra Alta's founding date. If Verra Alta was founded in the tenth century CE but shards found at the site date to the ninth century CE, those shards could not have been produced at the settlement. The most logical inference is that the pottery originated somewhere else and reached Verra Alta later, through trade or as people migrated into the settlement carrying their goods with them.</p><p>Choice B is incorrect because the recovery of ninth-century shards at a tenth-century site has no logical bearing on the relative frequency with which artifacts from different centuries are recovered. Choice C is incorrect because the text says nothing about which region the founders of Verra Alta were thought to come from; the existence of older artifacts at the site doesn't license any inference about the founders' origins. Choice D is incorrect because there is no indication in the text that any tenth-century objects were damaged; the puzzle the text presents is about how older items came to a younger site, not about damaged objects.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

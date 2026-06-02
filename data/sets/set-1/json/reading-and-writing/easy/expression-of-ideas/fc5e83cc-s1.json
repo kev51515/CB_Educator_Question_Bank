@@ -1,0 +1,39 @@
+{
+  "questionId": "fc5e83cc-s1",
+  "originalId": "fc5e83cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>When following ballet scores, professional dancers like principal Misty Copeland take movement directions from descriptive notations, typically in French, that appear alongside the choreography. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> these descriptive terms might instruct the performer to leap <span lang=\"fr\"><em>grand jet&eacute;</em></span> (a large jump) or move <span lang=\"fr\"><em>adagio</em></span> (slowly and gracefully).</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>On the other hand,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>All the same,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In the second place,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"For example\" logically signals that this sentence supports the previous information about descriptive notations by providing specific examples: <span lang=\"fr\"><em>grand jet&eacute;</em></span> and <span lang=\"fr\"><em>adagio</em></span>.</p><p>Choice A is incorrect because \"on the other hand\" illogically signals contrast. Choice B is incorrect because \"all the same\" illogically signals concession. Choice D is incorrect because \"in the second place\" illogically signals a second separate point.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "2704399f-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "constraint_violation",
+    "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph, drifting from A3 (graphical) toward A1. Answer (D) is mathematically correct, but the categorical aspect/type is violated."
+  },
+  {
+    "id": "6e6a3241-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T7.medium",
+    "verdict": "constraint_violation",
+    "detail": "T7 must_preserve requires 'one side of the question is graphical, the other algebraic'. Clone is purely algebraic-to-algebraic equivalent-system selection with no graph (categorical drift A3\u2192A1 per template). Answer (D) is mathematically correct."
+  },
+  {
+    "id": "e6545fa8-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone has no stimulus/graph and presents only the algebraic equations y=x+1, y=-x+5. This is the categorical drift to A1 explicitly warned about in common_bugs."
+  },
+  {
+    "id": "b0fc3166-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown', but the clone provides only equations y=2x-1, y=-x+8 with no graph (stimulus is null). Categorical drift from A3 to A1."
+  },
+  {
+    "id": "ccc3ad6b-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph (stimulus null) and presents only equations y=-2x+3, y=x-6. Categorical drift to A1."
+  },
+  {
+    "id": "f6b055dc-s1",
+    "templateId": "systems-of-two-linear-equations-in-two-variables.A3.T6.easy",
+    "verdict": "constraint_violation",
+    "detail": "A3.T6 must_preserve requires 'graph of exactly two lines shown'; clone has no graph and only lists equations y=x, y=-x+6. Categorical drift to A1."
+  }
+]

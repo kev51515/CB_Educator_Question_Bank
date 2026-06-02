@@ -1,0 +1,39 @@
+{
+  "questionId": "494d247d-s1",
+  "originalId": "494d247d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p style=\"text-align:center;\"><math><mi>y</mi><mo>=</mo><mfenced open=\"|\" close=\"|\"><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mfenced></math></p><p style=\"text-align:center;\"><math><mi>y</mi><mo>=</mo><mi>x</mi><mo>+</mo><mn>4</mn></math></p><p>The given system of equations has one solution <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the solution?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mo>-</mo><mn>3</mn><mo>,</mo><mn>1</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mo>-</mo><mn>2</mn><mo>,</mo><mn>2</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mn>1</mn><mo>,</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mn>0</mn><mo>,</mo><mn>4</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Setting the two expressions for y equal: |x + 2| = x + 4. When x + 2 ≥ 0 this gives x + 2 = x + 4, impossible. When x + 2 &lt; 0 it gives −(x + 2) = x + 4, so −2x = 6, x = −3. Then y = −3 + 4 = 1. The solution is (−3, 1).</p>",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A4.T9.easy"
+}

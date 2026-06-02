@@ -1,0 +1,39 @@
+{
+  "questionId": "374b18f9-s1",
+  "originalId": "374b18f9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The number of registered electric vehicles in 11 counties in a state is summarized in a box plot. The box plot has a minimum near 95, lower quartile near 175, the median vertical line slightly less than 260, upper quartile near 340, and maximum near 410. Which of the following is closest to the median number of registered electric vehicles?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>95</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>175</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>340</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>258</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The median of a data set summarized by a box plot corresponds to the vertical line inside the box. The figure shows that line slightly less than 260, so 258 is the closest of the choices.</p><p>Choice A is incorrect: 95 is the minimum.</p><p>Choice B is incorrect: 175 is the lower quartile.</p><p>Choice C is incorrect: 340 is the upper quartile.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T3.easy"
+}

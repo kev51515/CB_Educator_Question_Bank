@@ -1,0 +1,25 @@
+{
+  "questionId": "8584f3ce-s1",
+  "originalId": "8584f3ce",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.hard",
+  "stimulus": "<p>When grazing along estuarine mudflats, fiddler crabs damage the rhizomes of cordgrass plants growing in the sediment. Along several stretches of coastal Georgia, the fiddler-crab population is dense and well established, yet the cordgrass meadows there are healthier than those found elsewhere along the southeastern coast. To explain this, marine ecologist Adaeze Mbatha and colleagues compared the Georgia meadows with meadows at sites where fiddler crabs are absent or only recently established and concluded that long-term damage from fiddler crabs improves cordgrass meadow health by promoting clonal regrowth of rhizome tissue.</p>",
+  "stem": "<p>Which finding, if true, would most directly undermine Mbatha&rsquo;s hypothesis?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>At some sites in the study, cordgrass meadows are found near fiddler-crab populations that are small and have only recently been established.</p>"},
+    {"id": "b", "content": "<p>At several sites not included in the study, cordgrass meadows&rsquo; health correlates negatively with the length of residence and size of fiddler-crab populations.</p>"},
+    {"id": "c", "content": "<p>At several sites not included in the study, there are large, well-established fiddler-crab populations but no cordgrass meadows.</p>"},
+    {"id": "d", "content": "<p>At some sites in the study, the health of plants unrelated to cordgrass correlates negatively with the length of residence and size of fiddler-crab populations.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it directly contradicts the specific mechanism in Mbatha&rsquo;s hypothesis. The hypothesis predicts that longer residence and larger populations of fiddler crabs should be associated with <em>healthier</em> cordgrass meadows (via promoted regrowth); finding the opposite correlation&mdash;less healthy meadows where fiddler-crab populations are larger and longer-established&mdash;undermines the proposed causal link.</p><p>Choice A is incorrect because the presence of meadows near small, recent fiddler-crab populations is consistent with multiple causal accounts and does not specifically contradict the regrowth hypothesis. Choice C is incorrect because the absence of meadows in some locations with large crab populations does not, on its own, isolate the role of crab damage in healthy meadows. Choice D is incorrect because effects on unrelated plant species are not the subject of Mbatha&rsquo;s claim about cordgrass.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

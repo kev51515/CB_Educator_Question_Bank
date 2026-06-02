@@ -1,0 +1,39 @@
+{
+  "questionId": "3563d76d-s1",
+  "originalId": "3563d76d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>At a certain time and day, a flagpole casts a shadow 24 feet long. At the same time, a nearby fence post casts a shadow 4 feet long. If the flagpole is 36 feet tall, which of the following is closest to the height, in feet, of the fence post?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The height and shadow length are proportional: 36/24 = h/4. Solving gives h = 4 \u00d7 (36/24) = 6 feet.</p>",
+  "generatedAt": "2026-05-26T00:23:43Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.easy"
+}

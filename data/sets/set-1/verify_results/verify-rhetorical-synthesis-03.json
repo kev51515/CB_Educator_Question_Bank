@@ -1,0 +1,22 @@
+[
+  {"id": "1d79a59d-s1", "templateId": "rhetorical-synthesis.A4.T13.hard", "verdict": "ok"},
+  {"id": "8fe4f4ab-s1", "templateId": "rhetorical-synthesis.A3.T9.hard", "verdict": "ok"},
+  {"id": "10cd0327-s1", "templateId": "rhetorical-synthesis.A4.T11.hard", "verdict": "ok"},
+  {"id": "c40a1964-s1", "templateId": "rhetorical-synthesis.A2.T4.hard", "verdict": "ok"},
+  {"id": "3067723b-s1", "templateId": "rhetorical-synthesis.A1.T3.easy", "verdict": "ok"},
+  {"id": "d7f31e68-s1", "templateId": "rhetorical-synthesis.A2.T4.easy", "verdict": "ok"},
+  {"id": "54227b8e-s1", "templateId": "rhetorical-synthesis.A3.T7.easy", "verdict": "ok"},
+  {"id": "e2693197-s1", "templateId": "rhetorical-synthesis.A3.T8.easy", "verdict": "ok"},
+  {"id": "d436a2b2-s1", "templateId": "rhetorical-synthesis.A2.T4.easy", "verdict": "ok"},
+  {"id": "00bb356a-s1", "templateId": "rhetorical-synthesis.A3.T8.easy", "verdict": "ok"},
+  {"id": "a3204ab0-s1", "templateId": "rhetorical-synthesis.A5.T14.easy", "verdict": "ok"},
+  {"id": "fbffb352-s1", "templateId": "rhetorical-synthesis.A1.T1.easy", "verdict": "ok"},
+  {"id": "296801d2-s1", "templateId": "rhetorical-synthesis.A5.T14.easy", "verdict": "ok"},
+  {"id": "5a2a4b36-s1", "templateId": "rhetorical-synthesis.A4.T10.easy", "verdict": "ok"},
+  {"id": "c6645cab-s1", "templateId": "rhetorical-synthesis.A5.T14.easy", "verdict": "ok"},
+  {"id": "9922b364-s1", "templateId": "rhetorical-synthesis.A5.T14.easy", "verdict": "ok"},
+  {"id": "d2b52c50-s1", "templateId": "rhetorical-synthesis.A2.T5.easy", "verdict": "ok"},
+  {"id": "ff3865b3-s1", "templateId": "rhetorical-synthesis.A3.T8.easy", "verdict": "ok"},
+  {"id": "8b2636ee-s1", "templateId": "rhetorical-synthesis.A5.T14.easy", "verdict": "ok"},
+  {"id": "bc930940-s1", "templateId": "rhetorical-synthesis.A5.T14.easy", "verdict": "ok"}
+]

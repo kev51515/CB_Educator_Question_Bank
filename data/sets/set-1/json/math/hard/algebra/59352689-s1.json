@@ -1,0 +1,22 @@
+{
+  "questionId": "59352689-s1",
+  "originalId": "59352689",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>60</mn><mi>y</mi><mo>-</mo><mn>35</mn><mi>x</mi><mo>=</mo><mn>30</mn><mo>-</mo><mn>60</mn><mi>y</mi></math></p>\n<p style=\"text-align: center;\"><math><mn>42</mn><mi>x</mi><mo>+</mo><mn>50</mn><mo>=</mo><mi>p</mi><mi>y</mi><mo>+</mo><mn>110</mn></math></p>\n<p>In the given system of equations, <math><mi>p</mi></math> is a constant. If the system has no solution, what is the value of <math><mi>p</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "144"
+  ],
+  "rationale": "<p>The correct answer is 144. Rewrite the first equation as \u221235x + 120y = 30, or after dividing by 5, \u22127x + 24y = 6. Rewrite the second as 42x \u2212 py = 60. For no solution, the coefficient ratios must match while the constants don't: \u22127/42 = 24/(\u2212p), giving p = 144. With p = 144, both lines have slope 7/24 but distinct intercepts, so they are parallel and distinct.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

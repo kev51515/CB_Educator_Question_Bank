@@ -1,0 +1,39 @@
+{
+  "questionId": "d62ad380-s1",
+  "originalId": "d62ad380",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A4.T6.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The table shows several values of <em>s</em> and their corresponding values of <em>P</em>:</p><p>s: 2, 4, 6<br>P: 11, 15, 19</p><p>Which of the following could define the relationship between <em>s</em> and <em>P</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>P = 11s + 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>P = 2s + 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>P = 7s + 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>P = 4s + 3</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For each increase of 2 in s, P increases by 4, so the slope is 4/2 = 2. Using (2, 11): 11 = 2(2) + b \u2192 b = 7. Therefore P = 2s + 7. Verify: s=4 gives 2(4)+7=15 \u2713; s=6 gives 2(6)+7=19 \u2713. The other choices fail at least one of the data points.</p>"
+}

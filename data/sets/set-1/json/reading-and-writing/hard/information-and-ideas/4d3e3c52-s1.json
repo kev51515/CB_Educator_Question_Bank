@@ -1,0 +1,39 @@
+{
+  "questionId": "4d3e3c52-s1",
+  "originalId": "4d3e3c52",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In a recent paper on bulk heterojunction organic solar cells (a class of thin-film photovoltaic device that converts sunlight into electricity using blended polymer\u2013fullerene films), Priya Venkatesan and colleagues describe a method for depositing the cell's photoactive layer using a slot-die coating system. Conventional photoactive layer deposition is performed by spin coating a polymer solution onto small substrates, a technique that can waste as much as 90% of the polymer solution and thus drive up production costs at industrial volumes\u2014a constraint that, according to the researchers, slot-die coating, which they characterize as \"continuous, scalable, and material-efficient,\" may largely eliminate.</p>",
+  "stem": "<p>What does the text most strongly suggest about conventional photoactive layer deposition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It generally wastes more polymer solution than other established deposition techniques do.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is somewhat imprecise and therefore reduces the efficiency with which bulk heterojunction cells convert sunlight.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It is more expensive at industrial scale than deposition methods used for other solar cell architectures.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It may be less well suited to manufacturing bulk heterojunction organic solar cells at industrial volumes than an alternative method.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text says spin coating wastes much of the polymer solution and \"drive[s] up production costs at industrial volumes,\" a constraint that slot-die coating\u2014described as \"continuous, scalable, and material-efficient\"\u2014may largely eliminate. This strongly implies that the conventional approach is comparatively less suited to large-scale manufacturing of these cells than the alternative slot-die method.</p><p>Choice A is incorrect because the text only contrasts spin coating with slot-die coating; it does not compare spin coating to multiple established deposition techniques. Choice B is incorrect because the text never claims the efficiency of the resulting cells depends on the deposition method. Choice C is incorrect because the text does not compare costs across solar cell architectures.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

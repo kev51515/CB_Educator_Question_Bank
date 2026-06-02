@@ -1,0 +1,25 @@
+{
+  "questionId": "73d457b6-s1",
+  "originalId": "73d457b6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T6.medium",
+  "stimulus": "<p>In the 1990s, a roughly 70,000-year-old fragment of mammoth ivory bearing seven incised marks was unearthed at a site in central Moravia once inhabited by Neanderthals. Although many archaeologists believe that only modern humans created early symbolic objects, one researcher argues that this artifact may indicate that Neanderthals also produced symbolic markings. The marks on the ivory are irregularly spaced but roughly parallel, and microscopic analysis shows that all were made with a single flint blade; according to the researcher, <span style=\"text-decoration: underline;\">this suggests that the marks were all made at one sitting by one individual as a means of recording a tally.</span></p>",
+  "stem": "<p>Which finding, if true, would most directly weaken the underlined claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Parallel incisions are a common feature of early modern human counting tools.</p>"},
+    {"id": "b", "content": "<p>More than seven roughly parallel notches made with a different flint blade are present on another artifact from a nearby Moravian site.</p>"},
+    {"id": "c", "content": "<p>Decorative carvings discovered at another Neanderthal site in central Moravia consist mostly of irregularly spaced parallel lines.</p>"},
+    {"id": "d", "content": "<p>It would have required considerable skill to make evenly spaced marks on ivory with the flint blades typically available to Neanderthals.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The researcher&rsquo;s claim rests on the irregularly spaced parallel marks being a tally; if irregularly spaced parallel lines are characteristic of decorative carvings at another Neanderthal site, then the marks on this ivory are plausibly decorative rather than a tally, weakening the claim. Choice A is incorrect; parallel features in modern human counting tools, if anything, slightly support the claim by analogy. Choice B is incorrect because parallel notches made with a different blade on a separate artifact say nothing about the function of either object. Choice D is incorrect because difficulty of evenly spaced marking does not bear on whether the irregular marks are a tally.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

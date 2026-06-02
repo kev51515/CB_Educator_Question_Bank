@@ -1,0 +1,39 @@
+{
+  "questionId": "ad03127d-s1",
+  "originalId": "ad03127d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mn>4</mn><mi>u</mi><mo>=</mo><mn>9</mn><mi>v</mi><mo>+</mo><mi>w</mi></math></p><p>The given equation relates the variables <em>u</em>, <em>v</em>, and <em>w</em>. Which equation correctly expresses <em>v</em> in terms of <em>u</em> and <em>w</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>v</mi><mo>=</mo><mfrac><mrow><mn>4</mn><mi>u</mi><mo>-</mo><mi>w</mi></mrow><mn>9</mn></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>v</mi><mo>=</mo><mn>36</mn><mi>u</mi><mo>-</mo><mi>w</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>v</mi><mo>=</mo><mn>9</mn><mfenced><mrow><mn>4</mn><mi>u</mi><mo>-</mo><mi>w</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>v</mi><mo>=</mo><mfrac><mn>4</mn><mn>9</mn></mfrac><mi>u</mi><mo>-</mo><mi>w</mi></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Subtracting <em>w</em> from both sides yields <math><mn>4</mn><mi>u</mi><mo>-</mo><mi>w</mi><mo>=</mo><mn>9</mn><mi>v</mi></math>. Dividing both sides by 9 gives <math><mi>v</mi><mo>=</mo><mfrac><mrow><mn>4</mn><mi>u</mi><mo>-</mo><mi>w</mi></mrow><mn>9</mn></mfrac></math>.</p><p>Choices B, C, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy"
+}

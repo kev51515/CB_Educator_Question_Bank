@@ -1,0 +1,39 @@
+{
+  "questionId": "9b5b23fc-s1",
+  "originalId": "9b5b23fc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For x &gt; 0, the function g is defined as follows:</p><p>g(x) equals 173% of x</p><p>Which of the following could describe this function?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Decreasing linear</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Increasing linear</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Increasing exponential</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Decreasing exponential</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>g(x) = 1.73x is a linear function (proportional to x). Its slope is 1.73 &gt; 0, so for positive x the function is increasing. Therefore g is an increasing linear function. Choice (b) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "590f2187-s1",
+  "originalId": "590f2187",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>4</mn><mi>x</mi><mo>-</mo><mn>32</mn><mo>=</mo><mn>20</mn></math>, what is the value of <math><mi>x</mi><mo>-</mo><mn>8</mn></math>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><math><mn>5</mn></math></p>"},
+    {"id": "b", "content": "<p><math><mn>13</mn></math></p>"},
+    {"id": "c", "content": "<p><math><mn>20</mn></math></p>"},
+    {"id": "d", "content": "<p><math><mn>40</mn></math></p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. Dividing each side of the given equation by 4 yields <math><mi>x</mi><mo>-</mo><mn>8</mn><mo>=</mo><mn>5</mn></math>.</p><p>Choice B is incorrect and may result from conceptual errors.</p><p>Choice C is incorrect; this is the value of <math><mn>4</mn><mi>x</mi><mo>-</mo><mn>32</mn></math>.</p><p>Choice D is incorrect and may result from calculation errors.</p>",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

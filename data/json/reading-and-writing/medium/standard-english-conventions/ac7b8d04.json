@@ -1,0 +1,72 @@
+{
+  "questionId": "ac7b8d04",
+  "externalId": "324fda2b-53dc-49f4-bd65-fd0a18a3b71c",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:23:25.857937+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "ecac84ae-1f84-40c5-b8f5-3d777f2f5f66",
+      "content": "<p>invites</p>"
+    },
+    {
+      "id": "0f01ead9-362b-48b0-be9c-d5fbabb9b37b",
+      "content": "<p>invite</p>"
+    },
+    {
+      "id": "9cacaaad-ce86-4317-8aba-b8c1c4fc7f61",
+      "content": "<p>are inviting</p>"
+    },
+    {
+      "id": "70378c05-36e1-41da-a508-2762b2494bfb",
+      "content": "<p>have invited</p>"
+    }
+  ],
+  "keys": [
+    "ecac84ae-1f84-40c5-b8f5-3d777f2f5f66"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The singular verb &ldquo;invites&rdquo; agrees in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo;</p><p>Choice B is incorrect because the plural verb &ldquo;invite&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo; Choice C is incorrect because the plural verb &ldquo;are inviting&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo; Choice D is incorrect because the plural verb &ldquo;have invited&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo;</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Tracy Fullerton&rsquo;s <em>Walden, a game</em>, an unlikely fusion of the writings of nineteenth-century transcendentalist Henry David Thoreau with today&rsquo;s open-world video games, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> players to explore a digital version of Walden Pond, the idyllic natural setting featured in Thoreau&rsquo;s book <em>Walden</em>.</p>",
+    "keys": [
+      "ecac84ae-1f84-40c5-b8f5-3d777f2f5f66"
+    ],
+    "answerOptions": [
+      {
+        "id": "ecac84ae-1f84-40c5-b8f5-3d777f2f5f66",
+        "content": "<p>invites</p>"
+      },
+      {
+        "id": "0f01ead9-362b-48b0-be9c-d5fbabb9b37b",
+        "content": "<p>invite</p>"
+      },
+      {
+        "id": "9cacaaad-ce86-4317-8aba-b8c1c4fc7f61",
+        "content": "<p>are inviting</p>"
+      },
+      {
+        "id": "70378c05-36e1-41da-a508-2762b2494bfb",
+        "content": "<p>have invited</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The singular verb &ldquo;invites&rdquo; agrees in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo;</p><p>Choice B is incorrect because the plural verb &ldquo;invite&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo; Choice C is incorrect because the plural verb &ldquo;are inviting&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo; Choice D is incorrect because the plural verb &ldquo;have invited&rdquo; doesn&rsquo;t agree in number with the singular subject &ldquo;Tracy Fullerton&rsquo;s <em>Walden, a game</em>.&rdquo;</p>",
+    "externalid": "324fda2b-53dc-49f4-bd65-fd0a18a3b71c",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Tracy Fullerton&rsquo;s <em>Walden, a game</em>, an unlikely fusion of the writings of nineteenth-century transcendentalist Henry David Thoreau with today&rsquo;s open-world video games, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> players to explore a digital version of Walden Pond, the idyllic natural setting featured in Thoreau&rsquo;s book <em>Walden</em>.</p>"
+}

@@ -1,0 +1,72 @@
+{
+  "questionId": "be44fea0",
+  "externalId": "38da0806-db4c-4d38-a6fd-65fd8d2824fc",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:18.337574+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "d6448bf1-8355-4f38-9d61-3ba38a85e99b",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "a7250a5d-9c63-4b67-930e-7befd5065b6c",
+      "content": "<p>Instead,</p>"
+    },
+    {
+      "id": "22556136-0c16-46fe-9943-d70038413ba1",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "b57c5656-8537-4a61-a4f9-14209b5faceb",
+      "content": "<p>In other words,</p>"
+    }
+  ],
+  "keys": [
+    "a7250a5d-9c63-4b67-930e-7befd5065b6c"
+  ],
+  "rationale": "<p>Choice B is the best answer. &ldquo;Instead&rdquo; logically signals that the information about the researchers&rsquo; discovery in this sentence&mdash;that jor\u014d spiders are gentle giants who &ldquo;freeze&rdquo; in place when disturbed&mdash;contradicts their initial hypothesis about the spiders&rsquo; aggressiveness described in the previous sentence.</p><p>Choice A is incorrect because &ldquo;therefore&rdquo; illogically signals that the discovery about jor\u014d spiders&rsquo; gentleness is a result of the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis. Choice C is incorrect because &ldquo;for example&rdquo; illogically signals that the discovery about jor\u014d spiders&rsquo; gentleness exemplifies the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis. Choice D is incorrect because &ldquo;in other words&rdquo; illogically signals that the discovery about jor\u014d spiders&rsquo; gentleness is merely restating or rephrasing the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+    "stimulus": "<p>While studying jor\u014d spiders, a large species originally from East Asia, University of Georgia researchers wondered if the spiders&rsquo; rapid spread throughout the southeastern US was a result of aggressive behavior. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they discovered that jor\u014d spiders are gentle giants who react to even minor disturbances by &ldquo;freezing&rdquo; in place for an hour or more.</p>",
+    "keys": [
+      "a7250a5d-9c63-4b67-930e-7befd5065b6c"
+    ],
+    "answerOptions": [
+      {
+        "id": "d6448bf1-8355-4f38-9d61-3ba38a85e99b",
+        "content": "<p>Therefore,</p>"
+      },
+      {
+        "id": "a7250a5d-9c63-4b67-930e-7befd5065b6c",
+        "content": "<p>Instead,</p>"
+      },
+      {
+        "id": "22556136-0c16-46fe-9943-d70038413ba1",
+        "content": "<p>For example,</p>"
+      },
+      {
+        "id": "b57c5656-8537-4a61-a4f9-14209b5faceb",
+        "content": "<p>In other words,</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. &ldquo;Instead&rdquo; logically signals that the information about the researchers&rsquo; discovery in this sentence&mdash;that jor\u014d spiders are gentle giants who &ldquo;freeze&rdquo; in place when disturbed&mdash;contradicts their initial hypothesis about the spiders&rsquo; aggressiveness described in the previous sentence.</p><p>Choice A is incorrect because &ldquo;therefore&rdquo; illogically signals that the discovery about jor\u014d spiders&rsquo; gentleness is a result of the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis. Choice C is incorrect because &ldquo;for example&rdquo; illogically signals that the discovery about jor\u014d spiders&rsquo; gentleness exemplifies the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis. Choice D is incorrect because &ldquo;in other words&rdquo; illogically signals that the discovery about jor\u014d spiders&rsquo; gentleness is merely restating or rephrasing the initial hypothesis about their aggressive behavior. Instead, the sentence presents information that contradicts the initial hypothesis.</p>",
+    "externalid": "38da0806-db4c-4d38-a6fd-65fd8d2824fc",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>While studying jor\u014d spiders, a large species originally from East Asia, University of Georgia researchers wondered if the spiders&rsquo; rapid spread throughout the southeastern US was a result of aggressive behavior. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> they discovered that jor\u014d spiders are gentle giants who react to even minor disturbances by &ldquo;freezing&rdquo; in place for an hour or more.</p>"
+}

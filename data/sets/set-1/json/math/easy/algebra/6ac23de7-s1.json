@@ -1,0 +1,39 @@
+{
+  "questionId": "6ac23de7-s1",
+  "originalId": "6ac23de7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mfrac><mrow><mn>3</mn><mi>y</mi></mrow><mn>4</mn></mfrac><mo>=</mo><mn>18</mn></math></p><p>In the equation above, what is the value of <math><mi>y</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Multiplying both sides by 4 yields <math><mn>3</mn><mi>y</mi><mo>=</mo><mn>72</mn></math>. Dividing both sides by 3 yields <math><mi>y</mi><mo>=</mo><mn>24</mn></math>.</p><p>Choices A, B, and C are incorrect and may result from adding or dividing in the wrong order.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T1.easy"
+}

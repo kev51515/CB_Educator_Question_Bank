@@ -1,0 +1,39 @@
+{
+  "questionId": "2c05d312-s1",
+  "originalId": "2c05d312",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\">23<i>x</i>&sup2; + (23<i>m</i> + <i>n</i>)<i>x</i> + <i>m</i><i>n</i> = 0</p><p>In the given equation, <i>m</i> and <i>n</i> are positive constants. The product of the solutions to the given equation is <i>k</i><i>m</i><i>n</i>, where <i>k</i> is a constant. What is the value of <i>k</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/23</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>23</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1/529</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>For a quadratic <i>a</i><i>x</i>&sup2; + <i>b</i><i>x</i> + <i>c</i> = 0, the product of the roots is <i>c</i>/<i>a</i>. Here that product is <i>m</i><i>n</i>/23. Setting this equal to <i>k</i><i>m</i><i>n</i> gives <i>k</i> = 1/23.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T8.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "8f6d6ae6-s1",
+  "originalId": "8f6d6ae6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.misc.medium",
+  "stimulus": "<p>Archaeologists have estimated that the ancient port city of Caral, located in the Supe Valley about 200 kilometers north of modern-day Lima, Peru, supported as many as 3,000 inhabitants around 2600 <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it among the oldest urban centers in the Americas.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>BCE making</p>"},
+    {"id": "b", "content": "<p>BCE, making</p>"},
+    {"id": "c", "content": "<p>BCE. Making</p>"},
+    {"id": "d", "content": "<p>BCE; making</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The participial phrase \"making it among the oldest urban centers in the Americas\" is a nonessential supplement describing the preceding clause. It must be set off with a comma.</p><p>Choice A is incorrect because omitting punctuation creates a run-on sentence. Choice C is incorrect because the participial phrase has no subject and cannot stand alone as a sentence. Choice D is incorrect because a semicolon can join only two independent clauses, and \"making...Americas\" is not independent.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "e9f4521a-s1",
+  "originalId": "e9f4521a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>17 is <em>p</em>% of 40. What is the value of <em>p</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "42.5"
+  ],
+  "rationale": "<p>The correct answer is 42.5. If 17 is <em>p</em>% of 40, then 17 = (<em>p</em>/100) &times; 40. Solving for <em>p</em> gives <em>p</em> = (17/40) &times; 100 = 0.425 &times; 100 = 42.5.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A2.T1.medium"
+}

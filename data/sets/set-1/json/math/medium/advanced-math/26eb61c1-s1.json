@@ -1,0 +1,39 @@
+{
+  "questionId": "26eb61c1-s1",
+  "originalId": "26eb61c1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to 8a<sup>7</sup>b\u00b3 + 24a\u00b3b\u00b3?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>8a\u00b3b\u00b3(a<sup>4</sup>)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8a\u00b3b\u00b3(3a<sup>4</sup>)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8a\u00b3b\u00b3(a<sup>4</sup> \u00b7 3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8a\u00b3b\u00b3(a<sup>4</sup> + 3)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The greatest common factor of 8a<sup>7</sup>b\u00b3 and 24a\u00b3b\u00b3 is 8a\u00b3b\u00b3. Factoring out: 8a<sup>7</sup>b\u00b3 = 8a\u00b3b\u00b3 \u00b7 a<sup>4</sup> and 24a\u00b3b\u00b3 = 8a\u00b3b\u00b3 \u00b7 3. So the expression equals 8a\u00b3b\u00b3(a<sup>4</sup> + 3). Choice (d) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A2.T4.medium"
+}

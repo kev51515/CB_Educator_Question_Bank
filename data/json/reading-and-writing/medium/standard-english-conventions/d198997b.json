@@ -1,0 +1,72 @@
+{
+  "questionId": "d198997b",
+  "externalId": "7242e88d-e335-4dc4-b9df-662c2488fc9b",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771169,
+  "createDate": 1776362771169,
+  "scrapedAt": "2026-05-25T12:23:05.893745+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "c97a2755-83e7-488c-b80b-d3fb6e3afd77",
+      "content": "<p>scribbles<span data-ssml-say-as=\"characters\">:</span> that</p>"
+    },
+    {
+      "id": "88e04abf-8370-4d02-b76d-3259d681d561",
+      "content": "<p>scribbles that</p>"
+    },
+    {
+      "id": "d6596f7d-88ff-4a26-8d49-7e50df208788",
+      "content": "<p>scribbles<span data-ssml-say-as=\"characters\">;</span> that</p>"
+    },
+    {
+      "id": "32ad2b87-d3a1-492d-8ba6-598d92942da0",
+      "content": "<p>scribbles<span data-ssml-say-as=\"characters\">.</span> That</p>"
+    }
+  ],
+  "keys": [
+    "88e04abf-8370-4d02-b76d-3259d681d561"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use and punctuation of a relative clause. This choice correctly uses the relative pronoun &ldquo;that&rdquo; and no punctuation to create an integrated relative clause that provides essential information about the noun phrase (&ldquo;graffiti-like scribbles&rdquo;) that it modifies.</p><p>Choice A is incorrect because no punctuation is needed between the integrated relative clause beginning with &ldquo;that often&rdquo; and the noun phrase that it modifies (&ldquo;graffiti-like scribbles&rdquo;). Choice C is incorrect because no punctuation is needed between the integrated relative clause beginning with &ldquo;that often&rdquo; and the noun phrase that it modifies (&ldquo;graffiti-like scribbles&rdquo;). Choice D is incorrect because no punctuation is needed between the integrated relative clause beginning with &ldquo;that often&rdquo; and the noun phrase that it modifies (&ldquo;graffiti-like scribbles&rdquo;).</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Cy Twombly, a US painter and sculptor, created many large-scale abstract works, such as his 10-painting series <em>Fifty Days at Iliam</em>. In these works, Twombly&rsquo;s artistic style is exemplified by his use of graffiti-like <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> often incorporate words or phrases from poetry and mythology.&nbsp;</p>",
+    "keys": [
+      "88e04abf-8370-4d02-b76d-3259d681d561"
+    ],
+    "answerOptions": [
+      {
+        "id": "c97a2755-83e7-488c-b80b-d3fb6e3afd77",
+        "content": "<p>scribbles<span data-ssml-say-as=\"characters\">:</span> that</p>"
+      },
+      {
+        "id": "88e04abf-8370-4d02-b76d-3259d681d561",
+        "content": "<p>scribbles that</p>"
+      },
+      {
+        "id": "d6596f7d-88ff-4a26-8d49-7e50df208788",
+        "content": "<p>scribbles<span data-ssml-say-as=\"characters\">;</span> that</p>"
+      },
+      {
+        "id": "32ad2b87-d3a1-492d-8ba6-598d92942da0",
+        "content": "<p>scribbles<span data-ssml-say-as=\"characters\">.</span> That</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is the use and punctuation of a relative clause. This choice correctly uses the relative pronoun &ldquo;that&rdquo; and no punctuation to create an integrated relative clause that provides essential information about the noun phrase (&ldquo;graffiti-like scribbles&rdquo;) that it modifies.</p><p>Choice A is incorrect because no punctuation is needed between the integrated relative clause beginning with &ldquo;that often&rdquo; and the noun phrase that it modifies (&ldquo;graffiti-like scribbles&rdquo;). Choice C is incorrect because no punctuation is needed between the integrated relative clause beginning with &ldquo;that often&rdquo; and the noun phrase that it modifies (&ldquo;graffiti-like scribbles&rdquo;). Choice D is incorrect because no punctuation is needed between the integrated relative clause beginning with &ldquo;that often&rdquo; and the noun phrase that it modifies (&ldquo;graffiti-like scribbles&rdquo;).</p>",
+    "externalid": "7242e88d-e335-4dc4-b9df-662c2488fc9b",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>Cy Twombly, a US painter and sculptor, created many large-scale abstract works, such as his 10-painting series <em>Fifty Days at Iliam</em>. In these works, Twombly&rsquo;s artistic style is exemplified by his use of graffiti-like <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> often incorporate words or phrases from poetry and mythology.&nbsp;</p>"
+}

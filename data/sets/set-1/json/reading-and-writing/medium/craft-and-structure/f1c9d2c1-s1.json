@@ -1,0 +1,25 @@
+{
+  "questionId": "f1c9d2c1-s1",
+  "originalId": "f1c9d2c1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T2.medium",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Choreographer Loïe Fuller was perhaps the first stage artist to argue that costume fabric should be treated as a sculptural medium, shaped in motion alongside light and music to produce a unified theatrical effect. <span role=\"region\" aria-label=\"Referenced Content\"><u>Researcher Iris Bremner, however, has noted that Fuller lacked technical expertise in fabric manipulation</u></span>; as a result, Bremner argues, Fuller&rsquo;s ideas called for stage techniques that did not become workable until the introduction of new lightweight silks in the 1890s.</p><p>&nbsp;</p><p><strong>Text 2</strong></p><p>Loïe Fuller was not a novice in the practice of fabric handling. On the contrary, it was precisely her early exposure to costume work that nourished her theory of fabric as a sculptural element. While employed as an assistant in a small touring company in her youth, Fuller spent long hours rigging, tinting, and rehearsing with bolts of stage silk. This sustained, hands-on experience developed her sense of what was possible in the coordination of fabric, light, and motion onstage.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the claim about Fuller&rsquo;s level of technical expertise made by Bremner in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Many costume designers dismissed Fuller&rsquo;s ideas about fabric onstage.</p>"},
+    {"id": "b", "content": "<p>Theater practitioners who worked with Fuller greatly admired her work.</p>"},
+    {"id": "c", "content": "<p>Fuller likely acquired a level of technical expertise during her early work as an assistant.</p>"},
+    {"id": "d", "content": "<p>Fuller was unfamiliar with the use of music and sound in theater.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The underlined claim in Text 1 states that Fuller lacked technical expertise in fabric manipulation. The author of Text 2 directly contradicts this by asserting that Fuller was &ldquo;not a novice&rdquo; in fabric handling and describes her years rigging, tinting, and rehearsing with stage silk as an assistant&mdash;experience that developed her sense of what was possible onstage.</p><p>Choice A is incorrect because neither text addresses how other costume designers reacted to Fuller&rsquo;s ideas. Choice B is incorrect because neither text describes the opinions of practitioners who worked with Fuller. Choice D is incorrect because neither text discusses Fuller&rsquo;s familiarity with music or sound.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

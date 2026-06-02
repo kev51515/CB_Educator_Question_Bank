@@ -1,0 +1,39 @@
+{
+  "questionId": "ea9dfe27-s1",
+  "originalId": "ea9dfe27",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The following text is from a 2010 memoir. In the text, the author reflects on her childhood home.</p><blockquote><p>In Vermont we heated our houses by feeding the woodstove. We fed the stove even on cool autumn mornings, because the mist crept in through every window. <u>The fire said we were home, we had closed the door against the world, we were warm against the long night.</u></p></blockquote>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It summarizes the information that came before it in the text.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explains that the house remains cold even on cool mornings.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It illustrates that a fire provides comfort beyond physical warmth.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It suggests that the author feels comfortable in her home with or without a fire.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The first two sentences describe the fire's role in physical warmth. The underlined portion indicates that the fire also provided emotional comfort\u2014a sense of home and safety.</p><p>Choice A is incorrect. The underlined portion adds new (emotional) information rather than summarizing. Choice B is incorrect. The underlined portion focuses on the comfort the fire provides, not on cold. Choice D is incorrect. The portion emphasizes the importance of having the fire.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

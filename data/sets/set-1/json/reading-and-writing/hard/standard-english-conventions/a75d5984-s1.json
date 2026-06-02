@@ -1,0 +1,25 @@
+{
+  "questionId": "a75d5984-s1",
+  "originalId": "a75d5984",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.hard",
+  "stimulus": "<p>Several properties&mdash;the capacity to bond reliably with carbon substrates, to resist degradation under prolonged ultraviolet exposure, and to retain elasticity at low temperatures&mdash;<span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> certain synthetic polymers as a promising substitute for natural rubber in outdoor applications; consequently, manufacturers are channeling resources into expanding these polymers' production.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>establishing</p>"},
+    {"id": "b", "content": "<p>by establishing</p>"},
+    {"id": "c", "content": "<p>have established</p>"},
+    {"id": "d", "content": "<p>having established</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of verb forms within a sentence. A main clause requires a finite (tensed) verb to perform the action of the subject. In this case, the subject is \"several properties,\" and the present perfect tense verb \"have established\" supplies the finite verb to indicate what has made certain synthetic polymers a promising substitute for natural rubber.</p><p>Choice A is incorrect because it results in an ungrammatical sentence. The nonfinite participle \"establishing\" doesn't supply the main clause with a finite verb. Choice B is incorrect because it results in an ungrammatical sentence. The prepositional phrase \"by establishing\" doesn't supply the main clause with a finite verb. Choice D is incorrect because it results in an ungrammatical sentence. The nonfinite participle \"having established\" doesn't supply the main clause with a finite verb.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

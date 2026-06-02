@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Hard",
+  "dcode": "H",
+  "domain": "Advanced Math",
+  "domain_code": "P",
+  "skill": "Equivalent expressions",
+  "skill_code": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Let <math><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup><mo>\u2212</mo><mn>16</mn><mi>x</mi></math> and <math><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>\u2212</mo><mn>3</mn><mi>x</mi><mo>\u2212</mo><mn>4</mn></math>. Which of the following expressions is equivalent to <math><mfrac><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mfrac></math>, for <math><mi>x</mi><mo>&gt;</mo><mn>4</mn></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfrac><mrow><mi>x</mi><mo>(</mo><mi>x</mi><mo>+</mo><mn>4</mn><mo>)</mo></mrow><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mrow><mi>x</mi><mo>(</mo><mi>x</mi><mo>\u2212</mo><mn>4</mn><mo>)</mo></mrow><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mrow><mi>x</mi><mo>+</mo><mn>4</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mn>1</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Factor: f(x) = x(x\u00b2 \u2212 16) = x(x + 4)(x \u2212 4) and g(x) = (x + 1)(x \u2212 4). For x &gt; 4 (so x \u2212 4 \u2260 0), f(x)/g(x) = x(x + 4)(x \u2212 4) / [(x + 1)(x \u2212 4)] = x(x + 4)/(x + 1).</p><p>The other choices result from incorrect factoring or cancellation.</p>",
+  "questionId": "22fd3e1f-s1",
+  "originalId": "22fd3e1f",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:28:54.548681+00:00",
+  "templateId": "equivalent-expressions.A3.T8.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "fcab3630-s1",
+  "originalId": "fcab3630",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>In his <em>De materia medica</em>, the Greek physician Dioscorides recorded an exhaustive catalog of medicinal plants, listing roughly 600 species along with their geographic origins. For generations, scholars searched for a fully illustrated copy of this influential <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> longing was rewarded in 1499, when a richly painted manuscript surfaced in a Constantinople archive, complete with detailed botanical plates.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>treatise, that</p>"},
+    {"id": "b", "content": "<p>treatise and that</p>"},
+    {"id": "c", "content": "<p>treatise. That</p>"},
+    {"id": "d", "content": "<p>treatise that</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. A period correctly marks the boundary between the two sentences (\"For generations...treatise\" and \"That longing...plates\").</p><p>Choice A is incorrect because a comma alone produces a comma splice between two independent clauses. Choice B is incorrect because the coordinating conjunction \"and\" must be preceded by a comma to join two independent clauses. Choice D is incorrect because omitting punctuation fuses the two independent clauses into a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "267a13e2-s1",
+  "originalId": "267a13e2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>In 2018, paleontologist Mariella Ortega was surveying a remote ridge in northern Patagonia when she spotted what appeared to be a row of three-toed impressions pressed into the exposed <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the aid of photogrammetric mapping, she confirmed the prints belonged to a previously unknown species of theropod dinosaur.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>sandstone. With</p>"},
+    {"id": "b", "content": "<p>sandstone, with</p>"},
+    {"id": "c", "content": "<p>sandstone so with</p>"},
+    {"id": "d", "content": "<p>sandstone with</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between the first sentence (&ldquo;In...sandstone&rdquo;) and the second sentence (&ldquo;With...dinosaur&rdquo;), which begins with a supplementary phrase.</p><p>Choice B is incorrect because it results in a comma splice. Choice C is incorrect because, without a comma preceding it, the conjunction &ldquo;so&rdquo; can&rsquo;t join two main clauses. Choice D is incorrect because it results in a run-on sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

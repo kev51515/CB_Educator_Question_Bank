@@ -1,0 +1,39 @@
+{
+  "questionId": "983d33fa-s1",
+  "originalId": "983d33fa",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>In 1720, the price of shares in the South Sea Company collapsed in London, wiping out fortunes of thousands of investors who had purchased the stock at its peak. Some economists <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> that this &ldquo;South Sea Bubble&rdquo; was one of the earliest documented examples of a speculative bubble, in which investor enthusiasm drives prices far above what underlying value can justify.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>having argued</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>arguing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>argue</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>to argue</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A main clause requires a finite verb. The finite present tense verb &ldquo;argue&rdquo; correctly performs the action of the plural subject &ldquo;some economists.&rdquo;</p><p>Choices A, B, and D are all nonfinite forms that cannot serve as the main verb of a clause.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T2.easy"
+}

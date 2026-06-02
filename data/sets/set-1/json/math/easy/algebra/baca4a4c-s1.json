@@ -1,0 +1,39 @@
+{
+  "questionId": "baca4a4c-s1",
+  "originalId": "baca4a4c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>5</mn><mo>(</mo><mn>3</mn><mi>x</mi><mo>-</mo><mn>4</mn><mo>)</mo><mo>=</mo><mn>60</mn></math></p><p>Which equation has the same solution as the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>-</mo><mn>20</mn><mo>=</mo><mn>60</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>-</mo><mn>4</mn><mo>=</mo><mn>12</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>-</mo><mn>4</mn><mo>=</mo><mn>55</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>3</mn><mi>x</mi><mo>-</mo><mn>20</mn><mo>=</mo><mn>65</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Dividing each side of <math><mn>5</mn><mo>(</mo><mn>3</mn><mi>x</mi><mo>-</mo><mn>4</mn><mo>)</mo><mo>=</mo><mn>60</mn></math> by 5 yields <math><mn>3</mn><mi>x</mi><mo>-</mo><mn>4</mn><mo>=</mo><mn>12</mn></math>.</p><p>Choices A, C, and D distribute or operate incorrectly on only one side.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T7.easy"
+}

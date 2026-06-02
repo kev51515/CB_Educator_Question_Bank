@@ -1,0 +1,22 @@
+[
+  {"id": "8f0c82e2-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.medium", "verdict": "ok"},
+  {"id": "0ef4a7b6-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "f02b4509-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.medium", "verdict": "ok"},
+  {"id": "bf5f80c6-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.medium", "verdict": "ok"},
+  {"id": "80da233d-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "e9ef0e6b-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.medium", "verdict": "ok"},
+  {"id": "34aca984-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.medium", "verdict": "ok"},
+  {"id": "ee2f611f-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard", "verdict": "difficulty_drift", "detail": "Hard A2.T2 requires two competing constraints, percent overhead, or binding-constraint identification among multiple. Clone has a single constraint with three rate options; selecting the max fare is a one-step solve closer to medium difficulty."},
+  {"id": "5bf5136d-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A1.T2.hard", "verdict": "ok"},
+  {"id": "830120b0-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.hard", "verdict": "ok"},
+  {"id": "6c71f3ec-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard", "verdict": "aspect_drift", "detail": "Tagged A2.T2 (answer is a numeric max/min), but the clone's answer form is an inequality on s, not a number. This fits A1.T3 (multi-step contextual setup with percent overhead) or A5.T2, not A2.T2."},
+  {"id": "ee7b1de1-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "187f74bc-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.hard", "verdict": "ok"},
+  {"id": "b8e73b5b-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A2.T2.hard", "verdict": "ok"},
+  {"id": "541bef2f-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T1 requires a partially specified point (one coordinate symbolic) or a region of valid y-coordinates. Clone uses four fully specified ordered pairs, matching the medium A3.T1 difficulty lever."},
+  {"id": "d8539e09-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard", "verdict": "ok"},
+  {"id": "68c5c81a-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A5.T2.hard", "verdict": "type_drift", "detail": "A5.T2 expects deriving an equivalent inequality or a numeric extremum from a given inequality/system. Clone asks for the interpretation of a single term (13q) in context, which is a coefficient-meaning item, not a solve/interpret-equivalent task."},
+  {"id": "48fb34c8-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard", "verdict": "ok"},
+  {"id": "a049f400-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T2 requires larger coefficients (e.g., 13x, 2x-y>883) or a 2-inequality system. Clone uses y<4x+3 with small slope 4 and a single inequality, matching the medium A3.T2 lever."},
+  {"id": "f8ff3249-s1", "templateId": "linear-inequalities-in-one-or-two-variables.A3.T2.hard", "verdict": "difficulty_drift", "detail": "Hard A3.T2 requires larger coefficients or a 2-inequality system. Clone uses y<8x+5 with small slope 8 and a single inequality, matching the medium A3.T2 lever."}
+]

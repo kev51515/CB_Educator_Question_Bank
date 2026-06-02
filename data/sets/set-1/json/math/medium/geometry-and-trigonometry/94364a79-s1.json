@@ -1,0 +1,39 @@
+{
+  "questionId": "94364a79-s1",
+  "originalId": "94364a79",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Two nearby flagpoles are perpendicular to flat ground. One flagpole is <math><mn>12</mn></math> feet tall and casts a shadow that is <math><mn>4</mn></math> feet long. At the same time, the second flagpole casts a shadow that is <math><mn>3</mn></math> feet long. How tall, in feet, is the second flagpole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>9</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>11</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>16</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>36</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Each flagpole and its shadow form similar right triangles. Letting x be the height of the second pole, 12/4 = x/3, so x = 9 feet.</p><p>Choice B results from subtracting the shadow lengths from 12. Choice C is the sum 12+4. Choice D results from multiplying 12 by 3 instead of using the proportion.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "lines-angles-and-triangles.A5.T2.medium"
+}

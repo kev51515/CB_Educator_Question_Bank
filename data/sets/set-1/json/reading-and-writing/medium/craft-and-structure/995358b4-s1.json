@@ -1,0 +1,25 @@
+{
+  "questionId": "995358b4-s1",
+  "originalId": "995358b4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>In a 2021 study, Wanjiru Mwangi and colleagues investigated a long-debated puzzle in honeybee biology: although foraging activity normally calibrates a colony's distribution of labor, in years of unusually heavy nectar inflow the steady stream of incoming foragers likely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the colony's careful balancing of nursing duties and food storage.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>illustrated</p>"},
+    {"id": "b", "content": "<p>copied</p>"},
+    {"id": "c", "content": "<p>destabilized</p>"},
+    {"id": "d", "content": "<p>exploited</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. \"Destabilized\" means disrupted or threw off balance. The text sets up a contrast: foraging normally calibrates labor, but heavy inflow has the opposite effect, undermining the colony's balanced division of duties. \"Destabilized\" supplies that opposing effect.</p><p>Choice A is incorrect. \"Illustrated\" means demonstrated, which would simply repeat the idea that foraging organizes labor rather than create the contrast the passage requires. Choice B is incorrect. \"Copied\" doesn't fit because the incoming foragers aren't said to mimic the labor balance. Choice D is incorrect. \"Exploited\" suggests taking advantage of, but a stream of foragers cannot meaningfully take advantage of the colony's own internal balancing.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

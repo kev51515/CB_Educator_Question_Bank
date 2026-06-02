@@ -1,0 +1,527 @@
+{
+  "section": "Reading and Writing",
+  "domain": "Craft and Structure",
+  "skill": "Text Structure and Purpose",
+  "originals_count": 138,
+  "aspects": [
+    {
+      "id": "A1",
+      "name": "Main purpose of whole text",
+      "description": "The student reads an entire short passage (literary excerpt or informational/argumentative paragraph) and must select the option that best states the passage's overarching purpose or what the text as a whole does. Cognitive demand: synthesize the passage into a single rhetorical aim (to describe, to argue, to portray, to explain, etc.) and reject options that capture only a local detail.",
+      "boundary_with_other_aspects": "A1 asks about the entire text's purpose; A2 asks about the function of a SPECIFIC marked portion. A3 asks about the text's organizational PATTERN (how parts relate), not its overall aim. A clone that converts a whole-text purpose stem into a function-of-underlined stem is a categorical drift to A2.",
+      "types": [
+        {
+          "id": "T1",
+          "name": "Main purpose of literary excerpt",
+          "description": "Stem reads 'Which choice best states/describes the main purpose of the text?' over a fiction or poetry excerpt (with attribution such as 'The following text is from [Author]'s [date] novel/poem'). Correct answer typically begins with 'To portray/convey/depict/show/emphasize' and names a character feeling, dynamic, or thematic effect.",
+          "core_skill_demand": "Identify the dominant narrative or expressive aim of a literary passage (depicting a character trait, mood, conflict, or relationship) and discriminate against distractors that name a real but subordinate detail or a thematic claim not actually advanced by the passage.",
+          "example_originals": ["1d9a09c0", "9c759a09", "d5600e74", "ea971260", "fb8b56bc", "5f56fdec", "03c9f327"],
+          "frequency": { "easy": 11, "medium": 12, "hard": 6 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Modern prose excerpt with clear narrative action and explicit emotional cues",
+                "Correct option uses simple infinitive ('To show that...') that mirrors a sentence in the passage",
+                "Distractors describe events or feelings that never appear in the passage"
+              ],
+              "example_stem": "Main purpose: 'To show that Henry’s mother wants him to leave' (fb8b56bc); 'To describe an activity that the narrator finds amusing' (1d9a09c0)",
+              "example_ids": ["1d9a09c0", "9c759a09", "d5600e74", "fb8b56bc", "ea971260"]
+            },
+            "medium": {
+              "characteristics": [
+                "Pre-1950 prose or poetry with more elaborate diction; narrative action requires inference (not stated)",
+                "Distractors restate one accurate detail from the passage but mis-scope it as the whole purpose",
+                "Correct option uses abstraction ('To portray X's determination to meet a goal', 'To depict the setting as characters await...')"
+              ],
+              "example_stem": "Main purpose: 'To portray Francie’s determination to meet a goal' (7a0e31ea); 'To convey how engaging in song makes the speaker feel' (213a25d1)",
+              "example_ids": ["7a0e31ea", "213a25d1", "a2be625e", "aa7fc89b", "d9e55268", "6f5fc289", "c4900368"]
+            },
+            "hard": {
+              "characteristics": [
+                "Archaic/19th-century literary diction (Jane Eyre, Aeneid, ode), sometimes verse",
+                "Purpose requires inferring a contrast or duality not directly named (outward vs. inward state, longing vs. presence)",
+                "≥2 distractors paraphrase real elements of the passage but conflate cause/effect or invert the speaker's stance"
+              ],
+              "example_stem": "'To convey a contrast between Jane’s outward calmness and internal restlessness' (03c9f327); 'To emphasize that Dido has been deeply affected by Aeneas’s story' (ad4f7362)",
+              "example_ids": ["03c9f327", "5f56fdec", "ad4f7362", "0a04cac5", "b0f7541b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best states/describes the main purpose of the text?'",
+              "Attribution line introducing a literary work (author, date, genre)",
+              "Four options each beginning with an infinitive ('To ...') or 'It [verb]s ...' naming a single rhetorical aim",
+              "A single, unambiguous overarching purpose recoverable from the passage"
+            ],
+            "must_vary": [
+              "Source author, era, and genre (prose/poetry, narrator/speaker)",
+              "Specific emotional or thematic content portrayed",
+              "Which distractor draws on which subordinate detail of the passage"
+            ],
+            "common_bugs": [
+              "Writing options that ALL begin with 'To describe X' so they differ only in noun — collapses to vocabulary match",
+              "Making the correct answer copy a sentence verbatim — turns it into a retrieval question",
+              "Inserting a distractor that contradicts the passage so plainly it removes the discrimination challenge",
+              "Drifting to nonfiction stimulus while keeping a literary-style purpose option (mismatched aspect realization)"
+            ]
+          }
+        },
+        {
+          "id": "T2",
+          "name": "Main purpose of informational/argumentative text",
+          "description": "Stem reads 'Which choice best states the main purpose of the text?' over an informational, scientific, historical, or argumentative paragraph. Correct answer typically begins with 'To explain / describe / argue / discuss / present / summarize' followed by the central topic and authorial stance.",
+          "core_skill_demand": "Reduce a topical paragraph (often a study, discovery, biographical sketch, or trend) to its rhetorical move (explain a mechanism, argue a claim, present findings) and reject distractors that capture only one supporting detail or that overstate the author's stance.",
+          "example_originals": ["a086c2cb", "9421ed62", "c8603ed7", "e5ca7687", "ae2b3112", "af43b0bd", "d4732483", "0b5ecf0e", "65406d2c"],
+          "frequency": { "easy": 8, "medium": 6, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Topic is concrete and announced in the first sentence (a person, an invention, a place)",
+                "Correct option uses a simple infinitive verb ('To discuss', 'To explain', 'To present')",
+                "Distractors name plausible but unmentioned subtopics (e.g., 'to compare' when no comparison appears)"
+              ],
+              "example_stem": "Main purpose: 'To explain the basics of how a specific energy technology works' (a086c2cb); 'To discuss von Ahn’s invention of reCAPTCHA' (9421ed62)",
+              "example_ids": ["a086c2cb", "9421ed62", "c8603ed7", "e5ca7687", "be947479"]
+            },
+            "medium": {
+              "characteristics": [
+                "Passage describes a study, comparison, or trend with at least one twist (e.g., 'a study whose results cast doubt on an established hypothesis')",
+                "Correct option captures a 2-clause rhetorical move ('to describe X and explain Y')",
+                "Distractors invert the author's stance (calling a balanced description an 'argument', or vice versa)"
+              ],
+              "example_stem": "'To describe an experiment whose results cast doubt on an established hypothesis' (af43b0bd); 'To examine how Derksen’s musical compositions blend cultures' (ae2b3112)",
+              "example_ids": ["af43b0bd", "ae2b3112", "1090b367", "2af2016f", "b13378c8", "2d77660e"]
+            },
+            "hard": {
+              "characteristics": [
+                "Passage advances a nuanced authorial stance (claim with qualification, finding with caveat, comparison of approaches)",
+                "Correct option uses precise rhetorical verbs ('To assert', 'To highlight', 'To summarize the findings of a study that...')",
+                "Two distractors are partially correct (e.g., naming the topic but mis-stating the move; or vice versa)",
+                "Passage often >550 chars with multi-clause syntax and discipline-specific vocabulary"
+              ],
+              "example_stem": "'To summarize the findings of a study that explored factors influencing a fashion practice...' (d4732483); 'To assert that private and early public libraries in ancient Rome had an essential similarity' (0b5ecf0e)",
+              "example_ids": ["0b5ecf0e", "d4732483", "65406d2c", "975b0602", "d9915c15", "4eee64fa", "c61a7c4a", "a1d2c4d0"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best states/describes the main purpose of the text?'",
+              "Stimulus is a single self-contained informational paragraph (no character/narrator)",
+              "Options use infinitive form naming the rhetorical action and topic",
+              "Exactly one option captures both the topic AND the move; others miss one"
+            ],
+            "must_vary": [
+              "Subject domain (science, history, biography, arts, technology)",
+              "Specific rhetorical move (explain mechanism, argue claim, summarize findings)",
+              "Position of the topic-sentence (lead vs. delayed)"
+            ],
+            "common_bugs": [
+              "Writing options all of form 'To [verb] [topic]' where verb is interchangeable — removes the rhetorical-move discrimination",
+              "Letting the correct answer paraphrase ONE sentence rather than the whole arc — collapses to a detail question",
+              "Importing literary-style options ('To portray X's feelings') for a nonfiction stimulus — aspect-internal type drift",
+              "Overstating the author's claim in the correct option (e.g., 'To prove' when text only 'suggests')"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A2",
+      "name": "Function of a specified portion",
+      "description": "The student is shown a passage with a specific portion marked (underlined sentence, underlined phrase/portion, underlined question, or a sentence identified by position such as 'the first sentence') and must select what that marked portion does for the text as a whole. Cognitive demand: read the marked unit in relation to its surrounding context and characterize its rhetorical role (introduce, exemplify, qualify, support, elaborate, contrast).",
+      "boundary_with_other_aspects": "A2 always targets a SPECIFIC marked sub-portion of the passage; A1 targets the whole. A2 stems always contain 'function' or 'purpose of the underlined ...' (or 'function of the [Nth] sentence'). A clone that asks about the whole passage's purpose is a drift to A1.",
+      "types": [
+        {
+          "id": "T3",
+          "name": "Function of underlined sentence",
+          "description": "Stem reads 'Which choice best describes the function of the underlined sentence [in the text as a whole]?' One full sentence is underlined within an informational or literary passage. Options describe rhetorical roles such as 'provides an answer to the question in the previous sentence', 'illustrates an idea introduced in the previous sentence', 'presents a conclusion based on the team's findings'.",
+          "core_skill_demand": "Identify how the underlined sentence connects to the sentences before and after it (answers/illustrates/concedes/supports/elaborates) and reject distractors that describe accurate content of the sentence without correctly naming its role.",
+          "example_originals": ["02e49a0c", "1b5d4e3e", "1c6b1fa0", "2aaee77f", "b3e145e4", "236fee8e", "39857700", "aa5897b8", "df45f0eb"],
+          "frequency": { "easy": 11, "medium": 8, "hard": 7 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Surrounding context contains an explicit cue (a question in the prior sentence; an explicit topic introduced just before)",
+                "Correct option directly names a simple role: 'provides an answer to the question', 'identifies some reasons', 'offers a detail'",
+                "Distractors describe topics absent from the passage (e.g., 'criticizes a widely held belief' when no criticism is present)"
+              ],
+              "example_stem": "Function of underlined sentence: 'It provides an answer to the question in the previous sentence' (1b5d4e3e); 'It identifies some reasons why the map is impressive' (1c6b1fa0)",
+              "example_ids": ["1b5d4e3e", "1c6b1fa0", "02e49a0c", "2aaee77f", "b3e145e4", "662892ad", "764331f8"]
+            },
+            "medium": {
+              "characteristics": [
+                "Underlined sentence is mid-passage; reader must track two adjacent ideas (it 'elaborates on the previous sentence' or 'supports a claim made in the following sentence')",
+                "Correct option uses linkage language ('elaborates on', 'supports', 'sets up', 'illustrates')",
+                "≥2 distractors accurately describe the sentence's literal content but mis-name its rhetorical role"
+              ],
+              "example_stem": "'It elaborates on the previous sentence’s statement about a transitional moment in Johnson’s artistic career' (4c4db685); 'It supports an argument about the workers who produced the Bayeux Tapestry' (cef79fb9)",
+              "example_ids": ["4c4db685", "cef79fb9", "236fee8e", "54c6128b", "74446089", "48555763"]
+            },
+            "hard": {
+              "characteristics": [
+                "Underlined sentence performs a multi-step role (sets up a contrast that is then qualified; introduces an example whose significance is drawn later)",
+                "Correct option is a two-clause description ('It helps explain X with respect to Y', 'It identifies a conflict between research findings and recent events that the text goes on to suggest is a consequence of...')",
+                "Distractors include another plausible role-name (also a verb of rhetorical linkage) with a slightly wrong target",
+                "Passage uses dense academic prose or 19th-century literary syntax"
+              ],
+              "example_stem": "'It identifies a conflict between research findings and recent events that the text goes on to suggest is a consequence of a complicating factor in the data...' (df45f0eb); 'It helps explain Cruse’s position with respect to the community of civil rights thinkers' (9b01bcf4)",
+              "example_ids": ["df45f0eb", "9b01bcf4", "aa5897b8", "39857700", "5336f2e4", "570970cd"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best describes the function of the underlined sentence [in the text as a whole]?'",
+              "Exactly one complete sentence underlined within the stimulus",
+              "Options describe rhetorical role using verbs of function (introduces, elaborates, supports, illustrates, qualifies)",
+              "Correct answer names BOTH the role and what it connects to"
+            ],
+            "must_vary": [
+              "Position of the underlined sentence (opening, mid-passage, closing)",
+              "Rhetorical role (answer, example, qualification, support, conclusion)",
+              "Stimulus domain (literary vs. informational)"
+            ],
+            "common_bugs": [
+              "Underlining a sentence whose function is simply 'it states the main idea' — too easy, no role to disambiguate",
+              "Writing distractors that all describe the sentence's content but never its function — student picks correct content by accident",
+              "Using a passage where the underlined sentence has no clear connective tissue (no prior question to answer, no claim to support) — no answer is recoverable",
+              "Letting the option text describe the WHOLE text's purpose — drifts toward A1"
+            ]
+          }
+        },
+        {
+          "id": "T4",
+          "name": "Function of underlined portion/phrase",
+          "description": "Stem reads 'Which choice best describes the function of the underlined portion [or phrase] in the text as a whole?' The underlined unit is a sub-sentential phrase, clause, or multi-sentence span. Options describe how this portion contributes to the text (explains, identifies, emphasizes, qualifies, illustrates).",
+          "core_skill_demand": "Treat the underlined fragment as a discourse unit and explain how it advances the surrounding argument (defining a term, providing context, qualifying a claim, emphasizing an effect).",
+          "example_originals": ["066a3295", "29741ebc", "97ca2cda", "ac5bf490", "c966ad55", "d2a90d4f", "ea9dfe27", "fcc328c6", "590f0ad2", "0f2933b9", "1f2d6173", "cce2f8dc"],
+          "frequency": { "easy": 8, "medium": 9, "hard": 8 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Underlined portion is short (a phrase or clause) and serves a textbook role: defines a term, gives an example, clarifies a word",
+                "Correct option uses concrete verbs ('explains the meaning of a word', 'clarifies the meaning of a scientific term', 'introduces a scientific term that is used in the discussion that follows')",
+                "Distractors name roles absent from the passage (criticism, comparison) that the passage never performs"
+              ],
+              "example_stem": "'It explains the meaning of a word' (29741ebc); 'It clarifies the meaning of a scientific term' (d2a90d4f); 'It introduces a scientific term that is used in the discussion that follows' (fcc328c6)",
+              "example_ids": ["29741ebc", "d2a90d4f", "fcc328c6", "066a3295", "97ca2cda", "ac5bf490", "c966ad55", "ea9dfe27"]
+            },
+            "medium": {
+              "characteristics": [
+                "Underlined portion is one or more sentences with a substantive rhetorical role (introduces a specific example supporting a general claim; describes a method)",
+                "Correct option begins with a precise discourse verb ('introduces discussion of a specific example that supports...', 'characterizes the sea’s waves as a relentless and enduring force')",
+                "Distractors mis-attribute the role (claim vs. evidence, general vs. specific)"
+              ],
+              "example_stem": "'It introduces discussion of a specific example that supports the general claim made in the previous sentence' (590f0ad2); 'It explains how certain birds promote seed germination in Atacama Desert soil' (8bc66f89)",
+              "example_ids": ["590f0ad2", "8bc66f89", "422c5068", "749f3334", "d168e7c5", "e7247766", "e23f50b9", "c6bd3447", "cf9a00e0"]
+            },
+            "hard": {
+              "characteristics": [
+                "Underlined portion has a multi-layered function (notes a methodological choice that justifies a later conclusion; signals a concession that is later overturned; underscores extent of an impact)",
+                "Correct option is a two-clause analytic sentence ('It notes a factor that led X to not dismiss Y altogether despite their evidence of...'; 'It challenges the stance of the investors and enthusiasts mentioned earlier in the text')",
+                "≥2 distractors describe an adjacent or surface-level role (e.g., 'illustrates' when the unit actually 'qualifies')",
+                "Passage is dense (literary archaic syntax or specialist academic prose)"
+              ],
+              "example_stem": "'It notes a factor that led Seira et al. to not dismiss risk-disclosure messaging altogether...' (662ebff2); 'It challenges the stance of the investors and enthusiasts who are mentioned earlier in the text' (cce2f8dc)",
+              "example_ids": ["0f2933b9", "1f2d6173", "2e744883", "662ebff2", "ac9a3a26", "ad4f7362", "cce2f8dc", "cf46f239"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best describes the function/purpose of the underlined portion/phrase [in the text as a whole]?'",
+              "A clearly delimited underlined fragment that is shorter than the full passage (phrase, clause, or 1-2 sentences)",
+              "Options describe the fragment's discourse role and reference the surrounding context",
+              "Exactly one rhetorical role is supportable from the passage"
+            ],
+            "must_vary": [
+              "Length and grammatical category of the underlined fragment (phrase vs. sentence vs. multi-sentence)",
+              "Rhetorical role (define, exemplify, qualify, emphasize, challenge)",
+              "Domain (science, humanities, literary)"
+            ],
+            "common_bugs": [
+              "Underlining a phrase that has no distinctive function (it merely names the topic) — answer becomes vacuous",
+              "Letting all options refer to whole-text purpose — drifts to A1",
+              "Including a distractor that names a role of an adjacent sentence rather than the underlined portion — punishes careful readers",
+              "Underlining so much that it becomes the main body of the passage — flattens the part/whole distinction"
+            ]
+          }
+        },
+        {
+          "id": "T5",
+          "name": "Function of a positionally identified sentence",
+          "description": "Stem identifies a sentence by its position rather than by underline: 'function of the first/second/third sentence in the overall structure of the text'. Options describe what that positionally specified sentence does for the text as a whole.",
+          "core_skill_demand": "Locate the named sentence by counting position, then characterize its rhetorical role within the passage's organization (definition, problem-setup, methodology note, generalization).",
+          "example_originals": ["47598085", "6bc0ba75", "e818241b"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(Rare at this difficulty — no easy originals in bank)",
+                "If cloned at easy: opening sentence defines a clearly named phenomenon and the rest of the passage discusses it"
+              ],
+              "example_stem": "(extrapolated) 'It defines a phenomenon that is discussed in the text.'",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Named sentence is the OPENING sentence and performs a setup role (defines/introduces)",
+                "Correct option uses a simple structural verb ('defines a phenomenon that is discussed in the text')",
+                "Distractors restate other sentences' roles"
+              ],
+              "example_stem": "'It defines a phenomenon that is discussed in the text' (47598085)",
+              "example_ids": ["47598085"]
+            },
+            "hard": {
+              "characteristics": [
+                "Named sentence is internal (2nd, 3rd) and its role requires understanding the surrounding argument",
+                "Correct option is a multi-clause analytic statement ('It identifies the problem that Nance and colleagues attempted to solve but did not'; 'It presents a generalization that is exemplified by the discussion of...')",
+                "Passage uses academic prose with multi-step argument structure"
+              ],
+              "example_stem": "'It identifies the problem that Nance and colleagues attempted to solve but did not' (e818241b); 'It presents a generalization that is exemplified by the discussion of the mimosa trees and B. terrenus' (6bc0ba75)",
+              "example_ids": ["6bc0ba75", "e818241b"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem uses positional identifier ('first/second/third/last sentence') rather than underline",
+              "The named sentence has a structurally important role distinct from neighboring sentences",
+              "Options describe the role of THAT sentence specifically, not the text as a whole"
+            ],
+            "must_vary": [
+              "Which sentence position is named",
+              "Type of rhetorical role (definition, problem-setup, methodology, generalization)",
+              "Domain"
+            ],
+            "common_bugs": [
+              "Cloning while moving the underline back in — converts to T3/T4",
+              "Picking a sentence whose role is identical to its neighbors (e.g., second listed example) — no distinctive function to identify",
+              "Distractors that all describe other sentences in the passage — student can solve by position alone"
+            ]
+          }
+        },
+        {
+          "id": "T6",
+          "name": "Function of underlined question/lines/statement (special-form)",
+          "description": "Stem asks about the function of a marked unit that is grammatically distinctive: an underlined question (rhetorical or genuine), underlined lines of verse, or an underlined declarative statement. Options describe what this distinctive unit does (raises a question, conveys a feeling, identifies a circumstance).",
+          "core_skill_demand": "Read the grammatical form of the marked unit (question, verse lines, statement) AS part of the author's strategy and identify its role (reinforces skepticism, conveys longing, identifies a comparable circumstance).",
+          "example_originals": ["809addda", "a68239ed", "ca50de52", "a2f64e58"],
+          "frequency": { "easy": 2, "medium": 0, "hard": 2 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Marked unit's form is salient (a question mark; visibly verse lines)",
+                "Correct option names the obvious effect ('reinforces skepticism', 'conveys the speaker’s sense of feeling a pull toward home')",
+                "Distractors describe unrelated emotions or topics"
+              ],
+              "example_stem": "Underlined question: 'It reinforces the text’s skepticism about the possibility of truly achieving self-knowledge' (a68239ed); underlined lines: 'It conveys the speaker’s sense of feeling a pull toward home...' (809addda)",
+              "example_ids": ["809addda", "a68239ed"]
+            },
+            "medium": {
+              "characteristics": [
+                "(Rare in this bank)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "hard": {
+              "characteristics": [
+                "Marked unit (question or statement) participates in a multi-step argument — raises a possibility that is then complicated, or motivates a methodology",
+                "Correct option uses analytic phrasing ('discusses a characteristic shared by certain animals in order to explain why researchers raised a possibility that turned out not to be supported by data described later in the text')",
+                "Distractors describe accurate content but mis-state the role"
+              ],
+              "example_stem": "Underlined statement: 'It discusses a characteristic shared by certain animals in order to explain why researchers raised a possibility that turned out not to be supported...' (a2f64e58); underlined question: 'It reflects a primary goal that many computer animators have...' (ca50de52)",
+              "example_ids": ["a2f64e58", "ca50de52"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Marked unit retains its distinctive grammatical form (question, verse lines, declarative statement)",
+              "Stem wording references that distinctive form ('underlined question', 'underlined lines', 'underlined statement')",
+              "Correct option names a function tied to the unit's specific form/effect"
+            ],
+            "must_vary": [
+              "Which grammatical form is marked (question vs. lines vs. statement)",
+              "The role assigned (emphasize, reinforce, motivate, raise a possibility)",
+              "Domain (literary vs. scientific)"
+            ],
+            "common_bugs": [
+              "Marking a question but writing options that ignore its question-form (treating it like any sentence) — wastes the type's distinctive lever",
+              "Marking verse lines but providing prose-style functional options — mismatch with literary form",
+              "Cloning at hard but writing distractors that don't engage the multi-step move — collapses to easy"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "name": "Overall organizational structure",
+      "description": "The student reads the whole passage and must select the option that best describes how the text is ORGANIZED — the sequence and relationship of its parts (claim then example; question then answer; problem then solution; description then commentary). Cognitive demand: identify the global rhetorical sequence rather than topic or aim.",
+      "boundary_with_other_aspects": "A3 asks about HOW the text moves (organizational sequence of parts); A1 asks WHAT it aims to do; A2 asks what one specific part does. A clone of A3 that names only an overall purpose (without describing the part-to-part sequence) drifts to A1. A clone that focuses on one underlined unit drifts to A2.",
+      "types": [
+        {
+          "id": "T7",
+          "name": "Two-move informational structure",
+          "description": "Stem reads 'Which choice best describes the overall structure of the text?' The correct option describes a two-part rhetorical sequence: 'It [does X], then [does Y]' — e.g., 'introduces a researcher and gives information about what she researches'; 'describes a general situation, then illustrates that situation with specific examples'; 'presents a claim about Mitchell, then gives an example supporting that claim'.",
+          "core_skill_demand": "Trace the passage's two main rhetorical moves in order (introduce/describe/present, then exemplify/explain/refute) and reject distractors that invert the order or name a move the passage does not perform.",
+          "example_originals": ["40270820", "56ec23a0", "5e732e67", "70612a79", "190857f0", "2903a041", "8963273a", "b4d29611", "f6352bd3", "d69bc408"],
+          "frequency": { "easy": 5, "medium": 13, "hard": 4 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "Passage is short, with each rhetorical move occupying its own sentence(s)",
+                "Correct option uses simple verbs in clear order ('introduces ... and then explains', 'mentions ... and then explains')",
+                "Distractors either invert the order or name a third element absent from the text"
+              ],
+              "example_stem": "'It introduces a researcher and gives information about what she researches' (40270820); 'The text describes a general situation, then illustrates that situation with specific examples' (5e732e67)",
+              "example_ids": ["40270820", "56ec23a0", "5e732e67", "70612a79", "805e361d"]
+            },
+            "medium": {
+              "characteristics": [
+                "Each rhetorical move is more developed (multiple sentences) and the two moves are linked by a topical pivot (poses a question → answers it; describes a problem → sketches an approach)",
+                "Correct option uses precise rhetorical verbs ('poses a question about two species, then presents a possible answer'; 'summarizes research findings and then identifies an area for further research')",
+                "Distractors get the topic right but the rhetorical relation wrong (claim/example confused; question/answer reversed)"
+              ],
+              "example_stem": "'The text poses a question about two species, then presents a possible answer' (190857f0); 'It describes a problem that arises in research on a particular topic, then sketches a historian’s approach to addressing that problem' (b4d29611)",
+              "example_ids": ["190857f0", "b4d29611", "8963273a", "2903a041", "3e63fce0", "d69bc408", "dcd9ad50", "f6352bd3"]
+            },
+            "hard": {
+              "characteristics": [
+                "(Rare — most A3 hard items have ≥3 moves; see T8)",
+                "If two-move at hard: the second move qualifies, complicates, or partially contradicts the first; the correct option captures that nuanced relation"
+              ],
+              "example_stem": "'The text presents Mukerjee’s critique of the social sciences and then provides an example of his attempts to address issues he identified in his critique' (34d7bb25)",
+              "example_ids": ["34d7bb25"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best describes the overall structure of the text?'",
+              "Passage exhibits a clean, recoverable two-part rhetorical sequence",
+              "Options describe a sequence of rhetorical moves linked by 'then' or 'and then', not just a topic",
+              "Exactly one option captures BOTH moves in correct order"
+            ],
+            "must_vary": [
+              "Topical domain (science, history, biography, arts)",
+              "Specific rhetorical pivot (problem→solution, claim→evidence, question→answer, finding→implication)",
+              "Which distractor inverts which move"
+            ],
+            "common_bugs": [
+              "Writing distractors that all describe two-move structures but differ only in topic — student matches topic instead of structure",
+              "Crafting a passage with no clear pivot (purely descriptive throughout) — no structure to identify",
+              "Letting the correct answer describe a structure not actually visible in the text (e.g., 'refutes a counterargument' when the text only notes a competing view) — overstates the move",
+              "Reducing to one move ('It introduces a topic') — collapses to A1"
+            ]
+          }
+        },
+        {
+          "id": "T8",
+          "name": "Multi-step (3+ move) informational structure",
+          "description": "Stem reads 'Which choice best describes the overall structure of the text?' The correct option captures three or more rhetorical moves in sequence — e.g., 'introduces a phenomenon, refutes two potential explanations, and then presents a third explanation'; 'introduces a project, details the approach, and then provides an example of critique'.",
+          "core_skill_demand": "Identify three or more distinct rhetorical moves and their order (introduce → develop → qualify/refute → conclude) and reject options that conflate moves or omit a step.",
+          "example_originals": ["5127fc1e", "6d44060a", "6ae393f7", "a70cbc53", "b4887dae", "f61c22f3", "4ed09415"],
+          "frequency": { "easy": 0, "medium": 1, "hard": 5 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(None in bank — three-move stems do not appear at easy difficulty)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Three rhetorical moves; each transition is signaled by an explicit cue ('first', 'then', 'finally', 'mentions ... then explains how ...')",
+                "Correct option lists three verbs in order ('notes an obstacle, mentions a navigational ability, and then explains how researchers used...')"
+              ],
+              "example_stem": "'It notes an obstacle to observing an astronomical phenomenon, mentions a navigational ability of certain animals that inspired a solution, and then explains how researchers used...' (5127fc1e); 'It provides a characterization about a field of thought by noting two works in it and then details a way in which some works are more comprehensive...' (6d44060a)",
+              "example_ids": ["5127fc1e", "6d44060a"]
+            },
+            "hard": {
+              "characteristics": [
+                "Three or more moves with a complex relation among them (introduce → present hypothesis → describe conflicting observation; describe finding → characterize as general pattern → describe exception to pattern)",
+                "Distractors include real two-move structures that ALMOST capture the passage but omit one move",
+                "Passage uses dense academic prose with embedded reasoning (research framing common)"
+              ],
+              "example_stem": "'It introduces a natural phenomenon, refutes two potential explanations for that phenomenon, and then presents a third explanation...' (6ae393f7); 'It describes and accounts for a finding, characterizes the finding as representative of a general pattern, and then describes and accounts for an exception to that pattern' (4ed09415)",
+              "example_ids": ["6ae393f7", "4ed09415", "f61c22f3", "a70cbc53", "b4887dae"]
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best describes the overall structure of the text?'",
+              "Passage exhibits ≥3 distinct, ordered rhetorical moves",
+              "Correct option enumerates all moves in order using rhetorical verbs",
+              "≥1 distractor describes a real two-move subset (to punish under-reading)"
+            ],
+            "must_vary": [
+              "Number and type of moves (introduce/refute/present; describe/characterize/explain-exception)",
+              "Domain (often science but can be history/arts)",
+              "Which move the most-tempting distractor omits"
+            ],
+            "common_bugs": [
+              "Letting the correct option enumerate four moves when only three are visible — fabricates a step",
+              "Writing only two-move distractors that all under-count — too easy",
+              "Conflating sub-clauses of a single move into separate steps (e.g., counting 'describes and accounts for' as one or two)",
+              "Producing a passage where the three moves are not clearly ordered in time — student can't recover sequence"
+            ]
+          }
+        },
+        {
+          "id": "T9",
+          "name": "Structure of a literary excerpt",
+          "description": "Stem reads 'Which choice best describes the overall structure of the text?' applied to a poetry or fiction excerpt. Correct option describes the literary-rhetorical sequence (speaker addresses a criticism, then announces a grand ambition; speaker describes a distinctive sight in nature, then ponders its meaning; extended comparison of night to a human being).",
+          "core_skill_demand": "Trace the speaker's or narrator's rhetorical/affective moves through a literary passage (description→reflection; address→declaration; image series→summation) and distinguish from purely topical or informational structural descriptions.",
+          "example_originals": ["14b7dced", "97360a00", "acb852e7", "c7265342", "f2c48e47"],
+          "frequency": { "easy": 0, "medium": 3, "hard": 0 },
+          "difficulty_levers": {
+            "easy": {
+              "characteristics": [
+                "(None at easy in bank)"
+              ],
+              "example_stem": "",
+              "example_ids": []
+            },
+            "medium": {
+              "characteristics": [
+                "Speaker performs two clearly distinguishable acts (describe an image, then comment on it; address a criticism, then make a declaration)",
+                "Correct option begins with 'The speaker [verb]s..., then [verb]s...'",
+                "Distractors describe literary moves the passage does not perform (laments → consoles when text only describes)"
+              ],
+              "example_stem": "'The speaker addresses a criticism leveled against him, then announces a grand ambition of his' (14b7dced); 'The speaker describes a distinctive sight in nature, then ponders what meaning to attribute to that sight' (acb852e7); 'It makes an extended comparison of night to a human being' (97360a00)",
+              "example_ids": ["14b7dced", "97360a00", "acb852e7", "c7265342", "f2c48e47"]
+            },
+            "hard": {
+              "characteristics": [
+                "Literary structure has ≥3 moves OR involves a subtle ironic/contrastive turn (the speaker seems to do X but actually inverts to Y)",
+                "Correct option is multi-clause and names the inversion or extended figure",
+                "Distractors describe accurate but partial sequences"
+              ],
+              "example_stem": "(no clean hard literary-structure original in bank; closest cross-over items use literary stims with informational-style options)",
+              "example_ids": []
+            }
+          },
+          "clone_constraints": {
+            "must_preserve": [
+              "Stem wording: 'Which choice best describes the overall structure of the text?'",
+              "Stimulus is a literary excerpt (poem, novel, play passage) with speaker/narrator",
+              "Options use literary-rhetorical verbs ('describes', 'ponders', 'addresses', 'compares')",
+              "Sequence of speaker/narrator moves is recoverable from the passage"
+            ],
+            "must_vary": [
+              "Genre (verse vs. prose)",
+              "Specific literary moves performed (description→reflection vs. address→declaration vs. comparison)",
+              "Era/author of source"
+            ],
+            "common_bugs": [
+              "Using informational-paragraph option phrasing for a literary stimulus (talking about 'research' or 'a study') — categorical mismatch",
+              "Cloning at hard but writing only two-move options — collapses to medium",
+              "Underreading: producing a 'literary' option that names only a topic ('describes nature') — drifts to A1",
+              "Including extended-comparison option when the passage actually contains a clear pivot — wrong structural model"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "skill_wide_notes": "Stems in this skill are highly templated: 'Which choice best states/describes the (main purpose of the text | function/purpose of the underlined [sentence/portion/phrase/question/lines] | overall structure of the text)'. Aspect can almost always be inferred from stem wording alone, which makes aspect-drift errors in clones especially easy to detect. Difficulty is driven by (1) passage type — modern informational < pre-1950 literary < dense academic prose with embedded research argument; (2) number of rhetorical moves the correct answer must capture (one vs. two vs. three+); (3) how close distractors come to the correct role (paraphrasing content vs. mis-naming role vs. omitting a step). Hard items frequently use multi-clause analytical options and demand discrimination between similar discourse roles (e.g., 'illustrates' vs. 'elaborates' vs. 'qualifies'). Literary stimuli are over-represented in A1 (main purpose) and A3 medium; A3 hard is dominated by scientific/research passages with 3+ rhetorical moves."
+}

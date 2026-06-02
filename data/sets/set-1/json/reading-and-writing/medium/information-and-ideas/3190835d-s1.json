@@ -1,0 +1,25 @@
+{
+  "questionId": "3190835d-s1",
+  "originalId": "3190835d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A1.T1.medium",
+  "stimulus": "<p>Some school administrators believe that when students are required to switch tasks during a lesson, they suffer a drop in focus and learning outcomes. However, a team led by Linnea Karlsson, who studies educational psychology, has found that brief, well-timed task switches can have a cognitive component that strengthens students' working memory, resulting in better retention that benefits learners and teachers alike. Therefore, schools should recognize that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>most students avoid interrupting their peers because they dislike being interrupted themselves.</p>"},
+    {"id": "b", "content": "<p>the cognitive benefits of some task switches in the classroom may offset the perceived downsides.</p>"},
+    {"id": "c", "content": "<p>to maximize achievement, teachers should be willing to interrupt students frequently throughout each lesson.</p>"},
+    {"id": "d", "content": "<p>to cultivate an ideal learning environment, task switches during lessons should be discouraged.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is best. The text contrasts a perceived drawback of task switches (drop in focus) with Karlsson's finding that they can strengthen working memory and retention. The most logical conclusion is that those cognitive benefits may offset the perceived downsides. Choice A is unsupported—student motives are not discussed. Choice C overreaches into a frequency recommendation that the text does not endorse. Choice D contradicts the research finding the text presents.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

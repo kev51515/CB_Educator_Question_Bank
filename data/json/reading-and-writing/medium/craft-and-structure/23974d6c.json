@@ -1,0 +1,72 @@
+{
+  "questionId": "23974d6c",
+  "externalId": "2aa88c7d-f601-464b-8ce5-3d9bdc05cab6",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 4,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:21:41.449737+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "e832d5a2-cc02-4610-947f-484d7d40b5a6",
+      "content": "<p>distort</p>"
+    },
+    {
+      "id": "2b824ea1-2040-4c7d-b8a4-e0da150d26b3",
+      "content": "<p>enact</p>"
+    },
+    {
+      "id": "a760b6c8-82ad-4786-821f-045f0fdfd534",
+      "content": "<p>neglect</p>"
+    },
+    {
+      "id": "a2c1aeaf-9849-4346-8ed7-731c2ddea2fe",
+      "content": "<p>supplement</p>"
+    }
+  ],
+  "keys": [
+    "a760b6c8-82ad-4786-821f-045f0fdfd534"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of election polling. In this context, to &ldquo;neglect&rdquo; would mean to disregard or pay insufficient attention to something. The text states that there have been many cases of election pollsters incorrectly predicting presidential elections and then says that neuroscientist and pollster Sam Wang notes that campaigns shouldn&rsquo;t react to these failures in a certain way. The text then adds that polls are valuable for informing strategists&rsquo; efforts throughout campaigns, not just for predicting the outcome. This context conveys that Wang&rsquo;s advice is not to neglect, or disregard, polling because even though it sometimes fails to predict the winner, it can help improve campaign strategies.</p><p>Choice A is incorrect. In this context, to &ldquo;distort&rdquo; would mean to give a false or misleading account. Though the text states that many election pollsters have failed in their predictions in presidential elections, it gives no indication that Wang would therefore argue that campaigns shouldn&rsquo;t react to such polling failures by giving inaccurate accounts of election polling. Instead, the text emphasizes that polls have value beyond predicting winners, suggesting that Wang&rsquo;s point is that campaigns shouldn&rsquo;t stop polling entirely. Choice B is incorrect because it wouldn&rsquo;t make sense to suggest that Wang encourages campaigns not to &ldquo;enact,&rdquo; or establish, election polling; the text indicates that election polling is something that already takes place and that has value for campaign strategies even if it sometimes leads to inaccurate predictions of winners, suggesting an argument in favor of continuing to use election polling. Choice D is incorrect. Although the text indicates that many election pollsters have failed in their predictions in presidential elections, there&rsquo;s no reason to think Wang would say that these failures should lead campaigns <em>not</em> to &ldquo;supplement,&rdquo; or add to, election polling; it would be reasonable to suggest that campaigns <em>would</em> want to consider more than just election polling information if that information may lead to inaccurate predictions. Moreover, the text&rsquo;s main point is that polls provide some utility even if their predictions may be inaccurate, which suggests that Wang&rsquo;s recommendations pertain to whether campaigns should or shouldn&rsquo;t use polling data, not whether polling data should or shouldn&rsquo;t be supplemented with other kinds of information.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>There are many famous examples of election pollsters making inaccurate predictions in presidential elections. But neuroscientist and election pollster Sam Wang has said that these prediction failures should not lead campaigns to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> election polling entirely. Polling is about more than just predicting the winner; throughout campaigns, it helps strategists identify where their efforts are most likely to be effective.</p>",
+    "keys": [
+      "a760b6c8-82ad-4786-821f-045f0fdfd534"
+    ],
+    "answerOptions": [
+      {
+        "id": "e832d5a2-cc02-4610-947f-484d7d40b5a6",
+        "content": "<p>distort</p>"
+      },
+      {
+        "id": "2b824ea1-2040-4c7d-b8a4-e0da150d26b3",
+        "content": "<p>enact</p>"
+      },
+      {
+        "id": "a760b6c8-82ad-4786-821f-045f0fdfd534",
+        "content": "<p>neglect</p>"
+      },
+      {
+        "id": "a2c1aeaf-9849-4346-8ed7-731c2ddea2fe",
+        "content": "<p>supplement</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of election polling. In this context, to &ldquo;neglect&rdquo; would mean to disregard or pay insufficient attention to something. The text states that there have been many cases of election pollsters incorrectly predicting presidential elections and then says that neuroscientist and pollster Sam Wang notes that campaigns shouldn&rsquo;t react to these failures in a certain way. The text then adds that polls are valuable for informing strategists&rsquo; efforts throughout campaigns, not just for predicting the outcome. This context conveys that Wang&rsquo;s advice is not to neglect, or disregard, polling because even though it sometimes fails to predict the winner, it can help improve campaign strategies.</p><p>Choice A is incorrect. In this context, to &ldquo;distort&rdquo; would mean to give a false or misleading account. Though the text states that many election pollsters have failed in their predictions in presidential elections, it gives no indication that Wang would therefore argue that campaigns shouldn&rsquo;t react to such polling failures by giving inaccurate accounts of election polling. Instead, the text emphasizes that polls have value beyond predicting winners, suggesting that Wang&rsquo;s point is that campaigns shouldn&rsquo;t stop polling entirely. Choice B is incorrect because it wouldn&rsquo;t make sense to suggest that Wang encourages campaigns not to &ldquo;enact,&rdquo; or establish, election polling; the text indicates that election polling is something that already takes place and that has value for campaign strategies even if it sometimes leads to inaccurate predictions of winners, suggesting an argument in favor of continuing to use election polling. Choice D is incorrect. Although the text indicates that many election pollsters have failed in their predictions in presidential elections, there&rsquo;s no reason to think Wang would say that these failures should lead campaigns <em>not</em> to &ldquo;supplement,&rdquo; or add to, election polling; it would be reasonable to suggest that campaigns <em>would</em> want to consider more than just election polling information if that information may lead to inaccurate predictions. Moreover, the text&rsquo;s main point is that polls provide some utility even if their predictions may be inaccurate, which suggests that Wang&rsquo;s recommendations pertain to whether campaigns should or shouldn&rsquo;t use polling data, not whether polling data should or shouldn&rsquo;t be supplemented with other kinds of information.</p>",
+    "externalid": "2aa88c7d-f601-464b-8ce5-3d9bdc05cab6",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>There are many famous examples of election pollsters making inaccurate predictions in presidential elections. But neuroscientist and election pollster Sam Wang has said that these prediction failures should not lead campaigns to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> election polling entirely. Polling is about more than just predicting the winner; throughout campaigns, it helps strategists identify where their efforts are most likely to be effective.</p>"
+}

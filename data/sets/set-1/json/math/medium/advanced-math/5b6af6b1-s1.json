@@ -1,0 +1,39 @@
+{
+  "questionId": "5b6af6b1-s1",
+  "originalId": "5b6af6b1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to (n \u2212 4)(6n\u00b2 \u2212 5)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6n\u00b3 \u2212 24n\u00b2 + 5n \u2212 20</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>6n\u00b3 + 24n\u00b2 \u2212 5n + 20</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6n\u00b3 \u2212 5n \u2212 24n\u00b2 + 20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6n\u00b3 \u2212 24n\u00b2 + 20</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Distribute: (n \u2212 4)(6n\u00b2 \u2212 5) = n(6n\u00b2 \u2212 5) \u2212 4(6n\u00b2 \u2212 5) = 6n\u00b3 \u2212 5n \u2212 24n\u00b2 + 20. Reordering: 6n\u00b3 \u2212 24n\u00b2 \u2212 5n + 20. Among the choices, (c) is 6n\u00b3 \u2212 5n \u2212 24n\u00b2 + 20, which is equivalent. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A2.T6.medium"
+}

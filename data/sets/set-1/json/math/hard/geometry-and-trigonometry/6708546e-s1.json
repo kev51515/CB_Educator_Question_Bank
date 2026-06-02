@@ -1,0 +1,39 @@
+{
+  "questionId": "6708546e-s1",
+  "originalId": "6708546e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Parallelogram WXYZ is similar to parallelogram JKLM. The length of each side of parallelogram JKLM is 3 times the length of its corresponding side of parallelogram WXYZ. The area of parallelogram WXYZ is 7 square centimeters. What is the area, in square centimeters, of parallelogram JKLM?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>21</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>63</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>49</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>81</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. For similar figures, the ratio of areas is the square of the linear scale factor. With scale factor 3, the area ratio is 9, so the area of JKLM is 9 &times; 7 = 63 square centimeters.</p><p>Choice A multiplies by 3 instead of 9. Choice C ignores the original area. Choice D uses an unrelated value.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.medium"
+}

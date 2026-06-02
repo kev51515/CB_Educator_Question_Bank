@@ -1,0 +1,72 @@
+{
+  "questionId": "8459dc2f",
+  "externalId": "e8cc79a3-b745-4fd7-ac84-1094a8931ca9",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:19.918903+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "2cfe9717-9462-4db7-bb23-dd7413f7d606",
+      "content": "<p>should you choose<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "984ac676-a616-4f7d-a062-1e0b2c1a19c3",
+      "content": "<p>you should choose<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "53297def-eafd-43a2-835a-a08c66a20232",
+      "content": "<p>should you choose<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "c7366ff1-f184-44a6-86c3-51c0875514f0",
+      "content": "<p>you should choose<span data-ssml-say-as=\"characters\">.</span></p>"
+    }
+  ],
+  "keys": [
+    "c7366ff1-f184-44a6-86c3-51c0875514f0"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period to punctuate a declarative sentence that ends with an indirect question (&ldquo;which link you should choose.&rdquo;)</p><p>Choice A is incorrect. The structure requires a declarative clause that presents an indirect question about what is evaluated in click restraint, not an interrogative clause that presents a direct question, such as &ldquo;which link should you choose.&rdquo; Choice B is incorrect. It&rsquo;s unconventional to use a question mark in this way to punctuate a declarative clause that presents an indirect question, such as &ldquo;which link you should choose.&rdquo; Choice C is incorrect. The structure requires a declarative clause that presents an indirect question about what is evaluated in click restraint, not an interrogative clause that presents a direct question, such as &ldquo;which link should you choose.&rdquo;</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>When using a search engine, many people click just the first one or two results. Click restraint is the practice of scanning a search results page and evaluating what you see before deciding which link <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "c7366ff1-f184-44a6-86c3-51c0875514f0"
+    ],
+    "answerOptions": [
+      {
+        "id": "2cfe9717-9462-4db7-bb23-dd7413f7d606",
+        "content": "<p>should you choose<span data-ssml-say-as=\"characters\">.</span></p>"
+      },
+      {
+        "id": "984ac676-a616-4f7d-a062-1e0b2c1a19c3",
+        "content": "<p>you should choose<span data-ssml-say-as=\"characters\">?</span></p>"
+      },
+      {
+        "id": "53297def-eafd-43a2-835a-a08c66a20232",
+        "content": "<p>should you choose<span data-ssml-say-as=\"characters\">?</span></p>"
+      },
+      {
+        "id": "c7366ff1-f184-44a6-86c3-51c0875514f0",
+        "content": "<p>you should choose<span data-ssml-say-as=\"characters\">.</span></p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer. The convention being tested is end-of-sentence punctuation. This choice correctly uses a period to punctuate a declarative sentence that ends with an indirect question (&ldquo;which link you should choose.&rdquo;)</p><p>Choice A is incorrect. The structure requires a declarative clause that presents an indirect question about what is evaluated in click restraint, not an interrogative clause that presents a direct question, such as &ldquo;which link should you choose.&rdquo; Choice B is incorrect. It&rsquo;s unconventional to use a question mark in this way to punctuate a declarative clause that presents an indirect question, such as &ldquo;which link you should choose.&rdquo; Choice C is incorrect. The structure requires a declarative clause that presents an indirect question about what is evaluated in click restraint, not an interrogative clause that presents a direct question, such as &ldquo;which link should you choose.&rdquo;</p>",
+    "externalid": "e8cc79a3-b745-4fd7-ac84-1094a8931ca9",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>When using a search engine, many people click just the first one or two results. Click restraint is the practice of scanning a search results page and evaluating what you see before deciding which link <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

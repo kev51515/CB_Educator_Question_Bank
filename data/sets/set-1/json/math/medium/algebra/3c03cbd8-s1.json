@@ -1,0 +1,39 @@
+{
+  "questionId": "3c03cbd8-s1",
+  "originalId": "3c03cbd8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A property consists of a 9-hectare vineyard and a 16-hectare forest. The total number of trees on the property is 4,275. The equation 9x + 16y = 4,275 represents this situation. Which of the following is the best interpretation of x in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The total number of trees in the vineyard</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The total number of trees in the forest</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The average number of trees per hectare in the forest</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The average number of trees per hectare in the vineyard</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The coefficient of x is 9 (the hectares of vineyard), so 9x is the total trees in the vineyard. Therefore x is the average number of trees per hectare in the vineyard. Choice D is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium"
+}

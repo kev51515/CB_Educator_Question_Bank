@@ -1,0 +1,25 @@
+{
+  "questionId": "f40ca576-s1",
+  "originalId": "f40ca576",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Each spring, as ocean temperatures begin to rise off the coast of Mexico, large numbers of gray whales travel north. Searching for food and richer feeding grounds, they <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> thousands of miles&mdash;from the warm lagoons of Baja California all the way up to the Arctic seas&mdash;on this yearly migration.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>had swum</p>"},
+    {"id": "b", "content": "<p>swim</p>"},
+    {"id": "c", "content": "<p>were swimming</p>"},
+    {"id": "d", "content": "<p>swam</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of verbs to express tense. The present tense verb \"swim\" is consistent with the other present tense verb (\"travel\") used to describe the whales' yearly migration. Together, these simple present tense verbs correctly indicate that the migration is a current, yearly occurrence.</p><p>Choice A is incorrect because the past perfect tense verb \"had swum\" isn't consistent with the other present tense verb. Choice C is incorrect because the past progressive tense verb \"were swimming\" isn't consistent with the other present tense verb. Choice D is incorrect because the simple past tense verb \"swam\" isn't consistent with the other present tense verb.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "8d579825-s1",
+  "originalId": "8d579825",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The publication of Toni Morrison\u2019s novels featured a creative <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> between Morrison and her editor Robert Gottlieb: a careful reader, Gottlieb worked closely with Morrison to refine the manuscripts of her most celebrated books.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>rivalry</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>discovery</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>disagreement</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>collaboration</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"collaboration\" describes Morrison and Gottlieb working closely together. Choice A is incorrect because rivalry contradicts \"worked closely.\" Choice B is incorrect because the text describes ongoing work, not a single discovery. Choice C is incorrect because disagreement contradicts the supportive relationship.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

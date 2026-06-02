@@ -1,0 +1,39 @@
+{
+  "questionId": "2df7b582-s1",
+  "originalId": "2df7b582",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Locke believed that the mind at birth is a blank slate, with all knowledge arriving through sensory experience. In his view, no innate principles exist; rather, ideas are built up from impressions of the world. Leibniz disagreed, arguing that some structures\u2014such as basic logical and mathematical truths\u2014must be innate to the mind itself; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> certain ideas precede and shape any experience of the world.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>regardless,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>admittedly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>in other words,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>meanwhile,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The clause after the blank restates Leibniz's position in plainer terms: innate structures shape any experience. &ldquo;In other words&rdquo; introduces a restatement, which is exactly what the sentence does.</p><p>Choice A signals indifference to a prior point; nothing is being dismissed. Choice B concedes; no concession is offered. Choice D signals simultaneity, which doesn't fit.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A3.T9.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6fece68e-s1",
+  "originalId": "6fece68e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Queen Lili\u02bbuokalani ruled the Kingdom of Hawai\u02bbi from 1891 to 1893. She is remembered for championing a draft constitution intended to restore voting rights to native <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the protection of traditional lands, and the strengthening of the monarchy's authority.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Hawaiians</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Hawaiians;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Hawaiians,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Hawaiians:</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. Notice that \"voting rights to native Hawaiians\" is the first item in a list of three things. A comma must be used to separate the first two items in the list, just as a comma is used to separate \"the protection of traditional lands\" and \"the strengthening of the monarchy's authority.\"</p><p>Choice A is incorrect because the list requires punctuation between items. Choice B is incorrect because the other items in the list are separated by commas, so a semicolon would be inconsistent. Choice D is incorrect because a colon cannot be used to separate items within a list.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A4.T8.easy"
+}

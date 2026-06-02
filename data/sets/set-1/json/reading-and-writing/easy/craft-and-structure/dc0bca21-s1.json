@@ -1,0 +1,25 @@
+{
+  "questionId": "dc0bca21-s1",
+  "originalId": "dc0bca21",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>It would be a mistake to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the retrospective that curator Wanda Nanibush, an Anishinaabe-kwe scholar, has organized at the Art Gallery of Ontario. The exhibit, which features paintings, textiles, and films by contemporary Indigenous artists alongside historical works, is unmissable.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>arrange</p>"},
+    {"id": "b", "content": "<p>broaden</p>"},
+    {"id": "c", "content": "<p>obscure</p>"},
+    {"id": "d", "content": "<p>skip</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because \"skip\" means to pass over or fail to attend, which fits the text's assertion that the exhibit is \"unmissable.\" Choice A is incorrect because \"arrange\" means to organize; the text indicates the exhibit has already been organized. Choice B is incorrect because \"broaden\" means to expand; the text does not warn against expanding the exhibit. Choice C is incorrect because \"obscure\" means to make unclear, but the text emphasizes attendance, not visibility of content.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

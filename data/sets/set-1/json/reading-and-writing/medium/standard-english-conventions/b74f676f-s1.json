@@ -1,0 +1,25 @@
+{
+  "questionId": "b74f676f-s1",
+  "originalId": "b74f676f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A1.T2.medium",
+  "stimulus": "<p>Jazz pianist Mary Lou Williams&rsquo;s 1942 arrival in New York City marked a pivotal moment in her career. It was there that Williams composed her <em>Zodiac Suite</em>&mdash;a work that drew praise for fusing classical orchestration with bebop harmonies&mdash;and <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> mentorships with younger musicians such as Thelonious Monk and Bud Powell.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>cultivated</p>"},
+    {"id": "b", "content": "<p>cultivating</p>"},
+    {"id": "c", "content": "<p>to cultivate</p>"},
+    {"id": "d", "content": "<p>having cultivated</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The missing verb is part of the same clause as the verb \"composed,\" and \"Williams\" is the subject of both. So we need the past-tense form \"cultivated\" in order to match \"composed.\"</p><p>Choice B is incorrect. This creates a verb-form error; a finite past-tense verb is needed to match the parallel main verb \"composed.\" Choice C is incorrect. This creates a verb-form error; a finite past-tense verb is needed. Choice D is incorrect. This creates a verb-form error; a finite past-tense verb is needed to match \"composed.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

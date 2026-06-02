@@ -1,0 +1,72 @@
+{
+  "questionId": "9994ae0d",
+  "externalId": "2944e1e6-569e-4649-8926-4a054cd615dc",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:23:15.787620+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "2f477f3c-cf27-43d4-91f9-10db8c4a0c83",
+      "content": "<p>explore</p>"
+    },
+    {
+      "id": "dfa55c76-3441-4554-b5d6-0cc2b7c89455",
+      "content": "<p>has explored</p>"
+    },
+    {
+      "id": "9fe1c3e4-d1f0-46ad-bb77-43a72f56271e",
+      "content": "<p>explores</p>"
+    },
+    {
+      "id": "d9162ac1-0053-4f3c-9748-23aab991fc95",
+      "content": "<p>exploring</p>"
+    }
+  ],
+  "keys": [
+    "2f477f3c-cf27-43d4-91f9-10db8c4a0c83"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The plural verb &ldquo;explore&rdquo; agrees in number with the plural subject &ldquo;Barrada&rsquo;s pieces.&rdquo;</p><p>Choice B is incorrect because the singular verb phrase &ldquo;has explored&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;Barrada&rsquo;s pieces.&rdquo; Choice C is incorrect because the singular verb &ldquo;explores&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;Barrada&rsquo;s pieces.&rdquo; Choice D is incorrect because the nonfinite participle &ldquo;exploring&rdquo; doesn&rsquo;t supply the main clause with a finite verb.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>Artist Yto Barrada&rsquo;s exhibition <em>Ways to Baffle the Wind</em> incorporates sculptures, textiles, and films. Barrada&rsquo;s pieces, utilizing elements as disparate as plant-dyed fabrics, wire crab traps filled with stones, and cotton balls dangling above a fan, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the ways humans attempt to organize and regulate nature.</p>",
+    "keys": [
+      "2f477f3c-cf27-43d4-91f9-10db8c4a0c83"
+    ],
+    "answerOptions": [
+      {
+        "id": "2f477f3c-cf27-43d4-91f9-10db8c4a0c83",
+        "content": "<p>explore</p>"
+      },
+      {
+        "id": "dfa55c76-3441-4554-b5d6-0cc2b7c89455",
+        "content": "<p>has explored</p>"
+      },
+      {
+        "id": "9fe1c3e4-d1f0-46ad-bb77-43a72f56271e",
+        "content": "<p>explores</p>"
+      },
+      {
+        "id": "d9162ac1-0053-4f3c-9748-23aab991fc95",
+        "content": "<p>exploring</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The convention being tested is subject-verb agreement. The plural verb &ldquo;explore&rdquo; agrees in number with the plural subject &ldquo;Barrada&rsquo;s pieces.&rdquo;</p><p>Choice B is incorrect because the singular verb phrase &ldquo;has explored&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;Barrada&rsquo;s pieces.&rdquo; Choice C is incorrect because the singular verb &ldquo;explores&rdquo; doesn&rsquo;t agree in number with the plural subject &ldquo;Barrada&rsquo;s pieces.&rdquo; Choice D is incorrect because the nonfinite participle &ldquo;exploring&rdquo; doesn&rsquo;t supply the main clause with a finite verb.</p>",
+    "externalid": "2944e1e6-569e-4649-8926-4a054cd615dc",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>Artist Yto Barrada&rsquo;s exhibition <em>Ways to Baffle the Wind</em> incorporates sculptures, textiles, and films. Barrada&rsquo;s pieces, utilizing elements as disparate as plant-dyed fabrics, wire crab traps filled with stones, and cotton balls dangling above a fan, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the ways humans attempt to organize and regulate nature.</p>"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "9a144a01-s1",
+  "originalId": "9a144a01",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is true about the values of 3<sup><em>x</em></sup> and 3<em>x</em> + 5 for <em>x</em> > 0?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>For all <em>x</em> > 0, 3<em>x</em> + 5 > 3<sup><em>x</em></sup>.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For all <em>x</em> > 0, 3<sup><em>x</em></sup> > 3<em>x</em> + 5.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3<em>x</em> + 5 and 3<sup><em>x</em></sup> are equal for all <em>x</em> > 0.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>There is a constant <em>c</em> such that if <em>x</em> < <em>c</em>, then 3<em>x</em> + 5 > 3<sup><em>x</em></sup>, but if <em>x</em> > <em>c</em>, then 3<sup><em>x</em></sup> > 3<em>x</em> + 5.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The linear function 3x + 5 dominates the exponential 3^x for small positive x (e.g., at x = 1, 3+5 = 8 > 3^1 = 3), but the exponential grows faster and overtakes the line eventually (e.g., at x = 3, 3+5+ ... \u2014 actually at x = 3, 3\u00b73+5 = 14 < 3^3 = 27). So there is a crossover c between 1 and 3.</p><p>Choices A and B assume one dominates universally, which is false. Choice C is false.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T10.medium"
+}

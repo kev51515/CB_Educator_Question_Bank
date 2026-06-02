@@ -1,0 +1,25 @@
+{
+  "questionId": "a66f9b8d-s1",
+  "originalId": "a66f9b8d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A2.T4.medium",
+  "stimulus": "<p>Domestic dogs can recognize their handler&rsquo;s emotional state from speech alone and respond more attentively to a distressed voice than to a calm one. Mateusz Kowalski and colleagues reached this conclusion by recording the dogs&rsquo; tail position and the latency between the playback and the dog&rsquo;s first orientation toward the speaker while the dogs listened to clips of their handler&rsquo;s voice played from a hidden loudspeaker. The dogs displayed neutral, slow responses when calm clips were played, but they oriented quickly and held a raised tail when distressed clips were played.</p>",
+  "stem": "<p>According to the text, how did the researchers measure how attentively the dogs responded to the recordings?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>They tracked how each dog reacted to the voice of an unfamiliar handler.</p>"},
+    {"id": "b", "content": "<p>They recorded each dog&rsquo;s tail position and how quickly it oriented toward the speaker.</p>"},
+    {"id": "c", "content": "<p>They observed how each dog physically interacted with its handler during playback.</p>"},
+    {"id": "d", "content": "<p>They monitored how each dog moved between rooms after the recording ended.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text directly states that Kowalski and colleagues recorded the dogs&rsquo; tail position and the latency between the playback and the first orientation toward the speaker.</p><p>Choice A is incorrect because the clips were of the dogs&rsquo; own handlers, not unfamiliar ones. Choice C is incorrect because the dogs in the study heard recordings rather than interacting directly with the handler. Choice D is incorrect because the text never mentions tracking the dogs&rsquo; movement between rooms.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "af43b0bd-s1",
+  "originalId": "af43b0bd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>Researchers have long hypothesized that the moai statues of Rapa Nui were transported across the island on wooden rollers and sledges by large work crews. One archaeologist set out to test this hypothesis. Using ropes attached to a precise replica of a moai, his team attempted to walk the upright statue forward by tilting it from side to side along a prepared dirt path. The replica advanced steadily over hundreds of meters without rollers or sledges. This led the archaeologist to conclude that hauling statues over wood was likely not the principal method of transport.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To describe an experiment whose results cast doubt on a long-held hypothesis</p>"},
+    {"id": "b", "content": "<p>To argue for the significance of new findings amid an ongoing debate among researchers</p>"},
+    {"id": "c", "content": "<p>To weigh the advantages and disadvantages of a method used in an experiment</p>"},
+    {"id": "d", "content": "<p>To summarize two competing hypotheses and a major finding associated with each</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it most accurately states the main purpose of the text. The text opens by noting that researchers have long thought the moai were moved on wooden rollers and sledges. It then describes an experiment in which a replica statue was walked upright by tilting it without rollers, and reports that this led the archaeologist to conclude that rollers were likely not the principal transport method. The experiment&rsquo;s results thus cast doubt on the long-held hypothesis.</p><p>Choice B is incorrect because nothing in the text suggests an ongoing debate among researchers. Choice C is incorrect because the text does not weigh advantages and disadvantages of the experimental method. Choice D is incorrect because the text addresses only one established hypothesis, not two competing ones.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

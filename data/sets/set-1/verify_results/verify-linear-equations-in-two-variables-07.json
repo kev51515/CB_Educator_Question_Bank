@@ -1,0 +1,10 @@
+[
+  {"id": "4d8ccb96-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "difficulty_drift", "detail": "Percent-by-weight mixture (0.05a + 0.80b = 0.10*30) matches hard lever 'percent-by-weight mixture where each variable carries a decimal fraction and the right side itself is a product', not easy's 'small whole-number rates' and 'no unit conversion'."},
+  {"id": "ee846db7-s1", "templateId": "linear-equations-in-two-variables.A3.T3.easy", "verdict": "ok"},
+  {"id": "ba79f10f-s1", "templateId": "linear-equations-in-two-variables.A4.T6.easy", "verdict": "ok"},
+  {"id": "b2845d88-s1", "templateId": "linear-equations-in-two-variables.A4.T7.easy", "verdict": "ok"},
+  {"id": "2d0e13a6-s1", "templateId": "linear-equations-in-two-variables.A6.T13.easy", "verdict": "ok"},
+  {"id": "ebf8d2b7-s1", "templateId": "linear-equations-in-two-variables.A1.T1.easy", "verdict": "ok"},
+  {"id": "cea27ab2-s1", "templateId": "linear-equations-in-two-variables.A4.T9.easy", "verdict": "difficulty_drift", "detail": "T9 easy lever requires 'equation already in slope-intercept form with integer slope and intercept'; clone uses standard form 3x-2y=-18, which matches the medium lever."},
+  {"id": "ed856e9c-s1", "templateId": "linear-equations-in-two-variables.A5.T11.easy", "verdict": "ok"}
+]

@@ -1,0 +1,39 @@
+{
+  "questionId": "273b7f37-s1",
+  "originalId": "273b7f37",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Mateo grows strawberries on his farm. This season, he harvested 540 strawberries and kept 10% of them for next year\u2019s seeds. How many of the harvested strawberries did Mateo keep for seeds?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>54</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>64</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>486</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>540</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. 10% of 540 is 0.10 \u00d7 540 = 54.</p><p>Choice B is incorrect. This results from a computational error.</p><p>Choice C is incorrect. This is 90% of 540 (what he did not keep), not 10%.</p><p>Choice D is incorrect. This is the total number harvested, not 10% of it.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

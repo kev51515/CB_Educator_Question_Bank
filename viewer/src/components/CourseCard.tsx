@@ -1,0 +1,251 @@
+/**
+ * CourseCard
+ * ==========
+ * Shared course list card. Used by:
+ *   - /dashboard (DashboardPage) — staff's own courses
+ *   - /courses (AllClassesView) — admin cross-teacher view
+ *
+ * Visual contract: rounded card with a colored gradient header band (derived
+ * from a fast hash of the seed string), a content area with title +
+ * description + optional `meta` slot, a metrics row, and an actions/footer
+ * row. Subtle elevation on hover.
+ *
+ * Two classes can collide on palette color — that's fine; the goal is visual
+ * variety, not unique branding.
+ */
+import type { ReactNode } from "react";
+import { KebabMenu, type KebabMenuOption } from "./KebabMenu";
+
+// Fixed Canvas-like palette. JIT picks these up because they're static strings.
+const CARD_PALETTE: ReadonlyArray<string> = [
+  "from-indigo-500 to-violet-600",
+  "from-emerald-500 to-teal-600",
+  "from-rose-500 to-pink-600",
+  "from-amber-500 to-orange-600",
+  "from-sky-500 to-cyan-600",
+  "from-fuchsia-500 to-purple-600",
+];
+
+function hashString(input: string): number {
+  let hash = 0;
+  for (let i = 0; i < input.length; i += 1) {
+    hash = (hash << 5) - hash + input.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
+
+/** Derive a deterministic palette index from a stable string. */
+export function paletteFor(seed: string): string {
+  return CARD_PALETTE[hashString(seed) % CARD_PALETTE.length];
+}
+
+export interface CourseCardMetric {
+  label: string;
+  value: string | number;
+}
+
+export interface CourseCardProps {
+  /** Stable id used for palette derivation + React key. */
+  paletteSeed: string;
+  name: string;
+  description?: string | null;
+  /** Optional second line below the description (used by admin view for
+   *  teacher name + email). */
+  meta?: ReactNode;
+  /** Metric chips rendered below the description. */
+  metrics?: ReadonlyArray<CourseCardMetric>;
+  /** Status pill rendered in the top-right of the card body. */
+  status?: { label: string; tone: "emerald" | "slate" | "amber" | "indigo" };
+  /** Footer slot — quick-nav icons (Dashboard) or CTA buttons (admin). */
+  footer?: ReactNode;
+  /** Visually deemphasize (archived courses). */
+  muted?: boolean;
+  /** Primary click — navigates or opens an inspector. */
+  onClick?: () => void;
+  /** aria-label override. */
+  ariaLabel?: string;
+  /** Per-card "⋯" actions menu (Edit / Duplicate / Archive / Delete / etc).
+   *  Rendered in the top-right corner of the gradient header, white-tinted
+   *  for contrast. Click is stop-propagation'd so it doesn't fire the
+   *  card's primary onClick. */
+  kebab?: ReadonlyArray<KebabMenuOption>;
+}
+
+export function CourseCard({
+  paletteSeed,
+  name,
+  description,
+  meta,
+  metrics,
+  status,
+  footer,
+  muted = false,
+  onClick,
+  ariaLabel,
+  kebab,
+}: CourseCardProps) {
+  const palette = paletteFor(paletteSeed);
+  const trimmedDesc = (description ?? "").trim();
+  const shortDesc =
+    trimmedDesc.length > 110 ? `${trimmedDesc.slice(0, 107)}…` : trimmedDesc;
+
+  const baseClass =
+    "group flex flex-col text-left rounded-xl overflow-hidden bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
+    (onClick ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer " : "") +
+    (muted ? "opacity-70 " : "");
+
+  const inner = (
+    <>
+      <div className={`relative h-20 w-full bg-gradient-to-br ${palette}`} aria-hidden={!kebab}>
+        {kebab && kebab.length > 0 && (
+          <div
+            className="absolute top-2 right-2 z-10"
+            onClick={(e) => {
+              // Trigger click is on a child <button>; stop here so the card's
+              // outer <button> onClick never fires when the user is opening
+              // the kebab.
+              e.stopPropagation();
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") e.stopPropagation();
+            }}
+          >
+            {/* Translucent backdrop chip so the dark dots read on the
+                gradient header without us recoloring KebabMenu's internals. */}
+            <span className="inline-flex items-center justify-center rounded-md bg-white/20 backdrop-blur-sm ring-1 ring-white/30 text-white">
+              <KebabMenu options={kebab} />
+            </span>
+          </div>
+        )}
+      </div>
+      <div className="flex-1 p-4 space-y-2">
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 truncate flex-1">
+            {name}
+          </h3>
+          {status && <StatusPill {...status} />}
+        </div>
+        {shortDesc && (
+          <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2">
+            {shortDesc}
+          </p>
+        )}
+        {meta && (
+          <div className="text-xs text-slate-500 dark:text-slate-400">
+            {meta}
+          </div>
+        )}
+        {metrics && metrics.length > 0 && (
+          <div className="flex items-center gap-3 pt-1 text-xs text-slate-500 dark:text-slate-400">
+            {metrics.map((m) => (
+              <span key={m.label} className="inline-flex items-center gap-1">
+                <span className="font-semibold text-slate-700 dark:text-slate-200">
+                  {m.value}
+                </span>
+                <span>{m.label}</span>
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+      {footer && (
+        <div className="flex items-center gap-1 px-3 py-2 border-t border-slate-100 dark:border-slate-800">
+          {footer}
+        </div>
+      )}
+    </>
+  );
+
+  if (onClick) {
+    // When there's a kebab on the card we MUST render the outer as a div
+    // (with role="button") instead of a <button> — nested buttons are
+    // invalid HTML and most browsers will collapse the inner button.
+    if (kebab && kebab.length > 0) {
+      return (
+        <div
+          role="button"
+          tabIndex={0}
+          onClick={onClick}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              onClick();
+            }
+          }}
+          className={baseClass}
+          aria-label={ariaLabel ?? `Open course ${name}`}
+        >
+          {inner}
+        </div>
+      );
+    }
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        className={baseClass}
+        aria-label={ariaLabel ?? `Open course ${name}`}
+      >
+        {inner}
+      </button>
+    );
+  }
+  return <div className={baseClass}>{inner}</div>;
+}
+
+interface StatusPillProps {
+  label: string;
+  tone: "emerald" | "slate" | "amber" | "indigo";
+}
+
+function StatusPill({ label, tone }: StatusPillProps) {
+  const cls =
+    tone === "emerald"
+      ? "bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300"
+      : tone === "amber"
+        ? "bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300"
+        : tone === "indigo"
+          ? "bg-indigo-100 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-300"
+          : "bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300";
+  return (
+    <span
+      className={`inline-flex items-center rounded-full text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 flex-none ${cls}`}
+    >
+      {label}
+    </span>
+  );
+}
+
+/** Small icon button slot used in card footers — stop propagation so click
+ *  doesn't bubble into the parent card's onClick. */
+export interface CardActionIconProps {
+  label: string;
+  onClick: (e: React.MouseEvent) => void;
+  icon: ReactNode;
+}
+
+export function CardActionIcon({ label, onClick, icon }: CardActionIconProps) {
+  return (
+    <span
+      role="button"
+      tabIndex={0}
+      onClick={(e) => {
+        e.stopPropagation();
+        onClick(e);
+      }}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          e.stopPropagation();
+          onClick(e as unknown as React.MouseEvent);
+        }
+      }}
+      title={label}
+      aria-label={label}
+      className="inline-flex items-center justify-center h-7 w-7 rounded-md text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 cursor-pointer"
+    >
+      {icon}
+    </span>
+  );
+}

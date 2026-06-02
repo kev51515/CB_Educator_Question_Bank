@@ -1,0 +1,39 @@
+{
+  "questionId": "535fa6e6-s1",
+  "originalId": "535fa6e6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Adela bought some pears and plums. The pears cost $0.40 per pound, and the plums cost $0.60 per pound. If Adela spent $4.80 in total and bought twice as many pounds of plums as pounds of pears, how many pounds of plums did Adela buy?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Let <i>p</i> be the pounds of pears. Then plums = 2<i>p</i>. The total cost is 0.40<i>p</i> + 0.60(2<i>p</i>) = 1.60<i>p</i> = 4.80, so <i>p</i> = 3 and the number of pounds of plums is 2(3) = 6.</p><p>Choice A gives pounds of pears, not plums. Choices B and C come from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.medium"
+}

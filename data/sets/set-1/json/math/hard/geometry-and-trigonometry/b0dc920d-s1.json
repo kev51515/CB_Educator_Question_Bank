@@ -1,0 +1,39 @@
+{
+  "questionId": "b0dc920d-s1",
+  "originalId": "b0dc920d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A manufacturer determined that right cylindrical containers with a height that is 7 inches longer than the radius offer the optimal number of containers to be displayed on a shelf. Which of the following expresses the volume, V, in cubic inches, of such containers, where r is the radius, in inches?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>V = &pi;r&sup2; + 7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>V = &pi;r&sup3; + 7&pi;r&sup2;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>V = &pi;r(r + 7)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>V = 7&pi;r&sup2;</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The volume of a right circular cylinder is V = &pi;r&sup2;h. With h = r + 7, V = &pi;r&sup2;(r + 7) = &pi;r&sup3; + 7&pi;r&sup2;.</p><p>Choice A omits the radius squared. Choice C omits one factor of r. Choice D omits the term involving r&sup3;.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A2.T2.hard"
+}

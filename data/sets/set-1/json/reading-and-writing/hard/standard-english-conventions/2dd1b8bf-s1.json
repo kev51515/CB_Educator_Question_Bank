@@ -1,0 +1,39 @@
+{
+  "questionId": "2dd1b8bf-s1",
+  "originalId": "2dd1b8bf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Compared to that of pine wood, ______ oak wood fibers are so densely packed that air and moisture struggle to pass through them.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>oak wood's cellular structure is more tightly packed, producing an important advantage:</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>oak wood has a more tightly packed cellular structure, producing an important advantage:</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>an important advantage of oak wood is that its cellular structure is more tightly packed:</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>oak wood has an important advantage due to its more tightly packed cellular structure:</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes \"oak wood's cellular structure\" the subject of the sentence and places it immediately after the modifying phrase \"compared to that of pine wood.\" In doing so, it clearly establishes that oak wood's cellular structure\u2014and not another noun in the sentence\u2014is being compared to the cellular structure (\"that\") of pine wood.</p><p>Choice B is incorrect because placing \"oak wood\" after the modifier illogically suggests that oak wood itself (rather than its cellular structure) is being compared to pine wood's cellular structure. Choice C is incorrect because placing \"an important advantage\" after the modifier illogically suggests that an advantage is being compared to pine wood's cellular structure. Choice D is incorrect because placing \"oak wood\" after the modifier creates the same illogical comparison.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A4.T9.hard"
+}

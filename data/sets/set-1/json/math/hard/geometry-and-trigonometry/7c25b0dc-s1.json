@@ -1,0 +1,20 @@
+{
+  "questionId": "7c25b0dc-s1",
+  "originalId": "7c25b0dc",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.easy",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The length of a rectangle's diagonal is 2&radic;26, and the length of the rectangle's shorter side is 2. What is the length of the rectangle's longer side?</p>",
+  "answerOptions": null,
+  "keys": ["10"],
+  "rationale": "<p>Let L be the longer side. By the Pythagorean theorem, L&sup2; + 2&sup2; = (2&radic;26)&sup2; = 4 &middot; 26 = 104, so L&sup2; = 100 and L = 10.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "fce80a36-s1",
+  "originalId": "fce80a36",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>In 2019 a small cache of bronze fishhooks dating to the Bronze Age was unearthed in a coastal cave on Cyprus. Because the hooks were stored together inside a sealed clay jar, some scholars have proposed that they were deliberately hidden by a fisher planning to return for them; without textual records or contextual artifacts, however, researchers can only <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> what truly led to the cache&rsquo;s burial.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>hypothesize about</p>"},
+    {"id": "b", "content": "<p>refute</p>"},
+    {"id": "c", "content": "<p>document</p>"},
+    {"id": "d", "content": "<p>elaborate on</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. &ldquo;Hypothesize about&rdquo; means to form a tentative explanation, and the causal frame in the text&mdash;&ldquo;without textual records or contextual artifacts&rdquo;&mdash;explicitly establishes that researchers lack the evidence needed for a firm conclusion. The verb must therefore name a tentative, evidence-poor action.</p><p>Choice B is incorrect because &ldquo;refute&rdquo; means to disprove; the text says researchers are still trying to determine what happened, not rejecting a claim. Choice C is incorrect because &ldquo;document&rdquo; means to record systematically, which requires the very evidence the text says is missing. Choice D is incorrect because &ldquo;elaborate on&rdquo; means to add detail to an existing account, but the text indicates no detailed account exists to expand.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

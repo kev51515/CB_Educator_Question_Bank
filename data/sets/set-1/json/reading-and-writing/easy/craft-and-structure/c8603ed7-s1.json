@@ -1,0 +1,39 @@
+{
+  "questionId": "c8603ed7-s1",
+  "originalId": "c8603ed7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Philadelphia is known for the bold murals painted on many of its walls. The densest collection of murals is found along South Street in the Bella Vista neighborhood. In the 1980s, local artists painted vivid scenes of community life along this stretch of road. As the original murals have weathered, later generations of artists have painted new ones over them. As a result, South Street has become a living showcase of Philadelphia's artistic spirit, with its murals reflecting changes in the cultural life of the city.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To compare the South Street murals to other murals in Philadelphia</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>To urge people to protect the murals of Philadelphia from weathering</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>To describe the rise of mural painting in Philadelphia beginning in the 1980s</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>To offer an overview of the history and importance of the South Street murals</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text identifies the South Street murals as the densest collection in Philadelphia, traces their history from the 1980s, and emphasizes their importance as a \"living showcase\" of the city's artistic spirit.</p><p>Choice A is incorrect. The text doesn't compare South Street's murals to others in the city. Choice B is incorrect. The text never urges protection. Choice C is incorrect. The text focuses on South Street, not on mural painting across Philadelphia generally.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.easy"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "d529c1ad-s1",
+  "originalId": "d529c1ad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Gertrude Stein's prose can be hard to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>: it is fragmentary, repetitive, and so resistant to conventional grammar that many readers struggle even to determine where one thought ends and the next begins.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>ignore</p>"},
+    {"id": "b", "content": "<p>parse</p>"},
+    {"id": "c", "content": "<p>dislike</p>"},
+    {"id": "d", "content": "<p>shorten</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because \"parse\" means to analyze grammatically or make sense of, which directly matches the text's emphasis on readers' struggle to identify where thoughts begin and end. Choice A is incorrect because \"hard to ignore\" would suggest the writing is conspicuous; the text emphasizes difficulty of understanding, not of being noticed. Choice C is incorrect because \"hard to dislike\" suggests the prose is enjoyable, but the text focuses on comprehension challenges. Choice D is incorrect because \"hard to shorten\" addresses length, not the comprehension difficulties the text describes.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

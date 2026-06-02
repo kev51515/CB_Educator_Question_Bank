@@ -1,0 +1,39 @@
+{
+  "questionId": "14360f84-s1",
+  "originalId": "14360f84",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>6</mn><mi>x</mi><mo>-</mo><mn>5</mn><mi>y</mi><mo>=</mo><mn>5</mn><mi>y</mi><mo>+</mo><mn>7</mn></math></p>\n<p style=\"text-align: center;\"><math><mi>k</mi><mi>y</mi><mo>=</mo><mn>4</mn><mo>+</mo><mn>3</mn><mi>x</mi></math></p>\n<p>In the given system of equations, <math><mi>k</mi></math> is a constant. If the system has no solution, what is the value of <math><mi>k</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>-5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>-10</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Rewriting the first equation: 6x - 10y = 7. Rewriting the second: -3x + ky = 4. For no solution the lines must be parallel but distinct, requiring the coefficient ratios to match while the constant ratio differs. The system 6x - 10y = 7 and -3x + ky = 4 has proportional coefficients when 6/(-3) = -10/k, giving k = 5. Substituting k = 5, the second equation becomes -3x + 5y = 4, which has no common solution with the first. Other choices give inconsistent proportions.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T9.hard"
+}

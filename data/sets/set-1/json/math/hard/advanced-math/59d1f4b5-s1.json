@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "59d1f4b5-s1",
+  "originalId": "59d1f4b5",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>M(t) = 800(1.6)<sup>t</sup></p><p>The equation above models the number of members, M, of a club t years after the club opens. Of the following, which equation models the number of members of the club q semester years (half-years) after the club opens?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>M(q) = 800(1.6)<sup>2q</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>M(q) = 800(1.6 &middot; 2)<sup>q</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>M(q) = 800(&radic;1.6)<sup>q</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>M(q) = 400(1.6)<sup>q</sup></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Since q counts half-year periods, t = q/2 years. Substituting into M = 800(1.6)<sup>t</sup> gives M = 800(1.6)<sup>q/2</sup> = 800(1.6<sup>1/2</sup>)<sup>q</sup> = 800(&radic;1.6)<sup>q</sup>.</p><p>Choice A treats one semester as two years (the reverse conversion). Choice B incorrectly scales the base by 2. Choice D incorrectly halves the initial value.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T1.hard"
+}

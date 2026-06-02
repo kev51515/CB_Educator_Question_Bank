@@ -1,0 +1,25 @@
+{
+  "questionId": "54057e3f-s1",
+  "originalId": "54057e3f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T11.medium",
+  "stimulus": "<p>Although former competitive athletes make up a small share of the total workforce in Canada, they hold a noticeably higher share of management positions in physical-therapy clinics. One possible explanation for this disproportionate representation is that competitive athletic careers familiarize people with structured rehabilitation protocols that are also central to physical-therapy clinic operations, and this familiarity thus <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>increases the number of physical-therapy management positions that require former athletic experience to perform.</p>"},
+    {"id": "b", "content": "<p>encourages nonathletes applying for clinic management to pursue competitive sport instead.</p>"},
+    {"id": "c", "content": "<p>alters the typical relationship between athletic careers and subsequent professional preferences.</p>"},
+    {"id": "d", "content": "<p>makes physical-therapy management positions especially appealing to former competitive athletes.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. The text presents a population pattern (former athletes overrepresented in clinic management) and a proposed mechanism (familiarity with rehabilitation protocols). The most logical generalization is that this familiarity makes these management roles especially appealing to former athletes. Choice A flips cause and effect, making the jobs require athletic experience. Choice B is unsupported—nonathletes are not addressed. Choice C posits an \"atypical\" relationship the text does not establish.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b6de636f-s1",
+  "originalId": "b6de636f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.A1.T2.easy",
+  "type": "mcq",
+  "stimulus": "<p>At 1,991 meters, the Akashi Kaikyō Bridge in Japan is one of the longest suspension bridges in the <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the 1915 Çanakkale Bridge in Turkey, at 2,023 meters, is now even longer.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>world but</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>world, but</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>world,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>world<span data-ssml-say-as=\"characters\">,</span> but<span data-ssml-say-as=\"characters\">,</span></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the coordination of independent clauses. This choice correctly uses a comma followed by the coordinating conjunction \"but\" to join the first independent clause (\"At 1,991 meters...world\") with the second independent clause (\"the 1915 Çanakkale Bridge...now even longer\").</p><p>Choice A is incorrect because a comma is needed before the coordinating conjunction. Choice C is incorrect because it results in a comma splice. Choice D is incorrect because no comma is needed after \"but.\"</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

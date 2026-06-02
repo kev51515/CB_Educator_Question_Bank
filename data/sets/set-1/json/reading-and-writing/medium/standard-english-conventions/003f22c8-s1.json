@@ -1,0 +1,25 @@
+{
+  "questionId": "003f22c8-s1",
+  "originalId": "003f22c8",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>Each phase of the Apollo 17 lunar mission, which spanned twelve days and fourteen hours in December 1972, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> documented in meticulous logs by ground controllers.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are</p>"},
+    {"id": "b", "content": "<p>was</p>"},
+    {"id": "c", "content": "<p>have been</p>"},
+    {"id": "d", "content": "<p>were</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-verb agreement. The singular verb \"was\" agrees in number with the singular subject \"each phase,\" even though the interrupting relative clause contains the plural noun \"days.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn't agree in number with the singular subject \"each phase.\" Choice C is incorrect because the plural verb \"have been\" doesn't agree in number with the singular subject \"each phase.\" Choice D is incorrect because the plural verb \"were\" doesn't agree in number with the singular subject \"each phase.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

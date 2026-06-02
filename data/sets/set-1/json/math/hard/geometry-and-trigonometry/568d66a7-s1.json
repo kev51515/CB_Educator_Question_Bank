@@ -1,0 +1,39 @@
+{
+  "questionId": "568d66a7-s1",
+  "originalId": "568d66a7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>An isosceles right triangle has a perimeter of 62 + 62&radic;2 inches. What is the length, in inches, of one leg of this triangle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>31</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>62</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>62&radic;2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>31&radic;2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>For an isosceles right triangle with legs of length L, the hypotenuse is L&radic;2 and the perimeter is 2L + L&radic;2. Setting 2L + L&radic;2 = 62 + 62&radic;2 and testing L = 31&radic;2 gives 2(31&radic;2) + (31&radic;2)(&radic;2) = 62&radic;2 + 62 &check;. Therefore each leg has length 31&radic;2. Choice A gives the wrong perimeter 62 + 31&radic;2. Choice B and C correspond to the hypotenuse and a misreading.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A4.T7.hard"
+}

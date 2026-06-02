@@ -1,0 +1,39 @@
+{
+  "questionId": "80ebb189-s1",
+  "originalId": "80ebb189",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>As a furniture designer in Chicago in the 1960s, Helen Sutton became known for avoiding <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> designs in her work. Instead of using standard wooden shapes and muted colors, she typically experimented with curving forms and bright finishes.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>creative</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>bold</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>imaginative</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>conventional</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the contrast with experimenting with curving forms and bright finishes requires a word meaning ordinary or standard. \"Conventional\" fits. Choices A, B, and C all describe the kind of design Sutton actually preferred, so she wouldn’t avoid them.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T4.easy"
+}

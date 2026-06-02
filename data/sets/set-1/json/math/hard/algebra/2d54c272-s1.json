@@ -1,0 +1,22 @@
+{
+  "questionId": "2d54c272-s1",
+  "originalId": "2d54c272",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>8<i>P</i> + 30<i>Y</i> = 540</p><p>At a school carnival, students can win colored tokens that are worth a different number of points depending on the color. One student won <i>P</i> purple tokens and <i>Y</i> yellow tokens worth a total of 540 points. The given equation represents this situation. How many more points is a yellow token worth than a purple token?</p>",
+  "answerOptions": [],
+  "keys": [
+    "22"
+  ],
+  "rationale": "<p>The coefficients of <i>P</i> and <i>Y</i> in the equation are the per-token point values. A purple token is worth 8 points and a yellow token is worth 30 points, so a yellow token is worth 30 &minus; 8 = 22 more points than a purple token.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium"
+}

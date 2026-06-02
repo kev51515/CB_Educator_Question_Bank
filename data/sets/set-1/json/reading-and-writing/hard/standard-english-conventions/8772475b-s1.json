@@ -1,0 +1,39 @@
+{
+  "questionId": "8772475b-s1",
+  "originalId": "8772475b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>For centuries, ranchers have relied on Muscovy ducks (<em>Cairina moschata</em>) to control pests on their farmland. When it comes to insects, Muscovies are remarkably ______ they will eagerly hunt flies, ticks, mosquitoes, and grasshoppers, often clearing a pasture of pests within hours.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>voracious:</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>voracious and</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>voracious,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>voracious</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The colon correctly marks the boundary between two main clauses (\"Muscovies&hellip;voracious\" and \"they&hellip;hours\") and introduces an explanation of how Muscovies&rsquo; voraciousness manifests in their pest-hunting behavior.</p><p>Choice B is incorrect because when coordinating two longer main clauses, a comma should precede the conjunction \"and,\" and \"and\" fails to signal the explanatory relationship. Choice C is incorrect because it results in a comma splice between two main clauses. Choice D is incorrect because it produces a run-on sentence with the two main clauses fused.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A4.T10.hard"
+}

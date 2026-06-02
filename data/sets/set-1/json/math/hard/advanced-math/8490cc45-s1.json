@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "8490cc45-s1",
+  "originalId": "8490cc45",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function f is defined by f(x) = (&minus;5)(3)<sup>x</sup> + 17. What is the y-intercept of the graph of y = f(x) in the xy-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 17)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, &minus;5)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, 22)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, 12)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The y-intercept of the graph occurs at x = 0. Substituting yields f(0) = (&minus;5)(3)<sup>0</sup> + 17 = (&minus;5)(1) + 17 = 12. So the y-intercept is (0, 12).</p><p>Choices A and B isolate one piece of the expression. Choice C misuses the base 3.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T2.hard"
+}

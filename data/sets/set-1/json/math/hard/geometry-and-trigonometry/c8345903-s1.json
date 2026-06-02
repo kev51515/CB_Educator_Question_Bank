@@ -1,0 +1,39 @@
+{
+  "questionId": "c8345903-s1",
+  "originalId": "c8345903",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a circle with center O, arc XY is subtended by a central angle of 80\u00b0. The length of arc XY is 12 inches. What is the length, in inches, of the major arc XY (the arc not subtended by the 80\u00b0 angle)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>42</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>54</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The major arc is subtended by a central angle of 360\u00b0 \u2212 80\u00b0 = 280\u00b0. Arc lengths are proportional to central angles, so the major arc length is 12 \u00d7 (280/80) = 12 \u00d7 3.5 = 42 inches.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A3.T7.hard"
+}

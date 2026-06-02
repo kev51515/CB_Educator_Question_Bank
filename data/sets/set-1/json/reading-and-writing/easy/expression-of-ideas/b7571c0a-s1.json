@@ -1,0 +1,25 @@
+{
+  "questionId": "b7571c0a-s1",
+  "originalId": "b7571c0a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Handmade leather goods, such as wallets stitched and dyed by individual craftspeople, offer durability and a unique appearance that mass-produced versions cannot match, but the time required to make each item can drive the cost to several hundred dollars. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> many leather brands use a hybrid model, hand-finishing key visible details while relying on machine production for the underlying structure to keep prices affordable.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Similarly,</p>"},
+    {"id": "b", "content": "<p>In other words,</p>"},
+    {"id": "c", "content": "<p>Furthermore,</p>"},
+    {"id": "d", "content": "<p>For this reason,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The first sentence tells us that handmade leather goods are better but expensive. The second sentence tells us that brands compromise by mixing methods to balance quality and cost. The connection is cause-and-effect, signaled by \"for this reason.\"</p><p>Choice A is incorrect because \"similarly\" signals an additional agreeing idea, not cause and effect. Choice B is incorrect because \"in other words\" signals a restatement, not consequence. Choice C is incorrect because \"furthermore\" signals additional information, not cause and effect.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

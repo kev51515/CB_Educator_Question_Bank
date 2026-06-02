@@ -1,0 +1,39 @@
+{
+  "questionId": "fc95a352-s1",
+  "originalId": "fc95a352",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>When composing scores for documentary films, British musician Mica Levi generally records all instrumental parts herself, layering each track in a small home studio. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> for the documentary <em>Flipside</em>, which features a cluttered jazz record store, she invited a full ensemble of session players into a professional studio to capture the spontaneous interplay she felt the film required; the resulting score has a looser, more improvisational character than her solo work typically allows.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Therefore,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Additionally,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>However,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"However\" logically signals that the description in this sentence\u2014Levi inviting an ensemble into a professional studio for <em>Flipside</em>\u2014presents an exception or contrast to the prior sentence's description of her typical solo, home-studio approach.</p><p>Choice A is incorrect because \"similarly\" would signal that the <em>Flipside</em> situation is comparable to her usual practice, but it is in fact a departure from it. Choice B is incorrect because \"therefore\" would signal a causal consequence of her typical approach, but the second sentence does not result from the first. Choice C is incorrect because \"additionally\" would signal another similar example, but the second sentence presents a contrasting case rather than additional support.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T2.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "4eaf0a3a-s1",
+  "originalId": "4eaf0a3a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to (a<sup>11</sup>b<sup>11</sup>)<sup>1/5</sup>, where a and b are positive?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(ab)<sup>5/11</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(ab)<sup>11/5</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(ab)<sup>22</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(ab)<sup>55</sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>For positive a, b: a<sup>11</sup>b<sup>11</sup> = (ab)<sup>11</sup>, so (a<sup>11</sup>b<sup>11</sup>)<sup>1/5</sup> = (ab)<sup>11/5</sup>. Choice (b) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A3.T7.medium"
+}

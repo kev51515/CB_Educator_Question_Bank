@@ -1,0 +1,39 @@
+{
+  "questionId": "9645f55e-s1",
+  "originalId": "9645f55e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>For years, French chefs have debated whether classic cuisine should accept influences from other cooking traditions, such as Japanese cooking. Many \"traditionalists\" hold that French cuisine is defined by the techniques codified by Auguste Escoffier in the early 1900s. They regard Escoffier's recipes, which set the standard for French restaurants, as a benchmark that today's chefs should still honor.</p><p><strong>Text 2</strong></p><p>French cuisine is not simply a continuation of older provincial cooking. In fact, Escoffier's signature dishes themselves drew on imported ingredients and techniques\u2014some from North Africa, others from Asia\u2014that had only recently reached France. Because French cuisine has always been a blended tradition, today's chefs should not be barred from drawing on Japanese or any other influences.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely regard the perspective of the French traditionalists, as described in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>As shortsighted, because French cooking could reach more diners by adopting outside influences</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As mistaken, because the traditionalists overlook the mixed origins of the dishes they treat as the standard</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>As inconsistent, since the traditionalists themselves enjoy cooking from other countries</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>As unrealistic, since the traditionalists have no way of enforcing their preferences on other chefs</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Text 1 says the traditionalists treat Escoffier's recipes as the standard for French cuisine. Text 2 counters that Escoffier himself drew on imported ingredients and techniques\u2014so the traditionalists' standard is itself a mixed tradition.</p><p>Choice A is incorrect. Text 2 doesn't discuss the size of the audience for French cooking. Choice C is incorrect. Text 2 doesn't discuss what other cuisines the traditionalists enjoy. Choice D is incorrect. Text 2 doesn't discuss whether the traditionalists can enforce their preferences.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T3.easy"
+}

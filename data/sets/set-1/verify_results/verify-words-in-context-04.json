@@ -1,0 +1,22 @@
+[
+  {"id": "80ebb189-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "ok"},
+  {"id": "3654202f-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "type_drift", "detail": "Cue is restatement ('cheap alternative') not a contrast signal; stem fits T3 better than T4."},
+  {"id": "0f040c50-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "d529c1ad-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "ba974387-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "5d2fd27d-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "dc0bca21-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "c2c26e20-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "0afb2ac4-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "849bf8d7-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "type_drift", "detail": "No contrast/concession signal; cue is causal ('helped drive'). Fits T5 better than T4."},
+  {"id": "f3fac04f-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "6d5ddea4-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "e1e89221-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "051d3065-s1", "templateId": "words-in-context.A2.T3.easy", "verdict": "ok"},
+  {"id": "8d579825-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "type_drift", "detail": "No contrast signal in stimulus; cue is restatement ('worked closely together'). Fits T3, not T4."},
+  {"id": "b622fb78-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "2c82068f-s1", "templateId": "words-in-context.A1.T1.easy", "verdict": "ok"},
+  {"id": "e1d5d5df-s1", "templateId": "words-in-context.A2.T4.easy", "verdict": "ok"},
+  {"id": "a20b7511-s1", "templateId": "words-in-context.A2.T5.easy", "verdict": "ok"},
+  {"id": "a2835734-s1", "templateId": "words-in-context.A2.T6.easy", "verdict": "ok"}
+]

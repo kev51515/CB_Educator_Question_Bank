@@ -1,0 +1,25 @@
+{
+  "questionId": "1fbf276a-s1",
+  "originalId": "1fbf276a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T5.medium",
+  "stimulus": "<p>A sequence of warmer-than-average winters across major wheat-growing regions has complicated an agricultural analyst's prediction that cereal exporters can expect record yields this season. The temperature anomalies are unlikely to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the optimistic forecast: most varieties of wheat suffer reduced productivity when winter chill periods are too short, so growers will probably harvest substantially smaller crops than the analyst projected.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>retract</p>"},
+    {"id": "b", "content": "<p>vindicate</p>"},
+    {"id": "c", "content": "<p>question</p>"},
+    {"id": "d", "content": "<p>reproduce</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. \"Vindicate\" means to confirm or justify. The text indicates the warm winters will likely cause smaller crops, which would contradict the analyst's optimistic prediction of record yields. The temperature anomalies are therefore unlikely to support, or vindicate, the forecast.</p><p>Choice A is incorrect because a forecast cannot be retracted by an external event; only the analyst could retract it. Choice C is incorrect because the temperature anomalies are described as actively undermining the forecast, not merely raising questions about it. Choice D is incorrect because \"reproduce\" means to replicate, which makes no sense as something temperature anomalies would do to a forecast.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

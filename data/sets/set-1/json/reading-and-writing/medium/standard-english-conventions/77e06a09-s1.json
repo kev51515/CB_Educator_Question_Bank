@@ -1,0 +1,25 @@
+{
+  "questionId": "77e06a09-s1",
+  "originalId": "77e06a09",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Between 250 BCE and 226 CE, the Parthian Empire developed a sophisticated commercial network that, through long-distance caravan trade and regulated <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> sustained major public works across the Iranian plateau. These included extensive irrigation channels, fortified caravanserais, and royal road stations.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>tariffs:</p>"},
+    {"id": "b", "content": "<p>tariffs,</p>"},
+    {"id": "c", "content": "<p>tariffs&mdash;</p>"},
+    {"id": "d", "content": "<p>tariffs</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after &ldquo;tariffs&rdquo; pairs with the comma after &ldquo;that&rdquo; to separate the supplementary element &ldquo;through long-distance caravan trade and regulated tariffs&rdquo; from the rest of the sentence.</p><p>Choice A is incorrect because a colon can&rsquo;t pair with a comma to set off a supplementary element. Choice C is incorrect because a dash can&rsquo;t pair with a comma in this way. Choice D is incorrect because it fails to close the supplementary element opened earlier in the sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

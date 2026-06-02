@@ -1,0 +1,39 @@
+{
+  "questionId": "e0874bc2-s1",
+  "originalId": "e0874bc2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Similar triangles <em>ABC</em> and <em>DEF</em> have perimeters 24 and 168, respectively, where side <em>AB</em> corresponds to side <em>DE</em>. If <em>AB</em> has length 10, what is the length of <em>DE</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>70</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>15</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.43</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In similar triangles, corresponding side lengths share the same ratio as the perimeters. The ratio of perimeters is 168/24 = 7, so each side in triangle DEF is 7 times the corresponding side in triangle ABC. Therefore DE = 7 &middot; AB = 7(10) = 70. Choice B is the perimeter ratio itself. Choice C is the sum of 7 and 8. Choice D is the reciprocal of the ratio.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A3.T3.medium"
+}

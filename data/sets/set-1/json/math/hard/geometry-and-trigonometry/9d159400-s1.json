@@ -1,0 +1,39 @@
+{
+  "questionId": "9d159400-s1",
+  "originalId": "9d159400",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following equations represents a circle in the xy-plane that intersects the y-axis at exactly one point?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x \u2212 5)<sup>2</sup> + (y \u2212 7)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(x \u2212 7)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(x \u2212 3)<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>x<sup>2</sup> + (y \u2212 5)<sup>2</sup> = 25</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>An equation (x \u2212 h)<sup>2</sup> + (y \u2212 k)<sup>2</sup> = r<sup>2</sup> describes a circle with center (h, k) and radius r. The circle intersects the y-axis at exactly one point exactly when the distance from the center to the y-axis equals the radius, i.e., |h| = r. Choice A has center (5, 7) and radius 5, so |h| = 5 = r. Choices B and C have |h| \u2260 r; choice D has h = 0, so the circle crosses the y-axis at two points.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T6.hard"
+}

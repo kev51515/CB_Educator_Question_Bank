@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "a9084ca4-s1",
+  "originalId": "a9084ca4",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>g(x) = 4500(0.75)<sup>x</sup></p><p>The given function g models the number of paper coupons a store mailed to its customers each year, where x represents the number of years since 2005, and 0 &le; x &le; 6. If y = g(x) is graphed in the xy-plane, which of the following is the best interpretation of the y-intercept of the graph in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The minimum number of paper coupons the store mailed during this period</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The annual percent decrease in the number of paper coupons mailed</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The estimated number of paper coupons the store mailed in 2005</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The total number of paper coupons mailed from 2005 to 2011</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The y-intercept occurs at x = 0, which corresponds to 2005. At x = 0, g(0) = 4500(0.75)<sup>0</sup> = 4500. So the y-intercept represents the estimated number of coupons mailed in 2005.</p><p>Choice A describes the minimum, which occurs at x = 6 in this model. Choice B describes the base 0.75, not the y-intercept. Choice D describes a cumulative total, not a single year's value.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A2.T2.hard"
+}

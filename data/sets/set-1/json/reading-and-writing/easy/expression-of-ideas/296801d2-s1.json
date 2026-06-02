@@ -1,0 +1,39 @@
+{
+  "questionId": "296801d2-s1",
+  "originalId": "296801d2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>Easter Island, or Rapa Nui, lies about 2,300 miles west of Chile in the Pacific Ocean.</li>\n<li>Researchers have long believed that the first humans to settle Rapa Nui were Polynesian seafarers from the western Pacific around 1200 CE.</li>\n<li>A 2020 genetic study coauthored by Alexander Ioannidis identified evidence of Native American ancestry in Rapa Nui inhabitants dating to roughly 1380 CE.</li>\n<li>The researchers suggested that Indigenous South Americans may have reached Rapa Nui shortly after Polynesian settlement.</li>\n<li>Sweet potato remains found on the island also support contact between Polynesians and South Americans.</li>\n</ul>",
+  "stem": "<p>The student wants to specify who, according to the 2020 study, may have arrived at Rapa Nui after the original Polynesian settlers. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>According to a 2020 study, Indigenous South Americans may have reached Rapa Nui shortly after Polynesian seafarers first settled the island around 1200 CE.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Researchers have long believed that Polynesian seafarers first settled Rapa Nui, an island about 2,300 miles west of Chile, around 1200 CE.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Polynesian seafarers may not have been the only people to reach Rapa Nui in its earliest years.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In their 2020 study, the researchers found evidence of Native American ancestry in Rapa Nui inhabitants from roughly 1380 CE.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because it specifically names the group&mdash;Indigenous South Americans&mdash;identified by the 2020 study as having arrived after the original Polynesian settlers. Choice B is incorrect because it discusses the original Polynesian settlement, not the later arrivals. Choice C is incorrect because it hints at additional arrivals but does not specify who they were. Choice D is incorrect because it describes the genetic evidence without naming the people the evidence points to.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "rhetorical-synthesis.A5.T14.easy"
+}

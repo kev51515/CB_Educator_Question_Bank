@@ -1,0 +1,39 @@
+{
+  "questionId": "df45f0eb-s1",
+  "originalId": "df45f0eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p><u>Several studies have found negligible long-term effects on incumbent mayors who raise local property taxes, yet a number of recent mid-sized US cities have seen incumbents soundly defeated after enacting precisely such tax increases.</u> Political scientists Diego Ramos and Helena Wirth attribute this incongruity to mayors' usual tendency&mdash;not followed in the recent cases&mdash;to time tax increases for early in their terms, bundle them with visible service improvements, and pair them with explicit sunset provisions. The recent losing incumbents, by contrast, raised rates late in their first terms with no accompanying service expansion or sunset clause, triggering precisely the kind of voter backlash the older studies failed to anticipate.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It identifies a conflict between research findings and recent events that the text goes on to attribute to a complicating factor not captured in the original studies.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes a recent exception to a research pattern that the text goes on to explain by suggesting researchers had underestimated voter inconsistency.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It explains a discrepancy between laboratory studies and field observations that the text goes on to attribute to differences in measurement.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It presents a long-standing divergence in research findings that the text goes on to attribute to different groups of researchers using different electoral data.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The underlined sentence places existing research findings (negligible effects of tax hikes on incumbents) alongside recent contrary events (defeats of incumbents who raised taxes). The rest of the text resolves the tension by identifying a complicating factor those studies had missed: when and how the increases were enacted (timing, paired services, sunset clauses).</p><p>Choice B is incorrect because the explanation hinges on policy implementation, not voter inconsistency. Choice C is incorrect because no contrast between lab and field is drawn. Choice D is incorrect because the research findings are presented as consistent until recent cases broke from them.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot models the relationship between the speed of a particular truck, in miles per hour, and its corresponding braking distance, in feet. According to the model:</p>\n<table border=\"1\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Speed (mph)</th><th>Braking distance (ft)</th></tr>\n<tr><td>30</td><td>60</td></tr><tr><td>40</td><td>90</td></tr><tr><td>50</td><td>140</td></tr><tr><td>60</td><td>200</td></tr></table>\n<p style=\"text-align: left;\">Approximately how many feet greater will the truck's braking distance be when the truck is traveling at 60 miles per hour than when the truck is traveling at 40 miles per hour?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>110</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>140</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>200</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The braking distance at 60 mph is 200 ft and at 40 mph is 90 ft; the difference is 200 − 90 = 110 ft.</p><p>Choices B and D are the individual distances, not the difference. Choice C is the distance at 30 mph.</p>",
+  "questionId": "d6121490-s1",
+  "originalId": "d6121490",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A1.T1.medium"
+}

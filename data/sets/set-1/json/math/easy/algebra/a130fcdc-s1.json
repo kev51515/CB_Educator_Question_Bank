@@ -1,0 +1,39 @@
+{
+  "questionId": "a130fcdc-s1",
+  "originalId": "a130fcdc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>h</i>(<i>x</i>) = 7<i>x</i> + 5</p><p>For the given linear function <i>h</i>, which table shows three values of <i>x</i> and their corresponding values of <i>h</i>(<i>x</i>)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><table border=\"1\"><tr><th><i>x</i></th><th><i>h</i>(<i>x</i>)</th></tr><tr><td>&minus;1</td><td>&minus;2</td></tr><tr><td>0</td><td>5</td></tr><tr><td>1</td><td>12</td></tr></table></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><table border=\"1\"><tr><th><i>x</i></th><th><i>h</i>(<i>x</i>)</th></tr><tr><td>&minus;1</td><td>5</td></tr><tr><td>0</td><td>7</td></tr><tr><td>1</td><td>12</td></tr></table></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><table border=\"1\"><tr><th><i>x</i></th><th><i>h</i>(<i>x</i>)</th></tr><tr><td>&minus;1</td><td>&minus;7</td></tr><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>7</td></tr></table></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><table border=\"1\"><tr><th><i>x</i></th><th><i>h</i>(<i>x</i>)</th></tr><tr><td>&minus;1</td><td>&minus;5</td></tr><tr><td>0</td><td>0</td></tr><tr><td>1</td><td>5</td></tr></table></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. <i>h</i>(&minus;1) = 7(&minus;1) + 5 = &minus;2; <i>h</i>(0) = 5; <i>h</i>(1) = 12.</p><p>Other tables correspond to different linear functions.</p>",
+  "generatedAt": "2026-05-26T00:20:20Z",
+  "templateId": "linear-functions.A3.T2.easy"
+}

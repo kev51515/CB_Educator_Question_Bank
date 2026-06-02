@@ -1,0 +1,98 @@
+[
+  {
+    "id": "1c29bfd1-s1",
+    "templateId": "linear-functions.A3.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "Stem gives initial value (14.70) + rate (0.43 per foot) but asks student to compute total pressure at x=80, a numeric output. That is A1 (evaluate/compute), not A3 (construct the equation). The student never writes the equation; answer choices are numbers, not equations."
+  },
+  {
+    "id": "ebd457f4-s1",
+    "templateId": "linear-functions.A3.T3.medium",
+    "verdict": "aspect_drift",
+    "detail": "No initial value present; pure proportional rate (saves $60/week, asks total in 7 weeks = $420). Answer is a number, not an equation. Violates A3.T3 must_preserve (initial value AND rate) and outputs a number, so this is A1 territory, not A3."
+  },
+  {
+    "id": "a5834ea4-s1",
+    "templateId": "linear-functions.A1.T1.medium",
+    "verdict": "type_drift",
+    "detail": "T1 requires substituting a single given numeric input into f and producing a numeric output. Here no input is given; the student selects a table that matches the constant function f(x)=52. Violates must_preserve 'A single numeric input value is given' and 'Answer is a single numeric output'. This is a table-identification stem, not an evaluate-f(c) stem."
+  },
+  {
+    "id": "e62cfe5f-s1",
+    "templateId": "linear-functions.A3.T3.medium",
+    "verdict": "type_drift",
+    "detail": "A3.T3 must_preserve states 'Answer is the full equation in the variables named by the stem'. Clone asks for a numeric value (3.3), not an equation \u2014 this is A1.T1 (evaluate from given linear model) after a trivial verbal-to-equation step."
+  },
+  {
+    "id": "daad7c32-s1",
+    "templateId": "linear-functions.A2.T1.hard",
+    "verdict": "type_drift",
+    "detail": "Stem asks meaning of the slope coefficient 4 in L(w)=4w+9 (cm stretched per newton). That is A2.T2 (interpret slope/rate), not A2.T1 (interpret constant term/initial value, which would be 9 here)."
+  },
+  {
+    "id": "0b332f00-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "Stem asks for g(4) given g(x)=5x \u2014 this is evaluating f(c) at a given input (A1.T1), not solving f(x)=k for x (A1.T2). Answer 20 is correct, but type tag is wrong."
+  },
+  {
+    "id": "27198699-s1",
+    "templateId": "linear-functions.A2.T1.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T1 (interpret constant term) but stem asks to compute f(8)=19 \u2014 a numeric evaluation. This is A1.T1 (evaluate f(c)), not interpretation. Answer/rationale are correct."
+  },
+  {
+    "id": "0d6ab461-s1",
+    "templateId": "linear-functions.A1.T1.easy",
+    "verdict": "type_drift",
+    "detail": "Tagged A1.T1 (evaluate explicit f(x) at given input) but no f(x)=ax+b is supplied. Student must construct the model from words ($750 initial + $40/week \u00d7 5 weeks). This fits A3.T3 (build from rate + initial) or A1.T1 only after construction. Answer 950 is correct."
+  },
+  {
+    "id": "4f89e4d4-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 = Solve f(x)=k for x. Clone evaluates p(64) directly (substitution), which is T1 (Evaluate f(c)), not T2. No target k to solve back to x."
+  },
+  {
+    "id": "0d391910-s1",
+    "templateId": "linear-functions.A1.T2.easy",
+    "verdict": "type_drift",
+    "detail": "T2 = Solve f(x)=k for x. Clone evaluates h(3) directly (substitution), which is T1 (Evaluate f(c)), not T2. No target value k provided to solve back for x."
+  },
+  {
+    "id": "7e3f8363-s1",
+    "templateId": "linear-functions.A3.T2.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Points (0,2) and (6,26): one point is on the y-axis, so b is read directly and slope is a clean integer. This satisfies the easy lever ('Table contains a row at x=0 so b is read directly'), not the medium lever ('Neither row is at x=0; student must compute slope then back-solve for the intercept')."
+  },
+  {
+    "id": "c651cc56-s1",
+    "templateId": "linear-functions.A1.T5.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Single linear function given as a table with a missing row (find f(3) by linear interpolation). The table-with-missing-row pattern is the T5 hard lever ('One function is given as a table with a missing row; linearity must be inferred'), not the T5 medium lever ('Both functions are given as explicit equations ... combined by addition/subtraction/scaling'). Tagged medium, but the stem structure matches hard."
+  },
+  {
+    "id": "0d5495a6-s1",
+    "templateId": "linear-functions.A1.T4.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A1.T4 requires parameter embedded in sub-expression or multi-step solve. Here g(x)=x+c with g(0)=27 collapses to single trivial substitution (c=27), matching easy-tier characteristics, not medium."
+  },
+  {
+    "id": "23dedddd-s1",
+    "templateId": "linear-functions.A3.T1.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Medium A3.T1 requires supplied point NOT on y-axis (compute b from y-mx=b) or non-trivial inputs. Clone gives g(0)=6 and g(1)=11, which the easy-tier description explicitly cites: 'two known function values are f(0) and f(1), revealing slope and intercept directly'."
+  },
+  {
+    "id": "e9908930-s1",
+    "templateId": "linear-functions.A3.T2.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires neither row at x=0 with narrative/non-trivial points; this clone has a row at x=0 (b=10 readable directly), which is the easy lever. Construction collapses to easy."
+  },
+  {
+    "id": "af2ba762-s1",
+    "templateId": "linear-functions.A2.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard lever requires non-standard form needing rearrangement (e.g., y-5x=6) or constant embedded as coefficient of nested factor. Clone uses standard f(x)=3.18d+8.45 where constant 8.45 is directly visible \u2014 matches easy levers."
+  }
+]

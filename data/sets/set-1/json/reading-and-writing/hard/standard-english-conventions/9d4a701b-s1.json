@@ -1,0 +1,25 @@
+{
+  "questionId": "9d4a701b-s1",
+  "originalId": "9d4a701b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>Along with substrate concentration and pH, ambient temperature shapes the rate of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as temperature rises within an enzyme&rsquo;s tolerance range, so does the rate at which the substrate molecules are converted into product molecules at the active site.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>catalysis and</p>"},
+    {"id": "b", "content": "<p>catalysis:</p>"},
+    {"id": "c", "content": "<p>catalysis,</p>"},
+    {"id": "d", "content": "<p>catalysis</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text before the blank is a complete independent clause that promises an elaboration; the text after the blank elaborates on that rate. A colon correctly introduces this elaboration.</p><p>Choice A is incorrect because the conjunction \"and\" cannot join an independent clause to what follows here without creating a malformed coordination. Choice C is incorrect because a comma between two independent clauses is a splice. Choice D is incorrect because it leaves a run-on.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

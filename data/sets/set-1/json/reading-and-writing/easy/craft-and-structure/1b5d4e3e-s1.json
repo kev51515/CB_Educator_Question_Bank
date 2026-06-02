@@ -1,0 +1,39 @@
+{
+  "questionId": "1b5d4e3e-s1",
+  "originalId": "1b5d4e3e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Were whales always sea creatures? <u>Paleontologist Maria Reyes and her team argue that whales had ancestors that walked on land but that those ancestors gradually shifted to a fully aquatic life over tens of millions of years.</u> After examining various fossil skeletons and genetic information, the researchers concluded that whale ancestors developed streamlined bodies, fluked tails, and modified ear bones better suited to underwater life than to land. Thus, environmental conditions might have driven whales from land to sea.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It provides an answer to the question in the previous sentence.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It defines a scientific term used in the sentence that follows.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It notes that the question in the previous sentence has not been researched.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It contradicts a description in the sentence that follows.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text opens with a question about whether whales were always sea creatures. The underlined sentence presents the researchers' answer\u2014that whales had land-dwelling ancestors that gradually shifted to aquatic life.</p><p>Choice B is incorrect. No scientific term is defined. Choice C is incorrect. The underlined sentence reports research, so it doesn't say the question hasn't been researched. Choice D is incorrect. The sentence that follows supports, not contradicts, the underlined sentence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

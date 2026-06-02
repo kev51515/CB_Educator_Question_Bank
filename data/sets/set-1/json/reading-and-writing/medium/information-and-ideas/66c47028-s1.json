@@ -1,0 +1,25 @@
+{
+  "questionId": "66c47028-s1",
+  "originalId": "66c47028",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>In 1937 physicist Hendrik Casimir predicted that two perfectly flat, uncharged metal plates placed very close together in a vacuum would attract one another, drawn together by fluctuations of the empty space between them. The so-called Casimir attraction remained chiefly a theoretical curiosity, however, until Inara Petrova and colleagues reported in 2024 that they had directly measured one. The researchers suspended a pair of polished aluminum disks in a chamber and cooled the apparatus, drawing the disks closer until the fluctuating forces between them became measurable. By rotating one disk relative to the other while taking continuous force readings, the team obtained a precise measurement—the first direct quantitative confirmation of the Casimir attraction.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Aluminum is the most important of the components needed to detect the Casimir attraction.</p>"},
+    {"id": "b", "content": "<p>Measuring the Casimir attraction is difficult because of the disks' polished surfaces.</p>"},
+    {"id": "c", "content": "<p>Researchers have identified an innovative new method for working with unusual vacuum forces.</p>"},
+    {"id": "d", "content": "<p>Researchers have obtained the most definitive evidence to date that the Casimir attraction is real.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text describes Casimir's 1937 prediction of a tiny attractive force between flat metal plates and then explains that this prediction remained largely theoretical until Petrova and colleagues directly measured it in 2024. The main idea is that researchers have now obtained the strongest evidence to date that the Casimir attraction is real.</p><p>Choice A is incorrect because the text describes the apparatus generally without ranking the importance of its components. Choice B is incorrect because the text never says the polished surfaces of the disks make measurement difficult. Choice C is incorrect because the text focuses on the Casimir attraction in particular, not on a broad family of vacuum forces.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

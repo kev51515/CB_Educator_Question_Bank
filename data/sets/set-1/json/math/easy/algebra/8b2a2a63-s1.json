@@ -1,0 +1,22 @@
+{
+  "questionId": "8b2a2a63-s1",
+  "originalId": "8b2a2a63",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The <i>y</i>-intercept of the graph of <i>y</i> = 4<i>x</i> &minus; 19 in the <i>xy</i>-plane is (0, <i>y</i>). What is the value of <i>y</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "-19"
+  ],
+  "rationale": "<p>The <i>y</i>-intercept occurs when <i>x</i> = 0. Substituting gives <i>y</i> = 4(0) &minus; 19 = &minus;19.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A5.T11.easy"
+}

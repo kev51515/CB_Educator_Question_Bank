@@ -1,0 +1,22 @@
+{
+  "questionId": "686b7244-s1",
+  "originalId": "686b7244",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A certain apprentice has enrolled in 96 hours of training courses. The equation 12<i>x</i> + 20<i>y</i> = 96 represents this situation, where <i>x</i> is the number of on-site training courses and <i>y</i> is the number of online training courses this apprentice has enrolled in. How many more hours does each online training course take than each on-site training course?</p>",
+  "answerOptions": [],
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>The coefficient of <i>x</i> in the equation is the number of hours per on-site course, and the coefficient of <i>y</i> is the number of hours per online course. So each on-site course takes 12 hours and each online course takes 20 hours, a difference of 20 &minus; 12 = 8 hours.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-two-variables.A3.T3.medium"
+}

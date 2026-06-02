@@ -1,0 +1,39 @@
+{
+  "questionId": "1006cad7-s1",
+  "originalId": "1006cad7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>y = x + 3</p><p>y = 2x + 1</p><p>Which ordered pair (x, y) is the solution to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 3)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(1, 4)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(2, 5)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(3, 7)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Setting x + 3 = 2x + 1 gives x = 2 and y = 5.</p><p>Choices A, B, and D do not satisfy both equations.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy"
+}

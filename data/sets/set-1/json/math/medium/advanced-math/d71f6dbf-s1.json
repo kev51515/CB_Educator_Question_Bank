@@ -1,0 +1,39 @@
+{
+  "questionId": "d71f6dbf-s1",
+  "originalId": "d71f6dbf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The height, in feet, of an object <em>x</em> seconds after it is thrown straight up in the air can be modeled by the function <em>h</em>(<em>x</em>) = -16<em>x</em><sup>2</sup> + 28<em>x</em> + 4. Based on the model, which of the following statements best interprets the equation <em>h</em>(0.8) = 16.16?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The height of the object 16.16 seconds after being thrown straight up in the air is 0.8 feet.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The speed of the object 0.8 seconds after being thrown straight up in the air is approximately 16.16 feet per second.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The height of the object 0.8 seconds after being thrown straight up in the air is 16.16 feet.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The height of the object 16.16 seconds after being thrown straight up in the air is approximately 0.8 times its initial height.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The variable <em>x</em> is the number of seconds after the object was thrown, and <em>h</em>(<em>x</em>) is the height in feet. The equation <em>h</em>(0.8) = 16.16 therefore says that 0.8 seconds after the object was thrown, its height is 16.16 feet. Choice A swaps the meanings of time and height. Choice B describes a speed, not a height. Choice D compares to initial height incorrectly.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A2.T1.medium"
+}

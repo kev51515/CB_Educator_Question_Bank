@@ -1,0 +1,39 @@
+{
+  "questionId": "d02193fb-s1",
+  "originalId": "d02193fb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The graph of a linear inequality in the <em>xy</em>-plane has a dashed boundary line passing through (0, 3) and (1, 0). The region below the boundary is shaded. Which inequality represents this graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> &lt; 3 \u2212 3<em>x</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> &gt; 3 \u2212 3<em>x</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> &lt; 3 + 3<em>x</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> &gt; 3 + 3<em>x</em></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The boundary line passes through (0, 3) and (1, 0), so its slope is (0 \u2212 3)/(1 \u2212 0) = \u22123 and the <em>y</em>-intercept is 3, giving the line <em>y</em> = 3 \u2212 3<em>x</em>. The boundary is dashed and the region below is shaded, so the inequality is <em>y</em> &lt; 3 \u2212 3<em>x</em>.</p><p>Choices B, C, and D have either the wrong direction or the wrong slope sign.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A4.T1.medium"
+}

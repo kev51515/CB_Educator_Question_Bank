@@ -1,0 +1,25 @@
+{
+  "questionId": "82cb7dda-s1",
+  "originalId": "82cb7dda",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The field of comparative neurobiology searches for shared biological underpinnings of complex behaviors across very different animal groups. Many such behaviors&mdash;learning, memory, decision-making&mdash;have been described in detail in vertebrates, where they are linked to specific brain structures and chemical pathways (for example, the formation of long-term memory by way of activity in the hippocampus). Building on these vertebrate models, Anika Patel and her colleagues have recently shown that the common octopus (<em>Octopus vulgaris</em>) forms durable place memories using circuits whose chemistry closely mirrors those of mammalian memory systems, even though the octopus brain is anatomically nothing like a mammalian one.</p>",
+  "stem": "<p>Which choice best describes the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It describes an experimental method for measuring the speed of physiological responses in humans.</p>"},
+    {"id": "b", "content": "<p>It illustrates processes by which certain invertebrates express how they are feeling.</p>"},
+    {"id": "c", "content": "<p>It presents research showing that octopuses and mammals behave identically when given identical rewards.</p>"},
+    {"id": "d", "content": "<p>It summarizes a finding suggesting that some mechanisms underlying complex behavior in certain invertebrates resemble those in mammals.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The passage describes the comparative-neurobiology project of finding shared biological bases for complex behavior, and its central content is Patel and colleagues' finding that the octopus uses memory circuits chemically similar to those in mammals despite very different brain anatomy. The main purpose is to summarize that finding.</p><p>Choice A is incorrect because no method for measuring physiological responses in humans is given. Choice B is incorrect because the focus is memory mechanisms, not the expression of feelings. Choice C is incorrect because the text speaks of mechanism, not identical behavior under identical rewards.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A1.T2.hard"
+}

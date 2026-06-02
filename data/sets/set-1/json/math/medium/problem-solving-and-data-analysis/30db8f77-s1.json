@@ -1,0 +1,22 @@
+{
+  "questionId": "30db8f77-s1",
+  "originalId": "30db8f77",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>At a workshop, there are a total of 450 participants. Each participant is assigned to either team A, team B, or team C. If one of these participants is selected at random, the probability of selecting a participant assigned to team A is 0.30 and the probability of selecting a participant assigned to team B is 0.50. How many participants are assigned to team C?</p>",
+  "answerOptions": null,
+  "keys": [
+    "90"
+  ],
+  "rationale": "<p>The correct answer is 90. The three probabilities must sum to 1, so P(C) = 1 - 0.30 - 0.50 = 0.20. Therefore the number of participants on team C is 0.20 &times; 450 = 90.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A4.T12.medium"
+}

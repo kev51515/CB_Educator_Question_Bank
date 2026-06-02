@@ -1,0 +1,25 @@
+{
+  "questionId": "8b017d4e-s1",
+  "originalId": "8b017d4e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Corroborated by isotopic analyses of more than 1,500 shell middens from coastal Bronze Age settlements, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>conclusions from a 2023 investigation indicated that shellfish and seaweed comprised the bulk of coastal villagers' nutrition.</p>"},
+    {"id": "b", "content": "<p>shellfish and seaweed were, a 2023 investigation determined, the bulk of coastal villagers' nutrition.</p>"},
+    {"id": "c", "content": "<p>coastal villagers' nutrition was shown, in a 2023 investigation, to have come mostly from shellfish and seaweed.</p>"},
+    {"id": "d", "content": "<p>the bulk of coastal villagers' nutrition came from shellfish and seaweed, according to a 2023 investigation.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"conclusions from a 2023 investigation\" the subject of the sentence and places it immediately after the modifying phrase \"Corroborated&hellip;settlements.\" In doing so, this choice clearly establishes that the conclusions&mdash;and not another noun in the sentence&mdash;are corroborated by the isotopic analyses.</p><p>Choice B is incorrect because it results in a dangling modifier. The placement of \"shellfish and seaweed\" immediately after the modifying phrase illogically suggests that shellfish and seaweed are corroborated by isotopic analyses. Choice C is incorrect because it results in a dangling modifier. The placement of \"coastal villagers' nutrition\" immediately after the modifying phrase illogically suggests that the villagers' nutrition is corroborated by isotopic analyses. Choice D is incorrect because it results in a dangling modifier. The placement of \"the bulk of coastal villagers' nutrition\" immediately after the modifying phrase illogically suggests that the bulk is corroborated by isotopic analyses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

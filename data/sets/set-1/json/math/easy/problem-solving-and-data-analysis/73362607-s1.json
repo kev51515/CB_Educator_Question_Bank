@@ -1,0 +1,22 @@
+{
+  "questionId": "73362607-s1",
+  "originalId": "73362607",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Jordan grows plums in his orchard. This season, he harvested 620 plums and gave 10% of them to a friend. How many of the harvested plums did Jordan give to his friend?</p>",
+  "answerOptions": null,
+  "keys": [
+    "62"
+  ],
+  "rationale": "<p>The correct answer is <strong>62</strong>. 10% of 620 is 0.10 × 620 = 62.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T2.easy"
+}

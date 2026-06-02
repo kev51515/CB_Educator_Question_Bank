@@ -1,0 +1,25 @@
+{
+  "questionId": "e3c1b4f7-s1",
+  "originalId": "e3c1b4f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.hard",
+  "stimulus": "<p>Ceramicist Aditi Mohan principally uses a wheel and a small set of metal trimming tools to throw vessels for contemporary galleries. To achieve the soft, almost translucent surfaces that have become a hallmark of her <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she occasionally turns to older techniques, such as burnishing the leather-hard clay with a polished river stone.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>vessels, though;</p>"},
+    {"id": "b", "content": "<p>vessels, though,</p>"},
+    {"id": "c", "content": "<p>vessels; though,</p>"},
+    {"id": "d", "content": "<p>vessels, though</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of punctuation within a sentence. The comma after \"vessels\" pairs with the comma after \"though\" to set off the supplementary element \"though\" from the rest of the sentence. The paired commas indicate that this element could be removed without affecting the grammatical coherence of the sentence.</p><p>Choice A is incorrect because a semicolon cannot be paired with a comma to set off a supplementary element. Choice C is incorrect for the same reason. Choice D is incorrect because the comma after \"vessels\" must be paired with a comma after \"though\" to enclose the supplementary element.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

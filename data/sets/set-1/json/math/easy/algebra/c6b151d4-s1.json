@@ -1,0 +1,39 @@
+{
+  "questionId": "c6b151d4-s1",
+  "originalId": "c6b151d4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A total of 480 toothpicks of equal length were used to construct two types of polygons: pentagons and hexagons. The polygons were constructed so that no two polygons had a common side. The equation 5<i>x</i> + 6<i>y</i> = 480 represents this situation, where <i>x</i> is the number of pentagons and <i>y</i> is the number of hexagons. Which of the following is the best interpretation of a solution to this equation in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>If 24 pentagons were constructed, then 24 toothpicks were used.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>If 24 pentagons were constructed, then 60 hexagons were constructed.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>If 60 pentagons were constructed, then 24 hexagons were constructed.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>If 60 pentagons were constructed, then 24 toothpicks were used.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Substituting <i>x</i> = 24 into 5<i>x</i> + 6<i>y</i> = 480 gives 120 + 6<i>y</i> = 480, so <i>y</i> = 60. Therefore, 24 pentagons corresponds to 60 hexagons.</p><p>Choices A and D confuse counts of polygons with counts of toothpicks. Choice C swaps the values and does not satisfy the equation.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

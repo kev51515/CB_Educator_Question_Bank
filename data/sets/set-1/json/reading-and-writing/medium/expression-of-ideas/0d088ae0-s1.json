@@ -1,0 +1,25 @@
+{
+  "questionId": "0d088ae0-s1",
+  "originalId": "0d088ae0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>Noticing that pond water teeming with microscopic life appeared to spontaneously develop maggots when left covered with cloth, seventeenth-century naturalists did not conclude that flies had laid eggs on the cloth; instead, many accepted the older view that life could arise from nonliving matter through a process called spontaneous generation. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> when Francesco Redi designed his famous sealed-jar experiment in 1668, he framed it as a direct test of that theory.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>That said,</p>"},
+    {"id": "b", "content": "<p>In other words,</p>"},
+    {"id": "c", "content": "<p>Otherwise,</p>"},
+    {"id": "d", "content": "<p>For this reason,</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. \"For this reason\" logically signals that the reason Redi designed his sealed-jar experiment as a direct test of spontaneous generation was that this theory was already widely accepted, as mentioned in the previous sentence.</p><p>Choice A is incorrect because \"that said\" illogically signals that Redi's experiment was conducted despite the prevalence of the theory, when in fact the theory's prevalence is exactly why he targeted it. Choice B is incorrect because \"in other words\" illogically signals that Redi's experiment restates the previous information about spontaneous generation, when it actually follows from it. Choice C is incorrect because \"otherwise\" illogically signals an alternative scenario, but Redi's experiment was a direct response to the established view, not an alternative to it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

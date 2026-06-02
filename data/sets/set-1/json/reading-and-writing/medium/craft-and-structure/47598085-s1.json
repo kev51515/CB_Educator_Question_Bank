@@ -1,0 +1,25 @@
+{
+  "questionId": "47598085-s1",
+  "originalId": "47598085",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A2.T5.medium",
+  "stimulus": "<p><span role=\"region\" aria-label=\"Referenced Content\"><u>Vocal mirroring occurs when one individual matches the pitch or rhythm of another individual's vocalization shortly after hearing it.</u></span> Studies of this behavior in cetaceans have focused mostly on bottlenose dolphins in captivity, but marine biologist Hiroko Tanaka and her colleagues have shown that it can also occur among wild populations. In their study, which focused on a wild pod of short-finned pilot whales (<em>Globicephala macrorhynchus</em>) off the coast of Madeira, the researchers further reported that vocal mirroring most commonly occurred among adolescent males and between members of different family groups rather than within a single family group.</p>",
+  "stem": "<p>Which choice best describes the function of the first sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It presents a hypothesis that is evaluated in the text.</p>"},
+    {"id": "b", "content": "<p>It introduces a problem that is examined in the text.</p>"},
+    {"id": "c", "content": "<p>It defines a phenomenon that is discussed in the text.</p>"},
+    {"id": "d", "content": "<p>It makes a claim that is challenged in the text.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The first sentence introduces what vocal mirroring is, explaining that it occurs when one individual matches the pitch or rhythm of another's vocalization. The remainder of the text describes Tanaka and colleagues' study showing that the behavior occurs in wild pilot whales and most often among adolescent males across family groups. The first sentence therefore defines the phenomenon that the text goes on to discuss.</p><p>Choice A is incorrect because the first sentence does not put forward a hypothesis; it provides a definition. Choice B is incorrect because vocal mirroring is presented as a behavior of interest, not as a problem. Choice D is incorrect because the text confirms and extends rather than challenges the first sentence's account.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "b8a225ff-s1",
+  "originalId": "b8a225ff",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Circle A in the xy-plane has the equation (x \u2212 8)<sup>2</sup> + (y + 3)<sup>2</sup> = 9. Circle B has the same center as circle A. The radius of circle B is three times the radius of circle A. The equation defining circle B in the xy-plane is (x \u2212 8)<sup>2</sup> + (y + 3)<sup>2</sup> = k, where k is a constant. What is the value of k?</p>",
+  "answerOptions": [],
+  "keys": [
+    "81"
+  ],
+  "rationale": "<p>Circle A has r<sup>2</sup> = 9, so its radius is 3. Tripling gives a new radius of 9, so k = 9<sup>2</sup> = 81.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T5.hard"
+}

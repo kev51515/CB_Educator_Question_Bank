@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "4d037075-s1",
+  "originalId": "4d037075",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the xy-plane, the graph of a function g has a vertical asymptote at x = &minus;3 and approaches the line y = 0 as x decreases without bound. The graph passes through the point (&minus;2, 5). Which equation defines g?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>g(x) = 5/(x + 3)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>g(x) = 5(x + 3)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>g(x) = 5/(x &minus; 3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>g(x) = &minus;5/(x + 3)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A function of the form g(x) = c/(x + 3) has a vertical asymptote at x = &minus;3 and a horizontal asymptote at y = 0. Substituting x = &minus;2 yields g(&minus;2) = c/1 = c. For the graph to pass through (&minus;2, 5), we need c = 5, so g(x) = 5/(x + 3).</p><p>Choices B and C have asymptotes at different locations or do not have a vertical asymptote at all. Choice D gives g(&minus;2) = &minus;5, not 5.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T5.hard"
+}

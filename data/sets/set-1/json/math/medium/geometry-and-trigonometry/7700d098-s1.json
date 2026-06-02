@@ -1,0 +1,39 @@
+{
+  "questionId": "7700d098-s1",
+  "originalId": "7700d098",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>One leg of a right triangle has a length of <math><mn>16.5</mn></math> centimeters. The hypotenuse of the triangle has a length of <math><mn>27.5</mn></math> centimeters. What is the length of the other leg of the triangle, in centimeters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>16.5</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>11</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>32</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>22</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. By the Pythagorean theorem, the other leg has length \u221a(27.5\u00b2 - 16.5\u00b2) = \u221a(756.25 - 272.25) = \u221a484 = 22 cm.</p><p>Choice A repeats the given leg. Choice B subtracts the leg from the hypotenuse. Choice C adds the leg and hypotenuse and divides.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.medium"
+}

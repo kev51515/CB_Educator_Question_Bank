@@ -1,0 +1,22 @@
+{
+  "questionId": "c5e38487-s1",
+  "originalId": "c5e38487",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>A chemist combines water and citric acid to make a mixture with a volume of 80 milliliters (mL). The volume of citric acid in the mixture is 23 mL. What is the volume of water, in mL, in the mixture? (Assume that the volume of the mixture is the sum of the volumes of water and citric acid before they were mixed.)</p>",
+  "answerOptions": null,
+  "keys": [
+    "57"
+  ],
+  "rationale": "<p>Let <em>w</em> be the volume of water (in mL) and <em>a</em> be the volume of citric acid (in mL). Then w + a = 80 and a = 23. Substituting gives w + 23 = 80, so w = 57. The volume of water is 57 mL.</p>",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

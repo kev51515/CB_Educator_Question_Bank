@@ -1,0 +1,25 @@
+{
+  "questionId": "2b5e0731-s1",
+  "originalId": "2b5e0731",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>With a thunderstorm approaching, a mother prairie dog senses danger and wants to alert her pups to take shelter. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she lets out a series of high-pitched alarm calls that her pups can hear from inside the burrow. Prairie dog alarm calls vary in pitch and pattern, but other prairie dogs can interpret these signals from over a kilometer away.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For example,</p>"},
+    {"id": "b", "content": "<p>For this reason,</p>"},
+    {"id": "c", "content": "<p>Nowadays,</p>"},
+    {"id": "d", "content": "<p>Similarly,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"For this reason\" is a cause-and-effect transition. The cause is that the mother prairie dog wants to alert her pups, so the effect is that she releases alarm calls for them to hear. Therefore, \"for this reason\" fits perfectly.</p><p>Choice A is incorrect. This choice introduces an example, but the second sentence doesn't provide an example of the events described in the first sentence. Instead, it describes what happens next. Choice C is incorrect. This choice indicates a shift from the past to the current time, which doesn't make sense here. Both sentences use the present tense. Choice D is incorrect. This choice indicates similarity or agreement, but this sentence isn't similar to the events in the first sentence—it describes the events that happen next.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A2.T4.easy"
+}

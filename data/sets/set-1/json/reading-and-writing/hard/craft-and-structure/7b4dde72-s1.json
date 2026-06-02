@@ -1,0 +1,39 @@
+{
+  "questionId": "7b4dde72-s1",
+  "originalId": "7b4dde72",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In 1903, designer Sarah Mae founded the Heath Workshop, which produced furniture using only traditional joinery and locally sourced hardwoods. Historians argue that Mae's rejection of mass-production techniques is <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the Heath pieces' use of hand-cut dovetails and slow-aged finishes reminiscent of preindustrial workshops: these meticulously made elements showcase the labor involved.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>uninfluenced by</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>scrutinized by</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>evident in</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>complicated by</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Evident in\" most logically completes the text. The Heath pieces showcase traits associated with preindustrial craft, so the designer's rejection of mass-production techniques is clearly visible—evident in—those very pieces.</p><p>Choice A is incorrect. \"Uninfluenced by\" reverses the relationship; the pieces directly reflect the rejection of industrial methods. Choice B is incorrect. \"Scrutinized by\" suggests the pieces examine the rejection, which is nonsensical. Choice D is incorrect. \"Complicated by\" suggests an obstacle; the pieces don't complicate the rejection but illustrate it.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

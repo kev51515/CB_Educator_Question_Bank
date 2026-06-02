@@ -1,0 +1,39 @@
+{
+  "questionId": "02489d55-s1",
+  "originalId": "02489d55",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression is equivalent to 23(<i>z</i>&sup2; &minus; 4)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>23<i>z</i>&sup2; &minus; 92</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>23<i>z</i>&sup2; &minus; 27</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>23<i>z</i>&sup2; &minus; 4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>23<i>z</i>&sup2; + 19</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The expression 23(<i>z</i>&sup2; &minus; 4) can be rewritten as 23(<i>z</i>&sup2;) &minus; 23(4), which equals 23<i>z</i>&sup2; &minus; 92.</p><p>Choice B is incorrect: it results from subtracting 4 from 23 instead of multiplying. Choice C is incorrect: it fails to distribute 23 over the constant. Choice D is incorrect: it results from adding 23 and (&minus;4) instead of distributing.</p>",
+  "generatedAt": "2026-05-25T17:40:19Z",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

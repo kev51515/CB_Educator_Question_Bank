@@ -1,0 +1,39 @@
+{
+  "questionId": "24c1b7e4-s1",
+  "originalId": "24c1b7e4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "CAS.04.",
+  "type": "mcq",
+  "stimulus": "<p>Percentage Point Changes in State Education Budget Relative to State GDP by Legislative Status</p>\n<table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\">\n<tr><th>Period</th><th>Legislative status</th><th>Change in total education budget</th><th>Change in K&ndash;12 budget</th><th>Change in higher-ed budget</th></tr>\n<tr><td>1991&ndash;1994</td><td>split</td><td>&minus;0.6</td><td>&minus;1.1</td><td>0.5</td></tr>\n<tr><td>1995&ndash;1998</td><td>unified</td><td>1.8</td><td>1.4</td><td>0.4</td></tr>\n<tr><td>1999&ndash;2002</td><td>split</td><td>&minus;1.2</td><td>0.4</td><td>&minus;1.6</td></tr>\n<tr><td>2003&ndash;2006</td><td>unified</td><td>0.7</td><td>0.5</td><td>0.2</td></tr>\n<tr><td>2007&ndash;2010</td><td>split</td><td>2.1</td><td>1.6</td><td>0.5</td></tr>\n</table>\n<p>Policy analyst Robin Tanaka has shown that split state legislatures&mdash;in which the two chambers are controlled by different parties&mdash;tend to accompany reductions in total state education budgets relative to state GDP, which Tanaka interprets to reflect tighter overall spending. Tanaka points to her calculations as evidence that a split legislature may be a &ldquo;contributing but not decisive condition&rdquo; for a reduction in total education budget to occur.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The periods of unified legislatures were associated with increases in K&ndash;12 budgets, whereas all periods of split legislatures were associated with reductions in higher-ed budgets.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>All periods of split legislatures were associated with reductions in higher-ed budgets, although two of those periods were also associated with increases in K&ndash;12 budgets.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Most periods of split legislatures were associated with reductions in total education budget, whereas all periods of unified legislatures were associated with increases in total education budget.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The periods of unified legislatures were associated with increases in total education budget, whereas all periods of split legislatures were associated with reductions in either K&ndash;12 budget or higher-ed budget.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because Tanaka&rsquo;s claim is that split legislatures may be a contributing condition for total education-budget reductions. The data show two of the three split-legislature periods (1991&ndash;1994 and 1999&ndash;2002) had reductions in total budget while both unified periods saw increases. That matches the &ldquo;contributing but not decisive&rdquo; framing. Choice A oversimplifies higher-ed budget changes. Choice B focuses on K&ndash;12 not total. Choice D doesn&rsquo;t describe the total-budget pattern.</p>",
+  "generatedAt": "2026-05-26T15:08:57Z",
+  "templateId": "command-of-evidence.A5.T9.hard"
+}

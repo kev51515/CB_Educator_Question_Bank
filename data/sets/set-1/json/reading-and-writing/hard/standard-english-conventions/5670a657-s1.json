@@ -1,0 +1,25 @@
+{
+  "questionId": "5670a657-s1",
+  "originalId": "5670a657",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>During the long campaign to recognize the contributions of Filipino American farmworkers in California, certain moments were decisive: the formation of the Agricultural Workers Organizing Committee in <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the joint manifesto of Larry Itliong and Cesar Chavez convinced thousands of workers across the Central Valley to coordinate their labor actions.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>1959, for one. The</p>"},
+    {"id": "b", "content": "<p>1959, for one, the</p>"},
+    {"id": "c", "content": "<p>1959 for one, the</p>"},
+    {"id": "d", "content": "<p>1959. For one, the</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"1959, for one\" closes the first independent clause, and \"The joint manifesto&hellip;actions\" is a second independent clause. A period correctly marks the boundary, and \"for one\" is set off with a preceding comma as a parenthetical.</p><p>Choices B and C are incorrect because they leave two independent clauses separated only by a comma, producing a comma splice. Choice D is incorrect because placing the period after \"1959\" wrongly orphans \"For one\" as a sentence opener while breaking the parenthetical link to \"the formation of the Agricultural Workers Organizing Committee.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

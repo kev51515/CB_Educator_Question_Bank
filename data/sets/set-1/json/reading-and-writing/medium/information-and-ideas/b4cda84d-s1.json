@@ -1,0 +1,25 @@
+{
+  "questionId": "b4cda84d-s1",
+  "originalId": "b4cda84d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A2.T3.medium",
+  "stimulus": "<p>In 1953 the Canadian Parliament established the National Library of Canada, which opened to the public in 1967 to acquire and preserve published Canadian heritage materials and provide bibliographic services to libraries across the country. In a research paper, a student claims that the National Library of Canada was modeled after the Library of Congress in the United States, which had been founded in 1800.</p>",
+  "stem": "<p>Which quotation from a work by a historian would be the most effective evidence for the student to include in support of this claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;The Library of Congress had its origins as a reference library for federal lawmakers, while the National Library of Canada from the start was conceived as a national institution serving the public.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;The Library of Congress was designed to preserve American cultural heritage and serve the citizenry through national bibliographic standards, and Canadian officials explicitly cited this mission when they designed their own national library.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;By the mid-twentieth century, several Commonwealth nations had begun establishing national libraries, reflecting a broad postwar conviction that government should preserve cultural heritage as part of its core duties.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;Despite its early modest collections, the Library of Congress grew quickly after Thomas Jefferson sold his personal library to it following the burning of Washington in 1814.&rdquo;</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because this quotation directly supports the student&rsquo;s claim by stating that Canadian officials explicitly cited the Library of Congress&rsquo;s mission as a model when designing their own national library. Choice A is incorrect because it contrasts the two libraries&rsquo; origins, not modeling. Choice C is incorrect because it speaks of a general Commonwealth trend without mentioning the Library of Congress as a model. Choice D is incorrect because it offers background about the Library of Congress without any link to Canada.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

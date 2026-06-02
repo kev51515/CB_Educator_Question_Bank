@@ -1,0 +1,72 @@
+{
+  "questionId": "96a904c5",
+  "externalId": "c2aa5ede-8913-4159-b5a7-ffb934ed7645",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 5,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:23:22.101292+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "8ab49943-87da-4eb4-9e72-c78ce3c40211",
+      "content": "<p>the listener can approach each piece free from expectations because of the titles.</p>"
+    },
+    {
+      "id": "a75feccb-195a-433c-8c5e-d7f2b6a89706",
+      "content": "<p>the titles allow the listener to approach each piece free from expectations.</p>"
+    },
+    {
+      "id": "ec0b419b-c3a9-4485-ac43-940de79c6309",
+      "content": "<p>each piece can be approached by the listener free from expectations because of the titles.</p>"
+    },
+    {
+      "id": "1bf22edd-5463-44f7-8628-d2ff1465cf7f",
+      "content": "<p>the listener&rsquo;s approach to each piece because of the titles can be free from expectations.</p>"
+    }
+  ],
+  "keys": [
+    "a75feccb-195a-433c-8c5e-d7f2b6a89706"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;the titles&rdquo; the subject of the sentence and places it immediately after the modifying phrases &ldquo;laden with emojis and seemingly meaningless words, and driven largely by Sawano&rsquo;s &lsquo;personal feeling and mood.&rsquo;&rdquo; In doing so, this choice clearly establishes that the titles&mdash;and not another noun in the sentence&mdash;are being described as laden with emojis and driven by Sawano&rsquo;s personal feeling.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of &ldquo;the listener&rdquo; immediately after the modifying phrases illogically suggests that the listener, rather than the titles, is laden with emojis and driven by Sawano&rsquo;s personal feeling. Choice C is incorrect because it results in a dangling modifier. The placement of &ldquo;each piece&rdquo; (i.e., musical score) immediately after the modifying phrases illogically suggests that the pieces, rather than the titles of the pieces, are laden with emojis and driven by Sawano&rsquo;s personal feeling. Choice D is incorrect because it results in a dangling modifier. The placement of &ldquo;the listener&rsquo;s approach&rdquo; immediately after the modifying phrases illogically suggests that the listener&rsquo;s approach, rather than the titles, is laden with emojis and driven by Sawano&rsquo;s personal feeling.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>The musical scores of Japanese composer Hiroyuki Sawano are famous for their mysterious titles. Laden with emojis and seemingly meaningless words, and driven largely by Sawano&rsquo;s &ldquo;personal feeling and mood,&rdquo; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "a75feccb-195a-433c-8c5e-d7f2b6a89706"
+    ],
+    "answerOptions": [
+      {
+        "id": "8ab49943-87da-4eb4-9e72-c78ce3c40211",
+        "content": "<p>the listener can approach each piece free from expectations because of the titles.</p>"
+      },
+      {
+        "id": "a75feccb-195a-433c-8c5e-d7f2b6a89706",
+        "content": "<p>the titles allow the listener to approach each piece free from expectations.</p>"
+      },
+      {
+        "id": "ec0b419b-c3a9-4485-ac43-940de79c6309",
+        "content": "<p>each piece can be approached by the listener free from expectations because of the titles.</p>"
+      },
+      {
+        "id": "1bf22edd-5463-44f7-8628-d2ff1465cf7f",
+        "content": "<p>the listener&rsquo;s approach to each piece because of the titles can be free from expectations.</p>"
+      }
+    ],
+    "rationale": "<p>Choice B is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase &ldquo;the titles&rdquo; the subject of the sentence and places it immediately after the modifying phrases &ldquo;laden with emojis and seemingly meaningless words, and driven largely by Sawano&rsquo;s &lsquo;personal feeling and mood.&rsquo;&rdquo; In doing so, this choice clearly establishes that the titles&mdash;and not another noun in the sentence&mdash;are being described as laden with emojis and driven by Sawano&rsquo;s personal feeling.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of &ldquo;the listener&rdquo; immediately after the modifying phrases illogically suggests that the listener, rather than the titles, is laden with emojis and driven by Sawano&rsquo;s personal feeling. Choice C is incorrect because it results in a dangling modifier. The placement of &ldquo;each piece&rdquo; (i.e., musical score) immediately after the modifying phrases illogically suggests that the pieces, rather than the titles of the pieces, are laden with emojis and driven by Sawano&rsquo;s personal feeling. Choice D is incorrect because it results in a dangling modifier. The placement of &ldquo;the listener&rsquo;s approach&rdquo; immediately after the modifying phrases illogically suggests that the listener&rsquo;s approach, rather than the titles, is laden with emojis and driven by Sawano&rsquo;s personal feeling.</p>",
+    "externalid": "c2aa5ede-8913-4159-b5a7-ffb934ed7645",
+    "correct_answer": [
+      "B"
+    ]
+  },
+  "stimulus": "<p>The musical scores of Japanese composer Hiroyuki Sawano are famous for their mysterious titles. Laden with emojis and seemingly meaningless words, and driven largely by Sawano&rsquo;s &ldquo;personal feeling and mood,&rdquo; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

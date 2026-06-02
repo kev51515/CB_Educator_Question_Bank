@@ -1,0 +1,25 @@
+{
+  "questionId": "ac5536c1-s1",
+  "originalId": "ac5536c1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T3.medium",
+  "stimulus": "<p>Florence Bascom is widely remembered for becoming the first woman to earn a PhD from Johns Hopkins University in 1893, but she also devoted herself to petrography, the microscopic study of <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> mapping the crystalline rocks of the Piedmont region and training many of the next generation of US women geologists at Bryn Mawr College.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>rocks; mapping</p>"},
+    {"id": "b", "content": "<p>rocks, mapping</p>"},
+    {"id": "c", "content": "<p>rocks mapping</p>"},
+    {"id": "d", "content": "<p>rocks. Mapping</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. A comma correctly marks the boundary between the supplementary noun phrase \"the microscopic study of rocks\" (which defines \"petrography\") and the following supplementary participial phrase (\"mapping...College\") that provides additional information about Bascom's work.</p><p>Choice A is incorrect because a semicolon cannot link a supplementary phrase to another supplementary phrase in this way. Choice C is incorrect because omitting punctuation illogically suggests that the study of rocks is doing the mapping. Choice D is incorrect because the participial phrase beginning with \"Mapping\" has no subject and cannot stand on its own as a sentence.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "37ec26e7-s1",
+  "originalId": "37ec26e7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In order to make practical use of the polio vaccine in the 1950s, researchers had to develop a method for growing large quantities of the polio virus safely in a laboratory setting. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it was virologist Isabel Morgan who pioneered the techniques that allowed the necessary virus cultures to be produced.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In other words,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Secondly,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Ultimately,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In addition,</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Ultimately\" logically signals that Morgan's pioneering of the techniques was the conclusion of the process described in the previous sentence, in which researchers sought to develop a method for growing the polio virus.</p><p>Choice A is incorrect because \"in other words\" illogically signals a restatement. Instead, Morgan's work was the conclusion of those efforts. Choice B is incorrect because \"secondly\" illogically signals merely the next step. Instead, her techniques were the culmination of the effort. Choice D is incorrect because \"in addition\" illogically signals additional information. Instead, Morgan's work was the conclusion of the researchers' efforts.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T16.easy"
+}

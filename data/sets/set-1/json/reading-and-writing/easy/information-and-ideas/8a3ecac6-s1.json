@@ -1,0 +1,39 @@
+{
+  "questionId": "8a3ecac6-s1",
+  "originalId": "8a3ecac6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>European rock pigeons usually have iridescent blue-gray feathers, but some birds in this species carry a gene variant that gives them mostly dark brown plumage instead. Anders Lindqvist and his team studied fifteen populations of European rock pigeons living in different cities. They found that dark brown pigeons are more common in neighborhoods where outbreaks of avian pox occur frequently. The team also discovered that the dark brown pigeons are more likely to recover from avian pox infections than the blue-gray pigeons are. Taken together, these findings suggest that ______</p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>blue-gray rock pigeons will soon replace dark brown rock pigeons across Europe.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>European rock pigeons experience more outbreaks of avian pox than other pigeon species do.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>the average life span of rock pigeons is likely to increase over time because of a particular gene variant.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the gene variant that produces dark brown feathers may be linked to better recovery from avian pox.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Dark brown pigeons are more common where avian pox is frequent AND recover better \u2014 both point toward a link between the brown-feather gene and pox resistance.</p><p>Choice A is too extreme and contradicts the protective advantage of brown plumage in pox-prone areas. Choice B compares species not discussed in the text. Choice C invokes life span, never mentioned.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "inferences.A2.T4.easy"
+}

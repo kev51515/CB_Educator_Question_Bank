@@ -1,0 +1,39 @@
+{
+  "questionId": "1353b86e-s1",
+  "originalId": "1353b86e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows the number of marbles of each color in a bag. If a marble is chosen at random from the bag, what is the probability that the marble will be green?</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Color</th><th>Number of marbles</th></tr><tr><td>Red</td><td>14</td></tr><tr><td>Blue</td><td>6</td></tr><tr><td>Green</td><td>12</td></tr><tr><td>Yellow</td><td>8</td></tr></table>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>14/40</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12/40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8/40</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>6/40</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. There are 12 green marbles out of a total of 14 + 6 + 12 + 8 = 40 marbles. The probability is 12/40.</p><p>Choice A is incorrect. This is the probability of selecting a red marble.</p><p>Choice C is incorrect. This is the probability of selecting a yellow marble.</p><p>Choice D is incorrect. This is the probability of selecting a blue marble.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "probability-and-conditional-probability.A1.T2.easy"
+}

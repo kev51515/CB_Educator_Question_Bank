@@ -1,0 +1,39 @@
+{
+  "questionId": "5e422ff9-s1",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium",
+  "originalId": "5e422ff9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>4x + y = 23</p><p>2x − y = 7</p><p>In the solution (x, y) to the given system of equations, what is the value of y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>17</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Adding the two equations eliminates y: 6x = 30, so x = 5. Substituting back: 4(5) + y = 23, so y = 3. The correct answer is choice A.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z"
+}

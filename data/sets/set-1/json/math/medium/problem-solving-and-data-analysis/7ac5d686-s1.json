@@ -1,0 +1,39 @@
+{
+  "questionId": "7ac5d686-s1",
+  "originalId": "7ac5d686",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A librarian begins a day of work with a large cart of returned books that need to be reshelved. She reshelves books at a constant rate throughout the afternoon. What type of model best represents the number of books remaining to be reshelved at any given time throughout the afternoon?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>A linear model with a positive slope</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>An exponential growth model</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>An exponential decay model</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>A linear model with a negative slope</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. A constant rate of reshelving means the number remaining decreases by a fixed amount per unit time, which is a linear relationship with negative slope.</p><p>Choice A has the wrong sign. Choices B and C describe percentage-based change, not constant rate.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T9.medium"
+}

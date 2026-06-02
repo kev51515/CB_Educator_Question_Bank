@@ -1,0 +1,72 @@
+{
+  "questionId": "0afb2ac4",
+  "externalId": "e2330828-1418-4ad0-8880-e2467492c024",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "scoreBand": 1,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:22:10.888664+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "fc521fba-00e3-4882-b8cb-cc34c2ff03c6",
+      "content": "<p>chaotic</p>"
+    },
+    {
+      "id": "850ae3c2-e899-46cf-9816-9506b81f1a02",
+      "content": "<p>uniform</p>"
+    },
+    {
+      "id": "0b76b213-8151-494e-82e3-277619d41d2e",
+      "content": "<p>effective</p>"
+    },
+    {
+      "id": "fe7a1653-eac8-4c74-9c15-15cdfb971214",
+      "content": "<p>burdensome</p>"
+    }
+  ],
+  "keys": [
+    "0b76b213-8151-494e-82e3-277619d41d2e"
+  ],
+  "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of the ancient Inca farming method. In this context, &ldquo;effective&rdquo; means successful in producing a desired result. The text describes how the Inca used terraces with built-in irrigation systems to grow crops at different altitudes and then indicates that this farming method produced positive results &ldquo;as evidenced by the great number and variety of crops grown at that time.&rdquo; The context clearly suggests that the terraced farming approach was highly productive, or effective.</p><p>Choice A is incorrect because to describe the Inca farming method as &ldquo;chaotic&rdquo; contradicts the text&rsquo;s description of a systematic approach using deliberately constructed terraces with built-in irrigation systems. Moreover, the &ldquo;great number and variety of crops&rdquo; yielded by this method seems unlikely to result from a disorganized, or chaotic, approach. Choice B is incorrect because &ldquo;uniform&rdquo; means consistent or the same throughout. It does not make sense in this context to describe a farming method as highly uniform if it produced a &ldquo;great number and variety of crops.&rdquo; Moreover, the text indicates that Inca terrace farming was specifically designed to accommodate different crops at different altitudes, highlighting the diversity rather than uniformity of this approach. Choice D is incorrect because the success of the method, &ldquo;as evidenced by the great number and variety of crops grown,&rdquo; does not support the claim that the Inca farming method was &ldquo;burdensome,&rdquo; or difficult to implement or maintain. In fact, the context clearly emphasizes the advantages, rather than the burdens, of Inca terrace farming.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+    "stimulus": "<p>Ancient Inca inhabiting the Andes Mountains used terraces, rows of flattened land with built-in irrigation systems, to grow crops at different altitudes. This method of farming proved to be highly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, as evidenced by the great number and variety of crops grown at that time.</p>",
+    "keys": [
+      "0b76b213-8151-494e-82e3-277619d41d2e"
+    ],
+    "answerOptions": [
+      {
+        "id": "fc521fba-00e3-4882-b8cb-cc34c2ff03c6",
+        "content": "<p>chaotic</p>"
+      },
+      {
+        "id": "850ae3c2-e899-46cf-9816-9506b81f1a02",
+        "content": "<p>uniform</p>"
+      },
+      {
+        "id": "0b76b213-8151-494e-82e3-277619d41d2e",
+        "content": "<p>effective</p>"
+      },
+      {
+        "id": "fe7a1653-eac8-4c74-9c15-15cdfb971214",
+        "content": "<p>burdensome</p>"
+      }
+    ],
+    "rationale": "<p>Choice C is the best answer because it most logically completes the text&rsquo;s discussion of the ancient Inca farming method. In this context, &ldquo;effective&rdquo; means successful in producing a desired result. The text describes how the Inca used terraces with built-in irrigation systems to grow crops at different altitudes and then indicates that this farming method produced positive results &ldquo;as evidenced by the great number and variety of crops grown at that time.&rdquo; The context clearly suggests that the terraced farming approach was highly productive, or effective.</p><p>Choice A is incorrect because to describe the Inca farming method as &ldquo;chaotic&rdquo; contradicts the text&rsquo;s description of a systematic approach using deliberately constructed terraces with built-in irrigation systems. Moreover, the &ldquo;great number and variety of crops&rdquo; yielded by this method seems unlikely to result from a disorganized, or chaotic, approach. Choice B is incorrect because &ldquo;uniform&rdquo; means consistent or the same throughout. It does not make sense in this context to describe a farming method as highly uniform if it produced a &ldquo;great number and variety of crops.&rdquo; Moreover, the text indicates that Inca terrace farming was specifically designed to accommodate different crops at different altitudes, highlighting the diversity rather than uniformity of this approach. Choice D is incorrect because the success of the method, &ldquo;as evidenced by the great number and variety of crops grown,&rdquo; does not support the claim that the Inca farming method was &ldquo;burdensome,&rdquo; or difficult to implement or maintain. In fact, the context clearly emphasizes the advantages, rather than the burdens, of Inca terrace farming.</p>",
+    "externalid": "e2330828-1418-4ad0-8880-e2467492c024",
+    "correct_answer": [
+      "C"
+    ]
+  },
+  "stimulus": "<p>Ancient Inca inhabiting the Andes Mountains used terraces, rows of flattened land with built-in irrigation systems, to grow crops at different altitudes. This method of farming proved to be highly <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, as evidenced by the great number and variety of crops grown at that time.</p>"
+}

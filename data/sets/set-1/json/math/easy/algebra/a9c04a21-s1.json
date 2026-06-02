@@ -1,0 +1,25 @@
+{
+  "questionId": "a9c04a21-s1",
+  "originalId": "a9c04a21",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the solution to the equation <math><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn><mo>=</mo><mn>14</mn></math>?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>2</p>"},
+    {"id": "b", "content": "<p>4.5</p>"},
+    {"id": "c", "content": "<p>3</p>"},
+    {"id": "d", "content": "<p>9</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is correct. Subtracting 5 from both sides yields <math><mn>3</mn><mi>x</mi><mo>=</mo><mn>9</mn></math>. Dividing by 3 yields <math><mi>x</mi><mo>=</mo><mn>3</mn></math>.</p><p>Choices A and B are incorrect and may result from computation errors. Choice D is the value of <math><mn>3</mn><mi>x</mi></math>.</p>",
+  "templateId": "linear-equations-in-one-variable.A1.T2.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

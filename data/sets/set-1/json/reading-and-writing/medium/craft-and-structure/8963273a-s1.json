@@ -1,0 +1,25 @@
+{
+  "questionId": "8963273a-s1",
+  "originalId": "8963273a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T7.medium",
+  "stimulus": "<p>Filmmaker Agn&egrave;s Varda, who was also a still photographer, drew on photographic techniques in her films to underscore themes she returned to throughout her career. In her 2000 documentary <em>The Gleaners and I</em>, Varda repeatedly inserted long, lingering close-ups that recall her early portrait photography of working-class subjects. These quiet framings call attention to the film&rsquo;s central concern with people who have been overlooked&mdash;a concern that Varda also explored in her later video installations.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It examines Varda&rsquo;s influence on documentary filmmakers, then considers the influence of those filmmakers on her later work.</p>"},
+    {"id": "b", "content": "<p>It makes a claim about Varda, then provides an example that supports that claim.</p>"},
+    {"id": "c", "content": "<p>It describes a similarity between two art forms, then notes a difference between them.</p>"},
+    {"id": "d", "content": "<p>It describes the techniques of <em>The Gleaners and I</em>, then explains how they relate to the film&rsquo;s title.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because it accurately describes the organization of the elements within the text. The text opens with the claim that Varda used photographic techniques in her films to underscore themes she returned to. It then offers an example from <em>The Gleaners and I</em>: lingering close-ups that recall her earlier portrait photography and call attention to the film&rsquo;s focus on overlooked people.</p><p>Choice A is incorrect because the text discusses Varda&rsquo;s own work rather than her influence on others or theirs on her. Choice C is incorrect because the text does not contrast film and photography; rather, it shows how Varda transferred techniques from one to the other. Choice D is incorrect because the text does not explain how the techniques relate to the film&rsquo;s title.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

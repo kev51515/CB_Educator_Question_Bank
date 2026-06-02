@@ -1,0 +1,39 @@
+{
+  "questionId": "9ec76b54-s1",
+  "originalId": "9ec76b54",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A right triangle has legs with lengths of <math><mn>24</mn></math> centimeters and <math><mn>12</mn></math> centimeters. What is the length of this triangle's hypotenuse, in centimeters?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>12</mn><msqrt><mn>5</mn></msqrt></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>6</mn><msqrt><mn>10</mn></msqrt></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>36</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>720</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. By the Pythagorean theorem, hypotenuse = \u221a(24\u00b2 + 12\u00b2) = \u221a(576 + 144) = \u221a720 = \u221a(144\u00b75) = 12\u221a5.</p><p>Choice B mis-simplifies the radical. Choice C adds the legs. Choice D is 24\u00b2 + 12\u00b2 without taking the square root.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "right-triangles-and-trigonometry.A1.T1.easy"
+}

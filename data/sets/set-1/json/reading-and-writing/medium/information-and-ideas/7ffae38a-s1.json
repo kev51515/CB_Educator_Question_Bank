@@ -1,0 +1,25 @@
+{
+  "questionId": "7ffae38a-s1",
+  "originalId": "7ffae38a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T2.medium",
+  "stimulus": "<p>The following text is adapted from Rudyard Kipling's 1894 novel <em>The Jungle Book</em>. Bagheera is a black panther who has helped raise Mowgli, a boy living among wolves.</p>\n<p style='padding-left: 1em;'>To Mowgli, Bagheera was all the world. The other folk of the jungle ran together in his eyes like leaves shaken by a single wind. The strangers from beyond the river might call his name as they passed; he heard them as he heard the rustle of grass, and turned his head no farther than the rustle deserved. When Baloo, the old brown bear, and Kaa, the rock-python, came down through the cane brake on long-promised business, Mowgli did not so much as look up till he saw Bagheera move forward to meet them; after that he suffered their presence and accepted their counsel as if it were a kind of weather he had agreed to walk through.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Mowgli has been particularly well treated by most of Bagheera's companions.</p>"},
+    {"id": "b", "content": "<p>Mowgli regards Bagheera more highly than he regards any other creature.</p>"},
+    {"id": "c", "content": "<p>Mowgli has become less sociable since he began living among the jungle animals.</p>"},
+    {"id": "d", "content": "<p>Mowgli distrusts the other animals of the jungle and does his best to keep his distance from them.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. After stating that Bagheera was \"all the world\" to Mowgli, the text shows Mowgli treating all other jungle creatures as little more than rustling grass, only acknowledging Baloo and Kaa once Bagheera has gone forward to meet them. The passage focuses on Bagheera's unique place in Mowgli's esteem.</p><p>Choice A is incorrect because the text speaks only of Mowgli's view of others, not how the other animals treat Mowgli. Choice C is incorrect because the text does not describe Mowgli before he lived in the jungle. Choice D is incorrect because Mowgli is indifferent rather than distrustful, and he does accept Bagheera fully.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

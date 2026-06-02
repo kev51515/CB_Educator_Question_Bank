@@ -1,0 +1,39 @@
+{
+  "questionId": "23dedddd-s1",
+  "originalId": "23dedddd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>In the linear function <em>g</em>, g(0) = 6 and g(1) = 11. Which equation defines <em>g</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>g(x) = 5x + 6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>g(x) = 6x + 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>g(x) = 11x + 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>g(x) = 5x + 11</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The slope is (g(1) - g(0))/(1 - 0) = (11 - 6)/1 = 5. The y-intercept is g(0) = 6. Therefore g(x) = 5x + 6. The other choices swap or confuse the slope and intercept.</p>",
+  "templateId": "linear-functions.A3.T1.easy"
+}

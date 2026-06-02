@@ -1,0 +1,22 @@
+{
+  "questionId": "89c39d77-s1",
+  "originalId": "89c39d77",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A relay runner finished the first leg of a race with an average speed of 15.500 miles per hour. What was this average speed, in <u>yards</u> per hour? (1 mile = 1,760 yards)</p>",
+  "answerOptions": null,
+  "keys": [
+    "27280"
+  ],
+  "rationale": "<p>The correct answer is 27,280. Since 1 mile = 1,760 yards, 15.500 miles per hour is equivalent to 15.500 \u00b7 1,760 = 27,280 yards per hour.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium"
+}

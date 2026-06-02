@@ -1,0 +1,25 @@
+{
+  "questionId": "d5da74be-s1",
+  "originalId": "d5da74be",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Tannic and Caffeic Acid Levels in Maple Saplings (nanograms per gram of dry weight)</p></caption><thead><tr><th>Treatment group</th><th>Tannic acid</th><th>Caffeic acid</th></tr></thead><tbody><tr><td>Control saplings</td><td>150</td><td>110</td></tr><tr><td>Saplings exposed to air from caterpillar-free trees, then defoliated</td><td>215</td><td>120</td></tr><tr><td>Saplings exposed to air from caterpillar-infested trees, then defoliated</td><td>95</td><td>180</td></tr></tbody></table></figure><p>In maple saplings, defoliating herbivory induces defensive production of tannic acid, while fungal infection induces defensive production of caffeic acid; saplings also emit airborne chemicals to initiate the appropriate defense in nearby maples. Researchers investigated the unusually poor resistance of maples to gypsy moth caterpillar herbivory by exposing some saplings to airborne chemicals from caterpillar-free trees and others to airborne chemicals from caterpillar-infested trees, then defoliating both groups. The researchers concluded that caterpillars induce maples to emit chemicals that cause other maples to preferentially defend against fungal infection even when under herbivorous attack.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>When saplings exposed to air from caterpillar-free trees were defoliated, they produced more tannic acid than did control saplings, whereas when saplings exposed to air from caterpillar-infested trees were defoliated, they produced less tannic acid and more caffeic acid than did control saplings.</p>"},
+    {"id": "b", "content": "<p>When saplings exposed to air from caterpillar-infested trees were defoliated, they produced less tannic acid than caffeic acid, whereas when saplings exposed to air from caterpillar-free trees were defoliated, they produced about the same amount of tannic and caffeic acid.</p>"},
+    {"id": "c", "content": "<p>When saplings exposed to air from caterpillar-free trees were defoliated, they produced both tannic and caffeic acid, whereas when saplings exposed to air from caterpillar-infested trees were defoliated, they exclusively produced caffeic acid.</p>"},
+    {"id": "d", "content": "<p>When saplings exposed to air from caterpillar-infested trees were defoliated, they produced less tannic acid than did control saplings, whereas when saplings exposed to air from caterpillar-free trees were defoliated, they produced more tannic acid and caffeic acid than did control saplings.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. To support the researchers&rsquo; conclusion that caterpillar-induced airborne chemicals redirect nearby maples toward antifungal defense (caffeic acid) at the expense of antiherbivore defense (tannic acid), the data must show both a drop in tannic acid and a rise in caffeic acid in caterpillar-air-exposed saplings relative to controls. The table shows tannic acid falling from 150 (control) to 95 and caffeic acid rising from 110 to 180 in that group. Saplings exposed to air from caterpillar-free trees show the expected antiherbivore response (tannic acid 215, above control), confirming the baseline pattern. Choice B is incorrect because saplings exposed to caterpillar-free air produced clearly more tannic than caffeic acid (215 vs. 120), not roughly equal amounts. Choice C is incorrect because the table shows the caterpillar-air-exposed group still produced tannic acid (95 ng/g), not none. Choice D is incorrect because, although it accurately notes that saplings exposed to caterpillar-air produced less tannic acid than controls, it omits the rise in caffeic acid that is essential to the &ldquo;preferentially defend against fungal infection&rdquo; claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

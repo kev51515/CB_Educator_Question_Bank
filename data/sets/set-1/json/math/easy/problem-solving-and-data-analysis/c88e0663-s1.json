@@ -1,0 +1,39 @@
+{
+  "questionId": "c88e0663-s1",
+  "originalId": "c88e0663",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>For a community service project, 12 volunteers planted a total of 84 trees. Which of the following can be calculated from this information?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The greatest number of trees planted by one volunteer</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The average number of trees planted per volunteer</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The median number of trees planted per volunteer</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The least number of trees planted by one volunteer</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The average (mean) number of trees per volunteer can be found by dividing the total number of trees (84) by the number of volunteers (12), giving 7 trees per volunteer.</p><p>Choice A is incorrect. The maximum value cannot be determined without information about how many trees each individual volunteer planted.</p><p>Choice C is incorrect. The median requires knowing each individual value.</p><p>Choice D is incorrect. The minimum value cannot be determined without information about each individual volunteer.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "b7e6394d-s1",
+  "originalId": "b7e6394d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Bella drives an average of 200 miles each week. Her car can travel an average of 20 miles per gallon of gasoline. Bella would like to reduce her weekly expenditure on gasoline by $10. Assuming gasoline costs $5 per gallon, which equation can Bella use to determine how many fewer average miles, <i>m</i>, she should drive each week?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(<i>m</i>/20)(5) = 10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(200/20)(5) = 10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(<i>m</i>/5)(20) = 10</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>5<i>m</i> = 10</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Driving <i>m</i> fewer miles per week uses <i>m</i>/20 fewer gallons of gasoline, costing 5(<i>m</i>/20) fewer dollars. Setting this equal to the desired $10 savings gives (<i>m</i>/20)(5) = 10.</p><p>Choice B describes the current weekly gasoline cost, not the savings. Choices C and D swap or omit factors.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.hard"
+}

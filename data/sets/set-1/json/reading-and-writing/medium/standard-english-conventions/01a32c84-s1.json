@@ -1,0 +1,25 @@
+{
+  "questionId": "01a32c84-s1",
+  "originalId": "01a32c84",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>The Antikythera mechanism, an ancient Greek artifact recovered from a shipwreck in 1901, has been described as the world&rsquo;s first analog computer because of its intricate gear-driven calculations of astronomical <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> to its discovery, no comparable device of such mechanical sophistication had been documented from antiquity.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>positions and prior</p>"},
+    {"id": "b", "content": "<p>positions. Prior</p>"},
+    {"id": "c", "content": "<p>positions, prior</p>"},
+    {"id": "d", "content": "<p>positions prior</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between sentences. The period correctly marks the boundary between the first sentence (&ldquo;The...positions&rdquo;) and the second sentence (&ldquo;Prior...antiquity&rdquo;). The adverbial phrase beginning with &ldquo;Prior&rdquo; modifies the second clause.</p><p>Choice A is incorrect because, without a comma preceding it, the conjunction &ldquo;and&rdquo; can&rsquo;t be used in this way to join two main clauses. Choice C is incorrect because it results in a comma splice. Choice D is incorrect because it results in a run-on sentence, with the two clauses fused without punctuation or a conjunction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

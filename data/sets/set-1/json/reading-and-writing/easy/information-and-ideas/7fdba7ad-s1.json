@@ -1,0 +1,39 @@
+{
+  "questionId": "7fdba7ad-s1",
+  "originalId": "7fdba7ad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Andromeda is a large spiral galaxy with a halo of older stars surrounding its disk. Based on analyses of starlight from about 180,000 halo stars (collected by ground-based observatories and a space telescope), astrophysicists Lien Tran and Otto Hoffmann claim that some halo stars are billions of years older than others &mdash; suggesting the halo formed in distinct waves rather than all at once.</p>",
+  "stem": "<p>Which finding, if true, would most directly support the researchers&rsquo; claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The space telescope used by the researchers can also detect stars in nearby dwarf galaxies.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The disk of Andromeda contains roughly twice as many bright stars as its halo does.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>There is an age difference of about 3 billion years between certain halo stars in Andromeda.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Halo stars in Andromeda tend to have very similar chemical compositions overall.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because an observed age gap of about 3 billion years between certain halo stars directly supports the claim that some halo stars are billions of years older than others.</p><p>Choice A is incorrect: detection capability does not show an age difference. Choice B is incorrect: brightness counts don&rsquo;t address star ages. Choice D is incorrect: very similar chemical compositions would actually weaken the claim, since stars formed in different waves often have different compositions.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

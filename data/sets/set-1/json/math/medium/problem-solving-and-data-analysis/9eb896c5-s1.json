@@ -1,0 +1,39 @@
+{
+  "questionId": "9eb896c5-s1",
+  "originalId": "9eb896c5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows points trending upward with a y-intercept near 2 and rising about 0.6 units of y for each unit of x. Which of the following could be the equation for a line of best fit for the data?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> = 2<em>x</em> + 0.6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> = 0.6<em>x</em> + 2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> = \u22120.6<em>x</em> + 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> = \u22122<em>x</em> + 0.6</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The y-intercept is 2 and the slope is 0.6, so y = 0.6x + 2.</p><p>Choice A swaps slope and intercept. Choices C and D have negative slopes, contradicting the upward trend.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.medium"
+}

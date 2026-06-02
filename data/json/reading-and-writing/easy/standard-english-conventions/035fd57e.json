@@ -1,0 +1,72 @@
+{
+  "questionId": "035fd57e",
+  "externalId": "18df74c1-ac99-42bf-bb82-f63d79a72cb9",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "scoreBand": 2,
+  "ibn": "",
+  "updateDate": 1776362771167,
+  "createDate": 1776362771167,
+  "scrapedAt": "2026-05-25T12:22:56.047741+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "be974064-9eda-4879-be80-06b21f19e9f2",
+      "content": "<p>includes</p>"
+    },
+    {
+      "id": "191e8153-30ae-4242-be2c-5daf5603cdce",
+      "content": "<p>included</p>"
+    },
+    {
+      "id": "84518f3c-2cbd-4614-adb6-d92eac707634",
+      "content": "<p>will have included</p>"
+    },
+    {
+      "id": "aa41d083-b99c-4114-bcc4-528c76a1046a",
+      "content": "<p>had included</p>"
+    }
+  ],
+  "keys": [
+    "be974064-9eda-4879-be80-06b21f19e9f2"
+  ],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verbs to express tense in a sentence. In this choice, the present tense verb &ldquo;includes,&rdquo; used in conjunction with the word &ldquo;currently,&rdquo; correctly indicates that the frog&rsquo;s current range includes parts of northern New South Wales and southeastern Queensland.</p><p>Choice B is incorrect because the past tense verb &ldquo;included&rdquo; doesn&rsquo;t indicate that the frog&rsquo;s range currently includes parts of northern New South Wales and southeastern Queensland. Choice C is incorrect because the future perfect tense &ldquo;will have included&rdquo; doesn&rsquo;t indicate that the frog&rsquo;s range currently includes parts of northern New South Wales and southeastern Queensland. Choice D is incorrect because the past perfect tense &ldquo;had included&rdquo; doesn&rsquo;t indicate that the frog&rsquo;s range currently includes parts of northern New South Wales and southeastern Queensland.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+    "stimulus": "<p>The rough frog is a species of amphibian native to Australia. Currently, the frog&rsquo;s range <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> parts of northern New South Wales and southeastern Queensland.</p>",
+    "keys": [
+      "be974064-9eda-4879-be80-06b21f19e9f2"
+    ],
+    "answerOptions": [
+      {
+        "id": "be974064-9eda-4879-be80-06b21f19e9f2",
+        "content": "<p>includes</p>"
+      },
+      {
+        "id": "191e8153-30ae-4242-be2c-5daf5603cdce",
+        "content": "<p>included</p>"
+      },
+      {
+        "id": "84518f3c-2cbd-4614-adb6-d92eac707634",
+        "content": "<p>will have included</p>"
+      },
+      {
+        "id": "aa41d083-b99c-4114-bcc4-528c76a1046a",
+        "content": "<p>had included</p>"
+      }
+    ],
+    "rationale": "<p>Choice A is the best answer. The convention being tested is the use of verbs to express tense in a sentence. In this choice, the present tense verb &ldquo;includes,&rdquo; used in conjunction with the word &ldquo;currently,&rdquo; correctly indicates that the frog&rsquo;s current range includes parts of northern New South Wales and southeastern Queensland.</p><p>Choice B is incorrect because the past tense verb &ldquo;included&rdquo; doesn&rsquo;t indicate that the frog&rsquo;s range currently includes parts of northern New South Wales and southeastern Queensland. Choice C is incorrect because the future perfect tense &ldquo;will have included&rdquo; doesn&rsquo;t indicate that the frog&rsquo;s range currently includes parts of northern New South Wales and southeastern Queensland. Choice D is incorrect because the past perfect tense &ldquo;had included&rdquo; doesn&rsquo;t indicate that the frog&rsquo;s range currently includes parts of northern New South Wales and southeastern Queensland.</p>",
+    "externalid": "18df74c1-ac99-42bf-bb82-f63d79a72cb9",
+    "correct_answer": [
+      "A"
+    ]
+  },
+  "stimulus": "<p>The rough frog is a species of amphibian native to Australia. Currently, the frog&rsquo;s range <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> parts of northern New South Wales and southeastern Queensland.</p>"
+}

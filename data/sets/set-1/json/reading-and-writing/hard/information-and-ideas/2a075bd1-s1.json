@@ -1,0 +1,39 @@
+{
+  "questionId": "2a075bd1-s1",
+  "originalId": "2a075bd1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The fishing communities of the Pacific coast have long carried specialized knowledge about local marine life, including details about the seasonal movements and feeding habits of many species. According to a 2020 study, more than two-thirds of the behavioral patterns documented for fish native to a particular stretch of coastline are encoded in the everyday vocabulary of a single coastal Indigenous language. However, as younger speakers increasingly turn to a national language for daily communication, their ancestral languages are spoken less and less. These facts give particular weight to coastal communities&rsquo; efforts to revitalize their languages. By keeping languages such as Kwak&rsquo;wala, Nuu-chah-nulth, and others in active daily use, coastal communities are also <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>guaranteeing that members of coastal communities can physically reach the waters where the fish in question are found.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>safeguarding knowledge about the seasonal behavior of fish species native to the local coastline.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>importing vocabulary about local fish from coastal Indigenous languages into the national language.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>expanding the number of fish species described in the vocabulary of coastal Indigenous languages.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer because it most logically follows from the text's discussion of how coastal Indigenous languages encode detailed ecological knowledge. The text establishes that more than two-thirds of documented behavioral patterns of local fish are stored in the vocabulary of a single Indigenous language and that the daily use of that language is declining. It follows that keeping such languages in active use will help preserve the ecological knowledge about the behavior of local fish that those languages carry.</p><p>Choice A is incorrect because the text is about preserving knowledge encoded in language, not about physical access to the coastline. Choice C is incorrect because the text does not suggest that the national language is taking on Indigenous fish-related vocabulary; rather, the national language is displacing Indigenous languages in daily use. Choice D is incorrect because revitalizing the languages preserves existing knowledge of fish behavior; it does not, on its own, increase the number of fish species the vocabulary describes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A4.T11.hard"
+}

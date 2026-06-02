@@ -1,0 +1,39 @@
+{
+  "questionId": "4ba0695d-s1",
+  "originalId": "4ba0695d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The water buffalo was domesticated in South Asia approximately 5,000 years ago, but which wild species was its ancestor remained contested. A study led by Priya Nair concluded that the domestic water buffalo descends from the wild Asian buffalo, finding that 71 percent of the modern water buffalo's genome derives from that wild ancestor and the remaining 29 percent comes from domestic zebu cattle. The zebu, in turn, derives 96 percent of its genome from its own wild ancestor, the aurochs, and the remaining 4 percent from the water buffalo. <em>Assuming</em> Nair's team is correct that this cross-species genomic sharing arose from a sustained period of interbreeding between the two domesticated populations after their initial domestication, it can be inferred that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>modern populations of wild Asian buffalo and aurochs descendants, if genetically tested today, would also show traces of ancient interbreeding with each other.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>the water buffalo and the zebu lineages were in geographic and ecological contact long enough for significant gene flow to occur in both directions.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>most modern zebu populations exhibit greater within-population genetic diversity than modern water buffalo populations do.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the initial domestication of the water buffalo must have already included substantial introduction of zebu genetic material.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The condition introduced by \"Assuming\" is that the cross-species DNA pattern resulted from a sustained period of interbreeding between the two domesticated populations after their domestication. Sustained interbreeding requires that the two populations were in repeated contact over an extended span, and the genomic exchange runs in both directions (29% of water buffalo from zebu; 4% of zebu from water buffalo), implying bidirectional gene flow. Choice B captures exactly this consequence of the assumed condition.</p><p>Choice A is incorrect because the assumed interbreeding is between the domesticated species, not their wild ancestors; the wild Asian buffalo and aurochs descendants were not part of the proposed interbreeding episode. Choice C is incorrect because the text gives no information about within-population genetic diversity. Choice D contradicts the condition: it asserts that the genetic mixing occurred during initial domestication rather than after it, which is precisely the alternative Nair's account excludes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A1.T2.hard"
+}

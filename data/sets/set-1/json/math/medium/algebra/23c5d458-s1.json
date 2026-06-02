@@ -1,0 +1,39 @@
+{
+  "questionId": "23c5d458-s1",
+  "originalId": "23c5d458",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The table shows four values of <em>x</em> and their corresponding values of g(x):</p><p>x: 1, 2, 3, 4<br>g(x): 17, 14, 11, 8</p><p>For the linear function <em>g</em>, the function can be written as g(x) = mx + b, where <em>m</em> and <em>b</em> are constants. What is the value of <em>b</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>17</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The y-values decrease by 3 as x increases by 1, so the slope m = -3. Using (1, 17) in g(x) = -3x + b gives 17 = -3 + b, so b = 20. (Note b is g(0), the constant term.) Choice A is the slope. Choice B is g(2). Choice D is g(1), not g(0).</p>",
+  "templateId": "linear-functions.A3.T2.medium"
+}

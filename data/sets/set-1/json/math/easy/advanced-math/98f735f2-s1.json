@@ -1,0 +1,39 @@
+{
+  "questionId": "98f735f2-s1",
+  "originalId": "98f735f2",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The force <em>F</em>, in newtons, exerted on an object of mass <em>m</em>, in kilograms, with acceleration <em>a</em>, in meters per second squared, is given by <math><mi>F</mi><mo>=</mo><mi>m</mi><mi>a</mi></math>. Which of the following correctly expresses <em>a</em> in terms of <em>F</em> and <em>m</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mi>F</mi><mi>m</mi></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mi>F</mi><mo>+</mo><mi>m</mi></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mfrac><mi>F</mi><mi>m</mi></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>a</mi><mo>=</mo><mfrac><mi>m</mi><mi>F</mi></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Dividing both sides of <math><mi>F</mi><mo>=</mo><mi>m</mi><mi>a</mi></math> by <em>m</em> yields <math><mi>a</mi><mo>=</mo><mfrac><mi>F</mi><mi>m</mi></mfrac></math>.</p><p>Choices A, B, and D are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z"
+}

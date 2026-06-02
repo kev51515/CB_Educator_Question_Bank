@@ -1,0 +1,39 @@
+{
+  "questionId": "f2bbd43d-s1",
+  "originalId": "f2bbd43d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align:center;\"><em>y</em> &gt; 9<br>3<em>x</em> + <em>y</em> &lt; 20</p><p>The point (<em>x</em>, 22) is a solution to the system of inequalities in the <em>xy</em>-plane. Which of the following could be the value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u22123</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since <em>y</em> = 22, the first inequality 22 &gt; 9 is satisfied. The second gives 3<em>x</em> + 22 &lt; 20, so 3<em>x</em> &lt; \u22122 and <em>x</em> &lt; \u22122/3. Of the options, only \u22123 satisfies <em>x</em> &lt; \u22122/3.</p><p>Choices A, B, and C give values of <em>x</em> greater than \u22122/3, so 3<em>x</em> + 22 would not be less than 20.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A3.T1.hard"
+}

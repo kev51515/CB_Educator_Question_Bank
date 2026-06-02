@@ -1,0 +1,25 @@
+{
+  "questionId": "eee7536f-s1",
+  "originalId": "eee7536f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>On July 10, 2011, after seventeen years as a professional tennis player, Kim Clijsters announced she would retire. The Belgian athlete <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> her career with four Grand Slam singles titles, hundreds of tour wins, and a brief stint as world number one.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>has been ending</p>"},
+    {"id": "b", "content": "<p>will be ending</p>"},
+    {"id": "c", "content": "<p>end</p>"},
+    {"id": "d", "content": "<p>ended</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the use of a verb to express tense. The past tense verb \"ended\" is consistent with the other past tense verb (\"announced\") used to refer to Clijsters's 2011 retirement.</p><p>Choice A is incorrect because the present perfect progressive tense verb \"has been ending\" isn't consistent with the other past tense verb used to refer to Clijsters's 2011 retirement. Choice B is incorrect because the future progressive tense verb \"will be ending\" isn't consistent with the other past tense verb. Choice C is incorrect because the present tense verb \"end\" isn't consistent with the other past tense verb, and the plural verb \"end\" doesn't agree in number with the singular subject \"The Belgian athlete.\"</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

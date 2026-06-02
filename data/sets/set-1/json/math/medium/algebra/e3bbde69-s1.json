@@ -1,0 +1,39 @@
+{
+  "questionId": "e3bbde69-s1",
+  "originalId": "e3bbde69",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>3x + y = 13</p><p>y = 5x + 1</p><p>The solution to the given system of equations is (x, y). What is the value of x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22123</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/2</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3/8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3/2</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Substituting y = 5x + 1 into 3x + y = 13 gives 3x + 5x + 1 = 13, so 8x = 12 and x = 12/8 = 3/2. The correct answer is choice D.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.medium"
+}

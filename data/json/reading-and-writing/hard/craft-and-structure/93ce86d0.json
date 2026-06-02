@@ -1,0 +1,72 @@
+{
+  "questionId": "93ce86d0",
+  "externalId": "3fdc81f8-5aca-416d-b02b-12ef1ee5a27a",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "scoreBand": 6,
+  "ibn": "",
+  "updateDate": 1776362771168,
+  "createDate": 1776362771168,
+  "scrapedAt": "2026-05-25T12:22:06.231923+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "f8ec5181-d730-47f2-8e9f-031a9fa5df96",
+      "content": "<p>To offer key evidence that undermines LaBerge and team&rsquo;s initial hypothesis</p>"
+    },
+    {
+      "id": "73daf991-b522-4b11-8c73-db60316bcf31",
+      "content": "<p>To show the unexpected result that led LaBerge and team to change the focus of their study</p>"
+    },
+    {
+      "id": "804bfe4a-3595-4b70-b6dd-067f6c399724",
+      "content": "<p>To illustrate an important real-world implication of LaBerge and team&rsquo;s main finding</p>"
+    },
+    {
+      "id": "67b6ba9f-99ec-4cba-a15b-e69db4751d68",
+      "content": "<p>To identify a comparable circumstance that helps justify LaBerge and team&rsquo;s conclusion&nbsp;</p>"
+    }
+  ],
+  "keys": [
+    "67b6ba9f-99ec-4cba-a15b-e69db4751d68"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. The text first establishes that in order to investigate visual perception of objects in dreams, LaBerge and team observed the eye movements of lucid dreamers (people who are aware of their dreaming as it occurs) when these participants signaled that they were in a dream state. The underlined portion then describes a finding that rests on a comparison: the way participants&rsquo; eyes tracked objects in dream states was very similar to how sighted people track real objects when awake. Finally, the text states that the team concluded from this finding that objects in dreams are perceived as more than just products of imagination&mdash;implying that the team thinks the eye movements are an indication that the brain treats dream objects as more real than imaginary. Thus, the function of the underlined portion is to identify a circumstance that is comparable to one in the study and that helps justify LaBerge and team&rsquo;s conclusion, presenting the close similarity of visual tracking in wakeful and dreaming scenarios as support for the implicit idea that the brain perceives dream objects not as imaginary but as somewhat or fully real objects.</p><p>Choice A is incorrect because the text never presents LaBerge and team&rsquo;s initial hypothesis, only what question they were interested in studying and what they found. So although the underlined portion does present evidence, that evidence doesn&rsquo;t serve to undermine any hypothesis in the text. Choice B is incorrect because the text gives no indication that LaBerge and team changed the focus of their study at any point or that the finding described in the underlined portion (or any other finding) was unexpected or surprising. Choice C is incorrect. Rather than illustrating an implication of the main finding by LaBerge and team, the underlined portion only presents the finding itself, stating that the team found that the movements of lucid dreamers&rsquo; eyes while dreaming were very similar to those of sighted people visually tracking objects while awake. The next part of the text indicates what the finding implied to the team but still doesn&rsquo;t offer a real-world example as illustration.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice best states the function of the underlined portion in the text as a whole?</p>",
+    "stimulus": "<p>Curious about how people visually perceive objects in their dreams, Stephen LaBerge and team recruited lucid dreamers&mdash;people aware that they&rsquo;re dreaming as it&rsquo;s happening&mdash;for a research study. These participants were reliably able to signal when they had entered a dream state; the team then observed participants&rsquo; eye movements as they slept. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">The smoothness with which participants&rsquo; eyes tracked objects in their dreams closely matched how sighted people who are awake visually track objects around them,</span> suggesting to the team that the brain perceives dream objects as the product of something other than pure imagination.&nbsp;</p>",
+    "keys": [
+      "67b6ba9f-99ec-4cba-a15b-e69db4751d68"
+    ],
+    "answerOptions": [
+      {
+        "id": "f8ec5181-d730-47f2-8e9f-031a9fa5df96",
+        "content": "<p>To offer key evidence that undermines LaBerge and team&rsquo;s initial hypothesis</p>"
+      },
+      {
+        "id": "73daf991-b522-4b11-8c73-db60316bcf31",
+        "content": "<p>To show the unexpected result that led LaBerge and team to change the focus of their study</p>"
+      },
+      {
+        "id": "804bfe4a-3595-4b70-b6dd-067f6c399724",
+        "content": "<p>To illustrate an important real-world implication of LaBerge and team&rsquo;s main finding</p>"
+      },
+      {
+        "id": "67b6ba9f-99ec-4cba-a15b-e69db4751d68",
+        "content": "<p>To identify a comparable circumstance that helps justify LaBerge and team&rsquo;s conclusion&nbsp;</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most accurately describes how the underlined portion functions in the text as a whole. The text first establishes that in order to investigate visual perception of objects in dreams, LaBerge and team observed the eye movements of lucid dreamers (people who are aware of their dreaming as it occurs) when these participants signaled that they were in a dream state. The underlined portion then describes a finding that rests on a comparison: the way participants&rsquo; eyes tracked objects in dream states was very similar to how sighted people track real objects when awake. Finally, the text states that the team concluded from this finding that objects in dreams are perceived as more than just products of imagination&mdash;implying that the team thinks the eye movements are an indication that the brain treats dream objects as more real than imaginary. Thus, the function of the underlined portion is to identify a circumstance that is comparable to one in the study and that helps justify LaBerge and team&rsquo;s conclusion, presenting the close similarity of visual tracking in wakeful and dreaming scenarios as support for the implicit idea that the brain perceives dream objects not as imaginary but as somewhat or fully real objects.</p><p>Choice A is incorrect because the text never presents LaBerge and team&rsquo;s initial hypothesis, only what question they were interested in studying and what they found. So although the underlined portion does present evidence, that evidence doesn&rsquo;t serve to undermine any hypothesis in the text. Choice B is incorrect because the text gives no indication that LaBerge and team changed the focus of their study at any point or that the finding described in the underlined portion (or any other finding) was unexpected or surprising. Choice C is incorrect. Rather than illustrating an implication of the main finding by LaBerge and team, the underlined portion only presents the finding itself, stating that the team found that the movements of lucid dreamers&rsquo; eyes while dreaming were very similar to those of sighted people visually tracking objects while awake. The next part of the text indicates what the finding implied to the team but still doesn&rsquo;t offer a real-world example as illustration.</p>",
+    "externalid": "3fdc81f8-5aca-416d-b02b-12ef1ee5a27a",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Curious about how people visually perceive objects in their dreams, Stephen LaBerge and team recruited lucid dreamers&mdash;people aware that they&rsquo;re dreaming as it&rsquo;s happening&mdash;for a research study. These participants were reliably able to signal when they had entered a dream state; the team then observed participants&rsquo; eye movements as they slept. <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">The smoothness with which participants&rsquo; eyes tracked objects in their dreams closely matched how sighted people who are awake visually track objects around them,</span> suggesting to the team that the brain perceives dream objects as the product of something other than pure imagination.&nbsp;</p>"
+}

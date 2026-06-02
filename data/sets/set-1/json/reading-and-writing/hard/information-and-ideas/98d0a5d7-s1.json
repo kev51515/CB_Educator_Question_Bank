@@ -1,0 +1,25 @@
+{
+  "questionId": "98d0a5d7-s1",
+  "originalId": "98d0a5d7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A4.T5.easy",
+  "stimulus": "<p>Most works of long-form fiction make implicit choices about how characters travel between places, including the modes of transport that authors take for granted as available to ordinary characters. In a 2024 study, researchers Hye-jin Park and Marco Conti argue that an observable pattern in such references reflects a shift in everyday human mobility prompted by the mass adoption of bicycles in late-nineteenth-century Europe. The researchers drew this conclusion by analyzing a large digital corpus of European novels published between 1820 and 1920, examining how frequently characters were described as walking, riding in horse-drawn vehicles, or using bicycles to traverse short urban distances.</p>",
+  "stem": "<p>Which finding from the study, if true, would most directly support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Novels published after 1885 contain significantly more references to characters traveling short urban distances by bicycle than do novels published before 1885.</p>"},
+    {"id": "b", "content": "<p>Novels published after 1820 include the phrase &ldquo;hansom cab&rdquo; less often than novels published before 1820 do.</p>"},
+    {"id": "c", "content": "<p>Among novels published in the nineteenth century, implicit references to short journeys become steadily more common than explicit ones as publication dates approach 1900.</p>"},
+    {"id": "d", "content": "<p>References to noon and midnight are used by both nineteenth- and twentieth-century novelists.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because the researchers&rsquo; conclusion is that an observable pattern in transport references reflects the mass adoption of bicycles in late-nineteenth-century Europe. A documented sharp rise in bicycle references after 1885&mdash;coinciding with the period of mass bicycle adoption&mdash;directly supports that claim about the link between mobility patterns and fictional references.</p><p>Choice B is incorrect because changes in references to horse-drawn cabs do not isolate the specific shift to bicycles that the researchers&rsquo; claim is about. Choice C is incorrect because trends in implicit vs. explicit short-journey references describe authorial style, not the rise of a specific mobility mode. Choice D is incorrect because the use of noon and midnight references is unrelated to transport mode shifts.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

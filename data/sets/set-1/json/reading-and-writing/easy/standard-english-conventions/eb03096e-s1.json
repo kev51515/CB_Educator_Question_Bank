@@ -1,0 +1,39 @@
+{
+  "questionId": "eb03096e-s1",
+  "originalId": "eb03096e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "templateId": "boundaries.misc.easy",
+  "type": "mcq",
+  "stimulus": "<p>According to the New Zealand government, kaitiakitanga is a Maori concept describing the responsibility of guarding and caring for land, water, and resources. The principle has been carried <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> generations of Maori communities, shaping conservation practices across the country today.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>by;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>by</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>by:</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>by,</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is punctuation use between a preposition and its complement. No punctuation is needed between the preposition \"by\" and its complement \"generations of Maori communities.\" The complement completes the meaning of the preposition, and any punctuation between the two results in an ungrammatical sentence.</p><p>Choice A is incorrect because no punctuation is needed between the preposition and its complement. Choice C is incorrect because no punctuation is needed between the preposition and its complement. Choice D is incorrect because no punctuation is needed between the preposition and its complement.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z"
+}

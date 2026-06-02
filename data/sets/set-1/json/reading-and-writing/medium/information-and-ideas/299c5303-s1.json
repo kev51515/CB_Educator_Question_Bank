@@ -1,0 +1,25 @@
+{
+  "questionId": "299c5303-s1",
+  "originalId": "299c5303",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A1.T1.medium",
+  "stimulus": "<p>As the title suggests, sensitivity readers originated in the publishing industry, where they continue to serve a range of functions: reviewing manuscripts for cultural accuracy, flagging potentially harmful portrayals for editors, and perhaps most importantly, helping novelists portray identities and experiences outside their own with care. Comics scholar Hillary Chute observes that many graphic novelists, like prose novelists, depict diverse communities and lived experiences. In fact, some graphic novelists describe their work as visual reportage on social reality; it is therefore unsurprising that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>some editors and writers depend too heavily on sensitivity readers to complete fact-checking tasks.</p>"},
+    {"id": "b", "content": "<p>sensitivity readers can substantially shape the editorial direction of novels and memoirs.</p>"},
+    {"id": "c", "content": "<p>graphic novelists representing diverse communities frequently consult sensitivity readers to assist with portraying those communities.</p>"},
+    {"id": "d", "content": "<p>graphic novels by creators who depict diverse communities reach a broader readership than those by creators who do not.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is best. Sensitivity readers help novelists portray identities outside their own; graphic novelists similarly portray diverse communities. The connector \"it is therefore unsurprising that\" calls for a conclusion that parallels novelists' practice in the graphic-novel context—namely, that graphic novelists also engage sensitivity readers for that work. Choice A reverses the framing and the text never claims overreliance. Choice B restates an earlier point about sensitivity readers in publishing rather than completing the parallel to graphic novelists. Choice D is unsupported—readership reach is not discussed.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

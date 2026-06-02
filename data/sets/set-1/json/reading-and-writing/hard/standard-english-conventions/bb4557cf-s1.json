@@ -1,0 +1,25 @@
+{
+  "questionId": "bb4557cf-s1",
+  "originalId": "bb4557cf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A4.T10.hard",
+  "stimulus": "<p>The contrast between proteomes and transcriptomes illustrates how cells with similar gene transcripts can produce strikingly different <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> whereas the transcriptome in each cell records which genes are being read at a given moment, the proteome consists of the proteins those transcripts ultimately yield, many of which are modified after translation.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>products,</p>"},
+    {"id": "b", "content": "<p>products and,</p>"},
+    {"id": "c", "content": "<p>products:</p>"},
+    {"id": "d", "content": "<p>products</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of a colon within a sentence. The colon correctly introduces the following explanation of how the transcriptome and proteome differ in what they record.</p><p>Choice A is incorrect because it results in a comma splice: a comma cannot join two main clauses (\"The contrast...products\" and \"whereas...translation\"). Choice B is incorrect because, without a comma preceding it, \"and\" cannot join two main clauses, and \"and\" fails to signal that what follows is an explanation. Choice D is incorrect because it results in a run-on sentence: the two main clauses are fused without punctuation or a conjunction.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

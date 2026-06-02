@@ -1,0 +1,25 @@
+{
+  "questionId": "512f0ac9-s1",
+  "originalId": "512f0ac9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>Building on an earlier insight of Yamanaka's, biologists Shinya Yamanaka and John Gurdon—winners of the 2012 Nobel Prize in Physiology or Medicine—identified and then introduced into adult cells the four signature transcription factors of embryonic stem cells ______ a class of induced pluripotent cells that is transforming the field of regenerative medicine.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>and generating</p>"},
+    {"id": "b", "content": "<p>to generate</p>"},
+    {"id": "c", "content": "<p>generated</p>"},
+    {"id": "d", "content": "<p>generating</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is the use of finite and nonfinite verb forms within a sentence. The nonfinite to-infinitive \"to generate\" correctly forms a nonfinite (infinitive) clause that explains why the biologists identified and introduced the transcription factors.</p><p>Choice A is incorrect because, without a parallel finite verb to coordinate with, \"and generating\" creates an ungrammatical structure following the main clause. Choice C is incorrect because, without a coordinating conjunction such as \"and\" placed before it, the finite past tense \"generated\" cannot be used in this way to describe a further action of the biologists. Choice D is incorrect because, without a comma separating the main clause from the participle \"generating,\" this choice illogically suggests that the transcription factors are generating a class of cells.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "form-structure-and-sense.A1.T2.hard"
+}

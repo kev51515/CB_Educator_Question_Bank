@@ -1,0 +1,25 @@
+{
+  "questionId": "aecdb820-s1",
+  "originalId": "aecdb820",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T2.hard",
+  "stimulus": "<p>Showcasing pieces by the printmakers Elizabeth Catlett and K&auml;the Kollwitz, the 2019 exhibition <em>Lines of Resistance</em> aimed to offer a sweeping view of socially engaged printmaking by women from the 1930s through the early <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> with the catalog&rsquo;s assembly of more than ninety prints, the project&rsquo;s ambitions were largely realized.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>2000s and</p>"},
+    {"id": "b", "content": "<p>2000s</p>"},
+    {"id": "c", "content": "<p>2000s,</p>"},
+    {"id": "d", "content": "<p>2000s, and</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a comma and the coordinating conjunction \"and\" to join the first main clause (\"Showcasing...2000s\") and the second main clause (\"with...realized\").</p><p>Choice A is incorrect because when coordinating two longer main clauses, it is conventional to use a comma before the coordinating conjunction. Choice B is incorrect because it results in a run-on sentence: the two main clauses are fused without punctuation or a conjunction. Choice C is incorrect because it results in a comma splice: without a conjunction following it, a comma cannot join two main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

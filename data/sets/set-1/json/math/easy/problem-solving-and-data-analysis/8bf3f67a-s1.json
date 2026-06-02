@@ -1,0 +1,39 @@
+{
+  "questionId": "8bf3f67a-s1",
+  "originalId": "8bf3f67a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A research vessel uses sonar equipment underwater. The equipment is at a depth of 52 fathoms. What is the equipment's depth in feet? (1 fathom = 6 feet)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>58</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>156</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8.67</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>312</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Since 1 fathom = 6 feet, 52 fathoms = 52 \u00d7 6 = 312 feet.</p><p>Choice A is incorrect; it adds 6 instead of multiplying. Choice B is incorrect; it multiplies by 3. Choice C is incorrect; it divides by 6 instead of multiplying.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

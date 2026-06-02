@@ -1,0 +1,39 @@
+{
+  "questionId": "a756aa95-s1",
+  "originalId": "a756aa95",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The province of Khotan lay deep along the Silk Road, hundreds of kilometers west of Chang'an, the capital of the Tang dynasty. Because Khotan's position within the empire was so <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, jade and other prized goods produced there could reach the capital only after a long overland caravan journey.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>unobtrusive</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>outlying</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>approximate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>concealed</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. \"Outlying\" most logically completes the text. The text emphasizes Khotan's great distance from the capital and the lengthy overland journey required to deliver goods\u2014facts consistent with an outlying position within the empire.</p><p>Choice A is incorrect. \"Unobtrusive\" suggests inconspicuous or unassuming, which doesn't capture geographic distance. Choice C is incorrect. \"Approximate\" means roughly close or nearly so; this also doesn't match the long distance described. Choice D is incorrect. \"Concealed\" means hidden, but Khotan was not hidden\u2014it was simply far from the capital.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T6.hard"
+}

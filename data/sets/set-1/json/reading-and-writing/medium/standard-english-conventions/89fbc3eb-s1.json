@@ -1,0 +1,25 @@
+{
+  "questionId": "89fbc3eb-s1",
+  "originalId": "89fbc3eb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.medium",
+  "stimulus": "<p>The Rural Electrification Act, which was signed into law in 1936, marked a substantial federal commitment to modernizing remote farming <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> it financed cooperatives that ran power lines across mountain ranges, river valleys, and isolated prairie townships while also subsidizing wiring for individual homesteads.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>communities,</p>"},
+    {"id": "b", "content": "<p>communities</p>"},
+    {"id": "c", "content": "<p>communities and</p>"},
+    {"id": "d", "content": "<p>communities;</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Both clauses (\"The Rural Electrification...communities\" and \"it financed...homesteads\") are independent. A semicolon correctly joins two independent clauses with no conjunction.</p><p>Choice A is incorrect because a comma alone between two independent clauses produces a comma splice. Choice B is incorrect because omitting punctuation fuses the clauses into a run-on. Choice C is incorrect because a coordinating conjunction must be preceded by a comma to join two longer main clauses.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

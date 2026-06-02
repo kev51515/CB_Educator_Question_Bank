@@ -1,0 +1,25 @@
+{
+  "questionId": "cebfb2c6-s1",
+  "originalId": "cebfb2c6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Estimated Ages of Martian Meteorite Samples from Select Missions</p></caption><thead><tr><th scope=\"col\">Mission name</th><th scope=\"col\">Year</th><th scope=\"col\">Region surveyed</th><th scope=\"col\">Approximate age of samples (millions of years)</th></tr></thead><tbody><tr><th scope=\"row\">Mariner 9</th><td>1971</td><td>Valles Marineris</td><td>1,200</td></tr><tr><th scope=\"row\">Viking 1</th><td>1976</td><td>Chryse Planitia</td><td>1,500</td></tr><tr><th scope=\"row\">Pathfinder</th><td>1997</td><td>Ares Vallis</td><td>1,800</td></tr><tr><th scope=\"row\">Perseverance</th><td>2021</td><td>Jezero Crater</td><td>250</td></tr></tbody></table></figure></p><p>The Mariner, Viking, and Pathfinder missions to Mars provided early estimates of the age of the planet&rsquo;s surface based on rock and dust samples surveyed at their landing sites. More recently, NASA&rsquo;s Perseverance rover provided additional samples from a different region of Mars. Geologists have analyzed and dated each of the samples, concluding that the samples surveyed by Perseverance are significant because <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>they were collected from the same region as Mariner 9.</p>"},
+    {"id": "b", "content": "<p>they are much younger than the samples surveyed by any of the earlier missions.</p>"},
+    {"id": "c", "content": "<p>they are closest in age to the samples surveyed by Viking 1.</p>"},
+    {"id": "d", "content": "<p>they helped confirm the predicted ages of the samples from the earlier missions.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the table shows Perseverance samples are about 250 million years old, while every earlier mission&rsquo;s samples exceed 1,000 million years — Perseverance&rsquo;s samples are much younger than any earlier mission&rsquo;s. Choice A is incorrect because Perseverance surveyed Jezero Crater, not Mariner 9&rsquo;s Valles Marineris. Choice C is incorrect because Viking 1&rsquo;s samples (1,500) are far from 250; the closest in age would be Mariner 9. Choice D is incorrect because nothing in the table or text suggests Perseverance confirmed predicted ages.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "6017ae31-s1",
+  "originalId": "6017ae31",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In 2017, researcher Aditi Mahajan and her team announced that a faint spectral feature in observations from the Atacama Large Millimeter Array was direct evidence of a particular complex organic molecule in a distant star-forming region, which skeptics had argued would be too dilute to detect. Rigorous statistical analysis helped preclude claims of the signal's <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>, confirming the detection at a confidence level above 99%.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>discretion</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>inconspicuousness</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>probability</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>spuriousness</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Spuriousness\" means the quality of being false or counterfeit. Skeptics were challenging whether the signal was real; the statistical analysis ruled out claims that the signal was spurious—not actually evidence of the molecule.</p><p>Choice A is incorrect. \"Discretion\" means careful judgment and does not name a quality the skeptics would have attributed to the signal. Choice B is incorrect. \"Inconspicuousness\" describes how easy something is to overlook, but statistical analysis cannot rule out a signal's faintness—the signal was already known to be faint. Choice C is incorrect. \"Probability\" by itself is not negative; ruling out the event's probability would mean ruling out that it occurred, which contradicts the team's announcement.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

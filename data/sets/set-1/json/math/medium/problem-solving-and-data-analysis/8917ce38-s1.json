@@ -1,0 +1,39 @@
+{
+  "questionId": "8917ce38-s1",
+  "originalId": "8917ce38",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following speeds is equivalent to 72 kilometers per hour? (1 kilometer = 1,000 meters)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>15 meters per second</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18 meters per second</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>20 meters per second</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>200 meters per second</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 72 km/hr equals 72,000 meters per hour. Since 1 hour = 3,600 seconds, the speed is 72,000 \u00f7 3,600 = 20 meters per second.</p><p>Choices A and B are incorrect and may result from arithmetic errors. Choice D is incorrect and may result from failing to fully convert hours to seconds.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T2.medium"
+}

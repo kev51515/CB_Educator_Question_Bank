@@ -1,0 +1,39 @@
+{
+  "questionId": "7cab9fe1-s1",
+  "originalId": "7cab9fe1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which expression represents the result of increasing a positive quantity <em>q</em> by 28%?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1.28<em>q</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0.72<em>q</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>28<em>q</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>0.28<em>q</em></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Increasing a positive quantity <em>q</em> by 28% gives the original quantity plus 28% of the quantity: <em>q</em> + 0.28<em>q</em> = 1.28<em>q</em>. Choice B is incorrect because 0.72<em>q</em> represents <em>decreasing</em> <em>q</em> by 28% (since 100% - 28% = 72%). Choice C is incorrect because 28<em>q</em> represents multiplying <em>q</em> by 28, not increasing it by 28%. Choice D is incorrect because 0.28<em>q</em> is only 28% of <em>q</em>, not the result of increasing <em>q</em> by 28%.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A3.T5.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "e965fd73-s1",
+  "originalId": "e965fd73",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Yuko Nishimura is a Japanese paper artist who often collaborates with other artists. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she has worked with French textile designer Camille Vacher several times. Together, Nishimura and Vacher have created paper-and-cloth installations such as <em>Folded Garden</em> and <em>Light Through Threads</em>.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>In conclusion,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>However,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In comparison,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>For example,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"For example\" logically signals that this sentence&mdash;noting Nishimura's work with Camille Vacher&mdash;provides an example supporting the previous claim about Nishimura's collaborations.</p><p>Choice A is incorrect because \"in conclusion\" illogically signals summary. Choice B is incorrect because \"however\" illogically signals contrast. Choice C is incorrect because \"in comparison\" illogically signals comparison; the collaboration with Vacher exemplifies rather than compares with the claim.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A3.T7.easy"
+}

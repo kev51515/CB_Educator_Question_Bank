@@ -1,0 +1,25 @@
+{
+  "questionId": "350e2336-s1",
+  "originalId": "350e2336",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T9.medium",
+  "stimulus": "<p>The Mexican Plan of Iguala was issued in 1821, bringing to a close the eleven-year war for independence from Spain that had begun in 1810. Written in Spanish, which was not the first language of many Indigenous people in the country but which was the official language of administration across the former Spanish empire, the plan affirmed that Mexico would respect existing property rights, pledged guarantees to European-born residents who chose to remain—widely understood as a reassurance to former colonial elites—and held up Mexico as a model for emerging governments in the Americas (an implicit appeal to neighboring regions still under colonial rule). So even though the plan is explicitly addressed to the Mexican people, it is reasonable to conclude that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>elements of the plan were modeled on similar founding documents from other newly independent nations.</p>"},
+    {"id": "b", "content": "<p>many Indigenous communities in Mexico opposed the plan and the independence movement.</p>"},
+    {"id": "c", "content": "<p>the Spanish government may have been surprised by the plan's contents.</p>"},
+    {"id": "d", "content": "<p>the plan was in fact intended for several distinct audiences.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. The plan was written in a language of administrative reach beyond local first-language speakers, included guarantees aimed at European-born residents, and made implicit appeals to other colonial regions. Together, these features signal that the audience was not just the Mexican people. Choice A is unsupported—no comparison to other documents is made. Choice B is unsupported; opposition is not discussed. Choice C is unsupported; the Spanish government's reaction is not described.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

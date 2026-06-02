@@ -1,0 +1,22 @@
+{
+  "questionId": "2d2cb85e-s1",
+  "originalId": "2d2cb85e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangles GHJ and KLJ partially overlap. Side GH of triangle GHJ intersects side KL of triangle KLJ at point M. The measure of angle GMK is 138°, and the measure of angle MKL is 47°. Angles ∠GMK and ∠KML are supplementary. If x° is the measure of angle KLM in triangle KLM, what is the value of x?</p>",
+  "answerOptions": [],
+  "keys": [
+    "91"
+  ],
+  "rationale": "<p>Since ∠GMK and ∠KML are supplementary, ∠KML = 180 − 138 = 42°. The three interior angles of triangle KLM sum to 180°, so ∠KLM = 180 − 42 − 47 = 91°.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A2.T3.hard"
+}

@@ -1,0 +1,22 @@
+[
+  {"id": "4096a482-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium", "verdict": "ok"},
+  {"id": "1e562f24-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium", "verdict": "ok"},
+  {"id": "9bedc4a0-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium", "verdict": "ok"},
+  {"id": "f8f79e11-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium", "verdict": "ok"},
+  {"id": "f04d40b2-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T4.medium", "verdict": "ok"},
+  {"id": "fc46af57-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T4.medium", "verdict": "ok"},
+  {"id": "53d97af5-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A3.T6.medium", "verdict": "ok"},
+  {"id": "a2162ea1-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium", "verdict": "ok"},
+  {"id": "e03f3477-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.medium", "verdict": "ok"},
+  {"id": "89f8d08a-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.medium", "verdict": "ok"},
+  {"id": "9ee22c16-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.medium", "verdict": "type_drift", "detail": "T2 requires the sample-level statistic (mean) to be computed from a list or two-way table. Clone gives a direct count (230 of 500) which is a simple proportion scale-up, matching T1 rather than T2. Medium T2 lever 'requires reading a two-way table' is not met."},
+  {"id": "9ba3e283-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T2.hard", "verdict": "difficulty_drift", "detail": "Hard T2 lever requires 'embedded percentage of a non-divisible class size (e.g., 34.6% of 26 must round to integer count).' Clone uses 40% of 25 = exactly 10, no rounding required. Also the per-class computation is trivial; only the complement step adds difficulty."},
+  {"id": "308084c5-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T5.hard", "verdict": "difficulty_drift", "detail": "Hard T5 lever requires 'sample-size comparison hidden in a multi-column table.' Clone provides no table or numeric sample sizes; the question is purely conceptual. Closer to the easy variant ('only one option mentions sample size')."},
+  {"id": "85939da5-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.hard", "verdict": "ok"},
+  {"id": "916ffe9b-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.hard", "verdict": "ok"},
+  {"id": "affb2315-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy", "verdict": "ok"},
+  {"id": "8173f32b-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy", "verdict": "ok"},
+  {"id": "97631565-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy", "verdict": "ok"},
+  {"id": "0108ac2d-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A2.T3.easy", "verdict": "ok"},
+  {"id": "90eed2e5-s1", "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy", "verdict": "ok"}
+]

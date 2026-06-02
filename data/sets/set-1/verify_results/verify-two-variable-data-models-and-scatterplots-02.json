@@ -1,0 +1,22 @@
+[
+  {"id": "4cc05491-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.medium", "verdict": "ok"},
+  {"id": "1adb39f0-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T8.medium", "verdict": "ok"},
+  {"id": "58171b5e-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T9.medium", "verdict": "ok"},
+  {"id": "9d95e7ad-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard", "verdict": "difficulty_drift", "detail": "T6.hard requires slope scaled by non-unit interval (per 5/10 units) OR slope estimated from figure first. Clone asks for plain per-unit increase = slope from two given coords, which is just T5 slope computation, not T6 interpretation."},
+  {"id": "9b5b23fc-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard", "verdict": "ok"},
+  {"id": "7b52985c-s1", "templateId": "two-variable-data-models-and-scatterplots.A4.T7.hard", "verdict": "ok"},
+  {"id": "d6af3572-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard", "verdict": "ok"},
+  {"id": "79137c1b-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.hard", "verdict": "ok"},
+  {"id": "2e8027b0-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.hard", "verdict": "ok"},
+  {"id": "fb866265-s1", "templateId": "two-variable-data-models-and-scatterplots.A6.T12.hard", "verdict": "aspect_drift", "detail": "Tagged A6.T12 (exponential curve parameter), but clone asks for slope of a linear line of best fit through (0,15) and (12,135). This is A3.T5 (compute slope), not A6 (exponential parameter)."},
+  {"id": "1e1027a7-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.hard", "verdict": "ok"},
+  {"id": "af142f8d-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T9.hard", "verdict": "rationale_inconsistent", "detail": "Key is 'd' and reasoning correctly leads to choice d, but rationale's final sentence states 'Choice (c) is correct' instead of 'Choice (d) is correct'."},
+  {"id": "d0430601-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard", "verdict": "aspect_drift", "detail": "Tagged A3.T6 (interpret slope in context) but clone asks for a predicted y-value at x=6 using the line, which is A4.T7 (predict y at given x). Not slope interpretation."},
+  {"id": "e821a26d-s1", "templateId": "two-variable-data-models-and-scatterplots.A6.T12.hard", "verdict": "ok"},
+  {"id": "d112bc9d-s1", "templateId": "two-variable-data-models-and-scatterplots.A1.T1.easy", "verdict": "difficulty_drift", "detail": "Clone asks about greatest increase between consecutive x-values requiring computing four differences (+15,-4,-2,+2). Per template, this matches T1.medium ('interval requiring two reads plus subtraction'), not easy ('no calculation required, extreme value visually obvious')."},
+  {"id": "9296553d-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T4.easy", "verdict": "ok"},
+  {"id": "c5ee6ac0-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy", "verdict": "ok"},
+  {"id": "ae32cc3c-s1", "templateId": "two-variable-data-models-and-scatterplots.A3.T5.easy", "verdict": "aspect_drift", "detail": "Tagged A3.T5 (compute slope of best-fit line) but clone asks for predicted y at x=900, which is A4.T7 (predict y at given x). Answer is correct (9), but aspect tag is wrong."},
+  {"id": "d230e963-s1", "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy", "verdict": "ok"},
+  {"id": "a03b7e02-s1", "templateId": "two-variable-data-models-and-scatterplots.A5.T10.easy", "verdict": "ok"}
+]

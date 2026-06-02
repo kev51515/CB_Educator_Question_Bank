@@ -1,0 +1,39 @@
+{
+  "questionId": "782a8a53-s1",
+  "originalId": "782a8a53",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the <i>xy</i>-plane, the graph of the quadratic function <i>y</i> = <i>f</i>(<i>x</i>) opens upward, has a minimum at the point (3, &minus;4), and passes through (0, 5). What is the vertex of the graph?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 5)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(3, 5)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(&minus;3, &minus;4)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(3, &minus;4)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. For a parabola opening upward, the vertex is the minimum point of the graph. The minimum occurs at (3, &minus;4), so that is the vertex.</p><p>Choice A is the <i>y</i>-intercept, not the vertex. Choices B and C use incorrect coordinates for the minimum point.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A3.T3.easy"
+}

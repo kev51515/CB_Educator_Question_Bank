@@ -1,0 +1,25 @@
+{
+  "questionId": "fc57d569-s1",
+  "originalId": "fc57d569",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A4.T11.medium",
+  "stimulus": "<p>In dialects of Portuguese spoken in northern Portugal, the &ldquo;v&rdquo; sound and the &ldquo;b&rdquo; sound are commonly merged in everyday speech, so words like <em>vaca</em> and <em>baca</em> sound nearly identical. Portuguese dialects of southern Brazil&rsquo;s Rio Grande do Sul region show a similar merging of these two sounds in casual conversation. Historical records indicate that Rio Grande do Sul was settled in the 1700s primarily by colonists whose families had originated in northern Portugal. Thus, linguists have concluded that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>colonists from northern Portugal abandoned the v&ndash;b merger after relocating to Rio Grande do Sul.</p>"},
+    {"id": "b", "content": "<p>Portuguese dialects spoken in northern Portugal were influenced by dialects spoken in Rio Grande do Sul.</p>"},
+    {"id": "c", "content": "<p>the v&ndash;b merger will eventually spread from Rio Grande do Sul to other regions of Brazil.</p>"},
+    {"id": "d", "content": "<p>the Portuguese dialects spoken in Rio Grande do Sul acquired the v&ndash;b merger from dialects spoken in northern Portugal.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The text identifies the v&ndash;b merger as a feature shared by northern Portuguese dialects and the dialects of Rio Grande do Sul, and notes that Rio Grande do Sul was settled mainly by colonists from northern Portugal. The most natural inference is that the merger was carried from northern Portugal to Rio Grande do Sul by those settlers.</p><p>Choice A is incorrect because the merger is still present in Rio Grande do Sul, so it can&rsquo;t have been abandoned. Choice B is incorrect because the timeline (settlers moving from Portugal to Brazil) runs in the opposite direction. Choice C is incorrect because the text says nothing about the feature spreading further within Brazil.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

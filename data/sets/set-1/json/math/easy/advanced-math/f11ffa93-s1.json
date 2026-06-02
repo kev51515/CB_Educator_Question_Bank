@@ -1,0 +1,22 @@
+{
+  "questionId": "f11ffa93-s1",
+  "originalId": "f11ffa93",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p><math><msqrt><mrow><mi>x</mi><mo>+</mo><mn>3</mn></mrow></msqrt><mo>=</mo><mn>9</mn></math></p><p>What value of <em>x</em> satisfies the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "78"
+  ],
+  "rationale": "<p>The correct answer is 78. Squaring both sides gives <math><mi>x</mi><mo>+</mo><mn>3</mn><mo>=</mo><mn>81</mn></math>, so <em>x</em> = 78.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T4.easy"
+}

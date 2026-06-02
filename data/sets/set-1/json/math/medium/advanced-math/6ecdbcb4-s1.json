@@ -1,0 +1,39 @@
+{
+  "questionId": "6ecdbcb4-s1",
+  "originalId": "6ecdbcb4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\">g(x) = (x + 3)(x + 7)(x \u2212 2)</p>",
+  "stem": "<p>The function g is given. Which table of values represents y = g(x) \u2212 4?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>\u22123</td><td>\u22124</td></tr><tr><td>\u22127</td><td>\u22124</td></tr><tr><td>2</td><td>\u22124</td></tr></table>"
+    },
+    {
+      "id": "b",
+      "content": "<table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>\u22123</td><td>\u22127</td></tr><tr><td>\u22127</td><td>\u221211</td></tr><tr><td>2</td><td>\u22122</td></tr></table>"
+    },
+    {
+      "id": "c",
+      "content": "<table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>\u22123</td><td>4</td></tr><tr><td>\u22127</td><td>4</td></tr><tr><td>2</td><td>4</td></tr></table>"
+    },
+    {
+      "id": "d",
+      "content": "<table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>\u22123</td><td>\u22121</td></tr><tr><td>\u22127</td><td>\u22125</td></tr><tr><td>2</td><td>4</td></tr></table>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. g(\u22123) = 0, g(\u22127) = 0, g(2) = 0. So y = g(x) \u2212 4 equals \u22124 at each of these x-values. Choice B shows y = x \u2212 4. Choice C shows y = g(x) + 4. Choice D doesn't match.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A5.T1.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "bbb77c84-s1",
+  "originalId": "bbb77c84",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Containing nearly 4,000 species fixed within a body roughly the size of a baseball, the colonial bryozoan <em>Membranipora membranacea</em> can shed dozens of zooids per hour to deter predators, replacing them through rapid reproduction\u2014and, given the energy cost of producing replacement zooids, this colony-level defense is unlikely to be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>.&nbsp;</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>sustainable</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>protracted</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>obviated</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>curtailed</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Sustainable\" most logically completes the text. The text emphasizes the high energy cost of replacing shed zooids; given that cost, the colony cannot maintain such losses indefinitely, so the defense is unlikely to be sustainable.</p><p>Choice B is incorrect. \"Protracted\" means prolonged; this overlaps with sustainable but is slightly off\u2014the issue is whether the defense can be kept up under cost, not just how long it might last. Among the choices, sustainable best names the property in tension with cost. Choice C is incorrect. \"Obviated\" means rendered unnecessary; the text doesn't say the defense will be made unnecessary. Choice D is incorrect. \"Curtailed\" means cut short; the text suggests the opposite (the defense will be limited by cost), and saying it's unlikely to be curtailed contradicts the cost concern.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T8.hard"
+}

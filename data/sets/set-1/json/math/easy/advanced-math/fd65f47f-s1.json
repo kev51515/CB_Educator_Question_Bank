@@ -1,0 +1,39 @@
+{
+  "questionId": "fd65f47f-s1",
+  "originalId": "fd65f47f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "stem": "<p>Which expression is equivalent to <math><mfenced><mrow><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>6</mn><mi>x</mi><mo>−</mo><mn>5</mn></mrow></mfenced><mo>+</mo><mfenced><mrow><mn>3</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>4</mn><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>10</mn><mi>x</mi><mo>−</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>10</mn><mi>x</mi><mo>−</mo><mn>4</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>10</mn><mi>x</mi><mo>+</mo><mn>6</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>5</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>−</mo><mn>4</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Combining like terms: x² terms 2x² + 3x² = 5x²; x terms 6x + 4x = 10x; constants −5 + 1 = −4. Result: 5x² + 10x − 4. Choice (a) is correct.</p>",
+  "templateId": "equivalent-expressions.A1.T2.easy"
+}

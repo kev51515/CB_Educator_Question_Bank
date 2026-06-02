@@ -1,0 +1,39 @@
+{
+  "questionId": "c4737d6a-s1",
+  "originalId": "c4737d6a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>The Australian rainforest&mdash;once an unbroken belt of moist forest&mdash;began to retreat sharply about 4,000 years ago. Shifts in El Ni\u00f1o activity that affected rainfall have been proposed as a cause of the contraction, but archaeologist Lewis Trent also attributes the change to Aboriginal peoples. He cites their growing reliance on landscape burning as a factor in the drying of the region: fires set by these communities thinned the forest canopy, prompting feedbacks that hastened the conversion of rainforest to open woodland.</p>\n<p><strong>Text 2</strong></p>\n<p>Research by Maeve Hollister et al. challenges the idea that Aboriginal peoples contributed to the Australian rainforest's retreat. Using a high-resolution pollen-vegetation model, the team concluded that the most pronounced phase of rainforest decline occurred 600 years earlier than previously assumed. That timing suggests that Aboriginal peoples did not accelerate forest loss but, in fact, may have helped slow it through practices (such as controlled mosaic burning) that maintained pockets of rainforest within a drier landscape.</p>",
+  "stem": "<p>Based on the texts, how would Hollister (Text 2) most likely respond to the discussion in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By insisting that landscape burning can have both beneficial and harmful effects on a region's vegetation and climate</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By asserting that more research is needed into the factors that likely contributed to the retreat of the Australian rainforest</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By claiming that landscape burning was only one of several practices Aboriginal peoples engaged in that may have contributed to the Australian rainforest's retreat</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By pointing out that, given the revised timeline for the most pronounced phase of rainforest decline, Aboriginal peoples' landscape practices likely did not cause the region's contraction</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. Hollister et al.'s research directly challenges Trent's claim that Aboriginal landscape burning hastened the rainforest's contraction by showing that the most pronounced decline began earlier than Trent's account requires. Their work suggests that Aboriginal practices like controlled mosaic burning may even have helped preserve vegetation rather than destroy it.</p><p>Choice A is incorrect because Hollister's research does not concede that burning had harmful effects; it argues only for beneficial ones. Choice B is incorrect because Hollister's team makes a positive claim, not a call for more research. Choice C is incorrect because Hollister's research disputes, rather than expands, the idea that Aboriginal practices contributed to the decline.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.hard"
+}

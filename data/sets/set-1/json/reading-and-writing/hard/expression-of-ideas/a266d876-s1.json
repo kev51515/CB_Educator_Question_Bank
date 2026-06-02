@@ -1,0 +1,39 @@
+{
+  "questionId": "a266d876-s1",
+  "originalId": "a266d876",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Diving Weddell seals\u2014mammals that hunt beneath the Antarctic sea ice\u2014have occasionally been recorded descending past depths of 700 meters. Such extreme depths (most marine mammals seldom dive beyond about 200 meters) clearly mark these record-breaking dives as outliers; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the great majority of Weddell seal foraging dives reach only 100 to 150 meters.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>by contrast,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>as a result,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>moreover,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>in fact,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"In fact\" logically signals that the second clause reinforces and emphasizes the first clause's claim that the record-breaking dives are outliers. The statement that most foraging dives reach only 100\u2013150 meters supports and intensifies the previous point.</p><p>Choice A is incorrect because \"by contrast\" would signal opposition, yet the two clauses agree. Choice B is incorrect because \"as a result\" would signal cause and effect, but the shallow foraging dives are not a consequence of the deep outlier dives. Choice C is incorrect because \"moreover\" would signal a separate, additional point, but the second clause reinforces the same claim rather than introducing a new one.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A4.T11.hard"
+}

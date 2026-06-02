@@ -1,0 +1,23 @@
+{
+  "questionId": "1bf809b5-s1",
+  "originalId": "1bf809b5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In a right triangle, one acute angle has measure x\u00b0. The length of the hypotenuse is 20, and the length of the leg adjacent to the angle with measure x\u00b0 is 7. What is the value of cos x\u00b0? (Note: figure not drawn to scale.)</p>",
+  "answerOptions": [],
+  "keys": [
+    "7/20",
+    ".35"
+  ],
+  "rationale": "<p>The cosine of an acute angle in a right triangle is the ratio of the adjacent leg to the hypotenuse: cos x\u00b0 = 7/20 = 0.35.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.easy"
+}

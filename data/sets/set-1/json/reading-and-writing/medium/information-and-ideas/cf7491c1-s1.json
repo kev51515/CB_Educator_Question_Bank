@@ -1,0 +1,25 @@
+{
+  "questionId": "cf7491c1-s1",
+  "originalId": "cf7491c1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Characteristics of Five Recently Discovered Rocky Exoplanets</p></caption><thead><tr><th scope=\"col\">Exoplanet designation</th><th scope=\"col\">Mass (Earths)</th><th scope=\"col\">Radius (Earths)</th><th scope=\"col\">Orbital period (days)</th><th scope=\"col\">Distance from the Sun (parsecs)</th></tr></thead><tbody><tr><th scope=\"row\">TOI-700 d</th><td>1.72</td><td>1.144</td><td>37.42</td><td>31</td></tr><tr><th scope=\"row\">LP 791-18 d</th><td>0.90</td><td>1.030</td><td>2.75</td><td>26</td></tr><tr><th scope=\"row\">GJ 1132 b</th><td>1.62</td><td>1.130</td><td>1.63</td><td>12</td></tr><tr><th scope=\"row\">TRAPPIST-1 e</th><td>0.69</td><td>0.918</td><td>6.10</td><td>12</td></tr><tr><th scope=\"row\">LHS 1140 b</th><td>6.98</td><td>1.640</td><td>24.74</td><td>15</td></tr></tbody></table></figure></p><p>&ldquo;Ultra-short-period planets&rdquo; are rocky planets that have a mass less than 2 Earths and an orbital period of less than 10 days, while &ldquo;long-period rocky planets&rdquo; have the same mass criterion but orbital periods longer than 10 days. In 2022, astrobiologist Hannah Diamond-Lowe and her team reported the characteristics of five newly characterized rocky exoplanets and asserted that three are ultra-short-period planets and one is a long-period rocky planet.</p>",
+  "stem": "<p>Which choice best describes data from the table that support Diamond-Lowe and her team&rsquo;s assertion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Three of the planets have masses below 2 Earths and orbital periods under 10 days, and TOI-700 d has a mass below 2 Earths and an orbital period over 10 days.</p>"},
+    {"id": "b", "content": "<p>None of the planets have an orbital period of more than 10 days, and LHS 1140 b has a mass of 6.98 Earths.</p>"},
+    {"id": "c", "content": "<p>All the planets have a radius between 0.918 and 1.640 Earths, and only TOI-700 d has an orbital period of more than 10 days.</p>"},
+    {"id": "d", "content": "<p>TOI-700 d has an orbital period of 100 days, and the masses of all the planets range from 0.69 to 6.98 Earths.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because the team&rsquo;s assertion requires three ultra-short-period planets (mass &lt;2 Earths, orbital period &lt;10 days) and one long-period rocky planet (mass &lt;2 Earths, orbital period &gt;10 days). The table shows LP 791-18 d, GJ 1132 b, and TRAPPIST-1 e all meet ultra-short-period criteria; TOI-700 d meets long-period criteria. Choice B is incorrect because TOI-700 d and LHS 1140 b both have periods over 10 days. Choice C is incorrect because radius is not a criterion in the assertion, and TOI-700 d is not the only planet with a period over 10 days. Choice D is incorrect because TOI-700 d has a 37.42-day period, not 100 days.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

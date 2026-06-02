@@ -1,0 +1,25 @@
+{
+  "questionId": "7f48b098-s1",
+  "originalId": "7f48b098",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Nitrogen fixation, the biochemical process by which certain bacteria convert atmospheric nitrogen into ammonia usable by <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> depends in part on an enzyme called nitrogenase that breaks the otherwise stable triple bond of the nitrogen molecule.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>plants</p>"},
+    {"id": "b", "content": "<p>plants and</p>"},
+    {"id": "c", "content": "<p>plants,</p>"},
+    {"id": "d", "content": "<p>plants&mdash;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the punctuation of a supplementary element within a sentence. The comma after &ldquo;plants&rdquo; pairs with the comma after &ldquo;fixation&rdquo; to separate the supplementary element &ldquo;the biochemical process by which certain bacteria convert atmospheric nitrogen into ammonia usable by plants&rdquo; from the rest of the sentence. This element defines &ldquo;nitrogen fixation.&rdquo;</p><p>Choice A is incorrect because it fails to set off the supplementary element. Choice B is incorrect because a coordinating conjunction can&rsquo;t pair with a comma to set off a supplement. Choice D is incorrect because a dash can&rsquo;t pair with a comma in this way.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

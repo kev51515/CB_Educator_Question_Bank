@@ -1,0 +1,39 @@
+{
+  "questionId": "bd90f87e-s1",
+  "originalId": "bd90f87e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The population of a town was 5,000 in 2000 and grew to 7,500 in 2020. What was the percent increase in the town\u2019s population from 2000 to 2020?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>25%</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>33.3%</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>50%</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>150%</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The increase is 7,500 \u2212 5,000 = 2,500. Percent increase is (2,500 \u00f7 5,000) \u00d7 100 = 0.50 \u00d7 100 = 50%.</p><p>Choice A is incorrect. This results from a computational error.</p><p>Choice B is incorrect. This is the percent increase if the new value were calculated as a fraction of 7,500.</p><p>Choice D is incorrect. This is the final population expressed as a percent of the original (7,500/5,000 \u00d7 100), not the percent increase.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A3.T3.easy"
+}

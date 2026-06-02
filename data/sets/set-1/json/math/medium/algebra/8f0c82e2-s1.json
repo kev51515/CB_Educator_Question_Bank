@@ -1,0 +1,39 @@
+{
+  "questionId": "8f0c82e2-s1",
+  "originalId": "8f0c82e2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The minimum value of <em>y</em> is 8 less than 3 times another number <em>m</em>. Which inequality shows the possible values of <em>y</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>y</em> \u2264 3<em>m</em> \u2212 8</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>y</em> \u2264 8 \u2212 3<em>m</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>y</em> \u2265 8 \u2212 3<em>m</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>y</em> \u2265 3<em>m</em> \u2212 8</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. \"8 less than 3 times <em>m</em>\" translates to 3<em>m</em> \u2212 8. Since this is the minimum value of <em>y</em>, every value of <em>y</em> is at least that much: <em>y</em> \u2265 3<em>m</em> \u2212 8.</p><p>Choices A, B, and C are incorrect due to sign errors or wrong direction.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A5.T1.medium"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "95146ebb-s1",
+  "originalId": "95146ebb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A3.T6.medium",
+  "stimulus": "<p>In 2021, an exceptionally dry winter caused a peat bog in northern Scotland to recede, exposing a wooden tool more than 1,400 years old to a hiker collecting birds&rsquo; eggs. The tool would typically have rotted within a few decades, but the acidic, oxygen-poor peat had preserved it almost perfectly for centuries. According to archaeologist Catriona Mackie and her team, the carved handle resembles those used by early Pictish craftsmen, although the wood itself shows no signs of fire-hardening, suggesting that any cutting edge must have been made of bone or stone fastened separately to the shaft.</p>",
+  "stem": "<p>What does the text indicate about the discovery of the tool?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The dry winter that revealed the tool also degraded its carved handle.</p>"},
+    {"id": "b", "content": "<p>Pictish craftsmen frequently used wooden tools alongside bone or stone implements.</p>"},
+    {"id": "c", "content": "<p>Environmental conditions both preserved the tool and made it possible to find.</p>"},
+    {"id": "d", "content": "<p>Mackie and her team would not have located the tool without the help of local hikers.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. An exceptionally dry winter caused the bog to recede and exposed the tool, while centuries of acidic, oxygen-poor peat preserved it.</p><p>Choice A is incorrect. The text says nothing about the dry winter degrading the handle; the peat had preserved the tool \"almost perfectly.\" Choice B is incorrect. The text says only that the handle resembles Pictish work and that any cutting edge must have been bone or stone — it does not generalize about Pictish craftsmen&rsquo;s habits. Choice D is incorrect. The text doesn&rsquo;t indicate whether Mackie&rsquo;s team would or wouldn&rsquo;t have found the tool without the hiker.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

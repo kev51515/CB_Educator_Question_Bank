@@ -1,0 +1,25 @@
+{
+  "questionId": "a0203977-s1",
+  "originalId": "a0203977",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Annual Container Throughput at Four Ports (millions of TEUs)</p></caption><thead><tr><th>Port</th><th>2016</th><th>2017</th><th>2018</th></tr></thead><tbody><tr><td>Algeciras (Spain)</td><td>4.8</td><td>4.4</td><td>4.9</td></tr><tr><td>Hamburg (Germany)</td><td>8.9</td><td>9.1</td><td>9.4</td></tr><tr><td>Antwerp (Belgium)</td><td>10.0</td><td>10.5</td><td>11.1</td></tr><tr><td>Felixstowe (UK)</td><td>3.8</td><td>3.9</td><td>4.0</td></tr></tbody></table></figure><p>One measure of a port&rsquo;s activity is its annual container throughput, expressed in twenty-foot equivalent units (TEUs). A student writing a report about container shipping in several European ports notes that among the ports in the table, most had annual increases in throughput in 2017 and 2018, but that trend wasn&rsquo;t universal. For example, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>in each year shown, throughput at smaller regional ports was greater than throughput at the four ports in the table.</p>"},
+    {"id": "b", "content": "<p>Hamburg&rsquo;s annual throughput was higher in 2016 than in 2018.</p>"},
+    {"id": "c", "content": "<p>Algeciras&rsquo;s annual throughput decreased from 2016 to 2017.</p>"},
+    {"id": "d", "content": "<p>in each year shown, Antwerp had higher throughput than any of the other ports.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The student is illustrating that not every port saw annual increases in 2017 and 2018. According to the table, throughput at Algeciras fell from 4.8 million TEUs in 2016 to 4.4 million TEUs in 2017&mdash;a decrease in 2017, which is exactly the kind of counterexample the student needs. Choice A is incorrect because the table contains no data on smaller regional ports. Choice B is incorrect because Hamburg&rsquo;s throughput rose from 8.9 (2016) to 9.4 (2018). Choice D is incorrect because, while Antwerp does lead each year, this fact does not address whether all ports saw increases.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

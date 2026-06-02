@@ -1,0 +1,32 @@
+[
+  {
+    "id": "b6569d0e-s1",
+    "templateId": "probability-and-conditional-probability.A5.T16.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone asks 'Of those at least 30, what fraction were at least 40?' \u2014 this is a conditional probability (A3.T8 structure: numerator=15 in subset, denominator=27 subset total), not a 'closest to fraction \u00d7 marginal' comparison (A5.T16). Answer 15/27 is mathematically correct, but the question tests conditional reading, not the T16 'compare candidates to target fraction' skill."
+  },
+  {
+    "id": "e9ed719f-s1",
+    "templateId": "probability-and-conditional-probability.A2.T7.medium",
+    "verdict": "type_drift",
+    "detail": "T7 is 'Marginal probability with SPR output' (favorable = one full row or column over grand total). Clone asks for the JOINT cell P(yellow AND square) = 40/200, which is T5 (joint cell), not T7 (marginal). Answer 1/5 is correct, but type tag is wrong."
+  },
+  {
+    "id": "d4413871-s1",
+    "templateId": "probability-and-conditional-probability.A3.T8.hard",
+    "verdict": "type_drift",
+    "detail": "Clone is a Reverse conditional \u2014 solve for missing cell (T10), not a forward conditional reading (T8). Stem states P(B) = 1/5 with unknown x in the denominator and asks to solve for x. Answer x=6 is correct, but the template tag should be A3.T10.hard."
+  },
+  {
+    "id": "014c47ab-s1",
+    "templateId": "probability-and-conditional-probability.A3.T8.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T8 requires: conditioning subset is a union of two+ rows/cols, OR table is 3\u00d73+, OR reverse setup. Clone uses a simple 2\u00d72 table with a single-row 'given' (trout, 45 total) \u2014 matches the medium difficulty lever, not hard. Answer 3/5 is correct."
+  },
+  {
+    "id": "585de39a-s1",
+    "templateId": "probability-and-conditional-probability.A4.T13.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Hard T13 requires 'two totals present, only one applicable' (e.g., May 83M and Sept 97M with only one being the correct denominator). Clone gives only one total (120M); no distractor total is present. Answer 46 is correct, but the hallmark hard lever (two totals as distractor) is absent."
+  }
+]

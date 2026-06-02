@@ -1,0 +1,39 @@
+{
+  "questionId": "e50afdd3-s1",
+  "originalId": "e50afdd3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>(x \u2212 6)<sup>2</sup> + (y + 5)<sup>2</sup> = 64. The graph of the given equation is a circle in the xy-plane. The point (a, b) lies on the circle. Which of the following is a possible value for a?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22124</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>\u221210</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>The circle has center (6, \u22125) and radius 8, so its x-coordinates range from 6 \u2212 8 = \u22122 to 6 + 8 = 14. Only 5 lies in [\u22122, 14].</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A1.T3.hard"
+}

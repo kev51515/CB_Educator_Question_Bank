@@ -1,0 +1,25 @@
+{
+  "questionId": "0bcb4417-s1",
+  "originalId": "0bcb4417",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A3.T7.medium",
+  "stimulus": "<p>Diné weaver Melissa Cody's electric tapestries reinterpret traditional Navajo designs through a digital lens. With <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> vibrant geometric patterns inspired by 1990s pixel art, the tapestry blurs the line between heirloom craft and contemporary visual culture.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>they're</p>"},
+    {"id": "b", "content": "<p>their</p>"},
+    {"id": "c", "content": "<p>its</p>"},
+    {"id": "d", "content": "<p>it's</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is the use of possessive determiners. The singular possessive determiner \"its\" agrees in number with the singular noun \"the tapestry,\" indicating that the geometric patterns belong to the tapestry.</p><p>Choice A is incorrect because \"they're\" is the contraction for \"they are,\" not a possessive determiner. Choice B is incorrect because the plural possessive determiner \"their\" doesn't agree in number with the singular noun \"the tapestry.\" Choice D is incorrect because \"it's\" is the contraction for \"it is\" or \"it has,\" not a possessive determiner.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

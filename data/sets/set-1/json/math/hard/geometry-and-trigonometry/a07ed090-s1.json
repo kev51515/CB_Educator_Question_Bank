@@ -1,0 +1,39 @@
+{
+  "questionId": "a07ed090-s1",
+  "originalId": "a07ed090",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The figure shown is a right circular cylinder with a radius of r and height of h. A second right circular cylinder (not shown) has a volume that is 250 times as large as the volume of the cylinder shown. Which of the following could represent the radius R, in terms of r, and the height H, in terms of h, of the second cylinder?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>R = 5r and H = 10h</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>R = 10r and H = 5h</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>R = 25r and H = 10h</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>R = 25r and H = 2h</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The volume of a cylinder is &pi;R&sup2;H. The ratio of volumes is (R/r)&sup2;(H/h). For R = 5r and H = 10h, this is 25 &times; 10 = 250. So the second cylinder's volume is 250 times the first.</p><p>Choices B, C, and D produce ratios different from 250.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T2.hard"
+}

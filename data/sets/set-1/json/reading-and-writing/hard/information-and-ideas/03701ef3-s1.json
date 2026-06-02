@@ -1,0 +1,25 @@
+{
+  "questionId": "03701ef3-s1",
+  "originalId": "03701ef3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>To better understand the nest-building behavior of <em>Cathartes aura</em> (the turkey vulture), some early studies relied on plaster casting to capture detailed measurements of nest cavities in hollow logs and rock crevices. Plaster casting involves filling the empty cavity with a liquid plaster that hardens into a three-dimensional model; however, freeing the model requires breaking apart the surrounding log or stone, destroying the cavity in the process. In a 2023 study, ornithologist Daniela Marquez and colleagues showed that a portable LIDAR scanner can accurately record a cavity's dimensions both at a single moment and across the entire nesting season, something that is impossible with plaster casting because <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the process of removing the hardened plaster model warps the model's shape.</p>"},
+    {"id": "b", "content": "<p>the casting process takes longer than <em>C. aura</em> spends building a single nest.</p>"},
+    {"id": "c", "content": "<p>repeated casts of the same nest cavity over time are not possible.</p>"},
+    {"id": "d", "content": "<p>plaster can only be used to cast nest cavities below a certain size.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The passage notes that freeing a plaster model from a cavity requires destroying the cavity. Once a cavity has been destroyed, there is no cavity left to cast again, so it is impossible to make repeated casts of the same cavity at different points in time &mdash; exactly the kind of repeated, longitudinal measurement that the LIDAR scanner is said to enable.</p><p>Choice A is incorrect because the passage doesn't say anything about distortion of the plaster shape during removal; only the cavity (not the model) is described as being destroyed. Choice B is incorrect because the passage doesn't compare how long casting takes to how long the vulture takes to build a nest. Choice D is incorrect because the passage doesn't describe any size limits on what plaster casting can capture.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T3.hard"
+}

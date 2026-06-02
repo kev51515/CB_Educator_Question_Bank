@@ -1,0 +1,39 @@
+{
+  "questionId": "f2d60b99-s1",
+  "originalId": "f2d60b99",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>g</i>(<i>x</i>) = (1/4)(<i>x</i> &minus; 5)&sup2; + 8 gives a drone's height above the ground <i>g</i>(<i>x</i>), in feet, <i>x</i> seconds after it began following a programmed flight path, where 0 &le; <i>x</i> &le; 10. Which of the following is the best interpretation of the vertex of the graph of <i>y</i> = <i>g</i>(<i>x</i>) in the <i>xy</i>-plane?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The drone's height was 5 feet when it began following the path.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The drone's height was 8 feet when it began following the path.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The drone's minimum height was 5 feet above the ground.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The drone's minimum height was 8 feet above the ground.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The function is in vertex form with vertex (5, 8); because the leading coefficient 1/4 is positive, the parabola opens upward, so the vertex represents the minimum. Therefore the minimum height of the drone is 8 feet, occurring 5 seconds after launch.</p><p>Choices A and B refer to <i>g</i>(0), not the vertex. Choice C swaps the vertex coordinates.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "nonlinear-functions.A2.T1.hard"
+}

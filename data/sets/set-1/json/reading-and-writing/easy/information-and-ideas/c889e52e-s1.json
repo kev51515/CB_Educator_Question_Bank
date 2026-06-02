@@ -1,0 +1,39 @@
+{
+  "questionId": "c889e52e-s1",
+  "originalId": "c889e52e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In 1936 Holger Cahill was chosen to lead the Federal Art Project (FAP). This project was part of the Works Progress Administration (WPA), a program created by President Franklin D. Roosevelt to provide jobs for unemployed people during the Great Depression. As the director of the FAP, Cahill created jobs for over 10,000 painters, sculptors, muralists, and other visual artists across the country. He also helped open free community art centers in cities and small towns, which meant that many people could see and make art for the first time.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>President Roosevelt created the WPA to provide jobs for unemployed people.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>As the director of the FAP, Cahill succeeded in creating many jobs and introducing people to art.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>During the Great Depression, many people could not afford to buy works of art.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Jobs provided by the FAP were intended mainly for painters, sculptors, and other visual artists.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text states that as the director of the FAP, Cahill created over 10,000 jobs and helped open free community art centers, so its main idea is that Cahill succeeded in creating jobs and introducing people to art.</p><p>Choice A is incorrect; this is supporting background, not the main idea. Choice C is incorrect; the text does not discuss whether people could afford to buy art. Choice D is incorrect; the text mentions the kinds of artists but focuses on Cahill's achievements.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.easy"
+}

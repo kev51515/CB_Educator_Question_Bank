@@ -1,0 +1,39 @@
+{
+  "questionId": "99269e03-s1",
+  "originalId": "99269e03",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A1.T1.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows three values of <em>x</em> and their corresponding values of <em>y</em> for the equation <em>y</em> = 5(3<sup><em>x</em></sup>) + 2.</p><table border='1'><tr><th><em>x</em></th><th><em>y</em></th></tr><tr><td>1</td><td>17</td></tr><tr><td>2</td><td>47</td></tr><tr><td>3</td><td><em>a</em></td></tr></table><p>In the table, <em>a</em> is a constant. What is the value of <em>a</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>137</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>77</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>125</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>82</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. When <em>x</em> = 3, <em>y</em> = 5(3<sup>3</sup>) + 2 = 5(27) + 2 = 135 + 2 = 137. So <em>a</em> = 137. Choice B (77) results from computing 5(3<sup>3</sup>) - 5(3<sup>2</sup>) + something. Choice C (125) comes from forgetting to add 2 and using 5<sup>3</sup>. Choice D (82) comes from computing 5(16) + 2 (using 2<sup><em>x</em></sup> instead of 3<sup><em>x</em></sup>).</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z"
+}

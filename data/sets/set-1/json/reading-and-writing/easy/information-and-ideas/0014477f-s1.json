@@ -1,0 +1,39 @@
+{
+  "questionId": "0014477f-s1",
+  "originalId": "0014477f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Total Areas of Five National Parks in Costa Rica</p></caption><thead><tr><th>National park</th><th>Area (square miles)</th></tr></thead><tbody><tr><th>Manuel Antonio</th><td>26.1</td></tr><tr><th>Tortuguero</th><td>119.4</td></tr><tr><th>Corcovado</th><td>164.8</td></tr><tr><th>Rinc\u00f3n de la Vieja</th><td>54.7</td></tr><tr><th>Chirrip\u00f3</th><td>192.5</td></tr></tbody></table></figure></p><p>There are nearly thirty national parks in Costa Rica. A student in a geography class is studying Tortuguero National Park on the northeastern coast. The student wants to compare the total area covered by Tortuguero with the total areas of various other national parks in the country. Looking at the table, the student finds that the total area of Tortuguero is 119.4 square miles, while the total area of Rinc\u00f3n de la Vieja is <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the comparison?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>54.7 square miles.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>164.8 square miles.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>26.1 square miles.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>192.5 square miles.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The table shows that Rinc\u00f3n de la Vieja has a total area of 54.7 square miles.</p><p>Choice B is incorrect; 164.8 square miles is the area of Corcovado. Choice C is incorrect; 26.1 square miles is the area of Manuel Antonio. Choice D is incorrect; 192.5 square miles is the area of Chirrip\u00f3.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

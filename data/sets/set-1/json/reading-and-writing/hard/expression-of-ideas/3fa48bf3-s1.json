@@ -1,0 +1,39 @@
+{
+  "questionId": "3fa48bf3-s1",
+  "originalId": "3fa48bf3",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p>\n<ul>\n<li>French scholar Georges Cuvier described fossilized mammoth bones in his 1796 paper on extinct species.</li>\n<li>Cuvier earned a reputation as the first scientist to formally identify the woolly mammoth as a distinct extinct species.</li>\n<li>In 2008, archaeologists in Yakutia, Siberia, uncovered a carved mammoth tusk in a cave that had been seasonally used by humans.</li>\n<li>Researcher Anya Volkov dated stone tools nearby and concluded that local Indigenous groups had identified and worked with mammoth remains as early as 9000 BCE.</li>\n</ul>",
+  "stem": "<p>The student wants to emphasize the significance of the 2008 discovery to Cuvier's reputation. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Volkov questioned Cuvier's reputation for being the first to identify the woolly mammoth as extinct.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>According to Volkov's analysis, Indigenous groups in Siberia may have brought the carved tusk to the cave around 9000 BCE.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>In 2008, archaeologists working in Yakutia uncovered evidence that Indigenous peoples had once worked with mammoth remains.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Evidence that local Indigenous groups identified and worked with mammoth remains as early as 9000 BCE suggests that Cuvier was not, in fact, the first to recognize the mammoth as a distinct extinct creature.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it directly links the 2008 discovery to Cuvier's reputation, indicating that his claim to primacy may be undermined.</p><p>Choices A and B mention the challenge or the dating without connecting them to Cuvier's reputation. Choice C reports the discovery without explaining its significance.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "rhetorical-synthesis.A2.T4.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "ad680167-s1",
+  "originalId": "ad680167",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "templateId": "central-ideas-and-details.A1.T1.medium",
+  "stimulus": "<p>The excavation of a 1,200-year-old Viking burial site in the fjords of present-day Norway has produced a remarkable collection of grave goods, including hundreds of small glass beads. Using a noninvasive laser ablation spectrometer, Ingrid Halvorsen and her team were able to identify the trace elements within each bead without altering its surface. By matching these elemental fingerprints to those of raw glass cullet still associated with known workshop sites along the Mediterranean coast, Halvorsen and her team can determine which workshops most likely produced the beads found in the burial.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By using a specialized instrument, researchers have been able to determine the likely origin of glass beads recovered from a Viking burial.</p>"},
+    {"id": "b", "content": "<p>A new technology now allows researchers to locate and excavate more Viking burial sites than they could before.</p>"},
+    {"id": "c", "content": "<p>Researchers have for the first time identified the locations of several Mediterranean workshops that were active 1,200 years ago.</p>"},
+    {"id": "d", "content": "<p>Before the invention of laser ablation spectrometry, researchers had to detach a fragment from a bead to study its composition.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text describes hundreds of beads recovered from a Viking burial, the team&rsquo;s use of a laser ablation spectrometer to identify trace elements, and the comparison of those signatures with known workshop materials to determine the beads&rsquo; origin.</p><p>Choice B is incorrect because the text does not describe the technology as new or claim that it helps locate burials. Choice C is incorrect because the text indicates that the workshop sites&rsquo; locations were already known to the researchers — the team used materials from them as references. Choice D is incorrect because the text never describes pre-spectrometer techniques; it focuses on origin determination, not historical methodology.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

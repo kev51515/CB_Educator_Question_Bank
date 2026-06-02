@@ -1,0 +1,25 @@
+{
+  "questionId": "74028acf-s1",
+  "originalId": "74028acf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Optical telescopes capture the wavelengths of light visible to the human eye. Radio telescopes, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> capture wavelengths far longer than visible light, providing critical information to radio astronomers like Beatriz Salinas, who studies pulsar timing from a high-altitude observatory in the Atacama.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by contrast,</p>"},
+    {"id": "b", "content": "<p>in conclusion,</p>"},
+    {"id": "c", "content": "<p>afterward,</p>"},
+    {"id": "d", "content": "<p>for example,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"By contrast\" logically signals that the information about radio telescopes in this sentence—that they capture wavelengths far longer than visible light—presents a direct contrast to the previous information about optical telescopes capturing visible wavelengths.</p><p>Choice B is incorrect because \"in conclusion\" illogically signals that the information about radio telescopes concludes or summarizes the previous information, when it instead provides a contrasting case. Choice C is incorrect because \"afterward\" illogically signals a chronological sequence, when the sentence presents a contrasting capability rather than a later event. Choice D is incorrect because \"for example\" illogically signals that the radio telescope is an example of an optical telescope, when the two represent contrasting instruments operating on different wavelengths.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

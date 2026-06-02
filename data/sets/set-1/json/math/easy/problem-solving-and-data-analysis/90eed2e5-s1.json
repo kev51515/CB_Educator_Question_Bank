@@ -1,0 +1,39 @@
+{
+  "questionId": "90eed2e5-s1",
+  "originalId": "90eed2e5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Inference from sample statistics and margin of error ",
+  "skillCode": "Q.F.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A neighborhood association has 75 members. A reporter polled a random sample of 25 members and found that 9 of those polled supported a proposed neighborhood improvement plan. Based on the sample, which of the following is the best estimate of the number of association members who support the plan?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>27</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>66</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The proportion of members in the random sample who supported the plan was 9 out of 25, or 36%. Applying that proportion to all 75 members gives 0.36 times 75 = 27.</p><p>Choice A is incorrect: 9 is the count in the sample.</p><p>Choice C is incorrect: 36 is the percent, not a count.</p><p>Choice D is incorrect: 66 has no statistical justification.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "inference-from-sample-statistics-and-margin-of-error.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "2c82068f-s1",
+  "originalId": "2c82068f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Tommy Orange's 2018 novel <em>There There</em>. In this scene, Tony is riding the BART train through Oakland.</p><p>The car came aboveground, and afternoon light flooded in through the windows. Although Tony had lived in Oakland his whole life, he never tired of this <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> view of the city, so he tapped the boy beside him and pointed. The downtown skyline began to slide past them.</p>",
+  "stem": "<p>As used in the text, what does the word \"specific\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Imaginary</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Correct</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Particular</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Energetic</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because Tony singles out one view that he has known for years and points it out to his companion. \"Particular\" means specific to one thing, which fits the meaning of that single, beloved view. Choice A is incorrect because the view is real, not imagined. Choice B is incorrect because \"correct\" describes accuracy, not which view is being referenced. Choice D is incorrect because \"energetic\" describes activity, not a view.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

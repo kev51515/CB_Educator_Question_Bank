@@ -1,0 +1,39 @@
+{
+  "questionId": "637d0878-s1",
+  "originalId": "637d0878",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The Pacific Crest Trail is a long hiking route running through California, Oregon, and Washington. A large portion of the trail crosses pristine forests and high-altitude meadows. In order to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> these natural areas, the National Park Service has placed strict limits on logging and development along the trail.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>safeguard</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>rent</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>decorate</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>shorten</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because \"safeguard\" means to protect from harm, which fits the context of limiting logging and development. Choice B is incorrect because renting natural areas doesn\u2019t fit. Choice C is incorrect because decorating wilderness isn\u2019t the goal. Choice D is incorrect because shortening the natural areas is illogical.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

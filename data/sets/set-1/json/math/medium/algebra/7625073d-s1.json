@@ -1,0 +1,22 @@
+{
+  "questionId": "7625073d-s1",
+  "originalId": "7625073d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>The equation <em>5w + 5p = 600</em> represents the number of white tiles, <em>w</em>, and the number of purple tiles, <em>p</em>, a designer needs for a 600-square-inch mosaic project. The designer needs 47 purple tiles for the project. How many white tiles does she need?</p>",
+  "answerOptions": null,
+  "keys": [
+    "73"
+  ],
+  "rationale": "<p>Substituting 47 for <em>p</em> in the equation 5w + 5p = 600 gives 5w + 5(47) = 600, or 5w + 235 = 600. Subtracting 235 from both sides yields 5w = 365. Dividing both sides by 5 yields w = 73. The designer needs 73 white tiles.</p>",
+  "templateId": "linear-equations-in-two-variables.A2.T2.medium"
+}

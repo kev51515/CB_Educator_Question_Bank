@@ -1,0 +1,39 @@
+{
+  "questionId": "b23bba4c-s1",
+  "originalId": "b23bba4c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A delivery company charged a customer $41 to ship some envelopes and some parcels. The equation 5<i>x</i> + 3<i>y</i> = 41 represents the relationship between <i>x</i>, the number of envelopes, and <i>y</i>, the number of parcels, the customer shipped. If the customer shipped 4 envelopes, how many parcels were shipped?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting <i>x</i> = 4 yields 20 + 3<i>y</i> = 41, so 3<i>y</i> = 21 and <i>y</i> = 7.</p><p>Choices A, B, and C result from arithmetic errors in isolating <i>y</i>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

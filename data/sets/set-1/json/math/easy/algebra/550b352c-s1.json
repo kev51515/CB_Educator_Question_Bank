@@ -1,0 +1,39 @@
+{
+  "questionId": "550b352c-s1",
+  "originalId": "550b352c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": "<p style=\"text-align: center;\"><math><mn>14</mn><mo>=</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>2</mn></math></p>",
+  "stem": "<p>How many solutions exist to the equation shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>None</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Exactly 1</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exactly 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Infinitely many</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Subtracting 2 from each side yields <math><mn>12</mn><mo>=</mo><mn>3</mn><mi>x</mi></math>, or <math><mi>x</mi><mo>=</mo><mn>4</mn></math>, a unique solution.</p><p>Choice A is incorrect since 4 satisfies the equation. Choice C is incorrect because a linear equation cannot have exactly 2 solutions. Choice D is incorrect because infinitely many solutions would require the equation to reduce to <math><mn>0</mn><mo>=</mo><mn>0</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A3.T8.easy"
+}

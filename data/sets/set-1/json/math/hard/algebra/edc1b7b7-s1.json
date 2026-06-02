@@ -1,0 +1,22 @@
+{
+  "questionId": "edc1b7b7-s1",
+  "originalId": "edc1b7b7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>35</mn><mi>x</mi><mo>+</mo><mn>24</mn><mi>y</mi><mo>=</mo><mn>18</mn></math></p>\n<p style=\"text-align: center;\"><math><mo>-</mo><mn>35</mn><mi>x</mi><mo>+</mo><mn>24</mn><mi>y</mi><mo>=</mo><mn>18</mn></math></p>\n<p>The solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mn>48</mn><mi>y</mi><mo>-</mo><mn>30</mn></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "6"
+  ],
+  "rationale": "<p>The correct answer is 6. Adding the two equations eliminates x: 48y = 36. So 48y \u2212 30 = 36 \u2212 30 = 6.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.hard"
+}

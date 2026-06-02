@@ -1,0 +1,39 @@
+{
+  "questionId": "89f20d9e-s1",
+  "originalId": "89f20d9e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The table summarizes the distribution of age and assigned group for 80 participants in a study.</p><figure class=\"table\"><table border=\"1\"><tbody><tr><td></td><th>0\u20139 years</th><th>10\u201319 years</th><th>20+ years</th><th>Total</th></tr><tr><th>Group X</th><td style=\"text-align:center;\">6</td><td style=\"text-align:center;\">12</td><td style=\"text-align:center;\">8</td><td style=\"text-align:center;\">26</td></tr><tr><th>Group Y</th><td style=\"text-align:center;\">14</td><td style=\"text-align:center;\">26</td><td style=\"text-align:center;\">14</td><td style=\"text-align:center;\">54</td></tr><tr><th>Total</th><td style=\"text-align:center;\">20</td><td style=\"text-align:center;\">38</td><td style=\"text-align:center;\">22</td><td style=\"text-align:center;\">80</td></tr></tbody></table></figure><p>One of the 80 participants will be selected at random. What is the probability of selecting a participant from group X, given that the participant is at least 10 years old?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13/40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>1/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20/26</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. P(group X | age \u2265 10) equals the number of group X participants aged \u2265 10 divided by the total participants aged \u2265 10. That is (12 + 8) / (38 + 22) = 20 / 60 = 1/3.</p><p>Choice A uses an incorrect denominator. Choice B is total Group X over total participants. Choice D uses Group X total in the denominator instead of all participants aged \u2265 10.</p>",
+  "templateId": "probability-and-conditional-probability.A3.T8.hard"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "d5b9ed0d-s1",
+  "originalId": "d5b9ed0d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Participants&rsquo; Mean Ratings for Three Apology Conditions (1&ndash;9 scale; higher = more positive)</p></caption><thead><tr><th scope=\"col\">Measure</th><th scope=\"col\">No emotion (control)</th><th scope=\"col\">High emotion</th><th scope=\"col\">Low emotion</th></tr></thead><tbody><tr><th scope=\"row\">Sincerity of apology</th><td>6.40</td><td>5.62</td><td>6.51</td></tr><tr><th scope=\"row\">Attitude toward apologizer</th><td>3.10</td><td>2.45</td><td>3.02</td></tr></tbody></table></figure></p><p>To understand how expressions of emotion in spoken apologies affect listeners, communications scholar Daria Khorzova and colleagues measured study participants&rsquo; responses to three versions of the same workplace apology — a control version expressing no emotion, a version expressing a high degree of emotion, and a version expressing a low degree of emotion. Reviewing the data, a student concludes that the mere presence of emotion in an apology may not negatively affect listeners&rsquo; perceptions of the apology, but a high degree of emotion in an apology does worsen listeners&rsquo; perceptions of the apology.</p>",
+  "stem": "<p>Which choice best describes data from the table that support the student&rsquo;s conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>On average, participants&rsquo; ratings of the sincerity of the apology were substantially higher than were their ratings of the apologizer regardless of which version of the apology participants had heard.</p>"},
+    {"id": "b", "content": "<p>Compared with participants who heard the control apology, participants who heard the low-emotion apology rated the apology as slightly more sincere, whereas participants who heard the high-emotion apology rated the apology as less sincere.</p>"},
+    {"id": "c", "content": "<p>Participants who heard the low-emotion apology rated the apology as slightly more sincere than participants who heard the control apology did, but their attitude toward the apologizer was slightly worse than that of participants who heard the no-emotion apology.</p>"},
+    {"id": "d", "content": "<p>Compared with participants who heard the low-emotion apology, participants who heard the high-emotion apology rated the apology as less sincere and had a less positive attitude toward the apologizer.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because the student&rsquo;s conclusion concerns perceptions of the apology itself. The table shows low-emotion sincerity (6.51) is slightly higher than the control (6.40), while high-emotion sincerity (5.62) is lower than the control — directly supporting the student. Choice A is incorrect because comparisons between sincerity and attitude don&rsquo;t address the conclusion about emotion levels. Choice C is incorrect because the conclusion is only about the apology itself, not attitudes toward the apologizer. Choice D is incorrect for the same reason — it mixes in attitude toward the apologizer.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

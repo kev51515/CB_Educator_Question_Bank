@@ -1,0 +1,39 @@
+{
+  "questionId": "3a3b95df-s1",
+  "originalId": "3a3b95df",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A1.T1.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>d = 20 - x/50</p><p>The equation gives the estimated amount of fuel d, in gallons, remaining in the tank of a generator after running for x minutes, where 0 \u2264 x \u2264 1000. What is the estimated amount of fuel, in gallons, remaining in the tank when x = 200?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>20</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. d = 20 - 200/50 = 20 - 4 = 16.</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00"
+}

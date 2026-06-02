@@ -1,0 +1,39 @@
+{
+  "questionId": "a70cbc53-s1",
+  "originalId": "a70cbc53",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Ilya Kaminsky, a celebrated poet and essayist, recently released his first audio poetry project, <em>Sounds From the Other Side of the Wall</em>, in collaboration with composer Nadia Sirota. The project pairs Kaminsky's recited poems with Sirota's layered viola textures and field recordings to convey the felt experience of deafness, both its silences and its unfamiliar resonances. Several critics have suggested that the project asks listeners to reconsider how deafness is represented in mainstream contemporary art&mdash;arguing that, unlike documentaries that treat deafness from the outside, this audio work renders it from within without ever attempting to simulate impaired hearing literally.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It introduces a collaborative audio poetry project, details the approach taken to produce the work, and then provides an example of how critics responded to it.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It mentions a collection of audio poems, distinguishes one piece as the most representative of the project, and then summarizes the subject matter of the whole collection.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It summarizes the efforts to produce a collection of audio poems, presents biographies of the two collaborators, and speculates about the meaning behind their choice of project.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It links two artists to the same audio poetry project, explains the extent of their collaboration on each piece, and then describes the technique used to produce the work.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text first introduces <em>Sounds From the Other Side of the Wall</em> and identifies the two collaborators; then describes the production approach (recited poems combined with viola textures and field recordings to convey the felt experience of deafness); and finally cites critics' reactions, providing an example of the kind of reading the project has received.</p><p>Choice B is incorrect because no individual piece is singled out as exemplary. Choice C is incorrect because no biographies are given and no speculation about motives is offered. Choice D is incorrect because the text does not describe the collaborators' contributions piece by piece.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A3.T8.hard"
+}

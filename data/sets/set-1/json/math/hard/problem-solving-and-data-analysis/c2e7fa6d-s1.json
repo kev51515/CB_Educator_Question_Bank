@@ -1,0 +1,22 @@
+{
+  "questionId": "c2e7fa6d-s1",
+  "originalId": "c2e7fa6d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>For an electric field passing perpendicularly through a flat surface, the electric flux is the product of the field's strength and the surface area. A certain flat surface consists of two adjacent squares, where the side length, in meters, of the larger square is 4 times the side length, in meters, of the smaller square. An electric field with strength 22.00 volts per meter passes uniformly through this surface, producing a total flux of 5,984 volt\u00b7meters. What is the side length, in meters, of the smaller square?</p>",
+  "answerOptions": null,
+  "keys": [
+    "4"
+  ],
+  "rationale": "<p>Let s be the side length of the smaller square. The areas are s\u00b2 and (4s)\u00b2 = 16s\u00b2. Total area = 17s\u00b2. Flux = field \u00d7 area, so 22.00 \u00d7 17s\u00b2 = 5,984, giving 374s\u00b2 = 5,984, so s\u00b2 = 16 and s = 4 meters.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A4.T2.hard"
+}

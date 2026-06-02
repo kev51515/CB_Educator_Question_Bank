@@ -1,0 +1,39 @@
+{
+  "questionId": "34aca984-s1",
+  "originalId": "34aca984",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The length of a rectangle is 40 centimeters and the width is <em>x</em> centimeters. The perimeter is at most 180 centimeters. Which inequality represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2<em>x</em> + 80 \u2265 180</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2<em>x</em> + 80 \u2264 180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2<em>x</em> + 40 \u2264 180</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2<em>x</em> + 40 \u2265 180</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The perimeter of a rectangle is 2<em>L</em> + 2<em>W</em> = 2(40) + 2<em>x</em> = 80 + 2<em>x</em>. Since the perimeter is at most 180, 2<em>x</em> + 80 \u2264 180.</p><p>Choices A, C, and D have the wrong inequality direction or incorrectly compute the perimeter.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.medium"
+}

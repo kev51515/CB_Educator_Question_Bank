@@ -1,0 +1,25 @@
+{
+  "questionId": "eae66bf9-s1",
+  "originalId": "eae66bf9",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><strong><span role=\"heading\" aria-level=\"2\">Text 1</span></strong></p><p>In 2019, a team led by Hana Park hypothesized that the iron meteorites known as IIE chondrites originated from a single, partially differentiated parent body in the early solar system. As evidence, Park cited the strikingly similar oxygen isotope ratios found in IIE samples and in surface samples returned in 2010 from the asteroid Itokawa, whose interior is believed to have undergone only modest internal heating.</p><p>&nbsp;</p><p><strong><span role=\"heading\" aria-level=\"2\">Text 2</span></strong></p><p>Although the oxygen isotope ratios of IIE chondrites do resemble those of Itokawa, several other small asteroids show comparable values. Moreover, some IIE samples contain large inclusions of pyroxene crystals, as Lior Avram points out, whereas a partially differentiated parent body would be expected to lack such inclusions. Given the prevalence of these pyroxene textures across separate IIE specimens, Avram argues that two distinct parent bodies are a more plausible explanation.</p>",
+  "stem": "<p>Based on the texts, how would Avram likely respond to Park&rsquo;s hypothesis, as presented in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By insisting that the hypothesis overestimates how representative Itokawa is of partially differentiated bodies as a class</p>"},
+    {"id": "b", "content": "<p>By praising the hypothesis for connecting the composition of IIE samples to the composition of certain asteroids</p>"},
+    {"id": "c", "content": "<p>By arguing that the hypothesis fails to account for the pyroxene inclusions found in multiple IIE samples</p>"},
+    {"id": "d", "content": "<p>By concurring that comparable oxygen isotope ratios are widespread among small asteroids unrelated to the IIE samples</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. Park&rsquo;s hypothesis is that IIE chondrites originated from a single, partially differentiated parent body. Avram points to the large pyroxene inclusions across multiple IIE specimens, which a partially differentiated parent body would be expected to lack, and argues that two distinct parent bodies are more plausible. Avram&rsquo;s response would therefore target Park&rsquo;s failure to account for those inclusions.</p><p>Choice A is incorrect because Text 2 does not argue about how representative Itokawa is. Choice B is incorrect because Avram is challenging the hypothesis, not praising it. Choice D is incorrect because, although the texts mention that other asteroids share similar isotope ratios, Avram does not present this as a point of agreement with Park, who treats the resemblance as supporting her hypothesis.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

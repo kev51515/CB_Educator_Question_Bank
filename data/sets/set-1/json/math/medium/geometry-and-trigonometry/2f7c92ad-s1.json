@@ -1,0 +1,39 @@
+{
+  "questionId": "2f7c92ad-s1",
+  "originalId": "2f7c92ad",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle <em>GHI</em>, point <em>J</em> lies on side <em>GH</em> and point <em>K</em> lies on side <em>GI</em> so that triangle <em>GJK</em> is similar to triangle <em>GHI</em>, with <em>G</em>, <em>J</em>, and <em>K</em> corresponding to <em>G</em>, <em>H</em>, and <em>I</em>, respectively. If the measure of angle <em>GJK</em> is 64&deg;, what is the measure of angle <em>GHI</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(64 &middot; 90)&deg;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(64 + 90)&deg;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>26&deg;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>64&deg;</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. In similar triangles, corresponding angles are congruent. Since angle GJK corresponds to angle GHI (both are at the same relative vertex in the similarity correspondence), m&ang;GHI = m&ang;GJK = 64&deg;. Choices A and B are incorrect arithmetic combinations. Choice C is the complement, not the angle itself.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A5.T3.medium"
+}

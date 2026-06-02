@@ -1,0 +1,39 @@
+{
+  "questionId": "1a1a95de-s1",
+  "originalId": "1a1a95de",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "templateId": "linear-equations-in-two-variables.A5.T12.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A community garden contains tulips and daffodils. In the <i>xy</i>-plane, the graph models the possible combinations of the number of tulips, <i>x</i>, and the number of daffodils, <i>y</i>, in the garden. The graph is a line passing through the points (0, 400) and (300, 0). If the garden contains exactly 80 daffodils, how many tulips does it contain?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>240</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>320</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The line with intercepts (300, 0) and (0, 400) satisfies <i>x</i>/300 + <i>y</i>/400 = 1. Setting <i>y</i> = 80 gives <i>x</i>/300 = 1 &minus; 80/400 = 4/5, so <i>x</i> = 240.</p><p>Choice A uses 1 &minus; 80/100 by mistake. Choice B halves the correct answer. Choice D substitutes 80 directly into a wrong relation.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z"
+}

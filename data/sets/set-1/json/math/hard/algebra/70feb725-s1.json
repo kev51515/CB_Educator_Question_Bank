@@ -1,0 +1,39 @@
+{
+  "questionId": "70feb725-s1",
+  "originalId": "70feb725",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>During one season, Sam swam <math><mi>s</mi></math> miles at 2 miles per hour and rowed <math><mi>w</mi></math> miles at 5 miles per hour. He swam and rowed a total of 60 miles that season, and he rowed for twice as many hours as he swam. What is the total number of miles that Sam rowed during the season?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>50</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>40</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Swimming hours = s/2; rowing hours = w/5. Since rowing hours = 2 \u00d7 swimming hours: w/5 = 2 \u00b7 s/2 = s, so w = 5s. Combined with s + w = 60, we get s + 5s = 60, so s = 10 and w = 50. Sam rowed 50 miles.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T5.hard"
+}

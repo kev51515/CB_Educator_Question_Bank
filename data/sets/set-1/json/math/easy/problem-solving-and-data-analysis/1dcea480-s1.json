@@ -1,0 +1,39 @@
+{
+  "questionId": "1dcea480-s1",
+  "originalId": "1dcea480",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A jar contains a total of 80 marbles. A marble is to be chosen at random from the jar. If the probability that a green marble will be chosen is 0.45, how many marbles in the jar are green?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>32</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>36</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>44</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>45</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Multiplying the total number of marbles by the probability gives the number of green marbles: 80 \u00d7 0.45 = 36.</p><p>Choice A is incorrect; this would be the result if the probability were 0.40. Choice C is incorrect; this is the number of non-green marbles. Choice D is incorrect; this would be the count if there were 100 marbles total.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A4.T11.easy"
+}

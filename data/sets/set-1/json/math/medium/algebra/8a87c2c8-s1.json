@@ -1,0 +1,39 @@
+{
+  "questionId": "8a87c2c8-s1",
+  "originalId": "8a87c2c8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>x + 3 = \u22122y + 3</p><p>x \u2212 3 = 2y + 5</p><p>The solution to the given system of equations is (x, y). What is the value of 2x?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>\u22124</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>8</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>From the first equation, x = \u22122y. From the second equation, x = 2y + 8. Setting these equal: \u22122y = 2y + 8, so \u22124y = 8 and y = \u22122. Then x = \u22122(\u22122) = 4, and 2x = 8. The correct answer is choice D.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T3.medium"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "63c00e2b-s1",
+  "originalId": "63c00e2b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mfrac><mi>w</mi><mn>14</mn></mfrac><mo>=</mo><mi>u</mi><mo>+</mo><mi>v</mi></math></p><p>The given equation relates the quantities <em>u</em>, <em>v</em>, and <em>w</em>. Which equation correctly expresses <em>w</em> in terms of <em>u</em> and <em>v</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mi>w</mi><mo>=</mo><mn>14</mn><mfenced><mrow><mi>u</mi><mo>+</mo><mi>v</mi></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mi>w</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo>+</mo><mn>14</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mi>w</mi><mo>=</mo><mi>u</mi><mo>+</mo><mi>v</mi><mo>-</mo><mn>14</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mi>w</mi><mo>=</mo><mfrac><mrow><mi>u</mi><mo>+</mo><mi>v</mi></mrow><mn>14</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Multiplying both sides of the given equation by 14 yields <math><mi>w</mi><mo>=</mo><mn>14</mn><mfenced><mrow><mi>u</mi><mo>+</mo><mi>v</mi></mrow></mfenced></math>.</p><p>Choices B, C, and D are incorrect and result from algebraic errors.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.easy"
+}

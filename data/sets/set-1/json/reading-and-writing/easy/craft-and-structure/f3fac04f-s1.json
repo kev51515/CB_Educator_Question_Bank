@@ -1,0 +1,39 @@
+{
+  "questionId": "f3fac04f-s1",
+  "originalId": "f3fac04f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Singing whales known as humpbacks may seem to produce sequences of moans, clicks, and pulses at random, but each population of humpback has its own distinct combination of these sounds, which evolves slowly over the course of a breeding season. These shared <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> allow individual whales to recognize fellow members of their group.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>songs</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>treaties</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>weights</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>jewels</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because \"songs\" precisely names a recognizable sequence of vocal sounds, fitting the text's description of distinct combinations of moans, clicks, and pulses. Choice B is incorrect because \"treaties\" are formal agreements, not vocal sequences. Choice C is incorrect because \"weights\" describes mass; the text concerns sound, not heaviness. Choice D is incorrect because \"jewels\" are ornaments; the text concerns auditory signals, not decoration.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

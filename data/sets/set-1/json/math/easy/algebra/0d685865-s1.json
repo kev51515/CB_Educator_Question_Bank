@@ -1,0 +1,39 @@
+{
+  "questionId": "0d685865-s1",
+  "originalId": "0d685865",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <i>y</i> = 12, what is the value of <i>y</i> + 18?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>30</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Substituting 12 for <i>y</i>: <i>y</i> + 18 = 12 + 18 = 30.</p><p>Choice A is 18 &minus; 12 (subtracting instead of adding). Choice B is just 18. Choice C is 12 &times; 2.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A4.T11.easy"
+}

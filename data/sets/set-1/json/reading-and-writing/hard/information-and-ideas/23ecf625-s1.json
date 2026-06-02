@@ -1,0 +1,39 @@
+{
+  "questionId": "23ecf625-s1",
+  "originalId": "23ecf625",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Urban planners around the world are looking for ways to manage stormwater runoff and reduce flooding in increasingly built-up cities, and in many cases solutions that draw on natural systems can address these problems effectively. Faced with frequent street flooding after heavy rains, the city of Copenhagen partnered with a local landscape-design firm to construct \"cloudburst boulevards\"\u2014parklike streetscapes planted with native vegetation and shaped to channel and absorb storm runoff. The vegetated channels slow incoming water, allow it to soak into the soil, and have measurably reduced flooding on the surrounding streets.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Copenhagen's partnership with a local landscape-design firm demonstrates the value of cooperation between cities and private companies.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A recent project shows that vegetated channels help slow stormwater and reduce flooding.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Nature-based approaches can be effective ways to address urban water-management challenges.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Planners now recognize that nature-based stormwater systems are clearly superior to traditional engineered drainage solutions.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text opens with a general claim\u2014that solutions drawing on natural systems can effectively address urban water-management challenges\u2014and then offers Copenhagen's cloudburst boulevards as an illustrative example. The main idea is the general claim about nature-based approaches.</p><p>Choice A is incorrect because the partnership is mentioned only as part of the example; the central focus is the effectiveness of nature-based solutions, not collaboration with private firms. Choice B is incorrect because the cloudburst project is offered as one example supporting a broader claim, not as the main point itself. Choice D is incorrect because the text never compares nature-based and engineered systems or claims one is superior; it only argues nature-based approaches can be effective.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.medium"
+}

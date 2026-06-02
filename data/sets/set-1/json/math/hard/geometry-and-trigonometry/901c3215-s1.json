@@ -1,0 +1,39 @@
+{
+  "questionId": "901c3215-s1",
+  "originalId": "901c3215",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangles JKL and PQR, angles K and Q each have measure 38\u00b0 and angles L and R each have measure 52\u00b0. Which additional piece of information is sufficient to determine whether triangle JKL is congruent to triangle PQR?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The lengths of sides JK and PQ</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The measure of angle J</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Whether triangle JKL contains a right angle</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>No additional information is necessary.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Because angles K and Q are equal and angles L and R are equal, triangles JKL and PQR are similar by AA (with J\u2194P, K\u2194Q, L\u2194R). To determine whether two similar triangles are also congruent, it suffices to show that one pair of corresponding sides are equal in length. JK and PQ are corresponding sides under this similarity, so knowing their lengths is sufficient.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A4.T2.hard"
+}

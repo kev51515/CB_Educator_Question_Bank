@@ -1,0 +1,39 @@
+{
+  "questionId": "88a0c425-s1",
+  "originalId": "88a0c425",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>&minus;3<i>x</i>&sup2; + 24<i>x</i> + <i>k</i> = 0</p><p>In the given equation, <i>k</i> is a constant. The equation has exactly one solution. What is the value of <i>k</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;96</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>0</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;72</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. A quadratic has exactly one solution when its discriminant is zero. With <i>a</i> = &minus;3, <i>b</i> = 24, <i>c</i> = <i>k</i>: 24&sup2; &minus; 4(&minus;3)<i>k</i> = 0, so 576 + 12<i>k</i> = 0, giving <i>k</i> = &minus;48.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A3.T7.hard"
+}

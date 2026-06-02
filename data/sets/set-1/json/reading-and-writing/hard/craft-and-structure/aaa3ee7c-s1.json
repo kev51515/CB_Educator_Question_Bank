@@ -1,0 +1,39 @@
+{
+  "questionId": "aaa3ee7c-s1",
+  "originalId": "aaa3ee7c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Critics have asserted that craftsmanship and contemporary art rarely <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in a world where artisans produce functional everyday goods and contemporary artists make singular conceptual pieces for galleries. Diné weaver and sculptor Marie Watt challenges this view: her textiles are functional blankets that have also been acquired by museums of contemporary art.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>diverge</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>prevail</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>overlap</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>succumb</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Overlap\" most logically completes the text. The critics say craftsmanship and contemporary art do not occupy common ground; Watt's work, which is simultaneously a functional blanket and a museum piece, demonstrates that they can overlap.</p><p>Choice A is incorrect. \"Diverge\" means to go in different directions, which restates the critics' view rather than capturing what Watt's work shows. Choice B is incorrect. \"Prevail\" means to triumph, which doesn't address whether two categories coincide. Choice D is incorrect. \"Succumb\" means to yield to a stronger force, which doesn't match the idea of two fields coinciding.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T3.hard"
+}

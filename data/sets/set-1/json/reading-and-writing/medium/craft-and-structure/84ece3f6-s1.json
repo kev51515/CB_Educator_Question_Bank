@@ -1,0 +1,25 @@
+{
+  "questionId": "84ece3f6-s1",
+  "originalId": "84ece3f6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from Sarah Orne Jewett's 1896 short story collection <em>The Country of the Pointed Firs</em>. The narrator describes a stretch of coastline she has watched for many days.</p><p style=\"padding-left:1em\">As the season advanced, the shoreline <span role=\"region\" aria-label=\"Referenced Content\"><u>gathered</u></span> a quieter dignity, its raw edges softening into long sweeps of grass and worn stone. What had at first appeared scattered and accidental now possessed a calm composure visible to any patient eye.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;gathered&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Collected</p>"},
+    {"id": "b", "content": "<p>Acquired</p>"},
+    {"id": "c", "content": "<p>Concluded</p>"},
+    {"id": "d", "content": "<p>Summoned</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. As used in the text, \"gathered\" most nearly means acquired or came to possess. The shoreline is described as taking on \"a quieter dignity\" and \"calm composure\" over time, indicating that it came to possess these qualities as the season advanced.</p><p>Choice A is incorrect. Although \"gathered\" can mean collected, that sense applies to bringing physical objects together, which does not match a shoreline acquiring a quality like dignity. Choice C is incorrect because although \"gathered\" can mean concluded (as in \"I gathered from her tone\"), the subject here is a shoreline, which cannot draw inferences. Choice D is incorrect because \"summoned\" implies an active call, and the text portrays a gradual, natural change rather than a deliberate calling forth.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

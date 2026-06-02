@@ -1,0 +1,39 @@
+{
+  "questionId": "68c5c81a-s1",
+  "originalId": "68c5c81a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>9</mn><mi>p</mi><mo>+</mo><mn>13</mn><mi>q</mi><mo>&#8804;</mo><mn>142</mn></math></p>\n<p>Marisol will spend at most <math><mo>$</mo><mn>142</mn></math> to purchase <math><mi>p</mi></math> small coffee mugs and <math><mi>q</mi></math> large coffee mugs for a gift shop. The given inequality represents this situation. Which of the following is the best interpretation of <math><mn>13</mn><mi>q</mi></math> in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The amount, in dollars, Marisol will spend on each large coffee mug</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The total amount, in dollars, Marisol will spend on large coffee mugs</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The amount, in dollars, Marisol will spend on each small coffee mug</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The total amount, in dollars, Marisol will spend on small coffee mugs</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since q represents the number of large coffee mugs and 13 represents the cost per large mug, 13q is the total amount in dollars spent on large mugs. Choice A describes 13 alone. Choice C describes 9 alone. Choice D describes 9p.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.misc.hard"
+}

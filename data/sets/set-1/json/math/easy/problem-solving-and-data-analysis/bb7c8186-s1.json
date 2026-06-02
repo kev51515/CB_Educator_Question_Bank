@@ -1,0 +1,39 @@
+{
+  "questionId": "bb7c8186-s1",
+  "originalId": "bb7c8186",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is 37% of 100?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3.7</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>63</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>37</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>137</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. 37% of 100 is 0.37 \u00d7 100 = 37.</p><p>Choice A is incorrect. This is 37 \u00f7 10, not 37% of 100.</p><p>Choice B is incorrect. This is 100 \u2212 37, not 37% of 100.</p><p>Choice D is incorrect. This is 100 + 37, not 37% of 100.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "percentages.A1.T1.easy"
+}

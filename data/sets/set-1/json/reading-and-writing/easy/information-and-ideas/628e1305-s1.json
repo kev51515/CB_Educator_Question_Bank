@@ -1,0 +1,39 @@
+{
+  "questionId": "628e1305-s1",
+  "originalId": "628e1305",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>&ldquo;The Garden&rdquo; is a 1912 short story by Selma Lagerl&ouml;f. In the story, the author emphasizes that the setting where the character Anna is sketching is nearly silent: ______</p>",
+  "stem": "<p>Which quotation from &ldquo;The Garden&rdquo; most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&ldquo;The wooden bench beneath her was old and worn from many seasons of rain and sun.&rdquo;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&ldquo;Anna had brought a small sketchbook and a few pencils tucked into the pocket of her coat.&rdquo;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&ldquo;All was so still in the garden that the only thing to be heard was the faint scratch of her pencil moving across the paper.&rdquo;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&ldquo;She paused for a moment to study the way the roses had grown along the wall of the house.&rdquo;</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because the quotation directly emphasizes silence: &ldquo;All was so still&rdquo; that only the &ldquo;faint scratch of her pencil&rdquo; could be heard.</p><p>Choice A is incorrect: it describes the bench, not silence. Choice B is incorrect: it describes her supplies, not silence. Choice D is incorrect: it describes her observations, not the silent setting.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A1.T2.easy"
+}

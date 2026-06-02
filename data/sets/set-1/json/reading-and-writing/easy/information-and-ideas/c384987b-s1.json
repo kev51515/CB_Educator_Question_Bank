@@ -1,0 +1,39 @@
+{
+  "questionId": "c384987b-s1",
+  "originalId": "c384987b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Scientists have long believed that hippopotamuses are mostly silent and communicate only by surface gestures with one another. But biologist Lucia Verdi and her team analyzed hundreds of hours of underwater recordings of hippopotamuses in three African reserves and found that the animals make low-frequency clicks underwater. The researchers claim that the hippopotamuses use these clicks to communicate when they can&rsquo;t see one another above the surface.</p>",
+  "stem": "<p>Which finding, if true, would most directly support Verdi and her team&rsquo;s claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The hippopotamuses only produced the clicks when they were submerged and not visible to one another above the water.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Wild hippopotamuses have never been recorded making clicking sounds.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Hippopotamuses have a strong sense of smell and can detect food at a distance.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Researchers observed other animals in the same reserves making clicking sounds.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct because if the hippopotamuses only made the clicks while submerged and unable to see one another, that would directly support the claim that the clicks are used for communication when visual contact is impossible.</p><p>Choice B is incorrect: if wild hippopotamuses have never made these sounds, that would weaken the claim. Choice C is incorrect: sense of smell is unrelated to underwater communication. Choice D is incorrect: other animals&rsquo; clicks don&rsquo;t address whether hippopotamuses use them for communication.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "400798d6-s1",
+  "originalId": "400798d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>2m + n = 50</p><p>In triangle ABC, sides AB and BC each have a length of m centimeters, and side CA has a length of n centimeters. The given equation represents this situation. Which of the following is the best interpretation of 50 in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The sum of the lengths, in centimeters, of the three sides of the triangle</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The length, in centimeters, of one of the two sides of equal length</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The length, in centimeters, of the side that differs</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The difference, in centimeters, between sides AB and CA</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The expression 2m + n equals AB + BC + CA, which is the perimeter of the triangle. So 50 represents the perimeter (the sum of the three side lengths) of the triangle. Choice A is correct.</p>",
+  "generatedAt": "2026-05-26T01:29:47Z",
+  "templateId": "linear-equations-in-two-variables.A3.T4.easy"
+}

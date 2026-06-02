@@ -1,0 +1,39 @@
+{
+  "questionId": "b86123af-s1",
+  "originalId": "b86123af",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Akira and Lila purchased notebooks and pencils from a store. The price of each notebook was the same and the price of each pencil was the same. Akira purchased 3 notebooks and 8 pencils for a total of $25, and Lila purchased 5 notebooks and 4 pencils for a total of $29. Which system of equations represents the price, x, of each notebook and the price, y, of each pencil?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3x + 8y = 29 and 5x + 4y = 25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>8x + 3y = 25 and 4x + 5y = 29</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3x + 8y = 25 and 5x + 4y = 29</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>3x + 5y = 25 and 8x + 4y = 29</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Akira: 3x + 8y = 25; Lila: 5x + 4y = 29.</p><p>Other choices swap totals or coefficients.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A2.T4.easy"
+}

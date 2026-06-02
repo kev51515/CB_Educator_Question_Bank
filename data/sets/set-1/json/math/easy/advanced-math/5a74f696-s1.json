@@ -1,0 +1,39 @@
+{
+  "questionId": "5a74f696-s1",
+  "originalId": "5a74f696",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A savings account was opened with an initial balance of $740. The value of the account tripled every 6 years. Which equation represents the value of the account <i>B</i>(<i>t</i>), in dollars, <i>t</i> years after the account was opened?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>B</i>(<i>t</i>) = 740(3)<sup><i>t</i>/6</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>B</i>(<i>t</i>) = 740(1/3)<sup><i>t</i>/6</sup></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>B</i>(<i>t</i>) = 740(6)<sup><i>t</i>/3</sup></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>B</i>(<i>t</i>) = 740(1/6)<sup><i>t</i>/3</sup></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Since the balance triples every 6 years, the number of 6-year periods after <i>t</i> years is <i>t</i>/6. The value can be found by multiplying the initial $740 by 3 raised to the number of 6-year periods, giving <i>B</i>(<i>t</i>) = 740(3)<sup><i>t</i>/6</sup>.</p><p>Choice B corresponds to a balance that decreases to one-third its value every 6 years. Choices C and D use the wrong base and/or exponent and do not match the description.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "nonlinear-functions.A4.T1.easy"
+}

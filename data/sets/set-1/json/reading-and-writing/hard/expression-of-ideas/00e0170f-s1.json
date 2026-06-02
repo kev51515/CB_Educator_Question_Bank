@@ -1,0 +1,39 @@
+{
+  "questionId": "00e0170f-s1",
+  "originalId": "00e0170f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>Hyperloop systems propose to move passenger pods at near-supersonic speeds through low-pressure tubes, drastically cutting intercity travel times. Although hyperloop advocates in the US have spent more than a decade promising that the technology would soon crisscross the country, no commercial passenger system has opened. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the only operational hyperloop-style passenger tests so far have been short demonstration runs, none longer than 500 meters.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>To that end,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Nevertheless,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>That said,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>In fact,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The previous sentence states that no commercial hyperloop passenger system has opened. The new sentence intensifies this by adding an even more striking fact (only sub-500-meter test runs have occurred). &ldquo;In fact&rdquo; is the right transition for emphasizing and reinforcing the prior point.</p><p>Choice A is a cause-and-effect transition; nothing here is being caused. Choices B and C signal contrast, but the new sentence agrees with and intensifies the previous one.</p>",
+  "generatedAt": "2026-05-26T02:28:58.758075+00:00",
+  "templateId": "transitions.A4.T11.hard"
+}

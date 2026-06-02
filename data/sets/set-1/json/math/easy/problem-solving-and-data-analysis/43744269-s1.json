@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A hot-air balloon rises from an altitude of 200 feet to 2,000 feet at a constant rate of 60 feet per minute. What type of function best models the relationship between the balloon's altitude and time?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Decreasing linear</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Decreasing exponential</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Increasing exponential</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Increasing linear</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Because the rate of change (60 ft/min) is constant and altitude is increasing, the relationship is linear and increasing.</p><p>Choices A and B are decreasing functions; the altitude is rising. Choice C describes nonlinear growth, but the rate is constant.</p>",
+  "questionId": "43744269-s1",
+  "originalId": "43744269",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A5.T9.easy"
+}

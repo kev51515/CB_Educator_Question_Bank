@@ -1,0 +1,39 @@
+{
+  "questionId": "c5479c1a-s1",
+  "originalId": "c5479c1a",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A shipment consists of 3-kilogram bags and 8-kilogram bags with a total weight of 162 kilograms. There are 12 8-kilogram bags in the shipment. How many 3-kilogram bags are in the shipment?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>22</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>30</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The 12 eight-kilogram bags weigh 96 kg total, leaving 162 &minus; 96 = 66 kg in 3-kg bags. Therefore, 66 &divide; 3 = 22 three-kilogram bags.</p><p>The other choices come from arithmetic or setup errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

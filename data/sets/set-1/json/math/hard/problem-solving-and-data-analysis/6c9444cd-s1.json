@@ -1,0 +1,22 @@
+{
+  "questionId": "6c9444cd-s1",
+  "originalId": "6c9444cd",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Two box plots summarize the number of hours of weekly exercise reported by students in two different gym classes. For Class P, the minimum is 1 and the maximum is 7. For Class Q, the minimum is 0 and the maximum is 11. What is the positive difference between the range of the number of hours of exercise for the two classes?</p>",
+  "answerOptions": null,
+  "keys": [
+    "5"
+  ],
+  "rationale": "<p>The range of Class P is 7 &minus; 1 = 6. The range of Class Q is 11 &minus; 0 = 11. The positive difference is 11 &minus; 6 = 5.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.hard"
+}

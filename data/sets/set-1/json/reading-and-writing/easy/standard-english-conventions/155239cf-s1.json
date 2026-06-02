@@ -1,0 +1,39 @@
+{
+  "questionId": "155239cf-s1",
+  "originalId": "155239cf",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>By examining sediment cores from the Black Sea, a research team at a German oceanographic institute uncovered evidence of a major volcanic eruption that occurred 5,400 years ago. Geologists had previously thought the region to be tectonically quiet during that ______ the team's finding suggests otherwise.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>period but</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>period,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>period</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>period, but</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The comma plus \"but\" properly joins the two independent clauses.</p><p>Choice A omits the necessary comma before \"but\" between two longer main clauses. Choice B creates a comma splice (no conjunction). Choice C creates a run-on sentence.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A1.T2.easy"
+}

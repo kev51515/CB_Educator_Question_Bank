@@ -1,0 +1,25 @@
+{
+  "questionId": "81af81d4-s1",
+  "originalId": "81af81d4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p>&ldquo;The River-Path&rdquo; is an 1857 poem by John Greenleaf Whittier. The poem conveys the speaker&rsquo;s contented feelings about following an unhurried route along the water: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from the poem most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>&ldquo;No bird-song floated down the hill, / The tangled bank below was still; / No rustle from the birchen stem, / No ripple from the water&rsquo;s hem.&rdquo;</p>"},
+    {"id": "b", "content": "<p>&ldquo;We will not walk the trodden way / Where weary feet of men delay, / Nor seek the chamber dim and small / Where lamp-light writes upon the wall.&rdquo;</p>"},
+    {"id": "c", "content": "<p>&ldquo;I am content to wander on / Where the slow river takes the dawn, / Past mossy stone and rushy ford, / Glad of the path my heart hath stored.&rdquo;</p>"},
+    {"id": "d", "content": "<p>&ldquo;To-day, I shall not seek the height; / Its empty wind unsettles me; / Strange shapes upon the upland white / Are not the friends I came to see.&rdquo;</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because the quotation shows the speaker happily wandering along the river (&ldquo;I am content to wander on / Where the slow river takes the dawn&rdquo;) past natural features beside the water (&ldquo;mossy stone and rushy ford&rdquo;), directly illustrating the contented feelings about an unhurried river route. Choice A is incorrect because it merely describes the stillness of the scene rather than the speaker&rsquo;s contentment with the route. Choice B is incorrect because the speaker describes places he will not walk, not the contented experience of the river path itself. Choice D is incorrect because the speaker describes avoiding the highlands, not enjoying a river route.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

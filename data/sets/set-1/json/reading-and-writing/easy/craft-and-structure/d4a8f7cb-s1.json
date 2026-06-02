@@ -1,0 +1,25 @@
+{
+  "questionId": "d4a8f7cb-s1",
+  "originalId": "d4a8f7cb",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Visual artist Nick Cave seeks to give people the chance to be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> his artistic process. For instance, in his traveling exhibition <em>Soundsuits</em>, viewers are invited to put on the wearable sculptures and contribute movements and sounds that become part of the installation's documentary record.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>anxious about</p>"},
+    {"id": "b", "content": "<p>slowed by</p>"},
+    {"id": "c", "content": "<p>engaged in</p>"},
+    {"id": "d", "content": "<p>completed by</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because \"engaged in\" means actively participating, which fits the description of viewers putting on the sculptures and contributing to the installation. Choice A is incorrect because \"anxious about\" suggests worry; the text describes participation, not apprehension. Choice B is incorrect because \"slowed by\" suggests being hindered, but viewers are taking part, not being delayed. Choice D is incorrect because \"completed by\" suggests being made whole; the text describes participation, not personal completeness.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

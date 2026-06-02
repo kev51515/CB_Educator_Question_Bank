@@ -1,0 +1,25 @@
+{
+  "questionId": "12d81fc1-s1",
+  "originalId": "12d81fc1",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T3.medium",
+  "stimulus": "<p><span role=\"heading\" aria-level=\"2\"><strong>Text 1</strong></span></p><p>Because the system of knotted cords known as <em>khipu</em> fell out of use after the Spanish conquest of the Inca Empire, scholars have long debated how meaning was encoded in its colored strings and knots. Many researchers had assumed that <em>khipu</em> recorded only numerical information&mdash;tallies of tribute, population, and goods. In 2005, anthropologist Sabine Hyland proposed instead that certain <em>khipu</em> functioned as a phonetic writing system, with each cord representing a distinct syllable.</p><p>&nbsp;</p><p><span role=\"heading\" aria-level=\"2\"><strong>Text 2</strong></span></p><p>Recent comparative analyses of surviving <em>khipu</em> point to a more flexible picture. Depending on context, a single cord could carry numerical, narrative, or even logographic content: the same configuration might mark a quantity of maize in one inventory and stand for a place-name in another. For an Inca reader, interpreting a <em>khipu</em> meant determining at each cord which of several functions was being invoked.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely characterize Hyland&rsquo;s proposal, as described in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>As limited, because it treats one possible function of khipu cords as if it were the only function they perform</p>"},
+    {"id": "b", "content": "<p>As persuasive, because it correctly identifies khipu cords as primarily numerical records</p>"},
+    {"id": "c", "content": "<p>As redundant, because it merely repeats the conclusions reached by earlier scholars</p>"},
+    {"id": "d", "content": "<p>As valuable, because it emphasizes how khipu encoding changed over the course of the Inca Empire</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. Hyland&rsquo;s proposal is that <em>khipu</em> cords represented syllables. Text 2 argues that a single cord could function numerically, narratively, or logographically depending on context, and that reading required determining which function applied at each cord. The author of Text 2 would therefore characterize a theory that treats cords as exclusively phonetic as too narrow&mdash;limited because it ignores the multifunctional character the author describes.</p><p>Choice B is incorrect because Text 1 explicitly contrasts Hyland&rsquo;s view with the older numerical assumption; Text 2 also rejects a single-function account. Choice C is incorrect because Text 1 presents Hyland&rsquo;s proposal as a departure from prior scholarship, not a repetition of it. Choice D is incorrect because neither text discusses how <em>khipu</em> encoding changed over time.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

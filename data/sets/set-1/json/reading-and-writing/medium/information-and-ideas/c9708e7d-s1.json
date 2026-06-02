@@ -1,0 +1,25 @@
+{
+  "questionId": "c9708e7d-s1",
+  "originalId": "c9708e7d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T5.medium",
+  "stimulus": "<p>In Norway, the rugged Atlantic puffin is widely treated as an emblem of seafaring resilience. Although puffins can endure harsh storms, they are not noticeably hardier or harder to observe than several other cliff-nesting seabirds along the Norwegian coast. Historian Ingrid Halvorsen has shown that the popular view of puffins crystallized in the late 1800s, when guided coastal tours became a fashionable pursuit. Local boat captains spread the idea that puffin colonies could be reached only by venturing onto sheer, weather-battered headlands where the seas were perilous. Halvorsen says these claims were self-interested. She suggests that the boat captains presented puffins in this way in order to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>make their guided tours seem more daring and so command higher fees from visiting tourists.</p>"},
+    {"id": "b", "content": "<p>persuade conservation officials to restrict access to nesting cliffs.</p>"},
+    {"id": "c", "content": "<p>encourage ornithologists to compile new field guides to the Norwegian coast.</p>"},
+    {"id": "d", "content": "<p>establish that puffins were more abundant in Norway than in neighboring countries.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text says that puffins became symbols of seafaring resilience during the rise of guided coastal tourism, that captains exaggerated how dangerous it was to reach puffin colonies, and that Halvorsen calls these claims self-interested. The captains&rsquo; self-interest most directly served their business: by making the trips sound more perilous, they could justify higher fees for their tours.</p><p>Choice B is incorrect because the text gives no indication that captains were lobbying officials. Choice C is incorrect because Halvorsen explicitly frames the claims as self-interested, not as attempts to assist scientific cataloguing. Choice D is incorrect because the text focuses on the supposed danger of reaching colonies, not on relative abundance across countries.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

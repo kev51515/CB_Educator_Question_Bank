@@ -1,0 +1,39 @@
+{
+  "questionId": "d41cf4d3-s1",
+  "originalId": "d41cf4d3",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A6.T1.hard",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>f</i> is defined by <i>f</i>(<i>x</i>) = <i>a</i>&radic;(<i>x</i> + <i>b</i>), where <i>a</i> and <i>b</i> are constants. In the <i>xy</i>-plane, the graph of <i>y</i> = <i>f</i>(<i>x</i>) passes through the point (&minus;18, 0), and <i>f</i>(18) &lt; 0. Which of the following must be true?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>f</i>(0) = 18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>a</i> &lt; <i>b</i></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>f</i>(0) = &minus;18</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>a</i> &gt; <i>b</i></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. From <i>f</i>(&minus;18) = <i>a</i>&radic;(&minus;18 + <i>b</i>) = 0 it follows that <i>b</i> = 18 (so the square root is 0). Then <i>f</i>(18) = <i>a</i>&radic;(36) = 6<i>a</i> &lt; 0 forces <i>a</i> &lt; 0. Since <i>a</i> &lt; 0 and <i>b</i> = 18, <i>a</i> &lt; <i>b</i> must be true.</p><p>Choices A and C give specific values for <i>f</i>(0) that depend on the exact value of <i>a</i>, which is not pinned down. Choice D contradicts the deduction <i>a</i> &lt; <i>b</i>.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z"
+}

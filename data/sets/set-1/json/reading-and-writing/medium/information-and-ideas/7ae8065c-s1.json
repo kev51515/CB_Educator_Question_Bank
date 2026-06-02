@@ -1,0 +1,25 @@
+{
+  "questionId": "7ae8065c-s1",
+  "originalId": "7ae8065c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A2.T4.medium",
+  "stimulus": "<p>Scholars are increasingly examining the communication and preservation of ecological knowledge through Indigenous oral traditions (e.g., Maori karakia about coastal currents and Sámi joiks about reindeer migration). In one study, ethnobotanist Aroha Pereira received insight from Wiremu Te Atu, an oral-history keeper for the Ngāti Porou people in Aotearoa, into chants referencing the people's use of seasonal seabed-stone weirs along estuary mouths for the cultivation of eel for consumption. Archaeological evidence of significant increases in eel size and abundance in that area concurrent with the documented past implementation of the method described in the chants supports the conclusion that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>there is greater corroboration in the archaeological record of ecological practices described in Ngāti Porou chants than of those described in Maori karakia and Sámi joiks.</p>"},
+    {"id": "b", "content": "<p>non-Indigenous people around Aotearoa adopted the practice developed by the Ngāti Porou people after observing its efficacy.</p>"},
+    {"id": "c", "content": "<p>although contemporary Ngāti Porou people retain knowledge of the eel-cultivation practices used by their ancestors, they no longer implement those methods.</p>"},
+    {"id": "d", "content": "<p>the practice used by ancestors of modern Ngāti Porou people not only effectively maintained a food source but also enhanced its robustness.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. The two findings—oral records describing seabed-stone weirs for eel cultivation, and archaeological evidence of concurrent increases in eel size and abundance—jointly support the conclusion that the practice both maintained eel as a food source and increased its size and numbers. Choice A is unsupported; the text does not compare archaeological corroboration across traditions. Choice B introduces non-Indigenous adoption not addressed in the text. Choice C makes a claim about modern practice that the text does not address.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

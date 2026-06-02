@@ -1,0 +1,25 @@
+{
+  "questionId": "cd2ce51f-s1",
+  "originalId": "cd2ce51f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>Like the 1947 novella it adapts&mdash;Carson McCullers's <em>The Member of the Wedding</em>&mdash;Branden Jacobs-Jenkins's 2018 stage adaptation <em>Frankie's House</em> centers domestic life in a small Southern town. In both works, the spare ensemble cast <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> a tight circle of household figures, including a quietly observant cook and a restless adolescent navigating personal upheaval.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>summons</p>"},
+    {"id": "b", "content": "<p>portrays</p>"},
+    {"id": "c", "content": "<p>shelters</p>"},
+    {"id": "d", "content": "<p>regulates</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"Portrays\" means depicts or represents. The text indicates that a small cast plays the household figures in each work; the most logical relationship between the cast and the characters is that the actors portray them.</p><p>Choice A is incorrect. \"Summons\" means to call or summon, which does not describe how a cast relates to the characters it plays. Choice C is incorrect. \"Shelters\" means provides shelter or protection; there is no indication the cast protects the characters. Choice D is incorrect. \"Regulates\" means controls or governs, a meaning unsupported by the text.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

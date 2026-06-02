@@ -1,0 +1,25 @@
+{
+  "questionId": "d1539546-s1",
+  "originalId": "d1539546",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>Heavy rains can sweep large quantities of fine silt onto a freshwater wetland, smothering healthy reeds and producing a silt flat—a low, plant-free zone that tends to pond shallow water—within the wetland's central basin. Ecologist Adekunle Adebayo and colleagues found that tunneling crayfish living within these silt flats improve drainage by churning the sediment, leading the flats to shrink as wetland reeds move back in. Along the wetland's outer banks, however, crayfish-induced sediment churning can promote bank loss by accelerating undercutting, suggesting that the tunneling action of crayfish <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>varies in intensity depending on the size of the silt flat relative to the size of the surrounding wetland.</p>"},
+    {"id": "b", "content": "<p>can be beneficial to wetlands with small silt flats but harmful to wetlands with large silt flats.</p>"},
+    {"id": "c", "content": "<p>may promote increases in wetland reeds or decreases in wetland reeds, depending on the crayfish's location.</p>"},
+    {"id": "d", "content": "<p>tends to be more heavily concentrated in central basins with standing water than along the outer banks.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text says that crayfish tunneling in the silt flats allows reeds to reestablish there, while tunneling along the outer banks accelerates bank loss. So crayfish tunneling can either help or hurt the wetland, depending on where the crayfish are located.</p><p>Choice A is incorrect because the text never discusses the relative sizes of silt flats and the surrounding wetland. Choice B is incorrect because the text never discusses silt flats of different sizes. Choice D is incorrect because the text doesn't suggest that crayfish do more tunneling in one zone than the other; rather, it says tunneling has different effects in different zones.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

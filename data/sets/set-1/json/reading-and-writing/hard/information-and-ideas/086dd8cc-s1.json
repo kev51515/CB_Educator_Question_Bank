@@ -1,0 +1,39 @@
+{
+  "questionId": "086dd8cc-s1",
+  "originalId": "086dd8cc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>The body plan of brittle stars (class Ophiuroidea) \u2014 slender, highly flexible arms radiating from a small central disk \u2014 complicates straightforward comparisons with most other animals, whose anatomies are organized along a bilateral head-to-tail axis. Particularly puzzling is the location of nervous-system structures: in most bilateral animals these are concentrated in a discrete head, but brittle stars are descended from bilateral ancestors yet appear headless. Mapping the expression of well-characterized head-, trunk-, and tail-region patterning genes from a closely related bilateral relative onto the brittle star <em>Amphiura filiformis</em>, researchers found strong activity of head-associated genes throughout each arm and only weak, peripheral activity of trunk- and tail-associated genes, suggesting that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>rather than losing a head as their radial body plan developed, brittle stars evolved a body in which head-like genetic identity is distributed across all of the arms.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>although they appear superficially radial, brittle stars are best understood as bilateral animals whose head and tail regions are simply small and difficult to detect.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>despite their close relationship to other invertebrates, brittle stars share almost none of the body-patterning genes that are typical of bilateral animals.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>the strong expression of trunk-associated genes at the edges of the arms is primarily responsible for the brittle star's characteristic radial symmetry.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The researchers observed head-region gene activity throughout the arms and only weak, peripheral trunk/tail activity. The most logical inference is that brittle stars did not simply discard a head when they became radial; instead, head-like genetic identity is spread across the whole body, with arms behaving as extensions of \"head\" rather than a separate trunk plus tail.</p><p>Choice B is incorrect because the data show widely distributed head-region activity, not small, hidden head and tail regions. Choice C is incorrect because the researchers were able to map head, trunk, and tail genes onto the brittle star \u2014 implying the genes are present, just expressed in a different pattern. Choice D is incorrect because trunk gene activity at the edges was described as weak/limited, so it cannot be the primary driver of overall radial symmetry.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A2.T4.hard"
+}

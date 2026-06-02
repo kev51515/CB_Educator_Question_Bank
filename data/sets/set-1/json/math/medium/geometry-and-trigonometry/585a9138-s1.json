@@ -1,0 +1,22 @@
+{
+  "questionId": "585a9138-s1",
+  "originalId": "585a9138",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.L.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Triangles <em>ABC</em> and <em>DEF</em> are congruent, where <em>A</em> corresponds to <em>D</em>, <em>B</em> corresponds to <em>E</em>, and <em>C</em> corresponds to <em>F</em>. The measure of angle <em>C</em> is 90&deg;, and the measure of angle <em>A</em> is 41&deg;. What is the measure, in degrees, of angle <em>E</em>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "49"
+  ],
+  "rationale": "<p>The correct answer is 49. The interior angles of any triangle sum to 180&deg;. In triangle ABC, m&ang;A + m&ang;B + m&ang;C = 180, so m&ang;B = 180 &minus; 41 &minus; 90 = 49&deg;. Since triangles ABC and DEF are congruent with angle B corresponding to angle E, m&ang;E = m&ang;B = 49&deg;.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "lines-angles-and-triangles.A4.T1.medium"
+}

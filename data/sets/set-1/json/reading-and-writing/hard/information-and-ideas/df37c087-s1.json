@@ -1,0 +1,25 @@
+{
+  "questionId": "df37c087-s1",
+  "originalId": "df37c087",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.hard",
+  "stimulus": "<figure class=\"table\"><table><caption><p>Mass of Three Underwater Gripping Robots</p></caption><thead><tr><th>Robot</th><th>Mass (grams)</th></tr></thead><tbody><tr><td>Aqua-Sprint Gripper</td><td>720</td></tr><tr><td>Tidal Suction Hand</td><td>410</td></tr><tr><td>Delft Model V</td><td>700</td></tr></tbody></table></figure><p>Underwater gripping robots vary considerably in their holding force; the Aqua-Sprint Gripper, for example, has a holding force of 84 newtons, more than twice that of the Tidal Suction Hand and more than four times that of the Delft Model V. Since an underwater gripping robot must counteract its own buoyancy and inertia along with its cargo, engineer Iv&aacute;n Quispe and colleagues used a ratio of each robot&rsquo;s holding force to the robot&rsquo;s mass to calculate effective payload capacity, with higher ratios corresponding to greater capacity, concluding that the Aqua-Sprint Gripper has a higher payload capacity than the Delft Model V.</p>",
+  "stem": "<p>Which choice best describes data in the table that support Quispe and colleagues&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The Aqua-Sprint Gripper and the Delft Model V each have masses greater than 400 grams.</p>"},
+    {"id": "b", "content": "<p>The Aqua-Sprint Gripper has a mass only slightly greater than that of the Delft Model V.</p>"},
+    {"id": "c", "content": "<p>The Aqua-Sprint Gripper and the Delft Model V each have masses greater than that of the Tidal Suction Hand.</p>"},
+    {"id": "d", "content": "<p>The Delft Model V has a lower holding force than the Tidal Suction Hand despite weighing more.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. Payload capacity is defined as the holding-force-to-mass ratio. The text gives the Aqua-Sprint Gripper a holding force of 84 N and the Delft Model V a holding force of one-fourth of 84 N, or 21 N. The table shows the Aqua-Sprint Gripper&rsquo;s mass (720 g) is only slightly greater than the Delft Model V&rsquo;s (700 g). Because the Aqua-Sprint has roughly four times the holding force but nearly the same mass, its ratio is much higher, supporting the conclusion that it has the greater payload capacity. Choice A is incorrect because the fact that both robots exceed 400 g emphasizes a similarity, not the comparison the conclusion turns on. Choice C is incorrect for the same reason and additionally introduces the Tidal Suction Hand, which is irrelevant to the comparison in the conclusion. Choice D is incorrect because the table reports mass, not holding force, and the holding-force comparison it describes is irrelevant to the Aqua-Sprint vs. Delft conclusion.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

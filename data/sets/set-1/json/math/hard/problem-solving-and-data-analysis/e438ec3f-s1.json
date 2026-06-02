@@ -1,0 +1,39 @@
+{
+  "questionId": "e438ec3f-s1",
+  "originalId": "e438ec3f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>An orchard has 7 rows of pear trees and 4 rows of apple trees. Each row of pear trees has 10 trees 25 feet or taller and 5 trees shorter than 25 feet. Each row of apple trees has 12 trees 25 feet or taller and 8 trees shorter than 25 feet. A tree from one of these rows will be selected at random. What is the probability of selecting an apple tree, given that the tree is 25 feet or taller?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2/11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>12/22</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>10/59</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>24/59</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. There are 7 \u00d7 10 = 70 pear trees and 4 \u00d7 12 = 48 apple trees that are 25 feet or taller, for a total of 118. So P(apple | \u2265 25 ft) = 48/118 = 24/59.</p><p>Choice A counts rows incorrectly. Choice B uses one row only. Choice C swaps numerator with pear count.</p>",
+  "templateId": "probability-and-conditional-probability.A3.T9.hard"
+}

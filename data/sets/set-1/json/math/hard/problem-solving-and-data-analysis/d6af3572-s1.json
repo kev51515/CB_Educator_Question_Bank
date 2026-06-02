@@ -1,0 +1,39 @@
+{
+  "questionId": "d6af3572-s1",
+  "originalId": "d6af3572",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line of best fit drawn through scatterplot data of average annual rent (in dollars per month) from 1980 to 2020 has slope 22.4 dollars per year. Which statement best describes the slope's meaning?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Each decade between 1980 and 2020, the average increase in monthly rent was 22.4 dollars.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Each decade between 1980 and 2020, the average increase in monthly rent was 224 dollars.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Each year between 1980 and 2020, the average increase in monthly rent was 2.24 dollars.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Each year between 1980 and 2020, the average increase in monthly rent was 22.4 dollars.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>The slope of 22.4 dollars per year directly states the average annual increase. Choice (d) is correct. Choice (b) would correspond to the increase over a decade (10 \u00d7 22.4 = 224), but the question asks about the slope's meaning per the time-unit shown.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A3.T6.hard"
+}

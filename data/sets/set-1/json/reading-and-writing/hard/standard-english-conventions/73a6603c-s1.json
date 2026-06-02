@@ -1,0 +1,39 @@
+{
+  "questionId": "73a6603c-s1",
+  "originalId": "73a6603c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>On hot afternoons, asphalt parking lots absorb solar energy and release it as unwanted heat, driving up the temperature of the surrounding ______ a layer of permeable pavers over an existing asphalt lot, either by laying interlocking concrete blocks or pouring a porous resin mix, can substantially reduce this effect.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>neighborhood; by installing</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>neighborhood. Installing</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>neighborhood, installing</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>neighborhood by installing</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The period correctly marks the boundary between the first sentence (\"On&hellip;neighborhood\") and the second (\"Installing&hellip;effect\"). The gerund phrase beginning with \"Installing\" serves as the subject of the second sentence, with \"can substantially reduce this effect\" as its predicate.</p><p>Choice A is incorrect because a semicolon cannot be used in this way; doing so leaves the verb phrase \"can substantially reduce\" without a subject. Choice C is incorrect because it produces a comma splice. Choice D is incorrect because it yields a confusing sentence implying that installing pavers raises the temperature; it also leaves the verb phrase \"can substantially reduce\" without a clear subject.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A1.T1.hard"
+}

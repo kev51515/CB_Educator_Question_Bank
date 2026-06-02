@@ -1,0 +1,22 @@
+[
+  {"id": "4eaf0a3a-s1", "templateId": "equivalent-expressions.A3.T7.medium", "verdict": "ok"},
+  {"id": "dd4ab4c4-s1", "templateId": "equivalent-expressions.A2.T5.medium", "verdict": "ok"},
+  {"id": "3206b905-s1", "templateId": "equivalent-expressions.A2.T4.medium", "verdict": "ok"},
+  {"id": "24016dee-s1", "templateId": "equivalent-expressions.A1.T2.medium", "verdict": "type_drift", "detail": "Stem '9z^5 + 4 - 2z^5 - 3' is combining like terms (T1), not adding/subtracting two parenthesized polynomials. Violates T2 must_preserve: 'parenthesised polynomial structure with explicit + or - between them'. Should be T1."},
+  {"id": "5805e747-s1", "templateId": "equivalent-expressions.A1.T2.medium", "verdict": "ok"},
+  {"id": "7348f046-s1", "templateId": "equivalent-expressions.A1.T2.medium", "verdict": "ok"},
+  {"id": "a1bf1c4e-s1", "templateId": "equivalent-expressions.A2.T5.medium", "verdict": "ok"},
+  {"id": "f237ccfc-s1", "templateId": "equivalent-expressions.A4.T9.medium", "verdict": "ok"},
+  {"id": "fde6f3bb-s1", "templateId": "equivalent-expressions.A1.T10.medium", "verdict": "ok"},
+  {"id": "a255ae72-s1", "templateId": "equivalent-expressions.A1.T10.medium", "verdict": "ok"},
+  {"id": "3e9cc0c2-s1", "templateId": "equivalent-expressions.A1.T3.medium", "verdict": "rationale_inconsistent", "detail": "Rationale's derivation correctly yields 1 - q^5 (which is choice d, the keyed answer), but the concluding sentence states 'Choice (c) is correct' — choice c is 1 + q^4. Label mismatch in rationale text."},
+  {"id": "5b6af6b1-s1", "templateId": "equivalent-expressions.A2.T6.medium", "verdict": "ok"},
+  {"id": "b4a6ed81-s1", "templateId": "equivalent-expressions.A2.T4.medium", "verdict": "ok"},
+  {"id": "c602140f-s1", "templateId": "equivalent-expressions.A2.T6.medium", "verdict": "ok"},
+  {"id": "42c71eb5-s1", "templateId": "equivalent-expressions.A3.T7.medium", "verdict": "aspect_drift", "detail": "Stem '5(x-2) + 3(2x-4)' tests A1 distribute-and-combine, not A3 exponent/radical rules. No exponent or radical operation appears. Should be A1.T3 or A1.T2."},
+  {"id": "a391ed22-s1", "templateId": "equivalent-expressions.A2.T6.medium", "verdict": "aspect_drift", "detail": "Deliverable is a numeric constant b (an unknown in target form ax^2+bx+c). Per skill-wide notes, when answer is a named constant the item belongs to A4. T6 medium characteristic explicitly says 'answer is the full expanded form'. Should be A4.T9."},
+  {"id": "1e7a1deb-s1", "templateId": "equivalent-expressions.A1.T10.medium", "verdict": "ok"},
+  {"id": "42f8e4b4-s1", "templateId": "equivalent-expressions.A2.T5.hard", "verdict": "ok"},
+  {"id": "137cc6fd-s1", "templateId": "equivalent-expressions.A3.T7.hard", "verdict": "ok"},
+  {"id": "f89e1d6f-s1", "templateId": "equivalent-expressions.A2.T6.hard", "verdict": "ok"}
+]

@@ -1,0 +1,22 @@
+[
+  {"id": "08395130-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"},
+  {"id": "e6e6be2d-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "9c591ff7-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "1755eaf0-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"},
+  {"id": "aaddd60f-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "a13c1c66-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"},
+  {"id": "0dba14e6-s1", "templateId": "inferences.A4.T10.hard", "verdict": "ok"},
+  {"id": "d1539546-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "5d20f560-s1", "templateId": "inferences.A2.T3.hard", "verdict": "ok"},
+  {"id": "65502c46-s1", "templateId": "inferences.A4.T11.hard", "verdict": "ok"},
+  {"id": "6b8a7c74-s1", "templateId": "inferences.A4.T11.hard", "verdict": "ok"},
+  {"id": "61228830-s1", "templateId": "inferences.A2.T3.hard", "verdict": "type_drift", "detail": "Stem is not a causal/mechanistic explanation of an observed phenomenon (T3). Rather, it asks what property a replacement technology must have given stated limitations of pigeon dispatches — a comparative-contrast/implication structure (better fit: A4.T10) or a principle-applied prediction (A1.T1). No 'observation + proposed mechanism → infer underlying cause' structure required by T3. Answer D is correct logically; only the type tag is wrong."},
+  {"id": "4f9f8ea6-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "5c7e0d62-s1", "templateId": "inferences.A4.T10.hard", "verdict": "type_drift", "detail": "No 'however/unlike/by contrast/whereas' pivot between two parallel sides demanded by T10. The inference is chronological reasoning from dated historical sources (manuscript ~1450 vs Munday 1598) — material/textual evidence with dates → past-tense historical claim, which matches A4.T9 (Historical/archaeological evidence scope) hard variant exactly (≥2 dates, transmission/origin reasoning). Answer C is correct; tag should be A4.T9.hard."},
+  {"id": "0dccbf17-s1", "templateId": "inferences.A3.T7.hard", "verdict": "ok"},
+  {"id": "1b9b29f1-s1", "templateId": "inferences.A4.T8.hard", "verdict": "ok"},
+  {"id": "95dbdf51-s1", "templateId": "inferences.A1.T1.hard", "verdict": "ok"},
+  {"id": "e185a21f-s1", "templateId": "inferences.A2.T4.hard", "verdict": "ok"},
+  {"id": "96d1c1fe-s1", "templateId": "inferences.A4.T9.hard", "verdict": "ok"},
+  {"id": "a44c7bd4-s1", "templateId": "inferences.A3.T5.hard", "verdict": "ok"}
+]

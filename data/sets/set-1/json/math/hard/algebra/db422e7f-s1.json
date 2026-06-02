@@ -1,0 +1,22 @@
+{
+  "questionId": "db422e7f-s1",
+  "originalId": "db422e7f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Line p is defined by 6y + 9x = 12. Line r is perpendicular to line p in the xy-plane. What is the slope of line r?</p>",
+  "answerOptions": null,
+  "keys": [
+    "2/3"
+  ],
+  "rationale": "<p>Solving 6y + 9x = 12 for y: y = -3x/2 + 2, so line p has slope -3/2. The slope of a line perpendicular to line p is the negative reciprocal: 2/3.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A6.T13.hard"
+}

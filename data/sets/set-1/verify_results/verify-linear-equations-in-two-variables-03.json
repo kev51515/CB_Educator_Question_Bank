@@ -1,0 +1,22 @@
+[
+  {"id": "3008cfc3-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "0b46bad5-s1", "templateId": "linear-equations-in-two-variables.A5.T10.hard", "verdict": "ok"},
+  {"id": "6d8ad460-s1", "templateId": "linear-equations-in-two-variables.A6.T13.hard", "verdict": "ok"},
+  {"id": "768f3b7c-s1", "templateId": "linear-equations-in-two-variables.A4.T6.hard", "verdict": "ok"},
+  {"id": "c362c210-s1", "templateId": "linear-equations-in-two-variables.A2.T2.hard", "verdict": "difficulty_drift", "detail": "Stem reduces to single-step division (25/20). Pears variable never used; no genuine two-variable substitution. Fails hard lever 'Two-step solve combined with extra arithmetic' and constraint that equation has exactly two variables both engaged."},
+  {"id": "db422e7f-s1", "templateId": "linear-equations-in-two-variables.A6.T13.hard", "verdict": "ok"},
+  {"id": "c4ea43ef-s1", "templateId": "linear-equations-in-two-variables.A2.T2.hard", "verdict": "difficulty_drift", "detail": "Substituting (20,0) into 15x+25y=t is a trivial one-step multiplication (15*20). Fails hard lever 'Two-step solve combined with extra arithmetic'; collapses to easy level."},
+  {"id": "9d0396d4-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "fdee0fbf-s1", "templateId": "linear-equations-in-two-variables.A6.T14.hard", "verdict": "aspect_drift", "detail": "Stem contains no parallel/perpendicular partner line; it's a single line through two points with substitution. Belongs to A5.T12 (coordinate on a line), not A6."},
+  {"id": "98d3393a-s1", "templateId": "linear-equations-in-two-variables.A6.T13.hard", "verdict": "ok"},
+  {"id": "b9835972-s1", "templateId": "linear-equations-in-two-variables.A6.T14.hard", "verdict": "ok"},
+  {"id": "49800634-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "cc3e9528-s1", "templateId": "linear-equations-in-two-variables.A5.T11.hard", "verdict": "ok"},
+  {"id": "9f70fd47-s1", "templateId": "linear-equations-in-two-variables.A5.T11.hard", "verdict": "ok"},
+  {"id": "cb58833c-s1", "templateId": "linear-equations-in-two-variables.A5.T11.hard", "verdict": "difficulty_drift", "detail": "7x-4y=21 with y=0 yields single-step solve (x=3). No translation, no fractional rearrangement, no multi-step isolation. Fails hard lever 'multi-step isolation before substitution' or 'translated graph'."},
+  {"id": "1a1a95de-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "9aaf7786-s1", "templateId": "linear-equations-in-two-variables.A5.T11.hard", "verdict": "ok"},
+  {"id": "2d54c272-s1", "templateId": "linear-equations-in-two-variables.A2.T2.hard", "verdict": "aspect_drift", "detail": "Stem asks for difference of per-token point values by reading coefficients (30-8=22). No substitution into the equation; this is A3.T3 (interpret coefficients as per-unit rates), not A2.T2."},
+  {"id": "3cdbf026-s1", "templateId": "linear-equations-in-two-variables.A5.T12.hard", "verdict": "ok"},
+  {"id": "686b7244-s1", "templateId": "linear-equations-in-two-variables.A2.T2.hard", "verdict": "aspect_drift", "detail": "Stem requires reading coefficients (20-12=8). No substitution of a given variable value into the equation; fits A3.T3 (interpret coefficients), not A2.T2."}
+]

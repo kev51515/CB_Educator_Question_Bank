@@ -1,0 +1,25 @@
+{
+  "questionId": "2b085bc6-s1",
+  "originalId": "2b085bc6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T1.medium",
+  "stimulus": "<p>The following text is adapted from Sui Sin Far's 1912 short story &ldquo;In the Land of the Free.&rdquo; Sammy and his mother have recently arrived at a busy port in San Francisco.</p>\n<blockquote>\n<p>[Sammy] was dizzy with delight and with a hunger to be part of all that the great harbor meant. In the afternoon he watched the dockworkers passing by carrying their bright bundles, and he wondered with a kind of envy what bright thing each one might be carrying home. In the village there had been little worth seeing on the road, except the temple steps and one or two neighbors' doors.</p>\n</blockquote>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It presents a character feeling sorrow over leaving his village.</p>"},
+    {"id": "b", "content": "<p>It explains why a character has traveled to a port city.</p>"},
+    {"id": "c", "content": "<p>It compares a character's thoughts about an event at two different times of day.</p>"},
+    {"id": "d", "content": "<p>It illustrates a character's response to a new environment.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The narrator describes how Sammy reacts to the great harbor: he is &ldquo;dizzy with delight&rdquo; and hungers to be part of it, watching dockworkers and envying their bundles. The text contrasts this new environment with his village, where there was little worth seeing. The main purpose is therefore to illustrate the character's response to a new environment.</p><p>Choice A is incorrect because Sammy is presented as delighted and curious, not sorrowful. Choice B is incorrect because the text gives no reason for the move. Choice C is incorrect because, although the village and the harbor are contrasted, no comparison between times of day is drawn.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "3a1f02b0-s1",
+  "originalId": "3a1f02b0",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from L. M. Montgomery's 1908 novel <em>Anne of Green Gables</em>. Anne, a young girl, has just been allowed to keep a small corner of the orchard as her own plot.</p><p style=\"padding-left:1em;\">Anne, who had been used all her life to having very little of her own, found that the small patch of orchard ground was almost more delightful than she could bear. She knelt among the grass and turned the soft earth with her hands, and the longer she worked the more her cheeks brightened. To her mind, there was nothing in the world quite so wonderful as deciding where each new seed should go; she would have gone on planning and planting from morning till night, and counted every hour of it the finest sort of game.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Anne is clearing the small plot in order to make a place where she can play games.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Anne is tiring of having to plan out where every new seed should be planted.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Anne takes great pleasure in working on the small patch of orchard ground.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Anne keeps to her plot in order to avoid doing her household duties.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. The text describes Anne's cheeks brightening as she works, says she would have planned and planted from morning till night, and calls the work itself \"the finest sort of game,\" showing her deep pleasure in the activity.</p><p>Choice A is incorrect; the text treats the gardening itself as the enjoyable activity, not as preparation for play. Choice B is incorrect; the text says Anne would gladly plan and plant all day, the opposite of tiring of it. Choice D is incorrect; the text never mentions household duties.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T2.easy"
+}

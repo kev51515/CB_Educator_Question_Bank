@@ -1,0 +1,25 @@
+{
+  "questionId": "5fb6ed10-s1",
+  "originalId": "5fb6ed10",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A1.T2.medium",
+  "stimulus": "<p><em>Among the Cascades</em> is a 1911 travel book by Henrietta Marlow. In the book, which records a long journey through the mountain country of the Pacific Northwest by steamer and stagecoach, Marlow reflects on the way such travel sets the mind free from the ordinary demands of daily life: <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which quotation from <em>Among the Cascades</em> most effectively illustrates the claim?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>“The natural advantages of these northern valleys, already very considerable, are increasing more rapidly than even the most hopeful settler would have predicted a decade ago.”</p>"},
+    {"id": "b", "content": "<p>“The romantic charm of so long a passage is much heightened by the unhurried halts made for meals at the small landings along the river.”</p>"},
+    {"id": "c", "content": "<p>“The real journey, of course, begins at Portland, and as the steamers set out at dusk, the traveller settles into the privacy of her cabin almost before she has thought of supper.”</p>"},
+    {"id": "d", "content": "<p>“One feels, as the great peaks rise on either hand, a certain delicious release from the small obligations and clamours of one's accustomed day.”</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because it most effectively illustrates the claim that Marlow reflects on the way such travel frees the mind from the ordinary demands of daily life. The phrase “a certain delicious release from the small obligations and clamours of one's accustomed day” directly names the experience of being freed from the routine demands of ordinary life, and ties that experience to the mountain travel itself (“as the great peaks rise on either hand”).</p><p>Choice A is incorrect because it discusses the economic prospects of the northern valleys, not any sense of escape from daily life. Choice B is incorrect because it discusses the pleasure of leisurely meal-stops, not release from ordinary obligations. Choice C is incorrect because it describes the practical beginning of the journey at Portland and the traveller settling into her cabin; it does not characterize the journey as a release from everyday demands.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

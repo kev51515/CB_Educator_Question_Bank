@@ -1,0 +1,22 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A large boulder has a mass of 56 kilograms. What is the boulder's mass, in <strong>grams</strong>? (1 kilogram = 1,000 grams)</p>",
+  "answerOptions": null,
+  "keys": [
+    "56000"
+  ],
+  "rationale": "<p>The correct answer is 56,000. Since 1 kilogram = 1,000 grams, 56 kilograms = 56 \u00d7 1,000 = 56,000 grams.</p>",
+  "questionId": "c81499e1-s1",
+  "originalId": "c81499e1",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:23:11.785000+00:00",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

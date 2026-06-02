@@ -1,0 +1,39 @@
+{
+  "questionId": "6670e407-s1",
+  "originalId": "6670e407",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A table shows the number of students from two different camps who completed wilderness survival training in each of five years. Camp North: 90, 60, 55, 40, 80. Camp South: 60, 62, 58, 64, 66. No student attended both camps. Which of the following statements are true about the number of students who completed training over the 5 years shown?</p><p>I. The mean number from Camp North is greater than the mean number from Camp South.</p><p>II. The median number from Camp North is greater than the median number from Camp South.</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Neither I nor II</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The mean for Camp North is (90 + 60 + 55 + 40 + 80) divided by 5 = 65; the mean for Camp South is (60 + 62 + 58 + 64 + 66) divided by 5 = 62. So Camp North's mean is greater (I is true). Sorted, Camp North's values are 40, 55, 60, 80, 90 with median 60; Camp South's values are 58, 60, 62, 64, 66 with median 62. So Camp North's median is less than Camp South's median (II is false).</p><p>Choices B, C, and D are inconsistent with these calculations.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T9.easy"
+}

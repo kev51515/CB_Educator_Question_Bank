@@ -1,0 +1,22 @@
+{
+  "questionId": "adb0c96c-s1",
+  "originalId": "adb0c96c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>30</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>56</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>12</mn><mi>x</mi><mo>+</mo><mi>y</mi><mo>=</mo><mn>92</mn></math></p>\n<p>The solution to the given system of equations is <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mi>y</mi></math>?</p>",
+  "answerOptions": [],
+  "keys": [
+    "116"
+  ],
+  "rationale": "<p>The correct answer is 116. Subtract the second equation from the first: 18x = \u221236, so x = \u22122. Then y = 56 \u2212 30(\u22122) = 56 + 60 = 116.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard"
+}

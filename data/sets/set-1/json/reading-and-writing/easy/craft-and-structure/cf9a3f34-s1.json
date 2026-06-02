@@ -1,0 +1,39 @@
+{
+  "questionId": "cf9a3f34-s1",
+  "originalId": "cf9a3f34",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Louisa May Alcott's 1868 novel <em>Little Women</em>. Jo and her sister Beth are at a table laid with breakfast.</p>\n<blockquote>\n<p>&ldquo;I must have one of these warm muffins,&rdquo; said Jo, remaining in her chair and <span role=\"region\" aria-label=\"Referenced Content\"><u>extending her hand toward</u></span> the blue plate stacked high with them. &ldquo;Beth, how can you refuse? Take this one&mdash;do take this lovely one&mdash;&rdquo; And she offered her sister the largest.</p>\n</blockquote>",
+  "stem": "<p>As used in the text, what does the phrase &ldquo;extending her hand toward&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Reaching out for</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Coming up to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Combining with</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Catching up to</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because \"reaching out for\" matches the meaning of extending the hand from a seated position to bring an object closer&mdash;here, the muffins on the plate. Choice B is incorrect because \"coming up to\" implies arriving at, but the text emphasizes that Jo stays in her chair. Choice C is incorrect because \"combining with\" suggests merging, which does not describe the action of grabbing a muffin. Choice D is incorrect because \"catching up to\" implies overtaking after a gap; the plate is stationary.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A1.T2.easy"
+}

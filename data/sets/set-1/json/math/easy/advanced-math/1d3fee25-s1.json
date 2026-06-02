@@ -1,0 +1,39 @@
+{
+  "questionId": "1d3fee25-s1",
+  "originalId": "1d3fee25",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which of the following is equivalent to <math><mn>4</mn><mfenced><mrow><mn>2</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></mfenced></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>6</mn><mi>x</mi><mo>+</mo><mn>9</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>8</mn><mi>x</mi><mo>+</mo><mn>20</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>2</mn><mi>x</mi><mo>+</mo><mn>20</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>8</mn><mi>x</mi><mo>+</mo><mn>5</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>By the distributive property, 4(2x + 5) = 4\u00b72x + 4\u00b75 = 8x + 20.</p>",
+  "templateId": "equivalent-expressions.A1.T3.easy"
+}

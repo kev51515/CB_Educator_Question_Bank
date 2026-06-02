@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "35e05e19-s1",
+  "originalId": "35e05e19",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A carpenter builds wooden planter boxes, each in the shape of a right rectangular prism. Each box has a height of 14 inches. The width of each box's base is x inches, and the length of the base is 2 inches more than the width. Which function V gives the volume of each box, in cubic inches, in terms of the width of the box's base?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>V(x) = 14x(x &minus; 2)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>V(x) = x(x + 14)(x + 2)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>V(x) = x(x + 14)(x &minus; 2)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>V(x) = 14x(x + 2)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The volume of a right rectangular prism equals (base area) &times; (height). The base is a rectangle whose width is x inches and whose length is (x + 2) inches, so its area is x(x + 2) square inches. Multiplying by the height of 14 inches gives V(x) = 14x(x + 2).</p><p>Choice A uses (x &minus; 2) instead of (x + 2). Choices B and C treat 14 as a separate linear dimension rather than a height multiplier.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A4.T3.hard"
+}

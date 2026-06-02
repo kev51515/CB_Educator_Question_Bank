@@ -1,0 +1,25 @@
+{
+  "questionId": "a03008de-s1",
+  "originalId": "a03008de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A2.T4.medium",
+  "stimulus": "<p>The Proto-Indo-European language, reconstructed ancestor of hundreds of modern tongues spread across Europe and South Asia, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> like all reconstructed protolanguages, theoretical: linguists infer its features from systematic comparisons among descendant languages.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>are,</p>"},
+    {"id": "b", "content": "<p>were,</p>"},
+    {"id": "c", "content": "<p>is,</p>"},
+    {"id": "d", "content": "<p>have been,</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The convention being tested is subject-verb agreement. The singular verb \"is\" agrees in number with the singular subject \"the Proto-Indo-European language.\"</p><p>Choice A is incorrect because the plural verb \"are\" doesn&rsquo;t agree in number with the singular subject \"the Proto-Indo-European language.\" Choice B is incorrect because the plural verb \"were\" doesn&rsquo;t agree in number with the singular subject \"the Proto-Indo-European language.\" Choice D is incorrect because the plural verb \"have been\" doesn&rsquo;t agree in number with the singular subject \"the Proto-Indo-European language.\"</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

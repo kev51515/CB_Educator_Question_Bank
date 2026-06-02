@@ -1,0 +1,39 @@
+{
+  "questionId": "626a1308-s1",
+  "originalId": "626a1308",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p><strong>Data Sources for Saturn Auroral Analysis</strong></p><table border=\"1\"><thead><tr><th>Instrument</th><th>Observatory</th><th>Data type</th><th>Observation years</th></tr></thead><tbody><tr><td>STIS (Space Telescope Imaging Spectrograph)</td><td>Hubble Space Telescope</td><td>ultraviolet imaging</td><td>2007, 2017</td></tr><tr><td>NICMOS (Near Infrared Camera and Multi-Object Spectrometer)</td><td>Hubble Space Telescope</td><td>infrared spectroscopy</td><td>2008</td></tr><tr><td>IRTF (Infrared Telescope Facility) iSHELL</td><td>NASA IRTF, Mauna Kea</td><td>infrared spectroscopy</td><td>2011, 2018</td></tr><tr><td>CIRS (Composite Infrared Spectrometer)</td><td>Cassini orbiter</td><td>ultraviolet imaging</td><td>2005</td></tr></tbody></table><p>Astronomer Henrik Vasquez and colleagues have reported that Saturn's auroral emission patterns shifted substantially between 2005 and 2018. The team reached this conclusion by analyzing existing ultraviolet imaging and infrared spectroscopy data of Saturn obtained from various instruments in different years. Of the team's sources listed in the table, the earliest example of infrared spectroscopy data included in the analysis was obtained in ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2005 using CIRS on the Cassini orbiter.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>2008 using NICMOS on the Hubble Space Telescope.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>2008 using STIS on the Hubble Space Telescope.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2011 using iSHELL at the NASA IRTF.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The table lists only two instruments that collected infrared spectroscopy data: NICMOS (2008) and iSHELL (2011, 2018). The earlier of the two is NICMOS at 2008, so the earliest infrared spectroscopy datum included in the analysis was obtained in 2008 using NICMOS.</p><p>Choice A is incorrect: although 2005 is the earliest year on the table, CIRS collected ultraviolet imaging, not infrared spectroscopy. Choice C is incorrect: STIS collected ultraviolet imaging, not infrared spectroscopy. Choice D is incorrect: although iSHELL did collect infrared spectroscopy, its earliest observation (2011) is later than NICMOS's 2008 observation.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "662ebff2-s1",
+  "originalId": "662ebff2",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>In response to concerns that energy bills are routinely misunderstood by household consumers, regulators in several European countries have required utilities to add side-by-side comparison charts showing each household's monthly consumption against that of similar homes nearby. Marco Linares and colleagues studied a year's worth of such charts sent to thousands of customers and found that the comparisons produced only small and short-lived reductions in consumption. <u>Linares and colleagues note, however, that the comparison charts cost very little to print and to distribute alongside existing bills, so even the modest savings they generated arguably justified continuing the policy.</u></p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It notes a factor that led Linares and colleagues not to dismiss the comparison charts altogether despite their evidence of limited effect.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It points out a circumstance that Linares and colleagues conceded may make the charts more powerful than their study suggests.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It acknowledges a type of household that the study may not have fully represented.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It describes a consideration that explains why Linares and colleagues actively recommended scaling up the comparison-chart program.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The underlined sentence introduces the low cost of producing and distributing the charts as a reason why \"even the modest savings they generated arguably justified continuing the policy.\" That reasoning lets Linares and colleagues stop short of recommending abandonment of the intervention, even though they found only small effects.</p><p>Choice B is incorrect because the underlined portion is about cost-effectiveness, not about the magnitude of the charts' impact. Choice C is incorrect because no specific subgroup of households is mentioned. Choice D is incorrect because the underlined portion supports continuing the policy in a measured way rather than scaling it up.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T4.hard"
+}

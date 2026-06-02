@@ -1,0 +1,39 @@
+{
+  "questionId": "317e80f9-s1",
+  "originalId": "317e80f9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>x + y = 24</p><p>7y = x</p><p>What is the solution (x, y) to the given system of equations?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(23, 1)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(22, 2)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(21, 3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(24, 0)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting x = 7y into x + y = 24 gives 8y = 24, so y = 3 and x = 21.</p><p>Choices A, B, and D do not satisfy both equations.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy"
+}

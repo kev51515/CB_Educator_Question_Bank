@@ -1,0 +1,39 @@
+{
+  "questionId": "ba0edc30-s1",
+  "originalId": "ba0edc30",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><i>x</i>&sup2; &minus; 4<i>x</i> &minus; 11 = 0</p><p>One solution to the given equation can be written as 2 + &radic;<i>k</i>, where <i>k</i> is a constant. What is the value of <i>k</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Adding 11 to both sides: <i>x</i>&sup2; &minus; 4<i>x</i> = 11. Completing the square by adding 4: <i>x</i>&sup2; &minus; 4<i>x</i> + 4 = 15, so (<i>x</i> &minus; 2)&sup2; = 15. Taking the square root: <i>x</i> &minus; 2 = &plusmn;&radic;15, so <i>x</i> = 2 &plusmn; &radic;15. Therefore <i>k</i> = 15.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.hard"
+}

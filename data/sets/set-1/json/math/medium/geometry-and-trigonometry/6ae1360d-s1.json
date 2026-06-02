@@ -1,0 +1,23 @@
+{
+  "questionId": "6ae1360d-s1",
+  "originalId": "6ae1360d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A circle has a radius of 3.7 inches. The area of the circle is b&pi; square inches, where b is a constant. What is the value of b?</p>",
+  "answerOptions": null,
+  "keys": [
+    "13.69",
+    "1369/100"
+  ],
+  "rationale": "<p>The correct answer is 13.69. The area A of a circle with radius r is A = &pi;r<sup>2</sup>. Substituting b&pi; for A and 3.7 for r yields b&pi; = &pi;(3.7)<sup>2</sup>. Dividing both sides by &pi; yields b = (3.7)<sup>2</sup> = 13.69.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T3.medium"
+}

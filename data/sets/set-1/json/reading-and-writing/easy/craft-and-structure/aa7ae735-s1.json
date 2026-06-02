@@ -1,0 +1,39 @@
+{
+  "questionId": "aa7ae735-s1",
+  "originalId": "aa7ae735",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from a fictional 2019 novel. Tariq lives with his mother and uncle. On clear nights after dinner, Tariq’s uncle would sometimes bring out the old binoculars, and the family would sip mint tea on the rooftop, gazing at stars and trying to identify the ones their grandmother had taught them, often barely <u>reaching</u> a single name before another constellation distracted them.</p>",
+  "stem": "<p>As used in the text, what does the word &ldquo;reaching&rdquo; most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Consulting with</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Running to</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Arriving at</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Clinging to</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because, in context, \"reaching\" a name means arriving at or settling on the correct identification before being distracted. Choice A is incorrect because consulting suggests asking for advice. Choice B is incorrect because running to is physical movement. Choice D is incorrect because clinging suggests holding on tightly.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

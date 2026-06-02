@@ -1,0 +1,39 @@
+{
+  "questionId": "181cc4d6-s1",
+  "originalId": "181cc4d6",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Rectangle <em>P</em> has length 24 and width <em>w</em>. Rectangle <em>Q</em> has length 18 and the same length-to-width ratio as rectangle <em>P</em>. What is the width of rectangle <em>Q</em> in terms of <em>w</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>4<em>w</em>/3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3<em>w</em>/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>w</em> &minus; 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>w</em> + 6</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The length-to-width ratio of rectangle <em>P</em> is 24:<em>w</em>. If rectangle <em>Q</em> has the same ratio with length 18 and width <em>W</em>, then 24/<em>w</em> = 18/<em>W</em>. Solving for <em>W</em> gives <em>W</em> = 18<em>w</em>/24 = 3<em>w</em>/4. Choice A is incorrect because 4<em>w</em>/3 results from inverting the ratio. Choices C and D are incorrect because they treat the relationship as additive rather than multiplicative.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T3.medium"
+}

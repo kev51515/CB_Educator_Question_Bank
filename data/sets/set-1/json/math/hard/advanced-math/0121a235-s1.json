@@ -1,0 +1,39 @@
+{
+  "questionId": "0121a235-s1",
+  "originalId": "0121a235",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The polynomial function <i>p</i> has values <i>p</i>(&minus;3) = 0, <i>p</i>(&minus;1) = 0, and <i>p</i>(2) = 0. Based on these values, which of the following must be a factor of <i>p</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(<i>x</i> &minus; 3)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(<i>x</i> + 1)(<i>x</i> &minus; 2)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(<i>x</i> &minus; 1)(<i>x</i> + 2)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(<i>x</i> + 3)(<i>x</i> + 1)(<i>x</i> &minus; 2)</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. By the factor theorem, if <i>p</i>(<i>c</i>) = 0 then (<i>x</i> &minus; <i>c</i>) is a factor of <i>p</i>. Since <i>p</i>(&minus;3) = 0, <i>p</i>(&minus;1) = 0, and <i>p</i>(2) = 0, the factors (<i>x</i> + 3), (<i>x</i> + 1), and (<i>x</i> &minus; 2) must all divide <i>p</i>. The product (<i>x</i> + 3)(<i>x</i> + 1)(<i>x</i> &minus; 2) is therefore a factor.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-functions.A3.T4.hard"
+}

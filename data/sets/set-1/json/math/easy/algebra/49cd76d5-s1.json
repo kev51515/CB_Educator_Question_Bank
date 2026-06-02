@@ -1,0 +1,39 @@
+{
+  "questionId": "49cd76d5-s1",
+  "originalId": "49cd76d5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>5</mn><mi>x</mi><mo>=</mo><mn>4</mn></math>, what is the value of <math><mn>45</mn><mi>x</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>9</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>36</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>20</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>40</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Multiplying each side of <math><mn>5</mn><mi>x</mi><mo>=</mo><mn>4</mn></math> by 9 yields <math><mn>45</mn><mi>x</mi><mo>=</mo><mn>36</mn></math>.</p><p>Choice A is incorrect; this is the value of <math><mn>45</mn><mi>x</mi><mo>/</mo><mn>4</mn></math>.</p><p>Choices C and D are incorrect and may result from conceptual or calculation errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

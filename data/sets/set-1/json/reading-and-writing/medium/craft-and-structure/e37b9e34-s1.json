@@ -1,0 +1,25 @@
+{
+  "questionId": "e37b9e34-s1",
+  "originalId": "e37b9e34",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>Although researchers identified a stretch of DNA on the deep-sea tubeworm chromosome that resembles the genes regulating limb growth in vertebrates, the sequence appears to be <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in tubeworms: transcribed only rarely and producing no observable change in the worm&rsquo;s body plan.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>absent</p>"},
+    {"id": "b", "content": "<p>quiescent</p>"},
+    {"id": "c", "content": "<p>fluctuating</p>"},
+    {"id": "d", "content": "<p>pivotal</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because &ldquo;quiescent&rdquo; means inactive or at rest, which fits the negation frame &ldquo;transcribed only rarely and producing no observable change.&rdquo; The sequence is present in the tubeworm genome but is not doing anything observable&mdash;exactly the meaning of quiescent.</p><p>Choice A is incorrect because the text explicitly says researchers &ldquo;identified&rdquo; the sequence on the chromosome, so it is not absent. Choice C is incorrect because &ldquo;fluctuating&rdquo; implies the sequence changes its activity level, but the text describes a consistently inactive state, not variability. Choice D is incorrect because &ldquo;pivotal&rdquo; means crucially influential, the opposite of what the negation frame (&ldquo;no observable change&rdquo;) establishes.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

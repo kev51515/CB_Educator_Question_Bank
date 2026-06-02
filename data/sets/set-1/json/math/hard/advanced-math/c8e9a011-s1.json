@@ -1,0 +1,39 @@
+{
+  "questionId": "c8e9a011-s1",
+  "originalId": "c8e9a011",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>12/<i>m</i> &minus; 3/<i>p</i> = &minus;3/<i>q</i></p><p>The given equation relates the variables <i>m</i>, <i>p</i>, and <i>q</i>, where <i>m</i> &gt; 0, <i>p</i> &gt; 0, and <i>q</i> &gt; <i>p</i>. Which expression is equivalent to <i>m</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>12<i>pq</i></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3(<i>p</i> &minus; <i>q</i>)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4<i>pq</i>/(<i>q</i> &minus; <i>p</i>)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(<i>q</i> &minus; <i>p</i>)/(4<i>pq</i>)</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Rearranging: 12/<i>m</i> = 3/<i>p</i> &minus; 3/<i>q</i> = 3(<i>q</i> &minus; <i>p</i>)/(<i>pq</i>). Inverting: <i>m</i>/12 = <i>pq</i>/(3(<i>q</i> &minus; <i>p</i>)), so <i>m</i> = 12<i>pq</i>/(3(<i>q</i> &minus; <i>p</i>)) = 4<i>pq</i>/(<i>q</i> &minus; <i>p</i>). Choices A, B, and D arise from algebraic errors (failing to combine fractions over a common denominator, sign error, or inverting incorrectly).</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A1.T1.hard"
+}

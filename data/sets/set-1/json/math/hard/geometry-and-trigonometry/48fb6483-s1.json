@@ -1,0 +1,22 @@
+{
+  "questionId": "48fb6483-s1",
+  "originalId": "48fb6483",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>In triangle LMN, angle M is a right angle, point P lies on segment LN, and point Q lies on segment MN such that segment PQ is parallel to segment LM. If the measure of angle LNM is 52\u00b0, what is the measure, in degrees, of angle LPQ?</p>",
+  "answerOptions": [],
+  "keys": [
+    "142"
+  ],
+  "rationale": "<p>Since PQ \u2225 LM and \u2220M is a right angle, \u2220NQP is also a right angle. In triangle NPQ, the angles sum to 180\u00b0, so \u2220NPQ = 180 \u2212 90 \u2212 52 = 38\u00b0. Angle LPQ is supplementary to \u2220NPQ (since L, P, N are collinear), so the measure of \u2220LPQ is 180 \u2212 38 = 142\u00b0.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "lines-angles-and-triangles.A2.T3.hard"
+}

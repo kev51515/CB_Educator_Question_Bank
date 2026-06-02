@@ -1,0 +1,25 @@
+{
+  "questionId": "dd349efc-s1",
+  "originalId": "dd349efc",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Participants&rsquo; Evaluation of the Likelihood That AI Assistants Could Perform Effectively in Different Occupations</p></caption><thead><tr><th scope=\"col\">Occupation</th><th scope=\"col\">Somewhat or very unlikely (%)</th><th scope=\"col\">Neutral (%)</th><th scope=\"col\">Somewhat or very likely (%)</th></tr></thead><tbody><tr><th scope=\"row\">customer support agent</th><td>21</td><td>10</td><td>69</td></tr><tr><th scope=\"row\">accountant</th><td>34</td><td>17</td><td>49</td></tr><tr><th scope=\"row\">paramedic</th><td>66</td><td>8</td><td>26</td></tr><tr><th scope=\"row\">therapist</th><td>78</td><td>8</td><td>14</td></tr><tr><th scope=\"row\">translator</th><td>11</td><td>9</td><td>80</td></tr></tbody></table></figure></p><p>Cornell roboticist Hadas Kress-Gazit and labor economist Tasha Lin, along with ethicist Daniel Wong, were interested in people&rsquo;s perceptions of AI assistants&rsquo; competence. They recruited participants and asked how likely they think it is that an AI assistant could perform the work required in various occupations. Participants&rsquo; evaluations varied widely depending on which occupation was being considered; for example, <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the example?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>80% of participants believe that it is somewhat or very likely that an AI assistant could perform effectively as a translator, but only 14% believe that it is somewhat or very likely that an AI assistant could work as a therapist.</p>"},
+    {"id": "b", "content": "<p>49% of participants believe that it is somewhat or very likely that an AI assistant could work effectively as an accountant, but 34% believe that it is somewhat or very unlikely that an AI assistant could do so.</p>"},
+    {"id": "c", "content": "<p>8% of participants were neutral about whether an AI assistant could perform effectively as a paramedic, which is the same percentage of participants who were neutral when asked about an AI assistant working as a therapist.</p>"},
+    {"id": "d", "content": "<p>66% of participants believe that it is somewhat or very unlikely that an AI assistant could perform effectively as a paramedic.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer because it contrasts two occupations (translator: 80% likely; therapist: 14% likely), illustrating that participants&rsquo; evaluations varied widely with the occupation. Choice B is incorrect because it discusses only one occupation (accountant). Choice C is incorrect because it identifies a similarity, not a variation. Choice D is incorrect because it describes a single occupation only.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

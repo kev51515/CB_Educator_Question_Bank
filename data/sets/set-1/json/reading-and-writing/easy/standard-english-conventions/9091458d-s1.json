@@ -1,0 +1,39 @@
+{
+  "questionId": "9091458d-s1",
+  "originalId": "9091458d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Mudskippers don't simply swim through the shallows. They can leap across the mud, traveling up to half a meter in a single bound. How <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> A specialized tail flick combined with strong pectoral fins propels them across the wet surface.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>they manage to jump so far!</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>are they able to jump so far?</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>they manage to jump so far.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&nbsp;are they able to jump so far.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The convention being tested is end-of-sentence punctuation. The clause has the inverted word order of a direct question (\"are they able to jump so far\"), so it must end with a question mark.</p><p>Choice A is incorrect because the clause uses declarative word order rather than question word order, and an exclamation point doesn't match the neutral tone of the sentence. Choice C is incorrect because a declarative clause shouldn't begin with the question word \"How\" used this way and shouldn't have inverted-then-not word order. Choice D is incorrect because a period can't be used to punctuate a direct question.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

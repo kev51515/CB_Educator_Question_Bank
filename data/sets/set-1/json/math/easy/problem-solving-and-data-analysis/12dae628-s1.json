@@ -1,0 +1,39 @@
+{
+  "questionId": "12dae628-s1",
+  "originalId": "12dae628",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>3, 5, 11, 15, 21</p><p>What is the mean of the data shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>9</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The mean of a data set is the sum of the values divided by the number of values. The sum is 3 + 5 + 11 + 15 + 21 = 55. There are 5 data values, so the mean is 55 divided by 5 = 11.</p><p>Choices A and B are not equal to the mean of this set.</p><p>Choice D is incorrect: 15 is a value in the set, not the mean.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A1.T1.easy"
+}

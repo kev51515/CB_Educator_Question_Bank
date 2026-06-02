@@ -1,0 +1,39 @@
+{
+  "questionId": "0021d326-s1",
+  "originalId": "0021d326",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>Hagfish are eel-like animals that live in cold, dark waters at the bottom of the ocean. Scientists once thought that hagfish remain near the seafloor all their lives. However, Yuki Mori and colleagues claim that <span style=\"text-decoration: underline;\">hagfish regularly travel upward into the open ocean to find food and to reproduce</span>.</p>",
+  "stem": "<p>Which finding, if true, would most strongly support the underlined claim?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Researchers discover that small midwater fish, which never reach the seafloor, are a major part of hagfish diets.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Researchers determine that hagfish reproduce only a few times in their lives.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Researchers confirm that hagfish live only in certain regions of the world's oceans.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Researchers learn that hagfish nervous systems differ from those of other fish.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Midwater fish that never reach the seafloor would only enter hagfish diets if hagfish traveled upward into the open ocean, which directly supports the underlined claim.</p><p>Choice B is incorrect; reproduction frequency does not address whether hagfish travel upward. Choice C is incorrect; the geographic distribution of hagfish does not address vertical movement. Choice D is incorrect; nervous system differences do not address feeding or reproduction at higher depths.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.easy"
+}

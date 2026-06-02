@@ -1,0 +1,39 @@
+{
+  "questionId": "a3761c7e-s1",
+  "originalId": "a3761c7e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Physicist Vera Rubin performed <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> work on galaxy rotation in the 1970s and 1980s, conducting key observations that later researchers used as the basis for the modern understanding of dark matter.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>supplementary</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>repetitive</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>ineffective</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>pioneering</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because \"pioneering\" means foundational or trailblazing, matching the idea that Rubin’s work served as the basis for later studies. Choice A is incorrect because supplementary suggests her work was secondary, not central. Choice B is incorrect because the work was original. Choice C is incorrect because ineffective contradicts the description.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

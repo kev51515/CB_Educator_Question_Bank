@@ -1,0 +1,39 @@
+{
+  "questionId": "d1b8a9ad-s1",
+  "originalId": "d1b8a9ad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Reggaeton remains one of the most dismissed popular music genres of the past three decades. But as scholars increasingly argue, the genre rewards much closer attention than many critics have been willing to give it. Take the case of reggaeton pioneer Ivy Queen: her early hits frequently engaged with themes of gender autonomy, consent, and economic precarity in ways that drew on rhetorical traditions from Puerto Rican feminist activism. Treating her songs as merely danceable party tracks, scholars contend, misses how carefully she constructed her lyrics&mdash;and underestimates the social and political work the genre has been doing throughout its development.</p>",
+  "stem": "<p>What does the text most strongly suggest about the reggaeton genre?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Its popularity has steadily increased among scholars but declined among general audiences.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It is often underestimated by critics who treat its songs as superficial when in fact the genre engages substantively with social and political themes.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Its early development was shaped almost entirely by a single artist, Ivy Queen.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Its themes have shifted significantly over time as artists have moved away from socially conscious material.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. The text argues that reggaeton is dismissed but in fact deserves close attention, using Ivy Queen&rsquo;s lyrics as evidence that the genre engages substantively with social and political themes&mdash;suggesting that critics&rsquo; dismissals underestimate its substance.</p><p>Choice A is incorrect because the text doesn&rsquo;t discuss general-audience popularity. Choice C is incorrect because Ivy Queen is offered as a specific example, not a sole shaper of the genre. Choice D is incorrect because the text doesn&rsquo;t describe a shift away from socially conscious material.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

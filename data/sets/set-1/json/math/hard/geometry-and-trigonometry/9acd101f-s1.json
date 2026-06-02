@@ -1,0 +1,39 @@
+{
+  "questionId": "9acd101f-s1",
+  "originalId": "9acd101f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation x<sup>2</sup> + (y + 4)<sup>2</sup> = 25 represents circle P. Circle Q is obtained by shifting circle P up 3 units in the xy-plane. Which of the following equations represents circle Q?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(x \u2212 3)<sup>2</sup> + (y + 4)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>x<sup>2</sup> + (y + 1)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>x<sup>2</sup> + (y + 7)<sup>2</sup> = 25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(x + 3)<sup>2</sup> + (y + 4)<sup>2</sup> = 25</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>The standard form (x \u2212 h)<sup>2</sup> + (y \u2212 k)<sup>2</sup> = r<sup>2</sup> describes a circle with center (h, k) and radius r. Circle P, x<sup>2</sup> + (y + 4)<sup>2</sup> = 25, has center (0, \u22124) and radius 5. Shifting up 3 units adds 3 to the y-coordinate of the center, giving center (0, \u22121) and the equation x<sup>2</sup> + (y + 1)<sup>2</sup> = 25.</p>",
+  "generatedAt": "2026-05-26T01:18:40Z",
+  "templateId": "circles.A2.T5.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "d72a2b4d-s1",
+  "originalId": "d72a2b4d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In June, the price of a vintage poster was $24.00. In July, the price of the vintage poster was $26.40. The price of the vintage poster in July was <em>p</em>% of the price of the vintage poster in June. What is the value of <em>p</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>90</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>190</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>110</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The July price as a percent of the June price equals (26.40/24.00) &times; 100% = 1.1 &times; 100% = 110%. So <em>p</em> = 110. Choice A is incorrect; 10 would be the percent increase, not the price ratio expressed as a percent. Choice B is incorrect; 90 would correspond to the July price being 90% of the June price (a decrease). Choice C is incorrect; 190 corresponds to nearly doubling the price.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "percentages.A2.T1.medium"
+}

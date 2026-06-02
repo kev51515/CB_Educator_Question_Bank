@@ -1,0 +1,25 @@
+{
+  "questionId": "e9908930-s1",
+  "originalId": "e9908930",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "templateId": "linear-functions.A3.T2.easy",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table shows three values of x and their corresponding values of f(x) for a linear function f. If h(x) = f(x) - 8, which equation defines h?</p><table border=\"1\"><tr><th>x</th><th>f(x)</th></tr><tr><td>0</td><td>10</td></tr><tr><td>3</td><td>22</td></tr><tr><td>6</td><td>34</td></tr></table>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>h(x) = 4x + 2</p>"},
+    {"id": "b", "content": "<p>h(x) = 4x + 18</p>"},
+    {"id": "c", "content": "<p>h(x) = 4x - 8</p>"},
+    {"id": "d", "content": "<p>h(x) = 12x + 2</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. From the table, the slope of f is (22 - 10)/(3 - 0) = 4, and the y-intercept is 10, so f(x) = 4x + 10. Then h(x) = f(x) - 8 = 4x + 2.</p><p>Choice B adds 8 instead of subtracting. Choice C subtracts the whole y-intercept of f. Choice D uses the wrong slope.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

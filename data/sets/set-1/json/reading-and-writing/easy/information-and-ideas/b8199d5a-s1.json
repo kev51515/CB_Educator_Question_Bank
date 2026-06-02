@@ -1,0 +1,39 @@
+{
+  "questionId": "b8199d5a-s1",
+  "originalId": "b8199d5a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Total Areas and 2022 Populations of Smallest European Countries</caption><thead><tr><th>Country</th><th>Total area (square miles)</th><th>2022 population</th></tr></thead><tbody><tr><td>Vatican City</td><td>0.19</td><td>800</td></tr><tr><td>Monaco</td><td>0.78</td><td>36,000</td></tr><tr><td>San Marino</td><td>24</td><td>33,000</td></tr><tr><td>Liechtenstein</td><td>62</td><td>40,000</td></tr><tr><td>Malta</td><td>122</td><td>520,000</td></tr></tbody></table></figure>",
+  "stem": "<p>According to the table, what is the total area of Liechtenstein?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>0.78 square miles</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>122 square miles</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>24 square miles</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>62 square miles</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because the table shows Liechtenstein has a total area of 62 square miles.</p><p>Choice A is incorrect: 0.78 is the total area of Monaco. Choice B is incorrect: 122 is the total area of Malta. Choice C is incorrect: 24 is the total area of San Marino.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T7.easy"
+}

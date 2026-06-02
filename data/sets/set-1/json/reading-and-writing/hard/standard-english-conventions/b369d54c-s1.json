@@ -1,0 +1,25 @@
+{
+  "questionId": "b369d54c-s1",
+  "originalId": "b369d54c",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "templateId": "form-structure-and-sense.A4.T9.hard",
+  "stimulus": "<p>Forged from reclaimed copper sheets and hand burnished using a hammering technique inherited from the sculptor's Bolivian uncle, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> so warm and visually inviting that you are tempted to walk between them.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>the Bolivian metal sculptor Tomás Quispe creates standing panels that are</p>"},
+    {"id": "b", "content": "<p>when he creates his standing panels, Bolivian metal sculptor Tomás Quispe makes them</p>"},
+    {"id": "c", "content": "<p>Tomás Quispe is a Bolivian metal sculptor whose standing panels are</p>"},
+    {"id": "d", "content": "<p>the standing panels of Bolivian metal sculptor Tomás Quispe are</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is subject-modifier placement. This choice makes the noun phrase \"standing panels\" the subject of the sentence and places it immediately after the modifying phrase \"Forged&hellip;uncle.\" In doing so, this choice clearly establishes that the standing panels&mdash;and not another noun in the sentence&mdash;are being described as forged from reclaimed copper sheets and hand burnished.</p><p>Choice A is incorrect because it results in a dangling modifier. The placement of the noun phrase \"the Bolivian metal sculptor Tomás Quispe\" immediately after the modifying phrase illogically suggests that Quispe is forged from reclaimed copper sheets and hand burnished. Choice B is incorrect because it results in a dangling modifier. The placement of the pronoun \"he\" and the noun phrase \"Bolivian metal sculptor Tomás Quispe\" after the modifying phrase illogically suggests that Quispe is forged from reclaimed copper sheets and hand burnished. Choice C is incorrect because it results in a dangling modifier. The placement of the noun \"Tomás Quispe\" immediately after the modifying phrase illogically suggests that Quispe is forged from reclaimed copper sheets and hand burnished.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

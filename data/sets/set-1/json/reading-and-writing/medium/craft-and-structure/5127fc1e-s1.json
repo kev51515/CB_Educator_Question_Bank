@@ -1,0 +1,25 @@
+{
+  "questionId": "5127fc1e-s1",
+  "originalId": "5127fc1e",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T8.medium",
+  "stimulus": "<p>The geomagnetic equator&mdash;the line along which Earth's magnetic field lines run horizontally relative to the surface&mdash;is detectable only with specialized instruments. Inspired by the orientation strategies of certain sea turtles and salmon, researchers devised a method for tracing the geomagnetic equator at sea using polarized starlight, which becomes faintly aligned as it passes through the upper atmosphere. A wide-aperture star tracker captures images of polarization patterns, which shift as Earth rotates through the night; temporal variations across images can then be used to determine a navigator's magnetic latitude and bearing relative to the geomagnetic equator.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>It presents a magnetic-based method of navigation, lists the advantages of an alternative method used by certain animals based on an unrelated natural phenomenon, and then indicates how researchers compared the two methods' accuracy.</p>"},
+    {"id": "b", "content": "<p>It identifies an obstacle to observing a geophysical feature, mentions a navigational ability of certain animals that inspired a way around that obstacle, and then explains how researchers used an instrument to imitate that ability.</p>"},
+    {"id": "c", "content": "<p>It illustrates how most navigational tools rely on the geomagnetic equator, recounts how researchers discovered that certain animals navigate without it, and then proposes that this discovery could be used to bypass problems linked to its use.</p>"},
+    {"id": "d", "content": "<p>It explains how the geomagnetic equator is typically detected, emphasizes a key difference between how humans and certain animals use it for navigation, and then suggests another way of using it to improve existing instruments.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The text opens by noting an obstacle to observing a geophysical feature: the geomagnetic equator is detectable only with specialized instruments. It then notes that, inspired by the orientation strategies of sea turtles and salmon, researchers devised a way to trace the geomagnetic equator at sea using polarized starlight. Finally, it explains how a wide-aperture star tracker imitates that natural ability by capturing polarization patterns across images. The structure is therefore obstacle, biological inspiration, and instrument-based mimicry.</p><p>Choice A is incorrect because the text does not enumerate advantages of an animal method or report a comparative accuracy assessment. Choice C is incorrect because the text does not claim that most navigational tools rely on the geomagnetic equator or that animals navigate without it. Choice D is incorrect because the text does not contrast human and animal use of the geomagnetic equator or propose improvements to existing instruments.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "263f9937-s1",
+  "originalId": "263f9937",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <i>P</i> is defined by <i>P</i>(<i>t</i>) = <i>a</i>&middot;<i>b</i><sup><i>t</i></sup>, where <i>a</i> and <i>b</i> are positive constants. If <i>P</i>(0) = 50 and <i>P</i>(4) = 800, what is the value of <i>P</i>(6)?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>3,200</p>"},
+    {"id": "b", "content": "<p>1,600</p>"},
+    {"id": "c", "content": "<p>1,200</p>"},
+    {"id": "d", "content": "<p>6,400</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. Since <i>P</i>(0) = <i>a</i>&middot;<i>b</i><sup>0</sup> = <i>a</i> = 50, we have <i>a</i> = 50. Then <i>P</i>(4) = 50&middot;<i>b</i><sup>4</sup> = 800, so <i>b</i><sup>4</sup> = 16, giving <i>b</i> = 2 (since <i>b</i> &gt; 0). Therefore <i>P</i>(<i>t</i>) = 50&middot;2<sup><i>t</i></sup>, and <i>P</i>(6) = 50&middot;2<sup>6</sup> = 50&middot;64 = 3,200.</p><p>Choice B uses <i>b</i><sup>5</sup> instead of <i>b</i><sup>6</sup>. Choice C and Choice D result from arithmetic errors with the base.</p>",
+  "generatedAt": "2026-05-27T00:00:11Z",
+  "templateId": "nonlinear-functions.A6.T1.hard"
+}

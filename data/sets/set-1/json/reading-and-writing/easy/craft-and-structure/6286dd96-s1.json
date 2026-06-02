@@ -1,0 +1,39 @@
+{
+  "questionId": "6286dd96-s1",
+  "originalId": "6286dd96",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>The following text is adapted from Louisa May Alcott's 1868 novel <em>Little Women</em>. Jo is a young writer.</p><blockquote><p>Jo not only could write stories, but she adored writing them. When she sat at her small desk in the attic and began to <span style=\"text-decoration: underline;\" role=\"region\" aria-label=\"Referenced Content\">invent</span> astonishing things, her dark eyes grew bright, her cheeks flushed, and, without knowing she was doing it, she began to whisper the words aloud, making the events on the page lively or fearsome by the rise or fall of her voice.</p></blockquote>",
+  "stem": "<p>As used in the text, what does the word \"invent\" most nearly mean?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Create</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Disguise</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Discover</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Mislead</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because Jo is sitting down to write stories at her desk, and the surrounding sentences describe her bringing imagined events to life on the page. \"Create\" matches the act of producing new stories from her imagination.</p><p>Choice B is incorrect because she is not hiding anything; she is producing new material. Choice C is incorrect because she is making up the stories herself, not finding things that already existed. Choice D is incorrect because she is not deceiving anyone—she is composing fiction at her desk.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "words-in-context.A1.T1.easy"
+}

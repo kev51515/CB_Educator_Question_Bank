@@ -1,0 +1,25 @@
+{
+  "questionId": "daaed806-s1",
+  "originalId": "daaed806",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>Researchers led by Aiko Tanaka at the University of Tokyo are studying the venomous platypus to determine whether biological characteristics such as the animal's age and sex have <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> effect on the chemical composition of its venom&mdash;that is, to see if these traits are linked to meaningful variations in the venom's makeup.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>an imperceptible</p>"},
+    {"id": "b", "content": "<p>an alarming</p>"},
+    {"id": "c", "content": "<p>a notable</p>"},
+    {"id": "d", "content": "<p>an acceptable</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because \"notable\" means significant or worthy of attention, matching the text's reference to \"meaningful variations\" the researchers want to detect. Choice A is incorrect because \"imperceptible\" means not noticeable, the opposite of meaningful variation. Choice B is incorrect because \"alarming\" suggests cause for fear; the text describes scientific inquiry, not threat assessment. Choice D is incorrect because \"acceptable\" suggests satisfactory; the researchers are studying magnitude of variation, not appropriateness.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T3.easy"
+}

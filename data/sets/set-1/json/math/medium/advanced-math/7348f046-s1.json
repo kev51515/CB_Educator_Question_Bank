@@ -1,0 +1,39 @@
+{
+  "questionId": "7348f046-s1",
+  "originalId": "7348f046",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Which of the following is equivalent to (5x + 8) \u2212 (2x + 3)?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3x + 11</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>7x + 5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>3x + 5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>7x + 11</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Distribute the negative sign: 5x + 8 \u2212 2x \u2212 3 = (5x \u2212 2x) + (8 \u2212 3) = 3x + 5. Choice (c) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "equivalent-expressions.A1.T2.medium"
+}

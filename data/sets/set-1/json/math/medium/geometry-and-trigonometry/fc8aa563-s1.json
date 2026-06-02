@@ -1,0 +1,39 @@
+{
+  "questionId": "fc8aa563-s1",
+  "originalId": "fc8aa563",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Circles",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>What is the center of the circle in the <em>xy</em>-plane defined by the equation (x + 5)<sup>2</sup> + (y &minus; 3)<sup>2</sup> = 4?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(5, 3)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(&minus;5, 3)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(5, &minus;3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(&minus;5, &minus;3)</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The standard equation of a circle is (x &minus; h)<sup>2</sup> + (y &minus; k)<sup>2</sup> = r<sup>2</sup>, with center (h, k). Rewriting (x + 5)<sup>2</sup> as (x &minus; (&minus;5))<sup>2</sup> gives h = &minus;5 and k = 3, so the center is (&minus;5, 3). Choices A, C, and D have the wrong signs for one or both coordinates.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "circles.A1.T1.medium"
+}

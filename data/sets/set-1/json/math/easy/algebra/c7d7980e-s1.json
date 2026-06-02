@@ -1,0 +1,22 @@
+{
+  "questionId": "c7d7980e-s1",
+  "originalId": "c7d7980e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mn>11</mn><mi>y</mi><mo>=</mo><mn>96</mn><mo>-</mo><mi>y</mi></math></p><p>What value of <math><mi>y</mi></math> is the solution to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "8"
+  ],
+  "rationale": "<p>The correct answer is <math><mn>8</mn></math>. Adding <math><mi>y</mi></math> to both sides yields <math><mn>12</mn><mi>y</mi><mo>=</mo><mn>96</mn></math>. Dividing both sides by 12 yields <math><mi>y</mi><mo>=</mo><mn>8</mn></math>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A1.T3.easy"
+}

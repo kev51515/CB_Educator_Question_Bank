@@ -1,0 +1,25 @@
+{
+  "questionId": "d748c3fd-s1",
+  "originalId": "d748c3fd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A3.T7.medium",
+  "stimulus": "<p>In her 2019 article &ldquo;Bus Stops as Archives,&rdquo; scholar Priya Chandrasekaran describes Hema Iyer (1901&ndash;1978), a devoted collector of bus and rail tickets, transit timetables, and printed station advertisements gathered during decades of commuting through Mumbai. Iyer recognized that university libraries considered her enormous collection of urban ephemera to be of little academic value&mdash;indeed, it wasn&rsquo;t until 1984, after Iyer&rsquo;s death, that the Bombay City Archives accepted the collection, having come to see its potential usefulness to social historians studying daily commuter life. Hence, the example of Iyer serves to <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>show that present-day historians of Mumbai cannot work effectively without access to transit ephemera.</p>"},
+    {"id": "b", "content": "<p>represent the practical challenges that archives face in physically housing very large ephemera collections.</p>"},
+    {"id": "c", "content": "<p>support continuing claims by some scholars that ephemera holds no real research value.</p>"},
+    {"id": "d", "content": "<p>illustrate both the relatively low scholarly esteem in which urban ephemera was once held and the later recognition of its possible utility.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Iyer collected items that university libraries initially dismissed as low-value; only later did an archive accept the collection after coming to appreciate its usefulness to historians. That trajectory&mdash;from disregard to recognition&mdash;is precisely what her example illustrates.</p><p>Choice A is incorrect because the text reports that the archive eventually acquired the collection, so contemporary historians do have access. Choice B is incorrect because the text never suggests storage or handling was a problem; the issue was perceived value. Choice C is incorrect because the example tells against, not in favor of, the view that ephemera lacks scholarly value.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "808f7d6c-s1",
+  "originalId": "808f7d6c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <em>x</em>/3 = 7, what is the value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>10</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7/3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>21</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Multiplying both sides of x/3 = 7 by 3 gives x = 21.</p><p>Choice A is incorrect; it results from adding 3 instead of multiplying. Choice B is incorrect; it results from subtracting 3 from 7. Choice C is incorrect; it results from dividing instead of multiplying.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.misc.easy"
+}

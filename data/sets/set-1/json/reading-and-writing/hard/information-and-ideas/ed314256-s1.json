@@ -1,0 +1,39 @@
+{
+  "questionId": "ed314256-s1",
+  "originalId": "ed314256",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>The most recent staging of the participatory performance piece <em>Threshold Hours</em>, which opened in Berlin in 2019, converts its performance space&mdash;an abandoned subway station&mdash;into a stylized depiction of a 1970s-era city. Audience members, who roam the platforms and tunnels at their own pace, encounter performers playing commuters, ticket clerks, and street vendors in scenes that unfold in multiple locations simultaneously. Significantly, the design team treats the station&rsquo;s peeling tiles, exposed wiring, and water-stained walls not as defects to be masked but as defining textures of the production: the same patch of corridor can serve, depending on the angle and lighting in a given scene, as a bustling thoroughfare, a hidden alley, or the dimly lit edge of a half-remembered dream.</p>",
+  "stem": "<p>What does the text most strongly suggest about <em>Threshold Hours</em>&rsquo;s use of its performance space?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The production deliberately incorporates the station&rsquo;s imperfect physical features so that a single space can take on different identities across scenes.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The production&rsquo;s creators have struggled to control how audience members interpret the station&rsquo;s deteriorating physical features.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The production avoids drawing attention to the station&rsquo;s deteriorating condition in order to preserve the illusion of a real 1970s city.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The production relies on extensive set construction to disguise the station&rsquo;s original features.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text says the design team treats the station&rsquo;s peeling tiles, exposed wiring, and water-stained walls as defining textures of the production, and that the same corridor can serve as different settings depending on angle and lighting&mdash;directly supporting the idea that the production deliberately uses imperfect features so a single space can take on multiple identities.</p><p>Choice B is incorrect because the text doesn&rsquo;t suggest a struggle to control interpretation. Choice C is incorrect because the production embraces, rather than masks, the station&rsquo;s condition. Choice D is incorrect because the text doesn&rsquo;t describe extensive set construction.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A3.T6.hard"
+}

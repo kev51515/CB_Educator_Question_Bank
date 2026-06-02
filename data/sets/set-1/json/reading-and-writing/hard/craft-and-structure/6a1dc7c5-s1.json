@@ -1,0 +1,25 @@
+{
+  "questionId": "6a1dc7c5-s1",
+  "originalId": "6a1dc7c5",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "templateId": "cross-text-connections.A1.T1.hard",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>Herman Melville's 1857 novel <em>The Confidence-Man</em> stands apart from his other major works. His earlier novels build tightly around extended seafaring adventures and probe their characters' inner lives at length, whereas <em>The Confidence-Man</em> proceeds through a loosely linked series of conversations on a Mississippi steamboat and renders its characters' minds far more obliquely. Melville himself sometimes treated the novel as a minor experiment, once describing it dismissively as \"a curiosity.\"</p>\n<p><strong>Text 2</strong></p>\n<p>Like Melville's other great novels, <em>The Confidence-Man</em> dramatizes how people negotiate trust in a world full of strangers. Like those earlier works, it scrutinizes the deceptions people enact for themselves and for one another. Though its tone is sharper, more sardonic&mdash;the comedy of a sustained con rather than the grandeur of a hunted whale&mdash;this seeming \"curiosity\" engages no less seriously with the moral preoccupations that animate the handful of Melville's novels now regarded as classics.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the assessment of <em>The Confidence-Man</em> presented in Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By agreeing that <em>The Confidence-Man</em> is less impressive than certain other novels by Melville but arguing that it should still be regarded as a classic</p>"},
+    {"id": "b", "content": "<p>By concurring that the reputation of <em>The Confidence-Man</em> as a minor work has led readers to overlook this novel but maintaining that the reputation is unearned</p>"},
+    {"id": "c", "content": "<p>By acknowledging that <em>The Confidence-Man</em> clearly differs from Melville's other major novels but insisting on its centrality to his body of work nonetheless</p>"},
+    {"id": "d", "content": "<p>By conceding that Melville's talents were best suited to seafaring novels but asserting that the comic register of <em>The Confidence-Man</em> is often effective</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. Both texts agree that <em>The Confidence-Man</em> is unusual for Melville: Text 1 calls it an outlier and a minor experiment, while Text 2 describes its tone as sharper and more sardonic. But Text 2 also insists the novel engages with the moral preoccupations that animate Melville's recognized classics, so its author would likely accept that <em>The Confidence-Man</em> differs from Melville's other novels while insisting on its importance.</p><p>Choice A is incorrect because Text 2 does not portray <em>The Confidence-Man</em> as less impressive; it claims the novel engages just as seriously with Melville's themes. Choice B is incorrect because neither text suggests that readers have generally overlooked the novel. Choice D is incorrect because Text 2 does not concede that Melville's talents were best suited to seafaring novels; it compares <em>The Confidence-Man</em> favorably to those works.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

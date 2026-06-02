@@ -1,0 +1,39 @@
+{
+  "questionId": "8c1aa743-s1",
+  "originalId": "8c1aa743",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Rectangles WXYZ and JKLM are similar. The length of each side of JKLM is 5 times the length of the corresponding side of WXYZ. The area of WXYZ is 8 square units. What is the area, in square units, of JKLM?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>200</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>40</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>25</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1,600</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The ratio of areas of similar figures is the square of the linear scale factor. With scale factor 5, areas scale by 25, so JKLM has area 8 &times; 25 = 200 square units.</p><p>Choice B multiplies by 5 instead of 25. Choice C gives only the area scale factor. Choice D squares 40.</p>",
+  "generatedAt": "2026-05-26T00:28:47Z",
+  "templateId": "area-and-volume.A3.T1.medium"
+}

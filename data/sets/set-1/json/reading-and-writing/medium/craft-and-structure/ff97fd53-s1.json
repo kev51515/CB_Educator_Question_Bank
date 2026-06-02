@@ -1,0 +1,25 @@
+{
+  "questionId": "ff97fd53-s1",
+  "originalId": "ff97fd53",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>In 1968, weaver Kahlil Robles began hosting Saturday workshops in his garage in San Antonio for fellow Tejano fiber artists who, like him, wanted a place to share traditional Rio Grande techniques alongside experimental designs. Demand grew quickly, and within two years Robles had moved the workshops into a rented storefront on the city&rsquo;s west side, where the gatherings became known as the Casa de Telar. Relocating to a permanent studio in 1979, the Casa de Telar broadened its work beyond weaving to include natural-dye instruction and exhibitions of Tejano textile art. More than five decades later, it continues to train new generations of weavers across South Texas.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To give an overview of the origins and continuing work of the Casa de Telar</p>"},
+    {"id": "b", "content": "<p>To explain what led Robles to host weaving workshops in his garage</p>"},
+    {"id": "c", "content": "<p>To describe why the Casa de Telar broadened its activities to include natural-dye instruction</p>"},
+    {"id": "d", "content": "<p>To situate the Casa de Telar within the wider history of textile art in Texas</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The text traces a brief history of the Casa de Telar, from its 1968 garage beginnings, through its move to a storefront and then a permanent studio in 1979, to its ongoing training of new weavers across South Texas.</p><p>Choice B is incorrect. The text says Robles wanted a place for Tejano fiber artists to share techniques and designs, but it does not focus on his motivations as the main purpose. Choice C is incorrect. The expansion into natural-dye instruction is mentioned in one sentence and is only one moment in a longer history. Choice D is incorrect. The text does not discuss textile art in Texas as a whole, only the Casa de Telar.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

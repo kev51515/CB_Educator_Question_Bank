@@ -1,0 +1,39 @@
+{
+  "questionId": "80aa7690-s1",
+  "originalId": "80aa7690",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The Niger-Congo language family encompasses Yoruba, Swahili, and roughly 1,500 other languages across sub-Saharan Africa, making it one of the most extensive language families in the world and of central importance to ______ of the University of Cape Town.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>linguist Lutz Marten,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>linguist, Lutz Marten,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>linguist: Lutz Marten</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>linguist Lutz Marten</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. No punctuation is needed to set off the proper noun \"Lutz Marten\" from the title \"linguist,\" because the name is essential to identify which linguist is meant.</p><p>Choice A is incorrect because a comma after the name treats it as if more nonessential information followed, which is not the case. Choice B is incorrect because enclosing the name in commas treats it as nonessential, suggesting it could be removed without affecting the sentence&rsquo;s meaning. Choice C is incorrect because a colon between \"linguist\" and the name disrupts the sentence&rsquo;s flow, suggesting an introductory list rather than direct identification.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A3.T6.hard"
+}

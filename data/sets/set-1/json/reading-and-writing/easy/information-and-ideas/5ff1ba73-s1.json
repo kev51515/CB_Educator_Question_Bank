@@ -1,0 +1,39 @@
+{
+  "questionId": "5ff1ba73-s1",
+  "originalId": "5ff1ba73",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<figure><table><caption>Public Libraries in Four British Cities, Mid-Nineteenth Century</caption><thead><tr><th>City</th><th>Year</th><th>Number of public libraries</th><th>Population</th></tr></thead><tbody><tr><td>London</td><td>1860</td><td>40</td><td>2,800,000</td></tr><tr><td>Manchester</td><td>1860</td><td>22</td><td>360,000</td></tr><tr><td>Liverpool</td><td>1860</td><td>15</td><td>440,000</td></tr><tr><td>Bristol</td><td>1860</td><td>18</td><td>155,000</td></tr></tbody></table></figure><p>The table shows that while London had by far the largest population in 1860, public libraries were more concentrated in some smaller cities. For example, ______</p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Manchester had far fewer inhabitants than London did but had many more libraries.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>there were 15 libraries in Liverpool but 22 libraries in Manchester despite the two cities having nearly equal populations.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>London had 40 libraries and 2,800,000 inhabitants, or one library for every 70,000 inhabitants.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>there was one library for every 8,611 inhabitants in Bristol but one library for every 70,000 inhabitants in London.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct because dividing Bristol&rsquo;s 155,000 inhabitants by 18 libraries gives roughly 8,611 inhabitants per library, while dividing London&rsquo;s 2,800,000 by 40 gives 70,000 per library &mdash; directly showing libraries were more concentrated in the smaller city.</p><p>Choice A is incorrect: it doesn&rsquo;t show concentration; Manchester actually had fewer libraries than London, not more. Choice B is incorrect: it compares two cities of unequal populations without addressing concentration relative to population. Choice C is incorrect: it gives only London&rsquo;s data, with no comparison to a smaller city.</p>",
+  "generatedAt": "2026-05-26T02:15:13Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

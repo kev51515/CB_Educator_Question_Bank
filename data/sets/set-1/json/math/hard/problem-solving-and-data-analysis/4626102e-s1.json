@@ -1,0 +1,39 @@
+{
+  "questionId": "4626102e-s1",
+  "originalId": "4626102e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set A consists of 17 values, listed in ascending order: 30, 30, 31, 31, 32, 32, 33, 34, 34, 35, 35, 36, 36, 37, 37, 38, 38. Data set B is created by adding 72 to each of the values in data set A. Which of the following statements correctly compares data set B to data set A?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The median of data set B is equal to the median of data set A, and the range of data set B is equal to the range of data set A.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The median of data set B is equal to the median of data set A, and the range of data set B is greater than the range of data set A.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The median of data set B is greater than the median of data set A, and the range of data set B is greater than the range of data set A.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The median of data set B is greater than the median of data set A, and the range of data set B is equal to the range of data set A.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Adding the same constant to every value increases the median by that same constant (the median of B is 34 + 72 = 106, greater than A's median of 34), but does not change the range, since both the maximum and the minimum shift by the same amount (A: range = 38&minus;30 = 8; B: range = 110&minus;102 = 8).</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T10.hard"
+}

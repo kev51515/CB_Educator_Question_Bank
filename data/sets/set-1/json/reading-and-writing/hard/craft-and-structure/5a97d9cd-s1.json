@@ -1,0 +1,39 @@
+{
+  "questionId": "5a97d9cd-s1",
+  "originalId": "5a97d9cd",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In a study of school choice in Chicago, researcher Priya Anand and her team found that increases in transportation subsidies had mixed effects on enrollment decisions, possibly because school selection is not fully reducible to convenience factors but is also <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> noneconomic considerations such as a family's longstanding ties to a particular neighborhood school.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>preliminary to</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>swapped with</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>shaped by</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>separated from</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. \"Shaped by\" most logically completes the text. The text says school selection is not solely a matter of convenience but is also influenced by noneconomic ties, so it is shaped by those considerations as well.</p><p>Choice A is incorrect. \"Preliminary to\" would mean coming before; selection does not come before the family's ties. Choice B is incorrect. \"Swapped with\" implies a substitution, but selection is being influenced by, not exchanged for, noneconomic factors. Choice D is incorrect. \"Separated from\" would mean unaffected by, the opposite of the text's claim.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T7.hard"
+}

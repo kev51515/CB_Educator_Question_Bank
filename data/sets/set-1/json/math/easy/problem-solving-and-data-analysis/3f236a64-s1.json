@@ -1,0 +1,39 @@
+{
+  "questionId": "3f236a64-s1",
+  "originalId": "3f236a64",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In the table, the ratio of y to x for each ordered pair is constant.</p><table border=\"1\"><tr><th>x</th><th>y</th></tr><tr><td>3</td><td>15</td></tr><tr><td>7</td><td>35</td></tr><tr><td>24</td><td>k</td></tr></table><p>What is the value of k?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>29</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>120</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>240</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. From (3, 15), the ratio y/x = 5. When x = 24, k = 24 \u00d7 5 = 120.</p><p>Choice A is incorrect; it results from adding 5 to 24. Choice C is incorrect; it uses a ratio of 2.5 instead of 5. Choice D is incorrect; it doubles the correct answer.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A2.T3.easy"
+}

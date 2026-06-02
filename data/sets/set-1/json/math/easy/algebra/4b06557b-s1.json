@@ -1,0 +1,22 @@
+{
+  "questionId": "4b06557b-s1",
+  "originalId": "4b06557b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>3x - y = 8</p><p>x + y = 4</p><p>The solution to the given system of equations is (x, y). What is the value of x?</p>",
+  "answerOptions": null,
+  "keys": [
+    "3"
+  ],
+  "rationale": "<p>The correct answer is 3. Adding the two equations gives 4x = 12, so x = 3.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.easy"
+}

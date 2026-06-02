@@ -1,0 +1,39 @@
+{
+  "questionId": "6d69ab93-s1",
+  "originalId": "6d69ab93",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>First observed in 2023, the interstellar visitor known as Borisov-II became a source of puzzlement when astronomers noticed that its acceleration could not be fully accounted for by the gravitational pull of nearby planets and the Sun: some additional, nongravitational influence had to be acting on its velocity and trajectory. Earlier proposals invoked unusual scenarios\u2014for instance, that Borisov-II might be partly composed of two loosely bound fragments whose geometry distorts its motion\u2014but these have been judged unrealistic. Astrochemist Liu Wei and colleagues now propose that the nongravitational acceleration is produced by the venting of trapped carbon dioxide gas from Borisov-II's ice-rich nucleus.</p>",
+  "stem": "<p>Which statement, if true, would most strongly support the claim made by Liu and colleagues about the cause of Borisov-II's acceleration?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Since nongravitational accelerations on small bodies are many times weaker than gravitational accelerations, such deviations have been detected on only a small number of objects of comparable size.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Borisov-II's trajectory is inconsistent with a nongravitational acceleration produced by the release of carbon dioxide, but its observed brightness pattern can be explained if the nucleus contains a significant amount of nitrogen ice.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Exposure to long-term cosmic-ray bombardment can produce embedded pockets of carbon dioxide within water-ice matrices, and during its passage through the inner solar system Borisov-II underwent warming sufficient to disrupt its ice structure and allow venting.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Previously proposed models of methane and ammonia outgassing from Borisov-II do not match observations, although the models themselves rest on internally consistent physical assumptions.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Liu's claim has two essential premises: (1) carbon dioxide must actually be present, trapped in the nucleus; and (2) it must be releasable as gas during Borisov-II's passage. This choice supplies both: a mechanism (cosmic-ray bombardment) for CO\u2082 to form within water ice, and a trigger (solar warming) for it to vent\u2014directly supporting the claim.</p><p>Choice A is incorrect: information about how weak nongravitational forces are in general does not bear on the specific cause for Borisov-II. Choice B is incorrect: it implies CO\u2082 release is inconsistent with the trajectory, which would undermine, not support, the claim. Choice D is incorrect: shortcomings of unrelated outgassing models (methane, ammonia) do not provide evidence for CO\u2082 outgassing specifically.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "command-of-evidence.A4.T5.hard"
+}

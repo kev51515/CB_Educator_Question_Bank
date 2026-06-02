@@ -1,0 +1,39 @@
+{
+  "questionId": "a309803e-s1",
+  "originalId": "a309803e",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>One gallon of sealant will cover 180 square feet of a surface. A patio has a total surface area of A square feet. Which equation represents the total amount of sealant S, in gallons, needed to seal the surface three times?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>S = A / 540</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>S = 3A / 180</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>S = 180A / 3</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>S = 540 / A</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. One coat requires A/180 gallons; three coats require 3 \u00d7 A/180 = 3A/180 gallons.</p><p>Choice A divides by 540 (which corresponds to using coverage 540 per gallon instead of three coats). Choice C inverts the relationship between gallons and area. Choice D inverts both quantities.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-functions.A3.T3.hard"
+}

@@ -1,0 +1,22 @@
+{
+  "questionId": "08b7a3f5-s1",
+  "originalId": "08b7a3f5",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A triangular prism has a height of 6 centimeters (cm) and a volume of 192 cm\u00b3. What is the area, in cm\u00b2, of the base of the prism? (The volume of a triangular prism is equal to Bh, where B is the area of the base and h is the height of the prism.)</p>",
+  "answerOptions": null,
+  "keys": [
+    "32"
+  ],
+  "rationale": "<p>Using V = Bh: 192 = B(6), so B = 192/6 = 32.</p>",
+  "generatedAt": "2026-05-26T01:37:55Z",
+  "templateId": "area-and-volume.A2.T1.medium"
+}

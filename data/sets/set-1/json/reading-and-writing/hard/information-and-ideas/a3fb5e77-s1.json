@@ -1,0 +1,25 @@
+{
+  "questionId": "a3fb5e77-s1",
+  "originalId": "a3fb5e77",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>Some studies of plant growth involve raising plants outdoors in real soil under variable weather, and some involve raising plants in controlled greenhouses with carefully regulated light, temperature, and nutrients. Each approach has advantages. In outdoor studies, researchers can be confident that the plants are responding to genuinely natural conditions, but they also have less ability to identify which environmental factor caused any given outcome. In greenhouse studies, researchers can isolate a single variable cleanly, but the conditions are so unlike a real growing environment that the results may not transfer reliably to the field. Selecting the right approach therefore depends on what kinds of questions a particular study is designed to answer.</p>",
+  "stem": "<p>Which choice best states the main idea of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Outdoor plant-growth studies are more useful than greenhouse studies because they involve genuinely natural conditions.</p>"},
+    {"id": "b", "content": "<p>Most modern plant scientists prefer greenhouse studies because they yield more easily interpretable results.</p>"},
+    {"id": "c", "content": "<p>Although outdoor and greenhouse plant studies each have advantages, the appropriate choice between them depends on the research question being asked.</p>"},
+    {"id": "d", "content": "<p>Researchers have struggled to combine the advantages of outdoor and greenhouse plant studies into a single approach.</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer. The text explains that each method has its own strengths and weaknesses and concludes that selecting the right approach depends on what questions a study is designed to answer.</p><p>Choice A is incorrect because the text does not claim outdoor studies are more useful overall. Choice B is incorrect because the text does not say most researchers prefer greenhouse studies. Choice D is incorrect because the text does not discuss attempts to combine the methods.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A1.T1.hard"
+}

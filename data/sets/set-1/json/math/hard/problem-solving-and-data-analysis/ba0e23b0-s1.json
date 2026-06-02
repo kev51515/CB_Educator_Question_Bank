@@ -1,0 +1,39 @@
+{
+  "questionId": "ba0e23b0-s1",
+  "originalId": "ba0e23b0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>270 is p% greater than 30. What is the value of p?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2,700</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>900</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>240</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>800</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The equation 270 = 30(1 + p/100) simplifies to 9 = 1 + p/100, so p/100 = 8 and p = 800.</p><p>Choice A is 270/0.1. Choice B is 270/30 written as a percent. Choice C is 270 \u2212 30.</p>",
+  "templateId": "percentages.A3.T3.hard"
+}

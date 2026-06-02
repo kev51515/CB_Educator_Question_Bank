@@ -1,0 +1,39 @@
+{
+  "questionId": "e0bd4f8a-s1",
+  "originalId": "e0bd4f8a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>In 1862, the transcontinental telegraph line was completed in under five months, largely due to the labor of more than 1,000 Chinese American workers from California crews. The workers' contribution was overlooked for over a century. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> in 2014, the US Department of Labor inducted the Chinese railroad and telegraph workers into its Hall of Honor for their role in building this vital communications network.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Lastly,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>For example,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Similarly,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Then,</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. \"Then\" logically signals that the event described in this sentence&mdash;the Department of Labor's 2014 induction&mdash;is part of a chronological sequence, occurring after the long period in which the workers' contribution was overlooked.</p><p>Choice A is incorrect because \"lastly\" illogically signals the last point in a series. Choice B is incorrect because \"for example\" illogically signals exemplification. Choice C is incorrect because \"similarly\" illogically signals similarity, but the induction follows from rather than mirrors the overlooked period.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "transitions.A5.T14.easy"
+}

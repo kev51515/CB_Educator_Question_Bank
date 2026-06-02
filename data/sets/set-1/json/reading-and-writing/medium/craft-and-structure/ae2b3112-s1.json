@@ -1,0 +1,25 @@
+{
+  "questionId": "ae2b3112-s1",
+  "originalId": "ae2b3112",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A1.T2.medium",
+  "stimulus": "<p>By drawing on both flamenco and Andean folk traditions, Peruvian guitarist and composer Renata Flores Quispe creates pieces that reflect the layered cultural history of the Andes. For her album <em>Caminos Tejidos</em>, Flores Quispe wrote new compositions in the style of traditional huayno songs that were accompanied by flamenco-influenced guitar arrangements played by a small ensemble. But where a flamenco guitarist would normally lead the rhythm, the musicians on <em>Caminos Tejidos</em> follow the pulse of a traditional Andean drum.</p>",
+  "stem": "<p>Which choice best states the main purpose of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>To argue that Flores Quispe should be credited with inventing a new genre of music</p>"},
+    {"id": "b", "content": "<p>To describe the difficulties Flores Quispe faced while producing her album</p>"},
+    {"id": "c", "content": "<p>To examine how Flores Quispe&rsquo;s compositions blend cultural traditions</p>"},
+    {"id": "d", "content": "<p>To establish a contrast between Flores Quispe&rsquo;s flamenco training and her Andean heritage</p>"}
+  ],
+  "keys": ["c"],
+  "rationale": "<p>Choice C is the best answer because it most accurately describes the main purpose of the text, which is to examine how Flores Quispe&rsquo;s compositions incorporate elements from both Andean and flamenco traditions. After introducing the composer, the text describes how the songs on <em>Caminos Tejidos</em> feature aspects of both traditions: huayno-style melodies with flamenco-influenced guitar arrangements led by an Andean drum. In this way, her compositions blend cultural traditions.</p><p>Choice A is incorrect because, although the text suggests her work is innovative, it does not argue that she should be credited with inventing a new genre. Choice B is incorrect because the text does not mention difficulties during production. Choice D is incorrect because the text is primarily focused on how the music combines traditions, not on contrasting her training with her heritage.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

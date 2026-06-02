@@ -1,0 +1,39 @@
+{
+  "questionId": "9dc4e640-s1",
+  "originalId": "9dc4e640",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "stimulus": "<p>The fossil <em>Diplomystus dentatus</em> is most often recovered from the Green River Formation in Wyoming. Many of its specimens are preserved in such fine-grained limestone that even individual scales and fin rays appear sharp and undistorted to the naked eye. Specimens of the related fish <em>Knightia eocaena</em> from the same deposit are also remarkably well preserved; <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> their scales and fin rays usually require a hand lens to be made out clearly.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>even so,</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>for instance,</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>accordingly,</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>likewise,</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Even so\" logically introduces a partial concession or exception: although <em>Knightia</em> specimens are also well preserved, their fine detail is only visible with a hand lens rather than to the naked eye, distinguishing them from <em>Diplomystus</em>. The transition signals that the upcoming claim qualifies the prior one.</p><p>Choice B is incorrect because \"for instance\" would frame the second clause as an example of high-quality preservation visible to the naked eye, but it instead notes a limitation. Choice C is incorrect because \"accordingly\" would signal cause and effect, yet needing a hand lens is not a result of good preservation. Choice D is incorrect because \"likewise\" would mark the two clauses as making the same point, but the second clause introduces a qualifying difference.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "transitions.A1.T3.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "af711d1b-s1",
+  "originalId": "af711d1b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The table gives the cost <em>c</em>, in cents, for using a service-call line for <em>m</em> minutes.</p><table border=\"1\"><tr><th>Minutes (<em>m</em>)</th><th>Cost (<em>c</em>)</th></tr><tr><td>0.5</td><td>6</td></tr><tr><td>1.5</td><td>18</td></tr><tr><td>2.0</td><td>24</td></tr></table><p>Which equation could represent this linear relationship?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>c</em> = 6<em>m</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>c</em> = 12<em>m</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>c</em> = (1/12)<em>m</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>c</em> = (1/6)<em>m</em></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Using two rows of the table, the rate of change is (18 \u2212 6)/(1.5 \u2212 0.5) = 12/1 = 12. Since the proportional relationship passes through (0, 0), the equation is <em>c</em> = 12<em>m</em>.</p><p>Choices A, C, and D are incorrect and may result from inverting the ratio or miscomputing slope.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A3.T2.medium"
+}

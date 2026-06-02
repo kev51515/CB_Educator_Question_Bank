@@ -1,0 +1,39 @@
+{
+  "questionId": "3e9eaffc-s1",
+  "originalId": "3e9eaffc",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:29:08Z",
+  "stem": "<p>Maya used paint to fill small jars. The function f(x) = -8x + 96 approximates the volume, in fluid ounces, of paint Maya had remaining after filling <em>x</em> jars. Which statement is the best interpretation of the <em>y</em>-intercept of the graph of y = f(x) in the <em>xy</em>-plane in this context?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Maya had approximately 96 fluid ounces of paint when she began to fill the jars.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Maya used approximately 8 fluid ounces of paint for each jar.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Maya used approximately 96 fluid ounces of paint for each jar.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Maya had approximately 8 fluid ounces of paint when she began to fill the jars.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The y-intercept of y = f(x) occurs at x = 0 (zero jars filled), where f(0) = 96. This represents the initial amount of paint Maya had before filling any jars: 96 fluid ounces. Choice B describes the slope, not the y-intercept. Choices C and D mix up the slope and y-intercept values.</p>",
+  "templateId": "linear-functions.A2.T3.medium"
+}

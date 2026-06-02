@@ -1,0 +1,25 @@
+{
+  "questionId": "e1b00a70-s1",
+  "originalId": "e1b00a70",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A2.T4.medium",
+  "stimulus": "<p>The more intricate and varied a bird species' nest-building behavior, the larger and more metabolically costly its forebrain region tends to be. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> from an evolutionary perspective, species whose nesting routines are uniform should devote fewer resources to developing and sustaining forebrain tissue. The distinct nest-building strategies of weaverbirds provide a rich opportunity to test this hypothesis.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>Accordingly,</p>"},
+    {"id": "b", "content": "<p>Previously,</p>"},
+    {"id": "c", "content": "<p>Furthermore,</p>"},
+    {"id": "d", "content": "<p>Nonetheless,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"Accordingly\" logically signals that the claim in this sentence—that bird species with uniform nesting routines should devote fewer resources to forebrain tissue—is a consequence of the previous sentence's claim about the metabolic demands of complex nest-building behavior (namely, that more varied behavior is associated with a larger, costlier forebrain).</p><p>Choice B is incorrect because \"previously\" illogically signals that the claim occurs earlier in a chronological sequence than the previous sentence's claim. Instead, the second claim is a consequence of the first. Choice C is incorrect because \"furthermore\" illogically signals that the claim provides a separate additional point, when it is in fact a logical consequence of the first claim. Choice D is incorrect because \"nonetheless\" illogically signals that the claim is true despite the previous claim, when in fact it follows directly from it.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "ba62b0b0-s1",
+  "originalId": "ba62b0b0",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A small generator has a mass of 17 kilograms. What is the generator's mass, in grams? (1 kilogram = 1,000 grams)</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1,017</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>17,000</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>983</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>1.7</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Since 1 kilogram = 1,000 grams, 17 kilograms = 17 \u00d7 1,000 = 17,000 grams.</p><p>Choice A is incorrect; it adds 1,000 instead of multiplying. Choice C is incorrect; it subtracts 17 from 1,000. Choice D is incorrect; it divides instead of multiplying.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A1.T1.easy"
+}

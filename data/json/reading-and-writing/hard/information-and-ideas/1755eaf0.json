@@ -1,0 +1,72 @@
+{
+  "questionId": "1755eaf0",
+  "externalId": "e80ca61c-04c7-47b6-bd75-6c70364e1508",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "scoreBand": 7,
+  "ibn": "",
+  "updateDate": 1776362771170,
+  "createDate": 1776362771170,
+  "scrapedAt": "2026-05-25T12:10:43.534694+00:00",
+  "type": "mcq",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "5a5cc3f1-400e-4317-98eb-b0ac7d4f73fe",
+      "content": "<p>although bumblebees and many other wild bees have experienced similar population declines in the past, compared with other wild bees, bumblebees are likely at greater risk of being harmed by climate variation than by habitat destruction.</p>"
+    },
+    {
+      "id": "b1cf7512-2bf0-4aae-8392-d4869caf167d",
+      "content": "<p>although bumblebees have been more extensively studied than most wild bees, researchers should not use bumblebees to draw conclusions about the decline of other wild bees, even ones with feeding patterns and levels of sociability that are similar to those of bumblebees.</p>"
+    },
+    {
+      "id": "d7d301b3-5795-4534-bf97-4c448d3f07f1",
+      "content": "<p>because bumblebees and other bees with generalist diets are less negatively affected by environmental stress than bees with specialized diets are, they are less likely to experience major population changes in the future than bees with specialized diets are.</p>"
+    },
+    {
+      "id": "bb120c92-2141-47de-b7fc-6b0d319b62e2",
+      "content": "<p>because the responses of bumblebees and other wild bees to environmental threats are not always comparable, researchers need to exercise caution when extrapolating information about wild-bee population declines from bumblebees.</p>"
+    }
+  ],
+  "keys": [
+    "bb120c92-2141-47de-b7fc-6b0d319b62e2"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of wild-bee declines. The text establishes that bumblebees and other wild bees have been experiencing population collapse as a result of habitat destruction, climate variation, and other factors. The text then indicates that because bumblebees are very extensively researched, ecologists rely heavily on findings about them to understand wild-bee declines in general. However, the text then introduces Ghisbain&rsquo;s observation that unlike most other wild-bee genera, bumblebees have certain traits (social behaviors and dietary generalism) linked to increased resilience to certain environmental changes. In other words, bumblebees aren&rsquo;t necessarily representative of wild bees as a whole because they are likely more tolerant of some pressures. Therefore, it logically follows that Ghisbain would urge researchers to exercise caution when using bumblebee data to draw conclusions about other wild-bee population declines, since bumblebees and other wild bees don&rsquo;t always respond comparably to environmental threats.</p><p>Choice A is incorrect because the text doesn&rsquo;t indicate that climate variation is more of a threat to bumblebees than habitat destruction is or that it is a bigger threat to bumblebees than it is to other wild bees. The text simply indicates that climate variation and habitat destruction are among the factors that have caused population collapses for bumblebees and other wild-bee genera. Choice B is incorrect. As it is presented in the text, Ghisbain notes that bumblebees may respond to environmental changes differently than many other wild-bee genera do; this suggests that bumblebees shouldn&rsquo;t be treated as representative of all wild bees, but there&rsquo;s no reason to think that Ghisbain would go so far as to assert that bumblebee data shouldn&rsquo;t be used to draw conclusions about other wild-bee genera that are similar to bumblebees in their dietary and social traits, even if there are relatively few. The text suggests caution in extrapolation, not a complete rejection of using bumblebee research. Choice C is incorrect. Although the text indicates that dietary generalism is linked to increased resilience to specific environmental changes (that is, to some but not all environmental stresses), it doesn&rsquo;t suggest that bumblebees and other bees with this trait are less likely than bees with specialized diets to experience major population changes. In fact, the text makes it clear that like many other wild-bee genera&mdash;most of which don&rsquo;t display dietary generalism&mdash;bumblebees are already experiencing population collapse.</p>",
+  "raw": {
+    "type": "mcq",
+    "stem": "<p>Which choice most logically completes the text?</p>",
+    "stimulus": "<p>Like many other genera of wild bees, bumblebees have in recent decades experienced population collapse caused by, among other factors, habitat destruction and climate variation. Bumblebees are also one of the most researched bee genera, second only to honeybees. As a result, ecologists have gained much of their insight about wild-bee declines from bumblebees. In a <span data-ssml-say-as=\"date\">2021</span> paper, zoologist Guillaume Ghisbain notes that bumblebees are among the relatively few wild-bee genera that display social behaviors and dietary generalism (ability to obtain nectar and pollen from a diversity of plant species), two traits that are associated with increased resilience to some specific environmental changes. Ghisbain therefore contends that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+    "keys": [
+      "bb120c92-2141-47de-b7fc-6b0d319b62e2"
+    ],
+    "answerOptions": [
+      {
+        "id": "5a5cc3f1-400e-4317-98eb-b0ac7d4f73fe",
+        "content": "<p>although bumblebees and many other wild bees have experienced similar population declines in the past, compared with other wild bees, bumblebees are likely at greater risk of being harmed by climate variation than by habitat destruction.</p>"
+      },
+      {
+        "id": "b1cf7512-2bf0-4aae-8392-d4869caf167d",
+        "content": "<p>although bumblebees have been more extensively studied than most wild bees, researchers should not use bumblebees to draw conclusions about the decline of other wild bees, even ones with feeding patterns and levels of sociability that are similar to those of bumblebees.</p>"
+      },
+      {
+        "id": "d7d301b3-5795-4534-bf97-4c448d3f07f1",
+        "content": "<p>because bumblebees and other bees with generalist diets are less negatively affected by environmental stress than bees with specialized diets are, they are less likely to experience major population changes in the future than bees with specialized diets are.</p>"
+      },
+      {
+        "id": "bb120c92-2141-47de-b7fc-6b0d319b62e2",
+        "content": "<p>because the responses of bumblebees and other wild bees to environmental threats are not always comparable, researchers need to exercise caution when extrapolating information about wild-bee population declines from bumblebees.</p>"
+      }
+    ],
+    "rationale": "<p>Choice D is the best answer because it most logically completes the text&rsquo;s discussion of wild-bee declines. The text establishes that bumblebees and other wild bees have been experiencing population collapse as a result of habitat destruction, climate variation, and other factors. The text then indicates that because bumblebees are very extensively researched, ecologists rely heavily on findings about them to understand wild-bee declines in general. However, the text then introduces Ghisbain&rsquo;s observation that unlike most other wild-bee genera, bumblebees have certain traits (social behaviors and dietary generalism) linked to increased resilience to certain environmental changes. In other words, bumblebees aren&rsquo;t necessarily representative of wild bees as a whole because they are likely more tolerant of some pressures. Therefore, it logically follows that Ghisbain would urge researchers to exercise caution when using bumblebee data to draw conclusions about other wild-bee population declines, since bumblebees and other wild bees don&rsquo;t always respond comparably to environmental threats.</p><p>Choice A is incorrect because the text doesn&rsquo;t indicate that climate variation is more of a threat to bumblebees than habitat destruction is or that it is a bigger threat to bumblebees than it is to other wild bees. The text simply indicates that climate variation and habitat destruction are among the factors that have caused population collapses for bumblebees and other wild-bee genera. Choice B is incorrect. As it is presented in the text, Ghisbain notes that bumblebees may respond to environmental changes differently than many other wild-bee genera do; this suggests that bumblebees shouldn&rsquo;t be treated as representative of all wild bees, but there&rsquo;s no reason to think that Ghisbain would go so far as to assert that bumblebee data shouldn&rsquo;t be used to draw conclusions about other wild-bee genera that are similar to bumblebees in their dietary and social traits, even if there are relatively few. The text suggests caution in extrapolation, not a complete rejection of using bumblebee research. Choice C is incorrect. Although the text indicates that dietary generalism is linked to increased resilience to specific environmental changes (that is, to some but not all environmental stresses), it doesn&rsquo;t suggest that bumblebees and other bees with this trait are less likely than bees with specialized diets to experience major population changes. In fact, the text makes it clear that like many other wild-bee genera&mdash;most of which don&rsquo;t display dietary generalism&mdash;bumblebees are already experiencing population collapse.</p>",
+    "externalid": "e80ca61c-04c7-47b6-bd75-6c70364e1508",
+    "correct_answer": [
+      "D"
+    ]
+  },
+  "stimulus": "<p>Like many other genera of wild bees, bumblebees have in recent decades experienced population collapse caused by, among other factors, habitat destruction and climate variation. Bumblebees are also one of the most researched bee genera, second only to honeybees. As a result, ecologists have gained much of their insight about wild-bee declines from bumblebees. In a <span data-ssml-say-as=\"date\">2021</span> paper, zoologist Guillaume Ghisbain notes that bumblebees are among the relatively few wild-bee genera that display social behaviors and dietary generalism (ability to obtain nectar and pollen from a diversity of plant species), two traits that are associated with increased resilience to some specific environmental changes. Ghisbain therefore contends that <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>"
+}

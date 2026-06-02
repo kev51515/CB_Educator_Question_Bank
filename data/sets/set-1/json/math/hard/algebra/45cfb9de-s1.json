@@ -1,0 +1,39 @@
+{
+  "questionId": "45cfb9de-s1",
+  "originalId": "45cfb9de",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Mara's office is a 25-minute walk or an 8-minute subway ride away from her apartment. The subway runs once every 20 minutes, and the number of minutes, w, that Mara waits for the subway varies between 0 and 20. Which inequality gives the values of w for which it would be faster for Mara to walk to her office?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>w > 17</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>w > 8</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>w < 8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>w < 17</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Walking takes 25 minutes. The subway commute is the wait time plus ride time, w + 8 minutes. Walking is faster when 25 < w + 8, i.e., w > 17.</p><p>Choice B and C use only the ride time. Choice D reverses the inequality.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.hard"
+}

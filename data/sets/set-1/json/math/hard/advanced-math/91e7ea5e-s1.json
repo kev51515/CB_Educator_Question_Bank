@@ -1,0 +1,39 @@
+{
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "questionId": "91e7ea5e-s1",
+  "originalId": "91e7ea5e",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The quadratic function h is defined by h(x) = (x &minus; 2)(x &minus; 2t). In the xy-plane, the graph of y = h(x) intersects the x-axis at the points (2, 0) and (10, 0), where t is a constant. What is the value of t?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>8</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>10</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The two x-intercepts come from x &minus; 2 = 0 (giving x = 2) and x &minus; 2t = 0 (giving x = 2t). Since the second intercept is at x = 10, 2t = 10, so t = 5.</p><p>Choice A is the smaller x-intercept. Choice C is a common arithmetic slip. Choice D is 2t, not t.</p>",
+  "generatedAt": "2026-05-26T00:28:12Z",
+  "templateId": "nonlinear-functions.A3.T4.hard"
+}

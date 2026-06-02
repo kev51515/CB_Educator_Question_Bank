@@ -1,0 +1,39 @@
+{
+  "questionId": "38a9ac45-s1",
+  "originalId": "38a9ac45",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 800 customers register for new accounts at a music streaming service every day, what fraction of the first 20,000 new accounts are registered in the first 5 days?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/5</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>1/4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>4/5</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>2/5</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. In 5 days, 800 &times; 5 = 4,000 customers register. Therefore the fraction of the first 20,000 accounts registered in the first 5 days is 4,000/20,000 = 1/5. Choice B is incorrect because 1/4 would correspond to 5,000 accounts in 5 days. Choice C is incorrect because 4/5 is the fraction registered <em>after</em> the first 5 days. Choice D is incorrect because 2/5 would correspond to 8,000 accounts in 5 days.</p>",
+  "generatedAt": "2026-05-26T01:47:08Z",
+  "templateId": "probability-and-conditional-probability.A5.T15.medium"
+}

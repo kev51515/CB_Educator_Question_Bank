@@ -1,0 +1,39 @@
+{
+  "questionId": "3f5a3602-s1",
+  "originalId": "3f5a3602",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>One line in the <em>xy</em>-plane passes through the points <math><mfenced><mrow><mn>3</mn><mo>,</mo><mn>2</mn></mrow></mfenced></math> and <math><mfenced><mrow><mn>8</mn><mo>,</mo><mn>0</mn></mrow></mfenced></math>. A second line passes through the points <math><mfenced><mrow><mn>2</mn><mo>,</mo><mn>1</mn></mrow></mfenced></math> and <math><mfenced><mrow><mn>6</mn><mo>,</mo><mn>5</mn></mrow></mfenced></math>. What is the solution <math><mfenced><mrow><mi>x</mi><mo>,</mo><mi>y</mi></mrow></mfenced></math> of the system formed by these two lines?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfenced><mrow><mn>8</mn><mo>,</mo><mn>0</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfenced><mrow><mn>2</mn><mo>,</mo><mn>1</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfenced><mrow><mn>6</mn><mo>,</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfenced><mrow><mn>3</mn><mo>,</mo><mn>2</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The first line has equation y = -2x/5 + 16/5. The second line has equation y = x - 1. Setting these equal: x - 1 = -2x/5 + 16/5, so 5x - 5 = -2x + 16, giving 7x = 21 and x = 3. Then y = 2. The intersection is (3, 2). The other choices give points on only one of the lines.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T2.hard"
+}

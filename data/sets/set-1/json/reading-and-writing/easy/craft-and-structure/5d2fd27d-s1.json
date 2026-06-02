@@ -1,0 +1,39 @@
+{
+  "questionId": "5d2fd27d-s1",
+  "originalId": "5d2fd27d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>While we can infer information about volcanic eruptions on other planets from images taken by spacecraft, we of course cannot observe distant eruptions directly. To study these eruptions in detail, we must <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> them using computer models that represent various eruption conditions consistent with the available images.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>simulate</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>preserve</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>invent</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>exaggerate</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer because the text describes using computer models that represent various eruption conditions; \"simulate\" means to imitate or model behavior. Choice B is incorrect because the eruptions on distant planets are not being kept; they are being modeled. Choice C is incorrect because the eruptions are real, not made up. Choice D is incorrect because the text describes accurate modeling, not exaggeration.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "words-in-context.A2.T5.easy"
+}

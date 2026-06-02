@@ -1,0 +1,25 @@
+{
+  "questionId": "e99a38ec-s1",
+  "originalId": "e99a38ec",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T9.medium",
+  "stimulus": "<p><figure class=\"table\"><table class=\"gdr\"><caption style=\"caption-side: top;\"><p style=\"text-align: center;\">Average Empathy Scores for Participants&rsquo; Scenario Responses (higher = more empathy)</p></caption><thead><tr><th scope=\"col\">Group</th><th scope=\"col\">Average empathy score</th></tr></thead><tbody><tr><th scope=\"row\">Setback with reflection</th><td>3.28</td></tr><tr><th scope=\"row\">Setback without reflection</th><td>2.72</td></tr><tr><th scope=\"row\">Control</th><td>2.91</td></tr></tbody></table></figure></p><p>Education researcher Naomi Park and colleagues hypothesized that teachers who reflect on lessons learned from past professional setbacks are likely to exhibit more empathy than teachers who don&rsquo;t engage in such reflection. To test this, the team placed 287 teachers in one of three groups. Participants in two experimental groups were asked to think about a setback, one group focusing on a setback they had reflected on afterward and the other group focusing on a setback they had not reflected on. Participants in a control group were asked to think about their morning routine. All participants then described how they would respond to a classroom scenario. After evaluating the responses for evidence of empathy, the researchers concluded that their hypothesis was correct.</p>",
+  "stem": "<p>Which choice best describes data in the table that support the researchers&rsquo; conclusion?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>None of the three groups&rsquo; average empathy scores exceeded 3.5.</p>"},
+    {"id": "b", "content": "<p>The teachers in the control group exhibited only slightly less empathy on average than the teachers in the two experimental groups did.</p>"},
+    {"id": "c", "content": "<p>All three groups exhibited less empathy on average than the researchers expected.</p>"},
+    {"id": "d", "content": "<p>The teachers who reflected on a past setback exhibited more empathy on average than the teachers in the other two groups did.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer because the hypothesis is that reflective teachers show more empathy than nonreflective teachers. The table shows the setback-with-reflection group (3.28) scoring higher than both the without-reflection group (2.72) and the control (2.91), supporting the hypothesis. Choice A is incorrect because not exceeding 3.5 doesn&rsquo;t distinguish among groups. Choice B is incorrect because the control isn&rsquo;t less than both experimental groups, and the comparison doesn&rsquo;t support the hypothesis. Choice C is incorrect because the table provides no information about researchers&rsquo; expectations.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

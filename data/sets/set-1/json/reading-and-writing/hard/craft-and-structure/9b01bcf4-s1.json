@@ -1,0 +1,39 @@
+{
+  "questionId": "9b01bcf4-s1",
+  "originalId": "9b01bcf4",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>The 1974 publication of Aurelia Halberstam's monograph <em>Against the New Schools</em> placed her at odds with almost every faction in the postwar European architecture community&mdash;though those factions disagreed with each other, she nevertheless found grounds to disagree with them all. She judged the technocratic functionalists who treated buildings as mere machines for living to be impoverished in their imagination. <u>But she also rebuked the romantic regionalists who, in her view, indulged in nostalgic ornamentation while ignoring the demands of contemporary urban life.</u> Halberstam's contemporaries, used to being praised by allies and condemned by rivals, found themselves uncertain of where she stood in the discipline.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It helps explain Halberstam's position with respect to the community of postwar architects.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It describes a direction that Halberstam felt the architecture community ought to take.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It indicates that Halberstam's reputation as an antagonist of other architects is undeserved.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It describes a controversy that Halberstam's work caused within the regionalist movement.</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. The text establishes that Halberstam managed to disagree with every faction of postwar architects; the underlined sentence completes that picture by adding a second target of her criticism (the romantic regionalists), so that her stance toward the discipline is mapped out by exclusion. It thus clarifies her position within the larger community of postwar architects.</p><p>Choice B is incorrect because the sentence is critical, not prescriptive. Choice C is incorrect because the rest of the passage confirms, rather than undermines, Halberstam's reputation as an antagonist. Choice D is incorrect because the underlined sentence describes Halberstam's own criticism, not a controversy provoked by her work within regionalism.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.hard"
+}

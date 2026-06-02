@@ -1,0 +1,39 @@
+{
+  "questionId": "eeebe166-s1",
+  "originalId": "eeebe166",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A line in the xy-plane passes through the points (-6, 0) and (0, 3). What is the y-intercept of the line?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(0, 3)</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(0, 0)</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>(0, -3)</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(0, 6)</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The y-intercept is the point where x = 0. The given point (0, 3) is on the line, so the y-intercept is (0, 3).</p>",
+  "generatedAt": "2026-05-26T00:28:11.360485+00:00",
+  "templateId": "linear-equations-in-two-variables.A5.T11.easy"
+}

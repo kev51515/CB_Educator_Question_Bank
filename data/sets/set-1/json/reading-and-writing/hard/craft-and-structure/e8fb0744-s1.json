@@ -1,0 +1,39 @@
+{
+  "questionId": "e8fb0744-s1",
+  "originalId": "e8fb0744",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>As an undergraduate researcher in archaeology, Priya Subramanian contributed to a landmark study challenging the long-standing view that among Bronze Age communities of the Aegean, women's participation in long-distance trade was <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span>. The research team's reassessment of grave goods at sites in Mycenae and Tiryns revealed that, in fact, women were buried with merchants' weights and seals at rates comparable to those of men in the same populations.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>minimal</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>satisfactory</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>commonplace</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>inevitable</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. \"Minimal\" most logically completes the text. The study challenged the view that women rarely participated in long-distance trade by showing that women were buried with merchant-related objects at rates similar to men. The view being challenged is therefore that women's participation was minimal.</p><p>Choice B is incorrect. \"Satisfactory\" describes adequacy, not extent. Choice C is incorrect. \"Commonplace\" means routine—exactly what the new evidence supports, not what the long-standing view held. Choice D is incorrect. \"Inevitable\" means unavoidable; this doesn't describe a view about participation rates.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "words-in-context.A2.T4.hard"
+}

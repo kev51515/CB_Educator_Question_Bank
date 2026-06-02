@@ -1,0 +1,39 @@
+{
+  "questionId": "6105234d-s1",
+  "originalId": "6105234d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Maria paid a total of <math><mo>$</mo><mn>248</mn></math> for a laptop by making a down payment of <math><mo>$</mo><mn>50</mn></math> plus <math><mi>n</mi></math> monthly payments of <math><mo>$</mo><mn>22</mn></math> each. Which of the following equations represents this situation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>22</mn><mi>n</mi><mo>+</mo><mn>50</mn><mo>=</mo><mn>248</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>50</mn><mi>n</mi><mo>+</mo><mn>22</mn><mo>=</mo><mn>248</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>22</mn><mi>n</mi><mo>-</mo><mn>50</mn><mo>=</mo><mn>248</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>50</mn><mi>n</mi><mo>-</mo><mn>22</mn><mo>=</mo><mn>248</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The monthly payments total <math><mn>22</mn><mi>n</mi></math>. Adding the down payment of 50 yields <math><mn>22</mn><mi>n</mi><mo>+</mo><mn>50</mn></math>, and this equals the total 248.</p><p>Choices B, C, and D swap coefficients or operations and are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A2.T5.easy"
+}

@@ -1,0 +1,212 @@
+[
+  {
+    "id": "f868d438-s1",
+    "templateId": "boundaries.A2.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests subject-verb punctuation (no comma between long subject and main verb 'were highlighted'), not restrictive/nonrestrictive modifier choice required by A2.T5. No modifier-vs-noun distinction at the blank."
+  },
+  {
+    "id": "5bed774c-s1",
+    "templateId": "boundaries.A2.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A1.T1 clause-join (period vs comma vs run-on between two independent clauses: 'Bo Bardi was central figure in Brazilian modernism. As illustrated...Bo Bardi's designs were unmistakably populist'), not A2.T5 nonrestrictive/restrictive modifier punctuation."
+  },
+  {
+    "id": "5aa171de-s1",
+    "templateId": "boundaries.A2.T4.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A1.T3 hard (conjunctive adverb 'however' at clause boundary requiring semicolon+comma combo per hard lever), not A2.T4 appositive/parenthetical set-off."
+  },
+  {
+    "id": "f30a478e-s1",
+    "templateId": "boundaries.A3.T7.medium",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests A4.T10 colon-introduces-elaboration (complete clause 'Research...Ocean' followed by noun-phrase elaboration 'enormous reservoirs...'), not A3.T7 unique-title+name appositive. No proper-noun name is being set off."
+  },
+  {
+    "id": "96499989-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Clone tests verb-object boundary (no punctuation between 'will recognize' and its object), not T5 nonrestrictive/restrictive modifier punctuation at a noun-modifier boundary. Rationale itself frames it as verb-object, not modifier."
+  },
+  {
+    "id": "c21df211-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem requires comma before 'such as' supplementary phrase, not paired punctuation around an appositive. T4 requires matched paired marks; only one edge needed here. Closer fit is A2 generic comma usage, not T4 appositive-pair."
+  },
+  {
+    "id": "a2293b3f-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests subject-verb non-separation (no modifier present). T5 requires restrictive/nonrestrictive modifier punctuation; this stem has no modifier element."
+  },
+  {
+    "id": "b35cefb7-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Tests comma after introductory subordinate clause (A1.T3 territory), not setting off an appositive/parenthetical with paired marks per T4."
+  },
+  {
+    "id": "b1e8b87f-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests verb-object non-separation; no modifier present. T5 requires restrictive vs nonrestrictive modifier decision."
+  },
+  {
+    "id": "b5ff8f8e-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests preposition-complement non-separation, not restrictive/nonrestrictive modifier punctuation."
+  },
+  {
+    "id": "eb03096e-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests preposition-complement non-separation; no modifier element to evaluate restrictive vs nonrestrictive."
+  },
+  {
+    "id": "60713427-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests paired-comma enclosure of supplementary phrase 'among other functions' (A2.T4 appositive/parenthetical), not restrictive vs nonrestrictive modifier choice."
+  },
+  {
+    "id": "831b55ec-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests verb-object non-separation, not restrictive/nonrestrictive modifier punctuation."
+  },
+  {
+    "id": "89ab0d46-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Tests preposition-complement non-separation; no modifier to evaluate."
+  },
+  {
+    "id": "f2eaaf5d-s1",
+    "templateId": "boundaries.A3.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Tests paired-dash appositive (A2.T4); 'Ecuador' followed by 'a country in South America' is general appositive, not unique-title+name pattern of T7."
+  },
+  {
+    "id": "dddfa043-s1",
+    "templateId": "boundaries.A3.T7.easy",
+    "verdict": "type_drift",
+    "detail": "Stem tests comma after introductory prepositional phrase, not A3.T7's unique-descriptor + name nonrestrictive appositive pattern. Answer (Ocean, the) is correct but the pattern doesn't match T7's core_skill_demand."
+  },
+  {
+    "id": "9091458d-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "aspect_drift",
+    "detail": "Tagged A2.T4 (set off appositive/parenthetical) but stem tests A5.T11 direct-question word order ('How ______' with inverted vs declarative + ?/. options). Answer correct."
+  },
+  {
+    "id": "91fbd59d-s1",
+    "templateId": "boundaries.A2.T4.easy",
+    "verdict": "type_drift",
+    "detail": "Stem tests intro subordinate clause + main clause boundary (A1.T3 pattern), not setting off an appositive/parenthetical within a clause. The '(1967)' is internal to the intro clause; the keyed comma marks the intro/main boundary."
+  },
+  {
+    "id": "de55ec71-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "No restrictive/nonrestrictive modifier is at issue; the blank tests subject-verb punctuation ('authors [blank] have drawn'). Answer (no punctuation) is correct but the type is not A2.T5."
+  },
+  {
+    "id": "6fdddabf-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Blank tests verb-complement punctuation ('is named [blank] the chloroplast'), not a restrictive vs nonrestrictive modifier choice. Answer is correct but type is mis-tagged."
+  },
+  {
+    "id": "60dd03bc-s1",
+    "templateId": "boundaries.A2.T5.easy",
+    "verdict": "type_drift",
+    "detail": "Blank tests preposition-complement punctuation ('known for [blank] some of the clearest waters'), not a modifier restrictive/nonrestrictive contrast. Answer correct but type mis-tagged."
+  },
+  {
+    "id": "0fa289a7-s1",
+    "templateId": "boundaries.A2.T5.hard",
+    "verdict": "aspect_drift",
+    "detail": "Clone tests clause-boundary punctuation (period vs comma vs run-on) between two independent sentences ('Semb\u00e8ne completed his second feature, Mandabi' | 'A wry comedy..., Semb\u00e8ne's film was...'). This is A1.T1 (Independent + Independent join), not A2.T5 (restrictive vs nonrestrictive modifier)."
+  },
+  {
+    "id": "435809d8-s1",
+    "templateId": "boundaries.A4.T10.hard",
+    "verdict": "type_drift",
+    "detail": "T10 requires colon/dash introducing a list or elaboration. This clone tests whether to insert a comma before a 'because of' prepositional phrase that modifies a main clause; correct answer is a single comma (choice C), not a colon or dash. Stimulus has no list/elaboration structure, no IC-introduces-elaboration pattern. Fits A2 supplementary punctuation, not A4.T10."
+  },
+  {
+    "id": "145d5ca7-s1",
+    "templateId": "boundaries.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "T5 tests nonrestrictive-vs-restrictive modifier punctuation around a noun (comma/dash vs no punct). The clone's construction is two coordinated noun phrases ('the region's scattered networks of seismic stations' AND 'the fact that...') with the keyed answer being no punctuation between the coordinator and the second noun phrase. The rationale itself states 'punctuation within two coordinated noun phrases' \u2014 not a restrictive/nonrestrictive modifier choice. Stem structure does not match T5's core_skill_demand."
+  },
+  {
+    "id": "3ed5ebb4-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Stem joins main clause to a supplementary noun phrase 'a fitting description...' \u2014 this is a single appositive at clause edge, not a bilateral supplementary insertion with two fixed edges (T4 requires the opposite edge to be fixed in the stem). The keyed comma is correct for the structure, but the type pattern more closely matches A2/T5 or an A1 boundary, not T4 paired-mark insertion."
+  },
+  {
+    "id": "403d7bb5-s1",
+    "templateId": "boundaries.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Question tests punctuation between a 'when' subordinate clause's participle and the main verb; correct answer is no punctuation between subject and predicate. This is not a restrictive/nonrestrictive modifier choice (T5), but a subject-verb / subordinate-clause boundary issue."
+  },
+  {
+    "id": "548f4956-s1",
+    "templateId": "boundaries.A1.T3.medium",
+    "verdict": "type_drift",
+    "detail": "Both sides of the blank are independent clauses joined with semicolon + conjunctive adverb 'even so'. This fits A1.T1 (independent+independent join) rather than T3 (independent+dependent). 'Even so' is a transitional adverb, not a subordinator."
+  },
+  {
+    "id": "83c9c503-s1",
+    "templateId": "boundaries.A3.T6.medium",
+    "verdict": "type_drift",
+    "detail": "Stem tests subject-verb punctuation after a name at the end of a subject NP ('Her sculpture of activist Grace Lee'). Keyed 'no punctuation' is correct, but the rationale explicitly invokes subject-verb boundary, not the A3/T6 role+restrictive-name distinction. The role 'activist' precedes the name inside a possessive NP \u2014 restrictiveness analysis is not the central issue."
+  },
+  {
+    "id": "8f6d6ae6-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Stem joins a main clause to a trailing participial-phrase supplement ('making it among...'). This is a one-sided supplement at clause edge, not a bilateral insertion with both edges in play. Closer to A1/A2 boundary between clause and trailing modifier; not the paired-mark T4 pattern."
+  },
+  {
+    "id": "a427a52c-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Stem is intro participial phrase + main clause ('Cooled with ___ the absorbent mats...'), not an inserted supplementary element with a fixed opposite edge. This is A1-style boundary, not T4 paired-mark appositive."
+  },
+  {
+    "id": "ac5536c1-s1",
+    "templateId": "boundaries.A2.T4.medium",
+    "verdict": "type_drift",
+    "detail": "Blank sits between 'study of rocks' and a participial phrase 'mapping...'; no fixed opposite edge of an insertion is present. This is a main-clause + participial boundary (A1.T3 hard pattern), not a T4 paired-mark appositive."
+  },
+  {
+    "id": "be34a3df-s1",
+    "templateId": "boundaries.A2.T5.medium",
+    "verdict": "type_drift",
+    "detail": "Question tests subject-verb separation ('Beinecke Library at Yale acquired'), not restrictive vs nonrestrictive modifier choice. No modifier follows 'Yale' to be classified as restrictive or nonrestrictive; rationale itself says it is about subject-verb separation."
+  },
+  {
+    "id": "eb95235b-s1",
+    "templateId": "boundaries.A1.T1.hard",
+    "verdict": "difficulty_drift",
+    "detail": "Stem lacks hard-tier characteristics: second clause ('performers use it...') is not a participial/prepositional phrase resembling a fragment; options do not differ on micro-punctuation/capitalization of the same form. Reads as easy/medium T1."
+  },
+  {
+    "id": "a5079e0d-s1",
+    "templateId": "boundaries.A1.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Uses '; conjunctive adverb,' pattern ('; for instance,') which is the T3 hard lever ('Conjunctive adverb sits at the join'). Medium lever calls for subordinator (while/whenever/because)."
+  },
+  {
+    "id": "ad046778-s1",
+    "templateId": "boundaries.A1.T3.medium",
+    "verdict": "difficulty_drift",
+    "detail": "Uses '; instead,' (semicolon + conjunctive adverb + comma) which is the T3 hard lever pattern; medium lever requires a subordinator beginning the second clause."
+  }
+]

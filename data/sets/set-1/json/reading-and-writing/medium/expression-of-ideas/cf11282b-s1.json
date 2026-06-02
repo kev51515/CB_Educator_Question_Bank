@@ -1,0 +1,25 @@
+{
+  "questionId": "cf11282b-s1",
+  "originalId": "cf11282b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Botanists were able to grow viable seedlings of the silver thistle within a single season of identifying its native habitat in 1903. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the propagation process proved far slower for the dwarf sandalwood, which botanists managed to cultivate only nine years after first documenting the plant in the wild.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>For example,</p>"},
+    {"id": "b", "content": "<p>In contrast,</p>"},
+    {"id": "c", "content": "<p>Consequently,</p>"},
+    {"id": "d", "content": "<p>Likewise,</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. \"In contrast\" logically signals that the information in this sentence—that cultivating the dwarf sandalwood took nearly a decade—differs from the previous information that botanists grew silver thistle seedlings within a single season.</p><p>Choice A is incorrect because \"for example\" illogically signals that the dwarf sandalwood case exemplifies the previous information about silver thistle's rapid cultivation, when in fact it presents an opposing case. Choice C is incorrect because \"consequently\" illogically signals that the slower propagation of the sandalwood is a result of the silver thistle's success. Choice D is incorrect because \"likewise\" illogically signals that the two cultivation timelines are similar, when in fact they differ markedly.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

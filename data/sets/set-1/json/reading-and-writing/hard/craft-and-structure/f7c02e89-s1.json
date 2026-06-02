@@ -1,0 +1,39 @@
+{
+  "questionId": "f7c02e89-s1",
+  "originalId": "f7c02e89",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "difficultyCode": "H",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p>Text 1</p>\n<p>Patent records are often touted as a comprehensive register of nineteenth-century inventors, especially women inventors whose contributions are otherwise hard to recover. Because patents list the applicant by name and date, scholars treat them as a reliable starting point for studies of innovation in industries from textiles to telegraphy.</p>\n<p>Text 2</p>\n<p>Historian Lucia Whitfield warns against equating the patent record with the actual landscape of nineteenth-century invention. Patenting required filing fees, travel to government offices, and, in many jurisdictions, the legal capacity to hold property in one's own name&mdash;requirements that excluded most married women and many working-class women regardless of how prolific they were as inventors. A name-based search of the patent ledger, Whitfield argues, will systematically underrepresent precisely the groups it appears to document.</p>",
+  "stem": "<p>Based on the texts, how would Whitfield (Text 2) most likely respond to the characterization of patent records offered in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By agreeing that patent records are comprehensive but suggesting they are too difficult for most modern researchers to access.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By arguing that the patent record systematically omits inventors barred from filing, so it cannot stand in for the full population of nineteenth-century inventors.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By proposing that the most reliable source for women inventors is the surviving correspondence of patent attorneys.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By contending that the patent record is biased only with respect to certain industries, such as textiles.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Whitfield's central point is that legal and financial barriers prevented many would-be inventors&mdash;especially married and working-class women&mdash;from filing patents in their own names. The ledger therefore underrepresents the groups Text 1 treats it as documenting, undermining the claim that the patent record is a reliable starting point.</p><p>Choice A is incorrect because Whitfield does not concede comprehensiveness; she disputes it. Choice C is incorrect because Text 2 never identifies attorneys' correspondence as the preferred alternative. Choice D is incorrect because Whitfield's objection is structural, applying across industries, not limited to textiles.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.hard"
+}

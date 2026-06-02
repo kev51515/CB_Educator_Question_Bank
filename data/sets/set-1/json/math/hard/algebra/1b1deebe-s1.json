@@ -1,0 +1,39 @@
+{
+  "questionId": "1b1deebe-s1",
+  "originalId": "1b1deebe",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\"><math><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi><mi>y</mi><mo>=</mo><mn>90</mn></math></p>\n<p style=\"text-align: center;\"><math><mn>8</mn><mi>x</mi><mo>+</mo><mn>3</mn><mi>b</mi><mi>y</mi><mo>=</mo><mn>78</mn></math></p>\n<p>In the given system of equations, <math><mi>a</mi></math> and <math><mi>b</mi></math> are constants. The graphs of these equations in the <em>xy</em>-plane intersect at the point <math><mfenced><mrow><mn>3</mn><mo>,</mo><mi>y</mi></mrow></mfenced></math>. What is the value of <math><mi>a</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>18</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>24</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>36</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Substituting x = 3 into the second equation: 8(3) + 3by = 78, so 3by = 54 and by = 18. Substituting x = 3 and by = 18 into the first equation: 3a + 18 = 90, so 3a = 72 and a = 24. Other choices result from arithmetic errors.</p>",
+  "generatedAt": "2026-05-26T00:31:12.834Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A4.T11.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "391ae4b2-s1",
+  "originalId": "391ae4b2",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Data set H consists of 73 integers between 220 and 360. Data set J consists of all the integers in data set H as well as the integer 15. Which of the following must be less for data set H than for data set J?</p><p>I. The mean<br>II. The median</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Neither I nor II</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>I and II</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>II only</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Adding 15, which is less than all values in H, decreases (not increases) the mean. So H's mean is greater than J's mean, not less. For the median: H has 73 values (odd) with median at the 37th value; J has 74 values, with median the average of the 37th and 38th values. Since 15 is the smallest value in J, the H values now occupy positions 2-74 in J. The H median (37th of H) becomes the 38th value of J. The J median = average of 37th and 38th in J = average of 36th and 37th in H, which is less than or equal to H's median. So H's median is greater than or equal to J's median, not less. Therefore neither must be less for H than J.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A5.T14.hard"
+}

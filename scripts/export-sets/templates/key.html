@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{title}} — Answer Key</title>
+  <style>{{styles}}</style>
+  <style>
+    /* Per-set footer crumb (bottom-left of every page after the cover).
+       Mirrors the questions file pattern; "· KEY" suffix differentiates. */
+    @page { @bottom-left { content: "{{keyPageFooter}}"; } }
+    @page :first { @bottom-left { content: none; } }
+  </style>
+</head>
+<body class="key">
+
+  <!-- COVER -->
+  <section class="cover">
+    <div class="cover-card">
+      <div class="cover-chips">
+        <span class="chip chip--{{difficultyKey}}">
+          <span class="chip__dot"></span>{{difficultyLabel}}
+        </span>
+        <span class="chip">
+          <span class="chip__dot"></span>{{domainLabel}}
+        </span>
+        <span class="chip chip--key">
+          <span class="chip__dot"></span>ANSWER KEY
+        </span>
+      </div>
+
+      <div class="cover-body">
+        <div class="cover-text">
+          <h1 class="cover-title">{{skillFull}}</h1>
+          <div class="cover-meta">
+            <span>{{questionCount}} answers</span>
+            <span>Set {{setId}}</span>
+            <span>Rationale-rich</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cover-footer">
+        <span class="cover-footer__brand">ANSWER KEY · SAT QUESTION BANK</span>
+        <span class="cover-footer__date">{{generatedDate}}</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY ENTRIES -->
+  <main class="sheet">
+    <header class="strip">
+      <div class="strip__title">{{stripTitle}} · Key</div>
+      <div class="strip__pos">{{questionCount}} answers</div>
+    </header>
+
+    <section class="key-entries">
+      {{answers}}
+    </section>
+
+    <footer class="key-footnote">
+      <p><strong>Notes</strong></p>
+      <p>Accept equivalent forms (e.g. <span class="u-mono">0.25 ≡ 1/4</span>).
+         For grid-in items, decimal and fraction answers are both valid.</p>
+      {{missingNote}}
+      <p>Generated {{generatedDate}} · cb-educator-question-bank</p>
+    </footer>
+  </main>
+
+</body>
+</html>

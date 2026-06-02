@@ -1,0 +1,39 @@
+{
+  "questionId": "0fab0c90-s1",
+  "originalId": "0fab0c90",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Rhetorical Synthesis",
+  "skillCode": "SYN",
+  "type": "mcq",
+  "stimulus": "<p>While researching a topic, a student has taken the following notes:</p><ul><li>The Cajun are a group of French-speaking people who have lived in parts of southern Louisiana since the 18th century.</li><li>Cajun culture is influenced by French Acadian, West African, and Indigenous traditions.</li><li>Marie Boudreaux is a Cajun musician, educator, and preservationist.</li><li>She founded the Cajun Music Heritage Center of Eunice, Louisiana, in 1998.</li><li>\u00c9tienne Landry is a Cajun chef, oral historian, and preservationist.</li><li>He founded the Cajun Foodways Institute of Lafayette, Louisiana, in 1998.</li></ul>",
+  "stem": "<p>The student wants to emphasize the duration and purpose of Boudreaux's and Landry's work. Which choice most effectively uses relevant information from the notes to accomplish this goal?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Marie Boudreaux and \u00c9tienne Landry have worked to preserve the culture of the Cajun people, who have lived in southern Louisiana since the 18th century.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>At the Cajun Music Heritage Center in Eunice and the Cajun Foodways Institute in Lafayette, visitors can learn about Cajun people who have lived in the region for centuries.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Influenced by French Acadian, West African, and Indigenous traditions, Cajun culture developed in parts of southern Louisiana in the 18th century.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Since 1998, Marie Boudreaux and \u00c9tienne Landry have worked to preserve Cajun culture through their institutions.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. It emphasizes both the duration of the two preservationists' work (\"Since 1998\") and its purpose (\"to preserve Cajun culture\").</p><p>Choice A is incorrect because it emphasizes the purpose of the preservationists' work but doesn't specify how long they have been doing it. Choice B is incorrect because it describes the institutions but doesn't emphasize the duration or purpose of Boudreaux's and Landry's work. Choice C is incorrect because it describes Cajun culture itself rather than the preservationists' efforts to maintain it.</p>",
+  "generatedAt": "2026-05-26T02:26:45Z",
+  "templateId": "rhetorical-synthesis.A2.T4.hard"
+}

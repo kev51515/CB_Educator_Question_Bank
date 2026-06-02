@@ -1,0 +1,39 @@
+{
+  "questionId": "c24e1bda-s1",
+  "originalId": "c24e1bda",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Lines, angles, and triangles",
+  "skillCode": "S.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In a figure, lines <em>p</em> and <em>q</em> are parallel and are both cut by line <em>t</em>. At the intersection of <em>t</em> and <em>p</em>, one angle has measure 117 degrees. At the intersection of <em>t</em> and <em>q</em>, the angle that is alternate-interior to that 117-degree angle has measure w degrees. What is the value of w?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>117</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>63</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>33</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>180</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. Alternate-interior angles formed by a transversal cutting two parallel lines are congruent, so w = 117.</p><p>Choice B is incorrect: 63 is the supplement of 117.</p><p>Choice C is incorrect: 33 has no geometric basis here.</p><p>Choice D is incorrect: 180 is the supplementary total, not the alternate-interior angle's measure.</p>",
+  "generatedAt": "2026-05-26T00:30:57.271042Z",
+  "templateId": "lines-angles-and-triangles.A1.T1.easy"
+}

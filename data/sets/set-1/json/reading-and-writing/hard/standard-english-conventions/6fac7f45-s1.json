@@ -1,0 +1,39 @@
+{
+  "questionId": "6fac7f45-s1",
+  "originalId": "6fac7f45",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p><em>Marble Garden</em> is a 1995 sculpture by the Italian-born artist Gabriella Russo. Like many of Russo&rsquo;s sculptures, <em>Marble Garden</em>, which arranges thirty hand-carved flowers in a single bed, attempts to evoke every season simultaneously in a single ______ early-spring crocuses bloom beside late-summer sunflowers, and frost-tinged autumn leaves drift against the stems of winter hellebores.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>composition while</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>composition</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>composition:</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>composition, while</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The colon correctly introduces the following description elaborating how the sculpture evokes every season simultaneously \u2014 namely by combining crocuses, sunflowers, autumn leaves, and hellebores.</p><p>Choice A is incorrect because the result is a run-on; the two main clauses (\"Like&hellip;composition\" and \"while&hellip;hellebores\") are fused without proper punctuation, and \"while\" misrepresents the relationship. Choice B is incorrect because it produces a run-on, fusing the two clauses without any punctuation. Choice D is incorrect because the conjunction \"while\" suggests simultaneity or contrast and fails to signal that what follows is an explanation of the prior clause.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "boundaries.A4.T10.hard"
+}

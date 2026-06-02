@@ -1,0 +1,39 @@
+{
+  "questionId": "3f8a701b-s1",
+  "originalId": "3f8a701b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation <i>ax</i> = <i>b</i>, where <i>a</i> and <i>b</i> are constants, has no solutions. Which of the following must be true?</p><p>I. <i>a</i> = 0</p><p>II. <i>b</i> = 0</p><p>III. <i>b</i> &ne; 0</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>I only</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>I and III only</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>II only</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>III only</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. The equation <i>ax</i> = <i>b</i> has no solutions exactly when the left side is identically 0 while the right side is not, i.e., when <i>a</i> = 0 and <i>b</i> &ne; 0. So I and III must hold, but II is the negation of III.</p><p>Choices A and D each capture only one of the two required conditions. Choice C contradicts III.</p>",
+  "generatedAt": "2026-05-26T00:37:37Z",
+  "templateId": "linear-equations-in-one-variable.A3.T9.hard"
+}

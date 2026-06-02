@@ -1,0 +1,39 @@
+{
+  "questionId": "662892ad-s1",
+  "originalId": "662892ad",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Sandra Cisneros is best known for <em>The House on Mango Street</em>, her 1984 novel about a young Mexican American girl growing up in Chicago. The novel grew out of a series of short prose pieces Cisneros had written years earlier. Building the novel wasn't easy. Most novels rely on a steady, continuous narrative, but Cisneros's early sketches were brief and lyrical, more like poems than chapters. <u>To transform the sketches into a novel, Cisneros arranged them in an order that traced the narrator's emotional growth across a single year.</u></p>",
+  "stem": "<p>Which choice best describes the function of the underlined sentence in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It argues that Cisneros's novel influenced later novelists.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explains why Cisneros's short sketches are better known than the novel is.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It describes how Cisneros chose a publisher for the novel.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It offers information about how Cisneros built her sketches into a novel.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The text explains that turning the brief, lyrical sketches into a novel was difficult. The underlined sentence tells how Cisneros solved the problem: by arranging the sketches to trace the narrator's growth over a year.</p><p>Choice A is incorrect. The text doesn't mention later novelists. Choice B is incorrect. The text identifies the novel, not the sketches, as Cisneros's best-known work. Choice C is incorrect. The text doesn't mention publishers.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "text-structure-and-purpose.A2.T3.easy"
+}

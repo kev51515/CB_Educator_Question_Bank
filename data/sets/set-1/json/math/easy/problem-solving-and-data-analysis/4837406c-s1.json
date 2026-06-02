@@ -1,0 +1,22 @@
+{
+  "questionId": "4837406c-s1",
+  "originalId": "4837406c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Ratios, rates, proportional relationships, and units",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>A drone travels at a constant speed of 8 meters per second. At this speed, what is the time, in seconds, that it would take the drone to travel 56 meters?</p>",
+  "answerOptions": [],
+  "keys": [
+    "7"
+  ],
+  "rationale": "<p>Time = distance \u00f7 speed = 56 \u00f7 8 = 7 seconds.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "ratios-rates-proportional-relationships-and-units.A3.T1.easy"
+}

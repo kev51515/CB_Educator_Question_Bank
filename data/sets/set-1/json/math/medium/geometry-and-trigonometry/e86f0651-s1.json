@@ -1,0 +1,39 @@
+{
+  "questionId": "e86f0651-s1",
+  "originalId": "e86f0651",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Area and volume",
+  "skillCode": "S.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A circle has a radius of 29 meters. What is the area, in square meters, of the circle?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>841&pi;</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>29&pi;</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>58&pi;</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>29&pi;/2</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The area of a circle with radius r is &pi;r<sup>2</sup>. Substituting r = 29 yields &pi;(29)<sup>2</sup> = 841&pi; square meters. Choice B is the circumference divided by 2. Choice C is the circumference. Choice D is half the radius times &pi;.</p>",
+  "generatedAt": "2026-05-26T01:48:07Z",
+  "templateId": "area-and-volume.A1.T3.medium"
+}

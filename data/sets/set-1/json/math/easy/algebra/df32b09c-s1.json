@@ -1,0 +1,39 @@
+{
+  "questionId": "df32b09c-s1",
+  "originalId": "df32b09c",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear inequalities in one or two variables",
+  "skillCode": "H.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Priya scored 72, 84, and 91 on her first three exams in chemistry class. Solving which inequality gives the score, S, on Priya's fourth exam that will result in a mean score on all four exams of at least 85?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>(72 + 84 + 91 + S)/3 &ge; 85</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>(72 + 84 + 91 + S)/4 &le; 85</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>72 + 84 + 91 + S &ge; 85</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>(72 + 84 + 91 + S)/4 &ge; 85</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The mean of the four scores is (72 + 84 + 91 + S)/4, which must be at least 85.</p><p>Choice A divides by 3. Choice B uses the wrong direction. Choice C omits division.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "linear-inequalities-in-one-or-two-variables.A1.T3.easy"
+}

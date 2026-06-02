@@ -1,0 +1,25 @@
+{
+  "questionId": "a9e5b788-s1",
+  "originalId": "a9e5b788",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A1.T1.hard",
+  "stimulus": "<p>In analyzing Virginia Woolf&rsquo;s 1925 modernist novel <em>Mrs. Dalloway</em>, literary scholar Hermione Lee draws attention to the figure of Septimus Warren Smith. As Lee observes, Septimus is not the protagonist of Woolf&rsquo;s <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> as the consciousness through which the novel&rsquo;s anxieties about war and modernity are most acutely refracted, he is its tragic counterweight.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>book; rather,</p>"},
+    {"id": "b", "content": "<p>book, rather,</p>"},
+    {"id": "c", "content": "<p>book</p>"},
+    {"id": "d", "content": "<p>book,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The convention being tested is the coordination of main clauses within a sentence. This choice correctly uses a semicolon to join the main clause (\"Septimus...book\") and a second main clause (\"he is...counterweight\") preceded by supplementary elements (\"rather...refracted\").</p><p>Choice B is incorrect because it results in a comma splice: without a conjunction following it, a comma cannot join two main clauses. Choice C is incorrect because it results in a run-on sentence: the two main clauses are fused without punctuation or a conjunction. Choice D is incorrect because it likewise yields a comma splice.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

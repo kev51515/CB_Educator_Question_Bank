@@ -1,0 +1,39 @@
+{
+  "questionId": "9db5b5c1-s1",
+  "originalId": "9db5b5c1",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Systems of two linear equations in two variables",
+  "skillCode": "H.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>5x = 30</p><p>-2x + y = -3</p><p>The solution to the given system of equations is (x, y). What is the value of x + y?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>-3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>15</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. From 5x = 30, x = 6. Then -12 + y = -3 gives y = 9. So x + y = 15.</p><p>Other choices are intermediate or sign-error values.</p>",
+  "generatedAt": "2026-05-26T00:27:30Z",
+  "templateId": "systems-of-two-linear-equations-in-two-variables.A1.T1.easy"
+}

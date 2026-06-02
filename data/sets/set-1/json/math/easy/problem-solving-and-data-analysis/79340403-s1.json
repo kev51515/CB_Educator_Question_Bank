@@ -1,0 +1,22 @@
+{
+  "questionId": "79340403-s1",
+  "originalId": "79340403",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "skillCode": "Q.C.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The table shows the distribution of 350 pencils collected by 8 different classes for a school supply drive.</p><table border=\"1\" cellpadding=\"6\" style=\"border-collapse: collapse; margin: 0 auto;\"><tr><th>Class</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr><tr><td>Pencils</td><td>40</td><td>55</td><td>30</td><td>45</td><td>35</td><td>60</td><td>50</td><td>35</td></tr></table><p>How many pencils were collected by class 4?</p>",
+  "answerOptions": null,
+  "keys": [
+    "45"
+  ],
+  "rationale": "<p>The correct answer is <strong>45</strong>. According to the table, class 4 collected 45 pencils.</p>",
+  "generatedAt": "2026-05-26T00:21:36Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A3.T6.easy"
+}

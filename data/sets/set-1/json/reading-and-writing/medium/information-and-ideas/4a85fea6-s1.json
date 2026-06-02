@@ -1,0 +1,25 @@
+{
+  "questionId": "4a85fea6-s1",
+  "originalId": "4a85fea6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "templateId": "inferences.A1.T1.medium",
+  "stimulus": "<p><em>Pueraria montana</em> (kudzu) is an East Asian vine that has become invasive in the southeastern United States, where it smothers native trees and weakens soil stability. <em>P. montana</em> can be controlled with broad-spectrum herbicides, but that approach can also harm beneficial plants growing nearby. Recent research on deploying species-specific fungal pathogens to suppress invasive plants may offer a path toward exclusively targeting <em>P. montana</em>, consequently <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>enhancing the ecological benefits of <em>P. montana</em> in the southeastern United States.</p>"},
+    {"id": "b", "content": "<p>making individual <em>P. montana</em> vines more susceptible to existing broad-spectrum herbicides.</p>"},
+    {"id": "c", "content": "<p>enabling native trees to resist <em>P. montana</em> without external intervention.</p>"},
+    {"id": "d", "content": "<p>reducing invasive <em>P. montana</em> populations without harming other organisms.</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is best. The principle established is that broad-spectrum herbicides also damage harmless plants, but species-specific fungal pathogens would target only kudzu. By the connector \"consequently,\" the predicted outcome is the reduction of kudzu without collateral harm. Choice A contradicts the text, which describes kudzu's effects only as harmful. Choice B misroutes the new approach back through herbicides. Choice C imagines an unstated mechanism (native-tree resistance) that is not part of the principle.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

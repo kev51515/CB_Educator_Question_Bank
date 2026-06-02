@@ -1,0 +1,39 @@
+{
+  "questionId": "486f03da-s1",
+  "originalId": "486f03da",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>The poem \"Bright Window\" by Lan Pham appears in <em>Voices Across the ______ collection of contemporary poetry by writers of Southeast Asian heritage.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Sea</em>, a</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Sea</em>. A</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Sea</em>, while a</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Sea</em> a</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. A comma properly marks the boundary between the main clause and the supplementary appositive phrase describing the anthology.</p><p>Choice B creates a sentence fragment beginning with \"A collection.\" Choice C produces an awkward subordinating conjunction joining unrelated clauses. Choice D omits required punctuation between the main clause and the appositive.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "boundaries.A3.T7.easy"
+}

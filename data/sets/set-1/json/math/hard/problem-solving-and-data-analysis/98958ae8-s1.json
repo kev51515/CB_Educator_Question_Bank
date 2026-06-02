@@ -1,0 +1,22 @@
+{
+  "questionId": "98958ae8-s1",
+  "originalId": "98958ae8",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "skill": "One-variable data: Distributions and measures of center and spread",
+  "domainCode": "Q",
+  "skillCode": "Q.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>Data set X consists of the heights of 60 trees and has a mean of 20 meters. Data set Y consists of the heights of 40 trees and has a mean of 55 meters. Data set Z consists of the heights of the 100 trees from data sets X and Y. What is the mean, in meters, of data set Z?</p>",
+  "answerOptions": null,
+  "keys": [
+    "34"
+  ],
+  "rationale": "<p>Total height in X: 60 &times; 20 = 1,200. Total height in Y: 40 &times; 55 = 2,200. Combined total: 1,200 + 2,200 = 3,400 for 100 trees. Mean of Z: 3,400 / 100 = 34.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "one-variable-data-distributions-and-measures-of-center-and-spread.A4.T11.hard"
+}

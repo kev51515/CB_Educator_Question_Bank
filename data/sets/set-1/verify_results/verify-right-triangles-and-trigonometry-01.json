@@ -1,0 +1,22 @@
+[
+  {"id": "de550be0-s1", "templateId": "right-triangles-and-trigonometry.A1.T2.medium", "verdict": "ok"},
+  {"id": "a5aee181-s1", "templateId": "right-triangles-and-trigonometry.A1.T1.medium", "verdict": "ok"},
+  {"id": "902dc959-s1", "templateId": "right-triangles-and-trigonometry.A2.T3.medium", "verdict": "ok"},
+  {"id": "bcb66188-s1", "templateId": "right-triangles-and-trigonometry.A5.T10.medium", "verdict": "ok"},
+  {"id": "13d9a1c3-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.medium", "verdict": "difficulty_drift", "detail": "Template marks T8 as hard-only ('not observed at medium'); clone is a straightforward 30-60-90 hypotenuse-to-short-leg conversion appropriate for easy/medium but lacks the hard levers (k*sqrt(3) form, multi-step chain). Answer (7) is correct."},
+  {"id": "5a7e3b46-s1", "templateId": "right-triangles-and-trigonometry.A3.T5.medium", "verdict": "ok"},
+  {"id": "659cb706-s1", "templateId": "right-triangles-and-trigonometry.A6.T11.medium", "verdict": "ok"},
+  {"id": "9823f279-s1", "templateId": "right-triangles-and-trigonometry.A3.T6.medium", "verdict": "ok"},
+  {"id": "bf8d843e-s1", "templateId": "right-triangles-and-trigonometry.A4.T8.medium", "verdict": "difficulty_drift", "detail": "T8 template has no medium variant; clone is a direct 30-60-90 hypotenuse-to-leg one-step problem without hard levers (k*sqrt(3) answer form, multi-step chain). Answer (6) is correct."},
+  {"id": "33e29881-s1", "templateId": "right-triangles-and-trigonometry.A6.T11.medium", "verdict": "ok"},
+  {"id": "2bddbc1b-s1", "templateId": "right-triangles-and-trigonometry.A2.T3.medium", "verdict": "ok"},
+  {"id": "7700d098-s1", "templateId": "right-triangles-and-trigonometry.A1.T1.medium", "verdict": "ok"},
+  {"id": "9ec76b54-s1", "templateId": "right-triangles-and-trigonometry.A1.T1.medium", "verdict": "difficulty_drift", "detail": "Medium lever requires reverse direction (hypotenuse + one leg -> other leg); clone uses forward direction (two legs -> hypotenuse), which is the easy lever. Answer (12*sqrt(5)) is correct."},
+  {"id": "a71617d3-s1", "templateId": "right-triangles-and-trigonometry.A3.T6.medium", "verdict": "ok"},
+  {"id": "dba6a25a-s1", "templateId": "right-triangles-and-trigonometry.misc.hard", "verdict": "ok"},
+  {"id": "6933b3d9-s1", "templateId": "right-triangles-and-trigonometry.A6.T11.hard", "verdict": "ok"},
+  {"id": "568d66a7-s1", "templateId": "right-triangles-and-trigonometry.A4.T7.hard", "verdict": "ok"},
+  {"id": "8027db3f-s1", "templateId": "right-triangles-and-trigonometry.A6.T11.hard", "verdict": "ok"},
+  {"id": "7c25b0dc-s1", "templateId": "right-triangles-and-trigonometry.A1.T1.hard", "verdict": "difficulty_drift", "detail": "Hard lever requires side lengths with radical factors yielding k*sqrt(d) answer; clone resolves to plain integer L=10 (a 'common bug' the template explicitly warns against: 'dropping the common radical factor so the answer becomes a plain integer — destroys the lever'). Answer is correct."},
+  {"id": "1429dcdf-s1", "templateId": "right-triangles-and-trigonometry.A2.T3.hard", "verdict": "ok"}
+]

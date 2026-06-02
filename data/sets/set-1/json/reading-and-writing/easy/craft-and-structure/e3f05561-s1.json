@@ -1,0 +1,25 @@
+{
+  "questionId": "e3f05561-s1",
+  "originalId": "e3f05561",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the early 2010s, consumer-grade drones equipped with high-resolution cameras became inexpensive enough for individual artists and gave Pheobe Greenwood and other documentarians abilities that had previously been available only to professional aerial photography crews. Greenwood recognized and made full use of this <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> access to elevated perspectives to create striking documentary footage of conflict zones.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>fragile</p>"},
+    {"id": "b", "content": "<p>fresh</p>"},
+    {"id": "c", "content": "<p>obligatory</p>"},
+    {"id": "d", "content": "<p>routine</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer because \"fresh\" means newly available, which fits the text's emphasis on drones suddenly becoming affordable to individuals in the early 2010s. Choice A is incorrect because \"fragile\" describes physical delicacy and does not describe the recentness of access. Choice C is incorrect because \"obligatory\" means required; the text describes opportunity, not obligation. Choice D is incorrect because \"routine\" means habitual; the access was new, not customary.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "words-in-context.A2.T6.easy"
+}

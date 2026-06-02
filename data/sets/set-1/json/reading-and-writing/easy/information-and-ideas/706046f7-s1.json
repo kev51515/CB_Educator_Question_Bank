@@ -1,0 +1,39 @@
+{
+  "questionId": "706046f7-s1",
+  "originalId": "706046f7",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Central Ideas and Details",
+  "skillCode": "CID",
+  "type": "mcq",
+  "stimulus": "<p>In the 1970s, Yuri Kochiyama led a campaign in New York City to expand education programs for Asian American youth. Her work in this effort was inspired by her son, Billy Kochiyama. In 1969, Billy joined a series of community meetings organized by the Asian Americans for Action group in Lower Manhattan. Following her son, Yuri began attending these meetings too. Yuri soon became a member of the steering committee of Asian Americans for Action. She also became the head of what came to be called the Chinatown Youth Education Project.</p>",
+  "stem": "<p>According to the text, what did Yuri Kochiyama lead?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Her son Billy's high school</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>A new bookstore in Lower Manhattan</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The Chinatown Youth Education Project</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Protests for environmental protections</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the text states that Kochiyama \"became the head of what came to be called the Chinatown Youth Education Project.\"</p><p>Choice A is incorrect; the text says her son inspired her, not that she led his school. Choice B is incorrect; the text does not mention any bookstore. Choice D is incorrect; the text describes education work, not environmental protests.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "central-ideas-and-details.A2.T4.easy"
+}

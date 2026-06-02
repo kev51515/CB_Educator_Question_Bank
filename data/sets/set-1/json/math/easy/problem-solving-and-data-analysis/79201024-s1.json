@@ -1,0 +1,39 @@
+{
+  "questionId": "79201024-s1",
+  "originalId": "79201024",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Probability and conditional probability",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A swim team has 60 members, of whom 14 specialize in backstroke. If one team member is selected at random, what is the probability of selecting a member who specializes in backstroke?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>1/60</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>46/60</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>60/60</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>14/60</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The probability is the number of backstroke specialists divided by the total: 14/60.</p><p>Choice A is incorrect; this is the probability of selecting one specific person. Choice B is incorrect; this is the probability of selecting a non-backstroke member. Choice C is incorrect; this would mean every member specializes in backstroke.</p>",
+  "generatedAt": "2026-05-26T00:22:23Z",
+  "templateId": "probability-and-conditional-probability.A1.T1.easy"
+}

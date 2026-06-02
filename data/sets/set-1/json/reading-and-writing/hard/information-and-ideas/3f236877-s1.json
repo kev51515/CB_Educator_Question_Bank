@@ -1,0 +1,39 @@
+{
+  "questionId": "3f236877-s1",
+  "originalId": "3f236877",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Inferences",
+  "skillCode": "INF",
+  "type": "mcq",
+  "stimulus": "<p>A recent international convention obligates pharmaceutical firms to share profits with the local communities whose traditional remedies and botanical knowledge informed the development of new medicines. However, the convention also allows the firms to keep the specific terms of these benefit-sharing contracts undisclosed. Some community advocates worry that this confidentiality provision could end up <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most logically completes the text?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>reducing the income that pharmaceutical firms can earn from their contracts with local communities.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>discouraging local communities from picking up new methods of plant cultivation from their corporate partners.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>restricting the amount of scientific research that pharmaceutical firms are permitted to carry out on the resources of partner communities.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>making it impossible for outside observers to verify whether local communities are receiving fair compensation under the contracts.</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer because it most logically completes the argument about the unintended downside of the confidentiality provision. The text says the convention is meant to ensure that communities share in the profits but allows firms to keep the contract terms secret. Advocates worry about this secrecy because it would prevent outside observers from checking whether communities are in fact being fairly compensated, undermining the convention's protective purpose.</p><p>Choice A is incorrect because the advocates' concern is about under-compensation of communities, not about firms' revenues being diminished. Choice B is incorrect because the text says nothing about communities seeking to learn cultivation methods from firms. Choice C is incorrect because the confidentiality provision concerns disclosure of contract terms, not limits on the research firms may conduct.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z",
+  "templateId": "inferences.A3.T6.hard"
+}

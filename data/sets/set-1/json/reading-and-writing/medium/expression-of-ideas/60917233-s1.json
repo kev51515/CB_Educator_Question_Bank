@@ -1,0 +1,25 @@
+{
+  "questionId": "60917233-s1",
+  "originalId": "60917233",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A3.T8.medium",
+  "stimulus": "<p>In the 1920s, electrical engineer Granville Woods improved upon existing designs for the railway telegraph used to communicate with moving trains. <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Woods refined the induction system so that messages could be transmitted reliably between stations and a train traveling at speed. With this advance, Woods became one of the most prolific Black inventors to shape the safety of American railroads.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>In particular,</p>"},
+    {"id": "b", "content": "<p>However,</p>"},
+    {"id": "c", "content": "<p>Soon,</p>"},
+    {"id": "d", "content": "<p>Regardless,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. \"In particular\" logically signals that the information in this sentence—Woods refining the induction system for reliable transmission to moving trains—provides specific details elaborating on the more general claim that Woods improved the railway telegraph.</p><p>Choice B is incorrect because \"however\" illogically signals that this sentence contrasts with the previous general claim about Woods, when it in fact elaborates on it. Choice C is incorrect because \"soon\" illogically signals that this refinement occurred shortly after his general improvement, when the refinement is the improvement being specified. Choice D is incorrect because \"regardless\" illogically signals that the refinement is true despite the previous claim, when it actually specifies that claim.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

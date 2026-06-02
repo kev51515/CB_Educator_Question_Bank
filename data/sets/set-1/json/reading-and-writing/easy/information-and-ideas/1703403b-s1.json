@@ -1,0 +1,39 @@
+{
+  "questionId": "1703403b-s1",
+  "originalId": "1703403b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "stimulus": "<p>A student is presenting average monthly snowfall totals in four Norwegian cities for a geography class. Based on records from 1991 to 2020, the average snowfall in December was about 7 inches in Bergen, about 6 inches in Oslo, about 6 inches in Stavanger, and about 14 inches in Tromsø. During the presentation, the student notes that in December <span aria-hidden=\"true\">______</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the records to complete the statement?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>Tromsø has a similar average snowfall to Bergen, and Oslo has a similar average snowfall to Stavanger.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>Bergen, Oslo, and Stavanger each have an average snowfall below 10 inches, but Tromsø's average snowfall that month is greater than 10 inches.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>Bergen and Stavanger have an average snowfall of about 4 inches, and Oslo and Tromsø have an average snowfall of about 12 inches.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>Tromsø's average snowfall is less than that of Bergen, Oslo, and Stavanger.</p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is the best answer. Bergen (about 7 in), Oslo (about 6 in), and Stavanger (about 6 in) all have averages below 10 inches, while Tromsø (about 14 in) is above 10 inches, which accurately describes the data.</p><p>Choice A is incorrect; Tromsø (about 14 in) is not similar to Bergen (about 7 in), and Oslo and Stavanger are similar to Bergen, not just to each other. Choice C is incorrect; Bergen and Stavanger are not about 4 inches, and Oslo is not about 12 inches. Choice D is incorrect; Tromsø has the highest average, not the lowest.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "command-of-evidence.A5.T8.easy"
+}

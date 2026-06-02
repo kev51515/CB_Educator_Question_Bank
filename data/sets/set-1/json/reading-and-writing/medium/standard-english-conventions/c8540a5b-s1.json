@@ -1,0 +1,25 @@
+{
+  "questionId": "c8540a5b-s1",
+  "originalId": "c8540a5b",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "templateId": "boundaries.A2.T4.medium",
+  "stimulus": "<p>Japanese biochemists Akira Endo and Masao Kuroda developed a technique for visualizing the structural dynamics of large proteins. Their <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> cryo-EM (cryogenic electron microscopy), is now routinely used to capture three-dimensional snapshots of cellular machinery at near-atomic resolution.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>approach&mdash;named</p>"},
+    {"id": "b", "content": "<p>approach, named</p>"},
+    {"id": "c", "content": "<p>approach (named</p>"},
+    {"id": "d", "content": "<p>approach named</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The comma after \"approach\" pairs with the comma after the closing parenthesis to set off the supplementary element \"named cryo-EM (cryogenic electron microscopy)\" symmetrically with matched commas. The supplementary element identifies the approach's name and could be removed without affecting the grammar of the sentence.</p><p>Choice A is incorrect because a dash cannot pair with a closing comma to set off a supplementary element. Choice C is incorrect because an opening parenthesis cannot pair with a closing comma in this way. Choice D is incorrect because it fails to supply any opening punctuation for the supplementary element.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

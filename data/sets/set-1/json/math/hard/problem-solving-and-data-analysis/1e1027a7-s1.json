@@ -1,0 +1,39 @@
+{
+  "questionId": "1e1027a7-s1",
+  "originalId": "1e1027a7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.E.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows a bakery's pastry sales s, in dollars, and the average daily temperature t, in degrees Celsius (\u00b0C), on 10 different days. The data points are approximately (5, 220), (8, 235), (10, 245), (12, 250), (15, 265), (18, 280), (20, 295), (22, 305), (25, 320), (28, 330), and a line of best fit is drawn through these points. Which of the following could be an equation of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>s = 200 + 4.8t</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>s = 200 + 0.5t</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>s = 50 + 4.8t</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>s = 50 + 0.5t</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The data has a positive slope of roughly (330 \u2212 220)/(28 \u2212 5) \u2248 4.8 dollars per \u00b0C and a y-intercept near 200 dollars. Therefore s = 200 + 4.8t best fits. Choice (a) is correct.</p>",
+  "generatedAt": "2026-05-26T01:14:43Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.hard"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "cec36caf-s1",
+  "originalId": "cec36caf",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p><math><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup><mo>-</mo><mn>30</mn><mo>=</mo><mn>66</mn></math></p><p>What is the positive solution to the given equation?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>16</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>11</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>4</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Adding 30 to both sides gives <math><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>96</mn></math>. Dividing by 6 yields <math><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>16</mn></math>, so <em>x</em> = \u00b14. The positive solution is 4.</p><p>Choices A, B, and C are incorrect.</p>",
+  "generatedAt": "2026-05-26T00:20:15.907645Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T2.easy"
+}

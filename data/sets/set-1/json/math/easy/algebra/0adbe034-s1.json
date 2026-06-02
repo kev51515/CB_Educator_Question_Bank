@@ -1,0 +1,39 @@
+{
+  "questionId": "0adbe034-s1",
+  "originalId": "0adbe034",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If 3<i>y</i> &minus; 15 = &minus;9, what is the value of <i>y</i> &minus; 7?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>&minus;15</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>&minus;14</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>&minus;9</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>&minus;5</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. Adding 15 to both sides of 3<i>y</i> &minus; 15 = &minus;9 gives 3<i>y</i> = 6, so <i>y</i> = 2. Therefore <i>y</i> &minus; 7 = 2 &minus; 7 = &minus;5.</p><p>Choices A, B, and C result from arithmetic or sign errors.</p>",
+  "generatedAt": "2026-05-26T00:23:37Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

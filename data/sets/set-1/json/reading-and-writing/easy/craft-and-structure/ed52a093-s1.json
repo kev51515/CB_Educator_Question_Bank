@@ -1,0 +1,39 @@
+{
+  "questionId": "ed52a093-s1",
+  "originalId": "ed52a093",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p><p>Goldfinches are famous for their bright yellow plumage, but they are actually born with dull olive-gray feathers. Their yellow color comes from eating seeds, but the seeds themselves aren't naturally yellow. Animals can't produce carotenoids, the pigments responsible for the yellow hue. The plants that produce the seeds, however, can make these pigments. Thus, the more yellow a goldfinch, the more seeds it has eaten.</p><p><strong>Text 2</strong></p><p>Ornithologist Priya Desai has found that goldfinches actively redistribute pigments to make themselves look more yellow. A gland near the base of their wing stores pigments drawn from their diet. When the birds preen, they spread these pigments through their feathers. Goldfinches may do this most during the breeding season, when looking yellower offers an advantage.</p>",
+  "stem": "<p>Based on the texts, how would the ornithologist in Text 2 most likely respond to the author's conclusion in Text 1?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>By pointing out that the quantity of seeds eaten isn't the only factor that influences a goldfinch's color</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>By claiming that the brightness of a goldfinch's feathers doesn't change noticeably across the year</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>By arguing that goldfinches don't eat many seeds outside of the breeding season</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>By emphasizing that a goldfinch's wing feathers are yellower than its other feathers are</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is the best answer. Text 1 concludes that a yellower goldfinch must have eaten more seeds. Text 2 shows that goldfinches actively redistribute pigments through preening, which means diet alone doesn't determine color\u2014preening is also a factor.</p><p>Choice B is incorrect. Text 2 indicates feathers do become noticeably yellower, not less so. Choice C is incorrect. Text 2 doesn't discuss seasonal differences in seed consumption. Choice D is incorrect. Text 2 doesn't claim wing feathers are yellower than other feathers, and that point wouldn't address Text 1's claim about seed quantity.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A1.T1.easy"
+}

@@ -1,0 +1,39 @@
+{
+  "questionId": "2bddbc1b-s1",
+  "originalId": "2bddbc1b",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Geometry and Trigonometry",
+  "domainCode": "S",
+  "skill": "Right triangles and trigonometry",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In right triangle <math><mi>A</mi><mi>B</mi><mi>C</mi></math>, angle <math><mi>C</mi></math> is the right angle. The length of side <math><mover><mrow><mi>A</mi><mi>B</mi></mrow><mo>&#175;</mo></mover></math> is <math><mn>35</mn></math>, and the length of side <math><mover><mrow><mi>A</mi><mi>C</mi></mrow><mo>&#175;</mo></mover></math> is <math><mn>28</mn></math>. What is the value of <math><mi>cos</mi><mo>(</mo><mi>A</mi><mo>)</mo></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mfrac><mn>35</mn><mn>28</mn></mfrac></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mfrac><mn>28</mn><mn>21</mn></mfrac></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mfrac><mn>28</mn><mn>35</mn></mfrac></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mfrac><mn>1</mn><mn>28</mn></mfrac></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. In right triangle ABC with the right angle at C, AB is the hypotenuse and AC is the leg adjacent to angle A. So cos(A) = AC/AB = 28/35.</p><p>Choice A is the reciprocal (1/cos A). Choice B uses an unrelated side. Choice D divides 1 by the adjacent side.</p>",
+  "generatedAt": "2026-05-26T01:47:17Z",
+  "templateId": "right-triangles-and-trigonometry.A2.T3.medium"
+}

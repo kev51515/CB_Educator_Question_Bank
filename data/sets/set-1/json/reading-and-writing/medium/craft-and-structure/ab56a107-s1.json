@@ -1,0 +1,25 @@
+{
+  "questionId": "ab56a107-s1",
+  "originalId": "ab56a107",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "templateId": "cross-text-connections.A1.T1.medium",
+  "stimulus": "<p><span aria-level=\"2\" role=\"heading\"><strong>Text 1</strong></span></p><p>Electronic dance music, in which producers assemble tracks using software and audio samples, isn&rsquo;t really music in any serious sense. It doesn&rsquo;t demand the kind of skill that performing on a traditional instrument requires. &ldquo;Composing&rdquo; on a laptop with a sequencer and a library of loops is far easier than mastering a violin: the software is doing the difficult work.</p><p>&nbsp;</p><p><span aria-level=\"2\" role=\"heading\"><strong>Text 2</strong></span></p><p>The programs used to create electronic dance music involve much more than dragging a few loops together. Beyond knowing the foundations of harmony, rhythm, and arrangement, producers must master complex digital audio workstations, synthesis techniques, and sound design. Many producers begin a track by writing melodies and chord progressions on paper or at a keyboard before shaping them on the computer, where they can apply textures and effects that would otherwise require an entire studio of instruments.</p>",
+  "stem": "<p>Based on the texts, how would the author of Text 2 most likely respond to the claims of the author of Text 1?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>By admitting that most electronic producers do not regard traditional musical training as important</p>"},
+    {"id": "b", "content": "<p>By arguing that electronic dance music can still be presented in traditional concert formats</p>"},
+    {"id": "c", "content": "<p>By explaining that producing electronic dance music is actually more difficult than playing many traditional instruments</p>"},
+    {"id": "d", "content": "<p>By maintaining that producing electronic dance music demands musical skill and knowledge even though it relies on less traditional tools</p>"}
+  ],
+  "keys": ["d"],
+  "rationale": "<p>Choice D is the best answer. Text 1 claims that electronic dance music takes little skill because software does the hard work. Text 2 explicitly counters this, listing the foundations of harmony, rhythm, and arrangement together with mastery of digital audio workstations, synthesis, and sound design as required competencies. The author of Text 2 would therefore insist that producing electronic dance music demands musical skill and knowledge even though it employs less traditional tools.</p><p>Choice A is incorrect because Text 2 emphasizes that producers must know the foundations of music. Choice B is incorrect because neither text discusses concert presentation. Choice C is incorrect because Text 2 does not claim that electronic production is more difficult than traditional instruments, only that it requires real skill.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

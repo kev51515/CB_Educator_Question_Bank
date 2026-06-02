@@ -1,0 +1,39 @@
+{
+  "questionId": "d4950429-s1",
+  "originalId": "d4950429",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A rectangle has a length of <em>x</em> units and a width of <em>x</em> - 9 units. If the rectangle has an area of 52 square units, what is the value of <em>x</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>13</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>4</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>17</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>52</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The area of the rectangle is <em>x</em>(<em>x</em> - 9) = 52, which gives <em>x</em><sup>2</sup> - 9<em>x</em> - 52 = 0. Factoring: (<em>x</em> - 13)(<em>x</em> + 4) = 0, so <em>x</em> = 13 or <em>x</em> = -4. Since the length must be positive, <em>x</em> = 13. Choice B is the magnitude of the rejected solution. Choices C and D do not satisfy the equation.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A4.T3.medium"
+}

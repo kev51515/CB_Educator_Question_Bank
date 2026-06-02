@@ -1,0 +1,25 @@
+{
+  "questionId": "52e589f9-s1",
+  "originalId": "52e589f9",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "templateId": "nonlinear-functions.A2.T1.medium",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: center;\">w(d) = −0.031(d/30)² + 6.42(d/30) + 12.5</p><p>The function w gives the predicted weight w(d), in kilograms (kg), of a certain animal d days after it was born, where d ≤ 420. Which of the following is the best interpretation of the statement \"w(180) is approximately equal to 47\" in this context?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The predicted weight of the animal was approximately 180 kg 47 days after it was born.</p>"},
+    {"id": "b", "content": "<p>The predicted weight of the animal was approximately 47 kg 180 days after it was born.</p>"},
+    {"id": "c", "content": "<p>The predicted weight of the animal was approximately 47 kg 180/30 days after it was born.</p>"},
+    {"id": "d", "content": "<p>The predicted weight of the animal was approximately 180/30 kg 47 days after it was born.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. The input 180 is the value of d (days), and the output approximately 47 is the predicted weight in kg. So the weight was approximately 47 kg, 180 days after birth. Choice A swaps the meaning. Choices C and D misinterpret the units.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

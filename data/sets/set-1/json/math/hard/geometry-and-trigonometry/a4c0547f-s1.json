@@ -1,0 +1,39 @@
+{
+  "questionId": "a4c0547f-s1",
+  "originalId": "a4c0547f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Geometry and Trigonometry",
+  "skill": "Right triangles and trigonometry",
+  "domainCode": "S",
+  "skillCode": "S.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>In triangle PQR, angle R is a right angle and the length of segment QR is 16 units. If tan P = 8/15, what is the perimeter, in units, of triangle PQR?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>34</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>30</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>48</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>80</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>In right triangle PQR with right angle at R, tan P = (opposite)/(adjacent) = QR/PR = 8/15. Given QR = 16, we have 16/PR = 8/15, so PR = 30. By the Pythagorean theorem, PQ = &radic;(16&sup2; + 30&sup2;) = &radic;(256 + 900) = &radic;1156 = 34. Perimeter = 16 + 30 + 34 = 80. Choice A is just the hypotenuse; B is just PR; C is QR + PR.</p>",
+  "generatedAt": "2026-05-26T00:28:52Z",
+  "templateId": "right-triangles-and-trigonometry.A3.T5.hard"
+}

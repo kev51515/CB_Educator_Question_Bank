@@ -1,0 +1,25 @@
+{
+  "questionId": "95388117-s1",
+  "originalId": "95388117",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Land Area Covered by Two Native Lichens at a Site in the Yukon</p></caption><thead><tr><th>Species</th><th>Area covered in 2008 (sq m)</th><th>Area covered in 2018 (sq m)</th><th>Percent increase, 2008&ndash;2018</th></tr></thead><tbody><tr><td><em>Cladonia rangiferina</em></td><td>2,140</td><td>2,632</td><td>23%</td></tr><tr><td><em>Stereocaulon paschale</em></td><td>9.4</td><td>13.6</td><td>45%</td></tr></tbody></table></figure><p>Two cold-tolerant lichens native to the Yukon, <em>Cladonia rangiferina</em> and <em>Stereocaulon paschale</em>, grow in rocky open ground that thaws for only part of the year. Botanist Aleksei Volkov wondered how warming temperatures in recent decades had affected these species, so he visited a site in the central Yukon, first in 2008 and later in 2018, to measure the area each species covered. Volkov found that the area of land covered by the two species had significantly expanded during the ten-year period. While both species likely benefited from warming temperatures, <em>Stereocaulon paschale</em> <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the comparison?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>suppressed the growth of <em>Cladonia rangiferina</em>, which covered a smaller area of land in 2018 than it had in 2008.</p>"},
+    {"id": "b", "content": "<p>saw a greater expansion than <em>Cladonia rangiferina</em> did, increasing the area of land it covered by nearly half.</p>"},
+    {"id": "c", "content": "<p>showed a greater increase in the average size of individual thalli than <em>Cladonia rangiferina</em> did.</p>"},
+    {"id": "d", "content": "<p>covered land newly freed from snow at a rate 45% faster than that of <em>Cladonia rangiferina</em>.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. According to the table, <em>Stereocaulon paschale</em> increased its coverage by 45% over the period, while <em>Cladonia rangiferina</em> increased its coverage by 23%; the smaller-coverage species expanded relatively more, and 45% is nearly half. Choice A is incorrect because the area covered by <em>Cladonia rangiferina</em> increased from 2,140 to 2,632 sq m. Choice C is incorrect because the table does not report individual thalli sizes. Choice D is incorrect because the table does not report any rate of covering newly freed land.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,24 @@
+{
+  "questionId": "b74f2feb-s1",
+  "originalId": "b74f2feb",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The expression 5 &middot; <sup>7</sup>&radic;(2<sup>7</sup><i>x</i><sup>21</sup>) &middot; <sup>9</sup>&radic;(3<sup>9</sup><i>x</i>) is equivalent to <i>a</i><i>x</i><sup><i>b</i></sup>, where <i>a</i> and <i>b</i> are positive constants and <i>x</i> &gt; 1. What is the value of <i>a</i> + <i>b</i>?</p>",
+  "answerOptions": null,
+  "keys": [
+    "298/9",
+    "33.11",
+    "33.12"
+  ],
+  "rationale": "<p>Simplify each radical: <sup>7</sup>&radic;(2<sup>7</sup><i>x</i><sup>21</sup>) = 2<i>x</i>&sup3;, and <sup>9</sup>&radic;(3<sup>9</sup><i>x</i>) = 3<i>x</i><sup>1/9</sup>. Multiplying: 5 &middot; 2<i>x</i>&sup3; &middot; 3<i>x</i><sup>1/9</sup> = 30<i>x</i><sup>3 + 1/9</sup> = 30<i>x</i><sup>28/9</sup>. So <i>a</i> = 30 and <i>b</i> = 28/9. Their sum is 30 + 28/9 = 298/9.</p>",
+  "generatedAt": "2026-05-26T00:27:32.928356+00:00",
+  "templateId": "equivalent-expressions.A3.T7.hard"
+}

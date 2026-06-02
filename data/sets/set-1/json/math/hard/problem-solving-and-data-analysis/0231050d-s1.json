@@ -1,0 +1,22 @@
+{
+  "questionId": "0231050d-s1",
+  "originalId": "0231050d",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Percentages",
+  "skillCode": "Q.B.",
+  "type": "spr",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T00:32:56.104444Z",
+  "stem": "<p>The table shows the total amount of rain, in inches, recorded each year in a certain city from 2010 to 2014.</p><figure class=\"table\"><table border=\"1\"><tbody><tr><th>Year</th><th>Annual rainfall (inches)</th></tr><tr><td style=\"text-align:center;\">2010</td><td style=\"text-align:center;\">60</td></tr><tr><td style=\"text-align:center;\">2011</td><td style=\"text-align:center;\">45</td></tr><tr><td style=\"text-align:center;\">2012</td><td style=\"text-align:center;\">30</td></tr><tr><td style=\"text-align:center;\">2013</td><td style=\"text-align:center;\">22</td></tr><tr><td style=\"text-align:center;\">2014</td><td style=\"text-align:center;\">12</td></tr></tbody></table></figure><p>If p is the percent decrease in the annual rainfall from 2010 to 2014, what is the value of p?</p>",
+  "answerOptions": null,
+  "keys": [
+    "80"
+  ],
+  "rationale": "<p>The correct answer is 80. The percent decrease between two values is the difference divided by the original value, times 100. The rainfall in 2010 was 60 inches and in 2014 was 12 inches. The percent decrease is (60 \u2212 12) / 60 \u00d7 100 = 48/60 \u00d7 100 = 80. Therefore p = 80.</p>",
+  "templateId": "percentages.A3.T3.hard"
+}

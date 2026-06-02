@@ -1,0 +1,39 @@
+{
+  "questionId": "a7c85001-s1",
+  "originalId": "a7c85001",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Boundaries",
+  "skillCode": "BOU",
+  "type": "mcq",
+  "stimulus": "<p>Researchers Sara Konrath and Daniel Gr\u00fchn examined how <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> In a survey conducted in 2019, they reported that adults who regularly volunteered reported greater life satisfaction than those who did not, even after accounting for income and education.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>do adults experience volunteer work<span data-ssml-say-as=\"characters\">.</span></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>do adults experience volunteer work<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>adults experience volunteer work<span data-ssml-say-as=\"characters\">?</span></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>adults experience volunteer work<span data-ssml-say-as=\"characters\">.</span></p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is the best answer. The convention being tested is end-of-sentence punctuation. The sentence is a declarative statement reporting what the researchers \"examined,\" not a direct question. The embedded noun clause \"adults experience volunteer work\" uses declarative word order and the whole sentence must end with a period.</p><p>Choice A is incorrect because the inverted word order \"do adults experience\" belongs to a direct question, not an embedded one. Choice B is incorrect for the same reason and also misuses a question mark to end a declarative sentence. Choice C is incorrect because a question mark can't be used to end a declarative sentence.</p>",
+  "generatedAt": "2026-05-26T02:17:20.255646Z",
+  "templateId": "boundaries.A5.T11.easy"
+}

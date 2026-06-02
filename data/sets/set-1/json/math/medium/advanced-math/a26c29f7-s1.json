@@ -1,0 +1,39 @@
+{
+  "questionId": "a26c29f7-s1",
+  "originalId": "a26c29f7",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear functions",
+  "skillCode": "P.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The function <em>f</em> is defined by <em>f</em>(<em>x</em>) = 5<em>x</em><sup>4</sup>. In the <em>xy</em>-plane, the graph of <em>y</em> = <em>g</em>(<em>x</em>) is the result of shifting the graph of <em>y</em> = <em>f</em>(<em>x</em>) up 6 units. Which equation defines function <em>g</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>g</em>(<em>x</em>) = 5(<em>x</em> + 6)<sup>4</sup></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>g</em>(<em>x</em>) = 5<em>x</em><sup>4</sup> + 6</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>g</em>(<em>x</em>) = 5<em>x</em><sup>4</sup> - 6</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>g</em>(<em>x</em>) = 5(<em>x</em> - 6)<sup>4</sup></p>"
+    }
+  ],
+  "keys": [
+    "b"
+  ],
+  "rationale": "<p>Choice B is correct. Shifting the graph of <em>y</em> = <em>f</em>(<em>x</em>) up by <em>k</em> units gives <em>g</em>(<em>x</em>) = <em>f</em>(<em>x</em>) + <em>k</em>. With <em>f</em>(<em>x</em>) = 5<em>x</em><sup>4</sup> and <em>k</em> = 6, <em>g</em>(<em>x</em>) = 5<em>x</em><sup>4</sup> + 6. Choice C represents a downward shift. Choices A and D represent horizontal shifts.</p>",
+  "generatedAt": "2026-05-26T01:26:05.261929Z",
+  "templateId": "nonlinear-functions.A5.T1.medium"
+}

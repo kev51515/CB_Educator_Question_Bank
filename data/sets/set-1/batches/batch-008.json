@@ -1,0 +1,452 @@
+[
+  {
+    "id": "86f7483f",
+    "path": "json/math/easy/algebra/86f7483f.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "89541f9b",
+    "path": "json/math/easy/algebra/89541f9b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "915463e0",
+    "path": "json/math/easy/algebra/915463e0.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b64e2c7f",
+    "path": "json/math/easy/algebra/b64e2c7f.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b75f7812",
+    "path": "json/math/easy/algebra/b75f7812.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "spr"
+  },
+  {
+    "id": "c50ede6d",
+    "path": "json/math/easy/algebra/c50ede6d.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "c9355dec",
+    "path": "json/math/easy/algebra/c9355dec.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "cfe67646",
+    "path": "json/math/easy/algebra/cfe67646.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "df32b09c",
+    "path": "json/math/easy/algebra/df32b09c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e006209c",
+    "path": "json/math/easy/algebra/e006209c.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e744499e",
+    "path": "json/math/easy/algebra/e744499e.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ee439cff",
+    "path": "json/math/easy/algebra/ee439cff.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f01ef454",
+    "path": "json/math/easy/algebra/f01ef454.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Linear inequalities in one or two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "0d1dca87",
+    "path": "json/math/easy/algebra/0d1dca87.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "0df106df",
+    "path": "json/math/easy/algebra/0df106df.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "1006cad7",
+    "path": "json/math/easy/algebra/1006cad7.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "17f176ec",
+    "path": "json/math/easy/algebra/17f176ec.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "317e80f9",
+    "path": "json/math/easy/algebra/317e80f9.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "3409707e",
+    "path": "json/math/easy/algebra/3409707e.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "44d65912",
+    "path": "json/math/easy/algebra/44d65912.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "4b06557b",
+    "path": "json/math/easy/algebra/4b06557b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "4b76c7f1",
+    "path": "json/math/easy/algebra/4b76c7f1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "4ec95eab",
+    "path": "json/math/easy/algebra/4ec95eab.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "4fb8adf7",
+    "path": "json/math/easy/algebra/4fb8adf7.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "5f46fc76",
+    "path": "json/math/easy/algebra/5f46fc76.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "608eeb6e",
+    "path": "json/math/easy/algebra/608eeb6e.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "7d89376f",
+    "path": "json/math/easy/algebra/7d89376f.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "8abed0fb",
+    "path": "json/math/easy/algebra/8abed0fb.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "939fc21b",
+    "path": "json/math/easy/algebra/939fc21b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "9db5b5c1",
+    "path": "json/math/easy/algebra/9db5b5c1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "aacc834b",
+    "path": "json/math/easy/algebra/aacc834b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "spr"
+  },
+  {
+    "id": "aff28230",
+    "path": "json/math/easy/algebra/aff28230.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b0fc3166",
+    "path": "json/math/easy/algebra/b0fc3166.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "b86123af",
+    "path": "json/math/easy/algebra/b86123af.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ca9bb527",
+    "path": "json/math/easy/algebra/ca9bb527.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ccc3ad6b",
+    "path": "json/math/easy/algebra/ccc3ad6b.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "cd33b015",
+    "path": "json/math/easy/algebra/cd33b015.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "cdec4c87",
+    "path": "json/math/easy/algebra/cdec4c87.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "d1aeb6f1",
+    "path": "json/math/easy/algebra/d1aeb6f1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "dba8d38a",
+    "path": "json/math/easy/algebra/dba8d38a.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e0177f5f",
+    "path": "json/math/easy/algebra/e0177f5f.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e1259a5a",
+    "path": "json/math/easy/algebra/e1259a5a.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "e6545fa8",
+    "path": "json/math/easy/algebra/e6545fa8.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ece00725",
+    "path": "json/math/easy/algebra/ece00725.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ee031767",
+    "path": "json/math/easy/algebra/ee031767.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f5563c26",
+    "path": "json/math/easy/algebra/f5563c26.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f6b055dc",
+    "path": "json/math/easy/algebra/f6b055dc.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "f88970cc",
+    "path": "json/math/easy/algebra/f88970cc.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "ffb371f5",
+    "path": "json/math/easy/algebra/ffb371f5.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Algebra",
+    "skill": "Systems of two linear equations in two variables",
+    "type": "mcq"
+  },
+  {
+    "id": "02b02213",
+    "path": "json/math/easy/geometry-and-trigonometry/02b02213.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Area and volume",
+    "type": "mcq"
+  }
+]

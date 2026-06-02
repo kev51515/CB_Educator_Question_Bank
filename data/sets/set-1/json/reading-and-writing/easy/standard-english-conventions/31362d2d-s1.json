@@ -1,0 +1,39 @@
+{
+  "questionId": "31362d2d-s1",
+  "originalId": "31362d2d",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Standard English Conventions",
+  "domainCode": "SEC",
+  "skill": "Form, Structure, and Sense",
+  "skillCode": "FSS",
+  "type": "mcq",
+  "stimulus": "<p>If certain amino acids such as glycine and alanine <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> Earth from a passing comet and survived impact&mdash;an idea biochemist Renata Costa explored in a 2019 paper&mdash;the amino acids could have combined with other molecules already present on the planet to form the proteins essential to early life.</p>",
+  "stem": "<p>Which choice completes the text so that it conforms to the conventions of Standard English?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>arrive</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>are arriving</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>will arrive</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>had arrived</p>"
+    }
+  ],
+  "keys": [
+    "d"
+  ],
+  "rationale": "<p>Choice D is correct. The convention being tested is the use of verbs to express tense. Because the main clause uses &ldquo;could have combined&rdquo; (past conditional), the if-clause requires the past perfect &ldquo;had arrived&rdquo; to indicate an action completed before another past action.</p><p>Choice A (present) doesn&rsquo;t match the past time frame. Choice B (present progressive) doesn&rsquo;t match either. Choice C (future) is inconsistent with the past conditional.</p>",
+  "generatedAt": "2026-05-26T02:19:51Z",
+  "templateId": "form-structure-and-sense.A1.T1.easy"
+}

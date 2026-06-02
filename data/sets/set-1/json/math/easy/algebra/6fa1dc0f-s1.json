@@ -1,0 +1,39 @@
+{
+  "questionId": "6fa1dc0f-s1",
+  "originalId": "6fa1dc0f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>Line <i>r</i> in the <i>xy</i>-plane has a slope of 7 and passes through the point (0, &minus;2). Which equation defines line <i>r</i>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><i>y</i> = 7<i>x</i> &minus; 2</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><i>y</i> = &minus;2<i>x</i> + 7</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><i>y</i> = 7<i>x</i> + 2</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><i>y</i> = &minus;2<i>x</i> &minus; 7</p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>Choice A is correct. The line in slope-intercept form is <i>y</i> = <i>mx</i> + <i>b</i> with <i>m</i> = 7 and <i>b</i> = &minus;2, giving <i>y</i> = 7<i>x</i> &minus; 2.</p><p>Choices B, C, and D confuse the slope with the <i>y</i>-intercept or use the wrong sign for the <i>y</i>-intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A4.T5.easy"
+}

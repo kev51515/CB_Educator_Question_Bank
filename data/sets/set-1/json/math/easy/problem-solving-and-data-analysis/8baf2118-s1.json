@@ -1,0 +1,39 @@
+{
+  "section": "Math",
+  "difficulty": "Easy",
+  "dcode": "E",
+  "domain": "Problem-Solving and Data Analysis",
+  "domain_code": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skill_code": "Q.D.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p style=\"text-align: left;\">A scatterplot in the xy-plane has 10 data points in a linear pattern trending down from left to right. A line of best fit passes through the approximate coordinates (1, 10), (5, 6), and (9, 2). Which of the following equations best represents the line of best fit shown?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>y = 11 + x</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>y = \u221211 \u2212 x</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>y = 11 \u2212 x</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>y = \u221211 + x</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Slope = (6 \u2212 10)/(5 \u2212 1) = \u22121. With slope \u22121 and a point (1, 10): 10 = \u22121 + b so b = 11. Equation: y = 11 \u2212 x.</p><p>The other choices have incorrect signs of slope or intercept.</p>",
+  "questionId": "8baf2118-s1",
+  "originalId": "8baf2118",
+  "setId": "set-1",
+  "generatedAt": "2026-05-26T00:27:30.513188+00:00",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T3.easy"
+}

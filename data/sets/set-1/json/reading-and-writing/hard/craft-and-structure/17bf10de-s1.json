@@ -1,0 +1,39 @@
+{
+  "questionId": "17bf10de-s1",
+  "originalId": "17bf10de",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Cross-Text Connections",
+  "skillCode": "CTC",
+  "type": "mcq",
+  "stimulus": "<p><strong>Text 1</strong></p>\n<p>For all its vivid storytelling, William L. Shirer's 1960 history <em>The Rise and Fall of the Third Reich</em> exhibits notable shortcomings as a scholarly work. By drawing almost exclusively on captured German records and the memoirs of Nazi officials, Shirer gives readers little sense of how political life in Weimar Germany shaped the events that followed. Had Shirer engaged with the social-history scholarship that was already emerging in his time, his account would not have been so narrowly focused on the actions of a handful of leaders.</p>\n<p><strong>Text 2</strong></p>\n<p>William L. Shirer's <em>The Rise and Fall of the Third Reich</em> is a vivid if old-fashioned introduction to Nazi Germany. Shirer's command of his archival sources is impressive, but his underlying thesis&mdash;that the Third Reich was the inevitable outgrowth of deep flaws in the German national character&mdash;is unconvincingly sweeping.</p>",
+  "stem": "<p>Which choice best describes a difference in how the authors of Text 1 and Text 2 view William L. Shirer's <em>The Rise and Fall of the Third Reich</em>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>The author of Text 1 claims that Shirer would agree that political life in Weimar Germany was the principal cause of the Third Reich, while the author of Text 2 maintains that Shirer would say that ordinary Germans were not committed to Nazi ideology in the same way that the leaders were.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>The author of Text 1 argues that Shirer should have made greater use of the work of other historians, while the author of Text 2 implies that Shirer's most original claims emerge from his independent archival research.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>The author of Text 1 believes that the narrowness of Shirer's research led him to a one-sided interpretation, while the author of Text 2 believes that Shirer's central argument is too broadly generalizing to be persuasive.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>The author of Text 1 asserts that the vivid prose of <em>The Rise and Fall of the Third Reich</em> makes the book worth reading despite its flaws, while the author of Text 2 focuses exclusively on weaknesses in Shirer's interpretation.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer. Both texts criticize Shirer's work, but for different reasons: Text 1 argues that Shirer's reliance on a narrow set of sources led him to overlook broader social-historical context, and Text 2 argues that Shirer's central thesis is \"unconvincingly sweeping,\" a close synonym for \"too broadly generalizing.\"</p><p>Choice A is incorrect because Text 1 says Shirer was inattentive to Weimar political life, not that he would credit it as the principal cause; Text 2 likewise makes no such claim about ordinary Germans. Choice B is incorrect because Text 2 does not suggest that Shirer's most original claims come from his archival work; it praises his command of sources but is unconvinced by his thesis. Choice D is incorrect because Text 1 does not say <em>The Rise and Fall of the Third Reich</em> is worth reading despite its flaws, and Text 2 explicitly praises Shirer's archival command.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "cross-text-connections.A3.T5.hard"
+}

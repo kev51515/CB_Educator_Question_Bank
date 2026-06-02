@@ -1,0 +1,25 @@
+{
+  "questionId": "81a3a607-s1",
+  "originalId": "81a3a607",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "templateId": "words-in-context.A2.T3.medium",
+  "stimulus": "<p>In the Indigenous mixed-species fishponds of Hawai'i known as loko i'a, juvenile mullet, milkfish, and shrimp form a <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> network of relations: mullet graze the algae that would otherwise smother the pond floor; milkfish feed on detritus the mullet stir up while grazing; shrimp scavenge organic matter the milkfish leave behind; and all three species are sheltered from predators by the stonework openings that allow only smaller fish to enter.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>elaborate</p>"},
+    {"id": "b", "content": "<p>decorative</p>"},
+    {"id": "c", "content": "<p>concealed</p>"},
+    {"id": "d", "content": "<p>fragile</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is correct. \"Elaborate\" means complex and detailed. The text spells out a series of interconnected feeding and sheltering relationships among three species, with each step depending on the previous one&mdash;a textbook description of an intricate, many-layered network.</p><p>Choice B is incorrect because the relationships are functional, not ornamental. Choice C is incorrect because the network is explicitly described, not hidden. Choice D is incorrect because nothing in the text suggests vulnerability to disruption; only the structure's complexity is emphasized.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

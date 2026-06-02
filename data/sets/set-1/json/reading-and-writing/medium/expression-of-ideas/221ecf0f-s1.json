@@ -1,0 +1,25 @@
+{
+  "questionId": "221ecf0f-s1",
+  "originalId": "221ecf0f",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Expression of Ideas",
+  "domainCode": "EOI",
+  "skill": "Transitions",
+  "skillCode": "TRA",
+  "type": "mcq",
+  "templateId": "transitions.A1.T1.medium",
+  "stimulus": "<p>Sarah Winnemucca (1844–1891) adjusted her subject matter and voice depending on the audience she was addressing. In her published memoir, she used measured, formal prose to describe the displacement of her Northern Paiute community to a non-Native readership; in her public lectures, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> she relied on vivid storytelling and direct personal appeals to move listeners toward immediate political action.</p>",
+  "stem": "<p>Which choice completes the text with the most logical transition?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>by contrast,</p>"},
+    {"id": "b", "content": "<p>in other words,</p>"},
+    {"id": "c", "content": "<p>likewise,</p>"},
+    {"id": "d", "content": "<p>admittedly,</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. This sentence compares two examples of Winnemucca's approach: the measured, formal prose of her memoir versus the vivid storytelling and direct appeals of her lectures. From these descriptions and from the previous sentence, we know that the two approaches differ substantially. So the transition \"by contrast\" fits the context perfectly.</p><p>Choice B is incorrect. \"In other words\" indicates a restatement of the same idea, but the second example is not a paraphrase of the first; it is a different example. Choice C is incorrect. \"Likewise\" indicates the addition of an agreeing idea, but the two examples are deliberately different from each other. Choice D is incorrect. \"Admittedly\" introduces a concession, but the text is not conceding anything—both examples together support the opening claim that Winnemucca adjusted her approach.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

@@ -1,0 +1,25 @@
+{
+  "questionId": "8a584241-s1",
+  "originalId": "8a584241",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Information and Ideas",
+  "domainCode": "INI",
+  "skill": "Command of Evidence",
+  "skillCode": "COE",
+  "type": "mcq",
+  "templateId": "command-of-evidence.A5.T8.medium",
+  "stimulus": "<figure class=\"table\"><table class=\"gdr\"><caption><p style=\"text-align:center;\">Seed Germination With and Without Salicylic Acid (SA) Treatment (% of seeds germinated)</p></caption><thead><tr><th>Time (hours)</th><th>Untreated</th><th>SA, 10 &micro;mol/L</th><th>SA, 500 &micro;mol/L</th></tr></thead><tbody><tr><td>24</td><td>0</td><td>10</td><td>5</td></tr><tr><td>48</td><td>30</td><td>75</td><td>40</td></tr><tr><td>72</td><td>55</td><td>92</td><td>65</td></tr><tr><td>168</td><td>80</td><td>96</td><td>85</td></tr></tbody></table></figure><p>In high concentrations, salicylic acid (SA) can inhibit the growth of many plants. Hideo Tanaka and colleagues wanted to understand what effects low doses of SA might have on plant growth. They treated lettuce, radish, oat, and pea seeds with various concentrations of SA and tracked the germination of those seeds along with the germination of untreated seeds. Treatment with particular concentrations of SA was associated with accelerated germination: for example, <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span></p>",
+  "stem": "<p>Which choice most effectively uses data from the table to complete the statement?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>at 24 hours, only 10% of seeds treated with SA at a concentration of 10 &micro;mol/L had germinated, whereas 96% had germinated at 168 hours.</p>"},
+    {"id": "b", "content": "<p>at 48 hours, 75% of seeds treated with SA at a concentration of 10 &micro;mol/L had germinated, whereas only 30% of untreated seeds had germinated.</p>"},
+    {"id": "c", "content": "<p>at 168 hours, more than 90% of seeds treated with SA at concentrations of 10 or 500 &micro;mol/L had germinated, whereas less than 70% of untreated seeds had germinated.</p>"},
+    {"id": "d", "content": "<p>at 48 hours, 40% of seeds treated with SA at a concentration of 10 &micro;mol/L had germinated, whereas only 30% of untreated seeds had germinated.</p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is the best answer. The claim is that some concentrations of SA accelerated germination; this choice accurately shows that seeds treated with SA at 10 &micro;mol/L germinated faster than untreated seeds at 48 hours (75% vs. 30%). Choice A is incorrect because it discusses only one treatment without comparing to untreated seeds, so it cannot support the comparison the claim requires. Choice C is incorrect because at 168 hours untreated seeds had reached 80%, which is greater than 70%, and SA-treated at 500 &micro;mol/L had reached only 85%. Choice D is incorrect because at 48 hours, SA at 10 &micro;mol/L had reached 75%, not 40%.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

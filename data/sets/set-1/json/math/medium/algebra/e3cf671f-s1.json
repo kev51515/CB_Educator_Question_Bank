@@ -1,0 +1,22 @@
+{
+  "questionId": "e3cf671f-s1",
+  "originalId": "e3cf671f",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear functions",
+  "skillCode": "H.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>The function <em>g</em> is defined by <em>g</em>(<em>x</em>) = 3<em>x</em> + <em>k</em>(<em>x</em> \u2212 2), where <em>k</em> is a constant, and <em>g</em>(6) = 22. What is the value of <em>g</em>(8)?</p>",
+  "answerOptions": [],
+  "keys": [
+    "30"
+  ],
+  "rationale": "<p>The correct answer is 30. Substituting <em>x</em> = 6 and <em>g</em>(<em>x</em>) = 22 into the function yields 22 = 3(6) + <em>k</em>(6 \u2212 2) = 18 + 4<em>k</em>, so 4<em>k</em> = 4 and <em>k</em> = 1. Then <em>g</em>(8) = 3(8) + 1(8 \u2212 2) = 24 + 6 = 30.</p>",
+  "generatedAt": "2026-05-26T01:37:48Z",
+  "templateId": "linear-functions.A1.T4.medium"
+}

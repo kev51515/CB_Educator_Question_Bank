@@ -1,0 +1,25 @@
+{
+  "questionId": "14b7dced-s1",
+  "originalId": "14b7dced",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "templateId": "text-structure-and-purpose.A3.T9.medium",
+  "stimulus": "<p>The following text is from Elena Carrasco's 1888 poem &ldquo;To My Detractors.&rdquo;</p>\n<p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">THEY murmur that I scorn the customs of my fathers;</p><p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">But in truth I neither honor nor despise such customs</p><p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">(For what have I to do with them?&mdash;or what with their unmaking?),</p><p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">Only I will plant in every plaza of these mountain towns, on the high pastures and along the rivers,</p><p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">And in the markets, and above every cart laden with grain that creaks the road,</p><p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">Without altars, or codes, or wardens, or any decree,</p><p style=\"margin-bottom: 0; padding-left: 2em; text-indent: -1em;\">The custom of free fellowship among the people.</p>",
+  "stem": "<p>Which choice best describes the overall structure of the text?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p>The speaker responds to a charge brought against him, then declares an expansive aim of his own.</p>"},
+    {"id": "b", "content": "<p>The speaker laments a loss of community, then forecasts a sweeping political reform.</p>"},
+    {"id": "c", "content": "<p>The speaker doubts a fashionable opinion, then summarizes the convictions he has long held.</p>"},
+    {"id": "d", "content": "<p>The speaker admits his own faults, then catalogs the honors he has received.</p>"}
+  ],
+  "keys": ["a"],
+  "rationale": "<p>Choice A is the best answer. The poem opens by noting a charge against the speaker (that he scorns the customs of his fathers). The speaker then addresses that charge (claiming he neither honors nor despises such customs) and concludes by announcing a sweeping aim: to plant &ldquo;the custom of free fellowship&rdquo; throughout the country. The overall structure is therefore an address to a criticism followed by the declaration of an expansive ambition.</p><p>Choice B is incorrect because the speaker does not lament a loss of community or predict a specific political reform; the speaker states his own goal rather than predicting events. Choice C is incorrect because the speaker addresses an accusation he considers untrue rather than questioning a prevalent opinion, and he ends by stating a future aim, not a long-held worldview. Choice D is incorrect because the speaker does not concede any personal faults and does not list any achievements.</p>",
+  "generatedAt": "2026-05-27T00:00:00Z"
+}

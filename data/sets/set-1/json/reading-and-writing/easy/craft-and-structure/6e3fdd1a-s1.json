@@ -1,0 +1,39 @@
+{
+  "questionId": "6e3fdd1a-s1",
+  "originalId": "6e3fdd1a",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Words in Context",
+  "skillCode": "WIC",
+  "type": "mcq",
+  "stimulus": "<p>In the early years of broadcast radio, station owners had a strong interest in convincing listeners to embrace the new medium. As historians have noted, some radio executives relied on newspaper columnists to shape the public\u2019s <span aria-hidden=\"true\">______</span><span class=\"sr-only\">blank</span> the medium. Columnists who praised radio in their daily columns helped position it as a respectable form of entertainment.</p>",
+  "stem": "<p>Which choice completes the text with the most logical and precise word or phrase?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>rejection of</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>applause for</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>view of</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>removal from</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct because \"view of\" describes how the public perceives radio, which is what columnists were helping to shape. Choice A is incorrect because the context suggests acceptance, not rejection. Choice B is incorrect because applause is too specific and doesn\u2019t reflect the broader shaping of attitudes. Choice D is incorrect because removal doesn\u2019t fit a context about adoption.</p>",
+  "generatedAt": "2026-05-26T01:56:44Z",
+  "templateId": "words-in-context.A2.T7.easy"
+}

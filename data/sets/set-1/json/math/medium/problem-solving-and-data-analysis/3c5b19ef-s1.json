@@ -1,0 +1,39 @@
+{
+  "questionId": "3c5b19ef-s1",
+  "originalId": "3c5b19ef",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Medium",
+  "difficultyCode": "M",
+  "domain": "Problem-Solving and Data Analysis",
+  "domainCode": "Q",
+  "skill": "Two-variable data: Models and scatterplots",
+  "skillCode": "Q.B.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>A scatterplot shows the number of visitors to a botanical garden each year from 1990 to 2005, where <em>t</em> is the number of years since 1990 and <em>v</em> is the number of visitors, in thousands. The line of best fit appears to pass through approximately (0, 30) and (15, 75). Which of the following could be an equation of the line of best fit?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><em>v</em> = 75 \u2212 3<em>t</em></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><em>v</em> = 30 + 5<em>t</em></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><em>v</em> = 30 + 3<em>t</em></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><em>v</em> = 3 + 30<em>t</em></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. The v-intercept is 30 (value when t = 0), and the slope is (75 \u2212 30)/(15 \u2212 0) = 3. So the line is v = 30 + 3t.</p><p>Choice A has the wrong sign on the slope. Choice B has slope 5 instead of 3. Choice D swaps the slope and intercept.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "two-variable-data-models-and-scatterplots.A2.T4.medium"
+}

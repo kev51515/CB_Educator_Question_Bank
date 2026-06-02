@@ -1,0 +1,39 @@
+{
+  "questionId": "70774aa4-s1",
+  "originalId": "70774aa4",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>If <math><mn>4</mn><mi>x</mi><mo>=</mo><mn>18</mn></math>, what is the value of <math><mn>12</mn><mi>x</mi></math>?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>6</mn></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>22</mn></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>54</mn></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>14</mn></math></p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Multiplying both sides of <math><mn>4</mn><mi>x</mi><mo>=</mo><mn>18</mn></math> by 3 yields <math><mn>12</mn><mi>x</mi><mo>=</mo><mn>54</mn></math>.</p><p>Choices A, B, and D are incorrect and may result from conceptual errors.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-one-variable.A4.T12.easy"
+}

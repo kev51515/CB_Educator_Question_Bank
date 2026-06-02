@@ -1,0 +1,25 @@
+{
+  "questionId": "93954cfa-s1",
+  "originalId": "93954cfa",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in one variable",
+  "skillCode": "H.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>One pound of cherries costs $5. At this rate, how many dollars will <math><mi>p</mi></math> pounds of cherries cost?</p>",
+  "answerOptions": [
+    {"id": "a", "content": "<p><math><mn>5</mn><mo>+</mo><mi>p</mi></math></p>"},
+    {"id": "b", "content": "<p><math><mn>5</mn><mi>p</mi></math></p>"},
+    {"id": "c", "content": "<p><math><mfrac><mn>5</mn><mi>p</mi></mfrac></math></p>"},
+    {"id": "d", "content": "<p><math><mfrac><mi>p</mi><mn>5</mn></mfrac></math></p>"}
+  ],
+  "keys": ["b"],
+  "rationale": "<p>Choice B is correct. If each pound costs $5, then <math><mi>p</mi></math> pounds cost <math><mi>p</mi></math> times $5, or <math><mn>5</mn><mi>p</mi></math> dollars.</p><p>Choice A adds instead of multiplying. Choices C and D divide instead of multiplying.</p>",
+  "templateId": "linear-equations-in-one-variable.A2.T5.easy",
+  "generatedAt": "2026-05-26T00:00:00Z"
+}

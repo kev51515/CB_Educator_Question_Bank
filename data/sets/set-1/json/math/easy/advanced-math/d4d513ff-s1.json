@@ -1,0 +1,39 @@
+{
+  "questionId": "d4d513ff-s1",
+  "originalId": "d4d513ff",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Equivalent expressions",
+  "skillCode": "P.A.",
+  "type": "mcq",
+  "stimulus": null,
+  "generatedAt": "2026-05-26T01:18:43Z",
+  "stem": "<p>Which expression is equivalent to <math><mn>18</mn><mi>x</mi><mo>+</mo><mn>30</mn></math> ?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p><math><mn>6</mn><mfenced><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "b",
+      "content": "<p><math><mn>3</mn><mfenced><mrow><mn>6</mn><mi>x</mi><mo>+</mo><mn>5</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "c",
+      "content": "<p><math><mn>6</mn><mfenced><mrow><mn>3</mn><mi>x</mi><mo>+</mo><mn>30</mn></mrow></mfenced></math></p>"
+    },
+    {
+      "id": "d",
+      "content": "<p><math><mn>2</mn><mfenced><mrow><mn>9</mn><mi>x</mi><mo>+</mo><mn>30</mn></mrow></mfenced></math></p>"
+    }
+  ],
+  "keys": [
+    "a"
+  ],
+  "rationale": "<p>The greatest common factor of 18x and 30 is 6. Factoring 6 from both terms gives 6(3x + 5).</p>",
+  "templateId": "equivalent-expressions.A2.T4.easy"
+}

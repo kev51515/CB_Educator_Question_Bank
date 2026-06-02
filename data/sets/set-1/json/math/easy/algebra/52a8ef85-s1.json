@@ -1,0 +1,39 @@
+{
+  "questionId": "52a8ef85-s1",
+  "originalId": "52a8ef85",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Algebra",
+  "domainCode": "H",
+  "skill": "Linear equations in two variables",
+  "skillCode": "H.C.",
+  "type": "mcq",
+  "stimulus": null,
+  "stem": "<p>The equation 25<i>x</i> + 15<i>y</i> = 180 represents the number of hardcover books, <i>x</i>, and number of paperback books, <i>y</i>, that Devon bought for a total of $180. If Devon bought 3 hardcover books, how many paperback books did he buy?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>3</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>5</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>7</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>9</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is correct. Substituting <i>x</i> = 3 yields 75 + 15<i>y</i> = 180, so 15<i>y</i> = 105 and <i>y</i> = 7.</p><p>The other choices result from arithmetic errors in isolating <i>y</i>.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "linear-equations-in-two-variables.A2.T2.easy"
+}

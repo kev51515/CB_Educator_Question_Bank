@@ -1,0 +1,22 @@
+{
+  "questionId": "c9417793-s1",
+  "originalId": "c9417793",
+  "setId": "set-1",
+  "section": "Math",
+  "difficulty": "Hard",
+  "difficultyCode": "H",
+  "domain": "Advanced Math",
+  "domainCode": "P",
+  "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+  "skillCode": "P.B.",
+  "type": "spr",
+  "stimulus": null,
+  "stem": "<p>|<i>x</i> &minus; 14| + 25 = 53</p><p>What is the sum of the solutions to the given equation?</p>",
+  "answerOptions": null,
+  "keys": [
+    "28"
+  ],
+  "rationale": "<p>Subtracting 25 from both sides gives |<i>x</i> &minus; 14| = 28. So <i>x</i> &minus; 14 = 28 or <i>x</i> &minus; 14 = &minus;28, giving <i>x</i> = 42 or <i>x</i> = &minus;14. The sum is 42 + (&minus;14) = 28.</p>",
+  "generatedAt": "2026-05-26T00:00:00Z",
+  "templateId": "nonlinear-equations-in-one-variable-and-systems-of-equations-in-two-variables.A2.T3.hard"
+}

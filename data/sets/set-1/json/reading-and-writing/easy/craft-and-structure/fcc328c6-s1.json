@@ -1,0 +1,39 @@
+{
+  "questionId": "fcc328c6-s1",
+  "originalId": "fcc328c6",
+  "setId": "set-1",
+  "section": "Reading and Writing",
+  "difficulty": "Easy",
+  "difficultyCode": "E",
+  "domain": "Craft and Structure",
+  "domainCode": "CAS",
+  "skill": "Text Structure and Purpose",
+  "skillCode": "TSP",
+  "type": "mcq",
+  "stimulus": "<p>Animals and humans usually move pollen between flowers, but there is another way for pollen to travel. Botanists call this process <span role=\"region\" aria-label=\"Referenced Content\"><u>\"anemophily.\"</u></span> In anemophily, wind currents carry pollen grains over potentially great distances without the help of any animal pollinator. Ecologist Hiroshi Tanaka and his team studied pollen captured by sensors on remote islands to find out whether anemophily could move pollen across the open ocean. They discovered that some of the pollen matched grasses from a continent more than a thousand kilometers away.</p>",
+  "stem": "<p>Which choice best describes the function of the underlined portion in the text as a whole?</p>",
+  "answerOptions": [
+    {
+      "id": "a",
+      "content": "<p>It emphasizes how unexpected the findings reported later in the text are.</p>"
+    },
+    {
+      "id": "b",
+      "content": "<p>It explains the difference between two competing methods of pollen dispersal.</p>"
+    },
+    {
+      "id": "c",
+      "content": "<p>It introduces a scientific term that is used in the discussion that follows.</p>"
+    },
+    {
+      "id": "d",
+      "content": "<p>It quotes Hiroshi Tanaka's reflections on the difficulties of his team's research.</p>"
+    }
+  ],
+  "keys": [
+    "c"
+  ],
+  "rationale": "<p>Choice C is the best answer because the underlined portion names a specific scientific term, \"anemophily,\" that the rest of the text uses to describe wind-driven pollen transport. The portion functions to introduce this term before the writer applies it to the example of Tanaka's research.</p><p>Choice A is incorrect because the underlined portion only labels the process and does not emphasize the surprising nature of the findings. Choice B is incorrect because the underlined portion does not compare different methods of dispersal; it names one. Choice D is incorrect because the underlined portion is not a quotation from Tanaka.</p>",
+  "generatedAt": "2026-05-26T01:54:55Z",
+  "templateId": "text-structure-and-purpose.A2.T4.easy"
+}

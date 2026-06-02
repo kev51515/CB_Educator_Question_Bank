@@ -1,0 +1,290 @@
+[
+  {
+    "id": "15ce8207",
+    "path": "json/math/easy/problem-solving-and-data-analysis/15ce8207.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Two-variable data: Models and scatterplots",
+    "type": "mcq"
+  },
+  {
+    "id": "82aaa0a1",
+    "path": "json/math/easy/problem-solving-and-data-analysis/82aaa0a1.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Two-variable data: Models and scatterplots",
+    "type": "mcq"
+  },
+  {
+    "id": "9296553d",
+    "path": "json/math/easy/problem-solving-and-data-analysis/9296553d.json",
+    "section": "Math",
+    "difficulty": "Easy",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "Two-variable data: Models and scatterplots",
+    "type": "mcq"
+  },
+  {
+    "id": "89fc23af",
+    "path": "json/math/hard/advanced-math/89fc23af.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "911c415b",
+    "path": "json/math/hard/advanced-math/911c415b.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "spr"
+  },
+  {
+    "id": "a0b4103e",
+    "path": "json/math/hard/advanced-math/a0b4103e.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "ad038c19",
+    "path": "json/math/hard/advanced-math/ad038c19.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "c81b6c57",
+    "path": "json/math/hard/advanced-math/c81b6c57.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "d8789a4c",
+    "path": "json/math/hard/advanced-math/d8789a4c.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "e117d3b8",
+    "path": "json/math/hard/advanced-math/e117d3b8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "f89e1d6f",
+    "path": "json/math/hard/advanced-math/f89e1d6f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Equivalent expressions",
+    "type": "mcq"
+  },
+  {
+    "id": "104bff62",
+    "path": "json/math/hard/advanced-math/104bff62.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "1697ffcf",
+    "path": "json/math/hard/advanced-math/1697ffcf.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "17d0e87d",
+    "path": "json/math/hard/advanced-math/17d0e87d.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "2c5c22d0",
+    "path": "json/math/hard/advanced-math/2c5c22d0.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "30281058",
+    "path": "json/math/hard/advanced-math/30281058.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "3a9d60b2",
+    "path": "json/math/hard/advanced-math/3a9d60b2.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "4661e2a9",
+    "path": "json/math/hard/advanced-math/4661e2a9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "5910bfff",
+    "path": "json/math/hard/advanced-math/5910bfff.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "66bce0c1",
+    "path": "json/math/hard/advanced-math/66bce0c1.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "6ce95fc8",
+    "path": "json/math/hard/advanced-math/6ce95fc8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "mcq"
+  },
+  {
+    "id": "7028c74f",
+    "path": "json/math/hard/advanced-math/7028c74f.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Advanced Math",
+    "skill": "Nonlinear equations in one variable and systems of equations in two variables ",
+    "type": "spr"
+  },
+  {
+    "id": "55bb437a",
+    "path": "json/math/hard/geometry-and-trigonometry/55bb437a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "6933b3d9",
+    "path": "json/math/hard/geometry-and-trigonometry/6933b3d9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "bd87bc09",
+    "path": "json/math/hard/geometry-and-trigonometry/bd87bc09.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "dba6a25a",
+    "path": "json/math/hard/geometry-and-trigonometry/dba6a25a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Geometry and Trigonometry",
+    "skill": "Right triangles and trigonometry",
+    "type": "spr"
+  },
+  {
+    "id": "54d93874",
+    "path": "json/math/hard/problem-solving-and-data-analysis/54d93874.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "94237701",
+    "path": "json/math/hard/problem-solving-and-data-analysis/94237701.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "spr"
+  },
+  {
+    "id": "d3b9c8d8",
+    "path": "json/math/hard/problem-solving-and-data-analysis/d3b9c8d8.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "d65b9a87",
+    "path": "json/math/hard/problem-solving-and-data-analysis/d65b9a87.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "e7d48c8a",
+    "path": "json/math/hard/problem-solving-and-data-analysis/e7d48c8a.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  },
+  {
+    "id": "f8a322d9",
+    "path": "json/math/hard/problem-solving-and-data-analysis/f8a322d9.json",
+    "section": "Math",
+    "difficulty": "Hard",
+    "domain": "Problem-Solving and Data Analysis",
+    "skill": "One-variable data: Distributions and measures of center and spread",
+    "type": "mcq"
+  }
+]
