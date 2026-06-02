@@ -1093,3 +1093,44 @@ User said "keep going" twice more. Shipped 10 more rounds across modals, autosav
 - **Parallel session ran continuously alongside** — landed 25+ commits (security RLS, Timer bundle split, Q-Bank nav unification, materials split, sidebar split, modularization plan, AllUsersView/AssignmentsPanel/CohortSummaryWidget/CoursePortfolio/CourseGradebook/MockTestHistoryPage/NeedsAttentionPanel/ProgressDashboard/StudentCourseView/StudentProfilePage modularization, managed_students migration 0067 + AddStudent/ResetStudentPassword modals) with zero merge conflicts
 
 Build is green. Working tree is clean. All commits pushed to origin/main.
+
+### Wave 21G — Another "keep going" (Rounds 56-60)
+
+User said "keep going" twice more. 5 additional rounds, mostly form/auth polish + dashboard pin + smaller widgets. Hitting the natural end of fresh ground.
+
+### Round 56 — ClassFormModal validation/draft + AddItemModal polish
+- `ClassFormModal`: mirrors Round 46 + 52 patterns. `validateName` required+≤100 (whitespace-only treated as empty). `validateDescription` optional+≤5000. Draft `teacher.classForm.draft` (no per-X scope — single create form per teacher). Empty form clears storage immediately (no orphan empty drafts). Restore banner suppresses "Start from template?" affordance to keep focus on decision. Edit mode: all validation applies; draft persistence fully disabled via `mode !== "create"` guards.
+- `AddItemModal` 3 fixes: auto-focus on open + type-change via `firstFieldRef.current.focus()` on `setTimeout(0)`. Live `submitDisabledReason: string | null` computes per-branch validity (no assignments / not picked / missing header / missing URL). Tooltip + SR hint on disabled Save via `aria-describedby` linking to visually-hidden span.
+
+### Round 57 — BulkGradeModal polish + ComparePanel deltas
+- `BulkGradeModal` 5 fixes: Cmd/Ctrl+Enter to apply (uses refs so window listener doesn't re-bind on every editor keystroke); Apply button summarizes patch ("Apply feedback + score to 12" vs just "Apply to 12") preventing "I forgot to write feedback" broadcasts; Reset button only renders when `hasChanges`; auto-clamp score on blur (250 → 100, -5 → 0); keyboard hint footer "⌘↵ to apply" only visible on `sm+`.
+- `ComparePanel` Option A chosen (parent doesn't thread attempts array — adding optional `attempts`/`onPickA`/`onPickB` would require out-of-lane parent changes). Inline delta per row: Score / Correct / Duration with emerald `↑ +N` / rose `↓ -N` / slate `— No change`. Visual highlight rule on B-cell only (preserves A as baseline). Semantic markup not color-only — delta arrow + sign carry direction without color. `role="table"/"row"/"cell"`. Decorative delta badge `aria-hidden` to avoid double-announcement.
+
+### Round 58 — DashboardPage course pin + RecentFeedbackWidget polish
+- `DashboardPage` course pin: per-user localStorage `teacher.dashboard.pinnedCourses:${userId}` 50-entry LRU cap. Action in existing `<CourseCard kebab>` menu (item label flips "Pin to top" / "Unpin from top"). Sort: O(n) partition into pinned + rest, then pinned sort by index into `pinnedIds` array (MRU first). Applied independently to published + unpublished — archived pinned course still bubbles within its section. Cross-tab sync via `storage` event. Visual indicator: indigo overlay badge at `absolute left-2 top-2 z-10` over card's colour band, `pointer-events-none` so card's click target isn't shadowed.
+- `RecentFeedbackWidget` 4 fixes: enriched `aria-label` (includes score, graded-at time, adapts verb "Review feedback" vs "Review score"); disabled dead rows when `assignmentId`/`attemptId` null; pluralized count badge "5 recent items" / "1 recent item"; "View all" tap target bumped to `min-h-[32px]` (still header-scaled, not promoted to 40px which would dominate). Rejected "empty state CTA" — file comment explicitly enshrines "silence > nag" as policy.
+
+### Round 59 — PasswordResetScreen polish + AssignmentCard ARIA
+- `PasswordResetScreen`: lane scope clarification — this is the post-recovery-link "set a new password" surface AuthGate mounts during `PASSWORD_RECOVERY` session, NOT the forgot-password email input (which lives in `AuthScreen.tsx`, out of lane). Live blur-gated errors via `newBlurred`/`confirmBlurred` flags. `canSubmit` gating with dynamic title tooltip swap. Confirmation state extended 900ms → 1500ms so success copy is actually readable. `friendlyError()` lowercased substring match on GoTrue messages mapping `same+password` / `rate limit` / `weak+strength` / `at least+minimum` / `network` / `session+expired`.
+- `AssignmentCard` 4 fixes: `<article>` `aria-label` composed from title + status + due context with overdue prefix; description tooltip on `line-clamp-2` truncation; overdue `aria-label` on due span so AT users hear "Overdue" explicitly rather than relying on color; "View attempts" mobile tap target bumped to `min-h-[40px] md:min-h-0` (preserves desktop density, fixes mobile rule).
+
+### Round 60 — QuickStartScreen polish + AccountUpgradeBanner snooze
+- `QuickStartScreen` 5 fixes: lane note — actual file is student quick-start (anonymous sign-in → `quick_start_with_code` RPC → enrolls in course), NOT teacher onboarding as the task brief described. Live code format validation: `CODE_LENGTH=6`, `CODE_ALPHABET=/^[A-HJ-NP-Z2-9]+$/` per CLAUDE.md short_code spec. `scrubCode()` on `onChange` + `onPaste`. Live "X / 6" counter turns emerald when valid. Placeholder changed from `ABCD1234` (8 chars + contains forbidden 1) to `ABC234`. Submit gating + error code mapping additions. Success state with emerald-tinted card + spinner.
+- `AccountUpgradeBanner`: dismissable with 24h snooze (`auth.upgradeBanner.dismissedUntil:${userId}` as ISO string). Per-user key. try/catch for private-mode safety. Container changed from `role=status` to `role=region aria-label="Upgrade your account"` (more appropriate for persistent landmark). Copy polish leads with benefit: "Save your progress across devices and never lose your work".
+
+### Final autonomous-run total (Waves 21B-G, Rounds 4-60)
+
+- **115+ lanes shipped across 57 rounds**
+- **9 migrations** (0050, 0056-60, 0062-64) — all backward-compatible. (Parallel session shipped 0065 + 0067 alongside.)
+- **8 smoke suites** (~6100 lines) with 28 new scenarios
+- **55+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
+- **Every major list/triage surface** has consistent sort + filter + persistence + empty states + keyboard nav
+- **All major forms** have validation + draft persistence + recover banners (Assignment / Topic / Portfolio / Class)
+- **All auth flows** have live validation + friendly error mapping (JoinClass / QuickStart / PasswordReset)
+- **Discoverability**: ⌘K palette, ⌘N quick-create, ⌘B sidebar, `?` shortcuts overlay — all wired in both shells
+- **One LMS_ROADMAP item closed** (4.4 discussion read receipts — client-side substitute without DB risk)
+- **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
+- **Round 54 regression caught + cleanly recovered** in Round 55 — example of "trust but verify" agent dispatching
+- **Parallel session ran continuously alongside** — landed 30+ commits including the full managed-students feature (M24/M25 from the original deferred list)
+
+Build is green. Working tree is clean. All commits pushed to origin/main.
