@@ -10,10 +10,22 @@
  * an `archived` checkbox so a teacher can toggle visibility without leaving
  * the modal.
  *
+ * Wave 21D additions:
+ * - **Live per-field validation** on blur (and re-validate on change once a
+ *   field has been touched so errors clear as the user types a fix). Submit
+ *   is disabled until the form is valid; clicking a disabled-looking submit
+ *   surfaces the first invalid field via focus.
+ * - **Draft persistence** in create mode only. Every field change writes a
+ *   debounced (500ms) JSON snapshot to
+ *   `teacher.assignmentForm.draft:${courseId}` in localStorage. On open we
+ *   check for a non-stale draft (≤7 days old) and show an amber restore
+ *   banner. The draft is cleared after a successful insert. Cancelling with
+ *   pending draft content asks for confirmation.
+ *
  * Backward compatibility: the legacy export name `CreateAssignmentModal` is
  * kept so existing call-sites keep working.
  */
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import type {
   Assignment,
@@ -70,6 +82,12 @@ const DEFAULT_QUESTION_COUNT = 22;
 const DEFAULT_TIME_LIMIT_MINUTES = 30;
 const DEFAULT_LATE_PENALTY_PERCENT = 0;
 const DEFAULT_GRACE_PERIOD_HOURS = 0;
+const MAX_TITLE_LENGTH = 200;
+
+/** Draft persistence constants. */
+const DRAFT_KEY_PREFIX = "teacher.assignmentForm.draft:";
+const DRAFT_DEBOUNCE_MS = 500;
+const DRAFT_STALE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 
 /** Shape of the multi-attempt / late-policy columns added in migration 0020.
     We fetch these directly inside the modal so we don't have to widen the
@@ -81,10 +99,148 @@ interface AssignmentPolicyRow {
   grace_period_hours: number | null;
 }
 
+/** Persisted draft shape. Only used in create mode. */
+interface AssignmentDraft {
+  title: string;
+  description: string;
+  sourceId: AssignmentSourceId;
+  questionCount: number;
+  timeLimit: number;
+  difficultyMix: AssignmentDifficultyMix;
+  dueAt: string | null;
+  maxAttempts: string;
+  latePenaltyPercent: number;
+  gracePeriodHours: number;
+  savedAt: number;
+}
+
+/** Per-field error map. `null` means the field is currently valid. */
+type FieldKey =
+  | "title"
+  | "questionCount"
+  | "timeLimit"
+  | "maxAttempts"
+  | "latePenaltyPercent"
+  | "gracePeriodHours";
+
+type FieldErrors = Partial<Record<FieldKey, string | null>>;
+type TouchedFields = Partial<Record<FieldKey, boolean>>;
+
 function getErrorMessage(error: unknown, fallback: string): string {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
   return fallback;
+}
+
+/** Lightweight relative time formatter — "just now" / "5m ago" / "3h ago" /
+ *  "2d ago". Used for the draft restore banner. */
+function formatRelativeTime(epochMs: number): string {
+  const diffMs = Date.now() - epochMs;
+  if (diffMs < 0) return "just now";
+  const seconds = Math.floor(diffMs / 1000);
+  if (seconds < 30) return "just now";
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
+}
+
+function getDraftKey(courseId: string): string {
+  return `${DRAFT_KEY_PREFIX}${courseId}`;
+}
+
+function readDraft(courseId: string): AssignmentDraft | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(getDraftKey(courseId));
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as AssignmentDraft;
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      typeof parsed.savedAt !== "number"
+    ) {
+      return null;
+    }
+    if (Date.now() - parsed.savedAt > DRAFT_STALE_MS) {
+      // Stale — wipe and treat as absent.
+      window.localStorage.removeItem(getDraftKey(courseId));
+      return null;
+    }
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(courseId: string, draft: AssignmentDraft): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(getDraftKey(courseId), JSON.stringify(draft));
+  } catch {
+    // Quota errors etc. — swallow; draft is a non-essential nicety.
+  }
+}
+
+function clearDraft(courseId: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(getDraftKey(courseId));
+  } catch {
+    // ignore
+  }
+}
+
+/** Pure validators per field. Returns an error string or null. */
+function validateTitle(value: string): string | null {
+  const trimmed = value.trim();
+  if (trimmed.length === 0) return "Title is required.";
+  if (value.length > MAX_TITLE_LENGTH) {
+    return `Title must be ${MAX_TITLE_LENGTH} characters or fewer.`;
+  }
+  return null;
+}
+
+function validateQuestionCount(value: number): string | null {
+  if (!Number.isFinite(value)) return "Question count is required.";
+  if (!Number.isInteger(value)) return "Question count must be a whole number.";
+  if (value < MIN_QUESTION_COUNT || value > MAX_QUESTION_COUNT) {
+    return `Question count must be between ${MIN_QUESTION_COUNT} and ${MAX_QUESTION_COUNT}.`;
+  }
+  return null;
+}
+
+function validateTimeLimit(value: number): string | null {
+  if (!Number.isFinite(value)) return "Time limit is required.";
+  if (value < 0) return "Time limit must be 0 or greater.";
+  if (value > 300) return "Time limit must be 300 minutes or fewer.";
+  return null;
+}
+
+function validateMaxAttempts(value: string): string | null {
+  const trimmed = value.trim();
+  if (trimmed.length === 0) return null; // blank = unlimited
+  const parsed = Number.parseInt(trimmed, 10);
+  if (!Number.isFinite(parsed)) return "Max attempts must be a number.";
+  if (parsed < 1) return "Max attempts must be 1 or higher.";
+  if (parsed > 20) return "Max attempts must be 20 or fewer.";
+  return null;
+}
+
+function validateLatePenalty(value: number): string | null {
+  if (!Number.isFinite(value)) return "Late penalty is required.";
+  if (value < 0 || value > 100) return "Late penalty must be between 0 and 100.";
+  return null;
+}
+
+function validateGraceHours(value: number): string | null {
+  if (!Number.isFinite(value)) return "Grace period is required.";
+  if (value < 0) return "Grace period must be 0 or greater.";
+  if (value > 168) return "Grace period must be 168 hours (7 days) or fewer.";
+  return null;
 }
 
 export function AssignmentFormModal({
@@ -119,15 +275,56 @@ export function AssignmentFormModal({
   );
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+
+  // Per-field validation state.
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
+  const [touched, setTouched] = useState<TouchedFields>({});
+
+  // Draft restore banner. `null` = no offer pending; a draft object means we
+  // are presenting the user with a Restore/Discard choice.
+  const [pendingRestore, setPendingRestore] =
+    useState<AssignmentDraft | null>(null);
+
+  // Cancel-confirm inline banner — set when user clicks Cancel with a dirty
+  // draft. Shows Discard / Keep editing buttons.
+  const [confirmCancel, setConfirmCancel] = useState(false);
+
   const toast = useToast();
 
   const titleRef = useRef<HTMLInputElement | null>(null);
+  const questionCountRef = useRef<HTMLInputElement | null>(null);
+  const timeLimitRef = useRef<HTMLInputElement | null>(null);
+  const maxAttemptsRef = useRef<HTMLInputElement | null>(null);
+  const latePenaltyRef = useRef<HTMLInputElement | null>(null);
+  const graceHoursRef = useRef<HTMLInputElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, open);
 
+  // Debounce timer + latest-state ref for draft writes. We keep a ref to the
+  // current form values so the cleanup function (used to flush on unmount)
+  // can persist whatever the user typed last without re-running the effect
+  // on every keystroke.
+  const draftTimerRef = useRef<number | null>(null);
+  const latestDraftRef = useRef<AssignmentDraft | null>(null);
+  // Flag set after a successful insert so the unmount-flush no-ops instead
+  // of re-creating the draft we just cleared.
+  const submittedRef = useRef(false);
+
+  /** Convenience: are we in create mode? Draft logic is gated on this. */
+  const isCreate = mode === "create";
+
+  // ---------------------------------------------------------------------------
+  // Initial state + draft load on open
+  // ---------------------------------------------------------------------------
   useEffect(() => {
     if (!open) return;
     let cancelled = false;
+    submittedRef.current = false;
+    setFieldErrors({});
+    setTouched({});
+    setConfirmCancel(false);
+    setPendingRestore(null);
+
     if (mode === "edit" && initialAssignment) {
       setTitle(initialAssignment.title);
       setDescription(initialAssignment.description ?? "");
@@ -163,6 +360,8 @@ export function AssignmentFormModal({
         setGracePeriodHours(row.grace_period_hours ?? 0);
       })();
     } else {
+      // Create mode — start with defaults, then offer to restore a draft if
+      // one exists for this course.
       setTitle("");
       setDescription("");
       setSourceId("cb");
@@ -174,6 +373,8 @@ export function AssignmentFormModal({
       setMaxAttempts("");
       setLatePenaltyPercent(DEFAULT_LATE_PENALTY_PERCENT);
       setGracePeriodHours(DEFAULT_GRACE_PERIOD_HOURS);
+      const draft = readDraft(classId);
+      if (draft) setPendingRestore(draft);
     }
     setError(null);
     const id = window.setTimeout(() => titleRef.current?.focus(), 0);
@@ -181,8 +382,11 @@ export function AssignmentFormModal({
       cancelled = true;
       window.clearTimeout(id);
     };
-  }, [open, mode, initialAssignment]);
+  }, [open, mode, initialAssignment, classId]);
 
+  // ---------------------------------------------------------------------------
+  // Esc to close
+  // ---------------------------------------------------------------------------
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -192,54 +396,291 @@ export function AssignmentFormModal({
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  // ---------------------------------------------------------------------------
+  // Live validation: re-validate touched fields whenever their value changes.
+  // We deliberately don't surface errors for untouched fields so the form
+  // doesn't shout at the user on first open.
+  // ---------------------------------------------------------------------------
+  useEffect(() => {
+    setFieldErrors((prev) => {
+      const next: FieldErrors = { ...prev };
+      if (touched.title) next.title = validateTitle(title);
+      if (touched.questionCount)
+        next.questionCount = validateQuestionCount(questionCount);
+      if (touched.timeLimit) next.timeLimit = validateTimeLimit(timeLimit);
+      if (touched.maxAttempts)
+        next.maxAttempts = validateMaxAttempts(maxAttempts);
+      if (touched.latePenaltyPercent)
+        next.latePenaltyPercent = validateLatePenalty(latePenaltyPercent);
+      if (touched.gracePeriodHours)
+        next.gracePeriodHours = validateGraceHours(gracePeriodHours);
+      return next;
+    });
+  }, [
+    title,
+    questionCount,
+    timeLimit,
+    maxAttempts,
+    latePenaltyPercent,
+    gracePeriodHours,
+    touched,
+  ]);
+
+  // Whole-form validity (used to gate submit). We compute against the actual
+  // values rather than `fieldErrors` so the button reflects validity even for
+  // fields the user hasn't touched yet (e.g. they delete the title and tab
+  // straight to Save — we still want Save disabled).
+  const isValid = useMemo(() => {
+    return (
+      validateTitle(title) === null &&
+      validateQuestionCount(questionCount) === null &&
+      validateTimeLimit(timeLimit) === null &&
+      validateMaxAttempts(maxAttempts) === null &&
+      validateLatePenalty(latePenaltyPercent) === null &&
+      validateGraceHours(gracePeriodHours) === null
+    );
+  }, [title, questionCount, timeLimit, maxAttempts, latePenaltyPercent, gracePeriodHours]);
+
+  // ---------------------------------------------------------------------------
+  // Draft persistence (create mode only)
+  // ---------------------------------------------------------------------------
+
+  /** Has the user actually entered anything draft-worthy? We avoid writing a
+   *  draft for an untouched form so opening the modal once doesn't litter
+   *  localStorage with an empty placeholder. */
+  const isDirty = useMemo(() => {
+    if (!isCreate) return false;
+    return (
+      title.trim().length > 0 ||
+      description.trim().length > 0 ||
+      sourceId !== "cb" ||
+      questionCount !== DEFAULT_QUESTION_COUNT ||
+      timeLimit !== DEFAULT_TIME_LIMIT_MINUTES ||
+      difficultyMix !== "any" ||
+      dueAt !== null ||
+      maxAttempts.trim().length > 0 ||
+      latePenaltyPercent !== DEFAULT_LATE_PENALTY_PERCENT ||
+      gracePeriodHours !== DEFAULT_GRACE_PERIOD_HOURS
+    );
+  }, [
+    isCreate,
+    title,
+    description,
+    sourceId,
+    questionCount,
+    timeLimit,
+    difficultyMix,
+    dueAt,
+    maxAttempts,
+    latePenaltyPercent,
+    gracePeriodHours,
+  ]);
+
+  // Debounced draft writer.
+  useEffect(() => {
+    if (!open || !isCreate) return;
+    // Don't overwrite a draft we're actively offering to restore — the user
+    // hasn't decided yet whether to keep it.
+    if (pendingRestore) return;
+    if (!isDirty) return;
+
+    const draft: AssignmentDraft = {
+      title,
+      description,
+      sourceId,
+      questionCount,
+      timeLimit,
+      difficultyMix,
+      dueAt,
+      maxAttempts,
+      latePenaltyPercent,
+      gracePeriodHours,
+      savedAt: Date.now(),
+    };
+    latestDraftRef.current = draft;
+
+    if (draftTimerRef.current !== null) {
+      window.clearTimeout(draftTimerRef.current);
+    }
+    draftTimerRef.current = window.setTimeout(() => {
+      writeDraft(classId, draft);
+      draftTimerRef.current = null;
+    }, DRAFT_DEBOUNCE_MS);
+
+    return () => {
+      if (draftTimerRef.current !== null) {
+        window.clearTimeout(draftTimerRef.current);
+        draftTimerRef.current = null;
+      }
+    };
+  }, [
+    open,
+    isCreate,
+    pendingRestore,
+    isDirty,
+    classId,
+    title,
+    description,
+    sourceId,
+    questionCount,
+    timeLimit,
+    difficultyMix,
+    dueAt,
+    maxAttempts,
+    latePenaltyPercent,
+    gracePeriodHours,
+  ]);
+
+  // Final flush on unmount: if the modal closes before the debounce fires,
+  // persist whatever we have so the user doesn't lose their work. We skip
+  // this if the user just submitted successfully (draft is intentionally
+  // cleared) or if there's nothing dirty.
+  useEffect(() => {
+    return () => {
+      if (draftTimerRef.current !== null) {
+        window.clearTimeout(draftTimerRef.current);
+        draftTimerRef.current = null;
+      }
+      if (
+        isCreate &&
+        !submittedRef.current &&
+        latestDraftRef.current !== null
+      ) {
+        writeDraft(classId, latestDraftRef.current);
+      }
+    };
+    // We intentionally use [] so this only runs on unmount. `classId` is
+    // captured via closure but is stable for any single mounted instance.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // ---------------------------------------------------------------------------
+  // Restore / discard draft handlers
+  // ---------------------------------------------------------------------------
+  const handleRestoreDraft = useCallback(() => {
+    if (!pendingRestore) return;
+    const d = pendingRestore;
+    setTitle(d.title);
+    setDescription(d.description);
+    setSourceId(d.sourceId);
+    setQuestionCount(d.questionCount);
+    setTimeLimit(d.timeLimit);
+    setDifficultyMix(d.difficultyMix);
+    setDueAt(d.dueAt);
+    setMaxAttempts(d.maxAttempts);
+    setLatePenaltyPercent(d.latePenaltyPercent);
+    setGracePeriodHours(d.gracePeriodHours);
+    setPendingRestore(null);
+    // The user might immediately tweak something — make sure validation
+    // surfaces normally as they go. We do NOT pre-touch all fields here;
+    // touching happens on blur as usual.
+  }, [pendingRestore]);
+
+  const handleDiscardDraft = useCallback(() => {
+    clearDraft(classId);
+    latestDraftRef.current = null;
+    setPendingRestore(null);
+  }, [classId]);
+
+  // ---------------------------------------------------------------------------
+  // Cancel flow — confirm discard if there's a dirty draft
+  // ---------------------------------------------------------------------------
+  const handleCancelClick = useCallback(() => {
+    if (isCreate && isDirty && !pendingRestore) {
+      setConfirmCancel(true);
+      return;
+    }
+    onClose();
+  }, [isCreate, isDirty, pendingRestore, onClose]);
+
+  const handleConfirmDiscardAndClose = useCallback(() => {
+    // User explicitly chose to discard. Clear the persisted draft AND mark
+    // submitted so the unmount-flush doesn't re-persist it.
+    clearDraft(classId);
+    latestDraftRef.current = null;
+    submittedRef.current = true;
+    setConfirmCancel(false);
+    onClose();
+  }, [classId, onClose]);
+
+  const handleKeepEditing = useCallback(() => {
+    setConfirmCancel(false);
+  }, []);
+
+  // ---------------------------------------------------------------------------
+  // Blur handlers — touch + validate a single field
+  // ---------------------------------------------------------------------------
+  const markTouched = useCallback((field: FieldKey) => {
+    setTouched((prev) => (prev[field] ? prev : { ...prev, [field]: true }));
+  }, []);
+
   if (!open) return null;
 
+  // ---------------------------------------------------------------------------
+  // Submit
+  // ---------------------------------------------------------------------------
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    const trimmedTitle = title.trim();
-    if (!trimmedTitle) {
-      setError("Please enter an assignment title.");
+
+    // Touch all fields so any lingering errors surface, then short-circuit
+    // and focus the first invalid one.
+    const allTouched: TouchedFields = {
+      title: true,
+      questionCount: true,
+      timeLimit: true,
+      maxAttempts: true,
+      latePenaltyPercent: true,
+      gracePeriodHours: true,
+    };
+    setTouched(allTouched);
+
+    const titleErr = validateTitle(title);
+    const qcErr = validateQuestionCount(questionCount);
+    const tlErr = validateTimeLimit(timeLimit);
+    const maErr = validateMaxAttempts(maxAttempts);
+    const lpErr = validateLatePenalty(latePenaltyPercent);
+    const ghErr = validateGraceHours(gracePeriodHours);
+    setFieldErrors({
+      title: titleErr,
+      questionCount: qcErr,
+      timeLimit: tlErr,
+      maxAttempts: maErr,
+      latePenaltyPercent: lpErr,
+      gracePeriodHours: ghErr,
+    });
+
+    if (titleErr) {
+      titleRef.current?.focus();
       return;
     }
-    if (
-      questionCount < MIN_QUESTION_COUNT ||
-      questionCount > MAX_QUESTION_COUNT
-    ) {
-      setError(
-        `Question count must be between ${MIN_QUESTION_COUNT} and ${MAX_QUESTION_COUNT}.`,
-      );
+    if (qcErr) {
+      questionCountRef.current?.focus();
       return;
     }
-    if (timeLimit < 0) {
-      setError("Time limit must be 0 or a positive number of minutes.");
+    if (tlErr) {
+      timeLimitRef.current?.focus();
+      return;
+    }
+    if (maErr) {
+      maxAttemptsRef.current?.focus();
+      return;
+    }
+    if (lpErr) {
+      latePenaltyRef.current?.focus();
+      return;
+    }
+    if (ghErr) {
+      graceHoursRef.current?.focus();
       return;
     }
 
-    // Parse + validate the new policy fields. `maxAttempts` is optional:
-    // empty string means unlimited (NULL in the DB).
+    const trimmedTitle = title.trim();
     const trimmedMaxAttempts = maxAttempts.trim();
-    let maxAttemptsValue: number | null = null;
-    if (trimmedMaxAttempts.length > 0) {
-      const parsed = Number.parseInt(trimmedMaxAttempts, 10);
-      if (!Number.isFinite(parsed) || parsed < 1) {
-        setError("Max attempts must be 1 or higher (leave blank for unlimited).");
-        return;
-      }
-      maxAttemptsValue = parsed;
-    }
-    if (
-      !Number.isFinite(latePenaltyPercent) ||
-      latePenaltyPercent < 0 ||
-      latePenaltyPercent > 100
-    ) {
-      setError("Late penalty must be between 0 and 100.");
-      return;
-    }
-    if (!Number.isFinite(gracePeriodHours) || gracePeriodHours < 0) {
-      setError("Grace period must be 0 or a positive number of hours.");
-      return;
-    }
+    const maxAttemptsValue: number | null =
+      trimmedMaxAttempts.length === 0
+        ? null
+        : Number.parseInt(trimmedMaxAttempts, 10);
 
     setBusy(true);
     try {
@@ -293,6 +734,11 @@ export function AssignmentFormModal({
         return;
       }
 
+      // Server confirmed — now (and only now) it's safe to drop the draft.
+      submittedRef.current = true;
+      clearDraft(classId);
+      latestDraftRef.current = null;
+
       toast.success("Assignment created");
       onCreated?.();
       onClose();
@@ -326,6 +772,14 @@ export function AssignmentFormModal({
     : mode === "edit"
       ? "Save changes"
       : "Create assignment";
+
+  // Per-field error ids for aria-describedby wiring.
+  const titleErrId = "assignment-title-error";
+  const qcErrId = "assignment-question-count-error";
+  const tlErrId = "assignment-time-limit-error";
+  const maErrId = "assignment-max-attempts-error";
+  const lpErrId = "assignment-late-penalty-error";
+  const ghErrId = "assignment-grace-hours-error";
 
   return (
     <div
@@ -362,7 +816,68 @@ export function AssignmentFormModal({
           </button>
         </header>
 
-        <form onSubmit={onSubmit} className="space-y-4">
+        {/* Draft restore banner — create mode only, only when a non-stale
+            draft was found on open and the user hasn't decided yet. */}
+        {isCreate && pendingRestore && (
+          <div
+            role="status"
+            className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-sm text-amber-900 dark:text-amber-100"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span>
+                Restore draft from{" "}
+                <strong>{formatRelativeTime(pendingRestore.savedAt)}</strong>?
+              </span>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleRestoreDraft}
+                  className="rounded-md bg-amber-600 px-3 py-1 text-xs font-medium text-white hover:bg-amber-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                >
+                  Restore
+                </button>
+                <button
+                  type="button"
+                  onClick={handleDiscardDraft}
+                  className="rounded-md px-3 py-1 text-xs font-medium text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                >
+                  Discard
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Inline confirm-cancel banner — shown when the user clicks Cancel
+            with unsaved draft content. */}
+        {confirmCancel && (
+          <div
+            role="status"
+            className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-sm text-amber-900 dark:text-amber-100"
+          >
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <span>Discard draft and close?</span>
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={handleConfirmDiscardAndClose}
+                  className="rounded-md bg-rose-600 px-3 py-1 text-xs font-medium text-white hover:bg-rose-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500"
+                >
+                  Discard
+                </button>
+                <button
+                  type="button"
+                  onClick={handleKeepEditing}
+                  className="rounded-md px-3 py-1 text-xs font-medium text-amber-900 dark:text-amber-100 hover:bg-amber-100 dark:hover:bg-amber-900/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500"
+                >
+                  Keep editing
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <form onSubmit={onSubmit} className="space-y-4" noValidate>
           {error && (
             <div
               role="alert"
@@ -382,10 +897,26 @@ export function AssignmentFormModal({
               type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              maxLength={200}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              onBlur={() => markTouched("title")}
+              maxLength={MAX_TITLE_LENGTH}
+              aria-invalid={Boolean(fieldErrors.title)}
+              aria-describedby={fieldErrors.title ? titleErrId : undefined}
+              className={`mt-1 w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                fieldErrors.title
+                  ? "border-rose-400 dark:border-rose-600 focus:ring-rose-500"
+                  : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+              }`}
               placeholder="e.g. Unit 3 — Algebra Practice"
             />
+            {fieldErrors.title && (
+              <span
+                id={titleErrId}
+                role="alert"
+                className="mt-1 block text-xs text-rose-600 dark:text-rose-400"
+              >
+                {fieldErrors.title}
+              </span>
+            )}
           </label>
 
           <div className="block">
@@ -444,6 +975,7 @@ export function AssignmentFormModal({
                 Question count
               </span>
               <input
+                ref={questionCountRef}
                 type="number"
                 min={MIN_QUESTION_COUNT}
                 max={MAX_QUESTION_COUNT}
@@ -451,11 +983,30 @@ export function AssignmentFormModal({
                 onChange={(e) =>
                   setQuestionCount(Number.parseInt(e.target.value, 10) || 0)
                 }
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                onBlur={() => markTouched("questionCount")}
+                aria-invalid={Boolean(fieldErrors.questionCount)}
+                aria-describedby={
+                  fieldErrors.questionCount ? qcErrId : undefined
+                }
+                className={`mt-1 w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                  fieldErrors.questionCount
+                    ? "border-rose-400 dark:border-rose-600 focus:ring-rose-500"
+                    : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+                }`}
               />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                {MIN_QUESTION_COUNT}–{MAX_QUESTION_COUNT}
-              </span>
+              {fieldErrors.questionCount ? (
+                <span
+                  id={qcErrId}
+                  role="alert"
+                  className="mt-1 block text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {fieldErrors.questionCount}
+                </span>
+              ) : (
+                <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                  {MIN_QUESTION_COUNT}–{MAX_QUESTION_COUNT}
+                </span>
+              )}
             </label>
 
             <label className="block">
@@ -463,6 +1014,7 @@ export function AssignmentFormModal({
                 Time limit (minutes)
               </span>
               <input
+                ref={timeLimitRef}
                 type="number"
                 min={0}
                 max={300}
@@ -470,11 +1022,28 @@ export function AssignmentFormModal({
                 onChange={(e) =>
                   setTimeLimit(Number.parseInt(e.target.value, 10) || 0)
                 }
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                onBlur={() => markTouched("timeLimit")}
+                aria-invalid={Boolean(fieldErrors.timeLimit)}
+                aria-describedby={fieldErrors.timeLimit ? tlErrId : undefined}
+                className={`mt-1 w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                  fieldErrors.timeLimit
+                    ? "border-rose-400 dark:border-rose-600 focus:ring-rose-500"
+                    : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+                }`}
               />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                0 = untimed
-              </span>
+              {fieldErrors.timeLimit ? (
+                <span
+                  id={tlErrId}
+                  role="alert"
+                  className="mt-1 block text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {fieldErrors.timeLimit}
+                </span>
+              ) : (
+                <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                  0 = untimed
+                </span>
+              )}
             </label>
           </div>
 
@@ -523,18 +1092,38 @@ export function AssignmentFormModal({
                 <span className="text-slate-500 dark:text-slate-400 font-normal">(optional)</span>
               </span>
               <input
+                ref={maxAttemptsRef}
                 type="number"
                 min={1}
                 max={20}
                 value={maxAttempts}
                 onChange={(e) => setMaxAttempts(e.target.value)}
+                onBlur={() => markTouched("maxAttempts")}
                 placeholder="∞"
                 title="Maximum number of times a student may start this assignment. Leave blank for unlimited."
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                aria-invalid={Boolean(fieldErrors.maxAttempts)}
+                aria-describedby={
+                  fieldErrors.maxAttempts ? maErrId : undefined
+                }
+                className={`mt-1 w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                  fieldErrors.maxAttempts
+                    ? "border-rose-400 dark:border-rose-600 focus:ring-rose-500"
+                    : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+                }`}
               />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                Blank = unlimited
-              </span>
+              {fieldErrors.maxAttempts ? (
+                <span
+                  id={maErrId}
+                  role="alert"
+                  className="mt-1 block text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {fieldErrors.maxAttempts}
+                </span>
+              ) : (
+                <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                  Blank = unlimited
+                </span>
+              )}
             </label>
 
             <label className="block">
@@ -542,6 +1131,7 @@ export function AssignmentFormModal({
                 Late penalty (%)
               </span>
               <input
+                ref={latePenaltyRef}
                 type="number"
                 min={0}
                 max={100}
@@ -551,12 +1141,31 @@ export function AssignmentFormModal({
                     Number.parseInt(e.target.value, 10) || 0,
                   )
                 }
+                onBlur={() => markTouched("latePenaltyPercent")}
                 title="Percentage points subtracted from the score if the attempt is submitted after the due date (plus grace period)."
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                aria-invalid={Boolean(fieldErrors.latePenaltyPercent)}
+                aria-describedby={
+                  fieldErrors.latePenaltyPercent ? lpErrId : undefined
+                }
+                className={`mt-1 w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                  fieldErrors.latePenaltyPercent
+                    ? "border-rose-400 dark:border-rose-600 focus:ring-rose-500"
+                    : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+                }`}
               />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                0 = no late penalty
-              </span>
+              {fieldErrors.latePenaltyPercent ? (
+                <span
+                  id={lpErrId}
+                  role="alert"
+                  className="mt-1 block text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {fieldErrors.latePenaltyPercent}
+                </span>
+              ) : (
+                <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                  0 = no late penalty
+                </span>
+              )}
             </label>
 
             <label className="block">
@@ -564,6 +1173,7 @@ export function AssignmentFormModal({
                 Grace (hours)
               </span>
               <input
+                ref={graceHoursRef}
                 type="number"
                 min={0}
                 max={168}
@@ -573,12 +1183,31 @@ export function AssignmentFormModal({
                     Number.parseInt(e.target.value, 10) || 0,
                   )
                 }
+                onBlur={() => markTouched("gracePeriodHours")}
                 title="Hours after the due date during which submissions are still considered on-time."
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                aria-invalid={Boolean(fieldErrors.gracePeriodHours)}
+                aria-describedby={
+                  fieldErrors.gracePeriodHours ? ghErrId : undefined
+                }
+                className={`mt-1 w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                  fieldErrors.gracePeriodHours
+                    ? "border-rose-400 dark:border-rose-600 focus:ring-rose-500"
+                    : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+                }`}
               />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                Hours past due before penalty applies
-              </span>
+              {fieldErrors.gracePeriodHours ? (
+                <span
+                  id={ghErrId}
+                  role="alert"
+                  className="mt-1 block text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {fieldErrors.gracePeriodHours}
+                </span>
+              ) : (
+                <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                  Hours past due before penalty applies
+                </span>
+              )}
             </label>
           </div>
 
@@ -603,14 +1232,20 @@ export function AssignmentFormModal({
           <div className="flex items-center gap-2 pt-2">
             <button
               type="button"
-              onClick={onClose}
+              onClick={handleCancelClick}
               className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
             >
               Cancel
             </button>
             <button
               type="submit"
-              disabled={busy}
+              disabled={busy || !isValid}
+              aria-disabled={busy || !isValid}
+              title={
+                !isValid && !busy
+                  ? "Fix the highlighted fields"
+                  : undefined
+              }
               className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
             >
               {submitLabel}
