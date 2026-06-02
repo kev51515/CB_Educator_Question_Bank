@@ -33,6 +33,7 @@ function isEditableTarget(target: EventTarget | null): boolean {
   if (target.isContentEditable) return true;
   return false;
 }
+import { StudentTestResultsPanel } from "../student/StudentTestResultsPanel";
 import {
   AssignmentsPanel,
   CourseAnnouncementsList,
@@ -125,6 +126,9 @@ export function AreaSelector() {
             onStart={handleStart}
             onReview={handleReview}
           />
+          {/* Full-length test results — released by the teacher (hidden until
+              then). Renders nothing when the student has no submitted tests. */}
+          <StudentTestResultsPanel />
           {/* Recent feedback: surface freshly-graded attempts right above
               the progress section so a teacher's comment lands next to the
               student's mastery trends. Renders nothing when there are no
