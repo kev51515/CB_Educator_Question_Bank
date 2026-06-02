@@ -59,6 +59,8 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
+  const [retakeBusyId, setRetakeBusyId] = useState<string | null>(null);
+  const [grantedSlugs, setGrantedSlugs] = useState<Set<string>>(new Set());
 
   // The run currently open in the full-screen review overlay.
   const [reviewing, setReviewing] = useState<{ row: TestRunRow; result: TestResult } | null>(null);
@@ -135,6 +137,28 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
       toast.error("Couldn't load result", getErrorMessage(err, "Try again."));
     } finally {
       setReviewLoadingId(null);
+    }
+  };
+
+  // Grant one more attempt: the student's next visit to this test starts a
+  // fresh run (tests are one-attempt by default).
+  const onAllowRetake = async (row: TestRunRow): Promise<void> => {
+    setRetakeBusyId(row.run_id);
+    try {
+      const { error: rpcError } = await supabase.rpc("allow_test_retake", {
+        p_student_id: studentId,
+        p_slug: row.test_slug,
+      });
+      if (rpcError) {
+        toast.error("Couldn't allow retake", rpcError.message);
+        return;
+      }
+      setGrantedSlugs((prev) => new Set(prev).add(row.test_slug));
+      toast.success("Retake allowed", `${row.test_title} — they can take it again.`);
+    } catch (err: unknown) {
+      toast.error("Couldn't allow retake", getErrorMessage(err, "Try again."));
+    } finally {
+      setRetakeBusyId(null);
     }
   };
 
@@ -229,6 +253,21 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
                       ? "Hide"
                       : "Release to student"}
                 </button>
+                {grantedSlugs.has(row.test_slug) ? (
+                  <span className="inline-flex items-center rounded-md px-3 py-1.5 text-xs font-medium text-emerald-700 dark:text-emerald-300">
+                    Retake allowed
+                  </span>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => void onAllowRetake(row)}
+                    disabled={retakeBusyId === row.run_id}
+                    title="Tests are one attempt by default. Grant one more."
+                    className="rounded-md min-h-[36px] px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 disabled:opacity-60"
+                  >
+                    {retakeBusyId === row.run_id ? "…" : "Allow retake"}
+                  </button>
+                )}
               </li>
             );
           })}
