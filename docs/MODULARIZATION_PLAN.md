@@ -73,14 +73,32 @@ sub-sections + one data hook. Same recipe.
 `satScore`, and the `patchModule`/`patchItem` additions to `useCourseModules`
 — new logic went into small focused modules rather than the monsters.
 
-## Step 1 progress (2026-06)
-| File | Before → after | Result |
-|---|---|---|
-| `CourseMaterials.tsx` | 1199 → 638 | ✅ split: `materialsHelpers.ts`, `MaterialCard.tsx`, `EditMaterialModal.tsx` |
-| `SidebarV2.tsx` | 989 → 579 | ✅ split: `sidebarHelpers.ts`, `DomainSkillTree.tsx`, `StatusFilter.tsx` |
-| `TeacherAttemptDetailView.tsx` | 1025 → 1003 | ◑ monolithic — only `teacherAttemptGradingHelpers.ts` extractable |
-| `CalendarPage.tsx` | — | ⏸ deferred — concurrent session was rewriting it live (808 → 1133) |
-| `App.tsx` | — | ⏸ monolithic god-component (40+ useStates); not a pure-move target |
+## Step 1 progress (2026-06) — 15 files modularized
+Done via parallel agents (each self-aborts on concurrent edits; central `tsc`
++ full `vite build` verified green). ~5,000 lines pulled into ~40 focused files.
+
+| File | Before → after |
+|---|---|
+| `dashboard/CohortSummaryWidget.tsx` | 1011 → **290** |
+| `teacher/StudentProfilePage.tsx` | 1170 → **253** |
+| `student/MockTestHistoryPage.tsx` | 675 → **374** |
+| `student/AssignmentsPanel.tsx` | 781 → **377** |
+| `student/StudentCourseView.tsx` | 711 → **411** |
+| `dashboard/NeedsAttentionPanel.tsx` | 823 → **417** |
+| `teacher/CourseMaterials.tsx` | 1199 → **638** |
+| `components/SidebarV2.tsx` | 989 → **579** |
+| `components/ProgressDashboard.tsx` | 676 → **551** |
+| `admin/AllUsersView.tsx` | 703 → **573** |
+| `teacher/CourseGradebook.tsx` | 961 → **770** (monolithic — helpers only) |
+| `teacher/CoursePortfolio.tsx` | 834 → **728** |
+| `teacher/AssignmentAttemptsView.tsx` | 821 → **699** (monolithic — helpers only) |
+| `teacher/AnnouncementFormModal.tsx` | 776 → **658** (monolithic — helpers only) |
+| `teacher/TeacherAttemptDetailView.tsx` | 1025 → **1003** (monolithic — helpers only) |
+
+**Deferred (hot or god-component):** `ModulesPage` (4.6k, hot), `AdminAuditPage`
+(1.8k, hot), `App.tsx` (god-component), `QuestionBankPage`/`DiscussionTopicView`/
+`CalendarPage` (hot). These need a coordinated quiet window (hot files) or a
+deliberate behavior-preserving decomposition (god-components) — see below.
 
 **Key insight — two kinds of "large file":**
 1. **Composable** (clear `function X(){return <JSX>}` sub-components + pure
