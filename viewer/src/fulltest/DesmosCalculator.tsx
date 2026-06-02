@@ -26,6 +26,19 @@ const DESMOS_KEY =
   "dcb31709b452b1cf9dc26972add0fda6";
 const SCRIPT_SRC = `https://www.desmos.com/api/v1.11/calculator.js?apiKey=${DESMOS_KEY}`;
 
+// Panel size — 2× the original 440×520 default, clamped to the viewport so it
+// never overflows on smaller screens. Opens centered.
+const CALC_W = 880;
+const CALC_H = 1040;
+const MARGIN = 16;
+function panelSize(): { w: number; h: number } {
+  if (typeof window === "undefined") return { w: CALC_W, h: CALC_H };
+  return {
+    w: Math.min(CALC_W, window.innerWidth - MARGIN),
+    h: Math.min(CALC_H, window.innerHeight - MARGIN),
+  };
+}
+
 let scriptPromise: Promise<void> | null = null;
 function loadDesmos(): Promise<void> {
   if (window.Desmos) return Promise.resolve();
@@ -81,13 +94,36 @@ export function DesmosCalculator({ open, onClose }: DesmosCalculatorProps) {
     };
   }, [open]);
 
-  // Default position: bottom-right on first open.
+  // Default position: centered on first open.
   useEffect(() => {
     if (open && pos.x < 0) {
-      const w = 440;
-      setPos({ x: Math.max(8, window.innerWidth - w - 24), y: 88 });
+      const { w, h } = panelSize();
+      setPos({
+        x: Math.max(8, Math.round((window.innerWidth - w) / 2)),
+        y: Math.max(8, Math.round((window.innerHeight - h) / 2)),
+      });
     }
   }, [open, pos.x]);
+
+  // Keep the panel within the viewport if the window is resized after opening
+  // (the clamped size recomputes on the re-render this setPos triggers), so it
+  // can never end up overflowing off-screen.
+  useEffect(() => {
+    if (!open) return;
+    const onResize = () => {
+      const { w, h } = panelSize();
+      setPos((p) =>
+        p.x < 0
+          ? p
+          : {
+              x: Math.max(8, Math.min(p.x, window.innerWidth - w - 8)),
+              y: Math.max(8, Math.min(p.y, window.innerHeight - h - 8)),
+            },
+      );
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [open]);
 
   if (!open) return null;
 
@@ -110,7 +146,7 @@ export function DesmosCalculator({ open, onClose }: DesmosCalculatorProps) {
   return (
     <div
       className="fixed z-30 flex flex-col overflow-hidden rounded-xl border border-slate-300 bg-white shadow-2xl dark:border-slate-700"
-      style={{ left: pos.x, top: pos.y, width: 440, height: 520, resize: "both" }}
+      style={{ left: pos.x, top: pos.y, width: panelSize().w, height: panelSize().h, resize: "both" }}
       role="dialog"
       aria-label="Graphing calculator"
     >
