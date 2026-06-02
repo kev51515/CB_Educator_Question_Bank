@@ -291,6 +291,9 @@ function StaffRoutesTree({ account }: { account: AccountContext }) {
         <Route path={ROUTES.QBANK_LOG} element={<QBankSubmissionLogPage />} />
         <Route path={ROUTES.TESTS_ADMIN} element={<TestsAdminPage />} />
         <Route path={ROUTES.TEST_REVIEW} element={<TestReviewPage />} />
+        {/* Staff can preview/take a full test (the "Preview" button on the
+            Full-Test catalog). FullTestApp is a fullscreen takeover. */}
+        <Route path={ROUTES.TEST_RUN} element={<FullTestApp />} />
         {/* Per-student profile inside a course. Registered BEFORE the
             ClassLayout wildcard below so React Router matches the more
             specific path first. Lives outside ClassLayout's tab strip
