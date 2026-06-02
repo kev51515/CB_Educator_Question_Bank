@@ -20,7 +20,7 @@ import { useProfile } from "../lib/profile";
 import { ConfirmDialog } from "../teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
-import { useRunnerAnnotations } from "./annotations";
+import { captureSelectionHighlight, useRunnerAnnotations } from "./annotations";
 import { ResultView } from "./ResultView";
 import {
   clearCachedAnswers,
@@ -316,6 +316,29 @@ export function FullTestApp() {
     return () => window.clearTimeout(t);
   }, [answers, eliminated, phase, runId, moduleMeta]);
 
+  // Flush the active module's draft to the server immediately (Save & exit, and
+  // every few question navigations) so a crash never loses more than a couple
+  // of questions even between the 2.5s autosave ticks. Kept in a ref so the
+  // nav-counter effect always sees the latest answers/eliminations.
+  const saveDraftNow = useCallback(() => {
+    if (runId && moduleMeta) {
+      void saveProgress(runId, moduleMeta.position, answers, elimToPayload(eliminated));
+    }
+  }, [runId, moduleMeta, answers, eliminated]);
+  const saveDraftRef = useRef(saveDraftNow);
+  saveDraftRef.current = saveDraftNow;
+
+  // Belt-and-braces: flush a draft every 3 question navigations.
+  const navCountRef = useRef(0);
+  useEffect(() => {
+    if (phase !== "module") return;
+    navCountRef.current += 1;
+    if (navCountRef.current >= 3) {
+      navCountRef.current = 0;
+      saveDraftRef.current();
+    }
+  }, [index, phase]);
+
   const setAnswer = useCallback(
     (qid: string, value: string | null) => {
       setAnswers((prev) => {
@@ -583,13 +606,12 @@ export function FullTestApp() {
             // collapse it before onClick runs.
             onMouseDown={(e) => e.preventDefault()}
             onClick={() => {
-              const sel = window.getSelection();
-              const text = sel?.toString() ?? "";
-              if (text.trim().length >= 2) {
-                annot.addHighlight(q.id, text);
-                sel?.removeAllRanges();
+              const hl = captureSelectionHighlight();
+              if (hl) {
+                annot.addHighlight(q.id, hl);
+                window.getSelection()?.removeAllRanges();
               } else {
-                toast.info("Select text first", "Drag across the passage, then tap Highlight.");
+                toast.info("Select text first", "Drag across the passage or question, then tap Highlight.");
               }
             }}
             className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:bg-amber-50 hover:text-amber-700 dark:text-slate-300 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
@@ -654,6 +676,7 @@ export function FullTestApp() {
             eliminated={eliminated[q.id]}
             onToggleEliminate={(letter) => toggleEliminate(q.id, letter)}
             highlights={annot.get(q.id).highlights}
+            onRemoveHighlight={(field, offset) => annot.removeHighlightAt(q.id, field, offset)}
           />
         )}
       </main>
@@ -818,6 +841,7 @@ export function FullTestApp() {
           confirmLabel="Save &amp; exit"
           onConfirm={() => {
             setConfirmExit(false);
+            saveDraftNow(); // flush the current module's draft before leaving
             navigate(ROUTES.HOME);
           }}
           onCancel={() => setConfirmExit(false)}

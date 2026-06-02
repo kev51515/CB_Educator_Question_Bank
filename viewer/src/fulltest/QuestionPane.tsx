@@ -16,6 +16,7 @@
  * never overflow their pane.
  */
 import type { Letter, TestQuestion } from "./types";
+import { mergeRanges, type AnnotField, type Highlight } from "./annotations";
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
 
@@ -38,47 +39,49 @@ interface QuestionPaneProps {
   onToggleStrikeMode?: () => void;
   eliminated?: Set<Letter>;
   onToggleEliminate?: (letter: Letter) => void;
-  /** Student highlight substrings to mark in the passage + stem (runner). */
-  highlights?: string[];
+  /** Student range highlights (runner) — marked exactly where selected. */
+  highlights?: Highlight[];
+  /** Remove the highlight covering `offset` in `field` (click-to-remove). */
+  onRemoveHighlight?: (field: AnnotField, offset: number) => void;
 }
 
-function escapeRegex(s: string): string {
-  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-}
-
-/** Render `text` with any of `terms` wrapped in a highlight <mark>. All
- *  occurrences of each term are marked; longer terms win on overlap. */
-function HighlightText({ text, terms }: { text: string; terms?: string[] }): JSX.Element {
-  const clean = (terms ?? []).filter((t) => t && t.length >= 2);
-  if (clean.length === 0 || !text) return <>{text}</>;
-  const pattern = clean
-    .slice()
-    .sort((a, b) => b.length - a.length)
-    .map(escapeRegex)
-    .join("|");
-  let parts: string[];
-  try {
-    parts = text.split(new RegExp(`(${pattern})`, "g"));
-  } catch {
-    return <>{text}</>;
-  }
-  const termSet = new Set(clean);
-  return (
-    <>
-      {parts.map((p, i) =>
-        termSet.has(p) ? (
-          <mark
-            key={i}
-            className="rounded-sm bg-amber-200/70 px-px text-inherit dark:bg-amber-300/40 dark:text-inherit"
-          >
-            {p}
-          </mark>
-        ) : (
-          <span key={i}>{p}</span>
-        ),
-      )}
-    </>
-  );
+/**
+ * Render `text` with the given character ranges wrapped in a clickable
+ * highlight <mark>. Only the selected spans are marked (range-based, NOT
+ * text-match) so a mock test never lights up other occurrences. A plain click
+ * on a mark removes it; a drag-select that ends on a mark does not.
+ */
+function renderField(
+  text: string,
+  field: AnnotField,
+  ranges: Highlight[],
+  onRemove?: (field: AnnotField, offset: number) => void,
+): JSX.Element {
+  const merged = mergeRanges(ranges.map((r) => ({ start: r.start, end: r.end })));
+  if (merged.length === 0 || !text) return <>{text}</>;
+  const out: JSX.Element[] = [];
+  let pos = 0;
+  merged.forEach((r, i) => {
+    const s = Math.max(0, Math.min(r.start, text.length));
+    const e = Math.max(s, Math.min(r.end, text.length));
+    if (s > pos) out.push(<span key={`t${i}`}>{text.slice(pos, s)}</span>);
+    out.push(
+      <mark
+        key={`m${i}`}
+        onClick={() => {
+          const sel = window.getSelection();
+          if (!sel || sel.isCollapsed) onRemove?.(field, s);
+        }}
+        title="Click to remove highlight"
+        className="cursor-pointer rounded-sm bg-amber-200/70 px-px text-inherit dark:bg-amber-300/40 dark:text-inherit"
+      >
+        {text.slice(s, e)}
+      </mark>,
+    );
+    pos = e;
+  });
+  if (pos < text.length) out.push(<span key="tail">{text.slice(pos)}</span>);
+  return <>{out}</>;
 }
 
 function Figure({
@@ -105,11 +108,14 @@ function Figure({
 function Stimulus({
   question,
   highlights,
+  onRemoveHighlight,
 }: {
   question: TestQuestion;
-  highlights?: string[];
+  highlights?: Highlight[];
+  onRemoveHighlight?: (field: AnnotField, offset: number) => void;
 }) {
   const isMath = question.section === "math";
+  const passageRanges = (highlights ?? []).filter((h) => h.field === "passage");
   return (
     <div className="space-y-4">
       {question.figure && (
@@ -121,10 +127,11 @@ function Stimulus({
       )}
       {question.passage && (
         <p
+          data-annot-field="passage"
           className="whitespace-pre-wrap text-[17px] leading-relaxed text-slate-800 dark:text-slate-200"
           style={SERIF}
         >
-          <HighlightText text={question.passage} terms={highlights} />
+          {renderField(question.passage, "passage", passageRanges, onRemoveHighlight)}
         </p>
       )}
     </div>
@@ -204,17 +211,24 @@ function Prompt({
   eliminated,
   onToggleEliminate,
   highlights,
+  onRemoveHighlight,
 }: Pick<
   QuestionPaneProps,
-  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights"
+  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights" | "onRemoveHighlight"
 >) {
   return (
     <div className="space-y-5">
       <p
+        data-annot-field="stem"
         className="whitespace-pre-wrap text-[17px] font-medium leading-relaxed text-slate-900 dark:text-slate-100"
         style={SERIF}
       >
-        <HighlightText text={question.stem} terms={highlights} />
+        {renderField(
+          question.stem,
+          "stem",
+          (highlights ?? []).filter((h) => h.field === "stem"),
+          onRemoveHighlight,
+        )}
       </p>
 
       {question.type === "mcq" && question.choices && (
@@ -336,6 +350,7 @@ export function QuestionPane({
   eliminated,
   onToggleEliminate,
   highlights,
+  onRemoveHighlight,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
@@ -359,6 +374,7 @@ export function QuestionPane({
           eliminated={eliminated}
           onToggleEliminate={onToggleEliminate}
           highlights={highlights}
+          onRemoveHighlight={onRemoveHighlight}
         />
       </div>
     </>
@@ -370,7 +386,7 @@ export function QuestionPane({
       return (
         <div className="grid h-full grid-cols-1 md:grid-cols-2 md:divide-x md:divide-slate-200 dark:md:divide-slate-800">
           <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
-            <Stimulus question={question} highlights={highlights} />
+            <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
           </div>
           <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
             <div className="mx-auto max-w-xl">{questionSide}</div>
@@ -381,7 +397,7 @@ export function QuestionPane({
     return (
       <div className="h-full overflow-y-auto px-6 py-7">
         <div className="mx-auto max-w-2xl space-y-6">
-          {question.figure && <Stimulus question={question} highlights={highlights} />}
+          {question.figure && <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />}
           {questionSide}
         </div>
       </div>
@@ -393,7 +409,7 @@ export function QuestionPane({
     return (
       <div className="grid gap-6 md:grid-cols-2">
         <div className="md:border-r md:border-slate-200 md:pr-6 dark:md:border-slate-700">
-          <Stimulus question={question} highlights={highlights} />
+          <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
         </div>
         <div>{questionSide}</div>
       </div>
@@ -401,7 +417,7 @@ export function QuestionPane({
   }
   return (
     <div className="mx-auto max-w-2xl space-y-4">
-      {question.figure && <Stimulus question={question} highlights={highlights} />}
+      {question.figure && <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />}
       {questionSide}
     </div>
   );
