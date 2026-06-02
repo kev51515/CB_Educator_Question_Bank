@@ -5,6 +5,7 @@
  * time and graded by RPC (migration 0048).
  */
 export { FullTestApp } from "./FullTestApp";
+export { FullTestCatalog } from "./FullTestCatalog";
 export { TestsPanel } from "./TestsPanel";
 export { TestsAdminPage } from "./TestsAdminPage";
 export { TestReviewPage } from "./TestReviewPage";

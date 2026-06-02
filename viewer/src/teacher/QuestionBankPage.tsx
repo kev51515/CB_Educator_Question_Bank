@@ -43,6 +43,7 @@ import {
 import { useProfile } from "../lib/profile";
 import { courseAssignmentPath, courseAssignmentsPath } from "../lib/routes";
 import { supabase } from "../lib/supabase";
+import { FullTestCatalog } from "../fulltest";
 import { AddSetToCourseModal } from "./AddSetToCourseModal";
 import { AssignmentFormModal } from "./AssignmentFormModal";
 import { ConfirmDialog } from "./ConfirmDialog";
@@ -1306,8 +1307,8 @@ export function QuestionBankPage(): JSX.Element {
             <div className="flex items-center gap-1 border-b border-slate-200 dark:border-slate-800 overflow-x-auto">
               <SectionTab
                 active={activeSection === "practice-tests"}
-                label="Practice Tests"
-                count={mockTestsLoading ? undefined : mockTests.length}
+                label="Full-Test"
+                count={undefined}
                 onSelect={() => setActiveSection("practice-tests")}
               />
               <SectionTab
@@ -1328,6 +1329,21 @@ export function QuestionBankPage(): JSX.Element {
             }
           >
             {activeSection === "practice-tests" ? (
+              // Full-Test tab: the canonical full-length tests (`tests` table).
+              <FullTestCatalog />
+            ) : (
+              <QuestionSetsSection
+                catalog={catalog}
+                loading={loading}
+                error={error}
+                onAdd={setAddTarget}
+              />
+            )}
+            {/* Legacy mock-test catalog retired — full tests now live in the
+                `tests` table (see FullTestCatalog). Kept dormant (never
+                rendered) so the code/data isn't deleted; the existing
+                mocktests are archived. Phase 2 removes this block. */}
+            {false && (
               <PracticeTestsSection
                 teacherId={teacherId}
                 mockTests={mockTests}
@@ -1337,13 +1353,6 @@ export function QuestionBankPage(): JSX.Element {
                 onOpenCreate={() => setPickerOpen(true)}
                 activeCourses={activeCourses}
                 classesLoading={classesLoading}
-              />
-            ) : (
-              <QuestionSetsSection
-                catalog={catalog}
-                loading={loading}
-                error={error}
-                onAdd={setAddTarget}
               />
             )}
           </div>
