@@ -29,6 +29,7 @@ import { ConfirmDialog } from "./ConfirmDialog";
 import { BulkRosterModal } from "./BulkRosterModal";
 import { AddStudentModal } from "./AddStudentModal";
 import { ResetStudentPasswordModal } from "./ResetStudentPasswordModal";
+import { PrintLoginsModal, type PrintableLogin } from "./PrintLoginsModal";
 import { SkeletonRows } from "../components/Skeleton";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
@@ -316,6 +317,7 @@ export function ClassRoster() {
   const [confirmRemove, setConfirmRemove] = useState<RosterStudent | null>(null);
   const [showBulkImport, setShowBulkImport] = useState(false);
   const [showAddStudent, setShowAddStudent] = useState(false);
+  const [showPrintLogins, setShowPrintLogins] = useState(false);
   const [resetTarget, setResetTarget] = useState<RosterStudent | null>(null);
   // Search query for filtering the roster client-side. Transient — does not
   // persist across reloads (per spec).
@@ -564,6 +566,13 @@ export function ClassRoster() {
             Roster
           </h2>
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setShowPrintLogins(true)}
+              className="rounded-md text-xs font-medium px-3 py-1.5 min-h-[36px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            >
+              Print logins
+            </button>
             <button
               type="button"
               onClick={() => setShowBulkImport(true)}
@@ -922,6 +931,21 @@ export function ClassRoster() {
           onDone={() => {
             void refresh();
           }}
+        />
+      )}
+
+      {showPrintLogins && (
+        <PrintLoginsModal
+          courseName={cls.name}
+          students={roster
+            .filter((s): s is RosterStudent & { roster_code: string } =>
+              s.managed && typeof s.roster_code === "string" && s.roster_code.length > 0,
+            )
+            .map<PrintableLogin>((s) => ({
+              name: s.display_name ?? s.roster_code,
+              code: s.roster_code,
+            }))}
+          onClose={() => setShowPrintLogins(false)}
         />
       )}
 

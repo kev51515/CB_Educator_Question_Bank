@@ -250,6 +250,20 @@ export function studentLoginUrl(code: string, password: string): string {
   return `${origin}${ROUTES.SIGN_IN}?${params.toString()}`;
 }
 
+/**
+ * Sign-in deep link that pre-fills only the student's login CODE (no
+ * password). Used for the bulk "print all logins" class sheet, where we can't
+ * include passwords (they're bcrypt-hashed + unrecoverable). The student
+ * scans, the code is filled, and they type their own password.
+ */
+export function studentCodePrefillUrl(code: string): string {
+  const origin =
+    typeof window !== "undefined" && window.location?.origin
+      ? window.location.origin
+      : "";
+  return `${origin}${ROUTES.SIGN_IN}?login=${encodeURIComponent(code)}`;
+}
+
 export function assignmentTakePath(assignmentId: string): string {
   return buildPath(ROUTES.ASSIGNMENT_TAKE, { assignmentId });
 }
