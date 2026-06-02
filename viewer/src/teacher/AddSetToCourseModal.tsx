@@ -36,7 +36,25 @@ interface AddSetToCourseModalProps {
   onAdded?: () => void;
 }
 
-const DEFAULT_TIME_LIMIT_MINUTES = 20;
+/**
+ * Compute a sensible default time limit from the catalog entry's question
+ * count: ~45 sec/question (0.75 min) with safety margin, rounded up to the
+ * nearest 5 minutes, with a 10-minute floor.
+ *
+ * Why compute instead of asking the teacher? Per the project's "library
+ * authoring vs assigning" principle (see CLAUDE.md + the May-2026 workflow
+ * audit), assign-time forms should only vary (which thing, due date,
+ * display title). Time limit is intrinsic to the question set and belongs
+ * to the catalog entry's definition. catalog.json doesn't carry a
+ * `time_limit_minutes` field today; until it does, this heuristic gives
+ * the teacher a reasonable starting time without making them author it.
+ */
+function computeDefaultTimeLimit(questionCount: number): number {
+  if (!Number.isFinite(questionCount) || questionCount <= 0) return 10;
+  const raw = questionCount * 0.75;
+  const rounded = Math.ceil(raw / 5) * 5;
+  return Math.max(10, rounded);
+}
 
 function getErrorMessage(error: unknown, fallback: string): string {
   if (error instanceof Error) return error.message;
@@ -61,8 +79,6 @@ export function AddSetToCourseModal({
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [dueAt, setDueAt] = useState<string | null>(null);
-  const [timeLimit, setTimeLimit] = useState<number>(DEFAULT_TIME_LIMIT_MINUTES);
-  const [maxAttempts, setMaxAttempts] = useState<string>("");
   const [busy, setBusy] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
   const titleRef = useRef<HTMLInputElement | null>(null);
@@ -83,8 +99,6 @@ export function AddSetToCourseModal({
     setTitle(entry.label);
     setDescription("");
     setDueAt(null);
-    setTimeLimit(DEFAULT_TIME_LIMIT_MINUTES);
-    setMaxAttempts("");
     setError(null);
     setSelectedCourseId(initialCourseId ?? "");
     const id = window.setTimeout(() => titleRef.current?.focus(), 0);
@@ -125,23 +139,6 @@ export function AddSetToCourseModal({
       setError("Please pick a course to add this set to.");
       return;
     }
-    if (!Number.isFinite(timeLimit) || timeLimit < 0) {
-      setError("Time limit must be 0 or a positive number of minutes.");
-      return;
-    }
-
-    const trimmedMaxAttempts = maxAttempts.trim();
-    let maxAttemptsValue: number | null = null;
-    if (trimmedMaxAttempts.length > 0) {
-      const parsed = Number.parseInt(trimmedMaxAttempts, 10);
-      if (!Number.isFinite(parsed) || parsed < 1) {
-        setError(
-          "Max attempts must be 1 or higher (leave blank for unlimited).",
-        );
-        return;
-      }
-      maxAttemptsValue = parsed;
-    }
 
     setBusy(true);
     try {
@@ -161,14 +158,19 @@ export function AddSetToCourseModal({
           qbank_set_uid: uid,
           qbank_set_label: entry.label,
           question_count: entry.questionCount,
-          time_limit_minutes: timeLimit,
+          // Time limit is intrinsic to the question set — heuristic until
+          // catalog.json adds an explicit `time_limit_minutes` field.
+          time_limit_minutes: computeDefaultTimeLimit(entry.questionCount),
           // Pre-built sets carry their own difficulty mix; "any" is the
           // neutral marker we use to mean "trust the source set".
           difficulty_mix: "any",
           due_at: dueAt,
           opens_at: nowIso,
           archived: false,
-          max_attempts: maxAttemptsValue,
+          // NULL = unlimited attempts. Per workflow audit: per-assignment
+          // override belongs on the assignment page, not the catalog
+          // assign-to-course form.
+          max_attempts: null,
         });
 
       if (insertError) {
@@ -307,44 +309,26 @@ export function AddSetToCourseModal({
             allowClear
           />
 
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Time limit (minutes)
-              </span>
-              <input
-                type="number"
-                min={0}
-                max={300}
-                value={timeLimit}
-                onChange={(e) =>
-                  setTimeLimit(Number.parseInt(e.target.value, 10) || 0)
-                }
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                0 = untimed
-              </span>
-            </label>
-
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Max attempts{" "}
-                <span className="text-slate-500 dark:text-slate-400 font-normal">(optional)</span>
-              </span>
-              <input
-                type="number"
-                min={1}
-                max={20}
-                value={maxAttempts}
-                onChange={(e) => setMaxAttempts(e.target.value)}
-                placeholder="∞"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                Blank = unlimited
-              </span>
-            </label>
+          {/* Read-only meta line — these properties are intrinsic to the
+              question set and shouldn't be edited at assign-time. To change
+              them the teacher edits the catalog entry (future feature). */}
+          <div
+            className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-xs text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
+            aria-label="Set defaults"
+          >
+            <span>
+              <span className="font-medium text-slate-700 dark:text-slate-200">
+                ~{computeDefaultTimeLimit(entry.questionCount)} min
+              </span>{" "}
+              suggested
+            </span>
+            <span className="text-slate-400">·</span>
+            <span>unlimited attempts</span>
+            <span className="text-slate-400">·</span>
+            <span>
+              {entry.questionCount} question
+              {entry.questionCount === 1 ? "" : "s"}
+            </span>
           </div>
 
           <div className="flex items-center gap-2 pt-2">

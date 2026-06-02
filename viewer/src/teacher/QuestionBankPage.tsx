@@ -40,7 +40,7 @@ import {
   type KebabMenuOption,
 } from "@/components";
 import { useProfile } from "../lib/profile";
-import { courseAssignmentPath } from "../lib/routes";
+import { courseAssignmentPath, courseAssignmentsPath } from "../lib/routes";
 import { supabase } from "../lib/supabase";
 import { AddSetToCourseModal } from "./AddSetToCourseModal";
 import { AssignmentFormModal } from "./AssignmentFormModal";
@@ -489,6 +489,7 @@ interface PracticeTestCardProps {
   mockTest: TeacherMockTest;
   onOpen: () => void;
   onEdit: () => void;
+  onDuplicate: () => void;
   onArchiveCommit: (next: boolean) => Promise<void>;
   onDelete: () => void;
 }
@@ -497,6 +498,7 @@ function PracticeTestCard({
   mockTest,
   onOpen,
   onEdit,
+  onDuplicate,
   onArchiveCommit,
   onDelete,
 }: PracticeTestCardProps): JSX.Element {
@@ -530,9 +532,17 @@ function PracticeTestCard({
     });
   };
 
+  // "Duplicate to course…" is disabled while the source is archived — cloning
+  // a stale row into a fresh course would just propagate the archive into a
+  // confusing state. Teacher must unarchive first.
   const kebabOptions: KebabMenuOption[] = [
     { label: "Open", onSelect: onOpen },
     { label: "Edit…", onSelect: onEdit },
+    {
+      label: "Duplicate to course…",
+      onSelect: onDuplicate,
+      disabled: archived,
+    },
     {
       label: archived ? "Unarchive" : "Archive",
       onSelect: onToggleArchive,
@@ -606,15 +616,24 @@ interface PracticeTestsSectionProps {
   error: string | null;
   refresh: () => Promise<void>;
   onOpenCreate: () => void;
+  /**
+   * Active (non-archived) courses owned by the teacher. Used to power the
+   * "Duplicate to course…" picker. Sourced from the parent so we don't
+   * double-fetch courses on this page.
+   */
+  activeCourses: { id: string; name: string }[];
+  classesLoading: boolean;
 }
 
 function PracticeTestsSection({
-  teacherId: _teacherId,
+  teacherId,
   mockTests,
   loading,
   error,
   refresh,
   onOpenCreate,
+  activeCourses,
+  classesLoading,
 }: PracticeTestsSectionProps): JSX.Element {
   const toast = useToast();
   const [filter, setFilter] = useState<PracticeFilterState>(() =>
@@ -625,6 +644,12 @@ function PracticeTestsSection({
     null,
   );
   const [deleteBusy, setDeleteBusy] = useState<boolean>(false);
+  // Duplicate flow: the source row whose course-picker is currently open.
+  // Null when no picker is active. `duplicateBusy` blocks repeated clicks
+  // while the INSERT is in flight.
+  const [duplicateTarget, setDuplicateTarget] =
+    useState<TeacherMockTest | null>(null);
+  const [duplicateBusy, setDuplicateBusy] = useState<boolean>(false);
 
   useEffect(() => {
     writePracticeFilter(filter);
@@ -676,6 +701,80 @@ function PracticeTestsSection({
       void refresh();
     },
     [refresh],
+  );
+
+  /**
+   * Clone a Practice Test definition into another course.
+   *
+   * Carries the source row's defining columns (title, description, source,
+   * question count, time limit, difficulty mix, kind) into a fresh row on
+   * the target course. Intentionally resets:
+   *   - due_at → null (teacher sets this when placing on a module)
+   *   - opens_at → now() (handled by DB default; we don't set explicitly)
+   *   - archived → false (DB default)
+   *   - created_by → current teacher
+   *
+   * Guards: same-course duplicates and archived sources are blocked
+   * upstream (the kebab option is disabled while archived; same-course is
+   * caught here so a stale picker can't slip a duplicate through).
+   */
+  const handleDuplicate = useCallback(
+    async (targetCourseId: string): Promise<void> => {
+      if (!duplicateTarget) return;
+      if (targetCourseId === duplicateTarget.course.id) {
+        toast.warning(
+          "Pick a different course",
+          "This practice test already lives in that course.",
+        );
+        return;
+      }
+      setDuplicateBusy(true);
+      const targetCourse = activeCourses.find((c) => c.id === targetCourseId);
+      const { error: insertError } = await supabase
+        .from("assignments")
+        .insert({
+          course_id: targetCourseId,
+          created_by: teacherId,
+          title: duplicateTarget.title,
+          description: duplicateTarget.description,
+          source_id: duplicateTarget.source_id,
+          question_count: duplicateTarget.question_count,
+          time_limit_minutes: duplicateTarget.time_limit_minutes,
+          difficulty_mix: duplicateTarget.difficulty_mix,
+          kind: "mocktest",
+          due_at: null,
+        });
+      setDuplicateBusy(false);
+      if (insertError) {
+        toast.error("Couldn't duplicate", insertError.message);
+        return;
+      }
+      // Look up the target course's short_code for the "Go to course" link.
+      // activeCourses only carries id+name, so fall back to the assignments
+      // page resolved by id if needed (the route helper accepts either —
+      // course short_codes are unique alphanumerics, UUIDs are still valid
+      // and resolved server-side via the catch-all route).
+      const goToHref = targetCourse
+        ? courseAssignmentsPath(targetCourse.id)
+        : courseAssignmentsPath(targetCourseId);
+      toast.success(
+        `Duplicated to ${targetCourse?.name ?? "course"}`,
+        duplicateTarget.title,
+        {
+          action: {
+            label: "Go to course",
+            onAction: () => {
+              if (typeof window !== "undefined") {
+                window.location.assign(goToHref);
+              }
+            },
+          },
+        },
+      );
+      setDuplicateTarget(null);
+      void refresh();
+    },
+    [activeCourses, duplicateTarget, refresh, teacherId, toast],
   );
 
   const handleDelete = useCallback(async (): Promise<void> => {
@@ -842,6 +941,7 @@ function PracticeTestsSection({
                 mockTest={m}
                 onOpen={() => handleOpen(m)}
                 onEdit={() => setEditTarget(m)}
+                onDuplicate={() => setDuplicateTarget(m)}
                 onArchiveCommit={(next) => handleArchive(m, next)}
                 onDelete={() => setConfirmDelete(m)}
               />
@@ -855,7 +955,7 @@ function PracticeTestsSection({
           open={editTarget !== null}
           mode="edit"
           classId={editTarget.course.id}
-          teacherId={_teacherId}
+          teacherId={teacherId}
           initialAssignment={mockTestToAssignment(editTarget)}
           onClose={() => setEditTarget(null)}
           onUpdated={() => {
@@ -864,6 +964,23 @@ function PracticeTestsSection({
           }}
         />
       )}
+
+      {/*
+        Duplicate-to-course picker. Reuses CoursePickerDialog as-is — it
+        already takes a generic onPick(courseId) callback. We don't block
+        the picker from closing while busy because the handler clears the
+        target on success; the duplicateBusy state prevents racing INSERTs
+        if the picker were ever extended to allow re-submit.
+      */}
+      <CoursePickerDialog
+        open={duplicateTarget !== null && !duplicateBusy}
+        courses={activeCourses}
+        loading={classesLoading}
+        onCancel={() => setDuplicateTarget(null)}
+        onPick={(courseId) => {
+          void handleDuplicate(courseId);
+        }}
+      />
 
       {confirmDelete && (
         <ConfirmDialog
@@ -1226,6 +1343,8 @@ export function QuestionBankPage(): JSX.Element {
                 error={mockTestsError}
                 refresh={refreshMockTests}
                 onOpenCreate={() => setPickerOpen(true)}
+                activeCourses={activeCourses}
+                classesLoading={classesLoading}
               />
             ) : (
               <QuestionSetsSection

@@ -749,6 +749,158 @@ async function stepEndToEndGradingNotification() {
   }
 }
 
+// 12. Bulk grading UPDATE — teacher grades 3 students in a single .in([...])
+//
+// Validates that the 0059 trigger fires once per row even when a single
+// PATCH affects multiple attempts (the path the bulk-grade UI uses when a
+// teacher selects N submissions and applies the same feedback + score). We
+// also re-run the anti-spam guard at bulk scale: a feedback-only re-write
+// across all three rows must NOT produce a second wave of notifications.
+async function stepBulkGradingNotifications() {
+  // Build 2 extra students enrolled in the same course so the teacher RLS
+  // policy applies to all 3 attempts. We reuse ctx.studentUserId as S1.
+  const extraEmails = [
+    `s2-${TAG}@example.com`,
+    `s3-${TAG}@example.com`,
+  ];
+  const extraStudentIds = [];
+  const freshAttemptIds = [];
+
+  try {
+    // Create S2 + S3 and enroll them.
+    for (const email of extraEmails) {
+      const { data: u, error: uErr } = await service.auth.admin.createUser({
+        email,
+        password: PASSWORD,
+        email_confirm: true,
+        user_metadata: { display_name: `Bulk Student ${email}` },
+      });
+      if (uErr) throw new Error(`createUser(${email}): ${uErr.message}`);
+      extraStudentIds.push(u.user.id);
+      const { error: mErr } = await service.from('course_memberships').insert({
+        course_id: ctx.courseId,
+        student_id: u.user.id,
+      });
+      if (mErr) throw new Error(`enroll ${email}: ${mErr.message}`);
+    }
+
+    // S1 (ctx.studentUserId) + S2 + S3 all get a fresh ungraded attempt.
+    const allStudentIds = [ctx.studentUserId, ...extraStudentIds];
+    for (const sid of allStudentIds) {
+      const { data: att, error: aErr } = await service
+        .from('assignment_attempts')
+        .insert({
+          assignment_id: ctx.assignmentId,
+          student_id: sid,
+          submitted_at: new Date().toISOString(),
+          score_percent: 65,
+        })
+        .select()
+        .single();
+      if (aErr) throw new Error(`insert bulk attempt for ${sid}: ${aErr.message}`);
+      freshAttemptIds.push(att.id);
+    }
+
+    // Clear any pre-existing assignment_grade notifications for the 3 students
+    // so the counts below are clean.
+    await service
+      .from('notifications')
+      .delete()
+      .in('recipient_id', allStudentIds)
+      .eq('kind', 'assignment_grade');
+
+    // Bulk grade: one PATCH, three rows, same feedback + override + graded_at.
+    const gradedAt = new Date().toISOString();
+    const { data: updRows, error: updErr } = await ctx.teacherClient
+      .from('assignment_attempts')
+      .update({
+        feedback_text: 'Bulk batch — review the polynomial section.',
+        score_override: 82,
+        graded_at: gradedAt,
+        grader_id: ctx.teacherUserId,
+      })
+      .in('id', freshAttemptIds)
+      .select();
+    if (updErr) throw new Error(`bulk grade UPDATE: ${updErr.message}`);
+    if (!updRows || updRows.length !== 3) {
+      throw new Error(
+        `bulk UPDATE affected ${updRows ? updRows.length : 0} rows, expected 3`,
+      );
+    }
+
+    // Exactly 3 assignment_grade notifications — one per student.
+    const { data: notifs, error: nErr } = await service
+      .from('notifications')
+      .select('recipient_id, kind, link')
+      .in('recipient_id', allStudentIds)
+      .eq('kind', 'assignment_grade');
+    if (nErr) throw new Error(`bulk notif fetch: ${nErr.message}`);
+    if (!notifs || notifs.length !== 3) {
+      throw new Error(
+        `expected 3 assignment_grade notifs after bulk grade, got ${notifs?.length ?? 0}`,
+      );
+    }
+    const recipientSet = new Set(notifs.map((n) => n.recipient_id));
+    for (const sid of allStudentIds) {
+      if (!recipientSet.has(sid)) {
+        throw new Error(`missing notif for student ${sid.slice(0, 8)}`);
+      }
+    }
+    for (const n of notifs) {
+      const fragment = `/assignments/${ctx.assignmentId}`;
+      if (!n.link || !n.link.includes(fragment)) {
+        throw new Error(`bulk notif link missing /assignments/<id>; got "${n.link}"`);
+      }
+    }
+
+    // Second bulk UPDATE: edit ONLY feedback_text (already non-null on all
+    // three rows). The 0059 anti-spam guard must short-circuit — no new
+    // notifications fire.
+    const { error: edErr } = await ctx.teacherClient
+      .from('assignment_attempts')
+      .update({ feedback_text: 'Bulk batch — review polynomials + factoring.' })
+      .in('id', freshAttemptIds);
+    if (edErr) throw new Error(`bulk feedback edit: ${edErr.message}`);
+
+    const { count: afterEdit, error: c2Err } = await service
+      .from('notifications')
+      .select('id', { count: 'exact', head: true })
+      .in('recipient_id', allStudentIds)
+      .eq('kind', 'assignment_grade');
+    if (c2Err) throw new Error(`bulk notif post-count: ${c2Err.message}`);
+    if ((afterEdit ?? 0) !== 3) {
+      throw new Error(
+        `anti-spam leak at bulk scale: notif count went 3 → ${afterEdit ?? 0} on feedback-only re-write`,
+      );
+    }
+
+    return `3 attempts graded → 3 notifs; feedback-only re-write held at 3`;
+  } finally {
+    // Cleanup: attempts + notifications + extra users.
+    if (freshAttemptIds.length) {
+      await service
+        .from('assignment_attempts')
+        .delete()
+        .in('id', freshAttemptIds);
+    }
+    if (extraStudentIds.length) {
+      await service
+        .from('notifications')
+        .delete()
+        .in('recipient_id', extraStudentIds);
+      await service
+        .from('course_memberships')
+        .delete()
+        .in('student_id', extraStudentIds);
+      for (const sid of extraStudentIds) {
+        await service.auth.admin.deleteUser(sid).catch(() => {});
+      }
+    }
+    await clearStudentNotifications();
+    await resetAttempt(ctx.attemptId);
+  }
+}
+
 // ---------- Cleanup ----------
 async function cleanup() {
   console.log('\n--- cleanup ---');
@@ -830,6 +982,7 @@ async function cleanup() {
   await step('9. 0059 — graded_at flip fires student notification', stepGradeNotificationTrigger);
   await step('10. 0059 — null→non-null guard prevents feedback-edit spam', stepAntiSpamGuard);
   await step('11. E2E — teacher grades attempt → student notification + anti-spam', stepEndToEndGradingNotification);
+  await step('12. Bulk grade — single UPDATE across N students fires N notifs + anti-spam holds', stepBulkGradingNotifications);
 
   await cleanup();
 

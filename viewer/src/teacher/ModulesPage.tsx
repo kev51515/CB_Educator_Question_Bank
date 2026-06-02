@@ -38,6 +38,7 @@ import {
 import { useMyModuleCompletion } from "./useMyModuleCompletion";
 import { EditModuleModal } from "./EditModuleModal";
 import { useAssignments } from "./useAssignments";
+import { useTeacherMockTests, type TeacherMockTest } from "./useTeacherMockTests";
 import {
   catalogEntryUid,
   useQuestionBankCatalog,
@@ -3053,6 +3054,14 @@ function InlineCreateModuleRow({
 // If step 2 fails we best-effort delete the orphan assignment so the
 // teacher's Assignments page doesn't accumulate phantom rows.
 //
+// Practice Test PICKER MODEL (refactor): teachers PICK an existing mocktest
+// from their cross-course library (via useTeacherMockTests) instead of
+// configuring source/preset/time/questions inline. On submit we CLONE the
+// chosen template: snapshot its title/source/time/questions/difficulty into
+// a new assignments row scoped to the current course, then link it. This
+// matches the "templates are picked, but the row that ends up in this
+// course IS course-scoped" mental model and mirrors Question Set's flow.
+//
 // PARKING LOT — explicitly deferred to follow-up PRs:
 //   - Optimistic insert + scroll-into-view + indigo flash
 //   - Real <Combobox> extraction to @/components
@@ -3066,34 +3075,36 @@ type InlineAddType =
   | "header"
   | "link";
 
-type PracticeTestSource = "cb" | "sat" | "mixed";
-
-// Practice Test presets (segmented chips). DB still stores question_count and
-// time_limit_minutes individually; presets are pure UI sugar.
-type PracticeTestPreset = "single_module" | "single_section" | "full_test";
-interface PracticeTestPresetSpec {
-  id: PracticeTestPreset;
-  label: string;
-  timeLimit: number;
-  questionCount: number;
-}
-const PRACTICE_TEST_PRESETS: ReadonlyArray<PracticeTestPresetSpec> = [
-  { id: "single_module",  label: "Single module",  timeLimit: 64,  questionCount: 22 },
-  { id: "single_section", label: "Single section", timeLimit: 64,  questionCount: 27 },
-  { id: "full_test",      label: "Full test",      timeLimit: 134, questionCount: 54 },
-];
-const DEFAULT_PRACTICE_TEST_PRESET: PracticeTestPreset = "single_module";
+// Practice Test source filter (UI-only, used to narrow the teacher's
+// cross-course mocktest library). The Practice Test branch no longer
+// configures a source at assign-time — it's a property of the chosen
+// template, surfaced as a filter pill + per-row chip.
+type PracticeTestSourceFilter = "all" | "cb" | "sat" | "mixed";
 
 // Defaults aligned with AssignmentFormModal / AddSetToCourseModal so behaviour
 // matches what teachers see in those longer-form surfaces.
-const PRACTICE_TEST_DEFAULT_SOURCE: PracticeTestSource = "sat";
-const PRACTICE_SET_DEFAULT_TIME_LIMIT_MINUTES = 20;
+/**
+ * Compute a sensible default time limit from the catalog entry's question
+ * count: ~45 sec/question with safety margin, rounded up to the nearest 5
+ * minutes, with a 10-minute floor. Mirrors `AddSetToCourseModal`.
+ *
+ * Why compute instead of asking the teacher? Per the project's workflow
+ * audit (May 2026), assign-time forms should only vary (which thing, due
+ * date, display title). Time limit is intrinsic to the catalog entry and
+ * belongs to its definition. catalog.json doesn't carry it today.
+ */
+function computeDefaultQbankTimeLimit(questionCount: number): number {
+  if (!Number.isFinite(questionCount) || questionCount <= 0) return 10;
+  const raw = questionCount * 0.75;
+  const rounded = Math.ceil(raw / 5) * 5;
+  return Math.max(10, rounded);
+}
 
 // localStorage keys.
 const LAST_ADD_TYPE_KEY = (userId: string | null, classId: string | null): string =>
   `lms.lastAddType:${userId ?? "anon"}:${classId ?? "none"}`;
-const LAST_PT_PRESET_KEY = "lms.lastPracticeTestPreset";
 const QBANK_LAST_FILTER_KEY = "qbank.lastFilter";
+const PT_LIBRARY_LAST_FILTER_KEY = "lms.ptLibraryLastFilter";
 
 type QbankSectionFilter = "all" | "math" | "reading-and-writing";
 type QbankDifficultyFilter = "all" | "easy" | "medium" | "hard";
@@ -3152,21 +3163,33 @@ function writeLastAddType(userId: string | null, classId: string | null, type: I
   }
 }
 
-function readLastPtPreset(): PracticeTestPreset {
-  try {
-    const raw = window.localStorage.getItem(LAST_PT_PRESET_KEY);
-    if (raw === "single_module" || raw === "single_section" || raw === "full_test") {
-      return raw;
-    }
-  } catch {
-    // ignore
-  }
-  return DEFAULT_PRACTICE_TEST_PRESET;
+interface PtLibraryLastFilter {
+  source: PracticeTestSourceFilter;
+  courseId: string | "all";
 }
 
-function writeLastPtPreset(preset: PracticeTestPreset): void {
+function readPtLibraryLastFilter(): PtLibraryLastFilter {
   try {
-    window.localStorage.setItem(LAST_PT_PRESET_KEY, preset);
+    const raw = window.localStorage.getItem(PT_LIBRARY_LAST_FILTER_KEY);
+    if (!raw) return { source: "all", courseId: "all" };
+    const parsed = JSON.parse(raw) as Partial<PtLibraryLastFilter>;
+    const source: PracticeTestSourceFilter =
+      parsed.source === "cb" || parsed.source === "sat" || parsed.source === "mixed"
+        ? parsed.source
+        : "all";
+    const courseId: string | "all" =
+      typeof parsed.courseId === "string" && parsed.courseId.length > 0
+        ? parsed.courseId
+        : "all";
+    return { source, courseId };
+  } catch {
+    return { source: "all", courseId: "all" };
+  }
+}
+
+function writePtLibraryLastFilter(filter: PtLibraryLastFilter): void {
+  try {
+    window.localStorage.setItem(PT_LIBRARY_LAST_FILTER_KEY, JSON.stringify(filter));
   } catch {
     // ignore
   }
@@ -3199,6 +3222,12 @@ function InlineAddItemRow({
     error: catalogError,
     refresh: refreshCatalog,
   } = useQuestionBankCatalog();
+  const {
+    mockTests: ptLibrary,
+    loading: ptLibraryLoading,
+    error: ptLibraryError,
+  } = useTeacherMockTests(profile?.id ?? null);
+  const navigate = useNavigate();
   const toast = useToast();
   const userIdForKeys = profile?.id ?? null;
 
@@ -3214,27 +3243,27 @@ function InlineAddItemRow({
   const [assignmentId, setAssignmentId] = useState("");
   const [busy, setBusy] = useState(false);
 
-  // Practice Test fields
-  const [ptTitle, setPtTitle] = useState("Practice Test");
-  const [ptSource, setPtSource] = useState<PracticeTestSource>(
-    PRACTICE_TEST_DEFAULT_SOURCE,
-  );
-  const [ptPreset, setPtPreset] = useState<PracticeTestPreset>(() => readLastPtPreset());
-  const initialPresetSpec =
-    PRACTICE_TEST_PRESETS.find((p) => p.id === readLastPtPreset()) ??
-    PRACTICE_TEST_PRESETS[0];
-  const [ptTimeLimit, setPtTimeLimit] = useState<number>(initialPresetSpec.timeLimit);
-  const [ptQuestionCount, setPtQuestionCount] = useState<number>(
-    initialPresetSpec.questionCount,
-  );
+  // Practice Test picker state — teacher PICKS from their cross-course
+  // mocktest library rather than configuring source/preset/time/questions
+  // at assign-time.
+  const initialPtFilter = readPtLibraryLastFilter();
+  const [ptTemplateId, setPtTemplateId] = useState<string>("");
   const [ptDueAt, setPtDueAt] = useState<string | null>(null);
+  const [ptQuery, setPtQuery] = useState<string>("");
+  const [ptSourceFilter, setPtSourceFilter] = useState<PracticeTestSourceFilter>(
+    initialPtFilter.source,
+  );
+  const [ptCourseFilter, setPtCourseFilter] = useState<string | "all">(
+    initialPtFilter.courseId,
+  );
+  const [ptHighlightIdx, setPtHighlightIdx] = useState<number>(0);
+  const ptListRef = useRef<HTMLDivElement | null>(null);
 
-  // Question Set fields
+  // Question Set fields. time_limit was removed in the workflow-audit
+  // cleanup — it's computed from the catalog entry's questionCount at
+  // INSERT time.
   const [psSetUid, setPsSetUid] = useState<string>("");
   const [psTitle, setPsTitle] = useState<string>("");
-  const [psTimeLimit, setPsTimeLimit] = useState<number>(
-    PRACTICE_SET_DEFAULT_TIME_LIMIT_MINUTES,
-  );
   const [psDueAt, setPsDueAt] = useState<string | null>(null);
 
   // Question Set picker — filterable list state.
@@ -3251,6 +3280,11 @@ function InlineAddItemRow({
   useEffect(() => {
     writeQbankLastFilter({ section: psSectionFilter, difficulty: psDifficultyFilter });
   }, [psSectionFilter, psDifficultyFilter]);
+
+  // Persist Practice Test library filter selections.
+  useEffect(() => {
+    writePtLibraryLastFilter({ source: ptSourceFilter, courseId: ptCourseFilter });
+  }, [ptSourceFilter, ptCourseFilter]);
 
   // Persist type selection.
   useEffect(() => {
@@ -3338,7 +3372,9 @@ function InlineAddItemRow({
     setShowOverrideTitle(false);
     setUrl("");
     setAssignmentId("");
-    setPtTitle("Practice Test");
+    setPtTemplateId("");
+    setPtQuery("");
+    setPtHighlightIdx(0);
     setPsSetUid("");
     setPsTitle("");
     setPsTitleDirty(false);
@@ -3391,35 +3427,37 @@ function InlineAddItemRow({
         toast.error("Couldn't add Practice Test", "Not signed in.");
         return;
       }
-      const trimmedPtTitle = ptTitle.trim();
-      if (!trimmedPtTitle) {
-        toast.warning("Please enter a title for the Practice Test");
+      if (!ptTemplateId) {
+        toast.warning("Pick a practice test from your library");
         return;
       }
-      if (!Number.isFinite(ptQuestionCount) || ptQuestionCount < 1 || ptQuestionCount > 100) {
-        toast.warning("Question count must be between 1 and 100");
-        return;
-      }
-      if (!Number.isFinite(ptTimeLimit) || ptTimeLimit < 0) {
-        toast.warning("Time limit must be 0 or a positive number of minutes");
+      const template = ptLibrary.find((t) => t.id === ptTemplateId);
+      if (!template) {
+        toast.error("That practice test is no longer available");
         return;
       }
 
       setBusy(true);
       try {
+        // CLONE on add: snapshot the template's pedagogy-bearing columns into
+        // a new assignments row scoped to the CURRENT course. The teacher's
+        // chosen due_at + optional display-title override are applied here.
+        // Mirrors the qbank_set branch's insert-then-link-then-cleanup flow
+        // so a failure to link doesn't leak an orphan assignment row into
+        // the teacher's Assignments page.
         const nowIso = new Date().toISOString();
         const { data: newAssignment, error: insertError } = await supabase
           .from("assignments")
           .insert({
             course_id: classId,
             created_by: profile.id,
-            title: trimmedPtTitle,
-            description: null,
+            title: template.title,
+            description: template.description,
             kind: "mocktest",
-            source_id: ptSource,
-            question_count: ptQuestionCount,
-            time_limit_minutes: ptTimeLimit,
-            difficulty_mix: "medium",
+            source_id: template.source_id,
+            question_count: template.question_count,
+            time_limit_minutes: template.time_limit_minutes,
+            difficulty_mix: template.difficulty_mix,
             due_at: ptDueAt,
             opens_at: nowIso,
             archived: false,
@@ -3435,7 +3473,7 @@ function InlineAddItemRow({
           return;
         }
 
-        const displayTitle = title.trim() || trimmedPtTitle;
+        const displayTitle = title.trim() || template.title;
         const linkErr = await linkAssignmentToModule(
           newAssignment.id as string,
           displayTitle,
@@ -3472,10 +3510,9 @@ function InlineAddItemRow({
         return;
       }
       const trimmedPsTitle = psTitle.trim() || chosen.entry.label;
-      if (!Number.isFinite(psTimeLimit) || psTimeLimit < 0) {
-        toast.warning("Time limit must be 0 or a positive number of minutes");
-        return;
-      }
+      const computedTimeLimit = computeDefaultQbankTimeLimit(
+        chosen.entry.questionCount,
+      );
 
       setBusy(true);
       try {
@@ -3492,7 +3529,7 @@ function InlineAddItemRow({
             qbank_set_uid: chosen.uid,
             qbank_set_label: chosen.entry.label,
             question_count: chosen.entry.questionCount,
-            time_limit_minutes: psTimeLimit,
+            time_limit_minutes: computedTimeLimit,
             difficulty_mix: "any",
             due_at: psDueAt,
             opens_at: nowIso,
@@ -3616,42 +3653,40 @@ function InlineAddItemRow({
     );
   };
 
-  const sourceChip = (value: PracticeTestSource, label: string): JSX.Element => {
-    const active = ptSource === value;
-    return (
-      <button
-        type="button"
-        onClick={() => setPtSource(value)}
-        aria-pressed={active}
-        disabled={busy}
-        className={chipClass(active)}
-      >
-        {label}
-      </button>
-    );
-  };
+  // Distinct courses present in the Practice Test library — used to populate
+  // the Course filter pill row. Sorted by name for predictable order.
+  const ptLibraryCourses = useMemo(() => {
+    const seen = new Map<string, TeacherMockTest["course"]>();
+    for (const test of ptLibrary) {
+      if (!seen.has(test.course.id)) seen.set(test.course.id, test.course);
+    }
+    return Array.from(seen.values()).sort((a, b) => a.name.localeCompare(b.name));
+  }, [ptLibrary]);
 
-  const presetChip = (preset: PracticeTestPresetSpec): JSX.Element => {
-    const active = ptPreset === preset.id;
-    return (
-      <button
-        type="button"
-        onClick={() => {
-          setPtPreset(preset.id);
-          setPtTimeLimit(preset.timeLimit);
-          setPtQuestionCount(preset.questionCount);
-          writeLastPtPreset(preset.id);
-        }}
-        aria-pressed={active}
-        disabled={busy}
-        className={chipClass(active)}
-      >
-        {preset.label}
-        <span className="ml-1 opacity-70">
-          ({preset.timeLimit}m · {preset.questionCount}q)
-        </span>
-      </button>
-    );
+  // Filter the library by source + course + free-text query. Defensive on
+  // archived rows: hide them from the picker — assigning an archived test
+  // would surprise the teacher. They remain visible in /question-bank.
+  const filteredPtLibrary = useMemo(() => {
+    const q = ptQuery.trim().toLowerCase();
+    return ptLibrary.filter((t) => {
+      if (t.archived) return false;
+      if (ptSourceFilter !== "all" && t.source_id !== ptSourceFilter) return false;
+      if (ptCourseFilter !== "all" && t.course.id !== ptCourseFilter) return false;
+      if (!q) return true;
+      const hay = `${t.title} ${t.course.name} ${t.source_id}`.toLowerCase();
+      return hay.includes(q);
+    });
+  }, [ptLibrary, ptSourceFilter, ptCourseFilter, ptQuery]);
+
+  // Reset highlighted row when the filter narrows.
+  useEffect(() => {
+    setPtHighlightIdx(0);
+  }, [ptQuery, ptSourceFilter, ptCourseFilter]);
+
+  const ptSourceLabel: Record<Exclude<PracticeTestSourceFilter, "all">, string> = {
+    cb: "CB",
+    sat: "SAT",
+    mixed: "Mixed",
   };
 
   // Filtered Question Set catalog (2d).
@@ -3744,110 +3779,259 @@ function InlineAddItemRow({
 
       {itemType === "practice_test" && (
         <div className="space-y-2">
-          <input
-            ref={titleRef}
-            type="text"
-            value={ptTitle}
-            onChange={(e) => setPtTitle(e.target.value)}
-            placeholder="Practice Test title"
-            disabled={busy}
-            maxLength={200}
-            className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-          />
-
-          {/* Source chips — unified style + ≥40px mobile tap target. */}
-          <div>
-            <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-              Source
-            </span>
-            <div className="grid grid-cols-3 gap-1.5">
-              {sourceChip("cb", "College Board")}
-              {sourceChip("sat", "Official SAT")}
-              {sourceChip("mixed", "Mixed")}
-            </div>
-          </div>
-
-          {/* Presets (2e): time-limit + question-count baked into 3 chips.
-              Last chosen persists to localStorage. */}
-          <div>
-            <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
-              Preset
-            </span>
-            <div className="grid grid-cols-3 gap-1.5">
-              {PRACTICE_TEST_PRESETS.map((p) => (
-                <Fragment key={p.id}>{presetChip(p)}</Fragment>
-              ))}
-            </div>
-          </div>
-
-          {/* Time-limit on its own row (2a), narrow.
-              Question count exposed for override per spec. */}
-          <div className="grid grid-cols-2 gap-1.5 max-w-[400px]">
-            <label className="block">
-              <span className="text-[11px] text-slate-500 dark:text-slate-400">
-                Time limit (min)
-              </span>
-              <input
-                type="number"
-                min={0}
-                max={300}
-                value={ptTimeLimit}
-                onChange={(e) =>
-                  setPtTimeLimit(Number.parseInt(e.target.value, 10) || 0)
-                }
-                disabled={busy}
-                className="mt-0.5 w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </label>
-            <label className="block">
-              <span className="text-[11px] text-slate-500 dark:text-slate-400">
-                Questions
-              </span>
-              <input
-                type="number"
-                min={1}
-                max={100}
-                value={ptQuestionCount}
-                onChange={(e) =>
-                  setPtQuestionCount(Number.parseInt(e.target.value, 10) || 0)
-                }
-                disabled={busy}
-                className="mt-0.5 w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </label>
-          </div>
-
-          {/* Due date — full-width row of its own so SmartDatePicker's preset
-              pills don't wrap (2a). */}
-          <div className="block">
-            <SmartDatePicker
-              label="Due date (optional)"
-              value={ptDueAt}
-              onChange={setPtDueAt}
-              allowClear
+          {/* When the teacher has zero practice tests anywhere, the picker
+              is meaningless. Render an EmptyState CTA that points them at
+              the Question Bank Practice Tests tab. The chip row above
+              stays visible so they can switch to another type without
+              backtracking. */}
+          {!ptLibraryLoading && !ptLibraryError && ptLibrary.length === 0 ? (
+            <EmptyState
+              icon="sparkles"
+              title="No practice tests yet"
+              body="Practice Tests live in the Question Bank. Author one there first, then come back to assign it."
+              cta={{
+                label: "Open Question Bank",
+                onClick: () => navigate("/question-bank?tab=practice-tests"),
+              }}
+              framed
             />
-          </div>
+          ) : (
+            <>
+              {/* Source filter pills — narrows by template's source_id. */}
+              <div>
+                <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
+                  Source
+                </span>
+                <div className="grid grid-cols-4 gap-1.5">
+                  <button
+                    type="button"
+                    onClick={() => setPtSourceFilter("all")}
+                    aria-pressed={ptSourceFilter === "all"}
+                    disabled={busy}
+                    className={chipClass(ptSourceFilter === "all")}
+                  >
+                    All
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPtSourceFilter("cb")}
+                    aria-pressed={ptSourceFilter === "cb"}
+                    disabled={busy}
+                    className={chipClass(ptSourceFilter === "cb")}
+                  >
+                    CB
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPtSourceFilter("sat")}
+                    aria-pressed={ptSourceFilter === "sat"}
+                    disabled={busy}
+                    className={chipClass(ptSourceFilter === "sat")}
+                  >
+                    SAT
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setPtSourceFilter("mixed")}
+                    aria-pressed={ptSourceFilter === "mixed"}
+                    disabled={busy}
+                    className={chipClass(ptSourceFilter === "mixed")}
+                  >
+                    Mixed
+                  </button>
+                </div>
+              </div>
 
-          {/* Override display title hidden behind a disclosure (2b). */}
-          <details
-            className="text-[12px] text-slate-600 dark:text-slate-300"
-            open={showOverrideTitle}
-            onToggle={(e) =>
-              setShowOverrideTitle((e.target as HTMLDetailsElement).open)
-            }
-          >
-            <summary className="cursor-pointer select-none text-indigo-600 dark:text-indigo-400 hover:underline">
-              + Override display title
-            </summary>
-            <input
-              type="text"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-              placeholder="Display title in module (optional)"
-              disabled={busy}
-              className="mt-1.5 w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            />
-          </details>
+              {/* Course filter pills — only shown when the teacher actually
+                  owns tests in >1 course. Single-course teachers don't need
+                  to see this row. */}
+              {ptLibraryCourses.length > 1 && (
+                <div>
+                  <span className="block text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 mb-1">
+                    Course
+                  </span>
+                  <div className="flex flex-wrap gap-1.5">
+                    <button
+                      type="button"
+                      onClick={() => setPtCourseFilter("all")}
+                      aria-pressed={ptCourseFilter === "all"}
+                      disabled={busy}
+                      className={chipClass(ptCourseFilter === "all")}
+                    >
+                      All
+                    </button>
+                    {ptLibraryCourses.map((c) => (
+                      <button
+                        key={c.id}
+                        type="button"
+                        onClick={() => setPtCourseFilter(c.id)}
+                        aria-pressed={ptCourseFilter === c.id}
+                        disabled={busy}
+                        className={chipClass(ptCourseFilter === c.id)}
+                        title={c.name}
+                      >
+                        <span className="truncate inline-block max-w-[140px] align-bottom">
+                          {c.name}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Type-to-filter input + ↑/↓ Enter Esc keyboard nav. */}
+              <input
+                ref={titleRef}
+                type="text"
+                value={ptQuery}
+                onChange={(e) => setPtQuery(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    setPtHighlightIdx((idx) =>
+                      Math.min(filteredPtLibrary.length - 1, idx + 1),
+                    );
+                  } else if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    setPtHighlightIdx((idx) => Math.max(0, idx - 1));
+                  } else if (e.key === "Enter") {
+                    if (filteredPtLibrary.length > 0) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      const chosen = filteredPtLibrary[ptHighlightIdx];
+                      if (chosen) setPtTemplateId(chosen.id);
+                    }
+                  } else if (e.key === "Escape" && ptQuery) {
+                    // Spec: Esc clears the query when non-empty; the
+                    // form-level Esc handler cancels otherwise.
+                    e.preventDefault();
+                    e.stopPropagation();
+                    setPtQuery("");
+                  }
+                }}
+                placeholder="Filter your practice tests…"
+                disabled={busy}
+                aria-label="Filter your practice tests"
+                className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              />
+
+              {/* Result list — error / skeletons / empty / rows. */}
+              <div
+                ref={ptListRef}
+                className="max-h-60 overflow-y-auto rounded-md ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900"
+                role="listbox"
+                aria-label="Your practice tests"
+              >
+                {ptLibraryError ? (
+                  <div className="p-3 text-sm text-rose-700 dark:text-rose-300 bg-rose-50/60 dark:bg-rose-950/30">
+                    Couldn't load practice tests: {ptLibraryError}
+                  </div>
+                ) : ptLibraryLoading ? (
+                  <div className="p-2 space-y-1.5" aria-busy="true" aria-label="Loading">
+                    {[0, 1, 2, 3].map((i) => (
+                      <div
+                        key={i}
+                        className="h-10 rounded-md bg-slate-100 dark:bg-slate-800 animate-pulse"
+                      />
+                    ))}
+                  </div>
+                ) : filteredPtLibrary.length === 0 ? (
+                  <div className="p-4 text-sm text-center text-slate-500 dark:text-slate-400">
+                    <div>No practice tests match these filters.</div>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setPtSourceFilter("all");
+                        setPtCourseFilter("all");
+                        setPtQuery("");
+                      }}
+                      className="mt-1.5 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+                    >
+                      Reset filters
+                    </button>
+                  </div>
+                ) : (
+                  <ul className="py-1">
+                    {filteredPtLibrary.map((t, idx) => {
+                      const selected = ptTemplateId === t.id;
+                      const highlighted = idx === ptHighlightIdx;
+                      const sourceKey = t.source_id;
+                      return (
+                        <li key={t.id}>
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setPtTemplateId(t.id);
+                              setPtHighlightIdx(idx);
+                            }}
+                            onMouseEnter={() => setPtHighlightIdx(idx)}
+                            role="option"
+                            aria-selected={selected}
+                            className={
+                              "w-full text-left px-2 py-2 text-sm flex items-center gap-2 min-h-[40px] " +
+                              (selected
+                                ? "bg-indigo-100 dark:bg-indigo-950/60 text-indigo-900 dark:text-indigo-100"
+                                : highlighted
+                                  ? "bg-indigo-50 dark:bg-indigo-950/30 text-slate-900 dark:text-slate-100"
+                                  : "text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800")
+                            }
+                          >
+                            <div className="flex-1 min-w-0">
+                              <div className="truncate font-medium">{t.title}</div>
+                              <div className="flex items-center gap-1.5 mt-0.5 text-[11px] text-slate-500 dark:text-slate-400">
+                                <span className="truncate" title={t.course.name}>
+                                  {t.course.name}
+                                </span>
+                                <span aria-hidden>·</span>
+                                <span className="tabular-nums shrink-0">
+                                  {t.time_limit_minutes}m · {t.question_count}q
+                                </span>
+                              </div>
+                            </div>
+                            <span className="shrink-0 rounded-full px-1.5 py-0.5 text-[10px] font-medium bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 uppercase">
+                              {ptSourceLabel[sourceKey]}
+                            </span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                )}
+              </div>
+
+              {/* Due date — full-width row so SmartDatePicker preset pills
+                  don't wrap. */}
+              <div className="block">
+                <SmartDatePicker
+                  label="Due date (optional)"
+                  value={ptDueAt}
+                  onChange={setPtDueAt}
+                  allowClear
+                />
+              </div>
+
+              {/* Override display title hidden behind a disclosure. */}
+              <details
+                className="text-[12px] text-slate-600 dark:text-slate-300"
+                open={showOverrideTitle}
+                onToggle={(e) =>
+                  setShowOverrideTitle((e.target as HTMLDetailsElement).open)
+                }
+              >
+                <summary className="cursor-pointer select-none text-indigo-600 dark:text-indigo-400 hover:underline">
+                  + Override display title
+                </summary>
+                <input
+                  type="text"
+                  value={title}
+                  onChange={(e) => setTitle(e.target.value)}
+                  placeholder="Display title in module (optional)"
+                  disabled={busy}
+                  className="mt-1.5 w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                />
+              </details>
+            </>
+          )}
         </div>
       )}
 
@@ -4066,25 +4250,35 @@ function InlineAddItemRow({
             className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
           />
 
-          {/* Time limit on narrow row (2a). */}
-          <div className="max-w-[200px]">
-            <label className="block">
-              <span className="text-[11px] text-slate-500 dark:text-slate-400">
-                Time limit (min)
-              </span>
-              <input
-                type="number"
-                min={0}
-                max={300}
-                value={psTimeLimit}
-                onChange={(e) =>
-                  setPsTimeLimit(Number.parseInt(e.target.value, 10) || 0)
-                }
-                disabled={busy}
-                className="mt-0.5 w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              />
-            </label>
-          </div>
+          {/* Read-only meta — set definitions live in the catalog. */}
+          {psSetUid &&
+            (() => {
+              const chosen = catalogOptions.find((o) => o.uid === psSetUid);
+              if (!chosen) return null;
+              const minutes = computeDefaultQbankTimeLimit(
+                chosen.entry.questionCount,
+              );
+              return (
+                <div
+                  className="flex flex-wrap items-center gap-x-3 gap-y-1 rounded-md bg-slate-50 dark:bg-slate-800/50 px-3 py-2 text-[11px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700"
+                  aria-label="Set defaults"
+                >
+                  <span>
+                    <span className="font-medium text-slate-700 dark:text-slate-200">
+                      ~{minutes} min
+                    </span>{" "}
+                    suggested
+                  </span>
+                  <span className="text-slate-400">·</span>
+                  <span>unlimited attempts</span>
+                  <span className="text-slate-400">·</span>
+                  <span>
+                    {chosen.entry.questionCount} question
+                    {chosen.entry.questionCount === 1 ? "" : "s"}
+                  </span>
+                </div>
+              );
+            })()}
 
           {/* Due date — full-width row (2a). */}
           <div className="block">

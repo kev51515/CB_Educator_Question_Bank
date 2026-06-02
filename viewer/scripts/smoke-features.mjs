@@ -1769,6 +1769,302 @@ async function wave27() {
   });
 }
 
+// ------------------------- STUDENT PROFILE -------------------------
+//
+// Smoke test for the THREE queries useStudentProfile (teacher-facing) fires:
+//   A. assignments-in-course + assignment_best_attempts joined for the student
+//   B. discussion_posts by the student joined to discussion_topics in this course
+//   C. portfolio_submissions by the student joined to portfolio_items in this
+//      course's template
+//
+// We assert that as the OWNING teacher each query yields the expected row
+// shape + count, and that an un-enrolled outsider sees 0 rows (RLS guard).
+// Goal: if a future migration changes one of the embedded join shapes
+// (e.g. renames a foreign key constraint), this scenario fails loud.
+async function studentProfile() {
+  const local = {
+    asnId: null,
+    attemptId: null,
+    topicId: null,
+    postId: null,
+    templateId: null,
+    itemId: null,
+    submissionId: null,
+  };
+
+  await step("profile: setup — assignment + submitted attempt by student", async () => {
+    const asnRes = await ctx.teacherClient
+      .from("assignments")
+      .insert({
+        course_id: ctx.courseId,
+        created_by: ctx.teacherId,
+        title: `Profile Asn ${TS}`,
+        source_id: "cb",
+        question_count: 3,
+        time_limit_minutes: 5,
+        difficulty_mix: "any",
+      })
+      .select()
+      .single();
+    if (asnRes.error) throw asnRes.error;
+    local.asnId = asnRes.data.id;
+
+    const attRes = await service
+      .from("assignment_attempts")
+      .insert({
+        assignment_id: local.asnId,
+        student_id: ctx.studentId,
+        submitted_at: new Date().toISOString(),
+        score_percent: 76,
+      })
+      .select()
+      .single();
+    if (attRes.error) throw attRes.error;
+    local.attemptId = attRes.data.id;
+    return `asn=${local.asnId.slice(0, 8)} attempt=${local.attemptId.slice(0, 8)}`;
+  });
+
+  await step("profile: setup — discussion topic + student post", async () => {
+    const topicRes = await ctx.teacherClient
+      .from("discussion_topics")
+      .insert({
+        course_id: ctx.courseId,
+        author_id: ctx.teacherId,
+        title: `Profile Topic ${TS}`,
+        body: "Profile smoke topic.",
+      })
+      .select()
+      .single();
+    if (topicRes.error) throw topicRes.error;
+    local.topicId = topicRes.data.id;
+
+    const postRes = await ctx.studentClient
+      .from("discussion_posts")
+      .insert({
+        topic_id: local.topicId,
+        author_id: ctx.studentId,
+        body: "Student profile smoke post.",
+      })
+      .select()
+      .single();
+    if (postRes.error) throw postRes.error;
+    local.postId = postRes.data.id;
+    return `topic=${local.topicId.slice(0, 8)} post=${local.postId.slice(0, 8)}`;
+  });
+
+  await step("profile: setup — portfolio template + item + student submission", async () => {
+    const tplRes = await ctx.teacherClient.rpc("ensure_portfolio_template", {
+      p_course_id: ctx.courseId,
+      p_name: `Profile Template ${TS}`,
+    });
+    if (tplRes.error) throw tplRes.error;
+    const tplRow = Array.isArray(tplRes.data) ? tplRes.data[0] : tplRes.data;
+    local.templateId = tplRow.id;
+
+    const itemRes = await ctx.teacherClient
+      .from("portfolio_items")
+      .insert({
+        template_id: local.templateId,
+        position: 99,
+        title: `Profile Item ${TS}`,
+        item_type: "long_text",
+        required: false,
+      })
+      .select()
+      .single();
+    if (itemRes.error) throw itemRes.error;
+    local.itemId = itemRes.data.id;
+
+    const subRes = await ctx.studentClient
+      .from("portfolio_submissions")
+      .upsert(
+        {
+          item_id: local.itemId,
+          student_id: ctx.studentId,
+          value_text: "profile smoke submission",
+          status: "submitted",
+          submitted_at: new Date().toISOString(),
+        },
+        { onConflict: "item_id,student_id" },
+      )
+      .select()
+      .single();
+    if (subRes.error) throw subRes.error;
+    local.submissionId = subRes.data.id;
+    return `tpl=${local.templateId.slice(0, 8)} item=${local.itemId.slice(0, 8)}`;
+  });
+
+  // Section A — assignments + assignment_best_attempts join shape.
+  await step("profile: teacher reads attempts (best_attempts join)", async () => {
+    const asnRes = await ctx.teacherClient
+      .from("assignments")
+      .select("id, title")
+      .eq("course_id", ctx.courseId)
+      .eq("archived", false);
+    if (asnRes.error) throw asnRes.error;
+    const asnIds = (asnRes.data ?? []).map((a) => a.id);
+    if (!asnIds.includes(local.asnId)) {
+      throw new Error("profile assignment not in teacher's course list");
+    }
+
+    const bestRes = await ctx.teacherClient
+      .from("assignment_best_attempts")
+      .select(
+        "attempt_id, assignment_id, student_id, score_percent, effective_score, submitted_at, status",
+      )
+      .in("assignment_id", asnIds)
+      .eq("student_id", ctx.studentId);
+    if (bestRes.error) throw bestRes.error;
+    const matching = (bestRes.data ?? []).filter(
+      (r) => r.assignment_id === local.asnId,
+    );
+    if (matching.length !== 1) {
+      throw new Error(
+        `expected 1 best_attempt for profile asn, got ${matching.length}`,
+      );
+    }
+    if (matching[0].attempt_id !== local.attemptId) {
+      throw new Error(`best_attempt id mismatch (got ${matching[0].attempt_id})`);
+    }
+    return `1 best_attempt, effective_score=${matching[0].effective_score}`;
+  });
+
+  // Section B — discussion_posts → discussion_topics embed.
+  await step("profile: teacher reads student posts (topic embed)", async () => {
+    const { data, error } = await ctx.teacherClient
+      .from("discussion_posts")
+      .select(
+        "id, topic_id, body, created_at, topic:discussion_topics!discussion_posts_topic_id_fkey(id, short_code, title, course_id)",
+      )
+      .eq("author_id", ctx.studentId)
+      .order("created_at", { ascending: false });
+    if (error) throw error;
+    const inCourse = (data ?? []).filter(
+      (r) => r.topic && r.topic.course_id === ctx.courseId,
+    );
+    const ours = inCourse.find((r) => r.id === local.postId);
+    if (!ours) {
+      throw new Error(
+        `profile post missing from join (got ${inCourse.length} in-course rows)`,
+      );
+    }
+    if (!ours.topic || ours.topic.id !== local.topicId) {
+      throw new Error("topic embed missing or wrong id");
+    }
+    return `1 post, topic embed ok (short_code=${ours.topic.short_code ?? "none"})`;
+  });
+
+  // Section C — portfolio_submissions → portfolio_items embed (+ feedback count).
+  await step("profile: teacher reads student portfolio submission (item embed)", async () => {
+    const tplRes = await ctx.teacherClient
+      .from("portfolio_templates")
+      .select("id")
+      .eq("course_id", ctx.courseId)
+      .maybeSingle();
+    if (tplRes.error) throw tplRes.error;
+    if (!tplRes.data) throw new Error("no template visible to teacher");
+    const templateId = tplRes.data.id;
+
+    const subsRes = await ctx.teacherClient
+      .from("portfolio_submissions")
+      .select(
+        "id, item_id, status, submitted_at, item:portfolio_items!portfolio_submissions_item_id_fkey(id, title, template_id), feedback:portfolio_feedback(count)",
+      )
+      .eq("student_id", ctx.studentId)
+      .order("submitted_at", { ascending: false, nullsFirst: false });
+    if (subsRes.error) throw subsRes.error;
+    const inTpl = (subsRes.data ?? []).filter(
+      (r) => r.item && r.item.template_id === templateId,
+    );
+    const ours = inTpl.find((r) => r.id === local.submissionId);
+    if (!ours) {
+      throw new Error(
+        `profile submission missing from join (got ${inTpl.length} in-template rows)`,
+      );
+    }
+    if (!ours.item || ours.item.id !== local.itemId) {
+      throw new Error("item embed missing or wrong id");
+    }
+    return `1 submission, item embed ok, status=${ours.status}`;
+  });
+
+  // RLS guard — outsider sees 0 rows on each shape.
+  await step("profile: outsider sees 0 best_attempts / posts / submissions", async () => {
+    // best_attempts: outsider's RLS on assignments returns 0 ids → trivially 0
+    // when queried with .in([]). Instead query attempts directly by the
+    // student id we know — the view's RLS chain should hide them entirely.
+    const bestRes = await ctx.outsiderClient
+      .from("assignment_best_attempts")
+      .select("attempt_id")
+      .eq("student_id", ctx.studentId)
+      .eq("assignment_id", local.asnId);
+    if (bestRes.error) throw bestRes.error;
+    if ((bestRes.data ?? []).length !== 0) {
+      throw new Error(
+        `outsider sees ${bestRes.data.length} best_attempts (RLS leak)`,
+      );
+    }
+
+    const postsRes = await ctx.outsiderClient
+      .from("discussion_posts")
+      .select("id, topic:discussion_topics!discussion_posts_topic_id_fkey(id, course_id)")
+      .eq("author_id", ctx.studentId);
+    if (postsRes.error) throw postsRes.error;
+    const visibleInCourse = (postsRes.data ?? []).filter(
+      (r) => r.topic && r.topic.course_id === ctx.courseId,
+    );
+    if (visibleInCourse.length !== 0) {
+      throw new Error(
+        `outsider sees ${visibleInCourse.length} posts in our course (RLS leak)`,
+      );
+    }
+
+    const subsRes = await ctx.outsiderClient
+      .from("portfolio_submissions")
+      .select("id, item:portfolio_items!portfolio_submissions_item_id_fkey(template_id)")
+      .eq("student_id", ctx.studentId);
+    if (subsRes.error) throw subsRes.error;
+    const visibleInTpl = (subsRes.data ?? []).filter(
+      (r) => r.item && r.item.template_id === local.templateId,
+    );
+    if (visibleInTpl.length !== 0) {
+      throw new Error(
+        `outsider sees ${visibleInTpl.length} submissions (RLS leak)`,
+      );
+    }
+    return "0 / 0 / 0 to outsider";
+  });
+
+  // Cleanup
+  await step("profile: cleanup", async () => {
+    if (local.submissionId) {
+      await service
+        .from("portfolio_submissions")
+        .delete()
+        .eq("id", local.submissionId);
+    }
+    if (local.itemId) {
+      await service.from("portfolio_items").delete().eq("id", local.itemId);
+    }
+    if (local.postId) {
+      await service.from("discussion_posts").delete().eq("id", local.postId);
+    }
+    if (local.topicId) {
+      await service.from("discussion_topics").delete().eq("id", local.topicId);
+    }
+    if (local.attemptId) {
+      await service
+        .from("assignment_attempts")
+        .delete()
+        .eq("id", local.attemptId);
+    }
+    if (local.asnId) {
+      await service.from("assignments").delete().eq("id", local.asnId);
+    }
+    return "cleaned";
+  });
+}
+
 // ---------------------------- TEARDOWN ----------------------------
 
 async function teardown() {
@@ -1808,6 +2104,7 @@ async function teardown() {
       await wave34();
       await wave35();
       await wave27();
+      await studentProfile();
     }
   } finally {
     await teardown().catch(() => {});
