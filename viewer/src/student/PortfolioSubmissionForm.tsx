@@ -27,6 +27,96 @@ const STORAGE_BUCKET = "portfolio-files";
 const MAX_FILE_BYTES = 50 * 1024 * 1024;
 const SIGNED_URL_TTL_SECONDS = 60 * 60;
 
+// ---- Autosave constants -------------------------------------------------
+const AUTOSAVE_DEBOUNCE_MS = 1000;
+const AUTOSAVE_STALE_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+const draftKey = (itemId: string, userId: string): string =>
+  `student.portfolio.draft:${itemId}:${userId}`;
+
+/** Shape of the locally-persisted draft. File uploads are NOT persisted
+ *  (browsers can't reconstruct File objects from storage), only the
+ *  textual / structural fields a student would lose on accidental close. */
+interface LocalDraft {
+  savedAt: string; // ISO timestamp
+  textValue: string;
+  urlValue: string;
+  numberValue: string;
+  dateValue: string;
+  choiceValue: string;
+  multiValue: string[];
+}
+
+function readDraft(key: string): LocalDraft | null {
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return null;
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return null;
+    const d = parsed as Partial<LocalDraft>;
+    if (typeof d.savedAt !== "string") return null;
+    return {
+      savedAt: d.savedAt,
+      textValue: typeof d.textValue === "string" ? d.textValue : "",
+      urlValue: typeof d.urlValue === "string" ? d.urlValue : "",
+      numberValue: typeof d.numberValue === "string" ? d.numberValue : "",
+      dateValue: typeof d.dateValue === "string" ? d.dateValue : "",
+      choiceValue: typeof d.choiceValue === "string" ? d.choiceValue : "",
+      multiValue: Array.isArray(d.multiValue)
+        ? d.multiValue.filter((v): v is string => typeof v === "string")
+        : [],
+    };
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(key: string, draft: LocalDraft): boolean {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(draft));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function clearDraft(key: string): void {
+  try {
+    window.localStorage.removeItem(key);
+  } catch {
+    // ignore
+  }
+}
+
+/** True when the draft has any user-entered content worth persisting. */
+function draftHasContent(draft: LocalDraft): boolean {
+  return (
+    draft.textValue.trim().length > 0 ||
+    draft.urlValue.trim().length > 0 ||
+    draft.numberValue.trim().length > 0 ||
+    draft.dateValue.trim().length > 0 ||
+    draft.choiceValue.length > 0 ||
+    draft.multiValue.length > 0
+  );
+}
+
+/** Format ISO timestamp as "just now" / "5 minutes ago" / etc. */
+function formatRelative(iso: string, now: number = Date.now()): string {
+  const then = new Date(iso).getTime();
+  if (!Number.isFinite(then)) return "just now";
+  const diffMs = then - now;
+  const absSec = Math.round(Math.abs(diffMs) / 1000);
+  if (absSec < 5) return "just now";
+  const rtf = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+  const sign = diffMs < 0 ? -1 : 1;
+  if (absSec < 60) return rtf.format(sign * absSec, "second");
+  const absMin = Math.round(absSec / 60);
+  if (absMin < 60) return rtf.format(sign * absMin, "minute");
+  const absHr = Math.round(absMin / 60);
+  if (absHr < 24) return rtf.format(sign * absHr, "hour");
+  const absDay = Math.round(absHr / 24);
+  return rtf.format(sign * absDay, "day");
+}
+
 interface PortfolioSubmissionFormProps {
   open: boolean;
   courseId: string;
@@ -136,6 +226,21 @@ export function PortfolioSubmissionForm({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  // ---- Autosave state ----------------------------------------------------
+  type AutosaveStatus = "idle" | "typing" | "saved" | "error";
+  const [autosaveStatus, setAutosaveStatus] = useState<AutosaveStatus>("idle");
+  const [lastSavedAt, setLastSavedAt] = useState<string | null>(null);
+  const [nowTick, setNowTick] = useState<number>(() => Date.now());
+  const [recoverDraft, setRecoverDraft] = useState<LocalDraft | null>(null);
+  // Toggle false during real Submit/SaveDraft to prevent autosave double-writes.
+  const autosaveEnabledRef = useRef<boolean>(false);
+  // Track the latest pending draft so the unmount cleanup can flush it.
+  const pendingDraftRef = useRef<LocalDraft | null>(null);
+  // Suppress the storage-event listener for our own writes.
+  const ownWriteAtRef = useRef<number>(0);
+
+  const key = draftKey(item.id, studentId);
+
   const toast = useToast();
   const required = isRequired(item);
   const minNum = settingsNumber(item.settings, "min");
@@ -170,9 +275,166 @@ export function PortfolioSubmissionForm({
         : null,
     );
     setExistingFileUrl(null);
-    const id = window.setTimeout(() => firstFieldRef.current?.focus(), 0);
-    return () => window.clearTimeout(id);
-  }, [open, existing]);
+
+    // ---- Autosave bootstrap on open ------------------------------------
+    autosaveEnabledRef.current = false;
+    pendingDraftRef.current = null;
+    setAutosaveStatus("idle");
+    setLastSavedAt(null);
+    setRecoverDraft(null);
+
+    const stored = readDraft(key);
+    if (stored) {
+      const age = Date.now() - new Date(stored.savedAt).getTime();
+      if (!Number.isFinite(age) || age > AUTOSAVE_STALE_MS) {
+        // Stale → discard silently.
+        clearDraft(key);
+      } else if (draftHasContent(stored)) {
+        // If a server submission exists and is newer than the draft, keep
+        // server state and discard the local draft. Otherwise prompt to
+        // recover. `existing.updated_at` is reliable here.
+        const serverIso = existing?.updated_at ?? null;
+        const serverNewer =
+          serverIso !== null &&
+          new Date(serverIso).getTime() >= new Date(stored.savedAt).getTime();
+        if (serverNewer) {
+          clearDraft(key);
+        } else {
+          setRecoverDraft(stored);
+        }
+      } else {
+        clearDraft(key);
+      }
+    }
+
+    // Defer enabling autosave by a tick so the bootstrap state writes above
+    // don't immediately fire the debounced writer.
+    const enableId = window.setTimeout(() => {
+      autosaveEnabledRef.current = true;
+    }, 0);
+
+    const focusId = window.setTimeout(() => firstFieldRef.current?.focus(), 0);
+    return () => {
+      window.clearTimeout(focusId);
+      window.clearTimeout(enableId);
+      autosaveEnabledRef.current = false;
+    };
+  }, [open, existing, key]);
+
+  // ---- Autosave: debounced write -----------------------------------------
+  useEffect(() => {
+    if (!open) return;
+    if (!autosaveEnabledRef.current) return;
+    if (busy) return;
+    if (recoverDraft) return; // Don't autosave while the recover banner is up.
+
+    const draft: LocalDraft = {
+      savedAt: new Date().toISOString(),
+      textValue,
+      urlValue,
+      numberValue,
+      dateValue,
+      choiceValue,
+      multiValue,
+    };
+
+    if (!draftHasContent(draft)) {
+      // Nothing meaningful to persist; also clean any prior empty record.
+      pendingDraftRef.current = null;
+      return;
+    }
+
+    pendingDraftRef.current = draft;
+    setAutosaveStatus("typing");
+
+    const id = window.setTimeout(() => {
+      // Stamp at the moment of actual write so "Saved {relative}" is accurate.
+      const toWrite: LocalDraft = {
+        ...draft,
+        savedAt: new Date().toISOString(),
+      };
+      ownWriteAtRef.current = Date.now();
+      const ok = writeDraft(key, toWrite);
+      if (ok) {
+        pendingDraftRef.current = null;
+        setLastSavedAt(toWrite.savedAt);
+        setAutosaveStatus("saved");
+      } else {
+        setAutosaveStatus("error");
+      }
+    }, AUTOSAVE_DEBOUNCE_MS);
+
+    return () => {
+      window.clearTimeout(id);
+    };
+  }, [
+    open,
+    busy,
+    recoverDraft,
+    key,
+    textValue,
+    urlValue,
+    numberValue,
+    dateValue,
+    choiceValue,
+    multiValue,
+  ]);
+
+  // ---- Autosave: flush on unmount / close --------------------------------
+  // If a save is still pending (user typed within the last debounce window)
+  // when the form unmounts or closes, write it through synchronously so we
+  // don't lose the last keystrokes.
+  useEffect(() => {
+    if (!open) return;
+    return () => {
+      const pending = pendingDraftRef.current;
+      if (pending && draftHasContent(pending)) {
+        ownWriteAtRef.current = Date.now();
+        writeDraft(key, {
+          ...pending,
+          savedAt: new Date().toISOString(),
+        });
+      }
+      pendingDraftRef.current = null;
+    };
+  }, [open, key]);
+
+  // ---- Autosave: tick the "saved {relative}" label every 15s -------------
+  useEffect(() => {
+    if (!open) return;
+    if (autosaveStatus !== "saved") return;
+    const id = window.setInterval(() => setNowTick(Date.now()), 15000);
+    return () => window.clearInterval(id);
+  }, [open, autosaveStatus, lastSavedAt]);
+
+  // ---- Autosave: cross-tab sync via the storage event --------------------
+  useEffect(() => {
+    if (!open) return;
+    const onStorage = (e: StorageEvent): void => {
+      if (e.key !== key) return;
+      // Ignore the echo of our own write.
+      if (Date.now() - ownWriteAtRef.current < 250) return;
+      if (e.newValue === null) {
+        // Another tab discarded — leave local state alone but reset indicator.
+        setAutosaveStatus("idle");
+        setLastSavedAt(null);
+        return;
+      }
+      const incoming = readDraft(key);
+      if (!incoming) return;
+      // Last-write-wins: adopt the other tab's content.
+      setTextValue(incoming.textValue);
+      setUrlValue(incoming.urlValue);
+      setNumberValue(incoming.numberValue);
+      setDateValue(incoming.dateValue);
+      setChoiceValue(incoming.choiceValue);
+      setMultiValue(incoming.multiValue);
+      setLastSavedAt(incoming.savedAt);
+      setAutosaveStatus("saved");
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [open, key]);
 
   // Sign the existing file URL so the student can download what they previously
   // uploaded. Same TTL pattern as SubmissionDetailDrawer.
@@ -276,6 +538,30 @@ export function PortfolioSubmissionForm({
 
   if (!open) return null;
 
+  const handleRestoreDraft = (): void => {
+    if (!recoverDraft) return;
+    setTextValue(recoverDraft.textValue);
+    setUrlValue(recoverDraft.urlValue);
+    setNumberValue(recoverDraft.numberValue);
+    setDateValue(recoverDraft.dateValue);
+    setChoiceValue(recoverDraft.choiceValue);
+    setMultiValue(recoverDraft.multiValue);
+    setLastSavedAt(recoverDraft.savedAt);
+    setAutosaveStatus("saved");
+    setRecoverDraft(null);
+    // Allow the debounced writer to resume now that the user has confirmed.
+    autosaveEnabledRef.current = true;
+  };
+
+  const handleDiscardDraft = (): void => {
+    ownWriteAtRef.current = Date.now();
+    clearDraft(key);
+    setRecoverDraft(null);
+    setLastSavedAt(null);
+    setAutosaveStatus("idle");
+    autosaveEnabledRef.current = true;
+  };
+
   const toggleMulti = (option: string): void => {
     setMultiValue((prev) =>
       prev.includes(option) ? prev.filter((v) => v !== option) : [...prev, option],
@@ -357,6 +643,10 @@ export function PortfolioSubmissionForm({
   const save = async (target: "draft" | "submitted"): Promise<void> => {
     setError(null);
     setBusy(true);
+    // Pause autosave during the network write so we don't race with the
+    // success-path cleanup below.
+    autosaveEnabledRef.current = false;
+    pendingDraftRef.current = null;
     try {
       const built = await buildValuePayload();
       if ("error" in built) {
@@ -443,6 +733,11 @@ export function PortfolioSubmissionForm({
       } else {
         toast.success("Submission sent");
       }
+      // Success → server is now the source of truth; clear the local draft.
+      ownWriteAtRef.current = Date.now();
+      clearDraft(key);
+      setLastSavedAt(null);
+      setAutosaveStatus("idle");
       onSaved?.();
       onClose();
     } catch (err: unknown) {
@@ -453,6 +748,9 @@ export function PortfolioSubmissionForm({
       } else {
         toast.error("Couldn't submit", msg);
       }
+      // Failure → keep the local draft so the student can retry without
+      // losing their work, and re-enable autosave for future edits.
+      autosaveEnabledRef.current = true;
     } finally {
       setBusy(false);
     }
@@ -691,6 +989,37 @@ export function PortfolioSubmissionForm({
           </div>
         )}
 
+        {recoverDraft && (
+          <div
+            role="status"
+            className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/30 px-3 py-2 text-sm text-amber-900 dark:text-amber-200 ring-1 ring-amber-200 dark:ring-amber-900/60"
+          >
+            <p>
+              We found an unsaved draft from{" "}
+              <span className="font-medium">
+                {formatRelative(recoverDraft.savedAt, nowTick)}
+              </span>
+              . Restore it?
+            </p>
+            <div className="mt-2 flex gap-2">
+              <button
+                type="button"
+                onClick={handleRestoreDraft}
+                className="min-h-[40px] rounded-md bg-amber-600 hover:bg-amber-700 text-white text-sm font-medium px-3 py-2 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+              >
+                Restore
+              </button>
+              <button
+                type="button"
+                onClick={handleDiscardDraft}
+                className="min-h-[40px] rounded-md ring-1 ring-amber-300 dark:ring-amber-700 bg-white dark:bg-slate-900 hover:bg-amber-50 dark:hover:bg-amber-950/40 text-amber-800 dark:text-amber-200 text-sm font-medium px-3 py-2"
+              >
+                Discard
+              </button>
+            </div>
+          </div>
+        )}
+
         <div>
           <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
             Your response
@@ -706,6 +1035,22 @@ export function PortfolioSubmissionForm({
           </span>
           {renderControl()}
         </div>
+
+        <p
+          aria-live="polite"
+          className="text-xs italic text-slate-500 dark:text-slate-400 motion-safe:transition-opacity"
+        >
+          {autosaveStatus === "typing" && "Saving…"}
+          {autosaveStatus === "saved" &&
+            lastSavedAt &&
+            `Draft saved ${formatRelative(lastSavedAt, nowTick)}`}
+          {autosaveStatus === "error" && (
+            <span className="text-rose-600 dark:text-rose-400">
+              Couldn&apos;t save draft — try again later
+            </span>
+          )}
+          {autosaveStatus === "idle" && " "}
+        </p>
 
         {!isValid && fieldError !== null && (
           <p className="text-xs text-slate-500 dark:text-slate-400">
