@@ -120,6 +120,10 @@ export function FullTestApp() {
       setNavOpen(false);
       setMarked(new Set());
       setEliminated({});
+      // Reset per-section tools so a hidden timer / active strike tool never
+      // silently carries into the next module (a hidden Module-2 clock is unsafe).
+      setTimerHidden(false);
+      setStrikeMode(false);
       try {
         const m = await getModule(runId, position);
         setModuleMeta(m.module);
@@ -319,13 +323,30 @@ export function FullTestApp() {
       else n.add(qid);
       return n;
     });
-  const toggleEliminate = (qid: string, letter: Letter) =>
+  const toggleEliminate = (qid: string, letter: Letter) => {
+    const wasStruck = eliminated[qid]?.has(letter) ?? false;
     setEliminated((prev) => {
       const cur = new Set(prev[qid] ?? []);
       if (cur.has(letter)) cur.delete(letter);
       else cur.add(letter);
       return { ...prev, [qid]: cur };
     });
+    // Crossing out the choice the student had selected clears that selection,
+    // so an eliminated answer is never silently submitted as their response.
+    if (!wasStruck && answers[qid] === letter) setAnswer(qid, null);
+  };
+
+  // Defensive: a module should always have questions. If the server returns an
+  // empty set, don't render a "Question 1 of 0" runner that can submit nothing.
+  if (questions.length === 0) {
+    return (
+      <CenterCard>
+        <p className="text-slate-600 dark:text-slate-300">
+          This section didn't load any questions. Please refresh to try again.
+        </p>
+      </CenterCard>
+    );
+  }
 
   return (
     // Fullscreen takeover (above the StudentShell chrome / floating badge, z-50)
