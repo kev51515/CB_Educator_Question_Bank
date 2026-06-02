@@ -59,5 +59,5 @@ export const LazyCompareView = lazy(() =>
 );
 
 export const LazyTimerSetup = lazy(() =>
-  import("./TimerSession").then((m) => ({ default: m.TimerSetup })),
+  import("./TimerSetup").then((m) => ({ default: m.TimerSetup })),
 );
