@@ -2,6 +2,15 @@ import { useCallback, useEffect, useMemo, useRef } from "react";
 import type { IndexEntry } from "@/types";
 import { CONFIDENCE } from "../lib/designSystem";
 import { useFocusTrap } from "../hooks";
+import {
+  DIFFICULTY_ORDER,
+  SECTIONS,
+  pct,
+  fmtPct,
+  matchSection,
+  confLevel,
+} from "./progressDashboardHelpers";
+import { DomainGroup } from "./DomainGroup";
 
 // ─────────────────────────── types ───────────────────────────────
 
@@ -14,38 +23,6 @@ interface ProgressDashboardProps {
   confidence: { get: (id: string) => number; getAll: () => Record<string, number> };
   recentIds: string[];
   onFilterSkill: (skill: string, difficulty: string) => void;
-}
-
-// ─────────────────────────── helpers ─────────────────────────────
-
-const DIFFICULTY_ORDER = ["Easy", "Medium", "Hard"] as const;
-const SECTIONS = ["Math", "Reading and Writing"] as const;
-
-function pct(n: number, total: number): number {
-  return total > 0 ? (n / total) * 100 : 0;
-}
-
-function fmtPct(n: number, total: number): string {
-  if (total === 0) return "0%";
-  const p = (n / total) * 100;
-  if (p === 0) return "0%";
-  if (p < 1) return "<1%";
-  return `${Math.round(p)}%`;
-}
-
-/** Match an IndexEntry to one of the two SAT sections (case-insensitive partial match). */
-function matchSection(entry: IndexEntry): "Math" | "Reading and Writing" | null {
-  const s = entry.section.toLowerCase();
-  if (s.includes("math")) return "Math";
-  if (s.includes("reading") || s.includes("writing")) return "Reading and Writing";
-  return null;
-}
-
-/** Determine a single "best" confidence level for a question based on the rating map. */
-function confLevel(id: string, confMap: Record<string, number>): 0 | 1 | 2 | 3 {
-  const v = confMap[id];
-  if (v === 1 || v === 2 || v === 3) return v;
-  return 0;
 }
 
 // ─────────────────────── ProgressDashboard ───────────────────────
@@ -570,107 +547,5 @@ export function ProgressDashboard({
         </div>
       </div>
     </div>
-  );
-}
-
-// ──────────────────── Heatmap sub-components ─────────────────────
-
-interface DomainGroupProps {
-  domain: string;
-  skills: string[];
-  cellMap: Map<string, { total: number; confSum: number; confCount: number; doneOnly: number }>;
-  onCellClick: (skill: string, difficulty: string) => void;
-}
-
-function DomainGroup({ domain, skills, cellMap, onCellClick }: DomainGroupProps) {
-  return (
-    <>
-      {/* Domain header row */}
-      <tr>
-        <td
-          colSpan={1 + DIFFICULTY_ORDER.length}
-          className="pt-4 pb-1 text-[11px] font-semibold text-ink-500 uppercase tracking-wide border-b border-ink-150"
-        >
-          {domain}
-        </td>
-      </tr>
-      {skills.map((skill) => (
-        <tr key={skill} className="group/row hover:bg-ink-50 transition-colors">
-          <td className="py-1.5 pr-3 text-ink-700 sticky left-0 bg-white group-hover/row:bg-ink-50 transition-colors">
-            {skill}
-          </td>
-          {DIFFICULTY_ORDER.map((diff) => {
-            const key = `${skill}|||${diff}`;
-            const cell = cellMap.get(key);
-            return (
-              <HeatmapCell
-                key={diff}
-                cell={cell ?? null}
-                skill={skill}
-                difficulty={diff}
-                onClick={onCellClick}
-              />
-            );
-          })}
-        </tr>
-      ))}
-    </>
-  );
-}
-
-interface HeatmapCellProps {
-  cell: { total: number; confSum: number; confCount: number; doneOnly: number } | null;
-  skill: string;
-  difficulty: string;
-  onClick: (skill: string, difficulty: string) => void;
-}
-
-function HeatmapCell({ cell, skill, difficulty, onClick }: HeatmapCellProps) {
-  if (!cell || cell.total === 0) {
-    // No questions exist for this skill/difficulty combo
-    return <td className="text-center py-1.5 px-2" />;
-  }
-
-  const attempted = cell.confCount + cell.doneOnly;
-  let dotColor: string;
-  let label: string;
-
-  if (attempted === 0) {
-    // Not attempted
-    dotColor = "bg-ink-200";
-    label = `${skill} ${difficulty}: ${cell.total} questions, not attempted`;
-  } else if (cell.confCount === 0) {
-    // Done but no confidence rating
-    dotColor = "bg-white border-2 border-accent-400";
-    label = `${skill} ${difficulty}: ${attempted}/${cell.total} done, no confidence rating`;
-  } else {
-    const avg = cell.confSum / cell.confCount;
-    if (avg <= 1.5) {
-      dotColor = CONFIDENCE.unsure.dot;
-      label = `${skill} ${difficulty}: ${attempted}/${cell.total}, mostly unsure`;
-    } else if (avg <= 2.5) {
-      dotColor = CONFIDENCE.okay.dot;
-      label = `${skill} ${difficulty}: ${attempted}/${cell.total}, mostly okay`;
-    } else {
-      dotColor = CONFIDENCE.confident.dot;
-      label = `${skill} ${difficulty}: ${attempted}/${cell.total}, mostly confident`;
-    }
-  }
-
-  return (
-    <td className="text-center py-1.5 px-2">
-      <button
-        type="button"
-        onClick={() => onClick(skill, difficulty)}
-        className="inline-flex flex-col items-center gap-0.5 focus-ring rounded p-1 hover:bg-ink-100 transition-colors"
-        aria-label={label}
-        title={label}
-      >
-        <span className={`inline-block w-3.5 h-3.5 rounded-full ${dotColor}`} />
-        <span className="text-[9px] text-ink-400 tabular-nums leading-none">
-          {attempted}/{cell.total}
-        </span>
-      </button>
-    </td>
   );
 }
