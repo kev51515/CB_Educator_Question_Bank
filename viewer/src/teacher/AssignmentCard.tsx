@@ -265,9 +265,15 @@ export function AssignmentCard({
   const overdue =
     assignment.due_at !== null &&
     new Date(assignment.due_at).getTime() < Date.now();
+  const dueLabel = formatDueDate(assignment.due_at);
+  const statusLabel = assignment.archived ? "archived" : "active";
+  const ariaLabel = `Assignment: ${assignment.title}, ${statusLabel}${
+    assignment.due_at ? `, ${overdue ? "overdue — " : ""}${dueLabel.toLowerCase()}` : ""
+  }`;
 
   return (
     <article
+      aria-label={ariaLabel}
       className={`rounded-2xl ring-1 p-5 shadow-sm space-y-3 ${
         assignment.archived
           ? "bg-slate-50/80 dark:bg-slate-900/40 ring-slate-200 dark:ring-slate-800 opacity-80"
@@ -290,7 +296,10 @@ export function AssignmentCard({
         <div className="min-w-0 flex-1">
           <InlineTitle value={assignment.title} onSave={onRenameCommit} />
           {assignment.description && (
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 line-clamp-2">
+            <p
+              className="mt-1 text-sm text-slate-500 dark:text-slate-400 line-clamp-2"
+              title={assignment.description}
+            >
               {assignment.description}
             </p>
           )}
@@ -348,18 +357,20 @@ export function AssignmentCard({
 
       <div className="flex items-center justify-between pt-1">
         <span
+          aria-label={overdue ? `Overdue: ${dueLabel}` : dueLabel}
           className={`text-xs font-medium ${
             overdue
               ? "text-rose-600 dark:text-rose-400"
               : "text-slate-500 dark:text-slate-400"
           }`}
         >
-          {formatDueDate(assignment.due_at)}
+          {dueLabel}
         </span>
         <button
           type="button"
           onClick={onOpenAttempts}
-          className="rounded-md bg-indigo-50 dark:bg-indigo-950/40 ring-1 ring-indigo-200 dark:ring-indigo-900 px-3 py-1.5 text-xs font-medium text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/40"
+          aria-label={`View attempts for ${assignment.title}`}
+          className="rounded-md bg-indigo-50 dark:bg-indigo-950/40 ring-1 ring-indigo-200 dark:ring-indigo-900 px-3 py-1.5 text-xs font-medium text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 min-h-[40px] md:min-h-0 inline-flex items-center"
         >
           View attempts
         </button>
