@@ -1,10 +1,13 @@
 /**
  * AuthScreen
  * ==========
- * First screen unauthenticated students see. Tabs: "Sign in" and "Create
- * account". The Sign in tab also exposes a "Forgot password?" sub-mode.
- * Delegates the actual auth calls to whatever `useStudentSession` gave us —
- * this component is purely presentational + form state.
+ * First screen unauthenticated users see — a two-pane editorial sign-in.
+ * LEFT (lg+): an ink brand panel. RIGHT: the auth card with an Educator /
+ * Student toggle, email+password sign-in, a "Create account" tab, a password
+ * reset sub-mode, and a one-click demo-credentials card for testing.
+ *
+ * Purely presentational + form state; the actual auth calls come in as props
+ * from `useStudentSession`.
  *
  * On successful signUp, we don't auto-route; if Supabase returns a live
  * session the AuthGate will move on by itself. Otherwise (email confirmation
@@ -14,6 +17,8 @@
  * the session.signUp() function which redeems it server-side after the auth
  * user is created. If the redemption fails, session.signUp signs the user
  * out and returns an error — see session.ts for the full flow.
+ *
+ * Type: Fraunces (display serif) + Hanken Grotesk (UI) — loaded in index.html.
  */
 import { useEffect, useRef, useState } from "react";
 import type { AuthResult, SignUpRole } from "./session";
@@ -34,11 +39,123 @@ interface AuthScreenProps {
   onSwitchToQuickStart: () => void;
 }
 
+/**
+ * Seeded demo accounts (see viewer/scripts/seed-demo.mjs). Surfaced on the
+ * sign-in screen so the husband-wife teaching team — and anyone testing — can
+ * one-click into either role. These are intentionally public test credentials;
+ * if this ever ships to real end-users, gate the demo card behind
+ * `import.meta.env.DEV` or a `VITE_SHOW_DEMO_LOGINS` flag.
+ */
+const DEMO_ACCOUNTS = {
+  student: {
+    label: "Student",
+    email: "demo-student1@example.com",
+    password: "demostudent123",
+    blurb: "Practice tests, question bank, and score history.",
+  },
+  educator: {
+    label: "Educator",
+    email: "demo-teacher@example.com",
+    password: "demoteacher123",
+    blurb: "Full Console — courses, gradebook, and tests admin.",
+  },
+} as const;
+type SignInRole = keyof typeof DEMO_ACCOUNTS;
+
+const SERIF = "'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif";
+const SANS =
+  "'Hanken Grotesk', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif";
+const serif = { fontFamily: SERIF } as const;
+
+// Fine fractal-noise grain for the brand panel — adds tactile depth so the
+// dark pane reads as paper/ink rather than flat color.
+const GRAIN =
+  "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")";
+
 function cleanError(message: string): string {
   // Trim and strip any trailing stack-ish junk; supabase-js usually returns
   // tidy strings already, but be defensive.
   const firstLine = message.split("\n")[0] ?? message;
   return firstLine.trim();
+}
+
+/** Small ink/cream serif monogram lockup. */
+function Wordmark({ tone }: { tone: "light" | "dark" }) {
+  const square =
+    tone === "dark"
+      ? "bg-stone-50 text-stone-900"
+      : "bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900";
+  const text =
+    tone === "dark"
+      ? "text-stone-50"
+      : "text-stone-900 dark:text-stone-100";
+  return (
+    <div className="flex items-center gap-2.5">
+      <span
+        className={`grid h-9 w-9 place-items-center rounded-[10px] text-lg leading-none ${square}`}
+        style={serif}
+        aria-hidden
+      >
+        P
+      </span>
+      <span
+        className={`text-lg font-semibold tracking-tight ${text}`}
+        style={serif}
+      >
+        PrepMasters
+      </span>
+    </div>
+  );
+}
+
+/** Icon button that copies `value` and flips to a check for ~1.4s. */
+function CopyButton({ value, label }: { value: string; label: string }) {
+  const [copied, setCopied] = useState(false);
+  const onCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch {
+      // Fallback for non-secure contexts / older browsers.
+      const ta = document.createElement("textarea");
+      ta.value = value;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+      } catch {
+        /* give up silently */
+      }
+      ta.remove();
+    }
+    setCopied(true);
+    window.setTimeout(() => setCopied(false), 1400);
+  };
+  return (
+    <button
+      type="button"
+      onClick={onCopy}
+      aria-label={copied ? `${label} copied` : `Copy ${label.toLowerCase()}`}
+      title={copied ? "Copied!" : `Copy ${label.toLowerCase()}`}
+      className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg border transition focus:outline-none focus:ring-2 ${
+        copied
+          ? "border-emerald-300 bg-emerald-50 text-emerald-600 focus:ring-emerald-400/40 dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400"
+          : "border-amber-300/70 bg-white/60 text-amber-700 hover:bg-white focus:ring-amber-500/30 dark:border-amber-500/30 dark:bg-white/5 dark:text-amber-400 dark:hover:bg-white/10"
+      }`}
+    >
+      {copied ? (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+      ) : (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+          <rect x="9" y="9" width="11" height="11" rx="2" />
+          <path d="M5 15V5a2 2 0 0 1 2-2h10" />
+        </svg>
+      )}
+    </button>
+  );
 }
 
 export function AuthScreen({
@@ -51,6 +168,7 @@ export function AuthScreen({
   const [signInMode, setSignInMode] = useState<SignInMode>("password");
 
   // Sign-in fields
+  const [signInRole, setSignInRole] = useState<SignInRole>("student");
   const [signInEmail, setSignInEmail] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
 
@@ -93,6 +211,22 @@ export function AuthScreen({
     setBusy(true);
     try {
       const { error: err } = await signInWithPassword(signInEmail.trim(), signInPassword);
+      if (err) setError(cleanError(err));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  // One-click sign-in with the seeded demo account for the selected role.
+  const signInAsDemo = async () => {
+    const acct = DEMO_ACCOUNTS[signInRole];
+    setSignInEmail(acct.email);
+    setSignInPassword(acct.password);
+    setError(null);
+    setNotice(null);
+    setBusy(true);
+    try {
+      const { error: err } = await signInWithPassword(acct.email, acct.password);
       if (err) setError(cleanError(err));
     } finally {
       setBusy(false);
@@ -168,292 +302,449 @@ export function AuthScreen({
     }
   };
 
-  const tabButtonClass = (active: boolean): string =>
-    `flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors ${
+  // ---- shared presentational classes --------------------------------------
+  const inputCls =
+    "mt-1.5 w-full rounded-xl border border-stone-300/80 bg-white/70 px-3.5 py-2.5 text-[15px] text-stone-900 placeholder:text-stone-400 shadow-sm transition focus:border-stone-900 focus:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:text-stone-100 dark:placeholder:text-stone-500 dark:focus:border-white/40 dark:focus:ring-white/10";
+  const labelCls = "block text-[13px] font-medium text-stone-600 dark:text-stone-300";
+  const primaryBtn =
+    "w-full rounded-xl bg-stone-900 px-4 py-3 text-sm font-semibold tracking-tight text-stone-50 shadow-sm transition hover:bg-stone-800 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus:ring-4 focus:ring-stone-900/15 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white dark:focus:ring-white/20";
+  const linkBtn =
+    "font-semibold text-stone-900 underline decoration-stone-300 decoration-1 underline-offset-[3px] transition hover:decoration-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-100 dark:decoration-stone-600 dark:hover:decoration-stone-200";
+  const tabCls = (active: boolean) =>
+    `-mb-px border-b-2 pb-2.5 text-sm font-medium transition-colors focus:outline-none ${
       active
-        ? "bg-indigo-600 text-white shadow"
-        : "text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+        ? "border-stone-900 text-stone-900 dark:border-stone-100 dark:text-stone-100"
+        : "border-transparent text-stone-400 hover:text-stone-600 dark:text-stone-500 dark:hover:text-stone-300"
+    }`;
+  const segBtn = (active: boolean) =>
+    `rounded-[10px] px-3 py-2 text-sm transition ${
+      active
+        ? "bg-white font-semibold text-stone-900 shadow-sm ring-1 ring-stone-900/5 dark:bg-stone-100 dark:text-stone-900"
+        : "font-medium text-stone-500 hover:text-stone-800 dark:text-stone-400 dark:hover:text-stone-200"
     }`;
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 via-white to-sky-100 dark:from-slate-900 dark:via-slate-950 dark:to-indigo-950 px-4">
-      <div
-        className="w-full max-w-md rounded-2xl bg-white/90 dark:bg-slate-900/80 backdrop-blur shadow-xl ring-1 ring-slate-200 dark:ring-slate-800 p-8 space-y-6"
-        aria-labelledby="auth-title"
-      >
-        <header className="space-y-1 text-center">
-          <h1
-            id="auth-title"
-            className="text-2xl font-semibold text-slate-900 dark:text-slate-100"
-          >
-            Student Sign-In
-          </h1>
-          <p className="text-sm text-slate-500 dark:text-slate-400">
-            {tab === "signin"
-              ? signInMode === "reset"
-                ? "Enter your email and we'll send you a reset link."
-                : "Sign in with your email and password."
-              : "Create an account to start practicing."}
-          </p>
+    <div
+      className="relative min-h-screen w-full bg-stone-50 text-stone-900 dark:bg-stone-950 dark:text-stone-100 lg:grid lg:grid-cols-[1.1fr_1fr]"
+      style={{ fontFamily: SANS }}
+    >
+      <style>{`
+        @keyframes authReveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+        @keyframes authFade{from{opacity:0}to{opacity:1}}
+        @keyframes authFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-14px,0)}}
+        .auth-reveal{animation:authReveal .75s cubic-bezier(.22,.61,.36,1) both}
+        .auth-fade{animation:authFade 1.1s ease both}
+        @media (prefers-reduced-motion: reduce){.auth-reveal,.auth-fade{animation:none}}
+      `}</style>
+
+      {/* ───────────────── LEFT · brand panel (lg+) ───────────────── */}
+      <aside className="relative hidden overflow-hidden bg-stone-950 text-stone-100 lg:flex lg:flex-col lg:justify-between lg:p-12 xl:p-16">
+        {/* atmosphere: warm + cool radial glows, drifting slowly */}
+        <div
+          className="pointer-events-none absolute -left-24 -top-24 h-[28rem] w-[28rem] rounded-full opacity-60 blur-3xl auth-fade"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(217,160,84,0.30), transparent 70%)",
+            animation: "authFloat 18s ease-in-out infinite",
+          }}
+        />
+        <div
+          className="pointer-events-none absolute -bottom-32 right-[-10%] h-[34rem] w-[34rem] rounded-full opacity-50 blur-3xl"
+          style={{
+            background:
+              "radial-gradient(closest-side, rgba(99,102,241,0.22), transparent 70%)",
+            animation: "authFloat 22s ease-in-out infinite reverse",
+          }}
+        />
+        {/* grain + a faint vertical hairline frame */}
+        <div
+          className="pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay"
+          style={{ backgroundImage: GRAIN, backgroundSize: "220px 220px" }}
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-y-10 left-10 w-px bg-gradient-to-b from-transparent via-white/15 to-transparent" />
+
+        <header className="relative auth-reveal">
+          <Wordmark tone="dark" />
         </header>
 
-        <div
-          role="tablist"
-          aria-label="Authentication mode"
-          className="flex gap-2 rounded-xl bg-slate-100 dark:bg-slate-800/60 p-1"
-        >
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === "signin"}
-            onClick={() => {
-              setTab("signin");
-              setSignInMode("password");
-            }}
-            className={tabButtonClass(tab === "signin")}
+        <div className="relative max-w-md auth-reveal" style={{ animationDelay: "90ms" }}>
+          <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-amber-300/80">
+            Digital SAT preparation
+          </p>
+          <h2
+            className="mt-5 text-[2.9rem] font-medium leading-[1.04] tracking-tight text-stone-50"
+            style={serif}
           >
-            Sign in
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={tab === "signup"}
-            onClick={() => setTab("signup")}
-            className={tabButtonClass(tab === "signup")}
-          >
-            Create account
-          </button>
+            Scores,
+            <br />
+            <span className="italic text-amber-200/90">by design.</span>
+          </h2>
+          <p className="mt-6 max-w-sm text-[15px] leading-relaxed text-stone-300/90">
+            A focused practice platform built by SAT teachers — skill mastery,
+            full-length Bluebook-style tests, and progress you can actually see.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-stone-400">
+            {["Full-length tests", "Skill mastery", "Score insights"].map((f) => (
+              <span key={f} className="flex items-center gap-2">
+                <span className="h-1 w-1 rounded-full bg-amber-300/80" aria-hidden />
+                {f}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {notice && (
-          <div
-            role="status"
-            className="rounded-md bg-emerald-50 dark:bg-emerald-950/40 px-3 py-2 text-sm text-emerald-700 dark:text-emerald-300 ring-1 ring-emerald-200 dark:ring-emerald-900"
-          >
-            {notice}
+        <footer className="relative flex items-center justify-between text-xs text-stone-500 auth-reveal" style={{ animationDelay: "180ms" }}>
+          <span>© {new Date().getFullYear()} PrepMasters</span>
+          <span className="tracking-wide" style={serif}>
+            Mastery, measured.
+          </span>
+        </footer>
+      </aside>
+
+      {/* ───────────────── RIGHT · auth card ───────────────── */}
+      <main className="relative flex min-h-screen items-center justify-center px-5 py-10 sm:px-8">
+        <div
+          className="w-full max-w-[26rem] auth-reveal"
+          aria-labelledby="auth-title"
+          style={{ animationDelay: "60ms" }}
+        >
+          {/* compact wordmark for mobile (brand panel hidden) */}
+          <div className="mb-8 lg:hidden">
+            <Wordmark tone="light" />
           </div>
-        )}
 
-        {error && (
+          <header className="mb-7">
+            <h1
+              id="auth-title"
+              className="text-[1.95rem] font-medium leading-tight tracking-tight text-stone-900 dark:text-stone-100"
+              style={serif}
+            >
+              {tab === "signin"
+                ? `${DEMO_ACCOUNTS[signInRole].label} sign-in`
+                : "Create your account"}
+            </h1>
+            <p className="mt-1.5 text-sm text-stone-500 dark:text-stone-400">
+              {tab === "signin"
+                ? signInMode === "reset"
+                  ? "Enter your email and we'll send you a reset link."
+                  : "Welcome back — pick your role and sign in."
+                : "Start practicing in under a minute."}
+            </p>
+          </header>
+
+          {/* tabs */}
           <div
-            role="alert"
-            className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
+            role="tablist"
+            aria-label="Authentication mode"
+            className="mb-6 flex gap-7 border-b border-stone-200 dark:border-white/10"
           >
-            {error}
-          </div>
-        )}
-
-        {tab === "signin" && signInMode === "password" && (
-          <form onSubmit={onSignInSubmit} className="space-y-4">
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Email
-              </span>
-              <input
-                ref={signInEmailRef}
-                type="email"
-                value={signInEmail}
-                onChange={(e) => setSignInEmail(e.target.value)}
-                autoComplete="email"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="you@example.com"
-              />
-            </label>
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Password
-              </span>
-              <input
-                type="password"
-                value={signInPassword}
-                onChange={(e) => setSignInPassword(e.target.value)}
-                autoComplete="current-password"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="••••••••"
-              />
-            </label>
-            <div className="text-right">
-              <button
-                type="button"
-                onClick={() => {
-                  setResetEmail(signInEmail);
-                  setSignInMode("reset");
-                  setError(null);
-                  setNotice(null);
-                }}
-                className="text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
-              >
-                Forgot password?
-              </button>
-            </div>
             <button
-              type="submit"
-              disabled={busy}
-              className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+              type="button"
+              role="tab"
+              aria-selected={tab === "signin"}
+              onClick={() => {
+                setTab("signin");
+                setSignInMode("password");
+              }}
+              className={tabCls(tab === "signin")}
             >
-              {busy ? "Signing in…" : "Sign in"}
-            </button>
-          </form>
-        )}
-
-        {tab === "signin" && signInMode === "reset" && (
-          <form onSubmit={onResetSubmit} className="space-y-4">
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Email
-              </span>
-              <input
-                ref={resetEmailRef}
-                type="email"
-                value={resetEmail}
-                onChange={(e) => setResetEmail(e.target.value)}
-                autoComplete="email"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="you@example.com"
-              />
-            </label>
-            <button
-              type="submit"
-              disabled={busy}
-              className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              {busy ? "Sending…" : "Send reset link"}
+              Sign in
             </button>
             <button
               type="button"
-              onClick={() => {
-                setSignInMode("password");
-                setError(null);
-                setNotice(null);
-              }}
-              className="block w-full text-center text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
+              role="tab"
+              aria-selected={tab === "signup"}
+              onClick={() => setTab("signup")}
+              className={tabCls(tab === "signup")}
             >
-              ← Back to sign in
+              Create account
             </button>
-          </form>
-        )}
+          </div>
 
-        {tab === "signup" && (
-          <form onSubmit={onSignUpSubmit} className="space-y-4">
-            <fieldset>
-              <legend className="text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
-                I am a
-              </legend>
-              <div
-                role="radiogroup"
-                aria-label="Account role"
-                className="grid grid-cols-2 gap-2 rounded-xl bg-slate-100 dark:bg-slate-800/60 p-1"
+          {notice && (
+            <div
+              role="status"
+              className="mb-5 rounded-xl border border-emerald-200 bg-emerald-50 px-3.5 py-2.5 text-sm text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300"
+            >
+              {notice}
+            </div>
+          )}
+
+          {error && (
+            <div
+              role="alert"
+              className="mb-5 rounded-xl border border-rose-200 bg-rose-50 px-3.5 py-2.5 text-sm text-rose-700 dark:border-rose-900 dark:bg-rose-950/40 dark:text-rose-300"
+            >
+              {error}
+            </div>
+          )}
+
+          {/* role toggle */}
+          {tab === "signin" && signInMode === "password" && (
+            <div
+              role="radiogroup"
+              aria-label="Sign in as"
+              className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-stone-100 p-1 dark:bg-white/5"
+            >
+              {(["student", "educator"] as const).map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  role="radio"
+                  aria-checked={signInRole === value}
+                  onClick={() => {
+                    setSignInRole(value);
+                    setError(null);
+                    setNotice(null);
+                  }}
+                  className={segBtn(signInRole === value)}
+                >
+                  {DEMO_ACCOUNTS[value].label} login
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* sign-in form */}
+          {tab === "signin" && signInMode === "password" && (
+            <form onSubmit={onSignInSubmit} className="space-y-4">
+              <label className="block">
+                <span className={labelCls}>Email</span>
+                <input
+                  ref={signInEmailRef}
+                  type="email"
+                  value={signInEmail}
+                  onChange={(e) => setSignInEmail(e.target.value)}
+                  autoComplete="email"
+                  className={inputCls}
+                  placeholder="you@example.com"
+                />
+              </label>
+              <label className="block">
+                <span className={labelCls}>Password</span>
+                <input
+                  type="password"
+                  value={signInPassword}
+                  onChange={(e) => setSignInPassword(e.target.value)}
+                  autoComplete="current-password"
+                  className={inputCls}
+                  placeholder="••••••••"
+                />
+              </label>
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setResetEmail(signInEmail);
+                    setSignInMode("reset");
+                    setError(null);
+                    setNotice(null);
+                  }}
+                  className="text-xs font-medium text-stone-500 transition hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-400 dark:hover:text-stone-100"
+                >
+                  Forgot password?
+                </button>
+              </div>
+              <button type="submit" disabled={busy} className={primaryBtn}>
+                {busy ? "Signing in…" : "Sign in"}
+              </button>
+            </form>
+          )}
+
+          {/* demo credentials card */}
+          {tab === "signin" && signInMode === "password" && (
+            <div className="mt-5 overflow-hidden rounded-2xl border border-amber-300/60 bg-gradient-to-b from-amber-50 to-amber-50/30 dark:border-amber-500/20 dark:from-amber-500/[0.07] dark:to-transparent">
+              <div className="flex items-center gap-2 px-4 pt-3.5">
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  className="text-amber-700 dark:text-amber-400"
+                  aria-hidden
+                >
+                  <circle cx="7.5" cy="15.5" r="4.5" />
+                  <path d="M10.7 12.3 19 4M16 7l3 3M14 9l2.5 2.5" />
+                </svg>
+                <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-700 dark:text-amber-400">
+                  Demo {DEMO_ACCOUNTS[signInRole].label} · testing
+                </span>
+              </div>
+              <div className="mt-3 space-y-1.5 px-4">
+                {(
+                  [
+                    ["Email", DEMO_ACCOUNTS[signInRole].email],
+                    ["Password", DEMO_ACCOUNTS[signInRole].password],
+                  ] as const
+                ).map(([k, v]) => (
+                  <div
+                    key={k}
+                    className="flex items-center gap-2 rounded-lg bg-white/55 px-2.5 py-1.5 ring-1 ring-amber-300/40 dark:bg-white/[0.03] dark:ring-amber-500/15"
+                  >
+                    <span className="w-[58px] shrink-0 text-[12px] text-stone-500 dark:text-stone-400">
+                      {k}
+                    </span>
+                    <code className="min-w-0 flex-1 select-all truncate font-mono text-[13px] text-stone-800 dark:text-stone-200">
+                      {v}
+                    </code>
+                    <CopyButton value={v} label={k} />
+                  </div>
+                ))}
+              </div>
+              <p className="mt-2.5 px-4 text-[12px] leading-snug text-amber-700/80 dark:text-amber-400/70">
+                {DEMO_ACCOUNTS[signInRole].blurb}
+              </p>
+              <div className="mt-3 px-3 pb-3">
+                <button
+                  type="button"
+                  onClick={signInAsDemo}
+                  disabled={busy}
+                  className="w-full rounded-xl bg-amber-800 px-4 py-2.5 text-sm font-semibold text-amber-50 transition hover:bg-amber-900 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus:ring-4 focus:ring-amber-800/20 dark:bg-amber-400/90 dark:text-amber-950 dark:hover:bg-amber-300"
+                >
+                  {busy
+                    ? "Signing in…"
+                    : `Sign in as demo ${DEMO_ACCOUNTS[signInRole].label.toLowerCase()}`}
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* password reset */}
+          {tab === "signin" && signInMode === "reset" && (
+            <form onSubmit={onResetSubmit} className="space-y-4">
+              <label className="block">
+                <span className={labelCls}>Email</span>
+                <input
+                  ref={resetEmailRef}
+                  type="email"
+                  value={resetEmail}
+                  onChange={(e) => setResetEmail(e.target.value)}
+                  autoComplete="email"
+                  className={inputCls}
+                  placeholder="you@example.com"
+                />
+              </label>
+              <button type="submit" disabled={busy} className={primaryBtn}>
+                {busy ? "Sending…" : "Send reset link"}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setSignInMode("password");
+                  setError(null);
+                  setNotice(null);
+                }}
+                className="block w-full text-center text-xs font-medium text-stone-500 transition hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-400 dark:hover:text-stone-100"
               >
-                {(["student", "teacher"] as const).map((value) => {
-                  const active = signUpRole === value;
-                  return (
+                ← Back to sign in
+              </button>
+            </form>
+          )}
+
+          {/* sign-up */}
+          {tab === "signup" && (
+            <form onSubmit={onSignUpSubmit} className="space-y-4">
+              <fieldset>
+                <legend className={`${labelCls} mb-1.5`}>I am a</legend>
+                <div
+                  role="radiogroup"
+                  aria-label="Account role"
+                  className="grid grid-cols-2 gap-1 rounded-xl bg-stone-100 p-1 dark:bg-white/5"
+                >
+                  {(["student", "teacher"] as const).map((value) => (
                     <button
                       key={value}
                       type="button"
                       role="radio"
-                      aria-checked={active}
+                      aria-checked={signUpRole === value}
                       onClick={() => setSignUpRole(value)}
-                      className={`rounded-lg px-3 py-2 text-sm font-medium capitalize transition-colors ${
-                        active
-                          ? "bg-indigo-600 text-white shadow"
-                          : "text-slate-600 dark:text-slate-300 hover:bg-slate-200/60 dark:hover:bg-slate-700/60"
-                      }`}
+                      className={`capitalize ${segBtn(signUpRole === value)}`}
                     >
                       {value}
                     </button>
-                  );
-                })}
-              </div>
-            </fieldset>
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Your name
-              </span>
-              <input
-                ref={signUpNameRef}
-                type="text"
-                value={signUpName}
-                onChange={(e) => setSignUpName(e.target.value)}
-                autoComplete="name"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="e.g. Alex Chen"
-              />
-            </label>
-
-            {signUpRole === "teacher" && (
+                  ))}
+                </div>
+              </fieldset>
               <label className="block">
-                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                  Teacher invite code
-                </span>
+                <span className={labelCls}>Your name</span>
                 <input
+                  ref={signUpNameRef}
                   type="text"
-                  value={signUpInviteCode}
-                  onChange={(e) => setSignUpInviteCode(e.target.value.toUpperCase())}
-                  autoComplete="off"
-                  spellCheck={false}
-                  className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 font-mono uppercase tracking-wider text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="e.g. SPRING-2026"
+                  value={signUpName}
+                  onChange={(e) => setSignUpName(e.target.value)}
+                  autoComplete="name"
+                  className={inputCls}
+                  placeholder="e.g. Alex Chen"
                 />
-                <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
-                  Teachers have full Console access (manage all courses, users,
-                  invite codes). You'll need a code from existing staff to sign
-                  up as one.
-                </span>
               </label>
-            )}
 
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Email
-              </span>
-              <input
-                type="email"
-                value={signUpEmail}
-                onChange={(e) => setSignUpEmail(e.target.value)}
-                autoComplete="email"
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="you@example.com"
-              />
-            </label>
-            <label className="block">
-              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                Password
-              </span>
-              <input
-                type="password"
-                value={signUpPassword}
-                onChange={(e) => setSignUpPassword(e.target.value)}
-                autoComplete="new-password"
-                minLength={6}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                placeholder="At least 6 characters"
-              />
-            </label>
-            <button
-              type="submit"
-              disabled={busy}
-              className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
-            >
-              {busy ? "Creating account…" : "Create account"}
-            </button>
-          </form>
-        )}
+              {signUpRole === "teacher" && (
+                <label className="block">
+                  <span className={labelCls}>Teacher invite code</span>
+                  <input
+                    type="text"
+                    value={signUpInviteCode}
+                    onChange={(e) => setSignUpInviteCode(e.target.value.toUpperCase())}
+                    autoComplete="off"
+                    spellCheck={false}
+                    className={`${inputCls} font-mono uppercase tracking-wider`}
+                    placeholder="e.g. SPRING-2026"
+                  />
+                  <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
+                    Teachers have full Console access (manage all courses, users,
+                    invite codes). You'll need a code from existing staff to sign
+                    up as one.
+                  </span>
+                </label>
+              )}
 
-        <p className="text-xs text-center text-slate-500 dark:text-slate-400">
-          Have a code?{" "}
-          <button
-            type="button"
-            onClick={onSwitchToQuickStart}
-            className="font-medium text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded"
-          >
-            Quick start
-          </button>
-        </p>
+              <label className="block">
+                <span className={labelCls}>Email</span>
+                <input
+                  type="email"
+                  value={signUpEmail}
+                  onChange={(e) => setSignUpEmail(e.target.value)}
+                  autoComplete="email"
+                  className={inputCls}
+                  placeholder="you@example.com"
+                />
+              </label>
+              <label className="block">
+                <span className={labelCls}>Password</span>
+                <input
+                  type="password"
+                  value={signUpPassword}
+                  onChange={(e) => setSignUpPassword(e.target.value)}
+                  autoComplete="new-password"
+                  minLength={6}
+                  className={inputCls}
+                  placeholder="At least 6 characters"
+                />
+              </label>
+              <button type="submit" disabled={busy} className={primaryBtn}>
+                {busy ? "Creating account…" : "Create account"}
+              </button>
+            </form>
+          )}
 
-        <p className="text-xs text-center text-slate-500 dark:text-slate-400">
-          Trouble signing in? Ask your teacher for help.
-        </p>
-      </div>
+          {/* footer links */}
+          <div className="mt-8 space-y-2 border-t border-stone-200 pt-5 text-center dark:border-white/10">
+            <p className="text-sm text-stone-500 dark:text-stone-400">
+              Have a class code?{" "}
+              <button type="button" onClick={onSwitchToQuickStart} className={linkBtn}>
+                Quick start
+              </button>
+            </p>
+            <p className="text-xs text-stone-400 dark:text-stone-500">
+              Trouble signing in? Ask your teacher for help.
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
