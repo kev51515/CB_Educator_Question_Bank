@@ -9,7 +9,7 @@
  * Available to both staff (mounted under StaffShell) and students (mounted
  * inside StudentShell). RLS handles authz — both roles share the same UI.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Link,
   NavLink,
@@ -55,6 +55,49 @@ export function InboxPage() {
   const [composing, setComposing] = useState(false);
   const composeConsumedRef = useRef<string | null>(null);
   const toast = useToast();
+  const [query, setQuery] = useState("");
+  const searchInputRef = useRef<HTMLInputElement | null>(null);
+
+  // Focus shortcut: "/" focuses the inbox search (GitHub/Vercel convention).
+  // We deliberately avoid ⌘K — that's owned globally by CommandPalette
+  // (StaffShell / StudentShell call preventDefault on it). "/" is gated on
+  // non-editable targets so it doesn't hijack typing in the right pane.
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey || e.shiftKey) {
+        return;
+      }
+      const target = e.target as HTMLElement | null;
+      const tag = target?.tagName?.toLowerCase();
+      if (
+        tag === "input" ||
+        tag === "textarea" ||
+        tag === "select" ||
+        target?.isContentEditable
+      ) {
+        return;
+      }
+      e.preventDefault();
+      searchInputRef.current?.focus();
+      searchInputRef.current?.select();
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  // Strip HTML tags for case-insensitive snippet matching (snippets may
+  // contain rich-text markup from the TipTap editor).
+  const filteredThreads = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return threads;
+    return threads.filter((t) => {
+      const name = (t.other.display_name ?? t.other.email ?? "").toLowerCase();
+      const snippet = (t.last_message_snippet ?? "")
+        .replace(/<[^>]*>/g, "")
+        .toLowerCase();
+      return name.includes(q) || snippet.includes(q);
+    });
+  }, [threads, query]);
 
   // Consume ?compose=<userId>: open (or create) the thread with that user and
   // navigate straight to it. Strips the param so refresh doesn't re-fire.
@@ -154,6 +197,48 @@ export function InboxPage() {
             New
           </button>
         </header>
+        {/* Search — client-side filter over the already-loaded thread list.
+            Query is intentionally not persisted: it's transient session state. */}
+        <div className="px-3 py-2 border-b border-slate-200 dark:border-slate-800">
+          <div className="relative">
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              fill="none"
+              className="absolute left-2.5 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-400"
+            >
+              <circle
+                cx="9"
+                cy="9"
+                r="6"
+                stroke="currentColor"
+                strokeWidth="1.75"
+              />
+              <path
+                d="m17 17-3.5-3.5"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+              />
+            </svg>
+            <input
+              ref={searchInputRef}
+              type="search"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  setQuery("");
+                  (e.currentTarget as HTMLInputElement).blur();
+                }
+              }}
+              placeholder="Search conversations…"
+              aria-label="Search conversations"
+              title="Press / to focus"
+              className="w-full min-h-[40px] rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 pl-8 pr-3 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors"
+            />
+          </div>
+        </div>
         <div className="flex-1 overflow-y-auto">
           {loading && (
             <div className="px-3 py-3">
@@ -172,7 +257,27 @@ export function InboxPage() {
               cta={{ label: "Start a message", onClick: () => setShowNew(true) }}
             />
           )}
-          {threads.map((t) => {
+          {!loading &&
+            !error &&
+            threads.length > 0 &&
+            filteredThreads.length === 0 && (
+              <div className="px-4 py-6 text-center">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  No conversations match &ldquo;{query.trim()}&rdquo;
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setQuery("");
+                    searchInputRef.current?.focus();
+                  }}
+                  className="mt-2 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+                >
+                  Clear search
+                </button>
+              </div>
+            )}
+          {filteredThreads.map((t) => {
             const name = t.other.display_name ?? t.other.email ?? "Unknown";
             return (
               <NavLink
