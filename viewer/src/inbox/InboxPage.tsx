@@ -9,7 +9,7 @@
  * Available to both staff (mounted under StaffShell) and students (mounted
  * inside StudentShell). RLS handles authz — both roles share the same UI.
  */
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Link,
   NavLink,
@@ -32,9 +32,14 @@ import { KebabMenu } from "../components/KebabMenu";
 const mutedThreadsKey = (userId: string): string =>
   `inbox.mutedThreads:${userId}`;
 
-// LRU cap — generous; users rarely mute that many threads. When exceeded,
-// we drop the oldest entries (front of the array).
+// Per-user localStorage key for pinned thread IDs.
+const pinnedThreadsKey = (userId: string): string =>
+  `inbox.pinnedThreads:${userId}`;
+
+// LRU cap — generous; users rarely mute / pin that many threads. When
+// exceeded, we drop the oldest entries (front of the array).
 const MUTED_THREADS_CAP = 500;
+const PINNED_THREADS_CAP = 500;
 
 /**
  * Read the muted-thread set from localStorage. Returns a plain Set for O(1)
@@ -74,6 +79,45 @@ function writeMutedThreads(userId: string, ids: Set<string>): void {
   } catch {
     // Quota exceeded or storage unavailable — silently drop. Muting is
     // best-effort UX state, not a contract we're failing.
+  }
+}
+
+/**
+ * Read the pinned-thread set from localStorage. Mirrors readMutedThreads:
+ * shape-validates and swallows JSON / quota errors.
+ */
+function readPinnedThreads(userId: string | null): Set<string> {
+  if (!userId) return new Set();
+  if (typeof window === "undefined") return new Set();
+  try {
+    const raw = window.localStorage.getItem(pinnedThreadsKey(userId));
+    if (!raw) return new Set();
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return new Set();
+    const ids: string[] = [];
+    for (const v of parsed) {
+      if (typeof v === "string") ids.push(v);
+    }
+    return new Set(ids);
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * Persist the pinned-thread set. LRU cap matches the mute pattern. Swallows
+ * quota / storage errors — pinning is best-effort UX state.
+ */
+function writePinnedThreads(userId: string, ids: Set<string>): void {
+  if (typeof window === "undefined") return;
+  try {
+    let arr = Array.from(ids);
+    if (arr.length > PINNED_THREADS_CAP) {
+      arr = arr.slice(arr.length - PINNED_THREADS_CAP);
+    }
+    window.localStorage.setItem(pinnedThreadsKey(userId), JSON.stringify(arr));
+  } catch {
+    // Quota exceeded or storage unavailable — silently drop.
   }
 }
 
@@ -170,6 +214,56 @@ export function InboxPage() {
     [currentUserId, toast],
   );
 
+  // Pinned thread set (per-user, persisted to localStorage). Pinned threads
+  // float to the top of the list, sorted among themselves by last_message_at
+  // desc. Pin and Mute are orthogonal — a thread can be both.
+  const [pinnedThreads, setPinnedThreads] = useState<Set<string>>(() =>
+    readPinnedThreads(currentUserId),
+  );
+
+  // Re-hydrate when the user changes (login, profile switch).
+  useEffect(() => {
+    setPinnedThreads(readPinnedThreads(currentUserId));
+  }, [currentUserId]);
+
+  // Cross-tab sync — same pattern as muted-set above.
+  useEffect(() => {
+    if (!currentUserId) return;
+    if (typeof window === "undefined") return;
+    const key = pinnedThreadsKey(currentUserId);
+    const onStorage = (e: StorageEvent): void => {
+      if (e.key !== key) return;
+      setPinnedThreads(readPinnedThreads(currentUserId));
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [currentUserId]);
+
+  const togglePinned = useCallback(
+    (threadId: string): void => {
+      if (!currentUserId) return;
+      setPinnedThreads((prev) => {
+        const next = new Set(prev);
+        let wasPinned: boolean;
+        if (next.has(threadId)) {
+          next.delete(threadId);
+          wasPinned = true;
+        } else {
+          next.add(threadId);
+          wasPinned = false;
+        }
+        writePinnedThreads(currentUserId, next);
+        if (wasPinned) {
+          toast.info("Conversation unpinned");
+        } else {
+          toast.info("Conversation pinned");
+        }
+        return next;
+      });
+    },
+    [currentUserId, toast],
+  );
+
   // Focus shortcut: "/" focuses the inbox search (GitHub/Vercel convention).
   // We deliberately avoid ⌘K — that's owned globally by CommandPalette
   // (StaffShell / StudentShell call preventDefault on it). "/" is gated on
@@ -199,17 +293,42 @@ export function InboxPage() {
 
   // Strip HTML tags for case-insensitive snippet matching (snippets may
   // contain rich-text markup from the TipTap editor).
+  //
+  // Pin-aware sort: pinned threads float to the top of the visible list
+  // (sorted among themselves by last_message_at desc — the upstream order is
+  // already last_message_at desc, so we just partition without re-sorting).
+  // Search/filter still applies independently of pin state — pinned threads
+  // can be filtered out by search, and when searching they remain at the top
+  // of the result set.
   const filteredThreads = useMemo(() => {
     const q = query.trim().toLowerCase();
-    if (!q) return threads;
-    return threads.filter((t) => {
-      const name = (t.other.display_name ?? t.other.email ?? "").toLowerCase();
-      const snippet = (t.last_message_snippet ?? "")
-        .replace(/<[^>]*>/g, "")
-        .toLowerCase();
-      return name.includes(q) || snippet.includes(q);
-    });
-  }, [threads, query]);
+    const base = q
+      ? threads.filter((t) => {
+          const name = (t.other.display_name ?? t.other.email ?? "")
+            .toLowerCase();
+          const snippet = (t.last_message_snippet ?? "")
+            .replace(/<[^>]*>/g, "")
+            .toLowerCase();
+          return name.includes(q) || snippet.includes(q);
+        })
+      : threads;
+    if (pinnedThreads.size === 0) return base;
+    // Stable partition preserves upstream last_message_at desc within each group.
+    const pinned = base.filter((t) => pinnedThreads.has(t.id));
+    const rest = base.filter((t) => !pinnedThreads.has(t.id));
+    return [...pinned, ...rest];
+  }, [threads, query, pinnedThreads]);
+
+  // Index of the first unpinned row (used to render the slate group divider).
+  // -1 when divider shouldn't show (no pinned, or no unpinned).
+  const firstUnpinnedIndex = useMemo(() => {
+    if (pinnedThreads.size === 0) return -1;
+    const idx = filteredThreads.findIndex((t) => !pinnedThreads.has(t.id));
+    // Divider needs both a pinned group and an unpinned group to mean
+    // anything. idx === 0 means everything is unpinned (no pin in view).
+    if (idx <= 0) return -1;
+    return idx;
+  }, [filteredThreads, pinnedThreads]);
 
   // Default highlight on mount / when threads first arrive: pick the
   // currently-open thread (from URL) if it's still in filteredThreads, else
@@ -528,12 +647,30 @@ export function InboxPage() {
                 const isHighlighted = idx === highlightedIndex;
                 const isOpen = t.id === threadId;
                 const isMuted = mutedThreads.has(t.id);
+                const isPinned = pinnedThreads.has(t.id);
                 // Hide the unread badge when muted — the conversation
                 // continues to receive messages, it just doesn't shout.
                 const showUnreadBadge = !isMuted && t.unread_count > 0;
+                // Divider sits BEFORE the first unpinned row when both groups
+                // are non-empty. Keep it as a sibling <li> with role="separator"
+                // so screen readers announce the group break without
+                // confusing the listbox's option indexing for keyboard nav
+                // (which still uses filteredThreads indices unchanged).
+                const showDivider = idx === firstUnpinnedIndex;
                 return (
+                  <Fragment key={t.id}>
+                  {showDivider && (
+                    <li
+                      role="separator"
+                      aria-label="Pinned conversations"
+                      className="px-4 py-1.5 border-b border-slate-100 dark:border-slate-800 bg-slate-50/60 dark:bg-slate-900/40"
+                    >
+                      <span className="text-[10px] uppercase tracking-wide font-semibold text-slate-400 dark:text-slate-500">
+                        Other
+                      </span>
+                    </li>
+                  )}
                   <li
-                    key={t.id}
                     role="option"
                     aria-selected={isHighlighted}
                     onMouseEnter={() => {
@@ -543,6 +680,12 @@ export function InboxPage() {
                     }}
                     className={[
                       "group relative border-b border-slate-100 dark:border-slate-800 motion-safe:transition-colors",
+                      // Pin accent — decorative left border. The keyboard
+                      // cursor's ring (below) takes visual precedence when
+                      // both apply, so we keep this subtle (border, not ring).
+                      isPinned
+                        ? "border-l-2 border-l-indigo-400 dark:border-l-indigo-500"
+                        : "",
                       isOpen
                         ? "bg-indigo-50 dark:bg-indigo-950/40"
                         : isHighlighted
@@ -572,6 +715,27 @@ export function InboxPage() {
                           ].join(" ")}
                         >
                           <span className="truncate">{name}</span>
+                          {isPinned && (
+                            // Pin icon — small inline SVG. Indigo so it
+                            // reads as a deliberate marker rather than
+                            // chrome. <title> for SR announcement.
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              aria-hidden="false"
+                              role="img"
+                              className="h-3.5 w-3.5 flex-shrink-0 text-indigo-500 dark:text-indigo-400"
+                            >
+                              <title>Pinned</title>
+                              <path
+                                d="M12.5 2.5 17.5 7.5M11 4 4 11l-1.5 4.5L7 14l7-7M7 14l-3.5 3.5"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          )}
                           {isMuted && (
                             // Bell-slash icon — small inline SVG.
                             // Slate by default, indigo on row hover. Has
@@ -630,6 +794,13 @@ export function InboxPage() {
                       <KebabMenu
                         options={[
                           {
+                            label: isPinned ? "Unpin" : "Pin",
+                            hint: isPinned
+                              ? "Remove from the top of the inbox"
+                              : "Keep this conversation at the top of the inbox",
+                            onSelect: () => togglePinned(t.id),
+                          },
+                          {
                             label: isMuted ? "Unmute" : "Mute",
                             hint: isMuted
                               ? "Restore notifications for this conversation"
@@ -640,6 +811,7 @@ export function InboxPage() {
                       />
                     </div>
                   </li>
+                  </Fragment>
                 );
               })}
             </ul>

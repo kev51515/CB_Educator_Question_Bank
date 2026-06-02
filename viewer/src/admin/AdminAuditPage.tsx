@@ -734,10 +734,6 @@ function DetailsCell({
   );
 }
 
-function isUuidLike(value: string): boolean {
-  return /^[0-9a-fA-F-]{16,}$/.test(value);
-}
-
 /**
  * localStorage key for persisting the active course filter so an admin
  * auditing a single course doesn't have to re-pick it on every visit.
@@ -749,6 +745,80 @@ interface CourseOption {
   id: string;
   name: string;
   short_code: string | null;
+}
+
+/**
+ * Actor filter — restricts audit_events to a single staff profile (teacher
+ * or admin). Persisted per-admin so a focused investigation sticks across
+ * reloads. We store both the id (for the .eq("actor_id", id) query) and the
+ * display name (so chips/empty-states render without a second fetch on hydrate).
+ *
+ * Storage shape (validated on hydrate):
+ *   { actorId: string, actorName: string | null }
+ */
+const ACTOR_FILTER_STORAGE_KEY = "admin.audit.actorFilter";
+
+interface ActorOption {
+  id: string;
+  display_name: string | null;
+  email: string;
+  role: string;
+}
+
+interface ActorFilterState {
+  actorId: string | null;
+  actorName: string | null;
+}
+
+const DEFAULT_ACTOR_FILTER: ActorFilterState = {
+  actorId: null,
+  actorName: null,
+};
+
+function readPersistedActorFilter(): ActorFilterState {
+  try {
+    const raw = window.localStorage.getItem(ACTOR_FILTER_STORAGE_KEY);
+    if (!raw) return DEFAULT_ACTOR_FILTER;
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return DEFAULT_ACTOR_FILTER;
+    const obj = parsed as Record<string, unknown>;
+    const actorId =
+      typeof obj.actorId === "string" && obj.actorId.length > 0
+        ? obj.actorId
+        : null;
+    if (!actorId) return DEFAULT_ACTOR_FILTER;
+    const actorName =
+      typeof obj.actorName === "string" && obj.actorName.length > 0
+        ? obj.actorName
+        : null;
+    return { actorId, actorName };
+  } catch {
+    return DEFAULT_ACTOR_FILTER;
+  }
+}
+
+function writePersistedActorFilter(value: ActorFilterState): void {
+  try {
+    if (value.actorId) {
+      window.localStorage.setItem(
+        ACTOR_FILTER_STORAGE_KEY,
+        JSON.stringify(value),
+      );
+    } else {
+      window.localStorage.removeItem(ACTOR_FILTER_STORAGE_KEY);
+    }
+  } catch {
+    /* ignore quota / disabled storage */
+  }
+}
+
+function actorOptionLabel(opt: ActorOption): string {
+  const name = opt.display_name?.trim();
+  const tag = opt.role === "admin" ? " (admin)" : "";
+  if (name && name.length > 0) {
+    return `${name} <${opt.email}>${tag}`;
+  }
+  return `${opt.email}${tag}`;
 }
 
 function readPersistedCourseFilter(): string {
@@ -921,7 +991,15 @@ export function AdminAuditPage() {
 
   // Filters (applied on Apply / Enter; debouncing not needed at 50/page).
   const [actionFilter, setActionFilter] = useState<string>("");
-  const [actorFilter, setActorFilter] = useState<string>("");
+  // Actor filter — staff profile (teacher/admin) whose actions to scope to.
+  // Persisted per-admin; stores both id (for query) and display name (for
+  // chip + empty-state rendering without a second fetch on hydrate).
+  const [actorFilter, setActorFilter] = useState<ActorFilterState>(() =>
+    readPersistedActorFilter(),
+  );
+  // Typeahead text inside the actor combobox — hides non-matching options
+  // as the user types. Not persisted; resets on reload.
+  const [actorSearch, setActorSearch] = useState<string>("");
   // Date-range filter — preset chips + optional custom From/To pair.
   // Persisted per-admin so a focused window sticks across reloads.
   const [dateRange, setDateRange] = useState<DateRangeState>(() =>
@@ -947,6 +1025,12 @@ export function AdminAuditPage() {
 
   // Course picker options, fetched once. Admins see all courses via RLS.
   const [courseOptions, setCourseOptions] = useState<CourseOption[]>([]);
+
+  // Actor picker options, fetched once. Only staff (teachers + admins) — the
+  // ones who actually appear in audit_events as actor_id. Capped at 100; if
+  // a deployment ever exceeds that the typeahead still works because the
+  // server-side actor_id filter is the source of truth, not the dropdown.
+  const [actorOptions, setActorOptions] = useState<ActorOption[]>([]);
 
   const refresh = useCallback(async (): Promise<void> => {
     setLoading(true);
@@ -996,38 +1080,12 @@ export function AdminAuditPage() {
       if (toIso) {
         query = query.lte("created_at", toIso);
       }
-      // Actor filter is best-effort: treat uuid-looking input as actor_id,
-      // anything else (email substring) we resolve via a profiles lookup.
-      if (actorFilter) {
-        const trimmed = actorFilter.trim();
-        if (isUuidLike(trimmed)) {
-          query = query.eq("actor_id", trimmed);
-        } else {
-          // Lookup matching profile ids first; if none, short-circuit to
-          // empty results rather than running an unconstrained query.
-          const { data: profileRows, error: profileErr } = await supabase
-            .from("profiles")
-            .select("id")
-            .ilike("email", `%${trimmed}%`)
-            .limit(200);
-          if (profileErr) {
-            setError(profileErr.message);
-            setRows([]);
-            setTotal(0);
-            return;
-          }
-          const ids: string[] = [];
-          for (const row of profileRows ?? []) {
-            const r = row as Record<string, unknown>;
-            if (typeof r.id === "string") ids.push(r.id);
-          }
-          if (ids.length === 0) {
-            setRows([]);
-            setTotal(0);
-            return;
-          }
-          query = query.in("actor_id", ids);
-        }
+      // Actor filter — a single staff profile id. Combobox-driven, so we
+      // can rely on the value being either a clean uuid (selected from the
+      // dropdown) or null (no filter). No email-substring fallback: the
+      // typeahead lives in the combobox itself.
+      if (actorFilter.actorId) {
+        query = query.eq("actor_id", actorFilter.actorId);
       }
 
       const { data, error: queryError, count } = await query;
@@ -1084,7 +1142,7 @@ export function AdminAuditPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, actionFilter, actorFilter, resolvedDateRange, courseFilter]);
+  }, [page, actionFilter, actorFilter.actorId, resolvedDateRange, courseFilter]);
 
   // Load the distinct action set once. Cheap because most installs have
   // <10 distinct action codes.
@@ -1123,6 +1181,50 @@ export function AdminAuditPage() {
   useEffect(() => {
     writePersistedDateRange(dateRange);
   }, [dateRange]);
+
+  // Persist the active actor filter so a focused investigation against a
+  // single teacher/admin sticks across reloads. We store both id + display
+  // name to avoid a second profiles fetch on hydrate.
+  useEffect(() => {
+    writePersistedActorFilter(actorFilter);
+  }, [actorFilter]);
+
+  // Load the actor option list once. Only staff (teachers + admins) — the
+  // only roles that emit audit_events as actor_id. Capped at 100; if a
+  // deployment exceeds that we'd switch the combobox to a server-side
+  // typeahead, but a 2-teacher / few-admin shop is the canonical case here.
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      const { data, error: actorErr } = await supabase
+        .from("profiles")
+        .select("id, display_name, email, role")
+        .in("role", ["teacher", "admin"])
+        .order("display_name", { ascending: true, nullsFirst: false })
+        .limit(100);
+      if (cancelled) return;
+      if (actorErr) {
+        // Non-fatal: leave the dropdown empty. Audit table still works.
+        return;
+      }
+      const opts: ActorOption[] = [];
+      for (const row of data ?? []) {
+        const r = row as Record<string, unknown>;
+        const id = typeof r.id === "string" ? r.id : null;
+        const email = typeof r.email === "string" ? r.email : null;
+        const role = typeof r.role === "string" ? r.role : null;
+        const displayName =
+          typeof r.display_name === "string" ? r.display_name : null;
+        if (id && email && role) {
+          opts.push({ id, display_name: displayName, email, role });
+        }
+      }
+      setActorOptions(opts);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Load the course list once. Admins see all courses via RLS. We cap at 200
   // courses — this is an admin debugging tool, not a directory; if a deployment
@@ -1164,6 +1266,45 @@ export function AdminAuditPage() {
         : null,
     [courseFilter, courseOptions],
   );
+
+  // Filter actor options by the combobox search box. Matches name OR email,
+  // case-insensitive. When the active actor is no longer in the matched set
+  // (e.g. user typed in the search), still keep them as the leading option so
+  // the selection remains visible.
+  const filteredActorOptions = useMemo(() => {
+    const q = actorSearch.trim().toLowerCase();
+    if (!q) return actorOptions;
+    return actorOptions.filter((opt) => {
+      const name = (opt.display_name ?? "").toLowerCase();
+      const email = opt.email.toLowerCase();
+      return name.includes(q) || email.includes(q);
+    });
+  }, [actorOptions, actorSearch]);
+
+  // Resolve the active actor's display name from the loaded options once
+  // they arrive — covers the case where the persisted name is stale (e.g.
+  // the teacher updated their display_name since last visit).
+  const activeActor = useMemo(() => {
+    if (!actorFilter.actorId) return null;
+    const fromOptions = actorOptions.find(
+      (o) => o.id === actorFilter.actorId,
+    );
+    if (fromOptions) {
+      return {
+        id: fromOptions.id,
+        name:
+          fromOptions.display_name?.trim() && fromOptions.display_name.length
+            ? fromOptions.display_name
+            : fromOptions.email,
+      };
+    }
+    // Fallback to the persisted name when options haven't loaded yet, or the
+    // actor isn't in the top-100 set (e.g. former staff).
+    return {
+      id: actorFilter.actorId,
+      name: actorFilter.actorName ?? actorFilter.actorId,
+    };
+  }, [actorFilter, actorOptions]);
 
   const pageCount = useMemo(
     () => Math.max(1, Math.ceil(total / PAGE_SIZE)),
@@ -1272,14 +1413,82 @@ export function AdminAuditPage() {
           </div>
         </label>
         <label className="text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1">
-          Actor (email or uuid)
-          <input
-            type="text"
-            value={actorFilter}
-            onChange={(e) => setActorFilter(e.target.value)}
-            placeholder="alice@example.com"
-            className="rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
-          />
+          Actor
+          <div className="flex flex-col gap-1">
+            {/*
+              Typeahead box — hides non-matching options as the user types.
+              Native <select> alone gives a basic press-letter-to-jump,
+              but a real type-to-filter requires this paired input. We keep
+              the visual treatment compact so it doesn't overwhelm the row.
+            */}
+            <input
+              type="text"
+              value={actorSearch}
+              onChange={(e) => setActorSearch(e.target.value)}
+              placeholder="Filter actors…"
+              aria-label="Filter actor options"
+              className="min-h-[32px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1 text-xs text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            />
+            <div className="flex items-center gap-1">
+              <select
+                value={actorFilter.actorId ?? ""}
+                onChange={(e) => {
+                  const id = e.target.value;
+                  if (!id) {
+                    setActorFilter(DEFAULT_ACTOR_FILTER);
+                  } else {
+                    const opt = actorOptions.find((o) => o.id === id);
+                    const name =
+                      opt?.display_name?.trim() && opt.display_name.length
+                        ? opt.display_name
+                        : opt?.email ?? null;
+                    setActorFilter({ actorId: id, actorName: name });
+                  }
+                  setPage(0);
+                }}
+                aria-label="Filter audit events by actor"
+                title={
+                  activeActor
+                    ? `Scoped to ${activeActor.name}`
+                    : "Filter by actor"
+                }
+                className="min-h-[40px] flex-1 rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+                <option value="">All actors</option>
+                {/*
+                  Keep the active selection visible even when the typeahead
+                  has filtered it out — admins shouldn't lose their scope
+                  just because they're searching for someone else.
+                */}
+                {activeActor &&
+                  !filteredActorOptions.some(
+                    (o) => o.id === activeActor.id,
+                  ) && (
+                    <option value={activeActor.id}>{activeActor.name}</option>
+                  )}
+                {filteredActorOptions.map((opt) => (
+                  <option key={opt.id} value={opt.id}>
+                    {actorOptionLabel(opt)}
+                  </option>
+                ))}
+              </select>
+              {actorFilter.actorId && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setActorFilter(DEFAULT_ACTOR_FILTER);
+                    setActorSearch("");
+                    setPage(0);
+                  }}
+                  title="Clear actor filter"
+                  aria-label="Clear actor filter"
+                  className="min-h-[40px] min-w-[40px] rounded-md border border-slate-300 dark:border-slate-700 px-2 py-1.5 text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                >
+                  ×
+                </button>
+              )}
+            </div>
+          </div>
         </label>
         <div className="sm:col-span-2 text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1.5">
           <span>Date range</span>
@@ -1386,7 +1595,8 @@ export function AdminAuditPage() {
             type="button"
             onClick={() => {
               setActionFilter("");
-              setActorFilter("");
+              setActorFilter(DEFAULT_ACTOR_FILTER);
+              setActorSearch("");
               setDateRange(DEFAULT_DATE_RANGE);
               setCourseFilter("");
               setPage(0);
@@ -1399,6 +1609,7 @@ export function AdminAuditPage() {
         </div>
         {(activeActionMeta?.description ||
           activeCourse ||
+          activeActor ||
           dateRange.preset !== "all") && (
           <div className="sm:col-span-2 lg:col-span-6 -mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
             {dateRange.preset !== "all" && (
@@ -1422,6 +1633,14 @@ export function AdminAuditPage() {
                     ({activeCourse.short_code})
                   </span>
                 ) : null}
+              </span>
+            )}
+            {activeActor && (
+              <span
+                className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900"
+                title={`Filtering audit events by ${activeActor.name}`}
+              >
+                Actor: {activeActor.name}
               </span>
             )}
             {activeActionMeta?.description && (
@@ -1474,9 +1693,11 @@ export function AdminAuditPage() {
                     icon="inbox"
                     title="No audit events yet"
                     body={
-                      dateRange.preset !== "all"
-                        ? "No audit events in this date range. Try widening the range, picking a different preset, or clearing filters."
-                        : "No events match the current filters. Try widening the date range or clearing filters."
+                      activeActor
+                        ? `No audit events by ${activeActor.name} in this scope. Try widening the date range, switching actors, or clearing filters.`
+                        : dateRange.preset !== "all"
+                          ? "No audit events in this date range. Try widening the range, picking a different preset, or clearing filters."
+                          : "No events match the current filters. Try widening the date range or clearing filters."
                     }
                   />
                 </td>
