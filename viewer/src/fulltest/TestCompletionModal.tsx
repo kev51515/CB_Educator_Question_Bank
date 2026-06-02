@@ -26,6 +26,7 @@ interface CompletionRow {
   total: number | null;
   submitted_at: string | null;
   results_released_at: string | null;
+  has_in_progress: boolean;
 }
 
 interface TestCompletionModalProps {
@@ -57,6 +58,7 @@ export function TestCompletionModal({ slug, title, onClose }: TestCompletionModa
   const [rowBusy, setRowBusy] = useState<string | null>(null);
   const [reviewing, setReviewing] = useState<{ row: CompletionRow; result: TestResult } | null>(null);
   const [reviewLoadingId, setReviewLoadingId] = useState<string | null>(null);
+  const [resetBusyId, setResetBusyId] = useState<string | null>(null);
   useEscapeKey(() => {
     if (reviewing) setReviewing(null);
     else if (!bulkBusy) onClose();
@@ -136,6 +138,26 @@ export function TestCompletionModal({ slug, title, onClose }: TestCompletionModa
       toast.error("Couldn't update", getErrorMessage(err, "Try again."));
     } finally {
       setRowBusy(null);
+    }
+  };
+
+  const onReset = async (row: CompletionRow): Promise<void> => {
+    setResetBusyId(row.student_id);
+    try {
+      const { error: rpcError } = await supabase.rpc("reset_test_attempt", {
+        p_student_id: row.student_id,
+        p_slug: slug,
+      });
+      if (rpcError) {
+        toast.error("Couldn't reset", rpcError.message);
+        return;
+      }
+      toast.success("Attempt reset", `${row.student_name ?? "Student"} can start fresh.`);
+      await refresh();
+    } catch (err: unknown) {
+      toast.error("Couldn't reset", getErrorMessage(err, "Try again."));
+    } finally {
+      setResetBusyId(null);
     }
   };
 
@@ -232,7 +254,7 @@ export function TestCompletionModal({ slug, title, onClose }: TestCompletionModa
                       </p>
                     ) : (
                       <p className="text-xs text-slate-400 dark:text-slate-500">
-                        Not started
+                        {row.has_in_progress ? "In progress" : "Not started"}
                       </p>
                     )}
                   </div>
@@ -262,6 +284,21 @@ export function TestCompletionModal({ slug, title, onClose }: TestCompletionModa
                         className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-60"
                       >
                         {rowBusy === row.run_id ? "…" : released ? "Hide" : "Release"}
+                      </button>
+                    </>
+                  ) : row.has_in_progress ? (
+                    <>
+                      <span className="inline-flex items-center rounded-full bg-blue-50 text-blue-700 ring-1 ring-blue-200 px-2 py-0.5 text-[11px] font-medium dark:bg-blue-950/30 dark:text-blue-300 dark:ring-blue-900">
+                        In progress
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => void onReset(row)}
+                        disabled={resetBusyId === row.student_id}
+                        title="Abandon their stuck attempt so they can start fresh"
+                        className="rounded-md min-h-[32px] px-2.5 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-60"
+                      >
+                        {resetBusyId === row.student_id ? "…" : "Reset"}
                       </button>
                     </>
                   ) : (

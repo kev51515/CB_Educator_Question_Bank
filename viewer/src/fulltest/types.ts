@@ -24,6 +24,8 @@ export interface StartTestResult {
   status: "in_progress" | "submitted" | "abandoned";
   current_module: number;
   started_at: string;
+  /** True when the teacher has released results for this (submitted) run. */
+  results_released?: boolean;
   /** answers already recorded for this run (drafts + graded); drives the resume label */
   answered?: number;
   test: {

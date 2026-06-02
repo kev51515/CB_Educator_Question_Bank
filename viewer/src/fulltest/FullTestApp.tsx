@@ -248,7 +248,9 @@ export function FullTestApp() {
   // them). Staff get the full ResultView; we fetch lazily once we know the role
   // (profile loads async) so a teacher previewing/reviewing sees the breakdown.
   useEffect(() => {
-    if (phase !== "result" || !isStaff || result || !runId) return;
+    // Staff always; students once the teacher has released this run's results.
+    const canSee = isStaff || (start?.results_released ?? false);
+    if (phase !== "result" || !canSee || result || !runId) return;
     let alive = true;
     void (async () => {
       try {
@@ -266,7 +268,7 @@ export function FullTestApp() {
     return () => {
       alive = false;
     };
-  }, [phase, isStaff, result, runId]);
+  }, [phase, isStaff, start, result, runId]);
 
   // --- reflect state in the URL (deep-linkable, clearer address bar) --------
   // We mirror the runner's phase/section/question into the path with replace()
@@ -342,17 +344,18 @@ export function FullTestApp() {
   }
 
   if (phase === "result") {
-    // Wait until we know the role (and, for staff, the fetched result) before
-    // deciding — avoids flashing the student screen to a teacher.
-    if (profileLoading || (isStaff && !result)) {
+    // Staff always see results; a student sees them once the teacher releases.
+    const canSeeResult = isStaff || (start?.results_released ?? false);
+    // Wait until we know the role (and the fetched result) before deciding —
+    // avoids flashing the student screen to someone who can see results.
+    if (profileLoading || (canSeeResult && !result)) {
       return <CenterCard><Spinner label="Processing your test…" /></CenterCard>;
     }
-    // Staff (teacher previewing / reviewing) see the full breakdown.
-    if (isStaff && result) {
+    if (canSeeResult && result) {
       return <ResultView result={result} testTitle={start?.test.title ?? "Test"} />;
     }
-    // Student: neutral confirmation only — no score, no questions. The teacher
-    // releases results separately (server also locks get_test_result for them).
+    // Student, not yet released: neutral confirmation only — no score, no
+    // questions (the server also locks get_test_result until release).
     return (
       <CenterCard wide>
         <div
