@@ -87,7 +87,7 @@ Simple selects, and inserts that fit cleanly within RLS, go directly via `supaba
 
 ### 3e. Migration ledger
 
-Currently `0001` → `0060`. Numbers are strictly sequential; gaps are forbidden.
+Currently `0001` → `0064`. Numbers are strictly sequential; gaps are forbidden.
 
 **Foundation (0001–0010)** — schema, RLS, helpers, cross-staff parity.
 - `0001_init` — identity, classes, memberships, RLS, foundational helpers (`is_admin`, `is_teacher_of_class`, `is_student_in_class`), `handle_new_auth_user` trigger.
@@ -165,6 +165,12 @@ Currently `0001` → `0060`. Numbers are strictly sequential; gaps are forbidden
 - `0058_scheduled_announcement_fanout` — closes the M2 publish-time notification gap. Adds `course_announcements.notifications_fanout_at` + `fanout_due_announcements()` plpgsql + `pg_cron` schedule (`* * * * *`). The existing immediate-publish trigger from 0029 gets a `WHEN publish_at IS NULL` guard so scheduled rows don't double-notify at INSERT time. `FOR UPDATE SKIP LOCKED` + partial index keeps the worker cheap.
 - `0059_grade_complete_notification` — closes the M6 student-pull loop: `trg_notify_on_grade` AFTER UPDATE on `assignment_attempts` fires a `kind='assignment_grade'` notification when graded_at flips null → non-null, feedback_text flips null → non-null, OR score_override changes. Anti-spam: the null-guards mean autosave thrash doesn't fire repeatedly; only a meaningful state transition counts.
 - `0060_test_attempts_fk_profiles` — M33 follow-up: `test_attempts.user_id` FK swapped from `auth.users(id)` to `public.profiles(id)` to match project convention. Uses the live-table-safe DROP + ADD NOT VALID + VALIDATE pattern so the lock window is minimal. The 0001/0032 `handle_new_auth_user` trigger guarantees every auth user has a profile row, so VALIDATE succeeds on existing rows. ON DELETE CASCADE preserved; the 0050 B2 audit trigger on profiles still fires before any cascade.
+
+**Wave-21C autonomous run (0062–0064)** — teacher private notes + portfolio template import.
+- `0061_start_test_answered_count` — content / scoring delta (not from this autonomous run).
+- `0062_teacher_student_notes` — `teacher_student_notes(id, teacher_id, student_id, course_id, body, created_at, updated_at)` with unique `(teacher_id, student_id, course_id)`. RLS scoped to author (admins audit-only via `is_admin`). `set_updated_at` trigger reuse + new `audit_teacher_student_note_change` AFTER UPDATE OR DELETE trigger (logs op + ids; body intentionally excluded for privacy even from admin readers of `audit_events`).
+- `0063_portfolio_import` — `import_portfolio_items(p_source_template_id uuid, p_target_template_id uuid, p_item_ids uuid[])` RPC. Recursive CTE deep-clones items + descendants. Two-pass clone: pass 1 inserts each row with `parent_item_id = NULL` (or target_parent in 0064); pass 2 rewrites parent_id via the in-flight `(old_id → new_id)` map. Auth: caller must teach both source AND target courses. Stable error codes: `not_authenticated`, `not_authorized`, `same_template`, `source_not_found`, `target_not_found`. Audit logs op + counts + ids but NOT item bodies.
+- `0064_portfolio_import_anchor` — extends 0063 with optional 4th arg `p_target_parent_id uuid DEFAULT NULL`. When non-NULL, validates anchor belongs to target template (`parent_not_in_target_template`); cloned roots get `parent_item_id = p_target_parent_id`. Position math uses `max(position) WHERE parent_item_id IS NOT DISTINCT FROM anchor`. Audit payload conditionally includes `target_parent_id`. Old 3-arg overload dropped to avoid PostgREST signature ambiguity; backward compat preserved via the new arg's DEFAULT NULL.
 
 ---
 

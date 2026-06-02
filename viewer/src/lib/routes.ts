@@ -53,6 +53,7 @@ export const ROUTES = {
 
   // Course detail (nested under /courses/:courseId)
   COURSE: "/courses/:courseId",
+  COURSE_OVERVIEW: "/courses/:courseId/overview",
   COURSE_MODULES: "/courses/:courseId/modules",
   COURSE_MODULE: "/courses/:courseId/modules/:moduleId",
   COURSE_ASSIGNMENTS: "/courses/:courseId/assignments",
@@ -142,6 +143,10 @@ export function coursePath(courseId: string): string {
 
 export function courseModulesPath(courseId: string): string {
   return buildPath(ROUTES.COURSE_MODULES, { courseId });
+}
+
+export function courseOverviewPath(courseId: string): string {
+  return buildPath(ROUTES.COURSE_OVERVIEW, { courseId });
 }
 
 export function courseModulePath(courseId: string, moduleId: string): string {

@@ -820,7 +820,7 @@ of earlier work. No new migrations beyond 0060.
 - `RecentFeedbackWidget` + `useRecentFeedback` hook on student `AreaSelector` (placed between WeakSkills CTA and progress section): shows up to 5 most-recent gradings with effective_score pill + truncated feedback preview + "Graded {timeAgo} by {grader}". Renders nothing when empty (silence > nag). Batched grader-name lookup
 - `/my-feedback` page + Widget "View all" link landing as Round 15 continues
 
-### Wave 21B grand total
+### Wave 21B grand total (Rounds 4–15)
 
 - **39+ lanes shipped** across 15 rounds; 1 lane closed as correctly N/A
 - **6 migrations** (0050, 0056, 0057, 0058, 0059, 0060)
@@ -828,3 +828,83 @@ of earlier work. No new migrations beyond 0060.
 - **2 major refactors** (AssignmentsPage 929→443, CoursePortfolio 1840→796)
 - New surfaces: `StudentProfilePage`, `MockTestReviewPage`, `RecentFeedbackWidget`, `NeedsAttentionPanel` (realtime + per-course filter), `BulkGradeModal`, etc.
 - `npx tsc -b` clean after every round
+
+---
+
+## Wave 21C — Autonomous 8h run (Rounds 16–26)
+
+User went AFK with "keep going autonomously". Shipped 11 more rounds with self-critique after each, careful commits between rounds, and focused on UI/UX/workflow/aesthetics/wiring quality per user direction.
+
+### Round 16 — Feedback templates
+- `feedbackTemplates.ts` helper (localStorage, cap 25 per teacher, lastUsedAt sort)
+- `BulkGradeModal` template chip row + save form + load/delete via `ConfirmDialog` (removed 2 `window.confirm` calls — forbidden pattern)
+- Same primitive available to extend `TeacherAttemptDetailView` (parked)
+
+### Round 17 — Teacher private notes
+- Migration **0062** `teacher_student_notes` table (RLS scoped to author; admins can audit but not edit; audit trigger logs op + ids but NOT body for privacy)
+- `useStudentNotes` hook with autosave + visually-empty-as-delete-intent
+- `PrivateNotesSection` on `StudentProfilePage` between header and activity sections
+
+### Round 18 — Library-vs-assign-time workflow audit + 4 fixes
+- 2 read-only audits surfaced screenshot complaint + 4 other violations
+- **Practice Test chip on Modules** refactored from authoring form → library picker (clone-on-add Path Y, mirrors Question Set)
+- Question Set chip `time_limit` removed (computed from `questionCount * 0.75` rounded to 5min, ≥10min)
+- `AddSetToCourseModal` `time_limit` + `max_attempts` removed (same compute; max_attempts=null)
+- QuestionBankPage Practice Tests catalog: "Duplicate to course…" kebab (Option C reuse flow)
+
+### Round 19 — Workstream B: Portfolio template import
+- Migration **0063** `import_portfolio_items(source, target, item_ids[])` RPC. Recursive CTE deep-clones items + descendants. Two-pass clone with old→new id map. Stable error codes. Audit logs op + counts + ids but NOT bodies.
+- `PortfolioImportModal` source-course picker + selectable item tree with auto-descendant + Select all/Clear
+- Smoke wave63 7 steps: happy path 3-item clone with child rewrite assertion, outsider→not_authorized, same_template guard, empty-array→0, audit privacy check
+
+### Round 20 — Audit log UX + Cohort summary
+- AdminAuditPage action filter: free-text → grouped `<select>` with friendly labels. Registry of known DB actions. Live unknown actions auto-append to "Other".
+- New `CohortSummaryWidget` on Dashboard between NeedsAttentionPanel and courses grid: per-cohort scoreboard with score color bands. Cap 12 cohorts. "Needs N" pill scrolls to triage. Collapse persists.
+
+### Round 21 — Quality sweep (10 fixes across 9 surfaces)
+- Read-only audit catalogued 30+ findings; top-10 by user-impact applied inline:
+  - StudentProfilePage `toast.error` in render → `useEffect` with ref guard (was toast spam)
+  - QuestionBankPage `window.location.assign` → `navigate` (no more SPA reload)
+  - useCohortSummary 2-phase fetch with explicit `.in('course_id', ids)` (was 500-row RLS scans)
+  - PortfolioImportModal backdrop `onClick` → `onMouseDown` (was accidental close on tree drag-release)
+  - MyFeedbackPage toast title/body split
+  - BulkGradeModal `plainTextLength()` for 5000-char warning (was firing on short essays due to TipTap HTML inflation)
+  - AdminAuditPage uses shared `<EmptyState>`
+  - QuestionBankPage `useOptimistic` 3rd-tuple setter (dropped eslint-disabled no-op effect)
+  - NeedsAttentionPanel past-due rows use `initialOf(courseName)` not `⏰` emoji
+  - ModulesPage hand-rolled animate-pulse → `<SkeletonRows>` in 2 places
+
+### Round 22 — Portfolio import anchor + announcement publish-now
+- Migration **0064** `import_portfolio_items` extended with optional `p_target_parent_id`. When non-NULL, validates parent belongs to target template; cloned roots get `parent_item_id` set to anchor. Backward-compat via DEFAULT NULL.
+- `PortfolioImportModal` "Insert at…" picker (root or indented target items)
+- `CourseAnnouncements` "Publish now" kebab on scheduled rows. UPDATE `{publish_at: now, notifications_fanout_at: null}` flips visibility + lets 0058 cron fan out. Optimistic `publishingIds` Set with rollback.
+
+### Round 23 — Audit details smart formatter
+- 10 per-action formatters on AdminAuditPage (role.change, invite.mint, course.delete, assignment.delete, material.delete, announcement.delete, profile.delete, assignment_grade, teacher_note_change, portfolio_import)
+- Defensive accessors; null-fallback to raw `<pre>JSON` for unknown shapes
+- `<UuidPill>` truncates to `{first8}…{last4}` with full UUID on hover
+- `<RelativeTime>` uses `Intl.RelativeTimeFormat`
+- Per-row "View raw JSON" toggle preserves forensic access
+
+### Round 24 — Audit course filter + anchor smoke
+- AdminAuditPage gained a course filter (2nd slot). Single chained `.or()` with 4 predicates: `and(target_kind.eq.course, target_id.eq.X)` (avoids uuid-collision false positives), `details->>course_id`, `details->>target_course_id`, `details->>source_course_id`. Persists to `localStorage.admin.audit.courseFilter`. Helper-text pill + clear button.
+- Smoke wave63 +3 scenarios for 0064: anchored happy path, parent_not_in_target_template, audit row carries target_parent_id only when anchored. Cleanup ordering deletes children before anchor. Audit-row discrimination uses `target_parent_id` presence, not created_at.
+
+### Round 25 — Notification preferences + bulk roster
+- `/account/notification-preferences` page with 5 kind toggles (announcement/message/feedback/assignment_grade/reminder). localStorage opt-outs per-user. `useNotifications` filters visible rows + recomputes unread count. Cross-tab `storage` event listener keyed on prefs key.
+- `ClassRoster` multi-select + bulk Remove. Master checkbox `indeterminate` via ref + `aria-checked="mixed"`. Belt-and-suspenders DELETE `.in("id", ids).eq("course_id", cls.id)`. Archive skipped — no column.
+
+### Wave 21C grand total
+
+- **20+ lanes shipped across 11 rounds (Rounds 16–26)**
+- **3 new migrations** (0062, 0063, 0064) — all backward-compatible
+- **Smoke** extended with wave63 (10 scenarios for portfolio import incl. anchor variants) + 2 more in wave-grading
+- **`npx tsc -b` clean after every commit; clean working tree at every push**
+
+### Cumulative session total (Waves 21B + 21C, Rounds 4–26)
+
+- **60+ lanes shipped + 2 N/A**
+- **9 migrations** (0050, 0056, 0057, 0058, 0059, 0060, 0062, 0063, 0064)
+- **7 smoke suites** (~5500 lines) with 12 new scenarios
+- **2 major refactors** + **2 ongoing libraries** (feedback templates + portfolio import)
+- 23 fresh teacher/student/admin surfaces and primitives

@@ -42,7 +42,7 @@ import {
 import { ClassFormModal, type EditableClass } from "./ClassFormModal";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { DuplicateCourseModal } from "./DuplicateCourseModal";
-import { ClassOverview } from "./ClassOverview";
+import { CourseOverview } from "./CourseOverview";
 import { ClassRoster } from "./ClassRoster";
 import { ClassAssignmentsTab } from "./ClassAssignmentsTab";
 import { AssignmentDetailPage } from "./AssignmentDetailPage";
@@ -411,7 +411,7 @@ export function ClassLayout() {
                 strip highlights correctly and deep links keep working. */}
             <Route index element={<Navigate to="modules" replace />} />
             <Route path="modules" element={<ModulesPage />} />
-            <Route path="overview" element={<ClassOverview />} />
+            <Route path="overview" element={<CourseOverview />} />
             <Route path="roster" element={<ClassRoster />} />
             <Route path="assignments" element={<ClassAssignmentsTab />} />
             <Route

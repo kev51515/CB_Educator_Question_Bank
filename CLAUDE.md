@@ -210,6 +210,19 @@ M33 follow-up: `test_attempts.user_id` FK swapped `auth.users` →
 full-test intro reads "Resume" — not "Begin test" — when a student returns
 mid-Module-1; the client gates the label on `current_module > 1 || answered > 0`.**
 
+**Wave 21C (autonomous run, 2026-06-02) added 0062–0064 — not yet verified
+against Remote, but local smoke node-check is clean:**
+0062 = teacher private notes (`teacher_student_notes` table; RLS author-only;
+admin audit-only; body intentionally excluded from `audit_events.details`
+even from admin readers, for privacy);
+0063 = `import_portfolio_items(source, target, item_ids[])` RPC for portfolio
+template reuse (recursive CTE deep-clone; auth requires teacher of both
+courses; audit logs op + counts + ids but NOT item bodies);
+0064 = optional 4th arg `p_target_parent_id` on `import_portfolio_items` so
+imports can land as a subtree of an existing item rather than always at root
+(backward-compat via `DEFAULT NULL`; old 3-arg overload dropped to avoid
+PostgREST signature ambiguity).
+
 ### Audit trail (post-Wave-20)
 
 Migration 0050 added an observational `BEFORE DELETE` trigger on `profiles`
