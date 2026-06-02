@@ -33,6 +33,38 @@ import { useLmsCommands } from "../lib/lmsCommands";
 const RECENT_COMMANDS_KEY = "staff.cmdpalette.recent";
 const RECENT_COMMANDS_CAP = 8;
 
+/**
+ * Per-user localStorage key prefix for the Linear-style desktop sidebar
+ * collapse state. We key by user id so two teachers sharing a browser
+ * profile (rare but real — kiosk machines in some schools) don't clobber
+ * each other's layout preference. Falls back to a shared key when no user
+ * id is available (pre-auth flicker window).
+ */
+const SIDEBAR_COLLAPSED_KEY_PREFIX = "staff.shell.sidebarCollapsed:";
+
+function readSidebarCollapsed(userId: string | null): boolean {
+  try {
+    const key = userId
+      ? `${SIDEBAR_COLLAPSED_KEY_PREFIX}${userId}`
+      : SIDEBAR_COLLAPSED_KEY_PREFIX;
+    const raw = window.localStorage.getItem(key);
+    return raw === "true";
+  } catch {
+    return false;
+  }
+}
+
+function writeSidebarCollapsed(userId: string | null, value: boolean): void {
+  try {
+    const key = userId
+      ? `${SIDEBAR_COLLAPSED_KEY_PREFIX}${userId}`
+      : SIDEBAR_COLLAPSED_KEY_PREFIX;
+    window.localStorage.setItem(key, value ? "true" : "false");
+  } catch {
+    // ignore (private mode, quota)
+  }
+}
+
 function readRecentCommandIds(): string[] {
   try {
     const raw = window.localStorage.getItem(RECENT_COMMANDS_KEY);
@@ -96,6 +128,7 @@ function railLinkClass({ isActive }: { isActive: boolean }): string {
   ].join(" ");
 }
 
+
 /**
  * Heuristic: a path "matches" /account when it starts with /account/. We
  * rely on this for the Account rail item's active state instead of NavLink's
@@ -119,6 +152,31 @@ export function StaffShell() {
 
   const [helpOpen, setHelpOpen] = useState(false);
   const closeHelp = useCallback(() => setHelpOpen(false), []);
+
+  // Linear-style desktop sidebar collapse (⌘B / Ctrl+B). State is per-user
+  // and persisted to localStorage. Only visually applies at lg+ — narrower
+  // breakpoints keep the existing responsive rail behavior (w-20 → md:w-44),
+  // and the shortcut is gated on those screens to avoid invisible toggles
+  // (state still updates, will reflect when user resizes back to wide).
+  const userId = profile?.id ?? null;
+  const [collapsed, setCollapsed] = useState<boolean>(() =>
+    readSidebarCollapsed(userId),
+  );
+  // Re-hydrate from storage once we learn the actual user id (profile loads
+  // async; first paint uses the pre-auth fallback key).
+  useEffect(() => {
+    if (userId) {
+      setCollapsed(readSidebarCollapsed(userId));
+    }
+  }, [userId]);
+
+  const toggleCollapsed = useCallback(() => {
+    setCollapsed((prev) => {
+      const next = !prev;
+      writeSidebarCollapsed(userId, next);
+      return next;
+    });
+  }, [userId]);
 
   // Build the LMS command list (nav + per-course tabs + staff quick-create).
   // The CommandPalette also merges these internally as a fallback, but we
@@ -169,6 +227,17 @@ export function StaffShell() {
         setPaletteOpen((prev) => !prev);
         return;
       }
+      // ⌘B / Ctrl+B — Linear-style sidebar toggle. Suppress when focus is in
+      // an editable surface so we don't fight find-in-page, bookmarks bar
+      // toggle in Firefox/Edge (which fires on the same combo), or in-app
+      // bold-text affordances inside the markdown editor. preventDefault()
+      // so the browser-level bookmarks bar toggle stays quiet.
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "b") {
+        if (isEditableTarget(e.target)) return;
+        e.preventDefault();
+        toggleCollapsed();
+        return;
+      }
       if (e.key === "?" && !e.metaKey && !e.ctrlKey && !e.altKey) {
         if (isEditableTarget(e.target)) return;
         e.preventDefault();
@@ -179,7 +248,7 @@ export function StaffShell() {
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [toggleCollapsed]);
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
@@ -188,16 +257,31 @@ export function StaffShell() {
       <div className="flex">
         {/* Left rail */}
         <nav
+          id="staff-shell-sidebar"
           aria-label="Primary"
-          className="sticky top-0 self-start h-screen flex-shrink-0 w-20 md:w-44 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-2 md:px-3 py-4 flex flex-col gap-1"
+          className={[
+            "sticky top-0 self-start h-screen flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-2 md:px-3 py-4 flex flex-col gap-1 motion-safe:transition-[width] motion-safe:duration-150 motion-safe:ease-out",
+            // Mobile + tablet: existing responsive behavior preserved.
+            // Desktop (lg+): toggleable between ~16 (64px) and 44 (176px).
+            "w-20 md:w-44",
+            collapsed ? "lg:w-16 lg:px-2" : "lg:w-44",
+          ].join(" ")}
         >
-          <div className="px-2 pb-3 mb-2 border-b border-slate-100 dark:border-slate-800 hidden md:block">
-            <p className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate">
+          <div
+            className={[
+              "px-2 pb-3 mb-2 border-b border-slate-100 dark:border-slate-800 hidden md:block",
+              collapsed ? "lg:hidden" : "",
+            ].join(" ")}
+          >
+            <p
+              aria-hidden={collapsed}
+              className="text-sm font-semibold text-slate-900 dark:text-slate-100 truncate"
+            >
               Educator
             </p>
           </div>
 
-          <NavLink to={ROUTES.DASHBOARD} className={railLinkClass}>
+          <NavLink to={ROUTES.DASHBOARD} className={railLinkClass} title="Dashboard">
             <RailIcon>
               <svg
                 width={20}
@@ -215,10 +299,12 @@ export function StaffShell() {
                 <rect x={3} y={16} width={7} height={5} rx={1} />
               </svg>
             </RailIcon>
-            <span>Dashboard</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>
+              Dashboard
+            </span>
           </NavLink>
 
-          <NavLink to={ROUTES.COURSES} className={railLinkClass}>
+          <NavLink to={ROUTES.COURSES} className={railLinkClass} title="Courses">
             <RailIcon>
               <svg
                 width={20}
@@ -235,10 +321,14 @@ export function StaffShell() {
                 <path d="M8 7h8M8 11h8M8 15h5" />
               </svg>
             </RailIcon>
-            <span>Courses</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>Courses</span>
           </NavLink>
 
-          <NavLink to={ROUTES.QUESTION_BANK} className={railLinkClass}>
+          <NavLink
+            to={ROUTES.QUESTION_BANK}
+            className={railLinkClass}
+            title="Question Bank"
+          >
             <RailIcon>
               <svg
                 width={20}
@@ -254,10 +344,16 @@ export function StaffShell() {
                 <path d="M22 4a2 2 0 0 0-2-2h-6.5a2 2 0 0 0-2 2v16a2 2 0 0 1 2-2H22z" />
               </svg>
             </RailIcon>
-            <span>Question Bank</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>
+              Question Bank
+            </span>
           </NavLink>
 
-          <NavLink to={ROUTES.QBANK_LOG} className={railLinkClass}>
+          <NavLink
+            to={ROUTES.QBANK_LOG}
+            className={railLinkClass}
+            title="Submissions"
+          >
             <RailIcon>
               {/* List-with-checkmark — matches the "audit log of attempts"
                   semantics. Kept stroke-based to share the rail's visual
@@ -278,10 +374,16 @@ export function StaffShell() {
                 <path d="M3 18l1.5 1.5L7 17" />
               </svg>
             </RailIcon>
-            <span>Submissions</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>
+              Submissions
+            </span>
           </NavLink>
 
-          <NavLink to={ROUTES.TESTS_ADMIN} className={railLinkClass}>
+          <NavLink
+            to={ROUTES.TESTS_ADMIN}
+            className={railLinkClass}
+            title="Tests"
+          >
             <RailIcon>
               {/* Document-with-check — full-length test review/QA. */}
               <svg
@@ -299,10 +401,14 @@ export function StaffShell() {
                 <path d="m9 15 2 2 4-4" />
               </svg>
             </RailIcon>
-            <span>Tests</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>Tests</span>
           </NavLink>
 
-          <NavLink to={ROUTES.CALENDAR} className={railLinkClass}>
+          <NavLink
+            to={ROUTES.CALENDAR}
+            className={railLinkClass}
+            title="Calendar"
+          >
             <RailIcon>
               <svg
                 width={20}
@@ -318,10 +424,10 @@ export function StaffShell() {
                 <path d="M16 2v4M8 2v4M3 10h18" />
               </svg>
             </RailIcon>
-            <span>Calendar</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>Calendar</span>
           </NavLink>
 
-          <NavLink to={ROUTES.INBOX} className={railLinkClass}>
+          <NavLink to={ROUTES.INBOX} className={railLinkClass} title="Inbox">
             <RailIcon>
               <svg
                 width={20}
@@ -337,11 +443,12 @@ export function StaffShell() {
                 <path d="M8 9h8M8 13h5" />
               </svg>
             </RailIcon>
-            <span>Inbox</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>Inbox</span>
           </NavLink>
 
           <NavLink
             to={ROUTES.ACCOUNT}
+            title="Account"
             className={() =>
               railLinkClass({ isActive: isAccountRouteActive(location.pathname) })
             }
@@ -361,8 +468,47 @@ export function StaffShell() {
                 <path d="M4 21a8 8 0 0 1 16 0" />
               </svg>
             </RailIcon>
-            <span>Account</span>
+            <span className={collapsed ? "lg:hidden" : undefined}>Account</span>
           </NavLink>
+
+          {/* Spacer pushes the collapse toggle to the bottom of the rail. */}
+          <div className="flex-1" aria-hidden />
+
+          {/* Desktop-only collapse toggle. Hidden below lg because the rail
+              has no width state to toggle there (responsive icon-only / md
+              expanded). The shortcut still binds at smaller sizes — see the
+              keydown effect above. */}
+          <button
+            type="button"
+            onClick={toggleCollapsed}
+            aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
+            aria-expanded={!collapsed}
+            aria-controls="staff-shell-sidebar"
+            title={
+              collapsed
+                ? "Expand sidebar (⌘B)"
+                : "Collapse sidebar (⌘B)"
+            }
+            className="hidden lg:inline-flex items-center justify-center min-h-[40px] min-w-[40px] w-full rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-700 dark:hover:text-slate-200 motion-safe:transition-all"
+          >
+            <svg
+              aria-hidden
+              width={18}
+              height={18}
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className={[
+                "motion-safe:transition-transform motion-safe:duration-150",
+                collapsed ? "" : "rotate-180",
+              ].join(" ")}
+            >
+              <polyline points="9 18 15 12 9 6" />
+            </svg>
+          </button>
         </nav>
 
         {/* Right pane */}

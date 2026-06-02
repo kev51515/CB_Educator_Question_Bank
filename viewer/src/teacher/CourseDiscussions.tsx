@@ -10,7 +10,7 @@
  *   • Kebab "⋯" with Edit / Pin / Lock / Delete
  * (mirrors the ModulesPage + CourseAnnouncements affordance pattern.)
  */
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useClassContext } from "./classLayoutContext";
@@ -29,6 +29,35 @@ function getErrorMessage(error: unknown, fallback: string): string {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
   return fallback;
+}
+
+// --- Unread-since-last-visit (localStorage, per-user) ---------------------
+//
+// We persist a `{ topicId → ISO timestamp }` map keyed by user id, written on
+// DiscussionTopicView mount and read here on each render. The map is LRU-
+// capped at 200 entries (most-recent wins) to bound storage growth even if
+// a user opens hundreds of topics across many courses.
+//
+// Trade-off: we have no cheap way to filter "posts by other authors" without
+// a DB change, so an OP who replies to their own topic will briefly see their
+// own reply marked "new" until they revisit the topic page. Accepted.
+// Writes to this map (with LRU cap = 200) happen in DiscussionTopicView; the
+// list surface is read-only.
+const VISITED_KEY_PREFIX = "discussion.visited:";
+
+function loadVisitedMap(userId: string): Record<string, string> {
+  if (!userId) return {};
+  try {
+    const raw = localStorage.getItem(`${VISITED_KEY_PREFIX}${userId}`);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw) as unknown;
+    if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+      return {};
+    }
+    return parsed as Record<string, string>;
+  } catch {
+    return {};
+  }
 }
 
 function formatRelative(iso: string): string {
@@ -172,10 +201,24 @@ function InlineRenameTitle({
   );
 }
 
+/**
+ * Unread state per row:
+ *  - "visited-new": user has visited this topic before, but new activity has
+ *    landed since then. Indigo pip (•) + "New replies" text.
+ *  - "never": user has never visited this topic on this device. Slate "Unread"
+ *    pill — distinguishes "first-time visit" from "delta since last visit".
+ *  - "none": the user is current.
+ *
+ * On a brand-new device with empty localStorage every topic resolves to
+ * "never" until visited — graceful degradation, no false silence.
+ */
+type UnreadState = "visited-new" | "never" | "none";
+
 interface TopicRowProps {
   topic: DiscussionTopic;
   courseId: string;
   replyCount: number | undefined;
+  unreadState: UnreadState;
   canManage: boolean;
   onRename: (topic: DiscussionTopic, nextTitle: string) => Promise<void>;
   onEdit: (topic: DiscussionTopic) => void;
@@ -186,6 +229,7 @@ function TopicRow({
   topic,
   courseId,
   replyCount,
+  unreadState,
   canManage,
   onRename,
   onEdit,
@@ -239,6 +283,22 @@ function TopicRow({
         className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-xl"
       >
         <div className="flex items-center gap-2 flex-nowrap pr-28">
+          {unreadState === "visited-new" && (
+            <span
+              aria-label="New replies since your last visit"
+              title="New replies since your last visit"
+              className="flex-shrink-0 inline-block h-2 w-2 rounded-full bg-indigo-500 dark:bg-indigo-400 motion-safe:transition-colors"
+            />
+          )}
+          {unreadState === "never" && (
+            <span
+              aria-label="You haven't opened this topic yet"
+              title="You haven't opened this topic yet"
+              className="flex-shrink-0 rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700 motion-safe:transition-colors"
+            >
+              Unread
+            </span>
+          )}
           <div className="min-w-0 flex-1">
             {canManage ? (
               <InlineRenameTitle
@@ -286,6 +346,14 @@ function TopicRow({
                 }
               >
                 {replyLabel(replyCount)}
+              </span>
+            </>
+          )}
+          {unreadState === "visited-new" && (
+            <>
+              <span aria-hidden> · </span>
+              <span className="font-medium text-indigo-600 dark:text-indigo-400">
+                New replies since your last visit
               </span>
             </>
           )}
@@ -395,6 +463,32 @@ export function CourseDiscussions() {
     useState<DiscussionTopic | null>(null);
   const [deleteBusy, setDeleteBusy] = useState(false);
   const [replyCounts, setReplyCounts] = useState<Record<string, number>>({});
+  // ISO timestamp of the latest post per topic. Falls back to the topic's
+  // own created_at when there are no replies, so the "new" comparison still
+  // works on brand-new topics with no replies yet.
+  const [latestPostAt, setLatestPostAt] = useState<Record<string, string>>({});
+  // Force a re-read of the localStorage visited map when the route changes
+  // (i.e., user navigates back to the topic list after visiting a topic).
+  // The Discussions surface mounts once per course, so a Date.now() ticked on
+  // page-visibility regain is the cleanest way to react to localStorage
+  // writes from DiscussionTopicView.
+  const [visitedTick, setVisitedTick] = useState(0);
+  useEffect(() => {
+    const onFocus = (): void => setVisitedTick((n) => n + 1);
+    window.addEventListener("focus", onFocus);
+    document.addEventListener("visibilitychange", onFocus);
+    return () => {
+      window.removeEventListener("focus", onFocus);
+      document.removeEventListener("visibilitychange", onFocus);
+    };
+  }, []);
+  const visitedMap = useMemo(
+    () => loadVisitedMap(profile?.id ?? ""),
+    // visitedTick intentionally invalidates the memo on tab focus return.
+    // profile?.id covers initial render after auth resolves.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [profile?.id, visitedTick, topics],
+  );
   const toast = useToast();
 
   const canCreate = profile !== null;
@@ -411,6 +505,7 @@ export function CourseDiscussions() {
   useEffect(() => {
     if (topics.length === 0) {
       setReplyCounts({});
+      setLatestPostAt({});
       return;
     }
     let cancelled = false;
@@ -438,26 +533,47 @@ export function CourseDiscussions() {
           counts[row.id] = n;
         }
         setReplyCounts(counts);
-        return;
+        // Fall through — we still need latest_post_at for the unread
+        // indicator, which the embedded-count shape doesn't give us.
+      } else {
+        // Fallback path: one bulk fetch of topic_id, client-side counter.
+        // Still O(1) round-trips — far better than O(N) per-topic queries.
+        const { data: fallbackData, error: fallbackError } = await supabase
+          .from("discussion_posts")
+          .select("topic_id")
+          .in("topic_id", ids);
+        if (cancelled) return;
+        if (fallbackError || !fallbackData) {
+          setReplyCounts({});
+          setLatestPostAt({});
+          return;
+        }
+        const counts: Record<string, number> = {};
+        for (const id of ids) counts[id] = 0;
+        for (const row of fallbackData as { topic_id: string }[]) {
+          counts[row.topic_id] = (counts[row.topic_id] ?? 0) + 1;
+        }
+        setReplyCounts(counts);
       }
 
-      // Fallback path: one bulk fetch of topic_id, client-side counter.
-      // Still O(1) round-trips — far better than O(N) per-topic queries.
-      const { data: fallbackData, error: fallbackError } = await supabase
+      // Latest-post timestamps: one bulk fetch of (topic_id, created_at),
+      // reduced to per-topic max client-side. One round-trip across all
+      // visible topics regardless of how many replies each has.
+      const { data: postRows, error: postsError } = await supabase
         .from("discussion_posts")
-        .select("topic_id")
+        .select("topic_id, created_at")
         .in("topic_id", ids);
       if (cancelled) return;
-      if (fallbackError || !fallbackData) {
-        setReplyCounts({});
+      if (postsError || !postRows) {
+        setLatestPostAt({});
         return;
       }
-      const counts: Record<string, number> = {};
-      for (const id of ids) counts[id] = 0;
-      for (const row of fallbackData as { topic_id: string }[]) {
-        counts[row.topic_id] = (counts[row.topic_id] ?? 0) + 1;
+      const latest: Record<string, string> = {};
+      for (const row of postRows as { topic_id: string; created_at: string }[]) {
+        const prev = latest[row.topic_id];
+        if (!prev || row.created_at > prev) latest[row.topic_id] = row.created_at;
       }
-      setReplyCounts(counts);
+      setLatestPostAt(latest);
     })();
     return () => {
       cancelled = true;
@@ -563,18 +679,35 @@ export function CourseDiscussions() {
           />
         ) : (
           <div className="space-y-3">
-            {topics.map((t) => (
-              <TopicRow
-                key={t.id}
-                topic={t}
-                courseId={cls.id}
-                replyCount={replyCounts[t.id]}
-                canManage={canManageTopic(t)}
-                onRename={onRenameTopic}
-                onEdit={(topic) => setEditingTopic(topic)}
-                onDelete={(topic) => setConfirmDeleteTopic(topic)}
-              />
-            ))}
+            {topics.map((t) => {
+              // Compute unread state. The "activity" timestamp is the latest
+              // reply's created_at if present, else the topic's own
+              // created_at. This way a brand-new topic with zero replies
+              // still shows "Unread" to first-time viewers.
+              const activityAt = latestPostAt[t.id] ?? t.created_at;
+              let unreadState: UnreadState = "none";
+              if (profile) {
+                const visitedAt = visitedMap[t.id];
+                if (!visitedAt) {
+                  unreadState = "never";
+                } else if (activityAt > visitedAt) {
+                  unreadState = "visited-new";
+                }
+              }
+              return (
+                <TopicRow
+                  key={t.id}
+                  topic={t}
+                  courseId={cls.id}
+                  replyCount={replyCounts[t.id]}
+                  unreadState={unreadState}
+                  canManage={canManageTopic(t)}
+                  onRename={onRenameTopic}
+                  onEdit={(topic) => setEditingTopic(topic)}
+                  onDelete={(topic) => setConfirmDeleteTopic(topic)}
+                />
+              );
+            })}
           </div>
         )}
       </div>

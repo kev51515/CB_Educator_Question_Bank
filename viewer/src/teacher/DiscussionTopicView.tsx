@@ -710,6 +710,36 @@ export function DiscussionTopicView() {
 
   const tree = useMemo(() => buildTree(combinedPosts), [combinedPosts]);
 
+  // Record this topic visit in localStorage so CourseDiscussions can suppress
+  // the "new replies" indicator on subsequent renders. Stored per-user; LRU-
+  // capped at 200 entries. Failure modes (quota exceeded, corrupt JSON) are
+  // swallowed — the indicator just stays visible, which is a graceful default.
+  useEffect(() => {
+    if (!topic?.id || !profile?.id) return;
+    try {
+      const key = `discussion.visited:${profile.id}`;
+      const raw = localStorage.getItem(key);
+      let map: Record<string, string> = {};
+      if (raw) {
+        const parsed = JSON.parse(raw) as unknown;
+        if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) {
+          map = parsed as Record<string, string>;
+        }
+      }
+      map[topic.id] = new Date().toISOString();
+      const entries = Object.entries(map);
+      if (entries.length > 200) {
+        entries.sort(([, a], [, b]) => b.localeCompare(a)); // newest first
+        const trimmed = Object.fromEntries(entries.slice(0, 200));
+        localStorage.setItem(key, JSON.stringify(trimmed));
+      } else {
+        localStorage.setItem(key, JSON.stringify(map));
+      }
+    } catch {
+      // Best-effort persistence — quota or serialization errors are non-fatal.
+    }
+  }, [topic?.id, profile?.id]);
+
   // Transient collapsed state for reply subtrees. Per CLAUDE.md we don't
   // persist this — it resets per visit so users always see the full thread
   // by default.
