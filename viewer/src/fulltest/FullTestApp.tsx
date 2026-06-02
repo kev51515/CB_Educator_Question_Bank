@@ -32,6 +32,7 @@ import {
   TestApiError,
 } from "./api";
 import type {
+  Letter,
   ModuleMeta,
   StartTestResult,
   TestQuestion,
@@ -68,6 +69,11 @@ export function FullTestApp() {
   const [marked, setMarked] = useState<Set<string>>(new Set());
   const [navOpen, setNavOpen] = useState(false);
   const [timerHidden, setTimerHidden] = useState(false);
+  // Bluebook strikethrough tool: a toggle that reveals per-choice cross-out
+  // controls, plus the set of eliminated choices per question (a study aid —
+  // it never affects the selected answer or grading).
+  const [strikeMode, setStrikeMode] = useState(false);
+  const [eliminated, setEliminated] = useState<Record<string, Set<Letter>>>({});
   // Section-submit confirmation. Set when the student clicks "Submit section";
   // ConfirmDialog renders against this state. Replaces the older
   // `window.confirm(...)` per the project's forbidden-pattern rule (CLAUDE.md
@@ -113,6 +119,7 @@ export function FullTestApp() {
       setCalcOpen(false);
       setNavOpen(false);
       setMarked(new Set());
+      setEliminated({});
       try {
         const m = await getModule(runId, position);
         setModuleMeta(m.module);
@@ -312,6 +319,13 @@ export function FullTestApp() {
       else n.add(qid);
       return n;
     });
+  const toggleEliminate = (qid: string, letter: Letter) =>
+    setEliminated((prev) => {
+      const cur = new Set(prev[qid] ?? []);
+      if (cur.has(letter)) cur.delete(letter);
+      else cur.add(letter);
+      return { ...prev, [qid]: cur };
+    });
 
   return (
     // Fullscreen takeover (above the StudentShell chrome / floating badge, z-50)
@@ -391,6 +405,10 @@ export function FullTestApp() {
             onChange={(v) => setAnswer(q.id, v)}
             marked={marked.has(q.id)}
             onToggleMark={() => toggleMark(q.id)}
+            strikeMode={strikeMode}
+            onToggleStrikeMode={() => setStrikeMode((v) => !v)}
+            eliminated={eliminated[q.id]}
+            onToggleEliminate={(letter) => toggleEliminate(q.id, letter)}
           />
         )}
       </main>

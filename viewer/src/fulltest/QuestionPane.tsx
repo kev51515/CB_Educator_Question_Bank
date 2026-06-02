@@ -33,6 +33,11 @@ interface QuestionPaneProps {
   fullHeight?: boolean;
   marked?: boolean;
   onToggleMark?: () => void;
+  /** Bluebook strikethrough tool */
+  strikeMode?: boolean;
+  onToggleStrikeMode?: () => void;
+  eliminated?: Set<Letter>;
+  onToggleEliminate?: (letter: Letter) => void;
 }
 
 function Figure({
@@ -83,37 +88,60 @@ function QHeader({
   number,
   marked,
   onToggleMark,
+  strikeMode,
+  onToggleStrikeMode,
 }: {
   number: number;
   marked?: boolean;
   onToggleMark?: () => void;
+  strikeMode?: boolean;
+  onToggleStrikeMode?: () => void;
 }) {
   return (
-    <div className="flex items-center gap-3 border-b border-slate-200 pb-2 dark:border-slate-700">
-      <span className="grid h-6 min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
-        {number}
-      </span>
-      {onToggleMark && (
+    <div className="flex items-center justify-between gap-3 border-b border-slate-200 pb-2 dark:border-slate-700">
+      <div className="flex items-center gap-3">
+        <span className="grid h-6 min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
+          {number}
+        </span>
+        {onToggleMark && (
+          <button
+            type="button"
+            onClick={onToggleMark}
+            aria-pressed={marked}
+            className="flex items-center gap-1.5 text-sm font-medium text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+          >
+            <svg
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill={marked ? "currentColor" : "none"}
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinejoin="round"
+              className={marked ? "text-amber-500" : ""}
+              aria-hidden
+            >
+              <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" />
+            </svg>
+            Mark for Review
+          </button>
+        )}
+      </div>
+      {onToggleStrikeMode && (
         <button
           type="button"
-          onClick={onToggleMark}
-          aria-pressed={marked}
-          className="flex items-center gap-1.5 text-sm font-medium text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+          onClick={onToggleStrikeMode}
+          aria-pressed={strikeMode}
+          aria-label="Cross out answer choices"
+          title="Cross out answer choices"
+          className={[
+            "rounded-md border px-2 py-1 text-sm font-bold tracking-tight transition",
+            strikeMode
+              ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-500"
+              : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
+          ].join(" ")}
         >
-          <svg
-            width="15"
-            height="15"
-            viewBox="0 0 24 24"
-            fill={marked ? "currentColor" : "none"}
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinejoin="round"
-            className={marked ? "text-amber-500" : ""}
-            aria-hidden
-          >
-            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" />
-          </svg>
-          Mark for Review
+          <span className="line-through decoration-2">ABC</span>
         </button>
       )}
     </div>
@@ -125,7 +153,13 @@ function Prompt({
   value,
   onChange,
   disabled,
-}: Pick<QuestionPaneProps, "question" | "value" | "onChange" | "disabled">) {
+  strikeMode,
+  eliminated,
+  onToggleEliminate,
+}: Pick<
+  QuestionPaneProps,
+  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate"
+>) {
   return (
     <div className="space-y-5">
       <p
@@ -141,37 +175,68 @@ function Prompt({
             const text = question.choices![letter];
             if (text === undefined) return null;
             const selected = value === letter;
+            const struck = eliminated?.has(letter) ?? false;
             return (
-              <li key={letter}>
+              <li key={letter} className="flex items-center gap-2">
                 <button
                   type="button"
-                  disabled={disabled}
+                  disabled={disabled || struck}
                   onClick={() => onChange(selected ? null : letter)}
                   className={[
-                    "flex w-full items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
-                    selected
+                    "flex flex-1 items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
+                    selected && !struck
                       ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
                       : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
+                    struck ? "opacity-50" : "",
                     disabled ? "cursor-default" : "",
                   ].join(" ")}
                 >
                   <span
                     className={[
                       "grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 text-sm font-bold",
-                      selected
-                        ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
-                        : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
+                      struck
+                        ? "border-slate-400 text-slate-400 line-through dark:border-slate-600 dark:text-slate-500"
+                        : selected
+                          ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
+                          : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
                     ].join(" ")}
                   >
                     {letter}
                   </span>
                   <span
-                    className="text-[16px] leading-relaxed text-slate-800 dark:text-slate-200"
+                    className={[
+                      "text-[16px] leading-relaxed",
+                      struck
+                        ? "text-slate-400 line-through dark:text-slate-500"
+                        : "text-slate-800 dark:text-slate-200",
+                    ].join(" ")}
                     style={SERIF}
                   >
                     {text}
                   </span>
                 </button>
+
+                {strikeMode && onToggleEliminate && !disabled && (
+                  <button
+                    type="button"
+                    onClick={() => onToggleEliminate(letter)}
+                    aria-pressed={struck}
+                    aria-label={struck ? `Restore choice ${letter}` : `Cross out choice ${letter}`}
+                    title={struck ? `Restore choice ${letter}` : `Cross out choice ${letter}`}
+                    className={[
+                      "grid h-9 w-9 shrink-0 place-items-center rounded-full border text-xs font-bold transition",
+                      struck
+                        ? "border-blue-600 text-blue-700 hover:bg-blue-50 dark:border-blue-400 dark:text-blue-300 dark:hover:bg-blue-950/40"
+                        : "border-slate-300 text-slate-500 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-400 dark:hover:bg-slate-800",
+                    ].join(" ")}
+                  >
+                    {struck ? (
+                      "Undo"
+                    ) : (
+                      <span className="line-through decoration-2">{letter}</span>
+                    )}
+                  </button>
+                )}
               </li>
             );
           })}
@@ -218,15 +283,33 @@ export function QuestionPane({
   fullHeight,
   marked,
   onToggleMark,
+  strikeMode,
+  onToggleStrikeMode,
+  eliminated,
+  onToggleEliminate,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
 
   const questionSide = (
     <>
-      <QHeader number={question.number} marked={marked} onToggleMark={onToggleMark} />
+      <QHeader
+        number={question.number}
+        marked={marked}
+        onToggleMark={onToggleMark}
+        strikeMode={strikeMode}
+        onToggleStrikeMode={question.type === "mcq" ? onToggleStrikeMode : undefined}
+      />
       <div className="mt-5">
-        <Prompt question={question} value={value} onChange={onChange} disabled={disabled} />
+        <Prompt
+          question={question}
+          value={value}
+          onChange={onChange}
+          disabled={disabled}
+          strikeMode={strikeMode}
+          eliminated={eliminated}
+          onToggleEliminate={onToggleEliminate}
+        />
       </div>
     </>
   );
