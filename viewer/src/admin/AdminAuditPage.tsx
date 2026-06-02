@@ -32,7 +32,6 @@ import {
 } from "react";
 import { supabase } from "../lib/supabase";
 import { EmptyState, Skeleton } from "../components";
-import { SmartDatePicker } from "../components/SmartDatePicker";
 
 interface AuditEvent {
   id: number;
@@ -735,24 +734,6 @@ function DetailsCell({
   );
 }
 
-/**
- * Convert a yyyy-mm-dd <input type="date"> value to an ISO timestamp at the
- * local-day boundary. Returns null on empty/invalid input.
- */
-function dayStartIso(date: string): string | null {
-  if (!date) return null;
-  const d = new Date(`${date}T00:00:00`);
-  if (Number.isNaN(d.getTime())) return null;
-  return d.toISOString();
-}
-
-function dayEndIso(date: string): string | null {
-  if (!date) return null;
-  const d = new Date(`${date}T23:59:59.999`);
-  if (Number.isNaN(d.getTime())) return null;
-  return d.toISOString();
-}
-
 function isUuidLike(value: string): boolean {
   return /^[0-9a-fA-F-]{16,}$/.test(value);
 }
@@ -791,6 +772,146 @@ function writePersistedCourseFilter(value: string): void {
   }
 }
 
+/**
+ * Date-range filter — preset chips ("All time", "24h", "7d", "30d", "Custom")
+ * plus an optional From/To pair when "custom" is active. Persisted per-admin
+ * so a focused audit session sticks across reloads.
+ *
+ * Storage shape (validated on hydrate):
+ *   { preset: '24h' | '7d' | '30d' | 'all' | 'custom', from?: 'YYYY-MM-DD', to?: 'YYYY-MM-DD' }
+ */
+type DateRangePreset = "all" | "24h" | "7d" | "30d" | "custom";
+interface DateRangeState {
+  preset: DateRangePreset;
+  /** YYYY-MM-DD; only meaningful when preset === 'custom'. */
+  from?: string;
+  /** YYYY-MM-DD; only meaningful when preset === 'custom'. */
+  to?: string;
+}
+
+const DATE_RANGE_STORAGE_KEY = "admin.audit.dateRange";
+const DEFAULT_DATE_RANGE: DateRangeState = { preset: "all" };
+
+function isYmd(value: unknown): value is string {
+  return typeof value === "string" && /^\d{4}-\d{2}-\d{2}$/.test(value);
+}
+
+function readPersistedDateRange(): DateRangeState {
+  try {
+    const raw = window.localStorage.getItem(DATE_RANGE_STORAGE_KEY);
+    if (!raw) return DEFAULT_DATE_RANGE;
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return DEFAULT_DATE_RANGE;
+    const obj = parsed as Record<string, unknown>;
+    const preset = obj.preset;
+    if (
+      preset !== "all" &&
+      preset !== "24h" &&
+      preset !== "7d" &&
+      preset !== "30d" &&
+      preset !== "custom"
+    ) {
+      return DEFAULT_DATE_RANGE;
+    }
+    const next: DateRangeState = { preset };
+    if (preset === "custom") {
+      if (isYmd(obj.from)) next.from = obj.from;
+      if (isYmd(obj.to)) next.to = obj.to;
+    }
+    return next;
+  } catch {
+    return DEFAULT_DATE_RANGE;
+  }
+}
+
+function writePersistedDateRange(value: DateRangeState): void {
+  try {
+    if (value.preset === "all") {
+      window.localStorage.removeItem(DATE_RANGE_STORAGE_KEY);
+    } else {
+      window.localStorage.setItem(
+        DATE_RANGE_STORAGE_KEY,
+        JSON.stringify(value),
+      );
+    }
+  } catch {
+    /* ignore quota / disabled storage */
+  }
+}
+
+/** YYYY-MM-DD for "today" in the browser's local timezone. */
+function todayYmd(): string {
+  const d = new Date();
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, "0");
+  const day = String(d.getDate()).padStart(2, "0");
+  return `${y}-${m}-${day}`;
+}
+
+/**
+ * Reduce a DateRangeState to the {fromIso, toIso} pair the query uses.
+ * - 'all'    → both null (no date filter)
+ * - '24h'    → from = now - 24h (precise instant), to = null
+ * - '7d'     → from = now - 7d, to = null
+ * - '30d'   → from = now - 30d, to = null
+ * - 'custom' → from = midnight UTC of `from`, to = end-of-day UTC of `to`
+ *
+ * Custom uses the spec's literal `${date}T23:59:59.999Z` so a "to 2026-06-01"
+ * includes everything up to that day's last millisecond. If from > to we
+ * fall back to no-filter (UI shows the rose hint).
+ */
+function resolveDateRange(state: DateRangeState): {
+  fromIso: string | null;
+  toIso: string | null;
+  invalid: boolean;
+} {
+  const now = Date.now();
+  if (state.preset === "all") {
+    return { fromIso: null, toIso: null, invalid: false };
+  }
+  if (state.preset === "24h") {
+    return {
+      fromIso: new Date(now - 24 * 60 * 60 * 1000).toISOString(),
+      toIso: null,
+      invalid: false,
+    };
+  }
+  if (state.preset === "7d") {
+    return {
+      fromIso: new Date(now - 7 * 24 * 60 * 60 * 1000).toISOString(),
+      toIso: null,
+      invalid: false,
+    };
+  }
+  if (state.preset === "30d") {
+    return {
+      fromIso: new Date(now - 30 * 24 * 60 * 60 * 1000).toISOString(),
+      toIso: null,
+      invalid: false,
+    };
+  }
+  // custom
+  const from = state.from;
+  const to = state.to;
+  const invalid = !!(from && to && from > to);
+  if (invalid) {
+    return { fromIso: null, toIso: null, invalid: true };
+  }
+  return {
+    fromIso: from ? `${from}T00:00:00.000Z` : null,
+    toIso: to ? `${to}T23:59:59.999Z` : null,
+    invalid: false,
+  };
+}
+
+const PRESET_CHIPS: Array<{ id: DateRangePreset; label: string }> = [
+  { id: "all", label: "All time" },
+  { id: "24h", label: "Last 24 hours" },
+  { id: "7d", label: "Last 7 days" },
+  { id: "30d", label: "Last 30 days" },
+  { id: "custom", label: "Custom" },
+];
+
 export function AdminAuditPage() {
   const [rows, setRows] = useState<AuditRowView[]>([]);
   const [total, setTotal] = useState<number>(0);
@@ -801,12 +922,23 @@ export function AdminAuditPage() {
   // Filters (applied on Apply / Enter; debouncing not needed at 50/page).
   const [actionFilter, setActionFilter] = useState<string>("");
   const [actorFilter, setActorFilter] = useState<string>("");
-  const [dateFrom, setDateFrom] = useState<string>("");
-  const [dateTo, setDateTo] = useState<string>("");
+  // Date-range filter — preset chips + optional custom From/To pair.
+  // Persisted per-admin so a focused window sticks across reloads.
+  const [dateRange, setDateRange] = useState<DateRangeState>(() =>
+    readPersistedDateRange(),
+  );
   // Course filter is a uuid (courses.id) or "" for "All courses".
   // Initialised from localStorage so a focused audit session sticks across reloads.
   const [courseFilter, setCourseFilter] = useState<string>(() =>
     readPersistedCourseFilter(),
+  );
+
+  // Resolved ISO bounds for the current date-range state. invalid=true when a
+  // custom range is inverted (from > to) — we fall back to no-filter so the
+  // table still returns rows; the UI shows a rose hint pointing at the input.
+  const resolvedDateRange = useMemo(
+    () => resolveDateRange(dateRange),
+    [dateRange],
   );
 
   // Distinct list of actions (best-effort, fetched once) so the dropdown
@@ -853,12 +985,14 @@ export function AdminAuditPage() {
           ].join(","),
         );
       }
-      // SmartDatePicker emits ISO strings; slice to YYYY-MM-DD for day-boundary helpers.
-      const fromIso = dayStartIso(dateFrom ? dateFrom.slice(0, 10) : "");
+      // Date-range filter (preset chips + optional custom From/To).
+      // resolveDateRange() returns `${date}T23:59:59.999Z` for custom-to so
+      // a "to 2026-06-01" includes all of that day. Inverted custom ranges
+      // (invalid=true) fall back to no-filter; UI surfaces the rose hint.
+      const { fromIso, toIso } = resolvedDateRange;
       if (fromIso) {
         query = query.gte("created_at", fromIso);
       }
-      const toIso = dayEndIso(dateTo ? dateTo.slice(0, 10) : "");
       if (toIso) {
         query = query.lte("created_at", toIso);
       }
@@ -950,7 +1084,7 @@ export function AdminAuditPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, actionFilter, actorFilter, dateFrom, dateTo, courseFilter]);
+  }, [page, actionFilter, actorFilter, resolvedDateRange, courseFilter]);
 
   // Load the distinct action set once. Cheap because most installs have
   // <10 distinct action codes.
@@ -984,6 +1118,11 @@ export function AdminAuditPage() {
   useEffect(() => {
     writePersistedCourseFilter(courseFilter);
   }, [courseFilter]);
+
+  // Persist the date-range filter (preset + optional custom from/to).
+  useEffect(() => {
+    writePersistedDateRange(dateRange);
+  }, [dateRange]);
 
   // Load the course list once. Admins see all courses via RLS. We cap at 200
   // courses — this is an admin debugging tool, not a directory; if a deployment
@@ -1142,19 +1281,99 @@ export function AdminAuditPage() {
             className="rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
           />
         </label>
-        <div className="text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1">
-          <span>From</span>
-          <SmartDatePicker
-            value={dateFrom || null}
-            onChange={(next) => setDateFrom(next ?? "")}
-          />
-        </div>
-        <div className="text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1">
-          <span>To</span>
-          <SmartDatePicker
-            value={dateTo || null}
-            onChange={(next) => setDateTo(next ?? "")}
-          />
+        <div className="sm:col-span-2 text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1.5">
+          <span>Date range</span>
+          <div
+            className="flex flex-wrap gap-1.5"
+            role="group"
+            aria-label="Date range preset"
+          >
+            {PRESET_CHIPS.map((chip) => {
+              const active = dateRange.preset === chip.id;
+              return (
+                <button
+                  key={chip.id}
+                  type="button"
+                  onClick={() => {
+                    if (chip.id === "custom") {
+                      // Switching into custom: seed today/today if blank so
+                      // the inputs don't render with the placeholder gap.
+                      const today = todayYmd();
+                      setDateRange((prev) =>
+                        prev.preset === "custom"
+                          ? prev
+                          : {
+                              preset: "custom",
+                              from: prev.from ?? today,
+                              to: prev.to ?? today,
+                            },
+                      );
+                    } else {
+                      setDateRange({ preset: chip.id });
+                    }
+                    setPage(0);
+                  }}
+                  aria-pressed={active}
+                  className={
+                    "min-h-[32px] rounded-full px-3 py-1 text-xs font-medium border motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 " +
+                    (active
+                      ? "bg-indigo-600 border-indigo-600 text-white hover:bg-indigo-700"
+                      : "bg-white dark:bg-slate-950 border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800")
+                  }
+                >
+                  {chip.label}
+                </button>
+              );
+            })}
+          </div>
+          {dateRange.preset === "custom" && (
+            <div className="flex flex-col gap-1">
+              <div className="flex flex-wrap items-end gap-2">
+                <label className="flex flex-col gap-0.5 text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                  From
+                  <input
+                    type="date"
+                    value={dateRange.from ?? ""}
+                    onBlur={(e) => {
+                      const next = e.target.value || todayYmd();
+                      setDateRange((prev) => ({ ...prev, from: next }));
+                      setPage(0);
+                    }}
+                    onChange={(e) => {
+                      const next = e.target.value;
+                      setDateRange((prev) => ({ ...prev, from: next }));
+                    }}
+                    className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </label>
+                <label className="flex flex-col gap-0.5 text-[11px] font-medium text-slate-500 dark:text-slate-400">
+                  To
+                  <input
+                    type="date"
+                    value={dateRange.to ?? ""}
+                    onBlur={(e) => {
+                      const next = e.target.value || todayYmd();
+                      setDateRange((prev) => ({ ...prev, to: next }));
+                      setPage(0);
+                    }}
+                    onChange={(e) => {
+                      const next = e.target.value;
+                      setDateRange((prev) => ({ ...prev, to: next }));
+                    }}
+                    className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </label>
+              </div>
+              {resolvedDateRange.invalid && (
+                <span
+                  role="alert"
+                  className="text-[11px] font-medium text-rose-600 dark:text-rose-400"
+                >
+                  "From" is after "To" — adjust the dates to filter.
+                </span>
+              )}
+            </div>
+          )}
         </div>
         <div className="flex items-end gap-2">
           <button
@@ -1168,18 +1387,30 @@ export function AdminAuditPage() {
             onClick={() => {
               setActionFilter("");
               setActorFilter("");
-              setDateFrom("");
-              setDateTo("");
+              setDateRange(DEFAULT_DATE_RANGE);
               setCourseFilter("");
               setPage(0);
             }}
-            className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+            title="Clear action, course, actor, and date-range filters"
+            className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900 motion-safe:transition-colors hover:bg-slate-50 dark:hover:bg-slate-800"
           >
-            Reset
+            Clear all filters
           </button>
         </div>
-        {(activeActionMeta?.description || activeCourse) && (
+        {(activeActionMeta?.description ||
+          activeCourse ||
+          dateRange.preset !== "all") && (
           <div className="sm:col-span-2 lg:col-span-6 -mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            {dateRange.preset !== "all" && (
+              <span
+                className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900"
+                title="Active date-range filter"
+              >
+                {dateRange.preset === "custom"
+                  ? `${dateRange.from ?? "—"} → ${dateRange.to ?? "—"}`
+                  : PRESET_CHIPS.find((c) => c.id === dateRange.preset)?.label}
+              </span>
+            )}
             {activeCourse && (
               <span
                 className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900"
@@ -1242,7 +1473,11 @@ export function AdminAuditPage() {
                   <EmptyState
                     icon="inbox"
                     title="No audit events yet"
-                    body="No events match the current filters. Try widening the date range or clearing filters."
+                    body={
+                      dateRange.preset !== "all"
+                        ? "No audit events in this date range. Try widening the range, picking a different preset, or clearing filters."
+                        : "No events match the current filters. Try widening the date range or clearing filters."
+                    }
                   />
                 </td>
               </tr>

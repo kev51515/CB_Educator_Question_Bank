@@ -26,6 +26,56 @@ import { EmptyState } from "../components/EmptyState";
 import { SkeletonRows } from "../components/Skeleton";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
+import { KebabMenu } from "../components/KebabMenu";
+
+// Per-user localStorage key for muted thread IDs.
+const mutedThreadsKey = (userId: string): string =>
+  `inbox.mutedThreads:${userId}`;
+
+// LRU cap — generous; users rarely mute that many threads. When exceeded,
+// we drop the oldest entries (front of the array).
+const MUTED_THREADS_CAP = 500;
+
+/**
+ * Read the muted-thread set from localStorage. Returns a plain Set for O(1)
+ * lookup. Shape-validates (must be an array of strings); any quota / JSON /
+ * shape error is swallowed and treated as "no muted threads".
+ */
+function readMutedThreads(userId: string | null): Set<string> {
+  if (!userId) return new Set();
+  if (typeof window === "undefined") return new Set();
+  try {
+    const raw = window.localStorage.getItem(mutedThreadsKey(userId));
+    if (!raw) return new Set();
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return new Set();
+    const ids: string[] = [];
+    for (const v of parsed) {
+      if (typeof v === "string") ids.push(v);
+    }
+    return new Set(ids);
+  } catch {
+    return new Set();
+  }
+}
+
+/**
+ * Persist the muted-thread set. Enforces the LRU cap by keeping the most
+ * recent entries (set insertion order is preserved). Swallows quota errors.
+ */
+function writeMutedThreads(userId: string, ids: Set<string>): void {
+  if (typeof window === "undefined") return;
+  try {
+    let arr = Array.from(ids);
+    if (arr.length > MUTED_THREADS_CAP) {
+      arr = arr.slice(arr.length - MUTED_THREADS_CAP);
+    }
+    window.localStorage.setItem(mutedThreadsKey(userId), JSON.stringify(arr));
+  } catch {
+    // Quota exceeded or storage unavailable — silently drop. Muting is
+    // best-effort UX state, not a contract we're failing.
+  }
+}
 
 const UUID_RE =
   /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -66,6 +116,59 @@ export function InboxPage() {
   // Track whether the user is actively typing in the search input — if so,
   // we don't yank the highlight back to index 0 on every keystroke (jarring).
   const searchFocusedRef = useRef<boolean>(false);
+
+  // Muted thread set (per-user, persisted to localStorage). Muted threads
+  // stay in their normal sort position but hide their unread badge and
+  // de-emphasize the row body — the message is still delivered, just quiet.
+  const [mutedThreads, setMutedThreads] = useState<Set<string>>(() =>
+    readMutedThreads(currentUserId),
+  );
+
+  // Re-hydrate when the user changes (login, profile switch).
+  useEffect(() => {
+    setMutedThreads(readMutedThreads(currentUserId));
+  }, [currentUserId]);
+
+  // Cross-tab sync — mirror the pattern from Round 25 notification preferences.
+  // Listen for `storage` events on the muted-set key and re-hydrate from
+  // localStorage so a mute in one tab reflects in others.
+  useEffect(() => {
+    if (!currentUserId) return;
+    if (typeof window === "undefined") return;
+    const key = mutedThreadsKey(currentUserId);
+    const onStorage = (e: StorageEvent): void => {
+      if (e.key !== key) return;
+      setMutedThreads(readMutedThreads(currentUserId));
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [currentUserId]);
+
+  const toggleMuted = useCallback(
+    (threadId: string): void => {
+      if (!currentUserId) return;
+      setMutedThreads((prev) => {
+        const next = new Set(prev);
+        let wasMuted: boolean;
+        if (next.has(threadId)) {
+          next.delete(threadId);
+          wasMuted = true;
+        } else {
+          next.add(threadId);
+          wasMuted = false;
+        }
+        writeMutedThreads(currentUserId, next);
+        // Transient feedback — confirmations belong in toasts, per the bar.
+        if (wasMuted) {
+          toast.info("Conversation unmuted");
+        } else {
+          toast.info("Conversation muted");
+        }
+        return next;
+      });
+    },
+    [currentUserId, toast],
+  );
 
   // Focus shortcut: "/" focuses the inbox search (GitHub/Vercel convention).
   // We deliberately avoid ⌘K — that's owned globally by CommandPalette
@@ -424,6 +527,10 @@ export function InboxPage() {
                   t.other.display_name ?? t.other.email ?? "Unknown";
                 const isHighlighted = idx === highlightedIndex;
                 const isOpen = t.id === threadId;
+                const isMuted = mutedThreads.has(t.id);
+                // Hide the unread badge when muted — the conversation
+                // continues to receive messages, it just doesn't shout.
+                const showUnreadBadge = !isMuted && t.unread_count > 0;
                 return (
                   <li
                     key={t.id}
@@ -434,6 +541,14 @@ export function InboxPage() {
                       // doesn't see two competing highlights.
                       if (idx !== highlightedIndex) setHighlightedIndex(idx);
                     }}
+                    className={[
+                      "group relative border-b border-slate-100 dark:border-slate-800 motion-safe:transition-colors",
+                      isOpen
+                        ? "bg-indigo-50 dark:bg-indigo-950/40"
+                        : isHighlighted
+                          ? "bg-indigo-50/60 dark:bg-indigo-950/30 ring-1 ring-inset ring-slate-300 dark:ring-slate-600"
+                          : "hover:bg-slate-50 dark:hover:bg-slate-900",
+                    ].join(" ")}
                   >
                     <NavLink
                       ref={(el) => {
@@ -441,17 +556,43 @@ export function InboxPage() {
                       }}
                       to={inboxThreadPath(t.id)}
                       className={[
-                        "block px-4 py-3 border-b border-slate-100 dark:border-slate-800 motion-safe:transition-colors",
-                        isOpen
-                          ? "bg-indigo-50 dark:bg-indigo-950/40"
-                          : isHighlighted
-                            ? "bg-indigo-50/60 dark:bg-indigo-950/30 ring-1 ring-inset ring-slate-300 dark:ring-slate-600"
-                            : "hover:bg-slate-50 dark:hover:bg-slate-900",
+                        // Pad the right edge so the kebab (~40px tap target,
+                        // absolutely positioned) doesn't visually overlap row text.
+                        "block pl-4 pr-12 py-3 motion-safe:transition-opacity",
+                        isMuted ? "opacity-70" : "",
                       ].join(" ")}
                     >
                       <div className="flex items-center justify-between gap-2">
-                        <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-                          {name}
+                        <p
+                          className={[
+                            "text-sm font-medium truncate flex items-center gap-1.5",
+                            isMuted
+                              ? "text-slate-600 dark:text-slate-400"
+                              : "text-slate-900 dark:text-slate-100",
+                          ].join(" ")}
+                        >
+                          <span className="truncate">{name}</span>
+                          {isMuted && (
+                            // Bell-slash icon — small inline SVG.
+                            // Slate by default, indigo on row hover. Has
+                            // <title> so screen readers announce "Muted".
+                            <svg
+                              viewBox="0 0 20 20"
+                              fill="none"
+                              aria-hidden="false"
+                              role="img"
+                              className="h-3.5 w-3.5 flex-shrink-0 text-slate-400 group-hover:text-indigo-500 dark:text-slate-500 dark:group-hover:text-indigo-400 motion-safe:transition-colors"
+                            >
+                              <title>Muted</title>
+                              <path
+                                d="M5.5 8a4.5 4.5 0 0 1 7.4-3.46M14.5 9.2V10c0 1.5.6 2.4 1.2 3 .4.4.1 1-.4 1H6.4M8 16.5a2 2 0 0 0 4 0M3 3l14 14"
+                                stroke="currentColor"
+                                strokeWidth="1.5"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                              />
+                            </svg>
+                          )}
                         </p>
                         <span className="text-xs text-slate-500 dark:text-slate-400 flex-shrink-0">
                           {formatStamp(t.last_message_at)}
@@ -466,13 +607,38 @@ export function InboxPage() {
                             <em>No messages yet</em>
                           )}
                         </p>
-                        {t.unread_count > 0 && (
+                        {showUnreadBadge && (
                           <span className="ml-2 inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-indigo-600 text-white text-[10px] font-semibold">
                             {t.unread_count}
                           </span>
                         )}
                       </div>
                     </NavLink>
+                    {/* Kebab — absolutely positioned at the right edge so it
+                        layers above the NavLink (nested interactive elements
+                        would be invalid). Always visible on touch / mobile;
+                        on desktop fades in on row hover or when the kebab
+                        itself has focus (keyboard discoverability). */}
+                    <div
+                      className="absolute right-2 top-1/2 -translate-y-1/2 opacity-100 sm:opacity-0 group-hover:sm:opacity-100 focus-within:sm:opacity-100 motion-safe:transition-opacity"
+                      // Don't propagate to the <li> (which would steal the
+                      // highlight index) or the NavLink (which would navigate).
+                      onMouseDown={(e) => e.stopPropagation()}
+                      onClick={(e) => e.stopPropagation()}
+                      aria-label={`Thread actions for ${name}`}
+                    >
+                      <KebabMenu
+                        options={[
+                          {
+                            label: isMuted ? "Unmute" : "Mute",
+                            hint: isMuted
+                              ? "Restore notifications for this conversation"
+                              : "Suppress notifications for this conversation",
+                            onSelect: () => toggleMuted(t.id),
+                          },
+                        ]}
+                      />
+                    </div>
                   </li>
                 );
               })}
