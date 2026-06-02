@@ -27,7 +27,8 @@ import { useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
 import { supabase } from "../lib/supabase";
 import { useProfile } from "../lib/profile";
-import { courseAssignmentPath } from "../lib/routes";
+import { courseAssignmentPath, testRunPath } from "../lib/routes";
+import { useFullTests } from "../fulltest/useFullTests";
 import {
   buildTree,
   useCourseModules,
@@ -3228,6 +3229,7 @@ type InlineAddType =
   | "assignment"
   | "practice_test"
   | "question_set"
+  | "full_test"
   | "header"
   | "link";
 
@@ -3398,6 +3400,9 @@ function InlineAddItemRow({
   const [url, setUrl] = useState("");
   const [assignmentId, setAssignmentId] = useState("");
   const [busy, setBusy] = useState(false);
+  // Full-Test picker: the full-length tests catalog + the chosen slug.
+  const { tests: fullTests } = useFullTests(itemType === "full_test");
+  const [fullTestSlug, setFullTestSlug] = useState("");
 
   // Practice Test picker state — teacher PICKS from their cross-course
   // mocktest library rather than configuring source/preset/time/questions
@@ -3724,6 +3729,39 @@ function InlineAddItemRow({
       return;
     }
 
+    if (itemType === "full_test") {
+      if (!fullTestSlug) {
+        toast.warning("Pick a full-length test");
+        return;
+      }
+      const chosen = fullTests.find((t) => t.slug === fullTestSlug);
+      const payloadTitle = title.trim() || chosen?.title || "Full-length test";
+      setBusy(true);
+      // Quick link: full-length tests aren't assignments, so store them as a
+      // link module_item pointing at the Bluebook runner (/test/:slug).
+      const { error: insertError } = await supabase.from("module_items").insert({
+        module_id: module.id,
+        position: maxPosition + 1,
+        item_type: "link",
+        item_ref_id: null,
+        title: payloadTitle,
+        url: testRunPath(fullTestSlug),
+      });
+      setBusy(false);
+      if (insertError) {
+        toast.error("Couldn't add Full-Test", insertError.message);
+        return;
+      }
+      toast.success("Full-Test added", payloadTitle);
+      if (keepOpen) {
+        resetPerItemFields();
+        onCommittedKeepOpen();
+      } else {
+        onCommitted();
+      }
+      return;
+    }
+
     if (itemType === "link") {
       const payloadTitle = title.trim();
       if (!payloadTitle) {
@@ -3868,6 +3906,7 @@ function InlineAddItemRow({
     switch (itemType) {
       case "assignment": return "Add Assignment";
       case "practice_test": return "Add Practice Test";
+      case "full_test": return "Add Full-Test";
       case "question_set": return "Add Question Set";
       case "header": return "Add Header";
       case "link": return "Add Link";
@@ -3893,10 +3932,11 @@ function InlineAddItemRow({
           widths (2 cols mobile, 5 cols sm+). */}
       <div>
         <span className="sr-only">Item type</span>
-        <div className="grid grid-cols-2 sm:grid-cols-5 gap-1.5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-1.5">
           {chip("assignment", "Assignment")}
-          {chip("practice_test", "Practice Test")}
+          {chip("full_test", "Full-Test")}
           {chip("question_set", "Question Set")}
+          {chip("practice_test", "Practice Test")}
           {chip("header", "Header")}
           {chip("link", "Link")}
         </div>
@@ -3930,6 +3970,38 @@ function InlineAddItemRow({
             disabled={busy}
             className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
           />
+        </div>
+      )}
+
+      {itemType === "full_test" && (
+        <div className="space-y-1.5">
+          <select
+            value={fullTestSlug}
+            onChange={(e) => setFullTestSlug(e.target.value)}
+            disabled={busy}
+            className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          >
+            <option value="">
+              {fullTests.length === 0 ? "No full-length tests yet" : "Pick a full-length test…"}
+            </option>
+            {fullTests.map((t) => (
+              <option key={t.slug} value={t.slug}>
+                {t.title}
+              </option>
+            ))}
+          </select>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            placeholder="Display title (optional — defaults to the test title)"
+            disabled={busy}
+            className="w-full rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-900 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+          <p className="text-[11px] text-slate-500 dark:text-slate-400">
+            Adds the full-length, Bluebook-style test. Enrolled students open it
+            straight from this module.
+          </p>
         </div>
       )}
 
