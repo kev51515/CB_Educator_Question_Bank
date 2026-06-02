@@ -14,11 +14,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { testRunPath, testReviewPath } from "../lib/routes";
+import { TestCompletionModal } from "./TestCompletionModal";
 import type { TestCatalogEntry } from "./types";
 
 export function FullTestCatalog() {
   const [tests, setTests] = useState<TestCatalogEntry[]>([]);
   const [loading, setLoading] = useState(true);
+  const [resultsFor, setResultsFor] = useState<TestCatalogEntry | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -102,10 +104,25 @@ export function FullTestCatalog() {
               >
                 Preview
               </Link>
+              <button
+                type="button"
+                onClick={() => setResultsFor(t)}
+                className="rounded-lg border border-slate-300 px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
+              >
+                Results &amp; release
+              </button>
             </div>
           </article>
         ))}
       </div>
+
+      {resultsFor && (
+        <TestCompletionModal
+          slug={resultsFor.slug}
+          title={resultsFor.title}
+          onClose={() => setResultsFor(null)}
+        />
+      )}
     </div>
   );
 }
