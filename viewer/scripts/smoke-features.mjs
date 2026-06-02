@@ -2209,6 +2209,539 @@ async function wave63() {
   });
 }
 
+// ---------------------------- WAVE POST-30 --------------------------
+// Locks down DB-layer behaviors introduced in Rounds 31-37:
+//   A. Discussion post edit (Round 33) — author / staff can edit, third-party
+//      cannot; the `set_updated_at` trigger on UPDATE bumps updated_at.
+//   B. Cohort drill effective-score view (Round 35) — assignment_attempts_effective
+//      returns COALESCE(score_override, score_percent), and is RLS-scoped
+//      (security_invoker=on per migration 0065) so outsiders see zero rows.
+//   C. Bulk roster delete with course_id guard (Round 25 belt-and-suspenders)
+//      — DELETE ... .in("id", ids).eq("course_id", X) only removes when the
+//      course_id matches; a stale/wrong course_id is a 0-row no-op.
+//   D. Discussion `updated_at` jitter threshold (Round 33 indicator) — fresh
+//      INSERT has near-zero updated_at−created_at delta, post-UPDATE crosses
+//      the 2s indicator threshold the UI gates on.
+//
+// All fixtures are scoped to this wave (separate topic, separate assignments,
+// extra student) so we don't pollute ctx.* used by other waves. Cleanup runs
+// in a finally so partial failures still tidy up.
+
+async function wavePost30() {
+  const local = {
+    topicId: null,
+    studentPostId: null,
+    secondStudentId: null,
+    secondStudentClient: null,
+    assignmentOverrideId: null,
+    assignmentPlainId: null,
+    attemptOverrideId: null,
+    attemptPlainId: null,
+    jitterPostId: null,
+    jitterCreatedAt: null,
+  };
+
+  // ---- Setup: scoped topic for scenarios A + D ---------------------------
+  await step("wave-post-30: setup — scoped discussion topic", async () => {
+    const { data, error } = await ctx.teacherClient
+      .from("discussion_topics")
+      .insert({
+        course_id: ctx.courseId,
+        author_id: ctx.teacherId,
+        title: `Post30 Topic ${TS}`,
+        body: "scoped for post-30 wave",
+      })
+      .select()
+      .single();
+    if (error) throw error;
+    local.topicId = data.id;
+    return `topic=${data.id}`;
+  });
+
+  await step("wave-post-30: setup — student authors a scoped post", async () => {
+    const { data, error } = await ctx.studentClient
+      .from("discussion_posts")
+      .insert({
+        topic_id: local.topicId,
+        author_id: ctx.studentId,
+        body: "original body — student",
+      })
+      .select("id,created_at,updated_at")
+      .single();
+    if (error) throw error;
+    local.studentPostId = data.id;
+    return `post=${data.id}`;
+  });
+
+  // ---- Scenario A: discussion post edit RLS + trigger --------------------
+
+  await step("wave-post-30: A1 author edits own post — updated_at bumps", async () => {
+    // Capture original timestamps from server (avoid client clock drift).
+    const before = await ctx.studentClient
+      .from("discussion_posts")
+      .select("created_at,updated_at")
+      .eq("id", local.studentPostId)
+      .single();
+    if (before.error) throw before.error;
+
+    // Wait long enough that the trigger writes a strictly-later updated_at.
+    await new Promise((r) => setTimeout(r, 1100));
+
+    const { data, error } = await ctx.studentClient
+      .from("discussion_posts")
+      .update({ body: "edited body — by author" })
+      .eq("id", local.studentPostId)
+      .select("created_at,updated_at,body")
+      .single();
+    if (error) throw error;
+    if (data.body !== "edited body — by author")
+      throw new Error(`body not updated: ${data.body}`);
+    const beforeUpd = Date.parse(before.data.updated_at);
+    const afterUpd = Date.parse(data.updated_at);
+    if (!(afterUpd > beforeUpd))
+      throw new Error(
+        `updated_at did not advance: before=${before.data.updated_at} after=${data.updated_at}`,
+      );
+    const created = Date.parse(data.created_at);
+    if (!(afterUpd > created))
+      throw new Error(
+        `updated_at (${data.updated_at}) not > created_at (${data.created_at})`,
+      );
+    return `Δ=${afterUpd - beforeUpd}ms`;
+  });
+
+  await step("wave-post-30: A2 staff (teacher) edits student's post", async () => {
+    // Teacher is_staff()=true, so RLS allows UPDATE on someone else's post.
+    const { data, error } = await ctx.teacherClient
+      .from("discussion_posts")
+      .update({ body: "edited body — by staff" })
+      .eq("id", local.studentPostId)
+      .select("id,body,author_id")
+      .single();
+    if (error) throw error;
+    if (data.body !== "edited body — by staff")
+      throw new Error(`staff edit body=${data.body}`);
+    // author_id must be unchanged — RLS WITH CHECK enforces this, but assert.
+    if (data.author_id !== ctx.studentId)
+      throw new Error(`author_id mutated to ${data.author_id}`);
+    return "staff edit ok";
+  });
+
+  await step("wave-post-30: A3 outsider (non-author non-staff) UPDATE denied", async () => {
+    // ctx.outsiderClient is a student NOT enrolled in this course and NOT the
+    // author. RLS USING clause should yield 0 visible rows, so the UPDATE
+    // affects 0 rows (PostgREST returns either an empty result or an RLS-style
+    // error depending on whether .select() is chained). Treat both as denial.
+    const result = await ctx.outsiderClient
+      .from("discussion_posts")
+      .update({ body: "intruder edit" })
+      .eq("id", local.studentPostId)
+      .select("id");
+    if (result.error) {
+      // Some Postgrest configs surface RLS as an error — that's also a denial.
+      return `denied via error: ${result.error.code ?? result.error.message?.slice(0, 40)}`;
+    }
+    if (result.data && result.data.length > 0)
+      throw new Error(
+        `outsider managed to update ${result.data.length} row(s) — RLS bypass!`,
+      );
+    // Belt: verify the body is still the staff-edit from A2.
+    const check = await ctx.teacherClient
+      .from("discussion_posts")
+      .select("body")
+      .eq("id", local.studentPostId)
+      .single();
+    if (check.error) throw check.error;
+    if (check.data.body !== "edited body — by staff")
+      throw new Error(
+        `body mutated by outsider: "${check.data.body}" (expected staff edit)`,
+      );
+    return "denied silently (0 rows)";
+  });
+
+  await step("wave-post-30: A4 any UPDATE re-fires set_updated_at trigger", async () => {
+    // Sanity: even a no-op-looking field update (locked=false → false on the
+    // topic, or a body re-assign on the post) must bump updated_at. Use the
+    // post for parallel-safety with A1-A3.
+    const before = await ctx.teacherClient
+      .from("discussion_posts")
+      .select("updated_at")
+      .eq("id", local.studentPostId)
+      .single();
+    if (before.error) throw before.error;
+    await new Promise((r) => setTimeout(r, 1100));
+    const upd = await ctx.teacherClient
+      .from("discussion_posts")
+      .update({ body: "edited body — trigger sanity" })
+      .eq("id", local.studentPostId)
+      .select("updated_at")
+      .single();
+    if (upd.error) throw upd.error;
+    if (!(Date.parse(upd.data.updated_at) > Date.parse(before.data.updated_at)))
+      throw new Error(
+        `trigger no-op: before=${before.data.updated_at} after=${upd.data.updated_at}`,
+      );
+    return `Δ=${Date.parse(upd.data.updated_at) - Date.parse(before.data.updated_at)}ms`;
+  });
+
+  // ---- Scenario B: assignment_attempts_effective view --------------------
+  // assignment_attempts has UNIQUE(assignment_id, student_id), so we need
+  // two scoped assignments to host the "with override" + "without override"
+  // attempts for the same student.
+
+  await step("wave-post-30: B-setup — two scoped assignments + attempts (override / plain)", async () => {
+    const a1 = await ctx.teacherClient
+      .from("assignments")
+      .insert({
+        course_id: ctx.courseId,
+        created_by: ctx.teacherId,
+        title: `Post30 Override ${TS}`,
+        source_id: "cb",
+        question_count: 2,
+        time_limit_minutes: 5,
+        difficulty_mix: "any",
+      })
+      .select("id")
+      .single();
+    if (a1.error) throw a1.error;
+    local.assignmentOverrideId = a1.data.id;
+
+    const a2 = await ctx.teacherClient
+      .from("assignments")
+      .insert({
+        course_id: ctx.courseId,
+        created_by: ctx.teacherId,
+        title: `Post30 Plain ${TS}`,
+        source_id: "cb",
+        question_count: 2,
+        time_limit_minutes: 5,
+        difficulty_mix: "any",
+      })
+      .select("id")
+      .single();
+    if (a2.error) throw a2.error;
+    local.assignmentPlainId = a2.data.id;
+
+    // Direct insert via service key — bypass start_assignment_attempt to set
+    // score_percent / score_override deterministically.
+    const att1 = await service
+      .from("assignment_attempts")
+      .insert({
+        assignment_id: local.assignmentOverrideId,
+        student_id: ctx.studentId,
+        submitted_at: new Date().toISOString(),
+        score_percent: 60,
+        score_override: 88,
+        correct_count: 1,
+        total_questions: 2,
+      })
+      .select("id")
+      .single();
+    if (att1.error) throw att1.error;
+    local.attemptOverrideId = att1.data.id;
+
+    const att2 = await service
+      .from("assignment_attempts")
+      .insert({
+        assignment_id: local.assignmentPlainId,
+        student_id: ctx.studentId,
+        submitted_at: new Date().toISOString(),
+        score_percent: 72,
+        score_override: null,
+        correct_count: 1,
+        total_questions: 2,
+      })
+      .select("id")
+      .single();
+    if (att2.error) throw att2.error;
+    local.attemptPlainId = att2.data.id;
+
+    return `override=${local.attemptOverrideId} plain=${local.attemptPlainId}`;
+  });
+
+  await step("wave-post-30: B1 effective_score = score_override when override is set", async () => {
+    const { data, error } = await ctx.teacherClient
+      .from("assignment_attempts_effective")
+      .select("id,score_percent,score_override,effective_score")
+      .eq("id", local.attemptOverrideId)
+      .single();
+    if (error) throw error;
+    if (Number(data.score_override) !== 88)
+      throw new Error(`score_override=${data.score_override}, expected 88`);
+    if (Number(data.score_percent) !== 60)
+      throw new Error(`score_percent=${data.score_percent}, expected 60`);
+    if (Number(data.effective_score) !== 88)
+      throw new Error(
+        `effective_score=${data.effective_score}, expected 88 (override COALESCE)`,
+      );
+    return `effective=88 (override)`;
+  });
+
+  await step("wave-post-30: B2 effective_score = score_percent when no override", async () => {
+    const { data, error } = await ctx.teacherClient
+      .from("assignment_attempts_effective")
+      .select("id,score_percent,score_override,effective_score")
+      .eq("id", local.attemptPlainId)
+      .single();
+    if (error) throw error;
+    if (data.score_override !== null)
+      throw new Error(`expected null override, got ${data.score_override}`);
+    if (Number(data.effective_score) !== Number(data.score_percent))
+      throw new Error(
+        `effective_score=${data.effective_score} !== score_percent=${data.score_percent}`,
+      );
+    if (Number(data.effective_score) !== 72)
+      throw new Error(`effective=${data.effective_score}, expected 72`);
+    return `effective=72 (fallback to score_percent)`;
+  });
+
+  await step("wave-post-30: B3 view is RLS-scoped — outsider sees 0 rows", async () => {
+    // Migration 0065 sets security_invoker=on for assignment_attempts_effective,
+    // meaning the underlying assignment_attempts RLS policies apply to the
+    // calling user. An outsider (not enrolled, not staff, not the student)
+    // must see zero rows even when querying by exact attempt id.
+    const { data, error } = await ctx.outsiderClient
+      .from("assignment_attempts_effective")
+      .select("id,effective_score")
+      .in("id", [local.attemptOverrideId, local.attemptPlainId]);
+    if (error) {
+      // RLS denial surfaced as an error is also acceptable.
+      return `RLS error: ${error.code ?? error.message?.slice(0, 40)}`;
+    }
+    if (data.length !== 0)
+      throw new Error(
+        `outsider saw ${data.length} attempt(s) via effective view — RLS bypass!`,
+      );
+    return "outsider sees 0 rows";
+  });
+
+  // ---- Scenario C: bulk roster delete with course_id guard ---------------
+
+  await step("wave-post-30: C-setup — enroll a 2nd student in the course", async () => {
+    const email = `s2-${TAG}@gmail.com`;
+    local.secondStudentId = await createConfirmedUser(email, PW, "student");
+    local.secondStudentClient = userClient();
+    await signIn(local.secondStudentClient, email, PW);
+    const { error } = await local.secondStudentClient.rpc(
+      "join_course_by_code",
+      { p_code: ctx.joinCode },
+    );
+    if (error) throw error;
+    // Confirm both students are now in course_memberships.
+    const { data, error: e2 } = await ctx.teacherClient
+      .from("course_memberships")
+      .select("id,student_id")
+      .eq("course_id", ctx.courseId);
+    if (e2) throw e2;
+    if (data.length < 2)
+      throw new Error(`expected ≥2 memberships, got ${data.length}`);
+    return `${data.length} members`;
+  });
+
+  await step("wave-post-30: C1 bulk DELETE with correct course_id removes the row", async () => {
+    // Target the secondary student only — leave ctx.studentId enrolled so
+    // later student-side scenarios (studentProfile, etc.) still work.
+    const targetMembership = await ctx.teacherClient
+      .from("course_memberships")
+      .select("id")
+      .eq("course_id", ctx.courseId)
+      .eq("student_id", local.secondStudentId)
+      .single();
+    if (targetMembership.error) throw targetMembership.error;
+    const targetId = targetMembership.data.id;
+
+    const del = await ctx.teacherClient
+      .from("course_memberships")
+      .delete()
+      .in("id", [targetId])
+      .eq("course_id", ctx.courseId)
+      .select("id");
+    if (del.error) throw del.error;
+    if (!del.data || del.data.length !== 1)
+      throw new Error(
+        `expected 1 row deleted with correct guard, got ${del.data?.length ?? 0}`,
+      );
+
+    // Belt: row is gone.
+    const after = await ctx.teacherClient
+      .from("course_memberships")
+      .select("id")
+      .eq("id", targetId);
+    if (after.error) throw after.error;
+    if (after.data.length !== 0)
+      throw new Error("membership row still present after delete");
+    return "1 row deleted";
+  });
+
+  await step("wave-post-30: C2 bulk DELETE with WRONG course_id is a 0-row no-op", async () => {
+    // Re-enroll the secondary student so we have a stable id to target.
+    const join = await local.secondStudentClient.rpc("join_course_by_code", {
+      p_code: ctx.joinCode,
+    });
+    if (join.error) throw join.error;
+    const re = await ctx.teacherClient
+      .from("course_memberships")
+      .select("id")
+      .eq("course_id", ctx.courseId)
+      .eq("student_id", local.secondStudentId)
+      .single();
+    if (re.error) throw re.error;
+    const targetId = re.data.id;
+
+    // Pretend the in-memory list went stale and we pass a wrong course_id.
+    const wrongCourseId = randomUUID();
+    const del = await ctx.teacherClient
+      .from("course_memberships")
+      .delete()
+      .in("id", [targetId])
+      .eq("course_id", wrongCourseId)
+      .select("id");
+    if (del.error) {
+      // RLS may surface the wrong-course filter as a no-op rather than an error.
+      // Either way we want zero rows actually removed.
+      return `safe denial: ${del.error.code ?? del.error.message?.slice(0, 40)}`;
+    }
+    if (del.data && del.data.length > 0)
+      throw new Error(
+        `WRONG course_id deleted ${del.data.length} row(s) — guard failed!`,
+      );
+
+    // Belt-and-suspenders: row still there.
+    const check = await ctx.teacherClient
+      .from("course_memberships")
+      .select("id")
+      .eq("id", targetId);
+    if (check.error) throw check.error;
+    if (check.data.length !== 1)
+      throw new Error(
+        `target membership disappeared (${check.data.length} rows) — belt failed`,
+      );
+    return "wrong course_id → 0 rows, target intact";
+  });
+
+  // ---- Scenario D: updated_at jitter threshold (UI shows "edited" >2s) ----
+
+  await step("wave-post-30: D1 fresh INSERT has Δ(updated_at,created_at) < 2000ms", async () => {
+    const { data, error } = await ctx.studentClient
+      .from("discussion_posts")
+      .insert({
+        topic_id: local.topicId,
+        author_id: ctx.studentId,
+        body: "jitter probe — fresh insert",
+      })
+      .select("id,created_at,updated_at")
+      .single();
+    if (error) throw error;
+    local.jitterPostId = data.id;
+    local.jitterCreatedAt = data.created_at;
+    const delta =
+      Date.parse(data.updated_at) - Date.parse(data.created_at);
+    if (delta < 0)
+      throw new Error(
+        `negative delta: updated_at(${data.updated_at}) - created_at(${data.created_at}) = ${delta}`,
+      );
+    if (delta >= 2000)
+      throw new Error(
+        `fresh insert delta=${delta}ms, expected <2000ms (UI would mis-flag as edited)`,
+      );
+    return `Δ=${delta}ms < 2000ms threshold`;
+  });
+
+  await step("wave-post-30: D2 post-UPDATE (after >2s sleep) crosses 2000ms threshold", async () => {
+    // The UI gates the "edited" indicator on (updated_at - created_at) > 2s.
+    // Sleep 2500ms then UPDATE; the new delta must clear the threshold so the
+    // indicator actually appears for genuine edits.
+    await new Promise((r) => setTimeout(r, 2500));
+    const upd = await ctx.studentClient
+      .from("discussion_posts")
+      .update({ body: "jitter probe — edited" })
+      .eq("id", local.jitterPostId)
+      .select("created_at,updated_at")
+      .single();
+    if (upd.error) throw upd.error;
+    const delta =
+      Date.parse(upd.data.updated_at) - Date.parse(upd.data.created_at);
+    if (delta < 2000)
+      throw new Error(
+        `post-edit delta=${delta}ms, expected ≥2000ms (UI would hide edited badge)`,
+      );
+    // Sanity: created_at is the original we captured.
+    if (upd.data.created_at !== local.jitterCreatedAt)
+      throw new Error(
+        `created_at mutated: ${local.jitterCreatedAt} -> ${upd.data.created_at}`,
+      );
+    return `Δ=${delta}ms ≥ 2000ms threshold`;
+  });
+
+  // ---- Cleanup -----------------------------------------------------------
+  // Use service-role for all teardown so RLS can't strand orphan rows even if
+  // an earlier step failed mid-wave. Wrap in try/catch each so one bad delete
+  // doesn't block the rest.
+  await step("wave-post-30: cleanup", async () => {
+    const ops = [];
+    if (local.attemptOverrideId)
+      ops.push(
+        service
+          .from("assignment_attempts")
+          .delete()
+          .eq("id", local.attemptOverrideId),
+      );
+    if (local.attemptPlainId)
+      ops.push(
+        service
+          .from("assignment_attempts")
+          .delete()
+          .eq("id", local.attemptPlainId),
+      );
+    if (local.assignmentOverrideId)
+      ops.push(
+        service
+          .from("assignments")
+          .delete()
+          .eq("id", local.assignmentOverrideId),
+      );
+    if (local.assignmentPlainId)
+      ops.push(
+        service
+          .from("assignments")
+          .delete()
+          .eq("id", local.assignmentPlainId),
+      );
+    if (local.jitterPostId)
+      ops.push(
+        service
+          .from("discussion_posts")
+          .delete()
+          .eq("id", local.jitterPostId),
+      );
+    if (local.studentPostId)
+      ops.push(
+        service
+          .from("discussion_posts")
+          .delete()
+          .eq("id", local.studentPostId),
+      );
+    if (local.topicId)
+      ops.push(
+        service.from("discussion_topics").delete().eq("id", local.topicId),
+      );
+    for (const op of ops) {
+      try {
+        await op;
+      } catch {
+        /* best-effort */
+      }
+    }
+    // Remove the second student (cascade clears any residual memberships).
+    if (local.secondStudentId) {
+      await service.auth.admin
+        .deleteUser(local.secondStudentId)
+        .catch(() => {});
+    }
+    return "cleaned";
+  });
+}
+
 // ------------------------- STUDENT PROFILE -------------------------
 //
 // Smoke test for the THREE queries useStudentProfile (teacher-facing) fires:
@@ -2545,6 +3078,7 @@ async function teardown() {
       await wave35();
       await wave27();
       await wave63();
+      await wavePost30();
       await studentProfile();
     }
   } finally {
