@@ -61,6 +61,23 @@ export function ThreadView() {
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const markedThreadRef = useRef<string | null>(null);
 
+  // Snapshot the first-unread id + count on the first messages-load for this
+  // thread. Captured via a ref so the in-flight mark-as-read UPDATE (which
+  // mutates messages.read_by_recipient_at on the next refetch) doesn't erase
+  // the banner. Cleared on thread switch.
+  const unreadSnapshotRef = useRef<{
+    threadId: string;
+    firstUnreadId: string;
+    count: number;
+  } | null>(null);
+  const [unreadSnapshot, setUnreadSnapshot] = useState<{
+    firstUnreadId: string;
+    count: number;
+  } | null>(null);
+  const [bannerDismissed, setBannerDismissed] = useState(false);
+  const [dividerHidden, setDividerHidden] = useState(false);
+  const firstUnreadNodeRef = useRef<HTMLDivElement | null>(null);
+
   // Merge server messages with any locally-pending optimistic sends.
   // Once the server returns a real row for an optimistic one, drop the temp.
   const displayMessages = useMemo<OptimisticMessage[]>(() => {
@@ -97,17 +114,91 @@ export function ThreadView() {
     })();
   }, [threadId, currentUserId]);
 
-  // Reset optimistic queue when switching threads.
+  // Reset optimistic queue + unread snapshot when switching threads.
   useEffect(() => {
     setOptimistic([]);
+    unreadSnapshotRef.current = null;
+    setUnreadSnapshot(null);
+    setBannerDismissed(false);
+    setDividerHidden(false);
+    firstUnreadNodeRef.current = null;
   }, [threadId]);
 
-  // Autoscroll to newest on mount + when messages change.
+  // Capture the first-unread snapshot on the first messages payload for this
+  // thread. "Unread" = authored by the other user AND read_by_recipient_at
+  // is null. Single-message threads and all-read threads → no snapshot.
+  useEffect(() => {
+    if (!threadId || !currentUserId) return;
+    if (loading) return;
+    if (unreadSnapshotRef.current?.threadId === threadId) return;
+    if (messages.length < 2) {
+      unreadSnapshotRef.current = { threadId, firstUnreadId: "", count: 0 };
+      return;
+    }
+    const unread = messages.filter(
+      (m) => m.author_id !== currentUserId && m.read_by_recipient_at === null,
+    );
+    if (unread.length === 0) {
+      unreadSnapshotRef.current = { threadId, firstUnreadId: "", count: 0 };
+      return;
+    }
+    const snapshot = {
+      threadId,
+      firstUnreadId: unread[0].id,
+      count: unread.length,
+    };
+    unreadSnapshotRef.current = snapshot;
+    setUnreadSnapshot({
+      firstUnreadId: snapshot.firstUnreadId,
+      count: snapshot.count,
+    });
+  }, [threadId, currentUserId, loading, messages]);
+
+  // Autoscroll to newest on mount + when messages change. (Option B: stay
+  // with the existing scroll-to-bottom behavior; the unread banner is
+  // purely additive — user clicks it to jump up to the first unread.)
   useEffect(() => {
     const node = scrollRef.current;
     if (!node) return;
     node.scrollTop = node.scrollHeight;
   }, [displayMessages]);
+
+  // When the user scrolls past the first unread message naturally, dismiss
+  // the banner and hide the "New" divider after a short grace period.
+  useEffect(() => {
+    if (!unreadSnapshot) return;
+    if (bannerDismissed && dividerHidden) return;
+    const scroller = scrollRef.current;
+    const marker = firstUnreadNodeRef.current;
+    if (!scroller || !marker) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            // First unread is visible — dismiss the banner immediately.
+            setBannerDismissed(true);
+            // Hide the "New" divider after 5s of being visible so the user
+            // has time to register it before it fades.
+            window.setTimeout(() => setDividerHidden(true), 5000);
+          }
+        }
+      },
+      { root: scroller, threshold: 0.5 },
+    );
+    observer.observe(marker);
+    return () => observer.disconnect();
+  }, [unreadSnapshot, bannerDismissed, dividerHidden]);
+
+  const handleJumpToUnread = () => {
+    const node = firstUnreadNodeRef.current;
+    if (!node) {
+      setBannerDismissed(true);
+      return;
+    }
+    node.scrollIntoView({ behavior: "smooth", block: "start" });
+    setBannerDismissed(true);
+  };
 
   const handleSend = async () => {
     if (!threadId || !currentUserId) return;
@@ -153,8 +244,45 @@ export function ThreadView() {
     }
   };
 
+  const showBanner =
+    !!unreadSnapshot && unreadSnapshot.count > 0 && !bannerDismissed;
+  const firstUnreadId = unreadSnapshot?.firstUnreadId ?? "";
+  const showDivider =
+    !!unreadSnapshot && unreadSnapshot.count > 0 && !dividerHidden;
+
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col h-full relative">
+      {showBanner && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="absolute top-2 left-1/2 -translate-x-1/2 z-10 motion-safe:transition-opacity"
+        >
+          <div className="flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/30 text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 shadow-sm pl-1 pr-1 py-1">
+            <button
+              type="button"
+              onClick={handleJumpToUnread}
+              aria-label="Jump to first unread message"
+              className="flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium hover:bg-indigo-100 dark:hover:bg-indigo-900/40 min-h-[40px]"
+            >
+              <span aria-hidden="true">↓</span>
+              <span>
+                {unreadSnapshot!.count} new{" "}
+                {unreadSnapshot!.count === 1 ? "message" : "messages"} — Jump
+                to first
+              </span>
+            </button>
+            <button
+              type="button"
+              onClick={() => setBannerDismissed(true)}
+              aria-label="Dismiss new messages banner"
+              className="rounded-full w-8 h-8 flex items-center justify-center text-indigo-500 hover:bg-indigo-100 dark:hover:bg-indigo-900/40"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+        </div>
+      )}
       <div
         ref={scrollRef}
         className="flex-1 overflow-y-auto px-4 py-4 space-y-2 bg-slate-50 dark:bg-slate-900"
@@ -178,28 +306,44 @@ export function ThreadView() {
         {displayMessages.map((m) => {
           const mine = m.author_id === currentUserId;
           const pending = m._pending === true;
+          const isFirstUnread = showDivider && m.id === firstUnreadId;
           return (
-            <div
-              key={m.id}
-              className={[
-                "flex flex-col",
-                mine ? "items-end" : "items-start",
-              ].join(" ")}
-            >
-              {/* Body is HTML produced by MarkdownEditor (legacy plain text still renders correctly). */}
-              <SafeHtml
-                html={m.body}
+            <div key={m.id}>
+              {isFirstUnread && (
+                <div
+                  ref={firstUnreadNodeRef}
+                  role="separator"
+                  aria-label="New messages start here"
+                  className="flex items-center gap-2 my-3 motion-safe:transition-opacity"
+                >
+                  <div className="flex-1 h-px bg-indigo-400 dark:bg-indigo-500" />
+                  <span className="text-[11px] font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-300">
+                    New
+                  </span>
+                  <div className="flex-1 h-px bg-indigo-400 dark:bg-indigo-500" />
+                </div>
+              )}
+              <div
                 className={[
-                  "max-w-[75%] rounded-2xl px-3 py-2 text-sm break-words prose prose-sm max-w-none",
-                  mine
-                    ? "bg-indigo-600 text-white rounded-br-sm prose-invert"
-                    : "bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 ring-1 ring-slate-200 dark:ring-slate-700 rounded-bl-sm dark:prose-invert",
-                  pending ? "opacity-60" : "",
+                  "flex flex-col",
+                  mine ? "items-end" : "items-start",
                 ].join(" ")}
-              />
-              <span className="mt-0.5 text-[10px] text-slate-500 dark:text-slate-400">
-                {pending ? "Sending…" : formatStamp(m.created_at)}
-              </span>
+              >
+                {/* Body is HTML produced by MarkdownEditor (legacy plain text still renders correctly). */}
+                <SafeHtml
+                  html={m.body}
+                  className={[
+                    "max-w-[75%] rounded-2xl px-3 py-2 text-sm break-words prose prose-sm max-w-none",
+                    mine
+                      ? "bg-indigo-600 text-white rounded-br-sm prose-invert"
+                      : "bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 ring-1 ring-slate-200 dark:ring-slate-700 rounded-bl-sm dark:prose-invert",
+                    pending ? "opacity-60" : "",
+                  ].join(" ")}
+                />
+                <span className="mt-0.5 text-[10px] text-slate-500 dark:text-slate-400">
+                  {pending ? "Sending…" : formatStamp(m.created_at)}
+                </span>
+              </div>
             </div>
           );
         })}
