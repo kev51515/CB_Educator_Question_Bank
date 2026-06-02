@@ -27,6 +27,8 @@ import { useClassContext } from "./classLayoutContext";
 import { useClassRoster, type RosterStudent } from "./useClassRoster";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { BulkRosterModal } from "./BulkRosterModal";
+import { AddStudentModal } from "./AddStudentModal";
+import { ResetStudentPasswordModal } from "./ResetStudentPasswordModal";
 import { SkeletonRows } from "../components/Skeleton";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
@@ -313,6 +315,8 @@ export function ClassRoster() {
   const [actionBusy, setActionBusy] = useState(false);
   const [confirmRemove, setConfirmRemove] = useState<RosterStudent | null>(null);
   const [showBulkImport, setShowBulkImport] = useState(false);
+  const [showAddStudent, setShowAddStudent] = useState(false);
+  const [resetTarget, setResetTarget] = useState<RosterStudent | null>(null);
   // Search query for filtering the roster client-side. Transient — does not
   // persist across reloads (per spec).
   const [searchQuery, setSearchQuery] = useState("");
@@ -559,13 +563,22 @@ export function ClassRoster() {
           >
             Roster
           </h2>
-          <button
-            type="button"
-            onClick={() => setShowBulkImport(true)}
-            className="rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5"
-          >
-            Bulk import
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setShowBulkImport(true)}
+              className="rounded-md text-xs font-medium px-3 py-1.5 min-h-[36px] text-slate-600 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            >
+              Bulk import
+            </button>
+            <button
+              type="button"
+              onClick={() => setShowAddStudent(true)}
+              className="rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5 min-h-[36px] focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+            >
+              + Add student
+            </button>
+          </div>
         </header>
 
         {loading ? (
@@ -583,16 +596,16 @@ export function ClassRoster() {
           <div className="px-6 py-2">
             <EmptyState
               title="No students yet"
-              body="Share your course code with students or import a roster CSV."
+              body="Create a student login (you'll get a code + password to hand them), or share the course code so they can join themselves."
               cta={{
+                label: "+ Add student",
+                onClick: () => setShowAddStudent(true),
+              }}
+              secondaryCta={{
                 label: "Copy course code",
                 onClick: () => {
                   void onCopyCourseCode();
                 },
-              }}
-              secondaryCta={{
-                label: "Import roster CSV",
-                onClick: () => setShowBulkImport(true),
               }}
             />
           </div>
@@ -678,7 +691,10 @@ export function ClassRoster() {
                         />
                       </th>
                       <th scope="col" className="px-6 py-3 font-medium">
-                        Email
+                        Code
+                      </th>
+                      <th scope="col" className="px-6 py-3 font-medium">
+                        Email / login
                       </th>
                       <th
                         scope="col"
@@ -738,8 +754,33 @@ export function ClassRoster() {
                         onSave={(next) => onRenameStudent(s, next)}
                       />
                     </td>
+                    <td className="px-6 py-3">
+                      {s.roster_code ? (
+                        <button
+                          type="button"
+                          onClick={() => {
+                            void navigator.clipboard
+                              ?.writeText(s.roster_code ?? "")
+                              .then(() => toast.success("Code copied", s.roster_code ?? ""))
+                              .catch(() => undefined);
+                          }}
+                          title="Click to copy login code"
+                          className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 font-mono text-xs font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                        >
+                          {s.roster_code}
+                        </button>
+                      ) : (
+                        <span className="text-slate-300 dark:text-slate-600">—</span>
+                      )}
+                    </td>
                     <td className="px-6 py-3 text-slate-600 dark:text-slate-300">
-                      {s.email}
+                      {s.managed ? (
+                        <span className="inline-flex items-center rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800">
+                          Managed login
+                        </span>
+                      ) : (
+                        s.email
+                      )}
                     </td>
                     <td
                       className="px-6 py-3 text-slate-500 dark:text-slate-400"
@@ -766,6 +807,16 @@ export function ClassRoster() {
                         >
                           View profile
                         </button>
+                        {s.managed && (
+                          <button
+                            type="button"
+                            onClick={() => setResetTarget(s)}
+                            className="rounded-md min-h-[40px] md:min-h-0 px-2 py-1 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                            aria-label={`Reset password for ${s.display_name ?? s.roster_code ?? s.email}`}
+                          >
+                            Reset password
+                          </button>
+                        )}
                         <button
                           type="button"
                           onClick={() => setConfirmRemove(s)}
@@ -871,6 +922,26 @@ export function ClassRoster() {
           onDone={() => {
             void refresh();
           }}
+        />
+      )}
+
+      {showAddStudent && (
+        <AddStudentModal
+          courseId={cls.id}
+          courseName={cls.name}
+          onClose={() => setShowAddStudent(false)}
+          onCreated={() => {
+            void refresh();
+          }}
+        />
+      )}
+
+      {resetTarget && (
+        <ResetStudentPasswordModal
+          studentId={resetTarget.student_id}
+          studentName={resetTarget.display_name ?? resetTarget.roster_code ?? resetTarget.email}
+          loginCode={resetTarget.login_code ?? resetTarget.roster_code}
+          onClose={() => setResetTarget(null)}
         />
       )}
     </>

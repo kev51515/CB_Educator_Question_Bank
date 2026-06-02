@@ -55,8 +55,7 @@ import {
   AssignmentReviewRoute,
   AssignmentTakeRoute,
   ClassLayout,
-  MockTestRoute,
-  PracticeRoute,
+  StudentTestRunGuard,
 } from "./routeViews";
 import { AllClassesView } from "../admin";
 import { FullTestApp, TestsAdminPage, TestReviewPage } from "../fulltest";
@@ -67,8 +66,6 @@ import { QuestionBankPage } from "../teacher/QuestionBankPage";
 import { QBankSubmissionLogPage } from "../teacher/QBankSubmissionLogPage";
 import { StudentProfilePage } from "../teacher/StudentProfilePage";
 import { StudentCourseView } from "../student/StudentCourseView";
-import { MockTestHistoryPage } from "../student/MockTestHistoryPage";
-import { MockTestReviewPage } from "../student/MockTestReviewPage";
 import { MyFeedbackPage } from "../student/MyFeedbackPage";
 import { ROUTES } from "../lib/routes";
 import { supabase } from "../lib/supabase";
@@ -203,41 +200,43 @@ function PublicRoutes({
 }
 
 /**
- * Authenticated routes for a student. Wraps the legacy bank App passed as
- * `children` — only mounted under the /practice route so it doesn't double
- * up with the AreaSelector at /.
+ * Authenticated routes for a student.
+ *
+ * Controlled-access model (decided 2026-06-02): students see ONLY what the
+ * teacher assigns. The free-roam surfaces — the question bank (/practice),
+ * the free mock test (/mock-test) and its history — are no longer reachable
+ * from a student session; their routes redirect home. The legacy bank App
+ * (passed to AuthGate as `children`) is therefore not mounted for students.
+ * Full-length tests stay reachable at /test/:slug but are gated by
+ * StudentTestRunGuard so a student can only open a test their teacher has
+ * placed in one of their courses.
  */
 function StudentRoutesTree({
   studentId,
   account,
-  children,
 }: {
   studentId: string;
   account: AccountContext;
-  children: ReactNode;
 }) {
   return (
     <Routes>
       <Route element={<StudentShell />}>
         <Route path={ROUTES.HOME} element={<AreaSelector />} />
-        <Route
-          path={ROUTES.PRACTICE}
-          element={<PracticeRoute>{children}</PracticeRoute>}
-        />
-        <Route
-          path={ROUTES.MOCK_TEST}
-          element={<MockTestRoute userId={studentId} />}
-        />
-        <Route
-          path={ROUTES.MOCK_TEST_HISTORY}
-          element={<MockTestHistoryPage />}
-        />
-        <Route
-          path={ROUTES.MOCK_TEST_REVIEW}
-          element={<MockTestReviewPage />}
-        />
+        {/* Locked: free question bank + free mock test are off-limits to
+            students. Redirect any lingering links/bookmarks back home. */}
+        <Route path={ROUTES.PRACTICE} element={<Navigate to={ROUTES.HOME} replace />} />
+        <Route path={ROUTES.MOCK_TEST} element={<Navigate to={ROUTES.HOME} replace />} />
+        <Route path={ROUTES.MOCK_TEST_HISTORY} element={<Navigate to={ROUTES.HOME} replace />} />
+        <Route path={ROUTES.MOCK_TEST_REVIEW} element={<Navigate to={ROUTES.HOME} replace />} />
         <Route path={ROUTES.MY_FEEDBACK} element={<MyFeedbackPage />} />
-        <Route path={ROUTES.TEST_RUN} element={<FullTestApp />} />
+        <Route
+          path={ROUTES.TEST_RUN}
+          element={
+            <StudentTestRunGuard>
+              <FullTestApp />
+            </StudentTestRunGuard>
+          }
+        />
         <Route
           path={ROUTES.ASSIGNMENT_TAKE}
           element={<AssignmentTakeRoute studentId={studentId} />}
@@ -459,8 +458,6 @@ export function AuthGate({ children }: AuthGateProps) {
   return isStaff ? (
     <StaffRoutesTree account={account} />
   ) : (
-    <StudentRoutesTree studentId={session.userId} account={account}>
-      {children}
-    </StudentRoutesTree>
+    <StudentRoutesTree studentId={session.userId} account={account} />
   );
 }

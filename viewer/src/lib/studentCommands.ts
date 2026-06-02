@@ -262,25 +262,7 @@ export function useStudentCommands(): Command[] {
       });
     }
 
-    // 2. Weak-skills practice.
-    cmds.push({
-      id: "practice-weak-skills",
-      label: "Practice your weak skills",
-      keywords: "review focus weak skills mastery study",
-      group: "Command",
-      run: () => navigate(`${ROUTES.PRACTICE}?weak=1`),
-    });
-
-    // 3. Mock test.
-    cmds.push({
-      id: "take-mock-test",
-      label: "Take a mock test",
-      keywords: "full-length practice exam simulation",
-      group: "Command",
-      run: () => navigate(ROUTES.MOCK_TEST),
-    });
-
-    // 4. Inbox.
+    // 2. Inbox.
     cmds.push({
       id: "open-inbox",
       label: "Open your inbox",

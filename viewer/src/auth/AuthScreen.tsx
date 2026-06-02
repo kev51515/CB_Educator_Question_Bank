@@ -79,6 +79,22 @@ function cleanError(message: string): string {
   return firstLine.trim();
 }
 
+/**
+ * Resolve the email GoTrue should authenticate against from what the user
+ * typed. Educators type a real email. Students type their per-course login
+ * code (e.g. "ABCDEF-04"), which maps to the reserved synthetic mailbox
+ * `<code>@students.local` minted by admin_create_student. We still accept a
+ * raw email for the student field too (e.g. the seeded demo student, or a
+ * self-signup student) by branching on the "@".
+ */
+const STUDENT_EMAIL_DOMAIN = "students.local";
+function resolveLoginEmail(role: SignInRole, raw: string): string {
+  const t = raw.trim();
+  if (role === "educator") return t;
+  if (t.includes("@")) return t;
+  return `${t.toLowerCase()}@${STUDENT_EMAIL_DOMAIN}`;
+}
+
 /** Small ink/cream serif monogram lockup. */
 function Wordmark({ tone }: { tone: "light" | "dark" }) {
   const square =
@@ -205,12 +221,19 @@ export function AuthScreen({
     setError(null);
     setNotice(null);
     if (!signInEmail.trim() || !signInPassword) {
-      setError("Please enter your email and password.");
+      setError(
+        signInRole === "student"
+          ? "Please enter your student code and password."
+          : "Please enter your email and password.",
+      );
       return;
     }
     setBusy(true);
     try {
-      const { error: err } = await signInWithPassword(signInEmail.trim(), signInPassword);
+      const { error: err } = await signInWithPassword(
+        resolveLoginEmail(signInRole, signInEmail),
+        signInPassword,
+      );
       if (err) setError(cleanError(err));
     } finally {
       setBusy(false);
@@ -510,16 +533,31 @@ export function AuthScreen({
           {tab === "signin" && signInMode === "password" && (
             <form onSubmit={onSignInSubmit} className="space-y-4">
               <label className="block">
-                <span className={labelCls}>Email</span>
+                <span className={labelCls}>
+                  {signInRole === "student" ? "Student code" : "Email"}
+                </span>
                 <input
                   ref={signInEmailRef}
-                  type="email"
+                  type={signInRole === "student" ? "text" : "email"}
                   value={signInEmail}
                   onChange={(e) => setSignInEmail(e.target.value)}
-                  autoComplete="email"
-                  className={inputCls}
-                  placeholder="you@example.com"
+                  autoComplete={signInRole === "student" ? "username" : "email"}
+                  spellCheck={signInRole === "student" ? false : undefined}
+                  className={
+                    signInRole === "student"
+                      ? `${inputCls} font-mono tracking-wide`
+                      : inputCls
+                  }
+                  placeholder={
+                    signInRole === "student" ? "e.g. ABCDEF-04" : "you@example.com"
+                  }
                 />
+                {signInRole === "student" && (
+                  <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
+                    The code your teacher gave you. (You can also use an email if
+                    you signed up with one.)
+                  </span>
+                )}
               </label>
               <label className="block">
                 <span className={labelCls}>Password</span>
@@ -532,20 +570,26 @@ export function AuthScreen({
                   placeholder="••••••••"
                 />
               </label>
-              <div className="flex justify-end">
-                <button
-                  type="button"
-                  onClick={() => {
-                    setResetEmail(signInEmail);
-                    setSignInMode("reset");
-                    setError(null);
-                    setNotice(null);
-                  }}
-                  className="text-xs font-medium text-stone-500 transition hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-400 dark:hover:text-stone-100"
-                >
-                  Forgot password?
-                </button>
-              </div>
+              {signInRole === "educator" ? (
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setResetEmail(signInEmail);
+                      setSignInMode("reset");
+                      setError(null);
+                      setNotice(null);
+                    }}
+                    className="text-xs font-medium text-stone-500 transition hover:text-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-400 dark:hover:text-stone-100"
+                  >
+                    Forgot password?
+                  </button>
+                </div>
+              ) : (
+                <p className="text-right text-xs text-stone-400 dark:text-stone-500">
+                  Forgot your password? Ask your teacher to reset it.
+                </p>
+              )}
               <button type="submit" disabled={busy} className={primaryBtn}>
                 {busy ? "Signing in…" : "Sign in"}
               </button>

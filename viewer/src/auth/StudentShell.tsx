@@ -264,57 +264,6 @@ export function StudentShell() {
           </NavLink>
 
           <NavLink
-            to={ROUTES.PRACTICE}
-            className={railLinkClass}
-            title="Practice"
-          >
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" />
-                <path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" />
-                <path d="M8 7h8M8 11h8M8 15h5" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>
-              Practice
-            </span>
-          </NavLink>
-
-          <NavLink
-            to={ROUTES.MOCK_TEST}
-            className={railLinkClass}
-            title="Mock Test"
-          >
-            <RailIcon>
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx={12} cy={13} r={8} />
-                <path d="M12 9v4l2.5 2.5" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>
-              Mock Test
-            </span>
-          </NavLink>
-
-          <NavLink
             to={ROUTES.CALENDAR}
             className={railLinkClass}
             title="Calendar"
@@ -492,9 +441,9 @@ const STUDENT_TABS: TabSpec[] = [
     ),
   },
   {
-    to: ROUTES.PRACTICE,
-    label: "Practice",
-    match: (p) => p.startsWith("/practice"),
+    to: ROUTES.CALENDAR,
+    label: "Calendar",
+    match: (p) => p.startsWith("/calendar"),
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -506,29 +455,8 @@ const STUDENT_TABS: TabSpec[] = [
         strokeLinejoin="round"
         aria-hidden
       >
-        <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" />
-        <path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" />
-        <path d="M8 7h8M8 11h8M8 15h5" />
-      </svg>
-    ),
-  },
-  {
-    to: ROUTES.MOCK_TEST,
-    label: "Mock",
-    match: (p) => p.startsWith("/mock-test") || p.startsWith("/test/"),
-    icon: (
-      <svg
-        viewBox="0 0 24 24"
-        className="w-5 h-5"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth={2}
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden
-      >
-        <circle cx={12} cy={13} r={8} />
-        <path d="M12 9v4l2.5 2.5" />
+        <rect x={3} y={4} width={18} height={17} rx={2} />
+        <path d="M16 2v4M8 2v4M3 10h18" />
       </svg>
     ),
   },

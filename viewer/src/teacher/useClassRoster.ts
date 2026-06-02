@@ -14,6 +14,12 @@ export interface RosterStudent {
   display_name: string | null;
   email: string;
   joined_at: string;
+  /** Per-course recognition code (e.g. "KQAZNP-04"), null for legacy rows. */
+  roster_code: string | null;
+  /** Login username for teacher-created accounts; null for self-signups. */
+  login_code: string | null;
+  /** True when this account was created by a teacher (resettable password). */
+  managed: boolean;
 }
 
 export interface UseClassRoster {
@@ -27,9 +33,12 @@ interface RosterRow {
   id: string;
   joined_at: string;
   student_id: string;
+  roster_code: string | null;
   student: {
     display_name: string | null;
     email: string;
+    login_code: string | null;
+    managed: boolean | null;
   } | null;
 }
 
@@ -57,7 +66,7 @@ export function useClassRoster(classId: string | null): UseClassRoster {
         .from("course_memberships")
         .select(
           // Disambiguate the FK explicitly so PostgREST picks the right join.
-          "id, joined_at, student_id, student:profiles!course_memberships_student_id_fkey(display_name, email)",
+          "id, joined_at, student_id, roster_code, student:profiles!course_memberships_student_id_fkey(display_name, email, login_code, managed)",
         )
         .eq("course_id", classId)
         .order("joined_at", { ascending: true });
@@ -75,6 +84,9 @@ export function useClassRoster(classId: string | null): UseClassRoster {
         display_name: row.student?.display_name ?? null,
         email: row.student?.email ?? "",
         joined_at: row.joined_at,
+        roster_code: row.roster_code ?? null,
+        login_code: row.student?.login_code ?? null,
+        managed: row.student?.managed === true,
       }));
       setRoster(mapped);
     } catch (err: unknown) {

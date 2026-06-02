@@ -20,7 +20,6 @@ import { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useStudentSession } from "./session";
 import { ShortcutHelpOverlay } from "../components/ShortcutHelpOverlay";
-import { TestsPanel } from "../fulltest";
 
 /**
  * Returns true when focus is currently in an editable surface (input,
@@ -47,54 +46,7 @@ import type {
   StudentAssignment,
   StudentAssignmentAttempt,
 } from "../student";
-import {
-  ROUTES,
-  assignmentReviewPath,
-  assignmentTakePath,
-} from "../lib/routes";
-
-interface AreaCardProps {
-  title: string;
-  description: string;
-  accent: "indigo" | "emerald";
-  icon: React.ReactNode;
-  onClick: () => void;
-  ready: boolean;
-}
-
-function AreaCard({ title, description, accent, icon, onClick, ready }: AreaCardProps) {
-  const accentClasses =
-    accent === "indigo"
-      ? "from-indigo-500 to-violet-600 hover:from-indigo-600 hover:to-violet-700 focus:ring-indigo-500"
-      : "from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 focus:ring-emerald-500";
-
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br ${accentClasses} p-6 text-left text-white shadow-lg ring-1 ring-white/10 transition-transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-100 dark:focus:ring-offset-slate-950`}
-    >
-      <div className="flex items-start gap-4">
-        <div className="rounded-xl bg-white/15 p-3 backdrop-blur-sm">{icon}</div>
-        <div className="flex-1">
-          <h2 className="text-xl font-semibold leading-tight">{title}</h2>
-          <p className="mt-1 text-sm text-white/85">{description}</p>
-          {!ready && (
-            <span className="mt-3 inline-block rounded-full bg-white/20 px-2 py-0.5 text-xs font-medium">
-              Coming soon
-            </span>
-          )}
-        </div>
-      </div>
-      <span
-        aria-hidden
-        className="absolute right-4 bottom-4 text-2xl opacity-60 transition-transform group-hover:translate-x-1"
-      >
-        →
-      </span>
-    </button>
-  );
-}
+import { assignmentReviewPath, assignmentTakePath } from "../lib/routes";
 
 export function AreaSelector() {
   const navigate = useNavigate();
@@ -102,7 +54,7 @@ export function AreaSelector() {
   // and the display name for the welcome header. useStudentSession is cheap
   // (it's just a hook around the supabase session) and ensures we never
   // end up with a stale or mismatched id.
-  const { session, setArea, signOut } = useStudentSession();
+  const { session, signOut } = useStudentSession();
   const studentName = session?.name ?? "";
 
   const [joinOpen, setJoinOpen] = useState(false);
@@ -140,19 +92,6 @@ export function AreaSelector() {
     navigate(assignmentReviewPath(assignment.id, attempt.id));
   };
 
-  const handlePickBank = () => {
-    // Keep the legacy area localStorage in sync so post-refresh restores
-    // (eventually) and other code that still reads session.area sees
-    // "bank" while the student is on /practice.
-    setArea("bank");
-    navigate(ROUTES.PRACTICE);
-  };
-
-  const handlePickMock = () => {
-    setArea("mock");
-    navigate(ROUTES.MOCK_TEST);
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12">
       <div className="mx-auto max-w-3xl">
@@ -165,7 +104,7 @@ export function AreaSelector() {
               Hi, {studentName.split(" ")[0] || studentName}
             </h1>
             <p className="mt-2 text-slate-600 dark:text-slate-400">
-              Pick where you'd like to study today.
+              Here's what your teacher has assigned.
             </p>
           </div>
           <button
@@ -177,83 +116,15 @@ export function AreaSelector() {
           </button>
         </header>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <AreaCard
-            title="Question Bank"
-            description="Browse, filter, and practice individual SAT questions by domain and skill."
-            accent="indigo"
-            ready
-            onClick={handlePickBank}
-            icon={
-              <svg
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden
-              >
-                <path d="M4 19V5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v14" />
-                <path d="M4 19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2" />
-                <path d="M8 7h8M8 11h8M8 15h5" />
-              </svg>
-            }
-          />
-          <AreaCard
-            title="Timed Practice"
-            description="Set your own timer and question count for a quick timed drill from the question bank."
-            accent="emerald"
-            ready
-            onClick={handlePickMock}
-            icon={
-              <svg
-                width={24}
-                height={24}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden
-              >
-                <circle cx={12} cy={13} r={8} />
-                <path d="M12 9v4l2.5 2.5" />
-                <path d="M9 2h6" />
-              </svg>
-            }
-          />
-        </div>
-
-        <div className="mt-10 space-y-6">
-          {/* M18: assignments lead the fold so students see what's due first. */}
+        <div className="mt-2 space-y-6">
+          {/* Assignments lead the fold — in the controlled-access model this
+              (plus each course's modules) is the student's entire workload.
+              No free question bank / free mock test / all-tests browser. */}
           <AssignmentsPanel
             refreshToken={assignmentsRefreshToken}
             onStart={handleStart}
             onReview={handleReview}
           />
-          {/* Full-length tests promoted high so the real "Official practice
-              tests" (e.g. the Nov-2023 DSAT) are front-and-center, not buried
-              below progress — the unified student tests surface. */}
-          <TestsPanel />
-          {/* M14: one-click weak-skills drill CTA right under what's due. */}
-          <button
-            type="button"
-            onClick={() => navigate(`${ROUTES.PRACTICE}?weak=1`)}
-            className="w-full min-h-[40px] flex items-center justify-between gap-3 rounded-2xl bg-gradient-to-r from-rose-500/95 to-amber-500/95 hover:from-rose-600 hover:to-amber-600 text-white px-5 py-4 shadow-md ring-1 ring-white/10 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 dark:focus:ring-offset-slate-950"
-            aria-label="Drill your weak skills"
-          >
-            <div className="text-left">
-              <div className="text-sm font-semibold">Drill your weak skills</div>
-              <div className="text-xs text-white/85 mt-0.5">
-                Jump into the question bank filtered to skills you struggle with.
-              </div>
-            </div>
-            <span aria-hidden className="text-xl">→</span>
-          </button>
           {/* Recent feedback: surface freshly-graded attempts right above
               the progress section so a teacher's comment lands next to the
               student's mastery trends. Renders nothing when there are no
@@ -272,29 +143,6 @@ export function AreaSelector() {
             </div>
           </section>
           <CourseAnnouncementsList />
-          {/* Quick link to the Timed Practice history (the /mock-test
-              free-practice drills, relabelled "Timed Practice"). */}
-          <button
-            type="button"
-            onClick={() => navigate(ROUTES.MOCK_TEST_HISTORY)}
-            className="w-full min-h-[40px] flex items-center justify-between gap-3 rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 transition"
-            aria-label="Review your timed practice history"
-          >
-            <div>
-              <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                Review your timed practice
-              </div>
-              <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                See past timed-practice attempts and compare them side-by-side.
-              </div>
-            </div>
-            <span
-              aria-hidden
-              className="text-xl text-indigo-600 dark:text-indigo-400"
-            >
-              →
-            </span>
-          </button>
           <div className="space-y-3">
             <MyClassesPanel refreshToken={classesRefreshToken} />
             <div className="flex justify-end">

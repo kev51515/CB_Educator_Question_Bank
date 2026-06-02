@@ -12,11 +12,10 @@
  * business logic belongs in the wrapped component or its hooks.
  */
 import { useEffect, useState, type ReactNode } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { Skeleton, SkeletonRows } from "@/components";
 import { ROUTES, assignmentReviewPath } from "../lib/routes";
-import { MockTestApp } from "../mocktest";
 import { AssignmentRunner } from "../student/AssignmentRunner";
 import { StudentAttemptReview } from "../student/StudentAttemptReview";
 import type {
@@ -100,31 +99,60 @@ function CenteredError({
   );
 }
 
-// --- PracticeRoute --------------------------------------------------------
+// --- StudentTestRunGuard --------------------------------------------------
 
 /**
- * Mounts the legacy question-bank viewer. The viewer's main App is passed
- * down from `main.tsx` through AuthGate as `children`; PracticeRoute just
- * forwards them so the bank renders inside the router.
+ * Gate the full-length test runner (/test/:slug) for students. In the
+ * controlled-access model a student may only open a test the teacher has
+ * placed in one of their courses (as a Modules "link" item pointing at
+ * /test/<slug>). We check for at least one such item; RLS already scopes
+ * module_items to the student's enrolled courses, so a positive hit means
+ * "assigned to me".
+ *
+ * Fail-open on query error (render the test) so a transient network blip
+ * never locks a student out of legitimately-assigned work; fail-closed only
+ * on a definite empty result (redirect home).
  */
-export function PracticeRoute({ children }: { children: ReactNode }) {
-  return <>{children}</>;
-}
-
-// --- MockTestRoute --------------------------------------------------------
-
-/**
- * Free-practice mock test (no assignment context). On exit, navigate the
- * student back to the area selector at /.
- */
-export function MockTestRoute({ userId }: { userId: string }) {
-  const navigate = useNavigate();
-  return (
-    <MockTestApp
-      userId={userId}
-      onExit={() => navigate(ROUTES.HOME)}
-    />
+export function StudentTestRunGuard({ children }: { children: ReactNode }) {
+  const params = useParams<{ slug: string }>();
+  const slug = params.slug ?? "";
+  const [state, setState] = useState<"checking" | "allowed" | "denied">(
+    "checking",
   );
+
+  useEffect(() => {
+    let cancelled = false;
+    if (!slug) {
+      setState("denied");
+      return;
+    }
+    void (async () => {
+      try {
+        const { data, error } = await supabase
+          .from("module_items")
+          .select("id, course_modules!inner(course_id)")
+          .eq("item_type", "link")
+          .ilike("url", `%/test/${slug}%`)
+          .limit(1);
+        if (cancelled) return;
+        // Fail-open on error; deny only on a clean empty result.
+        if (error) {
+          setState("allowed");
+          return;
+        }
+        setState(data && data.length > 0 ? "allowed" : "denied");
+      } catch {
+        if (!cancelled) setState("allowed");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [slug]);
+
+  if (state === "checking") return <FullScreenSkeleton />;
+  if (state === "denied") return <Navigate to={ROUTES.HOME} replace />;
+  return <>{children}</>;
 }
 
 // --- AssignmentTakeRoute --------------------------------------------------
