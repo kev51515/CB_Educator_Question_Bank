@@ -21,13 +21,129 @@
  * Optimistic UI: selected rows gray out + show "Applying…" while the request
  * is in flight; on success the table refetches via `useAssignmentAttempts.refresh`.
  */
-import { useCallback, useMemo, useState } from "react";
-import { useAssignmentAttempts } from "./useAssignmentAttempts";
+import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useAssignmentAttempts,
+  type AssignmentAttempt,
+} from "./useAssignmentAttempts";
 import { SkeletonRows } from "../components/Skeleton";
 import { BulkGradeModal, type BulkGradePatch } from "./BulkGradeModal";
 import { useToast } from "../components/Toast";
 import { useProfile } from "../lib/profile";
 import { supabase } from "../lib/supabase";
+
+type AttemptFilter = "all" | "ungraded" | "graded" | "in_progress";
+
+type AttemptSort =
+  | "submitted_desc"
+  | "submitted_asc"
+  | "name_asc"
+  | "score_desc"
+  | "score_asc";
+
+interface AttemptsViewPrefs {
+  filter: AttemptFilter;
+  sort: AttemptSort;
+}
+
+const DEFAULT_PREFS: AttemptsViewPrefs = {
+  filter: "all",
+  sort: "submitted_desc",
+};
+
+const FILTER_VALUES: ReadonlySet<AttemptFilter> = new Set<AttemptFilter>([
+  "all",
+  "ungraded",
+  "graded",
+  "in_progress",
+]);
+
+const SORT_VALUES: ReadonlySet<AttemptSort> = new Set<AttemptSort>([
+  "submitted_desc",
+  "submitted_asc",
+  "name_asc",
+  "score_desc",
+  "score_asc",
+]);
+
+function loadPrefs(storageKey: string | null): AttemptsViewPrefs {
+  if (!storageKey || typeof window === "undefined") return DEFAULT_PREFS;
+  try {
+    const raw = window.localStorage.getItem(storageKey);
+    if (!raw) return DEFAULT_PREFS;
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") return DEFAULT_PREFS;
+    const obj = parsed as Record<string, unknown>;
+    const filter =
+      typeof obj.filter === "string" && FILTER_VALUES.has(obj.filter as AttemptFilter)
+        ? (obj.filter as AttemptFilter)
+        : DEFAULT_PREFS.filter;
+    const sort =
+      typeof obj.sort === "string" && SORT_VALUES.has(obj.sort as AttemptSort)
+        ? (obj.sort as AttemptSort)
+        : DEFAULT_PREFS.sort;
+    return { filter, sort };
+  } catch {
+    return DEFAULT_PREFS;
+  }
+}
+
+function isUngraded(a: AssignmentAttempt): boolean {
+  return a.submitted_at !== null && a.graded_at === null;
+}
+
+function isGraded(a: AssignmentAttempt): boolean {
+  return a.graded_at !== null;
+}
+
+function isInProgress(a: AssignmentAttempt): boolean {
+  return a.submitted_at === null;
+}
+
+function effectiveScore(a: AssignmentAttempt): number | null {
+  return a.score_override ?? a.score_percent;
+}
+
+function compareNullableNumberDesc(
+  x: number | null,
+  y: number | null,
+): number {
+  // NULLs sort last regardless of direction.
+  if (x === null && y === null) return 0;
+  if (x === null) return 1;
+  if (y === null) return -1;
+  return y - x;
+}
+
+function compareNullableNumberAsc(
+  x: number | null,
+  y: number | null,
+): number {
+  if (x === null && y === null) return 0;
+  if (x === null) return 1;
+  if (y === null) return -1;
+  return x - y;
+}
+
+function compareNullableTimestampDesc(
+  x: string | null,
+  y: string | null,
+): number {
+  if (x === null && y === null) return 0;
+  if (x === null) return 1;
+  if (y === null) return -1;
+  return y.localeCompare(x);
+}
+
+function compareNullableTimestampAsc(
+  x: string | null,
+  y: string | null,
+): number {
+  if (x === null && y === null) return 0;
+  if (x === null) return 1;
+  if (y === null) return -1;
+  return x.localeCompare(y);
+}
 
 interface AssignmentAttemptsViewProps {
   assignmentId: string;
@@ -96,13 +212,136 @@ export function AssignmentAttemptsView({
   );
   const submittedCount = submittedAttempts.length;
 
-  // For master checkbox state: checked if every submitted attempt is
-  // selected, indeterminate if some are.
+  // Persistence key — scoped per (teacher, assignment) per CLAUDE.md rule 5.
+  const storageKey = useMemo<string | null>(() => {
+    if (!profile?.id || !assignmentId) return null;
+    return `teacher.attemptsView:${profile.id}:${assignmentId}`;
+  }, [profile?.id, assignmentId]);
+
+  const [filter, setFilter] = useState<AttemptFilter>(
+    () => loadPrefs(storageKey).filter,
+  );
+  const [sort, setSort] = useState<AttemptSort>(
+    () => loadPrefs(storageKey).sort,
+  );
+  const [searchQuery, setSearchQuery] = useState<string>("");
+
+  // Re-hydrate when the storage key resolves (profile may load after mount).
+  useEffect(() => {
+    if (!storageKey) return;
+    const prefs = loadPrefs(storageKey);
+    setFilter(prefs.filter);
+    setSort(prefs.sort);
+  }, [storageKey]);
+
+  // Persist on change.
+  useEffect(() => {
+    if (!storageKey || typeof window === "undefined") return;
+    try {
+      window.localStorage.setItem(
+        storageKey,
+        JSON.stringify({ filter, sort } satisfies AttemptsViewPrefs),
+      );
+    } catch {
+      // Quota exceeded / private mode — silently ignore.
+    }
+  }, [storageKey, filter, sort]);
+
+  // Bucket counts — always reflect the unfiltered set so the chip badges
+  // tell the teacher "switching to X would show Y rows".
+  const filterCounts = useMemo(() => {
+    let ungraded = 0;
+    let graded = 0;
+    let inProgress = 0;
+    for (const a of attempts) {
+      if (isInProgress(a)) inProgress += 1;
+      else if (isGraded(a)) graded += 1;
+      else if (isUngraded(a)) ungraded += 1;
+    }
+    return {
+      all: attempts.length,
+      ungraded,
+      graded,
+      in_progress: inProgress,
+    } as const;
+  }, [attempts]);
+
+  // Apply pill filter + name search, then sort.
+  const visibleAttempts = useMemo<AssignmentAttempt[]>(() => {
+    const normalizedQuery = searchQuery.trim().toLocaleLowerCase();
+    const filtered = attempts.filter((a) => {
+      if (filter === "ungraded" && !isUngraded(a)) return false;
+      if (filter === "graded" && !isGraded(a)) return false;
+      if (filter === "in_progress" && !isInProgress(a)) return false;
+      if (normalizedQuery) {
+        const name = (a.student_display_name ?? "").toLocaleLowerCase();
+        if (!name.includes(normalizedQuery)) return false;
+      }
+      return true;
+    });
+
+    const sorted = [...filtered];
+    switch (sort) {
+      case "submitted_desc":
+        sorted.sort((x, y) =>
+          compareNullableTimestampDesc(x.submitted_at, y.submitted_at),
+        );
+        break;
+      case "submitted_asc":
+        sorted.sort((x, y) =>
+          compareNullableTimestampAsc(x.submitted_at, y.submitted_at),
+        );
+        break;
+      case "name_asc":
+        sorted.sort((x, y) => {
+          const nx = x.student_display_name ?? "";
+          const ny = y.student_display_name ?? "";
+          // Empty names sort to end so we can still see "real" rows up top.
+          if (!nx && !ny) return 0;
+          if (!nx) return 1;
+          if (!ny) return -1;
+          return nx.localeCompare(ny, undefined, { sensitivity: "base" });
+        });
+        break;
+      case "score_desc":
+        sorted.sort((x, y) =>
+          compareNullableNumberDesc(effectiveScore(x), effectiveScore(y)),
+        );
+        break;
+      case "score_asc":
+        sorted.sort((x, y) =>
+          compareNullableNumberAsc(effectiveScore(x), effectiveScore(y)),
+        );
+        break;
+    }
+    return sorted;
+  }, [attempts, filter, sort, searchQuery]);
+
+  // Live-region announcement when the filtered count changes.
+  const filterAnnouncement = useMemo(() => {
+    if (filter === "all" && !searchQuery.trim()) {
+      return `${visibleAttempts.length} attempt${visibleAttempts.length === 1 ? "" : "s"}.`;
+    }
+    return `${visibleAttempts.length} attempt${visibleAttempts.length === 1 ? "" : "s"} match the current filter.`;
+  }, [visibleAttempts.length, filter, searchQuery]);
+
+  // Visible submitted attempts — what the master checkbox operates on, so
+  // "select all" follows the active filter rather than steamrolling rows
+  // the teacher has filtered out of view.
+  const visibleSubmittedAttempts = useMemo(
+    () => visibleAttempts.filter((a) => a.submitted_at !== null),
+    [visibleAttempts],
+  );
+  const visibleSubmittedCount = visibleSubmittedAttempts.length;
+
+  // For master checkbox state: checked if every visible submitted attempt
+  // is selected, indeterminate if some are.
   const allSubmittedSelected =
-    submittedCount > 0 &&
-    submittedAttempts.every((a) => selectedIds.has(a.id));
+    visibleSubmittedCount > 0 &&
+    visibleSubmittedAttempts.every((a) => selectedIds.has(a.id));
   const someSubmittedSelected =
-    !allSubmittedSelected && submittedAttempts.some((a) => selectedIds.has(a.id));
+    !allSubmittedSelected &&
+    visibleSubmittedAttempts.some((a) => selectedIds.has(a.id));
 
   // Count of selected attempts that are already graded — surfaced in the
   // modal as a "feedback will be REPLACED" warning.
@@ -126,20 +365,20 @@ export function AssignmentAttemptsView({
 
   const toggleAllSubmitted = useCallback(() => {
     setSelectedIds((prev) => {
-      // If all submitted are already in the set, clear them; otherwise add
-      // every submitted attempt.
+      // Operates on the visible (filtered) submitted set so the checkbox
+      // mirrors what the teacher actually sees.
       const everySelected =
-        submittedAttempts.length > 0 &&
-        submittedAttempts.every((a) => prev.has(a.id));
+        visibleSubmittedAttempts.length > 0 &&
+        visibleSubmittedAttempts.every((a) => prev.has(a.id));
       const next = new Set(prev);
       if (everySelected) {
-        for (const a of submittedAttempts) next.delete(a.id);
+        for (const a of visibleSubmittedAttempts) next.delete(a.id);
       } else {
-        for (const a of submittedAttempts) next.add(a.id);
+        for (const a of visibleSubmittedAttempts) next.add(a.id);
       }
       return next;
     });
-  }, [submittedAttempts]);
+  }, [visibleSubmittedAttempts]);
 
   const clearSelection = useCallback(() => {
     setSelectedIds(new Set<string>());
@@ -218,13 +457,115 @@ export function AssignmentAttemptsView({
           aria-labelledby="attempts-title"
           className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"
         >
-          <header className="px-6 py-4 border-b border-slate-200 dark:border-slate-800">
-            <h2
-              id="attempts-title"
-              className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
-            >
-              Student attempts
-            </h2>
+          <header className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 space-y-3">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <h2
+                id="attempts-title"
+                className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+              >
+                Student attempts
+              </h2>
+              {attempts.length > 0 && (
+                <div className="flex flex-wrap items-center gap-2">
+                  <label className="inline-flex items-center gap-2">
+                    <span className="sr-only">Search students</span>
+                    <input
+                      type="search"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search student…"
+                      aria-label="Search students"
+                      className="min-h-[40px] w-56 rounded-lg bg-white dark:bg-slate-950/60 ring-1 ring-slate-200 dark:ring-slate-700 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors"
+                    />
+                  </label>
+                  <label className="inline-flex items-center gap-2">
+                    <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+                      Sort
+                    </span>
+                    <select
+                      value={sort}
+                      onChange={(e) => setSort(e.target.value as AttemptSort)}
+                      aria-label="Sort attempts"
+                      className="min-h-[40px] rounded-lg bg-white dark:bg-slate-950/60 ring-1 ring-slate-200 dark:ring-slate-700 px-2.5 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors"
+                    >
+                      <option value="submitted_desc">
+                        Most recent submission
+                      </option>
+                      <option value="submitted_asc">Oldest submission</option>
+                      <option value="name_asc">Student name (A–Z)</option>
+                      <option value="score_desc">Highest score</option>
+                      <option value="score_asc">Lowest score</option>
+                    </select>
+                  </label>
+                </div>
+              )}
+            </div>
+            {attempts.length > 0 && (
+              <div
+                role="tablist"
+                aria-label="Filter attempts by grading status"
+                className="flex flex-wrap items-center gap-2"
+              >
+                {(
+                  [
+                    { key: "all", label: "All", count: filterCounts.all },
+                    {
+                      key: "ungraded",
+                      label: "Ungraded",
+                      count: filterCounts.ungraded,
+                    },
+                    {
+                      key: "graded",
+                      label: "Graded",
+                      count: filterCounts.graded,
+                    },
+                    {
+                      key: "in_progress",
+                      label: "In progress",
+                      count: filterCounts.in_progress,
+                    },
+                  ] as ReadonlyArray<{
+                    key: AttemptFilter;
+                    label: string;
+                    count: number;
+                  }>
+                ).map((chip) => {
+                  const active = filter === chip.key;
+                  return (
+                    <button
+                      key={chip.key}
+                      type="button"
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => setFilter(chip.key)}
+                      className={
+                        "inline-flex items-center gap-1.5 min-h-[40px] rounded-full px-3 py-1.5 text-xs font-semibold motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-slate-900 " +
+                        (active
+                          ? "bg-indigo-600 text-white hover:bg-indigo-700"
+                          : "bg-slate-100 dark:bg-slate-800/60 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700/60 ring-1 ring-slate-200 dark:ring-slate-700")
+                      }
+                    >
+                      <span>{chip.label}</span>
+                      <span
+                        className={
+                          "rounded-full px-1.5 py-0.5 text-[10px] font-bold tabular-nums " +
+                          (active
+                            ? "bg-white/20 text-white"
+                            : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700")
+                        }
+                        aria-hidden
+                      >
+                        {chip.count}
+                      </span>
+                      <span className="sr-only">{chip.count} attempts</span>
+                    </button>
+                  );
+                })}
+              </div>
+            )}
+            <p aria-live="polite" className="sr-only">
+              {filterAnnouncement}
+            </p>
           </header>
 
           {loading ? (
@@ -243,20 +584,36 @@ export function AssignmentAttemptsView({
               No attempts yet. Students will appear here once they start the
               assignment.
             </p>
+          ) : visibleAttempts.length === 0 ? (
+            <div className="px-6 py-10 text-center space-y-3">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
+                No attempts match this filter.
+              </p>
+              <button
+                type="button"
+                onClick={() => {
+                  setFilter("all");
+                  setSearchQuery("");
+                }}
+                className="inline-flex items-center min-h-[40px] rounded-full bg-indigo-600 hover:bg-indigo-700 px-4 py-1.5 text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-slate-900 motion-safe:transition-colors"
+              >
+                Show all
+              </button>
+            </div>
           ) : (
             <div className="overflow-x-auto">
               <table className="min-w-full text-sm">
                 <thead className="bg-slate-50 dark:bg-slate-800/40 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   <tr>
                     <th className="px-4 py-3 font-medium w-10">
-                      {submittedCount > 0 ? (
+                      {visibleSubmittedCount > 0 ? (
                         <label className="inline-flex items-center justify-center cursor-pointer">
                           <span className="sr-only">
-                            Select all {submittedCount} submitted attempts
+                            Select all {visibleSubmittedCount} submitted attempts
                           </span>
                           <input
                             type="checkbox"
-                            aria-label={`Select all ${submittedCount} submitted attempts`}
+                            aria-label={`Select all ${visibleSubmittedCount} submitted attempts`}
                             checked={allSubmittedSelected}
                             ref={(el) => {
                               if (el) el.indeterminate = someSubmittedSelected;
@@ -270,16 +627,53 @@ export function AssignmentAttemptsView({
                         <span className="sr-only">Select</span>
                       )}
                     </th>
-                    <th className="px-6 py-3 font-medium">Student</th>
+                    <th className="px-6 py-3 font-medium">
+                      <span className="inline-flex items-center gap-1">
+                        Student
+                        {sort === "name_asc" && (
+                          <span aria-hidden className="text-indigo-500">
+                            ▾
+                          </span>
+                        )}
+                      </span>
+                    </th>
                     <th className="px-6 py-3 font-medium">Email</th>
                     <th className="px-6 py-3 font-medium">Started</th>
-                    <th className="px-6 py-3 font-medium">Submitted</th>
-                    <th className="px-6 py-3 font-medium">Score</th>
+                    <th className="px-6 py-3 font-medium">
+                      <span className="inline-flex items-center gap-1">
+                        Submitted
+                        {sort === "submitted_desc" && (
+                          <span aria-hidden className="text-indigo-500">
+                            ▾
+                          </span>
+                        )}
+                        {sort === "submitted_asc" && (
+                          <span aria-hidden className="text-indigo-500">
+                            ▴
+                          </span>
+                        )}
+                      </span>
+                    </th>
+                    <th className="px-6 py-3 font-medium">
+                      <span className="inline-flex items-center gap-1">
+                        Score
+                        {sort === "score_desc" && (
+                          <span aria-hidden className="text-indigo-500">
+                            ▾
+                          </span>
+                        )}
+                        {sort === "score_asc" && (
+                          <span aria-hidden className="text-indigo-500">
+                            ▴
+                          </span>
+                        )}
+                      </span>
+                    </th>
                     <th className="px-6 py-3 font-medium sr-only">Actions</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                  {attempts.map((a) => {
+                  {visibleAttempts.map((a) => {
                     const isSubmitted = a.submitted_at !== null;
                     const isSelected = selectedIds.has(a.id);
                     const isApplying = applyingIds.has(a.id);
