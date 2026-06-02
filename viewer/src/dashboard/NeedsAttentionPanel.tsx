@@ -802,10 +802,10 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
                 meta={timeAgo(item.createdAt)}
                 onClick={() =>
                   navigate(
-                    courseDiscussionPath(
+                    `${courseDiscussionPath(
                       item.courseShortCode,
                       item.topicShortCode,
-                    ),
+                    )}#post-${item.postId}`,
                   )
                 }
               />

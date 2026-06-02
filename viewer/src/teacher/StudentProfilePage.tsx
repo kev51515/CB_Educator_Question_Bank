@@ -104,6 +104,237 @@ function attemptStatusLabel(row: StudentAttemptRow): {
   };
 }
 
+// --- Score trajectory sparkline --------------------------------------------
+//
+// Tiny inline SVG sparkline showing the student's effective-score trajectory
+// across their most recent (up to 15) graded attempts. Lives in the profile
+// header, just under the role chip. Pure SVG, no chart library, no new deps.
+//
+// Scale: y is 0..100 (effective_score is already a percent). The last
+// segment is colored by score band (emerald ≥80 / indigo 70-79 /
+// amber 50-69 / rose <50) so the eye snaps to the trend's destination.
+
+interface TrajectoryPoint {
+  /** Index in the sorted-ascending series (used as the x coordinate). */
+  x: number;
+  /** Effective score 0..100. */
+  y: number;
+  /** Submitted-at ISO date for the hover <title>. */
+  date: string;
+}
+
+const SPARK_W = 280;
+const SPARK_H = 60;
+const SPARK_PAD_X = 6;
+const SPARK_PAD_Y = 8;
+
+function bandClass(score: number): string {
+  if (score >= 80) return "text-emerald-500 dark:text-emerald-400";
+  if (score >= 70) return "text-indigo-500 dark:text-indigo-400";
+  if (score >= 50) return "text-amber-500 dark:text-amber-400";
+  return "text-rose-500 dark:text-rose-400";
+}
+
+function bandFillClass(score: number): string {
+  if (score >= 80) return "fill-emerald-600 dark:fill-emerald-400";
+  if (score >= 70) return "fill-indigo-600 dark:fill-indigo-400";
+  if (score >= 50) return "fill-amber-600 dark:fill-amber-400";
+  return "fill-rose-600 dark:fill-rose-400";
+}
+
+function projectSparkX(index: number, total: number): number {
+  if (total <= 1) return SPARK_W / 2;
+  const range = SPARK_W - SPARK_PAD_X * 2;
+  return SPARK_PAD_X + (index / (total - 1)) * range;
+}
+
+function projectSparkY(score: number): number {
+  const clamped = Math.max(0, Math.min(100, score));
+  const range = SPARK_H - SPARK_PAD_Y * 2;
+  // y inverted: high score → small y
+  return SPARK_PAD_Y + (1 - clamped / 100) * range;
+}
+
+function formatSparkDate(iso: string): string {
+  try {
+    const d = new Date(iso);
+    if (Number.isNaN(d.getTime())) return iso;
+    return d.toLocaleDateString(undefined, { month: "short", day: "numeric" });
+  } catch {
+    return iso;
+  }
+}
+
+interface ScoreTrajectorySparklineProps {
+  points: ReadonlyArray<TrajectoryPoint>;
+  /** ISO of the most recent point — surfaced in the caption beneath the chart. */
+  latestAt: string;
+}
+
+function ScoreTrajectorySparkline({
+  points,
+  latestAt,
+}: ScoreTrajectorySparklineProps): JSX.Element | null {
+  if (points.length === 0) return null;
+
+  // Single-point case: render a dot + helper copy, skip the chart.
+  if (points.length === 1) {
+    const only = points[0];
+    return (
+      <div className="mt-3 max-w-[280px]">
+        <div className="flex items-center gap-2">
+          <svg
+            width={SPARK_W}
+            height={SPARK_H}
+            viewBox={`0 0 ${SPARK_W} ${SPARK_H}`}
+            className="block"
+            aria-hidden
+          >
+            {/* gridlines */}
+            <line
+              x1={SPARK_PAD_X}
+              x2={SPARK_W - SPARK_PAD_X}
+              y1={projectSparkY(0)}
+              y2={projectSparkY(0)}
+              stroke="currentColor"
+              strokeWidth={1}
+              className="text-slate-200 dark:text-slate-700"
+            />
+            <line
+              x1={SPARK_PAD_X}
+              x2={SPARK_W - SPARK_PAD_X}
+              y1={projectSparkY(50)}
+              y2={projectSparkY(50)}
+              stroke="currentColor"
+              strokeDasharray="3 4"
+              strokeWidth={1}
+              className="text-slate-200 dark:text-slate-700"
+            />
+            <line
+              x1={SPARK_PAD_X}
+              x2={SPARK_W - SPARK_PAD_X}
+              y1={projectSparkY(100)}
+              y2={projectSparkY(100)}
+              stroke="currentColor"
+              strokeWidth={1}
+              className="text-slate-200 dark:text-slate-700"
+            />
+            <circle
+              cx={projectSparkX(0, 1)}
+              cy={projectSparkY(only.y)}
+              r={4}
+              className={bandFillClass(only.y)}
+              stroke="white"
+              strokeWidth={1.5}
+            >
+              <title>
+                {formatSparkDate(only.date)}: {Math.round(only.y)}%
+              </title>
+            </circle>
+          </svg>
+        </div>
+        <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+          Only one data point — need 2 attempts to see a trajectory
+        </p>
+      </div>
+    );
+  }
+
+  const last = points[points.length - 1];
+  const lineColor = bandClass(last.y);
+
+  const pathD = points
+    .map((p, i) => {
+      const x = projectSparkX(p.x, points.length).toFixed(2);
+      const y = projectSparkY(p.y).toFixed(2);
+      return `${i === 0 ? "M" : "L"} ${x} ${y}`;
+    })
+    .join(" ");
+
+  return (
+    <div className="mt-3 max-w-[280px]">
+      <svg
+        role="img"
+        aria-label={`Score trajectory across the last ${points.length} graded attempts`}
+        width={SPARK_W}
+        height={SPARK_H}
+        viewBox={`0 0 ${SPARK_W} ${SPARK_H}`}
+        className="block motion-safe:transition-opacity"
+      >
+        {/* Subtle gridlines at 0%, 50%, 100% */}
+        <line
+          x1={SPARK_PAD_X}
+          x2={SPARK_W - SPARK_PAD_X}
+          y1={projectSparkY(100)}
+          y2={projectSparkY(100)}
+          stroke="currentColor"
+          strokeWidth={1}
+          className="text-slate-200 dark:text-slate-700"
+        />
+        <line
+          x1={SPARK_PAD_X}
+          x2={SPARK_W - SPARK_PAD_X}
+          y1={projectSparkY(50)}
+          y2={projectSparkY(50)}
+          stroke="currentColor"
+          strokeDasharray="3 4"
+          strokeWidth={1}
+          className="text-slate-200 dark:text-slate-700"
+        />
+        <line
+          x1={SPARK_PAD_X}
+          x2={SPARK_W - SPARK_PAD_X}
+          y1={projectSparkY(0)}
+          y2={projectSparkY(0)}
+          stroke="currentColor"
+          strokeWidth={1}
+          className="text-slate-200 dark:text-slate-700"
+        />
+
+        {/* Trajectory polyline, colored by the latest point's band */}
+        <path
+          d={pathD}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className={lineColor}
+          vectorEffect="non-scaling-stroke"
+        />
+
+        {/* Per-attempt dots with accessible tooltips */}
+        {points.map((p, i) => {
+          const isLast = i === points.length - 1;
+          const cx = projectSparkX(p.x, points.length);
+          const cy = projectSparkY(p.y);
+          return (
+            <circle
+              key={`${p.date}-${i}`}
+              cx={cx}
+              cy={cy}
+              r={isLast ? 4 : 2.5}
+              className={
+                isLast ? bandFillClass(p.y) : "fill-slate-400 dark:fill-slate-500"
+              }
+              stroke="white"
+              strokeWidth={1.25}
+            >
+              <title>
+                {formatSparkDate(p.date)}: {Math.round(p.y)}%
+              </title>
+            </circle>
+          );
+        })}
+      </svg>
+      <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+        Last {points.length} attempt{points.length === 1 ? "" : "s"} · most recent{" "}
+        <time dateTime={latestAt}>{formatRelative(latestAt)}</time>
+      </p>
+    </div>
+  );
+}
+
 // --- Header ----------------------------------------------------------------
 
 interface HeaderProps {
@@ -113,6 +344,12 @@ interface HeaderProps {
   role: string | null;
   courseName: string;
   lastActivityAt: string | null;
+  /** Pre-computed score-trajectory points, ascending by submittedAt.
+   *  Empty array hides the sparkline; length 1 shows a single-point hint;
+   *  length ≥ 2 shows the polyline. */
+  trajectory: ReadonlyArray<TrajectoryPoint>;
+  /** ISO of the most recent point in `trajectory`. Unused when empty. */
+  trajectoryLatestAt: string | null;
   /** When provided, renders a "Send message" CTA that defers to the inbox
    *  compose-param consumer wired in Round 12. */
   onSendMessage?: () => void;
@@ -125,6 +362,8 @@ function ProfileHeader({
   role,
   courseName,
   lastActivityAt,
+  trajectory,
+  trajectoryLatestAt,
   onSendMessage,
 }: HeaderProps): JSX.Element {
   return (
@@ -148,6 +387,12 @@ function ProfileHeader({
               </span>
             )}
           </div>
+          {trajectory.length > 0 && trajectoryLatestAt && (
+            <ScoreTrajectorySparkline
+              points={trajectory}
+              latestAt={trajectoryLatestAt}
+            />
+          )}
           <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
             <span className="font-medium text-slate-600 dark:text-slate-300">
               {courseName}
@@ -769,6 +1014,35 @@ export function StudentProfilePage(): JSX.Element {
     posts.length === 0 &&
     portfolio.length === 0;
 
+  // Derive the score-trajectory sparkline points from the attempts the hook
+  // already returned — no additional fetch required. We only consider rows
+  // that have both a submitted_at timestamp and a non-null effective_score
+  // (skip in-progress rows and rows still awaiting a manual override). The
+  // series is sorted ascending by submitted_at and capped at the most
+  // recent 15 attempts to keep the header compact.
+  const trajectory = useMemo<TrajectoryPoint[]>(() => {
+    const eligible = attempts.filter(
+      (a): a is StudentAttemptRow & {
+        submitted_at: string;
+        effective_score: number;
+      } => a.submitted_at !== null && a.effective_score !== null,
+    );
+    eligible.sort(
+      (a, b) =>
+        new Date(a.submitted_at).getTime() -
+        new Date(b.submitted_at).getTime(),
+    );
+    const recent = eligible.slice(-15);
+    return recent.map((a, i) => ({
+      x: i,
+      y: a.effective_score,
+      date: a.submitted_at,
+    }));
+  }, [attempts]);
+
+  const trajectoryLatestAt =
+    trajectory.length > 0 ? trajectory[trajectory.length - 1].date : null;
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-6 space-y-4">
       <nav className="flex items-center gap-2 text-sm">
@@ -817,6 +1091,8 @@ export function StudentProfilePage(): JSX.Element {
             role={header.role}
             courseName={course?.name ?? "Course"}
             lastActivityAt={lastActivityAt}
+            trajectory={trajectory}
+            trajectoryLatestAt={trajectoryLatestAt}
             onSendMessage={
               header.id
                 ? () =>

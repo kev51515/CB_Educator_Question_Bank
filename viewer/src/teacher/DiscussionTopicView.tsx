@@ -11,7 +11,7 @@
  * post.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useClassContext } from "./classLayoutContext";
 import { useProfile } from "../lib/profile";
@@ -312,7 +312,10 @@ function PostNode({
 
   return (
     <div className={indentClass}>
-      <article className="rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-4 space-y-2">
+      <article
+        id={`post-${node.post.id}`}
+        className="scroll-mt-24 rounded-xl bg-white/85 dark:bg-slate-900/70 ring-1 ring-slate-200 dark:ring-slate-800 p-4 space-y-2"
+      >
         <header className="flex items-baseline justify-between gap-2">
           <p className="text-xs text-slate-500 dark:text-slate-400">
             <span className="font-medium text-slate-700 dark:text-slate-200">
@@ -433,6 +436,34 @@ export function DiscussionTopicView() {
   }, [posts, optimisticPosts]);
 
   const tree = useMemo(() => buildTree(combinedPosts), [combinedPosts]);
+
+  const location = useLocation();
+  const lastScrolledHashRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (combinedPosts.length === 0) return;
+    const hash = location.hash;
+    if (!hash || !hash.startsWith("#post-")) return;
+    if (lastScrolledHashRef.current === hash) return;
+    const el = document.getElementById(hash.slice(1));
+    if (!el) return;
+    lastScrolledHashRef.current = hash;
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+    el.classList.add(
+      "ring-2",
+      "ring-indigo-400",
+      "dark:ring-indigo-500",
+      "motion-safe:transition-shadow",
+    );
+    const t = window.setTimeout(() => {
+      el.classList.remove(
+        "ring-2",
+        "ring-indigo-400",
+        "dark:ring-indigo-500",
+        "motion-safe:transition-shadow",
+      );
+    }, 2400);
+    return () => window.clearTimeout(t);
+  }, [combinedPosts, location.hash]);
 
   if (notFound) {
     return <Navigate to={courseDiscussionsPath(cls.short_code)} replace />;
