@@ -22,7 +22,7 @@
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabase";
-import { Skeleton } from "../components";
+import { EmptyState, Skeleton } from "../components";
 import { SmartDatePicker } from "../components/SmartDatePicker";
 
 interface AuditEvent {
@@ -568,14 +568,11 @@ export function AdminAuditPage() {
             ) : rows.length === 0 ? (
               <tr>
                 <td colSpan={5} className="px-0 py-0">
-                  <div className="flex flex-col items-center justify-center text-center py-12 px-4">
-                    <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
-                      No audit events yet
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400 max-w-md">
-                      No events match the current filters. Try widening the date range or clearing filters.
-                    </p>
-                  </div>
+                  <EmptyState
+                    icon="inbox"
+                    title="No audit events yet"
+                    body="No events match the current filters. Try widening the date range or clearing filters."
+                  />
                 </td>
               </tr>
             ) : (

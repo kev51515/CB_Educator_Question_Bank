@@ -3927,13 +3927,8 @@ function InlineAddItemRow({
                     Couldn't load practice tests: {ptLibraryError}
                   </div>
                 ) : ptLibraryLoading ? (
-                  <div className="p-2 space-y-1.5" aria-busy="true" aria-label="Loading">
-                    {[0, 1, 2, 3].map((i) => (
-                      <div
-                        key={i}
-                        className="h-10 rounded-md bg-slate-100 dark:bg-slate-800 animate-pulse"
-                      />
-                    ))}
+                  <div className="p-2">
+                    <SkeletonRows count={4} rowClassName="h-10" gap={6} />
                   </div>
                 ) : filteredPtLibrary.length === 0 ? (
                   <div className="p-4 text-sm text-center text-slate-500 dark:text-slate-400">
@@ -4169,13 +4164,8 @@ function InlineAddItemRow({
                 </button>
               </div>
             ) : catalogLoading ? (
-              <div className="p-2 space-y-1.5" aria-busy="true" aria-label="Loading">
-                {[0, 1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="h-8 rounded-md bg-slate-100 dark:bg-slate-800 animate-pulse"
-                  />
-                ))}
+              <div className="p-2">
+                <SkeletonRows count={4} rowClassName="h-8" gap={6} />
               </div>
             ) : filteredCatalog.length === 0 ? (
               <div className="p-4 text-sm text-center text-slate-500 dark:text-slate-400">

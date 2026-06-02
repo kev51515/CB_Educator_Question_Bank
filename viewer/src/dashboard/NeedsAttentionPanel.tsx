@@ -725,7 +725,7 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
             {pastDueShown.map((item) => (
               <AttentionRow
                 key={item.assignmentId}
-                initial="⏰"
+                initial={initialOf(item.courseName)}
                 ariaLabel={`Open past-due assignment ${item.assignmentTitle}`}
                 message={
                   <>

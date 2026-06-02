@@ -39,6 +39,17 @@ import {
 
 const MAX_RECOMMENDED_FEEDBACK_CHARS = 5000;
 
+/**
+ * Approximates the visible character count of a TipTap HTML payload by
+ * stripping tags and collapsing whitespace. TipTap inflates raw HTML 3-5×
+ * over the actual prose, so comparing `feedbackHtml.length` against the
+ * 5000-char threshold flagged legitimate ~1500-char essays. A cheap regex
+ * is sufficient here — this is a soft heuristic, not a sanitizer.
+ */
+function plainTextLength(html: string): number {
+  return html.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim().length;
+}
+
 export interface BulkGradePatch {
   feedback_text?: string;
   score_override?: number;
@@ -125,7 +136,8 @@ export function BulkGradeModal({
     scoreRaw.trim().length > 0 &&
     (scoreNumber === null || scoreNumber < 0 || scoreNumber > 100);
 
-  const feedbackTooLong = feedbackHtml.length > MAX_RECOMMENDED_FEEDBACK_CHARS;
+  const feedbackTooLong =
+    plainTextLength(feedbackHtml) > MAX_RECOMMENDED_FEEDBACK_CHARS;
 
   const canApply =
     selectedIds.length > 0 &&

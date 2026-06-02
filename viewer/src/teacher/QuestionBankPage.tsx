@@ -31,6 +31,7 @@
  *   - Toast feedback handled in the modal on success.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   EmptyState,
   KebabMenu,
@@ -502,25 +503,17 @@ function PracticeTestCard({
   onArchiveCommit,
   onDelete,
 }: PracticeTestCardProps): JSX.Element {
-  const [archived, applyArchive] = useOptimistic<boolean>(mockTest.archived);
+  const [archived, applyArchive, setArchived] = useOptimistic<boolean>(
+    mockTest.archived,
+  );
 
   // Keep the local optimistic state in sync if the parent refetches and
   // the row is no longer in this archived state (rare but possible after
-  // bulk operations on another tab).
+  // bulk operations on another tab). Uses the plain setter exposed by
+  // useOptimistic's third tuple element — no fake commit needed.
   useEffect(() => {
-    if (mockTest.archived !== archived) {
-      // useOptimistic exposes a setter via its third tuple — but we
-      // accessed only two values above. Easiest path: trigger a no-op
-      // optimistic with the new value to sync.
-      void applyArchive({
-        optimistic: () => mockTest.archived,
-        commit: async () => {
-          /* no-op — we're just syncing local state */
-        },
-      });
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mockTest.archived]);
+    setArchived(mockTest.archived);
+  }, [mockTest.archived, setArchived]);
 
   const onToggleArchive = (): void => {
     void applyArchive({
@@ -636,6 +629,7 @@ function PracticeTestsSection({
   classesLoading,
 }: PracticeTestsSectionProps): JSX.Element {
   const toast = useToast();
+  const navigate = useNavigate();
   const [filter, setFilter] = useState<PracticeFilterState>(() =>
     readPracticeFilter(),
   );
@@ -684,12 +678,12 @@ function PracticeTestsSection({
   const activeCount = mockTests.filter((m) => !m.archived).length;
   const archivedCount = mockTests.filter((m) => m.archived).length;
 
-  const handleOpen = useCallback((m: TeacherMockTest): void => {
-    if (typeof window === "undefined") return;
-    window.location.assign(
-      courseAssignmentPath(m.course.short_code, m.short_code),
-    );
-  }, []);
+  const handleOpen = useCallback(
+    (m: TeacherMockTest): void => {
+      navigate(courseAssignmentPath(m.course.short_code, m.short_code));
+    },
+    [navigate],
+  );
 
   const handleArchive = useCallback(
     async (m: TeacherMockTest, next: boolean): Promise<void> => {
@@ -764,9 +758,7 @@ function PracticeTestsSection({
           action: {
             label: "Go to course",
             onAction: () => {
-              if (typeof window !== "undefined") {
-                window.location.assign(goToHref);
-              }
+              navigate(goToHref);
             },
           },
         },
@@ -774,7 +766,7 @@ function PracticeTestsSection({
       setDuplicateTarget(null);
       void refresh();
     },
-    [activeCourses, duplicateTarget, refresh, teacherId, toast],
+    [activeCourses, duplicateTarget, navigate, refresh, teacherId, toast],
   );
 
   const handleDelete = useCallback(async (): Promise<void> => {

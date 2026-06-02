@@ -141,7 +141,7 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
 
     try {
       // ── 1. Teacher's non-archived courses + student counts ──────────────
-      const coursesPromise = supabase
+      const coursesRes = await supabase
         .from("courses")
         .select(
           "id, short_code, name, archived, course_memberships(count)",
@@ -150,69 +150,6 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
         .eq("archived", false)
         .order("created_at", { ascending: false })
         .limit(MAX_COHORT_ROWS);
-
-      const sevenDaysAgo = new Date(
-        Date.now() - 7 * 24 * 60 * 60 * 1000,
-      ).toISOString();
-      const thirtyDaysAgo = new Date(
-        Date.now() - 30 * 24 * 60 * 60 * 1000,
-      ).toISOString();
-      const nowIso = new Date().toISOString();
-
-      // ── 2. Submissions in the last 7 days for teacher's assignments ─────
-      // We use an inner-join on assignments so RLS + the teacher's ownership
-      // scope filters naturally. Each row carries the parent course_id so we
-      // can bucket without a separate lookup.
-      const submissionsPromise = supabase
-        .from("assignment_attempts")
-        .select(
-          "assignment_id, submitted_at, " +
-            "assignment:assignments!inner(course_id)",
-        )
-        .not("submitted_at", "is", null)
-        .gte("submitted_at", sevenDaysAgo)
-        .limit(500);
-
-      // ── 3. Effective-score over last 30 days ────────────────────────────
-      // Primary path uses the 0056/0057 view. Fallback to plain score_percent
-      // if the view doesn't exist on this DB.
-      const effectiveScorePromise = supabase
-        .from("assignment_attempts_effective")
-        .select(
-          "assignment_id, effective_score, submitted_at, " +
-            "assignment:assignments!inner(course_id)",
-        )
-        .not("submitted_at", "is", null)
-        .gte("submitted_at", thirtyDaysAgo)
-        .limit(1000);
-
-      // ── 4. Ungraded count for "needs" pill ──────────────────────────────
-      const ungradedPromise = supabase
-        .from("assignment_attempts")
-        .select(
-          "assignment_id, submitted_at, graded_at, feedback_text, " +
-            "assignment:assignments!inner(course_id)",
-        )
-        .not("submitted_at", "is", null)
-        .is("graded_at", null)
-        .limit(500);
-
-      // ── 5. Past-due count for "needs" pill ──────────────────────────────
-      const pastDuePromise = supabase
-        .from("assignments")
-        .select("course_id, due_at, archived")
-        .lt("due_at", nowIso)
-        .eq("archived", false)
-        .limit(500);
-
-      const [coursesRes, submissionsRes, effectiveRes, ungradedResRaw, pastDueRes] =
-        await Promise.all([
-          coursesPromise,
-          submissionsPromise,
-          effectiveScorePromise,
-          ungradedPromise,
-          pastDuePromise,
-        ]);
 
       if (coursesRes.error) {
         setError(coursesRes.error.message);
@@ -225,6 +162,110 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
         setRows([]);
         return;
       }
+
+      // Explicit course-id scope for all secondary queries. RLS still filters
+      // server-side, but pinning these queries to *exactly* the courses we'll
+      // surface stops PostgREST from streaming back rows from outside the
+      // teacher's dashboard window (e.g. archived cohorts beyond MAX_COHORT_ROWS).
+      const courseIds = courseRows.map((c) => c.id);
+
+      const sevenDaysAgo = new Date(
+        Date.now() - 7 * 24 * 60 * 60 * 1000,
+      ).toISOString();
+      const thirtyDaysAgo = new Date(
+        Date.now() - 30 * 24 * 60 * 60 * 1000,
+      ).toISOString();
+      const nowIso = new Date().toISOString();
+
+      // Phase 1 of the 2-phase scope: fetch assignment ids belonging to the
+      // teacher's visible courses. PostgREST's `.in()` doesn't reach into
+      // embedded foreign keys via the JS SDK, so we resolve the list of
+      // assignment ids first and pass them into the attempt-side queries.
+      const assignmentsRes = await supabase
+        .from("assignments")
+        .select("id, course_id")
+        .in("course_id", courseIds);
+
+      if (assignmentsRes.error) {
+        setError(assignmentsRes.error.message);
+        setRows([]);
+        return;
+      }
+
+      const assignmentsList = (assignmentsRes.data ?? []) as Array<{
+        id: string;
+        course_id: string;
+      }>;
+      const assignmentIds = assignmentsList.map((a) => a.id);
+      const assignmentCourseById = new Map<string, string>();
+      for (const a of assignmentsList) assignmentCourseById.set(a.id, a.course_id);
+
+      // ── 2. Submissions in the last 7 days for teacher's assignments ─────
+      // Scoped explicitly to the assignments we just resolved so RLS isn't
+      // the only gatekeeper.
+      const submissionsPromise =
+        assignmentIds.length === 0
+          ? Promise.resolve({ data: [], error: null } as const)
+          : supabase
+              .from("assignment_attempts")
+              .select(
+                "assignment_id, submitted_at, " +
+                  "assignment:assignments!inner(course_id)",
+              )
+              .not("submitted_at", "is", null)
+              .gte("submitted_at", sevenDaysAgo)
+              .in("assignment_id", assignmentIds)
+              .limit(500);
+
+      // ── 3. Effective-score over last 30 days ────────────────────────────
+      // Primary path uses the 0056/0057 view. Fallback to plain score_percent
+      // if the view doesn't exist on this DB.
+      const effectiveScorePromise =
+        assignmentIds.length === 0
+          ? Promise.resolve({ data: [], error: null } as const)
+          : supabase
+              .from("assignment_attempts_effective")
+              .select(
+                "assignment_id, effective_score, submitted_at, " +
+                  "assignment:assignments!inner(course_id)",
+              )
+              .not("submitted_at", "is", null)
+              .gte("submitted_at", thirtyDaysAgo)
+              .in("assignment_id", assignmentIds)
+              .limit(1000);
+
+      // ── 4. Ungraded count for "needs" pill ──────────────────────────────
+      const ungradedPromise =
+        assignmentIds.length === 0
+          ? Promise.resolve({ data: [], error: null } as const)
+          : supabase
+              .from("assignment_attempts")
+              .select(
+                "assignment_id, submitted_at, graded_at, feedback_text, " +
+                  "assignment:assignments!inner(course_id)",
+              )
+              .not("submitted_at", "is", null)
+              .is("graded_at", null)
+              .in("assignment_id", assignmentIds)
+              .limit(500);
+
+      // ── 5. Past-due count for "needs" pill ──────────────────────────────
+      // Filters directly on assignments.course_id — no embed gymnastics.
+      const pastDuePromise = supabase
+        .from("assignments")
+        .select("course_id, due_at, archived")
+        .lt("due_at", nowIso)
+        .eq("archived", false)
+        .in("course_id", courseIds)
+        .limit(500);
+
+      const [submissionsRes, effectiveRes, ungradedResRaw, pastDueRes] =
+        await Promise.all([
+          submissionsPromise,
+          effectiveScorePromise,
+          ungradedPromise,
+          pastDuePromise,
+        ]);
 
       // Index courses by id; we'll iterate this set to produce the final rows
       // in the same display order the query returned.
@@ -261,18 +302,21 @@ export function useCohortSummary(teacherId: string | null): UseCohortSummary {
             "assignment_attempts_effective",
           )
         ) {
-          // Fallback path — plain attempts + score_percent.
-          const fallback = await supabase
-            .from("assignment_attempts")
-            .select(
-              "assignment_id, score_percent, submitted_at, " +
-                "assignment:assignments!inner(course_id)",
-            )
-            .not("submitted_at", "is", null)
-            .gte("submitted_at", thirtyDaysAgo)
-            .limit(1000);
-          if (!fallback.error && fallback.data) {
-            scoreRows = fallback.data as unknown as AttemptScoreRow[];
+          // Fallback path — plain attempts + score_percent, still scoped.
+          if (assignmentIds.length > 0) {
+            const fallback = await supabase
+              .from("assignment_attempts")
+              .select(
+                "assignment_id, score_percent, submitted_at, " +
+                  "assignment:assignments!inner(course_id)",
+              )
+              .not("submitted_at", "is", null)
+              .gte("submitted_at", thirtyDaysAgo)
+              .in("assignment_id", assignmentIds)
+              .limit(1000);
+            if (!fallback.error && fallback.data) {
+              scoreRows = fallback.data as unknown as AttemptScoreRow[];
+            }
           }
         }
         // Other errors: just leave scores empty so avg stays null. We don't

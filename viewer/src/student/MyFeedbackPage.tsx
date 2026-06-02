@@ -228,7 +228,7 @@ export function MyFeedbackPage() {
   const handleOpen = useCallback(
     (item: RecentFeedbackItem): void => {
       if (!item.assignmentId || !item.attemptId) {
-        toast.error("Can't open this attempt — missing identifier.");
+        toast.error("Can't open", "Missing identifier on this attempt.");
         return;
       }
       navigate(assignmentReviewPath(item.assignmentId, item.attemptId));

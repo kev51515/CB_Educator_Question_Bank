@@ -231,14 +231,17 @@ export function PortfolioImportModal({
       aria-modal="true"
       aria-label="Import items from another course's portfolio"
       className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={() => {
+      onMouseDown={(e) => {
+        // Only treat the backdrop itself as a click — never a drag-release
+        // that began inside the panel (e.g. text-selection inside the tree).
+        if (e.target !== e.currentTarget) return;
         if (!submitting) onClose();
       }}
     >
       <div
         ref={panelRef}
         className="w-full max-w-2xl rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-4 max-h-[90vh] overflow-y-auto"
-        onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
       >
         <header className="flex items-start justify-between gap-3">
           <div className="space-y-1">

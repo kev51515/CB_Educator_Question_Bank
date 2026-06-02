@@ -744,9 +744,17 @@ export function StudentProfilePage(): JSX.Element {
   // Top-level error: course lookup failed entirely (not RLS-denied — that
   // would land in `notFound`). Toast once and let the page render an
   // empty header so the user still has a back button.
-  if (headerError && !headerLoading) {
-    toast.error("Couldn't load profile", headerError);
-  }
+  const headerErrorToastedRef = useRef<string | null>(null);
+  useEffect(() => {
+    if (
+      headerError &&
+      !headerLoading &&
+      headerErrorToastedRef.current !== headerError
+    ) {
+      headerErrorToastedRef.current = headerError;
+      toast.error("Couldn't load profile", headerError);
+    }
+  }, [headerError, headerLoading, toast]);
 
   const initials = getInitials(
     header?.display_name ?? null,
