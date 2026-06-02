@@ -64,11 +64,23 @@ interface NavSpec {
 const TOP_LEVEL_NAV: readonly NavSpec[] = [
   { id: "go-dashboard", label: "Go to Dashboard", path: ROUTES.DASHBOARD, keywords: "home overview" },
   { id: "go-courses", label: "Go to Courses", path: ROUTES.COURSES, keywords: "classes list" },
-  { id: "go-calendar", label: "Go to Calendar", path: ROUTES.CALENDAR, keywords: "schedule events" },
-  { id: "go-inbox", label: "Go to Inbox", path: ROUTES.INBOX, keywords: "messages dm" },
+  { id: "go-calendar", label: "Go to Calendar", path: ROUTES.CALENDAR, keywords: "schedule events month list due dates" },
+  { id: "go-inbox", label: "Go to Inbox", path: ROUTES.INBOX, keywords: "messages dm direct" },
   { id: "go-account", label: "Go to Account", path: ROUTES.ACCOUNT_SETTINGS, keywords: "settings profile" },
+  { id: "go-notification-prefs", label: "Notification preferences", path: ROUTES.NOTIFICATION_PREFS, keywords: "account notify email alerts settings" },
   { id: "go-practice", label: "Go to Practice", path: ROUTES.PRACTICE, keywords: "question bank study" },
   { id: "go-mock-test", label: "Go to Mock Test", path: ROUTES.MOCK_TEST, keywords: "exam simulation" },
+];
+
+/**
+ * Admin-only top-level destinations. Gated on the same `staff` check used by
+ * AccountRoutes' sidebar so the palette mirrors the visible nav exactly.
+ */
+const ADMIN_NAV: readonly NavSpec[] = [
+  { id: "go-admin-audit", label: "Go to Audit log", path: ROUTES.ACCOUNT_ADMIN_AUDIT, keywords: "admin events trail security" },
+  { id: "go-admin-users", label: "Go to Admin users", path: ROUTES.ACCOUNT_ADMIN_USERS, keywords: "admin people accounts manage" },
+  { id: "go-admin-stats", label: "Go to Admin stats", path: ROUTES.ACCOUNT_ADMIN_STATS, keywords: "admin metrics dashboard analytics" },
+  { id: "go-admin-invites", label: "Go to Invite codes", path: ROUTES.ACCOUNT_ADMIN_INVITES, keywords: "admin invitations signup join" },
 ];
 
 interface CourseTabSpec {
@@ -256,6 +268,21 @@ export function useLmsCommands(): Command[] {
         group: "Command",
         run: () => navigate(nav.path),
       });
+    }
+
+    // 1b. Admin-only top-level destinations. Mirrors the Admin section of
+    //     AccountRoutes' sidebar (Stats / Users / Invite codes / Audit log)
+    //     so ⌘K reaches every staff surface, not just the personal ones.
+    if (staff) {
+      for (const nav of ADMIN_NAV) {
+        cmds.push({
+          id: nav.id,
+          label: nav.label,
+          keywords: nav.keywords,
+          group: "Command",
+          run: () => navigate(nav.path),
+        });
+      }
     }
 
     // 2. Per-course actions (only when scoped to a course)

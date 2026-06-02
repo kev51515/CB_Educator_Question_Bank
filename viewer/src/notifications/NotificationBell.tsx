@@ -4,8 +4,16 @@
  * Compact bell button with an unread-count badge and a dropdown listing the 10
  * most recent notifications. Click a row to mark it read and navigate to its
  * link. A footer button marks all as read. Closes on outside click / Escape.
+ *
+ * Keyboard model (when dropdown is open):
+ *   ↑ / ↓        Move highlighted index (no wrap at ends — clamps)
+ *   Home / End   Jump to first / last
+ *   Enter        Activate highlighted item (mark read + navigate + close)
+ *   m / M        Mark highlighted item as read (without navigating)
+ *   a / A        Mark all as read
+ *   Esc          Close dropdown + restore focus to bell button
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotifications, type NotificationRow } from "./useNotifications";
 
@@ -102,24 +110,68 @@ export function NotificationBell() {
   const [open, setOpen] = useState<boolean>(false);
   const [side, setSide] = useState<"left" | "right">("right");
   const [measured, setMeasured] = useState<boolean>(false);
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(0);
   const ref = useRef<HTMLDivElement | null>(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const menuRef = useRef<HTMLDivElement | null>(null);
+  const listRef = useRef<HTMLUListElement | null>(null);
+  const itemRefs = useRef<Array<HTMLLIElement | null>>([]);
   const { notifications, unreadCount, markRead, markAllRead } = useNotifications();
-  const top: NotificationRow[] = notifications.slice(0, 10);
+  const top: NotificationRow[] = useMemo(
+    () => notifications.slice(0, 10),
+    [notifications]
+  );
+
+  // Reset / clamp highlightedIndex when dropdown opens or list changes.
+  // Default target on open: first unread; fallback to first item.
+  useEffect(() => {
+    if (!open) return;
+    if (top.length === 0) {
+      setHighlightedIndex(0);
+      return;
+    }
+    setHighlightedIndex((prev) => {
+      // If first open (prev is 0 and we haven't pointed at anything meaningful yet),
+      // prefer the first unread.
+      // We also use this branch when prev is out of range after a realtime update.
+      if (prev < 0 || prev >= top.length) {
+        const firstUnread = top.findIndex((n) => n.read_at === null);
+        return firstUnread === -1 ? 0 : firstUnread;
+      }
+      return prev;
+    });
+    // We intentionally re-run when `open` flips or the visible list changes.
+  }, [open, top]);
+
+  // When the dropdown opens fresh, target the first unread (overrides stale prev).
+  useEffect(() => {
+    if (!open) return;
+    if (top.length === 0) return;
+    const firstUnread = top.findIndex((n) => n.read_at === null);
+    setHighlightedIndex(firstUnread === -1 ? 0 : firstUnread);
+    // Only on open transitions — list realtime updates fall through to the
+    // clamp effect above.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open]);
+
+  // Auto-scroll the highlighted row into view inside the dropdown's
+  // scroll container.
+  useEffect(() => {
+    if (!open) return;
+    const el = itemRefs.current[highlightedIndex];
+    if (el) {
+      el.scrollIntoView({ block: "nearest" });
+    }
+  }, [highlightedIndex, open]);
 
   useEffect(() => {
     if (!open) return;
     const onDocClick = (e: MouseEvent): void => {
       if (!ref.current?.contains(e.target as Node)) setOpen(false);
     };
-    const onKey = (e: KeyboardEvent): void => {
-      if (e.key === "Escape") setOpen(false);
-    };
     document.addEventListener("mousedown", onDocClick);
-    document.addEventListener("keydown", onKey);
     return () => {
       document.removeEventListener("mousedown", onDocClick);
-      document.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
@@ -140,7 +192,18 @@ export function NotificationBell() {
       setSide("right");
     }
     setMeasured(true);
+    // Move focus to the menu so keyboard handlers fire reliably.
+    node.focus();
   }, [open]);
+
+  const closeAndRestoreFocus = (): void => {
+    setOpen(false);
+    // Restore focus to the bell button.
+    // Defer so it survives the re-render that closes the menu.
+    queueMicrotask(() => {
+      buttonRef.current?.focus();
+    });
+  };
 
   const onItemClick = async (n: NotificationRow): Promise<void> => {
     setOpen(false);
@@ -150,9 +213,71 @@ export function NotificationBell() {
     if (n.link) navigate(n.link);
   };
 
+  const onMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): void => {
+    // Esc always closes, even if list empty.
+    if (e.key === "Escape") {
+      e.preventDefault();
+      closeAndRestoreFocus();
+      return;
+    }
+    // 'a' / 'A' marks all as read even if list empty (no-op if unreadCount === 0).
+    if (e.key === "a" || e.key === "A") {
+      e.preventDefault();
+      if (unreadCount > 0) {
+        void markAllRead();
+      }
+      return;
+    }
+    // Remaining keys require notifications present.
+    if (top.length === 0) return;
+
+    const last = top.length - 1;
+
+    switch (e.key) {
+      case "ArrowDown": {
+        e.preventDefault();
+        setHighlightedIndex((i) => (i >= last ? 0 : i + 1));
+        return;
+      }
+      case "ArrowUp": {
+        e.preventDefault();
+        setHighlightedIndex((i) => (i <= 0 ? last : i - 1));
+        return;
+      }
+      case "Home": {
+        e.preventDefault();
+        setHighlightedIndex(0);
+        return;
+      }
+      case "End": {
+        e.preventDefault();
+        setHighlightedIndex(last);
+        return;
+      }
+      case "Enter": {
+        e.preventDefault();
+        const n = top[highlightedIndex];
+        if (n) void onItemClick(n);
+        return;
+      }
+      case "m":
+      case "M": {
+        e.preventDefault();
+        const n = top[highlightedIndex];
+        if (n && n.read_at === null) {
+          void markRead(n.id);
+        }
+        return;
+      }
+      default:
+        return;
+    }
+  };
+
   return (
     <div ref={ref} className="relative inline-block print:hidden">
       <button
+        ref={buttonRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
@@ -191,9 +316,10 @@ export function NotificationBell() {
       {open && (
         <div
           ref={menuRef}
-          role="menu"
+          tabIndex={-1}
+          onKeyDown={onMenuKeyDown}
           className={[
-            "absolute mt-2 w-80 max-w-[calc(100vw-1.5rem)] max-h-[28rem] overflow-y-auto rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 z-50",
+            "absolute mt-2 w-80 max-w-[calc(100vw-1.5rem)] max-h-[28rem] overflow-y-auto rounded-xl bg-white dark:bg-slate-900 shadow-xl ring-1 ring-slate-200 dark:ring-slate-700 z-50 focus:outline-none",
             side === "right" ? "right-0 origin-top-right" : "left-0 origin-top-left",
             measured ? "" : "invisible",
           ].join(" ")}
@@ -225,61 +351,91 @@ export function NotificationBell() {
               You&apos;re all caught up.
             </div>
           ) : (
-            <ul className="divide-y divide-slate-100 dark:divide-slate-800">
-              {top.map((n) => (
-                <li key={n.id}>
-                  <button
-                    type="button"
-                    role="menuitem"
-                    onClick={() => {
-                      void onItemClick(n);
+            <ul
+              ref={listRef}
+              role="menu"
+              aria-label="Notifications"
+              className="divide-y divide-slate-100 dark:divide-slate-800"
+            >
+              {top.map((n, idx) => {
+                const isHighlighted = idx === highlightedIndex;
+                return (
+                  <li
+                    key={n.id}
+                    ref={(el) => {
+                      itemRefs.current[idx] = el;
                     }}
-                    className={[
-                      "w-full text-left px-4 py-3 hover:bg-slate-50 dark:hover:bg-slate-800/60 transition",
-                      n.read_at === null ? "bg-indigo-50/40 dark:bg-indigo-950/20" : "",
-                    ].join(" ")}
                   >
-                    <div className="flex items-start gap-2">
-                      {n.read_at === null && (
-                        <span
-                          aria-hidden
-                          className="mt-1.5 h-2 w-2 rounded-full bg-indigo-500 flex-shrink-0"
-                        />
-                      )}
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-start gap-2.5">
-                          <KindIcon kind={n.kind} unread={n.read_at === null} />
-                          <p
-                            title={n.title}
-                            className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate min-w-0 flex-1"
-                          >
-                            {n.title}
+                    <button
+                      type="button"
+                      role="menuitem"
+                      aria-current={isHighlighted ? "true" : undefined}
+                      onClick={() => {
+                        void onItemClick(n);
+                      }}
+                      onMouseEnter={() => setHighlightedIndex(idx)}
+                      className={[
+                        "w-full text-left px-4 py-3 motion-safe:transition-colors",
+                        isHighlighted
+                          ? "bg-indigo-50/60 dark:bg-indigo-950/30 ring-1 ring-inset ring-slate-300 dark:ring-slate-600"
+                          : n.read_at === null
+                          ? "bg-indigo-50/40 dark:bg-indigo-950/20 hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                          : "hover:bg-slate-50 dark:hover:bg-slate-800/60",
+                      ].join(" ")}
+                    >
+                      <div className="flex items-start gap-2">
+                        {n.read_at === null && (
+                          <span
+                            aria-hidden
+                            className="mt-1.5 h-2 w-2 rounded-full bg-indigo-500 flex-shrink-0"
+                          />
+                        )}
+                        <div className="min-w-0 flex-1">
+                          <div className="flex items-start gap-2.5">
+                            <KindIcon kind={n.kind} unread={n.read_at === null} />
+                            <p
+                              title={n.title}
+                              className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate min-w-0 flex-1"
+                            >
+                              {n.title}
+                            </p>
+                          </div>
+                          {n.body && (
+                            <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
+                              {n.body}
+                            </p>
+                          )}
+                          <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
+                            {formatRelative(n.created_at)}
                           </p>
                         </div>
-                        {n.body && (
-                          <p className="mt-0.5 text-xs text-slate-600 dark:text-slate-400 line-clamp-2">
-                            {n.body}
-                          </p>
-                        )}
-                        <p className="mt-1 text-[11px] text-slate-500 dark:text-slate-400">
-                          {formatRelative(n.created_at)}
-                        </p>
                       </div>
-                    </div>
-                  </button>
-                </li>
-              ))}
+                    </button>
+                  </li>
+                );
+              })}
             </ul>
           )}
 
-          <div className="px-4 py-2 border-t border-slate-100 dark:border-slate-800 sticky bottom-0 bg-white dark:bg-slate-900">
+          <div className="px-4 py-2 border-t border-slate-100 dark:border-slate-800 sticky bottom-0 bg-white dark:bg-slate-900 flex items-center justify-between gap-3">
+            {top.length > 0 && (
+              <span
+                aria-hidden
+                className="hidden sm:inline text-[10px] text-slate-500 dark:text-slate-400 leading-tight"
+              >
+                <kbd className="font-sans">↑↓</kbd> Navigate ·{" "}
+                <kbd className="font-sans">Enter</kbd> Open ·{" "}
+                <kbd className="font-sans">M</kbd> Mark read ·{" "}
+                <kbd className="font-sans">A</kbd> Mark all
+              </span>
+            )}
             <button
               type="button"
               onClick={() => {
                 void markAllRead();
               }}
               disabled={unreadCount === 0}
-              className="w-full text-sm text-indigo-600 dark:text-indigo-400 hover:underline disabled:text-slate-400 disabled:hover:no-underline disabled:cursor-not-allowed py-2.5 md:py-1"
+              className="ml-auto text-sm text-indigo-600 dark:text-indigo-400 hover:underline disabled:text-slate-400 disabled:hover:no-underline disabled:cursor-not-allowed py-2.5 md:py-1"
             >
               Mark all as read
             </button>
