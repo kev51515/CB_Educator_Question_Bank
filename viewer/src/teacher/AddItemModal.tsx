@@ -84,12 +84,43 @@ export function AddItemModal({
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  // Auto-focus the first interactive field when the modal opens (or when the
+  // item type changes and the relevant field re-mounts). Defer to next tick
+  // so the ref callback has fired.
+  useEffect(() => {
+    if (!open) return;
+    const id = window.setTimeout(() => {
+      firstFieldRef.current?.focus();
+    }, 0);
+    return () => window.clearTimeout(id);
+  }, [open, itemType]);
+
   if (!open || !module) return null;
 
   const maxPosition = module.items.reduce(
     (max, it) => (it.position > max ? it.position : max),
     -1,
   );
+
+  // Live validation: derive why Save can't fire yet, so we can disable the
+  // button and surface the reason via a tooltip instead of only failing on
+  // submit. Returning null = ready to submit.
+  const submitDisabledReason: string | null = (() => {
+    if (itemType === "assignment") {
+      if (availableAssignments.length === 0)
+        return "No unassigned assignments in this course.";
+      if (!assignmentId) return "Choose an assignment first.";
+      return null;
+    }
+    if (itemType === "header") {
+      if (!title.trim()) return "Enter header text first.";
+      return null;
+    }
+    // link
+    if (!title.trim()) return "Enter a title first.";
+    if (!url.trim()) return "Enter a URL first.";
+    return null;
+  })();
 
   const onSubmit = async (e: React.FormEvent): Promise<void> => {
     e.preventDefault();
@@ -358,11 +389,20 @@ export function AddItemModal({
             </button>
             <button
               type="submit"
-              disabled={busy}
+              disabled={busy || submitDisabledReason !== null}
+              title={submitDisabledReason ?? undefined}
+              aria-describedby={
+                submitDisabledReason ? "add-item-submit-hint" : undefined
+              }
               className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2.5 disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {busy ? "Adding…" : "Add item"}
             </button>
+            {submitDisabledReason && (
+              <span id="add-item-submit-hint" className="sr-only">
+                {submitDisabledReason}
+              </span>
+            )}
           </div>
         </form>
       </div>

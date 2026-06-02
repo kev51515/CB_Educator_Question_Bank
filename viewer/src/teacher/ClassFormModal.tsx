@@ -13,8 +13,22 @@
  *
  * Backward compatibility: the legacy export name `CreateClassModal` is kept
  * so existing call-sites keep working.
+ *
+ * Round 53 (this revision):
+ * - Live validation per field with `touched` set — errors only surface for
+ *   fields the user has interacted with, but `isValid` is computed off raw
+ *   values so the Save button stays disabled even when nothing is touched.
+ * - Draft auto-save (create mode only) to localStorage at
+ *   `teacher.classForm.draft` with a 500ms debounce. `pendingDraftRef`
+ *   mirrors the latest unflushed draft so unmount cleanup can flush it
+ *   synchronously.
+ * - Restore banner on re-open if a draft exists and is < 7 days old; while
+ *   the banner is visible the debounced writer is paused.
+ * - Discard-with-dirty confirm banner on Cancel.
+ * Mirrors the Round 46 AssignmentFormModal + Round 52 TopicFormModal
+ * patterns so behaviour stays consistent across the create surfaces.
  */
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useCourseTemplates } from "./useCourseTemplates";
 import { DuplicateCourseModal } from "./DuplicateCourseModal";
@@ -57,6 +71,20 @@ export interface CreatedClass {
 // over voice / handwritten contexts.
 const ALPHABET = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
 
+const MAX_NAME_LENGTH = 100;
+const MAX_DESCRIPTION_LENGTH = 5000;
+const DRAFT_KEY = "teacher.classForm.draft";
+const DRAFT_DEBOUNCE_MS = 500;
+const DRAFT_STALE_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
+
+type FieldKey = "name" | "description";
+
+interface ClassDraft {
+  name: string;
+  description: string;
+  savedAt: number;
+}
+
 function randomFromAlphabet(length: number): string {
   // crypto.getRandomValues for unbiased-ish sampling. We tolerate the slight
   // modulo bias because the alphabet size (31) is small relative to 256.
@@ -81,6 +109,80 @@ function getErrorMessage(error: unknown, fallback: string): string {
   return fallback;
 }
 
+/** Lightweight relative time formatter — "just now" / "5m ago" / "3h ago" /
+ *  "2d ago". Used for the draft restore banner. */
+function formatRelativeTime(epochMs: number): string {
+  const diffMs = Date.now() - epochMs;
+  if (diffMs < 0) return "just now";
+  const seconds = Math.floor(diffMs / 1000);
+  if (seconds < 30) return "just now";
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  return `${days}d ago`;
+}
+
+function readDraft(): ClassDraft | null {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(DRAFT_KEY);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw) as ClassDraft;
+    if (
+      typeof parsed !== "object" ||
+      parsed === null ||
+      typeof parsed.savedAt !== "number"
+    ) {
+      return null;
+    }
+    if (Date.now() - parsed.savedAt > DRAFT_STALE_MS) {
+      window.localStorage.removeItem(DRAFT_KEY);
+      return null;
+    }
+    return parsed;
+  } catch {
+    return null;
+  }
+}
+
+function writeDraft(draft: ClassDraft): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(DRAFT_KEY, JSON.stringify(draft));
+  } catch {
+    // Quota / private-mode — swallow; draft is a non-essential nicety.
+  }
+}
+
+function clearStoredDraft(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(DRAFT_KEY);
+  } catch {
+    // ignore
+  }
+}
+
+/** Pure validators per field. Returns an error string or null. */
+function validateName(value: string): string | null {
+  const trimmed = value.trim();
+  if (trimmed.length === 0) return "Course name is required.";
+  if (value.length > MAX_NAME_LENGTH) {
+    return `Course name must be ${MAX_NAME_LENGTH} characters or fewer.`;
+  }
+  return null;
+}
+
+function validateDescription(value: string): string | null {
+  if (value.length > MAX_DESCRIPTION_LENGTH) {
+    return `Description must be ${MAX_DESCRIPTION_LENGTH} characters or fewer.`;
+  }
+  return null;
+}
+
 export function ClassFormModal({
   open,
   mode,
@@ -94,7 +196,6 @@ export function ClassFormModal({
   const [description, setDescription] = useState("");
   const [archived, setArchived] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [created, setCreated] = useState<CreatedClass | null>(null);
   const [copied, setCopied] = useState(false);
   const [showTemplatePicker, setShowTemplatePicker] = useState(false);
@@ -105,49 +206,229 @@ export function ClassFormModal({
   const { templates, loading: templatesLoading } = useCourseTemplates();
   const toast = useToast();
 
+  const [touched, setTouched] = useState<Partial<Record<FieldKey, boolean>>>({});
+  const [errors, setErrors] = useState<Partial<Record<FieldKey, string>>>({});
+
+  // Draft-restore UX (create mode only)
+  const [pendingRestore, setPendingRestore] = useState<ClassDraft | null>(null);
+  const [showCancelConfirm, setShowCancelConfirm] = useState(false);
+
   const nameRef = useRef<HTMLInputElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, open);
 
+  const draftTimerRef = useRef<number | null>(null);
+  const pendingDraftRef = useRef<ClassDraft | null>(null);
+  /** Set to true after a successful submit so unmount cleanup doesn't
+   *  flush the just-submitted (and just-cleared) draft. */
+  const submittedRef = useRef(false);
+
+  // --- Reset state on open / mode / initialClass change ---
   useEffect(() => {
     if (!open) return;
+    submittedRef.current = false;
+    setShowCancelConfirm(false);
+    setTouched({});
+    setErrors({});
+
     if (mode === "edit" && initialClass) {
       setName(initialClass.name);
       setDescription(initialClass.description ?? "");
       setArchived(initialClass.archived);
+      setPendingRestore(null);
     } else {
-      setName("");
-      setDescription("");
+      // Create mode — check for a saved draft. We don't auto-populate; we
+      // show a banner asking the teacher to confirm. Until they decide,
+      // the form is empty and the debounced writer is paused.
+      const draft = readDraft();
+      if (draft) {
+        setName("");
+        setDescription("");
+        setPendingRestore(draft);
+      } else {
+        setName("");
+        setDescription("");
+        setPendingRestore(null);
+      }
       setArchived(false);
     }
-    setError(null);
     setCreated(null);
     setCopied(false);
     setShowTemplatePicker(false);
     setTemplateSource(null);
+
     const id = window.setTimeout(() => nameRef.current?.focus(), 0);
     return () => window.clearTimeout(id);
   }, [open, mode, initialClass]);
 
+  // --- Esc to close (also dismisses cancel-confirm if showing) ---
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") {
+        if (showCancelConfirm) {
+          setShowCancelConfirm(false);
+          return;
+        }
+        handleClose();
+      }
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [open, showCancelConfirm]);
+
+  // --- Live validation: re-run validators on every (values, touched) change,
+  //     but only write errors for touched fields. ---
+  useEffect(() => {
+    const next: Partial<Record<FieldKey, string>> = {};
+    if (touched.name) {
+      const err = validateName(name);
+      if (err) next.name = err;
+    }
+    if (touched.description) {
+      const err = validateDescription(description);
+      if (err) next.description = err;
+    }
+    setErrors(next);
+  }, [name, description, touched]);
+
+  // --- isValid: computed off raw values (not touched-gated) so Save stays
+  //     disabled even when nothing has been touched yet. ---
+  const isValid = useMemo(() => {
+    if (validateName(name) !== null) return false;
+    if (validateDescription(description) !== null) return false;
+    return true;
+  }, [name, description]);
+
+  // --- Whether the form has any draftable content. Used to gate the
+  //     cancel-confirm banner. ---
+  const hasDirtyDraft = useMemo(() => {
+    return name.trim().length > 0 || description.trim().length > 0;
+  }, [name, description]);
+
+  // --- Draft auto-save (create mode only, paused while restore banner is up,
+  //     paused while submitting, cleared after successful submit). ---
+  useEffect(() => {
+    if (!open) return;
+    if (mode !== "create") return;
+    if (pendingRestore) return; // banner showing — pause writer
+    if (created) return; // success screen — nothing more to save
+    if (submittedRef.current) return;
+
+    // If everything's empty, treat as "no draft" — clear any existing.
+    if (!hasDirtyDraft) {
+      pendingDraftRef.current = null;
+      if (draftTimerRef.current !== null) {
+        window.clearTimeout(draftTimerRef.current);
+        draftTimerRef.current = null;
+      }
+      clearStoredDraft();
+      return;
+    }
+
+    const draft: ClassDraft = {
+      name,
+      description,
+      savedAt: Date.now(),
+    };
+    pendingDraftRef.current = draft;
+
+    if (draftTimerRef.current !== null) {
+      window.clearTimeout(draftTimerRef.current);
+    }
+    draftTimerRef.current = window.setTimeout(() => {
+      if (pendingDraftRef.current) {
+        writeDraft(pendingDraftRef.current);
+      }
+      draftTimerRef.current = null;
+    }, DRAFT_DEBOUNCE_MS);
+
+    return () => {
+      if (draftTimerRef.current !== null) {
+        window.clearTimeout(draftTimerRef.current);
+        draftTimerRef.current = null;
+      }
+    };
+  }, [open, mode, name, description, pendingRestore, created, hasDirtyDraft]);
+
+  // --- Synchronous flush on unmount so a fast Cmd-W doesn't lose work. ---
+  useEffect(() => {
+    return () => {
+      if (draftTimerRef.current !== null) {
+        window.clearTimeout(draftTimerRef.current);
+        draftTimerRef.current = null;
+      }
+      if (
+        mode === "create" &&
+        !submittedRef.current &&
+        pendingDraftRef.current
+      ) {
+        writeDraft(pendingDraftRef.current);
+      }
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!open && !templateSource) return null;
 
-  const onSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setError(null);
-    const trimmedName = name.trim();
-    if (!trimmedName) {
-      setError("Please enter a course name.");
+  const handleClose = () => {
+    if (mode === "create" && hasDirtyDraft && !created) {
+      // Don't bail out yet — confirm.
+      setShowCancelConfirm(true);
       return;
     }
+    onClose();
+  };
+
+  const handleRestoreDraft = () => {
+    if (!pendingRestore) return;
+    setName(pendingRestore.name);
+    setDescription(pendingRestore.description);
+    setPendingRestore(null);
+    // Mark as touched so any pre-existing validation errors surface
+    // immediately rather than silently waiting for a blur.
+    setTouched({ name: true, description: true });
+  };
+
+  const handleDiscardDraft = () => {
+    clearStoredDraft();
+    pendingDraftRef.current = null;
+    setPendingRestore(null);
+  };
+
+  const handleConfirmCancel = () => {
+    // User chose "Discard draft and close".
+    clearStoredDraft();
+    pendingDraftRef.current = null;
+    if (draftTimerRef.current !== null) {
+      window.clearTimeout(draftTimerRef.current);
+      draftTimerRef.current = null;
+    }
+    setShowCancelConfirm(false);
+    onClose();
+  };
+
+  const focusFirstInvalid = useCallback(() => {
+    if (validateName(name) !== null) {
+      nameRef.current?.focus();
+      return;
+    }
+    // Description lives inside MarkdownEditor — no direct ref. Best-effort:
+    // the only other validatable field. No-op if MarkdownEditor unavailable.
+  }, [name]);
+
+  const onSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!isValid) {
+      // Touch everything so the errors surface.
+      setTouched({ name: true, description: true });
+      focusFirstInvalid();
+      return;
+    }
+
+    const trimmedName = name.trim();
 
     setBusy(true);
     try {
@@ -203,6 +484,14 @@ export function ClassFormModal({
             description: (data.description as string | null) ?? null,
             join_code: data.join_code as string,
           };
+          // Server confirmed — now safe to clear the draft.
+          submittedRef.current = true;
+          pendingDraftRef.current = null;
+          if (draftTimerRef.current !== null) {
+            window.clearTimeout(draftTimerRef.current);
+            draftTimerRef.current = null;
+          }
+          clearStoredDraft();
           setCreated(createdClass);
           toast.success("Course created");
           onCreated?.(createdClass);
@@ -255,6 +544,18 @@ export function ClassFormModal({
       ? "Update the course name, description, or archive status."
       : "Give your course a name. You can add a description if helpful.";
 
+  const submitDisabled = busy || !isValid;
+  const submitTitle = busy
+    ? undefined
+    : !isValid
+      ? validateName(name) !== null
+        ? "Add a name to create the course"
+        : "Fix the highlighted fields"
+      : undefined;
+
+  const nameErrorId = "class-form-name-error";
+  const descriptionErrorId = "class-form-description-error";
+
   return (
     <>
     {open && (
@@ -263,7 +564,7 @@ export function ClassFormModal({
       aria-modal="true"
       aria-labelledby={titleId}
       className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-slate-900/40 backdrop-blur-sm"
-      onClick={onClose}
+      onClick={handleClose}
     >
       <div
         ref={panelRef}
@@ -272,7 +573,7 @@ export function ClassFormModal({
       >
         <button
           type="button"
-          onClick={onClose}
+          onClick={handleClose}
           aria-label="Close"
           className="absolute top-2 right-2 inline-flex items-center justify-center w-10 h-10 rounded-md text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
         >
@@ -329,8 +630,65 @@ export function ClassFormModal({
             </button>
           </div>
         ) : (
-          <form onSubmit={onSubmit} className="space-y-4">
-            {mode === "create" && (
+          <form onSubmit={onSubmit} noValidate className="space-y-4">
+            {/* Draft restore banner (create mode only) */}
+            {mode === "create" && pendingRestore && (
+              <div
+                role="status"
+                className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/40 px-3 py-2 ring-1 ring-amber-200 dark:ring-amber-900"
+              >
+                <p className="text-sm text-amber-800 dark:text-amber-200">
+                  Restore draft from{" "}
+                  <strong>{formatRelativeTime(pendingRestore.savedAt)}</strong>?
+                </p>
+                <div className="mt-2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={handleRestoreDraft}
+                    className="min-h-[40px] rounded-md bg-amber-600 hover:bg-amber-700 px-3 py-1.5 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 dark:focus:ring-offset-slate-900"
+                  >
+                    Restore
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleDiscardDraft}
+                    className="min-h-[40px] rounded-md bg-white dark:bg-slate-900 ring-1 ring-amber-300 dark:ring-amber-800 px-3 py-1.5 text-sm font-medium text-amber-800 dark:text-amber-200 hover:bg-amber-50 dark:hover:bg-amber-950"
+                  >
+                    Discard
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Cancel-with-dirty-draft confirm banner */}
+            {showCancelConfirm && (
+              <div
+                role="alert"
+                className="rounded-md border-l-4 border-amber-500 bg-amber-50 dark:bg-amber-950/40 px-3 py-2 ring-1 ring-amber-200 dark:ring-amber-900"
+              >
+                <p className="text-sm text-amber-800 dark:text-amber-200">
+                  You have unsaved changes. Discard draft and close?
+                </p>
+                <div className="mt-2 flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={handleConfirmCancel}
+                    className="min-h-[40px] rounded-md bg-rose-600 hover:bg-rose-700 px-3 py-1.5 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-rose-500 dark:focus:ring-offset-slate-900"
+                  >
+                    Discard draft and close
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setShowCancelConfirm(false)}
+                    className="min-h-[40px] rounded-md bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 px-3 py-1.5 text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  >
+                    Keep editing
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {mode === "create" && !pendingRestore && (
               <div className="text-xs text-slate-500 dark:text-slate-400">
                 {showTemplatePicker ? (
                   <div className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 p-2 space-y-1 max-h-40 overflow-y-auto">
@@ -375,14 +733,7 @@ export function ClassFormModal({
                 )}
               </div>
             )}
-            {error && (
-              <div
-                role="alert"
-                className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
-              >
-                {error}
-              </div>
-            )}
+
             <label className="block">
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 Course name
@@ -392,17 +743,36 @@ export function ClassFormModal({
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                maxLength={120}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                onBlur={() => setTouched((t) => ({ ...t, name: true }))}
+                maxLength={MAX_NAME_LENGTH}
+                aria-invalid={errors.name ? true : undefined}
+                aria-describedby={errors.name ? nameErrorId : undefined}
+                className={`mt-1 w-full min-h-[40px] rounded-lg border ${
+                  errors.name
+                    ? "border-rose-400 dark:border-rose-500 focus:ring-rose-500"
+                    : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+                } bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2`}
                 placeholder="e.g. AP Calculus — Block 3"
               />
+              {errors.name && (
+                <p
+                  id={nameErrorId}
+                  role="alert"
+                  className="mt-1 text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {errors.name}
+                </p>
+              )}
             </label>
             <div className="block">
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 Description{" "}
                 <span className="text-slate-500 dark:text-slate-400 font-normal">(optional)</span>
               </span>
-              <div className="mt-1">
+              <div
+                className="mt-1"
+                onBlur={() => setTouched((t) => ({ ...t, description: true }))}
+              >
                 <MarkdownEditor
                   value={description}
                   onChange={setDescription}
@@ -411,6 +781,15 @@ export function ClassFormModal({
                   characterLimit={500}
                 />
               </div>
+              {errors.description && (
+                <p
+                  id={descriptionErrorId}
+                  role="alert"
+                  className="mt-1 text-xs text-rose-600 dark:text-rose-400"
+                >
+                  {errors.description}
+                </p>
+              )}
             </div>
             {mode === "edit" && (
               <label className="flex items-start gap-2 cursor-pointer">
@@ -432,15 +811,17 @@ export function ClassFormModal({
             <div className="flex items-center gap-2">
               <button
                 type="button"
-                onClick={onClose}
-                className="flex-1 rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+                onClick={handleClose}
+                className="flex-1 min-h-[40px] rounded-lg px-4 py-2.5 text-sm font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
               >
                 Cancel
               </button>
               <button
                 type="submit"
-                disabled={busy}
-                className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+                disabled={submitDisabled}
+                aria-disabled={submitDisabled || undefined}
+                title={submitTitle}
+                className="flex-1 min-h-[40px] rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
               >
                 {busy
                   ? mode === "edit"
