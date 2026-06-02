@@ -220,6 +220,17 @@ function StudentRoutesTree({
 }) {
   return (
     <Routes>
+      {/* Full-length test runner lives OUTSIDE the shell so it's a true
+          distraction-free, full-viewport takeover (like Bluebook) — no left
+          rail / mobile tab bar behind its intro, loading, or running states. */}
+      <Route
+        path={ROUTES.TEST_RUN}
+        element={
+          <StudentTestRunGuard>
+            <FullTestApp />
+          </StudentTestRunGuard>
+        }
+      />
       <Route element={<StudentShell />}>
         <Route path={ROUTES.HOME} element={<AreaSelector />} />
         {/* Locked: free question bank + free mock test are off-limits to
@@ -229,14 +240,6 @@ function StudentRoutesTree({
         <Route path={ROUTES.MOCK_TEST_HISTORY} element={<Navigate to={ROUTES.HOME} replace />} />
         <Route path={ROUTES.MOCK_TEST_REVIEW} element={<Navigate to={ROUTES.HOME} replace />} />
         <Route path={ROUTES.MY_FEEDBACK} element={<MyFeedbackPage />} />
-        <Route
-          path={ROUTES.TEST_RUN}
-          element={
-            <StudentTestRunGuard>
-              <FullTestApp />
-            </StudentTestRunGuard>
-          }
-        />
         <Route
           path={ROUTES.ASSIGNMENT_TAKE}
           element={<AssignmentTakeRoute studentId={studentId} />}
@@ -278,6 +281,9 @@ function StudentRoutesTree({
 function StaffRoutesTree({ account }: { account: AccountContext }) {
   return (
     <Routes>
+      {/* Staff full-test preview also renders OUTSIDE the shell — same
+          distraction-free takeover students get (no left rail behind it). */}
+      <Route path={ROUTES.TEST_RUN} element={<FullTestApp />} />
       <Route element={<StaffShell />}>
         <Route
           path={ROUTES.HOME}
@@ -290,9 +296,6 @@ function StaffRoutesTree({ account }: { account: AccountContext }) {
         <Route path={ROUTES.QBANK_LOG} element={<QBankSubmissionLogPage />} />
         <Route path={ROUTES.TESTS_ADMIN} element={<TestsAdminPage />} />
         <Route path={ROUTES.TEST_REVIEW} element={<TestReviewPage />} />
-        {/* Staff can preview/take a full test (the "Preview" button on the
-            Full-Test catalog). FullTestApp is a fullscreen takeover. */}
-        <Route path={ROUTES.TEST_RUN} element={<FullTestApp />} />
         {/* Per-student profile inside a course. Registered BEFORE the
             ClassLayout wildcard below so React Router matches the more
             specific path first. Lives outside ClassLayout's tab strip
