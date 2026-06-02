@@ -11,7 +11,7 @@
  * so the same look is used on `/courses` (AllClassesView) — see that file
  * for the admin variant.
  */
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useProfile } from "../lib/profile";
 import { useTeacherClasses, type TeacherClass } from "../teacher/useTeacherClasses";
@@ -37,14 +37,106 @@ import {
 import { NeedsAttentionPanel } from "./NeedsAttentionPanel";
 import { CohortSummaryWidget } from "./CohortSummaryWidget";
 
+// ---------------------------------------------------------------------------
+// Pinned-courses storage
+// ---------------------------------------------------------------------------
+// Per-user localStorage so each teacher's favorites stick on their machine.
+// The stored shape is an ordered array of course IDs (most-recently-pinned
+// first); we keep it as an array — not a Set — because order is meaningful
+// for sort priority and JSON has no Set primitive. A 50-entry LRU cap is
+// generous (teachers won't ever pin that many courses) and protects against
+// runaway growth from stale IDs that point at deleted courses.
+const PIN_STORAGE_PREFIX = "teacher.dashboard.pinnedCourses:";
+const PIN_LRU_CAP = 50;
+
+const pinStorageKey = (userId: string): string =>
+  `${PIN_STORAGE_PREFIX}${userId}`;
+
+function loadPinnedCourseIds(userId: string): string[] {
+  if (!userId || typeof window === "undefined") return [];
+  try {
+    const raw = window.localStorage.getItem(pinStorageKey(userId));
+    if (!raw) return [];
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    // Shape-validate: only keep non-empty strings, dedupe, and clamp.
+    const seen = new Set<string>();
+    const out: string[] = [];
+    for (const entry of parsed) {
+      if (typeof entry !== "string" || entry.length === 0) continue;
+      if (seen.has(entry)) continue;
+      seen.add(entry);
+      out.push(entry);
+      if (out.length >= PIN_LRU_CAP) break;
+    }
+    return out;
+  } catch {
+    // Quota / JSON parse errors → graceful empty state. Pins are an
+    // enhancement; never let a corrupt cache crash the dashboard.
+    return [];
+  }
+}
+
+function savePinnedCourseIds(userId: string, ids: readonly string[]): void {
+  if (!userId || typeof window === "undefined") return;
+  try {
+    const clamped = ids.slice(0, PIN_LRU_CAP);
+    window.localStorage.setItem(
+      pinStorageKey(userId),
+      JSON.stringify(clamped),
+    );
+  } catch {
+    // QuotaExceededError or storage disabled — silently degrade.
+  }
+}
+
+// Tiny indigo pin glyph used both inline (in the kebab) and as the overlay
+// badge on a pinned card. Sized 14×14 by default; callers can override via
+// the `size` prop. `<title>` makes it screen-reader-readable when
+// decorative; the overlay variant also wears an `aria-label` on its wrapper.
+function PinIcon({
+  size = 14,
+  className,
+  titled,
+}: {
+  size?: number;
+  className?: string;
+  titled?: boolean;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden={titled ? undefined : true}
+      role={titled ? "img" : undefined}
+    >
+      {titled && <title>Pinned</title>}
+      {/* Stylised pin: head + diagonal pin body, mirrors Lucide's `pin`. */}
+      <path d="M16 3l5 5-4.5 1.5-3 3 2.5 5.5-2 2-5-5L4 20l-1-1 4.5-5L2.5 9 4.5 7l5.5 2.5 3-3L14.5 2 16 3z" />
+    </svg>
+  );
+}
+
 interface DashboardCardProps {
   course: TeacherClass;
+  pinned: boolean;
   onEdit: (course: TeacherClass) => void;
   onDuplicate: (course: TeacherClass) => void;
   onDelete: (course: TeacherClass) => void;
+  onTogglePin: (course: TeacherClass) => void;
 }
 
-function DashboardCard({ course, onEdit, onDuplicate, onDelete }: DashboardCardProps) {
+function DashboardCard({
+  course,
+  pinned,
+  onEdit,
+  onDuplicate,
+  onDelete,
+  onTogglePin,
+}: DashboardCardProps) {
   const navigate = useNavigate();
   const [archivedOpt, applyArchive] = useOptimistic<boolean>(course.archived);
   const goToCourse = () => navigate(coursePath(course.short_code));
@@ -95,6 +187,10 @@ function DashboardCard({ course, onEdit, onDuplicate, onDelete }: DashboardCardP
 
   const kebab: KebabMenuOption[] = [
     { label: "Open", onSelect: goToCourse },
+    {
+      label: pinned ? "Unpin from top" : "Pin to top",
+      onSelect: () => onTogglePin(course),
+    },
     { label: "Edit", onSelect: () => onEdit(course) },
     { label: "Duplicate", onSelect: () => onDuplicate(course) },
     {
@@ -105,7 +201,21 @@ function DashboardCard({ course, onEdit, onDuplicate, onDelete }: DashboardCardP
   ];
 
   return (
-    <CourseCard
+    <div className="relative">
+      {pinned && (
+        // Overlay badge — sits over the top-left of the colour band so the
+        // pinned status is visible at a glance without changing CourseCard's
+        // public API. `pointer-events-none` so the underlying card's click
+        // target isn't shadowed; the action lives in the kebab.
+        <span
+          className="pointer-events-none absolute left-2 top-2 z-10 inline-flex items-center gap-1 rounded-full bg-indigo-600/90 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white shadow-sm ring-1 ring-white/40 dark:ring-slate-900/40"
+          aria-label={`${course.name} is pinned to the top`}
+        >
+          <PinIcon size={10} className="text-white" titled />
+          Pinned
+        </span>
+      )}
+      <CourseCard
       paletteSeed={course.id}
       name={course.name}
       description={course.description}
@@ -184,7 +294,8 @@ function DashboardCard({ course, onEdit, onDuplicate, onDelete }: DashboardCardP
           />
         </>
       }
-    />
+      />
+    </div>
   );
 }
 
@@ -205,6 +316,88 @@ export function DashboardPage() {
   // modal with `allowMultiCourse=true`.
   const [broadcastOpen, setBroadcastOpen] = useState<boolean>(false);
 
+  // -------------------------------------------------------------------------
+  // Pinned-courses state
+  // -------------------------------------------------------------------------
+  // Hydrate from localStorage as soon as we know who the user is. We keep the
+  // value as a stable array (sort-order matters) and derive a Set for O(1)
+  // membership checks. `null` means "not yet hydrated for this user" so the
+  // first render doesn't show stale pins from a previous user on the same
+  // browser.
+  const userId = profile?.id ?? "";
+  const [pinnedIds, setPinnedIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    if (!userId) {
+      setPinnedIds([]);
+      return;
+    }
+    setPinnedIds(loadPinnedCourseIds(userId));
+  }, [userId]);
+
+  // Cross-tab sync: when another tab pins/unpins, mirror the change here
+  // instead of waiting for a refresh. Same-tab writes don't fire `storage`
+  // (per spec) so this only catches the multi-tab case — exactly what we want.
+  useEffect(() => {
+    if (!userId || typeof window === "undefined") return;
+    const key = pinStorageKey(userId);
+    const onStorage = (event: StorageEvent) => {
+      if (event.key !== key) return;
+      setPinnedIds(loadPinnedCourseIds(userId));
+    };
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, [userId]);
+
+  const pinnedSet = useMemo(() => new Set(pinnedIds), [pinnedIds]);
+
+  const togglePin = useCallback(
+    (course: TeacherClass) => {
+      if (!userId) return;
+      setPinnedIds((current) => {
+        const isPinned = current.includes(course.id);
+        // Most-recently-pinned bubbles to the front so the visible order
+        // matches the user's mental model ("I just pinned this, it should
+        // be first").
+        const next = isPinned
+          ? current.filter((id) => id !== course.id)
+          : [course.id, ...current.filter((id) => id !== course.id)].slice(
+              0,
+              PIN_LRU_CAP,
+            );
+        savePinnedCourseIds(userId, next);
+        return next;
+      });
+    },
+    [userId],
+  );
+
+  // Sort: pinned-first within each section, preserving the existing order
+  // for unpinned items and pin-insertion order for pinned items. The
+  // pin-order index is built once per `pinnedIds` change for an O(n)
+  // partition rather than an O(n log n) comparator that hits the array on
+  // every comparison.
+  const sortPinnedFirst = useCallback(
+    (list: readonly TeacherClass[]): TeacherClass[] => {
+      if (pinnedSet.size === 0) return [...list];
+      const pinOrder = new Map<string, number>();
+      pinnedIds.forEach((id, idx) => pinOrder.set(id, idx));
+      const pinned: TeacherClass[] = [];
+      const rest: TeacherClass[] = [];
+      for (const c of list) {
+        if (pinnedSet.has(c.id)) pinned.push(c);
+        else rest.push(c);
+      }
+      pinned.sort(
+        (a, b) =>
+          (pinOrder.get(a.id) ?? Number.MAX_SAFE_INTEGER) -
+          (pinOrder.get(b.id) ?? Number.MAX_SAFE_INTEGER),
+      );
+      return [...pinned, ...rest];
+    },
+    [pinnedSet, pinnedIds],
+  );
+
   const { published, unpublished } = useMemo(() => {
     const pub: TeacherClass[] = [];
     const unp: TeacherClass[] = [];
@@ -212,8 +405,11 @@ export function DashboardPage() {
       if (c.archived) unp.push(c);
       else pub.push(c);
     }
-    return { published: pub, unpublished: unp };
-  }, [classes]);
+    return {
+      published: sortPinnedFirst(pub),
+      unpublished: sortPinnedFirst(unp),
+    };
+  }, [classes, sortPinnedFirst]);
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
@@ -297,11 +493,13 @@ export function DashboardPage() {
                 <DashboardCard
                   key={course.id}
                   course={course}
+                  pinned={pinnedSet.has(course.id)}
                   onEdit={setEditTarget}
                   onDuplicate={(c) =>
                     setDuplicateSource({ id: c.id, name: c.name })
                   }
                   onDelete={setDeleteTarget}
+                  onTogglePin={togglePin}
                 />
               ))}
             </div>
@@ -318,11 +516,13 @@ export function DashboardPage() {
                 <DashboardCard
                   key={course.id}
                   course={course}
+                  pinned={pinnedSet.has(course.id)}
                   onEdit={setEditTarget}
                   onDuplicate={(c) =>
                     setDuplicateSource({ id: c.id, name: c.name })
                   }
                   onDelete={setDeleteTarget}
+                  onTogglePin={togglePin}
                 />
               ))}
             </div>

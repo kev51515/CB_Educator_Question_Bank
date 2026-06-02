@@ -95,13 +95,23 @@ function FeedbackRow({ item, onOpen }: FeedbackRowProps) {
   const meta = timeAgo
     ? `Graded ${timeAgo} by ${grader}`
     : `Graded by ${grader}`;
+  const canOpen = Boolean(item.assignmentId && item.attemptId);
+  const scoreText =
+    item.effectiveScore === null
+      ? "ungraded"
+      : `${Math.round(item.effectiveScore)} percent`;
+  const verb = hasFeedback ? "Review feedback" : "Review score";
+  const ariaLabel = `${verb} on ${item.assignmentTitle}, ${scoreText}${
+    timeAgo ? `, graded ${timeAgo}` : ""
+  }`;
 
   return (
     <button
       type="button"
       onClick={() => onOpen(item)}
-      className="w-full min-h-[40px] flex items-start gap-3 rounded-xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 px-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 transition"
-      aria-label={`Review feedback on ${item.assignmentTitle}`}
+      disabled={!canOpen}
+      className="w-full min-h-[40px] flex items-start gap-3 rounded-xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-white/80 dark:disabled:hover:bg-slate-900/60 px-4 py-3 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 transition"
+      aria-label={ariaLabel}
     >
       <span
         aria-hidden
@@ -170,7 +180,7 @@ export function RecentFeedbackWidget({ studentId }: RecentFeedbackWidgetProps) {
         {!loading && items.length > 0 && (
           <span
             className="inline-flex items-center rounded-full bg-indigo-50 dark:bg-indigo-950/40 px-2 py-0.5 text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800"
-            aria-label={`${items.length} recent`}
+            aria-label={`${items.length} recent ${items.length === 1 ? "item" : "items"}`}
           >
             {items.length}
           </span>
@@ -180,7 +190,7 @@ export function RecentFeedbackWidget({ studentId }: RecentFeedbackWidgetProps) {
         <button
           type="button"
           onClick={() => navigate(ROUTES.MY_FEEDBACK)}
-          className="ml-auto rounded text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 px-1"
+          className="ml-auto inline-flex items-center min-h-[32px] rounded text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 px-2 py-1"
           aria-label="View all feedback history"
         >
           View all →
