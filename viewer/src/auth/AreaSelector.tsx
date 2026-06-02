@@ -203,8 +203,8 @@ export function AreaSelector() {
             }
           />
           <AreaCard
-            title="Full Mock Test"
-            description="Take a timed practice test under realistic conditions and see your score."
+            title="Timed Practice"
+            description="Set your own timer and question count for a quick timed drill from the question bank."
             accent="emerald"
             ready
             onClick={handlePickMock}
@@ -235,6 +235,10 @@ export function AreaSelector() {
             onStart={handleStart}
             onReview={handleReview}
           />
+          {/* Full-length tests promoted high so the real "Official practice
+              tests" (e.g. the Nov-2023 DSAT) are front-and-center, not buried
+              below progress — the unified student tests surface. */}
+          <TestsPanel />
           {/* M14: one-click weak-skills drill CTA right under what's due. */}
           <button
             type="button"
@@ -268,7 +272,6 @@ export function AreaSelector() {
             </div>
           </section>
           <CourseAnnouncementsList />
-          <TestsPanel />
           {/* B4: quick link to the mock-test history surface so past
               attempts and side-by-side comparisons are one click away from
               the post-sign-in landing. Placed next to TestsPanel since
