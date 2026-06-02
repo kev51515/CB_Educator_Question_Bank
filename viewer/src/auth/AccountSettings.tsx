@@ -299,6 +299,41 @@ export function AccountSettings({
     newPassword.length < 8 ||
     newPassword !== confirmPassword;
 
+  // Teacher-managed student accounts have a login code + teacher-controlled
+  // password and a non-deliverable synthetic email. Don't invite them to
+  // change email/password here — show a read-only, teacher-managed view.
+  if (profile.managed) {
+    return (
+      <div className="space-y-6">
+        <section className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 space-y-3">
+          <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            Your account
+          </h2>
+          <dl className="space-y-3 text-sm">
+            <div className="flex items-center justify-between gap-3">
+              <dt className="text-slate-500 dark:text-slate-400">Name</dt>
+              <dd className="font-medium text-slate-900 dark:text-slate-100">
+                {profile.display_name ?? "—"}
+              </dd>
+            </div>
+            {profile.login_code && (
+              <div className="flex items-center justify-between gap-3">
+                <dt className="text-slate-500 dark:text-slate-400">Login code</dt>
+                <dd className="font-mono font-semibold text-slate-900 dark:text-slate-100">
+                  {profile.login_code}
+                </dd>
+              </div>
+            )}
+          </dl>
+          <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
+            Your teacher manages your account. If you forget your password, ask
+            them to reset it for you.
+          </p>
+        </section>
+      </div>
+    );
+  }
+
   return (
     <div className="space-y-6">
         {/* Display name */}

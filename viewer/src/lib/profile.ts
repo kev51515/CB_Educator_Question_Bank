@@ -23,6 +23,10 @@ export interface Profile {
   role: ProfileRole;
   created_at: string;
   updated_at: string;
+  /** True for teacher-created student accounts (login code + managed password). */
+  managed: boolean;
+  /** The login username for managed students (e.g. "KQAZNP-04"); else null. */
+  login_code: string | null;
 }
 
 export interface UseProfile {
@@ -59,6 +63,8 @@ function toProfile(row: unknown): Profile | null {
   if (role !== "student" && role !== "teacher" && role !== "admin") return null;
   const displayName =
     typeof r.display_name === "string" || r.display_name === null ? r.display_name : null;
+  const loginCode =
+    typeof r.login_code === "string" ? r.login_code : null;
   return {
     id: r.id,
     email: r.email,
@@ -66,6 +72,8 @@ function toProfile(row: unknown): Profile | null {
     role,
     created_at: r.created_at,
     updated_at: r.updated_at,
+    managed: r.managed === true,
+    login_code: loginCode,
   };
 }
 
@@ -84,7 +92,7 @@ export function useProfile(): UseProfile {
     try {
       const { data, error: queryError } = await supabase
         .from("profiles")
-        .select("id, email, display_name, role, created_at, updated_at")
+        .select("id, email, display_name, role, created_at, updated_at, managed, login_code")
         .eq("id", userId)
         .single();
       if (queryError) {
