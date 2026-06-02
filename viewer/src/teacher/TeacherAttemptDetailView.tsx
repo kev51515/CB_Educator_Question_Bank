@@ -36,6 +36,15 @@ import { MarkdownEditor } from "../components/MarkdownEditor";
 import { useToast } from "../components/Toast";
 import { useClassContext } from "./classLayoutContext";
 import { classAssignmentAttemptPath } from "../lib/routes";
+import {
+  FEEDBACK_DEBOUNCE_MS,
+  FEEDBACK_MAX_LEN,
+  feedbackLegacyKey,
+  scoreLegacyKey,
+  gradedAtLegacyKey,
+  readLegacy,
+  clearLegacy,
+} from "./teacherAttemptGradingHelpers";
 
 interface TeacherAttemptDetailViewProps {
   attemptId: string;
@@ -46,37 +55,6 @@ interface SiblingAttempt {
   id: string;
   student_id: string;
   display_name: string;
-}
-
-const FEEDBACK_DEBOUNCE_MS = 1500;
-const FEEDBACK_MAX_LEN = 10000;
-
-// Legacy localStorage keys from the Wave 20A MVP buffer. We drain these on
-// mount, then delete them. Kept as helpers so the drain logic reads cleanly.
-function feedbackLegacyKey(attemptId: string): string {
-  return `grading.${attemptId}.feedback`;
-}
-function scoreLegacyKey(attemptId: string): string {
-  return `grading.${attemptId}.score_override`;
-}
-function gradedAtLegacyKey(attemptId: string): string {
-  return `grading.${attemptId}.graded_at`;
-}
-
-function readLegacy(key: string): string | null {
-  try {
-    return window.localStorage.getItem(key);
-  } catch {
-    return null;
-  }
-}
-
-function clearLegacy(key: string): void {
-  try {
-    window.localStorage.removeItem(key);
-  } catch {
-    /* ignore */
-  }
 }
 
 export function TeacherAttemptDetailView({
