@@ -29,6 +29,7 @@ import { getInitials, type TrajectoryPoint } from "./studentProfileHelpers";
 import { ProfileHeader } from "./ProfileHeader";
 import { Section } from "./StudentProfileSection";
 import { PrivateNotesSection } from "./PrivateNotesSection";
+import { StudentTestRunsPanel } from "./StudentTestRunsPanel";
 import { AttemptsBody } from "./AttemptsBody";
 import { PostsBody } from "./PostsBody";
 import { PortfolioBody } from "./PortfolioBody";
@@ -192,6 +193,9 @@ export function StudentProfilePage(): JSX.Element {
             courseId={course?.id ?? null}
             studentId={header.id}
           />
+
+          {/* Full-length test results — review + release-to-student control. */}
+          <StudentTestRunsPanel studentId={header.id} />
 
           {allEmpty ? (
             <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900">
