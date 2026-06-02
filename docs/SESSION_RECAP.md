@@ -1033,15 +1033,63 @@ After 2 stopping notices, user said "continue" then "keep going". Shipped 9 more
 - `MyFeedbackPage`: 5 filter pills with counts: All / Has feedback (text non-empty trimmed) / Awaiting (no feedback AND `gradedAt` null — source universe already "submitted", so cleanly captures pre-grade rows) / High score (≥80) / Low score (<60). Sort: Most recent (default, `gradedAt` desc), Oldest first, Highest/Lowest score (nulls last), Course name (localeCompare base). Persistence `student.myFeedback.view:${userId}`. Palette: Awaiting amber, Low rose, High emerald, Has feedback indigo, All slate.
 - `StudentPortfolio`: 5 status filter pills via `leafStatus(submission, due_at)`: submitted > draft > past_due > not_started precedence. Tree-prune algorithm: parents drop when 0 matching descendants → empty branches collapse; immutable spread `{...n, children: prunedChildren}`. Sort toggle Position / Due date: due_date splits parents+leaves, parents stay position-sorted (preserves hierarchy reading), leaves sort `due_at asc` nulls last. Persistence `student.portfolio.filter:${courseId}` (per-course not per-user since portfolios are per-course). Palette: Indigo (All), emerald (Submitted), amber (Draft), rose (Past due), slate (Not started).
 
-### Final autonomous-run total (Waves 21B + 21C + 21D + 21E, Rounds 4–45)
+### Wave 21F — Another "keep going" (Rounds 46-55)
 
-- **90+ lanes shipped across 42 rounds**
-- **9 migrations** (0050, 0056, 0057, 0058, 0059, 0060, 0062, 0063, 0064) — all backward-compatible
-- **8 smoke suites** (~6100 lines) with 28 new scenarios incl. 16 in wave-post-30
-- **40+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
+User said "keep going" twice more. Shipped 10 more rounds across modals, autosave, validation, and a global keyboard-shortcuts overlay.
+
+### Round 46 — NewThreadModal recents + AssignmentForm draft/validation
+- `NewThreadModal` (~178 → ~370 lines): recents storage `inbox.recentRecipients:${userId}` max 10 most-recent-first, written after `open_thread_with` RPC resolves. Empty query: bounded `profiles` fetch (limit 50, alpha order, `neq currentUser`). Non-empty: existing 200ms debounced `ilike` on `display_name`/`email` (limit 20). Single flat `visibleList` drives keyboard nav so section headers don't break index math. Recents pruning: lookup in already-fetched alpha first; anything not found fetched in single `in(...)` query.
+- `AssignmentFormModal` (632 → 940 lines): per-field pure `validateX(value)` returning `string | null` — title required+≤200, questionCount integer 5-50, timeLimit 0-300min, maxAttempts optional then 1-20, latePenaltyPercent 0-100, gracePeriodHours 0-168. `touched` Set tracks user-blurred fields; only touched surface errors. Submit gating disables Save with `aria-disabled` mirror. Draft persistence (create mode only): `teacher.assignmentForm.draft:${classId}`. 500ms debounce with `pendingDraftRef` for synchronous unmount flush. Restore banner amber `border-l-4` with relative time + Restore / Discard. Cancel-with-dirty shows inline amber confirm-cancel banner. Past-due `due_at` allowed without warning per spec ("missed it" is valid state).
+
+### Round 47 — ThreadView jump-to-unread + SkillHeatmap domain filter
+- `ThreadView`: unread = `author_id !== currentUserId AND read_by_recipient_at === null`. `unreadSnapshotRef` captures once on first non-loading messages payload for given threadId — survives the existing mark-as-read UPDATE. Floating sticky banner top-center with × dismiss + "↓ N new messages — Jump to first". `IntersectionObserver` (scroller as root, 50% threshold) auto-dismisses when first-unread enters view. "New" divider as first child of first-unread message with `role=separator`. Auto-hides 5s after entering view.
+- `SkillHeatmap` (218 → 462 lines): domain pills derived dynamically from RPC's `domain` column. 5 sort options. "Weakest skill" callout computed over UNFILTERED rows (single-pass reduce). Practice link → `${ROUTES.PRACTICE}?skill=...`. Persistence `student.skillHeatmap.view:${userId}`.
+
+### Round 48 — JoinClassModal validation + ScorePrediction delta
+- `JoinClassModal`: alphabet `[A-Z2-9]` matching `short_code` generator from migrations 0038-0040 (no O/0/I/1/L confusables). `scrubCode()` on `onChange` + `onPaste`: uppercase + strip out-of-alphabet + truncate to 6. `font-mono tracking-widest text-xl`. `mapRpcError` stable code → message mapping: `invalid_join_code` / `already_joined` (with "Open class →" link defensively wired) / `rate_limited` / `not_authenticated`. `aria-invalid` toggles on error. Character counter `aria-live` polite + turns emerald when complete.
+- `ScorePrediction`: replaced old "first vs last (since diagnostic)" delta with previous-vs-latest "since your last test" — true momentum signal. Three tones: emerald `↑ +N`, rose `↓ -N`, slate `— No change`. Recommendation tiers (<1000 / 1000-1299 / 1300-1499 / ≥1500) in indigo-tinted card with "Practice now" / "Run a timed practice set" CTAs linking to `ROUTES.PRACTICE`. Per-section deltas skipped — trajectory data is aggregate-only.
+
+### Round 49 — BulkRosterModal preview + PortfolioSubmissionForm autosave
+- `BulkRosterModal`: preview table # / Email (mono) / Display name / Status (text pill, not color-only). `classifyRows()` walks parsed in order with `seen` Set: invalid → duplicate → enrolled → new. New optional prop `existingEmails?: string[]` (additive, no caller breaks). Belt-and-braces: even when caller skips prop, DB-side `23505` unique-violation path still catches duplicates. Dry-run checkbox default off. During import: progress bar + spinner + live label "Importing… ({done}/{total})" with `aria-live` polite. 4 outcomes (pure success / partial / full failure / nothing-importable).
+- `PortfolioSubmissionForm`: fields covered: textValue, urlValue, numberValue, dateValue, choiceValue, multiValue. File uploads EXCLUDED — browsers can't reconstruct File objects from localStorage. 1000ms `setTimeout` debounce. `pendingDraftRef` mirrors latest unflushed draft so unmount cleanup flushes synchronously. Recover banner amber `border-l-4` with relative time. `storage` event listener with 250ms `ownWriteAtRef` window filters own-write echoes. Save/Submit pause `autosaveEnabledRef` for network round-trip. Success: `clearDraft` + reset indicator. Failure: re-enable autosave, keep draft intact.
+
+### Round 50 — StudentShell ⌘B sidebar + AccountSettings polish
+- `StudentShell` (261 → 484 lines): Note that StudentShell had NO sidebar at all before — file rendered only `<Outlet/>`, floating overlays, mobile tab bar. Added desktop-only left rail with 6 student nav items (Home / Practice / Mock Test / Calendar / Inbox / Account). Persistence `student.shell.sidebarCollapsed:${userId}` with `student.*` namespace. Mobile: rail hidden — students keep existing `StudentMobileTabBar`. Wordmark `aria-hidden={collapsed}` + `lg:hidden`.
+- `AccountSettings`: `evaluatePasswordStrength` heuristic — Empty / Weak (len<8) / Fair (≥8) / Good (≥10 + upper + digit) / Strong (≥12 + upper + lower + digit + symbol). 4-segment `role=progressbar` bar with dynamic `aria-label="Password strength: <Label>"`. `passwordSubmitDisabled` blocks submit when busy, level empty/weak, length<8, or confirm mismatch. Export confirmation copy via `aria-describedby="export-hint"` + post-success `lastExport` state captures filename + `Blob.size` formatted via `formatBytes`. Email change copy via `aria-describedby="email-change-hint"`. Display name validation: trimmed-non-empty + ≤100 char.
+
+### Round 51 — Student announcements unread + materials filter/search
+- `CourseAnnouncementsList`: this is the cross-course dashboard widget (10 latest across all enrolled courses) — adapted per-course storage key to user-scoped `student.announcements.lastVisit:${userId}` → ISO string. Unread: `created_at > lastVisitSnapshot`, or always when no snapshot exists. Snapshot captured once on mount into local state via `userId`-keyed ref guard so indicator doesn't flicker mid-session. Written once per mount after announcements load via `wroteForUserRef`. Indigo 2px `border-l` accent + inline 8×8 indigo SVG dot. Header counter "3 new · 10 latest" in indigo when unread > 0.
+- `CourseMaterialsList`: `StudentMaterialKind` union is only `'file' | 'link'` (no 'note'). Pills: All / Links / Files with live counts. Sort: Most recent (default) / Oldest first / Title A-Z (locale-aware, `sensitivity:"base"`, `numeric:true`). Persistence `student.materialsList.view:${userId}:${courseId}`. Search NOT persisted (transient). `viewHydrated` gates initial render.
+
+### Round 52 — NotificationPreferences preview + TopicForm draft
+- `NotificationPreferencesPage` (~200 → ~330 lines): direct Supabase fetch (notifications table, 10 most recent for current `recipient_id`), NOT `useNotifications`. Rationale: that hook drops opted-out kinds via its `visible` filter — but the point of this preview is to show what user would be silencing, so it must include hidden kinds. Realtime channel keeps preview fresh. Per-row kind badge from `KIND_LABELS` lookup. `(hidden)` italic suffix when kind currently opted out. `useMemo` derives `previewRows` from `recent + prefs` so toggling immediately re-tints.
+- `TopicFormModal`: mirrors Round 46 pattern smaller scope. `validateTitle` required+≤200. `validateBody` required+≤10000. Draft `teacher.topicForm.draft:${courseId}`. 500ms debounce. Restore banner amber `border-l-4`. Cancel-with-dirty shows inline amber confirm banner.
+
+### Round 53 — AdminInviteCodes filter/sort + CourseSettings polish
+- `AdminInviteCodesPage`: 4 filter buckets All / Active / Expired / Revoked via shared `classifyCode(code, now)` helper (single source of truth for counts + row rendering). Status pills: Active emerald, Expired amber (NEW — was being shown as "Active" before), Revoked rose. Sort: Most recent / Oldest first / Expires soonest (asc, NULLs last via custom comparator) / Code (A-Z localeCompare). Persistence `admin.invites.view`.
+- `CourseSettings` 5 surgical polish fixes: `aria-label="Course name"` on inline rename input (visible label is sibling text); `aria-label="Copy short code"` + `aria-label="Copy join code"` on duplicate Copy buttons; sticky `descriptionDirty` flag clears on revert; delete confirmation input gets `autoFocus` + submits on Enter when name matches.
+
+### Round 54 — GlobalShortcutsHelp dialog (StaffShell-only mount)
+- New `ShortcutsHelp` component: `{ open, onClose, userRole? }`. 560px max-w / 80vh max-h panel, indigo `border-l-4` accent. `role=dialog` + `aria-modal=true` + `aria-labelledby` + `useFocusTrap` + `data-autofocus` on × button. 6 sections in `sm:grid-cols-2` grid: Global / Inside courses (staff) / Calendar / Inbox / Notifications dropdown / Modules page (staff). `<Kbd>` chips: slate ring + monospace + `min-w-[1.75rem]` + shadow inset. Role gating: staff-only sections render when `userRole` is teacher or admin.
+- StaffShell mount: 1-line swap from existing `ShortcutHelpOverlay` to `ShortcutsHelp`.
+- **StudentShell mount DEFERRED in Round 54** — initial agent run accidentally removed Practice + Mock Test NavLinks while wiring the `?` handler. Reverted. Followed up in Round 55.
+
+### Round 55 — ShortcutsHelp StudentShell wiring (tight follow-up)
+- Narrower agent contract that only adds the 4 hook-up lines and explicitly forbids touching NavLinks / STUDENT_TABS / icons.
+- Diff: 14 insertions, 0 deletions. Both shells now wire the `?` overlay.
+
+### Final autonomous-run total (Waves 21B + 21C + 21D + 21E + 21F, Rounds 4–55)
+
+- **100+ lanes shipped across 52 rounds**
+- **9 migrations** (0050, 0056-60, 0062-64) — all backward-compatible. (Parallel session shipped 0065 + 0067 alongside.)
+- **8 smoke suites** (~6100 lines) with 28 new scenarios
+- **50+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
 - **Every major list/triage surface has consistent sort + filter + persistence + empty states + keyboard nav** — student / teacher / admin all see the same UX bar
+- **All major forms have validation + draft persistence + recover banners** (AssignmentForm, TopicForm, PortfolioSubmissionForm)
+- **Discoverability**: ⌘K palette, ⌘N quick-create, ⌘B sidebar, `?` shortcuts overlay — all wired in both shells
 - **One LMS_ROADMAP item closed** (4.4 discussion read receipts — client-side substitute without DB risk)
 - **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
-- **Parallel session ran continuously alongside** — landed 12+ commits (security RLS, Timer bundle split, Q-Bank nav unification, materials split, sidebar split, modularization plan, etc.) with zero merge conflicts
+- **Round 54 regression caught + cleanly recovered** in Round 55 — example of "trust but verify" agent dispatching
+- **Parallel session ran continuously alongside** — landed 25+ commits (security RLS, Timer bundle split, Q-Bank nav unification, materials split, sidebar split, modularization plan, AllUsersView/AssignmentsPanel/CohortSummaryWidget/CoursePortfolio/CourseGradebook/MockTestHistoryPage/NeedsAttentionPanel/ProgressDashboard/StudentCourseView/StudentProfilePage modularization, managed_students migration 0067 + AddStudent/ResetStudentPassword modals) with zero merge conflicts
 
 Build is green. Working tree is clean. All commits pushed to origin/main.
