@@ -17,8 +17,17 @@
  * No actual sign-in / auth state is owned here — all mutations route
  * through the props handed in by AuthGate, which already owns the auth
  * session lifecycle.
+ *
+ * Wave 21 polish:
+ *   - Live password strength meter (Weak/Fair/Good/Strong) below the
+ *     new-password input; submit is suppressed when Weak.
+ *   - Display name now validated inline (required, trimmed-non-empty,
+ *     ≤100 chars).
+ *   - Export-data flow gained pre-click hint, in-flight spinner, and a
+ *     post-click "Exported {filename} ({size})" caption.
+ *   - Email change flow gained a hint clarifying old-vs-new lifecycle.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useToast } from "@/components";
@@ -32,6 +41,94 @@ interface AccountSettingsProps {
   updateDisplayName: (name: string) => Promise<AuthResult>;
   updatePassword: (newPassword: string) => Promise<AuthResult>;
   onSignOut: () => Promise<void> | void;
+}
+
+type StrengthLevel = "empty" | "weak" | "fair" | "good" | "strong";
+
+interface StrengthInfo {
+  level: StrengthLevel;
+  /** 0–4 segments filled. */
+  score: number;
+  label: string;
+  hint: string;
+  /** Tailwind classes for the filled segments. */
+  fillClass: string;
+  /** Tailwind classes for the hint text. */
+  textClass: string;
+}
+
+function evaluatePasswordStrength(password: string): StrengthInfo {
+  if (password.length === 0) {
+    return {
+      level: "empty",
+      score: 0,
+      label: "Empty",
+      hint: "Enter a new password",
+      fillClass: "",
+      textClass: "text-slate-500 dark:text-slate-400",
+    };
+  }
+
+  const hasUpper = /[A-Z]/.test(password);
+  const hasLower = /[a-z]/.test(password);
+  const hasDigit = /[0-9]/.test(password);
+  const hasSymbol = /[^A-Za-z0-9]/.test(password);
+  const len = password.length;
+
+  if (len >= 12 && hasUpper && hasLower && hasDigit && hasSymbol) {
+    return {
+      level: "strong",
+      score: 4,
+      label: "Strong",
+      hint: "Strong",
+      fillClass: "bg-emerald-500",
+      textClass: "text-emerald-600 dark:text-emerald-400",
+    };
+  }
+
+  if (len >= 10 && hasUpper && hasDigit) {
+    return {
+      level: "good",
+      score: 3,
+      label: "Good",
+      hint: hasSymbol
+        ? "Good — 12+ chars with a symbol becomes Strong"
+        : "Good — add a symbol to strengthen further",
+      fillClass: "bg-indigo-500",
+      textClass: "text-indigo-600 dark:text-indigo-400",
+    };
+  }
+
+  if (len >= 8) {
+    let nudge = "Fair";
+    if (!hasDigit) nudge = "Fair — add a number";
+    else if (!hasUpper) nudge = "Fair — add an uppercase letter";
+    else if (!hasSymbol) nudge = "Fair — add a symbol";
+    else if (len < 10) nudge = "Fair — try a longer password";
+    return {
+      level: "fair",
+      score: 2,
+      label: "Fair",
+      hint: nudge,
+      fillClass: "bg-amber-500",
+      textClass: "text-amber-600 dark:text-amber-400",
+    };
+  }
+
+  return {
+    level: "weak",
+    score: 1,
+    label: "Weak",
+    hint: "Weak — try a longer password (8+ characters)",
+    fillClass: "bg-rose-500",
+    textClass: "text-rose-600 dark:text-rose-400",
+  };
+}
+
+function formatBytes(bytes: number): string {
+  if (bytes < 1024) return `${bytes} B`;
+  if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`;
+  return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
 }
 
 function roleLabel(role: Profile["role"]): string {
@@ -57,6 +154,7 @@ export function AccountSettings({
   const toast = useToast();
   const [displayName, setDisplayName] = useState<string>(profile.display_name ?? "");
   const [nameBusy, setNameBusy] = useState(false);
+  const [nameTouched, setNameTouched] = useState(false);
 
   const [showEmailForm, setShowEmailForm] = useState(false);
   const [newEmail, setNewEmail] = useState("");
@@ -68,6 +166,18 @@ export function AccountSettings({
   const [pwBusy, setPwBusy] = useState(false);
 
   const [exportBusy, setExportBusy] = useState(false);
+  const [lastExport, setLastExport] = useState<{ filename: string; size: number } | null>(null);
+
+  const strength = useMemo(() => evaluatePasswordStrength(newPassword), [newPassword]);
+
+  const trimmedName = displayName.trim();
+  const nameError: string | null = (() => {
+    if (!nameTouched) return null;
+    if (trimmedName.length === 0) return "Display name is required";
+    if (trimmedName.length > 100) return "Display name must be 100 characters or fewer";
+    return null;
+  })();
+  const nameValid = trimmedName.length > 0 && trimmedName.length <= 100;
 
   const onExportData = async () => {
     setExportBusy(true);
@@ -80,14 +190,16 @@ export function AccountSettings({
       const blob = new Blob([JSON.stringify(data, null, 2)], {
         type: "application/json",
       });
+      const filename = `my-data-${new Date().toISOString().slice(0, 10)}.json`;
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement("a");
       anchor.href = url;
-      anchor.download = `my-data-${new Date().toISOString().slice(0, 10)}.json`;
+      anchor.download = filename;
       document.body.appendChild(anchor);
       anchor.click();
       document.body.removeChild(anchor);
       URL.revokeObjectURL(url);
+      setLastExport({ filename, size: blob.size });
       toast.success("Export ready", "Your data has been downloaded.");
     } catch (err: unknown) {
       toast.error(
@@ -102,13 +214,19 @@ export function AccountSettings({
   // Sync local state when profile prop changes (e.g., after refresh).
   useEffect(() => {
     setDisplayName(profile.display_name ?? "");
+    setNameTouched(false);
   }, [profile.display_name]);
 
   const onSubmitName = async (e: React.FormEvent) => {
     e.preventDefault();
+    setNameTouched(true);
+    if (!nameValid) {
+      toast.error("Please enter a valid display name.");
+      return;
+    }
     setNameBusy(true);
     try {
-      const { error } = await updateDisplayName(displayName);
+      const { error } = await updateDisplayName(trimmedName);
       if (error) toast.error("Couldn't update name", error);
       else toast.success("Display name updated.");
     } finally {
@@ -147,8 +265,12 @@ export function AccountSettings({
 
   const onSubmitPassword = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (newPassword.length < 6) {
-      toast.error("Password must be at least 6 characters.");
+    if (newPassword.length < 8) {
+      toast.error("Password must be at least 8 characters.");
+      return;
+    }
+    if (strength.level === "weak") {
+      toast.error("Please choose a stronger password.");
       return;
     }
     if (newPassword !== confirmPassword) {
@@ -170,6 +292,13 @@ export function AccountSettings({
     }
   };
 
+  const passwordSubmitDisabled =
+    pwBusy ||
+    strength.level === "empty" ||
+    strength.level === "weak" ||
+    newPassword.length < 8 ||
+    newPassword !== confirmPassword;
+
   return (
     <div className="space-y-6">
         {/* Display name */}
@@ -181,16 +310,40 @@ export function AccountSettings({
             <input
               type="text"
               value={displayName}
-              onChange={(e) => setDisplayName(e.target.value)}
+              onChange={(e) => {
+                setDisplayName(e.target.value);
+                if (!nameTouched) setNameTouched(true);
+              }}
+              onBlur={() => setNameTouched(true)}
               autoComplete="name"
-              className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              maxLength={100}
+              aria-invalid={nameError !== null}
+              aria-describedby={nameError ? "display-name-error" : undefined}
+              className={`w-full rounded-lg border bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 ${
+                nameError
+                  ? "border-rose-400 dark:border-rose-500 focus:ring-rose-500"
+                  : "border-slate-300 dark:border-slate-700 focus:ring-indigo-500"
+              }`}
               placeholder="Your name"
             />
+            {nameError ? (
+              <p
+                id="display-name-error"
+                className="text-xs text-rose-600 dark:text-rose-400"
+                role="alert"
+              >
+                {nameError}
+              </p>
+            ) : (
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Up to 100 characters. Shown on assignments, discussions, and the gradebook.
+              </p>
+            )}
             <div className="flex justify-end">
               <button
                 type="submit"
-                disabled={nameBusy}
-                className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2"
+                disabled={nameBusy || !nameValid}
+                className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[40px]"
               >
                 {nameBusy ? "Saving…" : "Save"}
               </button>
@@ -221,21 +374,29 @@ export function AccountSettings({
                 value={newEmail}
                 onChange={(e) => setNewEmail(e.target.value)}
                 autoComplete="email"
+                aria-describedby="email-change-hint"
                 className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 placeholder="new@example.com"
               />
+              <p
+                id="email-change-hint"
+                className="text-xs text-slate-500 dark:text-slate-400"
+              >
+                We'll send a confirmation email to your new address. Your old email
+                stays active until you click the link.
+              </p>
               <div className="flex items-center justify-end gap-2">
                 <button
                   type="button"
                   onClick={() => setShowEmailForm(false)}
-                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[40px]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={emailBusy}
-                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2"
+                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
                 >
                   {emailBusy ? "Sending…" : "Send confirmation"}
                 </button>
@@ -280,10 +441,39 @@ export function AccountSettings({
                   value={newPassword}
                   onChange={(e) => setNewPassword(e.target.value)}
                   autoComplete="new-password"
-                  minLength={6}
+                  minLength={8}
+                  aria-describedby="password-strength-hint"
                   className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-                  placeholder="At least 6 characters"
+                  placeholder="At least 8 characters"
                 />
+                {/* Strength meter */}
+                <div className="mt-2 space-y-1">
+                  <div
+                    className="flex items-center gap-1"
+                    role="progressbar"
+                    aria-label={`Password strength: ${strength.label}`}
+                    aria-valuenow={strength.score}
+                    aria-valuemin={0}
+                    aria-valuemax={4}
+                  >
+                    {[0, 1, 2, 3].map((i) => (
+                      <div
+                        key={i}
+                        className={`h-1.5 flex-1 rounded-full transition-colors ${
+                          i < strength.score
+                            ? strength.fillClass
+                            : "bg-slate-200 dark:bg-slate-700"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                  <p
+                    id="password-strength-hint"
+                    className={`text-xs ${strength.textClass}`}
+                  >
+                    {strength.hint}
+                  </p>
+                </div>
               </label>
               <label className="block">
                 <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -294,23 +484,35 @@ export function AccountSettings({
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   autoComplete="new-password"
-                  minLength={6}
+                  minLength={8}
+                  aria-invalid={
+                    confirmPassword.length > 0 && confirmPassword !== newPassword
+                  }
                   className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                   placeholder="Repeat password"
                 />
+                {confirmPassword.length > 0 && confirmPassword !== newPassword && (
+                  <p className="mt-1 text-xs text-rose-600 dark:text-rose-400" role="alert">
+                    Passwords don't match
+                  </p>
+                )}
               </label>
               <div className="flex items-center justify-end gap-2">
                 <button
                   type="button"
-                  onClick={() => setShowPasswordForm(false)}
-                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+                  onClick={() => {
+                    setShowPasswordForm(false);
+                    setNewPassword("");
+                    setConfirmPassword("");
+                  }}
+                  className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-3 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 min-h-[40px]"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  disabled={pwBusy}
-                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2"
+                  disabled={passwordSubmitDisabled}
+                  className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[40px]"
                 >
                   {pwBusy ? "Saving…" : "Update password"}
                 </button>
@@ -331,7 +533,7 @@ export function AccountSettings({
           </div>
           <Link
             to={ROUTES.NOTIFICATION_PREFS}
-            className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+            className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 min-h-[40px]"
           >
             Manage
           </Link>
@@ -342,10 +544,6 @@ export function AccountSettings({
           <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
             Export my data
           </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            Download a JSON copy of your profile, course memberships, attempts,
-            and portfolio submissions.
-          </p>
           <div>
             <button
               type="button"
@@ -353,10 +551,49 @@ export function AccountSettings({
                 void onExportData();
               }}
               disabled={exportBusy}
-              className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white text-sm font-medium px-4 py-2"
+              title="Plain JSON, no encryption"
+              aria-describedby="export-hint"
+              className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-sm font-medium px-4 py-2 min-h-[40px]"
             >
-              {exportBusy ? "Preparing…" : "Download my data as JSON"}
+              {exportBusy && (
+                <svg
+                  className="h-4 w-4 animate-spin"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  />
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                  />
+                </svg>
+              )}
+              {exportBusy ? "Exporting…" : "Export my data"}
             </button>
+            <p
+              id="export-hint"
+              className="mt-2 text-xs text-slate-500 dark:text-slate-400"
+            >
+              Downloads a JSON file with your profile, course memberships,
+              assignment attempts, and feedback. May take a few seconds for
+              accounts with many attempts.
+            </p>
+            {lastExport && !exportBusy && (
+              <p className="mt-1 text-xs text-slate-600 dark:text-slate-300">
+                Exported <span className="font-mono">{lastExport.filename}</span>{" "}
+                ({formatBytes(lastExport.size)})
+              </p>
+            )}
           </div>
         </section>
 
@@ -375,7 +612,7 @@ export function AccountSettings({
             onClick={() => {
               void onSignOut();
             }}
-            className="rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2"
+            className="rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
           >
             Sign out
           </button>
