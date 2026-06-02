@@ -90,12 +90,21 @@ export interface ResultQuestion {
   eliminated: Letter[];
 }
 
+export interface ModuleTiming {
+  elapsed_seconds: number | null;
+  limit_seconds: number | null;
+  timed_out: boolean;
+  answered: number;
+}
+
 export interface TestResult {
   run_id: string;
   score: number;
   total: number;
   duration_seconds: number;
   section_scores: Record<string, { correct: number; total: number }> | null;
+  /** Per-module timing keyed by position ("1".."4"). */
+  module_timing?: Record<string, ModuleTiming>;
   questions: ResultQuestion[];
 }
 

@@ -94,6 +94,8 @@ export function ResultView({ result, testTitle }: { result: TestResult; testTitl
           )}
         </header>
 
+        <TimingCard result={result} />
+
         <div className="mt-6 space-y-4">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
             Review
@@ -141,6 +143,64 @@ function ScoreChip({
         </div>
       )}
     </div>
+  );
+}
+
+function fmtClock(sec: number | null): string {
+  if (sec == null) return "—";
+  const s = Math.max(0, Math.round(sec));
+  return `${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}`;
+}
+
+function sectionLabel(section: string | undefined): string {
+  if (section === "math") return "Math";
+  if (section === "reading-writing") return "Reading & Writing";
+  return "Section";
+}
+
+/** Per-module time-on-task (from test_runs.module_timing). Coaching signal:
+ *  did the student rush or run over time? Hidden when no timing was recorded. */
+function TimingCard({ result }: { result: TestResult }) {
+  const timing = result.module_timing ?? {};
+  const positions = Object.keys(timing)
+    .map(Number)
+    .filter((n) => !Number.isNaN(n))
+    .sort((a, b) => a - b);
+  if (positions.length === 0) return null;
+
+  const sectionByPos = new Map<number, string>();
+  for (const q of result.questions) {
+    if (!sectionByPos.has(q.module_position)) sectionByPos.set(q.module_position, q.section);
+  }
+
+  return (
+    <section className="mt-6 rounded-2xl bg-white p-5 ring-1 ring-slate-200 dark:bg-slate-900 dark:ring-slate-800">
+      <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
+        Time per section
+      </h2>
+      <ul className="mt-3 divide-y divide-slate-100 dark:divide-slate-800">
+        {positions.map((pos) => {
+          const tm = timing[String(pos)];
+          if (!tm) return null;
+          return (
+            <li key={pos} className="flex items-center justify-between gap-3 py-2 text-sm">
+              <span className="text-slate-700 dark:text-slate-200">
+                Module {pos} · {sectionLabel(sectionByPos.get(pos))}
+              </span>
+              <span className="flex items-center gap-2 tabular-nums text-slate-600 dark:text-slate-300">
+                {fmtClock(tm.elapsed_seconds)}
+                <span className="text-slate-400 dark:text-slate-500">/ {fmtClock(tm.limit_seconds)}</span>
+                {tm.timed_out && (
+                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-[11px] font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900">
+                    Ran over time
+                  </span>
+                )}
+              </span>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
   );
 }
 
