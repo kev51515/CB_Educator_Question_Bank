@@ -16,6 +16,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useToast } from "../components";
 import { ROUTES } from "../lib/routes";
+import { useProfile } from "../lib/profile";
 import { ConfirmDialog } from "../teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
@@ -51,6 +52,11 @@ export function FullTestApp() {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
   const toast = useToast();
+  // Role gates the end-of-test screen: staff (teacher previewing / reviewing)
+  // see the full result; students see only a neutral "submitted" confirmation —
+  // no score, no questions — until the teacher releases results.
+  const { profile, loading: profileLoading } = useProfile();
+  const isStaff = profile?.role === "teacher" || profile?.role === "admin";
 
   const [phase, setPhase] = useState<Phase>("loading");
   const [errorMsg, setErrorMsg] = useState<string>("");
@@ -92,14 +98,9 @@ export function FullTestApp() {
         const s = await startTest(slug);
         if (!alive) return;
         setStart(s);
-        if (s.status === "submitted") {
-          const r = await getResult(s.run_id);
-          if (!alive) return;
-          setResult(r);
-          setPhase("result");
-        } else {
-          setPhase("intro");
-        }
+        // Don't fetch the result here — the "result" phase render decides what
+        // to show by role (staff: full ResultView; student: neutral screen).
+        setPhase(s.status === "submitted" ? "result" : "intro");
       } catch (e) {
         if (!alive) return;
         setErrorMsg(e instanceof TestApiError ? e.message : "Could not load the test.");
@@ -159,8 +160,9 @@ export function FullTestApp() {
       const res = await submitModule(runId, moduleMeta.position, answers);
       clearCachedAnswers(runId, moduleMeta.position);
       if (res.finished) {
-        const r = await getResult(runId);
-        setResult(r);
+        // Finished: the "result" phase render branches by role. Staff get the
+        // ResultView (result fetched lazily below); students get the neutral
+        // submitted screen and never fetch scores/answers.
         setPhase("result");
       } else {
         setStart((prev) => (prev ? { ...prev, current_module: res.next_module ?? prev.current_module } : prev));
@@ -176,6 +178,31 @@ export function FullTestApp() {
       submittingRef.current = false;
     }
   }, [runId, moduleMeta, answers, toast]);
+
+  // --- staff-only result fetch ---------------------------------------------
+  // Students never fetch results (the server also locks get_test_result for
+  // them). Staff get the full ResultView; we fetch lazily once we know the role
+  // (profile loads async) so a teacher previewing/reviewing sees the breakdown.
+  useEffect(() => {
+    if (phase !== "result" || !isStaff || result || !runId) return;
+    let alive = true;
+    void (async () => {
+      try {
+        const r = await getResult(runId);
+        if (alive) setResult(r);
+      } catch (e) {
+        if (alive) {
+          setErrorMsg(
+            e instanceof TestApiError ? e.message : "Could not load the result.",
+          );
+          setPhase("error");
+        }
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [phase, isStaff, result, runId]);
 
   // --- timer ----------------------------------------------------------------
   useEffect(() => {
@@ -238,8 +265,44 @@ export function FullTestApp() {
     );
   }
 
-  if (phase === "result" && result) {
-    return <ResultView result={result} testTitle={start?.test.title ?? "Test"} />;
+  if (phase === "result") {
+    // Wait until we know the role (and, for staff, the fetched result) before
+    // deciding — avoids flashing the student screen to a teacher.
+    if (profileLoading || (isStaff && !result)) {
+      return <CenterCard><Spinner label="Processing your test…" /></CenterCard>;
+    }
+    // Staff (teacher previewing / reviewing) see the full breakdown.
+    if (isStaff && result) {
+      return <ResultView result={result} testTitle={start?.test.title ?? "Test"} />;
+    }
+    // Student: neutral confirmation only — no score, no questions. The teacher
+    // releases results separately (server also locks get_test_result for them).
+    return (
+      <CenterCard wide>
+        <div
+          aria-hidden
+          className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-emerald-100 text-emerald-600 dark:bg-emerald-900/50 dark:text-emerald-300"
+        >
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </div>
+        <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+          Test submitted
+        </h1>
+        <p className="mx-auto mt-2 max-w-md text-sm text-slate-600 dark:text-slate-400">
+          Your answers were recorded. Your teacher will review your test and
+          share your results with you — scores and answers aren't shown here.
+        </p>
+        <button
+          type="button"
+          onClick={() => navigate(ROUTES.HOME)}
+          className="mt-6 rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500"
+        >
+          Done
+        </button>
+      </CenterCard>
+    );
   }
 
   if (phase === "intro" && start) {
