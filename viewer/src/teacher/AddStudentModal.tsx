@@ -17,9 +17,14 @@
  * top-right ×, Esc to close, backdrop click closes (panel stops propagation).
  */
 import { useCallback, useMemo, useRef, useState } from "react";
+import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
 import { useFocusTrap } from "../hooks";
+import { studentLoginUrl } from "../lib/routes";
+
+/** Stable DOM id for the credential QR canvas (read back for print). */
+const QR_CANVAS_ID = "add-student-qr-canvas";
 
 interface AddStudentModalProps {
   courseId: string;
@@ -130,6 +135,11 @@ export function AddStudentModal({
     ].join("\n");
   }, [created, courseName]);
 
+  const loginUrl = useMemo(
+    () => (created ? studentLoginUrl(created.loginCode, created.password) : ""),
+    [created],
+  );
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -192,25 +202,45 @@ export function AddStudentModal({
     }
     const esc = (s: string) =>
       s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    // Pull the rendered QR off its canvas as a PNG so it survives into the
+    // separate print document.
+    const canvas = document.getElementById(
+      QR_CANVAS_ID,
+    ) as HTMLCanvasElement | null;
+    const qrDataUrl =
+      canvas && typeof canvas.toDataURL === "function"
+        ? canvas.toDataURL("image/png")
+        : "";
+    const qrBlock = qrDataUrl
+      ? `<div class="qr"><img src="${qrDataUrl}" width="180" height="180" alt="Login QR code"/><div class="qrcap">Scan to sign in</div></div>`
+      : "";
     w.document.write(`<!doctype html><html><head><title>Login — ${esc(created.name)}</title>
       <style>
         body{font-family:Georgia,serif;margin:48px;color:#0f172a}
         h1{font-size:20px;margin:0 0 4px}
         .muted{color:#64748b;font-size:13px;margin:0 0 24px}
-        .card{border:1px solid #cbd5e1;border-radius:12px;padding:24px;max-width:360px}
+        .card{border:1px solid #cbd5e1;border-radius:12px;padding:24px;max-width:360px;display:flex;gap:24px;align-items:center}
+        .rows{flex:1}
         .row{margin:14px 0}
         .lbl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#64748b}
         .val{font-family:ui-monospace,Menlo,monospace;font-size:22px;font-weight:600;margin-top:2px}
-        .foot{font-size:12px;color:#64748b;margin-top:24px}
+        .qr{text-align:center}
+        .qr img{border:1px solid #e2e8f0;border-radius:8px;padding:6px;background:#fff}
+        .qrcap{font-size:11px;color:#64748b;margin-top:6px}
+        .foot{font-size:12px;color:#64748b;margin-top:24px;max-width:360px}
       </style></head><body>
       <h1>${esc(courseName)}</h1>
       <p class="muted">Sign-in card for ${esc(created.name)}</p>
       <div class="card">
-        <div class="row"><div class="lbl">Login code</div><div class="val">${esc(created.loginCode)}</div></div>
-        <div class="row"><div class="lbl">Password</div><div class="val">${esc(created.password)}</div></div>
+        <div class="rows">
+          <div class="row"><div class="lbl">Login code</div><div class="val">${esc(created.loginCode)}</div></div>
+          <div class="row"><div class="lbl">Password</div><div class="val">${esc(created.password)}</div></div>
+        </div>
+        ${qrBlock}
       </div>
-      <p class="foot">Go to the class website and choose “I’m a student”. Enter the
-      login code and password above. Keep this card private.</p>
+      <p class="foot">Scan the QR to open the sign-in page with the code already
+      filled in, then tap “Sign in”. Or go to the class website, choose “I’m a
+      student”, and type the code + password. Keep this card private.</p>
       </body></html>`);
     w.document.close();
     w.focus();
@@ -344,6 +374,44 @@ export function AddStudentModal({
               <CredRow label="Student" value={created.name} />
               <CredRow label="Login code" value={created.loginCode} copy />
               <CredRow label="Password" value={created.password} copy />
+            </div>
+
+            {/* Scannable login — opens the sign-in page with the code (and
+                password) pre-filled. Great for handing out on paper or screen. */}
+            <div className="flex items-center gap-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 bg-white dark:bg-slate-900">
+              <div className="rounded-lg bg-white p-2 ring-1 ring-slate-200">
+                <QRCodeCanvas
+                  id={QR_CANVAS_ID}
+                  value={loginUrl}
+                  size={104}
+                  marginSize={2}
+                  level="M"
+                  aria-label={`Login QR code for ${created.name}`}
+                />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                  Scan to sign in
+                </p>
+                <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                  Opens the sign-in page with the code filled in — the student
+                  just taps Sign in.
+                </p>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      await navigator.clipboard.writeText(loginUrl);
+                      toast.success("Login link copied");
+                    } catch {
+                      toast.error("Couldn't copy", "Select the link manually.");
+                    }
+                  }}
+                  className="mt-2 inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 min-h-[32px]"
+                >
+                  Copy login link
+                </button>
+              </div>
             </div>
 
             <button

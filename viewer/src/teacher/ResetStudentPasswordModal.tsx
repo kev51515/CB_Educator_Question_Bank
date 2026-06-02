@@ -10,9 +10,11 @@
  * Follows the modal contract (role=dialog, focus trap, ×, Esc, backdrop).
  */
 import { useCallback, useRef, useState } from "react";
+import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
 import { useFocusTrap } from "../hooks";
+import { studentLoginUrl } from "../lib/routes";
 
 interface ResetStudentPasswordModalProps {
   studentId: string;
@@ -152,6 +154,28 @@ export function ResetStudentPasswordModal({
                 {password}
               </p>
             </div>
+
+            {loginCode && (
+              <div className="flex items-center gap-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 bg-white dark:bg-slate-900">
+                <div className="rounded-lg bg-white p-2 ring-1 ring-slate-200">
+                  <QRCodeCanvas
+                    value={studentLoginUrl(loginCode, password)}
+                    size={104}
+                    marginSize={2}
+                    level="M"
+                    aria-label={`Updated login QR code for ${studentName}`}
+                  />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                    Scan to sign in
+                  </p>
+                  <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                    New QR for the updated password — the old one no longer works.
+                  </p>
+                </div>
+              </div>
+            )}
             <button
               type="button"
               onClick={onCopy}

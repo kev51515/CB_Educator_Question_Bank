@@ -229,6 +229,27 @@ export function questionBankPath(): string {
   return ROUTES.QUESTION_BANK;
 }
 
+/**
+ * Absolute sign-in deep link for a teacher-managed student, suitable for a QR
+ * code or a paste-share. Pre-fills the Student-role code + password fields on
+ * the AuthScreen (the student just taps "Sign in" — we deliberately do NOT
+ * auto-submit). Uses `login`/`key` params, NOT `code`, so it doesn't collide
+ * with the `?code=` course-join quick-start deep link handled in AuthGate.
+ *
+ * The password rides in the URL in clear text — same trust model as the
+ * printed credential handout the teacher already gives the student. Only mint
+ * this right after create/reset, when the plaintext password is known (it's
+ * bcrypt-hashed server-side and unrecoverable afterward).
+ */
+export function studentLoginUrl(code: string, password: string): string {
+  const origin =
+    typeof window !== "undefined" && window.location?.origin
+      ? window.location.origin
+      : "";
+  const params = new URLSearchParams({ login: code, key: password });
+  return `${origin}${ROUTES.SIGN_IN}?${params.toString()}`;
+}
+
 export function assignmentTakePath(assignmentId: string): string {
   return buildPath(ROUTES.ASSIGNMENT_TAKE, { assignmentId });
 }

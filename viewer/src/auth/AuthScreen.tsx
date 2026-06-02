@@ -216,6 +216,26 @@ export function AuthScreen({
     setError(null);
   }, [tab, signInMode]);
 
+  // QR / deep-link prefill: a teacher-shared student login link arrives as
+  // `?login=<code>&key=<password>`. Pre-fill the Student-role form and strip
+  // the (sensitive) params from the address bar. We do NOT auto-submit — the
+  // student taps "Sign in" so a shared/projected screen never logs someone in
+  // unattended.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const sp = new URLSearchParams(window.location.search);
+    const login = sp.get("login");
+    const key = sp.get("key");
+    if (!login) return;
+    setTab("signin");
+    setSignInMode("password");
+    setSignInRole("student");
+    setSignInEmail(login);
+    if (key) setSignInPassword(key);
+    setNotice("Scanned your login — just tap Sign in.");
+    window.history.replaceState(null, "", window.location.pathname);
+  }, []);
+
   const onSignInSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
