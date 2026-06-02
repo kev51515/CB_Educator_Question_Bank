@@ -981,12 +981,67 @@ User overrode the post-Round-30 stopping rationale. Picked up with smaller, focu
 - **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
 - **Parallel session ran continuously alongside** — landed `e790932` (RLS on assignment_* views) and `daf3a2d` (TimerSetup bundle split) interleaved; no merge conflicts ever (scoped `git add` per the documented memory protocol)
 
-### Standing stopping rationale
+### Standing stopping rationale (post Round 36)
 
 Items deferred:
 - **Notification email/push fan-out** — needs Resend integration design
 - **Parent magic-link** (M24/M25) — needs UX direction from user
 - **Workstream C Material library** — schema changes to existing `course_materials` carry unverifiable DB risk without env
 - **Round 23 scheduled-publish "Send notifications immediately" toggle** (Task #177) — touches notifications RLS delicately; 60s cron tick acceptable
+
+### Wave 21E — User said "keep going" (Rounds 37-45)
+
+After 2 stopping notices, user said "continue" then "keep going". Shipped 9 more rounds with a clear focus: **systematic sort + filter + persistence + keyboard nav + empty states across every major list/triage surface** so student / teacher / admin all see the same UX bar.
+
+### Round 37 — ⌘N Quick-create + sticky AssignmentDetailPage
+- New `QuickCreatePalette` (~245 lines): ⌘N centered 2×2 grid (Assignment / Announcement / Discussion / Material), ↑↓←→ navigate, recents at `staff.quickcreate.recent:${userId}`, mounted in `ClassLayoutContext.Provider` so it gets `useClassContext()` access and the listener only attaches in course routes. Activation: route-only landing (consumer pages don't read `?new=...` today — confirmed via grep — palette navigates to surface, user clicks "+ New" inline. One-line extension if any consumer later honors a flag).
+- `AssignmentDetailPage` sticky header at `top-0 z-20` with `backdrop-blur-sm`, requestAnimationFrame-throttled scroll listener flips `scrolled` boolean at 80px threshold. Title shrinks `text-2xl → text-lg`. `HeaderPill` component centralizes tone palette: Status (Active emerald / Archived slate), Type (Practice Test violet / Question Set indigo per vocabulary canon), Due (relative format with Past due rose / Due in N min-hr amber / Due in N days slate-amber), Questions, Time limit. Existing kebab actions untouched.
+
+### Round 38 — Smoke wave-post-30 (16 scenarios)
+- +534 lines in `smoke-features.mjs`. `wavePost30()` between `wave63()` and `studentProfile()` in `run()`.
+- A: Discussion post edit RLS — author edits own, staff edits student's, outsider denied (accepts both PostgREST denial styles), trigger re-fires on second UPDATE.
+- B: `assignment_attempts_effective` view fallback — `effective_score = score_override` when set, `= score_percent` when null, outsider sees 0 rows (locks in mig 0065 `security_invoker=on` shipped by parallel session).
+- C: Bulk roster `course_id` belt-and-suspenders — correct id deletes 1 row, wrong id is 0-row no-op.
+- D: `updated_at` jitter — fresh INSERT Δ < 2000ms (load-bearing: confirms mig 0025 trigger is `BEFORE UPDATE` only); post-UPDATE after >2s sleep crosses threshold.
+- Local fixture tracking object, try/catch per delete, service-role for teardown so RLS can't block.
+
+### Round 39 — Student AssignmentsPanel + StudentAttemptReview filters
+- `AssignmentsPanel`: 5 filter chips (`role="tablist"`) with counts: All / Past due / Due soon (≤7d) / Submitted / Graded (`graded_at && feedback_text` non-null). Submitted-precedence: submitted past-due → Submitted. Sort `<select>`: Due earliest (default), Due latest, Recently assigned, Course name. Missing `due_at` sinks via ±Infinity sentinel. Persistence `student.assignmentsPanel.view:${userId}` → `{filter, sort}`. Grouping (To do / Past due / Completed) preserved only when `sort=due_asc && filter=all`. Empty filtered state distinct from empty-zero. `aria-controls`/`aria-live` polite.
+- `StudentAttemptReview`: 2 filter pills (Marked dropped — `marked` is Bluebook-runner-only, doesn't survive into attempt snapshot). "Next ▼" button: collects `!isCorrect` rows, picks first below `scrollY+80`, `scrollIntoView` smooth, wraps to first if none below. Each row `id={`q-${i}`}` + `data-question-id` + `scroll-mt-20`. Inlined `ReviewRowItem` mirrors `AnswerReview`'s visual contract while adding the DOM ids that scroll-to-next requires (lane scope was EXCLUSIVE).
+
+### Round 40 — AdminAuditPage date range + Inbox mute
+- `AdminAuditPage`: Preset chips `role=group aria-pressed`: All time / Last 24h / 7d / 30d / Custom. Custom commits on blur (no Apply button). Inverted range surfaces rose `role=alert`. `gte/lte` applied in `refresh()`. Custom-to uses literal `${date}T23:59:59.999Z` (UTC). Presets 24h/7d/30d use `Date.now()` minus millisecond delta — precise instants, not day-aligned. Persistence `admin.audit.dateRange` → `{preset, from?, to?}`. "Reset" → "Clear all filters" — resets action + course + actor + dateRange. Active-filter pill in meta strip. Removed orphaned `SmartDatePicker` import + `dayStartIso`/`dayEndIso` helpers.
+- `InboxPage` mute: each `<li>` position:relative; `KebabMenu` absolutely positioned right edge layered above `NavLink` (avoids nested-interactive-elements a11y violation). Kebab always visible on mobile; hidden until `group-hover`/`focus-within` desktop. `showUnreadBadge = !isMuted && unread_count > 0` gate hides badge for muted. Muted row: `opacity-70` + inline 14×14 bell-slash SVG with `<title>Muted</title>`. Cross-tab via `storage` event keyed on `inbox.mutedThreads:${userId}`. 500-entry LRU cap. Sort + search + Round 35 keyboard nav untouched.
+
+### Round 41 — AnnouncementForm scheduled-publish + Calendar day popover
+- `AnnouncementFormModal`: 3 quick presets below SmartDatePicker in `role=group`: In 1 hour, Tomorrow 9am (always +1 calendar day), Next Monday 9am (`((1-today+7)%7)||7` so today=Monday returns FOLLOWING Monday), Clear. Presets live OUTSIDE picker (picker's built-in chips snap end-of-day). Live + on-submit validation: 30s `nowTick` heartbeat + manual bump on every `publishAt` change; rose `<p role="alert">` + Save disabled when invalid; belt-and-suspenders re-check inside `onSubmit`. "Will publish {relativeTime}" hint via `Intl.RelativeTimeFormat` with elapsed-based scale.
+- `CalendarPage` month popover: `MonthCell` `hasEvents` gate. Desktop: `position=fixed` with `getBoundingClientRect()` at click time, default right of cell, flips left if `right+280>viewport-8`, vertical shifts to fit. First render hides off-screen for one tick so panel height measurement is real before committing coords. Mobile (≤640px): bottom sheet. Indigo `border-l-4` accent. State unmounts in list view; Round 30 shortcuts still attach unconditionally.
+
+### Round 42 — Inbox pin + AdminAudit actor filter
+- `InboxPage` pin: 500-entry LRU cap (`inbox.pinnedThreads:${userId}`). Kebab menu: Pin/Unpin first, then Mute/Unmute. Sort: search filter → partition by pinned. Upstream `threads` already sorted by `last_message_at` desc, so stable partition `[...pinned, ...rest]` gives pinned-by-recency-then-unpinned-by-recency for free. Divider `<li role="separator" aria-label="Pinned conversations">` (role=separator not option, so listbox indexing stays 1:1 with `filteredThreads` — Round 35 `highlightedIndex` doesn't go off-by-one). Pin + Mute orthogonal: pinned+muted shows both icons + border-l-2 indigo + opacity-70 muted body.
+- `AdminAuditPage` actor filter: confirmed `audit_events.actor_id` (uuid, nullable for system events). Paired text-input typeahead + native `<select>` (not custom combobox — matches existing filter visual treatment, zero new deps, native a11y for free). Active selection preserved as leading option even when typeahead filters it out. `.eq("actor_id", actorFilter.actorId)` composes AND-wise with action/course/date. "Clear all filters" resets actorFilter too; dedicated × next to combobox clears just actor.
+
+### Round 43 — AssignmentAttemptsView + MyClassesPanel
+- `AssignmentAttemptsView`: 4 filter pills (Marked for review dropped — no flag column on `assignment_attempts`): All / Ungraded (`submitted && !graded`) / Graded / In progress (`!submitted`). Sort: Most recent (default), Oldest, Student name (locale-aware), Highest score, Lowest score (NULLs last). Score precedence: `score_override ?? score_percent`. Search box `<input type="search">` substring on `student_display_name`, ANDed with pill. Empty filtered state distinct. Bulk-select coupling: master checkbox + select-all operate on VISIBLE submitted set, not entire — toggling pills doesn't silently steamroll rows out of view.
+- `MyClassesPanel`: 3-option sort `<select>`: Most recent (joined_at desc, default), Oldest joined, Course name (localeCompare base sensitivity). Hidden when empty/loading/errored. Empty state inline `<EmptyClassesState>` (no shared `<EmptyState>` primitive exists), stack-and-mortarboard glyph + dashed ring. CTA opens existing `<JoinClassModal>`; `onJoined` closes modal + `refresh()`.
+
+### Round 44 — AllUsersView role filter + StudentCourseView stats
+- `AllUsersView`: 4 role-filter pills with live counts (counts scope to current page, matching existing search). Sort drives the SERVER query (`range()` pagination) so it composes correctly across pages: Joined newest (default), Joined oldest, Name (display_name fallback email, nullsFirst=false, created_at tiebreak for stable pagination), Role (server orders by role+created_at deterministic, client-side re-sorts page via `ROLE_SORT_WEIGHT` admin→teacher→student so triage-useful order wins). Persistence `admin.users.view`. "Clear all filters" only renders when ≥1 filter active. Untouched: role-edit, delete, role-badge colors.
+- `StudentCourseView`: 2 stat tiles (Weak skills dropped — SkillHeatmap data not plumbed into this view): Assignments due (count unsubmitted + future due_at), My average (avg `effective_score` from `assignment_attempts_effective` over 30d). `useEffect` on `[course?.id]` after course loads. Two parallel queries via `Promise.all`. `tokenRef` cancellation (mirrors `useCourseOverview`). Per-card states independent. "Assignments due" → ROUTES.HOME (no per-course assignments route for students); "My average" no link.
+
+### Round 45 — MyFeedbackPage + StudentPortfolio
+- `MyFeedbackPage`: 5 filter pills with counts: All / Has feedback (text non-empty trimmed) / Awaiting (no feedback AND `gradedAt` null — source universe already "submitted", so cleanly captures pre-grade rows) / High score (≥80) / Low score (<60). Sort: Most recent (default, `gradedAt` desc), Oldest first, Highest/Lowest score (nulls last), Course name (localeCompare base). Persistence `student.myFeedback.view:${userId}`. Palette: Awaiting amber, Low rose, High emerald, Has feedback indigo, All slate.
+- `StudentPortfolio`: 5 status filter pills via `leafStatus(submission, due_at)`: submitted > draft > past_due > not_started precedence. Tree-prune algorithm: parents drop when 0 matching descendants → empty branches collapse; immutable spread `{...n, children: prunedChildren}`. Sort toggle Position / Due date: due_date splits parents+leaves, parents stay position-sorted (preserves hierarchy reading), leaves sort `due_at asc` nulls last. Persistence `student.portfolio.filter:${courseId}` (per-course not per-user since portfolios are per-course). Palette: Indigo (All), emerald (Submitted), amber (Draft), rose (Past due), slate (Not started).
+
+### Final autonomous-run total (Waves 21B + 21C + 21D + 21E, Rounds 4–45)
+
+- **90+ lanes shipped across 42 rounds**
+- **9 migrations** (0050, 0056, 0057, 0058, 0059, 0060, 0062, 0063, 0064) — all backward-compatible
+- **8 smoke suites** (~6100 lines) with 28 new scenarios incl. 16 in wave-post-30
+- **40+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
+- **Every major list/triage surface has consistent sort + filter + persistence + empty states + keyboard nav** — student / teacher / admin all see the same UX bar
+- **One LMS_ROADMAP item closed** (4.4 discussion read receipts — client-side substitute without DB risk)
+- **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
+- **Parallel session ran continuously alongside** — landed 12+ commits (security RLS, Timer bundle split, Q-Bank nav unification, materials split, sidebar split, modularization plan, etc.) with zero merge conflicts
 
 Build is green. Working tree is clean. All commits pushed to origin/main.
