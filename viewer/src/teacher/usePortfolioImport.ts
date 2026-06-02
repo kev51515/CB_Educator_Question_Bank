@@ -29,6 +29,7 @@ export interface UsePortfolioImport {
   importItems: (
     sourceTemplateId: string,
     itemIds: string[],
+    targetParentId?: string | null,
   ) => Promise<number>;
 }
 
@@ -132,19 +133,35 @@ export function usePortfolioImport(
   }, [refresh]);
 
   const importItems = useCallback(
-    async (sourceTemplateId: string, itemIds: string[]): Promise<number> => {
+    async (
+      sourceTemplateId: string,
+      itemIds: string[],
+      targetParentId?: string | null,
+    ): Promise<number> => {
       if (!currentTemplateId) {
         throw new Error("Target portfolio template not initialized.");
       }
       if (itemIds.length === 0) return 0;
 
+      // Round 19: optional anchor parent. When unset/NULL the RPC's default
+      // (mig 0064) preserves 0063's root-level behavior.
+      const params: {
+        p_source_template_id: string;
+        p_target_template_id: string;
+        p_item_ids: string[];
+        p_target_parent_id?: string | null;
+      } = {
+        p_source_template_id: sourceTemplateId,
+        p_target_template_id: currentTemplateId,
+        p_item_ids: itemIds,
+      };
+      if (targetParentId) {
+        params.p_target_parent_id = targetParentId;
+      }
+
       const { data, error: rpcError } = await supabase.rpc(
         "import_portfolio_items",
-        {
-          p_source_template_id: sourceTemplateId,
-          p_target_template_id: currentTemplateId,
-          p_item_ids: itemIds,
-        },
+        params,
       );
       if (rpcError) {
         throw new Error(rpcError.message);
@@ -218,5 +235,50 @@ export function collectSubtreeIds(node: SourceItemNode): string[] {
   for (const c of node.children) {
     out.push(...collectSubtreeIds(c));
   }
+  return out;
+}
+
+// -----------------------------------------------------------------------------
+// Target-template item fetch + flatten (Round 19 — anchor picker support).
+// Used by the modal to present "insert under…" choices. RLS already lets the
+// teacher SELECT their own course's items, so plain PostgREST works.
+// -----------------------------------------------------------------------------
+
+export interface TargetItemOption {
+  id: string;
+  title: string;
+  depth: number;
+}
+
+/** Fetch all items in the target template (id, parent, title, position). */
+export async function fetchTargetTemplateItems(
+  templateId: string,
+): Promise<SourceItem[]> {
+  const { data, error: itemError } = await supabase
+    .from("portfolio_items")
+    .select("id, parent_item_id, position, title, item_type")
+    .eq("template_id", templateId)
+    .order("position", { ascending: true });
+
+  if (itemError) {
+    throw new Error(itemError.message);
+  }
+  return (data ?? []) as unknown as SourceItem[];
+}
+
+/**
+ * Flatten target items into a depth-aware ordered list suitable for an
+ * indented <select> or radio group. Order: depth-first, position-sorted.
+ */
+export function flattenTargetItems(items: SourceItem[]): TargetItemOption[] {
+  const tree = buildSourceTree(items);
+  const out: TargetItemOption[] = [];
+  const walk = (nodes: SourceItemNode[], depth: number): void => {
+    for (const n of nodes) {
+      out.push({ id: n.id, title: n.title, depth });
+      if (n.children.length > 0) walk(n.children, depth + 1);
+    }
+  };
+  walk(tree, 0);
   return out;
 }

@@ -167,9 +167,16 @@ interface AnnouncementCardProps {
   canManage: boolean;
   onEdit: () => void;
   onDelete: () => void;
+  onPublishNow: () => void;
   onRenameCommit: (next: string) => Promise<void>;
   onAfterTogglePin: () => void;
   actionBusy: boolean;
+  /**
+   * True while the parent is mid-publish for this row. We surface it as
+   * "Publishing…" on the kebab item and as an optimistic suppression of the
+   * Scheduled badge so the row visually flips immediately.
+   */
+  publishingNow: boolean;
 }
 
 function AnnouncementCard({
@@ -177,9 +184,11 @@ function AnnouncementCard({
   canManage,
   onEdit,
   onDelete,
+  onPublishNow,
   onRenameCommit,
   onAfterTogglePin,
   actionBusy,
+  publishingNow,
 }: AnnouncementCardProps) {
   const [expanded, setExpanded] = useState(false);
   const [pinned, applyPin] = useOptimistic<boolean>(announcement.pinned);
@@ -188,7 +197,10 @@ function AnnouncementCard({
   // Treat publish_at as "scheduled" only while it's still in the future.
   // Once the moment passes the row behaves like a normal published post and
   // the badge would just be noise. Recomputed on render — cheap.
+  // While `publishingNow` is true we suppress the badge to give the row an
+  // instant optimistic "published" appearance even before the refetch lands.
   const scheduledFor: string | null =
+    !publishingNow &&
     announcement.publish_at &&
     new Date(announcement.publish_at).getTime() > Date.now()
       ? announcement.publish_at
@@ -288,6 +300,20 @@ function AnnouncementCard({
                       void togglePin();
                     },
                   },
+                  // "Publish now" only appears while the row is still queued
+                  // — once publish_at has passed it'd be a no-op so we hide it.
+                  ...(scheduledFor
+                    ? ([
+                        {
+                          label: publishingNow ? "Publishing…" : "Publish now",
+                          disabled: actionBusy || publishingNow,
+                          hint: publishingNow
+                            ? "Updating…"
+                            : "Push live immediately and notify students.",
+                          onSelect: onPublishNow,
+                        },
+                      ] satisfies KebabMenuOption[])
+                    : []),
                   {
                     label: "Delete…",
                     destructive: true,
@@ -329,6 +355,10 @@ interface ConfirmDeleteState {
   announcement: Announcement;
 }
 
+interface ConfirmPublishState {
+  announcement: Announcement;
+}
+
 export function CourseAnnouncements() {
   const { cls } = useClassContext();
   const { profile } = useProfile();
@@ -340,7 +370,15 @@ export function CourseAnnouncements() {
   const [confirmDelete, setConfirmDelete] = useState<ConfirmDeleteState | null>(
     null,
   );
+  const [confirmPublish, setConfirmPublish] =
+    useState<ConfirmPublishState | null>(null);
   const [actionBusy, setActionBusy] = useState(false);
+  // Tracks rows whose publish_at we just flipped to now() so we can show the
+  // optimistic "no longer scheduled" state until the refetch lands. Keyed by
+  // announcement id so multiple concurrent publishes don't trample each other.
+  const [publishingIds, setPublishingIds] = useState<ReadonlySet<string>>(
+    () => new Set<string>(),
+  );
 
   // Author surface: only staff (teachers, admins) reach this tab — the
   // route is teacher-gated by AuthGate. We still guard the button + manage
@@ -366,6 +404,62 @@ export function CourseAnnouncements() {
     },
     [refresh, toast],
   );
+
+  /**
+   * Publish a scheduled announcement immediately. Sets publish_at to now()
+   * so the student-side visibility filter (publish_at IS NULL OR <= now())
+   * picks it up on next read, and clears notifications_fanout_at so the
+   * cron worker (see migration 0058) fans out notifications on its next
+   * tick — within ~60s.
+   *
+   * Optimistic: we add the row's id to `publishingIds` so the card hides
+   * its Scheduled badge instantly. On error we roll back and toast.
+   */
+  const onPublishNow = async (announcement: Announcement): Promise<void> => {
+    setActionBusy(true);
+    setPublishingIds((prev) => {
+      const next = new Set(prev);
+      next.add(announcement.id);
+      return next;
+    });
+    try {
+      const { error: updError } = await supabase
+        .from("course_announcements")
+        .update({
+          publish_at: new Date().toISOString(),
+          notifications_fanout_at: null,
+        })
+        .eq("id", announcement.id);
+      if (updError) {
+        // Roll back the optimistic flip so the Scheduled badge reappears.
+        setPublishingIds((prev) => {
+          const next = new Set(prev);
+          next.delete(announcement.id);
+          return next;
+        });
+        toast.error("Couldn't publish announcement", updError.message);
+        return;
+      }
+      setConfirmPublish(null);
+      toast.success(
+        "Announcement published",
+        "Students will see it on next page load. Notifications go out within a minute.",
+      );
+      void refresh();
+    } catch (err: unknown) {
+      setPublishingIds((prev) => {
+        const next = new Set(prev);
+        next.delete(announcement.id);
+        return next;
+      });
+      toast.error(
+        "Couldn't publish announcement",
+        getErrorMessage(err, "Failed to publish announcement."),
+      );
+    } finally {
+      setActionBusy(false);
+    }
+  };
 
   const onDelete = async (announcement: Announcement) => {
     setActionBusy(true);
@@ -450,6 +544,8 @@ export function CourseAnnouncements() {
                   void refresh();
                 }}
                 onDelete={() => setConfirmDelete({ announcement: a })}
+                onPublishNow={() => setConfirmPublish({ announcement: a })}
+                publishingNow={publishingIds.has(a.id)}
                 actionBusy={actionBusy}
               />
             ))}
@@ -481,6 +577,32 @@ export function CourseAnnouncements() {
           onUpdated={() => {
             void refresh();
           }}
+        />
+      )}
+
+      {confirmPublish && (
+        <ConfirmDialog
+          title="Publish this announcement now?"
+          body={
+            <div className="space-y-2">
+              <p>
+                <span className="font-semibold">
+                  {confirmPublish.announcement.title}
+                </span>{" "}
+                will become visible to students immediately, and notifications
+                will go out within a minute.
+              </p>
+              <p className="text-slate-500 dark:text-slate-400">
+                Its scheduled time will be overwritten with the current moment.
+              </p>
+            </div>
+          }
+          confirmLabel="Publish now"
+          busy={actionBusy}
+          onConfirm={() => {
+            void onPublishNow(confirmPublish.announcement);
+          }}
+          onCancel={() => setConfirmPublish(null)}
         />
       )}
 

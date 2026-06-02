@@ -25,9 +25,12 @@ import {
   buildSourceTree,
   collectSubtreeIds,
   fetchSourceTemplateItems,
+  fetchTargetTemplateItems,
+  flattenTargetItems,
   type PortfolioImportSource,
   type SourceItem,
   type SourceItemNode,
+  type TargetItemOption,
 } from "./usePortfolioImport";
 
 interface PortfolioImportModalProps {
@@ -40,8 +43,21 @@ interface PortfolioImportModalProps {
   sourcesError: string | null;
   /** Whether the target template exists yet — guard, just in case. */
   hasTargetTemplate: boolean;
-  /** RPC caller — returns the imported count. */
-  onImport: (sourceTemplateId: string, itemIds: string[]) => Promise<number>;
+  /**
+   * Target template id — used to fetch existing items so the teacher can
+   * choose to insert the imported subtree UNDER one of them (Round 19).
+   * When null/empty the anchor picker hides and "root" is implicit.
+   */
+  targetTemplateId?: string | null;
+  /**
+   * RPC caller — returns the imported count. Optional 3rd arg is the
+   * target parent id; when omitted/null the import lands at root.
+   */
+  onImport: (
+    sourceTemplateId: string,
+    itemIds: string[],
+    targetParentId?: string | null,
+  ) => Promise<number>;
   /** Called after a successful import so the parent can refresh + close. */
   onImported: (count: number) => void;
   onClose: () => void;
@@ -59,6 +75,7 @@ export function PortfolioImportModal({
   sourcesLoading,
   sourcesError,
   hasTargetTemplate,
+  targetTemplateId,
   onImport,
   onImported,
   onClose,
@@ -74,6 +91,13 @@ export function PortfolioImportModal({
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [submitting, setSubmitting] = useState<boolean>(false);
 
+  // ---- Round 19: target anchor picker state -------------------------------
+  // "" → root (default). Any other value → existing item id in target template.
+  const [targetParentId, setTargetParentId] = useState<string>("");
+  const [targetOptions, setTargetOptions] = useState<TargetItemOption[]>([]);
+  const [targetLoading, setTargetLoading] = useState<boolean>(false);
+  const [targetError, setTargetError] = useState<string | null>(null);
+
   // Default-pick the first source when the list resolves and nothing chosen.
   useEffect(() => {
     if (!open) return;
@@ -82,6 +106,41 @@ export function PortfolioImportModal({
       setSourceTemplateId(availableSources[0].templateId);
     }
   }, [open, availableSources, sourceTemplateId]);
+
+  // Fetch existing target-template items so the teacher can pick an anchor.
+  // We refetch each time the modal opens or the target template changes —
+  // the surface mounts rarely so this is cheap and keeps the picker fresh
+  // after the user has just added/removed items behind the modal.
+  useEffect(() => {
+    if (!open || !targetTemplateId) {
+      setTargetOptions([]);
+      setTargetParentId("");
+      setTargetError(null);
+      return;
+    }
+    let cancelled = false;
+    setTargetLoading(true);
+    setTargetError(null);
+    fetchTargetTemplateItems(targetTemplateId)
+      .then((rows) => {
+        if (cancelled) return;
+        setTargetOptions(flattenTargetItems(rows));
+      })
+      .catch((err: unknown) => {
+        if (cancelled) return;
+        setTargetError(
+          getErrorMessage(err, "Failed to load target items."),
+        );
+        setTargetOptions([]);
+      })
+      .finally(() => {
+        if (cancelled) return;
+        setTargetLoading(false);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [open, targetTemplateId]);
 
   // Fetch items when a source is chosen.
   useEffect(() => {
@@ -195,6 +254,17 @@ export function PortfolioImportModal({
   // which is what the user actually expects to see imported.
   const totalSelected = selectedIds.size;
 
+  // Resolve which parent id (if any) to send. "" → root → undefined.
+  const effectiveTargetParentId = targetParentId ? targetParentId : null;
+
+  // Headline text on the toast adapts to whether we anchored or rooted.
+  const anchorTitle = useMemo<string | null>(() => {
+    if (!effectiveTargetParentId) return null;
+    return (
+      targetOptions.find((o) => o.id === effectiveTargetParentId)?.title ?? null
+    );
+  }, [effectiveTargetParentId, targetOptions]);
+
   const onClickImport = useCallback(async (): Promise<void> => {
     if (!sourceTemplateId || effectiveRootIds.length === 0) return;
     if (!hasTargetTemplate) {
@@ -203,11 +273,19 @@ export function PortfolioImportModal({
     }
     setSubmitting(true);
     try {
-      const count = await onImport(sourceTemplateId, effectiveRootIds);
-      toast.success(
-        count === 1 ? "Imported 1 item" : `Imported ${count} items`,
-        "Items appended to the end of this course's portfolio.",
+      const count = await onImport(
+        sourceTemplateId,
+        effectiveRootIds,
+        effectiveTargetParentId,
       );
+      const headline =
+        count === 1 ? "Imported 1 item" : `Imported ${count} items`;
+      const subtitle = effectiveTargetParentId
+        ? anchorTitle
+          ? `Added as children of "${anchorTitle}".`
+          : "Added as children of the selected item."
+        : "Items appended to the end of this course's portfolio.";
+      toast.success(headline, subtitle);
       onImported(count);
     } catch (err: unknown) {
       toast.error("Couldn't import", getErrorMessage(err, "Import failed."));
@@ -217,6 +295,8 @@ export function PortfolioImportModal({
   }, [
     sourceTemplateId,
     effectiveRootIds,
+    effectiveTargetParentId,
+    anchorTitle,
     hasTargetTemplate,
     onImport,
     onImported,
@@ -308,6 +388,59 @@ export function PortfolioImportModal({
             </select>
           )}
         </section>
+
+        {/* Step 1b (Round 19): "Insert at…" anchor picker.
+            Hidden when the target template has no items — root is implicit. */}
+        {hasTargetTemplate && (targetLoading || targetOptions.length > 0 || targetError) && (
+          <section className="space-y-2">
+            <label
+              htmlFor="portfolio-import-anchor"
+              className="block text-sm font-medium text-slate-700 dark:text-slate-300"
+            >
+              Insert at
+            </label>
+            {targetLoading ? (
+              <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white dark:bg-slate-900 p-3">
+                <SkeletonRows count={2} rowClassName="h-8" />
+              </div>
+            ) : targetError ? (
+              <p
+                role="alert"
+                className="text-sm text-rose-700 dark:text-rose-300"
+              >
+                {targetError}
+              </p>
+            ) : (
+              <>
+                <select
+                  id="portfolio-import-anchor"
+                  value={targetParentId}
+                  onChange={(e) => setTargetParentId(e.target.value)}
+                  disabled={submitting}
+                  className="w-full min-h-[40px] rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 max-h-72"
+                >
+                  <option value="">Top level (root)</option>
+                  {targetOptions.map((opt) => {
+                    // Indent with non-breaking spaces — works inside <option>
+                    // text where leading whitespace would otherwise collapse.
+                    const indent = "  ".repeat(opt.depth + 1);
+                    return (
+                      <option key={opt.id} value={opt.id}>
+                        {indent}
+                        {opt.title}
+                      </option>
+                    );
+                  })}
+                </select>
+                <p className="text-xs text-slate-500 dark:text-slate-400">
+                  {targetParentId
+                    ? "Picked items will be inserted as children of this."
+                    : "Picked items will be added at the top level."}
+                </p>
+              </>
+            )}
+          </section>
+        )}
 
         {/* Step 2: item tree */}
         {sourceTemplateId && availableSources.length > 0 && (

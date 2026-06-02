@@ -808,6 +808,7 @@ function StaffPortfolio({
           sourcesLoading={importSourcesLoading}
           sourcesError={importSourcesError}
           hasTargetTemplate={!!template}
+          targetTemplateId={template.id}
           onImport={doImportItems}
           onImported={() => {
             setShowImport(false);
