@@ -161,9 +161,16 @@ interface MonthHeaderProps {
   onPrev: () => void;
   onNext: () => void;
   onToday: () => void;
+  todayDisabled: boolean;
 }
 
-function MonthHeader({ anchor, onPrev, onNext, onToday }: MonthHeaderProps) {
+function MonthHeader({
+  anchor,
+  onPrev,
+  onNext,
+  onToday,
+  todayDisabled,
+}: MonthHeaderProps) {
   return (
     <div className="flex items-center gap-2">
       <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
@@ -173,28 +180,130 @@ function MonthHeader({ anchor, onPrev, onNext, onToday }: MonthHeaderProps) {
         <button
           type="button"
           onClick={onPrev}
-          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm px-2 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm min-h-[40px] min-w-[40px] px-2 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
           aria-label="Previous month"
+          title="Previous month (←)"
         >
           ←
         </button>
         <button
           type="button"
           onClick={onToday}
-          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm px-3 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+          disabled={todayDisabled}
+          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm min-h-[40px] px-3 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-transparent dark:disabled:hover:bg-transparent"
+          title={todayDisabled ? "Already viewing this month" : "Today (T)"}
         >
           Today
         </button>
         <button
           type="button"
           onClick={onNext}
-          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm px-2 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
+          className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm min-h-[40px] min-w-[40px] px-2 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
           aria-label="Next month"
+          title="Next month (→)"
         >
           →
         </button>
       </div>
     </div>
+  );
+}
+
+interface ShortcutsPopoverProps {
+  open: boolean;
+  onClose: () => void;
+}
+
+function ShortcutsPopover({ open, onClose }: ShortcutsPopoverProps) {
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open, onClose]);
+
+  if (!open) return null;
+
+  return (
+    <>
+      {/* Click-outside backdrop (invisible) */}
+      <div
+        className="fixed inset-0 z-40"
+        aria-hidden="true"
+        onClick={onClose}
+      />
+      <div
+        role="dialog"
+        aria-modal="false"
+        aria-label="Keyboard shortcuts"
+        className="absolute right-0 top-full mt-2 z-50 w-72 rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-lg p-4 motion-safe:transition-opacity motion-safe:duration-150"
+      >
+        <div className="flex items-start gap-2">
+          <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 flex-1">
+            Keyboard shortcuts
+          </h3>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="rounded-md min-h-[28px] min-w-[28px] inline-flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+          >
+            ×
+          </button>
+        </div>
+        <dl className="mt-3 space-y-2 text-xs">
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-slate-600 dark:text-slate-400">
+              Previous / next month
+            </dt>
+            <dd className="flex items-center gap-1">
+              <kbd className="rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700">
+                ←
+              </kbd>
+              <kbd className="rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700">
+                →
+              </kbd>
+            </dd>
+          </div>
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-slate-600 dark:text-slate-400">Today</dt>
+            <dd>
+              <kbd className="rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700">
+                T
+              </kbd>
+            </dd>
+          </div>
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-slate-600 dark:text-slate-400">
+              Month / List view
+            </dt>
+            <dd className="flex items-center gap-1">
+              <kbd className="rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700">
+                M
+              </kbd>
+              <kbd className="rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700">
+                L
+              </kbd>
+            </dd>
+          </div>
+          <div className="flex items-center justify-between gap-3">
+            <dt className="text-slate-600 dark:text-slate-400">
+              Close this panel
+            </dt>
+            <dd>
+              <kbd className="rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700">
+                Esc
+              </kbd>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </>
   );
 }
 
@@ -403,6 +512,16 @@ function ListView({ events, onEventClick }: ListViewProps) {
   );
 }
 
+/** True when the active element is a typing surface (so we don't hijack ←/T/etc.
+ * while the user is filling out a form somewhere on the page). */
+function isTypingTarget(el: Element | null): boolean {
+  if (!el) return false;
+  const tag = el.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return true;
+  if ((el as HTMLElement).isContentEditable) return true;
+  return false;
+}
+
 export function CalendarPage() {
   const navigate = useNavigate();
   const [view, setView] = useState<ViewMode>(() => readCalendarView());
@@ -413,6 +532,66 @@ export function CalendarPage() {
   const [events, setEvents] = useState<CalendarEvent[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [shortcutsOpen, setShortcutsOpen] = useState<boolean>(false);
+
+  // "Today" is meaningful only when we're not already viewing today's month.
+  // List view always shows the next 30 days, so the concept doesn't apply
+  // there — disable in list view as a hint that the action is a no-op.
+  const todayDisabled = useMemo(() => {
+    if (view !== "month") return true;
+    const today = startOfMonth(new Date());
+    return (
+      anchor.getFullYear() === today.getFullYear() &&
+      anchor.getMonth() === today.getMonth()
+    );
+  }, [view, anchor]);
+
+  // Keyboard shortcuts. Active only while the calendar surface is mounted
+  // (window listener attached/detached with this component), gated on the
+  // active element NOT being a typing surface and no modifier keys being
+  // held (so ⌘←, Ctrl+T, etc. continue to behave as native browser
+  // shortcuts). View-mode is preserved across month nav by design — we
+  // only mutate `anchor` in ←/→/T handlers.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (isTypingTarget(document.activeElement)) return;
+
+      switch (e.key) {
+        case "ArrowLeft":
+          e.preventDefault();
+          setAnchor((a) => new Date(a.getFullYear(), a.getMonth() - 1, 1));
+          break;
+        case "ArrowRight":
+          e.preventDefault();
+          setAnchor((a) => new Date(a.getFullYear(), a.getMonth() + 1, 1));
+          break;
+        case "t":
+        case "T":
+          e.preventDefault();
+          setAnchor(startOfMonth(new Date()));
+          break;
+        case "m":
+        case "M":
+          e.preventDefault();
+          setView("month");
+          break;
+        case "l":
+        case "L":
+          e.preventDefault();
+          setView("list");
+          break;
+        case "?":
+          e.preventDefault();
+          setShortcutsOpen((v) => !v);
+          break;
+        default:
+          break;
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   // Compute the [start, end] fetch window. Month view fetches its month; list
   // view fetches the next 30 days. The query is just bounded — both views
@@ -532,8 +711,26 @@ export function CalendarPage() {
         <h1 className="text-2xl font-semibold text-slate-900 dark:text-slate-100">
           Calendar
         </h1>
+        <div className="ml-auto relative">
+          <button
+            type="button"
+            onClick={() => setShortcutsOpen((v) => !v)}
+            aria-haspopup="dialog"
+            aria-expanded={shortcutsOpen}
+            aria-label="Keyboard shortcuts"
+            title="Keyboard shortcuts (?)"
+            className="rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 text-sm min-h-[40px] px-3 py-1 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 inline-flex items-center gap-1.5"
+          >
+            <span className="font-mono text-xs">?</span>
+            <span className="hidden sm:inline">Shortcuts</span>
+          </button>
+          <ShortcutsPopover
+            open={shortcutsOpen}
+            onClose={() => setShortcutsOpen(false)}
+          />
+        </div>
         <div
-          className="ml-auto inline-flex rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden text-sm"
+          className="inline-flex rounded-lg ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden text-sm"
           role="tablist"
           aria-label="Calendar view"
         >
@@ -576,6 +773,7 @@ export function CalendarPage() {
             setAnchor((a) => new Date(a.getFullYear(), a.getMonth() + 1, 1))
           }
           onToday={() => setAnchor(startOfMonth(new Date()))}
+          todayDisabled={todayDisabled}
         />
       )}
 
