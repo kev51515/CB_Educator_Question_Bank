@@ -1769,6 +1769,265 @@ async function wave27() {
   });
 }
 
+// ------------------------------ WAVE 63 -----------------------------
+// import_portfolio_items RPC (migration 0063): deep-clone selected portfolio
+// items + their subtrees from a SOURCE template into a TARGET template owned
+// by the same teacher. Submissions/feedback are NOT cloned (template-level
+// only). Audit trail must record counts but not item bodies.
+//
+// Source = ctx.portfolioTemplateId (course A). After wave35 it contains:
+//   - item1 (long_text root)   with child item3 (Resume) under it
+//   - item2 (link root)        no children
+// We pass [item1, item2] as picked roots → expect 3 imported (item1 + item3 + item2).
+//
+// Target = a fresh second course (course B) owned by the same teacher,
+// with its own portfolio template created via ensure_portfolio_template.
+
+async function wave63() {
+  const local = {
+    courseBId: null,
+    joinCodeB: null,
+    templateBId: null,
+    outsiderTeacherId: null,
+    outsiderTeacherClient: null,
+    importedIds: [], // populated in Step A for audit-check + cleanup
+  };
+
+  await step("wave63: setup — second course B + portfolio template", async () => {
+    local.joinCodeB = `FB${randomBytes(2).toString("hex").toUpperCase()}`;
+    const c = await ctx.teacherClient
+      .from("courses")
+      .insert({
+        teacher_id: ctx.teacherId,
+        name: `Smoke Course B ${TS}`,
+        description: "smoke-import-target",
+        join_code: local.joinCodeB,
+      })
+      .select()
+      .single();
+    if (c.error) throw c.error;
+    local.courseBId = c.data.id;
+    const t = await ctx.teacherClient.rpc("ensure_portfolio_template", {
+      p_course_id: local.courseBId,
+      p_name: "Target Portfolio B",
+    });
+    if (t.error) throw t.error;
+    const row = Array.isArray(t.data) ? t.data[0] : t.data;
+    local.templateBId = row.id;
+    return `courseB=${local.courseBId} templateB=${local.templateBId}`;
+  });
+
+  await step("wave63: setup — outsider teacher (teaches neither course)", async () => {
+    const outsiderTeacherEmail = `ot63-${TAG}@gmail.com`;
+    local.outsiderTeacherId = await createConfirmedUser(
+      outsiderTeacherEmail,
+      PW,
+      "teacher",
+    );
+    local.outsiderTeacherClient = userClient();
+    await signIn(local.outsiderTeacherClient, outsiderTeacherEmail, PW);
+    return `id=${local.outsiderTeacherId}`;
+  });
+
+  // ---- Step A: happy path -------------------------------------------------
+  await step("wave63: import_portfolio_items happy path (3 items)", async () => {
+    const { data, error } = await ctx.teacherClient.rpc(
+      "import_portfolio_items",
+      {
+        p_source_template_id: ctx.portfolioTemplateId,
+        p_target_template_id: local.templateBId,
+        p_item_ids: [ctx.portfolioItemTextId, ctx.portfolioItemLinkId],
+      },
+    );
+    if (error) throw error;
+    if (data !== 3)
+      throw new Error(`expected 3 imported, got ${data}`);
+
+    // Pull all rows from target template (should be exactly 3 fresh uuids).
+    const tgt = await ctx.teacherClient
+      .from("portfolio_items")
+      .select("id,title,parent_item_id,position,item_type")
+      .eq("template_id", local.templateBId);
+    if (tgt.error) throw tgt.error;
+    if (tgt.data.length !== 3)
+      throw new Error(`target has ${tgt.data.length} rows, expected 3`);
+
+    // Every new id must differ from every source id (fresh uuids).
+    const sourceIds = new Set([
+      ctx.portfolioItemTextId,
+      ctx.portfolioItemLinkId,
+    ]);
+    for (const row of tgt.data) {
+      if (sourceIds.has(row.id))
+        throw new Error(`new row reused source uuid ${row.id}`);
+      local.importedIds.push(row.id);
+    }
+
+    // Parent-rewrite assertion: the cloned "Resume" (item3) must point at the
+    // cloned "Common App Essay" (item1) by NEW uuid, never the source uuid.
+    const newEssay = tgt.data.find((r) => r.title === "Common App Essay");
+    const newResume = tgt.data.find((r) => r.title === "Resume");
+    const newVideo = tgt.data.find((r) => r.title === "Video Introduction");
+    if (!newEssay || !newResume || !newVideo)
+      throw new Error(
+        `missing cloned titles: essay=${!!newEssay} resume=${!!newResume} video=${!!newVideo}`,
+      );
+    if (newEssay.parent_item_id !== null)
+      throw new Error(`cloned essay should be root, got parent=${newEssay.parent_item_id}`);
+    if (newVideo.parent_item_id !== null)
+      throw new Error(`cloned video should be root, got parent=${newVideo.parent_item_id}`);
+    if (newResume.parent_item_id !== newEssay.id)
+      throw new Error(
+        `cloned resume parent=${newResume.parent_item_id}, expected new essay uuid ${newEssay.id} (NOT source uuid ${ctx.portfolioItemTextId})`,
+      );
+
+    // Source template must still have its original 3 rows untouched.
+    const src = await ctx.teacherClient
+      .from("portfolio_items")
+      .select("id")
+      .eq("template_id", ctx.portfolioTemplateId);
+    if (src.error) throw src.error;
+    if (src.data.length !== 3)
+      throw new Error(`source mutated: has ${src.data.length}, expected 3`);
+
+    return `3 imported, parents rewritten, source intact`;
+  });
+
+  // ---- Step B: outsider teacher gets not_authorized -----------------------
+  await step("wave63: outsider teacher -> not_authorized", async () => {
+    const { error } = await local.outsiderTeacherClient.rpc(
+      "import_portfolio_items",
+      {
+        p_source_template_id: ctx.portfolioTemplateId,
+        p_target_template_id: local.templateBId,
+        p_item_ids: [ctx.portfolioItemTextId],
+      },
+    );
+    if (!error) throw new Error("expected not_authorized");
+    const msg = (error.message || "") + " " + (error.details || "");
+    if (!/not_authorized/i.test(msg))
+      throw new Error(`unexpected error: ${fmt(error)}`);
+    return `denied: ${error.code ?? msg.slice(0, 60)}`;
+  });
+
+  // ---- Step C: same-template guard ---------------------------------------
+  await step("wave63: source === target -> same_template", async () => {
+    const { error } = await ctx.teacherClient.rpc("import_portfolio_items", {
+      p_source_template_id: ctx.portfolioTemplateId,
+      p_target_template_id: ctx.portfolioTemplateId,
+      p_item_ids: [ctx.portfolioItemTextId],
+    });
+    if (!error) throw new Error("expected same_template");
+    const msg = (error.message || "") + " " + (error.details || "");
+    if (!/same_template/i.test(msg))
+      throw new Error(`unexpected error: ${fmt(error)}`);
+    return `denied: ${msg.slice(0, 60)}`;
+  });
+
+  // ---- Step D: empty item list ------------------------------------------
+  await step("wave63: empty p_item_ids -> returns 0, no insert", async () => {
+    const before = await ctx.teacherClient
+      .from("portfolio_items")
+      .select("id")
+      .eq("template_id", local.templateBId);
+    if (before.error) throw before.error;
+    const { data, error } = await ctx.teacherClient.rpc(
+      "import_portfolio_items",
+      {
+        p_source_template_id: ctx.portfolioTemplateId,
+        p_target_template_id: local.templateBId,
+        p_item_ids: [],
+      },
+    );
+    if (error) throw error;
+    if (data !== 0) throw new Error(`expected 0, got ${data}`);
+    const after = await ctx.teacherClient
+      .from("portfolio_items")
+      .select("id")
+      .eq("template_id", local.templateBId);
+    if (after.error) throw after.error;
+    if (after.data.length !== before.data.length)
+      throw new Error(
+        `target row count changed: ${before.data.length} -> ${after.data.length}`,
+      );
+    return `0 returned, target unchanged at ${after.data.length} rows`;
+  });
+
+  // ---- Step E: audit trail w/ privacy invariant --------------------------
+  await step("wave63: audit_events records portfolio_import (privacy ok)", async () => {
+    // RLS on audit_events restricts SELECT to admins, so mint a scoped admin.
+    const adminEmail = `a63-${TAG}@gmail.com`;
+    const adminId = await createConfirmedUser(adminEmail, PW, "admin");
+    const adminClient = userClient();
+    await signIn(adminClient, adminEmail, PW);
+    try {
+      const { data, error } = await adminClient
+        .from("audit_events")
+        .select("id,action,target_id,details")
+        .eq("action", "portfolio_import")
+        .eq("target_id", local.templateBId);
+      if (error) throw error;
+      if (!data || data.length < 1)
+        throw new Error("no portfolio_import audit row for target template");
+      // Step A imported 3 — pick the row matching that count (Step D's 0-import
+      // path doesn't write an audit row, but be defensive against future drift).
+      const happyRow = data.find(
+        (r) => r.details && r.details.imported_count === 3,
+      );
+      if (!happyRow)
+        throw new Error(
+          `no audit row with imported_count=3 in ${fmt(data.map((r) => r.details?.imported_count))}`,
+        );
+      // Privacy invariant: details must NOT include any item body / prompt text.
+      const blob = JSON.stringify(happyRow.details || {});
+      const banned = [
+        "Common App Essay",
+        "650 word personal statement",
+        "Video Introduction",
+        "Resume",
+      ];
+      for (const term of banned) {
+        if (blob.includes(term))
+          throw new Error(
+            `audit details leaked item content "${term}": ${blob.slice(0, 200)}`,
+          );
+      }
+      return `1 audit row, imported_count=3, no item bodies leaked`;
+    } finally {
+      await service.auth.admin.deleteUser(adminId).catch(() => {});
+    }
+  });
+
+  // ---- Cleanup (items → templates → courses → outsider user) -------------
+  await step("wave63: cleanup", async () => {
+    // Items first (FK refs templates).
+    if (local.importedIds.length) {
+      await service
+        .from("portfolio_items")
+        .delete()
+        .in("id", local.importedIds);
+    }
+    // Template B (FK refs course B).
+    if (local.templateBId) {
+      await service
+        .from("portfolio_templates")
+        .delete()
+        .eq("id", local.templateBId);
+    }
+    // Course B (teardown also deletes courses owned by ctx.teacherId, but be
+    // explicit so we don't depend on teardown ordering).
+    if (local.courseBId) {
+      await service.from("courses").delete().eq("id", local.courseBId);
+    }
+    if (local.outsiderTeacherId) {
+      await service.auth.admin
+        .deleteUser(local.outsiderTeacherId)
+        .catch(() => {});
+    }
+    return "cleaned";
+  });
+}
+
 // ------------------------- STUDENT PROFILE -------------------------
 //
 // Smoke test for the THREE queries useStudentProfile (teacher-facing) fires:
@@ -2104,6 +2363,7 @@ async function teardown() {
       await wave34();
       await wave35();
       await wave27();
+      await wave63();
       await studentProfile();
     }
   } finally {

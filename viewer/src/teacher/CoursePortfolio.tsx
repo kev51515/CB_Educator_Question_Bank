@@ -65,6 +65,8 @@ import {
   usePortfolioDrag,
   type DropTarget,
 } from "./usePortfolioDrag";
+import { PortfolioImportModal } from "./PortfolioImportModal";
+import { usePortfolioImport } from "./usePortfolioImport";
 
 type SubView = "template" | "overview";
 
@@ -236,6 +238,15 @@ function StaffPortfolio({
   const [actionError, setActionError] = useState<string | null>(null);
 
   const [movingNode, setMovingNode] = useState<PortfolioItemNode | null>(null);
+
+  // Workstream B (May 2026 audit): cross-course portfolio item import.
+  const [showImport, setShowImport] = useState(false);
+  const {
+    availableSources: importSources,
+    loading: importSourcesLoading,
+    error: importSourcesError,
+    importItems: doImportItems,
+  } = usePortfolioImport(courseId, template?.id ?? null);
 
   const [statusByPair, setStatusByPair] = useState<Record<string, CellStatus>>(
     {},
@@ -651,7 +662,17 @@ function StaffPortfolio({
         ) : subView === "template" ? (
           <div className="space-y-3">
             {isStaff && (
-              <div className="flex justify-end">
+              <div className="flex justify-end gap-2">
+                {template && (
+                  <button
+                    type="button"
+                    onClick={() => setShowImport(true)}
+                    className="min-h-[40px] md:min-h-0 rounded-lg ring-1 ring-slate-200 dark:ring-slate-700 bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 text-sm font-medium px-4 py-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    title="Import items from another course's portfolio"
+                  >
+                    Import from another course…
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={openAddRoot}
@@ -777,6 +798,22 @@ function StaffPortfolio({
             setMovingNode(null);
           }}
           onClose={() => setMovingNode(null)}
+        />
+      )}
+
+      {showImport && template && (
+        <PortfolioImportModal
+          open={true}
+          availableSources={importSources}
+          sourcesLoading={importSourcesLoading}
+          sourcesError={importSourcesError}
+          hasTargetTemplate={!!template}
+          onImport={doImportItems}
+          onImported={() => {
+            setShowImport(false);
+            void refresh();
+          }}
+          onClose={() => setShowImport(false)}
         />
       )}
 
