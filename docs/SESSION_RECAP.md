@@ -1134,3 +1134,35 @@ User said "keep going" twice more. 5 additional rounds, mostly form/auth polish 
 - **Parallel session ran continuously alongside** — landed 30+ commits including the full managed-students feature (M24/M25 from the original deferred list)
 
 Build is green. Working tree is clean. All commits pushed to origin/main.
+
+---
+
+## 2026-06 — Autonomous "controlled-process" test-control session
+
+Direction: the teacher dispenses everything; students see only what's assigned/released.
+All work verified against the live cloud project (Playwright + RPC) and the full
+smoke suite stayed green (e2e 14 · features 127 · modules 26 · qbank 25 · cascade 7 ·
+grading 12 · announcements 7).
+
+Shipped (each its own commit):
+- **Managed student logins** — teacher creates students from the roster: per-course
+  code (`KQAZNP-04`) + auto password, QR sign-in deep link, bulk print sheet,
+  reset-all-with-passwords. Login-by-code on AuthScreen. Read-only account settings
+  for managed students.
+- **Locked student portal** — no free question bank / mock test; `/test/:slug` gated
+  to assigned tests; deep-linkable runner URLs (`/section/n/q/m`).
+- **Full-test results gating** — students see a neutral "Test submitted" screen
+  (no score/answers). Teacher reviews + releases per-student (profile panel), in bulk
+  per test (catalog "Results & release"), or from a **Dashboard nudge** ("N awaiting
+  release"). Student notified on release; sees released results on home.
+- **Completion tracking** — per-test roster status incl. "Not started".
+- **Recorded eliminations** — struck choices persisted + shown in review.
+- **Section timing** — per-module elapsed/limit + "Ran over time" in the result.
+- Fixes: join by short_code (not just join_code); repaired courses↔profiles FK embed
+  (My Courses); Desmos calculator 2× centered + viewport-clamped.
+
+Migrations 0067–0080 (mine; all live + verified). Server primitives:
+`admin_create_student`, `admin_reset_student_password`, `release_test_results`(+ bulk
+`release_test_results_for_teacher`), `list_test_runs_for_student`, `list_my_test_runs`,
+`test_roster_status`, `tests_awaiting_release`; results gated on
+`test_runs.results_released_at`; release fires a `test_result` notification.
