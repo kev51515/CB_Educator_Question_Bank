@@ -10,7 +10,7 @@
  * The hook `useNotifications` listens to the `storage` event and re-reads
  * prefs, so a change here propagates to the bell across tabs.
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { ROUTES } from "../lib/routes";
@@ -24,6 +24,49 @@ import {
   togglePref,
   type NotificationPrefs,
 } from "../notifications/preferences";
+
+/**
+ * Recent notification row used by the preview list. A minimal shape — we
+ * only need what's rendered, not the full NotificationRow contract.
+ */
+interface RecentNotificationRow {
+  id: number;
+  kind: string;
+  title: string;
+  read_at: string | null;
+  created_at: string;
+}
+
+/**
+ * Lookup map for the kind catalog. The preview shows kind labels (not raw
+ * ids) and we tint the badge so it matches the toggle directly above it.
+ */
+const KIND_LABELS: Record<string, string> = NOTIFICATION_KINDS.reduce(
+  (acc, kind) => {
+    acc[kind.id] = kind.label;
+    return acc;
+  },
+  {} as Record<string, string>,
+);
+
+/**
+ * Format an ISO timestamp into a short relative string. Mirrors the format
+ * used inside the NotificationBell so the preview reads identically to
+ * what the user sees in the bell dropdown.
+ */
+function formatRelative(iso: string): string {
+  const then = new Date(iso).getTime();
+  const now = Date.now();
+  const seconds = Math.max(1, Math.floor((now - then) / 1000));
+  if (seconds < 60) return `${seconds}s ago`;
+  const minutes = Math.floor(seconds / 60);
+  if (minutes < 60) return `${minutes}m ago`;
+  const hours = Math.floor(minutes / 60);
+  if (hours < 24) return `${hours}h ago`;
+  const days = Math.floor(hours / 24);
+  if (days < 7) return `${days}d ago`;
+  return new Date(iso).toLocaleDateString();
+}
 
 interface ToggleSwitchProps {
   id: string;
@@ -74,6 +117,11 @@ export function NotificationPreferencesPage() {
   const [userId, setUserId] = useState<string | null>(null);
   const [prefs, setPrefs] = useState<NotificationPrefs>(() => loadPrefs(null));
   const [loadingUser, setLoadingUser] = useState(true);
+  // Preview list is fetched RAW (no opt-out filtering) so the user can see
+  // exactly which kinds they'd be silencing — including ones they've
+  // already toggled off. useNotifications() would filter those out.
+  const [recent, setRecent] = useState<RecentNotificationRow[]>([]);
+  const [loadingRecent, setLoadingRecent] = useState(true);
 
   // Resolve the current user; per-user storage scoping prevents prefs
   // from bleeding across accounts on a shared device.
@@ -91,6 +139,64 @@ export function NotificationPreferencesPage() {
       cancelled = true;
     };
   }, []);
+
+  // Fetch the 10 most recent notifications for the preview. Direct fetch
+  // (instead of useNotifications) so we see opt-out'd kinds too — the
+  // hook filters those, defeating the purpose of "see what you'd hide".
+  useEffect(() => {
+    if (!userId) return;
+    let cancelled = false;
+    void (async () => {
+      const { data, error } = await supabase
+        .from("notifications")
+        .select("id, kind, title, read_at, created_at")
+        .eq("recipient_id", userId)
+        .order("created_at", { ascending: false })
+        .limit(10);
+      if (cancelled) return;
+      if (error) {
+        setRecent([]);
+      } else {
+        setRecent((data ?? []) as RecentNotificationRow[]);
+      }
+      setLoadingRecent(false);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [userId]);
+
+  // Realtime: keep the preview fresh so toggling a kind in another tab
+  // (or receiving a new notification) updates immediately without a reload.
+  useEffect(() => {
+    if (!userId) return;
+    const channel = supabase
+      .channel(`notif-prefs-preview:${userId}`)
+      .on(
+        "postgres_changes",
+        {
+          event: "*",
+          schema: "public",
+          table: "notifications",
+          filter: `recipient_id=eq.${userId}`,
+        },
+        async () => {
+          const { data, error } = await supabase
+            .from("notifications")
+            .select("id, kind, title, read_at, created_at")
+            .eq("recipient_id", userId)
+            .order("created_at", { ascending: false })
+            .limit(10);
+          if (!error) {
+            setRecent((data ?? []) as RecentNotificationRow[]);
+          }
+        },
+      )
+      .subscribe();
+    return () => {
+      void supabase.removeChannel(channel);
+    };
+  }, [userId]);
 
   const onToggle = useCallback(
     (kindId: string, enabled: boolean) => {
@@ -115,6 +221,21 @@ export function NotificationPreferencesPage() {
   }, [userId, toast]);
 
   const hasAnyOptOuts = prefs.optedOut.size > 0;
+
+  // Memoize derived view so toggling prefs re-renders the "(hidden)" badge
+  // suffixes without re-querying Supabase. The `prefs` dependency closes the
+  // loop between the toggles above and the preview rows below.
+  const previewRows = useMemo(() => {
+    return recent.map((row) => {
+      const enabled = isKindEnabled(prefs, row.kind);
+      const label = KIND_LABELS[row.kind] ?? row.kind;
+      return {
+        ...row,
+        kindLabel: label,
+        hidden: !enabled,
+      };
+    });
+  }, [recent, prefs]);
 
   return (
     <div className="space-y-4">
@@ -169,6 +290,104 @@ export function NotificationPreferencesPage() {
             </div>
           );
         })}
+      </section>
+
+      <section
+        aria-label="Recent notifications preview"
+        className="space-y-2"
+      >
+        <div className="space-y-1">
+          <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+            Recent notifications
+          </h3>
+          <p className="text-sm text-slate-500 dark:text-slate-400">
+            These are the kinds of messages that just came through. Toggle off
+            any you don't want to see.
+          </p>
+        </div>
+
+        <div className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 divide-y divide-slate-200 dark:divide-slate-800">
+          {loadingRecent ? (
+            // Skeleton rows mirror the incoming layout (3 placeholder lines).
+            <div className="px-5 py-4 space-y-3" aria-busy="true">
+              {[0, 1, 2].map((i) => (
+                <div
+                  key={i}
+                  className="flex items-center gap-3 animate-pulse"
+                >
+                  <div className="h-5 w-20 rounded-full bg-slate-200 dark:bg-slate-800" />
+                  <div className="h-4 flex-1 rounded bg-slate-200 dark:bg-slate-800" />
+                  <div className="h-4 w-16 rounded bg-slate-200 dark:bg-slate-800" />
+                </div>
+              ))}
+            </div>
+          ) : previewRows.length === 0 ? (
+            <p className="px-5 py-6 text-sm text-slate-500 dark:text-slate-400 text-center">
+              No recent notifications yet.
+            </p>
+          ) : (
+            <ul className="divide-y divide-slate-200 dark:divide-slate-800">
+              {previewRows.map((row) => {
+                const unread = row.read_at === null;
+                return (
+                  <li
+                    key={row.id}
+                    aria-label={`${row.kindLabel}: ${row.title}${
+                      row.hidden ? " (currently hidden)" : ""
+                    }`}
+                    className="flex items-start gap-3 px-5 py-3 min-h-[40px] motion-safe:transition-colors"
+                  >
+                    {/* Unread indicator — indigo dot in the gutter. */}
+                    <span
+                      aria-hidden="true"
+                      className={[
+                        "mt-2 inline-block h-2 w-2 rounded-full flex-shrink-0",
+                        unread
+                          ? "bg-indigo-500"
+                          : "bg-transparent",
+                      ].join(" ")}
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex flex-wrap items-center gap-2">
+                        {/* Kind badge — tinted indigo to match the toggle's "on" color. */}
+                        <span
+                          className={[
+                            "inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium",
+                            row.hidden
+                              ? "bg-slate-100 text-slate-500 dark:bg-slate-800 dark:text-slate-400"
+                              : "bg-indigo-50 text-indigo-700 dark:bg-indigo-500/15 dark:text-indigo-300",
+                          ].join(" ")}
+                        >
+                          {row.kindLabel}
+                        </span>
+                        <span
+                          className={[
+                            "text-sm truncate",
+                            row.hidden
+                              ? "text-slate-500 dark:text-slate-400"
+                              : "text-slate-900 dark:text-slate-100",
+                          ].join(" ")}
+                        >
+                          {row.title}
+                        </span>
+                        {row.hidden && (
+                          // Slate "(hidden)" suffix — distinct in weight AND
+                          // color so it isn't a pure color-only cue.
+                          <span className="text-xs font-medium italic text-slate-500 dark:text-slate-400">
+                            (hidden)
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5">
+                      {formatRelative(row.created_at)}
+                    </span>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
       </section>
 
       <div className="flex items-center justify-between gap-3 pt-2">
