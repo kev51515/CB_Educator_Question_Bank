@@ -12,8 +12,10 @@
  * Self-contained: no props, supabase singleton, auth via RPC.
  */
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { Skeleton } from "../components/Skeleton";
+import { ROUTES } from "../lib/routes";
 import { ScoreArcSparkline, type SparklinePoint } from "./ScoreArcSparkline";
 
 interface PredictionPayload {
@@ -134,15 +136,27 @@ interface DeltaResult {
   toneClass: string;
 }
 
-function describeDelta(points: ReadonlyArray<SparklinePoint>): DeltaResult | null {
+interface DeltaWithAria extends DeltaResult {
+  ariaLabel: string;
+}
+
+/**
+ * Compare the most-recent attempt vs the prior one — "since your last test"
+ * momentum. Returns null when there's fewer than two attempts (no momentum to
+ * report yet).
+ */
+function describeDelta(
+  points: ReadonlyArray<SparklinePoint>,
+): DeltaWithAria | null {
   if (points.length < 2) return null;
-  const first = points[0].score;
+  const prev = points[points.length - 2].score;
   const last = points[points.length - 1].score;
-  const delta = last - first;
+  const delta = last - prev;
   if (delta > 0) {
     return {
       delta,
-      label: `↑ ${delta} since diagnostic`,
+      label: `↑ +${delta} since your last test`,
+      ariaLabel: `Improvement of ${delta} points since your last test`,
       toneClass:
         "text-emerald-700 dark:text-emerald-300 bg-emerald-50 dark:bg-emerald-900/30 ring-emerald-200 dark:ring-emerald-800",
     };
@@ -150,16 +164,63 @@ function describeDelta(points: ReadonlyArray<SparklinePoint>): DeltaResult | nul
   if (delta < 0) {
     return {
       delta,
-      label: `↓ ${Math.abs(delta)} since diagnostic`,
+      label: `↓ ${delta} since your last test`,
+      ariaLabel: `Decrease of ${Math.abs(delta)} points since your last test`,
       toneClass:
         "text-rose-700 dark:text-rose-300 bg-rose-50 dark:bg-rose-900/30 ring-rose-200 dark:ring-rose-800",
     };
   }
   return {
     delta: 0,
-    label: "= no change since diagnostic",
+    label: "— No change since your last test",
+    ariaLabel: "No change in score since your last test",
     toneClass:
       "text-slate-700 dark:text-slate-200 bg-slate-100 dark:bg-slate-800/60 ring-slate-200 dark:ring-slate-700",
+  };
+}
+
+interface Recommendation {
+  copy: string;
+  ctaLabel: string;
+}
+
+/**
+ * Tier-based encouragement copy + CTA. Tiers chosen to span the realistic
+ * student arc: sub-1000 (fundamentals), 1000-1299 (mid-band trajectory talk),
+ * 1300-1499 (polish weakest section), 1500+ (consistency under timing).
+ */
+function recommendationFor(score: number | null | undefined): Recommendation {
+  if (score === null || score === undefined) {
+    return {
+      copy: "Take a mock test to start tracking your progress.",
+      ctaLabel: "Start a practice set",
+    };
+  }
+  if (score >= 1500) {
+    return {
+      copy:
+        "You're approaching the top. Focus on consistency under timing pressure.",
+      ctaLabel: "Run a timed practice set",
+    };
+  }
+  if (score >= 1300) {
+    return {
+      copy:
+        "Strong work. Polish your weakest section to push past 1400.",
+      ctaLabel: "Practice your weakest skill",
+    };
+  }
+  if (score >= 1000) {
+    return {
+      copy:
+        "You're in the mid-band. Keep practicing — your trajectory matters more than any single score.",
+      ctaLabel: "Keep practicing",
+    };
+  }
+  return {
+    copy:
+      "Focus on Math fundamentals — try a practice set in your weakest skill.",
+    ctaLabel: "Practice now",
   };
 }
 
@@ -228,6 +289,7 @@ export function ScorePrediction() {
   }, []);
 
   const delta = describeDelta(trajectory);
+  const recommendation = recommendationFor(payload?.predicted_total ?? null);
 
   return (
     <section
@@ -288,7 +350,8 @@ export function ScorePrediction() {
             {trajectory.length >= 2 && delta && (
               <div className="mb-1 flex items-center justify-between gap-2">
                 <span
-                  className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ring-1 tabular-nums ${delta.toneClass}`}
+                  aria-label={delta.ariaLabel}
+                  className={`inline-block rounded-full px-2 py-0.5 text-xs font-medium ring-1 tabular-nums motion-safe:transition-colors ${delta.toneClass}`}
                 >
                   {delta.label}
                 </span>
@@ -309,6 +372,20 @@ export function ScorePrediction() {
                   : "Take a mock test to start tracking your score trajectory."}
               </p>
             )}
+          </div>
+
+          {/* Recommendation copy + Practice CTA — tiered by predicted total. */}
+          <div className="mt-4 rounded-xl bg-indigo-50/60 dark:bg-indigo-950/30 ring-1 ring-indigo-100 dark:ring-indigo-900/60 p-3">
+            <p className="text-sm italic text-slate-700 dark:text-slate-200">
+              {recommendation.copy}
+            </p>
+            <Link
+              to={ROUTES.PRACTICE}
+              aria-label={`${recommendation.ctaLabel} — open the practice question bank`}
+              className="mt-2 inline-flex items-center justify-center min-h-[40px] px-3 text-sm font-medium text-indigo-700 dark:text-indigo-300 hover:text-indigo-900 dark:hover:text-indigo-100 underline underline-offset-4 motion-safe:transition-colors"
+            >
+              {recommendation.ctaLabel} →
+            </Link>
           </div>
 
           <p className="mt-3 text-xs text-slate-500 dark:text-slate-400">

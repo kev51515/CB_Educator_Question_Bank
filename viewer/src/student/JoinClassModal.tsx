@@ -2,14 +2,21 @@
  * JoinClassModal
  * ==============
  * Single-input modal where a student enters a course join code. Submits via
- * the `join_class_by_code` RPC (SECURITY DEFINER) so the student never
- * touches `class_memberships` directly. Shows the joined course on success
- * and a clean error for `invalid_join_code`.
+ * the `join_course_by_code` RPC (SECURITY DEFINER) so the student never
+ * touches `course_memberships` directly. Shows the joined course on success
+ * and a clean, friendly error for each known RPC error code.
+ *
+ * Code format (per CLAUDE.md): 6 chars from the alphabet [A-Z2-9] — the
+ * O/0/I/1/L confusables are excluded by the migration's short_code generator.
+ * We mirror that alphabet here for live input scrubbing so a user can't even
+ * type an invalid character. Paste handling extracts the first 6 valid
+ * chars (stripping spaces, hyphens, or anything outside the alphabet).
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
 import { useFocusTrap } from "../hooks";
+import { courseModulesPath } from "../lib/routes";
 
 interface JoinedClass {
   id: string;
@@ -34,28 +41,72 @@ interface RpcRow {
   teacher_display_name: string | null;
 }
 
+const CODE_LENGTH = 6;
+// A–Z and 2–9 — matches the short_code alphabet from migrations 0038–0040.
+const CODE_ALPHABET = /[A-Z2-9]/;
+const CODE_ALPHABET_GLOBAL = /[A-Z2-9]/g;
+
+/**
+ * Scrub raw input/paste to a valid join code prefix:
+ *  - upper-case any letters
+ *  - drop anything outside the [A-Z2-9] alphabet (spaces, hyphens, O/0/I/1/L)
+ *  - keep at most the first CODE_LENGTH chars
+ */
+function scrubCode(raw: string): string {
+  const matches = raw.toUpperCase().match(CODE_ALPHABET_GLOBAL);
+  if (!matches) return "";
+  return matches.join("").slice(0, CODE_LENGTH);
+}
+
+function isCompleteCode(code: string): boolean {
+  if (code.length !== CODE_LENGTH) return false;
+  for (let i = 0; i < code.length; i += 1) {
+    if (!CODE_ALPHABET.test(code.charAt(i))) return false;
+  }
+  return true;
+}
+
 function getErrorMessage(error: unknown): string {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
   return "Something went wrong. Please try again.";
 }
 
-function friendlyError(raw: string): string {
-  // The RPC raises `invalid_join_code` for both unknown codes and empty
-  // inputs. PostgREST surfaces the raw message; rewrite it for users.
-  if (raw.toLowerCase().includes("invalid_join_code")) {
-    return "That join code didn't match an active course. Double-check it with your teacher.";
+interface MappedError {
+  message: string;
+  /** When the error indicates an existing membership, the modal can offer "Open class". */
+  alreadyJoinedCourseId?: string | null;
+}
+
+function mapRpcError(raw: string, response?: RpcRow | null): MappedError {
+  const lower = raw.toLowerCase();
+  if (lower.includes("invalid_join_code")) {
+    return {
+      message:
+        "We couldn't find a class with that code. Double-check it with your teacher.",
+    };
   }
-  if (raw.toLowerCase().includes("not_authenticated")) {
-    return "Your session expired. Please sign in again.";
+  if (lower.includes("already_joined") || lower.includes("already_enrolled")) {
+    return {
+      message: "You're already enrolled in this class.",
+      alreadyJoinedCourseId: response?.id ?? null,
+    };
   }
-  return raw;
+  if (lower.includes("rate_limited") || lower.includes("too_many")) {
+    return {
+      message: "Too many attempts. Please wait a minute and try again.",
+    };
+  }
+  if (lower.includes("not_authenticated")) {
+    return { message: "Your session expired. Please sign in again." };
+  }
+  return { message: "Could not join class. Please try again." };
 }
 
 export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps) {
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<MappedError | null>(null);
   const [joined, setJoined] = useState<JoinedClass | null>(null);
   const toast = useToast();
 
@@ -82,34 +133,34 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
     return () => document.removeEventListener("keydown", onKey);
   }, [open, onClose]);
 
+  const complete = useMemo(() => isCompleteCode(code), [code]);
+
   if (!open) return null;
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!complete || busy) return;
     setError(null);
-    const trimmed = code.trim().toUpperCase();
-    if (!trimmed) {
-      setError("Please enter a join code.");
-      return;
-    }
     setBusy(true);
     try {
       const { data, error: rpcError } = await supabase.rpc("join_course_by_code", {
-        p_code: trimmed,
+        p_code: code,
       });
       if (rpcError) {
-        const msg = friendlyError(rpcError.message);
-        setError(msg);
-        toast.error("Couldn't join course", msg);
+        const mapped = mapRpcError(rpcError.message);
+        setError(mapped);
+        toast.error("Couldn't join course", mapped.message);
         return;
       }
       // RPC returns SETOF row; we expect exactly one.
       const rows = (data ?? []) as RpcRow[];
       const first = rows[0];
       if (!first) {
-        const msg = "We couldn't confirm the course you joined. Try again.";
-        setError(msg);
-        toast.error("Couldn't join course", msg);
+        const mapped: MappedError = {
+          message: "We couldn't confirm the course you joined. Try again.",
+        };
+        setError(mapped);
+        toast.error("Couldn't join course", mapped.message);
         return;
       }
       const joinedClass: JoinedClass = {
@@ -123,13 +174,16 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
       toast.success("Joined course", joinedClass.name);
       onJoined?.(joinedClass);
     } catch (err: unknown) {
-      const msg = friendlyError(getErrorMessage(err));
-      setError(msg);
-      toast.error("Couldn't join course", msg);
+      const mapped = mapRpcError(getErrorMessage(err));
+      setError(mapped);
+      toast.error("Couldn't join course", mapped.message);
     } finally {
       setBusy(false);
     }
   };
+
+  const hintId = "join-class-format-hint";
+  const errorId = "join-class-error";
 
   return (
     <div
@@ -141,10 +195,32 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
     >
       <div
         ref={panelRef}
-        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5"
+        className="w-full max-w-md rounded-2xl bg-white dark:bg-slate-900 shadow-2xl ring-1 ring-slate-200 dark:ring-slate-700 p-6 space-y-5 relative"
         onClick={(e) => e.stopPropagation()}
       >
-        <header className="space-y-1">
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute top-3 right-3 inline-flex items-center justify-center w-10 h-10 rounded-full text-slate-500 hover:text-slate-700 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-slate-200 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+
+        <header className="space-y-1 pr-10">
           <h2
             id="join-class-title"
             className="text-lg font-semibold text-slate-900 dark:text-slate-100"
@@ -152,7 +228,7 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
             Join a course
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Enter the join code your teacher gave you.
+            Enter the 6-character code your teacher gave you.
           </p>
         </header>
 
@@ -178,14 +254,6 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
           </div>
         ) : (
           <form onSubmit={onSubmit} className="space-y-4">
-            {error && (
-              <div
-                role="alert"
-                className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
-              >
-                {error}
-              </div>
-            )}
             <label className="block">
               <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 Course join code
@@ -195,15 +263,68 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
                 data-autofocus
                 type="text"
                 value={code}
-                onChange={(e) => setCode(e.target.value.toUpperCase())}
+                onChange={(e) => setCode(scrubCode(e.target.value))}
+                onPaste={(e) => {
+                  // Extract first CODE_LENGTH valid chars from the pasted blob,
+                  // stripping spaces, hyphens, and out-of-alphabet characters.
+                  const pasted = e.clipboardData.getData("text");
+                  if (pasted) {
+                    e.preventDefault();
+                    setCode(scrubCode(pasted));
+                  }
+                }}
                 autoCapitalize="characters"
                 autoCorrect="off"
                 spellCheck={false}
-                placeholder="ABCD-1234"
-                maxLength={16}
-                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2.5 text-slate-900 dark:text-slate-100 font-mono tracking-widest text-center uppercase focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                autoComplete="off"
+                inputMode="text"
+                placeholder="A2C4E6"
+                maxLength={CODE_LENGTH}
+                aria-describedby={`${hintId}${error ? ` ${errorId}` : ""}`}
+                aria-invalid={error ? true : undefined}
+                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-3 text-slate-900 dark:text-slate-100 font-mono tracking-widest text-center uppercase text-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
+              <div
+                id={hintId}
+                aria-live="polite"
+                className="mt-1 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400"
+              >
+                <span>
+                  {code.length === 0
+                    ? "Enter a code"
+                    : "Letters and numbers only (no O, 0, I, 1, or L)"}
+                </span>
+                <span
+                  className={
+                    complete
+                      ? "font-medium text-emerald-600 dark:text-emerald-400"
+                      : ""
+                  }
+                >
+                  {code.length} / {CODE_LENGTH}
+                </span>
+              </div>
             </label>
+
+            {error && (
+              <div
+                id={errorId}
+                role="alert"
+                className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900 space-y-2"
+              >
+                <p>{error.message}</p>
+                {error.alreadyJoinedCourseId && (
+                  <a
+                    href={`#${courseModulesPath(error.alreadyJoinedCourseId)}`}
+                    onClick={onClose}
+                    className="inline-flex items-center gap-1 rounded-md bg-rose-100 dark:bg-rose-900/60 px-2 py-1 text-xs font-medium text-rose-800 dark:text-rose-200 hover:bg-rose-200 dark:hover:bg-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
+                  >
+                    Open class →
+                  </a>
+                )}
+              </div>
+            )}
+
             <div className="flex items-center gap-2">
               <button
                 type="button"
@@ -214,7 +335,12 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
               </button>
               <button
                 type="submit"
-                disabled={busy}
+                disabled={busy || !complete}
+                title={
+                  !complete
+                    ? "Enter the 6-character code your teacher shared"
+                    : undefined
+                }
                 className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
               >
                 {busy ? "Joining…" : "Join course"}
