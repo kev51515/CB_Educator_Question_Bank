@@ -20,6 +20,7 @@ import { useProfile } from "../lib/profile";
 import { ConfirmDialog } from "../teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
+import { useRunnerAnnotations } from "./annotations";
 import { ResultView } from "./ResultView";
 import {
   clearCachedAnswers,
@@ -115,6 +116,9 @@ export function FullTestApp() {
   const [result, setResult] = useState<TestResult | null>(null);
   const [calcOpen, setCalcOpen] = useState(false);
   const [confirmExit, setConfirmExit] = useState(false);
+  const [notesOpen, setNotesOpen] = useState(false);
+  // Bluebook-style study tools: per-question highlights + a note (localStorage).
+  const annot = useRunnerAnnotations(slug);
   const [marked, setMarked] = useState<Set<string>>(new Set());
   const [navOpen, setNavOpen] = useState(false);
   const [timerHidden, setTimerHidden] = useState(false);
@@ -570,6 +574,70 @@ export function FullTestApp() {
       </header>
       <DesmosCalculator open={calcOpen} onClose={() => setCalcOpen(false)} />
 
+      {/* ── Study tools: highlight + notes ── */}
+      {q && (
+        <div className="flex shrink-0 items-center gap-2 border-b border-slate-200 bg-slate-50 px-5 py-1.5 dark:border-slate-800 dark:bg-slate-900/60">
+          <button
+            type="button"
+            // Keep the text selection alive — a plain button click would
+            // collapse it before onClick runs.
+            onMouseDown={(e) => e.preventDefault()}
+            onClick={() => {
+              const sel = window.getSelection();
+              const text = sel?.toString() ?? "";
+              if (text.trim().length >= 2) {
+                annot.addHighlight(q.id, text);
+                sel?.removeAllRanges();
+              } else {
+                toast.info("Select text first", "Drag across the passage, then tap Highlight.");
+              }
+            }}
+            className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:bg-amber-50 hover:text-amber-700 dark:text-slate-300 dark:hover:bg-amber-950/30 dark:hover:text-amber-300"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="m9 11-6 6v3h3l6-6M22 6 18 2l-7 7 4 4 7-7Z" />
+            </svg>
+            Highlight
+          </button>
+          {annot.get(q.id).highlights.length > 0 && (
+            <button
+              type="button"
+              onClick={() => annot.clearHighlights(q.id)}
+              className="rounded-md px-2.5 py-1 text-xs font-medium text-slate-500 transition hover:bg-slate-100 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800"
+            >
+              Clear ({annot.get(q.id).highlights.length})
+            </button>
+          )}
+          <button
+            type="button"
+            onClick={() => setNotesOpen((v) => !v)}
+            aria-pressed={notesOpen}
+            className={[
+              "flex items-center gap-1.5 rounded-md px-2.5 py-1 text-xs font-medium transition",
+              notesOpen
+                ? "bg-indigo-50 text-indigo-700 dark:bg-indigo-950/40 dark:text-indigo-300"
+                : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800",
+            ].join(" ")}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+            </svg>
+            Notes{annot.get(q.id).note.trim() ? " •" : ""}
+          </button>
+        </div>
+      )}
+      {q && notesOpen && (
+        <div className="shrink-0 border-b border-slate-200 px-5 py-2 dark:border-slate-800">
+          <textarea
+            value={annot.get(q.id).note}
+            onChange={(e) => annot.setNote(q.id, e.target.value)}
+            rows={2}
+            placeholder="Jot a note for this question…"
+            className="w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100"
+          />
+        </div>
+      )}
+
       {/* ── Body: fills the viewport; only the panes scroll → no layout shift ── */}
       <main className="min-h-0 flex-1">
         {q && (
@@ -585,6 +653,7 @@ export function FullTestApp() {
             onToggleStrikeMode={() => setStrikeMode((v) => !v)}
             eliminated={eliminated[q.id]}
             onToggleEliminate={(letter) => toggleEliminate(q.id, letter)}
+            highlights={annot.get(q.id).highlights}
           />
         )}
       </main>

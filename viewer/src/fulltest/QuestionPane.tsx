@@ -38,6 +38,47 @@ interface QuestionPaneProps {
   onToggleStrikeMode?: () => void;
   eliminated?: Set<Letter>;
   onToggleEliminate?: (letter: Letter) => void;
+  /** Student highlight substrings to mark in the passage + stem (runner). */
+  highlights?: string[];
+}
+
+function escapeRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+/** Render `text` with any of `terms` wrapped in a highlight <mark>. All
+ *  occurrences of each term are marked; longer terms win on overlap. */
+function HighlightText({ text, terms }: { text: string; terms?: string[] }): JSX.Element {
+  const clean = (terms ?? []).filter((t) => t && t.length >= 2);
+  if (clean.length === 0 || !text) return <>{text}</>;
+  const pattern = clean
+    .slice()
+    .sort((a, b) => b.length - a.length)
+    .map(escapeRegex)
+    .join("|");
+  let parts: string[];
+  try {
+    parts = text.split(new RegExp(`(${pattern})`, "g"));
+  } catch {
+    return <>{text}</>;
+  }
+  const termSet = new Set(clean);
+  return (
+    <>
+      {parts.map((p, i) =>
+        termSet.has(p) ? (
+          <mark
+            key={i}
+            className="rounded-sm bg-amber-200/70 px-px text-inherit dark:bg-amber-300/40 dark:text-inherit"
+          >
+            {p}
+          </mark>
+        ) : (
+          <span key={i}>{p}</span>
+        ),
+      )}
+    </>
+  );
 }
 
 function Figure({
@@ -61,7 +102,13 @@ function Figure({
   );
 }
 
-function Stimulus({ question }: { question: TestQuestion }) {
+function Stimulus({
+  question,
+  highlights,
+}: {
+  question: TestQuestion;
+  highlights?: string[];
+}) {
   const isMath = question.section === "math";
   return (
     <div className="space-y-4">
@@ -77,7 +124,7 @@ function Stimulus({ question }: { question: TestQuestion }) {
           className="whitespace-pre-wrap text-[17px] leading-relaxed text-slate-800 dark:text-slate-200"
           style={SERIF}
         >
-          {question.passage}
+          <HighlightText text={question.passage} terms={highlights} />
         </p>
       )}
     </div>
@@ -156,9 +203,10 @@ function Prompt({
   strikeMode,
   eliminated,
   onToggleEliminate,
+  highlights,
 }: Pick<
   QuestionPaneProps,
-  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate"
+  "question" | "value" | "onChange" | "disabled" | "strikeMode" | "eliminated" | "onToggleEliminate" | "highlights"
 >) {
   return (
     <div className="space-y-5">
@@ -166,7 +214,7 @@ function Prompt({
         className="whitespace-pre-wrap text-[17px] font-medium leading-relaxed text-slate-900 dark:text-slate-100"
         style={SERIF}
       >
-        {question.stem}
+        <HighlightText text={question.stem} terms={highlights} />
       </p>
 
       {question.type === "mcq" && question.choices && (
@@ -287,6 +335,7 @@ export function QuestionPane({
   onToggleStrikeMode,
   eliminated,
   onToggleEliminate,
+  highlights,
 }: QuestionPaneProps) {
   const isRW = question.section === "reading-writing";
   const hasStimulus = Boolean(question.passage || question.figure);
@@ -309,6 +358,7 @@ export function QuestionPane({
           strikeMode={strikeMode}
           eliminated={eliminated}
           onToggleEliminate={onToggleEliminate}
+          highlights={highlights}
         />
       </div>
     </>
@@ -320,7 +370,7 @@ export function QuestionPane({
       return (
         <div className="grid h-full grid-cols-1 md:grid-cols-2 md:divide-x md:divide-slate-200 dark:md:divide-slate-800">
           <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
-            <Stimulus question={question} />
+            <Stimulus question={question} highlights={highlights} />
           </div>
           <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
             <div className="mx-auto max-w-xl">{questionSide}</div>
@@ -331,7 +381,7 @@ export function QuestionPane({
     return (
       <div className="h-full overflow-y-auto px-6 py-7">
         <div className="mx-auto max-w-2xl space-y-6">
-          {question.figure && <Stimulus question={question} />}
+          {question.figure && <Stimulus question={question} highlights={highlights} />}
           {questionSide}
         </div>
       </div>
@@ -343,7 +393,7 @@ export function QuestionPane({
     return (
       <div className="grid gap-6 md:grid-cols-2">
         <div className="md:border-r md:border-slate-200 md:pr-6 dark:md:border-slate-700">
-          <Stimulus question={question} />
+          <Stimulus question={question} highlights={highlights} />
         </div>
         <div>{questionSide}</div>
       </div>
@@ -351,7 +401,7 @@ export function QuestionPane({
   }
   return (
     <div className="mx-auto max-w-2xl space-y-4">
-      {question.figure && <Stimulus question={question} />}
+      {question.figure && <Stimulus question={question} highlights={highlights} />}
       {questionSide}
     </div>
   );
