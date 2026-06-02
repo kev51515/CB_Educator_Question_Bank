@@ -282,12 +282,120 @@ function ReplyForm({
   );
 }
 
+interface EditFormProps {
+  /** Initial body HTML to seed the editor with. */
+  initialBody: string;
+  /** Save handler — resolves true on success so the form can collapse. */
+  onSave: (body: string) => Promise<boolean>;
+  onCancel: () => void;
+}
+
+/**
+ * Inline body editor for an existing post. Esc cancels, Cmd/Ctrl+Enter saves.
+ * Mirrors ReplyForm's snapshot/restore-on-failure pattern so a failed save
+ * never loses the typed value.
+ */
+function EditForm({ initialBody, onSave, onCancel }: EditFormProps) {
+  const [body, setBody] = useState(initialBody);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+
+  // Keyboard shortcuts: Esc cancels, Cmd/Ctrl+Enter saves. Bound on the
+  // container so the editor (TipTap) still owns intra-text Enter.
+  useEffect(() => {
+    const node = containerRef.current;
+    if (!node) return;
+    const onKeyDown = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onCancel();
+        return;
+      }
+      if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+        void submit();
+      }
+    };
+    node.addEventListener("keydown", onKeyDown);
+    return () => node.removeEventListener("keydown", onKeyDown);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [onCancel, body]);
+
+  const submit = async (): Promise<void> => {
+    setError(null);
+    const trimmed = body.trim();
+    if (!trimmed) {
+      setError("Post body cannot be empty.");
+      return;
+    }
+    if (trimmed.length > MAX_POST_LEN) {
+      setError(`Post must be ${MAX_POST_LEN} characters or fewer.`);
+      return;
+    }
+    setBusy(true);
+    try {
+      const ok = await onSave(trimmed);
+      if (!ok) {
+        // Keep the form open with the typed value so the user can retry.
+        return;
+      }
+    } catch (err: unknown) {
+      setError(getErrorMessage(err, "Failed to save edit."));
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  return (
+    <div ref={containerRef} className="space-y-2">
+      {error && (
+        <div
+          role="alert"
+          className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-xs text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
+        >
+          {error}
+        </div>
+      )}
+      <MarkdownEditor
+        value={body}
+        onChange={setBody}
+        placeholder="Edit your post…"
+        minHeight={80}
+        characterLimit={MAX_POST_LEN}
+      />
+      <div className="flex items-center gap-2">
+        <button
+          type="button"
+          onClick={() => void submit()}
+          disabled={busy}
+          className="rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white text-xs font-medium px-3 py-1.5 min-h-[40px]"
+        >
+          {busy ? "Saving…" : "Save"}
+        </button>
+        <button
+          type="button"
+          onClick={onCancel}
+          disabled={busy}
+          className="rounded-lg px-3 py-1.5 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 min-h-[40px]"
+        >
+          Cancel
+        </button>
+        <span className="text-[11px] text-slate-400 dark:text-slate-500 ml-auto hidden sm:inline">
+          Esc to cancel · ⌘/Ctrl+Enter to save
+        </span>
+      </div>
+    </div>
+  );
+}
+
 interface PostNodeProps {
   node: PostTreeNode;
   topicLocked: boolean;
   depth: number;
   canManage: (post: DiscussionPost) => boolean;
   onSubmitReply: (body: string, parentPostId: string | null) => Promise<boolean>;
+  onEditPost: (post: DiscussionPost, body: string) => Promise<boolean>;
   onDeletePost: (post: DiscussionPost) => void;
   collapsedIds: Set<string>;
   onToggleCollapsed: (postId: string) => void;
@@ -299,11 +407,13 @@ function PostNode({
   depth,
   canManage,
   onSubmitReply,
+  onEditPost,
   onDeletePost,
   collapsedIds,
   onToggleCollapsed,
 }: PostNodeProps) {
   const [replying, setReplying] = useState(false);
+  const [editing, setEditing] = useState(false);
   const indent = Math.min(depth, 4);
   const indentClass =
     indent === 0
@@ -335,23 +445,76 @@ function PostNode({
             <time dateTime={node.post.created_at}>
               {formatRelative(node.post.created_at)}
             </time>
+            {/* `updated_at` is auto-managed by trigger trg_discussion_posts_updated (0025).
+                When it's later than created_at we treat the post as edited. The 2s slack
+                guards against the row's initial INSERT-driven set_updated_at being a hair
+                after created_at in the DB clock. */}
+            {(() => {
+              const created = new Date(node.post.created_at).getTime();
+              const updated = new Date(node.post.updated_at).getTime();
+              const edited =
+                Number.isFinite(created) &&
+                Number.isFinite(updated) &&
+                updated - created > 2000;
+              if (!edited) return null;
+              const full = new Date(node.post.updated_at).toLocaleString();
+              return (
+                <>
+                  <span aria-hidden> · </span>
+                  <span
+                    className="italic text-slate-400 dark:text-slate-500"
+                    title={`Edited at ${full}`}
+                  >
+                    edited{" "}
+                    <time dateTime={node.post.updated_at}>
+                      {formatRelative(node.post.updated_at)}
+                    </time>
+                  </span>
+                </>
+              );
+            })()}
           </p>
-          {canManage(node.post) && (
-            <button
-              type="button"
-              onClick={() => onDeletePost(node.post)}
-              className="text-xs text-rose-600 dark:text-rose-400 hover:underline"
-            >
-              Delete
-            </button>
+          {canManage(node.post) && !editing && (
+            <div className="flex items-center gap-1 shrink-0">
+              <button
+                type="button"
+                onClick={() => {
+                  // Mutex with reply form: close reply if open before editing.
+                  setReplying(false);
+                  setEditing(true);
+                }}
+                className="rounded-md px-2 py-1 text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 min-h-[28px]"
+              >
+                Edit
+              </button>
+              <button
+                type="button"
+                onClick={() => onDeletePost(node.post)}
+                className="rounded-md px-2 py-1 text-xs font-medium text-rose-600 dark:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-950/40 min-h-[28px]"
+              >
+                Delete
+              </button>
+            </div>
           )}
         </header>
-        {/* Body is HTML produced by MarkdownEditor (legacy plain text still renders correctly as a text node). */}
-        <SafeHtml
-          html={node.post.body}
-          className="prose prose-sm dark:prose-invert max-w-none text-slate-700 dark:text-slate-300"
-        />
-        {(!topicLocked || hasChildren) && (
+        {editing ? (
+          <EditForm
+            initialBody={node.post.body}
+            onCancel={() => setEditing(false)}
+            onSave={async (next) => {
+              const ok = await onEditPost(node.post, next);
+              if (ok) setEditing(false);
+              return ok;
+            }}
+          />
+        ) : (
+          /* Body is HTML produced by MarkdownEditor (legacy plain text still renders correctly as a text node). */
+          <SafeHtml
+            html={node.post.body}
+            className="prose prose-sm dark:prose-invert max-w-none text-slate-700 dark:text-slate-300"
+          />
+        )}
+        {!editing && (!topicLocked || hasChildren) && (
           <div className="pt-1 flex items-center gap-3 flex-wrap">
             {!topicLocked && (
               <>
@@ -434,6 +597,7 @@ function PostNode({
                 depth={depth + 1}
                 canManage={canManage}
                 onSubmitReply={onSubmitReply}
+                onEditPost={onEditPost}
                 onDeletePost={onDeletePost}
                 collapsedIds={collapsedIds}
                 onToggleCollapsed={onToggleCollapsed}
@@ -468,6 +632,14 @@ export function DiscussionTopicView() {
   // shortly after; we filter dupes by id so the swap is seamless.
   const [optimisticPosts, setOptimisticPosts] = useState<DiscussionPost[]>([]);
 
+  // Optimistic edits: map of post.id → { body, updated_at }. Applied as an
+  // override on top of the realtime feed so the user sees their edit
+  // immediately. Rolled back on failure; cleared once the realtime row
+  // catches up (updated_at on server ≥ our local).
+  const [optimisticEdits, setOptimisticEdits] = useState<
+    Record<string, { body: string; updated_at: string }>
+  >({});
+
   // Bumped to focus the top-level compose box when the user clicks the
   // "Be the first to reply" CTA in the empty state.
   const [composeFocusKey, setComposeFocusKey] = useState(0);
@@ -491,10 +663,50 @@ export function DiscussionTopicView() {
   }, [posts, optimisticPosts]);
 
   const combinedPosts = useMemo(() => {
-    if (optimisticPosts.length === 0) return posts;
-    const seen = new Set(posts.map((p) => p.id));
-    return [...posts, ...optimisticPosts.filter((p) => !seen.has(p.id))];
-  }, [posts, optimisticPosts]);
+    const editKeys = Object.keys(optimisticEdits);
+    const withEdits =
+      editKeys.length === 0
+        ? posts
+        : posts.map((p) => {
+            const ov = optimisticEdits[p.id];
+            if (!ov) return p;
+            // If the realtime row has already caught up (its updated_at is >=
+            // our local edit's updated_at), don't override — let the real one
+            // through. The cleanup effect below will then drop the override.
+            if (
+              new Date(p.updated_at).getTime() >=
+              new Date(ov.updated_at).getTime()
+            ) {
+              return p;
+            }
+            return { ...p, body: ov.body, updated_at: ov.updated_at };
+          });
+    if (optimisticPosts.length === 0) return withEdits;
+    const seen = new Set(withEdits.map((p) => p.id));
+    return [...withEdits, ...optimisticPosts.filter((p) => !seen.has(p.id))];
+  }, [posts, optimisticPosts, optimisticEdits]);
+
+  // Drop optimistic edits whose realtime row has caught up.
+  useEffect(() => {
+    const keys = Object.keys(optimisticEdits);
+    if (keys.length === 0) return;
+    let changed = false;
+    const next = { ...optimisticEdits };
+    for (const id of keys) {
+      const real = posts.find((p) => p.id === id);
+      const local = optimisticEdits[id];
+      if (!real || !local) continue;
+      if (
+        new Date(real.updated_at).getTime() >=
+          new Date(local.updated_at).getTime() &&
+        real.body === local.body
+      ) {
+        delete next[id];
+        changed = true;
+      }
+    }
+    if (changed) setOptimisticEdits(next);
+  }, [posts, optimisticEdits]);
 
   const tree = useMemo(() => buildTree(combinedPosts), [combinedPosts]);
 
@@ -600,6 +812,62 @@ export function DiscussionTopicView() {
       setOptimisticPosts((prev) => prev.filter((p) => p.id !== tempId));
       toast.error(
         "Couldn't post reply",
+        getErrorMessage(err, "Please try again."),
+      );
+      return false;
+    }
+  };
+
+  // Edit an existing post's body. Optimistic local update, rollback on
+  // failure. RLS allows the author (and staff) to UPDATE (see migration
+  // 0025), and the BEFORE UPDATE trigger bumps updated_at automatically —
+  // we don't need to set it ourselves on the server, but we stamp a local
+  // value so the optimistic override has a comparable timestamp.
+  const handleEditPost = async (
+    post: DiscussionPost,
+    nextBody: string,
+  ): Promise<boolean> => {
+    const prevBody = post.body;
+    const prevUpdatedAt = post.updated_at;
+    if (nextBody === prevBody) return true; // no-op
+    const nowIso = new Date().toISOString();
+    setOptimisticEdits((prev) => ({
+      ...prev,
+      [post.id]: { body: nextBody, updated_at: nowIso },
+    }));
+    try {
+      const { error: updError } = await supabase
+        .from("discussion_posts")
+        .update({ body: nextBody })
+        .eq("id", post.id);
+      if (updError) {
+        // Roll back the override.
+        setOptimisticEdits((prev) => {
+          const next = { ...prev };
+          delete next[post.id];
+          return next;
+        });
+        toast.error("Couldn't save edit", updError.message);
+        return false;
+      }
+      // Realtime will deliver the canonical row; the cleanup effect drops
+      // the override once the server timestamp catches up.
+      void refresh();
+      toast.success("Post updated");
+      return true;
+    } catch (err: unknown) {
+      setOptimisticEdits((prev) => {
+        const next = { ...prev };
+        delete next[post.id];
+        return next;
+      });
+      // Silence unused vars for the "rollback to previous body" path; the
+      // override drop above suffices because the realtime row still carries
+      // the pre-edit body until the (failed) write would have arrived.
+      void prevBody;
+      void prevUpdatedAt;
+      toast.error(
+        "Couldn't save edit",
         getErrorMessage(err, "Please try again."),
       );
       return false;
@@ -773,6 +1041,7 @@ export function DiscussionTopicView() {
                       depth={0}
                       canManage={canManagePost}
                       onSubmitReply={handleSubmitReply}
+                      onEditPost={handleEditPost}
                       onDeletePost={(post) => setConfirmDeletePost(post)}
                       collapsedIds={collapsedIds}
                       onToggleCollapsed={onToggleCollapsed}

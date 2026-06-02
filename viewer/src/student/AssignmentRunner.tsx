@@ -26,7 +26,7 @@
  * already-loaded questions so MockTestApp doesn't re-fetch (and possibly
  * receive a different shuffle).
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   MockTestApp,
   clearAssignmentDraft,
@@ -35,6 +35,7 @@ import {
 import { loadSource } from "../mocktest/sources";
 import type { TestConfig, TestQuestion } from "../mocktest";
 import { supabase } from "../lib/supabase";
+import { useToast } from "../components";
 import type { StudentAssignment } from "./useStudentAssignments";
 import { QBankAssignmentRunner } from "./QBankAssignmentRunner";
 
@@ -158,6 +159,14 @@ function MockTestAssignmentRunner({
   onAlreadySubmitted,
 }: AssignmentRunnerProps) {
   const [stage, setStage] = useState<Stage>({ kind: "loading" });
+  const toast = useToast();
+  // Refs gate the 5-min / 1-min auto-submit warning toasts so they fire at
+  // most once per attempt. The timer countdown itself is owned by MockTestApp
+  // (TestPhase) — this observer runs in parallel using the same
+  // `time_limit_minutes` and the moment we hand control to MockTestApp,
+  // purely so students get a heads-up before auto-submit at 0.
+  const fired5MinRef = useRef(false);
+  const fired1MinRef = useRef(false);
 
   /**
    * Build the question set client-side via `loadSource`, then call the
@@ -392,6 +401,68 @@ function MockTestAssignmentRunner({
   useEffect(() => {
     void bootstrap();
   }, [bootstrap]);
+
+  /**
+   * 5-minute and 1-minute auto-submit warnings.
+   *
+   * The countdown state itself lives inside MockTestApp / TestPhase — this
+   * effect runs an independent wall-clock observer that fires exactly one
+   * warning toast at each threshold and then sleeps. It activates only when
+   * stage becomes "ready" (i.e., we've handed MockTestApp the attempt and
+   * the running timer has just started), and only for timed assignments
+   * with enough headroom for the threshold to be meaningful.
+   *
+   * Buffer rule: only fire a warning if total time > threshold + 30s, so a
+   * 2-minute assignment never sees the 5-min toast and a 30-second
+   * assignment never sees the 1-min toast.
+   *
+   * Refs prevent re-fire on remount within the same attempt; the effect
+   * cleanup clears the interval when stage transitions away from "ready"
+   * (e.g., on exit). We never fire when secondsLeft <= 0 — that window
+   * belongs to MockTestApp's auto-submit.
+   */
+  useEffect(() => {
+    if (stage.kind !== "ready") return;
+    const totalMinutes = assignment.time_limit_minutes;
+    if (!totalMinutes || totalMinutes <= 0) return; // untimed
+    const totalSeconds = totalMinutes * 60;
+    // Reset gates whenever a fresh attempt starts.
+    fired5MinRef.current = false;
+    fired1MinRef.current = false;
+    const startedAt = Date.now();
+    const intervalId = window.setInterval(() => {
+      const elapsed = Math.floor((Date.now() - startedAt) / 1000);
+      const secondsLeft = totalSeconds - elapsed;
+      if (secondsLeft <= 0) return; // auto-submit window — silent
+      if (
+        !fired5MinRef.current &&
+        secondsLeft <= 300 &&
+        totalSeconds > 330
+      ) {
+        fired5MinRef.current = true;
+        toast.warning(
+          "5 minutes remaining — review your answers",
+          undefined,
+          { durationMs: 10000 },
+        );
+      }
+      if (
+        !fired1MinRef.current &&
+        secondsLeft <= 60 &&
+        totalSeconds > 90
+      ) {
+        fired1MinRef.current = true;
+        toast.warning(
+          "1 minute remaining — wrap up your last answer",
+          undefined,
+          { durationMs: 10000 },
+        );
+      }
+    }, 1000);
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [stage, assignment.time_limit_minutes, toast]);
 
   if (stage.kind === "loading") {
     return (
