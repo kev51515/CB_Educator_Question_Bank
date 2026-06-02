@@ -12,7 +12,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { useEscapeKey, useFocusTrap } from "../hooks";
 import { SkeletonRows } from "../components/Skeleton";
 import { getResult } from "./api";
 import { ResultView } from "./ResultView";
@@ -57,6 +57,10 @@ export function TestCompletionModal({ slug, title, onClose }: TestCompletionModa
   const [rowBusy, setRowBusy] = useState<string | null>(null);
   const [reviewing, setReviewing] = useState<{ row: CompletionRow; result: TestResult } | null>(null);
   const [reviewLoadingId, setReviewLoadingId] = useState<string | null>(null);
+  useEscapeKey(() => {
+    if (reviewing) setReviewing(null);
+    else if (!bulkBusy) onClose();
+  });
 
   const refresh = useCallback(async (): Promise<void> => {
     setLoading(true);

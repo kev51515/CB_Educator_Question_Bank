@@ -17,6 +17,7 @@ import { useToast } from "../components/Toast";
 import { SkeletonRows } from "../components/Skeleton";
 import { getResult } from "../fulltest/api";
 import { ResultView } from "../fulltest/ResultView";
+import { useEscapeKey } from "../hooks";
 import type { TestResult } from "../fulltest/types";
 
 interface TestRunRow {
@@ -61,6 +62,7 @@ export function StudentTestRunsPanel({ studentId }: StudentTestRunsPanelProps) {
 
   // The run currently open in the full-screen review overlay.
   const [reviewing, setReviewing] = useState<{ row: TestRunRow; result: TestResult } | null>(null);
+  useEscapeKey(() => setReviewing(null), reviewing !== null);
   const [reviewLoadingId, setReviewLoadingId] = useState<string | null>(null);
 
   const refresh = useCallback(async (): Promise<void> => {

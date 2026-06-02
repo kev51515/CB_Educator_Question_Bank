@@ -324,6 +324,26 @@ export function useLocalStorageJSON<T>(key: string, defaultValue: T): [T, (value
   return [state, setValue];
 }
 
+/**
+ * Invoke `handler` when Escape is pressed, while `active`. The canonical
+ * modal-dismiss companion to useFocusTrap (which only cycles Tab). Uses a ref
+ * so a changing handler doesn't rebind the listener.
+ */
+export function useEscapeKey(handler: () => void, active: boolean = true): void {
+  const ref = useRef(handler);
+  useEffect(() => {
+    ref.current = handler;
+  });
+  useEffect(() => {
+    if (!active) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") ref.current();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [active]);
+}
+
 // External hooks: re-export from their own modules for the @/hooks barrel.
 export * from "./useKeyboardShortcuts";
 export * from "./useModals";

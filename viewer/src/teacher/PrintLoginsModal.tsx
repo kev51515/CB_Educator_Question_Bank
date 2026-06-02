@@ -25,7 +25,7 @@ import { useCallback, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { useEscapeKey, useFocusTrap } from "../hooks";
 import { studentCodePrefillUrl, studentLoginUrl } from "../lib/routes";
 
 export interface PrintableLogin {
@@ -129,6 +129,9 @@ export function PrintLoginsModal({
   const [failures, setFailures] = useState<{ name: string; reason: string }[]>([]);
 
   const busy = view === "running";
+  useEscapeKey(() => {
+    if (!busy) onClose();
+  });
 
   // ---- Track 1: codes only -------------------------------------------------
 

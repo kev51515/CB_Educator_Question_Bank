@@ -20,7 +20,7 @@ import { useCallback, useMemo, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { useEscapeKey, useFocusTrap } from "../hooks";
 import { studentLoginUrl } from "../lib/routes";
 
 /** Stable DOM id for the credential QR canvas (read back for print). */
@@ -124,6 +124,9 @@ export function AddStudentModal({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [created, setCreated] = useState<CreatedStudent | null>(null);
+  useEscapeKey(() => {
+    if (!busy) onClose();
+  });
 
   const combinedCredentials = useMemo(() => {
     if (!created) return "";

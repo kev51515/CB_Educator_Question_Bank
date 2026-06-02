@@ -14,6 +14,7 @@ import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
 import { getResult } from "../fulltest/api";
 import { ResultView } from "../fulltest/ResultView";
+import { useEscapeKey } from "../hooks";
 import type { TestResult } from "../fulltest/types";
 
 interface MyRunRow {
@@ -41,6 +42,7 @@ export function StudentTestResultsPanel() {
   const [rows, setRows] = useState<MyRunRow[]>([]);
   const [loaded, setLoaded] = useState(false);
   const [viewing, setViewing] = useState<{ row: MyRunRow; result: TestResult } | null>(null);
+  useEscapeKey(() => setViewing(null), viewing !== null);
   const [loadingId, setLoadingId] = useState<string | null>(null);
 
   const refresh = useCallback(async (): Promise<void> => {

@@ -13,7 +13,7 @@ import { useCallback, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
-import { useFocusTrap } from "../hooks";
+import { useEscapeKey, useFocusTrap } from "../hooks";
 import { studentLoginUrl } from "../lib/routes";
 
 interface ResetStudentPasswordModalProps {
@@ -62,6 +62,9 @@ export function ResetStudentPasswordModal({
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
+  useEscapeKey(() => {
+    if (!busy) onClose();
+  });
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
