@@ -9,7 +9,7 @@
  * Available to both staff (mounted under StaffShell) and students (mounted
  * inside StudentShell). RLS handles authz — both roles share the same UI.
  */
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Link,
   NavLink,
@@ -57,6 +57,15 @@ export function InboxPage() {
   const toast = useToast();
   const [query, setQuery] = useState("");
   const searchInputRef = useRef<HTMLInputElement | null>(null);
+  // Keyboard cursor across the thread list. -1 = no highlight.
+  // This is separate from the "currently open" thread (driven by URL/threadId)
+  // — the highlight is a navigation cursor; opening still requires Enter/click.
+  const [highlightedIndex, setHighlightedIndex] = useState<number>(-1);
+  const listContainerRef = useRef<HTMLDivElement | null>(null);
+  const rowRefs = useRef<Array<HTMLAnchorElement | null>>([]);
+  // Track whether the user is actively typing in the search input — if so,
+  // we don't yank the highlight back to index 0 on every keystroke (jarring).
+  const searchFocusedRef = useRef<boolean>(false);
 
   // Focus shortcut: "/" focuses the inbox search (GitHub/Vercel convention).
   // We deliberately avoid ⌘K — that's owned globally by CommandPalette
@@ -98,6 +107,117 @@ export function InboxPage() {
       return name.includes(q) || snippet.includes(q);
     });
   }, [threads, query]);
+
+  // Default highlight on mount / when threads first arrive: pick the
+  // currently-open thread (from URL) if it's still in filteredThreads, else
+  // index 0. We only run this when highlight is unset OR list shape changed
+  // such that the old index no longer points at a valid row.
+  useEffect(() => {
+    if (filteredThreads.length === 0) {
+      if (highlightedIndex !== -1) setHighlightedIndex(-1);
+      return;
+    }
+    // First-time mount: seed from URL or to first row.
+    if (highlightedIndex === -1) {
+      if (threadId) {
+        const idx = filteredThreads.findIndex((t) => t.id === threadId);
+        setHighlightedIndex(idx >= 0 ? idx : 0);
+      } else {
+        setHighlightedIndex(0);
+      }
+      return;
+    }
+    // Clamp into range when list shrinks. Don't yank during active search typing.
+    if (highlightedIndex >= filteredThreads.length) {
+      setHighlightedIndex(searchFocusedRef.current ? 0 : 0);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [filteredThreads, threadId]);
+
+  // Auto-scroll the highlighted row into view when it changes.
+  useEffect(() => {
+    if (highlightedIndex < 0) return;
+    const el = rowRefs.current[highlightedIndex];
+    if (el && typeof el.scrollIntoView === "function") {
+      el.scrollIntoView({ block: "nearest" });
+    }
+  }, [highlightedIndex]);
+
+  const openHighlighted = useCallback(() => {
+    if (highlightedIndex < 0 || highlightedIndex >= filteredThreads.length) {
+      return;
+    }
+    const t = filteredThreads[highlightedIndex];
+    if (t) navigate(inboxThreadPath(t.id));
+  }, [filteredThreads, highlightedIndex, navigate]);
+
+  // Keyboard shortcuts: ↑/↓/Home/End/Enter/Esc on the list container.
+  // Gated so we never steal keystrokes from inputs / textareas / contenteditable
+  // (which includes the right-pane TipTap composer and the search input).
+  // `/` is intentionally NOT handled here — the existing window-level handler
+  // owns it and works from any non-editable focus target.
+  const onListKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      const target = e.target as HTMLElement | null;
+      const tag = target?.tagName?.toLowerCase();
+      if (
+        tag === "input" ||
+        tag === "textarea" ||
+        tag === "select" ||
+        target?.isContentEditable
+      ) {
+        return;
+      }
+      if (filteredThreads.length === 0) return;
+
+      switch (e.key) {
+        case "ArrowDown": {
+          e.preventDefault();
+          setHighlightedIndex((i) =>
+            i < 0 ? 0 : (i + 1) % filteredThreads.length,
+          );
+          break;
+        }
+        case "ArrowUp": {
+          e.preventDefault();
+          setHighlightedIndex((i) => {
+            if (i < 0) return filteredThreads.length - 1;
+            return (i - 1 + filteredThreads.length) % filteredThreads.length;
+          });
+          break;
+        }
+        case "Home": {
+          e.preventDefault();
+          setHighlightedIndex(0);
+          break;
+        }
+        case "End": {
+          e.preventDefault();
+          setHighlightedIndex(filteredThreads.length - 1);
+          break;
+        }
+        case "Enter": {
+          e.preventDefault();
+          openHighlighted();
+          break;
+        }
+        case "Escape": {
+          // Only clear list-side highlight; the right-pane handles its own Esc.
+          // If a thread is OPEN (threadId in URL), we don't fight that — we just
+          // clear the keyboard cursor. If no thread open, same: drop the cursor.
+          if (highlightedIndex >= 0) {
+            setHighlightedIndex(-1);
+            // Keep focus on the list container so ↑/↓ can re-seed.
+            listContainerRef.current?.focus();
+          }
+          break;
+        }
+        default:
+          break;
+      }
+    },
+    [filteredThreads.length, highlightedIndex, openHighlighted],
+  );
 
   // Consume ?compose=<userId>: open (or create) the thread with that user and
   // navigate straight to it. Strips the param so refresh doesn't re-fire.
@@ -226,6 +346,12 @@ export function InboxPage() {
               type="search"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              onFocus={() => {
+                searchFocusedRef.current = true;
+              }}
+              onBlur={() => {
+                searchFocusedRef.current = false;
+              }}
               onKeyDown={(e) => {
                 if (e.key === "Escape") {
                   setQuery("");
@@ -238,8 +364,22 @@ export function InboxPage() {
               className="w-full min-h-[40px] rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 pl-8 pr-3 py-2 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 motion-safe:transition-colors"
             />
           </div>
+          {/* Discoverability hint — desktop only; tap-only on mobile doesn't need it. */}
+          <p
+            aria-hidden="true"
+            className="hidden sm:block mt-1.5 text-[10px] text-slate-500 dark:text-slate-400 leading-tight"
+          >
+            <kbd className="font-sans">↑↓</kbd> Navigate ·{" "}
+            <kbd className="font-sans">Enter</kbd> Open ·{" "}
+            <kbd className="font-sans">/</kbd> Search
+          </p>
         </div>
-        <div className="flex-1 overflow-y-auto">
+        <div
+          ref={listContainerRef}
+          tabIndex={0}
+          onKeyDown={onListKeyDown}
+          className="flex-1 overflow-y-auto focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-indigo-500"
+        >
           {loading && (
             <div className="px-3 py-3">
               <SkeletonRows count={6} rowClassName="h-14" />
@@ -277,45 +417,67 @@ export function InboxPage() {
                 </button>
               </div>
             )}
-          {filteredThreads.map((t) => {
-            const name = t.other.display_name ?? t.other.email ?? "Unknown";
-            return (
-              <NavLink
-                key={t.id}
-                to={inboxThreadPath(t.id)}
-                className={({ isActive }) =>
-                  [
-                    "block px-4 py-3 border-b border-slate-100 dark:border-slate-800 transition-colors",
-                    isActive
-                      ? "bg-indigo-50 dark:bg-indigo-950/40"
-                      : "hover:bg-slate-50 dark:hover:bg-slate-900",
-                  ].join(" ")
-                }
-              >
-                <div className="flex items-center justify-between gap-2">
-                  <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
-                    {name}
-                  </p>
-                  <span className="text-xs text-slate-500 dark:text-slate-400 flex-shrink-0">
-                    {formatStamp(t.last_message_at)}
-                  </span>
-                </div>
-                <div className="flex items-center justify-between gap-2 mt-0.5">
-                  <p className="text-xs text-slate-500 truncate">
-                    {/* Snippet may include HTML now that messages are rich; strip tags for the inline preview. */}
-                    {t.last_message_snippet
-                      ? t.last_message_snippet.replace(/<[^>]*>/g, "")
-                      : <em>No messages yet</em>}
-                  </p>
-                  {t.unread_count > 0 && (
-                    <span className="ml-2 inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-indigo-600 text-white text-[10px] font-semibold">
-                      {t.unread_count}
-                    </span>
-                  )}
-                </div>
-              </NavLink>
-            );
-          })}
+          {filteredThreads.length > 0 && (
+            <ul role="listbox" aria-label="Conversations" className="list-none">
+              {filteredThreads.map((t, idx) => {
+                const name =
+                  t.other.display_name ?? t.other.email ?? "Unknown";
+                const isHighlighted = idx === highlightedIndex;
+                const isOpen = t.id === threadId;
+                return (
+                  <li
+                    key={t.id}
+                    role="option"
+                    aria-selected={isHighlighted}
+                    onMouseEnter={() => {
+                      // Keep keyboard + mouse cursors in sync so the user
+                      // doesn't see two competing highlights.
+                      if (idx !== highlightedIndex) setHighlightedIndex(idx);
+                    }}
+                  >
+                    <NavLink
+                      ref={(el) => {
+                        rowRefs.current[idx] = el;
+                      }}
+                      to={inboxThreadPath(t.id)}
+                      className={[
+                        "block px-4 py-3 border-b border-slate-100 dark:border-slate-800 motion-safe:transition-colors",
+                        isOpen
+                          ? "bg-indigo-50 dark:bg-indigo-950/40"
+                          : isHighlighted
+                            ? "bg-indigo-50/60 dark:bg-indigo-950/30 ring-1 ring-inset ring-slate-300 dark:ring-slate-600"
+                            : "hover:bg-slate-50 dark:hover:bg-slate-900",
+                      ].join(" ")}
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
+                          {name}
+                        </p>
+                        <span className="text-xs text-slate-500 dark:text-slate-400 flex-shrink-0">
+                          {formatStamp(t.last_message_at)}
+                        </span>
+                      </div>
+                      <div className="flex items-center justify-between gap-2 mt-0.5">
+                        <p className="text-xs text-slate-500 truncate">
+                          {/* Snippet may include HTML now that messages are rich; strip tags for the inline preview. */}
+                          {t.last_message_snippet ? (
+                            t.last_message_snippet.replace(/<[^>]*>/g, "")
+                          ) : (
+                            <em>No messages yet</em>
+                          )}
+                        </p>
+                        {t.unread_count > 0 && (
+                          <span className="ml-2 inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1.5 rounded-full bg-indigo-600 text-white text-[10px] font-semibold">
+                            {t.unread_count}
+                          </span>
+                        )}
+                      </div>
+                    </NavLink>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
       </aside>
 
