@@ -272,22 +272,20 @@ export function AreaSelector() {
             </div>
           </section>
           <CourseAnnouncementsList />
-          {/* B4: quick link to the mock-test history surface so past
-              attempts and side-by-side comparisons are one click away from
-              the post-sign-in landing. Placed next to TestsPanel since
-              that's the mock-test surface. */}
+          {/* Quick link to the Timed Practice history (the /mock-test
+              free-practice drills, relabelled "Timed Practice"). */}
           <button
             type="button"
             onClick={() => navigate(ROUTES.MOCK_TEST_HISTORY)}
             className="w-full min-h-[40px] flex items-center justify-between gap-3 rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 px-5 py-4 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 transition"
-            aria-label="Review your mock test history"
+            aria-label="Review your timed practice history"
           >
             <div>
               <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-                Review your mock tests
+                Review your timed practice
               </div>
               <div className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                See past attempts and compare them side-by-side.
+                See past timed-practice attempts and compare them side-by-side.
               </div>
             </div>
             <span
