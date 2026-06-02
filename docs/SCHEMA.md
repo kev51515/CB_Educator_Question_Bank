@@ -151,6 +151,10 @@ value, which for grids comes from `accepted[0]` — fixed in 0055).
 - Prefer **`short_code`** over `id` in URLs (courses/assignments/discussions).
 - A `CREATE OR REPLACE VIEW` can only **append** columns — never reorder/rename
   existing ones (else `42P16`; the 0057 fix). Add new columns last, or DROP+CREATE.
+- **Views over RLS tables must be `security_invoker = on`** (PG15+) or they run
+  as the view owner and BYPASS the base table's RLS (cross-user data leak). The
+  `assignment_*` views were fixed in 0065; set this on any new view over an
+  RLS-protected table.
 - **Push migrations:** `cd viewer && npm run db:push` (forward extra flags:
   `npm run db:push -- --include-all`). It reads `SUPABASE_DB_PASSWORD` and uses
   the **session pooler** (the direct `db.<ref>.supabase.co` host won't resolve
@@ -164,7 +168,10 @@ value, which for grids comes from `accepted[0]` — fixed in 0055).
 
 ## 6. Migration ledger
 
-`supabase/migrations/0001 … 0061`. **All live on remote (0001–0061).** Recent:
+`supabase/migrations/0001 … 0065`. **Live on remote: 0001–0061 + 0065** (0062–0064
+are a parallel session's; 0063/0064 portfolio-import not yet pushed). Recent:
+- 0065 RLS fix: `assignment_best_attempts` + `assignment_attempts_effective`
+  set `security_invoker = on` (closed a cross-student best-score leak)
 - 0048 full-test schema + RPCs · 0049 DSAT Nov-2023 seed
 - 0050 security audit/cascade · 0051 full-test hardening (timing + drafts)
 - 0052 fix M3-Q16 stem typo · 0053 fix M1-Q13 choice typo
