@@ -109,10 +109,23 @@ export function BulkGradeModal({
     setTemplates(listTemplates(teacherId));
   };
 
-  // Esc to close
+  // Esc to close; Cmd/Ctrl+Enter to apply (when valid).
+  // The handler reads the latest `canApply` via a ref so we don't have to
+  // recompute the listener on every keystroke in the editor.
+  const canApplyRef = useRef<boolean>(false);
+  const handleApplyRef = useRef<() => void>(() => {});
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape" && !busy) onClose();
+      if (e.key === "Escape" && !busy) {
+        onClose();
+        return;
+      }
+      if ((e.metaKey || e.ctrlKey) && e.key === "Enter") {
+        if (canApplyRef.current) {
+          e.preventDefault();
+          handleApplyRef.current();
+        }
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
@@ -158,6 +171,35 @@ export function BulkGradeModal({
     }
     void onApply(patch);
   };
+
+  // Sync refs so the Cmd+Enter handler always sees the latest values without
+  // re-binding the window listener on every keystroke.
+  canApplyRef.current = canApply;
+  handleApplyRef.current = handleApply;
+
+  // Whether the teacher has any unsaved changes in the form. Drives the
+  // Reset button visibility — only show when there's something to discard.
+  const hasChanges =
+    feedbackPresent || scoreRaw.trim().length > 0 || !markAsGraded;
+
+  const handleReset = (): void => {
+    if (busy || !hasChanges) return;
+    setFeedbackHtml("");
+    setScoreRaw("");
+    setMarkAsGraded(true);
+    lastLoadedTemplateIdRef.current = null;
+  };
+
+  // A short summary of what this Apply will actually do — surfaced on the
+  // primary CTA so teachers see "score only" vs "feedback + score" before
+  // committing. Prevents accidental empty-feedback broadcasts.
+  const applySummary = (() => {
+    const parts: string[] = [];
+    if (feedbackPresent) parts.push("feedback");
+    if (scoreNumber !== null && !scoreInvalid) parts.push("score");
+    if (parts.length === 0) return "";
+    return parts.join(" + ");
+  })();
 
   // --- Template handlers ----------------------------------------------------
   const applyTemplateLoad = (tpl: FeedbackTemplate): void => {
@@ -400,6 +442,14 @@ export function BulkGradeModal({
               step="0.01"
               value={scoreRaw}
               onChange={(e) => setScoreRaw(e.target.value)}
+              onBlur={(e) => {
+                // Auto-clamp to 0–100 on blur so a pasted 250 or -5 lands
+                // inside the valid range without the teacher noticing.
+                const n = Number(e.target.value);
+                if (!Number.isFinite(n) || e.target.value.trim() === "") return;
+                if (n < 0) setScoreRaw("0");
+                else if (n > 100) setScoreRaw("100");
+              }}
               disabled={busy}
               placeholder="Leave blank to keep existing scores"
               className="block w-40 min-h-[40px] rounded-lg bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
@@ -432,23 +482,54 @@ export function BulkGradeModal({
           </label>
         </div>
 
-        <footer className="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-end gap-2 bg-slate-50 dark:bg-slate-900/60">
-          <button
-            type="button"
-            onClick={onClose}
-            disabled={busy}
-            className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
-          >
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={handleApply}
-            disabled={!canApply}
-            className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            {busy ? "Applying…" : `Apply to ${count}`}
-          </button>
+        <footer className="px-6 py-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between gap-2 bg-slate-50 dark:bg-slate-900/60 flex-wrap">
+          <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
+            {hasChanges && (
+              <button
+                type="button"
+                onClick={handleReset}
+                disabled={busy}
+                className="min-h-[40px] rounded-lg px-3 py-2 text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+              >
+                Reset
+              </button>
+            )}
+            {canApply && (
+              <span className="hidden sm:inline">
+                <kbd className="px-1.5 py-0.5 rounded bg-white dark:bg-slate-800 ring-1 ring-slate-300 dark:ring-slate-700 text-[10px] font-mono">
+                  ⌘↵
+                </kbd>{" "}
+                to apply
+              </span>
+            )}
+          </div>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onClose}
+              disabled={busy}
+              className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              onClick={handleApply}
+              disabled={!canApply}
+              title={
+                applySummary
+                  ? `Apply ${applySummary} to ${count} attempt${count === 1 ? "" : "s"}`
+                  : undefined
+              }
+              className="min-h-[40px] rounded-lg px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              {busy
+                ? "Applying…"
+                : applySummary
+                  ? `Apply ${applySummary} to ${count}`
+                  : `Apply to ${count}`}
+            </button>
+          </div>
         </footer>
       </div>
       {pendingLoadTemplate && (
