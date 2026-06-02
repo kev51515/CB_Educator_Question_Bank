@@ -11,13 +11,77 @@
  * intended hook-in is a "Admin: invite codes" link inside the teacher
  * console's nav for profile.role === 'admin'.
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { SmartDatePicker } from "../components/SmartDatePicker";
 import { useToast } from "../components/Toast";
 import { EmptyState } from "../components/EmptyState";
 import { SkeletonRows } from "../components/Skeleton";
 import { ConfirmDialog } from "../teacher/ConfirmDialog";
+
+// ----- Filter + sort persistence -----
+type FilterKey = "all" | "active" | "expired" | "revoked";
+type SortKey = "recent" | "oldest" | "expires" | "code";
+
+interface InviteCodesView {
+  filter: FilterKey;
+  sort: SortKey;
+}
+
+const VIEW_STORAGE_KEY = "admin.invites.view";
+const DEFAULT_VIEW: InviteCodesView = { filter: "all", sort: "recent" };
+
+const FILTER_OPTIONS: { key: FilterKey; label: string }[] = [
+  { key: "all", label: "All" },
+  { key: "active", label: "Active" },
+  { key: "expired", label: "Expired" },
+  { key: "revoked", label: "Revoked" },
+];
+
+const SORT_OPTIONS: { key: SortKey; label: string }[] = [
+  { key: "recent", label: "Most recent" },
+  { key: "oldest", label: "Oldest first" },
+  { key: "expires", label: "Expires soonest" },
+  { key: "code", label: "Code (A–Z)" },
+];
+
+function loadView(): InviteCodesView {
+  try {
+    const raw = localStorage.getItem(VIEW_STORAGE_KEY);
+    if (!raw) return DEFAULT_VIEW;
+    const parsed = JSON.parse(raw) as Partial<InviteCodesView>;
+    const filter: FilterKey = ["all", "active", "expired", "revoked"].includes(
+      parsed.filter as string,
+    )
+      ? (parsed.filter as FilterKey)
+      : DEFAULT_VIEW.filter;
+    const sort: SortKey = ["recent", "oldest", "expires", "code"].includes(
+      parsed.sort as string,
+    )
+      ? (parsed.sort as SortKey)
+      : DEFAULT_VIEW.sort;
+    return { filter, sort };
+  } catch {
+    return DEFAULT_VIEW;
+  }
+}
+
+function saveView(view: InviteCodesView): void {
+  try {
+    localStorage.setItem(VIEW_STORAGE_KEY, JSON.stringify(view));
+  } catch {
+    // ignore quota / disabled storage
+  }
+}
+
+function classifyCode(c: InviteCode, now: number): FilterKey {
+  if (c.revoked) return "revoked";
+  if (c.expires_at) {
+    const t = new Date(c.expires_at).getTime();
+    if (Number.isFinite(t) && t < now) return "expired";
+  }
+  return "active";
+}
 
 interface InviteCode {
   code: string;
@@ -120,6 +184,19 @@ export function AdminInviteCodesPage() {
   // Revoke confirm dialog
   const [confirmRevoke, setConfirmRevoke] = useState<InviteCode | null>(null);
   const [revokeBusy, setRevokeBusy] = useState<boolean>(false);
+
+  // Filter + sort (persisted)
+  const [view, setView] = useState<InviteCodesView>(() => loadView());
+  useEffect(() => {
+    saveView(view);
+  }, [view]);
+
+  const setFilter = useCallback((filter: FilterKey) => {
+    setView((v) => ({ ...v, filter }));
+  }, []);
+  const setSort = useCallback((sort: SortKey) => {
+    setView((v) => ({ ...v, sort }));
+  }, []);
 
   const toast = useToast();
 
@@ -269,6 +346,63 @@ export function AdminInviteCodesPage() {
     el?.focus();
   };
 
+  // Counts per bucket (computed once per refresh).
+  const counts = useMemo(() => {
+    const now = Date.now();
+    let active = 0;
+    let expired = 0;
+    let revoked = 0;
+    for (const c of codes) {
+      const cls = classifyCode(c, now);
+      if (cls === "active") active++;
+      else if (cls === "expired") expired++;
+      else revoked++;
+    }
+    return { all: codes.length, active, expired, revoked };
+  }, [codes]);
+
+  // Filtered + sorted list for display.
+  const visibleCodes = useMemo(() => {
+    const now = Date.now();
+    const filtered =
+      view.filter === "all"
+        ? codes.slice()
+        : codes.filter((c) => classifyCode(c, now) === view.filter);
+    const ts = (s: string | null): number => {
+      if (!s) return NaN;
+      const t = new Date(s).getTime();
+      return Number.isFinite(t) ? t : NaN;
+    };
+    switch (view.sort) {
+      case "oldest":
+        filtered.sort((a, b) => (ts(a.created_at) || 0) - (ts(b.created_at) || 0));
+        break;
+      case "expires":
+        filtered.sort((a, b) => {
+          const at = ts(a.expires_at);
+          const bt = ts(b.expires_at);
+          const aNull = Number.isNaN(at);
+          const bNull = Number.isNaN(bt);
+          if (aNull && bNull) return 0;
+          if (aNull) return 1; // nulls last
+          if (bNull) return -1;
+          return at - bt;
+        });
+        break;
+      case "code":
+        filtered.sort((a, b) => a.code.localeCompare(b.code));
+        break;
+      case "recent":
+      default:
+        filtered.sort((a, b) => (ts(b.created_at) || 0) - (ts(a.created_at) || 0));
+        break;
+    }
+    return filtered;
+  }, [codes, view.filter, view.sort]);
+
+  const activeFilterLabel =
+    FILTER_OPTIONS.find((o) => o.key === view.filter)?.label ?? "All";
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
       <header>
@@ -386,6 +520,91 @@ export function AdminInviteCodesPage() {
             />
           </div>
         ) : (
+          <>
+            {/* Filter pills + sort */}
+            <div className="px-5 py-3 border-b border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-3">
+              <div
+                role="tablist"
+                aria-label="Filter codes by status"
+                className="flex flex-wrap items-center gap-1.5"
+              >
+                {FILTER_OPTIONS.map((opt) => {
+                  const count =
+                    opt.key === "all"
+                      ? counts.all
+                      : opt.key === "active"
+                        ? counts.active
+                        : opt.key === "expired"
+                          ? counts.expired
+                          : counts.revoked;
+                  const selected = view.filter === opt.key;
+                  return (
+                    <button
+                      key={opt.key}
+                      type="button"
+                      role="tab"
+                      aria-selected={selected}
+                      tabIndex={selected ? 0 : -1}
+                      onClick={() => setFilter(opt.key)}
+                      className={
+                        "inline-flex items-center gap-1.5 rounded-full px-3 py-2 text-sm font-medium min-h-[40px] transition-colors " +
+                        (selected
+                          ? "bg-indigo-600 text-white hover:bg-indigo-700"
+                          : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700")
+                      }
+                    >
+                      <span>{opt.label}</span>
+                      <span
+                        className={
+                          "inline-flex items-center justify-center rounded-full px-1.5 min-w-[1.5rem] text-xs font-semibold " +
+                          (selected
+                            ? "bg-white/20 text-white"
+                            : "bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 ring-1 ring-slate-200 dark:ring-slate-700")
+                        }
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+              <label className="inline-flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+                <span className="sr-only">Sort codes</span>
+                <span aria-hidden>Sort</span>
+                <select
+                  aria-label="Sort codes"
+                  value={view.sort}
+                  onChange={(e) => setSort(e.target.value as SortKey)}
+                  className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 min-h-[40px] focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  {SORT_OPTIONS.map((o) => (
+                    <option key={o.key} value={o.key}>
+                      {o.label}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <div className="sr-only" aria-live="polite" role="status">
+                Showing {visibleCodes.length} {activeFilterLabel.toLowerCase()}{" "}
+                {visibleCodes.length === 1 ? "code" : "codes"}.
+              </div>
+            </div>
+            {visibleCodes.length === 0 ? (
+              <div className="px-5 py-8 text-center">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  No {activeFilterLabel.toLowerCase()} codes
+                </p>
+                {view.filter !== "all" && (
+                  <button
+                    type="button"
+                    onClick={() => setFilter("all")}
+                    className="mt-2 inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 min-h-[40px]"
+                  >
+                    Show all
+                  </button>
+                )}
+              </div>
+            ) : (
           <div className="overflow-x-auto">
             <table className="min-w-full text-sm">
               <thead className="bg-slate-50 dark:bg-slate-800/60">
@@ -399,8 +618,9 @@ export function AdminInviteCodesPage() {
                 </tr>
               </thead>
               <tbody>
-                {codes.map((c) => {
+                {visibleCodes.map((c) => {
                   const max = c.max_uses === null ? "∞" : String(c.max_uses);
+                  const status = classifyCode(c, Date.now());
                   return (
                     <tr
                       key={c.code}
@@ -432,9 +652,13 @@ export function AdminInviteCodesPage() {
                         {formatRelative(c.expires_at)}
                       </td>
                       <td className="px-5 py-2">
-                        {c.revoked ? (
+                        {status === "revoked" ? (
                           <span className="inline-flex items-center rounded-full bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 text-xs font-medium px-2 py-0.5">
                             Revoked
+                          </span>
+                        ) : status === "expired" ? (
+                          <span className="inline-flex items-center rounded-full bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 text-xs font-medium px-2 py-0.5">
+                            Expired
                           </span>
                         ) : (
                           <span className="inline-flex items-center rounded-full bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 text-xs font-medium px-2 py-0.5">
@@ -459,6 +683,8 @@ export function AdminInviteCodesPage() {
               </tbody>
             </table>
           </div>
+            )}
+          </>
         )}
       </section>
 

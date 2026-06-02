@@ -249,6 +249,7 @@ export function CourseSettings() {
                   }
                 }}
                 maxLength={120}
+                aria-label="Course name"
                 className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
               />
             ) : (
@@ -287,7 +288,9 @@ export function CourseSettings() {
               value={descriptionDraft}
               onChange={(html) => {
                 setDescriptionDraft(html);
-                setDescriptionDirty(true);
+                // Clear dirty if user has manually reverted to the saved value
+                // (otherwise Save stays enabled and clicking it is a no-op).
+                setDescriptionDirty(html !== (cls.description ?? ""));
               }}
               placeholder="What's this course for?"
               minHeight={120}
@@ -333,6 +336,7 @@ export function CourseSettings() {
                 onClick={() => {
                   void copyToClipboard(cls.short_code, "Short code");
                 }}
+                aria-label="Copy short code"
                 className="rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-800 px-2.5 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
               >
                 Copy
@@ -358,6 +362,7 @@ export function CourseSettings() {
               onClick={() => {
                 void copyToClipboard(cls.join_code, "Join code");
               }}
+              aria-label="Copy join code"
               className="rounded-md ring-1 ring-slate-300 dark:ring-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-xs font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700"
             >
               Copy
@@ -496,8 +501,20 @@ export function CourseSettings() {
               </p>
               <input
                 type="text"
+                autoFocus
                 value={deleteConfirmText}
                 onChange={(e) => setDeleteConfirmText(e.target.value)}
+                onKeyDown={(e) => {
+                  if (
+                    e.key === "Enter" &&
+                    deleteConfirmText.trim() === cls.name &&
+                    !actionBusy
+                  ) {
+                    e.preventDefault();
+                    void onDelete();
+                  }
+                }}
+                aria-label={`Type course name to confirm deletion: ${cls.name}`}
                 className="w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-rose-500"
                 placeholder={cls.name}
               />
