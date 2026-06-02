@@ -35,6 +35,7 @@ import {
   type AnnouncementTargetCourse,
 } from "../teacher/AnnouncementFormModal";
 import { NeedsAttentionPanel } from "./NeedsAttentionPanel";
+import { TestReleaseNudge } from "./TestReleaseNudge";
 import { CohortSummaryWidget } from "./CohortSummaryWidget";
 
 // ---------------------------------------------------------------------------
@@ -450,6 +451,8 @@ export function DashboardPage() {
         </header>
 
         {profile?.id && <NeedsAttentionPanel teacherId={profile.id} />}
+
+        {profile?.id && <TestReleaseNudge />}
 
         {profile?.id && <CohortSummaryWidget teacherId={profile.id} />}
 
