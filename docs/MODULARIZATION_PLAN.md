@@ -72,3 +72,24 @@ sub-sections + one data hook. Same recipe.
 `FullTestCatalog`, `useFullTests`, `TimerSetup` (split from `TimerSession`),
 `satScore`, and the `patchModule`/`patchItem` additions to `useCourseModules`
 — new logic went into small focused modules rather than the monsters.
+
+## Step 1 progress (2026-06)
+| File | Before → after | Result |
+|---|---|---|
+| `CourseMaterials.tsx` | 1199 → 638 | ✅ split: `materialsHelpers.ts`, `MaterialCard.tsx`, `EditMaterialModal.tsx` |
+| `SidebarV2.tsx` | 989 → 579 | ✅ split: `sidebarHelpers.ts`, `DomainSkillTree.tsx`, `StatusFilter.tsx` |
+| `TeacherAttemptDetailView.tsx` | 1025 → 1003 | ◑ monolithic — only `teacherAttemptGradingHelpers.ts` extractable |
+| `CalendarPage.tsx` | — | ⏸ deferred — concurrent session was rewriting it live (808 → 1133) |
+| `App.tsx` | — | ⏸ monolithic god-component (40+ useStates); not a pure-move target |
+
+**Key insight — two kinds of "large file":**
+1. **Composable** (clear `function X(){return <JSX>}` sub-components + pure
+   helpers) → splits beautifully with pure mechanical extraction.
+   `CourseMaterials` and `SidebarV2` were this.
+2. **Monolithic god-components** (one giant function, dozens of interdependent
+   `useState`/`useEffect`, no free-standing sub-components) → pure moves yield
+   almost nothing. Real reduction needs **behavior-preserving decomposition**
+   (lift JSX sections into child components with explicit props, or hooks for
+   state clusters). That's a deliberate, reviewed refactor — NOT safe to do
+   "mechanically/autonomously". `App.tsx`, `TeacherAttemptDetailView`, and the
+   main body of `ModulesPage` are this kind; budget them as real refactor tasks.
