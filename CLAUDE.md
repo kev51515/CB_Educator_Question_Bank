@@ -223,6 +223,18 @@ imports can land as a subtree of an existing item rather than always at root
 (backward-compat via `DEFAULT NULL`; old 3-arg overload dropped to avoid
 PostgREST signature ambiguity).
 
+**Wave 21H (2026-06-03) — 0069 (one migration, closes Task #177):**
+0069 = `fanout_announcement_now(p_announcement_id uuid)` per-row RPC for the
+teacher-facing "Publish now & send notifications immediately" option (Round 23
+follow-up to Round 22 publish-now). Same INSERT-into-notifications + UPDATE
+notifications_fanout_at logic as the 0058 cron worker, but scoped to a single
+row + gated on `is_teacher_of_course`. Stable error codes: `not_authenticated`
+/ `not_authorized` / `not_found`. Returns 1 if fanned out, 0 if already-done /
+draft / not-yet-due. `FOR UPDATE` on the row serializes against the cron
+worker — a race lost to cron returns 0 silently. SECURITY DEFINER + `SET
+search_path = public, auth` per CLAUDE.md rule. `GRANT EXECUTE TO
+authenticated`.
+
 ### Audit trail (post-Wave-20)
 
 Migration 0050 added an observational `BEFORE DELETE` trigger on `profiles`
