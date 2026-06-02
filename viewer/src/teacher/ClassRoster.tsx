@@ -942,9 +942,13 @@ export function ClassRoster() {
               s.managed && typeof s.roster_code === "string" && s.roster_code.length > 0,
             )
             .map<PrintableLogin>((s) => ({
+              id: s.student_id,
               name: s.display_name ?? s.roster_code,
               code: s.roster_code,
             }))}
+          onChanged={() => {
+            void refresh();
+          }}
           onClose={() => setShowPrintLogins(false)}
         />
       )}
