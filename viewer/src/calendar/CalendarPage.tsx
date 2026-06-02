@@ -11,7 +11,7 @@
  *
  * Native Date + Intl only, zero new deps.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import {
@@ -19,6 +19,8 @@ import {
   coursePortfolioPath,
 } from "../lib/routes";
 import { Skeleton, SkeletonRows } from "../components/Skeleton";
+import { useMediaQuery } from "../hooks";
+import { useFocusTrap } from "../hooks/useFocusTrap";
 
 type EventKind = "assignment" | "portfolio";
 
@@ -93,6 +95,13 @@ const WEEKDAY_FMT = new Intl.DateTimeFormat(undefined, { weekday: "short" });
 const DATE_FMT = new Intl.DateTimeFormat(undefined, {
   year: "numeric",
   month: "short",
+  day: "numeric",
+});
+
+const FULL_DATE_FMT = new Intl.DateTimeFormat(undefined, {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
   day: "numeric",
 });
 
@@ -332,12 +341,262 @@ function EventChip({ event, onClick }: EventChipProps) {
   );
 }
 
+interface DayPopoverProps {
+  date: Date;
+  events: CalendarEvent[];
+  isMobile: boolean;
+  anchorRect: DOMRect | null;
+  onClose: () => void;
+  onEventClick: (event: CalendarEvent) => void;
+}
+
+/**
+ * Click-day detail panel.
+ *
+ * Desktop: ~280px popover anchored beside the day cell with viewport-flip.
+ * Mobile: full-width bottom sheet (much easier to tap).
+ *
+ * Renders as role="dialog" aria-modal="true" with useFocusTrap so Tab/Shift+Tab
+ * cycle inside. Esc and outside click close. The popover only renders in
+ * month view (the consumer gates the openDayKey state).
+ */
+function DayPopover({
+  date,
+  events,
+  isMobile,
+  anchorRect,
+  onClose,
+  onEventClick,
+}: DayPopoverProps) {
+  const panelRef = useRef<HTMLDivElement>(null);
+  const labelId = useMemo(
+    () => `day-popover-label-${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`,
+    [date],
+  );
+  useFocusTrap(panelRef, true);
+
+  // Esc closes.
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        onClose();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  // Desktop: position next to the day cell with viewport flip so the popover
+  // doesn't clip at the right/bottom edges of the screen. Recompute on mount
+  // and on window resize. We deliberately don't subscribe to scroll because
+  // the click immediately closes any open popover that's far from the cursor.
+  const [coords, setCoords] = useState<{ left: number; top: number } | null>(
+    null,
+  );
+  useEffect(() => {
+    if (isMobile) {
+      setCoords(null);
+      return;
+    }
+    if (!anchorRect) return;
+    const compute = () => {
+      const popW = 280;
+      const popH = Math.min(panelRef.current?.offsetHeight ?? 320, 480);
+      const margin = 8;
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      // Prefer right of cell, flip to left if it'd clip
+      let left = anchorRect.right + margin;
+      if (left + popW > vw - margin) {
+        left = anchorRect.left - margin - popW;
+      }
+      if (left < margin) left = Math.max(margin, vw - margin - popW);
+      // Prefer top-aligned with cell, flip up if it'd clip
+      let top = anchorRect.top;
+      if (top + popH > vh - margin) {
+        top = Math.max(margin, vh - margin - popH);
+      }
+      if (top < margin) top = margin;
+      setCoords({ left, top });
+    };
+    compute();
+    window.addEventListener("resize", compute);
+    return () => window.removeEventListener("resize", compute);
+  }, [anchorRect, isMobile]);
+
+  if (!isMobile && !coords) {
+    // Wait one tick so we don't flash an off-screen popover.
+    return (
+      <>
+        <div
+          className="fixed inset-0 z-40 bg-slate-900/30"
+          aria-hidden="true"
+          onClick={onClose}
+        />
+        <div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={labelId}
+          className="fixed z-50 opacity-0 pointer-events-none"
+          style={{ left: -9999, top: -9999 }}
+        >
+          <DayPopoverContent
+            date={date}
+            events={events}
+            labelId={labelId}
+            onClose={onClose}
+            onEventClick={onEventClick}
+          />
+        </div>
+      </>
+    );
+  }
+
+  if (isMobile) {
+    return (
+      <>
+        <div
+          className="fixed inset-0 z-40 bg-slate-900/30 motion-safe:transition-opacity"
+          aria-hidden="true"
+          onClick={onClose}
+        />
+        <div
+          ref={panelRef}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby={labelId}
+          className="fixed inset-x-0 bottom-0 z-50 max-h-[80vh] rounded-t-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 border-l-4 border-l-indigo-500 shadow-2xl flex flex-col motion-safe:transition-transform"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <DayPopoverContent
+            date={date}
+            events={events}
+            labelId={labelId}
+            onClose={onClose}
+            onEventClick={onEventClick}
+          />
+        </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div
+        className="fixed inset-0 z-40 bg-slate-900/30 motion-safe:transition-opacity"
+        aria-hidden="true"
+        onClick={onClose}
+      />
+      <div
+        ref={panelRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={labelId}
+        className="fixed z-50 w-[280px] max-h-[60vh] rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 border-l-4 border-l-indigo-500 shadow-xl flex flex-col motion-safe:transition-transform"
+        style={{ left: coords!.left, top: coords!.top }}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <DayPopoverContent
+          date={date}
+          events={events}
+          labelId={labelId}
+          onClose={onClose}
+          onEventClick={onEventClick}
+        />
+      </div>
+    </>
+  );
+}
+
+interface DayPopoverContentProps {
+  date: Date;
+  events: CalendarEvent[];
+  labelId: string;
+  onClose: () => void;
+  onEventClick: (event: CalendarEvent) => void;
+}
+
+function DayPopoverContent({
+  date,
+  events,
+  labelId,
+  onClose,
+  onEventClick,
+}: DayPopoverContentProps) {
+  return (
+    <>
+      <div className="flex items-start gap-2 px-4 pt-3 pb-2 border-b border-slate-100 dark:border-slate-800">
+        <h3
+          id={labelId}
+          className="text-sm font-semibold text-slate-900 dark:text-slate-100 flex-1"
+        >
+          {FULL_DATE_FMT.format(date)}
+        </h3>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close day view"
+          data-autofocus
+          className="rounded-md min-h-[32px] min-w-[32px] inline-flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+        >
+          ×
+        </button>
+      </div>
+      <div className="overflow-y-auto p-2 flex flex-col gap-1">
+        {events.length === 0 ? (
+          <p className="text-xs text-slate-500 dark:text-slate-400 px-2 py-3">
+            Nothing due this day.
+          </p>
+        ) : (
+          events.map((ev) => {
+            const typeLabel =
+              ev.kind === "assignment" ? "Assignment" : "Portfolio item";
+            return (
+              <button
+                key={`${ev.kind}:${ev.id}`}
+                type="button"
+                onClick={() => {
+                  onEventClick(ev);
+                  onClose();
+                }}
+                aria-label={`${typeLabel}: ${ev.title} in ${ev.courseName} due ${TIME_FMT.format(ev.due_at)}`}
+                className="text-left rounded-lg min-h-[40px] px-3 py-2 hover:bg-slate-50 dark:hover:bg-slate-800/60 focus:bg-slate-50 dark:focus:bg-slate-800/60 outline-none ring-1 ring-transparent focus:ring-indigo-400 transition-colors"
+              >
+                <div className="flex items-center gap-2">
+                  <span
+                    className={`inline-block rounded px-1.5 py-0.5 text-[10px] font-medium ${
+                      ev.kind === "assignment"
+                        ? "bg-indigo-100 text-indigo-800 dark:bg-indigo-950/60 dark:text-indigo-200"
+                        : "bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-200"
+                    }`}
+                  >
+                    {TIME_FMT.format(ev.due_at)}
+                  </span>
+                </div>
+                <div className="mt-1 text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
+                  {ev.title}
+                </div>
+                <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
+                  {ev.courseName}
+                </div>
+              </button>
+            );
+          })
+        )}
+      </div>
+    </>
+  );
+}
+
 interface MonthCellProps {
   date: Date;
   inMonth: boolean;
   isToday: boolean;
   events: CalendarEvent[];
   onEventClick: (event: CalendarEvent) => void;
+  onDayClick: (date: Date, rect: DOMRect) => void;
 }
 
 function MonthCell({
@@ -346,16 +605,45 @@ function MonthCell({
   isToday,
   events,
   onEventClick,
+  onDayClick,
 }: MonthCellProps) {
   const [expanded, setExpanded] = useState(false);
   const visible = expanded ? events : events.slice(0, 3);
   const hidden = events.length - visible.length;
+  const cellRef = useRef<HTMLDivElement>(null);
+  const hasEvents = events.length > 0;
+
+  const handleCellClick = () => {
+    if (!hasEvents) return;
+    const rect = cellRef.current?.getBoundingClientRect();
+    if (rect) onDayClick(date, rect);
+  };
 
   return (
     <div
-      className={`min-h-[96px] bg-white dark:bg-slate-900 p-1.5 flex flex-col gap-1 ${
+      ref={cellRef}
+      onClick={handleCellClick}
+      onKeyDown={(e) => {
+        if (!hasEvents) return;
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          handleCellClick();
+        }
+      }}
+      role={hasEvents ? "button" : undefined}
+      tabIndex={hasEvents ? 0 : undefined}
+      aria-label={
+        hasEvents
+          ? `View ${events.length} event${events.length === 1 ? "" : "s"} on ${FULL_DATE_FMT.format(date)}`
+          : undefined
+      }
+      className={`min-h-[96px] bg-white dark:bg-slate-900 p-1.5 flex flex-col gap-1 outline-none ${
         inMonth ? "" : "opacity-50"
-      } ${isToday ? "ring-2 ring-indigo-500 ring-inset" : ""}`}
+      } ${isToday ? "ring-2 ring-indigo-500 ring-inset" : ""} ${
+        hasEvents
+          ? "cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-800/40 focus-visible:ring-2 focus-visible:ring-indigo-400"
+          : ""
+      }`}
     >
       <div className="text-xs font-medium text-slate-600 dark:text-slate-400">
         {date.getDate()}
@@ -394,7 +682,8 @@ interface MonthViewProps {
 function MonthView({ anchor, events, onEventClick }: MonthViewProps) {
   const cells = useMemo(() => buildMonthGrid(anchor), [anchor]);
   const today = useMemo(() => new Date(), []);
-  // Bucket events by yyyy-mm-dd key.
+  // Bucket events by yyyy-mm-dd key. For multi-day spans (start/end on
+  // different days) we include the event in every covered day.
   const byDay = useMemo(() => {
     const map = new Map<string, CalendarEvent[]>();
     for (const ev of events) {
@@ -412,6 +701,31 @@ function MonthView({ anchor, events, onEventClick }: MonthViewProps) {
   // Weekday header row uses the first 7 grid cells so locale formatting "just
   // works" (Mon-first locales still get Sun-first columns; trade-off is fine).
   const weekdays = useMemo(() => cells.slice(0, 7), [cells]);
+
+  // Click-day popover state. We hold the anchor element's bounding rect at
+  // open time so the popover knows where to dock. Only one open at a time.
+  const [openDayKey, setOpenDayKey] = useState<string | null>(null);
+  const [openDayRect, setOpenDayRect] = useState<DOMRect | null>(null);
+  const [openDayDate, setOpenDayDate] = useState<Date | null>(null);
+
+  // Mobile renders the popover as a bottom sheet instead of an absolute
+  // positioned popover (much easier to tap with a thumb).
+  const isMobile = useMediaQuery("(max-width: 640px)");
+
+  const handleDayClick = (date: Date, rect: DOMRect) => {
+    const key = `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+    setOpenDayKey(key);
+    setOpenDayDate(date);
+    setOpenDayRect(rect);
+  };
+
+  const handleClose = () => {
+    setOpenDayKey(null);
+    setOpenDayDate(null);
+    setOpenDayRect(null);
+  };
+
+  const openDayEvents = openDayKey ? byDay.get(openDayKey) ?? [] : [];
 
   return (
     <div className="rounded-xl overflow-hidden overflow-x-auto ring-1 ring-slate-200 dark:ring-slate-800">
@@ -438,11 +752,22 @@ function MonthView({ anchor, events, onEventClick }: MonthViewProps) {
               isToday={isSameDay(d, today)}
               events={dayEvents}
               onEventClick={onEventClick}
+              onDayClick={handleDayClick}
             />
           );
         })}
       </div>
       </div>
+      {openDayKey && openDayDate && (
+        <DayPopover
+          date={openDayDate}
+          events={openDayEvents}
+          isMobile={isMobile}
+          anchorRect={openDayRect}
+          onClose={handleClose}
+          onEventClick={onEventClick}
+        />
+      )}
     </div>
   );
 }

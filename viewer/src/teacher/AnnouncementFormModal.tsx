@@ -28,6 +28,108 @@ import { SmartDatePicker, useToast } from "../components";
 import type { Announcement } from "./useAnnouncements";
 import { useFocusTrap } from "../hooks";
 
+/**
+ * Schedule-specific quick presets — these complement (don't replace) the
+ * generic presets baked into <SmartDatePicker/>. The picker's defaults
+ * (Today, Tomorrow, Friday, In 1 week, …) snap to *end of day*, which is
+ * the right default for "due dates" but the wrong one for "publish at".
+ * Maya wanted morning-of presets so a Sunday-night scheduled post arrives
+ * in students' inboxes at a sensible hour.
+ */
+type SchedulePresetKey = "1h" | "tomorrow-9" | "next-mon-9";
+
+interface SchedulePreset {
+  key: SchedulePresetKey;
+  label: string;
+  /** Returns ISO string at the preset's intended moment, computed from `now`. */
+  toIso: (now: Date) => string;
+}
+
+function addHours(d: Date, n: number): Date {
+  const x = new Date(d);
+  x.setHours(x.getHours() + n);
+  return x;
+}
+
+function nextCalendarDayAt(now: Date, hour: number, minute = 0): Date {
+  const x = new Date(now);
+  x.setDate(x.getDate() + 1);
+  x.setHours(hour, minute, 0, 0);
+  return x;
+}
+
+/**
+ * Next Monday at the given local hour. If today *is* Monday, returns the
+ * Monday after next (i.e. 7 days from today), per the requested spec — we
+ * never schedule for "today" under a label that says "Next Monday".
+ */
+function nextMondayAt(now: Date, hour: number, minute = 0): Date {
+  // JS getDay(): Sun=0, Mon=1, …
+  const today = now.getDay();
+  const daysUntilNextMonday = ((1 - today + 7) % 7) || 7;
+  const x = new Date(now);
+  x.setDate(x.getDate() + daysUntilNextMonday);
+  x.setHours(hour, minute, 0, 0);
+  return x;
+}
+
+const SCHEDULE_PRESETS: SchedulePreset[] = [
+  {
+    key: "1h",
+    label: "In 1 hour",
+    toIso: (now) => addHours(now, 1).toISOString(),
+  },
+  {
+    key: "tomorrow-9",
+    label: "Tomorrow 9am",
+    toIso: (now) => nextCalendarDayAt(now, 9).toISOString(),
+  },
+  {
+    key: "next-mon-9",
+    label: "Next Monday 9am",
+    toIso: (now) => nextMondayAt(now, 9).toISOString(),
+  },
+];
+
+/** Match a stored ISO value against a preset, within a 60-second window. */
+function matchSchedulePreset(value: string | null): SchedulePresetKey | null {
+  if (!value) return null;
+  const t = new Date(value).getTime();
+  if (Number.isNaN(t)) return null;
+  const now = new Date();
+  for (const p of SCHEDULE_PRESETS) {
+    if (Math.abs(new Date(p.toIso(now)).getTime() - t) < 60_000) return p.key;
+  }
+  return null;
+}
+
+/**
+ * Humanized "in X" hint built on Intl.RelativeTimeFormat. Returns null for
+ * invalid or past times — the caller renders the rose error in those cases
+ * instead of a misleading "in -3 minutes".
+ */
+function relativePublishHint(iso: string | null): string | null {
+  if (!iso) return null;
+  const t = new Date(iso).getTime();
+  if (Number.isNaN(t)) return null;
+  const ms = t - Date.now();
+  if (ms <= 0) return null;
+  try {
+    const fmt = new Intl.RelativeTimeFormat(undefined, { numeric: "auto" });
+    const minutes = Math.round(ms / 60_000);
+    const hours = Math.round(ms / 3_600_000);
+    const days = Math.round(ms / 86_400_000);
+    if (ms < 3_600_000) return fmt.format(minutes, "minute");
+    if (ms < 86_400_000) return fmt.format(hours, "hour");
+    return fmt.format(days, "day");
+  } catch {
+    const days = Math.round(ms / 86_400_000);
+    if (days === 0) return "today";
+    if (days === 1) return "tomorrow";
+    return `in ${days} days`;
+  }
+}
+
 export type AnnouncementFormMode = "create" | "edit";
 
 /**
@@ -117,10 +219,15 @@ export function AnnouncementFormModal({
   const [selectedCourseIds, setSelectedCourseIds] = useState<string[]>([]);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // `nowTick` is bumped on a 30s interval so the live "in X" hint stays
+  // fresh while the modal sits open. It's also bumped whenever publishAt
+  // changes, so the hint recomputes immediately on user input.
+  const [nowTick, setNowTick] = useState(0);
   const toast = useToast();
 
   const titleRef = useRef<HTMLInputElement | null>(null);
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const publishFieldRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, open);
 
   // Edit mode never shows the picker — we always operate on the existing row.
@@ -181,9 +288,44 @@ export function AnnouncementFormModal({
     setSelectedCourseIds([]);
   }, []);
 
+  // Tick the clock every 30s while the modal is open so the "Will publish
+  // in X" hint stays honest. Cheaper than 1s, more responsive than 60s.
+  useEffect(() => {
+    if (!open) return;
+    const id = window.setInterval(() => setNowTick((t) => t + 1), 30_000);
+    return () => window.clearInterval(id);
+  }, [open]);
+
   if (!open) return null;
 
   const isScheduled = publishAt !== null && publishAt !== "";
+
+  // ---- schedule validation --------------------------------------------
+  // Re-derive on every render so it stays in sync with both `publishAt`
+  // and `nowTick` (the 30s heartbeat). Empty = "publish now" = valid.
+  // Invalid date string (browser quirk) = invalid.
+  // Past datetime = invalid.
+  let scheduleInPast = false;
+  let scheduleInvalidFormat = false;
+  if (isScheduled && publishAt) {
+    const t = new Date(publishAt).getTime();
+    if (Number.isNaN(t)) {
+      scheduleInvalidFormat = true;
+    } else if (t <= Date.now()) {
+      scheduleInPast = true;
+    }
+  }
+  // Touch `nowTick` so React re-renders the hint without a lint warning
+  // about an unused variable (the useEffect-based ticker only sets it).
+  void nowTick;
+
+  const scheduleError = scheduleInPast
+    ? "Schedule time must be in the future."
+    : scheduleInvalidFormat
+      ? "That date doesn't look right — pick a valid date and time."
+      : null;
+  const scheduleHint = scheduleError ? null : relativePublishHint(publishAt);
+  const activeSchedulePreset = matchSchedulePreset(publishAt);
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -205,6 +347,30 @@ export function AnnouncementFormModal({
     if (trimmedBody.length > MAX_BODY_LEN) {
       setError(`Message must be ${MAX_BODY_LEN} characters or fewer.`);
       return;
+    }
+
+    // Schedule guardrails — the live UI already disables Save while the
+    // schedule is invalid, but a keyboard user could still submit a stale
+    // form if the time slipped into the past between selection and submit.
+    // Belt-and-suspenders: re-check here, toast + focus + abort.
+    if (isScheduled && publishAt) {
+      const t = new Date(publishAt).getTime();
+      if (Number.isNaN(t)) {
+        toast.error(
+          "Invalid schedule",
+          "That date doesn't look right — pick a valid date and time.",
+        );
+        publishFieldRef.current?.focus();
+        return;
+      }
+      if (t <= Date.now()) {
+        toast.error(
+          "Schedule time must be in the future",
+          "Pick a later time, or clear the field to publish now.",
+        );
+        publishFieldRef.current?.focus();
+        return;
+      }
     }
 
     // Pick the effective target list. In edit mode we always work on the row
@@ -485,13 +651,87 @@ export function AnnouncementFormModal({
             </div>
           </label>
 
-          <div className="block">
+          <div
+            ref={publishFieldRef}
+            tabIndex={-1}
+            className="block focus:outline-none"
+          >
             <SmartDatePicker
               label="Publish at (optional)"
               value={publishAt}
-              onChange={setPublishAt}
+              onChange={(next) => {
+                setPublishAt(next);
+                // Force the live hint + validation to recompute on the same
+                // render tick rather than wait for the 30s heartbeat.
+                setNowTick((t) => t + 1);
+              }}
             />
-            {isScheduled && publishAt && (
+
+            {/* Schedule quick-presets. These intentionally live OUTSIDE the
+                SmartDatePicker because the picker's built-in presets snap to
+                end-of-day (right for due dates, wrong for publish-at).      */}
+            <div
+              role="group"
+              aria-label="Quick schedule options"
+              className="mt-2 flex flex-wrap items-center gap-1.5"
+            >
+              {SCHEDULE_PRESETS.map((p) => {
+                const active = activeSchedulePreset === p.key;
+                return (
+                  <button
+                    key={p.key}
+                    type="button"
+                    onClick={() => {
+                      setPublishAt(p.toIso(new Date()));
+                      setNowTick((t) => t + 1);
+                    }}
+                    aria-pressed={active}
+                    className={
+                      "rounded-full px-3 py-2 md:py-1.5 text-xs font-medium min-h-[40px] md:min-h-0 motion-safe:transition-colors " +
+                      (active
+                        ? "bg-indigo-600 text-white ring-1 ring-indigo-600 dark:ring-indigo-500"
+                        : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 hover:text-indigo-700 dark:hover:text-indigo-200")
+                    }
+                  >
+                    {p.label}
+                  </button>
+                );
+              })}
+              <button
+                type="button"
+                onClick={() => {
+                  setPublishAt(null);
+                  setNowTick((t) => t + 1);
+                }}
+                disabled={!isScheduled}
+                className="rounded-full px-3 py-2 md:py-1.5 text-xs font-medium min-h-[40px] md:min-h-0 motion-safe:transition-colors text-slate-500 dark:text-slate-400 ring-1 ring-dashed ring-slate-300 dark:ring-slate-700 hover:text-slate-700 dark:hover:text-slate-200 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:text-slate-500"
+              >
+                Clear
+              </button>
+            </div>
+
+            {/* Live "in X" hint OR rose past-time error. Mutually exclusive. */}
+            {scheduleError ? (
+              <p
+                role="alert"
+                className="mt-1.5 text-xs text-rose-600 dark:text-rose-400"
+              >
+                {scheduleError}
+              </p>
+            ) : scheduleHint ? (
+              <p
+                aria-live="polite"
+                className="mt-1.5 text-xs text-slate-500 dark:text-slate-400"
+              >
+                Will publish {scheduleHint}.
+              </p>
+            ) : !isScheduled ? (
+              <p className="mt-1.5 text-xs text-slate-400 dark:text-slate-500">
+                Leave blank to publish now.
+              </p>
+            ) : null}
+
+            {isScheduled && publishAt && !scheduleError && (
               <p className="mt-1 text-xs text-amber-700 dark:text-amber-300">
                 Students won&apos;t see this until {formatScheduled(publishAt)}.
               </p>
@@ -523,7 +763,7 @@ export function AnnouncementFormModal({
             </button>
             <button
               type="submit"
-              disabled={busy}
+              disabled={busy || scheduleError !== null}
               className="flex-1 rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
             >
               {submitLabel}
