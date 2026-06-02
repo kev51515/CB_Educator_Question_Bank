@@ -867,6 +867,17 @@ interface ModuleNodeViewProps {
   onMoveModule: (m: ModuleNode) => void;
   onIndentModule: (m: ModuleNode, siblings: readonly ModuleNode[], idx: number) => Promise<void>;
   onOutdentModule: (m: ModuleNode) => Promise<void>;
+  /**
+   * Alt+↑ / Alt+↓ keyboard reorder, fired from the focused grip handle.
+   * Swaps the module with its previous/next sibling within the same parent.
+   * No-op at boundaries (first/last among siblings).
+   */
+  onKeyboardReorderModule: (
+    m: ModuleNode,
+    siblings: readonly ModuleNode[],
+    idx: number,
+    direction: "up" | "down",
+  ) => Promise<void>;
   onMoveItem: (item: ModuleItem) => void;
   onToggleItemCompleted: (itemId: string, next: boolean) => Promise<void>;
   // Drag wiring
@@ -924,6 +935,11 @@ interface ModuleHeaderProps {
   onMoveModule: () => void;
   onIndentModule: () => Promise<void>;
   onOutdentModule: () => Promise<void>;
+  /**
+   * Fired by Alt+↑ / Alt+↓ on the focused grip handle. Direction is the
+   * desired motion ("up" = swap with previous sibling).
+   */
+  onKeyboardReorderModule: (direction: "up" | "down") => Promise<void>;
   onMoveItem: (item: ModuleItem) => void;
   onToggleItemCompleted: (itemId: string, next: boolean) => Promise<void>;
   onModuleDragStart: () => void;
@@ -977,6 +993,7 @@ function ModuleCard({
   onMoveModule,
   onIndentModule,
   onOutdentModule,
+  onKeyboardReorderModule,
   onMoveItem,
   onToggleItemCompleted,
   onModuleDragStart,
@@ -1111,11 +1128,12 @@ function ModuleCard({
   const isDragging = draggedModuleId === module.id;
   const isDescendantOfDragged = draggedDescendants.has(module.id);
   const dragActive = draggedModuleId !== null && !isDragging && !isDescendantOfDragged;
-  // `flatModules` and `siblings` are part of the recursive contract; ModuleCard
-  // doesn't read them directly but ModuleNodeView relies on them to build the
-  // tree. Keep destructured for TS visibility.
+  // `flatModules` is part of the recursive contract; ModuleCard doesn't read
+  // it directly but ModuleNodeView relies on it to build the tree. Keep
+  // destructured for TS visibility. `siblings` IS now read directly by the
+  // keyboard-reorder wiring on the grip handle, so it no longer needs the
+  // void-suppress.
   void flatModules;
-  void siblings;
 
   // Student locked surface: render header + items but disable interactions.
   const studentLockedClass =
@@ -1225,7 +1243,54 @@ function ModuleCard({
         } ${isDragging ? "animate-pulse" : ""}`}
       >
         {canEdit && (
-          <DragHandle className="text-slate-500 flex-none" compact={depth > 0} />
+          (() => {
+            // Position context for the aria-label so screen readers can
+            // announce "Module 3 of 7" — re-computed on every render so
+            // after a swap the label is correct without manual sync.
+            const canMoveUp = siblingIndex > 0;
+            const canMoveDown = siblingIndex < siblings.length - 1;
+            const positionContext = `Module ${siblingIndex + 1} of ${siblings.length}`;
+            const hintParts: string[] = [];
+            if (canMoveUp) hintParts.push("Alt+Up to move up");
+            if (canMoveDown) hintParts.push("Alt+Down to move down");
+            const hint = hintParts.length > 0
+              ? `. Press ${hintParts.join(", ")}`
+              : "";
+            return (
+              <button
+                type="button"
+                data-module-grip={module.id}
+                tabIndex={0}
+                aria-label={`Reorder ${module.name}. ${positionContext}${hint}.`}
+                title="Drag to reorder, or focus and press Alt+↑ / Alt+↓"
+                onKeyDown={(e) => {
+                  // Only react to Alt-modified arrows + Esc. Bail otherwise
+                  // so Tab / Shift+Tab and other shortcuts pass through.
+                  if (e.key === "Escape") {
+                    e.preventDefault();
+                    (e.currentTarget as HTMLButtonElement).blur();
+                    return;
+                  }
+                  if (!e.altKey) return;
+                  if (e.key === "ArrowUp") {
+                    e.preventDefault();
+                    if (!canMoveUp) return;
+                    void onKeyboardReorderModule("up");
+                  } else if (e.key === "ArrowDown") {
+                    e.preventDefault();
+                    if (!canMoveDown) return;
+                    void onKeyboardReorderModule("down");
+                  }
+                }}
+                // Stop drag-handle clicks from toggling the row's expand
+                // chevron sitting next to it.
+                onClick={(e) => e.stopPropagation()}
+                className="inline-flex items-center justify-center flex-none rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-slate-900"
+              >
+                <DragHandle className="text-slate-500" compact={depth > 0} />
+              </button>
+            );
+          })()
         )}
         {canEdit && selectMode && (
           <input
@@ -1649,6 +1714,7 @@ function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
     onMoveModule,
     onIndentModule,
     onOutdentModule,
+    onKeyboardReorderModule,
     onMoveItem,
     onToggleItemCompleted,
     onModuleDragStart,
@@ -1718,6 +1784,9 @@ function ModuleNodeView(props: ModuleNodeViewProps): JSX.Element {
         onMoveModule={() => onMoveModule(node)}
         onIndentModule={() => onIndentModule(node, siblings, siblingIndex)}
         onOutdentModule={() => onOutdentModule(node)}
+        onKeyboardReorderModule={(direction) =>
+          onKeyboardReorderModule(node, siblings, siblingIndex, direction)
+        }
         onMoveItem={onMoveItem}
         onToggleItemCompleted={onToggleItemCompleted}
         onModuleDragStart={() => onModuleDragStart(node)}
@@ -1981,6 +2050,30 @@ export function ModulesPage(): JSX.Element {
       if (pulseTimerRef.current !== null) clearTimeout(pulseTimerRef.current);
     };
   }, []);
+
+  // Live region for assistive-tech announcements of keyboard reorders.
+  // The Alt+↑/Alt+↓ shortcut on the focused grip handle writes a sentence
+  // here (e.g. "Moved 'Week 1' down. Now 4 of 7."), which is read out by
+  // screen readers via aria-live="polite". Cleared after a short delay so
+  // subsequent moves with the same destination index still re-announce.
+  const [reorderAnnouncement, setReorderAnnouncement] = useState<string>("");
+  const reorderAnnouncementTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    if (!reorderAnnouncement) return;
+    if (reorderAnnouncementTimerRef.current !== null) {
+      clearTimeout(reorderAnnouncementTimerRef.current);
+    }
+    reorderAnnouncementTimerRef.current = setTimeout(() => {
+      setReorderAnnouncement("");
+      reorderAnnouncementTimerRef.current = null;
+    }, 2000);
+    return () => {
+      if (reorderAnnouncementTimerRef.current !== null) {
+        clearTimeout(reorderAnnouncementTimerRef.current);
+        reorderAnnouncementTimerRef.current = null;
+      }
+    };
+  }, [reorderAnnouncement]);
   // Notion/Linear-style auto-scroll near viewport edges during any drag.
   useAutoScrollOnDrag(draggedModuleId !== null || draggedItem !== null);
   // Notion/Linear-style global drop indicator. Mirrored to a ref so that the
@@ -2303,6 +2396,53 @@ export function ModulesPage(): JSX.Element {
       await callMoveModule(node.id, grandparentId, newPosition);
     },
     [callMoveModule, childrenByParent, flatNodes],
+  );
+
+  // ---- Keyboard reorder (Alt+↑ / Alt+↓ on a focused grip) ----------------
+  // Swap a module with its previous/next sibling within the same parent.
+  // We use the same `move_module` RPC as drag-to-reorder so persistence is
+  // identical — there's exactly one server-side source of truth for module
+  // order. After the RPC resolves and `refresh()` rebuilds the tree, we
+  // refocus the SAME grip (queried by data-module-grip="<id>") so the user
+  // can press Alt+↓ again and walk a module down the list in one motion.
+  const onKeyboardReorderModule = useCallback(
+    async (
+      node: ModuleNode,
+      siblings: readonly ModuleNode[],
+      idx: number,
+      direction: "up" | "down",
+    ): Promise<void> => {
+      const newIdx = direction === "up" ? idx - 1 : idx + 1;
+      if (newIdx < 0 || newIdx >= siblings.length) return; // boundary no-op
+      const moduleName = node.name;
+      const { error: rpcError } = await supabase.rpc("move_module", {
+        p_module_id: node.id,
+        p_new_parent_id: node.parent_module_id,
+        p_new_position: newIdx,
+      });
+      if (rpcError) {
+        toast.error("Couldn't move module", rpcError.message);
+        return;
+      }
+      triggerPulse(node.id);
+      // Announce to assistive tech BEFORE refresh, so screen readers don't
+      // race with the DOM update.
+      const newPositionContext = `Now ${newIdx + 1} of ${siblings.length}`;
+      setReorderAnnouncement(
+        `Moved ${moduleName} ${direction}. ${newPositionContext}.`,
+      );
+      toast.success(`Moved '${moduleName}' ${direction}`);
+      await refresh();
+      // Restore focus to the same grip in its new DOM position. We wait one
+      // animation frame so React has committed the post-refresh tree.
+      requestAnimationFrame(() => {
+        const grip = document.querySelector<HTMLButtonElement>(
+          `[data-module-grip="${node.id}"]`,
+        );
+        grip?.focus();
+      });
+    },
+    [refresh, toast, triggerPulse],
   );
 
   const onAddSubmodule = useCallback(
@@ -2652,6 +2792,21 @@ export function ModulesPage(): JSX.Element {
         </div>
       )}
 
+      {/* Visually-hidden live region for Alt+↑/Alt+↓ keyboard-reorder
+          announcements. role="status" + aria-live="polite" lets screen
+          readers announce position changes without interrupting other speech.
+          aria-atomic ensures the FULL sentence is read each time, not just
+          the diff. Sighted users get the same info via the toast + the
+          updated grip aria-label. */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="sr-only"
+      >
+        {reorderAnnouncement}
+      </div>
+
       {inlineCreatingModule && (
         <InlineCreateModuleRow
           busy={inlineCreatingModule.busy}
@@ -2740,6 +2895,7 @@ export function ModulesPage(): JSX.Element {
               onMoveModule={(m) => setMovingModule(m)}
               onIndentModule={onIndentModule}
               onOutdentModule={onOutdentModule}
+              onKeyboardReorderModule={onKeyboardReorderModule}
               onMoveItem={(item) => setMovingItem(item)}
               onToggleItemCompleted={(itemId, next) =>
                 completion.toggle(itemId, next)

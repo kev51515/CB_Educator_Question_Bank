@@ -30,7 +30,147 @@ import { BulkRosterModal } from "./BulkRosterModal";
 import { SkeletonRows } from "../components/Skeleton";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
+import { useProfile } from "../lib/profile";
 import { courseStudentProfilePath } from "../lib/routes";
+
+// -----------------------------------------------------------------------------
+// Sort
+// -----------------------------------------------------------------------------
+
+type SortKey = "name" | "joined";
+type SortDir = "asc" | "desc";
+
+interface SortState {
+  key: SortKey;
+  dir: SortDir;
+}
+
+const DEFAULT_SORT: SortState = { key: "name", dir: "asc" };
+
+const sortStorageKey = (userId: string | null, courseId: string): string =>
+  `roster.sort:${userId ?? "anon"}:${courseId}`;
+
+function readSortState(key: string): SortState {
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return DEFAULT_SORT;
+    const parsed = JSON.parse(raw) as unknown;
+    if (!parsed || typeof parsed !== "object") return DEFAULT_SORT;
+    const obj = parsed as { key?: unknown; dir?: unknown };
+    const k = obj.key === "name" || obj.key === "joined" ? obj.key : null;
+    const d = obj.dir === "asc" || obj.dir === "desc" ? obj.dir : null;
+    if (!k || !d) return DEFAULT_SORT;
+    return { key: k, dir: d };
+  } catch {
+    return DEFAULT_SORT;
+  }
+}
+
+function writeSortState(key: string, state: SortState): void {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(state));
+  } catch {
+    // localStorage may be unavailable (private mode); ignore.
+  }
+}
+
+function compareStudents(
+  a: RosterStudent,
+  b: RosterStudent,
+  sort: SortState,
+): number {
+  const dirMul = sort.dir === "asc" ? 1 : -1;
+  if (sort.key === "name") {
+    const an = (a.display_name ?? a.email ?? "").toLowerCase();
+    const bn = (b.display_name ?? b.email ?? "").toLowerCase();
+    const cmp = an.localeCompare(bn);
+    if (cmp !== 0) return cmp * dirMul;
+    // Stable tiebreaker: email asc.
+    return a.email.localeCompare(b.email) * dirMul;
+  }
+  // joined
+  const at = new Date(a.joined_at).getTime();
+  const bt = new Date(b.joined_at).getTime();
+  const aValid = Number.isFinite(at);
+  const bValid = Number.isFinite(bt);
+  if (!aValid && !bValid) return 0;
+  if (!aValid) return 1;
+  if (!bValid) return -1;
+  if (at !== bt) return (at - bt) * dirMul;
+  // Stable tiebreaker: name asc.
+  return (a.display_name ?? a.email)
+    .toLowerCase()
+    .localeCompare((b.display_name ?? b.email).toLowerCase()) * dirMul;
+}
+
+// -----------------------------------------------------------------------------
+// Sortable column header button
+// -----------------------------------------------------------------------------
+
+interface SortHeaderButtonProps {
+  label: string;
+  sortKey: SortKey;
+  active: boolean;
+  dir: SortDir;
+  onSort: (key: SortKey) => void;
+}
+
+function SortHeaderButton({
+  label,
+  sortKey,
+  active,
+  dir,
+  onSort,
+}: SortHeaderButtonProps): JSX.Element {
+  const ariaSort: "ascending" | "descending" | "none" = active
+    ? dir === "asc"
+      ? "ascending"
+      : "descending"
+    : "none";
+  const indicator = active ? (
+    <span
+      aria-hidden
+      className="ml-1 inline-block text-indigo-600 dark:text-indigo-400"
+    >
+      {dir === "asc" ? "▲" : "▼"}
+    </span>
+  ) : (
+    <span
+      aria-hidden
+      className="ml-1 inline-block text-slate-300 dark:text-slate-600 opacity-0 group-hover:opacity-100 motion-safe:transition-opacity"
+    >
+      ↕
+    </span>
+  );
+  return (
+    <button
+      type="button"
+      onClick={() => onSort(sortKey)}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onSort(sortKey);
+        }
+      }}
+      aria-sort={ariaSort}
+      aria-label={
+        active
+          ? `Sorted by ${label}, ${
+              dir === "asc" ? "ascending" : "descending"
+            }. Click to reverse.`
+          : `Sort by ${label}`
+      }
+      className={`group inline-flex items-center min-h-[40px] -my-2 px-1 -mx-1 rounded-md text-xs uppercase tracking-wide font-medium motion-safe:transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 ${
+        active
+          ? "text-indigo-700 dark:text-indigo-300"
+          : "text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200"
+      }`}
+    >
+      {label}
+      {indicator}
+    </button>
+  );
+}
 
 // Debounce a value by `delay` ms. Inlined here (vs. shared hook) so the
 // roster + gradebook can ship search independently without ripple.
@@ -168,6 +308,7 @@ export function ClassRoster() {
   const { roster, loading, error, refresh } = useClassRoster(cls.id);
   const toast = useToast();
   const navigate = useNavigate();
+  const { profile } = useProfile();
 
   const [actionBusy, setActionBusy] = useState(false);
   const [confirmRemove, setConfirmRemove] = useState<RosterStudent | null>(null);
@@ -176,6 +317,54 @@ export function ClassRoster() {
   // persist across reloads (per spec).
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedQuery = useDebouncedValue(searchQuery, 150);
+
+  // Sort state — persisted per (user, course). Hydrate lazily so the
+  // localStorage read runs only once. If the stored value is corrupted or
+  // missing, the helper silently falls back to DEFAULT_SORT.
+  const sortPersistKey = sortStorageKey(profile?.id ?? null, cls.id);
+  const [sort, setSort] = useState<SortState>(() =>
+    readSortState(sortPersistKey),
+  );
+  // Re-hydrate when (user, course) changes — e.g., switching courses
+  // without a full unmount. Compare on the key so we don't loop.
+  const sortHydratedKeyRef = useRef<string>(sortPersistKey);
+  useEffect(() => {
+    if (sortHydratedKeyRef.current !== sortPersistKey) {
+      sortHydratedKeyRef.current = sortPersistKey;
+      setSort(readSortState(sortPersistKey));
+    }
+  }, [sortPersistKey]);
+  // Persist on change.
+  useEffect(() => {
+    writeSortState(sortPersistKey, sort);
+  }, [sortPersistKey, sort]);
+
+  const onSort = useCallback((key: SortKey): void => {
+    setSort((prev) => {
+      if (prev.key === key) {
+        return { key, dir: prev.dir === "asc" ? "desc" : "asc" };
+      }
+      // Switching keys → start ascending.
+      return { key, dir: "asc" };
+    });
+  }, []);
+
+  const onCopyCourseCode = useCallback(async (): Promise<void> => {
+    const code = cls.short_code;
+    try {
+      if (
+        typeof navigator !== "undefined" &&
+        navigator.clipboard?.writeText
+      ) {
+        await navigator.clipboard.writeText(code);
+      } else {
+        throw new Error("Clipboard unavailable");
+      }
+      toast.success("Course code copied", code);
+    } catch {
+      toast.error("Couldn't copy", `Course code: ${code}`);
+    }
+  }, [cls.short_code, toast]);
 
   // Multi-select state for bulk operations. Keyed by membership_id so we
   // never confuse one student's row with another. Selection survives
@@ -191,13 +380,19 @@ export function ClassRoster() {
 
   const filteredRoster = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase();
-    if (!q) return roster;
-    return roster.filter((s) => {
-      const name = (s.display_name ?? "").toLowerCase();
-      const email = s.email.toLowerCase();
-      return name.includes(q) || email.includes(q);
-    });
-  }, [roster, debouncedQuery]);
+    const base = !q
+      ? roster
+      : roster.filter((s) => {
+          const name = (s.display_name ?? "").toLowerCase();
+          const email = s.email.toLowerCase();
+          return name.includes(q) || email.includes(q);
+        });
+    // Sort a COPY so we don't mutate the hook's array (which would break
+    // referential equality checks downstream).
+    const copy = base.slice();
+    copy.sort((a, b) => compareStudents(a, b, sort));
+    return copy;
+  }, [roster, debouncedQuery, sort]);
 
   // Drop selections for rows that have left the visible filtered view —
   // bulk actions should never silently target rows the teacher can't see.
@@ -388,9 +583,15 @@ export function ClassRoster() {
           <div className="px-6 py-2">
             <EmptyState
               title="No students yet"
-              body="Share the join code from the Overview tab or bulk-import a roster from CSV."
+              body="Share your course code with students or import a roster CSV."
               cta={{
-                label: "Bulk import",
+                label: "Copy course code",
+                onClick: () => {
+                  void onCopyCourseCode();
+                },
+              }}
+              secondaryCta={{
+                label: "Import roster CSV",
                 onClick: () => setShowBulkImport(true),
               }}
             />
@@ -417,9 +618,18 @@ export function ClassRoster() {
               </span>
             </div>
             {filteredRoster.length === 0 ? (
-              <p className="px-6 py-8 text-sm text-slate-500 dark:text-slate-400">
-                No students match "{debouncedQuery.trim()}".
-              </p>
+              <div className="px-6 py-8 flex flex-wrap items-center gap-3">
+                <p className="text-sm text-slate-500 dark:text-slate-400">
+                  No students match "{debouncedQuery.trim()}".
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery("")}
+                  className="rounded-md min-h-[40px] md:min-h-0 px-3 py-1.5 text-xs font-medium text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-800 hover:bg-indigo-50 dark:hover:bg-indigo-950/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 motion-safe:transition-colors"
+                >
+                  Clear search
+                </button>
+              </div>
             ) : (
               <div className="overflow-x-auto">
                 <table className="min-w-full text-sm">
@@ -448,10 +658,48 @@ export function ClassRoster() {
                           />
                         </label>
                       </th>
-                      <th className="px-6 py-3 font-medium">Name</th>
-                      <th className="px-6 py-3 font-medium">Email</th>
-                      <th className="px-6 py-3 font-medium">Joined</th>
-                      <th className="px-6 py-3 font-medium text-right">
+                      <th
+                        scope="col"
+                        className="px-6 py-3"
+                        aria-sort={
+                          sort.key === "name"
+                            ? sort.dir === "asc"
+                              ? "ascending"
+                              : "descending"
+                            : "none"
+                        }
+                      >
+                        <SortHeaderButton
+                          label="Name"
+                          sortKey="name"
+                          active={sort.key === "name"}
+                          dir={sort.dir}
+                          onSort={onSort}
+                        />
+                      </th>
+                      <th scope="col" className="px-6 py-3 font-medium">
+                        Email
+                      </th>
+                      <th
+                        scope="col"
+                        className="px-6 py-3"
+                        aria-sort={
+                          sort.key === "joined"
+                            ? sort.dir === "asc"
+                              ? "ascending"
+                              : "descending"
+                            : "none"
+                        }
+                      >
+                        <SortHeaderButton
+                          label="Joined"
+                          sortKey="joined"
+                          active={sort.key === "joined"}
+                          dir={sort.dir}
+                          onSort={onSort}
+                        />
+                      </th>
+                      <th scope="col" className="px-6 py-3 font-medium text-right">
                         <span className="sr-only">Actions</span>
                       </th>
                     </tr>
