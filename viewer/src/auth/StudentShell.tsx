@@ -24,6 +24,7 @@ import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
 import { useProfile } from "../lib/profile";
 import { CommandPalette, type Command } from "../components/CommandPalette";
+import { ShortcutsHelp } from "../components/ShortcutsHelp";
 import {
   STUDENT_RECENT_COMMANDS_CAP,
   readStudentRecentCommandIds,
@@ -124,6 +125,8 @@ export function StudentShell() {
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
+  const [helpOpen, setHelpOpen] = useState(false);
+  const closeHelp = useCallback(() => setHelpOpen(false), []);
 
   // Linear-style desktop sidebar collapse (⌘B / Ctrl+B). State is per-user
   // and persisted to localStorage. Only visually applies at lg+ — narrower
@@ -196,6 +199,12 @@ export function StudentShell() {
         if (isEditableTarget(e.target)) return;
         e.preventDefault();
         toggleCollapsed();
+        return;
+      }
+      if (e.key === "?" && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        if (isEditableTarget(e.target)) return;
+        e.preventDefault();
+        setHelpOpen((v) => !v);
         return;
       }
     };
@@ -436,6 +445,11 @@ export function StudentShell() {
         recentIds={recentIds}
         commands={wrappedCommands}
         onPickQuestion={closePalette}
+      />
+      <ShortcutsHelp
+        open={helpOpen}
+        onClose={closeHelp}
+        userRole={profile?.role ?? null}
       />
       <StudentMobileTabBar />
     </>
