@@ -24,7 +24,7 @@
  * drag-and-drop, inline edit, lock-until, bulk select, etc. We only need
  * the read shape.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { Skeleton, SkeletonRows } from "../components/Skeleton";
@@ -36,6 +36,58 @@ interface CourseRow {
   short_code: string;
   name: string;
   description: string | null;
+  /** Supabase types embedded relations as arrays even on FK joins that
+   *  resolve to at most one row. Normalised to a single nullable record
+   *  at usage time. */
+  teacher?: { display_name: string | null }[] | { display_name: string | null } | null;
+}
+
+function teacherName(row: CourseRow): string | null {
+  const t = row.teacher;
+  if (!t) return null;
+  if (Array.isArray(t)) {
+    return t[0]?.display_name ?? null;
+  }
+  return t.display_name ?? null;
+}
+
+/**
+ * Quick-stats summary for the student landing header. Three independent
+ * signals are computed in parallel; each falls back to "—" on failure so a
+ * single broken stat doesn't blank the row. Mirrors the teacher's
+ * CourseOverview pattern (`useCourseOverview`) — stats only, no recent
+ * activity list.
+ */
+interface CourseStats {
+  // Count of assignments in this course not yet submitted by me with a
+  // future due_at. `null` while loading or if the query failed.
+  assignmentsDue: number | null;
+  // Average effective_score across my submitted attempts in this course
+  // (last 30 days). `null` if I have no submitted attempts or the view
+  // is unavailable.
+  myAverage: number | null;
+  // Count of submitted attempts with non-null effective_score that fed
+  // the average. Used to decide whether to render "—" or the number.
+  myAverageSampleSize: number;
+}
+
+interface AssignmentDueRow {
+  id: string;
+  due_at: string | null;
+  assignment_attempts: { submitted_at: string | null }[] | null;
+}
+
+interface EffectiveAttemptRow {
+  effective_score: number | string | null;
+  submitted_at: string | null;
+}
+
+const THIRTY_DAYS_MS = 30 * 24 * 60 * 60 * 1000;
+
+function toNumber(value: number | string | null | undefined): number | null {
+  if (value === null || value === undefined) return null;
+  const n = typeof value === "number" ? value : Number(value);
+  return Number.isFinite(n) ? n : null;
 }
 
 interface ModuleItemRow {
@@ -224,6 +276,75 @@ function ModuleItemRowView({ item, locked }: ModuleItemRowProps) {
   );
 }
 
+interface StatCardProps {
+  label: string;
+  /** `null` while loading; "—" when unavailable; otherwise a formatted string. */
+  value: string | null;
+  /** Optional caption beneath the value. */
+  hint?: string;
+  loading: boolean;
+  onClick?: () => void;
+  ariaLabel: string;
+}
+
+function StatCard({
+  label,
+  value,
+  hint,
+  loading,
+  onClick,
+  ariaLabel,
+}: StatCardProps): JSX.Element {
+  const baseClass =
+    "rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/85 dark:bg-slate-900/70 p-4 min-h-[88px] flex flex-col justify-center motion-safe:transition-all";
+  const interactiveClass = onClick
+    ? "text-left w-full min-h-[88px] hover:ring-indigo-300 dark:hover:ring-indigo-700 hover:bg-indigo-50/40 dark:hover:bg-indigo-950/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 cursor-pointer"
+    : "";
+
+  const content = (
+    <>
+      <p className="text-[11px] uppercase tracking-wide text-slate-500 dark:text-slate-400 font-medium">
+        {label}
+      </p>
+      {loading || value === null ? (
+        <Skeleton className="h-8 w-16 mt-1 rounded" />
+      ) : (
+        <p className="text-2xl font-bold tabular-nums text-slate-900 dark:text-slate-100 mt-0.5">
+          {value}
+        </p>
+      )}
+      {hint && !loading && (
+        <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+          {hint}
+        </p>
+      )}
+    </>
+  );
+
+  if (onClick) {
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        className={`${baseClass} ${interactiveClass}`}
+        aria-label={ariaLabel}
+      >
+        {content}
+      </button>
+    );
+  }
+
+  return (
+    <div
+      className={baseClass}
+      role="group"
+      aria-label={ariaLabel}
+    >
+      {content}
+    </div>
+  );
+}
+
 export function StudentCourseView(): JSX.Element {
   const params = useParams<{ short: string }>();
   const navigate = useNavigate();
@@ -233,6 +354,15 @@ export function StudentCourseView(): JSX.Element {
   const [modules, setModules] = useState<ModuleRow[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [stats, setStats] = useState<CourseStats>({
+    assignmentsDue: null,
+    myAverage: null,
+    myAverageSampleSize: 0,
+  });
+  const [statsLoading, setStatsLoading] = useState(true);
+
+  // Guard against stale-response races when `short` changes mid-flight.
+  const tokenRef = useRef(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -242,7 +372,9 @@ export function StudentCourseView(): JSX.Element {
       try {
         const { data: courseData, error: courseError } = await supabase
           .from("courses")
-          .select("id, short_code, name, description")
+          .select(
+            "id, short_code, name, description, teacher:profiles!courses_teacher_id_fkey(display_name)",
+          )
           .eq("short_code", short)
           .maybeSingle();
         if (cancelled) return;
@@ -300,6 +432,92 @@ export function StudentCourseView(): JSX.Element {
     };
   }, [short]);
 
+  // Quick-stats fetch — runs once we know the course id. Each stat is
+  // independent so a single failure degrades to "—" rather than blanking
+  // the row. Stale-response guarded via tokenRef.
+  useEffect(() => {
+    const courseId = course?.id;
+    if (!courseId) return;
+
+    const token = ++tokenRef.current;
+    setStatsLoading(true);
+
+    const nowIso = new Date().toISOString();
+    const cutoff30 = new Date(Date.now() - THIRTY_DAYS_MS).toISOString();
+
+    void (async () => {
+      // 1. Assignments due — open + future due_at + no submitted attempt
+      //    by me. RLS already scopes assignment_attempts to my own rows.
+      const assignmentsDuePromise = supabase
+        .from("assignments")
+        .select(
+          "id, due_at, assignment_attempts(submitted_at)",
+        )
+        .eq("course_id", courseId)
+        .eq("archived", false)
+        .gt("due_at", nowIso)
+        .limit(500);
+
+      // 2. My average — assignment_attempts_effective filtered to this
+      //    course's assignments via inner join, last 30 days, submitted.
+      const myAveragePromise = supabase
+        .from("assignment_attempts_effective")
+        .select(
+          "effective_score, submitted_at, assignments!inner(course_id)",
+        )
+        .eq("assignments.course_id", courseId)
+        .not("submitted_at", "is", null)
+        .gte("submitted_at", cutoff30)
+        .limit(500);
+
+      const [dueRes, avgRes] = await Promise.all([
+        assignmentsDuePromise,
+        myAveragePromise,
+      ]);
+
+      if (tokenRef.current !== token) return;
+
+      // Assignments due
+      let assignmentsDue: number | null;
+      if (dueRes.error) {
+        assignmentsDue = null;
+      } else {
+        const dueRows = (dueRes.data ?? []) as unknown as AssignmentDueRow[];
+        assignmentsDue = dueRows.filter((a) => {
+          const attempts = a.assignment_attempts ?? [];
+          const hasSubmitted = attempts.some(
+            (att) => att.submitted_at !== null,
+          );
+          return !hasSubmitted;
+        }).length;
+      }
+
+      // My average
+      let myAverage: number | null = null;
+      let myAverageSampleSize = 0;
+      if (!avgRes.error) {
+        const attempts = (avgRes.data ?? []) as unknown as EffectiveAttemptRow[];
+        let sum = 0;
+        let count = 0;
+        for (const att of attempts) {
+          const pct = toNumber(att.effective_score);
+          if (pct !== null) {
+            sum += pct;
+            count += 1;
+          }
+        }
+        if (count > 0) {
+          myAverage = sum / count;
+          myAverageSampleSize = count;
+        }
+      }
+
+      if (tokenRef.current !== token) return;
+      setStats({ assignmentsDue, myAverage, myAverageSampleSize });
+      setStatsLoading(false);
+    })();
+  }, [course?.id]);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-10">
       <div className="mx-auto max-w-3xl space-y-6">
@@ -329,18 +547,97 @@ export function StudentCourseView(): JSX.Element {
 
         {!loading && !error && course && (
           <>
-            <header className="space-y-1">
-              <p className="text-xs uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
-                Course · {course.short_code}
-              </p>
-              <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
-                {course.name}
-              </h1>
-              {course.description && (
-                <p className="text-sm text-slate-600 dark:text-slate-400">
-                  {course.description}
+            <header className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-800 bg-white/85 dark:bg-slate-900/70 p-5 space-y-4 motion-safe:transition-all">
+              <div className="space-y-1">
+                <p className="text-xs uppercase tracking-wide text-indigo-600 dark:text-indigo-400 font-medium">
+                  Course · {course.short_code}
                 </p>
-              )}
+                <h1 className="text-3xl font-bold text-slate-900 dark:text-slate-100">
+                  {course.name}
+                </h1>
+                {(() => {
+                  const tname = teacherName(course);
+                  return (
+                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                      {tname && (
+                        <>
+                          Taught by{" "}
+                          <span className="text-slate-700 dark:text-slate-200 font-medium">
+                            {tname}
+                          </span>
+                          <span aria-hidden> · </span>
+                        </>
+                      )}
+                      <span className="font-mono">{course.short_code}</span>
+                    </p>
+                  );
+                })()}
+                {course.description && (
+                  <p className="text-sm text-slate-600 dark:text-slate-400 pt-1">
+                    {course.description}
+                  </p>
+                )}
+              </div>
+
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+                role="group"
+                aria-label="Course quick stats"
+              >
+                <StatCard
+                  label="Assignments due"
+                  value={
+                    statsLoading
+                      ? null
+                      : stats.assignmentsDue !== null
+                      ? String(stats.assignmentsDue)
+                      : "—"
+                  }
+                  hint={
+                    statsLoading
+                      ? undefined
+                      : stats.assignmentsDue === 0
+                      ? "Nothing pending"
+                      : undefined
+                  }
+                  loading={statsLoading}
+                  onClick={() => navigate(ROUTES.HOME)}
+                  ariaLabel={
+                    statsLoading
+                      ? "Assignments due, loading"
+                      : `${
+                          stats.assignmentsDue ?? "unknown"
+                        } assignments due in this course`
+                  }
+                />
+                <StatCard
+                  label="My average"
+                  value={
+                    statsLoading
+                      ? null
+                      : stats.myAverage !== null
+                      ? `${Math.round(stats.myAverage)}%`
+                      : "—"
+                  }
+                  hint={
+                    statsLoading
+                      ? undefined
+                      : stats.myAverageSampleSize > 0
+                      ? `${stats.myAverageSampleSize} attempt${
+                          stats.myAverageSampleSize === 1 ? "" : "s"
+                        } · last 30 days`
+                      : "No submitted attempts yet"
+                  }
+                  loading={statsLoading}
+                  ariaLabel={
+                    statsLoading
+                      ? "My average, loading"
+                      : stats.myAverage !== null
+                      ? `My average ${Math.round(stats.myAverage)} percent`
+                      : "My average not yet available"
+                  }
+                />
+              </div>
             </header>
 
             {modules.length === 0 ? (

@@ -12,6 +12,16 @@
  *
  * Pagination is server-side via PostgREST `range()` and an exact count, so
  * we know the total before fetching the page.
+ *
+ * Triage layer (Wave 21):
+ * - Role filter pills (All / Students / Teachers / Admins) — client-side
+ *   over the current page, mirroring the search input's scope. Counts are
+ *   for what's loaded right now, not the global total (server-side pills
+ *   would require an extra count round-trip per role per page).
+ * - Sort `<select>` (joined newest/oldest, name, role) — drives the server
+ *   query, so it applies across pagination.
+ * - Persistence (`admin.users.view`) so reloads keep the admin's chosen
+ *   triage shape.
  */
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { supabase } from "../lib/supabase";
@@ -37,6 +47,57 @@ interface AllUsersViewProps {
 }
 
 const PAGE_SIZE = 50;
+
+type RoleFilter = "all" | "student" | "teacher" | "admin";
+type SortKey = "created_desc" | "created_asc" | "name" | "role";
+
+const ROLE_FILTERS: ReadonlyArray<RoleFilter> = ["all", "student", "teacher", "admin"];
+const SORT_KEYS: ReadonlyArray<SortKey> = ["created_desc", "created_asc", "name", "role"];
+
+const DEFAULT_FILTER: RoleFilter = "all";
+const DEFAULT_SORT: SortKey = "created_desc";
+
+const STORAGE_KEY = "admin.users.view";
+
+interface PersistedView {
+  filter: RoleFilter;
+  sort: SortKey;
+}
+
+function loadPersistedView(): PersistedView {
+  if (typeof window === "undefined") {
+    return { filter: DEFAULT_FILTER, sort: DEFAULT_SORT };
+  }
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return { filter: DEFAULT_FILTER, sort: DEFAULT_SORT };
+    const parsed: unknown = JSON.parse(raw);
+    if (!parsed || typeof parsed !== "object") {
+      return { filter: DEFAULT_FILTER, sort: DEFAULT_SORT };
+    }
+    const obj = parsed as Record<string, unknown>;
+    const filter =
+      typeof obj.filter === "string" && (ROLE_FILTERS as readonly string[]).includes(obj.filter)
+        ? (obj.filter as RoleFilter)
+        : DEFAULT_FILTER;
+    const sort =
+      typeof obj.sort === "string" && (SORT_KEYS as readonly string[]).includes(obj.sort)
+        ? (obj.sort as SortKey)
+        : DEFAULT_SORT;
+    return { filter, sort };
+  } catch {
+    return { filter: DEFAULT_FILTER, sort: DEFAULT_SORT };
+  }
+}
+
+function savePersistedView(view: PersistedView): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(view));
+  } catch {
+    // localStorage may be unavailable (private mode, quota); silently skip.
+  }
+}
 
 function getErrorMessage(error: unknown): string {
   if (error instanceof Error) return error.message;
@@ -90,6 +151,43 @@ function roleBadgeClass(role: ProfileRole): string {
   }
 }
 
+/**
+ * Roles are sorted admin → teacher → student when the user picks "Role"
+ * sort — admins are the rarest and most operationally interesting, so
+ * floating them to the top is the useful ordering, not alphabetical.
+ */
+const ROLE_SORT_WEIGHT: Record<ProfileRole, number> = {
+  admin: 0,
+  teacher: 1,
+  student: 2,
+};
+
+function sortLabel(sort: SortKey): string {
+  switch (sort) {
+    case "created_desc":
+      return "Joined (newest first)";
+    case "created_asc":
+      return "Joined (oldest first)";
+    case "name":
+      return "Name";
+    case "role":
+      return "Role";
+  }
+}
+
+function filterLabel(filter: RoleFilter): string {
+  switch (filter) {
+    case "all":
+      return "All";
+    case "student":
+      return "Students";
+    case "teacher":
+      return "Teachers";
+    case "admin":
+      return "Admins";
+  }
+}
+
 export function AllUsersView({ currentUserId }: AllUsersViewProps) {
   const [users, setUsers] = useState<AdminUser[]>([]);
   const [total, setTotal] = useState<number>(0);
@@ -100,7 +198,20 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
   const [actionError, setActionError] = useState<string | null>(null);
   const [busyId, setBusyId] = useState<string | null>(null);
   const [confirmDelete, setConfirmDelete] = useState<AdminUser | null>(null);
+
+  // Hydrate from localStorage on first render so the user's chosen triage
+  // shape survives reloads. The shape-validate in loadPersistedView guards
+  // against stale/garbage data after a future enum addition.
+  const [view, setView] = useState<PersistedView>(() => loadPersistedView());
+  const filter = view.filter;
+  const sort = view.sort;
+
   const toast = useToast();
+
+  // Persist on every change. JSON.stringify is cheap enough at this size.
+  useEffect(() => {
+    savePersistedView(view);
+  }, [view]);
 
   const refresh = useCallback(async (): Promise<void> => {
     setLoading(true);
@@ -108,11 +219,42 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
     try {
       const from = page * PAGE_SIZE;
       const to = from + PAGE_SIZE - 1;
-      const { data, error: queryError, count } = await supabase
+
+      // Sort drives the server query so it composes with pagination.
+      // For "name" and "role", we still order by created_at as a stable
+      // tiebreaker so pagination doesn't shuffle within equal keys.
+      let query = supabase
         .from("profiles")
-        .select("id, email, display_name, role, created_at", { count: "exact" })
-        .order("created_at", { ascending: false })
-        .range(from, to);
+        .select("id, email, display_name, role, created_at", { count: "exact" });
+
+      switch (sort) {
+        case "created_desc":
+          query = query.order("created_at", { ascending: false });
+          break;
+        case "created_asc":
+          query = query.order("created_at", { ascending: true });
+          break;
+        case "name":
+          // display_name can be NULL; nullsFirst:false floats unnamed users
+          // to the end so the admin sees real names first.
+          query = query
+            .order("display_name", { ascending: true, nullsFirst: false })
+            .order("email", { ascending: true })
+            .order("created_at", { ascending: false });
+          break;
+        case "role":
+          // Postgres orders strings alphabetically (admin < student <
+          // teacher), which isn't the triage-useful order. We re-sort the
+          // returned page client-side via ROLE_SORT_WEIGHT below. The
+          // server `order("role")` here just provides a stable base
+          // ordering so pagination is deterministic.
+          query = query
+            .order("role", { ascending: true })
+            .order("created_at", { ascending: false });
+          break;
+      }
+
+      const { data, error: queryError, count } = await query.range(from, to);
 
       if (queryError) {
         setError(queryError.message);
@@ -126,6 +268,15 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
         const u = toUser(row);
         if (u) parsed.push(u);
       }
+      if (sort === "role") {
+        parsed.sort((a, b) => {
+          const wa = ROLE_SORT_WEIGHT[a.role];
+          const wb = ROLE_SORT_WEIGHT[b.role];
+          if (wa !== wb) return wa - wb;
+          // Newest first within each role group.
+          return b.created_at.localeCompare(a.created_at);
+        });
+      }
       setUsers(parsed);
       setTotal(count ?? 0);
     } catch (err: unknown) {
@@ -135,22 +286,48 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
     } finally {
       setLoading(false);
     }
-  }, [page]);
+  }, [page, sort]);
 
   useEffect(() => {
     void refresh();
   }, [refresh]);
 
+  // Per-role counts for the pills. Reflects what's loaded on this page,
+  // matching the search input's scope ("Filter this page…"). A global-count
+  // version would need three extra HEAD requests per page change, which
+  // isn't worth the cost for triage-only context.
+  const roleCounts = useMemo(() => {
+    const counts: Record<RoleFilter, number> = {
+      all: users.length,
+      student: 0,
+      teacher: 0,
+      admin: 0,
+    };
+    for (const u of users) {
+      counts[u.role] += 1;
+    }
+    return counts;
+  }, [users]);
+
   const filtered = useMemo(() => {
     const q = search.trim().toLowerCase();
-    if (!q) return users;
     return users.filter((u) => {
+      if (filter !== "all" && u.role !== filter) return false;
+      if (!q) return true;
       const haystack = `${u.display_name ?? ""} ${u.email}`.toLowerCase();
       return haystack.includes(q);
     });
-  }, [users, search]);
+  }, [users, search, filter]);
 
   const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+
+  const hasActiveTriage =
+    filter !== DEFAULT_FILTER || sort !== DEFAULT_SORT || search.trim() !== "";
+
+  const clearAll = (): void => {
+    setSearch("");
+    setView({ filter: DEFAULT_FILTER, sort: DEFAULT_SORT });
+  };
 
   const onChangeRole = async (user: AdminUser, nextRole: ProfileRole): Promise<void> => {
     if (nextRole === user.role) return;
@@ -215,26 +392,127 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
             All users
           </h2>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            {total} total · sorted by newest first
+            {total} total · {sortLabel(sort).toLowerCase()}
           </p>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 flex-wrap justify-end">
           <input
             type="search"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Filter this page…"
-            className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            aria-label="Search users by name or email"
+            className="rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-1.5 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[40px]"
           />
           <button
             type="button"
             onClick={() => void refresh()}
-            className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline"
+            className="text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline min-h-[40px] px-2"
           >
             Refresh
           </button>
+          {hasActiveTriage && (
+            <button
+              type="button"
+              onClick={clearAll}
+              className="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:underline min-h-[40px] px-2"
+            >
+              Clear all filters
+            </button>
+          )}
         </div>
       </header>
+
+      {/* Triage row: role pills (left) + sort (right). Pills use the
+          tablist pattern so screen readers announce them as a grouped
+          selector rather than four unrelated buttons. */}
+      <div className="flex items-center justify-between gap-3 flex-wrap">
+        <div
+          role="tablist"
+          aria-label="Filter by role"
+          className="flex items-center gap-1.5 flex-wrap"
+        >
+          {ROLE_FILTERS.map((f) => {
+            const active = filter === f;
+            const count = roleCounts[f];
+            return (
+              <button
+                key={f}
+                type="button"
+                role="tab"
+                aria-selected={active}
+                aria-controls="all-users-table"
+                onClick={() => setView((v) => ({ ...v, filter: f }))}
+                className={[
+                  "inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-sm font-medium min-h-[40px]",
+                  "motion-safe:transition-colors",
+                  active
+                    ? "bg-indigo-600 text-white ring-1 ring-indigo-600 dark:bg-indigo-500 dark:ring-indigo-500"
+                    : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-300 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-50 dark:hover:bg-slate-800",
+                ].join(" ")}
+              >
+                <span>{filterLabel(f)}</span>
+                <span
+                  className={[
+                    "inline-flex items-center justify-center rounded-full text-xs tabular-nums px-1.5 py-0.5 min-w-[1.5rem]",
+                    active
+                      ? "bg-white/20 text-white"
+                      : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400",
+                  ].join(" ")}
+                >
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="flex items-center gap-2">
+          <label
+            htmlFor="all-users-sort"
+            className="text-sm text-slate-500 dark:text-slate-400"
+          >
+            Sort
+          </label>
+          <div className="relative">
+            <select
+              id="all-users-sort"
+              aria-label="Sort users"
+              value={sort}
+              onChange={(e) =>
+                setView((v) => ({ ...v, sort: e.target.value as SortKey }))
+              }
+              className="appearance-none rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 pl-3 pr-8 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 min-h-[40px] motion-safe:transition-colors"
+            >
+              {SORT_KEYS.map((k) => (
+                <option key={k} value={k}>
+                  {sortLabel(k)}
+                </option>
+              ))}
+            </select>
+            {/* Chevron is the "active sort" indicator the spec calls for. */}
+            <svg
+              aria-hidden="true"
+              viewBox="0 0 20 20"
+              className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 h-4 w-4 text-slate-500 dark:text-slate-400"
+            >
+              <path
+                fill="currentColor"
+                d="M5.23 7.21a.75.75 0 011.06.02L10 11.06l3.71-3.83a.75.75 0 111.08 1.04l-4.25 4.4a.75.75 0 01-1.08 0l-4.25-4.4a.75.75 0 01.02-1.06z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      {/* sr-only announcer: tells AT users when the visible result set
+          changes because of a filter, so they're not stuck wondering
+          whether their click did anything. */}
+      <div className="sr-only" aria-live="polite" role="status">
+        {filter === "all"
+          ? `${filtered.length} users shown`
+          : `${filtered.length} ${filter}${filtered.length === 1 ? "" : "s"} shown`}
+      </div>
 
       {error && (
         <div role="alert" className="rounded-lg bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-4 py-3 text-sm text-rose-700 dark:text-rose-300">
@@ -247,14 +525,36 @@ export function AllUsersView({ currentUserId }: AllUsersViewProps) {
         </div>
       )}
 
-      <div className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden">
+      <div
+        id="all-users-table"
+        className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"
+      >
         {loading ? (
           <div className="px-5 py-6">
             <SkeletonRows count={6} />
           </div>
         ) : filtered.length === 0 ? (
-          <div className="px-5 py-6 text-sm text-slate-500 dark:text-slate-400">
-            {users.length === 0 ? "No users." : "No users on this page match your filter."}
+          // Two distinct empty states:
+          //  1. No users at all on this page (rare in admin context).
+          //  2. Filter/search collapsed the visible set to zero — offer a
+          //     "Show all" escape hatch so the admin isn't stuck.
+          <div className="px-5 py-8 text-center text-sm text-slate-500 dark:text-slate-400 space-y-3">
+            {users.length === 0 ? (
+              <p>No users yet.</p>
+            ) : (
+              <>
+                <p>
+                  No {filter === "all" ? "users" : `${filter}s`} match this filter.
+                </p>
+                <button
+                  type="button"
+                  onClick={clearAll}
+                  className="inline-flex items-center rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-medium px-3 py-1.5 min-h-[40px] motion-safe:transition-colors"
+                >
+                  Show all
+                </button>
+              </>
+            )}
           </div>
         ) : (
           <div className="overflow-x-auto">
