@@ -25,7 +25,17 @@
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { MarkdownEditor } from "../components/MarkdownEditor";
+import { useToast } from "../components/Toast";
 import { useFocusTrap } from "../hooks";
+import { useProfile } from "../lib/profile";
+import { ConfirmDialog } from "./ConfirmDialog";
+import {
+  type FeedbackTemplate,
+  deleteTemplate,
+  listTemplates,
+  saveTemplate,
+  touchTemplate,
+} from "./feedbackTemplates";
 
 const MAX_RECOMMENDED_FEEDBACK_CHARS = 5000;
 
@@ -56,6 +66,37 @@ export function BulkGradeModal({
 
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
+
+  // --- Feedback templates ---------------------------------------------------
+  const { profile } = useProfile();
+  const teacherId = profile?.id ?? "";
+  const toast = useToast();
+
+  const [templates, setTemplates] = useState<FeedbackTemplate[]>([]);
+  const [showSaveForm, setShowSaveForm] = useState<boolean>(false);
+  const [saveLabel, setSaveLabel] = useState<string>("");
+  // Replaces the old `window.confirm` calls per CLAUDE.md forbidden-pattern
+  // rule. ConfirmDialog renders against these when non-null.
+  const [pendingLoadTemplate, setPendingLoadTemplate] =
+    useState<FeedbackTemplate | null>(null);
+  const [pendingDeleteTemplate, setPendingDeleteTemplate] =
+    useState<FeedbackTemplate | null>(null);
+  // Tracks the template most recently *loaded* into the editor — bumped on
+  // Apply so the "most recently used" sort surfaces the right pill next time.
+  const lastLoadedTemplateIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    if (!teacherId) {
+      setTemplates([]);
+      return;
+    }
+    setTemplates(listTemplates(teacherId));
+  }, [teacherId]);
+
+  const refreshTemplates = (): void => {
+    if (!teacherId) return;
+    setTemplates(listTemplates(teacherId));
+  };
 
   // Esc to close
   useEffect(() => {
@@ -98,7 +139,80 @@ export function BulkGradeModal({
     if (feedbackPresent) patch.feedback_text = feedbackHtml;
     if (scoreNumber !== null && !scoreInvalid) patch.score_override = scoreNumber;
     if (markAsGraded) patch.graded_at = new Date().toISOString();
+    // If a template was loaded into the editor and the teacher is applying
+    // it, bump lastUsedAt so the chip surfaces first next time.
+    if (teacherId && lastLoadedTemplateIdRef.current && feedbackPresent) {
+      touchTemplate(teacherId, lastLoadedTemplateIdRef.current);
+    }
     void onApply(patch);
+  };
+
+  // --- Template handlers ----------------------------------------------------
+  const applyTemplateLoad = (tpl: FeedbackTemplate): void => {
+    setFeedbackHtml(tpl.body);
+    lastLoadedTemplateIdRef.current = tpl.id;
+  };
+
+  const handleLoadTemplate = (tpl: FeedbackTemplate): void => {
+    if (busy) return;
+    if (feedbackPresent) {
+      // Editor already has content — confirm replace via ConfirmDialog.
+      setPendingLoadTemplate(tpl);
+      return;
+    }
+    applyTemplateLoad(tpl);
+  };
+
+  const performDeleteTemplate = (tpl: FeedbackTemplate): void => {
+    if (!teacherId) return;
+    try {
+      deleteTemplate(teacherId, tpl.id);
+      if (lastLoadedTemplateIdRef.current === tpl.id) {
+        lastLoadedTemplateIdRef.current = null;
+      }
+      refreshTemplates();
+      toast.success("Template deleted");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Unknown error";
+      toast.error("Couldn't delete template", msg);
+    }
+  };
+
+  const handleDeleteTemplate = (tpl: FeedbackTemplate): void => {
+    if (!teacherId || busy) return;
+    setPendingDeleteTemplate(tpl);
+  };
+
+  const handleOpenSaveForm = (): void => {
+    if (!feedbackPresent || busy) return;
+    setSaveLabel("");
+    setShowSaveForm(true);
+  };
+
+  const handleCancelSaveForm = (): void => {
+    setShowSaveForm(false);
+    setSaveLabel("");
+  };
+
+  const handleConfirmSaveTemplate = (): void => {
+    if (!teacherId) return;
+    const label = saveLabel.trim();
+    if (label.length === 0) {
+      toast.error("Template needs a name");
+      return;
+    }
+    try {
+      const created = saveTemplate(teacherId, { label, body: feedbackHtml });
+      lastLoadedTemplateIdRef.current = created.id;
+      refreshTemplates();
+      setShowSaveForm(false);
+      setSaveLabel("");
+      toast.success("Template saved");
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : "Unknown error";
+      // QuotaExceededError surfaces here too.
+      toast.error("Couldn't save template", msg);
+    }
   };
 
   const count = selectedIds.length;
@@ -149,6 +263,96 @@ export function BulkGradeModal({
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-200 mb-1.5">
               Feedback template
             </label>
+
+            {/* Saved-template chip row */}
+            {teacherId && (
+              <div className="mb-2.5">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">
+                    Templates
+                  </span>
+                  {templates.length === 0 && !showSaveForm && (
+                    <span className="text-xs text-slate-500 dark:text-slate-400">
+                      No templates yet. Save one to reuse it next time.
+                    </span>
+                  )}
+                  {templates.map((tpl) => (
+                    <span
+                      key={tpl.id}
+                      className="inline-flex items-stretch rounded-full bg-indigo-50 dark:bg-indigo-950/40 ring-1 ring-indigo-200 dark:ring-indigo-800 overflow-hidden"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => handleLoadTemplate(tpl)}
+                        disabled={busy}
+                        title={tpl.label}
+                        className="min-h-[40px] pl-3 pr-2 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-200 hover:bg-indigo-100 dark:hover:bg-indigo-900/40 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-inset disabled:opacity-50 max-w-[200px] truncate"
+                      >
+                        {tpl.label}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteTemplate(tpl)}
+                        disabled={busy}
+                        aria-label={`Delete template ${tpl.label}`}
+                        className="min-w-[40px] min-h-[40px] px-2 text-indigo-500 dark:text-indigo-300 hover:bg-rose-100 hover:text-rose-700 dark:hover:bg-rose-950/40 dark:hover:text-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-inset disabled:opacity-50"
+                      >
+                        ×
+                      </button>
+                    </span>
+                  ))}
+                  {feedbackPresent && !showSaveForm && (
+                    <button
+                      type="button"
+                      onClick={handleOpenSaveForm}
+                      disabled={busy}
+                      className="inline-flex items-center min-h-[40px] rounded-full px-3 py-1 text-xs font-medium text-slate-700 dark:text-slate-200 ring-1 ring-dashed ring-slate-300 dark:ring-slate-600 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    >
+                      + Save current as template
+                    </button>
+                  )}
+                </div>
+                {showSaveForm && (
+                  <div className="mt-2 flex items-center gap-2 flex-wrap">
+                    <input
+                      type="text"
+                      value={saveLabel}
+                      onChange={(e) => setSaveLabel(e.target.value)}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault();
+                          handleConfirmSaveTemplate();
+                        } else if (e.key === "Escape") {
+                          e.preventDefault();
+                          handleCancelSaveForm();
+                        }
+                      }}
+                      maxLength={60}
+                      autoFocus
+                      placeholder="Template name (e.g. Slope-intercept tips)"
+                      className="block flex-1 min-w-[240px] min-h-[40px] rounded-lg bg-white dark:bg-slate-900 ring-1 ring-slate-300 dark:ring-slate-700 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                    />
+                    <button
+                      type="button"
+                      onClick={handleConfirmSaveTemplate}
+                      disabled={busy || saveLabel.trim().length === 0}
+                      className="min-h-[40px] rounded-lg px-3 py-2 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-white dark:focus:ring-offset-slate-900 disabled:opacity-50"
+                    >
+                      Save
+                    </button>
+                    <button
+                      type="button"
+                      onClick={handleCancelSaveForm}
+                      disabled={busy}
+                      className="min-h-[40px] rounded-lg px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-200 ring-1 ring-slate-300 dark:ring-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+                    >
+                      Cancel
+                    </button>
+                  </div>
+                )}
+              </div>
+            )}
+
             <MarkdownEditor
               value={feedbackHtml}
               onChange={setFeedbackHtml}
@@ -235,6 +439,50 @@ export function BulkGradeModal({
           </button>
         </footer>
       </div>
+      {pendingLoadTemplate && (
+        <ConfirmDialog
+          title="Replace current feedback?"
+          body={
+            <p>
+              Load the{" "}
+              <span className="font-semibold text-slate-900 dark:text-slate-100">
+                "{pendingLoadTemplate.label}"
+              </span>{" "}
+              template into the editor? This replaces whatever you've typed so
+              far.
+            </p>
+          }
+          confirmLabel="Replace"
+          onConfirm={async () => {
+            const tpl = pendingLoadTemplate;
+            setPendingLoadTemplate(null);
+            applyTemplateLoad(tpl);
+          }}
+          onCancel={() => setPendingLoadTemplate(null)}
+        />
+      )}
+      {pendingDeleteTemplate && (
+        <ConfirmDialog
+          title="Delete this template?"
+          body={
+            <p>
+              Delete{" "}
+              <span className="font-semibold text-slate-900 dark:text-slate-100">
+                "{pendingDeleteTemplate.label}"
+              </span>{" "}
+              permanently. Saved templates are stored locally on this device.
+            </p>
+          }
+          confirmLabel="Delete template"
+          destructive
+          onConfirm={async () => {
+            const tpl = pendingDeleteTemplate;
+            setPendingDeleteTemplate(null);
+            performDeleteTemplate(tpl);
+          }}
+          onCancel={() => setPendingDeleteTemplate(null)}
+        />
+      )}
     </div>
   );
 }

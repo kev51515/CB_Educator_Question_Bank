@@ -10,7 +10,7 @@ export default defineConfig({
   timeout: 60_000,
   reporter: process.env.CI ? "github" : "list",
   use: {
-    baseURL: "http://localhost:5173",
+    baseURL: "http://localhost:9000",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
   },
@@ -19,8 +19,8 @@ export default defineConfig({
     { name: "chromium-mobile", use: { ...devices["Pixel 5"] } },
   ],
   webServer: {
-    command: "npm run dev -- --port 5173",
-    url: "http://localhost:5173",
+    command: "npm run dev -- --port 9000",
+    url: "http://localhost:9000",
     reuseExistingServer: !process.env.CI,
     timeout: 30_000,
     // Bypass the AuthGate so tests can focus on the bank UI.

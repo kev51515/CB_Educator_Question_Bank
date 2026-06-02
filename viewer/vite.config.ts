@@ -11,6 +11,10 @@ export default defineConfig({
     },
   },
   server: {
+    // Fixed, easy-to-remember dev port. strictPort = fail loudly if 9000 is
+    // taken rather than silently hopping to 9001 (so the URL is always the same).
+    port: 9000,
+    strictPort: true,
     // Don't trigger HMR reloads when bulk-generated static data churns.
     // The app fetches these at runtime, so a code reload is wasted work
     // and was thrashing E2E test runs.

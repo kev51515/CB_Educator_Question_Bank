@@ -69,6 +69,7 @@ import { StudentProfilePage } from "../teacher/StudentProfilePage";
 import { StudentCourseView } from "../student/StudentCourseView";
 import { MockTestHistoryPage } from "../student/MockTestHistoryPage";
 import { MockTestReviewPage } from "../student/MockTestReviewPage";
+import { MyFeedbackPage } from "../student/MyFeedbackPage";
 import { ROUTES } from "../lib/routes";
 import { supabase } from "../lib/supabase";
 import type { Profile } from "../lib/profile";
@@ -235,6 +236,7 @@ function StudentRoutesTree({
           path={ROUTES.MOCK_TEST_REVIEW}
           element={<MockTestReviewPage />}
         />
+        <Route path={ROUTES.MY_FEEDBACK} element={<MyFeedbackPage />} />
         <Route path={ROUTES.TEST_RUN} element={<FullTestApp />} />
         <Route
           path={ROUTES.ASSIGNMENT_TAKE}

@@ -20,7 +20,7 @@
 import { useNavigate } from "react-router-dom";
 import { useRecentFeedback, type RecentFeedbackItem } from "./useRecentFeedback";
 import { SkeletonRows } from "../components/Skeleton";
-import { assignmentReviewPath } from "../lib/routes";
+import { ROUTES, assignmentReviewPath } from "../lib/routes";
 
 interface RecentFeedbackWidgetProps {
   studentId: string | null;
@@ -175,6 +175,16 @@ export function RecentFeedbackWidget({ studentId }: RecentFeedbackWidgetProps) {
             {items.length}
           </span>
         )}
+        {/* "View all" → /my-feedback (MyFeedbackPage). Right-aligned so the
+            title stays the visual anchor. */}
+        <button
+          type="button"
+          onClick={() => navigate(ROUTES.MY_FEEDBACK)}
+          className="ml-auto rounded text-xs font-medium text-indigo-600 dark:text-indigo-400 hover:text-indigo-700 dark:hover:text-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 px-1"
+          aria-label="View all feedback history"
+        >
+          View all →
+        </button>
       </header>
       {loading ? (
         <SkeletonRows count={2} rowClassName="h-16" />
