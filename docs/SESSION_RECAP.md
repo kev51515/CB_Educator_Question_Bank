@@ -901,10 +901,54 @@ User went AFK with "keep going autonomously". Shipped 11 more rounds with self-c
 - **Smoke** extended with wave63 (10 scenarios for portfolio import incl. anchor variants) + 2 more in wave-grading
 - **`npx tsc -b` clean after every commit; clean working tree at every push**
 
-### Cumulative session total (Waves 21B + 21C, Rounds 4–26)
+### Round 26 — Course Overview landing page
+- `CourseOverview` 5-card grid (Roster / Assignments / Recent activity / Average grade / Quick actions) replaces stub
+- `useCourseOverview` hook: 4 parallel queries via `Promise.all`, `tokenRef` counter for stale-response races
+- 30-day attempts window covers both "Recent activity" and "Average grade" cards
+- Empty states with CTAs on every card
 
-- **60+ lanes shipped + 2 N/A**
-- **9 migrations** (0050, 0056, 0057, 0058, 0059, 0060, 0062, 0063, 0064)
-- **7 smoke suites** (~5500 lines) with 12 new scenarios
-- **2 major refactors** + **2 ongoing libraries** (feedback templates + portfolio import)
-- 23 fresh teacher/student/admin surfaces and primitives
+### Round 27 — Quality sweep on Rounds 22-26 (6 inline fixes)
+- `CourseAnnouncements.tsx:271` — Scheduled badge palette sky → indigo (palette canon)
+- `AdminAuditPage.tsx:1188` — Removed 📚 emoji from "Scoped to" chip (forbidden pattern)
+- `AdminAuditPage.tsx:1260-1270` — Rose tone for destructive event badges
+- `NotificationPreferencesPage.tsx:95-105` — Removed per-toggle toast.success spam
+- `useNotifications.ts:131-150` — `markRead` optimistic rollback (was leaving fake-read state on silent RLS rejection — mirrors existing `markAllRead` pattern)
+- `CourseOverview` recent activity rows wrapped in `<Link>` to source discussion topic (topicId was SELECTed but discarded)
+
+### Round 28 — Score trajectory + reply deeplinks
+- `StudentProfilePage` inline score-trajectory sparkline in profile header. Filters attempts with non-null `effective_score`, last 15, polyline + dots + gridlines at 0/50/100. Last segment band-colored (emerald ≥80, indigo 70-79, amber 50-69, rose <50). Empty / single-point states handled.
+- `NeedsAttentionPanel` reply rows now navigate to `#post-<id>` on topic page (was just topic root)
+- `DiscussionTopicView` `<article id="post-<id>">` wired on each post + `useLocation` hash-scroll effect with brief indigo ring flash. `scroll-mt-24` for sticky-header clearance.
+
+### Round 29 — Inbox thread search
+- Client-side filter input above thread list in `InboxPage`
+- Filters by participant display_name (or email fallback) + last_message_snippet (HTML-stripped)
+- Focus shortcut: `/` (⌘K stays owned by `CommandPalette` globally). Gated against typing-target focus.
+- Esc clears + blurs; filtered-empty state distinct from "No conversations yet"
+- No persistence (transient)
+
+### Round 30 — Calendar keyboard nav + shortcuts help
+- `←` / `→` prev/next month, `T` today, `M`/`L` Month/List view, `?` toggles help popover
+- Gating: no modifier keys; skip if INPUT/TEXTAREA/SELECT/contenteditable focused; all matched keys `preventDefault`
+- Today button memoized `todayDisabled` — disabled on list view or when already viewing current month
+- Help popover: `role="dialog" aria-modal="false"` (non-blocking floating panel, not a true modal — no `useFocusTrap`). Click-outside + Esc close.
+- Nav buttons bumped to min-h/w-[40px] for touch
+- View-mode preservation: month nav mutates only `anchor`; localStorage view persistence intact
+
+### Cumulative session total (Waves 21B + 21C, Rounds 4–30)
+
+- **65+ lanes shipped across 27 rounds**
+- **9 migrations** (0050, 0056, 0057, 0058, 0059, 0060, 0062, 0063, 0064) — all backward-compatible
+- **7 smoke suites** (~5500 lines) with 12 new scenarios incl. 10 wave63 portfolio-import scenarios
+- **30+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
+- **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
+
+### Stopping rationale (post Round 30)
+
+Remaining backlog items require user input rather than autonomous engineering:
+- **Notification email/push fan-out** — needs Resend integration design
+- **Parent magic-link** (M24/M25) — needs UX direction from user
+- **Workstream C Material library** — schema changes to existing `course_materials` carry unverifiable DB risk without env to test against; deferred until user confirms scope
+- **Round 23 scheduled-publish "Send notifications immediately" toggle** (Task #177) — touches notifications RLS delicately; 60s cron tick is acceptable for now
+
+Build is green. Working tree is clean. All commits pushed to origin/main.
