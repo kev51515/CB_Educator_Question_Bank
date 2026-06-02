@@ -757,6 +757,40 @@ function isUuidLike(value: string): boolean {
   return /^[0-9a-fA-F-]{16,}$/.test(value);
 }
 
+/**
+ * localStorage key for persisting the active course filter so an admin
+ * auditing a single course doesn't have to re-pick it on every visit.
+ * Stores the courses.id (uuid) as a plain string, or empty string for "All".
+ */
+const COURSE_FILTER_STORAGE_KEY = "admin.audit.courseFilter";
+
+interface CourseOption {
+  id: string;
+  name: string;
+  short_code: string | null;
+}
+
+function readPersistedCourseFilter(): string {
+  try {
+    const v = window.localStorage.getItem(COURSE_FILTER_STORAGE_KEY);
+    return typeof v === "string" ? v : "";
+  } catch {
+    return "";
+  }
+}
+
+function writePersistedCourseFilter(value: string): void {
+  try {
+    if (value) {
+      window.localStorage.setItem(COURSE_FILTER_STORAGE_KEY, value);
+    } else {
+      window.localStorage.removeItem(COURSE_FILTER_STORAGE_KEY);
+    }
+  } catch {
+    /* ignore quota / disabled storage */
+  }
+}
+
 export function AdminAuditPage() {
   const [rows, setRows] = useState<AuditRowView[]>([]);
   const [total, setTotal] = useState<number>(0);
@@ -769,10 +803,18 @@ export function AdminAuditPage() {
   const [actorFilter, setActorFilter] = useState<string>("");
   const [dateFrom, setDateFrom] = useState<string>("");
   const [dateTo, setDateTo] = useState<string>("");
+  // Course filter is a uuid (courses.id) or "" for "All courses".
+  // Initialised from localStorage so a focused audit session sticks across reloads.
+  const [courseFilter, setCourseFilter] = useState<string>(() =>
+    readPersistedCourseFilter(),
+  );
 
   // Distinct list of actions (best-effort, fetched once) so the dropdown
   // shows what's actually in the ledger rather than a hardcoded enum.
   const [knownActions, setKnownActions] = useState<string[]>([]);
+
+  // Course picker options, fetched once. Admins see all courses via RLS.
+  const [courseOptions, setCourseOptions] = useState<CourseOption[]>([]);
 
   const refresh = useCallback(async (): Promise<void> => {
     setLoading(true);
@@ -791,6 +833,25 @@ export function AdminAuditPage() {
 
       if (actionFilter) {
         query = query.eq("action", actionFilter);
+      }
+      // Course scope: an event "belongs to" a course if either the top-level
+      // target points at it (course_delete) OR the JSONB details payload
+      // carries a course id under one of the known keys:
+      //   - course_id           (assignment_delete, material_delete,
+      //                          announcement_delete, teacher_note_change)
+      //   - target_course_id    (portfolio_import — destination)
+      //   - source_course_id    (portfolio_import — origin)
+      // PostgREST's `.or()` accepts JSONB key extraction via `details->>key.eq.value`.
+      if (courseFilter) {
+        const id = courseFilter;
+        query = query.or(
+          [
+            `and(target_kind.eq.course,target_id.eq.${id})`,
+            `details->>course_id.eq.${id}`,
+            `details->>target_course_id.eq.${id}`,
+            `details->>source_course_id.eq.${id}`,
+          ].join(","),
+        );
       }
       // SmartDatePicker emits ISO strings; slice to YYYY-MM-DD for day-boundary helpers.
       const fromIso = dayStartIso(dateFrom ? dateFrom.slice(0, 10) : "");
@@ -889,7 +950,7 @@ export function AdminAuditPage() {
     } finally {
       setLoading(false);
     }
-  }, [page, actionFilter, actorFilter, dateFrom, dateTo]);
+  }, [page, actionFilter, actorFilter, dateFrom, dateTo, courseFilter]);
 
   // Load the distinct action set once. Cheap because most installs have
   // <10 distinct action codes.
@@ -917,6 +978,53 @@ export function AdminAuditPage() {
   useEffect(() => {
     void refresh();
   }, [refresh]);
+
+  // Persist the active course filter across reloads. Admins auditing a single
+  // course shouldn't have to re-pick it every session.
+  useEffect(() => {
+    writePersistedCourseFilter(courseFilter);
+  }, [courseFilter]);
+
+  // Load the course list once. Admins see all courses via RLS. We cap at 200
+  // courses — this is an admin debugging tool, not a directory; if a deployment
+  // ever exceeds that we can switch to a typeahead.
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      const { data, error: courseErr } = await supabase
+        .from("courses")
+        .select("id, name, short_code")
+        .eq("archived", false)
+        .order("name", { ascending: true })
+        .limit(200);
+      if (cancelled) return;
+      if (courseErr) {
+        // Non-fatal: leave the dropdown empty. The audit table still works.
+        return;
+      }
+      const opts: CourseOption[] = [];
+      for (const row of data ?? []) {
+        const r = row as Record<string, unknown>;
+        const id = typeof r.id === "string" ? r.id : null;
+        const name = typeof r.name === "string" ? r.name : null;
+        const shortCode =
+          typeof r.short_code === "string" ? r.short_code : null;
+        if (id && name) opts.push({ id, name, short_code: shortCode });
+      }
+      setCourseOptions(opts);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const activeCourse = useMemo(
+    () =>
+      courseFilter
+        ? courseOptions.find((c) => c.id === courseFilter) ?? null
+        : null,
+    [courseFilter, courseOptions],
+  );
 
   const pageCount = useMemo(
     () => Math.max(1, Math.ceil(total / PAGE_SIZE)),
@@ -954,7 +1062,7 @@ export function AdminAuditPage() {
 
       {/* Filter row */}
       <form
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3"
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-3"
         onSubmit={(e) => {
           e.preventDefault();
           setPage(0);
@@ -984,6 +1092,45 @@ export function AdminAuditPage() {
               </optgroup>
             ))}
           </select>
+        </label>
+        <label className="text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1">
+          Course
+          <div className="flex items-center gap-1">
+            <select
+              value={courseFilter}
+              onChange={(e) => {
+                setCourseFilter(e.target.value);
+                setPage(0);
+              }}
+              className="min-h-[40px] flex-1 rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              title={
+                activeCourse
+                  ? `Scoped to ${activeCourse.name}`
+                  : "Filter by course"
+              }
+            >
+              <option value="">All courses</option>
+              {courseOptions.map((c) => (
+                <option key={c.id} value={c.id}>
+                  {c.short_code ? `${c.name} (${c.short_code})` : c.name}
+                </option>
+              ))}
+            </select>
+            {courseFilter && (
+              <button
+                type="button"
+                onClick={() => {
+                  setCourseFilter("");
+                  setPage(0);
+                }}
+                title="Clear course filter"
+                aria-label="Clear course filter"
+                className="min-h-[40px] min-w-[40px] rounded-md border border-slate-300 dark:border-slate-700 px-2 py-1.5 text-xs text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+              >
+                ×
+              </button>
+            )}
+          </div>
         </label>
         <label className="text-xs font-medium text-slate-600 dark:text-slate-400 flex flex-col gap-1">
           Actor (email or uuid)
@@ -1023,6 +1170,7 @@ export function AdminAuditPage() {
               setActorFilter("");
               setDateFrom("");
               setDateTo("");
+              setCourseFilter("");
               setPage(0);
             }}
             className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
@@ -1030,16 +1178,34 @@ export function AdminAuditPage() {
             Reset
           </button>
         </div>
-        {activeActionMeta?.description && (
-          <p className="sm:col-span-2 lg:col-span-5 text-xs text-slate-500 dark:text-slate-400 -mt-1">
-            <span className="font-medium text-slate-600 dark:text-slate-300">
-              {activeActionMeta.label}:
-            </span>{" "}
-            {activeActionMeta.description}{" "}
-            <span className="font-mono text-[10px] text-slate-400">
-              ({activeActionMeta.id})
-            </span>
-          </p>
+        {(activeActionMeta?.description || activeCourse) && (
+          <div className="sm:col-span-2 lg:col-span-6 -mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+            {activeCourse && (
+              <span
+                className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900"
+                title={`Filtering audit events for ${activeCourse.name}`}
+              >
+                <span aria-hidden>📚</span>
+                Scoped to {activeCourse.name}
+                {activeCourse.short_code ? (
+                  <span className="font-mono text-[10px] text-indigo-500 dark:text-indigo-400">
+                    ({activeCourse.short_code})
+                  </span>
+                ) : null}
+              </span>
+            )}
+            {activeActionMeta?.description && (
+              <span>
+                <span className="font-medium text-slate-600 dark:text-slate-300">
+                  {activeActionMeta.label}:
+                </span>{" "}
+                {activeActionMeta.description}{" "}
+                <span className="font-mono text-[10px] text-slate-400">
+                  ({activeActionMeta.id})
+                </span>
+              </span>
+            )}
+          </div>
         )}
       </form>
 

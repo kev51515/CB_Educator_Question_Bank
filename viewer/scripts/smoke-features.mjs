@@ -1791,6 +1791,8 @@ async function wave63() {
     outsiderTeacherId: null,
     outsiderTeacherClient: null,
     importedIds: [], // populated in Step A for audit-check + cleanup
+    anchorBId: null, // pre-existing anchor item in template B (mig 0064)
+    anchoredIds: [], // ids created by the anchored import (Step 8)
   };
 
   await step("wave63: setup — second course B + portfolio template", async () => {
@@ -1998,8 +2000,187 @@ async function wave63() {
     }
   });
 
+  // ---- Step 8: anchored import (mig 0064 happy path) ---------------------
+  // After Step A, template B has 3 cloned roots/children (all parent_item_id
+  // chains internal to B). Now create a brand-new "anchor" root in B, then
+  // re-import the same source roots WITH p_target_parent_id = anchor.id.
+  // Expect 3 new rows whose CLONED ROOTS hang off the anchor (not NULL),
+  // children still chain to their cloned parent, and existing B rows are
+  // untouched.
+  await step("wave63: anchored import lands cloned roots under p_target_parent_id", async () => {
+    // Create anchor item directly in target B template.
+    const anchor = await ctx.teacherClient
+      .from("portfolio_items")
+      .insert({
+        template_id: local.templateBId,
+        position: 99, // safely after Step A's clones
+        title: `Anchor B ${TS}`,
+        item_type: "long_text",
+        required: false,
+      })
+      .select("id")
+      .single();
+    if (anchor.error) throw anchor.error;
+    local.anchorBId = anchor.data.id;
+
+    // Snapshot B's row ids before anchored import.
+    const before = await ctx.teacherClient
+      .from("portfolio_items")
+      .select("id")
+      .eq("template_id", local.templateBId);
+    if (before.error) throw before.error;
+    const beforeIds = new Set(before.data.map((r) => r.id));
+
+    const { data, error } = await ctx.teacherClient.rpc(
+      "import_portfolio_items",
+      {
+        p_source_template_id: ctx.portfolioTemplateId,
+        p_target_template_id: local.templateBId,
+        p_item_ids: [ctx.portfolioItemTextId, ctx.portfolioItemLinkId],
+        p_target_parent_id: local.anchorBId,
+      },
+    );
+    if (error) throw error;
+    if (data !== 3)
+      throw new Error(`expected 3 imported (anchored), got ${data}`);
+
+    // Identify the freshly-created rows (those NOT in the snapshot).
+    const after = await ctx.teacherClient
+      .from("portfolio_items")
+      .select("id,title,parent_item_id")
+      .eq("template_id", local.templateBId);
+    if (after.error) throw after.error;
+    const fresh = after.data.filter((r) => !beforeIds.has(r.id));
+    if (fresh.length !== 3)
+      throw new Error(`expected 3 fresh rows under anchor, got ${fresh.length}`);
+    for (const r of fresh) local.anchoredIds.push(r.id);
+
+    const newEssay = fresh.find((r) => r.title === "Common App Essay");
+    const newVideo = fresh.find((r) => r.title === "Video Introduction");
+    const newResume = fresh.find((r) => r.title === "Resume");
+    if (!newEssay || !newVideo || !newResume)
+      throw new Error(
+        `missing anchored titles: essay=${!!newEssay} video=${!!newVideo} resume=${!!newResume}`,
+      );
+
+    // Cloned roots must now point at the anchor (NOT NULL).
+    if (newEssay.parent_item_id !== local.anchorBId)
+      throw new Error(
+        `anchored essay parent=${newEssay.parent_item_id}, expected anchor ${local.anchorBId}`,
+      );
+    if (newVideo.parent_item_id !== local.anchorBId)
+      throw new Error(
+        `anchored video parent=${newVideo.parent_item_id}, expected anchor ${local.anchorBId}`,
+      );
+    // Child still chains to its NEW cloned parent (essay), NOT to anchor.
+    if (newResume.parent_item_id !== newEssay.id)
+      throw new Error(
+        `anchored resume parent=${newResume.parent_item_id}, expected cloned essay ${newEssay.id}`,
+      );
+
+    // Pre-existing rows in B (from Step A + the anchor itself) must be unchanged.
+    const stillPresent = after.data.filter((r) => beforeIds.has(r.id));
+    if (stillPresent.length !== before.data.length)
+      throw new Error(
+        `pre-existing target rows mutated: ${before.data.length} -> ${stillPresent.length}`,
+      );
+    const anchorRow = stillPresent.find((r) => r.id === local.anchorBId);
+    if (!anchorRow || anchorRow.parent_item_id !== null)
+      throw new Error(`anchor itself was mutated: ${JSON.stringify(anchorRow)}`);
+
+    return `3 imported under anchor=${local.anchorBId}, prior B rows intact`;
+  });
+
+  // ---- Step 9: parent_not_in_target_template -----------------------------
+  // Anchor must live in the TARGET template. Passing an item that belongs to
+  // the SOURCE template (A) must fail with the migration's stable error code.
+  await step("wave63: anchor in wrong template -> parent_not_in_target_template", async () => {
+    const { error } = await ctx.teacherClient.rpc("import_portfolio_items", {
+      p_source_template_id: ctx.portfolioTemplateId,
+      p_target_template_id: local.templateBId,
+      p_item_ids: [ctx.portfolioItemLinkId],
+      // ctx.portfolioItemTextId is a root in template A, NOT in template B.
+      p_target_parent_id: ctx.portfolioItemTextId,
+    });
+    if (!error) throw new Error("expected parent_not_in_target_template");
+    const msg = (error.message || "") + " " + (error.details || "");
+    if (!/parent_not_in_target_template/i.test(msg))
+      throw new Error(`unexpected error: ${fmt(error)}`);
+    return `denied: ${msg.slice(0, 60)}`;
+  });
+
+  // ---- Step 10: audit payload carries target_parent_id when anchored -----
+  // Migration 0064 branches the audit JSON: root imports omit target_parent_id,
+  // anchored imports include it. Distinguish the two audit rows by which roots
+  // were picked + whether target_parent_id is present. Step A (root) and Step 8
+  // (anchored) both picked [textId, linkId] AND imported_count=3 — the
+  // discriminator that MUST work is target_parent_id presence.
+  await step("wave63: audit row records target_parent_id only when anchored", async () => {
+    const adminEmail = `a64-${TAG}@gmail.com`;
+    const adminId = await createConfirmedUser(adminEmail, PW, "admin");
+    const adminClient = userClient();
+    await signIn(adminClient, adminEmail, PW);
+    try {
+      const { data, error } = await adminClient
+        .from("audit_events")
+        .select("id,action,target_id,details,created_at")
+        .eq("action", "portfolio_import")
+        .eq("target_id", local.templateBId)
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      if (!data || data.length < 2)
+        throw new Error(
+          `expected ≥2 audit rows (root + anchored), got ${data?.length ?? 0}`,
+        );
+
+      // Anchored row: details.target_parent_id === anchor uuid.
+      const anchored = data.find(
+        (r) => r.details && r.details.target_parent_id === local.anchorBId,
+      );
+      if (!anchored)
+        throw new Error(
+          `no audit row with target_parent_id=${local.anchorBId} in ${data.length} candidates`,
+        );
+      if (anchored.details.imported_count !== 3)
+        throw new Error(
+          `anchored audit row imported_count=${anchored.details.imported_count}, expected 3`,
+        );
+
+      // Root row (Step A): target_parent_id absent or null. Re-fetch by
+      // explicitly excluding the anchored row id.
+      const rootRow = data.find(
+        (r) =>
+          r.id !== anchored.id &&
+          r.details &&
+          r.details.imported_count === 3 &&
+          (r.details.target_parent_id === undefined ||
+            r.details.target_parent_id === null),
+      );
+      if (!rootRow)
+        throw new Error(
+          `no root-level audit row (target_parent_id null/absent) found among ${data.length}`,
+        );
+
+      return `anchored row has target_parent_id=${local.anchorBId}; root row omits it`;
+    } finally {
+      await service.auth.admin.deleteUser(adminId).catch(() => {});
+    }
+  });
+
   // ---- Cleanup (items → templates → courses → outsider user) -------------
   await step("wave63: cleanup", async () => {
+    // Step 8 created children that hang off anchorB (and grandchild Resume
+    // chains to cloned essay). Delete the anchored set first so anchorB can
+    // be removed without FK violations, then anchorB, then Step A's clones.
+    if (local.anchoredIds.length) {
+      await service
+        .from("portfolio_items")
+        .delete()
+        .in("id", local.anchoredIds);
+    }
+    if (local.anchorBId) {
+      await service.from("portfolio_items").delete().eq("id", local.anchorBId);
+    }
     // Items first (FK refs templates).
     if (local.importedIds.length) {
       await service
