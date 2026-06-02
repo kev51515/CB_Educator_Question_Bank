@@ -100,6 +100,8 @@ export { EmptyState } from "./EmptyState";
 export { Skeleton, SkeletonRows } from "./Skeleton";
 export { ShortcutHelpOverlay } from "./ShortcutHelpOverlay";
 export type { ShortcutHelpOverlayProps } from "./ShortcutHelpOverlay";
+export { ShortcutsHelp } from "./ShortcutsHelp";
+export type { ShortcutsHelpProps, ShortcutsHelpRole } from "./ShortcutsHelp";
 export { SmartDatePicker } from "./SmartDatePicker";
 export { KebabMenu } from "./KebabMenu";
 export type { KebabMenuOption } from "./KebabMenu";

@@ -21,7 +21,7 @@ import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
 import { useProfile } from "../lib/profile";
 import { CommandPalette, type Command } from "../components/CommandPalette";
-import { ShortcutHelpOverlay } from "../components/ShortcutHelpOverlay";
+import { ShortcutsHelp } from "../components/ShortcutsHelp";
 import { useLmsCommands } from "../lib/lmsCommands";
 
 /**
@@ -533,8 +533,13 @@ export function StaffShell() {
         onPickQuestion={closePalette}
       />
 
-      {/* Global keyboard-shortcut help overlay (`?` to open). */}
-      <ShortcutHelpOverlay open={helpOpen} onClose={closeHelp} />
+      {/* Global keyboard-shortcut help overlay (`?` to open). Role gates the
+          staff-only sections (Inside Courses ⌘N quick-create, Modules drag). */}
+      <ShortcutsHelp
+        open={helpOpen}
+        onClose={closeHelp}
+        userRole={profile?.role ?? null}
+      />
     </div>
   );
 }
