@@ -24,7 +24,7 @@
  * clicked "View all" knowing the destination might be empty; silence
  * would feel broken.
  */
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { EmptyState, Skeleton, useToast } from "../components";
 import { useStudentSession } from "../auth/session";
@@ -36,6 +36,186 @@ import {
 
 const PAGE_SIZE = 25;
 const TRUNCATE_AT = 300;
+
+// ──────────────────────────────────────────────────────────────────────────
+// Sort + filter (Wave 21D)
+// ──────────────────────────────────────────────────────────────────────────
+
+type FilterKey = "all" | "has_feedback" | "awaiting" | "high" | "low";
+type SortKey =
+  | "recent"
+  | "oldest"
+  | "score_desc"
+  | "score_asc"
+  | "course_name";
+
+interface ViewPrefs {
+  filter: FilterKey;
+  sort: SortKey;
+}
+
+const DEFAULT_PREFS: ViewPrefs = { filter: "all", sort: "recent" };
+
+function prefsStorageKey(userId: string | null): string | null {
+  if (!userId) return null;
+  return `student.myFeedback.view:${userId}`;
+}
+
+function loadPrefs(userId: string | null): ViewPrefs {
+  const key = prefsStorageKey(userId);
+  if (!key) return DEFAULT_PREFS;
+  try {
+    const raw = window.localStorage.getItem(key);
+    if (!raw) return DEFAULT_PREFS;
+    const parsed = JSON.parse(raw) as Partial<ViewPrefs>;
+    const filter: FilterKey =
+      parsed.filter === "has_feedback" ||
+      parsed.filter === "awaiting" ||
+      parsed.filter === "high" ||
+      parsed.filter === "low" ||
+      parsed.filter === "all"
+        ? parsed.filter
+        : "all";
+    const sort: SortKey =
+      parsed.sort === "oldest" ||
+      parsed.sort === "score_desc" ||
+      parsed.sort === "score_asc" ||
+      parsed.sort === "course_name" ||
+      parsed.sort === "recent"
+        ? parsed.sort
+        : "recent";
+    return { filter, sort };
+  } catch {
+    return DEFAULT_PREFS;
+  }
+}
+
+function savePrefs(userId: string | null, prefs: ViewPrefs): void {
+  const key = prefsStorageKey(userId);
+  if (!key) return;
+  try {
+    window.localStorage.setItem(key, JSON.stringify(prefs));
+  } catch {
+    // localStorage may be unavailable (private mode, quota); silently ignore.
+  }
+}
+
+function hasFeedback(item: RecentFeedbackItem): boolean {
+  return (
+    item.feedbackText !== null && item.feedbackText.trim().length > 0
+  );
+}
+
+function isAwaiting(item: RecentFeedbackItem): boolean {
+  return !hasFeedback(item) && item.gradedAt === null;
+}
+
+function matchesFilter(
+  item: RecentFeedbackItem,
+  filter: FilterKey,
+): boolean {
+  switch (filter) {
+    case "all":
+      return true;
+    case "has_feedback":
+      return hasFeedback(item);
+    case "awaiting":
+      return isAwaiting(item);
+    case "high":
+      return item.effectiveScore !== null && item.effectiveScore >= 80;
+    case "low":
+      return item.effectiveScore !== null && item.effectiveScore < 60;
+  }
+}
+
+function compareItems(
+  a: RecentFeedbackItem,
+  b: RecentFeedbackItem,
+  sort: SortKey,
+): number {
+  switch (sort) {
+    case "recent": {
+      const ta = a.gradedAt ? Date.parse(a.gradedAt) : 0;
+      const tb = b.gradedAt ? Date.parse(b.gradedAt) : 0;
+      return tb - ta;
+    }
+    case "oldest": {
+      // Items missing gradedAt sink to the bottom so they don't masquerade
+      // as the "oldest" entries.
+      const ta = a.gradedAt ? Date.parse(a.gradedAt) : Number.POSITIVE_INFINITY;
+      const tb = b.gradedAt ? Date.parse(b.gradedAt) : Number.POSITIVE_INFINITY;
+      return ta - tb;
+    }
+    case "score_desc": {
+      const sa = a.effectiveScore;
+      const sb = b.effectiveScore;
+      if (sa === null && sb === null) return 0;
+      if (sa === null) return 1;
+      if (sb === null) return -1;
+      return sb - sa;
+    }
+    case "score_asc": {
+      const sa = a.effectiveScore;
+      const sb = b.effectiveScore;
+      if (sa === null && sb === null) return 0;
+      if (sa === null) return 1;
+      if (sb === null) return -1;
+      return sa - sb;
+    }
+    case "course_name":
+      return a.courseName.localeCompare(b.courseName, undefined, {
+        sensitivity: "base",
+      });
+  }
+}
+
+interface FilterPillSpec {
+  key: FilterKey;
+  label: string;
+  /** Tailwind classes for the active state. */
+  activePalette: string;
+}
+
+const FILTER_PILLS: FilterPillSpec[] = [
+  {
+    key: "all",
+    label: "All",
+    activePalette:
+      "bg-slate-900 text-white ring-slate-900 dark:bg-slate-100 dark:text-slate-900 dark:ring-slate-100",
+  },
+  {
+    key: "has_feedback",
+    label: "Has feedback",
+    activePalette:
+      "bg-indigo-600 text-white ring-indigo-600 dark:bg-indigo-500 dark:ring-indigo-500",
+  },
+  {
+    key: "awaiting",
+    label: "Awaiting feedback",
+    activePalette:
+      "bg-amber-500 text-white ring-amber-500 dark:bg-amber-600 dark:ring-amber-600",
+  },
+  {
+    key: "high",
+    label: "High score",
+    activePalette:
+      "bg-emerald-600 text-white ring-emerald-600 dark:bg-emerald-500 dark:ring-emerald-500",
+  },
+  {
+    key: "low",
+    label: "Low score",
+    activePalette:
+      "bg-rose-600 text-white ring-rose-600 dark:bg-rose-500 dark:ring-rose-500",
+  },
+];
+
+const FILTER_LABEL: Record<FilterKey, string> = FILTER_PILLS.reduce(
+  (acc, pill) => {
+    acc[pill.key] = pill.label;
+    return acc;
+  },
+  {} as Record<FilterKey, string>,
+);
 
 // ──────────────────────────────────────────────────────────────────────────
 // Helpers
@@ -216,6 +396,55 @@ export function MyFeedbackPage() {
 
   const [expanded, setExpanded] = useState<Set<string>>(() => new Set());
 
+  // View prefs (filter + sort) persist per user via localStorage. We hydrate
+  // lazily on mount so SSR/snapshot tools don't read window at import time.
+  const [prefs, setPrefs] = useState<ViewPrefs>(DEFAULT_PREFS);
+  const [prefsHydrated, setPrefsHydrated] = useState<boolean>(false);
+
+  useEffect(() => {
+    setPrefs(loadPrefs(studentId));
+    setPrefsHydrated(true);
+  }, [studentId]);
+
+  useEffect(() => {
+    if (!prefsHydrated) return;
+    savePrefs(studentId, prefs);
+  }, [studentId, prefs, prefsHydrated]);
+
+  const filterCounts = useMemo<Record<FilterKey, number>>(() => {
+    const counts: Record<FilterKey, number> = {
+      all: items.length,
+      has_feedback: 0,
+      awaiting: 0,
+      high: 0,
+      low: 0,
+    };
+    for (const item of items) {
+      if (hasFeedback(item)) counts.has_feedback += 1;
+      if (isAwaiting(item)) counts.awaiting += 1;
+      if (item.effectiveScore !== null && item.effectiveScore >= 80)
+        counts.high += 1;
+      if (item.effectiveScore !== null && item.effectiveScore < 60)
+        counts.low += 1;
+    }
+    return counts;
+  }, [items]);
+
+  const visibleItems = useMemo<RecentFeedbackItem[]>(() => {
+    const filtered = items.filter((item) => matchesFilter(item, prefs.filter));
+    return filtered
+      .slice()
+      .sort((a, b) => compareItems(a, b, prefs.sort));
+  }, [items, prefs.filter, prefs.sort]);
+
+  const setFilter = useCallback((next: FilterKey): void => {
+    setPrefs((prev) => (prev.filter === next ? prev : { ...prev, filter: next }));
+  }, []);
+
+  const setSort = useCallback((next: SortKey): void => {
+    setPrefs((prev) => (prev.sort === next ? prev : { ...prev, sort: next }));
+  }, []);
+
   const toggleExpand = useCallback((attemptId: string): void => {
     setExpanded((prev) => {
       const next = new Set(prev);
@@ -248,6 +477,22 @@ export function MyFeedbackPage() {
     () => !loading && !error && items.length === 0,
     [loading, error, items.length],
   );
+
+  const showFilteredEmpty = useMemo(
+    () =>
+      !loading &&
+      !error &&
+      items.length > 0 &&
+      visibleItems.length === 0,
+    [loading, error, items.length, visibleItems.length],
+  );
+
+  const liveAnnouncement = useMemo(() => {
+    if (loading || error || items.length === 0) return "";
+    const count = visibleItems.length;
+    const noun = count === 1 ? "item" : "items";
+    return `${count} ${noun} shown — ${FILTER_LABEL[prefs.filter]}`;
+  }, [loading, error, items.length, visibleItems.length, prefs.filter]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50 to-sky-100 dark:from-slate-950 dark:via-slate-900 dark:to-indigo-950 px-4 py-12">
@@ -303,21 +548,101 @@ export function MyFeedbackPage() {
         {/* Loaded */}
         {items.length > 0 && (
           <>
-            <ul
-              className="space-y-2"
-              aria-label="Feedback history"
-            >
-              {items.map((item) => (
-                <li key={item.attemptId}>
-                  <FeedbackRow
-                    item={item}
-                    expanded={expanded.has(item.attemptId)}
-                    onToggleExpand={toggleExpand}
-                    onOpen={handleOpen}
-                  />
-                </li>
-              ))}
-            </ul>
+            {/* Filter pills + sort. Tablist semantics so screen readers can
+                navigate the filters as a group; the sort is an adjacent
+                <select> with its own aria-label. */}
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div
+                role="tablist"
+                aria-label="Filter feedback"
+                className="flex flex-wrap items-center gap-2"
+              >
+                {FILTER_PILLS.map((pill) => {
+                  const active = prefs.filter === pill.key;
+                  const count = filterCounts[pill.key];
+                  return (
+                    <button
+                      key={pill.key}
+                      type="button"
+                      role="tab"
+                      aria-selected={active}
+                      onClick={() => setFilter(pill.key)}
+                      className={`inline-flex min-h-[40px] items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-semibold ring-1 transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950 ${
+                        active
+                          ? pill.activePalette
+                          : "bg-white/80 text-slate-700 ring-slate-200 hover:bg-white dark:bg-slate-900/60 dark:text-slate-200 dark:ring-slate-700 dark:hover:bg-slate-900"
+                      }`}
+                    >
+                      <span>{pill.label}</span>
+                      <span
+                        className={`inline-flex min-w-[1.5rem] justify-center rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
+                          active
+                            ? "bg-white/20 text-current"
+                            : "bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300"
+                        }`}
+                      >
+                        {count}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+              <label className="flex items-center gap-2 self-start sm:self-auto">
+                <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
+                  Sort
+                </span>
+                <select
+                  aria-label="Sort feedback"
+                  value={prefs.sort}
+                  onChange={(e) => setSort(e.target.value as SortKey)}
+                  className="min-h-[40px] rounded-lg bg-white/80 dark:bg-slate-900/60 px-3 py-1.5 text-sm text-slate-800 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-white dark:hover:bg-slate-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950"
+                >
+                  <option value="recent">Most recent</option>
+                  <option value="oldest">Oldest first</option>
+                  <option value="score_desc">Highest score</option>
+                  <option value="score_asc">Lowest score</option>
+                  <option value="course_name">Course name</option>
+                </select>
+              </label>
+            </div>
+
+            {/* sr-only live region announces the filter result count so
+                keyboard / screen-reader users get the same feedback sighted
+                users get from the visible counts on each pill. */}
+            <p className="sr-only" aria-live="polite">
+              {liveAnnouncement}
+            </p>
+
+            {showFilteredEmpty ? (
+              <div className="rounded-2xl ring-1 ring-slate-200 dark:ring-slate-700 bg-white/80 dark:bg-slate-900/60 p-6 text-center">
+                <p className="text-sm text-slate-700 dark:text-slate-200">
+                  No feedback matches this filter.
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setFilter("all")}
+                  className="mt-3 inline-flex min-h-[40px] items-center rounded-lg bg-indigo-600 hover:bg-indigo-700 px-4 py-2 text-sm font-medium text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 dark:focus-visible:ring-offset-slate-950"
+                >
+                  Show all
+                </button>
+              </div>
+            ) : (
+              <ul
+                className="space-y-2"
+                aria-label="Feedback history"
+              >
+                {visibleItems.map((item) => (
+                  <li key={item.attemptId}>
+                    <FeedbackRow
+                      item={item}
+                      expanded={expanded.has(item.attemptId)}
+                      onToggleExpand={toggleExpand}
+                      onOpen={handleOpen}
+                    />
+                  </li>
+                ))}
+              </ul>
+            )}
 
             <div className="flex flex-col items-center gap-2 pt-2">
               {hasMore ? (
