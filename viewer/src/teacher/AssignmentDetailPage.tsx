@@ -108,6 +108,84 @@ function formatTimeLimit(minutes: number): string {
   return `${minutes} min`;
 }
 
+/**
+ * Compact relative-time formatter for the sticky-header "Due" pill.
+ * Returns labels like "Due in 3 days", "Due tomorrow", "Past due" so a
+ * teacher scrolling the attempt list still sees the urgency at a glance.
+ * Tooltip on the pill still shows the absolute timestamp.
+ */
+function formatRelativeDue(iso: string | null): {
+  label: string;
+  tone: "rose" | "amber" | "slate";
+} | null {
+  if (!iso) return null;
+  const now = Date.now();
+  const target = new Date(iso).getTime();
+  if (Number.isNaN(target)) return null;
+  const diffMs = target - now;
+  const diffMin = Math.round(diffMs / 60_000);
+  const diffHr = Math.round(diffMs / 3_600_000);
+  const diffDay = Math.round(diffMs / 86_400_000);
+
+  if (diffMs < 0) {
+    return { label: "Past due", tone: "rose" };
+  }
+  if (diffMin < 60) {
+    return {
+      label: diffMin <= 1 ? "Due now" : `Due in ${diffMin} min`,
+      tone: "rose",
+    };
+  }
+  if (diffHr < 24) {
+    return {
+      label: `Due in ${diffHr} hr${diffHr === 1 ? "" : "s"}`,
+      tone: "amber",
+    };
+  }
+  if (diffDay === 1) {
+    return { label: "Due tomorrow", tone: "amber" };
+  }
+  if (diffDay < 7) {
+    return { label: `Due in ${diffDay} days`, tone: "amber" };
+  }
+  return { label: `Due in ${diffDay} days`, tone: "slate" };
+}
+
+const PILL_TONES: Record<
+  "emerald" | "indigo" | "violet" | "amber" | "rose" | "slate",
+  string
+> = {
+  emerald:
+    "bg-emerald-50 text-emerald-700 ring-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300 dark:ring-emerald-900",
+  indigo:
+    "bg-indigo-50 text-indigo-700 ring-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300 dark:ring-indigo-900",
+  violet:
+    "bg-violet-50 text-violet-700 ring-violet-200 dark:bg-violet-950/40 dark:text-violet-300 dark:ring-violet-900",
+  amber:
+    "bg-amber-50 text-amber-700 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900",
+  rose: "bg-rose-50 text-rose-700 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900",
+  slate:
+    "bg-slate-100 text-slate-700 ring-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:ring-slate-700",
+};
+
+interface HeaderPillProps {
+  tone: keyof typeof PILL_TONES;
+  label: string;
+  title?: string;
+}
+
+function HeaderPill({ tone, label, title }: HeaderPillProps) {
+  return (
+    <span
+      title={title}
+      aria-label={title ?? label}
+      className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium ring-1 ${PILL_TONES[tone]}`}
+    >
+      {label}
+    </span>
+  );
+}
+
 function getErrorMessage(error: unknown, fallback: string): string {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
@@ -140,6 +218,40 @@ export function AssignmentDetailPage() {
   const [showEdit, setShowEdit] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const menuRef = useRef<HTMLDivElement | null>(null);
+
+  // Sticky-header compress state. We track a single boolean ("scrolled past
+  // the threshold") rather than the raw scroll position so React only
+  // re-renders on transitions. requestAnimationFrame throttles the listener
+  // to one update per frame.
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const SCROLL_THRESHOLD_PX = 80;
+    let raf = 0;
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const y =
+        window.scrollY ??
+        document.documentElement.scrollTop ??
+        document.body.scrollTop ??
+        0;
+      setScrolled((prev) => {
+        const next = y > SCROLL_THRESHOLD_PX;
+        return next === prev ? prev : next;
+      });
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      raf = window.requestAnimationFrame(update);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    update();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) window.cancelAnimationFrame(raf);
+    };
+  }, []);
 
   // Close the kebab menu on outside click.
   useEffect(() => {
@@ -308,39 +420,90 @@ export function AssignmentDetailPage() {
           <span aria-hidden>←</span> Back to assignments
         </button>
 
-        <header className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-4">
+        <header
+          role="banner"
+          className={`sticky top-0 z-20 rounded-2xl bg-white/90 dark:bg-slate-900/80 backdrop-blur-sm ring-1 ring-slate-200 dark:ring-slate-800 border-b border-slate-200/60 dark:border-slate-800/60 motion-safe:transition-all ${
+            scrolled ? "p-3 sm:p-4 space-y-2" : "p-6 space-y-4"
+          }`}
+        >
           <div className="flex items-start justify-between gap-4">
-            <div className="min-w-0">
+            <div className="min-w-0 flex-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-2xl font-bold text-slate-900 dark:text-slate-100">
+                <h1
+                  className={`font-bold text-slate-900 dark:text-slate-100 motion-safe:transition-all truncate ${
+                    scrolled ? "text-lg sm:text-lg" : "text-2xl"
+                  }`}
+                  title={assignment.title}
+                >
                   {assignment.title}
                 </h1>
-                {assignment.kind === "qbank_set" ? (
-                  <span
-                    className="rounded-full bg-indigo-100 dark:bg-indigo-950/60 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-900"
-                    title="Question set from the Question Bank"
-                  >
-                    Question Set
-                  </span>
-                ) : assignment.kind === "mocktest" ? (
-                  <span
-                    className="rounded-full bg-violet-100 dark:bg-violet-950/60 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-violet-700 dark:text-violet-300 ring-1 ring-violet-200 dark:ring-violet-900"
-                    title="Full-length SAT practice test"
-                  >
-                    Practice Test
-                  </span>
-                ) : null}
-                {assignment.archived && (
-                  <span className="rounded-full bg-slate-100 dark:bg-slate-800 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-slate-500 dark:text-slate-400">
-                    Archived
-                  </span>
-                )}
               </div>
-              {assignment.description && (
+              {assignment.description && !scrolled && (
                 <p className="mt-1 text-slate-600 dark:text-slate-400">
                   {assignment.description}
                 </p>
               )}
+
+              {/*
+               * Always-visible pills row. These stay rendered in both the
+               * full and compressed header states so a teacher scrolling
+               * the attempt list never loses context on status / due /
+               * type / load. Wraps to multiple lines below sm.
+               */}
+              <div
+                className={`flex flex-wrap items-center gap-1.5 motion-safe:transition-all ${
+                  scrolled ? "mt-1" : "mt-3"
+                }`}
+              >
+                {assignment.archived ? (
+                  <HeaderPill tone="slate" label="Archived" title="This assignment is archived" />
+                ) : (
+                  <HeaderPill
+                    tone="emerald"
+                    label="Active"
+                    title="This assignment is active"
+                  />
+                )}
+                {assignment.kind === "qbank_set" && (
+                  <HeaderPill
+                    tone="indigo"
+                    label="Question Set"
+                    title="Question set from the Question Bank"
+                  />
+                )}
+                {assignment.kind === "mocktest" && (
+                  <HeaderPill
+                    tone="violet"
+                    label="Practice Test"
+                    title="Full-length SAT practice test"
+                  />
+                )}
+                {(() => {
+                  const rel = formatRelativeDue(assignment.due_at);
+                  if (!rel) return null;
+                  return (
+                    <HeaderPill
+                      tone={rel.tone}
+                      label={rel.label}
+                      title={`Due ${formatDate(assignment.due_at)}`}
+                    />
+                  );
+                })()}
+                <HeaderPill
+                  tone="slate"
+                  label={`${assignment.question_count} ${
+                    assignment.question_count === 1 ? "question" : "questions"
+                  }`}
+                  title={`${assignment.question_count} questions`}
+                />
+                {assignment.time_limit_minutes > 0 && (
+                  <HeaderPill
+                    tone="slate"
+                    label={`${assignment.time_limit_minutes} min`}
+                    title={`Time limit: ${assignment.time_limit_minutes} minutes`}
+                  />
+                )}
+              </div>
             </div>
             <div className="relative shrink-0" ref={menuRef}>
               <button
@@ -406,7 +569,11 @@ export function AssignmentDetailPage() {
             </div>
           )}
 
-          <dl className="grid gap-x-6 gap-y-3 grid-cols-2 sm:grid-cols-3 text-sm text-slate-700 dark:text-slate-300">
+          <dl
+            className={`grid gap-x-6 gap-y-3 grid-cols-2 sm:grid-cols-3 text-sm text-slate-700 dark:text-slate-300 ${
+              scrolled ? "hidden sm:hidden" : ""
+            }`}
+          >
             {assignment.kind === "qbank_set" ? (
               <div>
                 <dt className="text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">

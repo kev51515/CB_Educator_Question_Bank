@@ -13,6 +13,7 @@ export { DuplicateCourseModal } from "./DuplicateCourseModal";
 export { useCourseTemplates } from "./useCourseTemplates";
 export type { CourseTemplate } from "./useCourseTemplates";
 export { ClassLayout } from "./ClassLayout";
+export { QuickCreatePalette } from "./QuickCreatePalette";
 export { ClassOverview } from "./ClassOverview";
 export { ClassRoster } from "./ClassRoster";
 export { BulkRosterModal } from "./BulkRosterModal";

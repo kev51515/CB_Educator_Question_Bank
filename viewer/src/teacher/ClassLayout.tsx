@@ -55,6 +55,7 @@ import { CourseDiscussions } from "./CourseDiscussions";
 import { DiscussionTopicView } from "./DiscussionTopicView";
 import { CourseSettings } from "./CourseSettings";
 import { ModulesPage } from "./ModulesPage";
+import { QuickCreatePalette } from "./QuickCreatePalette";
 import { ROUTES, classPath, coursePath } from "../lib/routes";
 import { SkeletonRows } from "../components/Skeleton";
 import { useToast } from "../components/Toast";
@@ -439,6 +440,10 @@ export function ClassLayout() {
           </Routes>
         </div>
       </div>
+
+      {/* ⌘N anywhere inside the course shell opens the quick-create picker.
+          The component owns its own keydown listener + visibility state. */}
+      <QuickCreatePalette />
 
       <DuplicateCourseModal
         open={showDuplicate}
