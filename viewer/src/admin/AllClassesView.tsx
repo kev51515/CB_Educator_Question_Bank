@@ -190,7 +190,7 @@ export function AllClassesView() {
       const { data, error: queryError } = await supabase
         .from("courses")
         .select(
-          "id, short_code, name, description, join_code, archived, is_template, created_at, teacher_id, teacher:profiles!classes_teacher_id_fkey(display_name, email), course_memberships(count), assignments(count)",
+          "id, short_code, name, description, join_code, archived, is_template, created_at, teacher_id, teacher:profiles!courses_teacher_id_fkey(display_name, email), course_memberships(count), assignments(count)",
         )
         .order("created_at", { ascending: false });
 
