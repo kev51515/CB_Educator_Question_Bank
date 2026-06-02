@@ -268,7 +268,7 @@ function AnnouncementCard({
             */}
             {scheduledFor && (
               <span
-                className="rounded-full bg-sky-100 dark:bg-sky-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-sky-700 dark:text-sky-300 ring-1 ring-sky-200 dark:ring-sky-900"
+                className="rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 text-[10px] font-medium uppercase tracking-wide text-indigo-700 dark:text-indigo-300 ring-1 ring-indigo-200 dark:ring-indigo-900"
                 title={`Will publish at ${new Date(scheduledFor).toLocaleString()}`}
               >
                 Scheduled · {formatRelative(scheduledFor)}

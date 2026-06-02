@@ -1185,7 +1185,6 @@ export function AdminAuditPage() {
                 className="inline-flex items-center gap-1 rounded-full bg-indigo-50 dark:bg-indigo-950/50 px-2 py-0.5 text-[11px] font-medium text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-900"
                 title={`Filtering audit events for ${activeCourse.name}`}
               >
-                <span aria-hidden>📚</span>
                 Scoped to {activeCourse.name}
                 {activeCourse.short_code ? (
                   <span className="font-mono text-[10px] text-indigo-500 dark:text-indigo-400">
@@ -1259,7 +1258,14 @@ export function AdminAuditPage() {
                   <td className="px-3 py-2 whitespace-nowrap text-xs">
                     <span
                       title={r.action}
-                      className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-medium text-slate-700 dark:text-slate-200"
+                      className={
+                        // Lifecycle deletes get a rose tint so a teacher / admin
+                        // scanning the page can spot destructive events at a glance.
+                        getActionMeta(r.action)?.group === "Lifecycle" ||
+                        r.action === "profile.delete"
+                          ? "inline-flex items-center rounded-md bg-rose-50 dark:bg-rose-950/40 ring-1 ring-rose-200 dark:ring-rose-900 px-1.5 py-0.5 font-medium text-rose-700 dark:text-rose-300"
+                          : "inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-medium text-slate-700 dark:text-slate-200"
+                      }
                     >
                       {getActionLabel(r.action)}
                     </span>

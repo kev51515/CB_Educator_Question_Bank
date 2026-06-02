@@ -94,14 +94,15 @@ export function NotificationPreferencesPage() {
 
   const onToggle = useCallback(
     (kindId: string, enabled: boolean) => {
+      // The switch animation IS the affordance — a toast per toggle is noisy
+      // when the user flips several prefs in quick succession. Save silently.
       const next = togglePref(prefs, kindId, enabled);
       setPrefs(next);
       if (userId) {
         savePrefs(userId, next);
       }
-      toast.success("Preferences updated");
     },
-    [prefs, userId, toast],
+    [prefs, userId],
   );
 
   const onReset = useCallback(() => {

@@ -131,17 +131,26 @@ export function useNotifications(): UseNotificationsResult {
   const markRead = useCallback(
     async (id: number): Promise<void> => {
       const nowIso = new Date().toISOString();
-      // Optimistic update.
-      setNotifications((prev) =>
-        prev.map((n) => (n.id === id && n.read_at === null ? { ...n, read_at: nowIso } : n)),
-      );
-      await supabase
+      // Optimistic update. Snapshot for rollback on failure so a server-side
+      // RLS reject doesn't leave the badge in a fake-read state.
+      let previous: NotificationRow[] = [];
+      setNotifications((prev) => {
+        previous = prev;
+        return prev.map((n) =>
+          n.id === id && n.read_at === null ? { ...n, read_at: nowIso } : n,
+        );
+      });
+      const { error } = await supabase
         .from("notifications")
         .update({ read_at: nowIso })
         .eq("id", id)
         .is("read_at", null);
+      if (error) {
+        setNotifications(previous);
+        toast.error("Couldn't mark as read");
+      }
     },
-    [],
+    [toast],
   );
 
   const markAllRead = useCallback(async (): Promise<void> => {

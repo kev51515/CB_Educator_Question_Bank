@@ -29,6 +29,7 @@ import { supabase } from "../lib/supabase";
 
 export interface RecentPost {
   id: string;
+  topicId: string;
   topicTitle: string;
   authorName: string;
   createdAt: string;
@@ -280,6 +281,7 @@ export function useCourseOverview(courseId: string | undefined): UseCourseOvervi
       const newReplies = postsRows.length;
       const recentPosts: RecentPost[] = postsRows.slice(0, POST_LIMIT).map((row) => ({
         id: row.id,
+        topicId: row.topic_id,
         topicTitle: row.topic?.title ?? "(untitled topic)",
         authorName: row.author?.display_name ?? "Anonymous",
         createdAt: row.created_at,

@@ -24,6 +24,7 @@ import { Skeleton, SkeletonCard } from "../components/Skeleton";
 import {
   courseAnnouncementsPath,
   courseAssignmentsPath,
+  courseDiscussionPath,
   courseDiscussionsPath,
   courseGradesPath,
   coursePeoplePath,
@@ -151,23 +152,34 @@ function QuickAction({ label, to, tone = "secondary" }: QuickActionProps) {
   );
 }
 
-function RecentPostRow({ post }: { post: RecentPost }) {
+function RecentPostRow({
+  post,
+  courseShortCode,
+}: {
+  post: RecentPost;
+  courseShortCode: string;
+}) {
   return (
-    <li className="flex items-start gap-2 py-1.5 border-b border-slate-100 dark:border-slate-800/70 last:border-0">
-      <div className="min-w-0 flex-1">
-        <p className="text-sm text-slate-800 dark:text-slate-200 truncate">
-          <span className="font-medium">{post.authorName}</span>{" "}
-          <span className="text-slate-500 dark:text-slate-400">
-            in {post.topicTitle}
-          </span>
-        </p>
-        <time
-          dateTime={post.createdAt}
-          className="text-[11px] text-slate-500 dark:text-slate-400"
-        >
-          {formatRelative(post.createdAt)}
-        </time>
-      </div>
+    <li className="border-b border-slate-100 dark:border-slate-800/70 last:border-0">
+      <Link
+        to={courseDiscussionPath(courseShortCode, post.topicId)}
+        className="flex items-start gap-2 py-1.5 -mx-1 px-1 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+      >
+        <div className="min-w-0 flex-1">
+          <p className="text-sm text-slate-800 dark:text-slate-200 truncate">
+            <span className="font-medium">{post.authorName}</span>{" "}
+            <span className="text-slate-500 dark:text-slate-400">
+              in {post.topicTitle}
+            </span>
+          </p>
+          <time
+            dateTime={post.createdAt}
+            className="text-[11px] text-slate-500 dark:text-slate-400"
+          >
+            {formatRelative(post.createdAt)}
+          </time>
+        </div>
+      </Link>
     </li>
   );
 }
@@ -347,7 +359,11 @@ export function CourseOverview() {
               {data.recentPosts.length > 0 ? (
                 <ul className="mt-2">
                   {data.recentPosts.map((p) => (
-                    <RecentPostRow key={p.id} post={p} />
+                    <RecentPostRow
+                      key={p.id}
+                      post={p}
+                      courseShortCode={cls.short_code}
+                    />
                   ))}
                 </ul>
               ) : (
