@@ -17,7 +17,7 @@
  * Optional `prefillCode` is supplied by AuthGate when the URL contains
  * `?code=XYZ` so a QR-scanned deeplink lands with the code already filled.
  */
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 
 interface QuickStartScreenProps {
@@ -26,13 +26,35 @@ interface QuickStartScreenProps {
 }
 
 /**
+ * Course short_code spec (per CLAUDE.md migrations 0038–0040):
+ *   - exactly 6 characters
+ *   - alphabet A-Z and 2-9 (excludes O/0/I/1/L confusables)
+ */
+const CODE_LENGTH = 6;
+const CODE_ALPHABET = /^[A-HJ-NP-Z2-9]+$/;
+const CODE_SCRUB = /[^A-HJ-NP-Z2-9]/g;
+
+function scrubCode(raw: string): string {
+  return raw.toUpperCase().replace(CODE_SCRUB, "").slice(0, CODE_LENGTH);
+}
+
+/**
  * Map Supabase / Postgres error messages to user-friendly copy. Falls back
  * to a cleaned version of the raw message for anything unrecognised.
  */
 function mapRpcError(raw: string): string {
   const msg = raw.toLowerCase();
-  if (msg.includes("invalid_join_code")) {
-    return "That code didn't match an active course. Check with your teacher.";
+  if (msg.includes("invalid_join_code") || msg.includes("invalid_invite_code") || msg.includes("code not found")) {
+    return "We couldn't find a course matching that code. Check with your teacher.";
+  }
+  if (msg.includes("code_expired")) {
+    return "That code has expired. Ask your teacher for a fresh one.";
+  }
+  if (msg.includes("code_revoked")) {
+    return "That code has been revoked. Ask your teacher for a fresh one.";
+  }
+  if (msg.includes("rate_limit") || msg.includes("too many")) {
+    return "Too many attempts. Wait a minute and try again.";
   }
   if (msg.includes("invalid_email")) {
     return "That email doesn't look right.";
@@ -68,11 +90,18 @@ function getErrorMessage(error: unknown): string {
 }
 
 export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartScreenProps) {
-  const [code, setCode] = useState<string>(prefillCode ?? "");
+  const [code, setCode] = useState<string>(() => scrubCode(prefillCode ?? ""));
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [busy, setBusy] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [succeeded, setSucceeded] = useState<boolean>(false);
+
+  const codeValid = useMemo(
+    () => code.length === CODE_LENGTH && CODE_ALPHABET.test(code),
+    [code],
+  );
+  const canSubmit = codeValid && name.trim().length > 0 && email.trim().length > 0 && !busy && !succeeded;
 
   const codeRef = useRef<HTMLInputElement | null>(null);
   const nameRef = useRef<HTMLInputElement | null>(null);
@@ -90,11 +119,11 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    const trimmedCode = code.trim();
+    const trimmedCode = scrubCode(code);
     const trimmedName = name.trim();
     const trimmedEmail = email.trim();
-    if (!trimmedCode) {
-      setError("Please enter your course code.");
+    if (trimmedCode.length !== CODE_LENGTH || !CODE_ALPHABET.test(trimmedCode)) {
+      setError("Enter the 6-character course code your teacher gave you.");
       return;
     }
     if (!trimmedName) {
@@ -114,10 +143,10 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
           (anonError as unknown as { code?: string | null }).code ?? null;
         if (isAnonymousDisabled(anonError.message, code)) {
           setError(
-            "Quick-start is disabled. Ask your teacher to enable it (Supabase Dashboard → Authentication → Sign In/Up → Allow anonymous sign-ins) or use Sign In above.",
+            "Quick-start is disabled. Ask your administrator to enable anonymous sign-in, or use Sign In above.",
           );
         } else {
-          setError(anonError.message);
+          setError(mapRpcError(anonError.message));
         }
         return;
       }
@@ -136,7 +165,9 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
       }
 
       // 3. Success — AuthGate's session + profile hooks will pick up the
-      // new state on their own. No navigation required here.
+      // new state on their own. We briefly show a confirmation card; AuthGate
+      // will swap the route out shortly after.
+      setSucceeded(true);
     } catch (err: unknown) {
       setError(getErrorMessage(err));
     } finally {
@@ -162,8 +193,9 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
           </p>
         </header>
 
-        {error && (
+        {error && !succeeded && (
           <div
+            id="quickstart-error"
             role="alert"
             className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
           >
@@ -171,21 +203,60 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
           </div>
         )}
 
+        {succeeded && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="flex items-center gap-3 rounded-md bg-emerald-50 dark:bg-emerald-950/40 px-3 py-3 text-sm text-emerald-800 dark:text-emerald-200 ring-1 ring-emerald-200 dark:ring-emerald-900"
+          >
+            <span
+              aria-hidden="true"
+              className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-emerald-400 border-t-transparent"
+            />
+            <span>Setting up your course…</span>
+          </div>
+        )}
+
         <form onSubmit={onSubmit} className="space-y-4">
           <label className="block">
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-              Course code
+            <span className="flex items-baseline justify-between text-sm font-medium text-slate-700 dark:text-slate-300">
+              <span>Course code</span>
+              <span
+                aria-live="polite"
+                className={`text-xs font-normal tabular-nums ${
+                  codeValid
+                    ? "text-emerald-600 dark:text-emerald-400"
+                    : "text-slate-400 dark:text-slate-500"
+                }`}
+              >
+                {code.length} / {CODE_LENGTH}
+              </span>
             </span>
             <input
               ref={codeRef}
               type="text"
               value={code}
-              onChange={(e) => setCode(e.target.value.toUpperCase())}
+              onChange={(e) => setCode(scrubCode(e.target.value))}
+              onPaste={(e) => {
+                e.preventDefault();
+                setCode(scrubCode(e.clipboardData.getData("text")));
+              }}
               autoComplete="one-time-code"
               spellCheck={false}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 font-mono tracking-widest text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-              placeholder="ABCD1234"
+              inputMode="text"
+              maxLength={CODE_LENGTH}
+              aria-describedby="quickstart-code-hint quickstart-error"
+              aria-invalid={code.length > 0 && !codeValid}
+              disabled={succeeded}
+              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 font-mono tracking-widest text-xl text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+              placeholder="ABC234"
             />
+            <span
+              id="quickstart-code-hint"
+              className="mt-1 block text-xs text-slate-500 dark:text-slate-400"
+            >
+              6 characters — letters and numbers (no O, 0, I, 1, or L).
+            </span>
           </label>
           <label className="block">
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
@@ -197,7 +268,8 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
               value={name}
               onChange={(e) => setName(e.target.value)}
               autoComplete="name"
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              disabled={succeeded}
+              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
               placeholder="e.g. Alex Chen"
             />
           </label>
@@ -210,16 +282,18 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="email"
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              disabled={succeeded}
+              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
               placeholder="you@example.com"
             />
           </label>
           <button
             type="submit"
-            disabled={busy}
-            className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+            disabled={!canSubmit}
+            title={!codeValid ? "Enter the 6-character course code" : undefined}
+            className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
           >
-            {busy ? "Starting…" : "Start"}
+            {busy ? "Starting…" : succeeded ? "Started ✓" : "Start"}
           </button>
         </form>
 
