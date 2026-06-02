@@ -379,30 +379,9 @@ export function StaffShell() {
             </span>
           </NavLink>
 
-          <NavLink
-            to={ROUTES.TESTS_ADMIN}
-            className={railLinkClass}
-            title="Tests"
-          >
-            <RailIcon>
-              {/* Document-with-check — full-length test review/QA. */}
-              <svg
-                width={20}
-                height={20}
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                <path d="M14 2v6h6" />
-                <path d="m9 15 2 2 4-4" />
-              </svg>
-            </RailIcon>
-            <span className={collapsed ? "lg:hidden" : undefined}>Tests</span>
-          </NavLink>
+          {/* "Tests" nav removed — full-length tests now live under the
+              Question Bank → "Full-Test" tab (unified tests surface). The
+              /tests/:slug/review route stays for the "Review answer key" link. */}
 
           <NavLink
             to={ROUTES.CALENDAR}
