@@ -943,12 +943,50 @@ User went AFK with "keep going autonomously". Shipped 11 more rounds with self-c
 - **30+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
 - **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
 
-### Stopping rationale (post Round 30)
+### Wave 21D — User said "continue" (Rounds 31-36, 6 more rounds shipped)
 
-Remaining backlog items require user input rather than autonomous engineering:
+User overrode the post-Round-30 stopping rationale. Picked up with smaller, focused lanes — paired in parallel agents per round.
+
+### Round 31 — Gradebook CSV export + Discussion thread collapse
+- `CourseGradebook` "Export CSV" button (top-right header). Headers: Student / Email / <assignment titles> / Average. Scores plain decimal-rounded (`87` or `87.5`; override annotation `87.5 (override)` keeps numeric prefix parseable). UTF-8 BOM + CRLF (Excel-friendly). Filename `gradebook-<courseShortCode>-<yyyy-mm-dd>.csv`. Iterates `searchFilteredStudents` so user filters/sort/search are respected — exported rows match exactly what's on screen.
+- `DiscussionTopicView` chevron toggle on each `PostNode` with children. Click collapses descendants → "N reply/replies hidden — click to show" hint replaces children container (keyboard-accessible). `collapsedIds` Set + `onToggleCollapsed` threaded from `DiscussionTopicView → PostNode` (transient). Hash-scroll Round-28 effect: clears `collapsedIds` when hash arrives + reruns to land deeplink target. Toggle hidden while user composing reply on that post. `aria-expanded` + `aria-controls` + `aria-label="Collapse N replies"`.
+
+### Round 32 — Modules Alt+↑/↓ reorder + Roster sort & empty state
+- `ModulesPage` grip handle becomes a real `<button data-module-grip="{id}">` with `tabIndex=0` + dynamic `aria-label` ("Reorder X. Module N of total. Press Alt+Up/Down to move…"). Visual chrome unchanged. Alt+↑/↓ swaps with neighbor via same `move_module` RPC the drag handler uses. After RPC + `refresh()`, `requestAnimationFrame` re-focuses the grip by `data-module-grip` so the indigo focus ring travels with the row. New page-level `aria-live="polite"` region announces "Moved X up/down" and auto-clears after 2s. Works on nested submodules.
+- `ClassRoster` sortable column headers: Name (locale-aware), Joined (`joined_at`). Active key shows indigo ▲/▼; inactive shows faint slate ↕ on hover. Toggles asc↔desc on same key, starts asc when switching. Persists per `(user, course)`: `roster.sort:${userId}:${courseId}` → `{key, dir}`. Empty-roster state via shared `<EmptyState>`: "No students yet" + primary "Copy course code" (writes `cls.short_code` to clipboard) + secondary "Import roster CSV" opening `BulkRosterModal`. Search-zero-hit state distinct.
+
+### Round 33 — AssignmentRunner timer warnings + edit own discussion post
+- Parallel wall-clock observer in `MockTestAssignmentRunner` aligned with `MockTestApp`'s internal countdown (sub-second tolerance — both start on the same React tick when stage transitions to "ready"). 5-min warning at `secondsLeft ≤ 300` (requires `totalSeconds > 330`). 1-min warning at ≤ 60 (requires `totalSeconds > 90`). Each fires exactly once per attempt via `useRef`. `toast.warning` (amber, `role="alert"`, 10s duration). Silent when `≤ 0` (auto-submit window). Untimed assignments → early-return.
+- **No migration needed** for discussion edit: `discussion_posts.updated_at` (auto-managed via `trg_discussion_posts_updated` from 0025) covers the "edited" indicator; existing RLS UPDATE policy already permits author + staff. Inline indigo "Edit" button on each `PostNode` (gated on `canManage`). Esc cancels, Cmd/Ctrl+Enter saves. Optimistic update via `optimisticEdits` map; rollback on error. Edited indicator: "· edited <relativeTime>" italic slate-400 with full timestamp tooltip. Detection: `updated_at - created_at > 2000ms` (slack for INSERT-driven `set_updated_at` trigger jitter). Mutex with reply form (Edit closes any open reply form on same post).
+
+### Round 34 — Notification bell keyboard nav + CommandPalette navigation entries
+- `NotificationBell`: ↑/↓ walk highlighted index (clamped); Home/End jump; Enter activates (markRead → navigate → close); M/m marks highlighted as read without nav; A/a marks all read; Esc closes + restores focus to bell (`queueMicrotask` survives unmount). Default highlight: first unread, falls back to 0. Mouse hover syncs to keyboard cursor. Realtime list updates clamp index in range. `scrollIntoView({block:'nearest'})` on highlight change. Discoverability hint in sticky footer (sm+). Full `role=menu/menuitem` + `aria-current` a11y.
+- `lmsCommands` (staff): + "Notification preferences" (top-level Navigate). New Admin group gated on `isStaff(profile?.role)`: Audit log, Admin users, Admin stats, Invite codes. Reuses existing `NavSpec` interface + `Command` group literal. Recents (`staff.cmdpalette.recent`) work automatically via `command.id`.
+
+### Round 35 — Inbox keyboard nav + cohort drill drawer
+- `InboxPage`: ↑/↓/Home/End walk `filteredThreads`; Enter opens highlighted; Esc clears keyboard cursor (doesn't fight right-pane's own Esc). Handler bound on scrollable list container (not window) — never fights TipTap composer or search input. `/` shortcut from Round 29 untouched. Default highlight matches URL `:threadId` if present, else index 0. `onMouseEnter` syncs hover ↔ keyboard cursor. Filter changes clamp index but don't yank back to first match on every keystroke. `role=listbox/option`, `aria-selected`, `tabIndex=0` container. Discoverability hint below search (sm+).
+- `CohortSummaryWidget` drill drawer: new `useCohortDrill(cohort)` hook (lazy — only fires when `cohort != null`). Two-phase query: `assignments.id` for course → `assignment_attempts_effective` over 30-day window joined to profiles. Falls back to plain `assignment_attempts.score_percent` if view missing (graceful degradation). Token-ref cancellation pattern. `useCohortSummary` untouched. Right-side panel: `sm:w-[420px]` desktop, `inset-0` mobile, indigo `border-l-4` accent, `motion-safe:transition-transform`. `useFocusTrap` wired with `data-autofocus` on close button. Top-5 sort: `attempts DESC` primary, `avgEffectiveScore DESC` tiebreak. States: `SkeletonRows count=5` load, rose Retry on error, slate empty. Needs-attention callout (rose chip) when `needsAttentionCount > 0` with "View triage →" link that closes drawer + scrolls to `#needs-attention-heading` on next animation frame. Cohort card body is now `<button>` with hover-revealed "View details →" chevron; "Open modules →" footer link preserves Canvas-style jump-to-course; "Needs N" pill `e.stopPropagation()` so it still routes to triage without opening drawer.
+
+### Round 36 — ⌘B sidebar toggle + client-side discussion unread
+- `StaffShell` Linear-style desktop sidebar collapse: per-user localStorage `staff.shell.sidebarCollapsed:${userId}` hydrates async once profile loads. ⌘B / Ctrl+B window keydown toggles; `preventDefault()` so Firefox/Edge bookmarks-bar stays quiet; reuses `isEditableTarget` so it doesn't fight markdown bold / search inputs. Collapsed `lg:w-16` (icon-only), expanded `lg:w-44`. Md/sm unchanged. Toggle button `hidden lg:inline-flex` at bottom of sidebar, 40×40 tap, `aria-controls` + `aria-expanded` + label flip. Chevron rotates 180° (motion-safe). Wordmark `aria-hidden` + `lg:hidden` when collapsed. NavLinks get `title="..."` for native tooltips when icon-only. 150ms ease-out width transition.
+- Discussion client-side unread (closes **LMS_ROADMAP 4.4** without migration): `DiscussionTopicView` `useEffect` on `[topic?.id, profile?.id]` writes ISO timestamp to localStorage map at `discussion.visited:${userId}`. LRU cap 200 entries (sort desc by timestamp, trim newest 200 on overflow). `CourseDiscussions`: `loadVisitedMap` helper with corruption tolerance; bulk `discussion_posts` SELECT for `max(created_at)` per topic — one round-trip regardless of topic count, piggybacks on existing reply-count effect. `UnreadState` union: `'visited-new'` (indigo dot + "· New replies since your last visit"), `'never'` (slate "Unread" pill matching existing Pinned/Locked styling), `'none'`. Activity fallback: `latestPostAt[topic.id] ?? topic.created_at` so brand-new zero-reply topics still surface "Unread" to first-time viewers. `visitedTick` state bumped on window focus + `visibilitychange` so returning from a topic re-reads localStorage and clears the indicator without hard refresh. Known false-positive: OP sees own freshly-posted reply as new until they revisit (would need `author_id != viewer` filter requiring DB-side work).
+
+### Final autonomous-run total (Waves 21B + 21C + 21D, Rounds 4–36)
+
+- **75+ lanes shipped across 33 rounds**
+- **9 migrations** (0050, 0056, 0057, 0058, 0059, 0060, 0062, 0063, 0064) — all backward-compatible
+- **7 smoke suites** (~5500 lines) with 12 new scenarios
+- **35+ teacher/student/admin surfaces + primitives** shipped, refined, or polished
+- **One LMS_ROADMAP item closed** (4.4 discussion read receipts — client-side substitute without DB risk)
+- **`npx tsc -b` clean after every commit; clean working tree at every push throughout**
+- **Parallel session ran continuously alongside** — landed `e790932` (RLS on assignment_* views) and `daf3a2d` (TimerSetup bundle split) interleaved; no merge conflicts ever (scoped `git add` per the documented memory protocol)
+
+### Standing stopping rationale
+
+Items deferred:
 - **Notification email/push fan-out** — needs Resend integration design
 - **Parent magic-link** (M24/M25) — needs UX direction from user
-- **Workstream C Material library** — schema changes to existing `course_materials` carry unverifiable DB risk without env to test against; deferred until user confirms scope
-- **Round 23 scheduled-publish "Send notifications immediately" toggle** (Task #177) — touches notifications RLS delicately; 60s cron tick is acceptable for now
+- **Workstream C Material library** — schema changes to existing `course_materials` carry unverifiable DB risk without env
+- **Round 23 scheduled-publish "Send notifications immediately" toggle** (Task #177) — touches notifications RLS delicately; 60s cron tick acceptable
 
 Build is green. Working tree is clean. All commits pushed to origin/main.
