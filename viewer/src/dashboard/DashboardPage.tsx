@@ -35,6 +35,7 @@ import {
   type AnnouncementTargetCourse,
 } from "../teacher/AnnouncementFormModal";
 import { NeedsAttentionPanel } from "./NeedsAttentionPanel";
+import { CohortSummaryWidget } from "./CohortSummaryWidget";
 
 interface DashboardCardProps {
   course: TeacherClass;
@@ -253,6 +254,8 @@ export function DashboardPage() {
         </header>
 
         {profile?.id && <NeedsAttentionPanel teacherId={profile.id} />}
+
+        {profile?.id && <CohortSummaryWidget teacherId={profile.id} />}
 
         {loading && (
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

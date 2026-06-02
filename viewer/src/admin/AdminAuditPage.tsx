@@ -41,6 +41,148 @@ interface AuditRowView extends AuditEvent {
 
 const PAGE_SIZE = 50;
 
+/**
+ * Action-kind registry.
+ *
+ * Every action string written to `public.audit_events` by a migration is
+ * mapped here to a friendly label + group. The `id` MUST match the DB value
+ * verbatim (these are the literal strings inserted by the SECURITY DEFINER
+ * triggers / helpers in 0022, 0027, 0050, 0056, 0062, 0063).
+ *
+ * Keep this registry in sync when new audit emitters land. Unknown actions
+ * surfaced by the live data are tolerated — they get bucketed into "Other"
+ * in the filter dropdown after the first page loads.
+ */
+interface ActionKindMeta {
+  id: string;
+  label: string;
+  group: ActionGroup;
+  description?: string;
+}
+
+type ActionGroup = "Security" | "Grading" | "Content" | "Lifecycle" | "Other";
+
+const ACTION_GROUP_ORDER: ActionGroup[] = [
+  "Security",
+  "Lifecycle",
+  "Grading",
+  "Content",
+  "Other",
+];
+
+const KNOWN_ACTION_KINDS: ActionKindMeta[] = [
+  // Security — auth, role, identity, invite minting.
+  {
+    id: "role.change",
+    label: "Role change",
+    group: "Security",
+    description: "An admin promoted or demoted a profile's role.",
+  },
+  {
+    id: "invite.mint",
+    label: "Invite minted",
+    group: "Security",
+    description: "Staff issued a new teacher invite code.",
+  },
+  {
+    id: "profile.delete",
+    label: "Profile delete",
+    group: "Security",
+    description:
+      "A user profile was deleted. Details record cascade counts for forensics.",
+  },
+  // Lifecycle — destructive deletes of top-level course content.
+  {
+    id: "course.delete",
+    label: "Course delete",
+    group: "Lifecycle",
+    description: "A course (a.k.a. class) was deleted.",
+  },
+  {
+    id: "assignment.delete",
+    label: "Assignment delete",
+    group: "Lifecycle",
+  },
+  {
+    id: "material.delete",
+    label: "Material delete",
+    group: "Lifecycle",
+  },
+  {
+    id: "announcement.delete",
+    label: "Announcement delete",
+    group: "Lifecycle",
+  },
+  // Grading
+  {
+    id: "assignment_grade",
+    label: "Grade applied",
+    group: "Grading",
+    description: "Teacher recorded or overrode an assignment grade.",
+  },
+  // Content
+  {
+    id: "teacher_note_change",
+    label: "Teacher note edited",
+    group: "Content",
+    description: "A private teacher-on-student note was created or updated.",
+  },
+  {
+    id: "portfolio_import",
+    label: "Portfolio import",
+    group: "Content",
+    description:
+      "A teacher imported a portfolio template from another course.",
+  },
+];
+
+const ACTION_META_BY_ID: ReadonlyMap<string, ActionKindMeta> = new Map(
+  KNOWN_ACTION_KINDS.map((k) => [k.id, k]),
+);
+
+function getActionLabel(id: string): string {
+  return ACTION_META_BY_ID.get(id)?.label ?? id;
+}
+
+function getActionMeta(id: string): ActionKindMeta | undefined {
+  return ACTION_META_BY_ID.get(id);
+}
+
+interface ActionOptionGroup {
+  group: ActionGroup;
+  items: ActionKindMeta[];
+}
+
+/**
+ * Build the option list shown in the dropdown. Combines the static registry
+ * with any unknown actions discovered in the live data (bucketed as "Other"),
+ * preserving the canonical group ordering and alphabetising within a group.
+ */
+function buildActionOptionGroups(discovered: string[]): ActionOptionGroup[] {
+  const known = new Set(KNOWN_ACTION_KINDS.map((k) => k.id));
+  const extras: ActionKindMeta[] = discovered
+    .filter((a) => !known.has(a))
+    .sort()
+    .map((id) => ({ id, label: id, group: "Other" as const }));
+
+  const all = [...KNOWN_ACTION_KINDS, ...extras];
+  const byGroup = new Map<ActionGroup, ActionKindMeta[]>();
+  for (const meta of all) {
+    const bucket = byGroup.get(meta.group) ?? [];
+    bucket.push(meta);
+    byGroup.set(meta.group, bucket);
+  }
+
+  const result: ActionOptionGroup[] = [];
+  for (const group of ACTION_GROUP_ORDER) {
+    const items = byGroup.get(group);
+    if (!items || items.length === 0) continue;
+    items.sort((a, b) => a.label.localeCompare(b.label));
+    result.push({ group, items });
+  }
+  return result;
+}
+
 function getErrorMessage(error: unknown): string {
   if (error instanceof Error) return error.message;
   if (typeof error === "string") return error;
@@ -275,6 +417,23 @@ export function AdminAuditPage() {
     [total],
   );
 
+  // Merge actions seen in the current page into the known set so the dropdown
+  // forward-compats with new emitters before the registry catches up.
+  const discoveredActions = useMemo(() => {
+    const set = new Set<string>(knownActions);
+    for (const r of rows) set.add(r.action);
+    return Array.from(set);
+  }, [knownActions, rows]);
+
+  const optionGroups = useMemo(
+    () => buildActionOptionGroups(discoveredActions),
+    [discoveredActions],
+  );
+
+  const activeActionMeta = actionFilter
+    ? getActionMeta(actionFilter)
+    : undefined;
+
   return (
     <div className="space-y-4">
       <header className="space-y-1">
@@ -301,13 +460,22 @@ export function AdminAuditPage() {
           <select
             value={actionFilter}
             onChange={(e) => setActionFilter(e.target.value)}
-            className="rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100"
+            className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-950 px-2 py-1.5 text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+            title={activeActionMeta?.description}
           >
             <option value="">All actions</option>
-            {knownActions.map((a) => (
-              <option key={a} value={a}>
-                {a}
-              </option>
+            {optionGroups.map(({ group, items }) => (
+              <optgroup key={group} label={group}>
+                {items.map((meta) => (
+                  <option
+                    key={meta.id}
+                    value={meta.id}
+                    title={meta.description}
+                  >
+                    {meta.label}
+                  </option>
+                ))}
+              </optgroup>
             ))}
           </select>
         </label>
@@ -338,7 +506,7 @@ export function AdminAuditPage() {
         <div className="flex items-end gap-2">
           <button
             type="submit"
-            className="rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-1.5"
+            className="min-h-[40px] rounded-md bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
             Apply
           </button>
@@ -351,11 +519,22 @@ export function AdminAuditPage() {
               setDateTo("");
               setPage(0);
             }}
-            className="rounded-md border border-slate-300 dark:border-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-300"
+            className="min-h-[40px] rounded-md border border-slate-300 dark:border-slate-700 text-sm font-medium px-3 py-1.5 text-slate-700 dark:text-slate-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
           >
             Reset
           </button>
         </div>
+        {activeActionMeta?.description && (
+          <p className="sm:col-span-2 lg:col-span-5 text-xs text-slate-500 dark:text-slate-400 -mt-1">
+            <span className="font-medium text-slate-600 dark:text-slate-300">
+              {activeActionMeta.label}:
+            </span>{" "}
+            {activeActionMeta.description}{" "}
+            <span className="font-mono text-[10px] text-slate-400">
+              ({activeActionMeta.id})
+            </span>
+          </p>
+        )}
       </form>
 
       {error && (
@@ -408,8 +587,13 @@ export function AdminAuditPage() {
                   <td className="px-3 py-2 whitespace-nowrap text-xs">
                     {formatTimestamp(r.created_at)}
                   </td>
-                  <td className="px-3 py-2 whitespace-nowrap font-mono text-xs">
-                    {r.action}
+                  <td className="px-3 py-2 whitespace-nowrap text-xs">
+                    <span
+                      title={r.action}
+                      className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-medium text-slate-700 dark:text-slate-200"
+                    >
+                      {getActionLabel(r.action)}
+                    </span>
                   </td>
                   <td className="px-3 py-2 text-xs">
                     {r.actor_email ?? (
