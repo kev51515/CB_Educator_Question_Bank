@@ -19,8 +19,10 @@
  * session lifecycle.
  */
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useToast } from "@/components";
+import { ROUTES } from "../lib/routes";
 import type { Profile } from "../lib/profile";
 import type { AuthResult } from "./session";
 
@@ -315,6 +317,24 @@ export function AccountSettings({
               </div>
             </form>
           )}
+        </section>
+
+        {/* Notification preferences — link to dedicated page */}
+        <section className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 flex items-center justify-between gap-3">
+          <div>
+            <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
+              Notification preferences
+            </h2>
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Choose which kinds of notifications appear in your bell.
+            </p>
+          </div>
+          <Link
+            to={ROUTES.NOTIFICATION_PREFS}
+            className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+          >
+            Manage
+          </Link>
         </section>
 
         {/* Export my data */}

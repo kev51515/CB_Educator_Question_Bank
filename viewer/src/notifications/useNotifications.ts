@@ -9,6 +9,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components";
+import {
+  isKindEnabled,
+  loadPrefs,
+  prefsStorageKey,
+  type NotificationPrefs,
+} from "./preferences";
 
 export interface NotificationRow {
   id: number;
@@ -34,7 +40,29 @@ export function useNotifications(): UseNotificationsResult {
   const [notifications, setNotifications] = useState<NotificationRow[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [userId, setUserId] = useState<string | null>(null);
+  const [prefs, setPrefs] = useState<NotificationPrefs>(() => loadPrefs(null));
   const toast = useToast();
+
+  // Re-read prefs whenever userId resolves (the per-user key changes).
+  useEffect(() => {
+    setPrefs(loadPrefs(userId));
+  }, [userId]);
+
+  // Cross-tab sync: another tab toggling prefs writes the same key, which
+  // fires a `storage` event in this tab. Re-load prefs so the bell stays in
+  // sync without a page refresh.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const key = prefsStorageKey(userId);
+    const onStorage = (event: StorageEvent) => {
+      if (event.key !== key) return;
+      setPrefs(loadPrefs(userId));
+    };
+    window.addEventListener("storage", onStorage);
+    return () => {
+      window.removeEventListener("storage", onStorage);
+    };
+  }, [userId]);
 
   const fetchNotifications = useCallback(async (uid: string): Promise<void> => {
     const { data, error } = await supabase
@@ -140,10 +168,23 @@ export function useNotifications(): UseNotificationsResult {
     await fetchNotifications(userId);
   }, [userId, fetchNotifications, toast]);
 
-  const unreadCount = notifications.reduce(
+  // Drop notifications whose kind the user has opted out of. The unread
+  // badge + dropdown both consume `visible`, so opt-outs naturally hide
+  // from view without touching the underlying rows (which stay on the
+  // server for when the user re-enables the kind later).
+  const visible = notifications.filter((n) => isKindEnabled(prefs, n.kind));
+
+  const unreadCount = visible.reduce(
     (count, n) => (n.read_at === null ? count + 1 : count),
     0,
   );
 
-  return { notifications, unreadCount, loading, refresh, markRead, markAllRead };
+  return {
+    notifications: visible,
+    unreadCount,
+    loading,
+    refresh,
+    markRead,
+    markAllRead,
+  };
 }

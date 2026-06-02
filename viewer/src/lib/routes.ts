@@ -79,6 +79,7 @@ export const ROUTES = {
   // Account (personal settings + admin power-tools tucked behind /admin)
   ACCOUNT: "/account",
   ACCOUNT_SETTINGS: "/account/settings",
+  NOTIFICATION_PREFS: "/account/notification-preferences",
   ACCOUNT_ADMIN_STATS: "/account/admin/stats",
   ACCOUNT_ADMIN_USERS: "/account/admin/users",
   ACCOUNT_ADMIN_INVITES: "/account/admin/invites",

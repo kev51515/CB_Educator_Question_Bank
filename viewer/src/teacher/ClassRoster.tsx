@@ -11,6 +11,14 @@
  *   • Inline rename of display_name (RLS-friendly: silently degrades to a
  *     toast on rejection, doesn't break the row).
  *   • Toast on remove success / failure (no inline banner needed).
+ *
+ * Multi-select (end-of-term housekeeping):
+ *   • Master checkbox in <th> with indeterminate state.
+ *   • Per-row checkbox in <td>; selected rows highlight indigo.
+ *   • Sticky bottom action bar appears when ≥1 selected with
+ *     "Remove from course (N)" destructive button.
+ *   • Bulk archive is N/A — the `course_memberships` table has no
+ *     `archived` column (see migration 0012). Only bulk Remove ships.
  */
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -169,6 +177,18 @@ export function ClassRoster() {
   const [searchQuery, setSearchQuery] = useState("");
   const debouncedQuery = useDebouncedValue(searchQuery, 150);
 
+  // Multi-select state for bulk operations. Keyed by membership_id so we
+  // never confuse one student's row with another. Selection survives
+  // typing-into-search but clears on refresh.
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  // Optimistic pending-remove set; rows in this set render grayed out while
+  // the DELETE round-trips. On failure we roll back.
+  const [pendingRemoveIds, setPendingRemoveIds] = useState<Set<string>>(
+    new Set(),
+  );
+  const [confirmBulkRemove, setConfirmBulkRemove] = useState(false);
+  const masterCheckboxRef = useRef<HTMLInputElement | null>(null);
+
   const filteredRoster = useMemo(() => {
     const q = debouncedQuery.trim().toLowerCase();
     if (!q) return roster;
@@ -178,6 +198,111 @@ export function ClassRoster() {
       return name.includes(q) || email.includes(q);
     });
   }, [roster, debouncedQuery]);
+
+  // Drop selections for rows that have left the visible filtered view —
+  // bulk actions should never silently target rows the teacher can't see.
+  useEffect(() => {
+    if (selectedIds.size === 0) return;
+    const visible = new Set(filteredRoster.map((s) => s.membership_id));
+    let changed = false;
+    const next = new Set<string>();
+    for (const id of selectedIds) {
+      if (visible.has(id)) {
+        next.add(id);
+      } else {
+        changed = true;
+      }
+    }
+    if (changed) setSelectedIds(next);
+  }, [filteredRoster, selectedIds]);
+
+  const allVisibleSelected =
+    filteredRoster.length > 0 &&
+    filteredRoster.every((s) => selectedIds.has(s.membership_id));
+  const someVisibleSelected =
+    !allVisibleSelected &&
+    filteredRoster.some((s) => selectedIds.has(s.membership_id));
+
+  // Native checkbox `indeterminate` is not a JSX prop — drive it via ref.
+  useEffect(() => {
+    if (masterCheckboxRef.current) {
+      masterCheckboxRef.current.indeterminate = someVisibleSelected;
+    }
+  }, [someVisibleSelected]);
+
+  const toggleOne = useCallback((membershipId: string): void => {
+    setSelectedIds((prev) => {
+      const next = new Set(prev);
+      if (next.has(membershipId)) {
+        next.delete(membershipId);
+      } else {
+        next.add(membershipId);
+      }
+      return next;
+    });
+  }, []);
+
+  const toggleAll = useCallback((): void => {
+    setSelectedIds((prev) => {
+      if (
+        filteredRoster.length > 0 &&
+        filteredRoster.every((s) => prev.has(s.membership_id))
+      ) {
+        // All visible already selected → clear visible.
+        const next = new Set(prev);
+        for (const s of filteredRoster) next.delete(s.membership_id);
+        return next;
+      }
+      // Otherwise select all visible (preserving any off-screen selections).
+      const next = new Set(prev);
+      for (const s of filteredRoster) next.add(s.membership_id);
+      return next;
+    });
+  }, [filteredRoster]);
+
+  const clearSelection = useCallback((): void => {
+    setSelectedIds(new Set());
+  }, []);
+
+  const onBulkRemove = async (): Promise<void> => {
+    const ids = Array.from(selectedIds);
+    if (ids.length === 0) {
+      setConfirmBulkRemove(false);
+      return;
+    }
+    setActionBusy(true);
+    // Optimistic: gray the rows out immediately.
+    setPendingRemoveIds(new Set(ids));
+    try {
+      const { error: delError } = await supabase
+        .from("course_memberships")
+        .delete()
+        .in("id", ids)
+        .eq("course_id", cls.id);
+      if (delError) {
+        // Roll back the optimistic gray-out.
+        setPendingRemoveIds(new Set());
+        toast.error("Couldn't remove students", delError.message);
+        return;
+      }
+      const count = ids.length;
+      toast.success(
+        `Removed ${count} ${count === 1 ? "student" : "students"}`,
+      );
+      setConfirmBulkRemove(false);
+      setSelectedIds(new Set());
+      setPendingRemoveIds(new Set());
+      void refresh();
+    } catch (err: unknown) {
+      setPendingRemoveIds(new Set());
+      toast.error(
+        "Couldn't remove students",
+        getErrorMessage(err, "Failed to remove students."),
+      );
+    } finally {
+      setActionBusy(false);
+    }
+  };
 
   const onRemoveStudent = async (mem: RosterStudent): Promise<void> => {
     setActionBusy(true);
@@ -300,6 +425,29 @@ export function ClassRoster() {
                 <table className="min-w-full text-sm">
                   <thead className="bg-slate-50 dark:bg-slate-800/40 text-left text-xs uppercase tracking-wide text-slate-500 dark:text-slate-400">
                     <tr>
+                      <th className="pl-6 pr-2 py-3 font-medium w-10">
+                        <label className="inline-flex items-center justify-center min-h-[40px] min-w-[40px] -my-2 cursor-pointer">
+                          <span className="sr-only">
+                            {allVisibleSelected
+                              ? "Deselect all visible students"
+                              : "Select all visible students"}
+                          </span>
+                          <input
+                            ref={masterCheckboxRef}
+                            type="checkbox"
+                            checked={allVisibleSelected}
+                            onChange={toggleAll}
+                            aria-checked={
+                              someVisibleSelected
+                                ? "mixed"
+                                : allVisibleSelected
+                                  ? "true"
+                                  : "false"
+                            }
+                            className="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-2 focus:ring-indigo-500"
+                          />
+                        </label>
+                      </th>
                       <th className="px-6 py-3 font-medium">Name</th>
                       <th className="px-6 py-3 font-medium">Email</th>
                       <th className="px-6 py-3 font-medium">Joined</th>
@@ -309,8 +457,33 @@ export function ClassRoster() {
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-                    {filteredRoster.map((s) => (
-                  <tr key={s.membership_id}>
+                    {filteredRoster.map((s) => {
+                      const isSelected = selectedIds.has(s.membership_id);
+                      const isPending = pendingRemoveIds.has(s.membership_id);
+                      return (
+                  <tr
+                    key={s.membership_id}
+                    className={
+                      isPending
+                        ? "opacity-50 pointer-events-none"
+                        : isSelected
+                          ? "bg-indigo-50/70 dark:bg-indigo-950/30"
+                          : undefined
+                    }
+                  >
+                    <td className="pl-6 pr-2 py-3 w-10">
+                      <label className="inline-flex items-center justify-center min-h-[40px] min-w-[40px] -my-2 cursor-pointer">
+                        <span className="sr-only">
+                          Select {s.display_name ?? s.email}
+                        </span>
+                        <input
+                          type="checkbox"
+                          checked={isSelected}
+                          onChange={() => toggleOne(s.membership_id)}
+                          className="h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-2 focus:ring-indigo-500"
+                        />
+                      </label>
+                    </td>
                     <td className="px-6 py-3">
                       <InlineRenameName
                         value={s.display_name}
@@ -355,7 +528,8 @@ export function ClassRoster() {
                       </div>
                     </td>
                   </tr>
-                ))}
+                      );
+                    })}
                   </tbody>
                 </table>
               </div>
@@ -382,6 +556,63 @@ export function ClassRoster() {
             if (target) void onRemoveStudent(target);
           }}
           onCancel={() => setConfirmRemove(null)}
+        />
+      )}
+
+      {selectedIds.size > 0 && (
+        <div
+          role="region"
+          aria-label="Bulk roster actions"
+          className="fixed bottom-4 left-0 right-0 z-50 px-3 pointer-events-none"
+        >
+          <div className="pointer-events-auto mx-auto max-w-3xl rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-indigo-300 dark:ring-indigo-700 shadow-xl px-4 py-2.5 flex flex-wrap items-center gap-3">
+            <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">
+              {selectedIds.size} selected
+            </span>
+            <div className="flex items-center gap-2 flex-wrap">
+              <button
+                type="button"
+                disabled={actionBusy}
+                onClick={() => setConfirmBulkRemove(true)}
+                className="rounded-full min-h-[40px] md:min-h-0 px-3 py-1.5 text-xs font-semibold text-white bg-rose-600 hover:bg-rose-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {actionBusy
+                  ? "Working…"
+                  : `Remove from course (${selectedIds.size})`}
+              </button>
+            </div>
+            <button
+              type="button"
+              onClick={clearSelection}
+              disabled={actionBusy}
+              className="ml-auto min-h-[40px] md:min-h-0 text-xs font-medium text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded-md px-2 py-1 disabled:opacity-50"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
+
+      {confirmBulkRemove && (
+        <ConfirmDialog
+          title={`Remove ${selectedIds.size} ${
+            selectedIds.size === 1 ? "student" : "students"
+          }?`}
+          body={
+            <p>
+              They will lose access to{" "}
+              <span className="font-semibold">{cls.name}</span> and its
+              assignments. Their past attempts and submissions are kept on
+              file. They can rejoin later with the course code.
+            </p>
+          }
+          confirmLabel={`Remove ${selectedIds.size}`}
+          destructive
+          busy={actionBusy}
+          onConfirm={() => {
+            void onBulkRemove();
+          }}
+          onCancel={() => setConfirmBulkRemove(false)}
         />
       )}
 

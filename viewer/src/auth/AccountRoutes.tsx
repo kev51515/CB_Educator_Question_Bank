@@ -20,6 +20,7 @@ import { ROUTES } from "../lib/routes";
 import type { Profile, ProfileRole } from "../lib/profile";
 import type { AuthResult } from "./session";
 import { AccountSettings } from "./AccountSettings";
+import { NotificationPreferencesPage } from "./NotificationPreferencesPage";
 import {
   AdminAuditPage,
   AdminInvitesPage,
@@ -133,6 +134,10 @@ export function AccountRoutes({
           >
             <div className="space-y-1">
               <SidebarLink to={ROUTES.ACCOUNT_SETTINGS} label="Settings" />
+              <SidebarLink
+                to={ROUTES.NOTIFICATION_PREFS}
+                label="Notifications"
+              />
             </div>
             {staff && (
               <div className="space-y-1 pt-2 border-t border-slate-200 dark:border-slate-800">
@@ -184,6 +189,10 @@ export function AccountRoutes({
                     />
                   </div>
                 }
+              />
+              <Route
+                path="notification-preferences"
+                element={<NotificationPreferencesPage />}
               />
               {staff ? (
                 <>
