@@ -1912,7 +1912,7 @@ export function ModulesPage(): JSX.Element {
   const navigate = useNavigate();
   const { profile } = useProfile();
   const classId: string | null = cls?.id ?? null;
-  const { modules, loading, error, refresh } = useCourseModules(classId);
+  const { modules, loading, error, refresh, patchModule } = useCourseModules(classId);
 
   const toast = useToast();
   const isStudent = profile?.role === "student";
@@ -2197,9 +2197,12 @@ export function ModulesPage(): JSX.Element {
           throw new Error(updError.message);
         }
       }
-      await refresh();
+      // Optimistic: patch the one module locally instead of a full refetch, so
+      // publishing doesn't flash/reflow the whole list (the toggle already
+      // reflects the new state instantly).
+      patchModule(m.id, { published: !m.published });
     },
-    [refresh],
+    [patchModule],
   );
 
   const onRenameModule = useCallback(
@@ -2653,8 +2656,9 @@ export function ModulesPage(): JSX.Element {
     toast.success(
       ids.length === 1 ? "Module published" : `${ids.length} modules published`,
     );
-    await refresh();
-  }, [modules, refresh, toast]);
+    // Optimistic: flip each published module locally (batched) — no full refetch.
+    for (const id of ids) patchModule(id, { published: true });
+  }, [modules, patchModule, toast]);
 
   // ---- Bulk-select actions ----
   const bulkSetPublished = useCallback(

@@ -62,6 +62,10 @@ export interface UseCourseModules {
   loading: boolean;
   error: string | null;
   refresh: () => Promise<void>;
+  /** Optimistic local update of one module (no refetch) — e.g. publish toggle. */
+  patchModule: (id: string, patch: Partial<CourseModule>) => void;
+  /** Optimistic local update of one nested item (no refetch). */
+  patchItem: (itemId: string, patch: Partial<ModuleItem>) => void;
 }
 
 interface ModuleItemRow {
@@ -196,11 +200,24 @@ export function useCourseModules(classId: string | null): UseCourseModules {
     }
   }, [classId]);
 
+  const patchModule = useCallback((id: string, patch: Partial<CourseModule>): void => {
+    setModules((prev) => prev.map((m) => (m.id === id ? { ...m, ...patch } : m)));
+  }, []);
+
+  const patchItem = useCallback((itemId: string, patch: Partial<ModuleItem>): void => {
+    setModules((prev) =>
+      prev.map((m) => ({
+        ...m,
+        items: m.items.map((it) => (it.id === itemId ? { ...it, ...patch } : it)),
+      })),
+    );
+  }, []);
+
   useEffect(() => {
     void refresh();
   }, [refresh]);
 
-  return { modules, loading, error, refresh };
+  return { modules, loading, error, refresh, patchModule, patchItem };
 }
 
 /**
