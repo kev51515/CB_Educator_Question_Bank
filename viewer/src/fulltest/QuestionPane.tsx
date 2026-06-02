@@ -1,20 +1,27 @@
 /**
  * QuestionPane
  * ============
- * Renders ONE full-test question, Bluebook-style: for Reading & Writing, a
- * two-column split (stimulus left / question + choices right). For Math, a
- * single column with an optional figure above the stem.
+ * Renders ONE full-test question, Bluebook-style.
  *
- * Supports both answer modes:
- *   • mcq  — four selectable choice rows (A–D)
- *   • grid — a free-text "student-produced response" input (numbers/fractions)
+ *  • Runner mode (`fullHeight`): fills the viewport between the fixed header and
+ *    footer. Reading & Writing with a stimulus → a two-pane split (stimulus left
+ *    / question right) where EACH pane scrolls independently, so moving between
+ *    questions never shifts the surrounding chrome. Math / stimulus-less items →
+ *    a single centred, scrollable column.
+ *  • Review mode (no `fullHeight`): the original stacked card layout used by
+ *    ResultView.
  *
- * Figures (graphs / tables / dot plots) are served PNGs; for R&W quantitative
- * items the figure IS the stimulus (passage is null, image authoritative).
+ * Answer modes: `mcq` (four A–D choice rows) and `grid` (student-produced
+ * response input). Figures are served PNGs and size-constrained so graphs/tables
+ * never overflow their pane.
  */
 import type { Letter, TestQuestion } from "./types";
 
 const LETTERS: Letter[] = ["A", "B", "C", "D"];
+
+// Bluebook renders passages/questions in a serif face. Georgia is a close,
+// zero-load match — applied only inside the test runner content.
+const SERIF = { fontFamily: "Georgia, 'Times New Roman', 'Iowan Old Style', serif" } as const;
 
 interface QuestionPaneProps {
   question: TestQuestion;
@@ -22,37 +29,114 @@ interface QuestionPaneProps {
   onChange: (value: string | null) => void;
   /** read-only review mode disables inputs */
   disabled?: boolean;
+  /** runner mode: fill height with independent-scroll panes (vs stacked card) */
+  fullHeight?: boolean;
+  marked?: boolean;
+  onToggleMark?: () => void;
 }
 
-export function QuestionPane({ question, value, onChange, disabled }: QuestionPaneProps) {
-  const isRW = question.section === "reading-writing";
-  const hasStimulus = Boolean(question.passage || question.figure);
+function Figure({
+  src,
+  alt,
+  variant,
+}: {
+  src: string;
+  alt: string;
+  variant: "stimulus" | "math";
+}) {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={[
+        "mx-auto block h-auto w-auto rounded-lg border border-slate-200 bg-white object-contain dark:border-slate-700",
+        variant === "math" ? "max-h-[42vh] max-w-[460px]" : "max-h-[60vh] max-w-full",
+      ].join(" ")}
+    />
+  );
+}
 
-  const stimulus = (
+function Stimulus({ question }: { question: TestQuestion }) {
+  const isMath = question.section === "math";
+  return (
     <div className="space-y-4">
       {question.figure && (
-        <img
+        <Figure
           src={question.figure}
           alt={question.passage_alt ?? "Figure for this question"}
-          className="max-w-full rounded-lg border border-slate-200 bg-white dark:border-slate-700"
+          variant={isMath ? "math" : "stimulus"}
         />
       )}
       {question.passage && (
-        <p className="whitespace-pre-wrap text-[15px] leading-relaxed text-slate-800 dark:text-slate-200">
+        <p
+          className="whitespace-pre-wrap text-[17px] leading-relaxed text-slate-800 dark:text-slate-200"
+          style={SERIF}
+        >
           {question.passage}
         </p>
       )}
     </div>
   );
+}
 
-  const prompt = (
-    <div className="space-y-4">
-      <p className="whitespace-pre-wrap text-[15px] font-medium leading-relaxed text-slate-900 dark:text-slate-100">
+function QHeader({
+  number,
+  marked,
+  onToggleMark,
+}: {
+  number: number;
+  marked?: boolean;
+  onToggleMark?: () => void;
+}) {
+  return (
+    <div className="flex items-center gap-3 border-b border-slate-200 pb-2 dark:border-slate-700">
+      <span className="grid h-6 min-w-6 place-items-center rounded bg-slate-800 px-1.5 text-sm font-bold text-white dark:bg-slate-200 dark:text-slate-900">
+        {number}
+      </span>
+      {onToggleMark && (
+        <button
+          type="button"
+          onClick={onToggleMark}
+          aria-pressed={marked}
+          className="flex items-center gap-1.5 text-sm font-medium text-slate-600 transition hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100"
+        >
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill={marked ? "currentColor" : "none"}
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinejoin="round"
+            className={marked ? "text-amber-500" : ""}
+            aria-hidden
+          >
+            <path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" />
+          </svg>
+          Mark for Review
+        </button>
+      )}
+    </div>
+  );
+}
+
+function Prompt({
+  question,
+  value,
+  onChange,
+  disabled,
+}: Pick<QuestionPaneProps, "question" | "value" | "onChange" | "disabled">) {
+  return (
+    <div className="space-y-5">
+      <p
+        className="whitespace-pre-wrap text-[17px] font-medium leading-relaxed text-slate-900 dark:text-slate-100"
+        style={SERIF}
+      >
         {question.stem}
       </p>
 
       {question.type === "mcq" && question.choices && (
-        <ul className="space-y-2">
+        <ul className="space-y-3">
           {LETTERS.map((letter) => {
             const text = question.choices![letter];
             if (text === undefined) return null;
@@ -64,24 +148,27 @@ export function QuestionPane({ question, value, onChange, disabled }: QuestionPa
                   disabled={disabled}
                   onClick={() => onChange(selected ? null : letter)}
                   className={[
-                    "flex w-full items-start gap-3 rounded-xl border px-4 py-3 text-left transition",
+                    "flex w-full items-center gap-3.5 rounded-xl border-2 px-4 py-3 text-left transition",
                     selected
-                      ? "border-indigo-500 bg-indigo-50 ring-2 ring-indigo-500/40 dark:border-indigo-400 dark:bg-indigo-950/40"
-                      : "border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800",
-                    disabled ? "cursor-default opacity-90" : "",
+                      ? "border-blue-600 bg-blue-50/70 dark:border-blue-400 dark:bg-blue-950/30"
+                      : "border-slate-300 bg-white hover:border-slate-400 dark:border-slate-700 dark:bg-slate-900 dark:hover:border-slate-600",
+                    disabled ? "cursor-default" : "",
                   ].join(" ")}
                 >
                   <span
                     className={[
-                      "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-sm font-semibold",
+                      "grid h-7 w-7 shrink-0 place-items-center rounded-full border-2 text-sm font-bold",
                       selected
-                        ? "border-indigo-500 bg-indigo-500 text-white"
-                        : "border-slate-300 text-slate-600 dark:border-slate-600 dark:text-slate-300",
+                        ? "border-blue-600 bg-blue-600 text-white dark:border-blue-400 dark:bg-blue-400 dark:text-slate-900"
+                        : "border-slate-400 text-slate-700 dark:border-slate-500 dark:text-slate-300",
                     ].join(" ")}
                   >
                     {letter}
                   </span>
-                  <span className="whitespace-pre-wrap text-[15px] leading-relaxed text-slate-800 dark:text-slate-200">
+                  <span
+                    className="text-[16px] leading-relaxed text-slate-800 dark:text-slate-200"
+                    style={SERIF}
+                  >
                     {text}
                   </span>
                 </button>
@@ -111,7 +198,7 @@ export function QuestionPane({ question, value, onChange, disabled }: QuestionPa
               onChange(v.trim() === "" ? null : v);
             }}
             placeholder="e.g. 7, 3/5, or 4.75"
-            className="w-44 rounded-lg border border-slate-300 bg-white px-3 py-2 text-lg text-slate-900 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500/40 disabled:opacity-90 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
+            className="w-48 rounded-lg border-2 border-slate-300 bg-white px-3.5 py-2.5 text-lg text-slate-900 shadow-sm focus:border-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-500/15 disabled:opacity-90 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100"
           />
           <p className="text-xs text-slate-500 dark:text-slate-400">
             Student-produced response. Enter a number; fractions (3/5) and
@@ -121,24 +208,68 @@ export function QuestionPane({ question, value, onChange, disabled }: QuestionPa
       )}
     </div>
   );
+}
 
-  if (isRW && hasStimulus) {
-    return (
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="md:border-r md:border-slate-200 md:pr-6 dark:md:border-slate-700">
-          {stimulus}
+export function QuestionPane({
+  question,
+  value,
+  onChange,
+  disabled,
+  fullHeight,
+  marked,
+  onToggleMark,
+}: QuestionPaneProps) {
+  const isRW = question.section === "reading-writing";
+  const hasStimulus = Boolean(question.passage || question.figure);
+
+  const questionSide = (
+    <>
+      <QHeader number={question.number} marked={marked} onToggleMark={onToggleMark} />
+      <div className="mt-5">
+        <Prompt question={question} value={value} onChange={onChange} disabled={disabled} />
+      </div>
+    </>
+  );
+
+  // ── Runner mode ──────────────────────────────────────────────────────────
+  if (fullHeight) {
+    if (isRW && hasStimulus) {
+      return (
+        <div className="grid h-full grid-cols-1 md:grid-cols-2 md:divide-x md:divide-slate-200 dark:md:divide-slate-800">
+          <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
+            <Stimulus question={question} />
+          </div>
+          <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
+            <div className="mx-auto max-w-xl">{questionSide}</div>
+          </div>
         </div>
-        <div>{prompt}</div>
+      );
+    }
+    return (
+      <div className="h-full overflow-y-auto px-6 py-7">
+        <div className="mx-auto max-w-2xl space-y-6">
+          {question.figure && <Stimulus question={question} />}
+          {questionSide}
+        </div>
       </div>
     );
   }
 
-  // Math (figure above stem) or stimulus-less question: single column.
+  // ── Review mode (stacked card) ───────────────────────────────────────────
+  if (isRW && hasStimulus) {
+    return (
+      <div className="grid gap-6 md:grid-cols-2">
+        <div className="md:border-r md:border-slate-200 md:pr-6 dark:md:border-slate-700">
+          <Stimulus question={question} />
+        </div>
+        <div>{questionSide}</div>
+      </div>
+    );
+  }
   return (
     <div className="mx-auto max-w-2xl space-y-4">
-      {question.figure && stimulus}
-      {!question.figure && question.passage && stimulus}
-      {prompt}
+      {question.figure && <Stimulus question={question} />}
+      {questionSide}
     </div>
   );
 }

@@ -65,6 +65,9 @@ export function FullTestApp() {
 
   const [result, setResult] = useState<TestResult | null>(null);
   const [calcOpen, setCalcOpen] = useState(false);
+  const [marked, setMarked] = useState<Set<string>>(new Set());
+  const [navOpen, setNavOpen] = useState(false);
+  const [timerHidden, setTimerHidden] = useState(false);
   // Section-submit confirmation. Set when the student clicks "Submit section";
   // ConfirmDialog renders against this state. Replaces the older
   // `window.confirm(...)` per the project's forbidden-pattern rule (CLAUDE.md
@@ -108,6 +111,8 @@ export function FullTestApp() {
       if (!runId) return;
       setPhase("loading");
       setCalcOpen(false);
+      setNavOpen(false);
+      setMarked(new Set());
       try {
         const m = await getModule(runId, position);
         setModuleMeta(m.module);
@@ -300,126 +305,211 @@ export function FullTestApp() {
   const q = questions[index];
   const answeredCount = questions.filter((qq) => answers[qq.id]).length;
   const lowTime = remaining <= 60;
+  const toggleMark = (qid: string) =>
+    setMarked((prev) => {
+      const n = new Set(prev);
+      if (n.has(qid)) n.delete(qid);
+      else n.add(qid);
+      return n;
+    });
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
-      {/* Header: module label + timer */}
-      <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
-        <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-          <div>
-            <div className="text-sm font-semibold text-slate-900 dark:text-slate-100">
-              {moduleMeta?.label}
-            </div>
-            <div className="text-xs text-slate-500 dark:text-slate-400">
-              Question {index + 1} of {questions.length} · {answeredCount} answered
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            {moduleMeta?.section === "math" && (
+    // Fullscreen takeover (above the StudentShell chrome / floating badge, z-50)
+    // so the timed test owns the whole viewport, like Bluebook.
+    <div className="fixed inset-0 z-[60] flex flex-col overflow-hidden bg-white dark:bg-slate-950">
+      {/* ── Top bar (fixed): module · timer + hide · calculator ── */}
+      <header className="flex shrink-0 items-center justify-between border-b border-slate-200 px-5 py-2 dark:border-slate-800">
+        <div className="flex min-w-0 basis-1/3 flex-col">
+          <span className="truncate text-[15px] font-bold text-slate-900 dark:text-slate-100">
+            {moduleMeta?.label}
+          </span>
+          <span className="text-xs text-slate-400 dark:text-slate-500">Directions</span>
+        </div>
+        <div className="flex basis-1/3 flex-col items-center">
+          {timerHidden ? (
+            <button
+              type="button"
+              onClick={() => setTimerHidden(false)}
+              className="rounded-full border border-slate-300 px-4 py-1 text-sm font-semibold text-slate-700 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200"
+            >
+              Show timer
+            </button>
+          ) : (
+            <>
+              <div
+                className={[
+                  "font-mono text-2xl font-bold leading-none tabular-nums",
+                  lowTime ? "text-rose-600 dark:text-rose-400" : "text-slate-900 dark:text-slate-100",
+                ].join(" ")}
+                aria-live="off"
+                title="Time remaining in this section"
+              >
+                {fmt(remaining)}
+              </div>
               <button
                 type="button"
-                onClick={() => setCalcOpen((v) => !v)}
-                className={[
-                  "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
-                  calcOpen
-                    ? "border-indigo-500 bg-indigo-50 text-indigo-700 dark:border-indigo-400 dark:bg-indigo-950/50 dark:text-indigo-300"
-                    : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
-                ].join(" ")}
-                title="Toggle graphing calculator"
+                onClick={() => setTimerHidden(true)}
+                className="mt-1 rounded-full border border-slate-300 px-3 text-xs font-semibold text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
-                  <rect x="5" y="2" width="14" height="20" rx="2" />
-                  <path d="M8 6h8M8 10h2M12 10h2M16 10h0M8 14h2M12 14h2M16 14h0M8 18h2M12 18h2M16 18h0" />
-                </svg>
-                Calculator
+                Hide
               </button>
-            )}
-            <div
+            </>
+          )}
+        </div>
+        <div className="flex basis-1/3 items-center justify-end gap-3">
+          {moduleMeta?.section === "math" && (
+            <button
+              type="button"
+              onClick={() => setCalcOpen((v) => !v)}
               className={[
-                "rounded-lg px-3 py-1.5 font-mono text-lg font-semibold tabular-nums",
-                lowTime
-                  ? "bg-rose-100 text-rose-700 dark:bg-rose-950 dark:text-rose-300"
-                  : "bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-200",
+                "flex items-center gap-1.5 rounded-lg border px-3 py-1.5 text-sm font-medium transition",
+                calcOpen
+                  ? "border-blue-500 bg-blue-50 text-blue-700 dark:border-blue-400 dark:bg-blue-950/50 dark:text-blue-300"
+                  : "border-slate-300 text-slate-600 hover:bg-slate-50 dark:border-slate-600 dark:text-slate-300 dark:hover:bg-slate-800",
               ].join(" ")}
-              aria-live="off"
-              title="Time remaining in this section"
+              title="Toggle graphing calculator"
             >
-              {fmt(remaining)}
-            </div>
-          </div>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <path d="M8 6h8M8 10h2M12 10h2M16 10h0M8 14h2M12 14h2M16 14h0M8 18h2M12 18h2M16 18h0" />
+              </svg>
+              Calculator
+            </button>
+          )}
         </div>
       </header>
       <DesmosCalculator open={calcOpen} onClose={() => setCalcOpen(false)} />
 
-      <main className="mx-auto max-w-5xl px-4 py-6">
+      {/* ── Body: fills the viewport; only the panes scroll → no layout shift ── */}
+      <main className="min-h-0 flex-1">
         {q && (
           <QuestionPane
             key={q.id}
+            fullHeight
             question={q}
             value={answers[q.id] ?? null}
             onChange={(v) => setAnswer(q.id, v)}
+            marked={marked.has(q.id)}
+            onToggleMark={() => toggleMark(q.id)}
           />
         )}
       </main>
 
-      {/* Footer: palette + nav */}
-      <footer className="sticky bottom-0 border-t border-slate-200 bg-white/95 backdrop-blur dark:border-slate-800 dark:bg-slate-900/95">
-        <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-3">
-          <div className="flex flex-wrap gap-1.5">
-            {questions.map((qq, i) => {
-              const isCur = i === index;
-              const isAns = Boolean(answers[qq.id]);
-              return (
-                <button
-                  key={qq.id}
-                  type="button"
-                  onClick={() => setIndex(i)}
-                  className={[
-                    "h-8 w-8 rounded-md text-xs font-semibold transition",
-                    isCur
-                      ? "bg-indigo-600 text-white"
-                      : isAns
-                        ? "bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"
-                        : "bg-slate-100 text-slate-500 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-400",
-                  ].join(" ")}
-                  title={`Question ${i + 1}${isAns ? " (answered)" : ""}`}
-                >
-                  {i + 1}
-                </button>
-              );
-            })}
-          </div>
-          <div className="flex items-center justify-between gap-2">
+      {/* ── Bottom bar (fixed): name · question navigator · Back/Next ── */}
+      <footer className="relative flex shrink-0 items-center justify-between border-t border-slate-200 px-5 py-3 dark:border-slate-800">
+        <div className="hidden basis-1/3 truncate text-sm font-semibold text-slate-700 dark:text-slate-200 sm:block">
+          {start?.test.short_title || start?.test.title}
+        </div>
+        <div className="flex basis-1/3 justify-center">
+          <button
+            type="button"
+            onClick={() => setNavOpen((o) => !o)}
+            aria-expanded={navOpen}
+            className="flex items-center gap-2 rounded-lg bg-slate-800 px-4 py-2 text-sm font-semibold text-white dark:bg-slate-200 dark:text-slate-900"
+          >
+            Question {index + 1} of {questions.length}
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              className={navOpen ? "" : "rotate-180"}
+              aria-hidden
+            >
+              <path d="m6 15 6-6 6 6" />
+            </svg>
+          </button>
+        </div>
+        <div className="flex basis-1/3 items-center justify-end gap-2">
+          <button
+            type="button"
+            disabled={index === 0}
+            onClick={() => setIndex((i) => Math.max(0, i - 1))}
+            className="rounded-full border border-slate-300 px-5 py-2 text-sm font-semibold text-slate-700 disabled:opacity-40 dark:border-slate-600 dark:text-slate-200"
+          >
+            Back
+          </button>
+          {index < questions.length - 1 ? (
             <button
               type="button"
-              disabled={index === 0}
-              onClick={() => setIndex((i) => Math.max(0, i - 1))}
-              className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-medium text-slate-700 disabled:opacity-40 dark:border-slate-600 dark:text-slate-200"
+              onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
+              className="rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
-              Back
+              Next
             </button>
-            {index < questions.length - 1 ? (
-              <button
-                type="button"
-                onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
-                className="rounded-lg bg-indigo-600 px-5 py-2 text-sm font-semibold text-white hover:bg-indigo-700"
-              >
-                Next
-              </button>
-            ) : (
-              <button
-                type="button"
-                onClick={() => {
-                  const blanks = questions.length - answeredCount;
-                  setPendingSectionSubmit({ blanks });
-                }}
-                className="rounded-lg bg-emerald-600 px-5 py-2 text-sm font-semibold text-white hover:bg-emerald-700"
-              >
-                Submit section
-              </button>
-            )}
-          </div>
+          ) : (
+            <button
+              type="button"
+              onClick={() => setPendingSectionSubmit({ blanks: questions.length - answeredCount })}
+              className="rounded-full bg-blue-700 px-7 py-2 text-sm font-semibold text-white hover:bg-blue-800"
+            >
+              Submit
+            </button>
+          )}
         </div>
+
+        {navOpen && (
+          <>
+            <button
+              type="button"
+              aria-label="Close question navigator"
+              className="fixed inset-0 z-20 cursor-default"
+              onClick={() => setNavOpen(false)}
+            />
+            <div className="absolute bottom-full left-1/2 z-30 mb-3 w-[min(92vw,600px)] -translate-x-1/2 rounded-xl border border-slate-200 bg-white p-4 shadow-2xl dark:border-slate-700 dark:bg-slate-900">
+              <div className="mb-1 text-center text-sm font-bold text-slate-900 dark:text-slate-100">
+                {moduleMeta?.label}
+              </div>
+              <div className="mb-3 flex flex-wrap justify-center gap-x-4 gap-y-1 text-[11px] text-slate-500 dark:text-slate-400">
+                <span className="flex items-center gap-1">
+                  <span className="inline-block h-3 w-3 rounded-sm border-2 border-blue-600" /> Current
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="inline-block h-3 w-3 rounded-sm bg-blue-600" /> Answered
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="inline-block h-3 w-3 rounded-sm border border-dashed border-slate-400" /> Unanswered
+                </span>
+                <span className="flex items-center gap-1">
+                  <span className="inline-block h-2.5 w-2.5 rounded-full bg-amber-500" /> Marked
+                </span>
+              </div>
+              <div className="flex max-h-[42vh] flex-wrap justify-center gap-2 overflow-y-auto">
+                {questions.map((qq, i) => {
+                  const ans = Boolean(answers[qq.id]);
+                  const cur = i === index;
+                  const mk = marked.has(qq.id);
+                  return (
+                    <button
+                      key={qq.id}
+                      type="button"
+                      onClick={() => {
+                        setIndex(i);
+                        setNavOpen(false);
+                      }}
+                      title={`Question ${i + 1}${ans ? " · answered" : ""}${mk ? " · marked" : ""}`}
+                      className={[
+                        "relative grid h-9 w-9 place-items-center rounded-md text-xs font-semibold transition",
+                        cur
+                          ? "border-2 border-blue-600 text-blue-700 dark:text-blue-300"
+                          : ans
+                            ? "bg-blue-600 text-white"
+                            : "border border-dashed border-slate-400 text-slate-500 hover:border-slate-500 dark:border-slate-600 dark:text-slate-400",
+                      ].join(" ")}
+                    >
+                      {i + 1}
+                      {mk && (
+                        <span className="absolute -right-1 -top-1 h-2.5 w-2.5 rounded-full bg-amber-500 ring-2 ring-white dark:ring-slate-900" />
+                      )}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </>
+        )}
       </footer>
       {pendingSectionSubmit && (
         <ConfirmDialog
