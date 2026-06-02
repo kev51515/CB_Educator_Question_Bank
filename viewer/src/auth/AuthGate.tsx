@@ -224,7 +224,7 @@ function StudentRoutesTree({
           distraction-free, full-viewport takeover (like Bluebook) — no left
           rail / mobile tab bar behind its intro, loading, or running states. */}
       <Route
-        path={ROUTES.TEST_RUN}
+        path={`${ROUTES.TEST_RUN}/*`}
         element={
           <StudentTestRunGuard>
             <FullTestApp />
@@ -283,7 +283,7 @@ function StaffRoutesTree({ account }: { account: AccountContext }) {
     <Routes>
       {/* Staff full-test preview also renders OUTSIDE the shell — same
           distraction-free takeover students get (no left rail behind it). */}
-      <Route path={ROUTES.TEST_RUN} element={<FullTestApp />} />
+      <Route path={`${ROUTES.TEST_RUN}/*`} element={<FullTestApp />} />
       <Route element={<StaffShell />}>
         <Route
           path={ROUTES.HOME}

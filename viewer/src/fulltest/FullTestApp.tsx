@@ -13,7 +13,7 @@
  * `current_module` with the server-authoritative remaining time.
  */
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import { useToast } from "../components";
 import { ROUTES } from "../lib/routes";
 import { useProfile } from "../lib/profile";
@@ -42,6 +42,29 @@ import type {
 
 type Phase = "loading" | "intro" | "module" | "break" | "submitting" | "result" | "error";
 
+/**
+ * Build a descriptive URL for the runner's current state so the address bar is
+ * meaningful and deep-linkable instead of a static /test/:slug on every screen:
+ *   intro/loading → /test/:slug
+ *   a question     → /test/:slug/section/:position/q/:number
+ *   break          → /test/:slug/break
+ *   finished       → /test/:slug/done
+ */
+function runnerPath(
+  slug: string,
+  phase: Phase,
+  position: number | undefined,
+  qNumber: number | undefined,
+): string {
+  const base = `/test/${encodeURIComponent(slug)}`;
+  if (phase === "module" && position != null && qNumber != null) {
+    return `${base}/section/${position}/q/${qNumber}`;
+  }
+  if (phase === "break") return `${base}/break`;
+  if (phase === "result") return `${base}/done`;
+  return base;
+}
+
 function fmt(seconds: number): string {
   const s = Math.max(0, Math.floor(seconds));
   const m = Math.floor(s / 60);
@@ -63,7 +86,14 @@ function elimToPayload(
 export function FullTestApp() {
   const { slug = "" } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const toast = useToast();
+  // The path the runner was opened with — captured once before the URL-sync
+  // effect rewrites it, so an incoming deep link (…/section/n/q/m) survives long
+  // enough for loadModule to restore that question.
+  const openedPathRef = useRef<string>(
+    typeof window !== "undefined" ? window.location.pathname : "",
+  );
   // Role gates the end-of-test screen: staff (teacher previewing / reviewing)
   // see the full result; students see only a neutral "submitted" confirmation —
   // no score, no questions — until the teacher releases results.
@@ -141,7 +171,6 @@ export function FullTestApp() {
         const m = await getModule(runId, position);
         setModuleMeta(m.module);
         setQuestions(m.questions);
-        setIndex(0);
         // Hydrate answers: server drafts (cross-device) overlaid with the local
         // cache (freshest, saved on every keystroke). Local wins when present.
         const cached = loadCachedAnswers(runId, position);
@@ -150,6 +179,15 @@ export function FullTestApp() {
         const seed: Record<string, string | null> = {};
         for (const q of m.questions) seed[q.id] = merged[q.id] ?? null;
         setAnswers(seed);
+        // Restore the question from a deep link (…/section/<pos>/q/<n>) when it
+        // targets the section we're loading; otherwise start at question 1.
+        let startIndex = 0;
+        const deep = openedPathRef.current.match(/\/section\/(\d+)\/q\/(\d+)/);
+        if (deep && Number(deep[1]) === position) {
+          const idx = m.questions.findIndex((q) => q.number === Number(deep[2]));
+          if (idx >= 0) startIndex = idx;
+        }
+        setIndex(startIndex);
         // Rehydrate eliminated (struck) choices saved on the server so a
         // resume restores them — and so they're re-submitted at section end.
         const savedElim = m.saved_eliminations ?? {};
@@ -229,6 +267,18 @@ export function FullTestApp() {
       alive = false;
     };
   }, [phase, isStaff, result, runId]);
+
+  // --- reflect state in the URL (deep-linkable, clearer address bar) --------
+  // We mirror the runner's phase/section/question into the path with replace()
+  // so each screen has a distinct, shareable URL — without making the URL the
+  // source of truth (the server still authorises which module you may enter).
+  useEffect(() => {
+    const qNumber = questions[index]?.number;
+    const target = runnerPath(slug, phase, moduleMeta?.position, qNumber);
+    if (location.pathname !== target) {
+      navigate(target, { replace: true });
+    }
+  }, [slug, phase, moduleMeta, index, questions, location.pathname, navigate]);
 
   // --- timer ----------------------------------------------------------------
   useEffect(() => {
