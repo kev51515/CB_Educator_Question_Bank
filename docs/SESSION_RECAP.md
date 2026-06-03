@@ -1293,3 +1293,87 @@ Both green post-batch.
 
 **Sizing**: 7 files changed, 852 insertions, 22 deletions. tsc clean,
 remote DB has 0091 applied, harness 51/51.
+
+## Wave 21J — Deferred-finding sweep (2026-06-03, commit 6a138dd)
+
+Client-only follow-up that closed the 8 lower-priority findings the 21I
+batch parked. No new migrations; no public API changes; no shared helper
+introduced (CLAUDE.md "no scope creep" rule — every cancellation guard is
+a local `aliveRef`, identical to the AssignmentRunner pattern landed in
+21I Lane B).
+
+Four parallel file-disjoint lanes.
+
+**Lane E — flush + optimistic cleanup**
+- `viewer/src/teacher/PrivateNotesSection.tsx` — the unmount cleanup now
+  fires `void persist(bodyHtml)` before clearing the debounce timer when
+  the body differs from `lastSavedRef.current`. Matches the
+  `pendingDraftRef synchronous unmount flush` pattern CLAUDE.md mandates.
+  Closes the "teacher closes the student profile modal mid-debounce →
+  last 2s of typed note silently dropped" hole.
+- `viewer/src/teacher/DiscussionTopicView.tsx` — `handleSubmitReply`'s
+  `void refresh().then(...)` switched to `.finally(...)` so the optimistic
+  placeholder clears whether refresh resolved or rejected (the insert
+  already landed server-side — the ghost should disappear either way).
+  Added a `mountedRef` to silence the dead-component setState warning if
+  the teacher closes the topic before refresh resolves.
+
+**Lane F — three hooks, same race shape**
+All three hooks: (a) post-await `setState` was unguarded so stale results
+landed after unmount or sign-out→sign-in-as-other; (b) the realtime
+channel subscribe effect listed the recreated `refresh*` callback in its
+deps, so any callback identity flip tore down + recreated the channel,
+opening a temporary subscription gap.
+
+- `viewer/src/notifications/useNotifications.ts` — added module-level
+  `aliveRef`. `fetchNotifications` guards every `setNotifications` on
+  `aliveRef.current`; previously-silent RLS rejects (`setNotifications([])`)
+  now `console.warn` + `toast.error("Couldn't load notifications")`.
+  Realtime callback switched to `fetchNotificationsRef.current(userId)`;
+  channel dep array reduced to stable values.
+- `viewer/src/teacher/useTopicPosts.ts` — `aliveRef` + post-await guards
+  in `refresh` (topic fetch and posts fetch separately, since both
+  awaits can land after unmount). Realtime callback now reads
+  `refreshRef.current()`; effect deps reduced to `[topicUuid]`.
+- `viewer/src/dashboard/useNeedsAttention.ts` — same pattern applied
+  three times (`refreshToGrade`, `refreshPastDue`, `refreshReplies`).
+  Three refs (`refreshToGradeRef`, `refreshRepliesRef`, `refreshAllRef`)
+  unblock the realtime effect's deps from `[teacherId, refreshToGrade,
+  refreshReplies, refreshAll]` to just `[teacherId]`.
+
+**Lane G — AssignmentDetailPage cancellation**
+- `viewer/src/teacher/AssignmentDetailPage.tsx` — `refresh()` gained an
+  optional `isAlive: () => boolean = () => true` predicate parameter
+  (default preserves the existing call site at line 665). Six guards
+  inside check `isAlive()` after every `await` and before every
+  `setState`/`setLoading`/`setError`/`finally` branch. The mount effect
+  declares `let alive = true`, passes `() => alive`, and flips the flag
+  in cleanup. Fixes the "rapid back-forward between assignments shows a
+  flash of the previous one" race.
+
+**Lane H — CRUD double-click + InlineRename divergence**
+- `viewer/src/teacher/CourseSettings.tsx` — archive + template toggles
+  wrapped in `useTransition`. `disabled={archiveToggling}` and
+  `disabled={templateToggling}` on both controls; disabled styles
+  applied. Rare-but-real race where rapid double-clicks fired two
+  `courses` UPDATEs and the slower-commit-first ordering rolled back to
+  the wrong state — closed.
+- `viewer/src/teacher/ModulesPage.tsx` — `InlineRename.commit` rewritten
+  to mirror `AssignmentCard.tsx:104-119`: short-circuit closes editor on
+  empty/unchanged; otherwise `try { await onSave(trimmed); setEditing(false); }
+  catch { /* keep editing */ }`. The two InlineRename implementations no
+  longer diverge — promoting one to `components/` is left for a future
+  consolidation pass.
+
+**Sizing**: 8 files changed, 170 insertions, 32 deletions. tsc clean.
+Parallel session in this window also added migration 0092
+(`fix_profiles_own_update_recursion`) — not part of this batch, left
+untouched.
+
+**Audit-batch grand total (Waves 21I + 21J)**: 16 actionable fixes
+shipped — 2 migrations (0090 course-scope, 0091 EXISTS hotfix), 12
+client files (Toast, AssignmentRunner, FullTestApp, fulltest api,
+PrivateNotesSection, DiscussionTopicView, useNotifications,
+useTopicPosts, useNeedsAttention, AssignmentDetailPage, CourseSettings,
+ModulesPage), 2 verification harnesses. Every audit finding either
+closed or explicitly dismissed as false positive.

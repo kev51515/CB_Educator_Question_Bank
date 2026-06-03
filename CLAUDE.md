@@ -284,6 +284,25 @@ enrolment). `clickthrough-practice-test-edges.mjs` (10 negative checks) hits
 `module_out_of_order`, `run_already_submitted`, `run_not_found`.
 Both green post-batch.
 
+**Wave 21J (2026-06-03) — deferred-finding sweep (commit 6a138dd):**
+Client-only follow-up that closed the 8 lower-priority items the 21I batch
+deferred. No new migrations. 4 file-disjoint lanes (PrivateNotesSection +
+DiscussionTopicView; useNotifications + useTopicPosts + useNeedsAttention;
+AssignmentDetailPage; CourseSettings + ModulesPage). Established two
+patterns now recurring across the codebase:
+- **`aliveRef` local-flag** for any async `setState`-after-await (8 places
+  now use it: AssignmentRunner from 21I + the seven hooks/components in
+  this wave). Per CLAUDE.md, NOT promoted to a shared `useMounted()`
+  helper — the inline flag pattern stays.
+- **`refreshRef` for realtime channel handlers** so the subscribe effect
+  depends only on stable values and the channel isn't torn down +
+  recreated on every callback identity flip. Applied across
+  `useNotifications`, `useTopicPosts`, `useNeedsAttention`.
+Also: `CourseSettings` archive/template toggles now wrapped in
+`useTransition` with `disabled={isPending}`; `ModulesPage` InlineRename
+rewritten to match `AssignmentCard.tsx:104-119` (close only on success).
+See `docs/SESSION_RECAP.md` Wave 21J for the per-file diff summary.
+
 ### Audit trail (post-Wave-20)
 
 Migration 0050 added an observational `BEFORE DELETE` trigger on `profiles`
