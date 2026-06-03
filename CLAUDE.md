@@ -191,7 +191,8 @@ Migration rules:
 one-line summary, plus the versioning/collision gotchas. Keep it in sync in the
 same commit as any new migration. (`docs/ARCHITECTURE.md` §3e has the older
 narrative ledger.) **Remote DB state (verified 2026-06-03): migrations
-0001–0090 are ALL live** (Local=Remote for every file; full smoke suite green).
+0001–0091 are ALL live** (Local=Remote for every file; full smoke suite green;
+end-to-end student clickthrough 41/41 + edge harness 10/10).
 Note: a number collision (two `0086_*` files) silently skipped the second until
 it was renumbered to `0090` — always check `supabase migration list` shows
 Local==Remote after a push. History note: 0057–0060 were authored by a parallel
@@ -239,6 +240,49 @@ draft / not-yet-due. `FOR UPDATE` on the row serializes against the cron
 worker — a race lost to cron returns 0 silently. SECURITY DEFINER + `SET
 search_path = public, auth` per CLAUDE.md rule. `GRANT EXECUTE TO
 authenticated`.
+
+**Wave 21I (2026-06-03) — cross-codebase edge-case + race audit batch
+(commit 879056e):**
+Four parallel agents audited DB races (0050–0085), full-test runner edges
+(`viewer/src/fulltest/`), auth + permissions, and React-app-wide async/state.
+17 actionable findings; this batch ships 7 highest-leverage fixes + 1 hotfix.
+
+Server-side: **0090** = course-scope on `release_test_results`,
+`allow_test_retake`, `reset_test_attempt`; `allow_test_retake` gains
+idempotency (refuse if a grant already exists newer than the student's latest
+submission — new error code `retake_already_granted`). **0091** = hotfix to
+0090's `release_test_results`: original used `SELECT … LIMIT 1` to find one
+course owning the test, which mispicked when a slug links from multiple
+courses; switched to EXISTS pattern matching the other two RPCs. **Lesson:
+when a JOIN can produce >1 row, `LIMIT 1` for an authorisation pick is a
+soundness bug, not a perf optimisation — always use EXISTS for scope checks.**
+
+Client-side hardening:
+- `viewer/src/components/Toast.tsx` — memoize `value` + per-variant `useCallback`.
+  Stops ~59 dep arrays across the app from invalidating on every toast.
+- `viewer/src/student/AssignmentRunner.tsx` — `isAlive()` cancellation guard
+  threaded through `bootstrap` → `startNewAttempt`; the
+  `start_assignment_attempt` RPC is now skipped if the effect has been
+  cancelled, so rapid assignment navigation no longer burns extra attempts
+  against `max_attempts`.
+- `viewer/src/fulltest/FullTestApp.tsx` + `api.ts` — four runner fixes:
+  F1 `visibilitychange` + `pageshow` re-sync `seconds_remaining` from server
+  when tab returns visible after >5s hidden (sleep/wake no longer silently
+  auto-submits). F2 drop localStorage merge when server has strictly more
+  answered questions than local (closes cross-device clobber). F3 on
+  `module_out_of_order` / `run_already_submitted` after retry attempt 0,
+  synthesize success (network blip on the original submit no longer locks
+  the student out staring at a "could not submit" toast). F4 flush
+  `saveDraftRef.current()` before `doSubmitModule()` on time-up so the
+  last 2.5s of annotation/highlight/note edits aren't dropped.
+
+Verification: two harnesses live in `viewer/scripts/`:
+`clickthrough-practice-test.mjs` (41 happy-path checks) walks the full DSAT
+Nov-2023 as a fresh disposable student, including the new course-scope setup
+required by 0090 (course + module_items link to `/test/<slug>` +
+enrolment). `clickthrough-practice-test-edges.mjs` (10 negative checks) hits
+`module_out_of_order`, `run_already_submitted`, `run_not_found`.
+Both green post-batch.
 
 ### Audit trail (post-Wave-20)
 

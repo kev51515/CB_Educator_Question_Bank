@@ -3,7 +3,7 @@
 The 2026-06 build turned the SAT-prep LMS into a **controlled-process** product:
 the teacher creates student logins, assigns work, and dispenses test results —
 students only ever see what they've been given. This doc is the reference for
-that system (surfaces, data model, RPCs, migrations 0067–0086).
+that system (surfaces, data model, RPCs, migrations 0067–0091).
 
 ---
 
@@ -100,8 +100,12 @@ Students see ONLY assigned work — no free question bank / free mock test:
 | 0083 | `start_test` returns `results_released`; `reset_test_attempt`; `test_roster_status.has_in_progress` |
 | 0084/0085 | `admin_create_student` skips taken roster codes (col-qualify fix) |
 | 0086 | persist marks/highlights/notes (`save_test_progress.p_annot`, `get_test_module.saved_*`) |
+| 0090 | course-scope `release_test_results` / `allow_test_retake` / `reset_test_attempt` (was `is_staff`-only); `allow_test_retake` idempotency (`retake_already_granted`) |
+| 0091 | hotfix to 0090: `release_test_results` scope check switched from `SELECT … LIMIT 1` to EXISTS (multi-course test links) |
 
-(0069 = parallel session's announcement fanout, not part of this build.)
+(0069 = parallel session's announcement fanout, not part of this build.
+ 0087/0088/0089 = live proctoring / per-student report / one-click assign,
+ logged in `docs/MIGRATIONS.md`.)
 
 ## 6. Verification
 

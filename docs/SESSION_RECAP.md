@@ -1205,3 +1205,91 @@ controlled-access model (students do only what the teacher assigns):
   detects that URL prefix and renders the tag.
 - Refreshed stale docstrings (`AreaSelector`, `SkillHeatmap`) and docs
   (`LMS_FEATURES`, `USER_GUIDE`, `ARCHITECTURE` 0024 ledger entry).
+
+## Wave 21I — Cross-codebase edge-case + race audit (2026-06-03, commit 879056e)
+
+Four parallel read-only audits with strict file-scope partition (DB races
+0050–0085; full-test runner `viewer/src/fulltest/`; auth + permissions in
+`viewer/src/auth/` + RPCs; React-app-wide in `teacher/student/dashboard/
+components/notifications/`). 17 actionable findings — the highest-leverage
+batch shipped here.
+
+**DB scope hardening (0090 + 0091 hotfix):**
+- **0090** scoped `release_test_results`, `allow_test_retake`,
+  `reset_test_attempt` to `is_teacher_of_course OR is_admin` (was
+  `is_staff` — any teacher could act on any student's run).
+- **0090** added grant idempotency: `allow_test_retake` now raises
+  `retake_already_granted` if a grant exists newer than the student's
+  latest submission (closes the "spam grants for unlimited retakes"
+  hole the audit flagged).
+- **0091** fixed a soundness bug in 0090's `release_test_results`: it
+  used `SELECT … LIMIT 1` to find the course owning the test, which
+  arbitrarily mispicked when a slug links from multiple courses (the
+  common real-world case — caught only because the diagnostic
+  clickthrough leaves orphan link rows from prior runs). Switched to
+  EXISTS, matching the other two RPCs. **Lesson recorded in CLAUDE.md:
+  `LIMIT 1` for an authorisation pick is a soundness bug; always use
+  EXISTS for scope checks.**
+
+**Client-side hardening (one commit, four files):**
+- **`Toast.tsx`** — memoize `value` + per-variant `useCallback`. ~59 dep
+  arrays across the app list `toast`; previously every toast invalidated
+  them all, cascading re-fetches/re-subscribes. The cheapest
+  high-leverage fix in the audit.
+- **`AssignmentRunner.tsx`** — `isAlive()` cancellation flag threaded
+  through `bootstrap` → `startNewAttempt`; gates the
+  `start_assignment_attempt` RPC call so rapid assignment navigation
+  no longer burns extra attempts against `max_attempts`. Stale
+  `setStage(...)` from the previous assignment can't clobber the new
+  one either.
+- **`FullTestApp.tsx` + `api.ts`** — four runner fixes that make a real
+  test survive real conditions:
+  - **F1 sleep/wake**: `visibilitychange` + `pageshow` listener fires when
+    the tab returns visible after >5s hidden; calls `getModule` to
+    re-sync `seconds_remaining` from the server-authoritative timer.
+    Sleep no longer silently auto-submits.
+  - **F2 cross-device**: `loadModule`'s `merged = { ...server, ...cached }`
+    flipped to drop the local cache entirely if `server` has strictly
+    more answered questions than `cached`. Closes the laptop-clobbers-
+    phone bug for students who switch devices mid-attempt.
+  - **F3 retry recovery**: `submitModule` now treats
+    `module_out_of_order` / `run_already_submitted` after retry attempt 0
+    as a synthesised success. A network blip on the original submit (the
+    server commits but the response is lost) used to lock the student
+    out staring at a "could not submit" toast; they now advance
+    correctly.
+  - **F4 annotation flush**: `saveDraftRef.current()` fires before
+    `doSubmitModule()` on time-up so annotation/highlight/note edits in
+    the last 2.5s aren't lost (submit RPC doesn't carry annot payload).
+
+**Findings deferred to follow-up wave** (real but lower-priority):
+`PrivateNotesSection` unmount-doesn't-flush; `useNotifications` no mount
+guard; `AssignmentDetailPage` / `useTopicPosts` / `useNeedsAttention` no
+cancellation; `DiscussionTopicView` optimistic-post-never-cleared;
+`CourseSettings` archive-toggle no `disabled={busy}`; `ModulesPage`
+InlineRename closes-before-save. All 7 captured in the audit transcript;
+none break correctness, all degrade UX edge cases.
+
+**Findings dismissed as false positives**: agent over-flagged the timer
+interval recreation (cosmetic, sub-ms re-attach), the `submittingRef`
+double-submit race (single-threaded JS makes it safe), the deep-link
+`openedPathRef` persistence (by design), and the `admin_create_student`
+cross-course collision (impossible: roster_codes are constructed from
+globally-unique `short_code`s, and the course is FOR UPDATE-locked).
+
+**Verification harnesses (new, `viewer/scripts/`):**
+- `clickthrough-practice-test.mjs` — drives the full DSAT-Nov-2023 as a
+  fresh disposable student against Supabase Cloud. Provisions a teacher,
+  course, module, and `module_items` link to `/test/<slug>`, plus
+  enrolment (required so the new course-scope check on 0090 RPCs
+  passes). Walks all 4 modules with save/resume/submit; verifies
+  results gating (locked → released), eliminations round-trip, the
+  one-attempt lock, and the retake grant. 41 assertions.
+- `clickthrough-practice-test-edges.mjs` — negative paths:
+  `module_out_of_order`, `run_already_submitted`, `run_not_found`,
+  double-submit, post-submit writes. 10 assertions.
+
+Both green post-batch.
+
+**Sizing**: 7 files changed, 852 insertions, 22 deletions. tsc clean,
+remote DB has 0091 applied, harness 51/51.

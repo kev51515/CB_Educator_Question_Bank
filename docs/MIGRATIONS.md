@@ -39,8 +39,9 @@ silent, hard-to-diagnose bug (see the 0086 collision, June 2026).
 
 ## Ledger
 
-> Remote state verified 2026‑06‑03: migrations **0001–0090 all live**
-> (`migration list` Local == Remote for every row; full smoke green).
+> Remote state verified 2026‑06‑03: migrations **0001–0091 all live**
+> (`migration list` Local == Remote for every row; full smoke green;
+> end-to-end student clickthrough 41/41 + edge harness 10/10).
 
 | #    | File | Summary |
 |------|------|---------|
@@ -134,8 +135,9 @@ silent, hard-to-diagnose bug (see the 0086 collision, June 2026).
 | 0088 | `student_test_report` | Per-student scaled-score trajectory + weak-domain accuracy. |
 | 0089 | `assign_test_to_course` | One-click assign a full test to a course (Modules link). |
 | 0090 | `test_rpcs_course_scope` | Course-scope `release_test_results`/`allow_test_retake`/`reset_test_attempt` (renumbered from a duplicate 0086). |
+| 0091 | `release_test_results_multi_course` | Fix 0090: `release_test_results` used `SELECT … LIMIT 1` to find one course, which mispicked when a test slug is linked from multiple courses; switched to EXISTS pattern. |
 
 ---
 
-_Last updated: 2026-06-03 (through 0090). When you add a migration, append a row
+_Last updated: 2026-06-03 (through 0091). When you add a migration, append a row
 here and bump the "verified" line once `migration list` shows Local == Remote._
