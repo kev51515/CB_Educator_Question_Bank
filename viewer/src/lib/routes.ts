@@ -279,10 +279,6 @@ export function assignmentReviewPath(
   return buildPath(ROUTES.ASSIGNMENT_REVIEW, { assignmentId, attemptId });
 }
 
-export function mockTestReviewPath(attemptId: string): string {
-  return buildPath(ROUTES.MOCK_TEST_REVIEW, { attemptId });
-}
-
 // --- Legacy builder aliases ------------------------------------------------
 // Pre-Canvas-rename callers (mostly teacher/* + a few internal usages) ask
 // for class-flavored helpers. These thin wrappers stay until every caller
