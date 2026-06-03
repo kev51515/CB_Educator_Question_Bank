@@ -16,6 +16,7 @@ import { supabase } from "../lib/supabase";
 import { testRunPath, testReviewPath } from "../lib/routes";
 import { TestCompletionModal } from "./TestCompletionModal";
 import { TestMonitorModal } from "./TestMonitorModal";
+import { AssignTestModal } from "./AssignTestModal";
 import type { TestCatalogEntry } from "./types";
 
 export function FullTestCatalog() {
@@ -23,6 +24,7 @@ export function FullTestCatalog() {
   const [loading, setLoading] = useState(true);
   const [resultsFor, setResultsFor] = useState<TestCatalogEntry | null>(null);
   const [monitorFor, setMonitorFor] = useState<TestCatalogEntry | null>(null);
+  const [assignFor, setAssignFor] = useState<TestCatalogEntry | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -108,6 +110,13 @@ export function FullTestCatalog() {
               </Link>
               <button
                 type="button"
+                onClick={() => setAssignFor(t)}
+                className="rounded-lg border border-indigo-300 px-3.5 py-2 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50 dark:border-indigo-800 dark:text-indigo-300 dark:hover:bg-indigo-950/30"
+              >
+                Assign to course
+              </button>
+              <button
+                type="button"
                 onClick={() => setMonitorFor(t)}
                 className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 px-3.5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
               >
@@ -141,6 +150,13 @@ export function FullTestCatalog() {
           slug={monitorFor.slug}
           title={monitorFor.title}
           onClose={() => setMonitorFor(null)}
+        />
+      )}
+      {assignFor && (
+        <AssignTestModal
+          slug={assignFor.slug}
+          title={assignFor.title}
+          onClose={() => setAssignFor(null)}
         />
       )}
     </div>
