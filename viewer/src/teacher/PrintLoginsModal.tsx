@@ -21,7 +21,7 @@
  *
  * Modal contract: role=dialog, aria-modal, focus trap, ×, Esc, backdrop click.
  */
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import { QRCodeCanvas } from "qrcode.react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
@@ -32,6 +32,12 @@ export interface PrintableLogin {
   id: string;
   name: string;
   code: string;
+  /** True once the student claimed the seat — the code login is retired and
+   *  they sign in with their own email. Such seats are shown for reference but
+   *  excluded from QR/code distribution and from bulk password reset. */
+  claimed: boolean;
+  /** The student's real login email (present once claimed). */
+  email?: string | null;
 }
 
 interface ResetResult {
@@ -133,6 +139,11 @@ export function PrintLoginsModal({
     if (!busy) onClose();
   });
 
+  // Claimed seats sign in with their own email — the code/QR no longer works for
+  // them, and a bulk reset would clobber the password they chose. Split them out.
+  const codeStudents = useMemo(() => students.filter((s) => !s.claimed), [students]);
+  const claimedStudents = useMemo(() => students.filter((s) => s.claimed), [students]);
+
   // ---- Track 1: codes only -------------------------------------------------
 
   const onPrintCodes = useCallback(() => {
@@ -142,7 +153,7 @@ export function PrintLoginsModal({
       toast.info("Pop-up blocked", "Allow pop-ups to print the login sheet.");
       return;
     }
-    const cards = students
+    const codeCards = codeStudents
       .map((s) => {
         const qr = readQr(codeQrId(s.code));
         const img = qr ? `<img src="${qr}" width="120" height="120" alt="Login QR"/>` : "";
@@ -153,24 +164,43 @@ export function PrintLoginsModal({
           </div></div>`;
       })
       .join("");
+    // Claimed seats: the code/QR no longer signs them in — show their email.
+    const claimedCards = claimedStudents
+      .map(
+        (s) => `<div class="card"><div class="meta">
+            <div class="name">${esc(s.name)}</div>
+            <div class="lbl">Signs in with own email</div>
+            <div class="code" style="font-size:14px">${esc(s.email ?? "—")}</div>
+            <div class="hint">This student set up their own login — the class login code no longer applies.</div>
+          </div></div>`,
+      )
+      .join("");
+    const sub =
+      `${codeStudents.length} with a login code` +
+      (claimedStudents.length
+        ? ` · ${claimedStudents.length} use their own email`
+        : "") +
+      " · passwords set per student (not shown) — use Reset password on the roster if one is lost.";
     w.document.write(`<!doctype html><html><head><title>Logins — ${esc(courseName)}</title>
       <style>${SHEET_CSS}</style></head><body>
       <h1>${esc(courseName)} — student logins</h1>
-      <p class="sub">${students.length} student${students.length === 1 ? "" : "s"} · passwords set per student (not shown) — use Reset password on the roster if one is lost.</p>
-      <div class="grid">${cards}</div></body></html>`);
+      <p class="sub">${sub}</p>
+      <div class="grid">${codeCards}${claimedCards}</div></body></html>`);
     w.document.close();
     w.focus();
     w.print();
-  }, [students, courseName, toast]);
+  }, [students, codeStudents, claimedStudents, courseName, toast]);
 
   const onDownloadCodesCsv = useCallback(() => {
     if (students.length === 0) return;
     const rows = students.map((s) =>
-      [s.name, s.code, studentCodePrefillUrl(s.code)].map(csvCell).join(","),
+      s.claimed
+        ? [s.name, "—", s.email ?? "", ""].map(csvCell).join(",")
+        : [s.name, s.code, "", studentCodePrefillUrl(s.code)].map(csvCell).join(","),
     );
     downloadCsv(
       `${courseName.replace(/[^a-z0-9]+/gi, "-").replace(/^-+|-+$/g, "") || "course"}-logins.csv`,
-      ["Name,Login code,Sign-in URL", ...rows].join("\r\n"),
+      ["Name,Login code,Email,Sign-in URL", ...rows].join("\r\n"),
     );
     toast.success("CSV downloaded");
   }, [students, courseName, toast]);
@@ -179,10 +209,10 @@ export function PrintLoginsModal({
 
   const onResetAll = useCallback(async () => {
     setView("running");
-    setProgress({ done: 0, total: students.length });
+    setProgress({ done: 0, total: codeStudents.length });
     const okResults: ResetResult[] = [];
     const failed: { name: string; reason: string }[] = [];
-    for (const s of students) {
+    for (const s of codeStudents) {
       const password = generatePassword();
       try {
         const { error } = await supabase.rpc("admin_reset_student_password", {
@@ -212,7 +242,7 @@ export function PrintLoginsModal({
         "See the list in the dialog.",
       );
     }
-  }, [students, toast, onChanged]);
+  }, [codeStudents, toast, onChanged]);
 
   const onPrintWithPasswords = useCallback(() => {
     if (results.length === 0) return;
@@ -289,7 +319,11 @@ export function PrintLoginsModal({
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400">
               {students.length} managed{" "}
-              {students.length === 1 ? "student" : "students"} in {courseName}.
+              {students.length === 1 ? "student" : "students"} in {courseName}
+              {claimedStudents.length > 0
+                ? ` · ${claimedStudents.length} use their own email`
+                : ""}
+              .
             </p>
           </div>
           {view !== "running" && (
@@ -344,23 +378,36 @@ export function PrintLoginsModal({
                   <p className="text-xs text-slate-500 dark:text-slate-400">
                     Passwords can't be re-shown once set. This generates a{" "}
                     <span className="font-medium">new</span> password for every
-                    student and prints the full set — useful at the start of
-                    term or after a leak.
+                    student with a login code and prints the full set — useful at
+                    the start of term or after a leak.
+                    {claimedStudents.length > 0 && (
+                      <>
+                        {" "}
+                        {claimedStudents.length} student
+                        {claimedStudents.length === 1 ? "" : "s"} who set up their
+                        own login{" "}
+                        {claimedStudents.length === 1 ? "is" : "are"} skipped.
+                      </>
+                    )}
                   </p>
                   <button
                     type="button"
                     onClick={() => setView("confirm")}
-                    className="w-full rounded-lg px-4 py-2.5 text-sm font-medium text-amber-800 dark:text-amber-200 ring-1 ring-amber-300 dark:ring-amber-800 bg-amber-50 dark:bg-amber-950/30 hover:bg-amber-100 dark:hover:bg-amber-950/50 min-h-[40px]"
+                    disabled={codeStudents.length === 0}
+                    className="w-full rounded-lg px-4 py-2.5 text-sm font-medium text-amber-800 dark:text-amber-200 ring-1 ring-amber-300 dark:ring-amber-800 bg-amber-50 dark:bg-amber-950/30 hover:bg-amber-100 dark:hover:bg-amber-950/50 disabled:opacity-60 disabled:cursor-not-allowed min-h-[40px]"
                   >
-                    Reset all passwords &amp; print
+                    {codeStudents.length === 0
+                      ? "No code logins to reset"
+                      : "Reset all passwords & print"}
                   </button>
                 </div>
               </>
             )}
 
-            {/* hidden code-only QR canvases (read at print time) */}
+            {/* hidden code-only QR canvases (read at print time) — unclaimed
+                seats only; a claimed seat's code no longer signs them in. */}
             <div aria-hidden style={hiddenStyle}>
-              {students.map((s) => (
+              {codeStudents.map((s) => (
                 <QRCodeCanvas
                   key={s.code}
                   id={codeQrId(s.code)}
@@ -379,10 +426,19 @@ export function PrintLoginsModal({
           <div className="space-y-4">
             <div className="rounded-lg bg-rose-50 dark:bg-rose-950/30 ring-1 ring-rose-200 dark:ring-rose-900 px-3 py-3 text-sm text-rose-700 dark:text-rose-300">
               This sets a <span className="font-semibold">brand-new password</span>{" "}
-              for all {students.length} managed{" "}
-              {students.length === 1 ? "student" : "students"} in {courseName}.
+              for the {codeStudents.length} code-based{" "}
+              {codeStudents.length === 1 ? "student" : "students"} in {courseName}.
               Their current passwords stop working immediately. You'll see the
               new passwords once — print or download them right after.
+              {claimedStudents.length > 0 && (
+                <>
+                  {" "}
+                  {claimedStudents.length}{" "}
+                  {claimedStudents.length === 1 ? "student" : "students"} who set
+                  up their own login{" "}
+                  {claimedStudents.length === 1 ? "is" : "are"} left untouched.
+                </>
+              )}
             </div>
             <div className="flex items-center gap-2">
               <button
@@ -397,7 +453,7 @@ export function PrintLoginsModal({
                 onClick={() => void onResetAll()}
                 className="flex-1 rounded-lg bg-rose-600 hover:bg-rose-700 text-white font-semibold py-2.5 text-sm min-h-[40px]"
               >
-                Reset {students.length} password{students.length === 1 ? "" : "s"}
+                Reset {codeStudents.length} password{codeStudents.length === 1 ? "" : "s"}
               </button>
             </div>
           </div>

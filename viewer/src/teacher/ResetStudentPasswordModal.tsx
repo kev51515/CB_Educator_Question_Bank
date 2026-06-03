@@ -20,6 +20,11 @@ interface ResetStudentPasswordModalProps {
   studentId: string;
   studentName: string;
   loginCode: string | null;
+  /** True once the student claimed their seat — they sign in with their own
+   *  email, so the login code + code-based QR no longer apply. */
+  claimed?: boolean;
+  /** The student's real login email (present once claimed). */
+  loginEmail?: string | null;
   onClose: () => void;
 }
 
@@ -52,8 +57,12 @@ export function ResetStudentPasswordModal({
   studentId,
   studentName,
   loginCode,
+  claimed = false,
+  loginEmail = null,
   onClose,
 }: ResetStudentPasswordModalProps) {
+  // A claimed seat signs in with its own email; the code/QR are retired.
+  const useEmailIdentity = claimed && !!loginEmail;
   const toast = useToast();
   const panelRef = useRef<HTMLDivElement | null>(null);
   useFocusTrap(panelRef, true);
@@ -93,16 +102,18 @@ export function ResetStudentPasswordModal({
   };
 
   const onCopy = useCallback(async () => {
-    const text = loginCode
-      ? `Login code: ${loginCode}\nPassword: ${password}`
-      : `Password: ${password}`;
+    const text = useEmailIdentity
+      ? `Email: ${loginEmail}\nPassword: ${password}`
+      : loginCode
+        ? `Login code: ${loginCode}\nPassword: ${password}`
+        : `Password: ${password}`;
     try {
       await navigator.clipboard.writeText(text);
       toast.success("Copied");
     } catch {
       toast.error("Couldn't copy", "Select the text manually.");
     }
-  }, [loginCode, password, toast]);
+  }, [useEmailIdentity, loginEmail, loginCode, password, toast]);
 
   return (
     <div
@@ -127,7 +138,12 @@ export function ResetStudentPasswordModal({
             </h2>
             <p className="text-sm text-slate-500 dark:text-slate-400">
               {studentName}
-              {loginCode ? (
+              {useEmailIdentity ? (
+                <>
+                  {" · "}
+                  <span className="truncate">{loginEmail}</span>
+                </>
+              ) : loginCode ? (
                 <>
                   {" · "}
                   <span className="font-mono">{loginCode}</span>
@@ -158,33 +174,52 @@ export function ResetStudentPasswordModal({
               </p>
             </div>
 
-            {loginCode && (
-              <div className="flex items-center gap-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 bg-white dark:bg-slate-900">
-                <div className="rounded-lg bg-white p-2 ring-1 ring-slate-200">
-                  <QRCodeCanvas
-                    value={studentLoginUrl(loginCode, password)}
-                    size={104}
-                    marginSize={2}
-                    level="M"
-                    aria-label={`Updated login QR code for ${studentName}`}
-                  />
-                </div>
-                <div className="min-w-0 flex-1">
-                  <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
-                    Scan to sign in
-                  </p>
-                  <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
-                    New QR for the updated password — the old one no longer works.
-                  </p>
-                </div>
+            {useEmailIdentity ? (
+              <div className="rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 bg-white dark:bg-slate-900">
+                <p className="text-[10px] uppercase tracking-wide font-semibold text-slate-400 dark:text-slate-500">
+                  Signs in with email
+                </p>
+                <p className="text-sm font-medium text-slate-900 dark:text-slate-100 break-all">
+                  {loginEmail}
+                </p>
+                <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  This student set up their own login — give them this new password
+                  with their email. Their old login code no longer signs them in.
+                </p>
               </div>
+            ) : (
+              loginCode && (
+                <div className="flex items-center gap-4 rounded-xl ring-1 ring-slate-200 dark:ring-slate-700 px-4 py-3 bg-white dark:bg-slate-900">
+                  <div className="rounded-lg bg-white p-2 ring-1 ring-slate-200">
+                    <QRCodeCanvas
+                      value={studentLoginUrl(loginCode, password)}
+                      size={104}
+                      marginSize={2}
+                      level="M"
+                      aria-label={`Updated login QR code for ${studentName}`}
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-sm font-medium text-slate-900 dark:text-slate-100">
+                      Scan to sign in
+                    </p>
+                    <p className="mt-0.5 text-xs text-slate-500 dark:text-slate-400">
+                      New QR for the updated password — the old one no longer works.
+                    </p>
+                  </div>
+                </div>
+              )
             )}
             <button
               type="button"
               onClick={onCopy}
               className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-2.5 text-sm min-h-[40px]"
             >
-              {loginCode ? "Copy login + password" : "Copy password"}
+              {useEmailIdentity
+                ? "Copy email + password"
+                : loginCode
+                  ? "Copy login + password"
+                  : "Copy password"}
             </button>
             <button
               type="button"

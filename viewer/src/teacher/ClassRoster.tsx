@@ -792,19 +792,28 @@ export function ClassRoster() {
                     </td>
                     <td className="px-6 py-3">
                       {s.roster_code ? (
-                        <button
-                          type="button"
-                          onClick={() => {
-                            void navigator.clipboard
-                              ?.writeText(s.roster_code ?? "")
-                              .then(() => toast.success("Code copied", s.roster_code ?? ""))
-                              .catch(() => undefined);
-                          }}
-                          title="Click to copy login code"
-                          className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 font-mono text-xs font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-                        >
-                          {s.roster_code}
-                        </button>
+                        s.claimed_at ? (
+                          <span
+                            title="Code retired — this student now signs in with their own email."
+                            className="inline-flex items-center rounded-md bg-slate-50 dark:bg-slate-800/50 px-2 py-1 font-mono text-xs font-medium text-slate-400 dark:text-slate-500 ring-1 ring-slate-200/70 dark:ring-slate-700/60 line-through decoration-slate-300 dark:decoration-slate-600"
+                          >
+                            {s.roster_code}
+                          </span>
+                        ) : (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              void navigator.clipboard
+                                ?.writeText(s.roster_code ?? "")
+                                .then(() => toast.success("Code copied", s.roster_code ?? ""))
+                                .catch(() => undefined);
+                            }}
+                            title="Click to copy login code"
+                            className="inline-flex items-center rounded-md bg-slate-100 dark:bg-slate-800 px-2 py-1 font-mono text-xs font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                          >
+                            {s.roster_code}
+                          </button>
+                        )
                       ) : (
                         <span className="text-slate-300 dark:text-slate-600">—</span>
                       )}
@@ -989,6 +998,8 @@ export function ClassRoster() {
               id: s.student_id,
               name: s.display_name ?? s.roster_code,
               code: s.roster_code,
+              claimed: s.claimed_at != null,
+              email: s.email,
             }))}
           onChanged={() => {
             void refresh();
@@ -1013,6 +1024,8 @@ export function ClassRoster() {
           studentId={resetTarget.student_id}
           studentName={resetTarget.display_name ?? resetTarget.roster_code ?? resetTarget.email}
           loginCode={resetTarget.login_code ?? resetTarget.roster_code}
+          claimed={resetTarget.claimed_at != null}
+          loginEmail={resetTarget.email}
           onClose={() => setResetTarget(null)}
         />
       )}
