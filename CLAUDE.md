@@ -187,9 +187,14 @@ Migration rules:
 - **Migrations are forward-only.** No rollbacks. Test against the smoke
   suite before pushing.
 
-Migration ledger is at `docs/ARCHITECTURE.md` §3e. **Remote DB state (verified
-2026-06-02): migrations 0001–0061 are ALL live** (Local=Remote for every file;
-full smoke suite green). History note: 0057–0060 were authored by a parallel
+**Migration ledger: `docs/MIGRATIONS.md`** — one row per migration with a
+one-line summary, plus the versioning/collision gotchas. Keep it in sync in the
+same commit as any new migration. (`docs/ARCHITECTURE.md` §3e has the older
+narrative ledger.) **Remote DB state (verified 2026-06-03): migrations
+0001–0090 are ALL live** (Local=Remote for every file; full smoke suite green).
+Note: a number collision (two `0086_*` files) silently skipped the second until
+it was renumbered to `0090` — always check `supabase migration list` shows
+Local==Remote after a push. History note: 0057–0060 were authored by a parallel
 session and had never been pushed; **0057 originally failed** with `42P16`
 because it inserted `effective_score` mid-list in a `CREATE OR REPLACE VIEW`
 (which can only APPEND columns) — fixed by moving the column to the end, then
