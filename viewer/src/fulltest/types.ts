@@ -58,6 +58,15 @@ export interface GetModuleResult {
   saved_answers: Record<string, string | null>;
   /** Server-persisted eliminated (struck) choices per question, for resume. */
   saved_eliminations?: Record<string, Letter[]>;
+  /** Question ids flagged Mark-for-Review (resume). */
+  saved_marks?: string[];
+  /** Per-question highlight ranges (resume). */
+  saved_highlights?: Record<
+    string,
+    { field: "passage" | "stem"; start: number; end: number }[]
+  >;
+  /** Per-question notes (resume). */
+  saved_notes?: Record<string, string>;
   questions: TestQuestion[];
 }
 

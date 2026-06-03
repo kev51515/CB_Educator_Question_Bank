@@ -20,7 +20,7 @@ import { useProfile } from "../lib/profile";
 import { ConfirmDialog } from "../teacher/ConfirmDialog";
 import { DesmosCalculator } from "./DesmosCalculator";
 import { QuestionPane } from "./QuestionPane";
-import { captureSelectionHighlight, useRunnerAnnotations } from "./annotations";
+import { captureSelectionHighlight, useRunnerAnnotations, type Highlight } from "./annotations";
 import { ResultView } from "./ResultView";
 import {
   clearCachedAnswers,
@@ -202,6 +202,22 @@ export function FullTestApp() {
           if (letters && letters.length > 0) elimSeed[q.id] = new Set(letters);
         }
         setEliminated(elimSeed);
+        // Rehydrate Mark-for-Review (server-authoritative) and seed highlights /
+        // notes from the server where the local cache doesn't already have them
+        // (local wins on this device; server restores on a fresh/other device).
+        setMarked(new Set(m.saved_marks ?? []));
+        const savedHl = m.saved_highlights ?? {};
+        const savedNotes = m.saved_notes ?? {};
+        const annotQids = new Set<string>([
+          ...Object.keys(savedHl),
+          ...Object.keys(savedNotes),
+        ]);
+        for (const qid of annotQids) {
+          annot.seed(qid, {
+            highlights: (savedHl[qid] ?? []) as Highlight[],
+            note: savedNotes[qid] ?? "",
+          });
+        }
         const dl = Date.now() + m.seconds_remaining * 1000;
         setDeadline(dl);
         setRemaining(m.seconds_remaining);
@@ -309,22 +325,37 @@ export function FullTestApp() {
   // this is the cross-device one). Best-effort — failures are swallowed.
   useEffect(() => {
     if (phase !== "module" || !runId || !moduleMeta) return;
-    const pos = moduleMeta.position;
-    const t = window.setTimeout(() => {
-      void saveProgress(runId, pos, answers, elimToPayload(eliminated));
-    }, 2500);
+    const t = window.setTimeout(() => saveDraftRef.current(), 2500);
     return () => window.clearTimeout(t);
-  }, [answers, eliminated, phase, runId, moduleMeta]);
+  }, [answers, eliminated, marked, phase, runId, moduleMeta]);
 
   // Flush the active module's draft to the server immediately (Save & exit, and
   // every few question navigations) so a crash never loses more than a couple
   // of questions even between the 2.5s autosave ticks. Kept in a ref so the
   // nav-counter effect always sees the latest answers/eliminations.
   const saveDraftNow = useCallback(() => {
-    if (runId && moduleMeta) {
-      void saveProgress(runId, moduleMeta.position, answers, elimToPayload(eliminated));
+    if (!runId || !moduleMeta) return;
+    // Build the per-question annotation payload (marks + highlights + notes)
+    // for the active module's questions, omitting empty ones.
+    const annotPayload: Record<
+      string,
+      { marked: boolean; highlights: Highlight[]; note: string }
+    > = {};
+    for (const qq of questions) {
+      const a = annot.get(qq.id);
+      const isMarked = marked.has(qq.id);
+      if (isMarked || a.highlights.length > 0 || a.note.trim().length > 0) {
+        annotPayload[qq.id] = { marked: isMarked, highlights: a.highlights, note: a.note };
+      }
     }
-  }, [runId, moduleMeta, answers, eliminated]);
+    void saveProgress(
+      runId,
+      moduleMeta.position,
+      answers,
+      elimToPayload(eliminated),
+      annotPayload,
+    );
+  }, [runId, moduleMeta, answers, eliminated, marked, questions, annot]);
   const saveDraftRef = useRef(saveDraftNow);
   saveDraftRef.current = saveDraftNow;
 

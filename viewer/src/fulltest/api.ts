@@ -103,6 +103,7 @@ export async function saveProgress(
   position: number,
   answers: Record<string, string | null>,
   eliminated: Record<string, string[]> = {},
+  annot: Record<string, unknown> = {},
 ): Promise<void> {
   try {
     await supabase.rpc("save_test_progress", {
@@ -110,6 +111,7 @@ export async function saveProgress(
       p_position: position,
       p_answers: answers,
       p_eliminated: eliminated,
+      p_annot: annot,
     });
   } catch {
     /* non-fatal — localStorage cache is the backup of the backup */

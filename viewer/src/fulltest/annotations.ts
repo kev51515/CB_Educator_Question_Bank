@@ -111,6 +111,9 @@ export interface UseRunnerAnnotations {
   removeHighlightAt: (questionId: string, field: AnnotField, offset: number) => void;
   clearHighlights: (questionId: string) => void;
   setNote: (questionId: string, note: string) => void;
+  /** Seed a question's annotations from the server ONLY if absent locally —
+   *  local (the freshest crash-survivor on this device) wins, like answers. */
+  seed: (questionId: string, a: QAnnotation) => void;
 }
 
 export function useRunnerAnnotations(slug: string): UseRunnerAnnotations {
@@ -175,5 +178,16 @@ export function useRunnerAnnotations(slug: string): UseRunnerAnnotations {
     [setStore],
   );
 
-  return { get, addHighlight, removeHighlightAt, clearHighlights, setNote };
+  const seed = useCallback(
+    (qid: string, a: QAnnotation): void => {
+      setStore((prev) =>
+        prev[qid] !== undefined
+          ? prev
+          : { ...prev, [qid]: { highlights: a.highlights, note: a.note } },
+      );
+    },
+    [setStore],
+  );
+
+  return { get, addHighlight, removeHighlightAt, clearHighlights, setNote, seed };
 }
