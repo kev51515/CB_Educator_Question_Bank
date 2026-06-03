@@ -26,6 +26,16 @@
   preserved at md+), and eliminated horizontal overflow on staff pages at phone
   widths (`min-w-0` on cards/grids; All-Classes toolbar wraps). See
   `docs/MOBILE_AUDIT.md`.
+- **Frictionless onboarding — no confirmation emails.** The production project
+  now runs with **email confirmation OFF** (`mailer_autoconfirm`) and
+  **anonymous sign-ins ON** — both verified live against the remote (anonymous
+  via a throwaway `signInAnonymously()` probe that was deleted afterward), and
+  `config.toml` set to match. Students get in with a teacher-dispensed
+  per-student code/QR or a class-code Quick Start; no inbox required. The login
+  screen (`AuthScreen`) promotes the buried "Quick start" footer link into a
+  prominent **"Join with a class code"** card (shown on both Sign in and Create
+  account) and clarifies the per-student code/QR copy. See `docs/SMTP_SETUP.md`
+  for the deliberate confirmation-off rationale and the re-enable trigger.
 
 ---
 

@@ -2,6 +2,16 @@
 
 Operational runbook for replacing Supabase's built-in email service with a real SMTP provider.
 
+> **Current policy (2026-06-03): transactional email is NOT required to run the app.**
+> The production project (`ljdofwovsyaqydcbohhd`) deliberately runs with **email
+> confirmation OFF** (`mailer_autoconfirm = true`) and **anonymous sign-ins ON**
+> (both verified live). Students never receive a confirmation email — they get in
+> with a teacher-dispensed **per-student login code/QR** (password-based) or a
+> **class-code Quick Start** (anonymous + `quick_start_with_code`). So the SMTP
+> wiring below is **only needed once you turn on password-reset emails or
+> re-enable confirmation**. See ["Disabling Email Confirmation"](#disabling-email-confirmation)
+> near the bottom for the rationale and the security trade-off.
+
 ## Why This Matters
 
 Supabase's free tier ships a built-in SMTP relay that is **rate-limited to 4 emails per hour, per project**. Above that limit, emails are silently dropped. No bounce, no error, no log entry — they just disappear. The Supabase Dashboard does not warn you when the limit is hit, and the free tier has no email log to inspect after the fact.
@@ -120,11 +130,17 @@ Recommend Resend unless you have a reason not to.
 
 **Users report the link expired immediately.** The link is single-use. If a corporate spam filter pre-fetches it for safety scanning, it gets consumed before the user clicks. Workaround: switch that template to OTP codes (`{{ .Token }}`) instead of magic links.
 
-## Disabling Email Confirmation (Development Only)
+## Disabling Email Confirmation
 
-For dev or demo environments where you don't want to deal with email at all: **Authentication → Sign In / Up → Confirm email → Off**. Users can sign in immediately after signup.
+Toggle at **Authentication → Sign In / Up → Confirm email → Off** (sets `mailer_autoconfirm = true`). Users can sign in immediately after signup, with no email sent.
 
-**Never do this in production.** Without confirmation, anyone can sign up under any email address, and password reset becomes an account-takeover vector.
+**This project deliberately runs with confirmation OFF in production (since 2026-06-03)** — the opposite of the usual advice. Normally disabling it is an account-takeover risk: anyone can sign up under any email, and email-based password reset becomes a takeover vector. It is acceptable here only because **enrollment is teacher-controlled**:
+
+- Real student accounts are minted by staff (`admin_create_student` → a synthetic `<code>@students.local` mailbox with no real inbox), or created anonymously against a valid course code (`quick_start_with_code`).
+- Self-signup with a real email still exists, but the account **grants nothing** until a teacher enrolls it in a course — so an unconfirmed email is low-value.
+- There is no email-based password reset in the student flow (teachers reset student passwords).
+
+**Re-enable confirmation (and wire SMTP first) the moment you add value-bearing self-signup** — paid plans, public content, or email-based password reset. Until then, the Pre-Launch SMTP items below are optional.
 
 ## Pre-Launch Checklist
 
@@ -134,7 +150,7 @@ Before pointing real students at the app, confirm all of these:
 - [ ] End-to-end signup test produces a confirmation in <30 seconds
 - [ ] **Site URL** at Authentication → URL Configuration matches the production domain (no `localhost`, no `*.vercel.app` preview URL)
 - [ ] **Redirect URLs** allowlist contains every URL the app actually uses for callbacks
-- [ ] Email confirmation is **on**
+- [ ] Email confirmation policy is intentional — currently **OFF** for the teacher-controlled model (see [Disabling Email Confirmation](#disabling-email-confirmation)). Turn it **on** only if you add email-based self-signup or password reset, and wire SMTP first.
 - [ ] Resend API key is named clearly (e.g. `supabase-prod`), with sending-only scope
 - [ ] Rotation reminder: rotate the Resend API key any time someone with access leaves or after any suspected compromise
 

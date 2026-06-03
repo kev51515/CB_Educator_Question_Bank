@@ -259,6 +259,8 @@ When adding a new scheduled task: write the function under `supabase/functions/<
 - **Anonymous quick-start is a real `auth.users` row** with `is_anonymous = true`. Client calls `signInAnonymously()` then `quick_start_with_code(...)`. Anonymous auth is enabled at the project level; the `0032` trigger fix is required for it to work.
 - **Role gating is two-layered**: client `signUp()` always passes `role: 'student'` — teacher elevation is a separate `redeem_teacher_invite` RPC. Server-side, the `profiles` UPDATE policy pins `role` to its prior value; the only paths to `role='teacher'` are `redeem_teacher_invite` and `bootstrap_first_admin`.
 - **Admin bootstrap** is one-shot: `bootstrap_first_admin(p_user_id)` refuses to run once any admin exists, and is service_role only.
+- **Email confirmation is OFF by design** (`mailer_autoconfirm = true` on the project; `config.toml` mirrors `enable_confirmations = false` + `enable_anonymous_sign_ins = true`). Enrollment is teacher-controlled, so no student needs a confirmation email — see `docs/SMTP_SETUP.md` for the rationale and when to re-enable.
+- **Two student entry paths surfaced on `AuthScreen`**: (1) a **per-student login code/QR** — `<code>@students.local` minted by `admin_create_student`, signed in with a password; a `?login=<code>&key=<pw>` QR auto-prefills the form (no auto-submit). (2) a **class-code Quick Start** — the prominent "Join with a class code" card → `QuickStartScreen` (`signInAnonymously()` + `quick_start_with_code`), no password; a `?code=<XYZ>` QR deep-links straight to it via `AuthGate`. Both are code-first; email self-signup is the fallback, not the headline.
 
 ---
 
