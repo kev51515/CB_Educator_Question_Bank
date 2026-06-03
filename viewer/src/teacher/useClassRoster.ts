@@ -20,6 +20,8 @@ export interface RosterStudent {
   login_code: string | null;
   /** True when this account was created by a teacher (resettable password). */
   managed: boolean;
+  /** When the student first claimed/activated their managed login; null = never used. */
+  claimed_at: string | null;
 }
 
 export interface UseClassRoster {
@@ -39,6 +41,7 @@ interface RosterRow {
     email: string;
     login_code: string | null;
     managed: boolean | null;
+    claimed_at: string | null;
   } | null;
 }
 
@@ -66,7 +69,7 @@ export function useClassRoster(classId: string | null): UseClassRoster {
         .from("course_memberships")
         .select(
           // Disambiguate the FK explicitly so PostgREST picks the right join.
-          "id, joined_at, student_id, roster_code, student:profiles!course_memberships_student_id_fkey(display_name, email, login_code, managed)",
+          "id, joined_at, student_id, roster_code, student:profiles!course_memberships_student_id_fkey(display_name, email, login_code, managed, claimed_at)",
         )
         .eq("course_id", classId)
         .order("joined_at", { ascending: true });
@@ -87,6 +90,7 @@ export function useClassRoster(classId: string | null): UseClassRoster {
         roster_code: row.roster_code ?? null,
         login_code: row.student?.login_code ?? null,
         managed: row.student?.managed === true,
+        claimed_at: row.student?.claimed_at ?? null,
       }));
       setRoster(mapped);
     } catch (err: unknown) {
