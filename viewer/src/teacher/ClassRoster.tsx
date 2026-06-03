@@ -30,6 +30,7 @@ import { BulkRosterModal } from "./BulkRosterModal";
 import { AddStudentModal } from "./AddStudentModal";
 import { ResetStudentPasswordModal } from "./ResetStudentPasswordModal";
 import { PrintLoginsModal, type PrintableLogin } from "./PrintLoginsModal";
+import { SeatClaimRequestsPanel } from "./SeatClaimRequestsPanel";
 import { SkeletonRows } from "../components/Skeleton";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
@@ -589,6 +590,8 @@ export function ClassRoster() {
             </button>
           </div>
         </header>
+
+        <SeatClaimRequestsPanel courseId={cls.id} onChange={() => void refresh()} />
 
         {loading ? (
           <div className="px-6 py-6">

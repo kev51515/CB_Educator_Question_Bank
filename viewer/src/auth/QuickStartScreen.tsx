@@ -1,21 +1,25 @@
 /**
  * QuickStartScreen
  * ================
- * Frictionless entry path. The student types:
- *   - the short course code their teacher gave them
- *   - their full name
- *   - their email (collected but NOT verified — teacher controls distribution)
+ * One entry point, two flows — chosen automatically by the SHAPE of the code:
  *
- * On submit:
- *   1. Mint an anonymous Supabase session via `signInAnonymously()`.
- *   2. Call the `quick_start_with_code` RPC which, in one transaction,
- *      stamps the name + email onto the just-created profile row and
- *      enrolls the user in the course.
- *   3. Do NOT navigate explicitly — AuthGate will re-render on its own when
- *      the auth + profile streams settle.
+ *  • COURSE code ("Y8M3KP", 6 chars) → frictionless quick-start.
+ *      Student types course code + name + email. We mint an anonymous session
+ *      and call `quick_start_with_code`, which stamps name+email onto the
+ *      just-created profile and enrolls them. No password.
  *
- * Optional `prefillCode` is supplied by AuthGate when the URL contains
- * `?code=XYZ` so a QR-scanned deeplink lands with the code already filled.
+ *  • SEAT code ("Y8M3KP-01", course code + "-NN") → CLAIM a pre-created seat.
+ *      The teacher already made this student ("Bob") via admin_create_student,
+ *      so we do NOT mint a new profile and we do NOT ask for a name (the teacher
+ *      owns it — cf. migration 0093). Instead the student sets their own email +
+ *      password, and `claim_student_seat` takes over the existing seat:
+ *        - first claim  → swaps the synthetic @students.local email → real email,
+ *                         sets the password, keeps the teacher's name + all work.
+ *                         We then sign in as that seat (email+password).
+ *        - already taken → files a teacher-approval request; we show a notice.
+ *
+ * Optional `prefillCode` is supplied by AuthGate when the URL carries `?code=…`
+ * so a QR-scanned deeplink lands with the code already filled.
  */
 import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
@@ -29,13 +33,35 @@ interface QuickStartScreenProps {
  * Course short_code spec (per CLAUDE.md migrations 0038–0040):
  *   - exactly 6 characters
  *   - alphabet A-Z and 2-9 (excludes O/0/I/1/L confusables)
+ * A SEAT code appends "-NN" (a 1–3 digit ordinal that CAN contain 0/1).
  */
 const CODE_LENGTH = 6;
-const CODE_ALPHABET = /^[A-HJ-NP-Z2-9]+$/;
-const CODE_SCRUB = /[^A-HJ-NP-Z2-9]/g;
+const COURSE_RE = /^[A-HJ-NP-Z2-9]{6}$/;
+const SEAT_RE = /^([A-HJ-NP-Z2-9]{6})-?([0-9]{1,3})$/;
+/** Keep letters, digits and a dash while typing; uppercase; cap length. */
+const ENTRY_SCRUB = /[^A-Z0-9-]/g;
 
-function scrubCode(raw: string): string {
-  return raw.toUpperCase().replace(CODE_SCRUB, "").slice(0, CODE_LENGTH);
+function scrubEntry(raw: string): string {
+  return raw.toUpperCase().replace(ENTRY_SCRUB, "").slice(0, 12);
+}
+
+type Parsed =
+  | { mode: "empty" }
+  | { mode: "course"; courseCode: string }
+  | { mode: "seat"; seatCode: string };
+
+/** Decide which flow the typed code implies. */
+function parseEntry(raw: string): Parsed {
+  const v = scrubEntry(raw);
+  if (v === "") return { mode: "empty" };
+  const seat = v.match(SEAT_RE);
+  if (seat) {
+    const base = seat[1];
+    const seq = seat[2].padStart(2, "0"); // "1" → "01" to match the printed code
+    return { mode: "seat", seatCode: `${base}-${seq}` };
+  }
+  if (COURSE_RE.test(v)) return { mode: "course", courseCode: v };
+  return { mode: "empty" };
 }
 
 /**
@@ -44,6 +70,15 @@ function scrubCode(raw: string): string {
  */
 function mapRpcError(raw: string): string {
   const msg = raw.toLowerCase();
+  if (msg.includes("seat_not_found")) {
+    return "We couldn't find a personal login for that code. Check it with your teacher.";
+  }
+  if (msg.includes("email_in_use")) {
+    return "That email is already attached to another account. Try signing in instead.";
+  }
+  if (msg.includes("weak_password")) {
+    return "Password must be at least 6 characters.";
+  }
   if (msg.includes("invalid_join_code") || msg.includes("invalid_invite_code") || msg.includes("code not found")) {
     return "We couldn't find a course matching that code. Check with your teacher.";
   }
@@ -89,59 +124,142 @@ function getErrorMessage(error: unknown): string {
   return "Something went wrong. Please try again.";
 }
 
+interface ClaimSeatRow {
+  status: "claimed" | "pending";
+  login_email: string;
+}
+
 export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartScreenProps) {
-  const [code, setCode] = useState<string>(() => scrubCode(prefillCode ?? ""));
+  const [code, setCode] = useState<string>(() => scrubEntry(prefillCode ?? ""));
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
   const [busy, setBusy] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
+  const [notice, setNotice] = useState<string | null>(null);
   const [succeeded, setSucceeded] = useState<boolean>(false);
 
-  const codeValid = useMemo(
-    () => code.length === CODE_LENGTH && CODE_ALPHABET.test(code),
-    [code],
-  );
-  const canSubmit = codeValid && name.trim().length > 0 && email.trim().length > 0 && !busy && !succeeded;
+  const parsed = useMemo(() => parseEntry(code), [code]);
+  const isSeat = parsed.mode === "seat";
+  const codeValid = parsed.mode !== "empty";
+
+  const canSubmit = useMemo(() => {
+    if (busy || succeeded || !codeValid) return false;
+    if (isSeat) return email.trim().length > 0 && password.length >= 6;
+    return name.trim().length > 0 && email.trim().length > 0;
+  }, [busy, succeeded, codeValid, isSeat, name, email, password]);
 
   const codeRef = useRef<HTMLInputElement | null>(null);
   const nameRef = useRef<HTMLInputElement | null>(null);
+  const emailRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => {
-    // If the code was prefilled (deeplink), skip past it and focus the
-    // student's name field. Otherwise focus the code field.
+    // If the code was prefilled (deeplink), skip past it. Focus the first
+    // field the active flow needs (email for a seat, name for a course).
     if (prefillCode) {
-      nameRef.current?.focus();
+      const p = parseEntry(prefillCode);
+      if (p.mode === "seat") emailRef.current?.focus();
+      else nameRef.current?.focus();
     } else {
       codeRef.current?.focus();
     }
   }, [prefillCode]);
 
+  /** Quick-start a brand-new self-serve enrolment from a 6-char course code. */
+  const submitCourse = async (courseCode: string): Promise<void> => {
+    const { error: rpcError } = await supabase.rpc("quick_start_with_code", {
+      p_code: courseCode,
+      p_name: name.trim(),
+      p_email: email.trim(),
+    });
+    if (rpcError) {
+      setError(mapRpcError(rpcError.message));
+      return;
+    }
+    setSucceeded(true);
+  };
+
+  /** Claim (or request) a pre-created managed seat from a "-NN" seat code. */
+  const submitSeat = async (seatCode: string): Promise<void> => {
+    const trimmedEmail = email.trim();
+    const { data, error: rpcError } = await supabase.rpc("claim_student_seat", {
+      p_code: seatCode,
+      p_email: trimmedEmail,
+      p_password: password,
+    });
+    if (rpcError) {
+      setError(mapRpcError(rpcError.message));
+      return;
+    }
+    const row = (Array.isArray(data) ? data[0] : data) as ClaimSeatRow | null;
+
+    if (row?.status === "claimed") {
+      // The seat now logs in with the real email + chosen password. Replace the
+      // throwaway anonymous session by signing in as the seat; AuthGate routes.
+      const loginEmail = row.login_email || trimmedEmail;
+      const { error: signInError } = await supabase.auth.signInWithPassword({
+        email: loginEmail,
+        password,
+      });
+      if (signInError) {
+        setError(
+          "Your login is set up — please sign in with your email and password.",
+        );
+        return;
+      }
+      setSucceeded(true);
+      return;
+    }
+
+    // status === 'pending' → teacher must approve. Drop the anon session so the
+    // student isn't stranded in a half-signed-in state, and show a notice.
+    await supabase.auth.signOut();
+    setNotice(
+      "That spot is already in use, so we've asked your teacher to approve this login. " +
+        "You'll be able to sign in once they do.",
+    );
+    setPassword("");
+  };
+
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
-    const trimmedCode = scrubCode(code);
-    const trimmedName = name.trim();
-    const trimmedEmail = email.trim();
-    if (trimmedCode.length !== CODE_LENGTH || !CODE_ALPHABET.test(trimmedCode)) {
-      setError("Enter the 6-character course code your teacher gave you.");
+    setNotice(null);
+    const p = parseEntry(code);
+    if (p.mode === "empty") {
+      setError("Enter the code your teacher gave you.");
       return;
     }
-    if (!trimmedName) {
-      setError("Please enter your full name.");
-      return;
+    if (p.mode === "seat") {
+      if (!email.trim()) {
+        setError("Please enter your email.");
+        return;
+      }
+      if (password.length < 6) {
+        setError("Password must be at least 6 characters.");
+        return;
+      }
+    } else {
+      if (!name.trim()) {
+        setError("Please enter your full name.");
+        return;
+      }
+      if (!email.trim()) {
+        setError("Please enter your email.");
+        return;
+      }
     }
-    if (!trimmedEmail) {
-      setError("Please enter your email.");
-      return;
-    }
+
     setBusy(true);
     try {
-      // 1. Mint anonymous session.
+      // Both flows run against an authenticated context. Mint an anonymous
+      // session first; by the time signInAnonymously resolves the JWT is on
+      // the supabase-js client so the following RPC carries auth.
       const { error: anonError } = await supabase.auth.signInAnonymously();
       if (anonError) {
-        const code =
+        const anonCode =
           (anonError as unknown as { code?: string | null }).code ?? null;
-        if (isAnonymousDisabled(anonError.message, code)) {
+        if (isAnonymousDisabled(anonError.message, anonCode)) {
           setError(
             "Quick-start is disabled. Ask your administrator to enable anonymous sign-in, or use Sign In above.",
           );
@@ -151,23 +269,8 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
         return;
       }
 
-      // 2. Call the RPC. By the time `signInAnonymously` resolves the JWT
-      // is already attached to the supabase-js client, so the RPC call
-      // carries the authenticated context.
-      const { error: rpcError } = await supabase.rpc("quick_start_with_code", {
-        p_code: trimmedCode,
-        p_name: trimmedName,
-        p_email: trimmedEmail,
-      });
-      if (rpcError) {
-        setError(mapRpcError(rpcError.message));
-        return;
-      }
-
-      // 3. Success — AuthGate's session + profile hooks will pick up the
-      // new state on their own. We briefly show a confirmation card; AuthGate
-      // will swap the route out shortly after.
-      setSucceeded(true);
+      if (p.mode === "seat") await submitSeat(p.seatCode);
+      else await submitCourse(p.courseCode);
     } catch (err: unknown) {
       setError(getErrorMessage(err));
     } finally {
@@ -189,7 +292,9 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
             Start with a code
           </h1>
           <p className="text-sm text-slate-500 dark:text-slate-400">
-            Type the code your teacher gave you — no password needed.
+            {isSeat
+              ? "This is a personal login code — set your email & password to finish."
+              : "Type the code your teacher gave you — no password needed."}
           </p>
         </header>
 
@@ -200,6 +305,16 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
             className="rounded-md bg-rose-50 dark:bg-rose-950/40 px-3 py-2 text-sm text-rose-700 dark:text-rose-300 ring-1 ring-rose-200 dark:ring-rose-900"
           >
             {error}
+          </div>
+        )}
+
+        {notice && !succeeded && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="rounded-md bg-amber-50 dark:bg-amber-950/40 px-3 py-2 text-sm text-amber-800 dark:text-amber-200 ring-1 ring-amber-200 dark:ring-amber-900"
+          >
+            {notice}
           </div>
         )}
 
@@ -220,7 +335,7 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
         <form onSubmit={onSubmit} className="space-y-4">
           <label className="block">
             <span className="flex items-baseline justify-between text-sm font-medium text-slate-700 dark:text-slate-300">
-              <span>Course code</span>
+              <span>{isSeat ? "Your login code" : "Course code"}</span>
               <span
                 aria-live="polite"
                 className={`text-xs font-normal tabular-nums ${
@@ -229,22 +344,22 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
                     : "text-slate-400 dark:text-slate-500"
                 }`}
               >
-                {code.length} / {CODE_LENGTH}
+                {isSeat ? "personal code" : `${code.length} / ${CODE_LENGTH}`}
               </span>
             </span>
             <input
               ref={codeRef}
               type="text"
               value={code}
-              onChange={(e) => setCode(scrubCode(e.target.value))}
+              onChange={(e) => setCode(scrubEntry(e.target.value))}
               onPaste={(e) => {
                 e.preventDefault();
-                setCode(scrubCode(e.clipboardData.getData("text")));
+                setCode(scrubEntry(e.clipboardData.getData("text")));
               }}
               autoComplete="one-time-code"
               spellCheck={false}
               inputMode="text"
-              maxLength={CODE_LENGTH}
+              maxLength={12}
               aria-describedby="quickstart-code-hint quickstart-error"
               aria-invalid={code.length > 0 && !codeValid}
               disabled={succeeded}
@@ -255,29 +370,36 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
               id="quickstart-code-hint"
               className="mt-1 block text-xs text-slate-500 dark:text-slate-400"
             >
-              6 characters — letters and numbers (no O, 0, I, 1, or L).
+              {isSeat
+                ? "Your teacher already set your name — you just need email & password."
+                : "6 characters — letters and numbers (no O, 0, I, 1, or L)."}
             </span>
           </label>
-          <label className="block">
-            <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-              Full name
-            </span>
-            <input
-              ref={nameRef}
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              autoComplete="name"
-              disabled={succeeded}
-              className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
-              placeholder="e.g. Alex Chen"
-            />
-          </label>
+
+          {!isSeat && (
+            <label className="block">
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                Full name
+              </span>
+              <input
+                ref={nameRef}
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                autoComplete="name"
+                disabled={succeeded}
+                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+                placeholder="e.g. Alex Chen"
+              />
+            </label>
+          )}
+
           <label className="block">
             <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
               Email
             </span>
             <input
+              ref={emailRef}
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -287,13 +409,43 @@ export function QuickStartScreen({ prefillCode, onSwitchToSignIn }: QuickStartSc
               placeholder="you@example.com"
             />
           </label>
+
+          {isSeat && (
+            <label className="block">
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
+                Password
+              </span>
+              <input
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="new-password"
+                minLength={6}
+                disabled={succeeded}
+                className="mt-1 w-full rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-800 px-3 py-2 text-slate-900 dark:text-slate-100 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-60"
+                placeholder="At least 6 characters"
+              />
+              <span className="mt-1 block text-xs text-slate-500 dark:text-slate-400">
+                You'll use this email and password to sign in from now on.
+              </span>
+            </label>
+          )}
+
           <button
             type="submit"
             disabled={!canSubmit}
-            title={!codeValid ? "Enter the 6-character course code" : undefined}
-            className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-slate-900"
+            title={!codeValid ? "Enter the code your teacher gave you" : undefined}
+            className="w-full rounded-lg bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 disabled:cursor-not-allowed text-white font-medium py-2.5 motion-safe:transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
           >
-            {busy ? "Starting…" : succeeded ? "Started ✓" : "Start"}
+            {busy
+              ? isSeat
+                ? "Finishing…"
+                : "Starting…"
+              : succeeded
+                ? "Started ✓"
+                : isSeat
+                  ? "Claim my login"
+                  : "Start"}
           </button>
         </form>
 

@@ -139,9 +139,14 @@ silent, hard-to-diagnose bug (see the 0086 collision, June 2026).
 | 0092 | `fix_profiles_own_update_recursion` | Fix "infinite recursion detected in policy for relation profiles" on student/self rename. The 0001 `"profiles: own row update"` policy inlined `SELECT role FROM profiles` in WITH CHECK (self-reference); replaced with a `SECURITY DEFINER` `profile_role(uid)` helper. Latent since 0001; surfaced once roster + Account did direct client `.update()`s. |
 | 0093 | `lock_student_self_rename` | A student may not change their own `display_name` (teacher owns it). `BEFORE UPDATE` trigger `guard_student_self_rename` on profiles. |
 | 0094 | `student_rename_guard_rpc_exempt` | Fix 0093 (caught by smoke-e2e before shipping): the guard was SECURITY DEFINER and blocked `quick_start_with_code` onboarding. Switched to SECURITY INVOKER + `current_user IN ('authenticated','anon')` so only direct end-user PostgREST writes are blocked; RPCs / teacher-rename / service paths pass. |
+| 0095 | `claim_student_seat` | A student CLAIMS a pre-created managed seat with their own email+password instead of minting a duplicate via quick-start. `profiles.claimed_at` + `seat_claim_requests` table + `claim_student_seat()` (first claim takes over the seat — swaps synthetic `@students.local` email→real email, sets chosen password, keeps teacher-owned `display_name` + all work; already-claimed → files a teacher-approval request) + `decide_seat_claim_request()` (approve = credential recovery on the same seat, deny = drop). Notifies the course teacher (kind `seat_claim_request`). |
+| 0096 | `fix_claim_seat_status_ambiguity` | Fix `column reference "status" is ambiguous` in `claim_student_seat` (caught by `clickthrough-claim-seat.mjs` before the re-claim path shipped): the `RETURNS TABLE(status …)` OUT column collided with `seat_claim_requests.status` in the `ON CONFLICT … WHERE status='pending'` predicate. Replaced the upsert with a table-qualified UPDATE-then-INSERT (race-safe via `unique_violation` fallback). **Lesson: an OUT column name that matches a table column referenced in the body is ambiguous inside plpgsql — qualify the column or rename the OUT.** |
 
 ---
 
-_Last updated: 2026-06-03 (through 0094; 0092–0094 applied to Remote + full smoke
-green). When you add a migration, append a row here and bump the "verified" line
-once `migration list` shows Local == Remote._
+_Last updated: 2026-06-03 (through 0096; 0092–0096 applied to Remote. 0095+0096
+verified by `clickthrough-claim-seat.mjs` 9/9 against Remote; smoke-e2e/features/
+cascade/grading green. smoke-modules/qbank still red on a pre-existing seed-account
+gap — `demo-teacher@example.com` not provisioned on Remote — unrelated to these
+migrations.). When you add a migration, append a row here and bump the "verified"
+line once `migration list` shows Local == Remote._
