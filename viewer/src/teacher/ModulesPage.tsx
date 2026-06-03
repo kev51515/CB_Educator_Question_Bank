@@ -1452,6 +1452,11 @@ function ModuleCard({
           {module.items.map((item) => {
             const isAssignment =
               item.item_type === "assignment" && item.item_ref_id;
+            // Full-length tests are stored as link items pointing at the
+            // Bluebook runner (/test/:slug). Surface them with a "Test" tag
+            // rather than the generic 🔗 link icon.
+            const isFullTestLink =
+              item.item_type === "link" && !!item.url?.startsWith("/test/");
             // Inline rename is the canvas equivalent for "Edit" — kebab only
             // surfaces actions that are actually wired up.
             const itemKebab: KebabMenuOption[] = [
@@ -1541,9 +1546,15 @@ function ModuleCard({
                 style={{ paddingLeft: `${0.75 + item.indent * 1.25}rem` }}
               >
                 {canEdit && <DragHandle className="text-slate-400 flex-none" />}
-                <span aria-hidden className="text-sm flex-none">
-                  {ITEM_TYPE_ICON[item.item_type]}
-                </span>
+                {isFullTestLink ? (
+                  <span className="flex-none inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+                    Test
+                  </span>
+                ) : (
+                  <span aria-hidden className="text-sm flex-none">
+                    {ITEM_TYPE_ICON[item.item_type]}
+                  </span>
+                )}
                 {isAssignment ? (
                   <button
                     type="button"

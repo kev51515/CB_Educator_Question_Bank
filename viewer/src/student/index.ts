@@ -15,7 +15,6 @@ export { useStudentMaterials } from "./useStudentMaterials";
 export { StudentPortfolio } from "./StudentPortfolio";
 export { PortfolioSubmissionForm } from "./PortfolioSubmissionForm";
 export { SkillHeatmap } from "./SkillHeatmap";
-export { ScorePrediction } from "./ScorePrediction";
 export { RecentFeedbackWidget } from "./RecentFeedbackWidget";
 export { useRecentFeedback } from "./useRecentFeedback";
 export type { RecentFeedbackItem } from "./useRecentFeedback";

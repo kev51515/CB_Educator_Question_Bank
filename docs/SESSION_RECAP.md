@@ -1184,3 +1184,24 @@ Migrations 0067–0080 (mine; all live + verified). Server primitives:
 
 Full reference: **docs/CONTROLLED_TESTS.md** (surfaces, RPCs, migration ledger
 0067–0086).
+
+### Student-dashboard tidy-up (2026-06-03, controlled-access alignment)
+
+Frontend-only; no migrations. Brought the student home in line with the
+controlled-access model (students do only what the teacher assigns):
+
+- **Removed the "Predicted SAT Score" card** (`ScorePrediction.tsx` +
+  `ScoreArcSparkline.tsx` deleted, barrel export dropped). With only a couple of
+  attempts it showed a noisy "Low confidence / −120 since last test" band that
+  misled students. The `0024` score-prediction RPC stays in the DB for a future
+  calibrated model; it's just no longer surfaced. "Your progress" now shows the
+  skill-mastery panel full-width.
+- **`SkillHeatmap` is now read-only insight.** Removed the "Practice this skill"
+  button and the per-cell drill links — both navigated to `/practice`, which
+  redirects students home (the free question bank isn't reachable), so they were
+  dead affordances. Cells are static tiles; the weakest-skill callout is info only.
+- **Modules: full-length tests show a "Test" tag** instead of the generic 🔗 link
+  icon. They're stored as `link` items pointing at `/test/:slug`; `ModulesPage`
+  detects that URL prefix and renders the tag.
+- Refreshed stale docstrings (`AreaSelector`, `SkillHeatmap`) and docs
+  (`LMS_FEATURES`, `USER_GUIDE`, `ARCHITECTURE` 0024 ledger entry).

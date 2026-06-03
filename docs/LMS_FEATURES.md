@@ -104,7 +104,7 @@ Effort tags: **S** (hours), **M** (days), **L** (week-plus), **XL** (multi-week)
 | Flag for review / skip / return | ✓ Built | Question navigation in `MockTestApp` |
 | SAT-style break screen (between modules) | ✓ Built | `mocktest/components/BreakScreen.tsx` |
 | KaTeX math rendering | ✓ Built | `katex` in `package.json`; rendered via `mocktest/components/RichText.tsx` |
-| Real SAT scaled scoring (1600 scale) | ○ Not built | L; needs conversion tables + calibration. Linear-v1 stub lives in `ScorePrediction.tsx`; not real scaled scoring |
+| Real SAT scaled scoring (1600 scale) | ○ Not built | L; needs conversion tables + calibration. (The `ScorePrediction.tsx` linear-v1 stub was removed 2026-06-03 — its low-data band misled students; the `0024` RPC stays but is no longer surfaced) |
 | Adaptive modules (Module 2 routes off Module 1) | ○ Not built | L; full SAT-day simulation; deferred |
 | Section timing + auto-advance | ◐ Partial | Time limit enforced; no per-section timing or auto-move |
 | Calculator (Desmos-style) embed | ○ Not built | M; iframe Desmos test calculator |
@@ -146,7 +146,7 @@ Effort tags: **S** (hours), **M** (days), **L** (week-plus), **XL** (multi-week)
 | Per-assignment item analysis | ◐ Partial | `result_detail.bySkill` exists per attempt; no class-aggregate view |
 | Skill mastery heatmap (class) | ✓ Built | `0024_mastery_predictions.sql` view + `SkillHeatmap.tsx` |
 | Class average vs individual | ○ Not built | S; once gradebook RPC exists, add an avg row |
-| Score predictions (SAT 1600 scale) | ◐ Partial | Linear-v1 stub in `ScorePrediction.tsx` + `0024_mastery_predictions.sql`; not real scaled scoring yet — needs calibration cohort |
+| Score predictions (SAT 1600 scale) | ○ Not built | UI removed 2026-06-03 (low-data band misled students). `0024_mastery_predictions.sql` RPC remains but is unused; real scaled scoring needs a calibration cohort |
 | CSV export (gradebook) | ✓ Built | Client-side CSV download from `CourseGradebook.tsx` |
 | PDF report (per-student) | ○ Not built | M; reuse `PdfExport` machinery; render attempt history + skill breakdown |
 | Admin system stats | ✓ Built | `admin_dashboard_stats` RPC + `SystemStats.tsx` |
@@ -231,7 +231,7 @@ Effort tags: **S** (hours), **M** (days), **L** (week-plus), **XL** (multi-week)
 | Feature | Status | Notes |
 |---|---|---|
 | Per-skill breakdown on attempt | ✓ Built | `attemptReview.ts` computes `bySkill`, `byDomain`, `byDifficulty` |
-| Score predictions (SAT scaled) | ◐ Partial | Linear-v1 stub in `ScorePrediction.tsx`; real 1600-scaled scoring still ○ — gated on cohort calibration |
+| Score predictions (SAT scaled) | ○ Not built | `ScorePrediction.tsx` stub removed 2026-06-03; real 1600-scaled scoring gated on cohort calibration |
 | Personalized study plans (target weak skills) | ○ Not built | L; weakest 3 skills → pre-built question sets from bank |
 | Skill mastery progression over time | ✓ Built | `0024_mastery_predictions.sql` view feeds `SkillHeatmap.tsx` |
 | Item analysis (per question, per class) | ◐ Partial | Per-attempt only; no class-aggregate |

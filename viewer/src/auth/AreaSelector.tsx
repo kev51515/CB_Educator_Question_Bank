@@ -1,19 +1,20 @@
 /**
  * AreaSelector
  * ============
- * Post sign-in landing page for students. Two area cards (Question Bank vs.
- * Full Mock Test), an Assignments section, then "My courses". Picking an
- * area or an assignment navigates to the corresponding URL — the router
- * handles mounting the right surface.
+ * Post sign-in landing page for students. In the controlled-access model
+ * (2026-06) there are no free-roam "area" cards — a student's workload is the
+ * assignments + course modules their teacher gives them. This page stacks, top
+ * to bottom: Assignments, released full-test results, recent feedback, a
+ * read-only skill-mastery panel, course announcements, and "My courses".
+ * Picking an assignment navigates to the corresponding route — the router
+ * mounts the right surface.
  *
- * Previously this component owned an internal `view: 'none' | 'running' |
- * 'review'` state machine for assignments. Now those branches are real
- * routes (`/assignment/:id/take`, `/assignment/:id/review/:attemptId`),
- * so this component is a pure landing page: it reads session data, renders
- * the cards/panels, and emits navigations.
+ * This component is a pure landing page: it reads session data, renders the
+ * panels, and emits navigations (assignment take/review live at real routes:
+ * `/assignment/:id/take`, `/assignment/:id/review/:attemptId`).
  *
- * Also: `onPick`/`onSignOut`/`studentName` props were removed. The component
- * reads its own session via `useStudentSession()` and signs out / navigates
+ * `onPick`/`onSignOut`/`studentName` props were removed: the component reads
+ * its own session via `useStudentSession()` and signs out / navigates
  * directly. AuthGate no longer threads these as props.
  */
 import { useCallback, useEffect, useState } from "react";
@@ -40,7 +41,6 @@ import {
   JoinClassModal,
   MyClassesPanel,
   RecentFeedbackWidget,
-  ScorePrediction,
   SkillHeatmap,
 } from "../student";
 import type {
@@ -141,9 +141,8 @@ export function AreaSelector() {
             >
               Your progress
             </h2>
-            <div className="grid gap-4 md:grid-cols-2">
+            <div className="grid gap-4">
               <SkillHeatmap />
-              <ScorePrediction />
             </div>
           </section>
           <CourseAnnouncementsList />

@@ -17,20 +17,23 @@
  *   - Sort dropdown — Default, Weakest first, Strongest first, Most attempts,
  *     Skill name
  *   - "Weakest skill" callout — always reflects the single lowest-mastery
- *     skill across ALL skills (independent of filter/sort), with a direct
- *     "Practice this skill" link to /practice?skill=…
+ *     skill across ALL skills (independent of filter/sort)
  *   - localStorage persistence per user
  *   - Empty filtered state with "Show all" recovery action
+ *
+ * Controlled-access model (2026-06-03): this is a READ-ONLY insight surface.
+ * Students can't self-assign practice — they only do what the teacher assigns
+ * — so the old "Practice this skill" / drill-cell links to /practice were
+ * removed (that route just bounces students home now). The cells and the
+ * weakest-skill callout are informational only.
  *
  * Self-contained: no props, reads from the supabase singleton, identifies the
  * caller via the RPC (which uses auth.uid()).
  */
 import { useEffect, useMemo, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { Skeleton } from "../components/Skeleton";
 import { useToast } from "../components/Toast";
-import { ROUTES } from "../lib/routes";
 
 interface SkillMasteryRow {
   domain: string;
@@ -206,7 +209,6 @@ export function SkillHeatmap() {
   const [viewHydrated, setViewHydrated] = useState(false);
   const [announcement, setAnnouncement] = useState("");
   const toast = useToast();
-  const navigate = useNavigate();
 
   // Hydrate persisted view once we know the user id
   useEffect(() => {
@@ -330,12 +332,6 @@ export function SkillHeatmap() {
     }
   };
 
-  const handlePracticeWeakest = (): void => {
-    if (!weakest) return;
-    const qs = new URLSearchParams({ skill: weakest.skill });
-    navigate(`${ROUTES.PRACTICE}?${qs.toString()}`);
-  };
-
   return (
     <section
       aria-labelledby="skill-mastery-title"
@@ -400,13 +396,6 @@ export function SkillHeatmap() {
                   {weakest.correct}/{weakest.attempts} correct
                 </span>
               </div>
-              <button
-                type="button"
-                onClick={handlePracticeWeakest}
-                className="motion-safe:transition-colors inline-flex min-h-[40px] items-center rounded-lg bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold px-3 py-2 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-1"
-              >
-                Practice this skill
-              </button>
             </div>
           )}
 
@@ -499,16 +488,11 @@ export function SkillHeatmap() {
                   </h4>
                   <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                     {group.rows.map((row) => (
-                      <button
+                      <div
                         key={`${group.domain}::${row.skill}`}
-                        type="button"
-                        onClick={() => {
-                          const qs = new URLSearchParams({ skill: row.skill });
-                          navigate(`${ROUTES.PRACTICE}?${qs.toString()}`);
-                        }}
-                        className={`motion-safe:transition-transform min-h-[40px] text-left rounded-lg p-2 ring-1 hover:-translate-y-0.5 hover:ring-2 focus:outline-none focus:ring-2 focus:ring-offset-1 ${masteryClasses(row.mastery)}`}
+                        className={`min-h-[40px] text-left rounded-lg p-2 ring-1 ${masteryClasses(row.mastery)}`}
                         title={`${row.skill}: ${row.correct}/${row.attempts} correct`}
-                        aria-label={`Drill ${row.skill} — current mastery ${row.mastery}%`}
+                        aria-label={`${row.skill} — current mastery ${row.mastery}%`}
                       >
                         <div className="text-xs font-medium leading-tight line-clamp-2">
                           {row.skill}
@@ -521,7 +505,7 @@ export function SkillHeatmap() {
                             {row.attempts} att
                           </span>
                         </div>
-                      </button>
+                      </div>
                     ))}
                   </div>
                 </div>

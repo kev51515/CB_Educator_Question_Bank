@@ -122,8 +122,8 @@ Account → Admin → **Audit**. Append-only ledger of sensitive actions (role c
 
 ### Student-side enhancements
 
-- **Skill heatmap + score prediction** — `SkillHeatmap` shows per-skill mastery (migration `0024`); `ScorePrediction` projects an SAT band. Updates after each submitted attempt.
-- **Focus weak skills toggle** — `WeakSkillsToggle` pill filters the question bank to skills below mastery threshold.
+- **Skill mastery panel** — `SkillHeatmap` shows per-skill mastery (migration `0024`), updating after each submitted attempt. It's **read-only insight** in the controlled-access model: students see where they stand but can't self-assign practice (the old `ScorePrediction` SAT-band card and the "Practice this skill" drill links were removed 2026-06-03 — the prediction's low-data band misled students, and `/practice` isn't reachable for students).
+- **Focus weak skills toggle** — `WeakSkillsToggle` pill filters to skills below mastery threshold. Lives in the legacy question bank, which is **staff-only** now; not a student surface.
 - **GDPR data export** — Account Settings → **Export my data**. JSON dump of profile + attempts + portfolio + messages.
 
 ---

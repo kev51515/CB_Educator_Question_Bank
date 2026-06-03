@@ -119,7 +119,7 @@ Currently `0001` → `0064`. Numbers are strictly sequential; gaps are forbidden
 - `0023_gdpr_dedup` — GDPR hard-delete RPC + `reminder_log` dedup table.
 
 **Communication (0024–0029)** — analytics, discussions, inbox, audit gaps, helper cleanup, notifications.
-- `0024_mastery_predictions` — per-skill mastery rollups + SAT score-prediction RPC.
+- `0024_mastery_predictions` — per-skill mastery rollups (`my_skill_mastery`, feeds the read-only student `SkillHeatmap`) + SAT score-prediction RPC. The score-prediction RPC is **no longer surfaced** in the UI (the `ScorePrediction` card was removed 2026-06-03; low-data band misled students) — RPC retained for a future calibrated model.
 - `0025_discussions` — `course_topics` + `course_topic_posts`.
 - `0026_inbox` — `message_threads`, `messages`, `open_thread_with` RPC, thread-bump trigger.
 - `0027_audit_more` — additional audit events surfaced by Wave 6.
