@@ -91,7 +91,10 @@ export function CourseCard({
     trimmedDesc.length > 110 ? `${trimmedDesc.slice(0, 107)}…` : trimmedDesc;
 
   const baseClass =
-    "group flex flex-col text-left rounded-xl overflow-hidden bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
+    // `min-w-0` lets the card shrink below its content's intrinsic width inside
+    // a grid/flex track (items default to min-width:auto) so a long course name
+    // can't force horizontal overflow on narrow screens.
+    "group flex flex-col min-w-0 text-left rounded-xl overflow-hidden bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-indigo-500 " +
     (onClick ? "hover:shadow-md hover:-translate-y-0.5 cursor-pointer " : "") +
     (muted ? "opacity-70 " : "");
 
@@ -121,7 +124,7 @@ export function CourseCard({
       </div>
       <div className="flex-1 p-4 space-y-2">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="text-base font-semibold text-slate-900 dark:text-slate-100 truncate flex-1">
+          <h3 className="min-w-0 flex-1 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
             {name}
           </h3>
           {status && <StatusPill {...status} />}

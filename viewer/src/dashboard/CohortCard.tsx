@@ -81,7 +81,7 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
   return (
     <div
       className="
-        relative group
+        relative group min-w-0
         rounded-xl ring-1 ring-slate-200/60 dark:ring-slate-800
         bg-white/80 dark:bg-slate-900/40
         hover:ring-indigo-200 dark:hover:ring-indigo-800
@@ -126,6 +126,7 @@ export function CohortCard({ row, onNeedsClick, onOpenDrill }: CohortCardProps) 
         <div className="flex items-start justify-between gap-2">
           <h3
             className="
+              min-w-0 flex-1
               text-sm font-semibold
               text-slate-900 dark:text-slate-100
               truncate pr-16

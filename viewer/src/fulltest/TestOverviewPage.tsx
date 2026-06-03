@@ -394,8 +394,10 @@ export function TestOverviewPage(): JSX.Element {
 
       {/* structure + distribution */}
       <div className="grid gap-4 lg:grid-cols-2">
-        {/* module structure */}
-        <section className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+        {/* module structure — min-w-0 so the card shrinks below its content's
+            intrinsic width on narrow screens instead of overflowing the grid
+            track (grid/flex items default to min-width:auto). */}
+        <section className="min-w-0 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
             Structure
           </h2>
@@ -438,7 +440,7 @@ export function TestOverviewPage(): JSX.Element {
         </section>
 
         {/* score distribution */}
-        <section className="rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
+        <section className="min-w-0 rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5">
           <h2 className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300">
             Score distribution
           </h2>

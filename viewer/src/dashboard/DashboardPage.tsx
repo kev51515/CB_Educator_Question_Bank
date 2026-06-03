@@ -202,7 +202,7 @@ function DashboardCard({
   ];
 
   return (
-    <div className="relative">
+    <div className="relative min-w-0">
       {pinned && (
         // Overlay badge — sits over the top-left of the colour band so the
         // pinned status is visible at a glance without changing CourseCard's
