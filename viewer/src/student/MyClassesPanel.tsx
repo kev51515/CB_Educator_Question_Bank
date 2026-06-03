@@ -13,7 +13,7 @@ import { supabase } from "../lib/supabase";
 import { useStudentClasses, type StudentClass } from "./useStudentClasses";
 import { SkeletonRows } from "../components/Skeleton";
 import { useToast } from "../components/Toast";
-import { coursePath } from "../lib/routes";
+import { studentCoursePath } from "../lib/routes";
 import { useFocusTrap } from "../hooks";
 import { JoinClassModal } from "./JoinClassModal";
 
@@ -251,7 +251,7 @@ export function MyClassesPanel({ refreshToken }: MyClassesPanelProps) {
                 key={cls.id}
                 cls={cls}
                 onLeave={() => setConfirmLeave(cls)}
-                onOpen={() => navigate(coursePath(cls.short_code ?? cls.id))}
+                onOpen={() => navigate(studentCoursePath(cls.short_code ?? cls.id))}
               />
             ))}
           </ul>

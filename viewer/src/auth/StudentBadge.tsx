@@ -34,6 +34,10 @@ interface StudentBadgeProps {
    * ignored.
    */
   onOpenSettings?: () => void;
+  /** Role-prefixed inbox / account targets. Default to the educator paths;
+   *  StudentShell overrides with the `/student/*` equivalents. */
+  inboxPath?: string;
+  accountPath?: string;
 }
 
 export function StudentBadge({
@@ -43,6 +47,8 @@ export function StudentBadge({
   roleLabel,
   personalCode = null,
   showSwitchArea = true,
+  inboxPath = ROUTES.INBOX,
+  accountPath = ROUTES.ACCOUNT,
 }: StudentBadgeProps) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
@@ -108,7 +114,7 @@ export function StudentBadge({
             role="menuitem"
             onClick={() => {
               setOpen(false);
-              navigate(ROUTES.INBOX);
+              navigate(inboxPath);
             }}
             className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
           >
@@ -119,7 +125,7 @@ export function StudentBadge({
             role="menuitem"
             onClick={() => {
               setOpen(false);
-              navigate(ROUTES.ACCOUNT);
+              navigate(accountPath);
             }}
             className="block w-full text-left px-4 py-2 text-sm text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800"
           >

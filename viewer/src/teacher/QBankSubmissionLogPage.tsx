@@ -30,6 +30,7 @@
  */
 import { useMemo, useState } from "react";
 import { supabase } from "../lib/supabase";
+import { courseAssignmentAttemptPath } from "../lib/routes";
 import { EmptyState } from "../components/EmptyState";
 import { SkeletonRows } from "../components/Skeleton";
 import { useToast } from "../components/Toast";
@@ -379,7 +380,7 @@ function LogTable({ entries, onReplay }: LogTableProps) {
                 <td className="px-6 py-3 text-right whitespace-nowrap">
                   {e.attempt_id ? (
                     <a
-                      href={`/courses/${e.course_id}/assignments/${e.assignment_id}/attempts/${e.attempt_id}`}
+                      href={courseAssignmentAttemptPath(e.course_id, e.assignment_id, e.attempt_id)}
                       className="rounded-md bg-indigo-50 dark:bg-indigo-950/40 ring-1 ring-indigo-200 dark:ring-indigo-900 px-2.5 py-1 text-xs font-medium text-indigo-700 dark:text-indigo-300 hover:bg-indigo-100 dark:hover:bg-indigo-900/40"
                     >
                       View attempt

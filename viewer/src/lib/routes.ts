@@ -29,73 +29,88 @@ export const ROUTES = {
   // even in a screenshot. `/` redirects here for a signed-in student. Only
   // the landing carries the prefix; inner student surfaces keep their
   // existing top-level paths to avoid a routing-wide rewrite.
+  // Every authenticated student surface carries the `/student` prefix so the
+  // role is legible in the address bar (and in screenshots). The full-screen
+  // test runner (TEST_RUN) is the one exception — it's a role-agnostic
+  // takeover whose URL is stored in `module_items`, so it stays unprefixed.
   STUDENT_HOME: "/student",
   STUDENT_HOME_CODED: "/student/:code",
-  PRACTICE: "/practice",
+  PRACTICE: "/student/practice",
   // Student-facing paginated history of teacher feedback across every
   // graded / commented assignment attempt. Reached from the "View all"
   // link in RecentFeedbackWidget on the AreaSelector landing.
-  MY_FEEDBACK: "/my-feedback",
-  MOCK_TEST: "/mock-test",
+  MY_FEEDBACK: "/student/my-feedback",
+  MOCK_TEST: "/student/mock-test",
   // Student-facing history of past free-mode mock test attempts. Lets a
   // student review past attempts and compare two side-by-side.
-  MOCK_TEST_HISTORY: "/mock-test/history",
+  MOCK_TEST_HISTORY: "/student/mock-test/history",
   // Per-attempt review surface for a single free-mode `test_attempts` row.
   // Mirrors `ASSIGNMENT_REVIEW` but reads from `test_attempts` + `test_answers`
   // (see migrations 0042/0043). The attempt id is a uuid.
-  MOCK_TEST_REVIEW: "/mock-test/history/:attemptId",
+  MOCK_TEST_REVIEW: "/student/mock-test/history/:attemptId",
+  ASSIGNMENT_TAKE: "/student/assignment/:assignmentId/take",
+  ASSIGNMENT_REVIEW: "/student/assignment/:assignmentId/review/:attemptId",
+  // Student per-course view (`:short` = course short_code or UUID).
+  STUDENT_COURSE: "/student/courses/:short",
+  STUDENT_COURSE_MODULES: "/student/courses/:short/modules",
+  // Student inbox + account (role-prefixed; mirror the educator equivalents).
+  STUDENT_INBOX: "/student/inbox",
+  STUDENT_INBOX_THREAD: "/student/inbox/:threadId",
+  STUDENT_ACCOUNT: "/student/account",
+
   // Proctored, full-length practice tests (e.g. a real Digital SAT form).
+  // Shared, role-agnostic, unprefixed — the entry URL stored in module_items.
   TEST_RUN: "/test/:slug",
-  // Staff: full-test catalog + per-test QA/answer-key review.
-  TESTS_ADMIN: "/tests",
+
+  // Every authenticated educator (teacher + admin) surface carries the
+  // `/educator` prefix.
+  TESTS_ADMIN: "/educator/tests",
   // Staff: per-test overview — info, cohort stats, per-student data. This is
   // where a teacher lands when they open a test (students go to TEST_RUN).
-  TEST_OVERVIEW: "/tests/:slug",
-  TEST_REVIEW: "/tests/:slug/review",
-  QUESTION_BANK: "/question-bank",
-  QBANK_LOG: "/qbank-submissions",
-  ASSIGNMENT_TAKE: "/assignment/:assignmentId/take",
-  ASSIGNMENT_REVIEW: "/assignment/:assignmentId/review/:attemptId",
+  TEST_OVERVIEW: "/educator/tests/:slug",
+  TEST_REVIEW: "/educator/tests/:slug/review",
+  QUESTION_BANK: "/educator/question-bank",
+  QBANK_LOG: "/educator/qbank-submissions",
 
-  // Staff (teacher + admin) — top-level
-  DASHBOARD: "/dashboard",
-  CALENDAR: "/calendar",
-  COURSES: "/courses",
+  // Educator — top-level
+  DASHBOARD: "/educator/dashboard",
+  CALENDAR: "/educator/calendar",
+  COURSES: "/educator/courses",
 
-  // Course detail (nested under /courses/:courseId)
-  COURSE: "/courses/:courseId",
-  COURSE_OVERVIEW: "/courses/:courseId/overview",
-  COURSE_MODULES: "/courses/:courseId/modules",
-  COURSE_MODULE: "/courses/:courseId/modules/:moduleId",
-  COURSE_ASSIGNMENTS: "/courses/:courseId/assignments",
-  COURSE_ASSIGNMENT: "/courses/:courseId/assignments/:assignmentId",
+  // Course detail (nested under /educator/courses/:courseId)
+  COURSE: "/educator/courses/:courseId",
+  COURSE_OVERVIEW: "/educator/courses/:courseId/overview",
+  COURSE_MODULES: "/educator/courses/:courseId/modules",
+  COURSE_MODULE: "/educator/courses/:courseId/modules/:moduleId",
+  COURSE_ASSIGNMENTS: "/educator/courses/:courseId/assignments",
+  COURSE_ASSIGNMENT: "/educator/courses/:courseId/assignments/:assignmentId",
   COURSE_ASSIGNMENT_ATTEMPT:
-    "/courses/:courseId/assignments/:assignmentId/attempts/:attemptId",
-  COURSE_PEOPLE: "/courses/:courseId/people",
+    "/educator/courses/:courseId/assignments/:assignmentId/attempts/:attemptId",
+  COURSE_PEOPLE: "/educator/courses/:courseId/people",
   // Per-student teacher view: one student's full activity inside a course
   // (attempts + discussion posts + portfolio submissions). The roster + the
   // gradebook both link here on a name click.
-  COURSE_STUDENT_PROFILE: "/courses/:courseId/people/:studentId",
-  COURSE_ANNOUNCEMENTS: "/courses/:courseId/announcements",
-  COURSE_MATERIALS: "/courses/:courseId/materials",
-  COURSE_GRADES: "/courses/:courseId/grades",
-  COURSE_PORTFOLIO: "/courses/:courseId/portfolio",
-  COURSE_DISCUSSIONS: "/courses/:courseId/discussions",
-  COURSE_DISCUSSION: "/courses/:courseId/discussions/:topicId",
-  COURSE_SETTINGS: "/courses/:courseId/settings",
+  COURSE_STUDENT_PROFILE: "/educator/courses/:courseId/people/:studentId",
+  COURSE_ANNOUNCEMENTS: "/educator/courses/:courseId/announcements",
+  COURSE_MATERIALS: "/educator/courses/:courseId/materials",
+  COURSE_GRADES: "/educator/courses/:courseId/grades",
+  COURSE_PORTFOLIO: "/educator/courses/:courseId/portfolio",
+  COURSE_DISCUSSIONS: "/educator/courses/:courseId/discussions",
+  COURSE_DISCUSSION: "/educator/courses/:courseId/discussions/:topicId",
+  COURSE_SETTINGS: "/educator/courses/:courseId/settings",
 
-  // Inbox (1:1 direct messaging — available to both students and staff)
-  INBOX: "/inbox",
-  INBOX_THREAD: "/inbox/:threadId",
+  // Educator inbox (1:1 direct messaging).
+  INBOX: "/educator/inbox",
+  INBOX_THREAD: "/educator/inbox/:threadId",
 
-  // Account (personal settings + admin power-tools tucked behind /admin)
-  ACCOUNT: "/account",
-  ACCOUNT_SETTINGS: "/account/settings",
-  NOTIFICATION_PREFS: "/account/notification-preferences",
-  ACCOUNT_ADMIN_STATS: "/account/admin/stats",
-  ACCOUNT_ADMIN_USERS: "/account/admin/users",
-  ACCOUNT_ADMIN_INVITES: "/account/admin/invites",
-  ACCOUNT_ADMIN_AUDIT: "/account/admin/audit",
+  // Educator account (personal settings + admin power-tools behind /admin).
+  ACCOUNT: "/educator/account",
+  ACCOUNT_SETTINGS: "/educator/account/settings",
+  NOTIFICATION_PREFS: "/educator/account/notification-preferences",
+  ACCOUNT_ADMIN_STATS: "/educator/account/admin/stats",
+  ACCOUNT_ADMIN_USERS: "/educator/account/admin/users",
+  ACCOUNT_ADMIN_INVITES: "/educator/account/admin/invites",
+  ACCOUNT_ADMIN_AUDIT: "/educator/account/admin/audit",
 
   // --- Legacy aliases ----------------------------------------------------
   // The viewer originally used a "Console / Classes / Users / Settings"
@@ -105,19 +120,19 @@ export const ROUTES = {
   // reference the older names. Keeping them as aliases of the canonical
   // paths lets the rename roll out without a single mega-PR. Drop these
   // once every caller has migrated.
-  CONSOLE: "/dashboard",
-  CLASSES: "/courses",
-  CLASS: "/courses/:classId",
-  CLASS_ROSTER: "/courses/:classId/people",
-  CLASS_ASSIGNMENTS: "/courses/:classId/assignments",
-  CLASS_ASSIGNMENT: "/courses/:classId/assignments/:assignmentId",
+  CONSOLE: "/educator/dashboard",
+  CLASSES: "/educator/courses",
+  CLASS: "/educator/courses/:classId",
+  CLASS_ROSTER: "/educator/courses/:classId/people",
+  CLASS_ASSIGNMENTS: "/educator/courses/:classId/assignments",
+  CLASS_ASSIGNMENT: "/educator/courses/:classId/assignments/:assignmentId",
   CLASS_ASSIGNMENT_ATTEMPT:
-    "/courses/:classId/assignments/:assignmentId/attempts/:attemptId",
-  CLASS_ANNOUNCEMENTS: "/courses/:classId/announcements",
-  CLASS_MATERIALS: "/courses/:classId/materials",
-  CLASS_SETTINGS: "/courses/:classId/settings",
-  USERS: "/account/admin/users",
-  SETTINGS: "/account",
+    "/educator/courses/:classId/assignments/:assignmentId/attempts/:attemptId",
+  CLASS_ANNOUNCEMENTS: "/educator/courses/:classId/announcements",
+  CLASS_MATERIALS: "/educator/courses/:classId/materials",
+  CLASS_SETTINGS: "/educator/courses/:classId/settings",
+  USERS: "/educator/account/admin/users",
+  SETTINGS: "/educator/account",
 } as const;
 
 /**
@@ -303,6 +318,28 @@ export function assignmentTakePath(assignmentId: string): string {
 
 export function inboxThreadPath(threadId: string): string {
   return buildPath(ROUTES.INBOX_THREAD, { threadId });
+}
+
+// --- Student-side role-prefixed builders ----------------------------------
+// Account + inbox are shared *components* but render under a role-specific
+// prefix. Educator contexts use the ROUTES.ACCOUNT / ROUTES.INBOX constants
+// (already `/educator/*`); student contexts use these.
+
+export function studentCoursePath(short: string): string {
+  return buildPath(ROUTES.STUDENT_COURSE, { short });
+}
+
+export function studentInboxPath(): string {
+  return ROUTES.STUDENT_INBOX;
+}
+
+export function studentInboxThreadPath(threadId: string): string {
+  return buildPath(ROUTES.STUDENT_INBOX_THREAD, { threadId });
+}
+
+/** Student account base, or a sub-page (e.g. "settings"). */
+export function studentAccountPath(sub?: string): string {
+  return sub ? `${ROUTES.STUDENT_ACCOUNT}/${sub}` : ROUTES.STUDENT_ACCOUNT;
 }
 
 export function assignmentReviewPath(

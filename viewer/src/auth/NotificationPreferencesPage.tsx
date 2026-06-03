@@ -13,7 +13,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
-import { ROUTES } from "../lib/routes";
 import { useToast } from "@/components";
 import {
   NOTIFICATION_KINDS,
@@ -241,7 +240,8 @@ export function NotificationPreferencesPage() {
     <div className="space-y-4">
       <header className="space-y-2">
         <Link
-          to={ROUTES.ACCOUNT_SETTINGS}
+          // Sibling-relative so it resolves under either role prefix.
+          to="../settings"
           className="inline-flex items-center gap-1 text-sm font-medium text-indigo-600 dark:text-indigo-400 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 rounded"
         >
           <span aria-hidden="true">←</span> Back to Settings

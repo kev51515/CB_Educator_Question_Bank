@@ -24,7 +24,7 @@ import type { Command } from "../components/CommandPalette";
 import { useToast } from "../components/Toast";
 import { useProfile } from "./profile";
 import { supabase } from "./supabase";
-import { ROUTES, assignmentTakePath, coursePath } from "./routes";
+import { ROUTES, assignmentTakePath, studentCoursePath } from "./routes";
 
 /** localStorage key for the student ⌘K "recent commands" stack. */
 export const STUDENT_RECENT_COMMANDS_KEY = "student.cmdpalette.recent";
@@ -268,7 +268,7 @@ export function useStudentCommands(): Command[] {
       label: "Open your inbox",
       keywords: "messages dm direct messages",
       group: "Command",
-      run: () => navigate(ROUTES.INBOX),
+      run: () => navigate(ROUTES.STUDENT_INBOX),
     });
 
     // 5. Calendar.
@@ -286,7 +286,7 @@ export function useStudentCommands(): Command[] {
       label: "Open your account settings",
       keywords: "profile password preferences",
       group: "Command",
-      run: () => navigate(ROUTES.ACCOUNT_SETTINGS),
+      run: () => navigate(`${ROUTES.STUDENT_ACCOUNT}/settings`),
     });
 
     // 7. What's due soon — deep-link straight to the soonest-upcoming
@@ -334,7 +334,7 @@ export function useStudentCommands(): Command[] {
           label: `Open ${course.name}`,
           keywords: `class course enrolled ${course.name} ${course.short_code}`,
           group: "Command",
-          run: () => navigate(coursePath(course.short_code)),
+          run: () => navigate(studentCoursePath(course.short_code)),
         });
       }
     }

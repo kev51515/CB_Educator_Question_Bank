@@ -16,6 +16,27 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useNotifications, type NotificationRow } from "./useNotifications";
+import { useProfile } from "../lib/profile";
+
+/**
+ * Notification `link` values are stored server-side as bare, role-agnostic
+ * paths (e.g. "/courses/<id>/assignments/<id>", "/inbox/<id>"). The app now
+ * namespaces every authenticated surface under "/educator" or "/student", so
+ * prefix a bare link with the current role before navigating. Already-prefixed
+ * links and the shared "/test/<slug>" runner pass through untouched; unknown
+ * links fall through to the role catch-all (→ home) rather than 404.
+ */
+function rolePrefixedLink(link: string, role: string | undefined): string {
+  if (!link.startsWith("/")) return link;
+  if (
+    link.startsWith("/educator/") ||
+    link.startsWith("/student/") ||
+    link.startsWith("/test/")
+  ) {
+    return link;
+  }
+  return `${role === "student" ? "/student" : "/educator"}${link}`;
+}
 
 function formatRelative(iso: string): string {
   const then = new Date(iso).getTime();
@@ -107,6 +128,7 @@ function KindIcon({ kind, unread }: { kind: string; unread: boolean }): JSX.Elem
 
 export function NotificationBell() {
   const navigate = useNavigate();
+  const { profile } = useProfile();
   const [open, setOpen] = useState<boolean>(false);
   const [side, setSide] = useState<"left" | "right">("right");
   const [measured, setMeasured] = useState<boolean>(false);
@@ -210,7 +232,7 @@ export function NotificationBell() {
     if (n.read_at === null) {
       await markRead(n.id);
     }
-    if (n.link) navigate(n.link);
+    if (n.link) navigate(rolePrefixedLink(n.link, profile?.role));
   };
 
   const onMenuKeyDown = (e: React.KeyboardEvent<HTMLDivElement>): void => {

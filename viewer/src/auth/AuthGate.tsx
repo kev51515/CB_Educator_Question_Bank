@@ -273,7 +273,7 @@ function StudentRoutesTree({
           element={<AssignmentReviewRoute />}
         />
         <Route
-          path={`${ROUTES.ACCOUNT}/*`}
+          path={`${ROUTES.STUDENT_ACCOUNT}/*`}
           element={
             <AccountRoutes
               profile={account.profile}
@@ -281,16 +281,17 @@ function StudentRoutesTree({
               updateDisplayName={account.updateDisplayName}
               updatePassword={account.updatePassword}
               onSignOut={account.onSignOut}
+              basePath={ROUTES.STUDENT_ACCOUNT}
             />
           }
         />
-        <Route path={ROUTES.INBOX} element={<InboxPage />}>
+        <Route path={ROUTES.STUDENT_INBOX} element={<InboxPage />}>
           <Route path=":threadId" element={<ThreadView />} />
         </Route>
         {/* Student per-course view. `:short` is the course `short_code`
             (also accepts a UUID — RLS enforces enrollment either way). */}
-        <Route path="/courses/:short" element={<StudentCourseView />} />
-        <Route path="/courses/:short/modules" element={<StudentCourseView />} />
+        <Route path={ROUTES.STUDENT_COURSE} element={<StudentCourseView />} />
+        <Route path={ROUTES.STUDENT_COURSE_MODULES} element={<StudentCourseView />} />
         {/* Catch-all so unknown URLs bounce back to the area selector
             instead of rendering a blank screen. */}
         <Route path="*" element={<Navigate to={ROUTES.HOME} replace />} />
@@ -372,6 +373,7 @@ function StaffRoutesTree({ account }: { account: AccountContext }) {
               updateDisplayName={account.updateDisplayName}
               updatePassword={account.updatePassword}
               onSignOut={account.onSignOut}
+              basePath={ROUTES.ACCOUNT}
             />
           }
         />

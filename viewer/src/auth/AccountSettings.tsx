@@ -31,7 +31,6 @@ import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useToast } from "@/components";
-import { ROUTES } from "../lib/routes";
 import type { Profile } from "../lib/profile";
 import type { AuthResult } from "./session";
 
@@ -588,7 +587,9 @@ export function AccountSettings({
             </p>
           </div>
           <Link
-            to={ROUTES.NOTIFICATION_PREFS}
+            // Sibling-relative so it works under either role prefix
+            // (/educator/account/* or /student/account/*).
+            to="../notification-preferences"
             className="rounded-lg ring-1 ring-slate-300 dark:ring-slate-700 text-sm font-medium px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-800 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500 min-h-[40px]"
           >
             Manage

@@ -27,7 +27,7 @@ import { useNavigate } from "react-router-dom";
 import { useClassContext } from "./classLayoutContext";
 import { supabase } from "../lib/supabase";
 import { useProfile } from "../lib/profile";
-import { courseAssignmentPath, testRunPath } from "../lib/routes";
+import { ROUTES, courseAssignmentPath, testRunPath } from "../lib/routes";
 import { useFullTests } from "../fulltest/useFullTests";
 import {
   buildTree,
@@ -4041,7 +4041,7 @@ function InlineAddItemRow({
               body="Practice Tests live in the Question Bank. Author one there first, then come back to assign it."
               cta={{
                 label: "Open Question Bank",
-                onClick: () => navigate("/question-bank?tab=practice-tests"),
+                onClick: () => navigate(`${ROUTES.QUESTION_BANK}?tab=practice-tests`),
               }}
               framed
             />

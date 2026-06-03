@@ -111,7 +111,8 @@ function railLinkClass({ isActive }: { isActive: boolean }): string {
  */
 function isAccountRouteActive(pathname: string): boolean {
   return (
-    pathname === ROUTES.ACCOUNT || pathname.startsWith(`${ROUTES.ACCOUNT}/`)
+    pathname === ROUTES.STUDENT_ACCOUNT ||
+    pathname.startsWith(`${ROUTES.STUDENT_ACCOUNT}/`)
   );
 }
 
@@ -312,7 +313,7 @@ export function StudentShell() {
             </span>
           </NavLink>
 
-          <NavLink to={ROUTES.INBOX} className={railLinkClass} title="Inbox">
+          <NavLink to={ROUTES.STUDENT_INBOX} className={railLinkClass} title="Inbox">
             <RailIcon>
               <svg
                 width={20}
@@ -332,7 +333,7 @@ export function StudentShell() {
           </NavLink>
 
           <NavLink
-            to={ROUTES.ACCOUNT}
+            to={ROUTES.STUDENT_ACCOUNT}
             title="Account"
             className={() =>
               railLinkClass({
@@ -406,6 +407,8 @@ export function StudentShell() {
         studentName={displayName}
         roleLabel="Student"
         personalCode={personalCode}
+        inboxPath={ROUTES.STUDENT_INBOX}
+        accountPath={ROUTES.STUDENT_ACCOUNT}
         onSwitchArea={() => {
           setArea(null);
           navigate(homePath);
@@ -488,9 +491,9 @@ const STUDENT_TABS: TabSpec[] = [
     ),
   },
   {
-    to: ROUTES.INBOX,
+    to: ROUTES.STUDENT_INBOX,
     label: "Inbox",
-    match: (p) => p.startsWith("/inbox"),
+    match: (p) => p.startsWith(ROUTES.STUDENT_INBOX),
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -508,9 +511,9 @@ const STUDENT_TABS: TabSpec[] = [
     ),
   },
   {
-    to: ROUTES.ACCOUNT,
+    to: ROUTES.STUDENT_ACCOUNT,
     label: "Account",
-    match: (p) => p.startsWith("/account"),
+    match: (p) => p.startsWith(ROUTES.STUDENT_ACCOUNT),
     icon: (
       <svg
         viewBox="0 0 24 24"

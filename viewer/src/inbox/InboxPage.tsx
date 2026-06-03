@@ -19,7 +19,7 @@ import {
   useSearchParams,
 } from "react-router-dom";
 import { useProfile } from "../lib/profile";
-import { inboxThreadPath } from "../lib/routes";
+import { ROUTES, inboxThreadPath, studentInboxThreadPath } from "../lib/routes";
 import { NewThreadModal } from "./NewThreadModal";
 import { useThreads } from "./useThreads";
 import { EmptyState } from "../components/EmptyState";
@@ -143,6 +143,12 @@ export function InboxPage() {
   const navigate = useNavigate();
   const { threadId } = useParams<{ threadId?: string }>();
   const [searchParams, setSearchParams] = useSearchParams();
+  // Inbox is shared between roles but mounts under a role-prefixed base
+  // (/educator/inbox vs /student/inbox), so build links for the active role.
+  const isStudent = profile?.role === "student";
+  const inboxBase = isStudent ? ROUTES.STUDENT_INBOX : ROUTES.INBOX;
+  const threadPath = (id: string): string =>
+    isStudent ? studentInboxThreadPath(id) : inboxThreadPath(id);
   const currentUserId = profile?.id ?? null;
   const { threads, loading, error, refresh } = useThreads(currentUserId);
   const [showNew, setShowNew] = useState(false);
@@ -370,7 +376,7 @@ export function InboxPage() {
       return;
     }
     const t = filteredThreads[highlightedIndex];
-    if (t) navigate(inboxThreadPath(t.id));
+    if (t) navigate(threadPath(t.id));
   }, [filteredThreads, highlightedIndex, navigate]);
 
   // Keyboard shortcuts: ↑/↓/Home/End/Enter/Esc on the list container.
@@ -505,7 +511,7 @@ export function InboxPage() {
         stripParam();
         setComposing(false);
         void refresh();
-        navigate(inboxThreadPath(openedThreadId), { replace: true });
+        navigate(threadPath(openedThreadId), { replace: true });
       } catch (err: unknown) {
         if (cancelled) return;
         const msg =
@@ -697,7 +703,7 @@ export function InboxPage() {
                       ref={(el) => {
                         rowRefs.current[idx] = el;
                       }}
-                      to={inboxThreadPath(t.id)}
+                      to={threadPath(t.id)}
                       className={[
                         // Pad the right edge so the kebab (~40px tap target,
                         // absolutely positioned) doesn't visually overlap row text.
@@ -827,7 +833,7 @@ export function InboxPage() {
           <>
             <div className="sm:hidden px-4 py-2 border-b border-slate-200 dark:border-slate-800">
               <Link
-                to="/inbox"
+                to={inboxBase}
                 className="inline-flex items-center text-sm text-indigo-600 dark:text-indigo-400 hover:underline"
               >
                 ← Back to inbox
@@ -863,7 +869,7 @@ export function InboxPage() {
           onThreadOpened={(id) => {
             setShowNew(false);
             void refresh();
-            navigate(inboxThreadPath(id));
+            navigate(threadPath(id));
           }}
         />
       )}

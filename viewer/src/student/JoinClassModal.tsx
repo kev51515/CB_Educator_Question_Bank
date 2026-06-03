@@ -16,7 +16,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components/Toast";
 import { useFocusTrap } from "../hooks";
-import { courseModulesPath } from "../lib/routes";
+import { studentCoursePath } from "../lib/routes";
 
 interface JoinedClass {
   id: string;
@@ -315,7 +315,7 @@ export function JoinClassModal({ open, onClose, onJoined }: JoinClassModalProps)
                 <p>{error.message}</p>
                 {error.alreadyJoinedCourseId && (
                   <a
-                    href={`#${courseModulesPath(error.alreadyJoinedCourseId)}`}
+                    href={`#${studentCoursePath(error.alreadyJoinedCourseId)}`}
                     onClick={onClose}
                     className="inline-flex items-center gap-1 rounded-md bg-rose-100 dark:bg-rose-900/60 px-2 py-1 text-xs font-medium text-rose-800 dark:text-rose-200 hover:bg-rose-200 dark:hover:bg-rose-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
                   >

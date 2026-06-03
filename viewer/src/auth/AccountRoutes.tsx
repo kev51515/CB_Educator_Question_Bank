@@ -16,7 +16,6 @@
  * (thin wrappers around the existing data views).
  */
 import { NavLink, Navigate, Route, Routes } from "react-router-dom";
-import { ROUTES } from "../lib/routes";
 import type { Profile, ProfileRole } from "../lib/profile";
 import type { AuthResult } from "./session";
 import { AccountSettings } from "./AccountSettings";
@@ -34,6 +33,10 @@ export interface AccountRoutesProps {
   updateDisplayName: (name: string) => Promise<AuthResult>;
   updatePassword: (newPassword: string) => Promise<AuthResult>;
   onSignOut: () => Promise<void> | void;
+  /** Role-prefixed mount base, e.g. "/educator/account" or "/student/account".
+   *  Sidebar links + redirects are built from it so this shared component works
+   *  under either role prefix. */
+  basePath: string;
 }
 
 function isStaff(role: ProfileRole): boolean {
@@ -96,9 +99,12 @@ export function AccountRoutes({
   updateDisplayName,
   updatePassword,
   onSignOut,
+  basePath,
 }: AccountRoutesProps) {
   const staff = isStaff(profile.role);
   const displayName = profile.display_name?.trim() || email;
+  const settingsPath = `${basePath}/settings`;
+  const notifPath = `${basePath}/notification-preferences`;
 
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-slate-950">
@@ -133,27 +139,18 @@ export function AccountRoutes({
             className="md:sticky md:top-6 md:self-start space-y-3"
           >
             <div className="space-y-1">
-              <SidebarLink to={ROUTES.ACCOUNT_SETTINGS} label="Settings" />
-              <SidebarLink
-                to={ROUTES.NOTIFICATION_PREFS}
-                label="Notifications"
-              />
+              <SidebarLink to={settingsPath} label="Settings" />
+              <SidebarLink to={notifPath} label="Notifications" />
             </div>
             {staff && (
               <div className="space-y-1 pt-2 border-t border-slate-200 dark:border-slate-800">
                 <p className="px-3 pt-2 pb-1 text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Admin
                 </p>
-                <SidebarLink to={ROUTES.ACCOUNT_ADMIN_STATS} label="Stats" />
-                <SidebarLink to={ROUTES.ACCOUNT_ADMIN_USERS} label="Users" />
-                <SidebarLink
-                  to={ROUTES.ACCOUNT_ADMIN_INVITES}
-                  label="Invite codes"
-                />
-                <SidebarLink
-                  to={ROUTES.ACCOUNT_ADMIN_AUDIT}
-                  label="Audit log"
-                />
+                <SidebarLink to={`${basePath}/admin/stats`} label="Stats" />
+                <SidebarLink to={`${basePath}/admin/users`} label="Users" />
+                <SidebarLink to={`${basePath}/admin/invites`} label="Invite codes" />
+                <SidebarLink to={`${basePath}/admin/audit`} label="Audit log" />
               </div>
             )}
           </nav>
@@ -164,7 +161,7 @@ export function AccountRoutes({
               <Route
                 index
                 element={
-                  <Navigate to={ROUTES.ACCOUNT_SETTINGS} replace />
+                  <Navigate to={settingsPath} replace />
                 }
               />
               <Route
@@ -208,13 +205,13 @@ export function AccountRoutes({
                 // Students who deep-link to admin URLs get bounced.
                 <Route
                   path="admin/*"
-                  element={<Navigate to={ROUTES.ACCOUNT_SETTINGS} replace />}
+                  element={<Navigate to={settingsPath} replace />}
                 />
               )}
               {/* Unknown subpath → settings. */}
               <Route
                 path="*"
-                element={<Navigate to={ROUTES.ACCOUNT_SETTINGS} replace />}
+                element={<Navigate to={settingsPath} replace />}
               />
             </Routes>
           </main>
