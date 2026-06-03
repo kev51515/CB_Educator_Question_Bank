@@ -98,6 +98,12 @@ async function skip(name, reason) {
   console.log(`▶ ${name} ... SKIP — ${reason}`);
 }
 
+// Every auth user this suite mints, tracked centrally so teardown can sweep
+// ALL of them — even ones created inside a step that throws before its own
+// local cleanup runs. Without this, an aborted run leaks t-feat-/s-feat-
+// accounts onto the (remote) DB; that residue is what polluted prod.
+const allCreatedUserIds = new Set();
+
 async function createConfirmedUser(email, password, role = "student") {
   const { data, error } = await service.auth.admin.createUser({
     email,
@@ -106,6 +112,7 @@ async function createConfirmedUser(email, password, role = "student") {
     user_metadata: { display_name: email, role },
   });
   if (error) throw error;
+  allCreatedUserIds.add(data.user.id);
   // ensure profile.role
   await service.from("profiles").update({ role }).eq("id", data.user.id);
   return data.user.id;
@@ -3041,17 +3048,21 @@ async function studentProfile() {
 // ---------------------------- TEARDOWN ----------------------------
 
 async function teardown() {
-  // Delete all cloned + source courses owned by test teacher
-  await service
-    .from("courses")
-    .delete()
-    .or(`teacher_id.eq.${ctx.teacherId}`)
-    .then(() => {});
-  // Delete users
-  for (const id of [ctx.studentId, ctx.outsiderId, ctx.teacherId]) {
-    if (id) {
-      await service.auth.admin.deleteUser(id).catch(() => {});
-    }
+  // Sweep EVERY account the suite created (not just the headline ctx ids) so a
+  // mid-run crash can't strand orphans. Clear the RESTRICT-to-profiles
+  // blockers (courses.teacher_id, messages.author_id, teacher_invite_codes
+  // .created_by) before deleting the users, then delete the users — which
+  // cascades the remaining user-owned rows.
+  const ids = [...new Set([...allCreatedUserIds, ctx.studentId, ctx.outsiderId, ctx.teacherId].filter(Boolean))];
+  if (ids.length) {
+    // deleting a course cascades its memberships/assignments/announcements/
+    // materials/discussions/portfolio, so this also clears their author RESTRICTs.
+    await service.from("courses").delete().in("teacher_id", ids).then(() => {});
+    await service.from("messages").delete().in("author_id", ids).then(() => {});
+    await service.from("teacher_invite_codes").delete().in("created_by", ids).then(() => {});
+  }
+  for (const id of ids) {
+    await service.auth.admin.deleteUser(id).catch(() => {});
   }
 }
 
