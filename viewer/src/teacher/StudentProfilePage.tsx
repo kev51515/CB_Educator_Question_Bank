@@ -29,6 +29,7 @@ import { getInitials, type TrajectoryPoint } from "./studentProfileHelpers";
 import { ProfileHeader } from "./ProfileHeader";
 import { Section } from "./StudentProfileSection";
 import { PrivateNotesSection } from "./PrivateNotesSection";
+import { StudentTestReportPanel } from "./StudentTestReportPanel";
 import { StudentTestRunsPanel } from "./StudentTestRunsPanel";
 import { AttemptsBody } from "./AttemptsBody";
 import { PostsBody } from "./PostsBody";
@@ -193,6 +194,9 @@ export function StudentProfilePage(): JSX.Element {
             courseId={course?.id ?? null}
             studentId={header.id}
           />
+
+          {/* Full-length test coaching report — score trajectory + weak domains. */}
+          <StudentTestReportPanel studentId={header.id} />
 
           {/* Full-length test results — review + release-to-student control. */}
           <StudentTestRunsPanel studentId={header.id} />
