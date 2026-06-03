@@ -334,13 +334,33 @@ export function AccountSettings({
     );
   }
 
+  // A student's name is owned by their teacher (set on the roster), not the
+  // student — this prevents misuse of the field (impersonation, inappropriate
+  // names shown on discussions/gradebook). Managed students already hit the
+  // read-only branch above; this covers self-registered students too. The
+  // server enforces the same rule (a student cannot UPDATE their own
+  // display_name) — see migration 0093 — so this is the UI half of a
+  // defense-in-depth pair, not the only guard.
+  const nameLocked = profile.role === "student";
+
   return (
     <div className="space-y-6">
         {/* Display name */}
         <section className="rounded-xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-5 space-y-3">
           <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">
-            Display name
+            {nameLocked ? "Name" : "Display name"}
           </h2>
+          {nameLocked ? (
+            <>
+              <p className="font-medium text-slate-900 dark:text-slate-100">
+                {profile.display_name ?? "—"}
+              </p>
+              <p className="rounded-md bg-slate-50 dark:bg-slate-800/60 px-3 py-2 text-xs text-slate-500 dark:text-slate-400">
+                Your teacher sets your name. If it looks wrong, ask them to update
+                it for you.
+              </p>
+            </>
+          ) : (
           <form onSubmit={onSubmitName} className="space-y-3">
             <input
               type="text"
@@ -384,6 +404,7 @@ export function AccountSettings({
               </button>
             </div>
           </form>
+          )}
         </section>
 
         {/* Email */}

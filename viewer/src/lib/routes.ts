@@ -23,6 +23,14 @@ export const ROUTES = {
   PASSWORD_RESET: "/password-reset",
 
   // Student
+  // Student landing/home. The canonical student dashboard lives under a
+  // `/student` prefix (and, for teacher-managed students, `/student/:code`)
+  // so the address bar makes the role + personal code legible at a glance —
+  // even in a screenshot. `/` redirects here for a signed-in student. Only
+  // the landing carries the prefix; inner student surfaces keep their
+  // existing top-level paths to avoid a routing-wide rewrite.
+  STUDENT_HOME: "/student",
+  STUDENT_HOME_CODED: "/student/:code",
   PRACTICE: "/practice",
   // Student-facing paginated history of teacher feedback across every
   // graded / commented assignment attempt. Reached from the "View all"
@@ -240,6 +248,18 @@ export function courseSettingsPath(courseId: string): string {
 
 export function questionBankPath(): string {
   return ROUTES.QUESTION_BANK;
+}
+
+/**
+ * Student landing URL. When the student has a teacher-assigned personal code
+ * (managed accounts, e.g. "KQAZNP-01") it rides in the path so the role and
+ * the student's identity are obvious from the URL bar — handy for support and
+ * screenshots. Self-registered students (no code) fall back to the bare
+ * `/student`. The code is display-only; access is still enforced by auth/RLS,
+ * never by the URL.
+ */
+export function studentHomePath(code?: string | null): string {
+  return code ? `${ROUTES.STUDENT_HOME}/${encodeURIComponent(code)}` : ROUTES.STUDENT_HOME;
 }
 
 /**

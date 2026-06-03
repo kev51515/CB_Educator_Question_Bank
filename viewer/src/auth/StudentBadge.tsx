@@ -13,6 +13,18 @@ interface StudentBadgeProps {
   studentName: string;
   onSwitchArea: () => void;
   onSignOut: () => void;
+  /**
+   * Role label shown as a sub-line on the badge and in the menu header so the
+   * surface is unmistakably a student's — clear even from a screenshot.
+   * Optional for source-compat with non-student callers.
+   */
+  roleLabel?: string;
+  /**
+   * Teacher-assigned personal code (managed students, e.g. "KQAZNP-01"),
+   * appended after the role label for at-a-glance identification. Null/absent
+   * for self-registered students, who show only the role label.
+   */
+  personalCode?: string | null;
   /** When false, hides the "Switch area" menu item (e.g. for teachers). */
   showSwitchArea?: boolean;
   /**
@@ -28,6 +40,8 @@ export function StudentBadge({
   studentName,
   onSwitchArea,
   onSignOut,
+  roleLabel,
+  personalCode = null,
   showSwitchArea = true,
 }: StudentBadgeProps) {
   const navigate = useNavigate();
@@ -35,6 +49,12 @@ export function StudentBadge({
   const ref = useRef<HTMLDivElement | null>(null);
   const firstName = studentName.split(" ")[0] || studentName;
   const initial = (firstName[0] || "?").toUpperCase();
+  // "Student · KQAZNP-01" when a code exists; just "Student" otherwise.
+  const roleLine = roleLabel
+    ? personalCode
+      ? `${roleLabel} · ${personalCode}`
+      : roleLabel
+    : null;
 
   useEffect(() => {
     if (!open) return;
@@ -64,6 +84,11 @@ export function StudentBadge({
             <p className="font-medium text-slate-900 dark:text-slate-100 truncate">
               {studentName}
             </p>
+            {roleLine && (
+              <p className="mt-0.5 text-xs font-medium text-indigo-600 dark:text-indigo-400 truncate">
+                {roleLine}
+              </p>
+            )}
           </div>
           {showSwitchArea && (
             <button
@@ -118,14 +143,25 @@ export function StudentBadge({
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
-        aria-label={`Account menu for ${studentName}`}
+        aria-label={
+          roleLine
+            ? `Account menu for ${studentName} (${roleLine})`
+            : `Account menu for ${studentName}`
+        }
         className="flex items-center gap-2 rounded-full bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-lg ring-1 ring-slate-200 dark:ring-slate-700 pl-1 pr-3 py-1 hover:ring-indigo-400 dark:hover:ring-indigo-500 transition"
       >
         <span className="h-7 w-7 rounded-full bg-gradient-to-br from-indigo-500 to-violet-600 text-white grid place-items-center text-sm font-semibold">
           {initial}
         </span>
-        <span className="text-sm font-medium text-slate-700 dark:text-slate-200 max-w-[8rem] truncate">
-          {firstName}
+        <span className="flex flex-col items-start leading-tight max-w-[10rem]">
+          <span className="text-sm font-medium text-slate-700 dark:text-slate-200 truncate max-w-full">
+            {firstName}
+          </span>
+          {roleLine && (
+            <span className="text-[11px] font-medium text-indigo-600 dark:text-indigo-400 truncate max-w-full">
+              {roleLine}
+            </span>
+          )}
         </span>
       </button>
     </div>

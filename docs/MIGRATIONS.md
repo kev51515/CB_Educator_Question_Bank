@@ -136,8 +136,12 @@ silent, hard-to-diagnose bug (see the 0086 collision, June 2026).
 | 0089 | `assign_test_to_course` | One-click assign a full test to a course (Modules link). |
 | 0090 | `test_rpcs_course_scope` | Course-scope `release_test_results`/`allow_test_retake`/`reset_test_attempt` (renumbered from a duplicate 0086). |
 | 0091 | `release_test_results_multi_course` | Fix 0090: `release_test_results` used `SELECT … LIMIT 1` to find one course, which mispicked when a test slug is linked from multiple courses; switched to EXISTS pattern. |
+| 0092 | `fix_profiles_own_update_recursion` | Fix "infinite recursion detected in policy for relation profiles" on student/self rename. The 0001 `"profiles: own row update"` policy inlined `SELECT role FROM profiles` in WITH CHECK (self-reference); replaced with a `SECURITY DEFINER` `profile_role(uid)` helper. Latent since 0001; surfaced once roster + Account did direct client `.update()`s. |
+| 0093 | `lock_student_self_rename` | A student may not change their own `display_name` (teacher owns it). `BEFORE UPDATE` trigger `guard_student_self_rename` on profiles. |
+| 0094 | `student_rename_guard_rpc_exempt` | Fix 0093 (caught by smoke-e2e before shipping): the guard was SECURITY DEFINER and blocked `quick_start_with_code` onboarding. Switched to SECURITY INVOKER + `current_user IN ('authenticated','anon')` so only direct end-user PostgREST writes are blocked; RPCs / teacher-rename / service paths pass. |
 
 ---
 
-_Last updated: 2026-06-03 (through 0091). When you add a migration, append a row
-here and bump the "verified" line once `migration list` shows Local == Remote._
+_Last updated: 2026-06-03 (through 0094; 0092–0094 applied to Remote + full smoke
+green). When you add a migration, append a row here and bump the "verified" line
+once `migration list` shows Local == Remote._

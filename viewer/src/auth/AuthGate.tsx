@@ -71,7 +71,7 @@ import {
   TestReviewPage,
   TestOverviewPage,
 } from "../fulltest";
-import { testOverviewPath } from "../lib/routes";
+import { testOverviewPath, studentHomePath } from "../lib/routes";
 import { CalendarPage } from "../calendar";
 import { DashboardPage } from "../dashboard";
 import { InboxPage, ThreadView } from "../inbox";
@@ -245,7 +245,18 @@ function StudentRoutesTree({
         }
       />
       <Route element={<StudentShell />}>
-        <Route path={ROUTES.HOME} element={<AreaSelector />} />
+        {/* `/` redirects to the prefixed landing so the URL bar shows the
+            role (and the personal code, when the account has one). The
+            dashboard itself renders at /student and /student/:code; the
+            `:code` segment is display-only (auth/RLS enforce access). */}
+        <Route
+          path={ROUTES.HOME}
+          element={
+            <Navigate to={studentHomePath(account.profile.login_code)} replace />
+          }
+        />
+        <Route path={ROUTES.STUDENT_HOME} element={<AreaSelector />} />
+        <Route path={ROUTES.STUDENT_HOME_CODED} element={<AreaSelector />} />
         {/* Locked: free question bank + free mock test are off-limits to
             students. Redirect any lingering links/bookmarks back home. */}
         <Route path={ROUTES.PRACTICE} element={<Navigate to={ROUTES.HOME} replace />} />

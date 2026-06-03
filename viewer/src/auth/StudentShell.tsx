@@ -18,7 +18,7 @@
  */
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
-import { ROUTES } from "../lib/routes";
+import { ROUTES, studentHomePath } from "../lib/routes";
 import { StudentBadge } from "./StudentBadge";
 import { AccountUpgradeBanner } from "./AccountUpgradeBanner";
 import { useStudentSession } from "./session";
@@ -115,6 +115,19 @@ function isAccountRouteActive(pathname: string): boolean {
   );
 }
 
+/**
+ * The student dashboard now lives under `/student` (and `/student/:code` for
+ * managed accounts), with `/` redirecting there. Treat all three as "Home"
+ * for nav highlight so the rail/tab Home item stays lit on the landing.
+ */
+function isStudentHomeActive(pathname: string): boolean {
+  return (
+    pathname === "/" ||
+    pathname === ROUTES.STUDENT_HOME ||
+    pathname.startsWith(`${ROUTES.STUDENT_HOME}/`)
+  );
+}
+
 export function StudentShell() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -122,6 +135,11 @@ export function StudentShell() {
     useStudentSession();
   const { profile } = useProfile();
   const displayName = profile?.display_name ?? session?.name ?? "";
+  // Personal code (managed students) and the prefixed landing path. The code
+  // is display-only — it makes the role + student identity legible in the URL
+  // and the badge; access is enforced by auth/RLS.
+  const personalCode = profile?.login_code ?? null;
+  const homePath = studentHomePath(personalCode);
 
   const [paletteOpen, setPaletteOpen] = useState(false);
   const closePalette = useCallback(() => setPaletteOpen(false), []);
@@ -244,7 +262,13 @@ export function StudentShell() {
             </p>
           </div>
 
-          <NavLink to={ROUTES.HOME} end className={railLinkClass} title="Home">
+          <NavLink
+            to={homePath}
+            title="Home"
+            className={() =>
+              railLinkClass({ isActive: isStudentHomeActive(location.pathname) })
+            }
+          >
             <RailIcon>
               <svg
                 width={20}
@@ -380,9 +404,11 @@ export function StudentShell() {
       </div>
       <StudentBadge
         studentName={displayName}
+        roleLabel="Student"
+        personalCode={personalCode}
         onSwitchArea={() => {
           setArea(null);
-          navigate(ROUTES.HOME);
+          navigate(homePath);
         }}
         onSignOut={signOut}
         showSwitchArea
@@ -400,7 +426,7 @@ export function StudentShell() {
         onClose={closeHelp}
         userRole={profile?.role ?? null}
       />
-      <StudentMobileTabBar />
+      <StudentMobileTabBar homePath={homePath} />
     </>
   );
 }
@@ -421,9 +447,10 @@ interface TabSpec {
 
 const STUDENT_TABS: TabSpec[] = [
   {
-    to: ROUTES.HOME,
+    to: ROUTES.STUDENT_HOME,
     label: "Home",
-    match: (p) => p === "/" || p === "",
+    match: (p) =>
+      p === "/" || p === "" || p === ROUTES.STUDENT_HOME || p.startsWith(`${ROUTES.STUDENT_HOME}/`),
     icon: (
       <svg
         viewBox="0 0 24 24"
@@ -502,7 +529,7 @@ const STUDENT_TABS: TabSpec[] = [
   },
 ];
 
-function StudentMobileTabBar() {
+function StudentMobileTabBar({ homePath }: { homePath: string }) {
   const location = useLocation();
   const navigate = useNavigate();
   return (
@@ -512,11 +539,13 @@ function StudentMobileTabBar() {
     >
       {STUDENT_TABS.map((tab) => {
         const active = tab.match(location.pathname);
+        // Home routes to the (possibly code-prefixed) landing; others are static.
+        const to = tab.label === "Home" ? homePath : tab.to;
         return (
           <button
             key={tab.to}
             type="button"
-            onClick={() => navigate(tab.to)}
+            onClick={() => navigate(to)}
             aria-current={active ? "page" : undefined}
             aria-label={tab.label}
             className={
