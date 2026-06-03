@@ -289,18 +289,27 @@ function StudentRoutesTree({
 }
 
 /**
- * Staff entry for the shared `/test/:slug` Modules link. Teachers manage, they
- * don't sit the test — so the bare link redirects to the per-test overview.
- * The QA preview path (`?preview=1`) renders the runner instead. Once the
- * preview begins, FullTestApp rewrites the URL to a `/section/...` deep link,
- * which matches the sibling `/*` route, so the flag only needs to survive the
- * intro screen.
+ * Staff gate for the shared `/test/:slug/*` Modules link. Teachers manage, they
+ * don't sit the test — so the BARE link redirects to the per-test overview.
+ * The QA preview path (`?preview=1`) renders the runner instead.
+ *
+ * Crucially this gate lives on the SAME splat route as the runner, so when
+ * FullTestApp navigates the preview from the bare path to a `/section/...`
+ * deep link the element tree is unchanged and FullTestApp keeps its state —
+ * a separate exact route would unmount/remount it and bounce the preview back
+ * to the intro on every "Begin". The deep-link splat is non-empty once a
+ * preview is underway, which is how we tell "in progress" from "bare".
  */
-function StaffTestEntry() {
-  const { slug = "" } = useParams<{ slug: string }>();
-  const [params] = useSearchParams();
-  if (params.get("preview") === "1") return <FullTestApp />;
-  return <Navigate to={testOverviewPath(slug)} replace />;
+function StaffTestGate() {
+  const params = useParams();
+  const slug = params.slug ?? "";
+  const splat = params["*"] ?? "";
+  const [search] = useSearchParams();
+  const bare = splat === "";
+  if (bare && search.get("preview") !== "1") {
+    return <Navigate to={testOverviewPath(slug)} replace />;
+  }
+  return <FullTestApp />;
 }
 
 /**
@@ -309,16 +318,15 @@ function StaffTestEntry() {
 function StaffRoutesTree({ account }: { account: AccountContext }) {
   return (
     <Routes>
-      {/* When staff open a test (the shared Modules /test/<slug> link), they
-          land on the per-test OVERVIEW — info, cohort stats, student data —
-          not the runner. "Preview" (?preview=1) renders the runner instead.
-          The exact route ranks above the /* splat below, so only the bare
-          path branches; in-progress preview deep-links (…/section/n/q/m)
-          still hit FullTestApp. Students never reach here (separate tree). */}
-      <Route path={ROUTES.TEST_RUN} element={<StaffTestEntry />} />
-      {/* Staff full-test preview also renders OUTSIDE the shell — same
-          distraction-free takeover students get (no left rail behind it). */}
-      <Route path={`${ROUTES.TEST_RUN}/*`} element={<FullTestApp />} />
+      {/* When staff open a test (the shared Modules /test/<slug> link), the
+          BARE link redirects to the per-test OVERVIEW — info, cohort stats,
+          student data — while "Preview" (?preview=1) and in-progress preview
+          deep-links (…/section/n/q/m) render the runner. One splat route +
+          internal gate so the runner keeps its state across the
+          bare→deep-link transition (a separate exact route would remount it
+          and bounce every "Begin"). Students never reach here (separate
+          tree). Runner renders OUTSIDE the shell — distraction-free takeover. */}
+      <Route path={`${ROUTES.TEST_RUN}/*`} element={<StaffTestGate />} />
       <Route element={<StaffShell />}>
         <Route
           path={ROUTES.HOME}

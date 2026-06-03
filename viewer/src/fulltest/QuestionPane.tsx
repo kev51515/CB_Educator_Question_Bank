@@ -383,12 +383,16 @@ export function QuestionPane({
   // ── Runner mode ──────────────────────────────────────────────────────────
   if (fullHeight) {
     if (isRW && hasStimulus) {
+      // Below `md` (phones): ONE scroll container — the passage flows into the
+      // question so there's a single, natural scroll rather than two cramped
+      // stacked scroll panes. At `md`+ (tablets/desktop): the Bluebook
+      // two-column split with each pane scrolling independently.
       return (
-        <div className="grid h-full grid-cols-1 md:grid-cols-2 md:divide-x md:divide-slate-200 dark:md:divide-slate-800">
-          <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
+        <div className="h-full overflow-y-auto md:grid md:grid-cols-2 md:divide-x md:divide-slate-200 md:overflow-hidden dark:md:divide-slate-800">
+          <div className="border-b border-slate-200 px-6 py-7 md:h-full md:overflow-y-auto md:border-b-0 lg:px-10 dark:border-slate-800">
             <Stimulus question={question} highlights={highlights} onRemoveHighlight={onRemoveHighlight} />
           </div>
-          <div className="h-full overflow-y-auto px-6 py-7 lg:px-10">
+          <div className="px-6 py-7 md:h-full md:overflow-y-auto lg:px-10">
             <div className="mx-auto max-w-xl">{questionSide}</div>
           </div>
         </div>
