@@ -3,8 +3,8 @@
  * ==========
  * First screen unauthenticated users see — a two-pane editorial sign-in.
  * LEFT (lg+): an ink brand panel. RIGHT: the auth card with an Educator /
- * Student toggle, email+password sign-in, a "Create account" tab, a password
- * reset sub-mode, and a one-click student-demo card for testing.
+ * Student toggle, email+password sign-in, a "Create account" tab, and a
+ * password reset sub-mode.
  *
  * Purely presentational + form state; the actual auth calls come in as props
  * from `useStudentSession`.
@@ -18,10 +18,9 @@
  * user is created. If the redemption fails, session.signUp signs the user
  * out and returns an error — see session.ts for the full flow.
  *
- * NOTE: the educator demo credentials were intentionally removed from this
- * screen — that seed account maps to an admin and must never be surfaced
- * publicly. Only the throwaway student demo (read-only practice data) is
- * shown, and only when the Student role is selected.
+ * NOTE: no seed/demo credentials are surfaced on this screen — both the
+ * educator (admin) and student seed logins were intentionally removed so
+ * nothing is exposed publicly. Seed accounts live only in the seed scripts.
  *
  * Type: Fraunces (display serif) + Hanken Grotesk (UI) — loaded in index.html.
  */
@@ -45,24 +44,11 @@ interface AuthScreenProps {
   onSwitchToQuickStart: () => void;
 }
 
-/** Human labels for the role toggle / heading — decoupled from any demo data. */
+/** Human labels for the role toggle / heading. */
 const ROLE_LABELS: Record<SignInRole, string> = {
   student: "Student",
   educator: "Educator",
 };
-
-/**
- * The single seeded demo account we are willing to surface publicly: a
- * throwaway STUDENT (read-only practice data only). The educator/admin seed
- * account is deliberately NOT exposed here. This is an intentionally public
- * test credential; if this ever ships to real end-users, gate the card behind
- * `import.meta.env.DEV` or a `VITE_SHOW_DEMO_LOGINS` flag.
- */
-const DEMO_STUDENT = {
-  email: "demo-student1@example.com",
-  password: "demostudent123",
-  blurb: "Practice tests, question bank, and score history.",
-} as const;
 
 const SERIF = "'Fraunces', 'Iowan Old Style', Georgia, 'Times New Roman', serif";
 const SANS =
@@ -123,56 +109,6 @@ function Wordmark({ tone }: { tone: "light" | "dark" }) {
         PrepMasters
       </span>
     </div>
-  );
-}
-
-/** Icon button that copies `value` and flips to a check for ~1.4s. */
-function CopyButton({ value, label }: { value: string; label: string }) {
-  const [copied, setCopied] = useState(false);
-  const onCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(value);
-    } catch {
-      // Fallback for non-secure contexts / older browsers.
-      const ta = document.createElement("textarea");
-      ta.value = value;
-      ta.style.position = "fixed";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      try {
-        document.execCommand("copy");
-      } catch {
-        /* give up silently */
-      }
-      ta.remove();
-    }
-    setCopied(true);
-    window.setTimeout(() => setCopied(false), 1400);
-  };
-  return (
-    <button
-      type="button"
-      onClick={onCopy}
-      aria-label={copied ? `${label} copied` : `Copy ${label.toLowerCase()}`}
-      title={copied ? "Copied!" : `Copy ${label.toLowerCase()}`}
-      className={`grid h-8 w-8 shrink-0 place-items-center rounded-lg border transition focus:outline-none focus:ring-2 ${
-        copied
-          ? "border-emerald-300 bg-emerald-50 text-emerald-600 focus:ring-emerald-400/40 dark:border-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-400"
-          : "border-amber-300/70 bg-white/60 text-amber-700 hover:bg-white focus:ring-amber-500/30 dark:border-amber-500/30 dark:bg-white/5 dark:text-amber-400 dark:hover:bg-white/10"
-      }`}
-    >
-      {copied ? (
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <path d="M20 6 9 17l-5-5" />
-        </svg>
-      ) : (
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-          <rect x="9" y="9" width="11" height="11" rx="2" />
-          <path d="M5 15V5a2 2 0 0 1 2-2h10" />
-        </svg>
-      )}
-    </button>
   );
 }
 
@@ -255,24 +191,6 @@ export function AuthScreen({
       const { error: err } = await signInWithPassword(
         resolveLoginEmail(signInRole, signInEmail),
         signInPassword,
-      );
-      if (err) setError(cleanError(err));
-    } finally {
-      setBusy(false);
-    }
-  };
-
-  // One-click sign-in with the seeded student demo account (student role only).
-  const signInAsDemo = async () => {
-    setSignInEmail(DEMO_STUDENT.email);
-    setSignInPassword(DEMO_STUDENT.password);
-    setError(null);
-    setNotice(null);
-    setBusy(true);
-    try {
-      const { error: err } = await signInWithPassword(
-        DEMO_STUDENT.email,
-        DEMO_STUDENT.password,
       );
       if (err) setError(cleanError(err));
     } finally {
@@ -641,75 +559,6 @@ export function AuthScreen({
             </form>
           )}
 
-          {/* student demo card — student role only; educator seed is never shown */}
-          {tab === "signin" && signInMode === "password" && signInRole === "student" && (
-            <div className="relative mt-6">
-              {/* "or" divider above the demo inset */}
-              <div className="mb-4 flex items-center gap-3" aria-hidden>
-                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
-                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500">
-                  or explore
-                </span>
-                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
-              </div>
-
-              <div className="overflow-hidden rounded-2xl border border-amber-300/55 bg-gradient-to-br from-amber-50/90 via-amber-50/40 to-transparent shadow-[0_1px_0_rgba(255,255,255,0.6)_inset] dark:border-amber-500/20 dark:from-amber-500/[0.08] dark:via-amber-500/[0.03] dark:to-transparent">
-                <div className="flex items-center gap-2 px-4 pt-3.5">
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    className="text-amber-700 dark:text-amber-400"
-                    aria-hidden
-                  >
-                    <circle cx="7.5" cy="15.5" r="4.5" />
-                    <path d="M10.7 12.3 19 4M16 7l3 3M14 9l2.5 2.5" />
-                  </svg>
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-amber-700 dark:text-amber-400">
-                    Student demo · no signup
-                  </span>
-                </div>
-                <div className="mt-3 space-y-1.5 px-4">
-                  {(
-                    [
-                      ["Code", DEMO_STUDENT.email],
-                      ["Password", DEMO_STUDENT.password],
-                    ] as const
-                  ).map(([k, v]) => (
-                    <div
-                      key={k}
-                      className="flex items-center gap-2 rounded-lg bg-white/60 px-2.5 py-1.5 ring-1 ring-amber-300/40 dark:bg-white/[0.03] dark:ring-amber-500/15"
-                    >
-                      <span className="w-[64px] shrink-0 text-[12px] text-stone-500 dark:text-stone-400">
-                        {k}
-                      </span>
-                      <code className="min-w-0 flex-1 select-all truncate font-mono text-[13px] text-stone-800 dark:text-stone-200">
-                        {v}
-                      </code>
-                      <CopyButton value={v} label={k} />
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-2.5 px-4 text-[12px] leading-snug text-amber-700/80 dark:text-amber-400/70">
-                  {DEMO_STUDENT.blurb}
-                </p>
-                <div className="mt-3 px-3 pb-3">
-                  <button
-                    type="button"
-                    onClick={signInAsDemo}
-                    disabled={busy}
-                    className="w-full rounded-xl bg-amber-800 px-4 py-2.5 text-sm font-semibold text-amber-50 transition hover:bg-amber-900 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus:ring-4 focus:ring-amber-800/20 dark:bg-amber-400/90 dark:text-amber-950 dark:hover:bg-amber-300"
-                  >
-                    {busy ? "Signing in…" : "Sign in as demo student"}
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* password reset */}
           {tab === "signin" && signInMode === "reset" && (
