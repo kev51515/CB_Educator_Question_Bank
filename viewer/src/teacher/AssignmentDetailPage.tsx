@@ -265,12 +265,14 @@ export function AssignmentDetailPage() {
     return () => document.removeEventListener("mousedown", onDown);
   }, [menuOpen]);
 
-  const refresh = async (): Promise<void> => {
+  const refresh = async (isAlive: () => boolean = () => true): Promise<void> => {
     if (!assignmentId) {
+      if (!isAlive()) return; // guard: effect re-fired for a new assignmentId; drop stale writes
       setLoading(false);
       setError("Missing assignment id.");
       return;
     }
+    if (!isAlive()) return; // guard: bail before any state thrash if already superseded
     setLoading(true);
     setError(null);
     try {
@@ -289,6 +291,7 @@ export function AssignmentDetailPage() {
         .eq(lookupColumn, assignmentId)
         .maybeSingle();
 
+      if (!isAlive()) return; // guard: rapid nav superseded this fetch — discard response so the older row doesn't clobber the newer one
       if (queryError) {
         setError(queryError.message);
         return;
@@ -329,14 +332,19 @@ export function AssignmentDetailPage() {
         qbank_set_label: row.qbank_set_label,
       });
     } catch (err: unknown) {
+      if (!isAlive()) return; // guard: don't surface a stale error onto a freshly-mounted assignment
       setError(getErrorMessage(err, "Failed to load assignment."));
     } finally {
-      setLoading(false);
+      if (isAlive()) setLoading(false); // guard: only flip loading=false for the current run
     }
   };
 
   useEffect(() => {
-    void refresh();
+    let alive = true;
+    void refresh(() => alive);
+    return () => {
+      alive = false; // mark this run superseded so any in-flight awaits short-circuit before setState
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [assignmentId]);
 

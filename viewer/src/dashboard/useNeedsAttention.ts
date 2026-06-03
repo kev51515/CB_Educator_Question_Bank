@@ -226,6 +226,18 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
     new Map(),
   );
 
+  // Mount/teacherId guard: after a sign-out → sign-in-as-other (or a
+  // rapid teacherId prop change), in-flight awaits below could otherwise
+  // commit the previous teacher's rows into the new render. Lane B
+  // pattern from AssignmentRunner.
+  const aliveRef = useRef(true);
+  useEffect(() => {
+    aliveRef.current = true;
+    return () => {
+      aliveRef.current = false;
+    };
+  }, []);
+
   // Schedule a flash for a newly-arrived id. Idempotent — re-scheduling
   // before the previous timer fires just resets the clock.
   const scheduleFlash = useCallback(
@@ -295,6 +307,10 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
           .limit(50);
       }
 
+      // Mount-guard after both possible awaits: don't commit a previous
+      // teacher's attempts into a new render.
+      if (!aliveRef.current) return;
+
       if (res.error) {
         setErrorToGrade(res.error.message);
         setToGrade([]);
@@ -348,10 +364,11 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
       previousToGradeIdsRef.current = nextIds;
       setToGrade(mapped);
     } catch (err: unknown) {
+      if (!aliveRef.current) return;
       setErrorToGrade(getErrorMessage(err));
       setToGrade([]);
     } finally {
-      setLoadingToGrade(false);
+      if (aliveRef.current) setLoadingToGrade(false);
     }
   }, [teacherId, scheduleFlash]);
 
@@ -378,6 +395,9 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
         .order("due_at", { ascending: false })
         .limit(40);
 
+      // Mount-guard: bail out before any setState if this hook has
+      // unmounted or teacherId has flipped.
+      if (!aliveRef.current) return;
       if (res.error) {
         setErrorPastDue(res.error.message);
         setPastDue([]);
@@ -402,10 +422,11 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
       }
       setPastDue(mapped);
     } catch (err: unknown) {
+      if (!aliveRef.current) return;
       setErrorPastDue(getErrorMessage(err));
       setPastDue([]);
     } finally {
-      setLoadingPastDue(false);
+      if (aliveRef.current) setLoadingPastDue(false);
     }
   }, [teacherId]);
 
@@ -433,6 +454,9 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
         .order("created_at", { ascending: false })
         .limit(20);
 
+      // Mount-guard: previous-teacher replies must not land on the new
+      // render after a fast user flip.
+      if (!aliveRef.current) return;
       if (res.error) {
         setErrorReplies(res.error.message);
         setReplies([]);
@@ -480,10 +504,11 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
       previousReplyIdsRef.current = nextReplyIds;
       setReplies(mapped);
     } catch (err: unknown) {
+      if (!aliveRef.current) return;
       setErrorReplies(getErrorMessage(err));
       setReplies([]);
     } finally {
-      setLoadingReplies(false);
+      if (aliveRef.current) setLoadingReplies(false);
     }
   }, [teacherId, scheduleFlash]);
 
@@ -509,6 +534,18 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
   //
   // Reconnection: on SUBSCRIBED we refresh all sections so any events
   // missed during the gap are recovered.
+  //
+  // Refresh callbacks are read off refs so their identity churning
+  // (teacherId change, parent re-render, scheduleFlash recreation) does
+  // NOT tear down + recreate the channel. Channel teardown opens a
+  // subscription gap during which realtime events are silently dropped.
+  const refreshToGradeRef = useRef(refreshToGrade);
+  refreshToGradeRef.current = refreshToGrade;
+  const refreshRepliesRef = useRef(refreshReplies);
+  refreshRepliesRef.current = refreshReplies;
+  const refreshAllRef = useRef(refreshAll);
+  refreshAllRef.current = refreshAll;
+
   useEffect(() => {
     if (!teacherId) return;
     let toGradeTimer: ReturnType<typeof setTimeout> | null = null;
@@ -524,7 +561,9 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
           if (toGradeTimer) clearTimeout(toGradeTimer);
           toGradeTimer = setTimeout(() => {
             toGradeTimer = null;
-            void refreshToGrade();
+            // Read latest fetcher off the ref — channel stays alive
+            // across refresh callback identity flips.
+            void refreshToGradeRef.current();
           }, REALTIME_DEBOUNCE_MS);
         },
       )
@@ -535,7 +574,7 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
           if (repliesTimer) clearTimeout(repliesTimer);
           repliesTimer = setTimeout(() => {
             repliesTimer = null;
-            void refreshReplies();
+            void refreshRepliesRef.current();
           }, REALTIME_DEBOUNCE_MS);
         },
       )
@@ -543,7 +582,7 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
         // On (re)connect, full-refresh to recover events missed during the
         // gap. supabase-js auto-reconnects, so this fires after any drop.
         if (status === "SUBSCRIBED") {
-          void refreshAll();
+          void refreshAllRef.current();
         }
       });
 
@@ -555,7 +594,10 @@ export function useNeedsAttention(teacherId: string | null): UseNeedsAttention {
       flashTimersRef.current.clear();
       void supabase.removeChannel(channel);
     };
-  }, [teacherId, refreshToGrade, refreshReplies, refreshAll]);
+    // Depend ONLY on the stable channel-topic input (teacherId). Refresh
+    // fns are accessed via refs above so callback identity flips don't
+    // trigger a channel teardown → resubscribe gap.
+  }, [teacherId]);
 
   return {
     toGrade,

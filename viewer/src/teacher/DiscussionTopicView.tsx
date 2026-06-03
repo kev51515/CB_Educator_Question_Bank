@@ -645,6 +645,15 @@ export function DiscussionTopicView() {
   const [composeFocusKey, setComposeFocusKey] = useState(0);
   const composeRef = useRef<HTMLDivElement | null>(null);
 
+  // Tracks live-mount so async post-insert callbacks don't setState on a dead component.
+  const mountedRef = useRef<boolean>(true);
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+    };
+  }, []);
+
   // When the realtime subscription delivers a canonical row that matches one of
   // our optimistic placeholders (same author + body), drop the placeholder so
   // we don't briefly show duplicates.
@@ -833,7 +842,9 @@ export function DiscussionTopicView() {
       if (insErr) throw insErr;
       // Realtime in useTopicPosts will deliver the canonical row; clear
       // optimistic placeholder on the next refresh.
-      void refresh().then(() => {
+      // .finally so the ghost clears even if refresh() rejects (insert already landed); mountedRef guards against unmount-during-flight.
+      void refresh().finally(() => {
+        if (!mountedRef.current) return;
         setOptimisticPosts((prev) => prev.filter((p) => p.id !== tempId));
       });
       toast.success("Reply posted");

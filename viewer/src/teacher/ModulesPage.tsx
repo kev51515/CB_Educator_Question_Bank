@@ -290,12 +290,19 @@ function InlineRename({
 
   const commit = useCallback(async (): Promise<void> => {
     const trimmed = draft.trim();
-    setEditing(false);
     if (!trimmed || trimmed === value) {
+      setEditing(false);
       setDraft(value);
       return;
     }
-    await onSave(trimmed);
+    try {
+      await onSave(trimmed);
+      // Only close on success; throws keep the input open with the user's
+      // typed value so they can retry instead of losing it.
+      setEditing(false);
+    } catch {
+      // Keep editing=true; the parent handler already toasted.
+    }
   }, [draft, onSave, value]);
 
   if (editing) {

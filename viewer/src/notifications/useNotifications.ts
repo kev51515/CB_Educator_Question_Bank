@@ -6,7 +6,7 @@
  * channel filtered by `recipient_id`. Returns helpers to mark single or all
  * rows read.
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import { useToast } from "../components";
 import {
@@ -64,6 +64,17 @@ export function useNotifications(): UseNotificationsResult {
     };
   }, [userId]);
 
+  // Tracks whether the latest mount is still alive — guards against
+  // post-unmount setState landing on a new user's render after a fast
+  // sign-out → sign-in-as-other flip. Lane B pattern from AssignmentRunner.
+  const aliveRef = useRef(true);
+  useEffect(() => {
+    aliveRef.current = true;
+    return () => {
+      aliveRef.current = false;
+    };
+  }, []);
+
   const fetchNotifications = useCallback(async (uid: string): Promise<void> => {
     const { data, error } = await supabase
       .from("notifications")
@@ -71,41 +82,59 @@ export function useNotifications(): UseNotificationsResult {
       .eq("recipient_id", uid)
       .order("created_at", { ascending: false })
       .limit(50);
+    // Bail if the component (or this user session) is gone — stale rows
+    // must not land on a new render.
+    if (!aliveRef.current) return;
     if (error) {
+      // R4: don't swallow silently. Surface to console + toast so the
+      // bell going empty after sign-in flips is debuggable.
+      console.warn("[useNotifications] fetch failed", error);
+      toast.error("Couldn't load notifications");
       setNotifications([]);
       return;
     }
     setNotifications((data ?? []) as NotificationRow[]);
-  }, []);
+  }, [toast]);
 
   const refresh = useCallback(async (): Promise<void> => {
     if (!userId) return;
     setLoading(true);
     await fetchNotifications(userId);
+    // Same mount-guard: avoid flipping loading off on a dead component.
+    if (!aliveRef.current) return;
     setLoading(false);
   }, [userId, fetchNotifications]);
 
   // Resolve current user once.
   useEffect(() => {
-    let cancelled = false;
+    let alive = true;
     void (async () => {
       const { data } = await supabase.auth.getUser();
       const uid = data.user?.id ?? null;
-      if (cancelled) return;
+      // Local guard: identical to Lane B's pattern — abort if this
+      // mount has been torn down before auth resolved.
+      if (!alive) return;
       setUserId(uid);
       if (uid) {
         await fetchNotifications(uid);
       } else {
+        if (!alive) return;
         setNotifications([]);
       }
+      if (!alive) return;
       setLoading(false);
     })();
     return () => {
-      cancelled = true;
+      alive = false;
     };
   }, [fetchNotifications]);
 
   // Realtime subscription scoped to this recipient.
+  // `fetchNotifications` is intentionally NOT in deps — calling it via a
+  // ref keeps the channel alive across callback identity flips, so we
+  // don't open a temporary subscription gap on every re-render.
+  const fetchNotificationsRef = useRef(fetchNotifications);
+  fetchNotificationsRef.current = fetchNotifications;
   useEffect(() => {
     if (!userId) return;
     const channel = supabase
@@ -119,14 +148,16 @@ export function useNotifications(): UseNotificationsResult {
           filter: `recipient_id=eq.${userId}`,
         },
         () => {
-          void fetchNotifications(userId);
+          // Read latest fetcher off the ref so identity flips don't
+          // tear down the channel.
+          void fetchNotificationsRef.current(userId);
         },
       )
       .subscribe();
     return () => {
       void supabase.removeChannel(channel);
     };
-  }, [userId, fetchNotifications]);
+  }, [userId]);
 
   const markRead = useCallback(
     async (id: number): Promise<void> => {

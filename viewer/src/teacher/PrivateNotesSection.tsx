@@ -127,10 +127,13 @@ export function PrivateNotesSection({
   useEffect(() => {
     return () => {
       if (debounceTimerRef.current !== null) {
+        // Fire-and-forget flush of any unsaved draft before clearing the timer,
+        // so closing the profile modal mid-debounce doesn't drop the edit.
+        if (bodyHtml !== lastSavedRef.current) void persist(bodyHtml);
         window.clearTimeout(debounceTimerRef.current);
       }
     };
-  }, []);
+  }, [bodyHtml, persist]);
 
   const hasContent = lastSavedRef.current.length > 0 || bodyHtml.length > 0;
   const collapsedLabel = hasContent

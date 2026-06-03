@@ -6,7 +6,7 @@
  * without manual refresh. RLS on discussion_posts requires the caller be
  * enrolled in / staff for the topic's course (see migration 0025).
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { supabase } from "../lib/supabase";
 import type { DiscussionTopic } from "./useDiscussions";
 
@@ -72,14 +72,29 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
   const [error, setError] = useState<string | null>(null);
   const [notFound, setNotFound] = useState(false);
 
+  // Mount/topicId guard: a fast topicId change (or unmount) must not let
+  // a previous topic's response land on the current render. Lane B
+  // pattern from AssignmentRunner.
+  const aliveRef = useRef(true);
+  useEffect(() => {
+    aliveRef.current = true;
+    return () => {
+      aliveRef.current = false;
+    };
+  }, []);
+
   const refresh = useCallback(async (): Promise<void> => {
     if (!topicId) {
+      if (!aliveRef.current) return;
       setTopic(null);
       setPosts([]);
       setLoading(false);
       setNotFound(false);
       return;
     }
+    // Local cancel: if topicId flips mid-flight, the new invocation will
+    // own state — older awaits must early-return rather than overwrite.
+    const requestedTopicId = topicId;
     setLoading(true);
     setError(null);
     setNotFound(false);
@@ -87,16 +102,17 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
       // Detect URL slug format: 6-char A-Z0-9 short_code vs UUID. Lets
       // /courses/AB12CD/discussions/H7K9MN resolve via the new slug column
       // while keeping legacy UUID links functional.
-      const isShortCode = /^[A-Z0-9]{6}$/.test(topicId);
+      const isShortCode = /^[A-Z0-9]{6}$/.test(requestedTopicId);
       const topicReq = supabase
         .from("discussion_topics")
         .select(
           "id, short_code, course_id, author_id, title, body, pinned, locked, created_at, updated_at, author:profiles!discussion_topics_author_id_fkey(display_name, email)",
         )
-        .eq(isShortCode ? "short_code" : "id", topicId)
+        .eq(isShortCode ? "short_code" : "id", requestedTopicId)
         .maybeSingle();
 
       const topicRes = await topicReq;
+      if (!aliveRef.current) return;
       if (topicRes.error) {
         setError(topicRes.error.message);
         setTopic(null);
@@ -118,6 +134,8 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
         )
         .eq("topic_id", topicRow.id)
         .order("created_at", { ascending: true });
+      // Second await — re-check guard before any setState commits.
+      if (!aliveRef.current) return;
 
       setTopic({
         id: topicRow.id,
@@ -152,11 +170,12 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
         })),
       );
     } catch (err: unknown) {
+      if (!aliveRef.current) return;
       setError(getErrorMessage(err));
       setTopic(null);
       setPosts([]);
     } finally {
-      setLoading(false);
+      if (aliveRef.current) setLoading(false);
     }
   }, [topicId]);
 
@@ -168,6 +187,11 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
   // refresh. Channel is topic-scoped (by the resolved UUID, not the URL slug
   // since the slug may be a short_code which postgres_changes filter can't
   // resolve) to avoid cross-topic chatter.
+  // `refresh` is read via ref so re-mounts of the callback (topicId churn,
+  // parent re-renders) don't tear down + recreate the channel — that gap
+  // is exactly when realtime events go missing.
+  const refreshRef = useRef(refresh);
+  refreshRef.current = refresh;
   const topicUuid = topic?.id ?? null;
   useEffect(() => {
     if (!topicUuid) return;
@@ -182,7 +206,7 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
           filter: `topic_id=eq.${topicUuid}`,
         },
         () => {
-          void refresh();
+          void refreshRef.current();
         },
       )
       .subscribe();
@@ -190,7 +214,7 @@ export function useTopicPosts(topicId: string | null): UseTopicPosts {
     return () => {
       void supabase.removeChannel(channel);
     };
-  }, [topicUuid, refresh]);
+  }, [topicUuid]);
 
   return { topic, posts, loading, error, notFound, refresh };
 }

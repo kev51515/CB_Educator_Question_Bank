@@ -18,7 +18,7 @@
  * All mutations are optimistic via useOptimistic — UI flips instantly, then
  * reconciles against the server. Failures toast + rollback.
  */
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useState, useTransition, type ReactNode } from "react";
 import { useNavigate } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { useToast, MarkdownEditor, useOptimistic } from "@/components";
@@ -70,6 +70,12 @@ export function CourseSettings() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [deleteConfirmText, setDeleteConfirmText] = useState("");
   const [actionBusy, setActionBusy] = useState(false);
+
+  // In-flight gates for the optimistic badge toggles. Rapid double-clicks
+  // would otherwise fire two writes to `courses`; if the second commit lands
+  // first, the first commit's rollback resets the badge to the wrong state.
+  const [archiveToggling, startArchiveToggle] = useTransition();
+  const [templateToggling, startTemplateToggle] = useTransition();
 
   // ---------- mutations ----------
 
@@ -388,11 +394,14 @@ export function CourseSettings() {
         >
           <button
             type="button"
-            onClick={() => void toggleArchived()}
+            // Gate on in-flight transition so a double-click can't race two
+            // writes and leave the badge stuck on the wrong value.
+            disabled={archiveToggling}
+            onClick={() => startArchiveToggle(() => { void toggleArchived(); })}
             aria-label={
               optimisticArchived ? "Reactivate course" : "Archive course"
             }
-            className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ring-1 transition-colors ${
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wide ring-1 transition-colors disabled:opacity-60 disabled:cursor-not-allowed ${
               optimisticArchived
                 ? "bg-amber-100 dark:bg-amber-950/50 text-amber-800 dark:text-amber-200 ring-amber-200 dark:ring-amber-900 hover:bg-amber-200 dark:hover:bg-amber-900/60"
                 : "bg-emerald-100 dark:bg-emerald-950/50 text-emerald-800 dark:text-emerald-200 ring-emerald-200 dark:ring-emerald-900 hover:bg-emerald-200 dark:hover:bg-emerald-900/60"
@@ -420,8 +429,11 @@ export function CourseSettings() {
             <input
               type="checkbox"
               checked={optimisticTemplate}
-              onChange={() => void toggleTemplate()}
-              className="mt-0.5 h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500"
+              // Same race guard as the archive toggle above — block re-entry
+              // while the previous commit is still in flight.
+              disabled={templateToggling}
+              onChange={() => startTemplateToggle(() => { void toggleTemplate(); })}
+              className="mt-0.5 h-4 w-4 rounded border-slate-300 dark:border-slate-600 text-indigo-600 focus:ring-indigo-500 disabled:opacity-60 disabled:cursor-not-allowed"
             />
             <span className="text-sm text-slate-700 dark:text-slate-200">
               <span className="font-medium">Use as template</span>
