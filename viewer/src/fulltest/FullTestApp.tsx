@@ -26,6 +26,7 @@ import {
   clearCachedAnswers,
   getModule,
   getResult,
+  heartbeat,
   loadCachedAnswers,
   saveCachedAnswers,
   saveProgress,
@@ -358,6 +359,20 @@ export function FullTestApp() {
   }, [runId, moduleMeta, answers, eliminated, marked, questions, annot]);
   const saveDraftRef = useRef(saveDraftNow);
   saveDraftRef.current = saveDraftNow;
+
+  // Proctoring heartbeat: tell the server which question we're on, on every
+  // navigation and every 15s (so a teacher's live monitor stays current and
+  // can spot an idle student). Best-effort.
+  useEffect(() => {
+    if (phase !== "module" || !runId) return;
+    const send = () => {
+      const n = questions[index]?.number;
+      if (n != null) void heartbeat(runId, n);
+    };
+    send();
+    const id = window.setInterval(send, 15000);
+    return () => window.clearInterval(id);
+  }, [index, phase, runId, questions]);
 
   // Belt-and-braces: flush a draft every 3 question navigations.
   const navCountRef = useRef(0);

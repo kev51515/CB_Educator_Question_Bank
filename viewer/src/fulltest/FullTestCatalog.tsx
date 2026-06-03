@@ -15,12 +15,14 @@ import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
 import { testRunPath, testReviewPath } from "../lib/routes";
 import { TestCompletionModal } from "./TestCompletionModal";
+import { TestMonitorModal } from "./TestMonitorModal";
 import type { TestCatalogEntry } from "./types";
 
 export function FullTestCatalog() {
   const [tests, setTests] = useState<TestCatalogEntry[]>([]);
   const [loading, setLoading] = useState(true);
   const [resultsFor, setResultsFor] = useState<TestCatalogEntry | null>(null);
+  const [monitorFor, setMonitorFor] = useState<TestCatalogEntry | null>(null);
 
   useEffect(() => {
     let alive = true;
@@ -106,6 +108,17 @@ export function FullTestCatalog() {
               </Link>
               <button
                 type="button"
+                onClick={() => setMonitorFor(t)}
+                className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-300 px-3.5 py-2 text-sm font-semibold text-emerald-700 transition hover:bg-emerald-50 dark:border-emerald-800 dark:text-emerald-300 dark:hover:bg-emerald-950/30"
+              >
+                <span className="relative flex h-2 w-2" aria-hidden>
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+                </span>
+                Monitor
+              </button>
+              <button
+                type="button"
                 onClick={() => setResultsFor(t)}
                 className="rounded-lg border border-slate-300 px-3.5 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-600 dark:text-slate-200 dark:hover:bg-slate-800"
               >
@@ -121,6 +134,13 @@ export function FullTestCatalog() {
           slug={resultsFor.slug}
           title={resultsFor.title}
           onClose={() => setResultsFor(null)}
+        />
+      )}
+      {monitorFor && (
+        <TestMonitorModal
+          slug={monitorFor.slug}
+          title={monitorFor.title}
+          onClose={() => setMonitorFor(null)}
         />
       )}
     </div>

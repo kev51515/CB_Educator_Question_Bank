@@ -118,6 +118,19 @@ export async function saveProgress(
   }
 }
 
+/**
+ * Best-effort proctoring heartbeat — tells the server which question the
+ * student is viewing (+ that they're alive). Swallows all errors: telemetry
+ * must never disrupt the test.
+ */
+export async function heartbeat(runId: string, questionNumber: number): Promise<void> {
+  try {
+    await supabase.rpc("test_heartbeat", { p_run_id: runId, p_question: questionNumber });
+  } catch {
+    /* non-fatal */
+  }
+}
+
 export async function getResult(runId: string): Promise<TestResult> {
   const { data, error } = await supabase.rpc("get_test_result", {
     p_run_id: runId,
