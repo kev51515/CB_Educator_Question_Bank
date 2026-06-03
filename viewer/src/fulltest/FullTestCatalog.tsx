@@ -13,7 +13,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { supabase } from "../lib/supabase";
-import { testRunPath, testReviewPath } from "../lib/routes";
+import { testRunPath, testReviewPath, testOverviewPath } from "../lib/routes";
 import { TestCompletionModal } from "./TestCompletionModal";
 import { TestMonitorModal } from "./TestMonitorModal";
 import { AssignTestModal } from "./AssignTestModal";
@@ -88,7 +88,12 @@ export function FullTestCatalog() {
                   Full-length test
                 </span>
                 <h3 className="mt-2 truncate text-base font-semibold text-slate-900 dark:text-slate-100">
-                  {t.title}
+                  <Link
+                    to={testOverviewPath(t.slug)}
+                    className="rounded transition hover:text-indigo-700 dark:hover:text-indigo-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
+                  >
+                    {t.title}
+                  </Link>
                 </h3>
               </div>
             </div>

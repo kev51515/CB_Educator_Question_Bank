@@ -40,6 +40,9 @@ export const ROUTES = {
   TEST_RUN: "/test/:slug",
   // Staff: full-test catalog + per-test QA/answer-key review.
   TESTS_ADMIN: "/tests",
+  // Staff: per-test overview — info, cohort stats, per-student data. This is
+  // where a teacher lands when they open a test (students go to TEST_RUN).
+  TEST_OVERVIEW: "/tests/:slug",
   TEST_REVIEW: "/tests/:slug/review",
   QUESTION_BANK: "/question-bank",
   QBANK_LOG: "/qbank-submissions",
@@ -131,6 +134,16 @@ export function buildPath(
 
 export function testRunPath(slug: string): string {
   return buildPath(ROUTES.TEST_RUN, { slug });
+}
+
+/** Staff preview of the runner — `?preview=1` so the staff entry renders the
+ *  runner instead of bouncing to the overview. */
+export function testPreviewPath(slug: string): string {
+  return `${buildPath(ROUTES.TEST_RUN, { slug })}?preview=1`;
+}
+
+export function testOverviewPath(slug: string): string {
+  return buildPath(ROUTES.TEST_OVERVIEW, { slug });
 }
 
 export function testReviewPath(slug: string): string {

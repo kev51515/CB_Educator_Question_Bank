@@ -41,7 +41,14 @@
  */
 import { useCallback, useEffect, useState, type ReactNode } from "react";
 import { CommandPalette } from "../components/CommandPalette";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import {
+  Navigate,
+  Route,
+  Routes,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import { useStudentSession } from "./session";
 import { useProfile } from "../lib/profile";
 import { AuthScreen } from "./AuthScreen";
@@ -58,7 +65,13 @@ import {
   StudentTestRunGuard,
 } from "./routeViews";
 import { AllClassesView } from "../admin";
-import { FullTestApp, TestsAdminPage, TestReviewPage } from "../fulltest";
+import {
+  FullTestApp,
+  TestsAdminPage,
+  TestReviewPage,
+  TestOverviewPage,
+} from "../fulltest";
+import { testOverviewPath } from "../lib/routes";
 import { CalendarPage } from "../calendar";
 import { DashboardPage } from "../dashboard";
 import { InboxPage, ThreadView } from "../inbox";
@@ -276,11 +289,33 @@ function StudentRoutesTree({
 }
 
 /**
+ * Staff entry for the shared `/test/:slug` Modules link. Teachers manage, they
+ * don't sit the test — so the bare link redirects to the per-test overview.
+ * The QA preview path (`?preview=1`) renders the runner instead. Once the
+ * preview begins, FullTestApp rewrites the URL to a `/section/...` deep link,
+ * which matches the sibling `/*` route, so the flag only needs to survive the
+ * intro screen.
+ */
+function StaffTestEntry() {
+  const { slug = "" } = useParams<{ slug: string }>();
+  const [params] = useSearchParams();
+  if (params.get("preview") === "1") return <FullTestApp />;
+  return <Navigate to={testOverviewPath(slug)} replace />;
+}
+
+/**
  * Authenticated routes for staff (teacher / admin).
  */
 function StaffRoutesTree({ account }: { account: AccountContext }) {
   return (
     <Routes>
+      {/* When staff open a test (the shared Modules /test/<slug> link), they
+          land on the per-test OVERVIEW — info, cohort stats, student data —
+          not the runner. "Preview" (?preview=1) renders the runner instead.
+          The exact route ranks above the /* splat below, so only the bare
+          path branches; in-progress preview deep-links (…/section/n/q/m)
+          still hit FullTestApp. Students never reach here (separate tree). */}
+      <Route path={ROUTES.TEST_RUN} element={<StaffTestEntry />} />
       {/* Staff full-test preview also renders OUTSIDE the shell — same
           distraction-free takeover students get (no left rail behind it). */}
       <Route path={`${ROUTES.TEST_RUN}/*`} element={<FullTestApp />} />
@@ -295,6 +330,7 @@ function StaffRoutesTree({ account }: { account: AccountContext }) {
         <Route path={ROUTES.QUESTION_BANK} element={<QuestionBankPage />} />
         <Route path={ROUTES.QBANK_LOG} element={<QBankSubmissionLogPage />} />
         <Route path={ROUTES.TESTS_ADMIN} element={<TestsAdminPage />} />
+        <Route path={ROUTES.TEST_OVERVIEW} element={<TestOverviewPage />} />
         <Route path={ROUTES.TEST_REVIEW} element={<TestReviewPage />} />
         {/* Per-student profile inside a course. Registered BEFORE the
             ClassLayout wildcard below so React Router matches the more
