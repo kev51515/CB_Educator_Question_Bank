@@ -1166,3 +1166,21 @@ Migrations 0067–0080 (mine; all live + verified). Server primitives:
 `release_test_results_for_teacher`), `list_test_runs_for_student`, `list_my_test_runs`,
 `test_roster_status`, `tests_awaiting_release`; results gated on
 `test_runs.results_released_at`; release fires a `test_result` notification.
+
+### Follow-on (same session, 0081–0086)
+
+- **One-attempt tests** with a teacher retake override (`allow_test_retake`) and
+  a **reset stuck attempt** action (`reset_test_attempt`); staff preview exempt.
+- **Released results** now viewable by the student at `/test/:slug` (not just the
+  home panel); per-test **completion** shows taken / in-progress / not-started.
+- **Section timing** surfaced in the review (`module_timing`).
+- Runner study tools: **"Save & exit"**, **range-based highlighting** (exact
+  selection, click-to-remove — fixed from text-match), **per-question notes**,
+  and **Mark for Review** — all now **persisted with the attempt** (server-side)
+  so they survive exit/resume and follow the student across devices, alongside
+  draft-save hardening (flush every 3 questions + on exit).
+- Edge fixes: `admin_create_student` skips taken roster codes; Esc-to-close on
+  the new modals.
+
+Full reference: **docs/CONTROLLED_TESTS.md** (surfaces, RPCs, migration ledger
+0067–0086).
