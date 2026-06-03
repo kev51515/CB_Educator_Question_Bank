@@ -273,8 +273,6 @@ export function AuthScreen({
   const labelCls = "block text-[13px] font-medium text-stone-600 dark:text-stone-300";
   const primaryBtn =
     "w-full rounded-xl bg-stone-900 px-4 py-3 text-sm font-semibold tracking-tight text-stone-50 shadow-sm transition hover:bg-stone-800 active:translate-y-px disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus:ring-4 focus:ring-stone-900/15 dark:bg-stone-100 dark:text-stone-900 dark:hover:bg-white dark:focus:ring-white/20";
-  const linkBtn =
-    "font-semibold text-stone-900 underline decoration-stone-300 decoration-1 underline-offset-[3px] transition hover:decoration-stone-900 focus:outline-none focus:ring-2 focus:ring-stone-900/30 rounded dark:text-stone-100 dark:decoration-stone-600 dark:hover:decoration-stone-200";
   const tabCls = (active: boolean) =>
     `-mb-px border-b-2 pb-2.5 text-sm font-medium transition-colors focus:outline-none ${
       active
@@ -517,8 +515,8 @@ export function AuthScreen({
                 />
                 {signInRole === "student" && (
                   <span className="mt-1 block text-xs text-stone-500 dark:text-stone-400">
-                    The code your teacher gave you. (You can also use an email if
-                    you signed up with one.)
+                    The login code your teacher gave you (e.g. ABCDEF-04).
+                    Scanned a QR? It fills this in automatically.
                   </span>
                 )}
               </label>
@@ -678,14 +676,78 @@ export function AuthScreen({
             </form>
           )}
 
-          {/* footer links */}
-          <div className="mt-8 space-y-2 border-t border-stone-200 pt-5 text-center dark:border-white/10">
-            <p className="text-sm text-stone-500 dark:text-stone-400">
-              Have a class code?{" "}
-              <button type="button" onClick={onSwitchToQuickStart} className={linkBtn}>
-                Quick start
+          {/* prominent alternative entry — class / QR code, no password needed.
+              Hidden only during password-reset so it never competes with that
+              focused flow. */}
+          {!(tab === "signin" && signInMode === "reset") && (
+            <div className="mt-6">
+              <div className="mb-4 flex items-center gap-3" aria-hidden>
+                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
+                <span className="text-[11px] font-medium uppercase tracking-[0.18em] text-stone-400 dark:text-stone-500">
+                  or
+                </span>
+                <span className="h-px flex-1 bg-stone-200 dark:bg-white/10" />
+              </div>
+              <button
+                type="button"
+                onClick={onSwitchToQuickStart}
+                className="group flex w-full items-center gap-3.5 rounded-2xl border border-stone-300/80 bg-white/60 px-4 py-3.5 text-left shadow-sm transition hover:border-stone-900/30 hover:bg-white focus:outline-none focus:ring-4 focus:ring-stone-900/[0.06] dark:border-white/10 dark:bg-white/[0.04] dark:hover:border-white/30 dark:hover:bg-white/[0.07]"
+              >
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-stone-900 text-stone-50 dark:bg-stone-100 dark:text-stone-900">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    aria-hidden
+                  >
+                    <rect width="5" height="5" x="3" y="3" rx="1" />
+                    <rect width="5" height="5" x="16" y="3" rx="1" />
+                    <rect width="5" height="5" x="3" y="16" rx="1" />
+                    <path d="M21 16h-3a2 2 0 0 0-2 2v3" />
+                    <path d="M21 21v.01" />
+                    <path d="M12 7v3a2 2 0 0 1-2 2H7" />
+                    <path d="M3 12h.01" />
+                    <path d="M12 3h.01" />
+                    <path d="M12 16v.01" />
+                    <path d="M16 12h1" />
+                    <path d="M21 12v.01" />
+                    <path d="M12 21v-1" />
+                  </svg>
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-semibold text-stone-900 dark:text-stone-100">
+                    Join with a class code
+                  </span>
+                  <span className="mt-0.5 block text-xs leading-snug text-stone-500 dark:text-stone-400">
+                    Got a code or QR from your teacher? Start here — no password
+                    needed.
+                  </span>
+                </span>
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="shrink-0 text-stone-400 transition group-hover:translate-x-0.5 group-hover:text-stone-700 dark:text-stone-500 dark:group-hover:text-stone-200"
+                  aria-hidden
+                >
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
               </button>
-            </p>
+            </div>
+          )}
+
+          {/* footer links */}
+          <div className="mt-8 border-t border-stone-200 pt-5 text-center dark:border-white/10">
             <p className="text-xs text-stone-400 dark:text-stone-500">
               Trouble signing in? Ask your teacher for help.
             </p>
