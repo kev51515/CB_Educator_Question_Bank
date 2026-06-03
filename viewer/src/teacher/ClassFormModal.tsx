@@ -370,8 +370,6 @@ export function ClassFormModal({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  if (!open && !templateSource) return null;
-
   const handleClose = () => {
     if (mode === "create" && hasDirtyDraft && !created) {
       // Don't bail out yet — confirm.
@@ -417,6 +415,10 @@ export function ClassFormModal({
     // Description lives inside MarkdownEditor — no direct ref. Best-effort:
     // the only other validatable field. No-op if MarkdownEditor unavailable.
   }, [name]);
+
+  // Closed-and-no-template → render nothing. Kept BELOW every hook so the hook
+  // order is identical whether the modal is open or closed (rules-of-hooks).
+  if (!open && !templateSource) return null;
 
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

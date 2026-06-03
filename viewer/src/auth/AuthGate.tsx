@@ -422,10 +422,18 @@ export function AuthGate({ children }: AuthGateProps) {
   // E2E test bypass: when the dev server is launched by Playwright with
   // VITE_E2E_BYPASS_AUTH=1, render the bank directly so tests don't have
   // to spin up a real Supabase session. Never set in production builds.
+  //
+  // This guard lives in a hook-free wrapper that delegates to AuthGateImpl.
+  // Keeping it out of the component that owns the auth hooks means the bypass
+  // path never changes the hook order of the real gate (rules-of-hooks) — and
+  // the heavy useStudentSession/useProfile hooks don't run at all under bypass.
   if (import.meta.env.VITE_E2E_BYPASS_AUTH === "1") {
     return <E2EBypassShell>{children}</E2EBypassShell>;
   }
+  return <AuthGateImpl />;
+}
 
+function AuthGateImpl() {
   const {
     session,
     loading,

@@ -512,54 +512,24 @@ export function TeacherAttemptDetailView({
     navigateToSibling,
   ]);
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-6">
-        <div className="mx-auto max-w-5xl">
-          <SkeletonRows count={3} />
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-4">
-        <div className="max-w-md w-full rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-4 text-center">
-          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
-            Couldn't load this attempt
-          </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400">
-            {error ?? "Attempt not found."}
-          </p>
-          <button
-            type="button"
-            onClick={onBack}
-            className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
-          >
-            Back
-          </button>
-        </div>
-      </div>
-    );
-  }
-
-  const hasResult = data.result !== null;
-  const cbCount = data.questions.filter((q) => q.source === "cb").length;
-  const satCount = data.questions.filter((q) => q.source === "sat").length;
-
   // ---------------------------------------------------------------------------
   // Per-question status + skill tallies, derived from the snapshot (no extra
   // SELECTs). For each snapshot question we look up the student's answer in
   // `data.answers` (keyed by question id) and classify it as correct / wrong /
   // skipped. We use that classification for both the per-question detail
   // table AND the skill breakdown so the two sections always agree.
+  //
+  // These useMemos sit ABOVE the loading/error early returns and read `data`
+  // null-safely. The hook order MUST stay constant between renders — when they
+  // lived below the guards, a loading/empty render skipped them and React threw
+  // "Rendered fewer hooks than expected."
   // ---------------------------------------------------------------------------
   type AnswerStatus = "correct" | "wrong" | "skipped";
 
   const perQuestionRows = useMemo(() => {
-    return data.questions.map((q, index) => {
-      const chosen = data.answers[q.id] ?? null;
+    const answers = data?.answers ?? {};
+    return (data?.questions ?? []).map((q, index) => {
+      const chosen = answers[q.id] ?? null;
       let status: AnswerStatus;
       if (chosen === null) status = "skipped";
       else if (chosen === q.correctAnswer) status = "correct";
@@ -574,7 +544,7 @@ export function TeacherAttemptDetailView({
         domain: q.domain,
       };
     });
-  }, [data.questions, data.answers]);
+  }, [data?.questions, data?.answers]);
 
   const skillTallies = useMemo(() => {
     // Group by skill (falling back to domain) → {correct, wrong, skipped, total}.
@@ -613,18 +583,54 @@ export function TeacherAttemptDetailView({
   // section. In practice CB questions always have a domain, so this rarely
   // fires; mostly it's a guard against future drift.
   const hasSkillData = useMemo(
-    () => data.questions.some((q) => (q.skill ?? q.domain) !== undefined),
-    [data.questions],
+    () => (data?.questions ?? []).some((q) => (q.skill ?? q.domain) !== undefined),
+    [data?.questions],
   );
 
   // Avg time per question — only meaningful when both numerator and
   // denominator are defined and the test isn't empty.
   const avgSecondsPerQuestion = useMemo(() => {
-    const dur = data.durationSeconds ?? data.result?.durationSeconds ?? null;
-    const total = data.totalQuestions ?? data.result?.totalQuestions ?? null;
+    const dur = data?.durationSeconds ?? data?.result?.durationSeconds ?? null;
+    const total = data?.totalQuestions ?? data?.result?.totalQuestions ?? null;
     if (dur === null || total === null || total <= 0) return null;
     return dur / total;
-  }, [data.durationSeconds, data.totalQuestions, data.result]);
+  }, [data?.durationSeconds, data?.totalQuestions, data?.result]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-50 dark:bg-slate-950 px-4 py-6">
+        <div className="mx-auto max-w-5xl">
+          <SkeletonRows count={3} />
+        </div>
+      </div>
+    );
+  }
+
+  if (error || !data) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50 dark:bg-slate-950 px-4">
+        <div className="max-w-md w-full rounded-2xl bg-white dark:bg-slate-900 ring-1 ring-slate-200 dark:ring-slate-800 p-6 space-y-4 text-center">
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-slate-100">
+            Couldn't load this attempt
+          </h2>
+          <p className="text-sm text-slate-600 dark:text-slate-400">
+            {error ?? "Attempt not found."}
+          </p>
+          <button
+            type="button"
+            onClick={onBack}
+            className="rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-4 py-2 min-h-[40px]"
+          >
+            Back
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const hasResult = data.result !== null;
+  const cbCount = data.questions.filter((q) => q.source === "cb").length;
+  const satCount = data.questions.filter((q) => q.source === "sat").length;
 
   const studentLabel =
     data.studentDisplayName ?? data.studentEmail ?? "Unknown student";

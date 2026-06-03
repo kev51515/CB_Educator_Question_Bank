@@ -144,15 +144,6 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
   const anyLoading = loadingToGrade || loadingPastDue || loadingReplies;
   const anyError = !!(errorToGrade || errorPastDue || errorReplies);
 
-  // All-empty AND not loading AND no error → render nothing. Applies to the
-  // unfiltered total: if the teacher has nothing across all courses, we
-  // shouldn't render a wasted card. If she filtered to a course with
-  // nothing, we DO render — she explicitly asked for that course and
-  // deserves to see the empty state per section.
-  if (!anyLoading && !anyError && unfilteredTotalCount === 0) {
-    return null;
-  }
-
   const toggle = (key: keyof CollapseState) => () =>
     setCollapse((s) => ({ ...s, [key]: !s[key] }));
 
@@ -177,6 +168,19 @@ export function NeedsAttentionPanel({ teacherId }: NeedsAttentionPanelProps) {
     () => filteredReplies.slice(0, MAX_PER_SECTION),
     [filteredReplies],
   );
+
+  // All-empty AND not loading AND no error → render nothing. Applies to the
+  // unfiltered total: if the teacher has nothing across all courses, we
+  // shouldn't render a wasted card. If she filtered to a course with nothing,
+  // we DO render — she explicitly asked for that course and deserves to see
+  // the empty state per section.
+  //
+  // IMPORTANT: this early return MUST stay below every hook call (the three
+  // useMemos + useCallback above). When it sat higher, an empty dashboard
+  // skipped those hooks and React threw "Rendered fewer hooks than expected".
+  if (!anyLoading && !anyError && unfilteredTotalCount === 0) {
+    return null;
+  }
 
   return (
     <section
