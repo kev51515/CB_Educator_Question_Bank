@@ -31,6 +31,7 @@ import { AddStudentModal } from "./AddStudentModal";
 import { ResetStudentPasswordModal } from "./ResetStudentPasswordModal";
 import { PrintLoginsModal, type PrintableLogin } from "./PrintLoginsModal";
 import { SeatClaimRequestsPanel } from "./SeatClaimRequestsPanel";
+import { CodeActivityPanel } from "./CodeActivityPanel";
 import { SkeletonRows } from "../components/Skeleton";
 import { EmptyState } from "../components/EmptyState";
 import { useToast } from "../components/Toast";
@@ -558,18 +559,15 @@ export function ClassRoster() {
   // self-joined with the shared class code. `claimed_at` marks a seat whose
   // owner has actually activated their personal code.
   const codeStats = useMemo(() => {
-    let joinedViaCode = 0;
     let seats = 0;
     let activatedSeats = 0;
     for (const r of roster) {
       if (r.roster_code) {
         seats += 1;
         if (r.claimed_at) activatedSeats += 1;
-      } else {
-        joinedViaCode += 1;
       }
     }
-    return { joinedViaCode, seats, activatedSeats };
+    return { seats, activatedSeats };
   }, [roster]);
 
   return (
@@ -579,45 +577,12 @@ export function ClassRoster() {
         className="rounded-2xl bg-white/80 dark:bg-slate-900/60 ring-1 ring-slate-200 dark:ring-slate-800 overflow-hidden"
       >
         <header className="px-6 py-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
-          <div className="min-w-0">
-            <h2
-              id="roster-title"
-              className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
-            >
-              Roster
-            </h2>
-            <p className="mt-1 flex flex-wrap items-center gap-x-1.5 gap-y-0.5 text-xs text-slate-500 dark:text-slate-400">
-              <span>Class code</span>
-              <button
-                type="button"
-                onClick={() => void onCopyCourseCode()}
-                title="Copy class code"
-                className="inline-flex items-center rounded bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 font-mono text-[11px] font-semibold text-slate-700 dark:text-slate-200 ring-1 ring-slate-200 dark:ring-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
-              >
-                {cls.short_code}
-              </button>
-              <span aria-hidden>·</span>
-              {codeStats.joinedViaCode > 0 ? (
-                <span className="font-medium text-emerald-700 dark:text-emerald-400">
-                  used {codeStats.joinedViaCode}×{" "}
-                  <span className="font-normal text-slate-500 dark:text-slate-400">
-                    ({codeStats.joinedViaCode} joined with it)
-                  </span>
-                </span>
-              ) : (
-                <span className="text-slate-400 dark:text-slate-500">not used yet</span>
-              )}
-              {codeStats.seats > 0 && (
-                <>
-                  <span aria-hidden>·</span>
-                  <span>
-                    {codeStats.activatedSeats}/{codeStats.seats} student codes
-                    activated
-                  </span>
-                </>
-              )}
-            </p>
-          </div>
+          <h2
+            id="roster-title"
+            className="text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-300"
+          >
+            Roster
+          </h2>
           <div className="flex items-center gap-2">
             <button
               type="button"
@@ -642,6 +607,13 @@ export function ClassRoster() {
             </button>
           </div>
         </header>
+
+        <CodeActivityPanel
+          courseId={cls.id}
+          classCode={cls.short_code}
+          activatedSeats={codeStats.activatedSeats}
+          totalSeats={codeStats.seats}
+        />
 
         <SeatClaimRequestsPanel courseId={cls.id} onChange={() => void refresh()} />
 

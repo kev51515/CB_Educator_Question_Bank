@@ -141,12 +141,15 @@ silent, hard-to-diagnose bug (see the 0086 collision, June 2026).
 | 0094 | `student_rename_guard_rpc_exempt` | Fix 0093 (caught by smoke-e2e before shipping): the guard was SECURITY DEFINER and blocked `quick_start_with_code` onboarding. Switched to SECURITY INVOKER + `current_user IN ('authenticated','anon')` so only direct end-user PostgREST writes are blocked; RPCs / teacher-rename / service paths pass. |
 | 0095 | `claim_student_seat` | A student CLAIMS a pre-created managed seat with their own email+password instead of minting a duplicate via quick-start. `profiles.claimed_at` + `seat_claim_requests` table + `claim_student_seat()` (first claim takes over the seat — swaps synthetic `@students.local` email→real email, sets chosen password, keeps teacher-owned `display_name` + all work; already-claimed → files a teacher-approval request) + `decide_seat_claim_request()` (approve = credential recovery on the same seat, deny = drop). Notifies the course teacher (kind `seat_claim_request`). |
 | 0096 | `fix_claim_seat_status_ambiguity` | Fix `column reference "status" is ambiguous` in `claim_student_seat` (caught by `clickthrough-claim-seat.mjs` before the re-claim path shipped): the `RETURNS TABLE(status …)` OUT column collided with `seat_claim_requests.status` in the `ON CONFLICT … WHERE status='pending'` predicate. Replaced the upsert with a table-qualified UPDATE-then-INSERT (race-safe via `unique_violation` fallback). **Lesson: an OUT column name that matches a table column referenced in the body is ambiguous inside plpgsql — qualify the column or rename the OUT.** |
+| 0097 | `code_redemptions_log` | Durable, cumulative log of SHARED class-code redemptions so a teacher sees how many times the course code has been used, by whom, when, and via which path — surviving student removal. New `code_redemptions` table (`student_id` ON DELETE SET NULL + `name`/`email` snapshots; RLS course-staff read). `join_course_by_code` + `quick_start_with_code` (0070 bodies verbatim) now append a redemption row, gated on `FOUND` after `ON CONFLICT DO NOTHING` so idempotent re-calls don't inflate the count (`method` = `'join'` \| `'quick_start'`). Per-seat personal codes stay tracked by `profiles.claimed_at`, not here. |
 
 ---
 
-_Last updated: 2026-06-03 (through 0096; 0092–0096 applied to Remote. 0095+0096
-verified by `clickthrough-claim-seat.mjs` 9/9 against Remote; smoke-e2e/features/
-cascade/grading green. smoke-modules/qbank still red on a pre-existing seed-account
-gap — `demo-teacher@example.com` not provisioned on Remote — unrelated to these
-migrations.). When you add a migration, append a row here and bump the "verified"
-line once `migration list` shows Local == Remote._
+_Last updated: 2026-06-03 (through 0097; 0092–0097 applied to Remote. 0095+0096
+verified by `clickthrough-claim-seat.mjs` 9/9; 0097 verified by a redemption
+clickthrough (log + dedupe + RLS read + survives removal, 13/13) against Remote;
+smoke-e2e 14/14 post-0097, features/cascade/grading green. smoke-modules/qbank
+still red on a pre-existing seed-account gap — `demo-teacher@example.com` not
+provisioned on Remote — unrelated to these migrations.). When you add a migration,
+append a row here and bump the "verified" line once `migration list` shows
+Local == Remote._
