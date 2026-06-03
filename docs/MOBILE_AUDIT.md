@@ -487,3 +487,40 @@ Tap-target reference: Apple HIG and WCAG 2.5.5 both target **44×44px** minimum.
 The strongest mobile risk areas are surfaces that assume desktop two-pane / tabular layouts (InboxPage, gradebooks, admin tables) and surfaces relying on HTML5 drag-and-drop (ModulesPage, CoursePortfolio). Most card-based teacher/student list surfaces (Announcements, Discussions, AssignmentsPanel) follow a sound mobile-first card pattern with `sm:grid-cols-2` reflow and will work acceptably at 360px. The most consistent global polish needed: bumping primary CTAs from `py-2 text-sm` (~36px) to `py-3` to meet WCAG 2.5.5 tap-target guidance, and stacking page headers via `flex-col sm:flex-row` so the inline CTA doesn't crowd the title.
 
 Out-of-scope but high-stakes for student usability: `mocktest/MockTestApp.tsx` (the actual test runner) should get its own mobile audit, since AssignmentRunner ultimately hands control to it.
+
+---
+
+## Live audit — full-test runner + staff pages (2026-06-03)
+
+Live (Playwright, real DSAT preview) audit of the **full-length test runner**
+(`fulltest/FullTestApp` + `QuestionPane`) at iPad portrait (768), iPad
+landscape (1024), and iPhone (390), plus the staff dashboard/courses/test-
+overview pages. Tablet is the realistic device for sitting a test; phone is the
+"someone might" case.
+
+**Findings + fixes (all shipped):**
+
+1. **Runner preview remount (cross-viewport regression).** The role-aware test
+   landing had split staff preview across a separate exact route and the `/*`
+   splat — different element trees, so navigating bare → `/section/n/q/m`
+   unmounted/remounted `FullTestApp` and bounced the preview back to the intro
+   on every "Begin". Fixed by collapsing to one splat route + internal
+   `StaffTestGate` so the runner keeps its state.
+2. **Phone two-pane R&W.** `grid-cols-1 md:grid-cols-2` stacked into two cramped
+   independent scroll panes on phones. Now one natural scroll container below
+   `md` (passage flows into the question with a divider); the Bluebook
+   two-column split with independent pane scroll is preserved at `md`+. Verified
+   footer always visible, all choices reachable, zero horizontal overflow.
+3. **Desmos calculator** is already viewport-clamped (`min(880, innerWidth−16)`
+   × `min(1040, innerHeight−16)`, centered, draggable) — fine on tablet/phone.
+4. **Staff-page horizontal overflow at phone width** (NOT the shell — individual
+   cards/toolbars with `min-width:auto` refusing to shrink). Fixed with `min-w-0`
+   on `CourseCard` (root + name), `CohortCard`, the `DashboardPage` card wrapper,
+   and the `TestOverviewPage` grid cards; the All-Classes header toolbar now
+   wraps with a responsive search input. `/dashboard`, `/courses`, and the test
+   overview are now overflow-free at 390 / 768 / 1024.
+
+Method note: this complements the static analysis above with actual computed
+pixel checks (`document.documentElement.scrollWidth` vs viewport, boundingBox
+of footer/choices) — the kind of verification the original audit flagged it
+couldn't do.

@@ -140,27 +140,54 @@ entry for free practice — flag in PR review if extending.
 
 ## Canvas-aligned navigation
 
+**Role-prefixed URLs (as of the routing rework):** every authenticated surface
+carries a `/educator` or `/student` prefix so the signed-in role is obvious in
+the address bar. The one exception is the full-screen test runner `/test/:slug`
+— role-agnostic, and its URL is stored in `module_items`. Old top-level paths
+(`/dashboard`, `/courses`, …) fall through each role tree's catch-all to the
+role home, so stale links degrade gracefully rather than 404.
+
+**Educator (teacher + admin):**
+
 | URL | Surface |
 |---|---|
-| `/dashboard` | staff Dashboard with course cards |
-| `/courses` | courses list (Active / Archived / Templates filter) |
-| `/courses/:id/modules` | (default landing for a course) Canvas-style Modules with drag-to-reorder, kebab actions, lock-until, student completion ticks |
-| `/courses/:id/assignments` | assignments list |
-| `/courses/:id/people` | roster + bulk CSV import |
-| `/courses/:id/discussions` | per-course forum |
-| `/courses/:id/announcements` | teacher posts |
-| `/courses/:id/materials` | file/link library |
-| `/courses/:id/grades` | gradebook |
-| `/courses/:id/portfolio` | college-app portfolio (template + items + submissions + feedback) |
-| `/courses/:id/settings` | rename / archive / regen code / delete |
-| `/inbox` | DMs |
-| `/calendar` | month + list view of due dates |
-| `/account/settings` | profile + password + data export |
-| `/account/admin/*` | staff power-tools (stats, users, invites, audit) |
-| `/practice` | the legacy question bank (now with WeakSkillsToggle) |
-| `/mock-test` | free-practice mock test |
+| `/educator/dashboard` | staff Dashboard with course cards |
+| `/educator/courses` | courses list (Active / Archived / Templates filter) |
+| `/educator/courses/:id/modules` | (default landing for a course) Canvas-style Modules with drag-to-reorder, kebab actions, lock-until, student completion ticks |
+| `/educator/courses/:id/assignments` | assignments list |
+| `/educator/courses/:id/people` | roster + bulk CSV import (+ `/people/:studentId` profile) |
+| `/educator/courses/:id/discussions` | per-course forum |
+| `/educator/courses/:id/announcements` | teacher posts |
+| `/educator/courses/:id/materials` | file/link library |
+| `/educator/courses/:id/grades` | gradebook |
+| `/educator/courses/:id/portfolio` | college-app portfolio (template + items + submissions + feedback) |
+| `/educator/courses/:id/settings` | rename / archive / regen code / delete |
+| `/educator/question-bank` | question bank + Full-Test catalog tab |
+| `/educator/tests/:slug` | **per-test overview** — info, cohort stats, per-student data + Preview / Assign to course / Monitor / release (teachers land here from a test's Modules link; students get the runner). `/educator/tests/:slug/review` = answer key. |
+| `/educator/inbox` | DMs |
+| `/educator/calendar` | month + list view of due dates |
+| `/educator/account/settings` | profile + password + data export |
+| `/educator/account/admin/*` | staff power-tools (stats, users, invites, audit) |
 
-Use the route constants in `viewer/src/lib/routes.ts`. Don't hardcode paths.
+**Student:**
+
+| URL | Surface |
+|---|---|
+| `/student` (and `/student/:code`) | student home / area selector; `:code` is the teacher-assigned login code, display-only |
+| `/student/courses/:short` | student per-course view |
+| `/student/assignment/:id/take` · `…/review/:attemptId` | assignment runner + review |
+| `/student/my-feedback` | feedback history |
+| `/student/inbox` · `/student/account/settings` | DMs · profile |
+| `/student/practice` · `/student/mock-test` | locked under controlled access — redirect home |
+
+**Shared:** `/test/:slug` (full-test runner takeover) · `/signin` · `/quick-start`.
+
+Use the route constants/builders in `viewer/src/lib/routes.ts`. Don't hardcode
+paths. Educator-owned routes use the `ROUTES.*` constants directly; the shared
+account/inbox render under each role's prefix (educator uses `ROUTES.ACCOUNT` /
+`ROUTES.INBOX`; student uses `ROUTES.STUDENT_ACCOUNT` / `ROUTES.STUDENT_INBOX`
++ the `student*Path()` builders). `AccountRoutes` takes a `basePath` prop;
+`InboxPage` derives its base from `profile.role`.
 
 ---
 

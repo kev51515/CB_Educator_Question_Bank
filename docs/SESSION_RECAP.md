@@ -1,5 +1,34 @@
 # Session Recap
 
+## Latest (2026-06-03) — controlled-test polish, mobile audit, role-prefixed URLs
+
+- **Role-prefixed URLs.** Every authenticated surface now carries a `/educator`
+  or `/student` prefix so the role is legible in the address bar (the runner
+  `/test/:slug` stays shared). Implemented mostly by changing the `ROUTES.*`
+  constant *values* (consumers + builders update automatically); shared
+  account/inbox render under each role's prefix (`AccountRoutes` takes a
+  `basePath`; `InboxPage`/`NotificationBell` derive from `profile.role`).
+  Old paths redirect to the role home. Verified in-browser for both roles.
+- **Per-test overview** (`/educator/tests/:slug`, migration 0089
+  `assign_test_to_course`). Teachers opening a test's Modules link land on a
+  dashboard — test info + timed-module structure, cohort stats (assigned /
+  submitted / in-progress, average + range, score distribution), and
+  per-student data with Review / per-row + bulk release / stuck-attempt reset.
+  QA actions: Preview test, Answer key, Assign to course, Monitor live.
+  Students still get the runner (branch at `StaffTestGate`).
+- **Migration collision fix (0086 → 0090).** A duplicate `0086_*` filename had
+  silently skipped the second migration; renumbered so the course-scope
+  hardening of `release_test_results`/`allow_test_retake`/`reset_test_attempt`
+  actually applied. Added **`docs/MIGRATIONS.md`** as the authoritative ledger.
+- **Mobile/tablet runner audit.** Fixed a preview-remount regression (the role
+  branch was bouncing staff preview back to the intro on every "Begin"),
+  switched the phone R&W layout to a single natural scroll (Bluebook two-pane
+  preserved at md+), and eliminated horizontal overflow on staff pages at phone
+  widths (`min-w-0` on cards/grids; All-Classes toolbar wraps). See
+  `docs/MOBILE_AUDIT.md`.
+
+---
+
 ## Summary
 
 This session took the CB Educator Question Bank from a basic class/assignment skeleton to a Canvas-aligned LMS with 32 migrations applied, anonymous auth wired, email delivery via Resend, and four scheduled edge functions running on pg_cron. Both smoke suites land at 100% green — `smoke-e2e.mjs` (14 scenarios) and `smoke-features.mjs` (63 scenarios) — for a total of 77 passing end-to-end checks against the live cloud project. The smoke pass also caught and corrected six real schema/trigger bugs along the way.
