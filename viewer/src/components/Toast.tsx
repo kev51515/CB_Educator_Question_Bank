@@ -1,4 +1,4 @@
-import { createContext, useCallback, useContext, useState, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 
 export type ToastVariant = "info" | "success" | "warning" | "error";
 
@@ -78,23 +78,26 @@ export function ToastProvider({ children }: { children: ReactNode }) {
     setTimeout(() => remove(id), msg.ttlMs);
   }, [remove]);
 
-  const make = (variant: ToastVariant): ToastFn =>
-    (title, body, options) =>
-      show({
-        variant,
-        title,
-        body,
-        ttlMs: resolveTtl(variant, options),
-        action: options?.action,
-      });
+  const success = useCallback<ToastFn>((title, body, options) => {
+    show({ variant: "success", title, body, ttlMs: resolveTtl("success", options), action: options?.action });
+  }, [show]);
+  const error = useCallback<ToastFn>((title, body, options) => {
+    show({ variant: "error", title, body, ttlMs: resolveTtl("error", options), action: options?.action });
+  }, [show]);
+  const info = useCallback<ToastFn>((title, body, options) => {
+    show({ variant: "info", title, body, ttlMs: resolveTtl("info", options), action: options?.action });
+  }, [show]);
+  const warning = useCallback<ToastFn>((title, body, options) => {
+    show({ variant: "warning", title, body, ttlMs: resolveTtl("warning", options), action: options?.action });
+  }, [show]);
 
-  const value: ToastContextValue = {
+  const value = useMemo<ToastContextValue>(() => ({
     show,
-    success: make("success"),
-    error:   make("error"),
-    info:    make("info"),
-    warning: make("warning"),
-  };
+    success,
+    error,
+    info,
+    warning,
+  }), [show, success, error, info, warning]);
 
   return (
     <ToastContext.Provider value={value}>

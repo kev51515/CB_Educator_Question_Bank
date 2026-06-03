@@ -187,7 +187,9 @@ function MockTestAssignmentRunner({
    * Extracted so both the auto-bootstrap (no existing draft) and the
    * "Start fresh" path (user dismissed the resume banner) can share it.
    */
-  const startNewAttempt = useCallback(async (): Promise<void> => {
+  const startNewAttempt = useCallback(async (opts?: { isAlive?: () => boolean }): Promise<void> => {
+    const isAlive = opts?.isAlive ?? (() => true);
+    if (!isAlive()) return; // cancellation guard
     setStage({ kind: "loading" });
     try {
       const { data: policyData } = await supabase
@@ -203,6 +205,7 @@ function MockTestAssignmentRunner({
       const config = buildConfig(assignment);
       const questions = await loadSource(config);
       if (questions.length === 0) {
+        if (!isAlive()) return;
         setStage({
           kind: "error",
           message:
@@ -211,6 +214,7 @@ function MockTestAssignmentRunner({
         return;
       }
 
+      if (!isAlive()) return; // cancellation guard — skip RPC that would burn an attempt
       const { data, error } = await supabase.rpc("start_assignment_attempt", {
         p_assignment_id: assignment.id,
         p_questions: questions as unknown as Record<string, unknown>[],
@@ -223,6 +227,7 @@ function MockTestAssignmentRunner({
             .select("id", { count: "exact", head: true })
             .eq("assignment_id", assignment.id)
             .eq("student_id", studentId);
+          if (!isAlive()) return;
           setStage({
             kind: "max-attempts",
             used: count ?? maxAttempts,
@@ -230,6 +235,7 @@ function MockTestAssignmentRunner({
           });
           return;
         }
+        if (!isAlive()) return;
         setStage({
           kind: "error",
           message: describeStartError(error.message),
@@ -240,6 +246,7 @@ function MockTestAssignmentRunner({
       const rows = (data ?? []) as StartAttemptRpcRow[];
       const row = rows[0];
       if (!row) {
+        if (!isAlive()) return;
         setStage({
           kind: "error",
           message: "The server didn't return an attempt id.",
@@ -257,6 +264,7 @@ function MockTestAssignmentRunner({
         attemptNumber = count ?? null;
       }
 
+      if (!isAlive()) return;
       setStage({
         kind: "ready",
         attemptId: row.attempt_id,
@@ -265,6 +273,7 @@ function MockTestAssignmentRunner({
         maxAttempts,
       });
     } catch (err: unknown) {
+      if (!isAlive()) return;
       setStage({ kind: "error", message: getErrorMessage(err) });
     }
   }, [assignment, studentId]);
@@ -335,7 +344,9 @@ function MockTestAssignmentRunner({
     [assignment, studentId, startNewAttempt],
   );
 
-  const bootstrap = useCallback(async (): Promise<void> => {
+  const bootstrap = useCallback(async (opts?: { isAlive?: () => boolean }): Promise<void> => {
+    const isAlive = opts?.isAlive ?? (() => true);
+    if (!isAlive()) return; // cancellation guard
     setStage({ kind: "loading" });
     try {
       const { data: existingRows, error: existingError } = await supabase
@@ -347,6 +358,7 @@ function MockTestAssignmentRunner({
         .limit(1);
 
       if (existingError) {
+        if (!isAlive()) return;
         setStage({ kind: "error", message: existingError.message });
         return;
       }
@@ -370,6 +382,7 @@ function MockTestAssignmentRunner({
       // opt into multi-attempt by setting max_attempts > 1.
       if (latest && latest.submitted_at !== null) {
         if (maxAttempts === null || maxAttempts === 1) {
+          if (!isAlive()) return;
           onAlreadySubmitted(latest.id);
           return;
         }
@@ -383,6 +396,7 @@ function MockTestAssignmentRunner({
       // is also the convention used by the assignment_best_attempts view
       // synthesised in 0020).
       if (latest && latest.submitted_at === null) {
+        if (!isAlive()) return;
         setStage({
           kind: "resume-prompt",
           draftAttemptId: latest.id,
@@ -392,14 +406,17 @@ function MockTestAssignmentRunner({
       }
 
       // Otherwise no draft to resume — start a fresh attempt.
-      await startNewAttempt();
+      await startNewAttempt({ isAlive });
     } catch (err: unknown) {
+      if (!isAlive()) return;
       setStage({ kind: "error", message: getErrorMessage(err) });
     }
   }, [assignment, studentId, onAlreadySubmitted, startNewAttempt]);
 
   useEffect(() => {
-    void bootstrap();
+    let alive = true;
+    void (async () => { await bootstrap({ isAlive: () => alive }); })();
+    return () => { alive = false; }; // cancellation guard
   }, [bootstrap]);
 
   /**

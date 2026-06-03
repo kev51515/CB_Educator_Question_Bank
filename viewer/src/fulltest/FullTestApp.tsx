@@ -181,7 +181,18 @@ export function FullTestApp() {
         // cache (freshest, saved on every keystroke). Local wins when present.
         const cached = loadCachedAnswers(runId, position);
         const server = m.saved_answers ?? {};
-        const merged = { ...server, ...cached };
+        // Cross-device guard: if the server has MORE answers than our local
+        // cache, the user worked on another device and the local cache is
+        // stale — drop it entirely so we don't clobber fresher remote work.
+        const serverCount = Object.values(server).filter((v) => v !== null && v !== "").length;
+        const cachedCount = Object.values(cached).filter((v) => v !== null && v !== "").length;
+        let merged: Record<string, string | null>;
+        if (serverCount > cachedCount) {
+          clearCachedAnswers(runId, position);
+          merged = { ...server };
+        } else {
+          merged = { ...server, ...cached };
+        }
         const seed: Record<string, string | null> = {};
         for (const q of m.questions) seed[q.id] = merged[q.id] ?? null;
         setAnswers(seed);
@@ -312,6 +323,9 @@ export function FullTestApp() {
       setRemaining(left);
       if (left <= 0) {
         toast.info("Time's up for this section — submitting your answers.");
+        // Flush any pending annotation/highlight/note draft before the submit
+        // RPC fires (submit doesn't carry annot payload — only saveProgress does).
+        saveDraftRef.current();
         void doSubmitModule();
       }
     };
@@ -319,6 +333,45 @@ export function FullTestApp() {
     const id = window.setInterval(tick, 1000);
     return () => window.clearInterval(id);
   }, [phase, deadline, doSubmitModule, toast]);
+
+  // --- sleep/wake resync ----------------------------------------------------
+  // After a laptop sleep or long tab-hide, Date.now() jumps forward and the
+  // local deadline could already be in the past — silently auto-submitting.
+  // On return-to-visible (after >5s hidden), re-fetch the server-authoritative
+  // remaining time and recompute the deadline; if the server says 0, warn the
+  // student before the auto-submit fires.
+  const lastVisibleAt = useRef(Date.now());
+  useEffect(() => {
+    if (phase !== "module" || !runId || !moduleMeta) return;
+    const onVisibility = () => {
+      if (document.hidden) {
+        lastVisibleAt.current = Date.now();
+        return;
+      }
+      const hiddenMs = Date.now() - lastVisibleAt.current;
+      if (hiddenMs <= 5000) return;
+      void (async () => {
+        try {
+          const data = await getModule(runId, moduleMeta.position);
+          if (data.seconds_remaining <= 0) {
+            toast.warning(
+              "Your section ran out of time while the tab was hidden — submitting your answers now.",
+            );
+          }
+          setDeadline(Date.now() + data.seconds_remaining * 1000);
+          setRemaining(data.seconds_remaining);
+        } catch {
+          /* non-fatal: keep the existing deadline */
+        }
+      })();
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    window.addEventListener("pageshow", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      window.removeEventListener("pageshow", onVisibility);
+    };
+  }, [phase, runId, moduleMeta, toast]);
 
   // P2: debounced server-side draft autosave. Each answer change resets a
   // 2.5s timer; on idle we persist the active module's drafts so a device

@@ -80,6 +80,18 @@ export async function submitModule(
     lastErr = mapError(error);
     // Non-retryable logical errors: stop immediately.
     const code = (lastErr as TestApiError).code;
+    // Retry-after-success synthesis: if attempt > 0 and the server now reports
+    // the module already advanced (module_out_of_order) or the run is already
+    // submitted (run_already_submitted), the first attempt actually COMMITTED
+    // and only the response was lost. Synthesize a success so the UI advances.
+    if (attempt > 0 && (code === "module_out_of_order" || code === "run_already_submitted")) {
+      return {
+        finished: code === "run_already_submitted",
+        next_module: position + 1,
+        answered: 0,
+        timed_out: false,
+      } as SubmitModuleResult;
+    }
     if (
       code === "run_already_submitted" ||
       code === "module_out_of_order" ||
