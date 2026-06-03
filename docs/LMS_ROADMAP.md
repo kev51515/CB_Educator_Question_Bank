@@ -56,7 +56,7 @@ indicator. Round 6 then dropped the now-redundant CourseGradebook
 second-round-trip (derives `score_override` from `effective_score !==
 score_percent` instead). See `docs/SESSION_RECAP.md` Wave 21B section.
 
-- **Auth, roles, class enrollment — ~98%.** Email/password, anonymous quick-start, role-based routing, profile auto-mint, classes/roster, RLS helpers, **password reset flow, anonymous → real account upgrade, teacher invite codes** are all live. Account settings UI shipped. The only remaining gap is co-teachers / TAs as a first-class concept (cross-staff parity gives ~80% of the value already).
+- **Auth, roles, class enrollment — ~98%.** Email/password, anonymous quick-start, role-based routing, profile auto-mint, classes/roster, RLS helpers, **password reset flow, anonymous → real account upgrade, teacher invite codes, managed-seat claiming (student takes over a pre-created seat with their own email+password; teacher approve/deny re-claims — 0095/0096), class-code usage tracking (`code_redemptions` — 0097)** are all live. Account settings UI shipped. The only remaining gap is co-teachers / TAs as a first-class concept (cross-staff parity gives ~80% of the value already).
 - **Assignment loop — ~95%.** Fully wired end-to-end. `AssignmentRunner` mounts `MockTestApp` with assignment config, `start_assignment_attempt` RPC snapshots questions server-side into `assignment_attempt_questions` (mig 0014), multiple attempts + late penalty (mig 0020), per-attempt review with proper snapshot rendering. Wave 7 fixed the snapshot-snippet ↔ items mismatches.
 - **Mock test runner — ~95%.** Unchanged; now also rendering KaTeX math in stems/answers/explanations.
 - **Question bank viewer — mature.** Out of scope.

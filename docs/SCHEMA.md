@@ -61,15 +61,23 @@ Pass `(SELECT auth.uid())` (subselect form) so the planner caches it per query.
 **courses** — `id, teacher_id, name, description, join_code, archived,
 created_at, updated_at, is_template, short_code`
 
-**course_memberships** — `id, course_id, student_id, joined_at`
+**course_memberships** — `id, course_id, student_id, joined_at, roster_code,
+roster_seq` (`roster_code`/`roster_seq` from 0067: a teacher-created managed seat
+gets a per-course code like `Y8M3KP-01`; **NULL `roster_code` ⇒ the student
+self-joined via the shared class code** — the distinction `code_redemptions`/the
+roster "Code activity" panel rely on.)
 
 **course_modules** — `id, course_id, name, position, published, opens_at,
 lock_at, parent_module_id, created_at, updated_at`
 
-**profiles** — `id, email, display_name, role, created_at, updated_at`
+**profiles** — `id, email, display_name, role, claimed_at, created_at,
+updated_at`
 (role ∈ student|teacher|admin; INSERT only via the auto-profile trigger; self
-UPDATE allowed but **cannot change role** — and beware the profiles RLS
-recursion trap, see 0008/0013.)
+UPDATE allowed but **cannot change role** — and a student cannot self-rename
+(0093, teacher owns the name) — and beware the profiles RLS recursion trap, see
+0008/0013. `claimed_at` (0095) is set when a managed seat's student claims it
+with their own email+password; **non-NULL ⇒ the login code is retired and they
+sign in by email** — roster/Print/Reset surfaces are claim-aware.)
 
 **assignments** — `id, course_id, created_by, title, description, source_id,
 question_count, time_limit_minutes, difficulty_mix, due_at, opens_at, archived,
@@ -86,6 +94,20 @@ score_override, graded_at, grader_id, created_at, updated_at`
 
 **assignment_attempt_questions** — per-attempt question snapshot (0014):
 `attempt_id, position, question (jsonb)`.
+
+**seat_claim_requests** (0095) — `id, course_id, seat_id, roster_code,
+requested_email, requested_password_hash, status (pending|approved|denied),
+requested_by, created_at, decided_at, decided_by`. Pending seat re-claims
+awaiting a teacher decision (partial-unique: one `pending` per `seat_id`). RLS:
+course staff read; writes only via the SECURITY DEFINER `claim_student_seat` /
+`decide_seat_claim_request` RPCs.
+
+**code_redemptions** (0097) — `id, course_id, student_id, code_used, method
+(join|quick_start), name_snapshot, email_snapshot, created_at`. Append-only
+class-code redemption log; `student_id ON DELETE SET NULL` + name/email
+snapshots so the cumulative tally survives student removal. RLS: course staff
+read; rows written only by `join_course_by_code` / `quick_start_with_code`
+(first join only).
 
 ---
 
@@ -168,8 +190,14 @@ value, which for grids comes from `accepted[0]` — fixed in 0055).
 
 ## 6. Migration ledger
 
-`supabase/migrations/0001 … 0065`. **Live on remote: 0001–0061 + 0065** (0062–0064
-are a parallel session's; 0063/0064 portfolio-import not yet pushed). Recent:
+`supabase/migrations/0001 … 0097`. **Live on remote: 0001–0097** (verified
+2026-06-03; `docs/MIGRATIONS.md` is the authoritative per-row ledger). Recent:
+- 0095 `claim_student_seat` + `seat_claim_requests` + `profiles.claimed_at`;
+  0096 fixes a `status` ambiguity in it — claim a managed seat with own
+  email+password; already-claimed → teacher approve/deny
+- 0097 `code_redemptions` log (durable class-code usage; survives removal)
+- 0092 profiles own-update recursion fix · 0093 lock student self-rename ·
+  0094 rename-guard RPC exemption
 - 0065 RLS fix: `assignment_best_attempts` + `assignment_attempts_effective`
   set `security_invoker = on` (closed a cross-student best-score leak)
 - 0048 full-test schema + RPCs · 0049 DSAT Nov-2023 seed

@@ -1,6 +1,45 @@
 # Session Recap
 
-## Latest (2026-06-03) — controlled-test polish, mobile audit, role-prefixed URLs
+## Latest (2026-06-03) — student seat claiming, code-usage tracking, claim-aware logins
+
+- **Claim a pre-created seat** (migrations 0095/0096). A per-student login code
+  (`Y8M3KP-01`) typed into Quick Start now **claims the existing managed seat**
+  instead of minting a duplicate profile. (The bug it fixes: Quick Start scrubbed
+  the `-01`, matched the 6-char course code, and created a new anonymous profile —
+  e.g. a stray "Ca" — leaving the real seat unclaimed.) First claim swaps the
+  synthetic `…@students.local` email → the student's real email, sets their chosen
+  password, and **keeps the teacher-owned name + all work** (same profile id). The
+  name field is hidden for seat codes (teacher owns it — 0093). An already-claimed
+  seat files a teacher-approval request (`seat_claim_requests`); **approve =
+  credential recovery** on the same seat, **deny = drop**. Teacher gets a
+  `seat_claim_request` notification + an Approve/Deny panel on the Roster. Verified
+  9/9 against remote (`viewer/scripts/clickthrough-claim-seat.mjs`); 0096 fixed a
+  plpgsql `status`-ambiguity that clickthrough caught before it shipped.
+- **Class-code usage tracking** (migration 0097). New append-only
+  `code_redemptions` log that **survives student removal** (`student_id ON DELETE
+  SET NULL` + name/email snapshots). `join_course_by_code` +
+  `quick_start_with_code` append a row on first join (FOUND-gated past `ON CONFLICT
+  DO NOTHING` so idempotent re-calls don't inflate). Roster **"Code activity"**
+  panel: `used N× · M students · last <when>` + a join-vs-quick-start detail list
+  (who/when/email, marks removed students). Verified 13/13 against remote.
+- **Per-seat activation + claim-aware login surfaces.** Roster shows
+  **"Activated" / "Code not used yet"** per managed seat (from
+  `profiles.claimed_at`). Because a claimed seat now logs in by email, the
+  code-based tooling is made claim-aware: the roster code chip renders
+  struck-through ("retired"), Print logins/QR/CSV mark claimed seats as "signs in
+  with own email", bulk **"reset all & print" skips** them (can't clobber a
+  self-set password or print a dead code), and the Reset-password modal shows the
+  email identity instead of the dead code/QR.
+- **Cleanup + an accepted risk.** Removed the stray duplicate "Ca"; confirmed no
+  seed/demo accounts exist on remote (why `smoke-modules`/`smoke-qbank` stay red —
+  they sign in as `demo-teacher@example.com`). The seat-claim **code-enumeration
+  hijack** (first-claim is open, and the `claim_seat` rate limit is defeated by a
+  fresh anonymous session per attempt) was reviewed and **accepted as a known
+  risk** rather than gated behind the teacher-set temp password.
+
+---
+
+## (2026-06-03) — controlled-test polish, mobile audit, role-prefixed URLs
 
 - **Role-prefixed URLs.** Every authenticated surface now carries a `/educator`
   or `/student` prefix so the role is legible in the address bar (the runner
