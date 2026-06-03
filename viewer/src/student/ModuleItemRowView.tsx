@@ -22,6 +22,19 @@ export function ModuleItemRowView({ item, locked }: ModuleItemRowProps) {
     ? "text-slate-400 dark:text-slate-600 cursor-not-allowed"
     : "text-slate-800 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800";
 
+  // Full-length tests are stored as link items pointing at the Bluebook runner
+  // (/test/:slug). Surface them with a "Test" tag rather than the generic link
+  // icon, matching the teacher-side Modules page.
+  const isFullTestLink =
+    item.item_type === "link" && !!item.url?.startsWith("/test/");
+  const leadingIcon = isFullTestLink ? (
+    <span className="flex-none inline-flex items-center rounded px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide bg-indigo-100 text-indigo-700 dark:bg-indigo-900/40 dark:text-indigo-300">
+      Test
+    </span>
+  ) : (
+    <ItemIcon type={item.item_type} />
+  );
+
   if (item.item_type === "header") {
     return (
       <div
@@ -56,7 +69,7 @@ export function ModuleItemRowView({ item, locked }: ModuleItemRowProps) {
           className={`${baseClass} ${interactiveClass}`}
           style={{ paddingLeft: `${0.75 + indent * 1.5}rem` }}
         >
-          <ItemIcon type={item.item_type} />
+          {leadingIcon}
           <span className="flex-1 truncate">{item.title}</span>
         </div>
       );
@@ -69,7 +82,7 @@ export function ModuleItemRowView({ item, locked }: ModuleItemRowProps) {
         className={`${baseClass} ${interactiveClass}`}
         style={{ paddingLeft: `${0.75 + indent * 1.5}rem` }}
       >
-        <ItemIcon type={item.item_type} />
+        {leadingIcon}
         <span className="flex-1 truncate">{item.title}</span>
       </a>
     );
