@@ -152,6 +152,15 @@ export async function reportAway(runId: string): Promise<void> {
   }
 }
 
+/** Integrity telemetry (paste / copy / fullscreen exit). Best-effort, never throws. */
+export async function reportIntegrity(runId: string, event: string): Promise<void> {
+  try {
+    await supabase.rpc("test_report_integrity", { p_run_id: runId, p_event: event });
+  } catch {
+    /* non-fatal */
+  }
+}
+
 export interface RunState {
   status: string; // 'in_progress' | 'submitted' | 'abandoned'
   paused: boolean;

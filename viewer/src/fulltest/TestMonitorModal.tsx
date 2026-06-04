@@ -27,10 +27,21 @@ interface LiveRow {
   marked: number | null;
   away_count: number | null;
   paused: boolean | null;
+  integrity: Record<string, number> | null;
   last_seen_at: string | null;
   started_at: string | null;
   submitted_at: string | null;
   run_id: string | null;
+}
+
+function fmtIntegrity(i: Record<string, number> | null | undefined): string | null {
+  if (!i) return null;
+  const parts = [
+    (i.paste ?? 0) > 0 && `paste ${i.paste}×`,
+    (i.copy ?? 0) > 0 && `copy ${i.copy}×`,
+    (i.fullscreen_exit ?? 0) > 0 && `left FS ${i.fullscreen_exit}×`,
+  ].filter(Boolean);
+  return parts.length ? parts.join(" · ") : null;
 }
 
 interface TestMonitorModalProps {
@@ -282,6 +293,14 @@ export function TestMonitorModal({ slug, title, onClose }: TestMonitorModalProps
                           className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-medium text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
                         >
                           ⚠ left tab {away}×
+                        </span>
+                      )}
+                      {fmtIntegrity(r.integrity) && (
+                        <span
+                          title="Integrity signals"
+                          className="rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-medium text-rose-700 ring-1 ring-rose-200 dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
+                        >
+                          ⚑ {fmtIntegrity(r.integrity)}
                         </span>
                       )}
                       {r.paused && (

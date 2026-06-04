@@ -68,9 +68,24 @@ interface LiveInfo {
   module_questions: number | null;
   away_count: number | null;
   paused: boolean | null;
+  integrity: Record<string, number> | null;
   started_at: string | null;
   submitted_at: string | null;
   run_id: string | null;
+}
+
+/** "paste 2 · left FS 1" from the integrity counter bag, or null if clean. */
+function fmtIntegrity(i: Record<string, number> | null | undefined): string | null {
+  if (!i) return null;
+  const labels: Array<[string, string]> = [
+    ["paste", "paste"],
+    ["copy", "copy"],
+    ["fullscreen_exit", "left FS"],
+  ];
+  const parts = labels
+    .filter(([k]) => (i[k] ?? 0) > 0)
+    .map(([k, label]) => `${label} ${i[k]}×`);
+  return parts.length ? parts.join(" · ") : null;
 }
 
 // --- helpers ---------------------------------------------------------------
@@ -703,6 +718,14 @@ export function TestOverviewPage(): JSX.Element {
                           className="inline-flex items-center rounded-full bg-rose-50 text-rose-700 ring-1 ring-rose-200 px-2 py-0.5 text-[11px] font-medium dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
                         >
                           ⚠ left tab {away}×
+                        </span>
+                      )}
+                      {fmtIntegrity(lr?.integrity) && (
+                        <span
+                          title="Integrity signals during the test"
+                          className="inline-flex items-center rounded-full bg-rose-50 text-rose-700 ring-1 ring-rose-200 px-2 py-0.5 text-[11px] font-medium dark:bg-rose-950/40 dark:text-rose-300 dark:ring-rose-900"
+                        >
+                          ⚑ {fmtIntegrity(lr?.integrity)}
                         </span>
                       )}
                       {lr?.run_id && (

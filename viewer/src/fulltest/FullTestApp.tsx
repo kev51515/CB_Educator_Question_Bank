@@ -29,6 +29,7 @@ import {
   getRunState,
   heartbeat,
   reportAway,
+  reportIntegrity,
   loadCachedAnswers,
   saveCachedAnswers,
   saveProgress,
@@ -321,6 +322,25 @@ export function FullTestApp() {
       navigate(target, { replace: true });
     }
   }, [slug, phase, moduleMeta, index, questions, location.pathname, navigate]);
+
+  // Integrity telemetry while taking a module: paste / copy / leaving fullscreen.
+  // Best-effort counters the proctor sees live — detection, not blocking.
+  useEffect(() => {
+    if (phase !== "module" || !runId) return;
+    const onPaste = () => void reportIntegrity(runId, "paste");
+    const onCopy = () => void reportIntegrity(runId, "copy");
+    const onFsChange = () => {
+      if (!document.fullscreenElement) void reportIntegrity(runId, "fullscreen_exit");
+    };
+    document.addEventListener("paste", onPaste);
+    document.addEventListener("copy", onCopy);
+    document.addEventListener("fullscreenchange", onFsChange);
+    return () => {
+      document.removeEventListener("paste", onPaste);
+      document.removeEventListener("copy", onCopy);
+      document.removeEventListener("fullscreenchange", onFsChange);
+    };
+  }, [phase, runId]);
 
   // --- timer ----------------------------------------------------------------
   useEffect(() => {
