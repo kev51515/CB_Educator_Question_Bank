@@ -12,3 +12,4 @@ export * from "./persistence";
 export * from "./parts";
 export * from "./editors";
 export * from "./inline-add";
+export * from "./tree";
